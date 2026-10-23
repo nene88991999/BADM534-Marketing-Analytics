@@ -4,6 +4,8 @@ Course datasets, data dictionaries, scripts, notebook examples, and code snippet
 
 **Status:** [synthetic lecture examples](Lecture_Examples/README.md) now cover the numerical cases in all eight modules, with verified Python calculations and small CSV files. Candidate datasets are in the [resource library's dataset guide](../01_Resources/10_Datasets_and_Project_Resources/Dataset_Guide/README.md) and [additional dataset collection](../01_Resources/20_Datasets/README.md).
 
+The [mHealth food-log collection](mHealth/README.md) provides actual 2016 food entries and daily summaries with replacement user IDs, fixed ages, and perturbed weights. Its GitHub release contains the full compressed teaching files. The data dictionary, checksum-verified downloader, and agent guide are in the course folder. Read the transformation and sampling notes before analysis.
+
 ## Adding an Example
 
 Use a descriptive module prefix, such as `M02_Customer_Summary`, and include a README explaining the marketing question, files, dependencies, run command, expected output, and a simple check of the result. Record whether the example has been executed successfully.

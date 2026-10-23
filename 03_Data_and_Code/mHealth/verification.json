@@ -1,0 +1,26 @@
+{
+  "files": {
+    "food_entries.csv.gz": {
+      "rows": 13874280,
+      "users": 5908,
+      "missing_age_rows": 0,
+      "sha256_verified": true,
+      "excluded_columns_absent": true,
+      "id_format_verified": true
+    },
+    "daily_records.csv.gz": {
+      "rows": 551904,
+      "users": 2676,
+      "missing_age_rows": 0,
+      "sha256_verified": true,
+      "excluded_columns_absent": true,
+      "id_format_verified": true
+    }
+  },
+  "daily_key_unique": true,
+  "food_rows_with_daily_match": 6467980,
+  "food_rows_without_daily_match": 7406300,
+  "matched_rows_with_different_currentweight": 0,
+  "matched_rows_with_different_fixed_age": 0,
+  "incorrect_bmi_rows": 0
+}

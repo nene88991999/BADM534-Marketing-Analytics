@@ -34,7 +34,10 @@
     "06_Lecture_Notes/README.md",
     "03_Data_and_Code/Lecture_Examples/README.md",
     "05_Slides/README.md",
-    "05_Slides/AGENTS.md"
+    "05_Slides/AGENTS.md",
+    "03_Data_and_Code/mHealth/README.md",
+    "03_Data_and_Code/mHealth/DATA_DICTIONARY.md",
+    "03_Data_and_Code/mHealth/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -80,5 +83,14 @@
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
     "revision": "2026-10-23-recommender-systems"
-  }
+  },
+  "datasets": [
+    {
+      "id": "mhealth-2016-teaching",
+      "index": "03_Data_and_Code/mHealth/README.md",
+      "manifest": "03_Data_and_Code/mHealth/manifest.json",
+      "release": "https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/tag/mhealth-teaching-2026-10-23",
+      "data_type": "real records with replaced user IDs, fixed ages, and perturbed weights"
+    }
+  ]
 }

@@ -25,6 +25,7 @@ The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to d
 
 - [AI-Assisted Coding Resources](01_Resources/09_AI_Assisted_Coding/README.md) and [Teaching Notes](01_Resources/09_AI_Assisted_Coding/Teaching_Notes/README.md).
 - [Candidate Datasets](01_Resources/10_Datasets_and_Project_Resources/Dataset_Guide/README.md).
+- [Food Logging and Personalized Recommendations](03_Data_and_Code/mHealth/README.md), connecting data preparation, text classification, and recommendation evaluation using transformed real records.
 - [Additional Module Catalog](01_Resources/00_Index/README.md), with a separate resource-ID namespace and overlapping coverage.
 - [Syllabus Coverage and Teaching Priorities](01_Resources/00_Course_Map_and_Teaching/Planning_Notes/README.md).
 

@@ -1,0 +1,115 @@
+{
+  "version": "2026-10-23",
+  "complete_sources": true,
+  "age_reference": "2016-01-01",
+  "weight_unit": "pound, inferred from source BMI/height relationship",
+  "weight_noise": {
+    "user_offset": "Uniform(-0.5, 0.5)",
+    "day_offset": "Uniform(-0.5, 0.5)",
+    "same_offset_across_weight_fields_and_files": true,
+    "rounding_decimals": 3,
+    "private_key_published": false,
+    "small_positive_weights": "For 0 < w < 2, use w * (1 + offset/2) without rounding, preserving positivity."
+  },
+  "files": {
+    "food_entries.csv.gz": {
+      "rows": 13874280,
+      "users": 5908,
+      "date_min": "2016-01-01 00:00:00",
+      "date_max": "2016-12-31 00:00:00",
+      "columns": [
+        "Userid",
+        "Name",
+        "Productname",
+        "Category",
+        "Fancydate",
+        "Baseunits",
+        "Quantity",
+        "Measureid",
+        "Measurename",
+        "Calories",
+        "Budgetcalories",
+        "Foodcalories",
+        "Exercisecalories",
+        "Breakfastcalories",
+        "Lunchcalories",
+        "Dinnercalories",
+        "Snackcalories",
+        "Currentweight",
+        "Startweight",
+        "Minweight",
+        "Maxweight",
+        "Goalweight",
+        "Weightchange",
+        "Gender",
+        "Heightinches",
+        "Goalplan",
+        "Age_at_2016_01_01",
+        "Bmi_from_noisy_weight"
+      ],
+      "compressed_bytes": 304007288,
+      "sha256": "2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea",
+      "source_sha256": "e815e158c1f2a0ec5c9403cb6ee4bc0a2c698b8dcd753b845363b75815a8c65f",
+      "download_url": "https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/download/mhealth-teaching-2026-10-23/food_entries.csv.gz",
+      "source_file": "data_final_25.csv"
+    },
+    "daily_records.csv.gz": {
+      "rows": 551904,
+      "users": 2676,
+      "date_min": "2016-01-01 00:00:00",
+      "date_max": "2016-12-31 00:00:00",
+      "columns": [
+        "Userid",
+        "Fancydate",
+        "Currentweight",
+        "Budgetcalories",
+        "Foodcalories",
+        "Exercisecalories",
+        "Weightchange",
+        "Age_at_2016_01_01"
+      ],
+      "compressed_bytes": 7806283,
+      "sha256": "c0c53e1c6374f23b91af68829a2cba225469bacae61b3971cfb4609f03e6f266",
+      "source_sha256": "0f4f9bddc8060726e3694f88a05c09e9a4e62c4c197c9cf2f75acc211ba55187",
+      "download_url": "https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/download/mhealth-teaching-2026-10-23/daily_records.csv.gz",
+      "source_file": "data_everyday.csv"
+    }
+  },
+  "validation": {
+    "maximum_absolute_weight_change": 0.9990000000000236,
+    "positive_weight_values": {
+      "Currentweight": 14426184,
+      "Startweight": 13843744,
+      "Minweight": 13797189,
+      "Maxweight": 13874280,
+      "Goalweight": 13870861
+    },
+    "changed_weight_values": {
+      "Currentweight": 14411770,
+      "Startweight": 13829850,
+      "Minweight": 13783386,
+      "Maxweight": 13860369,
+      "Goalweight": 13856963
+    },
+    "positive_weight_values_below_two": {
+      "Currentweight": 53,
+      "Startweight": 0,
+      "Minweight": 29716,
+      "Maxweight": 0,
+      "Goalweight": 0
+    },
+    "private_user_key_count": 5908,
+    "missing_fixed_age_users": 0,
+    "provider_name_scan_passed": true
+  },
+  "provider_label_standardization": {
+    "replacement": "mHealth",
+    "occurrences_replaced": {
+      "food_entries.csv.gz": 100,
+      "daily_records.csv.gz": 0
+    },
+    "private_pattern_published": false
+  },
+  "dataset": "mHealth",
+  "release_url": "https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/tag/mhealth-teaching-2026-10-23"
+}
