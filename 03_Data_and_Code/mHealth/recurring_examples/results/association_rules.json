@@ -1,0 +1,34 @@
+{
+  "candidate_categories": 20,
+  "eligible_pairs": 190,
+  "training_users": 358,
+  "evaluation_users": 334,
+  "selected_training_pair": {
+    "a": "oil",
+    "b": "tomato",
+    "supporting_users": 192,
+    "baskets": 40727,
+    "a_baskets": 7283,
+    "b_baskets": 4708,
+    "joint_baskets": 1985,
+    "support": 0.048739165664055784,
+    "confidence_a_to_b": 0.27255251956611287,
+    "baseline_b": 0.11559898838608294,
+    "lift": 2.3577413900529054
+  },
+  "july_august": {
+    "baskets": 12956,
+    "a_baskets": 2174,
+    "b_baskets": 1930,
+    "joint_baskets": 658,
+    "support": 0.05078728002469898,
+    "confidence_a_to_b": 0.30266789328426863,
+    "baseline_b": 0.14896573016363074,
+    "lift": 2.0317954535704583,
+    "user_bootstrap_ci95": [
+      1.7624458997547394,
+      2.410864346376012
+    ],
+    "bootstrap_valid_draws": 500
+  }
+}

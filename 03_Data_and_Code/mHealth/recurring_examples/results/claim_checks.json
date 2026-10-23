@@ -1,0 +1,15 @@
+{
+  "candidate_origin": "constructed teaching examples; no LLM request",
+  "checks": {
+    "supported": [],
+    "wrong_number": [
+      "value disagrees with evidence"
+    ],
+    "wrong_denominator": [
+      "denominator"
+    ],
+    "causal_claim": [
+      "unsupported interpretation"
+    ]
+  }
+}

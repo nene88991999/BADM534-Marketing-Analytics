@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# claude-ecom launcher.
+#
+# The plugin's install directory is replaced on every plugin update
+# (and old versions are garbage-collected), so the Python venv lives
+# outside it, in XDG data. A version stamp ties the venv to the plugin
+# version: when the plugin updates, the next run reinstalls the backend.
+# XDG is used instead of ${CLAUDE_PLUGIN_DATA} because this script must
+# resolve the same venv when invoked from hooks, from Claude's shell via
+# PATH, or directly by the user — and the env var is only guaranteed in
+# plugin config contexts.
+
+PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DATA_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/claude-ecom"
+VENV_DIR="${DATA_DIR}/venv"
+STAMP_FILE="${VENV_DIR}/.claude-ecom-version"
+
+plugin_version() {
+    sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' \
+        "${PLUGIN_ROOT}/.claude-plugin/plugin.json" | head -1
+}
+
+bootstrap() {
+    local force="${1:-}" want have
+    want="$(plugin_version)"
+    have="$(cat "${STAMP_FILE}" 2>/dev/null || true)"
+
+    if [ -x "${VENV_DIR}/bin/ecom" ] && [ "${have}" = "${want}" ] && [ "${force}" != "force" ]; then
+        return 0
+    fi
+
+    command -v python3 >/dev/null 2>&1 || {
+        echo "claude-ecom: Python 3.10+ is required (https://python.org)" >&2
+        return 1
+    }
+    python3 -c 'import sys; sys.exit(0 if sys.version_info >= (3, 10) else 1)' 2>/dev/null || {
+        echo "claude-ecom: Python 3.10+ required, found $(python3 --version 2>&1)" >&2
+        return 1
+    }
+
+    mkdir -p "${DATA_DIR}"
+    [ -d "${VENV_DIR}" ] || python3 -m venv "${VENV_DIR}"
+    "${VENV_DIR}/bin/pip" install --quiet --upgrade pip >&2
+    "${VENV_DIR}/bin/pip" install --quiet "${PLUGIN_ROOT}" >&2
+    printf '%s' "${want}" > "${STAMP_FILE}"
+    echo "claude-ecom: backend ${want} ready" >&2
+}
+
+case "${1:-}" in
+    --bootstrap-only)
+        # SessionStart hook entry point: install/refresh, never block the session.
+        bootstrap || true
+        exit 0
+        ;;
+    --force-reinstall)
+        bootstrap force
+        exit 0
+        ;;
+esac
+
+bootstrap
+exec "${VENV_DIR}/bin/ecom" "$@"

@@ -1,0 +1,31 @@
+{
+  "eligible_before_july": 331,
+  "july_returners": 297,
+  "administrative_end": "2016-08-31",
+  "thresholds": [
+    {
+      "gap_days": 14,
+      "users": 297,
+      "events": 93,
+      "censored": 204,
+      "gap_free_day_30": 0.8181818181818182,
+      "at_risk_day_30": 245,
+      "gap_free_day_45": 0.7367596621667998,
+      "at_risk_day_45": 219,
+      "gap_free_day_60": 0.6866940784116099,
+      "at_risk_day_60": 160
+    },
+    {
+      "gap_days": 28,
+      "users": 297,
+      "events": 33,
+      "censored": 264,
+      "gap_free_day_30": 0.9629629629629629,
+      "at_risk_day_30": 286,
+      "gap_free_day_45": 0.9256958161163795,
+      "at_risk_day_45": 268,
+      "gap_free_day_60": 0.8877191347349778,
+      "at_risk_day_60": 187
+    }
+  ]
+}

@@ -305,3 +305,97 @@ write_csv(
 )
 print(json.dumps(r, indent=2))
 ```
+
+## 8.11 Evidence Checks for Generated Marketing Explanations
+
+An analytics manager may accept a fluent business review whose numbers and interpretation describe different populations. Structured output helps software locate a metric, period, value, unit, and denominator. Each field also needs evidence. A correctly formatted statement can contain the wrong number or describe a causal effect that the underlying analysis never estimated.
+
+Use the fixed-cohort mHealth review from Section 1.10 as the evidence source. June contains 6,331 observed user-days out of 10,200 eligible calendar user-days, giving a logging fraction of 0.620686. A structured claim must identify that month, denominator, unit, and descriptive interpretation. Four constructed candidates retain the same field structure: one reproduces the supported result, one adds 0.10 to its value, one substitutes the number of logging users for the denominator, and one labels the result a causal health benefit.
+
+| Constructed Candidate | Format | Evidence Check |
+| --- | --- | --- |
+| Supported Result | Valid Fields | Accepted |
+| Changed Number | Valid Fields | Value Mismatch |
+| Changed Denominator | Valid Fields | Denominator Mismatch |
+| Causal Health Claim | Valid Fields | Unsupported Interpretation |
+
+All four candidates pass the same basic structural requirement. Only the supported claim passes the evidence checks. They are deliberate teaching inputs, not observed outputs from a particular LLM. The code makes no external model request and sends no customer data to an AI service. Its checks concern the declared fields. Free-form prose, omitted qualifications, and advice require a separate substantive review; an “interpretation” field cannot validate an unrestricted paragraph.
+
+![A generated statement passes through separate checks for structure, numerical evidence, and substantive interpretation before informing a decision.](../figures/M08_evidence_checks.png)
+
+[Copycat](https://github.com/google-marketing-solutions/copycat) demonstrates generation of advertising text from brand examples and evaluates similarity and memorization. Those diagnostics concern the generated content. Incremental sales or engagement requires an outcome comparison under an appropriate exposure design, such as a randomized test of the generated and existing alternatives. The Gemini and Google Cloud marketing notebooks in the resource collection supply further examples of generation and structured extraction; model credentials, costs, and data permissions are separate requirements for executing those reference notebooks.
+
+Synthetic consumer panels raise a related distinction. The [semantic-similarity-rating package](https://github.com/pymc-labs/semantic-similarity-rating) maps generated text to distributions over response anchors. The mapping can standardize how generated answers are summarized. Validation against a target population still requires human outcomes, a sampling definition, and comparisons held out from prompt or anchor selection. Generating more answers under the same misspecified prompt reduces simulation noise around that prompt's distribution while preserving its systematic difference from consumers. Agreement among generated respondents is therefore a property to examine alongside external validity.
+
+A useful AI coding request is: “Compare every numerical field with its computed evidence; reject unknown metrics, periods, units, and denominators; retain the analysis's descriptive interpretation; and test a correctly formatted false claim.” The checking rule should be written before inspecting a favored generated answer. Report the factual error rate and the time spent checking, alongside any reduction in drafting time.
+
+Python source: [claim_checks.py](../../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py). From its directory, run `python claim_checks.py`.
+
+```python
+"""Check constructed structured claims against computed mHealth evidence."""
+
+import json
+import math
+from copy import deepcopy
+from common import load_food, save_result
+from reporting import monthly_review
+
+
+def check_claim(claim, evidence):
+    required = {"metric", "period", "value", "unit", "denominator", "interpretation"}
+    if not isinstance(claim, dict) or set(claim) != required:
+        return ["schema"]
+    rows = [row for row in evidence["periods"] if row["period"] == claim["period"]]
+    if len(rows) != 1 or claim["metric"] != evidence["metric"]:
+        return ["unknown metric or period"]
+    row = rows[0]
+    errors = []
+    if type(claim["value"]) not in (int, float) or not math.isfinite(claim["value"]):
+        errors.append("numeric value")
+    elif not math.isclose(
+        claim["value"], row["logging_fraction"], rel_tol=0, abs_tol=1e-10
+    ):
+        errors.append("value disagrees with evidence")
+    if (
+        type(claim["denominator"]) is not int
+        or claim["denominator"] != row["calendar_user_days"]
+    ):
+        errors.append("denominator")
+    if claim["unit"] != evidence["unit"]:
+        errors.append("unit")
+    if claim["interpretation"] != evidence["interpretation"]:
+        errors.append("unsupported interpretation")
+    return errors
+
+
+if __name__ == "__main__":
+    evidence = monthly_review(load_food())
+    june = evidence["periods"][1]
+    valid = {
+        "metric": "logging_fraction",
+        "period": "2016-06",
+        "value": june["logging_fraction"],
+        "unit": evidence["unit"],
+        "denominator": june["calendar_user_days"],
+        "interpretation": "descriptive",
+    }
+    candidates = {"supported": valid}
+    changes = {
+        "wrong_number": ("value", valid["value"] + 0.1),
+        "wrong_denominator": ("denominator", june["users_with_logs"]),
+        "causal_claim": ("interpretation", "causal health benefit"),
+    }
+    for name, (field, value) in changes.items():
+        candidates[name] = deepcopy(valid)
+        candidates[name][field] = value
+    result = {
+        "candidate_origin": "constructed teaching examples; no LLM request",
+        "checks": {
+            name: check_claim(claim, evidence) for name, claim in candidates.items()
+        },
+    }
+    assert result["checks"]["supported"] == []
+    assert all(result["checks"][name] for name in changes)
+    save_result("claim_checks", result)
+    print(json.dumps(result, indent=2))
+```

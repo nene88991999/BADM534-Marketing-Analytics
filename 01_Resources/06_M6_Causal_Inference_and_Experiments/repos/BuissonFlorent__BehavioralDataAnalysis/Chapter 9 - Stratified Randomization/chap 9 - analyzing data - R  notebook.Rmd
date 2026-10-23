@@ -1,0 +1,277 @@
+---
+title: "Chapter 9: Stratified Randomization"
+output: html_notebook
+---
+
+This is the [R Markdown](http://rmarkdown.rstudio.com) Notebook for chapter 9.
+
+```{r}
+# Common libraries
+suppressMessages(suppressWarnings(library(tidyverse)))
+library(BehavioralDataAnalysis)
+library(rstudioapi) #To load data from local folder
+library(ggpubr) #To generate multi-plots
+
+# Chapter-specific libraries
+library(caret) # For one-hot encoding function dummyVars()
+library(scales) # For function rescale()
+
+# Libraries for high-performance Bootstrap
+library(Rfast)
+library(doParallel)
+
+### Setting the working directory to the parent folder of this script (Rstudio only)
+sourceDir <- rstudioapi::getActiveDocumentContext()$path %>% str_extract("^.+/")
+setwd(sourceDir)
+
+set.seed(1234)
+options(scipen=10)
+```
+
+```{r}
+hist_data <- read_csv("chap9-historical_data.csv", show_col_types = FALSE)
+exp_data <- read_csv("chap9-experimental_data.csv", show_col_types = FALSE)
+
+#Restating tier as a factor variable
+hist_data <- hist_data %>%
+  mutate(tier = factor(tier, levels = c(3,2,1))) %>%
+mutate(ID = as.character(ID))
+exp_data <- exp_data %>%
+  mutate(tier = factor(tier, levels = c(3,2,1))) %>%
+  mutate(grp = factor(grp, levels = c("ctrl", "treat1", "treat2"))) %>%
+  mutate(ID = as.character(ID))
+```
+
+# Determining random assignment and sample size/power
+
+## Standard randomization
+```{r}
+# Function for assignment completely at random with 3 experimental groups 
+no_strat_assgnt_fun <- function(dat, Nexp){
+  dat <- dat %>%
+    distinct(ID) %>%
+    slice_sample(n=Nexp)
+  grp_vec <- c("ctrl", "treat1", "treat2") %>% rep(Nexp/3) %>% sample()
+  dat <- dat %>%
+    mutate(grp = grp_vec) %>%
+    mutate(grp = factor(grp))
+  return(dat)
+}
+no_strat_assgnt_data <- no_strat_assgnt_fun(hist_data, Nexp = 999)
+```
+
+```{r}
+# Extension of the previous function for any number K
+no_strat_assgnt_K_fun <- function(dat, Nexp, K){
+  dat <- dat %>%
+    distinct(ID) %>%
+    slice_sample(n=Nexp)
+  grp_vec <- seq(K) %>% rep(Nexp/K) %>% sample()
+  dat <- dat %>%
+    mutate(grp = grp_vec) %>%
+    mutate(grp = factor(grp))
+  return(dat)
+}
+no_strat_assgnt_data <- no_strat_assgnt_K_fun(hist_data, Nexp = 2000, K = 4)
+```
+
+
+
+
+
+## Stratified randomization
+
+```{r}
+# Aggregating data to property level
+property_data <- hist_data %>%
+  # We group by all the variables that are already constant
+  group_by(ID, tier, sq_ft, avg_review) %>%
+  # And summarize the others by taking the average value
+  summarize(BPday = mean(BPday)) %>%
+  ungroup()
+  
+head(property_data,5)
+```
+```{r}
+stratified_data <- paired_assign(property_data, id = "ID", n.groups = 3)
+stratified_data <- stratified_data %>%
+  mutate(grp = factor(grp)) %>%
+  mutate(grp = fct_recode(grp, ctrl = "0", treat1 = "1", treat2 = "2"))
+head(stratified_data)
+```
+
+## Power analysis with Bootstrap simulations
+
+```{r}
+# Metric function for free cleaning (treatment 1)
+treat1_metric_fun <- function(dat){
+  lin_model <- lm(BPday~sq_ft+tier+avg_review+grp, data = dat)
+  summ <- summary(lin_model)
+  coeff <- summ$coefficients['grptreat1', 'Estimate']
+  return(coeff)
+}
+
+# Metric function for minimum booking duration (treatment 2)
+treat2_metric_fun <- function(dat){
+  lin_model <- lm(BPday~sq_ft+tier+avg_review+grp, data = dat)
+  summ <- summary(lin_model)
+  coeff <- summ$coefficients['grptreat2', 'Estimate']
+  return(coeff)}
+
+set.seed(1)
+treat2_metric_fun(stratified_data)
+
+```
+
+```{r}
+set.seed(1)
+boot_ci(stratified_data, treat2_metric_fun)
+```
+
+
+```{r}
+# decision function
+decision_fun <- function(dat, metric_fun, B = 100, conf.level = 0.9){
+  boot_ci_values <- boot_ci(dat, metric_fun, B = B, conf.level = conf.level)
+  decision <- ifelse(boot_ci_values[1]>0,1,0)
+  return(decision)
+}
+set.seed
+decision_fun(stratified_data, treat2_metric_fun)
+```
+
+```{r}
+single_sim_fun <- function(dat, metric_fun, Nexp, eff_size, B = 100, 
+                           conf.level = 0.9){
+  #Filter the data down to a random month
+  per <- sample(1:35, size=1)
+  sample_month_dat <- dat %>%
+    filter(period == per)
+  
+  # Prepare the stratified assignment for a random sample of desired size,
+  # from the property-level data
+  stratified_assgnt <- property_data %>%
+    # Reducing the sample size if appropriate
+    slice_sample(n=Nexp) %>%
+    #Stratified assignment
+    paired_assign(id = "ID", n.groups = 3) %>%
+    mutate(grp = factor(grp)) %>%
+    mutate(grp = fct_recode(grp, ctrl = "0", treat1 = "1", treat2 = "2")) %>%
+    #extract the ID and group assignment
+    select(ID, grp)
+  
+  sim_dat <- sample_month_dat %>%
+    #Apply assignment to full data
+    inner_join(stratified_assgnt, by="ID") %>%
+    #Add target effect size
+    mutate(BPday = ifelse(grp == 'treat2', BPday + eff_size, BPday))
+  
+  #Calculate the decision (we want it to be 1 for a positive effect size)
+  decision <- decision_fun(sim_dat, metric_fun, B = B, conf.level = conf.level)
+  return(decision)
+}
+sim_decision <- single_sim_fun(hist_data, treat2_metric_fun, Nexp=999, eff_size=2)
+```
+
+
+```{r}
+#Standard function for simulations at scale
+power_sim_fun <- function(dat, metric_fun, Nexp, eff_size, Nsim, B = 100, 
+                          conf.level = 0.9){
+  power_list <- vector(mode = "list", length = Nsim)
+  for(i in 1:Nsim){
+    power_list[[i]] <- single_sim_fun(dat, metric_fun, Nexp, eff_size, B = B, 
+                                      conf.level = conf.level)
+  }
+  power <- mean(unlist(power_list))
+  return(power)
+}
+set.seed(1)
+power_sim_fun(hist_data, treat2_metric_fun, Nexp = 5000, eff_size = 2, 
+              Nsim = 100, B = 100, conf.level = 0.9)
+```
+```{r}
+# Visualizing the power simulation results for a confidence level of 0.90
+
+# Loading the results of the simulations I have run
+pow_sim_res <- read_csv("pow_sim_res.csv")
+
+viz_fun9.3 <- function(){
+  ggplot(pow_sim_res, aes(x = sample_size, y = power)) + 
+    scale_x_continuous(limits = c(0, 6000), breaks=seq(0,6000,500)) + 
+    scale_y_continuous(limits = c(0, 1), breaks=seq(0,1,0.1)) +
+    geom_hline(yintercept = 0.9, col = 'red') +
+    xlab("sample size") + ylab("power") + labs(size = "number of\nsimulations") +
+    geom_point(aes(size=Nsim), alpha = 0.5) + 
+    geom_label(aes(label=sim.id), nudge_x = 100, nudge_y = -0.05) +
+    theme_classic()
+}
+viz_fun9.3()
+```
+
+```{r}
+### Visualizing the power curve for various effect sizes at a sample size of 1500 and a confidence level of 0.90
+# Loading the results of the simulations I have run
+es_sim_res <- read_csv("es_sim_res.csv")
+
+viz_fun9.4 <- function(es_sim_res){
+  ggplot(es_sim_res, aes(x = ES, y = power90)) + geom_point() +
+    geom_line(data=(es_sim_res %>% filter(ES != 0)), aes(x = ES, y = power90), inherit.aes = FALSE) + 
+    geom_hline(yintercept = 0.9, col = 'red') +
+    xlab("effect size") + ylab("power") +
+    geom_label(x=0.1, y=0.055, label="significance") + theme_classic()
+}
+viz_fun9.4(es_sim_res)
+```
+
+```{r}
+### Figure 9-5. Comparison of power curves for confidence levels 0.90 (solid line),  0.80 (dashed line) and 0.60 (dotted line)
+viz_fun9.5 <- function(es_sim_res){
+  ggplot(es_sim_res, aes(x = ES, y = power90)) + geom_point() +
+    geom_line(aes(x = ES, y = power90), inherit.aes = FALSE) + 
+    geom_hline(yintercept = 0.9, col = 'red') +
+    xlab("effect size") + ylab("power") +
+    #Values for confidence level 0.80
+    geom_point(aes(x = ES, y = power80)) +
+    geom_line(aes(x = ES, y = power80), inherit.aes = FALSE,
+              linetype = 'longdash') +
+    #Values for confidence level 0.60
+    geom_point(aes(x = ES, y = power60)) +
+    geom_line(aes(x = ES, y = power60), inherit.aes = FALSE,
+              linetype = 'dashed') +
+    #Values for confidence level 0.40
+    geom_point(aes(x = ES, y = power40)) +
+    geom_line(aes(x = ES, y = power40), inherit.aes = FALSE,
+              linetype = 'dotted') +
+    geom_label(x=0.1, y=0.2, label="significance") +
+    theme_classic()
+}
+viz_fun9.5(es_sim_res)
+```
+
+# Analyzing and interpreting experimental results
+
+## Intention-To-Treat estimate for encouragement intervention
+
+```{r}
+#Linear regression
+exp_data_reg <- exp_data %>%
+  mutate(BPday = BPday - ifelse(grp=="treat2" & compliant, 10,0))
+lin_model <- lm(BPday~sq_ft+tier+avg_review+grp, data = exp_data_reg)
+summary(lin_model)
+boot_ci(exp_data_reg, treat1_metric_fun)
+boot_ci(exp_data_reg, treat2_metric_fun)
+```
+
+## Complier Average Causal Estimate (CACE) for mandatory intervention
+
+```{r}
+#Calculating the CACE
+exp_data_reg %>%
+  group_by(grp) %>%
+  summarise(compliance_rate = mean(compliant))
+
+exp_data_reg %>%
+  group_by(grp, compliant) %>%
+  summarise(coeff = mean(BPday))
+```

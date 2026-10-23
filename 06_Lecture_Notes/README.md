@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 32 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -26,6 +26,10 @@ The [Lecture Examples](../03_Data_and_Code/Lecture_Examples/README.md) folder co
 The synthetic examples verify arithmetic and model implications under stated assumptions. Each module includes its executable Python calculation. The [recurring mHealth examples](../03_Data_and_Code/mHealth/recurring_examples/README.md) use actual released records for audits, measurement, regression, segmentation, text prediction, experiment planning, basket prediction, and ranking objectives. Their full source appears directly in the notes, with matching scripts, dependencies, aggregate results, and verification checks.
 
 M1 teaches structural checks, join coverage, repeated totals, and review flags. M2 adds nutrition-informed sample definitions and alternative screens, using the [nutrition methods collection](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md). The individualized Goldberg calculation is an explicitly hypothetical scenario because validated physiological inputs are absent from the logs. M3 compares an association before and after an imposed calorie-range restriction.
+
+## Resources and Additional Worked Cases
+
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 130 pages.
 
 ## Editing and Building
 

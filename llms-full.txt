@@ -48,7 +48,8 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/mHealth/DATA_DICTIONARY.md",
     "03_Data_and_Code/mHealth/AGENTS.md",
     "03_Data_and_Code/mHealth/recurring_examples/README.md",
-    "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md"
+    "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
+    "06_Lecture_Notes/RESOURCE_INTEGRATION.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -93,9 +94,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-10-23-mhealth-recurring-cases",
+    "revision": "2026-10-23-python-resource-integration",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
-    "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md"
+    "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
+    "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
+    "figures_count": 38,
+    "pages": 130
   },
   "datasets": [
     {
@@ -125,7 +129,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 32 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 38 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
 ## Course Folders
@@ -246,7 +250,7 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 32 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 38 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -276,6 +280,10 @@ See [course.json](course.json) for pointers to released documents and [02_Syllab
 | M8 | A fixed novelty-bonus comparison and the distinction between offline scores and intervention value. |
 
 Full code is printed in the [notes](06_Lecture_Notes/README.md) and saved with [verified outputs](03_Data_and_Code/mHealth/recurring_examples/README.md). [Nutrition resources](01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md) support the measurement and filtering discussion.
+
+## Additional Resource Applications
+
+The [resource integration map](06_Lecture_Notes/RESOURCE_INTEGRATION.md) connects all eight modules to executed extensions: fixed-cohort reviews, recency/frequency, price instruments, logging-gap survival, topic models, CUPED, basket associations, and generated-claim validation. It also identifies reference notebooks available for further adaptation and their execution status.
 
 ---
 
@@ -375,6 +383,8 @@ The [labs folder](../07_Labs/README.md) contains the structure for complete guid
 
 The [eight-module examples](mHealth/recurring_examples/README.md) include complete Python, aggregate outputs, a data-quality audit, nutrition-screening sensitivity, and meaningful counterexample checks. The same code is embedded in the lecture notes.
 
+Additional executed examples cover fixed-cohort reporting, recency/frequency, logging-gap survival, text topics, CUPED, basket associations, and checks on generated numerical claims. A separate synthetic price-instrument simulation illustrates endogeneity and exclusion. See the [resource-to-example map](../06_Lecture_Notes/RESOURCE_INTEGRATION.md) for source attribution, module sections, and the distinction between executed course code and downloaded reference notebooks.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -383,7 +393,7 @@ The [eight-module examples](mHealth/recurring_examples/README.md) include comple
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 32 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -407,6 +417,10 @@ The [Lecture Examples](../03_Data_and_Code/Lecture_Examples/README.md) folder co
 The synthetic examples verify arithmetic and model implications under stated assumptions. Each module includes its executable Python calculation. The [recurring mHealth examples](../03_Data_and_Code/mHealth/recurring_examples/README.md) use actual released records for audits, measurement, regression, segmentation, text prediction, experiment planning, basket prediction, and ranking objectives. Their full source appears directly in the notes, with matching scripts, dependencies, aggregate results, and verification checks.
 
 M1 teaches structural checks, join coverage, repeated totals, and review flags. M2 adds nutrition-informed sample definitions and alternative screens, using the [nutrition methods collection](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md). The individualized Goldberg calculation is an explicitly hypothetical scenario because validated physiological inputs are absent from the logs. M3 compares an association before and after an imposed calorie-range restriction.
+
+## Resources and Additional Worked Cases
+
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 130 pages.
 
 ## Editing and Building
 
@@ -475,6 +489,8 @@ No file uses a missing-value code. Counts are nonnegative integers; probabilitie
 | [M08_recommendation_synthetic.csv](M08_recommendation_synthetic.csv) | Candidate item | `item`: identifier; `category`: nominal label; `relevance_score`: unitless score | Scores are not probabilities; enumerate three-item lists and a category-variety bonus |
 
 ## Additional Calculations
+
+[price_iv.py](price_iv.py) generates 2,000 synthetic independent markets to compare OLS, a valid cost instrument, and an instrument with a direct demand effect. It requires NumPy 2.1.3, available in the [mHealth example environment](../mHealth/recurring_examples/requirements.txt). Run `python 03_Data_and_Code/Lecture_Examples/price_iv.py` from the repository root. Its executed output is [price_iv_results.json](price_iv_results.json), and its complete source appears in M3, Section 3.12. The simulation imposes a true elasticity of -1.5 and is not an estimate from mHealth or a solved pricing equilibrium. An independent noiseless slope check is included in `../mHealth/recurring_examples/test_extension_logic.py`.
 
 The JSON report also contains renewal incremental contribution (M1), basket Jaccard similarity (M2), an OLS confidence interval (M3), logit shares and acquisition-adjusted CLV (M4), prevalence-dependent precision (M5), email-effect uncertainty and power (M6), a classification threshold and coupon value (M7), and recommendation objectives, carryover, media optimization, and total workflow time (M8).
 
@@ -725,8 +741,18 @@ The complete release files are stored in `../data/`, outside Git, and distribute
 | `ranking.py`, `m07.py` | Tune history length in July and evaluate popularity and personal category frequencies in September. |
 | `m08.py` | Compare a fixed novelty-bonus grid on the same held-out baskets. |
 | `test_logic.py` | Check repeated totals, invalid shares, calendar gaps, duplicate joins, future-information exclusion, and Black's published Table 8 bounds. |
+| `reporting.py` | M1, Section 1.10: fixed-cohort monthly business review with source checksum, units, and explicit denominators. |
+| `recency.py` | M2, Section 2.13: June 30 recency/frequency snapshot and July logging, including zero-log users. |
+| `logging_gaps.py` | M4, Section 4.13: first confirmed 14- or 28-day logging gap, risk sets, and administrative censoring. |
+| `topics.py` | M5, Section 5.12: training-period TF-IDF/NMF, future descriptions, and distinct-description versus entry-weighted topic shares. |
+| `cuped.py` | M6, Section 6.15: prior-period adjustment with a coefficient frozen before the outcome window; power and sharp-null simulation. |
+| `association_rules.py` | M7, Section 7.17: training-selected category association, future support/confidence/lift, and a user bootstrap. |
+| `claim_checks.py` | M8, Section 8.11: constructed structured claims checked against computed evidence; no LLM requests. |
+| `test_extension_logic.py` | Seven small-data checks for counting units, future exclusion, censoring ties, gap confirmation, adjustment variance, numerical claims, and an IV slope. |
 
 Each module writes `results/M0n.json`. M2 and M4 also write compact aggregate CSV tables. `results/environment.json` records actual software versions. These outputs were generated by execution, not entered by hand. Small floating-point differences across environments are possible, and clustering labels are ordered by prior logging frequency.
+
+The seven additional programs write correspondingly named JSON results. Recency and gap curves also have aggregate CSV companions. They run after M1–M8 in `run_all.py`, with no additional dependencies. Each can also run on its own after downloading the release. Their full source is embedded in the notes. The separately labeled [price-instrument simulation](../../Lecture_Examples/price_iv.py) uses synthetic data and runs with `python 03_Data_and_Code/Lecture_Examples/price_iv.py` from the repository root. [Resource integration](../../../06_Lecture_Notes/RESOURCE_INTEGRATION.md) records source references and execution status.
 
 ## Interpretation and Verification
 
@@ -737,6 +763,12 @@ Each module writes `results/M0n.json`. M2 and M4 also write compact aggregate CS
 - The full-period descriptive cohort and its observed-day summaries are not prospective enrollment samples. M4, M6, and M7 separately enforce earlier-period eligibility and feature windows.
 - M3 estimates associations, M5 and M7 evaluate prediction, M6 imposes a zero-effect randomization simulation, and M8 changes a ranking objective. None estimates a causal health benefit from these records.
 - Source food categories are not validated nutrition-quality labels. No raw identifiers, birthdays, private transformation keys, or individual prediction exports are added to these results.
+- Recency is measured at a fixed date; logging frequency counts distinct days. No monetary-value variable is inferred from calories or activity.
+- A confirmed logging gap is an event defined by its duration threshold. Administrative censoring is separate from an event, and the survival comparison conditions on July return.
+- Topic loadings are put on a common component-vector scale before comparison. Dominant components are text patterns; July proportions report their observation units and unassigned texts.
+- The CUPED coefficient is learned from March–April, uses May activity as the baseline, and is evaluated on June outcomes. Randomized assignments are imposed under a zero-effect null. The coefficient's transfer gain is measured rather than assumed.
+- Basket associations use distinct categories per day, select candidates and a pair before July, and resample users for later-period uncertainty. Their lift does not estimate a recommendation effect.
+- The claim checker validates declared fields against numerical evidence. It is not a general semantic or factual validator for unrestricted prose.
 
 [Original nutrition sources](../../../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md) support the measurement distinctions and screening discussion. Matching Python source blocks in the Markdown notes can be checked with `python scripts/check_lecture_code.py`.
 
@@ -786,6 +818,57 @@ The Goldberg calculation is explicitly hypothetical. The records lack validated 
 ## Source Rights and Extraction
 
 NCI text is used with attribution under its [reuse policy](https://www.cancer.gov/policies/copyright-reuse), and CDC text under its [agency-materials policy](https://www.cdc.gov/other/agencymaterials.html). External works retain their own rights. HTML snapshots retain the source content; text companions omit figures, layout, and interactive elements. Links to live sources provide updates. No agency endorsement is implied.
+
+---
+
+## Source: 06_Lecture_Notes/RESOURCE_INTEGRATION.md
+
+# Resources Integrated Into Lecture Notes
+
+The October 23 additions contain 77 source entries across `PY_BOOKS_COURSES.yaml` and `PY_METHODS_INDUSTRY.yaml`. These entries overlap with each other and the existing collection. After catalog reconciliation, the additional catalog grows from 546 to 613 entries. The 35 new local repository snapshots occupy approximately 221 MB before Git compression. These counts describe different objects and must not be added together.
+
+The review used the catalog metadata and repository indexes to select relevant material, then inspected the specific source files listed in the [review record](../01_Resources/00_Index/python_resource_review_2026-10-23.json). It does not represent a line-by-line review of every downloaded file. Original snapshot commits, licenses, and source links remain in each `SOURCE.md`. Downloaded notebooks were not executed. The eight course programs below were written for the lecture examples and executed locally; they do not import downloaded repository code or call external AI services.
+
+## Integrated Cases
+
+Resource IDs in this table use the **additional** catalog namespace, including source aliases recorded in the YAML and `local_copies.json`. Search the catalog by title or URL when a duplicate has been merged into another ID.
+
+| Notes | Case | Source IDs | Executed Program | Integration |
+| --- | --- | --- | --- | --- |
+| M1, 1.10 | Fixed-Cohort Business Review | claude-ecom-business-review-skill | [reporting.py](../03_Data_and_Code/mHealth/recurring_examples/reporting.py) | 340 eligible users; May/June denominators; source checksum and counting identity. |
+| M2, 2.13 | Recency and Frequency | correia-rfm-analysis | [recency.py](../03_Data_and_Code/mHealth/recurring_examples/recency.py) | June snapshot and July logging; zero-log users retained; no invented monetary variable. |
+| M3, 3.12 | Price Endogeneity and Instruments | pyblp-tutorials | [price_iv.py](../03_Data_and_Code/Lecture_Examples/price_iv.py) | Synthetic markets; OLS, valid IV, and a direct-effect violation; robust uncertainty. |
+| M4, 4.13 | Logging-Gap Survival | lifelines-churn-notebooks | [logging_gaps.py](../03_Data_and_Code/mHealth/recurring_examples/logging_gaps.py) | Confirmed gap timing, administrative censoring, explicit risk sets, 14/28-day sensitivity. |
+| M5, 5.12 | Topic Models and Measurement | blueprints-text-analytics; bertopic-docs-llm-representations | [topics.py](../03_Data_and_Code/mHealth/recurring_examples/topics.py) | Frozen TF-IDF/NMF; component scaling; future vocabulary coverage; two weighting schemes. |
+| M6, 6.15 | CUPED and Precision | feedx-shopping-feed-experiments | [cuped.py](../03_Data_and_Code/mHealth/recurring_examples/cuped.py) | Prior-period coefficient; historical variance; sharp-null simulation and an analytical variance check. |
+| M7, 7.17 | Basket Associations | mlxtend-frequent-patterns | [association_rules.py](../03_Data_and_Code/mHealth/recurring_examples/association_rules.py) | Support, confidence, lift, training-only selection, future baskets, user bootstrap. |
+| M8, 8.11 | Evidence Checks for Generated Claims | copycat-ad-copy-generation; pymc-labs-semantic-similarity-rating; claude-ecom-business-review-skill | [claim_checks.py](../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py) | Constructed false claims; numerical and interpretation checks; synthetic-consumer validity discussion. |
+
+The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 38 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
+
+## Other Uses of the Added Resources
+
+| Resource Group | Course Use | Execution Status and Conditions |
+| --- | --- | --- |
+| Packt marketing books, Dong's textbook notebooks, Takeda's practitioner code, TensorHouse | Alternate examples across M1–M8; compare data definitions, estimands, and output units with the verified course cases. | Reference material. Package versions, chapter-specific data rights, and saved output need checking before adaptation. Public solutions should not be reused as undisclosed graded assessments. |
+| pandas exercises and ecommerce tools | M1–M2 practice with filtering, aggregation, joins, and customer tables. | Reference material. The fixed-cohort course example supplies an executed baseline. |
+| pyrsm conjoint and choice notebooks | M4 preference elicitation, willingness to pay, and choice-task construction; distinguish respondent/task IDs from a task number reused by different respondents. | Selected notebooks inspected, not executed. Preserve AGPL terms when adapting source. |
+| AI-Assisted Statistics, Behavioral Data Analysis, Bayesian decision notebooks | M3/M6 inference, clustered assignment, bootstrap logic, and expected-loss decisions. | Reference material; the course IV simulation and CUPED comparison use their own stated data-generating or assignment assumptions. |
+| FeedX, Spotify Confidence, Meridian GeoX, Orduz's experiment examples | M6 experiment units, prior-period adjustment, monitoring, geo experiments, and power. | FeedX adjustment source inspected; other reference workflows not executed. Sequential monitoring and geography require design-specific validation. |
+| Robyn, media-mix notebooks, attribution packages, Awesome Marketing Science | M8 allocation, carryover, saturation, calibration, and the distinction between attribution and incrementality. | Reference material. Dataset-specific identification and calibration evidence remain necessary. |
+| Crystalvalue, lifetime-value and churn examples | M4/M7 forecasting retention and commercial value with documented timing and costs. | Reference material. mHealth logging gaps have no observed subscription-cancellation or monetary-value outcome. |
+| implicit and Surprise | M7 contrast implicit occurrences with explicit ratings; retain the course's chronological and candidate-set evaluation. | Reference material; no fitted collaborative-filtering model is claimed. |
+| Text blueprints, BERTopic, embeddings cookbooks | M5 representation, topic descriptions, label evaluation, and future-text coverage. | Local NMF course program executed; downloaded embedding/LLM notebooks not executed. |
+| Copycat, Gemini and Google Cloud marketing notebooks, semantic-similarity rating | M8 generated copy, structured extraction, synthetic respondents, and validation against consumer outcomes. | Selected documentation inspected; no model credentials, cloud deployment, external calls, or consumer-panel validation performed. |
+| Linked courses, paid workshops, gated books, and datasets requiring registration | Instructor references and routes to further reading. | Link-only or reference resources; catalog access labels do not imply enrollment, purchases, or course execution. |
+
+## Replication and Publication
+
+Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 29 embedded source blocks against their matching files.
+
+The mHealth programs use the existing 370-user teaching cohort and impose case-specific eligibility rules before reporting results. Their outputs are aggregate. The price simulation is explicitly synthetic. Schema-valid false claims are constructed teaching examples, not measured errors from an LLM. Historical variance reduction is a planning comparison, and basket lift is a descriptive association.
+
+Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permits Python and notebook reuse; its separate `LICENSE` reserves rights to non-code content. The public mirror includes the licensed source and license/provenance files. Other downloaded prose, data, configuration, and HTML remain in Dropbox through `.gitignore`, with upstream links. The source review record distinguishes downloaded snapshots from course-tested programs.
 
 ---
 
@@ -3097,7 +3180,7 @@ Rights or Access: Citation and original summary only; full-text redistribution r
 
 Source: 01_Resources/00_Index/resource_catalog.json
 
-546 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
+613 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
 
 ---
 
@@ -5813,7 +5896,7 @@ Rights or Access: free-registration
 
 Source URL: https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset
 
-Modules: M2, M6, M7
+Modules: DATASETS, M2, M6, M7
 
 Priority: core
 
@@ -6171,7 +6254,7 @@ Rights or Access: library
 
 Source URL: https://github.com/facebookexperimental/Robyn
 
-Modules: M6, M8
+Modules: AI, M6, M8
 
 Priority: recommended
 
@@ -11736,6 +11819,1212 @@ Teaching Suggestion: Optional instructor-authored background; individual chapter
 Cautions: Also on the MBA 542 Module 1 reading list.
 
 Rights or Access: paid
+
+---
+
+### additional:packt-data-analytics-for-marketing-2024 | Data Analytics for Marketing: A practical guide to analyzing marketing data using Python (companion code)
+
+Source URL: https://github.com/PacktPublishing/Data-Analytics-for-Marketing
+
+Modules: M1, M2, M3, M4, M6, M8
+
+Priority: core
+
+Focus: Notebooks for a 2024 Packt book: data extraction and EDA with pandas, Streamlit presentation (ch3), econometrics and causal inference with statsmodels/PyMC (ch4), forecasting, segmentation and RFM (ch7), CLV with PyMC-Marketing (ch8), survey analysis (ch9), conjoint with statsmodels (ch10), multi-touch attribution (ch11), MMM (ch12) and Bayesian experiments (ch13).
+
+Teaching Suggestion: Closest single match to the M1–M4 module spine; embed the ch7 RFM, ch8 CLV and ch10 conjoint notebooks as in-class coding activities.
+
+Cautions: No Chapter01 folder. Chapter11 (attribution) is left out because its 'attribution data markov chain.csv' is 44 MB; add it only if needed. The README pins PyMC-Marketing 0.3.1 and PyMC 5.11; PyMC-Marketing's CLV/MMM API has changed a lot since then, so expect to update the ch8 and ch12 calls (a good AI-assisted debugging exercise). The author also runs a paid 'MMM with Claude Code' workshop (see maven-mmm-with-claude-code).
+
+Rights or Access: open
+
+---
+
+### additional:takeda-marketing-science-in-python | Marketing Science in Python: A Practitioner's Guide (companion code)
+
+Source URL: https://github.com/takechanman1228/marketing-science-in-python
+
+Modules: M3, M4, M6, M8
+
+Priority: core
+
+Focus: 14 recent notebooks: A/B tests, quasi-experiments, CausalImpact, meta-learners and uplift (Part 3); traditional and embedding-based segmentation plus CLV with PyMC-Marketing (Part 4); price elasticity, assortment optimization and forecasting (Part 5); Meridian MMM and geo experiments (Part 6). Includes small synthetic datasets and Colab badges.
+
+Teaching Suggestion: Use sec5.1_price_elasticity for M3, sec4.1 and sec4.2 (segmentation, CLV) for M4, and the Part 3 notebooks for M6. All are current-API examples worth embedding.
+
+Cautions: Public course mirror retains explicitly licensed Python and notebooks; other downloaded prose, data, figures, and configuration remain Dropbox-only. LICENSE-CODE explicitly covers notebooks. Do not copy the book manuscript, which lives elsewhere. Larger public datasets (Dunnhumby, Online Retail II, MineThatData) are not redistributed; data/raw/README.md explains how to get them. ai_angle refers to the embedding-based ('semantic') segmentation notebook. The author gave related PyData NYC 2023, PyData London 2024 and SciPy 2024 talks.
+
+Rights or Access: open
+
+---
+
+### additional:dong-2026-marketing-analytics-data-science | Marketing Analytics and Data Science: Tools and Models (supplementary code)
+
+Source URL: https://link.springer.com/book/9783032111296
+
+Modules: M1, M4, M6, M7, M8, AI
+
+Priority: recommended
+
+Focus: Chapter notebooks and CSVs from a 2026 textbook by a marketing professor: coding basics, data sources, MMM, segmentation (with a 2 MB customer-purchase dataset), two targeting chapters (bank marketing), forecasting, Bayes, Thompson sampling, causal inference, and an AI chapter with a Gemini example notebook. Several chapters include homework solution notebooks.
+
+Teaching Suggestion: Ready-made homework sets with solutions. The ch5 segmentation and ch4 MMM notebooks fit M4/M8, and the Gemini notebook is an AI-assisted example.
+
+Cautions: Small and new (4 stars, pushed 2026-02). Folder names contain spaces (e.g., 'Chapter 05 - Segmentation'). The book is likely available through SpringerLink at UIUC. Homework solutions are public, so don't reuse them verbatim as graded work.
+
+Rights or Access: library
+
+---
+
+### additional:pyrsm-examples-ucsd-rady | pyrsm example notebooks (Rady School of Management business-analytics toolkit)
+
+Source URL: https://github.com/radiant-ai-hub/pyrsm
+
+Modules: M3, M4, M6
+
+Priority: core
+
+Focus: Example notebooks for the pyrsm package used in UCSD Rady's MSBA, with classic marketing datasets: traditional and choice-based conjoint (carpet, mp3, movie, minivan), hierarchical and k-means clustering, MDS and attribute perceptual maps (toothpaste, city, retailers), MNL on ketchup choice data, logistic/linear regression, uplift, experimental design and sample-size tools.
+
+Teaching Suggestion: Best open source of M4 conjoint and perceptual-map exercises in Python. Assign multivariate-conjoint and multivariate-cbc, and use design-sample-size in M6.
+
+Cautions: PyPI lists vnijs/pyrsm as the source, but its README links examples to radiant-ai-hub/pyrsm (pushed 2026-10-20, 4 stars), which is the repo verified here. The whole examples/ folder is 58 MB; the list above skips examples/data/model/fraud_data.parquet (13.5 MB) and the large ML regression notebooks. AGPL is OSI-approved, so mirroring is fine, but derived code must stay AGPL. The repo has a .claude/skills/pyrsm-regress skill link and a regress-skill-test notebook, an early AI-assisted workflow. The Rady pyrsm/Radiant entry in DATASETS_TEXTBOOKS.yaml covers the package; this entry is the notebook download.
+
+Rights or Access: open
+
+---
+
+### additional:packt-data-science-for-marketing-analytics-2e | Data Science for Marketing Analytics, Second Edition (companion code)
+
+Source URL: https://github.com/PacktPublishing/Data-Science-for-Marketing-Analytics-Second-Edition
+
+Modules: M1, M2, M3, M4, M7
+
+Priority: recommended
+
+Focus: Exercise and activity notebooks for 9 chapters: data preparation and cleaning, EDA and visualization, unsupervised segmentation and choosing a segmentation approach, predicting customer revenue with linear regression, evaluating regression models, churn prediction, tuning classifiers and multiclass classification.
+
+Teaching Suggestion: Step-by-step exercise format suits in-class coding for non-CS students. Ch3–4 (segmentation) map to M4 and ch5–6 to M3.
+
+Cautions: Chapter05 (linear regression, the M3 chapter) is 70 MB because Datasets/ holds two identical 36 MB retail_transactions CSVs. Fetch only its notebooks and one copy of the CSV if needed. The Chapter08/09 sizes were not visible (tree listing truncated), so approx_mb is an estimate. The code dates from 2021 (pandas 1.x and older scikit-learn), so expect small API fixes. PacktPublishing/Data-Science-for-Marketing-Analytics and the '...Workshop' repo both redirect here.
+
+Rights or Access: open
+
+---
+
+### additional:packt-data-science-for-marketing-analytics-1e | Data Science for Marketing Analytics (first edition, companion code)
+
+Source URL: https://github.com/TrainingByPackt/Data-Science-for-Marketing-Analytics
+
+Modules: M1, M2, M3, M4, M7
+
+Priority: optional
+
+Focus: Nine lesson folders: pandas and Matplotlib data handling, hierarchical and k-means segmentation, predicting CLV with linear regression, regression evaluation, customer-choice classification, churn models and marketing dashboards.
+
+Teaching Suggestion: Backup exercise bank. The CLV-by-regression lesson contrasts usefully with probabilistic BTYD models in M4.
+
+Cautions: Last pushed 2019-05-27, so stale: expect pandas/scikit-learn deprecations. The git pack is 20 MB; working-tree size is estimated. Prefer the 2nd edition and keep this one only for extra exercises.
+
+Rights or Access: open
+
+---
+
+### additional:packt-ml-genai-for-marketing-2024 | Machine Learning and Generative AI for Marketing (companion code)
+
+Source URL: https://github.com/PacktPublishing/Machine-Learning-and-Generative-AI-for-Marketing
+
+Modules: M1, M2, M4, M5, M6, M7, M8, AI
+
+Priority: recommended
+
+Focus: One notebook per chapter: marketing KPIs, drivers of marketing success, seasonality, sentiment analysis, predictive analytics and A/B testing, recommendations, ML segmentation, then generative-AI chapters on zero-shot content creation, few-shot/transfer learning, RAG for micro-targeting, and AI ethics and governance. Colab/Kaggle links in the README.
+
+Teaching Suggestion: Bridge between classic marketing analytics and GenAI. Ch2 (KPIs) suits M1/M2, ch6 (A/B testing) M6, and ch9–11 the M8 current-topics week.
+
+Cautions: Full repo is 183 MB. Left out: ch.7 and ch.8 (recommendations, segmentation), each with a 44 MB data.csv (the same file), and ch.11 (RAG), with a 77 MB 2019-Dec.csv.zip. Pull one copy of ch.8 if the segmentation notebook is wanted. The README doesn't name the LLM libraries; the tools list is a guess from chapter titles, so check before relying on it. Last pushed 2024-09; GenAI API calls may have drifted.
+
+Rights or Access: open
+
+---
+
+### additional:katsov-tensor-house | TensorHouse: reference notebooks for marketing, promotions and pricing (successor to Introduction to Algorithmic Marketing examples)
+
+Source URL: https://github.com/ikatsov/tensor-house
+
+Modules: AI, M3, M4, M5, M6, M7, M8
+
+Priority: core
+
+Focus: Prototype notebooks from the author of Introduction to Algorithmic Marketing: RFM analysis, LTV via Markov chains and Bayesian BTYD, customer2vec/item2vec, propensity scoring, uplift and campaign-effect estimation, adstock and Bayesian MMM, multitouch attribution, market response functions, price optimization, dynamic pricing with Thompson sampling, and an LLM 'virtual focus groups' notebook.
+
+Teaching Suggestion: Instructor-level demos and stretch material. The RFM, market-response-function and Bayesian-MMM notebooks can be shown in class, and 'Virtual Focus Groups Using LLMs' fits M8.
+
+Cautions: ikatsov/algorithmic-examples (the book's original example repo) now redirects here. Last push 2024-01-24. Some deep-learning notebooks use older TensorFlow/Keras APIs. smart-manufacturing/ (41 MB) is skipped.
+
+Rights or Access: open
+
+---
+
+### additional:bruce-gedeck-ai-assisted-statistics-3e | AI-Assisted Statistics for Data Scientists: 50+ Essential Concepts Using R and Python, 3rd ed. (code)
+
+Source URL: https://github.com/gedeck/ai-assisted-statistics-for-data-scientists
+
+Modules: M3, M6, M7, AI
+
+Priority: recommended
+
+Focus: Python notebooks (ch01–ch10) for the 3rd edition of Practical Statistics for Data Scientists, now retitled for AI-assisted work. Ch3 covers statistical experiments and significance testing (A/B tests, permutation tests on web_page_data and four_sessions), ch4 regression, and ch10 generative AI and LLMs.
+
+Teaching Suggestion: Assign ch03 for the A/B-testing review in M6 and ch04 for the M3 regression refresher. Ch10 supports the course's AI-assisted coding theme.
+
+Cautions: Supersedes gedeck/practical-statistics-for-data-scientists (2nd ed., GPL-3.0, 3.4k stars), which the author says is no longer maintained. Skip code/data.zip (30 MB) and sp500_data.csv.gz (21 MB). The README does not describe the AI workflows in detail, so check ch10 before assigning it. The tree listing was truncated in docs/, which isn't downloaded.
+
+Rights or Access: open
+
+---
+
+### additional:dmba-machine-learning-for-business-analytics | dmba: utilities and datasets for Machine Learning (Data Mining) for Business Analytics, Python editions
+
+Source URL: https://github.com/gedeck/dmba
+
+Modules: M3, M4, M7
+
+Priority: optional
+
+Focus: pip-installable helper package (dmba) with the book's teaching datasets bundled as CSV/GZ: e.g., Universal Bank, Toyota Corolla, laptop sales, farm ads, AutoAndElectronics text. It also has plotting and model-evaluation helpers (lift/gains charts, regression summaries).
+
+Teaching Suggestion: Source of small, documented business datasets for M3/M7 exercises; dmba.liftChart and gainsChart help teach targeting.
+
+Cautions: Chapter notebooks are not in this repo (the README points to dataminingbook.com). The repo describes itself as for 'Data Mining for Business Analytics ... in Python'; the 2nd Python edition is titled 'Machine Learning for Business Analytics' (Wiley, May 2025, per the Wiley-VCH page). Last pushed 2024-04. Dataset licensing follows the repo's MIT license; original sources vary.
+
+Rights or Access: open
+
+---
+
+### additional:buisson-behavioral-data-analysis | Behavioral Data Analysis with R and Python (companion code)
+
+Source URL: https://github.com/BuissonFlorent/BehavioralDataAnalysis
+
+Modules: M6, M3
+
+Priority: recommended
+
+Focus: R and Python code for a customer-behavior analytics book: causal diagrams, missing data, bootstrap uncertainty, experimental design basics, stratified randomization, cluster randomization with hierarchical models, moderation, mediation and IV. Includes exercises with solutions.
+
+Teaching Suggestion: M6 lab material on designing (not just analyzing) marketing experiments; the stratified-randomization chapter is a good in-class exercise.
+
+Cautions: Reached via oreil.ly/BehavioralDataAnalysis, which redirects here. Folder names were read from the repo page; check exact spelling before a sparse checkout. The tree API call failed, so approx_mb is an estimate (the git pack is 55 MB). Last push 2023-07. The book's R package left CRAN; Python users are told to use this repo.
+
+Rights or Access: open
+
+---
+
+### additional:gold-fighting-churn-with-data | Fighting Churn with Data (companion code)
+
+Source URL: https://github.com/carl24k/fight-churn
+
+Modules: M2, M4, M7
+
+Priority: recommended
+
+Focus: Python package and listings for a book on subscription churn: defining churn and retention rates, behavioral metrics from event data, cohort comparisons, churn forecasting and segmentation by behavior. Includes ChurnSim, a simulator that generates realistic customer event data.
+
+Teaching Suggestion: Instructor background for retention-metric definitions in M2/M4. ChurnSim can generate a private dataset for the team project.
+
+Cautions: Needs PostgreSQL, which is heavier than Colab-only workflows. The newer crm5 simulation takes about an hour and produces about 30 GB in Postgres. Supports Python 3.9–3.12. Last push 2025-08.
+
+Rights or Access: open
+
+---
+
+### additional:downey-bayesian-decision-analysis-pymc-workshop | Bayesian Decision Analysis with PyMC: Beyond A/B Testing (PyData Global 2025 tutorial)
+
+Source URL: https://github.com/AllenDowney/BDAwithPyMC
+
+Modules: M6, AI
+
+Priority: recommended
+
+Focus: 90-minute workshop notebook with exercise and solution versions: beta-binomial A/B testing, probability of superiority instead of p-values, Bayesian bandits with an adaptive email-campaign simulation, and hierarchical partial pooling. Runs on Colab.
+
+Teaching Suggestion: Drop-in M6 lab: students fill in the exercise notebook, then compare with solutions; the email-campaign bandit is marketing-framed.
+
+Cautions: Pushed 2026-10-21. Requires Python 3.12+ and PyMC 5. The hierarchical example uses MLB batting data, not marketing data. The repo ships a CLAUDE.md, which shows how an author sets up an AI assistant on a teaching repo.
+
+Rights or Access: open
+
+---
+
+### additional:bayesian-methods-for-hackers-ch2-ab-testing | Probabilistic Programming and Bayesian Methods for Hackers, Chapter 2 (A/B testing)
+
+Source URL: https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
+
+Modules: M6
+
+Priority: optional
+
+Focus: Classic open book. Chapter 2 builds the Bayesian A/B test (and a two-site comparison) from scratch, with a notebook updated for current PyMC alongside PyMC2/PyMC3/TFP versions.
+
+Teaching Suggestion: Optional reading for students who want the Bayesian A/B test explained from first principles.
+
+Cautions: Use Ch2_MorePyMC_PyMC_current.ipynb; the PyMC2/PyMC3 versions are legacy. The full repo is about 170 MB, so keep the sparse path.
+
+Rights or Access: open
+
+---
+
+### additional:google-lifetime-value-ziln | lifetime_value: Customer LTV prediction with zero-inflated lognormal loss (notebooks)
+
+Source URL: https://github.com/google/lifetime_value
+
+Modules: M4, M7
+
+Priority: optional
+
+Focus: Package and notebooks implementing ZILN loss for customer LTV with Keras, plus normalized Gini and decile-chart evaluation, on the Kaggle Acquire Valued Shoppers and KDD Cup 98 data.
+
+Teaching Suggestion: Contrast with BTYD models in M4: an industry ML approach to CLV; the decile chart and Gini evaluation are reusable ideas.
+
+Cautions: Archived 2026-04-18 (read-only). The data-prep notebook downloads a 21 GB Kaggle file, which the download machine can't reach. The README says results are cached, but plan to substitute a smaller dataset.
+
+Rights or Access: open
+
+---
+
+### additional:ecommercetools-practical-data-science | EcommerceTools: data science toolkit for ecommerce and marketing science
+
+Source URL: https://github.com/practical-data-science/ecommercetools
+
+Modules: M1, M2, M4
+
+Priority: recommended
+
+Focus: pandas-based package with an Examples notebook: builds transaction and customer tables from the Online Retail data, cohort matrices and retention, purchase latency, ABC and RFM(H) segmentation, product repurchase rates, and BG/NBD + Gamma-Gamma CLV via lifetimes. Also has SEO and reporting helpers.
+
+Teaching Suggestion: M2 demo of one-line cohort and RFM tables. Have students rebuild ecommercetools' cohort matrix by hand in pandas (with AI help) and compare.
+
+Cautions: Last updated about Jan 2024 (topic page). The CLV functions depend on the archived lifetimes package, so swap in PyMC-Marketing for CLV. The NLP module downloads a large Hugging Face model. Repo size is estimated (API lookup failed).
+
+Rights or Access: open
+
+---
+
+### additional:correia-rfm-analysis | RFM-analysis: Python script and notebook for RFM segmentation
+
+Source URL: https://github.com/joaolcorreia/RFM-analysis
+
+Modules: M2, M4
+
+Priority: optional
+
+Focus: Most-starred repo on the rfm-analysis topic (286 stars): a short notebook and CLI script that turn an orders CSV (sample-orders.csv, included) into RFM tables and segments.
+
+Teaching Suggestion: Minimal first RFM exercise for M2. Students can extend it to the UCI Online Retail data or ask an AI assistant to vectorize and test it.
+
+Cautions: Last push 2019, so pandas idioms may be dated. Tiny repo.
+
+Rights or Access: open
+
+---
+
+### additional:orduz-website-projects-marketing-notebooks | Juan Orduz website projects: Bayesian marketing-analytics notebooks
+
+Source URL: https://github.com/juanitorduz/website_projects
+
+Modules: M3, M4, M6, M7
+
+Priority: core
+
+Focus: Code behind a widely read marketing-science blog by a PyMC-Marketing core developer: cohort revenue and retention modeling, (multilevel) price elasticities, Bayesian power for A/B tests, BG/NBD and Gamma-Gamma, MMM ROAS and CUPED.
+
+Teaching Suggestion: Instructor-only background and advanced optional readings, e.g., cohort_modeling for M2/M4 and elasticities for M3.
+
+Cautions: The repo is about 3 GB, so download only the listed files. Notebooks carry heavy embedded outputs (multi-MB). Some read data from the repo's data/ folder or remote URLs; check each and add the needed data files. More options in Python/cohort-revenue-retention/ (about 10 MB per notebook) and bg_nbd_pymc.ipynb (10 MB). Pushed 2026-10-23.
+
+Rights or Access: open
+
+---
+
+### additional:jerednel-markov-chain-attribution | markov-chain-attribution: first-order Markov chain attribution in Python
+
+Source URL: https://github.com/jerednel/markov-chain-attribution
+
+Modules: M8
+
+Priority: optional
+
+Focus: Small package computing Markov-chain removal effects and fractional conversions per channel, with last-touch comparison, from 'start > ... > conv/null' path strings. Based on Anderl et al.'s graph-based attribution framework.
+
+Teaching Suggestion: Compact attribution demo for M8: compare last-touch and Markov credit on toy paths, then on Packt DAM ch11 data.
+
+Cautions: Proof of concept. The README says to use v0.4 or later (earlier versions could give negative conversions). No notebook, only a README example.
+
+Rights or Access: open
+
+---
+
+### additional:zumstein-python-for-excel-2e | Python for Excel, 2nd edition (companion repo)
+
+Source URL: https://github.com/fzumstein/python-for-excel
+
+Modules: M1, M2
+
+Priority: optional
+
+Focus: Chapter notebooks for using pandas with Excel files: reading and writing workbooks, openpyxl, XlsxWriter and xlwings sales-report scripts, and sample sales data. Runs in Binder except the chapter that needs desktop Excel.
+
+Teaching Suggestion: M1 on-ramp for students whose analytics background is Excel: convert a familiar Excel sales report into a pandas script.
+
+Cautions: Default branch is '2e' (1st ed. is on another branch). The xl/ folder (28 MB, including a 21 MB big.xlsx) is skipped; some ch08–ch10 cells need files from xl/. The repo doesn't cover Microsoft's Python-in-Excel feature.
+
+Rights or Access: open
+
+---
+
+### additional:guipsamora-pandas-exercises | pandas_exercises
+
+Source URL: https://github.com/guipsamora/pandas_exercises
+
+Modules: M1, M2
+
+Priority: recommended
+
+Focus: 13k-star exercise bank in 11 topics (getting to know data, filtering, grouping, apply, merge, stats, visualization, time series...). Each comes in exercise, code-free solution and full-solution versions. Datasets include Chipotle orders and Online Retail.
+
+Teaching Suggestion: Warm-up drills for M1/M2. A good format for 'try it alone, then with an AI assistant, then compare to the solution' activities.
+
+Cautions: Size unverified (tree API failed). Most exercises load data from raw GitHub URLs, which works from Colab. Some solutions use pre-pandas-2 idioms.
+
+Rights or Access: open
+
+---
+
+### additional:saikrishna-customer-analytics-fmcg-elasticity | Customer_Analytics: segmentation, RFM, and price/brand elasticity on FMCG loyalty-card data
+
+Source URL: https://github.com/sai-krishna-msk/Customer_Analytics
+
+Modules: M3, M4
+
+Priority: optional
+
+Focus: Two notebooks: (1) PCA + k-means segmentation on demographics and RFM on purchases, (2) logistic purchase-probability models giving own-price, promotion and cross-brand price elasticities for chocolate bars (500 customers, 5 brands, 2 years).
+
+Teaching Suggestion: Worked M3 example of elasticity from a logit purchase model; pair with Takeda sec5.1 for a log-log comparison.
+
+Cautions: Data provenance isn't stated (the structure resembles the 365 Data Science 'Customer Analytics in Python' course data). Confirm the source before redistributing the CSV. Last push 2020. Size estimated.
+
+Rights or Access: open
+
+---
+
+### additional:claude-ecom-business-review-skill | claude-ecom: Claude Code plugin that turns order CSVs into business reviews
+
+Source URL: https://github.com/takechanman1228/claude-ecom
+
+Modules: M1, M2, AI
+
+Priority: recommended
+
+Focus: A Python engine computes KPI trees, multi-horizon dashboards, repeat-purchase and new-vs-returning metrics plus health checks from order data; Claude then writes the narrative REVIEW.md. Includes an Online Retail II example review and a test fixture of sample orders.
+
+Teaching Suggestion: M2 'vibe coding' case: students run the skill on Online Retail, then audit its numbers against their own pandas code and judge the narrative with the Pyramid Principle.
+
+Cautions: assets/ (9.6 MB demo GIF and banner) is skipped. The README doesn't claim RFM or cohort tables. The Online Retail II data itself is not in the repo.
+
+Rights or Access: open
+
+---
+
+### additional:claude-persona-synthetic-panels | claude-persona: Claude Code skill for AI persona panels and concept testing
+
+Source URL: https://github.com/takechanman1228/claude-persona
+
+Modules: M4, M8, AI
+
+Priority: optional
+
+Focus: Generates diverse persona panels (TinyTroupe-inspired), runs each persona in an isolated claude -p subprocess, and produces concept-test and messaging reports. Four demos (running shoes, Gen Z skincare, meal kits, SaaS).
+
+Teaching Suggestion: M4/M8 discussion: compare a synthetic concept test with a real conjoint or survey and connect it to the digital-twin validity readings in M3_M4.yaml.
+
+Cautions: Its 'Why trust the results' section shows stability across model versions, not validity against real consumers. Teach it as a hypothesis generator. Size estimated.
+
+Rights or Access: open
+
+---
+
+### additional:hantel-synthetic-consumer-conjoint | Events-Synthetic-Consumer-Research: GPT-3.5 synthetic conjoint for event design
+
+Source URL: https://github.com/antonhantel/Events-Synthetic-Consumer-Research
+
+Modules: M4, AI
+
+Priority: optional
+
+Focus: Notebook that asks GPT-3.5-turbo personas to choose between paired event profiles (100 tasks x 5 respondents), fits a ridge-regularized logit, and computes WTP for add-ons.
+
+Teaching Suggestion: Use as a 'find the flaws' exercise: no human benchmark, tiny synthetic sample, temperature choice and in-sample fit. Students redesign the study with pyrsm's CBC tools.
+
+Cautions: Low-star hobby project, chosen as a cautionary example rather than a model to follow. The README lists notebooks/ and data/ folders that don't appear at top level. Size estimated.
+
+Rights or Access: open
+
+---
+
+### additional:shakostats-awesome-marketing-science | Awesome Marketing Science (curated list)
+
+Source URL: https://github.com/shakostats/Awesome-Marketing-Science
+
+Modules: M6, M8
+
+Priority: optional
+
+Focus: Maintained link list of marketing-measurement resources (geo experiments, MMM, multi-touch attribution, causal inference) from a practitioner.
+
+Teaching Suggestion: Instructor index for M8 updates and for finding student project ideas.
+
+Cautions: README only (pushed 2026-05). vkoul/awesome-Marketing-Analytics is a similar list with no license, so this one is preferred.
+
+Rights or Access: open
+
+---
+
+### additional:yildirim-kubler-2025-applied-marketing-analytics-python | Applied Marketing Analytics Using Python
+
+Source URL: https://collegepublishing.sagepub.com/products/applied-marketing-analytics-using-python-1-288563
+
+Modules: M2, M4, M5, M7, M8
+
+Priority: recommended
+
+Focus: Python textbook by Imperial and ESSEC marketing faculty: segmentation, marketing mix modelling, attribution, user-generated data, customer mindset metrics, text mining, churn classification, demand forecasting, image analytics and data-project management. Comes with student notebooks/datasets and lecturer slides, teaching guide and testbank.
+
+Teaching Suggestion: Candidate adopted textbook. Its companion site (study.sagepub.com/yildirimpython) offers instructor slides and testbank.
+
+Cautions: No GitHub repo, and the resource terms aren't stated, so link only. Student resources go through edge.sagepub.com and may need login. LMU Munich's Summer 2025 Python Marketing Analytics syllabus covers a very similar topic list.
+
+Rights or Access: paid
+
+---
+
+### additional:miller-2015-marketing-data-science-code | Marketing Data Science: Modeling Techniques in Predictive Analytics with R and Python (code downloads)
+
+Source URL: https://www.informit.com/promotions/marketing-data-science-modeling-techniques-in-predictive-141181
+
+Modules: M4, M5
+
+Priority: optional
+
+Focus: Per-chapter ZIP downloads of R and Python code and data: conjoint for mobile services, commuter choice, targeting and retention, segmentation, MDS/positioning, market basket, HB market simulation, network models.
+
+Teaching Suggestion: Instructor-only mine of classic marketing case datasets (e.g., conjoint, Dodgers promotion data); not for direct student use (Python 2 era).
+
+Cautions: Not on GitHub, and the page says all rights reserved (including text and data mining), so link only. The code is about 10 years old. No GitHub mirror with a license was found.
+
+Rights or Access: open
+
+---
+
+### additional:charlotte2110-r-to-python-marketing | R_to_Python_marketing_analysis: Python translation of R for Marketing Research and Analytics
+
+Source URL: https://github.com/Charlotte2110/R_to_Python_marketing_analysis
+
+Modules: M2, M3, M4
+
+Priority: optional
+
+Focus: Seven notebooks translating chapters 3–9 of Chapman & Feit's R book (describing data, relationships, comparing groups, regression and linear models, amusement-park satisfaction drivers) with the book's CSVs.
+
+Teaching Suggestion: Reference only; the official Python edition (already in the library) supersedes it.
+
+Cautions: No LICENSE file, so link only. Two commits; date unknown (search result showed a 2018 push). This was the only other Python port of the Chapman & Feit book found.
+
+Rights or Access: open
+
+---
+
+### additional:empathy87-storytelling-with-data-python | storytelling-with-data: plots from Knaflic's book implemented in Python
+
+Source URL: https://github.com/empathy87/storytelling-with-data
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Popular (400+ stars) set of notebooks recreating the 'before/after' decluttered charts from Storytelling with Data in matplotlib.
+
+Teaching Suggestion: Link from the M2 data-viz page. Students ask an AI assistant to apply the same decluttering to their own chart, then check the result against the book's principles.
+
+Cautions: No license (GitHub API license null), so link only. Last push 2023-09.
+
+Rights or Access: open
+
+---
+
+### additional:loduca-data-storytelling-altair-genai | Data Storytelling with Altair and AI (book code)
+
+Source URL: https://github.com/alod83/Data-Storytelling-with-Altair-and-AI
+
+Modules: M2, AI
+
+Priority: optional
+
+Focus: Code for a Manning book on data storytelling with Altair and generative AI, organized by the DIKW pyramid. It includes a GitHub Copilot chapter (04/copilot) and case studies.
+
+Teaching Suggestion: Example for the M2 page of using Copilot to build charts that still follow a storytelling structure.
+
+Cautions: No license in the repo, so link only. The author name comes from the repo owner; year from the last push (2024-10).
+
+Rights or Access: open
+
+---
+
+### additional:takeda-effective-uplift-modeling-talk | Effective-Uplift-Modeling (PyData London 2024 / SciPy 2024 talk materials)
+
+Source URL: https://github.com/takechanman1228/Effective-Uplift-Modeling
+
+Modules: M6, M7
+
+Priority: optional
+
+Focus: Demo code for 'Uplift Modeling: How to Enhance Customer Targeting in Marketing with Causal Machine Learning', which uses CausalML to find persuadable customers.
+
+Teaching Suggestion: Optional M6/M7 talk + code pairing; the same author's book repo (downloadable) covers uplift in sec3.6.
+
+Cautions: No license (API license null), so link only. Pushed 2026-10-07. Talk pages: london2024.pydata.org/cfp/talk/YAXGMW and cfp.scipy.org/2024/talk/3Y9KPZ.
+
+Rights or Access: open
+
+---
+
+### additional:kobrosly-scipy-2026-causal-inference-tutorial | Introduction to Causal Inference (SciPy 2026 tutorial materials)
+
+Source URL: https://github.com/ronikobrosly/scipy_2026_causal_inference_tutorial
+
+Modules: M6
+
+Priority: optional
+
+Focus: 4-hour hands-on tutorial: correlation vs causation, pitfalls of observational data, common causal approaches including DoWhy, with exercises in marimo notebooks.
+
+Teaching Suggestion: Optional self-study for M6; marimo notebooks are a possible format for the wiki's interactive pages.
+
+Cautions: No license, so link only. Not marketing-specific.
+
+Rights or Access: open
+
+---
+
+### additional:maven-mmm-with-claude-code | Build a Marketing Mix Model with Claude Code: From OLS to Bayesian (workshop)
+
+Source URL: https://maven.com/pinemarsh/build-a-marketing-mix-model-with-claude-code
+
+Modules: M8, AI
+
+Priority: optional
+
+Focus: One-day workshop by the author of Packt's Data Analytics for Marketing: set up Claude Code with CLAUDE.md, agentic EDA, OLS MMM with adstock and saturation, Bayesian MMM in PyMC, and packaging the pipeline as a reusable SKILL.md.
+
+Teaching Suggestion: Design template for an M8 'vibe-coding an MMM' activity (CLAUDE.md, then EDA, OLS, Bayesian, Skill) built on open data and the downloadable Packt DAM ch12 notebook.
+
+Cautions: Paid. No date, price or GitHub repo given on the page. Two related free lesson recordings are offered.
+
+Rights or Access: paid
+
+---
+
+### additional:berkeley-haas-mba263-marketing-analytics | Marketing Analytics (MBA/EWMBA 263) course overview, UC Berkeley Haas
+
+Source URL: https://aiai.berkeley.edu/course-overview-mock-ups/
+
+Modules: M1, M4, M6, WIKI
+
+Priority: optional
+
+Focus: Course overview for a 3-unit MBA marketing analytics course taught in Jupyter/Python: acquisition, targeting and retention, experimental design, SEO and web analytics. Methods include RFM and clustering, logistic regression, neural nets and discrete choice with full-factorial designs.
+
+Teaching Suggestion: Benchmark for scoping BADM 534 against a peer MBA course.
+
+Cautions: The page is titled 'Course Overview Mock-ups' and names no instructor; year is approximate. No public notebooks. Public university marketing-analytics course repos in Python turned out to be rare; those found were R-based (Tilburg gknox79/customer-analytics, Kellogg fzettelmeyer/mktg482, USC dadepro/mkt566) or unlicensed student work.
+
+Rights or Access: open
+
+---
+
+### additional:northeastern-info7374-digital-marketing-analytics-projects | Digital-Marketing-Analytics: INFO7374 course assignments and Olist project
+
+Source URL: https://github.com/Nikhilkohli1/Digital-Marketing-Analytics
+
+Modules: M4, M8, WIKI
+
+Priority: optional
+
+Focus: Second most-starred rfm-analysis repo: assignments on a VistaPrint marketing mix, an e-commerce dashboard, promotions and adstock, attribution and budget optimization, xDeepFM/Customer2Vec recommendations, and an Olist RFM/segmentation project with Streamlit and Tableau dashboards.
+
+Teaching Suggestion: Shows what a strong semester team project plus GitHub portfolio can look like; link from the project-guidelines page.
+
+Cautions: No license, so link only. Last push 2020.
+
+Rights or Access: open
+
+---
+
+### additional:google-marketing-analytics-jumpstart | Marketing Analytics Jumpstart (Google Cloud)
+
+Source URL: https://github.com/GoogleCloudPlatform/marketing-analytics-jumpstart
+
+Modules: M1, M2, M4, M7, M8
+
+Priority: optional
+
+Focus: Terraform-deployed solution that ingests GA4 and Google Ads exports into BigQuery, builds features with Dataform, trains purchase-propensity, CLV and churn models (Vertex AutoML) plus BigQuery ML k-means audiences, and sends predictions back to GA4. Includes a workshop events_analysis notebook.
+
+Teaching Suggestion: Instructor background on how GA4 exports feed CLV and segmentation in industry. Show the architecture diagram; don't assign it.
+
+Cautions: Openly licensed but cataloged link-only on purpose: it needs a GCP project and GA4 property, so it's poor for students. Its notebooks/events_analysis.ipynb (6 MB) holds saved widget state with real-looking GA4 event values, including a Log4j-style JNDI probe string captured from traffic; it's harmless in Python but should be cleared before reuse. Not an officially supported Google product.
+
+Rights or Access: open
+
+---
+
+### additional:google-meridian-geox | Meridian GeoX: open-source geo experimentation for cross-publisher incrementality
+
+Source URL: https://github.com/google/meridian-geox
+
+Modules: M6, M8
+
+Priority: core
+
+Focus: Google's current geo-experiment library. It covers study design (holdback, go-dark, heavy-up, multi-cell, stratified sampling) and analysis with time-based regression, and its results feed Meridian MMM priors. Ships two Colab notebooks and example design and analysis CSVs.
+
+Teaching Suggestion: Main in-class lab for incrementality: design a single-cell holdback test, then analyze it and talk about how the lift result would calibrate an MMM.
+
+Cautions: Last commit 2026-10-01, actively developed. pip install meridian-geox. Needs Python 3.10 or later, or 3.11 or later alongside Meridian. This is the natural successor to trimmed_match and matched_markets for teaching, and pairs with google/meridian, which is already in the library.
+
+Rights or Access: open
+
+---
+
+### additional:google-trimmed-match | Trimmed Match: design and analysis of randomized paired geo experiments
+
+Source URL: https://github.com/google/trimmed_match
+
+Modules: M6
+
+Priority: optional
+
+Focus: Python library with a C++ core for robust iROAS estimation in matched-pair geo experiments. Includes Colab notebooks for design (with cross-validation) and post-analysis, plus example datasets.
+
+Teaching Suggestion: Instructor background or an optional deep dive on matched-pair geo designs and outlier-robust iROAS. The README's five-pair iROAS example makes a good worked illustration.
+
+Cautions: Last commit 2023-06-01. Not archived, but dormant. Installing it builds a C++ extension with bazel, which is slow and fragile on current Colab. The README says it was tested on Python 3.7. Prefer Meridian GeoX for student labs.
+
+Rights or Access: open
+
+---
+
+### additional:google-matched-markets | Matched Markets: geo experiment design and Time-Based Regression analysis
+
+Source URL: https://github.com/google/matched_markets
+
+Modules: M6
+
+Priority: optional
+
+Focus: Python library for choosing treatment and control geos (TBR Matched Markets greedy search) and for post-test Time-Based Regression analysis. Two Colab notebooks and small sample CSVs.
+
+Teaching Suggestion: Compact TBR example to set beside Meridian GeoX or Orduz's PyMC TBR notebook, so students can see one method in three implementations.
+
+Cautions: Last commit 2025-08-21. The README says 'not an officially supported Google product; for research purposes only'.
+
+Rights or Access: open
+
+---
+
+### additional:feedx-shopping-feed-experiments | FeedX: transparent, robust A/B experimentation for Shopping feeds
+
+Source URL: https://github.com/google-marketing-solutions/feedx
+
+Modules: M6, M8, AI
+
+Priority: core
+
+Focus: Python package plus two Colabs (experiment designer and analyzer) for item-randomized tests of product-feed changes. Uses a crossover design, CUPED adjustment for pre-period performance, and outlier trimming. It is the recommended test method for FeedGen, Google's LLM feed optimizer.
+
+Teaching Suggestion: Strong bridge case for M6 and M8: students design and analyze an experiment that tests whether LLM-rewritten product titles actually lift clicks, so they practice CUPED and power analysis on a real marketing decision.
+
+Cautions: Last commit 2026-10-21, very active. Needs Python 3.10 or later. The sister repo google-marketing-solutions/feedgen (LLM feed rewriting) is Apps Script/TypeScript with no notebooks, so link to it rather than download it.
+
+Rights or Access: open
+
+---
+
+### additional:spotify-confidence | Spotify Confidence: A/B test analysis including group sequential tests and variance reduction
+
+Source URL: https://github.com/spotify/confidence
+
+Modules: M6
+
+Priority: recommended
+
+Focus: Python package from Spotify's experimentation team for frequentist and Bayesian A/B test analysis, sample-size calculation, group sequential testing and regression-based variance reduction. Example notebooks are in examples/.
+
+Teaching Suggestion: In-class demo of 'peeking' and why sequential boundaries matter. Use the Sequential and Sample-sizing notebooks as worked examples.
+
+Cautions: Last commit 2026-02-26. Latest release badge shows 4.1.0. The notebooks are mostly code with little explanatory text, so pair them with the Courthoud or Trencseni write-ups. The Bayesian and Frequentist example notebooks (7.4 MB) are left out to save space.
+
+Rights or Access: open
+
+---
+
+### additional:numpyro-bayesian-cuped | Bayesian CUPED (NumPyro tutorial)
+
+Source URL: https://num.pyro.ai/en/stable/tutorials/bayesian_cuped.html
+
+Modules: M6
+
+Priority: recommended
+
+Focus: Short tutorial on synthetic ad-campaign revenue data. It compares a Bayesian difference-in-means with a CUPED-adjusted model fit in one NumPyro model; the posterior SD shrinks from 0.292 to 0.219 around a true effect of 2.
+
+Teaching Suggestion: Follow-up exercise after frequentist CUPED: students check how much variance reduction they get and why the pre-period covariate matters.
+
+Cautions: Single-file sparse download from a large repo. The repo was updated 2026-10-22.
+
+Rights or Access: open
+
+---
+
+### additional:trencseni-ab-testing-playground | Bytepawn A/B testing notebooks (CUPED, early-stopping pitfall, Fisher/Chi-squared/G/t tests, bandits)
+
+Source URL: https://github.com/mtrencseni/playground
+
+Modules: M6
+
+Priority: recommended
+
+Focus: About 20 short, simulation-based notebooks behind the Bytepawn blog: 'AB testing and the pitfall of early stopping', CUPED (including CUPED p-hacking and conversion CUPED), test choice (z, t, chi-squared, Fisher, G), parallel tests, and bandits.
+
+Teaching Suggestion: Link from the M6 page as reading on why peeking inflates false positives and how CUPED can be misused.
+
+Cautions: LINK ONLY: the repo has no LICENSE file, so it is all rights reserved. Do not download. The CUPED post (31 July 2021) links CUPED.ipynb in this repo. Repo last commit 2026-09-30.
+
+Rights or Access: open
+
+---
+
+### additional:courthoud-blog-posts | Matteo Courthoud's causal data science blog notebooks
+
+Source URL: https://github.com/matteocourthoud/Blog-Posts
+
+Modules: M6, M7
+
+Priority: recommended
+
+Focus: Notebooks behind clear, well-explained posts on cuped, group_sequential_testing, optimal_stopping, bayesian_ab_test, evaluate_uplift, meta_learners, beyond_churn, synthetic_control, double_ml and more.
+
+Teaching Suggestion: Recommended readings that explain the intuition behind CUPED and sequential testing. Link from the M6 and M7 pages.
+
+Cautions: LINK ONLY: the GitHub page shows no license, so it is all rights reserved. Last commit 2024-03-17. The NumPyro Bayesian CUPED tutorial credits Courthoud's CUPED post and data-generating code.
+
+Rights or Access: open
+
+---
+
+### additional:fractional-uplift | Fractional Uplift: uplift modelling with complex or constrained metrics
+
+Source URL: https://github.com/google-marketing-solutions/fractional_uplift
+
+Modules: M6, M7
+
+Priority: optional
+
+Focus: Meta-learner uplift package for targeting ads or promotions to the most incremental customers when the KPI is a ratio such as ROI or cost-constrained conversions. Includes an end-to-end example notebook.
+
+Teaching Suggestion: Advanced extension after scikit-uplift and causalml, which are already in the library. It shows how industry turns uplift scores into ROI-constrained targeting.
+
+Cautions: Last commit 2026-01-12. Needs Python 3.10 or later.
+
+Rights or Access: open
+
+---
+
+### additional:meta-balance-survey-weighting | balance: Python package for adjusting biased samples (survey weighting)
+
+Source URL: https://github.com/facebookresearch/balance
+
+Modules: M6, M2, M8
+
+Priority: optional
+
+Focus: Meta's package for reweighting non-representative samples (IPW, CBPS, raking, post-stratification), with diagnostics. Includes about 10 quickstart tutorial notebooks.
+
+Teaching Suggestion: Short demo for marketing-research projects that rely on convenience or panel surveys. It is also useful for reweighting LLM 'synthetic respondent' samples against census margins.
+
+Cautions: Last commit 2026-10-22, very active.
+
+Rights or Access: open
+
+---
+
+### additional:eeghor-mta | mta: multi-touch attribution models in Python (heuristics, Markov chain, Shapley, Shao, logistic, additive hazard)
+
+Source URL: https://github.com/eeghor/mta
+
+Modules: M6, M8
+
+Priority: core
+
+Focus: Small, readable Python library that runs first/last touch, linear, position-based, time-decay, Markov removal-effect, Shapley value, Shao's model, logistic and additive-hazard attribution on one journey dataset (sample data.csv.gz included). Models can be chained to compare credit allocations side by side.
+
+Teaching Suggestion: In-class activity: run every attribution model on the bundled journeys, compare the channel shares, and discuss why none of them is causal (the setup for geo experiments and MMM).
+
+Cautions: Last commit 2026-10-18. No notebooks; the README has the usage examples, so the instructor or students write the notebook (a good vibe-coding exercise). Alternative: DP6/Marketing-Attribution-Models (Apache-2.0, Polars-based, docs partly in Portuguese).
+
+Rights or Access: open
+
+---
+
+### additional:lightweight-mmm-deprecated | LightweightMMM end-to-end demo notebooks (deprecated; superseded by Meridian)
+
+Source URL: https://github.com/google/lightweight_mmm
+
+Modules: M6
+
+Priority: optional
+
+Focus: NumPyro-based Bayesian MMM. Two demo notebooks: simple end-to-end, and multiple geos with adstock, saturation, response curves and budget optimization.
+
+Teaching Suggestion: Historical reference only: show how the field moved from LMMM to Meridian. Do not assign it for new student work.
+
+Cautions: ARCHIVED on 2026-01-19 (read-only). The README says 'LMMM is not supported anymore, so we highly recommend you switch to Meridian'. Last commit 2025-06-17. Pinned JAX and NumPyro versions will likely fail on current Colab.
+
+Rights or Access: open
+
+---
+
+### additional:uber-orbit-ktr | Orbit: Bayesian time-series forecasting and KTR time-varying regression (Uber)
+
+Source URL: https://github.com/uber/orbit
+
+Modules: M6, M7
+
+Priority: optional
+
+Focus: Uber's Bayesian structural time-series package (ETS, LGT, DLT, and KTR kernel time-varying regression). KTR with regression priors is the building block Uber used for MMM-style time-varying media coefficients.
+
+Teaching Suggestion: Optional MMM or forecasting extension. Pair the KTR tutorials with Orduz's orbit_mmm notebook, which applies KTR to media effects.
+
+Cautions: Default branch is 'dev'. Last commit 2026-05-22. The tutorials are general forecasting with no marketing-specific MMM notebook in the repo. Stan backend compilation can be slow on Colab.
+
+Rights or Access: open
+
+---
+
+### additional:google-crystalvalue | Crystalvalue: predictive customer lifetime value (pLTV) on Google Cloud Vertex AI
+
+Source URL: https://github.com/google-marketing-solutions/crystalvalue
+
+Modules: M4, M7
+
+Priority: recommended
+
+Focus: Python library and two demo notebooks (synthetic quick start, and real Kaggle transactions) that automate pLTV feature engineering, model training on Vertex AI, data-statistics checks and scheduled predictions from BigQuery transaction tables. Outputs go back to BigQuery.
+
+Teaching Suggestion: Industry counterpart to the BTYD and PyMC-Marketing CLV lesson: show how advertisers build pLTV for value-based bidding. Walk through it as an instructor demo, since it needs GCP.
+
+Cautions: The old google/crystalvalue URL now resolves to google-marketing-solutions/crystalvalue. Not archived. Last commit 2026-01-15. It needs a Google Cloud project with the BigQuery and Vertex AI APIs and billing, so it is not runnable on plain Colab without GCP credits.
+
+Rights or Access: open
+
+---
+
+### additional:gcp-bqml-propensity-patterns | Analytics componentized patterns: BQML propensity-to-purchase, GA4 churn propensity, clustering and LTV notebooks
+
+Source URL: https://github.com/GoogleCloudPlatform/analytics-componentized-patterns
+
+Modules: M7, M4
+
+Priority: optional
+
+Focus: Notebooks that build propensity-to-purchase on Google Analytics sample data, churn propensity on GA4 gaming data, k-means segmentation, and AutoML LTV with lookalike activation, all inside BigQuery ML.
+
+Teaching Suggestion: Shows students the SQL-first (BQML) route to propensity and segmentation models, a useful contrast to scikit-learn workflows.
+
+Cautions: Needs a GCP project, though BigQuery sandbox or free tier can cover the SQL parts. Some notebooks use older KFP and AI Platform APIs, so treat them as patterns rather than turnkey labs. Repo last commit 2026-05-11; individual notebook dates were not checked.
+
+Rights or Access: open
+
+---
+
+### additional:lifelines-churn-notebooks | lifelines example notebooks: Customer Churn, SaaS churn with piecewise models, time-lagged conversion rates
+
+Source URL: https://github.com/CamDavidsonPilon/lifelines
+
+Modules: M7, M4
+
+Priority: recommended
+
+Focus: Survival-analysis notebooks on marketing questions: survival models for customer churn, piecewise-exponential SaaS churn, and modeling delayed (time-lagged) conversions.
+
+Teaching Suggestion: Shows 'time to churn' as an alternative to binary churn classifiers, and links naturally to CLV in M4.
+
+Cautions: lifelines last commit 2026-03-06. It is the maintained sibling of the archived `lifetimes` package. Check whether each notebook's data URL still resolves.
+
+Rights or Access: open
+
+---
+
+### additional:mlxtend-frequent-patterns | mlxtend user guide: apriori, FP-growth, FP-max, H-mine and association_rules notebooks
+
+Source URL: https://github.com/rasbt/mlxtend
+
+Modules: M7, M4
+
+Priority: core
+
+Focus: The standard Python market-basket workflow: one-hot transaction encoding, frequent itemsets (apriori, fpgrowth), and association rules with support, confidence, lift, leverage and conviction.
+
+Teaching Suggestion: In-class coding activity on the UCI Online Retail data (already in the library): students reproduce the mlxtend examples on real baskets and interpret lift for cross-selling.
+
+Cautions: Last commit 2026-09-29. The current association_rules notebook passes a num_itemsets argument (association_rules(..., num_itemsets=len(df.index))) that older tutorials and many AI-generated snippets omit, so version mismatches are a likely, teachable failure mode for AI assistants.
+
+Rights or Access: open
+
+---
+
+### additional:implicit-als-recommender | implicit: fast collaborative filtering for implicit feedback (Last.fm tutorial notebook)
+
+Source URL: https://github.com/benfred/implicit
+
+Modules: M7
+
+Priority: recommended
+
+Focus: Widely used ALS, BPR and logistic-MF recommender package for clicks, plays and purchases (implicit feedback). The examples include a Last.fm tutorial notebook and MovieLens and Last.fm scripts.
+
+Teaching Suggestion: Short lab on 'customers who bought X' recommendations from purchase logs. It complements the broader recommenders-team/recommenders library already in the library.
+
+Cautions: Last commit 2026-05-08.
+
+Rights or Access: open
+
+---
+
+### additional:lightfm-hybrid-recommender | LightFM: hybrid recommendation with user and item features (quickstart, MovieLens, WARP loss notebooks)
+
+Source URL: https://github.com/lyst/lightfm
+
+Modules: M7
+
+Priority: optional
+
+Focus: Hybrid matrix factorization that uses item and user metadata, which helps with cold-start products. Example notebooks cover the quickstart, MovieLens, learning schedules, WARP loss, and a StackExchange hybrid model.
+
+Teaching Suggestion: Optional: shows how product attributes enter a recommender. Pair it with the cold-start discussion in M7.
+
+Cautions: STALE: last commit 2023-04-30 and no recent releases. It is a C-extension build, so test the pip install on current Colab and Python before assigning.
+
+Rights or Access: open
+
+---
+
+### additional:pyblp-tutorials | PyBLP tutorial notebooks (logit and nested logit, Nevo cereal, BLP autos, Petrin micro moments, post-estimation, simulation)
+
+Source URL: https://github.com/jeffgortmaker/pyblp
+
+Modules: M3, M4, M7
+
+Priority: core
+
+Focus: Reference implementation of BLP random-coefficients logit demand. The tutorials go from plain and nested logit to Nevo's cereal and BLP's autos, then compute elasticities, diversion ratios, markups and merger or price-change counterfactuals.
+
+Teaching Suggestion: The structural-demand anchor for the pricing topic: students estimate logit elasticities on the cereal data and run a price-cut counterfactual. It fits Nathan's structural IO perspective.
+
+Cautions: Last commit 2026-10-14. The datasets ship inside the pyblp package (pyblp.data), so no extra download is needed. Cite Conlon and Gortmaker (2020), 'Best practices for differentiated products demand estimation with PyBLP', RAND Journal of Economics 51(4):1108-1161 (RePEc listing https://ideas.repec.org/a/bla/randje/v51y2020i4p1108-1161.html).
+
+Rights or Access: open
+
+---
+
+### additional:mixtape-demand-estimation | Mixtape Sessions: Demand Estimation (BLP workshop with PyBLP exercises and solutions)
+
+Source URL: https://github.com/Mixtape-Sessions/Demand-Estimation
+
+Modules: M3, M7
+
+Priority: recommended
+
+Focus: Three-day workshop with slides, readings and three Python/PyBLP exercises (pure logit with a price-cut counterfactual, mixed logit, micro data), with solution notebooks and products and demographics CSVs.
+
+Teaching Suggestion: Instructor template for a two-session pricing and demand unit. Link the exercise READMEs and Colab badges rather than mirroring them.
+
+Cautions: LINK ONLY: the repo has no LICENSE file, so it is all rights reserved. Do not mirror it. Last commit 2025-10-24. Day 1 is listed as 'by Ariel Pakes' in the README.
+
+Rights or Access: open
+
+---
+
+### additional:blueprints-text-analytics | Blueprints for Text Analytics Using Python: companion notebooks
+
+Source URL: https://github.com/blueprints-for-text-analytics-python/blueprints-text
+
+Modules: M5
+
+Priority: recommended
+
+Focus: One notebook per chapter: first insights and word frequencies, text preparation, classification, topic modeling and clustering, embeddings, and sentiment analysis of Amazon product reviews (lexicon, ML and transformer approaches).
+
+Teaching Suggestion: Backbone notebooks for M5's classical-NLP half (before LLMs). Chapter 11 sentiment on product reviews is directly about marketing.
+
+Cautions: oreil.ly/btap-code redirects here. Last commit 2026-05-28. The book used spaCy 2.3 and gensim 3.8, so some cells need updates for spaCy 3, gensim 4 and textacy. The data/ folder (about 130 MB) is excluded. data/amazon-product-reviews/reviews_5_balanced.json.gz (16.6 MB) is needed for ch11, but redistribution terms for the Amazon review data are unclear, so fetch it at runtime rather than mirror it.
+
+Rights or Access: open
+
+---
+
+### additional:bertopic-docs-llm-representations | BERTopic documentation: best practices, LLM-based topic representation, zero-shot topics, topics over time and per class
+
+Source URL: https://github.com/MaartenGr/BERTopic
+
+Modules: M5, AI
+
+Priority: recommended
+
+Focus: Markdown sources of the BERTopic guide. Covers the embed-reduce-cluster-c-TF-IDF pipeline, LLM-generated topic labels (OpenAI, Llama, etc.), zero-shot and guided topics, and dynamic topics by date or by class (e.g. brand or rating).
+
+Teaching Suggestion: Reference for review- and social-media topic modeling labs. 'Topics per class' and 'topics over time' map directly onto brand comparisons and campaign tracking.
+
+Cautions: Last commit 2026-08-27. The repo has no .ipynb files; the README's Colab links point to Google Drive, which is not downloadable. Hands-On LLMs (already in the library) has a BERTopic chapter with runnable notebooks.
+
+Rights or Access: open
+
+---
+
+### additional:setfit-few-shot-classification | SetFit notebooks: few-shot and zero-shot text classification with sentence transformers
+
+Source URL: https://github.com/huggingface/setfit
+
+Modules: M5, M7
+
+Priority: optional
+
+Focus: Train an accurate text classifier from 8 to 64 labeled examples per class, or from label names alone (zero-shot), without prompting a large LLM.
+
+Teaching Suggestion: Cheap, private alternative to LLM-API labeling of reviews or tickets. Students compare SetFit with zero-shot LLM labels on the same marketing texts.
+
+Cautions: Last commit 2026-10-06. The notebooks pull models and datasets from the Hugging Face Hub at runtime, which works on Colab but not on the GitHub-only download machine.
+
+Rights or Access: open
+
+---
+
+### additional:scikit-llm | Scikit-LLM: LLM zero-shot classification inside scikit-learn
+
+Source URL: https://github.com/BeastByteAI/scikit-llm
+
+Modules: M5, AI
+
+Priority: optional
+
+Focus: Wraps GPT-style models as scikit-learn estimators (fit/predict) for zero-shot text classification, so LLM labeling slots into familiar pipelines and evaluation code.
+
+Teaching Suggestion: Low-friction way for non-CS students to compare LLM zero-shot labels against a TF-IDF and logistic-regression baseline on review data, with standard metrics.
+
+Cautions: LINK ONLY by choice: MIT-licensed, but the repo is library code with no notebooks, so pip install it instead. Last commit 2026-01-21. The README still has stale links to iryna-kondr/ repos (the old owner).
+
+Rights or Access: open
+
+---
+
+### additional:openai-cookbook-review-embeddings | OpenAI Cookbook: embedding and classification notebooks on Amazon fine-food reviews, plus structured outputs and synthetic data
+
+Source URL: https://github.com/openai/openai-cookbook
+
+Modules: M5, M7, M8, AI
+
+Priority: core
+
+Focus: Runnable notebooks on a 1k-review Amazon fine-food dataset: getting embeddings, zero-shot sentiment classification with embeddings, supervised classification on embeddings, clustering with GPT-written cluster labels, 2-D visualization, and user and product embeddings. Also an intro to Structured Outputs and LLM synthetic data generation (SDG1).
+
+Teaching Suggestion: M5 LLM lab: students embed reviews, classify sentiment zero-shot, cluster complaints and let an LLM name the clusters, then check the labels against star ratings.
+
+Cautions: Repo is huge (3,700+ files), so use only these sparse paths. examples/data/fine_food_reviews_with_embeddings_1k.csv (35 MB) is excluded: students regenerate it with Get_embeddings_from_dataset, which needs an API key and incurs a small API cost, or swap in a free embedding model. Older notebooks use older embedding model names. Last commit 2026-10-21.
+
+Rights or Access: open
+
+---
+
+### additional:gemini-cookbook-marketing | Gemini API Cookbook: Market a Jet Backpack, JSON sentiment and classification, embeddings classification and clustering
+
+Source URL: https://github.com/google-gemini/cookbook
+
+Modules: M8, M5, AI
+
+Priority: core
+
+Focus: Short Colab notebooks on the free-tier Gemini API key. They turn a product sketch into a marketing campaign with JSON taglines, run sentiment analysis, text classification, entity extraction and summarization with JSON output, and classify and cluster text with embeddings.
+
+Teaching Suggestion: First GenAI-for-marketing lab, because it runs in Colab with a free API key and no cloud project. The Jet Backpack notebook is a ready 'AI creative brief' exercise.
+
+Cautions: Last commit 2026-10-19. Model names in notebooks change often; tell students to update the model ID. quickstarts/Get_started.ipynb (5.4 MB) is left out to stay lean.
+
+Rights or Access: open
+
+---
+
+### additional:google-generative-ai-marketing-usecases | Google Cloud generative-ai repo: creative content generation, product attribute extraction, multimodal sentiment, AI-assisted data science
+
+Source URL: https://github.com/GoogleCloudPlatform/generative-ai
+
+Modules: M8, M5, AI
+
+Priority: recommended
+
+Focus: Vertex AI notebooks: marketing creative content generation with Gemini and Imagen, product attribute extraction from images (self-correcting prompts), multimodal retail recommendations, location strategy, multimodal sentiment (audio vs transcript), YouTube video analysis, and a Gemini-assisted data science workflow in BigQuery that ends in customer segments.
+
+Teaching Suggestion: M8 demos of GenAI across the marketing funnel. ai-assisted-data-science is a direct example of the course's AI-assisted analytics theme.
+
+Cautions: Last commit 2026-10-22. Most notebooks need a GCP project with Vertex AI and billing, unlike the Gemini cookbook. The related repo GoogleCloudPlatform/genai-for-marketing (Apache-2.0, last commit 2026-01-05) has a notebooks/ folder, but several notebooks target retired PaLM/bison models, so it was left out.
+
+Rights or Access: open
+
+---
+
+### additional:copycat-ad-copy-generation | Copycat: AI-generated Google Search ad copy that matches your brand style
+
+Source URL: https://github.com/google-marketing-solutions/copycat
+
+Modules: M8, AI
+
+Priority: recommended
+
+Focus: Python package and Colabs (Python quickstart and a GUI) that learn brand style from existing high-performing Responsive Search Ads and generate new headlines and descriptions for new keywords with Gemini. Gemini first drafts a brand style guide from the exemplar ads (optionally from brand-guideline PDFs), which the user can edit before ads are generated.
+
+Teaching Suggestion: Hands-on M8 case: generate RSAs with Copycat, then design a FeedX-style or A/B test to measure whether AI copy beats human copy.
+
+Cautions: Last commit 2026-09-24. Needs Python 3.10 or later and Gemini API or Vertex credentials. The org (150 repos) also has feedgen (LLM feed optimization, Apps Script), vigenair (video ad recrafting) and adspace_agent (an ADK agent for Google Ads planning, 2026), but none has Python teaching notebooks.
+
+Rights or Access: open
+
+---
+
+### additional:pymc-labs-semantic-similarity-rating | Semantic-Similarity Rating (SSR): mapping LLM free-text answers to Likert purchase-intent distributions
+
+Source URL: https://github.com/pymc-labs/semantic-similarity-rating
+
+Modules: M8, M4, AI
+
+Priority: recommended
+
+Focus: Package implementing SSR. LLM 'synthetic consumers' answer purchase-intent questions in free text, and the answers are mapped to Likert probability distributions by embedding similarity to anchor statements. The paper is 'LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings'.
+
+Teaching Suggestion: Current-topics case on LLM-based market research: students simulate concept-test responses, compare direct numeric ratings with SSR, and discuss validity limits.
+
+Cautions: Last commit 2026-06-04. No notebook; the README quick start is the example. The arXiv page does not link the repo; I matched them through the README's paper title (the README calls it 'Measuring Synthetic Consumer Purchase Intent Using Semantic-Similarity Ratings' (2025), close to the arXiv title, so treat the match as likely but not confirmed). pixi.lock (about 0.5 MB) is excluded.
+
+Rights or Access: open
 
 ---
 

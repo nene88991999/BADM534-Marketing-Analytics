@@ -1,6 +1,6 @@
 # Datasets for Exercises and Projects
 
-36 resources (13 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+37 resources (13 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -13,6 +13,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Marketing mix modeling](#marketing-mix-modeling) (2)
 - [Text, reviews, social and networks](#text-reviews-social-and-networks) (6)
 - [Aggregators and package datasets](#aggregators-and-package-datasets) (5)
+- [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (1)
 
 ## Transactions, RFM and CLV
 
@@ -272,3 +273,12 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Search engine over datasets described with schema.org metadata across repositories; supports site: filters (e.g. site:huggingface.co).
   *Use in wiki:* Teach students how to find and vet data for team projects.
   *Note:* data.world's open community, often listed with these aggregators, was retired on July 13, 2026 (its datasets are no longer downloadable), so it is omitted.
+
+## Python for marketing analytics: notebooks and code
+
+- [optional] **[dmba: utilities and datasets for Machine Learning (Data Mining) for Business Analytics, Python editions](https://github.com/gedeck/dmba)** (2025) — Gedeck, P. (package); book by Shmueli, G.; Bruce, P. C.; Gedeck, P.; Patel, N. R. *Wiley (2nd Python ed., May 2025)*
+  `dataset` · `intro` · `access: open` · `MIT`
+  pip-installable helper package (dmba) with the book's teaching datasets bundled as CSV/GZ: e.g., Universal Bank, Toyota Corolla, laptop sales, farm ads, AutoAndElectronics text. It also has plotting and model-evaluation helpers (lift/gains charts, regression summaries).
+  *Use in wiki:* Source of small, documented business datasets for M3/M7 exercises; dmba.liftChart and gainsChart help teach targeting.
+  Tools: dmba, pandas, scikit-learn
+  *Note:* Chapter notebooks are not in this repo (the README points to dataminingbook.com). The repo describes itself as for 'Data Mining for Business Analytics ... in Python'; the 2nd Python edition is titled 'Machine Learning for Business Analytics' (Wiley, May 2025, per the Wiley-VCH page). Last pushed 2024-04. Dataset licensing follows the repo's MIT license; original sources vary.

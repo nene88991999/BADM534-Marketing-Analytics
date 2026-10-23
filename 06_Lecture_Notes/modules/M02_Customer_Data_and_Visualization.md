@@ -378,3 +378,83 @@ assert math.isclose(r["M02"]["variety"]["equal"], 0.5)
 assert math.isclose(r["M02"]["variety"]["concentrated"], 0.18)
 print(json.dumps(r, indent=2))
 ```
+
+## 2.13 mHealth: Recency and Frequency at a Fixed Date
+
+A manager considering a reminder campaign needs to distinguish a customer who logs frequently from one who logged recently. Both customers may have the same total number of records. Recency measures elapsed time since the last observed activity, while frequency measures repeated activity within a specified window. Their interpretation depends on the date at which the manager must make the decision.
+
+For every user with a recorded day by June 30, define recency as the number of days from the most recent recorded day to June 30. Define frequency as distinct recorded days during June 1–30. A customer who last logged on June 30 has recency zero. A customer with no June logs has frequency zero and remains eligible because an earlier record establishes membership. July activity is an outcome and enters neither feature.
+
+The 358 eligible users are grouped using prespecified recency boundaries of 7 and 30 days and a frequency boundary of 15 days. These cutoffs define a descriptive comparison; they have not been optimized for a campaign. The empty high-frequency, high-recency cell follows from the definitions: a customer whose last log was more than 30 days ago has zero June logging days.
+
+| Recency on June 30 | June Logging Days | Users | Any July Log | Mean July Logging Days |
+| --- | --- | ---: | ---: | ---: |
+| 0–7 Days | 0–14 | 68 | 92.6% | 13.90 |
+| 0–7 Days | 15–30 | 220 | 96.8% | 22.88 |
+| 8–30 Days | 0–14 | 34 | 67.6% | 7.26 |
+| 8–30 Days | 15–30 | 6 | 83.3% | 9.67 |
+| 31+ Days | 0–14 | 30 | 50.0% | 5.70 |
+
+Recent frequent loggers have a higher July logging rate in this cohort. The six-user cell warrants particular care because a single outcome changes its rate substantially. These rates describe future activity among known users; they do not identify which users would respond most to a reminder. Selecting recipients requires an incremental-effect comparison and a cost per contact.
+
+[Joao Correia's RFM example](https://github.com/joaolcorreia/RFM-analysis) combines recency, frequency, and monetary value in transaction data. mHealth supports the first two dimensions. Calories, entry counts, and body weight have units different from spending and cannot supply monetary value. A commercial RFM table would need an actual monetary variable, a transaction definition, and a consistent observation window.
+
+A coding assistant should receive the snapshot date and the eligible population explicitly. Ask it to verify that adding July rows leaves both June features unchanged, that repeated food entries on one day count only once toward frequency, and that zero-log members remain in the outcome denominator. Quantile bins require extra care when many customers share the same integer count; the fixed boundaries here avoid assigning tied counts to different groups.
+
+Python source: [recency.py](../../03_Data_and_Code/mHealth/recurring_examples/recency.py). From its directory, run `python recency.py`.
+
+```python
+"""Describe later logging using features available at a fixed snapshot."""
+
+import json
+import pandas as pd
+from common import OUTPUT, load_food, make_daily, save_result
+
+
+def snapshot(daily, cutoff):
+    cutoff = pd.Timestamp(cutoff)
+    history = daily.loc[daily.date <= cutoff]
+    last = history.groupby("Userid").date.max()
+    recent = history.loc[history.date > cutoff - pd.Timedelta(days=30)]
+    counts = recent.groupby("Userid").date.nunique().reindex(last.index, fill_value=0)
+    return pd.DataFrame(
+        {"recency_days": (cutoff - last).dt.days, "frequency_30d": counts}
+    )
+
+
+if __name__ == "__main__":
+    daily = make_daily(load_food())
+    customers = snapshot(daily, "2016-06-30")
+    customers["recency_group"] = pd.cut(
+        customers.recency_days,
+        [-1, 7, 30, float("inf")],
+        labels=["0-7 days", "8-30 days", "31+ days"],
+    )
+    customers["frequency_group"] = customers.frequency_30d.ge(15).map(
+        {True: "15-30 days", False: "0-14 days"}
+    )
+    july = daily.loc[daily.date.between("2016-07-01", "2016-07-31")]
+    customers["july_days"] = (
+        july.groupby("Userid").date.nunique().reindex(customers.index, fill_value=0)
+    )
+    customers["july_any_log"] = customers.july_days.gt(0)
+    assert customers.frequency_30d.between(0, 30).all()
+    summary = (
+        customers.groupby(["recency_group", "frequency_group"], observed=True)
+        .agg(
+            users=("july_days", "size"),
+            july_users=("july_any_log", "sum"),
+            july_logging_probability=("july_any_log", "mean"),
+            mean_july_days=("july_days", "mean"),
+        )
+        .reset_index()
+    )
+    result = {
+        "snapshot": "2016-06-30",
+        "users": len(customers),
+        "groups": summary.to_dict(orient="records"),
+    }
+    save_result("recency", result)
+    summary.to_csv(OUTPUT / "recency.csv", index=False)
+    print(json.dumps(result, indent=2))
+```

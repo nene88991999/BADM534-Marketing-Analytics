@@ -261,3 +261,115 @@ write_csv(
 assert math.isclose(sum(before.values()), 1) and math.isclose(sum(after.values()), 1)
 print(json.dumps(r, indent=2))
 ```
+
+## 4.13 mHealth: Time Until a Logging Gap
+
+A retention manager may want to intervene before a long interruption in activity. The analytical object must specify when the interruption has actually occurred. A user who is absent for two days and returns on the third day has a different history from one who remains absent for several weeks. The end of the data window can arrive before either pattern is fully observed.
+
+Define eligibility using at least 30 recorded days before July 1. Among eligible users who return during July, set time zero to that user's first July logging day. The event occurs on the 14th consecutive day without a subsequent log, and observation ends on August 31. The event date is the day the gap is confirmed. A later return does not erase a previously confirmed gap. Customers without a confirmed gap by August 31 are administratively censored at their elapsed follow-up time.
+
+This definition concerns an interruption in observed logging. Permanent customer departure, failure to eat, and cancellation of a paid subscription are separate events. July return is also a selection condition: 331 users satisfy prior eligibility, and 297 have a July time origin. The curve describes these returners, including a mixture of early and late July start dates.
+
+To allow different amounts of follow-up, define $n_t$ as users still under observation and gap-free immediately before elapsed day $t$, and $d_t$ as confirmed first gaps on that day. The Kaplan–Meier estimate is
+
+$$
+\widehat S(t)=\prod_{s\le t}\left(1-\frac{d_s}{n_s}\right).
+$$
+
+A censored user contributes to earlier risk sets and leaves subsequent ones. Censoring itself causes no downward step. When an event and administrative censoring share a day, the event is counted before censoring. A population interpretation of the pooled curve requires censoring to be independent of gap timing, possibly conditional on relevant start-date characteristics. Calendar trends can undermine that condition because later July starters have shorter follow-up.
+
+| Confirmed Gap | Users | Events by August 31 | Censored | Gap-Free at Day 30 | Gap-Free at Day 60 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 14 Days | 297 | 93 | 204 | 0.8182 | 0.6867 |
+| 28 Days | 297 | 33 | 264 | 0.9630 | 0.8877 |
+
+![Gap-free estimates depend on the interruption threshold; users censored at the data boundary leave the risk set without becoming events.](../figures/M04_logging_survival.png)
+
+The 28-day definition produces fewer confirmed events because an interruption must persist longer. It also confirms an event later even when the same interruption satisfies both thresholds. At elapsed day 60, the risk sets contain 160 and 187 users for the 14- and 28-day definitions, respectively. The table therefore requires an event definition and a time origin to support a retention comparison. Converting either curve into customer lifetime value would additionally require a commercial relationship, margins, discounting, and a model linking logging interruptions to that relationship.
+
+The [lifelines customer-churn example](https://github.com/CamDavidsonPilon/lifelines/blob/master/examples/Customer%20Churn.ipynb) uses explicit event and duration fields. The [Kaplan–Meier documentation](https://lifelines.readthedocs.io/en/latest/Survival%20analysis%20with%20lifelines.html) supplies the corresponding risk-set estimator. The code below computes each risk set explicitly so a small hand-constructed event/censoring table can verify the calculation.
+
+Python source: [logging_gaps.py](../../03_Data_and_Code/mHealth/recurring_examples/logging_gaps.py). From its directory, run `python logging_gaps.py`.
+
+```python
+"""Kaplan-Meier estimates for a defined logging-gap event, with censoring."""
+
+import json
+import pandas as pd
+from common import OUTPUT, load_food, make_daily, save_result
+
+
+def first_gap(dates, start, end, gap_days):
+    dates = set(dates)
+    run = 0
+    for day in pd.date_range(start + pd.Timedelta(days=1), end):
+        run = 0 if day in dates else run + 1
+        if run == gap_days:
+            return (day - start).days, True
+    return (end - start).days, False
+
+
+def kaplan_meier(records):
+    # At a tied time, events precede administrative censoring.
+    survival = 1.0
+    rows = []
+    for time in sorted(records.duration.unique()):
+        risk = int(records.duration.ge(time).sum())
+        events = int((records.duration.eq(time) & records.event).sum())
+        censored = int((records.duration.eq(time) & ~records.event).sum())
+        survival *= 1 - events / risk
+        rows.append(
+            {
+                "day": int(time),
+                "at_risk": risk,
+                "events": events,
+                "censored": censored,
+                "gap_free": survival,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+if __name__ == "__main__":
+    daily = make_daily(load_food())
+    prior = daily.loc[daily.date < "2016-07-01"].groupby("Userid").size()
+    eligible = prior.index[prior >= 30]
+    july = daily.loc[
+        daily.Userid.isin(eligible) & daily.date.between("2016-07-01", "2016-07-31")
+    ]
+    starts = july.groupby("Userid").date.min()
+    observed = daily.groupby("Userid").date.agg(set)
+    end = pd.Timestamp("2016-08-31")
+    result = {
+        "eligible_before_july": len(eligible),
+        "july_returners": len(starts),
+        "administrative_end": str(end.date()),
+        "thresholds": [],
+    }
+    for gap in [14, 28]:
+        records = pd.DataFrame(
+            [
+                first_gap(observed[user], start, end, gap)
+                for user, start in starts.items()
+            ],
+            columns=["duration", "event"],
+        )
+        curve = kaplan_meier(records)
+        summary = {
+            "gap_days": gap,
+            "users": len(records),
+            "events": int(records.event.sum()),
+            "censored": int((~records.event).sum()),
+        }
+        for horizon in [30, 45, 60]:
+            before = curve.loc[curve.day <= horizon]
+            summary[f"gap_free_day_{horizon}"] = (
+                float(before.gap_free.iloc[-1]) if len(before) else 1.0
+            )
+            summary[f"at_risk_day_{horizon}"] = int(records.duration.ge(horizon).sum())
+        result["thresholds"].append(summary)
+        OUTPUT.mkdir(exist_ok=True)
+        curve.to_csv(OUTPUT / f"logging_gap_{gap}.csv", index=False)
+    save_result("logging_gaps", result)
+    print(json.dumps(result, indent=2))
+```

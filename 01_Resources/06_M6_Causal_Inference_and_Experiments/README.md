@@ -1,6 +1,6 @@
 # M6 · Causal Models and Experiments
 
-53 resources (26 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+72 resources (29 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -13,6 +13,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Marketing mix modeling](#marketing-mix-modeling) (3)
 - [Heterogeneous effects, uplift and targeting](#heterogeneous-effects-uplift-and-targeting) (7)
 - [LLMs and causal inference](#llms-and-causal-inference) (5)
+- [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (19)
 
 ## Foundations
 
@@ -183,6 +184,13 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   DOI [10.1093/qje/qjv023](https://doi.org/10.1093/qje/qjv023) · [Open-access copy](https://aeaweb.org/conference/2014/retrieve.php?pdfid=985)
   *Note:* The oa_url is an earlier AEA 2014 conference draft found in search, not the published version. The open-access link is the December 2013 working paper 'On the Near Impossibility of Measuring the Returns to Advertising', not the published QJE text (QJE 130(4), 1941–1973; DOI 10.1093/qje/qjv023).
 
+- [recommended] **[GeoLift: geo-level lift measurement with synthetic control](https://github.com/facebookincubator/GeoLift)** (2026) — Meta Open Source (facebookincubator). *GitHub*
+  `package` · `intermediate` · `access: open` · `MIT`
+  An end-to-end R toolkit for geo experiments: market selection and power analysis, then lift estimation with (augmented) synthetic control, including multi-cell tests.
+  *Use in wiki:* Explains how brands run geo holdouts. Demo the walkthrough vignette, or reproduce the GeoLift idea in Python with CausalPy.
+  Tools: R, GeoLift
+  *Note:* R only (R >= 4.0); no Python version. Site: https://facebookincubator.github.io/GeoLift/ . No year given.
+
 - [recommended] **[Close Enough? A Large-Scale Exploration of Non-Experimental Approaches to Advertising Measurement](https://www.kellogg.northwestern.edu/academics-research/research/detail/2023/close-enough-a-large-scale-exploration-of-non-experimental/)** (2023) — Gordon, B. R.; Moakler, R.; Zettelmeyer, F. *Marketing Science*
   `paper` · `advanced` · `access: open`
   Uses a large set of Facebook RCTs to test whether double/debiased ML and rich user-level data let observational methods recover experimental ad effects. Mostly they don't, even with rich data.
@@ -196,13 +204,6 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Explains how platform lift studies (Meta/Google conversion lift) actually work, and links ITT vs. treatment-on-treated to the IV material.
   [Open-access copy](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2620078)
   *Note:* I didn't see a DOI. Won the 2022 AMA Weitz-Winer-O'Dell award, per AMA search results.
-
-- [recommended] **[GeoLift: geo-level lift measurement with synthetic control](https://github.com/facebookincubator/GeoLift)** — Meta Open Source (facebookincubator). *GitHub*
-  `package` · `intermediate` · `access: open` · `MIT`
-  An end-to-end R toolkit for geo experiments: market selection and power analysis, then lift estimation with (augmented) synthetic control, including multi-cell tests.
-  *Use in wiki:* Explains how brands run geo holdouts. Demo the walkthrough vignette, or reproduce the GeoLift idea in Python with CausalPy.
-  Tools: R, GeoLift
-  *Note:* R only (R >= 4.0); no Python version. Site: https://facebookincubator.github.io/GeoLift/ . No year given.
 
 - [optional] **[Meridian GeoX: open-source geo experiments for incrementality and MMM calibration](https://developers.google.com/meridian/geox)** (2026) — Google. *Google for Developers*
   `tool` · `advanced` · `access: open`
@@ -292,10 +293,10 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Note:* AI angle: the README links MMM-GPT (https://mmm-gpt.com/), an AI assistant for marketing analytics built on PyMC-Marketing. The repo also contains skills/mmm-modeling, .claude and .cursor directories, but GitHub blocked fetching them, so their contents are unverified. Lift-test integration notebook: https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_lift_test.html . Requires Python >= 3.12.
 
 - [recommended] **[Robyn: Meta's open-source marketing mix modeling package](https://github.com/facebookexperimental/Robyn)** (2023) — Meta Marketing Science (facebookexperimental). *GitHub / CRAN*
-  `package` · `advanced` · `access: open` · `MIT`
+  `package` · `advanced` · `access: open` · `MIT` · `AI angle`
   An automated MMM in R: ridge regression, evolutionary hyperparameter search, adstock/saturation, calibration to lift experiments and budget allocation. Has a beta Python API.
   *Use in wiki:* Compare with Meridian and PyMC-Marketing in a 'which MMM would you trust?' discussion, using the R demo script or the Python API notebook.
-  Tools: R, Robyn
+  [Open-access copy](https://facebookexperimental.github.io/Robyn/) · Tools: R, Robyn · Local copy: `06_M6_Causal_Inference_and_Experiments/repos/facebookexperimental__Robyn`
   *Note:* Year is the release of the Python API beta (Nov 2023). Site: https://facebookexperimental.github.io/Robyn/ . R demo: demo/demo.R. The Python API notebook is robyn_api/robyn_python_notebook.ipynb and needs R installed.
 
 ## Heterogeneous effects, uplift and targeting
@@ -382,31 +383,169 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Counterpoint to Kıcıman et al.: LLMs talk causality fluently but stumble on formal rung-2/3 reasoning, so students should check identification themselves.
   *Note:* The arXiv page lists no venue; widely cited as NeurIPS 2023 (not verified). The companion 'Can Large Language Models Infer Causation from Correlation?' (Corr2Cause; Jin et al., arXiv:2306.05836, https://arxiv.org/abs/2306.05836) finds 17 LLMs near random at inferring causation from correlations.
 
+## Python for marketing analytics: notebooks and code
+
+- [core] **[FeedX: transparent, robust A/B experimentation for Shopping feeds](https://github.com/google-marketing-solutions/feedx)** (2026) — Google Marketing Solutions. *GitHub (google-marketing-solutions/feedx)*
+  `notebook` · `intermediate` · `access: open` · `Apache-2.0` · `AI angle`
+  Python package plus two Colabs (experiment designer and analyzer) for item-randomized tests of product-feed changes. Uses a crossover design, CUPED adjustment for pre-period performance, and outlier trimming. It is the recommended test method for FeedGen, Google's LLM feed optimizer.
+  *Use in wiki:* Strong bridge case for M6 and M8: students design and analyze an experiment that tests whether LLM-rewritten product titles actually lift clicks, so they practice CUPED and power analysis on a real marketing decision.
+  Tools: feedx, pandas, numpy, scipy · Local copy: `06_M6_Causal_Inference_and_Experiments/repos/google-marketing-solutions__feedx`
+  *Note:* Last commit 2026-10-21, very active. Needs Python 3.10 or later. The sister repo google-marketing-solutions/feedgen (LLM feed rewriting) is Apps Script/TypeScript with no notebooks, so link to it rather than download it.
+
+- [core] **[Meridian GeoX: open-source geo experimentation for cross-publisher incrementality](https://github.com/google/meridian-geox)** (2026) — Google. *GitHub (google/meridian-geox); docs at developers.google.com/meridian/geox*
+  `package` · `intermediate` · `access: open` · `Apache-2.0`
+  Google's current geo-experiment library. It covers study design (holdback, go-dark, heavy-up, multi-cell, stratified sampling) and analysis with time-based regression, and its results feed Meridian MMM priors. Ships two Colab notebooks and example design and analysis CSVs.
+  *Use in wiki:* Main in-class lab for incrementality: design a single-cell holdback test, then analyze it and talk about how the lift result would calibrate an MMM.
+  [Open-access copy](https://developers.google.com/meridian/geox) · Tools: meridian-geox, google-meridian, jax · Local copy: `06_M6_Causal_Inference_and_Experiments/repos/google__meridian-geox`
+  *Note:* Last commit 2026-10-01, actively developed. pip install meridian-geox. Needs Python 3.10 or later, or 3.11 or later alongside Meridian. This is the natural successor to trimmed_match and matched_markets for teaching, and pairs with google/meridian, which is already in the library.
+
+- [core] **[mta: multi-touch attribution models in Python (heuristics, Markov chain, Shapley, Shao, logistic, additive hazard)](https://github.com/eeghor/mta)** (2026) — Korostil, I. (eeghor). *GitHub (eeghor/mta)*
+  `package` · `intermediate` · `access: open` · `MIT`
+  Small, readable Python library that runs first/last touch, linear, position-based, time-decay, Markov removal-effect, Shapley value, Shao's model, logistic and additive-hazard attribution on one journey dataset (sample data.csv.gz included). Models can be chained to compare credit allocations side by side.
+  *Use in wiki:* In-class activity: run every attribution model on the bundled journeys, compare the channel shares, and discuss why none of them is causal (the setup for geo experiments and MMM).
+  Tools: mta, pandas, numpy · Local copy: `06_M6_Causal_Inference_and_Experiments/repos/eeghor__mta`
+  *Note:* Last commit 2026-10-18. No notebooks; the README has the usage examples, so the instructor or students write the notebook (a good vibe-coding exercise). Alternative: DP6/Marketing-Attribution-Models (Apache-2.0, Polars-based, docs partly in Portuguese).
+
+- [recommended] **[AI-Assisted Statistics for Data Scientists: 50+ Essential Concepts Using R and Python, 3rd ed. (code)](https://github.com/gedeck/ai-assisted-statistics-for-data-scientists)** (2026) — Bruce, P.; Bruce, A.; Gedeck, P. *O'Reilly Media (June 2026)*
+  `notebook` · `intermediate` · `access: open` · `GPL-3.0` · `AI angle`
+  Python notebooks (ch01–ch10) for the 3rd edition of Practical Statistics for Data Scientists, now retitled for AI-assisted work. Ch3 covers statistical experiments and significance testing (A/B tests, permutation tests on web_page_data and four_sessions), ch4 regression, and ch10 generative AI and LLMs.
+  *Use in wiki:* Assign ch03 for the A/B-testing review in M6 and ch04 for the M3 regression refresher. Ch10 supports the course's AI-assisted coding theme.
+  Tools: pandas, statsmodels, scipy, scikit-learn · Local copy: `03_M3_Regression/repos/gedeck__ai-assisted-statistics-for-data-scientists`
+  *Note:* Supersedes gedeck/practical-statistics-for-data-scientists (2nd ed., GPL-3.0, 3.4k stars), which the author says is no longer maintained. Skip code/data.zip (30 MB) and sp500_data.csv.gz (21 MB). The README does not describe the AI workflows in detail, so check ch10 before assigning it. The tree listing was truncated in docs/, which isn't downloaded.
+
+- [recommended] **[Bayesian CUPED (NumPyro tutorial)](https://num.pyro.ai/en/stable/tutorials/bayesian_cuped.html)** (2026) — NumPyro contributors (adapted from Orduz, J. and Courthoud, M.). *NumPyro documentation*
+  `notebook` · `intermediate` · `access: open` · `Apache-2.0`
+  Short tutorial on synthetic ad-campaign revenue data. It compares a Bayesian difference-in-means with a CUPED-adjusted model fit in one NumPyro model; the posterior SD shrinks from 0.292 to 0.219 around a true effect of 2.
+  *Use in wiki:* Follow-up exercise after frequentist CUPED: students check how much variance reduction they get and why the pre-period covariate matters.
+  Tools: numpyro, jax, arviz
+  *Note:* Single-file sparse download from a large repo. The repo was updated 2026-10-22.
+
+- [recommended] **[Bytepawn A/B testing notebooks (CUPED, early-stopping pitfall, Fisher/Chi-squared/G/t tests, bandits)](https://github.com/mtrencseni/playground)** (2026) — Trencseni, M. *GitHub (mtrencseni/playground); blog bytepawn.com*
+  `notebook` · `intermediate` · `access: open`
+  About 20 short, simulation-based notebooks behind the Bytepawn blog: 'AB testing and the pitfall of early stopping', CUPED (including CUPED p-hacking and conversion CUPED), test choice (z, t, chi-squared, Fisher, G), parallel tests, and bandits.
+  *Use in wiki:* Link from the M6 page as reading on why peeking inflates false positives and how CUPED can be misused.
+  [Open-access copy](https://bytepawn.com/reducing-variance-in-ab-testing-with-cuped.html) · Tools: numpy, scipy, statsmodels
+  *Note:* LINK ONLY: the repo has no LICENSE file, so it is all rights reserved. Do not download. The CUPED post (31 July 2021) links CUPED.ipynb in this repo. Repo last commit 2026-09-30.
+
+- [recommended] **[Spotify Confidence: A/B test analysis including group sequential tests and variance reduction](https://github.com/spotify/confidence)** (2026) — Spotify. *GitHub (spotify/confidence)*
+  `package` · `intermediate` · `access: open` · `Apache-2.0`
+  Python package from Spotify's experimentation team for frequentist and Bayesian A/B test analysis, sample-size calculation, group sequential testing and regression-based variance reduction. Example notebooks are in examples/.
+  *Use in wiki:* In-class demo of 'peeking' and why sequential boundaries matter. Use the Sequential and Sample-sizing notebooks as worked examples.
+  Tools: spotify-confidence, pandas, statsmodels · Local copy: `06_M6_Causal_Inference_and_Experiments/repos/spotify__confidence`
+  *Note:* Last commit 2026-02-26. Latest release badge shows 4.1.0. The notebooks are mostly code with little explanatory text, so pair them with the Courthoud or Trencseni write-ups. The Bayesian and Frequentist example notebooks (7.4 MB) are left out to save space.
+
+- [recommended] **[Bayesian Decision Analysis with PyMC: Beyond A/B Testing (PyData Global 2025 tutorial)](https://github.com/AllenDowney/BDAwithPyMC)** (2025) — Downey, A. *PyData Global 2025 / PyMC Labs*
+  `notebook` · `intermediate` · `access: open` · `MIT (code); CC BY-NC-SA 4.0 (text)`
+  90-minute workshop notebook with exercise and solution versions: beta-binomial A/B testing, probability of superiority instead of p-values, Bayesian bandits with an adaptive email-campaign simulation, and hierarchical partial pooling. Runs on Colab.
+  *Use in wiki:* Drop-in M6 lab: students fill in the exercise notebook, then compare with solutions; the email-campaign bandit is marketing-framed.
+  Tools: pymc, arviz, preliz, pandas · Local copy: `06_M6_Causal_Inference_and_Experiments/repos/AllenDowney__BDAwithPyMC`
+  *Note:* Pushed 2026-10-21. Requires Python 3.12+ and PyMC 5. The hierarchical example uses MLB batting data, not marketing data. The repo ships a CLAUDE.md, which shows how an author sets up an AI assistant on a teaching repo.
+
+- [recommended] **[Matteo Courthoud's causal data science blog notebooks](https://github.com/matteocourthoud/Blog-Posts)** (2024) — Courthoud, M. *GitHub (matteocourthoud/Blog-Posts); posts on Medium / Towards Data Science*
+  `notebook` · `intermediate` · `access: open`
+  Notebooks behind clear, well-explained posts on cuped, group_sequential_testing, optimal_stopping, bayesian_ab_test, evaluate_uplift, meta_learners, beyond_churn, synthetic_control, double_ml and more.
+  *Use in wiki:* Recommended readings that explain the intuition behind CUPED and sequential testing. Link from the M6 and M7 pages.
+  Tools: statsmodels, scikit-learn, econml
+  *Note:* LINK ONLY: the GitHub page shows no license, so it is all rights reserved. Last commit 2024-03-17. The NumPyro Bayesian CUPED tutorial credits Courthoud's CUPED post and data-generating code.
+
+- [recommended] **[Behavioral Data Analysis with R and Python (companion code)](https://github.com/BuissonFlorent/BehavioralDataAnalysis)** (2021) — Buisson, F. *O'Reilly Media (June 2021)*
+  `notebook` · `intermediate` · `access: open` · `MIT`
+  R and Python code for a customer-behavior analytics book: causal diagrams, missing data, bootstrap uncertainty, experimental design basics, stratified randomization, cluster randomization with hierarchical models, moderation, mediation and IV. Includes exercises with solutions.
+  *Use in wiki:* M6 lab material on designing (not just analyzing) marketing experiments; the stratified-randomization chapter is a good in-class exercise.
+  Tools: pandas, statsmodels, R · Local copy: `06_M6_Causal_Inference_and_Experiments/repos/BuissonFlorent__BehavioralDataAnalysis`
+  *Note:* Reached via oreil.ly/BehavioralDataAnalysis, which redirects here. Folder names were read from the repo page; check exact spelling before a sparse checkout. The tree API call failed, so approx_mb is an estimate (the git pack is 55 MB). Last push 2023-07. The book's R package left CRAN; Python users are told to use this repo.
+
+- [optional] **[balance: Python package for adjusting biased samples (survey weighting)](https://github.com/facebookresearch/balance)** (2026) — Meta (facebookresearch). *GitHub (facebookresearch/balance)*
+  `package` · `intermediate` · `access: open` · `MIT`
+  Meta's package for reweighting non-representative samples (IPW, CBPS, raking, post-stratification), with diagnostics. Includes about 10 quickstart tutorial notebooks.
+  *Use in wiki:* Short demo for marketing-research projects that rely on convenience or panel surveys. It is also useful for reweighting LLM 'synthetic respondent' samples against census margins.
+  Tools: balance, pandas, scikit-learn
+  *Note:* Last commit 2026-10-22, very active.
+
+- [optional] **[Fractional Uplift: uplift modelling with complex or constrained metrics](https://github.com/google-marketing-solutions/fractional_uplift)** (2026) — Google Marketing Solutions. *GitHub (google-marketing-solutions/fractional_uplift)*
+  `package` · `advanced` · `access: open` · `Apache-2.0`
+  Meta-learner uplift package for targeting ads or promotions to the most incremental customers when the KPI is a ratio such as ROI or cost-constrained conversions. Includes an end-to-end example notebook.
+  *Use in wiki:* Advanced extension after scikit-uplift and causalml, which are already in the library. It shows how industry turns uplift scores into ROI-constrained targeting.
+  Tools: fractional-uplift, pandas
+  *Note:* Last commit 2026-01-12. Needs Python 3.10 or later.
+
+- [optional] **[Introduction to Causal Inference (SciPy 2026 tutorial materials)](https://github.com/ronikobrosly/scipy_2026_causal_inference_tutorial)** (2026) — Kobrosly, R. *SciPy 2026 (July 13, 2026)*
+  `notebook` · `intro` · `access: open`
+  4-hour hands-on tutorial: correlation vs causation, pitfalls of observational data, common causal approaches including DoWhy, with exercises in marimo notebooks.
+  *Use in wiki:* Optional self-study for M6; marimo notebooks are a possible format for the wiki's interactive pages.
+  Tools: dowhy, marimo, pandas, scikit-learn
+  *Note:* No license, so link only. Not marketing-specific.
+
+- [optional] **[Orbit: Bayesian time-series forecasting and KTR time-varying regression (Uber)](https://github.com/uber/orbit)** (2026) — Uber. *GitHub (uber/orbit)*
+  `package` · `advanced` · `access: open` · `Apache-2.0`
+  Uber's Bayesian structural time-series package (ETS, LGT, DLT, and KTR kernel time-varying regression). KTR with regression priors is the building block Uber used for MMM-style time-varying media coefficients.
+  *Use in wiki:* Optional MMM or forecasting extension. Pair the KTR tutorials with Orduz's orbit_mmm notebook, which applies KTR to media effects.
+  Tools: orbit-ml, pyro, cmdstanpy
+  *Note:* Default branch is 'dev'. Last commit 2026-05-22. The tutorials are general forecasting with no marketing-specific MMM notebook in the repo. Stan backend compilation can be slow on Colab.
+
+- [optional] **[LightweightMMM end-to-end demo notebooks (deprecated; superseded by Meridian)](https://github.com/google/lightweight_mmm)** (2025) — Google. *GitHub (google/lightweight_mmm)*
+  `notebook` · `advanced` · `access: open` · `Apache-2.0`
+  NumPyro-based Bayesian MMM. Two demo notebooks: simple end-to-end, and multiple geos with adstock, saturation, response curves and budget optimization.
+  *Use in wiki:* Historical reference only: show how the field moved from LMMM to Meridian. Do not assign it for new student work.
+  Tools: lightweight_mmm, numpyro, jax
+  *Note:* ARCHIVED on 2026-01-19 (read-only). The README says 'LMMM is not supported anymore, so we highly recommend you switch to Meridian'. Last commit 2025-06-17. Pinned JAX and NumPyro versions will likely fail on current Colab.
+
+- [optional] **[Matched Markets: geo experiment design and Time-Based Regression analysis](https://github.com/google/matched_markets)** (2025) — Google. *GitHub (google/matched_markets)*
+  `package` · `intermediate` · `access: open` · `Apache-2.0`
+  Python library for choosing treatment and control geos (TBR Matched Markets greedy search) and for post-test Time-Based Regression analysis. Two Colab notebooks and small sample CSVs.
+  *Use in wiki:* Compact TBR example to set beside Meridian GeoX or Orduz's PyMC TBR notebook, so students can see one method in three implementations.
+  Tools: matched_markets, pandas, statsmodels
+  *Note:* Last commit 2025-08-21. The README says 'not an officially supported Google product; for research purposes only'.
+
+- [optional] **[Effective-Uplift-Modeling (PyData London 2024 / SciPy 2024 talk materials)](https://github.com/takechanman1228/Effective-Uplift-Modeling)** (2024) — Takeda, H. *PyData London 2024; SciPy 2024*
+  `notebook` · `intermediate` · `access: open`
+  Demo code for 'Uplift Modeling: How to Enhance Customer Targeting in Marketing with Causal Machine Learning', which uses CausalML to find persuadable customers.
+  *Use in wiki:* Optional M6/M7 talk + code pairing; the same author's book repo (downloadable) covers uplift in sec3.6.
+  Tools: causalml, pandas
+  *Note:* No license (API license null), so link only. Pushed 2026-10-07. Talk pages: london2024.pydata.org/cfp/talk/YAXGMW and cfp.scipy.org/2024/talk/3Y9KPZ.
+
+- [optional] **[Probabilistic Programming and Bayesian Methods for Hackers, Chapter 2 (A/B testing)](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)** (2024) — Davidson-Pilon, C. *GitHub open book*
+  `notebook` · `intermediate` · `access: open` · `MIT`
+  Classic open book. Chapter 2 builds the Bayesian A/B test (and a two-site comparison) from scratch, with a notebook updated for current PyMC alongside PyMC2/PyMC3/TFP versions.
+  *Use in wiki:* Optional reading for students who want the Bayesian A/B test explained from first principles.
+  Tools: pymc, numpy, matplotlib
+  *Note:* Use Ch2_MorePyMC_PyMC_current.ipynb; the PyMC2/PyMC3 versions are legacy. The full repo is about 170 MB, so keep the sparse path.
+
+- [optional] **[Trimmed Match: design and analysis of randomized paired geo experiments](https://github.com/google/trimmed_match)** (2023) — Google. *GitHub (google/trimmed_match)*
+  `package` · `advanced` · `access: open` · `Apache-2.0`
+  Python library with a C++ core for robust iROAS estimation in matched-pair geo experiments. Includes Colab notebooks for design (with cross-validation) and post-analysis, plus example datasets.
+  *Use in wiki:* Instructor background or an optional deep dive on matched-pair geo designs and outlier-robust iROAS. The README's five-pair iROAS example makes a good worked illustration.
+  Tools: trimmed_match, pandas, scipy
+  *Note:* Last commit 2023-06-01. Not archived, but dormant. Installing it builds a C++ extension with bazel, which is slow and fragile on current Colab. The README says it was tested on Python 3.7. Prefer Meridian GeoX for student labs.
+
 ## AI-assisted coding angle for this module
 
 Resources in this folder that show the method done with AI help, LLM versions of the method, or documented failure modes of AI-written analysis:
 
+- [FeedX: transparent, robust A/B experimentation for Shopping feeds](https://github.com/google-marketing-solutions/feedx)
 - [CausalPy: causal inference for quasi-experiments in Python](https://github.com/pymc-labs/CausalPy)
 - [PyMC-Marketing: Bayesian MMM, CLV and choice models in Python](https://www.pymc-marketing.io/en/stable/)
 - [Causal Reasoning and Large Language Models: Opening a New Frontier for Causality](https://arxiv.org/abs/2305.00050)
 - [Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?](https://www.nber.org/papers/w31122)
+- [AI-Assisted Statistics for Data Scientists: 50+ Essential Concepts Using R and Python, 3rd ed. (code)](https://github.com/gedeck/ai-assisted-statistics-for-data-scientists)
 - [Better Experiments with LLM Evals: A funnel, not a fork](https://engineering.atspotify.com/2026/5/better-experiments-with-llm-evals-a-funnel-not-a-fork)
+- [Robyn: Meta's open-source marketing mix modeling package](https://github.com/facebookexperimental/Robyn)
 - [Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies](https://arxiv.org/abs/2208.10264)
 - [PyWhy-LLM: integrating LLM capabilities into causal analysis](https://github.com/py-why/pywhy-llm)
 - [CLadder: Assessing Causal Reasoning in Language Models](https://arxiv.org/abs/2312.04350)
 
 ## Also relevant (catalogued in other folders)
 
-- **`01_M1_Marketing_Analytics_and_Python`**: [Applying Data Analytics in Marketing](https://www.coursera.org/learn/applying-data-analytics-business-in-marketing); [Cutting-Edge Marketing Analytics: Real World Cases and Data Sets for Hands On Learning](https://www.oreilly.com/library/view/-/9780133552584/)
+- **`01_M1_Marketing_Analytics_and_Python`**: [Applying Data Analytics in Marketing](https://www.coursera.org/learn/applying-data-analytics-business-in-marketing); [Marketing Analytics (MBA/EWMBA 263) course overview, UC Berkeley Haas](https://aiai.berkeley.edu/course-overview-mock-ups/); [Cutting-Edge Marketing Analytics: Real World Cases and Data Sets for Hands On Learning](https://www.oreilly.com/library/view/-/9780133552584/)
 - **`02_M2_Customer_Data_and_Visualization`**: [Browsing the Aisles or Browsing the App? How Online Grocery Shopping is Changing What We Buy](https://pubsonline.informs.org/doi/10.1287/mksc.2022.0292)
 - **`03_M3_Regression`**: [PyFixest: fast high-dimensional fixed-effects regression in Python (quickstart, tutorials, llms.txt and agent skill file)](https://pyfixest.org/getting-started.html); [The Effect: An Introduction to Research Design and Causality, Chapter 13: Regression](https://theeffectbook.net/ch-StatisticalAdjustment.html); [Coding for Economists: Regression](https://aeturrell.github.io/coding-for-economists/econmt-regression.html); [linearmodels: panel data, instrumental variables and system regression for Python](https://bashtage.github.io/linearmodels/); [Meta-Analysis of Advertising Effectiveness: New Insights from Improved Bias Corrections](https://pure.eur.nl/en/publications/meta-analysis-of-advertising-effectiveness-new-insights-from-impr/); [Are Large Language Models Good Statisticians?](https://arxiv.org/abs/2406.07815); [Are LLMs Capable of Data-based Statistical and Causal Reasoning? Benchmarking Advanced Quantitative Reasoning with Data](https://arxiv.org/abs/2402.17644); [When Should You Adjust Standard Errors for Clustering?](https://www.nber.org/papers/w24003); [Causal Inference: The Mixtape, Chapter 2: Probability and Regression Review](https://mixtape.scunning.com/02-probability_and_regression); [TV Advertising Effectiveness and Profitability: Generalizable Results from 288 Brands](https://papers.ssrn.com/abstract=3273476); [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/); [Bayesian Methods for Media Mix Modeling with Carryover and Shape Effects](https://research.google/pubs/bayesian-methods-for-media-mix-modeling-with-carryover-and-shape-effects/); [Linear Regression in Python (QuantEcon lecture)](https://python.quantecon.org/ols.html); [A Practitioner's Guide to Cluster-Robust Inference](https://cameron.econ.ucdavis.edu/research/Cameron_Miller_JHR_2015_February.pdf); [The garden of forking paths: Why multiple comparisons can be a problem, even when there is no 'fishing expedition' or 'p-hacking' and the research hypothesis was posited ahead of time](https://sites.stat.columbia.edu/gelman/research/unpublished/p_hacking.pdf); [PyMC-Marketing: Additive vs Log vs Log-Log MMMs (and the end-to-end MMM example)](https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_multiplicative.html)
-- **`04_M4_Conjoint_Segmentation_CLV`**: [The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective](https://arxiv.org/abs/2312.15524); [Using LLMs for Market Research](https://papers.ssrn.com/abstract=4395751); [PyDOE: Design of Experiments for Python (successor to pyDOE3)](https://github.com/pydoe/pydoe)
+- **`04_M4_Conjoint_Segmentation_CLV`**: [Juan Orduz website projects: Bayesian marketing-analytics notebooks](https://github.com/juanitorduz/website_projects); [pyrsm example notebooks (Rady School of Management business-analytics toolkit)](https://github.com/radiant-ai-hub/pyrsm); [TensorHouse: reference notebooks for marketing, promotions and pricing (successor to Introduction to Algorithmic Marketing examples)](https://github.com/ikatsov/tensor-house); [The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective](https://arxiv.org/abs/2312.15524); [Using LLMs for Market Research](https://papers.ssrn.com/abstract=4395751); [PyDOE: Design of Experiments for Python (successor to pyDOE3)](https://github.com/pydoe/pydoe)
 - **`05_M5_Text_and_Social_Media_Analytics`**: [Seeding Strategies for Viral Marketing: An Empirical Comparison](https://doi.org/10.1509/jm.10.0088); [Large Language Model Hacking: Quantifying the Hidden Risks of Using LLMs for Text Annotation](https://arxiv.org/abs/2509.08825v2); [Text as Data: A New Framework for Machine Learning and the Social Sciences](https://press.princeton.edu/books/paperback/9780691207551/text-as-data); [Identifying Influential and Susceptible Members of Social Networks](https://doi.org/10.1126/science.1215842); [The Effect of Word of Mouth on Sales: Online Book Reviews](https://doi.org/10.1509/jmkr.43.3.345)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Following Good Examples: Health Goal-Oriented Food Recommendation based on Behavior Data](https://dl.acm.org/doi/10.1145/3485447.3514193); [The Economics of Recommender Systems: Evidence from a Field Experiment on MovieLens](https://www.econstor.eu/handle/10419/271773); [How Algorithmic Confounding in Recommendation Systems Increases Homogeneity and Decreases Utility](https://www.arxiv.org/abs/1710.11214); [Machine Learning: An Applied Econometric Approach](https://www.aeaweb.org/articles?id=10.1257/jep.31.2.87); [Prediction Policy Problems](https://www.aeaweb.org/articles?id=10.1257/aer.p20151023); [Engagement, User Satisfaction, and the Amplification of Divisive Content on Social Media](https://pmc.ncbi.nlm.nih.gov/articles/PMC11894805/); [Short-term Exposure to Filter-Bubble Recommendation Systems Has Limited Polarization Effects: Naturalistic Experiments on YouTube](https://doi.org/10.1073/pnas.2318127122); [Recommendations as Treatments: Debiasing Learning and Evaluation](https://proceedings.mlr.press/v48/schnabel16.html); [Unintended Consequences of Recommender System Interventions: Evidence from a Field Experiment](https://arxiv.org/abs/2606.08265v1); [Understanding or Manipulation: Rethinking Online Performance Gains of Modern Recommender Systems](https://arxiv.org/abs/2210.05662v2); [Reducing Recommender System Biases: An Investigation of Rating Display Designs](https://misq.org/reeducing-recommender-system-biases-an-investigation-of-rating-display-designs.html); [Is Seeing Believing? How Recommender Interfaces Affect Users' Opinions](https://experts.umn.edu/en/publications/is-seeing-believing-how-recommender-interfaces-affect-users-opini/)
-- **`08_M8_Current_Topics_in_Marketing`**: [Retail Media ROAS Demystified: Understanding Your Brand's ROAS](https://ovative.com/impact/expert-insights/retail-media-roas-demystified/); [Algorithmic Bias? An Empirical Study of Apparent Gender-Based Discrimination in the Display of STEM Career Ads](https://ideas.repec.org/a/inm/ormnsc/v65y2019i7p2966-2981.html); [Frontiers: Generative AI and Personalized Video Advertisements](https://pubsonline.informs.org/doi/fpi/10.1287/mksc.2023.0494)
+- **`08_M8_Current_Topics_in_Marketing`**: [Retail Media ROAS Demystified: Understanding Your Brand's ROAS](https://ovative.com/impact/expert-insights/retail-media-roas-demystified/); [Algorithmic Bias? An Empirical Study of Apparent Gender-Based Discrimination in the Display of STEM Career Ads](https://ideas.repec.org/a/inm/ormnsc/v65y2019i7p2966-2981.html); [Frontiers: Generative AI and Personalized Video Advertisements](https://pubsonline.informs.org/doi/fpi/10.1287/mksc.2023.0494); [Awesome Marketing Science (curated list)](https://github.com/shakostats/Awesome-Marketing-Science)
 - **`10_AI_Coding_Concepts_and_Evidence`**: [We are Changing our Developer Productivity Experiment Design](https://metr.org/blog/2026-02-24-uplift-update/); [Generative AI at Work](https://digitaleconomy.stanford.edu/publication/generative-ai-at-work); [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/); [The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers](https://pubsonline.informs.org/doi/fpi/10.1287/mnsc.2025.00535); [BLADE: Benchmarking Language Model Agents for Data-Driven Science](https://arxiv.org/abs/2408.09667); [Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality](https://papers.ssrn.com/abstract=4573321); [The Impact of AI on Developer Productivity: Evidence from GitHub Copilot](https://arxiv.org/abs/2302.06590); [Automated Social Science: Language Models as Scientist and Subjects](https://arxiv.org/abs/2404.11794); [How much does AI impact development speed? An enterprise-based randomized controlled trial](https://arxiv.org/abs/2410.12944)
 - **`11_AI_Coding_Tools_and_Workflows`**: [Do Users Write More Insecure Code with AI Assistants?](https://arxiv.org/abs/2211.03622)
 - **`12_AI_Coding_Pedagogy_and_Policy`**: [Generative AI without guardrails can harm learning: Evidence from high school mathematics](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486); [Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task](https://arxiv.org/abs/2506.08872)
 - **`20_Datasets`**: [Google Analytics 4 sample ecommerce dataset (Google Merchandise Store) in BigQuery](https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset); [The Upworthy Research Archive](https://upworthy.natematias.com/); [Kevin Hillstrom MineThatData E-Mail Analytics Challenge dataset](https://www.uplift-modeling.com/en/latest/api/datasets/fetch_hillstrom.html); [dunnhumby Source Files: The Complete Journey, Breakfast at the Frat, Carbo-Loading, Let's Get Sort-of-Real](https://www.dunnhumby.com/source-files/); [PyMC-Marketing example data: synthetic MMM and CDNOW CLV](https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html); [causaldata (Python, R and Stata package)](https://pypi.org/project/causaldata/); [Criteo Uplift Prediction Dataset (v2.1)](https://ailab.criteo.com/?p=859); [Dominick's Finer Foods scanner data](https://www.chicagobooth.edu/research/kilts/research-data/dominicks); [Google Meridian simulated geo-level MMM data (geo_all_channels)](https://developers.google.com/meridian/docs/user-guide/load-geo-data-with-organic-and-non-media); [Criteo Attribution Modeling for Bidding Dataset](https://ailab.criteo.com/?p=649); [Open Bandit Dataset and Open Bandit Pipeline](https://github.com/st-tech/zr-obp)
-- **`21_Open_Textbooks_and_Courses`**: [Causal Inference for the Brave and True](https://matheusfacure.github.io/python-causality-handbook/landing-page.html); [The Effect: An Introduction to Research Design and Causality](https://theeffectbook.net/); [Coding for Economists](https://aeturrell.github.io/coding-for-economists/); [Applied Causal Inference Powered by ML and AI](https://causalml-book.org/); [Ad response tutorial: last-click attribution, experiments, MMM and attribution models](https://github.com/eleafeit/ad_response_tutorial); [Computational and Inferential Thinking: The Foundations of Data Science, 2nd ed. (Berkeley Data 8)](https://inferentialthinking.com/); [Business Data Science: code and examples](https://github.com/TaddyLab/BDS); [Darden Business Publishing (cases, simulations, course packs)](https://store.darden.virginia.edu/); [Hands-On Data Science for Marketing (code repository)](https://github.com/PacktPublishing/Hands-On-Data-Science-for-Marketing)
+- **`21_Open_Textbooks_and_Courses`**: [Marketing Science in Python: A Practitioner's Guide (companion code)](https://github.com/takechanman1228/marketing-science-in-python); [Data Analytics for Marketing: A practical guide to analyzing marketing data using Python (companion code)](https://github.com/PacktPublishing/Data-Analytics-for-Marketing); [Causal Inference for the Brave and True](https://matheusfacure.github.io/python-causality-handbook/landing-page.html); [The Effect: An Introduction to Research Design and Causality](https://theeffectbook.net/); [Coding for Economists](https://aeturrell.github.io/coding-for-economists/); [Marketing Analytics and Data Science: Tools and Models (supplementary code)](https://link.springer.com/book/9783032111296); [Applied Causal Inference Powered by ML and AI](https://causalml-book.org/); [Machine Learning and Generative AI for Marketing (companion code)](https://github.com/PacktPublishing/Machine-Learning-and-Generative-AI-for-Marketing); [Ad response tutorial: last-click attribution, experiments, MMM and attribution models](https://github.com/eleafeit/ad_response_tutorial); [Computational and Inferential Thinking: The Foundations of Data Science, 2nd ed. (Berkeley Data 8)](https://inferentialthinking.com/); [Business Data Science: code and examples](https://github.com/TaddyLab/BDS); [Darden Business Publishing (cases, simulations, course packs)](https://store.darden.virginia.edu/); [Hands-On Data Science for Marketing (code repository)](https://github.com/PacktPublishing/Hands-On-Data-Science-for-Marketing)
 - **`22_Wiki_Design_and_Hosting`**: [Seeing Theory](https://seeing-theory.brown.edu/)

@@ -1,0 +1,108 @@
+# PYRSM
+
+Python functions and classes for Business Analytics at the Rady School of Management (RSM), University of California, San Diego (UCSD).
+
+## Features
+
+**Basics Module** - Statistical tests and analyses:
+- `compare_means` - Compare means across groups (t-tests, ANOVA)
+- `compare_props` - Compare proportions between groups
+- `correlation` - Correlation analysis with significance tests
+- `cross_tabs` - Cross-tabulation with chi-square tests
+- `goodness` - Goodness of fit tests
+- `single_mean` - Single sample mean tests
+- `single_prop` - Single sample proportion tests
+- `prob_calc` - Probability calculator for common distributions
+
+**Model Module** - Regression and machine learning:
+- `regress` - Linear regression with statsmodels
+- `logistic` - Logistic regression with statsmodels
+- `mlp` - Multi-layer perceptron (neural network) with sklearn
+- `rforest` - Random forest with sklearn
+- `xgboost` - XGBoost gradient boosting
+
+**EDA Module** - Exploratory data analysis:
+- `explore` - Data exploration and summary statistics
+- `pivot` - Pivot tables
+- `visualize` - Data visualization
+
+All modules use [Polars](https://pola.rs/) DataFrames and [plotnine](https://plotnine.org/) for visualization.
+
+## Installation
+
+Requires Python 3.12+ and UV:
+
+```bash
+mkdir ~/project
+cd ~/project
+uv init .
+uv venv --python 3.13
+source .venv/bin/activate
+uv add pyrsm
+```
+
+For machine learning models, install with extras:
+
+```bash
+uv add "pyrsm[ml]"
+```
+
+For all features:
+
+```bash
+uv add "pyrsm[all]"
+```
+
+If you cloned pyrsm and was to add it in editable format use:
+
+```bash
+uv add --editable --dev /home/vnijs/gh/pyrsm`
+```
+
+To add to a specific (project) folder use:
+
+```bash
+uv add --project /opt/base-uv pyrsm`
+```
+
+## Quick Start
+
+```python
+import polars as pl
+import pyrsm as rsmi
+
+# Load data
+df = pl.read_parquet("data.parquet")
+
+# Statistical test
+cm = rsm.basics.compare_means(df, var="price", byvar="category")
+cm.summary()
+cm.plot()
+
+# Regression model
+reg = rsm.model.regress(df, rvar="price", evar=["size", "age", "type"])
+reg.summary()
+reg.plot()
+```
+
+## R data files to parquet
+
+Convert R data files (`.rds`, `.rda`) to parquet files that load into Radiant-AI. Factors become
+Enums with R's level order, and the markdown description Radiant stores with a dataset is kept
+inside the parquet file and beside it as `<name>_description.md`. Requires R (`Rscript`).
+
+```python
+rsm.data.rds_to_parquet("~/data/*.rds")                       # writes ~/data/<name>.parquet
+rsm.data.rds_to_parquet("~/data", out_dir="~/parquet")         # every .rds/.rda in a folder
+rsm.data.read_description("~/data/diamonds.parquet")
+```
+
+Or from a terminal: `rds2parquet ~/data/*.rds` (`rds2parquet --help` for options).
+
+## Examples
+
+Extensive example notebooks are available at: <https://github.com/radiant-ai-hub/pyrsm/tree/main/examples>
+
+## License
+
+This project is licensed under the [GNU Affero General Public License v3.0](LICENSE).

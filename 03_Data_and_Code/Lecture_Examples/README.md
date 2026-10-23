@@ -34,6 +34,8 @@ No file uses a missing-value code. Counts are nonnegative integers; probabilitie
 
 ## Additional Calculations
 
+[price_iv.py](price_iv.py) generates 2,000 synthetic independent markets to compare OLS, a valid cost instrument, and an instrument with a direct demand effect. It requires NumPy 2.1.3, available in the [mHealth example environment](../mHealth/recurring_examples/requirements.txt). Run `python 03_Data_and_Code/Lecture_Examples/price_iv.py` from the repository root. Its executed output is [price_iv_results.json](price_iv_results.json), and its complete source appears in M3, Section 3.12. The simulation imposes a true elasticity of -1.5 and is not an estimate from mHealth or a solved pricing equilibrium. An independent noiseless slope check is included in `../mHealth/recurring_examples/test_extension_logic.py`.
+
 The JSON report also contains renewal incremental contribution (M1), basket Jaccard similarity (M2), an OLS confidence interval (M3), logit shares and acquisition-adjusted CLV (M4), prevalence-dependent precision (M5), email-effect uncertainty and power (M6), a classification threshold and coupon value (M7), and recommendation objectives, carryover, media optimization, and total workflow time (M8).
 
 Read the equations and assumptions in the relevant module before adapting a calculation. Confidence-interval and power formulas are approximations under the stated design. The known media curves are imposed, smooth, and concave; their optimum is not an estimated budget recommendation. Coding assistants should be asked to explain these conditions and verify a small case before extending the code.

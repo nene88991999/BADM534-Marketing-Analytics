@@ -445,3 +445,131 @@ for i in range(1001):
     assert max(goal_items, key=lambda j: goal_score(j, alpha)) == expected
 print(json.dumps(r, indent=2))
 ```
+
+## 7.17 mHealth: Basket Associations and Future Validation
+
+A recommendation manager wants to identify categories that commonly appear together in a recorded day. An association rule can generate candidates for a basket-completion feature. Its commercial value still depends on when a suggestion is shown, whether the customer has already recorded the item, and whether the suggestion changes behavior. A high co-occurrence rate alone does not establish incremental demand.
+
+Treat each observed user-day with at least one classified category as a basket. Deduplicate categories within the day, so repeated servings contribute one presence indicator. For categories $A$ and $B$, define
+
+$$
+\operatorname{support}(A,B)=P(A\cap B),\qquad
+\operatorname{confidence}(A\to B)=P(B\mid A),\qquad
+\operatorname{lift}(A\to B)=\frac{P(B\mid A)}{P(B)}.
+$$
+
+Probabilities are empirical fractions of recorded baskets. Confidence is directional, whereas lift is symmetric for a two-category pair. A popular category can have high confidence without an unusually strong association. Lift compares the conditional rate with the marginal rate and therefore supplies the necessary benchmark. The label “confidence” here is a conditional frequency, separate from a statistical confidence interval.
+
+Use January–June data to select the 20 most frequent categories. Among their pairs, require at least 100 joint baskets and 30 distinct supporting users. Rank eligible pairs by training lift and fix the largest before examining July–August. These prespecified restrictions avoid selecting a pair supported by only a few repeated entries, but they do not make users' repeated baskets independent. The training sample has 40,727 baskets from 358 users. The selected pair is oil and tomato, supported jointly by 192 users.
+
+| Metric | January–June | July–August |
+| --- | ---: | ---: |
+| Recorded Baskets | 40,727 | 12,956 |
+| Baskets With Oil | 7,283 | 2,174 |
+| Baskets With Tomato | 4,708 | 1,930 |
+| Baskets With Both | 1,985 | 658 |
+| Tomato Given Oil | 27.26% | 30.27% |
+| Marginal Tomato Rate | 11.56% | 14.90% |
+| Lift | 2.358 | 2.032 |
+
+The later evaluation includes observed baskets from the previously known users; 334 of them contribute baskets in July–August. Users with no later basket supply no basket-level outcome. In the table, conditional tomato frequency rises while lift falls because tomato also becomes more common overall. Judging only the conditional frequency would miss that change in the comparison benchmark.
+
+![Conditional tomato frequency rises in the later period, but the marginal tomato rate rises proportionally more, reducing lift.](../figures/M07_basket_lift.png)
+
+A 500-draw bootstrap resamples the 358 training users, carrying each user's complete later basket history into the draw, including zero later baskets. The percentile interval for later lift is [1.762, 2.411]. It describes sampling variation for the already selected pair, with dependence within each user preserved. It does not address common calendar shocks, uncertainty over the category-selection procedure, or the effect of displaying a recommendation. The recorded category names also do not establish nutritional complementarity.
+
+The [mlxtend association-rule guide](https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/) defines support, confidence, and lift and provides scalable itemset-mining tools. The code below enumerates pairs from a bounded candidate set so every numerator is inspectable. Its results can be compared with that library after the same basket and candidate definitions are imposed.
+
+The [implicit recommendation examples](https://github.com/benfred/implicit/tree/main/examples) and [Surprise examples](https://github.com/NicolasHug/Surprise/tree/master/examples) address different feedback structures. Food logging supplies observed occurrences; missing entries do not provide explicit dislike ratings. For next-basket prediction, retain the chronological evaluation and known candidate set from Section 7.15. For within-basket completion, the source would additionally need an information rule specifying which recorded categories are visible when a suggestion is made.
+
+Python source: [association_rules.py](../../03_Data_and_Code/mHealth/recurring_examples/association_rules.py). From its directory, run `python association_rules.py`.
+
+```python
+"""Select a category pair in January-June; evaluate it in July-August."""
+
+from itertools import combinations
+import json
+import numpy as np
+import pandas as pd
+from common import SEED, load_food, make_baskets, save_result
+
+
+def metrics(n, a, b, both):
+    if min(n, a, b) <= 0:
+        raise ValueError("Positive basket and marginal counts are required")
+    return {
+        "baskets": int(n),
+        "a_baskets": int(a),
+        "b_baskets": int(b),
+        "joint_baskets": int(both),
+        "support": both / n,
+        "confidence_a_to_b": both / a,
+        "baseline_b": b / n,
+        "lift": both * n / (a * b),
+    }
+
+
+def presence(baskets, categories):
+    return np.array(
+        [[c in basket for c in categories] for basket in baskets.basket], dtype=np.int64
+    )
+
+
+if __name__ == "__main__":
+    baskets = make_baskets(load_food())
+    train = baskets.loc[baskets.date < "2016-07-01"]
+    frequency = train.explode("basket").groupby("basket").size()
+    categories = sorted(
+        frequency.sort_values(ascending=False, kind="stable").head(20).index
+    )
+    matrix = presence(train, categories)
+    joint, marginal = matrix.T @ matrix, matrix.sum(axis=0)
+    rules = []
+    for a, b in combinations(range(len(categories)), 2):
+        mask = (matrix[:, a] * matrix[:, b]).astype(bool)
+        supporting_users = train.loc[mask, "Userid"].nunique()
+        if joint[a, b] >= 100 and supporting_users >= 30:
+            rule = metrics(len(train), marginal[a], marginal[b], joint[a, b])
+            rules.append(
+                {
+                    "a": categories[a],
+                    "b": categories[b],
+                    "supporting_users": int(supporting_users),
+                    **rule,
+                }
+            )
+    rules.sort(key=lambda r: (-r["lift"], r["a"], r["b"]))
+    selected = rules[0]
+    users = sorted(train.Userid.unique())
+    future = baskets.loc[
+        baskets.Userid.isin(users) & baskets.date.between("2016-07-01", "2016-08-31")
+    ].copy()
+    binary = presence(future, [selected["a"], selected["b"]])
+    future["a"], future["b"] = binary[:, 0], binary[:, 1]
+    future["both"], future["n"] = binary.prod(axis=1), 1
+    counts = (
+        future.groupby("Userid")[["n", "a", "b", "both"]]
+        .sum()
+        .reindex(users, fill_value=0)
+        .to_numpy()
+    )
+    evaluation = metrics(*counts.sum(axis=0))
+    rng = np.random.default_rng(SEED)
+    lifts = []
+    for _ in range(500):
+        total = counts[rng.integers(0, len(users), len(users))].sum(axis=0)
+        if min(total[:3]) > 0:
+            lifts.append(metrics(*total)["lift"])
+    evaluation["user_bootstrap_ci95"] = np.quantile(lifts, [0.025, 0.975]).tolist()
+    evaluation["bootstrap_valid_draws"] = len(lifts)
+    result = {
+        "candidate_categories": len(categories),
+        "eligible_pairs": len(rules),
+        "training_users": len(users),
+        "evaluation_users": int(future.Userid.nunique()),
+        "selected_training_pair": selected,
+        "july_august": evaluation,
+    }
+    save_result("association_rules", result)
+    print(json.dumps(result, indent=2))
+```

@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\node[box,text width=2.8cm,minimum height=1.4cm] (s) at (0,0) {Required Fields\\4 Candidates};
+\node[box,text width=2.8cm,minimum height=1.4cm] (e) at (4.4,0) {Matching Numbers\\2 Candidates};
+\node[box,text width=2.8cm,minimum height=1.4cm] (i) at (8.8,0) {Supported Scope\\1 Candidate};
+\draw[edge] (s) -- (e);
+\draw[edge] (e) -- (i);
+\node[orangebox,text width=3.1cm] (badnum) at (3.7,-2.3) {Changed Value or Denominator};
+\node[orangebox,text width=3.1cm] (badscope) at (8.8,-2.3) {Causal Health Claim};
+\draw[accent] (e.south) -- (badnum.north);
+\draw[accent] (i.south) -- (badscope.north);
+\node[font=\footnotesize,align=center,text width=3cm] at (0,-2.3) {All Four Inputs Have Valid Field Structure};
+\end{tikzpicture}

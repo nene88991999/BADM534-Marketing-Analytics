@@ -486,3 +486,81 @@ r["M01"] = {
 assert orders == {"O1": 25, "O2": 12}
 print(json.dumps(r, indent=2))
 ```
+
+## 1.10 mHealth: An Auditable Monthly Business Review
+
+An mHealth manager needs to decide whether a decline in food entries warrants attention to customer engagement. Entry counts combine the number of eligible customers, the length of the reporting month, the frequency of logging, and the intensity of logging on observed days. A decline can arise from any of these components. The comparison becomes interpretable when the eligible population is fixed before the reporting periods and every component has an explicit denominator.
+
+Define the population as users in the teaching cohort with at least one observed day before May 1, 2016. All members remain in the May and June denominators, including those with no logs in a month. A missing day contributes zero to the indicator for an observed log; its food consumption remains unobserved. For month $t$, the number of entries satisfies the accounting identity
+
+$$
+L_t=N D_t p_t a_t,
+$$
+
+where $N$ is the fixed number of eligible users, $D_t$ is calendar days in the month, $p_t$ is observed user-days divided by $ND_t$, and $a_t$ is entries per observed user-day. The identity separates calendar exposure from logging behavior. It uses counts of records, with no assumption that an entry represents a purchase or a complete meal.
+
+| Quantity | May | June |
+| --- | ---: | ---: |
+| Eligible Users | 340 | 340 |
+| Calendar User-Days | 10,540 | 10,200 |
+| Observed User-Days | 7,082 | 6,331 |
+| Observed Logging Fraction | 0.6719 | 0.6207 |
+| Entries per Observed Day | 11.7995 | 11.6910 |
+| Food Entries | 83,564 | 74,016 |
+
+The table identifies a 5.12 percentage-point decline in the logging fraction, alongside a shorter month and a modest decline in entries per observed day. Changing the denominator to users who happened to log during June would remove inactive members from the comparison. The fixed-population result supports investigation of engagement, recording practices, and seasonality. It supplies no estimate of a campaign effect or change in nutrition.
+
+An AI-assisted business review should retrieve numerical claims from a computed evidence file. The file below records the source checksum, membership rule, observation unit, month, numerator, and denominator. A useful coding request is: “Construct the fixed cohort before May, count distinct user-dates, retain members with zero logs, and verify the accounting identity separately for each month.” The independent calculation must finish before an assistant writes the managerial explanation.
+
+The [claude-ecom reference](https://github.com/takechanman1228/claude-ecom) separates numerical computation from a narrative layer for ecommerce reviews. The mHealth calculation applies that separation to logging data. Its descriptive evidence file also supplies the structured-claim checks in M8.
+
+Python source: [reporting.py](../../03_Data_and_Code/mHealth/recurring_examples/reporting.py). From its directory, run `python reporting.py`.
+
+```python
+"""Compute an auditable, fixed-cohort mHealth business review locally."""
+
+import json
+import pandas as pd
+from common import ROOT, load_food, save_result
+
+
+def monthly_review(food):
+    # Fix membership before either reporting month; retain zero-log users.
+    members = sorted(food.loc[food.date < "2016-05-01", "Userid"].unique())
+    rows = []
+    for month in ["2016-05", "2016-06"]:
+        period = pd.Period(month, freq="M")
+        part = food.loc[
+            food.Userid.isin(members) & food.date.dt.to_period("M").eq(period)
+        ]
+        days = part[["Userid", "date"]].drop_duplicates()
+        denominator = len(members) * period.days_in_month
+        assert len(days) <= denominator
+        rows.append(
+            {
+                "period": month,
+                "eligible_users": len(members),
+                "calendar_user_days": denominator,
+                "observed_user_days": len(days),
+                "users_with_logs": int(days.Userid.nunique()),
+                "food_entries": len(part),
+                "logging_fraction": len(days) / denominator,
+                "entries_per_observed_day": len(part) / len(days),
+            }
+        )
+    manifest = json.loads((ROOT.parent / "manifest.json").read_text())
+    return {
+        "source_sha256": manifest["files"]["food_entries.csv.gz"]["sha256"],
+        "membership": "At least one observed day before 2016-05-01",
+        "unit": "eligible user-calendar-day",
+        "metric": "logging_fraction",
+        "interpretation": "descriptive",
+        "periods": rows,
+    }
+
+
+if __name__ == "__main__":
+    result = monthly_review(load_food())
+    save_result("reporting", result)
+    print(json.dumps(result, indent=2))
+```

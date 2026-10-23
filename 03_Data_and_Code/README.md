@@ -27,3 +27,5 @@ The [labs folder](../07_Labs/README.md) contains the structure for complete guid
 ## Recurring mHealth Cases
 
 The [eight-module examples](mHealth/recurring_examples/README.md) include complete Python, aggregate outputs, a data-quality audit, nutrition-screening sensitivity, and meaningful counterexample checks. The same code is embedded in the lecture notes.
+
+Additional executed examples cover fixed-cohort reporting, recency/frequency, logging-gap survival, text topics, CUPED, basket associations, and checks on generated numerical claims. A separate synthetic price-instrument simulation illustrates endogeneity and exclusion. See the [resource-to-example map](../06_Lecture_Notes/RESOURCE_INTEGRATION.md) for source attribution, module sections, and the distinction between executed course code and downloaded reference notebooks.

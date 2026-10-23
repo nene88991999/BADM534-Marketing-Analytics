@@ -1,0 +1,488 @@
+{
+  "date": "2026-10-23",
+  "new_local_snapshots": 35,
+  "snapshots": [
+    {
+      "local_copy": "01_M1_Marketing_Analytics_and_Python/repos/guipsamora__pandas_exercises",
+      "resource_ids": [
+        "guipsamora-pandas-exercises"
+      ],
+      "upstream": "https://github.com/guipsamora/pandas_exercises",
+      "commit": "daf0fd2c7c34724aba5b7ec6006aaf9873a2913b",
+      "files": 110,
+      "bytes": 4026264,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/joaolcorreia__RFM-analysis",
+      "resource_ids": [
+        "correia-rfm-analysis"
+      ],
+      "upstream": "https://github.com/joaolcorreia/RFM-analysis",
+      "commit": "012b2b6b7f127ff6bd73a7d199070d4f03167e2b",
+      "files": 8,
+      "bytes": 746104,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "RFM-analysis.py"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/practical-data-science__ecommercetools",
+      "resource_ids": [
+        "ecommercetools-practical-data-science"
+      ],
+      "upstream": "https://github.com/practical-data-science/ecommercetools",
+      "commit": "d5d5e9a4a6c7fafd0b6931c13d9cf3865a154b76",
+      "files": 42,
+      "bytes": 313809,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "03_M3_Regression/repos/gedeck__ai-assisted-statistics-for-data-scientists",
+      "resource_ids": [
+        "bruce-gedeck-ai-assisted-statistics-3e"
+      ],
+      "upstream": "https://github.com/gedeck/ai-assisted-statistics-for-data-scientists",
+      "commit": "44ea23fb3bc11170ed8a28625fa52f5479fa203f",
+      "files": 27,
+      "bytes": 9062556,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "03_M3_Regression/repos/jeffgortmaker__pyblp",
+      "resource_ids": [
+        "pyblp-tutorials"
+      ],
+      "upstream": "https://github.com/jeffgortmaker/pyblp",
+      "commit": "16536807004b16c24fb40b931531b45b33884e00",
+      "files": 10,
+      "bytes": 451425,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "docs/notebooks/tutorial/logit_nested.ipynb"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "04_M4_Conjoint_Segmentation_CLV/repos/google-marketing-solutions__crystalvalue",
+      "resource_ids": [
+        "google-crystalvalue"
+      ],
+      "upstream": "https://github.com/google-marketing-solutions/crystalvalue",
+      "commit": "469fe17e9441749e35977bcedde31183e4151215",
+      "files": 34,
+      "bytes": 486693,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "04_M4_Conjoint_Segmentation_CLV/repos/pymc-labs__semantic-similarity-rating",
+      "resource_ids": [
+        "pymc-labs-semantic-similarity-rating"
+      ],
+      "upstream": "https://github.com/pymc-labs/semantic-similarity-rating",
+      "commit": "86dcd2597c7824e4fd6546b884c5500c43a4b022",
+      "files": 6,
+      "bytes": 40214,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "README.md"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "04_M4_Conjoint_Segmentation_CLV/repos/radiant-ai-hub__pyrsm",
+      "resource_ids": [
+        "pyrsm-examples-ucsd-rady"
+      ],
+      "upstream": "https://github.com/radiant-ai-hub/pyrsm",
+      "commit": "bb718ef136f4323a4841948c3fc545bf9392c125",
+      "files": 105,
+      "bytes": 20515478,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "examples/multivariate/multivariate-conjoint-choice.ipynb",
+        "examples/multivariate/multivariate-cbc.ipynb"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "04_M4_Conjoint_Segmentation_CLV/repos/rasbt__mlxtend",
+      "resource_ids": [
+        "mlxtend-frequent-patterns"
+      ],
+      "upstream": "https://github.com/rasbt/mlxtend",
+      "commit": "1aee767ef57b84a8191511a08955c583b65de382",
+      "files": 10,
+      "bytes": 237800,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "docs/sources/user_guide/frequent_patterns/association_rules.ipynb"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "05_M5_Text_and_Social_Media_Analytics/repos/MaartenGr__BERTopic",
+      "resource_ids": [
+        "bertopic-docs-llm-representations"
+      ],
+      "upstream": "https://github.com/MaartenGr/BERTopic",
+      "commit": "9036123c97aaa9a6cc4bec4a6db1a7caf9209df6",
+      "files": 30,
+      "bytes": 545799,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "docs/getting_started/representation/representation.md"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "05_M5_Text_and_Social_Media_Analytics/repos/blueprints-for-text-analytics-python__blueprints-text",
+      "resource_ids": [
+        "blueprints-text-analytics"
+      ],
+      "upstream": "https://github.com/blueprints-for-text-analytics-python/blueprints-text",
+      "commit": "199c3ab4bae2f07a8266f817e8c005075af9969a",
+      "files": 44,
+      "bytes": 3266885,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "ch08/Topic_Modeling_Clustering.ipynb"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "05_M5_Text_and_Social_Media_Analytics/repos/openai__openai-cookbook",
+      "resource_ids": [
+        "openai-cookbook-review-embeddings"
+      ],
+      "upstream": "https://github.com/openai/openai-cookbook",
+      "commit": "4bb93ceb583c809a5f0f6b374cb66f192dd534a0",
+      "files": 12,
+      "bytes": 1214558,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/AllenDowney__BDAwithPyMC",
+      "resource_ids": [
+        "downey-bayesian-decision-analysis-pymc-workshop"
+      ],
+      "upstream": "https://github.com/AllenDowney/BDAwithPyMC",
+      "commit": "e8fbf255b0213819f5c470fd71e8394b61a8a80d",
+      "files": 20,
+      "bytes": 959589,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/BuissonFlorent__BehavioralDataAnalysis",
+      "resource_ids": [
+        "buisson-behavioral-data-analysis"
+      ],
+      "upstream": "https://github.com/BuissonFlorent/BehavioralDataAnalysis",
+      "commit": "1452368f9cc36e0a5292348598c49de11ef05672",
+      "files": 51,
+      "bytes": 10038115,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/eeghor__mta",
+      "resource_ids": [
+        "eeghor-mta"
+      ],
+      "upstream": "https://github.com/eeghor/mta",
+      "commit": "3c3301ce356ad800a46c4c3595ed13b5ca698150",
+      "files": 24,
+      "bytes": 223783,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/facebookexperimental__Robyn",
+      "resource_ids": [
+        "robyn-python"
+      ],
+      "upstream": "https://github.com/facebookexperimental/Robyn",
+      "commit": "5915aa9d5d31d8947a274aa00fdf30b8947823e5",
+      "files": 8,
+      "bytes": 13141521,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/google-marketing-solutions__feedx",
+      "resource_ids": [
+        "feedx-shopping-feed-experiments"
+      ],
+      "upstream": "https://github.com/google-marketing-solutions/feedx",
+      "commit": "c25bf680ebc4a7792f7a98a2af30793b0ec80719",
+      "files": 30,
+      "bytes": 4151718,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "README.md",
+        "feedx/statistics.py"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/google__meridian-geox",
+      "resource_ids": [
+        "google-meridian-geox"
+      ],
+      "upstream": "https://github.com/google/meridian-geox",
+      "commit": "3424ae0240e7f90b3804b7fb988e2ff3e90f2ff7",
+      "files": 39,
+      "bytes": 4879183,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/juanitorduz__website_projects",
+      "resource_ids": [
+        "orduz-website-projects-marketing-notebooks",
+        "orduz-marketing-notebooks"
+      ],
+      "upstream": "https://github.com/juanitorduz/website_projects",
+      "commit": "530fdd5431ea586a8362d33c3dd35655498488c6",
+      "files": 15,
+      "bytes": 24069616,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "06_M6_Causal_Inference_and_Experiments/repos/spotify__confidence",
+      "resource_ids": [
+        "spotify-confidence"
+      ],
+      "upstream": "https://github.com/spotify/confidence",
+      "commit": "0f12dd39afd15c48baf24e9d28fcbe72a905bb53",
+      "files": 6,
+      "bytes": 8955933,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "07_M7_Predictive_Models_ML_and_AI/repos/CamDavidsonPilon__lifelines",
+      "resource_ids": [
+        "lifelines-churn-notebooks"
+      ],
+      "upstream": "https://github.com/CamDavidsonPilon/lifelines",
+      "commit": "7a8fc34a013ecd79fa405017b89e1697c1cc6e17",
+      "files": 6,
+      "bytes": 2159219,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "examples/Customer Churn.ipynb"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "07_M7_Predictive_Models_ML_and_AI/repos/NicolasHug__Surprise",
+      "resource_ids": [
+        "surprise-explicit-ratings"
+      ],
+      "upstream": "https://github.com/NicolasHug/Surprise",
+      "commit": "93e1c30f3b2d15bdd0f2c4c816fbfce59f000fad",
+      "files": 28,
+      "bytes": 218858,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "07_M7_Predictive_Models_ML_and_AI/repos/benfred__implicit",
+      "resource_ids": [
+        "implicit-als-recommender"
+      ],
+      "upstream": "https://github.com/benfred/implicit",
+      "commit": "8a95dbe24ca675a6edd86aafb3b4cd5ae7287edf",
+      "files": 8,
+      "bytes": 36868,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "07_M7_Predictive_Models_ML_and_AI/repos/carl24k__fight-churn",
+      "resource_ids": [
+        "gold-fighting-churn-with-data",
+        "fight-churn-with-data"
+      ],
+      "upstream": "https://github.com/carl24k/fight-churn",
+      "commit": "1310fc75314a542031193fbf724b890f850cb8e4",
+      "files": 256,
+      "bytes": 3595135,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "07_M7_Predictive_Models_ML_and_AI/repos/ikatsov__tensor-house",
+      "resource_ids": [
+        "katsov-tensor-house",
+        "tensorhouse-marketing-pricing"
+      ],
+      "upstream": "https://github.com/ikatsov/tensor-house",
+      "commit": "a8ebefd483e776ef65dc5f66e96b41412981464c",
+      "files": 28,
+      "bytes": 9908601,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "08_M8_Current_Topics_in_Marketing/repos/GoogleCloudPlatform__generative-ai",
+      "resource_ids": [
+        "google-generative-ai-marketing-usecases"
+      ],
+      "upstream": "https://github.com/GoogleCloudPlatform/generative-ai",
+      "commit": "9bffb4d802d9e6c6af353d15f162c90504d27c17",
+      "files": 10,
+      "bytes": 291534,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "08_M8_Current_Topics_in_Marketing/repos/google-gemini__cookbook",
+      "resource_ids": [
+        "gemini-cookbook-marketing"
+      ],
+      "upstream": "https://github.com/google-gemini/cookbook",
+      "commit": "550674681574d7aa24304b8fa9b31234e241ed7e",
+      "files": 14,
+      "bytes": 747683,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "08_M8_Current_Topics_in_Marketing/repos/google-marketing-solutions__copycat",
+      "resource_ids": [
+        "copycat-ad-copy-generation"
+      ],
+      "upstream": "https://github.com/google-marketing-solutions/copycat",
+      "commit": "6c5da12374affcc7ac157f4d55cf1ebba455902a",
+      "files": 56,
+      "bytes": 939028,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "README.md"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "11_AI_Coding_Tools_and_Workflows/repos/takechanman1228__claude-ecom",
+      "resource_ids": [
+        "claude-ecom-business-review-skill"
+      ],
+      "upstream": "https://github.com/takechanman1228/claude-ecom",
+      "commit": "7ddf7ffb823fd7ab6015e699d01cdc436739eb2b",
+      "files": 46,
+      "bytes": 322045,
+      "review": "selected source content inspected",
+      "inspected_source_files": [
+        "README.md"
+      ],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "21_Open_Textbooks_and_Courses/repos/PacktPublishing__Data-Analytics-for-Marketing",
+      "resource_ids": [
+        "packt-data-analytics-for-marketing-2024"
+      ],
+      "upstream": "https://github.com/PacktPublishing/Data-Analytics-for-Marketing",
+      "commit": "e0287ee34d9f093b0db3b2124e07a8b39c163de8",
+      "files": 25,
+      "bytes": 20128774,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "21_Open_Textbooks_and_Courses/repos/PacktPublishing__Data-Science-for-Marketing-Analytics-Second-Edition",
+      "resource_ids": [
+        "packt-data-science-for-marketing-analytics-2e"
+      ],
+      "upstream": "https://github.com/PacktPublishing/Data-Science-for-Marketing-Analytics-Second-Edition",
+      "commit": "9b37e1306f21f8eb314be97cf8970a101d69a76d",
+      "files": 178,
+      "bytes": 41950201,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "21_Open_Textbooks_and_Courses/repos/PacktPublishing__Machine-Learning-and-Generative-AI-for-Marketing",
+      "resource_ids": [
+        "packt-ml-genai-for-marketing-2024"
+      ],
+      "upstream": "https://github.com/PacktPublishing/Machine-Learning-and-Generative-AI-for-Marketing",
+      "commit": "ef30711117d8d72c9438455023768c7807b223d6",
+      "files": 27,
+      "bytes": 16091480,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "21_Open_Textbooks_and_Courses/repos/shakostats__Awesome-Marketing-Science",
+      "resource_ids": [
+        "shakostats-awesome-marketing-science"
+      ],
+      "upstream": "https://github.com/shakostats/Awesome-Marketing-Science",
+      "commit": "c7ad6765937128f7122011aef3503f7ee75ff35e",
+      "files": 4,
+      "bytes": 51491,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "21_Open_Textbooks_and_Courses/repos/sn-code-inside__marketing-analytics-and-data-science",
+      "resource_ids": [
+        "dong-2026-marketing-analytics-data-science"
+      ],
+      "upstream": "https://github.com/sn-code-inside/marketing-analytics-and-data-science",
+      "commit": "04366de0a6138844f192c9189f842ab4e08ac617",
+      "files": 26,
+      "bytes": 4161685,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    },
+    {
+      "local_copy": "21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python",
+      "resource_ids": [
+        "takeda-marketing-science-in-python"
+      ],
+      "upstream": "https://github.com/takechanman1228/marketing-science-in-python",
+      "commit": "c4136c2c520f9690ba76c65938a15a122e62bbf0",
+      "files": 64,
+      "bytes": 13370947,
+      "review": "catalog and repository index reviewed",
+      "inspected_source_files": [],
+      "reference_execution": "not executed"
+    }
+  ]
+}

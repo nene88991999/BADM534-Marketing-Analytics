@@ -1,0 +1,424 @@
+# Download plan for the 2026-10-23 Python-for-marketing-analytics search (used with fetch_repos.py --plan)
+- repo: PacktPublishing/Data-Analytics-for-Marketing
+  paths:
+  - Chapter02
+  - Chapter03
+  - Chapter04
+  - Chapter05
+  - Chapter06
+  - Chapter07
+  - Chapter08
+  - Chapter09
+  - Chapter10
+  - Chapter12
+  - Chapter13
+  - LICENSE
+  - README.md
+  dest: TEXTBOOKS
+  ids:
+  - packt-data-analytics-for-marketing-2024
+  license_declared: MIT
+  branch: main
+- repo: takechanman1228/marketing-science-in-python
+  paths:
+  - notebooks
+  - src
+  - data
+  - environment.yml
+  - environment-clv.yml
+  - pyproject.toml
+  - LICENSE
+  - LICENSE-CODE
+  - README.md
+  dest: TEXTBOOKS
+  ids:
+  - takeda-marketing-science-in-python
+  license_declared: MIT (LICENSE-CODE, covering *.ipynb, *.py and src/msbook); prose under LICENSE is all rights reserved
+  branch: main
+- repo: sn-code-inside/marketing-analytics-and-data-science
+  paths: []
+  dest: TEXTBOOKS
+  ids:
+  - dong-2026-marketing-analytics-data-science
+  license_declared: MIT
+  branch: main
+- repo: radiant-ai-hub/pyrsm
+  paths:
+  - examples/README.md
+  - examples/multivariate
+  - examples/design
+  - examples/basics
+  - examples/data/README.md
+  - examples/data/__init__.py
+  - examples/data/multivariate
+  - examples/data/design
+  - examples/data/basics
+  - examples/model/model-linear-regression.ipynb
+  - examples/model/model-logistic-regression.ipynb
+  - examples/model/model-mnl.ipynb
+  - examples/model/model-uplift.ipynb
+  - examples/data/model/ketchup.parquet
+  - examples/data/model/ketchup_description.md
+  - examples/data/model/catalog.parquet
+  - examples/data/model/catalog_description.md
+  - examples/data/model/direct_marketing.parquet
+  - examples/data/model/direct_marketing_description.md
+  - examples/data/model/dvd.parquet
+  - examples/data/model/dvd_description.md
+  - examples/data/model/kaggle_uplift.parquet
+  - examples/data/model/kaggle_uplift_description.md
+  - LICENSE
+  - README.md
+  dest: M4
+  ids:
+  - pyrsm-examples-ucsd-rady
+  license_declared: AGPL-3.0
+  branch: main
+- repo: PacktPublishing/Data-Science-for-Marketing-Analytics-Second-Edition
+  paths:
+  - Chapter01
+  - Chapter02
+  - Chapter03
+  - Chapter04
+  - Chapter06
+  - Chapter07
+  - Chapter08
+  - Chapter09
+  - environment.yml
+  - LICENSE
+  - README.md
+  dest: TEXTBOOKS
+  ids:
+  - packt-data-science-for-marketing-analytics-2e
+  license_declared: MIT
+  branch: master
+- repo: PacktPublishing/Machine-Learning-and-Generative-AI-for-Marketing
+  paths:
+  - ch.1
+  - ch.2
+  - ch.3
+  - ch.4
+  - ch.5
+  - ch.6
+  - ch.9
+  - ch.10
+  - ch.13
+  - LICENSE
+  - README.md
+  dest: TEXTBOOKS
+  ids:
+  - packt-ml-genai-for-marketing-2024
+  license_declared: MIT
+  branch: main
+- repo: ikatsov/tensor-house
+  paths:
+  - marketing-analytics
+  - promotions
+  - pricing
+  - LICENSE
+  - README.md
+  - _resources/datasets.md
+  - search/product-attribute-extraction-llm.ipynb
+  dest: M7
+  ids:
+  - katsov-tensor-house
+  - tensorhouse-marketing-pricing
+  license_declared: Apache-2.0
+  branch: master
+- repo: gedeck/ai-assisted-statistics-for-data-scientists
+  paths:
+  - code/python
+  - code/requirements.txt
+  - code/data/web_page_data.csv
+  - code/data/four_sessions.csv
+  - code/data/click_rates.csv
+  - code/data/imanishi_data.csv
+  - code/data/state.csv
+  - code/data/house_sales.csv
+  - code/data/loan_data.csv.gz
+  - code/data/loans_income.csv
+  - LICENSE
+  - README.md
+  dest: M3
+  ids:
+  - bruce-gedeck-ai-assisted-statistics-3e
+  license_declared: GPL-3.0
+  branch: main
+- repo: BuissonFlorent/BehavioralDataAnalysis
+  paths:
+  - Chapter 7 - Measuring uncertainty with the Bootstrap
+  - Chapter 8 - Experimental Design - the Basics
+  - Chapter 9 - Stratified Randomization
+  - Chapter 10 - Cluster Randomization and Hierarchical Modeling
+  - Exercises and solutions
+  - LICENSE
+  - README.md
+  dest: M6
+  ids:
+  - buisson-behavioral-data-analysis
+  license_declared: MIT
+  branch: master
+- repo: carl24k/fight-churn
+  paths: []
+  dest: M7
+  ids:
+  - gold-fighting-churn-with-data
+  - fight-churn-with-data
+  license_declared: MIT
+  branch: master
+- repo: AllenDowney/BDAwithPyMC
+  paths: []
+  dest: M6
+  ids:
+  - downey-bayesian-decision-analysis-pymc-workshop
+  license_declared: MIT (code) + CC BY-NC-SA 4.0 (text)
+  branch: main
+- repo: practical-data-science/ecommercetools
+  paths: []
+  dest: M2
+  ids:
+  - ecommercetools-practical-data-science
+  license_declared: MIT
+  branch: master
+- repo: joaolcorreia/RFM-analysis
+  paths: []
+  dest: M2
+  ids:
+  - correia-rfm-analysis
+  license_declared: Apache-2.0
+  branch: master
+- repo: juanitorduz/website_projects
+  paths:
+  - Python/cohort_modeling.ipynb
+  - Python/elasticities.ipynb
+  - Python/multilevel_elasticities_single_sku_3.ipynb
+  - Python/bayesian_power_ab_testing.ipynb
+  - LICENSE
+  - README.md
+  - Python/bayesian_cuped.ipynb
+  - Python/uplift.ipynb
+  - Python/orbit_mmm.ipynb
+  - data/mmm_roas_data.csv
+  - data/multilevel_elasticities_single_sku_data.csv
+  - data/ktr_data.csv
+  - data/sales.csv
+  - data/retention_data.csv
+  dest: M6
+  ids:
+  - orduz-website-projects-marketing-notebooks
+  - orduz-marketing-notebooks
+  license_declared: MIT
+  branch: master
+- repo: guipsamora/pandas_exercises
+  paths: []
+  dest: M1
+  ids:
+  - guipsamora-pandas-exercises
+  license_declared: BSD-3-Clause
+  branch: master
+- repo: takechanman1228/claude-ecom
+  paths:
+  - .claude-plugin
+  - bin
+  - claude_ecom
+  - examples
+  - hooks
+  - skills
+  - tests
+  - CLAUDE.md
+  - CHANGELOG.md
+  - LICENSE
+  - README.md
+  - pyproject.toml
+  dest: AI_TOOLS
+  ids:
+  - claude-ecom-business-review-skill
+  license_declared: MIT
+  branch: main
+- repo: shakostats/Awesome-Marketing-Science
+  paths: []
+  dest: TEXTBOOKS
+  ids:
+  - shakostats-awesome-marketing-science
+  license_declared: MIT
+  branch: main
+- repo: google/meridian-geox
+  paths: []
+  dest: M6
+  ids:
+  - google-meridian-geox
+  license_declared: Apache-2.0
+  branch: main
+- repo: google-marketing-solutions/feedx
+  paths: []
+  dest: M6
+  ids:
+  - feedx-shopping-feed-experiments
+  license_declared: Apache-2.0
+  branch: main
+- repo: spotify/confidence
+  paths:
+  - README.md
+  - examples/Confidence Tutorial.ipynb
+  - examples/Confidence Examples - Sequential.ipynb
+  - examples/Confidence Examples - Sample sizing.ipynb
+  dest: M6
+  ids:
+  - spotify-confidence
+  license_declared: Apache-2.0
+  branch: master
+- repo: eeghor/mta
+  paths: []
+  dest: M6
+  ids:
+  - eeghor-mta
+  license_declared: MIT
+  branch: master
+- repo: facebookexperimental/Robyn
+  paths:
+  - python/README.md
+  - python/LICENSE
+  - python/src/robyn/tutorials/tutorial1.ipynb
+  - python/src/robyn/tutorials/resources
+  dest: M6
+  ids:
+  - robyn-python
+  license_declared: MIT
+  branch: main
+- repo: google-marketing-solutions/crystalvalue
+  paths: []
+  dest: M4
+  ids:
+  - google-crystalvalue
+  license_declared: Apache-2.0
+  branch: main
+- repo: CamDavidsonPilon/lifelines
+  paths:
+  - examples/Customer Churn.ipynb
+  - examples/SaaS churn and piecewise regression models.ipynb
+  - examples/Modelling time-lagged conversion rates.ipynb
+  dest: M7
+  ids:
+  - lifelines-churn-notebooks
+  license_declared: MIT
+  branch: master
+- repo: rasbt/mlxtend
+  paths:
+  - docs/sources/user_guide/frequent_patterns
+  dest: M4
+  ids:
+  - mlxtend-frequent-patterns
+  license_declared: BSD-3-Clause
+  branch: master
+- repo: benfred/implicit
+  paths:
+  - examples
+  dest: M7
+  ids:
+  - implicit-als-recommender
+  license_declared: MIT
+  branch: main
+- repo: NicolasHug/Surprise
+  paths:
+  - examples
+  dest: M7
+  ids:
+  - surprise-explicit-ratings
+  license_declared: BSD-3-Clause
+  branch: master
+- repo: jeffgortmaker/pyblp
+  paths:
+  - docs/notebooks/tutorial
+  dest: M3
+  ids:
+  - pyblp-tutorials
+  license_declared: MIT
+  branch: master
+- repo: blueprints-for-text-analytics-python/blueprints-text
+  paths:
+  - README.md
+  - ch01
+  - ch04
+  - ch06
+  - ch08
+  - ch10
+  - ch11
+  dest: M5
+  ids:
+  - blueprints-text-analytics
+  license_declared: Apache-2.0
+  branch: master
+- repo: MaartenGr/BERTopic
+  paths:
+  - README.md
+  - docs/getting_started/quickstart/quickstart.md
+  - docs/getting_started/best_practices
+  - docs/getting_started/representation
+  - docs/getting_started/zeroshot
+  - docs/getting_started/topicsovertime
+  - docs/getting_started/topicsperclass
+  - docs/getting_started/tips_and_tricks
+  dest: M5
+  ids:
+  - bertopic-docs-llm-representations
+  license_declared: MIT
+  branch: master
+- repo: openai/openai-cookbook
+  paths:
+  - examples/Get_embeddings_from_dataset.ipynb
+  - examples/Zero-shot_classification_with_embeddings.ipynb
+  - examples/Classification_using_embeddings.ipynb
+  - examples/Clustering.ipynb
+  - examples/Visualizing_embeddings_in_2D.ipynb
+  - examples/User_and_product_embeddings.ipynb
+  - examples/Structured_Outputs_Intro.ipynb
+  - examples/SDG1.ipynb
+  - examples/data/fine_food_reviews_1k.csv
+  dest: M5
+  ids:
+  - openai-cookbook-review-embeddings
+  license_declared: MIT
+  branch: main
+- repo: google-gemini/cookbook
+  paths:
+  - examples/Market_a_Jet_Backpack.ipynb
+  - examples/json_capabilities
+  - examples/prompting/Basic_Classification.ipynb
+  - examples/prompting/Basic_Information_Extraction.ipynb
+  - examples/Classify_text_with_embeddings.ipynb
+  - examples/clustering_with_embeddings.ipynb
+  - quickstarts/JSON_mode.ipynb
+  dest: M8
+  ids:
+  - gemini-cookbook-marketing
+  license_declared: Apache-2.0
+  branch: main
+- repo: GoogleCloudPlatform/generative-ai
+  paths:
+  - gemini/use-cases/marketing
+  - gemini/use-cases/retail
+  - gemini/use-cases/multimodal-sentiment-analysis
+  - gemini/use-cases/applying-llms-to-data/ai-assisted-data-science
+  - gemini/use-cases/video-analysis/youtube_video_analysis.ipynb
+  dest: M8
+  ids:
+  - google-generative-ai-marketing-usecases
+  license_declared: Apache-2.0
+  branch: main
+- repo: google-marketing-solutions/copycat
+  paths: []
+  dest: M8
+  ids:
+  - copycat-ad-copy-generation
+  license_declared: Apache-2.0
+  branch: main
+- repo: pymc-labs/semantic-similarity-rating
+  paths:
+  - README.md
+  - LICENSE
+  - semantic_similarity_rating
+  dest: M4
+  ids:
+  - pymc-labs-semantic-similarity-rating
+  license_declared: Apache-2.0
+  branch: main

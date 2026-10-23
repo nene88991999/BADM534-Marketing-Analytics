@@ -1,6 +1,6 @@
 # Open Textbooks and Courses (cross-module)
 
-33 resources (11 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+42 resources (13 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -11,6 +11,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Marketing analytics books and peer courses](#marketing-analytics-books-and-peer-courses) (9)
 - [Causal inference](#causal-inference) (3)
 - [Machine learning, NLP and visualization](#machine-learning-nlp-and-visualization) (5)
+- [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (9)
 
 ## Python and data science foundations
 
@@ -233,3 +234,68 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Free top-down deep learning course (Part 1, 2022 edition) covering vision, NLP, tabular data, collaborative filtering, random forests and deployment with PyTorch, fastai and Hugging Face. Runs on Kaggle Notebooks.
   *Use in wiki:* Optional extension for students who want deep-learning or recommender depth in M7 projects.
   Tools: fastai, pytorch, transformers
+
+## Python for marketing analytics: notebooks and code
+
+- [core] **[Marketing Science in Python: A Practitioner's Guide (companion code)](https://github.com/takechanman1228/marketing-science-in-python)** (2026) — Takeda, H. *Self-published book; site marketing-science-in-python.com*
+  `notebook` · `intermediate` · `access: open` · `MIT (code and notebooks); book text all rights reserved` · `AI angle`
+  14 recent notebooks: A/B tests, quasi-experiments, CausalImpact, meta-learners and uplift (Part 3); traditional and embedding-based segmentation plus CLV with PyMC-Marketing (Part 4); price elasticity, assortment optimization and forecasting (Part 5); Meridian MMM and geo experiments (Part 6). Includes small synthetic datasets and Colab badges.
+  *Use in wiki:* Use sec5.1_price_elasticity for M3, sec4.1 and sec4.2 (segmentation, CLV) for M4, and the Part 3 notebooks for M6. All are current-API examples worth embedding.
+  Tools: pandas, pymc-marketing, google-meridian, causalml, lightgbm, statsmodels · Local copy: `21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python`
+  *Note:* Public course mirror retains explicitly licensed Python and notebooks; other downloaded prose, data, figures, and configuration remain Dropbox-only. LICENSE-CODE explicitly covers notebooks. Do not copy the book manuscript, which lives elsewhere. Larger public datasets (Dunnhumby, Online Retail II, MineThatData) are not redistributed; data/raw/README.md explains how to get them. ai_angle refers to the embedding-based ('semantic') segmentation notebook. The author gave related PyData NYC 2023, PyData London 2024 and SciPy 2024 talks.
+
+- [core] **[Data Analytics for Marketing: A practical guide to analyzing marketing data using Python (companion code)](https://github.com/PacktPublishing/Data-Analytics-for-Marketing)** (2024) — Diaz-Bérrio, G. *Packt (May 2024)*
+  `notebook` · `intermediate` · `access: open` · `MIT`
+  Notebooks for a 2024 Packt book: data extraction and EDA with pandas, Streamlit presentation (ch3), econometrics and causal inference with statsmodels/PyMC (ch4), forecasting, segmentation and RFM (ch7), CLV with PyMC-Marketing (ch8), survey analysis (ch9), conjoint with statsmodels (ch10), multi-touch attribution (ch11), MMM (ch12) and Bayesian experiments (ch13).
+  *Use in wiki:* Closest single match to the M1–M4 module spine; embed the ch7 RFM, ch8 CLV and ch10 conjoint notebooks as in-class coding activities.
+  Tools: pandas, statsmodels, pymc, pymc-marketing, statsforecast, streamlit · Local copy: `21_Open_Textbooks_and_Courses/repos/PacktPublishing__Data-Analytics-for-Marketing`
+  *Note:* No Chapter01 folder. Chapter11 (attribution) is left out because its 'attribution data markov chain.csv' is 44 MB; add it only if needed. The README pins PyMC-Marketing 0.3.1 and PyMC 5.11; PyMC-Marketing's CLV/MMM API has changed a lot since then, so expect to update the ch8 and ch12 calls (a good AI-assisted debugging exercise). The author also runs a paid 'MMM with Claude Code' workshop (see maven-mmm-with-claude-code).
+
+- [recommended] **[Marketing Analytics and Data Science: Tools and Models (supplementary code)](https://link.springer.com/book/9783032111296)** (2026) — Dong, X. *Palgrave Macmillan*
+  `notebook` · `intro` · `access: library` · `MIT (repo)` · `AI angle`
+  Chapter notebooks and CSVs from a 2026 textbook by a marketing professor: coding basics, data sources, MMM, segmentation (with a 2 MB customer-purchase dataset), two targeting chapters (bank marketing), forecasting, Bayes, Thompson sampling, causal inference, and an AI chapter with a Gemini example notebook. Several chapters include homework solution notebooks.
+  *Use in wiki:* Ready-made homework sets with solutions. The ch5 segmentation and ch4 MMM notebooks fit M4/M8, and the Gemini notebook is an AI-assisted example.
+  Tools: pandas, scikit-learn, statsmodels, google-gemini · Local copy: `21_Open_Textbooks_and_Courses/repos/sn-code-inside__marketing-analytics-and-data-science`
+  *Note:* Small and new (4 stars, pushed 2026-02). Folder names contain spaces (e.g., 'Chapter 05 - Segmentation'). The book is likely available through SpringerLink at UIUC. Homework solutions are public, so don't reuse them verbatim as graded work.
+
+- [recommended] **[Applied Marketing Analytics Using Python](https://collegepublishing.sagepub.com/products/applied-marketing-analytics-using-python-1-288563)** (2025) — Yildirim, G.; Kübler, R. V. *SAGE Publications (March 2025)*
+  `book` · `intermediate` · `access: paid`
+  Python textbook by Imperial and ESSEC marketing faculty: segmentation, marketing mix modelling, attribution, user-generated data, customer mindset metrics, text mining, churn classification, demand forecasting, image analytics and data-project management. Comes with student notebooks/datasets and lecturer slides, teaching guide and testbank.
+  *Use in wiki:* Candidate adopted textbook. Its companion site (study.sagepub.com/yildirimpython) offers instructor slides and testbank.
+  Tools: pandas, scikit-learn, statsmodels
+  *Note:* No GitHub repo, and the resource terms aren't stated, so link only. Student resources go through edge.sagepub.com and may need login. LMU Munich's Summer 2025 Python Marketing Analytics syllabus covers a very similar topic list.
+
+- [recommended] **[Machine Learning and Generative AI for Marketing (companion code)](https://github.com/PacktPublishing/Machine-Learning-and-Generative-AI-for-Marketing)** (2024) — Hwang, Y. H.; Burtch, N. C. *Packt (August 2024)*
+  `notebook` · `intermediate` · `access: open` · `MIT` · `AI angle`
+  One notebook per chapter: marketing KPIs, drivers of marketing success, seasonality, sentiment analysis, predictive analytics and A/B testing, recommendations, ML segmentation, then generative-AI chapters on zero-shot content creation, few-shot/transfer learning, RAG for micro-targeting, and AI ethics and governance. Colab/Kaggle links in the README.
+  *Use in wiki:* Bridge between classic marketing analytics and GenAI. Ch2 (KPIs) suits M1/M2, ch6 (A/B testing) M6, and ch9–11 the M8 current-topics week.
+  Tools: pandas, scikit-learn, transformers, langchain · Local copy: `21_Open_Textbooks_and_Courses/repos/PacktPublishing__Machine-Learning-and-Generative-AI-for-Marketing`
+  *Note:* Full repo is 183 MB. Left out: ch.7 and ch.8 (recommendations, segmentation), each with a 44 MB data.csv (the same file), and ch.11 (RAG), with a 77 MB 2019-Dec.csv.zip. Pull one copy of ch.8 if the segmentation notebook is wanted. The README doesn't name the LLM libraries; the tools list is a guess from chapter titles, so check before relying on it. Last pushed 2024-09; GenAI API calls may have drifted.
+
+- [recommended] **[Data Science for Marketing Analytics, Second Edition (companion code)](https://github.com/PacktPublishing/Data-Science-for-Marketing-Analytics-Second-Edition)** (2021) — Baig, M. R.; Govindan, G.; Shrimali, V. R. *Packt (September 2021)*
+  `notebook` · `intro` · `access: open` · `MIT`
+  Exercise and activity notebooks for 9 chapters: data preparation and cleaning, EDA and visualization, unsupervised segmentation and choosing a segmentation approach, predicting customer revenue with linear regression, evaluating regression models, churn prediction, tuning classifiers and multiclass classification.
+  *Use in wiki:* Step-by-step exercise format suits in-class coding for non-CS students. Ch3–4 (segmentation) map to M4 and ch5–6 to M3.
+  Tools: pandas, matplotlib, seaborn, scikit-learn · Local copy: `21_Open_Textbooks_and_Courses/repos/PacktPublishing__Data-Science-for-Marketing-Analytics-Second-Edition`
+  *Note:* Chapter05 (linear regression, the M3 chapter) is 70 MB because Datasets/ holds two identical 36 MB retail_transactions CSVs. Fetch only its notebooks and one copy of the CSV if needed. The Chapter08/09 sizes were not visible (tree listing truncated), so approx_mb is an estimate. The code dates from 2021 (pandas 1.x and older scikit-learn), so expect small API fixes. PacktPublishing/Data-Science-for-Marketing-Analytics and the '...Workshop' repo both redirect here.
+
+- [optional] **[Data Science for Marketing Analytics (first edition, companion code)](https://github.com/TrainingByPackt/Data-Science-for-Marketing-Analytics)** (2019) — Blanchard, T.; Behera, D.; Bhatnagar, P. *Packt (March 2019)*
+  `notebook` · `intro` · `access: open` · `MIT`
+  Nine lesson folders: pandas and Matplotlib data handling, hierarchical and k-means segmentation, predicting CLV with linear regression, regression evaluation, customer-choice classification, churn models and marketing dashboards.
+  *Use in wiki:* Backup exercise bank. The CLV-by-regression lesson contrasts usefully with probabilistic BTYD models in M4.
+  Tools: pandas, matplotlib, scikit-learn
+  *Note:* Last pushed 2019-05-27, so stale: expect pandas/scikit-learn deprecations. The git pack is 20 MB; working-tree size is estimated. Prefer the 2nd edition and keep this one only for extra exercises.
+
+- [optional] **[R_to_Python_marketing_analysis: Python translation of R for Marketing Research and Analytics](https://github.com/Charlotte2110/R_to_Python_marketing_analysis)** (2018) — Charlotte2110 (GitHub). *GitHub*
+  `notebook` · `intro` · `access: open`
+  Seven notebooks translating chapters 3–9 of Chapman & Feit's R book (describing data, relationships, comparing groups, regression and linear models, amusement-park satisfaction drivers) with the book's CSVs.
+  *Use in wiki:* Reference only; the official Python edition (already in the library) supersedes it.
+  Tools: pandas, statsmodels
+  *Note:* No LICENSE file, so link only. Two commits; date unknown (search result showed a 2018 push). This was the only other Python port of the Chapman & Feit book found.
+
+- [optional] **[Marketing Data Science: Modeling Techniques in Predictive Analytics with R and Python (code downloads)](https://www.informit.com/promotions/marketing-data-science-modeling-techniques-in-predictive-141181)** (2015) — Miller, T. W. *Pearson FT Press / InformIT*
+  `book` · `intermediate` · `access: open`
+  Per-chapter ZIP downloads of R and Python code and data: conjoint for mobile services, commuter choice, targeting and retention, segmentation, MDS/positioning, market basket, HB market simulation, network models.
+  *Use in wiki:* Instructor-only mine of classic marketing case datasets (e.g., conjoint, Dodgers promotion data); not for direct student use (Python 2 era).
+  Tools: R, python
+  *Note:* Not on GitHub, and the page says all rights reserved (including text and data mining), so link only. The code is about 10 years old. No GitHub mirror with a license was found.

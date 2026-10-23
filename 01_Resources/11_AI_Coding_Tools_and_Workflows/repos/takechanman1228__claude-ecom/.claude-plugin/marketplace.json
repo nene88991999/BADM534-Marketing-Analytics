@@ -1,0 +1,15 @@
+{
+  "name": "claude-ecom",
+  "description": "Marketplace for the claude-ecom plugin: turn order/sales CSVs into a narrative business review with KPI decomposition and prioritized actions",
+  "owner": {
+    "name": "Hajime Takeda"
+  },
+  "plugins": [
+    {
+      "name": "claude-ecom",
+      "source": ".",
+      "description": "D2C ecommerce business review toolkit",
+      "version": "0.2.0"
+    }
+  ]
+}

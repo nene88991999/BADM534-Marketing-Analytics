@@ -234,3 +234,99 @@ assert math.isclose(r["M03"]["pooled"]["slope"], 11 / 7)
 assert r["M03"]["low"]["slope"] == r["M03"]["high"]["slope"] == -1
 print(json.dumps(r, indent=2))
 ```
+
+## 3.12 Price Elasticity When Prices Respond to Demand
+
+A retailer considers raising a price and wants the resulting percentage change in quantity. Historical prices can be high precisely when managers expect strong demand. A regression of quantity on price then combines the response to price with information used to choose it. Good predictive fit does not separate these two sources of variation.
+
+Consider a synthetic population of independent markets. Let $p_i$ be log price in dollars per unit and $q_i$ log quantity sold. A standardized cost shifter $z_i$, an unobserved demand shock $u_i$, and independent shocks $v_i,e_i$ are mutually independent standard normal variables. The imposed price rule and demand equation are
+
+$$
+p_i=2+0.4z_i+0.6u_i+0.2v_i,
+\qquad
+q_i=5-1.5p_i+u_i+0.2e_i.
+$$
+
+The demand elasticity is $-1.5$: a small 1% increase in price changes quantity by approximately $-1.5\%$ with the demand shock held fixed. The coefficient $0.6$ makes price respond positively to unobserved demand. The cost shifter changes price and has no direct effect on quantity in this benchmark. These equations are imposed behavioral relationships, without an estimated supply model or a solved pricing equilibrium.
+
+For the general linear equation $q_i=\alpha+\beta p_i+\varepsilon_i$, an instrumental-variable interpretation rests on the following conditions.
+
+\begin{assumption}[Price Instrument]
+\label{ass:price-instrument}
+Markets are independent draws with finite second moments. The demand equation has a common coefficient $\beta$. The cost shifter satisfies $\operatorname{Cov}(z_i,\varepsilon_i)=0$ and $\operatorname{Cov}(z_i,p_i)\ne0$.
+\end{assumption}
+
+Under Assumption \ref{ass:price-instrument}, the ratio $\operatorname{Cov}(z_i,q_i)/\operatorname{Cov}(z_i,p_i)$ equals $\beta$. The numerator measures quantity variation associated with the cost shifter, and the denominator measures the induced price variation. Ordinary least squares instead has probability limit $\beta+\operatorname{Cov}(p_i,\varepsilon_i)/\operatorname{Var}(p_i)$, which is less negative in the benchmark because favorable demand shocks raise price.
+
+![A cost shifter changes price; unobserved demand changes both price and quantity. A direct cost-to-demand path violates exclusion.](../figures/M03_price_instrument.png)
+
+The sample contains 2,000 simulated markets with seed 534. OLS and two-stage least squares use an intercept and the same log-price regressor. The reported intervals use heteroskedasticity-robust HC1 covariance estimates and a normal approximation.
+
+| Estimator and Data Construction | Elasticity | 95% Interval |
+| --- | ---: | --- |
+| OLS, Benchmark | -0.447 | [-0.483, -0.410] |
+| IV, Benchmark | -1.483 | [-1.589, -1.378] |
+| IV, Direct Cost Effect Added | -0.239 | [-0.283, -0.195] |
+
+The third row adds $0.5z_i$ directly to log quantity while preserving the price rule and the structural price elasticity. Its first-stage F statistic remains 815.85, identical to the benchmark. A strong first stage therefore coexists with a severely misleading elasticity estimate when exclusion fails. For example, a proposed cost instrument that also changes product quality could affect demand through an additional path.
+
+The [PyBLP logit tutorial](https://pyblp.readthedocs.io/en/stable/_notebooks/tutorial/logit_nested.html) treats prices as endogenous in differentiated-product demand. Its market-share models require additional structure beyond this scalar simulation. The calculation below exposes the instrument logic directly. With $X$ containing the intercept and price and $Z$ the intercept and cost shifter, it forms $\widehat X=Z(Z'Z)^{-1}Z'X$ and computes $(\widehat X'X)^{-1}\widehat X'q$. Its covariance uses the structural residual $q-X\widehat\beta$, which differs from a second-stage residual formed with fitted price.
+
+Python source: [price_iv.py](../../03_Data_and_Code/Lecture_Examples/price_iv.py). From its directory, run `python price_iv.py`.
+
+```python
+"""Synthetic price endogeneity and an exclusion-restriction sensitivity."""
+
+from pathlib import Path
+import json
+import numpy as np
+
+
+def fit_iv(y, x, z):
+    # Instruments include the intercept. Avoid constructing an n-by-n matrix.
+    xhat = z @ np.linalg.lstsq(z, x, rcond=None)[0]
+    bread = np.linalg.inv(xhat.T @ x)
+    beta = bread @ xhat.T @ y
+    residual = y - x @ beta
+    scores = xhat * residual[:, None]
+    covariance = bread @ (scores.T @ scores) @ bread.T
+    covariance *= len(y) / (len(y) - x.shape[1])  # HC1 correction
+    se = np.sqrt(np.diag(covariance))
+    return {
+        "elasticity": float(beta[1]),
+        "robust_se": float(se[1]),
+        "ci95": [float(beta[1] - 1.96 * se[1]), float(beta[1] + 1.96 * se[1])],
+    }
+
+
+def calculate():
+    rng = np.random.default_rng(534)
+    n = 2000
+    cost, demand, pricing_noise, sales_noise = rng.normal(size=(4, n))
+    log_price = 2 + 0.4 * cost + 0.6 * demand + 0.2 * pricing_noise
+    log_quantity = 5 - 1.5 * log_price + demand + 0.2 * sales_noise
+    x = np.column_stack([np.ones(n), log_price])
+    z = np.column_stack([np.ones(n), cost])
+    first = z @ np.linalg.lstsq(z, log_price, rcond=None)[0]
+    residual_ss = np.square(log_price - first).sum()
+    total_ss = np.square(log_price - log_price.mean()).sum()
+    first_stage_f = (total_ss - residual_ss) / (residual_ss / (n - 2))
+    result = {
+        "data": "synthetic independent markets",
+        "markets": n,
+        "seed": 534,
+        "true_elasticity": -1.5,
+        "ols": fit_iv(log_quantity, x, x),
+        "valid_iv": fit_iv(log_quantity, x, z),
+        "invalid_iv_direct_cost_effect_0_5": fit_iv(log_quantity + 0.5 * cost, x, z),
+        "first_stage_f": float(first_stage_f),
+    }
+    return result
+
+
+if __name__ == "__main__":
+    result = calculate()
+    output = Path(__file__).resolve().parent / "price_iv_results.json"
+    output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
+    print(json.dumps(result, indent=2))
+```

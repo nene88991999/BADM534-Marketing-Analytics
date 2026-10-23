@@ -12,6 +12,16 @@ subprocess.run([sys.executable, str(root.parent / "download_data.py")], check=Tr
 scripts = ["common.py", "audit.py", "nutrition.py", "test_logic.py"] + [
     f"m{module:02}.py" for module in range(1, 9)
 ]
+scripts += [
+    "test_extension_logic.py",
+    "reporting.py",
+    "recency.py",
+    "logging_gaps.py",
+    "topics.py",
+    "cuped.py",
+    "association_rules.py",
+    "claim_checks.py",
+]
 for script in scripts:
     subprocess.run([sys.executable, str(root / script)], check=True, cwd=root)
 packages = ["numpy", "pandas", "pyarrow", "scipy", "scikit-learn", "statsmodels"]

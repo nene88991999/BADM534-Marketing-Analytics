@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel={Independent Users per Arm},ylabel={Detectable Change in Logging Fraction},xmin=100,xmax=1000,ymin=0,ymax=.16,ytick={0,.05,.10,.15},yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},grid=major,legend style={at={(.98,.98)},anchor=north east}]
+\addplot[IlliniBlue,solid,domain=100:1000,samples=80] {sqrt(2*0.1254625200*(1.959963985+0.841621234)^2/x)};
+\addlegendentry{Unadjusted}
+\addplot[only marks,IlliniBlue,mark=square*,mark size=3pt,forget plot] coordinates {(788,.05)};
+\node[anchor=north,font=\footnotesize] at (axis cs:788,.045) {788};
+\addplot[IlliniOrange,dashed,domain=100:1000,samples=80] {sqrt(2*0.0631502639*(1.959963985+0.841621234)^2/x)};
+\addlegendentry{Prior-Period Adjustment}
+\addplot[only marks,IlliniOrange,mark=square*,mark size=3pt,forget plot] coordinates {(397,.05)};
+\node[anchor=north,font=\footnotesize] at (axis cs:397,.045) {397};
+\addplot[Storm,densely dotted,forget plot] coordinates {(100,.05)(1000,.05)};
+\end{axis}\end{tikzpicture}

@@ -1,0 +1,1472 @@
+# Python-for-marketing-analytics search, 2026-10-23
+- id: google-meridian-geox
+  category: M6
+  subtopic: Geo experiments (design and analysis)
+  title: 'Meridian GeoX: open-source geo experimentation for cross-publisher incrementality'
+  authors: Google
+  year: 2026
+  type: package
+  venue: GitHub (google/meridian-geox); docs at developers.google.com/meridian/geox
+  url: https://github.com/google/meridian-geox
+  oa_url: https://developers.google.com/meridian/geox
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: core
+  modules:
+  - M6
+  - M8
+  summary: Google's current geo-experiment library. It covers study design (holdback, go-dark, heavy-up, multi-cell, stratified sampling) and analysis with time-based regression, and its results feed Meridian
+    MMM priors. Ships two Colab notebooks and example design and analysis CSVs.
+  wiki_use: 'Main in-class lab for incrementality: design a single-cell holdback test, then analyze it and talk about how the lift result would calibrate an MMM.'
+  tools:
+  - meridian-geox
+  - google-meridian
+  - jax
+  ai_angle: false
+  download:
+    repo: https://github.com/google/meridian-geox
+    branch: main
+    paths: []
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 4.9
+  verified_via: fetch
+  notes: Last commit 2026-10-01, actively developed. pip install meridian-geox. Needs Python 3.10 or later, or 3.11 or later alongside Meridian. This is the natural successor to trimmed_match and matched_markets
+    for teaching, and pairs with google/meridian, which is already in the library.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: google-trimmed-match
+  category: M6
+  subtopic: Geo experiments (Trimmed Match)
+  title: 'Trimmed Match: design and analysis of randomized paired geo experiments'
+  authors: Google
+  year: 2023
+  type: package
+  venue: GitHub (google/trimmed_match)
+  url: https://github.com/google/trimmed_match
+  access: open
+  license: Apache-2.0
+  level: advanced
+  priority: optional
+  modules:
+  - M6
+  summary: Python library with a C++ core for robust iROAS estimation in matched-pair geo experiments. Includes Colab notebooks for design (with cross-validation) and post-analysis, plus example datasets.
+  wiki_use: Instructor background or an optional deep dive on matched-pair geo designs and outlier-robust iROAS. The README's five-pair iROAS example makes a good worked illustration.
+  tools:
+  - trimmed_match
+  - pandas
+  - scipy
+  ai_angle: false
+  download:
+    repo: https://github.com/google/trimmed_match
+    branch: master
+    paths:
+    - README.md
+    - trimmed_match/notebook
+    - trimmed_match/example_datasets
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 5.2
+  verified_via: fetch
+  notes: Last commit 2023-06-01. Not archived, but dormant. Installing it builds a C++ extension with bazel, which is slow and fragile on current Colab. The README says it was tested on Python 3.7. Prefer
+    Meridian GeoX for student labs.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: google-matched-markets
+  category: M6
+  subtopic: Geo experiments (Matched Markets / TBR)
+  title: 'Matched Markets: geo experiment design and Time-Based Regression analysis'
+  authors: Google
+  year: 2025
+  type: package
+  venue: GitHub (google/matched_markets)
+  url: https://github.com/google/matched_markets
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: optional
+  modules:
+  - M6
+  summary: Python library for choosing treatment and control geos (TBR Matched Markets greedy search) and for post-test Time-Based Regression analysis. Two Colab notebooks and small sample CSVs.
+  wiki_use: Compact TBR example to set beside Meridian GeoX or Orduz's PyMC TBR notebook, so students can see one method in three implementations.
+  tools:
+  - matched_markets
+  - pandas
+  - statsmodels
+  ai_angle: false
+  download:
+    repo: https://github.com/google/matched_markets
+    branch: master
+    paths: []
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 2.3
+  verified_via: fetch
+  notes: Last commit 2025-08-21. The README says 'not an officially supported Google product; for research purposes only'.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: meta-geolift-r
+  category: M6
+  subtopic: Geo experiments (synthetic control, R)
+  title: 'GeoLift: Meta''s end-to-end geo-experimentation package (R)'
+  authors: Meta (facebookincubator)
+  year: 2026
+  type: package
+  venue: GitHub (facebookincubator/GeoLift)
+  url: https://github.com/facebookincubator/GeoLift
+  access: open
+  license: MIT
+  level: intermediate
+  priority: optional
+  modules:
+  - M6
+  summary: R package for market selection, power analysis and lift estimation with augmented synthetic control. Includes walkthrough vignettes (single and multi-cell), small .rda test data, and MMM-calibration
+    white papers with sample CSVs.
+  wiki_use: The 'some R' option for M6. Students can compare GeoLift's synthetic-control lift with a Python TBR or GeoX analysis of the same design.
+  tools:
+  - GeoLift
+  - augsynth
+  ai_angle: false
+  download:
+    repo: https://github.com/facebookincubator/GeoLift
+    branch: main
+    paths:
+    - README.md
+    - vignettes
+    - data
+    - Whitepapers
+    license: MIT
+    license_verified: fetch
+    approx_mb: 4.6
+  verified_via: fetch
+  notes: 'R only, with no Python notebooks. Last commit 2026-04-01. Whitepapers/ includes ''Experimental calibration of MMM: evidence from 18 case studies'' (PDF), which sits under the repo''s MIT license.'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: feedx-shopping-feed-experiments
+  category: M6
+  subtopic: A/B testing with CUPED and crossover designs
+  title: 'FeedX: transparent, robust A/B experimentation for Shopping feeds'
+  authors: Google Marketing Solutions
+  year: 2026
+  type: notebook
+  venue: GitHub (google-marketing-solutions/feedx)
+  url: https://github.com/google-marketing-solutions/feedx
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: core
+  modules:
+  - M6
+  - M8
+  - AI
+  summary: Python package plus two Colabs (experiment designer and analyzer) for item-randomized tests of product-feed changes. Uses a crossover design, CUPED adjustment for pre-period performance, and
+    outlier trimming. It is the recommended test method for FeedGen, Google's LLM feed optimizer.
+  wiki_use: 'Strong bridge case for M6 and M8: students design and analyze an experiment that tests whether LLM-rewritten product titles actually lift clicks, so they practice CUPED and power analysis on
+    a real marketing decision.'
+  tools:
+  - feedx
+  - pandas
+  - numpy
+  - scipy
+  ai_angle: true
+  download:
+    repo: https://github.com/google-marketing-solutions/feedx
+    branch: main
+    paths: []
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 4.2
+  verified_via: fetch
+  notes: Last commit 2026-10-21, very active. Needs Python 3.10 or later. The sister repo google-marketing-solutions/feedgen (LLM feed rewriting) is Apps Script/TypeScript with no notebooks, so link to
+    it rather than download it.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: spotify-confidence
+  category: M6
+  subtopic: A/B testing, sequential tests, sample sizing
+  title: 'Spotify Confidence: A/B test analysis including group sequential tests and variance reduction'
+  authors: Spotify
+  year: 2026
+  type: package
+  venue: GitHub (spotify/confidence)
+  url: https://github.com/spotify/confidence
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: recommended
+  modules:
+  - M6
+  summary: Python package from Spotify's experimentation team for frequentist and Bayesian A/B test analysis, sample-size calculation, group sequential testing and regression-based variance reduction. Example
+    notebooks are in examples/.
+  wiki_use: In-class demo of 'peeking' and why sequential boundaries matter. Use the Sequential and Sample-sizing notebooks as worked examples.
+  tools:
+  - spotify-confidence
+  - pandas
+  - statsmodels
+  ai_angle: false
+  download:
+    repo: https://github.com/spotify/confidence
+    branch: master
+    paths:
+    - README.md
+    - examples/Confidence Tutorial.ipynb
+    - examples/Confidence Examples - Sequential.ipynb
+    - examples/Confidence Examples - Sample sizing.ipynb
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 9.0
+  verified_via: fetch
+  notes: Last commit 2026-02-26. Latest release badge shows 4.1.0. The notebooks are mostly code with little explanatory text, so pair them with the Courthoud or Trencseni write-ups. The Bayesian and Frequentist
+    example notebooks (7.4 MB) are left out to save space.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: numpyro-bayesian-cuped
+  category: M6
+  subtopic: CUPED (Bayesian)
+  title: Bayesian CUPED (NumPyro tutorial)
+  authors: NumPyro contributors (adapted from Orduz, J. and Courthoud, M.)
+  year: 2026
+  type: notebook
+  venue: NumPyro documentation
+  url: https://num.pyro.ai/en/stable/tutorials/bayesian_cuped.html
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: recommended
+  modules:
+  - M6
+  summary: Short tutorial on synthetic ad-campaign revenue data. It compares a Bayesian difference-in-means with a CUPED-adjusted model fit in one NumPyro model; the posterior SD shrinks from 0.292 to 0.219
+    around a true effect of 2.
+  wiki_use: 'Follow-up exercise after frequentist CUPED: students check how much variance reduction they get and why the pre-period covariate matters.'
+  tools:
+  - numpyro
+  - jax
+  - arviz
+  ai_angle: false
+  download:
+    repo: https://github.com/pyro-ppl/numpyro
+    branch: master
+    paths:
+    - notebooks/source/bayesian_cuped.ipynb
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.8
+  verified_via: fetch
+  notes: Single-file sparse download from a large repo. The repo was updated 2026-10-22.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: orduz-marketing-notebooks
+  category: M6
+  subtopic: CUPED, Bayesian power, elasticities, uplift, MMM
+  title: 'Juan Orduz''s blog notebooks (marketing data science: CUPED, A/B power, price elasticities, uplift, Orbit MMM)'
+  authors: Orduz, J.
+  year: 2026
+  type: notebook
+  venue: GitHub (juanitorduz/website_projects); blog at juanitorduz.github.io
+  url: https://github.com/juanitorduz/website_projects
+  oa_url: https://juanitorduz.github.io/
+  access: open
+  license: MIT
+  level: intermediate
+  priority: core
+  modules:
+  - M6
+  - M3
+  - M4
+  - M7
+  summary: Source notebooks for one of the best applied marketing data science blogs, by a PyMC-Marketing core developer. The selection covers Bayesian CUPED, Bayesian power analysis for conversion A/B
+    tests (HDI+ROPE vs z-test), hierarchical price-elasticity models on retail data, an uplift-modeling intro with causalml and scikit-uplift, and Orbit KTR for media effects.
+  wiki_use: Assigned worked examples for M6 (CUPED, power) and M3/M7 (elasticities, uplift). The elasticity notebook is a good bridge to PyBLP-style demand thinking.
+  tools:
+  - pymc
+  - numpyro
+  - causalml
+  - scikit-uplift
+  - orbit-ml
+  - arviz
+  ai_angle: false
+  download:
+    repo: https://github.com/juanitorduz/website_projects
+    branch: master
+    paths:
+    - Python/bayesian_cuped.ipynb
+    - Python/bayesian_power_ab_testing.ipynb
+    - Python/elasticities.ipynb
+    - Python/uplift.ipynb
+    - Python/orbit_mmm.ipynb
+    - data/mmm_roas_data.csv
+    - data/multilevel_elasticities_single_sku_data.csv
+    - data/ktr_data.csv
+    - data/sales.csv
+    - data/retention_data.csv
+    license: MIT
+    license_verified: fetch
+    approx_mb: 14.4
+  verified_via: fetch
+  notes: 'The whole Python/ folder is about 710 MB because notebooks are stored with outputs, so never take the whole repo. Worthwhile but heavy extras: time_based_regression_pymc.ipynb (geo TBR, 10.1 MB),
+    multilevel_elasticities_single_sku.ipynb (14.8 MB), bg_nbd_pymc.ipynb (10.4 MB), mmm_roas.ipynb (31 MB). Some notebooks are older, e.g. orbit_mmm was written for orbit 1.1, so expect API drift. The
+    README says the code needs XLA_FLAGS set to work around a JAX bug.'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: trencseni-ab-testing-playground
+  category: M6
+  subtopic: A/B testing pitfalls, CUPED, early stopping
+  title: Bytepawn A/B testing notebooks (CUPED, early-stopping pitfall, Fisher/Chi-squared/G/t tests, bandits)
+  authors: Trencseni, M.
+  year: 2026
+  type: notebook
+  venue: GitHub (mtrencseni/playground); blog bytepawn.com
+  url: https://github.com/mtrencseni/playground
+  oa_url: https://bytepawn.com/reducing-variance-in-ab-testing-with-cuped.html
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M6
+  summary: 'About 20 short, simulation-based notebooks behind the Bytepawn blog: ''AB testing and the pitfall of early stopping'', CUPED (including CUPED p-hacking and conversion CUPED), test choice (z,
+    t, chi-squared, Fisher, G), parallel tests, and bandits.'
+  wiki_use: Link from the M6 page as reading on why peeking inflates false positives and how CUPED can be misused.
+  tools:
+  - numpy
+  - scipy
+  - statsmodels
+  ai_angle: false
+  verified_via: fetch
+  notes: 'LINK ONLY: the repo has no LICENSE file, so it is all rights reserved. Do not download. The CUPED post (31 July 2021) links CUPED.ipynb in this repo. Repo last commit 2026-09-30.'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: courthoud-blog-posts
+  category: M6
+  subtopic: CUPED, group sequential testing, uplift evaluation
+  title: Matteo Courthoud's causal data science blog notebooks
+  authors: Courthoud, M.
+  year: 2024
+  type: notebook
+  venue: GitHub (matteocourthoud/Blog-Posts); posts on Medium / Towards Data Science
+  url: https://github.com/matteocourthoud/Blog-Posts
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M6
+  - M7
+  summary: Notebooks behind clear, well-explained posts on cuped, group_sequential_testing, optimal_stopping, bayesian_ab_test, evaluate_uplift, meta_learners, beyond_churn, synthetic_control, double_ml
+    and more.
+  wiki_use: Recommended readings that explain the intuition behind CUPED and sequential testing. Link from the M6 and M7 pages.
+  tools:
+  - statsmodels
+  - scikit-learn
+  - econml
+  ai_angle: false
+  verified_via: fetch
+  notes: 'LINK ONLY: the GitHub page shows no license, so it is all rights reserved. Last commit 2024-03-17. The NumPyro Bayesian CUPED tutorial credits Courthoud''s CUPED post and data-generating code.'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: bayesian-hackers-ab-chapter
+  category: M6
+  subtopic: Bayesian A/B testing
+  title: Probabilistic Programming and Bayesian Methods for Hackers, Chapter 2 (includes the A/B testing example)
+  authors: Davidson-Pilon, C.
+  year: 2023
+  type: book-chapter
+  venue: GitHub (open book)
+  url: https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
+  access: open
+  license: MIT
+  level: intro
+  priority: optional
+  modules:
+  - M6
+  summary: Classic open book. Chapter 2 builds a Bayesian A/B test of conversion rates step by step, with posterior distributions of the difference.
+  wiki_use: Gentle Bayesian alternative to the frequentist A/B workflow. Students can ask an AI assistant to port it to PyMC-Marketing-style code.
+  tools:
+  - pymc
+  - arviz
+  ai_angle: false
+  download:
+    repo: https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
+    branch: master
+    paths:
+    - Chapter2_MorePyMC/Ch2_MorePyMC_PyMC_current.ipynb
+    - Chapter2_MorePyMC/data
+    - Chapter2_MorePyMC/separation_plot.py
+    license: MIT
+    license_verified: fetch
+    approx_mb: 1.7
+  verified_via: fetch
+  notes: Last commit 2023-02-13. Use the *_PyMC_current notebook. The PyMC2 and PyMC3 versions are obsolete.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: fractional-uplift
+  category: M6
+  subtopic: Uplift / incrementality-based targeting
+  title: 'Fractional Uplift: uplift modelling with complex or constrained metrics'
+  authors: Google Marketing Solutions
+  year: 2026
+  type: package
+  venue: GitHub (google-marketing-solutions/fractional_uplift)
+  url: https://github.com/google-marketing-solutions/fractional_uplift
+  access: open
+  license: Apache-2.0
+  level: advanced
+  priority: optional
+  modules:
+  - M6
+  - M7
+  summary: Meta-learner uplift package for targeting ads or promotions to the most incremental customers when the KPI is a ratio such as ROI or cost-constrained conversions. Includes an end-to-end example
+    notebook.
+  wiki_use: Advanced extension after scikit-uplift and causalml, which are already in the library. It shows how industry turns uplift scores into ROI-constrained targeting.
+  tools:
+  - fractional-uplift
+  - pandas
+  ai_angle: false
+  download:
+    repo: https://github.com/google-marketing-solutions/fractional_uplift
+    branch: main
+    paths: []
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 1.7
+  verified_via: fetch
+  notes: Last commit 2026-01-12. Needs Python 3.10 or later.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: meta-balance-survey-weighting
+  category: M6
+  subtopic: Survey weighting / non-response adjustment
+  title: 'balance: Python package for adjusting biased samples (survey weighting)'
+  authors: Meta (facebookresearch)
+  year: 2026
+  type: package
+  venue: GitHub (facebookresearch/balance)
+  url: https://github.com/facebookresearch/balance
+  access: open
+  license: MIT
+  level: intermediate
+  priority: optional
+  modules:
+  - M6
+  - M2
+  - M8
+  summary: Meta's package for reweighting non-representative samples (IPW, CBPS, raking, post-stratification), with diagnostics. Includes about 10 quickstart tutorial notebooks.
+  wiki_use: Short demo for marketing-research projects that rely on convenience or panel surveys. It is also useful for reweighting LLM 'synthetic respondent' samples against census margins.
+  tools:
+  - balance
+  - pandas
+  - scikit-learn
+  ai_angle: false
+  download:
+    repo: https://github.com/facebookresearch/balance
+    branch: main
+    paths:
+    - README.md
+    - tutorials
+    license: MIT
+    license_verified: fetch
+    approx_mb: 0.8
+  verified_via: fetch
+  notes: Last commit 2026-10-22, very active.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: eeghor-mta
+  category: M6
+  subtopic: Multi-touch attribution (Markov, Shapley)
+  title: 'mta: multi-touch attribution models in Python (heuristics, Markov chain, Shapley, Shao, logistic, additive hazard)'
+  authors: Korostil, I. (eeghor)
+  year: 2026
+  type: package
+  venue: GitHub (eeghor/mta)
+  url: https://github.com/eeghor/mta
+  access: open
+  license: MIT
+  level: intermediate
+  priority: core
+  modules:
+  - M6
+  - M8
+  summary: Small, readable Python library that runs first/last touch, linear, position-based, time-decay, Markov removal-effect, Shapley value, Shao's model, logistic and additive-hazard attribution on
+    one journey dataset (sample data.csv.gz included). Models can be chained to compare credit allocations side by side.
+  wiki_use: 'In-class activity: run every attribution model on the bundled journeys, compare the channel shares, and discuss why none of them is causal (the setup for geo experiments and MMM).'
+  tools:
+  - mta
+  - pandas
+  - numpy
+  ai_angle: false
+  download:
+    repo: https://github.com/eeghor/mta
+    branch: master
+    paths: []
+    license: MIT
+    license_verified: fetch
+    approx_mb: 0.3
+  verified_via: fetch
+  notes: 'Last commit 2026-10-18. No notebooks; the README has the usage examples, so the instructor or students write the notebook (a good vibe-coding exercise). Alternative: DP6/Marketing-Attribution-Models
+    (Apache-2.0, Polars-based, docs partly in Portuguese).'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: robyn-python
+  category: M6
+  subtopic: Marketing mix modeling (Robyn, Python beta)
+  title: Robyn Python (beta) and the Robyn Python API notebook
+  authors: Meta Marketing Science
+  year: 2025
+  type: notebook
+  venue: GitHub (facebookexperimental/Robyn)
+  url: https://github.com/facebookexperimental/Robyn
+  oa_url: https://facebookexperimental.github.io/Robyn/
+  access: open
+  license: MIT
+  level: advanced
+  priority: recommended
+  modules:
+  - M6
+  - M8
+  - AI
+  summary: 'Meta''s ridge-regression, evolutionary-hyperparameter MMM. python/ holds a Python rewrite of R Robyn 3.11.1 (PyPI: robynpy) with a tutorial notebook and a simulated weekly dataset. robyn_api/
+    holds an older notebook that calls R Robyn from Python.'
+  wiki_use: Compare against Meridian and PyMC-Marketing. The README states the Python port was 'developed by utilizing various LLMs and AI workflows' and warns of translation issues, which makes a good
+    AI-assisted-coding case study on trusting LLM-translated statistical code.
+  tools:
+  - robynpy
+  - nevergrad
+  - glmnet (R)
+  - prophet
+  ai_angle: true
+  download:
+    repo: https://github.com/facebookexperimental/Robyn
+    branch: main
+    paths:
+    - python/README.md
+    - python/LICENSE
+    - python/src/robyn/tutorials/tutorial1.ipynb
+    - python/src/robyn/tutorials/resources
+    license: MIT
+    license_verified: fetch
+    approx_mb: 13.2
+  verified_via: fetch
+  notes: Use branch 'main' (last commit 2025-06-27). Oddly, GitHub's default HEAD points to 'accuracy/allocator_v2_fixes' (2024-11). The Python beta still needs R plus the glmnet package. tutorial1.ipynb
+    is 9.2 MB with outputs. tutorial1_src.ipynb (6.3 MB) and robyn_api/robyn_python_notebook.ipynb (5 MB) are optional.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: lightweight-mmm-deprecated
+  category: M6
+  subtopic: Marketing mix modeling (LightweightMMM, deprecated)
+  title: LightweightMMM end-to-end demo notebooks (deprecated; superseded by Meridian)
+  authors: Google
+  year: 2025
+  type: notebook
+  venue: GitHub (google/lightweight_mmm)
+  url: https://github.com/google/lightweight_mmm
+  access: open
+  license: Apache-2.0
+  level: advanced
+  priority: optional
+  modules:
+  - M6
+  summary: 'NumPyro-based Bayesian MMM. Two demo notebooks: simple end-to-end, and multiple geos with adstock, saturation, response curves and budget optimization.'
+  wiki_use: 'Historical reference only: show how the field moved from LMMM to Meridian. Do not assign it for new student work.'
+  tools:
+  - lightweight_mmm
+  - numpyro
+  - jax
+  ai_angle: false
+  download:
+    repo: https://github.com/google/lightweight_mmm
+    branch: main
+    paths:
+    - README.md
+    - examples
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 3.8
+  verified_via: fetch
+  notes: ARCHIVED on 2026-01-19 (read-only). The README says 'LMMM is not supported anymore, so we highly recommend you switch to Meridian'. Last commit 2025-06-17. Pinned JAX and NumPyro versions will
+    likely fail on current Colab.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: uber-orbit-ktr
+  category: M6
+  subtopic: Bayesian time-series / time-varying coefficient MMM
+  title: 'Orbit: Bayesian time-series forecasting and KTR time-varying regression (Uber)'
+  authors: Uber
+  year: 2026
+  type: package
+  venue: GitHub (uber/orbit)
+  url: https://github.com/uber/orbit
+  access: open
+  license: Apache-2.0
+  level: advanced
+  priority: optional
+  modules:
+  - M6
+  - M7
+  summary: Uber's Bayesian structural time-series package (ETS, LGT, DLT, and KTR kernel time-varying regression). KTR with regression priors is the building block Uber used for MMM-style time-varying media
+    coefficients.
+  wiki_use: Optional MMM or forecasting extension. Pair the KTR tutorials with Orduz's orbit_mmm notebook, which applies KTR to media effects.
+  tools:
+  - orbit-ml
+  - pyro
+  - cmdstanpy
+  ai_angle: false
+  download:
+    repo: https://github.com/uber/orbit
+    branch: dev
+    paths:
+    - docs/tutorials/quick_start.ipynb
+    - docs/tutorials/ktr1.ipynb
+    - docs/tutorials/ktr2.ipynb
+    - docs/tutorials/ktr3.ipynb
+    - docs/tutorials/ktr4.ipynb
+    - docs/tutorials/regression_prior.ipynb
+    - docs/tutorials/regression_penalty.ipynb
+    - docs/tutorials/decompose_prediction.ipynb
+    - docs/tutorials/backtest.ipynb
+    - examples/data/iclaims_example.csv
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 5.2
+  verified_via: fetch
+  notes: Default branch is 'dev'. Last commit 2026-05-22. The tutorials are general forecasting with no marketing-specific MMM notebook in the repo. Stan backend compilation can be slow on Colab.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: google-crystalvalue
+  category: M4
+  subtopic: Predictive CLV (pLTV) on Vertex AI
+  title: 'Crystalvalue: predictive customer lifetime value (pLTV) on Google Cloud Vertex AI'
+  authors: Google Marketing Solutions
+  year: 2026
+  type: notebook
+  venue: GitHub (google-marketing-solutions/crystalvalue)
+  url: https://github.com/google-marketing-solutions/crystalvalue
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: recommended
+  modules:
+  - M4
+  - M7
+  summary: Python library and two demo notebooks (synthetic quick start, and real Kaggle transactions) that automate pLTV feature engineering, model training on Vertex AI, data-statistics checks and scheduled
+    predictions from BigQuery transaction tables. Outputs go back to BigQuery.
+  wiki_use: 'Industry counterpart to the BTYD and PyMC-Marketing CLV lesson: show how advertisers build pLTV for value-based bidding. Walk through it as an instructor demo, since it needs GCP.'
+  tools:
+  - crystalvalue
+  - bigquery
+  - vertex-ai
+  ai_angle: false
+  download:
+    repo: https://github.com/google-marketing-solutions/crystalvalue
+    branch: main
+    paths: []
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.5
+  verified_via: fetch
+  notes: The old google/crystalvalue URL now resolves to google-marketing-solutions/crystalvalue. Not archived. Last commit 2026-01-15. It needs a Google Cloud project with the BigQuery and Vertex AI APIs
+    and billing, so it is not runnable on plain Colab without GCP credits.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: google-lifetime-value-ziln
+  category: M4
+  subtopic: CLV prediction (zero-inflated lognormal loss)
+  title: 'lifetime_value: zero-inflated lognormal (ZILN) loss for customer lifetime value prediction'
+  authors: Wang, X.; Liu, T.; Miao, J. (Google)
+  year: 2020
+  type: notebook
+  venue: GitHub (google/lifetime_value); paper arXiv:1912.07753
+  url: https://github.com/google/lifetime_value
+  oa_url: https://arxiv.org/pdf/1912.07753
+  access: open
+  license: Apache-2.0
+  level: advanced
+  priority: optional
+  modules:
+  - M4
+  - M7
+  summary: Keras ZILN loss that models churn probability and a heavy-tailed spend distribution together. Notebooks on the Kaggle Acquire Valued Shoppers and KDD Cup 98 data, evaluated with normalized Gini
+    and decile calibration.
+  wiki_use: 'Instructor background or advanced reading: why MSE fails for CLV, and how a zero-inflated likelihood fixes it. Pairs with the paper ''A Deep Probabilistic Model for Customer Lifetime Value
+    Prediction''.'
+  tools:
+  - lifetime_value
+  - tensorflow
+  - keras
+  ai_angle: false
+  download:
+    repo: https://github.com/google/lifetime_value
+    branch: master
+    paths:
+    - README.md
+    - notebooks
+    - lifetime_value
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.2
+  verified_via: fetch
+  notes: ARCHIVED 2026-04-18. Last code commit 2020-11-12. Data must be downloaded from Kaggle, and the TF/Keras 2 era code will need updates for Keras 3.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: gcp-marketing-analytics-jumpstart
+  category: M7
+  subtopic: Propensity, CLV, audience segmentation on GA4 (production)
+  title: Marketing Analytics Jumpstart (Google Cloud)
+  authors: Google Cloud
+  year: 2026
+  type: tool
+  venue: GitHub (GoogleCloudPlatform/marketing-analytics-jumpstart)
+  url: https://github.com/GoogleCloudPlatform/marketing-analytics-jumpstart
+  access: open
+  license: Apache-2.0
+  level: advanced
+  priority: optional
+  modules:
+  - M7
+  - M4
+  - M8
+  summary: Terraform-deployed end-to-end GA4 plus BigQuery solution with ML pipelines for purchase propensity, CLV, audience segmentation and value-based bidding, Looker Studio dashboards, and activation
+    back to GA4.
+  wiki_use: Instructor-only 'what production marketing ML looks like' reference. The events_analysis notebook is a usable GA4 exploratory example.
+  tools:
+  - bigquery
+  - vertex-ai
+  - terraform
+  - dataform
+  ai_angle: false
+  download:
+    repo: https://github.com/GoogleCloudPlatform/marketing-analytics-jumpstart
+    branch: main
+    paths:
+    - README.md
+    - notebooks
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 6.4
+  verified_via: fetch
+  notes: Last commit 2026-01-05. Mostly infrastructure and SQL. The two notebooks are events_analysis.ipynb (6.3 MB) and quick_installation.ipynb.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: gcp-bqml-propensity-patterns
+  category: M7
+  subtopic: Propensity to purchase / churn (BigQuery ML)
+  title: 'Analytics componentized patterns: BQML propensity-to-purchase, GA4 churn propensity, clustering and LTV notebooks'
+  authors: Google Cloud
+  year: 2026
+  type: notebook
+  venue: GitHub (GoogleCloudPlatform/analytics-componentized-patterns)
+  url: https://github.com/GoogleCloudPlatform/analytics-componentized-patterns
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: optional
+  modules:
+  - M7
+  - M4
+  summary: Notebooks that build propensity-to-purchase on Google Analytics sample data, churn propensity on GA4 gaming data, k-means segmentation, and AutoML LTV with lookalike activation, all inside BigQuery
+    ML.
+  wiki_use: Shows students the SQL-first (BQML) route to propensity and segmentation models, a useful contrast to scikit-learn workflows.
+  tools:
+  - bigquery-ml
+  - kubeflow-pipelines
+  - vertex-ai
+  ai_angle: false
+  download:
+    repo: https://github.com/GoogleCloudPlatform/analytics-componentized-patterns
+    branch: master
+    paths:
+    - retail/propensity-model/bqml
+    - retail/clustering/bqml
+    - retail/ltv/bqml
+    - gaming/propensity-model/bqml
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 1.7
+  verified_via: fetch
+  notes: Needs a GCP project, though BigQuery sandbox or free tier can cover the SQL parts. Some notebooks use older KFP and AI Platform APIs, so treat them as patterns rather than turnkey labs. Repo last
+    commit 2026-05-11; individual notebook dates were not checked.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: fight-churn-with-data
+  category: M7
+  subtopic: Churn analysis (book companion code)
+  title: 'Fighting Churn With Data: companion code and ChurnSim simulator'
+  authors: Gold, C.
+  year: 2025
+  type: book
+  venue: GitHub (carl24k/fight-churn); Manning book
+  url: https://github.com/carl24k/fight-churn
+  access: open
+  license: MIT
+  level: intermediate
+  priority: recommended
+  modules:
+  - M7
+  - M4
+  summary: 'Chapter-by-chapter code listings (SQL and Python) for a practitioner churn book: measuring churn, building behavioral metrics, relating metrics to churn, and forecasting churn with regression
+    and machine learning. Includes ChurnSim, a behavioral simulator that generates realistic subscription-event data.'
+  wiki_use: Source of a semester-project-scale synthetic churn dataset (ChurnSim) and of SQL-plus-Python feature engineering patterns for subscription businesses.
+  tools:
+  - fightchurn
+  - postgresql
+  - pandas
+  - scikit-learn
+  - xgboost
+  - shap
+  ai_angle: false
+  download:
+    repo: https://github.com/carl24k/fight-churn
+    branch: master
+    paths: []
+    license: MIT
+    license_verified: fetch
+    approx_mb: 3.6
+  verified_via: fetch
+  notes: Last commit 2025-07-13. Supports Python 3.9 to 3.12; 3.13 is not supported because of shap. Requires PostgreSQL. The 'crm5' simulation produces about 30 GB, so stick to the small default schema
+    for class. The book itself is paid (Manning), but the code is MIT. The ChurnSim white paper is on SSRN.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: lifelines-churn-notebooks
+  category: M7
+  subtopic: Survival analysis for churn and conversion timing
+  title: 'lifelines example notebooks: Customer Churn, SaaS churn with piecewise models, time-lagged conversion rates'
+  authors: Davidson-Pilon, C. and contributors
+  year: 2026
+  type: notebook
+  venue: GitHub (CamDavidsonPilon/lifelines)
+  url: https://github.com/CamDavidsonPilon/lifelines
+  access: open
+  license: MIT
+  level: intermediate
+  priority: recommended
+  modules:
+  - M7
+  - M4
+  summary: 'Survival-analysis notebooks on marketing questions: survival models for customer churn, piecewise-exponential SaaS churn, and modeling delayed (time-lagged) conversions.'
+  wiki_use: Shows 'time to churn' as an alternative to binary churn classifiers, and links naturally to CLV in M4.
+  tools:
+  - lifelines
+  - pandas
+  ai_angle: false
+  download:
+    repo: https://github.com/CamDavidsonPilon/lifelines
+    branch: master
+    paths:
+    - examples/Customer Churn.ipynb
+    - examples/SaaS churn and piecewise regression models.ipynb
+    - examples/Modelling time-lagged conversion rates.ipynb
+    license: MIT
+    license_verified: fetch
+    approx_mb: 2.2
+  verified_via: fetch
+  notes: lifelines last commit 2026-03-06. It is the maintained sibling of the archived `lifetimes` package. Check whether each notebook's data URL still resolves.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: tensorhouse-marketing-pricing
+  category: M7
+  subtopic: 'Reference notebooks: RFM, MMM, attribution, propensity, uplift, BTYD, pricing, LLM focus groups'
+  title: 'TensorHouse: reference notebooks for marketing, promotions and pricing'
+  authors: ikatsov (TensorHouse project)
+  year: 2024
+  type: notebook
+  venue: GitHub (ikatsov/tensor-house)
+  url: https://github.com/ikatsov/tensor-house
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: core
+  modules:
+  - M4
+  - M5
+  - M6
+  - M7
+  - M8
+  - AI
+  summary: 'Broad collection of enterprise-style notebooks. Marketing: RFM, adstock and Bayesian MMM, LSTM multi-touch attribution, observational campaign effects, customer2vec/item2vec, transformer sentiment,
+    LLM virtual focus groups. Promotions: propensity scoring, observational uplift, Markov and Bayesian BTYD LTV, next-best-action RL. Pricing: market response functions, multi-product price optimization,
+    Thompson-sampling dynamic pricing.'
+  wiki_use: Menu of project-starter notebooks for team projects. The pricing folder covers price-elasticity and dynamic pricing, and virtual-focus-groups is a ready LLM-for-UGC demo for M8.
+  tools:
+  - tensorflow
+  - pymc
+  - dowhy
+  - econml
+  - langchain
+  - statsmodels
+  - scikit-learn
+  ai_angle: true
+  download:
+    repo: https://github.com/ikatsov/tensor-house
+    branch: master
+    paths:
+    - README.md
+    - marketing-analytics
+    - pricing
+    - promotions
+    - _resources/datasets.md
+    - search/product-attribute-extraction-llm.ipynb
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 9.9
+  verified_via: fetch
+  notes: Last commit 2024-01-24. Not archived, but no pinned versions, and the TF/PyMC/LangChain APIs have moved on, so expect to fix imports (a good AI-assisted debugging exercise). Datasets are mostly
+    external (see _resources/datasets.md). Author named only by the GitHub handle ikatsov; I did not confirm a full name.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: mlxtend-frequent-patterns
+  category: M7
+  subtopic: Market basket analysis / association rules
+  title: 'mlxtend user guide: apriori, FP-growth, FP-max, H-mine and association_rules notebooks'
+  authors: Raschka, S.
+  year: 2026
+  type: notebook
+  venue: GitHub (rasbt/mlxtend); docs at rasbt.github.io/mlxtend
+  url: https://github.com/rasbt/mlxtend
+  access: open
+  license: BSD-3-Clause
+  level: intro
+  priority: core
+  modules:
+  - M7
+  - M4
+  summary: 'The standard Python market-basket workflow: one-hot transaction encoding, frequent itemsets (apriori, fpgrowth), and association rules with support, confidence, lift, leverage and conviction.'
+  wiki_use: 'In-class coding activity on the UCI Online Retail data (already in the library): students reproduce the mlxtend examples on real baskets and interpret lift for cross-selling.'
+  tools:
+  - mlxtend
+  - pandas
+  ai_angle: false
+  download:
+    repo: https://github.com/rasbt/mlxtend
+    branch: master
+    paths:
+    - docs/sources/user_guide/frequent_patterns
+    license: BSD-3-Clause
+    license_verified: fetch
+    approx_mb: 0.3
+  verified_via: fetch
+  notes: Last commit 2026-09-29. The current association_rules notebook passes a num_itemsets argument (association_rules(..., num_itemsets=len(df.index))) that older tutorials and many AI-generated snippets
+    omit, so version mismatches are a likely, teachable failure mode for AI assistants.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: implicit-als-recommender
+  category: M7
+  subtopic: Recommenders (implicit feedback ALS/BPR)
+  title: 'implicit: fast collaborative filtering for implicit feedback (Last.fm tutorial notebook)'
+  authors: Frederickson, B.
+  year: 2026
+  type: package
+  venue: GitHub (benfred/implicit)
+  url: https://github.com/benfred/implicit
+  access: open
+  license: MIT
+  level: intermediate
+  priority: recommended
+  modules:
+  - M7
+  summary: Widely used ALS, BPR and logistic-MF recommender package for clicks, plays and purchases (implicit feedback). The examples include a Last.fm tutorial notebook and MovieLens and Last.fm scripts.
+  wiki_use: Short lab on 'customers who bought X' recommendations from purchase logs. It complements the broader recommenders-team/recommenders library already in the library.
+  tools:
+  - implicit
+  - scipy
+  ai_angle: false
+  download:
+    repo: https://github.com/benfred/implicit
+    branch: main
+    paths:
+    - examples
+    license: MIT
+    license_verified: fetch
+    approx_mb: 0.1
+  verified_via: fetch
+  notes: Last commit 2026-05-08.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: lightfm-hybrid-recommender
+  category: M7
+  subtopic: Recommenders (hybrid, cold start)
+  title: 'LightFM: hybrid recommendation with user and item features (quickstart, MovieLens, WARP loss notebooks)'
+  authors: Lyst (Kula, M.)
+  year: 2023
+  type: package
+  venue: GitHub (lyst/lightfm)
+  url: https://github.com/lyst/lightfm
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: optional
+  modules:
+  - M7
+  summary: Hybrid matrix factorization that uses item and user metadata, which helps with cold-start products. Example notebooks cover the quickstart, MovieLens, learning schedules, WARP loss, and a StackExchange
+    hybrid model.
+  wiki_use: 'Optional: shows how product attributes enter a recommender. Pair it with the cold-start discussion in M7.'
+  tools:
+  - lightfm
+  ai_angle: false
+  download:
+    repo: https://github.com/lyst/lightfm
+    branch: master
+    paths:
+    - examples
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.3
+  verified_via: fetch
+  notes: 'STALE: last commit 2023-04-30 and no recent releases. It is a C-extension build, so test the pip install on current Colab and Python before assigning.'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: surprise-explicit-ratings
+  category: M7
+  subtopic: Recommenders (explicit ratings, teaching)
+  title: 'Surprise: scikit for recommender systems (examples and comparison notebooks)'
+  authors: Hug, N.
+  year: 2026
+  type: package
+  venue: GitHub (NicolasHug/Surprise)
+  url: https://github.com/NicolasHug/Surprise
+  access: open
+  license: BSD-3-Clause
+  level: intro
+  priority: optional
+  modules:
+  - M7
+  summary: Simple, scikit-learn-style library for rating-prediction recommenders (kNN, SVD, baselines) with built-in cross-validation and MovieLens loaders. About 20 short example scripts and two analysis
+    notebooks.
+  wiki_use: The most beginner-friendly entry point for collaborative filtering on star ratings, e.g. product review ratings.
+  tools:
+  - scikit-surprise
+  ai_angle: false
+  download:
+    repo: https://github.com/NicolasHug/Surprise
+    branch: master
+    paths:
+    - examples
+    license: BSD-3-Clause
+    license_verified: fetch
+    approx_mb: 0.2
+  verified_via: fetch
+  notes: Last commit 2026-05-30. pip package name is scikit-surprise.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: pyblp-tutorials
+  category: M3
+  subtopic: BLP demand estimation / price elasticities
+  title: PyBLP tutorial notebooks (logit and nested logit, Nevo cereal, BLP autos, Petrin micro moments, post-estimation, simulation)
+  authors: Conlon, C.; Gortmaker, J.
+  year: 2026
+  type: notebook
+  venue: GitHub (jeffgortmaker/pyblp); docs pyblp.readthedocs.io; paper RAND Journal of Economics 51(4), 2020
+  url: https://github.com/jeffgortmaker/pyblp
+  oa_url: https://pyblp.readthedocs.io/en/stable/tutorial.html
+  access: open
+  license: MIT
+  level: advanced
+  priority: core
+  modules:
+  - M3
+  - M4
+  - M7
+  summary: Reference implementation of BLP random-coefficients logit demand. The tutorials go from plain and nested logit to Nevo's cereal and BLP's autos, then compute elasticities, diversion ratios, markups
+    and merger or price-change counterfactuals.
+  wiki_use: 'The structural-demand anchor for the pricing topic: students estimate logit elasticities on the cereal data and run a price-cut counterfactual. It fits Nathan''s structural IO perspective.'
+  tools:
+  - pyblp
+  - numpy
+  - scipy
+  - pandas
+  ai_angle: false
+  download:
+    repo: https://github.com/jeffgortmaker/pyblp
+    branch: master
+    paths:
+    - docs/notebooks/tutorial
+    license: MIT
+    license_verified: fetch
+    approx_mb: 0.5
+  verified_via: fetch
+  notes: Last commit 2026-10-14. The datasets ship inside the pyblp package (pyblp.data), so no extra download is needed. Cite Conlon and Gortmaker (2020), 'Best practices for differentiated products demand
+    estimation with PyBLP', RAND Journal of Economics 51(4):1108-1161 (RePEc listing https://ideas.repec.org/a/bla/randje/v51y2020i4p1108-1161.html).
+  section: 'Python for marketing analytics: notebooks and code'
+- id: mixtape-demand-estimation
+  category: M3
+  subtopic: BLP demand estimation workshop
+  title: 'Mixtape Sessions: Demand Estimation (BLP workshop with PyBLP exercises and solutions)'
+  authors: Gortmaker, J. (with Pakes, A. on Day 1); Mixtape Sessions
+  year: 2025
+  type: course
+  venue: GitHub (Mixtape-Sessions/Demand-Estimation)
+  url: https://github.com/Mixtape-Sessions/Demand-Estimation
+  access: open
+  level: advanced
+  priority: recommended
+  modules:
+  - M3
+  - M7
+  summary: Three-day workshop with slides, readings and three Python/PyBLP exercises (pure logit with a price-cut counterfactual, mixed logit, micro data), with solution notebooks and products and demographics
+    CSVs.
+  wiki_use: Instructor template for a two-session pricing and demand unit. Link the exercise READMEs and Colab badges rather than mirroring them.
+  tools:
+  - pyblp
+  - pandas
+  ai_angle: false
+  verified_via: fetch
+  notes: 'LINK ONLY: the repo has no LICENSE file, so it is all rights reserved. Do not mirror it. Last commit 2025-10-24. Day 1 is listed as ''by Ariel Pakes'' in the README.'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: blueprints-text-analytics
+  category: M5
+  subtopic: Text analytics blueprints (Amazon review sentiment, classification, topics, embeddings)
+  title: 'Blueprints for Text Analytics Using Python: companion notebooks'
+  authors: Albrecht, J.; Ramachandran, S.; Winkler, C.
+  year: 2026
+  type: book
+  venue: GitHub (blueprints-for-text-analytics-python/blueprints-text); O'Reilly 2020
+  url: https://github.com/blueprints-for-text-analytics-python/blueprints-text
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: recommended
+  modules:
+  - M5
+  summary: 'One notebook per chapter: first insights and word frequencies, text preparation, classification, topic modeling and clustering, embeddings, and sentiment analysis of Amazon product reviews (lexicon,
+    ML and transformer approaches).'
+  wiki_use: Backbone notebooks for M5's classical-NLP half (before LLMs). Chapter 11 sentiment on product reviews is directly about marketing.
+  tools:
+  - pandas
+  - spacy
+  - scikit-learn
+  - gensim
+  - textacy
+  - transformers
+  ai_angle: false
+  download:
+    repo: https://github.com/blueprints-for-text-analytics-python/blueprints-text
+    branch: master
+    paths:
+    - README.md
+    - ch01
+    - ch04
+    - ch06
+    - ch08
+    - ch10
+    - ch11
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 3.3
+  verified_via: fetch
+  notes: oreil.ly/btap-code redirects here. Last commit 2026-05-28. The book used spaCy 2.3 and gensim 3.8, so some cells need updates for spaCy 3, gensim 4 and textacy. The data/ folder (about 130 MB)
+    is excluded. data/amazon-product-reviews/reviews_5_balanced.json.gz (16.6 MB) is needed for ch11, but redistribution terms for the Amazon review data are unclear, so fetch it at runtime rather than
+    mirror it.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: bertopic-docs-llm-representations
+  category: M5
+  subtopic: Topic modeling with embeddings and LLM topic labels
+  title: 'BERTopic documentation: best practices, LLM-based topic representation, zero-shot topics, topics over time and per class'
+  authors: Grootendorst, M.
+  year: 2026
+  type: documentation
+  venue: GitHub (MaartenGr/BERTopic)
+  url: https://github.com/MaartenGr/BERTopic
+  access: open
+  license: MIT
+  level: intermediate
+  priority: recommended
+  modules:
+  - M5
+  - AI
+  summary: Markdown sources of the BERTopic guide. Covers the embed-reduce-cluster-c-TF-IDF pipeline, LLM-generated topic labels (OpenAI, Llama, etc.), zero-shot and guided topics, and dynamic topics by
+    date or by class (e.g. brand or rating).
+  wiki_use: Reference for review- and social-media topic modeling labs. 'Topics per class' and 'topics over time' map directly onto brand comparisons and campaign tracking.
+  tools:
+  - bertopic
+  - sentence-transformers
+  - umap-learn
+  - hdbscan
+  ai_angle: true
+  download:
+    repo: https://github.com/MaartenGr/BERTopic
+    branch: master
+    paths:
+    - README.md
+    - docs/getting_started/quickstart/quickstart.md
+    - docs/getting_started/best_practices
+    - docs/getting_started/representation
+    - docs/getting_started/zeroshot
+    - docs/getting_started/topicsovertime
+    - docs/getting_started/topicsperclass
+    - docs/getting_started/tips_and_tricks
+    license: MIT
+    license_verified: fetch
+    approx_mb: 0.6
+  verified_via: fetch
+  notes: Last commit 2026-08-27. The repo has no .ipynb files; the README's Colab links point to Google Drive, which is not downloadable. Hands-On LLMs (already in the library) has a BERTopic chapter with
+    runnable notebooks.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: setfit-few-shot-classification
+  category: M5
+  subtopic: Few-shot / zero-shot text classification
+  title: 'SetFit notebooks: few-shot and zero-shot text classification with sentence transformers'
+  authors: Hugging Face
+  year: 2026
+  type: notebook
+  venue: GitHub (huggingface/setfit)
+  url: https://github.com/huggingface/setfit
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: optional
+  modules:
+  - M5
+  - M7
+  summary: Train an accurate text classifier from 8 to 64 labeled examples per class, or from label names alone (zero-shot), without prompting a large LLM.
+  wiki_use: Cheap, private alternative to LLM-API labeling of reviews or tickets. Students compare SetFit with zero-shot LLM labels on the same marketing texts.
+  tools:
+  - setfit
+  - sentence-transformers
+  - datasets
+  ai_angle: false
+  download:
+    repo: https://github.com/huggingface/setfit
+    branch: main
+    paths:
+    - notebooks/README.md
+    - notebooks/text-classification.ipynb
+    - notebooks/zero-shot-classification.ipynb
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.1
+  verified_via: fetch
+  notes: Last commit 2026-10-06. The notebooks pull models and datasets from the Hugging Face Hub at runtime, which works on Colab but not on the GitHub-only download machine.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: scikit-llm
+  category: M5
+  subtopic: LLM-based text classification (scikit-learn API)
+  title: 'Scikit-LLM: LLM zero-shot classification inside scikit-learn'
+  authors: BeastByteAI
+  year: 2026
+  type: package
+  venue: GitHub (BeastByteAI/scikit-llm); docs skllm.beastbyte.ai
+  url: https://github.com/BeastByteAI/scikit-llm
+  oa_url: https://skllm.beastbyte.ai
+  access: open
+  license: MIT
+  level: intro
+  priority: optional
+  modules:
+  - M5
+  - AI
+  summary: Wraps GPT-style models as scikit-learn estimators (fit/predict) for zero-shot text classification, so LLM labeling slots into familiar pipelines and evaluation code.
+  wiki_use: Low-friction way for non-CS students to compare LLM zero-shot labels against a TF-IDF and logistic-regression baseline on review data, with standard metrics.
+  tools:
+  - scikit-llm
+  - scikit-learn
+  - openai
+  ai_angle: true
+  verified_via: fetch
+  notes: 'LINK ONLY by choice: MIT-licensed, but the repo is library code with no notebooks, so pip install it instead. Last commit 2026-01-21. The README still has stale links to iryna-kondr/ repos (the
+    old owner).'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: openai-cookbook-review-embeddings
+  category: M5
+  subtopic: Embeddings, zero-shot classification, clustering, structured outputs on product reviews
+  title: 'OpenAI Cookbook: embedding and classification notebooks on Amazon fine-food reviews, plus structured outputs and synthetic data'
+  authors: OpenAI
+  year: 2026
+  type: notebook
+  venue: GitHub (openai/openai-cookbook)
+  url: https://github.com/openai/openai-cookbook
+  access: open
+  license: MIT
+  level: intermediate
+  priority: core
+  modules:
+  - M5
+  - M7
+  - M8
+  - AI
+  summary: 'Runnable notebooks on a 1k-review Amazon fine-food dataset: getting embeddings, zero-shot sentiment classification with embeddings, supervised classification on embeddings, clustering with GPT-written
+    cluster labels, 2-D visualization, and user and product embeddings. Also an intro to Structured Outputs and LLM synthetic data generation (SDG1).'
+  wiki_use: 'M5 LLM lab: students embed reviews, classify sentiment zero-shot, cluster complaints and let an LLM name the clusters, then check the labels against star ratings.'
+  tools:
+  - openai
+  - pandas
+  - scikit-learn
+  - plotly
+  ai_angle: true
+  download:
+    repo: https://github.com/openai/openai-cookbook
+    branch: main
+    paths:
+    - examples/Get_embeddings_from_dataset.ipynb
+    - examples/Zero-shot_classification_with_embeddings.ipynb
+    - examples/Classification_using_embeddings.ipynb
+    - examples/Clustering.ipynb
+    - examples/Visualizing_embeddings_in_2D.ipynb
+    - examples/User_and_product_embeddings.ipynb
+    - examples/Structured_Outputs_Intro.ipynb
+    - examples/SDG1.ipynb
+    - examples/data/fine_food_reviews_1k.csv
+    license: MIT
+    license_verified: fetch
+    approx_mb: 1.2
+  verified_via: fetch
+  notes: 'Repo is huge (3,700+ files), so use only these sparse paths. examples/data/fine_food_reviews_with_embeddings_1k.csv (35 MB) is excluded: students regenerate it with Get_embeddings_from_dataset,
+    which needs an API key and incurs a small API cost, or swap in a free embedding model. Older notebooks use older embedding model names. Last commit 2026-10-21.'
+  section: 'Python for marketing analytics: notebooks and code'
+- id: gemini-cookbook-marketing
+  category: M8
+  subtopic: 'Gemini API: marketing campaign generation, JSON classification and extraction'
+  title: 'Gemini API Cookbook: Market a Jet Backpack, JSON sentiment and classification, embeddings classification and clustering'
+  authors: Google (google-gemini)
+  year: 2026
+  type: notebook
+  venue: GitHub (google-gemini/cookbook)
+  url: https://github.com/google-gemini/cookbook
+  access: open
+  license: Apache-2.0
+  level: intro
+  priority: core
+  modules:
+  - M8
+  - M5
+  - AI
+  summary: Short Colab notebooks on the free-tier Gemini API key. They turn a product sketch into a marketing campaign with JSON taglines, run sentiment analysis, text classification, entity extraction
+    and summarization with JSON output, and classify and cluster text with embeddings.
+  wiki_use: First GenAI-for-marketing lab, because it runs in Colab with a free API key and no cloud project. The Jet Backpack notebook is a ready 'AI creative brief' exercise.
+  tools:
+  - google-genai
+  - pandas
+  - scikit-learn
+  ai_angle: true
+  download:
+    repo: https://github.com/google-gemini/cookbook
+    branch: main
+    paths:
+    - examples/Market_a_Jet_Backpack.ipynb
+    - examples/json_capabilities
+    - examples/prompting/Basic_Classification.ipynb
+    - examples/prompting/Basic_Information_Extraction.ipynb
+    - examples/Classify_text_with_embeddings.ipynb
+    - examples/clustering_with_embeddings.ipynb
+    - quickstarts/JSON_mode.ipynb
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.7
+  verified_via: fetch
+  notes: Last commit 2026-10-19. Model names in notebooks change often; tell students to update the model ID. quickstarts/Get_started.ipynb (5.4 MB) is left out to stay lean.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: google-generative-ai-marketing-usecases
+  category: M8
+  subtopic: Vertex AI Gemini marketing and retail use cases
+  title: 'Google Cloud generative-ai repo: creative content generation, product attribute extraction, multimodal sentiment, AI-assisted data science'
+  authors: Google Cloud
+  year: 2026
+  type: notebook
+  venue: GitHub (GoogleCloudPlatform/generative-ai)
+  url: https://github.com/GoogleCloudPlatform/generative-ai
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: recommended
+  modules:
+  - M8
+  - M5
+  - AI
+  summary: 'Vertex AI notebooks: marketing creative content generation with Gemini and Imagen, product attribute extraction from images (self-correcting prompts), multimodal retail recommendations, location
+    strategy, multimodal sentiment (audio vs transcript), YouTube video analysis, and a Gemini-assisted data science workflow in BigQuery that ends in customer segments.'
+  wiki_use: M8 demos of GenAI across the marketing funnel. ai-assisted-data-science is a direct example of the course's AI-assisted analytics theme.
+  tools:
+  - google-genai
+  - vertex-ai
+  - bigquery
+  - imagen
+  ai_angle: true
+  download:
+    repo: https://github.com/GoogleCloudPlatform/generative-ai
+    branch: main
+    paths:
+    - gemini/use-cases/marketing
+    - gemini/use-cases/retail
+    - gemini/use-cases/multimodal-sentiment-analysis
+    - gemini/use-cases/applying-llms-to-data/ai-assisted-data-science
+    - gemini/use-cases/video-analysis/youtube_video_analysis.ipynb
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.3
+  verified_via: fetch
+  notes: Last commit 2026-10-22. Most notebooks need a GCP project with Vertex AI and billing, unlike the Gemini cookbook. The related repo GoogleCloudPlatform/genai-for-marketing (Apache-2.0, last commit
+    2026-01-05) has a notebooks/ folder, but several notebooks target retired PaLM/bison models, so it was left out.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: copycat-ad-copy-generation
+  category: M8
+  subtopic: LLM search-ad copy generation in brand style
+  title: 'Copycat: AI-generated Google Search ad copy that matches your brand style'
+  authors: Google Marketing Solutions
+  year: 2026
+  type: tool
+  venue: GitHub (google-marketing-solutions/copycat)
+  url: https://github.com/google-marketing-solutions/copycat
+  access: open
+  license: Apache-2.0
+  level: intermediate
+  priority: recommended
+  modules:
+  - M8
+  - AI
+  summary: Python package and Colabs (Python quickstart and a GUI) that learn brand style from existing high-performing Responsive Search Ads and generate new headlines and descriptions for new keywords
+    with Gemini. Gemini first drafts a brand style guide from the exemplar ads (optionally from brand-guideline PDFs), which the user can edit before ads are generated.
+  wiki_use: 'Hands-on M8 case: generate RSAs with Copycat, then design a FeedX-style or A/B test to measure whether AI copy beats human copy.'
+  tools:
+  - gtech-copycat
+  - google-genai
+  - pandas
+  ai_angle: true
+  download:
+    repo: https://github.com/google-marketing-solutions/copycat
+    branch: main
+    paths: []
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 1.0
+  verified_via: fetch
+  notes: Last commit 2026-09-24. Needs Python 3.10 or later and Gemini API or Vertex credentials. The org (150 repos) also has feedgen (LLM feed optimization, Apps Script), vigenair (video ad recrafting)
+    and adspace_agent (an ADK agent for Google Ads planning, 2026), but none has Python teaching notebooks.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: pymc-labs-semantic-similarity-rating
+  category: M8
+  subtopic: LLM synthetic consumers / purchase-intent surveys
+  title: 'Semantic-Similarity Rating (SSR): mapping LLM free-text answers to Likert purchase-intent distributions'
+  authors: Maier, B. F.; Aslak, U.; Fiaschi, L.; Rismal, N.; Fletcher, K.; Luhmann, C. C.; Dow, R.; Pappas, K.; Wiecki, T. V. (PyMC Labs)
+  year: 2025
+  type: package
+  venue: GitHub (pymc-labs/semantic-similarity-rating); paper arXiv:2510.08338
+  url: https://github.com/pymc-labs/semantic-similarity-rating
+  oa_url: https://arxiv.org/abs/2510.08338
+  access: open
+  license: Apache-2.0
+  level: advanced
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  - AI
+  summary: Package implementing SSR. LLM 'synthetic consumers' answer purchase-intent questions in free text, and the answers are mapped to Likert probability distributions by embedding similarity to anchor
+    statements. The paper is 'LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings'.
+  wiki_use: 'Current-topics case on LLM-based market research: students simulate concept-test responses, compare direct numeric ratings with SSR, and discuss validity limits.'
+  tools:
+  - semantic-similarity-rating
+  - polars
+  - numpy
+  - embeddings API
+  ai_angle: true
+  download:
+    repo: https://github.com/pymc-labs/semantic-similarity-rating
+    branch: main
+    paths:
+    - README.md
+    - LICENSE
+    - semantic_similarity_rating
+    license: Apache-2.0
+    license_verified: fetch
+    approx_mb: 0.05
+  verified_via: fetch
+  notes: Last commit 2026-06-04. No notebook; the README quick start is the example. The arXiv page does not link the repo; I matched them through the README's paper title (the README calls it 'Measuring
+    Synthetic Consumer Purchase Intent Using Semantic-Similarity Ratings' (2025), close to the arXiv title, so treat the match as likely but not confirmed). pixi.lock (about 0.5 MB) is excluded.
+  section: 'Python for marketing analytics: notebooks and code'
+- id: ga4-obfuscated-ecommerce-bigquery
+  category: DATASETS
+  subtopic: GA4 clickstream / ecommerce (BigQuery public dataset)
+  title: GA4 obfuscated sample ecommerce dataset (Google Merchandise Store) on BigQuery
+  authors: Google Analytics
+  year: 2021
+  type: dataset
+  venue: Google for Developers / BigQuery public datasets
+  url: https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset
+  access: free-registration
+  level: intermediate
+  priority: recommended
+  modules:
+  - M2
+  - M6
+  - M7
+  - DATASETS
+  summary: Obfuscated GA4 event export from the Google Merchandise Store, queryable free in the BigQuery sandbox. It is the data behind many propensity, funnel and attribution tutorials, including the Google
+    Cloud notebooks above.
+  wiki_use: Shared dataset for funnel visualization (M2), journey construction for the mta attribution package (M6), and purchase-propensity models (M7). Students write SQL with AI assistance.
+  tools:
+  - bigquery
+  - google-cloud-bigquery
+  - pandas
+  ai_angle: false
+  verified_via: search
+  notes: 'LINK ONLY: lives in BigQuery, not GitHub (table bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*). Covers 2020-11-01 to 2021-01-31. Obfuscated, with placeholder values such as <Other>
+    and NULL. BigQuery sandbox or free tier is enough and billing is optional. The year field is the end of the data window; the page does not give a release date.'
+  section: 'Python for marketing analytics: notebooks and code'

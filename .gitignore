@@ -20,3 +20,13 @@ venv/
 
 # Local publication staging and reports
 /.publish/
+
+# This reference licenses notebooks/Python separately from book prose and data.
+# Keep the other downloaded files in Dropbox and link to them upstream.
+/01_Resources/21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python/**/*.md
+!/01_Resources/21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python/SOURCE.md
+/01_Resources/21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python/data/
+/01_Resources/21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python/**/*.html
+/01_Resources/21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python/**/*.yml
+/01_Resources/21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python/**/*.toml
+/01_Resources/21_Open_Textbooks_and_Courses/repos/takechanman1228__marketing-science-in-python/**/requirements*.txt

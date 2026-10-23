@@ -828,6 +828,130 @@ assert orders == {"O1": 25, "O2": 12}
 print(json.dumps(r, indent=2))
 \end{Verbatim}
 
+\hypertarget{M01-mhealth-an-auditable-monthly-business-review}{%
+\section{mHealth: An Auditable Monthly Business
+Review}\label{M01-mhealth-an-auditable-monthly-business-review}}
+
+\noindent An mHealth manager needs to decide whether a decline in food entries
+warrants attention to customer engagement. Entry counts combine the
+number of eligible customers, the length of the reporting month, the
+frequency of logging, and the intensity of logging on observed days. A
+decline can arise from any of these components. The comparison becomes
+interpretable when the eligible population is fixed before the reporting
+periods and every component has an explicit denominator.
+
+Define the population as users in the teaching cohort with at least one
+observed day before May 1, 2016. All members remain in the May and June
+denominators, including those with no logs in a month. A missing day
+contributes zero to the indicator for an observed log; its food
+consumption remains unobserved. For month \(t\), the number of entries
+satisfies the accounting identity
+
+\[
+L_t=N D_t p_t a_t,
+\]
+
+where \(N\) is the fixed number of eligible users, \(D_t\) is calendar
+days in the month, \(p_t\) is observed user-days divided by \(ND_t\),
+and \(a_t\) is entries per observed user-day. The identity separates
+calendar exposure from logging behavior. It uses counts of records, with
+no assumption that an entry represents a purchase or a complete meal.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & May & June \\
+\midrule
+
+Eligible Users & 340 & 340 \\
+Calendar User-Days & 10,540 & 10,200 \\
+Observed User-Days & 7,082 & 6,331 \\
+Observed Logging Fraction & 0.6719 & 0.6207 \\
+Entries per Observed Day & 11.7995 & 11.6910 \\
+Food Entries & 83,564 & 74,016 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The table identifies a 5.12 percentage-point decline in the logging
+fraction, alongside a shorter month and a modest decline in entries per
+observed day. Changing the denominator to users who happened to log
+during June would remove inactive members from the comparison. The
+fixed-population result supports investigation of engagement, recording
+practices, and seasonality. It supplies no estimate of a campaign effect
+or change in nutrition.
+
+An AI-assisted business review should retrieve numerical claims from a
+computed evidence file. The file below records the source checksum,
+membership rule, observation unit, month, numerator, and denominator. A
+useful coding request is: ``Construct the fixed cohort before May, count
+distinct user-dates, retain members with zero logs, and verify the
+accounting identity separately for each month.'' The independent
+calculation must finish before an assistant writes the managerial
+explanation.
+
+The \href{https://github.com/takechanman1228/claude-ecom}{claude-ecom
+reference} separates numerical computation from a narrative layer for
+ecommerce reviews. The mHealth calculation applies that separation to
+logging data. Its descriptive evidence file also supplies the
+structured-claim checks in M8.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/reporting.py}{reporting.py}.
+From its directory, run \texttt{python\ reporting.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Compute an auditable, fixed-cohort mHealth business review locally."""
+
+import json
+import pandas as pd
+from common import ROOT, load_food, save_result
+
+
+def monthly_review(food):
+    # Fix membership before either reporting month; retain zero-log users.
+    members = sorted(food.loc[food.date < "2016-05-01", "Userid"].unique())
+    rows = []
+    for month in ["2016-05", "2016-06"]:
+        period = pd.Period(month, freq="M")
+        part = food.loc[
+            food.Userid.isin(members) & food.date.dt.to_period("M").eq(period)
+        ]
+        days = part[["Userid", "date"]].drop_duplicates()
+        denominator = len(members) * period.days_in_month
+        assert len(days) <= denominator
+        rows.append(
+            {
+                "period": month,
+                "eligible_users": len(members),
+                "calendar_user_days": denominator,
+                "observed_user_days": len(days),
+                "users_with_logs": int(days.Userid.nunique()),
+                "food_entries": len(part),
+                "logging_fraction": len(days) / denominator,
+                "entries_per_observed_day": len(part) / len(days),
+            }
+        )
+    manifest = json.loads((ROOT.parent / "manifest.json").read_text())
+    return {
+        "source_sha256": manifest["files"]["food_entries.csv.gz"]["sha256"],
+        "membership": "At least one observed day before 2016-05-01",
+        "unit": "eligible user-calendar-day",
+        "metric": "logging_fraction",
+        "interpretation": "descriptive",
+        "periods": rows,
+    }
+
+
+if __name__ == "__main__":
+    result = monthly_review(load_food())
+    save_result("reporting", result)
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
 Visualization}\label{M02-m2.-customer-data-measurement-and-visualization}}
@@ -1622,6 +1746,138 @@ assert math.isclose(r["M02"]["variety"]["concentrated"], 0.18)
 print(json.dumps(r, indent=2))
 \end{Verbatim}
 
+\hypertarget{M02-mhealth-recency-and-frequency-at-a-fixed-date}{%
+\section{mHealth: Recency and Frequency at a Fixed
+Date}\label{M02-mhealth-recency-and-frequency-at-a-fixed-date}}
+
+\noindent A manager considering a reminder campaign needs to distinguish a
+customer who logs frequently from one who logged recently. Both
+customers may have the same total number of records. Recency measures
+elapsed time since the last observed activity, while frequency measures
+repeated activity within a specified window. Their interpretation
+depends on the date at which the manager must make the decision.
+
+For every user with a recorded day by June 30, define recency as the
+number of days from the most recent recorded day to June 30. Define
+frequency as distinct recorded days during June 1--30. A customer who
+last logged on June 30 has recency zero. A customer with no June logs
+has frequency zero and remains eligible because an earlier record
+establishes membership. July activity is an outcome and enters neither
+feature.
+
+The 358 eligible users are grouped using prespecified recency boundaries
+of 7 and 30 days and a frequency boundary of 15 days. These cutoffs
+define a descriptive comparison; they have not been optimized for a
+campaign. The empty high-frequency, high-recency cell follows from the
+definitions: a customer whose last log was more than 30 days ago has
+zero June logging days.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.16}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.24}}@{}}
+\toprule
+Recency on June 30 & June Logging Days & Users & Any July Log & Mean
+July Logging Days \\
+\midrule
+
+0--7 Days & 0--14 & 68 & 92.6\% & 13.90 \\
+0--7 Days & 15--30 & 220 & 96.8\% & 22.88 \\
+8--30 Days & 0--14 & 34 & 67.6\% & 7.26 \\
+8--30 Days & 15--30 & 6 & 83.3\% & 9.67 \\
+31+ Days & 0--14 & 30 & 50.0\% & 5.70 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Recent frequent loggers have a higher July logging rate in this cohort.
+The six-user cell warrants particular care because a single outcome
+changes its rate substantially. These rates describe future activity
+among known users; they do not identify which users would respond most
+to a reminder. Selecting recipients requires an incremental-effect
+comparison and a cost per contact.
+
+\href{https://github.com/joaolcorreia/RFM-analysis}{Joao Correia's RFM
+example} combines recency, frequency, and monetary value in transaction
+data. mHealth supports the first two dimensions. Calories, entry counts,
+and body weight have units different from spending and cannot supply
+monetary value. A commercial RFM table would need an actual monetary
+variable, a transaction definition, and a consistent observation window.
+
+A coding assistant should receive the snapshot date and the eligible
+population explicitly. Ask it to verify that adding July rows leaves
+both June features unchanged, that repeated food entries on one day
+count only once toward frequency, and that zero-log members remain in
+the outcome denominator. Quantile bins require extra care when many
+customers share the same integer count; the fixed boundaries here avoid
+assigning tied counts to different groups.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/recency.py}{recency.py}.
+From its directory, run \texttt{python\ recency.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Describe later logging using features available at a fixed snapshot."""
+
+import json
+import pandas as pd
+from common import OUTPUT, load_food, make_daily, save_result
+
+
+def snapshot(daily, cutoff):
+    cutoff = pd.Timestamp(cutoff)
+    history = daily.loc[daily.date <= cutoff]
+    last = history.groupby("Userid").date.max()
+    recent = history.loc[history.date > cutoff - pd.Timedelta(days=30)]
+    counts = recent.groupby("Userid").date.nunique().reindex(last.index, fill_value=0)
+    return pd.DataFrame(
+        {"recency_days": (cutoff - last).dt.days, "frequency_30d": counts}
+    )
+
+
+if __name__ == "__main__":
+    daily = make_daily(load_food())
+    customers = snapshot(daily, "2016-06-30")
+    customers["recency_group"] = pd.cut(
+        customers.recency_days,
+        [-1, 7, 30, float("inf")],
+        labels=["0-7 days", "8-30 days", "31+ days"],
+    )
+    customers["frequency_group"] = customers.frequency_30d.ge(15).map(
+        {True: "15-30 days", False: "0-14 days"}
+    )
+    july = daily.loc[daily.date.between("2016-07-01", "2016-07-31")]
+    customers["july_days"] = (
+        july.groupby("Userid").date.nunique().reindex(customers.index, fill_value=0)
+    )
+    customers["july_any_log"] = customers.july_days.gt(0)
+    assert customers.frequency_30d.between(0, 30).all()
+    summary = (
+        customers.groupby(["recency_group", "frequency_group"], observed=True)
+        .agg(
+            users=("july_days", "size"),
+            july_users=("july_any_log", "sum"),
+            july_logging_probability=("july_any_log", "mean"),
+            mean_july_days=("july_days", "mean"),
+        )
+        .reset_index()
+    )
+    result = {
+        "snapshot": "2016-06-30",
+        "users": len(customers),
+        "groups": summary.to_dict(orient="records"),
+    }
+    save_result("recency", result)
+    summary.to_csv(OUTPUT / "recency.csv", index=False)
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -2134,6 +2390,160 @@ r["M03"] = {
 assert math.isclose(r["M03"]["pooled"]["slope"], 11 / 7)
 assert r["M03"]["low"]["slope"] == r["M03"]["high"]["slope"] == -1
 print(json.dumps(r, indent=2))
+\end{Verbatim}
+
+\hypertarget{M03-price-elasticity-when-prices-respond-to-demand}{%
+\section{Price Elasticity When Prices Respond to
+Demand}\label{M03-price-elasticity-when-prices-respond-to-demand}}
+
+\noindent A retailer considers raising a price and wants the resulting percentage
+change in quantity. Historical prices can be high precisely when
+managers expect strong demand. A regression of quantity on price then
+combines the response to price with information used to choose it. Good
+predictive fit does not separate these two sources of variation.
+
+Consider a synthetic population of independent markets. Let \(p_i\) be
+log price in dollars per unit and \(q_i\) log quantity sold. A
+standardized cost shifter \(z_i\), an unobserved demand shock \(u_i\),
+and independent shocks \(v_i,e_i\) are mutually independent standard
+normal variables. The imposed price rule and demand equation are
+
+\[
+p_i=2+0.4z_i+0.6u_i+0.2v_i,
+\qquad
+q_i=5-1.5p_i+u_i+0.2e_i.
+\]
+
+The demand elasticity is \(-1.5\): a small 1\% increase in price changes
+quantity by approximately \(-1.5\%\) with the demand shock held fixed.
+The coefficient \(0.6\) makes price respond positively to unobserved
+demand. The cost shifter changes price and has no direct effect on
+quantity in this benchmark. These equations are imposed behavioral
+relationships, without an estimated supply model or a solved pricing
+equilibrium.
+
+For the general linear equation \(q_i=\alpha+\beta p_i+\varepsilon_i\),
+an instrumental-variable interpretation rests on the following
+conditions.
+
+\begin{assumption}[Price Instrument]
+\label{ass:price-instrument}
+Markets are independent draws with finite second moments. The demand equation has a common coefficient $\beta$. The cost shifter satisfies $\operatorname{Cov}(z_i,\varepsilon_i)=0$ and $\operatorname{Cov}(z_i,p_i)\ne0$.
+\end{assumption}
+
+Under Assumption \ref{ass:price-instrument}, the ratio
+\(\operatorname{Cov}(z_i,q_i)/\operatorname{Cov}(z_i,p_i)\) equals
+\(\beta\). The numerator measures quantity variation associated with the
+cost shifter, and the denominator measures the induced price variation.
+Ordinary least squares instead has probability limit
+\(\beta+\operatorname{Cov}(p_i,\varepsilon_i)/\operatorname{Var}(p_i)\),
+which is less negative in the benchmark because favorable demand shocks
+raise price.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M03_price_instrument.tex}
+\caption{A cost shifter changes price; unobserved demand changes both price and quantity. A direct cost-to-demand path violates exclusion.}\label{fig:M03_price_instrument}
+\end{figure}
+
+The sample contains 2,000 simulated markets with seed 534. OLS and
+two-stage least squares use an intercept and the same log-price
+regressor. The reported intervals use heteroskedasticity-robust HC1
+covariance estimates and a normal approximation.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Estimator and Data Construction & Elasticity & 95\% Interval \\
+\midrule
+
+OLS, Benchmark & -0.447 & {[}-0.483, -0.410{]} \\
+IV, Benchmark & -1.483 & {[}-1.589, -1.378{]} \\
+IV, Direct Cost Effect Added & -0.239 & {[}-0.283, -0.195{]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The third row adds \(0.5z_i\) directly to log quantity while preserving
+the price rule and the structural price elasticity. Its first-stage F
+statistic remains 815.85, identical to the benchmark. A strong first
+stage therefore coexists with a severely misleading elasticity estimate
+when exclusion fails. For example, a proposed cost instrument that also
+changes product quality could affect demand through an additional path.
+
+The
+\href{https://pyblp.readthedocs.io/en/stable/_notebooks/tutorial/logit_nested.html}{PyBLP
+logit tutorial} treats prices as endogenous in differentiated-product
+demand. Its market-share models require additional structure beyond this
+scalar simulation. The calculation below exposes the instrument logic
+directly. With \(X\) containing the intercept and price and \(Z\) the
+intercept and cost shifter, it forms \(\widehat X=Z(Z'Z)^{-1}Z'X\) and
+computes \((\widehat X'X)^{-1}\widehat X'q\). Its covariance uses the
+structural residual \(q-X\widehat\beta\), which differs from a
+second-stage residual formed with fitted price.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/price_iv.py}{price\_iv.py}.
+From its directory, run \texttt{python\ price\_iv.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic price endogeneity and an exclusion-restriction sensitivity."""
+
+from pathlib import Path
+import json
+import numpy as np
+
+
+def fit_iv(y, x, z):
+    # Instruments include the intercept. Avoid constructing an n-by-n matrix.
+    xhat = z @ np.linalg.lstsq(z, x, rcond=None)[0]
+    bread = np.linalg.inv(xhat.T @ x)
+    beta = bread @ xhat.T @ y
+    residual = y - x @ beta
+    scores = xhat * residual[:, None]
+    covariance = bread @ (scores.T @ scores) @ bread.T
+    covariance *= len(y) / (len(y) - x.shape[1])  # HC1 correction
+    se = np.sqrt(np.diag(covariance))
+    return {
+        "elasticity": float(beta[1]),
+        "robust_se": float(se[1]),
+        "ci95": [float(beta[1] - 1.96 * se[1]), float(beta[1] + 1.96 * se[1])],
+    }
+
+
+def calculate():
+    rng = np.random.default_rng(534)
+    n = 2000
+    cost, demand, pricing_noise, sales_noise = rng.normal(size=(4, n))
+    log_price = 2 + 0.4 * cost + 0.6 * demand + 0.2 * pricing_noise
+    log_quantity = 5 - 1.5 * log_price + demand + 0.2 * sales_noise
+    x = np.column_stack([np.ones(n), log_price])
+    z = np.column_stack([np.ones(n), cost])
+    first = z @ np.linalg.lstsq(z, log_price, rcond=None)[0]
+    residual_ss = np.square(log_price - first).sum()
+    total_ss = np.square(log_price - log_price.mean()).sum()
+    first_stage_f = (total_ss - residual_ss) / (residual_ss / (n - 2))
+    result = {
+        "data": "synthetic independent markets",
+        "markets": n,
+        "seed": 534,
+        "true_elasticity": -1.5,
+        "ols": fit_iv(log_quantity, x, x),
+        "valid_iv": fit_iv(log_quantity, x, z),
+        "invalid_iv_direct_cost_effect_0_5": fit_iv(log_quantity + 0.5 * cost, x, z),
+        "first_stage_f": float(first_stage_f),
+    }
+    return result
+
+
+if __name__ == "__main__":
+    result = calculate()
+    output = Path(__file__).resolve().parent / "price_iv_results.json"
+    output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
+    print(json.dumps(result, indent=2))
 \end{Verbatim}
 
 \hypertarget{M04-m4.-product-preferences-customer-segments-and-lifetime-value}{%
@@ -2713,6 +3123,182 @@ assert math.isclose(sum(before.values()), 1) and math.isclose(sum(after.values()
 print(json.dumps(r, indent=2))
 \end{Verbatim}
 
+\hypertarget{M04-mhealth-time-until-a-logging-gap}{%
+\section{mHealth: Time Until a Logging
+Gap}\label{M04-mhealth-time-until-a-logging-gap}}
+
+\noindent A retention manager may want to intervene before a long interruption in
+activity. The analytical object must specify when the interruption has
+actually occurred. A user who is absent for two days and returns on the
+third day has a different history from one who remains absent for
+several weeks. The end of the data window can arrive before either
+pattern is fully observed.
+
+Define eligibility using at least 30 recorded days before July 1. Among
+eligible users who return during July, set time zero to that user's
+first July logging day. The event occurs on the 14th consecutive day
+without a subsequent log, and observation ends on August 31. The event
+date is the day the gap is confirmed. A later return does not erase a
+previously confirmed gap. Customers without a confirmed gap by August 31
+are administratively censored at their elapsed follow-up time.
+
+This definition concerns an interruption in observed logging. Permanent
+customer departure, failure to eat, and cancellation of a paid
+subscription are separate events. July return is also a selection
+condition: 331 users satisfy prior eligibility, and 297 have a July time
+origin. The curve describes these returners, including a mixture of
+early and late July start dates.
+
+To allow different amounts of follow-up, define \(n_t\) as users still
+under observation and gap-free immediately before elapsed day \(t\), and
+\(d_t\) as confirmed first gaps on that day. The Kaplan--Meier estimate
+is
+
+\[
+\widehat S(t)=\prod_{s\le t}\left(1-\frac{d_s}{n_s}\right).
+\]
+
+A censored user contributes to earlier risk sets and leaves subsequent
+ones. Censoring itself causes no downward step. When an event and
+administrative censoring share a day, the event is counted before
+censoring. A population interpretation of the pooled curve requires
+censoring to be independent of gap timing, possibly conditional on
+relevant start-date characteristics. Calendar trends can undermine that
+condition because later July starters have shorter follow-up.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.13}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.19}}@{}}
+\toprule
+Confirmed Gap & Users & Events by August 31 & Censored & Gap-Free at Day
+30 & Gap-Free at Day 60 \\
+\midrule
+
+14 Days & 297 & 93 & 204 & 0.8182 & 0.6867 \\
+28 Days & 297 & 33 & 264 & 0.9630 & 0.8877 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_logging_survival.tex}
+\caption{Gap-free estimates depend on the interruption threshold; users censored at the data boundary leave the risk set without becoming events.}\label{fig:M04_logging_survival}
+\end{figure}
+
+The 28-day definition produces fewer confirmed events because an
+interruption must persist longer. It also confirms an event later even
+when the same interruption satisfies both thresholds. At elapsed day 60,
+the risk sets contain 160 and 187 users for the 14- and 28-day
+definitions, respectively. The table therefore requires an event
+definition and a time origin to support a retention comparison.
+Converting either curve into customer lifetime value would additionally
+require a commercial relationship, margins, discounting, and a model
+linking logging interruptions to that relationship.
+
+The
+\href{https://github.com/CamDavidsonPilon/lifelines/blob/master/examples/Customer\%20Churn.ipynb}{lifelines
+customer-churn example} uses explicit event and duration fields. The
+\href{https://lifelines.readthedocs.io/en/latest/Survival\%20analysis\%20with\%20lifelines.html}{Kaplan--Meier
+documentation} supplies the corresponding risk-set estimator. The code
+below computes each risk set explicitly so a small hand-constructed
+event/censoring table can verify the calculation.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/logging_gaps.py}{logging\_gaps.py}.
+From its directory, run \texttt{python\ logging\_gaps.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Kaplan-Meier estimates for a defined logging-gap event, with censoring."""
+
+import json
+import pandas as pd
+from common import OUTPUT, load_food, make_daily, save_result
+
+
+def first_gap(dates, start, end, gap_days):
+    dates = set(dates)
+    run = 0
+    for day in pd.date_range(start + pd.Timedelta(days=1), end):
+        run = 0 if day in dates else run + 1
+        if run == gap_days:
+            return (day - start).days, True
+    return (end - start).days, False
+
+
+def kaplan_meier(records):
+    # At a tied time, events precede administrative censoring.
+    survival = 1.0
+    rows = []
+    for time in sorted(records.duration.unique()):
+        risk = int(records.duration.ge(time).sum())
+        events = int((records.duration.eq(time) & records.event).sum())
+        censored = int((records.duration.eq(time) & ~records.event).sum())
+        survival *= 1 - events / risk
+        rows.append(
+            {
+                "day": int(time),
+                "at_risk": risk,
+                "events": events,
+                "censored": censored,
+                "gap_free": survival,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+if __name__ == "__main__":
+    daily = make_daily(load_food())
+    prior = daily.loc[daily.date < "2016-07-01"].groupby("Userid").size()
+    eligible = prior.index[prior >= 30]
+    july = daily.loc[
+        daily.Userid.isin(eligible) & daily.date.between("2016-07-01", "2016-07-31")
+    ]
+    starts = july.groupby("Userid").date.min()
+    observed = daily.groupby("Userid").date.agg(set)
+    end = pd.Timestamp("2016-08-31")
+    result = {
+        "eligible_before_july": len(eligible),
+        "july_returners": len(starts),
+        "administrative_end": str(end.date()),
+        "thresholds": [],
+    }
+    for gap in [14, 28]:
+        records = pd.DataFrame(
+            [
+                first_gap(observed[user], start, end, gap)
+                for user, start in starts.items()
+            ],
+            columns=["duration", "event"],
+        )
+        curve = kaplan_meier(records)
+        summary = {
+            "gap_days": gap,
+            "users": len(records),
+            "events": int(records.event.sum()),
+            "censored": int((~records.event).sum()),
+        }
+        for horizon in [30, 45, 60]:
+            before = curve.loc[curve.day <= horizon]
+            summary[f"gap_free_day_{horizon}"] = (
+                float(before.gap_free.iloc[-1]) if len(before) else 1.0
+            )
+            summary[f"at_risk_day_{horizon}"] = int(records.duration.ge(horizon).sum())
+        result["thresholds"].append(summary)
+        OUTPUT.mkdir(exist_ok=True)
+        curve.to_csv(OUTPUT / f"logging_gap_{gap}.csv", index=False)
+    save_result("logging_gaps", result)
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -3257,6 +3843,173 @@ write_csv(
     [(p, v["tp"], v["fp"], v["fn"], v["tn"]) for p, v in r["M05"].items()],
 )
 print(json.dumps(r, indent=2))
+\end{Verbatim}
+
+\hypertarget{M05-mhealth-text-topics-and-their-denominators}{%
+\section{mHealth: Text Topics and Their
+Denominators}\label{M05-mhealth-text-topics-and-their-denominators}}
+
+\noindent A product manager wants to organize a large food-description vocabulary
+into interpretable groups. Repeated entries make a frequently logged
+description prominent, while a catalog of distinct descriptions
+emphasizes the range of language available. These populations answer
+different questions. A topic model fitted to distinct descriptions can
+summarize vocabulary, but its topic shares need a separate choice of
+observation unit.
+
+Use all 50,860 distinct nonempty normalized descriptions recorded before
+July 1. Fit TF-IDF on these descriptions, retaining at most 3,000
+unigram and bigram features, removing English stop words, and requiring
+a feature in at least three documents. The maximum document-frequency
+threshold is 0.95. Fix the number of nonnegative matrix factorization
+components at four as an illustrative specification. No July description
+is used to learn the vocabulary, inverse-document frequencies, or
+component vectors.
+
+Let \(V\) contain nonnegative TF-IDF features, with one row per training
+description. NMF approximates \(V\) by \(WH\), where the rows of \(H\)
+contain term patterns and each row of \(W\) gives the associated
+nonnegative loadings. The chosen specification minimizes squared
+reconstruction error subject to nonnegative factors. Multiplying a row
+of \(H\) by a constant and dividing its column of \(W\) by the same
+constant preserves the approximation. Before comparing loadings, the
+code therefore scales them to correspond to component term vectors with
+unit Euclidean norm.
+
+July contains 17,042 distinct nonempty descriptions and 79,957 entries,
+including 5,208 descriptions absent from training. Apply the frozen
+vectorizer and factorization to July descriptions. Assign each
+description to its largest scaled loading when positive. A zero-vector
+description remains unassigned. The resulting groups have the following
+leading terms and shares.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Leading Terms & Share of Distinct July Descriptions & Share of July
+Entries \\
+\midrule
+
+Chicken, Breast, Soup & 14.83\% & 10.12\% \\
+Cheese, Cheddar, Pizza & 32.52\% & 29.92\% \\
+Chocolate, Bar, Dark & 32.22\% & 38.45\% \\
+Salad, Dressing, Greek & 17.01\% & 19.15\% \\
+Unassigned & 3.42\% & 2.36\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_topic_denominators.tex}
+\caption{Weighting descriptions by their observed entry frequency changes the apparent prominence of the same fixed topics.}\label{fig:M05_topic_denominators}
+\end{figure}
+
+The chocolate-related component receives a larger share when repeated
+entries determine the weights. This result concerns the language and
+repetition of recorded entries. The component includes other terms and
+does not define a validated food group, calorie share, or measure of
+nutritional quality. Assigning a dominant component also discards
+information about mixtures. The 583 unassigned descriptions expose a
+vocabulary-coverage problem that would be hidden by forcing every text
+into a topic.
+
+\href{https://github.com/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch08/Topic_Modeling_Clustering.ipynb}{Blueprints
+for Text Analytics, Chapter 8} provides an NMF topic-model example.
+\href{https://maartengr.github.io/BERTopic/getting_started/representation/representation.html}{BERTopic's
+representation documentation} offers separate methods for describing
+topics. An LLM-generated topic name should remain attached to the
+component's terms and inspected examples. A fluent name supplies no
+independent evidence that a component measures preference,
+healthfulness, or a commercial segment.
+
+A useful AI-assisted extension changes one choice at a time: the number
+of topics, frequency weighting during fitting, or the vocabulary
+threshold. Compare representative descriptions and unmatched texts as
+well as reconstruction error. Improving the numerical objective alone
+does not establish that a proposed topic label answers the manager's
+question.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/topics.py}{topics.py}.
+From its directory, run \texttt{python\ topics.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Local topic decomposition of food descriptions with a future-text check."""
+
+import json
+import numpy as np
+from sklearn.decomposition import NMF
+from sklearn.feature_extraction.text import TfidfVectorizer
+from common import SEED, load_food, save_result
+
+
+if __name__ == "__main__":
+    food = load_food()
+    prior = food.loc[(food.date < "2016-07-01") & food.description.ne("")]
+    training_text = sorted(prior.description.unique())
+    july = food.loc[
+        food.date.between("2016-07-01", "2016-07-31") & food.description.ne("")
+    ]
+    counts = july.groupby("description").size().sort_index()
+    vectorizer = TfidfVectorizer(
+        min_df=3,
+        max_df=0.95,
+        max_features=3000,
+        ngram_range=(1, 2),
+        stop_words="english",
+    )
+    train_matrix = vectorizer.fit_transform(training_text)
+    model = NMF(
+        n_components=4, init="nndsvda", random_state=SEED, max_iter=500, tol=1e-4
+    )
+    model.fit(train_matrix)
+    future_matrix = vectorizer.transform(counts.index)
+    # Put topic term vectors on a common L2 scale before comparing loadings.
+    weights = model.transform(future_matrix) * np.linalg.norm(model.components_, axis=1)
+    assigned = weights.sum(axis=1) > 1e-12
+    labels = np.where(assigned, weights.argmax(axis=1), -1)
+    terms = vectorizer.get_feature_names_out()
+    rows = []
+    for topic in range(4):
+        selected = labels == topic
+        top = np.argsort(-model.components_[topic], kind="stable")[:6]
+        rows.append(
+            {
+                "topic": topic + 1,
+                "terms": terms[top].tolist(),
+                "distinct_description_share": float(selected.mean()),
+                "food_entry_share": float(
+                    counts.to_numpy()[selected].sum() / counts.sum()
+                ),
+            }
+        )
+    result = {
+        "training_distinct_descriptions": len(training_text),
+        "training_entries": len(prior),
+        "vocabulary_terms": len(terms),
+        "july_distinct_descriptions": len(counts),
+        "july_entries": int(counts.sum()),
+        "july_new_descriptions": int((~counts.index.isin(training_text)).sum()),
+        "july_zero_vocabulary_descriptions": int(
+            (future_matrix.getnnz(axis=1) == 0).sum()
+        ),
+        "july_unassigned_descriptions": int((~assigned).sum()),
+        "july_unassigned_entries": int(counts.to_numpy()[~assigned].sum()),
+        "iterations": int(model.n_iter_),
+        "topics": rows,
+    }
+    assert model.n_iter_ < model.max_iter
+    assert np.isclose(
+        sum(row["food_entry_share"] for row in rows)
+        + result["july_unassigned_entries"] / counts.sum(),
+        1,
+    )
+    save_result("topics", result)
+    print(json.dumps(result, indent=2))
 \end{Verbatim}
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
@@ -4043,6 +4796,185 @@ except ValueError:
 else:
     raise AssertionError("An unsupported target policy must be rejected")
 print(json.dumps(r, indent=2))
+\end{Verbatim}
+
+\hypertarget{M06-mhealth-prior-activity-and-experiment-precision}{%
+\section{mHealth: Prior Activity and Experiment
+Precision}\label{M06-mhealth-prior-activity-and-experiment-precision}}
+
+\noindent A manager wants an experiment to detect a useful change in logging with
+fewer participants. Users differ persistently in how often they record
+food. Random assignment balances those differences in expectation, while
+a particular assignment can still place more frequent loggers in one
+arm. A pre-treatment activity measure can explain part of the outcome
+variation and improve precision.
+
+For a planned June experiment, retain users with at least 30 recorded
+days before June 1. Define \(X_i\) as the fraction of May days with a
+log and \(Y_i\) as the fraction of June days with a log. All 327
+eligible users remain in both monthly denominators, including users with
+zero observed logging days. Fit a coefficient using March logging
+fractions to predict April fractions, and freeze it before June. The
+CUPED-adjusted outcome is
+
+\[
+Y_i^{\mathrm{adj}}=Y_i-\theta(X_i-\overline X),
+\qquad
+\widehat\tau_{\mathrm{adj}}=overline Y_1^{\mathrm{adj}}-overline Y_0^{\mathrm{adj}}.
+\]
+
+The subscripts 1 and 0 denote randomized assignment arms. With a fixed
+coefficient and a pre-treatment covariate unaffected by assignment, the
+adjustment removes a mean-zero difference between arms in expectation.
+It preserves the pooled outcome mean. Randomization supplies the
+treatment-effect comparison; covariate adjustment changes its precision.
+The arithmetic is the control-variate approach underlying
+\href{https://exp-platform.com/cuped/}{CUPED}, introduced by Deng, Xu,
+Kohavi, and Walker (2013).
+
+For a fixed coefficient, the adjusted variance equals
+
+\[
+\operatorname{Var}(Y^{\mathrm{adj}})=\operatorname{Var}(Y)+\theta^2\operatorname{Var}(X)-2\theta\operatorname{Cov}(X,Y).
+\]
+
+At the population-optimal coefficient
+\(\theta^*=\operatorname{Cov}(X,Y)/\operatorname{Var}(X)\), this becomes
+\(\operatorname{Var}(Y)(1-\rho^2)\). The historical coefficient used
+here is learned from different months, so its gain must be measured in
+the later comparison. A poorly transferred coefficient can increase
+variance. A covariate affected by treatment can also change the estimand
+and bias the treatment-effect calculation.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Historical Planning Quantity & Unadjusted & CUPED \\
+\midrule
+
+Variance of June Outcome & 0.12546 & 0.06315 \\
+Exact Sharp-Null Randomization SD & 0.03918 & 0.02779 \\
+SD Across 2,000 Random Assignments & 0.04032 & 0.02840 \\
+Approximate Users per Arm for 0.05 & 788 & 397 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The March--April coefficient is 0.55386. The table compares the same
+June users and outcomes, with an adjusted-to-unadjusted variance ratio
+of 0.50334. The prospective sample-size calculation assumes independent
+users, equal arm sizes, a two-sided 5\% test, 80\% power, and a 0.05
+absolute increase in logging fraction. It uses historical variance as a
+planning input and a normal approximation. Actual effects, variance
+shifts, interference, and attrition can change the needed sample.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_cuped_precision.tex}
+\caption{Historical covariate adjustment lowers the detectable change at a given sample size; both curves use the same outcome, significance level, and power.}\label{fig:M06_cuped_precision}
+\end{figure}
+
+No experimental assignment is observed in mHealth. The randomization
+exercise imposes a sharp zero-effect null, holding every recorded June
+outcome fixed while repeatedly assigning 163 users to treatment and 164
+to control. Its dispersion illustrates the design's sampling
+variability. The analytical finite-population variance is
+\(S^2(1/n_1+1/n_0)\) for each fixed outcome, and provides an independent
+comparison with the simulation.
+
+\href{https://github.com/google-marketing-solutions/feedx}{FeedX}
+combines experimental design with prior-period adjustment for
+shopping-feed tests. Its application also raises a choice of
+randomization unit. A test of generated product descriptions may
+randomize products, whereas an mHealth reminder experiment could
+randomize users. Shared exposure and spillovers must be addressed at the
+unit actually assigned. Repeated fixed-horizon significance tests during
+monitoring require a sequentially valid procedure or a prespecified
+analysis time; software output does not resolve that design choice.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/cuped.py}{cuped.py}.
+From its directory, run \texttt{python\ cuped.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Historical precision planning with a coefficient frozen before June."""
+
+import json
+import math
+import numpy as np
+import pandas as pd
+from scipy.stats import norm
+from common import SEED, load_food, make_daily, save_result
+
+
+def adjust(outcome, baseline, theta):
+    return outcome - theta * (baseline - baseline.mean())
+
+
+if __name__ == "__main__":
+    daily = make_daily(load_food())
+    prior = daily.loc[daily.date < "2016-06-01"].groupby("Userid").size()
+    users = prior.index[prior >= 30]
+    monthly = {}
+    for month in ["2016-03", "2016-04", "2016-05", "2016-06"]:
+        period = pd.Period(month, freq="M")
+        part = daily.loc[daily.date.dt.to_period("M").eq(period)]
+        monthly[month] = (
+            part.groupby("Userid").size().reindex(users, fill_value=0).to_numpy()
+            / period.days_in_month
+        )
+    march, april = monthly["2016-03"], monthly["2016-04"]
+    theta = np.cov(march, april, ddof=1)[0, 1] / np.var(march, ddof=1)
+    baseline, outcome = monthly["2016-05"], monthly["2016-06"]
+    adjusted = adjust(outcome, baseline, theta)
+    assert np.isclose(adjusted.mean(), outcome.mean())
+    n, n_treated = len(users), len(users) // 2
+    rng = np.random.default_rng(SEED)
+    differences = []
+    for _ in range(2000):
+        treated = np.zeros(n, dtype=bool)
+        treated[rng.choice(n, n_treated, replace=False)] = True
+        # Imposed sharp null: these recorded outcomes do not change with assignment.
+        differences.append(
+            [
+                values[treated].mean() - values[~treated].mean()
+                for values in [outcome, adjusted]
+            ]
+        )
+    differences = np.asarray(differences)
+    power_multiplier = 2 * (norm.ppf(0.975) + norm.ppf(0.8)) ** 2 / 0.05**2
+    result = {
+        "users": n,
+        "coefficient_from_march_april": float(theta),
+        "may_june_correlation": float(np.corrcoef(baseline, outcome)[0, 1]),
+        "june_mean": float(outcome.mean()),
+        "sharp_null_draws": len(differences),
+        "methods": [],
+    }
+    for column, (name, values) in enumerate(
+        [("unadjusted", outcome), ("cuped", adjusted)]
+    ):
+        variance = np.var(values, ddof=1)
+        result["methods"].append(
+            {
+                "method": name,
+                "outcome_variance": float(variance),
+                "simulated_effect_mean": float(differences[:, column].mean()),
+                "simulated_effect_sd": float(differences[:, column].std(ddof=1)),
+                "exact_randomization_sd": float(
+                    np.sqrt(variance * (1 / n_treated + 1 / (n - n_treated)))
+                ),
+                "approximate_users_per_arm_for_0_05": math.ceil(
+                    power_multiplier * variance
+                ),
+            }
+        )
+    result["variance_ratio"] = float(np.var(adjusted, ddof=1) / np.var(outcome, ddof=1))
+    save_result("cuped", result)
+    print(json.dumps(result, indent=2))
 \end{Verbatim}
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
@@ -5016,6 +5948,200 @@ for i in range(1001):
 print(json.dumps(r, indent=2))
 \end{Verbatim}
 
+\hypertarget{M07-mhealth-basket-associations-and-future-validation}{%
+\section{mHealth: Basket Associations and Future
+Validation}\label{M07-mhealth-basket-associations-and-future-validation}}
+
+\noindent A recommendation manager wants to identify categories that commonly
+appear together in a recorded day. An association rule can generate
+candidates for a basket-completion feature. Its commercial value still
+depends on when a suggestion is shown, whether the customer has already
+recorded the item, and whether the suggestion changes behavior. A high
+co-occurrence rate alone does not establish incremental demand.
+
+Treat each observed user-day with at least one classified category as a
+basket. Deduplicate categories within the day, so repeated servings
+contribute one presence indicator. For categories \(A\) and \(B\),
+define
+
+\[
+\operatorname{support}(A,B)=P(A\cap B),\qquad
+\operatorname{confidence}(A\to B)=P(B\mid A),\qquad
+\operatorname{lift}(A\to B)=\frac{P(B\mid A)}{P(B)}.
+\]
+
+Probabilities are empirical fractions of recorded baskets. Confidence is
+directional, whereas lift is symmetric for a two-category pair. A
+popular category can have high confidence without an unusually strong
+association. Lift compares the conditional rate with the marginal rate
+and therefore supplies the necessary benchmark. The label ``confidence''
+here is a conditional frequency, separate from a statistical confidence
+interval.
+
+Use January--June data to select the 20 most frequent categories. Among
+their pairs, require at least 100 joint baskets and 30 distinct
+supporting users. Rank eligible pairs by training lift and fix the
+largest before examining July--August. These prespecified restrictions
+avoid selecting a pair supported by only a few repeated entries, but
+they do not make users' repeated baskets independent. The training
+sample has 40,727 baskets from 358 users. The selected pair is oil and
+tomato, supported jointly by 192 users.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Metric & January--June & July--August \\
+\midrule
+
+Recorded Baskets & 40,727 & 12,956 \\
+Baskets With Oil & 7,283 & 2,174 \\
+Baskets With Tomato & 4,708 & 1,930 \\
+Baskets With Both & 1,985 & 658 \\
+Tomato Given Oil & 27.26\% & 30.27\% \\
+Marginal Tomato Rate & 11.56\% & 14.90\% \\
+Lift & 2.358 & 2.032 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The later evaluation includes observed baskets from the previously known
+users; 334 of them contribute baskets in July--August. Users with no
+later basket supply no basket-level outcome. In the table, conditional
+tomato frequency rises while lift falls because tomato also becomes more
+common overall. Judging only the conditional frequency would miss that
+change in the comparison benchmark.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_basket_lift.tex}
+\caption{Conditional tomato frequency rises in the later period, but the marginal tomato rate rises proportionally more, reducing lift.}\label{fig:M07_basket_lift}
+\end{figure}
+
+A 500-draw bootstrap resamples the 358 training users, carrying each
+user's complete later basket history into the draw, including zero later
+baskets. The percentile interval for later lift is {[}1.762, 2.411{]}.
+It describes sampling variation for the already selected pair, with
+dependence within each user preserved. It does not address common
+calendar shocks, uncertainty over the category-selection procedure, or
+the effect of displaying a recommendation. The recorded category names
+also do not establish nutritional complementarity.
+
+The
+\href{https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/}{mlxtend
+association-rule guide} defines support, confidence, and lift and
+provides scalable itemset-mining tools. The code below enumerates pairs
+from a bounded candidate set so every numerator is inspectable. Its
+results can be compared with that library after the same basket and
+candidate definitions are imposed.
+
+The
+\href{https://github.com/benfred/implicit/tree/main/examples}{implicit
+recommendation examples} and
+\href{https://github.com/NicolasHug/Surprise/tree/master/examples}{Surprise
+examples} address different feedback structures. Food logging supplies
+observed occurrences; missing entries do not provide explicit dislike
+ratings. For next-basket prediction, retain the chronological evaluation
+and known candidate set from Section 7.15. For within-basket completion,
+the source would additionally need an information rule specifying which
+recorded categories are visible when a suggestion is made.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/association_rules.py}{association\_rules.py}.
+From its directory, run \texttt{python\ association\_rules.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Select a category pair in January-June; evaluate it in July-August."""
+
+from itertools import combinations
+import json
+import numpy as np
+import pandas as pd
+from common import SEED, load_food, make_baskets, save_result
+
+
+def metrics(n, a, b, both):
+    if min(n, a, b) <= 0:
+        raise ValueError("Positive basket and marginal counts are required")
+    return {
+        "baskets": int(n),
+        "a_baskets": int(a),
+        "b_baskets": int(b),
+        "joint_baskets": int(both),
+        "support": both / n,
+        "confidence_a_to_b": both / a,
+        "baseline_b": b / n,
+        "lift": both * n / (a * b),
+    }
+
+
+def presence(baskets, categories):
+    return np.array(
+        [[c in basket for c in categories] for basket in baskets.basket], dtype=np.int64
+    )
+
+
+if __name__ == "__main__":
+    baskets = make_baskets(load_food())
+    train = baskets.loc[baskets.date < "2016-07-01"]
+    frequency = train.explode("basket").groupby("basket").size()
+    categories = sorted(
+        frequency.sort_values(ascending=False, kind="stable").head(20).index
+    )
+    matrix = presence(train, categories)
+    joint, marginal = matrix.T @ matrix, matrix.sum(axis=0)
+    rules = []
+    for a, b in combinations(range(len(categories)), 2):
+        mask = (matrix[:, a] * matrix[:, b]).astype(bool)
+        supporting_users = train.loc[mask, "Userid"].nunique()
+        if joint[a, b] >= 100 and supporting_users >= 30:
+            rule = metrics(len(train), marginal[a], marginal[b], joint[a, b])
+            rules.append(
+                {
+                    "a": categories[a],
+                    "b": categories[b],
+                    "supporting_users": int(supporting_users),
+                    **rule,
+                }
+            )
+    rules.sort(key=lambda r: (-r["lift"], r["a"], r["b"]))
+    selected = rules[0]
+    users = sorted(train.Userid.unique())
+    future = baskets.loc[
+        baskets.Userid.isin(users) & baskets.date.between("2016-07-01", "2016-08-31")
+    ].copy()
+    binary = presence(future, [selected["a"], selected["b"]])
+    future["a"], future["b"] = binary[:, 0], binary[:, 1]
+    future["both"], future["n"] = binary.prod(axis=1), 1
+    counts = (
+        future.groupby("Userid")[["n", "a", "b", "both"]]
+        .sum()
+        .reindex(users, fill_value=0)
+        .to_numpy()
+    )
+    evaluation = metrics(*counts.sum(axis=0))
+    rng = np.random.default_rng(SEED)
+    lifts = []
+    for _ in range(500):
+        total = counts[rng.integers(0, len(users), len(users))].sum(axis=0)
+        if min(total[:3]) > 0:
+            lifts.append(metrics(*total)["lift"])
+    evaluation["user_bootstrap_ci95"] = np.quantile(lifts, [0.025, 0.975]).tolist()
+    evaluation["bootstrap_valid_draws"] = len(lifts)
+    result = {
+        "candidate_categories": len(categories),
+        "eligible_pairs": len(rules),
+        "training_users": len(users),
+        "evaluation_users": int(future.Userid.nunique()),
+        "selected_training_pair": selected,
+        "july_august": evaluation,
+    }
+    save_result("association_rules", result)
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -5801,6 +6927,161 @@ write_csv(
     [(key, *value) for key, value in items.items()],
 )
 print(json.dumps(r, indent=2))
+\end{Verbatim}
+
+\hypertarget{M08-evidence-checks-for-generated-marketing-explanations}{%
+\section{Evidence Checks for Generated Marketing
+Explanations}\label{M08-evidence-checks-for-generated-marketing-explanations}}
+
+\noindent An analytics manager may accept a fluent business review whose numbers
+and interpretation describe different populations. Structured output
+helps software locate a metric, period, value, unit, and denominator.
+Each field also needs evidence. A correctly formatted statement can
+contain the wrong number or describe a causal effect that the underlying
+analysis never estimated.
+
+Use the fixed-cohort mHealth review from Section 1.10 as the evidence
+source. June contains 6,331 observed user-days out of 10,200 eligible
+calendar user-days, giving a logging fraction of 0.620686. A structured
+claim must identify that month, denominator, unit, and descriptive
+interpretation. Four constructed candidates retain the same field
+structure: one reproduces the supported result, one adds 0.10 to its
+value, one substitutes the number of logging users for the denominator,
+and one labels the result a causal health benefit.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Constructed Candidate & Format & Evidence Check \\
+\midrule
+
+Supported Result & Valid Fields & Accepted \\
+Changed Number & Valid Fields & Value Mismatch \\
+Changed Denominator & Valid Fields & Denominator Mismatch \\
+Causal Health Claim & Valid Fields & Unsupported Interpretation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All four candidates pass the same basic structural requirement. Only the
+supported claim passes the evidence checks. They are deliberate teaching
+inputs, not observed outputs from a particular LLM. The code makes no
+external model request and sends no customer data to an AI service. Its
+checks concern the declared fields. Free-form prose, omitted
+qualifications, and advice require a separate substantive review; an
+``interpretation'' field cannot validate an unrestricted paragraph.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_evidence_checks.tex}
+\caption{A generated statement passes through separate checks for structure, numerical evidence, and substantive interpretation before informing a decision.}\label{fig:M08_evidence_checks}
+\end{figure}
+
+\href{https://github.com/google-marketing-solutions/copycat}{Copycat}
+demonstrates generation of advertising text from brand examples and
+evaluates similarity and memorization. Those diagnostics concern the
+generated content. Incremental sales or engagement requires an outcome
+comparison under an appropriate exposure design, such as a randomized
+test of the generated and existing alternatives. The Gemini and Google
+Cloud marketing notebooks in the resource collection supply further
+examples of generation and structured extraction; model credentials,
+costs, and data permissions are separate requirements for executing
+those reference notebooks.
+
+Synthetic consumer panels raise a related distinction. The
+\href{https://github.com/pymc-labs/semantic-similarity-rating}{semantic-similarity-rating
+package} maps generated text to distributions over response anchors. The
+mapping can standardize how generated answers are summarized. Validation
+against a target population still requires human outcomes, a sampling
+definition, and comparisons held out from prompt or anchor selection.
+Generating more answers under the same misspecified prompt reduces
+simulation noise around that prompt's distribution while preserving its
+systematic difference from consumers. Agreement among generated
+respondents is therefore a property to examine alongside external
+validity.
+
+A useful AI coding request is: ``Compare every numerical field with its
+computed evidence; reject unknown metrics, periods, units, and
+denominators; retain the analysis's descriptive interpretation; and test
+a correctly formatted false claim.'' The checking rule should be written
+before inspecting a favored generated answer. Report the factual error
+rate and the time spent checking, alongside any reduction in drafting
+time.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py}{claim\_checks.py}.
+From its directory, run \texttt{python\ claim\_checks.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Check constructed structured claims against computed mHealth evidence."""
+
+import json
+import math
+from copy import deepcopy
+from common import load_food, save_result
+from reporting import monthly_review
+
+
+def check_claim(claim, evidence):
+    required = {"metric", "period", "value", "unit", "denominator", "interpretation"}
+    if not isinstance(claim, dict) or set(claim) != required:
+        return ["schema"]
+    rows = [row for row in evidence["periods"] if row["period"] == claim["period"]]
+    if len(rows) != 1 or claim["metric"] != evidence["metric"]:
+        return ["unknown metric or period"]
+    row = rows[0]
+    errors = []
+    if type(claim["value"]) not in (int, float) or not math.isfinite(claim["value"]):
+        errors.append("numeric value")
+    elif not math.isclose(
+        claim["value"], row["logging_fraction"], rel_tol=0, abs_tol=1e-10
+    ):
+        errors.append("value disagrees with evidence")
+    if (
+        type(claim["denominator"]) is not int
+        or claim["denominator"] != row["calendar_user_days"]
+    ):
+        errors.append("denominator")
+    if claim["unit"] != evidence["unit"]:
+        errors.append("unit")
+    if claim["interpretation"] != evidence["interpretation"]:
+        errors.append("unsupported interpretation")
+    return errors
+
+
+if __name__ == "__main__":
+    evidence = monthly_review(load_food())
+    june = evidence["periods"][1]
+    valid = {
+        "metric": "logging_fraction",
+        "period": "2016-06",
+        "value": june["logging_fraction"],
+        "unit": evidence["unit"],
+        "denominator": june["calendar_user_days"],
+        "interpretation": "descriptive",
+    }
+    candidates = {"supported": valid}
+    changes = {
+        "wrong_number": ("value", valid["value"] + 0.1),
+        "wrong_denominator": ("denominator", june["users_with_logs"]),
+        "causal_claim": ("interpretation", "causal health benefit"),
+    }
+    for name, (field, value) in changes.items():
+        candidates[name] = deepcopy(valid)
+        candidates[name][field] = value
+    result = {
+        "candidate_origin": "constructed teaching examples; no LLM request",
+        "checks": {
+            name: check_claim(claim, evidence) for name, claim in candidates.items()
+        },
+    }
+    assert result["checks"]["supported"] == []
+    assert all(result["checks"][name] for name in changes)
+    save_result("claim_checks", result)
+    print(json.dumps(result, indent=2))
 \end{Verbatim}
 
 \end{document}

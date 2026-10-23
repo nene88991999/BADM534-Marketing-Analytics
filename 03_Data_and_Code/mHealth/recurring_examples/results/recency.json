@@ -1,0 +1,46 @@
+{
+  "snapshot": "2016-06-30",
+  "users": 358,
+  "groups": [
+    {
+      "recency_group": "0-7 days",
+      "frequency_group": "0-14 days",
+      "users": 68,
+      "july_users": 63,
+      "july_logging_probability": 0.9264705882352942,
+      "mean_july_days": 13.897058823529411
+    },
+    {
+      "recency_group": "0-7 days",
+      "frequency_group": "15-30 days",
+      "users": 220,
+      "july_users": 213,
+      "july_logging_probability": 0.9681818181818181,
+      "mean_july_days": 22.881818181818183
+    },
+    {
+      "recency_group": "8-30 days",
+      "frequency_group": "0-14 days",
+      "users": 34,
+      "july_users": 23,
+      "july_logging_probability": 0.6764705882352942,
+      "mean_july_days": 7.264705882352941
+    },
+    {
+      "recency_group": "8-30 days",
+      "frequency_group": "15-30 days",
+      "users": 6,
+      "july_users": 5,
+      "july_logging_probability": 0.8333333333333334,
+      "mean_july_days": 9.666666666666666
+    },
+    {
+      "recency_group": "31+ days",
+      "frequency_group": "0-14 days",
+      "users": 30,
+      "july_users": 15,
+      "july_logging_probability": 0.5,
+      "mean_july_days": 5.7
+    }
+  ]
+}

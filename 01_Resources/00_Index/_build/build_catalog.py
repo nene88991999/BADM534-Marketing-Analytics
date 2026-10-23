@@ -384,6 +384,9 @@ if __name__ == "__main__":
     lc = ROOT / "00_Index" / "_data" / "local_copies.json"
     if lc.exists():
         m = json.loads(lc.read_text())
+        for dropped, kept in dupes:                 # a merged duplicate's local copy belongs to the kept entry
+            if dropped in m and kept not in m:
+                m[kept] = m[dropped]
         for e in entries:
             if e["id"] in m:
                 e["local_copy"] = m[e["id"]]

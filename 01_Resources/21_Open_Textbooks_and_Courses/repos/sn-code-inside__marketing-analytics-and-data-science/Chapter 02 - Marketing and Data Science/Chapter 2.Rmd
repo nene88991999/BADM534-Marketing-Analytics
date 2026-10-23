@@ -1,0 +1,233 @@
+---
+title: "Chapter 2 The Marketing Questions and Data Science Tools"
+author: "Xiaojing Dong"
+output:
+  word_document: default
+  html_document: null
+  toc: true
+  pdf_document: default
+graphics: true
+urlcolor: blue
+fontsize: 12pt
+---
+
+# Part I Introduction to Marketing and Analytics
+
+## What is Marketing?
+
+Marketing involves a comprehensive strategy employed by organizations to connect with their target audience, understand their needs, and persuade them to purchase their products or services. The goal of marketing is not just to drive sales but also to build brand awareness, establish and maintain a positive reputation, and foster long-term relationships with customers. Putting in a more concise way, marketing is all about customers, understanding customers and provide product and services that satisfy customers' needs and wants. 
+
+
+At the core of any marketing decision, it involves the understanding of the **3C**, including: 
+
+- The Company: the goal of the company, its competitive advantages, its resources and challenges;
+- The Competitions: the current and the future potential competitive environment;
+- The Customers: the selected customers to target to, the potential customers and the current customers. These may be the customers that both the company and the competition are fighting to win over. 
+
+![The 3C Framework](./pics/3Cs.png)
+
+Traditional marketing textbooks describe marketing mix consists of the famous **4P**, including: 
+
+- Price: the price of the products and services serving the targeted customers;
+- Promotion: how, where and when to promote which product to what customers; 
+- Product: what products to offer, what product features are important; 
+- Place/channel: the best way of reaching the customers with the product and service, such as reseller, or retailers to choose. 
+
+![The Marketing Mix: 4Ps](./pics/4Ps.png){width=60%}
+
+At the core of every marketing decision lies the customer. It is common to separate marketing strategies into two categories: customer acquisition and customer retention.
+
+- Customer acquisition strategies focus on identifying and converting potential customers into actual buyers, including individual consumers and organizations. These efforts aim to grow the business by expanding its customer base and increasing market reach.
+- Customer retention strategies are centered on maintaining relationships with existing customers. The goal is to foster loyalty, encourage repeat purchases, and maximize the lifetime value of each customer.
+
+In a customer-centric marketing approach, it is essential to understand customer behavior, their decision-making processes, and the key factors that influence their decision-making processes. Developing this understanding depends on the collection and analysis of customer data. Traditionally, customer insights were gathered through direct interactions with sales personnel. While this method can provide rich, personalized information, it lacks scalability and is susceptible to knowledge loss when employees leave the organization.
+
+To address these limitations, businesses increasingly rely on systematically capturing and managing customer information in digital form. By storing customer data in structured databases, companies ensure that insights are preserved, accessible across teams, and scalable as the customer base grows. This data-driven approach enables marketers to make informed and efficient decisions.
+
+
+## What is Data Science?
+
+Data Science has emerged as a prominent field around the early 2010's, offering a suite of analytical tools that have transformed how we interpret data. Originating at the intersection of Computer Science and Statistics, Data Science's impact is now felt across a wide array of fields, from the social sciences and natural sciences to practical applications in arts, politics, human resources, healthcare, automotive technology, finance, product development, and more.
+
+This interdisciplinary field has been instrumental in refining business decision-making processes, particularly in marketing and customer analytics. An example of its application is Google's pioneering role in search advertising. By harnessing data science techniques to mine insights from vast quantities of search data, Google not only created the search advertising sector but also propelled it to a market value of around $164.12 billion by 2020, according to a report by [Million Insights report](https://www.millioninsights.com/snapshots/search-advertising-market-report). 
+
+At its core, Data Science merges the analytical rigor of Statistics with the computational power of Computer Science. Statistics provides the methodology for data analysis and inference, allowing for the construction of models that reflect the complexity of data generation. The practical application of these models relies on computational tools, made increasingly accessible through advancements in programming languages like R and Python. These languages, supported by a rich ecosystem of code libraries, have democratized the skills of programming and data analysis.
+
+??? (R and Python) ???
+
+In this book, we aim to equip you with the fundamentals of R and Python programming, essential for delving into Data Science. Alongside detailed code examples and explanations, we offer links to further online resources. This comprehensive approach is designed to not only furnish you with the tools needed but also to encourage exploration and deeper learning within the vibrant Data Science community.
+
+## What is Data Science and Marketing?
+
+In the intersection of data science and marketing, marketing poses the questions, and data science supplies the solutions. These marketing questions often revolve around understanding customers and their decision-making processes and behaviors. This pattern applies to both individual consumers (Business to Consumers, B2C) and business entities (Business to Business, B2B). Given the vast and rapidly expanding datasets associated with customer information, data science and artificial intelligence tools become essential for developing models through sophisticated computational techniques.
+
+To navigate data science tasks for informed marketing strategies, proficiency in several key areas is required:
+
+- Marketing: Insight into marketing principles is crucial for identifying relevant questions and translating business objectives into data-driven inquiries.
+- Economics: This discipline provides a foundation for understanding the rationale behind consumer and organizational decision-making, which is important for constructing relevant models.
+- Statistics: Essential for all forms of data analysis, statistics enables the drawing of meaningful inferences from complex datasets.
+- Computer Science: Offers the computational techniques necessary for handling and analyzing large volumes of data.
+
+![Key Areas Required for Implementing Data Science in Marketing](./pics/4areas.png)
+
+## Two Types of Tasks for Analyzing Customers
+
+To implement data driven marketing strategies, and analyze customers, we can categorize them into two types of tasks: customer acquisition and customer retention. 
+
+### Customer Acqusition
+
+Acquiring new customers presents two major challenges: (1) identifying promising prospects from a large population with limited initial data, and (2) converting those prospects into customers. Traditionally, this process relied on resource-intensive methods such as cold calling and attending trade shows. However, the digital era has revolutionized this landscape by introducing more scalable and cost-effective tools.
+
+Online platforms such as Google, Facebook, and LinkedIn now enable businesses to reach broader audiences with very low cost. The customer acquisition process typically involves two stages:
+
+- First, Identifying Access Channels: businesses can leverage digital platforms that provide access to large pools of potential customers. These platforms act as gateways, offering visibility among users who are likely to be interested in a company’s products or services.
+- Second, Engaging and Converting Prospects: Using data available on these platforms, businesses can identify individuals or organizations who closely match their ideal customer targets. Through targeted and personalized advertising, companies can increase the effectiveness of their outreach efforts and boost conversion rates.
+
+The enhanced efficiency of digital customer acquisition lies in the strategic use data from a selection of sources and the data-driven targeting technologies. Together, these tools allow marketers to optimize both reach and relevance, reducing waste and improving return on the investment into customer acquisition efforts. 
+
+### Customer Retention
+
+Once a prospect becomes a customer, businesses can begin to build a more complete customer profile using the data generated through ongoing interactions. These customer level information can be organized into two categories:
+
+- Static Information: This includes demographic details for individual consumers (e.g., age, gender, location) or firmographic data for business clients (e.g., industry, company size, company revenue). These attributes tend to remain stable over time, and provide foundational understanding on the customer profiles.
+- Dynamic Information: This captures real-time customer behavior and engagement, such as browsing new products, writing reviews, clicking on ads, or making repeat purchases. These interactions provide valuable insights into evolving preferences and needs.
+
+By tracking both static and dynamic data, businesses can better understand customer journeys, anticipate future behavior, and design retention strategies that encourage long-term engagement and loyalty.
+
+
+## The Cycles of Marketing Analytics?
+
+Marketing Analytics integrates data science tools to address marketing-specific inquiries. Expertise in marketing ensures the formulation of pertinent and meaningful questions, whereas data science techniques find solutions by extracting insights from within the data.
+
+It involves two processes in a iterative process, as described in the following picture: 
+
+![The Marketing Analtyics Cycle](./pics/MACycle.png){width=75%}
+
+The first process, from left to right, describes the $\color{blue}{\text{Data Generation Process}}$, which involves: 
+
+- Marketing actions from the company will influence customers' behaviors.  
+- These customer behaviors are recorded in the data, together with the details of the customer interactions with these marketing actions.  
+
+The second process, from right to left, describes the $\color{blue}{\text{Marketing Analytics Process}}$, which involves:
+
+- Analyze the relationship between the marketing actions and customer behaviors, to uncover the influence from the marketing actions to customer behaviors. 
+- Provide suggestions to improve the marketing actions and decisions, which in-turn influence customer behaviors and restart the cycle. 
+
+It is important to realize the focus of marketing analytics is not just applying the analytics tools, but rather understanding the marketing actions and their influence in the data generation process. Just knowing the analytics tools is not enough for conducting meaningful data analytics for marketing decisions. 
+
+
+A [2018 Wall Street Journal article](https://www.wsj.com/articles/at-netflix-who-wins-when-its-hollywood-vs-the-algorithm-1541826015) highlights the internal tensions at Netflix between two forces: the data-driven analytics team in Silicon Valley and the creative production team in Hollywood. The article illustrates the complexities of applying analytical tools in real-world business settings. It underscores both the power and the limitations of data analytics. While analytics can provide valuable insights, they are inherently constrained by the scope and quality of the underlying data. Many important business decisions involve factors that may fall outside what the data captures. Therefore, it is essential not only to analyze the data but also to critically understand how the data was generated and what it may be missing for any particular decisions. Only then can analytical results be appropriately interpreted and effectively applied to real marketing and business decisions.
+
+
+# Part II Review of Basic Statistics
+
+Let's review some of the basic statistics we learned before, using R and the same data set from the last chapter.
+```{r}
+datafile <- read.csv('CoffeeData.csv')
+```
+
+Use `ColMeans`, we can calculate the mean value for each column in the dataframe.
+
+```{r}
+colMeans(datafile)
+
+```
+We can also use the function `apply`, which applies each column or each row in the data frame to the function specified in `apply`.
+
+```{r}
+apply(datafile, 2, var) #calculate the variance for each column (as indicated by value 2) in datafile
+
+apply(datafile, 2, median)
+```
+
+> Q: How is the variance calculated?
+
+*A:* You need to calculate the mean first. Variance measures the average spread or average distance from the mean. 
+
+$var(a)=E[(a-\mu_a)^2]$
+
+- To obtain the expectation, we calculate the average. 
+- To obtain the variance, we need to know it is the population variance or the sample variance, as the denominators used in the calculations are different. 
+
+  * Sample variance $var(a)=\frac{\sum_{i=1}^{N}(a_i-\mu_a)^2}{N-1}$  
+  * Population variance $var(a)=\frac{\sum_{i=1}^{N}(a_i-\mu_a)^2}{N}$
+
+
+$N$ represents the sample size, which is the number of elements in the variable a. If $N\to\infty, N=N-1$, then sample variance is the same as population variance. In other words, if the size of the data is really small, the difference between the population and sample variances is really big. 
+
+
+> Q: How is median calculated?
+
+*A:* If the number of values included in the variable is an odd count, sort all the values, the one in the middle is the median value for the variable.  If the number of values included in the variable is an even count, after sorting the values, pick the two in the middle, then calculate the average between these two numbers. This average serves as the median for the variable. 
+
+
+> Q: What's the difference between mean and median?
+
+*A:* When calculating the mean, all the values in the data are utilized. However, when calculating the median, only the middle one or two values are used after sorting the variable. As a result, if there are some outliers, either really big or very small, their values will be contributed to only the mean calculations, but not the median calculations. So, median is immune to the outliers in the data. 
+
+### Covariance and Correlation
+
+Calculate the covariance between two variables, a and b  
+$cov(a,b)=E[(a-\mu_a)\times (b-\mu_b)]=E(ab)-\mu_a\mu_b$
+
+It is calculated as the mean of the product of a and b, then subtracting their product of the means. 
+
+Note: usually, when we calculate covariance, it refers to "population" covariance, as calculated above. The difference between sample covariance and population covariance is a scale.
+
+
+
+Correlation can be considered as scaled covariance, and is calculated as  
+
+$cor(a,b)=\frac{cov(a,b)}{\sqrt{var(a)var(b))}}$
+
+
+You will notice that we frequently discuss the concept of correlation throughout this course. Correlation refers to the statistical relationship or co-movement between two variables. When two variables exhibit a positive correlation, it means that as one increases, the other one tends to increase as well. Similarly, a negative correlation implies that as one variable increases, the other one tends to decrease, as they move in opposite directions.
+
+Correlation is a very important concept in data analysis because it helps identify patterns and relationships between variables. However, one of the most common pitfalls in interpreting correlation is to mistake it as causality, in that one variable causes the other. This confusion often arises in the context of regression analysis. A regression model requires the selection of a dependent variable $Y$ and one or more independent variables $X$. While the model estimates the relationship between $Y$ and each $X$, it does not imply that changes in $X$ cause changes in $Y$.
+
+This distinction between correlation and causation is critical and will be explored further in the chapter on Linear Regression. If you're interested in reading more about this topic in an accessible way, feel free to explore the article Dong and Heneike (2014), which I co-authored with a colleague. It discusses the implications of mistaking correlation for causality in financial and business analytics.
+
+### Normal Distribution
+
+One of the most commonly utilized probability distributions is Normal distribution, illustrated in the two plots below. 
+```{r fig.height=8, fig.width=6}
+#dev.new(width = 4, height=3, unit="in")
+x = seq(-3,3,0.1)
+def.type = par(mfrow=c(2,1))
+y=dnorm(x)
+plot(x,y,type="l",col="red",
+     main = "Probability Density Function for Standard Normal Distribution",
+     xlab = " ", ylab = "PDF values")
+plot(x,pnorm(x),type="l",col="red",
+     main = "Cumulative Distribution Function for Standard Normal Distribution",
+     xlab=" ", ylab="CDF values")
+```
+
+The top one plots the probability distribution function (PDF) of a standard Normal distribution $X\sim N(0,1)$, and the bottom one plots the cumulative distribution function (CDF) of the same normal distribution. 
+
+Normal distribution has only two parameters:    
+ * $\mu$ is the mean in the normal distribution, indicated by the center in the PDF plot.    
+ * $\sigma^2$ refers to the variance in the normal distribution, indicated by the spread of the PDF plot. 
+
+The PDF for a normal distribution with parameters $(\mu,\sigma^2)$ can be specified as
+
+$$f(x)=\frac{1}{2\pi\sigma}\exp[-\frac{1}{2}\frac{(x-\mu )^2}{\sigma^2}]$$
+
+The CDF function calculate the area below the curve, up to the value X  
+
+$$F(X)=\int_{x=-\infty}^{x=X}f(x)dx=\int_{x=-\infty}^{x=X}\frac{1}{2\pi\sigma}exp[-\frac{1}{2}\frac{(x-\mu )^2}{\sigma^2}]dx$$
+
+Normal distribution (PDF) has a few important features:   
+
+1. It is symmetric
+2. It has only one mode, that is only one peak, as illustrated in the above plot
+3. It has relatively long tails on both sides
+4. Its CDF function does not have closed form solution
+
+# Summary
+
+This module helps you to get started with the Marketing Analytics course, through
+
+- Introducing the fields of Data Science and Marketing, and its intersection for Marketing Analytics, where data science tools and techniques are applied to Marketing problems.
+- A brief review of the basic concepts of statistics, which we will encounter later in the course. 
+

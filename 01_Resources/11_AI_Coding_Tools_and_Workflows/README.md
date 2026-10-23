@@ -1,6 +1,6 @@
 # AI-Assisted Coding · Tools and Workflows
 
-70 resources (23 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+72 resources (23 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -13,6 +13,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Standards: MCP, AGENTS.md, skills, context](#standards-mcp-agentsmd-skills-context) (10)
 - [Workflows, prompting and verification](#workflows-prompting-and-verification) (11)
 - [Security, privacy and risk](#security-privacy-and-risk) (11)
+- [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (2)
 
 ## Coding agents and assistants
 
@@ -510,3 +511,19 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Academic citation for the security page, and for M5's point that scraped social-media text may itself contain injected instructions.
   DOI [10.48550/arXiv.2302.12173](https://doi.org/10.48550/arXiv.2302.12173) · [Open-access copy](https://arxiv.org/abs/2302.12173)
   *Note:* The arXiv page lists no venue. The paper is widely cited as appearing at ACM AISec 2023, which I did not verify here.
+
+## Python for marketing analytics: notebooks and code
+
+- [recommended] **[claude-ecom: Claude Code plugin that turns order CSVs into business reviews](https://github.com/takechanman1228/claude-ecom)** (2026) — Takeda, H. (takechanman1228). *GitHub*
+  `tool` · `intro` · `access: open` · `MIT` · `AI angle`
+  A Python engine computes KPI trees, multi-horizon dashboards, repeat-purchase and new-vs-returning metrics plus health checks from order data; Claude then writes the narrative REVIEW.md. Includes an Online Retail II example review and a test fixture of sample orders.
+  *Use in wiki:* M2 'vibe coding' case: students run the skill on Online Retail, then audit its numbers against their own pandas code and judge the narrative with the Pyramid Principle.
+  Tools: claude-code, pandas · Local copy: `11_AI_Coding_Tools_and_Workflows/repos/takechanman1228__claude-ecom`
+  *Note:* assets/ (9.6 MB demo GIF and banner) is skipped. The README doesn't claim RFM or cohort tables. The Online Retail II data itself is not in the repo.
+
+- [optional] **[claude-persona: Claude Code skill for AI persona panels and concept testing](https://github.com/takechanman1228/claude-persona)** (2026) — Takeda, H. (takechanman1228). *GitHub*
+  `tool` · `intermediate` · `access: open` · `MIT` · `AI angle`
+  Generates diverse persona panels (TinyTroupe-inspired), runs each persona in an isolated claude -p subprocess, and produces concept-test and messaging reports. Four demos (running shoes, Gen Z skincare, meal kits, SaaS).
+  *Use in wiki:* M4/M8 discussion: compare a synthetic concept test with a real conjoint or survey and connect it to the digital-twin validity readings in M3_M4.yaml.
+  Tools: claude-code
+  *Note:* Its 'Why trust the results' section shows stability across model versions, not validity against real consumers. Teach it as a hypothesis generator. Size estimated.

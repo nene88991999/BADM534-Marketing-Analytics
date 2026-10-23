@@ -362,3 +362,120 @@ else:
     raise AssertionError("An unsupported target policy must be rejected")
 print(json.dumps(r, indent=2))
 ```
+
+## 6.15 mHealth: Prior Activity and Experiment Precision
+
+A manager wants an experiment to detect a useful change in logging with fewer participants. Users differ persistently in how often they record food. Random assignment balances those differences in expectation, while a particular assignment can still place more frequent loggers in one arm. A pre-treatment activity measure can explain part of the outcome variation and improve precision.
+
+For a planned June experiment, retain users with at least 30 recorded days before June 1. Define $X_i$ as the fraction of May days with a log and $Y_i$ as the fraction of June days with a log. All 327 eligible users remain in both monthly denominators, including users with zero observed logging days. Fit a coefficient using March logging fractions to predict April fractions, and freeze it before June. The CUPED-adjusted outcome is
+
+$$
+Y_i^{\mathrm{adj}}=Y_i-\theta(X_i-\overline X),
+\qquad
+\widehat\tau_{\mathrm{adj}}=overline Y_1^{\mathrm{adj}}-overline Y_0^{\mathrm{adj}}.
+$$
+
+The subscripts 1 and 0 denote randomized assignment arms. With a fixed coefficient and a pre-treatment covariate unaffected by assignment, the adjustment removes a mean-zero difference between arms in expectation. It preserves the pooled outcome mean. Randomization supplies the treatment-effect comparison; covariate adjustment changes its precision. The arithmetic is the control-variate approach underlying [CUPED](https://exp-platform.com/cuped/), introduced by Deng, Xu, Kohavi, and Walker (2013).
+
+For a fixed coefficient, the adjusted variance equals
+
+$$
+\operatorname{Var}(Y^{\mathrm{adj}})=\operatorname{Var}(Y)+\theta^2\operatorname{Var}(X)-2\theta\operatorname{Cov}(X,Y).
+$$
+
+At the population-optimal coefficient $\theta^*=\operatorname{Cov}(X,Y)/\operatorname{Var}(X)$, this becomes $\operatorname{Var}(Y)(1-\rho^2)$. The historical coefficient used here is learned from different months, so its gain must be measured in the later comparison. A poorly transferred coefficient can increase variance. A covariate affected by treatment can also change the estimand and bias the treatment-effect calculation.
+
+| Historical Planning Quantity | Unadjusted | CUPED |
+| --- | ---: | ---: |
+| Variance of June Outcome | 0.12546 | 0.06315 |
+| Exact Sharp-Null Randomization SD | 0.03918 | 0.02779 |
+| SD Across 2,000 Random Assignments | 0.04032 | 0.02840 |
+| Approximate Users per Arm for 0.05 | 788 | 397 |
+
+The March–April coefficient is 0.55386. The table compares the same June users and outcomes, with an adjusted-to-unadjusted variance ratio of 0.50334. The prospective sample-size calculation assumes independent users, equal arm sizes, a two-sided 5% test, 80% power, and a 0.05 absolute increase in logging fraction. It uses historical variance as a planning input and a normal approximation. Actual effects, variance shifts, interference, and attrition can change the needed sample.
+
+![Historical covariate adjustment lowers the detectable change at a given sample size; both curves use the same outcome, significance level, and power.](../figures/M06_cuped_precision.png)
+
+No experimental assignment is observed in mHealth. The randomization exercise imposes a sharp zero-effect null, holding every recorded June outcome fixed while repeatedly assigning 163 users to treatment and 164 to control. Its dispersion illustrates the design's sampling variability. The analytical finite-population variance is $S^2(1/n_1+1/n_0)$ for each fixed outcome, and provides an independent comparison with the simulation.
+
+[FeedX](https://github.com/google-marketing-solutions/feedx) combines experimental design with prior-period adjustment for shopping-feed tests. Its application also raises a choice of randomization unit. A test of generated product descriptions may randomize products, whereas an mHealth reminder experiment could randomize users. Shared exposure and spillovers must be addressed at the unit actually assigned. Repeated fixed-horizon significance tests during monitoring require a sequentially valid procedure or a prespecified analysis time; software output does not resolve that design choice.
+
+Python source: [cuped.py](../../03_Data_and_Code/mHealth/recurring_examples/cuped.py). From its directory, run `python cuped.py`.
+
+```python
+"""Historical precision planning with a coefficient frozen before June."""
+
+import json
+import math
+import numpy as np
+import pandas as pd
+from scipy.stats import norm
+from common import SEED, load_food, make_daily, save_result
+
+
+def adjust(outcome, baseline, theta):
+    return outcome - theta * (baseline - baseline.mean())
+
+
+if __name__ == "__main__":
+    daily = make_daily(load_food())
+    prior = daily.loc[daily.date < "2016-06-01"].groupby("Userid").size()
+    users = prior.index[prior >= 30]
+    monthly = {}
+    for month in ["2016-03", "2016-04", "2016-05", "2016-06"]:
+        period = pd.Period(month, freq="M")
+        part = daily.loc[daily.date.dt.to_period("M").eq(period)]
+        monthly[month] = (
+            part.groupby("Userid").size().reindex(users, fill_value=0).to_numpy()
+            / period.days_in_month
+        )
+    march, april = monthly["2016-03"], monthly["2016-04"]
+    theta = np.cov(march, april, ddof=1)[0, 1] / np.var(march, ddof=1)
+    baseline, outcome = monthly["2016-05"], monthly["2016-06"]
+    adjusted = adjust(outcome, baseline, theta)
+    assert np.isclose(adjusted.mean(), outcome.mean())
+    n, n_treated = len(users), len(users) // 2
+    rng = np.random.default_rng(SEED)
+    differences = []
+    for _ in range(2000):
+        treated = np.zeros(n, dtype=bool)
+        treated[rng.choice(n, n_treated, replace=False)] = True
+        # Imposed sharp null: these recorded outcomes do not change with assignment.
+        differences.append(
+            [
+                values[treated].mean() - values[~treated].mean()
+                for values in [outcome, adjusted]
+            ]
+        )
+    differences = np.asarray(differences)
+    power_multiplier = 2 * (norm.ppf(0.975) + norm.ppf(0.8)) ** 2 / 0.05**2
+    result = {
+        "users": n,
+        "coefficient_from_march_april": float(theta),
+        "may_june_correlation": float(np.corrcoef(baseline, outcome)[0, 1]),
+        "june_mean": float(outcome.mean()),
+        "sharp_null_draws": len(differences),
+        "methods": [],
+    }
+    for column, (name, values) in enumerate(
+        [("unadjusted", outcome), ("cuped", adjusted)]
+    ):
+        variance = np.var(values, ddof=1)
+        result["methods"].append(
+            {
+                "method": name,
+                "outcome_variance": float(variance),
+                "simulated_effect_mean": float(differences[:, column].mean()),
+                "simulated_effect_sd": float(differences[:, column].std(ddof=1)),
+                "exact_randomization_sd": float(
+                    np.sqrt(variance * (1 / n_treated + 1 / (n - n_treated)))
+                ),
+                "approximate_users_per_arm_for_0_05": math.ceil(
+                    power_multiplier * variance
+                ),
+            }
+        )
+    result["variance_ratio"] = float(np.var(adjusted, ddof=1) / np.var(outcome, ddof=1))
+    save_result("cuped", result)
+    print(json.dumps(result, indent=2))
+```

@@ -1,0 +1,66 @@
+{
+  "training_distinct_descriptions": 50860,
+  "training_entries": 493979,
+  "vocabulary_terms": 3000,
+  "july_distinct_descriptions": 17042,
+  "july_entries": 79957,
+  "july_new_descriptions": 5208,
+  "july_zero_vocabulary_descriptions": 583,
+  "july_unassigned_descriptions": 583,
+  "july_unassigned_entries": 1883,
+  "iterations": 24,
+  "topics": [
+    {
+      "topic": 1,
+      "terms": [
+        "chicken",
+        "breast",
+        "chicken breast",
+        "soup",
+        "grilled",
+        "sandwich"
+      ],
+      "distinct_description_share": 0.14833939678441496,
+      "food_entry_share": 0.10115437047412984
+    },
+    {
+      "topic": 2,
+      "terms": [
+        "cheese",
+        "cheddar",
+        "pizza",
+        "cream",
+        "sandwich",
+        "egg"
+      ],
+      "distinct_description_share": 0.3251965731721629,
+      "food_entry_share": 0.29924834598596745
+    },
+    {
+      "topic": 3,
+      "terms": [
+        "chocolate",
+        "bar",
+        "dark",
+        "butter",
+        "dark chocolate",
+        "peanut"
+      ],
+      "distinct_description_share": 0.32220396667057855,
+      "food_entry_share": 0.3845441925034706
+    },
+    {
+      "topic": 4,
+      "terms": [
+        "salad",
+        "dressing",
+        "salad dressing",
+        "chicken salad",
+        "greek",
+        "kale"
+      ],
+      "distinct_description_share": 0.17005046356061496,
+      "food_entry_share": 0.1915029328263942
+    }
+  ]
+}

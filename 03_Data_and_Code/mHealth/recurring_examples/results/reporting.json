@@ -1,0 +1,29 @@
+{
+  "source_sha256": "2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea",
+  "membership": "At least one observed day before 2016-05-01",
+  "unit": "eligible user-calendar-day",
+  "metric": "logging_fraction",
+  "interpretation": "descriptive",
+  "periods": [
+    {
+      "period": "2016-05",
+      "eligible_users": 340,
+      "calendar_user_days": 10540,
+      "observed_user_days": 7082,
+      "users_with_logs": 317,
+      "food_entries": 83564,
+      "logging_fraction": 0.6719165085388994,
+      "entries_per_observed_day": 11.799491669020052
+    },
+    {
+      "period": "2016-06",
+      "eligible_users": 340,
+      "calendar_user_days": 10200,
+      "observed_user_days": 6331,
+      "users_with_logs": 313,
+      "food_entries": 74016,
+      "logging_fraction": 0.620686274509804,
+      "entries_per_observed_day": 11.691044068867477
+    }
+  ]
+}

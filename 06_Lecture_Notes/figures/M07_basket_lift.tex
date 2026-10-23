@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[xbar,bar width=10pt,width=11.5cm,height=5.7cm,xlabel={Recorded Baskets With Tomato (Percent)},xmin=0,xmax=43,ymin=.4,ymax=2.6,ytick={1,2},yticklabels={July--August,January--June},xtick={0,10,20,30,40},xmajorgrids=true,legend style={at={(.5,1.17)},anchor=south,legend columns=2}]
+\addplot[IlliniBlue,fill=IlliniBlue,bar shift=7pt] coordinates {(11.559899,2)(14.896573,1)};
+\addlegendentry{All Recorded Baskets}
+\addplot[IlliniOrange,fill=IlliniOrange,bar shift=-7pt] coordinates {(27.255252,2)(30.266789,1)};
+\addlegendentry{Baskets With Oil}
+\node[align=center,font=\footnotesize] at (axis cs:36.5,2.05) {Lift\\2.358};
+\node[align=center,font=\footnotesize] at (axis cs:37.5,1.05) {Lift\\2.032};
+\end{axis}\end{tikzpicture}

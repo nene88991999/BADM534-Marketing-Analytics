@@ -1,6 +1,6 @@
 # M5 · Content Analysis, Text and Social Media
 
-54 resources (17 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+59 resources (18 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -13,6 +13,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Classifying text at scale with LLM APIs](#classifying-text-at-scale-with-llm-apis) (3)
 - [Social media and reviews](#social-media-and-reviews) (11)
 - [Network analysis and diffusion](#network-analysis-and-diffusion) (5)
+- [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (5)
 
 ## Text analysis in marketing: anchor papers
 
@@ -398,10 +399,48 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Assign Ch. 19 as conceptual reading before the seeding/influencer lecture. Its threshold models can be simulated in NetworkX.
   *Note:* A complete pre-publication draft PDF is free on the page. Alternative: Barabási, 'Network Science', http://networksciencebook.com/ (online; license and access terms not confirmed by fetch).
 
+## Python for marketing analytics: notebooks and code
+
+- [core] **[OpenAI Cookbook: embedding and classification notebooks on Amazon fine-food reviews, plus structured outputs and synthetic data](https://github.com/openai/openai-cookbook)** (2026) — OpenAI. *GitHub (openai/openai-cookbook)*
+  `notebook` · `intermediate` · `access: open` · `MIT` · `AI angle`
+  Runnable notebooks on a 1k-review Amazon fine-food dataset: getting embeddings, zero-shot sentiment classification with embeddings, supervised classification on embeddings, clustering with GPT-written cluster labels, 2-D visualization, and user and product embeddings. Also an intro to Structured Outputs and LLM synthetic data generation (SDG1).
+  *Use in wiki:* M5 LLM lab: students embed reviews, classify sentiment zero-shot, cluster complaints and let an LLM name the clusters, then check the labels against star ratings.
+  Tools: openai, pandas, scikit-learn, plotly · Local copy: `05_M5_Text_and_Social_Media_Analytics/repos/openai__openai-cookbook`
+  *Note:* Repo is huge (3,700+ files), so use only these sparse paths. examples/data/fine_food_reviews_with_embeddings_1k.csv (35 MB) is excluded: students regenerate it with Get_embeddings_from_dataset, which needs an API key and incurs a small API cost, or swap in a free embedding model. Older notebooks use older embedding model names. Last commit 2026-10-21.
+
+- [recommended] **[BERTopic documentation: best practices, LLM-based topic representation, zero-shot topics, topics over time and per class](https://github.com/MaartenGr/BERTopic)** (2026) — Grootendorst, M. *GitHub (MaartenGr/BERTopic)*
+  `documentation` · `intermediate` · `access: open` · `MIT` · `AI angle`
+  Markdown sources of the BERTopic guide. Covers the embed-reduce-cluster-c-TF-IDF pipeline, LLM-generated topic labels (OpenAI, Llama, etc.), zero-shot and guided topics, and dynamic topics by date or by class (e.g. brand or rating).
+  *Use in wiki:* Reference for review- and social-media topic modeling labs. 'Topics per class' and 'topics over time' map directly onto brand comparisons and campaign tracking.
+  Tools: bertopic, sentence-transformers, umap-learn, hdbscan · Local copy: `05_M5_Text_and_Social_Media_Analytics/repos/MaartenGr__BERTopic`
+  *Note:* Last commit 2026-08-27. The repo has no .ipynb files; the README's Colab links point to Google Drive, which is not downloadable. Hands-On LLMs (already in the library) has a BERTopic chapter with runnable notebooks.
+
+- [recommended] **[Blueprints for Text Analytics Using Python: companion notebooks](https://github.com/blueprints-for-text-analytics-python/blueprints-text)** (2026) — Albrecht, J.; Ramachandran, S.; Winkler, C. *GitHub (blueprints-for-text-analytics-python/blueprints-text); O'Reilly 2020*
+  `book` · `intermediate` · `access: open` · `Apache-2.0`
+  One notebook per chapter: first insights and word frequencies, text preparation, classification, topic modeling and clustering, embeddings, and sentiment analysis of Amazon product reviews (lexicon, ML and transformer approaches).
+  *Use in wiki:* Backbone notebooks for M5's classical-NLP half (before LLMs). Chapter 11 sentiment on product reviews is directly about marketing.
+  Tools: pandas, spacy, scikit-learn, gensim, textacy, transformers · Local copy: `05_M5_Text_and_Social_Media_Analytics/repos/blueprints-for-text-analytics-python__blueprints-text`
+  *Note:* oreil.ly/btap-code redirects here. Last commit 2026-05-28. The book used spaCy 2.3 and gensim 3.8, so some cells need updates for spaCy 3, gensim 4 and textacy. The data/ folder (about 130 MB) is excluded. data/amazon-product-reviews/reviews_5_balanced.json.gz (16.6 MB) is needed for ch11, but redistribution terms for the Amazon review data are unclear, so fetch it at runtime rather than mirror it.
+
+- [optional] **[Scikit-LLM: LLM zero-shot classification inside scikit-learn](https://github.com/BeastByteAI/scikit-llm)** (2026) — BeastByteAI. *GitHub (BeastByteAI/scikit-llm); docs skllm.beastbyte.ai*
+  `package` · `intro` · `access: open` · `MIT` · `AI angle`
+  Wraps GPT-style models as scikit-learn estimators (fit/predict) for zero-shot text classification, so LLM labeling slots into familiar pipelines and evaluation code.
+  *Use in wiki:* Low-friction way for non-CS students to compare LLM zero-shot labels against a TF-IDF and logistic-regression baseline on review data, with standard metrics.
+  [Open-access copy](https://skllm.beastbyte.ai) · Tools: scikit-llm, scikit-learn, openai
+  *Note:* LINK ONLY by choice: MIT-licensed, but the repo is library code with no notebooks, so pip install it instead. Last commit 2026-01-21. The README still has stale links to iryna-kondr/ repos (the old owner).
+
+- [optional] **[SetFit notebooks: few-shot and zero-shot text classification with sentence transformers](https://github.com/huggingface/setfit)** (2026) — Hugging Face. *GitHub (huggingface/setfit)*
+  `notebook` · `intermediate` · `access: open` · `Apache-2.0`
+  Train an accurate text classifier from 8 to 64 labeled examples per class, or from label names alone (zero-shot), without prompting a large LLM.
+  *Use in wiki:* Cheap, private alternative to LLM-API labeling of reviews or tickets. Students compare SetFit with zero-shot LLM labels on the same marketing texts.
+  Tools: setfit, sentence-transformers, datasets
+  *Note:* Last commit 2026-10-06. The notebooks pull models and datasets from the Hugging Face Hub at runtime, which works on Colab but not on the GitHub-only download machine.
+
 ## AI-assisted coding angle for this module
 
 Resources in this folder that show the method done with AI help, LLM versions of the method, or documented failure modes of AI-written analysis:
 
+- [OpenAI Cookbook: embedding and classification notebooks on Amazon fine-food reviews, plus structured outputs and synthetic data](https://github.com/openai/openai-cookbook)
 - [Using natural language processing to analyse text data in behavioural science](https://www.nature.com/articles/s44159-024-00392-z)
 - [Best Practices for Text Annotation with Large Language Models](https://sociologica.unibo.it/article/view/19461)
 - [Classification with Claude: Insurance Support Ticket Classifier (Claude Cookbook)](https://platform.claude.com/cookbook/capabilities-classification-guide)
@@ -411,6 +450,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 - [ChatGPT outperforms crowd workers for text-annotation tasks](https://doi.org/10.1073/pnas.2305016120)
 - [BERTopic: Neural topic modeling with a class-based TF-IDF procedure](https://maartengr.github.io/BERTopic/index.html)
 - [Batch processing (Message Batches API)](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
+- [BERTopic documentation: best practices, LLM-based topic representation, zero-shot topics, topics over time and per class](https://github.com/MaartenGr/BERTopic)
 - [Gemini API Batch Mode](https://ai.google.dev/gemini-api/docs/batch-mode)
 - [OpenAI Batch API guide](https://developers.openai.com/api/docs/guides/batch)
 - [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs)
@@ -418,6 +458,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 - [Large Language Models: An Applied Econometric Framework](https://nber.org/papers/w33344)
 - [To Err Is Human; To Annotate, SILICON? Toward Robust Reproducibility in LLM Annotation](https://arxiv.org/abs/2412.14461)
 - [Testing the Reliability of ChatGPT for Text Annotation and Classification: A Cautionary Remark](https://arxiv.org/abs/2304.11085)
+- [Scikit-LLM: LLM zero-shot classification inside scikit-learn](https://github.com/BeastByteAI/scikit-llm)
 - [Correcting Toward the Wrong Target: LLM-Annotated Regressors Under Noisy Human Benchmarks](https://scholar.smu.edu/business_marketing_research/63)
 - [Federal Trade Commission Announces Final Rule Banning Fake Reviews and Testimonials](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials)
 - [Using Imperfect Surrogates for Downstream Inference: Design-based Supervised Learning for Social Science Applications of Large Language Models](https://proceedings.neurips.cc/paper_files/paper/2023/hash/d862f7f5445255090de13b825b880d59-Abstract.html)
@@ -425,11 +466,11 @@ Resources in this folder that show the method done with AI help, LLM versions of
 ## Also relevant (catalogued in other folders)
 
 - **`01_M1_Marketing_Analytics_and_Python`**: [Applying Data Analytics in Marketing](https://www.coursera.org/learn/applying-data-analytics-business-in-marketing); [Principles of Marketing Engineering and Analytics (3rd ed.)](https://faculty.essec.edu/research/3268-principles-of-marketing-engineering-and-analytics-3rd-edition)
-- **`04_M4_Conjoint_Segmentation_CLV`**: [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529)
+- **`04_M4_Conjoint_Segmentation_CLV`**: [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529); [TensorHouse: reference notebooks for marketing, promotions and pricing (successor to Introduction to Algorithmic Marketing examples)](https://github.com/ikatsov/tensor-house)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Machine learning and AI in marketing: Connecting computing power to human insights](https://ideas.repec.org/a/eee/ijrema/v37y2020i3p481-504.html)
-- **`08_M8_Current_Topics_in_Marketing`**: [2025 Creator Economy Ad Spend & Strategy Report](https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/); [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735); [Frontiers: Supporting Content Marketing with Natural Language Generation](https://ideas.repec.org/a/inm/ormksc/v41y2022i3p441-452.html)
+- **`08_M8_Current_Topics_in_Marketing`**: [Gemini API Cookbook: Market a Jet Backpack, JSON sentiment and classification, embeddings classification and clustering](https://github.com/google-gemini/cookbook); [2025 Creator Economy Ad Spend & Strategy Report](https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/); [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735); [Google Cloud generative-ai repo: creative content generation, product attribute extraction, multimodal sentiment, AI-assisted data science](https://github.com/GoogleCloudPlatform/generative-ai); [Frontiers: Supporting Content Marketing with Natural Language Generation](https://ideas.repec.org/a/inm/ormksc/v41y2022i3p441-452.html)
 - **`10_AI_Coding_Concepts_and_Evidence`**: [Anthropic Economic Index: AI's impact on software development](https://www.anthropic.com/research/impact-software-development)
 - **`11_AI_Coding_Tools_and_Workflows`**: [Claude Cookbooks (anthropics/claude-cookbooks)](https://github.com/anthropics/claude-cookbooks); [Generative AI for Beginners (21 lessons)](https://github.com/microsoft/generative-ai-for-beginners)
 - **`12_AI_Coding_Pedagogy_and_Policy`**: [Anthropic Education Report: How University Students Use Claude](https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude)
 - **`20_Datasets`**: [Amazon Reviews 2023 (Amazon Reviews'23)](https://amazon-reviews-2023.github.io/); [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce); [The Upworthy Research Archive](https://upworthy.natematias.com/); [Stanford Large Network Dataset Collection (SNAP)](https://snap.stanford.edu/data/); [Yelp Open Dataset](https://business.yelp.com/data/resources/open-dataset/); [TweetEval](https://huggingface.co/datasets/cardiffnlp/tweet_eval); [Bluesky developer docs and Jetstream](https://docs.bsky.app/); [Hugging Face Datasets Hub](https://huggingface.co/datasets); [Reddit Data API and Reddit for Researchers access rules](https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data)
-- **`21_Open_Textbooks_and_Courses`**: [Coding for Economists](https://aeturrell.github.io/coding-for-economists/); [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1); [Speech and Language Processing, 3rd ed. draft](https://web.stanford.edu/~jurafsky/slp3/); [Data 100 Course Notes: Principles and Techniques of Data Science](https://ds100.org/course-notes/); [Dealing with Data (NYU teaching notebooks)](https://github.com/ipeirotis/dealing_with_data); [QuantEcon DataScience: Introduction to Economic Modeling and Data Science](https://datascience.quantecon.org/); [Practical Deep Learning for Coders](https://course.fast.ai/)
+- **`21_Open_Textbooks_and_Courses`**: [Coding for Economists](https://aeturrell.github.io/coding-for-economists/); [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1); [Speech and Language Processing, 3rd ed. draft](https://web.stanford.edu/~jurafsky/slp3/); [Applied Marketing Analytics Using Python](https://collegepublishing.sagepub.com/products/applied-marketing-analytics-using-python-1-288563); [Data 100 Course Notes: Principles and Techniques of Data Science](https://ds100.org/course-notes/); [Machine Learning and Generative AI for Marketing (companion code)](https://github.com/PacktPublishing/Machine-Learning-and-Generative-AI-for-Marketing); [Dealing with Data (NYU teaching notebooks)](https://github.com/ipeirotis/dealing_with_data); [QuantEcon DataScience: Introduction to Economic Modeling and Data Science](https://datascience.quantecon.org/); [Practical Deep Learning for Coders](https://course.fast.ai/); [Marketing Data Science: Modeling Techniques in Predictive Analytics with R and Python (code downloads)](https://www.informit.com/promotions/marketing-data-science-modeling-techniques-in-predictive-141181)

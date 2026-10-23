@@ -1,0 +1,26 @@
+{
+  "users": 327,
+  "coefficient_from_march_april": 0.5538565398365661,
+  "may_june_correlation": 0.736075138250041,
+  "june_mean": 0.6407747196738023,
+  "sharp_null_draws": 2000,
+  "methods": [
+    {
+      "method": "unadjusted",
+      "outcome_variance": 0.12546251998607488,
+      "simulated_effect_mean": -3.338632849518075e-05,
+      "simulated_effect_sd": 0.040318254397018784,
+      "exact_randomization_sd": 0.039175554588796326,
+      "approximate_users_per_arm_for_0_05": 788
+    },
+    {
+      "method": "cuped",
+      "outcome_variance": 0.06315026390893809,
+      "simulated_effect_mean": -0.000443873042232366,
+      "simulated_effect_sd": 0.02840378430782918,
+      "exact_randomization_sd": 0.02779365965048996,
+      "approximate_users_per_arm_for_0_05": 397
+    }
+  ],
+  "variance_ratio": 0.5033396739994315
+}
