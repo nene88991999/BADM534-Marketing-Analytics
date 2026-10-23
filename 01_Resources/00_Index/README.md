@@ -1,6 +1,6 @@
 # BADM 534 Resource Library — Master Index
 
-513 catalogued resources across 14 folders · built 2026-10-23.
+530 catalogued resources across 14 folders · built 2026-10-23.
 
 The course spine is the previous syllabus's eight modules (M1–M8). On top of that sit a dedicated AI-assisted coding track (folders 10–12), a datasets folder, cross-module open textbooks, and resources for designing and hosting the interactive wiki.
 
@@ -48,15 +48,15 @@ All of these were checked against primary or dated sources on 2026-10-23. Rechec
 
 | Folder | Resources | Core | Open access | AI angle |
 |---|---:|---:|---:|---:|
-| [M1 · Introduction to Marketing Analytics and Python](../01_M1_Marketing_Analytics_and_Python/README.md) | 13 | 6 | 7 | 4 |
-| [M2 · Customer Data and Visualization](../02_M2_Customer_Data_and_Visualization/README.md) | 32 | 7 | 25 | 7 |
+| [M1 · Introduction to Marketing Analytics and Python](../01_M1_Marketing_Analytics_and_Python/README.md) | 14 | 6 | 7 | 4 |
+| [M2 · Customer Data and Visualization](../02_M2_Customer_Data_and_Visualization/README.md) | 33 | 8 | 25 | 7 |
 | [M3 · Regression Analysis: A Review](../03_M3_Regression/README.md) | 21 | 6 | 19 | 5 |
 | [M4 · Conjoint Analysis, Clustering and Customer Lifetime Value](../04_M4_Conjoint_Segmentation_CLV/README.md) | 33 | 14 | 24 | 7 |
-| [M5 · Content Analysis, Text and Social Media](../05_M5_Text_and_Social_Media_Analytics/README.md) | 49 | 16 | 29 | 19 |
-| [M6 · Causal Models and Experiments](../06_M6_Causal_Inference_and_Experiments/README.md) | 52 | 26 | 44 | 8 |
-| [M7 · Predictive Models, AI and Machine Learning](../07_M7_Predictive_Models_ML_and_AI/README.md) | 29 | 16 | 26 | 9 |
-| [M8 · Current Topics in Marketing](../08_M8_Current_Topics_in_Marketing/README.md) | 23 | 9 | 17 | 14 |
-| [AI-Assisted Coding · Concepts, History and Evidence](../10_AI_Coding_Concepts_and_Evidence/README.md) | 49 | 23 | 45 | 49 |
+| [M5 · Content Analysis, Text and Social Media](../05_M5_Text_and_Social_Media_Analytics/README.md) | 54 | 17 | 29 | 19 |
+| [M6 · Causal Models and Experiments](../06_M6_Causal_Inference_and_Experiments/README.md) | 53 | 26 | 44 | 8 |
+| [M7 · Predictive Models, AI and Machine Learning](../07_M7_Predictive_Models_ML_and_AI/README.md) | 33 | 16 | 28 | 10 |
+| [M8 · Current Topics in Marketing](../08_M8_Current_Topics_in_Marketing/README.md) | 27 | 9 | 18 | 15 |
+| [AI-Assisted Coding · Concepts, History and Evidence](../10_AI_Coding_Concepts_and_Evidence/README.md) | 50 | 23 | 46 | 50 |
 | [AI-Assisted Coding · Tools and Workflows](../11_AI_Coding_Tools_and_Workflows/README.md) | 70 | 23 | 39 | 66 |
 | [AI-Assisted Coding · Teaching, Learning and Policy](../12_AI_Coding_Pedagogy_and_Policy/README.md) | 29 | 9 | 28 | 29 |
 | [Datasets for Exercises and Projects](../20_Datasets/README.md) | 36 | 13 | 28 | 2 |
@@ -87,7 +87,7 @@ For each module, the core resources together with the resources that carry an AI
 
 ### M4 · Conjoint Analysis, Clustering and Customer Lifetime Value
 
-*Core:* [marimo WebAssembly notebooks](https://docs.marimo.io/guides/wasm/); [Packages built in Pyodide](https://pyodide.org/en/stable/usage/packages-in-pyodide.html); [PyMC-Marketing CLV Quickstart (BG/NBD + Gamma-Gamma) and CLV model notebooks](https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html); [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529); [Digital Twins as Funhouse Mirrors: Five Key Distortions](https://arxiv.org/abs/2509.19088); [PyMC-Marketing: Bayesian MMM, CLV and choice models in Python](https://www.pymc-marketing.io/en/stable/); [Frontiers: Can Large Language Models Capture Human Preferences?](https://arxiv.org/abs/2305.02531); [Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis](https://doi.org/10.1287/mksc.2023.0454); [An Introduction to Statistical Learning with Applications in Python (ISLP)](https://www.statlearning.com/); [ISLP_labs: Python lab notebooks for ISLP](https://github.com/intro-stat-learning/ISLP_labs); [The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective](https://arxiv.org/abs/2312.15524); [Using LLMs for Market Research](https://papers.ssrn.com/abstract=4395751)
+*Core:* [marimo WebAssembly notebooks](https://docs.marimo.io/guides/wasm/); [Packages built in Pyodide](https://pyodide.org/en/stable/usage/packages-in-pyodide.html); [PyMC-Marketing CLV Quickstart (BG/NBD + Gamma-Gamma) and CLV model notebooks](https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html); [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529); [Digital Twins as Funhouse Mirrors: Five Key Distortions](https://arxiv.org/abs/2509.19088); [PyMC-Marketing: Bayesian MMM, CLV and choice models in Python](https://www.pymc-marketing.io/en/stable/); [Browsing the Aisles or Browsing the App? How Online Grocery Shopping is Changing What We Buy](https://pubsonline.informs.org/doi/10.1287/mksc.2022.0292); [Frontiers: Can Large Language Models Capture Human Preferences?](https://arxiv.org/abs/2305.02531); [Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis](https://doi.org/10.1287/mksc.2023.0454); [An Introduction to Statistical Learning with Applications in Python (ISLP)](https://www.statlearning.com/); [ISLP_labs: Python lab notebooks for ISLP](https://github.com/intro-stat-learning/ISLP_labs); [The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective](https://arxiv.org/abs/2312.15524)
 
 *AI angle:* [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529); [Digital Twins as Funhouse Mirrors: Five Key Distortions](https://arxiv.org/abs/2509.19088); [PyMC-Marketing: Bayesian MMM, CLV and choice models in Python](https://www.pymc-marketing.io/en/stable/); [Frontiers: Can Large Language Models Capture Human Preferences?](https://arxiv.org/abs/2305.02531); [Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis](https://doi.org/10.1287/mksc.2023.0454); [The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective](https://arxiv.org/abs/2312.15524); [Using LLMs for Market Research](https://papers.ssrn.com/abstract=4395751); [PyMC-Marketing example data: synthetic MMM and CDNOW CLV](https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html); [Applying Data Analytics in Marketing](https://www.coursera.org/learn/applying-data-analytics-business-in-marketing); [Synthetic Replacements for Human Survey Data? The Perils of Large Language Models](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE)
 

@@ -1,17 +1,17 @@
 # M5 · Content Analysis, Text and Social Media
 
-49 resources (16 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+54 resources (17 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
-- [Text analysis in marketing: anchor papers](#text-analysis-in-marketing-anchor-papers) (12)
+- [Text analysis in marketing: anchor papers](#text-analysis-in-marketing-anchor-papers) (15)
 - [Python NLP toolkit](#python-nlp-toolkit) (10)
 - [LLMs as annotators: methods and validation](#llms-as-annotators-methods-and-validation) (8)
 - [Failure modes of LLM text analysis](#failure-modes-of-llm-text-analysis) (2)
 - [Classifying text at scale with LLM APIs](#classifying-text-at-scale-with-llm-apis) (3)
-- [Social media and reviews](#social-media-and-reviews) (9)
+- [Social media and reviews](#social-media-and-reviews) (11)
 - [Network analysis and diffusion](#network-analysis-and-diffusion) (5)
 
 ## Text analysis in marketing: anchor papers
@@ -51,11 +51,32 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   DOI [10.1177/0022242919873106](https://doi.org/10.1177/0022242919873106) · [Open-access copy](https://business.columbia.edu/sites/default/files-efs/pubfiles/26260/uniting%20the%20tribes.pdf) · Tools: LIWC, topic models, word embeddings
   *Note:* Citation and DOI confirmed on the AMA press release page. The open PDF is on Columbia's site. Won the 2025 Sheth Foundation/JM Award (per an AMA press-release title seen in search).
 
+- [core] **[What Makes Online Content Viral?](https://doi.org/10.1509/jmr.10.0353)** (2012) — Berger, J.; Milkman, K. L. *Journal of Marketing Research 49(2), 192–205*
+  `paper` · `intermediate` · `access: library`
+  Codes about 7,000 New York Times articles for emotion with automated sentiment tools and human raters, then models which ones reach the most-emailed list. High-arousal emotions (awe, anger, anxiety) drive sharing more than positivity alone.
+  *Use in wiki:* Classic M5 example of turning text into variables and regressing an outcome on them. Students can replicate the logic with LLM-coded emotions on the MBA 542 Substack dataset.
+  DOI [10.1509/jmr.10.0353](https://doi.org/10.1509/jmr.10.0353) · [Open-access copy](https://faculty.wharton.upenn.edu/wp-content/uploads/2011/11/Virality.pdf) · Tools: VADER, statsmodels
+  *Note:* Also on the MBA 542 Module 2 reading list.
+
 - [recommended] **[Text as Data: A New Framework for Machine Learning and the Social Sciences](https://press.princeton.edu/books/paperback/9780691207551/text-as-data)** (2022) — Grimmer, J.; Roberts, M. E.; Stewart, B. M. *Princeton University Press*
   `book` · `intermediate` · `access: library`
   Research-design-first textbook organized around representation, discovery, measurement, prediction and causal inference with text.
   *Use in wiki:* Instructor backbone for structuring M5 (discovery vs. measurement vs. prediction). Assign selected chapters, e.g., on validation, through the library.
   *Note:* Paid ($49.95 paperback; ebook formats). No free full text was verified, so check the UIUC library for e-book access.
+
+- [recommended] **[Happiness Begets Money: Emotion and Engagement in Live Streaming](https://journals.sagepub.com/doi/10.1177/00222437211002477)** (2021) — Lin, Y.; Yao, D.; Chen, X. *Journal of Marketing Research 58(3), 417–438*
+  `paper` · `advanced` · `access: library`
+  Uses deep-learning facial-emotion detection on live-stream video to show that broadcaster happiness raises viewer engagement and tipping.
+  *Use in wiki:* Shows content analysis extending beyond text to video and emotion signals; a good 'where this is heading' reading for M5.
+  DOI [10.1177/00222437211002477](https://doi.org/10.1177/00222437211002477)
+  *Note:* Also on the MBA 542 Module 3 reading list.
+
+- [recommended] **[Visual Listening In: Extracting Brand Image Portrayed on Social Media](https://pubsonline.informs.org/doi/fpi/10.1287/mksc.2020.1226)** (2020) — Liu, L.; Dzyabura, D.; Mizik, N. *Marketing Science 39(4), 669–686*
+  `paper` · `advanced` · `access: library`
+  Trains image classifiers on consumer-posted Instagram photos to measure how brands are portrayed on attributes such as glamorous or rugged, and validates the measures against survey-based brand perceptions.
+  *Use in wiki:* Anchor for extending M5 content analysis from text to images; pairs with today's multimodal LLMs as a cheaper labelling route.
+  DOI [10.1287/mksc.2020.1226](https://doi.org/10.1287/mksc.2020.1226) · [Open-access copy](https://www.nes.ru/files/Preprints-resh/WP258.pdf)
+  *Note:* Also on the MBA 542 Module 6 (visual listening) reading list. The open-access link is a working-paper version.
 
 - [recommended] **[Comparing automated text classification methods](https://doi.org/10.1016/j.ijresmar.2018.09.009)** (2019) — Hartmann, J.; Huppertz, J.; Schamp, C.; Heitmann, M. *International Journal of Research in Marketing 36(1), 20-38*
   `paper` · `intermediate` · `access: open` · `CC BY-NC-ND (publisher version, per University of Groningen repository)`
@@ -301,6 +322,13 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   DOI [10.1177/00222429221102889](https://doi.org/10.1177/00222429221102889)
   *Note:* DOI metadata confirmed via Crossref; the summary is generic because the abstract was not fetched. Also see Hughes, Swaminathan & Brooks (2019, JM 83(5):78-96), doi 10.1177/0022242919854374 (Crossref-verified). FTC influencer disclosure guidance: https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers (fetched).
 
+- [recommended] **[Online Influencer Marketing](https://ideas.repec.org/a/spr/joamsc/v50y2022i2d10.1007_s11747-021-00829-4.html)** (2022) — Leung, F. F.; Gu, F. F.; Palmatier, R. W. *Journal of the Academy of Marketing Science 50(2), 226–251*
+  `paper` · `intermediate` · `access: library`
+  Integrative review and framework for influencer marketing: influencer, follower, content and brand factors and how they drive engagement and sales. Won the 2022 JAMS Sheth Foundation Best Paper Award.
+  *Use in wiki:* Framework reading for influencer analytics; pairs with the MBA 542 TikTok transcript exercise, in which an LLM scores expertise and authenticity cues.
+  DOI [10.1007/s11747-021-00829-4](https://doi.org/10.1007/s11747-021-00829-4) · [Open-access copy](https://ira.lib.polyu.edu.hk/bitstream/10397/94874/1/Leung_Online_Influencer_Marketing.pdf)
+  *Note:* Also on the MBA 542 Module 3 reading list. Distinct from the Leung et al. (2022) Journal of Marketing paper on influencer marketing effectiveness, which is also in this catalog.
+
 - [recommended] **[The Market for Fake Reviews](https://doi.org/10.1287/mksc.2022.1353)** (2022) — He, S.; Hollenbeck, B.; Proserpio, D. *Marketing Science 41(5), 896-921*
   `paper` · `intermediate` · `access: library`
   Documents the online market for buying fake Amazon reviews (organized via Facebook groups) and its effects on ratings, sales and product outcomes.
@@ -326,6 +354,13 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Final rule banning fake reviews, including AI-generated ones, insider reviews, review suppression, incentives conditioned on sentiment, and buying or selling fake social media indicators such as bot followers and views.
   *Use in wiki:* Short case for an M5/M8 discussion: generative AI makes fake reviews cheap, so what does that mean for review analytics and detection?
   *Note:* Takes effect 60 days after Federal Register publication.
+
+- [optional] **[Word of Mouth and Interpersonal Communication: A Review and Directions for Future Research](https://myscp.onlinelibrary.wiley.com/doi/abs/10.1016/j.jcps.2014.05.002)** (2014) — Berger, J. *Journal of Consumer Psychology 24(4), 586–607*
+  `paper` · `intermediate` · `access: library`
+  Review of why people share word of mouth (impression management, emotion regulation, information acquisition, social bonding, persuasion) and how sharing shapes the sender and receiver.
+  *Use in wiki:* Background reading for the social-media analytics part of M5.
+  DOI [10.1016/j.jcps.2014.05.002](https://doi.org/10.1016/j.jcps.2014.05.002)
+  *Note:* Also on the MBA 542 Module 2 reading list.
 
 ## Network analysis and diffusion
 

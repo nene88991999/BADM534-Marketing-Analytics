@@ -6,7 +6,7 @@ The course asks students to use customer and marketing data to support manageria
 
 ## Basis in the Sample Syllabus
 
-Source: Unnati Narang, BADM 534, Spring 2026, reviewed October 23, 2026. The original PDF remains a [local instructor reference](../../../00_Sample_Materials/README.md) and is excluded from Git publication. The module list and objectives appear on page 1, software and readings on page 2, evaluation on page 3, AI guidance on pages 4-5, and the dated schedule on page 6.
+Source: Unnati Narang, BADM 534, Spring 2026, reviewed October 23, 2026. The original PDF remains an internal instructor reference in Dropbox and is excluded from Git publication. The module list and objectives appear on page 1, software and readings on page 2, evaluation on page 3, AI guidance on pages 4-5, and the dated schedule on page 6.
 
 The course uses Python, with some R, and allows Google Colab notebooks. Each module combines concepts, methodology, exercises, and interpretation. Its team project develops through a plan, checkpoints, a midterm, and a final report with code and visualizations. These elements provide a useful basis for an interactive written course. The schedule gives particular attention to customer data, visualization, text, causality, and prediction. Clustering and customer lifetime value appear in the module list even though they are not separately named in the dated schedule. Network analysis appears in the introductory description and can remain an optional extension.
 

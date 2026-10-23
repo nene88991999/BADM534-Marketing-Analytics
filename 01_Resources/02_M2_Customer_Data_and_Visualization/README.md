@@ -1,12 +1,12 @@
 # M2 · Customer Data and Visualization
 
-32 resources (7 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+33 resources (8 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
-- [Customer data](#customer-data) (4)
+- [Customer data](#customer-data) (5)
 - [Privacy and customer data](#privacy-and-customer-data) (4)
 - [Visualization principles](#visualization-principles) (5)
 - [Visualization in Python](#visualization-in-python) (5)
@@ -14,6 +14,13 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [AI-generated charts and analysis](#ai-generated-charts-and-analysis) (6)
 
 ## Customer data
+
+- [core] **[Browsing the Aisles or Browsing the App? How Online Grocery Shopping is Changing What We Buy](https://pubsonline.informs.org/doi/10.1287/mksc.2022.0292)** (2024) — Chintala, S. C.; Liaukonytė, J.; Yang, N. *Marketing Science*
+  `paper` · `advanced` · `access: library`
+  Household panel evidence on how the same shoppers' baskets differ when they buy groceries online versus in store: fewer impulse and unhealthy items and more repetition online, with implications for new-product introduction.
+  *Use in wiki:* Instructor's own paper; a natural M2/M6 case. Pairs with the synthetic Instacart vs. in-person grocery data used in MBA 542 Module 1.
+  DOI [10.1287/mksc.2022.0292](https://doi.org/10.1287/mksc.2022.0292)
+  *Note:* Also on the MBA 542 Module 1 reading list. The summary is high-level; check the wording against the published abstract before quoting it on the wiki.
 
 - [core] **[RFM and CLV: Using Iso-Value Curves for Customer Base Analysis](http://www.brucehardie.com/papers/rfm_clv_2005-02-16.pdf)** (2005) — Fader, P.S.; Hardie, B.G.S.; Lee, K.L. *Journal of Marketing Research (2005)*
   `paper` · `advanced` · `access: open`
@@ -241,6 +248,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 
 - **`01_M1_Marketing_Analytics_and_Python`**: [10 minutes to pandas (official quick start)](https://pandas.pydata.org/docs/user_guide/10min.html); [Plotting and Programming in Python (Software Carpentry)](https://swcarpentry.github.io/python-novice-gapminder)
 - **`04_M4_Conjoint_Segmentation_CLV`**: [PyMC-Marketing CLV Quickstart (BG/NBD + Gamma-Gamma) and CLV model notebooks](https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html)
+- **`06_M6_Causal_Inference_and_Experiments`**: [Mobile App Introduction and Online and Offline Purchases and Product Returns](https://pubsonline.informs.org/doi/10.1287/mksc.2019.1169)
 - **`08_M8_Current_Topics_in_Marketing`**: [Update on Plans for Privacy Sandbox Technologies](https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies); [Anthropic Economic Index](https://www.anthropic.com/economic-index); [The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report)
 - **`10_AI_Coding_Concepts_and_Evidence`**: [Stack Overflow Developer Survey 2025: AI](https://survey.stackoverflow.co/2025/ai/); [How Do Analysts Understand and Verify AI-Assisted Data Analyses?](https://arxiv.org/abs/2309.10947); [Stack Overflow Developer Survey 2026: AI](https://survey.stackoverflow.co/2026/ai); [Is GPT-4 a Good Data Analyst?](https://arxiv.org/abs/2305.15038)
 - **`11_AI_Coding_Tools_and_Workflows`**: [Claude Code data usage (training, retention, telemetry)](https://code.claude.com/docs/en/data-usage); [Colab FAQ: AI features, data use, and Colab Pro for Education](https://research.google.com/colaboratory/faq.html); [Create and edit files with Claude (code execution and file creation)](https://support.claude.com/en/articles/12111783); [Data analysis with ChatGPT](https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt); [Google Colab: AI-powered notebooks (Gemini in Colab)](https://developers.google.com/colab); [Claude Code: A Highly Agentic Coding Assistant (DeepLearning.AI)](https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant); [Data Science Agent in Colab: The future of data analysis with Gemini](https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/); [Enterprise privacy at OpenAI (business data commitments)](https://openai.com/enterprise-privacy/); [marimo: generate notebooks with AI (built-in assistant, marimo pair, text-to-notebook)](https://docs.marimo.io/guides/generate_with_ai/); [pandera: statistical data testing for DataFrames](https://github.com/unionai-oss/pandera); [Julius AI](https://julius.ai); [Lovable (AI full-stack web app builder)](https://docs.lovable.dev/introduction); [Replit Agent](https://docs.replit.com/replitai/agent); [v0 by Vercel](https://v0.app/docs); [Build Apps with Windsurf's AI Coding Agents (DeepLearning.AI)](https://www.deeplearning.ai/short-courses/build-apps-with-windsurfs-ai-coding-agents/)

@@ -24,9 +24,6 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
 | [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
-| [09_Templates](09_Templates/README.md) | Templates for adding consistent, readable materials |
-
-The original syllabus in `00_Sample_Materials` remains a local instructor reference. It is excluded from Git publication because it contains course-access information. The [course map](COURSE_MAP.md) preserves the relevant topic outline.
 
 ## Working With an LLM
 

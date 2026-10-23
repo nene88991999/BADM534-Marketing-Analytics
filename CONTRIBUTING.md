@@ -15,7 +15,7 @@ Use a stable module prefix, for example `M03_Regression_Notes.md`. For an assign
 5. Add the file to the folder README. When releasing authoritative material, update the appropriate pointer in `course.json` and its status.
 6. Add selected current Markdown companions to `llm_context_paths` in `course.json`, then run `python3 scripts/build_llm_context.py`.
 
-Use [the templates](09_Templates/README.md) to begin. Replace placeholders explicitly; do not leave an unfinished template labeled as a released document.
+Replace placeholders explicitly before release. The instructor's `00_Sample_Materials/` and `09_Templates/` folders stay in Dropbox and are ignored by Git.
 
 ## Publish an Update
 

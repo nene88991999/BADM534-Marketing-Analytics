@@ -1,14 +1,14 @@
 # M7 · Predictive Models, AI and Machine Learning
 
-29 resources (16 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+33 resources (16 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
-- [Core ML for business students](#core-ml-for-business-students) (10)
+- [Core ML for business students](#core-ml-for-business-students) (11)
 - [Prediction vs. causation](#prediction-vs-causation) (3)
-- [Marketing prediction problems](#marketing-prediction-problems) (10)
+- [Marketing prediction problems](#marketing-prediction-problems) (13)
 - [Data leakage and AI-written pipelines](#data-leakage-and-ai-written-pipelines) (4)
 - [LLMs as simulated consumers](#llms-as-simulated-consumers) (2)
 
@@ -75,6 +75,12 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Link the classification-metrics and AutoML modules (about 30 min) as pre-reading. The interactive visuals suit non-CS students.
   Tools: Keras, Colab
   *Note:* The AutoML module is at developers.google.com/machine-learning/crash-course/automl (verified; about 30 minutes, covers benefits and limitations). The 2024 refresh date comes from a Google blog result in search, not from the course page itself.
+
+- [recommended] **[Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking](https://oreilly.com/library/view/data-science-for/9781449374273)** (2013) — Provost, F.; Fawcett, T. *O'Reilly Media*
+  `book` · `intro` · `access: library`
+  Widely used business-school text on data-analytic thinking: framing problems as classification, regression or ranking; overfitting and holdout evaluation; expected-value framing of model decisions; churn and targeting examples.
+  *Use in wiki:* Conceptual companion to the hands-on ML material; its expected-value framework fits churn and targeting exercises.
+  *Note:* Also on the MBA 542 Module 8 reading list. The O'Reilly link may need institutional access.
 
 - [optional] **[TabPFN: Accurate predictions on small data with a tabular foundation model](https://github.com/PriorLabs/TabPFN)** (2025) — Hollmann, N.; et al. (Prior Labs / University of Freiburg). *Nature (2025); GitHub*
   `package` · `intermediate` · `access: open` · `Apache-2.0 (code); model weights under separate, partly non-commercial licenses` · `AI angle`
@@ -174,6 +180,26 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Source of quick-start notebooks for team projects that want a recommender, and instructor reference for evaluation metrics (precision@k, NDCG).
   Tools: recommenders, pyspark, lightgbm · Local copy: `07_M7_Predictive_Models_ML_and_AI/repos/recommenders-team__recommenders`
 
+- [optional] **[Reducing Recommender System Biases: An Investigation of Rating Display Designs](https://misq.org/reeducing-recommender-system-biases-an-investigation-of-rating-display-designs.html)** (2019) — Adomavicius, G.; Bockstedt, J. C.; Curley, S. P.; Zhang, J. *MIS Quarterly 43(4), 1321–1341*
+  `paper` · `advanced` · `access: library`
+  Experiments show that displayed recommendation ratings anchor consumers' own ratings, and test display designs that reduce the bias. Recommenders thereby shape the very data they are later trained on.
+  *Use in wiki:* Discussion reading on feedback loops between recommendation and measurement; ties M7 to M6.
+  [Open-access copy](https://papers.ssrn.com/abstract=3346686)
+  *Note:* Also on the MBA 542 Module 5 reading list. The MISQ URL contains a typo ('reeducing') on the publisher's own site.
+
+- [optional] **[Evaluating Recommendation Systems](https://www.microsoft.com/en-us/research/publication/evaluating-recommender-systems/)** (2011) — Shani, G.; Gunawardana, A. *Recommender Systems Handbook (Springer), pp. 257–297*
+  `book-chapter` · `intermediate` · `access: open`
+  Standard reference on offline, user-study and online evaluation of recommenders, covering accuracy plus coverage, novelty, diversity, serendipity and trust.
+  *Use in wiki:* Reference for an M7 exercise that moves beyond accuracy, such as diversity-aware re-ranking on the MBA 542 Netflix viewing data.
+  *Note:* Also on the MBA 542 Module 5 reading list. Check that the Microsoft Research page links a PDF.
+
+- [optional] **[SMOTE: Synthetic Minority Over-sampling Technique](https://jair.org/index.php/jair/article/view/10302)** (2002) — Chawla, N. V.; Bowyer, K. W.; Hall, L. O.; Kegelmeyer, W. P. *Journal of Artificial Intelligence Research 16, 321–357*
+  `paper` · `intermediate` · `access: open` · `AI angle`
+  Introduces oversampling of rare classes by interpolating synthetic minority examples, a standard tool for churn and response models where positives are rare.
+  *Use in wiki:* Background for an imbalanced-churn exercise. Also a good AI-coding check: oversampling before the train/test split leaks information, and AI-written pipelines often make that mistake.
+  [Open-access copy](https://arxiv.org/pdf/1106.1813) · Tools: imbalanced-learn, scikit-learn
+  *Note:* Also on the MBA 542 Module 8 reading list. In practice, class weights or threshold tuning often work as well as SMOTE.
+
 ## Data leakage and AI-written pipelines
 
 - [core] **[scikit-learn User Guide 12: Common pitfalls and recommended practices](https://scikit-learn.org/stable/common_pitfalls.html)** (2026) — scikit-learn developers. *scikit-learn 1.9.1 documentation*
@@ -232,6 +258,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 - [MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering](https://arxiv.org/abs/2410.07095)
 - [TabPFN: Accurate predictions on small data with a tabular foundation model](https://github.com/PriorLabs/TabPFN)
 - [Data Leakage in Notebooks: Static Detection and Better Processes](https://arxiv.org/abs/2209.03345)
+- [SMOTE: Synthetic Minority Over-sampling Technique](https://jair.org/index.php/jair/article/view/10302)
 
 ## Also relevant (catalogued in other folders)
 

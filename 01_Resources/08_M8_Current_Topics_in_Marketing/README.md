@@ -1,17 +1,18 @@
 # M8 · Current Topics in Marketing
 
-23 resources (9 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+27 resources (9 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
-- [Generative AI in marketing practice](#generative-ai-in-marketing-practice) (6)
+- [Generative AI in marketing practice](#generative-ai-in-marketing-practice) (9)
 - [Privacy and measurement](#privacy-and-measurement) (4)
 - [Retail media, creators and pricing](#retail-media-creators-and-pricing) (3)
 - [Algorithmic bias](#algorithmic-bias) (2)
 - [Industry reports](#industry-reports) (4)
 - [Staying current: newsletters and podcasts](#staying-current-newsletters-and-podcasts) (4)
+- [Data poisoning and measurement integrity](#data-poisoning-and-measurement-integrity) (1)
 
 ## Generative AI in marketing practice
 
@@ -29,11 +30,24 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   [Open-access copy](https://generative-engines.com/GEO/) · Tools: openai · Local copy: `08_M8_Current_Topics_in_Marketing/repos/GEO-optim__GEO`
   *Note:* The ACM DL page (KDD) could not be fetched, and the project page cites the work only as arXiv. GEO-bench is at huggingface.co/datasets/GEO-optim/geo-bench.
 
+- [recommended] **[Frontiers: Generative AI and Personalized Video Advertisements](https://pubsonline.informs.org/doi/fpi/10.1287/mksc.2023.0494)** (2025) — Kapoor, A.; Kumar, M. *Marketing Science 44(4), 733–747*
+  `paper` · `advanced` · `access: library`
+  Studies the effectiveness of generative-AI personalized video ads relative to non-personalized versions.
+  *Use in wiki:* Fills a gap the main search flagged (no good piece on GenAI personalization). Check its design and findings before pairing it with M6.
+  DOI [10.1287/mksc.2023.0494](https://doi.org/10.1287/mksc.2023.0494)
+  *Note:* Also on the MBA 542 Module 6 reading list. The summary is deliberately brief because the paper itself was not opened; MIT IDE has a research brief (https://ide.mit.edu/insights/personalized-ai-video-ads).
+
 - [recommended] **[Powering AI commerce with the new Agent Payments Protocol (AP2)](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol)** (2025) — Google Cloud. *Google Cloud Blog (September 16, 2025)*
   `website` · `intro` · `access: open` · `AI angle`
   Google's open protocol for AI agents to initiate payments, using signed 'Intent' and 'Cart' mandates as an audit trail. More than 60 partners (Mastercard, AmEx, PayPal, Adyen, Coinbase and others) back it, and it works as an extension of A2A alongside MCP.
   *Use in wiki:* Compare with OpenAI's ACP: who controls the customer relationship and the data when agents buy?
   *Note:* The repo is linked as goo.gle/ap2; no direct GitHub URL was verified, and the license was not stated.
+
+- [recommended] **[The Power of Generative Marketing: Can Generative AI Create Superhuman Visual Marketing Content?](https://ideas.repec.org/a/eee/ijrema/v42y2025i1p13-31.html)** (2025) — Hartmann, J.; Exner, Y.; Domdey, S. *International Journal of Research in Marketing 42(1), 13–31*
+  `paper` · `intermediate` · `access: library`
+  Compares AI-generated with human-made marketing images at scale, finding that current generative models can match or exceed human-made visuals on quality and realism measures.
+  *Use in wiki:* Evidence for the M8 GenAI-in-marketing discussion. Check the study designs before using it as an M6 example.
+  *Note:* Also on the MBA 542 Module 6 reading list. DOI not confirmed in a search result.
 
 - [recommended] **[When AI Guides the Shopping Journey](https://www.iab.com/insights/when-ai-guides-the-shopping-journey/)** (2025) — IAB; Talk Shoppe. *IAB (October 28, 2025)*
   `report` · `intro` · `access: free-registration` · `AI angle`
@@ -52,6 +66,12 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   An open standard covering the whole agentic shopping flow (discovery, checkout, post-purchase) between platforms, agents and businesses. It builds on AP2 for payments.
   *Use in wiki:* A 2026 snapshot of the competing agentic-commerce standards (ACP vs AP2/UCP) for a short comparison table on the wiki.
   *Note:* The announcement date is not stated on the site. The year 2026 comes from the copyright and the lodging draft. The site lists Amazon, Microsoft and Stripe among co-developers; check this before citing.
+
+- [optional] **[The Caring Machine: Feeling AI for Customer Care](https://www.ama.org/2024/04/23/can-companies-create-a-machine-that-feels-and-cares-using-generative-ai-to-provide-empathetic-customer-care/)** (2024) — Huang, M.-H.; Rust, R. T. *Journal of Marketing 88(5)*
+  `paper` · `intermediate` · `access: library`
+  Conceptual framework for using generative 'feeling AI' to deliver empathetic customer care and build customer lifetime value. The link is the AMA's summary of the article.
+  *Use in wiki:* Optional M8 reading if the course touches AI customer service.
+  *Note:* Also on the MBA 542 Module 4 reading list. A corrigendum was published (https://journals.sagepub.com/doi/full/10.1177/00222429241270362). The article's own DOI was not confirmed.
 
 ## Privacy and measurement
 
@@ -170,6 +190,15 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Optional weekly listening, and students can pick an episode to summarize in a short reflection.
   *Note:* marketingaiinstitute.com/podcast-showcase now redirects to podcast.smarterx.ai.
 
+## Data poisoning and measurement integrity
+
+- [optional] **[Scaling Trends for Data Poisoning in LLMs](https://ojs.aaai.org/index.php/AAAI/article/view/34929)** (2025) — Bowen, D.; et al. *Proceedings of the AAAI Conference on Artificial Intelligence 39*
+  `paper` · `advanced` · `access: open` · `AI angle`
+  Shows that larger language models learn harmful behavior from small amounts of poisoned fine-tuning data more quickly than smaller ones, so scale does not protect against data poisoning.
+  *Use in wiki:* Background for an M8 discussion of poisoned online data (e.g., coordinated reviews or synthetic posts) feeding marketing models and AI assistants.
+  [Open-access copy](https://arxiv.org/abs/2408.02946)
+  *Note:* Also on the MBA 542 Module 8 reading list.
+
 ## AI-assisted coding angle for this module
 
 Resources in this folder that show the method done with AI help, LLM versions of the method, or documented failure modes of AI-written analysis:
@@ -188,16 +217,17 @@ Resources in this folder that show the method done with AI help, LLM versions of
 - [Frontiers: Supporting Content Marketing with Natural Language Generation](https://ideas.repec.org/a/inm/ormksc/v41y2022i3p441-452.html)
 - [Artificial Intelligence, Algorithmic Pricing, and Collusion](https://www.aeaweb.org/articles?id=10.1257/aer.20190623)
 - [Universal Commerce Protocol (UCP)](https://ucp.dev/)
+- [Scaling Trends for Data Poisoning in LLMs](https://ojs.aaai.org/index.php/AAAI/article/view/34929)
 
 ## Also relevant (catalogued in other folders)
 
-- **`01_M1_Marketing_Analytics_and_Python`**: [A Strategic Framework for Artificial Intelligence in Marketing](https://link.springer.com/article/10.1007/s11747-020-00749-9); [MSI Research Priorities (booklet)](https://msi.org/wp-content/uploads/sites/2/2025/10/MSI_ResearchPriorities.pdf)
+- **`01_M1_Marketing_Analytics_and_Python`**: [A Strategic Framework for Artificial Intelligence in Marketing](https://link.springer.com/article/10.1007/s11747-020-00749-9); [MSI Research Priorities (booklet)](https://msi.org/wp-content/uploads/sites/2/2025/10/MSI_ResearchPriorities.pdf); [Precision Retailing: Driving Results with Behavioral Insights and Data Analytics](https://utorontopress.com/9781487542719/precision-retailing)
 - **`02_M2_Customer_Data_and_Visualization`**: [The Economics of Privacy](https://www.aeaweb.org/articles?id=10.1257/jel.54.2.442)
 - **`04_M4_Conjoint_Segmentation_CLV`**: [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529); [Digital Twins as Funhouse Mirrors: Five Key Distortions](https://arxiv.org/abs/2509.19088); [The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective](https://arxiv.org/abs/2312.15524); [Using LLMs for Market Research](https://papers.ssrn.com/abstract=4395751); [Synthetic Replacements for Human Survey Data? The Perils of Large Language Models](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE); [Twin-2K-500: A dataset for building digital twins of over 2,000 people based on their answers to over 500 questions](https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500)
-- **`05_M5_Text_and_Social_Media_Analytics`**: [Influencer Marketing Effectiveness](https://doi.org/10.1177/00222429221102889); [The Market for Fake Reviews](https://doi.org/10.1287/mksc.2022.1353); [Federal Trade Commission Announces Final Rule Banning Fake Reviews and Testimonials](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials)
+- **`05_M5_Text_and_Social_Media_Analytics`**: [Influencer Marketing Effectiveness](https://doi.org/10.1177/00222429221102889); [Online Influencer Marketing](https://ideas.repec.org/a/spr/joamsc/v50y2022i2d10.1007_s11747-021-00829-4.html); [The Market for Fake Reviews](https://doi.org/10.1287/mksc.2022.1353); [Visual Listening In: Extracting Brand Image Portrayed on Social Media](https://pubsonline.informs.org/doi/fpi/10.1287/mksc.2020.1226); [Federal Trade Commission Announces Final Rule Banning Fake Reviews and Testimonials](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials)
 - **`06_M6_Causal_Inference_and_Experiments`**: [Meridian: Google's open-source Bayesian marketing mix model](https://developers.google.com/meridian); [PyMC-Marketing: Bayesian MMM, CLV and choice models in Python](https://www.pymc-marketing.io/en/stable/); [Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?](https://www.nber.org/papers/w31122); [A Comparison of Approaches to Advertising Measurement: Evidence from Big Field Experiments at Facebook](https://www.kellogg.northwestern.edu/academics-research/research/detail/2019/a-comparison-of-approaches-to-advertising-measurement-evidence-from/); [Consumer Heterogeneity and Paid Search Effectiveness: A Large-Scale Field Experiment](https://doi.org/10.3982/ECTA12423); [The Unfavorable Economics of Measuring the Returns to Advertising](https://ideas.repec.org/a/oup/qjecon/v130y2015i4p1941-1973.html); [TFP CausalImpact: Python port of Google's CausalImpact](https://github.com/google/tfp-causalimpact); [Better Experiments with LLM Evals: A funnel, not a fork](https://engineering.atspotify.com/2026/5/better-experiments-with-llm-evals-a-funnel-not-a-fork); [Close Enough? A Large-Scale Exploration of Non-Experimental Approaches to Advertising Measurement](https://www.kellogg.northwestern.edu/academics-research/research/detail/2023/close-enough-a-large-scale-exploration-of-non-experimental/); [Robyn: Meta's open-source marketing mix modeling package](https://github.com/facebookexperimental/Robyn); [Ghost Ads: Improving the Economics of Measuring Online Ad Effectiveness](https://www.kellogg.northwestern.edu/faculty/research/detail/2017/ghost-ads-improving-the-economics-of-measuring-online-ad); [GeoLift: geo-level lift measurement with synthetic control](https://github.com/facebookincubator/GeoLift); [Meridian GeoX: open-source geo experiments for incrementality and MMM calibration](https://developers.google.com/meridian/geox)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Netflix Recommendations: Beyond the 5 stars (Part 1)](https://netflixtechblog.com/netflix-recommendations-beyond-the-5-stars-part-1-55838468f429)
-- **`10_AI_Coding_Concepts_and_Evidence`**: [Agentic coding and persistent returns to expertise](https://www.anthropic.com/research/claude-code-expertise); [AI Agents for Economic Research: August 2025 Update](https://www.aeaweb.org/articles/materials/23826); [Generative AI at Work](https://digitaleconomy.stanford.edu/publication/generative-ai-at-work); [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/); [The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers](https://pubsonline.informs.org/doi/fpi/10.1287/mnsc.2025.00535); [Generative AI for Economic Research: Use Cases and Implications for Economists](https://www.aeaweb.org/articles?id=10.1257/jel.20231736); [Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality](https://papers.ssrn.com/abstract=4573321); [The Impact of AI on Developer Productivity: Evidence from GitHub Copilot](https://arxiv.org/abs/2302.06590); [Speaking things into existence: Expertise in a vibe-filled world of work](https://www.oneusefulthing.org/p/speaking-things-into-existence); [Who is using AI to code? Global diffusion and impact of generative AI](https://arxiv.org/abs/2506.08945); [Automated Social Science: Language Models as Scientist and Subjects](https://arxiv.org/abs/2404.11794); [CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark](https://arxiv.org/abs/2409.11363); [Vibe Coding Kills Open Source](https://arxiv.org/abs/2601.15494)
+- **`10_AI_Coding_Concepts_and_Evidence`**: [Agentic coding and persistent returns to expertise](https://www.anthropic.com/research/claude-code-expertise); [AI Agents for Economic Research: August 2025 Update](https://www.aeaweb.org/articles/materials/23826); [Generative AI at Work](https://digitaleconomy.stanford.edu/publication/generative-ai-at-work); [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/); [The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers](https://pubsonline.informs.org/doi/fpi/10.1287/mnsc.2025.00535); [Generative AI for Economic Research: Use Cases and Implications for Economists](https://www.aeaweb.org/articles?id=10.1257/jel.20231736); [Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality](https://papers.ssrn.com/abstract=4573321); [The Impact of AI on Developer Productivity: Evidence from GitHub Copilot](https://arxiv.org/abs/2302.06590); [Speaking things into existence: Expertise in a vibe-filled world of work](https://www.oneusefulthing.org/p/speaking-things-into-existence); [Who is using AI to code? Global diffusion and impact of generative AI](https://arxiv.org/abs/2506.08945); [Automated Social Science: Language Models as Scientist and Subjects](https://arxiv.org/abs/2404.11794); [CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark](https://arxiv.org/abs/2409.11363); [Vulnerabilities in AI Code Generators: Exploring Targeted Data Poisoning Attacks](https://arxiv.org/abs/2308.04451v3); [Vibe Coding Kills Open Source](https://arxiv.org/abs/2601.15494)
 - **`11_AI_Coding_Tools_and_Workflows`**: [An important update: Transitioning Gemini CLI to Antigravity CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli); [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/); [Vibe Coding 101 with Replit (DeepLearning.AI)](https://www.deeplearning.ai/short-courses/vibe-coding-101-with-replit/); [Windsurf, now Devin Desktop (Cognition)](https://devin.ai/desktop); [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](https://arxiv.org/abs/2302.12173)
 - **`12_AI_Coding_Pedagogy_and_Policy`**: [Claude Code and What Comes Next](https://www.oneusefulthing.org/p/claude-code-and-what-comes-next); [The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers](https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/)
 - **`20_Datasets`**: [PyMC-Marketing example data: synthetic MMM and CDNOW CLV](https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html); [Criteo Uplift Prediction Dataset (v2.1)](https://ailab.criteo.com/?p=859); [Dominick's Finer Foods scanner data](https://www.chicagobooth.edu/research/kilts/research-data/dominicks); [Google Meridian simulated geo-level MMM data (geo_all_channels)](https://developers.google.com/meridian/docs/user-guide/load-geo-data-with-organic-and-non-media); [Criteo Attribution Modeling for Bidding Dataset](https://ailab.criteo.com/?p=649); [CTR prediction benchmarks: Avazu (Kaggle) and Criteo 1TB Click Logs](https://www.kaggle.com/c/avazu-ctr-prediction); [NielsenIQ Retail Scanner and Consumer Panel data (Kilts Center)](https://www.chicagobooth.edu/research/kilts/research-data/nielseniq); [Open Bandit Dataset and Open Bandit Pipeline](https://github.com/st-tech/zr-obp)

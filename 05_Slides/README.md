@@ -3,5 +3,3 @@
 **Status: no new course slides added.** Save slides here with a same-stem Markdown companion, such as `M02_Visualization.md` beside `M02_Visualization.pdf`.
 
 The companion should identify the lecture/module, version, learning objectives, slide-number anchors, chart descriptions, definitions, equations, and referenced resources. Identify information omitted from a summary. Link to the original deck and any related lab.
-
-Use [the material template](../09_Templates/MATERIAL.md).

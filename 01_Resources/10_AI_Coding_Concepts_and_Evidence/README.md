@@ -1,6 +1,6 @@
 # AI-Assisted Coding · Concepts, History and Evidence
 
-49 resources (23 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+50 resources (23 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -10,7 +10,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Practitioner perspectives and books](#practitioner-perspectives-and-books) (7)
 - [Productivity evidence](#productivity-evidence) (11)
 - [Usage data and surveys](#usage-data-and-surveys) (6)
-- [Code quality, security and incidents](#code-quality-security-and-incidents) (5)
+- [Code quality, security and incidents](#code-quality-security-and-incidents) (6)
 - [AI for data analysis and empirical research](#ai-for-data-analysis-and-empirical-research) (11)
 
 ## Origins and definitions
@@ -247,6 +247,12 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Analysis of 470 open-source pull requests: AI-co-authored PRs averaged 10.83 issues vs. 6.45 for human-only PRs, with logic errors 75% more common and readability problems more than 3x.
   *Use in wiki:* Motivates readability and logic-review items on the course's code-review rubric.
   *Note:* Published 17 December 2025. Vendor study; AI authorship was inferred from co-author tags, so some 'human' PRs may involve AI.
+
+- [recommended] **[Vulnerabilities in AI Code Generators: Exploring Targeted Data Poisoning Attacks](https://arxiv.org/abs/2308.04451v3)** (2024) — Cotroneo, D.; Improta, C.; Liguori, P.; Natella, R. *IEEE/ACM International Conference on Program Comprehension (ICPC 2024)*
+  `paper` · `advanced` · `access: open` · `AI angle`
+  Shows that injecting a small share of poisoned training examples can make AI code generators emit vulnerable code for targeted prompts while overall accuracy stays normal, which makes the attack hard to detect.
+  *Use in wiki:* Supports the course rule that AI-written code is reviewed and tested, not trusted; pairs with the slopsquatting and code-security readings in this folder.
+  *Note:* Also on the MBA 542 Module 8 reading list. The author list is from recollection of the arXiv entry; confirm it before citing. IEEE Xplore record: https://ieeexplore.ieee.org/document/10556436.
 
 ## AI for data analysis and empirical research
 

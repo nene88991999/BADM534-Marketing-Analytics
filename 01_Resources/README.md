@@ -51,7 +51,7 @@ Downloaded PDFs were parsed; ZIP archives passed CRC checks; notebooks were chec
 
 Keep the instructor resource library separate from the eventual public site. Publicly readable material does not automatically permit copying to GitHub. In particular, the Python for Data Analysis web text restricts copying, Train's electronic book restricts use to personal research and study, and the Kohavi paper explicitly prohibits redistribution. Link to those sources. Retain license notices for repository code and cite datasets. Open-license materials still require attribution and attention to third-party exceptions.
 
-The sample syllabus remains in `00_Sample_Materials`. It includes private course-access information and a copyright notice, so this library links to it locally rather than copying its full text into a public-ready index. The conflict between its two AI-use passages is documented in the course map.
+The historical syllabus remains an internal instructor reference in Dropbox and is excluded from Git publication. Its topic coverage and the differences between its two AI-use passages are summarized in the course map.
 
 ## Additional Material in the Shared Folder
 

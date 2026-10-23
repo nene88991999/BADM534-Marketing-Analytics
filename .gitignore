@@ -9,9 +9,9 @@ venv/
 .env.*
 !.env.example
 
-# Historical syllabus includes course-access information.
-/00_Sample_Materials/*
-!/00_Sample_Materials/README.md
+# Instructor preparation folders stay in Dropbox only.
+/00_Sample_Materials/
+/09_Templates/
 
 # Local-only records and teaching keys; keep outside the student repository.
 /Instructor_Private/
