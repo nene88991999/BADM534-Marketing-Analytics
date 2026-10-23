@@ -1,0 +1,90 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: "pyproject.toml"
+      - uses: pre-commit/action@v3.0.1
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"
+
+      - name: set timezone
+        run: |
+          TZ="Europe/London" &&
+          sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
+
+      - name: install linux deps
+        run: |
+          sudo apt-get -y install openssl graphviz nano texlive graphviz-dev unzip
+
+      - name: install special fonts
+        run: |
+          sudo mkdir -p /usr/share/fonts/truetype/ &&
+          wget -O "Varta[wght].ttf" "https://github.com/google/fonts/raw/main/ofl/varta/Varta%5Bwght%5D.ttf" &&
+          sudo install -m644 "Varta[wght].ttf" /usr/share/fonts/truetype/ &&
+          rm "Varta[wght].ttf" &&
+          sudo fc-cache -f
+
+      - name: install text models
+        run: |
+          uv run python3 -m spacy download en_core_web_sm &&
+          uv run python3 -m nltk.downloader all
+
+      - name: git config  # Needed as git config --get user.name is used in one example
+        run: |
+          git config user.name "$(git log -n 1 --pretty=format:%an)" &&
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+
+      - name: Cache OpenStreetMap API responses
+        # osmnx caches Overpass/Nominatim responses in ./cache; persisting it
+        # across runs avoids re-querying volunteer-run OSM servers every build
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: osmnx-${{ hashFiles('geo-*.ipynb') }}
+          restore-keys: |
+            osmnx-
+
+      - name: build the book
+        run: |
+          uv run quarto render --execute
+        env:
+            # This forces Quarto to use the Python inside your uv venv
+            QUARTO_PYTHON: ${{ github.workspace }}/.venv/bin/python
+
+      - name: success
+        run: |
+          echo "Success in building book without errors!"

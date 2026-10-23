@@ -1,0 +1,515 @@
+# Section headings per folder: each section lists the raw subtopic labels it absorbs
+M1:
+- What is marketing analytics?:
+  - Marketing analytics overview
+  - Marketing science and big data
+  - AI in marketing framework
+  - Industry research priorities
+  - MOOC (old syllabus)
+- Textbooks from the previous syllabus:
+  - Marketing analytics textbook (cases)
+  - Marketing analytics textbook (marketing engineering)
+- Python setup and basics:
+  - Environment setup (conda)
+  - Jupyter
+  - pandas
+  - Intro Python lesson
+- Git and GitHub:
+  - Git basics
+  - GitHub basics
+M2:
+- Customer data:
+  - RFM
+  - Cohort analysis
+  - Customer data platforms
+  - GA4 / web analytics
+- Privacy and customer data:
+  - Privacy (academic)
+  - Privacy (practice)
+  - Privacy law (EU)
+  - Privacy law (US)
+- Visualization principles:
+  - Visualization principles
+  - Visualization principles (classic)
+  - Chart choice
+  - Chart galleries
+  - Interactive explanations
+- Visualization in Python:
+  - matplotlib
+  - seaborn
+  - plotly
+  - Altair
+  - Altair notebooks
+- 'Communicating results: Pyramid Principle, SCQA, storytelling':
+  - Pyramid Principle
+  - Pyramid Principle (open summary)
+  - SCQA
+  - Slide writing (critique)
+  - Data storytelling
+  - Publishing a data blog
+  - Writing a data blog post
+- AI-generated charts and analysis:
+  - AI-assisted data storytelling
+  - LLM chart generation
+  - Reliability of AI analysis
+  - Reliability of AI-made charts
+M3:
+- OLS refreshers and Python implementation:
+  - OLS refresher (free textbook)
+  - OLS in Python
+  - OLS in Python (pyfixest)
+- Standard errors and fixed effects:
+  - Robust / clustered SEs
+  - Fixed effects / clustered SEs
+  - Fixed effects / panel
+- 'Marketing applications: elasticities and response models':
+  - Log-log models / price elasticity
+  - Price elasticity (empirical generalizations)
+  - Sales response models
+  - Advertising response
+  - Advertising response (empirical generalizations)
+  - Marketing mix models
+- AI pitfalls in regression analysis:
+  - 'AI pitfalls: evaluated LLM statistical code'
+  - 'AI pitfalls: statistical method choice'
+  - 'AI pitfalls: statistical/causal reasoning'
+  - p-hacking / researcher degrees of freedom
+M4:
+- 'Conjoint: foundations':
+  - Conjoint (classic references)
+  - Conjoint (free review)
+  - Conjoint (textbook)
+  - Conjoint (adaptive / ML methods)
+  - 'Conjoint: WTP vs market value'
+- 'Conjoint: design, estimation and tools':
+  - Experimental design (Python)
+  - Conjoint estimation (Python)
+  - Conjoint estimation / market simulator (Bayesian)
+  - Conjoint / choice modeling (Python, ML)
+  - Conjoint design + WTP estimation (R)
+  - Conjoint survey platforms
+- LLMs as survey and conjoint respondents:
+  - LLMs as conjoint/survey respondents
+  - LLMs as conjoint/survey respondents (critique)
+  - LLMs as survey respondents (2025-26 validation)
+  - LLMs as survey respondents (critique)
+  - LLM digital twins (dataset)
+- Segmentation and clustering:
+  - Clustering (k-means, hierarchical, GMM)
+  - Clustering (tutorial)
+  - Latent class segmentation
+  - Segmentation & targeting (open textbook)
+- Customer lifetime value:
+  - CLV (BG/NBD)
+  - CLV (BG/NBD, Pareto/NBD, Gamma-Gamma notes)
+  - CLV (Python)
+  - CLV (Python, legacy)
+  - CLV (R)
+  - CLV (managerial)
+  - CLV (review)
+  - Customer-based corporate valuation
+M5:
+- 'Text analysis in marketing: anchor papers':
+  - Text analysis in marketing (overview)
+  - Automated text analysis (dictionary methods)
+  - Text mining for market structure
+  - Customer needs from UGC (deep learning)
+  - Sentiment analysis accuracy
+  - Supervised text classification benchmark
+  - Text as data in economics (survey)
+  - Text-as-data research design
+  - NLP methods review (behavioral science)
+  - LLMs for perceptual/brand measurement
+  - LLM sentiment classification (marketing)
+  - Topic models (LDA) for brand analysis
+- Python NLP toolkit:
+  - NLTK (tokenizing, basics)
+  - spaCy (NER, pipelines)
+  - Lexicon/rule-based sentiment (VADER)
+  - TF-IDF + supervised classification
+  - Topic modeling (LDA)
+  - Neural topic modeling (BERTopic)
+  - Text embeddings
+  - Off-the-shelf transformer classifiers
+  - Text-as-data course materials (Python, non-CS audience)
+  - LLM text classification and topic modeling notebooks
+- 'LLMs as annotators: methods and validation':
+  - LLMs as text annotators
+  - LLM annotation best practices
+  - LLM classification workflow with evaluation
+  - 'LLMs as measurement: econometric validity'
+  - Valid inference with LLM labels
+  - Validating LLM annotations in regressions
+  - Reproducibility of LLM annotation
+  - Constraining LLM labels (JSON schema / enums)
+- Failure modes of LLM text analysis:
+  - 'Failure modes: LLM hacking / false conclusions'
+  - 'Failure modes: prompt sensitivity and consistency'
+- Classifying text at scale with LLM APIs:
+  - 'Bulk LLM classification: Anthropic Message Batches'
+  - 'Bulk LLM classification: Gemini Batch Mode'
+  - 'Bulk LLM classification: OpenAI Batch API'
+- Social media and reviews:
+  - 'Social media data access: Bluesky (open)'
+  - 'Social media data access: Facebook/Instagram'
+  - 'Social media data access: Reddit'
+  - 'Social media data access: X/Twitter'
+  - 'Social media data access: YouTube'
+  - 'Reviews analytics: WOM and sales'
+  - 'Reviews analytics: fake reviews'
+  - 'Reviews and influencers: regulation'
+  - Influencer marketing analytics
+- Network analysis and diffusion:
+  - Network analysis in Python (NetworkX)
+  - Network analysis notebooks
+  - Networks textbook (cascades, diffusion)
+  - Seeding / viral marketing
+  - Influence in networks (experiments)
+M6:
+- Foundations:
+  - Foundations (free book)
+  - Foundations (industry-oriented book)
+  - Causal graphs and identification
+  - Causal inference in marketing (overview)
+  - Quasi-experiments in marketing
+- A/B testing and online experiments:
+  - A/B testing
+  - A/B testing (free papers)
+  - A/B testing methodology review
+  - A/B testing pitfalls
+  - 'Pitfalls: peeking / sequential testing'
+  - 'Pitfalls: sample ratio mismatch'
+  - Sample size and power
+  - Variance reduction (CUPED)
+  - Experimentation platform blogs (Booking.com)
+  - Experimentation platform blogs (Netflix)
+  - Experiments for AI/LLM features
+  - Instrumental variables in experiments
+- Advertising measurement:
+  - Advertising measurement (experimental vs observational)
+  - Advertising measurement (field experiments)
+  - Advertising measurement (ghost ads)
+  - Advertising measurement (power)
+  - Geo experiments
+- Quasi-experimental methods in Python:
+  - Difference-in-differences
+  - Difference-in-differences pitfalls
+  - Staggered DiD (Python)
+  - Synthetic control (Python)
+  - Regression discontinuity (Python)
+  - Bayesian structural time series (CausalImpact)
+  - Quasi-experiments (Bayesian, Python)
+- Marketing mix modeling:
+  - Marketing mix modeling as incrementality
+- Heterogeneous effects, uplift and targeting:
+  - Heterogeneous treatment effects
+  - Double/debiased machine learning
+  - Uplift modeling
+  - Targeting and uplift (marketing anchor)
+  - Targeting policy evaluation
+  - Datasets (email experiment / uplift)
+- LLMs and causal inference:
+  - LLM-assisted causal analysis tools
+  - LLM-simulated experiments
+  - LLMs and causal reasoning
+  - LLMs and causal reasoning (failure modes)
+M7:
+- Core ML for business students:
+  - Intro ML course
+  - scikit-learn course
+  - Core textbook labs
+  - Cross-validation
+  - Gradient boosting
+  - Interpretability
+  - Interpretability / SHAP
+  - AutoML
+  - Tabular foundation models
+- Prediction vs. causation:
+  - Prediction vs. causal problems
+  - Prediction vs. estimation
+  - ML in marketing review
+- Marketing prediction problems:
+  - Churn prediction
+  - Retention management
+  - Next-best-offer
+  - Recommender systems
+  - Recommender systems / Netflix Prize
+  - Demand forecasting
+- Data leakage and AI-written pipelines:
+  - Data leakage
+  - Data leakage and pitfalls
+  - Data leakage in notebooks
+  - AI agent benchmarks
+- LLMs as simulated consumers:
+  - LLM silicon samples
+M8:
+- Generative AI in marketing practice:
+  - GenAI content creation
+  - AI shopping assistants (consumer side)
+  - Agentic commerce
+  - Generative engine optimization
+- Privacy and measurement:
+  - Third-party cookies / Privacy Sandbox
+  - Apple ATT
+  - Data clean rooms
+  - Marketing mix modeling / CLV
+  - Retail media measurement
+- Retail media, creators and pricing:
+  - Retail media networks
+  - Creator and influencer economy
+  - Algorithmic pricing
+- Algorithmic bias:
+  - Algorithmic bias in ad delivery
+- Industry reports:
+  - 'Industry report: AI adoption'
+  - 'Industry report: AI trends'
+  - 'Industry report: AI usage data'
+  - 'Industry report: marketing budgets'
+- 'Staying current: newsletters and podcasts':
+  - 'Newsletter and podcast: ad tech'
+  - 'Newsletter: AI and work'
+  - 'Podcast: AI in marketing'
+  - 'Blog: LLMs and AI-assisted coding'
+AI_EVIDENCE:
+- Origins and definitions:
+  - Origins of the term
+  - Software 3.0
+  - Overview and reference hub
+  - Vibe coding vs. agentic engineering
+  - Vibe coding vs. responsible AI-assisted coding
+  - Vibe engineering
+  - When to vibe code
+  - Vibe coding for non-programmers
+- Practitioner perspectives and books:
+  - Books
+  - Practitioner series
+  - Spec-driven development
+  - Context engineering
+  - Agentic engineering patterns
+  - Limits of AI coding
+- Productivity evidence:
+  - Productivity RCT
+  - Productivity RCT (enterprise)
+  - Productivity RCT (follow-up)
+  - Productivity RCT (slowdown)
+  - Productivity field experiments
+  - Generative AI and worker productivity
+  - Knowledge-work field experiment
+  - Large-scale diffusion evidence
+  - Economics of vibe coding
+  - Empirical study of vibe coding
+  - Literature review
+- Usage data and surveys:
+  - Developer survey
+  - Industry survey
+  - 'Usage data: agentic coding'
+  - 'Usage data: coding'
+  - Agent capability trends
+- Code quality, security and incidents:
+  - Code quality
+  - Security of AI-generated code
+  - Package hallucination / slopsquatting
+  - Incidents
+- AI for data analysis and empirical research:
+  - AI agents for research
+  - AI for economic and empirical research
+  - AI for replication
+  - Data analysis agent benchmarks
+  - Data analysis code benchmarks
+  - LLMs as data analysts
+  - LLMs doing empirical research
+  - Verifying AI-generated analyses
+AI_TOOLS:
+- Coding agents and assistants:
+  - Claude Code docs
+  - Claude Code on the web and desktop
+  - Cursor
+  - GitHub Copilot
+  - OpenAI Codex
+  - Gemini CLI
+  - Google Antigravity
+  - Google Jules
+  - Windsurf
+  - VS Code
+  - Pricing and plans
+- AI inside notebooks and data apps:
+  - Gemini in Colab
+  - Jupyter AI
+  - marimo
+  - Positron
+  - ChatGPT data analysis
+  - Claude.ai analysis / file creation
+  - AI data-analysis apps
+  - App builders
+- Student and education access:
+  - Student and education programs
+- Free courses:
+  - Free courses
+- 'Standards: MCP, AGENTS.md, skills, context':
+  - Model Context Protocol (MCP)
+  - AGENTS.md
+  - CLAUDE.md / project instructions
+  - Agent skills
+  - Context engineering
+  - Spec-driven development
+- Workflows, prompting and verification:
+  - Workflows
+  - Prompting guides
+  - Cookbooks and notebooks
+  - Verifying AI-generated code
+  - Git hygiene with AI agents
+  - Reproducible environments
+  - Evidence on AI coding
+- Security, privacy and risk:
+  - Agent security and permissions
+  - Security and risk
+  - Data privacy
+AI_PEDAGOGY:
+- 'Evidence: learning with AI':
+  - Learning harms in coding
+  - Learning harms without guardrails
+  - Novices and code generators
+  - Novices and metacognition
+  - Understanding AI-written code
+  - Cognitive debt
+  - Critical thinking
+  - Non-CS learners
+  - Computing education overview
+  - How students use AI
+  - How educators use AI
+  - Instructor perspectives
+- Course exemplars and AI tutors:
+  - Course exemplar (CS)
+  - Course exemplar (learning with AI)
+  - AI tutors with guardrails (CS50 Duck)
+  - Guardrailed AI tutors
+  - Agents for knowledge workers
+- Assignment and assessment design:
+  - Assignment design with AI
+  - Assignment library
+  - Assessment redesign
+  - Assessment redesign framework
+  - AI-use disclosure
+  - AI-use logging
+  - Academic integrity
+- Illinois and Gies policy:
+  - Gies guidance
+  - UIUC licensed AI tools
+  - UIUC teaching guidance
+DATASETS:
+- Transactions, RFM and CLV:
+  - Transactions / RFM / CLV
+  - Transactions / e-commerce marketplace
+  - Transactions / promotions / campaigns
+  - Market basket / reorder prediction
+  - CLV / buy-till-you-die
+  - Clickstream / conversion prediction
+  - Web analytics / GA4 / BigQuery
+- Experiments, uplift and causal inference:
+  - A/B tests / headlines
+  - Experiments / uplift
+  - Experiments / uplift / incrementality
+  - Bandits / off-policy evaluation
+  - Causal inference teaching data
+  - Attribution / bidding
+- Pricing, choice and conjoint:
+  - Pricing / scanner and panel data
+  - Pricing / scanner data
+  - Conjoint / discrete choice
+  - Conjoint / scanner panel
+  - Conjoint / segmentation / survey data
+- 'Prediction: churn, response, CTR, recommendations':
+  - Churn prediction
+  - Response modeling / direct marketing
+  - Advertising / CTR prediction
+  - Recommendations / fashion retail
+  - Recommendations / ratings
+- Marketing mix modeling:
+  - Marketing mix modeling
+  - MMM / CLV synthetic data
+- Text, reviews, social and networks:
+  - Reviews / local business
+  - Reviews / recommendations / text
+  - Social media data access
+  - Social media text / sentiment
+  - Network analysis
+- Aggregators and package datasets:
+  - Dataset aggregator
+  - Python package example datasets
+  - Visualization practice data
+TEXTBOOKS:
+- Python and data science foundations:
+  - Intro Python
+  - Intro Python / AI-assisted learning
+  - Intro Python with AI assistant
+  - Python data science stack
+  - pandas / data wrangling
+  - EDA / statistics in Python
+  - Statistics with Python
+  - Foundations of data science
+  - Intro data science (UIUC)
+  - Data science techniques
+  - Data science workflow (R)
+  - Shell / Git / agentic coding
+  - Micro-courses
+- Python for economists and econometrics:
+  - Python for econometrics
+  - Python for economics and data science
+  - Python for economists
+- Marketing analytics books and peer courses:
+  - Marketing analytics in Python
+  - Marketing analytics in Python and R
+  - Marketing research resources
+  - Peer course (Wharton) / CLV
+  - Peer course materials (Chicago Booth)
+  - Peer course materials (NYU)
+  - Peer course tools (UCSD Rady MSBA)
+  - Case collections (paid)
+  - Attribution vs experiments vs MMM
+- Causal inference:
+  - Causal inference / research design
+  - Causal inference in Python
+  - Causal ML / double machine learning
+- Machine learning, NLP and visualization:
+  - Statistical learning
+  - Deep learning
+  - LLMs / transformers for text
+  - NLP / LLMs
+  - Data visualization principles
+WIKI:
+- Hosting and deployment:
+  - GitHub Pages hosting
+  - GitHub Actions deployment
+  - Hosting alternatives
+  - GitHub Education
+  - GitHub Classroom
+  - GitHub Classroom replacement
+- Site frameworks:
+  - Quarto websites and books
+  - Quarto deployment
+  - Jupyter Book 2 / MyST
+  - MkDocs + Material
+  - Docs frameworks
+  - Plain HTML + JS
+- Running Python in the browser:
+  - In-browser Python
+  - 'In-browser Python: marimo'
+  - 'In-browser Python: package availability'
+  - In-browser code in Quarto
+  - JupyterLite on GitHub Pages
+  - Open in Colab
+  - Server-backed execution
+- Interactive components:
+  - Quizzes and interactive content
+  - Quizzes and self-checks
+  - Visual explainers
+  - Interactive dashboards
+  - Site search
+  - AI tutor / course chatbot
+- Accessibility:
+  - Accessibility
+  - 'Accessibility: UIUC policy'
+  - 'Accessibility: legal requirement'
+- Exemplar course sites:
+  - Exemplar course sites
+  - Exemplar course sites / pedagogy

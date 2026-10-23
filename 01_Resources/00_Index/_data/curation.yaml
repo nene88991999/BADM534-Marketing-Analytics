@@ -1,0 +1,45 @@
+# Manual curation applied by build_catalog.py
+# prefer: keep this entry when duplicates merge; same: ids describing one resource; distinct: look-alikes to keep apart;
+# drop: ids to exclude; set: per-id field corrections
+prefer:
+- willison-using-llms-for-code
+- uiuc-genai-ai-apps
+- github-pages-quickstart-plain-html
+- privacy-sandbox-update-2025
+- pymc-marketing-clv-quickstart
+- robyn-meta-mmm
+- dlai-claude-code-course
+- dlai-vibe-coding-replit
+same:
+- - arora-chakraborty-nishimura-2025-ai-human-hybrids
+  - arora-2025-ai-human-hybrids
+- - criteo-uplift
+  - criteo-uplift-dataset
+- - dominicks-finer-foods
+  - dominicks-scanner-data
+- - dellacqua-2023-jagged-frontier
+  - dellacqua-jagged-frontier
+- - pymc-marketing
+  - pymc-marketing-2
+distinct: []
+drop: []
+set:
+  gu-2024-analysts-verify-ai-analyses:
+    notes: Published at CHI 2024; the link is the arXiv version (v2, March 2024).
+  shen-tamkin-2026-ai-skill-formation:
+    notes: Anthropic blog post 29 January 2026; arXiv v1 28 January 2026, v2 1 February 2026.
+  prather-2024-widening-gap:
+    notes: Published at ICER 2024; the link is the arXiv preprint.
+  denny-2024-computing-education-genai-era:
+    notes: Published in Communications of the ACM (2024). The link is the arXiv preprint (June 2023) because the ACM Digital Library blocked automated access.
+  shapiro-hitsch-tuchman-tv-advertising:
+    notes: Published in Econometrica (2021); the SSRN page does not name the journal. The study covers 288 brands. A related NBER paper, 'Generalizable and Robust TV Advertising Effects' (w27684), also
+      exists.
+  allenby-brazell-howell-rossi-2014-economic-valuation:
+    notes: ''
+  goli-singh-llms-capture-human-preferences:
+    notes: Published in Marketing Science (2024). The DOI could not be confirmed because INFORMS blocked automated access.
+  uiuc-minimum-digital-accessibility-standards:
+    wiki_use: 'The binding target for the BADM 534 wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.'
+  teaching-learning-with-jupyter:
+    notes: Built with bookdown/GitBook rather than Jupyter Book. Written in 2019, before AI coding assistants.

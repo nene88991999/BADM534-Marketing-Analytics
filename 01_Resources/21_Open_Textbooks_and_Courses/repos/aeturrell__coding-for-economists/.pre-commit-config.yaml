@@ -1,0 +1,36 @@
+exclude: data/Chinook.sqlite
+exclude: data/flights.parquet
+exclude: data/tfl_small.parquet
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0  # Use the ref you want to point at
+    hooks:
+      - id: check-added-large-files
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+        name: nbstripout
+        description: 'nbstripout: strip output from Jupyter and IPython notebooks'
+        entry: nbstripout
+        language: python
+        types: [jupyter]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.15.12
+    hooks:
+      # Run the linter.
+      - id: ruff
+        types_or: [python, pyi, jupyter]
+        args: [ --fix ]
+      - id: ruff
+        types_or: [python, pyi, jupyter]
+        name: sort imports with ruff
+        args: [--select, I, --fix]
+      # Run the formatter.
+      - id: ruff-format
+        types_or: [python, pyi]
+  - repo: https://github.com/jolars/panache
+    rev: panache-formatter-v0.4.1  # Use the latest release version
+    hooks:
+      - id: panache-format

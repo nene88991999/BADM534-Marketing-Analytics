@@ -1,0 +1,34 @@
+{
+  "course_code": "BADM 534",
+  "title": "Data Analytics for Marketing Applications",
+  "instructor": "Nathan Yang",
+  "status": "preparation",
+  "updated_on": "2026-10-23",
+  "current_syllabus": null,
+  "current_schedule": null,
+  "current_ai_policy": null,
+  "released_assignments": [],
+  "released_labs": [],
+  "module_map": "COURSE_MAP.md",
+  "agent_instructions": "AGENTS.md",
+  "student_guide": "LLM_GUIDE.md",
+  "catalogs": [
+    {
+      "namespace": "curated",
+      "path": "01_Resources/RESOURCE_CATALOG.json"
+    },
+    {
+      "namespace": "additional",
+      "path": "01_Resources/00_Index/resource_catalog.json"
+    }
+  ],
+  "llm_context_paths": [
+    "README.md",
+    "AGENTS.md",
+    "COURSE_MAP.md",
+    "LLM_GUIDE.md",
+    "02_Syllabus/README.md",
+    "04_Assignments/README.md"
+  ],
+  "publication_note": "Private preparation repository. No public wiki deployed. Historic sample syllabus is local only."
+}

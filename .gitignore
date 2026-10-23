@@ -1,0 +1,22 @@
+# Local filesystem and runtime artifacts
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Historical syllabus includes course-access information.
+/00_Sample_Materials/*
+!/00_Sample_Materials/README.md
+
+# Local-only records and teaching keys; keep outside the student repository.
+/Instructor_Private/
+/Student_Submissions/
+/Grades/
+
+# Local publication staging and reports
+/.publish/

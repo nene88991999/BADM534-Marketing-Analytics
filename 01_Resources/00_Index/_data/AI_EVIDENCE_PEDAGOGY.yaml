@@ -1,0 +1,1593 @@
+# BADM 534 resource search: AI_EVIDENCE (vibe coding concepts, history, evidence)
+# and AI_PEDAGOGY (teaching and learning with AI coding tools).
+# Compiled 2026-10-23. Every URL was seen in a search result or a WebFetch in this session.
+
+# =====================================================================
+# AI_EVIDENCE: Origins and framing
+# =====================================================================
+
+- id: karpathy-vibe-coding-post-2025
+  category: AI_EVIDENCE
+  subtopic: "Origins of the term"
+  title: "There's a new kind of coding I call 'vibe coding' (X post)"
+  authors: "Karpathy, A."
+  year: 2025
+  type: blog
+  venue: "X (Twitter)"
+  url: "https://x.com/karpathy/status/1886192184808149383"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1]
+  summary: "The 2 February 2025 post that coined 'vibe coding': you give in to the vibes, accept AI-generated changes without reading the diffs, and let the model, Cursor Composer in his case, write the code."
+  wiki_use: "Opening reading for the AI module; students compare Karpathy's throwaway-project framing with the standard required for analysis code they will submit."
+  ai_angle: true
+  verified_via: fetch
+  notes: "URL cited in the Wikipedia 'Vibe coding' article and in Simon Willison's March 2025 post, which also quotes the text in full. x.com may require login to view, so link Willison's post as a backup."
+
+- id: karpathy-software-3-talk-2025
+  category: AI_EVIDENCE
+  subtopic: "Software 3.0"
+  title: "Andrej Karpathy: Software Is Changing (Again)"
+  authors: "Karpathy, A."
+  year: 2025
+  type: video
+  venue: "Y Combinator AI Startup School (YouTube)"
+  url: "https://www.youtube.com/watch?v=LCEmiRjPEtQ"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1, M7]
+  summary: "Keynote from 17 June 2025 framing LLMs as a new kind of computer programmed in English ('Software 3.0'). It covers LLM 'psychology', partial-autonomy apps with an autonomy slider, vibe coding, and building software that agents can use."
+  wiki_use: "Embed as the module's anchor video; assign the vibe coding and 'autonomy slider' segments before the first in-class AI coding lab."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Posted 18 June 2025. Free transcripts exist elsewhere if students prefer reading."
+
+- id: collins-word-of-year-2025-vibe-coding
+  category: AI_EVIDENCE
+  subtopic: "Origins of the term"
+  title: "'Vibe coding' named Collins Dictionary's Word of the Year"
+  authors: "Kolirin, L. (CNN)"
+  year: 2025
+  type: website
+  venue: "CNN Newsource (republished by KVIA)"
+  url: "https://kvia.com/news/business-technology/cnn-business-consumer/2025/11/06/vibe-coding-named-collins-dictionarys-word-of-the-year/"
+  access: open
+  level: intro
+  priority: optional
+  modules: [AI]
+  summary: "News story from 6 November 2025 on Collins naming 'vibe coding' its 2025 Word of the Year, defined as 'the use of artificial intelligence prompted by natural language to assist with the writing of computer code.'"
+  wiki_use: "One-line hook or sidebar on the wiki's AI landing page, showing how fast the term entered everyday language."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Collins's own word-of-the-year page and the BBC story would not load from this environment, so this is CNN's syndicated copy. Merriam-Webster also lists the term as slang or trending (https://www.merriam-webster.com/slang/vibe-coding): 'writing computer code in a somewhat careless fashion, with AI assistance.'"
+
+- id: wikipedia-vibe-coding
+  category: AI_EVIDENCE
+  subtopic: "Overview and reference hub"
+  title: "Vibe coding"
+  authors: "Wikipedia contributors"
+  year: 2026
+  type: website
+  venue: "Wikipedia"
+  url: "https://en.wikipedia.org/wiki/Vibe_coding"
+  access: open
+  license: "CC BY-SA 4.0"
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "Running encyclopedia entry covering the term's origin, uptake in industry, and criticism on security, maintainability and open-source impact. It cites METR, Veracode, CodeRabbit, the Replit incident, the 2026 rsync dispute and the 'Vibe Coding Kills Open Source' paper."
+  wiki_use: "Instructor-only background and a source of incident links; students can use it to find primary sources but should cite those sources instead."
+  ai_angle: true
+  verified_via: fetch
+
+- id: willison-not-all-ai-programming-is-vibe-coding
+  category: AI_EVIDENCE
+  subtopic: "Vibe coding vs. responsible AI-assisted coding"
+  title: "Not all AI-assisted programming is vibe coding (but vibe coding rocks)"
+  authors: "Willison, S."
+  year: 2025
+  type: blog
+  venue: "Simon Willison's Weblog"
+  url: "https://simonwillison.net/2025/Mar/19/vibe-coding/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1]
+  summary: "Argues that vibe coding means not reviewing the code. If you review, test and can explain the AI's code, that is ordinary software development. He also praises vibe coding for prototypes and for learning what models can do."
+  wiki_use: "Required reading paired with Karpathy's post; it supplies the course rule that anything submitted must be code you can explain."
+  ai_angle: true
+  verified_via: fetch
+
+- id: willison-how-i-use-llms-for-code
+  category: AI_EVIDENCE
+  subtopic: "Practitioner workflow"
+  title: "Here's how I use LLMs to help me write code"
+  authors: "Willison, S."
+  year: 2025
+  type: blog
+  venue: "Simon Willison's Weblog"
+  url: "https://simonwillison.net/2025/Mar/11/using-llms-for-code/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1]
+  summary: "A practical, widely shared guide from an experienced developer to getting useful code from LLMs: set realistic expectations, manage context, give precise instructions, and test everything the model writes."
+  wiki_use: "Assigned reading before the first Colab or Claude Code session; turn its tips into a checklist students apply in lab."
+  ai_angle: true
+  verified_via: search
+  notes: "Part of Willison's series 'How I use LLMs and ChatGPT' (https://simonwillison.net/series/using-llms/), which his March 19 post links to."
+
+- id: willison-vibe-engineering
+  category: AI_EVIDENCE
+  subtopic: "Vibe engineering"
+  title: "Vibe engineering"
+  authors: "Willison, S."
+  year: 2025
+  type: blog
+  venue: "Simon Willison's Weblog"
+  url: "https://simonwillison.net/2025/Oct/7/vibe-engineering/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, WIKI]
+  summary: "Coins 'vibe engineering' (7 October 2025) for experienced engineers who use coding agents while staying accountable for quality. It lists the practices agents reward: automated tests, planning, documentation, version control, code review, manual QA and preview environments."
+  wiki_use: "Basis for the course's 'vibe engineering' standards: map each practice to a requirement in the team project, such as tests, a README, Git history and peer review."
+  ai_angle: true
+  verified_via: fetch
+
+- id: willison-agentic-engineering-patterns
+  category: AI_EVIDENCE
+  subtopic: "Agentic engineering patterns"
+  title: "Agentic Engineering Patterns (guide)"
+  authors: "Willison, S."
+  year: 2026
+  type: tutorial
+  venue: "Simon Willison's Weblog (guides)"
+  url: "https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "A growing guide to working with coding agents. Chapters cover principles ('Writing code is cheap now'), how agents work, Git with agents, subagents, red/green TDD, 'First run the tests', agentic manual testing, linear walkthroughs and interactive explanations, with annotated prompts."
+  wiki_use: "Link chapters from the wiki as just-in-time references, for example red/green TDD before the regression lab and linear walkthroughs whenever students must explain AI-written code."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Page last updated around 15 March 2026. Willison defines an agent as software that runs tools in a loop toward a goal, and reserves 'vibe coding' for unreviewed prototype code."
+
+- id: willison-vibe-coding-agentic-engineering-closer-2026
+  category: AI_EVIDENCE
+  subtopic: "Vibe coding vs. agentic engineering"
+  title: "Vibe coding and agentic engineering are getting closer than I'd like"
+  authors: "Willison, S."
+  year: 2026
+  type: blog
+  venue: "Simon Willison's Weblog"
+  url: "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [AI]
+  summary: "In May 2026 Willison admits he now trusts agents enough to skip reviewing some production code. He worries the line he drew in 2025 is blurring, and notes that a polished repository no longer signals careful work."
+  wiki_use: "Discussion prompt: if experts are reviewing less, what evidence should a student team give that its analysis code is correct?"
+  ai_angle: true
+  verified_via: fetch
+
+- id: osmani-70-percent-problem
+  category: AI_EVIDENCE
+  subtopic: "Limits of AI coding"
+  title: "The 70% problem: Hard truths about AI-assisted coding"
+  authors: "Osmani, A."
+  year: 2024
+  type: blog
+  venue: "Elevate (Addy Osmani's Substack)"
+  url: "https://addyo.substack.com/p/the-70-problem-hard-truths-about"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1]
+  summary: "Argues that AI tools quickly get non-experts about 70% of the way, but the last 30% (edge cases, debugging, maintainability) needs engineering knowledge. Juniors and seniors get very different value as a result."
+  wiki_use: "Assigned reading framing why the course still teaches the analysis underneath; pair with Prather et al. (2024) on novices."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The URL came from a linking page (ipspace.net, December 2024); the Substack page itself wasn't fetched. Published December 2024. Summary based on the title and secondary coverage, so skim before assigning."
+
+- id: osmani-beyond-vibe-coding-book
+  category: AI_EVIDENCE
+  subtopic: "Books"
+  title: "Beyond Vibe Coding: From Coder to AI-Era Developer"
+  authors: "Osmani, A."
+  year: 2025
+  type: book
+  venue: "O'Reilly Media"
+  url: "https://www.oreilly.com/library/view/beyond-vibe-coding/9798341634749"
+  access: library
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "O'Reilly book (August 2025) contrasting prompt-first vibe coding with structured, AI-assisted engineering. It covers refining and debugging generated code, the risks of accepting output uncritically, and multi-agent workflows."
+  wiki_use: "Optional deeper reading; assign single chapters through O'Reilly Learning if the UIUC Library subscription covers it."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Check UIUC Library's O'Reilly Learning access; otherwise paid."
+
+- id: kim-yegge-vibe-coding-book
+  category: AI_EVIDENCE
+  subtopic: "Books"
+  title: "Vibe Coding: Building Production-Grade Software With GenAI, Chat, Agents, and Beyond"
+  authors: "Kim, G.; Yegge, S."
+  year: 2025
+  type: book
+  venue: "IT Revolution"
+  url: "https://bookshop.org/p/books/vibe-coding-building-production-grade-software-with-genai-chat-agents-and-beyond-gene-kim/b6e53e37eeba8cac"
+  access: paid
+  level: intermediate
+  priority: optional
+  modules: [AI]
+  summary: "Practitioner book (21 October 2025, foreword by Dario Amodei) on using chat and agentic AI for everything from small tools to enterprise systems while keeping engineering discipline."
+  wiki_use: "Instructor background and a source of war stories for the AI module; too long to assign in full."
+  ai_angle: true
+  verified_via: fetch
+  notes: "ISBN 9781966280026 (paperback). IT Revolution's article about the book: https://itrevolution.com/articles/vibe-coding-the-revolutionary-approach-transforming-software-development/"
+
+- id: sarkar-drosos-vibe-coding-ppig-2025
+  category: AI_EVIDENCE
+  subtopic: "Empirical study of vibe coding"
+  title: "Vibe coding: programming through conversation with artificial intelligence"
+  authors: "Sarkar, A.; Drosos, I."
+  year: 2025
+  type: paper
+  venue: "Proceedings of PPIG 2025 (Psychology of Programming Interest Group)"
+  url: "https://www.microsoft.com/en-us/research/publication/vibe-coding-programming-through-conversation-with-artificial-intelligence/"
+  oa_url: "https://arxiv.org/abs/2506.23253"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI]
+  summary: "Microsoft Research study of more than 8 hours of think-aloud vibe coding sessions. Vibe coding turns out to be iterative cycles of prompting, evaluating and hand-editing, and it shifts expertise toward managing context and judging output rather than removing the need for expertise."
+  wiki_use: "Academic anchor for the claim that vibe coding still requires expertise; good for a short discussion post."
+  ai_angle: true
+  verified_via: fetch
+
+- id: fowler-exploring-gen-ai-series
+  category: AI_EVIDENCE
+  subtopic: "Practitioner series"
+  title: "Exploring Generative AI (memo series)"
+  authors: "Böckeler, B. (main author); Morris, K.; Vaccari, M.; Doernenburg, E.; et al."
+  year: 2026
+  type: website
+  venue: "martinfowler.com (Thoughtworks)"
+  url: "https://www.martinfowler.com/articles/exploring-gen-ai.html"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "About 33 memos, from 2023 to October 2026, by Thoughtworks engineers on coding assistants and agents: multi-file editing, autonomous agents, supply-chain risk, spec-driven development, context engineering, harness engineering, TDD inside the agent loop."
+  wiki_use: "Instructor-only map of the practitioner literature; pick individual memos (below) as readings."
+  ai_angle: true
+  verified_via: fetch
+
+- id: bockeler-to-vibe-or-not
+  category: AI_EVIDENCE
+  subtopic: "When to vibe code"
+  title: "To vibe or not to vibe"
+  authors: "Böckeler, B."
+  year: 2025
+  type: blog
+  venue: "martinfowler.com"
+  url: "https://www.martinfowler.com/articles/exploring-gen-ai/to-vibe-or-not-vibe.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1]
+  summary: "Whether AI code needs review depends on three things: how likely the AI is to be wrong, how bad an error would be, and how easily you would notice it. Low-risk, high-detectability work can be vibe-coded; high-impact, low-detectability work needs close scrutiny."
+  wiki_use: "Turn the three factors into a one-page rubric students apply to each analysis step. A typo in a chart label is low risk; a silent join error in CLV data is high impact and hard to detect."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 23 September 2025."
+
+- id: bockeler-spec-driven-development-tools
+  category: AI_EVIDENCE
+  subtopic: "Spec-driven development"
+  title: "Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl"
+  authors: "Böckeler, B."
+  year: 2025
+  type: blog
+  venue: "martinfowler.com"
+  url: "https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Compares three spec-driven development tools (Kiro, GitHub spec-kit, Tessl) and proposes three levels: spec-first, spec-anchored and spec-as-source. Also raises concerns about verbosity, review burden and echoes of model-driven development."
+  wiki_use: "Background for a 'write the analysis plan before prompting' assignment, where students draft a short spec (question, data, method, outputs) that the agent must follow."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 15 October 2025."
+
+- id: bockeler-context-engineering-coding-agents
+  category: AI_EVIDENCE
+  subtopic: "Context engineering"
+  title: "Context Engineering for Coding Agents"
+  authors: "Böckeler, B."
+  year: 2026
+  type: blog
+  venue: "martinfowler.com"
+  url: "https://www.martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Explains how to curate what a coding agent sees: CLAUDE.md or AGENTS.md guidance files loaded every session, path-scoped rules, and skills that load instructions or scripts on demand."
+  wiki_use: "Reference for a lab where each team writes a CLAUDE.md or AGENTS.md describing its dataset, variable definitions and coding conventions."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 5 February 2026."
+
+- id: fowler-bliki-vibe-coding
+  category: AI_EVIDENCE
+  subtopic: "Definitions"
+  title: "Vibe Coding (bliki entry)"
+  authors: "Fowler, M."
+  year: 2026
+  type: blog
+  venue: "martinfowler.com"
+  url: "https://martinfowler.com/bliki/VibeCoding.html"
+  access: open
+  level: intro
+  priority: optional
+  modules: [AI]
+  summary: "Short definition (21 May 2026): building apps by instructing an LLM without inspecting the code. Fowler says it suits non-programmers and throwaway tools, but the code often has poor maintainability, correctness and security."
+  wiki_use: "Glossary link for 'vibe coding' on the wiki."
+  ai_angle: true
+  verified_via: fetch
+
+- id: mollick-speaking-things-into-existence
+  category: AI_EVIDENCE
+  subtopic: "Vibe coding for non-programmers"
+  title: "Speaking things into existence: Expertise in a vibe-filled world of work"
+  authors: "Mollick, E."
+  year: 2025
+  type: newsletter
+  venue: "One Useful Thing"
+  url: "https://www.oneusefulthing.org/p/speaking-things-into-existence"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M8]
+  summary: "A business-school professor vibe codes a 3D game with Claude Code, builds an interactive course, and runs a research analysis on old crowdfunding data. He argues vibe coding redistributes expertise rather than eliminating it: you still need to know what you want and judge what you get."
+  wiki_use: "Accessible reading for non-CS business students; the crowdfunding-data example works as a model for an AI-assisted marketing analysis."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 11 March 2025."
+
+- id: michels-vibe-coding-state-of-the-art-review-2026
+  category: AI_EVIDENCE
+  subtopic: "Literature review"
+  title: "Vibe Coding: Practice, Performance, Productivity, and Risk - A State-of-the-Art Review"
+  authors: "Michels, D. L.; Abu Ghazaleh, M.; Lazzari, F.; Kassem, N.; Klein, J."
+  year: 2026
+  type: paper
+  venue: "arXiv (cs.SE) 2608.20446"
+  url: "https://arxiv.org/abs/2608.20446"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [AI]
+  summary: "Cross-disciplinary review from August 2026 (software engineering, HCI, labor economics, security, education). It reconciles conflicting productivity results by measurement method, scope and horizon, and conjectures that gains are real for new code but shrink or reverse on mature codebases."
+  wiki_use: "Instructor background for an evidence lecture; its 'new code vs. mature codebase' conjecture is a good discussion question."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Recent preprint, not peer reviewed. Its HTML version didn't expose the reference list in this pass."
+
+- id: koren-bekes-vibe-coding-kills-open-source
+  category: AI_EVIDENCE
+  subtopic: "Economics of vibe coding"
+  title: "Vibe Coding Kills Open Source"
+  authors: "Koren, M.; Békés, G.; Hinz, J.; Lohmann, A."
+  year: 2026
+  type: paper
+  venue: "arXiv (econ.GN) 2601.15494"
+  url: "https://arxiv.org/abs/2601.15494"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [AI, M8]
+  summary: "Economic model with entry and quality choice. Vibe coding makes reusing open-source code cheaper but cuts the user engagement that pays maintainers, so wider adoption can mean fewer and lower-quality open-source projects and lower welfare despite higher productivity."
+  wiki_use: "Case for the 'Current Topics' module on platform and ecosystem externalities of AI tools; Békés also co-wrote a widely used data analysis textbook."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Submitted 21 January 2026."
+
+# =====================================================================
+# AI_EVIDENCE: Productivity evidence
+# =====================================================================
+
+- id: peng-2023-copilot-rct
+  category: AI_EVIDENCE
+  subtopic: "Productivity RCT"
+  title: "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot"
+  authors: "Peng, S.; Kalliamvakou, E.; Cihon, P.; Demirer, M."
+  year: 2023
+  type: paper
+  venue: "arXiv 2302.06590"
+  url: "https://arxiv.org/abs/2302.06590"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M6]
+  summary: "Controlled experiment in which developers with GitHub Copilot finished an HTTP server in JavaScript 55.8% faster than the control group."
+  wiki_use: "Classic early RCT; use in M6 as a worked example of a two-arm experiment and of what a narrow, well-specified task can and cannot tell us."
+  ai_angle: true
+  verified_via: fetch
+
+- id: cui-2025-three-field-experiments
+  category: AI_EVIDENCE
+  subtopic: "Productivity field experiments"
+  title: "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers"
+  authors: "Cui, Z. K.; Demirer, M.; Jaffe, S.; Musolff, L.; Peng, S.; Salz, T."
+  year: 2025
+  type: paper
+  venue: "Management Science"
+  url: "https://pubsonline.informs.org/doi/fpi/10.1287/mnsc.2025.00535"
+  doi: "10.1287/mnsc.2025.00535"
+  oa_url: "https://economics.mit.edu/sites/default/files/inline-files/draft_copilot_experiments.pdf"
+  access: open
+  level: advanced
+  priority: core
+  modules: [AI, M6, M8]
+  summary: "Three randomized field experiments (Microsoft, Accenture, an anonymous Fortune 100 firm; 4,867 developers) find a 26.08% (SE 10.3%) increase in completed tasks with an AI coding assistant (GitHub Copilot)."
+  wiki_use: "Academic anchor in Management Science for M6 (field experiments, staggered rollout, pooling estimates) and the AI module's evidence page."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The INFORMS page didn't show volume or issue, so check the final citation. SSRN version: https://papers.ssrn.com/abstract=4945566. The paper also reports heterogeneity by developer experience; check the abstract before quoting."
+
+- id: metr-2025-early-ai-os-developer-rct
+  category: AI_EVIDENCE
+  subtopic: "Productivity RCT (slowdown)"
+  title: "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
+  authors: "Becker, J.; Rush, N.; Barnes, E.; Rein, D. (METR)"
+  year: 2025
+  type: report
+  venue: "METR (blog + arXiv 2507.09089)"
+  url: "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+  oa_url: "https://arxiv.org/abs/2507.09089"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M6]
+  summary: "RCT with 16 experienced open-source developers on 246 real issues in their own large repositories. Allowing AI made tasks take 19% longer, yet developers expected a 24% speedup and afterwards believed AI had sped them up by 20%."
+  wiki_use: "Centerpiece case on perception vs. measurement; students contrast it with Cui et al. and discuss task, population and tool differences."
+  ai_angle: true
+  verified_via: fetch
+  notes: "METR now flags these results as out of date; always pair with the February 2026 update."
+
+- id: metr-2026-uplift-update
+  category: AI_EVIDENCE
+  subtopic: "Productivity RCT (follow-up)"
+  title: "We are Changing our Developer Productivity Experiment Design"
+  authors: "Becker, J.; Rush, N.; Cunningham, T.; Rein, D.; Mahamud, K. (METR)"
+  year: 2026
+  type: report
+  venue: "METR blog"
+  url: "https://metr.org/blog/2026-02-24-uplift-update/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M6]
+  summary: "Late-2025 follow-up (57 developers, 800+ tasks). Point estimates now show speedups (-18% time for returning developers, -4% for new ones), but METR calls them weak evidence. Developers increasingly refused to work without AI, causing selection, and METR is redesigning the study."
+  wiki_use: "Excellent M6 teaching case on selection, attrition and non-compliance when the treatment becomes indispensable; pair with the 2025 study."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 24 February 2026. METR calls the central estimate 'a bad proxy for the real productivity impact'."
+
+- id: metr-time-horizons-2025
+  category: AI_EVIDENCE
+  subtopic: "Agent capability trends"
+  title: "Measuring AI Ability to Complete Long Software Tasks"
+  authors: "Kwa, T.; West, B.; Becker, J.; et al. (METR)"
+  year: 2025
+  type: report
+  venue: "METR (blog + arXiv 2503.14499)"
+  url: "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+  oa_url: "https://arxiv.org/abs/2503.14499"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, M3]
+  summary: "Introduces the '50% time horizon', the length of tasks (in human-expert time) that agents complete with 50% reliability, and finds it doubled roughly every 7 months over six years."
+  wiki_use: "M3 tie-in: students fit the log-linear trend themselves; also frames why the tools change mid-semester."
+  ai_angle: true
+  verified_via: fetch
+  notes: "METR says the static March 2025 figures are dated. Current methodology (Time Horizon 1.1, January 2026) is at https://metr.org/time-horizons/"
+
+- id: paradis-2024-google-enterprise-rct
+  category: AI_EVIDENCE
+  subtopic: "Productivity RCT (enterprise)"
+  title: "How much does AI impact development speed? An enterprise-based randomized controlled trial"
+  authors: "Paradis, E.; Grey, K.; Madison, Q.; Nam, D.; Macvean, A.; Meimand, V.; Zhang, N.; Ferrari-Church, B.; Chandra, S."
+  year: 2024
+  type: paper
+  venue: "arXiv 2410.12944"
+  url: "https://arxiv.org/abs/2410.12944"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, M6]
+  summary: "RCT with 96 Google engineers on an enterprise-grade task: AI features cut time on task by about 21%, with a wide confidence interval, and gains were larger for developers who spend more hours a day coding."
+  wiki_use: "Third data point beside Peng and METR for an in-class 'meta-analysis by hand' exercise."
+  ai_angle: true
+  verified_via: fetch
+
+- id: dellacqua-2023-jagged-frontier
+  category: AI_EVIDENCE
+  subtopic: "Knowledge-work field experiment"
+  title: "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality"
+  authors: "Dell'Acqua, F.; McFowland III, E.; Mollick, E. R.; Lifshitz-Assaf, H.; Kellogg, K.; Rajendran, S.; Krayer, L.; Candelon, F.; Lakhani, K. R."
+  year: 2023
+  type: paper
+  venue: "Harvard Business School Working Paper 24-013"
+  url: "https://papers.ssrn.com/abstract=4573321"
+  oa_url: "https://mitsloan.mit.edu/sites/default/files/2023-10/SSRN-id4573321.pdf"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M6, M8]
+  summary: "Preregistered experiment with BCG consultants: GPT-4 improved speed and quality on tasks inside the AI 'frontier' but reduced correctness on a task just outside it. Introduces 'centaur' and 'cyborg' work styles."
+  wiki_use: "Core business-school reading on why AI help is uneven; students map which BADM 534 tasks sit inside or outside the frontier."
+  ai_angle: true
+  verified_via: search
+  notes: "The SSRN page wouldn't load directly; URL and PDF come from search results. Author list as given in Shen & Tamkin (2026). A later journal version couldn't be confirmed."
+
+- id: brynjolfsson-li-raymond-generative-ai-at-work
+  category: AI_EVIDENCE
+  subtopic: "Generative AI and worker productivity"
+  title: "Generative AI at Work"
+  authors: "Brynjolfsson, E.; Li, D.; Raymond, L."
+  year: 2025
+  type: paper
+  venue: "Quarterly Journal of Economics"
+  url: "https://digitaleconomy.stanford.edu/publication/generative-ai-at-work"
+  oa_url: "https://arxiv.org/abs/2304.11771"
+  access: open
+  level: advanced
+  priority: core
+  modules: [AI, M6, M8]
+  summary: "Staggered rollout of an AI assistant to 5,172 customer-support agents raised issues resolved per hour by about 15% on average. The largest gains went to less experienced and lower-skilled workers; top workers gained little."
+  wiki_use: "Economics anchor for the heterogeneity theme (who gains from AI); useful in M6 as a staggered-adoption design."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Customer support, not coding. Published in QJE 2025 (article qjae044, as cited in Shen & Tamkin 2026); the QJE landing page wasn't checked here."
+
+- id: daniotti-2025-who-is-using-ai-to-code
+  category: AI_EVIDENCE
+  subtopic: "Large-scale diffusion evidence"
+  title: "Who is using AI to code? Global diffusion and impact of generative AI"
+  authors: "Daniotti, S.; Wachs, J.; Feng, X.; Neffke, F."
+  year: 2025
+  type: paper
+  venue: "arXiv 2506.08945"
+  url: "https://arxiv.org/abs/2506.08945"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [AI, M7, M8]
+  summary: "Trains a classifier to detect AI-written Python functions in 30M+ GitHub commits from about 170,000 developers. About 29% of US Python functions are AI-written; AI raises quarterly output by about 3.6%, and gains go mostly to experienced programmers."
+  wiki_use: "M7 tie-in (a classifier used as a measurement tool) and evidence that AI may widen skill gaps."
+  ai_angle: true
+  verified_via: fetch
+
+- id: dora-2025-ai-assisted-software-development
+  category: AI_EVIDENCE
+  subtopic: "Industry survey"
+  title: "2025 DORA State of AI-assisted Software Development report"
+  authors: "DORA (Google Cloud)"
+  year: 2025
+  type: report
+  venue: "Google Cloud / DORA"
+  url: "https://cloud.google.com/devops/state-of-devops"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "Annual DORA survey reframed around AI. It argues that AI amplifies an organization's existing strengths and weaknesses, and introduces a seven-practice DORA AI Capabilities Model."
+  wiki_use: "Instructor background; the 'AI as amplifier' framing works as a slide for business students thinking about adoption."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Download gated by a contact form. Headline adoption figures weren't visible on the landing page."
+
+- id: stackoverflow-2025-survey-ai
+  category: AI_EVIDENCE
+  subtopic: "Developer survey"
+  title: "Stack Overflow Developer Survey 2025: AI"
+  authors: "Stack Overflow"
+  year: 2025
+  type: report
+  venue: "Stack Overflow"
+  url: "https://survey.stackoverflow.co/2025/ai/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M2]
+  summary: "Survey of 49,000+ developers: 84% use or plan to use AI tools, but 46% distrust their accuracy. 66% cite 'almost right' solutions as their top frustration, and about 77% say vibe coding isn't part of their professional work."
+  wiki_use: "Data for a quick M2 visualization exercise (trust vs. use) and a reality check on how professionals use AI."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Released 29 July 2025. Press release: https://stackoverflow.co/company/press/archive/stack-overflow-2025-developer-survey/. The raw data download page may also serve as a class dataset (not checked)."
+
+- id: stackoverflow-2026-survey-ai
+  category: AI_EVIDENCE
+  subtopic: "Developer survey"
+  title: "Stack Overflow Developer Survey 2026: AI"
+  authors: "Stack Overflow"
+  year: 2026
+  type: report
+  venue: "Stack Overflow"
+  url: "https://survey.stackoverflow.co/2026/ai"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M2]
+  summary: "Sixteenth survey (30,903 responses, 169 countries). Coding assistants and agents are now the top AI use case (66%); Claude Code (66%) and GitHub Copilot (59%) lead among coding agents; 48% trust AI only when they can easily check the answer."
+  wiki_use: "Pair with the 2025 survey to show year-over-year change; the 'trust when verifiable' finding motivates the course's verification habits."
+  ai_angle: true
+  verified_via: fetch
+  notes: "No release date on the page. Figures are as summarized from the page in October 2026, so recheck before citing, especially the trust comparisons with 2025."
+
+- id: anthropic-economic-index-software-development-2025
+  category: AI_EVIDENCE
+  subtopic: "Usage data: coding"
+  title: "Anthropic Economic Index: AI's impact on software development"
+  authors: "Anthropic (Societal Impacts team)"
+  year: 2025
+  type: report
+  venue: "Anthropic"
+  url: "https://www.anthropic.com/research/impact-software-development"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M5]
+  summary: "Analysis of coding conversations from April 2025: about 79% of Claude Code conversations were automation (AI does the task) vs. 49% on Claude.ai. Web languages dominate; Python was 14% and SQL 6%; startups were early Claude Code adopters."
+  wiki_use: "Shows how privacy-preserving text classification of conversations (M5 methods) produces economic evidence."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 28 April 2025. One-week sample covering Free and Pro only; the startup vs. enterprise shares are inconsistent within the post."
+
+- id: anthropic-claude-code-expertise-2026
+  category: AI_EVIDENCE
+  subtopic: "Usage data: agentic coding"
+  title: "Agentic coding and persistent returns to expertise"
+  authors: "Hitzig, Z.; Massenkoff, M.; Lyubich, E.; Zhang, S.; Heller, R.; McCrory, P. (Anthropic)"
+  year: 2026
+  type: report
+  venue: "Anthropic Economic Research"
+  url: "https://www.anthropic.com/research/claude-code-expertise"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M8]
+  summary: "About 400,000 Claude Code sessions (October 2025 to April 2026): users make about 70% of planning decisions but only about 20% of execution decisions. Domain experts succeed more often, non-software occupations succeed at nearly the same rates as engineers, and data analysis is a growing share of use."
+  wiki_use: "Key evidence for business students that domain expertise, not syntax, drives success with agents; a good opener for the course's 'you decide what, the agent decides how' framing."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 16 June 2026. The companion Economic Index report 'Cadences' (26 June 2026) is at https://www.anthropic.com/research/economic-index-june-2026-report"
+
+# =====================================================================
+# AI_EVIDENCE: Quality and security evidence
+# =====================================================================
+
+- id: pearce-2022-asleep-at-the-keyboard
+  category: AI_EVIDENCE
+  subtopic: "Security of AI-generated code"
+  title: "Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions"
+  authors: "Pearce, H.; Ahmad, B.; Tan, B.; Dolan-Gavitt, B.; Karri, R."
+  year: 2022
+  type: paper
+  venue: "IEEE Symposium on Security and Privacy 2022"
+  url: "https://arxiv.org/abs/2108.09293"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI]
+  summary: "Generated 1,689 programs with Copilot across 89 security-relevant scenarios and found about 40% vulnerable."
+  wiki_use: "Classic citation for 'AI code can look right and be unsafe'; a short discussion item in the AI module."
+  ai_angle: true
+  verified_via: fetch
+
+- id: veracode-2025-genai-code-security-report
+  category: AI_EVIDENCE
+  subtopic: "Security of AI-generated code"
+  title: "GenAI Code Security Report (October 2025 update)"
+  authors: "Veracode"
+  year: 2025
+  type: report
+  venue: "Veracode"
+  url: "https://www.veracode.com/resources/analyst-reports/2025-genai-code-security-report/"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "Industry test of code from 100+ LLMs in Java, JavaScript, Python and C#: AI-generated code introduced risky security flaws in 45% of tests."
+  wiki_use: "Headline statistic for a slide on why students must not paste credentials or trust generated data-access code."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Vendor report; methodology detail is behind the download. Registration not confirmed on the page."
+
+- id: spracklen-2025-package-hallucinations
+  category: AI_EVIDENCE
+  subtopic: "Package hallucination / slopsquatting"
+  title: "We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs"
+  authors: "Spracklen, J.; Wijewickrama, R.; Sakib, A. H. M. N.; Maiti, A.; Viswanath, B.; Jadliwala, M."
+  year: 2025
+  type: paper
+  venue: "USENIX Security Symposium 2025"
+  url: "https://arxiv.org/abs/2406.10279"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M1]
+  summary: "576,000 code samples from 16 LLMs: commercial models hallucinate nonexistent packages at least 5.2% of the time and open-source models 21.7%, producing 205,474 unique fake package names that attackers can register ('slopsquatting')."
+  wiki_use: "Concrete rule for M1 setup labs: verify every pip install suggested by AI against PyPI before running it."
+  ai_angle: true
+  verified_via: fetch
+  notes: "No standalone 'slopsquatting' source was verified in this pass; the Thoughtworks memo 'Coding Assistants Threaten the Software Supply Chain' (https://www.martinfowler.com/articles/exploring-gen-ai/software-supply-chain-attack-surface.html, May 2025) covers the same risk for practitioners."
+
+- id: replit-saastr-database-deletion-2025
+  category: AI_EVIDENCE
+  subtopic: "Incidents"
+  title: "Vibe coding service Replit deleted user's production database, faked data, told fibs galore"
+  authors: "Sharwood, S."
+  year: 2025
+  type: website
+  venue: "The Register"
+  url: "https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI]
+  summary: "July 2025 incident in which Replit's agent deleted SaaStr founder Jason Lemkin's production database despite instructions not to touch it, generated fake data to hide bugs, and wrongly claimed the data couldn't be restored."
+  wiki_use: "Short case for a 'guardrails' discussion: separate dev and prod data, use version control, never give an agent write access to the only copy of your data."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Business Insider coverage of the Replit CEO's apology: https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7"
+
+- id: coderabbit-2025-ai-vs-human-code-report
+  category: AI_EVIDENCE
+  subtopic: "Code quality"
+  title: "Our new report: AI code creates 1.7x more problems (State of AI vs Human Code Generation)"
+  authors: "Loker, D. (CodeRabbit)"
+  year: 2025
+  type: report
+  venue: "CodeRabbit blog"
+  url: "https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "Analysis of 470 open-source pull requests: AI-co-authored PRs averaged 10.83 issues vs. 6.45 for human-only PRs, with logic errors 75% more common and readability problems more than 3x."
+  wiki_use: "Motivates readability and logic-review items on the course's code-review rubric."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 17 December 2025. Vendor study; AI authorship was inferred from co-author tags, so some 'human' PRs may involve AI."
+
+# =====================================================================
+# AI_EVIDENCE: AI for data analysis specifically
+# =====================================================================
+
+- id: korinek-2023-jel-generative-ai-economic-research
+  category: AI_EVIDENCE
+  subtopic: "AI for economic and empirical research"
+  title: "Generative AI for Economic Research: Use Cases and Implications for Economists"
+  authors: "Korinek, A."
+  year: 2023
+  type: paper
+  venue: "Journal of Economic Literature 61(4): 1281-1317"
+  url: "https://www.aeaweb.org/articles?id=10.1257/jel.20231736"
+  doi: "10.1257/jel.20231736"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M3, M8]
+  summary: "Catalog of LLM use cases for researchers (ideation, writing, background research, coding, data analysis, math), with example prompts, a rating of each use case, and a replication package."
+  wiki_use: "Anchor reading for using LLMs in analysis work; students try two coding or data use cases on course data and compare with Korinek's ratings."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Replication package: https://doi.org/10.3886/E194623V1. Updates: June 2024 (https://www.aeaweb.org/articles/materials/21298) and December 2024 'LLMs Learn to Collaborate and Reason' (https://www.aeaweb.org/articles/materials/22146). Access to the JEL article may depend on AEA or library access, but the updates are open."
+
+- id: korinek-2025-ai-agents-economic-research
+  category: AI_EVIDENCE
+  subtopic: "AI agents for research"
+  title: "AI Agents for Economic Research: August 2025 Update"
+  authors: "Korinek, A."
+  year: 2025
+  type: paper
+  venue: "Journal of Economic Literature (online update to Korinek 2023)"
+  url: "https://www.aeaweb.org/articles/materials/23826"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M3, M8]
+  summary: "Update to the JEL article on agentic AI for research: what agents are, how economists can use them (deep research, coding agents) and worked examples."
+  wiki_use: "Bridge reading from chat-based help to agentic workflows (Claude Code, Codex, Gemini CLI) for empirical analysis."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Direct file link: https://www.aeaweb.org/content/file?id=23290. Contents summarized from the title and landing page, so skim before assigning."
+
+- id: gu-2024-analysts-verify-ai-analyses
+  category: AI_EVIDENCE
+  subtopic: "Verifying AI-generated analyses"
+  title: "How Do Analysts Understand and Verify AI-Assisted Data Analyses?"
+  authors: "Gu, K.; Shang, R.; Althoff, T.; Wang, C.; Drucker, S. M."
+  year: 2024
+  type: paper
+  venue: "CHI 2024"
+  url: "https://arxiv.org/abs/2309.10947"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M2, M3]
+  summary: "Qualitative study of 22 analysts using a design probe that shows AI explanations, code, plots and interactive tables. It documents how analysts verify AI analyses that can look right but reach wrong conclusions, and how their backgrounds shape their checks."
+  wiki_use: "Basis for a 'verify the AI's analysis' lab: give students an AI-produced regression or segmentation with a planted error and have them apply the paper's verification behaviors."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The arXiv page doesn't name a venue; CHI 2024 per the task brief and the v2 date (March 2024)."
+
+- id: gu-2024-blade-benchmark
+  category: AI_EVIDENCE
+  subtopic: "Data analysis agent benchmarks"
+  title: "BLADE: Benchmarking Language Model Agents for Data-Driven Science"
+  authors: "Gu, K.; Shang, R.; Jiang, R.; Kuang, K.; et al.; Heer, J.; Althoff, T."
+  year: 2024
+  type: paper
+  venue: "arXiv 2408.09667"
+  url: "https://arxiv.org/abs/2408.09667"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [AI, M3, M6]
+  summary: "Benchmark of 12 datasets and research questions with expert-coded ground truth on analytic choices. LLM agents tend to stick to basic analyses and explore fewer defensible alternatives than experts."
+  wiki_use: "Connects to many-analyst and garden-of-forking-paths themes: ask an agent and a teammate to analyze the same question and compare the choices they make."
+  ai_angle: true
+  verified_via: fetch
+
+- id: jing-2024-dsbench
+  category: AI_EVIDENCE
+  subtopic: "Data analysis agent benchmarks"
+  title: "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?"
+  authors: "Jing, L.; Huang, Z.; Wang, X.; Yao, W.; Yu, W.; Ma, K.; Zhang, H.; Du, X.; Yu, D."
+  year: 2024
+  type: paper
+  venue: "arXiv 2409.07703"
+  url: "https://arxiv.org/abs/2409.07703"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [AI, M7]
+  summary: "Benchmark of realistic data analysis and modeling tasks; at publication the best agent solved only 34.12% of data analysis tasks."
+  wiki_use: "Instructor background; one or two DSBench-style tasks could be adapted as in-class challenges."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Scores are from 2024 to 2025 models and are now outdated."
+
+- id: huang-2024-da-code
+  category: AI_EVIDENCE
+  subtopic: "Data analysis agent benchmarks"
+  title: "DA-Code: Agent Data Science Code Generation Benchmark for Large Language Models"
+  authors: "Huang, Y.; Luo, J.; Yu, Y.; Zhang, Y.; Lei, F.; Wei, Y.; He, S.; Huang, L.; Liu, X.; Zhao, J.; Liu, K."
+  year: 2024
+  type: paper
+  venue: "arXiv 2410.07331"
+  url: "https://arxiv.org/abs/2410.07331"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [AI, M7]
+  summary: "Agent-based data science benchmark (wrangling, EDA, ML); the best LLMs reached 30.5% accuracy at release."
+  wiki_use: "Instructor background on which data-science steps agents fail most."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Project site: https://da-code-bench.github.io. Repository license not checked."
+
+- id: zhang-2024-dseval
+  category: AI_EVIDENCE
+  subtopic: "Data analysis agent benchmarks"
+  title: "Benchmarking Data Science Agents (DSEval)"
+  authors: "Zhang, Y.; Jiang, Q.; Han, X.; Chen, N.; Yang, Y.; Ren, K."
+  year: 2024
+  type: paper
+  venue: "arXiv 2402.17168"
+  url: "https://arxiv.org/abs/2402.17168"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [AI, M7]
+  summary: "Introduces DSEval, an evaluation paradigm and benchmarks covering the full data science lifecycle, with a summary of common agent failure modes."
+  wiki_use: "Instructor background; its failure taxonomy can seed a 'common AI mistakes in pandas' checklist."
+  ai_angle: true
+  verified_via: fetch
+
+- id: lai-2023-ds-1000
+  category: AI_EVIDENCE
+  subtopic: "Data analysis code benchmarks"
+  title: "DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation"
+  authors: "Lai, Y.; Li, C.; Wang, Y.; Zhang, T.; Zhong, R.; Zettlemoyer, L.; Yih, S. W.; Fried, D.; Wang, S.; Yu, T."
+  year: 2022
+  type: paper
+  venue: "arXiv 2211.11501"
+  url: "https://arxiv.org/abs/2211.11501"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [AI, M1]
+  summary: "1,000 StackOverflow-derived data science problems across seven Python libraries (NumPy, pandas, etc.), graded by execution; Codex-002 scored 43.3% at release."
+  wiki_use: "Sample problems make good warm-up exercises: students solve one with and without AI and check against the tests."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Project site: https://ds1000-code-gen.github.io. Published at ICML 2023 per common citation, which wasn't confirmed on the arXiv page."
+
+- id: siegel-2024-core-bench
+  category: AI_EVIDENCE
+  subtopic: "AI for replication"
+  title: "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark"
+  authors: "Siegel, Z. S.; Kapoor, S.; Nadgir, N.; Stroebl, B.; Narayanan, A."
+  year: 2024
+  type: paper
+  venue: "arXiv 2409.11363"
+  url: "https://arxiv.org/abs/2409.11363"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [AI, M8]
+  summary: "270 tasks from 90 papers in CS, social science and medicine test whether agents can reproduce published results from code and data. The best agent reached 21% on the hardest tasks."
+  wiki_use: "Frames the team project's GitHub deliverable: can an agent, or a classmate, reproduce your blog post's results from your repo?"
+  ai_angle: true
+  verified_via: fetch
+  notes: "v2 dated 22 June 2026."
+
+- id: cheng-2023-is-gpt4-a-good-data-analyst
+  category: AI_EVIDENCE
+  subtopic: "LLMs as data analysts"
+  title: "Is GPT-4 a Good Data Analyst?"
+  authors: "Cheng, L.; Li, X.; Bing, L."
+  year: 2023
+  type: paper
+  venue: "arXiv 2305.15038"
+  url: "https://arxiv.org/abs/2305.15038"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [AI, M2]
+  summary: "Early test of GPT-4 as an end-to-end data analyst against professional human analysts; it was comparable on the paper's metrics, though the authors stop short of saying it can replace analysts."
+  wiki_use: "Historical marker for how quickly 'AI analyst' claims evolved; pair with Gu et al. on verification."
+  ai_angle: true
+  verified_via: fetch
+
+- id: manning-zhu-horton-2024-automated-social-science
+  category: AI_EVIDENCE
+  subtopic: "LLMs doing empirical research"
+  title: "Automated Social Science: Language Models as Scientist and Subjects"
+  authors: "Manning, B. S.; Zhu, K.; Horton, J. J."
+  year: 2024
+  type: paper
+  venue: "arXiv 2404.11794"
+  url: "https://arxiv.org/abs/2404.11794"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [AI, M6, M8]
+  summary: "An LLM system generates hypotheses, builds structural causal models, runs simulated experiments with LLM agents (negotiation, bail, interviews, auctions) and estimates effects. The LLM gets effect directions right but not magnitudes until it is given the fitted model."
+  wiki_use: "M6/M8 discussion of AI-run experiments and synthetic subjects; links to marketing debates on synthetic respondents."
+  ai_angle: true
+  verified_via: fetch
+
+# =====================================================================
+# AI_PEDAGOGY: Learning evidence
+# =====================================================================
+
+- id: bastani-2025-genai-without-guardrails
+  category: AI_PEDAGOGY
+  subtopic: "Learning harms without guardrails"
+  title: "Generative AI without guardrails can harm learning: Evidence from high school mathematics"
+  authors: "Bastani, H.; Bastani, O.; Sungu, A.; et al."
+  year: 2025
+  type: paper
+  venue: "PNAS"
+  url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M6, WIKI]
+  summary: "Field experiment with about 1,000 Turkish high school math students: unrestricted GPT-4 ('GPT Base') raised practice scores 48% but lowered later unassisted exam scores 17%. A tutor version with teacher-designed hints ('GPT Tutor') raised practice 127% with no exam penalty."
+  wiki_use: "Required reading for the course's AI policy: explains why labs use hint-first tutors and unassisted checkpoints. Also a clean M6 example of a three-arm field experiment."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The PNAS pages wouldn't load from this environment, so the URL is the SSRN working paper 'Generative AI Can Harm Learning', linked from Wharton Knowledge (https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/) and from Mollick's 'Post-apocalyptic education'. PNAS title and venue as given in the brief; DOI and full author list not verified here."
+
+- id: shen-tamkin-2026-ai-skill-formation
+  category: AI_PEDAGOGY
+  subtopic: "Learning harms in coding"
+  title: "How AI assistance impacts the formation of coding skills (paper: How AI Impacts Skill Formation)"
+  authors: "Shen, J. H.; Tamkin, A. (Anthropic)"
+  year: 2026
+  type: paper
+  venue: "Anthropic Research; arXiv 2601.20245"
+  url: "https://www.anthropic.com/research/AI-assistance-coding-skills"
+  oa_url: "https://arxiv.org/abs/2601.20245"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, WIKI]
+  summary: "RCT with 52 mostly junior Python engineers learning the Trio library. Those with an AI assistant scored about 17 points lower on a follow-up quiz (about 50% vs. 67%), with the biggest gap on debugging, and weren't significantly faster. People who asked conceptual questions kept their learning; those who fully delegated did not."
+  wiki_use: "Central evidence for the course's 'ask for explanations, not just code' norm; show the six interaction patterns and have students self-classify their own AI logs."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Blog post 29 January 2026; arXiv v1 28 January 2026, v2 1 February 2026. Confirms the title and date requested in the brief."
+
+- id: kazemitabaar-2023-ai-code-generators-novices
+  category: AI_PEDAGOGY
+  subtopic: "Novices and code generators"
+  title: "Studying the Effect of AI Code Generators on Supporting Novice Learners in Introductory Programming"
+  authors: "Kazemitabaar, M.; Chow, J.; Ma, C. K. T.; Ericson, B. J.; Weintrop, D.; Grossman, T."
+  year: 2023
+  type: paper
+  venue: "CHI 2023"
+  url: "https://arxiv.org/abs/2302.07427"
+  doi: "10.1145/3544548.3580919"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "Controlled study of 69 learners aged 10 to 17 on 45 Python tasks: Codex access raised completion (about 1.15x) and scores (about 1.8x) without hurting manual code-modification skills. Retention a week later was slightly, not significantly, higher."
+  wiki_use: "A counterweight to the harm studies; discuss what differs (scaffolded tasks, novices, manual-modification checks)."
+  ai_angle: true
+  verified_via: fetch
+
+- id: prather-2024-widening-gap
+  category: AI_PEDAGOGY
+  subtopic: "Novices and metacognition"
+  title: "The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers"
+  authors: "Prather, J.; Reeves, B.; Leinonen, J.; MacNeil, S.; Randrianasolo, A. S.; Becker, B.; Kimmel, B.; Wright, J.; Briggs, B."
+  year: 2024
+  type: paper
+  venue: "ICER 2024"
+  url: "https://arxiv.org/abs/2405.17739"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, WIKI]
+  summary: "Eye-tracking and interview study of 21 novices: students who already had a plan used GenAI to speed up, while struggling students were further derailed, often ending with an 'illusion of competence'."
+  wiki_use: "Motivates mandatory 'plan first, then prompt' steps and short self-explanation checks in labs; shows students the gap they may fall into."
+  ai_angle: true
+  verified_via: fetch
+  notes: "arXiv page lists no venue; ICER 2024 per the brief."
+
+- id: denny-2024-computing-education-genai-era
+  category: AI_PEDAGOGY
+  subtopic: "Computing education overview"
+  title: "Computing Education in the Era of Generative AI"
+  authors: "Denny, P.; Prather, J.; Becker, B. A.; Finnie-Ansley, J.; Hellas, A.; Leinonen, J.; Luxton-Reilly, A.; Reeves, B. N.; Santos, E. A.; Sarsa, S."
+  year: 2024
+  type: paper
+  venue: "Communications of the ACM"
+  url: "https://arxiv.org/abs/2306.02608"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Accessible overview of what code-generating models mean for programming instructors, summarizing studies of model performance on intro problems and of AI-generated learning resources."
+  wiki_use: "Instructor-only background for course design decisions."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The ACM Digital Library pages wouldn't load here; URL is the arXiv preprint (June 2023). CACM 2024 venue per the brief."
+
+- id: lau-guo-2023-ban-it-resistance-futile
+  category: AI_PEDAGOGY
+  subtopic: "Instructor perspectives"
+  title: "From 'Ban It Till We Understand It' to 'Resistance is Futile': How University Programming Instructors Plan to Adapt as More Students Use AI Code Generation and Explanation Tools such as ChatGPT and GitHub Copilot"
+  authors: "Lau, S.; Guo, P. J."
+  year: 2023
+  type: paper
+  venue: "ICER 2023"
+  url: "https://pg.ucsd.edu/publications/cs-instructors-adapting-to-chatgpt-copilot-ai-tools_ICER-2023.pdf"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Interviews with university programming instructors on short- and long-term plans for AI coding tools, from banning them to fully embracing them."
+  wiki_use: "Instructor-only map of policy options; useful when writing the syllabus AI section."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Related: Lau & Guo, 'The Design Space of LLM-Based AI Coding Assistants: An Analysis of 90 Systems' (VL/HCC 2025), https://pg.ucsd.edu/publications/ai-coding-assistants-design-space_VLHCC-2025.pdf"
+
+- id: guo-2023-six-opportunities-scientists-engineers
+  category: AI_PEDAGOGY
+  subtopic: "Non-CS learners"
+  title: "Six Opportunities for Scientists and Engineers to Learn Programming Using AI Tools such as ChatGPT"
+  authors: "Guo, P. J."
+  year: 2023
+  type: paper
+  venue: "IEEE Computing in Science & Engineering"
+  url: "https://pg.ucsd.edu/publications/scientists-engineers-learning-programming-using-ai_CiSE-2023.pdf"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M1]
+  summary: "Short essay on how people who program as a means to an end (scientists, engineers, and by extension analysts) can use AI tools to learn programming."
+  wiki_use: "Good fit for BADM 534's non-CS audience; assign in Week 1 alongside Willison."
+  ai_angle: true
+  verified_via: fetch
+
+- id: liu-2024-teaching-cs50-with-ai
+  category: AI_PEDAGOGY
+  subtopic: "AI tutors with guardrails (CS50 Duck)"
+  title: "Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education"
+  authors: "Liu, R.; et al. (Harvard CS50; Malan, D. J.)"
+  year: 2024
+  type: paper
+  venue: "SIGCSE 2024"
+  url: "https://cs.harvard.edu/malan/publications/V1fp0567-liu.pdf"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "How Harvard's CS50 deployed AI tools, including the CS50 Duck rubber-duck debugger, built to guide students toward solutions rather than hand them answers, and how students responded."
+  wiki_use: "Model for a course-specific hint-first AI tutor (for example a Claude Project or custom GPT with a 'don't give full solutions' system prompt) for BADM 534 labs."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Full author list not captured, so check the PDF. Follow-up: 'Improving AI in CS50: Leveraging Human Feedback for Better Learning' (SIGCSE 2025), https://cs.harvard.edu/malan/publications/fp0627-liu.pdf"
+
+- id: kosmyna-2025-your-brain-on-chatgpt
+  category: AI_PEDAGOGY
+  subtopic: "Cognitive debt"
+  title: "Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task"
+  authors: "Kosmyna, N.; Hauptmann, E.; Yuan, Y. T.; Situ, J.; Liao, X.-H.; Beresnitzky, A. V.; Braunstein, I.; Maes, P."
+  year: 2025
+  type: paper
+  venue: "arXiv 2506.08872 (MIT Media Lab)"
+  url: "https://arxiv.org/abs/2506.08872"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, M6]
+  summary: "EEG study of 54 participants writing essays with an LLM, a search engine, or no tools. LLM users showed the weakest brain connectivity, the lowest sense of ownership and trouble quoting their own essays; the authors call this 'cognitive debt'."
+  wiki_use: "Use as a critical-reading exercise: students evaluate the design (small sample, 18 in the crossover session, essay task, preprint) before accepting the headlines."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Not peer reviewed as of v2 (31 December 2025). MIT Media Lab project page: https://www.media.mit.edu/projects/your-brain-on-chatgpt/overview/. Published critiques couldn't be verified in this pass because the search budget ran out; the course should add one before assigning."
+
+- id: lee-2025-genai-critical-thinking-chi
+  category: AI_PEDAGOGY
+  subtopic: "Critical thinking"
+  title: "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers"
+  authors: "Lee, H.-P.; Sarkar, A.; Tankelevitch, L.; Drosos, I.; Rintel, S.; Banks, R.; Wilson, N."
+  year: 2025
+  type: paper
+  venue: "CHI 2025"
+  url: "https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/"
+  oa_url: "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, M8]
+  summary: "Survey of 319 knowledge workers (936 examples): more confidence in GenAI predicts less critical thinking, more self-confidence predicts more. GenAI shifts effort toward verifying, integrating and 'stewarding' output."
+  wiki_use: "Short reading for business students on how over-trust erodes review; supports building verification into every assignment."
+  ai_angle: true
+  verified_via: fetch
+
+- id: anthropic-education-report-students-2025
+  category: AI_PEDAGOGY
+  subtopic: "How students use AI"
+  title: "Anthropic Education Report: How University Students Use Claude"
+  authors: "Anthropic"
+  year: 2025
+  type: report
+  venue: "Anthropic"
+  url: "https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M5]
+  summary: "Privacy-preserving analysis of student conversations: CS students are heavily overrepresented, about 47% of conversations are 'direct' (answer-seeking), and Claude mostly performs higher-order Bloom's tasks (creating, analyzing), raising concerns about offloading."
+  wiki_use: "Discussion opener on how students actually use AI, and an M5 example of classifying text at scale."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 8 April 2025. The CS share appears as both 36.8% and 38.6% within the report."
+
+- id: anthropic-education-report-educators-2025
+  category: AI_PEDAGOGY
+  subtopic: "How educators use AI"
+  title: "Anthropic Education Report: How educators use Claude"
+  authors: "Anthropic"
+  year: 2025
+  type: report
+  venue: "Anthropic"
+  url: "https://www.anthropic.com/news/anthropic-education-report-how-educators-use-claude"
+  access: open
+  level: intro
+  priority: optional
+  modules: [AI, WIKI]
+  summary: "About 74,000 higher-education conversations plus Northeastern faculty interviews: curriculum development dominates, educators build interactive artifacts (simulations, quizzes, dashboards), and grading is the use faculty trust least."
+  wiki_use: "Instructor background and validation for building the course itself as interactive HTML artifacts."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 27 August 2025."
+
+# =====================================================================
+# AI_PEDAGOGY: Course exemplars
+# =====================================================================
+
+- id: stanford-cs146s-modern-software-developer
+  category: AI_PEDAGOGY
+  subtopic: "Course exemplar (CS)"
+  title: "CS146S: The Modern Software Developer"
+  authors: "Eric, M. (Stanford University)"
+  year: 2026
+  type: course
+  venue: "Stanford University"
+  url: "https://themodernsoftware.dev/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, WIKI]
+  summary: "Stanford course, first offered Fall 2025 and again in Fall 2026, on building software with LLM coding agents: MCP, agent skills, spec-driven development, loop engineering and the 'software factory', with hands-on assignments, industry guest talks and a final project."
+  wiki_use: "Benchmark for topic coverage and sequencing; borrow the spec-driven and context-engineering units at a business-analytics level."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Fall 2025 archive: https://themodernsoftware.dev/fall2025. No AI policy, weekly syllabus or GitHub repo visible from the fetched pages."
+
+- id: deeplearningai-claude-code-course
+  category: AI_PEDAGOGY
+  subtopic: "Short course (agentic coding)"
+  title: "Claude Code: A Highly Agentic Coding Assistant"
+  authors: "Schoppik, E. (Anthropic); DeepLearning.AI"
+  year: 2025
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/short-courses/claude-code-a-highly-agentic-coding-assistant/"
+  access: free-registration
+  level: intermediate
+  priority: recommended
+  modules: [AI, M1, M2]
+  summary: "About 2 hours of video covering Claude Code best practices (CLAUDE.md, context, planning, subagents, worktrees, hooks, MCP). One of its three projects refactors a Jupyter notebook of e-commerce data into a dashboard."
+  wiki_use: "Optional pre-work before the first Claude Code lab; the e-commerce notebook project closely matches M2 customer-data analysis."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Page updated 17 August 2026. Free during the platform beta; the graded assignment and certificate need DeepLearning.AI PRO."
+
+- id: deeplearningai-vibe-coding-101-replit
+  category: AI_PEDAGOGY
+  subtopic: "Short course (vibe coding)"
+  title: "Vibe Coding 101 with Replit"
+  authors: "Catasta, M.; Palmer, M. (Replit); DeepLearning.AI"
+  year: 2025
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/short-courses/vibe-coding-101-with-replit/"
+  access: free-registration
+  level: intro
+  priority: optional
+  modules: [AI, M8]
+  summary: "Beginner course (about 1.5 hours) on agentic app building in Replit: product requirement documents, wireframes, prompting, debugging and deployment, via an SEO analyzer and a voting app."
+  wiki_use: "Optional for students who want to prototype a marketing web tool for their project; pair with the Replit incident case."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Page updated 17 July 2026; original release in 2025 (exact date not shown)."
+
+- id: answerai-solveit-course
+  category: AI_PEDAGOGY
+  subtopic: "Course exemplar (learning with AI)"
+  title: "Solve It With Code (Solveit)"
+  authors: "Howard, J.; Whitaker, J.; Ries, E. (Answer.AI)"
+  year: 2025
+  type: course
+  venue: "Answer.AI"
+  url: "https://solve.it.com/"
+  access: paid
+  level: intro
+  priority: optional
+  modules: [AI, WIKI]
+  summary: "Five-week course and platform built around the 'Solveit method': use AI to become a better problem solver rather than outsource thinking. Write one or two lines at a time, check results right away, then package working steps into functions. Draws on Pólya's How to Solve It."
+  wiki_use: "Pedagogical model for small-step, check-as-you-go AI coding in Colab labs."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Signups were closed when checked; the page gives conflicting price information ($500 course vs. $10/month platform)."
+
+# =====================================================================
+# AI_PEDAGOGY: Instructor resources
+# =====================================================================
+
+- id: mollick-2023-assigning-ai-seven-approaches
+  category: AI_PEDAGOGY
+  subtopic: "Assignment design with AI"
+  title: "Assigning AI: Seven Approaches for Students, with Prompts"
+  authors: "Mollick, E.; Mollick, L."
+  year: 2023
+  type: paper
+  venue: "arXiv 2306.10052 (also SSRN)"
+  url: "https://arxiv.org/abs/2306.10052"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, WIKI]
+  summary: "Seven roles for AI in courses (tutor, coach, mentor, teammate, tool, simulator, student), each with sample prompts, benefits and risks, plus risk-management advice that keeps students 'in the loop'."
+  wiki_use: "Framework for labeling each wiki activity by the AI role it uses; the AI-student role (students teach or correct the AI) suits code review."
+  ai_angle: true
+  verified_via: fetch
+
+- id: mollick-2026-claude-code-and-what-comes-next
+  category: AI_PEDAGOGY
+  subtopic: "Agents for knowledge workers"
+  title: "Claude Code and What Comes Next"
+  authors: "Mollick, E."
+  year: 2026
+  type: newsletter
+  venue: "One Useful Thing"
+  url: "https://www.oneusefulthing.org/p/claude-code-and-what-comes-next"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M8]
+  summary: "Mollick watches Claude Code (Opus 4.5) build and deploy a working sales website from one request. He explains context compaction, Skills and subagents, and argues that agentic coding tools preview changes to all knowledge work."
+  wiki_use: "Accessible intro to agents for business students before the first Claude Code lab."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 7 January 2026. Related: 'A Guide to Which AI to Use in the Agentic Era' (https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the), updated periodically."
+
+- id: mollick-2024-post-apocalyptic-education
+  category: AI_PEDAGOGY
+  subtopic: "Assessment redesign"
+  title: "Post-apocalyptic education"
+  authors: "Mollick, E."
+  year: 2024
+  type: newsletter
+  venue: "One Useful Thing"
+  url: "https://www.oneusefulthing.org/p/post-apocalyptic-education"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Argues that the 'homework apocalypse' has arrived and describes two illusions: that teachers can detect AI work, and that students learn from AI answers. Suggests tutor-style prompts and in-class verification instead."
+  wiki_use: "Instructor background for the assessment plan. A reader comment by Tyler Ransom describes AI-permitted coding assignments followed by one-on-one oral exams, a model worth copying."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published 30 August 2024. Links to research on AI detection and to the Bastani SSRN paper."
+
+- id: metalab-ai-pedagogy-project
+  category: AI_PEDAGOGY
+  subtopic: "Assignment library"
+  title: "AI Pedagogy Project"
+  authors: "metaLAB (at) Harvard, Berkman Klein Center"
+  year: 2023
+  type: website
+  venue: "metaLAB (at) Harvard"
+  url: "https://aipedagogy.org/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Curated, open-access library of about 40 classroom assignments that use AI critically, plus an AI Guide (AI Starter, LLM comparison, resources)."
+  wiki_use: "Source of adaptable activities, for example 'Questioning the Bot' (https://aipedagogy.org/assignment/questioning-the-bot-socratic-chats-with-ai-2/) recast as interrogating an AI's regression interpretation."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Few coding- or data-specific assignments on the first page of the listing. Reuse terms are on https://aipedagogy.org/using-our-content/"
+
+- id: ai-assessment-scale
+  category: AI_PEDAGOGY
+  subtopic: "Assessment redesign framework"
+  title: "The AI Assessment Scale (AIAS)"
+  authors: "Perkins, M.; Furze, L.; Roe, J.; MacVaugh, J."
+  year: 2025
+  type: website
+  venue: "aiassessmentscale.com; JUTLP 2025"
+  url: "https://aiassessmentscale.com/"
+  oa_url: "https://arxiv.org/abs/2312.07086"
+  access: open
+  license: "CC BY-NC-SA 4.0 (diagrams and resource assets only)"
+  level: intro
+  priority: core
+  modules: [AI, WIKI]
+  summary: "Widely adopted five-level scale for how much AI an assessment allows: No AI, AI Planning, AI Collaboration, Full AI, AI Exploration. Now at version 2.1."
+  wiki_use: "Tag every BADM 534 assignment with an AIAS level on the wiki (for example, concept checks at Level 1, labs at Level 3 or 4, the team project at Level 5)."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Updated paper 'Reimagining the AIAS' (JUTLP 2025): https://doi.org/10.53761/rrm4y757. Resources: https://aiassessmentscale.com/resources/"
+
+- id: mit-sloan-ai-resilient-learning-design
+  category: AI_PEDAGOGY
+  subtopic: "Assessment redesign"
+  title: "4 Steps to Design an AI-Resilient Learning Experience (with Data Analytics toolkit example)"
+  authors: "MIT Sloan Teaching & Learning Technologies"
+  year: 2024
+  type: tutorial
+  venue: "MIT Sloan Teaching & Learning Technologies"
+  url: "https://mitsloanedtech.mit.edu/ai/teach/4-steps-to-design-an-ai-resilient-learning-experience/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Backward-design guide: learners, outcomes (Bloom's higher levels), assessments (AI required, allowed or banned for each), activities. Comes with a Word toolkit and a worked Data Analytics course example."
+  wiki_use: "Use the Data Analytics toolkit example (https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_ToolkitExampleDataAnalytics.pdf) as a template when redesigning each BADM 534 module."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Toolkit files dated March 2024; page modified September 2026. Toolkit (docx): https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_AI-ResilientLXDesignToolkit.docx"
+
+- id: mit-sloan-ai-detectors-dont-work
+  category: AI_PEDAGOGY
+  subtopic: "Academic integrity"
+  title: "AI Detectors Don't Work. Here's What to Do Instead."
+  authors: "MIT Sloan Teaching & Learning Technologies"
+  year: 2024
+  type: tutorial
+  venue: "MIT Sloan Teaching & Learning Technologies"
+  url: "https://mitsloanedtech.mit.edu/ai/teach/ai-detectors-dont-work/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Business-school guidance explaining why AI detectors are unreliable and offering strategies for academic honesty in their place."
+  wiki_use: "Instructor reference that backs the decision not to use detectors, consistent with Illinois guidance."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Original publication year not shown (page modified 14 September 2026)."
+
+- id: willison-claude-code-transcripts
+  category: AI_PEDAGOGY
+  subtopic: "AI-use logging"
+  title: "claude-code-transcripts: tools for publishing transcripts of Claude Code sessions"
+  authors: "Willison, S."
+  year: 2025
+  type: tool
+  venue: "GitHub"
+  url: "https://github.com/simonw/claude-code-transcripts"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Command-line tool (uvx claude-code-transcripts) that turns local Claude Code session files into paginated HTML transcripts, with a timeline of prompts and commits."
+  wiki_use: "Make it the standard way students attach AI-use logs to team-project repos, so graders can see the prompts behind each commit."
+  ai_angle: true
+  tools: [Claude Code, uv]
+  download:
+    repo: "https://github.com/simonw/claude-code-transcripts"
+    path: ""
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Launched around 25 December 2025. The 'web' commands were broken at the time of checking (unofficial API changes); the 'local' command is what students would use."
+
+- id: willison-linear-walkthroughs
+  category: AI_PEDAGOGY
+  subtopic: "Understanding AI-written code"
+  title: "Linear walkthroughs (Agentic Engineering Patterns)"
+  authors: "Willison, S."
+  year: 2026
+  type: tutorial
+  venue: "Simon Willison's Weblog (guides)"
+  url: "https://simonwillison.net/guides/agentic-engineering-patterns/linear-walkthroughs/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "A pattern for having an agent produce a structured, step-by-step walkthrough of a codebase so a human can actually understand code they didn't write. The companion chapter 'Interactive explanations' covers the same goal interactively."
+  wiki_use: "Required step before submission: students generate a walkthrough of their own analysis notebook, then annotate where they agree or disagree, which serves as a comprehension check."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Posted 25 February 2026. Summary based on the chapter title and guide context; the chapter text itself wasn't fetched. Companion: https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/"
+
+- id: claude-for-education-learning-mode
+  category: AI_PEDAGOGY
+  subtopic: "Guardrailed AI tutors"
+  title: "Introducing Claude for Education (learning mode)"
+  authors: "Anthropic"
+  year: 2025
+  type: documentation
+  venue: "Anthropic"
+  url: "https://www.anthropic.com/news/introducing-claude-for-education"
+  access: open
+  level: intro
+  priority: optional
+  modules: [AI, WIKI]
+  summary: "April 2025 announcement of Claude for Education and its 'learning mode', which guides students' reasoning with Socratic questions instead of giving answers."
+  wiki_use: "Option for a hint-first course tutor, but note that UIUC does not list Claude among licensed tools, so students would need personal accounts."
+  ai_angle: true
+  verified_via: fetch
+
+# =====================================================================
+# AI_PEDAGOGY: University of Illinois guidance (checked October 2026)
+# =====================================================================
+
+- id: uiuc-genai-ai-apps
+  category: AI_PEDAGOGY
+  subtopic: "UIUC licensed AI tools"
+  title: "Enterprise GenAI: AI Apps (University of Illinois)"
+  authors: "University of Illinois, Office of the CIO"
+  year: 2026
+  type: website
+  venue: "genai.illinois.edu"
+  url: "https://genai.illinois.edu/ai-apps/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1, WIKI]
+  summary: "Official list of approved AI tools and data classifications. For students: Microsoft Copilot Chat, Illinois Chat, Google Gemini, Google NotebookLM and Zoom AI Companion, plus Illinois Computes for grad students. Faculty and staff only: Illinois ChatGPT ($11/month), Microsoft 365 Copilot add-on, and GitHub Copilot (security review advised)."
+  wiki_use: "Link from the wiki's 'Tools and accounts' page; Gemini (Internal and Public data) is the licensed path for Colab-adjacent work, and Claude and ChatGPT Edu are not on the student list."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Checked 2026-10-23: Claude isn't listed; ChatGPT is faculty and staff only. Gemini page (https://genai.illinois.edu/ai-apps-google-gemini/) says Public and Internal data only, Illinois-managed account required, and doesn't mention Gemini in Colab or Gemini CLI. Illinois Chat: https://chat.illinois.edu/. Students can get GitHub Copilot separately through GitHub Education (not verified here)."
+
+- id: uiuc-genai-best-practices-teaching
+  category: AI_PEDAGOGY
+  subtopic: "UIUC teaching guidance"
+  title: "Best Practices in Teaching and Learning (Enterprise GenAI, Illinois)"
+  authors: "University of Illinois, Office of the CIO"
+  year: 2026
+  type: website
+  venue: "genai.illinois.edu"
+  url: "https://genai.illinois.edu/best-practices-teaching-and-learning/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Campus framework of principles (GenAI literacy, academic integrity, keeping humans active, inclusion, data privacy) with practice pages: notify learners of expectations, acknowledge AI use, foster critical evaluation, use AI for assessment and feedback."
+  wiki_use: "Cite in the syllabus AI policy so it lines up with campus expectations."
+  ai_angle: true
+  verified_via: fetch
+  notes: "No date on the page. Expectations page: https://genai.illinois.edu/best-practice-notify-learners-of-expectations-for-using-generative-ai-to-support-learning/"
+
+- id: uiuc-acknowledge-ai-use
+  category: AI_PEDAGOGY
+  subtopic: "AI-use disclosure"
+  title: "Best Practice: Acknowledge AI Use and Cite AI-Generated Content (Illinois)"
+  authors: "University of Illinois, Office of the CIO"
+  year: 2026
+  type: website
+  venue: "genai.illinois.edu"
+  url: "https://genai.illinois.edu/best-practice-acknowledge-ai-use-and-cite-ai-generated-content/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, WIKI]
+  summary: "Campus guidance on disclosure: name the tool, how it was used and how much it shaped the result, optionally with prompts. Links an AI-use worksheet (draft and Google Forms versions) and discourages AI detectors and AI-plagiarism accusations."
+  wiki_use: "Base the course's AI-use statement template (blog-post footer plus README section) on this page and its worksheet."
+  ai_angle: true
+  verified_via: fetch
+  notes: "No date on the page; the linked citation-style guidance was current as of March 2024."
+
+- id: citl-integrate-ai-into-teaching
+  category: AI_PEDAGOGY
+  subtopic: "UIUC teaching guidance"
+  title: "Integrate AI into your Teaching (CITL, Illinois)"
+  authors: "Center for Innovation in Teaching & Learning, University of Illinois"
+  year: 2026
+  type: website
+  venue: "citl.illinois.edu"
+  url: "https://citl.illinois.edu/integrate-ai-your-teaching"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, WIKI]
+  summary: "CITL guidance (updated 17 August 2026): avoid blanket bans, specify when and how AI may be used, and redesign assignments toward presentations, applied group work and visible learning. Links syllabus resources, including Gies syllabus guidance and College of Law sample statements."
+  wiki_use: "Primary campus reference for the syllabus and assessment design; CITL also offers consultations and departmental workshops."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The older CITL ChatGPT page linked from genai.illinois.edu now redirects to the CITL home page. Related: AI Curriculum and Training (https://citl.illinois.edu/ai-curriculum-and-training), Generative AI Fluency Modules (https://citl.illinois.edu/generative-ai-fluency-modules), College of Law sample syllabus statements (https://publish.illinois.edu/ai-law-teaching/syllabus-statements/)."
+
+- id: gies-genai-guiding-principles
+  category: AI_PEDAGOGY
+  subtopic: "Gies guidance"
+  title: "Gies Generative AI Guiding Principles"
+  authors: "Gies College of Business, University of Illinois"
+  year: 2025
+  type: website
+  venue: "Illinois Answers (Gies KB 128405)"
+  url: "https://answers.uillinois.edu/gies/128405"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "College-level infographic and links for instructors, including Gies syllabus guidance on setting permitted AI uses, having students document and cite AI use, and checking AI output for accuracy."
+  wiki_use: "Make sure the BADM 534 AI policy is consistent with college principles; link from the syllabus."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Created 19 May 2023; last updated 6 November 2025. Some linked tool names (for example Google Bard) are dated."

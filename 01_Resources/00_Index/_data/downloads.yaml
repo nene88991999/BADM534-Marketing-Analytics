@@ -1,0 +1,42 @@
+# Curated download plan used by _build/fetch_repos.py
+# Each item: repo (owner/name), paths (sparse subpaths; [] = whole repo), files (single files via raw URL),
+# dest (category key -> folder), ids (catalog entries that get a "Local copy" pointer),
+# trust_license (only when GitHub reports NOASSERTION but the repo's LICENSE file states an open license).
+- {repo: swcarpentry/python-novice-gapminder, paths: [episodes], dest: M1, ids: [swcarpentry-python-novice-gapminder], trust_license: CC-BY-4.0}
+- {repo: swcarpentry/git-novice, paths: [episodes], dest: M1, ids: [swcarpentry-git-novice], trust_license: CC-BY-4.0}
+- {repo: uwdata/visualization-curriculum, paths: [], dest: M2, ids: [uw-visualization-curriculum-altair]}
+- {repo: microsoft/lida, paths: [notebooks], dest: M2, ids: [dibia-2023-lida]}
+- {repo: artefactory/choice-learn, paths: [notebooks], dest: M4, ids: [choice-learn-artefact]}
+- {repo: arteagac/xlogit, paths: [examples], dest: M4, ids: [xlogit-mixed-logit-python]}
+- {repo: pymc-labs/pymc-marketing, paths: [docs/source/notebooks/clv, docs/source/notebooks/customer_choice], dest: M4, ids: [pymc-marketing-clv-quickstart, pymc-marketing-customer-choice-mnl]}
+- {repo: HandsOnLLM/Hands-On-Large-Language-Models, paths: [], dest: M5, ids: [hands-on-llms-repo]}
+- {repo: ericmjl/Network-Analysis-Made-Simple, paths: [notebooks], dest: M5, ids: [network-analysis-made-simple]}
+- {repo: anthropics/claude-cookbooks, paths: [capabilities/classification], dest: M5, ids: [claude-cookbook-classification]}
+- {repo: melaniewalsh/Intro-Cultural-Analytics, paths: [book/04-Data-Analysis, book/05-Text-Analysis], dest: M5, ids: [walsh-intro-cultural-analytics]}
+- {repo: matheusfacure/python-causality-handbook, paths: [causal-inference-for-the-brave-and-true], dest: M6, ids: [facure-causal-inference-brave-true, brave-and-true-facure]}
+- {repo: matheusfacure/causal-inference-in-python-code, paths: [causal-inference-in-python], dest: M6, ids: [facure-causal-inference-in-python]}
+- {repo: CausalAIBook/MetricsMLNotebooks, paths: [], dest: M6, ids: [causalml-book-chernozhukov, causalml-book]}
+- {repo: maks-sh/scikit-uplift, paths: [notebooks], dest: M6, ids: [scikit-uplift]}
+- {repo: py-why/EconML, paths: [notebooks], dest: M6, ids: [econml], trust_license: MIT}
+- {repo: py-why/dowhy, paths: [docs/source/example_notebooks], dest: M6, ids: [dowhy-pywhy]}
+- {repo: uber/causalml, paths: [docs/examples], dest: M6, ids: [causalml-uber], trust_license: Apache-2.0}
+- {repo: pymc-labs/CausalPy, paths: [docs/source/notebooks], dest: M6, ids: [causalpy-pymc-labs]}
+- {repo: google/meridian, paths: [demo], dest: M6, ids: [meridian-google-mmm]}
+- {repo: google/tfp-causalimpact, paths: [docs], dest: M6, ids: [tfp-causalimpact]}
+- {repo: sdfordham/pysyncon, paths: [examples], dest: M6, ids: [pysyncon]}
+- {repo: intro-stat-learning/ISLP_labs, paths: [], dest: M7, ids: [islp, islp-labs-repo, islp-ch3-linreg-ch12-unsup]}
+- {repo: INRIA/scikit-learn-mooc, paths: [notebooks], dest: M7, ids: [sklearn-mooc-inria]}
+- {repo: recommenders-team/recommenders, paths: [examples/00_quick_start], dest: M7, ids: [ms-recommenders]}
+- {repo: autogluon/autogluon, paths: [docs/tutorials/tabular], dest: M7, ids: [autogluon-tabular], license_checked: Apache-2.0, branch: master}
+- {repo: GEO-optim/GEO, paths: [], dest: M8, ids: [geo-generative-engine-optimization], license_checked: Apache-2.0, branch: main}
+- {repo: agentic-commerce-protocol/agentic-commerce-protocol, paths: [], dest: M8, ids: [openai-agentic-commerce-protocol], license_checked: Apache-2.0, branch: main}
+- {repo: IBM/telco-customer-churn-on-icp4d, files: [data/Telco-Customer-Churn.csv], dest: DATASETS, ids: [ibm-telco-churn], license_checked: Apache-2.0, branch: master}
+- {repo: google/meridian, paths: [meridian/data/simulated_data], dest: DATASETS, ids: [meridian-simulated-mmm], as: google__meridian-simulated-data, license_checked: Apache-2.0, branch: main}
+- {repo: pymc-labs/pymc-marketing, paths: [data], dest: DATASETS, ids: [pymc-marketing-example-data], as: pymc-labs__pymc-marketing-data, license_checked: Apache-2.0, branch: main}
+- {repo: python-marketing-research/python-marketing-research-1ed, paths: [], dest: TEXTBOOKS, ids: [python-marketing-research-analytics, schwarz-chapman-feit-2020-python-marketing-research, python-marketing-research-site], license_checked: Apache-2.0, branch: master}
+- {repo: jakevdp/PythonDataScienceHandbook, paths: [notebooks], dest: TEXTBOOKS, ids: [vanderplas-python-data-science-handbook, vanderplas-pdsh-kmeans-gmm], license_checked: MIT, branch: master}
+- {repo: AllenDowney/ThinkStats, branch: v3, paths: [nb], dest: TEXTBOOKS, ids: [think-stats-3e], license_checked: MIT}
+- {repo: aeturrell/coding-for-economists, paths: [], dest: TEXTBOOKS, ids: [turrell-coding-for-economists], license_checked: MIT, branch: main}
+- {repo: PacktPublishing/Hands-On-Data-Science-for-Marketing, paths: [], dest: TEXTBOOKS, ids: [hands-on-data-science-for-marketing], license_checked: MIT, branch: master}
+- {repo: ipeirotis/dealing_with_data, paths: [], skip_reason: 338 MB repo, dest: TEXTBOOKS, ids: [nyu-ipeirotis-dealing-with-data], trust_license: CC-BY-NC-4.0, license_checked: CC-BY-NC-4.0, branch: master}
+- {repo: jupyterlite/demo, paths: [], dest: WIKI, ids: [jupyterlite-demo-template], license_checked: BSD-3-Clause, branch: main}

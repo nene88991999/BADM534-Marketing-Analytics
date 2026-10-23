@@ -1,0 +1,1620 @@
+# AI_TOOLS: AI coding tools and workflows for data analysis (BADM 534)
+# Compiled 2026-10-23. All URLs come from WebSearch results or WebFetch runs in this session.
+# Pricing and plan facts are as shown on the cited pages on 2026-10-23. These change fast, so re-check before each term.
+
+# =====================================================================
+# 1. CLAUDE CODE AND CLAUDE.AI (Anthropic)
+# =====================================================================
+
+- id: claude-code-docs-overview
+  category: AI_TOOLS
+  subtopic: "Claude Code docs"
+  title: "Claude Code documentation: overview and quickstart"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "code.claude.com"
+  url: "https://code.claude.com/docs/en/overview"
+  access: open
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "The official Claude Code docs. The quickstart covers the native installer (macOS, Linux, WSL, Windows), login, a first session, Git use, and essential commands. Claude Code also runs on the web, in a desktop app, in VS Code and JetBrains, in Slack, and in GitHub Actions."
+  wiki_use: "Link it from the M1 setup page. Students install Claude Code and complete the quickstart's 'explore a repo, make a change, commit' loop on the course starter repo."
+  tools: [claude-code, git]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Quickstart fetched at https://code.claude.com/docs/en/quickstart.md; the overview link appears in it. Requires a paid Claude plan (Pro, Max, Team or Enterprise), a Console (API) account, or a cloud provider. The Free claude.ai plan does not include Claude Code (see claude-pricing-plans). The quickstart links free 'Claude Code 101' and other courses on Claude Academy. The full page index is at https://code.claude.com/docs/llms.txt."
+
+- id: claude-code-best-practices
+  category: AI_TOOLS
+  subtopic: "Claude Code docs"
+  title: "Best practices for Claude Code"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "code.claude.com"
+  url: "https://code.claude.com/docs/en/best-practices"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI, M1]
+  summary: "Anthropic's guide to agentic coding. Topics: give Claude a check it can run (tests, scripts, screenshots); explore, then plan, then code (plan mode); write a short CLAUDE.md; manage context aggressively (/clear, /compact, subagents); use checkpoints and rewind; run a writer/reviewer pattern; avoid common failures such as the 'trust-then-verify gap'."
+  wiki_use: "Assigned reading before the first vibe-coding lab. Turn its 'Avoid common failure patterns' list into a classroom checklist for AI-generated analysis code."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The old Anthropic Engineering post at https://www.anthropic.com/engineering/claude-code-best-practices now returns HTTP 302 to this docs page, so cite this URL. I did not re-verify the original post's publication date or byline."
+
+- id: claude-code-skills-docs
+  category: AI_TOOLS
+  subtopic: "Agent skills"
+  title: "Extend Claude with skills (Claude Code docs)"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "code.claude.com"
+  url: "https://code.claude.com/docs/en/skills"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "A skill is a SKILL.md file with YAML frontmatter and markdown instructions, kept in ~/.claude/skills/, .claude/skills/, a plugin, or synced from claude.ai. Claude loads skills automatically when relevant, or you call one with /skill-name. Claude Code skills follow the open Agent Skills standard and add extensions."
+  wiki_use: "Demo: the instructor ships a course skill (for example 'marketing-analysis-checks', which runs assertions and reproduces headline numbers) in the starter repo so every student's agent follows the same verification routine."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Anthropic Academy also runs a free 'Introduction to agent skills' course at https://anthropic.skilljar.com/introduction-to-agent-skills (seen on the Skilljar catalog; I did not open the course page itself)."
+
+- id: anthropic-agent-skills-engineering-post
+  category: AI_TOOLS
+  subtopic: "Agent skills"
+  title: "Equipping agents for the real world with Agent Skills"
+  authors: "Zhang, B.; Lazuka, K.; Murag, M. (Anthropic)"
+  year: 2025
+  type: blog
+  venue: "Anthropic Engineering"
+  url: "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "Introduces Agent Skills: folders of instructions, scripts and resources that agents load through progressive disclosure. The agent sees only the metadata at startup, reads the full SKILL.md when a skill is relevant, and opens other files only as needed. The post advises auditing skills from less-trusted sources."
+  wiki_use: "Background reading for the wiki page on 'how agents get context', paired with the context-engineering post."
+  tools: [claude-code, claude-ai]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published October 16, 2025. An update note on the page says Agent Skills was published as an open standard (agentskills.io)."
+
+- id: agent-skills-open-standard
+  category: AI_TOOLS
+  subtopic: "Agent skills"
+  title: "Agent Skills: open format specification"
+  authors: "Agent Skills project (originally Anthropic)"
+  year: 2026
+  type: website
+  venue: "agentskills.io"
+  url: "https://agentskills.io/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "The canonical site for the open Agent Skills format: a skill is a folder with a SKILL.md (name and description at minimum) plus optional scripts/, references/ and assets/. It explains progressive disclosure (discovery, activation, execution) and links the specification, a quickstart and a list of client tools that support skills."
+  wiki_use: "Cite it as the vendor-neutral definition of a skill. The same skill folder works across Claude Code, Antigravity, VS Code and other compatible agents."
+  tools: [claude-code, antigravity, vscode]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Spec and discussion repo: https://github.com/agentskills/agentskills (link seen on the page; I did not check its license). Agent Skills is now listed as a project of the Agentic AI Foundation (https://aaif.io), which also hosts MCP and AGENTS.md."
+
+- id: anthropic-skills-repo
+  category: AI_TOOLS
+  subtopic: "Agent skills"
+  title: "anthropics/skills: public repository of Agent Skills"
+  authors: "Anthropic"
+  year: 2026
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/anthropics/skills"
+  access: open
+  license: "Apache-2.0 for many skills; the docx/pdf/pptx/xlsx document skills are source-available, not open source"
+  level: intermediate
+  priority: optional
+  modules: [AI]
+  summary: "Anthropic's example skills (about 183k stars). They cover creative, technical, enterprise and document work (docx, pdf, pptx, xlsx), and each is a folder with a SKILL.md."
+  wiki_use: "Use it as a template gallery when students write their own analysis skill, for example for a team project's data-cleaning conventions."
+  tools: [claude-code]
+  ai_angle: true
+  download:
+    repo: "https://github.com/anthropics/skills"
+    path: "skills/"
+    license: "Apache-2.0 (per skill; exclude the source-available document skills)"
+  verified_via: fetch
+  notes: "Check each skill folder's license before you redistribute it on the wiki."
+
+- id: claude-code-cloud-and-desktop
+  category: AI_TOOLS
+  subtopic: "Claude Code on the web and desktop"
+  title: "Use Claude Code in the cloud (Claude Code on the web) and the Claude Code desktop app"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "code.claude.com"
+  url: "https://code.claude.com/docs/en/claude-code-on-the-web"
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "Cloud sessions run Claude Code on Anthropic-managed VMs. You start them from claude.ai/code in a browser, from the mobile app, from the desktop app's Code tab, or with `claude --cloud`. They clone a GitHub repository and can open pull requests. The desktop app (macOS, Windows, Linux beta) gives a graphical interface for parallel sessions, diff review and pull-request management."
+  wiki_use: "A no-terminal on-ramp: students who struggle with local installs can run their project repo in a cloud session from a browser or the desktop app."
+  tools: [claude-code, github]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Cloud sessions are available on Pro, Max and Team plans, and for Enterprise users with premium seats or Chat + Claude Code seats. They share rate limits with other Claude usage, with no separate compute charge. Repo cloning and PRs require GitHub. Desktop docs: https://code.claude.com/docs/en/desktop (fetched). Before sharing a session publicly from a Pro or Max account, check it for credentials."
+
+- id: claude-code-memory-claude-md
+  category: AI_TOOLS
+  subtopic: "CLAUDE.md / project instructions"
+  title: "How Claude remembers your project (CLAUDE.md, AGENTS.md, auto memory)"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "code.claude.com"
+  url: "https://code.claude.com/docs/en/memory"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI]
+  summary: "Explains CLAUDE.md files at project, user and organization scope, .claude/rules/ for rules scoped to file types, and auto memory, which holds notes Claude writes itself. It states that Claude Code can read a repository's AGENTS.md in place of CLAUDE.md."
+  wiki_use: "Give every team a starter CLAUDE.md/AGENTS.md for the semester project (data paths, 'never print raw customer rows', test command), and use this page to explain how it works."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "These instructions are advisory context, not enforced configuration. For hard rules the docs point to hooks (for example a PreToolUse hook)."
+
+- id: claude-code-security-permissions
+  category: AI_TOOLS
+  subtopic: "Agent security and permissions"
+  title: "Claude Code security (permission modes, prompt-injection safeguards, MCP and cloud security)"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "code.claude.com"
+  url: "https://code.claude.com/docs/en/security"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI]
+  summary: "Covers Claude Code's permission architecture (read-only by default in Manual mode; auto mode uses a classifier model to review actions), sandboxed bash, the working-directory boundary, prompt-injection protections, MCP server trust, isolation of cloud sessions, and best practices for untrusted content."
+  wiki_use: "Required reading for the 'running agents safely' wiki page. Students configure /permissions and /sandbox before the first assignment that touches course data."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Related pages: https://code.claude.com/docs/en/permissions, https://code.claude.com/docs/en/permission-modes and https://code.claude.com/docs/en/sandboxing. As of v2.1.283, auto mode is the default starting permission mode for interactive terminal sessions, so instructors may want to recommend Manual mode or plan mode at first."
+
+- id: claude-code-sandboxing-post
+  category: AI_TOOLS
+  subtopic: "Agent security and permissions"
+  title: "Beyond permission prompts: making Claude Code more secure and autonomous"
+  authors: "Dworken, D.; Weller-Davies, O. (Anthropic)"
+  year: 2025
+  type: blog
+  venue: "Anthropic Engineering"
+  url: "https://www.anthropic.com/engineering/claude-code-sandboxing"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "Explains Claude Code's sandbox, which combines filesystem isolation with network isolation through a domain-allowlisting proxy, enforced with OS tools (bubblewrap on Linux, seatbelt on macOS). It argues that both are needed to stop a compromised agent from exfiltrating data."
+  wiki_use: "Instructor background for teaching why sandboxing matters and how it reduces 'approval fatigue'."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published October 20, 2025. Open-source runtime: https://github.com/anthropic-experimental/sandbox-runtime (link from the post; I did not check its license)."
+
+- id: claude-code-data-usage
+  category: AI_TOOLS
+  subtopic: "Data privacy"
+  title: "Claude Code data usage (training, retention, telemetry)"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "code.claude.com"
+  url: "https://code.claude.com/docs/en/data-usage"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M2]
+  summary: "Free, Pro and Max (consumer) accounts choose whether their data trains future models. With the setting on, retention is 5 years; with it off, 30 days. Team, Enterprise and API (commercial) data is not used for training by default, and standard retention is 30 days. Local transcripts are stored in plaintext under ~/.claude/projects/ for 30 days."
+  wiki_use: "Use it on the data-privacy wiki page to show why personal accounts differ from institutional ones, and have students check their claude.ai privacy setting before using course or client data."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Transcripts sent with /feedback are retained for 5 years. Telemetry can be disabled with environment variables. Point out to students that local plaintext transcripts can contain any data the agent has read."
+
+- id: claude-file-creation-analysis
+  category: AI_TOOLS
+  subtopic: "Claude.ai analysis / file creation"
+  title: "Create and edit files with Claude (code execution and file creation)"
+  authors: "Anthropic (Claude Help Center)"
+  year: 2026
+  type: documentation
+  venue: "support.claude.com"
+  url: "https://support.claude.com/en/articles/12111783"
+  access: freemium
+  level: intro
+  priority: core
+  modules: [M1, M2, AI]
+  summary: "Claude can run code in a sandbox to analyze uploaded CSV/TSV files (up to 30 MB) and create Excel, PowerPoint, Word, PDF, Python and PNG chart outputs. The feature is available on Free, Pro, Max, Team and Enterprise, across web, desktop and mobile."
+  wiki_use: "The zero-install option for M1/M2 labs: students upload a sample customer CSV, ask for an RFM table and chart, then download and inspect the Python that produced it."
+  tools: [claude-ai, python]
+  ai_angle: true
+  verified_via: fetch
+  notes: "On by default on Free, Pro and Max, with network egress on. The article warns about prompt injection through hidden instructions in files or websites, and notes that file creation uses more of the plan's usage. The older URL support.anthropic.com/en/articles/12111783-create-and-edit-files-with-claude appeared in search results. Hands-on review: Simon Willison, 'My review of Claude's new Code Interpreter, released under a very confusing name' (September 9, 2025; https://simonwillison.net/2025/Sep/9/claude-code-interpreter, fetched). He found a Python/Node sandbox with about 9 GB RAM and PyPI installs, needed several rounds of prompting for a usable chart, and planned to avoid using it with data he would not want leaked. A good short M2 reading."
+
+- id: claude-pricing-plans
+  category: AI_TOOLS
+  subtopic: "Pricing and plans"
+  title: "Claude plans and pricing"
+  authors: "Anthropic"
+  year: 2026
+  type: website
+  venue: "claude.com"
+  url: "https://claude.com/pricing"
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "As of 2026-10-23: Free $0 (no Claude Code); Pro $20/month monthly or $17/month billed annually, with Claude Code included in all paid plans; Max from $100/month (5x or 20x Pro usage); Team standard seats $20 (annual) or $25 (monthly), premium seats $100 or $125; Enterprise $20/seat/month plus usage at API rates."
+  wiki_use: "Use it for the 'which tool should I pay for?' table on the M1 setup page."
+  tools: [claude-ai, claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The page mentions an Education plan for whole universities with 'discounted rates', but gives no price and no individual student discount."
+
+- id: claude-for-education
+  category: AI_TOOLS
+  subtopic: "Student and education programs"
+  title: "Claude for Education (Claude for higher education)"
+  authors: "Anthropic"
+  year: 2026
+  type: website
+  venue: "claude.com"
+  url: "https://claude.com/solutions/education"
+  access: paid
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "Anthropic's higher-education offering is a university-wide plan bought by institutions. Students cannot sign up individually. It includes learning mode, which tutors Socratically, and points students to a free 'AI Fluency for students' course."
+  wiki_use: "State plainly on the wiki that UIUC does not list Claude among its approved AI apps, so students would use personal Free or Pro accounts. Pair this with the privacy guidance."
+  tools: [claude-ai]
+  ai_angle: true
+  verified_via: fetch
+  notes: "anthropic.com/education 302-redirects here. Original announcement: https://www.anthropic.com/news/introducing-claude-for-education (April 2, 2025), which describes learning mode, campus-wide agreements (Northeastern, LSE, Champlain), Campus Ambassadors and API credits for student builders. The current page does not mention API credits or a student discount. See uiuc-genai-approved-apps. Free student course: 'AI Fluency for students' on Anthropic Academy (https://anthropic.skilljar.com/ai-fluency-for-students; from the catalog listing, not opened), suitable as pre-course homework for non-CS students."
+
+- id: anthropic-academy-claude-code-in-action
+  category: AI_TOOLS
+  subtopic: "Free courses"
+  title: "Claude Code in Action (Anthropic Academy)"
+  authors: "Anthropic"
+  year: 2026
+  type: course
+  venue: "Anthropic Academy (Skilljar)"
+  url: "https://anthropic.skilljar.com/claude-code-in-action"
+  access: free-registration
+  level: intermediate
+  priority: core
+  modules: [AI]
+  summary: "A free self-paced course on running longer, less-supervised Claude Code sessions. Lessons: steering long sessions, a CLAUDE.md the agent actually follows, verification skills, permission modes, hooks, routines and headless runs, GitHub Actions code review, verifying unsupervised runs, and plugins. Ends with a quiz."
+  wiki_use: "Optional certificate-style module after students finish the basics; its 'verifying unsupervised runs' lesson fits the course's emphasis on checking AI-generated analysis."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Marked 'Register | FREE'. The page gives no duration and does not confirm a certificate. The beginner course 'Claude Code 101' is at https://anthropic.skilljar.com/claude-code-101 (catalog listing; also linked from the Claude Code quickstart as academy.claude.com/courses/claude-code-101)."
+
+- id: claude-prompt-engineering-guide
+  category: AI_TOOLS
+  subtopic: "Prompting guides"
+  title: "Prompt engineering overview and Prompting best practices (Claude Platform docs)"
+  authors: "Anthropic"
+  year: 2026
+  type: documentation
+  venue: "platform.claude.com"
+  url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "Anthropic's entry point to prompting. Before tuning a prompt, define success criteria and a way to test against them. Techniques (clarity, examples, XML structure, roles, thinking, chaining) are collected in the 'Prompting best practices' reference."
+  wiki_use: "Link it from the prompting page, and use its 'define success criteria first' framing to teach students to specify expected numbers or tests before asking for analysis code."
+  tools: [claude-ai]
+  ai_angle: true
+  verified_via: fetch
+  notes: "docs.claude.com/... 302-redirects here. Best-practices page: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices. An interactive tutorial is at https://github.com/anthropics/prompt-eng-interactive-tutorial, written for Claude 3, so some advice is dated, and I did not check its license. A metaprompt notebook can be opened in Colab from the claude-cookbooks repo."
+
+- id: claude-cookbooks
+  category: AI_TOOLS
+  subtopic: "Cookbooks and notebooks"
+  title: "Claude Cookbooks (anthropics/claude-cookbooks)"
+  authors: "Anthropic"
+  year: 2026
+  type: notebook
+  venue: "GitHub"
+  url: "https://github.com/anthropics/claude-cookbooks"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M5, M7, AI]
+  summary: "Jupyter notebooks and recipes for the Claude API: tool use, SQL queries, JSON or structured extraction, PDF summarization, reading charts, classification, RAG, skills and the Agent SDK."
+  wiki_use: "Embed selected notebooks in the wiki. misc/how_to_make_sql_queries.ipynb and the JSON-mode or structured-extraction recipes suit M5 text analysis; multimodal/reading_charts_graphs_powerpoints.ipynb suits M2."
+  tools: [anthropic, python, jupyter]
+  ai_angle: true
+  download:
+    repo: "https://github.com/anthropics/claude-cookbooks"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Running these notebooks needs an Anthropic API key, which costs money. The README links still point to the old anthropics/anthropic-cookbook name, so the repo appears to have been renamed."
+
+- id: anthropic-context-engineering
+  category: AI_TOOLS
+  subtopic: "Context engineering"
+  title: "Effective context engineering for AI agents"
+  authors: "Rajasekaran, P.; Dixon, E.; Ryan, C.; Hadfield, J. (Anthropic Applied AI)"
+  year: 2025
+  type: blog
+  venue: "Anthropic Engineering"
+  url: "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI]
+  summary: "Argues that for multi-turn agents the job shifts from wording prompts to curating 'the smallest useful set of tokens' in a limited context window. Covers system prompts, tools, examples, retrieval at run time, compaction, structured note-taking and sub-agents."
+  wiki_use: "Canonical source for the wiki's 'context engineering' concept page. It explains why students should give the agent a data dictionary rather than paste in a 100k-row CSV."
+  tools: [claude-code]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published September 29, 2025."
+
+# =====================================================================
+# 2. STANDARDS AND CONCEPTS (MCP, AGENTS.md, spec-driven development)
+# =====================================================================
+
+- id: mcp-docs
+  category: AI_TOOLS
+  subtopic: "Model Context Protocol (MCP)"
+  title: "What is the Model Context Protocol (MCP)? (official docs)"
+  authors: "Model Context Protocol project"
+  year: 2026
+  type: documentation
+  venue: "modelcontextprotocol.io"
+  url: "https://modelcontextprotocol.io/docs/getting-started/intro"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI]
+  summary: "MCP is an open-source standard for connecting AI applications to external data, tools and workflows, described as 'a USB-C port for AI applications'. Claude, ChatGPT, VS Code, Cursor and others support it. The docs cover building servers and clients and MCP Apps. The current docs version is dated 2026-07-28."
+  wiki_use: "Concept page: show how an agent could query a course SQL database or Google Drive through MCP instead of students pasting data into chat."
+  tools: [mcp, claude-code, vscode, cursor]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Anthropic's launch post (November 25, 2024): https://www.anthropic.com/news/model-context-protocol. MCP is now listed as a project of the Agentic AI Foundation, under the Linux Foundation (https://aaif.io). Free courses: DeepLearning.AI 'MCP: Build Rich-Context AI Apps with Anthropic' (https://www.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic) and Anthropic Academy 'Introduction to Model Context Protocol' (https://anthropic.skilljar.com/introduction-to-model-context-protocol); both URLs came from catalog listings. Claude Code MCP setup: https://code.claude.com/docs/en/mcp. Security: the MCP Security Best Practices page (https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices.md, fetched) covers confused deputy, token passthrough, SSRF and local-server compromise; its local-server section is a good warning against installing random MCP servers. Governance: the Agentic AI Foundation (https://aaif.io, fetched) hosts MCP, AGENTS.md, Agent Skills, A2A, goose and others."
+
+- id: agents-md
+  category: AI_TOOLS
+  subtopic: "AGENTS.md"
+  title: "AGENTS.md: a simple, open format for guiding coding agents"
+  authors: "Agentic AI Foundation (Linux Foundation); originally OpenAI Codex, Amp, Google Jules, Cursor, Factory"
+  year: 2026
+  type: website
+  venue: "agents.md"
+  url: "https://agents.md"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI]
+  summary: "AGENTS.md is a plain-Markdown 'README for agents' with no required fields. Codex, Jules, Gemini CLI, Cursor, VS Code, GitHub Copilot coding agent, Windsurf, Zed, Aider and others read it. The Agentic AI Foundation now stewards it."
+  wiki_use: "Have each team commit an AGENTS.md (with a CLAUDE.md that points to it) so the project works the same whether a teammate uses Claude Code, Codex, Copilot or Cursor."
+  tools: [codex, claude-code, copilot, cursor, gemini-cli]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Repo: https://github.com/agentsmd/agents.md (link from the site). Codex docs on how AGENTS.md files are discovered and merged: https://learn.chatgpt.com/codex/agent-configuration/agents-md. Claude Code reads AGENTS.md (see claude-code-memory-claude-md)."
+
+- id: github-spec-kit
+  category: AI_TOOLS
+  subtopic: "Spec-driven development"
+  title: "GitHub Spec Kit: toolkit for spec-driven development"
+  authors: "GitHub"
+  year: 2026
+  type: tool
+  venue: "GitHub"
+  url: "https://github.com/github/spec-kit"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "An open-source toolkit that runs inside an agent's chat as /speckit-* skills: constitution (project principles), specify, plan, tasks, implement and converge, plus optional bug-fix and idea-assessment extensions. It turns 'vibe coding' into a spec, then plan, then tasks, then implement workflow."
+  wiki_use: "Use it for the team project kickoff: students write a constitution and spec for their analytics blog post before any code is generated."
+  tools: [spec-kit, copilot, claude-code]
+  ai_angle: true
+  download:
+    repo: "https://github.com/github/spec-kit"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Docs: https://github.github.io/spec-kit/. The README examples use Copilot, and other agents plug in through an integration key. I could not verify a GitHub blog post on spec-driven development because the search budget ran out."
+
+- id: dlai-spec-driven-development
+  category: AI_TOOLS
+  subtopic: "Spec-driven development"
+  title: "Spec-Driven Development with Coding Agents (DeepLearning.AI short course)"
+  authors: "Everitt, P. (JetBrains)"
+  year: 2026
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/courses/spec-driven-development-with-coding-agents"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "A 1h16m beginner course: compares vibe coding with spec-driven development, then covers writing project constitutions and feature specs, a plan-implement-verify loop, replanning, building an MVP, applying the method to legacy code, and packaging the workflow as an agent skill."
+  wiki_use: "Assign it before the project proposal milestone."
+  tools: [coding-agents]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Last updated April 18, 2026. The page does not say whether viewing is free; quizzes, graded work and certificates need DeepLearning.AI Pro."
+
+# =====================================================================
+# 3. CURSOR, GITHUB COPILOT, VS CODE
+# =====================================================================
+
+- id: cursor-pricing-2026
+  category: AI_TOOLS
+  subtopic: "Cursor"
+  title: "Cursor plans and pricing (restructured October 2026)"
+  authors: "Cursor (Anysphere)"
+  year: 2026
+  type: tool
+  venue: "cursor.com"
+  url: "https://cursor.com/pricing"
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "An AI-first code editor (a VS Code fork) with agent, chat, tab completion, MCP and rules. As of 2026-10-23 the plans are Free (limited agent and chat requests), Plus $8/month (Grok models only), Premium $30 (4x Plus, cloud agents, third-party models billed at API list price), Super $100, Ultra $200, Teams $30+/user and Enterprise."
+  wiki_use: "List it as an alternative IDE. Warn students that the cheap tier now uses only xAI Grok models and that Claude or GPT models cost extra."
+  tools: [cursor]
+  ai_angle: true
+  verified_via: fetch
+  notes: "SHAKY, FAST-MOVING. SpaceX/xAI agreed to buy Anysphere for $60B (Techzine, June 16, 2026: https://www.techzine.eu/news/devops/142197/spacex-acquires-cursor-for-60-billion/, expected to close Q3 2026). PricingSaaS reports the rebuilt lineup around Oct 13-19, 2026 (https://pricingsaas.com/news/article/cursor-rebuilds-its-pricing-around-grok-and-x-with-plans-from-8-to-200); the old lineup was Individual $20 with Pro/Pro+/Ultra options and Teams $40. Cursor MCP docs: https://cursor.com/docs/context/mcp (link from the MCP docs; not opened)."
+
+- id: cursor-students
+  category: AI_TOOLS
+  subtopic: "Student and education programs"
+  title: "Cursor for Students"
+  authors: "Cursor (Anysphere)"
+  year: 2026
+  type: website
+  venue: "cursor.com"
+  url: "https://www.cursor.com/students"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [AI]
+  summary: "Cursor's student page currently says anyone can start free, with upgrades offered through promotions at campus and online events 'this fall' and a campus newsletter. It does not describe a standing free-Pro-for-students offer, a duration, eligibility or verification."
+  wiki_use: "Tell students not to count on free Cursor Pro. The Free plan or other tools are the safe default."
+  tools: [cursor]
+  ai_angle: true
+  verified_via: fetch
+  notes: "In 2025 Cursor offered one year of free Pro to verified university students (Cursor forum threads such as https://forum.cursor.com/t/major-bug-verified-students-get-one-year-of-free-cursor-pro/88376 appeared in search results). The current page no longer describes that offer, so treat it as ended or changed."
+
+- id: github-copilot-plans-2026
+  category: AI_TOOLS
+  subtopic: "GitHub Copilot"
+  title: "GitHub Copilot plans (Free, Pro, Pro+, Max; usage-based AI credits)"
+  authors: "GitHub"
+  year: 2026
+  type: tool
+  venue: "github.com"
+  url: "https://github.com/features/copilot/plans"
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "As of 2026-10-23: Free $0 (2,000 completions and 50 chat requests per month, limited agent use, Copilot CLI); Pro $10/month ($15 of AI credits); Pro+ $39 ($70); Max $100 ($200). Paid plans include unlimited completions, agent mode, the cloud agent and the CLI. Pro+ and Max can hand tasks to third-party agents (Claude, Codex)."
+  wiki_use: "Use it on the M1 tool-comparison table. The Free tier is enough for in-class completions inside VS Code or Codespaces."
+  tools: [copilot, vscode]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Usage-based billing started June 1, 2026 (GitHub blog, May 12, 2026: https://github.blog/news-insights/company-news/GitHub-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/). Copilot CLI docs: https://docs.github.com/en/copilot/how-tos/copilot-cli (link from a GitHub docs page; not opened)."
+
+- id: github-copilot-student-plan
+  category: AI_TOOLS
+  subtopic: "Student and education programs"
+  title: "Access GitHub Copilot for free as a student (Copilot Student plan)"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students"
+  access: free-registration
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "Verified GitHub Education students activate the free 'Copilot Student' plan from their education benefits settings, and eligibility is rechecked monthly. This is no longer 'free Copilot Pro'. Since March 12, 2026 students cannot hand-pick premium models such as Claude Opus/Sonnet or GPT-5.x. Since June 1 the plan includes 200 monthly AI credits plus unlimited completions. Since June 24 auto model selection is the only option."
+  wiki_use: "Use it for the step-by-step setup on day one, and correct the outdated 'free Copilot Pro for students' claim found in many 2025 guides."
+  tools: [copilot]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Change log: GitHub Community discussion #189268 'Important Updates to GitHub Copilot for Students' (March 11, 2026, with later updates): https://github.com/orgs/community/discussions/189268. Students can upgrade to Pro or Pro+ and keep their other Pack benefits. Docs say the cloud agent is 'available for all paid Copilot plans', and I could not confirm whether the Student plan includes it. Instructors: GitHub docs page 'Access Copilot Pro for free as a teacher or open source maintainer' (https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-teachers-and-os-maintainers) appeared in search results. Apply: https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student."
+
+- id: github-education-student-pack
+  category: AI_TOOLS
+  subtopic: "Student and education programs"
+  title: "GitHub Education and the Student Developer Pack"
+  authors: "GitHub"
+  year: 2026
+  type: website
+  venue: "github.com"
+  url: "https://github.com/education"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "GitHub Education gives verified students free professional tools, including GitHub Copilot Student and Codespaces, plus the Student Developer Pack's dozens of partner offers (cloud hosting, developer platforms, learning content)."
+  wiki_use: "Day-one onboarding: every student applies for GitHub Education, since the course already requires GitHub for project code."
+  tools: [github, copilot, codespaces]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Pack: https://education.github.com/pack. Students page: https://github.com/education/students. Both links came from the fetched page and were not opened. Partner offers change often."
+
+- id: copilot-agent-mode-and-cloud-agent
+  category: AI_TOOLS
+  subtopic: "GitHub Copilot"
+  title: "Copilot agent mode in the IDE and Copilot cloud agent (formerly coding agent)"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode"
+  access: freemium
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "Agent mode takes a high-level task, picks which files to edit, makes the edits and runs commands (with approval) in VS Code, Visual Studio, JetBrains, Xcode and Eclipse. The cloud agent works in the background on GitHub repos and is started from issues, the mobile app, IDEs, the CLI, MCP or Slack/Jira/Linear, and returns a pull request."
+  wiki_use: "Demo: assign a GitHub issue ('add a cohort-retention chart to the notebook') to the cloud agent and review the PR it opens in class."
+  tools: [copilot, vscode, github]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Cloud agent docs: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/start-copilot-sessions (fetched; 'available for all paid Copilot plans'). Tips: https://docs.github.com/en/copilot/tutorials/cloud-agent/get-the-best-results (link only)."
+
+- id: github-skills-getting-started-copilot
+  category: AI_TOOLS
+  subtopic: "Free courses"
+  title: "Getting Started with GitHub Copilot (GitHub Skills exercise)"
+  authors: "GitHub"
+  year: 2026
+  type: course
+  venue: "GitHub Skills"
+  url: "https://github.com/skills/getting-started-with-github-copilot"
+  access: open
+  license: "MIT"
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "A free, under-an-hour exercise that runs in a preconfigured Codespace. Students use Copilot to explain, write, plan and develop code while updating a sample school-activities website."
+  wiki_use: "Optional pre-lab. Students who finish it arrive knowing Copilot chat, inline suggestions and Codespaces."
+  tools: [copilot, codespaces]
+  ai_angle: true
+  verified_via: fetch
+  notes: "skills.github.com now redirects to GitHub Learn (https://learn.github.com/skills). Codespaces usage on private repos uses Actions or Codespaces minutes. Other Copilot exercises in the org (https://github.com/skills, fetched; licenses not checked one by one): build-applications-w-copilot-agent-mode, expand-your-team-with-copilot (coding agent), integrate-mcp-with-copilot, customize-your-github-copilot-experience, test-and-debug-with-github-copilot, and idea-to-merge-with-the-copilot-app. Each lives at github.com/skills/<name>, and test-and-debug fits the course's verification theme."
+
+- id: vscode-ai-docs
+  category: AI_TOOLS
+  subtopic: "VS Code"
+  title: "Build with AI in VS Code (agents, chat, MCP, customization)"
+  authors: "Microsoft (VS Code)"
+  year: 2026
+  type: documentation
+  venue: "code.visualstudio.com"
+  url: "https://code.visualstudio.com/docs/copilot/overview"
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "VS Code's AI hub: agents in the Chat view or Agents window (the Copilot harness, or Anthropic Claude and OpenAI Codex harnesses), model choice including your own API key or a local model, MCP servers, project instructions, agent skills, plugins, and permissions, approvals and terminal sandboxing."
+  wiki_use: "Default free IDE for students not on Cursor. Link it from the M1 setup page along with the Python and Jupyter extensions."
+  tools: [vscode, copilot, mcp]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Agents overview: https://code.visualstudio.com/docs/agents/overview. MCP: https://code.visualstudio.com/docs/agent-customization/mcp-servers. Copilot setup: https://code.visualstudio.com/docs/setup/copilot (links from the fetched page). Notebooks: 'Jupyter Notebooks in VS Code' (https://code.visualstudio.com/docs/datascience/jupyter-notebooks, fetched) covers Variable Explorer, Data Viewer and export to .py, but does not describe Copilot in notebooks. Data Wrangler quick start: https://code.visualstudio.com/docs/datascience/data-wrangler-quick-start (link only)."
+
+- id: vscode-agent-security
+  category: AI_TOOLS
+  subtopic: "Agent security and permissions"
+  title: "Securing AI-assisted development in VS Code (prompt injection, Workspace Trust, approvals, sandboxing)"
+  authors: "Microsoft (VS Code)"
+  year: 2026
+  type: documentation
+  venue: "code.visualstudio.com"
+  url: "https://code.visualstudio.com/docs/agents/run/security"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "Explains the risks of agents and MCP servers, with prompt injection through tool output as the central concern. It recommends Restricted Mode (Workspace Trust) for untrusted projects and reviewing edits, terminal commands and tool calls through approval prompts."
+  wiki_use: "Pair it with the Claude Code security page so students see the same principles across tools."
+  tools: [vscode, copilot]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Related: https://code.visualstudio.com/docs/agents/run/approvals and https://code.visualstudio.com/docs/agents/run/agent-sandboxing (links only)."
+
+# =====================================================================
+# 4. OPENAI CODEX AND CHATGPT
+# =====================================================================
+
+- id: openai-codex-docs
+  category: AI_TOOLS
+  subtopic: "OpenAI Codex"
+  title: "Codex documentation: CLI, IDE extension, cloud, and app (ChatGPT Learn)"
+  authors: "OpenAI"
+  year: 2026
+  type: documentation
+  venue: "learn.chatgpt.com"
+  url: "https://learn.chatgpt.com/docs"
+  access: freemium
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "Codex is OpenAI's coding agent. It runs in the ChatGPT desktop, web and mobile apps, as the Codex CLI (works on local files, scriptable with `codex exec`), as an IDE extension (VS Code, Cursor, Windsurf; JetBrains and Xcode integrations), and as Codex Cloud (remote tasks that end in a PR). It is included in every ChatGPT plan, Free through Enterprise."
+  wiki_use: "Alternative agent for students who already pay for ChatGPT Plus. The Free plan gives limited Codex access for quick tasks."
+  tools: [codex, chatgpt]
+  ai_angle: true
+  verified_via: fetch
+  notes: "developers.openai.com/codex now 302-redirects to learn.chatgpt.com/docs. Pricing (https://learn.chatgpt.com/codex/pricing, fetched 2026-10-23): Free $0 (limited); Go $8/month; Plus $20; Pro from $100 ($100/$200/$500); Business $20/user/month annual or $25 monthly; Edu and Enterprise by quote. CLI: https://learn.chatgpt.com/codex/cli; IDE: https://learn.chatgpt.com/codex/ide; Cloud: https://learn.chatgpt.com/codex/cloud. The CLI is open source (Apache-2.0) at https://github.com/openai/codex."
+
+- id: openai-codex-sandboxing-approvals
+  category: AI_TOOLS
+  subtopic: "Agent security and permissions"
+  title: "Codex sandboxing and approval modes"
+  authors: "OpenAI"
+  year: 2026
+  type: documentation
+  venue: "learn.chatgpt.com"
+  url: "https://learn.chatgpt.com/codex/sandboxing"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI]
+  summary: "Explains Codex's OS-enforced sandbox modes (read-only, workspace-write as the local default, and full access) and the approval policies that decide when the agent must stop and ask."
+  wiki_use: "Comparison row on the 'running agents safely' page: Codex's workspace-write mode next to Claude Code's sandbox and VS Code approvals."
+  tools: [codex]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Related: https://learn.chatgpt.com/codex/agent-approvals-security and https://learn.chatgpt.com/codex/security (links from the docs hub)."
+
+- id: chatgpt-data-analysis
+  category: AI_TOOLS
+  subtopic: "ChatGPT data analysis"
+  title: "Data analysis with ChatGPT"
+  authors: "OpenAI Help Center"
+  year: 2026
+  type: documentation
+  venue: "help.openai.com"
+  url: "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt"
+  access: freemium
+  level: intro
+  priority: core
+  modules: [M1, M2, AI]
+  summary: "ChatGPT analyzes uploaded spreadsheets (.xls, .xlsx, .csv), PDFs and text or data files (JSON, XML, YAML) in a Python environment with no internet access. Availability and limits depend on model, plan and workspace settings."
+  wiki_use: "Parallel to the Claude file-creation lab: students run the same RFM or segmentation prompt in both tools and compare the code and numbers each produces."
+  tools: [chatgpt, python]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The article does not list plans per feature. It warns that large or complex files may not be fully analyzed, which is a good prompt to teach 'check the row count'."
+
+- id: chatgpt-edu
+  category: AI_TOOLS
+  subtopic: "Student and education programs"
+  title: "ChatGPT Edu (ChatGPT for education)"
+  authors: "OpenAI"
+  year: 2026
+  type: website
+  venue: "chatgpt.com"
+  url: "https://chatgpt.com/business/education/"
+  access: paid
+  level: intro
+  priority: optional
+  modules: [AI]
+  summary: "A campus-licensed ChatGPT workspace with the flagship model, data analysis, custom GPTs, an admin console and SSO. OpenAI states that Edu data and conversations are not used for training. It is sold to institutions through sales, with no individual student offer on the page."
+  wiki_use: "Explain to students why institutional licenses differ from personal accounts. At UIUC the related 'Illinois ChatGPT' license is for faculty and staff only."
+  tools: [chatgpt]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Launch post (May 30, 2024): https://openai.com/index/introducing-chatgpt-edu/. The page does not say whether Edu includes Codex, but the Codex pricing page lists Edu among the plans that include it. chatgpt.com/students could not be fetched (client error), so I could not verify any current consumer student offer."
+
+- id: openai-prompt-engineering-guide
+  category: AI_TOOLS
+  subtopic: "Prompting guides"
+  title: "Prompt engineering (OpenAI API docs)"
+  authors: "OpenAI"
+  year: 2026
+  type: documentation
+  venue: "developers.openai.com"
+  url: "https://developers.openai.com/api/docs/guides/prompt-engineering"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "OpenAI's guide to consistent results: choosing between reasoning and GPT models, instructions and message roles, Markdown or XML structure, few-shot examples, RAG context, prompt caching, and model-specific advice for coding and agentic tasks."
+  wiki_use: "Second canonical prompting reference next to Anthropic's. Students compare the two and distill a one-page 'prompting for analysis code' checklist."
+  tools: [openai]
+  ai_angle: true
+  verified_via: fetch
+  notes: "platform.openai.com/docs/guides/prompt-engineering 302-redirects here. A Codex-specific prompting page appears in the navigation at https://developers.openai.com/codex/prompting (not opened)."
+
+- id: openai-business-data-privacy
+  category: AI_TOOLS
+  subtopic: "Data privacy"
+  title: "Enterprise privacy at OpenAI (business data commitments)"
+  authors: "OpenAI"
+  year: 2026
+  type: documentation
+  venue: "openai.com"
+  url: "https://openai.com/enterprise-privacy/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M2]
+  summary: "By default OpenAI does not train on business data from ChatGPT Business, Enterprise, Edu or the API. Admins set retention for Enterprise and Edu, and API data is generally kept up to 30 days. Personal (consumer) accounts are handled differently and may be used for training."
+  wiki_use: "Data-privacy page: the core lesson that the same model under a different account type carries different data terms. Never paste client or customer PII into a personal account."
+  tools: [chatgpt, openai]
+  ai_angle: true
+  verified_via: fetch
+
+# =====================================================================
+# 5. GOOGLE: GEMINI CLI -> ANTIGRAVITY, COLAB, JULES, STUDENT OFFERS
+# =====================================================================
+
+- id: gemini-cli-repo
+  category: AI_TOOLS
+  subtopic: "Gemini CLI"
+  title: "Gemini CLI (google-gemini/gemini-cli) and docs"
+  authors: "Google"
+  year: 2026
+  type: tool
+  venue: "GitHub"
+  url: "https://github.com/google-gemini/gemini-cli"
+  access: freemium
+  license: "Apache-2.0"
+  level: intermediate
+  priority: optional
+  modules: [AI]
+  summary: "An open-source terminal agent for Gemini models, with GEMINI.md context files, MCP servers, extensions, sandboxing and trusted folders. The README still advertises a free tier (60 requests/minute and 1,000/day with a personal Google account), but see the notes."
+  wiki_use: "Mention it as historical context only. Point students to Antigravity CLI or another tool instead (see gemini-cli-to-antigravity-transition)."
+  tools: [gemini-cli]
+  ai_angle: true
+  verified_via: fetch
+  notes: "IMPORTANT: The docs (https://geminicli.com/docs/) say 'Unpaid tier and Google One users: Gemini CLI was replaced by Antigravity CLI on June 18th, 2026.' The README's free-tier description looks out of date. Gemini CLI is still available through paid API keys and Gemini Code Assist Standard or Enterprise licenses. Free course: DeepLearning.AI 'Gemini CLI: Code & Create with an Open-Source Agent' (Jack Wotherspoon, Google; 1h23m, beginner; https://www.deeplearning.ai/short-courses/gemini-cli-code-and-create-with-an-open-source-agent/, fetched). It includes a data-analysis dashboard lesson that mixes local CSVs with cloud data, and the page now lists a 'Gemini CLI Deprecation for Free, Pro, and Ultra Users' reading."
+
+- id: gemini-cli-to-antigravity-transition
+  category: AI_TOOLS
+  subtopic: "Gemini CLI"
+  title: "An important update: Transitioning Gemini CLI to Antigravity CLI"
+  authors: "Lyalin, D.; Mullen, T. (Google)"
+  year: 2026
+  type: blog
+  venue: "Google Developers Blog"
+  url: "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M8]
+  summary: "Google announced on May 19, 2026 that on June 18, 2026 Gemini CLI and the Gemini Code Assist IDE extensions would stop serving Google AI Pro/Ultra subscribers and free individual users. Antigravity CLI, a new Go-based terminal agent that shares a harness with the Antigravity 2.0 desktop app, replaces them. Enterprise Code Assist customers keep Gemini CLI."
+  wiki_use: "Use it as a dated warning on the tools page, and as an M8 example of how fast the AI tooling market shifts (tutorials from 2025 will mislead students)."
+  tools: [gemini-cli, antigravity]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Antigravity CLI supports Agent Skills, hooks, subagents and plugins (formerly extensions), but did not launch with full Gemini CLI feature parity. The post does not state a free-tier limit."
+
+- id: google-antigravity
+  category: AI_TOOLS
+  subtopic: "Google Antigravity"
+  title: "Google Antigravity (agentic IDE, desktop app, CLI, SDK)"
+  authors: "Google"
+  year: 2026
+  type: tool
+  venue: "antigravity.google"
+  url: "https://antigravity.google"
+  access: freemium
+  level: intermediate
+  priority: recommended
+  modules: [M1, AI]
+  summary: "Google's agent-first development platform: Antigravity IDE (an agentic IDE with an agent manager and artifacts), the Antigravity App for coordinating multiple agents, a CLI (`agy`), extensions for VS Code, JetBrains, Visual Studio, Zed and Xcode, and a Python SDK. It supports SKILL.md skills, rules and MCP, with tool approval gates, a terminal sandbox and sandboxed browser automation."
+  wiki_use: "Google's replacement for the free Gemini CLI path. The free individual tier makes it viable for students who have no paid subscription."
+  tools: [antigravity]
+  ai_angle: true
+  verified_via: fetch
+  notes: "It exists (verified). Pricing (https://antigravity.google/pricing): Free individual tier ($0, a range of agent models, unlimited Tab completions, basic weekly rate limits); Google AI Pro and Ultra add higher limits and AI credits; business plans through Google Cloud. Docs: https://antigravity.google/docs/overview. Security: https://antigravity.google/docs/permissions/ and https://antigravity.google/docs/sandbox/. The docs page did not mention AGENTS.md. Desktop builds for macOS, Windows and Linux."
+
+- id: google-jules
+  category: AI_TOOLS
+  subtopic: "Google Jules"
+  title: "Jules: Google's asynchronous coding agent"
+  authors: "Google"
+  year: 2026
+  type: tool
+  venue: "jules.google"
+  url: "https://jules.google"
+  access: freemium
+  level: intermediate
+  priority: optional
+  modules: [AI]
+  summary: "An autonomous agent that clones a GitHub repo into a cloud VM, proposes a plan, and opens a PR for bug fixes, tests, version bumps or features. Plans: free (15 tasks/day, 3 concurrent), AI Pro (100/day), AI Ultra (300/day)."
+  wiki_use: "Optional comparison with Copilot's cloud agent and Codex Cloud: assign the same 'write unit tests for clv.py' issue to each and compare the PRs."
+  tools: [jules, github]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The fetched page listed Gemini 2.5 Pro and Gemini 3 Pro as the models, which may be out of date. App: https://jules.google.com/."
+
+- id: colab-ai-features
+  category: AI_TOOLS
+  subtopic: "Gemini in Colab"
+  title: "Google Colab: AI-powered notebooks (Gemini in Colab)"
+  authors: "Google"
+  year: 2026
+  type: tool
+  venue: "developers.google.com"
+  url: "https://developers.google.com/colab"
+  access: freemium
+  level: intro
+  priority: core
+  modules: [M1, M2, M3, AI]
+  summary: "Colab's landing page presents it as an AI coding assistant. Gemini generates, explains, debugs, refactors and documents code from plain-language prompts, and 'autonomous analysis' generates and runs code to answer questions about data. Pro and Pro+ add compute and background execution."
+  wiki_use: "Default environment for in-class labs. The wiki can link 'Open in Colab' badges for every notebook, with Gemini as the built-in assistant."
+  tools: [colab, gemini]
+  ai_angle: true
+  verified_via: fetch
+  notes: "colab.google now 302-redirects here. Try AI-first Colab at https://colab.new/ (link only). Teaching posts: https://medium.com/google-colab/tagged/education (link only). Colab AI features require age 18+ and may vary by locale (see colab-faq-ai-privacy)."
+
+- id: colab-faq-ai-privacy
+  category: AI_TOOLS
+  subtopic: "Data privacy"
+  title: "Colab FAQ: AI features, data use, and Colab Pro for Education"
+  authors: "Google"
+  year: 2026
+  type: documentation
+  venue: "research.google.com"
+  url: "https://research.google.com/colaboratory/faq.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "Colab's AI features are on by default for eligible users aged 18+. Google collects prompts, related code, outputs and feedback, human reviewers may read them, and data is kept up to 18 months. Users are asked not to include sensitive or personally identifying information. Colab Pro for Education (free Pro for US students) is no longer open to new signups."
+  wiki_use: "Key slide for the privacy lesson: in Colab, never paste customer PII into a Gemini prompt, and use synthetic or anonymized course datasets."
+  tools: [colab, gemini]
+  ai_angle: true
+  verified_via: fetch
+  notes: "By default Colab AI cannot read Drive files or secrets, but it can write code that does when you ask. Note the contrast with Google Workspace for Education terms on the UIUC page."
+
+- id: colab-data-science-agent
+  category: AI_TOOLS
+  subtopic: "Gemini in Colab"
+  title: "Data Science Agent in Colab: The future of data analysis with Gemini"
+  authors: "Fine, J.; Kolla, M.; Soloducho, I. (Google)"
+  year: 2025
+  type: blog
+  venue: "Google Developers Blog"
+  url: "https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2, M3, M7, AI]
+  summary: "Announces Colab's Data Science Agent. You upload a data file and describe a goal in the Gemini side panel, and the agent generates a complete, executable notebook (imports, loading, cleaning, plots). The post warns that the agent may make mistakes and cites a 4th-place finish on the DABStep data-agent benchmark."
+  wiki_use: "Demo in M2 or M3: students let the agent build a first-pass EDA or regression notebook, then audit every cell for correctness."
+  tools: [colab, gemini, pandas]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published March 3, 2025. At launch it was for users 18+ in select countries. On the current Colab page this capability appears as 'autonomous analysis'. Benchmark: https://huggingface.co/spaces/adyen/DABstep (link only)."
+
+- id: google-ai-pro-students
+  category: AI_TOOLS
+  subtopic: "Student and education programs"
+  title: "Google AI Pro for students (free for 1 year)"
+  authors: "Google"
+  year: 2026
+  type: website
+  venue: "gemini.google"
+  url: "https://gemini.google/students/"
+  access: free-registration
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "As of 2026-10-23: eligible US college students aged 18+ get Google AI Pro free for one year (higher Gemini limits, 5 TB storage and other features) if they redeem by December 31, 2026. Eligibility is verified each year. A payment method is required, and the plan auto-renews at $19.99/month unless cancelled."
+  wiki_use: "Day-one setup: remind students to set a calendar reminder to cancel before the renewal charge. AI Pro also raises Antigravity and Jules limits."
+  tools: [gemini, antigravity, jules]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The page does not mention NotebookLM, Jules or Colab. Students whose 2025 AI Pro trial expired can re-qualify."
+
+# =====================================================================
+# 6. NOTEBOOK-NATIVE AI (Jupyter AI, marimo, Positron/Posit Assistant, Deepnote)
+# =====================================================================
+
+- id: jupyter-ai
+  category: AI_TOOLS
+  subtopic: "Jupyter AI"
+  title: "Jupyter AI (jupyterlab/jupyter-ai) v3"
+  authors: "Project Jupyter"
+  year: 2026
+  type: package
+  venue: "GitHub / Read the Docs"
+  url: "https://github.com/jupyterlab/jupyter-ai"
+  access: open
+  license: "BSD-3-Clause"
+  level: intermediate
+  priority: recommended
+  modules: [M1, AI]
+  summary: "An open-source JupyterLab extension that connects AI agents (Claude, Codex, GitHub Copilot, Goose, Kiro, Mistral Vibe, OpenCode and others) to notebooks through the Agent Client Protocol. A built-in Jupyter MCP server lets agents edit and run cells, and a permission system asks before any write or command."
+  wiki_use: "For students on local JupyterLab: shows agents working inside the notebook with approval prompts, in contrast with copy-pasting into chat."
+  tools: [jupyterlab, jupyter-ai, mcp]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Docs: https://jupyter-ai.readthedocs.io/en/stable/ (v3.2.0). The older v2 docs, with %%ai magics and provider-based chat, are at https://jupyter-ai.readthedocs.io/en/v2/."
+
+- id: marimo-ai
+  category: AI_TOOLS
+  subtopic: "marimo"
+  title: "marimo: generate notebooks with AI (built-in assistant, marimo pair, text-to-notebook)"
+  authors: "marimo"
+  year: 2026
+  type: documentation
+  venue: "docs.marimo.io"
+  url: "https://docs.marimo.io/guides/generate_with_ai/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M1, M2, AI]
+  summary: "Three AI routes in the reactive marimo notebook: (1) 'marimo pair', which lets agent CLIs such as Claude Code, Codex or OpenCode read variables and run or edit cells in a live notebook; (2) the editor's assistant (chat in Manual, Ask, Agent and Code modes; cell generation; inline completion; providers OpenAI, Anthropic, Google, Copilot, Bedrock, Ollama); and (3) `marimo new PROMPT` to generate a whole notebook."
+  wiki_use: "Recommended for the notebook-vs-script lesson. marimo notebooks are plain .py files, which diff cleanly in Git and are easy for agents to edit."
+  tools: [marimo, claude-code, codex]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Editor assistant: https://docs.marimo.io/guides/editor_features/ai_completion/ (fetched). marimo pair: https://docs.marimo.io/guides/generate_with_ai/marimo_pair/ (link). The agents panel is experimental."
+
+- id: posit-assistant-positron
+  category: AI_TOOLS
+  subtopic: "Positron"
+  title: "Posit Assistant in Positron (replaces Positron Assistant and Databot)"
+  authors: "Posit"
+  year: 2026
+  type: tool
+  venue: "positron.posit.co"
+  url: "https://positron.posit.co/assistant.html"
+  access: freemium
+  level: intermediate
+  priority: recommended
+  modules: [M1, M3, AI]
+  summary: "Positron, Posit's data-science IDE, ships Posit Assistant as its default AI experience from Positron 2026.07, replacing Positron Assistant and Databot. It uses session context (loaded data, plots, console history, variable types) for EDA, cleaning, modeling and app building in R and Python, and includes skills such as shiny-bslib, quarto-authoring and predictive-modeling-r."
+  wiki_use: "Best fit for students using R alongside Python. Demo how session-aware context (it 'sees' the data frame) changes the quality of AI-generated analysis code."
+  tools: [positron, r, python]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Positron Assistant and Databot are marked deprecated (Databot page: https://positron.posit.co/databot.html). Bring-your-own-key: Anthropic, Amazon Bedrock, GitHub Copilot or OpenAI, or Posit AI Pass (whether AI Pass costs money was not stated). No student offer. Docs: https://assistant.posit.co/docs/getting-started/. Provider privacy: https://positron.posit.co/assistant-provider-info.html."
+
+# =====================================================================
+# 7. WINDSURF AND APP BUILDERS (Replit, Lovable, Bolt, v0) AND AI ANALYSIS APPS
+# =====================================================================
+
+- id: windsurf-devin-desktop
+  category: AI_TOOLS
+  subtopic: "Windsurf"
+  title: "Windsurf, now Devin Desktop (Cognition)"
+  authors: "Cognition"
+  year: 2026
+  type: tool
+  venue: "devin.ai"
+  url: "https://devin.ai/desktop"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [AI, M8]
+  summary: "Windsurf, the agentic IDE, has been renamed Devin Desktop. It keeps the Windsurf IDE and adds an Agent Command Center for local and cloud agents. Plans: Free $0, Pro $20/month, Max $200, Teams $80/month plus $40 per seat, Enterprise."
+  wiki_use: "Use it in M8 as a case on AI-tooling industry dynamics. The 2025 acquisition saga is a good IO discussion of acqui-hires and licensing."
+  tools: [windsurf, devin]
+  ai_angle: true
+  verified_via: fetch
+  notes: "windsurf.com/editor 302-redirects here. ACQUISITION HISTORY: OpenAI's roughly $3B deal for Windsurf collapsed on July 11, 2025, and Google DeepMind hired CEO Varun Mohan, co-founder Douglas Chen and researchers under a nonexclusive technology license reported by Bloomberg at about $2.4B (TechCrunch, Maxwell Zeff, July 11, 2025: https://techcrunch.com/2025/07/11/windsurfs-ceo-goes-to-google-openais-acquisition-falls-apart/). Cognition then signed a definitive agreement to acquire Windsurf's IP, product, brand and employees (Cognition blog, July 14, 2025: https://cognition.com/blog/windsurf, redirected from cognition.ai). The Windsurf JetBrains plugin is still available."
+
+- id: dlai-windsurf-course
+  category: AI_TOOLS
+  subtopic: "Free courses"
+  title: "Build Apps with Windsurf's AI Coding Agents (DeepLearning.AI)"
+  authors: "Ramachandran, A. (Codeium/Windsurf)"
+  year: 2025
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/short-courses/build-apps-with-windsurfs-ai-coding-agents/"
+  access: free-registration
+  level: intro
+  priority: optional
+  modules: [AI, M2]
+  summary: "A 1h30m beginner course on agentic IDE workflows: multi-file edits, debugging and auto-fixing tests, how agents use tools and context, upgrading legacy code, and building a Wikipedia data-analysis app with caching and visualization."
+  wiki_use: "Optional. Its agent concepts transfer to any IDE, though the product is now Devin Desktop."
+  tools: [windsurf]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Year approximate (2025). Free access 'for a limited time during the platform beta'. Graded items need Pro."
+
+- id: replit-agent
+  category: AI_TOOLS
+  subtopic: "App builders"
+  title: "Replit Agent"
+  authors: "Replit"
+  year: 2026
+  type: tool
+  venue: "docs.replit.com"
+  url: "https://docs.replit.com/replitai/agent"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [M2, AI]
+  summary: "A browser-based AI builder that turns plain-language descriptions into deployed apps, data visualizations and slides. It plans, writes code, sets up infrastructure and tests, with a Plan mode for reviewing the task list first. Free Mode covers everyday use, and paid Power and Max modes handle harder work."
+  wiki_use: "For teams that want an interactive dashboard to accompany their blog post without managing hosting."
+  tools: [replit]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Pricing (https://replit.com/pricing, 2026-10-23): Core $20/month ($18 annual), Pro $100 ($90), Enterprise custom. Free or Starter details were not stated clearly on the pricing page. No education offer listed."
+
+- id: dlai-vibe-coding-replit
+  category: AI_TOOLS
+  subtopic: "Free courses"
+  title: "Vibe Coding 101 with Replit (DeepLearning.AI)"
+  authors: "Catasta, M.; Palmer, M. (Replit)"
+  year: 2025
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/short-courses/vibe-coding-101-with-replit/"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [AI, M1]
+  summary: "A 1h34m beginner course: principles of agentic coding (one task at a time, fresh sessions per feature), PRDs and wireframes as prompts, building and deploying two apps, debugging, persistent storage, and reviewing what the agent built."
+  wiki_use: "Good first exposure for non-CS students. Its 'review what the agent built' habit sets up the verification lessons."
+  tools: [replit]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Year approximate (2025). Free 'for a limited time during the platform beta'. Certificate needs Pro."
+
+- id: lovable
+  category: AI_TOOLS
+  subtopic: "App builders"
+  title: "Lovable (AI full-stack web app builder)"
+  authors: "Lovable"
+  year: 2026
+  type: tool
+  venue: "lovable.dev"
+  url: "https://docs.lovable.dev/introduction"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [M2, AI]
+  summary: "Builds and deploys web apps (frontend, backend, database, auth) from natural-language prompts, with editable code synced to GitHub, GitLab or Bitbucket. Pricing is credit-based."
+  wiki_use: "Option for teams building an interactive companion app, such as a CLV calculator, for their project."
+  tools: [lovable]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Student discount (https://lovable.dev/students): 50% off Pro for up to 12 months ($12.50 instead of $25/month, 100 credits/month), verified with a school email and no card required. The pricing page did not show free-plan limits when fetched."
+
+- id: vercel-v0
+  category: AI_TOOLS
+  subtopic: "App builders"
+  title: "v0 by Vercel"
+  authors: "Vercel"
+  year: 2026
+  type: tool
+  venue: "v0.app"
+  url: "https://v0.app/docs"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [M2, AI]
+  summary: "An AI agent that builds landing pages, dashboards and full-stack apps (Next.js, Tailwind, shadcn/ui) from prompts or mockups, with one-click deploy to Vercel and GitHub sync."
+  wiki_use: "For students who want a polished front-end dashboard for project results."
+  tools: [v0, nextjs]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Pricing (https://v0.app/pricing, 2026-10-23): Free (7 messages/day, deploy, GitHub sync); Plus $30/user/month; Business $100/user/month (training opt-out by default); Enterprise custom. Note that the free and Plus tiers do not opt out of training by default. A similar builder: Bolt.new by StackBlitz (https://bolt.new, fetched) builds websites and apps from chat, with Bolt Cloud hosting, databases and auth. Its landing page says 'start for free' but lists no limits or prices."
+
+- id: julius-ai
+  category: AI_TOOLS
+  subtopic: "AI data-analysis apps"
+  title: "Julius AI"
+  authors: "Julius AI"
+  year: 2026
+  type: tool
+  venue: "julius.ai"
+  url: "https://julius.ai"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [M2, M3, AI]
+  summary: "A chat-first AI workspace for analyzing uploaded data and producing charts, dashboards, presentations and reports, with connectors to Google Drive, OneDrive and SharePoint."
+  wiki_use: "Use it as a contrast case: compare a no-code AI analysis app's output with code-first analysis (Colab plus agent), with emphasis on transparency and reproducibility."
+  tools: [julius]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Pricing (https://julius.ai/pricing, 2026-10-23): Free (daily credits, 'Julius Lite' models); Plus $20/month ($16 annual, 2,000 credits); Pro $45 ($37); Business $450 ($375); Enterprise custom. No student discount listed. The pricing page does not say whether user data trains models (it cites SOC 2 Type II). A similar tool: Deepnote's Education plan (https://deepnote.com/education, fetched) is free with a school email but excludes Deepnote AI."
+
+# =====================================================================
+# 8. LEARNING TO USE THEM: OTHER FREE COURSES
+# =====================================================================
+
+- id: dlai-claude-code-course
+  category: AI_TOOLS
+  subtopic: "Free courses"
+  title: "Claude Code: A Highly Agentic Coding Assistant (DeepLearning.AI)"
+  authors: "Schoppik, E. (Anthropic)"
+  year: 2025
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant"
+  access: free-registration
+  level: intermediate
+  priority: core
+  modules: [AI, M2]
+  summary: "A 2-hour course (10 video lessons) built with Anthropic: exploring, testing, refactoring and debugging codebases; MCP servers (Playwright, Figma); CLAUDE.md, context management, planning, subagents, worktrees, GitHub integration and hooks. Projects include refactoring a Jupyter notebook into a dashboard."
+  wiki_use: "Core assigned course. The notebook-to-dashboard project maps directly onto the M2 visualization module."
+  tools: [claude-code, mcp, jupyter]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Fetched via https://www.deeplearning.ai/short-courses/claude-code-a-highly-agentic-coding-assistant/, which declares this canonical URL. Prerequisites: Python and Git. Free 'for a limited time during the platform beta'; graded work needs Pro. Year approximate (2025)."
+
+- id: dlai-agent-skills-course
+  category: AI_TOOLS
+  subtopic: "Free courses"
+  title: "Agent Skills with Anthropic (DeepLearning.AI)"
+  authors: "Schoppik, E. (Anthropic)"
+  year: 2026
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/short-courses/agent-skills-with-anthropic/"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "A 2h19m beginner course: skill folder structure and SKILL.md, progressive disclosure, how skills compare with tools, MCP and subagents, pre-built skills (Excel, PowerPoint, skill creation), custom skills, and using skills across Claude.ai, Claude Code, the API and the Agent SDK."
+  wiki_use: "Assign it before students write a team analysis skill."
+  tools: [claude-code, claude-ai]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The page does not state a price; quizzes and certificates need DeepLearning.AI Pro. Year inferred (late 2025 or 2026), not confirmed on the page."
+
+- id: microsoft-generative-ai-for-beginners
+  category: AI_TOOLS
+  subtopic: "Free courses"
+  title: "Generative AI for Beginners (21 lessons)"
+  authors: "Microsoft"
+  year: 2026
+  type: course
+  venue: "GitHub"
+  url: "https://github.com/microsoft/generative-ai-for-beginners"
+  access: open
+  license: "MIT"
+  level: intro
+  priority: recommended
+  modules: [M5, M7, AI]
+  summary: "A free 21-lesson course with Python and TypeScript samples on LLM fundamentals, prompt engineering, text generation, chat, RAG, function calling (lesson 11) and AI agents (lesson 17). The repo has about 122k stars."
+  wiki_use: "Background for M5 and M7. Embed or adapt the prompt-engineering and function-calling lessons as optional readings."
+  tools: [python, openai, azure-openai]
+  ai_angle: true
+  download:
+    repo: "https://github.com/microsoft/generative-ai-for-beginners"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "The repo is large (translations and images), so clone with --depth 1 or a sparse checkout of the needed lesson folders rather than mirroring everything. It does not cover AI coding tools or MCP; Microsoft has a separate 'MCP for Beginners' course, which I did not verify. Many samples assume Azure OpenAI or GitHub Models."
+
+# =====================================================================
+# 9. WORKFLOWS, VERIFICATION, REPRODUCIBILITY, GIT, PRIVACY
+# =====================================================================
+
+- id: harper-reed-llm-codegen-workflow
+  category: AI_TOOLS
+  subtopic: "Workflows"
+  title: "My LLM codegen workflow atm"
+  authors: "Reed, H."
+  year: 2025
+  type: blog
+  venue: "harper.blog"
+  url: "https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI]
+  summary: "A widely cited workflow: brainstorm a spec with an LLM asking one question at a time (spec.md), have a reasoning model write a step-by-step plan and prompts (prompt_plan.md, todo.md), then execute step by step with tests. Brownfield work uses repomix to pack context for review and for finding missing tests."
+  wiki_use: "Assigned reading. Students apply the spec, plan, execute loop to their team project and commit spec.md and todo.md to the repo."
+  tools: [claude-code, aider, repomix]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published February 16, 2025. Follow-up 'Basic Claude Code' (May 8, 2025): https://harper.blog/2025/05/08/basic-claude-code/ (link from the post)."
+
+- id: willison-using-llms-for-code
+  category: AI_TOOLS
+  subtopic: "Workflows"
+  title: "Here's how I use LLMs to help me write code"
+  authors: "Willison, S."
+  year: 2025
+  type: blog
+  venue: "Simon Willison's Weblog"
+  url: "https://simonwillison.net/2025/Mar/11/using-llms-for-code/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1]
+  summary: "Practical advice: treat LLMs as overconfident pair programmers; account for training cut-offs and prefer well-known libraries; manage context; ask for options before committing; be specific; 'test everything' (if you haven't seen it run, it isn't working); vibe-code to learn but not for production."
+  wiki_use: "First-week reading that sets norms for the course: AI writes the draft, the student verifies."
+  tools: [chatgpt, claude-ai]
+  ai_angle: true
+  verified_via: fetch
+
+- id: willison-agentic-engineering-patterns
+  category: AI_TOOLS
+  subtopic: "Workflows"
+  title: "Agentic Engineering Patterns (guide)"
+  authors: "Willison, S."
+  year: 2026
+  type: website
+  venue: "Simon Willison's Weblog"
+  url: "https://simonwillison.net/guides/agentic-engineering-patterns/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [AI]
+  summary: "A living guide in chapters: principles ('writing code is cheap now', anti-patterns such as inflicting unreviewed code on collaborators), how coding agents work, Git with agents, subagents, testing and QA (red/green TDD, 'first run the tests', agentic manual testing), understanding code (linear walkthroughs, interactive explanations), and annotated prompts."
+  wiki_use: "Backbone reading for the verification unit. Assign 'Red/green TDD' and 'First run the tests' before students submit AI-written analysis functions."
+  tools: [claude-code, codex]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The introduction post appears dated February 23, 2026 (inferred from a link). Chapter URLs: https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/ and https://simonwillison.net/guides/agentic-engineering-patterns/first-run-the-tests/ (links from the guide's table of contents)."
+
+- id: willison-git-with-coding-agents
+  category: AI_TOOLS
+  subtopic: "Git hygiene with AI agents"
+  title: "Using Git with coding agents"
+  authors: "Willison, S."
+  year: 2026
+  type: blog
+  venue: "Simon Willison's Weblog (Agentic Engineering Patterns)"
+  url: "https://simonwillison.net/guides/agentic-engineering-patterns/using-git-with-coding-agents/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI, M1]
+  summary: "Git as the safety net for agent work. Have agents init repos, commit and review recent commits to load context; explain merge, rebase and squash; resolve conflicts with tests; recover lost work from the reflog; write git-bisect test scripts; and tidy history."
+  wiki_use: "Short reading for the GitHub-workflow lab: commit before every agent run, and review the diff before accepting."
+  tools: [git, claude-code, codex]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Last updated March 21, 2026 (from page metadata)."
+
+- id: google-code-review-guide
+  category: AI_TOOLS
+  subtopic: "Verifying AI-generated code"
+  title: "What to look for in a code review (Google Engineering Practices)"
+  authors: "Google"
+  year: 2019
+  type: documentation
+  venue: "google.github.io/eng-practices"
+  url: "https://google.github.io/eng-practices/review/reviewer/looking-for.html"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [AI]
+  summary: "Google's reviewer checklist: design, functionality and edge cases, complexity and over-engineering, tests that actually fail when code breaks, naming, and comments that explain why."
+  wiki_use: "Adapt it into the course's 'AI-generated analysis code review checklist', adding data-specific items: row counts, joins, missing values, units, and reproducing headline numbers."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The page does not state a license; it says the site is open source on GitHub. The year is approximate (the guide was first published around 2019) and was not verified."
+
+- id: pandera
+  category: AI_TOOLS
+  subtopic: "Verifying AI-generated code"
+  title: "pandera: statistical data testing for DataFrames"
+  authors: "Union.ai / pandera contributors"
+  year: 2026
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/unionai-oss/pandera"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M2, M3, AI]
+  summary: "A lightweight library for declaring DataFrame schemas (types, ranges, allowed values) and validating pandas or polars data with `schema.validate()`. Failures surface silent errors that AI-written cleaning code can introduce."
+  wiki_use: "Exercise: students ask the agent to write the cleaning step and also a pandera schema plus pytest assertions, then deliberately break the data to check that the tests catch it."
+  tools: [pandera, pandas, polars, pytest]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Docs: https://pandera.readthedocs.io. In recent versions use `import pandera.pandas as pa`; the top-level import is deprecated. Pair with pytest: https://docs.pytest.org/en/stable/getting-started.html (fetched)."
+
+- id: turing-way-reproducible-research
+  category: AI_TOOLS
+  subtopic: "Reproducible environments"
+  title: "The Turing Way: Guide for Reproducible Research"
+  authors: "The Turing Way Community"
+  year: 2026
+  type: book
+  venue: "The Turing Way"
+  url: "https://book.the-turing-way.org/reproducible-research/reproducible-research"
+  access: open
+  license: "CC BY 4.0 (text); MIT (code)"
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "An open handbook by more than 300 contributors. Its chapters on version control, testing, reproducible environments and code review give a vendor-neutral base for checking any analysis, including AI-written code."
+  wiki_use: "Link the Testing (https://book.the-turing-way.org/reproducible-research/testing) and Reproducible Environments (https://book.the-turing-way.org/reproducible-research/renv) chapters from the project-requirements page."
+  tools: [git, pytest, conda]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Subchapter URLs come from the fetched page. CC BY lets the wiki adapt excerpts with attribution."
+
+- id: good-enough-practices
+  category: AI_TOOLS
+  subtopic: "Reproducible environments"
+  title: "Good enough practices in scientific computing"
+  authors: "Wilson, G.; Bryan, J.; Cranston, K.; Kitzes, J.; Nederbragt, L.; Teal, T. K."
+  year: 2017
+  type: paper
+  venue: "PLOS Computational Biology 13(6): e1005510"
+  url: "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510"
+  doi: "10.1371/journal.pcbi.1005510"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "A minimal set of practices for newcomers: keep raw data unchanged, script every processing step, write short well-named functions, state dependencies explicitly, use a consistent project layout with README, LICENSE and CITATION files, and use version control."
+  wiki_use: "Academic anchor for the team-project repo rubric. Students can have the agent scaffold this layout."
+  tools: [git]
+  ai_angle: false
+  verified_via: fetch
+
+- id: uv-python
+  category: AI_TOOLS
+  subtopic: "Reproducible environments"
+  title: "uv: Python package and project manager"
+  authors: "Astral"
+  year: 2026
+  type: tool
+  venue: "docs.astral.sh"
+  url: "https://docs.astral.sh/uv/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M1, AI]
+  summary: "A fast Rust-based replacement for pip, virtualenv, pip-tools and pyenv. It provides a universal lockfile (`uv lock`, `uv sync`), `uv run` for isolated execution, and inline script dependency metadata (`uv add --script`)."
+  wiki_use: "Require a uv lockfile (or requirements.txt for Colab) in team repos, so the analysis an agent produced on one laptop reruns on the grader's machine."
+  tools: [uv, python]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Repo: https://github.com/astral-sh/uv. I did not verify the license from the fetched page. In Colab, students can instead pin versions in a requirements.txt and run `pip install -r`."
+
+- id: uiuc-genai-approved-apps
+  category: AI_TOOLS
+  subtopic: "Data privacy"
+  title: "University of Illinois Enterprise GenAI: AI Apps and data classifications"
+  authors: "University of Illinois, Office of the CIO"
+  year: 2026
+  type: website
+  venue: "genai.illinois.edu"
+  url: "https://genai.illinois.edu/ai-apps/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI, M1, M2]
+  summary: "UIUC's list of approved AI tools with eligibility and allowed data classifications. For students: Illinois Chat (no cost; Sensitive data only with locally hosted models), Microsoft Copilot Chat (Sensitive OK), and Google Gemini and NotebookLM (Internal and Public only). GitHub Copilot and Illinois ChatGPT are listed for faculty and staff. 'High Risk' data (SSNs, card numbers, PHI) must never be entered into AI tools."
+  wiki_use: "Must-link on the privacy page. Map each course tool to UIUC's data classes, and make clear that Claude, Cursor and Codex are not on the approved list, so they should be used only with public or synthetic course data."
+  tools: [gemini, copilot, chatgpt]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Hub: https://genai.illinois.edu/. Contact: genai-support@illinois.edu. Claude is not listed. The best-practices page links a 'Security, Privacy, and Accessibility' page that I did not fetch. Check before the term starts, because this list changes."
+
+# =====================================================================
+# 10. SECURITY AND RISK
+# =====================================================================
+
+- id: owasp-llm-top10-2025
+  category: AI_TOOLS
+  subtopic: "Security and risk"
+  title: "OWASP Top 10 for LLM Applications 2025"
+  authors: "OWASP Gen AI Security Project"
+  year: 2025
+  type: report
+  venue: "OWASP"
+  url: "https://genai.owasp.org/llm-top-10/"
+  access: open
+  license: "CC BY-SA 4.0"
+  level: intermediate
+  priority: core
+  modules: [AI, M7, M8]
+  summary: "The standard list of LLM application risks: LLM01 prompt injection, LLM02 sensitive information disclosure, LLM03 supply chain, LLM04 data and model poisoning, LLM05 improper output handling, LLM06 excessive agency, LLM07 system prompt leakage, LLM08 vector and embedding weaknesses, LLM09 misinformation, LLM10 unbounded consumption."
+  wiki_use: "Security page backbone. Map LLM01, LLM02, LLM06 and LLM09 to concrete student behaviors with agents and data."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "Agent-specific companion: 'OWASP Top 10 for Agentic Applications for 2026' (published December 9, 2025; https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/, fetched). Its landing page does not list the ten items; the PDF is at https://genai.owasp.org/download/52117/?tmstv=1765059207 (not opened)."
+
+- id: willison-lethal-trifecta
+  category: AI_TOOLS
+  subtopic: "Security and risk"
+  title: "The lethal trifecta for AI agents: private data, untrusted content, and external communication"
+  authors: "Willison, S."
+  year: 2025
+  type: blog
+  venue: "Simon Willison's Weblog"
+  url: "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+  access: open
+  level: intro
+  priority: core
+  modules: [AI]
+  summary: "An agent that combines access to private data, exposure to untrusted content and the ability to communicate externally can be steered by prompt injection into leaking data. Guardrails help only partly, so avoid giving one agent all three."
+  wiki_use: "The single most teachable security concept. Students check their own setup (for example customer CSV + web browsing + MCP email = all three) against it."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+
+- id: greshake-indirect-prompt-injection
+  category: AI_TOOLS
+  subtopic: "Security and risk"
+  title: "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection"
+  authors: "Greshake, K.; Abdelnabi, S.; Mishra, S.; Endres, C.; Holz, T.; Fritz, M."
+  year: 2023
+  type: paper
+  venue: "arXiv (cs.CR)"
+  url: "https://arxiv.org/abs/2302.12173"
+  doi: "10.48550/arXiv.2302.12173"
+  oa_url: "https://arxiv.org/abs/2302.12173"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [AI, M8]
+  summary: "The foundational paper on indirect prompt injection. Instructions hidden in content an LLM retrieves can hijack the application, causing data theft, worming and contamination of information ecosystems. Demonstrated against Bing Chat and code-completion engines."
+  wiki_use: "Academic citation for the security page, and for M5's point that scraped social-media text may itself contain injected instructions."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The arXiv page lists no venue. The paper is widely cited as appearing at ACM AISec 2023, which I did not verify here."
+
+- id: perry-insecure-code-ai-assistants
+  category: AI_TOOLS
+  subtopic: "Security and risk"
+  title: "Do Users Write More Insecure Code with AI Assistants?"
+  authors: "Perry, N.; Srivastava, M.; Kumar, D.; Boneh, D."
+  year: 2023
+  type: paper
+  venue: "ACM (DOI prefix 10.1145; likely ACM CCS 2023)"
+  url: "https://arxiv.org/abs/2211.03622"
+  doi: "10.1145/3576915.3623157"
+  oa_url: "https://arxiv.org/abs/2211.03622"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, M6]
+  summary: "In a user study, participants with an AI assistant wrote significantly less secure code yet were more confident it was secure. Participants who trusted the AI less and refined their prompts more produced fewer vulnerabilities."
+  wiki_use: "Evidence for the course norm 'confidence is not correctness'. Pair it with an in-class exercise auditing AI-generated code."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The arXiv page shows the ACM DOI but not the venue name. CCS 2023 is inferred from the DOI and should be confirmed before citing."
+
+# =====================================================================
+# 11. ACADEMIC ANCHORS ON AI-ASSISTED CODING PRODUCTIVITY AND CORRECTNESS
+# =====================================================================
+
+- id: peng-copilot-productivity
+  category: AI_TOOLS
+  subtopic: "Evidence on AI coding"
+  title: "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot"
+  authors: "Peng, S.; Kalliamvakou, E.; Cihon, P.; Demirer, M."
+  year: 2023
+  type: paper
+  venue: "arXiv (working paper)"
+  url: "https://arxiv.org/abs/2302.06590"
+  doi: "10.48550/arXiv.2302.06590"
+  oa_url: "https://arxiv.org/abs/2302.06590"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6, M8, AI]
+  summary: "A controlled experiment in which developers with Copilot finished an HTTP-server task 55.8% faster than controls, with heterogeneous effects across participants."
+  wiki_use: "M6 case: read it as an RCT (design, outcome, external validity) and contrast it with the METR result."
+  tools: [copilot]
+  ai_angle: true
+  verified_via: fetch
+
+- id: metr-ai-developer-productivity
+  category: AI_TOOLS
+  subtopic: "Evidence on AI coding"
+  title: "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
+  authors: "Becker, J.; Rush, N.; Barnes, E.; Rein, D."
+  year: 2025
+  type: paper
+  venue: "arXiv (METR)"
+  url: "https://arxiv.org/abs/2507.09089"
+  doi: "10.48550/arXiv.2507.09089"
+  oa_url: "https://arxiv.org/abs/2507.09089"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6, M8, AI]
+  summary: "In an RCT of 16 experienced open-source developers on 246 tasks, allowing AI tools increased completion time by 19%, even though developers expected a 24% speedup and afterwards believed they had been 20% faster."
+  wiki_use: "Key M6/M8 discussion piece on perceived versus measured productivity, and why students should measure rather than trust impressions."
+  tools: [cursor, claude]
+  ai_angle: true
+  verified_via: fetch
+
+- id: cui-genai-high-skilled-work
+  category: AI_TOOLS
+  subtopic: "Evidence on AI coding"
+  title: "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers"
+  authors: "Cui, Z. K.; Demirer, M.; Jaffe, S.; Musolff, L.; Peng, S.; Salz, T."
+  year: 2025
+  type: paper
+  venue: "SSRN working paper"
+  url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566"
+  doi: "10.2139/ssrn.4945566"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [M6, M8, AI]
+  summary: "Pooled randomized field experiments at Microsoft, Accenture and a Fortune 100 firm (4,867 developers) find a 26.08% increase in completed tasks (SE 10.3%) for developers given an AI coding assistant. Less experienced developers adopted it more and gained more."
+  wiki_use: "Economics-style anchor for M6 (field experiments, pooling, heterogeneity) and M8."
+  tools: [copilot]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Last revised August 21, 2025. The SSRN page lists no journal; check for later publication before citing."
+
+- id: dellacqua-jagged-frontier
+  category: AI_TOOLS
+  subtopic: "Evidence on AI coding"
+  title: "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality"
+  authors: "Dell'Acqua, F.; McFowland III, E.; Mollick, E. R.; Lifshitz-Assaf, H.; Kellogg, K.; Rajendran, S.; Krayer, L.; Candelon, F.; Lakhani, K. R."
+  year: 2023
+  type: paper
+  venue: "HBS Working Paper 24-013; Organization Science (forthcoming per SSRN)"
+  url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6, M8, AI]
+  summary: "A preregistered experiment with 758 BCG consultants. GPT-4 raised productivity and quality on tasks inside the AI 'frontier' but made correct answers substantially less likely on a task outside it."
+  wiki_use: "The 'jagged frontier' framing for business students: AI-assisted analysis is reliable on some subtasks and dangerously wrong on others, so verification must be targeted."
+  tools: [chatgpt]
+  ai_angle: true
+  verified_via: fetch
+  notes: "No DOI recorded because I did not see it on the page."
+
+- id: ds-1000-benchmark
+  category: AI_TOOLS
+  subtopic: "Evidence on AI coding"
+  title: "DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation"
+  authors: "Lai, Y.; Li, C.; Wang, Y.; Zhang, T.; Zhong, R.; Zettlemoyer, L.; Yih, S. W.; Fried, D.; Wang, S.; Yu, T."
+  year: 2022
+  type: paper
+  venue: "arXiv"
+  url: "https://arxiv.org/abs/2211.11501"
+  doi: "10.48550/arXiv.2211.11501"
+  oa_url: "https://arxiv.org/abs/2211.11501"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [M7, AI]
+  summary: "A benchmark of 1,000 StackOverflow-derived data-science problems across seven Python libraries (NumPy, pandas and others), scored with test cases plus API-usage constraints. The best system at the time (Codex-002) solved 43.3%."
+  wiki_use: "Instructor background showing that pandas and NumPy code generation has been measurably error-prone. It motivates the course's test-first verification habit."
+  tools: [pandas, numpy]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Project site: https://ds1000-code-gen.github.io. The arXiv page lists no venue; it is often cited as ICML 2023, which I did not verify here. Current models score far higher, so present it as historical evidence."

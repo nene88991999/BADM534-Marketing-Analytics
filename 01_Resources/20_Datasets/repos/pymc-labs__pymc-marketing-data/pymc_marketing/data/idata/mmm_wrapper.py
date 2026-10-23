@@ -1,0 +1,1497 @@
+#   Copyright 2022 - 2026 The PyMC Labs Developers
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+"""MMMIDataWrapper class for validated access to DataTree."""
+
+from __future__ import annotations
+
+import warnings
+from typing import TYPE_CHECKING, Any, Literal
+
+import arviz as az
+import numpy as np
+import pandas as pd
+import xarray as xr
+
+from pymc_marketing.data.idata.schema import Frequency
+from pymc_marketing.data.idata.utils import (
+    _aggregate_over_time,
+    aggregate_idata_dims,
+    aggregate_idata_time,
+    broadcast_over_date,
+    filter_idata_by_dates,
+    filter_idata_by_dims,
+    get_posterior_predictive,
+    get_prior_predictive,
+)
+
+if TYPE_CHECKING:
+    from pymc_marketing.mmm.mmm import MMM
+
+# Contribution variables that the model adds to ``mu`` in every period but that
+# carry no ``date`` dim when they are time-invariant. Add any new date-less
+# additive contribution here, otherwise time aggregation counts it once for the
+# whole window instead of once per period. Parameters such as
+# ``intercept_baseline`` and totals such as
+# ``total_media_contribution_original_scale`` are deliberately not listed:
+# neither is a per-period contribution.
+_PER_PERIOD_CONTRIBUTIONS = (
+    "intercept_contribution",
+    "intercept_contribution_original_scale",
+)
+
+
+def _synthetic_target_scale_dims(dataset: xr.Dataset) -> set[str]:
+    """Return singleton dimensions introduced while storing a scalar target scale."""
+    if "target_scale" not in dataset:
+        return set()
+
+    target_scale = dataset["target_scale"]
+    return {
+        dim
+        for dim, size in target_scale.sizes.items()
+        if dim.startswith("target_scale_dim_") and size == 1
+    }
+
+
+def _broadcast_per_period_contributions(idata: xr.DataTree) -> xr.DataTree:
+    """Broadcast time-invariant per-period contributions over ``date``.
+
+    A time-invariant intercept contributes its value in every period, so
+    aggregating it over time must count it once per period, exactly like the
+    per-date contributions it is added to. Summing a variable without a
+    ``date`` dim over ``date`` would instead leave a single period's value.
+
+    Every group with a ``date`` dim is handled, so ``prior`` and
+    ``posterior`` stay consistent.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree whose groups may hold time-invariant contribution variables.
+
+    Returns
+    -------
+    xr.DataTree
+        ``idata`` itself if there is nothing to broadcast, otherwise a shallow
+        copy, with the root node and every other variable kept, whose listed
+        contribution variables have the ``date`` dim of their group.
+    """
+    result = idata
+    for path in idata.groups:
+        node = idata[path]
+        dataset = node.dataset
+        if "date" not in dataset.dims:
+            continue
+        to_broadcast = [
+            name
+            for name in _PER_PERIOD_CONTRIBUTIONS
+            if name in node.data_vars and "date" not in dataset[name].dims
+        ]
+        if not to_broadcast:
+            continue
+        if result is idata:
+            result = idata.copy()
+        result[path].dataset = node.to_dataset(inherit=False).assign(
+            {
+                name: broadcast_over_date(dataset[name], dataset["date"])
+                for name in to_broadcast
+            }
+        )
+    return result
+
+
+#: Where PyMC stores the Deterministic of the output variable for each
+#: predictive pass: a posterior pass writes observed-dependent Deterministics
+#: to ``posterior_predictive``, a prior pass writes every Deterministic to
+#: ``prior``.
+_STORED_PREDICTIVE_GROUP = {"posterior": "posterior_predictive", "prior": "prior"}
+
+
+class MMMIDataWrapper:
+    """Codified wrapper around DataTree for MMM models.
+
+    Provides validated access to data and common transformations.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree from fitted MMM model
+    schema : MMMIdataSchema, optional
+        Schema to validate against. If None, validation skipped.
+    validate_on_init : bool, default True
+        Whether to validate idata structure on initialization
+
+    Examples
+    --------
+    >>> wrapper = MMMIDataWrapper(mmm.idata)
+    >>>
+    >>> # Access observed data
+    >>> observed = wrapper.get_target()
+    >>>
+    >>> # Get contributions in original scale
+    >>> contributions = wrapper.get_contributions(original_scale=True)
+    """
+
+    def __init__(
+        self,
+        idata: xr.DataTree,
+        schema: Any | None = None,
+        validate_on_init: bool = True,
+    ):
+        self.idata = idata
+        self.schema = schema
+
+        if validate_on_init and schema is not None:
+            schema.validate_or_raise(idata)
+
+        # Cache for expensive operations
+        self._cache: dict[str, Any] = {}
+
+    @classmethod
+    def from_mmm(
+        cls,
+        mmm: MMM,
+        idata: xr.DataTree | None = None,
+    ) -> MMMIDataWrapper:
+        """Create an MMMIDataWrapper from a fitted MMM model.
+
+        Builds the appropriate schema from the model configuration
+        and wraps the provided (or model's own) DataTree.
+
+        Parameters
+        ----------
+        mmm : MMM
+            Fitted MMM model instance.
+        idata : xr.DataTree, optional
+            DataTree to wrap. If None, uses ``mmm.idata``.
+
+        Returns
+        -------
+        MMMIDataWrapper
+            Wrapper with schema derived from the model configuration.
+
+        Raises
+        ------
+        ValueError
+            If no idata is provided and ``mmm.idata`` is not available.
+
+        Examples
+        --------
+        >>> wrapper = MMMIDataWrapper.from_mmm(mmm)
+        >>> wrapper = MMMIDataWrapper.from_mmm(mmm, idata=custom_idata)
+        """
+        from pymc_marketing.data.idata.schema import MMMIdataSchema
+
+        if idata is None:
+            if not hasattr(mmm, "idata") or mmm.idata is None:
+                raise ValueError(
+                    "No idata provided and mmm.idata is not available. "
+                    "Either pass idata explicitly or fit the model first."
+                )
+            idata = mmm.idata
+
+        schema = MMMIdataSchema.from_model_config(
+            custom_dims=mmm.dims if hasattr(mmm, "dims") and mmm.dims else (),
+            has_controls=bool(mmm.control_columns),
+            has_seasonality=bool(mmm.yearly_seasonality),
+            time_varying=(
+                getattr(mmm, "time_varying_intercept", False)
+                or getattr(mmm, "time_varying_media", False)
+            ),
+        )
+
+        return cls(idata, schema=schema, validate_on_init=False)
+
+    def compare_coords(
+        self,
+        mmm: MMM,
+        variable: str = "channel_data",
+    ) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+        """Find coordinate mismatches between idata and the model.
+
+        Compares the coordinate values for each custom dimension (i.e. not
+        ``"date"``) of the specified variable between this wrapper's idata
+        and the fitted PyMC model.
+
+        Parameters
+        ----------
+        mmm : MMM
+            Fitted MMM model instance whose ``model`` attribute contains the
+            PyMC model with coordinate metadata.
+        variable : str, default ``"channel_data"``
+            Name of the model variable whose dimensions are checked.
+
+        Returns
+        -------
+        tuple of (dict[str, set[str]], dict[str, set[str]])
+            ``(in_model_not_idata, in_idata_not_model)`` where:
+
+            - ``in_model_not_idata``: mapping from dimension name to the
+              set of coordinate values present in the model but absent from
+              the idata.  When a dimension is entirely missing from the
+              idata (e.g. dropped by a scalar ``filter_dims`` call), *all*
+              of the model's coordinates for that dimension are included.
+            - ``in_idata_not_model``: mapping from dimension name to the
+              set of coordinate values present in the idata but absent from
+              the model (e.g. new labels introduced by ``aggregate_dims``).
+
+            Only dimensions with at least one mismatched coordinate are
+            included in each dict; empty dicts mean full compatibility.
+        """
+        pymc_model = mmm.model
+        variable_dims = pymc_model.named_vars_to_dims.get(variable, ())
+        idata_var = self.get_channel_spend()
+
+        in_model_not_idata: dict[str, set[str]] = {}
+        in_idata_not_model: dict[str, set[str]] = {}
+        for dim_name in variable_dims:
+            if dim_name == "date":
+                continue
+            model_coords = {str(v) for v in pymc_model.coords[dim_name]}
+            if dim_name not in idata_var.dims:
+                in_model_not_idata[dim_name] = model_coords
+                continue
+            idata_coords = {str(v) for v in idata_var.coords[dim_name].values}
+            missing = model_coords - idata_coords
+            if missing:
+                in_model_not_idata[dim_name] = missing
+            extra = idata_coords - model_coords
+            if extra:
+                in_idata_not_model[dim_name] = extra
+
+        return in_model_not_idata, in_idata_not_model
+
+    # ==================== Scale Accessor Methods ====================
+
+    def get_channel_scale(self) -> xr.DataArray:
+        """Get channel scaling factor used during model fitting.
+
+        Returns
+        -------
+        xr.DataArray
+            Channel scale values with dims matching channel dimensions.
+            Typically has dims like ("channel",) for simple models or
+            ("country", "channel") for panel models.
+
+        Raises
+        ------
+        ValueError
+            If channel_scale not found in constant_data
+
+        Examples
+        --------
+        >>> channel_scale = mmm.data.get_channel_scale()
+        >>> # Convert original scale value to scaled space
+        >>> max_scaled = 1000 / float(channel_scale.mean())
+        """
+        if not (
+            hasattr(self.idata, "constant_data")
+            and "channel_scale" in self.idata.constant_data
+        ):
+            raise ValueError(
+                "channel_scale not found in constant_data. "
+                "Expected 'channel_scale' variable in idata.constant_data."
+            )
+        return self.idata.constant_data["channel_scale"].copy()
+
+    def get_target_scale(self) -> xr.DataArray:
+        """Get target scaling factor used during model fitting.
+
+        Returns
+        -------
+        xr.DataArray
+            Target scale values. May have dims for panel models
+            (e.g., ("country",)) or be scalar.
+
+        Raises
+        ------
+        ValueError
+            If target_scale not found in constant_data
+
+        Examples
+        --------
+        >>> target_scale = mmm.data.get_target_scale()
+        >>> # Convert scaled contribution to original units
+        >>> original = scaled_contribution * target_scale
+        """
+        if not (
+            hasattr(self.idata, "constant_data")
+            and "target_scale" in self.idata.constant_data
+        ):
+            raise ValueError(
+                "target_scale not found in constant_data. "
+                "Expected 'target_scale' variable in idata.constant_data."
+            )
+        target_scale = self.idata.constant_data["target_scale"].copy()
+        synthetic_dims = _synthetic_target_scale_dims(self.idata.constant_data)
+        if synthetic_dims:
+            target_scale = target_scale.squeeze(dim=synthetic_dims, drop=True)
+        return target_scale
+
+    # ==================== Observed Data Access ====================
+
+    def get_target(self, original_scale: bool = True) -> xr.DataArray:
+        """Get observed target data with consistent access pattern.
+
+        Parameters
+        ----------
+        original_scale : bool, default True
+            Whether to return data in original scale
+
+        Returns
+        -------
+        xr.DataArray
+            Observed target values
+
+        Raises
+        ------
+        ValueError
+            If target data not found in constant_data, or if
+            original_scale=False and target_scale is not found
+        """
+        if not (
+            hasattr(self.idata, "constant_data")
+            and "target_data" in self.idata.constant_data
+        ):
+            raise ValueError(
+                "Target data not found in constant_data. "
+                "Expected 'target_data' variable in idata.constant_data."
+            )
+
+        data = self.idata.constant_data["target_data"]
+        if original_scale:
+            return data
+        else:
+            # Scale down using target_scale
+            target_scale = self.get_target_scale()
+            return data / target_scale
+
+    def get_predictive_target(
+        self,
+        group: Literal["posterior", "prior"] = "posterior",
+        original_scale: bool = True,
+    ) -> xr.DataArray:
+        """Get predictive draws of the target from the posterior or prior pass.
+
+        With ``original_scale=True`` this is ``y * target_scale`` under every
+        link: the likelihood observes ``target / target_scale``, so no inverse
+        link applies to the output variable. A stored ``y_original_scale``,
+        registered by ``MMM.add_original_scale_contribution_variable(["y"])``,
+        is that same product and is returned as is; otherwise the product is
+        derived from the ``y`` draws and :meth:`get_target_scale`. The
+        noise-free prediction on the original scale is a different quantity,
+        ``to_original_scale("mu")``.
+
+        Parameters
+        ----------
+        group : {"posterior", "prior"}, default "posterior"
+            Which predictive pass to read: ``posterior_predictive`` or
+            ``prior_predictive``. PyMC stores the Deterministics of a prior
+            pass in ``prior``, so a stored ``y_original_scale`` is looked up
+            in ``posterior_predictive`` or ``prior`` respectively.
+        original_scale : bool, default True
+            Whether to return the draws in original units.
+
+        Returns
+        -------
+        xr.DataArray
+            Predictive draws of the target, with the dims of the ``y`` draws,
+            named ``y_original_scale`` or ``y``.
+
+        Raises
+        ------
+        ValueError
+            If ``group`` is not ``"posterior"`` or ``"prior"``, if the
+            predictive group or its ``y`` draws are missing, or if
+            ``original_scale=True`` and ``target_scale`` is not in
+            ``constant_data`` (when nothing is stored).
+
+        Notes
+        -----
+        :meth:`aggregate_dims` stores this product before aggregating, so it
+        stays exact over a dimension that ``target_scale`` varies along. The
+        other scaled-to-original conversions (:meth:`get_target` with
+        ``original_scale=False``, :meth:`to_original_scale` of a variable
+        without a stored ``{var}_original_scale``) use the summed
+        ``target_scale`` after such an aggregation.
+        """
+        if group not in _STORED_PREDICTIVE_GROUP:
+            raise ValueError(f"group must be 'posterior' or 'prior', got {group!r}.")
+
+        stored_group = _STORED_PREDICTIVE_GROUP[group]
+
+        if (
+            original_scale
+            and stored_group in self.idata.children
+            and "y_original_scale" in self.idata[stored_group].dataset
+        ):
+            return self.idata[stored_group].dataset["y_original_scale"]
+
+        get_predictive = (
+            get_posterior_predictive if group == "posterior" else get_prior_predictive
+        )
+        predictive = get_predictive(self.idata)
+
+        if "y" not in predictive:
+            raise ValueError(
+                f"Variable 'y' not found in {group}_predictive. "
+                f"Available: {list(predictive.data_vars)}"
+            )
+
+        draws = predictive["y"]
+
+        if not original_scale:
+            return draws
+
+        return (
+            (draws * self.get_target_scale())
+            .transpose(*draws.dims)
+            .rename("y_original_scale")
+        )
+
+    def _with_stored_predictive_target(self) -> xr.DataTree:
+        """Copy of the idata whose predictive passes store ``y * target_scale``.
+
+        Each pass with ``y`` draws gets ``y_original_scale`` from
+        :meth:`get_predictive_target` in the group where PyMC would have put
+        the Deterministic (``posterior_predictive`` or ``prior``; ``prior`` is
+        created if absent). Returns ``self.idata`` itself when no pass has
+        draws.
+        """
+        result = self.idata
+
+        for group in ("posterior", "prior"):
+            predictive = f"{group}_predictive"
+
+            if (
+                predictive not in self.idata.children
+                or "y" not in self.idata[predictive].dataset
+            ):
+                continue
+
+            draws = self.get_predictive_target(group, original_scale=True)
+
+            if result is self.idata:
+                result = self.idata.copy()
+
+            stored_group = _STORED_PREDICTIVE_GROUP[group]
+
+            if stored_group in result.children:
+                result[stored_group].dataset = (
+                    self.idata[stored_group]
+                    .to_dataset(inherit=False)
+                    .assign(y_original_scale=draws)
+                )
+            else:
+                result[f"/{stored_group}"] = xr.Dataset({"y_original_scale": draws})
+
+        return result
+
+    def get_channel_spend(self) -> xr.DataArray:
+        """Get channel spend data in monetary units.
+
+        If ``channel_spend`` exists in ``constant_data`` (set via
+        ``cost_per_unit``), returns it directly.  Otherwise falls back to
+        ``channel_data`` (backward compatible — assumed already in spend
+        units).
+
+        Returns
+        -------
+        xr.DataArray
+            Channel spend values with dims ``(date, channel)`` or
+            ``(date, *custom_dims, channel)``.
+
+        Raises
+        ------
+        ValueError
+            If neither channel_spend nor channel_data found in constant_data.
+        """
+        if (
+            hasattr(self.idata, "constant_data")
+            and "channel_spend" in self.idata.constant_data
+        ):
+            return self.idata.constant_data["channel_spend"]
+
+        if not (
+            hasattr(self.idata, "constant_data")
+            and "channel_data" in self.idata.constant_data
+        ):
+            raise ValueError(
+                "Channel data not found in constant_data. "
+                "Expected 'channel_data' or 'channel_spend' variable "
+                "in idata.constant_data."
+            )
+
+        return self.idata.constant_data["channel_data"]
+
+    def get_channel_data(self) -> xr.DataArray:
+        """Get raw channel data in original units (not spend-converted).
+
+        Always returns ``channel_data`` from ``constant_data``, regardless
+        of whether ``cost_per_unit`` / ``channel_spend`` has been set.
+        Use this when you need data in the units the model was trained on
+        (e.g., impressions, clicks) rather than monetary units.
+
+        Returns
+        -------
+        xr.DataArray
+            Raw channel data with dims ``(date, channel)`` or
+            ``(date, *custom_dims, channel)``.
+
+        Raises
+        ------
+        ValueError
+            If channel_data not found in constant_data.
+        """
+        if not (
+            hasattr(self.idata, "constant_data")
+            and "channel_data" in self.idata.constant_data
+        ):
+            raise ValueError(
+                "Channel data not found in constant_data. "
+                "Expected 'channel_data' variable in idata.constant_data."
+            )
+        return self.idata.constant_data["channel_data"]
+
+    @property
+    def cost_per_unit(self) -> xr.DataArray | None:
+        """Cost per unit conversion factors, computed from stored data.
+
+        Derived on-the-fly as ``channel_spend / channel_data``.
+        Returns None if ``channel_spend`` is not present in
+        ``idata.constant_data``.
+
+        Returns
+        -------
+        xr.DataArray or None
+            Cost per unit values with dims ``("date", *custom_dims, "channel")``.
+            Returns None if cost_per_unit has not been set.
+        """
+        if not (
+            hasattr(self.idata, "constant_data")
+            and "channel_spend" in self.idata.constant_data
+        ):
+            return None
+
+        channel_spend = self.idata.constant_data["channel_spend"]
+        channel_data = self.idata.constant_data["channel_data"]
+        return xr.where(channel_data == 0, np.nan, channel_spend / channel_data)
+
+    def get_avg_cost_per_unit(self) -> xr.DataArray:
+        """Get the weighted-average cost per unit for each channel.
+
+        Computed as ``channel_spend.sum("date") / channel_data.sum("date")``.
+        Returns 1.0 (as a broadcast-compatible DataArray) if
+        ``channel_spend`` is not available, making this backward compatible.
+
+        Returns
+        -------
+        xr.DataArray
+            Average cost per unit with dims (channel,) [+ custom dims].
+        """
+        if self.cost_per_unit is None:
+            return xr.ones_like(self.get_channel_scale())
+
+        total_spend = self.get_channel_spend().sum(dim="date")
+        total_data = self.get_channel_data().sum(dim="date")
+        total_data_safe = xr.where(total_data == 0, np.nan, total_data)
+        return total_spend / total_data_safe
+
+    # ==================== Contribution Access ====================
+
+    @property
+    def _link(self) -> str:
+        """Detect the link function from idata attributes, defaulting to 'identity'."""
+        attrs = getattr(self.idata, "attrs", {})
+        return attrs.get("link", "identity")
+
+    @property
+    def _time_aggregation(self) -> str | None:
+        """Period the data was aggregated to by :meth:`aggregate_time`, if any."""
+        attrs = getattr(self.idata, "attrs", {})
+        return attrs.get("time_aggregation")
+
+    def get_channel_contributions(
+        self,
+        original_scale: bool = True,
+        period: Frequency = "original",
+    ) -> xr.DataArray:
+        """Get channel contribution posterior samples.
+
+        Convenience method that delegates to get_contributions() and
+        extracts the channel contribution DataArray.
+
+        Parameters
+        ----------
+        original_scale : bool, default True
+            Whether to return contributions in original scale.
+            If True, multiplies by target_scale (or uses pre-computed
+            _original_scale variable if available).
+        period : {"original", "weekly", "monthly", "quarterly", "yearly", "all_time"}, default "original"
+            Time period to sum the per-date contributions over; see
+            :meth:`get_contributions`.
+
+        Returns
+        -------
+        xr.DataArray
+            Channel contributions with dims (chain, draw, date, channel)
+        """
+        contributions = self.get_contributions(
+            original_scale=original_scale,
+            include_baseline=False,
+            include_controls=False,
+            include_seasonality=False,
+            period=period,
+        )
+        return contributions["channels"]
+
+    def get_contributions(
+        self,
+        original_scale: bool = True,
+        include_baseline: bool = True,
+        include_controls: bool = True,
+        include_seasonality: bool = True,
+        period: Frequency = "original",
+    ) -> xr.Dataset:
+        r"""Get all contribution variables in a single dataset.
+
+        For identity-link models, contributions are computed by multiplying
+        log-space values by ``target_scale``.  For log-link models, a
+        **conserving** decomposition is used: the total media counterfactual
+        lift is split across channels proportionally to their log-space
+        shares, and all non-media effects are folded into ``baseline``, so
+        the returned components sum exactly to :math:`\hat y`.
+
+        This conserving decomposition differs from the **counterfactual**
+        decomposition in
+        :meth:`~pymc_marketing.mmm.mmm.MMM.compute_counterfactual_contributions_dataset`,
+        whose per-component lifts do *not* sum to :math:`\hat y` under the
+        log link.  See
+        :meth:`_get_conserving_contributions_log_link` for the precise
+        relationship.  Under the log link the prediction uses
+        :math:`\exp(\mu)`, the conditional **median** of the LogNormal
+        response (not its mean).
+
+        Parameters
+        ----------
+        original_scale : bool, default True
+            Whether to return contributions in original scale
+        include_baseline : bool, default True
+            Include intercept/baseline contribution
+        include_controls : bool, default True
+            Include control variable contributions (if present)
+        include_seasonality : bool, default True
+            Include seasonality contributions (if present)
+        period : {"original", "weekly", "monthly", "quarterly", "yearly", "all_time"}, default "original"
+            Time period to sum the contributions over. The decomposition runs
+            on the original dates and the result is summed afterwards, which
+            ``link="log"`` requires (see :meth:`aggregate_time`).
+            ``"original"`` keeps every date, ``"all_time"`` removes the
+            ``date`` dim. A time-invariant intercept is counted once per
+            period, as in :meth:`aggregate_time`: with ``"original"`` its
+            ``baseline`` keeps no ``date`` dim, with any other period
+            ``baseline`` has the ``date`` dim of the periods.
+
+        Returns
+        -------
+        xr.Dataset
+            Dataset with all contribution variables. With a ``period``,
+            ``date`` holds the last calendar day of each period (a Sunday for
+            ``"weekly"``), which can fall after the last observed date.
+
+        Raises
+        ------
+        ValueError
+            If original_scale=True and target_scale is not found in constant_data;
+            if the data was aggregated by :meth:`aggregate_time` and ``period``
+            is not ``"original"``, since aggregating twice would sum period
+            means or misalign period boundaries; or if the data was aggregated
+            by :meth:`aggregate_time` and the model uses ``link="log"``.
+
+        Examples
+        --------
+        >>> contributions = mmm.data.get_contributions()
+        >>> monthly = mmm.data.get_contributions(period="monthly")
+        """
+        if (aggregated := self._time_aggregation) is not None and period != "original":
+            raise ValueError(
+                "The data was already aggregated over time "
+                f"(aggregate_time(period={aggregated!r})), so it cannot be "
+                f"aggregated again with period={period!r}. Call "
+                f"get_contributions(period={period!r}) on the original dates "
+                "instead."
+            )
+        # The model adds a time-invariant intercept in every period, so it is
+        # repeated on every date before summing over the dates of each period.
+        data = (
+            self if period == "original" else self.broadcast_per_period_contributions()
+        )
+        if self._link == "log" and original_scale:
+            if not include_controls or not include_seasonality:
+                warnings.warn(
+                    "For log-link models with original_scale=True, "
+                    "controls and seasonality are embedded in baseline and "
+                    "cannot be separately toggled. "
+                    "Arguments include_controls/include_seasonality are ignored.",
+                    UserWarning,
+                    stacklevel=2,
+                )
+            contributions = data._get_conserving_contributions_log_link(
+                include_baseline=include_baseline,
+            )
+        else:
+            contributions = data._get_contributions_identity(
+                original_scale=original_scale,
+                include_baseline=include_baseline,
+                include_controls=include_controls,
+                include_seasonality=include_seasonality,
+            )
+        # Per variable, so each keeps its (chain, draw, date, ...) dim order
+        return contributions.map(_aggregate_over_time, period=period)
+
+    def _get_contributions_identity(
+        self,
+        original_scale: bool = True,
+        include_baseline: bool = True,
+        include_controls: bool = True,
+        include_seasonality: bool = True,
+    ) -> xr.Dataset:
+        """Additive decomposition for identity-link models."""
+        contributions: dict[str, xr.DataArray] = {}
+
+        if original_scale:
+            if "channel_contribution_original_scale" in self.idata.posterior:
+                contributions["channels"] = self.idata.posterior[
+                    "channel_contribution_original_scale"
+                ]
+            else:
+                channel_contrib = self.idata.posterior["channel_contribution"]
+                target_scale = self.get_target_scale()
+                contributions["channels"] = channel_contrib * target_scale
+        else:
+            contributions["channels"] = self.idata.posterior["channel_contribution"]
+
+        if include_baseline:
+            for var in ["intercept_contribution", "intercept_baseline"]:
+                if var in self.idata.posterior:
+                    baseline = self.idata.posterior[var]
+                    if original_scale:
+                        target_scale = self.get_target_scale()
+                        contributions["baseline"] = baseline * target_scale
+                    else:
+                        contributions["baseline"] = baseline
+                    break
+
+        if include_controls and "control_contribution" in self.idata.posterior:
+            control = self.idata.posterior["control_contribution"]
+            if original_scale:
+                if "control_contribution_original_scale" in self.idata.posterior:
+                    contributions["controls"] = self.idata.posterior[
+                        "control_contribution_original_scale"
+                    ]
+                else:
+                    target_scale = self.get_target_scale()
+                    contributions["controls"] = control * target_scale
+            else:
+                contributions["controls"] = control
+
+        if (
+            include_seasonality
+            and "yearly_seasonality_contribution" in self.idata.posterior
+        ):
+            seasonality = self.idata.posterior["yearly_seasonality_contribution"]
+            if original_scale:
+                if (
+                    "yearly_seasonality_contribution_original_scale"
+                    in self.idata.posterior
+                ):
+                    contributions["seasonality"] = self.idata.posterior[
+                        "yearly_seasonality_contribution_original_scale"
+                    ]
+                else:
+                    target_scale = self.get_target_scale()
+                    contributions["seasonality"] = seasonality * target_scale
+            else:
+                contributions["seasonality"] = seasonality
+
+        return xr.Dataset(contributions)
+
+    def _get_conserving_contributions_log_link(
+        self,
+        include_baseline: bool = True,
+    ) -> xr.Dataset:
+        r"""Conserving (proportional-share) decomposition for log-link models.
+
+        This is the **conserving** counterpart to
+        :meth:`~pymc_marketing.mmm.mmm.MMM.compute_counterfactual_contributions_dataset`
+        (the **counterfactual** decomposition).  The two differ by design:
+
+        * The counterfactual method returns a per-component
+          ``what-if-removed`` lift; under the log link these overlap on
+          shared interactions and therefore sum to *more* than
+          :math:`\hat y`.
+        * This method distributes the *total* media counterfactual lift
+          across channels **proportionally** to each channel's log-space
+          share (a proportional allocation, **not** a per-channel
+          counterfactual), and folds all non-media effects into
+          ``baseline``.  As a result ``channels.sum("channel") + baseline``
+          equals :math:`\hat y` exactly (it conserves).
+
+        Use the counterfactual method to answer *"how much would sales drop
+        if we removed channel j?"*; use this method when you need an exact
+        additive breakdown of :math:`\hat y` (e.g. a stacked area chart).
+
+        For log-link (multiplicative) models the linear predictor lives in
+        log-space:
+
+        .. math::
+
+            \mu = \text{intercept} + \sum_c \text{channel}_c
+                   + \text{controls} + \text{seasonality}
+
+        so :math:`y = \exp(\mu) \times \text{target\_scale}`.
+
+        Because the components combine multiplicatively, individual control
+        and seasonality effects **cannot** be isolated in original scale
+        without a full counterfactual for each.  They are therefore folded
+        into the ``baseline`` component, which represents the predicted
+        target with all media set to zero:
+
+        .. math::
+
+            \text{baseline} = \exp(\mu - \text{media\_total\_log})
+                               \times \text{target\_scale}
+
+        Per-channel contributions are obtained by distributing the total
+        media lift (``y_hat - baseline``) proportionally to each channel's
+        share of the total log-space media contribution:
+
+        .. math::
+
+            \text{channel}_c = \text{total\_media\_lift}
+                                \times \frac{\text{channel\_contrib}_c}
+                                             {\sum_c \text{channel\_contrib}_c}
+
+        This uses the same log-link prediction transform as
+        :meth:`~pymc_marketing.mmm.mmm.MMM.compute_counterfactual_contributions_dataset`
+        via shared decomposition helpers in :mod:`pymc_marketing.mmm.decomposition`.
+
+        Parameters
+        ----------
+        include_baseline : bool, default True
+            Whether to include the ``baseline`` component (all non-media
+            effects) in the returned dataset.
+
+        Returns
+        -------
+        xr.Dataset
+            Dataset always containing:
+
+            - ``channels`` : per-channel contributions in original scale
+              with dims ``(chain, draw, date, channel)`` (plus any custom
+              dims).
+
+            If *include_baseline* is True, also contains:
+
+            - ``baseline`` : non-media prediction in original scale with
+              dims ``(chain, draw, date)`` (plus any custom dims).
+
+        Notes
+        -----
+        Unlike :meth:`_get_contributions_identity`, this method does **not**
+        return separate ``controls`` or ``seasonality`` keys.  Those effects
+        are embedded in ``baseline`` and cannot be additively separated
+        without additional counterfactual evaluations.
+
+        The sum ``channels.sum("channel") + baseline`` equals
+        ``exp(mu) * target_scale`` (the full posterior prediction) for every
+        posterior draw.
+
+        Raises
+        ------
+        ValueError
+            If the data was aggregated over time by :meth:`aggregate_time`.
+            The decomposition is nonlinear in ``mu``, so it has to run on the
+            original dates; use the ``period`` argument of
+            :meth:`get_contributions` to aggregate the result instead.
+        """
+        if (period := self._time_aggregation) is not None:
+            raise ValueError(
+                "Log-link contributions cannot be decomposed from data that was "
+                f"aggregated over time (aggregate_time(period={period!r})): the "
+                "conserving decomposition exponentiates the summed mu, and "
+                "exp(sum(mu)) is not sum(exp(mu)). Decompose on the original "
+                "dates and aggregate the contributions afterwards, with "
+                f"get_contributions(period={period!r}), "
+                f"get_elementwise_roas(period={period!r}) or "
+                f"mmm.summary.contributions(frequency={period!r})."
+            )
+        # Deferred import: avoid circular import (mmm.py -> mmm_wrapper -> mmm pkg).
+        from pymc_marketing.mmm.decomposition import (
+            original_scale_prediction_from_mu,
+            safe_proportional_share,
+        )
+
+        posterior = self.idata.posterior
+        target_scale = self.get_target_scale()
+
+        mu_total = posterior["mu"]
+        channel_contrib = posterior["channel_contribution"]
+        media_total_log = channel_contrib.sum(dim="channel")
+
+        y_hat = original_scale_prediction_from_mu(mu_total, target_scale)
+        y_hat_no_media = original_scale_prediction_from_mu(
+            mu_total - media_total_log, target_scale
+        )
+        total_media_lift = y_hat - y_hat_no_media
+
+        per_channel_shares = safe_proportional_share(
+            numerator=channel_contrib,
+            denominator=media_total_log,
+        )
+
+        contributions: dict[str, xr.DataArray] = {
+            "channels": total_media_lift * per_channel_shares,
+        }
+
+        if include_baseline:
+            contributions["baseline"] = y_hat_no_media
+
+        return xr.Dataset(contributions)
+
+    def get_elementwise_roas(
+        self,
+        original_scale: bool = True,
+        period: Frequency = "original",
+    ) -> xr.DataArray:
+        """Compute element-wise ROAS (Return on Ad Spend) for each channel.
+
+        ROAS = contribution / spend for each channel at each time point, or,
+        with a ``period``, the contributions summed over each period divided by
+        the spend summed over it. The contributions come from
+        :meth:`get_channel_contributions` with the same ``period``, so they are
+        decomposed on the original dates before any summing, which
+        ``link="log"`` requires (see :meth:`aggregate_time`).
+        Does NOT account for adstock carryover effects. For true incremental
+        ROAS, use :meth:`pymc_marketing.mmm.incrementality.Incrementality.contribution_over_spend`
+        or :meth:`pymc_marketing.mmm.summary.MMMSummaryFactory.roas` with
+        ``method="incremental"``.
+
+        Parameters
+        ----------
+        original_scale : bool, default True
+            Whether to return contributions in original scale.
+        period : {"original", "weekly", "monthly", "quarterly", "yearly", "all_time"}, default "original"
+            Time period to sum contributions and spend over before dividing.
+            ``"original"`` keeps every date, ``"all_time"`` removes the
+            ``date`` dim.
+
+        Returns
+        -------
+        xr.DataArray
+            ROAS values with dims (chain, draw, date, channel) plus any custom dims.
+            With a ``period``, ``date`` holds the last calendar day of each period
+            (a Sunday for ``"weekly"``), which can fall after the last observed
+            date, and ``"all_time"`` has no ``date`` dim. Zero spend, on a date or
+            summed over a period, results in NaN to avoid division by zero.
+
+        Examples
+        --------
+        >>> roas = mmm.data.get_elementwise_roas()
+        >>> roas_mean = roas.mean(dim=["chain", "draw"])
+        >>> monthly_roas = mmm.data.get_elementwise_roas(period="monthly")
+        """
+        contributions = self.get_channel_contributions(
+            original_scale=original_scale, period=period
+        )
+        spend = _aggregate_over_time(self.get_channel_spend(), period)
+
+        # Handle zero spend - use xr.where to avoid division by zero
+        spend_safe = xr.where(spend == 0, np.nan, spend)
+
+        return contributions / spend_safe
+
+    # ==================== Scaling Operations ====================
+
+    def to_original_scale(self, var: str | xr.DataArray) -> xr.DataArray:
+        """Transform variable from scaled to original scale.
+
+        Handles three scenarios based on input type:
+
+        1. **String with corresponding '_original_scale' variable**: If posterior
+           contains `{var}_original_scale`, returns it directly (e.g., "mu" returns
+           posterior["mu_original_scale"] if it exists).
+
+        2. **String ending with '_original_scale'**: Returns the variable directly
+           from posterior (e.g., "mu_original_scale" → posterior["mu_original_scale"]).
+           Already in original scale, so no transformation is applied.
+
+        3. **String (scaled variable) or xr.DataArray**: Multiplies by target_scale
+           to convert from scaled to original space.
+
+        Parameters
+        ----------
+        var : str or xr.DataArray
+            One of:
+            - Variable name with existing '_original_scale' version (returns that)
+            - Variable name ending with '_original_scale' (returns as-is)
+            - Scaled variable name (multiplies by target_scale)
+            - DataArray in scaled space (multiplies by target_scale)
+
+        Returns
+        -------
+        xr.DataArray
+            Variable in original scale
+
+        Raises
+        ------
+        ValueError
+            If string variable is not found in posterior, or if
+            target_scale is not found in constant_data when scaling is required
+
+        Examples
+        --------
+        >>> # Get existing original scale variable
+        >>> original = wrapper.to_original_scale("channel_contribution")
+        >>>
+        >>> # Get variable that's already in original scale
+        >>> original = wrapper.to_original_scale("mu_original_scale")
+        >>>
+        >>> # Convert DataArray from scaled to original space
+        >>> scaled_data = posterior["mu"]
+        >>> original = wrapper.to_original_scale(scaled_data)
+        """
+        if isinstance(var, str):
+            if f"{var}_original_scale" in self.idata.posterior:
+                # Corresponding _original_scale variable exists
+                return self.idata.posterior[f"{var}_original_scale"]
+
+            if var.endswith("_original_scale"):
+                # Variable is already in original scale - return directly
+                if var in self.idata.posterior:
+                    return self.idata.posterior[var]
+                raise ValueError(f"Variable '{var}' not found in posterior")
+
+            # Scaled variable - compute on-the-fly
+            if var in self.idata.posterior:
+                data = self.idata.posterior[var]
+            else:
+                raise ValueError(f"Variable '{var}' not found in posterior")
+        else:
+            data = var
+
+        target_scale = self.get_target_scale()
+        return data * target_scale
+
+    def to_scaled(self, var: str | xr.DataArray) -> xr.DataArray:
+        """Transform variable from original to scaled space.
+
+        Handles three scenarios based on input type:
+
+        1. **String ending with '_original_scale'**: Returns the corresponding
+           base variable from posterior (e.g., "mu_original_scale" → posterior["mu"]).
+           The base variable is already in scaled space.
+
+        2. **String without '_original_scale' suffix**: Returns the variable
+           directly from posterior (e.g., "channel_contribution" → posterior["channel_contribution"]).
+           These variables are already in scaled space, so no transformation is applied.
+
+        3. **xr.DataArray**: Assumes the data is in original scale and divides
+           by target_scale to convert to scaled space.
+
+        Parameters
+        ----------
+        var : str or xr.DataArray
+            One of:
+            - Variable name ending with '_original_scale' (returns base scaled variable)
+            - Variable name in posterior (returns as-is, already scaled)
+            - DataArray in original space (divides by target_scale)
+
+        Returns
+        -------
+        xr.DataArray
+            Variable in scaled space
+
+        Raises
+        ------
+        ValueError
+            If string variable is not found in posterior, or if
+            target_scale is not found in constant_data when scaling a DataArray
+
+        Examples
+        --------
+        >>> # Get scaled version of original scale variable
+        >>> scaled = wrapper.to_scaled("mu_original_scale")
+        >>>
+        >>> # Get already-scaled variable directly
+        >>> scaled = wrapper.to_scaled("channel_contribution")
+        >>>
+        >>> # Convert DataArray from original to scaled space
+        >>> original_data = posterior["mu"] * constant_data.target_scale
+        >>> scaled = wrapper.to_scaled(original_data)
+        """
+        if isinstance(var, str):
+            if var.endswith("_original_scale"):
+                # Get base variable name (which is in scaled space)
+                base_name = var.replace("_original_scale", "")
+                if base_name in self.idata.posterior:
+                    return self.idata.posterior[base_name]
+                raise ValueError(f"Variable '{base_name}' not found in posterior")
+
+            # Variable name without _original_scale suffix - return directly (already scaled)
+            if var in self.idata.posterior:
+                return self.idata.posterior[var]
+            else:
+                raise ValueError(f"Variable '{var}' not found in posterior")
+
+        # DataArray in original space - convert to scaled
+        target_scale = self.get_target_scale()
+        return var / target_scale
+
+    # ==================== Filtering Operations ====================
+
+    def filter_dates(
+        self,
+        start_date: str | pd.Timestamp | None = None,
+        end_date: str | pd.Timestamp | None = None,
+    ) -> MMMIDataWrapper:
+        """Filter to date range, returning new wrapper.
+
+        Delegates to standalone `filter_idata_by_dates` utility function.
+
+        Parameters
+        ----------
+        start_date : str or pd.Timestamp, optional
+            Start date (inclusive)
+        end_date : str or pd.Timestamp, optional
+            End date (inclusive)
+
+        Returns
+        -------
+        MMMIDataWrapper
+            New wrapper with filtered idata
+        """
+        if start_date is None and end_date is None:
+            return self
+
+        filtered_idata = filter_idata_by_dates(self.idata, start_date, end_date)
+
+        return MMMIDataWrapper(
+            filtered_idata, schema=self.schema, validate_on_init=False
+        )
+
+    def filter_dims(self, **dim_filters) -> MMMIDataWrapper:
+        """Filter by custom dimensions, returning new wrapper.
+
+        Delegates to standalone `filter_idata_by_dims` utility function.
+
+        Parameters
+        ----------
+        **dim_filters
+            Dimension filters, e.g., country="US", channel=["TV", "Radio"]
+
+        Returns
+        -------
+        MMMIDataWrapper
+            New wrapper with filtered idata. Schema is set to None when
+            any dimension is dropped (single-value scalar filter), since
+            the data no longer conforms to the original schema.
+
+        Examples
+        --------
+        >>> wrapper.filter_dims(country="US")
+        >>> wrapper.filter_dims(channel=["TV", "Radio"])
+        """
+        if not dim_filters:
+            return self
+
+        filtered_idata = filter_idata_by_dims(self.idata, **dim_filters)
+
+        # When dimensions are dropped, the data no longer conforms to
+        # the original schema, so we set schema=None to prevent
+        # downstream validation errors (same pattern as aggregate_time).
+        schema = self.schema
+        if schema is not None:
+            for value in dim_filters.values():
+                if not isinstance(value, (list, tuple)):
+                    schema = None
+                    break
+
+        return MMMIDataWrapper(filtered_idata, schema=schema, validate_on_init=False)
+
+    # ==================== Aggregation Operations ====================
+
+    def broadcast_per_period_contributions(self) -> MMMIDataWrapper:
+        """Repeat time-invariant per-period contributions on every date.
+
+        The model adds a time-invariant intercept to ``mu`` in every period
+        but stores it without a ``date`` dim. In the returned wrapper,
+        ``intercept_contribution`` and ``intercept_contribution_original_scale``
+        carry the ``date`` dim of their group, so they line up with the
+        per-date contributions and add up with them date by date.
+        Contributions that already have a ``date`` dim, parameters such as
+        ``intercept_baseline``, and window totals are left as they are.
+
+        Returns
+        -------
+        MMMIDataWrapper
+            New wrapper over the broadcast data.
+
+        Examples
+        --------
+        .. code-block:: python
+
+            per_date = mmm.data.broadcast_per_period_contributions()
+            per_date.get_contributions()["baseline"]  # has a "date" dim
+        """
+        return MMMIDataWrapper(
+            _broadcast_per_period_contributions(self.idata),
+            schema=self.schema,
+            validate_on_init=False,
+        )
+
+    def aggregate_time(
+        self,
+        period: Frequency,
+        method: Literal["sum", "mean"] = "sum",
+    ) -> MMMIDataWrapper:
+        """Aggregate data over time periods.
+
+        Delegates to standalone `aggregate_idata_time` utility function.
+
+        A time-invariant intercept (``intercept_contribution`` without a
+        ``date`` dim) is added to ``mu`` in every period, so it is broadcast
+        over ``date`` before aggregating. With ``method="sum"`` it is then
+        counted once per period, and the aggregated components still add up
+        to the aggregated prediction. ``period="original"`` returns the data
+        unchanged; use :meth:`broadcast_per_period_contributions` to get the
+        intercept on every original date.
+
+        The result is marked as time-aggregated (``time_aggregation`` in the
+        DataTree ``attrs``). Under ``link="log"`` it cannot be decomposed:
+        :meth:`get_contributions` would exponentiate the summed ``mu``, and the
+        exponential of a sum is not the sum of the exponentials, so it raises
+        instead. Aggregating spend, the target or the raw posterior variables
+        stays valid. To aggregate contributions, decompose on the original
+        dates and sum afterwards with the ``period`` argument of
+        :meth:`get_contributions`, :meth:`get_channel_contributions`,
+        :meth:`get_elementwise_roas` and
+        :meth:`~pymc_marketing.mmm.mmm.MMM.compute_counterfactual_contributions_dataset`,
+        or the ``frequency`` argument of the
+        :class:`~pymc_marketing.mmm.summary.MMMSummaryFactory` summaries.
+
+        Parameters
+        ----------
+        period : {"original", "weekly", "monthly", "quarterly", "yearly", "all_time"}
+            Time period to aggregate to. Use "original" for no aggregation.
+        method : {"sum", "mean"}, default "sum"
+            Aggregation method
+
+        Returns
+        -------
+        MMMIDataWrapper
+            New wrapper with aggregated idata
+
+        Examples
+        --------
+        .. code-block:: python
+
+            monthly_spend = mmm.data.aggregate_time("monthly").get_channel_spend()
+
+            # Contributions: decompose per date, then sum per period
+            monthly_contributions = mmm.data.get_contributions(period="monthly")
+        """
+        idata = self.idata
+        if period != "original":
+            idata = _broadcast_per_period_contributions(idata)
+        aggregated_idata = aggregate_idata_time(idata, period, method)
+
+        # For "all_time", schema no longer applies (date dimension removed)
+        schema = None if period == "all_time" else self.schema
+
+        return MMMIDataWrapper(aggregated_idata, schema=schema, validate_on_init=False)
+
+    def aggregate_dims(
+        self,
+        dim: str,
+        values: list[str],
+        new_label: str,
+        method: Literal["sum", "mean"] = "sum",
+    ) -> MMMIDataWrapper:
+        """Aggregate multiple dimension values into one.
+
+        Delegates to standalone `aggregate_idata_dims` utility function.
+
+        The utility sums every variable along ``dim``, ``target_scale``
+        included. When ``target_scale`` varies along ``dim``, the predictive
+        draws of the target on the original scale are therefore stored first
+        (``y_original_scale = y * target_scale`` in ``posterior_predictive``
+        and ``prior``, see :meth:`get_predictive_target`), so they aggregate
+        as draws: ``sum_g(y_g * s_g)`` rather than ``sum_g(y_g) * sum_g(s_g)``.
+        The copy is new; this wrapper's ``idata`` is not changed. A stored
+        ``{var}_original_scale`` aggregates as is, and
+        :meth:`to_original_scale` returns it. Under ``link="log"`` the
+        aggregated ``mu_original_scale`` is therefore the per-draw sum (or
+        mean) of the per-group medians, not the median of the aggregate: the
+        median of a sum is not the sum of the medians. The predictive
+        distribution of the aggregate is ``y_original_scale``. The other
+        scaled-to-original conversions on the result (:meth:`get_target` with
+        ``original_scale=False``, :meth:`to_original_scale` of a variable
+        without a stored ``{var}_original_scale``) use the summed
+        ``target_scale``.
+
+        Parameters
+        ----------
+        dim : str
+            Dimension to aggregate
+        values : list of str
+            Values to aggregate
+        new_label : str
+            Label for aggregated value
+        method : {"sum", "mean"}, default "sum"
+            Aggregation method
+
+        Returns
+        -------
+        MMMIDataWrapper
+            New wrapper with aggregated idata
+        """
+        idata = self.idata
+
+        if (
+            "constant_data" in idata.children
+            and "target_scale" in idata.constant_data
+            and dim in self.get_target_scale().dims
+        ):
+            idata = self._with_stored_predictive_target()
+
+        aggregated_idata = aggregate_idata_dims(idata, dim, values, new_label, method)
+
+        return MMMIDataWrapper(
+            aggregated_idata, schema=self.schema, validate_on_init=False
+        )
+
+    # ==================== Summary Statistics ====================
+
+    def compute_posterior_summary(
+        self,
+        var: str,
+        hdi_prob: float = 0.94,
+        original_scale: bool = True,
+    ) -> pd.DataFrame:
+        """Compute summary statistics for a variable.
+
+        Parameters
+        ----------
+        var : str
+            Variable name in posterior
+        hdi_prob : float, default 0.94
+            Probability for HDI computation
+        original_scale : bool, default True
+            Whether to compute in original scale
+
+        Returns
+        -------
+        pd.DataFrame
+            Summary statistics (mean, median, std, HDI)
+        """
+        # Get variable
+        if original_scale:
+            data = self.to_original_scale(var)
+        else:
+            if var in self.idata.posterior:
+                data = self.idata.posterior[var]
+            else:
+                raise ValueError(f"Variable '{var}' not found in posterior")
+
+        # Use arviz for summary
+        summary = az.summary(data, ci_prob=hdi_prob, kind="stats")
+
+        return summary
+
+    # ==================== Validation ====================
+
+    def validate(self) -> list[str]:
+        """Validate idata structure against schema.
+
+        Returns
+        -------
+        list of str
+            Validation errors (empty if valid)
+        """
+        if self.schema is None:
+            raise ValueError("No schema provided for validation")
+
+        return self.schema.validate(self.idata)
+
+    def validate_or_raise(self) -> None:
+        """Validate idata structure, raising detailed exception if invalid.
+
+        Call this after operations that modify idata to ensure structure is valid.
+
+        Raises
+        ------
+        ValueError
+            If schema is None (no validation possible) or validation fails
+
+        Examples
+        --------
+        >>> mmm.add_original_scale_contribution_variable(["channel_contribution"])
+        >>> mmm.data.validate_or_raise()  # Explicitly validate new structure
+        """
+        if self.schema is None:
+            raise ValueError("No schema provided for validation")
+
+        errors = self.schema.validate(self.idata)
+        if errors:
+            raise ValueError(
+                "idata validation failed:\n" + "\n".join(f"  - {e}" for e in errors)
+            )
+
+    # ==================== Convenience Properties ====================
+
+    @property
+    def dates(self) -> pd.DatetimeIndex:
+        """Get date coordinate."""
+        if hasattr(self.idata, "constant_data"):
+            return pd.DatetimeIndex(self.idata.constant_data.coords["date"].values)
+        elif hasattr(self.idata, "posterior"):
+            return pd.DatetimeIndex(self.idata.posterior.coords["date"].values)
+        else:
+            raise ValueError("Could not find date coordinate in DataTree")
+
+    @property
+    def channels(self) -> list[str]:
+        """Get channel coordinate."""
+        if hasattr(self.idata, "constant_data"):
+            return self.idata.constant_data.coords["channel"].values.tolist()
+        elif hasattr(self.idata, "posterior"):
+            return self.idata.posterior.coords["channel"].values.tolist()
+        else:
+            raise ValueError("Could not find channel coordinate in DataTree")
+
+    @property
+    def custom_dims(self) -> list[str]:
+        """Get all custom dimension names."""
+        standard_dims = {"date", "channel", "control", "fourier_mode", "chain", "draw"}
+
+        if hasattr(self.idata, "constant_data"):
+            synthetic_dims = _synthetic_target_scale_dims(self.idata.constant_data)
+            return [
+                dim
+                for dim in self.idata.constant_data.dims
+                if dim not in standard_dims and dim not in synthetic_dims
+            ]
+
+        return []

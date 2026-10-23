@@ -1,0 +1,1049 @@
+# BADM 534 resource search: category WIKI (interactive course wiki design and hosting on GitHub Pages)
+# Compiled 2026-10-23. All URLs verified by WebFetch or seen in search results as marked.
+
+# ---------------------------------------------------------------- Hosting
+- id: github-pages-limits
+  category: WIKI
+  subtopic: "GitHub Pages hosting"
+  title: "GitHub Pages limits"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits"
+  access: open
+  level: intro
+  priority: core
+  modules: [WIKI]
+  summary: "Official GitHub Pages limits: a published site can be at most 1 GB, and the source repo should stay under 1 GB. Soft limits are 100 GB/month of bandwidth and 10 builds/hour (custom GitHub Actions builds are exempt), and deployments time out after 10 minutes. Pages is not meant for commercial or sensitive-transaction sites."
+  wiki_use: "Instructor-only planning: keep the wiki's datasets and media under these caps, host large data elsewhere (GitHub Releases, Box, Hugging Face), and never collect passwords or student data on the site."
+  tools: [GitHub Pages]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Rate-limited requests get HTTP 429. Custom domains use a CNAME record for a subdomain or A/ALIAS/ANAME for an apex domain; verify the domain first to prevent takeover (https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages, fetched). A campus subdomain such as *.illinois.edu would need campus DNS cooperation; that is my inference, not from GitHub's docs."
+
+- id: github-pages-custom-workflows
+  category: WIKI
+  subtopic: "GitHub Actions deployment"
+  title: "Using custom workflows with GitHub Pages"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI]
+  summary: "How to build and deploy a Pages site with GitHub Actions using actions/configure-pages@v5, actions/upload-pages-artifact@v4 and actions/deploy-pages@v4 (the examples also use actions/checkout@v6). The deploy job needs the pages: write and id-token: write permissions."
+  wiki_use: "Reference for the wiki's build pipeline; Quarto, Jupyter Book 2, marimo and JupyterLite sites all deploy this way."
+  tools: [GitHub Actions, GitHub Pages]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The artifact must be a gzipped tar under 10 GB with no symbolic or hard links. Action versions are as shown on 2026-10-23; pin them in the workflow file."
+
+- id: github-pages-quickstart-plain-html
+  category: WIKI
+  subtopic: "Plain HTML + JS"
+  title: "Quickstart for GitHub Pages"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/pages/quickstart"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [WIKI]
+  summary: "Shortest path to a live site: create a username.github.io repo and publish from a branch. The default pipeline assumes Jekyll and a _config.yml."
+  wiki_use: "Baseline for the plain HTML + JS option: commit hand-written pages or single-file interactive HTML artifacts, and add an empty .nojekyll file to skip Jekyll processing."
+  tools: [GitHub Pages, Jekyll]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The quickstart itself does not mention .nojekyll; that tip comes from Quarto's GitHub Pages guide. Plain HTML gives full control and needs no build step, but you get no built-in navigation, search, cross-references or notebook rendering. Pair it with Pagefind for search."
+
+- id: github-classroom-deprecated
+  category: WIKI
+  subtopic: "GitHub Classroom"
+  title: "GitHub Classroom deprecated"
+  authors: "GitHub"
+  year: 2026
+  type: blog
+  venue: "GitHub Changelog"
+  url: "https://github.blog/changelog/2026-08-27-github-classroom-deprecated"
+  access: open
+  level: intro
+  priority: core
+  modules: [WIKI]
+  summary: "GitHub Classroom shut down on 2026-08-28, including its website, APIs and services. Classroom and assignment names, tests defined outside repos and LTI rosters will be deleted; user accounts, repos and organizations stay."
+  wiki_use: "Instructor-only: don't build BADM 534's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead."
+  tools: [GitHub Classroom]
+  ai_angle: false
+  verified_via: fetch
+  notes: "New sign-ups ended 2026-05-26 (https://github.blog/changelog/2026-05-26-github-classroom-sign-ups-are-no-longer-available, fetched). GitHub's migration page names Codio and Classroom 50 as partner options and describes a gh CLI export utility (https://docs.github.com/en/education/manage-coursework-with-github-classroom/get-started-with-github-classroom/export-or-migrate-github-classroom-data, fetched). Older GitHub Education pages still describe Classroom as active and are stale."
+
+- id: classroom50
+  category: WIKI
+  subtopic: "GitHub Classroom replacement"
+  title: "Classroom 50"
+  authors: "Classroom 50 (reported to be the Fifty Foundation, the nonprofit behind CS50)"
+  year: 2026
+  type: tool
+  url: "https://www.classroom50.org/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [WIKI]
+  summary: "Free, open-source replacement for GitHub Classroom that distributes and autogrades programming assignments in GitHub repos. Features include template repos, due dates, individual or group work, pytest or input/output tests, CSV rosters and score export."
+  wiki_use: "Candidate tool for handing out starter notebooks and programming assignments through GitHub, linked from the wiki's assignment pages."
+  tools: [GitHub, pytest]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The sponsoring organization and the feature list come from a third-party blog (https://bruceelgort.com/2026/07/20/github-classroom-is-gone-heres-the-free-tool-that-replaces-it/, fetched); the official homepage only says it is the free, open-source alternative to GitHub Classroom, with no license named. It needs a GitHub organization on a Team plan (free for verified educators) and broad read/write access to the org's repos. It reached general availability on 2026-07-01 per GitHub's migration doc. It is new, so pilot it before relying on it."
+
+- id: github-education-teachers
+  category: WIKI
+  subtopic: "GitHub Education"
+  title: "About GitHub Education for teachers"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/education/about-github-education/github-education-for-teachers/about-github-education-for-teachers"
+  access: free-registration
+  level: intro
+  priority: core
+  modules: [WIKI, AI]
+  summary: "Benefits for verified faculty at accredited institutions: a free GitHub Team plan (unlimited users and private repos) and a free GitHub Copilot Pro subscription."
+  wiki_use: "Instructor-only: create a course GitHub organization for the wiki repo and team projects, and use Copilot Pro to demonstrate AI-assisted coding in class."
+  tools: [GitHub, GitHub Copilot]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Copilot Pro setup for teachers: https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-teachers-and-os-maintainers (seen in search, not fetched). This page still refers to GitHub Classroom as active, which is stale after the August 2026 shutdown. Student benefits were not checked here; check the campus program first."
+
+- id: netlify-cloudflare-alternatives
+  category: WIKI
+  subtopic: "Hosting alternatives"
+  title: "Netlify pricing update: introducing credit-based plans"
+  authors: "Netlify"
+  year: 2025
+  type: blog
+  venue: "Netlify Changelog"
+  url: "https://www.netlify.com/changelog/netlify-pricing-update-introducing-credit-based-plans/"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [WIKI]
+  summary: "Since 2025-09-05, Netlify plans run on credits. The free plan gives 300 credits a month. Each production deploy costs 15 credits, bandwidth 10 credits per GB, and web requests 3 credits per 10,000; preview deploys are free."
+  wiki_use: "Instructor-only comparison: at 15 credits per production deploy, a free Netlify site allows at most about 20 deploys a month even before bandwidth. That is tight for a wiki updated often; GitHub Pages has no such meter."
+  tools: [Netlify, Cloudflare Pages]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Cloudflare Pages' free plan allows 500 builds a month, 20,000 files per site and 25 MiB per file (https://developers.cloudflare.com/pages/platform/limits, fetched). Both hosts offer deploy previews, which GitHub Pages lacks. Netlify's changelog does not say what happens when free credits run out."
+
+# ---------------------------------------------------------------- Site frameworks
+- id: quarto
+  category: WIKI
+  subtopic: "Quarto websites and books"
+  title: "Quarto"
+  authors: "Posit (Quarto project)"
+  year: 2026
+  type: tool
+  venue: "quarto.org"
+  url: "https://quarto.org/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI, AI]
+  summary: "Open-source, Pandoc-based publishing system that turns .qmd, .ipynb and Markdown files containing Python or R code into websites, books, slides and PDFs. Websites get navigation, cross-references and a built-in local search index."
+  wiki_use: "Leading candidate engine for the BADM 534 wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine."
+  tools: [quarto, jupyter, knitr, pandoc]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Version status on 2026-10-23: 1.10.x is the current stable line (GitHub marks v1.10.18 as Latest, July 2026), and 1.11.x is in pre-release. Quarto 1.9 (2026-03-24, https://opensource.posit.co/blog/2026-03-24_1.9-release/, fetched) added 'llms-txt: true' for websites, which writes an llms.txt index plus a .llms.md copy of each page so students can feed the wiki to an AI assistant. It also made opt-in (express) cookie consent the default, added screen-reader labels for videos, and added experimental PDF/UA output. Release posts now live on opensource.posit.co. Algolia is an optional alternative to the built-in search."
+
+- id: quarto-publish-github-pages
+  category: WIKI
+  subtopic: "Quarto deployment"
+  title: "Quarto: GitHub Pages publishing guide"
+  authors: "Posit (Quarto project)"
+  year: 2026
+  type: documentation
+  venue: "quarto.org"
+  url: "https://quarto.org/docs/publishing/github-pages"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI]
+  summary: "Covers three ways to publish: render to a docs/ folder, run 'quarto publish gh-pages', or use a GitHub Action (quarto-dev/quarto-actions/publish@v2). Also explains 'execute: freeze: auto', which runs code locally and commits the results in _freeze."
+  wiki_use: "Step-by-step deployment for a Quarto wiki. Freeze avoids rebuilding Python environments in CI on every commit."
+  tools: [quarto, GitHub Actions]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Add a .nojekyll file when publishing from docs/. The Action route needs read/write workflow permissions."
+
+- id: quarto-live
+  category: WIKI
+  subtopic: "In-browser code in Quarto"
+  title: "Quarto Live: interactive code blocks and exercises (webR and Pyodide)"
+  authors: "r-wasm project (Stagg, G.)"
+  year: 2024
+  type: package
+  venue: "r-wasm.github.io"
+  url: "https://r-wasm.github.io/quarto-live/"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: core
+  modules: [WIKI]
+  summary: "Quarto extension that adds editable, runnable R (webR) and Python (Pyodide) code blocks to HTML pages. It supports exercises with blanks, hints, solutions and custom grading, all running in the browser on any static host such as GitHub Pages."
+  wiki_use: "Embed in-browser Python practice cells and auto-checked exercises in wiki pages so students can try code without Colab or a local install."
+  tools: [quarto, pyodide, webR]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The 0.1.1 announcement (https://tidyverse.org/blog/2024/10/quarto-live-0-1-1/, fetched) explains exercise, setup and check blocks. The repo (https://github.com/r-wasm/quarto-live, MIT) has no tagged releases and shows a 0.1.2-dev version. The docs site was rebuilt with Quarto 1.9.38 in 2026, but recent commit dates could not be confirmed, so treat it as early-stage (0.x). The community alternative coatless-quarto/pyodide (https://github.com/coatless-quarto/pyodide) itself points users to quarto-live as the official option."
+
+- id: quarto-extensions-quiz-listing
+  category: WIKI
+  subtopic: "Quizzes and self-checks"
+  title: "Quarto extensions listing: filters"
+  authors: "Posit (Quarto project)"
+  year: 2026
+  type: website
+  venue: "quarto.org"
+  url: "https://quarto.org/docs/extensions/listing-filters.html"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [WIKI]
+  summary: "Official directory of Quarto filter extensions. Quiz and exercise options include quizdown, shortiquiz, stepbystep (guided tasks with progress checkboxes) and assign (instructions paired with solutions)."
+  wiki_use: "Shortlist of self-check and exercise widgets to embed in module pages."
+  tools: [quarto]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Repos named in the listing: https://github.com/parmsam/quarto-quizdown, https://github.com/skyfroger/stepbystep and https://github.com/coatless-quarto/assign. I did not fetch these individually; check license and activity before adopting."
+
+- id: shortiquiz
+  category: WIKI
+  subtopic: "Quizzes and self-checks"
+  title: "shortiquiz: interactive quiz questions for Quarto HTML documents"
+  authors: "skyfroger"
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/skyfroger/shortiquiz"
+  access: open
+  license: "GPL-3.0"
+  level: intro
+  priority: recommended
+  modules: [WIKI]
+  summary: "Quarto extension offering multiple-choice, multi-answer, text-input, dropdown, Parsons (reorder lines of code), image-hotspot, flashcard and gated-stage questions. Install with 'quarto add skyfroger/shortiquiz'."
+  wiki_use: "Low-stakes self-checks at the end of each module page. Parsons problems suit code-reading practice for non-CS students checking AI-generated code."
+  tools: [quarto]
+  ai_angle: false
+  verified_via: fetch
+  notes: "GPL-3.0 copyleft applies to the extension code shipped with the site. The repo has 59 commits; the last-commit date was not visible. Answers sit in the page source, so use it for ungraded practice only and keep graded quizzes in Canvas."
+
+- id: jupyter-book-2
+  category: WIKI
+  subtopic: "Jupyter Book 2 / MyST"
+  title: "Jupyter Book 2"
+  authors: "Jupyter Book team (Project Jupyter)"
+  year: 2025
+  type: tool
+  venue: "jupyterbook.org"
+  url: "https://jupyterbook.org/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI]
+  summary: "Jupyter Book 2 was released the week of 2025-11-04, keeping the jupyter-book package name, and is rebuilt on the MyST Document Engine. Authors write in notebooks or MyST Markdown and get cross-references, build-time execution, and interactivity in the browser or through Binder/JupyterHub."
+  wiki_use: "Strong alternative to Quarto if the wiki is notebook-first; it is the stack behind the Data 8 textbook and QuantEcon-style lecture sites."
+  tools: [jupyter-book, mystmd]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Known limitations versus v1 (https://jupyterbook.org/stable/resources/faq, fetched): pretty URLs, so my_page.html becomes /my-page/; myst.yml replaces _config.yml; not yet at parity on execution features, editable Thebe cells or autodoc. The v1 Sphinx stack is 'mostly in maintenance mode'; pin jupyter-book<2 to stay on v1. Release rationale: https://jupyterbook.org/blog/posts/2025-11-04-why-make-a-major-release. The blog shows active 2026 development: mystmd 1.8.2 (Mar 2026), an AnyWidget directive (Mar 2026), accessibility work on the MyST theme (May 2026), a 'Demystifying MyST Markdown in Education' event (Apr 2026) and a new release (Sep 2026)."
+
+- id: myst-exercises
+  category: WIKI
+  subtopic: "Jupyter Book 2 / MyST"
+  title: "MyST guide: exercises and solutions"
+  authors: "MyST Markdown project"
+  year: 2026
+  type: documentation
+  venue: "mystmd.org"
+  url: "https://mystmd.org/guide/exercises"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [WIKI]
+  summary: "Documents MyST's numbered {exercise} directive and linked {solution} directive, including hidden and dropdown options. Gated start/end syntax lets executable code cells sit inside exercises while staying notebook-compatible."
+  wiki_use: "Pattern for in-text exercises with collapsible solutions if the wiki is built with Jupyter Book 2 / MyST."
+  tools: [mystmd, jupyter-book]
+  ai_angle: false
+  verified_via: fetch
+  notes: "There is no built-in quiz or auto-grading; pair with JupyterLite or Pyodide cells for runnable code."
+
+- id: material-mkdocs-maintenance-mode
+  category: WIKI
+  subtopic: "MkDocs + Material"
+  title: "Material for MkDocs Insiders – now free for everyone"
+  authors: "squidfunk (Material for MkDocs team)"
+  year: 2025
+  type: blog
+  venue: "Material for MkDocs blog"
+  url: "https://squidfunk.github.io/mkdocs-material/blog/2025/11/11/insiders-now-free-for-everyone/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [WIKI]
+  summary: "Announces that Material for MkDocs 9.7.0 is the final feature release. The project is in maintenance mode with no new features, Insiders features are now free, and development moves to Zensical."
+  wiki_use: "Instructor-only: the reason not to start a new course wiki on MkDocs + Material in 2026."
+  tools: [mkdocs, mkdocs-material]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Follow-up post on 2026-02-18 (https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/, fetched): MkDocs 1.x is unmaintained. MkDocs 2.0 is a pre-release rewrite with TOML config and no plugin system, and Material will not support it. Material 9.7.5 pins MkDocs <2.0, and critical maintenance is extended through 2027-05-05. Material's GitHub Discussions went read-only in November 2025."
+
+- id: zensical
+  category: WIKI
+  subtopic: "MkDocs + Material"
+  title: "Zensical"
+  authors: "Zensical (Material for MkDocs team)"
+  year: 2025
+  type: tool
+  venue: "zensical.org"
+  url: "https://zensical.org/"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: optional
+  modules: [WIKI]
+  summary: "Successor static site generator from the makers of Material for MkDocs. It reads existing mkdocs.yml projects and adds faster differential rebuilds and a new client-side search engine (Disco)."
+  wiki_use: "Keep on the watch list if a Markdown-only docs look is preferred; it is too young to be the main engine for an upcoming semester."
+  tools: [zensical]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Status on 2026-10-23: pre-0.1 (the site is built with zensical 0.0.70). A 'dependable release line' starting with 0.1 is scheduled for 2026-11-05. Only a subset of MkDocs plugins is supported. An October 2026 update says the planned Rust Markdown parser has been replaced by a Python-Markdown-compatible one. Announcement: https://squidfunk.github.io/mkdocs-material/blog/2025/11/05/zensical/. It has no notebook-execution story comparable to Quarto or MyST."
+
+- id: docusaurus
+  category: WIKI
+  subtopic: "Docs frameworks"
+  title: "Docusaurus blog and releases"
+  authors: "Meta Open Source"
+  year: 2026
+  type: tool
+  venue: "docusaurus.io"
+  url: "https://docusaurus.io/blog"
+  access: open
+  license: "MIT (code); CC BY 4.0 (docs)"
+  level: advanced
+  priority: optional
+  modules: [WIKI]
+  summary: "React/MDX documentation-site generator from Meta. Version 3.10 (2026-04-07) is announced as the last release in the v3 line, ahead of v4."
+  wiki_use: "Optional, and only if the wiki needs custom React components. Its JavaScript toolchain is heavier than Quarto or MyST for a non-CS course."
+  tools: [docusaurus, react]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Docusaurus has no native notebook execution, so Python content must be pre-rendered. A v4 major release is coming; expect migration work."
+
+- id: astro-starlight
+  category: WIKI
+  subtopic: "Docs frameworks"
+  title: "Starlight (Astro documentation framework)"
+  authors: "Astro / Starlight contributors"
+  year: 2026
+  type: tool
+  venue: "starlight.astro.build"
+  url: "https://starlight.astro.build/"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: optional
+  modules: [WIKI]
+  summary: "Astro-based docs framework with built-in navigation, i18n, dark mode, Markdown/MDX/Markdoc, and Pagefind search that needs no configuration."
+  wiki_use: "Optional fast, accessible site shell if the wiki is mostly prose plus embedded HTML artifacts."
+  tools: [astro, starlight, pagefind]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Still pre-1.0 (v0.42.6 per site metadata). Pagefind is the default search; Algolia DocSearch is available through a plugin (https://starlight.astro.build/guides/site-search/, fetched). Repo: https://github.com/withastro/starlight (MIT)."
+
+- id: vitepress
+  category: WIKI
+  subtopic: "Docs frameworks"
+  title: "VitePress"
+  authors: "Evan You and VitePress contributors"
+  year: 2026
+  type: tool
+  venue: "vitepress.dev"
+  url: "https://vitepress.dev/"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: optional
+  modules: [WIKI]
+  summary: "Vite + Vue static site generator for Markdown documentation. The site lists 2.0.0-alpha.20 as current and keeps docs for the 1.6.4 stable line."
+  wiki_use: "Optional; similar trade-offs to Docusaurus, with Vue components instead of React."
+  tools: [vitepress, vue]
+  ai_angle: false
+  verified_via: fetch
+  notes: "2.0 was still in alpha on 2026-10-23. Repo: https://github.com/vuejs/vitepress."
+
+# ---------------------------------------------------------------- In-browser Python
+- id: pyodide
+  category: WIKI
+  subtopic: "In-browser Python"
+  title: "Pyodide changelog"
+  authors: "Pyodide contributors"
+  year: 2026
+  type: package
+  venue: "pyodide.org"
+  url: "https://pyodide.org/en/stable/project/changelog.html"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [WIKI]
+  summary: "Pyodide, CPython compiled to WebAssembly, is the engine under quarto-live, JupyterLite, marimo WASM and PyScript. The 314.x line (314.0.0 on 2026-06-09) runs Python 3.14, and 314.0.7 (2026-09-14) is the latest release."
+  wiki_use: "Instructor-only reference for which Python version and package builds students get in any in-browser cell."
+  tools: [pyodide, micropip]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Version numbers jumped from 0.x (0.28 shipped Python 3.13) to 314.x. The changelog announces no policy, so the link to the Python version is my inference. 0.29.5 and 0.27.8 got Node 26 fixes in September 2026. Pure-Python wheels install through micropip."
+
+- id: pyodide-packages
+  category: WIKI
+  subtopic: "In-browser Python: package availability"
+  title: "Packages built in Pyodide"
+  authors: "Pyodide contributors"
+  year: 2026
+  type: documentation
+  venue: "pyodide.org"
+  url: "https://pyodide.org/en/stable/usage/packages-in-pyodide.html"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI, M2, M3, M4, M7]
+  summary: "List of compiled packages shipped with Pyodide 314.0.7, including pandas 3.0.2, scikit-learn 1.8.0, statsmodels 0.14.6, scipy 1.18.0, matplotlib 3.10.8 and numpy 2.4.6. Seaborn is not on the built-in list."
+  wiki_use: "Check before writing in-browser exercises: the core M2–M7 stack (pandas wrangling, statsmodels OLS/logit, scikit-learn clustering and prediction) runs in the browser."
+  tools: [pandas, scikit-learn, statsmodels, scipy, matplotlib, numpy]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Trade-offs: the first page load downloads the runtime and packages. marimo's docs cite a 2 GB memory cap and no true threading or multiprocessing under WASM. Packages with compiled code that are not on this list (for example PyTorch) generally won't install. Seaborn is pure Python and should install through micropip (not tested). pandas 3.0 is a major release, so syntax can differ from older tutorials and from whatever pandas version Colab ships; check version parity before mixing Colab and in-browser cells."
+
+- id: jupyterlite
+  category: WIKI
+  subtopic: "In-browser Python"
+  title: "JupyterLite documentation"
+  authors: "JupyterLite contributors (Project Jupyter)"
+  year: 2026
+  type: documentation
+  venue: "Read the Docs"
+  url: "https://jupyterlite.readthedocs.io/en/stable/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI]
+  summary: "A JupyterLab and Notebook distribution that runs entirely in the browser, with Pyodide or Xeus Python kernels in Web Workers. It deploys as a static site with no server."
+  wiki_use: "Give students a full notebook interface from a wiki link (for example a 'Try it' button on each module) with no accounts or installs."
+  tools: [jupyterlite, pyodide, xeus-python]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The docs were labeled 0.8.6 when fetched, while their compatibility table listed jupyterlite-core 0.7.0 (bundling JupyterLab 4.5 and Notebook 7.5); confirm the current version before pinning. Only the last two releases are supported. Not every JupyterLab feature works. Student files are kept in browser storage, so test how work persists before relying on it for assignments."
+
+- id: jupyterlite-demo-template
+  category: WIKI
+  subtopic: "JupyterLite on GitHub Pages"
+  title: "jupyterlite/demo: template for deploying JupyterLite to GitHub Pages"
+  authors: "JupyterLite contributors"
+  year: 2026
+  type: tool
+  venue: "GitHub"
+  url: "https://github.com/jupyterlite/demo"
+  access: open
+  license: "BSD-3-Clause"
+  level: intro
+  priority: core
+  modules: [WIKI]
+  summary: "Template repo that builds a JupyterLite site and deploys it to GitHub Pages with GitHub Actions. Notebooks go in the content folder, and kernels and extensions are listed in requirements.txt."
+  wiki_use: "Use as the template for a BADM 534 'lab' subsite that holds the module notebooks and is linked from the wiki."
+  tools: [jupyterlite, GitHub Actions]
+  ai_angle: false
+  download:
+    repo: "https://github.com/jupyterlite/demo"
+    path: ""
+    license: "BSD-3-Clause"
+  verified_via: fetch
+  notes: "Deploy guide (https://jupyterlite.readthedocs.io/en/stable/quickstart/deploy.html, fetched): click 'Use this template', enable Actions, set workflow permissions to read/write and the Pages source to GitHub Actions. For pre-installed packages, use the xeus-python demo with an environment.yml. Live demo at jupyterlite.github.io/demo. Requires Firefox 90+ or Chromium 89+."
+
+- id: marimo-wasm
+  category: WIKI
+  subtopic: "In-browser Python: marimo"
+  title: "marimo WebAssembly notebooks"
+  authors: "marimo team"
+  year: 2026
+  type: documentation
+  venue: "docs.marimo.io"
+  url: "https://docs.marimo.io/guides/wasm/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI, M4]
+  summary: "marimo's reactive notebooks can run entirely in the browser through Pyodide. numpy, scipy, scikit-learn, pandas and matplotlib are pre-installed, and other pure-Python wheels install automatically on import."
+  wiki_use: "Build reactive demos (for example sliders driving a CLV or conjoint simulator), export them as static HTML, and embed them in wiki pages."
+  tools: [marimo, pyodide]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Export with 'marimo export html-wasm notebook.py -o out --mode run' for a read-only app or '--mode edit' for an editable notebook. The export must be served over HTTP, not opened from file://, and Pyodide and packages load from a CDN. Run 'marimo check --select MW' to catch incompatible packages (https://docs.marimo.io/guides/exporting/webassembly_html/, fetched). Limits: 2 GB memory, emulated concurrency, no PDB. marimo islands, which embed single reactive cells in any HTML page, are still a 'Preview' feature (https://docs.marimo.io/guides/island_example/, fetched)."
+
+- id: marimo-ai-notebook
+  category: WIKI
+  subtopic: "In-browser Python: marimo"
+  title: "marimo: reactive Python notebook (GitHub repository)"
+  authors: "marimo team"
+  year: 2026
+  type: tool
+  venue: "GitHub"
+  url: "https://github.com/marimo-team/marimo"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: recommended
+  modules: [WIKI, AI]
+  summary: "Open-source reactive Python notebook stored as plain .py files. It has a built-in AI assistant that sees in-memory variables, Copilot completion, bring-your-own-key or local models, and 'marimo pair' for working alongside Claude Code, Codex or OpenCode."
+  wiki_use: "Option for in-class vibe-coding activities: notebooks diff cleanly in Git and work with coding agents, and the same files export to WASM pages for the wiki."
+  tools: [marimo, GitHub Copilot, Claude Code, Codex]
+  ai_angle: true
+  verified_via: fetch
+  notes: "22.3k stars when fetched. The latest release number was not visible on the fetched page."
+
+- id: pyscript
+  category: WIKI
+  subtopic: "In-browser Python"
+  title: "PyScript"
+  authors: "PyScript Development Team (originated at Anaconda)"
+  year: 2026
+  type: tool
+  venue: "pyscript.net"
+  url: "https://pyscript.net/"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [WIKI]
+  summary: "Open-source platform for running Python inside web pages. The current release is 2026.7.3 (year-based version numbers), with docs at pyscript.github.io/docs/latest/."
+  wiki_use: "Optional for hand-built plain-HTML widgets; for course notebooks, quarto-live, JupyterLite or marimo are more turnkey."
+  tools: [pyscript, pyodide]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The fetched homepage names neither its runtimes nor its license; check the docs before adopting."
+
+- id: binder-thebe
+  category: WIKI
+  subtopic: "Server-backed execution"
+  title: "Binder (mybinder.org) user guidelines"
+  authors: "Binder Project"
+  year: 2026
+  type: documentation
+  venue: "mybinder.readthedocs.io"
+  url: "https://mybinder.readthedocs.io/en/latest/about/user-guidelines.html"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [WIKI]
+  summary: "Free service that launches a GitHub repo of notebooks in a temporary cloud Jupyter session. Sessions get 1–2 GB of RAM, shut down after 10 minutes idle, last up to about 6 hours, and are capped at 100 simultaneous users per repository."
+  wiki_use: "Fallback 'Launch Binder' button for notebooks that need packages Pyodide lacks. The 100-user cap and slow cold starts make it unreliable for a whole class at once."
+  tools: [binder, thebe, repo2docker]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The mybinder.org homepage says the service is 'currently in testing'. Thebe (https://github.com/jupyter-book/thebe, BSD-3-Clause, fetched) turns static code cells into runnable ones backed by a Jupyter server, or by JupyterLite through thebe-lite. Thebe 0.9.0 is still in development, and Jupyter Book 2 does not yet support editable Thebe cells."
+
+- id: colab-github-badge
+  category: WIKI
+  subtopic: "Open in Colab"
+  title: "Using Google Colab with GitHub (colab-github-demo notebook)"
+  authors: "Google Colab team"
+  year: 2026
+  type: notebook
+  venue: "GitHub (googlecolab/colabtools)"
+  url: "https://github.com/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb"
+  access: open
+  level: intro
+  priority: core
+  modules: [WIKI, M1]
+  summary: "Official Colab notebook explaining the colab.research.google.com/github/<org>/<repo>/blob/<branch>/<path>.ipynb URL pattern and the 'Open In Colab' badge in Markdown and HTML. It also covers saving copies to Drive or back to GitHub, and access to private repos."
+  wiki_use: "Put an Open in Colab badge on every wiki notebook so students can run the full analysis (with Gemini in Colab) on Google's servers."
+  tools: [Google Colab]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Colab opens an editable copy and leaves the repo unchanged. Saving back to GitHub requires granting Colab permission to push commits. The notebook text was read from the raw.githubusercontent.com copy."
+
+# ---------------------------------------------------------------- Interactive components
+- id: h5p
+  category: WIKI
+  subtopic: "Quizzes and interactive content"
+  title: "H5P"
+  authors: "H5P"
+  year: 2026
+  type: tool
+  venue: "h5p.org"
+  url: "https://h5p.org/"
+  access: freemium
+  license: "MIT (core technology)"
+  level: intermediate
+  priority: optional
+  modules: [WIKI]
+  summary: "Open HTML5 framework (MIT) for interactive content such as interactive video, presentations and quiz-style games. The paid H5P.com service adds LTI integration with Canvas and other LMSs."
+  wiki_use: "Optional for richer self-checks. On a static site, h5p-standalone (https://github.com/tunapanda/h5p-standalone, MIT, 3.x) plays .h5p packages without a server."
+  tools: [H5P, h5p-standalone]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Authoring needs an H5P-enabled platform or H5P.com. The paid Premium tier adds AI-powered 'Smart Import'. Content embedded in a GitHub Pages wiki sends no grades back, so keep graded quizzes in Canvas."
+
+- id: mlu-explain
+  category: WIKI
+  subtopic: "Visual explainers"
+  title: "MLU-Explain"
+  authors: "Amazon Machine Learning University"
+  type: website
+  venue: "mlu-explain.github.io"
+  url: "https://mlu-explain.github.io/"
+  access: open
+  license: "CC BY-SA 4.0 (articles); modified MIT (sample code)"
+  level: intro
+  priority: core
+  modules: [M3, M7, WIKI]
+  summary: "Interactive scrollytelling explainers covering linear and logistic regression, train/test/validation splits, cross-validation, precision and recall, ROC/AUC, decision trees, random forests, the bias-variance trade-off and double descent."
+  wiki_use: "Link or assign from the M3 and M7 pages; also a model for the visual-explainer style the wiki could adopt."
+  ai_angle: false
+  download:
+    repo: "https://github.com/aws-samples/aws-mlu-explain"
+    path: ""
+    license: "CC BY-SA 4.0 (articles); modified MIT (code)"
+  verified_via: fetch
+  notes: "The GitHub repo was archived (read-only) on 2026-03-06, so expect no more updates; the site still loads. The site lists 14 articles and the repo holds 10."
+
+- id: seeing-theory
+  category: WIKI
+  subtopic: "Visual explainers"
+  title: "Seeing Theory"
+  authors: "Kunin, D.; Guo, J.; Devlin, T. D.; Xiang, D."
+  type: website
+  venue: "Brown University"
+  url: "https://seeing-theory.brown.edu/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M3, M6, WIKI]
+  summary: "Brown University's D3-based visual introduction to probability and statistics. It runs from basic probability through distributions, frequentist and Bayesian inference, and regression."
+  wiki_use: "Refresher links on the M3 (regression) and M6 (inference) pages for students who are rusty on statistics."
+  tools: [d3]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The site is now archived for reference. The page states no license. Source: https://github.com/seeingtheory/Seeing-Theory (license not checked)."
+
+- id: distill-hiatus
+  category: WIKI
+  subtopic: "Visual explainers"
+  title: "Distill Hiatus"
+  authors: "Distill editorial team"
+  year: 2021
+  type: blog
+  venue: "Distill"
+  url: "https://distill.pub/2021/distill-hiatus/"
+  access: open
+  license: "CC BY 4.0 (text and diagrams)"
+  level: advanced
+  priority: optional
+  modules: [WIKI, M7]
+  summary: "Distill, the interactive machine-learning journal, paused publication in July 2021. Its archive of interactive articles and its article template remain models for explorable explanations."
+  wiki_use: "Instructor-only design inspiration for interactive figures; selected articles could be optional M7 reading."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The hiatus is open-ended, so expect no new articles. The Explorable Explanations hub (https://explorabl.es/, fetched) is a related source of interactive examples, though its subject listings did not render in the fetch."
+
+- id: the-pudding
+  category: WIKI
+  subtopic: "Visual explainers"
+  title: "The Pudding"
+  authors: "The Pudding"
+  year: 2026
+  type: website
+  venue: "pudding.cool"
+  url: "https://pudding.cool/"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2, WIKI]
+  summary: "Digital publication of visual essays that explain ideas with data; still active, with new stories through October 2026."
+  wiki_use: "Examples of data storytelling for the M2 Pyramid Principle and visualization module, and models for the team blog-post deliverable."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Whether the stories' code is open source was not verified."
+
+- id: observable-framework
+  category: WIKI
+  subtopic: "Interactive dashboards"
+  title: "Observable Framework"
+  authors: "Observable, Inc."
+  year: 2026
+  type: tool
+  venue: "observablehq.github.io"
+  url: "https://observablehq.github.io/framework/"
+  access: open
+  license: "ISC"
+  level: advanced
+  priority: optional
+  modules: [M2, WIKI]
+  summary: "Open-source static site generator for data apps, dashboards and reports. Pages are Markdown with reactive JavaScript, and data loaders written in Python, R or SQL snapshot the data at build time."
+  wiki_use: "Option for interactive dashboards inside the wiki (for example a customer-segmentation explorer) where Python prepares the data at build time."
+  tools: [observable-framework, javascript]
+  ai_angle: false
+  verified_via: fetch
+  notes: "v1.13.4 per the site. The docs now live at observablehq.github.io/framework, and observablehq.com/framework redirects there. No maintenance notice was seen, but check recent activity before committing. Repo: https://github.com/observablehq/framework (ISC)."
+
+- id: pagefind
+  category: WIKI
+  subtopic: "Site search"
+  title: "Pagefind"
+  authors: "Pagefind contributors (originally CloudCannon)"
+  year: 2026
+  type: tool
+  venue: "pagefind.app"
+  url: "https://pagefind.app/"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [WIKI]
+  summary: "Static search library that indexes the built HTML from any site generator and serves a chunked index. It claims a total payload under 300 kB for a full-text search of a 10,000-page site. The current version is 1.5.2."
+  wiki_use: "Adds search to a plain-HTML or mixed-tool wiki; it is also Starlight's default search."
+  tools: [pagefind]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Repo: https://github.com/pagefind/pagefind (MIT). Lunr.js (https://github.com/olivernn/lunr.js, MIT, fetched) is the older in-browser alternative; it shows 105 open issues and recent activity could not be confirmed. Quarto and Jupyter Book 2 have built-in search, so Pagefind matters mainly for plain-HTML builds."
+
+# ---------------------------------------------------------------- Accessibility
+- id: wcag-overview
+  category: WIKI
+  subtopic: "Accessibility"
+  title: "WCAG 2 Overview"
+  authors: "W3C Web Accessibility Initiative"
+  year: 2025
+  type: documentation
+  venue: "W3C WAI"
+  url: "https://www.w3.org/WAI/standards-guidelines/wcag/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [WIKI]
+  summary: "W3C overview of WCAG 2.0, 2.1 and 2.2 and the A, AA and AAA conformance levels. W3C recommends WCAG 2.2, which is backward compatible with 2.1 and is also published as ISO/IEC 40500:2025."
+  wiki_use: "Instructor-only reference for setting the wiki's accessibility target."
+  ai_angle: false
+  verified_via: fetch
+  notes: "WCAG 2.1 was last updated 2025-05-06, and WCAG 3 is still an early draft. UIUC's own standard requires 2.2 AA for internally built web content (see uiuc-minimum-digital-accessibility-standards)."
+
+- id: webaim-wcag-checklist
+  category: WIKI
+  subtopic: "Accessibility"
+  title: "WebAIM's WCAG 2 Checklist"
+  authors: "WebAIM (Utah State University)"
+  year: 2024
+  type: documentation
+  venue: "WebAIM"
+  url: "https://webaim.org/standards/wcag/checklist"
+  access: open
+  level: intro
+  priority: core
+  modules: [WIKI]
+  summary: "Plain-language checklist of the WCAG 2.2 success criteria at levels A, AA and AAA, with filters for 2.0 and 2.1."
+  wiki_use: "QA checklist to run before each module page goes live: alt text, captions, 4.5:1 contrast, keyboard access, real headings, a lang attribute, and reflow at 200% zoom."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Last updated 2024-06-20. Interactive widgets (quizzes, sliders, in-browser code editors) need separate keyboard and screen-reader testing."
+
+- id: ada-title-ii-web-rule
+  category: WIKI
+  subtopic: "Accessibility: legal requirement"
+  title: "ADA.gov fact sheet: Title II rule on web content and mobile app accessibility"
+  authors: "U.S. Department of Justice, Civil Rights Division"
+  year: 2024
+  type: documentation
+  venue: "ADA.gov"
+  url: "https://www.ada.gov/resources/2024-03-08-web-rule/"
+  access: open
+  level: intro
+  priority: core
+  modules: [WIKI]
+  summary: "The DOJ's ADA Title II rule requires web content from state and local governments, including public universities, to meet WCAG 2.1 AA. An April 2026 interim final rule moved compliance to 2027-04-26 for entities serving 50,000+ people and 2028-04-26 for smaller ones."
+  wiki_use: "Instructor-only: a public-university course wiki should meet WCAG 2.1 AA by April 2027 at the latest."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The exceptions for archived content and individualized password-protected documents are narrow and don't cover public HTML course pages. This is a summary, not legal advice. The page title shown here is paraphrased."
+
+- id: uiuc-minimum-digital-accessibility-standards
+  category: WIKI
+  subtopic: "Accessibility: UIUC policy"
+  title: "University of Illinois Minimum Digital Accessibility Standards"
+  authors: "University of Illinois Urbana-Champaign"
+  year: 2026
+  type: documentation
+  venue: "access.illinois.edu"
+  url: "https://access.illinois.edu/ada/digital-accessibility-policy/minimum-standards/"
+  access: open
+  level: intro
+  priority: core
+  modules: [WIKI]
+  summary: "Campus standard under the Digital Accessibility Policy (HR-86). Internally developed web content must meet the most recent recommended WCAG, currently 2.2 AA, use WAI-ARIA 1.2, and work with major browsers and screen readers. Course content and training materials are explicitly in scope."
+  wiki_use: "The binding target for the BADM 534 wiki: design to WCAG 2.2 AA (stricter than the 2.1 AA assumed in the brief) and test with NVDA and VoiceOver."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Commercial SaaS is held to 2.1 AA. Campus resources: instructor tips at https://itaccessibility.illinois.edu/tips-instructor and evaluation tools at https://itaccessibility.illinois.edu/web-evaluation-tools (links seen on itaccessibility.illinois.edu). The page lists no deadlines."
+
+# ---------------------------------------------------------------- Exemplary course sites
+- id: quantecon-lectures
+  category: WIKI
+  subtopic: "Exemplar course sites"
+  title: "Intermediate Quantitative Economics with Python"
+  authors: "Sargent, T. J.; Stachurski, J."
+  type: course
+  venue: "QuantEcon"
+  url: "https://python.quantecon.org/intro.html"
+  access: open
+  license: "CC BY-SA 4.0"
+  level: advanced
+  priority: recommended
+  modules: [WIKI]
+  summary: "QuantEcon's open course of 149 lectures, built with Jupyter Book and a QuantEcon theme. A 'Launch Notebook' button opens each lecture in Colab."
+  wiki_use: "Model for lecture-as-webpage design with downloadable notebooks and one-click Colab launch."
+  tools: [jupyter-book, quantecon-book-theme]
+  ai_angle: false
+  download:
+    repo: "https://github.com/QuantEcon/lecture-python.myst"
+    path: ""
+    license: "CC BY-SA 4.0"
+  verified_via: fetch
+  notes: "Source is MyST Markdown (repo lecture-python.myst), and the Colab links point to a generated lecture-python.notebooks repo. Whether it has moved to Jupyter Book 2 was not confirmed."
+
+- id: data8-textbook
+  category: WIKI
+  subtopic: "Exemplar course sites"
+  title: "Computational and Inferential Thinking: The Foundations of Data Science (2nd ed.)"
+  authors: "Adhikari, A.; DeNero, J.; Wagner, D."
+  type: book
+  venue: "UC Berkeley Data 8"
+  url: "https://inferentialthinking.com/"
+  access: open
+  license: "CC BY-NC-ND 4.0"
+  level: intro
+  priority: recommended
+  modules: [WIKI]
+  summary: "The Data 8 textbook, now built with Jupyter Book 2 / MyST: the repo has a myst.yml and the site footer says 'Made with MyST'."
+  wiki_use: "A live example of a large site migrated from Jupyter Book v1 to v2; inspect its structure, URLs and theme."
+  tools: [jupyter-book, mystmd, datascience]
+  ai_angle: false
+  download:
+    repo: "https://github.com/data-8/textbook"
+    path: ""
+    license: "CC BY-NC-ND 4.0 (per site)"
+  verified_via: fetch
+  notes: "It teaches Berkeley's datascience package rather than pandas, so the content is less directly reusable for BADM 534. The NoDerivatives license means reuse the structure, not the content."
+
+- id: causal-inference-brave-true
+  category: WIKI
+  subtopic: "Exemplar course sites"
+  title: "Causal Inference for the Brave and True"
+  authors: "Facure Alves, M."
+  type: book
+  venue: "GitHub Pages"
+  url: "https://matheusfacure.github.io/python-causality-handbook/landing-page.html"
+  access: open
+  license: "MIT (repository)"
+  level: intermediate
+  priority: core
+  modules: [M6, WIKI]
+  summary: "Free Python causal-inference handbook built from Jupyter notebooks and served on GitHub Pages. Part I covers core concepts; Part II is marked work in progress."
+  wiki_use: "M6 reading, and an example of a notebook-to-website book whose notebooks can be adapted under MIT."
+  tools: [jupyter, statsmodels, pandas]
+  ai_angle: false
+  download:
+    repo: "https://github.com/matheusfacure/python-causality-handbook"
+    path: "causal-inference-for-the-brave-and-true/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "The landing page doesn't name its build tool (Jupyter Book v1 is likely but unconfirmed), and the last-commit date was not visible."
+
+- id: missing-semester-2026
+  category: WIKI
+  subtopic: "Exemplar course sites"
+  title: "The Missing Semester of Your CS Education (2026 edition)"
+  authors: "Athalye, A.; Gjengset, J.; Gonzalez Ortiz, J. J."
+  year: 2026
+  type: course
+  venue: "MIT CSAIL"
+  url: "https://missing.csail.mit.edu/"
+  access: open
+  license: "CC BY-NC-SA"
+  level: intro
+  priority: core
+  modules: [M1, AI, WIKI]
+  summary: "MIT's short course on the shell, development environments, debugging, Git, packaging and code quality. The January 2026 reboot adds a dedicated Agentic Coding lecture (2026-01-21) and folds AI tools into every lecture."
+  wiki_use: "Assign the Git, shell and agentic-coding lectures as M1 prerequisites; its simple notes-plus-video site is also a design model."
+  tools: [git, shell]
+  ai_angle: true
+  download:
+    repo: "https://github.com/missing-semester/missing-semester"
+    path: ""
+    license: "CC BY-NC-SA"
+  verified_via: fetch
+  notes: "The site lists the instructors only by first name (Anish, Jon, Jose); the full names are from my own knowledge."
+
+- id: stanford-cs146s
+  category: WIKI
+  subtopic: "Exemplar course sites"
+  title: "CS146S: The Modern Software Developer"
+  authors: "Eric, M. (Stanford University)"
+  year: 2026
+  type: course
+  venue: "Stanford University"
+  url: "https://themodernsoftware.dev/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [AI, WIKI]
+  summary: "Stanford course on AI-native software development covering MCP, agent skills, spec-driven development, loop engineering and the 'software factory'."
+  wiki_use: "Instructor-only source for vibe-coding norms and assignment ideas; the site itself was made with an AI site generator (v0.app)."
+  tools: [v0.app]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The header says Fall 2026 but the metadata says Fall 2025. The page shows no GitHub link, license or week-by-week schedule. TA: Isaac Kan."
+
+- id: fastai-course
+  category: WIKI
+  subtopic: "Exemplar course sites"
+  title: "Practical Deep Learning for Coders"
+  authors: "fast.ai"
+  year: 2022
+  type: course
+  venue: "fast.ai"
+  url: "https://course.fast.ai/"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [M7, WIKI]
+  summary: "Free video course with notebooks: Part 1 (2022) plus Part 2, 'Deep Learning Foundations to Stable Diffusion'. The site is built with Quarto, and the notebooks run on Kaggle."
+  wiki_use: "Example of a Quarto course site that pairs lessons with Kaggle notebooks; optional M7 enrichment."
+  tools: [quarto, fastai, pytorch]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Built with Quarto 1.4.451. The content dates from 2022, so some library versions are stale. Repo: https://github.com/fastai/course22. The site states no license."
+
+- id: ubc-mds-public-materials
+  category: WIKI
+  subtopic: "Exemplar course sites"
+  title: "UBC Master of Data Science: public course materials"
+  authors: "UBC Master of Data Science"
+  type: course
+  venue: "GitHub"
+  url: "https://github.com/UBC-MDS/public"
+  access: open
+  license: "CC BY-SA 3.0 (unless otherwise noted)"
+  level: intermediate
+  priority: recommended
+  modules: [WIKI]
+  summary: "Index of 25 UBC MDS courses (DSCI 511–591) linking to course repos: syllabi for all 25, lecture notes for 15 and labs for 7."
+  wiki_use: "Mine the syllabi, lab structure and rubrics when designing programming assignments; also a model for an open course repo."
+  ai_angle: false
+  download:
+    repo: "https://github.com/UBC-MDS/public"
+    path: ""
+    license: "CC BY-SA 3.0"
+  verified_via: fetch
+  notes: "Related UBC exemplars: 'Data Science: A First Introduction with Python' (https://python.datasciencebook.ca/, CC BY-NC-SA 4.0, a Sphinx/Docutils site, probably Jupyter Book v1) and 'Programming in Python for Data Science' (https://prog-learn.mds.ubc.ca/, built on Ines Montani's Gatsby course-starter-python template, an older stack). The program site ubc-mds.github.io is built with Hugo."
+
+- id: teaching-learning-with-jupyter
+  category: WIKI
+  subtopic: "Exemplar course sites / pedagogy"
+  title: "Teaching and Learning with Jupyter"
+  authors: "Barba, L. A.; Barker, L. J.; Blank, D. S.; Brown, J.; Downey, A. B.; George, T.; Heagy, L. J.; Mandli, K. T.; Moore, J. K.; Lippert, D.; Niemeyer, K. E.; Watkins, R. R.; West, R. H.; Wickes, E.; Willing, C.; Zingale, M."
+  year: 2019
+  type: book
+  venue: "jupyter4edu (GitHub Pages)"
+  url: "https://jupyter4edu.github.io/jupyter-edu-book/"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: recommended
+  modules: [WIKI]
+  summary: "Open handbook on teaching with Jupyter. It includes a catalogue of 23 pedagogical patterns (for example 'Shift-Enter for the win', 'Fill in the blanks' and test-driven development) and practical chapters on running a class."
+  wiki_use: "Instructor-only guide for structuring in-class coding activities and notebook exercises on the wiki."
+  tools: [jupyter]
+  ai_angle: false
+  download:
+    repo: "https://github.com/jupyter4edu/jupyter-edu-book"
+    path: ""
+    license: "CC BY 4.0"
+  verified_via: fetch
+  notes: "Built with bookdown/GitBook, not Jupyter Book, contrary to the brief. Written in 2019, before AI coding assistants."
+
+- id: python-marketing-research-site
+  category: WIKI
+  subtopic: "Marketing analytics course site"
+  title: "Python for Marketing Research and Analytics (companion site)"
+  authors: "Schwarz, J. S.; Chapman, C.; Feit, E. M."
+  year: 2020
+  type: website
+  venue: "Springer (book); GitHub Pages (site)"
+  url: "https://python-marketing-research.github.io/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M2, M3, M4, WIKI]
+  summary: "Companion site for a marketing-analytics textbook, built with Jekyll on GitHub Pages. It offers per-chapter notebooks, data files, helper functions (pip install python_marketing_research) and Open in Colab links."
+  wiki_use: "The closest marketing-analytics exemplar on GitHub Pages; reuse its chapter notebooks and datasets as exercise material after checking chapter coverage against M2–M4."
+  tools: [pandas, statsmodels, scikit-learn, Google Colab]
+  ai_angle: false
+  download:
+    repo: "https://github.com/python-marketing-research/python-marketing-research-1ed"
+    path: "notebooks/ and Data/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The author list and 2020 date are from my own knowledge; the site itself shows only 'Schwarz' in its Amazon link. Chapter topics and the tools listed were not verified on the site. The book is paid (Springer), but the code and data are open. No other marketing or business analytics course wiki on GitHub Pages could be verified within the search budget."
+
+# ---------------------------------------------------------------- AI help in the course site
+- id: illinois-chat
+  category: WIKI
+  subtopic: "AI tutor / course chatbot"
+  title: "Illinois Chat (formerly UIUC.chat) documentation"
+  authors: "University of Illinois (Center for AI Innovation GitHub organization)"
+  year: 2026
+  type: tool
+  venue: "docs.uiuc.chat"
+  url: "https://docs.uiuc.chat/"
+  access: free-registration
+  license: "MIT (backend repo)"
+  level: intro
+  priority: core
+  modules: [AI, WIKI]
+  summary: "Campus-supported platform for building course chatbots over uploaded materials (PDFs, slides, videos, a web crawl, or a Canvas connection). Answers cite their sources, and a tutor-mode prompt is available. The official instance is chat.illinois.edu."
+  wiki_use: "Build a BADM 534 assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page."
+  tools: [Illinois Chat, OpenAI API, Canvas]
+  ai_angle: true
+  verified_via: fetch
+  notes: "UIUC.chat is moving to chat.illinois.edu, and chatbot creation is disabled on the old site (https://docs.uiuc.chat/migration/migrate-to-illinois-chat.md, fetched). Per the FAQ it is free to use but you supply your own OpenAI API key, and data is stored on AWS with no guarantees; the FAQ may predate the campus migration. Privacy: there is no FERPA statement and no documented iframe embed, so keep student records and grades out of it. Backend: https://github.com/Center-for-AI-Innovation/ai-ta-backend (public, MIT); access to the frontend repo appears restricted. Support: genaisupport@mx.uillinois.edu."
+
+- id: cs50-ai-duck
+  category: WIKI
+  subtopic: "AI tutor / course chatbot"
+  title: "CS50.ai (CS50 Duck)"
+  authors: "Harvard CS50"
+  year: 2026
+  type: tool
+  venue: "cs50.ai"
+  url: "https://cs50.ai/"
+  access: free-registration
+  level: intro
+  priority: optional
+  modules: [AI, WIKI]
+  summary: "CS50's ChatGPT-based 'duck debugger' for students and teachers, supported by Microsoft and OpenAI. It is the best-known example of a course-specific AI tutor."
+  wiki_use: "Instructor-only model for an AI-help policy and tutor design (guide students rather than solve for them)."
+  tools: [OpenAI]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The fetched page describes neither its guardrails nor whether courses outside CS50 can use it. A CS50 team paper at SIGCSE 2024 describes the design, but I did not verify its URL."

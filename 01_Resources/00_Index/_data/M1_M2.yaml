@@ -1,0 +1,1303 @@
+# BADM 534 resource search: modules M1 (Intro to Marketing Analytics and Python) and M2 (Customer Data and Visualization)
+# Compiled 2026-10-23. Every URL below was confirmed by a WebFetch or seen in a search result.
+# Note: the shared web-search budget ran out partway through; later entries were verified by direct WebFetch of canonical pages.
+
+# =====================================================================
+# M1. What marketing analytics is: framing pieces and academic anchors
+# =====================================================================
+
+- id: wedel-kannan-2016-marketing-analytics-data-rich
+  category: M1
+  subtopic: "Marketing analytics overview"
+  title: "Marketing Analytics for Data-Rich Environments"
+  authors: "Wedel, M.; Kannan, P.K."
+  year: 2016
+  type: paper
+  venue: "Journal of Marketing 80(6), 97-121"
+  url: "https://journals.sagepub.com/doi/full/10.1509/jm.15.0413"
+  doi: "10.1509/jm.15.0413"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M1]
+  summary: "Widely cited JM review of how marketing analytics evolved and how data-rich environments change models for CRM, the marketing mix, personalization and privacy, ending with a research agenda."
+  wiki_use: "Assigned framing reading for week 1; its sections map onto the course modules and give students a vocabulary for the whole semester."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Citation confirmed on an AMA summary page. Won the 2017 Sheth/JM award per a UMD news page seen in search. No verified open-access copy."
+
+- id: chintagunta-hanssens-hauser-2016-big-data-editorial
+  category: M1
+  subtopic: "Marketing science and big data"
+  title: "Editorial: Marketing Science and Big Data"
+  authors: "Chintagunta, P.; Hanssens, D.M.; Hauser, J.R."
+  year: 2016
+  type: paper
+  venue: "Marketing Science 35(3), 341-342"
+  url: "https://doi.org/10.1287/mksc.2016.0996"
+  doi: "10.1287/mksc.2016.0996"
+  oa_url: "https://dspace.mit.edu/handle/1721.1/111088"
+  access: open
+  license: "CC BY-NC-SA 4.0 (MIT DSpace author manuscript)"
+  level: intro
+  priority: recommended
+  modules: [M1]
+  summary: "Two-page editorial arguing that big data does not replace marketing science; theory, causal identification and managerial relevance still matter."
+  wiki_use: "Short opening reading next to Wedel and Kannan; a good prompt for a discussion on 'data vs. models'."
+  ai_angle: false
+  verified_via: fetch
+
+- id: msi-research-priorities-current
+  category: M1
+  subtopic: "Industry research priorities"
+  title: "MSI Research Priorities (booklet)"
+  authors: "Marketing Science Institute"
+  year: 2025
+  type: report
+  venue: "Marketing Science Institute"
+  url: "https://msi.org/wp-content/uploads/sites/2/2025/10/MSI_ResearchPriorities.pdf"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M1, M8, AI]
+  summary: "MSI's current priority list from member firms. 'Marketing Analytics: AI, models, measurement, and communication' is the first of four themes, and it includes integrating AI into analytics and combining disparate data sources."
+  wiki_use: "Show on the course home page as evidence of what practitioners say they need: AI, measurement, and communicating results."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The PDF does not state a year range; the upload folder dates it to October 2025. The earlier 2024 announcement (same four themes) is at https://www.msi.org/article/msi-announces-2024-research-priorities/"
+
+- id: huang-rust-2021-strategic-framework-ai-marketing
+  category: M1
+  subtopic: "AI in marketing framework"
+  title: "A Strategic Framework for Artificial Intelligence in Marketing"
+  authors: "Huang, M.-H.; Rust, R.T."
+  year: 2021
+  type: paper
+  venue: "Journal of the Academy of Marketing Science 49, 30-50"
+  url: "https://link.springer.com/article/10.1007/s11747-020-00749-9"
+  doi: "10.1007/s11747-020-00749-9"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: recommended
+  modules: [M1, M7, AI]
+  summary: "Open-access framework that sorts AI into mechanical, thinking and feeling types and maps each onto research, STP strategy and the 4Ps."
+  wiki_use: "Gives students an open-access framework for placing each later module (and each AI tool) in the marketing process."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Published online March 2020; issue year 2021."
+
+- id: dellacqua-2023-jagged-technological-frontier
+  category: M1
+  subtopic: "AI and knowledge-worker productivity"
+  title: "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality"
+  authors: "Dell'Acqua, F.; McFowland III, E.; Mollick, E.; Lifshitz-Assaf, H.; Kellogg, K.C.; Rajendran, S.; Krayer, L.; Candelon, F.; Lakhani, K.R."
+  year: 2023
+  type: paper
+  venue: "HBS Working Paper 24-013 (listed as forthcoming in Organization Science)"
+  url: "https://www.hbs.edu/faculty/Pages/item.aspx?num=64700"
+  access: open
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "Preregistered experiment with 758 BCG consultants. With GPT-4 they did 12.2% more tasks, 25.1% faster and at higher quality inside the AI frontier, but were 19% less likely to be correct on a task outside it."
+  wiki_use: "Week-1 reading that explains why students must check AI-written analysis: the 'jagged frontier' is the course's case for verification."
+  ai_angle: true
+  verified_via: fetch
+
+- id: becker-metr-2025-ai-developer-productivity
+  category: M1
+  subtopic: "AI coding productivity evidence"
+  title: "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
+  authors: "Becker, J.; Rush, N.; Barnes, E.; Rein, D."
+  year: 2025
+  type: paper
+  venue: "arXiv:2507.09089 (METR)"
+  url: "https://arxiv.org/abs/2507.09089"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "RCT with 16 experienced developers on 246 real tasks. Allowing AI tools (mostly Cursor with Claude 3.5/3.7 Sonnet) raised completion time by 19%, even though the developers believed AI had made them about 20% faster."
+  wiki_use: "Pair with the Dell'Acqua et al. jagged-frontier study to show students that the gains from vibe coding depend on context, and that their own sense of speed can be wrong."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Optimistic counterpoint (verified, not given its own entry): Peng et al. (2023) found Copilot users 55.8% faster on a toy JavaScript task, https://arxiv.org/abs/2302.06590"
+
+# =====================================================================
+# M1. Marketing analytics textbooks and courses
+# =====================================================================
+
+- id: schwarz-chapman-feit-2020-python-marketing-research
+  category: M1
+  subtopic: "Marketing analytics textbook (Python)"
+  title: "Python for Marketing Research and Analytics"
+  authors: "Schwarz, J.S.; Chapman, C.; Feit, E.M."
+  year: 2020
+  type: book
+  venue: "Springer Cham"
+  url: "https://link.springer.com/book/10.1007/978-3-030-49720-0"
+  doi: "10.1007/978-3-030-49720-0"
+  access: library
+  level: intro
+  priority: core
+  modules: [M1, M2, M3, M4, M7]
+  summary: "Hands-on introduction to quantitative marketing in Python for readers with little programming background. It covers data description, visualization, regression, segmentation, conjoint and sklearn prediction, and every chapter is a Colab notebook."
+  wiki_use: "Main Python companion text. Embed or link the chapter Colab notebooks and reuse the chapter datasets for in-class coding."
+  tools: [pandas, numpy, matplotlib, seaborn, statsmodels, scikit-learn, Colab]
+  ai_angle: false
+  download:
+    repo: "https://github.com/python-marketing-research/python-marketing-research-1ed"
+    path: ""
+    license: "Apache-2.0 (per GitHub sidebar)"
+  verified_via: fetch
+  notes: "Book website: https://python-marketing-research.github.io/ (also has errata). The repo holds Data/, notebooks/ and a helper package (pip install python_marketing_research). Notebooks open in Colab from https://colab.research.google.com/github/python-marketing-research/python-marketing-research-1ed . SpringerLink copy is likely available through the UIUC library. R sister volume for the course's R components: Chapman and Feit, 'R for Marketing Research and Analytics' 2nd ed. (Springer 2019), https://research.google/pubs/r-for-marketing-research-and-analytics-2nd-ed/"
+
+- id: venkatesan-farris-wilcox-2014-cutting-edge-marketing-analytics
+  category: M1
+  subtopic: "Marketing analytics textbook (cases)"
+  title: "Cutting-Edge Marketing Analytics: Real World Cases and Data Sets for Hands On Learning"
+  authors: "Venkatesan, R.; Farris, P.; Wilcox, R.T."
+  year: 2014
+  type: book
+  venue: "Pearson FT Press"
+  url: "https://www.oreilly.com/library/view/-/9780133552584/"
+  access: library
+  level: intermediate
+  priority: optional
+  modules: [M1, M3, M4, M6]
+  summary: "Darden case-based text with technical notes and real datasets on resource allocation, marketing mix, pricing, customer and digital analytics, and dashboards."
+  wiki_use: "Source of case narratives that students can redo in Python; suggested textbook on the old syllabus."
+  ai_angle: false
+  verified_via: fetch
+  notes: "No Python companion found. The O'Reilly page does not say which software the data exercises assume. Free Pearson sample pages appeared in search: https://ptgmedia.pearsoncmg.com/images/9780133552522/samplepages/9780133552522.pdf . O'Reilly Learning is often available through university libraries; check UIUC access."
+
+- id: lilien-rangaswamy-debruyn-2017-principles-marketing-engineering
+  category: M1
+  subtopic: "Marketing analytics textbook (marketing engineering)"
+  title: "Principles of Marketing Engineering and Analytics (3rd ed.)"
+  authors: "Lilien, G.L.; Rangaswamy, A.; De Bruyn, A."
+  year: 2017
+  type: book
+  venue: "DecisionPro"
+  url: "https://faculty.essec.edu/research/3268-principles-of-marketing-engineering-and-analytics-3rd-edition"
+  access: paid
+  level: intermediate
+  priority: optional
+  modules: [M1, M4, M5]
+  summary: "Model-based marketing decision-making text (segmentation, positioning, conjoint, forecasting, CLV, resource allocation) built around the browser-based Enginius software."
+  wiki_use: "Instructor background, and a source of model templates that students can rebuild in Python with AI help."
+  tools: [Enginius]
+  ai_angle: false
+  verified_via: fetch
+  notes: "No Python companion found. Its companion software is Enginius (https://www.enginius.biz/), a web platform with segmentation, conjoint, positioning, Bass, CLV, text and network tools; pricing is quote-based and Python is not mentioned."
+
+- id: coursera-applying-data-analytics-marketing-uiuc
+  category: M1
+  subtopic: "MOOC (old syllabus)"
+  title: "Applying Data Analytics in Marketing"
+  authors: "Narang, U. (University of Illinois Urbana-Champaign)"
+  year: 2025
+  type: course
+  venue: "Coursera"
+  url: "https://www.coursera.org/learn/applying-data-analytics-business-in-marketing"
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M1, M4, M5, M6, M7]
+  summary: "Gies MOOC taught by Unnati Narang, about 16-20 hours with Python demos. Four modules: course intro and causal analysis (experiments, matching, IV, DiD); AI, prediction and ML including LLM applications; user, firm and AI-generated content analysis; and segmentation, conjoint, CLV and churn."
+  wiki_use: "Link as optional video backup for students who want lectures; its module order closely tracks BADM 534."
+  tools: [Python, Generative AI]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Year is approximate: the page shows no launch date, but its LLM content suggests a 2024-2025 revision. Rated 4.5/5 (206 reviews) when fetched. Can count toward UIUC degree programs."
+
+# =====================================================================
+# M1. Python for business students: language, pandas, notebooks
+# =====================================================================
+
+- id: deeplearningai-ai-python-for-beginners
+  category: M1
+  subtopic: "Learn Python with AI help"
+  title: "AI Python for Beginners"
+  authors: "Ng, A. (DeepLearning.AI)"
+  year: 2024
+  type: course
+  venue: "DeepLearning.AI / Coursera"
+  url: "https://www.coursera.org/learn/ai-python-for-beginners"
+  access: freemium
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "Four-module beginner course (about 17 hours) for non-developers. It uses an AI chatbot from lesson one to explain and debug code, covers variables, loops, functions, working with your own data files, and packages and APIs, and has learners build small LLM tools."
+  wiki_use: "Pre-semester or week-1 bootcamp assignment for non-CS students; it models the AI-assisted coding style the course expects."
+  tools: [Python, Jupyter, LLM APIs]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Coursera says 'Enroll for free'; certificates and some graded items may need payment. Year from memory of the 2024 launch, not shown on the page. DeepLearning.AI also lists a 'Claude Code: A Highly Agentic Coding Assistant' short course (relevant to the AI-tools modules)."
+
+- id: pandas-10-minutes-to-pandas
+  category: M1
+  subtopic: "pandas"
+  title: "10 minutes to pandas (official quick start)"
+  authors: "pandas development team"
+  year: 2026
+  type: documentation
+  venue: "pandas 3.1 documentation"
+  url: "https://pandas.pydata.org/docs/user_guide/10min.html"
+  access: open
+  license: "BSD-3-Clause (pandas)"
+  level: intro
+  priority: core
+  modules: [M1, M2]
+  summary: "Official quick tour of Series and DataFrame: selection with loc and iloc, missing data, groupby, merge, pivot_table, time series, categoricals, plotting and I/O."
+  wiki_use: "Reference card for the first coding lab; students can ask an AI assistant to explain each code block."
+  tools: [pandas]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The docs are now pandas 3.x, which changed copy-on-write and default string dtype behavior. Code that LLMs write from older training data may use deprecated 1.x and 2.x idioms, so students should be told to check warnings. (The license is the well-known pandas BSD-3 and was not rechecked on this page.)"
+
+- id: mckinney-python-for-data-analysis-3e
+  category: M1
+  subtopic: "pandas textbook"
+  title: "Python for Data Analysis, 3rd ed. (Open Access HTML)"
+  authors: "McKinney, W."
+  year: 2022
+  type: book
+  venue: "O'Reilly Media (free online edition)"
+  url: "https://wesmckinney.com/book/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M1, M2]
+  summary: "Free online edition of the standard pandas book by pandas' creator, covering Jupyter, NumPy, pandas, data cleaning and wrangling, groupby, time series and plotting."
+  wiki_use: "Deep reference for data wrangling; assign the chapters on data cleaning and groupby alongside M1-M2 labs."
+  tools: [pandas, numpy, matplotlib, Jupyter]
+  ai_angle: false
+  download:
+    repo: "https://github.com/wesm/pydata-book"
+    path: "(branch 3rd-edition) ch02-ch13 notebooks + datasets/"
+    license: "MIT (code); book text is not openly licensed"
+  verified_via: fetch
+  notes: "The site says its content may not be copied or reproduced, so link to it rather than mirror it. The repo README suggests 'uv run jupyter notebook'. The pinned pandas 2.0.3 is older than current pandas 3.x."
+
+- id: vanderplas-python-data-science-handbook
+  category: M1
+  subtopic: "Python data science textbook"
+  title: "Python Data Science Handbook"
+  authors: "VanderPlas, J."
+  year: 2016
+  type: book
+  venue: "O'Reilly Media (full text free as Jupyter notebooks)"
+  url: "https://jakevdp.github.io/PythonDataScienceHandbook/"
+  access: open
+  license: "Code MIT; text CC BY-NC-ND 3.0"
+  level: intro
+  priority: recommended
+  modules: [M1, M2, M7]
+  summary: "Full text of the book as Jupyter notebooks covering IPython, NumPy, pandas, Matplotlib (the visualization chapter) and scikit-learn; it opens directly in Colab."
+  wiki_use: "Free reference chapters; link the pandas and Matplotlib chapters from the M1-M2 pages."
+  tools: [numpy, pandas, matplotlib, scikit-learn, Colab]
+  ai_angle: false
+  download:
+    repo: "https://github.com/jakevdp/PythonDataScienceHandbook"
+    path: "notebooks/"
+    license: "MIT (code); CC BY-NC-ND 3.0 (text)"
+  verified_via: fetch
+  notes: "Written for Python 3.5 (1st ed., 2016). Some APIs are dated; a 2nd ed. exists in print. Colab index: https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/Index.ipynb"
+
+- id: swcarpentry-python-novice-gapminder
+  category: M1
+  subtopic: "Intro Python lesson"
+  title: "Plotting and Programming in Python (Software Carpentry)"
+  authors: "The Carpentries"
+  year: 2025
+  type: tutorial
+  venue: "Software Carpentry"
+  url: "https://swcarpentry.github.io/python-novice-gapminder"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: recommended
+  modules: [M1, M2]
+  summary: "Twenty-episode workshop lesson for novices using JupyterLab: variables, lists, loops and functions, reading tabular data into DataFrames, and plotting."
+  wiki_use: "Ready-made, openly licensed lesson that can be adapted into the wiki's Python bootcamp pages."
+  tools: [Python, JupyterLab, pandas, matplotlib]
+  ai_angle: false
+  download:
+    repo: "https://github.com/swcarpentry/python-novice-gapminder"
+    path: ""
+    license: "CC BY 4.0"
+  verified_via: fetch
+  notes: "The year reflects the continuously updated lesson, not a fixed edition."
+
+- id: jupyter-project
+  category: M1
+  subtopic: "Jupyter"
+  title: "Project Jupyter (JupyterLab and Jupyter Notebook)"
+  authors: "Project Jupyter"
+  year: 2026
+  type: tool
+  venue: "jupyter.org"
+  url: "https://jupyter.org/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M1]
+  summary: "Home of the notebook format, with JupyterLab, the classic Notebook, JupyterHub, Voila and Jupyter Book; includes a try-in-browser option and install docs."
+  wiki_use: "Background page explaining what a notebook is, since Colab, VS Code and Cursor all run the same .ipynb format."
+  tools: [JupyterLab, Jupyter Notebook]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Try online: https://jupyter.org/try ; install: https://jupyter.org/install . AI option for local JupyterLab users: the Jupyter AI extension (BSD-3-Clause), https://github.com/jupyterlab/jupyter-ai , which connects agents such as Claude, Codex, Copilot and Gemini through the Agent Client Protocol."
+
+- id: google-colab-faq-ai-first
+  category: M1
+  subtopic: "Google Colab"
+  title: "Google Colab FAQ (incl. Gemini / AI-first Colab)"
+  authors: "Google"
+  year: 2026
+  type: documentation
+  venue: "Google Research"
+  url: "https://research.google.com/colaboratory/faq.html"
+  access: free-registration
+  level: intro
+  priority: core
+  modules: [M1, M2, AI]
+  summary: "Explains Colab's free and paid tiers, its unpublished usage limits, and the Gemini chat panel and Data Science Agent. Notes that generative-AI prompts, code and outputs may be reviewed by humans and kept up to 18 months."
+  wiki_use: "Setup page for the course's default environment. Quote the data-privacy section when telling students not to paste customer PII into AI tools."
+  tools: [Colab, Gemini]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Gemini features require age 18+ and a supported locale. Colab recommends testing all generated code."
+
+- id: colab-data-science-agent-2025
+  category: M1
+  subtopic: "Gemini in Colab"
+  title: "Data Science Agent in Colab: The future of data analysis with Gemini"
+  authors: "Fine, J.; Kolla, M.; Soloducho, I. (Google)"
+  year: 2025
+  type: blog
+  venue: "Google for Developers Blog"
+  url: "https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini"
+  access: open
+  level: intro
+  priority: core
+  modules: [M1, M2, AI]
+  summary: "Launch post (March 2025) for the Gemini Data Science Agent, which writes complete, runnable Colab notebooks (loading, cleaning, charts, models) from a plain-language goal and an uploaded file. Google warns that it 'may make mistakes'."
+  wiki_use: "Live demo in week 1 or 2: upload a customer CSV, ask for an RFM table and charts, then have students audit the generated notebook."
+  tools: [Colab, Gemini]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The post claims 4th place on the DABStep leaderboard at launch; see the DABStep entry for how hard tasks remain."
+
+# =====================================================================
+# M1. Environment setup
+# =====================================================================
+
+- id: uv-python-package-manager
+  category: M1
+  subtopic: "Environment setup (uv)"
+  title: "uv: Python package and project manager (docs + Jupyter guide)"
+  authors: "Astral"
+  year: 2026
+  type: documentation
+  venue: "docs.astral.sh"
+  url: "https://docs.astral.sh/uv/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M1]
+  summary: "Fast, single-binary tool that installs Python versions, creates virtual environments, manages dependencies with lockfiles and runs scripts; it replaces pip, virtualenv, pyenv and poetry."
+  wiki_use: "Recommended local setup for teams delivering GitHub code: a pyproject.toml plus uv.lock makes projects reproducible for graders."
+  tools: [uv, Jupyter]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Jupyter integration guide (verified): https://docs.astral.sh/uv/guides/integration/jupyter/ ; for example 'uv run --with jupyter jupyter lab'. AI coding agents such as Claude Code and Codex commonly use uv."
+
+- id: anaconda-distribution
+  category: M1
+  subtopic: "Environment setup (conda)"
+  title: "Anaconda Distribution"
+  authors: "Anaconda, Inc."
+  year: 2026
+  type: tool
+  venue: "anaconda.com"
+  url: "https://www.anaconda.com/download"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [M1]
+  summary: "Bundled Python data-science distribution with conda, Jupyter Notebook and JupyterLab."
+  wiki_use: "Mention as the traditional install path, with the licensing caveat; steer students to Colab or uv first."
+  tools: [conda, Jupyter]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Licensing caveat: per its terms, organizations with more than 200 employees or contractors need a paid license unless eligible for free use. Check UIUC's status before recommending. Free alternative: Miniforge (conda-forge only, BSD-3-Clause) at https://github.com/conda-forge/miniforge"
+
+# =====================================================================
+# M1. Git and GitHub for non-CS students
+# =====================================================================
+
+- id: swcarpentry-git-novice
+  category: M1
+  subtopic: "Git basics"
+  title: "Version Control with Git (Software Carpentry)"
+  authors: "The Carpentries"
+  year: 2025
+  type: tutorial
+  venue: "Software Carpentry"
+  url: "https://swcarpentry.github.io/git-novice"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: core
+  modules: [M1, WIKI]
+  summary: "Novice lesson on setting up Git, tracking changes, history, .gitignore, GitHub remotes, collaborating, resolving conflicts, licensing, citation and hosting."
+  wiki_use: "Adapt into the wiki's 'Git for your team project' page; the collaboration and conflict episodes fit team blog-plus-code projects."
+  tools: [git, GitHub]
+  ai_angle: false
+  download:
+    repo: "https://github.com/swcarpentry/git-novice"
+    path: ""
+    license: "CC BY 4.0"
+  verified_via: fetch
+
+- id: github-skills-introduction-to-github
+  category: M1
+  subtopic: "GitHub basics"
+  title: "Introduction to GitHub (GitHub Skills exercise)"
+  authors: "GitHub"
+  year: 2025
+  type: tutorial
+  venue: "GitHub Skills"
+  url: "https://github.com/skills/introduction-to-github"
+  access: free-registration
+  license: "MIT"
+  level: intro
+  priority: core
+  modules: [M1, WIKI]
+  summary: "Self-guided, under-one-hour exercise in the browser: create a branch, commit a file, open and merge a pull request; it ends with a profile README."
+  wiki_use: "First-week graded check-in: each student completes it and submits the resulting repo link."
+  tools: [GitHub]
+  ai_angle: false
+  verified_via: fetch
+  notes: "skills.github.com now redirects to GitHub Learn (https://learn.github.com/skills), which lists further exercises (GitHub Pages, Markdown, Copilot); that catalog did not render on fetch."
+
+- id: github-pages-quickstart
+  category: M1
+  subtopic: "GitHub Pages"
+  title: "Quickstart for GitHub Pages"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/pages/quickstart"
+  access: open
+  level: intro
+  priority: core
+  modules: [M1, M2, WIKI]
+  summary: "Step-by-step guide to publishing a site from a repository (username.github.io, then Settings, Pages, deploy from branch)."
+  wiki_use: "Needed both for the course wiki itself and for teams publishing their project blog post."
+  tools: [GitHub Pages]
+  ai_angle: false
+  verified_via: fetch
+
+- id: github-copilot-for-students
+  category: M1
+  subtopic: "AI coding access for students"
+  title: "Access GitHub Copilot for free as a student"
+  authors: "GitHub"
+  year: 2026
+  type: documentation
+  venue: "GitHub Docs"
+  url: "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "How verified GitHub Education students activate the free 'Copilot Student' benefit; eligibility is rechecked monthly and activation can take days."
+  wiki_use: "Setup checklist item in week 1 so every student has a free AI pair programmer in VS Code or on GitHub."
+  tools: [GitHub Copilot, GitHub Education]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Tell students to verify early, since approval lag can collide with the first assignment."
+
+# =====================================================================
+# M2. Customer data: RFM, cohorts, datasets, CDPs, web analytics
+# =====================================================================
+
+- id: fader-hardie-lee-2005-rfm-clv-isovalue
+  category: M2
+  subtopic: "RFM"
+  title: "RFM and CLV: Using Iso-Value Curves for Customer Base Analysis"
+  authors: "Fader, P.S.; Hardie, B.G.S.; Lee, K.L."
+  year: 2005
+  type: paper
+  venue: "Journal of Marketing Research (2005)"
+  url: "http://www.brucehardie.com/papers/rfm_clv_2005-02-16.pdf"
+  oa_url: "http://www.brucehardie.com/papers/rfm_clv_2005-02-16.pdf"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M2, M4]
+  summary: "Links RFM summaries to a probability model (Pareto/NBD plus gamma-gamma) so that recency, frequency and monetary value map into CLV through 'iso-value' curves."
+  wiki_use: "Academic anchor that turns M2's descriptive RFM into M4's CLV; instructor background plus a figure to show in class."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The fetched PDF is the authors' February 2005 working-paper version and does not name the journal. Publication in JMR 42(4), 2005, is from instructor knowledge and was not verified here; no DOI seen."
+
+- id: uci-online-retail-ii-dataset
+  category: M2
+  subtopic: "Transaction dataset (RFM/cohorts)"
+  title: "Online Retail II (UCI Machine Learning Repository)"
+  authors: "Chen, D."
+  year: 2019
+  type: dataset
+  venue: "UCI Machine Learning Repository"
+  url: "https://archive.ics.uci.edu/dataset/502/online+retail+ii"
+  doi: "10.24432/C5CG6D"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: core
+  modules: [M2, M4]
+  summary: "1,067,371 invoice lines (Dec 2009 to Sep 2011) from a UK online gift retailer, with invoice, stock code, quantity, date, price, customer ID and country. It is the standard dataset for RFM, cohort retention and CLV exercises."
+  wiki_use: "Core M2 lab dataset: clean returns and missing IDs, build RFM scores and a monthly cohort retention heatmap, with AI help and manual checks."
+  tools: [pandas, ucimlrepo]
+  ai_angle: false
+  verified_via: fetch
+  notes: "43.5 MB xlsx, worth saving locally (not GitHub-hosted). Donated 2019; suggested citation year 2012. Load in Python with ucimlrepo fetch_ucirepo(id=502). Known pitfalls for students and LLMs: cancelled invoices (C-prefix), negative quantities, missing CustomerID."
+
+- id: ga4-bigquery-ecommerce-sample
+  category: M2
+  subtopic: "GA4 / web analytics data"
+  title: "GA4 obfuscated sample ecommerce dataset (BigQuery)"
+  authors: "Google"
+  year: 2021
+  type: dataset
+  venue: "Google Analytics developer docs / BigQuery public datasets"
+  url: "https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset"
+  access: free-registration
+  level: intermediate
+  priority: recommended
+  modules: [M2, M6]
+  summary: "Obfuscated GA4 event-level export from the Google Merchandise Store (Nov 2020 to Jan 2021) in bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*, queryable in the free BigQuery Sandbox."
+  wiki_use: "Shows students what first-party clickstream data really looks like (nested event_params); good for funnel and cohort exercises, pulled into pandas in Colab."
+  tools: [BigQuery, SQL, pandas, Colab]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Obfuscated, with limited internal consistency and placeholder values; it does not match the GA demo account."
+
+- id: ga4-demo-account
+  category: M2
+  subtopic: "GA4 / web analytics"
+  title: "Google Analytics demo account"
+  authors: "Google"
+  year: 2026
+  type: documentation
+  venue: "Analytics Help"
+  url: "https://support.google.com/analytics/answer/6367342"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "Free, viewer-level access to live GA4 properties (Google Merchandise Store web data and the Flood-It! app) so students can explore standard reports and explorations."
+  wiki_use: "In-class walkthrough of acquisition, engagement and monetization reports before moving to raw data in Python."
+  tools: [Google Analytics 4]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Limits: obfuscated data, no export, no Data API access."
+
+- id: ga4-cohort-exploration
+  category: M2
+  subtopic: "Cohort analysis"
+  title: "[GA4] Cohort exploration"
+  authors: "Google"
+  year: 2026
+  type: documentation
+  venue: "Analytics Help"
+  url: "https://support.google.com/analytics/answer/9670133"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Defines cohort settings in GA4: inclusion criteria, return criteria, granularity, and standard, rolling or cumulative calculation."
+  wiki_use: "Concept page for cohort retention; students then build the same table from Online Retail II in pandas."
+  tools: [Google Analytics 4]
+  ai_angle: false
+  verified_via: fetch
+  notes: "No verified Python cohort-analysis tutorial was found before the search budget ran out (gap)."
+
+- id: pymc-marketing-rfm-clv-quickstart
+  category: M2
+  subtopic: "RFM in Python"
+  title: "PyMC-Marketing CLV Quickstart (rfm_summary and rfm_segments utilities)"
+  authors: "PyMC Labs"
+  year: 2026
+  type: notebook
+  venue: "PyMC-Marketing documentation"
+  url: "https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M2, M4]
+  summary: "Notebook that uses clv.utils.rfm_summary to turn raw CDNOW transactions into customer-level recency, frequency, T and monetary value, then fits BG/NBD and Gamma-Gamma CLV models."
+  wiki_use: "The M2 step (RFM table from transactions) is the bridge to M4's CLV; students can check their hand-built RFM table against the library's."
+  tools: [pymc-marketing, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The segment helper's API page exists (https://www.pymc-marketing.io/en/stable/api/generated/pymc_marketing.clv.utils.rfm_segments.html) but its body did not render on fetch. Repo license not checked."
+
+- id: cdp-institute-what-is-a-cdp
+  category: M2
+  subtopic: "Customer data platforms"
+  title: "What is a CDP? (CDP Institute definition)"
+  authors: "CDP Institute (Raab, D.)"
+  year: 2026
+  type: website
+  venue: "CDP Institute Learning Center"
+  url: "https://www.cdpinstitute.org/learning-center/what-is-a-cdp/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "Industry definition of a CDP as 'software that creates and maintains a persistent, unified customer record that is accessible to other systems', with own-store, warehouse-native (composable) and hybrid deployments."
+  wiki_use: "Short reading for the 'where first-party data lives' lecture; connects identity resolution to the student datasets."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Vendor-neutral industry body, but not academic. Definition labeled as the 2026 version."
+
+# =====================================================================
+# M2. Privacy basics for customer data
+# =====================================================================
+
+- id: acquisti-taylor-wagman-2016-economics-of-privacy
+  category: M2
+  subtopic: "Privacy (academic)"
+  title: "The Economics of Privacy"
+  authors: "Acquisti, A.; Taylor, C.; Wagman, L."
+  year: 2016
+  type: paper
+  venue: "Journal of Economic Literature 54(2), 442-492"
+  url: "https://www.aeaweb.org/articles?id=10.1257/jel.54.2.442"
+  doi: "10.1257/jel.54.2.442"
+  access: library
+  level: advanced
+  priority: recommended
+  modules: [M2, M8]
+  summary: "Survey of theory and evidence on the value of protecting versus disclosing personal data. It concludes there is no unified theory, that privacy protection can raise or lower welfare, and that consumers often cannot see how their data is used."
+  wiki_use: "Instructor background and an optional reading that frames privacy as a trade-off rather than a compliance checklist."
+  ai_angle: false
+  verified_via: fetch
+
+- id: ftc-protecting-personal-information-guide
+  category: M2
+  subtopic: "Privacy (practice)"
+  title: "Protecting Personal Information: A Guide for Business"
+  authors: "U.S. Federal Trade Commission"
+  year: 2016
+  type: report
+  venue: "FTC Business Guidance"
+  url: "https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Five plain-language principles for handling customer data: take stock, scale down, lock it, pitch it, plan ahead."
+  wiki_use: "Data-handling rules for the team project (minimize, de-identify, never commit raw PII to GitHub or paste it into chatbots)."
+  ai_angle: false
+  verified_via: fetch
+
+- id: california-ccpa-oag
+  category: M2
+  subtopic: "Privacy law (US)"
+  title: "California Consumer Privacy Act (CCPA)"
+  authors: "State of California Department of Justice, Office of the Attorney General"
+  year: 2026
+  type: website
+  venue: "oag.ca.gov"
+  url: "https://oag.ca.gov/privacy/ccpa"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Official summary of CCPA/CPRA consumer rights (know, delete, opt out including Global Privacy Control, correct, limit sensitive data) and business obligations."
+  wiki_use: "Reference box on the privacy page; ties opt-out signals to why first-party datasets have gaps."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Last updated Aug 28, 2026 at time of fetch."
+
+- id: gdpr-info-eu
+  category: M2
+  subtopic: "Privacy law (EU)"
+  title: "General Data Protection Regulation (GDPR), structured text"
+  authors: "intersoft consulting (unofficial consolidation of Regulation (EU) 2016/679)"
+  year: 2016
+  type: website
+  venue: "gdpr-info.eu"
+  url: "https://gdpr-info.eu/"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Searchable article-by-article GDPR text with linked recitals, covering lawful basis (Art. 6), consent (Art. 7), and data-subject rights including erasure, portability and profiling (Arts. 15-22)."
+  wiki_use: "Quick lookup when discussing international students' home-market rules and consent-based data collection."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Unofficial; the site links to the authoritative EUR-Lex PDF."
+
+- id: google-privacy-sandbox-retirement-2025
+  category: M2
+  subtopic: "First-party data / cookies"
+  title: "Update on Plans for Privacy Sandbox Technologies"
+  authors: "Chavez, A. (Google)"
+  year: 2025
+  type: blog
+  venue: "Privacy Sandbox blog (Google)"
+  url: "https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2, M8]
+  summary: "October 2025 announcement that Chrome keeps third-party cookies under user choice and retires most Privacy Sandbox APIs (Topics, Protected Audience, Attribution Reporting and others), while promising publisher controls for first-party data."
+  wiki_use: "Current-events hook for why first-party data strategy still matters even though cookies did not disappear."
+  ai_angle: false
+  verified_via: fetch
+
+# =====================================================================
+# M2. Data visualization in Python: libraries and galleries
+# =====================================================================
+
+- id: matplotlib-quick-start-and-cheatsheets
+  category: M2
+  subtopic: "matplotlib"
+  title: "Matplotlib Quick start guide (and official cheatsheets)"
+  authors: "Matplotlib development team"
+  year: 2026
+  type: documentation
+  venue: "matplotlib.org (v3.11)"
+  url: "https://matplotlib.org/stable/users/explain/quick_start.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M2]
+  summary: "Official intro to Figure, Axes and Artists, and to the explicit (object-oriented) versus implicit (pyplot) interfaces, plus styling, labels, scales, dates and colormaps."
+  wiki_use: "Teach the fig, ax = plt.subplots() pattern so students can read and fix AI-generated plotting code, which often mixes the two interfaces."
+  tools: [matplotlib]
+  ai_angle: true
+  download:
+    repo: "https://github.com/matplotlib/cheatsheets"
+    path: ""
+    license: "BSD-2-Clause"
+  verified_via: fetch
+  notes: "Cheatsheet PDFs: https://matplotlib.org/cheatsheets/cheatsheets.pdf and https://matplotlib.org/cheatsheets/handout-beginner.pdf"
+
+- id: seaborn-user-guide
+  category: M2
+  subtopic: "seaborn"
+  title: "seaborn user guide and tutorial"
+  authors: "Waskom, M. et al."
+  year: 2024
+  type: documentation
+  venue: "seaborn.pydata.org (v0.13.2)"
+  url: "https://seaborn.pydata.org/tutorial.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M2, M3]
+  summary: "Tutorial on statistical graphics: relational, distribution and categorical plots, error bars, regression fits, multi-plot grids, palettes, and the seaborn.objects interface."
+  wiki_use: "Default library for M2 exploratory charts of customer segments; the error-bar chapter supports M3."
+  tools: [seaborn, matplotlib, pandas]
+  ai_angle: false
+  verified_via: fetch
+
+- id: plotly-express
+  category: M2
+  subtopic: "plotly"
+  title: "Plotly Express in Python"
+  authors: "Plotly"
+  year: 2026
+  type: documentation
+  venue: "plotly.com"
+  url: "https://plotly.com/python/plotly-express/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2, WIKI]
+  summary: "High-level px API that builds interactive figures in one call; the figures export to HTML and can be embedded in web pages and Dash apps."
+  wiki_use: "Use for interactive charts in student blog posts and in the GitHub Pages wiki."
+  tools: [plotly]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The page also promotes Plotly Studio (AI app builder), a commercial product."
+
+- id: vega-altair
+  category: M2
+  subtopic: "Altair"
+  title: "Vega-Altair: Declarative Visualization in Python"
+  authors: "Vega-Altair developers"
+  year: 2026
+  type: documentation
+  venue: "altair-viz.github.io (v6)"
+  url: "https://altair-viz.github.io/"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [M2, WIKI]
+  summary: "Grammar-of-graphics library built on Vega-Lite; charts are specified as data, encodings and marks and render as interactive web graphics."
+  wiki_use: "Alternative for interactive, web-native charts on the wiki; its declarative specs are easy for LLMs to generate and for students to read."
+  tools: [altair]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Gallery: https://altair-viz.github.io/gallery/index.html"
+
+- id: uw-visualization-curriculum-altair
+  category: M2
+  subtopic: "Altair notebooks"
+  title: "Visualization Curriculum (interactive Altair notebooks)"
+  authors: "UW Interactive Data Lab (Heer, J. et al.)"
+  year: 2020
+  type: notebook
+  venue: "University of Washington IDL"
+  url: "https://idl.uw.edu/visualization-curriculum/"
+  access: open
+  license: "BSD-3-Clause"
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Seven Colab-ready notebooks teaching visualization principles through Altair: marks and encodings, transforms, scales and legends, multi-view composition, interaction, maps, plus a debugging guide."
+  wiki_use: "Embed one notebook (marks and encoding) as an in-class activity on encoding choices."
+  tools: [altair, Colab]
+  ai_angle: false
+  download:
+    repo: "https://github.com/uwdata/visualization-curriculum"
+    path: ""
+    license: "BSD-3-Clause"
+  verified_via: fetch
+  notes: "Year approximate; not confirmed on the page."
+
+- id: python-graph-gallery
+  category: M2
+  subtopic: "Chart galleries"
+  title: "The Python Graph Gallery"
+  authors: "Holtz, Y."
+  year: 2026
+  type: website
+  venue: "python-graph-gallery.com"
+  url: "https://python-graph-gallery.com/"
+  access: open
+  license: "0BSD (site repo)"
+  level: intro
+  priority: core
+  modules: [M2]
+  summary: "Hundreds of reproducible matplotlib, seaborn, plotly and plotnine examples grouped by chart purpose (distribution, correlation, ranking, flow), following the Data-to-Viz classification."
+  wiki_use: "Go-to reference: students find a chart type here, then ask an AI assistant to adapt the code to their own data."
+  tools: [matplotlib, seaborn, plotly, plotnine]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Site source at https://github.com/holtzy/The-Python-Graph-Gallery (0BSD). Repo size not checked, so no download entry."
+
+- id: from-data-to-viz
+  category: M2
+  subtopic: "Chart choice"
+  title: "From Data to Viz"
+  authors: "Holtz, Y.; Healy, C."
+  year: 2026
+  type: website
+  venue: "data-to-viz.com"
+  url: "https://www.data-to-viz.com/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "Decision tree for choosing a chart from the data type, with 'common mistakes' notes per chart and a caveats gallery (pie charts, cut y-axes, overplotting, rainbow palettes), linked to Python code."
+  wiki_use: "In-class exercise: given a marketing question and dataset, pick the chart with the tree and defend the choice."
+  ai_angle: false
+  verified_via: fetch
+
+# =====================================================================
+# M2. Visualization principles: books
+# =====================================================================
+
+- id: wilke-fundamentals-of-data-visualization
+  category: M2
+  subtopic: "Visualization principles"
+  title: "Fundamentals of Data Visualization"
+  authors: "Wilke, C.O."
+  year: 2019
+  type: book
+  venue: "O'Reilly Media (free online)"
+  url: "https://clauswilke.com/dataviz/"
+  access: open
+  license: "CC BY-NC-ND 4.0"
+  level: intro
+  priority: core
+  modules: [M2]
+  summary: "Free book on turning data into figures (aesthetics, proportions, distributions, uncertainty) and on figure design principles (proportional ink, overlapping points, color pitfalls, titles and captions). Tool-agnostic."
+  wiki_use: "Primary M2 principles reading; assign the chapters on color, proportional ink and visualizing uncertainty."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Year from memory (2019); the page does not show it. Examples were made in R, but the principles carry over to Python."
+
+- id: healy-data-visualization-socviz
+  category: M2
+  subtopic: "Visualization principles"
+  title: "Data Visualization: A Practical Introduction"
+  authors: "Healy, K."
+  year: 2018
+  type: book
+  venue: "Princeton University Press (draft readable online)"
+  url: "https://socviz.co/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M2]
+  summary: "Practical introduction to the why and how of good graphics, from perception and honesty to workflow, with a full draft readable online."
+  wiki_use: "Assign Chapter 1 ('Look at data') for perception and honesty principles; skip the R code."
+  tools: [R, ggplot2]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Code is R/ggplot2, not Python. The online text is a 2018-04-25 draft. The full subtitle and the free-access status are from instructor knowledge; the page shows purchase links but no license."
+
+- id: knaflic-storytelling-with-data
+  category: M2
+  subtopic: "Data storytelling"
+  title: "storytelling with data: a data visualization guide for business professionals"
+  authors: "Knaflic, C.N."
+  year: 2015
+  type: book
+  venue: "Wiley"
+  url: "https://www.storytellingwithdata.com/books"
+  access: paid
+  level: intro
+  priority: core
+  modules: [M2]
+  summary: "Business-oriented guide to context, choosing visuals, removing clutter, focusing attention and telling a story. The companion site adds free makeovers, a chart guide, a podcast and sample chapters."
+  wiki_use: "Core M2 reading for the blog-post deliverable; use SWD 'makeovers' as before-and-after critique exercises."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Year and publisher (2015, Wiley) are from instructor knowledge; the books page links to Wiley but shows no dates. Free chart guide: https://www.storytellingwithdata.com/chart-guide . Workbook 'let's practice!' has exercise solutions on the site."
+
+- id: swd-ai-data-storytelling-guide
+  category: M2
+  subtopic: "AI-assisted data storytelling"
+  title: "SWD + AI: data storytelling with AI"
+  authors: "storytelling with data (Knaflic, C.N. et al.)"
+  year: 2025
+  type: website
+  venue: "storytellingwithdata.com"
+  url: "https://www.storytellingwithdata.com/ai-data-storytelling"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2, AI]
+  summary: "Free guide, videos and blog series on using AI as a 'thought partner' for data storytelling. It compares five AI tools on one dataset and shows that prompting with SWD principles improves AI-made graphs."
+  wiki_use: "Lab: students get a default chart from Gemini or ChatGPT, then re-prompt it with SWD principles and compare."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Year approximate; one part of the blog series was marked 'coming soon' when fetched."
+
+- id: tufte-visual-display-quantitative-information
+  category: M2
+  subtopic: "Visualization principles (classic)"
+  title: "The Visual Display of Quantitative Information (2nd ed.)"
+  authors: "Tufte, E.R."
+  year: 2001
+  type: book
+  venue: "Graphics Press"
+  url: "https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/"
+  access: paid
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "Classic on graphical integrity, data-ink, chartjunk and small multiples (1st ed. 1983, 2nd ed. 2001)."
+  wiki_use: "Short excerpts on the lie factor and data-ink ratio; students critique an AI-generated chart against Tufte's rules."
+  ai_angle: false
+  verified_via: fetch
+
+# =====================================================================
+# M2. Communicating results: Minto, SCQA, slides, blog posts
+# =====================================================================
+
+- id: minto-pyramid-principle
+  category: M2
+  subtopic: "Pyramid Principle"
+  title: "The Minto Pyramid Principle: Logic in Writing, Thinking and Problem Solving"
+  authors: "Minto, B."
+  year: 1996
+  type: book
+  venue: "Minto International (barbaraminto.com)"
+  url: "https://www.barbaraminto.com/"
+  access: paid
+  level: intro
+  priority: core
+  modules: [M2]
+  summary: "The source text on top-down, answer-first business writing: a governing thought supported by MECE groups of ideas, opened with the Situation-Complication-Question framework."
+  wiki_use: "Core reading for M2's communication unit and the template for every project blog post and in-class readout."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The 1996 revised edition is the authoritative one (originally 1987; the Pearson reissue is not the revised text, per Minto). Her site calls the intro the 'SCQ Framework'; SCQA adds the Answer. The official online course costs $1,200. No free official summary."
+
+- id: mckinsey-alumni-minto-mece-interview
+  category: M2
+  subtopic: "Pyramid Principle"
+  title: "Barbara Minto: 'MECE: I invented it, so I get to say how to pronounce it'"
+  authors: "McKinsey Alumni Center"
+  year: 2026
+  type: blog
+  venue: "McKinsey & Company Alumni News"
+  url: "https://www.mckinsey.com/alumni/news-and-events/global-news/alumni-news/barbara-minto-mece-i-invented-it-so-i-get-to-say-how-to-pronounce-it"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Free interview in which Minto explains the pyramid (summary point over logically grouped ideas), the origin of MECE, and why thinking comes before slides."
+  wiki_use: "Free, authoritative 10-minute primer to assign in place of the book."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Publication date not shown on the page; the year field is the fetch year, not the publication year."
+
+- id: untools-minto-pyramid
+  category: M2
+  subtopic: "Pyramid Principle (open summary)"
+  title: "Minto Pyramid (Untools)"
+  authors: "Untools"
+  year: 2026
+  type: website
+  venue: "untools.co"
+  url: "https://untools.co/minto-pyramid/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "One-page summary with an example: start with the conclusion (BLUF), give key supporting points, then supporting data."
+  wiki_use: "Embed as the quick-reference card; students run their draft blog post through its three steps."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Does not cover SCQA. All rights reserved, so link rather than copy."
+
+- id: modelthinkers-minto-pyramid-scqa
+  category: M2
+  subtopic: "SCQA"
+  title: "Minto Pyramid & SCQA (ModelThinkers)"
+  authors: "ModelThinkers"
+  year: 2026
+  type: website
+  venue: "modelthinkers.com"
+  url: "https://modelthinkers.com/mental-model/minto-pyramid-scqa"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Summary of SCQA (situation, complication, question, answer) as the pyramid's introduction, with action-statement recommendations and MECE support; notes the limits of answer-first framing."
+  wiki_use: "Short SCQA explainer; the free preview covers the key structure."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Partly paywalled (members-only sections, US$5/month). No fully open SCQA summary was verified (gap)."
+
+- id: tufte-cognitive-style-of-powerpoint
+  category: M2
+  subtopic: "Slide writing (critique)"
+  title: "The Cognitive Style of PowerPoint: Pitching Out Corrupts Within"
+  authors: "Tufte, E.R."
+  year: 2006
+  type: book
+  venue: "Graphics Press (32-page eBook)"
+  url: "https://www.edwardtufte.com/book/the-cognitive-style-of-powerpoint-pitching-out-corrupts-within-ebook/"
+  access: paid
+  level: intro
+  priority: optional
+  modules: [M2]
+  summary: "Essay ($5 PDF) arguing that bullet-outline slideware weakens reasoning and distorts statistical analysis."
+  wiki_use: "Counterpoint reading in the communication unit, and a reason the course uses a blog post instead of a deck."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Year from memory (2nd ed. 2006); the page does not show it. For examples of consulting-style action titles, Analyst Academy keeps a free list of 600+ public consulting decks: https://www.theanalystacademy.com/consulting-presentations/ (verified; the site promotes paid courses)."
+
+- id: robinson-start-a-data-science-blog
+  category: M2
+  subtopic: "Writing a data blog post"
+  title: "Advice to aspiring data scientists: start a blog"
+  authors: "Robinson, D."
+  year: 2017
+  type: blog
+  venue: "Variance Explained"
+  url: "http://varianceexplained.org/r/start-blog/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2, WIKI]
+  summary: "Widely shared essay on why public analysis blog posts build skills, a portfolio and feedback, and why not to wait for an audience."
+  wiki_use: "Motivation reading when introducing the blog-post-plus-GitHub project format."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The fetch confirmed the author and content; the title and 2017 date are from memory, not shown in the fetched text."
+
+- id: quarto-blog-and-github-pages
+  category: M2
+  subtopic: "Publishing a data blog"
+  title: "Creating a Blog (Quarto) and Publishing to GitHub Pages"
+  authors: "Posit / Quarto"
+  year: 2026
+  type: documentation
+  venue: "quarto.org"
+  url: "https://quarto.org/docs/websites/website-blog.html"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2, WIKI]
+  summary: "How to create a Quarto blog (quarto create project blog) whose posts can be Jupyter notebooks or .qmd files with frozen outputs, and how to publish it to GitHub Pages."
+  wiki_use: "Recommended toolchain for team blog posts, and a candidate engine for the course wiki itself."
+  tools: [Quarto, Jupyter, GitHub Pages]
+  ai_angle: false
+  verified_via: fetch
+  notes: "GitHub Pages guide (verified): https://quarto.org/docs/publishing/github-pages.html . Three options: render to docs/, 'quarto publish gh-pages', or a GitHub Action; use freeze: auto to avoid re-running notebooks in CI."
+
+- id: hohman-2020-communicating-interactive-articles
+  category: M2
+  subtopic: "Interactive explanations"
+  title: "Communicating with Interactive Articles"
+  authors: "Hohman, F.; Conlen, M.; Heer, J.; Chau, D.H."
+  year: 2020
+  type: paper
+  venue: "Distill 5(9), e28"
+  url: "https://distill.pub/2020/communicating-with-interactive-articles/"
+  doi: "10.23915/distill.00028"
+  access: open
+  license: "CC BY 4.0"
+  level: intermediate
+  priority: optional
+  modules: [M2, WIKI]
+  summary: "Review of research on interactive articles (details-on-demand, prediction prompts, simulations, personalization) and the evidence on when interactivity helps or costs too much."
+  wiki_use: "Design reference for the interactive HTML wiki, and inspiration for ambitious team blog posts."
+  ai_angle: false
+  verified_via: fetch
+
+# =====================================================================
+# M2. AI-assisted chart generation and reliability research
+# =====================================================================
+
+- id: dibia-2023-lida
+  category: M2
+  subtopic: "LLM chart generation"
+  title: "LIDA: A Tool for Automatic Generation of Grammar-Agnostic Visualizations and Infographics using Large Language Models"
+  authors: "Dibia, V."
+  year: 2023
+  type: paper
+  venue: "ACL 2023 System Demonstrations, pp. 113-126"
+  url: "https://aclanthology.org/2023.acl-demo.11"
+  doi: "10.18653/v1/2023.acl-demo.11"
+  oa_url: "https://arxiv.org/abs/2303.02927"
+  access: open
+  license: "MIT (code)"
+  level: intermediate
+  priority: core
+  modules: [M2, AI]
+  summary: "Microsoft Research system that treats visualization as code generation in four stages: a Summarizer that describes the data, a Goal Explorer that proposes questions, a VisGenerator that writes, repairs and filters matplotlib, seaborn or Altair code, and an Infographer."
+  wiki_use: "Explains what Gemini, ChatGPT and Claude do under the hood when they 'make a chart'; run the tutorial notebook in Colab as a demo."
+  tools: [lida, matplotlib, seaborn, altair]
+  ai_angle: true
+  download:
+    repo: "https://github.com/microsoft/lida"
+    path: "notebooks/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "The README warns that LIDA executes generated code, so run it in a sandbox. Maintenance activity unclear. Supports OpenAI, Azure, PaLM, Cohere, Hugging Face and local models via llmx. No error-rate figures were confirmed on the fetched abstract pages."
+
+- id: microsoft-data-formulator
+  category: M2
+  subtopic: "LLM chart generation"
+  title: "Data Formulator: AI-powered data exploration with visualizations"
+  authors: "Microsoft Research"
+  year: 2026
+  type: tool
+  venue: "GitHub (microsoft/data-formulator)"
+  url: "https://github.com/microsoft/data-formulator"
+  access: open
+  license: "MIT"
+  level: intro
+  priority: recommended
+  modules: [M2, AI]
+  summary: "Open-source app that mixes drag-and-drop encoding with natural-language prompts, so AI agents transform data and build charts while users branch into alternative analyses. Works with OpenAI, Azure, Anthropic or Ollama models."
+  wiki_use: "Hands-on lab: students explore a customer dataset in Data Formulator, then rebuild the best chart in their own notebook code."
+  tools: [data_formulator, uv]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Install with 'uvx data_formulator' or pip; runs locally at localhost:5567. Latest stable 0.7 (May 2026), 0.8 beta (Aug 2026). Needs an LLM API key."
+
+- id: openai-chatgpt-data-analysis
+  category: M2
+  subtopic: "ChatGPT data analysis"
+  title: "Data analysis with ChatGPT"
+  authors: "OpenAI"
+  year: 2026
+  type: documentation
+  venue: "OpenAI Help Center"
+  url: "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt"
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M2, AI]
+  summary: "Official description of ChatGPT's file analysis: it writes and runs Python in a stateful notebook, makes interactive bar, line, pie and scatter charts, and explains its assumptions. It warns that the chosen method or chart may not match your intent."
+  wiki_use: "Compare ChatGPT's chart with the Colab Data Science Agent's on the same RFM table; students document any differences."
+  tools: [ChatGPT]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Feature limits vary by plan. The sandbox has no internet access. Remind students of privacy rules before they upload customer files."
+
+- id: chen-2024-viseval-benchmark
+  category: M2
+  subtopic: "Reliability of AI-made charts"
+  title: "VisEval: A Benchmark for Data Visualization in the Era of Large Language Models"
+  authors: "Chen, N.; Zhang, Y.; Xu, J.; Ren, K.; Yang, Y."
+  year: 2024
+  type: paper
+  venue: "arXiv:2407.00981"
+  url: "https://arxiv.org/abs/2407.00981"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M2, AI]
+  summary: "Natural-language-to-visualization benchmark (2,524 queries over 146 databases) with automated checks of validity, legality and readability; it documents recurring LLM chart-generation failures."
+  wiki_use: "Evidence for the course rule that AI-made charts must be checked; turn its three criteria into a rubric for student chart audits."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The arXiv page lists no peer-reviewed venue; publication in IEEE TVCG (VIS 2024) is believed but was not verified."
+
+- id: lo-qu-2024-llms-misleading-visualizations
+  category: M2
+  subtopic: "Reliability of AI-made charts"
+  title: "How Good (Or Bad) Are LLMs at Detecting Misleading Visualizations?"
+  authors: "Lo, L.Y.-H.; Qu, H."
+  year: 2024
+  type: paper
+  venue: "arXiv:2407.17291"
+  url: "https://arxiv.org/abs/2407.17291"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [M2, AI]
+  summary: "Tests four multimodal LLMs with nine prompting strategies on misleading real-world charts (up to 21 issue types). Detection is promising but depends heavily on the prompt."
+  wiki_use: "Exercise: students ask an AI to critique a deliberately misleading chart (truncated axis, dual axis) and compare its answer with their own."
+  ai_angle: true
+  verified_via: fetch
+
+- id: dabstep-benchmark-2025
+  category: M2
+  subtopic: "Reliability of AI analysis"
+  title: "DABStep: Data Agent Benchmark for Multi-step Reasoning"
+  authors: "Adyen; Hugging Face"
+  year: 2025
+  type: blog
+  venue: "Hugging Face blog"
+  url: "https://huggingface.co/blog/dabstep"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M2, AI]
+  summary: "Benchmark of over 450 real-world data-analysis tasks that combine tables with documentation. At launch (Feb 2025) the best agent scored only 16% on hard tasks (o3-mini; Claude Sonnet 12%)."
+  wiki_use: "A sobering number for students: AI agents handle easy descriptive analysis but often fail multi-step business questions, so verify."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Leaderboard: https://huggingface.co/spaces/adyen/DABstep (scores have since risen; check the current state before citing). Google's Colab agent claimed 4th place in March 2025. Earlier, more optimistic baseline: Cheng, Li and Bing (2023), 'Is GPT-4 a Good Data Analyst?', https://arxiv.org/abs/2305.15038 (verified)."

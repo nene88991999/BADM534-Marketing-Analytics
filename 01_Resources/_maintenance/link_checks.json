@@ -1,0 +1,934 @@
+[
+  {
+    "id": "T01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://teachtogether.tech/en/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Teaching Tech Together"
+  },
+  {
+    "id": "T02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://carpentries.github.io/instructor-training/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Instructor Training: Summary and Setup"
+  },
+  {
+    "id": "T03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://citl.illinois.edu/ai-curriculum-and-training",
+    "content_type": "text/html; charset=utf-8",
+    "title": "AI Curriculum and Training | Center for Innovation in Teaching & Learning"
+  },
+  {
+    "id": "T04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://publish.illinois.edu/business-elearn-tutorials/gies-ai-resources-and-training/",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "Gies AI Resources and Training | Gies Teaching Guides and Resources | Illinois"
+  },
+  {
+    "id": "P01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.python.org/3/tutorial/",
+    "content_type": "text/html",
+    "title": "The Python Tutorial — Python 3.15.1 documentation"
+  },
+  {
+    "id": "P02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://wesmckinney.com/book/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Python for Data Analysis, 3E"
+  },
+  {
+    "id": "P03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Getting started tutorials — pandas 3.1.0 documentation"
+  },
+  {
+    "id": "P04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://numpy.org/doc/stable/user/absolute_beginners.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "NumPy: the absolute basics for beginners — NumPy v2.5 Manual"
+  },
+  {
+    "id": "P05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://swcarpentry.github.io/python-novice-gapminder/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Plotting and Programming in Python: Summary and Setup"
+  },
+  {
+    "id": "P06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://jupyterlab.readthedocs.io/en/stable/user/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "User Guide — JupyterLab 4.6.4 documentation"
+  },
+  {
+    "id": "P07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.astral.sh/uv/guides/projects/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Working on projects | uv"
+  },
+  {
+    "id": "P08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://swcarpentry.github.io/git-novice/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Version Control with Git: Summary and Setup"
+  },
+  {
+    "id": "P09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.pytest.org/en/stable/getting-started.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Get Started - pytest documentation Contents Menu Expand Light mode Dark mode Auto light/dark, in light mode Auto light/dark, in dark mode"
+  },
+  {
+    "id": "P10",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://github.com/python-marketing-research/python-marketing-research-1ed",
+    "content_type": "text/html; charset=utf-8",
+    "title": "GitHub - python-marketing-research/python-marketing-research-1ed · GitHub"
+  },
+  {
+    "id": "V01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://clauswilke.com/dataviz/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Fundamentals of Data Visualization"
+  },
+  {
+    "id": "V02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://seaborn.pydata.org/tutorial.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "User guide and tutorial — seaborn 0.13.2 documentation"
+  },
+  {
+    "id": "V03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://matplotlib.org/stable/tutorials/index.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Tutorials — Matplotlib 3.11.2 documentation"
+  },
+  {
+    "id": "V04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://plotly.com/python/interactive-html-export/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Interactive html export in Python"
+  },
+  {
+    "id": "V05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://altair-viz.github.io/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Vega-Altair: Declarative Visualization in Python — Vega-Altair 6.3.0.post4+gb2ca919d documentation"
+  },
+  {
+    "id": "V06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://pandas.pydata.org/docs/user_guide/merging.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Merge, join, concatenate and compare — pandas 3.1.0 documentation"
+  },
+  {
+    "id": "V07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://pandas.pydata.org/docs/user_guide/missing_data.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Working with missing data — pandas 3.1.0 documentation"
+  },
+  {
+    "id": "V08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://support.google.com/analytics/answer/6367342",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "Demo account - Analytics Help"
+  },
+  {
+    "id": "R01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.statlearning.com/",
+    "content_type": "text/html;charset=utf-8",
+    "title": "An Introduction to Statistical Learning"
+  },
+  {
+    "id": "R02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://github.com/intro-stat-learning/ISLP_labs",
+    "content_type": "text/html; charset=utf-8",
+    "title": "GitHub - intro-stat-learning/ISLP_labs: Up-to-date version of labs for ISLP · GitHub"
+  },
+  {
+    "id": "R03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.statsmodels.org/stable/examples/notebooks/generated/ols.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Ordinary Least Squares — statsmodels 0.15.0"
+  },
+  {
+    "id": "R04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.statsmodels.org/stable/example_formulas.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Fitting models using R-style formulas — statsmodels 0.15.0"
+  },
+  {
+    "id": "R05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.statsmodels.org/stable/examples/notebooks/generated/regression_diagnostics.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Regression diagnostics — statsmodels 0.15.0"
+  },
+  {
+    "id": "R06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.openintro.org/book/os/",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "OpenIntro Statistics OpenIntro Statistics"
+  },
+  {
+    "id": "R07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html",
+    "content_type": "text/html",
+    "title": "bootstrap — SciPy v1.18.0 Manual"
+  },
+  {
+    "id": "C01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://sawtoothsoftware.com/academics/teaching-resources",
+    "content_type": "text/html;charset=UTF-8",
+    "title": "Academic Teaching Resources"
+  },
+  {
+    "id": "C02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://eml.berkeley.edu/books/choice2.html",
+    "content_type": "text/html",
+    "title": "Discrete Choice Methods with Simulation, \r\nby Kenneth Train, Cambridge University Press, 2002"
+  },
+  {
+    "id": "C03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.pymc-marketing.io/en/latest/notebooks/customer_choice/mnl_logit.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Multinomial Choice Models and the Indepdence of Irrelevant Alternatives — PyMC-Marketing"
+  },
+  {
+    "id": "C04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://link.springer.com/book/10.1007/978-981-10-8818-6?error=cookies_not_supported&code=55d4e2ce-4cfa-478e-8884-fd79dbede86c",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Market Segmentation Analysis: Understanding It, Doing It, and Making It Useful | Springer Nature Link"
+  },
+  {
+    "id": "C05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/clustering.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "2.3. Clustering — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "C06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Selecting the number of clusters with silhouette analysis on KMeans clustering — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "C07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.pymc-marketing.io/en/latest/notebooks/clv/clv_quickstart.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Customer Lifetime Value (CLV) in Python: Quickstart — PyMC-Marketing"
+  },
+  {
+    "id": "C08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.pymc-marketing.io/en/latest/notebooks/clv/gamma_gamma.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Gamma-gamma Model — PyMC-Marketing"
+  },
+  {
+    "id": "C09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.brucehardie.com/notes/",
+    "content_type": "text/html",
+    "title": "Bruce Hardie: Notes"
+  },
+  {
+    "id": "C10",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://github.com/CamDavidsonPilon/lifetimes",
+    "content_type": "text/html; charset=utf-8",
+    "title": "GitHub - CamDavidsonPilon/lifetimes: Lifetime value in Python · GitHub"
+  },
+  {
+    "id": "X01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.nltk.org/book/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "NLTK Book"
+  },
+  {
+    "id": "X02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+    "content_type": "text/html; charset=utf-8",
+    "title": "8.2. Feature extraction — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "X03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://github.com/cjhutto/vaderSentiment",
+    "content_type": "text/html; charset=utf-8",
+    "title": "GitHub - cjhutto/vaderSentiment: VADER Sentiment Analysis. VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media, and works well on texts from other domains. · GitHub"
+  },
+  {
+    "id": "X04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://spacy.io/usage/spacy-101",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "spaCy 101: Everything you need to know · spaCy Usage Documentation"
+  },
+  {
+    "id": "X05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://huggingface.co/learn/llm-course/en/chapter1/1",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Introduction · Hugging Face"
+  },
+  {
+    "id": "X06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://sbert.net/docs/quickstart.html",
+    "content_type": "text/html",
+    "title": "Quickstart — Sentence Transformers  documentation"
+  },
+  {
+    "id": "X07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://maartengr.github.io/BERTopic/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "BERTopic"
+  },
+  {
+    "id": "X08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://networkx.org/documentation/stable/tutorial.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Tutorial — NetworkX 3.7 documentation"
+  },
+  {
+    "id": "X09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://smltar.com/",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "Supervised Machine Learning for Text Analysis in R"
+  },
+  {
+    "id": "E01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://matheusfacure.github.io/python-causality-handbook/landing-page.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Causal Inference for The Brave and True — Causal Inference for the Brave and True"
+  },
+  {
+    "id": "E02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://theeffectbook.net/",
+    "content_type": "text/html",
+    "title": "The Effect: An Introduction to Research Design and Causality | The Effect"
+  },
+  {
+    "id": "E03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://mixtape.scunning.com/",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "Causal Inference The Remix"
+  },
+  {
+    "id": "E04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.pywhy.org/dowhy/v0.13/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "DoWhy documentation — DoWhy  documentation"
+  },
+  {
+    "id": "E05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.pywhy.org/EconML/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Welcome to econml’s documentation! — econml 0.16.0 documentation"
+  },
+  {
+    "id": "E06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://exp-platform.com/Documents/GuideControlledExperiments.pdf",
+    "content_type": "application/pdf",
+    "title": ""
+  },
+  {
+    "id": "E07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.statsmodels.org/stable/stats.html#power-and-sample-size-calculations",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Statistics stats — statsmodels 0.15.0"
+  },
+  {
+    "id": "E08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://causalml.readthedocs.io/en/latest/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Welcome to Causal ML’s documentation — causalml  documentation"
+  },
+  {
+    "id": "M01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/getting_started.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Getting Started — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/common_pitfalls.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "12. Common pitfalls and recommended practices — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "3.1. Cross-validation: evaluating estimator performance — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "3.4. Metrics and scoring: quantifying the quality of predictions — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/classification_threshold.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "3.3. Tuning the decision threshold for class prediction — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/calibration.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "1.16. Probability calibration — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/ensemble.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "1.11. Ensembles: Gradient boosting, random forests, bagging, voting, stacking — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://christophm.github.io/interpretable-ml-book/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Interpretable Machine Learning"
+  },
+  {
+    "id": "M09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://scikit-learn.org/stable/modules/permutation_importance.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "5.2. Permutation feature importance — scikit-learn 1.9.1 documentation"
+  },
+  {
+    "id": "M10",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://fairlearn.org/main/user_guide/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "User Guide — Fairlearn 0.16.0.dev0 documentation"
+  },
+  {
+    "id": "A01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://developers.google.com/meridian/docs/basics/meridian-introduction",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Meridian  |  Google for Developers"
+  },
+  {
+    "id": "A02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.pymc-marketing.io/en/latest/notebooks/mmm/mmm_example.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Media Mix Modeling (MMM) in Python: End-to-End Example — PyMC-Marketing"
+  },
+  {
+    "id": "A03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://facebookexperimental.github.io/Robyn/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Robyn"
+  },
+  {
+    "id": "A04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://developers.google.com/machine-learning/recommendation",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Introduction  |  Machine Learning  |  Google for Developers"
+  },
+  {
+    "id": "A05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.tensorflow.org/recommenders/examples/basic_retrieval",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Recommending movies: retrieval  |  TensorFlow Recommenders"
+  },
+  {
+    "id": "A06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://otexts.com/fpp3/",
+    "content_type": "text/html",
+    "title": "Forecasting: Principles and Practice"
+  },
+  {
+    "id": "A07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "AI Risk Management Framework | NIST Lock"
+  },
+  {
+    "id": "AI01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://learn.chatgpt.com/guides/best-practices",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Best practices | ChatGPT Learn"
+  },
+  {
+    "id": "AI02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Custom instructions with AGENTS.md | ChatGPT Learn"
+  },
+  {
+    "id": "AI03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://code.claude.com/docs/en/best-practices",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Best practices for Claude Code - Claude Code Docs"
+  },
+  {
+    "id": "AI04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.github.com/en/copilot/get-started/best-practices",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Best practices for using GitHub Copilot - GitHub Docs"
+  },
+  {
+    "id": "AI05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-engineering",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Prompt engineering for GitHub Copilot - GitHub Docs"
+  },
+  {
+    "id": "AI06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://cursor.com/docs",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Cursor Docs — Agent, Rules, MCP, Skills & CLI Cursor Logo Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Cursor Logo Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking Agent Thinking"
+  },
+  {
+    "id": "AI07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://geminicli.com/docs/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Gemini CLI documentation | Gemini CLI"
+  },
+  {
+    "id": "AI08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://github.com/skills/introduction-to-github",
+    "content_type": "text/html; charset=utf-8",
+    "title": "GitHub - skills/introduction-to-github: Get started using GitHub in less than an hour. · GitHub"
+  },
+  {
+    "id": "AI09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2302.07427",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2302.07427] Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming"
+  },
+  {
+    "id": "AI10",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2405.17739",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2405.17739] The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers"
+  },
+  {
+    "id": "AI11",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2309.14049",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2309.14049] How Novices Use LLM-Based Code Generators to Solve CS1 Coding Tasks in a Self-Paced Learning Environment"
+  },
+  {
+    "id": "AI12",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2302.06590",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2302.06590] The Impact of AI on Developer Productivity: Evidence from GitHub Copilot"
+  },
+  {
+    "id": "AI13",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2507.09089",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2507.09089] Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
+  },
+  {
+    "id": "AI14",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2211.03622",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2211.03622] Do Users Write More Insecure Code with AI Assistants?"
+  },
+  {
+    "id": "AI15",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Removing sensitive data from a repository - GitHub Docs"
+  },
+  {
+    "id": "AI16",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Evaluation best practices | OpenAI API"
+  },
+  {
+    "id": "D01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+    "content_type": "text/html",
+    "title": "UCI Machine Learning Repository Online Retail - UCI Machine Learning Repository"
+  },
+  {
+    "id": "D02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
+    "content_type": "text/html",
+    "title": "UCI Machine Learning Repository Bank Marketing - UCI Machine Learning Repository"
+  },
+  {
+    "id": "D03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset",
+    "content_type": "text/html",
+    "title": "UCI Machine Learning Repository Online Shoppers Purchasing Intention Dataset - UCI Machine Learning Repository"
+  },
+  {
+    "id": "D04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://archive.ics.uci.edu/dataset/331/sentiment+labelled+sentences",
+    "content_type": "text/html",
+    "title": "UCI Machine Learning Repository Sentiment Labelled Sentences - UCI Machine Learning Repository"
+  },
+  {
+    "id": "D05",
+    "checked_on": "2026-10-23",
+    "status": "unresolved",
+    "error": "<urlopen error timed out>"
+  },
+  {
+    "id": "D06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://ailab.criteo.com/criteo-uplift-prediction-dataset/",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "Criteo Uplift Prediction Dataset - Criteo AI Lab"
+  },
+  {
+    "id": "D07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://amazon-reviews-2023.github.io/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Amazon Reviews'23 Contents Menu Expand Light mode Dark mode Auto light/dark mode"
+  },
+  {
+    "id": "D08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.dunnhumby.com/source-files/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Source Files - dunnhumby"
+  },
+  {
+    "id": "D09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://archive.ics.uci.edu/dataset/292/wholesale+customers",
+    "content_type": "text/html",
+    "title": "UCI Machine Learning Repository Wholesale customers - UCI Machine Learning Repository"
+  },
+  {
+    "id": "W01",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages",
+    "content_type": "text/html; charset=utf-8",
+    "title": "What is GitHub Pages? - GitHub Docs"
+  },
+  {
+    "id": "W02",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://quarto.org/docs/websites/",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "Creating a Website – Quarto"
+  },
+  {
+    "id": "W03",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://quarto.org/docs/publishing/github-pages.html",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "GitHub Pages – Quarto"
+  },
+  {
+    "id": "W04",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://jupyterbook.org/",
+    "content_type": "text/html; charset=UTF-8",
+    "title": "Community Guide"
+  },
+  {
+    "id": "W05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://jupyterlite.readthedocs.io/en/stable/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "JupyterLite — JupyterLite 0.8.6 documentation"
+  },
+  {
+    "id": "W06",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://docs.marimo.io/guides/exporting/webassembly_html/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "WebAssembly HTML - marimo"
+  },
+  {
+    "id": "W07",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://pyodide.org/en/stable/usage/index.html",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Using Pyodide — Version 314.0.7"
+  },
+  {
+    "id": "W08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+    "content_type": "text/html",
+    "title": "Learn web development | MDN MDN MDN Mozilla"
+  },
+  {
+    "id": "W09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.w3.org/WAI/tutorials/",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Tutorials | Web Accessibility Initiative (WAI) | W3C W3C homepage Web Accessibility Initiative (WAI) homepage"
+  },
+  {
+    "id": "W10",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://research.google.com/colaboratory/faq.html",
+    "content_type": "text/html",
+    "title": "Google Colab"
+  },
+  {
+    "id": "C11",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.brucehardie.com/papers/018/",
+    "content_type": "text/html",
+    "title": "\"Counting Your Customers\" the Easy Way: An Alternative to the Pareto/NBD Model"
+  },
+  {
+    "id": "C12",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://content.sawtoothsoftware.com/assets/3501e79f-3a9f-4d99-a0f5-1522525e7f3f",
+    "content_type": "application/pdf",
+    "title": ""
+  },
+  {
+    "id": "E09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://brgordon1.github.io/publication/2019-comparison-advertising-measurement",
+    "content_type": "text/html; charset=utf-8",
+    "title": "A Comparison of Approaches to Advertising Measurement: Evidence from Big Field Experiments at Facebook - Brett R. Gordon"
+  },
+  {
+    "id": "A08",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://link.springer.com/article/10.1007/s11747-019-00696-0?error=cookies_not_supported&code=8de2ee62-b9e4-4022-9705-51ddc0181f14",
+    "content_type": "text/html; charset=utf-8",
+    "title": "How artificial intelligence will change the future of marketing | Journal of the Academy of Marketing Science | Springer Nature Link"
+  },
+  {
+    "id": "A09",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://link.springer.com/article/10.1007/s11747-024-01064-3?error=cookies_not_supported&code=0d0ff494-103d-4eb5-a28c-7e476a2b2791",
+    "content_type": "text/html; charset=utf-8",
+    "title": "How generative AI Is shaping the future of marketing | Journal of the Academy of Marketing Science | Springer Nature Link"
+  },
+  {
+    "id": "AI17",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2601.20245",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2601.20245] How AI Impacts Skill Formation"
+  },
+  {
+    "id": "AI18",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://www.anthropic.com/research/claude-code-expertise",
+    "content_type": "text/html; charset=utf-8",
+    "title": "How Claude Code is used in practice \\ Anthropic"
+  },
+  {
+    "id": "T05",
+    "checked_on": "2026-10-23",
+    "status": 200,
+    "final_url": "https://ptgmedia.pearsoncmg.com/images/9780133552522/samplepages/9780133552522.pdf",
+    "content_type": "application/pdf",
+    "title": ""
+  },
+  {
+    "id": "T06",
+    "checked_on": "2026-10-23",
+    "status": "unresolved",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

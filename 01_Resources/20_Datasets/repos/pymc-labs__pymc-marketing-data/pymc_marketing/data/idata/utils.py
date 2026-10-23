@@ -1,0 +1,595 @@
+#   Copyright 2022 - 2026 The PyMC Labs Developers
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+"""Standalone utility functions for DataTree operations."""
+
+from __future__ import annotations
+
+import importlib
+import warnings
+from typing import Any, Literal
+
+import numpy as np
+import pandas as pd
+import xarray as xr
+from numpy.random import Generator, RandomState
+
+from pymc_marketing.data.idata.schema import Frequency
+
+_MOVED_TO_IO = ("idata_to_zarr", "idata_from_zarr")
+
+
+def __getattr__(name: str) -> Any:
+    """Keep the import path used up to 1.2 working, with a warning."""
+    if name in _MOVED_TO_IO:
+        warnings.warn(
+            f"{__name__}.{name} moved to pymc_marketing.data.idata.io; update the import.",
+            FutureWarning,
+            stacklevel=2,
+        )
+        return getattr(importlib.import_module("pymc_marketing.data.idata.io"), name)
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+
+
+def filter_idata_by_dates(
+    idata: xr.DataTree,
+    start_date: str | pd.Timestamp | None = None,
+    end_date: str | pd.Timestamp | None = None,
+) -> xr.DataTree:
+    """Filter DataTree to a date range.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree to filter
+    start_date : str or pd.Timestamp, optional
+        Start date (inclusive)
+    end_date : str or pd.Timestamp, optional
+        End date (inclusive)
+
+    Returns
+    -------
+    xr.DataTree
+        New DataTree with filtered groups
+
+    Examples
+    --------
+    >>> filtered = filter_idata_by_dates(idata, "2024-01-01", "2024-12-31")
+    """
+    if start_date is None and end_date is None:
+        return idata
+
+    date_slice = {"date": slice(start_date, end_date)}
+
+    filtered_groups = {}
+    for name, child in idata.children.items():
+        ds = child.dataset
+        if "date" in ds.dims:
+            ds = ds.sel(**date_slice)
+        filtered_groups[name] = ds
+
+    result = xr.DataTree.from_dict({f"/{k}": v for k, v in filtered_groups.items()})
+    result.attrs = idata.attrs.copy()
+    return result
+
+
+def filter_idata_by_dims(
+    idata: xr.DataTree,
+    **dim_filters,
+) -> xr.DataTree:
+    """Filter DataTree by dimension values.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree to filter
+    **dim_filters
+        Dimension filters, e.g., country="US", channel=["TV", "Radio"]
+        Note: When filtering to a single value, the dimension is dropped
+        (xarray's default behavior). When filtering to multiple values,
+        the dimension is preserved.
+
+    Returns
+    -------
+    xr.DataTree
+        New DataTree with filtered groups
+
+    Raises
+    ------
+    ValueError
+        If a dimension in dim_filters doesn't exist in any group
+
+    Examples
+    --------
+    >>> filtered = filter_idata_by_dims(idata, country="US")
+    >>> # Dimension "country" is dropped (single value)
+    >>> filtered = filter_idata_by_dims(idata, channel=["TV", "Radio"])
+    >>> # Dimension "channel" is preserved (multiple values)
+    """
+    if not dim_filters:
+        return idata
+
+    all_dims = set()
+    for path in idata.groups:
+        if path == "/":
+            continue
+        ds = idata[path].dataset
+        all_dims.update(ds.dims)
+
+    for dim in dim_filters:
+        if dim not in all_dims:
+            raise ValueError(
+                f"Dimension '{dim}' not found in any group. "
+                f"Available dimensions: {sorted(all_dims)}"
+            )
+
+    filtered_groups = {}
+    for path in idata.groups:
+        if path == "/":
+            continue
+        group_name = path.lstrip("/")
+        ds = idata[path].dataset
+
+        group_sel = {}
+        for dim, values in dim_filters.items():
+            if dim in ds.dims:
+                group_sel[dim] = values
+
+        if group_sel:
+            filtered = ds.sel(**group_sel)
+            filtered_groups[group_name] = filtered
+        else:
+            filtered_groups[group_name] = ds
+
+    result = xr.DataTree.from_dict({f"/{k}": v for k, v in filtered_groups.items()})
+    result.attrs = idata.attrs.copy()
+    return result
+
+
+_PERIOD_RULES = {
+    "weekly": "W",
+    "monthly": "ME",
+    "quarterly": "QE",
+    "yearly": "YE",
+}
+
+
+def _aggregate_over_time[XarrayT: (xr.Dataset, xr.DataArray)](
+    data: XarrayT,
+    period: Frequency,
+    method: Literal["sum", "mean"] = "sum",
+) -> XarrayT:
+    """Aggregate a Dataset or DataArray over ``date`` into periods.
+
+    The period boundaries of :func:`aggregate_idata_time`, for callers that
+    aggregate variables they derived from a DataTree rather than the DataTree
+    itself.
+
+    Parameters
+    ----------
+    data : xr.Dataset or xr.DataArray
+        Object to aggregate. Without a ``date`` dim it is returned unchanged.
+    period : {"original", "weekly", "monthly", "quarterly", "yearly", "all_time"}
+        Time period to aggregate to. ``"original"`` returns ``data`` unchanged,
+        ``"all_time"`` removes the ``date`` dim.
+    method : {"sum", "mean"}, default "sum"
+        Aggregation method
+
+    Returns
+    -------
+    xr.Dataset or xr.DataArray
+        Aggregated object, of the same type as ``data``.
+    """
+    if period == "original" or "date" not in data.dims:
+        return data
+
+    reducible = (
+        data if period == "all_time" else data.resample(date=_PERIOD_RULES[period])
+    )
+    if method == "sum":
+        return reducible.sum(dim="date")
+    if method == "mean":
+        return reducible.mean(dim="date")
+    raise ValueError(f"Unknown aggregation method: {method}")
+
+
+def broadcast_over_date(variable: xr.DataArray, date: xr.DataArray) -> xr.DataArray:
+    """Repeat a time-invariant variable on every ``date``.
+
+    An MMM adds a time-invariant intercept to the linear predictor on every
+    date but stores it without a ``date`` dim. Repeating it on the dates of
+    the per-date variables lets it line up with them, so that summing over
+    ``date`` counts it once per date like every other component.
+
+    Parameters
+    ----------
+    variable : xr.DataArray
+        Variable without a ``date`` dim, e.g. with dims ``(chain, draw, ...)``.
+    date : xr.DataArray
+        The ``date`` coordinate to repeat ``variable`` on.
+
+    Returns
+    -------
+    xr.DataArray
+        ``variable`` with the ``date`` dim inserted after ``chain`` and
+        ``draw`` (those present), before any other dim, the order the per-date
+        variables of the same group use.
+
+    Examples
+    --------
+    .. code-block:: python
+
+        posterior = mmm.idata.posterior
+        intercept = broadcast_over_date(
+            posterior["intercept_contribution"], posterior["date"]
+        )
+        intercept.dims  # ("chain", "draw", "date", ...)
+    """
+    return variable.expand_dims(date=date).transpose(
+        *[d for d in ("chain", "draw") if d in variable.dims], "date", ...
+    )
+
+
+def sum_contributions_over_time(
+    contributions: xr.Dataset,
+    period: Frequency,
+) -> xr.Dataset:
+    """Sum per-date contributions over the dates of each period.
+
+    Every variable of ``contributions`` is a component the model adds to the
+    linear predictor on every date. A component without a ``date`` dim, such
+    as a time-invariant intercept, is repeated on every date of
+    ``contributions`` first (see :func:`broadcast_over_date`), so that it is
+    counted once per observed date within each period, exactly like the
+    per-date components. The aggregation runs per variable, so each keeps its
+    ``(chain, draw, date, ...)`` dim order.
+
+    Decompose first, then call this: under a nonlinear inverse link the
+    decomposition of the summed linear predictor is not the sum of the per-date
+    decompositions.
+
+    Parameters
+    ----------
+    contributions : xr.Dataset
+        One data variable per component, on the original dates.
+    period : {"original", "weekly", "monthly", "quarterly", "yearly", "all_time"}
+        Time period to sum over. ``"original"`` returns ``contributions``
+        unchanged, ``"all_time"`` removes the ``date`` dim; otherwise ``date``
+        holds the last calendar day of each period. A period shorter than the
+        spacing of the dates (e.g. ``"weekly"`` on monthly data) leaves empty
+        periods, which are ``NaN``.
+
+    Returns
+    -------
+    xr.Dataset
+        The contributions of each period.
+    """
+    if period == "original" or "date" not in contributions.dims:
+        return contributions
+
+    date = contributions["date"]
+    per_date = contributions.map(
+        lambda component: (
+            component
+            if "date" in component.dims
+            else broadcast_over_date(component, date)
+        )
+    )
+    return per_date.map(_aggregate_over_time, period=period)
+
+
+def aggregate_idata_time(
+    idata: xr.DataTree,
+    period: Frequency,
+    method: Literal["sum", "mean"] = "sum",
+) -> xr.DataTree:
+    """Aggregate DataTree over time periods.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree to aggregate
+    period : {"original", "weekly", "monthly", "quarterly", "yearly", "all_time"}
+        Time period to aggregate to. Use "original" for no aggregation (returns
+        unchanged), "all_time" to aggregate over the entire time dimension
+        (removes the date dimension).
+    method : {"sum", "mean"}, default "sum"
+        Aggregation method
+
+    Returns
+    -------
+    xr.DataTree
+        New DataTree with aggregated groups (or unchanged if period="original").
+        Its root ``attrs`` record the aggregation as ``time_aggregation=period``
+        so that consumers of per-date quantities can tell the data apart from
+        the original dates.
+
+    Notes
+    -----
+    Each variable is reduced as it is, so a variable without a ``date`` dim
+    passes through unchanged. A time-invariant MMM intercept is such a
+    variable although the model adds it in every period: summing MMM
+    contributions with this function counts it once for the whole window.
+    Use :meth:`~pymc_marketing.data.idata.mmm_wrapper.MMMIDataWrapper.aggregate_time`,
+    which broadcasts it over ``date`` first.
+
+    Examples
+    --------
+    >>> original = aggregate_idata_time(idata, "original")  # No aggregation
+    >>> monthly = aggregate_idata_time(idata, "monthly", method="sum")
+    >>> total = aggregate_idata_time(idata, "all_time", method="sum")
+    """
+    if period == "original":
+        return idata
+
+    result = xr.DataTree.from_dict(
+        {
+            path: _aggregate_over_time(idata[path].dataset, period, method)
+            for path in idata.groups
+            if path != "/"
+        }
+    )
+    result.attrs = {**idata.attrs, "time_aggregation": period}
+    return result
+
+
+def aggregate_idata_dims(
+    idata: xr.DataTree,
+    dim: str,
+    values: list[str],
+    new_label: str,
+    method: Literal["sum", "mean"] = "sum",
+) -> xr.DataTree:
+    """Aggregate multiple dimension values into one.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree to aggregate
+    dim : str
+        Dimension to aggregate (e.g., "channel", "country")
+    values : list of str
+        Values to aggregate
+    new_label : str
+        Label for aggregated value
+    method : {"sum", "mean"}, default "sum"
+        Aggregation method
+
+    Returns
+    -------
+    xr.DataTree
+        New DataTree with aggregated dimension values
+
+    Raises
+    ------
+    ValueError
+        If the dimension doesn't exist in any group, or if new_label
+        conflicts with existing coordinate values that aren't being aggregated
+
+    Examples
+    --------
+    >>> # Combine social channels into one
+    >>> combined = aggregate_idata_dims(
+    ...     idata,
+    ...     dim="channel",
+    ...     values=["Facebook", "Instagram", "TikTok"],
+    ...     new_label="Social",
+    ...     method="sum",
+    ... )
+    """
+    all_dims = set()
+    for path in idata.groups:
+        if path == "/":
+            continue
+        ds = idata[path].dataset
+        all_dims.update(ds.dims)
+
+    if dim not in all_dims:
+        raise ValueError(
+            f"Dimension '{dim}' not found in any group. "
+            f"Available dimensions: {sorted(all_dims)}"
+        )
+
+    for path in idata.groups:
+        if path == "/":
+            continue
+        ds = idata[path].dataset
+        if dim in ds.dims:
+            existing_coords = set(ds[dim].values)
+            non_aggregated = existing_coords - set(values)
+            if new_label in non_aggregated:
+                raise ValueError(
+                    f"new_label '{new_label}' conflicts with existing coordinate value "
+                    f"in dimension '{dim}' that is not being aggregated. "
+                    f"Existing values not being aggregated: {sorted(non_aggregated)}"
+                )
+            break
+
+    aggregated_groups = {}
+    for path in idata.groups:
+        if path == "/":
+            continue
+        group_name = path.lstrip("/")
+        ds = idata[path].dataset
+
+        if dim not in ds.dims:
+            aggregated_groups[group_name] = ds
+            continue
+
+        all_coords = set(ds[dim].values)
+        other_values = list(all_coords - set(values))
+
+        result_vars = {}
+        for var_name, var in ds.data_vars.items():
+            if dim not in var.dims:
+                result_vars[var_name] = var
+            else:
+                selected_var = var.sel({dim: values})
+
+                if method == "sum":
+                    aggregated_var = selected_var.sum(dim=dim)
+                elif method == "mean":
+                    aggregated_var = selected_var.mean(dim=dim)
+                else:
+                    raise ValueError(f"Unknown aggregation method: {method}")
+
+                aggregated_var = aggregated_var.expand_dims({dim: [new_label]})
+
+                if other_values:
+                    other_var = var.sel({dim: other_values})
+                    combined_var = xr.concat([other_var, aggregated_var], dim=dim)
+                else:
+                    combined_var = aggregated_var
+
+                result_vars[var_name] = combined_var
+
+        combined = xr.Dataset(result_vars)
+        aggregated_groups[group_name] = combined
+
+    result = xr.DataTree.from_dict({f"/{k}": v for k, v in aggregated_groups.items()})
+    result.attrs = idata.attrs.copy()
+    return result
+
+
+def get_posterior_predictive(idata: xr.DataTree) -> xr.Dataset:
+    """Return the posterior_predictive group from *idata*.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree holding the fitted model results.
+
+    Returns
+    -------
+    xr.Dataset
+        The posterior_predictive group.
+
+    Raises
+    ------
+    ValueError
+        If posterior_predictive is absent from idata.
+    """
+    if "posterior_predictive" not in idata.children:
+        raise ValueError(
+            "No posterior_predictive data found in idata. "
+            "Run MMM.sample_posterior_predictive() first."
+        )
+    return idata["/posterior_predictive"].to_dataset()
+
+
+def get_prior_predictive(idata: xr.DataTree) -> xr.Dataset:
+    """Return the prior_predictive group from *idata*.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree holding the fitted model results.
+
+    Returns
+    -------
+    xr.Dataset
+        The prior_predictive group.
+
+    Raises
+    ------
+    ValueError
+        If prior_predictive is absent from idata.
+    """
+    if "prior_predictive" not in idata.children:
+        raise ValueError(
+            "No prior_predictive data found in idata. "
+            "Run MMM.sample_prior_predictive() first."
+        )
+    return idata["/prior_predictive"].to_dataset()
+
+
+def get_prior(idata: xr.DataTree) -> xr.Dataset:
+    """Return the prior group from *idata*.
+
+    Parameters
+    ----------
+    idata : xr.DataTree
+        DataTree holding the fitted model results.
+
+    Returns
+    -------
+    xr.Dataset
+        The prior group.
+
+    Raises
+    ------
+    ValueError
+        If prior is absent from idata.
+    """
+    if "prior" not in idata.children:
+        raise ValueError(
+            "No prior data found in idata. Run MMM.sample_prior_predictive() first."
+        )
+    return idata["/prior"].to_dataset()
+
+
+def subsample_draws(
+    dataset: xr.Dataset,
+    *,
+    num_samples: int | None,
+    random_state: RandomState | Generator | None = None,
+) -> xr.Dataset:
+    """Subsample draws from a Dataset with chain and draw dimensions.
+
+    Randomly selects ``num_samples`` draws from the flattened
+    chain × draw space and returns a new Dataset with a single
+    chain and ``num_samples`` draws.
+
+    Parameters
+    ----------
+    dataset : xr.Dataset
+        Dataset with ``chain`` and ``draw`` dimensions.
+    num_samples : int or None
+        Number of draws to keep.  If ``None`` or >= total available
+        draws, returns *dataset* unchanged.
+    random_state : RandomState, Generator, or None, optional
+        Seed or random state for reproducibility.
+
+    Returns
+    -------
+    xr.Dataset
+        When ``num_samples`` is ``None`` or >= total draws, returns *dataset*
+        unchanged (preserving its original chain/draw structure).
+        When subsampling occurs, returns a new Dataset with shape
+        ``(chain=1, draw=num_samples)``.
+
+    Examples
+    --------
+    >>> sub = subsample_draws(posterior, num_samples=100, random_state=42)
+    >>> sub.sizes["draw"]
+    100
+    """
+    if num_samples is None:
+        return dataset
+
+    total_samples = dataset.sizes["chain"] * dataset.sizes["draw"]
+
+    if num_samples >= total_samples:
+        return dataset
+
+    rng = np.random.default_rng(random_state)
+    flat_indices = rng.choice(total_samples, size=num_samples, replace=False)
+
+    stacked = dataset.stack(sample=("chain", "draw"))
+    selected = stacked.isel(sample=flat_indices)
+
+    return (
+        selected.drop_vars(["chain", "draw", "sample"])
+        .rename({"sample": "draw"})
+        .expand_dims("chain")
+    )

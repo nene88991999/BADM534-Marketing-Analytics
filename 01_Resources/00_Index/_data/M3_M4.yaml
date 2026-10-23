@@ -1,0 +1,1299 @@
+# BADM 534 resource search: modules M3 (Regression review) and M4 (Conjoint, Segmentation, CLV)
+# Compiled 2026-10-23. Every url / oa_url was seen in a search result or confirmed by WebFetch.
+# The shared web-search budget ran out partway through, so later entries were checked by fetching canonical pages directly.
+
+# =====================================================================
+# M3: Regression Analysis, A Review
+# =====================================================================
+
+- id: effect-ch13-regression
+  category: M3
+  subtopic: "OLS refresher (free textbook)"
+  title: "The Effect: An Introduction to Research Design and Causality, Chapter 13: Regression"
+  authors: "Huntington-Klein, N."
+  year: 2021
+  type: book-chapter
+  venue: "Chapman & Hall/CRC (free web edition at theeffectbook.net)"
+  url: "https://theeffectbook.net/ch-StatisticalAdjustment.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M3, M6]
+  summary: "Non-technical regression chapter: error terms and exogeneity, how to read a regression table, binary and categorical predictors, polynomials and log transforms, interactions, and a section titled 'Your Standard Errors Are Probably Wrong'. It has code in R, Stata and Python (statsmodels formula API plus stargazer)."
+  wiki_use: "Core reading for the M3 review. The Python snippets can seed a first Colab warm-up that students then extend with an AI assistant."
+  tools: [statsmodels, stargazer]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The site says the web version 'will continue to be free'. No license is stated for the text. Print edition is from CRC Press (2021)."
+
+- id: mixtape-ch2-probability-regression
+  category: M3
+  subtopic: "OLS refresher (free textbook)"
+  title: "Causal Inference: The Mixtape, Chapter 2: Probability and Regression Review"
+  authors: "Cunningham, S."
+  year: 2021
+  type: book-chapter
+  venue: "mixtape.scunning.com (online edition)"
+  url: "https://mixtape.scunning.com/02-probability_and_regression"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Review of probability, expectation and variance, the population regression model, OLS estimation and goodness of fit, the law of iterated expectations, CEF properties and the regression anatomy theorem. It includes Python code blocks (numpy, pandas, statsmodels, plotnine) alongside R and Stata."
+  wiki_use: "Optional deeper reading for students who want the 'why' behind OLS. The regression-anatomy Python example works as an in-class demo."
+  tools: [statsmodels, pandas, plotnine]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The online site is labeled the in-progress second edition and does not state access terms, but it is openly readable. The publisher (Yale University Press, 2021) is from recollection, not shown on the page."
+
+- id: regression-and-other-stories
+  category: M3
+  subtopic: "OLS refresher (free textbook)"
+  title: "Regression and Other Stories"
+  authors: "Gelman, A.; Hill, J.; Vehtari, A."
+  year: 2020
+  type: book
+  venue: "Cambridge University Press"
+  url: "https://avehtari.github.io/ROS-Examples/"
+  oa_url: "https://users.aalto.fi/~ave/ROS.pdf"
+  access: open
+  license: "PDF free to view and download for personal use only (no redistribution or derivatives). The code repo states no license."
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Applied regression textbook with a free official PDF and R code and data for every example. It covers linear regression, transformations, interactions, logistic regression and causal inference."
+  wiki_use: "Link specific chapters (log transforms, interactions, and the predictive checks used as diagnostics) as optional reading. A good exercise is to have an AI assistant port an R example to Python and then check the port against the book's output."
+  tools: [R, rstanarm]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Use the official site, which carries the latest corrections. Don't mirror the PDF or the code, because the license allows personal use only and the code has no license."
+
+- id: islp-ch3-linreg-ch12-unsup
+  category: M3
+  subtopic: "OLS refresher (free textbook + labs)"
+  title: "An Introduction to Statistical Learning with Applications in Python (ISLP): Ch. 3 Linear Regression lab and Ch. 12 Unsupervised Learning lab"
+  authors: "James, G.; Witten, D.; Hastie, T.; Tibshirani, R.; Taylor, J."
+  year: 2023
+  type: book
+  venue: "Springer"
+  url: "https://www.statlearning.com/"
+  oa_url: "https://hastie.su.domains/ISLP/ISLP_website.pdf.download.html"
+  access: open
+  license: "Labs repo: BSD-2-Clause"
+  level: intro
+  priority: core
+  modules: [M3, M4, M7]
+  summary: "Widely used textbook with a free PDF and Jupyter labs. Ch03-linreg-lab covers simple and multiple regression, interactions, non-linear terms and diagnostics with statsmodels and the ISLP package. Ch12-unsup-lab covers PCA, k-means and hierarchical clustering."
+  wiki_use: "Embed Ch03-linreg-lab.ipynb as the M3 Colab notebook and Ch12-unsup-lab.ipynb for the M4 clustering session."
+  tools: [ISLP, statsmodels, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/intro-stat-learning/ISLP_labs"
+    path: ""
+    license: "BSD-2-Clause"
+  verified_via: fetch
+  notes: "Relevant files are Ch03-linreg-lab.ipynb and Ch12-unsup-lab.ipynb. The repo README describes setup with uv and requirements.txt."
+
+- id: quantecon-ols-python
+  category: M3
+  subtopic: "OLS in Python"
+  title: "Linear Regression in Python (QuantEcon lecture)"
+  authors: "QuantEcon (Sargent, T. J.; Stachurski, J., series editors)"
+  year: 2017
+  type: tutorial
+  venue: "QuantEcon: Intermediate Quantitative Economics with Python"
+  url: "https://python.quantecon.org/ols.html"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Worked lecture on the Acemoglu-Johnson-Robinson data: simple and multivariate OLS with statsmodels, omitted variable bias, side-by-side tables with summary_col, and 2SLS with linearmodels IV2SLS. It also explains why manual two-stage regression gives wrong standard errors."
+  wiki_use: "Short model notebook for regression syntax and tables. The default 'nonrobust' standard errors make it a good prompt for the robust-SE discussion."
+  tools: [statsmodels, linearmodels, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Robust standard errors are not covered, and the output shows 'nonrobust' covariance. A copy also appears at https://stats.quantecon.org/ols.html (seen in search). The year comes from a 2017 QuantEcon announcement; the lecture is updated continuously."
+
+- id: turrell-coding-for-economists-regression
+  category: M3
+  subtopic: "OLS in Python (pyfixest)"
+  title: "Coding for Economists: Regression"
+  authors: "Turrell, A."
+  year: null
+  type: book-chapter
+  venue: "Coding for Economists (online book)"
+  url: "https://aeturrell.github.io/coding-for-economists/econmt-regression.html"
+  access: open
+  license: "MIT (book)"
+  level: intro
+  priority: core
+  modules: [M3, M6]
+  summary: "Practical Python regression chapter built mainly on pyfixest. It covers HC robust and one- and two-way clustered SEs, categorical and high-dimensional fixed effects, interactions and polynomials, log and asinh transforms, and IV, with statsmodels shown for comparison."
+  wiki_use: "Best single 'how do I do X in Python' reference for M3. Assign it as the syntax companion to The Effect."
+  tools: [pyfixest, statsmodels, linearmodels, lets-plot]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The page states the book is under an MIT license. The GitHub source repo was not checked."
+
+- id: statsmodels-robust-covariance
+  category: M3
+  subtopic: "Robust / clustered SEs"
+  title: "statsmodels OLSResults.get_robustcov_results: HC0-HC3, cluster, HAC and panel covariance options"
+  authors: "statsmodels developers"
+  year: null
+  type: documentation
+  venue: "statsmodels documentation"
+  url: "https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.get_robustcov_results.html"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M3]
+  summary: "Reference for every cov_type in statsmodels: HC0-HC3, cluster (CRV1, with integer 'groups'), cluster-crv3, cluster-jk, HAC (maxlags), hac-groupsum (Driscoll-Kraay) and hac-panel."
+  wiki_use: "Cheat sheet for an exercise. Students take AI-generated statsmodels code, which usually keeps the default nonrobust SEs, and re-estimate with HC3 and clustered SEs to see how the inference changes."
+  tools: [statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "In practice the same options are usually passed via fit(cov_type=..., cov_kwargs=...)."
+
+- id: pyfixest-docs-and-llm-skill
+  category: M3
+  subtopic: "Fixed effects / clustered SEs"
+  title: "PyFixest: fast high-dimensional fixed-effects regression in Python (quickstart, tutorials, llms.txt and agent skill file)"
+  authors: "Fischer, A. and contributors (py-econometrics)"
+  year: null
+  type: package
+  venue: "pyfixest.org / GitHub"
+  url: "https://pyfixest.org/getting-started.html"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: core
+  modules: [M3, M6, AI]
+  summary: "Python port of R's fixest. It offers feols, fepois, feglm and quantreg with multi-way fixed effects; iid, HC1-HC3, CRV1/CRV3, Newey-West and Driscoll-Kraay vcov; wild cluster bootstrap; DiD and event-study estimators; and etable regression tables. The docs site publishes llms.txt and a ready-made skill file meant to be saved as SKILL.md or Agent.md so LLM coding tools write correct PyFixest code."
+  wiki_use: "Recommended regression package for the course. Have teams add the provided skill file (https://pyfixest.org/skills.llms.md) to their project repo before using Claude Code or Cursor, then require them to state and justify their vcov choice."
+  tools: [pyfixest]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Repo: https://github.com/py-econometrics/pyfixest (MIT). The skill page lists vcov options but does not say what the defaults are. Check the API docs before telling students the defaults; fixest-style packages often cluster by the first fixed effect when FEs are present. HC2 and HC3 are not supported with FEs or IV."
+
+- id: linearmodels-panel-iv
+  category: M3
+  subtopic: "Fixed effects / panel"
+  title: "linearmodels: panel data, instrumental variables and system regression for Python"
+  authors: "Sheppard, K. (bashtage)"
+  year: null
+  type: package
+  venue: "GitHub / documentation site (v7.1)"
+  url: "https://bashtage.github.io/linearmodels/"
+  access: open
+  license: "NCSA"
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Adds estimators missing from statsmodels: PanelOLS (one- and two-way FE), RandomEffects, FirstDifferenceOLS, BetweenOLS, Fama-MacBeth, AbsorbingLS, IV2SLS/LIML/GMM, SUR and 3SLS, plus Hausman, Kleibergen-Paap and Pesaran CD diagnostics."
+  wiki_use: "Alternative to pyfixest for panel examples. It is also what QuantEcon uses for IV."
+  tools: [linearmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "License (NCSA) taken from the GitHub repo page https://github.com/bashtage/linearmodels. The maintainer name is from recollection."
+
+- id: abadie-athey-imbens-wooldridge-clustering
+  category: M3
+  subtopic: "Robust / clustered SEs"
+  title: "When Should You Adjust Standard Errors for Clustering?"
+  authors: "Abadie, A.; Athey, S.; Imbens, G. W.; Wooldridge, J. M."
+  year: 2023
+  type: paper
+  venue: "Quarterly Journal of Economics (NBER Working Paper 24003, 2017)"
+  url: "https://www.nber.org/papers/w24003"
+  oa_url: "https://arxiv.org/abs/1710.02926v3"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Argues that clustering is a design question. Clustered SEs are needed when sampling is two-stage or when treatment assignment is correlated within clusters, and the paper proposes less conservative estimators for intermediate cases."
+  wiki_use: "Instructor background for the 'at what level should I cluster?' slide. Also gives students a rule to apply when an AI tool clusters 'by everything'."
+  ai_angle: false
+  verified_via: search
+  notes: "QJE publication is suggested by search results; the volume, pages and DOI were not verified. The arXiv page was fetched."
+
+- id: cameron-miller-cluster-robust-guide
+  category: M3
+  subtopic: "Robust / clustered SEs"
+  title: "A Practitioner's Guide to Cluster-Robust Inference"
+  authors: "Cameron, A. C.; Miller, D. L."
+  year: 2015
+  type: paper
+  venue: "Journal of Human Resources"
+  url: "https://cameron.econ.ucdavis.edu/research/Cameron_Miller_JHR_2015_February.pdf"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Standard practitioner reference on cluster-robust SEs. It covers why default SEs overstate precision, FE with clustering, choosing the cluster level, two-way clustering, few-cluster corrections and the wild cluster bootstrap."
+  wiki_use: "Instructor-only reference. Sections on few clusters and choosing clusters can back short wiki call-outs."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The journal and year come from the PDF filename (JHR 2015). Volume and pages were not checked."
+
+- id: gelman-loken-forking-paths
+  category: M3
+  subtopic: "p-hacking / researcher degrees of freedom"
+  title: "The garden of forking paths: Why multiple comparisons can be a problem, even when there is no 'fishing expedition' or 'p-hacking' and the research hypothesis was posited ahead of time"
+  authors: "Gelman, A.; Loken, E."
+  year: 2013
+  type: paper
+  venue: "Working paper, Columbia University"
+  url: "https://sites.stat.columbia.edu/gelman/research/unpublished/p_hacking.pdf"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6, AI]
+  summary: "Shows that data-dependent analysis choices (exclusions, codings, subgroups, interactions) invalidate p-values even without deliberate fishing. Remedies include preregistration, replication and multilevel modeling."
+  wiki_use: "Framing reading for 'vibe coding' risks. AI agents make it nearly free to try dozens of specifications, so students should log every specification an AI tool ran and report all of them."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The link redirects from stat.columbia.edu to sites.stat.columbia.edu; the final URL is used here."
+
+- id: nau-log-log-elasticity-example
+  category: M3
+  subtopic: "Log-log models / price elasticity"
+  title: "Regression example: log transformation and additional predictors (beer sales, own- and cross-price elasticities)"
+  authors: "Nau, R. (Duke Fuqua School of Business)"
+  year: null
+  type: tutorial
+  venue: "Statistical forecasting notes, Duke University"
+  url: "https://people.duke.edu/~rnau/regex4.htm"
+  access: open
+  level: intro
+  priority: core
+  modules: [M3]
+  summary: "Business-school worked example. A log-log regression of 18-pack beer sales on price gives an own-price elasticity of about -6.7, and adding other carton sizes' prices yields cross-price elasticities. It also explains reading log-unit errors as percentages."
+  wiki_use: "Interpretation reference for the log-log and elasticity lesson. Students reproduce the example in statsmodels or pyfixest with AI help and check that they get the same coefficients."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The original uses Excel/RegressIt, not Python. The transformation details are on the linked 'part 3' page."
+
+- id: dominicks-scanner-data
+  category: M3
+  subtopic: "Price elasticity data"
+  title: "Dominick's Finer Foods scanner dataset"
+  authors: "James M. Kilts Center for Marketing, University of Chicago Booth School of Business"
+  year: null
+  type: dataset
+  venue: "Kilts Center for Marketing"
+  url: "https://www.chicagobooth.edu/research/kilts/datasets/dominicks"
+  access: open
+  license: "For academic research purposes only; acknowledge the Kilts Center"
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Store-level weekly UPC data (price, units, profit margin, deal codes) from about 100 Chicago stores across 25+ categories (1989-1994 field experiments), plus customer counts and store demographics."
+  wiki_use: "Exercise dataset for log-log demand with store and week fixed effects and clustered SEs. The refrigerated orange juice panel is a manageable starting point."
+  tools: [pandas, pyfixest]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Refrigerated juice files are SAS-only. The tidy OJ panel used in many tutorials ships with the R package bayesm (https://cran.r-project.org/web/packages/bayesm/index.html) and is described in Microsoft's forecasting examples (https://microsoft.github.io/forecasting/examples/grocery_sales). Confirm that classroom use fits the 'academic research' terms."
+
+- id: bijmolt-vanheerde-pieters-2005-price-elasticity
+  category: M3
+  subtopic: "Price elasticity (empirical generalizations)"
+  title: "New Empirical Generalizations on the Determinants of Price Elasticity"
+  authors: "Bijmolt, T. H. A.; van Heerde, H. J.; Pieters, R."
+  year: 2005
+  type: paper
+  venue: "Journal of Marketing Research 42(2), 141-156"
+  url: "https://repository.tilburguniversity.edu/items/813834f9-4626-45f8-ad0a-2920a545e089"
+  access: library
+  level: advanced
+  priority: recommended
+  modules: [M3]
+  summary: "Meta-analysis of published price elasticities and of what drives their size (category, data type, model specification, estimation method)."
+  wiki_use: "Benchmark for sanity-checking student estimates. If a regression returns a price elasticity of +0.3 or -15, that is a red flag."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The landing page has metadata only, with no abstract or DOI. The often-quoted mean elasticity of about -2.6 is from recollection; check it in the paper before quoting."
+
+- id: korkames-stanley-stremersch-2026-ad-elasticity
+  category: M3
+  subtopic: "Advertising response (empirical generalizations)"
+  title: "Meta-Analysis of Advertising Effectiveness: New Insights from Improved Bias Corrections"
+  authors: "Korkames, J.; Stanley, T. D.; Stremersch, S."
+  year: 2026
+  type: paper
+  venue: "International Journal of Research in Marketing 43(1), 131-151"
+  url: "https://pure.eur.nl/en/publications/meta-analysis-of-advertising-effectiveness-new-insights-from-impr/"
+  doi: "10.1016/j.ijresmar.2025.04.001"
+  oa_url: "https://personal.eur.nl/stremersch/artikels/Korkames_Stanley_and_Stremersch_IJRM_2025_print.pdf"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Meta-analysis of 538 B2C own-brand advertising elasticities. Modern publication-bias corrections cut the mean effect more than fivefold (short-term about 0.0008, long-term about 0.03), in line with RCT evidence, and internet advertising shows the highest elasticity."
+  wiki_use: "Use it with a log-log sales response regression to discuss why observational ad elasticities run high (endogeneity and publication bias)."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The Erasmus repository offers the final PDF under the Dutch 'Article 25fa' (Taverne) provision. The classic benchmark is Sethuraman, Tellis & Briesch (2011): 872 estimates with a mean short-term elasticity of 0.12 (https://scholar.smu.edu/business_marketing_research/12; SSRN doi 10.2139/ssrn.1866002). Its repository title differs from the published JMR title 'How Well Does Advertising Work?'."
+
+- id: shapiro-hitsch-tuchman-tv-advertising
+  category: M3
+  subtopic: "Advertising response"
+  title: "TV Advertising Effectiveness and Profitability: Generalizable Results from 288 Brands"
+  authors: "Shapiro, B. T.; Hitsch, G. J.; Tuchman, A. E."
+  year: 2021
+  type: paper
+  venue: "SSRN working paper (published in Econometrica)"
+  url: "https://papers.ssrn.com/abstract=3273476"
+  doi: "10.2139/ssrn.3273476"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Regression-based estimates of TV ad elasticities for 288 CPG brands. Elasticities are much smaller than prior literature, many are insignificant, and marginal ROI is negative for over 80% of brands."
+  wiki_use: "Flagship case for 'advertising response as regression'. Students can read the Kellogg Insight summary (https://insight.kellogg.northwestern.edu/article/tv-advertising-is-usually-not-worth-it)."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The SSRN page does not name the journal; Econometrica (2021) is from recollection. The task brief's '2,000 brands' title is wrong: the paper covers 288 brands. A separate NBER paper, 'Generalizable and Robust TV Advertising Effects' (w27684), exists."
+
+- id: hanssens-parsons-schultz-market-response-models
+  category: M3
+  subtopic: "Sales response models"
+  title: "Market Response Models: Econometric and Time Series Analysis"
+  authors: "Hanssens, D. M.; Parsons, L. J.; Schultz, R. L."
+  year: 2001
+  type: book
+  venue: "Springer (Kluwer), 2nd ed."
+  url: "https://link.springer.com/book/10.1007/b109775"
+  doi: "10.1007/b109775"
+  access: library
+  level: advanced
+  priority: optional
+  modules: [M3]
+  summary: "Classic monograph on sales response functions: functional forms (linear, multiplicative/log-log, saturation), carryover, and econometric and time-series estimation of marketing-mix effects."
+  wiki_use: "Instructor background for the 'sales response models' framing. Assign individual chapters through the UIUC library if needed."
+  ai_angle: false
+  verified_via: search
+  notes: "Edition and year (2nd ed., 2001) are from recollection; the Springer page was not fetched."
+
+- id: jin-2017-bayesian-mmm-carryover-shape
+  category: M3
+  subtopic: "Marketing mix models"
+  title: "Bayesian Methods for Media Mix Modeling with Carryover and Shape Effects"
+  authors: "Jin, Y.; Wang, Y.; Sun, Y.; Chan, D.; Koehler, J."
+  year: 2017
+  type: report
+  venue: "Google Research"
+  url: "https://research.google/pubs/bayesian-methods-for-media-mix-modeling-with-carryover-and-shape-effects/"
+  oa_url: "https://storage.googleapis.com/gweb-research2023-media/pubtools/3806.pdf"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Foundational paper on modern MMM. A regression of sales on adstocked (carryover) and saturated (shape) media spend, estimated with Bayesian methods, showing that priors dominate in small samples and the optimal mix is highly uncertain."
+  wiki_use: "Bridge from 'MMM is just a regression with transformed regressors' to modern Bayesian MMM tools."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Google's open-source follow-up is Meridian (https://github.com/google/meridian, Apache-2.0), with a getting-started Colab at https://developers.google.com/meridian/notebook/meridian-getting-started."
+
+- id: pymc-marketing-mmm-log-log
+  category: M3
+  subtopic: "Marketing mix models"
+  title: "PyMC-Marketing: Additive vs Log vs Log-Log MMMs (and the end-to-end MMM example)"
+  authors: "PyMC Labs and PyMC-Marketing contributors"
+  year: null
+  type: notebook
+  venue: "PyMC-Marketing documentation"
+  url: "https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_multiplicative.html"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6, AI]
+  summary: "Compares additive, log-link and log-log MMM specifications with adstock and saturation on synthetic weekly data. It explains when log-log channel coefficients can be read as elasticities and when they are semi-elasticities, then compares ROAS and budget plans against the known truth."
+  wiki_use: "Connects M3's log-log interpretation to MMM. The repo also ships AI-agent folders (.claude, .cursor, skills/mmm-modeling) and links to MMM-GPT, so it can serve as a guided vibe-coding exercise."
+  tools: [pymc-marketing, pymc]
+  ai_angle: true
+  download:
+    repo: "https://github.com/pymc-labs/pymc-marketing"
+    path: "docs/source/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "End-to-end example: https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html. The contents of the skills folder could not be inspected because GitHub blocked the fetch. The notebook path inside docs/source is presumed, so confirm it before mirroring."
+
+- id: blade-benchmark-data-driven-science
+  category: M3
+  subtopic: "AI pitfalls: analysis decisions"
+  title: "BLADE: Benchmarking Language Model Agents for Data-Driven Science"
+  authors: "Gu, K.; Shang, R.; Jiang, R.; Kuang, K.; Lin, R.-J.; Lyu, D.; Mao, Y.; Pan, Y.; Wu, T.; Yu, J.; Zhang, Y.; Zhang, T. M.; Zhu, L.; Merrill, M. A.; Heer, J.; Althoff, T."
+  year: 2024
+  type: paper
+  venue: "arXiv:2408.09667 (v3, Nov 2025)"
+  url: "https://arxiv.org/abs/2408.09667"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M3, AI]
+  summary: "Benchmark of 12 datasets and research questions from published science, with expert reference analyses. It scores agents' analysis decisions (variables, transformations, models) and finds that LMs default to basic analyses, while agents that interact with the data choose more diverse but still suboptimal ones."
+  wiki_use: "Evidence that the risk in AI-written regression lies in the specification choices more than the syntax. Adapt a BLADE-style task in which teams compare the AI's chosen model with an expert's."
+  ai_angle: true
+  verified_via: fetch
+  notes: "I believe it appeared in Findings of EMNLP 2024, but the arXiv page doesn't confirm it."
+
+- id: statqa-llms-good-statisticians
+  category: M3
+  subtopic: "AI pitfalls: statistical method choice"
+  title: "Are Large Language Models Good Statisticians?"
+  authors: "Zhu, Y.; Du, S.; Li, B.; Luo, Y.; Tang, N."
+  year: 2024
+  type: paper
+  venue: "arXiv:2406.07815"
+  url: "https://arxiv.org/abs/2406.07815"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6, AI]
+  summary: "StatQA benchmark (11,623 examples) on choosing and applying hypothesis tests. GPT-4o reached only about 65%. LLMs mostly make applicability errors (using a method whose assumptions fail), whereas humans mostly confuse task types."
+  wiki_use: "Supports a rule for the wiki: make the AI state each method's assumptions and check them on the data before trusting its test or regression."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Possibly NeurIPS 2024 Datasets & Benchmarks track; this is from recollection, as the arXiv page lists no venue."
+
+- id: qrdata-statistical-causal-reasoning
+  category: M3
+  subtopic: "AI pitfalls: statistical/causal reasoning"
+  title: "Are LLMs Capable of Data-based Statistical and Causal Reasoning? Benchmarking Advanced Quantitative Reasoning with Data"
+  authors: "Liu, X.; Wu, Z.; Wu, X.; Lu, P.; Chang, K.-W.; Feng, Y."
+  year: 2024
+  type: paper
+  venue: "Findings of ACL 2024"
+  url: "https://arxiv.org/abs/2402.17644"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6, AI]
+  summary: "QRData has 411 questions on real data sheets from textbooks, courses and papers. The best model (GPT-4) got 58%, and models were weakest on data analysis and on combining causal knowledge with the data."
+  wiki_use: "Instructor background, and a source of realistic 'check the AI' questions for in-class activities."
+  ai_angle: true
+  verified_via: fetch
+
+- id: dsbench-data-science-agents
+  category: M3
+  subtopic: "Data-science agent benchmarks"
+  title: "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?"
+  authors: "Jing, L.; Huang, Z.; Wang, X.; Yao, W.; Yu, W.; Ma, K.; Zhang, H.; Du, X.; Yu, D."
+  year: 2024
+  type: paper
+  venue: "arXiv:2409.07703 (v3, Apr 2025)"
+  url: "https://arxiv.org/abs/2409.07703"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, M7, AI]
+  summary: "Covers 466 data-analysis and 74 modeling tasks from Eloquence and Kaggle with long contexts and multi-table files. The best agent solved about 34% of analysis tasks."
+  wiki_use: "A realistic baseline: agents fail most real analysis tasks, so humans must verify the output."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Related benchmarks (all fetched): DABstep, Egg et al. 2025, with the best agent at 14.55% on hard tasks (https://arxiv.org/abs/2506.23719); DA-Code, Huang et al. 2024, with the best LLM at 30.5% (https://arxiv.org/abs/2410.07331); InfiAgent-DABench, Hu et al. 2024 (https://arxiv.org/abs/2401.05507); DiscoveryBench, Majumder et al. 2024, with the best system at 25% (https://arxiv.org/abs/2407.01725); REPRO-Bench, Hu et al. 2025, testing agents assessing social-science reproducibility, best 21.4% (https://arxiv.org/abs/2507.18901); and 'Is GPT-4 a Good Data Analyst?', Cheng et al. 2023 (https://arxiv.org/abs/2305.15038)."
+
+- id: statllm-llm-statistical-code
+  category: M3
+  subtopic: "AI pitfalls: evaluated LLM statistical code"
+  title: "StatLLM: A Dataset for Evaluating the Performance of Large Language Models in Statistical Analysis"
+  authors: "Song, X.; Lee, L.; Xie, K.; Liu, X.; Deng, X.; Hong, Y."
+  year: 2025
+  type: paper
+  venue: "arXiv:2502.17657"
+  url: "https://arxiv.org/abs/2502.17657"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M3, AI]
+  summary: "Open dataset of statistical-analysis tasks with verified reference SAS code, LLM-generated code (ChatGPT 3.5 and 4.0, Llama 3.1), and expert ratings of correctness, effectiveness, readability, executability and output accuracy."
+  wiki_use: "Template for a course rubric to grade AI-written regression code on whether it runs, gives the right numbers and is read correctly."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The code evaluated is SAS, not Python. The value for the course is the evaluation design rather than the code."
+
+- id: gu-2023-verify-ai-assisted-analyses
+  category: M3
+  subtopic: "AI pitfalls: verifying AI analyses"
+  title: "How Do Analysts Understand and Verify AI-Assisted Data Analyses?"
+  authors: "Gu, K.; Shang, R.; Althoff, T.; Wang, C.; Drucker, S. M."
+  year: 2023
+  type: paper
+  venue: "arXiv:2309.10947 (v2, Mar 2024)"
+  url: "https://arxiv.org/abs/2309.10947"
+  access: open
+  level: intro
+  priority: core
+  modules: [M3, M1, AI]
+  summary: "Qualitative study of 22 analysts checking ChatGPT-style analyses. AI outputs can look right yet lead to wrong conclusions. The paper catalogs how people verify through code, explanations, plots and data tables."
+  wiki_use: "Basis for a 'verify before you trust' checklist used in every coding activity: inspect intermediate tables, re-derive one number by hand, and read the code, not just the narrative."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Possibly published at CHI 2024; this is from recollection, as the arXiv page lists no venue."
+
+- id: korinek-2023-genai-economic-research
+  category: M3
+  subtopic: "AI for data analysis (economics)"
+  title: "Generative AI for Economic Research: Use Cases and Implications for Economists"
+  authors: "Korinek, A."
+  year: 2023
+  type: paper
+  venue: "Journal of Economic Literature 61(4), 1281-1317 (NBER WP 30957)"
+  url: "https://www.nber.org/papers/w30957"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M3, M1, AI]
+  summary: "Catalog of 25 LLM use cases for economists across ideation, writing, background research, coding, data analysis and math, each rated from experimental to highly useful, with worked examples."
+  wiki_use: "Accessible framing reading for AI-assisted empirical work. Pull its coding and data-analysis examples into the M3 'AI pair-programmer' page."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The NBER working paper is titled 'Language Models and Cognitive Automation for Economic Research'. The JEL published title differs."
+
+# =====================================================================
+# M4: Conjoint analysis
+# =====================================================================
+
+- id: xlogit-mixed-logit-python
+  category: M4
+  subtopic: "Conjoint estimation (Python)"
+  title: "xlogit: GPU-accelerated multinomial and mixed logit estimation in Python"
+  authors: "Arteaga, C. and contributors"
+  year: null
+  type: package
+  venue: "GitHub / Read the Docs"
+  url: "https://github.com/arteagac/xlogit"
+  access: open
+  license: "GPL-3.0"
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Estimates MNL, conditional logit and mixed logit (normal, lognormal, triangular, uniform and truncated-normal mixing), handles panel and unbalanced data with Halton draws, fits WTP-space models, and runs on GPU via CuPy when available."
+  wiki_use: "Estimation engine for the CBC exercise. The WTP-space notebook (yogurt data ported from R logitr) shows WTP estimated directly, and a Colab-ready mixed logit notebook is provided."
+  tools: [xlogit, numpy, cupy]
+  ai_angle: false
+  download:
+    repo: "https://github.com/arteagac/xlogit"
+    path: "examples/"
+    license: "GPL-3.0"
+  verified_via: fetch
+  notes: "WTP-space notebook: https://xlogit.readthedocs.io/en/latest/notebooks/wtp_space.html. Colab: https://colab.research.google.com/github/arteagac/xlogit/blob/master/examples/mixed_logit_model.ipynb. An older alternative is pylogit (BSD-3, https://github.com/timothyb0912/pylogit), which covers MNL, nested and normal-mixing mixed logit and has notebooks in examples/; its maintenance status is unclear."
+
+- id: biogeme-discrete-choice
+  category: M4
+  subtopic: "Conjoint estimation (Python)"
+  title: "Biogeme: maximum likelihood (and Bayesian) estimation of discrete choice models"
+  authors: "Bierlaire, M. (EPFL TRANSP-OR)"
+  year: null
+  type: package
+  venue: "EPFL"
+  url: "https://biogeme.epfl.ch/"
+  access: open
+  license: "Distributed free of charge (no license named on the site)"
+  level: advanced
+  priority: optional
+  modules: [M4]
+  summary: "Mature discrete choice estimation package built on pandas. Version 3.3.5 adds JAX-based evaluation, Bayesian estimation and richer diagnostics, alongside an examples gallery, a primer and YouTube tutorials."
+  wiki_use: "Pointer for students who want nested or cross-nested logit or latent-class choice models beyond xlogit."
+  tools: [biogeme, pandas, jax]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Requires Python 3.12 or later (pip install biogeme). The site asks users to cite the Biogeme primer."
+
+- id: choice-learn-artefact
+  category: M4
+  subtopic: "Conjoint / choice modeling (Python, ML)"
+  title: "Choice-Learn: discrete choice modeling with large datasets"
+  authors: "Artefact Research (artefactory)"
+  year: null
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/artefactory/choice-learn"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: optional
+  modules: [M4, M7]
+  summary: "Python library with conditional logit, nested logit and neural random-utility models (RUMnet, TasteNet), plus assortment and pricing optimization on top of fitted choice models (needs Gurobi or OR-Tools)."
+  wiki_use: "Extension for teams linking conjoint or choice estimates to assortment and price optimization. The intro notebooks make a clean clogit tutorial."
+  tools: [choice-learn, tensorflow, ortools]
+  ai_angle: false
+  download:
+    repo: "https://github.com/artefactory/choice-learn"
+    path: "notebooks/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "Notebooks of interest: notebooks/introduction/3_model_clogit.ipynb and notebooks/auxiliary_tools/assortment_example.ipynb."
+
+- id: pymc-marketing-customer-choice-mnl
+  category: M4
+  subtopic: "Conjoint estimation / market simulator (Bayesian)"
+  title: "PyMC-Marketing customer choice notebooks: Multinomial Logit and the IIA property (plus mixed logit, nested logit, MaxDiff)"
+  authors: "PyMC Labs and PyMC-Marketing contributors"
+  year: null
+  type: notebook
+  venue: "PyMC-Marketing documentation"
+  url: "https://www.pymc-marketing.io/en/stable/notebooks/customer_choice/mnl_logit.html"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: recommended
+  modules: [M4]
+  summary: "Bayesian MNL on heating-system choice data, with counterfactual market-share simulations: raising one product's price and removing a product. It shows IIA's proportional substitution and motivates nested logit. Sibling notebooks cover mixed logit, nested logit, consideration sets, MaxDiff and Bayesian BLP."
+  wiki_use: "Market-simulator demo: change a price and watch shares move. It also gives a concrete, visible case of IIA's proportional-substitution problem."
+  tools: [pymc-marketing, pymc]
+  ai_angle: false
+  download:
+    repo: "https://github.com/pymc-labs/pymc-marketing"
+    path: "docs/source/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The MNL notebook does not compute WTP; add -beta_attribute/beta_price yourself. Mixed logit: https://www.pymc-marketing.io/en/stable/notebooks/customer_choice/mixed_logit.html. MaxDiff: https://www.pymc-marketing.io/en/stable/notebooks/customer_choice/maxdiff.html. A simpler PyMC gallery version on the same heating data: https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-discrete-choice_models.html."
+
+- id: cbctools-logitr-helveston
+  category: M4
+  subtopic: "Conjoint design + WTP estimation (R)"
+  title: "cbcTools and logitr: R packages for designing choice-based conjoint surveys and estimating preference- and WTP-space logit models"
+  authors: "Helveston, J. P."
+  year: 2023
+  type: package
+  venue: "CRAN; logitr described in Journal of Statistical Software 105(10)"
+  url: "https://jhelvy.github.io/cbcTools/"
+  doi: "10.18637/jss.v105.i10"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M4]
+  summary: "cbcTools covers profile generation, priors, random and D-optimal design (labeled, no-choice and dominance-removed), checks for balance, overlap and D-error, simulated choices, and power analysis. logitr fits MNL and mixed logit in preference or WTP space and predicts shares."
+  wiki_use: "The cleanest end-to-end CBC design workflow. Use it with R, or have students ask an AI assistant to reproduce a cbcTools design in Python and compare D-errors."
+  tools: [R, cbcTools, logitr]
+  ai_angle: false
+  verified_via: fetch
+  notes: "logitr docs: https://jhelvy.github.io/logitr/. The DOI is for the logitr JSS article."
+
+- id: pydoe-experimental-design
+  category: M4
+  subtopic: "Experimental design (Python)"
+  title: "PyDOE: Design of Experiments for Python (successor to pyDOE3)"
+  authors: "PyDOE contributors"
+  year: null
+  type: package
+  venue: "GitHub / PyPI"
+  url: "https://github.com/pydoe/pydoe"
+  access: open
+  license: "BSD-3-Clause"
+  level: intro
+  priority: optional
+  modules: [M4, M6]
+  summary: "Python DOE toolkit covering full and fractional factorial, response-surface, space-filling (Latin hypercube, Sobol), optimal, Taguchi and sequential designs."
+  wiki_use: "Generate full or fractional factorial profile sets for a toy conjoint. For real CBC choice-set designs, prefer cbcTools or a survey platform."
+  tools: [pydoe]
+  ai_angle: false
+  verified_via: fetch
+  notes: "pyDOE3 (https://github.com/relf/pyDOE3) is archived and its README tells users to migrate to pydoe/pydoe. pyDOE3 documented optimal designs (Fedorov, DETMAX; D, A and I criteria); confirm the same functions exist in PyDOE."
+
+- id: sawtooth-lighthouse-studio
+  category: M4
+  subtopic: "Conjoint survey platforms"
+  title: "Sawtooth Software Lighthouse Studio (CBC, ACBC, MaxDiff, HB estimation, market simulator)"
+  authors: "Sawtooth Software"
+  year: null
+  type: tool
+  venue: "Sawtooth Software"
+  url: "https://sawtoothsoftware.com/lighthouse-studio"
+  access: freemium
+  level: intermediate
+  priority: recommended
+  modules: [M4]
+  summary: "Industry-standard conjoint and MaxDiff platform with CBC, Adaptive CBC, HB estimation and a market simulator for product, price and competitor scenarios. A free starter account is available."
+  wiki_use: "Industry reference point and demo. Its technical-papers library (CBC, HB, market simulators, design) is excellent free instructor background."
+  tools: [Lighthouse Studio, Discover]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Academic access: the site lists 'Student Grants' (studentgrants@sawtooth.com) but has no public page for it, so email them about course licenses. Technical papers: https://sawtoothsoftware.com/resources/technical-papers. The home page mentions an 'AI follow-up' survey element; no synthetic-respondent feature was seen."
+
+- id: conjointly-academic-fee-waiver
+  category: M4
+  subtopic: "Conjoint survey platforms"
+  title: "Conjointly: conjoint analysis for students and academics (fee waiver)"
+  authors: "Conjointly"
+  year: null
+  type: tool
+  venue: "Conjointly"
+  url: "https://conjointly.com/faq/conjoint-analysis-for-students-and-academics/"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M4]
+  summary: "Online survey and conjoint platform. Its free Basic tier allows Generic Conjoint up to 20 responses. An academic fee waiver for students and teachers with an academic email gives a one-year licence with unlimited respondents, excluding panel sampling and paid services."
+  wiki_use: "Easiest way for project teams to field a real CBC. Have students apply for waivers early, since processing can take up to 4 weeks."
+  tools: [Conjointly]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Free academic users generally get no support. The site lists an 'API and MCP' resource (https://conjointly.com/api/) that was not inspected. Pricing page: https://conjointly.com/pricing/."
+
+- id: qualtrics-conjoint-projects
+  category: M4
+  subtopic: "Conjoint survey platforms"
+  title: "Qualtrics Conjoint projects: getting started with choice-based conjoint"
+  authors: "Qualtrics"
+  year: null
+  type: documentation
+  venue: "Qualtrics Support"
+  url: "https://www.qualtrics.com/support/conjoint-project/getting-started-conjoints/getting-started-choice-based/"
+  access: paid
+  level: intro
+  priority: optional
+  modules: [M4]
+  summary: "Guide to building choice-based conjoint projects in Qualtrics. Conjoint is a separately purchased add-on that needs Choice Based Conjoint and JavaScript permissions, and analysis is capped below 10,000 responses."
+  wiki_use: "Only useful if UIUC's campus Qualtrics license includes the Conjoint add-on. Check with campus IT before recommending it."
+  tools: [Qualtrics]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Whether UIUC has the add-on was not verified. The page does not describe a simulator."
+
+- id: green-srinivasan-1978-conjoint
+  category: M4
+  subtopic: "Conjoint (classic references)"
+  title: "Conjoint Analysis in Consumer Research: Issues and Outlook"
+  authors: "Green, P. E.; Srinivasan, V."
+  year: 1978
+  type: paper
+  venue: "Journal of Consumer Research 5(2), 103-123"
+  url: "https://academic.oup.com/jcr/article-abstract/5/2/103/1805825"
+  doi: "10.1086/208721"
+  access: library
+  level: advanced
+  priority: recommended
+  modules: [M4]
+  summary: "Foundational review that brought conjoint analysis into consumer research. It covers preference models, data collection, stimulus construction, estimation and reliability."
+  wiki_use: "Classic citation for the history of conjoint. Instructor background."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The 1990 Journal of Marketing follow-up by the same authors was not verified here."
+
+- id: rao-2014-applied-conjoint-analysis
+  category: M4
+  subtopic: "Conjoint (textbook)"
+  title: "Applied Conjoint Analysis"
+  authors: "Rao, V. R."
+  year: 2014
+  type: book
+  venue: "Springer, Berlin/Heidelberg"
+  url: "https://link.springer.com/book/10.1007/978-3-540-87753-0"
+  doi: "10.1007/978-3-540-87753-0"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Comprehensive text in ten chapters: ratings-based and choice-based designs, part-worth estimation, many-attribute methods, and applications to product design, positioning, segmentation, pricing and other marketing-mix decisions."
+  wiki_use: "Main textbook reference for the conjoint unit. Assign chapters through the UIUC library's Springer access."
+  ai_angle: false
+  verified_via: fetch
+
+- id: hauser-rao-2004-conjoint-review
+  category: M4
+  subtopic: "Conjoint (free review)"
+  title: "Conjoint Analysis, Related Modeling, and Applications"
+  authors: "Hauser, J. R.; Rao, V. R."
+  year: 2004
+  type: book-chapter
+  venue: "Advances in Market Research and Modeling: Progress and Prospects (Kluwer), pp. 141-168"
+  url: "https://mitsloan.mit.edu/shared/ods/documents/?PublicationDocumentID=5592"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Free review of the field's history, design choices, estimation methods (including HB and adaptive approaches) and applications."
+  wiki_use: "Free assigned reading that complements Rao (2014)."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Download link taken from John Hauser's MIT 'Papers & Books' page."
+
+- id: toubia-hauser-simester-2004-polyhedral-cbc
+  category: M4
+  subtopic: "Conjoint (adaptive / ML methods)"
+  title: "Polyhedral Methods for Adaptive Choice-Based Conjoint Analysis"
+  authors: "Toubia, O.; Hauser, J. R.; Simester, D. I."
+  year: 2004
+  type: paper
+  venue: "Journal of Marketing Research 41(1), 116-131"
+  url: "https://mitsloan.mit.edu/shared/ods/documents/?PublicationDocumentID=4040"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [M4]
+  summary: "Adaptive question design for CBC that picks each next choice set to shrink the feasible region of part-worths as fast as possible. A key step from classic to optimization- and ML-based conjoint."
+  wiki_use: "Instructor background on adaptive design. It also motivates the idea that question design and estimation interact."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Companion review: Toubia, Evgeniou & Hauser (2007), 'Optimization-Based and Machine-Learning Methods for Conjoint Analysis' (https://mitsloan.mit.edu/shared/ods/documents/?PublicationDocumentID=5582). See also Hauser, Eggers & Selove (2019, Marketing Science), 'The Strategic Implications of Scale in Choice-Based Conjoint Analysis' (https://mitsloan.mit.edu/shared/ods/documents/?PublicationDocumentID=5576). Toubia's recent conjoint-adjacent work on LLM digital twins appears below."
+
+- id: allenby-brazell-howell-rossi-2014-economic-valuation
+  category: M4
+  subtopic: "Conjoint: WTP vs market value"
+  title: "Economic Valuation of Product Features"
+  authors: "Allenby, G. M.; Brazell, J. D.; Howell, J. R.; Rossi, P. E."
+  year: 2014
+  type: paper
+  venue: "Quantitative Marketing and Economics 12, 421-456"
+  url: "https://link.springer.com/article/10.1007/s11129-014-9150-x"
+  doi: "10.1007/s11129-014-9150-x"
+  access: library
+  level: advanced
+  priority: recommended
+  modules: [M4]
+  summary: "Values a product feature as the change in equilibrium profits, using a conjoint-estimated demand system plus competitor and cost data. With digital camera data, this gives very different answers from naive WTP or welfare measures."
+  wiki_use: "Key reading for why the 'WTP = -beta/beta_price' shortcut can mislead. It motivates building market simulators with competitors."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The task brief cited 'Allenby et al. (2019, JM)'. The verified paper with this title is QME 2014; no 2019 JM paper with this title was found."
+
+- id: brand-israeli-ngwe-llms-market-research
+  category: M4
+  subtopic: "LLMs as conjoint/survey respondents"
+  title: "Using LLMs for Market Research"
+  authors: "Brand, J.; Israeli, A.; Ngwe, D."
+  year: 2023
+  type: paper
+  venue: "Harvard Business School Working Paper 23-062 (SSRN, revised Apr 2026)"
+  url: "https://papers.ssrn.com/abstract=4395751"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M4, AI]
+  summary: "Draws many GPT responses per survey question to estimate WTP for product features. Estimates are sometimes close to human studies but often inaccurate and occasionally wrong-signed. Fine-tuning on past surveys helps for new features in the same category but not for new categories or segment differences."
+  wiki_use: "Anchor reading for an exercise in which teams run a synthetic-respondent conjoint with an LLM, compare it with their human CBC, and report where it diverges."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The abstract became more cautious over revisions: the HBS page (https://www.hbs.edu/faculty/Pages/item.aspx?num=63859, July 2024) calls the WTP estimates 'plausible', while the April 2026 SSRN revision says they are often inaccurate. Assign the latest version."
+
+- id: goli-singh-llms-capture-human-preferences
+  category: M4
+  subtopic: "LLMs as conjoint/survey respondents"
+  title: "Frontiers: Can Large Language Models Capture Human Preferences?"
+  authors: "Goli, A.; Singh, A."
+  year: 2024
+  type: paper
+  venue: "Marketing Science (arXiv preprint 'Can LLMs Capture Human Preferences?')"
+  url: "https://arxiv.org/abs/2305.02531"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M4, AI]
+  summary: "Asks GPT-3.5 and GPT-4 intertemporal-choice conjoint-style questions across languages. Both models are far less patient than humans, and 'chain-of-thought conjoint' narrows but doesn't close the gap. The authors recommend LLMs for generating hypotheses, not as stand-ins for respondents."
+  wiki_use: "Paired reading with Brand et al. Good for a discussion of when synthetic respondents mislead."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The Marketing Science publication (2024) is from the task brief and recollection. The INFORMS page blocked fetching, so the DOI was not verified, and the arXiv page shows no journal reference."
+
+- id: arora-chakraborty-nishimura-2025-ai-human-hybrids
+  category: M4
+  subtopic: "LLMs as conjoint/survey respondents"
+  title: "AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators"
+  authors: "Arora, N.; Chakraborty, I.; Nishimura, Y."
+  year: 2025
+  type: paper
+  venue: "Journal of Marketing 89(2), 43-70"
+  url: "https://journals.sagepub.com/doi/10.1177/00222429241276529"
+  doi: "10.1177/00222429241276529"
+  access: library
+  level: intermediate
+  priority: recommended
+  modules: [M4, M8, AI]
+  summary: "Frames LLMs as collaborators in qualitative research (synthetic respondents, interviews, theme coding) and quantitative research (synthetic survey data). Few-shot prompting and RAG improve quality, and a study replication was run with a Fortune 500 food company."
+  wiki_use: "Practitioner-facing JM framework for how to use LLMs in market research, rather than whether to. It fits the M4 synthetic-respondent activity."
+  ai_angle: true
+  verified_via: fetch
+
+- id: gui-toubia-llm-simulation-causal-inference
+  category: M4
+  subtopic: "LLMs as conjoint/survey respondents (critique)"
+  title: "The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective"
+  authors: "Gui, G.; Toubia, O."
+  year: 2023
+  type: paper
+  venue: "arXiv:2312.15524 (v3, Nov 2025); SSRN"
+  url: "https://arxiv.org/abs/2312.15524"
+  doi: "10.2139/ssrn.4650172"
+  access: open
+  level: advanced
+  priority: core
+  modules: [M4, M6, AI]
+  summary: "Shows that LLM-simulated price and attribute experiments are confounded: changing the treatment in a prompt shifts unstated factors, which produces implausible demand curves in a 40-product study. Proposes 'unblinding' (revealing the design) and fine-tuning as fixes."
+  wiki_use: "Required reading before any synthetic conjoint or pricing exercise. It explains why naive prompts give wrong elasticities."
+  ai_angle: true
+  verified_via: fetch
+
+- id: twin-2k-500-digital-twins-dataset
+  category: M4
+  subtopic: "LLM digital twins (dataset)"
+  title: "Twin-2K-500: A dataset for building digital twins of over 2,000 people based on their answers to over 500 questions"
+  authors: "Toubia, O.; Gui, G. Z.; Peng, T.; Merlau, D. J.; Li, A.; Chen, H."
+  year: 2025
+  type: dataset
+  venue: "Hugging Face (LLM-Digital-Twin); arXiv:2505.17479"
+  url: "https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500"
+  oa_url: "https://arxiv.org/abs/2505.17479"
+  access: open
+  license: "CC BY 4.0"
+  level: advanced
+  priority: optional
+  modules: [M4, M8, AI]
+  summary: "Four-wave survey of 2,058 US participants (demographics, psychological scales, economic preferences, behavioral-economics experiments, and a pricing survey per the paper) with a test-retest wave, released for building and testing LLM persona simulations."
+  wiki_use: "Optional project dataset for teams testing whether LLM 'twins' reproduce individual consumer answers."
+  ai_angle: true
+  verified_via: fetch
+  notes: "733 MB of Parquet on Hugging Face, so link to it rather than mirroring. The HF card does not mention the pricing survey; the arXiv abstract does."
+
+- id: digital-twins-funhouse-mirrors
+  category: M4
+  subtopic: "LLMs as survey respondents (2025-26 validation)"
+  title: "Digital Twins as Funhouse Mirrors: Five Key Distortions"
+  authors: "Peng, T.; Gui, G.; Brucks, M.; Merlau, D. J.; Fan, G. J.; Ben Sliman, M.; Johnson, E. J.; et al.; Toubia, O."
+  year: 2025
+  type: paper
+  venue: "arXiv:2509.19088 (v5, Apr 2026)"
+  url: "https://arxiv.org/abs/2509.19088"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M4, M8, AI]
+  summary: "Mega-study of 19 preregistered studies and 164 outcomes. Digital twins built from 500+ answers per person beat a generic LLM only slightly and correlate weakly with real answers (mean r = 0.20). Five distortions are documented: insufficient individuation, stereotyping, representation bias, ideological bias and hyper-rationality."
+  wiki_use: "The most current large-scale validation (2025-26) of synthetic respondents. Use it as the critical counterweight in the synthetic-conjoint activity."
+  ai_angle: true
+  verified_via: fetch
+  notes: "A more optimistic 2025 counterpoint is Maier et al., 'LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings' (https://arxiv.org/abs/2510.08338). Its free-text-plus-embedding method reached about 90% of human test-retest reliability on 57 personal-care surveys. Some of its authors work in industry (Wiecki is, from recollection, at PyMC Labs)."
+
+- id: bisbee-2024-synthetic-replacements-perils
+  category: M4
+  subtopic: "LLMs as survey respondents (critique)"
+  title: "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models"
+  authors: "Bisbee, J.; Clinton, J. D.; Dorff, C.; Kenkel, B.; Larson, J. M."
+  year: 2024
+  type: paper
+  venue: "Political Analysis 32(4), 401-416"
+  url: "https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE"
+  doi: "10.1017/pan.2024.5"
+  access: open
+  license: "CC BY 4.0"
+  level: intermediate
+  priority: recommended
+  modules: [M4, M8, AI]
+  summary: "ChatGPT personas match ANES group averages but show too little variance, yield regression coefficients that differ significantly from the survey's, shift with small prompt changes, and drift over three months."
+  wiki_use: "Open-access critique showing that synthetic samples can get the means right but the regressions wrong, which ties M3 back to M4."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Optimistic counterpart: Argyle et al. (2023), 'Out of One, Many: Using Language Models to Simulate Human Samples', Political Analysis 31(3), 337-351, doi 10.1017/pan.2023.2 (paywalled). Also Horton, Filippas & Manning, 'Homo Silicus', NBER w31122 (https://www.nber.org/papers/w31122)."
+
+# =====================================================================
+# M4: Clustering and segmentation
+# =====================================================================
+
+- id: sklearn-clustering-and-gmm
+  category: M4
+  subtopic: "Clustering (k-means, hierarchical, GMM)"
+  title: "scikit-learn User Guide: Clustering, and Gaussian Mixture Models"
+  authors: "scikit-learn developers"
+  year: null
+  type: documentation
+  venue: "scikit-learn 1.9 documentation"
+  url: "https://scikit-learn.org/stable/modules/clustering.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M4, M7]
+  summary: "Reference for KMeans and MiniBatchKMeans, agglomerative clustering (Ward, complete, average, single), spectral clustering, DBSCAN and HDBSCAN, OPTICS and BIRCH, with a comparison table and evaluation metrics. The mixture chapter covers GaussianMixture, BIC-based selection of k and BayesianGaussianMixture."
+  wiki_use: "Primary API reference for the segmentation lab. The BIC model-selection example answers the 'how many segments?' question."
+  tools: [scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "GMM page: https://scikit-learn.org/stable/modules/mixture.html. The KMeans section links a silhouette-analysis example for choosing k."
+
+- id: vanderplas-pdsh-kmeans-gmm
+  category: M4
+  subtopic: "Clustering (tutorial)"
+  title: "Python Data Science Handbook: In Depth: k-Means Clustering (and the following section on Gaussian Mixture Models)"
+  authors: "VanderPlas, J."
+  year: null
+  type: book-chapter
+  venue: "O'Reilly (free online edition)"
+  url: "https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html"
+  access: open
+  license: "Code MIT; text CC BY-NC-ND"
+  level: intro
+  priority: recommended
+  modules: [M4]
+  summary: "Clear, visual explanation of k-means as EM, its caveats (local optima, choosing k, linear boundaries) and worked examples. The next section extends this to GMMs."
+  wiki_use: "Gentle pre-reading before the segmentation lab. The notebooks can be embedded directly."
+  tools: [scikit-learn, matplotlib]
+  ai_angle: false
+  download:
+    repo: "https://github.com/jakevdp/PythonDataScienceHandbook"
+    path: "notebooks/"
+    license: "MIT (code); CC BY-NC-ND (text)"
+  verified_via: fetch
+  notes: "The GMM page URL was not fetched separately. Because of the ND clause, mirror the code but link to the prose rather than adapting it."
+
+- id: stepmix-latent-class
+  category: M4
+  subtopic: "Latent class segmentation"
+  title: "StepMix: latent class and latent profile analysis in Python with a scikit-learn API"
+  authors: "Labo-Lacourse (StepMix authors)"
+  year: 2025
+  type: package
+  venue: "GitHub; Journal of Statistical Software 113(8)"
+  url: "https://github.com/Labo-Lacourse/stepmix"
+  doi: "10.18637/jss.v113.i08"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M4]
+  summary: "Generalized mixture models: latent class analysis for categorical survey items, latent profile (Gaussian) for continuous data, and mixed data with FIML for missing values. It supports 1-, 2- and 3-step estimation with covariates and distal outcomes, plus BIC, AIC, BLRT and cross-validation, and has Colab tutorials."
+  wiki_use: "Latent-class segmentation of survey or attitudinal data as a model-based alternative to k-means. The Colab tutorials can be embedded."
+  tools: [stepmix, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/Labo-Lacourse/stepmix"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Individual JSS author names were not captured. Cite it from the README's JSS reference."
+
+- id: uci-online-retail-ii
+  category: M4
+  subtopic: "RFM / CLV / segmentation dataset"
+  title: "Online Retail II"
+  authors: "Chen, D."
+  year: 2012
+  type: dataset
+  venue: "UCI Machine Learning Repository"
+  url: "https://archive.ics.uci.edu/dataset/502/online+retail+ii"
+  doi: "10.24432/C5CG6D"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: core
+  modules: [M2, M4]
+  summary: "About 1.07M transactions (Dec 2009-Dec 2011) from a UK online gift retailer whose customers are often wholesalers, in a single 43.5 MB xlsx file."
+  wiki_use: "One dataset for the whole M4 arc: RFM scoring, then k-means or GMM segments, then BG/NBD plus Gamma-Gamma CLV in PyMC-Marketing. It is also a good M2 visualization dataset."
+  tools: [pandas, scikit-learn, pymc-marketing]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Donated to UCI in 2019. Clean returns (negative quantities) and missing customer IDs before modeling; this is a good cleaning task to give an AI assistant and then audit."
+
+- id: dolnicar-grun-leisch-market-segmentation-analysis
+  category: M4
+  subtopic: "Segmentation & targeting (open textbook)"
+  title: "Market Segmentation Analysis: Understanding It, Doing It, and Making It Useful"
+  authors: "Dolnicar, S.; Grün, B.; Leisch, F."
+  year: 2018
+  type: book
+  venue: "Springer Singapore (Management for Professionals)"
+  url: "https://link.springer.com/book/10.1007/978-981-10-8818-6"
+  doi: "10.1007/978-981-10-8818-6"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: core
+  modules: [M4]
+  summary: "Open-access, practitioner-oriented guide to the whole segmentation process: deciding to segment, data, extracting segments (k-means, hierarchical, mixtures), profiling, describing, selecting target segments and customizing the marketing mix, with R examples."
+  wiki_use: "Main segmentation-and-targeting reading. Because the CC BY license allows it, figures and checklists can be adapted into wiki pages with attribution."
+  tools: [R]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The companion R package (MSA on CRAN) was not verified because CRAN blocked the fetch."
+
+# =====================================================================
+# M4: Customer lifetime value
+# =====================================================================
+
+- id: hardie-notes-bgnbd-gammagamma
+  category: M4
+  subtopic: "CLV (BG/NBD, Pareto/NBD, Gamma-Gamma notes)"
+  title: "Bruce Hardie's technical notes on BG/NBD, Pareto/NBD, sBG and Gamma-Gamma models (with Excel implementations)"
+  authors: "Fader, P. S.; Hardie, B. G. S."
+  year: null
+  type: website
+  venue: "brucehardie.com"
+  url: "https://www.brucehardie.com/notes/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Free notes and spreadsheets, including 004 (BG/NBD in Excel), 021 (P(alive)), 039 (step-by-step BG/NBD derivation), 025 (Gamma-Gamma model of monetary value, PDF and calibration xlsx), 008/009 (Pareto/NBD) and 017 (sBG with multiple cohorts)."
+  wiki_use: "Use the Excel implementations to show the likelihood before switching to Python. The Gamma-Gamma note (https://www.brucehardie.com/notes/025/) is the spend-model reading."
+  tools: [Excel]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Tutorial handout 'Probability Models for Customer-Base Analysis' (2016): https://www.brucehardie.com/talks/cba_tut_art_16_HO.pdf (all versions at https://www.brucehardie.com/talks.html). CDNOW data: https://www.brucehardie.com/notes/026/ covers 23,570 customers from the Q1 1997 cohort, with the full zip at https://www.brucehardie.com/datasets/CDNOW_master.zip (424 KB) and a one-tenth sample. No license is stated, so link rather than mirror."
+
+- id: fader-hardie-lee-2005-bgnbd
+  category: M4
+  subtopic: "CLV (BG/NBD)"
+  title: "'Counting Your Customers' the Easy Way: An Alternative to the Pareto/NBD Model"
+  authors: "Fader, P. S.; Hardie, B. G. S.; Lee, K. L."
+  year: 2005
+  type: paper
+  venue: "Marketing Science 24(2)"
+  url: "https://www.brucehardie.com/papers/018/"
+  doi: "10.1287/mksc.1040.0098"
+  oa_url: "https://www.brucehardie.com/papers/018/fader_et_al_mksc_05.pdf"
+  access: open
+  level: advanced
+  priority: core
+  modules: [M4]
+  summary: "Introduces the BG/NBD buy-till-you-die model, a far easier-to-estimate alternative to the Pareto/NBD for non-contractual repeat purchasing, illustrated on CDNOW."
+  wiki_use: "Primary academic anchor for the BG/NBD model used in the PyMC-Marketing lab."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The original Pareto/NBD paper (Schmittlein, Morrison & Colombo, 1987, Management Science) was not verified here."
+
+- id: fader-hardie-lee-2005-rfm-clv-isovalue
+  category: M4
+  subtopic: "RFM and CLV"
+  title: "RFM and CLV: Using Iso-Value Curves for Customer Base Analysis"
+  authors: "Fader, P. S.; Hardie, B. G. S.; Lee, K. L."
+  year: 2005
+  type: paper
+  venue: "Journal of Marketing Research"
+  url: "https://www.brucehardie.com/abstracts/abstract-fhl_rfm_clv_2005-02.html"
+  oa_url: "https://www.brucehardie.com/papers/rfm_clv_2005-02-16.pdf"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Links RFM summaries to a Pareto/NBD plus gamma-gamma CLV model and draws iso-value curves, so that customers with different recency and frequency combinations but equal value can be grouped together."
+  wiki_use: "The conceptual bridge from heuristic RFM segmentation to model-based CLV."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Hardie's page lists it without a venue. JMR (2005, 42(4)) is from recollection."
+
+- id: pymc-marketing-clv-quickstart
+  category: M4
+  subtopic: "CLV (Python)"
+  title: "PyMC-Marketing CLV Quickstart (BG/NBD + Gamma-Gamma) and CLV model notebooks"
+  authors: "PyMC Labs and PyMC-Marketing contributors"
+  year: null
+  type: notebook
+  venue: "PyMC-Marketing documentation"
+  url: "https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Uses CDNOW to build an RFM summary with clv.utils.rfm_summary and a train/test split, fits BG/NBD by MAP and MCMC, and computes P(alive) and expected purchases. It then checks the Gamma-Gamma independence assumption, fits Gamma-Gamma and computes discounted CLV with uncertainty intervals."
+  wiki_use: "Main CLV lab notebook. Sibling notebooks cover Pareto/NBD, MBG/NBD, standalone Gamma-Gamma and sBG with cohorts and covariates for subscription settings."
+  tools: [pymc-marketing, pymc, arviz]
+  ai_angle: false
+  download:
+    repo: "https://github.com/pymc-labs/pymc-marketing"
+    path: "docs/source/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "BG/NBD: https://www.pymc-marketing.io/en/stable/notebooks/clv/bg_nbd.html. Pareto/NBD: https://www.pymc-marketing.io/en/stable/notebooks/clv/pareto_nbd.html. Gamma-Gamma: https://www.pymc-marketing.io/en/stable/notebooks/clv/gamma_gamma.html. sBG: https://www.pymc-marketing.io/en/stable/notebooks/clv/sbg.html. The quickstart doesn't mention migrating from lifetimes. The rfm_summary definitions of frequency and recency differ from standard RFM scoring, which is worth flagging to students."
+
+- id: lifetimes-archived-successor
+  category: M4
+  subtopic: "CLV (Python, legacy)"
+  title: "lifetimes (archived June 2024): the original Python BTYD package, superseded by PyMC-Marketing"
+  authors: "Davidson-Pilon, C. and contributors"
+  year: 2024
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/CamDavidsonPilon/lifetimes"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: optional
+  modules: [M4, AI]
+  summary: "The once-standard Python BG/NBD, Pareto/NBD and Gamma-Gamma library. It was archived read-only on 2024-06-28, and its README names PyMC-Marketing as the successor."
+  wiki_use: "Warning box for the CLV lab. LLM coding assistants trained on older code may still reach for lifetimes or btyd, so require PyMC-Marketing and show the equivalent calls."
+  tools: [lifetimes, pymc-marketing]
+  ai_angle: false
+  verified_via: fetch
+  notes: "btyd (https://github.com/ColtAllen/btyd, Apache-2.0) is also archived (2024-07-21) and says development moved to pymc-marketing. The claim that AI assistants suggest lifetimes is the instructor's teaching point, not a documented finding."
+
+- id: clvtools-r
+  category: M4
+  subtopic: "CLV (R)"
+  title: "CLVTools: probabilistic customer attrition and CLV models in R"
+  authors: "Bachmann, P.; Kuebler, N.; Meierer, M.; Naef, J.; Oblander, E. S.; Schilter, P."
+  year: null
+  type: package
+  venue: "CRAN / clvtools.com (v0.12.1)"
+  url: "https://www.clvtools.com/"
+  access: open
+  license: "GPL-3"
+  level: intermediate
+  priority: optional
+  modules: [M4]
+  summary: "R implementation of Pareto/NBD (including time-invariant and time-varying covariates), BG/NBD, GGom/NBD and Gamma-Gamma spending models for non-contractual CLV."
+  wiki_use: "R option for teams that prefer R. It is also the reference implementation for covariate-extended Pareto/NBD."
+  tools: [R, CLVTools]
+  ai_angle: false
+  verified_via: fetch
+
+- id: gupta-et-al-2006-modeling-clv
+  category: M4
+  subtopic: "CLV (review)"
+  title: "Modeling Customer Lifetime Value"
+  authors: "Gupta, S.; Hanssens, D.; Hardie, B.; Kahn, W.; Kumar, V.; Lin, N.; Ravishanker, N.; Sriram, S."
+  year: 2006
+  type: paper
+  venue: "Journal of Service Research 9(2), 139-155"
+  url: "https://journals.sagepub.com/doi/10.1177/1094670506293810"
+  doi: "10.1177/1094670506293810"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Widely cited review of CLV and customer-equity models (RFM, probability, econometric, persistence and computer-science approaches) and their use in segmentation and in allocating spend across acquisition, retention and cross-selling."
+  wiki_use: "Assigned overview reading that places BTYD models among other CLV approaches."
+  ai_angle: false
+  verified_via: fetch
+
+- id: mccarthy-fader-2018-cbcv
+  category: M4
+  subtopic: "Customer-based corporate valuation"
+  title: "Customer-Based Corporate Valuation for Publicly Traded Non-Contractual Firms"
+  authors: "McCarthy, D. M.; Fader, P. S."
+  year: 2018
+  type: paper
+  venue: "Journal of Marketing Research 55(5), 617-635"
+  url: "https://journals.sagepub.com/doi/abs/10.1177/0022243718802843"
+  doi: "10.1177/0022243718802843"
+  oa_url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3040422"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M4]
+  summary: "Values non-contractual public firms by building acquisition, repeat-purchase and spend models from disclosed customer data, then summing customer lifetime values into firm value."
+  wiki_use: "Case-style extension of CLV to firm valuation. The student-friendly version is McCarthy & Fader's HBR piece."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Student reading: McCarthy & Fader (2020), 'How to Value a Company by Analyzing Its Customers', HBR 98(1), 51-55 (https://hbr.org/2020/01/are-you-undervaluing-your-customers). Subscription-firm version: McCarthy, Fader & Hardie (2017), JM 81(1), 17-35 (https://journals.sagepub.com/doi/abs/10.1509/jm.15.0519; SSRN https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2701093). Links taken from McCarthy's research page; the task brief's 'non-subscription' wording corresponds to this 'non-contractual' paper."
+
+- id: fader-customer-centricity
+  category: M4
+  subtopic: "CLV (managerial)"
+  title: "Customer Centricity: Focus on the Right Customers for Strategic Advantage"
+  authors: "Fader, P. S."
+  year: 2020
+  type: book
+  venue: "Wharton School Press (Wharton Executive Essentials), paperback 2nd ed."
+  url: "https://www.pennpress.org/9781613631027/customer-centricity/"
+  access: paid
+  level: intro
+  priority: recommended
+  modules: [M4]
+  summary: "Short managerial book (about 150 pages) arguing that firms should identify and focus on their most valuable customers using CLV, with examples such as Starbucks and Nordstrom. The 2020 edition adds a new preface and afterword."
+  wiki_use: "Managerial framing for the CLV module, and a source of discussion prompts for blog-post write-ups."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The original edition dates from 2012 (from recollection). The Wharton School Press URL redirects to Penn Press."

@@ -1,0 +1,1341 @@
+# M6. Causal Models and Experiments: resource list for BADM 534
+# Compiled 2026-10-23. Every URL here was confirmed by a web search result or a WebFetch.
+
+# ---------------------------------------------------------------
+# Foundations (free books and core methods references)
+# ---------------------------------------------------------------
+- id: mixtape-cunningham
+  category: M6
+  subtopic: "Foundations (free book)"
+  title: "Causal Inference: The Mixtape"
+  authors: "Cunningham, S."
+  year: 2021
+  type: book
+  venue: "Yale University Press (free online edition)"
+  url: "https://mixtape.scunning.com/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6]
+  summary: "A widely used, readable textbook on DAGs, potential outcomes, matching, IV, RDD, DiD and synthetic control. The free web edition runs alongside the print book."
+  wiki_use: "Assign chapters as background reading per method, e.g. the DiD and synthetic control chapters before the pyfixest and pysyncon labs."
+  tools: [R, Stata]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The online edition says its code is in R and Stata, not Python. Its datasets reach Python through the causaldata package (see the-effect entry). The Yale UP publisher and 2021 date come from the print ISBN (9780300251685) in search results; the web page itself doesn't state them. Companion page: https://www.scunning.com/mixtape. The author also runs 'Scott's Mixtape Substack' (https://causalinf.substack.com/), which describes itself as covering how AI agents are changing empirical research. I couldn't confirm individual AI posts there."
+
+- id: the-effect-huntington-klein
+  category: M6
+  subtopic: "Foundations (free book)"
+  title: "The Effect: An Introduction to Research Design and Causality"
+  authors: "Huntington-Klein, N."
+  year: 2021
+  type: book
+  venue: "Chapman & Hall/CRC (free Bookdown edition)"
+  url: "https://theeffectbook.net/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M6, M3]
+  summary: "An intuition-first textbook on research design: causal diagrams, identification, and the full set of designs (regression, matching, DiD, RDD, IV, event studies). The web version is promised to stay free."
+  wiki_use: "Primary assigned reading for non-CS business students. Its causal-diagram chapters are a good on-ramp before any code."
+  tools: [causaldata, Python, R, Stata]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The site points to `pip install causaldata` (PyPI: https://pypi.org/project/causaldata/, MIT license, v0.1.5, Nov 2024), which bundles example datasets from The Effect and The Mixtape. The site also links intro Python coding materials. The web build I saw was dated 2025-10-17. A second edition is in print, per a Routledge ISBN 9781032580227 seen in search."
+
+- id: brave-and-true-facure
+  category: M6
+  subtopic: "Foundations (free book, Python)"
+  title: "Causal Inference for the Brave and True"
+  authors: "Facure Alves, M."
+  year: 2022
+  type: book
+  venue: "GitHub Pages (open-source handbook)"
+  url: "https://matheusfacure.github.io/python-causality-handbook/landing-page.html"
+  access: open
+  license: "MIT (repository)"
+  level: intermediate
+  priority: core
+  modules: [M6, M7]
+  summary: "A free, all-Python, Jupyter-based handbook. Part I covers RCTs, regression, IV, matching, propensity scores, DiD, panel data, synthetic control and RDD. Part II covers heterogeneous effects, meta-learners, debiased ML and synthetic DiD."
+  wiki_use: "Embed or fork chapter notebooks as in-class coding activities, and have students ask an AI assistant to extend a chapter's analysis to a new dataset."
+  tools: [pandas, statsmodels, scikit-learn, linearmodels]
+  ai_angle: false
+  download:
+    repo: "https://github.com/matheusfacure/python-causality-handbook"
+    path: "causal-inference-for-the-brave-and-true/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "The year is approximate; the handbook is updated continuously. Part II is marked 'work in progress'. The repository has about 3.5k stars."
+
+- id: facure-causal-inference-in-python
+  category: M6
+  subtopic: "Foundations (industry-oriented book)"
+  title: "Causal Inference in Python: Applying Causal Inference in the Tech Industry"
+  authors: "Facure, M."
+  year: 2023
+  type: book
+  venue: "O'Reilly Media"
+  url: "https://www.oreilly.com/library/view/causal-inference-in/9781098140243/"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M6, M7]
+  summary: "Written for managers, data scientists and business analysts. It measures the effects of marketing spend, discounts and pricing through A/B tests, regression, propensity scores, meta-learners, DiD, synthetic control, geo and switchback experiments, and noncompliance/IV."
+  wiki_use: "The core business-facing text for M6. The geo/switchback chapter covers interference and marketplace settings, and its MIT-licensed code can be loaded straight into Colab."
+  tools: [pandas, statsmodels, scikit-learn, lightgbm]
+  ai_angle: false
+  download:
+    repo: "https://github.com/matheusfacure/causal-inference-in-python-code"
+    path: "causal-inference-in-python/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "ISBN 9781098140243, 408 pages, July 2023. The O'Reilly page is paywalled. Students can probably reach it through O'Reilly Learning via the library; I haven't checked UIUC access."
+
+- id: causalml-book-chernozhukov
+  category: M6
+  subtopic: "Foundations (causal ML book)"
+  title: "Applied Causal Inference Powered by ML and AI"
+  authors: "Chernozhukov, V.; Hansen, C.; Kallus, N.; Spindler, M.; Syrgkanis, V."
+  year: 2024
+  type: book
+  venue: "causalml-book.org / arXiv:2403.02467"
+  url: "https://causalml-book.org/"
+  oa_url: "https://arxiv.org/pdf/2403.02467"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M6, M7]
+  summary: "A free textbook on causal inference with machine learning: DAGs, double/debiased ML, heterogeneous effects, DiD/RDD with ML, and causal uses of modern AI. It comes with hands-on Python and R labs."
+  wiki_use: "Instructor background and an optional reading for strong students. Its Python labs show how prediction tools such as lasso and random forests plug into causal estimation."
+  tools: [DoubleML, scikit-learn, Python, R]
+  ai_angle: false
+  download:
+    repo: "https://github.com/CausalAIBook/MetricsMLNotebooks"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "The site doesn't state a license for the book text. The MIT notebook repo (about 157 stars) is organized in folders such as PM1-PM5, CM1-CM3, AC1-AC2 and T. A book review in Psychometrika cites it as 2025."
+
+- id: hernan-robins-what-if
+  category: M6
+  subtopic: "Foundations (free book)"
+  title: "Causal Inference: What If"
+  authors: "Hernán, M. A.; Robins, J. M."
+  year: 2020
+  type: book
+  venue: "Chapman & Hall/CRC (free online edition)"
+  url: "https://miguelhernan.org/whatifbook"
+  oa_url: "https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/04/hernanrobins_WhatIf_26apr24.pdf"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [M6]
+  summary: "The epidemiology-rooted standard reference on potential outcomes, confounding, selection bias, IP weighting, standardization and g-methods. The book and its code and data are free to download."
+  wiki_use: "Instructor-only background on confounding and selection bias. Chapters 1-3 can serve as an optional deep-dive reading."
+  tools: [Python, R, Stata, SAS]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Python code for Part II (chapters 11-17) by James Fiedler: https://github.com/jrfiedler/causal_inference_python_code. That repo shows no license, so it isn't marked for download. The PDF link is the April 2024 version found in search."
+
+- id: did-practitioners-guide-baker-2025
+  category: M6
+  subtopic: "Difference-in-differences"
+  title: "Difference-in-Differences Designs: A Practitioner's Guide"
+  authors: "Baker, A.; Callaway, B.; Cunningham, S.; Goodman-Bacon, A.; Sant'Anna, P. H. C."
+  year: 2025
+  type: paper
+  venue: "arXiv:2503.13323 [econ.EM]"
+  url: "https://arxiv.org/abs/2503.13323"
+  doi: "10.48550/arXiv.2503.13323"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M6]
+  summary: "A framework for classifying DiD designs and estimators: covariates, weighting, multiple periods and staggered adoption. It explains why naive two-way fixed effects can mislead."
+  wiki_use: "Instructor reference for the staggered-DiD lab. Students can use its checklist to audit DiD code an AI assistant writes."
+  tools: [csdid, differences, pyfixest]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The arXiv page lists no journal reference. The paper is widely reported as forthcoming or published in the Journal of Economic Literature, which I haven't verified."
+
+- id: varian-2016-pnas
+  category: M6
+  subtopic: "Causal inference in marketing (overview)"
+  title: "Causal inference in economics and marketing"
+  authors: "Varian, H. R."
+  year: 2016
+  type: paper
+  venue: "Proceedings of the National Academy of Sciences 113(27), 7310-7315"
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4941501"
+  doi: "10.1073/pnas.1510479113"
+  oa_url: "https://people.ischool.berkeley.edu/~hal/Papers/cause-PNAS4.pdf"
+  access: open
+  level: intro
+  priority: core
+  modules: [M6]
+  summary: "Google's chief economist gives a short, non-technical tour of counterfactual thinking, experiments, IV, RDD, DiD and 'train-test-treat-compare' with predictive models, illustrated with advertising and marketing examples."
+  wiki_use: "First assigned reading for M6. It frames 'what would have happened otherwise' for business students."
+  ai_angle: false
+  verified_via: fetch
+
+- id: goldfarb-tucker-wang-2022-jm
+  category: M6
+  subtopic: "Quasi-experiments in marketing"
+  title: "Conducting Research in Marketing with Quasi-Experiments"
+  authors: "Goldfarb, A.; Tucker, C.; Wang, Y."
+  year: 2022
+  type: paper
+  venue: "Journal of Marketing 86(3), 1-20"
+  url: "https://journals.sagepub.com/doi/10.1177/00222429221082977"
+  doi: "10.1177/00222429221082977"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M6]
+  summary: "A JM methods guide to quasi-experimental designs in marketing (DiD, synthetic control, RDD and related designs): when they are credible and how to probe their assumptions."
+  wiki_use: "Assigned academic anchor for the quasi-experiments week. Its checklist of identification threats can feed a student project rubric."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Metadata confirmed through the Crossref record for the DOI. The SAGE landing page blocked automated fetching. I didn't find an open-access copy."
+
+# ---------------------------------------------------------------
+# A/B testing and online experiments
+# ---------------------------------------------------------------
+- id: kohavi-tang-xu-trustworthy-oce
+  category: M6
+  subtopic: "A/B testing"
+  title: "Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing"
+  authors: "Kohavi, R.; Tang, D.; Xu, Y."
+  year: 2020
+  type: book
+  venue: "Cambridge University Press"
+  url: "https://experimentguide.com/"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M6]
+  summary: "The standard practitioner reference on online experiments from the Microsoft, Google and LinkedIn experimentation leaders: metrics/OEC, guardrails, SRM, trust checks, variance, interference and experimentation culture."
+  wiki_use: "Core text for the A/B testing week. Assign the free Chapter 1 PDF from experimentguide.com and pull SRM and pitfall examples for exercises."
+  ai_angle: false
+  verified_via: fetch
+  notes: "experimentguide.com offers a free Chapter 1 PDF (English plus translations), errata, an FAQ and a bibliography. Cambridge Core page: https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59. Kohavi's interactive Maven courses are paid."
+
+- id: exp-platform-kohavi-hub
+  category: M6
+  subtopic: "A/B testing (free papers)"
+  title: "ExP Platform: Kohavi et al. papers, talks and pitfalls on online controlled experiments"
+  authors: "Kohavi, R. et al."
+  year: 2023
+  type: website
+  venue: "exp-platform.com"
+  url: "https://exp-platform.com/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6]
+  summary: "Free PDFs of the classic Microsoft/Bing experimentation papers: Practical Guide (KDD 2007), Seven Pitfalls, Rules of Thumb, Puzzling Outcomes, A Dirty Dozen metric-interpretation pitfalls, continuous monitoring and trigger dilution."
+  wiki_use: "Reading bank. Assign the KDD 2007 'Practical Guide' (HiPPO) as an intro piece and 'A Dirty Dozen' for metric-interpretation pitfalls."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Year marks roughly the latest listed item. Direct pages found on the hub: Practical Guide https://exp-platform.com/practical-guide/ ; Seven Pitfalls https://exp-platform.com/seven-pitfalls/ ; Rules of Thumb https://exp-platform.com/rules-of-thumb/ ; Dirty Dozen PDF https://exp-platform.com/Documents/2017-08%20KDDMetricInterpretationPitfalls.pdf"
+
+- id: kohavi-deng-vermeer-intuition-busters
+  category: M6
+  subtopic: "A/B testing pitfalls"
+  title: "A/B Testing Intuition Busters: Common Misunderstandings in Online Controlled Experiments"
+  authors: "Kohavi, R.; Deng, A.; Vermeer, L."
+  year: 2022
+  type: paper
+  venue: "KDD 2022"
+  url: "https://exp-platform.com/abtestingintuitionbusters/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6]
+  summary: "Debunks common, intuitive but wrong beliefs about A/B tests that some tool vendors promote, such as misreadings of p-values and statistical power. It recommends platform designs that make the mistakes harder to commit."
+  wiki_use: "Discussion reading. Students check whether an AI chatbot repeats any of the misconceptions, then correct it."
+  ai_angle: false
+  verified_via: fetch
+
+- id: deng-2013-cuped
+  category: M6
+  subtopic: "Variance reduction (CUPED)"
+  title: "Improving the Sensitivity of Online Controlled Experiments by Utilizing Pre-Experiment Data (CUPED)"
+  authors: "Deng, A.; Xu, Y.; Kohavi, R.; Walker, T."
+  year: 2013
+  type: paper
+  venue: "WSDM 2013"
+  url: "https://exp-platform.com/cuped/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6, M3]
+  summary: "The original CUPED paper, which reduces A/B test variance by regressing out pre-experiment covariates. It is now standard on most experimentation platforms."
+  wiki_use: "Pair with a Colab exercise in which students implement CUPED as OLS with a pre-period covariate and compare confidence-interval widths, linking back to M3 regression."
+  tools: [statsmodels, numpy]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The page links a free PDF at exp-platform.com/Documents/2013-02-CUPED-ImprovingSensitivityOfControlledExperiments.pdf"
+
+- id: ms-exp-deep-dive-variance-reduction
+  category: M6
+  subtopic: "Variance reduction (CUPED)"
+  title: "Deep Dive Into Variance Reduction"
+  authors: "Cosgrove, L.; Townsend, J.; Litz, J. (Microsoft Experimentation Platform)"
+  year: 2022
+  type: blog
+  venue: "Microsoft Research, ExP articles"
+  url: "https://www.microsoft.com/en-us/research/articles/deep-dive-into-variance-reduction/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6]
+  summary: "Explains CUPED as a regression adjustment that leaves the estimator consistent, shows its equivalence to Lin's ANCOVA estimator, and introduces the 'effective traffic multiplier' 1/(1-R^2) with real Microsoft numbers."
+  wiki_use: "A readable companion to the CUPED paper. The traffic-multiplier idea makes a good short quiz question."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The ExP articles index (https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/) also has 'A/B Interactions: A Call to Relax' (2023) and pieces on experimenting with GenAI features."
+
+- id: srm-taxonomy-kdd2019
+  category: M6
+  subtopic: "Pitfalls: sample ratio mismatch"
+  title: "Diagnosing Sample Ratio Mismatch in Online Controlled Experiments: A Taxonomy and Rules of Thumb for Practitioners"
+  authors: "Fabijan, A.; Gupchup, J.; et al. (incl. Vermeer, L.; Dmitriev, P.)"
+  year: 2019
+  type: paper
+  venue: "KDD 2019"
+  url: "https://exp-platform.com/Documents/2019_KDDFabijanGupchupFuptaOmhoverVermeerDmitriev.pdf"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6]
+  summary: "Defines SRM (observed group sizes deviate from the designed split), shows how often it invalidates results, and gives a taxonomy of causes across assignment, execution, logging, analysis and interference."
+  wiki_use: "Use with a Colab chi-square SRM check. Lukas Vermeer's SRM Checker site (https://lukasvermeer.nl/srm/) has a manual checker, a FAQ and the cause taxonomy."
+  tools: [scipy]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The full author list isn't shown in what I fetched; the abbreviated list follows the PDF filename. The SRM Checker Chrome extension has been retired, but the website, docs and manual check remain (MIT-licensed repo)."
+
+- id: larsen-2024-statistical-challenges-oce
+  category: M6
+  subtopic: "A/B testing methodology review"
+  title: "Statistical Challenges in Online Controlled Experiments: A Review of A/B Testing Methodology"
+  authors: "Larsen, N.; Stallrich, J.; Sengupta, S.; Deng, A.; Kohavi, R.; Stevens, N. T."
+  year: 2024
+  type: paper
+  venue: "The American Statistician 78(2), 135-149"
+  url: "https://doi.org/10.1080/00031305.2023.2257237"
+  doi: "10.1080/00031305.2023.2257237"
+  access: library
+  level: advanced
+  priority: recommended
+  modules: [M6]
+  summary: "A review of open statistical problems in A/B testing: variance reduction, heterogeneous effects, sequential testing and peeking, interference and network/marketplace effects, and long-term effects."
+  wiki_use: "Instructor background for the pitfalls lecture, especially the interference section."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Published online Oct 2023. exp-platform.com links a supplement at https://bit.ly/ABTestingStatChallengesSupplement"
+
+- id: netflix-ab-testing-series
+  category: M6
+  subtopic: "Experimentation platform blogs (Netflix)"
+  title: "Decision Making at Netflix (Part 1 of the Netflix A/B testing series)"
+  authors: "Tingley, M.; Zheng, W.; Ejdemyr, S.; Lane, S.; McFarland, C. (Netflix Technology Blog)"
+  year: 2021
+  type: blog
+  venue: "Netflix Technology Blog"
+  url: "https://netflixtechblog.com/decision-making-at-netflix-33065fa06481"
+  access: open
+  level: intro
+  priority: core
+  modules: [M6]
+  summary: "A multi-part, non-technical series on how Netflix uses A/B tests. Later parts cover hypotheses, primary/secondary/guardrail metrics, false positives and power."
+  wiki_use: "Assign Parts 1-3 as the A/B testing primer before the first coding lab. The upside-down box art example works well in class."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Part 2 'What is an A/B Test?': https://netflixtechblog.com/what-is-an-a-b-test-b08cc1b57962 ; Part 3 'Interpreting A/B test results: false positives and statistical significance': https://netflixtechblog.com/interpreting-a-b-test-results-false-positives-and-statistical-significance-c1522d0db27a (URL taken from a syndicated copy of the post). A later part on false negatives and power exists, but I didn't verify its original URL."
+
+- id: spotify-sequential-testing-comparison
+  category: M6
+  subtopic: "Pitfalls: peeking / sequential testing"
+  title: "Choosing a Sequential Testing Framework: Comparisons and Discussions"
+  authors: "Schultzberg, M.; Ankargren, S. (Spotify)"
+  year: 2023
+  type: blog
+  venue: "Spotify Engineering"
+  url: "https://engineering.atspotify.com/2023/3/choosing-sequential-testing-framework-comparisons-and-discussions"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6]
+  summary: "Compares group sequential tests, always-valid inference (mSPRT/GAVI), corrected-alpha and Bonferroni as fixes for the peeking problem, using Monte Carlo evidence on power."
+  wiki_use: "Follow-up reading after a peeking simulation in Colab, where students see the false-positive rate inflate when they stop at the first p<0.05."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Related Spotify posts: 'Bringing Sequential Testing to Experiments with Longitudinal Data (Part 1): The Peeking Problem 2.0' (2023) and 'Risk-Aware Product Decisions in A/B Tests with Multiple Metrics' (2024), https://engineering.atspotify.com/2024/3/risk-aware-product-decisions-in-a-b-tests-with-multiple-metrics"
+
+- id: spotify-encouragement-designs-iv
+  category: M6
+  subtopic: "Instrumental variables in experiments"
+  title: "Encouragement Designs and Instrumental Variables for A/B Testing"
+  authors: "Elbers, B. (Spotify)"
+  year: 2023
+  type: blog
+  venue: "Spotify Engineering"
+  url: "https://engineering.atspotify.com/2023/8/encouragement-designs-and-instrumental-variables-for-a-b-testing"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6]
+  summary: "Explains how to randomize a nudge (e.g., a banner) when the feature itself can't be withheld, and then use IV to estimate the complier effect. Covers monotonicity, exclusion and relevance, with practical trade-offs."
+  wiki_use: "The best business-facing intro to IV for this audience. Pair with a linearmodels IV2SLS exercise on simulated nudge data."
+  tools: [linearmodels]
+  ai_angle: false
+  verified_via: fetch
+
+- id: spotify-did-significance
+  category: M6
+  subtopic: "Difference-in-differences pitfalls"
+  title: "How to Accurately Test Significance with Difference in Difference Models"
+  authors: "Doll, B.; Li, J.; Oztan, T. (Spotify)"
+  year: 2023
+  type: blog
+  venue: "Spotify Engineering"
+  url: "https://engineering.atspotify.com/2023/9/how-to-accurately-test-significance-with-difference-in-difference-models"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6]
+  summary: "Simulations show that naive DiD standard errors on serially correlated time series give over 30% false positives. Compares clustered SEs, averaging and permutation tests, and says when to use each."
+  wiki_use: "A concrete check for AI-written DiD code. Students verify that the assistant clustered standard errors at the unit level, then rerun a placebo or permutation test."
+  tools: [statsmodels, pyfixest]
+  ai_angle: false
+  verified_via: fetch
+
+- id: spotify-llm-evals-experiments
+  category: M6
+  subtopic: "Experiments for AI/LLM features"
+  title: "Better Experiments with LLM Evals: A funnel, not a fork"
+  authors: "Ankargren, M.; Schultzberg, M. (Spotify)"
+  year: 2026
+  type: blog
+  venue: "Spotify Engineering"
+  url: "https://engineering.atspotify.com/2026/5/better-experiments-with-llm-evals-a-funnel-not-a-fork"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6, AI, M8]
+  summary: "Argues that offline LLM evals (LLM-as-judge) should screen candidates and generate hypotheses, while A/B tests validate real user impact. LLM judges have to be calibrated against online results."
+  wiki_use: "Current-practice reading on how A/B testing fits AI product development. It works as a discussion starter on why an LLM judge isn't a causal estimate."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The post reports that Spotify rolls back about 42% of launched experiments to prevent regressions in secondary metrics."
+
+- id: booking-democratizing-experiments
+  category: M6
+  subtopic: "Experimentation platform blogs (Booking.com)"
+  title: "Democratizing online controlled experiments at Booking.com"
+  authors: "Kaufman, R. L.; Pitchforth, J.; Vermeer, L."
+  year: 2017
+  type: paper
+  venue: "arXiv:1710.08217"
+  url: "https://arxiv.org/abs/1710.08217"
+  oa_url: "https://arxiv.org/pdf/1710.08217"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M6]
+  summary: "Describes how Booking.com built an experimentation culture and infrastructure in which anyone can run trustworthy A/B tests at scale, with safeguards and shared tooling."
+  wiki_use: "A case example of experimentation culture, to pair with the Netflix series."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Lukas Vermeer's publications page dates it July 2018. I couldn't find a separate Booking.com engineering blog post on CUPED or power."
+
+- id: evan-miller-sample-size-calculator
+  category: M6
+  subtopic: "Sample size and power"
+  title: "Evan's Awesome A/B Tools: Sample Size Calculator"
+  authors: "Miller, E."
+  type: tool
+  venue: "evanmiller.org"
+  url: "https://evanmiller.org/ab-testing/sample-size.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M6]
+  summary: "A free web calculator for the sample size a conversion-rate A/B test needs, given baseline rate, minimum detectable effect, power and significance. It is part of a small suite of A/B tools."
+  wiki_use: "In-class demo. Students check the calculator's answer against statsmodels code, possibly written with an AI assistant."
+  ai_angle: false
+  verified_via: search
+  notes: "No year given; the tool has been around since the early 2010s."
+
+- id: evan-miller-how-not-to-run-ab-test
+  category: M6
+  subtopic: "Pitfalls: peeking / sequential testing"
+  title: "How Not To Run an A/B Test"
+  authors: "Miller, E."
+  type: blog
+  venue: "evanmiller.org"
+  url: "https://www.evanmiller.org/how-not-to-run-an-ab-test.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M6]
+  summary: "The classic short explainer showing that repeatedly checking significance and stopping early inflates false positives. It recommends fixing the sample size in advance or using sequential methods."
+  wiki_use: "Pre-reading for a peeking simulation exercise."
+  ai_angle: false
+  verified_via: search
+  notes: "No year given; usually dated 2010."
+
+- id: statsmodels-power-analysis
+  category: M6
+  subtopic: "Sample size and power"
+  title: "statsmodels.stats.power: tt_ind_solve_power / NormalIndPower"
+  authors: "statsmodels developers"
+  year: 2024
+  type: documentation
+  venue: "statsmodels documentation (v0.14.4)"
+  url: "https://www.statsmodels.org/v0.14.4/generated/statsmodels.stats.power.tt_ind_solve_power.html"
+  access: open
+  license: "BSD-3-Clause (statsmodels)"
+  level: intro
+  priority: recommended
+  modules: [M6, M1]
+  summary: "API reference for solving for sample size, power or effect size in two-sample t-tests and z-tests (proportions via effect sizes) in Python."
+  wiki_use: "Reference for a power-analysis Colab cell. Students prompt an AI assistant for the code and then check its arguments (effect size in Cohen's d, not raw lift) against the docs."
+  tools: [statsmodels]
+  ai_angle: false
+  verified_via: search
+  notes: "The BSD-3 license is statsmodels' standard license; this doc page doesn't state it. The version-pinned URL came from search, and the 'stable' docs path should also work."
+
+# ---------------------------------------------------------------
+# Advertising measurement anchors
+# ---------------------------------------------------------------
+- id: blake-nosko-tadelis-2015
+  category: M6
+  subtopic: "Advertising measurement (field experiments)"
+  title: "Consumer Heterogeneity and Paid Search Effectiveness: A Large-Scale Field Experiment"
+  authors: "Blake, T.; Nosko, C.; Tadelis, S."
+  year: 2015
+  type: paper
+  venue: "Econometrica 83(1), 155-174"
+  url: "https://doi.org/10.3982/ECTA12423"
+  doi: "10.3982/ECTA12423"
+  oa_url: "https://faculty.haas.berkeley.edu/stadelis/BNT_ECMA_rev.pdf"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6, M8]
+  summary: "eBay switched off brand-keyword and non-brand search ads in randomized geographic tests and found much smaller returns than naive observational estimates suggested, especially among frequent, loyal users."
+  wiki_use: "Headline case study for M6. Contrast the 'correlational ROI' story with the experimental one and discuss selection on intent."
+  ai_angle: false
+  verified_via: fetch
+  notes: "NBER working paper version: https://www.nber.org/papers/w20171"
+
+- id: lewis-rao-2015-qje
+  category: M6
+  subtopic: "Advertising measurement (power)"
+  title: "The Unfavorable Economics of Measuring the Returns to Advertising"
+  authors: "Lewis, R. A.; Rao, J. M."
+  year: 2015
+  type: paper
+  venue: "Quarterly Journal of Economics 130(4), 1941-1973"
+  url: "https://ideas.repec.org/a/oup/qjecon/v130y2015i4p1941-1973.html"
+  doi: "10.1093/qje/qjv023"
+  oa_url: "https://aeaweb.org/conference/2014/retrieve.php?pdfid=985"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M6, M8]
+  summary: "Using a large set of field experiments, shows that individual-level sales are so noisy relative to ad effects that even huge experiments are badly underpowered to measure ad ROI."
+  wiki_use: "Pair with the power calculators. Students compute the sample size needed to detect a realistic ad lift and see the 'unfavorable economics' for themselves."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The oa_url is an earlier AEA 2014 conference draft found in search, not the published version."
+
+- id: gordon-zettelmeyer-2019-facebook
+  category: M6
+  subtopic: "Advertising measurement (experimental vs observational)"
+  title: "A Comparison of Approaches to Advertising Measurement: Evidence from Big Field Experiments at Facebook"
+  authors: "Gordon, B. R.; Zettelmeyer, F.; Bhargava, N.; Chapsky, D."
+  year: 2019
+  type: paper
+  venue: "Marketing Science"
+  url: "https://www.kellogg.northwestern.edu/academics-research/research/detail/2019/a-comparison-of-approaches-to-advertising-measurement-evidence-from/"
+  doi: "10.1287/mksc.2018.1135"
+  oa_url: "https://www.kellogg.northwestern.edu/faculty/gordon_b/files/fb_comparison.pdf"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6, M8]
+  summary: "Benchmarks matching, regression adjustment and propensity-score methods against large Facebook RCTs. Observational methods often miss the experimental lift by large margins."
+  wiki_use: "Assigned anchor. Students try to recover an RCT effect with observational methods on a dataset like Hillstrom and reflect on why it fails."
+  ai_angle: false
+  verified_via: search
+  notes: "A non-technical Kellogg/Facebook white paper is also available: https://www.kellogg.northwestern.edu/faculty/gordon_b/files/kellogg_fb_whitepaper.pdf"
+
+- id: gordon-moakler-zettelmeyer-2023-close-enough
+  category: M6
+  subtopic: "Advertising measurement (experimental vs observational)"
+  title: "Close Enough? A Large-Scale Exploration of Non-Experimental Approaches to Advertising Measurement"
+  authors: "Gordon, B. R.; Moakler, R.; Zettelmeyer, F."
+  year: 2023
+  type: paper
+  venue: "Marketing Science"
+  url: "https://www.kellogg.northwestern.edu/academics-research/research/detail/2023/close-enough-a-large-scale-exploration-of-non-experimental/"
+  doi: "10.1287/mksc.2022.1413"
+  oa_url: "https://arxiv.org/pdf/2201.07055"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M6, M8]
+  summary: "Uses a large set of Facebook RCTs to test whether double/debiased ML and rich user-level data let observational methods recover experimental ad effects. Mostly they don't, even with rich data."
+  wiki_use: "Follow-up to Gordon et al. (2019) that shows ML doesn't solve confounding. Good for a debate on 'can AI replace experiments?'."
+  ai_angle: false
+  verified_via: search
+  notes: "Volume and issue not verified. Check the exact number of experiments against the abstract before quoting."
+
+- id: johnson-lewis-nubbemeyer-ghost-ads
+  category: M6
+  subtopic: "Advertising measurement (ghost ads)"
+  title: "Ghost Ads: Improving the Economics of Measuring Online Ad Effectiveness"
+  authors: "Johnson, G. A.; Lewis, R. A.; Nubbemeyer, E. I."
+  year: 2017
+  type: paper
+  venue: "Journal of Marketing Research 54(6), 867-884"
+  url: "https://www.kellogg.northwestern.edu/faculty/research/detail/2017/ghost-ads-improving-the-economics-of-measuring-online-ad"
+  oa_url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2620078"
+  access: free-registration
+  level: intermediate
+  priority: recommended
+  modules: [M6, M8]
+  summary: "Introduces 'ghost ads', which log the ads control users would have seen, to build an exposed-vs-would-have-been-exposed comparison. It is cheaper and more precise than PSA or intent-to-treat ad experiments."
+  wiki_use: "Explains how platform lift studies (Meta/Google conversion lift) actually work, and links ITT vs. treatment-on-treated to the IV material."
+  ai_angle: false
+  verified_via: fetch
+  notes: "I didn't see a DOI. Won the 2022 AMA Weitz-Winer-O'Dell award, per AMA search results."
+
+# ---------------------------------------------------------------
+# Quasi-experimental methods in Python
+# ---------------------------------------------------------------
+- id: pyfixest
+  category: M6
+  subtopic: "DiD / fixed effects (Python)"
+  title: "PyFixest: Fast high-dimensional fixed effects regression in Python (fixest syntax)"
+  authors: "PyFixest developers (py-econometrics)"
+  year: 2025
+  type: package
+  venue: "GitHub / pyfixest.org"
+  url: "https://github.com/py-econometrics/pyfixest"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: core
+  modules: [M6, M3]
+  summary: "A Python port of R's fixest: OLS/WLS/GLM/IV with high-dimensional fixed effects, clustered SEs, and DiD/event-study tools (TWFE, did2s, local projections, Sun-Abraham)."
+  wiki_use: "The default Python package for the DiD and panel-regression labs. Its R-like formula syntax makes AI-generated code easy to read and check."
+  tools: [pyfixest]
+  ai_angle: false
+  download:
+    repo: "https://github.com/py-econometrics/pyfixest"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Docs: https://pyfixest.org/ . The old py-why/pyfixest URL didn't load; use the py-econometrics URL. The year is the approximate active-development year."
+
+- id: csdid-python
+  category: M6
+  subtopic: "Staggered DiD (Python)"
+  title: "csdid: Callaway and Sant'Anna difference-in-differences for Python"
+  authors: "d2cml-ai"
+  type: package
+  venue: "GitHub / PyPI"
+  url: "https://github.com/d2cml-ai/csdid"
+  access: open
+  license: "MIT"
+  level: advanced
+  priority: recommended
+  modules: [M6]
+  summary: "A Python port of R's did package. It estimates group-time ATT(g,t) under staggered adoption (with doubly robust options) and aggregates to event-study, calendar or group effects, with plots."
+  wiki_use: "Staggered-adoption lab on the mpdta minimum-wage example in the README. Students compare its results with naive TWFE from pyfixest."
+  tools: [csdid, drdid]
+  ai_angle: false
+  download:
+    repo: "https://github.com/d2cml-ai/csdid"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Needs the drdid library installed separately from GitHub. Docs: d2cml-ai.github.io/csdid/. No year given."
+
+- id: differences-python
+  category: M6
+  subtopic: "Staggered DiD (Python)"
+  title: "differences: difference-in-differences estimation and inference for Python"
+  authors: "Dionisi, B."
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/bernardodionisi/differences"
+  access: open
+  license: "GPL-3.0"
+  level: advanced
+  priority: optional
+  modules: [M6]
+  summary: "Implements Callaway and Sant'Anna (2021) ATT(g,t) through an ATTgt class, plus Sant'Anna and Zhao (2020) DR-DiD, multi-valued treatments and triple differences."
+  wiki_use: "An alternative to csdid for students who want a richer API. Use for cross-checking estimates."
+  tools: [differences]
+  ai_angle: false
+  download:
+    repo: "https://github.com/bernardodionisi/differences"
+    path: ""
+    license: "GPL-3.0"
+  verified_via: fetch
+  notes: "Docs: https://bernardodionisi.github.io/differences/latest/ . The repo has few commits (58), so recent maintenance is unclear."
+
+- id: linearmodels
+  category: M6
+  subtopic: "Instrumental variables and panel (Python)"
+  title: "linearmodels: IV, panel data and system regression for Python"
+  authors: "Sheppard, K."
+  type: package
+  venue: "GitHub / docs"
+  url: "https://bashtage.github.io/linearmodels/"
+  access: open
+  license: "NCSA"
+  level: intermediate
+  priority: core
+  modules: [M6, M3]
+  summary: "Adds what statsmodels lacks: IV2SLS, LIML, IV-GMM, PanelOLS with entity and time fixed effects, first-difference and random-effects models, and weak-instrument diagnostics."
+  wiki_use: "The IV lab package. Students run first-stage F checks, which AI-written IV code often skips."
+  tools: [linearmodels]
+  ai_angle: false
+  download:
+    repo: "https://github.com/bashtage/linearmodels"
+    path: "examples/"
+    license: "NCSA"
+  verified_via: fetch
+
+- id: pysyncon
+  category: M6
+  subtopic: "Synthetic control (Python)"
+  title: "pysyncon: a Python module for the synthetic control method"
+  authors: "Fordham, S. D."
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/sdfordham/pysyncon"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: core
+  modules: [M6]
+  summary: "Implements classic, robust, augmented and penalized synthetic control with placebo tests and confidence intervals. Example notebooks reproduce Basque, Texas (from the Mixtape) and German reunification."
+  wiki_use: "Synthetic control lab. Start from the Mixtape Texas notebook, then apply it to a brand or market-level marketing intervention."
+  tools: [pysyncon]
+  ai_angle: false
+  download:
+    repo: "https://github.com/sdfordham/pysyncon"
+    path: "examples/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "No year given."
+
+- id: sparsesc-microsoft
+  category: M6
+  subtopic: "Synthetic control (Python)"
+  title: "SparseSC: Fit sparse synthetic control models in Python"
+  authors: "Microsoft (Quistorff, B. et al.)"
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/microsoft/SparseSC"
+  access: open
+  license: "MIT"
+  level: advanced
+  priority: optional
+  modules: [M6]
+  summary: "An ML-enhanced synthetic control that penalizes feature and unit weights. It is useful when there are many donor units or many predictors."
+  wiki_use: "Optional advanced alternative for project teams with many control markets."
+  tools: [SparseSC]
+  ai_angle: false
+  download:
+    repo: "https://github.com/microsoft/SparseSC"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Docs: https://sparsesc.readthedocs.io/en/latest/ . Last commit date unclear and the repo is modestly active (about 90 stars). Background: Quistorff, Goldman and Thorpe (2020). No year given."
+
+- id: causalpy-pymc-labs
+  category: M6
+  subtopic: "Quasi-experiments (Bayesian, Python)"
+  title: "CausalPy: causal inference for quasi-experiments in Python"
+  authors: "PyMC Labs"
+  year: 2025
+  type: package
+  venue: "GitHub / Read the Docs"
+  url: "https://github.com/pymc-labs/CausalPy"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M6, AI]
+  summary: "One API (Bayesian via PyMC, or scikit-learn) for synthetic control, GeoLift, DiD, staggered DiD, RDD, regression kink, interrupted time series, IV and IPW. It ships agent skills that teach AI coding assistants to use it."
+  wiki_use: "The one-stop quasi-experiment toolkit for the wiki. Students can try its bundled AI-assistant skills (in Claude Code or Cursor) and critique the analyses they produce."
+  tools: [CausalPy, PyMC, scikit-learn]
+  ai_angle: true
+  download:
+    repo: "https://github.com/pymc-labs/CausalPy"
+    path: "docs/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Docs: https://causalpy.readthedocs.io . Per the docs, the skills live in causalpy/skills/ and are distributed through Decision AI Hub (hub.decision.ai). Year approximate."
+
+- id: rdrobust-python
+  category: M6
+  subtopic: "Regression discontinuity (Python)"
+  title: "rdrobust: robust bias-corrected inference for regression discontinuity (Python)"
+  authors: "Calonico, S.; Cattaneo, M. D.; Farrell, M. H.; Masini, R.; Titiunik, R."
+  year: 2026
+  type: package
+  venue: "PyPI / GitHub (rdpackages)"
+  url: "https://github.com/rdpackages/rdrobust"
+  access: open
+  license: "GPL-3.0"
+  level: intermediate
+  priority: recommended
+  modules: [M6]
+  summary: "The reference RDD implementation (`pip install rdrobust`), with local polynomial estimates, robust bias-corrected CIs, data-driven bandwidths and rdplot. Ships Python illustration scripts and the US Senate example data."
+  wiki_use: "RDD lab, e.g. loyalty-tier thresholds or rating cutoffs. Compare an AI-written 'OLS with a cutoff dummy' against rdrobust."
+  tools: [rdrobust]
+  ai_angle: false
+  download:
+    repo: "https://github.com/rdpackages/rdrobust"
+    path: "Python/"
+    license: "GPL-3.0"
+  verified_via: fetch
+  notes: "PyPI: https://pypi.org/project/rdrobust/ (v2.1.1, released 2026-10-07, GPL-3.0-only). The old rdpackages.github.io/rdrobust page now just says the project moved to GitHub."
+
+- id: tfp-causalimpact
+  category: M6
+  subtopic: "Bayesian structural time series (CausalImpact)"
+  title: "TFP CausalImpact: Python port of Google's CausalImpact"
+  authors: "Google"
+  type: package
+  venue: "GitHub / PyPI (tfp-causalimpact)"
+  url: "https://github.com/google/tfp-causalimpact"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M6, M8]
+  summary: "A Python/TensorFlow Probability implementation of CausalImpact. It estimates the effect of a marketing intervention on a time series against a Bayesian structural time-series counterfactual built from control series."
+  wiki_use: "Demo for 'did the campaign lift sales?' with only aggregate time series. Includes a quick-start notebook."
+  tools: [tfp-causalimpact, tensorflow-probability]
+  ai_angle: false
+  download:
+    repo: "https://github.com/google/tfp-causalimpact"
+    path: "docs/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Quick start is docs/quickstart.ipynb. Marked 'not an officially supported Google product'. The original R package (Apache-2.0) is at https://github.com/google/CausalImpact, with docs at https://google.github.io/CausalImpact/CausalImpact.html; its README points Python users to tfp-causalimpact. No year given."
+
+- id: geolift-meta
+  category: M6
+  subtopic: "Geo experiments"
+  title: "GeoLift: geo-level lift measurement with synthetic control"
+  authors: "Meta Open Source (facebookincubator)"
+  type: package
+  venue: "GitHub"
+  url: "https://github.com/facebookincubator/GeoLift"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M6, M8]
+  summary: "An end-to-end R toolkit for geo experiments: market selection and power analysis, then lift estimation with (augmented) synthetic control, including multi-cell tests."
+  wiki_use: "Explains how brands run geo holdouts. Demo the walkthrough vignette, or reproduce the GeoLift idea in Python with CausalPy."
+  tools: [R, GeoLift]
+  ai_angle: false
+  download:
+    repo: "https://github.com/facebookincubator/GeoLift"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "R only (R >= 4.0); no Python version. Site: https://facebookincubator.github.io/GeoLift/ . No year given."
+
+- id: meridian-google-mmm
+  category: M6
+  subtopic: "Marketing mix modeling as incrementality"
+  title: "Meridian: Google's open-source Bayesian marketing mix model"
+  authors: "Google"
+  year: 2025
+  type: package
+  venue: "GitHub / Google for Developers"
+  url: "https://developers.google.com/meridian"
+  access: open
+  license: "Apache-2.0"
+  level: advanced
+  priority: recommended
+  modules: [M6, M8]
+  summary: "An in-house MMM framework with reach/frequency and search-volume features and ROI priors that can be calibrated with experiments. Comes with Colab notebooks."
+  wiki_use: "Shows how MMM estimates are made 'causal' by calibrating to lift tests. Run the Getting Started Colab live."
+  tools: [google-meridian, TensorFlow Probability]
+  ai_angle: false
+  download:
+    repo: "https://github.com/google/meridian"
+    path: "demo/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Getting started: https://developers.google.com/meridian/notebook/meridian-getting-started ; ROI priors and calibration guide: https://developers.google.com/meridian/docs/advanced-modeling/roi-priors-and-calibration . The repo citation lists v2.0.0; needs Python 3.11-3.13. The demo/ path is inferred from a Colab link to demo/Meridian_Full_Funnel.ipynb."
+
+- id: meridian-geox
+  category: M6
+  subtopic: "Geo experiments"
+  title: "Meridian GeoX: open-source geo experiments for incrementality and MMM calibration"
+  authors: "Google"
+  year: 2026
+  type: tool
+  venue: "Google for Developers"
+  url: "https://developers.google.com/meridian/geox"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [M6, M8]
+  summary: "Google's geo-experiment tool (holdback, go-dark and heavy-up designs, multi-treatment) that turns experiment results into priors for Meridian MMM and recommends which channels to test."
+  wiki_use: "Current-practice example of the 'experiment, then calibrate the MMM' loop. Its Colab notebooks can serve as an instructor demo."
+  tools: [meridian-geox]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Source: https://github.com/google/meridian-geox (license not verified). Notebooks: https://developers.google.com/meridian/geox/notebook . Year is when I found the 'now available' announcement; exact release date not verified. Google's older trimmed_match geo library (https://github.com/google/trimmed_match, Apache-2.0, research-only) covers matched-pair geo designs."
+
+- id: robyn-meta-mmm
+  category: M6
+  subtopic: "Marketing mix modeling as incrementality"
+  title: "Robyn: Meta's open-source marketing mix modeling package"
+  authors: "Meta Marketing Science (facebookexperimental)"
+  year: 2023
+  type: package
+  venue: "GitHub / CRAN"
+  url: "https://github.com/facebookexperimental/Robyn"
+  access: open
+  license: "MIT"
+  level: advanced
+  priority: recommended
+  modules: [M6, M8]
+  summary: "An automated MMM in R: ridge regression, evolutionary hyperparameter search, adstock/saturation, calibration to lift experiments and budget allocation. Has a beta Python API."
+  wiki_use: "Compare with Meridian and PyMC-Marketing in a 'which MMM would you trust?' discussion, using the R demo script or the Python API notebook."
+  tools: [R, Robyn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/facebookexperimental/Robyn"
+    path: "robyn_api/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "Year is the release of the Python API beta (Nov 2023). Site: https://facebookexperimental.github.io/Robyn/ . R demo: demo/demo.R. The Python API notebook is robyn_api/robyn_python_notebook.ipynb and needs R installed."
+
+- id: pymc-marketing
+  category: M6
+  subtopic: "Marketing mix modeling as incrementality"
+  title: "PyMC-Marketing: Bayesian MMM, CLV and choice models in Python"
+  authors: "PyMC Labs"
+  year: 2025
+  type: package
+  venue: "GitHub / pymc-marketing.io"
+  url: "https://www.pymc-marketing.io/en/stable/"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M6, M4, M8, AI]
+  summary: "A Python Bayesian MMM with adstock/saturation, a DAG-based causal identification guide, lift-test and ROAS calibration and budget optimization, plus CLV/BTYD models that also tie into M4."
+  wiki_use: "Main Python MMM. Assign the notebook 'Mitigating Unobserved Confounders in MMMs with Lift Test Likelihoods' (https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_roas.html), where an omitted confounder flips the channel ROAS ranking and lift tests fix it."
+  tools: [pymc-marketing, PyMC, ArviZ]
+  ai_angle: true
+  download:
+    repo: "https://github.com/pymc-labs/pymc-marketing"
+    path: "docs/source/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "AI angle: the README links MMM-GPT (https://mmm-gpt.com/), an AI assistant for marketing analytics built on PyMC-Marketing. The repo also contains skills/mmm-modeling, .claude and .cursor directories, but GitHub blocked fetching them, so their contents are unverified. Lift-test integration notebook: https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_lift_test.html . Requires Python >= 3.12."
+
+# ---------------------------------------------------------------
+# Heterogeneous effects and uplift
+# ---------------------------------------------------------------
+- id: econml
+  category: M6
+  subtopic: "Heterogeneous treatment effects"
+  title: "EconML: heterogeneous treatment effect estimation with ML (PyWhy)"
+  authors: "Microsoft Research ALICE / PyWhy contributors"
+  type: package
+  venue: "GitHub (py-why)"
+  url: "https://github.com/py-why/EconML"
+  access: open
+  license: "MIT (some modules BSD-3-Clause from scikit-learn)"
+  level: advanced
+  priority: recommended
+  modules: [M6, M7]
+  summary: "Estimates CATE with double ML, causal forests, meta-learners, orthogonal IV and dynamic DML, with interpretability and policy-learning tools. Built in Microsoft's ALICE project."
+  wiki_use: "HTE and personalization lab: who responds to a coupon or email? The notebooks folder has worked examples to adapt in Colab."
+  tools: [econml, scikit-learn, lightgbm]
+  ai_angle: false
+  download:
+    repo: "https://github.com/py-why/EconML"
+    path: "notebooks/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "GitHub's robots rules blocked listing the notebooks folder, so I couldn't verify individual notebook names (e.g. the customer-scenario case studies). No year given."
+
+- id: dowhy-pywhy
+  category: M6
+  subtopic: "Causal graphs and identification"
+  title: "DoWhy: causal inference with explicit modeling and testing of assumptions (PyWhy)"
+  authors: "PyWhy contributors (originally Microsoft Research)"
+  type: package
+  venue: "GitHub / pywhy.org"
+  url: "https://github.com/py-why/dowhy"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: core
+  modules: [M6]
+  summary: "A four-step workflow (model a DAG, identify, estimate, refute) with refutation tests and graphical causal models for attribution and root-cause analysis."
+  wiki_use: "Teaches 'draw the DAG first'. Use the 'Estimating the Effect of a Member Rewards Program' and online-shop root-cause notebooks as marketing exercises."
+  tools: [dowhy]
+  ai_angle: false
+  download:
+    repo: "https://github.com/py-why/dowhy"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Example notebook index: https://www.pywhy.org/dowhy/main/example_notebooks/nb_index.html (includes member rewards, online shop root-cause, time-decay attribution, and hotel booking cancellations). No year given."
+
+- id: causalml-uber
+  category: M6
+  subtopic: "Uplift modeling"
+  title: "CausalML: uplift modeling and causal inference with ML (Uber)"
+  authors: "Uber Technologies"
+  type: package
+  venue: "GitHub / Read the Docs"
+  url: "https://github.com/uber/causalml"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M6, M7]
+  summary: "Uplift trees and forests, S/T/X/R/DR meta-learners, and Qini and uplift curves for estimating who to target with a marketing treatment from experimental data."
+  wiki_use: "Main uplift lab package. Start with the meta-learner and uplift-tree example notebooks, then apply them to the Hillstrom data."
+  tools: [causalml, scikit-learn, xgboost]
+  ai_angle: false
+  download:
+    repo: "https://github.com/uber/causalml"
+    path: ""
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Examples index: https://causalml.readthedocs.io/en/latest/examples.html (uplift trees, meta-learners, Qini curves with costly treatments, SHAP interpretation). No year given."
+
+- id: scikit-uplift
+  category: M6
+  subtopic: "Uplift modeling"
+  title: "scikit-uplift (sklift): uplift modeling in scikit-learn style"
+  authors: "Shevchenko, M. et al. (maks-sh)"
+  type: package
+  venue: "GitHub / uplift-modeling.com"
+  url: "https://github.com/maks-sh/scikit-uplift"
+  access: open
+  license: "MIT"
+  level: intro
+  priority: core
+  modules: [M6, M7]
+  summary: "Lightweight uplift models (solo, two-model, class transformation), uplift/Qini metrics and plots, and one-line loaders for Hillstrom, Criteo, X5, Lenta and Megafon uplift datasets."
+  wiki_use: "Easiest uplift entry point for non-CS students. Use fetch_hillstrom() and the RetailHero tutorial notebook in Colab."
+  tools: [sklift, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/maks-sh/scikit-uplift"
+    path: "notebooks/"
+    license: "MIT"
+  verified_via: fetch
+  notes: "Tutorials: https://www.uplift-modeling.com/en/latest/tutorials.html . Author name inferred from the GitHub handle; not verified. No year given."
+
+- id: doubleml-python
+  category: M6
+  subtopic: "Double/debiased machine learning"
+  title: "DoubleML: an object-oriented implementation of double machine learning in Python"
+  authors: "Bach, P.; Chernozhukov, V.; Kurz, M. S.; Spindler, M."
+  year: 2022
+  type: package
+  venue: "Journal of Machine Learning Research 23(53), 1-6"
+  url: "https://JMLR.org/papers/v23/21-0862.html"
+  access: open
+  license: "BSD-3-Clause"
+  level: advanced
+  priority: optional
+  modules: [M6, M7]
+  summary: "A scikit-learn-based DML package for partially linear, interactive and IV models. It is the companion software to the Chernozhukov et al. causal ML book."
+  wiki_use: "Optional advanced lab: use ML for nuisance functions without biasing the treatment effect, e.g. the effect of promotions with many controls."
+  tools: [doubleml, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/DoubleML/doubleml-for-py"
+    path: ""
+    license: "BSD-3-Clause"
+  verified_via: fetch
+  notes: "Docs: https://docs.doubleml.org"
+
+- id: hillstrom-email-dataset
+  category: M6
+  subtopic: "Datasets (email experiment / uplift)"
+  title: "MineThatData E-Mail Analytics and Data Mining Challenge (Hillstrom dataset)"
+  authors: "Hillstrom, K. (MineThatData)"
+  year: 2008
+  type: dataset
+  venue: "MineThatData blog"
+  url: "https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M6, M7, M4]
+  summary: "64,000 customers randomized to a men's email, a women's email or no email, with two-week visit, conversion and spend outcomes plus recency, history and channel covariates."
+  wiki_use: "Workhorse dataset for M6: A/B analysis, CUPED-style adjustment, power, heterogeneous effects and uplift targeting. It is about 5 MB and easy to load in Colab."
+  tools: [sklift, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The blog post links a direct CSV. scikit-uplift loads it with fetch_hillstrom() (https://www.uplift-modeling.com/en/latest/api/datasets/fetch_hillstrom.html). No explicit license; it was released publicly for the 2008 challenge."
+
+- id: criteo-uplift-dataset
+  category: M6
+  subtopic: "Datasets (ad incrementality / uplift)"
+  title: "Criteo Uplift Prediction Dataset"
+  authors: "Diemert, E.; Betlei, A.; Renaudin, C.; Amini, M.-R. (Criteo AI Lab)"
+  year: 2018
+  type: dataset
+  venue: "Criteo AI Lab; AdKDD & TargetAd Workshop, KDD 2018"
+  url: "https://ailab.criteo.com/criteo-uplift-prediction-dataset/"
+  access: open
+  license: "CC BY-NC-SA 4.0"
+  level: intermediate
+  priority: recommended
+  modules: [M6, M7, M8]
+  summary: "About 14M users from real ad incrementality tests with treatment, exposure, visit and conversion labels and 12 anonymized features. A benchmark for uplift modeling and for ITT vs. exposure (ghost-ad-style) analysis."
+  wiki_use: "Large-scale ad incrementality exercise. Have students subsample, since the full file is about 3 GB uncompressed."
+  tools: [sklift, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "297 MB compressed, so too large to save in the repo; use sklift's fetch_criteo() or the Criteo download. Version 2.1 fixes a leak in the original 25M-row release. Non-commercial license."
+
+- id: ascarza-2018-retention-futility
+  category: M6
+  subtopic: "Targeting and uplift (marketing anchor)"
+  title: "Retention Futility: Targeting High-Risk Customers Might Be Ineffective"
+  authors: "Ascarza, E."
+  year: 2018
+  type: paper
+  venue: "Journal of Marketing Research 55(1), 80-98"
+  url: "https://journals.sagepub.com/doi/10.1509/jmr.16.0163"
+  doi: "10.1509/jmr.16.0163"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M6, M7, M4]
+  summary: "Field experiments show that targeting customers with the highest churn risk is not the same as targeting those most responsive to a retention offer. Uplift-based targeting beats risk-based targeting."
+  wiki_use: "Key marketing anchor linking M7 prediction to M6 causal targeting. Pair with an uplift exercise on the Hillstrom data."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Metadata confirmed through Crossref. I didn't verify an open-access copy."
+
+- id: hitsch-misra-zhang-targeting
+  category: M6
+  subtopic: "Targeting policy evaluation"
+  title: "Heterogeneous Treatment Effects and Optimal Targeting Policy Evaluation"
+  authors: "Hitsch, G. J.; Misra, S.; Zhang, W."
+  year: 2023
+  type: paper
+  venue: "SSRN working paper"
+  url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3111957"
+  access: free-registration
+  level: advanced
+  priority: recommended
+  modules: [M6, M7]
+  summary: "A framework for building and evaluating customer targeting policies from one randomized dataset using off-policy evaluation. In catalog mailing data, direct CATE methods (including their treatment effect projection) beat outcome-model methods on profit."
+  wiki_use: "Instructor background and an advanced reading on why you evaluate targeting policies by profit, not by prediction accuracy."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The SSRN page (revised Nov 2023, first posted 2018) shows no journal. I believe a version appeared in Quantitative Marketing and Economics (2024) but haven't verified it."
+
+# ---------------------------------------------------------------
+# AI angle: LLMs, causal reasoning, and simulated experiments
+# ---------------------------------------------------------------
+- id: kiciman-2023-causal-reasoning-llms
+  category: M6
+  subtopic: "LLMs and causal reasoning"
+  title: "Causal Reasoning and Large Language Models: Opening a New Frontier for Causality"
+  authors: "Kıcıman, E.; Ness, R.; Sharma, A.; Tan, C."
+  year: 2023
+  type: paper
+  venue: "arXiv:2305.00050"
+  url: "https://arxiv.org/abs/2305.00050"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6, AI]
+  summary: "GPT-4-class models do very well on text-based causal tasks (pairwise causal discovery, counterfactuals, necessary/sufficient causes) but show unpredictable failure modes. The authors suggest pairing LLMs, which supply domain knowledge and DAG drafting, with formal causal methods."
+  wiki_use: "Frames the AI-assisted workflow for M6: let the LLM propose a DAG and confounders, then verify with data and refutation tests (see PyWhy-LLM)."
+  ai_angle: true
+  verified_via: fetch
+  notes: "By DoWhy contributors (Microsoft Research). Current version v3, Aug 2024."
+
+- id: cladder-2023
+  category: M6
+  subtopic: "LLMs and causal reasoning (failure modes)"
+  title: "CLadder: Assessing Causal Reasoning in Language Models"
+  authors: "Jin, Z.; Chen, Y.; Leeb, F.; Gresele, L.; Kamal, O.; Lyu, Z.; Blin, K.; Gonzalez Adauto, F.; Kleiman-Weiner, M.; Sachan, M.; Schölkopf, B."
+  year: 2023
+  type: paper
+  venue: "arXiv:2312.04350"
+  url: "https://arxiv.org/abs/2312.04350"
+  access: open
+  level: advanced
+  priority: optional
+  modules: [M6, AI]
+  summary: "A 10K-question benchmark of associational, interventional and counterfactual queries built from causal graphs. LLMs find formal causal inference rules hard, even with a custom CausalCoT prompt."
+  wiki_use: "Counterpoint to Kıcıman et al.: LLMs talk causality fluently but stumble on formal rung-2/3 reasoning, so students should check identification themselves."
+  ai_angle: true
+  verified_via: fetch
+  notes: "The arXiv page lists no venue; widely cited as NeurIPS 2023 (not verified). The companion 'Can Large Language Models Infer Causation from Correlation?' (Corr2Cause; Jin et al., arXiv:2306.05836, https://arxiv.org/abs/2306.05836) finds 17 LLMs near random at inferring causation from correlations."
+
+- id: qrdata-2024
+  category: M6
+  subtopic: "LLM-written analysis code (failure modes)"
+  title: "Are LLMs Capable of Data-based Statistical and Causal Reasoning? Benchmarking Advanced Quantitative Reasoning with Data (QRData)"
+  authors: "Liu, X.; Wu, Z.; Wu, X.; Lu, P.; Chang, K.-W.; Feng, Y."
+  year: 2024
+  type: paper
+  venue: "Findings of ACL 2024 (arXiv:2402.17644)"
+  url: "https://arxiv.org/abs/2402.17644"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6, AI]
+  summary: "411 data-based statistical and causal questions answered by LLMs that write and run code (program-of-thought, ReAct, code interpreter). GPT-4 reached only 58%, and causal questions that combine domain knowledge with data were hardest."
+  wiki_use: "Evidence for the course's 'trust but verify' rule on AI-generated causal analysis code. Students can replicate a few items with their own assistant."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Data sheets come from textbooks, online materials and papers; the arXiv abstract doesn't name which textbooks."
+
+- id: pywhy-llm
+  category: M6
+  subtopic: "LLM-assisted causal analysis tools"
+  title: "PyWhy-LLM: integrating LLM capabilities into causal analysis"
+  authors: "PyWhy contributors"
+  type: package
+  venue: "GitHub (py-why)"
+  url: "https://github.com/py-why/pywhy-llm"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M6, AI]
+  summary: "An experimental library that uses LLMs as a stand-in domain expert: it suggests confounders, edges and DAGs, proposes backdoor, mediator and IV sets, and critiques a given DAG with suggested negative controls."
+  wiki_use: "Exercise: students let PyWhy-LLM (or a chat assistant) propose a DAG for a marketing question, then defend or reject each edge."
+  tools: [pywhyllm, dowhy]
+  ai_angle: true
+  download:
+    repo: "https://github.com/py-why/pywhy-llm"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Experimental; install with `pip install pywhyllm`. No published release shown. No year given."
+
+- id: horton-homo-silicus
+  category: M6
+  subtopic: "LLM-simulated experiments"
+  title: "Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?"
+  authors: "Horton, J. J.; Filippas, A.; Manning, B. S."
+  year: 2023
+  type: paper
+  venue: "NBER Working Paper 31122"
+  url: "https://www.nber.org/papers/w31122"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6, AI, M8]
+  summary: "Treats LLMs as implicit computational models of humans ('Homo silicus') that can be given endowments and preferences and run through classic behavioral-economics experiments. Results are broadly similar to the originals."
+  wiki_use: "Anchor for the debate 'can a simulated experiment replace a real A/B test?'. Students run a small LLM-simulated survey and compare it with real data."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Originally sole-authored by Horton (2023); the NBER page now lists three authors and a Feb 2026 revision."
+
+- id: aher-2023-turing-experiments
+  category: M6
+  subtopic: "LLM-simulated experiments"
+  title: "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies"
+  authors: "Aher, G.; Arriaga, R. I.; Kalai, A. T."
+  year: 2023
+  type: paper
+  venue: "arXiv:2208.10264"
+  url: "https://arxiv.org/abs/2208.10264"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6, AI]
+  summary: "Proposes 'Turing Experiments' that simulate representative samples of participants. Replicates the Ultimatum Game, garden-path sentences and Milgram, but finds a 'hyper-accuracy distortion' in wisdom-of-crowds tasks for newer models."
+  wiki_use: "Pair with Horton. The hyper-accuracy distortion is a concrete failure mode for simulated consumer panels."
+  ai_angle: true
+  verified_via: fetch
+  notes: "First posted 2022; current v5 July 2023. Widely cited as ICML 2023, though the arXiv page lists no venue."
+
+- id: gui-toubia-llm-simulation-causal
+  category: M6
+  subtopic: "LLM-simulated experiments (causal pitfalls)"
+  title: "The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective"
+  authors: "Gui, G.; Toubia, O."
+  year: 2023
+  type: paper
+  venue: "arXiv:2312.15524 / SSRN"
+  url: "https://arxiv.org/abs/2312.15524"
+  doi: "10.2139/ssrn.4650172"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M6, AI, M8]
+  summary: "When an LLM-simulated subject sees only the treatment (e.g., a price), it silently changes other attributes it should hold fixed, which violates unconfoundedness. Using a real 40-product demand experiment as a benchmark, the authors propose 'unblinding' (revealing the design in the prompt) as a fix."
+  wiki_use: "The single best reading for M6's AI angle: it applies the course's causal concepts (confounding, unconfoundedness) to LLM-simulated marketing experiments."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Marketing authors (Columbia). Current version v3, Nov 2025. No journal listed."
+
+- id: manning-zhu-horton-automated-social-science
+  category: M6
+  subtopic: "LLM agents designing experiments"
+  title: "Automated Social Science: Language Models as Scientist and Subjects"
+  authors: "Manning, B. S.; Zhu, K.; Horton, J. J."
+  year: 2024
+  type: paper
+  venue: "arXiv:2404.11794"
+  url: "https://arxiv.org/abs/2404.11794"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6, AI]
+  summary: "LLM agents use structural causal models to generate hypotheses, design and run simulated experiments with LLM subjects, and analyze them. They get effect directions right but magnitudes poorly."
+  wiki_use: "Example of using LLM agents to help design experiments. Students compare an agent-proposed experiment design with their own power and metric plan."
+  ai_angle: true
+  verified_via: fetch
+
+- id: brand-israeli-ngwe-llm-market-research
+  category: M6
+  subtopic: "LLM-simulated consumers (marketing)"
+  title: "Using LLMs for Market Research"
+  authors: "Brand, J.; Israeli, A.; Ngwe, D."
+  year: 2024
+  type: paper
+  venue: "Harvard Business School Working Paper 23-062"
+  url: "https://www.hbs.edu/faculty/Pages/item.aspx?num=63859"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M6, M4, AI, M8]
+  summary: "GPT-3.5 survey responses give plausible willingness-to-pay estimates similar to human studies. Fine-tuning on past surveys helps for new features but not for new categories or segment differences."
+  wiki_use: "Marketing-specific case for simulated respondents. It links to M4 conjoint and shows where LLM 'experiments' break down."
+  ai_angle: true
+  verified_via: fetch
+  notes: "First issued April 2023; revised July 2024."

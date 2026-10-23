@@ -1,0 +1,30 @@
+# BADM 534: Data Analytics for Marketing Applications
+
+> Course preparation repository for Nathan Yang, with marketing analytics and AI-assisted coding. Current status: resource collection; revised syllabus and assignments pending.
+
+## Course Context
+
+- [Agent Guide](AGENTS.md): Reading order, authority, citations, coding checks, and editing conventions.
+- [Course Manifest](course.json): Machine-readable release pointers; null means not released.
+- [Course Map](COURSE_MAP.md): Eight modules and source routes.
+- [Student and LLM Guide](LLM_GUIDE.md): Context selection and study/debugging prompts.
+- [Portable Context](llms-full.txt): Generated course guides and resource annotations in one text file.
+
+## Course Materials
+
+- [Resources](01_Resources/README.md): Curated topical library.
+- [Curated Catalog](01_Resources/RESOURCE_CATALOG.json): Resource metadata and short IDs.
+- [Additional Catalog](01_Resources/00_Index/resource_catalog.json): Separate, overlapping collection with descriptive IDs.
+- [Syllabus](02_Syllabus/README.md): Current syllabus status.
+- [Data](03_Data/README.md): Course-selected data and dictionaries.
+- [Assignments](04_Assignments/README.md): Released briefs, rubrics, and AI-use rules when added.
+- [Slides](05_Slides/README.md): Slide decks and Markdown companions.
+- [Notes](06_Lecture_Notes/README.md): Written lessons.
+- [Labs](07_Labs/README.md): Adapted and verified code when released.
+
+## Maintenance
+
+- [Contribution Guide](CONTRIBUTING.md): Add, describe, and publish materials.
+- [Templates](09_Templates/README.md): Consistent materials, assignments, data dictionaries, and labs.
+
+Private links require authorized access. This file neither grants access nor makes a service read the repository automatically. Source documents take precedence over generated summaries. Resource priorities are recommendations, not course requirements.

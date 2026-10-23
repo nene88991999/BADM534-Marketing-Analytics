@@ -1,0 +1,250 @@
+# M2 · Customer Data and Visualization
+
+32 resources (7 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+
+Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
+
+## Contents
+
+- [Customer data](#customer-data) (4)
+- [Privacy and customer data](#privacy-and-customer-data) (4)
+- [Visualization principles](#visualization-principles) (5)
+- [Visualization in Python](#visualization-in-python) (5)
+- [Communicating results: Pyramid Principle, SCQA, storytelling](#communicating-results-pyramid-principle-scqa-storytelling) (8)
+- [AI-generated charts and analysis](#ai-generated-charts-and-analysis) (6)
+
+## Customer data
+
+- [core] **[RFM and CLV: Using Iso-Value Curves for Customer Base Analysis](http://www.brucehardie.com/papers/rfm_clv_2005-02-16.pdf)** (2005) — Fader, P.S.; Hardie, B.G.S.; Lee, K.L. *Journal of Marketing Research (2005)*
+  `paper` · `advanced` · `access: open`
+  Links RFM summaries to a probability model (Pareto/NBD plus gamma-gamma) so that recency, frequency and monetary value map into CLV through 'iso-value' curves.
+  *Use in wiki:* Academic anchor that turns M2's descriptive RFM into M4's CLV; instructor background plus a figure to show in class.
+  [Open-access copy](http://www.brucehardie.com/papers/rfm_clv_2005-02-16.pdf)
+  *Note:* The fetched PDF is the authors' February 2005 working-paper version and does not name the journal. Publication in JMR 42(4), 2005, is from instructor knowledge and was not verified here; no DOI seen.
+
+- [recommended] **[Google Analytics demo account](https://support.google.com/analytics/answer/6367342)** (2026) — Google. *Analytics Help*
+  `documentation` · `intro` · `access: free-registration`
+  Free, viewer-level access to live GA4 properties (Google Merchandise Store web data and the Flood-It! app) so students can explore standard reports and explorations.
+  *Use in wiki:* In-class walkthrough of acquisition, engagement and monetization reports before moving to raw data in Python.
+  Tools: Google Analytics 4
+  *Note:* Limits: obfuscated data, no export, no Data API access.
+
+- [recommended] **[What is a CDP? (CDP Institute definition)](https://www.cdpinstitute.org/learning-center/what-is-a-cdp/)** (2026) — CDP Institute (Raab, D.). *CDP Institute Learning Center*
+  `website` · `intro` · `access: open`
+  Industry definition of a CDP as 'software that creates and maintains a persistent, unified customer record that is accessible to other systems', with own-store, warehouse-native (composable) and hybrid deployments.
+  *Use in wiki:* Short reading for the 'where first-party data lives' lecture; connects identity resolution to the student datasets.
+  *Note:* Vendor-neutral industry body, but not academic. Definition labeled as the 2026 version.
+
+- [optional] **[[GA4] Cohort exploration](https://support.google.com/analytics/answer/9670133)** (2026) — Google. *Analytics Help*
+  `documentation` · `intro` · `access: open`
+  Defines cohort settings in GA4: inclusion criteria, return criteria, granularity, and standard, rolling or cumulative calculation.
+  *Use in wiki:* Concept page for cohort retention; students then build the same table from Online Retail II in pandas.
+  Tools: Google Analytics 4
+  *Note:* No verified Python cohort-analysis tutorial was found before the search budget ran out (gap).
+
+## Privacy and customer data
+
+- [recommended] **[The Economics of Privacy](https://www.aeaweb.org/articles?id=10.1257/jel.54.2.442)** (2016) — Acquisti, A.; Taylor, C.; Wagman, L. *Journal of Economic Literature 54(2), 442-492*
+  `paper` · `advanced` · `access: library`
+  Survey of theory and evidence on the value of protecting versus disclosing personal data. It concludes there is no unified theory, that privacy protection can raise or lower welfare, and that consumers often cannot see how their data is used.
+  *Use in wiki:* Instructor background and an optional reading that frames privacy as a trade-off rather than a compliance checklist.
+  DOI [10.1257/jel.54.2.442](https://doi.org/10.1257/jel.54.2.442)
+
+- [optional] **[California Consumer Privacy Act (CCPA)](https://oag.ca.gov/privacy/ccpa)** (2026) — State of California Department of Justice, Office of the Attorney General. *oag.ca.gov*
+  `website` · `intro` · `access: open`
+  Official summary of CCPA/CPRA consumer rights (know, delete, opt out including Global Privacy Control, correct, limit sensitive data) and business obligations.
+  *Use in wiki:* Reference box on the privacy page; ties opt-out signals to why first-party datasets have gaps.
+  *Note:* Last updated Aug 28, 2026 at time of fetch.
+
+- [optional] **[General Data Protection Regulation (GDPR), structured text](https://gdpr-info.eu/)** (2016) — intersoft consulting (unofficial consolidation of Regulation (EU) 2016/679). *gdpr-info.eu*
+  `website` · `intro` · `access: open`
+  Searchable article-by-article GDPR text with linked recitals, covering lawful basis (Art. 6), consent (Art. 7), and data-subject rights including erasure, portability and profiling (Arts. 15-22).
+  *Use in wiki:* Quick lookup when discussing international students' home-market rules and consent-based data collection.
+  *Note:* Unofficial; the site links to the authoritative EUR-Lex PDF.
+
+- [optional] **[Protecting Personal Information: A Guide for Business](https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business)** (2016) — U.S. Federal Trade Commission. *FTC Business Guidance*
+  `report` · `intro` · `access: open`
+  Five plain-language principles for handling customer data: take stock, scale down, lock it, pitch it, plan ahead.
+  *Use in wiki:* Data-handling rules for the team project (minimize, de-identify, never commit raw PII to GitHub or paste it into chatbots).
+
+## Visualization principles
+
+- [core] **[The Python Graph Gallery](https://python-graph-gallery.com/)** (2026) — Holtz, Y. *python-graph-gallery.com*
+  `website` · `intro` · `access: open` · `0BSD (site repo)`
+  Hundreds of reproducible matplotlib, seaborn, plotly and plotnine examples grouped by chart purpose (distribution, correlation, ranking, flow), following the Data-to-Viz classification.
+  *Use in wiki:* Go-to reference: students find a chart type here, then ask an AI assistant to adapt the code to their own data.
+  Tools: matplotlib, seaborn, plotly, plotnine
+  *Note:* Site source at https://github.com/holtzy/The-Python-Graph-Gallery (0BSD). Repo size not checked, so no download entry.
+
+- [recommended] **[From Data to Viz](https://www.data-to-viz.com/)** (2026) — Holtz, Y.; Healy, C. *data-to-viz.com*
+  `website` · `intro` · `access: open`
+  Decision tree for choosing a chart from the data type, with 'common mistakes' notes per chart and a caveats gallery (pie charts, cut y-axes, overplotting, rainbow palettes), linked to Python code.
+  *Use in wiki:* In-class exercise: given a marketing question and dataset, pick the chart with the tree and defend the choice.
+
+- [recommended] **[Data Visualization: A Practical Introduction](https://socviz.co/)** (2018) — Healy, K. *Princeton University Press (draft readable online)*
+  `book` · `intermediate` · `access: open`
+  Practical introduction to the why and how of good graphics, from perception and honesty to workflow, with a full draft readable online.
+  *Use in wiki:* Assign Chapter 1 ('Look at data') for perception and honesty principles; skip the R code.
+  Tools: R, ggplot2
+  *Note:* Code is R/ggplot2, not Python. The online text is a 2018-04-25 draft. The full subtitle and the free-access status are from instructor knowledge; the page shows purchase links but no license.
+
+- [recommended] **[The Visual Display of Quantitative Information (2nd ed.)](https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/)** (2001) — Tufte, E.R. *Graphics Press*
+  `book` · `intro` · `access: paid`
+  Classic on graphical integrity, data-ink, chartjunk and small multiples (1st ed. 1983, 2nd ed. 2001).
+  *Use in wiki:* Short excerpts on the lie factor and data-ink ratio; students critique an AI-generated chart against Tufte's rules.
+
+- [optional] **[Communicating with Interactive Articles](https://distill.pub/2020/communicating-with-interactive-articles/)** (2020) — Hohman, F.; Conlen, M.; Heer, J.; Chau, D.H. *Distill 5(9), e28*
+  `paper` · `intermediate` · `access: open` · `CC BY 4.0`
+  Review of research on interactive articles (details-on-demand, prediction prompts, simulations, personalization) and the evidence on when interactivity helps or costs too much.
+  *Use in wiki:* Design reference for the interactive HTML wiki, and inspiration for ambitious team blog posts.
+  DOI [10.23915/distill.00028](https://doi.org/10.23915/distill.00028)
+
+## Visualization in Python
+
+- [core] **[Matplotlib Quick start guide (and official cheatsheets)](https://matplotlib.org/stable/users/explain/quick_start.html)** (2026) — Matplotlib development team. *matplotlib.org (v3.11)*
+  `documentation` · `intro` · `access: open` · `AI angle`
+  Official intro to Figure, Axes and Artists, and to the explicit (object-oriented) versus implicit (pyplot) interfaces, plus styling, labels, scales, dates and colormaps.
+  *Use in wiki:* Teach the fig, ax = plt.subplots() pattern so students can read and fix AI-generated plotting code, which often mixes the two interfaces.
+  Tools: matplotlib
+  *Note:* Cheatsheet PDFs: https://matplotlib.org/cheatsheets/cheatsheets.pdf and https://matplotlib.org/cheatsheets/handout-beginner.pdf
+
+- [core] **[seaborn user guide and tutorial](https://seaborn.pydata.org/tutorial.html)** (2024) — Waskom, M. et al. *seaborn.pydata.org (v0.13.2)*
+  `documentation` · `intro` · `access: open`
+  Tutorial on statistical graphics: relational, distribution and categorical plots, error bars, regression fits, multi-plot grids, palettes, and the seaborn.objects interface.
+  *Use in wiki:* Default library for M2 exploratory charts of customer segments; the error-bar chapter supports M3.
+  Tools: seaborn, matplotlib, pandas
+
+- [recommended] **[Plotly Express in Python](https://plotly.com/python/plotly-express/)** (2026) — Plotly. *plotly.com*
+  `documentation` · `intro` · `access: open`
+  High-level px API that builds interactive figures in one call; the figures export to HTML and can be embedded in web pages and Dash apps.
+  *Use in wiki:* Use for interactive charts in student blog posts and in the GitHub Pages wiki.
+  Tools: plotly
+  *Note:* The page also promotes Plotly Studio (AI app builder), a commercial product.
+
+- [optional] **[Vega-Altair: Declarative Visualization in Python](https://altair-viz.github.io/)** (2026) — Vega-Altair developers. *altair-viz.github.io (v6)*
+  `documentation` · `intermediate` · `access: open`
+  Grammar-of-graphics library built on Vega-Lite; charts are specified as data, encodings and marks and render as interactive web graphics.
+  *Use in wiki:* Alternative for interactive, web-native charts on the wiki; its declarative specs are easy for LLMs to generate and for students to read.
+  Tools: altair
+  *Note:* Gallery: https://altair-viz.github.io/gallery/index.html
+
+- [optional] **[Visualization Curriculum (interactive Altair notebooks)](https://idl.uw.edu/visualization-curriculum/)** (2020) — UW Interactive Data Lab (Heer, J. et al.). *University of Washington IDL*
+  `notebook` · `intro` · `access: open` · `BSD-3-Clause`
+  Seven Colab-ready notebooks teaching visualization principles through Altair: marks and encodings, transforms, scales and legends, multi-view composition, interaction, maps, plus a debugging guide.
+  *Use in wiki:* Embed one notebook (marks and encoding) as an in-class activity on encoding choices.
+  Tools: altair, Colab · Local copy: `02_M2_Customer_Data_and_Visualization/repos/uwdata__visualization-curriculum`
+  *Note:* Year approximate; not confirmed on the page.
+
+## Communicating results: Pyramid Principle, SCQA, storytelling
+
+- [core] **[storytelling with data: a data visualization guide for business professionals](https://www.storytellingwithdata.com/books)** (2015) — Knaflic, C.N. *Wiley*
+  `book` · `intro` · `access: paid`
+  Business-oriented guide to context, choosing visuals, removing clutter, focusing attention and telling a story. The companion site adds free makeovers, a chart guide, a podcast and sample chapters.
+  *Use in wiki:* Core M2 reading for the blog-post deliverable; use SWD 'makeovers' as before-and-after critique exercises.
+  *Note:* Year and publisher (2015, Wiley) are from instructor knowledge; the books page links to Wiley but shows no dates. Free chart guide: https://www.storytellingwithdata.com/chart-guide . Workbook 'let's practice!' has exercise solutions on the site.
+
+- [core] **[The Minto Pyramid Principle: Logic in Writing, Thinking and Problem Solving](https://www.barbaraminto.com/)** (1996) — Minto, B. *Minto International (barbaraminto.com)*
+  `book` · `intro` · `access: paid`
+  The source text on top-down, answer-first business writing: a governing thought supported by MECE groups of ideas, opened with the Situation-Complication-Question framework.
+  *Use in wiki:* Core reading for M2's communication unit and the template for every project blog post and in-class readout.
+  *Note:* The 1996 revised edition is the authoritative one (originally 1987; the Pearson reissue is not the revised text, per Minto). Her site calls the intro the 'SCQ Framework'; SCQA adds the Answer. The official online course costs $1,200. No free official summary.
+
+- [recommended] **[Creating a Blog (Quarto) and Publishing to GitHub Pages](https://quarto.org/docs/websites/website-blog.html)** (2026) — Posit / Quarto. *quarto.org*
+  `documentation` · `intro` · `access: open`
+  How to create a Quarto blog (quarto create project blog) whose posts can be Jupyter notebooks or .qmd files with frozen outputs, and how to publish it to GitHub Pages.
+  *Use in wiki:* Recommended toolchain for team blog posts, and a candidate engine for the course wiki itself.
+  Tools: Quarto, Jupyter, GitHub Pages
+  *Note:* GitHub Pages guide (verified): https://quarto.org/docs/publishing/github-pages.html . Three options: render to docs/, 'quarto publish gh-pages', or a GitHub Action; use freeze: auto to avoid re-running notebooks in CI.
+
+- [recommended] **[Minto Pyramid (Untools)](https://untools.co/minto-pyramid/)** (2026) — Untools. *untools.co*
+  `website` · `intro` · `access: open`
+  One-page summary with an example: start with the conclusion (BLUF), give key supporting points, then supporting data.
+  *Use in wiki:* Embed as the quick-reference card; students run their draft blog post through its three steps.
+  *Note:* Does not cover SCQA. All rights reserved, so link rather than copy.
+
+- [recommended] **[Advice to aspiring data scientists: start a blog](http://varianceexplained.org/r/start-blog/)** (2017) — Robinson, D. *Variance Explained*
+  `blog` · `intro` · `access: open`
+  Widely shared essay on why public analysis blog posts build skills, a portfolio and feedback, and why not to wait for an audience.
+  *Use in wiki:* Motivation reading when introducing the blog-post-plus-GitHub project format.
+  *Note:* The fetch confirmed the author and content; the title and 2017 date are from memory, not shown in the fetched text.
+
+- [optional] **[Barbara Minto: 'MECE: I invented it, so I get to say how to pronounce it'](https://www.mckinsey.com/alumni/news-and-events/global-news/alumni-news/barbara-minto-mece-i-invented-it-so-i-get-to-say-how-to-pronounce-it)** (2026) — McKinsey Alumni Center. *McKinsey & Company Alumni News*
+  `blog` · `intro` · `access: open`
+  Free interview in which Minto explains the pyramid (summary point over logically grouped ideas), the origin of MECE, and why thinking comes before slides.
+  *Use in wiki:* Free, authoritative 10-minute primer to assign in place of the book.
+  *Note:* Publication date not shown on the page; the year field is the fetch year, not the publication year.
+
+- [optional] **[Minto Pyramid & SCQA (ModelThinkers)](https://modelthinkers.com/mental-model/minto-pyramid-scqa)** (2026) — ModelThinkers. *modelthinkers.com*
+  `website` · `intro` · `access: freemium`
+  Summary of SCQA (situation, complication, question, answer) as the pyramid's introduction, with action-statement recommendations and MECE support; notes the limits of answer-first framing.
+  *Use in wiki:* Short SCQA explainer; the free preview covers the key structure.
+  *Note:* Partly paywalled (members-only sections, US$5/month). No fully open SCQA summary was verified (gap).
+
+- [optional] **[The Cognitive Style of PowerPoint: Pitching Out Corrupts Within](https://www.edwardtufte.com/book/the-cognitive-style-of-powerpoint-pitching-out-corrupts-within-ebook/)** (2006) — Tufte, E.R. *Graphics Press (32-page eBook)*
+  `book` · `intro` · `access: paid`
+  Essay ($5 PDF) arguing that bullet-outline slideware weakens reasoning and distorts statistical analysis.
+  *Use in wiki:* Counterpoint reading in the communication unit, and a reason the course uses a blog post instead of a deck.
+  *Note:* Year from memory (2nd ed. 2006); the page does not show it. For examples of consulting-style action titles, Analyst Academy keeps a free list of 600+ public consulting decks: https://www.theanalystacademy.com/consulting-presentations/ (verified; the site promotes paid courses).
+
+## AI-generated charts and analysis
+
+- [core] **[LIDA: A Tool for Automatic Generation of Grammar-Agnostic Visualizations and Infographics using Large Language Models](https://aclanthology.org/2023.acl-demo.11)** (2023) — Dibia, V. *ACL 2023 System Demonstrations, pp. 113-126*
+  `paper` · `intermediate` · `access: open` · `MIT (code)` · `AI angle`
+  Microsoft Research system that treats visualization as code generation in four stages: a Summarizer that describes the data, a Goal Explorer that proposes questions, a VisGenerator that writes, repairs and filters matplotlib, seaborn or Altair code, and an Infographer.
+  *Use in wiki:* Explains what Gemini, ChatGPT and Claude do under the hood when they 'make a chart'; run the tutorial notebook in Colab as a demo.
+  DOI [10.18653/v1/2023.acl-demo.11](https://doi.org/10.18653/v1/2023.acl-demo.11) · [Open-access copy](https://arxiv.org/abs/2303.02927) · Tools: lida, matplotlib, seaborn, altair · Local copy: `02_M2_Customer_Data_and_Visualization/repos/microsoft__lida`
+  *Note:* The README warns that LIDA executes generated code, so run it in a sandbox. Maintenance activity unclear. Supports OpenAI, Azure, PaLM, Cohere, Hugging Face and local models via llmx. No error-rate figures were confirmed on the fetched abstract pages.
+
+- [recommended] **[Data Formulator: AI-powered data exploration with visualizations](https://github.com/microsoft/data-formulator)** (2026) — Microsoft Research. *GitHub (microsoft/data-formulator)*
+  `tool` · `intro` · `access: open` · `MIT` · `AI angle`
+  Open-source app that mixes drag-and-drop encoding with natural-language prompts, so AI agents transform data and build charts while users branch into alternative analyses. Works with OpenAI, Azure, Anthropic or Ollama models.
+  *Use in wiki:* Hands-on lab: students explore a customer dataset in Data Formulator, then rebuild the best chart in their own notebook code.
+  Tools: data_formulator, uv
+  *Note:* Install with 'uvx data_formulator' or pip; runs locally at localhost:5567. Latest stable 0.7 (May 2026), 0.8 beta (Aug 2026). Needs an LLM API key.
+
+- [recommended] **[DABStep: Data Agent Benchmark for Multi-step Reasoning](https://huggingface.co/blog/dabstep)** (2025) — Adyen; Hugging Face. *Hugging Face blog*
+  `blog` · `intermediate` · `access: open` · `AI angle`
+  Benchmark of over 450 real-world data-analysis tasks that combine tables with documentation. At launch (Feb 2025) the best agent scored only 16% on hard tasks (o3-mini; Claude Sonnet 12%).
+  *Use in wiki:* A sobering number for students: AI agents handle easy descriptive analysis but often fail multi-step business questions, so verify.
+  *Note:* Leaderboard: https://huggingface.co/spaces/adyen/DABstep (scores have since risen; check the current state before citing). Google's Colab agent claimed 4th place in March 2025. Earlier, more optimistic baseline: Cheng, Li and Bing (2023), 'Is GPT-4 a Good Data Analyst?', https://arxiv.org/abs/2305.15038 (verified).
+
+- [recommended] **[SWD + AI: data storytelling with AI](https://www.storytellingwithdata.com/ai-data-storytelling)** (2025) — storytelling with data (Knaflic, C.N. et al.). *storytellingwithdata.com*
+  `website` · `intro` · `access: open` · `AI angle`
+  Free guide, videos and blog series on using AI as a 'thought partner' for data storytelling. It compares five AI tools on one dataset and shows that prompting with SWD principles improves AI-made graphs.
+  *Use in wiki:* Lab: students get a default chart from Gemini or ChatGPT, then re-prompt it with SWD principles and compare.
+  *Note:* Year approximate; one part of the blog series was marked 'coming soon' when fetched.
+
+- [recommended] **[VisEval: A Benchmark for Data Visualization in the Era of Large Language Models](https://arxiv.org/abs/2407.00981)** (2024) — Chen, N.; Zhang, Y.; Xu, J.; Ren, K.; Yang, Y. *arXiv:2407.00981*
+  `paper` · `advanced` · `access: open` · `AI angle`
+  Natural-language-to-visualization benchmark (2,524 queries over 146 databases) with automated checks of validity, legality and readability; it documents recurring LLM chart-generation failures.
+  *Use in wiki:* Evidence for the course rule that AI-made charts must be checked; turn its three criteria into a rubric for student chart audits.
+  *Note:* The arXiv page lists no peer-reviewed venue; publication in IEEE TVCG (VIS 2024) is believed but was not verified.
+
+- [optional] **[How Good (Or Bad) Are LLMs at Detecting Misleading Visualizations?](https://arxiv.org/abs/2407.17291)** (2024) — Lo, L.Y.-H.; Qu, H. *arXiv:2407.17291*
+  `paper` · `intermediate` · `access: open` · `AI angle`
+  Tests four multimodal LLMs with nine prompting strategies on misleading real-world charts (up to 21 issue types). Detection is promising but depends heavily on the prompt.
+  *Use in wiki:* Exercise: students ask an AI to critique a deliberately misleading chart (truncated axis, dual axis) and compare its answer with their own.
+
+## AI-assisted coding angle for this module
+
+Resources in this folder that show the method done with AI help, LLM versions of the method, or documented failure modes of AI-written analysis:
+
+- [Matplotlib Quick start guide (and official cheatsheets)](https://matplotlib.org/stable/users/explain/quick_start.html)
+- [LIDA: A Tool for Automatic Generation of Grammar-Agnostic Visualizations and Infographics using Large Language Models](https://aclanthology.org/2023.acl-demo.11)
+- [Data Formulator: AI-powered data exploration with visualizations](https://github.com/microsoft/data-formulator)
+- [DABStep: Data Agent Benchmark for Multi-step Reasoning](https://huggingface.co/blog/dabstep)
+- [SWD + AI: data storytelling with AI](https://www.storytellingwithdata.com/ai-data-storytelling)
+- [VisEval: A Benchmark for Data Visualization in the Era of Large Language Models](https://arxiv.org/abs/2407.00981)
+- [How Good (Or Bad) Are LLMs at Detecting Misleading Visualizations?](https://arxiv.org/abs/2407.17291)
+
+## Also relevant (catalogued in other folders)
+
+- **`01_M1_Marketing_Analytics_and_Python`**: [10 minutes to pandas (official quick start)](https://pandas.pydata.org/docs/user_guide/10min.html); [Plotting and Programming in Python (Software Carpentry)](https://swcarpentry.github.io/python-novice-gapminder)
+- **`04_M4_Conjoint_Segmentation_CLV`**: [PyMC-Marketing CLV Quickstart (BG/NBD + Gamma-Gamma) and CLV model notebooks](https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html)
+- **`08_M8_Current_Topics_in_Marketing`**: [Update on Plans for Privacy Sandbox Technologies](https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies); [Anthropic Economic Index](https://www.anthropic.com/economic-index); [The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report)
+- **`10_AI_Coding_Concepts_and_Evidence`**: [Stack Overflow Developer Survey 2025: AI](https://survey.stackoverflow.co/2025/ai/); [How Do Analysts Understand and Verify AI-Assisted Data Analyses?](https://arxiv.org/abs/2309.10947); [Stack Overflow Developer Survey 2026: AI](https://survey.stackoverflow.co/2026/ai); [Is GPT-4 a Good Data Analyst?](https://arxiv.org/abs/2305.15038)
+- **`11_AI_Coding_Tools_and_Workflows`**: [Claude Code data usage (training, retention, telemetry)](https://code.claude.com/docs/en/data-usage); [Colab FAQ: AI features, data use, and Colab Pro for Education](https://research.google.com/colaboratory/faq.html); [Create and edit files with Claude (code execution and file creation)](https://support.claude.com/en/articles/12111783); [Data analysis with ChatGPT](https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt); [Google Colab: AI-powered notebooks (Gemini in Colab)](https://developers.google.com/colab); [Claude Code: A Highly Agentic Coding Assistant (DeepLearning.AI)](https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant); [Data Science Agent in Colab: The future of data analysis with Gemini](https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/); [Enterprise privacy at OpenAI (business data commitments)](https://openai.com/enterprise-privacy/); [marimo: generate notebooks with AI (built-in assistant, marimo pair, text-to-notebook)](https://docs.marimo.io/guides/generate_with_ai/); [pandera: statistical data testing for DataFrames](https://github.com/unionai-oss/pandera); [Julius AI](https://julius.ai); [Lovable (AI full-stack web app builder)](https://docs.lovable.dev/introduction); [Replit Agent](https://docs.replit.com/replitai/agent); [v0 by Vercel](https://v0.app/docs); [Build Apps with Windsurf's AI Coding Agents (DeepLearning.AI)](https://www.deeplearning.ai/short-courses/build-apps-with-windsurfs-ai-coding-agents/)
+- **`12_AI_Coding_Pedagogy_and_Policy`**: [Enterprise GenAI: AI Apps (University of Illinois)](https://genai.illinois.edu/ai-apps/)
+- **`20_Datasets`**: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce); [Google Analytics 4 sample ecommerce dataset (Google Merchandise Store) in BigQuery](https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset); [R for Marketing Research and Analytics: companion data, code and slides](https://r-marketing.r-forge.r-project.org/); [Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii); [dunnhumby Source Files: The Complete Journey, Breakfast at the Frat, Carbo-Loading, Let's Get Sort-of-Real](https://www.dunnhumby.com/source-files/); [Yelp Open Dataset](https://business.yelp.com/data/resources/open-dataset/); [Online Shoppers Purchasing Intention Dataset](https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset); [Kaggle Datasets](https://www.kaggle.com/datasets); [TidyTuesday weekly datasets](https://github.com/rfordatascience/tidytuesday)
+- **`21_Open_Textbooks_and_Courses`**: [Python for Data Analysis, 3rd Edition (Open Access)](https://wesmckinney.com/book/); [Python for Marketing Research and Analytics](https://python-marketing-research.github.io/); [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/); [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/); [Coding for Economists](https://aeturrell.github.io/coding-for-economists/); [Data 100 Course Notes: Principles and Techniques of Data Science](https://ds100.org/course-notes/); [Data Science DISCOVERY (University of Illinois)](https://discovery.cs.illinois.edu/); [Dealing with Data (NYU teaching notebooks)](https://github.com/ipeirotis/dealing_with_data); [Kaggle Learn micro-courses](https://www.kaggle.com/learn); [QuantEcon DataScience: Introduction to Economic Modeling and Data Science](https://datascience.quantecon.org/); [Think Stats, 3rd Edition](https://allendowney.github.io/ThinkStats/); [Hands-On Data Science for Marketing (code repository)](https://github.com/PacktPublishing/Hands-On-Data-Science-for-Marketing)
+- **`22_Wiki_Design_and_Hosting`**: [Packages built in Pyodide](https://pyodide.org/en/stable/usage/packages-in-pyodide.html); [Quickstart for GitHub Pages](https://docs.github.com/en/pages/quickstart); [Observable Framework](https://observablehq.github.io/framework/); [The Pudding](https://pudding.cool/)

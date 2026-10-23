@@ -1,0 +1,1454 @@
+# BADM 534 resource search: DATASETS and TEXTBOOKS
+# Compiled 2026-10-23. All URLs verified by WebFetch or seen in search results (see verified_via).
+
+# =====================================================================
+# DATASETS
+# =====================================================================
+
+- id: uci-online-retail-ii
+  category: DATASETS
+  subtopic: "Transactions / RFM / CLV"
+  title: "Online Retail II"
+  authors: "Chen, D."
+  year: 2012
+  type: dataset
+  venue: "UCI Machine Learning Repository"
+  url: "https://archive.ics.uci.edu/dataset/502/online+retail+ii"
+  doi: "10.24432/C5CG6D"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: core
+  modules: [M1, M2, M4]
+  summary: "1,067,371 invoice lines from a UK online retailer, Dec 2009 to Dec 2011, in a single 43.5 MB xlsx file (invoice, stock code, quantity, price, customer ID, country)."
+  wiki_use: "Default dataset for M2 cleaning and visualization and for M4 RFM segmentation and CLV exercises. It is small enough for Colab."
+  tools: [pandas, openpyxl]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The original Online Retail (I) has 541,909 rows (Dec 2010 to Dec 2011), 22.6 MB, CC BY 4.0, DOI 10.24432/C5BW33, at https://archive.ics.uci.edu/dataset/352/online+retail . Expect cancellations/returns and missing customer IDs to clean; check these on load."
+
+- id: olist-brazilian-ecommerce
+  category: DATASETS
+  subtopic: "Transactions / e-commerce marketplace"
+  title: "Brazilian E-Commerce Public Dataset by Olist"
+  authors: "Olist"
+  year: 2021
+  type: dataset
+  venue: "Kaggle"
+  url: "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce"
+  access: free-registration
+  license: "CC BY-NC-SA 4.0"
+  level: intermediate
+  priority: core
+  modules: [M2, M4, M5, M7]
+  summary: "About 100,000 orders from the Brazilian marketplace Olist, in relational tables covering customers, sellers, products, payments, delivery and review scores/text. About 126 MB."
+  wiki_use: "Strong team-project dataset: practice joins, analyze delivery delay against review score, use the Portuguese review text in M5 (a good LLM-translation exercise), and model repeat purchase in M7."
+  tools: [pandas, duckdb]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The license, size and 'last updated 2021-10-01' come from the Kaggle API. The companion 'Marketing Funnel by Olist' dataset (Kaggle ref olistbr/marketing-funnel-olist) has about 8k marketing-qualified leads from Jun 2017 to Jun 2018, 875 KB, CC BY-NC-SA 4.0, and joins to orders via seller_id."
+
+- id: dunnhumby-source-files
+  category: DATASETS
+  subtopic: "Transactions / promotions / campaigns"
+  title: "dunnhumby Source Files: The Complete Journey, Breakfast at the Frat, Carbo-Loading, Let's Get Sort-of-Real"
+  authors: "dunnhumby"
+  type: dataset
+  venue: "dunnhumby"
+  url: "https://www.dunnhumby.com/source-files/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M2, M3, M4, M6]
+  summary: "Free retail datasets. The Complete Journey has two years of all-category transactions for 2,500 frequent-shopper households, with demographics and direct-marketing campaign history. Breakfast at the Frat has 156 weeks of store-week sales, prices and promotions for four categories. Carbo-Loading has household transactions in pasta, sauce, syrup and pancake mix. Let's Get Sort-of-Real is a large simulated set (4.3 GB full, with smaller samples)."
+  wiki_use: "Use The Complete Journey for campaign-response and CLV projects, and Breakfast at the Frat for M3 price/promotion regression and elasticity exercises."
+  tools: [pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Direct downloads, with no registration requirement visible. The license is on a linked Terms and Conditions page that was not reviewed. A Kaggle mirror of The Complete Journey (ref frtgnn/dunnhumby-the-complete-journey, 847 MB, listed under ODbL) also exists. Separately, 84.51 released a different 'Complete Journey' (801 households, one year, about 1.47M transactions) as the pip-installable completejourney_py (MIT code, Parquet): https://github.com/cunningjames/completejourney_py . Its README describes that data as simulated and for educational use only, which makes it the easiest Colab option."
+
+- id: instacart-2017
+  category: DATASETS
+  subtopic: "Market basket / reorder prediction"
+  title: "The Instacart Online Grocery Shopping Dataset 2017"
+  authors: "Instacart"
+  year: 2017
+  type: dataset
+  venue: "Instacart tech blog"
+  url: "https://tech.instacart.com/3-million-instacart-orders-open-sourced-d40d29ead6f2"
+  access: free-registration
+  license: "Provided as-is for non-commercial use, subject to Instacart Terms (per release post)"
+  level: intermediate
+  priority: recommended
+  modules: [M4, M7]
+  summary: "Over 3 million grocery orders from more than 200,000 users, with 4 to 100 orders each, including order sequence, timing and product/aisle/department."
+  wiki_use: "Use for market-basket (association-rule) analysis, reorder prediction and product-embedding exercises."
+  tools: [pandas, mlxtend]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The post links to https://www.instacart.com/datasets/grocery-shopping-2017 for download (not tested; the original S3 hosting may be gone). A Kaggle mirror (ref psparks/instacart-market-basket-analysis, 713 MB) is labeled CC0 by its uploader. That conflicts with Instacart's non-commercial terms, so follow Instacart's terms."
+
+- id: hm-personalized-fashion
+  category: DATASETS
+  subtopic: "Recommendations / fashion retail"
+  title: "H&M Personalized Fashion Recommendations (Kaggle competition data)"
+  authors: "H&M Group; Kaggle"
+  type: dataset
+  venue: "Kaggle"
+  url: "https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations"
+  access: free-registration
+  level: advanced
+  priority: optional
+  modules: [M7]
+  summary: "Kaggle competition data for building product recommendations from customers' previous purchases."
+  wiki_use: "Optional advanced team-project dataset for recommender systems. Give students a pre-sampled slice."
+  tools: [pandas, lightgbm]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Only the competition metadata could be fetched; the Data and Rules tabs did not load. The data is known to include article metadata, customers, transactions and product images and to run to many GB, but file sizes and the license were not verified. Students must accept the competition rules to download."
+
+- id: ga4-obfuscated-sample-ecommerce
+  category: DATASETS
+  subtopic: "Web analytics / GA4 / BigQuery"
+  title: "Google Analytics 4 sample ecommerce dataset (Google Merchandise Store) in BigQuery"
+  authors: "Google"
+  year: 2021
+  type: dataset
+  venue: "BigQuery public datasets"
+  url: "https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset"
+  access: free-registration
+  license: "Docs CC BY 4.0; code samples Apache 2.0; dataset under Google terms"
+  level: intermediate
+  priority: core
+  modules: [M2, M6, M7]
+  summary: "Obfuscated GA4 event export from the Google Merchandise Store, covering Nov 1, 2020 to Jan 31, 2021. Query it as bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*; it runs within the BigQuery Sandbox or free tier."
+  wiki_use: "Web-analytics lab: SQL from Colab for funnels, sessions, traffic sources and purchase conversion. It is a natural place for AI-assisted SQL writing, with students checking the generated queries against the schema."
+  tools: [BigQuery, google-cloud-bigquery, SQL]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Contains placeholder values (<Other>, NULL, empty strings) and has limited internal consistency. The older Universal Analytics sample (bigquery-public-data.google_analytics_sample.ga_sessions_*, session-level, obfuscated GA360 data around Aug 2016 to Aug 2017) is documented at https://support.google.com/analytics/answer/7586738 ."
+
+- id: ibm-telco-churn
+  category: DATASETS
+  subtopic: "Churn prediction"
+  title: "Telco Customer Churn (IBM sample data)"
+  authors: "IBM"
+  type: dataset
+  venue: "IBM GitHub code pattern"
+  url: "https://github.com/IBM/telco-customer-churn-on-icp4d"
+  access: open
+  license: "Apache-2.0 (repository)"
+  level: intro
+  priority: core
+  modules: [M3, M4, M7]
+  summary: "IBM's sample telecom customer table with demographics, services, charges and a churn flag. It is the standard churn-classification teaching dataset (about 1 MB CSV)."
+  wiki_use: "Use for logistic regression and tree-based churn models in M3/M7, plus retention targeting and the link to CLV."
+  tools: [pandas, scikit-learn, statsmodels]
+  ai_angle: false
+  download:
+    repo: "https://github.com/IBM/telco-customer-churn-on-icp4d"
+    path: "data/Telco-Customer-Churn.csv"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Also on Kaggle (ref blastchar/telco-customer-churn, 977,501 bytes, license listed as 'Data files (c) Original Authors'). IBM Cognos docs describe an extended five-file version with CLTV and churn-score fields: https://www.ibm.com/docs/SSEP7J_11.1.0/com.ibm.swg.ba.cognos.ig_smples.doc/c_telco_dm_sam.html"
+
+- id: uci-bank-marketing
+  category: DATASETS
+  subtopic: "Response modeling / direct marketing"
+  title: "Bank Marketing"
+  authors: "Moro, S.; Rita, P.; Cortez, P."
+  year: 2014
+  type: dataset
+  venue: "UCI Machine Learning Repository"
+  url: "https://archive.ics.uci.edu/dataset/222/bank+marketing"
+  doi: "10.24432/C5K306"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: core
+  modules: [M3, M7]
+  summary: "45,211 records from a Portuguese bank's phone-based direct-marketing campaigns, with client attributes, contact history and whether the client subscribed to a term deposit. Under 1 MB zipped."
+  wiki_use: "Response-model exercise: logistic regression against gradient boosting, lift/gain charts and campaign targeting."
+  tools: [pandas, scikit-learn, statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Associated paper: Moro, Cortez & Rita (2014), 'A data-driven approach to predict the success of bank telemarketing', Decision Support Systems. The year shown is the paper's. Call duration is a common leakage teaching point; confirm in the UCI variable notes."
+
+- id: uci-online-shoppers-intention
+  category: DATASETS
+  subtopic: "Clickstream / conversion prediction"
+  title: "Online Shoppers Purchasing Intention Dataset"
+  authors: "Sakar, C.; Kastro, Y."
+  year: 2019
+  type: dataset
+  venue: "UCI Machine Learning Repository"
+  url: "https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset"
+  doi: "10.24432/C5F88Q"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: recommended
+  modules: [M2, M7]
+  summary: "12,330 e-commerce sessions with 17 session-level clickstream features and a purchase label (1 MB CSV)."
+  wiki_use: "Quick in-class classification lab with class imbalance; it complements GA4 with a tidy, flat table."
+  tools: [pandas, scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Paper: Sakar, Polat, Katircioglu & Kastro (2019), Neural Computing & Applications. The year shown is the paper's."
+
+- id: hillstrom-email-experiment
+  category: DATASETS
+  subtopic: "Experiments / uplift"
+  title: "Kevin Hillstrom MineThatData E-Mail Analytics Challenge dataset"
+  authors: "Hillstrom, K."
+  year: 2008
+  type: dataset
+  venue: "MineThatData; loader in scikit-uplift"
+  url: "https://www.uplift-modeling.com/en/latest/api/datasets/fetch_hillstrom.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M6, M7]
+  summary: "64,000 recent customers randomly split into a Men's e-mail, a Women's e-mail or no e-mail, with two-week visit, conversion and spend outcomes (about 5 MB CSV)."
+  wiki_use: "Flagship M6 experiment dataset: estimate effects by arm, explore heterogeneous effects and build uplift targeting policies. sklift.datasets.fetch_hillstrom() loads it in one line."
+  tools: [scikit-uplift, pandas, statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The original 2008 post is on blog.minethatdata.com; a direct file URL was not verified. scikit-uplift also has loaders for the Criteo, X5 RetailHero, Lenta and MegaFon uplift datasets: https://www.uplift-modeling.com/en/latest/api/datasets/index.html"
+
+- id: criteo-uplift
+  category: DATASETS
+  subtopic: "Experiments / uplift / incrementality"
+  title: "Criteo Uplift Prediction Dataset (v2.1)"
+  authors: "Diemert, E.; Betlei, A.; Renaudin, C.; Amini, M.-R."
+  year: 2018
+  type: dataset
+  venue: "Criteo AI Lab; AdKDD & TargetAd Workshop at KDD 2018"
+  url: "https://ailab.criteo.com/?p=859"
+  oa_url: "https://lig-aptikal.imag.fr/~amini/Publis/large-scale-benchmark.pdf"
+  access: open
+  license: "CC BY-NC-SA 4.0"
+  level: advanced
+  priority: recommended
+  modules: [M6, M7]
+  summary: "13,979,592 users from randomized ad incrementality tests (v2.1, 297 MB compressed). It has 12 anonymized features, a treatment flag, an exposure flag and visit/conversion labels; the treatment ratio is 0.85."
+  wiki_use: "Advanced uplift exercise, plus a lesson on noncompliance (assigned treatment vs actual exposure). Subsample it for Colab."
+  tools: [scikit-uplift, causalml, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Use v2.1. The original 25.3M-row release had a leak that inflated uplift. oa_url is the benchmark paper PDF (seen in search)."
+
+- id: criteo-attribution
+  category: DATASETS
+  subtopic: "Attribution / bidding"
+  title: "Criteo Attribution Modeling for Bidding Dataset"
+  authors: "Diemert, E.; Meynet, J.; Lefortier, D.; Galland, P."
+  year: 2017
+  type: dataset
+  venue: "Criteo AI Lab; AdKDD & TargetAd Workshop at KDD 2017"
+  url: "https://ailab.criteo.com/?p=649"
+  oa_url: "https://arxiv.org/abs/1707.06409v2"
+  access: open
+  license: "CC BY-NC-SA 4.0"
+  level: advanced
+  priority: optional
+  modules: [M6, M8]
+  summary: "A 30-day sample of Criteo traffic: 16.5M impressions, 45K conversions and 700 campaigns, with clicks, conversions, attribution flags and cost (623 MB compressed). Ships with a reproduction notebook."
+  wiki_use: "Instructor demo for M6/M8 on last-click vs model-based attribution. Too large for routine student download."
+  tools: [pandas, scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+
+- id: open-bandit-dataset
+  category: DATASETS
+  subtopic: "Bandits / off-policy evaluation"
+  title: "Open Bandit Dataset and Open Bandit Pipeline"
+  authors: "ZOZO, Inc. (st-tech)"
+  type: dataset
+  venue: "GitHub"
+  url: "https://github.com/st-tech/zr-obp"
+  access: open
+  license: "Code Apache 2.0; data license not stated (full data for research use)"
+  level: advanced
+  priority: optional
+  modules: [M6, M7, M8]
+  summary: "Logged recommendation data from a 7-day experiment on the ZOZOTOWN fashion e-commerce site, where uniform-random and Bernoulli Thompson Sampling policies served items. Comes with the obp Python library for off-policy evaluation."
+  wiki_use: "M8 demo on bandits and on evaluating a new recommendation policy from logged data. A small sample ships in the repo."
+  tools: [obp]
+  ai_angle: false
+  download:
+    repo: "https://github.com/st-tech/zr-obp"
+    path: "obd/"
+    license: "Apache-2.0 (code); data terms unstated"
+  verified_via: fetch
+  notes: "The README says the small version is in obd/; the folder listing itself was blocked. The full data is at research.zozo.com."
+
+- id: upworthy-research-archive
+  category: DATASETS
+  subtopic: "A/B tests / headlines"
+  title: "The Upworthy Research Archive"
+  authors: "Matias, J. N.; Munger, K.; Aubin Le Quere, M.; Ebersole, C."
+  year: 2021
+  type: dataset
+  venue: "Scientific Data (data descriptor); Cornell University"
+  url: "https://upworthy.natematias.com/"
+  doi: "10.1038/s41597-021-00934-7"
+  access: open
+  license: "CC BY 4.0"
+  level: intermediate
+  priority: core
+  modules: [M5, M6]
+  summary: "Headline A/B tests Upworthy ran from Jan 2013 to Apr 2015: 32,487 experiments in total, including a 4,873-experiment exploratory set released for analysis and teaching."
+  wiki_use: "Real field experiments for M6 (multiple arms, effect sizes, multiple testing) and M5 (which headline text features drive clicks, including LLM-coded features)."
+  tools: [pandas, statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Download from OSF at https://osf.io/jd64p/ . The site links a June 2024 update on the reliability of platform A/B-test archives; read it before analysis."
+
+- id: amazon-reviews-2023
+  category: DATASETS
+  subtopic: "Reviews / recommendations / text"
+  title: "Amazon Reviews 2023 (Amazon Reviews'23)"
+  authors: "Hou, Y.; Li, J.; He, Z.; Yan, A.; Chen, X.; McAuley, J."
+  year: 2024
+  type: dataset
+  venue: "McAuley Lab, UC San Diego; arXiv:2403.03952"
+  url: "https://amazon-reviews-2023.github.io/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M5, M7]
+  summary: "571.54M reviews from 54.51M users on 48.19M items in 33 categories (May 1996 to Sep 2023). Includes ratings, text, helpful votes, images, item metadata (price, descriptions) and bought-together links."
+  wiki_use: "Have students pick a small category (Subscription_Boxes about 16K ratings, Magazine_Subscriptions about 71K, Gift_Cards about 152K) for sentiment, topic modeling, LLM review summarization and recommender exercises."
+  tools: [datasets, pandas, transformers]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Load from Hugging Face, e.g. load_dataset('McAuley-Lab/Amazon-Reviews-2023', 'raw_review_All_Beauty', trust_remote_code=True); see https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023 . The full corpus is about 750 GB, so never download all of it. No license is stated; treat it as research/teaching use. The companion paper ('Bridging Language and Items for Retrieval and Recommendation') covers LLM-era retrieval and recommendation."
+
+- id: yelp-open-dataset
+  category: DATASETS
+  subtopic: "Reviews / local business"
+  title: "Yelp Open Dataset"
+  authors: "Yelp"
+  type: dataset
+  venue: "Yelp"
+  url: "https://business.yelp.com/data/resources/open-dataset/"
+  access: open
+  license: "Yelp dataset terms (described as for educational use; full terms not reviewed)"
+  level: intermediate
+  priority: recommended
+  modules: [M4, M5, M7]
+  summary: "A subset of Yelp data for educational use: 150,346 businesses, 6,990,280 reviews and 200,100 photos across 11 metro areas, plus check-ins and business attributes (JSON, 4.35 GB compressed)."
+  wiki_use: "Team projects on review text, drivers of star ratings and local-business analytics. Give students a pre-filtered city or category subset."
+  tools: [pandas, duckdb]
+  ai_angle: false
+  verified_via: fetch
+  notes: "For a ready-made sentiment benchmark, use Yelp/yelp_review_full on Hugging Face: 700K reviews (650K train/50K test) labeled 1 to 5 stars, 323 MB, license 'other' under the Yelp agreement: https://huggingface.co/datasets/Yelp/yelp_review_full"
+
+- id: hf-tweet-eval
+  category: DATASETS
+  subtopic: "Social media text / sentiment"
+  title: "TweetEval"
+  authors: "Barbieri, F.; Camacho-Collados, J.; Espinosa-Anke, L.; Neves, L."
+  year: 2020
+  type: dataset
+  venue: "Findings of EMNLP 2020; Hugging Face (cardiffnlp)"
+  url: "https://huggingface.co/datasets/cardiffnlp/tweet_eval"
+  access: open
+  license: "Varies by subset (sentiment CC BY 3.0; others undefined); Twitter terms apply"
+  level: intro
+  priority: recommended
+  modules: [M5]
+  summary: "Seven tweet classification tasks (sentiment, emotion, irony, hate, offensive, emoji, stance) across 11 subsets, about 200K rows (14.2 MB) with fixed splits."
+  wiki_use: "Social-media text lab: compare a lexicon method, a pretrained transformer and zero-shot LLM labels on short, informal text."
+  tools: [datasets, transformers, vaderSentiment]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Paper: arXiv:2010.12421."
+
+- id: movielens
+  category: DATASETS
+  subtopic: "Recommendations / ratings"
+  title: "MovieLens datasets (ml-latest-small, ml-32m)"
+  authors: "GroupLens Research (Harper, F. M.; Konstan, J. A.)"
+  year: 2024
+  type: dataset
+  venue: "GroupLens, University of Minnesota"
+  url: "https://grouplens.org/datasets/movielens/"
+  doi: "10.1145/2827872"
+  access: open
+  license: "GroupLens usage license in each README (research-use conditions)"
+  level: intro
+  priority: core
+  modules: [M7]
+  summary: "Movie ratings. ml-latest-small has 100,836 ratings from 610 users on 9,742 movies (1 MB). ml-32m has 32M ratings from 200,948 users on 87,585 movies (239 MB, released May 2024)."
+  wiki_use: "Collaborative-filtering and recommender-evaluation lab in M7; ml-latest-small fits easily in Colab."
+  tools: [pandas, scikit-learn, surprise]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The DOI is the dataset paper: Harper & Konstan (2015), ACM TiiS 5(4). The README calls ml-latest-small a changing development set that is not appropriate for reported research results; check the license conditions before redistributing. 32M page: https://grouplens.org/datasets/movielens/32m/"
+
+- id: ctr-avazu-criteo
+  category: DATASETS
+  subtopic: "Advertising / CTR prediction"
+  title: "CTR prediction benchmarks: Avazu (Kaggle) and Criteo 1TB Click Logs"
+  authors: "Avazu; Criteo AI Lab"
+  type: dataset
+  venue: "Kaggle; Criteo AI Lab"
+  url: "https://www.kaggle.com/c/avazu-ctr-prediction"
+  access: free-registration
+  license: "Avazu: Kaggle competition rules; Criteo Click Logs on Hugging Face: CC BY-NC-SA 4.0"
+  level: advanced
+  priority: optional
+  modules: [M7, M8]
+  summary: "Two standard ad click-through datasets. Avazu is the Kaggle competition to predict whether a mobile ad is clicked. Criteo 1TB Click Logs covers 24 days with 13 integer and 26 hashed categorical features and is a larger version of the Kaggle Display Advertising Challenge data."
+  wiki_use: "Instructor-prepared subsamples for M7 classification with high-cardinality categoricals (hashing, target encoding, calibration). Too large for raw student download."
+  tools: [pandas, lightgbm, scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Criteo 1TB: https://ailab.criteo.com/download-criteo-1tb-click-logs-dataset/ ; Hugging Face mirror: https://huggingface.co/datasets/criteo/CriteoClickLogs ; Display Advertising Challenge: https://www.kaggle.com/c/criteo-display-ad-challenge . Avazu row counts and file sizes were not visible (page is JS-rendered)."
+
+- id: mlogit-train-modecanada
+  category: DATASETS
+  subtopic: "Conjoint / discrete choice"
+  title: "Train and ModeCanada choice datasets (R package mlogit)"
+  authors: "mlogit package (CRAN)"
+  type: dataset
+  venue: "CRAN vignette"
+  url: "https://cran.csiro.au/web/packages/mlogit/vignettes/c2.formula.data.html"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M4]
+  summary: "Train is a Dutch stated-preference survey: respondents chose between two train trips differing in price, time, number of changes and comfort (up to 16 tasks each, wide format). ModeCanada records mode choice among train, air, bus and car in the Ontario-Quebec corridor (long format; 2,779 situations with all four modes available)."
+  wiki_use: "Conjoint-style multinomial/mixed logit and willingness-to-pay exercises (Train mimics a two-alternative conjoint)."
+  tools: [R, mlogit, xlogit]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Python option: xlogit (pip install xlogit; GPU-accelerated mixed logit, MNL, WTP space) uses an electricity-supplier choice dataset (electricity_long.csv) in its quick start: https://xlogit.readthedocs.io/en/latest/ . AER datasets were not checked."
+
+- id: statsmodels-rdatasets
+  category: DATASETS
+  subtopic: "Python package example datasets"
+  title: "statsmodels example datasets and Rdatasets (get_rdataset)"
+  authors: "statsmodels developers; Arel-Bundock, V. (Rdatasets)"
+  type: dataset
+  venue: "statsmodels documentation"
+  url: "https://www.statsmodels.org/stable/datasets/index.html"
+  access: open
+  license: "Rdatasets code GPL-3; data licenses uncertain per maintainer"
+  level: intro
+  priority: recommended
+  modules: [M1, M3, M4]
+  summary: "statsmodels bundles 28 datasets (e.g. modechoice travel choice, grunfeld, fair, randhie), and sm.datasets.get_rdataset() pulls any of the 3,648 CRAN datasets in Rdatasets into pandas."
+  wiki_use: "Zero-setup data for M3 regression drills in Colab. get_rdataset lets Python students use classic R textbook data without installing R."
+  tools: [statsmodels, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Rdatasets index: https://vincentarelbundock.github.io/Rdatasets/"
+
+- id: chapman-feit-r-data
+  category: DATASETS
+  subtopic: "Conjoint / segmentation / survey data"
+  title: "R for Marketing Research and Analytics: companion data, code and slides"
+  authors: "Chapman, C.; Feit, E. M."
+  year: 2019
+  type: dataset
+  venue: "r-marketing.r-forge.r-project.org (Springer book companion)"
+  url: "https://r-marketing.r-forge.r-project.org/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M2, M3, M4]
+  summary: "Companion site with updated R code, data files (mostly simulated), classroom slides, exercises and errata. Includes the Chapter 13 choice-based conjoint data (seats, cargo, engine, price; 3,000 choice tasks) and survey/segmentation data."
+  wiki_use: "Ready-made conjoint, segmentation and satisfaction-survey datasets (plain CSVs readable from Python) for M4 in-class activities."
+  tools: [R, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Data index: http://r-marketing.r-forge.r-project.org/data.html (2nd-edition files are a superset of the 1st). The Chapter 13 instructor page: https://r-marketing.r-forge.r-project.org/Instructor/Chapter13/Chapter13-ChapmanFeit.html . Some loads use goo.gl short links, which may break; use the data folder instead."
+
+- id: bayesm-datasets
+  category: DATASETS
+  subtopic: "Conjoint / scanner panel"
+  title: "bayesm package datasets (Rossi)"
+  authors: "Rossi, P."
+  type: package
+  venue: "CRAN; Kilts Center listing"
+  url: "https://www.chicagobooth.edu/research/kilts/research-data/bayesm"
+  access: open
+  license: "GPL-2 | GPL-3 (package, per CRAN)"
+  level: advanced
+  priority: optional
+  modules: [M3, M4]
+  summary: "R package for Bayesian marketing models (v3.0-2 on CRAN) that bundles classic marketing data: Bank (credit-card conjoint), Margarine (scanner panel), Cheese (account-level sales and marketing mix), Scotch, Detailing and CustomerSat."
+  wiki_use: "Hierarchical Bayes conjoint (Bank) and brand-choice (Margarine) examples; an instructor anchor and optional student extension."
+  tools: [R, bayesm]
+  ai_angle: false
+  verified_via: fetch
+  notes: "CRAN: https://cran.r-project.org/web/packages/bayesm/index.html"
+
+- id: dominicks-finer-foods
+  category: DATASETS
+  subtopic: "Pricing / scanner data"
+  title: "Dominick's Finer Foods scanner data"
+  authors: "Kilts Center for Marketing, Chicago Booth"
+  type: dataset
+  venue: "Kilts Center for Marketing, University of Chicago Booth"
+  url: "https://www.chicagobooth.edu/research/kilts/research-data/dominicks"
+  access: open
+  license: "Academic research use only; acknowledge the Kilts Center"
+  level: intermediate
+  priority: recommended
+  modules: [M3, M6, M8]
+  summary: "Weekly store-level UPC sales, price, profit margin and deal codes for 29 categories (3,500+ UPCs) from about 100 Chicago-area stores, 1989 to 1994, plus daily customer counts and store demographics. CSV, SAS and Stata."
+  wiki_use: "Price-elasticity and promotion regressions in M3 using one category's movement file (e.g. soft drinks or cereals)."
+  tools: [pandas, statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Free direct download. The terms say 'for academic research purposes only' and do not address teaching; confirm classroom use with marketingdata@chicagobooth.edu. The page gives inconsistent coverage lengths ('seven years', 'nine years'). Use the truncated PRICE/PROFIT variables in the CSVs."
+
+- id: nielseniq-kilts-uiuc
+  category: DATASETS
+  subtopic: "Pricing / scanner and panel data"
+  title: "NielsenIQ Retail Scanner and Consumer Panel data (Kilts Center)"
+  authors: "Kilts Center for Marketing, Chicago Booth; NielsenIQ"
+  type: dataset
+  venue: "Kilts Center for Marketing"
+  url: "https://www.chicagobooth.edu/research/kilts/research-data/nielseniq"
+  access: library
+  level: advanced
+  priority: optional
+  modules: [M3, M8]
+  summary: "Consumer Panel (household purchases from 2004, about 40-60K active panelists) and Retail Scanner (weekly store-level price and volume from 2006, 90+ chains, 35-50K stores), available through an institutional subscription."
+  wiki_use: "Instructor-only background or a faculty/PhD research resource. Not usable for master's team projects under UIUC's eligibility rules."
+  ai_angle: false
+  verified_via: fetch
+  notes: "UIUC has a contract (Consumer Panel, Retail Scanner, PanelView surveys) through DSRS: https://dsrs.illinois.edu/datahub/nielsen . Authorized users are tenured and tenure-track faculty, PhD students and postdocs, on campus, for scholarly use only. Master's students are not listed and classroom use is not addressed."
+
+- id: robyn-simulated-mmm
+  category: DATASETS
+  subtopic: "Marketing mix modeling"
+  title: "Robyn simulated MMM data (dt_simulated_weekly)"
+  authors: "Meta Marketing Science (Robyn)"
+  year: 2025
+  type: dataset
+  venue: "Robyn R package (CRAN v3.12.1)"
+  url: "https://github.com/facebookexperimental/Robyn"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M6, M8]
+  summary: "Simulated marketing-mix dataset shipped with Robyn: DATE, revenue and channel spend (tv_S, ooh_S, ...). The package examples also use print, Facebook, search, newsletter, events and competitor-sales columns."
+  wiki_use: "A common benchmark for comparing MMM tools; use it to demo adstock, saturation and budget allocation."
+  tools: [R, Robyn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Reference manual: https://cran.nics.utk.edu/cran/web/packages/Robyn/refman/Robyn.html . The manual is inconsistent on granularity ('weekly' in the name, 'daily total revenue' in the description). Python access is a beta API that still requires R."
+
+- id: meridian-simulated-mmm
+  category: DATASETS
+  subtopic: "Marketing mix modeling"
+  title: "Google Meridian simulated geo-level MMM data (geo_all_channels)"
+  authors: "Google (Meridian)"
+  type: dataset
+  venue: "Meridian developer docs / GitHub"
+  url: "https://developers.google.com/meridian/docs/user-guide/load-geo-data-with-organic-and-non-media"
+  access: open
+  license: "Apache-2.0 (repository)"
+  level: intermediate
+  priority: recommended
+  modules: [M6, M8]
+  summary: "Simulated geo-by-week MMM data in CSV, XLSX and xarray-pickle formats. It has five paid channels (impressions and spend), one organic channel, a promo treatment, controls (GQV, competitor sales), population, conversions and revenue per conversion."
+  wiki_use: "Geo-level Bayesian MMM demo in Colab using Meridian's Getting Started notebook, contrasted with Robyn and PyMC-Marketing."
+  tools: [meridian, tensorflow-probability]
+  ai_angle: false
+  download:
+    repo: "https://github.com/google/meridian"
+    path: "meridian/data/simulated_data/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The repo also has demo/ Colab notebooks (e.g. demo/Meridian_Full_Funnel.ipynb) and top-level .agents and skills folders, whose contents were not inspected (listing blocked). The number of geos and weeks was not stated on the page."
+
+- id: pymc-marketing-example-data
+  category: DATASETS
+  subtopic: "MMM / CLV synthetic data"
+  title: "PyMC-Marketing example data: synthetic MMM and CDNOW CLV"
+  authors: "PyMC Labs"
+  type: notebook
+  venue: "PyMC-Marketing docs"
+  url: "https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M4, M6, M8, AI]
+  summary: "The MMM example notebook builds a synthetic dataset step by step (179 weeks, two channels, events, trend, adstock and saturation) and then recovers the parameters. The repo's data/ folder provides mmm_example.csv and cdnow_transactions.csv for the MMM and CLV quickstarts."
+  wiki_use: "Shows the data-generating process before fitting, which suits 'can the AI-written model recover the known truth?' exercises. Use CDNOW for BG/NBD plus Gamma-Gamma CLV in M4."
+  tools: [pymc-marketing, PyMC, ArviZ]
+  ai_angle: true
+  download:
+    repo: "https://github.com/pymc-labs/pymc-marketing"
+    path: "data/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The repo ships an LLM coding-assistant skill for MMM workflows (skills/mmm-modeling/SKILL.md), listed at https://tessl.io/registry/skills/github/pymc-labs/pymc-marketing/mmm-modeling . It warns about mistakes such as flat priors on saturation. The data/ folder contents are inferred from quickstart code because the listing was blocked."
+
+- id: hardie-cdnow-btyd
+  category: DATASETS
+  subtopic: "CLV / buy-till-you-die"
+  title: "CDNOW and other BTYD datasets (Bruce Hardie)"
+  authors: "Hardie, B."
+  type: dataset
+  venue: "brucehardie.com"
+  url: "https://www.brucehardie.com/datasets/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M4]
+  summary: "Small classic datasets for probability models of customer behavior: CDNOW (full, 424 KB zip, and a 1/10 sample), 'Kiwi Bubbles' test-market panel data, cumulative trial data for 19 new products, and a 1995-cohort donation-incidence dataset."
+  wiki_use: "M4 CLV exercise: fit BG/NBD and Gamma-Gamma on CDNOW (2,357 customers, 78 weeks), then compare against RFM heuristics."
+  tools: [pymc-marketing, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "No terms of use are stated. A ready CSV used by PyMC-Marketing: https://raw.githubusercontent.com/pymc-labs/pymc-marketing/main/data/cdnow_transactions.csv"
+
+- id: causaldata-package
+  category: DATASETS
+  subtopic: "Causal inference teaching data"
+  title: "causaldata (Python, R and Stata package)"
+  authors: "Huntington-Klein, N."
+  year: 2024
+  type: package
+  venue: "PyPI / CRAN / SSC"
+  url: "https://pypi.org/project/causaldata/"
+  access: open
+  license: "MIT"
+  level: intro
+  priority: recommended
+  modules: [M3, M6]
+  summary: "Packages the example datasets from The Effect (Huntington-Klein) and Causal Inference: The Mixtape (Cunningham) for pip, CRAN and Stata (Python v0.1.5, Nov 2024)."
+  wiki_use: "Load textbook causal-inference datasets in one line to reproduce book examples (DiD, IV, RD, matching) in Colab."
+  tools: [causaldata, pandas, statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "R: https://cran.r-project.org/web/packages/causaldata/index.html . The PyPI page does not list the datasets. Cunningham's Mixtape (online 2nd ed. at https://mixtape.scunning.com/) uses R and Stata, so this package is the Python route to its data."
+
+- id: reddit-data-access
+  category: DATASETS
+  subtopic: "Social media data access"
+  title: "Reddit Data API and Reddit for Researchers access rules"
+  authors: "Reddit"
+  type: documentation
+  venue: "Reddit Help Center"
+  url: "https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M5]
+  summary: "Reddit's policy: the Data API is rate-limited and bulk export is restricted. Academic research must go through the Reddit for Researchers program, and content may not be used for model training without Reddit's consent."
+  wiki_use: "Required policy reading for M5 social-media analysis. It explains why students should not scrape Reddit or use the API for research projects, and how research access works."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Reddit for Researchers eligibility is not listed; applications go through a support ticket. Requests from hosted-service IP ranges, likely including cloud notebooks, need OAuth or a login."
+
+- id: bluesky-api-jetstream
+  category: DATASETS
+  subtopic: "Social media data access"
+  title: "Bluesky developer docs and Jetstream"
+  authors: "Bluesky PBC"
+  type: documentation
+  venue: "docs.bsky.app"
+  url: "https://docs.bsky.app/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M5]
+  summary: "Docs for the open AT Protocol HTTP API and SDKs (official TypeScript and Go; community Python and Dart). Jetstream is a lightweight JSON stream of public network events, filterable by collection or account."
+  wiki_use: "The most practical open source of live social-media text for M5, via the Python SDK. Use Jetstream for prototypes; Bluesky says it is not the right tool for research-grade archives."
+  tools: [atproto, websockets]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Jetstream post: https://docs.bsky.app/blog/jetstream (public instances; events are not signed). Authentication and terms are not on the landing page; review Bluesky's developer guidelines and ethics/IRB considerations before collecting user posts."
+
+- id: snap-network-datasets
+  category: DATASETS
+  subtopic: "Network analysis"
+  title: "Stanford Large Network Dataset Collection (SNAP)"
+  authors: "Stanford Network Analysis Project (SNAP)"
+  type: dataset
+  venue: "Stanford University"
+  url: "https://snap.stanford.edu/data/"
+  access: open
+  license: "No license stated; citation requested"
+  level: intermediate
+  priority: recommended
+  modules: [M5, M7]
+  summary: "Graph datasets including social networks, Amazon co-purchasing graphs with product metadata and reviews (about 548K products), review corpora (BeerAdvocate, RateBeer, Amazon fine foods), Twitter diffusion (higgs-twitter) and Epinions trust networks."
+  wiki_use: "M5 network-analysis lab with networkx: co-purchase centrality, community detection and diffusion."
+  tools: [networkx, pandas]
+  ai_angle: false
+  verified_via: fetch
+
+- id: tidytuesday
+  category: DATASETS
+  subtopic: "Visualization practice data"
+  title: "TidyTuesday weekly datasets"
+  authors: "Data Science Learning Community"
+  type: dataset
+  venue: "GitHub"
+  url: "https://github.com/rfordatascience/tidytuesday"
+  access: open
+  license: "CC0-1.0"
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "A new real-world dataset each week, organized by year and date (2018 to 2026) with a readme and source article for each; Python users join with #PydyTuesday."
+  wiki_use: "Weekly M2 viz warm-ups or a 'pick any TidyTuesday dataset' option for a short assignment; CC0 allows hosting copies on the wiki."
+  tools: [pandas, seaborn, plotnine]
+  ai_angle: false
+  download:
+    repo: "https://github.com/rfordatascience/tidytuesday"
+    path: "data/"
+    license: "CC0-1.0"
+  verified_via: fetch
+  notes: "Python resources: github.com/posit-dev/python-tidytuesday-challenge (linked from the README). Download only the selected weeks; the full repo is large."
+
+- id: kaggle-datasets-hub
+  category: DATASETS
+  subtopic: "Dataset aggregator"
+  title: "Kaggle Datasets"
+  authors: "Kaggle (Google)"
+  type: website
+  venue: "Kaggle"
+  url: "https://www.kaggle.com/datasets"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M1, M2, M7]
+  summary: "Hundreds of thousands of community-uploaded datasets with notebooks; each dataset lists its own license."
+  wiki_use: "Discovery source for team-project data. Require students to record the license and provenance, since mirrors often mislabel licenses (see the Instacart CC0 mirror)."
+  ai_angle: false
+  verified_via: fetch
+  notes: "The Kaggle API (kaggle datasets download) works from Colab with an API token."
+
+- id: huggingface-datasets-hub
+  category: DATASETS
+  subtopic: "Dataset aggregator"
+  title: "Hugging Face Datasets Hub"
+  authors: "Hugging Face"
+  type: website
+  venue: "Hugging Face"
+  url: "https://huggingface.co/datasets"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M5, M7]
+  summary: "Over 1.1 million datasets (as of this check), loadable with the datasets library; the main source for text, review and sentiment data."
+  wiki_use: "Default source for M5 text datasets; teach load_dataset() and reading dataset cards for license and provenance."
+  tools: [datasets]
+  ai_angle: false
+  verified_via: fetch
+
+- id: google-dataset-search
+  category: DATASETS
+  subtopic: "Dataset aggregator"
+  title: "Google Dataset Search"
+  authors: "Google"
+  type: tool
+  venue: "Google Research"
+  url: "https://datasetsearch.research.google.com/"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M1]
+  summary: "Search engine over datasets described with schema.org metadata across repositories; supports site: filters (e.g. site:huggingface.co)."
+  wiki_use: "Teach students how to find and vet data for team projects."
+  ai_angle: false
+  verified_via: fetch
+  notes: "data.world's open community, often listed with these aggregators, was retired on July 13, 2026 (its datasets are no longer downloadable), so it is omitted."
+
+# =====================================================================
+# TEXTBOOKS (free/open books and courses spanning several modules)
+# =====================================================================
+
+- id: mckinney-python-data-analysis-3e
+  category: TEXTBOOKS
+  subtopic: "pandas / data wrangling"
+  title: "Python for Data Analysis, 3rd Edition (Open Access)"
+  authors: "McKinney, W."
+  year: 2022
+  type: book
+  venue: "O'Reilly Media; wesmckinney.com"
+  url: "https://wesmckinney.com/book/"
+  access: open
+  license: "Online text free to read, not to be copied; code examples MIT"
+  level: intro
+  priority: core
+  modules: [M1, M2]
+  summary: "The pandas creator's guide to data wrangling with pandas, NumPy and Jupyter. The full 3rd edition is free to read online."
+  wiki_use: "Assigned reading for M1-M2 (pandas basics, groupby, time series). Link to chapters from the wiki rather than copying text."
+  tools: [pandas, numpy, matplotlib]
+  ai_angle: false
+  download:
+    repo: "https://github.com/wesm/pydata-book/tree/3rd-edition"
+    path: ""
+    license: "MIT (code examples, per book site)"
+  verified_via: fetch
+
+- id: vanderplas-python-data-science-handbook
+  category: TEXTBOOKS
+  subtopic: "Python data science stack"
+  title: "Python Data Science Handbook"
+  authors: "VanderPlas, J."
+  type: book
+  venue: "O'Reilly Media; GitHub"
+  url: "https://jakevdp.github.io/PythonDataScienceHandbook/"
+  access: open
+  license: "Text CC BY-NC-ND 3.0; code MIT"
+  level: intro
+  priority: core
+  modules: [M1, M2, M4, M7]
+  summary: "The full book as Jupyter notebooks, covering IPython, NumPy, pandas, Matplotlib and scikit-learn (including k-means and Gaussian mixture clustering)."
+  wiki_use: "Embed or launch notebooks for M4 clustering and M7 scikit-learn workflows."
+  tools: [numpy, pandas, matplotlib, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/jakevdp/PythonDataScienceHandbook"
+    path: "notebooks/"
+    license: "MIT (code); CC BY-NC-ND 3.0 (text)"
+  verified_via: fetch
+  notes: "The repo also has notebooks_v1 and notebooks_v2 folders (v2 presumably matches the 2nd edition; not confirmed). Edition years were not verified."
+
+- id: islp
+  category: TEXTBOOKS
+  subtopic: "Statistical learning"
+  title: "An Introduction to Statistical Learning with Applications in Python (ISLP)"
+  authors: "James, G.; Witten, D.; Hastie, T.; Tibshirani, R.; Taylor, J."
+  year: 2023
+  type: book
+  venue: "Springer"
+  url: "https://www.statlearning.com/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M3, M4, M7]
+  summary: "The standard intro to regression, classification, resampling, regularization, trees, SVMs, deep learning and unsupervised learning, now with Python labs. The PDF is a free download."
+  wiki_use: "Core reading for M3 (regression) and M7 (prediction); the ISLP labs can be assigned as runnable notebooks."
+  tools: [ISLP, statsmodels, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/intro-stat-learning/ISLP_labs"
+    path: ""
+    license: "BSD-2-Clause"
+  verified_via: fetch
+  notes: "Labs repo v2.2.2 targets Python 3.12. Its README mentions Codespaces and uv, not Colab."
+
+- id: think-stats-3e
+  category: TEXTBOOKS
+  subtopic: "EDA / statistics in Python"
+  title: "Think Stats, 3rd Edition"
+  authors: "Downey, A. B."
+  type: book
+  venue: "Green Tea Press / O'Reilly"
+  url: "https://allendowney.github.io/ThinkStats/"
+  access: open
+  license: "Creative Commons, attribution and non-commercial (book); repo MIT"
+  level: intro
+  priority: recommended
+  modules: [M1, M2, M3]
+  summary: "Notebook-first intro to exploratory data analysis, distributions, hypothesis testing and regression in Python. Chapters 1-14 each open in Colab."
+  wiki_use: "Statistics refresher for students weak on inference before M3 and M6; chapters can be linked as Colab notebooks."
+  tools: [pandas, statsmodels]
+  ai_angle: false
+  download:
+    repo: "https://github.com/AllenDowney/ThinkStats/tree/v3"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "The page footer says (c) 2023; the 3rd-edition publication year was not confirmed."
+
+- id: think-python-3e
+  category: TEXTBOOKS
+  subtopic: "Intro Python / AI-assisted learning"
+  title: "Think Python, 3rd Edition"
+  authors: "Downey, A. B."
+  type: book
+  venue: "Green Tea Press / O'Reilly"
+  url: "https://allendowney.github.io/ThinkPython/"
+  access: open
+  license: "CC BY-NC-SA 4.0"
+  level: intro
+  priority: core
+  modules: [M1, AI]
+  summary: "Beginner Python textbook with every chapter (1-19) as a Colab notebook. Each chapter ends with suggestions for using ChatGPT and Colab AI to learn more and get help with exercises."
+  wiki_use: "M1 primer for non-programmers. Its end-of-chapter AI-assistant prompts model a 'learn with AI, verify yourself' habit."
+  tools: [python, colab]
+  ai_angle: true
+  verified_via: fetch
+
+- id: quantecon-datascience
+  category: TEXTBOOKS
+  subtopic: "Python for economics and data science"
+  title: "QuantEcon DataScience: Introduction to Economic Modeling and Data Science"
+  authors: "Coleman, C.; Lyon, S.; Perla, J."
+  type: course
+  venue: "QuantEcon"
+  url: "https://datascience.quantecon.org/"
+  access: open
+  license: "CC BY-SA 4.0"
+  level: intro
+  priority: recommended
+  modules: [M1, M2, M3, M5, M7]
+  summary: "A Python course running from basics through pandas, visualization, regression and classification to applications (ML in economics, networks, text analysis, heterogeneous effects), with one-click Colab launch."
+  wiki_use: "Ready-made notebooks to adapt (CC BY-SA permits remixing with attribution and share-alike) for M1-M3 and the M5 text and network applications."
+  tools: [pandas, matplotlib, scikit-learn, statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Other QuantEcon series (https://quantecon.org/lectures/) are more macro- and theory-oriented: Python Programming for Economics and Finance (https://python-programming.quantecon.org/), A First Course in Quantitative Economics with Python (https://intro.quantecon.org/), and Intermediate (https://python.quantecon.org/)."
+
+- id: mcdermott-data-science-for-economists
+  category: TEXTBOOKS
+  subtopic: "Data science workflow (R)"
+  title: "Data Science for Economists (EC 607 lecture notes)"
+  authors: "McDermott, G."
+  type: course
+  venue: "University of Oregon; GitHub"
+  url: "https://github.com/uo-ec607/lectures"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: optional
+  modules: [M1, WIKI]
+  summary: "PhD lecture notes on Git/GitHub, the shell, R, tidyverse/data.table wrangling, web scraping and APIs, regression, spatial analysis, parallel computing, Docker, cloud computing, databases and Spark."
+  wiki_use: "Borrow the Git/GitHub and shell lectures for the GitHub-based project workflow. The rest is R-based, so use it selectively."
+  tools: [R, git]
+  ai_angle: false
+  download:
+    repo: "https://github.com/uo-ec607/lectures"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+
+- id: berkeley-data8-inferential-thinking
+  category: TEXTBOOKS
+  subtopic: "Foundations of data science"
+  title: "Computational and Inferential Thinking: The Foundations of Data Science, 2nd ed. (Berkeley Data 8)"
+  authors: "Adhikari, A.; DeNero, J.; Wagner, D."
+  type: book
+  venue: "UC Berkeley"
+  url: "https://inferentialthinking.com/"
+  access: open
+  license: "CC BY-NC-ND 4.0"
+  level: intro
+  priority: recommended
+  modules: [M1, M3, M6]
+  summary: "Data 8 textbook covering causality and experiments, Python tables and visualization, sampling, hypothesis testing, comparing two samples (A/B tests), estimation, regression inference and classification."
+  wiki_use: "A gentle, simulation-based treatment of A/B testing and permutation tests for non-CS students in M6."
+  tools: [python, datascience]
+  ai_angle: false
+  download:
+    repo: "https://github.com/data-8/textbook"
+    path: "chapters/"
+    license: "See LICENSE.md (site states CC BY-NC-ND 4.0)"
+  verified_via: fetch
+  notes: "Uses Berkeley's own 'datascience' Tables library rather than pandas; translate examples for consistency."
+
+- id: berkeley-data100-course-notes
+  category: TEXTBOOKS
+  subtopic: "Data science techniques"
+  title: "Data 100 Course Notes: Principles and Techniques of Data Science"
+  authors: "UC Berkeley Data 100 course staff"
+  year: 2025
+  type: course
+  venue: "UC Berkeley (ds100.org)"
+  url: "https://ds100.org/course-notes/"
+  access: open
+  license: "BSD-3-Clause"
+  level: intermediate
+  priority: recommended
+  modules: [M2, M3, M4, M5, M7]
+  summary: "Fall 2025 notes on pandas EDA, regex, visualization, sampling, linear models, gradient descent, feature engineering, cross-validation and regularization, the bootstrap, logistic regression, clustering and PCA."
+  wiki_use: "Concise readings to pair with modules; the regex and feature-engineering notes fit M5 and M7."
+  tools: [pandas, scikit-learn, seaborn]
+  ai_angle: false
+  verified_via: fetch
+
+- id: kaggle-learn
+  category: TEXTBOOKS
+  subtopic: "Micro-courses"
+  title: "Kaggle Learn micro-courses"
+  authors: "Kaggle"
+  type: course
+  venue: "Kaggle"
+  url: "https://www.kaggle.com/learn"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M1, M2, M7]
+  summary: "Free, short, hands-on courses that run in Kaggle notebooks, covering Python, data viz, pandas, machine learning and more."
+  wiki_use: "Pre-course or remedial assignments (e.g. Python, Pandas, Intro to ML) for students to finish before in-class labs."
+  tools: [pandas, scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The page is JS-rendered, so the full course list and certificate details were not retrieved. The Pandas course was verified at https://www.kaggle.com/learn/pandas ."
+
+- id: fastai-practical-deep-learning
+  category: TEXTBOOKS
+  subtopic: "Deep learning"
+  title: "Practical Deep Learning for Coders"
+  authors: "fast.ai"
+  year: 2022
+  type: course
+  venue: "fast.ai"
+  url: "https://course.fast.ai/"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [M5, M7]
+  summary: "Free top-down deep learning course (Part 1, 2022 edition) covering vision, NLP, tabular data, collaborative filtering, random forests and deployment with PyTorch, fastai and Hugging Face. Runs on Kaggle Notebooks."
+  wiki_use: "Optional extension for students who want deep-learning or recommender depth in M7 projects."
+  tools: [fastai, pytorch, transformers]
+  ai_angle: false
+  verified_via: fetch
+
+- id: turrell-coding-for-economists
+  category: TEXTBOOKS
+  subtopic: "Python for economists"
+  title: "Coding for Economists"
+  authors: "Turrell, A."
+  type: book
+  venue: "GitHub Pages"
+  url: "https://aeturrell.github.io/coding-for-economists/"
+  access: open
+  license: "MIT"
+  level: intro
+  priority: core
+  modules: [M1, M2, M3, M5, M6, WIKI]
+  summary: "Python book for economists covering reproducible workflow (Quarto, version control), data handling, visualization (matplotlib, seaborn, lets-plot, plotnine), regression and diagnostics, causal inference, text/regex/NLP, ML and time series."
+  wiki_use: "Reference for workflow, regression and causal chapters. The MIT license lets you adapt pages directly into the wiki."
+  tools: [pandas, statsmodels, pyfixest, seaborn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/aeturrell/coding-for-economists"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+
+- id: sheppard-python-econometrics
+  category: TEXTBOOKS
+  subtopic: "Python for econometrics"
+  title: "Introduction to Python for Econometrics, Statistics and Numerical Analysis"
+  authors: "Sheppard, K."
+  year: 2021
+  type: book
+  venue: "kevinsheppard.com (University of Oxford)"
+  url: "https://www.kevinsheppard.com/teaching/python/notes/"
+  access: open
+  license: "CC BY-NC-ND 4.0 (text); NCSA (code)"
+  level: intermediate
+  priority: optional
+  modules: [M1, M3]
+  summary: "Free PDF notes taking beginners through Python, NumPy, SciPy, matplotlib and pandas, with econometric examples (GJR-GARCH, Fama-MacBeth, GMM)."
+  wiki_use: "Instructor reference and optional reading for students who want rigorous numerical Python. It is finance-econometrics oriented."
+  tools: [numpy, scipy, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Edition labeling on the page is inconsistent (4th edition 2021 vs 'fifth edition'). Mini-course: https://www.kevinsheppard.com/teaching/python/course/"
+
+- id: facure-causal-inference-brave-true
+  category: TEXTBOOKS
+  subtopic: "Causal inference in Python"
+  title: "Causal Inference for the Brave and True"
+  authors: "Facure Alves, M."
+  type: book
+  venue: "GitHub Pages"
+  url: "https://matheusfacure.github.io/python-causality-handbook/landing-page.html"
+  access: open
+  license: "MIT (repository)"
+  level: intermediate
+  priority: core
+  modules: [M3, M6]
+  summary: "Free Python book on potential outcomes, causal graphs, randomized experiments, IV, matching and propensity scores, DiD, synthetic control, RD and heterogeneous effects/meta-learners, with tech-industry applications."
+  wiki_use: "Core M6 reading. Its notebooks and data can be embedded or adapted."
+  tools: [pandas, statsmodels, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/matheusfacure/python-causality-handbook"
+    path: "causal-inference-for-the-brave-and-true/"
+    license: "MIT"
+  verified_via: fetch
+
+- id: huntington-klein-the-effect
+  category: TEXTBOOKS
+  subtopic: "Causal inference / research design"
+  title: "The Effect: An Introduction to Research Design and Causality"
+  authors: "Huntington-Klein, N."
+  type: book
+  venue: "Chapman & Hall/CRC (free online edition)"
+  url: "https://theeffectbook.net/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M3, M6]
+  summary: "Free online textbook on causal research design (causal diagrams, controls, matching, DiD, IV, RD and more), with code examples in R, Stata and Python."
+  wiki_use: "Accessible M6 conceptual reading. Pair it with the causaldata package so students run the examples in Colab."
+  tools: [causaldata, statsmodels]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The author plans to keep the web version free. Cunningham's 'Causal Inference: The Mixtape' (online 2nd edition, https://mixtape.scunning.com/, R and Stata) is a companion option."
+
+- id: causalml-book
+  category: TEXTBOOKS
+  subtopic: "Causal ML / double machine learning"
+  title: "Applied Causal Inference Powered by ML and AI"
+  authors: "Chernozhukov, V.; Hansen, C.; Kallus, N.; Spindler, M.; Syrgkanis, V."
+  type: book
+  venue: "causalml-book.org"
+  url: "https://causalml-book.org/"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M6, M7]
+  summary: "Free graduate-level textbook on double/debiased machine learning and causal ML for treatment effects, with Python and R labs."
+  wiki_use: "Instructor anchor and optional reading for students using ML for causal estimation (DML, heterogeneous effects)."
+  tools: [doubleml, econml, scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The landing page does not state a year or license, and the lab notebook links are not on that page."
+
+- id: huggingface-llm-course
+  category: TEXTBOOKS
+  subtopic: "LLMs / transformers for text"
+  title: "Hugging Face LLM Course"
+  authors: "Hugging Face"
+  type: course
+  venue: "Hugging Face"
+  url: "https://huggingface.co/learn/llm-course/chapter1/1"
+  access: open
+  license: "Apache 2.0"
+  level: intermediate
+  priority: recommended
+  modules: [M5, M7, AI]
+  summary: "Free course on transformers and LLMs: pretrained models, fine-tuning, the Datasets and Tokenizers libraries, classic NLP tasks, demos, dataset curation, LLM fine-tuning and reasoning models."
+  wiki_use: "Chapters 1-2 and the Datasets chapter support M5 sentiment and text classification with pretrained models in Colab."
+  tools: [transformers, datasets, tokenizers]
+  ai_angle: true
+  verified_via: fetch
+
+- id: py4e-python-for-everybody
+  category: TEXTBOOKS
+  subtopic: "Intro Python"
+  title: "Python for Everybody (PY4E)"
+  authors: "Severance, C. R."
+  type: course
+  venue: "py4e.com"
+  url: "https://www.py4e.com/"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: recommended
+  modules: [M1]
+  summary: "Free, openly licensed beginner Python course with a book, lectures and autograded assignments, built for reuse by other instructors (Common Cartridge export, LTI)."
+  wiki_use: "Remedial Python track for students with no programming background. CC BY allows remixing into the wiki."
+  tools: [python]
+  ai_angle: false
+  verified_via: fetch
+
+- id: illinois-data-science-discovery
+  category: TEXTBOOKS
+  subtopic: "Intro data science (UIUC)"
+  title: "Data Science DISCOVERY (University of Illinois)"
+  authors: "Fagen-Ulmschneider, W.; Flanagan, K."
+  type: course
+  venue: "University of Illinois Urbana-Champaign"
+  url: "https://discovery.cs.illinois.edu/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M1, M2, M3]
+  summary: "Free Illinois resource (the basis of STAT/CS/IS 107) covering Python data science basics, EDA, simulation and distributions, probability, regression and clustering, and hypothesis testing."
+  wiki_use: "A campus-made intro some students may already know; link it for refreshers and to connect with UIUC data science offerings."
+  tools: [pandas, python]
+  ai_angle: false
+  verified_via: fetch
+  notes: "License not stated."
+
+- id: wilke-fundamentals-data-visualization
+  category: TEXTBOOKS
+  subtopic: "Data visualization principles"
+  title: "Fundamentals of Data Visualization"
+  authors: "Wilke, C. O."
+  type: book
+  venue: "O'Reilly Media (free online)"
+  url: "https://clauswilke.com/dataviz/"
+  access: open
+  license: "CC BY-NC-ND 4.0"
+  level: intro
+  priority: core
+  modules: [M2]
+  summary: "Free online guide to choosing and designing figures: aesthetics, color, amounts, distributions, proportions, associations, time series, uncertainty, figure design and telling a story with figures."
+  wiki_use: "M2 reading on chart choice and design, paired with the Pyramid Principle for communicating results. The text is software-agnostic."
+  ai_angle: false
+  verified_via: fetch
+
+- id: jurafsky-martin-slp3
+  category: TEXTBOOKS
+  subtopic: "NLP / LLMs"
+  title: "Speech and Language Processing, 3rd ed. draft"
+  authors: "Jurafsky, D.; Martin, J. H."
+  year: 2026
+  type: book
+  venue: "Stanford University (draft)"
+  url: "https://web.stanford.edu/~jurafsky/slp3/"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M5, M7, AI]
+  summary: "Free draft (Aug 19, 2026 release) of the standard NLP textbook. It now opens with a volume on large language models (transformers, pretraining, post-training) and includes chapters on embeddings and on sentiment and affect lexicons."
+  wiki_use: "Instructor background, plus selective student readings on embeddings and sentiment lexicons for M5."
+  ai_angle: true
+  verified_via: fetch
+
+- id: mit-missing-semester
+  category: TEXTBOOKS
+  subtopic: "Shell / Git / agentic coding"
+  title: "The Missing Semester of Your CS Education"
+  authors: "MIT CSAIL (Missing Semester instructors)"
+  year: 2026
+  type: course
+  venue: "MIT"
+  url: "https://missing.csail.mit.edu/"
+  access: open
+  license: "CC BY-NC-SA"
+  level: intro
+  priority: core
+  modules: [M1, AI, WIKI]
+  summary: "MIT's short course on the shell, command-line environment, Git, development tools, debugging, packaging and code quality. The January 2026 edition adds an 'Agentic Coding' lecture and folds AI tools into every lecture."
+  wiki_use: "Assign the Git and Agentic Coding lectures before the team project; a model for teaching AI coding tools alongside fundamentals."
+  tools: [git, shell]
+  ai_angle: true
+  verified_via: fetch
+
+- id: python-marketing-research-analytics
+  category: TEXTBOOKS
+  subtopic: "Marketing analytics in Python"
+  title: "Python for Marketing Research and Analytics"
+  authors: "Schwarz, J. S.; Chapman, C.; Feit, E. M."
+  year: 2020
+  type: book
+  venue: "Springer"
+  url: "https://python-marketing-research.github.io/"
+  doi: "10.1007/978-3-030-49720-0"
+  access: library
+  license: "Code repository Apache-2.0"
+  level: intro
+  priority: core
+  modules: [M1, M2, M3, M4]
+  summary: "The Python edition of Chapman and Feit's marketing-research text. All analyses are Colab notebooks with chapter data files and a pip-installable helper package."
+  wiki_use: "Closest-fit textbook for the course. Embed its Colab notebooks and data for M2-M4 activities; the code is Apache-2.0, so it can be adapted."
+  tools: [pandas, statsmodels, scikit-learn, colab]
+  ai_angle: false
+  download:
+    repo: "https://github.com/python-marketing-research/python-marketing-research-1ed"
+    path: ""
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Springer page: https://link.springer.com/book/10.1007/978-3-030-49720-0 (likely in UIUC's SpringerLink holdings; not checked). The chapter list was not verified; topics are expected to mirror the R edition (regression, segmentation, choice modeling)."
+
+- id: hands-on-data-science-for-marketing
+  category: TEXTBOOKS
+  subtopic: "Marketing analytics in Python and R"
+  title: "Hands-On Data Science for Marketing (code repository)"
+  authors: "Hwang, Y. H."
+  type: book
+  venue: "Packt Publishing"
+  url: "https://github.com/PacktPublishing/Hands-On-Data-Science-for-Marketing"
+  access: paid
+  license: "MIT (code)"
+  level: intro
+  priority: optional
+  modules: [M2, M4, M6, M7]
+  summary: "MIT-licensed code for a 12-chapter Packt book that works marketing use cases in parallel Python and R."
+  wiki_use: "Source of short marketing-specific Python examples to adapt into in-class activities. The book itself is paid."
+  tools: [pandas, scikit-learn, R]
+  ai_angle: false
+  download:
+    repo: "https://github.com/PacktPublishing/Hands-On-Data-Science-for-Marketing"
+    path: ""
+    license: "MIT"
+  verified_via: fetch
+  notes: "Chapter topics (recalled as KPIs, engagement, CLV, segmentation, churn, A/B testing) and the publication year were not verified; it requires Python >= 3.6, so expect some version drift."
+
+- id: nyu-ipeirotis-dealing-with-data
+  category: TEXTBOOKS
+  subtopic: "Peer course materials (NYU)"
+  title: "Dealing with Data (NYU teaching notebooks)"
+  authors: "Ipeirotis, P."
+  type: syllabus
+  venue: "NYU; GitHub"
+  url: "https://github.com/ipeirotis/dealing_with_data"
+  access: open
+  license: "CC BY-NC 4.0 outside NYU"
+  level: intro
+  priority: recommended
+  modules: [M1, M2, M5, M7]
+  summary: "Notebooks from NYU classes that teach programming for data science to non-CS majors through live examples: pandas, web APIs, regex, scraping, time series, maps, text mining/NLP, visualization, network analysis, crowdsourcing and predictive modeling."
+  wiki_use: "A model for teaching non-CS business students. Borrow the text-mining and network notebooks for M5, with attribution and non-commercial use."
+  tools: [pandas, jupyter, mysql]
+  ai_angle: false
+  download:
+    repo: "https://github.com/ipeirotis/dealing_with_data"
+    path: ""
+    license: "CC BY-NC 4.0"
+  verified_via: fetch
+
+- id: taddy-business-data-science-code
+  category: TEXTBOOKS
+  subtopic: "Peer course materials (Chicago Booth)"
+  title: "Business Data Science: code and examples"
+  authors: "Taddy, M."
+  type: book
+  venue: "GitHub (TaddyLab)"
+  url: "https://github.com/TaddyLab/BDS"
+  access: paid
+  level: intermediate
+  priority: optional
+  modules: [M3, M6, M7]
+  summary: "R scripts, data (examples/) and notebooks accompanying the book Business Data Science."
+  wiki_use: "Instructor reference for business-framed regression, regularization and causal examples; the datasets in examples/ can be reused in Python."
+  tools: [R]
+  ai_angle: false
+  verified_via: fetch
+  notes: "No license is shown. The publisher (McGraw Hill, 2019) and the book's origin in Taddy's Chicago Booth course are from memory; verify."
+
+- id: wharton-customer-analytics-coursera
+  category: TEXTBOOKS
+  subtopic: "Peer course (Wharton) / CLV"
+  title: "Customer Analytics (Wharton, Coursera)"
+  authors: "Bradlow, E.; Fader, P.; Iyengar, R.; et al."
+  type: course
+  venue: "Coursera (University of Pennsylvania)"
+  url: "https://www.coursera.org/learn/wharton-customer-analytics"
+  access: freemium
+  level: intro
+  priority: optional
+  modules: [M4, M8]
+  summary: "Introductory course in Wharton's Business Analytics Specialization on descriptive, predictive (CLV, customer-based corporate valuation) and prescriptive customer analytics, with examples from Amazon, Google and Starbucks."
+  wiki_use: "Optional video background on CLV and customer-centric valuation for M4. It is not Python-based."
+  ai_angle: false
+  verified_via: fetch
+
+- id: ucsd-rady-pyrsm-radiant
+  category: TEXTBOOKS
+  subtopic: "Peer course tools (UCSD Rady MSBA)"
+  title: "pyrsm and Radiant: business-analytics teaching tools from UCSD Rady"
+  authors: "Nijs, V."
+  type: package
+  venue: "PyPI; Rady School of Management, UC San Diego"
+  url: "https://pypi.org/project/pyrsm/"
+  access: open
+  license: "AGPL-3.0 (pyrsm); Radiant AGPLv3 with CC-licensed docs"
+  level: intro
+  priority: optional
+  modules: [M3, M4, M7]
+  summary: "pyrsm is the Python package used in Rady's MSBA for basic tests, linear/logistic regression, ML models and EDA. Its R sibling Radiant is a browser-based Shiny app with conjoint, brand maps, clustering, collaborative filtering and experimental-design modules."
+  wiki_use: "Shows how a peer MSBA program wraps model output for business students. The Radiant docs show marketing-analytics workflows (conjoint, perceptual maps)."
+  tools: [pyrsm, statsmodels, R, shiny]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Radiant docs: https://radiant-rstats.github.io/docs/ . AGPL matters if modified code is redistributed."
+
+- id: feit-ad-response-tutorial
+  category: TEXTBOOKS
+  subtopic: "Attribution vs experiments vs MMM"
+  title: "Ad response tutorial: last-click attribution, experiments, MMM and attribution models"
+  authors: "Feit, E. M."
+  type: tutorial
+  venue: "GitHub"
+  url: "https://github.com/eleafeit/ad_response_tutorial"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M6, M8]
+  summary: "Workshop materials (R code, LaTeX slides, handout) that apply last-click attribution, experiments, marketing-mix models and attribution models to the same synthetic advertising data, including the data preparation."
+  wiki_use: "Template for an M6/M8 activity: students port the R analysis to Python with AI help and compare the estimates across methods."
+  tools: [R]
+  ai_angle: false
+  verified_via: fetch
+  notes: "No license file was seen, so link to it rather than copying."
+
+- id: msi-working-papers
+  category: TEXTBOOKS
+  subtopic: "Marketing research resources"
+  title: "Marketing Science Institute library (free working papers)"
+  authors: "Marketing Science Institute"
+  type: website
+  venue: "MSI"
+  url: "https://www.msi.org/library/"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [M8]
+  summary: "MSI offers free access to its working papers, plus webinars in which academics and practitioners present current marketing research. Some content is members-only."
+  wiki_use: "Source of current-topics readings for M8. No dedicated teaching-resource section was found."
+  ai_angle: false
+  verified_via: fetch
+  notes: "AMA teaching resources could not be verified (the target page did not load)."
+
+- id: darden-business-publishing
+  category: TEXTBOOKS
+  subtopic: "Case collections (paid)"
+  title: "Darden Business Publishing (cases, simulations, course packs)"
+  authors: "University of Virginia Darden School of Business"
+  type: case
+  venue: "Darden Business Publishing"
+  url: "https://store.darden.virginia.edu/"
+  access: paid
+  level: intermediate
+  priority: optional
+  modules: [M4, M6, M8]
+  summary: "Store for cases, technical notes, exercises and simulations (including a digital-marketing attribution simulation), with a course-pack builder and free educator resources."
+  wiki_use: "Source of paid marketing-analytics cases with data, if the budget allows a per-student fee."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Venkatesan, Farris & Wilcox's book of Darden marketing-analytics cases with data sets ('Cutting-Edge Marketing Analytics') could not be verified because the publisher pages failed to load. Harvard Business Publishing Education (https://hbsp.harvard.edu/cases/) loads only with JavaScript, so its data cases were not checked."
+
+- id: deeplearningai-ai-python-beginners
+  category: TEXTBOOKS
+  subtopic: "Intro Python with AI assistant"
+  title: "AI Python for Beginners"
+  authors: "Ng, A. (DeepLearning.AI)"
+  type: course
+  venue: "DeepLearning.AI"
+  url: "https://www.deeplearning.ai/short-courses/ai-python-for-beginners/"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M1, AI]
+  summary: "11.5-hour beginner course on Python basics, files and CSVs, matplotlib, web scraping, packages and APIs. A built-in AI assistant helps learners write, test and debug code."
+  wiki_use: "Pre-course onboarding for students new to Python that introduces AI-assisted coding from day one."
+  tools: [python, matplotlib, beautifulsoup]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Free during the platform beta; a certificate requires a PRO membership."
+
+- id: modern-statistics-python-mistat
+  category: TEXTBOOKS
+  subtopic: "Statistics with Python"
+  title: "Modern Statistics: A Computer-Based Approach with Python"
+  authors: "Kenett, R.; Zacks, S.; Gedeck, P."
+  year: 2022
+  type: book
+  venue: "Springer"
+  url: "https://github.com/gedeck/mistat-code-solutions"
+  access: library
+  level: intermediate
+  priority: optional
+  modules: [M3]
+  summary: "Springer textbook on statistics with Python, with the companion mistat package (MIT) and a public repository of code and exercise solutions."
+  wiki_use: "Optional statistics reference with worked Python solutions; its industrial-statistics flavor makes it a secondary pick behind ISLP and Think Stats."
+  tools: [mistat, statsmodels, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "mistat on PyPI (MIT): https://pypi.org/project/mistat/ . The repository's license is not visible. A companion volume, Industrial Statistics, came out in 2023. Likely available through UIUC SpringerLink (not checked)."

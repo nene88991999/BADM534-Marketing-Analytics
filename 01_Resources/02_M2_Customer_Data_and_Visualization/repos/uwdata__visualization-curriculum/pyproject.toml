@@ -1,0 +1,10 @@
+[project]
+name = "altair-tutorial"
+version = "2.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "altair>=6.0.0",
+    "jupyter-book>=2",
+    "jupyterlab>=4.5.6",
+    "pandas>=3.0.2"
+]

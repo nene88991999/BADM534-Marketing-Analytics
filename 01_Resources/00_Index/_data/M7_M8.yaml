@@ -1,0 +1,1446 @@
+# BADM 534 resource search: M7 (Predictive Models, AI and ML) and M8 (Current Topics in Marketing)
+# Compiled 2026-10-23. Every URL was seen in a search result or confirmed with a WebFetch.
+
+# =========================================================================================
+# M7: Core ML in Python
+# =========================================================================================
+
+- id: islp-book
+  category: M7
+  subtopic: "Core textbook"
+  title: "An Introduction to Statistical Learning, with Applications in Python (ISLP)"
+  authors: "James, G.; Witten, D.; Hastie, T.; Tibshirani, R.; Taylor, J."
+  year: 2023
+  type: book
+  venue: "Springer (Springer Texts in Statistics); free PDF from the authors"
+  url: "https://www.statlearning.com/"
+  doi: "10.1007/978-3-031-38747-0"
+  oa_url: "https://hastie.su.domains/ISLP/ISLP_website.pdf.download.html"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M7, M3, M4]
+  summary: "The standard intro statistical learning text in its Python edition. It covers regression, classification, resampling and cross-validation, regularization, trees, boosting, SVMs, deep learning, survival and unsupervised learning, and each chapter ends with a Python lab."
+  wiki_use: "Main reading for M7. Assign chapters 4 (classification), 5 (resampling/CV) and 8 (trees, bagging, boosting), and link the free PDF from the wiki."
+  tools: [ISLP, scikit-learn, statsmodels, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "statlearning.com links the author-hosted PDF. It also has a Python resources page (statlearning.com/resources-python) and Python errata. The DOI comes from the Springer link on the same page."
+
+- id: islp-labs-repo
+  category: M7
+  subtopic: "Core textbook labs"
+  title: "ISLP_labs: Python lab notebooks for ISLP"
+  authors: "intro-stat-learning (ISLP authors and contributors)"
+  year: 2023
+  type: notebook
+  venue: "GitHub"
+  url: "https://github.com/intro-stat-learning/ISLP_labs"
+  access: open
+  license: "BSD-2-Clause"
+  level: intermediate
+  priority: core
+  modules: [M7, M3, M4]
+  summary: "Twelve Jupyter notebooks, one per ISLP chapter (Ch02 to Ch13: linreg, classification, resample, baggboost, deeplearning, unsup and so on), with small datasets and a requirements.txt pinned at tag v2.2.2."
+  wiki_use: "Embed or fork the classification, resampling and baggboost notebooks as Colab in-class coding activities. Students can also ask an AI assistant to explain or extend a lab cell."
+  tools: [ISLP, scikit-learn, statsmodels, torch]
+  ai_angle: false
+  download:
+    repo: "https://github.com/intro-stat-learning/ISLP_labs"
+    path: ""
+    license: "BSD-2-Clause"
+  verified_via: fetch
+  notes: "Labs are versioned (v2.2.2). Pin that tag so the notebooks match the requirements file."
+
+- id: sklearn-cross-validation
+  category: M7
+  subtopic: "Cross-validation"
+  title: "scikit-learn User Guide 3.1: Cross-validation, evaluating estimator performance"
+  authors: "scikit-learn developers"
+  year: 2026
+  type: documentation
+  venue: "scikit-learn 1.9.1 documentation"
+  url: "https://scikit-learn.org/stable/modules/cross_validation.html"
+  access: open
+  license: "BSD-3-Clause (scikit-learn)"
+  level: intermediate
+  priority: core
+  modules: [M7]
+  summary: "The canonical reference for cross_val_score and cross_validate, K-fold, stratified, grouped (GroupKFold) and time-series (TimeSeriesSplit) splitters, and permutation tests."
+  wiki_use: "Link from the M7 'how to evaluate a churn model' page, and use GroupKFold (customers) and TimeSeriesSplit (forecasting) as marketing-relevant splitting examples."
+  tools: [scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The full User Guide index is at scikit-learn.org/stable/user_guide.html (also verified). The license is scikit-learn's well-known BSD-3. I did not re-check it in this session."
+
+- id: sklearn-common-pitfalls
+  category: M7
+  subtopic: "Data leakage and pitfalls"
+  title: "scikit-learn User Guide 12: Common pitfalls and recommended practices"
+  authors: "scikit-learn developers"
+  year: 2026
+  type: documentation
+  venue: "scikit-learn 1.9.1 documentation"
+  url: "https://scikit-learn.org/stable/common_pitfalls.html"
+  access: open
+  level: intro
+  priority: core
+  modules: [M7, AI]
+  summary: "Short worked examples of inconsistent preprocessing, data leakage (for example feature selection on the full data inflates accuracy from 0.5 to about 0.76 on pure noise) and random_state control, with Pipeline as the fix."
+  wiki_use: "Required reading before students let an AI assistant write an ML pipeline. Use it as an audit checklist: 'find the leakage in this AI-generated notebook'."
+  tools: [scikit-learn]
+  ai_angle: true
+  verified_via: fetch
+  notes: "These are exactly the bugs LLM-written notebooks often contain: fit_transform before the train/test split, and feature selection on the full data."
+
+- id: sklearn-mooc-inria
+  category: M7
+  subtopic: "scikit-learn course"
+  title: "Machine learning in Python with scikit-learn (Inria MOOC)"
+  authors: "Inria / scikit-learn core developers"
+  year: 2024
+  type: course
+  venue: "FUN MOOC and GitHub (Jupyter Book)"
+  url: "https://inria.github.io/scikit-learn-mooc"
+  oa_url: "https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/"
+  access: open
+  license: "CC-BY-4.0"
+  level: intro
+  priority: core
+  modules: [M7]
+  summary: "A free MOOC by scikit-learn maintainers covering predictive modeling pipelines, overfitting and underfitting, hyperparameter tuning, linear models, trees, ensembles and evaluation, with runnable notebooks and quizzes."
+  wiki_use: "Self-paced backup for students without an ML background. Embed specific notebooks (for example 'ensemble' or 'evaluation') as pre-class work."
+  tools: [scikit-learn, pandas]
+  ai_angle: false
+  download:
+    repo: "https://github.com/INRIA/scikit-learn-mooc"
+    path: "notebooks/"
+    license: "CC-BY-4.0"
+  verified_via: fetch
+  notes: "The CC-BY license is stated in the repo README. The year is approximate because the repo is continuously updated."
+
+- id: google-ml-crash-course
+  category: M7
+  subtopic: "Intro ML course"
+  title: "Machine Learning Crash Course (refreshed edition)"
+  authors: "Google for Developers"
+  year: 2024
+  type: course
+  venue: "developers.google.com"
+  url: "https://developers.google.com/machine-learning/crash-course"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M7, AI]
+  summary: "A fast-paced, visual intro to ML: linear and logistic regression, classification metrics (thresholds, confusion matrix, AUC), data prep, overfitting, neural nets, embeddings, an intro to LLMs, and new AutoML and ML-fairness modules."
+  wiki_use: "Link the classification-metrics and AutoML modules (about 30 min) as pre-reading. The interactive visuals suit non-CS students."
+  tools: [Keras, Colab]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The AutoML module is at developers.google.com/machine-learning/crash-course/automl (verified; about 30 minutes, covers benefits and limitations). The 2024 refresh date comes from a Google blog result in search, not from the course page itself."
+
+- id: xgboost-docs
+  category: M7
+  subtopic: "Gradient boosting"
+  title: "XGBoost Documentation (incl. 'Introduction to Boosted Trees' and scikit-learn interface)"
+  authors: "XGBoost developers (DMLC)"
+  year: 2026
+  type: documentation
+  venue: "xgboost.readthedocs.io (v3.4.2)"
+  url: "https://xgboost.readthedocs.io/en/stable/"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M7]
+  summary: "Official docs for XGBoost, with a get-started page, a Python intro, the scikit-learn estimator interface, and a well-written conceptual tutorial on boosted trees (tutorials/model.html)."
+  wiki_use: "Assign 'Introduction to Boosted Trees' for intuition, then have students swap XGBClassifier into their sklearn churn pipeline."
+  tools: [xgboost, scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The Apache-2.0 license was confirmed on github.com/dmlc/xgboost."
+
+- id: lightgbm-docs
+  category: M7
+  subtopic: "Gradient boosting"
+  title: "LightGBM Documentation (Python quick start)"
+  authors: "Microsoft / LightGBM developers"
+  year: 2026
+  type: documentation
+  venue: "lightgbm.readthedocs.io (v4.7.0)"
+  url: "https://lightgbm.readthedocs.io/en/stable/"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: recommended
+  modules: [M7]
+  summary: "Docs for LightGBM, a fast, memory-efficient gradient-boosting library that is a common Kaggle and industry default for tabular prediction. Includes a Python-Intro quick start."
+  wiki_use: "Present it as the alternative to XGBoost, and have students compare speed and AUC on the same churn data with cross-validation."
+  tools: [lightgbm, scikit-learn]
+  ai_angle: false
+  verified_via: fetch
+  notes: "MIT license confirmed on github.com/microsoft/LightGBM. That page now points to a lightgbm-org/LightGBM location, so the repo may have moved organizations."
+
+- id: shap-docs
+  category: M7
+  subtopic: "Interpretability / SHAP"
+  title: "SHAP documentation: 'An introduction to explainable AI with Shapley values'"
+  authors: "Lundberg, S. and SHAP contributors"
+  year: 2026
+  type: documentation
+  venue: "shap.readthedocs.io"
+  url: "https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html"
+  access: open
+  license: "MIT"
+  level: intermediate
+  priority: core
+  modules: [M7]
+  summary: "The official SHAP intro notebook. It builds from linear models to tree ensembles and explains global and local feature attributions with beeswarm, waterfall and dependence plots."
+  wiki_use: "Use it for the 'why is this customer predicted to churn?' segment. Students can produce SHAP plots for their XGBoost model and write a manager-facing interpretation."
+  tools: [shap, xgboost, scikit-learn]
+  ai_angle: false
+  download:
+    repo: "https://github.com/shap/shap"
+    path: "notebooks/"
+    license: "MIT"
+  verified_via: search
+  notes: "The underlying paper is Lundberg & Lee (2017), 'A Unified Approach to Interpreting Model Predictions', arXiv 1705.07874 (fetched; NIPS venue not shown on arXiv). The repo license (MIT) and notebooks folder were confirmed by fetch. The notebooks folder may be large, so download it selectively."
+
+- id: molnar-interpretable-ml
+  category: M7
+  subtopic: "Interpretability"
+  title: "Interpretable Machine Learning: A Guide for Making Black Box Models Explainable (3rd ed.)"
+  authors: "Molnar, C."
+  year: 2025
+  type: book
+  venue: "christophm.github.io (free online book)"
+  url: "https://christophm.github.io/interpretable-ml-book/"
+  access: open
+  license: "CC BY-NC-SA 4.0"
+  level: intermediate
+  priority: recommended
+  modules: [M7]
+  summary: "A free book on interpretability methods: permutation feature importance, partial dependence, Shapley values and SHAP, and their pitfalls."
+  wiki_use: "Background reading behind the SHAP lab, especially the chapters on PDP, permutation importance and SHAP limitations."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The page says 3rd edition but shows no year, so 2025 is approximate. Examples appear to use R, so pair it with the SHAP Python docs."
+
+# =========================================================================================
+# M7: Marketing prediction problems (churn, retention, uplift, NBO, recommenders, forecasting)
+# =========================================================================================
+
+- id: neslin-2006-defection-detection
+  category: M7
+  subtopic: "Churn prediction"
+  title: "Defection Detection: Measuring and Understanding the Predictive Accuracy of Customer Churn Models"
+  authors: "Neslin, S. A.; Gupta, S.; Kamakura, W.; Lu, J.; Mason, C. H."
+  year: 2006
+  type: paper
+  venue: "Journal of Marketing Research 43(2): 204-211"
+  url: "https://journals.sagepub.com/doi/10.1509/jmkr.43.2.204"
+  doi: "10.1509/jmkr.43.2.204"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M7]
+  summary: "Reports a churn-modeling tournament (Teradata Center at Duke) in which many teams modeled the same telecom data. It shows that method choice matters for predictive accuracy and that accuracy translates into substantial retention profit."
+  wiki_use: "Academic anchor for the churn unit. Use the tournament framing to motivate holdout evaluation (top-decile lift, Gini) on students' own churn models."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The tournament detail (Teradata Center at Duke) is from background knowledge and was not verified; the fetched page confirmed only the title, authors, volume and pages. IAOR lists the authors in a different order."
+
+- id: lemmens-croux-2006-bagging-boosting-churn
+  category: M7
+  subtopic: "Churn prediction"
+  title: "Bagging and Boosting Classification Trees to Predict Churn"
+  authors: "Lemmens, A.; Croux, C."
+  year: 2006
+  type: paper
+  venue: "Journal of Marketing Research 43(2): 276-286"
+  url: "https://journals.sagepub.com/doi/10.1509/jmkr.43.2.276"
+  doi: "10.1509/jmkr.43.2.276"
+  oa_url: "https://repository.tilburguniversity.edu/items/cc4ad18d-93b2-4bc0-a6e7-8b53be6603d6"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M7]
+  summary: "A classic marketing paper showing that ensemble tree methods (bagging, stochastic gradient boosting) beat logistic regression for churn prediction, and discussing how to handle oversampled (balanced) training data."
+  wiki_use: "Pair it with the XGBoost lab. It is an early marketing-journal case for boosting, and its correction for balanced sampling is a useful discussion point."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The Tilburg repository record lists a PDF (lemmens_bagging.pdf), but open access was not confirmed."
+
+- id: ascarza-2018-retention-review
+  category: M7
+  subtopic: "Retention management"
+  title: "In Pursuit of Enhanced Customer Retention Management: Review, Key Issues, and Future Directions"
+  authors: "Ascarza, E.; Neslin, S. A.; Netzer, O.; Anderson, Z.; Fader, P. S.; Gupta, S.; Hardie, B. G. S.; Lemmens, A.; Libai, B.; Neal, D.; Provost, F.; Schrift, R."
+  year: 2018
+  type: paper
+  venue: "Customer Needs and Solutions 5(1): 65-81"
+  url: "https://ideas.repec.org/a/spr/custns/v5y2018i1d10.1007_s40547-017-0080-0.html"
+  doi: "10.1007/s40547-017-0080-0"
+  oa_url: "https://lbsresearch.london.edu/id/eprint/915"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M7, M4]
+  summary: "A review from a Choice Symposium on retention management. It argues for moving from 'who will churn?' to 'whom should we target and with what?', covering churn prediction, targeting, interventions and CLV links."
+  wiki_use: "Framing reading for the churn module. It connects M4 (CLV) to M7 (prediction) and M6 (targeting experiments)."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The LBS eprint record appeared in search results; I did not fetch it to confirm the full text."
+
+- id: ascarza-2018-retention-futility
+  category: M7
+  subtopic: "Uplift / targeting"
+  title: "Retention Futility: Targeting High-Risk Customers Might Be Ineffective"
+  authors: "Ascarza, E."
+  year: 2018
+  type: paper
+  venue: "Journal of Marketing Research 55(1)"
+  url: "https://www.ama.org/2019/04/24/escarzas-retention-futility-targeting-high-risk-customers-might-be-ineffective-wins-2018-award/"
+  doi: "10.1509/jmr.16.0163"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M7, M6]
+  summary: "Using field experiments at a wireless carrier and a membership organization, it shows that targeting customers by predicted churn risk is worse than targeting by predicted lift (treatment effect) of the retention offer."
+  wiki_use: "Key case for 'prediction is not decision'. Use it to bridge M6 and M7, with students comparing risk-based and uplift-based targeting on the same data."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The AMA page gives the DOI and February 2018 issue. Volume 55(1) is from background knowledge and was not verified. An AMA page title says it won a 2018 award (the award was not named on the fetched page), and another AMA page says it received the 2023 Weitz-Winer-O'Dell award (seen in search)."
+
+- id: causalml-uplift
+  category: M7
+  subtopic: "Uplift / propensity modeling"
+  title: "CausalML: Uplift modeling and causal inference with machine learning"
+  authors: "Uber / CausalML contributors"
+  year: 2026
+  type: package
+  venue: "GitHub / readthedocs"
+  url: "https://github.com/uber/causalml"
+  oa_url: "https://causalml.readthedocs.io/en/latest/examples.html"
+  access: open
+  license: "Apache-2.0"
+  level: advanced
+  priority: recommended
+  modules: [M7, M6]
+  summary: "A Python package for estimating heterogeneous treatment effects (CATE): uplift trees, meta-learners (S/T/X/R) and doubly robust estimators, with example notebooks and benchmarks."
+  wiki_use: "Optional advanced lab after Retention Futility, in which students estimate uplift for a retention or email campaign and compare it with a churn-propensity ranking."
+  tools: [causalml, scikit-learn, xgboost]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The repo has no top-level examples folder; the notebooks are linked from the docs examples page. A lighter sklearn-style alternative is scikit-uplift (github.com/maks-sh/scikit-uplift, MIT, RetailHero tutorial with Colab; verified)."
+
+- id: davenport-2011-next-best-offer
+  category: M7
+  subtopic: "Next-best-offer"
+  title: "Know What Your Customers Want Before They Do"
+  authors: "Davenport, T. H.; DalleMule, L.; Lucker, J."
+  year: 2011
+  type: paper
+  venue: "Harvard Business Review (December 2011)"
+  url: "https://hbr.org/2011/12/know-what-your-customers-want-before-they-do"
+  access: library
+  level: intro
+  priority: recommended
+  modules: [M7]
+  summary: "A managerial article on 'next best offer' (NBO) analytics. It gives a four-step framework (define objectives, gather data, analyze and execute, learn and evolve) with Tesco, Zappos, Microsoft and Walmart examples."
+  wiki_use: "Short practitioner reading that frames response, propensity and recommender models as one NBO decision system."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+
+- id: surprise-recsys
+  category: M7
+  subtopic: "Recommender systems"
+  title: "Surprise: a Python scikit for recommender systems"
+  authors: "Hug, N."
+  year: 2019
+  type: package
+  venue: "GitHub / surprise.readthedocs.io"
+  url: "https://github.com/NicolasHug/Surprise"
+  oa_url: "https://surprise.readthedocs.io/en/stable/index.html"
+  access: open
+  license: "BSD-3-Clause"
+  level: intro
+  priority: recommended
+  modules: [M7]
+  summary: "A scikit-style library for explicit-rating recommenders (SVD and other matrix factorization, kNN baselines) with built-in MovieLens and Jester data and cross-validation helpers."
+  wiki_use: "Quick in-class lab: replicate a Netflix-Prize-style SVD on MovieLens 100k in about 20 lines."
+  tools: [scikit-surprise]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Maintenance-only since v1.1.0 (2019), with no new features. Check NumPy 2 compatibility in Colab before class. For implicit feedback (clicks, purchases), use 'implicit' (github.com/benfred/implicit, MIT; ALS, BPR; verified)."
+
+- id: ms-recommenders
+  category: M7
+  subtopic: "Recommender systems"
+  title: "Recommenders: Best Practices on Recommendation Systems"
+  authors: "Recommenders team (Linux Foundation AI & Data; originally Microsoft)"
+  year: 2026
+  type: notebook
+  venue: "GitHub"
+  url: "https://github.com/recommenders-team/recommenders"
+  access: open
+  license: "MIT"
+  level: advanced
+  priority: optional
+  modules: [M7]
+  summary: "A large collection of notebooks and utilities for about 33 recommender algorithms (ALS, BPR, SAR, NCF, LightGCN, SASRec, content-based and others), with data prep, offline evaluation and tuning."
+  wiki_use: "Source of quick-start notebooks for team projects that want a recommender, and instructor reference for evaluation metrics (precision@k, NDCG)."
+  tools: [recommenders, pyspark, lightgbm]
+  ai_angle: false
+  download:
+    repo: "https://github.com/recommenders-team/recommenders"
+    path: "examples/00_quick_start/"
+    license: "MIT"
+  verified_via: fetch
+
+- id: netflix-beyond-5-stars
+  category: M7
+  subtopic: "Recommender systems / Netflix Prize"
+  title: "Netflix Recommendations: Beyond the 5 stars (Part 1)"
+  authors: "Amatriain, X.; Basilico, J."
+  year: 2012
+  type: blog
+  venue: "Netflix Technology Blog"
+  url: "https://netflixtechblog.com/netflix-recommendations-beyond-the-5-stars-part-1-55838468f429"
+  access: open
+  level: intro
+  priority: core
+  modules: [M7, M8]
+  summary: "Netflix's own account of the Netflix Prize. SVD and RBM from the Progress Prize went into production, but the winning ensemble was never deployed because the accuracy gains did not justify the engineering cost, and the business goal shifted from RMSE to engagement and retention."
+  wiki_use: "Case discussion: offline metric vs business objective. It also pairs with privacy (M8), since the Prize sequel was cancelled after a lawsuit and FTC concerns."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "For history: en.wikipedia.org/wiki/Netflix_Prize (fetched) covers the 2006-2009 timeline, the $1M prize to BellKor's Pragmatic Chaos, the Narayanan-Shmatikov de-anonymization, the 2009 lawsuit and the 2010 cancellation of the sequel."
+
+- id: statsforecast-nixtla
+  category: M7
+  subtopic: "Demand forecasting"
+  title: "StatsForecast: fast forecasting with statistical and econometric models"
+  authors: "Nixtla"
+  year: 2026
+  type: package
+  venue: "GitHub / nixtlaverse.nixtla.io"
+  url: "https://github.com/Nixtla/statsforecast"
+  oa_url: "https://nixtlaverse.nixtla.io/statsforecast"
+  access: open
+  license: "Apache-2.0"
+  level: intermediate
+  priority: core
+  modules: [M7]
+  summary: "Fast AutoARIMA, AutoETS, Theta, MSTL, Croston-type intermittent-demand models and baselines for many series at once, with built-in time-series cross-validation."
+  wiki_use: "Main tool for the demand-forecasting lab: forecast SKU-store sales with AutoETS vs seasonal naive and evaluate with rolling-origin CV."
+  tools: [statsforecast, pandas]
+  ai_angle: false
+  download:
+    repo: "https://github.com/Nixtla/statsforecast"
+    path: "nbs/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The 'nbs' folder probably holds the source notebooks, but the page does not say so. The docs quick guide is at nixtlaverse.nixtla.io/statsforecast/docs/getting-started/getting_started_short.html."
+
+- id: prophet
+  category: M7
+  subtopic: "Demand forecasting"
+  title: "Prophet: Forecasting at scale"
+  authors: "Meta (Facebook) Core Data Science; Taylor, S. J.; Letham, B."
+  year: 2017
+  type: package
+  venue: "facebook.github.io/prophet"
+  url: "https://facebook.github.io/prophet/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M7]
+  summary: "An additive trend, seasonality and holiday forecasting procedure for R and Python, popular in marketing and business teams for daily data with promotions and holidays."
+  wiki_use: "Easy first forecasting demo (quick start in Colab), then contrast it with statsforecast baselines to show that Prophet is not always the most accurate."
+  tools: [prophet]
+  ai_angle: false
+  verified_via: fetch
+  notes: "The site links a PeerJ preprint (peerj.com/preprints/3190), but that fetch failed, so the authors and the journal version (American Statistician 2018) are unverified. The site has a '2023 Update' on Prophet's future (not read). The license was not stated on the page."
+
+- id: fpp-pythonic
+  category: M7
+  subtopic: "Demand forecasting"
+  title: "Forecasting: Principles and Practice, the Pythonic Way"
+  authors: "Hyndman, R. J.; Athanasopoulos, G.; Garza, A.; Challu, C.; Mergenthaler, M.; Olivares, K. G."
+  year: 2026
+  type: book
+  venue: "OTexts (free online)"
+  url: "https://otexts.com/fpppy/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M7]
+  summary: "The Python edition of Hyndman and Athanasopoulos's forecasting textbook, built on Nixtla's open-source 'nixtlaverse' libraries. It is free online."
+  wiki_use: "Assigned reading for the forecasting week (benchmarks, ETS, ARIMA, evaluation), with code that matches the statsforecast lab."
+  tools: [statsforecast, mlforecast, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Preface dated May 2026. No license is stated (only a copyright symbol), so link to it rather than copy it."
+
+# =========================================================================================
+# M7: Academic framing
+# =========================================================================================
+
+- id: mullainathan-spiess-2017
+  category: M7
+  subtopic: "Prediction vs. estimation"
+  title: "Machine Learning: An Applied Econometric Approach"
+  authors: "Mullainathan, S.; Spiess, J."
+  year: 2017
+  type: paper
+  venue: "Journal of Economic Perspectives 31(2): 87-106"
+  url: "https://www.aeaweb.org/articles?id=10.1257/jep.31.2.87"
+  doi: "10.1257/jep.31.2.87"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M7, M3, M6]
+  summary: "An accessible explanation of how supervised ML differs from econometrics: it is good at prediction (y-hat) but not at recovering parameters (beta-hat), illustrated with house-price prediction and regularization."
+  wiki_use: "The opening reading for M7, connecting M3 (regression) and M6 (causal) to prediction."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "JEP offers a free PDF. Replication data is on openICPSR (project 113993, seen in search)."
+
+- id: kleinberg-2015-prediction-policy
+  category: M7
+  subtopic: "Prediction vs. causal problems"
+  title: "Prediction Policy Problems"
+  authors: "Kleinberg, J.; Ludwig, J.; Mullainathan, S.; Obermeyer, Z."
+  year: 2015
+  type: paper
+  venue: "American Economic Review 105(5): 491-95 (Papers & Proceedings)"
+  url: "https://www.aeaweb.org/articles?id=10.1257/aer.p20151023"
+  doi: "10.1257/aer.p20151023"
+  oa_url: "https://harris.uchicago.edu/files/inline-files/AER%20policy%20prediction%20problems%20may%202015.pdf"
+  access: open
+  level: intro
+  priority: core
+  modules: [M7, M6]
+  summary: "A short piece separating 'umbrella' problems, where only a prediction is needed, from 'rain dance' problems, where the causal effect matters."
+  wiki_use: "A five-page reading for an in-class exercise: classify marketing decisions (churn targeting, ad budget, pricing) as prediction or causal problems."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The oa_url PDF came from search results and was not fetched."
+
+- id: ma-sun-2020-ml-ai-marketing
+  category: M7
+  subtopic: "ML in marketing review"
+  title: "Machine learning and AI in marketing: Connecting computing power to human insights"
+  authors: "Ma, L.; Sun, B."
+  year: 2020
+  type: paper
+  venue: "International Journal of Research in Marketing 37(3): 481-504"
+  url: "https://ideas.repec.org/a/eee/ijrema/v37y2020i3p481-504.html"
+  doi: "10.1016/j.ijresmar.2020.04.005"
+  oa_url: "https://english.ckgsb.edu.cn/faculty/sun-baohong/ma_sun_2020/"
+  access: open
+  level: advanced
+  priority: recommended
+  modules: [M7, M5]
+  summary: "A review of ML methods (supervised, unsupervised, deep learning, reinforcement learning) for marketing problems, including text, image and behavioral data, and how they complement theory-driven models."
+  wiki_use: "Instructor background, plus an optional reading for students who want a map of ML applications in marketing research."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The CKGSB page hosts the extracted full text of the paper."
+
+- id: huang-rust-2021-ai-framework
+  category: M7
+  subtopic: "AI strategy in marketing"
+  title: "A strategic framework for artificial intelligence in marketing"
+  authors: "Huang, M.-H.; Rust, R. T."
+  year: 2021
+  type: paper
+  venue: "Journal of the Academy of Marketing Science 49: 30-50"
+  url: "https://link.springer.com/article/10.1007/s11747-020-00749-9"
+  doi: "10.1007/s11747-020-00749-9"
+  access: open
+  license: "CC BY 4.0"
+  level: intro
+  priority: core
+  modules: [M7, M8, AI]
+  summary: "Classifies marketing AI as mechanical, thinking or feeling, and maps each to research, strategy (segmentation, targeting, positioning) and action (4Ps/4Cs)."
+  wiki_use: "Framework for the M7/M8 transition: students place their own project's AI use within the mechanical/thinking/feeling grid."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "Open access (CC BY 4.0). The page metadata shows a 2020 online date."
+
+# =========================================================================================
+# M7: Generative AI as an analytics tool (silicon samples, LLM market research)
+# =========================================================================================
+
+- id: argyle-2023-out-of-one-many
+  category: M7
+  subtopic: "LLM silicon samples"
+  title: "Out of One, Many: Using Language Models to Simulate Human Samples"
+  authors: "Argyle, L. P.; Busby, E. C.; Fulda, N.; Gubler, J. R.; Rytting, C.; Wingate, D."
+  year: 2023
+  type: paper
+  venue: "Political Analysis 31(3): 337-351"
+  url: "https://www.cambridge.org/core/product/035D7C8A55B237942FB6DBAD7CAA4E49"
+  doi: "10.1017/pan.2023.2"
+  oa_url: "https://arxiv.org/pdf/2209.06899"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M7, AI]
+  summary: "Introduces 'silicon samples': GPT-3 conditioned on demographic backstories reproduces subgroup response patterns from US political surveys ('algorithmic fidelity')."
+  wiki_use: "Foundational reading for the 'LLMs as simulated consumers' session. Students can run a small persona-prompting replication in Colab."
+  tools: [openai, anthropic]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The volume, issue and pages come from the IDEAS URL seen in search. The DOI appears on the Cambridge page as the supplementary-material DOI. Replication data is at doi 10.7910/DVN/JPV20K."
+
+- id: horton-homo-silicus
+  category: M7
+  subtopic: "LLM simulated agents"
+  title: "Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?"
+  authors: "Horton, J. J.; Filippas, A.; Manning, B. S."
+  year: 2023
+  type: paper
+  venue: "NBER Working Paper 31122 (revised February 2026)"
+  url: "https://www.nber.org/papers/w31122"
+  oa_url: "https://arxiv.org/abs/2301.07543v2"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M7, AI]
+  summary: "Treats LLMs as implicit computational models of humans ('Homo silicus') that can be given endowments and preferences, and replicates classic behavioral-economics experiments with them."
+  wiki_use: "Companion to Argyle et al. Students replicate one classic experiment (for example a fairness or framing question) with an LLM and compare it with published human results."
+  tools: [openai]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The original arXiv version lists Horton alone; the NBER revision adds Filippas and Manning."
+
+- id: sarstedt-2024-silicon-samples
+  category: M7
+  subtopic: "LLM silicon samples"
+  title: "Using large language models to generate silicon samples in consumer and marketing research: Challenges, opportunities, and guidelines"
+  authors: "Sarstedt, M.; Adler, S. J.; Rau, L.; Schmitt, B."
+  year: 2024
+  type: paper
+  venue: "Psychology & Marketing 41(6): 1254-1270"
+  url: "https://business.columbia.edu/faculty/research/using-large-language-models-generate-silicon-samples-consumer-and-marketing"
+  doi: "10.1002/mar.21982"
+  oa_url: "https://epub.ub.uni-muenchen.de/116232/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M7, AI]
+  summary: "A marketing-specific review of when LLM 'silicon samples' agree with human respondents, with practical guidelines on where they are useful (pilots, item generation) and where they are not (final estimates)."
+  wiki_use: "Assigned reading and checklist for any team that wants to use LLM respondents in its project."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The LMU ePub record links a PDF but states no license. That record lists three authors, while the Columbia page lists all four."
+
+- id: li-2024-llm-perceptual-analysis
+  category: M7
+  subtopic: "LLM market research"
+  title: "Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis"
+  authors: "Li, P.; Castelo, N.; Katona, Z.; Sarvary, M."
+  year: 2024
+  type: paper
+  venue: "Marketing Science 43(2): 254-266"
+  url: "https://ideas.repec.org/a/inm/ormksc/v43y2024i2p254-266.html"
+  doi: "10.1287/mksc.2023.0454"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M7, M4, AI]
+  summary: "Generates brand-similarity and attribute ratings with LLMs and finds over 75% agreement with human survey data, which supports LLM-based perceptual maps for some categories."
+  wiki_use: "Hands-on exercise: build a perceptual map from LLM-elicited brand similarities and compare it with one from a class survey. It links to M4 segmentation and positioning."
+  tools: [openai, scikit-learn]
+  ai_angle: true
+  verified_via: fetch
+  notes: "INFORMS has a supplemental page with replication material (pubsonline.informs.org/doi/suppl/10.1287/mksc.2023.0454, seen in search)."
+
+- id: arora-2025-ai-human-hybrids
+  category: M7
+  subtopic: "LLM market research"
+  title: "AI-Human Hybrids for Marketing Research: Leveraging LLMs as Collaborators"
+  authors: "Arora, N.; Chakraborty, I.; Nishimura, Y."
+  year: 2025
+  type: paper
+  venue: "Journal of Marketing"
+  url: "https://www.ama.org/press-releases/how-the-human-ai-hybrid-approach-can-lead-to-efficiency-and-effectiveness-gains-in-marketing-research/"
+  doi: "10.1177/00222429241276529"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M7, M5, AI]
+  summary: "Working with a Fortune 500 food company, the authors replicate qualitative and quantitative studies with LLMs. Human-LLM hybrids beat either alone in qualitative work (synthetic interviews, theme coding), and LLMs help draft survey elements."
+  wiki_use: "Model workflow for the team project: LLM drafts, humans check and fill gaps. Also a good discussion of when not to use LLMs."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "Won the 2025 AMA/MSI H. Paul Root Award (AMA page seen in search). The volume and issue were not shown on the fetched page."
+
+- id: gui-toubia-llm-causal
+  category: M7
+  subtopic: "Critique of LLM simulation"
+  title: "The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective"
+  authors: "Gui, G.; Toubia, O."
+  year: 2023
+  type: paper
+  venue: "arXiv 2312.15524 / SSRN 4650172 (v3, November 2025)"
+  url: "https://arxiv.org/abs/2312.15524"
+  access: open
+  level: advanced
+  priority: core
+  modules: [M7, M6, AI]
+  summary: "Shows that when you vary a treatment in an LLM prompt, unstated confounders shift too, which violates unconfoundedness. Simulated demand curves can be implausible, and adding covariate controls can make them worse. 'Unblinding' the design to the LLM helps."
+  wiki_use: "Required critique to pair with the silicon-sample readings; it ties M6 causal logic to AI-generated data."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "No journal reference as of v3 (November 23, 2025)."
+
+- id: brand-israeli-ngwe-llm-market-research
+  category: M7
+  subtopic: "LLM willingness-to-pay"
+  title: "Using LLMs for Market Research"
+  authors: "Brand, J.; Israeli, A.; Ngwe, D."
+  year: 2023
+  type: paper
+  venue: "Harvard Business School Working Paper 23-062 / SSRN 4395751 (revised April 2026)"
+  url: "https://papers.ssrn.com/abstract=4395751"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M7, M4, AI]
+  summary: "Elicits willingness-to-pay distributions from LLMs. Estimates sometimes look like human conjoint results but are often inaccurate, occasionally with the wrong sign. Fine-tuning on past surveys helps within a category but not for new categories or segments."
+  wiki_use: "Links to the M4 conjoint unit: students compare an LLM-simulated WTP with their own conjoint estimate and discuss the failure modes."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+
+# =========================================================================================
+# M7: AutoML, AI agents for ML, and failure modes
+# =========================================================================================
+
+- id: colab-data-science-agent
+  category: M7
+  subtopic: "AI agents for analysis"
+  title: "Data Science Agent in Colab: The future of data analysis with Gemini"
+  authors: "Fine, J.; Kolla, M.; Soloducho, I. (Google)"
+  year: 2025
+  type: blog
+  venue: "Google Developers Blog (March 3, 2025)"
+  url: "https://developers.googleblog.com/data-science-agent-in-colab-with-gemini/"
+  access: free-registration
+  level: intro
+  priority: core
+  modules: [M7, M1, AI]
+  summary: "Announces a Gemini-powered agent in Colab that turns a plain-language request into a complete notebook (imports, data loading, modeling, plots). It ranked 4th on the DABStep benchmark at launch."
+  wiki_use: "In-class demo: students ask the agent to 'build a churn model', then audit the generated notebook for leakage, the wrong metric and a missing holdout."
+  tools: [Colab, Gemini]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Available to users 18+ in select countries and languages. It needs a Google account, and pricing was not stated."
+
+- id: mle-bench
+  category: M7
+  subtopic: "AI agent benchmarks"
+  title: "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering"
+  authors: "Chan, J. S.; Chowdhury, N.; Jaffe, O.; Aung, J.; Sherburn, D.; et al. (OpenAI)"
+  year: 2024
+  type: paper
+  venue: "arXiv 2410.07095 (v6, February 2025)"
+  url: "https://arxiv.org/abs/2410.07095"
+  oa_url: "https://github.com/openai/mle-bench"
+  access: open
+  license: "MIT (code)"
+  level: advanced
+  priority: recommended
+  modules: [M7, AI]
+  summary: "A benchmark of 75 Kaggle competitions for AI agents. o1-preview with AIDE scaffolding reached medal level in 16.9% of competitions at release, and agents on the repo's paused leaderboard now score above 60%."
+  wiki_use: "Discussion of how far 'AI does the ML for you' has come. Show the leaderboard and the rule-violation and plagiarism detectors as evidence of how agents can cheat."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The full dataset is about 3.3 TB and the Lite split about 158 GB, so do not download it; use it for discussion only. The AIDE agent is at github.com/WecoAI/aideml (MIT; verified)."
+
+- id: kapoor-narayanan-leakage
+  category: M7
+  subtopic: "Data leakage"
+  title: "Leakage and the Reproducibility Crisis in ML-based Science"
+  authors: "Kapoor, S.; Narayanan, A."
+  year: 2023
+  type: paper
+  venue: "Patterns (Cell Press), 2023; arXiv 2207.07048"
+  url: "https://reproducible.cs.princeton.edu/"
+  oa_url: "https://arxiv.org/abs/2207.07048"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M7, AI]
+  summary: "Documents leakage errors in hundreds of ML-based papers across many fields, gives an eight-type leakage taxonomy, and proposes 'model info sheets' to rule leakage out."
+  wiki_use: "Use the taxonomy and model info sheet as a required appendix in student project write-ups, especially when AI wrote the pipeline."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The project page links the Patterns 2023 paper and keeps a table (updated May 2024) of 41 papers across 30 fields that document leakage errors, which together affect 648 papers."
+
+- id: yang-2022-notebook-leakage
+  category: M7
+  subtopic: "Data leakage in notebooks"
+  title: "Data Leakage in Notebooks: Static Detection and Better Processes"
+  authors: "Yang, C.; Brower-Sinning, R. A.; Lewis, G. A.; Kästner, C."
+  year: 2022
+  type: paper
+  venue: "arXiv 2209.03345 (cs.SE)"
+  url: "https://arxiv.org/abs/2209.03345"
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [M7, AI]
+  summary: "A static-analysis tool that detects common train/test leakage patterns in data-science notebooks. Leakage turns out to be widespread across more than 100,000 public notebooks, and the paper discusses processes to prevent it."
+  wiki_use: "Evidence that leakage is the default failure in notebook code, which is also what LLMs learn from. Motivates the course rule: always split first and use a Pipeline."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "arXiv lists no journal reference. I believe it appeared at ASE 2022, but that venue is unverified."
+
+- id: autogluon-tabular
+  category: M7
+  subtopic: "AutoML"
+  title: "AutoGluon Tabular: Quick Start"
+  authors: "AutoGluon team (Amazon)"
+  year: 2026
+  type: tutorial
+  venue: "auto.gluon.ai (v1.6.1)"
+  url: "https://auto.gluon.ai/stable/tutorials/tabular/tabular-quick-start.html"
+  oa_url: "https://colab.research.google.com/github/autogluon/autogluon/blob/master/docs/tutorials/tabular/tabular-quick-start.ipynb"
+  access: open
+  license: "Apache-2.0"
+  level: intro
+  priority: recommended
+  modules: [M7, AI]
+  summary: "Three lines of code (TabularPredictor.fit) train and stack many models on a tabular dataset. It comes with a ready Colab notebook."
+  wiki_use: "Benchmark exercise: compare AutoGluon against the student's hand-tuned XGBoost on the same holdout, then discuss what AutoML can't do (framing the problem, leakage, the business metric)."
+  tools: [autogluon]
+  ai_angle: true
+  download:
+    repo: "https://github.com/autogluon/autogluon"
+    path: "docs/tutorials/tabular/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The repo README also lists the MLZero multi-agent AutoML paper (arXiv 2505.13941) and the TabArena benchmark (arXiv 2506.16791), both NeurIPS 2025."
+
+- id: tabpfn
+  category: M7
+  subtopic: "Tabular foundation models"
+  title: "TabPFN: Accurate predictions on small data with a tabular foundation model"
+  authors: "Hollmann, N.; et al. (Prior Labs / University of Freiburg)"
+  year: 2025
+  type: package
+  venue: "Nature (2025); GitHub"
+  url: "https://github.com/PriorLabs/TabPFN"
+  doi: "10.1038/s41586-024-08328-6"
+  oa_url: "https://colab.research.google.com/github/PriorLabs/TabPFN/blob/main/examples/notebooks/TabPFN_Demo_Local.ipynb"
+  access: open
+  license: "Apache-2.0 (code); model weights under separate, partly non-commercial licenses"
+  level: intermediate
+  priority: optional
+  modules: [M7, AI]
+  summary: "A pretrained transformer that does classification and regression on small tabular datasets in one forward pass, with no tuning, through a scikit-learn-style API. It is often competitive with tuned boosting."
+  wiki_use: "Shows where 'foundation models' are heading for tabular marketing data. Students drop TabPFNClassifier into their churn pipeline and compare it with XGBoost."
+  tools: [tabpfn, torch, scikit-learn]
+  ai_angle: true
+  download:
+    repo: "https://github.com/PriorLabs/TabPFN"
+    path: "examples/notebooks/"
+    license: "Apache-2.0 (code only)"
+  verified_via: fetch
+  notes: "The Nature page fetch failed; the DOI and title come from the GitHub README. TabPFN-2.5 and later weights are non-commercial (fine for class use). It needs a GPU for larger data."
+
+# =========================================================================================
+# M8: Generative AI in marketing practice (content, GEO, agentic commerce)
+# =========================================================================================
+
+- id: geo-generative-engine-optimization
+  category: M8
+  subtopic: "Generative engine optimization"
+  title: "GEO: Generative Engine Optimization"
+  authors: "Aggarwal, P.; Murahari, V.; Rajpurohit, T.; Kalyan, A.; Narasimhan, K.; Deshpande, A."
+  year: 2024
+  type: paper
+  venue: "arXiv 2311.09735 (v3, June 2024); KDD 2024 per course brief (venue not verified)"
+  url: "https://arxiv.org/abs/2311.09735"
+  oa_url: "https://generative-engines.com/GEO/"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M8, M5, AI]
+  summary: "Defines generative engine optimization: making content visible in LLM-generated search answers. Introduces GEO-bench (10K queries) and shows that strategies such as adding citations, quotes and statistics can raise visibility by up to 40%."
+  wiki_use: "The anchor reading for 'SEO becomes GEO'. Students rewrite a product page with GEO tactics and test their visibility in an LLM answer engine."
+  tools: [openai]
+  ai_angle: true
+  download:
+    repo: "https://github.com/GEO-optim/GEO"
+    path: ""
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The ACM DL page (KDD) could not be fetched, and the project page cites the work only as arXiv. GEO-bench is at huggingface.co/datasets/GEO-optim/geo-bench."
+
+- id: reisenbichler-2022-nlg-content-marketing
+  category: M8
+  subtopic: "GenAI content creation"
+  title: "Frontiers: Supporting Content Marketing with Natural Language Generation"
+  authors: "Reisenbichler, M.; Reutterer, T.; Schweidel, D. A.; Dan, D."
+  year: 2022
+  type: paper
+  venue: "Marketing Science 41(3): 441-452"
+  url: "https://ideas.repec.org/a/inm/ormksc/v41y2022i3p441-452.html"
+  doi: "10.1287/mksc.2022.1354"
+  access: library
+  level: intermediate
+  priority: recommended
+  modules: [M8, M5, AI]
+  summary: "Machine-drafted, human-edited SEO landing-page copy is nearly indistinguishable from expert copy, and in field experiments it ranks better in search at much lower cost."
+  wiki_use: "Evidence-based case for 'human-in-the-loop' GenAI content, which pairs with GEO as the 'before and after' of LLM search."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+
+- id: openai-agentic-commerce-protocol
+  category: M8
+  subtopic: "Agentic commerce"
+  title: "Buy it in ChatGPT: Instant Checkout and the Agentic Commerce Protocol"
+  authors: "OpenAI"
+  year: 2025
+  type: website
+  venue: "openai.com (September 29, 2025)"
+  url: "https://openai.com/index/buy-it-in-chatgpt/"
+  oa_url: "https://www.agenticcommerce.dev/"
+  access: open
+  license: "Apache-2.0 (ACP specification)"
+  level: intro
+  priority: core
+  modules: [M8, AI]
+  summary: "OpenAI's launch of in-chat purchasing (starting with US Etsy sellers, Shopify planned) and the open Agentic Commerce Protocol (ACP), co-developed with Stripe, in which merchants stay merchant of record."
+  wiki_use: "Primary source for the agentic-commerce lecture. Ask what happens to brand choice, search ads and retail media when an AI agent does the shopping."
+  tools: []
+  ai_angle: true
+  download:
+    repo: "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol"
+    path: ""
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "Developer docs are at developers.openai.com/commerce. The ACP license (Apache 2.0) is stated on agenticcommerce.dev; I did not fetch the GitHub repo itself."
+
+- id: google-ap2
+  category: M8
+  subtopic: "Agentic commerce"
+  title: "Powering AI commerce with the new Agent Payments Protocol (AP2)"
+  authors: "Google Cloud"
+  year: 2025
+  type: website
+  venue: "Google Cloud Blog (September 16, 2025)"
+  url: "https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M8, AI]
+  summary: "Google's open protocol for AI agents to initiate payments, using signed 'Intent' and 'Cart' mandates as an audit trail. More than 60 partners (Mastercard, AmEx, PayPal, Adyen, Coinbase and others) back it, and it works as an extension of A2A alongside MCP."
+  wiki_use: "Compare with OpenAI's ACP: who controls the customer relationship and the data when agents buy?"
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The repo is linked as goo.gle/ap2; no direct GitHub URL was verified, and the license was not stated."
+
+- id: universal-commerce-protocol
+  category: M8
+  subtopic: "Agentic commerce"
+  title: "Universal Commerce Protocol (UCP)"
+  authors: "UCP Authors (co-developed by Google, Shopify and others)"
+  year: 2026
+  type: website
+  venue: "ucp.dev"
+  url: "https://ucp.dev/"
+  access: open
+  license: "Apache-2.0"
+  level: intro
+  priority: optional
+  modules: [M8, AI]
+  summary: "An open standard covering the whole agentic shopping flow (discovery, checkout, post-purchase) between platforms, agents and businesses. It builds on AP2 for payments."
+  wiki_use: "A 2026 snapshot of the competing agentic-commerce standards (ACP vs AP2/UCP) for a short comparison table on the wiki."
+  tools: []
+  ai_angle: true
+  download:
+    repo: "https://github.com/Universal-Commerce-Protocol/ucp"
+    path: ""
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The announcement date is not stated on the site. The year 2026 comes from the copyright and the lodging draft. The site lists Amazon, Microsoft and Stripe among co-developers; check this before citing."
+
+- id: iab-ai-shopping-journey
+  category: M8
+  subtopic: "AI shopping assistants (consumer side)"
+  title: "When AI Guides the Shopping Journey"
+  authors: "IAB; Talk Shoppe"
+  year: 2025
+  type: report
+  venue: "IAB (October 28, 2025)"
+  url: "https://www.iab.com/insights/when-ai-guides-the-shopping-journey/"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M8, AI]
+  summary: "Mixed-method study (450+ digital ethnographies plus a survey of 600 US consumers). Nearly 40% of US shoppers use AI when shopping. AI reshapes rather than shortens the path to purchase, and trust friction is common."
+  wiki_use: "Consumer-side evidence to pair with the agentic-commerce protocols, and a source of discussion stats."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "Download terms (free or registration) were not stated."
+
+# =========================================================================================
+# M8: Privacy and measurement (cookies, ATT, clean rooms, MMM comeback)
+# =========================================================================================
+
+- id: privacy-sandbox-update-2025
+  category: M8
+  subtopic: "Third-party cookies / Privacy Sandbox"
+  title: "Update on Plans for Privacy Sandbox Technologies"
+  authors: "Chavez, A. (Google, VP Privacy Sandbox)"
+  year: 2025
+  type: blog
+  venue: "privacysandbox.google.com (October 17, 2025)"
+  url: "https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies"
+  access: open
+  level: intro
+  priority: core
+  modules: [M8]
+  summary: "Google says Chrome will keep its current approach of user choice on third-party cookies (no deprecation). It is retiring most Privacy Sandbox APIs (Topics, Protected Audience, Attribution Reporting, IP Protection and others) after low adoption, and keeping CHIPS, FedCM and Private State Tokens."
+  wiki_use: "The definitive answer to 'are cookies dead?' as of late 2026. Use it to open the measurement week and explain why first-party data, clean rooms and MMM matter anyway."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "privacysandbox.com/news/... now redirects to privacysandbox.google.com. Check the status page (privacysandbox.google.com/overview/status) before class for any later change."
+
+- id: apple-att-docs
+  category: M8
+  subtopic: "Apple ATT"
+  title: "App Tracking Transparency (framework documentation)"
+  authors: "Apple Developer"
+  year: 2021
+  type: documentation
+  venue: "developer.apple.com"
+  url: "https://developer.apple.com/documentation/apptrackingtransparency"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M8]
+  summary: "Apple's official documentation for the ATT permission that apps must request before tracking users across other companies' apps and sites or accessing the IDFA. It was introduced with iOS 14.5."
+  wiki_use: "Primary source for the ATT shock to mobile ad targeting and attribution, to pair with a discussion of how platforms shifted to modeled conversions and MMM."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The page is JavaScript-rendered, so the fetch returned only metadata. The iOS 14.5 and 2021 dates are standard knowledge, not quoted from the page. No academic ATT study was verified in this pass (search budget ran out)."
+
+- id: iab-techlab-clean-rooms
+  category: M8
+  subtopic: "Data clean rooms"
+  title: "IAB Tech Lab Standards: Data Clean Rooms Guidance, PAIR, and ADMaP"
+  authors: "IAB Tech Lab (Addressability and PETs Working Group)"
+  year: 2025
+  type: website
+  venue: "iabtechlab.com"
+  url: "https://iabtechlab.com/standards/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M8]
+  summary: "Industry standards index listing the Data Clean Rooms Guidance (v1.0, July 2024), PAIR for privacy-safe advertiser-publisher ID matching in clean rooms (2024), and ADMaP for sharing conversion data with private set intersection or TEEs (February 2025)."
+  wiki_use: "Instructor background and a short explainer on how clean rooms let a brand and a retailer join first-party data without exchanging it."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The fetched index page did not expose deep links to each standard. For a concrete vendor example, AWS Clean Rooms (aws.amazon.com/clean-rooms/, verified) supports SQL and PySpark analyses, differential privacy and ML on partner data."
+
+- id: google-meridian-mmm
+  category: M8
+  subtopic: "Marketing mix modeling"
+  title: "Meridian: Google's open-source Bayesian marketing mix model"
+  authors: "Google"
+  year: 2026
+  type: package
+  venue: "GitHub / developers.google.com/meridian (v2.0.0)"
+  url: "https://github.com/google/meridian"
+  oa_url: "https://developers.google.com/meridian"
+  access: open
+  license: "Apache-2.0"
+  level: advanced
+  priority: core
+  modules: [M8, M6, M3]
+  summary: "An in-house MMM framework (Bayesian, with reach and frequency, geo-level hierarchy and calibration with experiment priors), with Colab getting-started and full-funnel notebooks and a scenario planner for budget allocation."
+  wiki_use: "Main tool for the 'MMM comeback' session. Run the getting-started Colab and discuss priors from lift tests (a link to M6)."
+  tools: [meridian, tensorflow-probability, Colab]
+  ai_angle: false
+  download:
+    repo: "https://github.com/google/meridian"
+    path: "demo/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "The GA date was not confirmed. Meta's Robyn (github.com/facebookexperimental/Robyn, MIT, mainly R with a beta Python API; verified) is the main alternative."
+
+- id: pymc-marketing
+  category: M8
+  subtopic: "Marketing mix modeling / CLV"
+  title: "PyMC-Marketing: Bayesian marketing toolbox"
+  authors: "PyMC Labs"
+  year: 2026
+  type: package
+  venue: "GitHub / pymc-marketing.io"
+  url: "https://github.com/pymc-labs/pymc-marketing"
+  oa_url: "https://www.pymc-marketing.io/en/stable/"
+  access: open
+  license: "Apache-2.0"
+  level: advanced
+  priority: core
+  modules: [M8, M4, M6]
+  summary: "A Python library for Bayesian media mix modeling (adstock, saturation, budget optimization, lift-test calibration), CLV/BTYD models (BG/NBD, Pareto/NBD, Gamma-Gamma), Bass diffusion and choice models."
+  wiki_use: "A single library that covers M4 (CLV) and M8 (MMM) in Python. Its example notebooks can be embedded directly."
+  tools: [pymc-marketing, pymc, arviz]
+  ai_angle: true
+  download:
+    repo: "https://github.com/pymc-labs/pymc-marketing"
+    path: "docs/source/"
+    license: "Apache-2.0"
+  verified_via: fetch
+  notes: "AI angle: PyMC Labs runs an MMM-GPT assistant (mmm-gpt.com), and the repo includes skills/mmm-modeling, .claude and .cursor folders (contents not verified). The notebooks live under the docs. The path is approximate."
+
+- id: ovative-retail-media-roas
+  category: M8
+  subtopic: "Retail media measurement"
+  title: "Retail Media ROAS Demystified: Understanding Your Brand's ROAS"
+  authors: "Nelson, D. T.; Bante, K.; Gordon, B. R.; Anderson, E. T.; Dantzinger, L.; Armor, S."
+  year: 2025
+  type: report
+  venue: "Ovative Group with Albertsons Media Collective and Kellogg School of Management (May 15, 2025)"
+  url: "https://ovative.com/impact/expert-insights/retail-media-roas-demystified/"
+  oa_url: "https://ovative.com/wp-content/uploads/2025/05/Retail-Media-ROAS-Demystified-Ovative-Albertsons-Kellogg-Business-School.pdf"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M8, M6]
+  summary: "Analyzes 573 Albertsons Media Collective campaigns to show how retail-media-network ROAS methods differ and how much reported results shift with methodology. Ends with questions advertisers should ask RMNs."
+  wiki_use: "Retail-media case reading (with Kellogg co-authors Gordon and Anderson). Students explain why platform-reported ROAS and incremental ROAS differ."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The PDF link was given on the fetched page; I did not fetch the PDF itself."
+
+- id: commerce-media-connection-gap-2026
+  category: M8
+  subtopic: "Retail media networks"
+  title: "The Commerce Media Connection Gap: Why the Next Phase of Growth Depends on the Cohesion of the Ecosystem"
+  authors: "SMG; IAB; IAB UK"
+  year: 2026
+  type: report
+  venue: "IAB (October 2026)"
+  url: "https://www.iab.com/wp-content/uploads/2026/10/The-Commerce-Media-Connection-Gap.pdf"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M8]
+  summary: "Survey of 281 brands, agencies and RMNs in six countries (fieldwork July to August 2026). Reporting is the least connected function, only 14% get unified cross-channel reporting, and 46% of brands say proven incremental ROI would unlock more spend."
+  wiki_use: "A very current snapshot of retail-media pain points (fragmentation, measurement) for the M8 discussion."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The report contains no RMN spend figures. For market size, see the IAB/PwC Internet Advertising Revenue Report FY2025 (iab.com/insights/internet-advertising-revenue-report-full-year-2025/, verified; about $300B in US internet ad revenue in 2025, +13.9%; key takeaways need a free IAB account)."
+
+# =========================================================================================
+# M8: Creator economy, algorithmic bias, algorithmic pricing
+# =========================================================================================
+
+- id: iab-creator-economy-2025
+  category: M8
+  subtopic: "Creator and influencer economy"
+  title: "2025 Creator Economy Ad Spend & Strategy Report"
+  authors: "IAB"
+  year: 2025
+  type: report
+  venue: "IAB (November 20, 2025)"
+  url: "https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M8, M5]
+  summary: "US creator ad spend projected at $37B in 2025 (+26% year over year, about 4x faster than overall media), $44B expected in 2026. 48% of buyers call creators a 'must buy', and 3 in 4 brands use or plan AI for creator marketing."
+  wiki_use: "Size-of-market slide and discussion: why creator measurement and standards lag, linked to M5 social media analysis."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The summary page is public and the full PDF is downloadable from it. The page was modified June 2026."
+
+- id: lambrecht-tucker-2019-algorithmic-bias
+  category: M8
+  subtopic: "Algorithmic bias in ad delivery"
+  title: "Algorithmic Bias? An Empirical Study of Apparent Gender-Based Discrimination in the Display of STEM Career Ads"
+  authors: "Lambrecht, A.; Tucker, C."
+  year: 2019
+  type: paper
+  venue: "Management Science 65(7): 2966-2981"
+  url: "https://ideas.repec.org/a/inm/ormnsc/v65y2019i7p2966-2981.html"
+  doi: "10.1287/mnsc.2018.3093"
+  access: library
+  level: intermediate
+  priority: core
+  modules: [M8, M6]
+  summary: "A gender-neutral STEM job ad was shown to fewer women because younger women are a more expensive audience. Cost-minimizing delivery produced the apparent bias, and the pattern held across platforms."
+  wiki_use: "Core case for algorithmic bias arising from market mechanics rather than intent, discussed alongside Ali et al. (2019)."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+
+- id: ali-2019-discrimination-through-optimization
+  category: M8
+  subtopic: "Algorithmic bias in ad delivery"
+  title: "Discrimination through optimization: How Facebook's ad delivery can lead to skewed outcomes"
+  authors: "Ali, M.; Sapiezynski, P.; Bogen, M.; Korolova, A.; Mislove, A.; Rieke, A."
+  year: 2019
+  type: paper
+  venue: "Proceedings of the ACM on Human-Computer Interaction (CSCW 2019); arXiv 1904.02095"
+  url: "https://arxiv.org/abs/1904.02095"
+  doi: "10.1145/3359301"
+  access: open
+  level: intermediate
+  priority: core
+  modules: [M8, AI]
+  summary: "Paired ad experiments show that Facebook's delivery optimization skews employment and housing ads by gender and race even with neutral targeting, driven by budget effects and the platform's predicted relevance of the ad content."
+  wiki_use: "Pair with Lambrecht and Tucker: one shows a market-cost mechanism, the other a platform-prediction mechanism. Good for a debate on who is accountable."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The venue (PACM HCI/CSCW) is inferred from the ACM DOI listed on arXiv."
+
+- id: calvano-2020-ai-pricing-collusion
+  category: M8
+  subtopic: "Algorithmic pricing"
+  title: "Artificial Intelligence, Algorithmic Pricing, and Collusion"
+  authors: "Calvano, E.; Calzolari, G.; Denicolò, V.; Pastorello, S."
+  year: 2020
+  type: paper
+  venue: "American Economic Review 110(10): 3267-97"
+  url: "https://www.aeaweb.org/articles?id=10.1257/aer.20190623"
+  doi: "10.1257/aer.20190623"
+  access: library
+  level: advanced
+  priority: recommended
+  modules: [M8, AI]
+  summary: "Q-learning pricing algorithms in simulated oligopolies learn to sustain supra-competitive prices with punishment strategies, without communicating."
+  wiki_use: "Background for the algorithmic-pricing discussion (RealPage-style cases). Present the key figure and intuition rather than assigning the full paper."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "Empirical complement: Brown & MacKay (2023), 'Competition in Pricing Algorithms', AEJ: Microeconomics 15(2): 109-56, doi 10.1257/mic.20210158 (aeaweb page verified). It shows that simple rival-responsive pricing algorithms at online retailers can raise prices."
+
+# =========================================================================================
+# M8: Industry reports worth assigning
+# =========================================================================================
+
+- id: mckinsey-state-of-ai-2026
+  category: M8
+  subtopic: "Industry report: AI adoption"
+  title: "The state of AI in 2026: On the road to ROI"
+  authors: "Tinkoff, D.; Van der Veken, L.; Chui, M.; Balakrishnan, T. (McKinsey / QuantumBlack)"
+  year: 2026
+  type: report
+  venue: "McKinsey & Company (August 25, 2026)"
+  url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+  access: open
+  level: intro
+  priority: core
+  modules: [M8, AI]
+  summary: "McKinsey's annual global AI survey. Agent scaling is concentrated in large firms (40% vs 22%), consumer and retail firms most often use agents in marketing and sales, and marketing and sales is where respondents most often report AI-driven revenue gains."
+  wiki_use: "Opening reading for M8 with stats for the 'AI in marketing practice' slide. A 31-page PDF is downloadable."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The 2025 edition is listed on the same page as a previous report. For a value estimate, see McKinsey (2023) 'The economic potential of generative AI' (verified): marketing productivity gains of 5-15% of marketing spend."
+
+- id: gartner-cmo-spend-2026
+  category: M8
+  subtopic: "Industry report: marketing budgets"
+  title: "Exploring Strategic Insights From Gartner's 2026 CMO Spend Survey (webinar)"
+  authors: "Gartner"
+  year: 2026
+  type: report
+  venue: "Gartner for Marketing"
+  url: "https://www.gartner.com/en/marketing/research/annual-cmo-spend-survey-research"
+  access: free-registration
+  level: intro
+  priority: recommended
+  modules: [M8]
+  summary: "Gartner's annual survey of CMO budgets: how 2026 budgets are shifting across channels and programs, and how AI is changing marketing capabilities and investment."
+  wiki_use: "Budget benchmark (marketing spend as a share of revenue, channel mix) for the opening of M8. The instructor can watch it and pull two or three headline numbers."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "The public page is a free on-demand webinar (work email registration). The full survey report is usually for Gartner clients only. No headline numbers were visible on the page."
+
+- id: stanford-ai-index-2026
+  category: M8
+  subtopic: "Industry report: AI trends"
+  title: "The 2026 AI Index Report"
+  authors: "Stanford Institute for Human-Centered AI (HAI)"
+  year: 2026
+  type: report
+  venue: "Stanford HAI"
+  url: "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M8, AI, M2]
+  summary: "Annual data-driven report on AI in nine chapters: R&D, technical performance, responsible AI, economy, science, medicine, education, policy and public opinion. It links a full PDF and public data."
+  wiki_use: "Use the Economy and Public Opinion chapters for M8, and the public data folder as an M2 visualization exercise dataset."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The release date and license were not stated on the page. The data is on a public Google Drive folder."
+
+- id: anthropic-economic-index
+  category: M8
+  subtopic: "Industry report: AI usage data"
+  title: "Anthropic Economic Index"
+  authors: "Anthropic"
+  year: 2026
+  type: dataset
+  venue: "anthropic.com; Hugging Face (Anthropic/EconomicIndex)"
+  url: "https://www.anthropic.com/economic-index"
+  oa_url: "https://huggingface.co/datasets/Anthropic/EconomicIndex"
+  access: open
+  license: "Data CC-BY; code MIT (per dataset card)"
+  level: intermediate
+  priority: recommended
+  modules: [M8, AI, M2]
+  summary: "Privacy-preserving data on how people use Claude across occupations (O*NET tasks), US states and countries, including automation-vs-augmentation shares. Releases run from February 2025 to June 2026."
+  wiki_use: "Real dataset for a short in-class exercise on which marketing and sales tasks are being automated vs augmented, using the M2 visualization tools."
+  tools: [pandas, datasets]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The full HF dataset is 763 MB, so download only the needed release folder (for example 2026-06-26). The main page was last updated June 26, 2026."
+
+- id: msi-research-priorities
+  category: M8
+  subtopic: "Research agenda"
+  title: "MSI Research Priorities"
+  authors: "Marketing Science Institute"
+  year: 2025
+  type: report
+  venue: "msi.org"
+  url: "https://www.msi.org/research/"
+  oa_url: "https://msi.org/wp-content/uploads/sites/2/2025/10/MSI_ResearchPriorities.pdf"
+  access: open
+  level: intro
+  priority: optional
+  modules: [M8, AI]
+  summary: "The current MSI priorities, framed by member firms, in four areas: Marketing Analytics (AI, models, measurement), Consumer Experiences, Stakeholders and Innovation. They include questions such as how to measure AI-based campaigns that adapt continuously."
+  wiki_use: "Source of 'open questions industry cares about' for brainstorming team project topics."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "The PDF was uploaded October 2025 but states no year range, so I could not confirm whether it is the 2024-2026 set or a newer one. MSI's MMM Initiative (msi.org/marketing-mix-models-initiative/, verified) is mostly members-only."
+
+# =========================================================================================
+# M8: Podcasts and newsletters for staying current
+# =========================================================================================
+
+- id: one-useful-thing-newsletter
+  category: M8
+  subtopic: "Newsletter: AI and work"
+  title: "One Useful Thing"
+  authors: "Mollick, E."
+  year: 2026
+  type: newsletter
+  venue: "Substack"
+  url: "https://www.oneusefulthing.org/"
+  access: open
+  level: intro
+  priority: core
+  modules: [M8, AI]
+  summary: "Ethan Mollick's newsletter on the practical implications of AI for work and education (488K+ subscribers), with frequent hands-on comparisons of frontier models."
+  wiki_use: "Weekly 'stay current' link on the wiki. Individual posts work as short discussion readings on AI-assisted analysis."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "Free or paid status was not stated on the page. Most posts are free."
+
+- id: artificial-intelligence-show-podcast
+  category: M8
+  subtopic: "Podcast: AI in marketing"
+  title: "The Artificial Intelligence Show"
+  authors: "Roetzer, P.; Kaput, M. (Marketing AI Institute / SmarterX)"
+  year: 2026
+  type: podcast
+  venue: "podcast.smarterx.ai"
+  url: "https://podcast.smarterx.ai/"
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M8, AI]
+  summary: "A weekly (Tuesday) podcast, started in 2021 by the Marketing AI Institute founders, covering AI news and practical guidance for marketers and business careers."
+  wiki_use: "Optional weekly listening, and students can pick an episode to summarize in a short reflection."
+  tools: []
+  ai_angle: true
+  verified_via: fetch
+  notes: "marketingaiinstitute.com/podcast-showcase now redirects to podcast.smarterx.ai."
+
+- id: adexchanger
+  category: M8
+  subtopic: "Newsletter and podcast: ad tech"
+  title: "AdExchanger (AdExchanger Daily newsletter; AdExchanger Talks podcast)"
+  authors: "AdExchanger"
+  year: 2026
+  type: newsletter
+  venue: "adexchanger.com"
+  url: "https://www.adexchanger.com/"
+  access: freemium
+  level: intermediate
+  priority: recommended
+  modules: [M8]
+  summary: "News and analysis on data-driven marketing: privacy, measurement, commerce and retail media, and ad tech, with a free weekday newsletter and podcasts (AdExchanger Talks, The Big Story, Inside the Stack)."
+  wiki_use: "Best single feed for following cookies, clean rooms, MMM and retail media during the semester."
+  tools: []
+  ai_angle: false
+  verified_via: fetch
+  notes: "Some articles may be paywalled. Marketing Brew (marketingbrew.com, Morning Brew, weekday newsletter; verified) is a lighter, free alternative."
+
+- id: simon-willison-weblog
+  category: M8
+  subtopic: "Blog: LLMs and AI-assisted coding"
+  title: "Simon Willison's Weblog"
+  authors: "Willison, S."
+  year: 2026
+  type: blog
+  venue: "simonwillison.net"
+  url: "https://simonwillison.net/"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M8, AI, M1]
+  summary: "Very frequent, hands-on posts on new LLM releases, coding agents, 'vibe coding', prompt injection and security, and practical tools (LLM CLI, Datasette)."
+  wiki_use: "The go-to 'staying current' source for the course's AI-assisted coding emphasis, and for spotting agent failure modes and security risks."
+  tools: [llm, datasette]
+  ai_angle: true
+  verified_via: fetch
+  notes: "The blog is free. A $10/month curated email briefing is optional."

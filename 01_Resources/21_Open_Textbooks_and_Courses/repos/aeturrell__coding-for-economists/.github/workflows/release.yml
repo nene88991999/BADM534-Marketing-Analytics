@@ -1,0 +1,124 @@
+name: release
+
+permissions:
+  contents: write
+  pages: write
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"
+
+      - name: set timezone
+        run: |
+          TZ="Europe/London" &&
+          sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
+
+      - name: install linux deps
+        run: |
+          sudo apt-get -y install openssl graphviz nano texlive graphviz-dev unzip
+
+      - name: install special fonts
+        run: |
+          sudo mkdir -p /usr/share/fonts/truetype/ &&
+          wget -O "Varta[wght].ttf" "https://github.com/google/fonts/raw/main/ofl/varta/Varta%5Bwght%5D.ttf" &&
+          sudo install -m644 "Varta[wght].ttf" /usr/share/fonts/truetype/ &&
+          rm "Varta[wght].ttf" &&
+          sudo fc-cache -f
+
+      - name: install text models
+        run: |
+          uv run python3 -m spacy download en_core_web_sm &&
+          uv run python3 -m nltk.downloader all
+
+      - name: git config  # Needed as git config --get user.name is used in one example
+        run: |
+          git config user.name "$(git log -n 1 --pretty=format:%an)" &&
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+
+      - name: Cache OpenStreetMap API responses
+        # osmnx caches Overpass/Nominatim responses in ./cache; persisting it
+        # across runs avoids re-querying volunteer-run OSM servers every build
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: osmnx-${{ hashFiles('geo-*.ipynb') }}
+          restore-keys: |
+            osmnx-
+
+      - name: build the book
+        run: |
+          uv run quarto render --execute
+        env:
+            # This forces Quarto to use the Python inside your uv venv
+            QUARTO_PYTHON: ${{ github.workspace }}/.venv/bin/python
+
+      - name: Reset notebook source files modified by quarto render
+        # `quarto render --execute` writes cell outputs back into the source
+        # .ipynb files. We intentionally do not track notebook outputs in git
+        # (see nbstripout in .pre-commit-config.yaml), and the rendered HTML
+        # with outputs already lives in the gitignored _book/ directory, which
+        # is what `quarto publish gh-pages --no-render` uploads. Restoring the
+        # source notebooks here leaves the working tree clean so the next
+        # step (salsify) can run `git checkout HEAD~1` without hitting
+        # "local changes would be overwritten by checkout".
+        run: git checkout -- '*.ipynb'
+
+      - name: Check if there is a parent commit
+        id: check-parent-commit
+        run: |
+          echo "::set-output name=sha::$(git rev-parse --verify --quiet HEAD^)"
+
+      - name: Detect and tag new version
+        id: check-version
+        if: steps.check-parent-commit.outputs.sha
+        uses: salsify/action-detect-and-tag-new-version@v2.0.3
+        with:
+          version-command: |
+            uv run python -c "import toml; print(toml.load('pyproject.toml')['project']['version'])"
+
+      - name: Bump version for developmental release
+        if: "! steps.check-version.outputs.tag"
+        run: |
+          uv run python version_bumper.py "$(date +%s)"
+
+      - name: Publish
+        if: steps.check-version.outputs.tag
+        run: uv run quarto publish gh-pages --no-render --no-browser
+
+      - name: Publish the release notes
+        uses: release-drafter/release-drafter@v6.0.0
+        with:
+          publish: ${{ steps.check-version.outputs.tag != '' }}
+          tag: ${{ steps.check-version.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Success
+        if: steps.check-version.outputs.tag
+        run: |
+          echo "Success in releasing a new version of Coding for Economists!"
