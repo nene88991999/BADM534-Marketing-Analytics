@@ -38,6 +38,8 @@ Use released course documents to answer questions about requirements. Use third-
 
 Downloaded notebooks in `01_Resources` are reference copies. Their saved output is not evidence of a course-tested run. Adapt selected examples into `07_Labs`, preserve attribution, and verify execution before labeling them ready for students.
 
+Store short scripts, notebook examples, and reusable snippets in `10_Sample_Code`. Describe each example's inputs, dependencies, run command, expected output, and verification status. Complete guided exercises belong in `07_Labs`.
+
 ## Repository Editing
 
 - Preserve existing materials and original source licenses. Avoid reorganizing the two resource catalogs without reconciling their entries and provenance.

@@ -4,6 +4,8 @@
 
 Put a released syllabus in `02_Syllabus`, selected teaching data in `03_Data`, assignment briefs in `04_Assignments`, slides in `05_Slides`, written notes in `06_Lecture_Notes`, and course-tested code in `07_Labs`. Keep external background sources in `01_Resources`. Use `08_Wiki` for the later HTML site.
 
+Put short scripts, notebook examples, and code snippets in [10_Sample_Code](10_Sample_Code/README.md), with instructions and verification status for each example.
+
 Use a stable module prefix, for example `M03_Regression_Notes.md`. For an assignment, use a dedicated folder such as `04_Assignments/A01_Customer_Analysis` containing `README.md`, the brief, rubric, and permitted starter files. These names are examples, not released assignments.
 
 ## Make Every Addition Readable by LLMs

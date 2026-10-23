@@ -21,6 +21,7 @@ Generated from course.json and the source files identified below. This file cont
   "module_map": "COURSE_MAP.md",
   "agent_instructions": "AGENTS.md",
   "student_guide": "LLM_GUIDE.md",
+  "sample_code": "10_Sample_Code/README.md",
   "catalogs": [
     {
       "namespace": "curated",
@@ -37,9 +38,10 @@ Generated from course.json and the source files identified below. This file cont
     "COURSE_MAP.md",
     "LLM_GUIDE.md",
     "02_Syllabus/README.md",
-    "04_Assignments/README.md"
+    "04_Assignments/README.md",
+    "10_Sample_Code/README.md"
   ],
-  "publication_note": "Private preparation repository. No public wiki deployed. Historic sample syllabus is local only."
+  "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only."
 }
 ```
 
@@ -73,6 +75,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
 | [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
+| [10_Sample_Code](10_Sample_Code/README.md) | Short scripts, notebook examples, and code snippets |
 
 ## Working With an LLM
 
@@ -131,6 +134,8 @@ Use released course documents to answer questions about requirements. Use third-
 8. Record the environment, seeds where useful, commands run, and remaining limitations.
 
 Downloaded notebooks in `01_Resources` are reference copies. Their saved output is not evidence of a course-tested run. Adapt selected examples into `07_Labs`, preserve attribution, and verify execution before labeling them ready for students.
+
+Store short scripts, notebook examples, and reusable snippets in `10_Sample_Code`. Describe each example's inputs, dependencies, run command, expected output, and verification status. Complete guided exercises belong in `07_Labs`.
 
 ## Repository Editing
 
@@ -249,6 +254,28 @@ Update `current_syllabus` in [course.json](../course.json) when the syllabus is 
 Create one folder for each assignment with a complete Markdown brief, rubric, starter files, and links to required data. State the version, release/due dates with timezone, submission format, collaboration rules, AI-use policy, disclosure requirements, and grading criteria. Keep answer keys outside the student repository.
 
 Add released assignments to `released_assignments` in [course.json](../course.json). Do not infer assessment rules from the historical syllabus or a template.
+
+---
+
+## Source: 10_Sample_Code/README.md
+
+# Sample Code
+
+Short scripts, notebook examples, and code snippets for BADM 534. Add examples here as the course develops, organized by module or topic when needed.
+
+**Status:** folder prepared; no sample code added yet.
+
+## Adding an Example
+
+Use a descriptive filename with a module prefix, such as `M02_Customer_Summary.py`. For examples with several files, use a dedicated subfolder with its own README.
+
+Document the marketing question, inputs, dependencies, run command, expected output, and a simple check of the result. Use relative data paths and link to the relevant [data dictionary](../03_Data/README.md). Label synthetic data clearly, preserve source attribution and licenses, and record whether the example has been executed successfully.
+
+## Guidance for Students and Agents
+
+Read the root [agent guide](../AGENTS.md) before adapting an example. Explain the purpose of the code and its analytical assumptions, inspect the inputs, and verify the output with a small example. Identify any changes made with AI assistance. Follow the relevant assignment's rules when using sample code in assessed work.
+
+The [labs folder](../07_Labs/README.md) contains the structure for complete guided exercises. The [resource library](../01_Resources/README.md) contains downloaded reference code and notebooks.
 
 ---
 

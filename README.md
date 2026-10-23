@@ -24,6 +24,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
 | [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
+| [10_Sample_Code](10_Sample_Code/README.md) | Short scripts, notebook examples, and code snippets |
 
 ## Working With an LLM
 
