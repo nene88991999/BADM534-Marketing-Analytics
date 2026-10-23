@@ -49,7 +49,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Free retail datasets. The Complete Journey has two years of all-category transactions for 2,500 frequent-shopper households, with demographics and direct-marketing campaign history. Breakfast at the Frat has 156 weeks of store-week sales, prices and promotions for four categories. Carbo-Loading has household transactions in pasta, sauce, syrup and pancake mix. Let's Get Sort-of-Real is a large simulated set (4.3 GB full, with smaller samples).
   *Use in wiki:* Use The Complete Journey for campaign-response and CLV projects, and Breakfast at the Frat for M3 price/promotion regression and elasticity exercises.
   Tools: pandas
-  *Note:* Direct downloads, with no registration requirement visible. The license is on a linked Terms and Conditions page that was not reviewed. A Kaggle mirror of The Complete Journey (ref frtgnn/dunnhumby-the-complete-journey, 847 MB, listed under ODbL) also exists. Separately, 84.51 released a different 'Complete Journey' (801 households, one year, about 1.47M transactions) as the pip-installable completejourney_py (MIT code, Parquet): https://github.com/cunningjames/completejourney_py . Its README describes that data as simulated and for educational use only, which makes it the easiest Colab option.
+  *Note:* Direct downloads, with no registration requirement visible. The license is on a linked Terms and Conditions page that was not reviewed. A Kaggle mirror of The Complete Journey (ref frtgnn/dunnhumby-the-complete-journey, 847 MB, listed under ODbL) also exists. Separately, 84.51 released a different 'Complete Journey' (801 households, one year, about 1.47M transactions) as the pip-installable completejourney_py (MIT code, Parquet): https://github.com/cunningjames/completejourney_py . Its README describes that data as simulated and for educational use only, which makes it the easiest Colab option. Not confirmed whether downloads require a sign-up; the page's download buttons are script-driven.
 
 - [recommended] **[Online Shoppers Purchasing Intention Dataset](https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset)** (2019) — Sakar, C.; Kastro, Y. *UCI Machine Learning Repository*
   `dataset` · `intro` · `access: open` · `CC BY 4.0`
@@ -234,10 +234,10 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Note:* Jetstream post: https://docs.bsky.app/blog/jetstream (public instances; events are not signed). Authentication and terms are not on the landing page; review Bluesky's developer guidelines and ethics/IRB considerations before collecting user posts.
 
 - [recommended] **[Reddit Data API and Reddit for Researchers access rules](https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data)** — Reddit. *Reddit Help Center*
-  `documentation` · `intro` · `access: free-registration`
+  `documentation` · `intro` · `access: application`
   Reddit's policy: the Data API is rate-limited and bulk export is restricted. Academic research must go through the Reddit for Researchers program, and content may not be used for model training without Reddit's consent.
   *Use in wiki:* Required policy reading for M5 social-media analysis. It explains why students should not scrape Reddit or use the API for research projects, and how research access works.
-  *Note:* Reddit for Researchers eligibility is not listed; applications go through a support ticket. Requests from hosted-service IP ranges, likely including cloud notebooks, need OAuth or a login.
+  *Note:* Reddit for Researchers eligibility is not listed; applications go through a support ticket. Requests from hosted-service IP ranges, likely including cloud notebooks, need OAuth or a login. Checked 2026-10-23: access needs an application and approval (Data API app review, or Reddit for Researchers); it is not self-serve sign-up. Don't plan student projects on Reddit data without lead time.
 
 ## Aggregators and package datasets
 

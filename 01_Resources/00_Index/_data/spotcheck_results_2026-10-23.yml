@@ -1,0 +1,199 @@
+- id: brynjolfsson-li-raymond-generative-ai-at-work
+  status: ok
+  checked: "url resolves to the Stanford Digital Economy Lab page for the paper. The page still calls it a 2023 working paper and links to arXiv. Crossref for DOI 10.1093/qje/qjae044 confirms QJE 140(2):889-942, online Feb 2025, same three authors. oa_url arXiv 2304.11771 (v2, Nov 2024) is the same work and is open. Optional: add doi 10.1093/qje/qjae044."
+  evidence: "https://api.crossref.org/works/10.1093/qje/qjae044; https://arxiv.org/abs/2304.11771"
+- id: spracklen-2025-package-hallucinations
+  status: ok
+  checked: "arXiv 2406.10279 resolves. Title and all six authors match. The v3 (Mar 2025) comments field says it appears at the 2025 USENIX Security Symposium. Open."
+  evidence: "https://arxiv.org/abs/2406.10279"
+- id: sarkar-drosos-vibe-coding-ppig-2025
+  status: ok
+  checked: "Microsoft Research page lists Advait Sarkar and Ian Drosos, Proceedings of the 36th Annual PPIG Conference (PPIG 2025, Sept 2025), with a PPIG PDF link. oa_url arXiv 2506.23253 is the same paper by the same authors. Open."
+  evidence: "https://www.microsoft.com/en-us/research/publication/vibe-coding-programming-through-conversation-with-artificial-intelligence/; https://arxiv.org/abs/2506.23253"
+- id: dora-2025-ai-assisted-software-development
+  status: ok
+  checked: "url resolves to the Google Cloud page for the 2025 DORA State of AI-assisted Software Development report (the first edition under that name). Download is behind a lead form (name, business email, company, etc.), so free-registration is right."
+  evidence: "https://cloud.google.com/devops/state-of-devops"
+- id: colab-data-science-agent
+  status: ok
+  checked: "Google Developers Blog post resolves. Exact title matches. Authors Jane Fine, Mahi Kolla and Ilai Soloducho; dated March 3, 2025. Open."
+  evidence: "https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/"
+- id: claude-code-memory-claude-md
+  status: ok
+  checked: "code.claude.com page resolves, headed 'How Claude remembers your project'. It covers CLAUDE.md, AGENTS.md and auto memory. Open, no login."
+  evidence: "https://code.claude.com/docs/en/memory"
+- id: anthropic-academy-claude-code-in-action
+  status: ok
+  checked: "Skilljar page resolves to 'Claude Code in Action', an Anthropic course linked to Anthropic Academy. The button reads 'Register | FREE', and a Skilljar account (not an Anthropic account) is needed, so free-registration is right."
+  evidence: "https://anthropic.skilljar.com/claude-code-in-action"
+- id: openai-prompt-engineering-guide
+  status: ok
+  checked: "Page resolves with the title 'Prompt engineering | OpenAI API'. The full guide shows without login."
+  evidence: "https://developers.openai.com/api/docs/guides/prompt-engineering"
+- id: uiuc-acknowledge-ai-use
+  status: ok
+  checked: "Page resolves with the title 'Best Practice: Acknowledge AI Use and Cite AI-Generated Content'. The site is Enterprise GenAI, Office of the Chief Information Officer, Illinois. The page shows no date, so year 2026 can't be confirmed (acceptable for a living web page). Open."
+  evidence: "https://genai.illinois.edu/best-practice-acknowledge-ai-use-and-cite-ai-generated-content/"
+- id: bastani-2025-genai-without-guardrails
+  status: ok
+  checked: "SSRN 4895486 resolves to this paper (Bastani, Bastani, Sungu, Ge, Kabakci, Mariman). SSRN gives the published version as PNAS 122(26), 2025, DOI 10.1073/pnas.2422633122. The SSRN page and preprint are free. Optional: add the doi."
+  evidence: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486"
+- id: liu-2024-teaching-cs50-with-ai
+  status: ok
+  checked: "PDF on cs.harvard.edu resolves. Authors are Rongxin Liu, Carter Zenke, Charlie Liu, Andrew Holmes, Patrick Thornton and David J. Malan, at SIGCSE 2024 (55th ACM Technical Symposium, V.1). DOI 10.1145/3626252.3630938 is printed on it. Open. Optional: add the doi."
+  evidence: "https://cs.harvard.edu/malan/publications/V1fp0567-liu.pdf"
+- id: uci-online-retail-ii
+  status: ok
+  checked: "UCI page resolves. Creator is Daqing Chen. DOI 10.24432/C5CG6D and the CC BY 4.0 license are shown. UCI's own citation reads 'Chen, D. (2012). Online Retail II', so year 2012 matches it (the donation date shown is 9/20/2019). Open."
+  evidence: "https://archive.ics.uci.edu/dataset/502/online+retail+ii"
+- id: dunnhumby-source-files
+  status: unverified
+  checked: "Page resolves and lists all four datasets (Breakfast at the Frat, Carbo-Loading, The Complete Journey, Let's Get Sort-of-Real). The 'open' label could not be confirmed. The scraped page shows no price or form, but its Download buttons have no visible links (likely script-driven), so I could not tell whether a sign-up form comes first. The site's Terms and Conditions limit downloaded material to research, personal or non-commercial use, which is worth noting for students."
+  evidence: "https://www.dunnhumby.com/source-files/; https://www.dunnhumby.com/terms-and-conditions/"
+- id: reddit-data-access
+  status: corrected
+  checked: "Reddit Help article resolves ('Developer Platform & Accessing Reddit Data') and covers the Data API and Reddit for Researchers. Access takes more than a free registration. Non-commercial Data API use is for 'approved developers' after a support-ticket request and app review. Commercial use needs a contract. Research access must go through Reddit for Researchers, which has eligibility criteria and an application. Using the API for research outside that program breaks Reddit policy."
+  corrections:
+    access: "application-required (approval needed; not self-serve registration)"
+  evidence: "https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data"
+- id: spotify-encouragement-designs-iv
+  status: ok
+  checked: "Spotify Engineering post resolves. Exact title matches. Author Benjamin Elbers (Data Scientist); dated Aug 24, 2023. Open."
+  evidence: "https://engineering.atspotify.com/2023/8/encouragement-designs-and-instrumental-variables-for-a-b-testing"
+- id: lewis-rao-2015-qje
+  status: corrected
+  checked: "The IDEAS url resolves to this article. Crossref for DOI 10.1093/qje/qjv023 confirms Lewis and Rao, QJE 130(4):1941-1973, 2015. OpenAlex lists it as closed access, so 'library' is right. The oa_url resolves, but not to the published paper. It is a December 2013 working paper titled 'On the Near Impossibility of Measuring the Returns to Advertising' (an earlier version of the same research). Keep it only if it is labeled as a preprint."
+  corrections:
+    oa_url_label: "Earlier working paper (Dec 2013), titled 'On the Near Impossibility of Measuring the Returns to Advertising'; not the published QJE text"
+  evidence: "https://aeaweb.org/conference/2014/retrieve.php?pdfid=985; https://api.crossref.org/works/10.1093/qje/qjv023; https://api.openalex.org/works/doi:10.1093/qje/qjv023"
+- id: kohavi-tang-xu-trustworthy-oce
+  status: ok
+  checked: "experimentguide.com is the book's official site: Kohavi, Tang and Xu, Cambridge University Press, 2020. Only Chapter 1 is free as a PDF; the rest links to purchase options, so it is not open and 'library' (paywalled) is right."
+  evidence: "https://experimentguide.com/"
+- id: ms-exp-deep-dive-variance-reduction
+  status: ok
+  checked: "Microsoft Research article resolves. Title matches. Authors Laura Cosgrove, Jen Townsend and Jonathan Litz (Microsoft Experimentation Platform); dated Nov 15, 2022. Open."
+  evidence: "https://www.microsoft.com/en-us/research/articles/deep-dive-into-variance-reduction/"
+- id: turrell-coding-for-economists
+  status: ok
+  checked: "GitHub Pages book resolves. 'Coding for Economists' by Arthur Turrell (1st edition). The page states 'This book is available under an MIT license.' Open. No year is shown, so leaving year blank is right."
+  evidence: "https://aeturrell.github.io/coding-for-economists/"
+- id: deeplearningai-ai-python-beginners
+  status: ok
+  checked: "Course page resolves. 'AI Python for Beginners', taught by Andrew Ng. The DeepLearning.AI community post (Aug 7, 2024) and The Batch issue 261 (Aug 7, 2024) confirm the 2024 launch. The 'Enroll for Free' button needs an account. The page now says access is free 'for a limited time during the DeepLearning.AI learning platform beta', and a PRO membership is needed for a certificate."
+  evidence: "https://www.deeplearning.ai/short-courses/ai-python-for-beginners/; https://community.deeplearning.ai/t/new-course-from-andrew-ng-enroll-in-ai-python-fo-beginners/674580; https://charonhub.deeplearning.ai/tag/issue-261/"
+- id: darden-business-publishing
+  status: ok
+  checked: "Store resolves. It is Darden Business Publishing (UVA Darden School of Business), selling cases, simulations, course packs, technical notes and more, with a cart and login. 'paid' is right (a few free student resources exist)."
+  evidence: "https://store.darden.virginia.edu/"
+- id: wedel-kannan-2016-marketing-analytics-data-rich
+  status: ok
+  checked: "Crossref for DOI 10.1509/jm.15.0413 confirms Wedel and Kannan, Journal of Marketing 80(6):97-121, Nov 2016. The SAGE url resolves and shows 'Restricted access', so 'library' is right."
+  evidence: "https://api.crossref.org/works/10.1509/jm.15.0413; https://journals.sagepub.com/doi/full/10.1509/jm.15.0413"
+- id: jupyter-project
+  status: ok
+  checked: "jupyter.org resolves to the Project Jupyter home page, which covers JupyterLab and Jupyter Notebook. The footer reads '(c) 2026'. Open."
+  evidence: "https://jupyter.org/"
+- id: msi-research-priorities-current
+  status: ok
+  checked: "The PDF resolves to MSI's 'Research Priorities' document (MSI.ORG footer). The document itself shows no year. The 2025/10 upload path is consistent with year 2025. oa_url is the same URL as url, which is redundant but not wrong. Open."
+  evidence: "https://msi.org/wp-content/uploads/sites/2/2025/10/MSI_ResearchPriorities.pdf"
+- id: github-classroom-deprecated
+  status: ok
+  checked: "GitHub Changelog post resolves: 'GitHub Classroom deprecated', posted Aug 27, 2026. Classroom was decommissioned on Aug 28, 2026; the transition was announced May 26, 2026. Open."
+  evidence: "https://github.blog/changelog/2026-08-27-github-classroom-deprecated"
+- id: uiuc-minimum-digital-accessibility-standards
+  status: ok
+  checked: "Page resolves: 'Minimum Digital Accessibility Standards', published by the Office of the Vice Chancellor for Access, Civil Rights & Community at Illinois. No date is shown. Open."
+  evidence: "https://access.illinois.edu/ada/digital-accessibility-policy/minimum-standards/"
+- id: jupyterlite
+  status: ok
+  checked: "Read the Docs site resolves to the JupyterLite documentation (v0.8.6), '(c) Copyright 2021-, JupyterLite Contributors'. Open."
+  evidence: "https://jupyterlite.readthedocs.io/en/stable/"
+- id: classroom50
+  status: unverified
+  checked: "classroom50.org resolves to 'The free, open-source alternative to GitHub Classroom', but the site names no operator. The GitHub repo (foundation50/classroom50) says it is 'Supported by the Fifty Foundation' and is GPL-3.0. That confirms the Fifty Foundation. The claim that the foundation is 'the nonprofit behind CS50' appears only in a third-party blog (bruceelgort.com). fifty.foundation returned no content, and the CS50 Wikipedia article doesn't mention it. Suggested authors: 'Fifty Foundation', with the CS50 link dropped or kept as hearsay. Optional: add license GPL-3.0."
+  evidence: "https://github.com/foundation50/classroom50; https://bruceelgort.com/2026/07/20/github-classroom-is-gone-heres-the-free-tool-that-replaces-it/"
+- id: dibia-2023-lida
+  status: ok
+  checked: "ACL Anthology page resolves: Victor Dibia, ACL 2023 (Volume 3: System Demonstrations), pp. 113-126, DOI 10.18653/v1/2023.acl-demo.11; the paper is CC BY 4.0. oa_url arXiv 2303.02927 is the same paper. The GitHub repo microsoft/lida shows an MIT license, so 'MIT (code)' is right."
+  evidence: "https://aclanthology.org/2023.acl-demo.11; https://arxiv.org/abs/2303.02927; https://github.com/microsoft/lida"
+- id: minto-pyramid-principle
+  status: ok
+  checked: "barbaraminto.com resolves. Its textbook page describes 'The Minto Pyramid Principle: Logic in Writing, Thinking and Problem Solving' as the 1996 edition, sold through the site for $150 plus postage. The ESCP library record lists the publisher as Minto International Inc. (ISBN 0-9601910-3-8; that record carries a 2012 printing date). 'paid' is right."
+  evidence: "https://barbaraminto.com/textbook; https://libraries.escp.eu/doc/SYRACUSE/73782"
+- id: ga4-demo-account
+  status: ok
+  checked: "Analytics Help page resolves ('Demo account - Analytics Help'). It describes the demo account with Google Merchandise Store and Flood-It! data. Access needs a Google account sign-in, so free-registration is right."
+  evidence: "https://support.google.com/analytics/answer/6367342"
+- id: fader-hardie-lee-2005-bgnbd
+  status: ok
+  checked: "Bruce Hardie's paper page resolves. Crossref for DOI 10.1287/mksc.1040.0098 confirms Fader, Hardie and Lee, Marketing Science 24(2):275-284, 2005. The oa_url PDF is the published reprint (INFORMS first page). Open. Optional: add pages 275-284."
+  evidence: "https://api.crossref.org/works/10.1287/mksc.1040.0098; https://www.brucehardie.com/papers/018/fader_et_al_mksc_05.pdf"
+- id: goli-singh-llms-capture-human-preferences
+  status: ok
+  checked: "arXiv 2305.02531 resolves ('Can LLMs Capture Human Preferences?', Goli and Singh, v6 Feb 2024). Crossref for DOI 10.1287/mksc.2023.0306 confirms 'Frontiers: Can Large Language Models Capture Human Preferences?', Marketing Science 43(4):709-722, 2024. Open via arXiv. Optional: add doi 10.1287/mksc.2023.0306 and 43(4):709-722."
+  evidence: "https://arxiv.org/abs/2305.02531; https://api.crossref.org/works/10.1287/mksc.2023.0306"
+- id: sawtooth-lighthouse-studio
+  status: corrected
+  checked: "The product page resolves and confirms CBC, ACBC, MaxDiff, a market simulator and hierarchical Bayes. The Sawtooth pricing page shows the free plan (up to 50 respondents) belongs to Discover, a different product. Lighthouse Studio is the Premier plan: priced by quote, annual subscription, with a free trial and student/educator discounts. 'freemium' doesn't describe Lighthouse Studio."
+  corrections:
+    access: "paid (quote-based annual license; free trial; academic discounts; the free tier is Sawtooth Discover, not Lighthouse Studio)"
+  evidence: "https://sawtoothsoftware.com/pricing; https://sawtoothsoftware.com/lighthouse-studio"
+- id: iab-creator-economy-2025
+  status: ok
+  checked: "IAB page resolves: '2025 Creator Economy Ad Spend & Strategy Report', dated Nov. 20, 2025. The 'Download the Full Report' link goes straight to a PDF, with no form or membership gate visible. Open."
+  evidence: "https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/"
+- id: privacy-sandbox-update-2025
+  status: ok
+  checked: "Post resolves: 'Update on Plans for Privacy Sandbox Technologies' by Anthony Chavez, VP, Privacy Sandbox, dated Oct 17, 2025. It announces the retirement of most Privacy Sandbox APIs. Open."
+  evidence: "https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies"
+- id: google-ap2
+  status: corrected
+  checked: "Google Cloud Blog post resolves. The title matches and the date is Sept 16, 2025. The post has two named authors rather than a corporate byline: Stavan Parikh (VP/GM, Payments, Google) and Rao Surapaneni (VP/GM, Business Applications Platform, Google Cloud). It is a blog post, so 'blog' fits better than 'website'."
+  corrections:
+    authors: "Parikh, S.; Surapaneni, R. (Google)"
+    type: blog
+  evidence: "https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol"
+- id: statsmodels-robust-covariance
+  status: ok
+  checked: "statsmodels docs page resolves (v0.15.0 stable). It documents fixed scale, HC0-HC3, HAC, cluster (plus cluster-crv3 and cluster-jk), hac-groupsum (Driscoll-Kraay) and hac-panel. Matches the title. Open."
+  evidence: "https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.get_robustcov_results.html"
+- id: linearmodels-panel-iv
+  status: ok
+  checked: "Docs site resolves as 'linearmodels 7.1', (c) 2017-2026 Kevin Sheppard. The docs page states no license, but the GitHub repo bashtage/linearmodels shows the NCSA license. Open."
+  evidence: "https://bashtage.github.io/linearmodels/; https://github.com/bashtage/linearmodels"
+- id: statqa-llms-good-statisticians
+  status: corrected
+  checked: "arXiv 2406.07815 resolves. Title matches, and the authors are Yizhang Zhu, Shiyin Du, Boyan Li, Yuyu Luo and Nan Tang (v2 Oct 2024). The NeurIPS 2024 virtual site lists it as a poster in the Datasets and Benchmarks Track, so a peer-reviewed venue exists. 'arXiv' alone undersells it. Open."
+  corrections:
+    venue: "NeurIPS 2024 Datasets and Benchmarks Track (arXiv:2406.07815)"
+  evidence: "https://neurips.cc/virtual/2024/poster/97546; https://arxiv.org/abs/2406.07815"
+- id: hinz-2011-seeding-strategies
+  status: ok
+  checked: "Crossref for DOI 10.1509/jm.10.0088 confirms Hinz, Skiera, Barrot and Becker, Journal of Marketing 75(6):55-71, Nov 2011. The doi.org url redirects to SAGE, which shows 'Restricted access' ($37.50 per article), so 'library' is right."
+  evidence: "https://api.crossref.org/works/10.1509/jm.10.0088; https://journals.sagepub.com/doi/10.1509/jm.10.0088"
+- id: krugmann-hartmann-2024-sentiment-genai
+  status: ok
+  checked: "Springer link resolves: Krugmann and Hartmann, Customer Needs and Solutions 11, article 3, 2024. It is open access under CC BY 4.0, so 'open' is right. Optional: add license CC BY 4.0."
+  evidence: "https://link.springer.com/doi/10.1007/s40547-024-00143-4"
+- id: li-castelo-katona-sarvary-2024-llm-perceptual
+  status: ok
+  checked: "INFORMS blocks fetching (robots_disallowed), so I used Crossref instead. Crossref for DOI 10.1287/mksc.2023.0454 confirms Peiyao Li, Noah Castelo, Zsolt Katona and Miklos Sarvary, Marketing Science 43(2):254-266, 2024; IDEAS (v43y2024i2p254-266) agrees. OpenAlex lists it as closed access, so 'library' is right."
+  evidence: "https://api.crossref.org/works/10.1287/mksc.2023.0454; https://api.openalex.org/works/doi:10.1287/mksc.2023.0454; https://ideas.repec.org/a/inm/ormksc/v43y2024i2p254-266.html"
+- id: easley-kleinberg-networks-crowds-markets
+  status: ok
+  checked: "The Cornell page resolves: Easley and Kleinberg, Cambridge University Press, 2010, with a free complete pre-publication draft PDF and chapter PDFs. Open."
+  evidence: "https://www.cs.cornell.edu/home/kleinber/networks-book/"
+- id: shap-docs
+  status: ok
+  checked: "SHAP docs page resolves: 'An introduction to explainable AI with Shapley values - SHAP latest documentation', (c) 2018 Scott Lundberg. The GitHub repo shap/shap shows an MIT license. Open."
+  evidence: "https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html; https://github.com/shap/shap"
+- id: neslin-2006-defection-detection
+  status: ok
+  checked: "Crossref for DOI 10.1509/jmkr.43.2.204 confirms Neslin, Gupta, Kamakura, Lu and Mason, Journal of Marketing Research 43(2):204-211, May 2006. The SAGE url resolves and shows 'Restricted access', so 'library' is right."
+  evidence: "https://api.crossref.org/works/10.1509/jmkr.43.2.204; https://journals.sagepub.com/doi/10.1509/jmkr.43.2.204"
+- id: ma-sun-2020-ml-ai-marketing
+  status: ok
+  checked: "The IDEAS url resolves. Crossref for DOI 10.1016/j.ijresmar.2020.04.005 confirms Liye Ma and Baohong Sun, IJRM 37(3):481-504, Sept 2020 (the official title uses a dash: 'Machine learning and AI in marketing - Connecting computing power to human insights'). The ScienceDirect publisher copy is subscription-only. The oa_url on the CKGSB faculty site is a full-text copy of the same article, so 'open' holds via oa_url."
+  evidence: "https://api.crossref.org/works/10.1016/j.ijresmar.2020.04.005; https://english.ckgsb.edu.cn/faculty/sun-baohong/ma_sun_2020/; https://ideas.repec.org/a/eee/ijrema/v37y2020i3p481-504.html"

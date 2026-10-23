@@ -41,7 +41,9 @@ Generated from course.json and the source files identified below. This file cont
     "04_Assignments/README.md",
     "03_Data_and_Code/README.md",
     "06_Lecture_Notes/README.md",
-    "03_Data_and_Code/Lecture_Examples/README.md"
+    "03_Data_and_Code/Lecture_Examples/README.md",
+    "05_Slides/README.md",
+    "05_Slides/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -85,7 +87,8 @@ Generated from course.json and the source files identified below. This file cont
     ],
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
-    "author": "Nathan Yang"
+    "author": "Nathan Yang",
+    "revision": "2026-10-23-recommender-systems"
   }
 }
 ```
@@ -106,7 +109,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 20 TikZ figures and [reproducible numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 23 TikZ figures and [reproducible numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
 ## Course Folders
@@ -219,13 +222,13 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 | M3 | How do observed customer characteristics relate to outcomes? | Regression, interpretation, diagnostics | [Regression](01_Resources/03_Regression_and_Statistical_Foundations/README.md) | Build and inspect a model; explain coefficients and distinguish association from causal effects. |
 | M4 | Which product designs, customer groups, or retention priorities should receive attention? | Conjoint, segmentation, customer lifetime value | [Conjoint, Segmentation, and CLV](01_Resources/04_Conjoint_Segmentation_and_CLV/README.md) | Compare product profiles, segmentations, or repeat-purchase forecasts; check assumptions and stability. |
 | M5 | What does customer language reveal about products and service? | Text, social media, sentiment, optional networks | [Text and Social Analysis](01_Resources/05_Text_Social_and_Network_Analysis/README.md) | Build a transparent text baseline, compare alternatives, and audit examples manually. |
-| M6 | Did a marketing intervention change outcomes? | Experiments, causal estimands, identification, uncertainty | [Causal Inference and Experiments](01_Resources/06_Causal_Inference_and_Experiments/README.md) | Simulate or analyze an experiment and contrast it with a confounded comparison. |
-| M7 | Which customers or sessions are likely to respond? | Prediction, machine learning, validation, decision thresholds | [Prediction and ML](01_Resources/07_Prediction_and_Machine_Learning/README.md) | Build a leakage-aware pipeline; compare baselines and assess decision costs. |
-| M8 | How can newer methods improve a specific marketing decision? | Selected topics such as recommendations, forecasting, marketing mix modeling, generative AI | [Current Topics](01_Resources/08_Current_Topics_in_Marketing/README.md) | Evaluate one extension against a simpler approach and state the supported conclusion. |
+| M6 | Did a marketing intervention change outcomes? | Experiments, causal estimands, identification, uncertainty, recommendation policy evaluation | [Causal Inference and Experiments](01_Resources/06_Causal_Inference_and_Experiments/README.md) | Simulate or analyze an experiment and contrast it with a confounded comparison. |
+| M7 | Which customers are likely to respond, and which products should they see? | Prediction, validation, decision thresholds, recommender models, ranking, LLM explanations | [Prediction and ML](01_Resources/07_Prediction_and_Machine_Learning/README.md) | Build a leakage-aware pipeline; compare baselines and assess decision costs. |
+| M8 | How can newer methods improve a specific marketing decision? | Adaptive recommendations, customer goals, platform incentives, marketing mix modeling, generative AI | [Current Topics](01_Resources/08_Current_Topics_in_Marketing/README.md) | Evaluate one extension against a simpler approach and state the supported conclusion. |
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 20 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 23 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -340,20 +343,20 @@ The [labs folder](../07_Labs/README.md) contains the structure for complete guid
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain approximately 17,700 words, 20 original TikZ figures, worked cases, practice questions with explanations, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain approximately 23,100 words, 23 original TikZ figures, worked cases, practice questions with explanations, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
 | Module | Notes and Core Coverage | Cases and Figures |
 | --- | --- | --- |
 | M1 | [Marketing Decisions, Data, and AI-Assisted Python](modules/M01_Marketing_Analytics_and_Python.md): analytical questions, observation units, joins, Python objects and functions, reproducibility, verification | Renewal response versus incremental value; duplicate-key joins; order value; coupon-campaign specification |
-| M2 | [Customer Data, Measurement, and Visualization](modules/M02_Customer_Data_and_Visualization.md): customer tables, missingness, denominators, cohorts, charts, uncertainty, Pyramid Principle | Campaign-mix reversal; retention triangle; online grocery baskets and repeated purchases |
+| M2 | [Customer Data, Measurement, and Visualization](modules/M02_Customer_Data_and_Visualization.md): customer tables, missingness, denominators, cohorts, charts, uncertainty, Pyramid Principle | Campaign-mix reversal; retention triangle; online grocery baskets and repeated purchases; variety and concentration |
 | M3 | [Regression, Interpretation, and Marketing Decisions](modules/M03_Regression.md): OLS, controls, omitted variables, transformations, interactions, inference, diagnostics, panels | Rival presence and market demand; message effects by tenure; advertising contribution |
 | M4 | [Product Preferences, Customer Segments, and Lifetime Value](modules/M04_Conjoint_Segmentation_and_CLV.md): conjoint design, logit, willingness to pay, substitution, clustering, scaling, CLV | Bundle cannibalization; nearest-neighbor reversal; nonlinear retention value; segment retention support |
 | M5 | [Text, Social Media, and Customer Networks](modules/M05_Text_Social_and_Network_Analysis.md): text representation, TF-IDF, embeddings, sentiment, topics, annotation, networks | Complaint prevalence and precision; LLM label validation; network brokerage; engagement versus sales |
-| M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers | Email assignment and profit uncertainty; counterfactual trends; treatment exposure across customers |
-| M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds | Rare purchases; ranking versus calibration; coupon targeting with baseline purchasing and discount costs |
-| M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): recommendation feedback, variety, media carryover and saturation, budget allocation, generative AI evaluation | Relevance versus variety; average versus marginal returns; total AI workflow time; integrated subscription launch |
+| M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
+| M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
+| M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content audits and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
 
 The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases, while numerical teaching examples are explicitly synthetic. No attached private style document or sample syllabus is reproduced here.
 
@@ -389,7 +392,7 @@ After changes, run the numerical script, inspect compilation warnings, and visua
 
 Give an assistant the relevant Markdown module, its figure descriptions, and any related CSV or calculation output. Cite module and numbered section, such as “M6, Section 6.4.” Do not infer a deadline or assessment rule from an illustrative exercise. The exercises are public teaching material.
 
-For slides, use each module's managerial question as the opening, then select the worked case, method, key figure, and decision implication. Keep the full derivation and consequential assumptions in the notes. Each TikZ file can be reused in a LaTeX slide deck; its PNG companion supports other presentation tools. Figures illustrate particular mechanisms and should retain the accompanying assumptions and synthetic-data labels.
+Follow the [preferred Beamer format](../05_Slides/AGENTS.md) when preparing lectures. Use each module's managerial question as the opening, then select the worked case, method, key figure, and decision implication. Keep the full derivation and consequential assumptions in the notes. Each TikZ file can be reused in a LaTeX slide deck; its PNG companion supports other presentation tools. Figures illustrate particular mechanisms and should retain the accompanying assumptions and synthetic-data labels.
 
 ---
 
@@ -405,7 +408,7 @@ Run from the repository root:
 python3 03_Data_and_Code/Lecture_Examples/verify_examples.py
 ```
 
-The script requires Python 3 and uses only its standard library. It writes the CSV files below and [verified_calculations.json](verified_calculations.json) beside the script. It has been executed successfully. It reconciles order totals, checks the campaign reversal and regression slopes, verifies choice shares, enumerates recommendation lists, and compares the media-budget solution with an independent grid search. It also reports the remaining calculations, including confidence intervals, CLV, and classification metrics.
+The script requires Python 3 and uses only its standard library. It writes the CSV files below and [verified_calculations.json](verified_calculations.json) beside the script. It has been executed successfully. It reconciles order totals, checks the campaign reversal and regression slopes, verifies choice shares, enumerates recommendation lists, and compares the media-budget solution with an independent grid search. For recommendation evaluation, it checks inverse-propensity values against independent group standardization, rejects a target action without logging support, computes NDCG, and verifies the goal-weight thresholds by enumerating 1,001 weights. It also reports the remaining calculations, including confidence intervals, CLV, and classification metrics.
 
 The script intentionally overwrites these generated example files. Edit the input definitions in the script to change an example, then reconcile the module text and figure. Floating-point output can include tiny numerical artifacts such as `-1.9999999999999991`; displayed values in the notes are rounded.
 
@@ -417,12 +420,16 @@ No file uses a missing-value code. Counts are nonnegative integers; probabilitie
 | --- | --- | --- | --- |
 | [M01_order_lines_synthetic.csv](M01_order_lines_synthetic.csv) | Product line within an order | `order_id`, `customer_id`: identifiers; `quantity`: items; `unit_price_dollars`: dollars per item | Two orders, three lines; revenue 37; average order value 18.50 |
 | [M02_campaigns_synthetic.csv](M02_campaigns_synthetic.csv) | Campaign by customer type | `campaign`: A/B; `customer_type`: new/returning; `assigned_customers`, `conversions`: counts | Illustrates composition and standardization; does not establish a causal campaign effect |
+| [M02_variety_synthetic.csv](M02_variety_synthetic.csv) | Basket-category pair | `basket`, `category`: identifiers; `spending_share`: fraction of basket spending | Shares sum to one within each basket; both contain two categories, with different concentration |
 | [M03_rivals_synthetic.csv](M03_rivals_synthetic.csv) | Illustrative store/market observation | `demand_group`: low/high; `rival_count`: competitors; `sales_illustrative_units`: outcome units | Three observations per demand group; pooled and within-group slopes differ |
 | [M04_segmentation_synthetic.csv](M04_segmentation_synthetic.csv) | Customer | `customer`: identifier; `spending_dollars`: total spending; `visits`: count in a common hypothetical window | Compare raw distance with spending divided by 100 |
 | [M05_annotation_synthetic.csv](M05_annotation_synthetic.csv) | Classification scenario with 1,000 documents | `prevalence`: true issue fraction; other columns: confusion-matrix counts | Sensitivity 0.80 and specificity 0.90 in both scenarios; counts are stored as whole-valued decimals |
 | [M06_experiment_synthetic.csv](M06_experiment_synthetic.csv) | Assignment arm | `assignment`: email/control; `assigned_customers`, `purchasers`: counts | Purchase incidence over a hypothetical 30-day horizon; independent assignments assumed |
 | [M06_did_synthetic.csv](M06_did_synthetic.csv) | Group | `group`: treated/comparison; `before`, `after`: mean outcome in illustrative units | Two periods; parallel untreated trends is an imposed interpretation condition |
+| [M06_exposure_synthetic.csv](M06_exposure_synthetic.csv) | Customer group by displayed item | `customer_group`: frequent/occasional; `item`: A/B; `logging_probability`: probability of the displayed item conditional on group; `displays`, `clicks`: counts | 500 opportunities in each group, one display per opportunity; binary click over a common synthetic window; random assignment within group is imposed |
 | [M07_coupon_synthetic.csv](M07_coupon_synthetic.csv) | Hypothetical customer type | Purchase columns: potential purchase probabilities under each action; `margin_dollars`, `discount_dollars`, `contact_cost_dollars`: dollars | Both potential probabilities are known by construction; real data require a causal design |
+| [M07_rankings_synthetic.csv](M07_rankings_synthetic.csv) | Position within a ranking | `ranking`: ABC/BCA; `position`: one-based rank; `item`: A/B/C; `binary_relevance`: 0/1 | The complete candidate set contains three items and two relevant labels; use exponential gain and a base-two logarithmic discount |
+| [M07_goals_synthetic.csv](M07_goals_synthetic.csv) | Candidate item | `item`: A/B/C; `preference_score`, `goal_score`: unitless scores | Scores are assumed on comparable scales; they are neither probabilities nor estimated health effects; convex weights span zero to one |
 | [M08_recommendation_synthetic.csv](M08_recommendation_synthetic.csv) | Candidate item | `item`: identifier; `category`: nominal label; `relevance_score`: unitless score | Scores are not probabilities; enumerate three-item lists and a category-variety bonus |
 
 ## Additional Calculations
@@ -430,6 +437,53 @@ No file uses a missing-value code. Counts are nonnegative integers; probabilitie
 The JSON report also contains renewal incremental contribution (M1), basket Jaccard similarity (M2), an OLS confidence interval (M3), logit shares and acquisition-adjusted CLV (M4), prevalence-dependent precision (M5), email-effect uncertainty and power (M6), a classification threshold and coupon value (M7), and recommendation objectives, carryover, media optimization, and total workflow time (M8).
 
 Read the equations and assumptions in the relevant module before adapting a calculation. Confidence-interval and power formulas are approximations under the stated design. The known media curves are imposed, smooth, and concave; their optimum is not an estimated budget recommendation. Coding assistants should be asked to explain these conditions and verify a small case before extending the code.
+
+---
+
+## Source: 05_Slides/README.md
+
+# Slides
+
+**Status: no new course slides added.** Save slides here with a same-stem Markdown companion, such as `M02_Visualization.md` beside `M02_Visualization.pdf`.
+
+The companion should identify the lecture/module, version, learning objectives, slide-number anchors, chart descriptions, definitions, equations, and referenced resources. Identify information omitted from a summary. Link to the original deck and any related lab.
+
+Lecture decks use Nathan Yang's preferred 16:9 LaTeX Beamer format: 14-point base text, white backgrounds, blue text, orange rules and bullets, editable TikZ figures, and optional presenter notes. Course decks follow the UIUC palette. See the [slide authoring guide](AGENTS.md) for the saved formatting and writing preferences.
+
+---
+
+## Source: 05_Slides/AGENTS.md
+
+# Agent Guide for Lecture Slides
+
+Read the root `AGENTS.md`, `course.json`, and the relevant lecture notes before authoring a deck. Use Nathan Yang's preferred LaTeX Beamer format, supplied on October 23, 2026. The original reference is retained in the instructor's Dropbox at `09_Templates/Lecture_Slides/slides.tex`; that directory stays excluded from Git. The reference's seminar topic, examples, and dates do not establish BADM 534 content or requirements.
+
+## Layout and Typography
+
+- Use `\documentclass[aspectratio=169,14pt]{beamer}` with the default theme and a white background.
+- Keep the template's sans-serif text, large bold frame titles, navy body text, orange bullets, and thin orange rules across the top and bottom.
+- Hide navigation symbols. Keep the rules free of editorial text and document-status labels.
+- Use the template's `slidebullets` environment, with generous spacing and short, substantive statements. Split a crowded frame into additional slides before reducing type size.
+- Preserve the reference's simple text, equation, full-width figure, and figure-with-text column layouts. Use vertical whitespace around short text sequences.
+- Use title case for headings. Attribute the deck to **By Nathan Yang**. Include the actual course and lecture title; include dates only when supplied or established in current course documents.
+
+## Colors and Figures
+
+The user's UIUC palette requirement applies to course decks. Preserve the template's color roles while replacing its custom navy and burnt orange with Illinois Blue `#13294B` and Illini Orange `#FF5F05`. Use Storm `#707372` for secondary labels and light tints for fills. The course palette is also defined in `../06_Lecture_Notes/figures/style.tex`.
+
+Keep diagrams editable in TikZ or PGFPlots. Use figures to explain consequential mechanisms, comparisons, or uncertainty. Adapt the lecture-note figures to the slide's available space and verify that labels remain legible. Use line styles, markers, and direct labels alongside color. Preserve units, sample restrictions, conditioning, and distinctions between synthetic illustrations and estimated results.
+
+## Content and Presenter Notes
+
+Start with the managerial decision and the evidence needed to inform it. Base course decks on the corresponding module in `../06_Lecture_Notes/modules/`. Explain the economic meaning of equations and calculations. Retain detailed cases, assumptions, derivations, and source references in substantive presenter notes where they exceed the projected slide's space.
+
+Preserve the reference's `\presenterfalse` default and optional `\presentertrue` setting for notes on a second screen. Presenter notes must also follow the user's strong prohibition on meta-comments: omit draft labels, preparation remarks, teaching-stage directions, module previews, and narration such as “this slide shows.” State the substance directly. Avoid em dashes and stock “not X but Y” constructions.
+
+## Files and Verification
+
+Keep each course deck's editable `.tex`, PDF, and same-stem Markdown companion together in this folder. The companion should include slide anchors, substantive explanations, equations, figure descriptions, sources, and any omissions from the conversion. Keep intermediate builds in an ignored directory.
+
+Compile the student-facing deck and inspect every slide for clipping, text density, label collisions, and legibility. Check presenter mode when changing the notes layout. Verify calculations against the associated example data and code. Update this folder's README and the course manifest when a deck is released, and regenerate the LLM context without incorporating unrelated unpublished changes.
 
 ---
 
@@ -2489,7 +2543,7 @@ Rights or Access: Link to the source; redistribution rights not established.; Pu
 
 Source: 01_Resources/00_Index/resource_catalog.json
 
-530 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
+546 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
 
 ---
 
@@ -5159,7 +5213,7 @@ Focus: Free retail datasets. The Complete Journey has two years of all-category 
 
 Teaching Suggestion: Use The Complete Journey for campaign-response and CLV projects, and Breakfast at the Frat for M3 price/promotion regression and elasticity exercises.
 
-Cautions: Direct downloads, with no registration requirement visible. The license is on a linked Terms and Conditions page that was not reviewed. A Kaggle mirror of The Complete Journey (ref frtgnn/dunnhumby-the-complete-journey, 847 MB, listed under ODbL) also exists. Separately, 84.51 released a different 'Complete Journey' (801 households, one year, about 1.47M transactions) as the pip-installable completejourney_py (MIT code, Parquet): https://github.com/cunningjames/completejourney_py . Its README describes that data as simulated and for educational use only, which makes it the easiest Colab option.
+Cautions: Direct downloads, with no registration requirement visible. The license is on a linked Terms and Conditions page that was not reviewed. A Kaggle mirror of The Complete Journey (ref frtgnn/dunnhumby-the-complete-journey, 847 MB, listed under ODbL) also exists. Separately, 84.51 released a different 'Complete Journey' (801 households, one year, about 1.47M transactions) as the pip-installable completejourney_py (MIT code, Parquet): https://github.com/cunningjames/completejourney_py . Its README describes that data as simulated and for educational use only, which makes it the easiest Colab option. Not confirmed whether downloads require a sign-up; the page's download buttons are script-driven.
 
 Rights or Access: open
 
@@ -5661,9 +5715,9 @@ Focus: Reddit's policy: the Data API is rate-limited and bulk export is restrict
 
 Teaching Suggestion: Required policy reading for M5 social-media analysis. It explains why students should not scrape Reddit or use the API for research projects, and how research access works.
 
-Cautions: Reddit for Researchers eligibility is not listed; applications go through a support ticket. Requests from hosted-service IP ranges, likely including cloud notebooks, need OAuth or a login.
+Cautions: Reddit for Researchers eligibility is not listed; applications go through a support ticket. Requests from hosted-service IP ranges, likely including cloud notebooks, need OAuth or a login. Checked 2026-10-23: access needs an application and approval (Data API app review, or Reddit for Researchers); it is not self-serve sign-up. Don't plan student projects on Reddit data without lead time.
 
-Rights or Access: free-registration
+Rights or Access: application
 
 ---
 
@@ -7519,7 +7573,7 @@ Focus: StatQA benchmark (11,623 examples) on choosing and applying hypothesis te
 
 Teaching Suggestion: Supports a rule for the wiki: make the AI state each method's assumptions and check them on the data before trusting its test or regression.
 
-Cautions: Possibly NeurIPS 2024 Datasets & Benchmarks track; this is from recollection, as the arXiv page lists no venue.
+Cautions: Venue confirmed on the NeurIPS 2024 virtual site (poster, Datasets and Benchmarks Track).
 
 Rights or Access: open
 
@@ -7679,9 +7733,9 @@ Focus: Industry-standard conjoint and MaxDiff platform with CBC, Adaptive CBC, H
 
 Teaching Suggestion: Industry reference point and demo. Its technical-papers library (CBC, HB, market simulators, design) is excellent free instructor background.
 
-Cautions: Academic access: the site lists 'Student Grants' (studentgrants@sawtooth.com) but has no public page for it, so email them about course licenses. Technical papers: https://sawtoothsoftware.com/resources/technical-papers. The home page mentions an 'AI follow-up' survey element; no synthetic-respondent feature was seen.
+Cautions: Academic access: the site lists 'Student Grants' (studentgrants@sawtooth.com) but has no public page for it, so email them about course licenses. Technical papers: https://sawtoothsoftware.com/resources/technical-papers. The home page mentions an 'AI follow-up' survey element; no synthetic-respondent feature was seen. Checked 2026-10-23: Lighthouse Studio is a quote-priced annual license with a free trial and academic discounts. The free tier (up to 50 respondents) is Sawtooth Discover, a different product.
 
-Rights or Access: freemium
+Rights or Access: paid
 
 ---
 
@@ -8693,9 +8747,9 @@ Focus: Official rules for the Reddit Data API: OAuth required (unauthenticated t
 
 Teaching Suggestion: Setup guide for a Reddit-comments lab with PRAW. Students register a script app, then pull a subreddit's posts for sentiment and topic analysis.
 
-Cautions: Page updated May 11, 2026. Python wrapper: PRAW 8.0.3 docs, https://praw.readthedocs.io/en/stable/ (fetched). Students should read the Data API Terms; commercial use and some research uses may need approval.
+Cautions: Page updated May 11, 2026. Python wrapper: PRAW 8.0.3 docs, https://praw.readthedocs.io/en/stable/. Checked 2026-10-23: even non-commercial Data API use is limited to approved developers after a request and app review, so plan for lead time or use Bluesky's open API for class labs.
 
-Rights or Access: free-registration
+Rights or Access: application
 
 ---
 
@@ -9423,7 +9477,7 @@ Focus: Using a large set of field experiments, shows that individual-level sales
 
 Teaching Suggestion: Pair with the power calculators. Students compute the sample size needed to detect a realistic ad lift and see the 'unfavorable economics' for themselves.
 
-Cautions: The oa_url is an earlier AEA 2014 conference draft found in search, not the published version.
+Cautions: The oa_url is an earlier AEA 2014 conference draft found in search, not the published version. The open-access link is the December 2013 working paper 'On the Near Impossibility of Measuring the Returns to Advertising', not the published QJE text (QJE 130(4), 1941–1973; DOI 10.1093/qje/qjv023).
 
 Rights or Access: library
 
@@ -11131,6 +11185,288 @@ Rights or Access: paid
 
 ---
 
+### additional:ling-nie-nielsen-knauper-yang-dube-2022-goal-oriented-food-rec | Following Good Examples: Health Goal-Oriented Food Recommendation based on Behavior Data
+
+Source URL: https://dl.acm.org/doi/10.1145/3485447.3514193
+
+Modules: M7, M6
+
+Priority: core
+
+Focus: Develops a sequential food recommender combining general, BMI-specific, and goal-specific models learned from food logs. Evaluation compares held-out foods in periods associated with the intended weight outcome; it does not estimate the causal effect of deploying recommendations on weight.
+
+Teaching Suggestion: Instructor's own paper and the anchor case for the recommender unit: accuracy versus goal attainment, blending objectives, and an M6 caution that learning from 'successful' users builds selection into the training data. A good AI-assisted coding exercise is a goal-aware re-ranker on the synthetic viewing or grocery data.
+
+Cautions: Also on the MBA 542 Module 5 reading list. Local Sections 3.2 and 5 checked: selected active users, last-basket testing, and offline outcome-conditioned evaluation. M7 Section 7.12 distinguishes retrospective outcomes from inputs available at recommendation time.
+
+Rights or Access: library
+
+---
+
+### additional:nielsen-yang-dube-knauper-ling-nie-2022-consumption-variety | Consumption Variety in Food Recommendation
+
+Source URL: https://www.journals.uchicago.edu/doi/10.1086/720453
+
+Modules: M7, M3, M2
+
+Priority: core
+
+Focus: Relates food-consumption variety to recorded calorie and food-composition changes in app logs, then conditions the FOODVAR sequential recommender on a variety-change indicator. Offline comparisons assess hit rate and NDCG; the study does not randomize users to a variety intervention.
+
+Teaching Suggestion: Instructor's own paper. It moves from a descriptive regression (M3) to a design change in the recommender (M7), the full analytics-to-action arc the course teaches. Use it to motivate multi-objective re-ranking and evaluation beyond accuracy.
+
+Cautions: Also on the MBA 542 Module 5 reading list. Empirical analysis, FOODVAR sections, and Tables 3–5 checked locally. Evaluation uses 30 history days, seven validation days, and a final test day. The M8 category-bonus calculation is a separate synthetic illustration.
+
+Rights or Access: library
+
+---
+
+### additional:wang-li-chen-2025-recpie-explanations | Can Explanations Improve Recommendations? Evidence from Prediction-Informed Explanations
+
+Source URL: https://arxiv.org/abs/2502.16759v3
+
+Modules: M7, AI
+
+Priority: recommended
+
+Focus: RecPIE alternates prediction-informed explanation generation and explanation-informed recommendation. The paper reports gains in offline point-of-interest ranking and a separate human evaluation of explanations. These evaluations do not establish a deployed effect on customer welfare.
+
+Teaching Suggestion: Source paper for the RecPIE teaching artifact built for MBA 542 (accuracy-only vs. explainability-only vs. RecPIE modes). It could be reused directly on the M7 wiki page.
+
+Cautions: Version and authors checked against arXiv v3. A related NeurIPS 2025 version has a different subtitle; cite the specific version used.
+
+Rights or Access: open
+
+---
+
+### additional:zielnicki-2025-value-personalized-recs-netflix | The Value of Personalized Recommendations: Evidence from Netflix
+
+Source URL: https://www.ifo.de/en/cesifo/publications/2026/working-paper/value-personalized-recommendations-evidence-netflix
+
+Modules: M7, M4
+
+Priority: core
+
+Focus: Uses Netflix viewership and recommendation exposure to estimate a discrete-choice model under conditional exogeneity of exposure. A randomized perturbation supplies diversion evidence for model validation. Model-based replacement with matrix factorization or popularity-based recommendation lowers engagement by about 4% or 12%, respectively.
+
+Teaching Suggestion: The 'why firms invest in recommenders' anchor for M7. It pairs naturally with the MBA 542 synthetic Netflix viewing data.
+
+Cautions: The supplied PDF is dated June 9, 2026, despite 2025 in its filename. Results are model-based engagement counterfactuals, not direct experimental effects of full replacement or measures of consumer welfare. Abstract and identification discussion checked locally.
+
+Rights or Access: open
+
+---
+
+### additional:aridor-2022-movielens-field-experiment | The Economics of Recommender Systems: Evidence from a Field Experiment on MovieLens
+
+Source URL: https://www.econstor.eu/handle/10419/271773
+
+Modules: M7, M6
+
+Priority: core
+
+Focus: A MovieLens field experiment distinguishes recommendation from exposure-only conditions and elicits beliefs. Evidence supports an informational role beyond exposing an item, with implications for consumption and information acquisition.
+
+Teaching Suggestion: Bridges M6 and M7: a clean randomized evaluation of a recommender, the right comparison for any offline accuracy metric.
+
+Cautions: Cites the supplied November 2022 version. A later retitled version is at https://arxiv.org/abs/2211.14219 . The intervention design and belief-elicitation discussion were checked locally.
+
+Rights or Access: open
+
+---
+
+### additional:chaney-stewart-engelhardt-2018-algorithmic-confounding | How Algorithmic Confounding in Recommendation Systems Increases Homogeneity and Decreases Utility
+
+Source URL: https://www.arxiv.org/abs/1710.11214
+
+Modules: M7, M6
+
+Priority: core
+
+Focus: Simulates recommender retraining on behavior shaped by prior recommendations. Under the modeled updating and preference processes, feedback can homogenize consumption without improving utility. The results concern a simulation mechanism, not a universal field estimate.
+
+Teaching Suggestion: Key M6 + M7 idea for analysts: platform data reflect past recommendations, so naive models learn the algorithm's own footprint. A simulation students can reproduce with AI help.
+
+Rights or Access: open
+
+---
+
+### additional:schnabel-2016-recommendations-as-treatments | Recommendations as Treatments: Debiasing Learning and Evaluation
+
+Source URL: https://proceedings.mlr.press/v48/schnabel16.html
+
+Modules: M7, M6
+
+Priority: recommended
+
+Focus: Treats recommendation and rating exposure as a treatment assignment problem and uses propensity weighting to correct the selection bias in observed ratings, for both evaluating and training recommenders.
+
+Teaching Suggestion: Shows students that causal-inference tools from M6 (propensity scores, inverse weighting) apply directly to recommender evaluation.
+
+Rights or Access: open
+
+---
+
+### additional:kleinberg-mullainathan-raghavan-2024-what-users-want | The Challenge of Understanding What Users Want: Inconsistent Preferences and Engagement Optimization
+
+Source URL: https://arxiv.org/abs/2202.11776v1
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Models users whose impulsive choices differ from their considered preferences and shows how optimizing a platform for engagement can serve the impulses at the expense of what users actually value.
+
+Teaching Suggestion: Conceptual reading for the 'what should the recommender optimize?' discussion; pairs with the instructor's goal-oriented food recommendation paper.
+
+Cautions: Venue from the local file name; the link is the arXiv version.
+
+Rights or Access: open
+
+---
+
+### additional:milli-2025-engagement-divisive-content | Engagement, User Satisfaction, and the Amplification of Divisive Content on Social Media
+
+Source URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC11894805/
+
+Modules: M7, M8, M6
+
+Priority: recommended
+
+Focus: A preregistered Twitter audit with 806 users compares engagement-ranked posts with a reverse-chronological baseline and collects item-level stated preferences. Engagement ranking amplifies emotionally charged and out-group-hostile content; users do not prefer the selected political posts on the stated-preference measure.
+
+Teaching Suggestion: Concrete evidence that the optimization target matters. A good M8 discussion piece on stated versus revealed preferences.
+
+Cautions: Corrected author order and restored Sebastian Zhao using the published article. This is an algorithmic audit, not assignment to long-term use of alternative feeds. Local PDF is a December 2024 preprint; linked publication is March 2025.
+
+Rights or Access: open
+
+---
+
+### additional:liu-tucker-2025-filter-bubble-youtube | Short-term Exposure to Filter-Bubble Recommendation Systems Has Limited Polarization Effects: Naturalistic Experiments on YouTube
+
+Source URL: https://doi.org/10.1073/pnas.2318127122
+
+Modules: M7, M8, M6
+
+Priority: recommended
+
+Focus: Four experiments with nearly 9,000 participants manipulate recommendations on a YouTube-like interface and find limited short-term polarization effects in the studied settings. Exposure duration and attitude outcomes differ from audits of ranked content.
+
+Teaching Suggestion: Counterweight to the filter-bubble narrative. Pair it with Milli et al. to show that evidence on recommender harms is mixed and depends on design.
+
+Cautions: Full authors verified against PNAS and PubMed; Tucker is not an author. The legacy catalog ID is retained for stable references. Linked primary publication; no local PDF in this course folder.
+
+Rights or Access: open
+
+---
+
+### additional:stray-2021-aligning-recsys-human-values | What are you optimizing for? Aligning Recommender Systems with Human Values
+
+Source URL: https://arxiv.org/abs/2107.10939v1
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Accessible survey of how platforms have tried to make recommenders serve values beyond engagement (well-being, diversity, user control) and what metrics and data that requires.
+
+Teaching Suggestion: Readable framing for the multi-objective design theme that runs through the MBA 542 recommender module and the instructor's food-recommendation papers.
+
+Cautions: Local v1 text and author list checked. The catalog does not rely on the previously unconfirmed workshop attribution.
+
+Rights or Access: open
+
+---
+
+### additional:zhu-qin-huang-dai-understanding-or-manipulation | Understanding or Manipulation: Rethinking Online Performance Gains of Modern Recommender Systems
+
+Source URL: https://arxiv.org/abs/2210.05662v2
+
+Modules: M7, M6
+
+Priority: optional
+
+Focus: Develops a benchmark for distinguishing matching to initial preferences from preference shifts induced by recommendations. Experiments use synthetic and real-world datasets within that framework; click gains alone need not imply better matching to initial preferences.
+
+Teaching Suggestion: A sharp caution for interpreting recommender A/B tests in M6: winning an experiment and serving users are not the same thing.
+
+Cautions: Seven-author list and December 2023 version checked against supplied PDF and arXiv. Local filename contains 2022, the first arXiv submission year. Benchmark experiments are not a general field estimate of manipulation.
+
+Rights or Access: open
+
+---
+
+### additional:luo-yao-zhang-2026-recsys-interventions | Unintended Consequences of Recommender System Interventions: Evidence from a Field Experiment
+
+Source URL: https://arxiv.org/abs/2606.08265v1
+
+Modules: M7, M6
+
+Priority: optional
+
+Focus: Studies a temporary ranking boost for celebrity sleep-reminder videos in a randomized platform campaign. The analyzed active-user panel shows increased late-night and overall usage, with persistence after the campaign. The authors relate persistence to training signals and policy updates generated by the intervention.
+
+Teaching Suggestion: Recent example for the M6/M7 discussion of spillovers and unintended outcomes in platform experiments.
+
+Cautions: Local Sections 4.2–4.3 and Table 6 checked. The analyzed panel contains 200,000 users active on the first experiment day. Reported 14.75% and 2.18% figures are relative assignment effects on usage. Mechanism attribution and sample inclusion require separate attention.
+
+Rights or Access: open
+
+---
+
+### additional:cosley-2003-is-seeing-believing | Is Seeing Believing? How Recommender Interfaces Affect Users' Opinions
+
+Source URL: https://experts.umn.edu/en/publications/is-seeing-believing-how-recommender-interfaces-affect-users-opini/
+
+Modules: M7, M6
+
+Priority: optional
+
+Focus: Classic experiment in which showing users (sometimes manipulated) predicted ratings pulls their own re-ratings toward the displayed value: recommender interfaces anchor opinions.
+
+Teaching Suggestion: Short classic that pairs with Adomavicius et al. (2019) in this folder; useful for discussing how recommenders contaminate the ratings they learn from.
+
+Rights or Access: library
+
+---
+
+### additional:chen-tsai-steering-algorithmic-recommendations | Steering via Algorithmic Recommendations
+
+Source URL: https://doi.org/10.1111/1756-2171.12481
+
+Modules: M7, M8
+
+Priority: optional
+
+Focus: Empirical study of Amazon self-preferencing using product recommendation records and within-product variation from Amazon stockouts. Seller identity affects receipt of Frequently Bought Together recommendations, with controls and falsification checks addressing alternative explanations.
+
+Teaching Suggestion: Case on platform incentives and observational identification in M6/M8. Explain the stockout comparison, accompanying price and availability changes, and the distinction between platform return and customer value.
+
+Cautions: Corrected the earlier theory-only description. Publisher metadata verifies the 2024 article; the supplied local working paper is dated December 2020 despite 2021 in its filename.
+
+Rights or Access: library
+
+---
+
+### additional:qin-2024-credible-conversational-recsys | Beyond Persuasion: Towards Conversational Recommender System with Credible Explanations
+
+Source URL: https://aclanthology.org/2024.findings-emnlp.247/
+
+Modules: M7, AI
+
+Priority: recommended
+
+Focus: Shows that LLM-based conversational recommenders can persuade users with explanations that are not credible, and proposes a method that keeps explanations persuasive but grounded in true item facts.
+
+Teaching Suggestion: Counterpoint to RecPIE: LLM explanations can improve recommendations, but they can also mislead. Good for a class debate on AI shopping assistants (M8).
+
+Cautions: Authors, venue, and pages verified against ACL Anthology and supplied PDF. PC-CRS evaluates credibility and persuasion separately; M7 connects the distinction to attribute-level factual checks.
+
+Rights or Access: open
+
+---
+
 ### additional:github-pages-limits | GitHub Pages limits
 
 Source URL: https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
@@ -11197,7 +11533,7 @@ Focus: Free, open-source replacement for GitHub Classroom that distributes and a
 
 Teaching Suggestion: Candidate tool for handing out starter notebooks and programming assignments through GitHub, linked from the wiki's assignment pages.
 
-Cautions: The sponsoring organization and the feature list come from a third-party blog (https://bruceelgort.com/2026/07/20/github-classroom-is-gone-heres-the-free-tool-that-replaces-it/, fetched); the official homepage only says it is the free, open-source alternative to GitHub Classroom, with no license named. It needs a GitHub organization on a Team plan (free for verified educators) and broad read/write access to the org's repos. It reached general availability on 2026-07-01 per GitHub's migration doc. It is new, so pilot it before relying on it.
+Cautions: The sponsoring organization and the feature list come from a third-party blog (https://bruceelgort.com/2026/07/20/github-classroom-is-gone-heres-the-free-tool-that-replaces-it/, fetched); the official homepage only says it is the free, open-source alternative to GitHub Classroom, with no license named. It needs a GitHub organization on a Team plan (free for verified educators) and broad read/write access to the org's repos. It reached general availability on 2026-07-01 per GitHub's migration doc. It is new, so pilot it before relying on it. The repo (foundation50/classroom50, GPL-3.0) says it is supported by the Fifty Foundation; only a third-party blog says that foundation is the nonprofit behind CS50.
 
 Rights or Access: open
 

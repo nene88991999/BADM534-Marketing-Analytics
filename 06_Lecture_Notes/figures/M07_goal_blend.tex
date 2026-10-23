@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[width=13cm,height=7.4cm,xmin=0,xmax=1,ymin=0,ymax=1.12,
+  xtick={0,.25,.5,.75,1},ytick={0,.25,.5,.75,1},
+  xlabel={Goal weight $\alpha$},ylabel={Combined score},
+  legend style={at={(.5,-.21)},anchor=north,legend columns=3}]
+\addplot[IlliniBlue,very thick,domain=0:1,samples=2]{.9-.8*x};
+\addplot[Patina,very thick,dashed,domain=0:1,samples=2]{.75-.15*x};
+\addplot[IlliniOrange,very thick,dashdotted,domain=0:1,samples=2]{.6+.3*x};
+\legend{Item A,Item B,Item C}
+\draw[Storm,densely dotted] (axis cs:.230769,0)--(axis cs:.230769,1.03);
+\draw[Storm,densely dotted] (axis cs:.333333,0)--(axis cs:.333333,1.03);
+\node[font=\footnotesize,anchor=south] at (axis cs:.1154,1.02) {A first};
+\node[font=\footnotesize,anchor=south] at (axis cs:.2821,1.02) {B};
+\node[font=\footnotesize,anchor=south] at (axis cs:.6667,1.02) {C first};
+\fill[IlliniBlue] (axis cs:.230769,.715385) circle (2pt);
+\fill[IlliniOrange] (axis cs:.333333,.7) circle (2pt);
+\end{axis}
+\end{tikzpicture}

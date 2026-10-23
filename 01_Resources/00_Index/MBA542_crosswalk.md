@@ -45,7 +45,7 @@ None of the 60 videos needs to move. The scripts carry the same content as text,
 
 ## Readings from MBA 542 worth adding to the BADM 534 catalog
 
-Most of these are not yet catalogued:
+**Done 2026-10-23.** All 17 below were added to the catalog (`_data/MBA542_READINGS.yaml`), each tagged with its BADM 534 module and noted as "Also on the MBA 542 Module N reading list."
 
 - **M5:** Berger & Milkman (2012, JMR), "What makes online content viral?"; Lin, Yao & Chen (2021, JMR), "Happiness begets money" (emotion in live streaming); Liu, Dzyabura & Mizik (2020, *Marketing Science*), "Visual listening in"; Berger (2014, JCP), WOM review.
 - **M2/M6:** Chintala, Liaukonytė & Yang (2024, *Marketing Science*), "Browsing the aisles or browsing the app?"; Narang & Shankar (2019, *Marketing Science*), mobile app introduction and purchases/returns. That is Unnati's paper, which gives continuity with the previous course and makes a clean DiD example.

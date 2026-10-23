@@ -1,6 +1,6 @@
 # M7 · Predictive Models, AI and Machine Learning
 
-33 resources (16 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+49 resources (21 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -9,6 +9,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Core ML for business students](#core-ml-for-business-students) (11)
 - [Prediction vs. causation](#prediction-vs-causation) (3)
 - [Marketing prediction problems](#marketing-prediction-problems) (13)
+- [Recommender system design: research evidence](#recommender-system-design-research-evidence) (16)
 - [Data leakage and AI-written pipelines](#data-leakage-and-ai-written-pipelines) (4)
 - [LLMs as simulated consumers](#llms-as-simulated-consumers) (2)
 
@@ -200,6 +201,116 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   [Open-access copy](https://arxiv.org/pdf/1106.1813) · Tools: imbalanced-learn, scikit-learn
   *Note:* Also on the MBA 542 Module 8 reading list. In practice, class weights or threshold tuning often work as well as SMOTE.
 
+## Recommender system design: research evidence
+
+- [core] **[The Value of Personalized Recommendations: Evidence from Netflix](https://www.ifo.de/en/cesifo/publications/2026/working-paper/value-personalized-recommendations-evidence-netflix)** (2026) — Zielnicki, K.; Aridor, G.; Bibaut, A.; Tran, A.; Chou, W.; Kallus, N. *Working paper, June 9, 2026; CESifo working paper (2026)*
+  `paper` · `advanced` · `access: open`
+  Uses Netflix viewership and recommendation exposure to estimate a discrete-choice model under conditional exogeneity of exposure. A randomized perturbation supplies diversion evidence for model validation. Model-based replacement with matrix factorization or popularity-based recommendation lowers engagement by about 4% or 12%, respectively.
+  *Use in wiki:* The 'why firms invest in recommenders' anchor for M7. It pairs naturally with the MBA 542 synthetic Netflix viewing data.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/ZielnickiAridorBibautTranChouKallus_WorkingPaper2025.pdf (Dropbox only; excluded from Git)`
+  *Note:* The supplied PDF is dated June 9, 2026, despite 2025 in its filename. Results are model-based engagement counterfactuals, not direct experimental effects of full replacement or measures of consumer welfare. Abstract and identification discussion checked locally.
+
+- [core] **[Consumption Variety in Food Recommendation](https://www.journals.uchicago.edu/doi/10.1086/720453)** (2022) — Nielsen, D. E.; Yang, N.; Dubé, L.; Knäuper, B.; Ling, Y.; Nie, J.-Y. *Journal of the Association for Consumer Research 7(4)*
+  `paper` · `intermediate` · `access: library` · `© 2022 Association for Consumer Research; all rights reserved`
+  Relates food-consumption variety to recorded calorie and food-composition changes in app logs, then conditions the FOODVAR sequential recommender on a variety-change indicator. Offline comparisons assess hit rate and NDCG; the study does not randomize users to a variety intervention.
+  *Use in wiki:* Instructor's own paper. It moves from a descriptive regression (M3) to a design change in the recommender (M7), the full analytics-to-action arc the course teaches. Use it to motivate multi-objective re-ranking and evaluation beyond accuracy.
+  DOI [10.1086/720453](https://doi.org/10.1086/720453) · Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Yang_research/NYDKLN_JACR_2022.pdf (Dropbox only; excluded from Git)`
+  *Note:* Also on the MBA 542 Module 5 reading list. Empirical analysis, FOODVAR sections, and Tables 3–5 checked locally. Evaluation uses 30 history days, seven validation days, and a final test day. The M8 category-bonus calculation is a separate synthetic illustration.
+
+- [core] **[Following Good Examples: Health Goal-Oriented Food Recommendation based on Behavior Data](https://dl.acm.org/doi/10.1145/3485447.3514193)** (2022) — Ling, Y.; Nie, J.-Y.; Nielsen, D.; Knäuper, B.; Yang, N.; Dubé, L. *Proceedings of the ACM Web Conference 2022 (WWW '22)*
+  `paper` · `intermediate` · `access: library` · `© 2022 ACM (publisher copyright)`
+  Develops a sequential food recommender combining general, BMI-specific, and goal-specific models learned from food logs. Evaluation compares held-out foods in periods associated with the intended weight outcome; it does not estimate the causal effect of deploying recommendations on weight.
+  *Use in wiki:* Instructor's own paper and the anchor case for the recommender unit: accuracy versus goal attainment, blending objectives, and an M6 caution that learning from 'successful' users builds selection into the training data. A good AI-assisted coding exercise is a goal-aware re-ranker on the synthetic viewing or grocery data.
+  DOI [10.1145/3485447.3514193](https://doi.org/10.1145/3485447.3514193) · Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Yang_research/LNNKYD_WWW_2022.pdf (Dropbox only; excluded from Git)`
+  *Note:* Also on the MBA 542 Module 5 reading list. Local Sections 3.2 and 5 checked: selected active users, last-basket testing, and offline outcome-conditioned evaluation. M7 Section 7.12 distinguishes retrospective outcomes from inputs available at recommendation time.
+
+- [core] **[The Economics of Recommender Systems: Evidence from a Field Experiment on MovieLens](https://www.econstor.eu/handle/10419/271773)** (2022) — Aridor, G.; Gonçalves, D.; Kluver, D.; Kong, R.; Konstan, J. A. *CESifo Working Paper 10129, November 2022*
+  `paper` · `intermediate` · `access: open`
+  A MovieLens field experiment distinguishes recommendation from exposure-only conditions and elicits beliefs. Evidence supports an informational role beyond exposing an item, with implications for consumption and information acquisition.
+  *Use in wiki:* Bridges M6 and M7: a clean randomized evaluation of a recommender, the right comparison for any offline accuracy metric.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/AridorGoncalvesKluverKongKonstan_WorkingPaper2022.pdf (Dropbox only; excluded from Git)`
+  *Note:* Cites the supplied November 2022 version. A later retitled version is at https://arxiv.org/abs/2211.14219 . The intervention design and belief-elicitation discussion were checked locally.
+
+- [core] **[How Algorithmic Confounding in Recommendation Systems Increases Homogeneity and Decreases Utility](https://www.arxiv.org/abs/1710.11214)** (2018) — Chaney, A. J. B.; Stewart, B. M.; Engelhardt, B. E. *ACM RecSys 2018*
+  `paper` · `intermediate` · `access: open`
+  Simulates recommender retraining on behavior shaped by prior recommendations. Under the modeled updating and preference processes, feedback can homogenize consumption without improving utility. The results concern a simulation mechanism, not a universal field estimate.
+  *Use in wiki:* Key M6 + M7 idea for analysts: platform data reflect past recommendations, so naive models learn the algorithm's own footprint. A simulation students can reproduce with AI help.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/ChaneyStewartEngelhardt_ACMRecSys2018.pdf (Dropbox only; excluded from Git)`
+
+- [recommended] **[Can Explanations Improve Recommendations? Evidence from Prediction-Informed Explanations](https://arxiv.org/abs/2502.16759v3)** (2026) — Wang, Y.; Li, P.; Chen, M. *arXiv 2502.16759v3 (May 1, 2026; first posted February 2025)*
+  `paper` · `advanced` · `access: open` · `AI angle`
+  RecPIE alternates prediction-informed explanation generation and explanation-informed recommendation. The paper reports gains in offline point-of-interest ranking and a separate human evaluation of explanations. These evaluations do not establish a deployed effect on customer welfare.
+  *Use in wiki:* Source paper for the RecPIE teaching artifact built for MBA 542 (accuracy-only vs. explainability-only vs. RecPIE modes). It could be reused directly on the M7 wiki page.
+  *Note:* Version and authors checked against arXiv v3. A related NeurIPS 2025 version has a different subtitle; cite the specific version used.
+
+- [recommended] **[Engagement, User Satisfaction, and the Amplification of Divisive Content on Social Media](https://pmc.ncbi.nlm.nih.gov/articles/PMC11894805/)** (2025) — Milli, S.; Carroll, M.; Wang, Y.; Pandey, S.; Zhao, S.; Dragan, A. D. *PNAS Nexus*
+  `paper` · `intermediate` · `access: open`
+  A preregistered Twitter audit with 806 users compares engagement-ranked posts with a reverse-chronological baseline and collects item-level stated preferences. Engagement ranking amplifies emotionally charged and out-group-hostile content; users do not prefer the selected political posts on the stated-preference measure.
+  *Use in wiki:* Concrete evidence that the optimization target matters. A good M8 discussion piece on stated versus revealed preferences.
+  DOI [10.1093/pnasnexus/pgaf062](https://doi.org/10.1093/pnasnexus/pgaf062) · Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/MilliCarrollPandeyWangDragan_PNASNexus2025.pdf (Dropbox only; excluded from Git)`
+  *Note:* Corrected author order and restored Sebastian Zhao using the published article. This is an algorithmic audit, not assignment to long-term use of alternative feeds. Local PDF is a December 2024 preprint; linked publication is March 2025.
+
+- [recommended] **[Short-term Exposure to Filter-Bubble Recommendation Systems Has Limited Polarization Effects: Naturalistic Experiments on YouTube](https://doi.org/10.1073/pnas.2318127122)** (2025) — Liu, N.; Hu, X. E.; Savas, Y.; Baum, M. A.; Berinsky, A. J.; Chaney, A. J. B.; Lucas, C.; Mariman, R.; de Benedictis-Kessner, J.; Guess, A. M.; Knox, D.; Stewart, B. M. *PNAS 122(8), e2318127122 (2025)*
+  `paper` · `intermediate` · `access: open`
+  Four experiments with nearly 9,000 participants manipulate recommendations on a YouTube-like interface and find limited short-term polarization effects in the studied settings. Exposure duration and attitude outcomes differ from audits of ranked content.
+  *Use in wiki:* Counterweight to the filter-bubble narrative. Pair it with Milli et al. to show that evidence on recommender harms is mixed and depends on design.
+  DOI [10.1073/pnas.2318127122](https://doi.org/10.1073/pnas.2318127122)
+  *Note:* Full authors verified against PNAS and PubMed; Tucker is not an author. The legacy catalog ID is retained for stable references. Linked primary publication; no local PDF in this course folder.
+
+- [recommended] **[Beyond Persuasion: Towards Conversational Recommender System with Credible Explanations](https://aclanthology.org/2024.findings-emnlp.247/)** (2024) — Qin, P.; Huang, C.; Deng, Y.; Lei, W.; Chua, T.-S. *Findings of EMNLP 2024*
+  `paper` · `advanced` · `access: open` · `AI angle`
+  Shows that LLM-based conversational recommenders can persuade users with explanations that are not credible, and proposes a method that keeps explanations persuasive but grounded in true item facts.
+  *Use in wiki:* Counterpoint to RecPIE: LLM explanations can improve recommendations, but they can also mislead. Good for a class debate on AI shopping assistants (M8).
+  DOI [10.18653/v1/2024.findings-emnlp.247](https://doi.org/10.18653/v1/2024.findings-emnlp.247) · Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/QinHuangDengLeiChua_EMNLP2024.pdf (Dropbox only; excluded from Git)`
+  *Note:* Authors, venue, and pages verified against ACL Anthology and supplied PDF. PC-CRS evaluates credibility and persuasion separately; M7 connects the distinction to attribute-level factual checks.
+
+- [recommended] **[The Challenge of Understanding What Users Want: Inconsistent Preferences and Engagement Optimization](https://arxiv.org/abs/2202.11776v1)** (2024) — Kleinberg, J.; Mullainathan, S.; Raghavan, M. *Management Science*
+  `paper` · `advanced` · `access: open`
+  Models users whose impulsive choices differ from their considered preferences and shows how optimizing a platform for engagement can serve the impulses at the expense of what users actually value.
+  *Use in wiki:* Conceptual reading for the 'what should the recommender optimize?' discussion; pairs with the instructor's goal-oriented food recommendation paper.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/KleinbergMullainathanRaghavan_ManagementScience2024.pdf (Dropbox only; excluded from Git)`
+  *Note:* Venue from the local file name; the link is the arXiv version.
+
+- [recommended] **[What are you optimizing for? Aligning Recommender Systems with Human Values](https://arxiv.org/abs/2107.10939v1)** (2021) — Stray, J.; Vendrov, I.; Nixon, J.; Adler, S.; Hadfield-Menell, D. *Working paper, arXiv 2107.10939v1 (July 2021)*
+  `paper` · `intro` · `access: open`
+  Accessible survey of how platforms have tried to make recommenders serve values beyond engagement (well-being, diversity, user control) and what metrics and data that requires.
+  *Use in wiki:* Readable framing for the multi-objective design theme that runs through the MBA 542 recommender module and the instructor's food-recommendation papers.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/StrayVendrovNixonAdlerHadfield-Menell_WorkingPaper2021.pdf (Dropbox only; excluded from Git)`
+  *Note:* Local v1 text and author list checked. The catalog does not rely on the previously unconfirmed workshop attribution.
+
+- [recommended] **[Recommendations as Treatments: Debiasing Learning and Evaluation](https://proceedings.mlr.press/v48/schnabel16.html)** (2016) — Schnabel, T.; Swaminathan, A.; Singh, A.; Chandak, N.; Joachims, T. *ICML 2016 (PMLR 48)*
+  `paper` · `advanced` · `access: open`
+  Treats recommendation and rating exposure as a treatment assignment problem and uses propensity weighting to correct the selection bias in observed ratings, for both evaluating and training recommenders.
+  *Use in wiki:* Shows students that causal-inference tools from M6 (propensity scores, inverse weighting) apply directly to recommender evaluation.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/SchnabelSwaminathanSinghChandakJoachims_ICML2016.pdf (Dropbox only; excluded from Git)`
+
+- [optional] **[Unintended Consequences of Recommender System Interventions: Evidence from a Field Experiment](https://arxiv.org/abs/2606.08265v1)** (2026) — Luo, S.; Yao, S.; Zhang, D. J. *Working paper, arXiv 2606.08265v1 (June 2026)*
+  `paper` · `advanced` · `access: open`
+  Studies a temporary ranking boost for celebrity sleep-reminder videos in a randomized platform campaign. The analyzed active-user panel shows increased late-night and overall usage, with persistence after the campaign. The authors relate persistence to training signals and policy updates generated by the intervention.
+  *Use in wiki:* Recent example for the M6/M7 discussion of spillovers and unintended outcomes in platform experiments.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/LuoYaoZhang_WorkingPaper2026.pdf (Dropbox only; excluded from Git)`
+  *Note:* Local Sections 4.2–4.3 and Table 6 checked. The analyzed panel contains 200,000 users active on the first experiment day. Reported 14.75% and 2.18% figures are relative assignment effects on usage. Mechanism attribution and sample inclusion require separate attention.
+
+- [optional] **[Steering via Algorithmic Recommendations](https://doi.org/10.1111/1756-2171.12481)** (2024) — Chen, N.; Tsai, H.-T. *The RAND Journal of Economics 55(4), 501–518 (2024)*
+  `paper` · `advanced` · `access: library`
+  Empirical study of Amazon self-preferencing using product recommendation records and within-product variation from Amazon stockouts. Seller identity affects receipt of Frequently Bought Together recommendations, with controls and falsification checks addressing alternative explanations.
+  *Use in wiki:* Case on platform incentives and observational identification in M6/M8. Explain the stockout comparison, accompanying price and availability changes, and the distinction between platform return and customer value.
+  DOI [10.1111/1756-2171.12481](https://doi.org/10.1111/1756-2171.12481) · Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/ChenTsai_WorkingPaper2021.pdf (Dropbox only; excluded from Git)`
+  *Note:* Corrected the earlier theory-only description. Publisher metadata verifies the 2024 article; the supplied local working paper is dated December 2020 despite 2021 in its filename.
+
+- [optional] **[Understanding or Manipulation: Rethinking Online Performance Gains of Modern Recommender Systems](https://arxiv.org/abs/2210.05662v2)** (2023) — Zhu, Z.; Qin, R.; Huang, J.; Dai, X.; Yu, Y. [Yang]; Yu, Y. [Yong]; Zhang, W. *arXiv 2210.05662v2 (December 2023); related ACM Transactions on Information Systems article*
+  `paper` · `advanced` · `access: open` · `CC BY-NC-ND 4.0 (arXiv version)`
+  Develops a benchmark for distinguishing matching to initial preferences from preference shifts induced by recommendations. Experiments use synthetic and real-world datasets within that framework; click gains alone need not imply better matching to initial preferences.
+  *Use in wiki:* A sharp caution for interpreting recommender A/B tests in M6: winning an experiment and serving users are not the same thing.
+  DOI [10.1145/3637869](https://doi.org/10.1145/3637869) · Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/ZhuQinHuangDai_ACMTOIS2022.pdf (Dropbox only; excluded from Git)`
+  *Note:* Seven-author list and December 2023 version checked against supplied PDF and arXiv. Local filename contains 2022, the first arXiv submission year. Benchmark experiments are not a general field estimate of manipulation.
+
+- [optional] **[Is Seeing Believing? How Recommender Interfaces Affect Users' Opinions](https://experts.umn.edu/en/publications/is-seeing-believing-how-recommender-interfaces-affect-users-opini/)** (2003) — Cosley, D.; Lam, S. K.; Albert, I.; Konstan, J. A.; Riedl, J. *ACM CHI 2003*
+  `paper` · `intro` · `access: library`
+  Classic experiment in which showing users (sometimes manipulated) predicted ratings pulls their own re-ratings toward the displayed value: recommender interfaces anchor opinions.
+  *Use in wiki:* Short classic that pairs with Adomavicius et al. (2019) in this folder; useful for discussing how recommenders contaminate the ratings they learn from.
+  Local copy: `../Instructor_Private/01_Resources/07_M7_Recommender_Systems/Readings/CosleyLamAlbertKonstanRiedl_ACMSIGCHI2003.pdf (Dropbox only; excluded from Git)`
+
 ## Data leakage and AI-written pipelines
 
 - [core] **[scikit-learn User Guide 12: Common pitfalls and recommended practices](https://scikit-learn.org/stable/common_pitfalls.html)** (2026) — scikit-learn developers. *scikit-learn 1.9.1 documentation*
@@ -254,6 +365,8 @@ Resources in this folder that show the method done with AI help, LLM versions of
 - [Leakage and the Reproducibility Crisis in ML-based Science](https://reproducible.cs.princeton.edu/)
 - [Out of One, Many: Using Language Models to Simulate Human Samples](https://www.cambridge.org/core/product/035D7C8A55B237942FB6DBAD7CAA4E49)
 - [AutoGluon Tabular: Quick Start](https://auto.gluon.ai/stable/tutorials/tabular/tabular-quick-start.html)
+- [Can Explanations Improve Recommendations? Evidence from Prediction-Informed Explanations](https://arxiv.org/abs/2502.16759v3)
+- [Beyond Persuasion: Towards Conversational Recommender System with Credible Explanations](https://aclanthology.org/2024.findings-emnlp.247/)
 - [Machine Learning Crash Course (refreshed edition)](https://developers.google.com/machine-learning/crash-course)
 - [MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering](https://arxiv.org/abs/2410.07095)
 - [TabPFN: Accurate predictions on small data with a tabular foundation model](https://github.com/PriorLabs/TabPFN)

@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\node[orangebox,text width=2.5cm] (boost) at (0,0) {Temporary\\ranking boost};
+\node[box,text width=2.5cm] (display) at (4.2,0) {Changed\\exposure};
+\node[box,text width=2.5cm] (data) at (8.4,0) {New customer\\responses};
+\draw[accent] (boost)--(display);
+\draw[edge] (display)--(data);
+\node[box,text width=2.5cm] (old) at (0,-3.2) {Existing\\model};
+\node[orangebox,text width=2.5cm] (new) at (4.2,-3.2) {Updated\\model};
+\node[box,text width=2.5cm] (future) at (8.4,-3.2) {Exposure after\\the boost ends};
+\draw[edge] (old)--(new);
+\draw[accent] (new)--(future);
+\draw[accent] (data.south)--(8.4,-1.6)--node[above,font=\footnotesize] {Retrain on campaign data} (4.2,-1.6)--(new.north);
+\draw[edge,dashed] (old.south)--(0,-4.7)--node[below,font=\footnotesize] {Freeze the model: bypass the update} (8.4,-4.7)--(future.south);
+\node[anchor=west,font=\footnotesize,text=Storm] at (-1.45,1.05) {During the campaign};
+\node[anchor=west,font=\footnotesize,text=Storm] at (-1.45,-2.2) {After the campaign};
+\end{tikzpicture}

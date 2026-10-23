@@ -47,6 +47,12 @@ r['M02'] = {'observed_A':89/200,'observed_B':101/300,'common_mix_A':(.09+.80)/2,
             'common_mix_B':(.10+.81)/2, 'basket_jaccard_high':3/5,'basket_jaccard_low':1/7}
 assert r['M02']['observed_A'] > r['M02']['observed_B']
 assert r['M02']['common_mix_B'] > r['M02']['common_mix_A']
+variety_shares = {'equal': [.5, .5], 'concentrated': [.9, .1]}
+r['M02']['variety'] = {name: 1-sum(s*s for s in vals) for name, vals in variety_shares.items()}
+write_csv('M02_variety_synthetic.csv', ['basket', 'category', 'spending_share'],
+          [(name, f'C{i+1}', share) for name, vals in variety_shares.items() for i, share in enumerate(vals)])
+assert math.isclose(r['M02']['variety']['equal'], .5)
+assert math.isclose(r['M02']['variety']['concentrated'], .18)
 
 low=[(1,9),(2,8),(3,7)]; high=[(4,16),(5,15),(6,14)]
 write_csv('M03_rivals_synthetic.csv', ['demand_group','rival_count','sales_illustrative_units'],
@@ -86,10 +92,71 @@ r['M06']={'assignment_effect':.03,'standard_error':se,'effect_ci':ci,
 write_csv('M06_experiment_synthetic.csv',['assignment','assigned_customers','purchasers'],[('email',1000,130),('control',1000,100)])
 write_csv('M06_did_synthetic.csv',['group','before','after'],[('treated',120,150),('comparison',100,110)])
 
+exposures = [('frequent', 'A', .9, 450, 270), ('frequent', 'B', .1, 50, 25),
+             ('occasional', 'A', .1, 50, 10), ('occasional', 'B', .9, 450, 180)]
+write_csv('M06_exposure_synthetic.csv',
+          ['customer_group', 'item', 'logging_probability', 'displays', 'clicks'], exposures)
+
+def constant_policy_value(rows, item):
+    groups = {row[0] for row in rows}
+    selected = [row for row in rows if row[1] == item]
+    if {row[0] for row in selected if row[2] > 0} != groups:
+        raise ValueError('Target action lacks positive logging support in a customer group')
+    n = sum(row[3] for row in rows)
+    weighted_clicks = sum(clicks/prob for _, _, prob, count, clicks in selected)
+    sum_weights = sum(count/prob for _, _, prob, count, clicks in selected)
+    sum_squared_weights = sum(count/prob**2 for _, _, prob, count, clicks in selected)
+    raw = sum(row[4] for row in selected)/sum(row[3] for row in selected)
+    return {'raw_rate': raw, 'ips_value': weighted_clicks/n,
+            'effective_sample_size': sum_weights**2/sum_squared_weights}
+
+r['M06']['recommendation_policies'] = {item: constant_policy_value(exposures, item) for item in ['A', 'B']}
+for item, target in [('A', .4), ('B', .45)]:
+    result = r['M06']['recommendation_policies'][item]
+    # Independent standardization uses the known 50:50 population mix.
+    standardized = sum(.5*clicks/count for group, j, prob, count, clicks in exposures if j == item)
+    assert math.isclose(result['ips_value'], target) and math.isclose(result['ips_value'], standardized)
+    assert math.isclose(result['effective_sample_size'], 180)
+unsupported = [(g, j, 0 if (g, j) == ('occasional', 'A') else p, n, y) for g, j, p, n, y in exposures]
+try:
+    constant_policy_value(unsupported, 'A')
+except ValueError:
+    pass
+else:
+    raise AssertionError('An unsupported target policy must be rejected')
+
 r['M07']={'precision':30/100,'recall':30/50,'accuracy':(30+880)/1000,'all_negative_accuracy':950/1000,
           'cost_threshold':1/(1+9),'coupon_A':40*(.8-.78)-5*.8-2,'coupon_B':40*(.3-.15)-5*.3-2}
 write_csv('M07_coupon_synthetic.csv',['customer','purchase_with_coupon','purchase_without_coupon','margin_dollars','discount_dollars','contact_cost_dollars'],
           [('A',.8,.78,40,5,2),('B',.3,.15,40,5,2)])
+
+rankings = {'ABC': [('A', 0), ('B', 1), ('C', 1)], 'BCA': [('B', 1), ('C', 1), ('A', 0)]}
+def dcg(labels):
+    return sum((2**label-1)/math.log2(rank+1) for rank, label in enumerate(labels, start=1))
+ideal = dcg([1, 1, 0])
+r['M07']['rankings'] = {name: {'precision_at_3': sum(v for _, v in vals)/3,
+                               'recall_at_3': sum(v for _, v in vals)/2,
+                               'dcg_at_3': dcg([v for _, v in vals]),
+                               'ndcg_at_3': dcg([v for _, v in vals])/ideal}
+                        for name, vals in rankings.items()}
+write_csv('M07_rankings_synthetic.csv', ['ranking', 'position', 'item', 'binary_relevance'],
+          [(name, pos, item, rel) for name, vals in rankings.items() for pos, (item, rel) in enumerate(vals, start=1)])
+assert math.isclose(r['M07']['rankings']['BCA']['ndcg_at_3'], 1)
+assert .693 < r['M07']['rankings']['ABC']['ndcg_at_3'] < .694
+
+goal_items = {'A': (.9, .1), 'B': (.75, .6), 'C': (.6, .9)}
+goal_score = lambda item, alpha: (1-alpha)*goal_items[item][0] + alpha*goal_items[item][1]
+r['M07']['goal_blend'] = {
+    'scores': {str(alpha): {item: goal_score(item, alpha) for item in goal_items} for alpha in [0, .25, .5, 1]},
+    'optimal_switches': [3/13, 1/3]}
+write_csv('M07_goals_synthetic.csv', ['item', 'preference_score', 'goal_score'],
+          [(item, *scores) for item, scores in goal_items.items()])
+assert math.isclose(goal_score('A', 3/13), goal_score('B', 3/13))
+assert math.isclose(goal_score('B', 1/3), goal_score('C', 1/3))
+for i in range(1001):
+    alpha = i/1000
+    expected = 'A' if alpha < 3/13 else ('B' if alpha < 1/3 else 'C')
+    assert max(goal_items, key=lambda j: goal_score(j, alpha)) == expected
 
 items={'A':('Coffee',.90),'B':('Coffee',.85),'C':('Tea',.75),'D':('Fruit',.65)}
 list_values={}

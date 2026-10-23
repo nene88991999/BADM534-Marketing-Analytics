@@ -15,7 +15,7 @@ function Header(el)
   -- LaTeX supplies chapter and section numbers; retain M1-M8 in Markdown.
   if el.content[1] and el.content[1].t == 'Str' then
     local s = el.content[1].text
-    if s:match('^M%d+%.$') or s:match('^%d+%.%d+$') then
+    if s:match('^M%d+%.$') or s:match('^%d+%.[%d%.]+$') then
       table.remove(el.content, 1)
       if el.content[1] and el.content[1].t == 'Space' then table.remove(el.content, 1) end
     end

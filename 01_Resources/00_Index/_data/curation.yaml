@@ -1,6 +1,6 @@
 # Manual curation applied by build_catalog.py
 # prefer: keep this entry when duplicates merge; same: ids describing one resource; distinct: look-alikes to keep apart;
-# drop: ids to exclude; set: per-id field corrections
+# drop: ids to exclude; set: per-id field corrections (including fixes from the 2026-10-23 independent spot-check of 47 entries)
 prefer:
 - willison-using-llms-for-code
 - uiuc-genai-ai-apps
@@ -43,3 +43,35 @@ set:
     wiki_use: 'The binding target for the BADM 534 wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.'
   teaching-learning-with-jupyter:
     notes: Built with bookdown/GitBook rather than Jupyter Book. Written in 2019, before AI coding assistants.
+  reddit-data-access:
+    access: application
+    notes: 'Reddit for Researchers eligibility is not listed; applications go through a support ticket. Requests from hosted-service IP ranges, likely including cloud notebooks, need OAuth or a login. Checked
+      2026-10-23: access needs an application and approval (Data API app review, or Reddit for Researchers); it is not self-serve sign-up. Don''t plan student projects on Reddit data without lead time.'
+  sawtooth-lighthouse-studio:
+    access: paid
+    notes: 'Academic access: the site lists ''Student Grants'' (studentgrants@sawtooth.com) but has no public page for it, so email them about course licenses. Technical papers: https://sawtoothsoftware.com/resources/technical-papers.
+      The home page mentions an ''AI follow-up'' survey element; no synthetic-respondent feature was seen. Checked 2026-10-23: Lighthouse Studio is a quote-priced annual license with a free trial and academic
+      discounts. The free tier (up to 50 respondents) is Sawtooth Discover, a different product.'
+  lewis-rao-2015-qje:
+    notes: The oa_url is an earlier AEA 2014 conference draft found in search, not the published version. The open-access link is the December 2013 working paper 'On the Near Impossibility of Measuring
+      the Returns to Advertising', not the published QJE text (QJE 130(4), 1941–1973; DOI 10.1093/qje/qjv023).
+  google-ap2:
+    authors: Parikh, S.; Surapaneni, R. (Google)
+    type: blog
+  statqa-llms-good-statisticians:
+    venue: NeurIPS 2024 Datasets and Benchmarks Track (arXiv:2406.07815)
+    notes: Venue confirmed on the NeurIPS 2024 virtual site (poster, Datasets and Benchmarks Track).
+  dunnhumby-source-files:
+    notes: 'Direct downloads, with no registration requirement visible. The license is on a linked Terms and Conditions page that was not reviewed. A Kaggle mirror of The Complete Journey (ref frtgnn/dunnhumby-the-complete-journey,
+      847 MB, listed under ODbL) also exists. Separately, 84.51 released a different ''Complete Journey'' (801 households, one year, about 1.47M transactions) as the pip-installable completejourney_py (MIT
+      code, Parquet): https://github.com/cunningjames/completejourney_py . Its README describes that data as simulated and for educational use only, which makes it the easiest Colab option. Not confirmed
+      whether downloads require a sign-up; the page''s download buttons are script-driven.'
+  classroom50:
+    notes: The sponsoring organization and the feature list come from a third-party blog (https://bruceelgort.com/2026/07/20/github-classroom-is-gone-heres-the-free-tool-that-replaces-it/, fetched); the
+      official homepage only says it is the free, open-source alternative to GitHub Classroom, with no license named. It needs a GitHub organization on a Team plan (free for verified educators) and broad
+      read/write access to the org's repos. It reached general availability on 2026-07-01 per GitHub's migration doc. It is new, so pilot it before relying on it. The repo (foundation50/classroom50, GPL-3.0)
+      says it is supported by the Fifty Foundation; only a third-party blog says that foundation is the nonprofit behind CS50.
+  reddit-data-api-wiki:
+    access: application
+    notes: 'Page updated May 11, 2026. Python wrapper: PRAW 8.0.3 docs, https://praw.readthedocs.io/en/stable/. Checked 2026-10-23: even non-commercial Data API use is limited to approved developers after
+      a request and app review, so plan for lead time or use Bluesky''s open API for class labs.'

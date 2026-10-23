@@ -16,7 +16,11 @@
       "common_mix_A": 0.445,
       "common_mix_B": 0.455,
       "basket_jaccard_high": 0.6,
-      "basket_jaccard_low": 0.14285714285714285
+      "basket_jaccard_low": 0.14285714285714285,
+      "variety": {
+        "equal": 0.5,
+        "concentrated": 0.17999999999999994
+      }
     },
     "M03": {
       "pooled": {
@@ -98,7 +102,19 @@
       ],
       "sample_per_arm": 3528.0,
       "design_effect": 1.9500000000000002,
-      "difference_in_differences": 20
+      "difference_in_differences": 20,
+      "recommendation_policies": {
+        "A": {
+          "raw_rate": 0.56,
+          "ips_value": 0.4,
+          "effective_sample_size": 180.00000000000003
+        },
+        "B": {
+          "raw_rate": 0.41,
+          "ips_value": 0.45,
+          "effective_sample_size": 180.00000000000003
+        }
+      }
     },
     "M07": {
       "precision": 0.3,
@@ -107,7 +123,49 @@
       "all_negative_accuracy": 0.95,
       "cost_threshold": 0.1,
       "coupon_A": -5.199999999999999,
-      "coupon_B": 2.5
+      "coupon_B": 2.5,
+      "rankings": {
+        "ABC": {
+          "precision_at_3": 0.6666666666666666,
+          "recall_at_3": 1.0,
+          "dcg_at_3": 1.1309297535714575,
+          "ndcg_at_3": 0.6934264036172708
+        },
+        "BCA": {
+          "precision_at_3": 0.6666666666666666,
+          "recall_at_3": 1.0,
+          "dcg_at_3": 1.6309297535714575,
+          "ndcg_at_3": 1.0
+        }
+      },
+      "goal_blend": {
+        "scores": {
+          "0": {
+            "A": 0.9,
+            "B": 0.75,
+            "C": 0.6
+          },
+          "0.25": {
+            "A": 0.7000000000000001,
+            "B": 0.7125,
+            "C": 0.6749999999999999
+          },
+          "0.5": {
+            "A": 0.5,
+            "B": 0.675,
+            "C": 0.75
+          },
+          "1": {
+            "A": 0.1,
+            "B": 0.6,
+            "C": 0.9
+          }
+        },
+        "optimal_switches": [
+          0.23076923076923078,
+          0.3333333333333333
+        ]
+      }
     },
     "M08": {
       "recommendation_objectives": {

@@ -592,6 +592,30 @@ possible tradeoff. Its effect requires evaluation under an appropriate
 design, even when the descriptive pattern provides a strong reason to
 test it.
 
+\hypertarget{M02-variety-depends-on-both-breadth-and-concentration}{%
+\subsection{Variety Depends on Both Breadth and
+Concentration}\label{M02-variety-depends-on-both-breadth-and-concentration}}
+
+\noindent Two customers can purchase the same number of categories while
+allocating spending very differently. One divides a basket equally
+between two categories; another assigns 90\% to one and 10\% to the
+other. A category count assigns both customers breadth two. To measure
+how evenly spending is distributed, define \(V=1-\sum_c s_c^2\), where
+\(s_c\) is category \(c\)'s share of the customer's spending within a
+stated basket or period. The shares must use a common denominator and
+sum to one. The two baskets have \(V=0.50\) and \(V=0.18\),
+respectively.
+
+\href{https://doi.org/10.1086/720453}{Nielsen and coauthors (2022)} use
+item counts and a reverse-coded concentration measure based on calorie
+shares to study food-consumption variety. The underlying unit matters:
+spending shares, calorie shares, and purchase counts can rank the same
+baskets differently. A wider category definition also changes measured
+variety without changing consumption. Report the category mapping,
+observation window, and share denominator before interpreting a trend or
+segment difference. M7, Section 7.12, connects these measurements to
+recommendation design.
+
 \hypertarget{M02-from-evidence-to-a-management-presentation}{%
 \section{From Evidence to a Management
 Presentation}\label{M02-from-evidence-to-a-management-presentation}}
@@ -922,6 +946,17 @@ substantively justified specifications. For a causal effect, assess the
 design and identifying conditions. A large \(R^2\) indicates in-sample
 fit relative to an intercept-only benchmark; it does not establish a
 credible intervention comparison.
+
+For repeated food logs, a customer fixed effect can absorb persistent
+differences in eating habits while relating changes in variety to
+changes in recorded consumption. It leaves time-varying motivation,
+activity, and reporting behavior as possible influences. The variety
+analysis in \href{https://doi.org/10.1086/720453}{Nielsen and coauthors
+(2022)} provides a concrete application. Percentage-change outcomes also
+require attention to zero denominators: excluding days with zero prior
+vegetable or snack consumption changes the sample relative to an
+analysis of total calories. Interpret each coefficient for its own
+observed population and outcome definition.
 
 \hypertarget{M03-ai-assisted-implementation-and-practice}{%
 \section{AI-Assisted Implementation and
@@ -1915,6 +1950,123 @@ advanced implementations, sample splitting and cross-fitting help
 control overfitting of nuisance functions; the design remains the
 foundation of the causal interpretation.
 
+\hypertarget{M06-evaluating-a-recommendation-policy-from-logged-exposure}{%
+\subsection{Evaluating a Recommendation Policy From Logged
+Exposure}\label{M06-evaluating-a-recommendation-policy-from-logged-exposure}}
+
+\noindent A retailer has records from an existing recommendation policy and wants
+to evaluate a different one. The existing policy shows products
+selectively: frequent buyers may usually see A, while occasional buyers
+usually see B. Comparing their observed click rates mixes product
+response with the customer populations receiving each recommendation.
+\href{https://proceedings.mlr.press/v48/schnabel16.html}{Schnabel and
+coauthors (2016)} formulate recommendation learning and evaluation as
+problems of selected observation and use propensity weighting to address
+that selection under explicit conditions.
+
+Consider a single recommendation opportunity per customer. Let \(X_i\)
+be information available before display, \(A_i\) the displayed item, and
+\(Y_i\) a click within the specified response window. The logging policy
+assigns item \(a\) with probability \(p_0(a\mid X_i)\). A target policy
+assigns it with probability \(\pi(a\mid X_i)\). The target is the
+expected clicks per opportunity if eligible customers receive
+recommendations from \(\pi\). An inverse-propensity estimator is
+
+\[
+\widehat V(\pi)=\frac{1}{n}\sum_{i=1}^{n}
+\frac{\pi(A_i\mid X_i)}{p_0(A_i\mid X_i)}Y_i.
+\]
+
+The ratio changes how much each logged outcome represents the target
+policy. For a policy that always recommends A, outcomes following B
+receive zero weight. An A outcome observed under a 10\% display
+probability receives weight ten. The denominator \(n\) counts all
+eligible logged opportunities, including those assigned zero weight.
+Dividing only by the number of matching displays estimates a different
+quantity.
+
+Interpretation requires a well-defined action and outcome, conditional
+exchangeability of display given \(X_i\), and positive logging
+probability wherever the target policy assigns positive probability. A
+known randomized logging policy can supply the assignment condition.
+Estimating probabilities from observational logs requires the additional
+substantive claim that the recorded context captures the relevant
+selection. The target population and response process must also match
+the logged environment. For a slate of products, position and other
+displayed items can affect the response; a single-item propensity
+generally does not describe assignment of the complete slate.
+
+The weighting identity explains the adjustment. Conditional on \(X=x\),
+averaging over logged actions gives
+\(\sum_a p_0(a\mid x)\{\pi(a\mid x)/p_0(a\mid x)\}E[Y(a)\mid X=x]\). The
+logging probability cancels, leaving the response weighted by the target
+policy. Cancellation requires positive support. If an item was never
+eligible for a customer group, multiplying the observed records by
+larger weights cannot reveal that group's response to it.
+
+\hypertarget{M06-case-study-exposure-adjustment-reverses-the-preferred-item}{%
+\subsection{Case Study: Exposure Adjustment Reverses the Preferred
+Item}\label{M06-case-study-exposure-adjustment-reverses-the-preferred-item}}
+
+\noindent Suppose 1,000 synthetic customers comprise 500 frequent buyers and 500
+occasional buyers. The logging policy randomly assigns A within each
+group with probabilities 0.90 and 0.10, respectively. B receives the
+remaining probability. The constructed counts are:
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Customer Group & Item & Display Probability & Displays & Clicks \\
+\midrule
+
+Frequent & A & 0.90 & 450 & 270 \\
+Frequent & B & 0.10 & 50 & 25 \\
+Occasional & A & 0.10 & 50 & 10 \\
+Occasional & B & 0.90 & 450 & 180 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A receives 280 clicks from 500 displays, or 56\%. B receives 205 from
+500, or 41\%. Yet A's within-group rates are 60\% and 20\%, while B's
+are 50\% and 40\%. Applied to the same equally weighted customer
+population, A gives 40\% and B gives 45\%. A's displayed customers
+disproportionately come from the group with high response to either
+item.
+
+The inverse-propensity calculations recover the common-population
+comparison:
+
+\[
+\widehat V(A)=\frac{270/0.90+10/0.10}{1000}=0.40,
+\qquad
+\widehat V(B)=\frac{25/0.10+180/0.90}{1000}=0.45.
+\]
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_exposure_reversal.tex}
+\caption{Selected display populations favor A, while comparison on the same population favors B.}\label{fig:M06_exposure_reversal}
+\end{figure}
+
+The raw bars describe response among each item's displayed customers.
+The adjusted bars describe the same 50:50 customer mix for both
+policies. The five-percentage-point advantage for B is imposed by the
+synthetic cell counts and randomized logging design. It is not an
+estimate from the cited study.
+
+Large weights reduce precision. For A, the 50 occasional buyers each
+represent ten eligible customers, so a small number of outcomes carries
+substantial influence. The diagnostic \((\sum_i w_i)^2/\sum_i w_i^2\)
+equals 180 for either policy in this example, despite 1,000 logged
+opportunities. This effective sample size describes weight
+concentration; it does not replace a variance calculation that respects
+assignment and dependence. Weight clipping trades variance for bias, and
+self-normalization changes the finite-sample estimator. Report these
+choices and retain an untouched evaluation sample when choosing between
+policies.
+
 \hypertarget{M06-difference-in-differences-and-a-counterfactual-trend}{%
 \section{Difference-in-Differences and a Counterfactual
 Trend}\label{M06-difference-in-differences-and-a-counterfactual-trend}}
@@ -2010,6 +2162,52 @@ geographic separation, or designs that vary treatment saturation may
 help identify the relevant effects, subject to their own practical
 constraints.
 
+\hypertarget{M06-case-study-recommendations-supply-information-and-exposure}{%
+\subsection{Case Study: Recommendations Supply Information and
+Exposure}\label{M06-case-study-recommendations-supply-information-and-exposure}}
+
+\noindent A recommendation can increase consumption by bringing a product to
+attention or by changing beliefs about its quality.
+\href{https://www.econstor.eu/handle/10419/271773}{Aridor, Gonçalves,
+Kluver, Kong, and Konstan's MovieLens experiment}, in its November 2022
+working-paper version, separates recommendation and exposure-only
+conditions and elicits users' beliefs. The results support an
+informational role: recommendations influence beliefs and consumption
+beyond simply exposing a movie. MovieLens provides recommendations
+without selling or hosting the movies, which helps define the incentives
+in this setting.
+
+A retailer studying the same mechanism could distinguish ordinary
+display from an explicit personalized endorsement while keeping the
+eligible product set and available information controlled. The primary
+outcome would be purchases or contribution per assigned customer over a
+fixed horizon. Belief measures would address how the endorsement
+operates. The experiment must account for the possibility that asking
+about a product itself increases attention to it. Comparisons based only
+on customers who subsequently click would condition on a response that
+the endorsement can change.
+
+The displayed information can also affect the labels collected
+afterward.
+\href{https://experts.umn.edu/en/publications/is-seeing-believing-how-recommender-interfaces-affect-users-opini/}{Cosley
+and coauthors (2003)} experimentally vary predicted ratings shown to
+MovieLens users and find that subsequent ratings tend to move toward the
+displayed prediction. A rating collected after a recommendation
+therefore reflects the evaluation context as well as the user's
+experience. A model trained to reproduce those ratings can partly
+reproduce its own previous influence. Collecting some evaluations before
+showing predicted ratings provides a comparison for that mechanism.
+
+An experiment on an adaptive recommender also needs a rule for
+retraining. If both treatment and control data update a shared model,
+one customer's assignment may change another customer's recommendations.
+Freezing the model, maintaining separate models, or assigning
+sufficiently separated populations evaluates different policies. State
+which policy and learning process the experiment implements. A short
+experiment with a frozen model identifies a different intervention from
+deploying a model that learns from its own recommendations over several
+months.
+
 \hypertarget{M06-ai-assisted-workflow-and-practice}{%
 \section{AI-Assisted Workflow and
 Practice}\label{M06-ai-assisted-workflow-and-practice}}
@@ -2034,6 +2232,16 @@ incremental contribution falls to \$0.20. If treatment raises returns,
 explain why a conversion effect can overstate the contribution effect.
 If two stores share most customers, identify why store assignment may
 create interference.
+
+For the exposure example, ask an assistant to compute both the raw click
+rates and inverse-propensity policy values from the four aggregate rows,
+using the display counts when calculating denominators and weight
+concentration. Verify the weighted results independently by averaging
+the two group-specific response rates. Then set A's display probability
+among occasional buyers to zero in a proposed logging design and explain
+why the always-A policy becomes unidentified from those logs. The
+implementation should flag the unsupported action rather than silently
+drop that group.
 
 \hypertarget{M06-readings}{%
 \section{Readings}\label{M06-readings}}
@@ -2403,6 +2611,249 @@ intervention changes the behavior that generates future training data,
 the model's environment becomes endogenous to its use, because its
 recommendations change subsequent exposure and behavior.
 
+\hypertarget{M07-recommendation-models-and-the-candidate-set}{%
+\section{Recommendation Models and the Candidate
+Set}\label{M07-recommendation-models-and-the-candidate-set}}
+
+\noindent A recommendation decision chooses a small set of products for a
+particular customer at a particular time. Candidate generation first
+identifies eligible items, scoring predicts their relevance, and ranking
+selects their order. A final adjustment may impose stock availability,
+repetition limits, category variety, or a customer-stated goal. An
+accurate score cannot recover a useful product that candidate generation
+has already excluded. Evaluation should therefore record both the
+eligible set and the final list.
+
+Content-based models use item attributes and the customer's history. A
+grocery system might represent foods by ingredients, category, price, or
+an embedding of their descriptions. Collaborative models instead use
+patterns across customer-item interactions. Matrix factorization
+represents a customer and an item with short vectors and scores their
+compatibility through an inner product:
+
+\[
+\hat r_{uj}=\mu+b_u+b_j+p_u^\top q_j.
+\]
+
+Here \(u\) indexes a customer, \(j\) an item, \(\mu\) is an overall
+level, \(b_u\) and \(b_j\) are customer and item offsets, and the
+vectors \(p_u\) and \(q_j\) summarize interaction patterns in a common
+latent space. The score's units depend on the fitted target. With
+squared-error training on star ratings, it approximates rating units. A
+ranking score fitted to implicit interactions has no automatic
+probability interpretation. Popularity offsets capture broad appeal,
+while the inner product permits customers with different histories to
+prefer different products.
+
+Ratings are explicit feedback. Clicks, views, and purchases are implicit
+feedback whose meaning depends on exposure and opportunity. A missing
+interaction is not a verified rejection. Treating every missing
+customer-item pair as a negative can encode the previous recommender's
+display policy. Negative sampling changes the training distribution, so
+the sampling rule and any probability correction belong in the analysis.
+Logging impressions and eligible alternatives makes these distinctions
+more tractable.
+
+New customers and new products create a cold-start problem. Content
+features, initial preference questions, and popularity baselines can
+provide information before interaction histories become informative. A
+hybrid model combines these sources. Sequential models additionally
+condition on the order of past events, allowing a recent purchase to
+change what is useful next. The validation sample must preserve that
+order and exclude later purchases, ratings, and catalog information from
+the forecast origin.
+
+\hypertarget{M07-ranking-metrics-depend-on-position-and-available-labels}{%
+\section{Ranking Metrics Depend on Position and Available
+Labels}\label{M07-ranking-metrics-depend-on-position-and-available-labels}}
+
+\noindent Precision at \(K\) is the fraction of the first \(K\) recommendations
+labeled relevant. Recall at \(K\) is the fraction of all labeled
+relevant items retrieved in that list. Hit rate records whether at least
+one relevant item appears. These metrics use different denominators and
+can disagree. A hit rate of one can coexist with low precision when a
+long list contains one relevant item.
+
+Normalized discounted cumulative gain gives greater weight to relevant
+items near the top. For nonnegative relevance labels \(r_1,\ldots,r_K\),
+one convention is
+
+\[
+\mathrm{DCG}@K=\sum_{k=1}^{K}\frac{2^{r_k}-1}{\log_2(k+1)},
+\qquad
+\mathrm{NDCG}@K=\frac{\mathrm{DCG}@K}{\mathrm{IDCG}@K}.
+\]
+
+The position discount reflects the greater value assigned to placing
+useful items earlier. The ideal DCG uses the best ordering of the
+labeled eligible items at the same cutoff. Report the gain convention
+and the treatment of customers with no relevant labels, for whom this
+ratio has a zero denominator. Averaging only over customers with
+positive labels changes the evaluation population.
+
+Consider a synthetic three-item candidate set in which A is irrelevant
+and B and C are relevant. The lists A, B, C and B, C, A both have
+precision \(2/3\) and recall one. The first list has DCG
+\(1/\log_2(3)+1/\log_2(4)\approx1.131\). The second has DCG
+\(1+1/\log_2(3)\approx1.631\), which is also the ideal value. Their NDCG
+values are approximately 0.693 and 1.000. The same number of relevant
+items can produce different ranking quality because their positions
+differ.
+
+Historical labels describe items observed under earlier exposure and
+consumption decisions. High NDCG on those labels can coexist with poor
+discovery of items rarely displayed. Evaluate a common candidate set,
+retain customer and time boundaries, compare with a popularity baseline,
+and report performance for customers and products with little history.
+The policy-value calculation in M6, Section 6.7, addresses selected
+exposure under different assumptions from an ordinary held-out ranking
+calculation. Neither calculation alone establishes customer satisfaction
+or the value of changing the deployed system.
+
+\hypertarget{M07-case-study-food-recommendations-variety-and-customer-goals}{%
+\section{Case Study: Food Recommendations, Variety, and Customer
+Goals}\label{M07-case-study-food-recommendations-variety-and-customer-goals}}
+
+\noindent A food app can predict what a customer usually eats while learning
+little about what would help that customer pursue a stated goal. The
+distinction changes the training sample, the model inputs, and the
+relevant evaluation outcome.
+\href{https://doi.org/10.1145/3485447.3514193}{Ling, Nie, Nielsen,
+Knäuper, Yang, and Dubé (2022)} develop a recommendation system using
+daily food histories and information about calories and body-mass-index
+groups. Their 2016 app sample restricts users to ages 18--65 with
+substantial logging histories and removes sparse daily records. Table 2
+reports 7,457 users in the resulting model sample.
+
+The model represents both the foods within a day and the sequence of
+days. Separate models learn from general histories, particular
+body-mass-index groups, and periods associated with the relevant weight
+outcome. Their predictions can be combined. The last basket supplies the
+test observation, the preceding basket supplies validation, and earlier
+baskets supply training. This design evaluates whether the model
+predicts foods eaten during periods associated with the intended
+outcome. It does not randomize customers to receive the recommendations,
+so the reported ranking improvements do not identify a causal effect on
+weight.
+
+Selecting successful periods can help define a target pattern while also
+selecting motivation, physical activity, reporting behavior, or other
+determinants of the outcome. A customer who follows a similar food
+pattern may differ on those other dimensions. For deployment, the goal
+and all required inputs must be available when recommendations are made.
+A later realized weight outcome can define a retrospective evaluation
+stratum; it cannot serve as a known input for a new customer unless
+supplied as an explicit scenario rather than an observed future fact.
+
+\href{https://doi.org/10.1086/720453}{Nielsen, Yang, Dubé, Knäuper,
+Ling, and Nie (2022)} examine variety in food logs and develop FOODVAR.
+Their empirical analysis relates daily variety to subsequent changes in
+calories and the composition of food consumption. Variety measures
+include item counts and a reverse-coded concentration index based on
+calorie shares. Two days with the same item count can therefore differ
+in variety if one is dominated by a single food. The reported
+relationships are conditional associations, and the denominators and
+sample restrictions differ across the total-calorie, vegetable, and
+snack analyses.
+
+FOODVAR incorporates a variety-change indicator into sequential food
+recommendation. Its evaluation uses 30 days of history, seven subsequent
+validation days, and a final test day, with the indicator representing
+the intended variety direction. Table 5 compares hit-rate and NDCG
+measures against the baseline across weight-outcome groups. The results
+establish predictive differences within that evaluation design. A
+prospective test would elicit the variety goal before displaying
+recommendations and measure subsequent behavior. The synthetic
+category-bonus example in M8, Section 8.2, is a simpler list-selection
+exercise with a different algorithm.
+
+\hypertarget{M07-a-goal-weight-can-change-the-preferred-item-abruptly}{%
+\subsection{A Goal Weight Can Change the Preferred Item
+Abruptly}\label{M07-a-goal-weight-can-change-the-preferred-item-abruptly}}
+
+\noindent Suppose three products have preference scores and goal-compatibility
+scores on a common illustrative scale. A scores \((0.90,0.10)\), B
+scores \((0.75,0.60)\), and C scores \((0.60,0.90)\). The scores are
+imposed inputs, not estimated purchase probabilities or health effects.
+A weighted ranking rule is
+
+\[
+s_j(\alpha)=(1-\alpha)p_j+\alpha g_j,\qquad 0\leq\alpha\leq1,
+\]
+
+where \(p_j\) measures preference compatibility, \(g_j\) measures
+compatibility with the stated goal, and \(\alpha\) determines their
+relative importance. At \(\alpha=0\), A ranks first. At \(\alpha=0.25\),
+the scores are 0.700, 0.7125, and 0.675, so B ranks first. At
+\(\alpha=0.50\), C ranks first with 0.750. Solving the pairwise score
+equalities gives the optimal switches at \(\alpha=3/13\) and
+\(\alpha=1/3\).
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_goal_blend.tex}
+\caption{Smooth changes in the objective weight produce discrete changes in the top-ranked item.}\label{fig:M07_goal_blend}
+\end{figure}
+
+Every score changes continuously, yet the chosen item changes
+discretely. A small adjustment near a crossing can therefore replace the
+displayed recommendation. B is the preferred compromise only over a
+narrow weight interval. A useful audit varies the weight and inspects
+which customers experience large changes in their lists. The chosen
+scales and weights define the tradeoff; combining scores does not itself
+establish that a goal will be achieved.
+
+\hypertarget{M07-llm-explanations-need-factual-and-behavioral-evaluation}{%
+\section{LLM Explanations Need Factual and Behavioral
+Evaluation}\label{M07-llm-explanations-need-factual-and-behavioral-evaluation}}
+
+\noindent A shopping assistant may generate a persuasive reason for recommending a
+product after the product has already been selected. That text can be
+useful, but its fluency does not establish that it describes the ranking
+model's actual reason. Three questions remain distinct: whether the
+explanation contains correct product facts, whether it corresponds to
+the system's decision process, and whether it helps the customer make a
+satisfactory choice.
+
+\href{https://arxiv.org/abs/2502.16759v3}{Wang, Li, and Chen's RecPIE
+study}, in its May 2026 version, jointly trains recommendation
+prediction and natural-language explanation. Prediction performance
+informs explanation generation, and explanation representations feed
+into subsequent predictions. The empirical setting includes Google Maps
+point-of-interest recommendations and a separate human assessment of
+explanations. Reported improvements in ranking and explanation
+preference concern those evaluations. They do not by themselves estimate
+the effect of deploying the system on purchases, retention, or customer
+welfare.
+
+\href{https://aclanthology.org/2024.findings-emnlp.247/}{Qin, Huang,
+Deng, Lei, and Chua (2024)} study credibility in conversational
+recommendation. Their PC-CRS approach uses credibility-aware persuasive
+strategies and subsequent revision of explanations. The comparison
+motivates separate evaluation of persuasive success and support for
+factual claims. An assistant can increase acceptance by asserting an
+appealing attribute that the product does not possess. Acceptance alone
+would reward that error.
+
+Consider a synthetic catalog with prices, delivery times, and verified
+product attributes. A customer asks for delivery within two days at a
+price below \$30. First enforce those eligibility constraints using the
+catalog. Then rank eligible products and generate explanations that
+refer to specific supported attributes. ``Arrives tomorrow'' is
+unsupported when the recorded delivery window is three to five days,
+even if the rest of the explanation is relevant. ``You value quiet
+operation'' is unsupported when the customer has expressed no such
+preference and no permitted history supplies it.
+
+An audit should inspect factual support, constraint violations, ranking
+performance, and customer outcomes separately. Remove or alter a cited
+attribute and examine whether the explanation and ranking change as
+claimed; this provides a behavioral diagnostic of correspondence, with
+scope limited to the perturbations tested. Hold out customers, products,
+or time periods according to deployment. Keep the catalog version and
+the evidence used for each explanation so the claim can be checked after
+product information changes.
+
 \hypertarget{M07-ai-assisted-workflow-practice-and-readings}{%
 \section{AI-Assisted Workflow, Practice, and
 Readings}\label{M07-ai-assisted-workflow-practice-and-readings}}
@@ -2421,6 +2872,24 @@ change. Recalculate the coupon case with a \$1 discount and explain
 which customer becomes more attractive. Finally, identify why a model
 trained on all customers' latest outcomes cannot honestly claim to
 predict those same outcomes out of sample.
+
+For a recommender exercise, have an assistant build a popularity
+baseline, a simple content score, and the stated goal-weight rule on
+synthetic items. Require a chronological split, a documented candidate
+set, and a report of excluded or unavailable products. Verify the two
+NDCG calculations by hand, then enumerate the goal-weight switches
+independently. Ask why an unseen item was labeled irrelevant and require
+the code to distinguish an observed rejection from absent exposure. A
+working implementation of the simple score is not a replication of
+FOODVAR, HHFR, or RecPIE.
+
+For an explanation exercise, give the assistant a small catalog and a
+customer's explicit constraints. Request a recommendation with an
+attribute-level source for each factual claim. Include one unavailable
+attribute and one product that violates a constraint. Check whether the
+system acknowledges missing information and excludes the ineligible
+product. Score factual support separately from how persuasive the
+explanation sounds.
 
 \href{https://www.statlearning.com/}{An Introduction to Statistical
 Learning} develops the central learning methods. The
@@ -2471,6 +2940,14 @@ exposure. This process can amplify initial differences without
 establishing that the repeatedly displayed product would be preferred
 under equal exposure.
 
+\href{https://arxiv.org/abs/1710.11214}{Chaney, Stewart, and Engelhardt
+(2018)} study this feedback through simulations in which recommendations
+shape the next training sample. Their results show that consumption can
+become more homogeneous without corresponding utility improvements. The
+result depends on the simulated preferences, recommendation rules, and
+updating process. It identifies a mechanism to examine in deployed
+systems rather than a universal effect of personalization.
+
 \begin{figure}[htbp]
 \centering
 \input{figures/M08_feedback.tex}
@@ -2494,19 +2971,99 @@ historical logs is particularly sensitive to the policy that generated
 those logs. An experiment that changes exposure can supply information
 that a more flexible model of the same selected data cannot supply.
 
+\hypertarget{M08-case-study-a-temporary-campaign-can-change-the-learned-policy}{%
+\subsection{Case Study: A Temporary Campaign Can Change the Learned
+Policy}\label{M08-case-study-a-temporary-campaign-can-change-the-learned-policy}}
+
+\noindent A platform may stop boosting a category while continuing to use the
+behavior generated during that boost.
+\href{https://arxiv.org/abs/2606.08265}{Luo, Yao, and Zhang's 2026
+working paper} studies a celebrity sleep-reminder campaign on a
+short-video platform. During the campaign, a ranking adjustment
+increased the chance that treated users would see a reminder during the
+late-night window. Exposure remained dependent on the ranking process.
+The analysis uses a balanced panel of 200,000 users active on the
+experiment's first day, with 100,000 drawn from each assignment group.
+
+Table 6 reports assignment effects of 14.75\% higher late-night usage
+and 2.18\% higher overall app usage relative to the respective control
+means during the campaign. These are relative percentage changes in
+usage, not percentage-point changes in exposure or measured effects on
+sleep. The paper also reports persistent engagement changes and changes
+in the content delivered afterward. The authors interpret the evidence
+through discovery of previously underexposed preferences and subsequent
+recommendation updates. The experiment estimates effects of the
+assignment regime; attributing persistence specifically to learning
+requires the additional mechanism evidence. The first-day activity
+restriction also makes sample inclusion consequential when extending the
+result to all assigned users.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_policy_horizon.tex}
+\caption{A temporary ranking intervention can affect later recommendations through the training data it creates.}\label{fig:M08_policy_horizon}
+\end{figure}
+
+The temporary boost ends, but its information can remain in the learned
+model. Freezing the model after the campaign would interrupt that
+particular channel while leaving any direct changes in customer behavior
+possible. Updating it incorporates the new interactions into future
+exposure. These policies can have different effects even when the
+campaign content and immediate responses are identical. Separating their
+contributions requires variation in the learning policy as well as the
+initial intervention.
+
+An evaluation should retain the assignment, exposure, model version,
+retraining schedule, and outcomes after the intervention ends. A shared
+model can transmit treatment-generated information to comparison
+customers. Report the assignment unit and use uncertainty calculations
+that account for repeated observations of the same unit. Measure the
+intended customer outcome directly where possible, because increased
+engagement cannot reveal whether a campaign achieved a goal such as less
+late-night use or greater satisfaction.
+
+\hypertarget{M08-case-study-netflix-personalization-and-incremental-engagement}{%
+\subsection{Case Study: Netflix Personalization and Incremental
+Engagement}\label{M08-case-study-netflix-personalization-and-incremental-engagement}}
+
+\noindent A streaming service wants to distinguish the appeal of its catalog from
+the value created by matching titles to viewers.
+\href{https://www.ifo.de/en/cesifo/publications/2026/working-paper/value-personalized-recommendations-evidence-netflix}{Zielnicki,
+Aridor, Bibaut, Tran, Chou, and Kallus}, in the supplied June 2026
+paper, estimate a choice model using Netflix viewership and
+recommendation exposure. The model incorporates heterogeneous tastes and
+dependence on viewing history. Its identification treats exposure as
+conditionally exogenous given the included user, title, and state
+information. A separate randomized recommendation perturbation provides
+diversion patterns used to assess the model.
+
+Under that model, replacing the current recommender with matrix
+factorization reduces engagement by approximately 4\%, and replacing it
+with a popularity-based rule reduces engagement by approximately 12\%.
+These are model-based counterfactual reductions relative to the existing
+recommender, not direct A/B estimates of those complete replacements.
+Their interpretation depends on the exposure condition, maintained
+choice model, and counterfactual implementation.
+
+For a subscription business, engagement can affect retention and hence
+customer lifetime value, but the relationship requires evidence. A 12\%
+engagement reduction does not imply a 12\% decline in revenue,
+retention, or consumer welfare. Evaluate those outcomes separately,
+account for substitution across titles, and compare the incremental
+value with the cost of maintaining the recommendation system. The
+model's experimental check is useful because it evaluates responses to
+changed exposure, beyond fit to historical viewing alone.
+
 \hypertarget{M08-case-study-relevance-variety-and-customer-goals}{%
 \section{Case Study: Relevance, Variety, and Customer
 Goals}\label{M08-case-study-relevance-variety-and-customer-goals}}
 
-\noindent Nielsen, Yang, Dubé, Knäuper, Ling, and Nie study consumption variety in
-food recommendation. Their research connects observed patterns in food
-logs with a recommendation method that incorporates variety. Ling and
-coauthors develop a goal-oriented recommendation approach using behavior
-from comparable users. The choice of objective matters: reproducing
-observed choices can conflict with a customer's stated goal.
-Observational relationships and offline ranking evaluations measure
-different objects from the causal effect of deploying a recommendation
-policy.
+\noindent A customer may prefer a useful collection of products even when some
+items in that collection have lower individual relevance scores.
+Category repetition, past purchases, and the customer's stated goal
+affect the value of the complete list. The food-recommendation studies
+in M7, Section 7.12, motivate these distinctions. A simple list
+objective makes the relevance-variety tradeoff explicit.
 
 Suppose a retail customer requests three products and values variety
 across categories. Assign four candidate items the relevance scores
@@ -2560,6 +3117,103 @@ assignment rather than only customers who clicked a recommendation.
 Clicking occurs after the policy is assigned and can differ between
 policies. Preserve the list shown and the alternatives eligible at each
 impression so the mechanism can be examined.
+
+\hypertarget{M08-engagement-considered-preferences-and-the-objective}{%
+\subsection{Engagement, Considered Preferences, and the
+Objective}\label{M08-engagement-considered-preferences-and-the-objective}}
+
+\noindent A customer can click an item and later wish it had not been recommended.
+\href{https://doi.org/10.1287/mnsc.2022.03683}{Kleinberg, Mullainathan,
+and Raghavan} model inconsistent preferences to explain why behavior
+alone can be insufficient for a platform seeking to improve user
+utility. The problem can arise even when the platform wants to serve the
+user: the observed action may reflect an immediate impulse that differs
+from a considered preference. A useful evaluation therefore combines
+behavior with explicit goals, satisfaction, and measures of regretted
+use, with their measurement limitations stated.
+
+\href{https://arxiv.org/abs/2107.10939v1}{Stray and coauthors (2021)}
+discuss recommender design around objectives such as well-being,
+diversity, and user control. For a retailer, a concrete formulation
+could maximize expected contribution subject to customer-selected
+spending limits, a maximum repetition rate, and a minimum satisfaction
+criterion. These constraints make the acceptable tradeoffs explicit. A
+weighted sum is another choice, but its conclusions depend on the scales
+and weights. Estimates of the component outcomes remain necessary under
+either formulation.
+
+A list with more categories need not better serve every customer.
+Someone replenishing a familiar weekly basket may value reliability more
+than novelty. Elicit the relevant goal, preserve a way to revise it, and
+evaluate whether the system responds appropriately. A policy that
+increases variety on average can still repeatedly ignore the preferences
+of a particular group.
+
+\hypertarget{M08-case-study-content-exposure-and-political-attitudes-are-different-outcomes}{%
+\subsection{Case Study: Content Exposure and Political Attitudes Are
+Different
+Outcomes}\label{M08-case-study-content-exposure-and-political-attitudes-are-different-outcomes}}
+
+\noindent \href{https://doi.org/10.1093/pnasnexus/pgaf062}{Milli and coauthors
+(2025)} conduct a preregistered audit with 806 Twitter users, comparing
+posts selected by engagement ranking with recent posts from accounts
+each user follows. They collect item-level stated preferences and
+perceptions. Engagement ranking selects more emotionally charged and
+out-group-hostile material, and the political posts selected are not
+preferred by users on the stated-preference measure. The outcomes
+describe selected content and users' evaluations within the audit's
+exposure window.
+
+\href{https://doi.org/10.1073/pnas.2318127122}{Liu and coauthors (2025)}
+conduct four experiments with nearly 9,000 participants on a
+YouTube-like interface. Manipulating recommendation sequences produces
+limited short-term polarization effects in the studied settings. The
+intervention, exposure duration, and attitude outcomes differ from the
+Twitter audit. The studies therefore address different links between
+recommendation, consumption, perception, and opinion. A change in the
+composition of displayed content does not determine the magnitude of an
+attitude effect.
+
+For a managerial comparison, state the population, assignment, exposure
+window, outcome, and uncertainty before combining findings across
+settings. A nonsignificant attitude effect supplies no general assurance
+of zero long-run effects, just as a difference in displayed content
+supplies no estimate of long-run polarization. The relevant evidence is
+the estimated effect and its uncertainty for the intervention actually
+evaluated.
+
+\hypertarget{M08-platform-incentives-and-preference-changes}{%
+\subsection{Platform Incentives and Preference
+Changes}\label{M08-platform-incentives-and-preference-changes}}
+
+\noindent The platform's return from a recommendation can differ from the
+customer's value. \href{https://doi.org/10.1111/1756-2171.12481}{Chen
+and Tsai (2024)} examine Amazon's dual role as retailer and intermediary
+using product-level recommendation data and variation from Amazon
+stockouts. The study finds that Amazon's seller status affects the
+receipt of ``Frequently Bought Together'' recommendations. The design
+uses within-product changes, with accompanying controls and checks, to
+distinguish seller identity from stable product appeal. Its causal
+interpretation depends on the treatment of other changes accompanying
+stockouts.
+
+An analyst evaluating a marketplace should record whether an item is
+sold by the platform, sponsored, or commission-bearing, alongside
+availability and customer relevance. Contribution should use the
+appropriate margin or fee for each item. A common ranking score can
+conceal those different incentives. A policy change may improve platform
+profit while reallocating sales among sellers, so report effects at the
+customer, seller, and platform levels relevant to the decision.
+
+\href{https://arxiv.org/abs/2210.05662v2}{Zhu and coauthors} develop a
+benchmark for distinguishing better matching from changes in users'
+preferences under a recommendation process. Their experiments use
+synthetic and real-world datasets within the proposed framework. They
+motivate measuring preference change separately from click-through
+performance. They do not establish that every online performance gain
+represents manipulation. A customer may learn to appreciate an
+unfamiliar product; whether that change serves the customer requires a
+stated criterion and evidence beyond a higher click count.
 
 \hypertarget{M08-marketing-mix-models-combine-carryover-and-saturation}{%
 \section{Marketing-Mix Models Combine Carryover and
@@ -2801,6 +3455,19 @@ the variety example at \(\lambda=0\), 0.20, and 0.30. At zero, A, B, C
 is optimal. At 0.20, it ties A, C, D. At 0.30, A, C, D is optimal.
 Explain how a different category definition could change that conclusion
 without changing any relevance score.
+
+\textbf{Dynamic-policy exercise.} Design a comparison between a
+temporary recommendation boost with a frozen model and the same boost
+followed by retraining. Specify how training data are separated across
+conditions, when outcomes are measured, and how shared content or
+customers could transmit effects. Explain which comparison identifies
+the effect of allowing the model to learn from campaign-period behavior.
+
+\textbf{Evidence exercise.} Compare the MovieLens field experiment, the
+Netflix model-based replacement counterfactuals, and the short-term
+YouTube experiments. State the intervention and estimand for each.
+Explain why their reported outcomes cannot be combined into a single
+percentage measuring the value or harm of recommendation systems.
 
 \textbf{Budget exercise.} Calculate the gain from moving one thousand
 dollars from channel A to channel B at the original allocation. Compare

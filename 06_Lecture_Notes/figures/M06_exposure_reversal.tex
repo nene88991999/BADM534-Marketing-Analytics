@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[ybar,bar width=21pt,width=13cm,height=7cm,
+  symbolic x coords={Displayed customers,Common population},
+  xtick=data,ymin=0,ymax=65,ytick={0,10,20,30,40,50,60},
+  ylabel={Clicks per 100 opportunities},
+  enlarge x limits=.45,ymajorgrids=true,
+  nodes near coords,point meta=y,
+  every node near coord/.append style={font=\small},
+  legend style={at={(.5,-.15)},anchor=north,legend columns=2}]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates
+  {(Displayed customers,56) (Common population,40)};
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates
+  {(Displayed customers,41) (Common population,45)};
+\legend{Item A,Item B}
+\end{axis}
+\end{tikzpicture}

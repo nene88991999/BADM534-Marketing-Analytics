@@ -296,11 +296,11 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Note:* Jetstream announcement (Oct 2024; not a formally stable API): https://docs.bsky.app/blog/jetstream. Community Python SDK: https://atproto.blue/en/latest/ (pip install atproto). Main docs: https://docs.bsky.app/. All fetched. Remind students of ethics: public posts are not consent for redistribution.
 
 - [recommended] **[Reddit Data API Wiki](https://support.reddithelp.com/hc/en-us/articles/16160319875092-Reddit-Data-API-Wiki)** (2026) — Reddit, Inc. *Reddit Help*
-  `documentation` · `intro` · `access: free-registration`
+  `documentation` · `intro` · `access: application`
   Official rules for the Reddit Data API: OAuth required (unauthenticated traffic is blocked), 100 queries per minute per OAuth client on the free tier, a descriptive User-Agent, and the Responsible Builder Policy and Data API Terms.
   *Use in wiki:* Setup guide for a Reddit-comments lab with PRAW. Students register a script app, then pull a subreddit's posts for sentiment and topic analysis.
   Tools: praw
-  *Note:* Page updated May 11, 2026. Python wrapper: PRAW 8.0.3 docs, https://praw.readthedocs.io/en/stable/ (fetched). Students should read the Data API Terms; commercial use and some research uses may need approval.
+  *Note:* Page updated May 11, 2026. Python wrapper: PRAW 8.0.3 docs, https://praw.readthedocs.io/en/stable/. Checked 2026-10-23: even non-commercial Data API use is limited to approved developers after a request and app review, so plan for lead time or use Bluesky's open API for class labs.
 
 - [recommended] **[X API pricing (pay-per-usage)](https://docs.x.com/x-api/getting-started/pricing)** (2026) — X Corp. *docs.x.com*
   `documentation` · `intro` · `access: paid`
