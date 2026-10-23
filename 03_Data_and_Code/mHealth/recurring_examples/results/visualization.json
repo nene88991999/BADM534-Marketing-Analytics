@@ -1,0 +1,47 @@
+{
+  "source_sha256": "2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea",
+  "membership": "At least one observed day before 2016-05-01",
+  "observation": "user-month; fraction of calendar days with a food entry",
+  "interpretation": "descriptive within the selected cohort",
+  "months": [
+    {
+      "period": "2016-05",
+      "eligible_users": 340,
+      "users_with_logs": 317,
+      "observed_user_days": 7082,
+      "calendar_user_days": 10540,
+      "logger_calendar_days": 9827,
+      "food_entries": 83564,
+      "logging_percent": 67.19165085388994,
+      "conditional_logging_percent": 72.06675485906177,
+      "entries_per_observed_day": 11.799491669020052
+    },
+    {
+      "period": "2016-06",
+      "eligible_users": 340,
+      "users_with_logs": 313,
+      "observed_user_days": 6331,
+      "calendar_user_days": 10200,
+      "logger_calendar_days": 9390,
+      "food_entries": 74016,
+      "logging_percent": 62.068627450980394,
+      "conditional_logging_percent": 67.42279020234292,
+      "entries_per_observed_day": 11.691044068867477
+    }
+  ],
+  "paired_change": {
+    "users": 340,
+    "bootstrap_draws": 5000,
+    "seed": 534,
+    "change_pp": -5.123023402909551,
+    "ci_low_pp": -7.929253636938645,
+    "ci_high_pp": -2.433863061353574,
+    "paired_se_pp": 1.3786531183210098,
+    "individual_change_q25_pp": -17.580645161290324,
+    "individual_change_median_pp": 0.0,
+    "individual_change_q75_pp": 3.3602150537634405,
+    "naive_independent_days_se_pp": 0.6633016181899881,
+    "naive_ci_low_pp": -6.423094574561928,
+    "naive_ci_high_pp": -3.822952231257174
+  }
+}

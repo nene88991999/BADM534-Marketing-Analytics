@@ -458,3 +458,327 @@ if __name__ == "__main__":
     summary.to_csv(OUTPUT / "recency.csv", index=False)
     print(json.dumps(result, indent=2))
 ```
+
+## 2.14 mHealth: Chart Choice, Denominators, and Customer Differences
+
+A manager sees nearly unchanged activity on days when customers record food and considers reducing attention to retention. That comparison conditions on having a recorded day. A customer who stops logging disappears from the conditional average. A useful business review therefore distinguishes the frequency of recorded days from the amount of activity on those days, with the eligible population fixed before either reporting month.
+
+The comparison retains the 340 users with at least one observed day before May 1, 2016. Each user contributes all 31 May days and all 30 June days to the logging denominator. Repeated food entries on one day count once toward logging coverage. A calendar day without a food entry receives zero for the logging indicator. Its food consumption remains unobserved. Food-entry counts retain the recorded rows and describe recording intensity.
+
+| Measure | May | June |
+| --- | ---: | ---: |
+| Eligible Users | 340 | 340 |
+| Users With Logs | 317 | 313 |
+| Eligible Calendar User-Days | 10,540 | 10,200 |
+| Days With Logs | 7,082 | 6,331 |
+| Days With Logs / Eligible Days | 67.19% | 62.07% |
+| Days With Logs / Logger Calendar Days | 72.07% | 67.42% |
+| Entries per Recorded Day | 11.80 | 11.69 |
+
+The conditional logging rate divides by calendar days for users who logged at least once in that month. Its denominator changes with the outcome: May contains 317 such users and June contains 313. Both conditional rates exceed the corresponding fixed-population rates. Logging coverage in the fixed population falls by 5.12 percentage points, while entries per recorded day change little. Stable recording intensity among observed days can coexist with declining coverage of the eligible population. These patterns support examining disengagement and recording behavior; they do not identify a change in dietary intake or an effect of a reminder.
+
+![The same logged days produce different rates when the denominator excludes users with no logs.](../figures/M02_logging_denominators.png)
+
+### 2.14.1 Match the Display to the Decision
+
+The [Financial Times Visual Vocabulary](https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md) organizes displays by the relationship the reader needs to assess. The first choice is the comparison. A list of available plotting functions provides little guidance about whether the manager needs a ranking, a distribution, a trend, or an estimated contrast.
+
+| Analytical Question | Useful Display | Essential Check |
+| --- | --- | --- |
+| Which segment is larger? | Sorted bars or dots | Common units and base |
+| Where is the distribution concentrated? | Histogram or ECDF | Bins, ties, and weights |
+| How does a metric change over time? | Line or paired dots | Calendar and membership |
+| How do two variables move together? | Scatterplot or hexagons | Support and overlap |
+| What share belongs to each category? | Aligned shares or bars | Common denominator |
+| How uncertain is a contrast? | Point and interval | Estimand and sampling unit |
+
+A bar encodes its magnitude through length from a baseline, so the logging-rate bars start at zero. Two percentage axes with different limits would change the visual comparison even when the data are identical. A dot-and-interval plot can use a narrower, explicitly labeled scale because the position represents the estimate and the interval represents its uncertainty. For dense scatterplots, transparency, hexagonal bins, or a documented sample can reveal concentrations that overlapping opaque points hide. Bin boundaries and color limits should stay fixed when comparing customer groups.
+
+Use Illinois Blue and Illini Orange to distinguish the principal series, with labels and line styles carrying the same information. A heatmap of a nonnegative count needs an ordered light-to-dark scale. A signed deviation needs a meaningful center, usually zero, with comparable positive and negative distances. Unobserved cells need a separate label or pattern so that a reader can distinguish them from observed zeros. Small multiples should retain a common scale when the decision depends on cross-panel magnitudes.
+
+### 2.14.2 An Average Decline Can Coexist With No Median Change
+
+The user-level outcome is the fraction of a month's calendar days with a log. For a value $x$ between zero and one, its empirical cumulative distribution is
+
+$$
+\widehat F_m(x)=\frac{1}{N}\sum_{i=1}^{N}\mathbf{1}\{p_{im}\leq x\},
+$$
+
+where $p_{im}$ is user $i$'s logging fraction in month $m$ and $N$ is the fixed eligible-user count. The height at $x$ is the fraction of users whose logging frequency is at or below that value. Each user has equal weight. Ties produce jumps, including the jump at zero for users without a recorded day. The curve avoids a histogram's bin-width choice, while its denominator and observation unit still require an explicit definition.
+
+![The logging-frequency distributions retain users at zero and reveal the concentration near daily recording.](../figures/M02_logging_distribution.png)
+
+The zero-logging share is 6.76% in May and 7.94% in June. At the other endpoint, 105 users log on every May day and 89 log on every June day. The median user's June-minus-May change is zero, while the mean change is negative. The middle half of individual changes spans approximately $-17.58$ to $+3.36$ percentage points. A mean decline therefore describes an aggregate change that is distributed unevenly across customers. It does not imply that every user reduced logging by five percentage points.
+
+Histograms remain useful when the shape of a distribution matters. Compare several defensible bin widths and align bins across groups. A smooth density estimate requires extra care for bounded fractions with substantial mass at zero and one; smoothing can suggest observations outside the feasible range or conceal endpoint masses. The [seaborn distribution tutorial](https://seaborn.pydata.org/tutorial/distributions.html) discusses these choices. A distribution's spread and an estimate's uncertainty answer different questions, as the [error-bar tutorial](https://seaborn.pydata.org/tutorial/error_bars.html) makes explicit. M3, Section 3.6, calculates uncertainty for the average paired change.
+
+### 2.14.3 Reproduce the Comparison
+
+The program selects membership before May, counts distinct logged days, creates complete user-month pairs, and exports only aggregate tables. It also calculates the paired-user interval used in M3. Missing-month users remain in the logging calculation. The 5,000 bootstrap draws resample users with both monthly outcomes together. The deliberately incorrect independent-day interval is retained with its assumption stated in its name.
+
+Python source: [visualization.py](../../03_Data_and_Code/mHealth/recurring_examples/visualization.py). From its directory, run `python visualization.py`.
+
+```python
+"""Prepare aggregate chart data and paired uncertainty for May and June."""
+
+import json
+import numpy as np
+import pandas as pd
+from common import OUTPUT, ROOT, SEED, load_food, save_result
+
+MONTHS = ["2016-05", "2016-06"]
+
+
+def prepare(food):
+    # Membership is fixed before May; an absent log is zero logging only.
+    members = sorted(food.loc[food.date < "2016-05-01", "Userid"].unique())
+    if not members:
+        raise ValueError("No users observed before May")
+    rates = pd.DataFrame(index=members)
+    rows = []
+    for month in MONTHS:
+        period = pd.Period(month, freq="M")
+        part = food.loc[
+            food.Userid.isin(members) & food.date.dt.to_period("M").eq(period)
+        ]
+        counts = (
+            part[["Userid", "date"]].drop_duplicates().groupby("Userid").size()
+            .reindex(members, fill_value=0)
+        )
+        rates[month] = counts / period.days_in_month
+        observed = int(counts.sum())
+        active = int(counts.gt(0).sum())
+        assert counts.between(0, period.days_in_month).all()
+        rows.append({
+            "period": month, "eligible_users": len(members),
+            "users_with_logs": active, "observed_user_days": observed,
+            "calendar_user_days": len(members) * period.days_in_month,
+            "logger_calendar_days": active * period.days_in_month,
+            "food_entries": len(part),
+            "logging_percent": 100 * rates[month].mean(),
+            "conditional_logging_percent": (
+                100 * observed / (active * period.days_in_month) if active else None
+            ),
+            "entries_per_observed_day": len(part) / observed if observed else None,
+        })
+    return rates, pd.DataFrame(rows)
+
+
+def ecdf(values):
+    """Exact right-continuous CDF; tied values contribute their full mass."""
+    values = np.asarray(values, dtype=float)
+    if len(values) == 0 or not np.isfinite(values).all():
+        raise ValueError("A nonempty finite sample is required")
+    x, count = np.unique(values, return_counts=True)
+    return pd.DataFrame({
+        "logging_percent": 100 * x, "users_at_value": count,
+        "cumulative_percent": 100 * count.cumsum() / len(values),
+        "eligible_users": len(values),
+    })
+
+
+def paired_summary(rates, draws=5000):
+    # Each sampled index carries both months for the same user.
+    difference = rates[MONTHS[1]].to_numpy() - rates[MONTHS[0]].to_numpy()
+    if len(difference) < 2 or not np.isfinite(difference).all():
+        raise ValueError("At least two complete user pairs are required")
+    rng = np.random.default_rng(SEED)
+    indices = rng.integers(0, len(difference), size=(draws, len(difference)))
+    bootstrap = difference[indices].mean(axis=1)
+    low, high = np.quantile(bootstrap, [0.025, 0.975])
+    return {
+        "users": len(difference), "bootstrap_draws": draws, "seed": SEED,
+        "change_pp": float(100 * difference.mean()),
+        "ci_low_pp": float(100 * low), "ci_high_pp": float(100 * high),
+        "paired_se_pp": float(100 * difference.std(ddof=1) / np.sqrt(len(difference))),
+        "individual_change_q25_pp": float(100 * np.quantile(difference, 0.25)),
+        "individual_change_median_pp": float(100 * np.median(difference)),
+        "individual_change_q75_pp": float(100 * np.quantile(difference, 0.75)),
+    }
+
+
+def main():
+    rates, monthly = prepare(load_food())
+    comparison = paired_summary(rates)
+    # Deliberately wrong independence assumption, retained as a teaching contrast.
+    p = monthly.logging_percent.to_numpy() / 100
+    n = monthly.calendar_user_days.to_numpy()
+    naive_se = float(100 * np.sqrt(np.sum(p * (1 - p) / n)))
+    comparison.update({
+        "naive_independent_days_se_pp": naive_se,
+        "naive_ci_low_pp": comparison["change_pp"] - 1.96 * naive_se,
+        "naive_ci_high_pp": comparison["change_pp"] + 1.96 * naive_se,
+    })
+    cdf = pd.concat([ecdf(rates[m]).assign(period=m) for m in MONTHS], ignore_index=True)
+    assert np.allclose(monthly.logging_percent,
+                       100 * monthly.observed_user_days / monthly.calendar_user_days)
+    assert cdf.groupby("period").users_at_value.sum().eq(len(rates)).all()
+    OUTPUT.mkdir(exist_ok=True)
+    monthly.to_csv(OUTPUT / "visualization_monthly.csv", index=False)
+    cdf.to_csv(OUTPUT / "visualization_ecdf.csv", index=False)
+    manifest = json.loads((ROOT.parent / "manifest.json").read_text())
+    result = {
+        "source_sha256": manifest["files"]["food_entries.csv.gz"]["sha256"],
+        "membership": "At least one observed day before 2016-05-01",
+        "observation": "user-month; fraction of calendar days with a food entry",
+        "interpretation": "descriptive within the selected cohort",
+        "months": monthly.to_dict(orient="records"), "paired_change": comparison,
+    }
+    save_result("visualization", result)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 2.15 Interactive Charts Must Preserve the Comparison
+
+An interactive display can help a manager inspect alternative denominators and distribution shapes. Each control also changes the information being presented. A month selector should update the numerator, denominator, labels, and distribution together. Retaining a stale count after filtering would make a correct plotted height describe the wrong population. Holding axes at 0–100% makes changes across selections comparable.
+
+The [mHealth chart](../../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html) compares the all-user and observed-logger denominators for a selected month. Its second panel displays the selected month's distribution across the full eligible cohort. The data table remains visible below the chart, with the observation counts and denominators for both months. Hover labels supplement the table. A reader can verify each rate without inferring a value from a bar's height.
+
+[Altair's tutorial](https://github.com/altair-viz/altair-tutorial) provides a declarative approach in which the chart specifies data fields, visual encodings, and interactions. The older tutorial's selection syntax differs from the version used here. The program uses Altair 5.5.0, a bound parameter, and explicitly fixed scales. [The widget documentation](https://altair-viz.github.io/user_guide/interactions/bindings_widgets.html) and [HTML-export documentation](https://altair-viz.github.io/user_guide/saving_charts.html) describe these operations. The exported HTML contains aggregate data and runs without a Python server. Its JavaScript libraries load from a public CDN, so chart rendering requires internet access.
+
+Static figures and interactive views should agree on every plotted value. Run `visualization.py` before `visualization_charts.py`. The chart program checks the monthly table against the saved numerical results and uses the same aggregate data for both forms of display.
+
+Python source: [visualization_charts.py](../../03_Data_and_Code/mHealth/recurring_examples/visualization_charts.py). From its directory, run `python visualization_charts.py`.
+
+```python
+"""Build TikZ figures and a browser chart from verified aggregate tables."""
+
+import json
+import altair as alt
+import pandas as pd
+from common import OUTPUT, ROOT
+from visualization import MONTHS
+
+FIGURES = ROOT.parents[2] / "06_Lecture_Notes" / "figures"
+BLUE, ORANGE = "#13294B", "#FF5F05"
+
+
+def coordinates(x, y):
+    return " ".join(f"({a:.8f},{b:.8f})" for a, b in zip(x, y))
+
+
+def tikz_figures(monthly, cdf, result):
+    FIGURES.mkdir(exist_ok=True)
+    bars = r"""\begin{tikzpicture}
+\begin{axis}[ybar,bar width=22pt,width=12.5cm,height=6.3cm,
+ ymin=0,ymax=100,ylabel={Calendar Days With Logs (\%)},
+ xtick={0,1},xticklabels={May,June},enlarge x limits=0.6,
+ legend style={at={(0.5,-0.17)},anchor=north,legend columns=2,column sep=10pt},
+ nodes near coords,point meta=y,
+ every node near coord/.append style={font=\footnotesize,/pgf/number format/fixed,/pgf/number format/precision=1}]
+\addplot[draw=IlliniBlue,fill=IlliniBlue!18] coordinates {ALL};
+\addplot[draw=IlliniOrange,fill=IlliniOrange!18] coordinates {CONDITIONAL};
+\legend{All eligible users,Users with logs that month}
+\end{axis}
+\end{tikzpicture}
+"""
+    bars = bars.replace("ALL", coordinates([0, 1], monthly.logging_percent))
+    bars = bars.replace("CONDITIONAL", coordinates([0, 1], monthly.conditional_logging_percent))
+    (FIGURES / "M02_logging_denominators.tex").write_text(bars)
+    distribution = r"""\begin{tikzpicture}
+\begin{axis}[width=12.5cm,height=6.5cm,xmin=0,xmax=100,ymin=0,ymax=100,
+ xlabel={User's Calendar Days With Logs (\%)},ylabel={Users at or Below That Value (\%)},
+ legend style={at={(0.03,0.97)},anchor=north west},grid=major]
+"""
+    for month, style in zip(MONTHS, ["IlliniBlue,solid", "IlliniOrange,dashed"]):
+        part = cdf.loc[cdf.period.eq(month)]
+        points = "(0,0) " + coordinates(part.logging_percent, part.cumulative_percent)
+        distribution += rf"\addplot[{style},const plot] coordinates {{{points}}};" + "\n"
+    distribution += "\\legend{May,June}\n\\end{axis}\n\\end{tikzpicture}\n"
+    (FIGURES / "M02_logging_distribution.tex").write_text(distribution)
+    comparison = result["paired_change"]
+    intervals = r"""\begin{tikzpicture}
+\begin{axis}[width=11cm,height=5.5cm,xmin=-10,xmax=1,ymin=-0.6,ymax=1.6,
+ xlabel={June Minus May (Percentage Points)},ytick={0,1},
+ yticklabels={{Independent days (incorrect)},{Paired user bootstrap}},
+ grid=major]
+\addplot[Storm,dashed] coordinates {(0,-0.5) (0,1.5)};
+"""
+    for y, low, high, color in [
+        (1, comparison["ci_low_pp"], comparison["ci_high_pp"], "IlliniBlue"),
+        (0, comparison["naive_ci_low_pp"], comparison["naive_ci_high_pp"], "Storm"),
+    ]:
+        points = coordinates([low, high], [y, y])
+        intervals += rf"\addplot[{color},very thick,mark=|,mark size=5pt] coordinates {{{points}}};" + "\n"
+        intervals += rf"\addplot[{color},only marks,mark=*] coordinates {{({comparison['change_pp']:.8f},{y})}};" + "\n"
+    intervals += "\\end{axis}\n\\end{tikzpicture}\n"
+    (FIGURES / "M03_logging_uncertainty.tex").write_text(intervals)
+
+
+def interactive_chart(monthly, cdf):
+    records = []
+    for row in monthly.to_dict(orient="records"):
+        for population, users, denominator, value in [
+            ("All eligible users", row["eligible_users"], row["calendar_user_days"], row["logging_percent"]),
+            ("Users with logs", row["users_with_logs"], row["logger_calendar_days"], row["conditional_logging_percent"]),
+        ]:
+            records.append({"period": row["period"], "population": population,
+                            "users": users, "calendar_days": denominator,
+                            "observed_days": row["observed_user_days"], "percent": value})
+    table = pd.DataFrame(records)
+    month = alt.param(name="month", value=MONTHS[0],
+                      bind=alt.binding_select(options=MONTHS, name="Month: "))
+    bars = alt.Chart(table).transform_filter(alt.datum.period == month).mark_bar().encode(
+        x=alt.X("population:N", title=None, axis=alt.Axis(labelAngle=0)),
+        y=alt.Y("percent:Q", title="Calendar Days With Logs (%)", scale=alt.Scale(domain=[0, 100])),
+        color=alt.Color("population:N", scale=alt.Scale(range=[BLUE, ORANGE]), legend=None),
+        tooltip=[alt.Tooltip("population:N"), alt.Tooltip("percent:Q", format=".2f"),
+                 "users:Q", "observed_days:Q", "calendar_days:Q"],
+    ).properties(width=320, height=300, title="The Denominator Changes the Rate")
+    curve = alt.Chart(cdf).transform_filter(alt.datum.period == month).mark_line(
+        interpolate="step-after", color=BLUE
+    ).encode(
+        x=alt.X("logging_percent:Q", title="User's Days With Logs (%)", scale=alt.Scale(domain=[0, 100])),
+        y=alt.Y("cumulative_percent:Q", title="Users at or Below (%)", scale=alt.Scale(domain=[0, 100])),
+        order="logging_percent:Q",
+        tooltip=[alt.Tooltip("logging_percent:Q", format=".2f"),
+                 alt.Tooltip("cumulative_percent:Q", format=".2f"), "users_at_value:Q", "eligible_users:Q"],
+    ).properties(width=320, height=300, title="Distribution Across All Eligible Users")
+    chart = alt.hconcat(bars, curve).add_params(month).configure_axis(
+        labelColor=BLUE, titleColor=BLUE, labelFontSize=12, titleFontSize=12
+    ).configure_title(color=BLUE, fontSize=15).configure_view(stroke=None)
+    chart.save(OUTPUT / "visualization_interactive.vl.json")
+    html = chart.to_html(embed_options={"renderer": "svg", "actions": False})
+    table_text = table.rename(columns={
+        "period": "Month", "population": "Population", "users": "Users",
+        "calendar_days": "Calendar User-Days", "observed_days": "Days With Logs",
+        "percent": "Days With Logs (%)",
+    }).to_html(index=False, float_format=lambda x: f"{x:.2f}", border=0)
+    n = int(monthly.eligible_users.iloc[0])
+    introduction = (
+        "<main><h1>mHealth: Logging Coverage</h1><p>Marketing Analytics · By Nathan Yang</p>"
+        f"<p>{n} users observed before May 2016. The left chart compares two denominators. "
+        "The right chart retains every eligible user, including users with no recorded days. "
+        "Change the month to inspect both views. Both axes retain the same scales.</p>"
+    )
+    description = (
+        "<h2>Chart Data</h2><p>Calendar user-days equal users multiplied by days in the month. "
+        "No logged day means no observed food entry, without implying zero consumption. "
+        "These descriptive comparisons do not estimate a treatment effect.</p>"
+        + table_text
+        + "<p>Internet access is required to display the charts. "
+        "The data table remains available offline.</p></main>"
+    )
+    css = """<style>body{font:16px system-ui;color:#13294B;max-width:1000px;margin:32px auto;padding:0 24px}
+    h1{border-bottom:3px solid #FF5F05;padding-bottom:12px}p{line-height:1.55;max-width:850px}
+    table{border-collapse:collapse;font-size:14px}td,th{padding:10px;border-bottom:1px solid #C6C7C6;text-align:right}
+    #vis{max-width:100%;overflow-x:auto}th{background:#EEF1F5}select{font-size:16px;padding:6px}.vega-bindings{margin:15px 0}</style>"""
+    html = html.replace("</head>", css + "</head>").replace("<body>", "<body>" + introduction)
+    html = html.replace("</body>", description + "</body>")
+    (OUTPUT / "visualization_interactive.html").write_text(html)
+
+
+if __name__ == "__main__":
+    monthly = pd.read_csv(OUTPUT / "visualization_monthly.csv")
+    cdf = pd.read_csv(OUTPUT / "visualization_ecdf.csv")
+    result = json.loads((OUTPUT / "visualization.json").read_text())
+    pd.testing.assert_frame_equal(monthly, pd.DataFrame(result["months"]), check_dtype=False)
+    assert cdf.groupby("period").users_at_value.sum().eq(result["paired_change"]["users"]).all()
+    tikz_figures(monthly, cdf, result)
+    interactive_chart(monthly, cdf)
+    print("Built three TikZ figures, the Vega-Lite specification, and interactive HTML.")
+```

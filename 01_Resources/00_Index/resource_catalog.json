@@ -6192,6 +6192,502 @@
    "notes": "mistat on PyPI (MIT): https://pypi.org/project/mistat/ . The repository's license is not visible. A companion volume, Industrial Statistics, came out in 2023. Likely available through UIUC SpringerLink (not checked)."
   },
   {
+   "id": "yau-flowingdata",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Nathan Yau / FlowingData",
+   "priority": "core",
+   "title": "FlowingData (Nathan Yau)",
+   "authors": "Yau, N.",
+   "year": 2026,
+   "type": "website",
+   "url": "https://flowingdata.com/",
+   "access": "freemium",
+   "level": "intro",
+   "modules": [
+    "M2",
+    "M8"
+   ],
+   "ai_angle": false,
+   "summary": "Nathan Yau's long-running site on visualization and statistics: free posts that collect and critique notable charts, plus step-by-step tutorials (mostly R, some Python and JavaScript) and the 'Process' newsletter, which are for paying members.",
+   "wiki_use": "Source of strong current examples for an M2 'chart critique' activity. Link to the posts; the members-only tutorials cannot be redistributed.",
+   "verified_via": "search",
+   "notes": "Tutorials are members-only (https://flowingdata.com/membership/). Nothing was downloaded."
+  },
+  {
+   "id": "yau-visualize-this-2e",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Nathan Yau / FlowingData",
+   "priority": "recommended",
+   "title": "Visualize This: The FlowingData Guide to Design, Visualization, and Statistics (2nd ed.)",
+   "authors": "Yau, N.",
+   "year": 2024,
+   "type": "book",
+   "venue": "Wiley",
+   "url": "https://book.flowingdata.com/",
+   "access": "paid",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Revised second edition (2024) of Yau's practical guide to turning data into charts, covering design choices, chart types for time, proportions, relationships and space, and tools from spreadsheets to R and JavaScript.",
+   "wiki_use": "Instructor reference and optional student reading for M2. Check whether the UIUC library offers an e-book licence.",
+   "verified_via": "search",
+   "notes": "Commercial book with no open code repository found; link only."
+  },
+  {
+   "id": "ft-visual-vocabulary",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Chart choice",
+   "priority": "core",
+   "title": "Visual Vocabulary (Financial Times chart-doctor)",
+   "authors": "Financial Times Visual Journalism team",
+   "year": 2021,
+   "type": "website",
+   "url": "https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md",
+   "access": "open",
+   "license": "MIT (repository)",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "The FT's one-page poster that organizes chart types by the relationship you want to show (deviation, correlation, ranking, distribution, change over time, part-to-whole, magnitude, spatial, flow).",
+   "wiki_use": "M2 reference for choosing a display from the analytical question. Preserve attribution and the MIT license when reproducing the poster.",
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/Financial-Times__chart-doctor",
+   "verified_via": "fetch",
+   "download": {
+    "repo": "https://github.com/Financial-Times/chart-doctor",
+    "paths": [
+     "visual-vocabulary"
+    ],
+    "license": "MIT"
+   }
+  },
+  {
+   "id": "rougier-scientific-visualization-book",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Matplotlib in depth",
+   "priority": "recommended",
+   "title": "Scientific Visualization: Python + Matplotlib (open-access book and code)",
+   "authors": "Rougier, N. P.",
+   "year": 2021,
+   "type": "book",
+   "url": "https://github.com/rougier/scientific-visualization-book",
+   "access": "open",
+   "license": "BSD-2-Clause (code); CC BY-NC-SA 4.0 (book), separately specified in LICENSE.txt",
+   "level": "intermediate",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Open-access book on making publication-quality figures with Matplotlib (anatomy of a figure, colors, typography, layout, animation, common pitfalls), with the full source code for every figure.",
+   "wiki_use": "Instructor resource for polishing the course's own figures, and a source of 'make this chart better' exercises. The code folder is saved locally.",
+   "tools": [
+    "matplotlib"
+   ],
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/rougier__scientific-visualization-book",
+   "verified_via": "search",
+   "notes": "The book PDF was not downloaded. LICENSE.txt separately licenses code under BSD-2-Clause and book material under CC BY-NC-SA 4.0. The original license file is retained.",
+   "download": {
+    "repo": "https://github.com/rougier/scientific-visualization-book",
+    "paths": [
+     "code"
+    ],
+    "license": "BSD-2-Clause"
+   }
+  },
+  {
+   "id": "matplotlib-cheatsheets-repo",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Matplotlib in depth",
+   "priority": "recommended",
+   "title": "Matplotlib cheatsheets and handouts (source)",
+   "authors": "Matplotlib developers; Rougier, N. P.",
+   "year": 2025,
+   "type": "tool",
+   "url": "https://github.com/matplotlib/cheatsheets",
+   "access": "open",
+   "license": "BSD-2-Clause",
+   "level": "intro",
+   "modules": [
+    "M2",
+    "M1"
+   ],
+   "ai_angle": false,
+   "summary": "Source for the official Matplotlib cheatsheets and beginner, intermediate and tips handouts.",
+   "wiki_use": "Link the rendered PDFs (matplotlib.org/cheatsheets) from the wiki; the saved source lets you rebuild or adapt them.",
+   "tools": [
+    "matplotlib"
+   ],
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/matplotlib__cheatsheets",
+   "verified_via": "fetch",
+   "download": {
+    "repo": "https://github.com/matplotlib/cheatsheets",
+    "paths": [],
+    "license": "BSD-2-Clause"
+   }
+  },
+  {
+   "id": "rougier-matplotlib-cheatsheet",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Matplotlib in depth",
+   "priority": "optional",
+   "title": "Matplotlib cheat sheet (Rougier)",
+   "authors": "Rougier, N. P.",
+   "year": 2021,
+   "type": "tool",
+   "url": "https://github.com/rougier/matplotlib-cheatsheet",
+   "access": "open",
+   "license": "BSD-2-Clause",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Compact cheat sheet covering Matplotlib's figure anatomy, styles, colormaps and annotation options, with the scripts that generate it.",
+   "wiki_use": "Optional quick reference alongside the official cheatsheets.",
+   "tools": [
+    "matplotlib"
+   ],
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/rougier__matplotlib-cheatsheet",
+   "verified_via": "fetch",
+   "download": {
+    "repo": "https://github.com/rougier/matplotlib-cheatsheet",
+    "paths": [],
+    "license": "BSD-2-Clause"
+   }
+  },
+  {
+   "id": "seaborn-tutorial-notebooks",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Python plotting libraries",
+   "priority": "core",
+   "title": "seaborn user-guide tutorial notebooks",
+   "authors": "Waskom, M.",
+   "year": 2025,
+   "type": "notebook",
+   "url": "https://github.com/mwaskom/seaborn/tree/master/doc/_tutorial",
+   "access": "open",
+   "license": "BSD-3-Clause",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "The notebooks behind seaborn's official user guide: the objects interface, distributions, relational and categorical plots, regression plots, multi-plot grids, aesthetics and color palettes.",
+   "wiki_use": "Core M2 lab material in the library students will use most. Adapt sections into wiki exercises rather than linking the whole guide.",
+   "tools": [
+    "seaborn",
+    "matplotlib",
+    "pandas"
+   ],
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/mwaskom__seaborn",
+   "verified_via": "fetch",
+   "download": {
+    "repo": "https://github.com/mwaskom/seaborn",
+    "paths": [
+     "doc/_tutorial"
+    ],
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "id": "altair-tutorial-notebooks",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Python plotting libraries",
+   "priority": "recommended",
+   "title": "Altair tutorial notebooks (Exploratory Data Visualization with Altair)",
+   "authors": "VanderPlas, J.; Altair developers",
+   "year": 2018,
+   "type": "notebook",
+   "url": "https://github.com/altair-viz/altair-tutorial",
+   "access": "open",
+   "license": "MIT",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Short, sequenced notebooks introducing declarative visualization with Altair: simple charts, binning and aggregation, compound charts, interactivity and exploration.",
+   "wiki_use": "Altair renders in the browser, so these suit interactive wiki pages. Pairs with the UW visualization curriculum already in this folder.",
+   "tools": [
+    "altair"
+   ],
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/altair-viz__altair-tutorial",
+   "verified_via": "fetch",
+   "notes": "The repository identifies the tutorial as PyCon 2018 and uses older selection APIs. The original course adaptation uses Altair 5.5.0; see visualization_charts.py.",
+   "download": {
+    "repo": "https://github.com/altair-viz/altair-tutorial",
+    "paths": [
+     "notebooks"
+    ],
+    "license": "MIT"
+   }
+  },
+  {
+   "id": "bokeh-tutorial-notebooks",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Python plotting libraries",
+   "priority": "optional",
+   "title": "Bokeh tutorial notebooks",
+   "authors": "Bokeh developers",
+   "year": 2024,
+   "type": "notebook",
+   "url": "https://github.com/bokeh/tutorial",
+   "access": "open",
+   "license": "BSD-3-Clause",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Official 15-notebook Bokeh tutorial on interactive web plots: basic plots, styling, layouts, interactions, data sources and widgets.",
+   "wiki_use": "Option for interactive dashboards on the wiki or in final-project blogs.",
+   "tools": [
+    "bokeh"
+   ],
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/bokeh__tutorial",
+   "verified_via": "fetch",
+   "download": {
+    "repo": "https://github.com/bokeh/tutorial",
+    "paths": [
+     "notebooks"
+    ],
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "id": "holoviz-tutorial-notebooks",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Python plotting libraries",
+   "priority": "optional",
+   "title": "HoloViz tutorial (hvPlot, Panel, HoloViews)",
+   "authors": "HoloViz developers",
+   "year": 2025,
+   "type": "notebook",
+   "url": "https://github.com/holoviz/holoviz/tree/main/examples/tutorial",
+   "access": "open",
+   "license": "BSD-3-Clause",
+   "level": "intermediate",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Tutorial notebooks showing how to go from pandas to interactive plots with one-line hvPlot calls and build simple dashboards with Panel.",
+   "wiki_use": "Optional route to interactive dashboards for teams that want one in the final project.",
+   "tools": [
+    "hvplot",
+    "panel",
+    "holoviews"
+   ],
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/holoviz__holoviz",
+   "verified_via": "fetch",
+   "notes": "Some notebooks download example data on first run.",
+   "download": {
+    "repo": "https://github.com/holoviz/holoviz",
+    "paths": [
+     "examples/tutorial"
+    ],
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "id": "urban-institute-graphics-styleguide",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Style guides",
+   "priority": "recommended",
+   "title": "Urban Institute Data Visualization Style Guide (source)",
+   "authors": "Urban Institute",
+   "year": 2024,
+   "type": "website",
+   "url": "https://github.com/UrbanInstitute/graphics-styleguide",
+   "access": "open",
+   "license": "Apache-2.0",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Source for one of the best-known public data-visualization style guides: chart types, colors, typography, labels and accessibility rules for a research organization.",
+   "wiki_use": "Reference for chart conventions, labels, and accessibility. Graded requirements belong in released assignment briefs. Link to the published guide.",
+   "verified_via": "fetch",
+   "notes": "Default branch is 'oct_2024'. The repository is the style guide's website source (about 157 MB, mostly images), so it is linked rather than downloaded. Jon Schwabish (PolicyViz) discusses style guides at https://policyviz.com/2016/11/30/style-guides."
+  },
+  {
+   "id": "microsoft-viseval",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "AI-generated charts",
+   "priority": "optional",
+   "title": "VisEval: benchmark for LLM-generated visualizations (code)",
+   "authors": "Microsoft Research",
+   "year": 2024,
+   "type": "tool",
+   "url": "https://github.com/microsoft/VisEval",
+   "access": "open",
+   "license": "MIT",
+   "level": "advanced",
+   "modules": [
+    "M2",
+    "AI"
+   ],
+   "ai_angle": true,
+   "summary": "Code and data for evaluating whether charts generated by language models are valid, legal for the data and readable, the benchmark behind the VisEval paper already in this folder.",
+   "wiki_use": "Instructor background for the 'audit the AI's chart' activity; its checklist of failure types adapts well to a student rubric.",
+   "local_copy": "02_M2_Customer_Data_and_Visualization/repos/microsoft__VisEval",
+   "verified_via": "fetch",
+   "download": {
+    "repo": "https://github.com/microsoft/VisEval",
+    "paths": [],
+    "license": "MIT"
+   }
+  },
+  {
+   "id": "empathy87-storytelling-with-data-python",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Storytelling with data",
+   "priority": "recommended",
+   "title": "storytelling-with-data: Python/Matplotlib recreations of Knaflic's figures",
+   "authors": "empathy87 (GitHub)",
+   "year": 2020,
+   "type": "notebook",
+   "venue": "GitHub",
+   "url": "https://github.com/empathy87/storytelling-with-data",
+   "access": "open",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Notebooks that rebuild figures from 'Storytelling with Data' in Matplotlib, showing the before-and-after decluttering steps in code.",
+   "wiki_use": "Strong model for a 'declutter this chart with AI, then explain each change' exercise. Link only.",
+   "tools": [
+    "matplotlib"
+   ],
+   "verified_via": "fetch",
+   "notes": "The repository has no LICENSE file (all rights reserved by default), so it was not downloaded."
+  },
+  {
+   "id": "holtzy-data-to-viz",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Chart choice",
+   "priority": "recommended",
+   "title": "From Data to Viz: a decision tree for choosing charts",
+   "authors": "Holtz, Y.; Healy, C.",
+   "year": 2018,
+   "type": "website",
+   "url": "https://github.com/holtzy/data_to_viz",
+   "access": "open",
+   "license": "MIT (repository)",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Decision tree that leads from the type of data you have to suitable chart types, with a page per chart on caveats and common mistakes. Its sister site is the Python Graph Gallery.",
+   "wiki_use": "Pair with the FT Visual Vocabulary: one organizes charts by message, the other by data type.",
+   "verified_via": "fetch",
+   "notes": "The repository is the website's source (mostly HTML and images), so it was catalogued rather than downloaded."
+  },
+  {
+   "id": "datawrapper-blog-color-guides",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Color and design",
+   "priority": "recommended",
+   "title": "Datawrapper blog: guides to color in data visualization",
+   "authors": "Muth, L. C. (Datawrapper)",
+   "year": 2024,
+   "type": "blog",
+   "url": "https://www.datawrapper.de/blog/10-ways-to-use-fewer-colors-in-your-data-visualizations",
+   "access": "open",
+   "level": "intro",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Practical, well-illustrated posts on using fewer colors, building palettes, color keys and style-guide colors.",
+   "wiki_use": "Short readings for the design part of M2. Related posts: https://www.datawrapper.de/blog/create-good-color-palettes and https://www.datawrapper.de/blog/colors-for-data-vis-style-guides.",
+   "verified_via": "search"
+  },
+  {
+   "id": "munzner-vad-course",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Visualization principles",
+   "priority": "optional",
+   "title": "Visualization Analysis and Design: course page and lecture slides (CPSC 547)",
+   "authors": "Munzner, T.",
+   "year": 2019,
+   "type": "course",
+   "url": "https://cs.ubc.ca/~tmm/courses/547-19",
+   "access": "open",
+   "level": "advanced",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Tamara Munzner's UBC graduate course built on her textbook 'Visualization Analysis and Design', with free slides on the what-why-how framework, marks and channels, and evaluation.",
+   "wiki_use": "Instructor background for the conceptual framing of M2 (marks and channels, effectiveness rankings).",
+   "verified_via": "search"
+  },
+  {
+   "id": "pynarrative-data-storytelling",
+   "folder": "02_M2_Customer_Data_and_Visualization",
+   "category": "M2",
+   "section": "Data visualization: practitioners, guides and code",
+   "subtopic": "Storytelling with data",
+   "priority": "optional",
+   "title": "PyNarrative: A Python Library for Data Storytelling",
+   "authors": "SciTePress paper (2025)",
+   "year": 2025,
+   "type": "paper",
+   "url": "https://www.scitepress.org/PublishedPapers/2025/132599",
+   "access": "open",
+   "level": "intermediate",
+   "modules": [
+    "M2"
+   ],
+   "ai_angle": false,
+   "summary": "Describes a Python library built on Altair for adding narrative structure (titles, annotations, story steps) to charts.",
+   "wiki_use": "Optional tool for students who want annotated, story-style charts in their final blog.",
+   "tools": [
+    "altair"
+   ],
+   "verified_via": "search",
+   "notes": "The paper's author list was not confirmed in search results; check it before citing."
+  },
+  {
    "id": "wedel-kannan-2016-marketing-analytics-data-rich",
    "folder": "01_M1_Marketing_Analytics_and_Python",
    "category": "M1",
@@ -15084,33 +15580,6 @@
    ],
    "verified_via": "fetch",
    "notes": "No LICENSE file, so link only. Two commits; date unknown (search result showed a 2018 push). This was the only other Python port of the Chapman & Feit book found."
-  },
-  {
-   "id": "empathy87-storytelling-with-data-python",
-   "folder": "02_M2_Customer_Data_and_Visualization",
-   "category": "M2",
-   "section": "Python for marketing analytics: notebooks and code",
-   "subtopic": "Storytelling with Data charts recreated in matplotlib",
-   "priority": "recommended",
-   "title": "storytelling-with-data: plots from Knaflic's book implemented in Python",
-   "authors": "empathy87 (GitHub)",
-   "year": 2023,
-   "type": "notebook",
-   "venue": "GitHub",
-   "url": "https://github.com/empathy87/storytelling-with-data",
-   "access": "open",
-   "level": "intro",
-   "modules": [
-    "M2"
-   ],
-   "ai_angle": false,
-   "summary": "Popular (400+ stars) set of notebooks recreating the 'before/after' decluttered charts from Storytelling with Data in matplotlib.",
-   "wiki_use": "Link from the M2 data-viz page. Students ask an AI assistant to apply the same decluttering to their own chart, then check the result against the book's principles.",
-   "tools": [
-    "matplotlib"
-   ],
-   "verified_via": "search",
-   "notes": "No license (GitHub API license null), so link only. Last push 2023-09."
   },
   {
    "id": "loduca-data-storytelling-altair-genai",

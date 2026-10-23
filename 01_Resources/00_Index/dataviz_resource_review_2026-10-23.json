@@ -1,0 +1,202 @@
+{
+  "reviewed_on": "2026-10-23",
+  "scope": "Metadata for all 17 entries; selected source documentation, notebook narrative, and licenses. No line-by-line review of every repository.",
+  "catalog_namespace": "additional",
+  "catalog_counts": {
+    "before": 613,
+    "after": 629,
+    "source_entries": 17
+  },
+  "inspected_sources": [
+    "Financial-Times__chart-doctor/visual-vocabulary/README.md",
+    "mwaskom__seaborn/doc/_tutorial/distributions.ipynb",
+    "mwaskom__seaborn/doc/_tutorial/error_bars.ipynb",
+    "mwaskom__seaborn/doc/_tutorial/color_palettes.ipynb",
+    "altair-viz__altair-tutorial/README.md",
+    "altair-viz__altair-tutorial/notebooks/06-Selections.ipynb",
+    "microsoft__VisEval/README.md",
+    "rougier__scientific-visualization-book/LICENSE.txt"
+  ],
+  "reference_root": "01_Resources/02_M2_Customer_Data_and_Visualization/repos",
+  "records": [
+    {
+      "source_id": "yau-flowingdata",
+      "catalog_id": "yau-flowingdata",
+      "title": "FlowingData (Nathan Yau)",
+      "url": "https://flowingdata.com/",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": null,
+      "local_copy": null
+    },
+    {
+      "source_id": "yau-visualize-this-2e",
+      "catalog_id": "yau-visualize-this-2e",
+      "title": "Visualize This: The FlowingData Guide to Design, Visualization, and Statistics (2nd ed.)",
+      "url": "https://book.flowingdata.com/",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": null,
+      "local_copy": null
+    },
+    {
+      "source_id": "ft-visual-vocabulary",
+      "catalog_id": "ft-visual-vocabulary",
+      "title": "Visual Vocabulary (Financial Times chart-doctor)",
+      "url": "https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md",
+      "incorporation": "M2 2.14.1: chart choice from the question",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "MIT (repository)",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/Financial-Times__chart-doctor",
+      "snapshot_commit": "befb9cba21849432a4029d0cfdda938819ae733f"
+    },
+    {
+      "source_id": "rougier-scientific-visualization-book",
+      "catalog_id": "rougier-scientific-visualization-book",
+      "title": "Scientific Visualization: Python + Matplotlib (open-access book and code)",
+      "url": "https://github.com/rougier/scientific-visualization-book",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "BSD-2-Clause (code); CC BY-NC-SA 4.0 (book), separately specified in LICENSE.txt",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/rougier__scientific-visualization-book",
+      "snapshot_commit": "62fa569f30333c817c13e4dc757877c1192fd15a"
+    },
+    {
+      "source_id": "matplotlib-cheatsheets-repo",
+      "catalog_id": "matplotlib-cheatsheets-repo",
+      "title": "Matplotlib cheatsheets and handouts (source)",
+      "url": "https://github.com/matplotlib/cheatsheets",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "BSD-2-Clause",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/matplotlib__cheatsheets",
+      "snapshot_commit": "e1f77b5067cb207359b8637188f1f2ad4a260e60"
+    },
+    {
+      "source_id": "rougier-matplotlib-cheatsheet",
+      "catalog_id": "rougier-matplotlib-cheatsheet",
+      "title": "Matplotlib cheat sheet (Rougier)",
+      "url": "https://github.com/rougier/matplotlib-cheatsheet",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "BSD-2-Clause",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/rougier__matplotlib-cheatsheet",
+      "snapshot_commit": "f65e2b11744ec89d4bcf269a92b8b977de2d0279"
+    },
+    {
+      "source_id": "seaborn-tutorial-notebooks",
+      "catalog_id": "seaborn-tutorial-notebooks",
+      "title": "seaborn user-guide tutorial notebooks",
+      "url": "https://github.com/mwaskom/seaborn/tree/master/doc/_tutorial",
+      "incorporation": "M2 2.14.2 and M3 3.6.1: distributions and paired uncertainty",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "BSD-3-Clause",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/mwaskom__seaborn",
+      "snapshot_commit": "c1cb287835852406691aed60ea0c62710f2c6b18"
+    },
+    {
+      "source_id": "altair-tutorial-notebooks",
+      "catalog_id": "altair-tutorial-notebooks",
+      "title": "Altair tutorial notebooks (Exploratory Data Visualization with Altair)",
+      "url": "https://github.com/altair-viz/altair-tutorial",
+      "incorporation": "M2 2.15: original interactive chart with Altair 5.5.0",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "MIT",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/altair-viz__altair-tutorial",
+      "snapshot_commit": "1a28d05755d1fffa4d75a11f4eb275b7659d8c45"
+    },
+    {
+      "source_id": "bokeh-tutorial-notebooks",
+      "catalog_id": "bokeh-tutorial-notebooks",
+      "title": "Bokeh tutorial notebooks",
+      "url": "https://github.com/bokeh/tutorial",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "BSD-3-Clause",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/bokeh__tutorial",
+      "snapshot_commit": "a9e6ea3c45cb96c37d677d98699d9a1d04453dd5"
+    },
+    {
+      "source_id": "holoviz-tutorial-notebooks",
+      "catalog_id": "holoviz-tutorial-notebooks",
+      "title": "HoloViz tutorial (hvPlot, Panel, HoloViews)",
+      "url": "https://github.com/holoviz/holoviz/tree/main/examples/tutorial",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "BSD-3-Clause",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/holoviz__holoviz",
+      "snapshot_commit": "2ff485c7c359cba6ce0dbd986e78a12b0d9816e5"
+    },
+    {
+      "source_id": "urban-institute-graphics-styleguide",
+      "catalog_id": "urban-institute-graphics-styleguide",
+      "title": "Urban Institute Data Visualization Style Guide (source)",
+      "url": "https://github.com/UrbanInstitute/graphics-styleguide",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "Apache-2.0",
+      "local_copy": null
+    },
+    {
+      "source_id": "microsoft-viseval",
+      "catalog_id": "microsoft-viseval",
+      "title": "VisEval: benchmark for LLM-generated visualizations (code)",
+      "url": "https://github.com/microsoft/VisEval",
+      "incorporation": "M8 8.12: constructed chart errors and three evaluation dimensions",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "MIT",
+      "local_copy": "02_M2_Customer_Data_and_Visualization/repos/microsoft__VisEval",
+      "snapshot_commit": "55162fac5765d8873180d962cce7e20e75b2c092"
+    },
+    {
+      "source_id": "empathy87-storytelling-with-data-python",
+      "catalog_id": "empathy87-storytelling-with-data-python",
+      "title": "storytelling-with-data: Python/Matplotlib recreations of Knaflic's figures",
+      "url": "https://github.com/empathy87/storytelling-with-data",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": null,
+      "local_copy": null
+    },
+    {
+      "source_id": "holtzy-data-to-viz",
+      "catalog_id": "holtzy-data-to-viz",
+      "title": "From Data to Viz: a decision tree for choosing charts",
+      "url": "https://github.com/holtzy/data_to_viz",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": "MIT (repository)",
+      "local_copy": null
+    },
+    {
+      "source_id": "datawrapper-blog-color-guides",
+      "catalog_id": "datawrapper-blog-color-guides",
+      "title": "Datawrapper blog: guides to color in data visualization",
+      "url": "https://www.datawrapper.de/blog/10-ways-to-use-fewer-colors-in-your-data-visualizations",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": null,
+      "local_copy": null
+    },
+    {
+      "source_id": "munzner-vad-course",
+      "catalog_id": "munzner-vad-course",
+      "title": "Visualization Analysis and Design: course page and lecture slides (CPSC 547)",
+      "url": "https://cs.ubc.ca/~tmm/courses/547-19",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": null,
+      "local_copy": null
+    },
+    {
+      "source_id": "pynarrative-data-storytelling",
+      "catalog_id": "pynarrative-data-storytelling",
+      "title": "PyNarrative: A Python Library for Data Storytelling",
+      "url": "https://www.scitepress.org/PublishedPapers/2025/132599",
+      "incorporation": "Optional or instructor reference; no course program execution claimed",
+      "source_execution": "Downloaded reference code not executed",
+      "license": null,
+      "local_copy": null
+    }
+  ]
+}

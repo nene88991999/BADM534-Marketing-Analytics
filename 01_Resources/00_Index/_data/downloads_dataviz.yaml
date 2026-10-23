@@ -1,0 +1,57 @@
+# Download plan: data visualization resources (2026-10-23)
+- repo: Financial-Times/chart-doctor
+  paths:
+  - visual-vocabulary
+  dest: M2
+  ids:
+  - ft-visual-vocabulary
+- repo: rougier/scientific-visualization-book
+  paths:
+  - code
+  dest: M2
+  ids:
+  - rougier-scientific-visualization-book
+- repo: matplotlib/cheatsheets
+  paths: []
+  dest: M2
+  ids:
+  - matplotlib-cheatsheets-repo
+- repo: rougier/matplotlib-cheatsheet
+  paths: []
+  dest: M2
+  ids:
+  - rougier-matplotlib-cheatsheet
+- repo: mwaskom/seaborn
+  paths:
+  - doc/_tutorial
+  dest: M2
+  ids:
+  - seaborn-tutorial-notebooks
+- repo: altair-viz/altair-tutorial
+  paths:
+  - notebooks
+  dest: M2
+  ids:
+  - altair-tutorial-notebooks
+- repo: bokeh/tutorial
+  paths:
+  - notebooks
+  dest: M2
+  ids:
+  - bokeh-tutorial-notebooks
+- repo: holoviz/holoviz
+  paths:
+  - examples/tutorial
+  dest: M2
+  ids:
+  - holoviz-tutorial-notebooks
+- repo: UrbanInstitute/graphics-styleguide
+  paths: []
+  dest: M2
+  ids:
+  - urban-institute-graphics-styleguide
+- repo: microsoft/VisEval
+  paths: []
+  dest: M2
+  ids:
+  - microsoft-viseval

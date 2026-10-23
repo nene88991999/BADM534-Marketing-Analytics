@@ -155,7 +155,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 
 ## Also relevant (catalogued in other folders)
 
-- **`02_M2_Customer_Data_and_Visualization`**: [EcommerceTools: data science toolkit for ecommerce and marketing science](https://github.com/practical-data-science/ecommercetools)
+- **`02_M2_Customer_Data_and_Visualization`**: [Matplotlib cheatsheets and handouts (source)](https://github.com/matplotlib/cheatsheets); [EcommerceTools: data science toolkit for ecommerce and marketing science](https://github.com/practical-data-science/ecommercetools)
 - **`05_M5_Text_and_Social_Media_Analytics`**: [Introduction to Cultural Analytics & Python](https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html); [Natural Language Processing with Python: Analyzing Text with the Natural Language Toolkit](https://www.nltk.org/book/)
 - **`06_M6_Causal_Inference_and_Experiments`**: [statsmodels.stats.power: tt_ind_solve_power / NormalIndPower](https://www.statsmodels.org/v0.14.4/generated/statsmodels.stats.power.tt_ind_solve_power.html)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking](https://oreilly.com/library/view/data-science-for/9781449374273)

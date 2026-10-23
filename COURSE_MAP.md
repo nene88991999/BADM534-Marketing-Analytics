@@ -19,7 +19,7 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 38 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 41 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -53,3 +53,7 @@ Full code is printed in the [notes](06_Lecture_Notes/README.md) and saved with [
 ## Additional Resource Applications
 
 The [resource integration map](06_Lecture_Notes/RESOURCE_INTEGRATION.md) connects all eight modules to executed extensions: fixed-cohort reviews, recency/frequency, price instruments, logging-gap survival, topic models, CUPED, basket associations, and generated-claim validation. It also identifies reference notebooks available for further adaptation and their execution status.
+
+## Visualization Applications
+
+M2, Sections 2.14–2.15, connect chart choice, denominator changes, distribution shape, and interactive filters using the same fixed mHealth cohort. M3, Section 3.6.1, shows why uncertainty follows the sampling unit. M8, Section 8.12, checks chart values, units, denominators, baselines, and interpretation against independent evidence. [Code and chart data](03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) accompany all three applications.

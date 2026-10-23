@@ -21,10 +21,14 @@ scripts += [
     "cuped.py",
     "association_rules.py",
     "claim_checks.py",
+    "test_visualization.py",
+    "visualization.py",
+    "visualization_charts.py",
+    "chart_audit.py",
 ]
 for script in scripts:
     subprocess.run([sys.executable, str(root / script)], check=True, cwd=root)
-packages = ["numpy", "pandas", "pyarrow", "scipy", "scikit-learn", "statsmodels"]
+packages = ["numpy", "pandas", "pyarrow", "scipy", "scikit-learn", "statsmodels", "altair"]
 save_result(
     "environment",
     {

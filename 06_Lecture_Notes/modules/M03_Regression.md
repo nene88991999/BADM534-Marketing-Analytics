@@ -88,6 +88,23 @@ For an approximately normal coefficient estimate, a rough 95% interval is the es
 
 Heteroskedasticity means that residual variance differs across observations. Heteroskedasticity-robust standard errors can address that feature for inference under suitable sampling conditions; they do not repair omitted-variable bias. Repeated store-week observations may share persistent store shocks. Clustered standard errors allow dependence within a specified cluster under their asymptotic conditions. The relevant number of independent clusters can be much smaller than the number of rows. With few clusters, conventional approximations may be unreliable and design-specific methods are needed.
 
+### 3.6.1 A Paired Change Requires Paired Uncertainty
+
+A manager comparing May and June logging has two observations for each eligible mHealth user. The target is the average within-user change in the fraction of calendar days with a recorded entry. Let $p_{iM}$ and $p_{iJ}$ denote the May and June fractions and define $d_i=p_{iJ}-p_{iM}$. With users treated as independent sampling units, an estimated standard error for the average change is
+
+$$
+\widehat{\mathrm{SE}}(\bar d)=\frac{s_d}{\sqrt N},\qquad
+s_d^2=\frac{1}{N-1}\sum_i(d_i-\bar d)^2.
+$$
+
+This calculation preserves the dependence between a user's two outcomes. The variance identity $\operatorname{Var}(p_{iJ}-p_{iM})=\operatorname{Var}(p_{iJ})+\operatorname{Var}(p_{iM})-2\operatorname{Cov}(p_{iJ},p_{iM})$ explains why separately resampling the two months changes the uncertainty calculation. Persistent user differences can cancel in a paired contrast. Dependence among days within a user also means that the number of calendar rows overstates the number of independent sampling units.
+
+For the fixed population defined in M2, Section 2.14, the average change is $-5.12$ percentage points. Resampling complete users with both months together gives a 95% percentile-bootstrap interval of $[-7.93,-2.43]$ percentage points. The standard error calculated from the dispersion of user-level changes is 1.38 percentage points. An independent-Bernoulli-day calculation gives 0.66 percentage points and the narrower interval $[-6.42,-3.82]$. That calculation discards the observed dependence structure. A plotting library's default error bar can conceal this difference if the analyst supplies calendar rows without specifying the resampling unit.
+
+![The same descriptive mean change has different intervals when the sampling unit is incorrectly changed from users to independent days.](../figures/M03_logging_uncertainty.png)
+
+The bootstrap treats observed user histories as draws from a common user distribution, with independence across users and both months fixed. It does not incorporate shocks shared across the entire platform or establish representativeness beyond this selected cohort. Both intervals concern a descriptive temporal difference. A causal claim about a product change would require an assignment design and uncertainty appropriate to that design. The full `visualization.py` program in M2, Section 2.14.3, calculates the monthly table, paired bootstrap, and independent-day comparison; `visualization_charts.py` generates the interval figure from those results.
+
 ## 3.7 Diagnostics and Panel Data
 
 Inspect residuals against fitted values and important predictors for nonlinear patterns and changing variance. Investigate influential observations, errors in units, and unusual leverage. Multicollinearity can make individual coefficients unstable even when predictions are reasonably stable, because several predictors explain nearly the same variation. Removing a variable solely to obtain a smaller p-value changes the question and can introduce omitted-variable bias.

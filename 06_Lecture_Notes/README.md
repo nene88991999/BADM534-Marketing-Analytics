@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 41 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -29,7 +29,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 130 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 141 pages.
 
 ## Editing and Building
 
@@ -58,3 +58,7 @@ After changes, run the relevant analyses and `python scripts/check_lecture_code.
 Give an assistant the relevant Markdown module, its figure descriptions, and any related CSV or calculation output. Cite module and numbered section, such as “M6, Section 6.4.” Do not infer a deadline or assessment rule from an illustrative exercise. The exercises are public teaching material.
 
 Follow the [preferred Beamer format](../05_Slides/AGENTS.md) when preparing lectures. Use each module's managerial question as the opening, then select the worked case, method, key figure, and decision implication. Keep the full derivation and consequential assumptions in the notes. Each TikZ file can be reused in a LaTeX slide deck; its PNG companion supports other presentation tools. Figures illustrate particular mechanisms and should retain the accompanying assumptions and synthetic-data labels.
+
+## Data Visualization
+
+M2, Sections 2.14–2.15, add chart selection, fixed and conditional denominators, empirical cumulative distributions, and an [interactive mHealth chart](../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html). M3, Section 3.6.1, compares paired-user uncertainty with an incorrect independent-day calculation. M8, Section 8.12, audits constructed chart errors. Three original TikZ figures and three complete Python programs support these additions. The [visualization guide](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) gives the commands, data definitions, and validation record.

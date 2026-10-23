@@ -399,3 +399,86 @@ if __name__ == "__main__":
     save_result("claim_checks", result)
     print(json.dumps(result, indent=2))
 ```
+
+## 8.12 An Executable Chart Can Still Misstate the Evidence
+
+A manager asks an AI assistant to plot monthly customer engagement. The generated program can run successfully and produce an attractive chart while changing the population, labeling a fraction as a percentage, or describing a temporal association as an intervention effect. A chart therefore needs checks of execution, fidelity to the analytical question, and readability. [VisEval](https://github.com/microsoft/VisEval) separates these dimensions when evaluating generated visualizations.
+
+The mHealth example provides an independent numerical reference. The requested measure is the percentage of all eligible calendar user-days with a log. Its two numerators and denominators are computed before plotting. The following constructed mistakes retain valid numerical inputs and executable drawing instructions. Each fails a different substantive requirement.
+
+| Constructed Chart Error | Consequence | Check |
+| --- | --- | --- |
+| Plot a fraction under a percent label | Values are 100 times too small | Recompute units |
+| Keep only users who logged | Population changes with the outcome | Reconcile denominators |
+| Start rate bars at 60% | Bar lengths distort magnitudes | Inspect baseline |
+| Declare the time difference causal | Claim exceeds the design | Inspect interpretation |
+
+The checker below accepts the correct specification and rejects all four constructed mistakes. Its numerator and denominator checks use the saved monthly evidence, rather than the plotted value as its own reference. This is a narrow validator for declared fields. It does not interpret unrestricted natural-language titles, inspect pixels, or guarantee that a rendered chart is readable. Review the displayed title, labels, clipping, color contrast, and all interactive selections separately. A chart can pass these field checks while still misleading through an omitted subgroup or an unsupported narrative.
+
+Ask a coding assistant to return the aggregate plotting table, units, eligibility rule, axis domains, and one hand-calculated plotted value with its code. A second review should compare those objects with the original analysis specification. Passing the assistant's own test is informative only when the expected answer was derived independently. The [Financial Times vocabulary](https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md) supports the choice of display, while [Rougier's visualization code](https://github.com/rougier/scientific-visualization-book) provides examples of figure construction and layout. The managerial claim must remain tied to the evidence and design.
+
+Run `visualization.py` first to create the evidence table, then run the audit. The false charts are constructed teaching cases; their rejection rates do not measure the reliability of any particular language model.
+
+Python source: [chart_audit.py](../../03_Data_and_Code/mHealth/recurring_examples/chart_audit.py). From its directory, run `python chart_audit.py`.
+
+```python
+"""Check a narrow chart specification against the monthly evidence table."""
+
+from copy import deepcopy
+import json
+import math
+from common import OUTPUT, save_result
+
+
+def check_chart(chart, evidence):
+    errors = []
+    expected = {row["period"]: row for row in evidence["months"]}
+    if chart.get("unit") != "percent of eligible user-days":
+        errors.append("axis unit")
+    if chart.get("interpretation") != "descriptive":
+        errors.append("interpretation")
+    if chart.get("mark") == "bar" and chart.get("y_domain", [None])[0] != 0:
+        errors.append("bar baseline")
+    rows = chart.get("rows", [])
+    if sorted(row["period"] for row in rows) != sorted(expected):
+        errors.append("period coverage")
+    for row in rows:
+        ref = expected.get(row["period"])
+        if ref is None:
+            continue
+        value = row["value"]
+        target = 100 * ref["observed_user_days"] / ref["calendar_user_days"]
+        if not math.isfinite(value) or not math.isclose(value, target, abs_tol=1e-8):
+            errors.append("plotted value")
+        if row["denominator"] != ref["calendar_user_days"]:
+            errors.append("denominator")
+    return sorted(set(errors))
+
+
+def main():
+    evidence = json.loads((OUTPUT / "visualization.json").read_text())
+    correct = {
+        "unit": "percent of eligible user-days", "interpretation": "descriptive",
+        "mark": "bar", "y_domain": [0, 100],
+        "rows": [{"period": r["period"], "value": r["logging_percent"],
+                  "denominator": r["calendar_user_days"]} for r in evidence["months"]],
+    }
+    cases = {"correct": correct}
+    for name in ["fraction_as_percent", "conditional_denominator", "truncated_bar", "causal_title"]:
+        cases[name] = deepcopy(correct)
+    cases["fraction_as_percent"]["rows"][0]["value"] /= 100
+    row = cases["conditional_denominator"]["rows"][0]
+    row["denominator"] = evidence["months"][0]["logger_calendar_days"]
+    row["value"] = evidence["months"][0]["conditional_logging_percent"]
+    cases["truncated_bar"]["y_domain"] = [60, 75]
+    cases["causal_title"]["interpretation"] = "causal"
+    result = {name: check_chart(chart, evidence) for name, chart in cases.items()}
+    assert result["correct"] == []
+    assert all(result[name] for name in cases if name != "correct")
+    save_result("chart_audit", {"constructed_cases": result})
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

@@ -61,3 +61,11 @@ Store course datasets, data dictionaries, short scripts, notebook examples, and 
 The curated catalog is `01_Resources/RESOURCE_CATALOG.json` (short IDs such as P03 and AI09). The additional module catalog is `01_Resources/00_Index/resource_catalog.json` (descriptive IDs). Specify the catalog when citing an ID. Their contents overlap; their counts must not be added as a unique-resource total. Priority labels describe selection recommendations, not required readings.
 
 Use local source files when available, and preserve their recorded rights. An accessible URL does not establish permission to republish a work. Do not upload course or student data to external AI services without the applicable authorization.
+
+## Visualization Checks
+
+- Specify the question, observation unit, population, weights, denominator, units, and comparison before generating a chart.
+- Check plotted values against an independently computed aggregate table. Preserve counts, zero-log users where required, and the distinction between unobserved values and zeros.
+- Separate distribution spread from uncertainty about an estimate. Preserve paired outcomes and resample or cluster at the appropriate unit.
+- Keep comparable panels and interactive selections on consistent scales. Use labels, markers, or line styles alongside the Illinois colors, and include a text or table companion.
+- Verify execution, fidelity to the requested comparison, and rendered readability separately. Record which checks ran; a valid specification does not prove a browser interaction was tested.

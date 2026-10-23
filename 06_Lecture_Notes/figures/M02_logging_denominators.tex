@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[ybar,bar width=22pt,width=12.5cm,height=6.3cm,
+ ymin=0,ymax=100,ylabel={Calendar Days With Logs (\%)},
+ xtick={0,1},xticklabels={May,June},enlarge x limits=0.6,
+ legend style={at={(0.5,-0.17)},anchor=north,legend columns=2,column sep=10pt},
+ nodes near coords,point meta=y,
+ every node near coord/.append style={font=\footnotesize,/pgf/number format/fixed,/pgf/number format/precision=1}]
+\addplot[draw=IlliniBlue,fill=IlliniBlue!18] coordinates {(0.00000000,67.19165085) (1.00000000,62.06862745)};
+\addplot[draw=IlliniOrange,fill=IlliniOrange!18] coordinates {(0.00000000,72.06675486) (1.00000000,67.42279020)};
+\legend{All eligible users,Users with logs that month}
+\end{axis}
+\end{tikzpicture}

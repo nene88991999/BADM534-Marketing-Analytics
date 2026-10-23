@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[width=11cm,height=5.5cm,xmin=-10,xmax=1,ymin=-0.6,ymax=1.6,
+ xlabel={June Minus May (Percentage Points)},ytick={0,1},
+ yticklabels={{Independent days (incorrect)},{Paired user bootstrap}},
+ grid=major]
+\addplot[Storm,dashed] coordinates {(0,-0.5) (0,1.5)};
+\addplot[IlliniBlue,very thick,mark=|,mark size=5pt] coordinates {(-7.92925364,1.00000000) (-2.43386306,1.00000000)};
+\addplot[IlliniBlue,only marks,mark=*] coordinates {(-5.12302340,1)};
+\addplot[Storm,very thick,mark=|,mark size=5pt] coordinates {(-6.42309457,0.00000000) (-3.82295223,0.00000000)};
+\addplot[Storm,only marks,mark=*] coordinates {(-5.12302340,0)};
+\end{axis}
+\end{tikzpicture}

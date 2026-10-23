@@ -1,0 +1,24 @@
+{
+  "validated_on": "2026-10-23",
+  "renderer": "vl-convert-python 1.8.0 with Vega-Lite 5.20",
+  "method": "Compile and render both month parameter states; compare rendered bar labels and counts with the saved evidence; verify fixed scales and aggregate-only fields.",
+  "browser_event_test": "Not performed; in-app preview could not reach localhost and native desktop was locked.",
+  "checks": [
+    {
+      "month": "2016-05",
+      "rendered_bars": [
+        "population: All eligible users; Calendar Days With Logs (%): 67.1916508539; percent: 67.19; users: 340; observed_days: 7082; calendar_days: 10540",
+        "population: Users with logs; Calendar Days With Logs (%): 72.0667548591; percent: 72.07; users: 317; observed_days: 7082; calendar_days: 9827"
+      ],
+      "fixed_scales": true
+    },
+    {
+      "month": "2016-06",
+      "rendered_bars": [
+        "population: All eligible users; Calendar Days With Logs (%): 62.068627451; percent: 62.07; users: 340; observed_days: 6331; calendar_days: 10200",
+        "population: Users with logs; Calendar Days With Logs (%): 67.4227902023; percent: 67.42; users: 313; observed_days: 6331; calendar_days: 9390"
+      ],
+      "fixed_scales": true
+    }
+  ]
+}

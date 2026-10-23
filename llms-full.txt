@@ -49,7 +49,8 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/mHealth/AGENTS.md",
     "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
-    "06_Lecture_Notes/RESOURCE_INTEGRATION.md"
+    "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
+    "03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -94,12 +95,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-10-23-python-resource-integration",
+    "revision": "2026-10-23-visualization-resources",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 38,
-    "pages": 130
+    "figures_count": 41,
+    "pages": 141
   },
   "datasets": [
     {
@@ -129,7 +130,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 38 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 41 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
 ## Course Folders
@@ -227,6 +228,14 @@ The curated catalog is `01_Resources/RESOURCE_CATALOG.json` (short IDs such as P
 
 Use local source files when available, and preserve their recorded rights. An accessible URL does not establish permission to republish a work. Do not upload course or student data to external AI services without the applicable authorization.
 
+## Visualization Checks
+
+- Specify the question, observation unit, population, weights, denominator, units, and comparison before generating a chart.
+- Check plotted values against an independently computed aggregate table. Preserve counts, zero-log users where required, and the distinction between unobserved values and zeros.
+- Separate distribution spread from uncertainty about an estimate. Preserve paired outcomes and resample or cluster at the appropriate unit.
+- Keep comparable panels and interactive selections on consistent scales. Use labels, markers, or line styles alongside the Illinois colors, and include a text or table companion.
+- Verify execution, fidelity to the requested comparison, and rendered readability separately. Record which checks ran; a valid specification does not prove a browser interaction was tested.
+
 ---
 
 ## Source: COURSE_MAP.md
@@ -252,7 +261,7 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 38 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 41 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -286,6 +295,10 @@ Full code is printed in the [notes](06_Lecture_Notes/README.md) and saved with [
 ## Additional Resource Applications
 
 The [resource integration map](06_Lecture_Notes/RESOURCE_INTEGRATION.md) connects all eight modules to executed extensions: fixed-cohort reviews, recency/frequency, price instruments, logging-gap survival, topic models, CUPED, basket associations, and generated-claim validation. It also identifies reference notebooks available for further adaptation and their execution status.
+
+## Visualization Applications
+
+M2, Sections 2.14–2.15, connect chart choice, denominator changes, distribution shape, and interactive filters using the same fixed mHealth cohort. M3, Section 3.6.1, shows why uncertainty follows the sampling unit. M8, Section 8.12, checks chart values, units, denominators, baselines, and interpretation against independent evidence. [Code and chart data](03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) accompany all three applications.
 
 ---
 
@@ -395,7 +408,7 @@ Additional executed examples cover fixed-cohort reporting, recency/frequency, lo
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 41 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -422,7 +435,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 130 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 141 pages.
 
 ## Editing and Building
 
@@ -451,6 +464,10 @@ After changes, run the relevant analyses and `python scripts/check_lecture_code.
 Give an assistant the relevant Markdown module, its figure descriptions, and any related CSV or calculation output. Cite module and numbered section, such as “M6, Section 6.4.” Do not infer a deadline or assessment rule from an illustrative exercise. The exercises are public teaching material.
 
 Follow the [preferred Beamer format](../05_Slides/AGENTS.md) when preparing lectures. Use each module's managerial question as the opening, then select the worked case, method, key figure, and decision implication. Keep the full derivation and consequential assumptions in the notes. Each TikZ file can be reused in a LaTeX slide deck; its PNG companion supports other presentation tools. Figures illustrate particular mechanisms and should retain the accompanying assumptions and synthetic-data labels.
+
+## Data Visualization
+
+M2, Sections 2.14–2.15, add chart selection, fixed and conditional denominators, empirical cumulative distributions, and an [interactive mHealth chart](../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html). M3, Section 3.6.1, compares paired-user uncertainty with an incorrect independent-day calculation. M8, Section 8.12, audits constructed chart errors. Three original TikZ figures and three complete Python programs support these additions. The [visualization guide](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) gives the commands, data definitions, and validation record.
 
 ---
 
@@ -750,6 +767,10 @@ The complete release files are stored in `../data/`, outside Git, and distribute
 | `cuped.py` | M6, Section 6.15: prior-period adjustment with a coefficient frozen before the outcome window; power and sharp-null simulation. |
 | `association_rules.py` | M7, Section 7.17: training-selected category association, future support/confidence/lift, and a user bootstrap. |
 | `claim_checks.py` | M8, Section 8.11: constructed structured claims checked against computed evidence; no LLM requests. |
+| `visualization.py` | M2, 2.14, and M3, 3.6.1: complete user-month pairs, conditional denominators, exact ECDFs, and paired-user uncertainty. |
+| `visualization_charts.py` | M2, 2.15: three generated TikZ figures and an aggregate-data Altair HTML chart with a month selector. |
+| `chart_audit.py` | M8, 8.12: four constructed chart errors checked against independently computed numerators and denominators. |
+| `test_visualization.py` | Five small-data checks of month lengths, duplicate dates, empty months, CDF ties, paired resampling, and chart mistakes. |
 | `test_extension_logic.py` | Seven small-data checks for counting units, future exclusion, censoring ties, gap confirmation, adjustment variance, numerical claims, and an IV slope. |
 
 Each module writes `results/M0n.json`. M2 and M4 also write compact aggregate CSV tables. `results/environment.json` records actual software versions. These outputs were generated by execution, not entered by hand. Small floating-point differences across environments are possible, and clustering labels are ordered by prior logging frequency.
@@ -773,6 +794,10 @@ The seven additional programs write correspondingly named JSON results. Recency 
 - The claim checker validates declared fields against numerical evidence. It is not a general semantic or factual validator for unrestricted prose.
 
 [Original nutrition sources](../../../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md) support the measurement distinctions and screening discussion. Matching Python source blocks in the Markdown notes can be checked with `python scripts/check_lecture_code.py`.
+
+## Visualization Replication
+
+The [visualization companion](results/VISUALIZATION.md) describes the chart tables and outputs. Run `visualization.py`, then `visualization_charts.py` and `chart_audit.py`. These programs also run at the end of `run_all.py`, with Altair 5.5.0 included in the requirements. The HTML contains aggregate data and uses browser JavaScript from a CDN; it needs internet access for the charts, while its HTML table works offline. The figures use editable TikZ and the Illinois palette.
 
 ---
 
@@ -846,7 +871,7 @@ Resource IDs in this table use the **additional** catalog namespace, including s
 | M7, 7.17 | Basket Associations | mlxtend-frequent-patterns | [association_rules.py](../03_Data_and_Code/mHealth/recurring_examples/association_rules.py) | Support, confidence, lift, training-only selection, future baskets, user bootstrap. |
 | M8, 8.11 | Evidence Checks for Generated Claims | copycat-ad-copy-generation; pymc-labs-semantic-similarity-rating; claude-ecom-business-review-skill | [claim_checks.py](../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py) | Constructed false claims; numerical and interpretation checks; synthetic-consumer validity discussion. |
 
-The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 38 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
+The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 41 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
 
 ## Other Uses of the Added Resources
 
@@ -866,11 +891,88 @@ The [Markdown modules](README.md) include the complete program text beside each 
 
 ## Replication and Publication
 
-Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 29 embedded source blocks against their matching files.
+Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 32 embedded source blocks against their matching files.
 
 The mHealth programs use the existing 370-user teaching cohort and impose case-specific eligibility rules before reporting results. Their outputs are aggregate. The price simulation is explicitly synthetic. Schema-valid false claims are constructed teaching examples, not measured errors from an LLM. Historical variance reduction is a planning comparison, and basket lift is a descriptive association.
 
 Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permits Python and notebook reuse; its separate `LICENSE` reserves rights to non-code content. The public mirror includes the licensed source and license/provenance files. Other downloaded prose, data, configuration, and HTML remain in Dropbox through `.gitignore`, with upstream links. The source review record distinguishes downloaded snapshots from course-tested programs.
+
+## Data Visualization Additions
+
+`DATAVIZ.yaml` adds 17 source entries, of which one overlaps with the existing catalog. The additional catalog now contains 629 entries, compared with 613 before these additions. Nine new repository snapshots supply local references. The [visualization review](../01_Resources/00_Index/dataviz_resource_review_2026-10-23.json) identifies the inspected sources, catalog aliases, licenses, and incorporation decisions.
+
+| Notes | Source References | Incorporation |
+| --- | --- | --- |
+| M2, 2.14 | Financial Times Visual Vocabulary; seaborn distribution and palette tutorials | Managerial question before chart choice; fixed versus conditional denominators; exact ECDFs; ties, endpoint masses, scales, and redundant visual encodings. |
+| M2, 2.15 | Altair tutorial and current widget/export documentation | Aggregate-data month selector, fixed scales, explicit counts, an accessible HTML table, and a static-hosting example. |
+| M3, 3.6.1 | seaborn error-bar tutorial | Distribution spread versus uncertainty; complete-user resampling; a paired interval compared with an incorrect independent-day calculation. |
+| M8, 8.12 | VisEval | Executability, fidelity to the analytical question, and readability; four constructed chart mistakes and an independent numerical audit. |
+
+`visualization.py`, `visualization_charts.py`, and `chart_audit.py` were written for the course and executed locally. Their full code is embedded in the notes. Three generated TikZ figures use the Illinois palette. Five independent small-data tests supplement the numerical checks. [Chart data and replication instructions](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) describe the output and browser-validation scope.
+
+FlowingData, its commercial book, the unlicensed storytelling recreation, Data to Viz, Datawrapper, Munzner, and PyNarrative remain optional linked references. No paid material was copied. Bokeh and HoloViz remain alternative implementation references, with their notebooks unexecuted. Matplotlib cheat sheets and Rougier's code remain figure-construction references. Rougier's `LICENSE.txt` separately grants BSD-2-Clause terms to code and CC BY-NC-SA 4.0 terms to book material; the catalog and generated provenance label have been corrected to preserve that distinction.
+
+---
+
+## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
+
+# mHealth Visualization Examples
+
+The examples compare recording behavior in May and June 2016 for the 340 teaching-cohort users with a food entry before May 1. Membership is fixed before the comparison. The source checksum is recorded in [visualization.json](visualization.json); cohort preparation and source definitions are in the [example guide](../README.md) and [data dictionary](../../DATA_DICTIONARY.md).
+
+## Reproduce
+
+Use the pinned [requirements](../requirements.txt). From the repository root:
+
+```sh
+python 03_Data_and_Code/mHealth/recurring_examples/visualization.py
+python 03_Data_and_Code/mHealth/recurring_examples/visualization_charts.py
+python 03_Data_and_Code/mHealth/recurring_examples/chart_audit.py
+python 03_Data_and_Code/mHealth/recurring_examples/test_visualization.py
+```
+
+The first command loads the existing public teaching-data release and cohort cache. Download instructions are in the parent guide. The next command creates three editable TikZ figures in `06_Lecture_Notes/figures` and the browser chart. `06_Lecture_Notes/build_notes.py --figures` compiles the notes and updates figure PNG previews when Pandoc, Tectonic, Poppler, and Pillow are available. Complete program text is printed in M2, Sections 2.14–2.15, and M8, Section 8.12. M3, Section 3.6.1, interprets the paired interval.
+
+## Files and Variables
+
+| File | Contents |
+| --- | --- |
+| [visualization.json](visualization.json) | Membership, source checksum, monthly aggregates, bootstrap seed/draws, paired change, intervals, and individual-change quantiles. |
+| [visualization_monthly.csv](visualization_monthly.csv) | Two rows, one per month. Counts, calendar denominators, logging percentages, and entries per recorded day. |
+| [visualization_ecdf.csv](visualization_ecdf.csv) | Aggregate frequency at each distinct logging fraction, with the exact cumulative percentage and eligible-user count. |
+| [visualization_interactive.html](visualization_interactive.html) | Month selector, denominator comparison, distribution plot, and visible aggregate table. Download and open locally, or serve as a static HTML file. GitHub's repository file view displays source. |
+| [visualization_interactive.vl.json](visualization_interactive.vl.json) | Machine-readable Vega-Lite specification and embedded aggregate data. |
+| [chart_audit.json](chart_audit.json) | Outcomes for the correct specification and four constructed chart mistakes. |
+
+`observed_user_days` counts distinct user/date pairs with at least one food entry. `calendar_user_days` equals the fixed eligible-user count times the month's calendar length. `logger_calendar_days` instead uses only users with at least one log that month. `logging_percent` and `conditional_logging_percent` use those respective denominators. `entries_per_observed_day` divides all recorded food rows by observed user-days.
+
+The distribution's `logging_percent` is an individual user's fraction of calendar days with logs, expressed as a percentage. `users_at_value` is the aggregate count at that value; `cumulative_percent` is the percentage of eligible users at or below it. Ties and zeros remain in the table. No user identifiers or individual histories are exported by these programs.
+
+## Interpretation
+
+May and June logging coverage is 67.19% and 62.07% for the fixed population, compared with 72.07% and 67.42% when conditioning on a user logging that month. Mean entries per observed day are 11.80 and 11.69. The difference between conditional intensity and population coverage matters for a retention decision.
+
+The paired change is -5.12 percentage points, with a 95% percentile-bootstrap interval of [-7.93, -2.43], using 5,000 resamples and seed 534. The bootstrap resamples whole users with both monthly outcomes together. It assumes independent users under an empirical user-history sampling model with the months fixed. Shared calendar shocks and population representativeness are outside that model. The separately labeled independent-day interval is deliberately incorrect for the observed dependence structure.
+
+The distribution plot describes customer heterogeneity; the interval plot describes uncertainty about the average change. Neither comparison estimates the effect of a product intervention. A day with no food entry is zero for observed logging, while consumption on that day remains unobserved.
+
+## Figure Descriptions
+
+- **Denominators:** grouped May/June bars start at zero. Illinois Blue uses all eligible calendar user-days; Illini Orange conditions on users with logs in each month. Identical numerators produce different percentages.
+- **Distribution:** solid blue May and dashed orange June step curves show the percentage of eligible users at or below each logging fraction. Endpoint masses at zero and daily recording remain visible.
+- **Uncertainty:** both horizontal intervals center on the same mean change. The paired-user interval is wider than the incorrect independent-day interval; a dashed vertical line marks zero change.
+
+The browser chart preserves 0–100% scales for both month selections, reports counts in tooltips, and supplies a static table. Its JavaScript libraries load from a CDN, so chart rendering requires internet access; the table remains available offline. No Python server or external AI service is used by the exported page.
+
+## Verification
+
+The three programs were executed locally with Python 3.13, pandas 2.2.3, numpy 2.1.3, and Altair 5.5.0. Five independent tests cover calendar lengths, duplicate dates, empty months, tied CDF values, preserved pairs, and constructed unit/denominator/baseline errors. The chart audit accepts the correct specification and rejects each constructed mistake; this is not a measured error rate for an LLM.
+
+The PDF and all three TikZ previews were compiled and visually reviewed. Browser interaction testing was unavailable because the desktop was locked; both month parameter states were independently compiled and rendered with Vega-Lite 5.20, with rendered labels checked against the numerical evidence. The validation record is [visualization_validation.json](visualization_validation.json). Downloaded reference notebooks were inspected as sources and were not executed.
+
+## Sources
+
+Chart choice draws on the [Financial Times Visual Vocabulary](https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md). Distribution and uncertainty distinctions are supported by the [seaborn tutorials](https://seaborn.pydata.org/tutorial.html). The [Altair tutorial](https://github.com/altair-viz/altair-tutorial) supplies the declarative-interaction approach; the course programs use their own mHealth transformations and current pinned syntax. [VisEval](https://github.com/microsoft/VisEval) motivates the distinction among executable code, fidelity to a request, and readability. Original references and license terms are recorded in the [resource review](../../../../01_Resources/00_Index/dataviz_resource_review_2026-10-23.json).
 
 ---
 
@@ -3182,7 +3284,7 @@ Rights or Access: Citation and original summary only; full-text redistribution r
 
 Source: 01_Resources/00_Index/resource_catalog.json
 
-613 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
+629 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
 
 ---
 
@@ -7027,6 +7129,296 @@ Teaching Suggestion: Optional statistics reference with worked Python solutions;
 Cautions: mistat on PyPI (MIT): https://pypi.org/project/mistat/ . The repository's license is not visible. A companion volume, Industrial Statistics, came out in 2023. Likely available through UIUC SpringerLink (not checked).
 
 Rights or Access: library
+
+---
+
+### additional:yau-flowingdata | FlowingData (Nathan Yau)
+
+Source URL: https://flowingdata.com/
+
+Modules: M2, M8
+
+Priority: core
+
+Focus: Nathan Yau's long-running site on visualization and statistics: free posts that collect and critique notable charts, plus step-by-step tutorials (mostly R, some Python and JavaScript) and the 'Process' newsletter, which are for paying members.
+
+Teaching Suggestion: Source of strong current examples for an M2 'chart critique' activity. Link to the posts; the members-only tutorials cannot be redistributed.
+
+Cautions: Tutorials are members-only (https://flowingdata.com/membership/). Nothing was downloaded.
+
+Rights or Access: freemium
+
+---
+
+### additional:yau-visualize-this-2e | Visualize This: The FlowingData Guide to Design, Visualization, and Statistics (2nd ed.)
+
+Source URL: https://book.flowingdata.com/
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Revised second edition (2024) of Yau's practical guide to turning data into charts, covering design choices, chart types for time, proportions, relationships and space, and tools from spreadsheets to R and JavaScript.
+
+Teaching Suggestion: Instructor reference and optional student reading for M2. Check whether the UIUC library offers an e-book licence.
+
+Cautions: Commercial book with no open code repository found; link only.
+
+Rights or Access: paid
+
+---
+
+### additional:ft-visual-vocabulary | Visual Vocabulary (Financial Times chart-doctor)
+
+Source URL: https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md
+
+Modules: M2
+
+Priority: core
+
+Focus: The FT's one-page poster that organizes chart types by the relationship you want to show (deviation, correlation, ranking, distribution, change over time, part-to-whole, magnitude, spatial, flow).
+
+Teaching Suggestion: M2 reference for choosing a display from the analytical question. Preserve attribution and the MIT license when reproducing the poster.
+
+Rights or Access: open
+
+---
+
+### additional:rougier-scientific-visualization-book | Scientific Visualization: Python + Matplotlib (open-access book and code)
+
+Source URL: https://github.com/rougier/scientific-visualization-book
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Open-access book on making publication-quality figures with Matplotlib (anatomy of a figure, colors, typography, layout, animation, common pitfalls), with the full source code for every figure.
+
+Teaching Suggestion: Instructor resource for polishing the course's own figures, and a source of 'make this chart better' exercises. The code folder is saved locally.
+
+Cautions: The book PDF was not downloaded. LICENSE.txt separately licenses code under BSD-2-Clause and book material under CC BY-NC-SA 4.0. The original license file is retained.
+
+Rights or Access: open
+
+---
+
+### additional:matplotlib-cheatsheets-repo | Matplotlib cheatsheets and handouts (source)
+
+Source URL: https://github.com/matplotlib/cheatsheets
+
+Modules: M2, M1
+
+Priority: recommended
+
+Focus: Source for the official Matplotlib cheatsheets and beginner, intermediate and tips handouts.
+
+Teaching Suggestion: Link the rendered PDFs (matplotlib.org/cheatsheets) from the wiki; the saved source lets you rebuild or adapt them.
+
+Rights or Access: open
+
+---
+
+### additional:rougier-matplotlib-cheatsheet | Matplotlib cheat sheet (Rougier)
+
+Source URL: https://github.com/rougier/matplotlib-cheatsheet
+
+Modules: M2
+
+Priority: optional
+
+Focus: Compact cheat sheet covering Matplotlib's figure anatomy, styles, colormaps and annotation options, with the scripts that generate it.
+
+Teaching Suggestion: Optional quick reference alongside the official cheatsheets.
+
+Rights or Access: open
+
+---
+
+### additional:seaborn-tutorial-notebooks | seaborn user-guide tutorial notebooks
+
+Source URL: https://github.com/mwaskom/seaborn/tree/master/doc/_tutorial
+
+Modules: M2
+
+Priority: core
+
+Focus: The notebooks behind seaborn's official user guide: the objects interface, distributions, relational and categorical plots, regression plots, multi-plot grids, aesthetics and color palettes.
+
+Teaching Suggestion: Core M2 lab material in the library students will use most. Adapt sections into wiki exercises rather than linking the whole guide.
+
+Rights or Access: open
+
+---
+
+### additional:altair-tutorial-notebooks | Altair tutorial notebooks (Exploratory Data Visualization with Altair)
+
+Source URL: https://github.com/altair-viz/altair-tutorial
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Short, sequenced notebooks introducing declarative visualization with Altair: simple charts, binning and aggregation, compound charts, interactivity and exploration.
+
+Teaching Suggestion: Altair renders in the browser, so these suit interactive wiki pages. Pairs with the UW visualization curriculum already in this folder.
+
+Cautions: The repository identifies the tutorial as PyCon 2018 and uses older selection APIs. The original course adaptation uses Altair 5.5.0; see visualization_charts.py.
+
+Rights or Access: open
+
+---
+
+### additional:bokeh-tutorial-notebooks | Bokeh tutorial notebooks
+
+Source URL: https://github.com/bokeh/tutorial
+
+Modules: M2
+
+Priority: optional
+
+Focus: Official 15-notebook Bokeh tutorial on interactive web plots: basic plots, styling, layouts, interactions, data sources and widgets.
+
+Teaching Suggestion: Option for interactive dashboards on the wiki or in final-project blogs.
+
+Rights or Access: open
+
+---
+
+### additional:holoviz-tutorial-notebooks | HoloViz tutorial (hvPlot, Panel, HoloViews)
+
+Source URL: https://github.com/holoviz/holoviz/tree/main/examples/tutorial
+
+Modules: M2
+
+Priority: optional
+
+Focus: Tutorial notebooks showing how to go from pandas to interactive plots with one-line hvPlot calls and build simple dashboards with Panel.
+
+Teaching Suggestion: Optional route to interactive dashboards for teams that want one in the final project.
+
+Cautions: Some notebooks download example data on first run.
+
+Rights or Access: open
+
+---
+
+### additional:urban-institute-graphics-styleguide | Urban Institute Data Visualization Style Guide (source)
+
+Source URL: https://github.com/UrbanInstitute/graphics-styleguide
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Source for one of the best-known public data-visualization style guides: chart types, colors, typography, labels and accessibility rules for a research organization.
+
+Teaching Suggestion: Reference for chart conventions, labels, and accessibility. Graded requirements belong in released assignment briefs. Link to the published guide.
+
+Cautions: Default branch is 'oct_2024'. The repository is the style guide's website source (about 157 MB, mostly images), so it is linked rather than downloaded. Jon Schwabish (PolicyViz) discusses style guides at https://policyviz.com/2016/11/30/style-guides.
+
+Rights or Access: open
+
+---
+
+### additional:microsoft-viseval | VisEval: benchmark for LLM-generated visualizations (code)
+
+Source URL: https://github.com/microsoft/VisEval
+
+Modules: M2, AI
+
+Priority: optional
+
+Focus: Code and data for evaluating whether charts generated by language models are valid, legal for the data and readable, the benchmark behind the VisEval paper already in this folder.
+
+Teaching Suggestion: Instructor background for the 'audit the AI's chart' activity; its checklist of failure types adapts well to a student rubric.
+
+Rights or Access: open
+
+---
+
+### additional:empathy87-storytelling-with-data-python | storytelling-with-data: Python/Matplotlib recreations of Knaflic's figures
+
+Source URL: https://github.com/empathy87/storytelling-with-data
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Notebooks that rebuild figures from 'Storytelling with Data' in Matplotlib, showing the before-and-after decluttering steps in code.
+
+Teaching Suggestion: Strong model for a 'declutter this chart with AI, then explain each change' exercise. Link only.
+
+Cautions: The repository has no LICENSE file (all rights reserved by default), so it was not downloaded.
+
+Rights or Access: open
+
+---
+
+### additional:holtzy-data-to-viz | From Data to Viz: a decision tree for choosing charts
+
+Source URL: https://github.com/holtzy/data_to_viz
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Decision tree that leads from the type of data you have to suitable chart types, with a page per chart on caveats and common mistakes. Its sister site is the Python Graph Gallery.
+
+Teaching Suggestion: Pair with the FT Visual Vocabulary: one organizes charts by message, the other by data type.
+
+Cautions: The repository is the website's source (mostly HTML and images), so it was catalogued rather than downloaded.
+
+Rights or Access: open
+
+---
+
+### additional:datawrapper-blog-color-guides | Datawrapper blog: guides to color in data visualization
+
+Source URL: https://www.datawrapper.de/blog/10-ways-to-use-fewer-colors-in-your-data-visualizations
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Practical, well-illustrated posts on using fewer colors, building palettes, color keys and style-guide colors.
+
+Teaching Suggestion: Short readings for the design part of M2. Related posts: https://www.datawrapper.de/blog/create-good-color-palettes and https://www.datawrapper.de/blog/colors-for-data-vis-style-guides.
+
+Rights or Access: open
+
+---
+
+### additional:munzner-vad-course | Visualization Analysis and Design: course page and lecture slides (CPSC 547)
+
+Source URL: https://cs.ubc.ca/~tmm/courses/547-19
+
+Modules: M2
+
+Priority: optional
+
+Focus: Tamara Munzner's UBC graduate course built on her textbook 'Visualization Analysis and Design', with free slides on the what-why-how framework, marks and channels, and evaluation.
+
+Teaching Suggestion: Instructor background for the conceptual framing of M2 (marks and channels, effectiveness rankings).
+
+Rights or Access: open
+
+---
+
+### additional:pynarrative-data-storytelling | PyNarrative: A Python Library for Data Storytelling
+
+Source URL: https://www.scitepress.org/PublishedPapers/2025/132599
+
+Modules: M2
+
+Priority: optional
+
+Focus: Describes a Python library built on Altair for adding narrative structure (titles, annotations, story steps) to charts.
+
+Teaching Suggestion: Optional tool for students who want annotated, story-style charts in their final blog.
+
+Cautions: The paper's author list was not confirmed in search results; check it before citing.
+
+Rights or Access: open
 
 ---
 
@@ -12341,24 +12733,6 @@ Focus: Seven notebooks translating chapters 3–9 of Chapman & Feit's R book (de
 Teaching Suggestion: Reference only; the official Python edition (already in the library) supersedes it.
 
 Cautions: No LICENSE file, so link only. Two commits; date unknown (search result showed a 2018 push). This was the only other Python port of the Chapman & Feit book found.
-
-Rights or Access: open
-
----
-
-### additional:empathy87-storytelling-with-data-python | storytelling-with-data: plots from Knaflic's book implemented in Python
-
-Source URL: https://github.com/empathy87/storytelling-with-data
-
-Modules: M2
-
-Priority: recommended
-
-Focus: Popular (400+ stars) set of notebooks recreating the 'before/after' decluttered charts from Storytelling with Data in matplotlib.
-
-Teaching Suggestion: Link from the M2 data-viz page. Students ask an AI assistant to apply the same decluttering to their own chart, then check the result against the book's principles.
-
-Cautions: No license (GitHub API license null), so link only. Last push 2023-09.
 
 Rights or Access: open
 

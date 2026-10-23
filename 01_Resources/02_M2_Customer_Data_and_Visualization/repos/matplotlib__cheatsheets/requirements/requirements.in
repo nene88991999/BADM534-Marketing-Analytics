@@ -1,0 +1,14 @@
+autopep8
+bump2version
+cartopy==0.22.0
+flake8
+matplotlib==3.10.8
+pillow>=9
+pdfx
+pip-tools
+pre-commit
+scipy
+# Docs
+mpl-sphinx-theme~=3.10.0
+sphinx
+sphinx-design
