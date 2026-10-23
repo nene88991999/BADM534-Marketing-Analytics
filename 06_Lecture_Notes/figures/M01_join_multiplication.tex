@@ -1,0 +1,11 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\node[box,text width=3.1cm] (o) at (0,0) {One order\\Customer C1\\Revenue: \$40};
+\node[box,text width=3.4cm] (one) at (5,1.6) {Unique lookup key\\C1: one customer row};
+\node[orangebox,text width=3.4cm] (two) at (5,-1.6) {Duplicate lookup key\\C1: two customer rows};
+\node[box,text width=2.8cm] (good) at (10,1.6) {One joined row\\Total: \$40};
+\node[orangebox,text width=2.8cm] (bad) at (10,-1.6) {Two joined rows\\Total: \$80};
+\draw[edge] (o)--(one); \draw[accent] (o)--(two);
+\draw[edge] (one)--(good); \draw[accent] (two)--(bad);
+\node[align=center,text width=11cm] at (5,-3.2) {A valid-looking join can double revenue.\\Check lookup-key uniqueness before merging, then reconcile totals.};
+\end{tikzpicture}

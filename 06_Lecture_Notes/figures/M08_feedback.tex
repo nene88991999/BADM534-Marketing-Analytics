@@ -1,0 +1,11 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\node[box,text width=3cm] (m) at (0,0) {Model and ranking};
+\node[box,text width=3cm] (e) at (5,0) {Product exposure};
+\node[box,text width=3cm] (y) at (10,0) {Observed behavior};
+\node[orangebox,text width=3cm] (p) at (10,2.4) {Customer preferences};
+\node[box,text width=3cm] (a) at (5,2.4) {Availability and position};
+\draw[edge] (m)--(e);\draw[edge] (e)--(y);\draw[edge] (p)--(y);\draw[edge] (a)--(e);
+\draw[accent] (y.south)--(10,-1.5)--node[below] {New training data} (0,-1.5)--(m.south);
+\node[align=center,text width=11cm] at (5,-2.7) {Interaction data reflect both preference and opportunity.\\A feedback loop can reinforce initially favored items.};
+\end{tikzpicture}

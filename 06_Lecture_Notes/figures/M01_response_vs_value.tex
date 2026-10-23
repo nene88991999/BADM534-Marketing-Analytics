@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[name=left,width=6.3cm,height=6.1cm,xmin=.5,xmax=2.5,ybar,bar width=20pt,ymin=0,ymax=1.05,xtick={1,2},xticklabels={Account A,Account B},ylabel={Renewal probability with offer},ytick={0,0.5,1},xmajorgrids=false,ymajorgrids=true]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(1,0.91)(2,0.50)};
+\node at (axis cs:1,.98) {0.91};\node at (axis cs:2,.57) {0.50};
+\end{axis}
+\begin{axis}[at={(left.east)},anchor=west,xshift=2.3cm,width=6.3cm,height=6.1cm,xmin=.5,xmax=2.5,ybar,bar width=20pt,ymin=-4,ymax=9,xtick={1,2},xticklabels={Account A,Account B},ylabel={Incremental contribution (dollars)},ytick={-2,0,7},ymajorgrids=true]
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates {(1,-2)(2,7)};
+\draw[IlliniBlue] (axis cs:.6,0)--(axis cs:2.4,0);
+\end{axis}
+\end{tikzpicture}

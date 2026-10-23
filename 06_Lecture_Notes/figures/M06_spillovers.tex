@@ -1,0 +1,9 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}[v/.style={circle,draw=IlliniBlue,minimum size=11mm},t/.style={v,fill=IlliniOrange}]
+\node[t] (t) at (0,0) {T};\node[v] (a) at (2,1.5) {U};\node[v] (b) at (2,-1.5) {U};\node[v] (c) at (4,0) {U};
+\draw[accent] (t)--(a);\draw[accent] (t)--(b);\draw[edge,dashed] (a)--(c);\draw[edge,dashed] (b)--(c);
+\draw[IlliniBlue,dashed,rounded corners] (-1,-2.2) rectangle (5,2.2);
+\node[align=center] at (2,-3) {One connected household or market\\can form a randomization cluster.};
+\node[box,text width=4cm] at (8,1) {T: assigned treatment\\U: assigned control};
+\node[align=left,text width=4cm] at (8,-1.1) {Control status does not guarantee absence of exposure through other people.};
+\end{tikzpicture}

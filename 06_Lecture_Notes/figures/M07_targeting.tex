@@ -1,0 +1,9 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\begin{axis}[ybar,bar width=15pt,xmin=.4,xmax=2.6,ymin=-7.5,ymax=8.5,xtick={1,2},xticklabels={Customer A,Customer B},ylabel={Contribution per customer (dollars)},ymajorgrids=true,legend style={at={(.5,1.13)},anchor=south,legend columns=3},nodes near coords,nodes near coords style={font=\scriptsize}]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(1,.8)(2,6)};
+\addplot[fill=LightStorm,draw=Storm] coordinates {(1,-6)(2,-3.5)};
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates {(1,-5.2)(2,2.5)};
+\legend{Incremental purchases,Discount plus contact,Net contribution}
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,9 @@
+% Distances within each panel use the stated feature units.
+\begin{tikzpicture}
+\begin{axis}[name=raw,width=6.3cm,height=6.1cm,xmin=.5,xmax=2.5,ymin=0,ymax=120,ybar,bar width=18pt,xtick={1,2},xticklabels={A to B,A to C},ylabel={Euclidean distance},title={Raw spending and visits},nodes near coords,nodes near coords style={font=\scriptsize}]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(1,12.806)(2,100)};
+\end{axis}
+\begin{axis}[at={(raw.east)},anchor=west,xshift=2.3cm,width=6.3cm,height=6.1cm,xmin=.5,xmax=2.5,ymin=0,ymax=10,ybar,bar width=18pt,xtick={1,2},xticklabels={A to B,A to C},ylabel={Euclidean distance},title={Spending divided by 100},nodes near coords,nodes near coords style={font=\scriptsize}]
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates {(1,8.0006)(2,1)};
+\end{axis}
+\end{tikzpicture}

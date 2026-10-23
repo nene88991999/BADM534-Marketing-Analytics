@@ -30,7 +30,52 @@
     "LLM_GUIDE.md",
     "02_Syllabus/README.md",
     "04_Assignments/README.md",
-    "03_Data_and_Code/README.md"
+    "03_Data_and_Code/README.md",
+    "06_Lecture_Notes/README.md",
+    "03_Data_and_Code/Lecture_Examples/README.md"
   ],
-  "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only."
+  "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
+  "lecture_notes": {
+    "status": "available",
+    "updated_on": "2026-10-23",
+    "index": "06_Lecture_Notes/README.md",
+    "pdf": "06_Lecture_Notes/BADM534_Lecture_Notes.pdf",
+    "module_sources": [
+      {
+        "id": "M1",
+        "path": "06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "id": "M2",
+        "path": "06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "id": "M3",
+        "path": "06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "id": "M4",
+        "path": "06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "id": "M5",
+        "path": "06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "id": "M6",
+        "path": "06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "id": "M7",
+        "path": "06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "id": "M8",
+        "path": "06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      }
+    ],
+    "figures": "06_Lecture_Notes/figures/",
+    "examples": "03_Data_and_Code/Lecture_Examples/README.md",
+    "author": "Nathan Yang"
+  }
 }

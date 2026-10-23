@@ -1,0 +1,10 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\begin{axis}[xmin=0,xmax=1,ymin=0,ymax=1,xlabel={Reported purchase probability},ylabel={Implied observed purchase frequency},xtick={0,.25,.5,.75,1},ytick={0,.25,.5,.75,1},legend style={at={(.5,1.08)},anchor=south,legend columns=2},ymajorgrids=true]
+\addplot[IlliniBlue,dashed,domain=0:1] {x};
+\addplot[IlliniOrange,very thick,domain=0:1,samples=151] {sqrt(x)};
+\legend{Calibrated score,Squared score}
+\addplot[IlliniBlue,only marks,mark=*] coordinates {(.25,.5)};
+\node[align=left,anchor=north west,font=\scriptsize] at (axis cs:.48,.25) {The original 0.50 becomes 0.25.\\Ranking is unchanged.};
+\end{axis}
+\end{tikzpicture}

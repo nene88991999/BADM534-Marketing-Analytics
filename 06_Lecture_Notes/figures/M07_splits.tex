@@ -1,0 +1,11 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}[x=1.55cm,y=.85cm]
+\foreach \x/\lab in {0/Period 1,1/Period 2,2/Period 3} {\node at (\x,1) {\lab};\node at (\x+4.5,1) {\lab};}
+\node[font=\small\bfseries] at (1,2) {Random rows};\node[font=\small\bfseries] at (5.5,2) {Future-period holdout};
+\foreach \y/\lab in {0/A,-1/B,-2/C} {\node[anchor=east] at (-.55,\y) {\lab};\node[anchor=east] at (3.95,\y) {\lab};}
+\foreach \x/\y in {0/0,2/0,1/-1,2/-1,0/-2,1/-2} {\fill[IlliniBlue] (\x-.43,\y-.36) rectangle (\x+.43,\y+.36);}
+\foreach \x/\y in {1/0,0/-1,2/-2} {\fill[IlliniOrange] (\x-.43,\y-.36) rectangle (\x+.43,\y+.36);}
+\foreach \x in {4.5,5.5} {\foreach \y in {0,-1,-2} {\fill[IlliniBlue] (\x-.43,\y-.36) rectangle (\x+.43,\y+.36);}}
+\foreach \y in {0,-1,-2} {\fill[IlliniOrange] (6.07,\y-.36) rectangle (6.93,\y+.36);}
+\node[align=center,text width=12cm] at (3.1,-3.4) {Blue: training. Orange: test. Rows identify customers.\\For new-customer deployment, hold out complete customer rows instead.};
+\end{tikzpicture}

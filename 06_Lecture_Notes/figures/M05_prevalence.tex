@@ -1,0 +1,10 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\begin{axis}[xmin=0,xmax=.3,ymin=0,ymax=1,xlabel={Prevalence of the target complaint},ylabel={Precision among flagged reviews},xtick={0,.1,.2,.3},ytick={0,.2,.4,.6,.8,1},ymajorgrids=true]
+\addplot[IlliniBlue,very thick,domain=0:.3,samples=150] {.8*x/(.8*x+.1*(1-x))};
+\addplot[IlliniOrange,only marks,mark=*,mark size=3pt] coordinates {(.01,.0747664)(.2,.6666667)};
+\node[align=left,anchor=north west] at (axis cs:.12,.96) {Sensitivity fixed at 80\%\\Specificity fixed at 90\%};
+\node[anchor=west] at (axis cs:.018,.13) {1\% prevalence: 7.5\% precision};
+\node[anchor=north west] at (axis cs:.145,.58) {20\% prevalence: 66.7\%};
+\end{axis}
+\end{tikzpicture}

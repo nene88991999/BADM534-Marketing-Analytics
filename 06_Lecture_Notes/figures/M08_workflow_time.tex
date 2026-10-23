@@ -1,0 +1,12 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}[x=.095cm,y=1cm]
+\node[anchor=east] at (-2,1.5) {Manual};\node[anchor=east] at (-2,0) {AI-assisted};
+\fill[IlliniBlue] (0,1.1) rectangle (90,1.9);\fill[IlliniOrange] (90,1.1) rectangle (110,1.9);
+\fill[IlliniBlue] (0,-.4) rectangle (45,.4);\fill[IlliniOrange] (45,-.4) rectangle (85,.4);
+\node[text=white] at (45,1.5) {Produce: 90};\node[text=IlliniBlue,font=\scriptsize,align=center] at (100,1.5) {Review:\\20};
+\node[text=white] at (22.5,0) {Produce: 45};\node[text=IlliniBlue] at (65,0) {Review: 40};
+\node[anchor=west] at (112,1.5) {110};\node[anchor=west] at (87,0) {85};
+\draw[edge] (0,-1)--(120,-1) node[right] {Minutes};
+\foreach \x in {0,30,60,90} {\draw[IlliniBlue] (\x,-1.05)--(\x,-.95);\node[anchor=north,font=\scriptsize] at (\x,-1.1) {\x};}
+\node[align=center,text width=12cm] at (58,-2.2) {Drafting time falls 50\%; total time falls 22.7\%.\\Task and completed-work quality held fixed.};
+\end{tikzpicture}

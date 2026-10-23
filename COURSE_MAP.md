@@ -17,6 +17,10 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 | M7 | Which customers or sessions are likely to respond? | Prediction, machine learning, validation, decision thresholds | [Prediction and ML](01_Resources/07_Prediction_and_Machine_Learning/README.md) | Build a leakage-aware pipeline; compare baselines and assess decision costs. |
 | M8 | How can newer methods improve a specific marketing decision? | Selected topics such as recommendations, forecasting, marketing mix modeling, generative AI | [Current Topics](01_Resources/08_Current_Topics_in_Marketing/README.md) | Evaluate one extension against a simpler approach and state the supported conclusion. |
 
+## Lecture Notes
+
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 20 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+
 ## Across Modules
 
 - [AI-Assisted Coding Resources](01_Resources/09_AI_Assisted_Coding/README.md) and [Teaching Notes](01_Resources/09_AI_Assisted_Coding/Teaching_Notes/README.md).

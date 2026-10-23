@@ -1,0 +1,11 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\begin{axis}[xmin=-.12,xmax=1.38,ymin=90,ymax=162,xtick={0,1},xticklabels={Before,After},ylabel={Outcome (illustrative units)},legend style={at={(.5,1.08)},anchor=south,legend columns=3}]
+\addplot[IlliniOrange,mark=*,very thick] coordinates {(0,120)(1,150)};
+\addplot[IlliniBlue,mark=square*,very thick] coordinates {(0,100)(1,110)};
+\addplot[Storm,dashed,mark=o,very thick] coordinates {(0,120)(1,130)};
+\legend{Treated,Comparison,Treated counterfactual}
+\draw[<->,IlliniOrange,very thick] (axis cs:1.08,130)--(axis cs:1.08,150);
+\node[anchor=west,align=left] at (axis cs:1.1,140) {Effect\\$=20$};
+\end{axis}
+\end{tikzpicture}

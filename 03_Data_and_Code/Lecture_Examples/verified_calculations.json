@@ -1,0 +1,154 @@
+{
+  "status": "synthetic_teaching_examples",
+  "units": "See each CSV column name and the lecture module. Probabilities are fractions, not percentages.",
+  "results": {
+    "M01": {
+      "revenue": 37,
+      "order_count": 2,
+      "average_order_value": 18.5,
+      "average_line_revenue": 12.333333333333334,
+      "renewal_incremental_value_A": -1.9999999999999991,
+      "renewal_incremental_value_B": 6.999999999999998
+    },
+    "M02": {
+      "observed_A": 0.445,
+      "observed_B": 0.33666666666666667,
+      "common_mix_A": 0.445,
+      "common_mix_B": 0.455,
+      "basket_jaccard_high": 0.6,
+      "basket_jaccard_low": 0.14285714285714285
+    },
+    "M03": {
+      "pooled": {
+        "intercept": 6.0,
+        "slope": 1.5714285714285714
+      },
+      "low": {
+        "intercept": 10.0,
+        "slope": -1.0
+      },
+      "high": {
+        "intercept": 20.0,
+        "slope": -1.0
+      },
+      "simple_sales_fit": {
+        "intercept": 1.0,
+        "slope": 2.0
+      },
+      "coefficient_ci": [
+        1.02,
+        2.98
+      ]
+    },
+    "M04": {
+      "shares_before": {
+        "A": 0.4409054983951879,
+        "B": 0.19811161086749707,
+        "outside": 0.3609828907373151
+      },
+      "shares_after": {
+        "A": 0.30599196053193456,
+        "B": 0.1374910506540119,
+        "C": 0.30599196053193456,
+        "outside": 0.2505250282821189
+      },
+      "category_share_increase": 0.11045786245519618,
+      "contribution_before": 2.357956826183243,
+      "contribution_after": 2.860408836217512,
+      "wtp_dollars": 11.999999999999998,
+      "distance_raw_AB": 12.806248474865697,
+      "distance_raw_AC": 100,
+      "distance_rescaled_AB": 8.000624975587845,
+      "distance_rescaled_AC": 1,
+      "clv_after_acquisition": {
+        "0.8": 178.5714285714286,
+        "0.85": 268.74999999999994,
+        "0.9": 440.909090909091
+      }
+    },
+    "M05": {
+      "0.2": {
+        "tp": 160.0,
+        "fp": 80.0,
+        "fn": 40.0,
+        "tn": 720.0,
+        "precision": 0.6666666666666666,
+        "accuracy": 0.88
+      },
+      "0.01": {
+        "tp": 8.0,
+        "fp": 99.0,
+        "fn": 2.0,
+        "tn": 891.0,
+        "precision": 0.07476635514018691,
+        "accuracy": 0.899
+      }
+    },
+    "M06": {
+      "assignment_effect": 0.03,
+      "standard_error": 0.014251315728731857,
+      "effect_ci": [
+        0.0020674211716855614,
+        0.057932578828314436
+      ],
+      "contribution_per_assigned_customer": 0.7,
+      "contribution_ci": [
+        -0.41730315313257754,
+        1.8173031531325776
+      ],
+      "sample_per_arm": 3528.0,
+      "design_effect": 1.9500000000000002,
+      "difference_in_differences": 20
+    },
+    "M07": {
+      "precision": 0.3,
+      "recall": 0.6,
+      "accuracy": 0.91,
+      "all_negative_accuracy": 0.95,
+      "cost_threshold": 0.1,
+      "coupon_A": -5.199999999999999,
+      "coupon_B": 2.5
+    },
+    "M08": {
+      "recommendation_objectives": {
+        "0": {
+          "ABC": 2.5,
+          "ABD": 2.4,
+          "ACD": 2.3,
+          "BCD": 2.25
+        },
+        "0.2": {
+          "ABC": 2.9,
+          "ABD": 2.8,
+          "ACD": 2.9,
+          "BCD": 2.85
+        },
+        "0.3": {
+          "ABC": 3.1,
+          "ABD": 3.0,
+          "ACD": 3.1999999999999997,
+          "BCD": 3.15
+        }
+      },
+      "carryover": [
+        100.0,
+        50.0,
+        25.0,
+        12.5
+      ],
+      "average_A": 2.161661791908468,
+      "average_B": 1.5738773611494663,
+      "marginal_A": 0.6766764161830635,
+      "marginal_B": 1.2130613194252668,
+      "current_total_contribution": 117.94401889932806,
+      "optimal_spend_A": 32.21720975832207,
+      "optimal_spend_B": 27.78279024167793,
+      "optimal_total_contribution": 120.08529384606884,
+      "contribution_gain": 2.141274946740783,
+      "one_unit_transfer_gain": 0.5041447926753797,
+      "manual_total_minutes": 110,
+      "assisted_total_minutes": 85,
+      "time_reduction_fraction": 0.22727272727272727
+    }
+  }
+}

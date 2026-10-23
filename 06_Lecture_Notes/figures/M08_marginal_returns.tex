@@ -1,0 +1,14 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\begin{axis}[xmin=0,xmax=65,ymin=0,ymax=110,xlabel={Channel spending (thousands of dollars)},ylabel={Contribution (thousands of dollars)},legend style={at={(.5,1.08)},anchor=south,legend columns=2},ymajorgrids=true]
+\addplot[IlliniBlue,very thick,domain=0:60,samples=120] {100*(1-exp(-x/20))};
+\addplot[IlliniOrange,very thick,domain=0:60,samples=120] {80*(1-exp(-x/40))};
+\legend{Channel A,Channel B}
+\addplot[IlliniBlue,dashed,domain=30:50] {86.4665+.676676*(x-40)};
+\addplot[IlliniOrange,dashed,domain=10:30] {31.4775+1.21306*(x-20)};
+\addplot[only marks,mark=*,IlliniBlue,mark size=3pt] coordinates {(40,86.4665)};
+\addplot[only marks,mark=square*,IlliniOrange,mark size=3pt] coordinates {(20,31.4775)};
+\node[anchor=south east,font=\scriptsize] at (axis cs:40,93) {At 40: slope 0.68};
+\node[anchor=north west,font=\scriptsize] at (axis cs:22,28) {At 20: slope 1.21};
+\end{axis}
+\end{tikzpicture}

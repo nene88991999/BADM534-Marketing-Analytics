@@ -1,0 +1,10 @@
+% UIUC official brand colors, verified 2026-10-23.
+% https://brand.illinois.edu/visual-identity/color
+\definecolor{IlliniOrange}{HTML}{FF5F05}
+\definecolor{IlliniBlue}{HTML}{13294B}
+\definecolor{Storm}{HTML}{707372}
+\definecolor{LightStorm}{HTML}{C6C7C6}
+\definecolor{Industrial}{HTML}{1D58A7}
+\definecolor{Patina}{HTML}{007E8E}
+\tikzset{>=Stealth, every node/.style={font=\small,text=IlliniBlue}, box/.style={draw=IlliniBlue,rounded corners=2pt,align=center,inner sep=6pt,execute at begin node=\hyphenpenalty10000\relax}, orangebox/.style={box,draw=IlliniOrange,very thick}, edge/.style={->,thick,IlliniBlue}, accent/.style={->,very thick,IlliniOrange}}
+\pgfplotsset{every axis/.append style={width=13.5cm,height=6.5cm,axis line style={IlliniBlue},tick label style={font=\small,text=IlliniBlue},label style={font=\small,text=IlliniBlue},legend style={font=\small,draw=none,fill=white},grid style={LightStorm},major grid style={LightStorm},axis lines=left,clip=false}, every axis plot/.append style={thick}}

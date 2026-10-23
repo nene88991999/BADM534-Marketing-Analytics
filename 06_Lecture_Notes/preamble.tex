@@ -1,0 +1,41 @@
+\documentclass[11pt,oneside]{report}
+\usepackage[letterpaper,margin=1in,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyrepagella-regular.otf}[BoldFont=texgyrepagella-bold.otf,ItalicFont=texgyrepagella-italic.otf,BoldItalicFont=texgyrepagella-bolditalic.otf]
+\setsansfont{texgyreheros-regular.otf}[BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=0.85]
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,multirow,calc}
+\usepackage{graphicx,xcolor,tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,shapes.geometric,patterns,decorations.pathreplacing}
+\input{figures/style.tex}
+\usepackage{titlesec,fancyhdr,enumitem,caption,float,placeins,fvextra}
+\usepackage{microtype,xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=IlliniBlue,urlcolor=Industrial,citecolor=IlliniBlue,pdftitle={BADM 534: Data Analytics for Marketing Applications},pdfauthor={Nathan Yang}}
+\usepackage{bookmark}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries\raggedright\hyphenpenalty=10000\color{IlliniBlue}}{\chaptertitlename\ \thechapter}{8pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-18pt}{20pt}
+\titleformat{\section}{\Large\bfseries\raggedright\hyphenpenalty=10000\color{IlliniBlue}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries\raggedright\hyphenpenalty=10000\color{IlliniBlue}}{\thesubsection}{0.7em}{}
+\setlength{\parindent}{1.3em}
+\setlength{\parskip}{3pt}
+\linespread{1.06}
+\setlist{itemsep=3pt,topsep=5pt}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily BADM 534}
+\fancyhead[R]{\small\sffamily Lecture Notes}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,fontsize=\small,commandchars=\\\{\}}
+\newtheorem{assumption}{Assumption}[chapter]
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\setlength{\emergencystretch}{4em}
+\providecommand{\pandocbounded}[1]{#1}
+
+\clubpenalty=10000
+\widowpenalty=10000

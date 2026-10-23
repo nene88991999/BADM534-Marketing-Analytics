@@ -1,0 +1,10 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\begin{axis}[xmin=.5,xmax=.95,ymin=0,ymax=1000,xlabel={Per-period retention probability},ylabel={Lifetime value after acquisition cost (dollars)},xtick={.5,.6,.7,.8,.9,.95},ytick={0,200,400,600,800,1000},ymajorgrids=true]
+\addplot[IlliniBlue,domain=.5:.95,samples=150,very thick] {60*x/(1.01-x)-50};
+\addplot[IlliniOrange,only marks,mark=*,mark size=3pt] coordinates {(.8,178.5714)(.9,440.9091)};
+\node[anchor=north west] at (axis cs:.8,170) {$r=.80$: \$178.57};
+\node[anchor=south east] at (axis cs:.89,480) {$r=.90$: \$440.91};
+\node[align=left,anchor=north west] at (axis cs:.52,920) {$m=60,\ d=.01,\ a=50$\\Payments begin after first retention};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}[v/.style={circle,draw=IlliniBlue,fill=white,minimum size=9mm},b/.style={circle,draw=IlliniOrange,very thick,fill=white,minimum size=10mm}]
+\node[v] (a) at (0,1.2) {A};\node[v] (b) at (0,-1.2) {B};\node[v] (c) at (1.5,0) {C};\node[v] (d) at (-1.5,0) {D};
+\node[b] (r) at (4,0) {R};
+\node[v] (e) at (6.5,0) {E};\node[v] (f) at (8,1.2) {F};\node[v] (g) at (8,-1.2) {G};\node[v] (h) at (9.5,0) {H};
+\foreach \x/\y in {a/b,a/c,a/d,b/c,b/d,c/d,e/f,e/g,e/h,f/g,f/h,g/h} {\draw[IlliniBlue] (\x)--(\y);}
+\draw[IlliniOrange,very thick] (c)--(r)--(e);
+\node[align=center] at (0,-2.2) {Four connected customers};
+\node[align=center] at (8,-2.2) {Four connected customers};
+\node[align=center,text width=4cm] at (4,2.3) {R has only two links,\\but connects the groups.};
+\draw[accent] (4,1.6)--(r.north);
+\end{tikzpicture}

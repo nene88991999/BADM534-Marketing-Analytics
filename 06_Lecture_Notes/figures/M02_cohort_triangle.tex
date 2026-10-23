@@ -1,0 +1,8 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}[x=2.25cm,y=1.05cm]
+\foreach \c/\lab in {0/At Entry,1/Month 1,2/Month 2,3/Month 3} {\node[font=\small\bfseries] at (\c,1) {\lab};}
+\foreach \r/\lab in {0/January,-1/February,-2/March} {\node[anchor=east] at (-.6,\r) {\lab};}
+\foreach \x/\y/\v in {0/0/100,1/0/60,2/0/45,3/0/40,0/-1/100,1/-1/70,2/-1/50,0/-2/100,1/-2/80} {\draw[IlliniBlue] (\x-.47,\y-.4) rectangle (\x+.47,\y+.4);\node at (\x,\y) {\v\%};}
+\foreach \x/\y in {3/-1,2/-2,3/-2} {\fill[LightStorm] (\x-.47,\y-.4) rectangle (\x+.47,\y+.4);\node[align=center,font=\scriptsize] at (\x,\y) {Not yet\\observed};}
+\node[align=center,text width=11cm] at (1.3,-3.2) {Each cohort begins with 100 customers.\\Only observed customer ages enter the retention denominator.};
+\end{tikzpicture}

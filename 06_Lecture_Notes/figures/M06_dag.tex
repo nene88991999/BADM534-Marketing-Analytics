@@ -1,0 +1,10 @@
+% Original synthetic teaching figure; see corresponding module.
+\begin{tikzpicture}
+\node[box,text width=2.8cm] (z) at (0,0) {Randomized\\assignment $Z$};
+\node[orangebox,text width=2.8cm] (o) at (5,0) {Email opening $O$};
+\node[box,text width=2.8cm] (y) at (10,0) {Purchase $Y$};
+\node[box,text width=3cm] (u) at (7.5,2.5) {Prior\\engagement $U$};
+\draw[edge] (z)--(o);\draw[edge] (o)--(y);\draw[edge] (u)--(o);\draw[edge] (u)--(y);
+\draw[edge] (z.south)--(0,-1.4)--node[below,font=\scriptsize] {Other pathways from assignment} (10,-1.4)--(y.south);
+\node[align=center,text width=11cm] at (5,-2.9) {Opening depends on engagement and assignment.\\Keep all assigned customers in the analysis.};
+\end{tikzpicture}
