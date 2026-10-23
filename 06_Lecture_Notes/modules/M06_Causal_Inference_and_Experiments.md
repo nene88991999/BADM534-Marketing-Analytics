@@ -195,3 +195,170 @@ For the exposure example, ask an assistant to compute both the raw click rates a
 ## 6.12 Readings
 
 [Facure's causal-inference handbook](https://matheusfacure.github.io/python-causality-handbook/landing-page.html) supplies accessible implementations of several designs. [Kohavi and colleagues' practical guide](https://exp-platform.com/Documents/GuideControlledExperiments.pdf) discusses controlled online experiments. [Callaway and Sant'Anna (2021)](https://doi.org/10.1016/j.jeconom.2020.12.001) develop difference-in-differences with multiple periods.
+
+## 6.13 mHealth: Planning a Randomized Suggestion Test
+
+The manager has a candidate suggestion policy and wants to know whether offering it changes customer behavior. The historical logs contain no documented randomized assignment or recommendation exposure. They can supply a distribution for planning precision and reveal how a proposed outcome is measured. An effect estimate requires the assignment and outcome records from a suitable new design.
+
+Consider a user-randomized trial comparing the current interface with an offer of the new suggestions. Define the primary logging outcome as the fraction of the next 30 calendar days with at least one recorded food entry. Analyze all assigned eligible users under their original assignment, including users who never return. A suggestion may increase logging without changing consumption. A nutrition outcome therefore needs its own validated measurement and a plan for missingness. Post-assignment completeness screens could remove users differently across arms and alter the intention-to-treat comparison.
+
+For historical planning, require at least 30 recorded days during January through May. Among the 327 eligible users, June's logging fraction averages 0.6408 with a standard deviation of 0.3542. Twenty-three users have no June entries and receive a zero logging fraction. That zero is meaningful for observed logging. It says nothing about zero consumption, nutritional adequacy, or contract cancellation.
+
+With independent users, equal arm sizes, a two-sided 5% test, 80% power, and the historical standard deviation treated as the prospective outcome standard deviation, the normal approximation is
+
+$$
+n_{\text{per arm}}\approx
+\frac{2\sigma^2(z_{0.975}+z_{0.80})^2}{\Delta^2}.
+$$
+
+An imposed minimum detectable effect of 0.05 in the logging fraction, equivalent to 1.5 days out of 30, gives 788 users per arm after rounding upward. This is a planning scenario using historical variance. Future eligibility, outcome distributions, unequal assignment, clustering, and the intended analysis can change the required size. The 327-user historical subset does not supply that many independent trial participants.
+
+![The curve holds the historical outcome variance and testing assumptions fixed. More independent users narrow the detectable effect; adding days within the same user does not supply the same information.](../figures/M06_mhealth_precision.png)
+
+A randomization simulation assigns the same observed June outcomes to nearly equal arms 2,000 times while imposing a sharp zero effect. The standard deviation of the resulting mean difference is 0.0395, and the central 95% interval is approximately [-0.0798, 0.0740]. These differences arise from assignment variation alone. Repeatedly treating each user-day as an independent trial participant would conceal dependence within users and overstate the effective sample size.
+
+The protocol should specify randomization before any policy exposure, record assignment and actual exposure separately, and keep the outcome window fixed. For nutrition assessments, collect reliable intake or appropriate validation measures independently of how often the app is used. Domain-based restrictions should be specified in advance, with their effect on the target population and missing-outcome analysis made explicit.
+
+The program uses a local random generator with seed 534. It reports the assumed effect separately from the simulated differences and never labels an artificial assignment as an observed intervention.
+
+Python source: [m06.py](../../03_Data_and_Code/mHealth/recurring_examples/m06.py). From its directory, run `python m06.py`.
+
+```python
+"""Use historical logging variation to plan, not estimate, a randomized trial."""
+
+import json
+import numpy as np
+from scipy.stats import norm
+from common import SEED, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+prior = daily.loc[daily.date.between("2016-01-01", "2016-05-31")]
+counts = prior.groupby("Userid").size()
+eligible = counts[counts >= 30].index.sort_values()
+june = daily.loc[daily.date.between("2016-06-01", "2016-06-30")]
+# A zero means no recorded day in June, not zero consumption or poor health.
+outcome = june.groupby("Userid").size().reindex(eligible, fill_value=0) / 30
+sigma = float(outcome.std(ddof=1))
+effect = 0.05  # Imposed minimum detectable increase in the fraction of logged days.
+critical = norm.ppf(0.975) + norm.ppf(0.80)
+per_arm = int(np.ceil(2 * sigma**2 * critical**2 / effect**2))
+# Illustrative balanced assignment under a sharp zero-effect simulation.
+rng = np.random.default_rng(SEED)
+values = outcome.to_numpy()
+differences = []
+for repetition in range(2000):
+    order = rng.permutation(len(values))
+    treated, control = np.array_split(order, 2)
+    differences.append(values[treated].mean() - values[control].mean())
+result = {
+    "eligible_users": len(eligible),
+    "june_mean_logging_fraction": float(outcome.mean()),
+    "june_sd": sigma,
+    "zero_logged_days": int(outcome.eq(0).sum()),
+    "assumed_effect": effect,
+    "normal_approximation_users_per_arm": per_arm,
+    "null_simulation_mean_difference": float(np.mean(differences)),
+    "null_simulation_sd": float(np.std(differences, ddof=1)),
+    "null_simulation_95_percent_interval": np.quantile(
+        differences, [0.025, 0.975]
+    ).tolist(),
+}
+save_result("M06", result)
+print(json.dumps(result, indent=2))
+```
+
+## 6.14 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [m06_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m06_synthetic.py). From its directory, run `python m06_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M6; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+se = math.sqrt(0.13 * 0.87 / 1000 + 0.1 * 0.9 / 1000)
+ci = [0.03 - 1.96 * se, 0.03 + 1.96 * se]
+r["M06"] = {
+    "assignment_effect": 0.03,
+    "standard_error": se,
+    "effect_ci": ci,
+    "contribution_per_assigned_customer": 40 * 0.03 - 0.5,
+    "contribution_ci": [40 * x - 0.5 for x in ci],
+    "sample_per_arm": 2 * 0.1 * 0.9 * (1.96 + 0.84) ** 2 / 0.02**2,
+    "design_effect": 1 + (20 - 1) * 0.05,
+    "difference_in_differences": (150 - 120) - (110 - 100),
+}
+write_csv(
+    "M06_experiment_synthetic.csv",
+    ["assignment", "assigned_customers", "purchasers"],
+    [("email", 1000, 130), ("control", 1000, 100)],
+)
+write_csv(
+    "M06_did_synthetic.csv",
+    ["group", "before", "after"],
+    [("treated", 120, 150), ("comparison", 100, 110)],
+)
+
+exposures = [
+    ("frequent", "A", 0.9, 450, 270),
+    ("frequent", "B", 0.1, 50, 25),
+    ("occasional", "A", 0.1, 50, 10),
+    ("occasional", "B", 0.9, 450, 180),
+]
+write_csv(
+    "M06_exposure_synthetic.csv",
+    ["customer_group", "item", "logging_probability", "displays", "clicks"],
+    exposures,
+)
+
+
+def constant_policy_value(rows, item):
+    groups = {row[0] for row in rows}
+    selected = [row for row in rows if row[1] == item]
+    if {row[0] for row in selected if row[2] > 0} != groups:
+        raise ValueError(
+            "Target action lacks positive logging support in a customer group"
+        )
+    n = sum(row[3] for row in rows)
+    weighted_clicks = sum(clicks / prob for _, _, prob, count, clicks in selected)
+    sum_weights = sum(count / prob for _, _, prob, count, clicks in selected)
+    sum_squared_weights = sum(count / prob**2 for _, _, prob, count, clicks in selected)
+    raw = sum(row[4] for row in selected) / sum(row[3] for row in selected)
+    return {
+        "raw_rate": raw,
+        "ips_value": weighted_clicks / n,
+        "effective_sample_size": sum_weights**2 / sum_squared_weights,
+    }
+
+
+r["M06"]["recommendation_policies"] = {
+    item: constant_policy_value(exposures, item) for item in ["A", "B"]
+}
+for item, target in [("A", 0.4), ("B", 0.45)]:
+    result = r["M06"]["recommendation_policies"][item]
+    # Independent standardization uses the known 50:50 population mix.
+    standardized = sum(
+        0.5 * clicks / count for group, j, prob, count, clicks in exposures if j == item
+    )
+    assert math.isclose(result["ips_value"], target) and math.isclose(
+        result["ips_value"], standardized
+    )
+    assert math.isclose(result["effective_sample_size"], 180)
+unsupported = [
+    (g, j, 0 if (g, j) == ("occasional", "A") else p, n, y)
+    for g, j, p, n, y in exposures
+]
+try:
+    constant_policy_value(unsupported, "A")
+except ValueError:
+    pass
+else:
+    raise AssertionError("An unsupported target policy must be rejected")
+print(json.dumps(r, indent=2))
+```

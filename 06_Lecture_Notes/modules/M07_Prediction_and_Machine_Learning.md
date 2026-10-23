@@ -202,3 +202,246 @@ For a recommender exercise, have an assistant build a popularity baseline, a sim
 For an explanation exercise, give the assistant a small catalog and a customer's explicit constraints. Request a recommendation with an attribute-level source for each factual claim. Include one unavailable attribute and one product that violates a constraint. Check whether the system acknowledges missing information and excludes the ineligible product. Score factual support separately from how persuasive the explanation sounds.
 
 [An Introduction to Statistical Learning](https://www.statlearning.com/) develops the central learning methods. The [scikit-learn evaluation guide](https://scikit-learn.org/stable/modules/model_evaluation.html) provides metric definitions and implementation references. [Hagen and colleagues (2020)](https://doi.org/10.1007/s11002-020-09535-7) connect machine-learning tools to behavioral marketing questions.
+
+## 7.15 mHealth: Predicting a Returning User's Next Basket
+
+The manager needs a recommendation baseline that uses only information available when suggestions are chosen. Global category popularity is easy to implement. A personal frequency rule can exploit repeated food choices without estimating a complex model. The comparison should preserve complete baskets and evaluate both rules on the same users, candidate set, and future outcomes.
+
+A basket is the set of distinct source categories recorded by a user on a day; missing category labels are excluded. Freeze the candidate set at the 312 categories observed before July 1. For each forecast origin, require at least 30 prior observed basket days and select the first observed basket during the following month as the target. Validation starts July 1 and testing starts September 1. Every score uses dates strictly before its forecast origin. The test concerns returning users who subsequently log a basket, conditional on that observation; it does not evaluate people who never return.
+
+Personal frequency is the fraction of a user's observed days in a specified history window containing a category. It does not divide by all calendar days. A tiny popularity term resolves most frequency ties; exact remaining ties use alphabetical order. If a user has no observed day in a short window, personal frequencies are zero and the popularity term supplies the order. Global popularity uses the corresponding fraction across all prior observed user-days. Scores produce a list of ten distinct categories.
+
+Choose among 30-day, 90-day, and all-prior-history windows using July mean NDCG at ten. Their validation scores are 0.5666, 0.5661, and 0.5501, respectively, among 297 evaluated users. The 30-day rule wins by a very small margin over 90 days. The code preserves the specified tie order and carries the chosen window to September. A further claim that 30 days is generally superior would need repeated or independent validation.
+
+| September Rule | Evaluated Users | Recall at 10 | NDCG at 10 |
+| --- | ---: | ---: | ---: |
+| Global Popularity | 299 | 0.2799 | 0.3270 |
+| Personal 30-Day Frequency | 299 | 0.4759 | 0.5862 |
+
+![The candidate universe is fixed before validation. The September rule can use updated pre-September histories, while its chosen history-window length remains fixed from July.](../figures/M07_mhealth_timing.png)
+
+There are 362 eligible users at the September origin, but only 299 have a target basket in that month. Reporting both counts exposes the conditioning introduced by the target definition. All observed target categories in this evaluation are covered by the frozen candidate set. The implementation nevertheless retains all target categories in the recall denominator and ideal DCG, so an unsupported category would count against performance.
+
+The personal rule recovers more recorded categories than the popularity baseline. This supports personalization for predicting the observed basket under the historical environment. It does not show that displaying those suggestions changes choices, improves nutrition, or generates incremental app value. Logging may omit foods, and the basket can occur several days after the fixed origin. A same-day or event-time recommender would need a corresponding evaluation design.
+
+### 7.15.1 Histories, Candidate Sets, and Ranking Metrics
+
+`ranking.py` defines the common evaluation so that M8 changes the ranking objective while holding the target baskets fixed. Recall divides the number of recovered categories by the target basket size. NDCG discounts relevant categories by position and divides by the best possible ranking for that target. Each evaluated user contributes one metric value, and the final result averages users equally.
+
+Python source: [ranking.py](../../03_Data_and_Code/mHealth/recurring_examples/ranking.py). From its directory, run `python ranking.py`.
+
+```python
+"""Whole-basket chronological evaluation with a frozen category universe."""
+
+import numpy as np
+import pandas as pd
+
+
+def candidate_categories(baskets):
+    prior = baskets.loc[baskets.date.lt("2016-07-01")]
+    return sorted({category for basket in prior.basket for category in basket})
+
+
+def evaluation_cases(baskets, cutoff, candidates):
+    cutoff = pd.Timestamp(cutoff)
+    prior = baskets.loc[baskets.date.lt(cutoff)]
+    counts = prior.groupby("Userid").size()
+    eligible = counts[counts >= 30].index
+    end = cutoff + pd.offsets.MonthBegin(1)
+    target = baskets.loc[baskets.date.ge(cutoff) & baskets.date.lt(end)]
+    target = target.loc[target.Userid.isin(eligible)].sort_values(["Userid", "date"])
+    target = target.drop_duplicates("Userid")
+    histories = dict(tuple(prior.groupby("Userid")))
+    assert prior.date.max() < cutoff
+    global_counts = (
+        prior.basket.explode().value_counts().reindex(candidates, fill_value=0)
+    )
+    popularity = global_counts.to_numpy(dtype=float) / len(prior)
+    cases = [(histories[row.Userid], set(row.basket)) for row in target.itertuples()]
+    return cases, popularity, len(eligible)
+
+
+def personal_frequency(history, cutoff, candidates, window):
+    if window is not None:
+        start = pd.Timestamp(cutoff) - pd.Timedelta(days=window)
+        history = history.loc[history.date.ge(start)]
+    counts = history.basket.explode().value_counts().reindex(candidates, fill_value=0)
+    return counts.to_numpy(dtype=float) / max(1, len(history))
+
+
+def rank_categories(scores, candidates, k=10):
+    # Stable sorting resolves exact score ties using alphabetically sorted candidates.
+    positions = np.argsort(-scores, kind="stable")[:k]
+    return [candidates[index] for index in positions]
+
+
+def ranking_metrics(ranking, target):
+    relevance = np.array([category in target for category in ranking], dtype=float)
+    discounts = 1 / np.log2(np.arange(2, len(ranking) + 2))
+    ideal = discounts[: min(len(target), len(ranking))].sum()
+    return float(relevance.sum() / len(target)), float(
+        (relevance * discounts).sum() / ideal
+    )
+
+
+def evaluate(
+    baskets, cutoff, candidates, window=None, popularity_only=False, novelty_weight=0
+):
+    cases, popularity, eligible = evaluation_cases(baskets, cutoff, candidates)
+    rows = []
+    for history, target in cases:
+        frequency = personal_frequency(history, cutoff, candidates, window)
+        recent = personal_frequency(history, cutoff, candidates, 30)
+        unseen = recent == 0
+        scores = popularity if popularity_only else frequency + 1e-6 * popularity
+        ranking = rank_categories(scores + novelty_weight * unseen, candidates)
+        recall, ndcg = ranking_metrics(ranking, target)
+        recent_set = {candidates[j] for j in np.flatnonzero(recent)}
+        novelty = sum(category not in recent_set for category in ranking) / len(ranking)
+        coverage = len(target & set(candidates)) / len(target)
+        rows.append([recall, ndcg, novelty, coverage])
+    means = np.mean(rows, axis=0)
+    return {
+        "eligible_users": eligible,
+        "evaluated_users": len(cases),
+        "recall_at_10": float(means[0]),
+        "ndcg_at_10": float(means[1]),
+        "novelty_at_10": float(means[2]),
+        "target_candidate_coverage": float(means[3]),
+    }
+```
+
+### 7.15.2 Validation Before Testing
+
+The execution order matters. Fit the history-window choice using July, freeze it, and report September performance without changing the rule after seeing the test. The small metric counterexample confirms that placing both relevant categories first yields NDCG of one, while placing an irrelevant category first lowers it. A separate test supplies a category that occurs only in the future and verifies that it never enters personal history.
+
+Python source: [m07.py](../../03_Data_and_Code/mHealth/recurring_examples/m07.py). From its directory, run `python m07.py`.
+
+```python
+"""Choose history length in July and evaluate the frozen rule in September."""
+
+import json
+from common import load_inputs, save_result
+from ranking import candidate_categories, evaluate, ranking_metrics
+
+food, daily, baskets = load_inputs()
+candidates = candidate_categories(baskets)
+windows = {"30_days": 30, "90_days": 90, "all_prior_days": None}
+validation = {
+    name: evaluate(baskets, "2016-07-01", candidates, window)
+    for name, window in windows.items()
+}
+# Ties retain the first listed specification; September plays no role in selection.
+chosen = max(validation, key=lambda name: validation[name]["ndcg_at_10"])
+test = {
+    "popularity": evaluate(baskets, "2016-09-01", candidates, popularity_only=True),
+    "personal_frequency": evaluate(baskets, "2016-09-01", candidates, windows[chosen]),
+}
+assert ranking_metrics(["B", "C", "A"], {"B", "C"}) == (1.0, 1.0)
+assert ranking_metrics(["A", "B", "C"], {"B", "C"})[1] < 1
+result = {
+    "candidate_categories": len(candidates),
+    "validation": validation,
+    "chosen_window": chosen,
+    "test": test,
+}
+save_result("M07", result)
+print(json.dumps(result, indent=2))
+```
+
+## 7.16 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [m07_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m07_synthetic.py). From its directory, run `python m07_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M7; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+r["M07"] = {
+    "precision": 30 / 100,
+    "recall": 30 / 50,
+    "accuracy": (30 + 880) / 1000,
+    "all_negative_accuracy": 950 / 1000,
+    "cost_threshold": 1 / (1 + 9),
+    "coupon_A": 40 * (0.8 - 0.78) - 5 * 0.8 - 2,
+    "coupon_B": 40 * (0.3 - 0.15) - 5 * 0.3 - 2,
+}
+write_csv(
+    "M07_coupon_synthetic.csv",
+    [
+        "customer",
+        "purchase_with_coupon",
+        "purchase_without_coupon",
+        "margin_dollars",
+        "discount_dollars",
+        "contact_cost_dollars",
+    ],
+    [("A", 0.8, 0.78, 40, 5, 2), ("B", 0.3, 0.15, 40, 5, 2)],
+)
+
+rankings = {
+    "ABC": [("A", 0), ("B", 1), ("C", 1)],
+    "BCA": [("B", 1), ("C", 1), ("A", 0)],
+}
+
+
+def dcg(labels):
+    return sum(
+        (2**label - 1) / math.log2(rank + 1)
+        for rank, label in enumerate(labels, start=1)
+    )
+
+
+ideal = dcg([1, 1, 0])
+r["M07"]["rankings"] = {
+    name: {
+        "precision_at_3": sum(v for _, v in vals) / 3,
+        "recall_at_3": sum(v for _, v in vals) / 2,
+        "dcg_at_3": dcg([v for _, v in vals]),
+        "ndcg_at_3": dcg([v for _, v in vals]) / ideal,
+    }
+    for name, vals in rankings.items()
+}
+write_csv(
+    "M07_rankings_synthetic.csv",
+    ["ranking", "position", "item", "binary_relevance"],
+    [
+        (name, pos, item, rel)
+        for name, vals in rankings.items()
+        for pos, (item, rel) in enumerate(vals, start=1)
+    ],
+)
+assert math.isclose(r["M07"]["rankings"]["BCA"]["ndcg_at_3"], 1)
+assert 0.693 < r["M07"]["rankings"]["ABC"]["ndcg_at_3"] < 0.694
+
+goal_items = {"A": (0.9, 0.1), "B": (0.75, 0.6), "C": (0.6, 0.9)}
+goal_score = (
+    lambda item, alpha: (1 - alpha) * goal_items[item][0] + alpha * goal_items[item][1]
+)
+r["M07"]["goal_blend"] = {
+    "scores": {
+        str(alpha): {item: goal_score(item, alpha) for item in goal_items}
+        for alpha in [0, 0.25, 0.5, 1]
+    },
+    "optimal_switches": [3 / 13, 1 / 3],
+}
+write_csv(
+    "M07_goals_synthetic.csv",
+    ["item", "preference_score", "goal_score"],
+    [(item, *scores) for item, scores in goal_items.items()],
+)
+assert math.isclose(goal_score("A", 3 / 13), goal_score("B", 3 / 13))
+assert math.isclose(goal_score("B", 1 / 3), goal_score("C", 1 / 3))
+for i in range(1001):
+    alpha = i / 1000
+    expected = "A" if alpha < 3 / 13 else ("B" if alpha < 1 / 3 else "C")
+    assert max(goal_items, key=lambda j: goal_score(j, alpha)) == expected
+print(json.dumps(r, indent=2))
+```

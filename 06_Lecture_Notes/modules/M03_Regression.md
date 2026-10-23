@@ -109,3 +109,128 @@ For practice, consider an advertising coefficient measured per $1,000 of spendin
 ## 3.9 Readings
 
 [An Introduction to Statistical Learning](https://www.statlearning.com/) provides a foundation for regression, model assessment, and nonlinear extensions. The [statsmodels regression documentation](https://www.statsmodels.org/stable/regression.html) supports implementation.
+
+## 3.10 mHealth: Breadth and Next-Day Recorded Calories
+
+The manager observes that users with broader daily food logs often report more calories and considers using breadth to identify customers who may want different suggestions. The relevant first comparison concerns timing: does today's recorded breadth predict the next calendar day's reported total? Taking the next available row would turn a one-day comparison into an interval of variable length when customers skip days.
+
+Let $K_{it}$ be today's recorded category count and $E_{i,t+1}$ the next calendar day's reported calories. Among positive consecutive-day pairs, estimate
+
+$$
+\log E_{i,t+1}=\alpha_i+\beta K_{it}+\gamma_{m(t)}+\delta_{w(t)}+u_{it}.
+$$
+
+The customer effect $\alpha_i$ absorbs time-invariant differences in typical logging and intake. Month and weekday effects describe calendar variation. The coefficient compares days with different recorded breadth for the same user, after these additive controls. It remains an association: changing appetite, omitted meals, or recording effort can affect both breadth and later totals. The [NCI discussion of weekday effects](https://epi.grants.cancer.gov/dietary-assessment-primer/learn/day.html) motivates attention to calendar composition.
+
+The sample requires positive reported totals on both dates and at least two eligible pairs per user. It contains 69,648 pairs from 370 users. Standard errors are clustered by user to allow dependence among overlapping pairs. The pooled model uses the same month and weekday controls but omits customer effects. No prior-outcome control or calorie winsorization is included in either baseline specification.
+
+| Specification | Pairs | Breadth Coefficient | Clustered 95% Interval |
+| --- | ---: | ---: | ---: |
+| Pooled | 69,648 | 0.02771 | [0.01934, 0.03609] |
+| Customer Fixed Effects | 69,648 | 0.01284 | [0.00997, 0.01572] |
+| Fixed Effects, 100–5,000 on Both Days | 69,216 | 0.01136 | [0.00893, 0.01380] |
+
+In the fixed-effects model, one additional category corresponds to a 1.29% higher conditional geometric mean of next-day reported calories, calculated as $100(e^{\beta}-1)$. This percentage does not automatically describe the arithmetic mean. The pooled estimate is larger, consistent with persistent differences across users contributing to the pooled association. Its reduction after adding fixed effects does not identify a causal mechanism.
+
+The third row applies the explicitly imposed review range from M1 to both dates. It removes 432 pairs and produces a 1.14% geometric-mean association. This is a sensitivity comparison on a changed sample, not a validated nutrition screen. The baseline outcome ranges from 0.64 to 9,190, so the restriction directly addresses observations influential on the log scale. The adult and percentile screens in M2 answer different sample questions and should be named separately when used.
+
+![Customer controls and a calorie-range sensitivity restriction change the descriptive coefficient.](../figures/M03_mhealth_association.png)
+
+The intervals quantify sampling uncertainty under the regression and clustering specification. They do not account for all reporting error or make breadth an assigned treatment. A recommendation to induce greater breadth needs evidence about how a particular intervention changes behavior and outcomes.
+
+The date shift below moves future outcomes back exactly one day before the merge. The program then applies each sample rule explicitly and reports pair and user counts. An AI-generated `groupby(...).shift(-1)` without a date-gap check would answer a different question.
+
+Python source: [m03.py](../../03_Data_and_Code/mHealth/recurring_examples/m03.py). From its directory, run `python m03.py`.
+
+```python
+"""Estimate descriptive next-calendar-day associations with clustered uncertainty."""
+
+import json
+import numpy as np
+import pandas as pd
+import statsmodels.formula.api as smf
+from common import load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+future = daily[["Userid", "date", "food_calories"]].copy()
+future["date"] -= pd.Timedelta(days=1)
+future = future.rename(columns={"food_calories": "next_calories"})
+panel = daily.merge(future, on=["Userid", "date"], validate="one_to_one")
+panel = panel.loc[panel.food_calories.gt(0) & panel.next_calories.gt(0)].copy()
+counts = panel.groupby("Userid").size()
+panel = panel.loc[panel.Userid.isin(counts[counts >= 2].index)].copy()
+panel["log_next"] = np.log(panel.next_calories)
+panel["month"] = panel.date.dt.month
+panel["weekday"] = panel.date.dt.dayofweek
+assert (panel.next_calories > 0).all()
+restricted = panel.loc[
+    panel.food_calories.between(100, 5000) & panel.next_calories.between(100, 5000)
+].copy()
+counts = restricted.groupby("Userid").size()
+restricted = restricted.loc[restricted.Userid.isin(counts[counts >= 2].index)]
+fits = {}
+base = "log_next ~ category_count + C(month) + C(weekday)"
+specifications = [
+    ("pooled", base, panel),
+    ("user_fixed_effects", base + " + C(Userid)", panel),
+    ("restricted_fixed_effects", base + " + C(Userid)", restricted),
+]
+for name, formula, sample in specifications:
+    fit = smf.ols(formula, data=sample).fit(
+        cov_type="cluster", cov_kwds={"groups": sample.Userid}, use_t=True
+    )
+    coefficient = float(fit.params["category_count"])
+    low, high = map(float, fit.conf_int().loc["category_count"])
+    fits[name] = {
+        "pairs": len(sample),
+        "users": int(sample.Userid.nunique()),
+        "coefficient": coefficient,
+        "se": float(fit.bse["category_count"]),
+        "ci_low": low,
+        "ci_high": high,
+        "geometric_mean_percent": 100 * float(np.expm1(coefficient)),
+    }
+result = {
+    "pairs": len(panel),
+    "users": int(panel.Userid.nunique()),
+    "min_next_calories": float(panel.next_calories.min()),
+    "max_next_calories": float(panel.next_calories.max()),
+    "models": fits,
+}
+save_result("M03", result)
+print(json.dumps(result, indent=2))
+```
+
+## 3.11 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [m03_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m03_synthetic.py). From its directory, run `python m03_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M3; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+low = [(1, 9), (2, 8), (3, 7)]
+high = [(4, 16), (5, 15), (6, 14)]
+write_csv(
+    "M03_rivals_synthetic.csv",
+    ["demand_group", "rival_count", "sales_illustrative_units"],
+    [("low", x, y) for x, y in low] + [("high", x, y) for x, y in high],
+)
+r["M03"] = {
+    "pooled": ols_slope(low + high),
+    "low": ols_slope(low),
+    "high": ols_slope(high),
+    "simple_sales_fit": ols_slope([(1, 3), (2, 5), (3, 7)]),
+    "coefficient_ci": [2 - 1.96 * 0.5, 2 + 1.96 * 0.5],
+}
+assert math.isclose(r["M03"]["pooled"]["slope"], 11 / 7)
+assert r["M03"]["low"]["slope"] == r["M03"]["high"]["slope"] == -1
+print(json.dumps(r, indent=2))
+```

@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel={Adult Base Days Retained (Percent)},ylabel={Mean Recorded Variety},xmin=65,xmax=104,ymin=.76,ymax=.803,xtick={70,80,90,100},ytick={.765,.775,.785,.795},yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},grid=major]
+\addplot[only marks,mark=*,mark size=3pt,IlliniBlue] coordinates {(100,.7837115)};
+\addplot[only marks,mark=square*,mark size=3pt,Patina] coordinates {(99.5623,.7862868)};
+\addplot[only marks,mark=triangle*,mark size=3.5pt,Industrial] coordinates {(97.8498,.7916456)};
+\addplot[only marks,mark=diamond*,mark size=4pt,IlliniOrange] coordinates {(69.4839,.7671419)};
+\node[anchor=north east,font=\footnotesize] at (axis cs:100,.7828) {Adult positive base};
+\node[anchor=east,font=\footnotesize] at (axis cs:98.7,.7863) {100--5,000 range};
+\node[anchor=south east,font=\footnotesize] at (axis cs:98,.793) {Earlier-period percentiles};
+\node[anchor=south west,font=\footnotesize] at (axis cs:69.8,.768) {Item/day agreement};
+\end{axis}
+\end{tikzpicture}

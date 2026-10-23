@@ -66,14 +66,15 @@ def main():
 '''
     master=ROOT/'BADM534_Lecture_Notes.tex'
     fragments = [re.sub(r'\\noindent\s*\n+', lambda m: r'\noindent ', fragment) for fragment in fragments]
-    # Teaching tables and the short Python example fit on one page.
-    # Keep them intact rather than splitting their rows or code across pages.
+    fragments = [fragment.replace('Python source:',
+        '\\FloatBarrier\n\\Needspace{8\\baselineskip}\nPython source:') for fragment in fragments]
+    # Keep short teaching tables intact; let complete Python programs span pages.
     fragments = [fragment.replace(r'\begin{longtable}[]',
         '\\begin{table}[H]\n\\centering\\small\n\\begin{tabular}')
         .replace(r'\endhead', '')
         .replace(r'\end{longtable}', '\\end{tabular}\n\\end{table}')
-        .replace(r'\begin{verbatim}', '\\noindent\\begin{minipage}{\\linewidth}\n\\begin{Verbatim}[breaklines]')
-        .replace(r'\end{verbatim}', '\\end{Verbatim}\n\\end{minipage}')
+        .replace(r'\begin{verbatim}', '\\begin{Verbatim}[breaklines,breakanywhere,fontsize=\\small]')
+        .replace(r'\end{verbatim}', '\\end{Verbatim}')
         for fragment in fragments]
     master.write_text(intro+'\n'.join(fragments)+'\n\\end{document}\n')
     run([args.tectonic,'--keep-logs','--outdir',build,master])
@@ -86,6 +87,8 @@ def main():
             '\n\\end{document}\n')
         try:
             run([args.tectonic,'--keep-logs','--outdir',build,atlas])
+            for page in build.glob('atlas-*.png'):
+                page.unlink()
             run([args.pdftoppm,'-r','150','-png',build/'figure_atlas.pdf',build/'atlas'])
             pages=sorted(build.glob('atlas-*.png'))
             if len(pages)!=len(names):

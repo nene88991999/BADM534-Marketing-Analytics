@@ -127,3 +127,137 @@ For practice, recompute the subscription value with $r=0.85$ and verify the resu
 Ask a coding assistant to calculate choice probabilities from a supplied profile table, check that they sum to one, and separate a new product's share from incremental category demand. For clustering, require documented transformations, segment profiles, and a sensitivity comparison. For CLV, request an explicit payment timeline and verify the closed-form calculation against a long finite sum. These checks catch common mistakes that can survive apparently reasonable charts.
 
 [Sawtooth's academic materials](https://sawtoothsoftware.com/academics/teaching-resources) provide conjoint examples. [Dolnicar, Grün, and Leisch's segmentation book](https://link.springer.com/book/10.1007/978-981-10-8818-6) develops the connection between segmentation design and use. [PyMC-Marketing's CLV documentation](https://www.pymc-marketing.io/en/latest/notebooks/clv/clv_quickstart.html) offers implementation examples whose model assumptions and software versions should be checked before adaptation.
+
+## 4.11 mHealth: Behavioral Segments and Product Economics
+
+A product manager may want different interfaces for occasional loggers, frequent loggers with narrow recorded diets, and frequent loggers with broad recorded diets. Segmenting on January through June behavior creates groups whose later logging can be described without using later observations to define the groups. A segment is useful when it corresponds to a decision the manager can implement, such as simplifying entry or offering a broader set of suggestions.
+
+Eligibility requires at least 30 observed days before July 1 and nonmissing average variety. Each user contributes three features: observed days divided by the 182 calendar days in the first half of 2016, mean recorded category count, and mean calorie-share variety. Standardization gives each feature unit variance before three-cluster k-means. Three clusters are imposed for a manageable descriptive comparison. Cluster labels are ordered by their mean prior logging fraction.
+
+| Segment | Users | Prior Logging Fraction | Mean Breadth | Later Logging Fraction |
+| --- | ---: | ---: | ---: | ---: |
+| 1 | 126 | 0.426 | 10.84 | 0.338 |
+| 2 | 90 | 0.759 | 6.99 | 0.594 |
+| 3 | 115 | 0.870 | 12.80 | 0.654 |
+
+Later logging uses the 184 calendar days from July through December, with zero observed days for eligible users absent from that period. The differences describe persistence in recorded use. They are not treatment responses, contract renewal rates, or purchase probabilities. In particular, Segment 2 combines frequent logging with relatively narrow breadth. A single ranking by activity would conceal that distinction.
+
+Repeating k-means with a second seed produces an adjusted Rand index of 1.0 for these inputs. The partition is stable to this initialization check. That result does not establish three natural customer types or prove stability to other features, calendar windows, or measurement screens. The calorie-based variety and breadth features are related, so including both places additional emphasis on recorded dietary diversity. Nutrition screening can also alter the segmentation inputs; compare its consequences before naming a segment around a health interpretation.
+
+![Prior logging frequency and recorded breadth distinguish groups that a single activity ranking would combine. Both axes use January through June; later behavior does not define the partition.](../figures/M04_mhealth_segments.png)
+
+The food logs supply no observed subscription price, product-choice experiment, margin, acquisition cost, or payment-based retention. A hypothetical paid-plan calculation can nevertheless clarify the extra inputs needed. Set the outside-option utility to zero, paid-plan benefit to 0.8, price coefficient to -0.1 per dollar, and price to $5. The imposed logit model yields a paid-plan share of 0.5744. These inputs are assumptions, not conjoint estimates from the logs.
+
+For a separate hypothetical subscription, suppose monthly contribution conditional on retention is $6, the monthly discount rate is 1%, acquisition cost is $10, and the first contribution occurs one month after acquisition. With constant monthly retention $r$, value is $6r/(1.01-r)-10$. Assumed retention of 0.80, 0.85, and 0.90 gives values of $12.86, $21.87, and $39.09. These scenarios are not assigned to the three behavioral segments. Doing so would equate logging persistence with paid retention without evidence.
+
+The code fits the scaler and clusters using only the earlier period, then joins later logging for description. An AI assistant should explain each feature's units, how missing later records enter the denominator, and which economic inputs remain hypothetical before proposing a targeting rule.
+
+Python source: [m04.py](../../03_Data_and_Code/mHealth/recurring_examples/m04.py). From its directory, run `python m04.py`.
+
+```python
+"""Segment January-June behavior and describe later logging."""
+
+import json
+import numpy as np
+import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import adjusted_rand_score
+from common import OUTPUT, SEED, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+prior = daily.loc[daily.date.lt("2016-07-01")]
+features = prior.groupby("Userid").agg(
+    logged_days=("date", "size"),
+    breadth=("category_count", "mean"),
+    variety=("variety", "mean"),
+)
+features = features.loc[features.logged_days.ge(30)].dropna()
+features["logging_fraction"] = features.logged_days / 182
+columns = ["logging_fraction", "breadth", "variety"]
+scaled = StandardScaler().fit_transform(features[columns])
+model = KMeans(n_clusters=3, n_init=20, random_state=SEED).fit(scaled)
+alternative = KMeans(n_clusters=3, n_init=20, random_state=SEED + 1).fit(scaled)
+# Number clusters by their mean prior logging fraction for readable output.
+order = (
+    features.assign(raw=model.labels_)
+    .groupby("raw")
+    .logging_fraction.mean()
+    .sort_values()
+    .index
+)
+labels = {raw: rank + 1 for rank, raw in enumerate(order)}
+features["segment"] = [labels[value] for value in model.labels_]
+later = daily.loc[daily.date.ge("2016-07-01")].groupby("Userid").size()
+features["later_logging_fraction"] = later.reindex(features.index, fill_value=0) / 184
+table = features.groupby("segment").agg(
+    users=("segment", "size"),
+    prior_logging=("logging_fraction", "mean"),
+    breadth=("breadth", "mean"),
+    variety=("variety", "mean"),
+    later_logging=("later_logging_fraction", "mean"),
+)
+OUTPUT.mkdir(exist_ok=True)
+table.to_csv(OUTPUT / "M04_segments.csv")
+# Imposed monthly financial assumptions, separate from the log estimates.
+retention = np.array([0.80, 0.85, 0.90])
+clv = 6 * retention / (1.01 - retention) - 10
+utility = np.array([0.0, 0.8 - 0.1 * 5])  # Outside option, hypothetical paid plan.
+choice = np.exp(utility - utility.max())
+choice /= choice.sum()
+result = {
+    "users": len(features),
+    "features": columns,
+    "seed_agreement_ari": float(
+        adjusted_rand_score(model.labels_, alternative.labels_)
+    ),
+    "segments": table.reset_index().to_dict(orient="records"),
+    "hypothetical_retention": retention.tolist(),
+    "hypothetical_clv": clv.tolist(),
+    "hypothetical_paid_plan_share": float(choice[1]),
+}
+save_result("M04", result)
+print(json.dumps(result, indent=2))
+```
+
+## 4.12 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [m04_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m04_synthetic.py). From its directory, run `python m04_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M4; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+before = shares({"A": 0.2, "B": -0.6, "outside": 0})
+after = shares({"A": 0.2, "B": -0.6, "C": 0.2, "outside": 0})
+r["M04"] = {
+    "shares_before": before,
+    "shares_after": after,
+    "category_share_increase": before["outside"] - after["outside"],
+    "contribution_before": 4 * before["A"] + 3 * before["B"],
+    "contribution_after": 4 * (after["A"] + after["C"]) + 3 * after["B"],
+    "wtp_dollars": 1.2 / 0.1,
+    "distance_raw_AB": math.hypot(10, 8),
+    "distance_raw_AC": 100,
+    "distance_rescaled_AB": math.hypot(0.1, 8),
+    "distance_rescaled_AC": 1,
+    "clv_after_acquisition": {
+        str(retention): 60 * retention / (1.01 - retention) - 50
+        for retention in [0.8, 0.85, 0.9]
+    },
+}
+write_csv(
+    "M04_segmentation_synthetic.csv",
+    ["customer", "spending_dollars", "visits"],
+    [("A", 100, 1), ("B", 110, 9), ("C", 200, 1)],
+)
+assert math.isclose(sum(before.values()), 1) and math.isclose(sum(after.values()), 1)
+print(json.dumps(r, indent=2))
+```

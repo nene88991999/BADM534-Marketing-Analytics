@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[title={Hypothetical BMR: 1,500 kcal/day},xlabel={Mean Reported Energy (kcal/day)},xmin=1000,xmax=5100,ymin=.4,ymax=4.8,ytick={1,2,3,4},yticklabels={7 Days; PAL 1.80,7 Days; PAL 1.55,1 Day; PAL 1.80,1 Day; PAL 1.55},width=11cm,xmajorgrids=true]
+\addplot[IlliniBlue,very thick,mark=|,mark size=7pt] coordinates {(1308.43,4)(4131.38,4)};
+\addplot[IlliniOrange,very thick,dashed,mark=|,mark size=7pt] coordinates {(1519.47,3)(4797.73,3)};
+\addplot[IlliniBlue,very thick,mark=|,mark size=7pt] coordinates {(1580.20,2)(3420.86,2)};
+\addplot[IlliniOrange,very thick,dashed,mark=|,mark size=7pt] coordinates {(1835.07,1)(3972.61,1)};
+\addplot[Storm,densely dotted,thick] coordinates {(1600,.5)(1600,4.6)};
+\node[anchor=south west,font=\footnotesize] at (axis cs:1650,4.45) {Hypothetical mean: 1,600};
+\end{axis}
+\end{tikzpicture}

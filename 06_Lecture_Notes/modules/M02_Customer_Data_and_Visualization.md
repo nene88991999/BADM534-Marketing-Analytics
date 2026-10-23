@@ -114,3 +114,267 @@ For practice, change campaign B's audience to 100 new and 100 returning customer
 ## 2.9 Readings
 
 [Wilke's visualization text](https://clauswilke.com/dataviz/) offers a visual reference for distributions, comparisons, and uncertainty. The [pandas grouping documentation](https://pandas.pydata.org/docs/user_guide/groupby.html) supports implementation.
+
+## 2.10 mHealth: Recorded Variety and Missing Days
+
+The manager wants to know whether customers with broad recorded diets need different suggestions from customers who repeatedly log a few categories. Category count measures breadth. A calorie-share measure also distinguishes an even distribution from a day dominated by one category. For user $i$, day $t$, and recorded category $c$, define $k_{ict}$ as the sum of item calories in that category. On days with nonnegative observed item values and a positive item total, define
+
+$$
+s_{ict}=\frac{k_{ict}}{\sum_h k_{iht}},\qquad
+V_{it}=1-\sum_c s_{ict}^2.
+$$
+
+The shares sum to one across recorded categories, including `Unclassified` where necessary. $V_{it}$ approaches zero when one category accounts for almost all recorded item calories. It rises when calorie shares become more evenly distributed across categories. Multiplying every item calorie value by the same positive constant leaves these shares unchanged. This scale invariance helps distinguish composition from recorded quantity, although omitted foods can still change composition.
+
+Among the 76,780 eligible user-days, mean variety is 0.7834 when each day has equal weight and 0.7855 when each user first contributes a personal average. The small difference in these means does not make the weighting choices interchangeable. A day-weighted comparison gives frequent loggers more influence. A user-weighted comparison answers a question about the average observed user.
+
+| Recorded Categories | Eligible Days | Mean Variety |
+| --- | ---: | ---: |
+| 1–5 | 11,861 | 0.5306 |
+| 6–10 | 30,258 | 0.7895 |
+| 11–20 | 32,492 | 0.8618 |
+| 21 or More | 2,169 | 0.9046 |
+
+Breadth and calorie-share variety rise together in these groups, partly because adding categories expands the possible distribution of shares. This is a descriptive relation among recorded days. It does not show that the app caused broader consumption or that greater category variety improved health. Source categories are not a validated diet-quality index.
+
+The complete 2016 calendar contains 135,420 potential user-days for the selected users. Only 76,804 have food entries; 58,616 are unobserved. A zero-filled calorie panel would interpret every absent record as no consumption. For a logging outcome, zero can instead mean that no entry was observed on a specified calendar day. The variable's definition determines whether filling a missing cell with zero is appropriate. These users are identified from a full-year file, so the calendar is a descriptive grid rather than a verified account-enrollment roster.
+
+The item sum is within one calorie unit of the reported daily total on 53,075 observed days. Using the reported total as the denominator of category shares would fail to make shares sum to one on many other days. The calculation below preserves both measures, constructs the observed-day summary, and builds the calendar separately.
+
+Python source: [m02.py](../../03_Data_and_Code/mHealth/recurring_examples/m02.py). From its directory, run `python m02.py`.
+
+```python
+"""Measure recorded variety and separate observed days from calendar days."""
+
+import json
+import pandas as pd
+from common import OUTPUT, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+eligible = daily.loc[daily.variety.notna()].copy()
+eligible["breadth_group"] = pd.cut(
+    eligible.category_count,
+    [0, 5, 10, 20, 1000],
+    labels=["1-5", "6-10", "11-20", "21+"],
+)
+table = eligible.groupby("breadth_group", observed=True).agg(
+    days=("variety", "size"),
+    mean_variety=("variety", "mean"),
+    mean_recorded_calories=("food_calories", "mean"),
+)
+OUTPUT.mkdir(exist_ok=True)
+table.to_csv(OUTPUT / "M02_breadth.csv")
+assert int(table.days.sum()) == len(eligible)
+calendar = pd.MultiIndex.from_product(
+    [sorted(food.Userid.unique()), pd.date_range("2016-01-01", "2016-12-31")],
+    names=["Userid", "date"],
+)
+panel = daily.set_index(["Userid", "date"]).reindex(calendar)
+observed = panel.entries.notna()
+result = {
+    "eligible_days": len(eligible),
+    "excluded_days": len(daily) - len(eligible),
+    "calendar_user_days": len(panel),
+    "observed_days": int(observed.sum()),
+    "unobserved_days": int((~observed).sum()),
+    "mean_variety_day_weighted": float(eligible.variety.mean()),
+    "mean_variety_user_weighted": float(
+        eligible.groupby("Userid").variety.mean().mean()
+    ),
+    "daily_total_equal_item_sum_within_one": int(
+        (daily.food_calories - daily.item_calories).abs().le(1).sum()
+    ),
+    "daily_total_comparison_days": len(daily),
+    "breadth": table.reset_index().to_dict(orient="records"),
+}
+save_result("M02", result)
+print(json.dumps(result, indent=2))
+```
+
+## 2.11 mHealth: Nutrition Knowledge and Sample Restrictions
+
+An mHealth analyst evaluating suggestions about diet must determine whether the records measure food selection, complete daily intake, or usual intake over a longer period. A day with one logged snack supplies evidence about that snack. It does not establish the person's total intake for the day. The National Cancer Institute's [food-record guidance](https://epi.grants.cancer.gov/dietary-assessment-primer/profiles/record/) identifies recording burden and reactivity as features of the measurement process. Its [usual-intake guidance](https://epi.grants.cancer.gov/dietary-assessment-primer/learn/usual.html) distinguishes day-to-day variation from a person's longer-run average. Repeated logs reduce some sampling variation while selective omissions can persist.
+
+Nutrition studies often collect information that makes filtering more defensible. The [NHANES dietary codebook](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1TOT_L.htm) documents recall reliability through `DR1DRSTZ`. mHealth has no corresponding completeness indicator. Several food entries or a positive calorie total cannot be substituted for that validation. NHANES also permits reliable records involving fasting or only water, so a zero total cannot universally be classified as erroneous. A ratio requiring a positive denominator nevertheless excludes zero totals by mathematical necessity.
+
+For an adult descriptive analysis, the base sample requires age of at least 18 on January 1, positive finite reported daily calories, and a defined calorie-share variety measure. The fixed-age restriction removes users who were 17 at the reference date even if they turned 18 later in the year. It retains older adults; age 65 is not a general nutritional validity boundary. The combined restrictions retain 75,855 days from 367 users. They define the population and the calculations; they do not certify complete intake.
+
+The National Cancer Institute's [outlier guidance](https://epi.grants.cancer.gov/dietary-assessment-primer/learn/outliers.html) supports examining extreme observations and comparing analyses under alternative exclusions. Short-term intake can genuinely vary substantially. A population percentile screen is therefore a sensitivity analysis. The 1st and 99th percentiles of positive adult daily totals in January through June are 209.01 and 3,534.11. Fixing those cutoffs using the earlier period prevents later observations from choosing their own reference range. A second screen uses an explicitly imposed 100–5,000 range; a third requires item totals and reported totals to agree within one calorie unit.
+
+| Rule Applied to the Adult Base | Days Retained | Mean Reported Calories | Mean Variety |
+| --- | ---: | ---: | ---: |
+| Adult Positive Base | 75,855 | 1,541.82 | 0.7837 |
+| Imposed 100–5,000 Range | 75,523 | 1,543.04 | 0.7863 |
+| Earlier-Period 1st–99th Percentiles | 74,224 | 1,531.07 | 0.7916 |
+| Item/Day Agreement Within One | 52,707 | 1,493.19 | 0.7671 |
+
+Each row applies one screen independently to the same base. The agreement rule removes 23,148 days, far more than the percentile rule's 1,631. Its lower mean variety could reflect the kinds of records retained, including differences in logging intensity. Agreement is useful evidence about accounting consistency, but it does not prove nutritional completeness. A preference for cleaner-looking totals can therefore change the population being described.
+
+![Alternative screens retain different samples and change measured variety.](../figures/M02_mhealth_screening.png)
+
+The horizontal movement measures retention of adult base days; the vertical movement measures their mean recorded variety. The accounting-consistency restriction produces the largest movement in both dimensions. Treating it as a harmless technical correction would obscure a substantive change in the sample.
+
+### 2.11.1 Energy Plausibility Requires Physiological Inputs
+
+Energy-plausibility methods compare reported intake with expenditure or a model of requirements. [Banna, McCrory, Fialkowski, and Boushey (2017)](https://doi.org/10.3389/fnut.2017.00045) compare fixed cutoffs with individualized methods. [Black (2000)](https://doi.org/10.1038/sj.ijo.0801376), especially Table 8, updates the Goldberg approach. For an individual under the method's energy-balance and measurement conditions, bounds for mean reported energy intake divided by basal metabolic rate are
+
+$$
+L,U=\operatorname{PAL}\exp\left(\mp 2\sqrt{\frac{(0.23)^2}{d}+(0.085)^2+(0.15)^2}\right).
+$$
+
+Here $d$ is the number of assessment days and PAL is total energy expenditure divided by basal metabolic rate. The coefficients represent the variation assumptions for intake, predicted basal metabolic rate, and activity. The factor 2 gives the paper's approximate 95% limits for an individual; the sample-size term is one. These are conditional screening bounds, not an individual's recommended intake. Appropriate PAL and basal-metabolic-rate inputs are essential.
+
+With an imposed basal metabolic rate of 1,500 kcal/day and PAL of 1.55, the bounds are approximately 1,308–4,131 kcal/day for one assessment day and 1,580–3,421 for seven days. Raising PAL to 1.80 raises the seven-day bounds to 1,835–3,973. A hypothetical seven-day mean of 1,600 would fall within the first interval and below the second. The same intake can receive a different flag because of the activity assumption. Additional days reduce the intake-variation component while the other variance components remain.
+
+![Assessment duration narrows an energy-plausibility interval while assumed activity shifts it.](../figures/M02_mhealth_goldberg.png)
+
+The code calculates these hypothetical bounds separately from the real-data screens. mHealth does not supply validated activity, basal metabolic rate, complete assessment days, or a documented mapping of `Gender` to the sex variable required by common prediction equations. No participant is assigned an individualized Goldberg label. Weight-loss goals and perturbed weights also complicate an energy-balance interpretation. Applying the equations to invented physiological inputs would turn an assumption into an apparent observation.
+
+An AI coding request should therefore name the assessment instrument, population, units, necessary inputs, and output flags. Require the program to preserve raw values, distinguish overlapping exclusions, and return the analysis with and without the screen. Ask it to explain why one-day outliers, genuine fasting, and incomplete logging require different interpretations. The [nutrition resource guide](../../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md) supplies the original methods and downloadable readings.
+
+Python source: [nutrition.py](../../03_Data_and_Code/mHealth/recurring_examples/nutrition.py). From its directory, run `python nutrition.py`.
+
+```python
+"""Domain-informed sample definitions and explicitly hypothetical energy screens."""
+
+import json
+import math
+import numpy as np
+from common import load_inputs, save_result
+
+
+def goldberg_bounds(days, pal, cv_intake=23, cv_bmr=8.5, cv_pal=15):
+    """Individual EI:BMR bounds with Black (2000) coefficients, z=2, n=1."""
+    if days < 1 or pal <= 0:
+        raise ValueError("Positive assessment duration and PAL are required")
+    variation = math.sqrt(cv_intake**2 / days + cv_bmr**2 + cv_pal**2) / 100
+    return pal * math.exp(-2 * variation), pal * math.exp(2 * variation)
+
+
+def run_analysis():
+    food, daily, baskets = load_inputs()
+    age_counts = food.groupby("Userid").Age_at_2016_01_01.nunique(dropna=False)
+    assert age_counts.eq(1).all()
+    ages = food.groupby("Userid").Age_at_2016_01_01.first()
+    daily["age"] = daily.Userid.map(ages)
+    # Nonnegative category calories and a positive denominator define valid shares.
+    base = daily.loc[
+        daily.variety.notna()
+        & daily.food_calories.gt(0)
+        & np.isfinite(daily.food_calories)
+        & daily.age.ge(18)
+    ].copy()
+    training = base.loc[base.date.lt("2016-07-01")]
+    lower, upper = training.food_calories.quantile([0.01, 0.99])
+    masks = {
+        "adult_positive_base": base.food_calories.gt(0),
+        "fixed_100_to_5000_sensitivity": base.food_calories.between(100, 5000),
+        "prior_period_1st_to_99th_percentile": base.food_calories.between(lower, upper),
+        "daily_item_agreement_within_one": (base.food_calories - base.item_calories)
+        .abs()
+        .le(1),
+    }
+    summaries = []
+    for name, mask in masks.items():
+        selected = base.loc[mask]
+        summaries.append(
+            {
+                "rule": name,
+                "days": len(selected),
+                "users": int(selected.Userid.nunique()),
+                "removed_from_base": len(base) - len(selected),
+                "mean_recorded_calories": float(selected.food_calories.mean()),
+                "mean_variety": float(selected.variety.mean()),
+            }
+        )
+    # Hypothetical complete records, stable energy balance, and predicted BMR.
+    # These BMR/PAL inputs are imposed; no mHealth participant is classified.
+    scenario = []
+    for days in [1, 7]:
+        for pal in [1.55, 1.80]:
+            lo, hi = goldberg_bounds(days, pal)
+            scenario.append(
+                {
+                    "days": days,
+                    "assumed_pal": pal,
+                    "bmr_kcal": 1500,
+                    "lower_ratio": lo,
+                    "upper_ratio": hi,
+                    "lower_kcal": 1500 * lo,
+                    "upper_kcal": 1500 * hi,
+                    "illustrative_1600_kcal_flag": 1600 / 1500 < lo,
+                }
+            )
+    result = {
+        "source_observed_days": len(daily),
+        "base_days": len(base),
+        "base_removed_days": len(daily) - len(base),
+        "age_min": float(ages.min()),
+        "age_max": float(ages.max()),
+        "training_days": len(training),
+        "quantile_lower": float(lower),
+        "quantile_upper": float(upper),
+        "sensitivity": summaries,
+        "hypothetical_goldberg": scenario,
+    }
+    save_result("nutrition", result)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    run_analysis()
+```
+
+## 2.12 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [m02_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m02_synthetic.py). From its directory, run `python m02_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M2; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+campaigns = [
+    ("A", "new", 100, 9),
+    ("A", "returning", 100, 80),
+    ("B", "new", 200, 20),
+    ("B", "returning", 100, 81),
+]
+write_csv(
+    "M02_campaigns_synthetic.csv",
+    ["campaign", "customer_type", "assigned_customers", "conversions"],
+    campaigns,
+)
+r["M02"] = {
+    "observed_A": 89 / 200,
+    "observed_B": 101 / 300,
+    "common_mix_A": (0.09 + 0.80) / 2,
+    "common_mix_B": (0.10 + 0.81) / 2,
+    "basket_jaccard_high": 3 / 5,
+    "basket_jaccard_low": 1 / 7,
+}
+assert r["M02"]["observed_A"] > r["M02"]["observed_B"]
+assert r["M02"]["common_mix_B"] > r["M02"]["common_mix_A"]
+variety_shares = {"equal": [0.5, 0.5], "concentrated": [0.9, 0.1]}
+r["M02"]["variety"] = {
+    name: 1 - sum(s * s for s in vals) for name, vals in variety_shares.items()
+}
+write_csv(
+    "M02_variety_synthetic.csv",
+    ["basket", "category", "spending_share"],
+    [
+        (name, f"C{i+1}", share)
+        for name, vals in variety_shares.items()
+        for i, share in enumerate(vals)
+    ],
+)
+assert math.isclose(r["M02"]["variety"]["equal"], 0.5)
+assert math.isclose(r["M02"]["variety"]["concentrated"], 0.18)
+print(json.dumps(r, indent=2))
+```

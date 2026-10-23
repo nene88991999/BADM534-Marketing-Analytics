@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel={Novel Categories in Top Ten (Percent)},ylabel={Mean Recall at Ten},xmin=4,xmax=11,ymin=.462,ymax=.482,ytick={.465,.470,.475,.480},yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill},grid=major]
+\addplot[IlliniBlue,mark=*,mark size=3pt] coordinates {(4.78261,.4758957)(4.81605,.4758957)(5.28428,.4758957)(9.83278,.4660707)};
+\node[anchor=south west,font=\footnotesize] at (axis cs:4.8,.477) {Bonuses 0, 0.05, 0.10};
+\node[anchor=south east,font=\footnotesize] at (axis cs:9.8,.467) {Bonus 0.20};
+\end{axis}
+\end{tikzpicture}

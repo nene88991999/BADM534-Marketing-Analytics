@@ -1,0 +1,27 @@
+{
+  "food_rows": 917153,
+  "daily_rows": 76804,
+  "missing_category_rows": 206,
+  "rows_equal_on_selected_entry_fields": 52838,
+  "missing_item_calorie_rows": 0,
+  "negative_item_calorie_rows": 1,
+  "flags_by_user_day": {
+    "invalid_item": 1,
+    "nonpositive_item_sum": 23,
+    "nonpositive_daily_total": 319,
+    "missing_daily_total": 0,
+    "total_discrepancy_over_one": 23729,
+    "daily_total_below_100_or_above_5000": 651
+  },
+  "recorded_calorie_quantiles": {
+    "0.0": 0.0,
+    "0.01": 150.0,
+    "0.5": 1475.63,
+    "0.99": 3524.6413000000002,
+    "1.0": 9190.0
+  },
+  "matched_daily_file_rows": 37634,
+  "fixed_age_min": 18,
+  "fixed_age_max": 72,
+  "nonpositive_weight_rows": 0
+}

@@ -67,3 +67,7 @@ Nathan Yang supplied `data_everyday.csv` and `data_final_25.csv` from the mHealt
 The [full-file verification report](verification.json) records checksums, row counts, identifier formats, excluded columns, cross-file matches, and the BMI calculation. To repeat these checks after downloading, run `python3 verify_data.py --report data/verification.json`. The transformation tests use invented records and run with `python3 -m unittest test_prepare_data.py`.
 
 Weight-based conclusions must account for the perturbation. Apparent movements smaller than the added noise cannot be interpreted as measured changes in body weight. The supplied schemas do not document random assignment or recommendation exposure, so offline predictive performance does not identify a causal recommendation effect.
+
+## Recurring Course Examples
+
+Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, audit and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.

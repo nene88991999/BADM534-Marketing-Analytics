@@ -21,3 +21,9 @@ Use figures to explain a mechanism or comparison that benefits from visual reaso
 Reproduce changed numerical examples with `../03_Data_and_Code/Lecture_Examples/verify_examples.py`, adding independent checks when appropriate. Inspect source assumptions before treating agreement with code as substantive validation. Compile and visually inspect the final PDF and all changed figure previews. Do not claim to have executed a downloaded reference notebook merely because a small teaching calculation ran.
 
 Preserve original author attribution and source URLs. The user-supplied writing preferences and published papers guide prose and selected case motivation; they do not authorize copying full texts into this repository.
+
+## Data Examples and Nutrition Screens
+
+Whenever an example uses data, include detailed runnable Python directly in the Markdown notes and maintain a matching script. Define loading, sample restrictions, transformations, estimands, units, outputs, and checks. Keep the visible `Python source:` label so `scripts/check_lecture_code.py` can verify the code against its file. Run the affected calculation and update its aggregate results.
+
+The mHealth cohort and shared functions are in `../03_Data_and_Code/mHealth/recurring_examples`. Keep data-cleaning flags separate from analysis exclusions. Nutrition screens require a stated instrument, population, and information set; missing physiological inputs must remain missing. Label imposed screening bounds, simulations, and financial inputs explicitly. Preserve the distinction between observed logging, recorded diet, usual intake, prediction, and causal health effects.

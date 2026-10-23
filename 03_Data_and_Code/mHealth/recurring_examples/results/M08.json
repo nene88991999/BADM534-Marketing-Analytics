@@ -1,0 +1,41 @@
+{
+  "history_window": "30_days",
+  "tradeoff": [
+    {
+      "novelty_weight": 0.0,
+      "eligible_users": 362,
+      "evaluated_users": 299,
+      "recall_at_10": 0.4758956617013031,
+      "ndcg_at_10": 0.5862368676235964,
+      "novelty_at_10": 0.04782608695652174,
+      "target_candidate_coverage": 1.0
+    },
+    {
+      "novelty_weight": 0.05,
+      "eligible_users": 362,
+      "evaluated_users": 299,
+      "recall_at_10": 0.4758956617013031,
+      "ndcg_at_10": 0.5862368676235964,
+      "novelty_at_10": 0.04816053511705686,
+      "target_candidate_coverage": 1.0
+    },
+    {
+      "novelty_weight": 0.1,
+      "eligible_users": 362,
+      "evaluated_users": 299,
+      "recall_at_10": 0.4758956617013031,
+      "ndcg_at_10": 0.5863326269148595,
+      "novelty_at_10": 0.0528428093645485,
+      "target_candidate_coverage": 1.0
+    },
+    {
+      "novelty_weight": 0.2,
+      "eligible_users": 362,
+      "evaluated_users": 299,
+      "recall_at_10": 0.4660707040502586,
+      "ndcg_at_10": 0.5808731083125303,
+      "novelty_at_10": 0.09832775919732446,
+      "target_candidate_coverage": 1.0
+    }
+  ]
+}

@@ -98,3 +98,391 @@ If one customer places four orders and another places one, an order-weighted mea
 ## 1.7 Readings
 
 The [Python marketing research companion repository](https://github.com/python-marketing-research/python-marketing-research-1ed) provides examples tied to marketing applications. Its notebooks are reference material and require inspection of dependencies and data paths before adaptation. The [pandas tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/) support tabular implementation.
+
+## 1.8 mHealth: From Food Entries to a Decision Table
+
+An mHealth product manager must decide which food categories to suggest when a customer returns to the app. Recent logs reveal repeated categories, variation across days, and gaps in observation. The immediate analytical task is to construct a reliable customer history. A recommendation based on duplicated daily totals or an accidental change in the customer population can look precise while describing the wrong behavior.
+
+The released files contain actual 2016 records. User identifiers have been replaced, birthdays have been replaced with age on January 1, 2016, and weight fields contain documented random perturbations. The food file has 13,874,280 entries from 5,908 users. The separate daily file covers a smaller set of users and dates. Food categories, descriptions, and calorie fields retain their source values, apart from standardizing provider references to mHealth. The [data dictionary](../../03_Data_and_Code/mHealth/DATA_DICTIONARY.md) defines the available fields and unresolved coding conventions. In particular, `Weightchange`, `Goalplan`, and `Gender` have undocumented code meanings. None establishes a treatment, a behavioral goal, or a validated sex variable for an energy equation.
+
+The working cohort retains every entry for users whose first four hexadecimal pseudonym digits have a value below 4,096. This fixed rule reduces memory requirements and preserves within-user histories. Its realized sample contains 917,153 entries, 370 users, and 76,804 observed user-days. Ages at the reference date range from 17 to 76. The cohort is a subset of app users who appear in the released file; it is not a representative population sample. The adult nutrition sensitivity analysis in M2 uses a separate age restriction.
+
+A food-entry row records an item, while `Foodcalories` repeats the source daily total. On the first eligible user-day selected by the code below, five entries on July 4 have item calories summing to 1,132.7852. Each row repeats a daily total of 1,132.79. Summing that repeated field gives 5,663.95, exactly five times the reported daily total. The small difference between the item sum and one copy of the daily total is compatible with rounding in this case. Larger discrepancies elsewhere require investigation.
+
+The daily key is `(Userid, date)`. A left join preserves all 76,804 cohort days, with 37,634 matched days and 39,170 unmatched days in the separate daily file. Replacing it with an inner join would remove more than half the cohort days. An unmatched row is therefore a sample-definition decision, even if the software reports no error.
+
+![A left join preserves observed days while an inner join changes the analysis population.](../figures/M01_mhealth_join.png)
+
+The two branches retain the same matched records. Only the left-join branch preserves the unmatched days needed to describe the food-log cohort. Neither branch supplies unobserved calendar days.
+
+### 1.8.1 Loading Data and Constructing Daily Measures
+
+Use Python 3.13 with NumPy 2.1.3, pandas 2.2.3, PyArrow 19.0.0, SciPy 1.15.3, scikit-learn 1.6.1, and statsmodels 0.14.4 to reproduce the saved calculations. From the repository root, install the pinned packages into an environment, verify the release files, and run the analyses in dependency order:
+
+```sh
+python -m pip install -r 03_Data_and_Code/mHealth/recurring_examples/requirements.txt
+python 03_Data_and_Code/mHealth/download_data.py
+python 03_Data_and_Code/mHealth/recurring_examples/run_all.py
+```
+
+The downloader checks the published SHA-256 hashes. The first run reads the compressed food file in chunks and saves a local Parquet cache; subsequent runs reuse it. The cache is excluded from Git. Delete the `recurring_examples/cache` directory to force a fresh derivation. `common.py` supplies the same sample and measurement functions to every module. Paths are relative to the script location, so the saved programs can also be run from another working directory.
+
+For each observed day, category breadth counts distinct recorded categories, assigning missing labels to `Unclassified`. Calorie-share variety uses the sum of included item calories as its denominator. A negative or missing item calorie value invalidates that day's share calculation; a nonpositive item sum also makes shares undefined. These conditions affect calorie-based variety, while the day's existence can still be used to measure logging. The first reported daily total is retained only after checking that its nonmissing values agree within the day.
+
+Python source: [common.py](../../03_Data_and_Code/mHealth/recurring_examples/common.py). From its directory, run `python common.py`.
+
+```python
+"""Shared input and measurement functions for the eight mHealth examples."""
+
+from pathlib import Path
+import hashlib
+import json
+
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+DATA = ROOT.parent / "data"
+CACHE = ROOT / "cache"
+OUTPUT = ROOT / "results"
+SEED = 534
+COHORT_THRESHOLD = 4096
+
+
+def save_result(module, result):
+    OUTPUT.mkdir(exist_ok=True)
+    (OUTPUT / f"{module}.json").write_text(
+        json.dumps(result, indent=2, allow_nan=False) + "\n"
+    )
+
+
+def load_food():
+    """Keep all rows for users whose first four pseudonym hex digits are <4096."""
+    CACHE.mkdir(exist_ok=True)
+    cached = CACHE / "food.parquet"
+    metadata = CACHE / "source.json"
+    manifest = json.loads((ROOT.parent / "manifest.json").read_text())
+    signature = {
+        "sha256": manifest["files"]["food_entries.csv.gz"]["sha256"],
+        "threshold": COHORT_THRESHOLD,
+        "preparation_version": 2,
+    }
+    if (
+        cached.exists()
+        and metadata.exists()
+        and json.loads(metadata.read_text()) == signature
+    ):
+        return pd.read_parquet(cached)
+    columns = [
+        "Userid",
+        "Fancydate",
+        "Name",
+        "Category",
+        "Calories",
+        "Foodcalories",
+        "Budgetcalories",
+        "Age_at_2016_01_01",
+    ]
+    parts = []
+    for chunk in pd.read_csv(
+        DATA / "food_entries.csv.gz", usecols=columns, chunksize=250000
+    ):
+        code = chunk.Userid.str.slice(1, 5).map(lambda value: int(value, 16))
+        parts.append(chunk.loc[code < COHORT_THRESHOLD].copy())
+    food = pd.concat(parts, ignore_index=True)
+    food["date"] = pd.to_datetime(food.Fancydate)
+    food["category"] = food.Category.fillna("Unclassified")
+    food["description"] = (
+        food.Name.fillna("")
+        .str.casefold()
+        .str.replace(r"\s+", " ", regex=True)
+        .str.strip()
+    )
+    food.to_parquet(cached, index=False)
+    metadata.write_text(json.dumps(signature, indent=2) + "\n")
+    return food
+
+
+def make_daily(food):
+    """One row per observed user-day; missing calendar days are not created."""
+    keys = ["Userid", "date"]
+    grouped = food.groupby(keys, observed=True)
+    daily = grouped.agg(
+        entries=("Calories", "size"),
+        category_count=("category", "nunique"),
+        item_calories=("Calories", "sum"),
+        food_calories=("Foodcalories", "first"),
+        budget_calories=("Budgetcalories", "first"),
+        daily_total_versions=("Foodcalories", "nunique"),
+        budget_versions=("Budgetcalories", "nunique"),
+    )
+    daily.loc[daily.daily_total_versions != 1, "food_calories"] = np.nan
+    daily.loc[daily.budget_versions != 1, "budget_calories"] = np.nan
+    invalid = food.Calories.isna() | food.Calories.lt(0)
+    daily["invalid_item_calories"] = invalid.groupby([food.Userid, food.date]).sum()
+    categories = food.groupby(keys + ["category"], observed=True).Calories.sum()
+    category_totals = categories.groupby(level=keys).transform("sum")
+    concentration = (
+        (categories / category_totals.where(category_totals > 0))
+        .pow(2)
+        .groupby(level=keys)
+        .sum(min_count=1)
+    )
+    daily["variety"] = (1 - concentration).where(
+        (daily.item_calories > 0) & (daily.invalid_item_calories == 0)
+    )
+    daily = daily.reset_index().sort_values(keys).reset_index(drop=True)
+    assert not daily.duplicated(keys).any()
+    assert daily.variety.dropna().between(-1e-10, 1 + 1e-10).all()
+    return daily
+
+
+def make_baskets(food):
+    """Distinct observed categories; the missing-category label is not a candidate."""
+    selected = food.loc[
+        food.category != "Unclassified", ["Userid", "date", "category"]
+    ].drop_duplicates()
+    return (
+        selected.groupby(["Userid", "date"], observed=True)
+        .category.agg(lambda values: tuple(sorted(values)))
+        .reset_index(name="basket")
+    )
+
+
+def description_holdout(text):
+    """A fixed description-level split independent of labels or outcomes."""
+    return int(hashlib.sha256(text.encode()).hexdigest()[:8], 16) % 5 == 0
+
+
+def load_inputs():
+    food = load_food()
+    return food, make_daily(food), make_baskets(food)
+
+
+if __name__ == "__main__":
+    food, daily, baskets = load_inputs()
+    daily.to_parquet(CACHE / "daily.parquet", index=False)
+    baskets.to_parquet(CACHE / "baskets.parquet", index=False)
+    result = {
+        "rows": len(food),
+        "users": int(food.Userid.nunique()),
+        "user_days": len(daily),
+        "categories": int(food.category.nunique()),
+        "missing_category_rows": int(food.Category.isna().sum()),
+        "invalid_item_calorie_rows": int(
+            (food.Calories.isna() | food.Calories.lt(0)).sum()
+        ),
+        "days_with_inconsistent_daily_total": int(
+            daily.daily_total_versions.ne(1).sum()
+        ),
+        "days_with_inconsistent_budget": int(daily.budget_versions.ne(1).sum()),
+        "nonpositive_recorded_daily_totals": int(daily.food_calories.le(0).sum()),
+        "variety_eligible_days": int(daily.variety.notna().sum()),
+        "item_total_matches_recorded_total_within_one": int(
+            (daily.item_calories - daily.food_calories).abs().le(1).sum()
+        ),
+    }
+    save_result("cohort", result)
+    print(json.dumps(result, indent=2))
+```
+
+### 1.8.2 Join Validation and a Hand-Checkable Day
+
+The join declares a one-to-one relationship and records unmatched keys. The small day-level example checks both candidate aggregations against the repeated total. Keeping these checks beside the join prevents a later model from silently inheriting a different denominator.
+
+Python source: [m01.py](../../03_Data_and_Code/mHealth/recurring_examples/m01.py). From its directory, run `python m01.py`.
+
+```python
+"""Audit the cohort, repeated totals, and the separate daily file."""
+
+import json
+import pandas as pd
+from common import DATA, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+other = pd.read_csv(DATA / "daily_records.csv.gz", usecols=["Userid", "Fancydate"])
+other["date"] = pd.to_datetime(other.Fancydate)
+assert not other.duplicated(["Userid", "date"]).any()
+joined = daily.merge(
+    other[["Userid", "date"]],
+    how="left",
+    on=["Userid", "date"],
+    validate="one_to_one",
+    indicator=True,
+)
+assert len(joined) == len(daily)
+example = daily.loc[(daily.entries.between(3, 6)) & daily.food_calories.gt(0)].iloc[0]
+rows = food.loc[food.Userid.eq(example.Userid) & food.date.eq(example.date)]
+result = {
+    "rows": len(food),
+    "users": int(food.Userid.nunique()),
+    "days": len(daily),
+    "matched_days": int(joined._merge.eq("both").sum()),
+    "unmatched_days": int(joined._merge.eq("left_only").sum()),
+    "example_date": str(example.date.date()),
+    "example_entries": len(rows),
+    "example_item_sum": float(rows.Calories.sum()),
+    "example_daily_total": float(example.food_calories),
+    "example_wrong_sum": float(rows.Foodcalories.sum()),
+}
+save_result("M01", result)
+print(json.dumps(result, indent=2))
+```
+
+### 1.8.3 Data Cleaning as a Sequence of Decisions
+
+Structural checks stop calculations that violate their stated observation unit. A duplicate key in a daily lookup can multiply food records, so it must be resolved before joining. Review flags serve a different purpose: they identify observations whose meaning needs investigation. The cohort contains 52,838 rows equal on the selected fields of user, day, normalized description, category, and calories. Those fields omit event timestamps and meal identifiers. Repeated servings can therefore produce equal rows. Automatically dropping them would impose an unsupported definition of duplication.
+
+The audit finds 206 food rows with missing categories, one negative item calorie value, and 23 days with a nonpositive sum of item calories. The calorie-share calculation consequently excludes 24 days. By contrast, 319 days have a nonpositive reported daily total. These counts differ because the item sum and reported total are separate measurements. Their discrepancy exceeds one calorie unit on 23,729 days. These flags can overlap and must not be added as if they represented disjoint exclusions.
+
+A value outside a chosen review range is evidence for inspection, not proof of an error. The reported daily calorie median is 1,475.63, and the range is 0 to 9,190. A review flag below 100 or above 5,000 marks 651 days. Those thresholds are imposed sensitivity choices. They do not establish nutritional adequacy or identify incorrect reports. Preserve the released values, add flags, document the rule for each analysis, and report the resulting sample. M2 compares nutrition-informed alternatives; M3 repeats a regression after a stated restriction.
+
+A useful AI coding request is: “Create separate structural checks and review flags. Stop on a duplicate daily key, preserve repeated food entries, count overlapping flags separately, and return the retained sample for each calculation.” Verify the proposed implementation with a two-entry day whose repeated total is 100 and whose calorie shares are 0.9 and 0.1. It must produce a daily total of 100 and variety of 0.18. A gap from January 1 to January 3 must remain a missing January 2 observation. The executable counterexamples are in `test_logic.py`.
+
+Python source: [audit.py](../../03_Data_and_Code/mHealth/recurring_examples/audit.py). From its directory, run `python audit.py`.
+
+```python
+"""Separate structural failures, review flags, and analysis-specific exclusions."""
+
+import json
+import numpy as np
+import pandas as pd
+from common import DATA, load_inputs, save_result
+
+
+def require_unique(frame, keys):
+    if frame[keys].isna().any().any():
+        raise ValueError("Missing join key")
+    if frame.duplicated(keys).any():
+        raise ValueError("Duplicate key at the declared observation unit")
+
+
+def daily_flags(daily):
+    flags = pd.DataFrame(index=daily.index)
+    flags["invalid_item"] = daily.invalid_item_calories.gt(0)
+    flags["nonpositive_item_sum"] = daily.item_calories.le(0)
+    flags["nonpositive_daily_total"] = daily.food_calories.le(0)
+    flags["missing_daily_total"] = daily.food_calories.isna()
+    flags["total_discrepancy_over_one"] = (
+        (daily.food_calories - daily.item_calories).abs().gt(1)
+    )
+    flags["daily_total_below_100_or_above_5000"] = daily.food_calories.lt(
+        100
+    ) | daily.food_calories.gt(5000)
+    return flags
+
+
+def run_audit():
+    food, daily, baskets = load_inputs()
+    assert food.Userid.notna().all() and food.date.notna().all()
+    assert food.date.between("2016-01-01", "2016-12-31").all()
+    require_unique(daily, ["Userid", "date"])
+    # Repeated entries can be legitimate. Flag equality on these fields without deletion.
+    fields = ["Userid", "date", "description", "category", "Calories"]
+    duplicate_flags = food.duplicated(fields, keep=False)
+    flags = daily_flags(daily)
+    health = pd.read_csv(
+        DATA / "daily_records.csv.gz",
+        usecols=["Userid", "Fancydate", "Age_at_2016_01_01", "Currentweight"],
+    )
+    health = health.loc[health.Userid.isin(food.Userid.unique())]
+    require_unique(health, ["Userid", "Fancydate"])
+    age_versions = health.groupby("Userid").Age_at_2016_01_01.nunique(dropna=False)
+    assert age_versions.eq(1).all()
+    result = {
+        "food_rows": len(food),
+        "daily_rows": len(daily),
+        "missing_category_rows": int(food.Category.isna().sum()),
+        "rows_equal_on_selected_entry_fields": int(duplicate_flags.sum()),
+        "missing_item_calorie_rows": int(food.Calories.isna().sum()),
+        "negative_item_calorie_rows": int(food.Calories.lt(0).sum()),
+        "flags_by_user_day": {key: int(value) for key, value in flags.sum().items()},
+        "recorded_calorie_quantiles": {
+            str(q): float(value)
+            for q, value in daily.food_calories.quantile(
+                [0, 0.01, 0.5, 0.99, 1]
+            ).items()
+        },
+        "matched_daily_file_rows": len(health),
+        "fixed_age_min": int(health.Age_at_2016_01_01.min()),
+        "fixed_age_max": int(health.Age_at_2016_01_01.max()),
+        "nonpositive_weight_rows": int(health.Currentweight.le(0).sum()),
+    }
+    save_result("audit", result)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    run_audit()
+```
+
+## 1.9 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [example_helpers.py](../../03_Data_and_Code/Lecture_Examples/example_helpers.py). From its directory, run `python example_helpers.py`.
+
+```python
+"""File output and arithmetic helpers for synthetic lecture examples."""
+
+import csv
+import itertools
+import json
+import math
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def write_csv(name, fields, rows):
+    with (ROOT / name).open("w", newline="", encoding="utf-8") as f:
+        out = csv.writer(f)
+        out.writerow(fields)
+        out.writerows(rows)
+
+
+def ols_slope(points):
+    xbar = sum(x for x, y in points) / len(points)
+    ybar = sum(y for x, y in points) / len(points)
+    slope = sum((x - xbar) * (y - ybar) for x, y in points) / sum(
+        (x - xbar) ** 2 for x, y in points
+    )
+    return {"intercept": ybar - slope * xbar, "slope": slope}
+
+
+def shares(utilities):
+    weights = {key: math.exp(val) for key, val in utilities.items()}
+    return {key: weight / sum(weights.values()) for key, weight in weights.items()}
+```
+
+Python source: [m01_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m01_synthetic.py). From its directory, run `python m01_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M1; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+lines = [("O1", "C1", 2, 10), ("O1", "C1", 1, 5), ("O2", "C2", 3, 4)]
+write_csv(
+    "M01_order_lines_synthetic.csv",
+    ["order_id", "customer_id", "quantity", "unit_price_dollars"],
+    lines,
+)
+orders = {}
+for order, customer, qty, price in lines:
+    orders[order] = orders.get(order, 0) + qty * price
+r["M01"] = {
+    "revenue": sum(orders.values()),
+    "order_count": len(orders),
+    "average_order_value": sum(orders.values()) / len(orders),
+    "average_line_revenue": sum(orders.values()) / len(lines),
+    "renewal_incremental_value_A": 100 * (0.91 - 0.90) - 3,
+    "renewal_incremental_value_B": 100 * (0.50 - 0.40) - 3,
+}
+assert orders == {"O1": 25, "O2": 12}
+print(json.dumps(r, indent=2))
+```

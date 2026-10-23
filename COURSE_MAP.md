@@ -19,7 +19,7 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 23 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 32 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -34,3 +34,18 @@ A recurring workflow is: define the marketing decision, specify the analysis, in
 ## Current Course Requirements
 
 See [course.json](course.json) for pointers to released documents and [02_Syllabus](02_Syllabus/README.md) for syllabus status. The predecessor's dates, grading weights, and AI policy have not been adopted as the rules for the new offering.
+
+## Recurring mHealth Applications
+
+| Module | Application |
+| --- | --- |
+| M1 | Chunked loading, keys, join coverage, repeated totals, duplicate review, and sanity checks. |
+| M2 | Breadth, calorie-share variety, missing days, and nutrition-informed screening sensitivity. |
+| M3 | Exact next-calendar-day regression, customer effects, clustered intervals, and range restrictions. |
+| M4 | Earlier-period behavioral segments, later logging, and separately imposed choice/CLV scenarios. |
+| M5 | Familiar versus new descriptions, source-label ambiguity, and text-classification evaluation. |
+| M6 | Historical variance, user-level randomization, power, and logging versus nutrition outcomes. |
+| M7 | Frozen candidates, chronological validation, whole baskets, and recommendation baselines. |
+| M8 | A fixed novelty-bonus comparison and the distinction between offline scores and intervention value. |
+
+Full code is printed in the [notes](06_Lecture_Notes/README.md) and saved with [verified outputs](03_Data_and_Code/mHealth/recurring_examples/README.md). [Nutrition resources](01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md) support the measurement and filtering discussion.

@@ -1,0 +1,48 @@
+{
+  "candidate_categories": 312,
+  "validation": {
+    "30_days": {
+      "eligible_users": 331,
+      "evaluated_users": 297,
+      "recall_at_10": 0.4782833005172501,
+      "ndcg_at_10": 0.566587454246482,
+      "novelty_at_10": 0.04814814814814814,
+      "target_candidate_coverage": 1.0
+    },
+    "90_days": {
+      "eligible_users": 331,
+      "evaluated_users": 297,
+      "recall_at_10": 0.47668354871891777,
+      "ndcg_at_10": 0.5661411376303773,
+      "novelty_at_10": 0.08451178451178451,
+      "target_candidate_coverage": 1.0
+    },
+    "all_prior_days": {
+      "eligible_users": 331,
+      "evaluated_users": 297,
+      "recall_at_10": 0.4681228814862361,
+      "ndcg_at_10": 0.5500767125041693,
+      "novelty_at_10": 0.11279461279461286,
+      "target_candidate_coverage": 1.0
+    }
+  },
+  "chosen_window": "30_days",
+  "test": {
+    "popularity": {
+      "eligible_users": 362,
+      "evaluated_users": 299,
+      "recall_at_10": 0.2799155040534135,
+      "ndcg_at_10": 0.32700162893824497,
+      "novelty_at_10": 0.31371237458193985,
+      "target_candidate_coverage": 1.0
+    },
+    "personal_frequency": {
+      "eligible_users": 362,
+      "evaluated_users": 299,
+      "recall_at_10": 0.4758956617013031,
+      "ndcg_at_10": 0.5862368676235964,
+      "novelty_at_10": 0.04782608695652174,
+      "target_candidate_coverage": 1.0
+    }
+  }
+}

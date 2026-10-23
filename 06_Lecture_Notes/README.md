@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain approximately 23,100 words, 23 original TikZ figures, worked cases, practice questions with explanations, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 32 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -17,13 +17,15 @@ Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module be
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content audits and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
 
-The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases, while numerical teaching examples are explicitly synthetic. No attached private style document or sample syllabus is reproduced here.
+The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
 
 ## Data, Code, and Numerical Checks
 
 The [Lecture Examples](../03_Data_and_Code/Lecture_Examples/README.md) folder contains small synthetic CSV files, a data dictionary, and a Python script that reproduces the central numerical calculations. It covers all eight modules and uses only the standard library. It has been executed successfully; its output is saved as JSON.
 
-The examples verify arithmetic and model implications under the assumptions stated in the notes. They do not constitute estimates from real customer data or a validation of those assumptions. Published empirical findings are attributed separately in each module.
+The synthetic examples verify arithmetic and model implications under stated assumptions. Each module includes its executable Python calculation. The [recurring mHealth examples](../03_Data_and_Code/mHealth/recurring_examples/README.md) use actual released records for audits, measurement, regression, segmentation, text prediction, experiment planning, basket prediction, and ranking objectives. Their full source appears directly in the notes, with matching scripts, dependencies, aggregate results, and verification checks.
+
+M1 teaches structural checks, join coverage, repeated totals, and review flags. M2 adds nutrition-informed sample definitions and alternative screens, using the [nutrition methods collection](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md). The individualized Goldberg calculation is an explicitly hypothetical scenario because validated physiological inputs are absent from the logs. M3 compares an association before and after an imposed calorie-range restriction.
 
 ## Editing and Building
 
@@ -45,7 +47,7 @@ python3 06_Lecture_Notes/build_notes.py --figures
 
 Executable paths can be supplied with `--pandoc`, `--tectonic`, and `--pdftoppm`. Intermediate files go into the ignored `build/` folder. The generated `.tex` and PDF are committed so the notes can be read without installing a build environment. The compiled PDF uses the TikZ sources directly, not raster images.
 
-After changes, run the numerical script, inspect compilation warnings, and visually inspect all affected pages and figure previews. Update navigation when adding a module or moving a source. Follow [AGENTS.md](AGENTS.md) for editing conventions and [the root agent guide](../AGENTS.md) for course authority and student support.
+After changes, run the relevant analyses and `python scripts/check_lecture_code.py` from the repository root, inspect compilation warnings, and visually inspect all affected pages and figure previews. Update navigation when adding a module or moving a source. Follow [AGENTS.md](AGENTS.md) for editing conventions and [the root agent guide](../AGENTS.md) for course authority and student support.
 
 ## Using the Notes With an LLM or Preparing Slides
 

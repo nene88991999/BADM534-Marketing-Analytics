@@ -1,0 +1,37 @@
+{
+  "eligible_days": 76780,
+  "excluded_days": 24,
+  "calendar_user_days": 135420,
+  "observed_days": 76804,
+  "unobserved_days": 58616,
+  "mean_variety_day_weighted": 0.7833674974493551,
+  "mean_variety_user_weighted": 0.7855084192362369,
+  "daily_total_equal_item_sum_within_one": 53075,
+  "daily_total_comparison_days": 76804,
+  "breadth": [
+    {
+      "breadth_group": "1-5",
+      "days": 11861,
+      "mean_variety": 0.5306165877859211,
+      "mean_recorded_calories": 972.1478518421719
+    },
+    {
+      "breadth_group": "6-10",
+      "days": 30258,
+      "mean_variety": 0.7895013603208125,
+      "mean_recorded_calories": 1481.439289007866
+    },
+    {
+      "breadth_group": "11-20",
+      "days": 32492,
+      "mean_variety": 0.8618246838141721,
+      "mean_recorded_calories": 1759.4794689462021
+    },
+    {
+      "breadth_group": "21+",
+      "days": 2169,
+      "mean_variety": 0.904644222847143,
+      "mean_recorded_calories": 2034.2414001844168
+    }
+  ]
+}

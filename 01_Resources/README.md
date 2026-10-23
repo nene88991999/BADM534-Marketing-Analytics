@@ -4,7 +4,7 @@ Collected October 23, 2026 for Nathan Yang's planned version of **Data Analytics
 
 ## Start Here
 
-The library contains **117 annotated resources across 12 topic folders**, **14 PDFs**, **24 source notebooks**, **5 UCI dataset archives with extracted files**, and companion data, Python functions, and licenses. The 84 downloaded source files occupy approximately 82.5 MB before archive extraction. Web resources also have Finder bookmarks in each folder's `Links` directory.
+The initial collection contained **117 annotated resources across 12 topic folders**, **14 PDFs**, **24 source notebooks**, **5 UCI dataset archives with extracted files**, and companion data, Python functions, and licenses. The 84 downloaded source files occupy approximately 82.5 MB before archive extraction. Web resources also have Finder bookmarks in each folder's `Links` directory.
 
 1. Read the [Syllabus Coverage and Teaching Priorities](00_Course_Map_and_Teaching/Planning_Notes/README.md).
 2. Review the [AI Coding and Assessment Notes](09_AI_Assisted_Coding/Teaching_Notes/README.md).
@@ -60,3 +60,7 @@ A [separate index](00_Index/README.md) and additional module folders appeared du
 ## Files for Maintenance
 
 [RESOURCE_CATALOG.json](RESOURCE_CATALOG.json) is the portable structured catalog for later filtering or import into the wiki. [_maintenance/README.md](_maintenance/README.md) explains source provenance, download and extraction manifests, link checks, and how to rebuild these guides. Review live AI documentation and package behavior again before the teaching term.
+
+## Nutrition and Dietary Data Quality
+
+The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.md) adds 14 cataloged sources on food records, usual intake, outliers, energy adjustment, reporting plausibility, and documented dietary reliability. Eleven government resources and two methods PDFs were downloaded. The copyrighted Black PDF remains in the instructor Dropbox folder; the public collection contains its summary and source links. The original Goldberg paper is linked from its abstract. These resources support the mHealth audit and screening examples in M1–M3.

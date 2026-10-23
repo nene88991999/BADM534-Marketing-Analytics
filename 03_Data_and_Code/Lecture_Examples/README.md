@@ -37,3 +37,7 @@ No file uses a missing-value code. Counts are nonnegative integers; probabilitie
 The JSON report also contains renewal incremental contribution (M1), basket Jaccard similarity (M2), an OLS confidence interval (M3), logit shares and acquisition-adjusted CLV (M4), prevalence-dependent precision (M5), email-effect uncertainty and power (M6), a classification threshold and coupon value (M7), and recommendation objectives, carryover, media optimization, and total workflow time (M8).
 
 Read the equations and assumptions in the relevant module before adapting a calculation. Confidence-interval and power formulas are approximations under the stated design. The known media curves are imposed, smooth, and concave; their optimum is not an estimated budget recommendation. Coding assistants should be asked to explain these conditions and verify a small case before extending the code.
+
+## Code in the Lecture Notes
+
+`m01_synthetic.py` through `m08_synthetic.py` provide independently runnable module calculations using `example_helpers.py`. Their source appears directly in the corresponding lecture module. All eight outputs were checked against `verified_calculations.json` from `verify_examples.py`. Run `python m01_synthetic.py` from this folder, or supply its path from another working directory. These scripts use only the standard library and regenerate the labeled CSV files beside the scripts.

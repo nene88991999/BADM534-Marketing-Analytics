@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\node[box,text width=4cm] (start) at (0,0) {Observed food-log days\\76,804};
+\node[orangebox,text width=4.5cm] (left) at (-3,-2) {Left Join: 76,804 Days\\37,634 matched\\39,170 unmatched};
+\node[box,text width=4.5cm] (inner) at (3,-2) {Inner Join: 37,634 Days\\37,634 matched\\39,170 removed};
+\draw[accent] (start) -- (left);
+\draw[edge] (start) -- (inner);
+\node[align=center,text width=12cm] at (0,-4) {Same source keys; different analysis populations.\\An unmatched day is still an observed food-log day.};
+\end{tikzpicture}

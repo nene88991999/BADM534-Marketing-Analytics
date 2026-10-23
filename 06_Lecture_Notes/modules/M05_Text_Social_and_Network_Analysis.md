@@ -112,3 +112,143 @@ Start a text exercise with a small manually inspected sample and a codebook. Bui
 For practice, calculate accuracy in the first complaint-detector sample: 88%. Explain why a classifier that always predicts “no defect” would achieve 99% accuracy in the rare-prevalence deployment sample while detecting no defects. Next identify how removing “not” changes the meaning of “not reliable.” Finally, explain why two highly connected adopters may share preferences even if neither caused the other's adoption.
 
 The [scikit-learn text-feature documentation](https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction) supports count and TF-IDF representations. [VADER's author repository](https://github.com/cjhutto/vaderSentiment) provides a rule-based sentiment baseline. [Hagen and colleagues (2020)](https://doi.org/10.1007/s11002-020-09535-7) discuss ways machine learning can support behavioral marketing research.
+
+## 5.10 mHealth: Classifying New Food Descriptions
+
+The manager wants to reduce the effort required to categorize a food entry. A lookup table may work well for familiar descriptions, while a text classifier may help with a new description. These are distinct deployment conditions. Repeated descriptions in both training and test records can make a random entry split look successful even when the system will struggle with unseen language.
+
+Normalize descriptions by lowercasing, collapsing whitespace, and trimming the ends. Retain nonempty descriptions and nonmissing source categories, then sample 200,000 eligible entries with seed 534. The sample contains 37,570 distinct normalized descriptions; 1,725 appear with more than one source category. Those inconsistencies create label ambiguity. The source category is the prediction target, not a validated nutritional interpretation of the food.
+
+The first split assigns approximately 20% of entries to testing. The second uses a fixed SHA-256 rule to hold out entire normalized descriptions. Its test entries therefore share no exact normalized description with training. Both evaluations weight food entries equally, so frequent descriptions receive more weight. A second evaluation weighting unique descriptions equally would answer a different product question.
+
+A training-only lookup chooses the most frequent category for each description, breaking count ties alphabetically and falling back to the most frequent training category. The text alternative fits a TF-IDF vocabulary of unigrams and bigrams on distinct training descriptions, caps the vocabulary at 20,000 features, and requires a term to occur in at least two training descriptions. Multinomial naive Bayes uses smoothing of 0.1 and training description-category counts as weights.
+
+| Evaluation | Test Entries | Familiar Descriptions | Lookup Accuracy | Text Accuracy | Text Macro F1 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Entry Split | 40,273 | 88.65% | 84.90% | 84.94% | 0.5531 |
+| Description Split | 36,987 | 0% | 3.82% | 67.42% | 0.3465 |
+
+Macro F1 averages across the 312 labels present in the combined sampled data, assigning zero to undefined class scores. Rare labels therefore matter more than in accuracy. The gap between the two evaluations reflects both familiarity and the changed test composition; it is not a causal estimate of leakage's effect. For a service processing new descriptions, the description-level evaluation is the closer test of that requirement.
+
+![Exact-description familiarity changes the task measured by a text-classification test.](../figures/M05_mhealth_text.png)
+
+The lookup nearly matches the text classifier on the entry split because most test descriptions already appear in training. Its collapse on unseen descriptions reveals how much of that performance depends on memory. A product could use the lookup for verified familiar terms and route uncertain new terms for review. Nutrition-based food composition matching would additionally require portion units, preparation details, and validated food codes. A category prediction alone supplies none of those quantities.
+
+An AI assistant can help inspect ambiguous examples and propose a labeling rubric. Use only permitted local processing, preserve the original category, and evaluate proposed relabeling against independently reviewed examples. The code below makes no external model request and learns every lookup and text transformation from training rows only.
+
+Python source: [m05.py](../../03_Data_and_Code/mHealth/recurring_examples/m05.py). From its directory, run `python m05.py`.
+
+```python
+"""Contrast familiar-description and unseen-description classification."""
+
+import json
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, f1_score
+from common import SEED, description_holdout, load_food, save_result
+
+food = load_food()
+usable = food.loc[food.description.ne("") & food.category.ne("Unclassified")]
+sample = usable.sample(n=min(200000, len(usable)), random_state=SEED).reset_index(
+    drop=True
+)
+rng = np.random.default_rng(SEED)
+masks = {
+    "entry_split": rng.random(len(sample)) < 0.2,
+    "description_split": sample.description.map(description_holdout).to_numpy(),
+}
+results = {}
+for name, mask in masks.items():
+    train, test = sample.loc[~mask], sample.loc[mask]
+    counts = train.groupby(["description", "category"]).size().reset_index(name="count")
+    # Break tied category counts alphabetically; learn the lookup only on training rows.
+    lookup = counts.sort_values(["count", "category"], ascending=[False, True])
+    lookup = lookup.drop_duplicates("description").set_index("description").category
+    majority = train.category.value_counts().sort_index().idxmax()
+    baseline = test.description.map(lookup).fillna(majority)
+    vectorizer = TfidfVectorizer(ngram_range=(1, 2), max_features=20000, min_df=2)
+    vectorizer.fit(train.description.drop_duplicates())
+    classifier = MultinomialNB(alpha=0.1)
+    classifier.fit(
+        vectorizer.transform(counts.description),
+        counts.category,
+        sample_weight=counts["count"],
+    )
+    prediction = classifier.predict(vectorizer.transform(test.description))
+    labels = sorted(set(train.category) | set(test.category))
+    results[name] = {
+        "train_rows": len(train),
+        "test_rows": len(test),
+        "familiar_description_fraction": float(
+            test.description.isin(lookup.index).mean()
+        ),
+        "lookup_accuracy": float(accuracy_score(test.category, baseline)),
+        "nb_accuracy": float(accuracy_score(test.category, prediction)),
+        "nb_macro_f1": float(
+            f1_score(
+                test.category,
+                prediction,
+                labels=labels,
+                average="macro",
+                zero_division=0,
+            )
+        ),
+        "test_label_unseen_in_train_fraction": float(
+            (~test.category.isin(train.category.unique())).mean()
+        ),
+        "metric_classes": len(labels),
+    }
+ambiguity = sample.groupby("description").category.nunique()
+result = {
+    "sample_rows": len(sample),
+    "descriptions": len(ambiguity),
+    "descriptions_with_multiple_labels": int(ambiguity.gt(1).sum()),
+    "splits": results,
+}
+save_result("M05", result)
+print(json.dumps(result, indent=2))
+```
+
+## 5.11 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [m05_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m05_synthetic.py). From its directory, run `python m05_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M5; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+r["M05"] = {}
+for positive in [200, 10]:
+    tp = 0.8 * positive
+    fn = positive - tp
+    fp = 0.1 * (1000 - positive)
+    tn = 1000 - positive - fp
+    r["M05"][str(positive / 1000)] = {
+        "tp": tp,
+        "fp": fp,
+        "fn": fn,
+        "tn": tn,
+        "precision": tp / (tp + fp),
+        "accuracy": (tp + tn) / 1000,
+    }
+write_csv(
+    "M05_annotation_synthetic.csv",
+    [
+        "prevalence",
+        "true_positive",
+        "false_positive",
+        "false_negative",
+        "true_negative",
+    ],
+    [(p, v["tp"], v["fp"], v["fn"], v["tn"]) for p, v in r["M05"].items()],
+)
+print(json.dumps(r, indent=2))
+```

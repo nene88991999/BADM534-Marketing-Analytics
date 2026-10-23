@@ -1,0 +1,480 @@
+					
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learn More about Reactivity | EGRP/DCCPS/NCI/NIH</title>
+    <meta name="description" content="Learn how study participant behavior can change due to awareness of measurement and mitigation strategies from the Dietary Assessment Primer." />
+	<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://static.cancer.gov" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
+<link rel="preconnect" href="https://dap.digitalgov.gov" />
+<link rel="preconnect" href="https://metrics.cancer.gov" />
+<!-- Google Analytics - Global site tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102071811-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-102071811-1', {'site_speed_sample_rate': 100});
+</script>
+<link rel="icon" href="/favicon.ico" />
+<link href="/s/assets/bootstrap-5.3.2.custom.min.css" rel="stylesheet" />
+<link href="/s/base.css" rel="stylesheet" />
+<link href="/s/styles.css" rel="stylesheet" />
+<link href="/s/nav-styles.css" rel="stylesheet" />
+<link rel="preload" as="font" href="/fonts/source-sans-pro-v13-latin-regular.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="/fonts/source-sans-pro-v13-latin-300.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="/fonts/merriweather-v21-latin-300.woff2" type="font/woff2" crossorigin="anonymous" />
+    </head>
+
+<body class="resources" >
+    <header>
+    <a class="visually-hidden-focusable" href="#content">Skip to Main Content</a>
+    <section id="usa-banner" aria-label="Official government website">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8">
+                    <div class="usa-banner__header-text py-3">
+                        <img class="me-2" src="/i/usa-banner-flag-icon.png" alt="" width="16" height="11"/>
+                        An official website of the United States government
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-9 col-md-8">
+                <a class="nciLogo" href="https://dccps.cancer.gov" title="Go to DCCPS">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="21.3 371 569.8 49.9">
+                        <path fill="#606060" d="M90.6 396l-13.9-25H26.6c-2.9 0-5.3 2.4-5.3 5.3v39.2c0 3 2.4 5.3 5.3 5.3h50.1L90.6 396z" />
+                        <path fill="#BB0E3D" d="M89.2 373.6c-1-1.6-2.7-2.6-4.6-2.6h-4.1l14.1 25-14.1 25h4.1c1.9 0 3.7-1 4.6-2.6l12.5-22.4-12.5-22.4z" />
+                        <path d="M50.8 384.9h3.7v22.2h-3.7zm-7.3 0v16.3l-10.2-16.3h-3.7v22.2h3.7v-16.3l10.2 16.3h3.6v-22.2zm28.6 0v9.3H61.9v-9.3h-3.7v22.2h3.7v-9.3h10.2v9.3h3.7v-22.2z" fill="#FFF" />
+                        <path d="M121 378.4h2.3v10.3H121l-4.9-6.5v6.5h-2.3v-10.3h2.2l5.1 6.7v-6.7zm12.2 10.4l-1-2.2h-4.3l-1 2.2h-2.5l4.5-10.3h2.2l4.5 10.3h-2.4zm-3.1-7.3l-1.3 3h2.6l-1.3-3zm10.4-1.1v8.3h-2.3v-8.3h-2.9v-2h8.2v2h-3zm4.6-2h2.3v10.3h-2.3v-10.3zm13.5 8.9c-1 1-2.3 1.5-3.9 1.5s-2.8-.5-3.9-1.5c-1-1-1.6-2.3-1.6-3.8s.5-2.8 1.6-3.8c1-1 2.3-1.5 3.9-1.5s2.8.5 3.9 1.5c1 1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8zm-.8-3.8c0-.9-.3-1.7-.9-2.4-.6-.7-1.3-1-2.2-1-.9 0-1.6.3-2.2 1-.6.7-.9 1.4-.9 2.4 0 .9.3 1.7.9 2.4.6.6 1.3 1 2.2 1 .9 0 1.6-.3 2.2-1 .6-.6.9-1.4.9-2.4zm11.6-5.1h2.3v10.3h-2.3l-4.9-6.5v6.5h-2.3v-10.3h2.2l5.1 6.7v-6.7zm12.2 10.4l-1-2.2h-4.3l-1 2.2h-2.5l4.5-10.3h2.2l4.5 10.3h-2.4zm-3.1-7.3l-1.3 3h2.6l-1.3-3zm6.8 7.3v-10.3h2.3v8.3h4.4v2.1l-6.7-.1zm17-2.1c1.1 0 2.1-.4 2.8-1.3l1.5 1.5c-1.2 1.3-2.6 2-4.1 2-1.6 0-2.9-.5-3.9-1.5s-1.5-2.3-1.5-3.8.5-2.8 1.6-3.8 2.3-1.5 3.9-1.5c1.7 0 3.1.6 4.3 1.9l-1.4 1.6c-.7-.9-1.6-1.4-2.7-1.4-.9 0-1.6.3-2.2.9-.6.6-.9 1.3-.9 2.3s.3 1.7.9 2.3c.2.5.9.8 1.7.8zm13.4 2.1l-1-2.2h-4.3l-1 2.2H207l4.5-10.3h2.2l4.5 10.3h-2.5zm-3.1-7.3l-1.3 3h2.6l-1.3-3zm14-3.1h2.3v10.3h-2.3l-4.9-6.5v6.5h-2.3v-10.3h2.2l5.1 6.7v-6.7zm9.6 8.3c1.1 0 2.1-.4 2.8-1.3l1.5 1.5c-1.2 1.3-2.6 2-4.1 2s-2.9-.5-3.9-1.5-1.5-2.3-1.5-3.8.5-2.8 1.6-3.8 2.3-1.5 3.9-1.5c1.7 0 3.1.6 4.3 1.9l-1.4 1.6c-.7-.9-1.6-1.4-2.7-1.4-.9 0-1.6.3-2.2.9-.6.6-.9 1.3-.9 2.3s.3 1.7.9 2.3c.1.5.8.8 1.7.8zm13.5-8.3v2.1h-5.1v2.1h4.6v2h-4.6v2.1h5.3v2h-7.6v-10.3h7.4zm10.6 3.5c0 1.7-.7 2.7-2 3.2l2.6 3.7h-2.8l-2.3-3.3h-1.6v3.3h-2.3v-10.3h3.9c1.6 0 2.8.3 3.4.8.8.5 1.1 1.4 1.1 2.6zm-2.8 1.2c.3-.3.4-.7.4-1.2 0-.6-.1-.9-.4-1.1-.3-.2-.8-.3-1.6-.3h-1.7v3.1h1.7c.8-.1 1.3-.2 1.6-.5zm9.1-4.7h2.3v10.3h-2.3v-10.3zm12.1 0h2.3v10.3h-2.3l-4.9-6.5v6.5h-2.3v-10.3h2.2l5.1 6.7v-6.7zm7.2 2.1c-.2.2-.3.4-.3.7s.1.5.4.7c.3.2.9.4 1.9.6s1.7.6 2.3 1.1c.5.5.8 1.2.8 2.1s-.3 1.7-1 2.3-1.6.9-2.7.9c-1.6 0-3.1-.6-4.4-1.8l1.4-1.7c1.1 1 2.1 1.5 3.1 1.5.4 0 .8-.1 1-.3.2-.2.4-.4.4-.7 0-.3-.1-.6-.4-.7-.3-.2-.8-.4-1.5-.6-1.2-.3-2.1-.7-2.6-1.1-.6-.5-.8-1.2-.8-2.2s.4-1.7 1.1-2.3c.7-.5 1.6-.8 2.6-.8.7 0 1.4.1 2.1.4s1.3.6 1.8 1l-1.2 1.7c-.9-.7-1.8-1-2.8-1-.6-.1-.9 0-1.2.2zm11.3-.1v8.3h-2.3v-8.3H292v-2h8.2v2h-3zm4.7-2h2.3v10.3h-2.3v-10.3zm9.2 2v8.3h-2.3v-8.3h-2.9v-2h8.2v2h-3zm7.3 5.7c.4.5.9.7 1.6.7.7 0 1.2-.2 1.5-.7.4-.5.6-1.1.6-2v-5.7h2.3v5.8c0 1.5-.4 2.6-1.2 3.5-.8.8-1.9 1.2-3.2 1.2-1.3 0-2.4-.4-3.2-1.2s-1.2-2-1.2-3.4v-5.8h2.3v5.7c0 .8.1 1.4.5 1.9zm12.8-5.7v8.3h-2.3v-8.3H326v-2h8.2v2h-3zm12.1-2v2.1h-5.1v2.1h4.6v2h-4.6v2.1h5.3v2h-7.6v-10.3h7.4z" fill="#BB0E3D" />
+                        <path d="M124.1 401.8c1.3 1.2 1.9 2.8 1.9 4.9s-.6 3.8-1.9 5-3.2 1.8-5.8 1.8h-4.6V400h4.8c2.4 0 4.3.6 5.6 1.8zm-2.2 8.1c.7-.7 1.1-1.7 1.1-3s-.4-2.4-1.1-3.1c-.7-.7-1.9-1.1-3.4-1.1h-1.7v8.3h1.9c1.3-.1 2.4-.4 3.2-1.1zm6.6-8.1c-.3-.3-.5-.7-.5-1.2s.2-.9.5-1.2c.3-.3.7-.5 1.2-.5s.9.2 1.2.5c.3.3.5.7.5 1.2s-.2.9-.5 1.2c-.3.3-.7.5-1.2.5s-.9-.2-1.2-.5zm2.6 11.8h-2.9v-10.4h2.9v10.4zm5.6 0l-4.1-10.5h3l2.6 6.6 2.6-6.6h3l-4.1 10.5h-3zm8.8-11.8c-.3-.3-.5-.7-.5-1.2s.2-.9.5-1.2c.3-.3.7-.5 1.2-.5s.9.2 1.2.5c.3.3.5.7.5 1.2s-.2.9-.5 1.2c-.3.3-.7.5-1.2.5s-.8-.2-1.2-.5zm2.7 11.8h-2.9v-10.4h2.9v10.4zm10.6-3.3c0 1-.4 1.9-1.1 2.5s-1.7.9-2.9.9c-.8 0-1.6-.1-2.4-.4-.8-.3-1.6-.7-2.3-1.2l1.3-1.8c1.1.8 2.2 1.3 3.5 1.3.4 0 .7-.1.9-.2.2-.1.3-.3.3-.6 0-.2-.2-.5-.5-.7-.3-.2-.7-.4-1.3-.6-.6-.2-1-.3-1.3-.5-.3-.1-.7-.3-1-.6-.8-.5-1.2-1.2-1.2-2.2 0-1 .4-1.8 1.2-2.4.8-.6 1.8-.9 3-.9s2.5.4 3.7 1.2l-1.1 1.9c-.9-.6-1.8-.9-2.7-.9-.9 0-1.3.2-1.3.7 0 .3.1.5.4.6.3.2.8.3 1.4.5.7.2 1.1.4 1.4.5.3.1.6.3 1 .5.6.7 1 1.4 1 2.4zm2.5-8.5c-.3-.3-.5-.7-.5-1.2s.2-.9.5-1.2c.3-.3.7-.5 1.2-.5s.9.2 1.2.5c.3.3.5.7.5 1.2s-.2.9-.5 1.2c-.3.3-.7.5-1.2.5s-.9-.2-1.2-.5zm2.7 11.8h-3v-10.4h2.9v10.4zm13.2-5.2c0 1.5-.5 2.8-1.6 3.8-1 1-2.4 1.6-4 1.6s-2.9-.5-4-1.6c-1-1-1.6-2.3-1.6-3.8s.5-2.8 1.6-3.8c1-1 2.4-1.6 4-1.6s2.9.5 4 1.6c1 1 1.6 2.2 1.6 3.8zm-8.2 0c0 .9.2 1.6.7 2.1.5.5 1.1.8 1.9.8s1.4-.3 1.9-.8.7-1.2.7-2.1c0-.9-.2-1.6-.7-2.1s-1.1-.8-1.9-.8-1.4.3-1.9.8c-.4.5-.7 1.2-.7 2.1zm13.2-.6v5.8h-2.9v-10.4h2.9v1.2c.9-.9 1.9-1.3 3-1.3s2 .4 2.8 1.2c.7.8 1.1 1.8 1.1 3.1v6.3h-2.9v-5.9c0-1.6-.6-2.4-1.8-2.4-.6 0-1.1.2-1.5.6-.5.3-.7.9-.7 1.8zm25.1.6c0 1.5-.5 2.8-1.6 3.8-1 1-2.4 1.6-4 1.6s-2.9-.5-4-1.6c-1-1-1.6-2.3-1.6-3.8s.5-2.8 1.6-3.8c1-1 2.4-1.6 4-1.6s2.9.5 4 1.6c1.1 1 1.6 2.2 1.6 3.8zm-8.1 0c0 .9.2 1.6.7 2.1.5.5 1.1.8 1.9.8.8 0 1.4-.3 1.9-.8s.7-1.2.7-2.1c0-.9-.2-1.6-.7-2.1-.5-.5-1.1-.8-1.9-.8-.8 0-1.4.3-1.9.8s-.7 1.2-.7 2.1zm13.5-5.9v.7h2.5v2.1h-2.5v8.3h-2.9v-8.3h-1.2v-2.1h1.2v-.6c0-1.1.3-2 1-2.7.7-.7 1.6-1 2.6-1s2 .4 2.8 1.2l-1 2c-.4-.5-.9-.7-1.4-.7-.3 0-.5.1-.7.3-.3.1-.4.4-.4.8zm16 8.4c1.5 0 2.7-.6 3.6-1.8l1.9 2c-1.5 1.7-3.4 2.6-5.4 2.6-2.1 0-3.8-.7-5.2-2-1.4-1.3-2-3-2-5s.7-3.7 2.1-5 3.1-2 5.1-2c2.2 0 4.1.8 5.6 2.5l-1.9 2.1c-1-1.2-2.1-1.8-3.6-1.8-1.1 0-2.1.4-2.9 1.1-.8.7-1.2 1.7-1.2 3s.4 2.3 1.1 3c.8.9 1.7 1.3 2.8 1.3zm16.5 2.7h-2.7v-1.3c-.8.9-1.7 1.4-2.8 1.4-1.1 0-2-.3-2.8-1-.8-.6-1.1-1.5-1.1-2.6s.4-1.9 1.2-2.4c.8-.5 1.8-.8 3.2-.8h2.2v.1c0-1.1-.6-1.7-1.8-1.7-.5 0-1 .1-1.6.3-.6.2-1 .4-1.4.7l-1.3-1.9c1.4-1 2.9-1.5 4.7-1.5 1.3 0 2.3.3 3.1 1 .8.6 1.2 1.6 1.2 3l-.1 6.7zm-3-4v-.5h-1.8c-1.2 0-1.7.4-1.7 1.1 0 .4.1.7.4.9.3.2.7.3 1.2.3s1-.2 1.4-.5c.3-.3.5-.8.5-1.3zm8.5-1.8v5.8h-2.9v-10.4h2.9v1.2c.9-.9 1.9-1.3 3-1.3s2 .4 2.8 1.2c.7.8 1.1 1.8 1.1 3.1v6.3h-2.9v-5.9c0-1.6-.6-2.4-1.8-2.4-.6 0-1.1.2-1.5.6-.4.3-.7.9-.7 1.8zm14.5 3.4c1 0 1.8-.5 2.6-1.5l1.7 1.9c-1.3 1.4-2.8 2.1-4.4 2.1s-2.9-.5-4-1.5-1.6-2.3-1.6-3.9.5-2.9 1.6-3.9 2.4-1.5 3.9-1.5c.8 0 1.5.2 2.3.5.8.3 1.4.8 2 1.4l-1.5 2c-.3-.4-.7-.7-1.2-.9-.5-.2-1-.3-1.4-.3-.8 0-1.4.2-2 .7-.6.5-.8 1.2-.8 2.1 0 .9.3 1.6.8 2.1s1.3.7 2 .7zm15.4.9c-1.2 1.1-2.6 1.7-4.1 1.7s-2.9-.5-3.9-1.5-1.6-2.3-1.6-3.9.5-3 1.6-3.9c1.1-1 2.3-1.5 3.7-1.5s2.7.4 3.7 1.3 1.5 2.1 1.5 3.6v1.6h-7.6c.1.6.4 1 .9 1.4.5.4 1.1.5 1.7.5 1 0 1.9-.3 2.5-1l1.6 1.7zm-2.8-6.2c-.4-.3-.9-.5-1.5-.5s-1.1.2-1.6.5-.8.8-.8 1.4h4.6c-.1-.6-.3-1.1-.7-1.4zm11.2-.2c-.9 0-1.5.3-1.9.9-.4.6-.6 1.4-.6 2.4v4.5h-2.9v-10.4h2.9v1.4c.4-.4.8-.8 1.4-1.1.6-.3 1.1-.5 1.7-.5v2.7l-.6.1zm14.1 5.2c1.5 0 2.7-.6 3.6-1.8l1.9 2c-1.5 1.7-3.4 2.6-5.4 2.6s-3.8-.7-5.2-2c-1.4-1.3-2-3-2-5s.7-3.7 2.1-5 3.1-2 5.1-2c2.2 0 4.1.8 5.6 2.5l-1.9 2.1c-1-1.2-2.1-1.8-3.6-1.8-1.1 0-2.1.4-2.9 1.1-.8.7-1.2 1.7-1.2 3s.4 2.3 1.1 3c.8.9 1.8 1.3 2.8 1.3zm17.8-2.5c0 1.5-.5 2.8-1.6 3.8-1 1-2.4 1.6-4 1.6s-2.9-.5-4-1.6c-1-1-1.6-2.3-1.6-3.8s.5-2.8 1.6-3.8c1-1 2.4-1.6 4-1.6s2.9.5 4 1.6c1.1 1 1.6 2.2 1.6 3.8zm-8.1 0c0 .9.2 1.6.7 2.1.5.5 1.1.8 1.9.8s1.4-.3 1.9-.8.7-1.2.7-2.1c0-.9-.2-1.6-.7-2.1s-1.1-.8-1.9-.8-1.4.3-1.9.8-.7 1.2-.7 2.1zm13.1-.6v5.8H323v-10.4h2.9v1.2c.9-.9 1.9-1.3 3-1.3s2 .4 2.8 1.2c.7.8 1.1 1.8 1.1 3.1v6.3h-2.9v-5.9c0-1.6-.6-2.4-1.8-2.4-.6 0-1.1.2-1.5.6-.4.3-.7.9-.7 1.8zm12.9-2.6v4.7c0 .4.1.7.3.9.2.2.5.3.7.3.5 0 1-.2 1.4-.7l1.1 2c-.9.8-1.9 1.2-2.9 1.2s-1.9-.3-2.5-1c-.7-.7-1-1.6-1-2.7v-4.8h-1.2V403h1.2v-3h2.9v3.1h2.5v2.1h-2.5zm10.5.5c-.9 0-1.5.3-1.9.9-.4.6-.6 1.4-.6 2.4v4.5h-2.9v-10.4h2.9v1.4c.4-.4.8-.8 1.4-1.1.6-.3 1.1-.5 1.7-.5v2.7l-.6.1zm12.8 2.7c0 1.5-.5 2.8-1.6 3.8-1 1-2.4 1.6-4 1.6s-2.9-.5-4-1.6c-1-1-1.6-2.3-1.6-3.8s.5-2.8 1.6-3.8c1-1 2.4-1.6 4-1.6s2.9.5 4 1.6c1.1 1 1.6 2.2 1.6 3.8zm-8.1 0c0 .9.2 1.6.7 2.1.5.5 1.1.8 1.9.8s1.4-.3 1.9-.8.7-1.2.7-2.1c0-.9-.2-1.6-.7-2.1-.5-.5-1.1-.8-1.9-.8s-1.4.3-1.9.8-.7 1.2-.7 2.1zm13.2 5.2h-2.9v-14.4h2.9v14.4zm16.1-1.2c-1.1.9-2.3 1.3-3.8 1.3-1.4 0-2.6-.4-3.5-1.1s-1.4-1.7-1.4-3c0-1.4 1-2.7 2.9-3.8-.4-.5-.7-1-.9-1.4-.2-.4-.3-.9-.3-1.4 0-1.1.4-1.9 1.2-2.5.8-.6 1.7-.9 2.8-.9 1.1 0 2 .3 2.8.8.8.6 1.2 1.3 1.2 2.4 0 1.3-.9 2.4-2.8 3.5.7.9 1.3 1.6 1.6 2 .3-.6.6-1.2.7-1.9l2.3 1.6c-.3.8-.7 1.6-1.1 2.3l1.9 1.9-1.9 1.8-1.7-1.6zm-5.3-1.5c.4.3.9.4 1.5.4s1.2-.3 1.9-.9c-.9-1-1.8-1.9-2.4-2.7-1 .6-1.5 1.3-1.5 2 0 .5.2.9.5 1.2zm2.2-8.9c-.3 0-.5.1-.8.3-.2.2-.3.5-.3.8s.3.8.8 1.5c1-.5 1.5-1 1.5-1.5 0-.4-.1-.7-.3-.9-.3-.1-.6-.2-.9-.2zm23.2-.8c1 .8 1.4 2.1 1.4 3.7 0 1.7-.5 2.9-1.5 3.7-1 .8-2.5 1.2-4.5 1.2H397v3.8h-3V400h4.8c2.1 0 3.6.4 4.6 1.2zm-2.2 5.4c.4-.4.5-1 .5-1.8s-.2-1.3-.7-1.7c-.5-.3-1.2-.5-2.2-.5h-1.7v4.6h2c1 0 1.7-.2 2.1-.6zm16 1.8c0 1.5-.5 2.8-1.6 3.8s-2.4 1.6-4 1.6-2.9-.5-4-1.6c-1-1-1.6-2.3-1.6-3.8s.5-2.8 1.6-3.8c1-1 2.4-1.6 4-1.6s2.9.5 4 1.6c1.1 1 1.6 2.2 1.6 3.8zm-8.1 0c0 .9.2 1.6.7 2.1.5.5 1.1.8 1.9.8.8 0 1.4-.3 1.9-.8s.7-1.2.7-2.1c0-.9-.2-1.6-.7-2.1-.5-.5-1.1-.8-1.9-.8-.8 0-1.4.3-1.9.8s-.7 1.2-.7 2.1zm16.3-5.4c1.2 0 2.3.5 3.3 1.5s1.4 2.3 1.4 3.8-.5 2.8-1.4 3.9c-1 1-2.1 1.6-3.3 1.6s-2.3-.5-3.1-1.5v5.1h-2.9v-14.2h2.9v1.2c.9-1 1.9-1.4 3.1-1.4zm-3.2 5.4c0 .8.2 1.5.7 2.1.5.5 1 .8 1.7.8s1.3-.3 1.8-.8.8-1.2.8-2.1-.2-1.5-.7-2.1c-.5-.6-1.1-.9-1.8-.9s-1.3.3-1.7.8c-.5.6-.8 1.3-.8 2.2zm16.8.4v-5.6h2.9v10.4H439v-1.4c-.7 1-1.7 1.5-2.8 1.5-1.1 0-2.1-.4-2.9-1.1-.8-.7-1.2-1.8-1.2-3.2v-6.3h2.9v5.7c0 1.6.6 2.4 1.8 2.4.6 0 1.1-.2 1.5-.6.5-.4.7-1 .7-1.8zm8.6 4.8h-2.9v-14.4h2.9v14.4zm11.7 0h-2.7v-1.3c-.8.9-1.7 1.4-2.8 1.4s-2-.3-2.8-1c-.8-.6-1.1-1.5-1.1-2.6s.4-1.9 1.2-2.4c.8-.5 1.8-.8 3.2-.8h2.2v.1c0-1.1-.6-1.7-1.8-1.7-.5 0-1 .1-1.6.3-.6.2-1 .4-1.4.7l-1.3-1.9c1.4-1 2.9-1.5 4.7-1.5 1.3 0 2.3.3 3.1 1 .8.6 1.2 1.6 1.2 3l-.1 6.7zm-3-4v-.5h-1.8c-1.2 0-1.7.4-1.7 1.1 0 .4.1.7.4.9.3.2.7.3 1.2.3s1-.2 1.4-.5c.3-.3.5-.8.5-1.3zm9-4.4v4.7c0 .4.1.7.3.9s.5.3.7.3c.5 0 1-.2 1.4-.7l1.1 2c-.9.8-1.9 1.2-2.9 1.2s-1.9-.3-2.5-1-1-1.6-1-2.7v-4.8h-1.2V403h1.2v-3h2.9v3.1h2.5v2.1h-2.5zm5.3-3.4c-.3-.3-.5-.7-.5-1.2s.2-.9.5-1.2c.3-.3.7-.5 1.2-.5s.9.2 1.2.5c.3.3.5.7.5 1.2s-.2.9-.5 1.2c-.3.3-.7.5-1.2.5s-.9-.2-1.2-.5zm2.7 11.8h-2.9v-10.4h2.9v10.4zm13.2-5.2c0 1.5-.5 2.8-1.6 3.8-1 1-2.4 1.6-4 1.6s-2.9-.5-4-1.6c-1-1-1.6-2.3-1.6-3.8s.5-2.8 1.6-3.8c1-1 2.4-1.6 4-1.6s2.9.5 4 1.6c1 1 1.6 2.2 1.6 3.8zm-8.2 0c0 .9.2 1.6.7 2.1.5.5 1.1.8 1.9.8.8 0 1.4-.3 1.9-.8s.7-1.2.7-2.1c0-.9-.2-1.6-.7-2.1-.5-.5-1.1-.8-1.9-.8-.8 0-1.4.3-1.9.8-.4.5-.7 1.2-.7 2.1zm13.2-.6v5.8h-2.9v-10.4h2.9v1.2c.9-.9 1.9-1.3 3-1.3s2 .4 2.8 1.2c.7.8 1.1 1.8 1.1 3.1v6.3h-2.9v-5.9c0-1.6-.6-2.4-1.8-2.4-.6 0-1.1.2-1.5.6-.5.3-.7.9-.7 1.8zm18.1-5.1c-.3.2-.4.6-.4 1s.2.7.5.9c.4.2 1.2.5 2.5.8 1.3.3 2.3.8 3 1.4.7.6 1.1 1.6 1.1 2.8 0 1.2-.5 2.2-1.4 3-.9.8-2.1 1.1-3.6 1.1-2.1 0-4.1-.8-5.8-2.4l1.8-2.2c1.5 1.3 2.8 1.9 4.1 1.9.6 0 1-.1 1.3-.4.3-.2.5-.6.5-1s-.2-.7-.5-1c-.3-.2-1-.5-2-.7-1.6-.4-2.7-.9-3.5-1.5-.7-.6-1.1-1.5-1.1-2.8 0-1.3.5-2.3 1.4-3 .9-.7 2.1-1 3.5-1 .9 0 1.8.2 2.7.5.9.3 1.7.8 2.4 1.3l-1.5 2.2c-1.2-.9-2.4-1.3-3.6-1.3-.7.1-1.1.2-1.4.4zm13.9 8.5c1 0 1.8-.5 2.6-1.5l1.7 1.9c-1.3 1.4-2.8 2.1-4.4 2.1-1.6 0-2.9-.5-4-1.5s-1.6-2.3-1.6-3.9.5-2.9 1.6-3.9 2.4-1.5 3.9-1.5c.8 0 1.5.2 2.3.5.8.3 1.4.8 2 1.4l-1.5 2c-.3-.4-.7-.7-1.2-.9-.5-.2-1-.3-1.4-.3-.8 0-1.4.2-2 .7-.6.5-.8 1.2-.8 2.1 0 .9.3 1.6.8 2.1.6.4 1.3.7 2 .7zm6.6-9.4c-.3-.3-.5-.7-.5-1.2s.2-.9.5-1.2c.3-.3.7-.5 1.2-.5s.9.2 1.2.5c.3.3.5.7.5 1.2s-.2.9-.5 1.2c-.3.3-.7.5-1.2.5s-.9-.2-1.2-.5zm2.6 11.8h-2.9v-10.4h2.9v10.4zm11.8-1.5c-1.2 1.1-2.6 1.7-4.1 1.7-1.6 0-2.9-.5-3.9-1.5s-1.6-2.3-1.6-3.9.5-3 1.6-3.9c1.1-1 2.3-1.5 3.7-1.5 1.4 0 2.7.4 3.7 1.3s1.5 2.1 1.5 3.6v1.6h-7.6c.1.6.4 1 .9 1.4.5.4 1.1.5 1.7.5 1 0 1.9-.3 2.5-1l1.6 1.7zm-2.8-6.2c-.4-.3-.9-.5-1.5-.5s-1.1.2-1.6.5-.8.8-.8 1.4h4.6c0-.6-.3-1.1-.7-1.4zm8.7 1.9v5.8h-2.9v-10.4h2.9v1.2c.9-.9 1.9-1.3 3-1.3s2 .4 2.8 1.2c.7.8 1.1 1.8 1.1 3.1v6.3h-2.9v-5.9c0-1.6-.6-2.4-1.8-2.4-.6 0-1.1.2-1.5.6-.5.3-.7.9-.7 1.8zm14.5 3.4c1 0 1.8-.5 2.6-1.5l1.7 1.9c-1.3 1.4-2.8 2.1-4.4 2.1-1.6 0-2.9-.5-4-1.5s-1.6-2.3-1.6-3.9.5-2.9 1.6-3.9 2.4-1.5 3.9-1.5c.8 0 1.5.2 2.3.5.8.3 1.4.8 2 1.4l-1.5 2c-.3-.4-.7-.7-1.2-.9-.5-.2-1-.3-1.4-.3-.8 0-1.4.2-2 .7s-.8 1.2-.8 2.1c0 .9.3 1.6.8 2.1s1.3.7 2 .7zm15.3.9c-1.2 1.1-2.6 1.7-4.1 1.7-1.6 0-2.9-.5-3.9-1.5s-1.6-2.3-1.6-3.9.5-3 1.6-3.9c1.1-1 2.3-1.5 3.7-1.5 1.4 0 2.7.4 3.7 1.3s1.5 2.1 1.5 3.6v1.6h-7.6c.1.6.4 1 .9 1.4.5.4 1.1.5 1.7.5 1 0 1.9-.3 2.5-1l1.6 1.7zm-2.8-6.2c-.4-.3-.9-.5-1.5-.5s-1.1.2-1.6.5-.8.8-.8 1.4h4.6c0-.6-.3-1.1-.7-1.4zm13.7 4.4c0 1-.4 1.9-1.1 2.5-.8.6-1.7.9-2.9.9-.8 0-1.6-.1-2.4-.4-.8-.3-1.6-.7-2.3-1.2l1.3-1.8c1.1.8 2.2 1.3 3.5 1.3.4 0 .7-.1.9-.2.2-.1.3-.3.3-.6 0-.2-.2-.5-.5-.7-.3-.2-.7-.4-1.3-.6-.6-.2-1-.3-1.3-.5-.3-.1-.6-.3-1-.6-.8-.5-1.2-1.2-1.2-2.2 0-1 .4-1.8 1.2-2.4.8-.6 1.8-.9 3-.9s2.5.4 3.7 1.2l-1.1 1.9c-.9-.6-1.8-.9-2.7-.9-.9 0-1.3.2-1.3.7 0 .3.1.5.4.6.3.2.8.3 1.4.5.7.2 1.1.4 1.4.5.3.1.6.3 1 .5.6.7 1 1.4 1 2.4z" fill="#606060" />
+                    </svg>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-4 searchWrap">
+                <form class="searchForm ms-4 ms-lg-auto" id="main-search" action="/search" method="get" name="search" role="search">
+                    <div class="input-group justify-content-end">
+                        <input class="form-control form-control-sm border-secondary rounded-start-0" type="text" size="27" name="q" id="q" aria-label="Search" />
+                        <button class="btn btn-sm btn-info rounded-end-1 px-3 px-lg-auto" type="submit">
+                            <strong class="d-none d-lg-inline fs-6 px-1">Search</strong>
+                            <svg role="img" aria-label="search" class="mb-1 d-inline-block d-lg-none" viewBox="0 0 16 16" fill="#fff" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="ribbon">
+        <div class="container">
+            <span>Epidemiology and Genomics Research Program</span>
+        </div>
+    </div>
+    <div class="navBar">
+        <div class="container d-flex align-items-center">
+            <nav class="navbar navbar-expand-lg navbar-nci" aria-label="main">
+                <button id="menu-button" class="btn btn-primary px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+                    <strong>Menu</strong>
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvas" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header justify-content-end">
+                        <p class="offcanvas-title visually-hidden" id="offcanvasNavbarLabel">Main Navigation</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link home" href="/"><span>Home</span></a>
+                            </li>
+                            <li class="nav-item dropdown mega-menu">
+                                <a class="nav-link funding dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Funding & Grants</span></a>
+                                <div class="dropdown-menu">
+                                    <div class="mega">
+                                        <div class="mega-menu-item">
+                                            <div class="mega-menu-container">
+                                                <div class="mega-menu-heading">
+                                                    <a class="dropdown-item" href="/funding/">Funding Opportunities & Grant Information</a>
+                                                </div>
+                                            </div>
+                                            <div class="mega-menu-container">
+                                                <div class="mega-menu-item">
+                                                    <a class="dropdown-item" href="https://maps.cancer.gov/overview/DCCPSGrants/grantlist.jsp?method=dynamic&division=dccps&status=active&program=egrp&menu=division">Cancer Control and Population Sciences Funding Opportunities</a>
+                                                    <a class="dropdown-item" href="/funding/biospecimen-sharing.html">Biospecimen Information for Research Sharing Plans</a>
+                                                    <a class="dropdown-item" href="/funding/resource-data-sharing-plan.html">Data Management and Sharing Plans</a>
+                                                    <a class="dropdown-item" href="/funding/faq.html">Frequently Asked Questions Related to Grant Applications</a>
+                                                    <a class="dropdown-item" href="/funding/informed-consent-for-data-sharing.html">Informed Consents for Data Sharing</a>
+                                                </div>
+                                                <div class="mega-menu-item">
+                                                    <a class="dropdown-item" href="/funding/grant-application-examples.html">Sample Cancer Epidemiology Grant Applications</a>
+                                                    <a class="dropdown-item" href="/funding/single-irb-policies-for-nih-grantees.html">Single IRB Policies for NIH Grantees Coordinating Multi-Site Research</a>
+                                                    <a class="dropdown-item" href="/funding/tools-develop-research-idea.html">Tools to Develop Your Research Idea</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown mega-menu">
+                                <a class="nav-link areas dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Research Areas</span></a>
+                                <div class="dropdown-menu">
+                                    <div class="mega">
+                                        <div class="mega-menu-container">
+                                            <div class="mega-menu-heading">
+                                                <a class="dropdown-item" href="/research-areas/">All Research Areas</a>
+                                            </div>
+                                        </div>
+                                        <div class="mega-menu-container">
+                                            <div class="mega-menu-item">
+                                                <a class="dropdown-item" href="/clinical/">Clinical and Translational Epidemiology</a>
+                                                <a class="dropdown-item" href="/environmental/">Environmental Epidemiology</a>
+                                                <a class="dropdown-item" href="/genomic/">Genomic Epidemiology</a>
+                                            </div>
+                                            <div class="mega-menu-item">
+                                                <a class="dropdown-item" href="/methods-tech/">Methods and Technologies</a>
+                                                <a class="dropdown-item" href="/risk/">Risk Factor Assessment</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown mega-menu">
+                                <a class="nav-link resources dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Research Resources</span></a>
+                                <div class="dropdown-menu">
+                                    <div class="mega">
+                                        <div class="mega-menu-container">
+                                            <div class="mega-menu-heading">
+                                                <a class="dropdown-item" href="/research-resources/">All Resources</a>
+                                            </div>
+                                        </div>
+                                        <div class="mega-menu-container">
+                                            <div class="mega-menu-item">
+                                                <a class="dropdown-item" href="/biospecimens/">Biospecimens</a>
+                                                <a class="dropdown-item" href="/cohorts/">Cancer Epidemiology Cohorts</a>
+                                                <a class="dropdown-item" href="/cohort-consortium/">NCI Cohort Consortium</a>
+                                                <a class="dropdown-item" href="/cancer-registries/">Cancer Registry Resources</a>
+                                                <a class="dropdown-item" href="/Consortia/">Consortia</a>
+                                            </div>
+                                            <div class="mega-menu-item">
+                                                <a class="dropdown-item" href="/dietary-assessment-resources/">Dietary Assessment Resources</a>
+                                                <a class="dropdown-item" href="/genomic-summary-results/resources.html">Genomic Summary Results</a>
+                                                <a class="dropdown-item" href="https://gis.cancer.gov">Geospatial Approaches</a>
+                                                <a class="dropdown-item" href="/pharm/genomic-resources.html">Pharmacogenomic Resources</a>
+                                                <a class="dropdown-item" href="/physical/research-resources.html">Physical Activity Research Resources</a>
+                                            </div>
+                                            <div class="mega-menu-item">
+												<a class="dropdown-item" href="https://datacommons.cancer.gov/repository/population-science-data-commons">Population Science Data Commons</a>
+                                                <a class="dropdown-item" href="/statistics/">Statistics</a>
+                                                <a class="dropdown-item" href="/surveys/">Surveys</a>
+                                                <a class="dropdown-item" href="/videos/">Video Library</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link news" href="/news/"><span>News</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link events" href="/events/"><span>Events</span></a>
+                            </li>
+                            <li class="nav-item dropdown mega-menu">
+                                <a class="nav-link about dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>About</span></a>
+                                <div class="dropdown-menu">
+                                    <div class="mega">
+                                        <div class="mega-menu-container">
+                                            <div class="mega-menu-heading">
+                                                <a class="dropdown-item" href="/about/">Overview</a>
+                                            </div>
+                                        </div>
+                                        <div class="mega-menu-container">
+                                            <div class="mega-menu-item">
+                                                <a class="dropdown-item" href="/staff/">Staff List</a>
+                                                <a class="dropdown-item" href="/about/jobs.html">Job Opportunities</a>
+                                            </div>
+                                            <div class="mega-menu-item">
+                                                <a class="dropdown-item" href="/about/structure.html">Organizational Structure</a>
+                                                <a class="dropdown-item" href="/oad/">Office of the Associate Director</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+	
+	<main>
+		<div class="bg-lightgray">
+			<div class="container d-flex flex-column justify-content-between flex-sm-row align-items-left align-items-sm-center">
+				<h1>Learn More about Reactivity</h1>
+							</div>
+		</div>
+		<!-- use this hook as a potential place for announcements/archived -->
+		<div class="context-banner">
+			<div class="container">
+				<nav aria-label="breadcrumb">
+					<!--<ol class="breadcrumb"><li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item"><a href="/">Section</a></li><li class="breadcrumb-item active" aria-current="page">Sub Page</li></ol>-->
+					<ol class="breadcrumb"><li class="breadcrumb-item"><a href="/">Home</a> </li><li class="breadcrumb-item mobile-crumb"><a href="/dietary-assessment-primer/learn/">Learn More</a> </li><li class="breadcrumb-item" aria-current="page">Reactivity</li></ol>				</nav>
+			</div>
+		</div>
+    
+		<button class="togSubNav" data-bs-toggle="modal" data-target="#leftNav" data-bs-target="#leftNav">
+		<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<rect y="0" width="100%" height="15%" rx="5%" ry="5%" />
+			<rect y="36%" width="100%" height="15%" rx="5%" ry="5%" />
+			<rect y="72%" width="100%" height="15%" rx="5%" ry="5%" />
+		</svg>
+		Section Menu
+	</button>
+		<div class="container mb-5 pt-3">			
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="subNav-wrap">
+						<nav class="subNav" aria-label="Section Menu">
+							<div class="subNav">
+	<p class="heading">Dietary Assessment Primer</p>
+	<ul>
+        <li><a href="/dietary-assessment-primer/">Dietary Assessment Primer Home</a></li>
+		<li><a href="/dietary-assessment-primer/profiles/">Instrument Profiles</a>
+			<ul>
+				<li><a href="/dietary-assessment-primer/profiles/recall/">24-hour Dietary Recall (24HR) At a Glance</a>
+					<ul>
+						<li><a href="/dietary-assessment-primer/profiles/recall/validation.html">Validation</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/recall/capture.html">Data Capture</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/recall/processing.html">Data Processing & Data Analysis</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/recall/references.html">References & Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="/dietary-assessment-primer/profiles/record/">Food Record</a>
+					<ul>
+						<li><a href="/dietary-assessment-primer/profiles/record/validation.html">Validation</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/record/capture.html">Data Capture</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/record/processing.html">Data Processing & Data Analysis</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/record/references.html">References & Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="/dietary-assessment-primer/profiles/questionnaire/">Food Frequency Questionnaire</a>
+					<ul>
+						<li><a href="/dietary-assessment-primer/profiles/questionnaire/validation.html">Validation</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/questionnaire/capture.html">Data Capture</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/questionnaire/processing.html">Data Processing & Data Analysis</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/questionnaire/references.html">References & Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="/dietary-assessment-primer/profiles/screeners/">Screeners</a>
+					<ul>
+						<li><a href="/dietary-assessment-primer/profiles/screeners/validation.html">Validation</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/screeners/capture.html">Data Capture</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/screeners/processing.html">Data Processing & Data Analysis</a></li>
+						<li><a href="/dietary-assessment-primer/profiles/screeners/references.html">References & Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="/dietary-assessment-primer/profiles/table.html">Comparing Dietary Assessment Instruments</a></li>
+			</ul>
+		</li>
+		<li><a href="/dietary-assessment-primer/concepts/">Key Concepts</a>
+			<ul>
+				<li><a href="/dietary-assessment-primer/concepts/error/">Measurement Error</a>
+					<ul>
+						<li><a href="/dietary-assessment-primer/concepts/error/error-types.html">Types of Measurement Error</a></li>
+						<li><a href="/dietary-assessment-primer/concepts/error/error-effects.html">Effects of Measurement Error</a></li>
+						<li><a href="/dietary-assessment-primer/concepts/error/error-affecting.html">Evaluating Measurement Error Structure</a></li>
+						<li><a href="/dietary-assessment-primer/concepts/error/references.html">References & Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="/dietary-assessment-primer/concepts/validation/">Validation</a>
+					<ul>
+						<li><a href="/dietary-assessment-primer/concepts/validation/unbiased.html">Unbiased Reference Instruments</a></li>
+						<li><a href="/dietary-assessment-primer/concepts/validation/imperfect.html">Imperfect Reference Instruments</a></li>
+						<li><a href="/dietary-assessment-primer/concepts/validation/interpretation.html">Interpretation of Validation Studies</a></li>
+						<li><a href="/dietary-assessment-primer/concepts/validation/references.html">References</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="/dietary-assessment-primer/approach/">Choosing An Approach: Recommendations</a>
+			<ul>
+				<li><a href="/dietary-assessment-primer/approach/principles.html">Principles Underlying Recommendations</a></li>
+				<li><a href="/dietary-assessment-primer/approach/table.html">Summary Table</a></li>
+				<li><a href="/dietary-assessment-primer/approach/details.html">Details of Recommendations & Further Considerations</a>
+					<ul>
+						<li><a href="/dietary-assessment-primer/approach/intake.html">Describing Dietary Intake</a></li>
+						<li><a href="/dietary-assessment-primer/approach/independent.html">Examining Association between Diet & a Dependent Variable</a></li>
+						<li><a href="/dietary-assessment-primer/approach/dependent.html">Examining Association between an Independent Variable & Diet</a></li>
+						<li><a href="/dietary-assessment-primer/approach/intervention.html">Evaluating the Effect of an Intervention on Diet</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="/dietary-assessment-primer/learn/">Learn More</a>
+			<ul>
+				<li><a href="/dietary-assessment-primer/learn/biomarkers.html">Biomarkers</a></li>
+				<li><a href="/dietary-assessment-primer/learn/calibration.html">Calibration</a></li>
+				<li><a href="/dietary-assessment-primer/learn/instruments.html">Combining Instruments</a></li>
+				<li><a href="/dietary-assessment-primer/learn/day.html">Day of Week Effect</a></li>
+				<li><a href="/dietary-assessment-primer/learn/history.html">Diet History</a></li>
+				<li><a href="/dietary-assessment-primer/learn/intake.html">Dietary Supplements and Total Nutrient Intakes</a></li>
+				<li><a href="/dietary-assessment-primer/learn/adjustment.html">Energy Adjustment</a></li>
+				<li><a href="/dietary-assessment-primer/learn/recall-record.html">Food Composition Databases for 24HRs & Food Records</a></li>
+				<li><a href="/dietary-assessment-primer/learn/questionnaire-screeners.html">Food Composition Databases for FFQs & Screeners</a></li>
+				<li><a href="/dietary-assessment-primer/learn/group.html">Group-level Estimates</a></li>
+				<li><a href="/dietary-assessment-primer/learn/misreporting.html">Misreporting</a></li>
+				<li><a href="/dietary-assessment-primer/learn/distribution.html">Normal Distribution</a></li>
+				<li><a href="/dietary-assessment-primer/learn/observation.html">Observation & Feeding Studies</a></li>
+				<li><a href="/dietary-assessment-primer/learn/outliers.html">Outliers</a></li>
+				<li><a href="/dietary-assessment-primer/learn/proportions.html">Ratios and Proportions</a></li>
+				<li><a class="active" href="/dietary-assessment-primer/learn/reactivity.html">Reactivity</a></li><li><a href="/dietary-assessment-primer/learn/regression.html">Regression Calibration</a></li>
+				<li><a href="/dietary-assessment-primer/learn/season.html">Season Effect</a></li>
+				<li><a href="/dietary-assessment-primer/learn/algorithms.html">Scoring Algorithms for Screeners</a></li>
+				<li><a href="/dietary-assessment-primer/learn/social.html">Social Desirability</a></li>
+				<li><a href="/dietary-assessment-primer/learn/software-24.html">Software for Dietary Analysis - 24HRs and Food Records</a></li>
+				<li><a href="/dietary-assessment-primer/learn/software.html">Software for Dietary Analysis - FFQs and Screeners</a></li>
+				<li><a href="/dietary-assessment-primer/learn/modeling.html">Statistical Modeling</a></li>
+				<li><a href="/dietary-assessment-primer/learn/surrogate.html">Surrogate Reporting</a></li>
+				<li><a href="/dietary-assessment-primer/learn/technology.html">Technology in Dietary Assesssment</a></li>
+				<li><a href="/dietary-assessment-primer/learn/usual.html">Usual Dietary Intake</a></li>
+			</ul>
+		</li>
+		<li><a href="/dietary-assessment-primer/glossary.html">Glossary</a></li>
+		<li><a href="/dietary-assessment-primer/references/">References & Resources</a>
+			<ul>
+				<li><a href="/dietary-assessment-primer/references/references.html">References</a></li>
+				<li><a href="/dietary-assessment-primer/references/resources.html">Resources</a></li>
+			</ul>
+		</li>
+		
+	</ul>
+</div>	
+						</nav>
+					</div>
+				</div>
+            
+				<div class="col-lg-9">
+					<div id="content">
+						<p>Reactivity occurs when individuals change their behavior due to awareness that their behavior is being or will be measured. Changes in behavior may include eating different types or amounts of foods than those usually consumed. <a data-bs-toggle="popover" data-bs-title="Loading..." class="glossary_link" href="/dietary-assessment-primer/glossary.html#reactivity"><span class="vis-hid">[glossary term:] </span>Reactivity</a> may stem from a desire to simplify the reporting process (e.g., eating single foods rather than combination foods) or to comply with socially desirable norms (i.e., to avoid criticism or to appear to have a healthy diet). When an individual changes dietary behaviors due to reactivity, the resulting data may be accurate for the reporting period, but they do not reflect usual dietary intake. This is conceptually different from <a data-bs-toggle="popover" data-bs-title="Loading..." class="glossary_link" href="/dietary-assessment-primer/glossary.html#misreporting"><span class="vis-hid">[glossary term:] </span>misreporting</a> (<a href="/dietary-assessment-primer/learn/social.html">Learn More about Misreporting</a>) of actual dietary intakes, which, among other causes, could arise from social desirability bias (<a href="/dietary-assessment-primer/learn/social.html">Learn More about Social Desirability</a>). Food records and pre-scheduled 24-hour dietary recalls (24HRs) are subject to reactivity because respondents know that their dietary intakes will be measured on a certain day and can change their behavior (see <a href="/dietary-assessment-primer/profiles/recall/">24-hour Dietary Recall Profile</a> and <a href="/dietary-assessment-primer/profiles/record/">Food Record Profile</a>). Unannounced 24HRs as well as food frequency questionnaires (FFQ) that query a long period of time in the past are not subject to reactivity, although misreporting may occur (see the <a href="/dietary-assessment-primer/profiles/questionnaire/">Food Frequency Questionnaire Profile</a>).</p>
+<p>Some strategies can be used to reduce reactivity in dietary assessment instruments. Respondents can be asked to not alter their normal behavior, but the result of this instruction is unknown. If the instrument includes multiple days of report, analyses of systematic changes with time can inform researchers as to the extent and directionality of reactivity bias. Such an effect can be included in statistical modeling, but whether or not this eliminates reactivity bias has not been studied.</p>
+<p>If the intent of dietary data collection is to monitor and reinforce dietary change efforts, using a food record as a behavior modification tool has been found to be very effective. In this case, reactivity may be a positive influence.</p>					</div>		
+				</div>
+			</div>
+		</div>
+		
+		<div class="context-footer">
+			<div class="lastUpdate footerGray">
+				<div class="container d-flex align-items-center">
+					<div><strong>Last Updated:</strong> 29 Dec, 2025</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+    <footer>
+    <a class="returntop" href="#content">
+        <svg aria-hidden="true">
+            <path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z" />
+        </svg>
+        <span>Return to Top</span>
+    </a>
+    <div class="container">
+        <div class="row links py-4">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <h2>Division of Cancer Control and Population Sciences Program Areas</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="https://cancercontrol.cancer.gov/brp">Behavioral Research</a></li>
+                            <li><a href="https://cancercontrol.cancer.gov/ocs">Cancer Survivorship</a></li>
+                            <li><a href="/">Epidemiology &amp; Genomics</a></li>
+                            <li><a href="https://healthcaredelivery.cancer.gov/">Healthcare Delivery</a></li>
+                            <li><a href="https://cancercontrol.cancer.gov/hd">Health Drivers</a></li>
+                            <li><a href="https://cancercontrol.cancer.gov/is">Implementation Science</a></li>
+                            <li><a href="https://surveillance.cancer.gov/">Surveillance</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <h2>Follow</h2>
+                        <div class="connect">
+                            <a aria-label="DCCPS LinkedIn, opens a new window" class="social-icon" href="https://www.linkedin.com/showcase/nci-cancer-control-and-population-sciences/" target="_blank" rel="noopener noreferrer" ><i class="icon icon-linkedin"></i></a>
+                        </div>
+                        <h2>Resources</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.cancer.gov/contact">Contact Us</a></li>
+                            <li><a href="https://cancercontrol.cancer.gov/publications-data">Publications</a></li>
+                            <li><a href="https://www.cancer.gov/research/participate/clinical-trials-search">Find a Clinical Trial</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <h2>Policies</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.cancer.gov/policies/accessibility">Accessibility</a></li>
+                            <li><a href="https://www.cancer.gov/policies/foia">FOIA</a></li>
+                            <li><a href="https://www.cancer.gov/policies/privacy-security">Privacy & Security</a></li>
+                            <li><a href="https://www.cancer.gov/policies/disclaimer">Disclaimers</a></li>
+                            <li><a href="https://www.hhs.gov/vulnerability-disclosure-policy/index.html">Vulnerability Disclosure</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <ul class="list-unstyled govLinks">
+                            <li><a href="https://www.hhs.gov/">U.S. Department of Health &amp; Human Services</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.cancer.gov/">National Cancer Institute</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerGray py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="first">National Cancer Institute</h2>
+                    <p>at the National Institutes of Health
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="first text-lg-end">Contact Us</h2>
+                    <div class="row">
+                        <div class="col-sm-4 text-lg-end"><a href="https://livehelp.cancer.gov/">Live Chat</a>
+                        </div>
+                        <div class="col-sm-4 text-lg-end"><a href="tel:1-800-422-6237">1-800-4-CANCER</a>
+                        </div>
+                        <div class="col-sm-4 text-lg-end"><a href="mailto:NCIInfo@nih.gov">NCIInfo@nih.gov</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Required JS Files For the Template -->
+<script src="/j/plugins/jquery-3.6.0.min.js"></script>
+<!-- Testing BS5 -->
+<script src="/j/plugins/bootstrap.bundle.min.js"></script>
+<!-- General Template Scripts -->
+<script src="/j/template.js"></script>
+<!-- NCI Web Analytics-->
+<script src="//static.cancer.gov/webanalytics/WA_DCCPS_PageLoad.js"></script>
+    <!-- Required JS files for Dietary Assessment Primer Glossary -->
+<script src="/j/primerglossary.js"></script></body>
+</html>				

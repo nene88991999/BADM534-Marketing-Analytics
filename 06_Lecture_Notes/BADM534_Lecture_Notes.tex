@@ -159,8 +159,7 @@ unit price gives line sales; summing within each order gives order
 sales. Returning each calculation as a number allows its result to be
 checked and reused.
 
-\noindent\begin{minipage}{\linewidth}
-\begin{Verbatim}[breaklines]
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
 lines = [
     {"order": "O1", "quantity": 2, "unit_price": 10.0},
     {"order": "O1", "quantity": 1, "unit_price": 5.0},
@@ -178,7 +177,6 @@ for line in lines:
 assert order_sales == {"O1": 25.0, "O2": 12.0}
 assert sum(order_sales.values()) == 37.0
 \end{Verbatim}
-\end{minipage}
 
 The total is \$37 across two orders, so average order value is \$18.50.
 Dividing by the three product lines would instead give average line
@@ -314,6 +312,521 @@ marketing applications. Its notebooks are reference material and require
 inspection of dependencies and data paths before adaptation. The
 \href{https://pandas.pydata.org/docs/getting_started/intro_tutorials/}{pandas
 tutorials} support tabular implementation.
+
+\hypertarget{M01-mhealth-from-food-entries-to-a-decision-table}{%
+\section{mHealth: From Food Entries to a Decision
+Table}\label{M01-mhealth-from-food-entries-to-a-decision-table}}
+
+\noindent An mHealth product manager must decide which food categories to suggest
+when a customer returns to the app. Recent logs reveal repeated
+categories, variation across days, and gaps in observation. The
+immediate analytical task is to construct a reliable customer history. A
+recommendation based on duplicated daily totals or an accidental change
+in the customer population can look precise while describing the wrong
+behavior.
+
+The released files contain actual 2016 records. User identifiers have
+been replaced, birthdays have been replaced with age on January 1, 2016,
+and weight fields contain documented random perturbations. The food file
+has 13,874,280 entries from 5,908 users. The separate daily file covers
+a smaller set of users and dates. Food categories, descriptions, and
+calorie fields retain their source values, apart from standardizing
+provider references to mHealth. The
+\href{../03_Data_and_Code/mHealth/DATA_DICTIONARY.md}{data dictionary}
+defines the available fields and unresolved coding conventions. In
+particular, \texttt{Weightchange}, \texttt{Goalplan}, and
+\texttt{Gender} have undocumented code meanings. None establishes a
+treatment, a behavioral goal, or a validated sex variable for an energy
+equation.
+
+The working cohort retains every entry for users whose first four
+hexadecimal pseudonym digits have a value below 4,096. This fixed rule
+reduces memory requirements and preserves within-user histories. Its
+realized sample contains 917,153 entries, 370 users, and 76,804 observed
+user-days. Ages at the reference date range from 17 to 76. The cohort is
+a subset of app users who appear in the released file; it is not a
+representative population sample. The adult nutrition sensitivity
+analysis in M2 uses a separate age restriction.
+
+A food-entry row records an item, while \texttt{Foodcalories} repeats
+the source daily total. On the first eligible user-day selected by the
+code below, five entries on July 4 have item calories summing to
+1,132.7852. Each row repeats a daily total of 1,132.79. Summing that
+repeated field gives 5,663.95, exactly five times the reported daily
+total. The small difference between the item sum and one copy of the
+daily total is compatible with rounding in this case. Larger
+discrepancies elsewhere require investigation.
+
+The daily key is \texttt{(Userid,\ date)}. A left join preserves all
+76,804 cohort days, with 37,634 matched days and 39,170 unmatched days
+in the separate daily file. Replacing it with an inner join would remove
+more than half the cohort days. An unmatched row is therefore a
+sample-definition decision, even if the software reports no error.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M01_mhealth_join.tex}
+\caption{A left join preserves observed days while an inner join changes the analysis population.}\label{fig:M01_mhealth_join}
+\end{figure}
+
+The two branches retain the same matched records. Only the left-join
+branch preserves the unmatched days needed to describe the food-log
+cohort. Neither branch supplies unobserved calendar days.
+
+\hypertarget{M01-loading-data-and-constructing-daily-measures}{%
+\subsection{Loading Data and Constructing Daily
+Measures}\label{M01-loading-data-and-constructing-daily-measures}}
+
+\noindent Use Python 3.13 with NumPy 2.1.3, pandas 2.2.3, PyArrow 19.0.0, SciPy
+1.15.3, scikit-learn 1.6.1, and statsmodels 0.14.4 to reproduce the
+saved calculations. From the repository root, install the pinned
+packages into an environment, verify the release files, and run the
+analyses in dependency order:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python -m pip install -r 03_Data_and_Code/mHealth/recurring_examples/requirements.txt
+python 03_Data_and_Code/mHealth/download_data.py
+python 03_Data_and_Code/mHealth/recurring_examples/run_all.py
+\end{Verbatim}
+
+The downloader checks the published SHA-256 hashes. The first run reads
+the compressed food file in chunks and saves a local Parquet cache;
+subsequent runs reuse it. The cache is excluded from Git. Delete the
+\texttt{recurring\_examples/cache} directory to force a fresh
+derivation. \texttt{common.py} supplies the same sample and measurement
+functions to every module. Paths are relative to the script location, so
+the saved programs can also be run from another working directory.
+
+For each observed day, category breadth counts distinct recorded
+categories, assigning missing labels to \texttt{Unclassified}.
+Calorie-share variety uses the sum of included item calories as its
+denominator. A negative or missing item calorie value invalidates that
+day's share calculation; a nonpositive item sum also makes shares
+undefined. These conditions affect calorie-based variety, while the
+day's existence can still be used to measure logging. The first reported
+daily total is retained only after checking that its nonmissing values
+agree within the day.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/common.py}{common.py}.
+From its directory, run \texttt{python\ common.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Shared input and measurement functions for the eight mHealth examples."""
+
+from pathlib import Path
+import hashlib
+import json
+
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+DATA = ROOT.parent / "data"
+CACHE = ROOT / "cache"
+OUTPUT = ROOT / "results"
+SEED = 534
+COHORT_THRESHOLD = 4096
+
+
+def save_result(module, result):
+    OUTPUT.mkdir(exist_ok=True)
+    (OUTPUT / f"{module}.json").write_text(
+        json.dumps(result, indent=2, allow_nan=False) + "\n"
+    )
+
+
+def load_food():
+    """Keep all rows for users whose first four pseudonym hex digits are <4096."""
+    CACHE.mkdir(exist_ok=True)
+    cached = CACHE / "food.parquet"
+    metadata = CACHE / "source.json"
+    manifest = json.loads((ROOT.parent / "manifest.json").read_text())
+    signature = {
+        "sha256": manifest["files"]["food_entries.csv.gz"]["sha256"],
+        "threshold": COHORT_THRESHOLD,
+        "preparation_version": 2,
+    }
+    if (
+        cached.exists()
+        and metadata.exists()
+        and json.loads(metadata.read_text()) == signature
+    ):
+        return pd.read_parquet(cached)
+    columns = [
+        "Userid",
+        "Fancydate",
+        "Name",
+        "Category",
+        "Calories",
+        "Foodcalories",
+        "Budgetcalories",
+        "Age_at_2016_01_01",
+    ]
+    parts = []
+    for chunk in pd.read_csv(
+        DATA / "food_entries.csv.gz", usecols=columns, chunksize=250000
+    ):
+        code = chunk.Userid.str.slice(1, 5).map(lambda value: int(value, 16))
+        parts.append(chunk.loc[code < COHORT_THRESHOLD].copy())
+    food = pd.concat(parts, ignore_index=True)
+    food["date"] = pd.to_datetime(food.Fancydate)
+    food["category"] = food.Category.fillna("Unclassified")
+    food["description"] = (
+        food.Name.fillna("")
+        .str.casefold()
+        .str.replace(r"\s+", " ", regex=True)
+        .str.strip()
+    )
+    food.to_parquet(cached, index=False)
+    metadata.write_text(json.dumps(signature, indent=2) + "\n")
+    return food
+
+
+def make_daily(food):
+    """One row per observed user-day; missing calendar days are not created."""
+    keys = ["Userid", "date"]
+    grouped = food.groupby(keys, observed=True)
+    daily = grouped.agg(
+        entries=("Calories", "size"),
+        category_count=("category", "nunique"),
+        item_calories=("Calories", "sum"),
+        food_calories=("Foodcalories", "first"),
+        budget_calories=("Budgetcalories", "first"),
+        daily_total_versions=("Foodcalories", "nunique"),
+        budget_versions=("Budgetcalories", "nunique"),
+    )
+    daily.loc[daily.daily_total_versions != 1, "food_calories"] = np.nan
+    daily.loc[daily.budget_versions != 1, "budget_calories"] = np.nan
+    invalid = food.Calories.isna() | food.Calories.lt(0)
+    daily["invalid_item_calories"] = invalid.groupby([food.Userid, food.date]).sum()
+    categories = food.groupby(keys + ["category"], observed=True).Calories.sum()
+    category_totals = categories.groupby(level=keys).transform("sum")
+    concentration = (
+        (categories / category_totals.where(category_totals > 0))
+        .pow(2)
+        .groupby(level=keys)
+        .sum(min_count=1)
+    )
+    daily["variety"] = (1 - concentration).where(
+        (daily.item_calories > 0) & (daily.invalid_item_calories == 0)
+    )
+    daily = daily.reset_index().sort_values(keys).reset_index(drop=True)
+    assert not daily.duplicated(keys).any()
+    assert daily.variety.dropna().between(-1e-10, 1 + 1e-10).all()
+    return daily
+
+
+def make_baskets(food):
+    """Distinct observed categories; the missing-category label is not a candidate."""
+    selected = food.loc[
+        food.category != "Unclassified", ["Userid", "date", "category"]
+    ].drop_duplicates()
+    return (
+        selected.groupby(["Userid", "date"], observed=True)
+        .category.agg(lambda values: tuple(sorted(values)))
+        .reset_index(name="basket")
+    )
+
+
+def description_holdout(text):
+    """A fixed description-level split independent of labels or outcomes."""
+    return int(hashlib.sha256(text.encode()).hexdigest()[:8], 16) % 5 == 0
+
+
+def load_inputs():
+    food = load_food()
+    return food, make_daily(food), make_baskets(food)
+
+
+if __name__ == "__main__":
+    food, daily, baskets = load_inputs()
+    daily.to_parquet(CACHE / "daily.parquet", index=False)
+    baskets.to_parquet(CACHE / "baskets.parquet", index=False)
+    result = {
+        "rows": len(food),
+        "users": int(food.Userid.nunique()),
+        "user_days": len(daily),
+        "categories": int(food.category.nunique()),
+        "missing_category_rows": int(food.Category.isna().sum()),
+        "invalid_item_calorie_rows": int(
+            (food.Calories.isna() | food.Calories.lt(0)).sum()
+        ),
+        "days_with_inconsistent_daily_total": int(
+            daily.daily_total_versions.ne(1).sum()
+        ),
+        "days_with_inconsistent_budget": int(daily.budget_versions.ne(1).sum()),
+        "nonpositive_recorded_daily_totals": int(daily.food_calories.le(0).sum()),
+        "variety_eligible_days": int(daily.variety.notna().sum()),
+        "item_total_matches_recorded_total_within_one": int(
+            (daily.item_calories - daily.food_calories).abs().le(1).sum()
+        ),
+    }
+    save_result("cohort", result)
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M01-join-validation-and-a-hand-checkable-day}{%
+\subsection{Join Validation and a Hand-Checkable
+Day}\label{M01-join-validation-and-a-hand-checkable-day}}
+
+\noindent The join declares a one-to-one relationship and records unmatched keys.
+The small day-level example checks both candidate aggregations against
+the repeated total. Keeping these checks beside the join prevents a
+later model from silently inheriting a different denominator.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m01.py}{m01.py}.
+From its directory, run \texttt{python\ m01.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Audit the cohort, repeated totals, and the separate daily file."""
+
+import json
+import pandas as pd
+from common import DATA, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+other = pd.read_csv(DATA / "daily_records.csv.gz", usecols=["Userid", "Fancydate"])
+other["date"] = pd.to_datetime(other.Fancydate)
+assert not other.duplicated(["Userid", "date"]).any()
+joined = daily.merge(
+    other[["Userid", "date"]],
+    how="left",
+    on=["Userid", "date"],
+    validate="one_to_one",
+    indicator=True,
+)
+assert len(joined) == len(daily)
+example = daily.loc[(daily.entries.between(3, 6)) & daily.food_calories.gt(0)].iloc[0]
+rows = food.loc[food.Userid.eq(example.Userid) & food.date.eq(example.date)]
+result = {
+    "rows": len(food),
+    "users": int(food.Userid.nunique()),
+    "days": len(daily),
+    "matched_days": int(joined._merge.eq("both").sum()),
+    "unmatched_days": int(joined._merge.eq("left_only").sum()),
+    "example_date": str(example.date.date()),
+    "example_entries": len(rows),
+    "example_item_sum": float(rows.Calories.sum()),
+    "example_daily_total": float(example.food_calories),
+    "example_wrong_sum": float(rows.Foodcalories.sum()),
+}
+save_result("M01", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M01-data-cleaning-as-a-sequence-of-decisions}{%
+\subsection{Data Cleaning as a Sequence of
+Decisions}\label{M01-data-cleaning-as-a-sequence-of-decisions}}
+
+\noindent Structural checks stop calculations that violate their stated
+observation unit. A duplicate key in a daily lookup can multiply food
+records, so it must be resolved before joining. Review flags serve a
+different purpose: they identify observations whose meaning needs
+investigation. The cohort contains 52,838 rows equal on the selected
+fields of user, day, normalized description, category, and calories.
+Those fields omit event timestamps and meal identifiers. Repeated
+servings can therefore produce equal rows. Automatically dropping them
+would impose an unsupported definition of duplication.
+
+The audit finds 206 food rows with missing categories, one negative item
+calorie value, and 23 days with a nonpositive sum of item calories. The
+calorie-share calculation consequently excludes 24 days. By contrast,
+319 days have a nonpositive reported daily total. These counts differ
+because the item sum and reported total are separate measurements. Their
+discrepancy exceeds one calorie unit on 23,729 days. These flags can
+overlap and must not be added as if they represented disjoint
+exclusions.
+
+A value outside a chosen review range is evidence for inspection, not
+proof of an error. The reported daily calorie median is 1,475.63, and
+the range is 0 to 9,190. A review flag below 100 or above 5,000 marks
+651 days. Those thresholds are imposed sensitivity choices. They do not
+establish nutritional adequacy or identify incorrect reports. Preserve
+the released values, add flags, document the rule for each analysis, and
+report the resulting sample. M2 compares nutrition-informed
+alternatives; M3 repeats a regression after a stated restriction.
+
+A useful AI coding request is: ``Create separate structural checks and
+review flags. Stop on a duplicate daily key, preserve repeated food
+entries, count overlapping flags separately, and return the retained
+sample for each calculation.'' Verify the proposed implementation with a
+two-entry day whose repeated total is 100 and whose calorie shares are
+0.9 and 0.1. It must produce a daily total of 100 and variety of 0.18. A
+gap from January 1 to January 3 must remain a missing January 2
+observation. The executable counterexamples are in
+\texttt{test\_logic.py}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/audit.py}{audit.py}.
+From its directory, run \texttt{python\ audit.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Separate structural failures, review flags, and analysis-specific exclusions."""
+
+import json
+import numpy as np
+import pandas as pd
+from common import DATA, load_inputs, save_result
+
+
+def require_unique(frame, keys):
+    if frame[keys].isna().any().any():
+        raise ValueError("Missing join key")
+    if frame.duplicated(keys).any():
+        raise ValueError("Duplicate key at the declared observation unit")
+
+
+def daily_flags(daily):
+    flags = pd.DataFrame(index=daily.index)
+    flags["invalid_item"] = daily.invalid_item_calories.gt(0)
+    flags["nonpositive_item_sum"] = daily.item_calories.le(0)
+    flags["nonpositive_daily_total"] = daily.food_calories.le(0)
+    flags["missing_daily_total"] = daily.food_calories.isna()
+    flags["total_discrepancy_over_one"] = (
+        (daily.food_calories - daily.item_calories).abs().gt(1)
+    )
+    flags["daily_total_below_100_or_above_5000"] = daily.food_calories.lt(
+        100
+    ) | daily.food_calories.gt(5000)
+    return flags
+
+
+def run_audit():
+    food, daily, baskets = load_inputs()
+    assert food.Userid.notna().all() and food.date.notna().all()
+    assert food.date.between("2016-01-01", "2016-12-31").all()
+    require_unique(daily, ["Userid", "date"])
+    # Repeated entries can be legitimate. Flag equality on these fields without deletion.
+    fields = ["Userid", "date", "description", "category", "Calories"]
+    duplicate_flags = food.duplicated(fields, keep=False)
+    flags = daily_flags(daily)
+    health = pd.read_csv(
+        DATA / "daily_records.csv.gz",
+        usecols=["Userid", "Fancydate", "Age_at_2016_01_01", "Currentweight"],
+    )
+    health = health.loc[health.Userid.isin(food.Userid.unique())]
+    require_unique(health, ["Userid", "Fancydate"])
+    age_versions = health.groupby("Userid").Age_at_2016_01_01.nunique(dropna=False)
+    assert age_versions.eq(1).all()
+    result = {
+        "food_rows": len(food),
+        "daily_rows": len(daily),
+        "missing_category_rows": int(food.Category.isna().sum()),
+        "rows_equal_on_selected_entry_fields": int(duplicate_flags.sum()),
+        "missing_item_calorie_rows": int(food.Calories.isna().sum()),
+        "negative_item_calorie_rows": int(food.Calories.lt(0).sum()),
+        "flags_by_user_day": {key: int(value) for key, value in flags.sum().items()},
+        "recorded_calorie_quantiles": {
+            str(q): float(value)
+            for q, value in daily.food_calories.quantile(
+                [0, 0.01, 0.5, 0.99, 1]
+            ).items()
+        },
+        "matched_daily_file_rows": len(health),
+        "fixed_age_min": int(health.Age_at_2016_01_01.min()),
+        "fixed_age_max": int(health.Age_at_2016_01_01.max()),
+        "nonpositive_weight_rows": int(health.Currentweight.le(0).sum()),
+    }
+    save_result("audit", result)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    run_audit()
+\end{Verbatim}
+
+\hypertarget{M01-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M01-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/example_helpers.py}{example\_helpers.py}.
+From its directory, run \texttt{python\ example\_helpers.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""File output and arithmetic helpers for synthetic lecture examples."""
+
+import csv
+import itertools
+import json
+import math
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def write_csv(name, fields, rows):
+    with (ROOT / name).open("w", newline="", encoding="utf-8") as f:
+        out = csv.writer(f)
+        out.writerow(fields)
+        out.writerows(rows)
+
+
+def ols_slope(points):
+    xbar = sum(x for x, y in points) / len(points)
+    ybar = sum(y for x, y in points) / len(points)
+    slope = sum((x - xbar) * (y - ybar) for x, y in points) / sum(
+        (x - xbar) ** 2 for x, y in points
+    )
+    return {"intercept": ybar - slope * xbar, "slope": slope}
+
+
+def shares(utilities):
+    weights = {key: math.exp(val) for key, val in utilities.items()}
+    return {key: weight / sum(weights.values()) for key, weight in weights.items()}
+\end{Verbatim}
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m01_synthetic.py}{m01\_synthetic.py}.
+From its directory, run \texttt{python\ m01\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M1; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+lines = [("O1", "C1", 2, 10), ("O1", "C1", 1, 5), ("O2", "C2", 3, 4)]
+write_csv(
+    "M01_order_lines_synthetic.csv",
+    ["order_id", "customer_id", "quantity", "unit_price_dollars"],
+    lines,
+)
+orders = {}
+for order, customer, qty, price in lines:
+    orders[order] = orders.get(order, 0) + qty * price
+r["M01"] = {
+    "revenue": sum(orders.values()),
+    "order_count": len(orders),
+    "average_order_value": sum(orders.values()) / len(orders),
+    "average_line_revenue": sum(orders.values()) / len(lines),
+    "renewal_incremental_value_A": 100 * (0.91 - 0.90) - 3,
+    "renewal_incremental_value_B": 100 * (0.50 - 0.40) - 3,
+}
+assert orders == {"O1": 25, "O2": 12}
+print(json.dumps(r, indent=2))
+\end{Verbatim}
 
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
@@ -675,6 +1188,440 @@ uncertainty. The
 \href{https://pandas.pydata.org/docs/user_guide/groupby.html}{pandas
 grouping documentation} supports implementation.
 
+\hypertarget{M02-mhealth-recorded-variety-and-missing-days}{%
+\section{mHealth: Recorded Variety and Missing
+Days}\label{M02-mhealth-recorded-variety-and-missing-days}}
+
+\noindent The manager wants to know whether customers with broad recorded diets
+need different suggestions from customers who repeatedly log a few
+categories. Category count measures breadth. A calorie-share measure
+also distinguishes an even distribution from a day dominated by one
+category. For user \(i\), day \(t\), and recorded category \(c\), define
+\(k_{ict}\) as the sum of item calories in that category. On days with
+nonnegative observed item values and a positive item total, define
+
+\[
+s_{ict}=\frac{k_{ict}}{\sum_h k_{iht}},\qquad
+V_{it}=1-\sum_c s_{ict}^2.
+\]
+
+The shares sum to one across recorded categories, including
+\texttt{Unclassified} where necessary. \(V_{it}\) approaches zero when
+one category accounts for almost all recorded item calories. It rises
+when calorie shares become more evenly distributed across categories.
+Multiplying every item calorie value by the same positive constant
+leaves these shares unchanged. This scale invariance helps distinguish
+composition from recorded quantity, although omitted foods can still
+change composition.
+
+Among the 76,780 eligible user-days, mean variety is 0.7834 when each
+day has equal weight and 0.7855 when each user first contributes a
+personal average. The small difference in these means does not make the
+weighting choices interchangeable. A day-weighted comparison gives
+frequent loggers more influence. A user-weighted comparison answers a
+question about the average observed user.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Recorded Categories & Eligible Days & Mean Variety \\
+\midrule
+
+1--5 & 11,861 & 0.5306 \\
+6--10 & 30,258 & 0.7895 \\
+11--20 & 32,492 & 0.8618 \\
+21 or More & 2,169 & 0.9046 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Breadth and calorie-share variety rise together in these groups, partly
+because adding categories expands the possible distribution of shares.
+This is a descriptive relation among recorded days. It does not show
+that the app caused broader consumption or that greater category variety
+improved health. Source categories are not a validated diet-quality
+index.
+
+The complete 2016 calendar contains 135,420 potential user-days for the
+selected users. Only 76,804 have food entries; 58,616 are unobserved. A
+zero-filled calorie panel would interpret every absent record as no
+consumption. For a logging outcome, zero can instead mean that no entry
+was observed on a specified calendar day. The variable's definition
+determines whether filling a missing cell with zero is appropriate.
+These users are identified from a full-year file, so the calendar is a
+descriptive grid rather than a verified account-enrollment roster.
+
+The item sum is within one calorie unit of the reported daily total on
+53,075 observed days. Using the reported total as the denominator of
+category shares would fail to make shares sum to one on many other days.
+The calculation below preserves both measures, constructs the
+observed-day summary, and builds the calendar separately.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m02.py}{m02.py}.
+From its directory, run \texttt{python\ m02.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Measure recorded variety and separate observed days from calendar days."""
+
+import json
+import pandas as pd
+from common import OUTPUT, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+eligible = daily.loc[daily.variety.notna()].copy()
+eligible["breadth_group"] = pd.cut(
+    eligible.category_count,
+    [0, 5, 10, 20, 1000],
+    labels=["1-5", "6-10", "11-20", "21+"],
+)
+table = eligible.groupby("breadth_group", observed=True).agg(
+    days=("variety", "size"),
+    mean_variety=("variety", "mean"),
+    mean_recorded_calories=("food_calories", "mean"),
+)
+OUTPUT.mkdir(exist_ok=True)
+table.to_csv(OUTPUT / "M02_breadth.csv")
+assert int(table.days.sum()) == len(eligible)
+calendar = pd.MultiIndex.from_product(
+    [sorted(food.Userid.unique()), pd.date_range("2016-01-01", "2016-12-31")],
+    names=["Userid", "date"],
+)
+panel = daily.set_index(["Userid", "date"]).reindex(calendar)
+observed = panel.entries.notna()
+result = {
+    "eligible_days": len(eligible),
+    "excluded_days": len(daily) - len(eligible),
+    "calendar_user_days": len(panel),
+    "observed_days": int(observed.sum()),
+    "unobserved_days": int((~observed).sum()),
+    "mean_variety_day_weighted": float(eligible.variety.mean()),
+    "mean_variety_user_weighted": float(
+        eligible.groupby("Userid").variety.mean().mean()
+    ),
+    "daily_total_equal_item_sum_within_one": int(
+        (daily.food_calories - daily.item_calories).abs().le(1).sum()
+    ),
+    "daily_total_comparison_days": len(daily),
+    "breadth": table.reset_index().to_dict(orient="records"),
+}
+save_result("M02", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M02-mhealth-nutrition-knowledge-and-sample-restrictions}{%
+\section{mHealth: Nutrition Knowledge and Sample
+Restrictions}\label{M02-mhealth-nutrition-knowledge-and-sample-restrictions}}
+
+\noindent An mHealth analyst evaluating suggestions about diet must determine
+whether the records measure food selection, complete daily intake, or
+usual intake over a longer period. A day with one logged snack supplies
+evidence about that snack. It does not establish the person's total
+intake for the day. The National Cancer Institute's
+\href{https://epi.grants.cancer.gov/dietary-assessment-primer/profiles/record/}{food-record
+guidance} identifies recording burden and reactivity as features of the
+measurement process. Its
+\href{https://epi.grants.cancer.gov/dietary-assessment-primer/learn/usual.html}{usual-intake
+guidance} distinguishes day-to-day variation from a person's longer-run
+average. Repeated logs reduce some sampling variation while selective
+omissions can persist.
+
+Nutrition studies often collect information that makes filtering more
+defensible. The
+\href{https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1TOT_L.htm}{NHANES
+dietary codebook} documents recall reliability through
+\texttt{DR1DRSTZ}. mHealth has no corresponding completeness indicator.
+Several food entries or a positive calorie total cannot be substituted
+for that validation. NHANES also permits reliable records involving
+fasting or only water, so a zero total cannot universally be classified
+as erroneous. A ratio requiring a positive denominator nevertheless
+excludes zero totals by mathematical necessity.
+
+For an adult descriptive analysis, the base sample requires age of at
+least 18 on January 1, positive finite reported daily calories, and a
+defined calorie-share variety measure. The fixed-age restriction removes
+users who were 17 at the reference date even if they turned 18 later in
+the year. It retains older adults; age 65 is not a general nutritional
+validity boundary. The combined restrictions retain 75,855 days from 367
+users. They define the population and the calculations; they do not
+certify complete intake.
+
+The National Cancer Institute's
+\href{https://epi.grants.cancer.gov/dietary-assessment-primer/learn/outliers.html}{outlier
+guidance} supports examining extreme observations and comparing analyses
+under alternative exclusions. Short-term intake can genuinely vary
+substantially. A population percentile screen is therefore a sensitivity
+analysis. The 1st and 99th percentiles of positive adult daily totals in
+January through June are 209.01 and 3,534.11. Fixing those cutoffs using
+the earlier period prevents later observations from choosing their own
+reference range. A second screen uses an explicitly imposed 100--5,000
+range; a third requires item totals and reported totals to agree within
+one calorie unit.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.20}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.26}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.26}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.28}}@{}}
+\toprule
+Rule Applied to the Adult Base & Days Retained & Mean Reported Calories
+& Mean Variety \\
+\midrule
+
+Adult Positive Base & 75,855 & 1,541.82 & 0.7837 \\
+Imposed 100--5,000 Range & 75,523 & 1,543.04 & 0.7863 \\
+Earlier-Period 1st--99th Percentiles & 74,224 & 1,531.07 & 0.7916 \\
+Item/Day Agreement Within One & 52,707 & 1,493.19 & 0.7671 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each row applies one screen independently to the same base. The
+agreement rule removes 23,148 days, far more than the percentile rule's
+1,631. Its lower mean variety could reflect the kinds of records
+retained, including differences in logging intensity. Agreement is
+useful evidence about accounting consistency, but it does not prove
+nutritional completeness. A preference for cleaner-looking totals can
+therefore change the population being described.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_mhealth_screening.tex}
+\caption{Alternative screens retain different samples and change measured variety.}\label{fig:M02_mhealth_screening}
+\end{figure}
+
+The horizontal movement measures retention of adult base days; the
+vertical movement measures their mean recorded variety. The
+accounting-consistency restriction produces the largest movement in both
+dimensions. Treating it as a harmless technical correction would obscure
+a substantive change in the sample.
+
+\hypertarget{M02-energy-plausibility-requires-physiological-inputs}{%
+\subsection{Energy Plausibility Requires Physiological
+Inputs}\label{M02-energy-plausibility-requires-physiological-inputs}}
+
+\noindent Energy-plausibility methods compare reported intake with expenditure or
+a model of requirements.
+\href{https://doi.org/10.3389/fnut.2017.00045}{Banna, McCrory,
+Fialkowski, and Boushey (2017)} compare fixed cutoffs with
+individualized methods.
+\href{https://doi.org/10.1038/sj.ijo.0801376}{Black (2000)}, especially
+Table 8, updates the Goldberg approach. For an individual under the
+method's energy-balance and measurement conditions, bounds for mean
+reported energy intake divided by basal metabolic rate are
+
+\[
+L,U=\operatorname{PAL}\exp\left(\mp 2\sqrt{\frac{(0.23)^2}{d}+(0.085)^2+(0.15)^2}\right).
+\]
+
+Here \(d\) is the number of assessment days and PAL is total energy
+expenditure divided by basal metabolic rate. The coefficients represent
+the variation assumptions for intake, predicted basal metabolic rate,
+and activity. The factor 2 gives the paper's approximate 95\% limits for
+an individual; the sample-size term is one. These are conditional
+screening bounds, not an individual's recommended intake. Appropriate
+PAL and basal-metabolic-rate inputs are essential.
+
+With an imposed basal metabolic rate of 1,500 kcal/day and PAL of 1.55,
+the bounds are approximately 1,308--4,131 kcal/day for one assessment
+day and 1,580--3,421 for seven days. Raising PAL to 1.80 raises the
+seven-day bounds to 1,835--3,973. A hypothetical seven-day mean of 1,600
+would fall within the first interval and below the second. The same
+intake can receive a different flag because of the activity assumption.
+Additional days reduce the intake-variation component while the other
+variance components remain.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_mhealth_goldberg.tex}
+\caption{Assessment duration narrows an energy-plausibility interval while assumed activity shifts it.}\label{fig:M02_mhealth_goldberg}
+\end{figure}
+
+The code calculates these hypothetical bounds separately from the
+real-data screens. mHealth does not supply validated activity, basal
+metabolic rate, complete assessment days, or a documented mapping of
+\texttt{Gender} to the sex variable required by common prediction
+equations. No participant is assigned an individualized Goldberg label.
+Weight-loss goals and perturbed weights also complicate an
+energy-balance interpretation. Applying the equations to invented
+physiological inputs would turn an assumption into an apparent
+observation.
+
+An AI coding request should therefore name the assessment instrument,
+population, units, necessary inputs, and output flags. Require the
+program to preserve raw values, distinguish overlapping exclusions, and
+return the analysis with and without the screen. Ask it to explain why
+one-day outliers, genuine fasting, and incomplete logging require
+different interpretations. The
+\href{../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md}{nutrition
+resource guide} supplies the original methods and downloadable readings.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/nutrition.py}{nutrition.py}.
+From its directory, run \texttt{python\ nutrition.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Domain-informed sample definitions and explicitly hypothetical energy screens."""
+
+import json
+import math
+import numpy as np
+from common import load_inputs, save_result
+
+
+def goldberg_bounds(days, pal, cv_intake=23, cv_bmr=8.5, cv_pal=15):
+    """Individual EI:BMR bounds with Black (2000) coefficients, z=2, n=1."""
+    if days < 1 or pal <= 0:
+        raise ValueError("Positive assessment duration and PAL are required")
+    variation = math.sqrt(cv_intake**2 / days + cv_bmr**2 + cv_pal**2) / 100
+    return pal * math.exp(-2 * variation), pal * math.exp(2 * variation)
+
+
+def run_analysis():
+    food, daily, baskets = load_inputs()
+    age_counts = food.groupby("Userid").Age_at_2016_01_01.nunique(dropna=False)
+    assert age_counts.eq(1).all()
+    ages = food.groupby("Userid").Age_at_2016_01_01.first()
+    daily["age"] = daily.Userid.map(ages)
+    # Nonnegative category calories and a positive denominator define valid shares.
+    base = daily.loc[
+        daily.variety.notna()
+        & daily.food_calories.gt(0)
+        & np.isfinite(daily.food_calories)
+        & daily.age.ge(18)
+    ].copy()
+    training = base.loc[base.date.lt("2016-07-01")]
+    lower, upper = training.food_calories.quantile([0.01, 0.99])
+    masks = {
+        "adult_positive_base": base.food_calories.gt(0),
+        "fixed_100_to_5000_sensitivity": base.food_calories.between(100, 5000),
+        "prior_period_1st_to_99th_percentile": base.food_calories.between(lower, upper),
+        "daily_item_agreement_within_one": (base.food_calories - base.item_calories)
+        .abs()
+        .le(1),
+    }
+    summaries = []
+    for name, mask in masks.items():
+        selected = base.loc[mask]
+        summaries.append(
+            {
+                "rule": name,
+                "days": len(selected),
+                "users": int(selected.Userid.nunique()),
+                "removed_from_base": len(base) - len(selected),
+                "mean_recorded_calories": float(selected.food_calories.mean()),
+                "mean_variety": float(selected.variety.mean()),
+            }
+        )
+    # Hypothetical complete records, stable energy balance, and predicted BMR.
+    # These BMR/PAL inputs are imposed; no mHealth participant is classified.
+    scenario = []
+    for days in [1, 7]:
+        for pal in [1.55, 1.80]:
+            lo, hi = goldberg_bounds(days, pal)
+            scenario.append(
+                {
+                    "days": days,
+                    "assumed_pal": pal,
+                    "bmr_kcal": 1500,
+                    "lower_ratio": lo,
+                    "upper_ratio": hi,
+                    "lower_kcal": 1500 * lo,
+                    "upper_kcal": 1500 * hi,
+                    "illustrative_1600_kcal_flag": 1600 / 1500 < lo,
+                }
+            )
+    result = {
+        "source_observed_days": len(daily),
+        "base_days": len(base),
+        "base_removed_days": len(daily) - len(base),
+        "age_min": float(ages.min()),
+        "age_max": float(ages.max()),
+        "training_days": len(training),
+        "quantile_lower": float(lower),
+        "quantile_upper": float(upper),
+        "sensitivity": summaries,
+        "hypothetical_goldberg": scenario,
+    }
+    save_result("nutrition", result)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    run_analysis()
+\end{Verbatim}
+
+\hypertarget{M02-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M02-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m02_synthetic.py}{m02\_synthetic.py}.
+From its directory, run \texttt{python\ m02\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M2; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+campaigns = [
+    ("A", "new", 100, 9),
+    ("A", "returning", 100, 80),
+    ("B", "new", 200, 20),
+    ("B", "returning", 100, 81),
+]
+write_csv(
+    "M02_campaigns_synthetic.csv",
+    ["campaign", "customer_type", "assigned_customers", "conversions"],
+    campaigns,
+)
+r["M02"] = {
+    "observed_A": 89 / 200,
+    "observed_B": 101 / 300,
+    "common_mix_A": (0.09 + 0.80) / 2,
+    "common_mix_B": (0.10 + 0.81) / 2,
+    "basket_jaccard_high": 3 / 5,
+    "basket_jaccard_low": 1 / 7,
+}
+assert r["M02"]["observed_A"] > r["M02"]["observed_B"]
+assert r["M02"]["common_mix_B"] > r["M02"]["common_mix_A"]
+variety_shares = {"equal": [0.5, 0.5], "concentrated": [0.9, 0.1]}
+r["M02"]["variety"] = {
+    name: 1 - sum(s * s for s in vals) for name, vals in variety_shares.items()
+}
+write_csv(
+    "M02_variety_synthetic.csv",
+    ["basket", "category", "spending_share"],
+    [
+        (name, f"C{i+1}", share)
+        for name, vals in variety_shares.items()
+        for i, share in enumerate(vals)
+    ],
+)
+assert math.isclose(r["M02"]["variety"]["equal"], 0.5)
+assert math.isclose(r["M02"]["variety"]["concentrated"], 0.18)
+print(json.dumps(r, indent=2))
+\end{Verbatim}
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -994,6 +1941,200 @@ Learning} provides a foundation for regression, model assessment, and
 nonlinear extensions. The
 \href{https://www.statsmodels.org/stable/regression.html}{statsmodels
 regression documentation} supports implementation.
+
+\hypertarget{M03-mhealth-breadth-and-next-day-recorded-calories}{%
+\section{mHealth: Breadth and Next-Day Recorded
+Calories}\label{M03-mhealth-breadth-and-next-day-recorded-calories}}
+
+\noindent The manager observes that users with broader daily food logs often
+report more calories and considers using breadth to identify customers
+who may want different suggestions. The relevant first comparison
+concerns timing: does today's recorded breadth predict the next calendar
+day's reported total? Taking the next available row would turn a one-day
+comparison into an interval of variable length when customers skip days.
+
+Let \(K_{it}\) be today's recorded category count and \(E_{i,t+1}\) the
+next calendar day's reported calories. Among positive consecutive-day
+pairs, estimate
+
+\[
+\log E_{i,t+1}=\alpha_i+\beta K_{it}+\gamma_{m(t)}+\delta_{w(t)}+u_{it}.
+\]
+
+The customer effect \(\alpha_i\) absorbs time-invariant differences in
+typical logging and intake. Month and weekday effects describe calendar
+variation. The coefficient compares days with different recorded breadth
+for the same user, after these additive controls. It remains an
+association: changing appetite, omitted meals, or recording effort can
+affect both breadth and later totals. The
+\href{https://epi.grants.cancer.gov/dietary-assessment-primer/learn/day.html}{NCI
+discussion of weekday effects} motivates attention to calendar
+composition.
+
+The sample requires positive reported totals on both dates and at least
+two eligible pairs per user. It contains 69,648 pairs from 370 users.
+Standard errors are clustered by user to allow dependence among
+overlapping pairs. The pooled model uses the same month and weekday
+controls but omits customer effects. No prior-outcome control or calorie
+winsorization is included in either baseline specification.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Specification & Pairs & Breadth Coefficient & Clustered 95\% Interval \\
+\midrule
+
+Pooled & 69,648 & 0.02771 & {[}0.01934, 0.03609{]} \\
+Customer Fixed Effects & 69,648 & 0.01284 & {[}0.00997, 0.01572{]} \\
+Fixed Effects, 100--5,000 on Both Days & 69,216 & 0.01136 & {[}0.00893,
+0.01380{]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the fixed-effects model, one additional category corresponds to a
+1.29\% higher conditional geometric mean of next-day reported calories,
+calculated as \(100(e^{\beta}-1)\). This percentage does not
+automatically describe the arithmetic mean. The pooled estimate is
+larger, consistent with persistent differences across users contributing
+to the pooled association. Its reduction after adding fixed effects does
+not identify a causal mechanism.
+
+The third row applies the explicitly imposed review range from M1 to
+both dates. It removes 432 pairs and produces a 1.14\% geometric-mean
+association. This is a sensitivity comparison on a changed sample, not a
+validated nutrition screen. The baseline outcome ranges from 0.64 to
+9,190, so the restriction directly addresses observations influential on
+the log scale. The adult and percentile screens in M2 answer different
+sample questions and should be named separately when used.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M03_mhealth_association.tex}
+\caption{Customer controls and a calorie-range sensitivity restriction change the descriptive coefficient.}\label{fig:M03_mhealth_association}
+\end{figure}
+
+The intervals quantify sampling uncertainty under the regression and
+clustering specification. They do not account for all reporting error or
+make breadth an assigned treatment. A recommendation to induce greater
+breadth needs evidence about how a particular intervention changes
+behavior and outcomes.
+
+The date shift below moves future outcomes back exactly one day before
+the merge. The program then applies each sample rule explicitly and
+reports pair and user counts. An AI-generated
+\texttt{groupby(...).shift(-1)} without a date-gap check would answer a
+different question.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m03.py}{m03.py}.
+From its directory, run \texttt{python\ m03.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Estimate descriptive next-calendar-day associations with clustered uncertainty."""
+
+import json
+import numpy as np
+import pandas as pd
+import statsmodels.formula.api as smf
+from common import load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+future = daily[["Userid", "date", "food_calories"]].copy()
+future["date"] -= pd.Timedelta(days=1)
+future = future.rename(columns={"food_calories": "next_calories"})
+panel = daily.merge(future, on=["Userid", "date"], validate="one_to_one")
+panel = panel.loc[panel.food_calories.gt(0) & panel.next_calories.gt(0)].copy()
+counts = panel.groupby("Userid").size()
+panel = panel.loc[panel.Userid.isin(counts[counts >= 2].index)].copy()
+panel["log_next"] = np.log(panel.next_calories)
+panel["month"] = panel.date.dt.month
+panel["weekday"] = panel.date.dt.dayofweek
+assert (panel.next_calories > 0).all()
+restricted = panel.loc[
+    panel.food_calories.between(100, 5000) & panel.next_calories.between(100, 5000)
+].copy()
+counts = restricted.groupby("Userid").size()
+restricted = restricted.loc[restricted.Userid.isin(counts[counts >= 2].index)]
+fits = {}
+base = "log_next ~ category_count + C(month) + C(weekday)"
+specifications = [
+    ("pooled", base, panel),
+    ("user_fixed_effects", base + " + C(Userid)", panel),
+    ("restricted_fixed_effects", base + " + C(Userid)", restricted),
+]
+for name, formula, sample in specifications:
+    fit = smf.ols(formula, data=sample).fit(
+        cov_type="cluster", cov_kwds={"groups": sample.Userid}, use_t=True
+    )
+    coefficient = float(fit.params["category_count"])
+    low, high = map(float, fit.conf_int().loc["category_count"])
+    fits[name] = {
+        "pairs": len(sample),
+        "users": int(sample.Userid.nunique()),
+        "coefficient": coefficient,
+        "se": float(fit.bse["category_count"]),
+        "ci_low": low,
+        "ci_high": high,
+        "geometric_mean_percent": 100 * float(np.expm1(coefficient)),
+    }
+result = {
+    "pairs": len(panel),
+    "users": int(panel.Userid.nunique()),
+    "min_next_calories": float(panel.next_calories.min()),
+    "max_next_calories": float(panel.next_calories.max()),
+    "models": fits,
+}
+save_result("M03", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M03-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M03-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m03_synthetic.py}{m03\_synthetic.py}.
+From its directory, run \texttt{python\ m03\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M3; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+low = [(1, 9), (2, 8), (3, 7)]
+high = [(4, 16), (5, 15), (6, 14)]
+write_csv(
+    "M03_rivals_synthetic.csv",
+    ["demand_group", "rival_count", "sales_illustrative_units"],
+    [("low", x, y) for x, y in low] + [("high", x, y) for x, y in high],
+)
+r["M03"] = {
+    "pooled": ols_slope(low + high),
+    "low": ols_slope(low),
+    "high": ols_slope(high),
+    "simple_sales_fit": ols_slope([(1, 3), (2, 5), (3, 7)]),
+    "coefficient_ci": [2 - 1.96 * 0.5, 2 + 1.96 * 0.5],
+}
+assert math.isclose(r["M03"]["pooled"]["slope"], 11 / 7)
+assert r["M03"]["low"]["slope"] == r["M03"]["high"]["slope"] == -1
+print(json.dumps(r, indent=2))
+\end{Verbatim}
 
 \hypertarget{M04-m4.-product-preferences-customer-segments-and-lifetime-value}{%
 \chapter{Product Preferences, Customer Segments, and Lifetime
@@ -1367,6 +2508,211 @@ segmentation design and use.
 CLV documentation} offers implementation examples whose model
 assumptions and software versions should be checked before adaptation.
 
+\hypertarget{M04-mhealth-behavioral-segments-and-product-economics}{%
+\section{mHealth: Behavioral Segments and Product
+Economics}\label{M04-mhealth-behavioral-segments-and-product-economics}}
+
+\noindent A product manager may want different interfaces for occasional loggers,
+frequent loggers with narrow recorded diets, and frequent loggers with
+broad recorded diets. Segmenting on January through June behavior
+creates groups whose later logging can be described without using later
+observations to define the groups. A segment is useful when it
+corresponds to a decision the manager can implement, such as simplifying
+entry or offering a broader set of suggestions.
+
+Eligibility requires at least 30 observed days before July 1 and
+nonmissing average variety. Each user contributes three features:
+observed days divided by the 182 calendar days in the first half of
+2016, mean recorded category count, and mean calorie-share variety.
+Standardization gives each feature unit variance before three-cluster
+k-means. Three clusters are imposed for a manageable descriptive
+comparison. Cluster labels are ordered by their mean prior logging
+fraction.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Segment & Users & Prior Logging Fraction & Mean Breadth & Later Logging
+Fraction \\
+\midrule
+
+1 & 126 & 0.426 & 10.84 & 0.338 \\
+2 & 90 & 0.759 & 6.99 & 0.594 \\
+3 & 115 & 0.870 & 12.80 & 0.654 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Later logging uses the 184 calendar days from July through December,
+with zero observed days for eligible users absent from that period. The
+differences describe persistence in recorded use. They are not treatment
+responses, contract renewal rates, or purchase probabilities. In
+particular, Segment 2 combines frequent logging with relatively narrow
+breadth. A single ranking by activity would conceal that distinction.
+
+Repeating k-means with a second seed produces an adjusted Rand index of
+1.0 for these inputs. The partition is stable to this initialization
+check. That result does not establish three natural customer types or
+prove stability to other features, calendar windows, or measurement
+screens. The calorie-based variety and breadth features are related, so
+including both places additional emphasis on recorded dietary diversity.
+Nutrition screening can also alter the segmentation inputs; compare its
+consequences before naming a segment around a health interpretation.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_mhealth_segments.tex}
+\caption{Prior logging frequency and recorded breadth distinguish groups that a single activity ranking would combine. Both axes use January through June; later behavior does not define the partition.}\label{fig:M04_mhealth_segments}
+\end{figure}
+
+The food logs supply no observed subscription price, product-choice
+experiment, margin, acquisition cost, or payment-based retention. A
+hypothetical paid-plan calculation can nevertheless clarify the extra
+inputs needed. Set the outside-option utility to zero, paid-plan benefit
+to 0.8, price coefficient to -0.1 per dollar, and price to \$5. The
+imposed logit model yields a paid-plan share of 0.5744. These inputs are
+assumptions, not conjoint estimates from the logs.
+
+For a separate hypothetical subscription, suppose monthly contribution
+conditional on retention is \$6, the monthly discount rate is 1\%,
+acquisition cost is \$10, and the first contribution occurs one month
+after acquisition. With constant monthly retention \(r\), value is
+\(6r/(1.01-r)-10\). Assumed retention of 0.80, 0.85, and 0.90 gives
+values of \$12.86, \$21.87, and \$39.09. These scenarios are not
+assigned to the three behavioral segments. Doing so would equate logging
+persistence with paid retention without evidence.
+
+The code fits the scaler and clusters using only the earlier period,
+then joins later logging for description. An AI assistant should explain
+each feature's units, how missing later records enter the denominator,
+and which economic inputs remain hypothetical before proposing a
+targeting rule.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m04.py}{m04.py}.
+From its directory, run \texttt{python\ m04.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Segment January-June behavior and describe later logging."""
+
+import json
+import numpy as np
+import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import adjusted_rand_score
+from common import OUTPUT, SEED, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+prior = daily.loc[daily.date.lt("2016-07-01")]
+features = prior.groupby("Userid").agg(
+    logged_days=("date", "size"),
+    breadth=("category_count", "mean"),
+    variety=("variety", "mean"),
+)
+features = features.loc[features.logged_days.ge(30)].dropna()
+features["logging_fraction"] = features.logged_days / 182
+columns = ["logging_fraction", "breadth", "variety"]
+scaled = StandardScaler().fit_transform(features[columns])
+model = KMeans(n_clusters=3, n_init=20, random_state=SEED).fit(scaled)
+alternative = KMeans(n_clusters=3, n_init=20, random_state=SEED + 1).fit(scaled)
+# Number clusters by their mean prior logging fraction for readable output.
+order = (
+    features.assign(raw=model.labels_)
+    .groupby("raw")
+    .logging_fraction.mean()
+    .sort_values()
+    .index
+)
+labels = {raw: rank + 1 for rank, raw in enumerate(order)}
+features["segment"] = [labels[value] for value in model.labels_]
+later = daily.loc[daily.date.ge("2016-07-01")].groupby("Userid").size()
+features["later_logging_fraction"] = later.reindex(features.index, fill_value=0) / 184
+table = features.groupby("segment").agg(
+    users=("segment", "size"),
+    prior_logging=("logging_fraction", "mean"),
+    breadth=("breadth", "mean"),
+    variety=("variety", "mean"),
+    later_logging=("later_logging_fraction", "mean"),
+)
+OUTPUT.mkdir(exist_ok=True)
+table.to_csv(OUTPUT / "M04_segments.csv")
+# Imposed monthly financial assumptions, separate from the log estimates.
+retention = np.array([0.80, 0.85, 0.90])
+clv = 6 * retention / (1.01 - retention) - 10
+utility = np.array([0.0, 0.8 - 0.1 * 5])  # Outside option, hypothetical paid plan.
+choice = np.exp(utility - utility.max())
+choice /= choice.sum()
+result = {
+    "users": len(features),
+    "features": columns,
+    "seed_agreement_ari": float(
+        adjusted_rand_score(model.labels_, alternative.labels_)
+    ),
+    "segments": table.reset_index().to_dict(orient="records"),
+    "hypothetical_retention": retention.tolist(),
+    "hypothetical_clv": clv.tolist(),
+    "hypothetical_paid_plan_share": float(choice[1]),
+}
+save_result("M04", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M04-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M04-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m04_synthetic.py}{m04\_synthetic.py}.
+From its directory, run \texttt{python\ m04\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M4; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+before = shares({"A": 0.2, "B": -0.6, "outside": 0})
+after = shares({"A": 0.2, "B": -0.6, "C": 0.2, "outside": 0})
+r["M04"] = {
+    "shares_before": before,
+    "shares_after": after,
+    "category_share_increase": before["outside"] - after["outside"],
+    "contribution_before": 4 * before["A"] + 3 * before["B"],
+    "contribution_after": 4 * (after["A"] + after["C"]) + 3 * after["B"],
+    "wtp_dollars": 1.2 / 0.1,
+    "distance_raw_AB": math.hypot(10, 8),
+    "distance_raw_AC": 100,
+    "distance_rescaled_AB": math.hypot(0.1, 8),
+    "distance_rescaled_AC": 1,
+    "clv_after_acquisition": {
+        str(retention): 60 * retention / (1.01 - retention) - 50
+        for retention in [0.8, 0.85, 0.9]
+    },
+}
+write_csv(
+    "M04_segmentation_synthetic.csv",
+    ["customer", "spending_dollars", "visits"],
+    [("A", 100, 1), ("B", 110, 9), ("C", 200, 1)],
+)
+assert math.isclose(sum(before.values()), 1) and math.isclose(sum(after.values()), 1)
+print(json.dumps(r, indent=2))
+\end{Verbatim}
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -1696,6 +3042,222 @@ repository} provides a rule-based sentiment baseline.
 \href{https://doi.org/10.1007/s11002-020-09535-7}{Hagen and colleagues
 (2020)} discuss ways machine learning can support behavioral marketing
 research.
+
+\hypertarget{M05-mhealth-classifying-new-food-descriptions}{%
+\section{mHealth: Classifying New Food
+Descriptions}\label{M05-mhealth-classifying-new-food-descriptions}}
+
+\noindent The manager wants to reduce the effort required to categorize a food
+entry. A lookup table may work well for familiar descriptions, while a
+text classifier may help with a new description. These are distinct
+deployment conditions. Repeated descriptions in both training and test
+records can make a random entry split look successful even when the
+system will struggle with unseen language.
+
+Normalize descriptions by lowercasing, collapsing whitespace, and
+trimming the ends. Retain nonempty descriptions and nonmissing source
+categories, then sample 200,000 eligible entries with seed 534. The
+sample contains 37,570 distinct normalized descriptions; 1,725 appear
+with more than one source category. Those inconsistencies create label
+ambiguity. The source category is the prediction target, not a validated
+nutritional interpretation of the food.
+
+The first split assigns approximately 20\% of entries to testing. The
+second uses a fixed SHA-256 rule to hold out entire normalized
+descriptions. Its test entries therefore share no exact normalized
+description with training. Both evaluations weight food entries equally,
+so frequent descriptions receive more weight. A second evaluation
+weighting unique descriptions equally would answer a different product
+question.
+
+A training-only lookup chooses the most frequent category for each
+description, breaking count ties alphabetically and falling back to the
+most frequent training category. The text alternative fits a TF-IDF
+vocabulary of unigrams and bigrams on distinct training descriptions,
+caps the vocabulary at 20,000 features, and requires a term to occur in
+at least two training descriptions. Multinomial naive Bayes uses
+smoothing of 0.1 and training description-category counts as weights.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.13}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.19}}@{}}
+\toprule
+Evaluation & Test Entries & Familiar Descriptions & Lookup Accuracy &
+Text Accuracy & Text Macro F1 \\
+\midrule
+
+Entry Split & 40,273 & 88.65\% & 84.90\% & 84.94\% & 0.5531 \\
+Description Split & 36,987 & 0\% & 3.82\% & 67.42\% & 0.3465 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Macro F1 averages across the 312 labels present in the combined sampled
+data, assigning zero to undefined class scores. Rare labels therefore
+matter more than in accuracy. The gap between the two evaluations
+reflects both familiarity and the changed test composition; it is not a
+causal estimate of leakage's effect. For a service processing new
+descriptions, the description-level evaluation is the closer test of
+that requirement.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_mhealth_text.tex}
+\caption{Exact-description familiarity changes the task measured by a text-classification test.}\label{fig:M05_mhealth_text}
+\end{figure}
+
+The lookup nearly matches the text classifier on the entry split because
+most test descriptions already appear in training. Its collapse on
+unseen descriptions reveals how much of that performance depends on
+memory. A product could use the lookup for verified familiar terms and
+route uncertain new terms for review. Nutrition-based food composition
+matching would additionally require portion units, preparation details,
+and validated food codes. A category prediction alone supplies none of
+those quantities.
+
+An AI assistant can help inspect ambiguous examples and propose a
+labeling rubric. Use only permitted local processing, preserve the
+original category, and evaluate proposed relabeling against
+independently reviewed examples. The code below makes no external model
+request and learns every lookup and text transformation from training
+rows only.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m05.py}{m05.py}.
+From its directory, run \texttt{python\ m05.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Contrast familiar-description and unseen-description classification."""
+
+import json
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, f1_score
+from common import SEED, description_holdout, load_food, save_result
+
+food = load_food()
+usable = food.loc[food.description.ne("") & food.category.ne("Unclassified")]
+sample = usable.sample(n=min(200000, len(usable)), random_state=SEED).reset_index(
+    drop=True
+)
+rng = np.random.default_rng(SEED)
+masks = {
+    "entry_split": rng.random(len(sample)) < 0.2,
+    "description_split": sample.description.map(description_holdout).to_numpy(),
+}
+results = {}
+for name, mask in masks.items():
+    train, test = sample.loc[~mask], sample.loc[mask]
+    counts = train.groupby(["description", "category"]).size().reset_index(name="count")
+    # Break tied category counts alphabetically; learn the lookup only on training rows.
+    lookup = counts.sort_values(["count", "category"], ascending=[False, True])
+    lookup = lookup.drop_duplicates("description").set_index("description").category
+    majority = train.category.value_counts().sort_index().idxmax()
+    baseline = test.description.map(lookup).fillna(majority)
+    vectorizer = TfidfVectorizer(ngram_range=(1, 2), max_features=20000, min_df=2)
+    vectorizer.fit(train.description.drop_duplicates())
+    classifier = MultinomialNB(alpha=0.1)
+    classifier.fit(
+        vectorizer.transform(counts.description),
+        counts.category,
+        sample_weight=counts["count"],
+    )
+    prediction = classifier.predict(vectorizer.transform(test.description))
+    labels = sorted(set(train.category) | set(test.category))
+    results[name] = {
+        "train_rows": len(train),
+        "test_rows": len(test),
+        "familiar_description_fraction": float(
+            test.description.isin(lookup.index).mean()
+        ),
+        "lookup_accuracy": float(accuracy_score(test.category, baseline)),
+        "nb_accuracy": float(accuracy_score(test.category, prediction)),
+        "nb_macro_f1": float(
+            f1_score(
+                test.category,
+                prediction,
+                labels=labels,
+                average="macro",
+                zero_division=0,
+            )
+        ),
+        "test_label_unseen_in_train_fraction": float(
+            (~test.category.isin(train.category.unique())).mean()
+        ),
+        "metric_classes": len(labels),
+    }
+ambiguity = sample.groupby("description").category.nunique()
+result = {
+    "sample_rows": len(sample),
+    "descriptions": len(ambiguity),
+    "descriptions_with_multiple_labels": int(ambiguity.gt(1).sum()),
+    "splits": results,
+}
+save_result("M05", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M05-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M05-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m05_synthetic.py}{m05\_synthetic.py}.
+From its directory, run \texttt{python\ m05\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M5; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+r["M05"] = {}
+for positive in [200, 10]:
+    tp = 0.8 * positive
+    fn = positive - tp
+    fp = 0.1 * (1000 - positive)
+    tn = 1000 - positive - fp
+    r["M05"][str(positive / 1000)] = {
+        "tp": tp,
+        "fp": fp,
+        "fn": fn,
+        "tn": tn,
+        "precision": tp / (tp + fp),
+        "accuracy": (tp + tn) / 1000,
+    }
+write_csv(
+    "M05_annotation_synthetic.csv",
+    [
+        "prevalence",
+        "true_positive",
+        "false_positive",
+        "false_negative",
+        "true_negative",
+    ],
+    [(p, v["tp"], v["fp"], v["fn"], v["tn"]) for p, v in r["M05"].items()],
+)
+print(json.dumps(r, indent=2))
+\end{Verbatim}
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
@@ -2255,6 +3817,233 @@ experiments.
 \href{https://doi.org/10.1016/j.jeconom.2020.12.001}{Callaway and
 Sant'Anna (2021)} develop difference-in-differences with multiple
 periods.
+
+\hypertarget{M06-mhealth-planning-a-randomized-suggestion-test}{%
+\section{mHealth: Planning a Randomized Suggestion
+Test}\label{M06-mhealth-planning-a-randomized-suggestion-test}}
+
+\noindent The manager has a candidate suggestion policy and wants to know whether
+offering it changes customer behavior. The historical logs contain no
+documented randomized assignment or recommendation exposure. They can
+supply a distribution for planning precision and reveal how a proposed
+outcome is measured. An effect estimate requires the assignment and
+outcome records from a suitable new design.
+
+Consider a user-randomized trial comparing the current interface with an
+offer of the new suggestions. Define the primary logging outcome as the
+fraction of the next 30 calendar days with at least one recorded food
+entry. Analyze all assigned eligible users under their original
+assignment, including users who never return. A suggestion may increase
+logging without changing consumption. A nutrition outcome therefore
+needs its own validated measurement and a plan for missingness.
+Post-assignment completeness screens could remove users differently
+across arms and alter the intention-to-treat comparison.
+
+For historical planning, require at least 30 recorded days during
+January through May. Among the 327 eligible users, June's logging
+fraction averages 0.6408 with a standard deviation of 0.3542.
+Twenty-three users have no June entries and receive a zero logging
+fraction. That zero is meaningful for observed logging. It says nothing
+about zero consumption, nutritional adequacy, or contract cancellation.
+
+With independent users, equal arm sizes, a two-sided 5\% test, 80\%
+power, and the historical standard deviation treated as the prospective
+outcome standard deviation, the normal approximation is
+
+\[
+n_{\text{per arm}}\approx
+\frac{2\sigma^2(z_{0.975}+z_{0.80})^2}{\Delta^2}.
+\]
+
+An imposed minimum detectable effect of 0.05 in the logging fraction,
+equivalent to 1.5 days out of 30, gives 788 users per arm after rounding
+upward. This is a planning scenario using historical variance. Future
+eligibility, outcome distributions, unequal assignment, clustering, and
+the intended analysis can change the required size. The 327-user
+historical subset does not supply that many independent trial
+participants.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_mhealth_precision.tex}
+\caption{The curve holds the historical outcome variance and testing assumptions fixed. More independent users narrow the detectable effect; adding days within the same user does not supply the same information.}\label{fig:M06_mhealth_precision}
+\end{figure}
+
+A randomization simulation assigns the same observed June outcomes to
+nearly equal arms 2,000 times while imposing a sharp zero effect. The
+standard deviation of the resulting mean difference is 0.0395, and the
+central 95\% interval is approximately {[}-0.0798, 0.0740{]}. These
+differences arise from assignment variation alone. Repeatedly treating
+each user-day as an independent trial participant would conceal
+dependence within users and overstate the effective sample size.
+
+The protocol should specify randomization before any policy exposure,
+record assignment and actual exposure separately, and keep the outcome
+window fixed. For nutrition assessments, collect reliable intake or
+appropriate validation measures independently of how often the app is
+used. Domain-based restrictions should be specified in advance, with
+their effect on the target population and missing-outcome analysis made
+explicit.
+
+The program uses a local random generator with seed 534. It reports the
+assumed effect separately from the simulated differences and never
+labels an artificial assignment as an observed intervention.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m06.py}{m06.py}.
+From its directory, run \texttt{python\ m06.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Use historical logging variation to plan, not estimate, a randomized trial."""
+
+import json
+import numpy as np
+from scipy.stats import norm
+from common import SEED, load_inputs, save_result
+
+food, daily, baskets = load_inputs()
+prior = daily.loc[daily.date.between("2016-01-01", "2016-05-31")]
+counts = prior.groupby("Userid").size()
+eligible = counts[counts >= 30].index.sort_values()
+june = daily.loc[daily.date.between("2016-06-01", "2016-06-30")]
+# A zero means no recorded day in June, not zero consumption or poor health.
+outcome = june.groupby("Userid").size().reindex(eligible, fill_value=0) / 30
+sigma = float(outcome.std(ddof=1))
+effect = 0.05  # Imposed minimum detectable increase in the fraction of logged days.
+critical = norm.ppf(0.975) + norm.ppf(0.80)
+per_arm = int(np.ceil(2 * sigma**2 * critical**2 / effect**2))
+# Illustrative balanced assignment under a sharp zero-effect simulation.
+rng = np.random.default_rng(SEED)
+values = outcome.to_numpy()
+differences = []
+for repetition in range(2000):
+    order = rng.permutation(len(values))
+    treated, control = np.array_split(order, 2)
+    differences.append(values[treated].mean() - values[control].mean())
+result = {
+    "eligible_users": len(eligible),
+    "june_mean_logging_fraction": float(outcome.mean()),
+    "june_sd": sigma,
+    "zero_logged_days": int(outcome.eq(0).sum()),
+    "assumed_effect": effect,
+    "normal_approximation_users_per_arm": per_arm,
+    "null_simulation_mean_difference": float(np.mean(differences)),
+    "null_simulation_sd": float(np.std(differences, ddof=1)),
+    "null_simulation_95_percent_interval": np.quantile(
+        differences, [0.025, 0.975]
+    ).tolist(),
+}
+save_result("M06", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M06-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M06-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m06_synthetic.py}{m06\_synthetic.py}.
+From its directory, run \texttt{python\ m06\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M6; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+se = math.sqrt(0.13 * 0.87 / 1000 + 0.1 * 0.9 / 1000)
+ci = [0.03 - 1.96 * se, 0.03 + 1.96 * se]
+r["M06"] = {
+    "assignment_effect": 0.03,
+    "standard_error": se,
+    "effect_ci": ci,
+    "contribution_per_assigned_customer": 40 * 0.03 - 0.5,
+    "contribution_ci": [40 * x - 0.5 for x in ci],
+    "sample_per_arm": 2 * 0.1 * 0.9 * (1.96 + 0.84) ** 2 / 0.02**2,
+    "design_effect": 1 + (20 - 1) * 0.05,
+    "difference_in_differences": (150 - 120) - (110 - 100),
+}
+write_csv(
+    "M06_experiment_synthetic.csv",
+    ["assignment", "assigned_customers", "purchasers"],
+    [("email", 1000, 130), ("control", 1000, 100)],
+)
+write_csv(
+    "M06_did_synthetic.csv",
+    ["group", "before", "after"],
+    [("treated", 120, 150), ("comparison", 100, 110)],
+)
+
+exposures = [
+    ("frequent", "A", 0.9, 450, 270),
+    ("frequent", "B", 0.1, 50, 25),
+    ("occasional", "A", 0.1, 50, 10),
+    ("occasional", "B", 0.9, 450, 180),
+]
+write_csv(
+    "M06_exposure_synthetic.csv",
+    ["customer_group", "item", "logging_probability", "displays", "clicks"],
+    exposures,
+)
+
+
+def constant_policy_value(rows, item):
+    groups = {row[0] for row in rows}
+    selected = [row for row in rows if row[1] == item]
+    if {row[0] for row in selected if row[2] > 0} != groups:
+        raise ValueError(
+            "Target action lacks positive logging support in a customer group"
+        )
+    n = sum(row[3] for row in rows)
+    weighted_clicks = sum(clicks / prob for _, _, prob, count, clicks in selected)
+    sum_weights = sum(count / prob for _, _, prob, count, clicks in selected)
+    sum_squared_weights = sum(count / prob**2 for _, _, prob, count, clicks in selected)
+    raw = sum(row[4] for row in selected) / sum(row[3] for row in selected)
+    return {
+        "raw_rate": raw,
+        "ips_value": weighted_clicks / n,
+        "effective_sample_size": sum_weights**2 / sum_squared_weights,
+    }
+
+
+r["M06"]["recommendation_policies"] = {
+    item: constant_policy_value(exposures, item) for item in ["A", "B"]
+}
+for item, target in [("A", 0.4), ("B", 0.45)]:
+    result = r["M06"]["recommendation_policies"][item]
+    # Independent standardization uses the known 50:50 population mix.
+    standardized = sum(
+        0.5 * clicks / count for group, j, prob, count, clicks in exposures if j == item
+    )
+    assert math.isclose(result["ips_value"], target) and math.isclose(
+        result["ips_value"], standardized
+    )
+    assert math.isclose(result["effective_sample_size"], 180)
+unsupported = [
+    (g, j, 0 if (g, j) == ("occasional", "A") else p, n, y)
+    for g, j, p, n, y in exposures
+]
+try:
+    constant_policy_value(unsupported, "A")
+except ValueError:
+    pass
+else:
+    raise AssertionError("An unsupported target policy must be rejected")
+print(json.dumps(r, indent=2))
+\end{Verbatim}
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -2899,6 +4688,334 @@ references. \href{https://doi.org/10.1007/s11002-020-09535-7}{Hagen and
 colleagues (2020)} connect machine-learning tools to behavioral
 marketing questions.
 
+\hypertarget{M07-mhealth-predicting-a-returning-users-next-basket}{%
+\section{mHealth: Predicting a Returning User's Next
+Basket}\label{M07-mhealth-predicting-a-returning-users-next-basket}}
+
+\noindent The manager needs a recommendation baseline that uses only information
+available when suggestions are chosen. Global category popularity is
+easy to implement. A personal frequency rule can exploit repeated food
+choices without estimating a complex model. The comparison should
+preserve complete baskets and evaluate both rules on the same users,
+candidate set, and future outcomes.
+
+A basket is the set of distinct source categories recorded by a user on
+a day; missing category labels are excluded. Freeze the candidate set at
+the 312 categories observed before July 1. For each forecast origin,
+require at least 30 prior observed basket days and select the first
+observed basket during the following month as the target. Validation
+starts July 1 and testing starts September 1. Every score uses dates
+strictly before its forecast origin. The test concerns returning users
+who subsequently log a basket, conditional on that observation; it does
+not evaluate people who never return.
+
+Personal frequency is the fraction of a user's observed days in a
+specified history window containing a category. It does not divide by
+all calendar days. A tiny popularity term resolves most frequency ties;
+exact remaining ties use alphabetical order. If a user has no observed
+day in a short window, personal frequencies are zero and the popularity
+term supplies the order. Global popularity uses the corresponding
+fraction across all prior observed user-days. Scores produce a list of
+ten distinct categories.
+
+Choose among 30-day, 90-day, and all-prior-history windows using July
+mean NDCG at ten. Their validation scores are 0.5666, 0.5661, and
+0.5501, respectively, among 297 evaluated users. The 30-day rule wins by
+a very small margin over 90 days. The code preserves the specified tie
+order and carries the chosen window to September. A further claim that
+30 days is generally superior would need repeated or independent
+validation.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+September Rule & Evaluated Users & Recall at 10 & NDCG at 10 \\
+\midrule
+
+Global Popularity & 299 & 0.2799 & 0.3270 \\
+Personal 30-Day Frequency & 299 & 0.4759 & 0.5862 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_mhealth_timing.tex}
+\caption{The candidate universe is fixed before validation. The September rule can use updated pre-September histories, while its chosen history-window length remains fixed from July.}\label{fig:M07_mhealth_timing}
+\end{figure}
+
+There are 362 eligible users at the September origin, but only 299 have
+a target basket in that month. Reporting both counts exposes the
+conditioning introduced by the target definition. All observed target
+categories in this evaluation are covered by the frozen candidate set.
+The implementation nevertheless retains all target categories in the
+recall denominator and ideal DCG, so an unsupported category would count
+against performance.
+
+The personal rule recovers more recorded categories than the popularity
+baseline. This supports personalization for predicting the observed
+basket under the historical environment. It does not show that
+displaying those suggestions changes choices, improves nutrition, or
+generates incremental app value. Logging may omit foods, and the basket
+can occur several days after the fixed origin. A same-day or event-time
+recommender would need a corresponding evaluation design.
+
+\hypertarget{M07-histories-candidate-sets-and-ranking-metrics}{%
+\subsection{Histories, Candidate Sets, and Ranking
+Metrics}\label{M07-histories-candidate-sets-and-ranking-metrics}}
+
+\noindent \texttt{ranking.py} defines the common evaluation so that M8 changes the
+ranking objective while holding the target baskets fixed. Recall divides
+the number of recovered categories by the target basket size. NDCG
+discounts relevant categories by position and divides by the best
+possible ranking for that target. Each evaluated user contributes one
+metric value, and the final result averages users equally.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/ranking.py}{ranking.py}.
+From its directory, run \texttt{python\ ranking.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Whole-basket chronological evaluation with a frozen category universe."""
+
+import numpy as np
+import pandas as pd
+
+
+def candidate_categories(baskets):
+    prior = baskets.loc[baskets.date.lt("2016-07-01")]
+    return sorted({category for basket in prior.basket for category in basket})
+
+
+def evaluation_cases(baskets, cutoff, candidates):
+    cutoff = pd.Timestamp(cutoff)
+    prior = baskets.loc[baskets.date.lt(cutoff)]
+    counts = prior.groupby("Userid").size()
+    eligible = counts[counts >= 30].index
+    end = cutoff + pd.offsets.MonthBegin(1)
+    target = baskets.loc[baskets.date.ge(cutoff) & baskets.date.lt(end)]
+    target = target.loc[target.Userid.isin(eligible)].sort_values(["Userid", "date"])
+    target = target.drop_duplicates("Userid")
+    histories = dict(tuple(prior.groupby("Userid")))
+    assert prior.date.max() < cutoff
+    global_counts = (
+        prior.basket.explode().value_counts().reindex(candidates, fill_value=0)
+    )
+    popularity = global_counts.to_numpy(dtype=float) / len(prior)
+    cases = [(histories[row.Userid], set(row.basket)) for row in target.itertuples()]
+    return cases, popularity, len(eligible)
+
+
+def personal_frequency(history, cutoff, candidates, window):
+    if window is not None:
+        start = pd.Timestamp(cutoff) - pd.Timedelta(days=window)
+        history = history.loc[history.date.ge(start)]
+    counts = history.basket.explode().value_counts().reindex(candidates, fill_value=0)
+    return counts.to_numpy(dtype=float) / max(1, len(history))
+
+
+def rank_categories(scores, candidates, k=10):
+    # Stable sorting resolves exact score ties using alphabetically sorted candidates.
+    positions = np.argsort(-scores, kind="stable")[:k]
+    return [candidates[index] for index in positions]
+
+
+def ranking_metrics(ranking, target):
+    relevance = np.array([category in target for category in ranking], dtype=float)
+    discounts = 1 / np.log2(np.arange(2, len(ranking) + 2))
+    ideal = discounts[: min(len(target), len(ranking))].sum()
+    return float(relevance.sum() / len(target)), float(
+        (relevance * discounts).sum() / ideal
+    )
+
+
+def evaluate(
+    baskets, cutoff, candidates, window=None, popularity_only=False, novelty_weight=0
+):
+    cases, popularity, eligible = evaluation_cases(baskets, cutoff, candidates)
+    rows = []
+    for history, target in cases:
+        frequency = personal_frequency(history, cutoff, candidates, window)
+        recent = personal_frequency(history, cutoff, candidates, 30)
+        unseen = recent == 0
+        scores = popularity if popularity_only else frequency + 1e-6 * popularity
+        ranking = rank_categories(scores + novelty_weight * unseen, candidates)
+        recall, ndcg = ranking_metrics(ranking, target)
+        recent_set = {candidates[j] for j in np.flatnonzero(recent)}
+        novelty = sum(category not in recent_set for category in ranking) / len(ranking)
+        coverage = len(target & set(candidates)) / len(target)
+        rows.append([recall, ndcg, novelty, coverage])
+    means = np.mean(rows, axis=0)
+    return {
+        "eligible_users": eligible,
+        "evaluated_users": len(cases),
+        "recall_at_10": float(means[0]),
+        "ndcg_at_10": float(means[1]),
+        "novelty_at_10": float(means[2]),
+        "target_candidate_coverage": float(means[3]),
+    }
+\end{Verbatim}
+
+\hypertarget{M07-validation-before-testing}{%
+\subsection{Validation Before
+Testing}\label{M07-validation-before-testing}}
+
+\noindent The execution order matters. Fit the history-window choice using July,
+freeze it, and report September performance without changing the rule
+after seeing the test. The small metric counterexample confirms that
+placing both relevant categories first yields NDCG of one, while placing
+an irrelevant category first lowers it. A separate test supplies a
+category that occurs only in the future and verifies that it never
+enters personal history.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m07.py}{m07.py}.
+From its directory, run \texttt{python\ m07.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Choose history length in July and evaluate the frozen rule in September."""
+
+import json
+from common import load_inputs, save_result
+from ranking import candidate_categories, evaluate, ranking_metrics
+
+food, daily, baskets = load_inputs()
+candidates = candidate_categories(baskets)
+windows = {"30_days": 30, "90_days": 90, "all_prior_days": None}
+validation = {
+    name: evaluate(baskets, "2016-07-01", candidates, window)
+    for name, window in windows.items()
+}
+# Ties retain the first listed specification; September plays no role in selection.
+chosen = max(validation, key=lambda name: validation[name]["ndcg_at_10"])
+test = {
+    "popularity": evaluate(baskets, "2016-09-01", candidates, popularity_only=True),
+    "personal_frequency": evaluate(baskets, "2016-09-01", candidates, windows[chosen]),
+}
+assert ranking_metrics(["B", "C", "A"], {"B", "C"}) == (1.0, 1.0)
+assert ranking_metrics(["A", "B", "C"], {"B", "C"})[1] < 1
+result = {
+    "candidate_categories": len(candidates),
+    "validation": validation,
+    "chosen_window": chosen,
+    "test": test,
+}
+save_result("M07", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M07-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M07-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m07_synthetic.py}{m07\_synthetic.py}.
+From its directory, run \texttt{python\ m07\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M7; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+r["M07"] = {
+    "precision": 30 / 100,
+    "recall": 30 / 50,
+    "accuracy": (30 + 880) / 1000,
+    "all_negative_accuracy": 950 / 1000,
+    "cost_threshold": 1 / (1 + 9),
+    "coupon_A": 40 * (0.8 - 0.78) - 5 * 0.8 - 2,
+    "coupon_B": 40 * (0.3 - 0.15) - 5 * 0.3 - 2,
+}
+write_csv(
+    "M07_coupon_synthetic.csv",
+    [
+        "customer",
+        "purchase_with_coupon",
+        "purchase_without_coupon",
+        "margin_dollars",
+        "discount_dollars",
+        "contact_cost_dollars",
+    ],
+    [("A", 0.8, 0.78, 40, 5, 2), ("B", 0.3, 0.15, 40, 5, 2)],
+)
+
+rankings = {
+    "ABC": [("A", 0), ("B", 1), ("C", 1)],
+    "BCA": [("B", 1), ("C", 1), ("A", 0)],
+}
+
+
+def dcg(labels):
+    return sum(
+        (2**label - 1) / math.log2(rank + 1)
+        for rank, label in enumerate(labels, start=1)
+    )
+
+
+ideal = dcg([1, 1, 0])
+r["M07"]["rankings"] = {
+    name: {
+        "precision_at_3": sum(v for _, v in vals) / 3,
+        "recall_at_3": sum(v for _, v in vals) / 2,
+        "dcg_at_3": dcg([v for _, v in vals]),
+        "ndcg_at_3": dcg([v for _, v in vals]) / ideal,
+    }
+    for name, vals in rankings.items()
+}
+write_csv(
+    "M07_rankings_synthetic.csv",
+    ["ranking", "position", "item", "binary_relevance"],
+    [
+        (name, pos, item, rel)
+        for name, vals in rankings.items()
+        for pos, (item, rel) in enumerate(vals, start=1)
+    ],
+)
+assert math.isclose(r["M07"]["rankings"]["BCA"]["ndcg_at_3"], 1)
+assert 0.693 < r["M07"]["rankings"]["ABC"]["ndcg_at_3"] < 0.694
+
+goal_items = {"A": (0.9, 0.1), "B": (0.75, 0.6), "C": (0.6, 0.9)}
+goal_score = (
+    lambda item, alpha: (1 - alpha) * goal_items[item][0] + alpha * goal_items[item][1]
+)
+r["M07"]["goal_blend"] = {
+    "scores": {
+        str(alpha): {item: goal_score(item, alpha) for item in goal_items}
+        for alpha in [0, 0.25, 0.5, 1]
+    },
+    "optimal_switches": [3 / 13, 1 / 3],
+}
+write_csv(
+    "M07_goals_synthetic.csv",
+    ["item", "preference_score", "goal_score"],
+    [(item, *scores) for item, scores in goal_items.items()],
+)
+assert math.isclose(goal_score("A", 3 / 13), goal_score("B", 3 / 13))
+assert math.isclose(goal_score("B", 1 / 3), goal_score("C", 1 / 3))
+for i in range(1001):
+    alpha = i / 1000
+    expected = "A" if alpha < 3 / 13 else ("B" if alpha < 1 / 3 else "C")
+    assert max(goal_items, key=lambda j: goal_score(j, alpha)) == expected
+print(json.dumps(r, indent=2))
+\end{Verbatim}
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -3494,5 +5611,196 @@ develops implementation details. Consult the
 evidence} and
 \href{../01_Resources/11_AI_Coding_Tools_and_Workflows/README.md}{workflow
 resources} for further study.
+
+\hypertarget{M08-mhealth-familiarity-novelty-and-the-decision-objective}{%
+\section{mHealth: Familiarity, Novelty, and the Decision
+Objective}\label{M08-mhealth-familiarity-novelty-and-the-decision-objective}}
+
+\noindent A manager may value introducing unfamiliar categories even when the most
+accurate prediction repeats a customer's routine. That preference
+changes the ranking objective. It should be stated as a decision choice
+before interpreting any performance comparison. A category absent from
+recent logs is novel relative to recorded history; it may be familiar to
+the person outside the app.
+
+Retain the September users, target baskets, candidate set, and 30-day
+frequency rule from M7. Add a bonus \(\lambda\) to a candidate category
+if it has not appeared in the user's prior 30 calendar days of logs:
+
+\[
+S_{ic}(\lambda)=f_{ic}+10^{-6}p_c+
+\lambda\mathbf{1}\{c\text{ absent from the prior 30-day log}\}.
+\]
+
+Here \(f_{ic}\) is the fraction of observed history days containing
+category \(c\), and \(p_c\) is global popularity used for tie
+resolution. The bonus is measured in the same score units as frequency.
+It is an imposed objective weight, not an estimated willingness to try a
+food or a nutritional benefit. Rank all candidates by this score and
+count the fraction of the ten recommendations absent from recent
+history.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Novelty Bonus & Recall at 10 & NDCG at 10 & Novel Categories in the
+List \\
+\midrule
+
+0.00 & 0.4759 & 0.5862 & 4.78\% \\
+0.05 & 0.4759 & 0.5862 & 4.82\% \\
+0.10 & 0.4759 & 0.5863 & 5.28\% \\
+0.20 & 0.4661 & 0.5809 & 9.83\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The grid is a specified sensitivity comparison on the same 299 test
+users. It is not used to select a winning policy and then claim an
+independent test of that winner. At a bonus of 0.20, novelty roughly
+doubles while recall falls by about 0.98 percentage points. At smaller
+bonuses, changes in the list can occur among categories that are all
+absent from the target, leaving recall unchanged. NDCG can move without
+a recall change when relevant categories exchange positions.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_mhealth_tradeoff.tex}
+\caption{A novelty bonus changes list composition before it substantially changes basket recovery.}\label{fig:M08_mhealth_tradeoff}
+\end{figure}
+
+The first three points lie close together in recall even though novelty
+rises. The fourth trades some recovery of the recorded basket for
+greater novelty. This is an offline relationship between a ranking rule
+and historical labels. It does not measure whether customers prefer the
+new list, accept the suggestions, or change diet.
+
+A nutrition objective would need a validated nutrient database,
+appropriate portions, restrictions supplied by the customer, and an
+outcome definition. Source categories and calorie-share variety alone do
+not establish healthy choices. The data-cleaning distinctions in M2
+therefore affect what the manager can optimize. Dropping low-calorie
+days might improve an apparent fit by selecting more complete logs,
+while also excluding the customers for whom the interface is hardest to
+use.
+
+A concrete next decision is whether to run the M6 user-randomized
+comparison, using a prespecified novelty setting and separate measures
+of logging, acceptance, and any validated nutrition outcome. The
+experiment should preserve the assignment population and record
+exposure. An AI assistant can implement the frozen ranking rule and
+audit category descriptions, while unsupported health claims remain
+outside the factual explanation supplied with the recommendation.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/mHealth/recurring_examples/m08.py}{m08.py}.
+From its directory, run \texttt{python\ m08.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Measure an imposed novelty-relevance tradeoff on the same September baskets."""
+
+import json
+from common import OUTPUT, load_inputs, save_result
+from ranking import candidate_categories, evaluate
+
+food, daily, baskets = load_inputs()
+selection = json.loads((OUTPUT / "M07.json").read_text())
+windows = {"30_days": 30, "90_days": 90, "all_prior_days": None}
+window = windows[selection["chosen_window"]]
+candidates = candidate_categories(baskets)
+# This grid is a specified sensitivity analysis, not a test-set model search.
+weights = [0.0, 0.05, 0.10, 0.20]
+tradeoff = [
+    {
+        "novelty_weight": weight,
+        **evaluate(baskets, "2016-09-01", candidates, window, novelty_weight=weight),
+    }
+    for weight in weights
+]
+assert (
+    abs(
+        tradeoff[0]["recall_at_10"]
+        - selection["test"]["personal_frequency"]["recall_at_10"]
+    )
+    < 1e-12
+)
+result = {"history_window": selection["chosen_window"], "tradeoff": tradeoff}
+save_result("M08", result)
+print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M08-python-calculations-for-the-synthetic-cases}{%
+\section{Python Calculations for the Synthetic
+Cases}\label{M08-python-calculations-for-the-synthetic-cases}}
+
+\noindent The inputs below are imposed teaching values. Running the program
+creates the labeled synthetic CSV files and prints the corresponding
+calculations. They are separate from the mHealth estimates. Keep the
+script beside \texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/m08_synthetic.py}{m08\_synthetic.py}.
+From its directory, run \texttt{python\ m08\_synthetic.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic numerical examples for M8; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+items = {
+    "A": ("Coffee", 0.90),
+    "B": ("Coffee", 0.85),
+    "C": ("Tea", 0.75),
+    "D": ("Fruit", 0.65),
+}
+list_values = {}
+for weight in [0, 0.2, 0.3]:
+    list_values[str(weight)] = {
+        "".join(choice): sum(items[j][1] for j in choice)
+        + weight * len({items[j][0] for j in choice})
+        for choice in itertools.combinations(items, 3)
+    }
+ra = lambda s: 100 * (-math.expm1(-s / 20))
+rb = lambda s: 80 * (-math.expm1(-s / 40))
+sa = (40 * math.log(2.5) + 60) / 3
+sb = 60 - sa
+r["M08"] = {
+    "recommendation_objectives": list_values,
+    "carryover": [100 * 0.5**t for t in range(4)],
+    "average_A": ra(40) / 40,
+    "average_B": rb(20) / 20,
+    "marginal_A": 5 * math.exp(-40 / 20),
+    "marginal_B": 2 * math.exp(-20 / 40),
+    "current_total_contribution": ra(40) + rb(20),
+    "optimal_spend_A": sa,
+    "optimal_spend_B": sb,
+    "optimal_total_contribution": ra(sa) + rb(sb),
+    "contribution_gain": ra(sa) + rb(sb) - ra(40) - rb(20),
+    "one_unit_transfer_gain": ra(39) + rb(21) - ra(40) - rb(20),
+    "manual_total_minutes": 110,
+    "assisted_total_minutes": 85,
+    "time_reduction_fraction": 25 / 110,
+}
+assert math.isclose(5 * math.exp(-sa / 20), 2 * math.exp(-sb / 40))
+# Independent grid check of the constrained optimum, to the grid's precision.
+grid_best = max((ra(i / 100) + rb(60 - i / 100), i / 100) for i in range(6001))
+assert abs(grid_best[1] - sa) < 0.01
+write_csv(
+    "M08_recommendation_synthetic.csv",
+    ["item", "category", "relevance_score"],
+    [(key, *value) for key, value in items.items()],
+)
+print(json.dumps(r, indent=2))
+\end{Verbatim}
 
 \end{document}

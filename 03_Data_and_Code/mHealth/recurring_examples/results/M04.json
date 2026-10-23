@@ -1,0 +1,46 @@
+{
+  "users": 331,
+  "features": [
+    "logging_fraction",
+    "breadth",
+    "variety"
+  ],
+  "seed_agreement_ari": 1.0,
+  "segments": [
+    {
+      "segment": 1,
+      "users": 126,
+      "prior_logging": 0.42599860457003313,
+      "breadth": 10.83544452827351,
+      "variety": 0.8037598605765228,
+      "later_logging": 0.33773291925465837
+    },
+    {
+      "segment": 2,
+      "users": 90,
+      "prior_logging": 0.7586080586080586,
+      "breadth": 6.988998602290149,
+      "variety": 0.7100058371285509,
+      "later_logging": 0.5941425120772947
+    },
+    {
+      "segment": 3,
+      "users": 115,
+      "prior_logging": 0.8698041089345437,
+      "breadth": 12.799749542276384,
+      "variety": 0.8328158405920342,
+      "later_logging": 0.6539224952741021
+    }
+  ],
+  "hypothetical_retention": [
+    0.8,
+    0.85,
+    0.9
+  ],
+  "hypothetical_clv": [
+    12.857142857142865,
+    21.874999999999993,
+    39.0909090909091
+  ],
+  "hypothetical_paid_plan_share": 0.574442516811659
+}

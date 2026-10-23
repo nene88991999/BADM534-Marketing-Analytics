@@ -37,7 +37,9 @@
     "05_Slides/AGENTS.md",
     "03_Data_and_Code/mHealth/README.md",
     "03_Data_and_Code/mHealth/DATA_DICTIONARY.md",
-    "03_Data_and_Code/mHealth/AGENTS.md"
+    "03_Data_and_Code/mHealth/AGENTS.md",
+    "03_Data_and_Code/mHealth/recurring_examples/README.md",
+    "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -82,7 +84,9 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-10-23-recommender-systems"
+    "revision": "2026-10-23-mhealth-recurring-cases",
+    "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
+    "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md"
   },
   "datasets": [
     {

@@ -1,0 +1,86 @@
+{
+  "source_observed_days": 76804,
+  "base_days": 75855,
+  "base_removed_days": 949,
+  "age_min": 17.0,
+  "age_max": 76.0,
+  "training_days": 40274,
+  "quantile_lower": 209.01256,
+  "quantile_upper": 3534.1149999999984,
+  "sensitivity": [
+    {
+      "rule": "adult_positive_base",
+      "days": 75855,
+      "users": 367,
+      "removed_from_base": 0,
+      "mean_recorded_calories": 1541.8196918792432,
+      "mean_variety": 0.7837114801694711
+    },
+    {
+      "rule": "fixed_100_to_5000_sensitivity",
+      "days": 75523,
+      "users": 367,
+      "removed_from_base": 332,
+      "mean_recorded_calories": 1543.0386766945167,
+      "mean_variety": 0.7862868056953538
+    },
+    {
+      "rule": "prior_period_1st_to_99th_percentile",
+      "days": 74224,
+      "users": 367,
+      "removed_from_base": 1631,
+      "mean_recorded_calories": 1531.0686447779694,
+      "mean_variety": 0.7916456311493506
+    },
+    {
+      "rule": "daily_item_agreement_within_one",
+      "days": 52707,
+      "users": 367,
+      "removed_from_base": 23148,
+      "mean_recorded_calories": 1493.1856202079418,
+      "mean_variety": 0.7671419327916742
+    }
+  ],
+  "hypothetical_goldberg": [
+    {
+      "days": 1,
+      "assumed_pal": 1.55,
+      "bmr_kcal": 1500,
+      "lower_ratio": 0.8722873643043191,
+      "upper_ratio": 2.7542528968261295,
+      "lower_kcal": 1308.4310464564787,
+      "upper_kcal": 4131.379345239195,
+      "illustrative_1600_kcal_flag": false
+    },
+    {
+      "days": 1,
+      "assumed_pal": 1.8,
+      "bmr_kcal": 1500,
+      "lower_ratio": 1.0129788746759834,
+      "upper_ratio": 3.1984872350238924,
+      "lower_kcal": 1519.468312013975,
+      "upper_kcal": 4797.7308525358385,
+      "illustrative_1600_kcal_flag": false
+    },
+    {
+      "days": 7,
+      "assumed_pal": 1.55,
+      "bmr_kcal": 1500,
+      "lower_ratio": 1.0534634338627302,
+      "upper_ratio": 2.2805727496309607,
+      "lower_kcal": 1580.1951507940953,
+      "upper_kcal": 3420.859124446441,
+      "illustrative_1600_kcal_flag": false
+    },
+    {
+      "days": 7,
+      "assumed_pal": 1.8,
+      "bmr_kcal": 1500,
+      "lower_ratio": 1.2233768909373641,
+      "upper_ratio": 2.648407064087567,
+      "lower_kcal": 1835.0653364060463,
+      "upper_kcal": 3972.6105961313506,
+      "illustrative_1600_kcal_flag": true
+    }
+  ]
+}

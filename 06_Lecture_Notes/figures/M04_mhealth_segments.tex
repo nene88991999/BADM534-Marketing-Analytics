@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel={Prior Fraction of Calendar Days Logged},ylabel={Mean Recorded Category Count},xmin=.25,xmax=1,ymin=5,ymax=15,grid=major]
+\addplot[only marks,IlliniBlue,mark=*,mark size=5pt] coordinates {(.425999,10.8354)};
+\addplot[only marks,IlliniOrange,mark=square*,mark size=5pt] coordinates {(.758608,6.989)};
+\addplot[only marks,Patina,mark=triangle*,mark size=5pt] coordinates {(.869804,12.7997)};
+\node[anchor=south west] at (axis cs:.44,11.1) {Segment 1: 126 Users};
+\node[anchor=north east] at (axis cs:.75,6.7) {Segment 2: 90 Users};
+\node[anchor=south east] at (axis cs:.88,13.2) {Segment 3: 115 Users};
+\end{axis}
+\end{tikzpicture}

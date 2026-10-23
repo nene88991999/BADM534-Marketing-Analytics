@@ -46,7 +46,9 @@ Generated from course.json and the source files identified below. This file cont
     "05_Slides/AGENTS.md",
     "03_Data_and_Code/mHealth/README.md",
     "03_Data_and_Code/mHealth/DATA_DICTIONARY.md",
-    "03_Data_and_Code/mHealth/AGENTS.md"
+    "03_Data_and_Code/mHealth/AGENTS.md",
+    "03_Data_and_Code/mHealth/recurring_examples/README.md",
+    "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -91,7 +93,9 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-10-23-recommender-systems"
+    "revision": "2026-10-23-mhealth-recurring-cases",
+    "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
+    "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md"
   },
   "datasets": [
     {
@@ -121,7 +125,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 23 TikZ figures and [reproducible numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 32 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
 ## Course Folders
@@ -242,7 +246,7 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 23 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 32 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -257,6 +261,21 @@ A recurring workflow is: define the marketing decision, specify the analysis, in
 ## Current Course Requirements
 
 See [course.json](course.json) for pointers to released documents and [02_Syllabus](02_Syllabus/README.md) for syllabus status. The predecessor's dates, grading weights, and AI policy have not been adopted as the rules for the new offering.
+
+## Recurring mHealth Applications
+
+| Module | Application |
+| --- | --- |
+| M1 | Chunked loading, keys, join coverage, repeated totals, duplicate review, and sanity checks. |
+| M2 | Breadth, calorie-share variety, missing days, and nutrition-informed screening sensitivity. |
+| M3 | Exact next-calendar-day regression, customer effects, clustered intervals, and range restrictions. |
+| M4 | Earlier-period behavioral segments, later logging, and separately imposed choice/CLV scenarios. |
+| M5 | Familiar versus new descriptions, source-label ambiguity, and text-classification evaluation. |
+| M6 | Historical variance, user-level randomization, power, and logging versus nutrition outcomes. |
+| M7 | Frozen candidates, chronological validation, whole baskets, and recommendation baselines. |
+| M8 | A fixed novelty-bonus comparison and the distinction between offline scores and intervention value. |
+
+Full code is printed in the [notes](06_Lecture_Notes/README.md) and saved with [verified outputs](03_Data_and_Code/mHealth/recurring_examples/README.md). [Nutrition resources](01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md) support the measurement and filtering discussion.
 
 ---
 
@@ -352,6 +371,10 @@ Read the root [agent guide](../AGENTS.md) before adapting an example. Explain th
 
 The [labs folder](../07_Labs/README.md) contains the structure for complete guided exercises. The [resource library](../01_Resources/README.md) contains downloaded reference code and notebooks.
 
+## Recurring mHealth Cases
+
+The [eight-module examples](mHealth/recurring_examples/README.md) include complete Python, aggregate outputs, a data-quality audit, nutrition-screening sensitivity, and meaningful counterexample checks. The same code is embedded in the lecture notes.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -360,7 +383,7 @@ The [labs folder](../07_Labs/README.md) contains the structure for complete guid
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain approximately 23,100 words, 23 original TikZ figures, worked cases, practice questions with explanations, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 32 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -375,13 +398,15 @@ Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module be
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content audits and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
 
-The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases, while numerical teaching examples are explicitly synthetic. No attached private style document or sample syllabus is reproduced here.
+The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
 
 ## Data, Code, and Numerical Checks
 
 The [Lecture Examples](../03_Data_and_Code/Lecture_Examples/README.md) folder contains small synthetic CSV files, a data dictionary, and a Python script that reproduces the central numerical calculations. It covers all eight modules and uses only the standard library. It has been executed successfully; its output is saved as JSON.
 
-The examples verify arithmetic and model implications under the assumptions stated in the notes. They do not constitute estimates from real customer data or a validation of those assumptions. Published empirical findings are attributed separately in each module.
+The synthetic examples verify arithmetic and model implications under stated assumptions. Each module includes its executable Python calculation. The [recurring mHealth examples](../03_Data_and_Code/mHealth/recurring_examples/README.md) use actual released records for audits, measurement, regression, segmentation, text prediction, experiment planning, basket prediction, and ranking objectives. Their full source appears directly in the notes, with matching scripts, dependencies, aggregate results, and verification checks.
+
+M1 teaches structural checks, join coverage, repeated totals, and review flags. M2 adds nutrition-informed sample definitions and alternative screens, using the [nutrition methods collection](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md). The individualized Goldberg calculation is an explicitly hypothetical scenario because validated physiological inputs are absent from the logs. M3 compares an association before and after an imposed calorie-range restriction.
 
 ## Editing and Building
 
@@ -403,7 +428,7 @@ python3 06_Lecture_Notes/build_notes.py --figures
 
 Executable paths can be supplied with `--pandoc`, `--tectonic`, and `--pdftoppm`. Intermediate files go into the ignored `build/` folder. The generated `.tex` and PDF are committed so the notes can be read without installing a build environment. The compiled PDF uses the TikZ sources directly, not raster images.
 
-After changes, run the numerical script, inspect compilation warnings, and visually inspect all affected pages and figure previews. Update navigation when adding a module or moving a source. Follow [AGENTS.md](AGENTS.md) for editing conventions and [the root agent guide](../AGENTS.md) for course authority and student support.
+After changes, run the relevant analyses and `python scripts/check_lecture_code.py` from the repository root, inspect compilation warnings, and visually inspect all affected pages and figure previews. Update navigation when adding a module or moving a source. Follow [AGENTS.md](AGENTS.md) for editing conventions and [the root agent guide](../AGENTS.md) for course authority and student support.
 
 ## Using the Notes With an LLM or Preparing Slides
 
@@ -454,6 +479,10 @@ No file uses a missing-value code. Counts are nonnegative integers; probabilitie
 The JSON report also contains renewal incremental contribution (M1), basket Jaccard similarity (M2), an OLS confidence interval (M3), logit shares and acquisition-adjusted CLV (M4), prevalence-dependent precision (M5), email-effect uncertainty and power (M6), a classification threshold and coupon value (M7), and recommendation objectives, carryover, media optimization, and total workflow time (M8).
 
 Read the equations and assumptions in the relevant module before adapting a calculation. Confidence-interval and power formulas are approximations under the stated design. The known media curves are imposed, smooth, and concave; their optimum is not an estimated budget recommendation. Coding assistants should be asked to explain these conditions and verify a small case before extending the code.
+
+## Code in the Lecture Notes
+
+`m01_synthetic.py` through `m08_synthetic.py` provide independently runnable module calculations using `example_helpers.py`. Their source appears directly in the corresponding lecture module. All eight outputs were checked against `verified_calculations.json` from `verify_examples.py`. Run `python m01_synthetic.py` from this folder, or supply its path from another working directory. These scripts use only the standard library and regenerate the labeled CSV files beside the scripts.
 
 ---
 
@@ -576,6 +605,10 @@ The [full-file verification report](verification.json) records checksums, row co
 
 Weight-based conclusions must account for the perturbation. Apparent movements smaller than the added noise cannot be interpreted as measured changes in body weight. The supplied schemas do not document random assignment or recommendation exposure, so offline predictive performance does not identify a causal recommendation effect.
 
+## Recurring Course Examples
+
+Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, audit and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/DATA_DICTIONARY.md
@@ -657,11 +690,110 @@ Read `README.md`, `DATA_DICTIONARY.md`, and `manifest.json` before loading the d
 
 ---
 
+## Source: 03_Data_and_Code/mHealth/recurring_examples/README.md
+
+# Recurring mHealth Examples
+
+These executed Python examples follow the same food-log cohort across M1–M8. The [lecture notes](../../../06_Lecture_Notes/README.md) contain the analysis code, definitions, results, and interpretations. The cohort includes 370 users, 917,153 food entries, and 76,804 observed user-days. It retains each selected user's full 2016 history using a deterministic rule on the public pseudonym. It is not a population-representative sample.
+
+## Run
+
+From the repository root, use Python 3.13 and install [requirements.txt](requirements.txt) into an environment:
+
+```sh
+python -m pip install -r 03_Data_and_Code/mHealth/recurring_examples/requirements.txt
+python 03_Data_and_Code/mHealth/recurring_examples/run_all.py
+```
+
+`run_all.py` verifies the release checksums through `download_data.py`, downloads missing release files, builds the bounded cohort, executes the audit and nutrition analysis, runs the logic checks, and executes M1–M8 in order. The first preparation reads the 304 MB compressed food file. The local Parquet cache is ignored by Git; delete `cache/` to rebuild. Derived caches depend on the release manifest hash, cohort threshold, and preparation version. Calculations use local processing and make no external AI requests. Subsequent module scripts can be run individually. Run M7 before M8 because M8 reads the selected history window from `results/M07.json`.
+
+The complete release files are stored in `../data/`, outside Git, and distributed as [GitHub release assets](https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/tag/mhealth-teaching-2026-10-23). Read the [dictionary](../DATA_DICTIONARY.md) and [release manifest](../manifest.json) before changing a measurement.
+
+## Examples and Outputs
+
+| Program | Question and Output |
+| --- | --- |
+| `common.py` | Select the cohort, construct observed days and baskets; write `results/cohort.json`. |
+| `audit.py` | Check keys, selected-field duplicates, age consistency, daily totals, and calorie review flags; write `results/audit.json`. |
+| `nutrition.py` | Compare adult, positive-energy, percentile, and accounting-consistency samples; calculate explicitly hypothetical Goldberg bounds; write `results/nutrition.json`. |
+| `m01.py` | Audit join coverage and hand-check a repeated daily total. |
+| `m02.py` | Compare breadth and calorie-share variety, and distinguish missing calendar days from observed days. |
+| `m03.py` | Estimate next-calendar-day descriptive regressions, customer-clustered intervals, and a range-restriction sensitivity. |
+| `m04.py` | Form segments using January–June behavior and describe later logging; keep hypothetical financial and choice inputs separate. |
+| `m05.py` | Compare entry-level and unseen-description text evaluation, lookup and TF-IDF/naive-Bayes baselines. |
+| `m06.py` | Use historical logging variance for prospective power and a sharp-null randomization simulation. |
+| `ranking.py`, `m07.py` | Tune history length in July and evaluate popularity and personal category frequencies in September. |
+| `m08.py` | Compare a fixed novelty-bonus grid on the same held-out baskets. |
+| `test_logic.py` | Check repeated totals, invalid shares, calendar gaps, duplicate joins, future-information exclusion, and Black's published Table 8 bounds. |
+
+Each module writes `results/M0n.json`. M2 and M4 also write compact aggregate CSV tables. `results/environment.json` records actual software versions. These outputs were generated by execution, not entered by hand. Small floating-point differences across environments are possible, and clustering labels are ordered by prior logging frequency.
+
+## Interpretation and Verification
+
+- `Calories` is an item-level source field; `Foodcalories` is a repeated daily source field. Their disagreement is preserved and measured. No undocumented quantity multiplier is applied.
+- A day absent from the food file is unobserved. Zero filling is used only for an explicitly defined logging indicator or count, never for food consumption.
+- Missing categories are `Unclassified` for breadth and calorie-share variety, and excluded from category recommendation and text targets. Negative or missing item calories and nonpositive item totals make calorie-share variety undefined.
+- Nutrition sensitivity screens are separate analysis populations. Ages span 17–76 in the cohort; the adult sensitivity base restricts age at January 1 to at least 18. Neither percentile nor accounting-agreement screens certify complete intake. No individualized physiological screen is applied without the missing validated inputs.
+- The full-period descriptive cohort and its observed-day summaries are not prospective enrollment samples. M4, M6, and M7 separately enforce earlier-period eligibility and feature windows.
+- M3 estimates associations, M5 and M7 evaluate prediction, M6 imposes a zero-effect randomization simulation, and M8 changes a ranking objective. None estimates a causal health benefit from these records.
+- Source food categories are not validated nutrition-quality labels. No raw identifiers, birthdays, private transformation keys, or individual prediction exports are added to these results.
+
+[Original nutrition sources](../../../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md) support the measurement distinctions and screening discussion. Matching Python source blocks in the Markdown notes can be checked with `python scripts/check_lecture_code.py`.
+
+---
+
+## Source: 01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md
+
+# Nutrition and Dietary Data Quality
+
+Fourteen sources connect dietary measurement to the recurring mHealth cases. Eleven government resources were downloaded as HTML with searchable text companions. The Banna et al. paper is distributed under CC BY. The Black paper was downloaded into the instructor's Dropbox-only resource folder; the public repository provides its citation and a summary. The original Goldberg paper is cataloged from its abstract, with a source link; its full text was not downloaded. [download_manifest.json](download_manifest.json) records URLs, retrieval date, local files, rights, and hashes where available. IDs N01–N14 belong to the curated `01_Resources/RESOURCE_CATALOG.json` namespace.
+
+## Measurement
+
+| ID | Resource | Analytical Use |
+| --- | --- | --- |
+| N01 | [NCI Food Records](Measurement/NCI_Food_Records.md) | Determine what a food record measures and how recording burden affects observation. |
+| N04 | [NCI Usual Dietary Intake](Measurement/NCI_Usual_Intake.md) | Separate day-to-day variation from long-run intake. A few days do not establish a person's usual diet. |
+| N05 | [NCI Energy Adjustment](Measurement/NCI_Energy_Adjustment.md) | Distinguish total energy from composition; define shares and denominators. |
+| N06 | [NCI Unbiased Reference Instruments](Measurement/NCI_Reference_Instruments.md) | Explain external validation and the role of recovery biomarkers. |
+| N07 | [NCI Day of Week](Measurement/NCI_Day_of_Week.md) | Motivate calendar balance and weekday controls. |
+| N08 | [NCI Reactivity](Measurement/NCI_Reactivity.md) | Consider whether recording itself changes food choices. |
+
+## Cleaning and Reliability
+
+| ID | Resource | Analytical Use |
+| --- | --- | --- |
+| N02 | [NCI Outliers](Data_Quality/NCI_Outliers.md) | Review unusual observations and compare sensitivity analyses rather than equating extremes with errors. |
+| N09 | [NCI Food Composition Databases](Data_Quality/NCI_Food_Composition.md) | Require defensible food, portion, and nutrient mappings before interpreting a category as nutrition information. |
+| N10 | [CDC NHANES Dietary Analyses](Data_Quality/CDC_NHANES_Dietary_Analyses.md) | Compare food-level and person-day files and understand reliability and survey design. |
+| N11 | [CDC NHANES Dietary Codebook](Data_Quality/CDC_NHANES_DR1TOT_L.md) | Read the documented `DR1DRSTZ` reliability codes. No corresponding field exists in mHealth. |
+
+## Energy Plausibility
+
+| ID | Resource | Analytical Use |
+| --- | --- | --- |
+| N03 | [NCI Misreporting](Energy_Plausibility/NCI_Misreporting.md) | Distinguish reported intake from actual intake and examine the selection introduced by exclusions. |
+| N12 | [Banna, McCrory, Fialkowski, and Boushey, Frontiers in Nutrition (2017)](Energy_Plausibility/Banna_McCrory_Fialkowski_Boushey_FrontiersinNutrition2017.pdf) | Compare fixed cutoffs, individualized methods, and their assumptions. [Companion](Energy_Plausibility/Banna_McCrory_Fialkowski_Boushey_FrontiersinNutrition2017.md). |
+| N13 | [Black, International Journal of Obesity (2000)](https://doi.org/10.1038/sj.ijo.0801376) | Updated Goldberg equation and Tables 7–8: duration, sample size, activity assumptions, and individual versus group screening. [Companion](Energy_Plausibility/Black_InternationalJournalofObesity2000.md). |
+| N14 | [Goldberg, Black, Jebb, Cole, Murgatroyd, Coward, and Prentice, European Journal of Clinical Nutrition (1991)](https://pubmed.ncbi.nlm.nih.gov/1810719/) | Foundational derivation. The coded illustration uses Black's later variance assumptions. |
+
+## Coding Applications
+
+The [nutrition program](../../03_Data_and_Code/mHealth/recurring_examples/nutrition.py) defines an adult positive-energy sample, compares fixed-range, earlier-period percentile, and item/day agreement screens, and reports retained users, days, means, and exclusions. The lecture notes include the complete code in M2, Section 2.11, and compare a regression sensitivity in M3.
+
+The Goldberg calculation is explicitly hypothetical. The records lack validated basal metabolic rate, physical activity, complete assessment days, and a documented physiological sex variable. A supplied goal, perturbed weight, or numeric `Gender` code does not fill those gaps. Sample restrictions answer a stated analysis question; passing a screen does not validate individual health conclusions.
+
+## Source Rights and Extraction
+
+NCI text is used with attribution under its [reuse policy](https://www.cancer.gov/policies/copyright-reuse), and CDC text under its [agency-materials policy](https://www.cdc.gov/other/agencymaterials.html). External works retain their own rights. HTML snapshots retain the source content; text companions omit figures, layout, and interactive elements. Links to live sources provide updates. No agency endorsement is implied.
+
+---
+
 ## Resource Metadata: curated
 
 Source: 01_Resources/RESOURCE_CATALOG.json
 
-117 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
+131 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
 
 ---
 
@@ -2706,6 +2838,258 @@ Teaching Suggestion: Evaluate a launch-in-Colab option for exercises that exceed
 Cautions: Requires external service access; quotas and availability can change.
 
 Rights or Access: Link to the source; redistribution rights not established.; Public web resource; linked services may require an account or payment.
+
+---
+
+### curated:N01 | Food Records
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/profiles/record/
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Record completeness, recording burden, and behavior change.
+
+Teaching Suggestion: Record completeness, recording burden, and behavior change.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N02 | Outliers
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/learn/outliers.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Review extreme days and compare results with and without flagged records.
+
+Teaching Suggestion: Review extreme days and compare results with and without flagged records.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N03 | Misreporting
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/learn/misreporting.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Interpret energy reporting and the risk of selection from exclusion.
+
+Teaching Suggestion: Interpret energy reporting and the risk of selection from exclusion.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N04 | Usual Dietary Intake
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/learn/usual.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Separate one recorded day from long-run usual intake.
+
+Teaching Suggestion: Separate one recorded day from long-run usual intake.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N05 | Energy Adjustment
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/learn/adjustment.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Define energy shares and separate composition from total quantity.
+
+Teaching Suggestion: Define energy shares and separate composition from total quantity.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N06 | Unbiased Reference Instruments
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/concepts/validation/unbiased.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Explain recovery biomarkers and validation of energy reporting.
+
+Teaching Suggestion: Explain recovery biomarkers and validation of energy reporting.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N07 | Day of Week Effect
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/learn/day.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Motivate weekday controls and balanced dietary measurement.
+
+Teaching Suggestion: Motivate weekday controls and balanced dietary measurement.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N08 | Reactivity
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/learn/reactivity.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Consider whether recording changes eating behavior.
+
+Teaching Suggestion: Consider whether recording changes eating behavior.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N09 | Food Composition Databases for 24HRs and Food Records
+
+Source URL: https://epi.grants.cancer.gov/dietary-assessment-primer/learn/recall-record.html
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Require a validated mapping of portions, foods, and nutrients.
+
+Teaching Suggestion: Require a validated mapping of portions, foods, and nutrients.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N10 | NHANES Dietary Analyses Tutorial
+
+Source URL: https://wwwn.cdc.gov/nchs/nhanes/tutorials/dietaryanalyses.aspx
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Compare individual-food and person-day files, reliability flags, and survey weights.
+
+Teaching Suggestion: Compare individual-food and person-day files, reliability flags, and survey weights.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N11 | NHANES 2021-2023 First-Day Total Nutrient Intake Codebook
+
+Source URL: https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1TOT_L.htm
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Use DR1DRSTZ as an example of documented recall reliability; it is absent from mHealth.
+
+Teaching Suggestion: Use DR1DRSTZ as an example of documented recall reliability; it is absent from mHealth.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: U.S. federal agency text. Preserve source attribution; external works and images retain their own rights.; Downloaded HTML and extracted text
+
+---
+
+### curated:N12 | Examining Plausibility of Self-Reported Energy Intake Data: Considerations for Method Selection
+
+Source URL: https://doi.org/10.3389/fnut.2017.00045
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Compare crude and individualized screens, assumptions, and consequences for inference.
+
+Teaching Suggestion: Compare crude and individualized screens, assumptions, and consequences for inference.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: CC BY; license printed at the end of the article. Copyright 2017 the authors.; Downloaded publisher PDF
+
+---
+
+### curated:N13 | Critical Evaluation of Energy Intake Using the Goldberg Cut-off for Energy Intake:Basal Metabolic Rate. A Practical Guide to Its Calculation, Use and Limitations
+
+Source URL: https://doi.org/10.1038/sj.ijo.0801376
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Individual and group Goldberg equations, assessment duration, PAL choice, and variance components.
+
+Teaching Suggestion: Individual and group Goldberg equations, assessment duration, PAL choice, and variance components.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: Publisher copyright. Full PDF retained in instructor Dropbox only; public repository supplies a citation and original summary.; Downloaded publisher PDF to instructor-only Dropbox folder
+
+---
+
+### curated:N14 | Critical Evaluation of Energy Intake Data Using Fundamental Principles of Energy Physiology: 1. Derivation of Cut-off Limits to Identify Under-recording
+
+Source URL: https://pubmed.ncbi.nlm.nih.gov/1810719/
+
+Modules: M, 1, ,,  , M, 2, ,,  , M, 3, ,,  , M, 6, ,,  , M, 7, ,,  , M, 8
+
+Priority: Recommended
+
+Focus: Original derivation; use the later Black update for the implemented coefficients.
+
+Teaching Suggestion: Original derivation; use the later Black update for the implemented coefficients.
+
+Cautions: Methods for dietary assessment require attention to instrument, population, and available metadata.
+
+Rights or Access: Citation and original summary only; full-text redistribution rights not established.; Abstract reviewed; full text not downloaded
 
 ---
 

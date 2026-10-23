@@ -179,3 +179,129 @@ Finally, evaluate the recommendation component and the acquisition budget. Log e
 **AI evaluation exercise.** Draft a rubric for an assistant-generated retention analysis. Include at least one check that detects a substantive error in code that executes successfully, such as an order-line denominator used for average order value. Define a hand-checkable example that exposes the error and explain how a reviewer would determine whether it occurred.
 
 Read Nielsen and coauthors, [“Consumption Variety in Food Recommendation”](https://doi.org/10.1086/720453), and Ling and coauthors, [“Following Good Examples”](https://doi.org/10.1145/3485447.3514193), for applications connecting recommendation objectives with customer behavior. The official marketing-mix documentation linked above develops implementation details. Consult the [AI-coding evidence](../../01_Resources/10_AI_Coding_Concepts_and_Evidence/README.md) and [workflow resources](../../01_Resources/11_AI_Coding_Tools_and_Workflows/README.md) for further study.
+
+## 8.9 mHealth: Familiarity, Novelty, and the Decision Objective
+
+A manager may value introducing unfamiliar categories even when the most accurate prediction repeats a customer's routine. That preference changes the ranking objective. It should be stated as a decision choice before interpreting any performance comparison. A category absent from recent logs is novel relative to recorded history; it may be familiar to the person outside the app.
+
+Retain the September users, target baskets, candidate set, and 30-day frequency rule from M7. Add a bonus $\lambda$ to a candidate category if it has not appeared in the user's prior 30 calendar days of logs:
+
+$$
+S_{ic}(\lambda)=f_{ic}+10^{-6}p_c+
+\lambda\mathbf{1}\{c\text{ absent from the prior 30-day log}\}.
+$$
+
+Here $f_{ic}$ is the fraction of observed history days containing category $c$, and $p_c$ is global popularity used for tie resolution. The bonus is measured in the same score units as frequency. It is an imposed objective weight, not an estimated willingness to try a food or a nutritional benefit. Rank all candidates by this score and count the fraction of the ten recommendations absent from recent history.
+
+| Novelty Bonus | Recall at 10 | NDCG at 10 | Novel Categories in the List |
+| --- | ---: | ---: | ---: |
+| 0.00 | 0.4759 | 0.5862 | 4.78% |
+| 0.05 | 0.4759 | 0.5862 | 4.82% |
+| 0.10 | 0.4759 | 0.5863 | 5.28% |
+| 0.20 | 0.4661 | 0.5809 | 9.83% |
+
+The grid is a specified sensitivity comparison on the same 299 test users. It is not used to select a winning policy and then claim an independent test of that winner. At a bonus of 0.20, novelty roughly doubles while recall falls by about 0.98 percentage points. At smaller bonuses, changes in the list can occur among categories that are all absent from the target, leaving recall unchanged. NDCG can move without a recall change when relevant categories exchange positions.
+
+![A novelty bonus changes list composition before it substantially changes basket recovery.](../figures/M08_mhealth_tradeoff.png)
+
+The first three points lie close together in recall even though novelty rises. The fourth trades some recovery of the recorded basket for greater novelty. This is an offline relationship between a ranking rule and historical labels. It does not measure whether customers prefer the new list, accept the suggestions, or change diet.
+
+A nutrition objective would need a validated nutrient database, appropriate portions, restrictions supplied by the customer, and an outcome definition. Source categories and calorie-share variety alone do not establish healthy choices. The data-cleaning distinctions in M2 therefore affect what the manager can optimize. Dropping low-calorie days might improve an apparent fit by selecting more complete logs, while also excluding the customers for whom the interface is hardest to use.
+
+A concrete next decision is whether to run the M6 user-randomized comparison, using a prespecified novelty setting and separate measures of logging, acceptance, and any validated nutrition outcome. The experiment should preserve the assignment population and record exposure. An AI assistant can implement the frozen ranking rule and audit category descriptions, while unsupported health claims remain outside the factual explanation supplied with the recommendation.
+
+Python source: [m08.py](../../03_Data_and_Code/mHealth/recurring_examples/m08.py). From its directory, run `python m08.py`.
+
+```python
+"""Measure an imposed novelty-relevance tradeoff on the same September baskets."""
+
+import json
+from common import OUTPUT, load_inputs, save_result
+from ranking import candidate_categories, evaluate
+
+food, daily, baskets = load_inputs()
+selection = json.loads((OUTPUT / "M07.json").read_text())
+windows = {"30_days": 30, "90_days": 90, "all_prior_days": None}
+window = windows[selection["chosen_window"]]
+candidates = candidate_categories(baskets)
+# This grid is a specified sensitivity analysis, not a test-set model search.
+weights = [0.0, 0.05, 0.10, 0.20]
+tradeoff = [
+    {
+        "novelty_weight": weight,
+        **evaluate(baskets, "2016-09-01", candidates, window, novelty_weight=weight),
+    }
+    for weight in weights
+]
+assert (
+    abs(
+        tradeoff[0]["recall_at_10"]
+        - selection["test"]["personal_frequency"]["recall_at_10"]
+    )
+    < 1e-12
+)
+result = {"history_window": selection["chosen_window"], "tradeoff": tradeoff}
+save_result("M08", result)
+print(json.dumps(result, indent=2))
+```
+
+## 8.10 Python Calculations for the Synthetic Cases
+
+The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+
+Python source: [m08_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m08_synthetic.py). From its directory, run `python m08_synthetic.py`.
+
+```python
+"""Synthetic numerical examples for M8; run from any working directory."""
+
+import itertools
+import json
+import math
+from example_helpers import write_csv, ols_slope, shares
+
+r = {}
+items = {
+    "A": ("Coffee", 0.90),
+    "B": ("Coffee", 0.85),
+    "C": ("Tea", 0.75),
+    "D": ("Fruit", 0.65),
+}
+list_values = {}
+for weight in [0, 0.2, 0.3]:
+    list_values[str(weight)] = {
+        "".join(choice): sum(items[j][1] for j in choice)
+        + weight * len({items[j][0] for j in choice})
+        for choice in itertools.combinations(items, 3)
+    }
+ra = lambda s: 100 * (-math.expm1(-s / 20))
+rb = lambda s: 80 * (-math.expm1(-s / 40))
+sa = (40 * math.log(2.5) + 60) / 3
+sb = 60 - sa
+r["M08"] = {
+    "recommendation_objectives": list_values,
+    "carryover": [100 * 0.5**t for t in range(4)],
+    "average_A": ra(40) / 40,
+    "average_B": rb(20) / 20,
+    "marginal_A": 5 * math.exp(-40 / 20),
+    "marginal_B": 2 * math.exp(-20 / 40),
+    "current_total_contribution": ra(40) + rb(20),
+    "optimal_spend_A": sa,
+    "optimal_spend_B": sb,
+    "optimal_total_contribution": ra(sa) + rb(sb),
+    "contribution_gain": ra(sa) + rb(sb) - ra(40) - rb(20),
+    "one_unit_transfer_gain": ra(39) + rb(21) - ra(40) - rb(20),
+    "manual_total_minutes": 110,
+    "assisted_total_minutes": 85,
+    "time_reduction_fraction": 25 / 110,
+}
+assert math.isclose(5 * math.exp(-sa / 20), 2 * math.exp(-sb / 40))
+# Independent grid check of the constrained optimum, to the grid's precision.
+grid_best = max((ra(i / 100) + rb(60 - i / 100), i / 100) for i in range(6001))
+assert abs(grid_best[1] - sa) < 0.01
+write_csv(
+    "M08_recommendation_synthetic.csv",
+    ["item", "category", "relevance_score"],
+    [(key, *value) for key, value in items.items()],
+)
+print(json.dumps(r, indent=2))
+```

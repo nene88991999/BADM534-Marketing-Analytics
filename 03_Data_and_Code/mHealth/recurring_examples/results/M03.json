@@ -1,0 +1,35 @@
+{
+  "pairs": 69648,
+  "users": 370,
+  "min_next_calories": 0.64,
+  "max_next_calories": 9190.0,
+  "models": {
+    "pooled": {
+      "pairs": 69648,
+      "users": 370,
+      "coefficient": 0.02771173208832857,
+      "se": 0.004259557206827701,
+      "ci_low": 0.01933568050927557,
+      "ci_high": 0.036087783667381565,
+      "geometric_mean_percent": 2.8099273670011726
+    },
+    "user_fixed_effects": {
+      "pairs": 69648,
+      "users": 370,
+      "coefficient": 0.01284425750700776,
+      "se": 0.0014599309164852292,
+      "ci_low": 0.009973429375216681,
+      "ci_high": 0.01571508563879884,
+      "geometric_mean_percent": 1.2927099282869536
+    },
+    "restricted_fixed_effects": {
+      "pairs": 69216,
+      "users": 370,
+      "coefficient": 0.011364985801858529,
+      "se": 0.001237377596715581,
+      "ci_low": 0.008931789563469898,
+      "ci_high": 0.013798182040247159,
+      "geometric_mean_percent": 1.1429812605465492
+    }
+  }
+}

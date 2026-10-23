@@ -1,0 +1,27 @@
+{
+  "sample_rows": 200000,
+  "descriptions": 37570,
+  "descriptions_with_multiple_labels": 1725,
+  "splits": {
+    "entry_split": {
+      "train_rows": 159727,
+      "test_rows": 40273,
+      "familiar_description_fraction": 0.8864748094256698,
+      "lookup_accuracy": 0.8489558761453083,
+      "nb_accuracy": 0.8493779951828768,
+      "nb_macro_f1": 0.5530681050732056,
+      "test_label_unseen_in_train_fraction": 7.449159486504606e-05,
+      "metric_classes": 312
+    },
+    "description_split": {
+      "train_rows": 163013,
+      "test_rows": 36987,
+      "familiar_description_fraction": 0.0,
+      "lookup_accuracy": 0.038175575202098036,
+      "nb_accuracy": 0.674182820991159,
+      "nb_macro_f1": 0.3465464144098865,
+      "test_label_unseen_in_train_fraction": 0.0002162922107767594,
+      "metric_classes": 312
+    }
+  }
+}

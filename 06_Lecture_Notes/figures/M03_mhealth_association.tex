@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel={Log-Outcome Coefficient per Additional Category},xmin=0,xmax=.04,scaled x ticks=false,xtick={0,.01,.02,.03,.04},xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},ymin=.5,ymax=3.5,ytick={1,2,3},yticklabels={Restricted Fixed Effects,User Fixed Effects,Pooled},width=11cm,xmajorgrids=true]
+\addplot[IlliniBlue,very thick,mark=|,mark size=6pt] coordinates {(.0193357,3)(.0360878,3)};
+\addplot[IlliniOrange,very thick,mark=|,mark size=6pt] coordinates {(.0099734,2)(.0157151,2)};
+\addplot[Patina,very thick,dashed,mark=|,mark size=6pt] coordinates {(.0089318,1)(.0137982,1)};
+\addplot[only marks,IlliniBlue,mark=*,mark size=3pt] coordinates {(.0277117,3)};
+\addplot[only marks,IlliniOrange,mark=square*,mark size=3pt] coordinates {(.0128443,2)};
+\addplot[only marks,Patina,mark=triangle*,mark size=3pt] coordinates {(.011365,1)};
+\end{axis}
+\end{tikzpicture}

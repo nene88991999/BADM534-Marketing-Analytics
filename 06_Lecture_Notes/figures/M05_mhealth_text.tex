@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{axis}[ybar,bar width=21pt,ymin=0,ymax=1,ylabel={Entry-Weighted Accuracy},symbolic x coords={Entry Split,Description Split},xtick=data,enlarge x limits=.55,legend style={at={(.5,-.19)},anchor=north,legend columns=2},ymajorgrids=true]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(Entry Split,.848956)(Description Split,.038176)};
+\addplot[fill=IlliniOrange,draw=IlliniOrange,postaction={pattern=north east lines,pattern color=white}] coordinates {(Entry Split,.849378)(Description Split,.674183)};
+\legend{Description Lookup,TF-IDF + Naive Bayes}
+\end{axis}
+\end{tikzpicture}

@@ -23,3 +23,7 @@ Keep identifiable student records and restricted research data outside this repo
 Read the root [agent guide](../AGENTS.md) before adapting an example. Explain the purpose of the code and its analytical assumptions, inspect the inputs and data dictionary, and verify the output with a small example. Identify any changes made with AI assistance. Follow the relevant assignment's rules when using sample code in assessed work.
 
 The [labs folder](../07_Labs/README.md) contains the structure for complete guided exercises. The [resource library](../01_Resources/README.md) contains downloaded reference code and notebooks.
+
+## Recurring mHealth Cases
+
+The [eight-module examples](mHealth/recurring_examples/README.md) include complete Python, aggregate outputs, a data-quality audit, nutrition-screening sensitivity, and meaningful counterexample checks. The same code is embedded in the lecture notes.
