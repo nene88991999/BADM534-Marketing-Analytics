@@ -12,7 +12,7 @@
   "module_map": "COURSE_MAP.md",
   "agent_instructions": "AGENTS.md",
   "student_guide": "LLM_GUIDE.md",
-  "sample_code": "10_Sample_Code/README.md",
+  "data_and_code": "03_Data_and_Code/README.md",
   "catalogs": [
     {
       "namespace": "curated",
@@ -30,7 +30,7 @@
     "LLM_GUIDE.md",
     "02_Syllabus/README.md",
     "04_Assignments/README.md",
-    "10_Sample_Code/README.md"
+    "03_Data_and_Code/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only."
 }

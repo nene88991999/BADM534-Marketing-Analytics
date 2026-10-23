@@ -18,13 +18,12 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | --- | --- |
 | [01_Resources](01_Resources/README.md) | Categorized readings, documentation, notebooks, datasets, AI coding resources, and source catalogs |
 | [02_Syllabus](02_Syllabus/README.md) | Current syllabus and course policies when released |
-| [03_Data](03_Data/README.md) | Course-selected datasets, dictionaries, and provenance |
+| [03_Data_and_Code](03_Data_and_Code/README.md) | Course datasets, dictionaries, scripts, notebooks, and code snippets |
 | [04_Assignments](04_Assignments/README.md) | Assignment briefs, rubrics, and assessment-specific AI rules |
 | [05_Slides](05_Slides/README.md) | Lecture slides with Markdown companions |
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
 | [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
-| [10_Sample_Code](10_Sample_Code/README.md) | Short scripts, notebook examples, and code snippets |
 
 ## Working With an LLM
 

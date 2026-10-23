@@ -21,7 +21,7 @@ Generated from course.json and the source files identified below. This file cont
   "module_map": "COURSE_MAP.md",
   "agent_instructions": "AGENTS.md",
   "student_guide": "LLM_GUIDE.md",
-  "sample_code": "10_Sample_Code/README.md",
+  "data_and_code": "03_Data_and_Code/README.md",
   "catalogs": [
     {
       "namespace": "curated",
@@ -39,7 +39,7 @@ Generated from course.json and the source files identified below. This file cont
     "LLM_GUIDE.md",
     "02_Syllabus/README.md",
     "04_Assignments/README.md",
-    "10_Sample_Code/README.md"
+    "03_Data_and_Code/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only."
 }
@@ -69,13 +69,12 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | --- | --- |
 | [01_Resources](01_Resources/README.md) | Categorized readings, documentation, notebooks, datasets, AI coding resources, and source catalogs |
 | [02_Syllabus](02_Syllabus/README.md) | Current syllabus and course policies when released |
-| [03_Data](03_Data/README.md) | Course-selected datasets, dictionaries, and provenance |
+| [03_Data_and_Code](03_Data_and_Code/README.md) | Course datasets, dictionaries, scripts, notebooks, and code snippets |
 | [04_Assignments](04_Assignments/README.md) | Assignment briefs, rubrics, and assessment-specific AI rules |
 | [05_Slides](05_Slides/README.md) | Lecture slides with Markdown companions |
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
 | [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
-| [10_Sample_Code](10_Sample_Code/README.md) | Short scripts, notebook examples, and code snippets |
 
 ## Working With an LLM
 
@@ -135,7 +134,7 @@ Use released course documents to answer questions about requirements. Use third-
 
 Downloaded notebooks in `01_Resources` are reference copies. Their saved output is not evidence of a course-tested run. Adapt selected examples into `07_Labs`, preserve attribution, and verify execution before labeling them ready for students.
 
-Store short scripts, notebook examples, and reusable snippets in `10_Sample_Code`. Describe each example's inputs, dependencies, run command, expected output, and verification status. Complete guided exercises belong in `07_Labs`.
+Store course datasets, data dictionaries, short scripts, notebook examples, and reusable snippets in `03_Data_and_Code`. Keep each example's data and code together, with relative paths and a README describing inputs, dependencies, run command, expected output, provenance, and verification status. Complete guided exercises belong in `07_Labs`.
 
 ## Repository Editing
 
@@ -257,23 +256,29 @@ Add released assignments to `released_assignments` in [course.json](../course.js
 
 ---
 
-## Source: 10_Sample_Code/README.md
+## Source: 03_Data_and_Code/README.md
 
-# Sample Code
+# Data and Sample Code
 
-Short scripts, notebook examples, and code snippets for BADM 534. Add examples here as the course develops, organized by module or topic when needed.
+Course datasets, data dictionaries, scripts, notebook examples, and code snippets for BADM 534. Keep each example's data and code together in a subfolder organized by module or topic.
 
-**Status:** folder prepared; no sample code added yet.
+**Status:** folder prepared; no course-selected datasets or sample code added yet. Candidate datasets are in the [resource library's dataset guide](../01_Resources/10_Datasets_and_Project_Resources/Dataset_Guide/README.md) and [additional dataset collection](../01_Resources/20_Datasets/README.md).
 
 ## Adding an Example
 
-Use a descriptive filename with a module prefix, such as `M02_Customer_Summary.py`. For examples with several files, use a dedicated subfolder with its own README.
+Use a descriptive module prefix, such as `M02_Customer_Summary`, and include a README explaining the marketing question, files, dependencies, run command, expected output, and a simple check of the result. Record whether the example has been executed successfully.
 
-Document the marketing question, inputs, dependencies, run command, expected output, and a simple check of the result. Use relative data paths and link to the relevant [data dictionary](../03_Data/README.md). Label synthetic data clearly, preserve source attribution and licenses, and record whether the example has been executed successfully.
+Place the related scripts or notebooks, data files, and data dictionary in the example's folder. Use relative data paths. For larger examples, use `data/` and `code/` subfolders. If several examples share a dataset, link to a single documented copy.
+
+## Documenting Data
+
+Record the source, retrieval date/version, license, observation unit, time range, units, missing-value codes, exclusions, and processing steps. Preserve original and derived data separately. Label synthetic data explicitly, and retain attribution and licenses for adapted data and code.
+
+Keep identifiable student records and restricted research data outside this repository.
 
 ## Guidance for Students and Agents
 
-Read the root [agent guide](../AGENTS.md) before adapting an example. Explain the purpose of the code and its analytical assumptions, inspect the inputs, and verify the output with a small example. Identify any changes made with AI assistance. Follow the relevant assignment's rules when using sample code in assessed work.
+Read the root [agent guide](../AGENTS.md) before adapting an example. Explain the purpose of the code and its analytical assumptions, inspect the inputs and data dictionary, and verify the output with a small example. Identify any changes made with AI assistance. Follow the relevant assignment's rules when using sample code in assessed work.
 
 The [labs folder](../07_Labs/README.md) contains the structure for complete guided exercises. The [resource library](../01_Resources/README.md) contains downloaded reference code and notebooks.
 

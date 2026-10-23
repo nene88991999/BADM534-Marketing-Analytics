@@ -38,7 +38,7 @@ Use released course documents to answer questions about requirements. Use third-
 
 Downloaded notebooks in `01_Resources` are reference copies. Their saved output is not evidence of a course-tested run. Adapt selected examples into `07_Labs`, preserve attribution, and verify execution before labeling them ready for students.
 
-Store short scripts, notebook examples, and reusable snippets in `10_Sample_Code`. Describe each example's inputs, dependencies, run command, expected output, and verification status. Complete guided exercises belong in `07_Labs`.
+Store course datasets, data dictionaries, short scripts, notebook examples, and reusable snippets in `03_Data_and_Code`. Keep each example's data and code together, with relative paths and a README describing inputs, dependencies, run command, expected output, provenance, and verification status. Complete guided exercises belong in `07_Labs`.
 
 ## Repository Editing
 
