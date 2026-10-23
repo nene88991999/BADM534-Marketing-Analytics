@@ -1,6 +1,6 @@
-# BADM 534 Resource Library
+# Marketing Analytics Resource Library
 
-Collected October 23, 2026 for Nathan Yang's planned version of **Data Analytics for Marketing Applications**. The collection follows Unnati Narang's eight-module Spring 2026 syllabus and adds resources for AI-assisted coding throughout the course. The wiki and new syllabus have not been built.
+Collected October 23, 2026 for Nathan Yang's planned version of **Marketing Analytics**. The collection follows Unnati Narang's eight-module Spring 2026 syllabus and adds resources for AI-assisted coding throughout the course. The wiki and new syllabus have not been built.
 
 ## Start Here
 

@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -35,7 +35,7 @@ The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added re
 
 Edit the Markdown files in `modules/` and the TikZ files in `figures/`. The shared palette and figure styles are in [figures/style.tex](figures/style.tex). The colors follow the [official Illinois brand palette](https://brand.illinois.edu/visual-identity/color): Illini Blue `#13294B` and Illini Orange `#FF5F05`, with limited supporting colors. Labels, line styles, and symbols supplement color.
 
-The [build script](build_notes.py) uses Pandoc to assemble the modules into [LaTeX source](BADM534_Lecture_Notes.tex), substitutes the TikZ source for each Markdown figure, and compiles the PDF with Tectonic. It preserves first-paragraph indentation conventions and prefixes document anchors by module. Tectonic may download TeX packages on its first run.
+The [build script](build_notes.py) uses Pandoc to assemble the modules into [LaTeX source](Marketing_Analytics_Lecture_Notes.tex), substitutes the TikZ source for each Markdown figure, and compiles the PDF with Tectonic. It preserves first-paragraph indentation conventions and prefixes document anchors by module. Tectonic may download TeX packages on its first run.
 
 From the repository root, with Python, Pandoc, and Tectonic available:
 

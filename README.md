@@ -1,4 +1,4 @@
-# BADM 534: Data Analytics for Marketing Applications
+# Marketing Analytics
 
 Course materials for Nathan Yang's planned offering, with AI-assisted coding integrated into marketing analytics. The topic sequence builds on Unnati Narang's Spring 2026 course.
 

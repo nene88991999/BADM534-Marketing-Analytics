@@ -1,4 +1,4 @@
-# BADM 534 resource search: category WIKI (interactive course wiki design and hosting on GitHub Pages)
+# Marketing Analytics resource search: category WIKI (interactive course wiki design and hosting on GitHub Pages)
 # Compiled 2026-10-23. All URLs verified by WebFetch or seen in search results as marked.
 
 # ---------------------------------------------------------------- Hosting
@@ -76,7 +76,7 @@
   priority: core
   modules: [WIKI]
   summary: "GitHub Classroom shut down on 2026-08-28, including its website, APIs and services. Classroom and assignment names, tests defined outside repos and LTI rosters will be deleted; user accounts, repos and organizations stay."
-  wiki_use: "Instructor-only: don't build BADM 534's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead."
+  wiki_use: "Instructor-only: don't build the course's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead."
   tools: [GitHub Classroom]
   ai_angle: false
   verified_via: fetch
@@ -156,7 +156,7 @@
   priority: core
   modules: [WIKI, AI]
   summary: "Open-source, Pandoc-based publishing system that turns .qmd, .ipynb and Markdown files containing Python or R code into websites, books, slides and PDFs. Websites get navigation, cross-references and a built-in local search index."
-  wiki_use: "Leading candidate engine for the BADM 534 wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine."
+  wiki_use: "Leading candidate engine for the Marketing Analytics wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine."
   tools: [quarto, jupyter, knitr, pandoc]
   ai_angle: true
   verified_via: fetch
@@ -463,7 +463,7 @@
   priority: core
   modules: [WIKI]
   summary: "Template repo that builds a JupyterLite site and deploys it to GitHub Pages with GitHub Actions. Notebooks go in the content folder, and kernels and extensions are listed in requirements.txt."
-  wiki_use: "Use as the template for a BADM 534 'lab' subsite that holds the module notebooks and is linked from the wiki."
+  wiki_use: "Use as the template for a Marketing Analytics 'lab' subsite that holds the module notebooks and is linked from the wiki."
   tools: [jupyterlite, GitHub Actions]
   ai_angle: false
   download:
@@ -791,7 +791,7 @@
   priority: core
   modules: [WIKI]
   summary: "Campus standard under the Digital Accessibility Policy (HR-86). Internally developed web content must meet the most recent recommended WCAG, currently 2.2 AA, use WAI-ARIA 1.2, and work with major browsers and screen readers. Course content and training materials are explicitly in scope."
-  wiki_use: "The binding target for the BADM 534 wiki: design to WCAG 2.2 AA (stricter than the 2.1 AA assumed in the brief) and test with NVDA and VoiceOver."
+  wiki_use: "The binding target for the Marketing Analytics wiki: design to WCAG 2.2 AA (stricter than the 2.1 AA assumed in the brief) and test with NVDA and VoiceOver."
   ai_angle: false
   verified_via: fetch
   notes: "Commercial SaaS is held to 2.1 AA. Campus resources: instructor tips at https://itaccessibility.illinois.edu/tips-instructor and evaluation tools at https://itaccessibility.illinois.edu/web-evaluation-tools (links seen on itaccessibility.illinois.edu). The page lists no deadlines."
@@ -843,7 +843,7 @@
     path: ""
     license: "CC BY-NC-ND 4.0 (per site)"
   verified_via: fetch
-  notes: "It teaches Berkeley's datascience package rather than pandas, so the content is less directly reusable for BADM 534. The NoDerivatives license means reuse the structure, not the content."
+  notes: "It teaches Berkeley's datascience package rather than pandas, so the content is less directly reusable for Marketing Analytics. The NoDerivatives license means reuse the structure, not the content."
 
 - id: causal-inference-brave-true
   category: WIKI
@@ -1022,7 +1022,7 @@
   priority: core
   modules: [AI, WIKI]
   summary: "Campus-supported platform for building course chatbots over uploaded materials (PDFs, slides, videos, a web crawl, or a Canvas connection). Answers cite their sources, and a tutor-mode prompt is available. The official instance is chat.illinois.edu."
-  wiki_use: "Build a BADM 534 assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page."
+  wiki_use: "Build a Marketing Analytics assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page."
   tools: [Illinois Chat, OpenAI API, Canvas]
   ai_angle: true
   verified_via: fetch

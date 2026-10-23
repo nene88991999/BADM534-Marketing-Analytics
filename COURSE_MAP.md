@@ -1,6 +1,6 @@
 # Course Map
 
-BADM 534: Data Analytics for Marketing Applications
+Marketing Analytics
 
 This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The revised syllabus, schedule, assignments, and assessment rules are pending. Suggested activities below are illustrative.
 

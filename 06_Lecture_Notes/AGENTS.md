@@ -6,7 +6,7 @@ Read the root `AGENTS.md` and `course.json` first. These lecture notes are by Na
 
 - Edit `modules/M*.md` as the primary prose source. Keep module IDs and numbered section references stable when practical.
 - Edit `figures/M*.tex` for figures and `figures/style.tex` for shared styling. Keep the PNG filename synchronized with the Markdown image link.
-- Run `build_notes.py` to regenerate `BADM534_Lecture_Notes.tex` and the PDF. Do not make prose changes only in the generated LaTeX file.
+- Run `build_notes.py` to regenerate `Marketing_Analytics_Lecture_Notes.tex` and the PDF. Do not make prose changes only in the generated LaTeX file.
 - Use `--figures` when a TikZ figure changes. The PDF and Markdown previews should represent the same figure.
 - Intermediate build products belong in ignored `build/`. Do not commit local runtime tools or private source documents.
 

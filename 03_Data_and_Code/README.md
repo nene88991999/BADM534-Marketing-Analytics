@@ -1,6 +1,6 @@
 # Data and Sample Code
 
-Course datasets, data dictionaries, scripts, notebook examples, and code snippets for BADM 534. Keep each example's data and code together in a subfolder organized by module or topic.
+Course datasets, data dictionaries, scripts, notebook examples, and code snippets for Marketing Analytics. Keep each example's data and code together in a subfolder organized by module or topic.
 
 **Status:** [synthetic lecture examples](Lecture_Examples/README.md) now cover the numerical cases in all eight modules, with verified Python calculations and small CSV files. Candidate datasets are in the [resource library's dataset guide](../01_Resources/10_Datasets_and_Project_Resources/Dataset_Guide/README.md) and [additional dataset collection](../01_Resources/20_Datasets/README.md).
 

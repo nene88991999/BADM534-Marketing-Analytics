@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the BADM 534 resource library catalogs from the YAML source files.
+"""Build the Marketing Analytics resource library catalogs from the YAML source files.
 
 Usage:  python3 build_catalog.py <01_Resources folder>
 
@@ -332,7 +332,7 @@ def write_tables(entries):
 def write_index(entries, dupes):
     idx = ROOT / "00_Index"
     tot = len(entries)
-    lines = ["# BADM 534 Resource Library — Master Index", "",
+    lines = ["# Marketing Analytics Resource Library — Master Index", "",
              f"{tot} catalogued resources across {len(FOLDERS)} folders · built {date.today().isoformat()}.", "",
              "The course spine is the previous syllabus's eight modules (M1–M8). On top of that sit a dedicated AI-assisted coding track (folders 10–12), "
              "a datasets folder, cross-module open textbooks, and resources for designing and hosting the interactive wiki.", "",

@@ -1,6 +1,6 @@
 # Agent Guide for Lecture Slides
 
-Read the root `AGENTS.md`, `course.json`, and the relevant lecture notes before authoring a deck. Use Nathan Yang's preferred LaTeX Beamer format, supplied on October 23, 2026. The original reference is retained in the instructor's Dropbox at `09_Templates/Lecture_Slides/slides.tex`; that directory stays excluded from Git. The reference's seminar topic, examples, and dates do not establish BADM 534 content or requirements.
+Read the root `AGENTS.md`, `course.json`, and the relevant lecture notes before authoring a deck. Use Nathan Yang's preferred LaTeX Beamer format, supplied on October 23, 2026. The original reference is retained in the instructor's Dropbox at `09_Templates/Lecture_Slides/slides.tex`; that directory stays excluded from Git. The reference's seminar topic, examples, and dates do not establish Marketing Analytics content or requirements.
 
 ## Layout and Typography
 

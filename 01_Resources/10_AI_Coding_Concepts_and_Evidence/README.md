@@ -146,7 +146,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [core] **[Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality](https://papers.ssrn.com/abstract=4573321)** (2023) — Dell'Acqua, F.; McFowland III, E.; Mollick, E. R.; Lifshitz-Assaf, H.; Kellogg, K.; Rajendran, S.; Krayer, L.; Candelon, F.; Lakhani, K. R. *Harvard Business School Working Paper 24-013*
   `paper` · `intermediate` · `access: open` · `AI angle`
   Preregistered experiment with BCG consultants: GPT-4 improved speed and quality on tasks inside the AI 'frontier' but reduced correctness on a task just outside it. Introduces 'centaur' and 'cyborg' work styles.
-  *Use in wiki:* Core business-school reading on why AI help is uneven; students map which BADM 534 tasks sit inside or outside the frontier.
+  *Use in wiki:* Core business-school reading on why AI help is uneven; students map which Marketing Analytics tasks sit inside or outside the frontier.
   [Open-access copy](https://mitsloan.mit.edu/sites/default/files/2023-10/SSRN-id4573321.pdf)
   *Note:* The SSRN page wouldn't load directly; URL and PDF come from search results. Author list as given in Shen & Tamkin (2026). A later journal version couldn't be confirmed.
 

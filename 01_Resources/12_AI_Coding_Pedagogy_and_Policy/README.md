@@ -71,7 +71,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [recommended] **[Six Opportunities for Scientists and Engineers to Learn Programming Using AI Tools such as ChatGPT](https://pg.ucsd.edu/publications/scientists-engineers-learning-programming-using-ai_CiSE-2023.pdf)** (2023) — Guo, P. J. *IEEE Computing in Science & Engineering*
   `paper` · `intro` · `access: open` · `AI angle`
   Short essay on how people who program as a means to an end (scientists, engineers, and by extension analysts) can use AI tools to learn programming.
-  *Use in wiki:* Good fit for BADM 534's non-CS audience; assign in Week 1 alongside Willison.
+  *Use in wiki:* Good fit for the course's non-CS audience; assign in Week 1 alongside Willison.
 
 - [recommended] **[Studying the Effect of AI Code Generators on Supporting Novice Learners in Introductory Programming](https://arxiv.org/abs/2302.07427)** (2023) — Kazemitabaar, M.; Chow, J.; Ma, C. K. T.; Ericson, B. J.; Weintrop, D.; Grossman, T. *CHI 2023*
   `paper` · `intermediate` · `access: open` · `AI angle`
@@ -102,7 +102,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [recommended] **[Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education](https://cs.harvard.edu/malan/publications/V1fp0567-liu.pdf)** (2024) — Liu, R.; et al. (Harvard CS50; Malan, D. J.). *SIGCSE 2024*
   `paper` · `intro` · `access: open` · `AI angle`
   How Harvard's CS50 deployed AI tools, including the CS50 Duck rubber-duck debugger, built to guide students toward solutions rather than hand them answers, and how students responded.
-  *Use in wiki:* Model for a course-specific hint-first AI tutor (for example a Claude Project or custom GPT with a 'don't give full solutions' system prompt) for BADM 534 labs.
+  *Use in wiki:* Model for a course-specific hint-first AI tutor (for example a Claude Project or custom GPT with a 'don't give full solutions' system prompt) for Marketing Analytics labs.
   *Note:* Full author list not captured, so check the PDF. Follow-up: 'Improving AI in CS50: Leveraging Human Feedback for Better Learning' (SIGCSE 2025), https://cs.harvard.edu/malan/publications/fp0627-liu.pdf
 
 - [optional] **[Introducing Claude for Education (learning mode)](https://www.anthropic.com/news/introducing-claude-for-education)** (2025) — Anthropic. *Anthropic*
@@ -127,7 +127,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [core] **[The AI Assessment Scale (AIAS)](https://aiassessmentscale.com/)** (2025) — Perkins, M.; Furze, L.; Roe, J.; MacVaugh, J. *aiassessmentscale.com; JUTLP 2025*
   `website` · `intro` · `access: open` · `CC BY-NC-SA 4.0 (diagrams and resource assets only)` · `AI angle`
   Widely adopted five-level scale for how much AI an assessment allows: No AI, AI Planning, AI Collaboration, Full AI, AI Exploration. Now at version 2.1.
-  *Use in wiki:* Tag every BADM 534 assignment with an AIAS level on the wiki (for example, concept checks at Level 1, labs at Level 3 or 4, the team project at Level 5).
+  *Use in wiki:* Tag every Marketing Analytics assignment with an AIAS level on the wiki (for example, concept checks at Level 1, labs at Level 3 or 4, the team project at Level 5).
   [Open-access copy](https://arxiv.org/abs/2312.07086)
   *Note:* Updated paper 'Reimagining the AIAS' (JUTLP 2025): https://doi.org/10.53761/rrm4y757. Resources: https://aiassessmentscale.com/resources/
 
@@ -146,7 +146,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [recommended] **[4 Steps to Design an AI-Resilient Learning Experience (with Data Analytics toolkit example)](https://mitsloanedtech.mit.edu/ai/teach/4-steps-to-design-an-ai-resilient-learning-experience/)** (2024) — MIT Sloan Teaching & Learning Technologies. *MIT Sloan Teaching & Learning Technologies*
   `tutorial` · `intro` · `access: open` · `AI angle`
   Backward-design guide: learners, outcomes (Bloom's higher levels), assessments (AI required, allowed or banned for each), activities. Comes with a Word toolkit and a worked Data Analytics course example.
-  *Use in wiki:* Use the Data Analytics toolkit example (https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_ToolkitExampleDataAnalytics.pdf) as a template when redesigning each BADM 534 module.
+  *Use in wiki:* Use the Data Analytics toolkit example (https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_ToolkitExampleDataAnalytics.pdf) as a template when redesigning each Marketing Analytics module.
   *Note:* Toolkit files dated March 2024; page modified September 2026. Toolkit (docx): https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_AI-ResilientLXDesignToolkit.docx
 
 - [recommended] **[AI Detectors Don't Work. Here's What to Do Instead.](https://mitsloanedtech.mit.edu/ai/teach/ai-detectors-dont-work/)** (2024) — MIT Sloan Teaching & Learning Technologies. *MIT Sloan Teaching & Learning Technologies*
@@ -190,5 +190,5 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [recommended] **[Gies Generative AI Guiding Principles](https://answers.uillinois.edu/gies/128405)** (2025) — Gies College of Business, University of Illinois. *Illinois Answers (Gies KB 128405)*
   `website` · `intro` · `access: open` · `AI angle`
   College-level infographic and links for instructors, including Gies syllabus guidance on setting permitted AI uses, having students document and cite AI use, and checking AI output for accuracy.
-  *Use in wiki:* Make sure the BADM 534 AI policy is consistent with college principles; link from the syllabus.
+  *Use in wiki:* Make sure the Marketing Analytics AI policy is consistent with college principles; link from the syllabus.
   *Note:* Created 19 May 2023; last updated 6 November 2025. Some linked tool names (for example Google Bard) are dated.

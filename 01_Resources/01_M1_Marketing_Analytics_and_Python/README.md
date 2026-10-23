@@ -31,7 +31,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [recommended] **[Applying Data Analytics in Marketing](https://www.coursera.org/learn/applying-data-analytics-business-in-marketing)** (2025) — Narang, U. (University of Illinois Urbana-Champaign). *Coursera*
   `course` · `intro` · `access: freemium` · `AI angle`
   Gies MOOC taught by Unnati Narang, about 16-20 hours with Python demos. Four modules: course intro and causal analysis (experiments, matching, IV, DiD); AI, prediction and ML including LLM applications; user, firm and AI-generated content analysis; and segmentation, conjoint, CLV and churn.
-  *Use in wiki:* Link as optional video backup for students who want lectures; its module order closely tracks BADM 534.
+  *Use in wiki:* Link as optional video backup for students who want lectures; its module order closely tracks Marketing Analytics.
   Tools: Python, Generative AI
   *Note:* Year is approximate: the page shows no launch date, but its LLM content suggests a 2024-2025 revision. Rated 4.5/5 (206 reviews) when fetched. Can count toward UIUC degree programs.
 
@@ -140,7 +140,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [optional] **[Marketing Analytics (MBA/EWMBA 263) course overview, UC Berkeley Haas](https://aiai.berkeley.edu/course-overview-mock-ups/)** (2025) — UC Berkeley Haas School of Business (aiai initiative). *Berkeley Haas aiai*
   `syllabus` · `intro` · `access: open`
   Course overview for a 3-unit MBA marketing analytics course taught in Jupyter/Python: acquisition, targeting and retention, experimental design, SEO and web analytics. Methods include RFM and clustering, logistic regression, neural nets and discrete choice with full-factorial designs.
-  *Use in wiki:* Benchmark for scoping BADM 534 against a peer MBA course.
+  *Use in wiki:* Benchmark for scoping Marketing Analytics against a peer MBA course.
   Tools: jupyter, python
   *Note:* The page is titled 'Course Overview Mock-ups' and names no instructor; year is approximate. No public notebooks. Public university marketing-analytics course repos in Python turned out to be rare; those found were R-based (Tilburg gknox79/customer-analytics, Kellogg fzettelmeyer/mktg482, USC dadepro/mkt566) or unlicensed student work.
 

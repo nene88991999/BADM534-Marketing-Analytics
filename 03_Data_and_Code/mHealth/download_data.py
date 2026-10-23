@@ -30,7 +30,7 @@ def main():
                 continue
             raise ValueError(f"Existing {name} differs from this release; choose an empty directory.")
         temporary = destination.with_name(destination.name + ".part")
-        request = urllib.request.Request(entry["download_url"], headers={"User-Agent": "BADM534-course-data"})
+        request = urllib.request.Request(entry["download_url"], headers={"User-Agent": "MarketingAnalytics-course-data"})
         with urllib.request.urlopen(request, timeout=120) as response, temporary.open("wb") as handle:
             for block in iter(lambda: response.read(1024 * 1024), b""):
                 handle.write(block)

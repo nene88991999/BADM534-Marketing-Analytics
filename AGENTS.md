@@ -1,6 +1,8 @@
-# Agent Guide for BADM 534
+# Agent Guide for Marketing Analytics
 
 ## Purpose and Current Status
+
+Use **Marketing Analytics** as the course title. Omit the course code from lecture notes, slides, and general resources. Retain the course code in `course.json` for use in the syllabus and assignment documents.
 
 Help students understand and apply marketing analytics, including AI-assisted coding. Start with the managerial decision, the available information, the analytical question, and the interpretation of the result.
 

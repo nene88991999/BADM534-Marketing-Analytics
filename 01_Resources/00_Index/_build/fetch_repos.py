@@ -139,7 +139,7 @@ def main():
             continue
         (work / "SOURCE.md").write_text(
             f"# Source\n\n- Repository: https://github.com/{repo} (branch `{branch}`)\n- Commit: `{sha}`\n"
-            f"- License: {lic}\n- Downloaded: {date.today().isoformat()} for BADM 534 course preparation\n"
+            f"- License: {lic}\n- Downloaded: {date.today().isoformat()} for Marketing Analytics course preparation\n"
             f"- Kept: {', '.join(paths) if paths else 'entire repository'} (plus top-level README/LICENSE files)\n"
             + (f"- Omitted files over 40 MB: {', '.join(dropped)}\n" if dropped else "")
             + "\nThis is a snapshot. Check upstream for updates, and follow the upstream license when reusing or "

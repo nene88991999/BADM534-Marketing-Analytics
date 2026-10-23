@@ -25,7 +25,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [core] **[GitHub Classroom deprecated](https://github.blog/changelog/2026-08-27-github-classroom-deprecated)** (2026) — GitHub. *GitHub Changelog*
   `blog` · `intro` · `access: open`
   GitHub Classroom shut down on 2026-08-28, including its website, APIs and services. Classroom and assignment names, tests defined outside repos and LTI rosters will be deleted; user accounts, repos and organizations stay.
-  *Use in wiki:* Instructor-only: don't build BADM 534's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead.
+  *Use in wiki:* Instructor-only: don't build the course's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead.
   Tools: GitHub Classroom
   *Note:* New sign-ups ended 2026-05-26 (https://github.blog/changelog/2026-05-26-github-classroom-sign-ups-are-no-longer-available, fetched). GitHub's migration page names Codio and Classroom 50 as partner options and describes a gh CLI export utility (https://docs.github.com/en/education/manage-coursework-with-github-classroom/get-started-with-github-classroom/export-or-migrate-github-classroom-data, fetched). Older GitHub Education pages still describe Classroom as active and are stale.
 
@@ -62,7 +62,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [core] **[Quarto](https://quarto.org/)** (2026) — Posit (Quarto project). *quarto.org*
   `tool` · `intermediate` · `access: open` · `AI angle`
   Open-source, Pandoc-based publishing system that turns .qmd, .ipynb and Markdown files containing Python or R code into websites, books, slides and PDFs. Websites get navigation, cross-references and a built-in local search index.
-  *Use in wiki:* Leading candidate engine for the BADM 534 wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine.
+  *Use in wiki:* Leading candidate engine for the Marketing Analytics wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine.
   Tools: quarto, jupyter, knitr, pandoc
   *Note:* Version status on 2026-10-23: 1.10.x is the current stable line (GitHub marks v1.10.18 as Latest, July 2026), and 1.11.x is in pre-release. Quarto 1.9 (2026-03-24, https://opensource.posit.co/blog/2026-03-24_1.9-release/, fetched) added 'llms-txt: true' for websites, which writes an llms.txt index plus a .llms.md copy of each page so students can feed the wiki to an AI assistant. It also made opt-in (express) cookie consent the default, added screen-reader labels for videos, and added experimental PDF/UA output. Release posts now live on opensource.posit.co. Algolia is an optional alternative to the built-in search.
 
@@ -141,7 +141,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [core] **[jupyterlite/demo: template for deploying JupyterLite to GitHub Pages](https://github.com/jupyterlite/demo)** (2026) — JupyterLite contributors. *GitHub*
   `tool` · `intro` · `access: open` · `BSD-3-Clause`
   Template repo that builds a JupyterLite site and deploys it to GitHub Pages with GitHub Actions. Notebooks go in the content folder, and kernels and extensions are listed in requirements.txt.
-  *Use in wiki:* Use as the template for a BADM 534 'lab' subsite that holds the module notebooks and is linked from the wiki.
+  *Use in wiki:* Use as the template for a Marketing Analytics 'lab' subsite that holds the module notebooks and is linked from the wiki.
   Tools: jupyterlite, GitHub Actions · Local copy: `22_Wiki_Design_and_Hosting/repos/jupyterlite__demo`
   *Note:* Deploy guide (https://jupyterlite.readthedocs.io/en/stable/quickstart/deploy.html, fetched): click 'Use this template', enable Actions, set workflow permissions to read/write and the Pages source to GitHub Actions. For pre-installed packages, use the xeus-python demo with an environment.yml. Live demo at jupyterlite.github.io/demo. Requires Firefox 90+ or Chromium 89+.
 
@@ -206,7 +206,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [core] **[Illinois Chat (formerly UIUC.chat) documentation](https://docs.uiuc.chat/)** (2026) — University of Illinois (Center for AI Innovation GitHub organization). *docs.uiuc.chat*
   `tool` · `intro` · `access: free-registration` · `MIT (backend repo)` · `AI angle`
   Campus-supported platform for building course chatbots over uploaded materials (PDFs, slides, videos, a web crawl, or a Canvas connection). Answers cite their sources, and a tutor-mode prompt is available. The official instance is chat.illinois.edu.
-  *Use in wiki:* Build a BADM 534 assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page.
+  *Use in wiki:* Build a Marketing Analytics assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page.
   Tools: Illinois Chat, OpenAI API, Canvas
   *Note:* UIUC.chat is moving to chat.illinois.edu, and chatbot creation is disabled on the old site (https://docs.uiuc.chat/migration/migrate-to-illinois-chat.md, fetched). Per the FAQ it is free to use but you supply your own OpenAI API key, and data is stored on AWS with no guarantees; the FAQ may predate the campus migration. Privacy: there is no FERPA statement and no documented iframe embed, so keep student records and grades out of it. Backend: https://github.com/Center-for-AI-Innovation/ai-ta-backend (public, MIT); access to the frontend repo appears restricted. Support: genaisupport@mx.uillinois.edu.
 
@@ -282,7 +282,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [core] **[University of Illinois Minimum Digital Accessibility Standards](https://access.illinois.edu/ada/digital-accessibility-policy/minimum-standards/)** (2026) — University of Illinois Urbana-Champaign. *access.illinois.edu*
   `documentation` · `intro` · `access: open`
   Campus standard under the Digital Accessibility Policy (HR-86). Internally developed web content must meet the most recent recommended WCAG, currently 2.2 AA, use WAI-ARIA 1.2, and work with major browsers and screen readers. Course content and training materials are explicitly in scope.
-  *Use in wiki:* The binding target for the BADM 534 wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.
+  *Use in wiki:* The binding target for the Marketing Analytics wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.
   *Note:* Commercial SaaS is held to 2.1 AA. Campus resources: instructor tips at https://itaccessibility.illinois.edu/tips-instructor and evaluation tools at https://itaccessibility.illinois.edu/web-evaluation-tools (links seen on itaccessibility.illinois.edu). The page lists no deadlines.
 
 - [core] **[WCAG 2 Overview](https://www.w3.org/WAI/standards-guidelines/wcag/)** (2025) — W3C Web Accessibility Initiative. *W3C WAI*

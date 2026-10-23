@@ -1,4 +1,4 @@
-# BADM 534 Resource Library — Master Index
+# Marketing Analytics Resource Library — Master Index
 
 613 catalogued resources across 14 folders · built 2026-10-23.
 

@@ -1,4 +1,4 @@
-# BADM 534: Portable Course Context
+# Marketing Analytics: Portable Course Context
 
 Generated from course.json and the source files identified below. This file contains course navigation and original catalog annotations, not the complete contents of the linked readings. Source documents take precedence over this generated copy.
 
@@ -9,7 +9,7 @@ Generated from course.json and the source files identified below. This file cont
 ```json
 {
   "course_code": "BADM 534",
-  "title": "Data Analytics for Marketing Applications",
+  "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
   "updated_on": "2026-10-23",
@@ -56,7 +56,7 @@ Generated from course.json and the source files identified below. This file cont
     "status": "available",
     "updated_on": "2026-10-23",
     "index": "06_Lecture_Notes/README.md",
-    "pdf": "06_Lecture_Notes/BADM534_Lecture_Notes.pdf",
+    "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
       {
         "id": "M1",
@@ -117,7 +117,7 @@ Generated from course.json and the source files identified below. This file cont
 
 ## Source: README.md
 
-# BADM 534: Data Analytics for Marketing Applications
+# Marketing Analytics
 
 Course materials for Nathan Yang's planned offering, with AI-assisted coding integrated into marketing analytics. The topic sequence builds on Unnati Narang's Spring 2026 course.
 
@@ -163,9 +163,11 @@ Third-party files retain their original licenses and restrictions. See their adj
 
 ## Source: AGENTS.md
 
-# Agent Guide for BADM 534
+# Agent Guide for Marketing Analytics
 
 ## Purpose and Current Status
+
+Use **Marketing Analytics** as the course title. Omit the course code from lecture notes, slides, and general resources. Retain the course code in `course.json` for use in the syllabus and assignment documents.
 
 Help students understand and apply marketing analytics, including AI-assisted coding. Start with the managerial decision, the available information, the analytical question, and the interpretation of the result.
 
@@ -231,7 +233,7 @@ Use local source files when available, and preserve their recorded rights. An ac
 
 # Course Map
 
-BADM 534: Data Analytics for Marketing Applications
+Marketing Analytics
 
 This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The revised syllabus, schedule, assignments, and assessment rules are pending. Suggested activities below are illustrative.
 
@@ -355,7 +357,7 @@ Add released assignments to `released_assignments` in [course.json](../course.js
 
 # Data and Sample Code
 
-Course datasets, data dictionaries, scripts, notebook examples, and code snippets for BADM 534. Keep each example's data and code together in a subfolder organized by module or topic.
+Course datasets, data dictionaries, scripts, notebook examples, and code snippets for Marketing Analytics. Keep each example's data and code together in a subfolder organized by module or topic.
 
 **Status:** [synthetic lecture examples](Lecture_Examples/README.md) now cover the numerical cases in all eight modules, with verified Python calculations and small CSV files. Candidate datasets are in the [resource library's dataset guide](../01_Resources/10_Datasets_and_Project_Resources/Dataset_Guide/README.md) and [additional dataset collection](../01_Resources/20_Datasets/README.md).
 
@@ -393,7 +395,7 @@ Additional executed examples cover fixed-cohort reporting, recency/frequency, lo
 
 **By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](BADM534_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 38 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -426,7 +428,7 @@ The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added re
 
 Edit the Markdown files in `modules/` and the TikZ files in `figures/`. The shared palette and figure styles are in [figures/style.tex](figures/style.tex). The colors follow the [official Illinois brand palette](https://brand.illinois.edu/visual-identity/color): Illini Blue `#13294B` and Illini Orange `#FF5F05`, with limited supporting colors. Labels, line styles, and symbols supplement color.
 
-The [build script](build_notes.py) uses Pandoc to assemble the modules into [LaTeX source](BADM534_Lecture_Notes.tex), substitutes the TikZ source for each Markdown figure, and compiles the PDF with Tectonic. It preserves first-paragraph indentation conventions and prefixes document anchors by module. Tectonic may download TeX packages on its first run.
+The [build script](build_notes.py) uses Pandoc to assemble the modules into [LaTeX source](Marketing_Analytics_Lecture_Notes.tex), substitutes the TikZ source for each Markdown figure, and compiles the PDF with Tectonic. It preserves first-paragraph indentation conventions and prefixes document anchors by module. Tectonic may download TeX packages on its first run.
 
 From the repository root, with Python, Pandoc, and Tectonic available:
 
@@ -518,7 +520,7 @@ Lecture decks use Nathan Yang's preferred 16:9 LaTeX Beamer format: 14-point bas
 
 # Agent Guide for Lecture Slides
 
-Read the root `AGENTS.md`, `course.json`, and the relevant lecture notes before authoring a deck. Use Nathan Yang's preferred LaTeX Beamer format, supplied on October 23, 2026. The original reference is retained in the instructor's Dropbox at `09_Templates/Lecture_Slides/slides.tex`; that directory stays excluded from Git. The reference's seminar topic, examples, and dates do not establish BADM 534 content or requirements.
+Read the root `AGENTS.md`, `course.json`, and the relevant lecture notes before authoring a deck. Use Nathan Yang's preferred LaTeX Beamer format, supplied on October 23, 2026. The original reference is retained in the instructor's Dropbox at `09_Templates/Lecture_Slides/slides.tex`; that directory stays excluded from Git. The reference's seminar topic, examples, and dates do not establish Marketing Analytics content or requirements.
 
 ## Layout and Typography
 
@@ -3644,7 +3646,7 @@ Priority: core
 
 Focus: Preregistered experiment with BCG consultants: GPT-4 improved speed and quality on tasks inside the AI 'frontier' but reduced correctness on a task just outside it. Introduces 'centaur' and 'cyborg' work styles.
 
-Teaching Suggestion: Core business-school reading on why AI help is uneven; students map which BADM 534 tasks sit inside or outside the frontier.
+Teaching Suggestion: Core business-school reading on why AI help is uneven; students map which Marketing Analytics tasks sit inside or outside the frontier.
 
 Cautions: The SSRN page wouldn't load directly; URL and PDF come from search results. Author list as given in Shen & Tamkin (2026). A later journal version couldn't be confirmed.
 
@@ -4170,7 +4172,7 @@ Priority: recommended
 
 Focus: Short essay on how people who program as a means to an end (scientists, engineers, and by extension analysts) can use AI tools to learn programming.
 
-Teaching Suggestion: Good fit for BADM 534's non-CS audience; assign in Week 1 alongside Willison.
+Teaching Suggestion: Good fit for the course's non-CS audience; assign in Week 1 alongside Willison.
 
 Rights or Access: open
 
@@ -4186,7 +4188,7 @@ Priority: recommended
 
 Focus: How Harvard's CS50 deployed AI tools, including the CS50 Duck rubber-duck debugger, built to guide students toward solutions rather than hand them answers, and how students responded.
 
-Teaching Suggestion: Model for a course-specific hint-first AI tutor (for example a Claude Project or custom GPT with a 'don't give full solutions' system prompt) for BADM 534 labs.
+Teaching Suggestion: Model for a course-specific hint-first AI tutor (for example a Claude Project or custom GPT with a 'don't give full solutions' system prompt) for Marketing Analytics labs.
 
 Cautions: Full author list not captured, so check the PDF. Follow-up: 'Improving AI in CS50: Leveraging Human Feedback for Better Learning' (SIGCSE 2025), https://cs.harvard.edu/malan/publications/fp0627-liu.pdf
 
@@ -4416,7 +4418,7 @@ Priority: core
 
 Focus: Widely adopted five-level scale for how much AI an assessment allows: No AI, AI Planning, AI Collaboration, Full AI, AI Exploration. Now at version 2.1.
 
-Teaching Suggestion: Tag every BADM 534 assignment with an AIAS level on the wiki (for example, concept checks at Level 1, labs at Level 3 or 4, the team project at Level 5).
+Teaching Suggestion: Tag every Marketing Analytics assignment with an AIAS level on the wiki (for example, concept checks at Level 1, labs at Level 3 or 4, the team project at Level 5).
 
 Cautions: Updated paper 'Reimagining the AIAS' (JUTLP 2025): https://doi.org/10.53761/rrm4y757. Resources: https://aiassessmentscale.com/resources/
 
@@ -4434,7 +4436,7 @@ Priority: recommended
 
 Focus: Backward-design guide: learners, outcomes (Bloom's higher levels), assessments (AI required, allowed or banned for each), activities. Comes with a Word toolkit and a worked Data Analytics course example.
 
-Teaching Suggestion: Use the Data Analytics toolkit example (https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_ToolkitExampleDataAnalytics.pdf) as a template when redesigning each BADM 534 module.
+Teaching Suggestion: Use the Data Analytics toolkit example (https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_ToolkitExampleDataAnalytics.pdf) as a template when redesigning each Marketing Analytics module.
 
 Cautions: Toolkit files dated March 2024; page modified September 2026. Toolkit (docx): https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_AI-ResilientLXDesignToolkit.docx
 
@@ -4594,7 +4596,7 @@ Priority: recommended
 
 Focus: College-level infographic and links for instructors, including Gies syllabus guidance on setting permitted AI uses, having students document and cite AI use, and checking AI output for accuracy.
 
-Teaching Suggestion: Make sure the BADM 534 AI policy is consistent with college principles; link from the syllabus.
+Teaching Suggestion: Make sure the Marketing Analytics AI policy is consistent with college principles; link from the syllabus.
 
 Cautions: Created 19 May 2023; last updated 6 November 2025. Some linked tool names (for example Google Bard) are dated.
 
@@ -7144,7 +7146,7 @@ Priority: recommended
 
 Focus: Gies MOOC taught by Unnati Narang, about 16-20 hours with Python demos. Four modules: course intro and causal analysis (experiments, matching, IV, DiD); AI, prediction and ML including LLM applications; user, firm and AI-generated content analysis; and segmentation, conjoint, CLV and churn.
 
-Teaching Suggestion: Link as optional video backup for students who want lectures; its module order closely tracks BADM 534.
+Teaching Suggestion: Link as optional video backup for students who want lectures; its module order closely tracks Marketing Analytics.
 
 Cautions: Year is approximate: the page shows no launch date, but its LLM content suggests a 2024-2025 revision. Rated 4.5/5 (206 reviews) when fetched. Can count toward UIUC degree programs.
 
@@ -12444,7 +12446,7 @@ Priority: optional
 
 Focus: Course overview for a 3-unit MBA marketing analytics course taught in Jupyter/Python: acquisition, targeting and retention, experimental design, SEO and web analytics. Methods include RFM and clustering, logistic regression, neural nets and discrete choice with full-factorial designs.
 
-Teaching Suggestion: Benchmark for scoping BADM 534 against a peer MBA course.
+Teaching Suggestion: Benchmark for scoping Marketing Analytics against a peer MBA course.
 
 Cautions: The page is titled 'Course Overview Mock-ups' and names no instructor; year is approximate. No public notebooks. Public university marketing-analytics course repos in Python turned out to be rare; those found were R-based (Tilburg gknox79/customer-analytics, Kellogg fzettelmeyer/mktg482, USC dadepro/mkt566) or unlicensed student work.
 
@@ -13356,7 +13358,7 @@ Priority: core
 
 Focus: GitHub Classroom shut down on 2026-08-28, including its website, APIs and services. Classroom and assignment names, tests defined outside repos and LTI rosters will be deleted; user accounts, repos and organizations stay.
 
-Teaching Suggestion: Instructor-only: don't build BADM 534's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead.
+Teaching Suggestion: Instructor-only: don't build the course's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead.
 
 Cautions: New sign-ups ended 2026-05-26 (https://github.blog/changelog/2026-05-26-github-classroom-sign-ups-are-no-longer-available, fetched). GitHub's migration page names Codio and Classroom 50 as partner options and describes a gh CLI export utility (https://docs.github.com/en/education/manage-coursework-with-github-classroom/get-started-with-github-classroom/export-or-migrate-github-classroom-data, fetched). Older GitHub Education pages still describe Classroom as active and are stale.
 
@@ -13428,7 +13430,7 @@ Priority: core
 
 Focus: Open-source, Pandoc-based publishing system that turns .qmd, .ipynb and Markdown files containing Python or R code into websites, books, slides and PDFs. Websites get navigation, cross-references and a built-in local search index.
 
-Teaching Suggestion: Leading candidate engine for the BADM 534 wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine.
+Teaching Suggestion: Leading candidate engine for the Marketing Analytics wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine.
 
 Cautions: Version status on 2026-10-23: 1.10.x is the current stable line (GitHub marks v1.10.18 as Latest, July 2026), and 1.11.x is in pre-release. Quarto 1.9 (2026-03-24, https://opensource.posit.co/blog/2026-03-24_1.9-release/, fetched) added 'llms-txt: true' for websites, which writes an llms.txt index plus a .llms.md copy of each page so students can feed the wiki to an AI assistant. It also made opt-in (express) cookie consent the default, added screen-reader labels for videos, and added experimental PDF/UA output. Release posts now live on opensource.posit.co. Algolia is an optional alternative to the built-in search.
 
@@ -13698,7 +13700,7 @@ Priority: core
 
 Focus: Template repo that builds a JupyterLite site and deploys it to GitHub Pages with GitHub Actions. Notebooks go in the content folder, and kernels and extensions are listed in requirements.txt.
 
-Teaching Suggestion: Use as the template for a BADM 534 'lab' subsite that holds the module notebooks and is linked from the wiki.
+Teaching Suggestion: Use as the template for a Marketing Analytics 'lab' subsite that holds the module notebooks and is linked from the wiki.
 
 Cautions: Deploy guide (https://jupyterlite.readthedocs.io/en/stable/quickstart/deploy.html, fetched): click 'Use this template', enable Actions, set workflow permissions to read/write and the Pages source to GitHub Actions. For pre-installed packages, use the xeus-python demo with an environment.yml. Live demo at jupyterlite.github.io/demo. Requires Firefox 90+ or Chromium 89+.
 
@@ -13986,7 +13988,7 @@ Priority: core
 
 Focus: Campus standard under the Digital Accessibility Policy (HR-86). Internally developed web content must meet the most recent recommended WCAG, currently 2.2 AA, use WAI-ARIA 1.2, and work with major browsers and screen readers. Course content and training materials are explicitly in scope.
 
-Teaching Suggestion: The binding target for the BADM 534 wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.
+Teaching Suggestion: The binding target for the Marketing Analytics wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.
 
 Cautions: Commercial SaaS is held to 2.1 AA. Campus resources: instructor tips at https://itaccessibility.illinois.edu/tips-instructor and evaluation tools at https://itaccessibility.illinois.edu/web-evaluation-tools (links seen on itaccessibility.illinois.edu). The page lists no deadlines.
 
@@ -14058,7 +14060,7 @@ Priority: core
 
 Focus: Campus-supported platform for building course chatbots over uploaded materials (PDFs, slides, videos, a web crawl, or a Canvas connection). Answers cite their sources, and a tutor-mode prompt is available. The official instance is chat.illinois.edu.
 
-Teaching Suggestion: Build a BADM 534 assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page.
+Teaching Suggestion: Build a Marketing Analytics assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page.
 
 Cautions: UIUC.chat is moving to chat.illinois.edu, and chatbot creation is disabled on the old site (https://docs.uiuc.chat/migration/migrate-to-illinois-chat.md, fetched). Per the FAQ it is free to use but you supply your own OpenAI API key, and data is stored on AWS with no guarantees; the FAQ may predate the campus migration. Privacy: there is no FERPA statement and no documented iframe embed, so keep student records and grades out of it. Backend: https://github.com/Center-for-AI-Innovation/ai-ta-backend (public, MIT); access to the frontend repo appears restricted. Support: genaisupport@mx.uillinois.edu.
 

@@ -692,7 +692,7 @@
    ],
    "ai_angle": true,
    "summary": "Preregistered experiment with BCG consultants: GPT-4 improved speed and quality on tasks inside the AI 'frontier' but reduced correctness on a task just outside it. Introduces 'centaur' and 'cyborg' work styles.",
-   "wiki_use": "Core business-school reading on why AI help is uneven; students map which BADM 534 tasks sit inside or outside the frontier.",
+   "wiki_use": "Core business-school reading on why AI help is uneven; students map which Marketing Analytics tasks sit inside or outside the frontier.",
    "verified_via": "search",
    "notes": "The SSRN page wouldn't load directly; URL and PDF come from search results. Author list as given in Shen & Tamkin (2026). A later journal version couldn't be confirmed."
   },
@@ -1447,7 +1447,7 @@
    ],
    "ai_angle": true,
    "summary": "Short essay on how people who program as a means to an end (scientists, engineers, and by extension analysts) can use AI tools to learn programming.",
-   "wiki_use": "Good fit for BADM 534's non-CS audience; assign in Week 1 alongside Willison.",
+   "wiki_use": "Good fit for the course's non-CS audience; assign in Week 1 alongside Willison.",
    "verified_via": "fetch"
   },
   {
@@ -1471,7 +1471,7 @@
    ],
    "ai_angle": true,
    "summary": "How Harvard's CS50 deployed AI tools, including the CS50 Duck rubber-duck debugger, built to guide students toward solutions rather than hand them answers, and how students responded.",
-   "wiki_use": "Model for a course-specific hint-first AI tutor (for example a Claude Project or custom GPT with a 'don't give full solutions' system prompt) for BADM 534 labs.",
+   "wiki_use": "Model for a course-specific hint-first AI tutor (for example a Claude Project or custom GPT with a 'don't give full solutions' system prompt) for Marketing Analytics labs.",
    "verified_via": "fetch",
    "notes": "Full author list not captured, so check the PDF. Follow-up: 'Improving AI in CS50: Leveraging Human Feedback for Better Learning' (SIGCSE 2025), https://cs.harvard.edu/malan/publications/fp0627-liu.pdf"
   },
@@ -1807,7 +1807,7 @@
    ],
    "ai_angle": true,
    "summary": "Widely adopted five-level scale for how much AI an assessment allows: No AI, AI Planning, AI Collaboration, Full AI, AI Exploration. Now at version 2.1.",
-   "wiki_use": "Tag every BADM 534 assignment with an AIAS level on the wiki (for example, concept checks at Level 1, labs at Level 3 or 4, the team project at Level 5).",
+   "wiki_use": "Tag every Marketing Analytics assignment with an AIAS level on the wiki (for example, concept checks at Level 1, labs at Level 3 or 4, the team project at Level 5).",
    "verified_via": "fetch",
    "notes": "Updated paper 'Reimagining the AIAS' (JUTLP 2025): https://doi.org/10.53761/rrm4y757. Resources: https://aiassessmentscale.com/resources/"
   },
@@ -1832,7 +1832,7 @@
    ],
    "ai_angle": true,
    "summary": "Backward-design guide: learners, outcomes (Bloom's higher levels), assessments (AI required, allowed or banned for each), activities. Comes with a Word toolkit and a worked Data Analytics course example.",
-   "wiki_use": "Use the Data Analytics toolkit example (https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_ToolkitExampleDataAnalytics.pdf) as a template when redesigning each BADM 534 module.",
+   "wiki_use": "Use the Data Analytics toolkit example (https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_ToolkitExampleDataAnalytics.pdf) as a template when redesigning each Marketing Analytics module.",
    "verified_via": "fetch",
    "notes": "Toolkit files dated March 2024; page modified September 2026. Toolkit (docx): https://mitsloanedtech.mit.edu/wp-content/uploads/2024/03/AIHub_AI-ResilientLXDesignToolkit.docx"
   },
@@ -2068,7 +2068,7 @@
    ],
    "ai_angle": true,
    "summary": "College-level infographic and links for instructors, including Gies syllabus guidance on setting permitted AI uses, having students document and cite AI use, and checking AI output for accuracy.",
-   "wiki_use": "Make sure the BADM 534 AI policy is consistent with college principles; link from the syllabus.",
+   "wiki_use": "Make sure the Marketing Analytics AI policy is consistent with college principles; link from the syllabus.",
    "verified_via": "fetch",
    "notes": "Created 19 May 2023; last updated 6 November 2025. Some linked tool names (for example Google Bard) are dated."
   },
@@ -6378,7 +6378,7 @@
    ],
    "ai_angle": true,
    "summary": "Gies MOOC taught by Unnati Narang, about 16-20 hours with Python demos. Four modules: course intro and causal analysis (experiments, matching, IV, DiD); AI, prediction and ML including LLM applications; user, firm and AI-generated content analysis; and segmentation, conjoint, CLV and churn.",
-   "wiki_use": "Link as optional video backup for students who want lectures; its module order closely tracks BADM 534.",
+   "wiki_use": "Link as optional video backup for students who want lectures; its module order closely tracks Marketing Analytics.",
    "tools": [
     "Python",
     "Generative AI"
@@ -15254,7 +15254,7 @@
    ],
    "ai_angle": false,
    "summary": "Course overview for a 3-unit MBA marketing analytics course taught in Jupyter/Python: acquisition, targeting and retention, experimental design, SEO and web analytics. Methods include RFM and clustering, logistic regression, neural nets and discrete choice with full-factorial designs.",
-   "wiki_use": "Benchmark for scoping BADM 534 against a peer MBA course.",
+   "wiki_use": "Benchmark for scoping Marketing Analytics against a peer MBA course.",
    "tools": [
     "jupyter",
     "python"
@@ -17090,7 +17090,7 @@
    ],
    "ai_angle": false,
    "summary": "GitHub Classroom shut down on 2026-08-28, including its website, APIs and services. Classroom and assignment names, tests defined outside repos and LTI rosters will be deleted; user accounts, repos and organizations stay.",
-   "wiki_use": "Instructor-only: don't build BADM 534's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead.",
+   "wiki_use": "Instructor-only: don't build the course's assignment distribution on GitHub Classroom. Use Classroom 50, Codio, or plain template repositories instead.",
    "tools": [
     "GitHub Classroom"
    ],
@@ -17202,7 +17202,7 @@
    ],
    "ai_angle": true,
    "summary": "Open-source, Pandoc-based publishing system that turns .qmd, .ipynb and Markdown files containing Python or R code into websites, books, slides and PDFs. Websites get navigation, cross-references and a built-in local search index.",
-   "wiki_use": "Leading candidate engine for the BADM 534 wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine.",
+   "wiki_use": "Leading candidate engine for the Marketing Analytics wiki. One source produces pages, slides and notebooks, and freeze means heavy Python runs only on the instructor's machine.",
    "tools": [
     "quarto",
     "jupyter",
@@ -17638,7 +17638,7 @@
    ],
    "ai_angle": false,
    "summary": "Template repo that builds a JupyterLite site and deploys it to GitHub Pages with GitHub Actions. Notebooks go in the content folder, and kernels and extensions are listed in requirements.txt.",
-   "wiki_use": "Use as the template for a BADM 534 'lab' subsite that holds the module notebooks and is linked from the wiki.",
+   "wiki_use": "Use as the template for a Marketing Analytics 'lab' subsite that holds the module notebooks and is linked from the wiki.",
    "tools": [
     "jupyterlite",
     "GitHub Actions"
@@ -18087,7 +18087,7 @@
    ],
    "ai_angle": false,
    "summary": "Campus standard under the Digital Accessibility Policy (HR-86). Internally developed web content must meet the most recent recommended WCAG, currently 2.2 AA, use WAI-ARIA 1.2, and work with major browsers and screen readers. Course content and training materials are explicitly in scope.",
-   "wiki_use": "The binding target for the BADM 534 wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.",
+   "wiki_use": "The binding target for the Marketing Analytics wiki: design to WCAG 2.2 AA and test with NVDA and VoiceOver.",
    "verified_via": "fetch",
    "notes": "Commercial SaaS is held to 2.1 AA. Campus resources: instructor tips at https://itaccessibility.illinois.edu/tips-instructor and evaluation tools at https://itaccessibility.illinois.edu/web-evaluation-tools (links seen on itaccessibility.illinois.edu). The page lists no deadlines."
   },
@@ -18208,7 +18208,7 @@
    ],
    "ai_angle": true,
    "summary": "Campus-supported platform for building course chatbots over uploaded materials (PDFs, slides, videos, a web crawl, or a Canvas connection). Answers cite their sources, and a tutor-mode prompt is available. The official instance is chat.illinois.edu.",
-   "wiki_use": "Build a BADM 534 assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page.",
+   "wiki_use": "Build a Marketing Analytics assistant grounded in the wiki by crawling the GitHub Pages site, and link it from every page.",
    "tools": [
     "Illinois Chat",
     "OpenAI API",

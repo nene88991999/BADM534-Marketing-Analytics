@@ -45,9 +45,7 @@ def main():
 \begin{titlepage}
 \color{IlliniBlue}
 \vspace*{1.2cm}
-{\sffamily\Large BADM 534\par}
-\vspace{.7cm}
-{\Huge\bfseries Data Analytics for\\[.2cm] Marketing Applications\par}
+{\Huge\bfseries Marketing Analytics\par}
 \vspace{.8cm}
 {\LARGE Lecture Notes\par}
 \vspace{.5cm}
@@ -64,7 +62,7 @@ def main():
 \clearpage
 \pagenumbering{arabic}
 '''
-    master=ROOT/'BADM534_Lecture_Notes.tex'
+    master=ROOT/'Marketing_Analytics_Lecture_Notes.tex'
     fragments = [re.sub(r'\\noindent\s*\n+', lambda m: r'\noindent ', fragment) for fragment in fragments]
     fragments = [fragment.replace('Python source:',
         '\\FloatBarrier\n\\Needspace{8\\baselineskip}\nPython source:') for fragment in fragments]
@@ -78,7 +76,7 @@ def main():
         for fragment in fragments]
     master.write_text(intro+'\n'.join(fragments)+'\n\\end{document}\n')
     run([args.tectonic,'--keep-logs','--outdir',build,master])
-    shutil.copy2(build/'BADM534_Lecture_Notes.pdf',ROOT/'BADM534_Lecture_Notes.pdf')
+    shutil.copy2(build/'Marketing_Analytics_Lecture_Notes.pdf',ROOT/'Marketing_Analytics_Lecture_Notes.pdf')
     if args.figures:
         from PIL import Image, ImageChops
         atlas=ROOT/'figure_atlas.tex'
@@ -101,7 +99,7 @@ def main():
                 im.crop((max(0,l-25),max(0,t-25),min(im.width,r+25),min(im.height,b+25))).save(ROOT/'figures'/f'{name}.png')
         finally:
             atlas.unlink(missing_ok=True)
-    print(f'Built {len(modules)} modules and {len(names)} figures: {ROOT / "BADM534_Lecture_Notes.pdf"}')
+    print(f'Built {len(modules)} modules and {len(names)} figures: {ROOT / "Marketing_Analytics_Lecture_Notes.pdf"}')
 
 if __name__=='__main__':
     main()

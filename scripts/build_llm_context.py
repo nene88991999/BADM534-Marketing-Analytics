@@ -20,7 +20,7 @@ def safe_path(relative):
 def build():
     manifest = json.loads((ROOT / 'course.json').read_text())
     parts = [
-        '# BADM 534: Portable Course Context\n\n'
+        '# Marketing Analytics: Portable Course Context\n\n'
         'Generated from course.json and the source files identified below. '
         'This file contains course navigation and original catalog annotations, '
         'not the complete contents of the linked readings. '

@@ -1,10 +1,10 @@
-# What MBA 542 can contribute to BADM 534
+# What MBA 542 can contribute to Marketing Analytics
 
 *Assessment of the two Box folders (`2026_Spring_Yang`, `2026_Spring2_Yang`), 2026-10-23.*
 
 ## Bottom line
 
-MBA 542 overlaps with BADM 534 less in topic than in **method**. Its live sessions already run the loop BADM 534 needs: hand students a small, purpose-built dataset, let an LLM do the first pass, then make them judge the output. The difference is the tooling. In MBA 542 students upload a CSV to ChatGPT and ask questions ("no coding is required"). In BADM 534 they use an AI coding assistant to write and verify the analysis code themselves. Most of the reusable value is in that scaffolding:
+MBA 542 overlaps with Marketing Analytics less in topic than in **method**. Its live sessions already run the loop Marketing Analytics needs: hand students a small, purpose-built dataset, let an LLM do the first pass, then make them judge the output. The difference is the tooling. In MBA 542 students upload a CSV to ChatGPT and ask questions ("no coding is required"). In Marketing Analytics they use an AI coding assistant to write and verify the analysis code themselves. Most of the reusable value is in that scaffolding:
 
 - the synthetic datasets
 - the prompt → breakout → debrief activity pattern
@@ -16,7 +16,7 @@ None of the 60 videos needs to move. The scripts carry the same content as text,
 
 ## Crosswalk
 
-| MBA 542 asset | Where it fits in BADM 534 | Recommended use |
+| MBA 542 asset | Where it fits in Marketing Analytics | Recommended use |
 |---|---|---|
 | **Synthetic grocery trips** (2 variants × 1,000 trips: date, Instacart vs in-person, basket string) | M2 customer data and wrangling; M4 basket segmentation; M6 online-vs-offline comparison | **Copy.** Ideal first AI-assisted coding exercise: parse basket strings, compute size, variety and repetition by channel. Pairs with Chintala, Liaukonytė & Yang (2024). |
 | **Synthetic Netflix viewing profile** (500 events, 9 columns) | M7 recommender systems; M2 visualization | **Copy.** Upgrade the MBA 542 "describe it to ChatGPT" prompt into code: content-based recommender, then a diversity-aware re-rank. |
@@ -27,7 +27,7 @@ None of the 60 videos needs to move. The scripts carry the same content as text,
 | **Breakout sheets** (BR1/BR2 per module) and **group-activity debriefs** | Wiki activity pages; post-class synthesis pages | **Copy.** The debriefs (aggregate findings, no student names) are exactly the "what we learned" page format a wiki can carry. |
 | **Optimal LLM Usage Guide** (3 pp.) | Folder 12 policy; the wiki's AI-use page | **Copy and adapt.** The core rules carry over: thinking aid, not answer engine; ask "what could be wrong?"; you must be able to defend it. It needs a coding section: verify by running, test, and log prompts. |
 | **TA grading prompts** (master prompt plus per-module rubric prompts) | Folder 12: AI-assisted grading of the essay assignment and project reports | **Copy and adapt.** This partly fills the "no rubric for AI-assisted coding" gap: reuse the format and add criteria for correctness, reproducibility and disclosure. |
-| **Fall 2026 Canvas update** (post-semester changes) | 00_Index design notes | **Copy the lessons, not the document.** Free tiers must suffice. Onboard tools in week 1. Size tasks to free-tier upload limits. Map every assignment to the content that teaches it. Don't require skills the materials don't cover, which is the main risk for a coding-heavy BADM 534. |
+| **Fall 2026 Canvas update** (post-semester changes) | 00_Index design notes | **Copy the lessons, not the document.** Free tiers must suffice. Onboard tools in week 1. Size tasks to free-tier upload limits. Map every assignment to the content that teaches it. Don't require skills the materials don't cover, which is the main risk for a coding-heavy Marketing Analytics. |
 | **Lecture scripts, MOOC 2 Module 1: Recommendation Systems** (6 + Instacart case) | M7 | **Copy.** First drafts for the recommender wiki page: trust, diversity, multi-objective design, evaluation. |
 | **Lecture scripts, MOOC 2 Module 4: Measurement Challenges** (6) | M6 (data gaps, attribution bias → why experiments); M8 and AI track (data poisoning) | **Copy.** Ready-made wiki prose. *Update needed:* M2M4L2 still describes third-party cookies as deprecated in major browsers, but Chrome has since kept them. |
 | **Lecture scripts, MOOC 1 Module 2: Content design, GEO, virality** (6) | M5 (text features of virality); M8 (GEO) | **Copy.** |
@@ -43,9 +43,9 @@ None of the 60 videos needs to move. The scripts carry the same content as text,
 | Zoom chat logs | — | **Exclude.** They contain student names (FERPA). |
 | Meeting notes, timelines, QC reports, production templates, rosters | — | **Skip.** Administrative. |
 
-## Readings from MBA 542 worth adding to the BADM 534 catalog
+## Readings from MBA 542 worth adding to the Marketing Analytics catalog
 
-**Done 2026-10-23.** All 17 below were added to the catalog (`_data/MBA542_READINGS.yaml`), each tagged with its BADM 534 module and noted as "Also on the MBA 542 Module N reading list."
+**Done 2026-10-23.** All 17 below were added to the catalog (`_data/MBA542_READINGS.yaml`), each tagged with its Marketing Analytics module and noted as "Also on the MBA 542 Module N reading list."
 
 - **M5:** Berger & Milkman (2012, JMR), "What makes online content viral?"; Lin, Yao & Chen (2021, JMR), "Happiness begets money" (emotion in live streaming); Liu, Dzyabura & Mizik (2020, *Marketing Science*), "Visual listening in"; Berger (2014, JCP), WOM review.
 - **M2/M6:** Chintala, Liaukonytė & Yang (2024, *Marketing Science*), "Browsing the aisles or browsing the app?"; Narang & Shankar (2019, *Marketing Science*), mobile app introduction and purchases/returns. That is Unnati's paper, which gives continuity with the previous course and makes a clean DiD example.
