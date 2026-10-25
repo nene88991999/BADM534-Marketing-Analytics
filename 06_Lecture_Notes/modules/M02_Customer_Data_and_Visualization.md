@@ -782,3 +782,281 @@ if __name__ == "__main__":
     interactive_chart(monthly, cdf)
     print("Built three TikZ figures, the Vega-Lite specification, and interactive HTML.")
 ```
+
+## 2.16 McDonald's: Measuring Ice-Cream Availability
+
+\noindent A restaurant manager deciding where to investigate service interruptions needs to know which customers could not obtain the advertised product. A digital ordering system supplies one observation of availability. McBroken records an indicator named `is_broken` from the ordering channel. An unavailable item can reflect equipment failure, cleaning, a closed restaurant, depleted inventory, or a problem in the ordering system. A verification call can distinguish these mechanisms before a manager sends a technician or changes a promotion. The analytical outcome is therefore **recorded order unavailability**. A repair log would supply a different outcome.
+
+The supplied [McBroken collection](../../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/README.md) contains US records from October 25, 2025, through October 24, 2026, plus a longer weekly country series. Rashiq Zahid's [McBroken](https://mcbroken.com/) is the underlying source; [MrFlynn's archive](https://github.com/MrFlynn/mcbroken-archive) preserves successive snapshots. The archive's inspected workflow selects records with a reported check age below 61 minutes. Its older README describes a different freshness window, so the retrieval rule and version matter. An archive commit time records when a file was saved. The estimated check time also depends on the reported check age.
+
+### 2.16.1 Coverage Determines the Population Behind a Percentage
+
+\noindent Let $R_{it}$ indicate that address key $i$ appears in the selected snapshot on date $t$, and let $U_{it}$ equal one when that record reports unavailability. The observed daily percentage is
+
+$$
+100\widehat p_t=100\frac{\sum_i R_{it}U_{it}}{\sum_i R_{it}}.
+$$
+
+The denominator counts records observed in that snapshot. An absent record has an unknown status. It contributes to neither the numerator nor the denominator. Counting absence as availability would lower the reported percentage whenever collection coverage falls. The fraction also differs from the share of customer visits that encounter an unavailable item: customer arrivals and purchases supply the weights for that managerial outcome.
+
+The audit reconciles the store panel with the supplied national totals and verifies unique store-date keys. The 365-date calendar contains US records on 356 dates, including three dates with fewer than 2,000 records. Nine dates have no US observations. The July 24, 2026, snapshot has only two US records, both reporting availability. Its zero percentage describes those two records. The missing dates remain missing in the course table.
+
+![US record counts and recorded unavailability follow different series. The dashed count threshold is an imposed sensitivity screen, and gaps remain missing.](../figures/M02_mcbroken_coverage.png)
+
+An equal-day average gives each observed date the same weight. A pooled fraction gives greater weight to dates with more records. For these data, the equal-day average is 13.18% and the pooled record fraction is 13.37%. Restricting the calculation to dates with at least 2,000 records gives 13.22% and 13.37%, respectively. Requiring 5,000 records leaves 279 dates and gives 13.48% and 13.47%. These comparisons measure sensitivity to coverage restrictions; a count threshold alone does not make the retained sample representative. The 2,000-record rule is an explicit teaching choice.
+
+\FloatBarrier
+
+### 2.16.2 Address Keys and Restaurant Identity
+
+\noindent The supplied dimension table contains 29,123 address-based keys and 13,821 exact coordinate pairs. Changes in street spelling can create a new key at the same coordinates. The discrepancy is a useful linkage diagnostic, although a coordinate match by itself does not establish that two records describe the same restaurant. Nearby outlets, rounded coordinates, and corrected locations require additional review. The calculations retain the supplied keys and record the coordinate count without merging outlets automatically.
+
+The median key appears on 112 dates. Among 3,024,184 successive within-key record pairs, 929,451 span more than one calendar day. A row shift would silently describe many irregular intervals as one-day transitions. An exact join on key and next calendar date preserves the intended horizon. A key that changes spelling between those dates then lacks a linked outcome. This linkage choice narrows the forecast population and makes the missing-label count economically relevant.
+
+### 2.16.3 Verify the Parser Before Treating a Status as Observed
+
+\noindent JSON booleans, missing fields, and text strings require separate treatment. In Python, `bool(None)` returns `False`, whereas `bool("false")` returns `True`. Either conversion can produce a plausible but incorrect status if the input schema changes. An unrecognized check-age string also leaves the check time unknown; substituting zero minutes makes the observation appear newly collected. The parser below uses constructed edge cases to preserve these distinctions. The supplied CSV status column passes a binary-value check, but that check cannot recover information already lost during its original conversion.
+
+Python source: [api_checks.py](../../03_Data_and_Code/McBroken/api_checks.py). From its directory, run `python api_checks.py`.
+
+```python
+"""Preserve unknown API values instead of inventing a working machine or check time."""
+import re
+
+import pandas as pd
+
+
+def status(value):
+    if value is True:
+        return 1
+    if value is False:
+        return 0
+    if value is None:
+        return pd.NA
+    raise ValueError(f"Expected a JSON boolean or null, received {value!r}")
+
+
+def check_time(snapshot_utc, text):
+    match = re.fullmatch(r"Checked (\d+) minutes? ago", text or "")
+    if match is None:
+        return pd.NaT
+    return pd.Timestamp(snapshot_utc) - pd.Timedelta(minutes=int(match.group(1)))
+
+
+if __name__ == "__main__":
+    # Constructed edge cases for an AI-generated parser, not observed store data.
+    values = pd.Series([status(v) for v in [True, False, None]], dtype="Int64")
+    assert values.iloc[0] == 1 and values.iloc[1] == 0 and pd.isna(values.iloc[2])
+    assert pd.isna(check_time("2026-10-24T18:00:00Z", None))
+    try:
+        status("false")
+    except ValueError:
+        print("A string status requires schema review; an unknown status remains missing.")
+    else:
+        raise AssertionError("String status was silently accepted")
+```
+
+### 2.16.4 Audit and Reproduce the Availability Comparisons
+
+\noindent The preparation program checks unique keys, join coverage, status values, check ages, national totals, and the dimension table's observed-date counts. It creates a complete calendar before calculating rates. It also constructs exact next-day matches for Section 7.18, retaining the number of eligible origins when their next-day outcome is missing. The source-file hashes and selected archive commit identifiers keep the calculations traceable. The source bundle is required to rebuild these aggregates; the released aggregate tables support the subsequent programs directly.
+
+Python source: [prepare.py](../../03_Data_and_Code/McBroken/prepare.py). From its directory, run `python prepare.py`. The default input is the supplied resource bundle; `--source PATH` selects another copy of its data directory.
+
+```python
+"""Audit supplied McBroken tables and build aggregate, offline teaching inputs."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+DEFAULT_SOURCE = (ROOT.parents[1] / "01_Resources" /
+                  "02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/data")
+PREFIX = "mcbroken_daily_2025-10_2026-10_"
+
+
+def validate_panel(panel, dimension):
+    if panel.duplicated(["date", "store_key"]).any():
+        raise ValueError("Duplicate store-date records")
+    if dimension.store_key.duplicated().any():
+        raise ValueError("Duplicate dimension keys")
+    if not panel.is_broken.isin([0, 1]).all():
+        raise ValueError("Missing or nonbinary status")
+    if not panel.store_key.isin(dimension.store_key).all():
+        raise ValueError("Unmatched store key")
+    if not panel.last_checked_min.between(0, 60).all():
+        raise ValueError("Check age outside the supplied archive's range")
+
+
+def make_transitions(panel, daily):
+    """Match exact next calendar dates; retain the count of unlabeled origins."""
+    good = daily.n_checked.ge(2000) & daily.offset_hours.abs().le(3)
+    origin = panel[panel.date.isin(daily.loc[good, "date"])].copy()
+    origin["date"] += pd.Timedelta(days=1)
+    origin = origin[origin.date.le(daily.date.max())]
+    origin = origin.rename(columns={"is_broken": "previous_unavailable"})
+    target = panel[panel.date.isin(daily.loc[good, "date"])][
+        ["date", "store_key", "is_broken"]]
+    pairs = origin.merge(target, on=["date", "store_key"], how="left",
+                         validate="one_to_one")
+    return (pairs.groupby(["date", "previous_unavailable"]).is_broken
+            .agg(n_origins="size", n_labeled="count", n_unavailable="sum")
+            .reset_index())
+
+
+def main(source):
+    source = Path(source)
+    used = []
+    def read(name, **kwargs):
+        path = source / name
+        used.append(path)
+        return pd.read_csv(path, **kwargs)
+
+    panel = read(PREFIX + "stores_us_panel.csv.gz", parse_dates=["date"])
+    dim = read(PREFIX + "stores_us_dim.csv")
+    country = read(PREFIX + "country.csv", parse_dates=["date"])
+    snaps = read(PREFIX + "snapshots_used.csv")
+    weekly = read("mcbroken_weekly_2020_2026_country.csv", parse_dates=["date"])
+    weekly_snaps = read("mcbroken_weekly_2020_2026_snapshots_used.csv")
+    validate_panel(panel, dim)
+    us = country[country.country.eq("USA")].copy()
+    if us.date.duplicated().any():
+        raise ValueError("Duplicate US snapshot dates")
+    actual = panel.groupby("date").is_broken.agg(n_checked="size", n_broken="sum")
+    pd.testing.assert_frame_equal(actual.sort_index(),
+        us.set_index("date")[["n_checked", "n_broken"]].sort_index(),
+        check_dtype=False, check_freq=False)
+    days = panel.groupby("store_key").date.nunique()
+    pd.testing.assert_series_equal(days.sort_index(),
+        dim.set_index("store_key").n_days.sort_index(), check_names=False)
+    snaps["snapshot_utc"] = pd.to_datetime(snaps.ts, utc=True)
+    snaps["date"] = snaps.snapshot_utc.dt.tz_localize(None).dt.normalize()
+    if snaps.date.duplicated().any():
+        raise ValueError("Multiple selected snapshots per calendar date")
+    daily = pd.DataFrame({"date": pd.date_range(snaps.date.min(), snaps.date.max())})
+    daily = daily.merge(snaps[["date", "snapshot_utc", "sha"]], on="date",
+                        how="left", validate="one_to_one")
+    daily = daily.merge(us[["date", "n_checked", "n_broken"]], on="date",
+                        how="left", validate="one_to_one")
+    daily["share_unavailable"] = daily.n_broken / daily.n_checked
+    target = daily.date.dt.tz_localize("UTC") + pd.Timedelta(hours=18)
+    daily["offset_hours"] = (daily.snapshot_utc - target).dt.total_seconds() / 3600
+    transitions = make_transitions(panel, daily)
+    for col in ["n_origins", "n_labeled", "n_unavailable"]:
+        transitions[col] = transitions[col].astype(int)
+    assert (transitions.n_unavailable <= transitions.n_labeled).all()
+    assert (transitions.n_labeled <= transitions.n_origins).all()
+
+    ordered = panel.sort_values(["store_key", "date"])
+    gaps = ordered.groupby("store_key").date.diff().dt.days
+    event = pd.Timestamp("2024-10-28")
+    weekly["event_week"] = (weekly.date - event).dt.days // 7
+    event_data = weekly[weekly.event_week.between(-12, 12)
+                        & weekly.country.isin(["USA", "UK", "CA"])].copy()
+    event_data = event_data.merge(weekly_snaps[["period", "sha"]], on="period",
+                                  validate="many_to_one")
+    assert event_data.commit.eq(event_data.sha.str[:12]).all()
+    event_data["share_unavailable"] = event_data.n_broken / event_data.n_checked
+    out = ROOT / "data"
+    out.mkdir(exist_ok=True)
+    daily.to_csv(out / "daily_us.csv", index=False)
+    transitions.to_csv(out / "transitions.csv", index=False)
+    event_data.drop(columns="share_broken").to_csv(out / "policy_window.csv", index=False)
+    audit = {
+        "source_rows": len(panel), "address_keys": len(dim),
+        "exact_coordinate_pairs": len(dim[["lat", "lon"]].drop_duplicates()),
+        "calendar_days": len(daily), "us_observed_days": len(us),
+        "missing_us_days": int(daily.n_checked.isna().sum()),
+        "low_coverage_days": int(daily.n_checked.lt(2000).sum()),
+        "successive_key_records": int(gaps.notna().sum()),
+        "consecutive_day_pairs": int(gaps.eq(1).sum()),
+        "long_gap_pairs": int(gaps.gt(1).sum()),
+        "median_days_per_key": float(dim.n_days.median()),
+        "snapshot_abs_offset_hours_max": float(daily.offset_hours.abs().max()),
+        "duplicate_store_dates": 0, "unmatched_keys": 0,
+        "country_counts_reconciled": True, "dimension_days_reconciled": True,
+        "matching": "Original address keys; coordinates are an audit, not a merge rule.",
+        "transition_screen": "Both dates: >=2000 US records and within 3 hours of 18:00 UTC.",
+        "status_scope": "The supplied binary field was validated; raw API missingness cannot be recovered from these CSVs.",
+    }
+    (out / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
+    manifest = {
+        "source": "Rashiq Zahid, McBroken; snapshots via MrFlynn/mcbroken-archive",
+        "urls": ["https://mcbroken.com", "https://github.com/MrFlynn/mcbroken-archive"],
+        "files": {p.name: {"sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
+                            "bytes": p.stat().st_size} for p in used},
+        "rights": "Upstream archive software uses Unlicense; no separate McBroken data license was established. Public teaching outputs are attributed aggregate calculations.",
+    }
+    (ROOT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print(json.dumps(audit, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
+    main(parser.parse_args().source)
+```
+
+\noindent The coverage program reads the released calendar table, reports the sensitivity calculations, and generates the two-panel TikZ figure. Both panels use the same calendar. The percentage axis starts at zero and retains its full 0--100 range, so a change in the number observed remains visually distinct from a change in the observed fraction.
+
+Python source: [coverage.py](../../03_Data_and_Code/McBroken/coverage.py). From its directory, run `python coverage.py`.
+
+```python
+"""Compare availability denominators and draw the observed US time series."""
+import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+FIGURES = ROOT.parents[1] / "06_Lecture_Notes/figures"
+
+
+def main():
+    daily = pd.read_csv(ROOT / "data/daily_us.csv", parse_dates=["date"])
+    results = ROOT / "results"
+    results.mkdir(exist_ok=True)
+    rows = []
+    for threshold in [0, 1000, 2000, 5000]:
+        sample = daily[daily.n_checked.notna() & daily.n_checked.ge(threshold)]
+        rows.append({"minimum_checked": threshold, "days": len(sample),
+                     "checked_records": int(sample.n_checked.sum()),
+                     "unavailable_records": int(sample.n_broken.sum()),
+                     "equal_day_percent": 100 * (sample.n_broken / sample.n_checked).mean(),
+                     "pooled_record_percent": 100 * sample.n_broken.sum() / sample.n_checked.sum()})
+    pd.DataFrame(rows).to_csv(results / "coverage_sensitivity.csv", index=False)
+    (results / "coverage.json").write_text(json.dumps({
+        "missing_us_dates": daily.loc[daily.n_checked.isna(), "date"].dt.strftime("%Y-%m-%d").tolist(),
+        "low_coverage_dates": daily.loc[daily.n_checked.lt(2000), "date"].dt.strftime("%Y-%m-%d").tolist(),
+        "sensitivity": rows}, indent=2) + "\n")
+    daily["day"] = (daily.date - daily.date.min()).dt.days
+    def points(column, scale):
+        return " ".join(f"({r.day},{getattr(r, column) * scale:.6f})"
+                        if pd.notna(getattr(r, column)) else f"({r.day},nan)"
+                        for r in daily.itertuples())
+    figure = r"""\begin{tikzpicture}
+\begin{axis}[name=counts,width=12.5cm,height=4.7cm,xmin=0,xmax=364,
+ ymin=0,ymax=15000,ylabel={US Records},xtick=\empty,scaled y ticks=false,
+ ytick={0,5000,10000,15000},unbounded coords=jump]
+\addplot[IlliniBlue] coordinates {COUNTS};
+\addplot[Storm,dashed] coordinates {(0,2000) (364,2000)};
+\end{axis}
+\begin{axis}[at={(counts.south west)},anchor=north west,yshift=-0.55cm,
+ width=12.5cm,height=4.7cm,xmin=0,xmax=364,ymin=0,ymax=100,
+ ylabel={Unavailable (\%)},xlabel={Days Since October 25, 2025},
+ xtick={0,90,180,270,364},unbounded coords=jump]
+\addplot[IlliniOrange] coordinates {RATES};
+\end{axis}
+\end{tikzpicture}
+"""
+    (FIGURES / "M02_mcbroken_coverage.tex").write_text(
+        figure.replace("COUNTS", points("n_checked", 1))
+              .replace("RATES", points("share_unavailable", 100)))
+    print(pd.DataFrame(rows).to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+```

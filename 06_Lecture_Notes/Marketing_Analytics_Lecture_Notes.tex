@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large October 23, 2026\par}
+{\large October 24, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -2350,6 +2350,388 @@ if __name__ == "__main__":
     tikz_figures(monthly, cdf, result)
     interactive_chart(monthly, cdf)
     print("Built three TikZ figures, the Vega-Lite specification, and interactive HTML.")
+\end{Verbatim}
+
+\hypertarget{M02-mcdonalds-measuring-ice-cream-availability}{%
+\section{McDonald's: Measuring Ice-Cream
+Availability}\label{M02-mcdonalds-measuring-ice-cream-availability}}
+
+\noindent \noindent A restaurant manager deciding where to investigate service
+interruptions needs to know which customers could not obtain the
+advertised product. A digital ordering system supplies one observation
+of availability. McBroken records an indicator named \texttt{is\_broken}
+from the ordering channel. An unavailable item can reflect equipment
+failure, cleaning, a closed restaurant, depleted inventory, or a problem
+in the ordering system. A verification call can distinguish these
+mechanisms before a manager sends a technician or changes a promotion.
+The analytical outcome is therefore \textbf{recorded order
+unavailability}. A repair log would supply a different outcome.
+
+The supplied
+\href{../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/README.md}{McBroken
+collection} contains US records from October 25, 2025, through October
+24, 2026, plus a longer weekly country series. Rashiq Zahid's
+\href{https://mcbroken.com/}{McBroken} is the underlying source;
+\href{https://github.com/MrFlynn/mcbroken-archive}{MrFlynn's archive}
+preserves successive snapshots. The archive's inspected workflow selects
+records with a reported check age below 61 minutes. Its older README
+describes a different freshness window, so the retrieval rule and
+version matter. An archive commit time records when a file was saved.
+The estimated check time also depends on the reported check age.
+
+\hypertarget{M02-coverage-determines-the-population-behind-a-percentage}{%
+\subsection{Coverage Determines the Population Behind a
+Percentage}\label{M02-coverage-determines-the-population-behind-a-percentage}}
+
+\noindent \noindent Let \(R_{it}\) indicate that address key \(i\) appears in the
+selected snapshot on date \(t\), and let \(U_{it}\) equal one when that
+record reports unavailability. The observed daily percentage is
+
+\[
+100\widehat p_t=100\frac{\sum_i R_{it}U_{it}}{\sum_i R_{it}}.
+\]
+
+The denominator counts records observed in that snapshot. An absent
+record has an unknown status. It contributes to neither the numerator
+nor the denominator. Counting absence as availability would lower the
+reported percentage whenever collection coverage falls. The fraction
+also differs from the share of customer visits that encounter an
+unavailable item: customer arrivals and purchases supply the weights for
+that managerial outcome.
+
+The audit reconciles the store panel with the supplied national totals
+and verifies unique store-date keys. The 365-date calendar contains US
+records on 356 dates, including three dates with fewer than 2,000
+records. Nine dates have no US observations. The July 24, 2026, snapshot
+has only two US records, both reporting availability. Its zero
+percentage describes those two records. The missing dates remain missing
+in the course table.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_mcbroken_coverage.tex}
+\caption{US record counts and recorded unavailability follow different series. The dashed count threshold is an imposed sensitivity screen, and gaps remain missing.}\label{fig:M02_mcbroken_coverage}
+\end{figure}
+
+An equal-day average gives each observed date the same weight. A pooled
+fraction gives greater weight to dates with more records. For these
+data, the equal-day average is 13.18\% and the pooled record fraction is
+13.37\%. Restricting the calculation to dates with at least 2,000
+records gives 13.22\% and 13.37\%, respectively. Requiring 5,000 records
+leaves 279 dates and gives 13.48\% and 13.47\%. These comparisons
+measure sensitivity to coverage restrictions; a count threshold alone
+does not make the retained sample representative. The 2,000-record rule
+is an explicit teaching choice.
+
+\FloatBarrier
+
+\hypertarget{M02-address-keys-and-restaurant-identity}{%
+\subsection{Address Keys and Restaurant
+Identity}\label{M02-address-keys-and-restaurant-identity}}
+
+\noindent \noindent The supplied dimension table contains 29,123 address-based
+keys and 13,821 exact coordinate pairs. Changes in street spelling can
+create a new key at the same coordinates. The discrepancy is a useful
+linkage diagnostic, although a coordinate match by itself does not
+establish that two records describe the same restaurant. Nearby outlets,
+rounded coordinates, and corrected locations require additional review.
+The calculations retain the supplied keys and record the coordinate
+count without merging outlets automatically.
+
+The median key appears on 112 dates. Among 3,024,184 successive
+within-key record pairs, 929,451 span more than one calendar day. A row
+shift would silently describe many irregular intervals as one-day
+transitions. An exact join on key and next calendar date preserves the
+intended horizon. A key that changes spelling between those dates then
+lacks a linked outcome. This linkage choice narrows the forecast
+population and makes the missing-label count economically relevant.
+
+\hypertarget{M02-verify-the-parser-before-treating-a-status-as-observed}{%
+\subsection{Verify the Parser Before Treating a Status as
+Observed}\label{M02-verify-the-parser-before-treating-a-status-as-observed}}
+
+\noindent \noindent JSON booleans, missing fields, and text strings require
+separate treatment. In Python, \texttt{bool(None)} returns
+\texttt{False}, whereas \texttt{bool("false")} returns \texttt{True}.
+Either conversion can produce a plausible but incorrect status if the
+input schema changes. An unrecognized check-age string also leaves the
+check time unknown; substituting zero minutes makes the observation
+appear newly collected. The parser below uses constructed edge cases to
+preserve these distinctions. The supplied CSV status column passes a
+binary-value check, but that check cannot recover information already
+lost during its original conversion.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/McBroken/api_checks.py}{api\_checks.py}. From
+its directory, run \texttt{python\ api\_checks.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Preserve unknown API values instead of inventing a working machine or check time."""
+import re
+
+import pandas as pd
+
+
+def status(value):
+    if value is True:
+        return 1
+    if value is False:
+        return 0
+    if value is None:
+        return pd.NA
+    raise ValueError(f"Expected a JSON boolean or null, received {value!r}")
+
+
+def check_time(snapshot_utc, text):
+    match = re.fullmatch(r"Checked (\d+) minutes? ago", text or "")
+    if match is None:
+        return pd.NaT
+    return pd.Timestamp(snapshot_utc) - pd.Timedelta(minutes=int(match.group(1)))
+
+
+if __name__ == "__main__":
+    # Constructed edge cases for an AI-generated parser, not observed store data.
+    values = pd.Series([status(v) for v in [True, False, None]], dtype="Int64")
+    assert values.iloc[0] == 1 and values.iloc[1] == 0 and pd.isna(values.iloc[2])
+    assert pd.isna(check_time("2026-10-24T18:00:00Z", None))
+    try:
+        status("false")
+    except ValueError:
+        print("A string status requires schema review; an unknown status remains missing.")
+    else:
+        raise AssertionError("String status was silently accepted")
+\end{Verbatim}
+
+\hypertarget{M02-audit-and-reproduce-the-availability-comparisons}{%
+\subsection{Audit and Reproduce the Availability
+Comparisons}\label{M02-audit-and-reproduce-the-availability-comparisons}}
+
+\noindent \noindent The preparation program checks unique keys, join coverage,
+status values, check ages, national totals, and the dimension table's
+observed-date counts. It creates a complete calendar before calculating
+rates. It also constructs exact next-day matches for Section 7.18,
+retaining the number of eligible origins when their next-day outcome is
+missing. The source-file hashes and selected archive commit identifiers
+keep the calculations traceable. The source bundle is required to
+rebuild these aggregates; the released aggregate tables support the
+subsequent programs directly.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/McBroken/prepare.py}{prepare.py}. From its
+directory, run \texttt{python\ prepare.py}. The default input is the
+supplied resource bundle; \texttt{-\/-source\ PATH} selects another copy
+of its data directory.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Audit supplied McBroken tables and build aggregate, offline teaching inputs."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+DEFAULT_SOURCE = (ROOT.parents[1] / "01_Resources" /
+                  "02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/data")
+PREFIX = "mcbroken_daily_2025-10_2026-10_"
+
+
+def validate_panel(panel, dimension):
+    if panel.duplicated(["date", "store_key"]).any():
+        raise ValueError("Duplicate store-date records")
+    if dimension.store_key.duplicated().any():
+        raise ValueError("Duplicate dimension keys")
+    if not panel.is_broken.isin([0, 1]).all():
+        raise ValueError("Missing or nonbinary status")
+    if not panel.store_key.isin(dimension.store_key).all():
+        raise ValueError("Unmatched store key")
+    if not panel.last_checked_min.between(0, 60).all():
+        raise ValueError("Check age outside the supplied archive's range")
+
+
+def make_transitions(panel, daily):
+    """Match exact next calendar dates; retain the count of unlabeled origins."""
+    good = daily.n_checked.ge(2000) & daily.offset_hours.abs().le(3)
+    origin = panel[panel.date.isin(daily.loc[good, "date"])].copy()
+    origin["date"] += pd.Timedelta(days=1)
+    origin = origin[origin.date.le(daily.date.max())]
+    origin = origin.rename(columns={"is_broken": "previous_unavailable"})
+    target = panel[panel.date.isin(daily.loc[good, "date"])][
+        ["date", "store_key", "is_broken"]]
+    pairs = origin.merge(target, on=["date", "store_key"], how="left",
+                         validate="one_to_one")
+    return (pairs.groupby(["date", "previous_unavailable"]).is_broken
+            .agg(n_origins="size", n_labeled="count", n_unavailable="sum")
+            .reset_index())
+
+
+def main(source):
+    source = Path(source)
+    used = []
+    def read(name, **kwargs):
+        path = source / name
+        used.append(path)
+        return pd.read_csv(path, **kwargs)
+
+    panel = read(PREFIX + "stores_us_panel.csv.gz", parse_dates=["date"])
+    dim = read(PREFIX + "stores_us_dim.csv")
+    country = read(PREFIX + "country.csv", parse_dates=["date"])
+    snaps = read(PREFIX + "snapshots_used.csv")
+    weekly = read("mcbroken_weekly_2020_2026_country.csv", parse_dates=["date"])
+    weekly_snaps = read("mcbroken_weekly_2020_2026_snapshots_used.csv")
+    validate_panel(panel, dim)
+    us = country[country.country.eq("USA")].copy()
+    if us.date.duplicated().any():
+        raise ValueError("Duplicate US snapshot dates")
+    actual = panel.groupby("date").is_broken.agg(n_checked="size", n_broken="sum")
+    pd.testing.assert_frame_equal(actual.sort_index(),
+        us.set_index("date")[["n_checked", "n_broken"]].sort_index(),
+        check_dtype=False, check_freq=False)
+    days = panel.groupby("store_key").date.nunique()
+    pd.testing.assert_series_equal(days.sort_index(),
+        dim.set_index("store_key").n_days.sort_index(), check_names=False)
+    snaps["snapshot_utc"] = pd.to_datetime(snaps.ts, utc=True)
+    snaps["date"] = snaps.snapshot_utc.dt.tz_localize(None).dt.normalize()
+    if snaps.date.duplicated().any():
+        raise ValueError("Multiple selected snapshots per calendar date")
+    daily = pd.DataFrame({"date": pd.date_range(snaps.date.min(), snaps.date.max())})
+    daily = daily.merge(snaps[["date", "snapshot_utc", "sha"]], on="date",
+                        how="left", validate="one_to_one")
+    daily = daily.merge(us[["date", "n_checked", "n_broken"]], on="date",
+                        how="left", validate="one_to_one")
+    daily["share_unavailable"] = daily.n_broken / daily.n_checked
+    target = daily.date.dt.tz_localize("UTC") + pd.Timedelta(hours=18)
+    daily["offset_hours"] = (daily.snapshot_utc - target).dt.total_seconds() / 3600
+    transitions = make_transitions(panel, daily)
+    for col in ["n_origins", "n_labeled", "n_unavailable"]:
+        transitions[col] = transitions[col].astype(int)
+    assert (transitions.n_unavailable <= transitions.n_labeled).all()
+    assert (transitions.n_labeled <= transitions.n_origins).all()
+
+    ordered = panel.sort_values(["store_key", "date"])
+    gaps = ordered.groupby("store_key").date.diff().dt.days
+    event = pd.Timestamp("2024-10-28")
+    weekly["event_week"] = (weekly.date - event).dt.days // 7
+    event_data = weekly[weekly.event_week.between(-12, 12)
+                        & weekly.country.isin(["USA", "UK", "CA"])].copy()
+    event_data = event_data.merge(weekly_snaps[["period", "sha"]], on="period",
+                                  validate="many_to_one")
+    assert event_data.commit.eq(event_data.sha.str[:12]).all()
+    event_data["share_unavailable"] = event_data.n_broken / event_data.n_checked
+    out = ROOT / "data"
+    out.mkdir(exist_ok=True)
+    daily.to_csv(out / "daily_us.csv", index=False)
+    transitions.to_csv(out / "transitions.csv", index=False)
+    event_data.drop(columns="share_broken").to_csv(out / "policy_window.csv", index=False)
+    audit = {
+        "source_rows": len(panel), "address_keys": len(dim),
+        "exact_coordinate_pairs": len(dim[["lat", "lon"]].drop_duplicates()),
+        "calendar_days": len(daily), "us_observed_days": len(us),
+        "missing_us_days": int(daily.n_checked.isna().sum()),
+        "low_coverage_days": int(daily.n_checked.lt(2000).sum()),
+        "successive_key_records": int(gaps.notna().sum()),
+        "consecutive_day_pairs": int(gaps.eq(1).sum()),
+        "long_gap_pairs": int(gaps.gt(1).sum()),
+        "median_days_per_key": float(dim.n_days.median()),
+        "snapshot_abs_offset_hours_max": float(daily.offset_hours.abs().max()),
+        "duplicate_store_dates": 0, "unmatched_keys": 0,
+        "country_counts_reconciled": True, "dimension_days_reconciled": True,
+        "matching": "Original address keys; coordinates are an audit, not a merge rule.",
+        "transition_screen": "Both dates: >=2000 US records and within 3 hours of 18:00 UTC.",
+        "status_scope": "The supplied binary field was validated; raw API missingness cannot be recovered from these CSVs.",
+    }
+    (out / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
+    manifest = {
+        "source": "Rashiq Zahid, McBroken; snapshots via MrFlynn/mcbroken-archive",
+        "urls": ["https://mcbroken.com", "https://github.com/MrFlynn/mcbroken-archive"],
+        "files": {p.name: {"sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
+                            "bytes": p.stat().st_size} for p in used},
+        "rights": "Upstream archive software uses Unlicense; no separate McBroken data license was established. Public teaching outputs are attributed aggregate calculations.",
+    }
+    (ROOT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print(json.dumps(audit, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
+    main(parser.parse_args().source)
+\end{Verbatim}
+
+\noindent The coverage program reads the released calendar table,
+reports the sensitivity calculations, and generates the two-panel TikZ
+figure. Both panels use the same calendar. The percentage axis starts at
+zero and retains its full 0--100 range, so a change in the number
+observed remains visually distinct from a change in the observed
+fraction.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/McBroken/coverage.py}{coverage.py}. From its
+directory, run \texttt{python\ coverage.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Compare availability denominators and draw the observed US time series."""
+import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+FIGURES = ROOT.parents[1] / "06_Lecture_Notes/figures"
+
+
+def main():
+    daily = pd.read_csv(ROOT / "data/daily_us.csv", parse_dates=["date"])
+    results = ROOT / "results"
+    results.mkdir(exist_ok=True)
+    rows = []
+    for threshold in [0, 1000, 2000, 5000]:
+        sample = daily[daily.n_checked.notna() & daily.n_checked.ge(threshold)]
+        rows.append({"minimum_checked": threshold, "days": len(sample),
+                     "checked_records": int(sample.n_checked.sum()),
+                     "unavailable_records": int(sample.n_broken.sum()),
+                     "equal_day_percent": 100 * (sample.n_broken / sample.n_checked).mean(),
+                     "pooled_record_percent": 100 * sample.n_broken.sum() / sample.n_checked.sum()})
+    pd.DataFrame(rows).to_csv(results / "coverage_sensitivity.csv", index=False)
+    (results / "coverage.json").write_text(json.dumps({
+        "missing_us_dates": daily.loc[daily.n_checked.isna(), "date"].dt.strftime("%Y-%m-%d").tolist(),
+        "low_coverage_dates": daily.loc[daily.n_checked.lt(2000), "date"].dt.strftime("%Y-%m-%d").tolist(),
+        "sensitivity": rows}, indent=2) + "\n")
+    daily["day"] = (daily.date - daily.date.min()).dt.days
+    def points(column, scale):
+        return " ".join(f"({r.day},{getattr(r, column) * scale:.6f})"
+                        if pd.notna(getattr(r, column)) else f"({r.day},nan)"
+                        for r in daily.itertuples())
+    figure = r"""\begin{tikzpicture}
+\begin{axis}[name=counts,width=12.5cm,height=4.7cm,xmin=0,xmax=364,
+ ymin=0,ymax=15000,ylabel={US Records},xtick=\empty,scaled y ticks=false,
+ ytick={0,5000,10000,15000},unbounded coords=jump]
+\addplot[IlliniBlue] coordinates {COUNTS};
+\addplot[Storm,dashed] coordinates {(0,2000) (364,2000)};
+\end{axis}
+\begin{axis}[at={(counts.south west)},anchor=north west,yshift=-0.55cm,
+ width=12.5cm,height=4.7cm,xmin=0,xmax=364,ymin=0,ymax=100,
+ ylabel={Unavailable (\%)},xlabel={Days Since October 25, 2025},
+ xtick={0,90,180,270,364},unbounded coords=jump]
+\addplot[IlliniOrange] coordinates {RATES};
+\end{axis}
+\end{tikzpicture}
+"""
+    (FIGURES / "M02_mcbroken_coverage.tex").write_text(
+        figure.replace("COUNTS", points("n_checked", 1))
+              .replace("RATES", points("share_unavailable", 100)))
+    print(pd.DataFrame(rows).to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
 \end{Verbatim}
 
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
@@ -5504,6 +5886,150 @@ if __name__ == "__main__":
     print(json.dumps(result, indent=2))
 \end{Verbatim}
 
+\hypertarget{M06-mcdonalds-repair-policy-and-the-choice-of-a-comparison-group}{%
+\section{McDonald's: Repair Policy and the Choice of a Comparison
+Group}\label{M06-mcdonalds-repair-policy-and-the-choice-of-a-comparison-group}}
+
+\noindent \noindent A franchise operator evaluating access to repair services
+wants to know whether a policy reduces interruptions and improves the
+return to maintenance. The
+\href{https://www.govinfo.gov/content/pkg/FR-2024-10-28/pdf/2024-24563.pdf}{2024
+final rule} introduced a limited circumvention exemption for diagnosis,
+maintenance, and repair of retail-level commercial food-preparation
+equipment. Its effective date is October 28, 2024, as stated on page
+85437; the relevant provision appears on pages 85448--85449.
+Announcement timing, the legal effective date, and actual adoption of
+new repair practices are distinct dates. A change in an ordering
+indicator can arise through several channels described in Section 2.16.
+
+The weekly country data permit a concrete calculation of the comparison
+that a difference-in-differences design would use. Retain the 12 common
+weekly snapshots before October 28 and the 12 after the implementation
+week. Exclude that week from the pre/post means. Require at least 2,000
+US records and 500 records in each comparison country. These imposed
+thresholds retain all 24 pre/post weeks for the USA, Canada, and the UK
+in this window. Compute each weekly percentage from its numerator and
+denominator, then weight weeks equally.
+
+For comparison country \(c\), the descriptive contrast is
+
+\[
+\widehat D_c=(\overline p_{US,post}-\overline p_{US,pre})
+ -(\overline p_{c,post}-\overline p_{c,pre}).
+\]
+
+Here \(p\) is the percentage of observed records reporting
+unavailability. The contrast has percentage-point units. A causal
+interpretation would require the US outcome to follow the comparison
+country's change in the absence of the policy, together with comparable
+measurement, a suitable exposure definition, and no consequential
+spillovers or simultaneous country-specific changes. The national policy
+supplies one treated country. Repeated stores and weeks do not create
+additional independent policy assignments.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Country & Pre-Period Mean (\%) & Post-Period Mean (\%) & Change
+(Percentage Points) \\
+\midrule
+
+USA & 14.80 & 16.87 & +2.07 \\
+Canada & 6.09 & 7.52 & +1.42 \\
+UK & 19.36 & 8.06 & -11.29 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The US-minus-Canada contrast is +0.65 percentage points. The US-minus-UK
+contrast is +13.37 points. The UK pre-period contains a large temporary
+rise in recorded unavailability; its subsequent decline dominates the
+second contrast. The time paths therefore matter for selecting a
+comparison, even when a regression can readily produce a coefficient.
+Canadian record counts are constant at 1,428 in this window. That
+regularity calls for checking the source's refresh process alongside the
+apparent stability of the percentage. A constant count alone does not
+establish a stale feed.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_mcbroken_policy.tex}
+\caption{Weekly recorded unavailability varies sharply in the UK before the US policy date. The country paths expose the sensitivity of a pre/post contrast to the chosen comparison.}\label{fig:M06_mcbroken_policy}
+\end{figure}
+
+These data support an audit of a proposed policy evaluation. The
+positive contrasts do not establish that the exemption worsened
+availability. Stronger evidence would connect a stable set of outlets to
+policy exposure, actual repair adoption, verified mechanical
+interruptions, and comparable collection times. Pre-treatment event
+coefficients can diagnose particular discrepancies, while a
+nonsignificant pre-trend test supplies no proof of the counterfactual
+assumption. Customer demand, service hours, and repair implementation
+would further distinguish an operational policy effect from a change in
+the ordering measure.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source: \href{../03_Data_and_Code/McBroken/policy.py}{policy.py}.
+From its directory, run \texttt{python\ policy.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Calculate descriptive country contrasts around the October 2024 exemption."""
+import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+
+
+def main():
+    data = pd.read_csv(ROOT / "data/policy_window.csv")
+    assert not data.duplicated(["country", "event_week"]).any()
+    data["percent"] = 100 * data.n_broken / data.n_checked
+    # These are sensitivity screens, not a claim of representative coverage.
+    data = data[data.n_checked.ge(data.country.map({"USA": 2000, "UK": 500, "CA": 500}))]
+    wide = data.pivot(index="event_week", columns="country", values="percent")
+    common = wide[["USA", "UK", "CA"]].dropna()
+    pre = common.loc[common.index < 0].mean()
+    post = common.loc[common.index > 0].mean()  # omit the implementation week
+    if len(common.loc[common.index < 0]) != 12 or len(common.loc[common.index > 0]) != 12:
+        raise ValueError("Expected 12 common pre weeks and 12 common post weeks")
+    change = post - pre
+    table = pd.DataFrame({"pre_percent": pre, "post_percent": post,
+                          "change_pp": change})
+    contrasts = {c: float(change.USA - change[c]) for c in ["CA", "UK"]}
+    results = ROOT / "results"
+    results.mkdir(exist_ok=True)
+    table.to_csv(results / "policy_means.csv", index_label="country")
+    (results / "policy.json").write_text(json.dumps({
+        "effective_date": "2024-10-28", "pre_weeks": 12, "post_weeks": 12,
+        "omitted_week": 0, "weighting": "Equal weight per common weekly snapshot",
+        "us_change_minus_comparator_change_pp": contrasts,
+        "interpretation": "Descriptive contrasts; parallel counterfactual trends and stable measurement are not established."}, indent=2) + "\n")
+    figure = r"""\begin{tikzpicture}
+\begin{axis}[width=12.5cm,height=6.7cm,xmin=-12,xmax=12,ymin=0,ymax=100,
+ xlabel={Weeks Relative to October 28, 2024},ylabel={Unavailable (\%)},
+ xtick={-12,-8,-4,0,4,8,12},legend style={at={(0.98,0.98)},anchor=north east}]
+"""
+    for country, style in [("USA", "IlliniBlue,mark=*"),
+                           ("CA", "IlliniOrange,dashed,mark=square*"),
+                           ("UK", "Storm,dotted,mark=triangle*")]:
+        points = " ".join(f"({i},{v:.6f})" for i, v in common[country].items())
+        figure += f"\\addplot[{style},mark size=1.4pt] coordinates {{{points}}};\n"
+    figure += r"\legend{USA,Canada,UK}" + "\n"
+    figure += r"\draw[Storm,dashed] (axis cs:0,0)--(axis cs:0,100);" + "\n"
+    figure += "\\end{axis}\n\\end{tikzpicture}\n"
+    (ROOT.parents[1] / "06_Lecture_Notes/figures/M06_mcbroken_policy.tex").write_text(figure)
+    print(table.to_string())
+    print(json.dumps(contrasts, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
 Actions}\label{M07-m7.-prediction-machine-learning-and-marketing-actions}}
@@ -6667,6 +7193,203 @@ if __name__ == "__main__":
     }
     save_result("association_rules", result)
     print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M07-mcdonalds-forecasting-availability-with-missing-future-labels}{%
+\section{McDonald's: Forecasting Availability With Missing Future
+Labels}\label{M07-mcdonalds-forecasting-availability-with-missing-future-labels}}
+
+\noindent \noindent A service team with limited time can prioritize verification
+calls using recent order availability. The forecast origin is the
+selected snapshot on date \(t-1\); the target is the same address key's
+status in the selected snapshot on the next calendar date \(t\). The key
+must be observed at the origin. For this exercise, an eligible origin
+has at least 2,000 US records in its snapshot, taken within three hours
+of 18:00 UTC. A scored target must meet the same conditions and contain
+the same key. This is a forecast for the next sampled observation. It
+does not measure whether the outlet experiences any interruption during
+the entire intervening day.
+
+Section 2.16's preparation program preserves eligible origins whose
+target is absent. Those records lack a label. It also retains the
+original address keys, so address changes can remove a match. The
+resulting forecast population consists of observed, linkable records
+under the stated timing and coverage rules. A larger rollout would
+require checking performance and outcome observation beyond this
+population.
+
+\hypertarget{M07-compare-simple-forecasts-on-later-dates}{%
+\subsection{Compare Simple Forecasts on Later
+Dates}\label{M07-compare-simple-forecasts-on-later-dates}}
+
+\noindent \noindent Fix August 1, 2026, as the first test target date. Estimate
+probabilities using earlier target dates only. The training mean assigns
+the same estimated probability to every origin. A second forecast
+conditions on whether the previous snapshot reported unavailability. Its
+estimate for previous status \(s\) is
+
+\[
+\widehat q_s=
+\frac{\sum_{t<T}\sum_i A_{it}\mathbf{1}\{U_{i,t-1}=s\}U_{it}}
+{\sum_{t<T}\sum_i A_{it}\mathbf{1}\{U_{i,t-1}=s\}},
+\]
+
+where \(T\) is the fixed cutoff and \(A_{it}\) indicates a usable
+observed pair under the stated rules. The denominator counts training
+pairs in status group \(s\). This is an empirical conditional-frequency
+model, equivalent to a saturated probability model with one binary
+predictor. No hyperparameter is chosen using test outcomes. The
+benchmark that always predicts availability provides a further check on
+the usefulness of accuracy.
+
+The preparation retains 1,484,356 labeled training pairs. In the later
+evaluation period, 580,473 of 801,841 eligible origins have usable
+labels, giving 72.39\% label coverage. Label coverage is approximately
+72.40\% for previously available records and 72.38\% for previously
+unavailable records. Similar coverage across these two groups does not
+establish that other sources of missingness are harmless.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Forecast & Test Brier Score & Test Accuracy at a 0.5 Cutoff \\
+\midrule
+
+Always available & 0.1465 & 85.35\% \\
+Training mean & 0.1253 & 85.35\% \\
+Previous status & 0.0851 & 89.16\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Brier score averages \((U-\widehat q)^2\) across labeled test pairs;
+smaller values indicate more accurate probability forecasts. The
+training-mean forecast improves probability error while making the same
+binary classification as the always-available rule. Conditioning on
+previous status improves both measures. These results concern later
+observations for existing address keys; they do not establish
+performance at newly entering restaurants. Repeated keys and common
+dates also make individual rows dependent, so the large pair count
+should not be treated as an independent-sample precision calculation.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_mcbroken_prediction.tex}
+\caption{Training probabilities and later observed unavailability are much higher after a previously unavailable observation. Later rates exceed both training forecasts, making calibration drift visible.}\label{fig:M07_mcbroken_prediction}
+\end{figure}
+
+The conditional model predicts 5.97\% after an available observation and
+59.78\% after an unavailable observation. The corresponding later
+frequencies are 6.35\% and 63.03\%. Recent status is informative, while
+both groups exhibit higher later frequencies. A manager can use this
+ranking to prioritize verification and monitor calibration as new labels
+arrive. A dispatch decision would additionally require confirmation of
+the operational problem, the expected benefit of repair, and the cost of
+a visit.
+
+\hypertarget{M07-preserve-the-information-available-at-the-forecast-origin}{%
+\subsection{Preserve the Information Available at the Forecast
+Origin}\label{M07-preserve-the-information-available-at-the-forecast-origin}}
+
+\noindent \noindent The full-year dimension table contains \texttt{n\_days} and
+\texttt{last\_seen}. Those quantities summarize future observation
+patterns and would leak information into a historical forecast. The next
+snapshot's count and check time are also unavailable at the origin; they
+define the evaluation sample here and do not enter the probability
+estimates as features. Restricting labels after collection must be
+reported because operational forecasts are issued before that future
+coverage is known. Origin-only features and exact calendar joins make
+the time sequence explicit.
+
+The course table aggregates pairs by target date and previous status. It
+retains counts of eligible origins, observed labels, and unavailable
+outcomes, which are sufficient for these specified forecasts and scores.
+Grouping avoids repeating identical probability calculations across
+millions of rows. For a group with \(n\) labels, \(b\) unavailable
+outcomes, and forecast \(q\), its total squared error is
+\(b(1-q)^2+(n-b)q^2\). The test verifies that this grouped expression
+equals the individual-row calculation on a hand-checkable example.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/McBroken/predict.py}{predict.py}. From its
+directory, run \texttt{python\ predict.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Test pre-specified availability forecasts on later calendar dates."""
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+CUTOFF = pd.Timestamp("2026-08-01")
+
+
+def fit_probabilities(train):
+    counts = train.groupby("previous_unavailable")[["n_labeled", "n_unavailable"]].sum()
+    if (counts.n_labeled <= 0).any() or set(counts.index) != {0, 1}:
+        raise ValueError("Both prior-status groups require training observations")
+    return (train.n_unavailable.sum() / train.n_labeled.sum(),
+            counts.n_unavailable / counts.n_labeled)
+
+
+def brier_score(n, successes, probability):
+    """Exact row-level squared probability error from grouped binary counts."""
+    return float(np.sum(successes * (1 - probability)**2
+                        + (n - successes) * probability**2) / np.sum(n))
+
+
+def main():
+    data = pd.read_csv(ROOT / "data/transitions.csv", parse_dates=["date"])
+    train, test = data[data.date < CUTOFF], data[data.date >= CUTOFF]
+    assert train.date.max() < test.date.min()
+    base, by_status = fit_probabilities(train)
+    forecasts = {"Always available": np.zeros(len(test)),
+                 "Training mean": np.full(len(test), base),
+                 "Previous status": test.previous_unavailable.map(by_status).to_numpy()}
+    n, y = test.n_labeled.to_numpy(), test.n_unavailable.to_numpy()
+    scores = []
+    for name, probability in forecasts.items():
+        correct = np.where(probability >= 0.5, y, n - y)
+        scores.append({"model": name, "brier_score": brier_score(n, y, probability),
+                       "accuracy": float(correct.sum() / n.sum())})
+    calibration = test.groupby("previous_unavailable")[["n_origins", "n_labeled", "n_unavailable"]].sum()
+    calibration["forecast"] = by_status
+    calibration["observed"] = calibration.n_unavailable / calibration.n_labeled
+    calibration["label_coverage"] = calibration.n_labeled / calibration.n_origins
+    results = ROOT / "results"
+    results.mkdir(exist_ok=True)
+    pd.DataFrame(scores).to_csv(results / "prediction_scores.csv", index=False)
+    calibration.to_csv(results / "prediction_calibration.csv")
+    summary = {"cutoff": str(CUTOFF.date()), "train_labeled_pairs": int(train.n_labeled.sum()),
+               "test_labeled_pairs": int(n.sum()), "test_origins": int(test.n_origins.sum()),
+               "test_unavailable": int(y.sum()), "baseline_probability": float(base),
+               "test_label_coverage": float(n.sum() / test.n_origins.sum()),
+               "train_first_target": str(train.date.min().date()),
+               "train_last_target": str(train.date.max().date()),
+               "test_last_target": str(test.date.max().date()), "scores": scores}
+    (results / "prediction.json").write_text(json.dumps(summary, indent=2) + "\n")
+    figure = r"""\begin{tikzpicture}
+\begin{axis}[ybar,bar width=19pt,width=12.5cm,height=6.3cm,ymin=0,ymax=100,
+ ylabel={Unavailable (\%)},xtick={0,1},xticklabels={Previously Available,Previously Unavailable},
+ enlarge x limits=0.5,legend style={at={(0.5,-0.17)},anchor=north,legend columns=2,column sep=10pt},
+ nodes near coords,every node near coord/.append style={font=\footnotesize,/pgf/number format/fixed,/pgf/number format/fixed zerofill,/pgf/number format/precision=1}]
+"""
+    for column, color in [("forecast", "IlliniBlue"), ("observed", "IlliniOrange")]:
+        points = " ".join(f"({int(i)},{100*v:.6f})" for i, v in calibration[column].items())
+        figure += f"\\addplot[draw={color},fill={color}!18] coordinates {{{points}}};\n"
+    figure += "\\legend{Training Forecast,Later Observed Rate}\n\\end{axis}\n\\end{tikzpicture}\n"
+    (ROOT.parents[1] / "06_Lecture_Notes/figures/M07_mcbroken_prediction.tex").write_text(figure)
+    print(json.dumps(summary, indent=2))
+    print(calibration.to_string())
+
+
+if __name__ == "__main__":
+    main()
 \end{Verbatim}
 
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%

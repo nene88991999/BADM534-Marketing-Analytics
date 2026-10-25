@@ -1,0 +1,97 @@
+# Collecting public data from APIs (M2), added 2026-10-24. Built around the McBroken lab in
+# 02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/ (scripts, executed notebook, derived panels).
+- id: mcbroken-api-lab
+  category: M2
+  subtopic: Public APIs
+  title: "Lab: collecting public data from an API (McBroken, McDonald's ice-cream machines)"
+  authors: "Yang, N. (BADM 534 course materials)"
+  year: 2026
+  type: notebook
+  url: https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab
+  access: open
+  license: "Course material; derived data, see README"
+  level: intro
+  priority: core
+  modules: [M2, M6]
+  summary: "Executed notebook plus two scripts. fetch_mcbroken.py calls https://mcbroken.com/markers.json (one GeoJSON feature per store, gzip, undocumented), checks status, decompresses, flattens to a DataFrame and saves a timestamped copy, with a fallback to a public-domain GitHub archive. build_panel.py walks that archive's 60,000-commit git history and writes daily (one year) and weekly (six years) panels by country, US state and store. Includes a GitHub Actions template for students to build their own daily snapshots."
+  wiki_use: "M2 session on data collection: HTTP requests, headers, status codes, JSON to table, polite scraping, and git scraping as a cheap way to build a time series. Exercise 1 has students audit AI-written request code (timeout, User-Agent, status check, gzip, raw copy). Exercise 5 previews M6 with a right-to-repair event study (US Copyright Office exemption, late Oct 2024)."
+  tools: [requests, pandas, matplotlib, git, GitHub Actions]
+  ai_angle: true
+  verified_via: fetch
+  notes: "Measurement caveats are in the README: is_broken means the McDonald's app refused an ice-cream order (also fires when a store is closed); the denominator is stores checked in that hour and the checking cadence changed over the years. Raw JSON is not redistributed; derived aggregates and one snapshot are."
+
+- id: mcbroken-site
+  category: M2
+  subtopic: Public APIs
+  title: "McBroken: real-time tracker of McDonald's ice-cream machines"
+  authors: "Zahid, R."
+  year: 2020
+  type: website
+  url: https://mcbroken.com/
+  access: open
+  license: "none stated"
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "Hobby site (October 2020) that checks each McDonald's every few minutes by trying to add an ice-cream item to a cart through McDonald's ordering API; the map is drawn from https://mcbroken.com/markers.json and the city table from https://mcbroken.com/stats.json. Covers 30,000+ stores in 50+ countries."
+  wiki_use: "The worked example for M2 data collection. Students open stats.json in a browser first, then call it from Python."
+  ai_angle: false
+  verified_via: fetch
+  notes: "No documented API, no terms of use and no licence: treat as publicly viewable, not openly licensed. Blocked on some campus and corporate networks; the lab falls back to the GitHub archive."
+
+- id: mrflynn-mcbroken-archive
+  category: M2
+  subtopic: Git scraping
+  title: "mcbroken-archive: hourly git-scraped snapshots of McBroken since October 2020"
+  authors: "MrFlynn (GitHub)"
+  year: 2020
+  type: dataset
+  venue: GitHub
+  url: https://github.com/MrFlynn/mcbroken-archive
+  access: open
+  license: Unlicense
+  level: intro
+  priority: core
+  modules: [M2, M6]
+  summary: "A GitHub Actions job downloads markers.json several times a day (hourly cron, in practice 4 to 40 commits a day over the years), keeps the stores checked in the previous hour, and commits the file; 60,000+ commits from 2020-10-24 onward. Includes a git-history transform script for loading everything into SQLite."
+  wiki_use: "Source of the lab's time series via build_panel.py. Also the clearest small example of git scraping to show students."
+  tools: [git, GitHub Actions, jq, git-history]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Each commit holds only recently checked stores, so coverage per snapshot varies (15,000 to 25,000 of about 30,000). The Unlicense covers the repository, not McDonald's underlying facts."
+
+- id: willison-2020-git-scraping
+  category: M2
+  subtopic: Git scraping
+  title: "Git scraping: track changes over time by scraping to a Git repository"
+  authors: "Willison, S."
+  year: 2020
+  type: blog
+  url: https://simonwillison.net/2020/Oct/9/git-scraping/
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M2]
+  summary: "The post that named the pattern: a scheduled GitHub Actions workflow fetches a public file and commits it, so the git history becomes a time series at zero hosting cost. Links to worked examples and to the git-history tool for turning the history into a database."
+  wiki_use: "Ten-minute read before the lab's time-series section; the snapshot_mcbroken.yml template follows it."
+  ai_angle: false
+  verified_via: search
+
+- id: nrn-2024-copyright-office-food-equipment-repair
+  category: M6
+  subtopic: Quasi-experiments in marketing
+  title: "McDonald's franchisees will now have an easier time repairing ice cream machines (US Copyright Office DMCA exemption for commercial food-preparation equipment)"
+  authors: "Nation's Restaurant News"
+  year: 2024
+  type: report
+  venue: "Nation's Restaurant News, 28 Oct 2024"
+  url: https://www.nrn.com/quick-service/mcdonald-s-franchisees-will-now-have-an-easier-time-repairing-ice-cream-machines
+  access: open
+  level: intro
+  priority: optional
+  modules: [M6, M2]
+  summary: "In late October 2024 the US Copyright Office granted an exemption, petitioned by iFixit and Public Knowledge and supported by the FTC and DOJ, allowing third parties to diagnose and repair retail-level commercial food-preparation equipment, including the Taylor soft-serve machines in McDonald's stores."
+  wiki_use: "A natural event for a difference-in-differences exercise with the McBroken weekly country panel (USA versus Canada, UK and others). Students write the identifying assumption before plotting."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Decision reported 25 Oct 2024. Measurement in the McBroken series also changed over time, so the exercise is as much about threats to identification as about the estimate."

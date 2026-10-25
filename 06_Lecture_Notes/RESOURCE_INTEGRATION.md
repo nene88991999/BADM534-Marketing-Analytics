@@ -19,7 +19,7 @@ Resource IDs in this table use the **additional** catalog namespace, including s
 | M7, 7.17 | Basket Associations | mlxtend-frequent-patterns | [association_rules.py](../03_Data_and_Code/mHealth/recurring_examples/association_rules.py) | Support, confidence, lift, training-only selection, future baskets, user bootstrap. |
 | M8, 8.11 | Evidence Checks for Generated Claims | copycat-ad-copy-generation; pymc-labs-semantic-similarity-rating; claude-ecom-business-review-skill | [claim_checks.py](../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py) | Constructed false claims; numerical and interpretation checks; synthetic-consumer validity discussion. |
 
-The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 41 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
+The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 44 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
 
 ## Other Uses of the Added Resources
 
@@ -39,7 +39,7 @@ The [Markdown modules](README.md) include the complete program text beside each 
 
 ## Replication and Publication
 
-Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 32 embedded source blocks against their matching files.
+Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 37 embedded source blocks against their matching files.
 
 The mHealth programs use the existing 370-user teaching cohort and impose case-specific eligibility rules before reporting results. Their outputs are aggregate. The price simulation is explicitly synthetic. Schema-valid false claims are constructed teaching examples, not measured errors from an LLM. Historical variance reduction is a planning comparison, and basket lift is a descriptive association.
 
@@ -47,7 +47,7 @@ Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permit
 
 ## Data Visualization Additions
 
-`DATAVIZ.yaml` adds 17 source entries, of which one overlaps with the existing catalog. The additional catalog now contains 629 entries, compared with 613 before these additions. Nine new repository snapshots supply local references. The [visualization review](../01_Resources/00_Index/dataviz_resource_review_2026-10-23.json) identifies the inspected sources, catalog aliases, licenses, and incorporation decisions.
+`DATAVIZ.yaml` adds 17 source entries, of which one overlaps with the existing catalog. After the visualization additions, the additional catalog contained 629 entries, compared with 613 beforehand. Nine new repository snapshots supply local references. The [visualization review](../01_Resources/00_Index/dataviz_resource_review_2026-10-23.json) identifies the inspected sources, catalog aliases, licenses, and incorporation decisions.
 
 | Notes | Source References | Incorporation |
 | --- | --- | --- |
@@ -59,3 +59,15 @@ Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permit
 `visualization.py`, `visualization_charts.py`, and `chart_audit.py` were written for the course and executed locally. Their full code is embedded in the notes. Three generated TikZ figures use the Illinois palette. Five independent small-data tests supplement the numerical checks. [Chart data and replication instructions](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) describe the output and browser-validation scope.
 
 FlowingData, its commercial book, the unlicensed storytelling recreation, Data to Viz, Datawrapper, Munzner, and PyNarrative remain optional linked references. No paid material was copied. Bokeh and HoloViz remain alternative implementation references, with their notebooks unexecuted. Matplotlib cheat sheets and Rougier's code remain figure-construction references. Rougier's `LICENSE.txt` separately grants BSD-2-Clause terms to code and CC BY-NC-SA 4.0 terms to book material; the catalog and generated provenance label have been corrected to preserve that distinction.
+
+## McBroken Resources and Executed Cases
+
+The supplied [McBroken bundle](../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/README.md) includes source retrieval scripts, a notebook with saved outputs, a US store panel, and daily/weekly aggregates. The [course adaptation review](../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/COURSE_ADAPTATION.md) records the inspected source logic, policy-date correction, measurement issues, and verification scope.
+
+| Resource | Course Application | Verified Output |
+| --- | --- | --- |
+| Supplied snapshot and panel extraction | M2 §2.16: API type handling, source audit, coverage, address keys, exact calendar joins | `api_checks.py`, `prepare.py`, `coverage.py`; national counts and dimension totals reconcile |
+| Weekly country series and the Copyright Office's 2024 final rule | M6 §6.16: common-week policy contrasts and comparison-country sensitivity | `policy.py`; descriptive USA–Canada and USA–UK contrasts with implementation week omitted |
+| US store panel and snapshot manifest | M7 §7.18: time-separated forecasts, Brier scores, calibration, missing future labels | `predict.py`; later-date evaluation and eligible-origin denominator |
+
+The five original teaching programs use the local data and appear in full in the notes. Their [README](../03_Data_and_Code/McBroken/README.md), [data dictionary](../03_Data_and_Code/McBroken/DATA_DICTIONARY.md), [manifest](../03_Data_and_Code/McBroken/manifest.json), and [result descriptions](../03_Data_and_Code/McBroken/results/README.md) provide replication and interpretation details. Three additional TikZ figures use the Illinois palette. The supplied network collector and notebook were inspected as references; the adaptation does not claim to have rerun their complete historical retrieval. The original bundle is preserved with attribution, and no scheduled collection was activated.

@@ -573,3 +573,118 @@ if __name__ == "__main__":
     save_result("association_rules", result)
     print(json.dumps(result, indent=2))
 ```
+
+## 7.18 McDonald's: Forecasting Availability With Missing Future Labels
+
+\noindent A service team with limited time can prioritize verification calls using recent order availability. The forecast origin is the selected snapshot on date $t-1$; the target is the same address key's status in the selected snapshot on the next calendar date $t$. The key must be observed at the origin. For this exercise, an eligible origin has at least 2,000 US records in its snapshot, taken within three hours of 18:00 UTC. A scored target must meet the same conditions and contain the same key. This is a forecast for the next sampled observation. It does not measure whether the outlet experiences any interruption during the entire intervening day.
+
+Section 2.16's preparation program preserves eligible origins whose target is absent. Those records lack a label. It also retains the original address keys, so address changes can remove a match. The resulting forecast population consists of observed, linkable records under the stated timing and coverage rules. A larger rollout would require checking performance and outcome observation beyond this population.
+
+### 7.18.1 Compare Simple Forecasts on Later Dates
+
+\noindent Fix August 1, 2026, as the first test target date. Estimate probabilities using earlier target dates only. The training mean assigns the same estimated probability to every origin. A second forecast conditions on whether the previous snapshot reported unavailability. Its estimate for previous status $s$ is
+
+$$
+\widehat q_s=
+\frac{\sum_{t<T}\sum_i A_{it}\mathbf{1}\{U_{i,t-1}=s\}U_{it}}
+{\sum_{t<T}\sum_i A_{it}\mathbf{1}\{U_{i,t-1}=s\}},
+$$
+
+where $T$ is the fixed cutoff and $A_{it}$ indicates a usable observed pair under the stated rules. The denominator counts training pairs in status group $s$. This is an empirical conditional-frequency model, equivalent to a saturated probability model with one binary predictor. No hyperparameter is chosen using test outcomes. The benchmark that always predicts availability provides a further check on the usefulness of accuracy.
+
+The preparation retains 1,484,356 labeled training pairs. In the later evaluation period, 580,473 of 801,841 eligible origins have usable labels, giving 72.39% label coverage. Label coverage is approximately 72.40% for previously available records and 72.38% for previously unavailable records. Similar coverage across these two groups does not establish that other sources of missingness are harmless.
+
+| Forecast | Test Brier Score | Test Accuracy at a 0.5 Cutoff |
+| --- | ---: | ---: |
+| Always available | 0.1465 | 85.35% |
+| Training mean | 0.1253 | 85.35% |
+| Previous status | 0.0851 | 89.16% |
+
+The Brier score averages $(U-\widehat q)^2$ across labeled test pairs; smaller values indicate more accurate probability forecasts. The training-mean forecast improves probability error while making the same binary classification as the always-available rule. Conditioning on previous status improves both measures. These results concern later observations for existing address keys; they do not establish performance at newly entering restaurants. Repeated keys and common dates also make individual rows dependent, so the large pair count should not be treated as an independent-sample precision calculation.
+
+![Training probabilities and later observed unavailability are much higher after a previously unavailable observation. Later rates exceed both training forecasts, making calibration drift visible.](../figures/M07_mcbroken_prediction.png)
+
+The conditional model predicts 5.97% after an available observation and 59.78% after an unavailable observation. The corresponding later frequencies are 6.35% and 63.03%. Recent status is informative, while both groups exhibit higher later frequencies. A manager can use this ranking to prioritize verification and monitor calibration as new labels arrive. A dispatch decision would additionally require confirmation of the operational problem, the expected benefit of repair, and the cost of a visit.
+
+### 7.18.2 Preserve the Information Available at the Forecast Origin
+
+\noindent The full-year dimension table contains `n_days` and `last_seen`. Those quantities summarize future observation patterns and would leak information into a historical forecast. The next snapshot's count and check time are also unavailable at the origin; they define the evaluation sample here and do not enter the probability estimates as features. Restricting labels after collection must be reported because operational forecasts are issued before that future coverage is known. Origin-only features and exact calendar joins make the time sequence explicit.
+
+The course table aggregates pairs by target date and previous status. It retains counts of eligible origins, observed labels, and unavailable outcomes, which are sufficient for these specified forecasts and scores. Grouping avoids repeating identical probability calculations across millions of rows. For a group with $n$ labels, $b$ unavailable outcomes, and forecast $q$, its total squared error is $b(1-q)^2+(n-b)q^2$. The test verifies that this grouped expression equals the individual-row calculation on a hand-checkable example.
+
+Python source: [predict.py](../../03_Data_and_Code/McBroken/predict.py). From its directory, run `python predict.py`.
+
+```python
+"""Test pre-specified availability forecasts on later calendar dates."""
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+CUTOFF = pd.Timestamp("2026-08-01")
+
+
+def fit_probabilities(train):
+    counts = train.groupby("previous_unavailable")[["n_labeled", "n_unavailable"]].sum()
+    if (counts.n_labeled <= 0).any() or set(counts.index) != {0, 1}:
+        raise ValueError("Both prior-status groups require training observations")
+    return (train.n_unavailable.sum() / train.n_labeled.sum(),
+            counts.n_unavailable / counts.n_labeled)
+
+
+def brier_score(n, successes, probability):
+    """Exact row-level squared probability error from grouped binary counts."""
+    return float(np.sum(successes * (1 - probability)**2
+                        + (n - successes) * probability**2) / np.sum(n))
+
+
+def main():
+    data = pd.read_csv(ROOT / "data/transitions.csv", parse_dates=["date"])
+    train, test = data[data.date < CUTOFF], data[data.date >= CUTOFF]
+    assert train.date.max() < test.date.min()
+    base, by_status = fit_probabilities(train)
+    forecasts = {"Always available": np.zeros(len(test)),
+                 "Training mean": np.full(len(test), base),
+                 "Previous status": test.previous_unavailable.map(by_status).to_numpy()}
+    n, y = test.n_labeled.to_numpy(), test.n_unavailable.to_numpy()
+    scores = []
+    for name, probability in forecasts.items():
+        correct = np.where(probability >= 0.5, y, n - y)
+        scores.append({"model": name, "brier_score": brier_score(n, y, probability),
+                       "accuracy": float(correct.sum() / n.sum())})
+    calibration = test.groupby("previous_unavailable")[["n_origins", "n_labeled", "n_unavailable"]].sum()
+    calibration["forecast"] = by_status
+    calibration["observed"] = calibration.n_unavailable / calibration.n_labeled
+    calibration["label_coverage"] = calibration.n_labeled / calibration.n_origins
+    results = ROOT / "results"
+    results.mkdir(exist_ok=True)
+    pd.DataFrame(scores).to_csv(results / "prediction_scores.csv", index=False)
+    calibration.to_csv(results / "prediction_calibration.csv")
+    summary = {"cutoff": str(CUTOFF.date()), "train_labeled_pairs": int(train.n_labeled.sum()),
+               "test_labeled_pairs": int(n.sum()), "test_origins": int(test.n_origins.sum()),
+               "test_unavailable": int(y.sum()), "baseline_probability": float(base),
+               "test_label_coverage": float(n.sum() / test.n_origins.sum()),
+               "train_first_target": str(train.date.min().date()),
+               "train_last_target": str(train.date.max().date()),
+               "test_last_target": str(test.date.max().date()), "scores": scores}
+    (results / "prediction.json").write_text(json.dumps(summary, indent=2) + "\n")
+    figure = r"""\begin{tikzpicture}
+\begin{axis}[ybar,bar width=19pt,width=12.5cm,height=6.3cm,ymin=0,ymax=100,
+ ylabel={Unavailable (\%)},xtick={0,1},xticklabels={Previously Available,Previously Unavailable},
+ enlarge x limits=0.5,legend style={at={(0.5,-0.17)},anchor=north,legend columns=2,column sep=10pt},
+ nodes near coords,every node near coord/.append style={font=\footnotesize,/pgf/number format/fixed,/pgf/number format/fixed zerofill,/pgf/number format/precision=1}]
+"""
+    for column, color in [("forecast", "IlliniBlue"), ("observed", "IlliniOrange")]:
+        points = " ".join(f"({int(i)},{100*v:.6f})" for i, v in calibration[column].items())
+        figure += f"\\addplot[draw={color},fill={color}!18] coordinates {{{points}}};\n"
+    figure += "\\legend{Training Forecast,Later Observed Rate}\n\\end{axis}\n\\end{tikzpicture}\n"
+    (ROOT.parents[1] / "06_Lecture_Notes/figures/M07_mcbroken_prediction.tex").write_text(figure)
+    print(json.dumps(summary, indent=2))
+    print(calibration.to_string())
+
+
+if __name__ == "__main__":
+    main()
+```

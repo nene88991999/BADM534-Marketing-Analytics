@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[ybar,bar width=19pt,width=12.5cm,height=6.3cm,ymin=0,ymax=100,
+ ylabel={Unavailable (\%)},xtick={0,1},xticklabels={Previously Available,Previously Unavailable},
+ enlarge x limits=0.5,legend style={at={(0.5,-0.17)},anchor=north,legend columns=2,column sep=10pt},
+ nodes near coords,every node near coord/.append style={font=\footnotesize,/pgf/number format/fixed,/pgf/number format/fixed zerofill,/pgf/number format/precision=1}]
+\addplot[draw=IlliniBlue,fill=IlliniBlue!18] coordinates {(0,5.968281) (1,59.779013)};
+\addplot[draw=IlliniOrange,fill=IlliniOrange!18] coordinates {(0,6.354498) (1,63.027663)};
+\legend{Training Forecast,Later Observed Rate}
+\end{axis}
+\end{tikzpicture}

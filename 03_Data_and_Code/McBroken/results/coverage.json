@@ -1,0 +1,52 @@
+{
+  "missing_us_dates": [
+    "2025-12-20",
+    "2026-04-21",
+    "2026-04-22",
+    "2026-05-21",
+    "2026-07-29",
+    "2026-07-30",
+    "2026-07-31",
+    "2026-10-02",
+    "2026-10-03"
+  ],
+  "low_coverage_dates": [
+    "2026-07-21",
+    "2026-07-22",
+    "2026-07-24"
+  ],
+  "sensitivity": [
+    {
+      "minimum_checked": 0,
+      "days": 356,
+      "checked_records": 3053307,
+      "unavailable_records": 408342,
+      "equal_day_percent": 13.179807788401968,
+      "pooled_record_percent": 13.373761629603575
+    },
+    {
+      "minimum_checked": 1000,
+      "days": 355,
+      "checked_records": 3053305,
+      "unavailable_records": 408342,
+      "equal_day_percent": 13.216934007524225,
+      "pooled_record_percent": 13.373770389790735
+    },
+    {
+      "minimum_checked": 2000,
+      "days": 353,
+      "checked_records": 3050207,
+      "unavailable_records": 407949,
+      "equal_day_percent": 13.220062602407456,
+      "pooled_record_percent": 13.374469339294022
+    },
+    {
+      "minimum_checked": 5000,
+      "days": 279,
+      "checked_records": 2820714,
+      "unavailable_records": 379950,
+      "equal_day_percent": 13.476499726947,
+      "pooled_record_percent": 13.469993767535454
+    }
+  ]
+}

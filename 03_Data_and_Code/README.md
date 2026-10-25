@@ -29,3 +29,7 @@ The [labs folder](../07_Labs/README.md) contains the structure for complete guid
 The [eight-module examples](mHealth/recurring_examples/README.md) include complete Python, aggregate outputs, a data-quality audit, nutrition-screening sensitivity, and meaningful counterexample checks. The same code is embedded in the lecture notes.
 
 Additional executed examples cover fixed-cohort reporting, recency/frequency, logging-gap survival, text topics, CUPED, basket associations, and checks on generated numerical claims. A separate synthetic price-instrument simulation illustrates endogeneity and exclusion. See the [resource-to-example map](../06_Lecture_Notes/RESOURCE_INTEGRATION.md) for source attribution, module sections, and the distinction between executed course code and downloaded reference notebooks.
+
+## McDonald's Ice-Cream Availability
+
+The [McBroken examples](McBroken/README.md) use the supplied restaurant-status data for measurement and cleaning in M2, comparison-group selection in M6, and forecasts on later dates in M7. Five executed Python programs, aggregate teaching tables, source hashes, and counterexample tests support the cases. The outcome is recorded order unavailability; the examples keep missing observations, irregular time gaps, address-key changes, and causal interpretation explicit.

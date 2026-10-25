@@ -1,0 +1,29 @@
+{
+  "cutoff": "2026-08-01",
+  "train_labeled_pairs": 1484356,
+  "test_labeled_pairs": 580473,
+  "test_origins": 801841,
+  "test_unavailable": 85030,
+  "baseline_probability": 0.1292708757198408,
+  "test_label_coverage": 0.7239253168645654,
+  "train_first_target": "2025-10-26",
+  "train_last_target": "2026-07-29",
+  "test_last_target": "2026-10-24",
+  "scores": [
+    {
+      "model": "Always available",
+      "brier_score": 0.14648398805801477,
+      "accuracy": 0.8535160119419852
+    },
+    {
+      "model": "Training mean",
+      "brier_score": 0.12532272053700072,
+      "accuracy": 0.8535160119419852
+    },
+    {
+      "model": "Previous status",
+      "brier_score": 0.08506833126943435,
+      "accuracy": 0.8916469844419982
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "verified_on": "2026-10-24",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "executed_programs": [
+    "prepare.py",
+    "api_checks.py",
+    "coverage.py",
+    "policy.py",
+    "predict.py"
+  ],
+  "counterexample_tests_passed": 5,
+  "embedded_source_blocks_matched": 37,
+  "source_spot_checks": 2,
+  "full_historical_network_retrieval_rerun": false,
+  "synthetic_lecture_verifier": "passed",
+  "pdf_pages": 156,
+  "new_tikz_figures": 3
+}

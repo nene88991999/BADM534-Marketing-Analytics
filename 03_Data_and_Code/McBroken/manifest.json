@@ -1,0 +1,34 @@
+{
+  "source": "Rashiq Zahid, McBroken; snapshots via MrFlynn/mcbroken-archive",
+  "urls": [
+    "https://mcbroken.com",
+    "https://github.com/MrFlynn/mcbroken-archive"
+  ],
+  "files": {
+    "mcbroken_daily_2025-10_2026-10_stores_us_panel.csv.gz": {
+      "sha256": "abe6efeee9176318ada58825be7c1733c1a7fae22eaf8bd090a06218e7131f93",
+      "bytes": 11943319
+    },
+    "mcbroken_daily_2025-10_2026-10_stores_us_dim.csv": {
+      "sha256": "1f8ee1a143ed8e34144e1f6a21aa68ea459305d483bf9c8dc89992807fb17183",
+      "bytes": 4059028
+    },
+    "mcbroken_daily_2025-10_2026-10_country.csv": {
+      "sha256": "4744559ccab4e2e11cbcfe3a5a7755013b0ef4f2c0f0246fc5a8fb9f67436b3c",
+      "bytes": 345469
+    },
+    "mcbroken_daily_2025-10_2026-10_snapshots_used.csv": {
+      "sha256": "485c643f19216c1d4c7a2a5e896b7f9402e3c70a067afd869d0978547d55d9c7",
+      "bytes": 28484
+    },
+    "mcbroken_weekly_2020_2026_country.csv": {
+      "sha256": "9aeae93a480b2671c5522fec1f572629d84ccd558bd2b09e04fe7e0b19ea732e",
+      "bytes": 117296
+    },
+    "mcbroken_weekly_2020_2026_snapshots_used.csv": {
+      "sha256": "3203508d9bedbeb13ab6d705f1eea6fe711db25cb3708a516e3fe481136274e3",
+      "bytes": 23726
+    }
+  },
+  "rights": "Upstream archive software uses Unlicense; no separate McBroken data license was established. Public teaching outputs are attributed aggregate calculations."
+}

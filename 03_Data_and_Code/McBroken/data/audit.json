@@ -1,0 +1,21 @@
+{
+  "source_rows": 3053307,
+  "address_keys": 29123,
+  "exact_coordinate_pairs": 13821,
+  "calendar_days": 365,
+  "us_observed_days": 356,
+  "missing_us_days": 9,
+  "low_coverage_days": 3,
+  "successive_key_records": 3024184,
+  "consecutive_day_pairs": 2094733,
+  "long_gap_pairs": 929451,
+  "median_days_per_key": 112.0,
+  "snapshot_abs_offset_hours_max": 4.7925,
+  "duplicate_store_dates": 0,
+  "unmatched_keys": 0,
+  "country_counts_reconciled": true,
+  "dimension_days_reconciled": true,
+  "matching": "Original address keys; coordinates are an audit, not a merge rule.",
+  "transition_screen": "Both dates: >=2000 US records and within 3 hours of 18:00 UTC.",
+  "status_scope": "The supplied binary field was validated; raw API missingness cannot be recovered from these CSVs."
+}

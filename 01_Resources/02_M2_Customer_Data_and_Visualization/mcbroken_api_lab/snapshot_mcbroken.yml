@@ -1,0 +1,43 @@
+# GitHub Actions template: take one McBroken snapshot a day and commit it to this repository.
+#
+# Copy this file to .github/workflows/snapshot_mcbroken.yml in a repository that also contains
+# fetch_mcbroken.py (adjust the path below). Over a semester this gives students their own
+# store-day panel without anyone remembering to run anything. The idea is Simon Willison's
+# "git scraping": https://simonwillison.net/2020/Oct/9/git-scraping/
+#
+# Size: one gzip CSV of roughly 0.5 MB per day, so about 100 MB over a semester. Raw JSON is
+# not kept (10 MB per day adds up). Delete the folder and start again if it grows too large.
+#
+# Etiquette: one request a day is far less than a single visitor browsing the site. Keep it
+# that way, and keep the User-Agent in fetch_mcbroken.py honest about who is calling.
+
+name: McBroken daily snapshot
+
+on:
+  schedule:
+    - cron: "7 18 * * *"        # 18:07 UTC = 1:07 pm Central (12:07 pm during daylight saving)
+  workflow_dispatch:            # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests pandas
+      - name: Fetch and flatten
+        run: |
+          python 01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/fetch_mcbroken.py \
+            --out data/mcbroken_snapshots --no-raw --no-stats --gzip --quiet
+      - name: Commit
+        run: |
+          git config user.name "snapshot-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/mcbroken_snapshots
+          git commit -m "McBroken snapshot $(date -u +%F)" || echo "nothing new"
+          git push

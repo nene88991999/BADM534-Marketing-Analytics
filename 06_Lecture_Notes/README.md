@@ -1,8 +1,8 @@
 # Lecture Notes
 
-**By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
+**By Nathan Yang. Updated October 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 41 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 44 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -29,7 +29,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 141 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 156 pages.
 
 ## Editing and Building
 
@@ -62,3 +62,7 @@ Follow the [preferred Beamer format](../05_Slides/AGENTS.md) when preparing lect
 ## Data Visualization
 
 M2, Sections 2.14–2.15, add chart selection, fixed and conditional denominators, empirical cumulative distributions, and an [interactive mHealth chart](../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html). M3, Section 3.6.1, compares paired-user uncertainty with an incorrect independent-day calculation. M8, Section 8.12, audits constructed chart errors. Three original TikZ figures and three complete Python programs support these additions. The [visualization guide](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) gives the commands, data definitions, and validation record.
+
+## McDonald's Ice-Cream Availability
+
+The [McBroken cases](../03_Data_and_Code/McBroken/README.md) connect a supplied restaurant-status panel to measurement and cleaning (M2 §2.16), comparison-group selection for a proposed policy evaluation (M6 §6.16), and forecasting with missing future labels (M7 §7.18). Five complete Python programs and three additional TikZ figures accompany the cases. The examples distinguish recorded order unavailability from verified mechanical failure, retain missing-date and missing-label counts, and evaluate predictions on later dates. The source audit and five counterexample tests passed; two pinned upstream snapshots independently matched the supplied national totals.

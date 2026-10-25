@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-10-23",
+  "updated_on": "2026-10-24",
   "current_syllabus": null,
   "current_schedule": null,
   "current_ai_policy": null,
@@ -50,12 +50,16 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md"
+    "03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md",
+    "03_Data_and_Code/McBroken/README.md",
+    "03_Data_and_Code/McBroken/DATA_DICTIONARY.md",
+    "03_Data_and_Code/McBroken/AGENTS.md",
+    "03_Data_and_Code/McBroken/results/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-10-23",
+    "updated_on": "2026-10-24",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -95,12 +99,13 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-10-23-visualization-resources",
+    "revision": "2026-10-24-mcbroken-cases",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 41,
-    "pages": 141
+    "figures_count": 44,
+    "pages": 156,
+    "mcbroken_examples": "03_Data_and_Code/McBroken/README.md"
   },
   "datasets": [
     {
@@ -109,6 +114,17 @@ Generated from course.json and the source files identified below. This file cont
       "manifest": "03_Data_and_Code/mHealth/manifest.json",
       "release": "https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/tag/mhealth-teaching-2026-10-23",
       "data_type": "real records with replaced user IDs, fixed ages, and perturbed weights"
+    },
+    {
+      "id": "mcbroken-availability-teaching",
+      "index": "03_Data_and_Code/McBroken/README.md",
+      "manifest": "03_Data_and_Code/McBroken/manifest.json",
+      "data_type": "Attributed aggregates derived from supplied McBroken archive records",
+      "modules": [
+        "M2",
+        "M6",
+        "M7"
+      ]
     }
   ]
 }
@@ -130,7 +146,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 41 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 44 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
 ## Course Folders
@@ -261,7 +277,7 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 41 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 44 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -299,6 +315,10 @@ The [resource integration map](06_Lecture_Notes/RESOURCE_INTEGRATION.md) connect
 ## Visualization Applications
 
 M2, Sections 2.14–2.15, connect chart choice, denominator changes, distribution shape, and interactive filters using the same fixed mHealth cohort. M3, Section 3.6.1, shows why uncertainty follows the sampling unit. M8, Section 8.12, checks chart values, units, denominators, baselines, and interpretation against independent evidence. [Code and chart data](03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) accompany all three applications.
+
+## Restaurant Availability Applications
+
+The [McBroken case](03_Data_and_Code/McBroken/README.md) uses the supplied McDonald's ordering-status data in three modules. M2 §2.16 audits coverage, missingness, address keys, and calendar joins. M6 §6.16 compares country trends around the 2024 repair exemption and distinguishes descriptive contrasts from causal evidence. M7 §7.18 evaluates next-observation forecasts on later dates, with label coverage and calibration. Five complete Python programs and three TikZ figures support these applications.
 
 ---
 
@@ -400,15 +420,19 @@ The [eight-module examples](mHealth/recurring_examples/README.md) include comple
 
 Additional executed examples cover fixed-cohort reporting, recency/frequency, logging-gap survival, text topics, CUPED, basket associations, and checks on generated numerical claims. A separate synthetic price-instrument simulation illustrates endogeneity and exclusion. See the [resource-to-example map](../06_Lecture_Notes/RESOURCE_INTEGRATION.md) for source attribution, module sections, and the distinction between executed course code and downloaded reference notebooks.
 
+## McDonald's Ice-Cream Availability
+
+The [McBroken examples](McBroken/README.md) use the supplied restaurant-status data for measurement and cleaning in M2, comparison-group selection in M6, and forecasts on later dates in M7. Five executed Python programs, aggregate teaching tables, source hashes, and counterexample tests support the cases. The outcome is recorded order unavailability; the examples keep missing observations, irregular time gaps, address-key changes, and causal interpretation explicit.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated October 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
+**By Nathan Yang. Updated October 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 41 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 44 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -435,7 +459,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 141 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 156 pages.
 
 ## Editing and Building
 
@@ -468,6 +492,10 @@ Follow the [preferred Beamer format](../05_Slides/AGENTS.md) when preparing lect
 ## Data Visualization
 
 M2, Sections 2.14–2.15, add chart selection, fixed and conditional denominators, empirical cumulative distributions, and an [interactive mHealth chart](../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html). M3, Section 3.6.1, compares paired-user uncertainty with an incorrect independent-day calculation. M8, Section 8.12, audits constructed chart errors. Three original TikZ figures and three complete Python programs support these additions. The [visualization guide](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) gives the commands, data definitions, and validation record.
+
+## McDonald's Ice-Cream Availability
+
+The [McBroken cases](../03_Data_and_Code/McBroken/README.md) connect a supplied restaurant-status panel to measurement and cleaning (M2 §2.16), comparison-group selection for a proposed policy evaluation (M6 §6.16), and forecasting with missing future labels (M7 §7.18). Five complete Python programs and three additional TikZ figures accompany the cases. The examples distinguish recorded order unavailability from verified mechanical failure, retain missing-date and missing-label counts, and evaluate predictions on later dates. The source audit and five counterexample tests passed; two pinned upstream snapshots independently matched the supplied national totals.
 
 ---
 
@@ -871,7 +899,7 @@ Resource IDs in this table use the **additional** catalog namespace, including s
 | M7, 7.17 | Basket Associations | mlxtend-frequent-patterns | [association_rules.py](../03_Data_and_Code/mHealth/recurring_examples/association_rules.py) | Support, confidence, lift, training-only selection, future baskets, user bootstrap. |
 | M8, 8.11 | Evidence Checks for Generated Claims | copycat-ad-copy-generation; pymc-labs-semantic-similarity-rating; claude-ecom-business-review-skill | [claim_checks.py](../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py) | Constructed false claims; numerical and interpretation checks; synthetic-consumer validity discussion. |
 
-The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 41 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
+The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 44 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
 
 ## Other Uses of the Added Resources
 
@@ -891,7 +919,7 @@ The [Markdown modules](README.md) include the complete program text beside each 
 
 ## Replication and Publication
 
-Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 32 embedded source blocks against their matching files.
+Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 37 embedded source blocks against their matching files.
 
 The mHealth programs use the existing 370-user teaching cohort and impose case-specific eligibility rules before reporting results. Their outputs are aggregate. The price simulation is explicitly synthetic. Schema-valid false claims are constructed teaching examples, not measured errors from an LLM. Historical variance reduction is a planning comparison, and basket lift is a descriptive association.
 
@@ -899,7 +927,7 @@ Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permit
 
 ## Data Visualization Additions
 
-`DATAVIZ.yaml` adds 17 source entries, of which one overlaps with the existing catalog. The additional catalog now contains 629 entries, compared with 613 before these additions. Nine new repository snapshots supply local references. The [visualization review](../01_Resources/00_Index/dataviz_resource_review_2026-10-23.json) identifies the inspected sources, catalog aliases, licenses, and incorporation decisions.
+`DATAVIZ.yaml` adds 17 source entries, of which one overlaps with the existing catalog. After the visualization additions, the additional catalog contained 629 entries, compared with 613 beforehand. Nine new repository snapshots supply local references. The [visualization review](../01_Resources/00_Index/dataviz_resource_review_2026-10-23.json) identifies the inspected sources, catalog aliases, licenses, and incorporation decisions.
 
 | Notes | Source References | Incorporation |
 | --- | --- | --- |
@@ -911,6 +939,18 @@ Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permit
 `visualization.py`, `visualization_charts.py`, and `chart_audit.py` were written for the course and executed locally. Their full code is embedded in the notes. Three generated TikZ figures use the Illinois palette. Five independent small-data tests supplement the numerical checks. [Chart data and replication instructions](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) describe the output and browser-validation scope.
 
 FlowingData, its commercial book, the unlicensed storytelling recreation, Data to Viz, Datawrapper, Munzner, and PyNarrative remain optional linked references. No paid material was copied. Bokeh and HoloViz remain alternative implementation references, with their notebooks unexecuted. Matplotlib cheat sheets and Rougier's code remain figure-construction references. Rougier's `LICENSE.txt` separately grants BSD-2-Clause terms to code and CC BY-NC-SA 4.0 terms to book material; the catalog and generated provenance label have been corrected to preserve that distinction.
+
+## McBroken Resources and Executed Cases
+
+The supplied [McBroken bundle](../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/README.md) includes source retrieval scripts, a notebook with saved outputs, a US store panel, and daily/weekly aggregates. The [course adaptation review](../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/COURSE_ADAPTATION.md) records the inspected source logic, policy-date correction, measurement issues, and verification scope.
+
+| Resource | Course Application | Verified Output |
+| --- | --- | --- |
+| Supplied snapshot and panel extraction | M2 §2.16: API type handling, source audit, coverage, address keys, exact calendar joins | `api_checks.py`, `prepare.py`, `coverage.py`; national counts and dimension totals reconcile |
+| Weekly country series and the Copyright Office's 2024 final rule | M6 §6.16: common-week policy contrasts and comparison-country sensitivity | `policy.py`; descriptive USA–Canada and USA–UK contrasts with implementation week omitted |
+| US store panel and snapshot manifest | M7 §7.18: time-separated forecasts, Brier scores, calibration, missing future labels | `predict.py`; later-date evaluation and eligible-origin denominator |
+
+The five original teaching programs use the local data and appear in full in the notes. Their [README](../03_Data_and_Code/McBroken/README.md), [data dictionary](../03_Data_and_Code/McBroken/DATA_DICTIONARY.md), [manifest](../03_Data_and_Code/McBroken/manifest.json), and [result descriptions](../03_Data_and_Code/McBroken/results/README.md) provide replication and interpretation details. Three additional TikZ figures use the Illinois palette. The supplied network collector and notebook were inspected as references; the adaptation does not claim to have rerun their complete historical retrieval. The original bundle is preserved with attribution, and no scheduled collection was activated.
 
 ---
 
@@ -973,6 +1013,159 @@ The PDF and all three TikZ previews were compiled and visually reviewed. Browser
 ## Sources
 
 Chart choice draws on the [Financial Times Visual Vocabulary](https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md). Distribution and uncertainty distinctions are supported by the [seaborn tutorials](https://seaborn.pydata.org/tutorial.html). The [Altair tutorial](https://github.com/altair-viz/altair-tutorial) supplies the declarative-interaction approach; the course programs use their own mHealth transformations and current pinned syntax. [VisEval](https://github.com/microsoft/VisEval) motivates the distinction among executable code, fidelity to a request, and readability. Original references and license terms are recorded in the [resource review](../../../../01_Resources/00_Index/dataviz_resource_review_2026-10-23.json).
+
+---
+
+## Source: 03_Data_and_Code/McBroken/README.md
+
+# McDonald's Ice-Cream Availability
+
+**Marketing Analytics · By Nathan Yang**
+
+A service team deciding which restaurants to contact needs a measure of order availability, a stable comparison population, and a forecast that uses information available before the next observation. This case uses the supplied McBroken collection for three applications:
+
+| Module | Question | Executed Program |
+| --- | --- | --- |
+| M2, §2.16 | How do changing coverage, missing dates, and address keys affect an availability percentage? | `prepare.py`, `api_checks.py`, `coverage.py` |
+| M6, §6.16 | How much does a policy contrast depend on the comparison country? | `policy.py` |
+| M7, §7.18 | Does previous status improve forecasts on later dates, and how many origins have usable labels? | `predict.py` |
+
+All five programs appear in full in the [lecture notes](../../06_Lecture_Notes/README.md). The parser examples are constructed edge cases; the availability calculations use the supplied observed data.
+
+## Run the Examples
+
+From this directory, install the dependencies in your chosen environment and run:
+
+```sh
+python -m pip install -r requirements.txt
+python run_all.py
+```
+
+This command uses the aggregate CSV files in `data/`, runs five counterexample tests, computes the three analyses, and updates their TikZ sources. It requires no network access. The saved figure PNGs and PDF are rebuilt separately with the lecture-note builder. Python, NumPy, and pandas are sufficient; no API key is needed.
+
+To repeat the full source audit and reconstruct the aggregate teaching tables:
+
+```sh
+python prepare.py
+python run_all.py
+```
+
+The default input is the [supplied resource bundle](../../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/data/). `python prepare.py --source /path/to/data` accepts another copy of that directory. The [manifest](manifest.json) records source-file sizes and SHA-256 hashes. Daily and weekly teaching tables retain the full archive commit IDs. The original resource scripts explain retrieval from the archive; their live/network collection paths were inspected but were not executed for this adaptation.
+
+## Results and Interpretation
+
+- The audit reconciles 3,053,307 US store-date records with the supplied country totals. The 365-date calendar contains 356 observed US dates, nine missing US dates, and three observed dates with fewer than 2,000 records.
+- There are 29,123 address keys and 13,821 exact coordinate pairs. Coordinates are a linkage diagnostic. No coordinate-based deduplication is imposed.
+- The equal-day unavailable percentage is 13.18%; pooling records gives 13.37%. Alternative count thresholds are reported in [coverage_sensitivity.csv](results/coverage_sensitivity.csv).
+- Around the October 28, 2024, policy effective date, a descriptive US-minus-Canada pre/post contrast is +0.65 percentage points. Using the UK gives +13.37 points. These are calculations of the contrast, with no established causal interpretation.
+- In the later forecast period, previous status gives a Brier score of 0.0851 versus 0.1253 for the training-mean forecast. Usable future labels cover 72.39% of eligible origins. Results describe matched observations under the specified screens.
+
+The [data dictionary](DATA_DICTIONARY.md) defines units and exclusions. [Results](results/README.md) describes the figures, numerical outputs, and verification evidence. These files support text-based retrieval and LLM explanations.
+
+## Source and Rights
+
+Underlying observations: Rashiq Zahid, [McBroken](https://mcbroken.com/). Archive: [MrFlynn/mcbroken-archive](https://github.com/MrFlynn/mcbroken-archive). The supplied extraction spans daily snapshots from October 25, 2025, through October 24, 2026, and weekly snapshots beginning in 2020. The public course files are attributed derived tables and original teaching calculations. The archive's software license is Unlicense; a separate license from McBroken for the underlying data was not established. The manifest does not assert that the data are openly licensed.
+
+The [2024 Copyright Office final rule](https://www.govinfo.gov/content/pkg/FR-2024-10-28/pdf/2024-24563.pdf) supplies the policy effective date and scope. The calculation excludes implementation week zero and uses the same 12 pre and 12 post weeks across three countries. The case concerns evaluation design and order availability; it does not estimate a verified mechanical-failure rate or the causal effect of the exemption.
+
+---
+
+## Source: 03_Data_and_Code/McBroken/DATA_DICTIONARY.md
+
+# McBroken Teaching Data Dictionary
+
+The underlying field `is_broken` records the source's availability status. In the course calculations, one means **recorded order unavailability** and zero means recorded availability. A missing record has unknown status. Mechanical failure, cleaning, inventory, closure, and ordering-system problems can produce different mechanisms behind the same recorded outcome.
+
+## Daily US Calendar
+
+`data/daily_us.csv` has one row per UTC calendar date from October 25, 2025, through October 24, 2026.
+
+| Variable | Definition |
+| --- | --- |
+| `date` | Selected snapshot's calendar date in UTC. |
+| `snapshot_utc` | Time the selected archive commit was recorded, not a technician inspection or necessarily the collection time. |
+| `sha` | Full archive commit identifier; the source is `https://github.com/MrFlynn/mcbroken-archive/blob/SHA/mcbroken.json`. |
+| `n_checked` | Number of US records in the supplied extracted snapshot; blank if there is no US observation. |
+| `n_broken` | Number of those records with `is_broken = 1`. |
+| `share_unavailable` | `n_broken / n_checked`, a fraction from zero to one. |
+| `offset_hours` | Commit time minus 18:00 UTC on the same date, measured in hours. |
+
+The daily coverage program reports equal-day means and pooled record fractions. The thresholds 1,000, 2,000, and 5,000 are imposed sensitivity choices. They do not establish representativeness or identify the reason for a sparse snapshot. The nine missing US dates remain blank, including when another country was observed.
+
+## Next-Day Transitions
+
+`data/transitions.csv` has one row per target date and previous-status group with eligible origins. The origin is the preceding calendar date. Both origin and scored target snapshots require at least 2,000 US records and an absolute offset of no more than three hours from 18:00 UTC. Same-key matches use exact next calendar dates. They retain the original address keys; no full-year coordinate merging occurs.
+
+| Variable | Definition |
+| --- | --- |
+| `date` | Target UTC calendar date. |
+| `previous_unavailable` | Origin status, zero or one. |
+| `n_origins` | Eligible origin records in this previous-status group, including those with missing targets. Origins after the source's final evaluation horizon are excluded. |
+| `n_labeled` | Origins matched to the same key in a usable next-day target snapshot. |
+| `n_unavailable` | Matched targets with unavailability status one. |
+
+`n_unavailable <= n_labeled <= n_origins`. A zero unavailable count with zero labels does not imply availability. `n_unavailable / n_labeled` is undefined in that case. Forecast scoring weights by `n_labeled` and ignores the unavailable target status of unmatched origins while reporting their count. The model is estimated on target dates before August 1, 2026; later target dates form the test set. Full-year `n_days` and `last_seen` are excluded from features.
+
+## Policy Window
+
+`data/policy_window.csv` retains the selected weekly snapshots for USA, Canada (`CA`), and UK in event weeks -12 through +12 around October 28, 2024. It includes source commit timestamps, UTC dates, ISO week labels, short `commit` and full `sha`, country, counts, exact `share_unavailable`, and `event_week`. Values are fractions before the program converts them to percentages. Week zero is visible in the figure and excluded from pre/post means. The mean weights each common week equally, after requiring at least 2,000 records for USA and 500 for each comparison country.
+
+## Audit and Provenance
+
+`data/audit.json` records source row counts, duplicate and unmatched-key checks, reconciliation results, coverage, address/coordinate diagnostics, gap counts, and the scope of the status audit. `manifest.json` identifies the six supplied source files by SHA-256 and byte size. The imported snapshot manifest contains selected commits even when their source extraction yields no usable US rows; this is why a manifest count and a panel date count can differ.
+
+The original extractor uses Boolean conversion and a permissive number parser. The course's `api_checks.py` demonstrates stricter handling on constructed inputs. Two pinned raw snapshots were independently checked for nonboolean/missing US statuses and for agreement with supplied US totals. This spot check does not validate every historical JSON field or the underlying order-attempt mechanism.
+
+---
+
+## Source: 03_Data_and_Code/McBroken/AGENTS.md
+
+# Agent Guide for McBroken Examples
+
+Read the root agent guide, this folder's README, and DATA_DICTIONARY.md. Start with the managerial question and the observation process.
+
+- Use **recorded order unavailability** for the course outcome. The `is_broken` field is not verified repair-log evidence.
+- Read the aggregate tables and results before the three-million-row source panel. Use the source hashes and commit IDs for provenance.
+- Distinguish a missing US date, a sparse snapshot, a missing same-key target, and an observed available record.
+- Original address keys can change spelling. Exact coordinate counts diagnose possible aliases; they are not verified counts of physical restaurants. Do not merge keys automatically on coordinates.
+- Match next calendar dates explicitly. Preserve the eligible-origin denominator and report usable-label coverage with forecast scores.
+- Fit only on earlier target dates. Full-year `n_days`, `last_seen`, and future snapshot coverage are not origin-time predictors.
+- The policy program computes descriptive country contrasts. Do not call its differences a causal policy effect or invent significance tests based on independent stores.
+- The five source programs match the full Python blocks in M2 §2.16, M6 §6.16, and M7 §7.18. Update both when editing and run `scripts/check_lecture_code.py` from the repository root.
+- `run_all.py` uses local teaching tables and requires no network. The original collection notebook and network retrieval scripts have separate provenance and were not rerun for this adaptation. Do not activate their scheduling template unless requested.
+
+---
+
+## Source: 03_Data_and_Code/McBroken/results/README.md
+
+# McBroken Results and Verification
+
+The programs ran successfully on October 24, 2026. The source data cover October 25, 2025, through October 24, 2026, for the daily audit and forecast case. The policy case uses 25 weekly snapshots around October 28, 2024, displaying week zero and excluding it from the pre/post means.
+
+| Output | Content |
+| --- | --- |
+| `coverage_sensitivity.csv`, `coverage.json` | Coverage thresholds, equal-day means, pooled fractions, and missing/sparse dates. |
+| `policy_means.csv`, `policy.json` | Country pre/post means and descriptive contrasts in percentage points. |
+| `prediction_scores.csv`, `prediction.json` | Fixed time split, sample counts, label coverage, Brier scores, and accuracy. |
+| `prediction_calibration.csv` | Training probabilities, later observed rates, and label coverage by previous status. |
+| `source_spot_checks.json` | Checks of the first and last daily snapshots against their full upstream commit IDs. |
+| `verification.json` | Python and package versions, executed programs, test counts, source checks, and PDF/figure counts. |
+
+## Figure Descriptions
+
+- **M02_mcbroken_coverage:** Two vertically aligned time-series panels share the same calendar. The upper panel reports observed US record counts and a dashed 2,000-record threshold; the lower panel reports the observed unavailable percentage from 0 to 100. Missing dates remain gaps. Counts change substantially while the percentage describes a changing observed population.
+- **M06_mcbroken_policy:** Weekly unavailable percentages for USA, Canada, and UK share a 0–100 scale. A large UK pre-policy spike changes the comparative before/after calculation. The vertical line is the US policy effective week. The displayed comparison is descriptive.
+- **M07_mcbroken_prediction:** Paired bars compare training probabilities with later observed rates within two previous-status groups. A previously unavailable record has a much higher later rate. Both later rates exceed the corresponding training forecast, indicating calibration drift in this test period.
+
+Each figure uses the Illinois palette with redundant labels or line styles. TikZ sources and PNG companions are in `06_Lecture_Notes/figures/`; the full source programs are embedded in the Markdown and PDF notes.
+
+## Checks Performed
+
+The source preparation checks unique store-date and dimension keys, binary status, matched keys, reported check ages, national count reconciliation, and observed-date totals by key. Five counterexample tests verify missing-field handling, duplicate/unmatched keys, exact calendar matching, grouped versus individual Brier scores, and exclusion of later labels from training. The lecture-code checker verifies exact agreement between all embedded code and source files.
+
+The first and last daily archive snapshots were independently retrieved by full commit ID and reconciled with the supplied national counts. Their US status fields were Boolean and nonmissing. The full historical network collection was not rerun. The supplied upstream notebook's saved outputs are reference material, not evidence that its collection code was executed during this verification.
+
+The row counts do not establish physical restaurant counts, representative sampling, causal effects, or independent observations. The interpretation of each result follows the explicit sample and measurement definition in the data dictionary and notes.
 
 ---
 
@@ -3284,7 +3477,7 @@ Rights or Access: Citation and original summary only; full-text redistribution r
 
 Source: 01_Resources/00_Index/resource_catalog.json
 
-629 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
+634 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
 
 ---
 
@@ -5901,6 +6094,94 @@ Focus: In a user study, participants with an AI assistant wrote significantly le
 Teaching Suggestion: Evidence for the course norm 'confidence is not correctness'. Pair it with an in-class exercise auditing AI-generated code.
 
 Cautions: The arXiv page shows the ACM DOI but not the venue name. CCS 2023 is inferred from the DOI and should be confirmed before citing.
+
+Rights or Access: open
+
+---
+
+### additional:mcbroken-api-lab | Lab: collecting public data from an API (McBroken, McDonald's ice-cream machines)
+
+Source URL: https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab
+
+Modules: M2, M6
+
+Priority: core
+
+Focus: Executed notebook plus two scripts. fetch_mcbroken.py calls https://mcbroken.com/markers.json (one GeoJSON feature per store, gzip, undocumented), checks status, decompresses, flattens to a DataFrame and saves a timestamped copy, with a fallback to a public-domain GitHub archive. build_panel.py walks that archive's 60,000-commit git history and writes daily (one year) and weekly (six years) panels by country, US state and store. Includes a GitHub Actions template for students to build their own daily snapshots.
+
+Teaching Suggestion: M2 session on data collection: HTTP requests, headers, status codes, JSON to table, polite scraping, and git scraping as a cheap way to build a time series. Exercise 1 has students audit AI-written request code (timeout, User-Agent, status check, gzip, raw copy). Exercise 5 previews M6 with a right-to-repair event study (US Copyright Office exemption, late Oct 2024).
+
+Cautions: Measurement caveats are in the README: is_broken means the McDonald's app refused an ice-cream order (also fires when a store is closed); the denominator is stores checked in that hour and the checking cadence changed over the years. Raw JSON is not redistributed; derived aggregates and one snapshot are.
+
+Rights or Access: open
+
+---
+
+### additional:mcbroken-site | McBroken: real-time tracker of McDonald's ice-cream machines
+
+Source URL: https://mcbroken.com/
+
+Modules: M2
+
+Priority: recommended
+
+Focus: Hobby site (October 2020) that checks each McDonald's every few minutes by trying to add an ice-cream item to a cart through McDonald's ordering API; the map is drawn from https://mcbroken.com/markers.json and the city table from https://mcbroken.com/stats.json. Covers 30,000+ stores in 50+ countries.
+
+Teaching Suggestion: The worked example for M2 data collection. Students open stats.json in a browser first, then call it from Python.
+
+Cautions: No documented API, no terms of use and no licence: treat as publicly viewable, not openly licensed. Blocked on some campus and corporate networks; the lab falls back to the GitHub archive.
+
+Rights or Access: open
+
+---
+
+### additional:mrflynn-mcbroken-archive | mcbroken-archive: hourly git-scraped snapshots of McBroken since October 2020
+
+Source URL: https://github.com/MrFlynn/mcbroken-archive
+
+Modules: M2, M6
+
+Priority: core
+
+Focus: A GitHub Actions job downloads markers.json several times a day (hourly cron, in practice 4 to 40 commits a day over the years), keeps the stores checked in the previous hour, and commits the file; 60,000+ commits from 2020-10-24 onward. Includes a git-history transform script for loading everything into SQLite.
+
+Teaching Suggestion: Source of the lab's time series via build_panel.py. Also the clearest small example of git scraping to show students.
+
+Cautions: Each commit holds only recently checked stores, so coverage per snapshot varies (15,000 to 25,000 of about 30,000). The Unlicense covers the repository, not McDonald's underlying facts.
+
+Rights or Access: open
+
+---
+
+### additional:willison-2020-git-scraping | Git scraping: track changes over time by scraping to a Git repository
+
+Source URL: https://simonwillison.net/2020/Oct/9/git-scraping/
+
+Modules: M2
+
+Priority: recommended
+
+Focus: The post that named the pattern: a scheduled GitHub Actions workflow fetches a public file and commits it, so the git history becomes a time series at zero hosting cost. Links to worked examples and to the git-history tool for turning the history into a database.
+
+Teaching Suggestion: Ten-minute read before the lab's time-series section; the snapshot_mcbroken.yml template follows it.
+
+Rights or Access: open
+
+---
+
+### additional:nrn-2024-copyright-office-food-equipment-repair | McDonald's franchisees will now have an easier time repairing ice cream machines (US Copyright Office DMCA exemption for commercial food-preparation equipment)
+
+Source URL: https://www.nrn.com/quick-service/mcdonald-s-franchisees-will-now-have-an-easier-time-repairing-ice-cream-machines
+
+Modules: M6, M2
+
+Priority: optional
+
+Focus: In late October 2024 the US Copyright Office granted an exemption, petitioned by iFixit and Public Knowledge and supported by the FTC and DOJ, allowing third parties to diagnose and repair retail-level commercial food-preparation equipment, including the Taylor soft-serve machines in McDonald's stores.
+
+Teaching Suggestion: A natural event for a difference-in-differences exercise with the McBroken weekly country panel (USA versus Canada, UK and others). Students write the identifying assumption before plotting.
+
+Cautions: Decision reported 25 Oct 2024. Measurement in the McBroken series also changed over time, so the exercise is as much about threats to identification as about the estimate.
 
 Rights or Access: open
 

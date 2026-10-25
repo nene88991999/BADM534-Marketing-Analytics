@@ -1,12 +1,13 @@
 # M2 · Customer Data and Visualization
 
-53 resources (11 core). Built 2026-10-23 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+57 resources (13 core). Built 2026-10-25 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
 - [Customer data](#customer-data) (5)
+- [Collecting data from APIs](#collecting-data-from-apis) (4)
 - [Privacy and customer data](#privacy-and-customer-data) (4)
 - [Visualization principles](#visualization-principles) (5)
 - [Visualization in Python](#visualization-in-python) (5)
@@ -50,6 +51,33 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Concept page for cohort retention; students then build the same table from Online Retail II in pandas.
   Tools: Google Analytics 4
   *Note:* No verified Python cohort-analysis tutorial was found before the search budget ran out (gap).
+
+## Collecting data from APIs
+
+- [core] **[Lab: collecting public data from an API (McBroken, McDonald's ice-cream machines)](https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab)** (2026) — Yang, N. (BADM 534 course materials)
+  `notebook` · `intro` · `access: open` · `Course material; derived data, see README` · `AI angle`
+  Executed notebook plus two scripts. fetch_mcbroken.py calls https://mcbroken.com/markers.json (one GeoJSON feature per store, gzip, undocumented), checks status, decompresses, flattens to a DataFrame and saves a timestamped copy, with a fallback to a public-domain GitHub archive. build_panel.py walks that archive's 60,000-commit git history and writes daily (one year) and weekly (six years) panels by country, US state and store. Includes a GitHub Actions template for students to build their own daily snapshots.
+  *Use in wiki:* M2 session on data collection: HTTP requests, headers, status codes, JSON to table, polite scraping, and git scraping as a cheap way to build a time series. Exercise 1 has students audit AI-written request code (timeout, User-Agent, status check, gzip, raw copy). Exercise 5 previews M6 with a right-to-repair event study (US Copyright Office exemption, late Oct 2024).
+  Tools: requests, pandas, matplotlib, git, GitHub Actions · Local copy: `02_M2_Customer_Data_and_Visualization/mcbroken_api_lab`
+  *Note:* Measurement caveats are in the README: is_broken means the McDonald's app refused an ice-cream order (also fires when a store is closed); the denominator is stores checked in that hour and the checking cadence changed over the years. Raw JSON is not redistributed; derived aggregates and one snapshot are.
+
+- [core] **[mcbroken-archive: hourly git-scraped snapshots of McBroken since October 2020](https://github.com/MrFlynn/mcbroken-archive)** (2020) — MrFlynn (GitHub). *GitHub*
+  `dataset` · `intro` · `access: open` · `Unlicense`
+  A GitHub Actions job downloads markers.json several times a day (hourly cron, in practice 4 to 40 commits a day over the years), keeps the stores checked in the previous hour, and commits the file; 60,000+ commits from 2020-10-24 onward. Includes a git-history transform script for loading everything into SQLite.
+  *Use in wiki:* Source of the lab's time series via build_panel.py. Also the clearest small example of git scraping to show students.
+  Tools: git, GitHub Actions, jq, git-history
+  *Note:* Each commit holds only recently checked stores, so coverage per snapshot varies (15,000 to 25,000 of about 30,000). The Unlicense covers the repository, not McDonald's underlying facts.
+
+- [recommended] **[Git scraping: track changes over time by scraping to a Git repository](https://simonwillison.net/2020/Oct/9/git-scraping/)** (2020) — Willison, S
+  `blog` · `intro` · `access: open`
+  The post that named the pattern: a scheduled GitHub Actions workflow fetches a public file and commits it, so the git history becomes a time series at zero hosting cost. Links to worked examples and to the git-history tool for turning the history into a database.
+  *Use in wiki:* Ten-minute read before the lab's time-series section; the snapshot_mcbroken.yml template follows it.
+
+- [recommended] **[McBroken: real-time tracker of McDonald's ice-cream machines](https://mcbroken.com/)** (2020) — Zahid, R
+  `website` · `intro` · `access: open` · `none stated`
+  Hobby site (October 2020) that checks each McDonald's every few minutes by trying to add an ice-cream item to a cart through McDonald's ordering API; the map is drawn from https://mcbroken.com/markers.json and the city table from https://mcbroken.com/stats.json. Covers 30,000+ stores in 50+ countries.
+  *Use in wiki:* The worked example for M2 data collection. Students open stats.json in a browser first, then call it from Python.
+  *Note:* No documented API, no terms of use and no licence: treat as publicly viewable, not openly licensed. Blocked on some campus and corporate networks; the lab falls back to the GitHub archive.
 
 ## Privacy and customer data
 
@@ -368,6 +396,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 
 Resources in this folder that show the method done with AI help, LLM versions of the method, or documented failure modes of AI-written analysis:
 
+- [Lab: collecting public data from an API (McBroken, McDonald's ice-cream machines)](https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab)
 - [Matplotlib Quick start guide (and official cheatsheets)](https://matplotlib.org/stable/users/explain/quick_start.html)
 - [LIDA: A Tool for Automatic Generation of Grammar-Agnostic Visualizations and Infographics using Large Language Models](https://aclanthology.org/2023.acl-demo.11)
 - [Data Formulator: AI-powered data exploration with visualizations](https://github.com/microsoft/data-formulator)
@@ -382,7 +411,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 
 - **`01_M1_Marketing_Analytics_and_Python`**: [10 minutes to pandas (official quick start)](https://pandas.pydata.org/docs/user_guide/10min.html); [Plotting and Programming in Python (Software Carpentry)](https://swcarpentry.github.io/python-novice-gapminder); [pandas_exercises](https://github.com/guipsamora/pandas_exercises); [Marketing Analytics Jumpstart (Google Cloud)](https://github.com/GoogleCloudPlatform/marketing-analytics-jumpstart); [Python for Excel, 2nd edition (companion repo)](https://github.com/fzumstein/python-for-excel)
 - **`04_M4_Conjoint_Segmentation_CLV`**: [PyMC-Marketing CLV Quickstart (BG/NBD + Gamma-Gamma) and CLV model notebooks](https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html)
-- **`06_M6_Causal_Inference_and_Experiments`**: [Mobile App Introduction and Online and Offline Purchases and Product Returns](https://pubsonline.informs.org/doi/10.1287/mksc.2019.1169); [balance: Python package for adjusting biased samples (survey weighting)](https://github.com/facebookresearch/balance)
+- **`06_M6_Causal_Inference_and_Experiments`**: [Mobile App Introduction and Online and Offline Purchases and Product Returns](https://pubsonline.informs.org/doi/10.1287/mksc.2019.1169); [balance: Python package for adjusting biased samples (survey weighting)](https://github.com/facebookresearch/balance); [McDonald's franchisees will now have an easier time repairing ice cream machines (US Copyright Office DMCA exemption for commercial food-preparation equipment)](https://www.nrn.com/quick-service/mcdonald-s-franchisees-will-now-have-an-easier-time-repairing-ice-cream-machines)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Consumption Variety in Food Recommendation](https://www.journals.uchicago.edu/doi/10.1086/720453); [Fighting Churn with Data (companion code)](https://github.com/carl24k/fight-churn)
 - **`08_M8_Current_Topics_in_Marketing`**: [Update on Plans for Privacy Sandbox Technologies](https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies); [Anthropic Economic Index](https://www.anthropic.com/economic-index); [The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report)
 - **`10_AI_Coding_Concepts_and_Evidence`**: [Stack Overflow Developer Survey 2025: AI](https://survey.stackoverflow.co/2025/ai/); [How Do Analysts Understand and Verify AI-Assisted Data Analyses?](https://arxiv.org/abs/2309.10947); [Stack Overflow Developer Survey 2026: AI](https://survey.stackoverflow.co/2026/ai); [Is GPT-4 a Good Data Analyst?](https://arxiv.org/abs/2305.15038)
