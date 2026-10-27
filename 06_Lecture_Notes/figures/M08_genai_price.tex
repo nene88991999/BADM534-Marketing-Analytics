@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[width=10.5cm,height=5.5cm,xmin=-0.07,xmax=0,ymin=-0.5,ymax=2.5,
+ xlabel={Log-Odds Price Coefficient per Dollar},
+ ytick={0,1,2},yticklabels={{Exact binary benchmark},{New basic-plan flow},{Basic-plan stock}},
+ xtick={-0.06,-0.04,-0.02,0},grid=major]
+\addplot[Storm,dashed] coordinates {(-0.06,-0.4) (-0.06,2.4)};
+\addplot[IlliniBlue,mark=*,only marks,mark size=3pt] coordinates {(-0.03003875,2)};
+\addplot[IlliniOrange,mark=square*,only marks,mark size=3pt] coordinates {(-0.04987365,1)};
+\addplot[Storm,mark=triangle*,only marks,mark size=3pt] coordinates {(-0.06000000,0)};
+\end{axis}
+\end{tikzpicture}

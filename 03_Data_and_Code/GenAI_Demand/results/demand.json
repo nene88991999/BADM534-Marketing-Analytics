@@ -1,0 +1,28 @@
+{
+  "data_type": "synthetic",
+  "available_provider_months": 179,
+  "common_positive_share_rows": 179,
+  "excluded_zero_share_rows": 0,
+  "imposed_utility_price_coefficient": -0.06,
+  "projections": [
+    {
+      "outcome": "stock_share",
+      "price_coefficient": -0.030038748412780588,
+      "rows": 179,
+      "residual_price_sum_squares": 1524.1983675098859
+    },
+    {
+      "outcome": "flow_share",
+      "price_coefficient": -0.04987364502120728,
+      "rows": 179,
+      "residual_price_sum_squares": 1524.1983675098859
+    },
+    {
+      "outcome": "exact_binary_logit",
+      "price_coefficient": -0.059999999999998416,
+      "rows": 179,
+      "residual_price_sum_squares": 1524.1983675098859
+    }
+  ],
+  "interpretation": "Stock and flow slopes are descriptive projections of a heterogeneous dynamic simulation; only the exact binary benchmark recovers its imposed coefficient by construction"
+}

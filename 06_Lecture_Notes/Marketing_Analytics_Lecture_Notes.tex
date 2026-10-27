@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large October 24, 2026\par}
+{\large October 26, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -2734,6 +2734,219 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M02-public-signals-of-demand-for-generative-ai}{%
+\section{Public Signals of Demand for Generative
+AI}\label{M02-public-signals-of-demand-for-generative-ai}}
+
+\noindent A subscription provider deciding where to invest in acquisition needs to
+distinguish public attention, product use, and payment. A high position
+in an app chart establishes an ordering within that chart. It supplies
+neither the number of downloads nor the fraction of consumers who pay. A
+pricing page describes the offers available at a particular date, while
+transactions reveal which offers customers purchase. Combining these
+sources is useful when each measure retains its observation unit and
+population.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Source & Recorded Object & Relevant Interpretation \\
+\midrule
+
+App Store top-free chart & App rank in one storefront and capture &
+Ordinal position among listed apps; absence means outside the returned
+list or otherwise absent from the feed \\
+Wikipedia pageviews & View events for a title, project, access method,
+and agent category & Attention to selected pages; repeated views and
+unpaid users can contribute \\
+OpenRouter model list & Listed model, listing timestamp, and posted
+token prices & Available API offers at capture; neither realized token
+demand nor verified public launch dates \\
+Ramp AI Index & Paid-AI adoption among businesses in its stated
+transaction sample & Business spending, with a population different from
+consumers and app users \\
+Consumer subscription panel & Consumer-provider-month payment status &
+Adoption, simultaneous subscriptions, and transitions under the panel's
+coverage rules \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The supplied
+\href{../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/README.md}{generative-AI
+resource bundle} contains dated public captures and a separate simulated
+subscription panel. The captures are historical snapshots. The simulated
+panel's counts describe its imposed population and behavioral rules.
+
+\hypertarget{M02-title-changes-and-apparent-demand-declines}{%
+\subsection{Title Changes and Apparent Demand
+Declines}\label{M02-title-changes-and-apparent-demand-declines}}
+
+\noindent A measurement system can record a substantial decline when attention
+moves between page titles. The supplied English Wikipedia capture
+contains two Claude titles, \texttt{Claude\_(language\_model)} and
+\texttt{Claude\_(AI)}. The
+\href{https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/concepts/page-views.html}{Wikimedia
+definition} distinguishes view events from people and explains that
+redirects are not automatically added to the target page's views. A
+title-specific series therefore requires a stable definition of the
+pages being counted.
+
+Restrict the comparison to June through September 2026 and the two named
+titles. Both title counts are present on all 122 calendar days. Within
+each month, sum the recorded daily events for each title exactly once.
+June and September each contain 30 days, so the endpoint comparison uses
+equally long windows.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Month & Older Title & Newer Title & Sum of Selected Titles \\
+\midrule
+
+June 2026 & 173,190 & 52,103 & 225,293 \\
+July 2026 & 25,873 & 148,027 & 173,900 \\
+August 2026 & 19,768 & 132,501 & 152,269 \\
+September 2026 & 25,872 & 161,884 & 187,756 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The older title falls 85.1\% between June and September. Summing the two
+selected titles yields a 16.7\% decline. The difference changes the
+managerial interpretation of the apparent loss of attention. The
+combined series remains a count of events on these pages. It supplies no
+conversion rate from readers to subscribers, and a person can generate
+multiple events across titles.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_genai_titles.tex}
+\caption{Recorded Wikipedia views indexed to June 2026. The older-title index falls to 14.9 in September, while the sum of the two selected titles falls to 83.3. Monthly totals use the supplied capture; both titles have complete daily records in the selected window.}\label{fig:M02_genai_titles}
+\end{figure}
+
+\hypertarget{M02-completeness-identity-and-ai-assisted-extraction}{%
+\subsection{Completeness, Identity, and AI-Assisted
+Extraction}\label{M02-completeness-identity-and-ai-assisted-extraction}}
+
+\noindent An API response and a successful parser provide separate pieces of
+evidence. Repeated requests through different aliases can return the
+same title-date observation. Deduplicate by the returned title and date,
+verify that repeated values agree, and count the observation once.
+Preserve the retrieval status separately from the value: a failed
+request or an absent record does not by itself establish zero views. The
+code below builds the full calendar and returns an unknown combined
+count whenever either required title-day is missing.
+
+For a public-price table, retain the model or plan identifier, currency,
+billing period, region, and capture date. Separate a monthly
+subscription amount from USD per million input or output tokens. A
+missing price remains unknown, and a routing service's variable price
+needs a separate status. A listing timestamp identifies inclusion in
+that marketplace; an event study of public releases needs independently
+checked announcement dates and access conditions.
+
+An AI-generated collector should be tested with three small inputs: a
+repeated title-date, conflicting values for that key, and a day on which
+one title is absent. The expected behavior follows from the observation
+unit. It should deduplicate the first case, reject the conflict, and
+preserve the missing value in the third. A plausible-looking chart is
+insufficient evidence that these rules were implemented.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/GenAI_Demand/measurement.py}{measurement.py}.
+From the script's folder, run \texttt{python3\ measurement.py}. Inputs
+are read from the supplied local bundle; output tables are written
+beside the course scripts.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Audit the supplied Wikipedia capture without making network requests."""
+from pathlib import Path
+import json
+
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/data"
+OUTPUT = HERE / "results"
+TITLES = ["Claude_(language_model)", "Claude_(AI)"]
+
+
+def unique_views(frame):
+    """Count each title-date once; reject conflicting repeated responses."""
+    keys = ["date", "article"]
+    if frame[keys + ["provider", "views"]].isna().any().any():
+        raise ValueError("Missing title, date, provider, or view count")
+    if not np.isfinite(frame.views).all() or (frame.views < 0).any():
+        raise ValueError("View counts must be finite and nonnegative")
+    if (frame.views % 1 != 0).any():
+        raise ValueError("View counts must be integers")
+    conflicts = frame.groupby(keys)[["provider", "views"]].nunique()
+    if (conflicts > 1).any().any():
+        raise ValueError("Conflicting repeated title-date responses")
+    return frame.drop_duplicates(keys).copy()
+
+
+def title_calendar(frame, titles, start, end):
+    """A missing title-day remains unknown; zero must be explicitly recorded."""
+    frame = unique_views(frame)
+    dates = pd.date_range(start, end, freq="D")
+    selected = frame.loc[frame.article.isin(titles)]
+    wide = selected.pivot(index="date", columns="article", values="views")
+    wide = wide.reindex(index=dates, columns=titles)
+    wide["observed_titles"] = wide[titles].notna().sum(axis=1)
+    wide["selected_title_views"] = wide[titles].sum(axis=1, min_count=len(titles))
+    wide.index.name = "date"
+    return wide
+
+
+def main():
+    raw = pd.read_csv(SOURCE / "wikipedia_pageviews_daily_2026-10-26.csv", parse_dates=["date"])
+    clean = unique_views(raw)
+    daily = title_calendar(clean, TITLES, "2026-06-01", "2026-09-30")
+    rows = []
+    for month, group in daily.groupby(daily.index.to_period("M")):
+        row = {"month": str(month), "calendar_days": len(group),
+               "complete_days": int(group.selected_title_views.notna().sum())}
+        for column in TITLES + ["selected_title_views"]:
+            # Full-month totals are missing if even one title-day is unknown.
+            row[column] = group[column].sum(min_count=len(group))
+        rows.append(row)
+    monthly = pd.DataFrame(rows)
+    assert monthly.complete_days.eq(monthly.calendar_days).all()
+    june, september = monthly.iloc[0], monthly.iloc[-1]
+    result = {
+        "input_rows": len(raw), "unique_title_days": len(clean),
+        "exact_duplicates_removed": len(raw) - len(clean),
+        "selected_titles": TITLES, "complete_days": int(daily.selected_title_views.notna().sum()),
+        "old_title_change_pct": 100 * (september[TITLES[0]] / june[TITLES[0]] - 1),
+        "selected_titles_change_pct": 100 * (september.selected_title_views / june.selected_title_views - 1),
+        "measurement": "Recorded pageview events for two selected English Wikipedia titles; not unique people or payments",
+        "capture_status": "Supplied dated CSV, not a new retrieval; API responses and rename history were not re-collected",
+    }
+    # Independent aggregate check using the long input rather than the pivot.
+    selected = clean.loc[clean.article.isin(TITLES) & clean.date.between(daily.index.min(), daily.index.max())]
+    direct = selected.groupby(selected.date.dt.to_period("M")).views.sum().to_numpy()
+    np.testing.assert_array_equal(monthly.selected_title_views, direct)
+    OUTPUT.mkdir(exist_ok=True)
+    daily.to_csv(OUTPUT / "wikipedia_title_days.csv", float_format="%.8f")
+    monthly.to_csv(OUTPUT / "wikipedia_months.csv", index=False, float_format="%.8f")
+    (OUTPUT / "measurement.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -4206,6 +4419,263 @@ if __name__ == "__main__":
         curve.to_csv(OUTPUT / f"logging_gap_{gap}.csv", index=False)
     save_result("logging_gaps", result)
     print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M04-subscription-retention-and-category-participation}{%
+\section{Subscription Retention and Category
+Participation}\label{M04-subscription-retention-and-category-participation}}
+
+\noindent A provider considering a retention offer needs to know whether departing
+subscribers continue buying from competitors. A customer who retains the
+category may respond to a different price, product, or bundle. A
+customer who stops paying for the category raises a different
+acquisition question. These outcomes require linked customer histories
+and a common starting cohort.
+
+\hypertarget{M04-adoption-and-multihoming-denominators}{%
+\subsection{Adoption and Multihoming
+Denominators}\label{M04-adoption-and-multihoming-denominators}}
+
+\noindent The supplied synthetic panel contains a fixed roster of 60,000 consumers
+and 40 calendar months from January 2023 through April 2026.
+Subscription rows record held provider plans; the roster also includes
+consumers who never subscribe. Within this complete simulation, an
+absent consumer-provider-month row means no paid subscription. That
+interpretation relies on the generator's recording rule and would
+require separate validation in a transaction dataset.
+
+Let \(D_{ijt}\) indicate that consumer \(i\) holds a paid subscription
+to provider \(j\) in month \(t\). To measure category adoption and
+multihoming among payers, calculate
+
+\[
+A_t=\frac{\sum_{i=1}^{N}\mathbf{1}\{\sum_jD_{ijt}>0\}}{N},
+\qquad
+H_t=\frac{\sum_{i=1}^{N}\mathbf{1}\{\sum_jD_{ijt}>1\}}
+{\sum_{i=1}^{N}\mathbf{1}\{\sum_jD_{ijt}>0\}}.
+\]
+
+Here \(N\) is the full consumer roster. Adoption uses all consumers,
+while multihoming uses the consumers with at least one subscription. In
+April 2026, the simulation has 1,741 payers holding 1,813 subscriptions,
+and 71 payers hold multiple providers. Adoption is therefore 2.902\%,
+and multihoming among payers is 4.078\%. The extra subscriptions and the
+number of multihomers differ because a consumer can hold more than two
+providers.
+
+The generator adjusts a common utility term each month to approach a
+chosen aggregate adoption path. The final adoption rate is consequently
+a calibration outcome. It supplies no independent estimate of actual
+market penetration.
+
+\hypertarget{M04-following-the-same-starting-customers}{%
+\subsection{Following the Same Starting
+Customers}\label{M04-following-the-same-starting-customers}}
+
+\noindent Define \(C_j\) as the set of consumers paying provider \(j\) in January
+2025. At a later month, partition this fixed set into consumers paying
+\(j\), consumers paying only other providers, and consumers paying no
+provider. Consumers who hold \(j\) and a rival belong in the first
+group. These three groups exhaust the original cohort, so their shares
+sum to one.
+
+The table follows each January 2025 provider cohort to January 2026. All
+values are synthetic. Provider cohorts overlap when a starting customer
+holds multiple subscriptions; their denominators should not be added as
+a unique-consumer count.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}@{}}
+\toprule
+January 2025 Provider & Starting Customers & Same Provider After 12
+Months & Other Providers Only & No Paid Provider \\
+\midrule
+
+Anthropic & 317 & 32.8\% & 26.5\% & 40.7\% \\
+Google & 157 & 18.5\% & 38.2\% & 43.3\% \\
+Microsoft & 84 & 1.2\% & 53.6\% & 45.2\% \\
+OpenAI & 430 & 37.7\% & 20.9\% & 41.4\% \\
+Perplexity & 63 & 3.2\% & 58.7\% & 38.1\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the 430 starting OpenAI subscribers, 162 pay OpenAI after twelve
+months and another 90 pay other providers exclusively. Category
+participation within this same cohort is \(252/430=58.6\%\). The
+20.9-percentage-point difference isolates continued category
+participation among customers who no longer hold the original provider.
+Comparing a provider cohort with the pooled cohort of all initial AI
+payers would also change the mix of customers in the denominator.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_genai_cohorts.tex}
+\caption{Synthetic January 2025 provider cohorts partitioned by January 2026 payment status. Each horizontal bar uses its own fixed starting cohort and sums to 100 percent: same provider, other providers only, and no paid provider. The five provider cohorts can overlap.}\label{fig:M04_genai_cohorts}
+\end{figure}
+
+\hypertarget{M04-endpoint-retention-continuous-retention-and-acquisition}{%
+\subsection{Endpoint Retention, Continuous Retention, and
+Acquisition}\label{M04-endpoint-retention-continuous-retention-and-acquisition}}
+
+\noindent Endpoint retention permits cancellation followed by reentry. Continuous
+retention requires the same provider to be held in every intervening
+month. Of the 430 starting OpenAI subscribers, 129 remain continuously
+subscribed through January 2026, a 30.0\% continuous-retention rate. The
+162 endpoint subscribers include 33 who returned after at least one
+observed gap. A cohort of existing subscribers also differs from a
+cohort of newly acquired customers because subscription tenure and prior
+survival affect its composition. Applying an acquisition-cohort CLV
+formula to this twelve-month endpoint rate would obscure both
+distinctions.
+
+Likewise, the supplied \texttt{new} flag records a provider absent from
+the previous month's holdings. It can describe first paid entry, reentry
+to the category, a complete replacement of previous providers, or an
+additional provider while retaining at least one incumbent. In April
+2026, the 401 new-provider events comprise 197 first paid entries, 157
+category returns, 32 complete provider switches, and 15 provider
+additions. There are 400 distinct consumers behind these events because
+one consumer starts two providers. The event denominator is therefore
+explicit.
+
+A release-month increase in new-provider events can reflect several of
+these mechanisms. A causal claim about a release also requires a
+credible comparison for what would have happened without it. Timing,
+publicity, contemporaneous prices, overlapping releases, and previous
+subscription states affect that comparison. The descriptive partition
+supports the acquisition decision without treating every new-provider
+event as switching.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/GenAI_Demand/retention.py}{retention.py}. From
+the script's folder, run \texttt{python3\ retention.py}. Inputs are read
+from the supplied local bundle; output tables are written beside the
+course scripts.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Measure synthetic subscription stocks, cohorts, and acquisition events."""
+from pathlib import Path
+import json
+
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/data"
+OUTPUT = HERE / "results"
+
+
+def acquisition_type(previous, current, ever_paid):
+    """Classify a newly held provider using adjacent monthly subscription sets."""
+    if not previous:
+        return "category_return" if ever_paid else "first_paid_entry"
+    if previous.isdisjoint(current):
+        return "complete_provider_switch"
+    return "provider_addition"
+
+
+def cohort_outcomes(subs, provider, start, horizon, observed_months):
+    """Endpoint and continuous retention for one fixed provider cohort."""
+    required = {str(pd.Period(start, freq="M") + k) for k in range(horizon + 1)}
+    if not required.issubset(set(observed_months)):
+        raise ValueError("Cohort horizon extends beyond the observed calendar")
+    cohort = set(subs.loc[subs.month.eq(start) & subs.provider.eq(provider), "consumer_id"])
+    if not cohort:
+        raise ValueError("Empty starting cohort")
+    continuous = cohort.copy()
+    rows = []
+    for k in range(horizon + 1):
+        month = str(pd.Period(start, freq="M") + k)
+        active = subs.loc[subs.month.eq(month)]
+        own = set(active.loc[active.provider.eq(provider), "consumer_id"])
+        any_provider = set(active.consumer_id)
+        continuous &= own
+        row = {"provider": provider, "start_month": start, "month": month,
+               "horizon_months": k, "cohort_size": len(cohort),
+               "same_provider": len(cohort & own),
+               "other_provider_only": len((cohort & any_provider) - own),
+               "no_paid_provider": len(cohort - any_provider),
+               "continuous_same_provider": len(continuous)}
+        assert row["same_provider"] + row["other_provider_only"] + row["no_paid_provider"] == len(cohort)
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def main():
+    consumers = pd.read_csv(SOURCE / "synthetic_consumers.csv")
+    subs = pd.read_csv(SOURCE / "synthetic_subscriptions.csv.gz")
+    dgp = json.loads((SOURCE / "synthetic_dgp.json").read_text())
+    months = sorted(dgp["g_trend"])
+    n = len(consumers)
+    assert n == dgp["n_consumers"] and consumers.consumer_id.is_unique
+    assert not subs.duplicated(["consumer_id", "month", "provider"]).any()
+    assert subs.consumer_id.isin(consumers.consumer_id).all()
+    assert subs.month.isin(months).all() and subs.price.gt(0).all()
+    assert subs["new"].isin([True, False]).all()
+    assert subs.tier.isin(["basic", "premium"]).all()
+    states = {m: {int(i): set(g.provider) for i, g in s.groupby("consumer_id")}
+              for m, s in subs.groupby("month")}
+    events, monthly, history = [], [], set()
+    previous = {}
+    for month in months:
+        current = states.get(month, {})
+        for consumer, providers in current.items():
+            old = previous.get(consumer, set())
+            for provider in sorted(providers - old):
+                events.append({"month": month, "consumer_id": consumer, "provider": provider,
+                               "event": acquisition_type(old, providers, consumer in history)})
+        group = subs.loc[subs.month.eq(month)]
+        monthly.append({"month": month, "population": n, "payers": len(current),
+                        "subscriptions": len(group), "adoption": len(current) / n,
+                        "multihomers": sum(len(s) > 1 for s in current.values()),
+                        "basic_subscriptions": int(group.tier.eq("basic").sum())})
+        history.update(current)
+        previous = current
+    events = pd.DataFrame(events)
+    keys = ["month", "consumer_id", "provider"]
+    recorded = set(subs.loc[subs["new"], keys].itertuples(index=False, name=None))
+    calculated = set(events[keys].itertuples(index=False, name=None))
+    assert recorded == calculated
+    monthly = pd.DataFrame(monthly)
+    monthly["multihoming_given_payment"] = monthly.multihomers / monthly.payers.replace(0, np.nan)
+    monthly["basic_subscription_share"] = monthly.basic_subscriptions / monthly.subscriptions.replace(0, np.nan)
+    cohort_start, horizon = "2025-01", 12
+    assert str(pd.Period(cohort_start, freq="M") + horizon) <= months[-1]
+    providers = sorted(subs.loc[subs.month.eq(cohort_start), "provider"].unique())
+    cohorts = pd.concat([cohort_outcomes(subs, p, cohort_start, horizon, months)
+                         for p in providers], ignore_index=True)
+    last_events = events.loc[events.month.eq(months[-1])]
+    counts = last_events.event.value_counts().sort_index()
+    last = monthly.iloc[-1]
+    result = {"data_type": "synthetic", "population": n, "subscription_rows": len(subs),
+              "calendar_months": len(months), "last_month": months[-1],
+              "last_payers": int(last.payers), "last_subscriptions": int(last.subscriptions),
+              "last_adoption": float(last.adoption),
+              "last_multihomers": int(last.multihomers),
+              "last_multihoming_given_payment": float(last.multihoming_given_payment),
+              "last_acquisition_events": int(len(last_events)),
+              "last_acquisition_consumers": int(last_events.consumer_id.nunique()),
+              "last_acquisition_types": {k: int(v) for k, v in counts.items()},
+              "new_flag_verified": True}
+    OUTPUT.mkdir(exist_ok=True)
+    monthly.to_csv(OUTPUT / "adoption.csv", index=False, float_format="%.8f")
+    cohorts.to_csv(OUTPUT / "cohorts.csv", index=False)
+    counts.rename_axis("event").rename("events").to_csv(OUTPUT / "acquisition_types.csv")
+    (OUTPUT / "retention.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
 \end{Verbatim}
 
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
@@ -8463,6 +8933,261 @@ def main():
     assert result["correct"] == []
     assert all(result[name] for name in cases if name != "correct")
     save_result("chart_audit", {"constructed_cases": result})
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M08-competition-demand-measurement-and-generative-ai}{%
+\section{Competition, Demand Measurement, and Generative
+AI}\label{M08-competition-demand-measurement-and-generative-ai}}
+
+\noindent A provider deciding whether to cut its subscription price needs to
+anticipate where customers come from and how long they remain. New
+subscribers can expand the paid category, replace a competing provider,
+or add a second service. These responses have different implications for
+market size and competitive pressure. Posted prices and public attention
+help describe the available offers and interest in them, while demand
+analysis requires choices linked to the prices and alternatives
+available when those choices occurred.
+
+\href{https://www.nber.org/papers/w35953}{Egan, Russel, Shi, and Yao
+(2026)} study paid consumer subscriptions using card transactions. Their
+abstract reports 2.9\% paid adoption by April 2026, substantial
+turnover, and growing substitutability among providers.
+\href{https://arxiv.org/abs/2504.15440}{Fradkin (2025)} studies
+applications using models through OpenRouter and documents variation in
+whether releases expand usage or displace other models. The population
+and choice object differ: consumer subscriptions, application-level
+model use, and token demand answer different managerial questions. A
+descriptive retention gap alone does not identify a structural
+substitution parameter.
+
+\hypertarget{M08-a-price-coefficient-with-a-known-interpretation}{%
+\subsection{A Price Coefficient With a Known
+Interpretation}\label{M08-a-price-coefficient-with-a-known-interpretation}}
+
+\noindent To connect a subscription probability to price, consider an imposed
+binary-choice benchmark. A homogeneous consumer chooses whether to hold
+one provider in a month. Let \(p_{jt}\) be its price in dollars per
+month, \(\delta_j\) its provider intercept, and \(\tau_t\) a common
+month effect. A logistic utility difference with price coefficient
+\(-\alpha\) implies
+
+\[
+s_{jt}=\frac{\exp(\delta_j+\tau_t-\alpha p_{jt})}
+{1+\exp(\delta_j+\tau_t-\alpha p_{jt})},
+\qquad
+\log\!\left(\frac{s_{jt}}{1-s_{jt}}\right)
+=\delta_j+\tau_t-\alpha p_{jt}.
+\]
+
+The share \(s_{jt}\) is the choice probability for this binary offer.
+The coefficient \(\alpha\) measures the reduction in log odds per
+additional dollar. Homogeneous tastes, the binary choice structure, and
+the absence of lagged subscription states make the inversion exact. With
+exact model-implied shares and price variation remaining after provider
+and month controls, the regression recovers the imposed coefficient.
+With sampled choices, finite-sample uncertainty must also be assessed.
+
+Holding the intercepts fixed, the benchmark's own-price elasticity is
+\(-\alpha p_{jt}(1-s_{jt})\). That calculation describes a response
+within the specified binary model. Cross-provider substitution requires
+an explicit joint choice model and variation that supports its
+parameters. Consumers holding several subscriptions need a choice
+structure that permits those combinations; a single-choice nested logit
+would change that behavior.
+
+\hypertarget{M08-why-subscriber-stocks-and-new-subscriptions-differ}{%
+\subsection{Why Subscriber Stocks and New Subscriptions
+Differ}\label{M08-why-subscriber-stocks-and-new-subscriptions-differ}}
+
+\noindent The supplied simulator draws heterogeneous consumer affinity and monthly
+logistic shocks, adds provider quality and inertia from last month's
+holdings, and selects a set of subscriptions subject to a cost of
+additional providers. Premium status is assigned after the
+provider-holding decision. A common utility shift is recalibrated each
+month to approach the target adoption path. These rules produce a useful
+dynamic teaching panel, but they differ from the homogeneous binary
+benchmark.
+
+Construct one row for every available provider-month using the price
+table, including combinations with zero subscribers. Divide the number
+of basic-plan holders by the full roster to form a stock share. Divide
+new basic-plan holders by that same roster to form a flow share. The
+current data contain 179 available provider-months; all have positive
+stock and flow shares, so the two regressions use the same observations.
+Each regression includes provider and month effects.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.30}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.40}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.30}}@{}}
+\toprule
+Share Used in the Regression & Price Coefficient per Dollar &
+Interpretation \\
+\midrule
+
+Basic-plan stock divided by the consumer roster & -0.0300 & Descriptive
+log-odds projection of current holdings \\
+New basic-plan holders divided by the consumer roster & -0.0499 &
+Descriptive log-odds projection of acquisition flow \\
+Exact homogeneous binary-model probability & -0.0600 & Recovery of the
+imposed coefficient under the benchmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The simulator also imposes a utility price coefficient of \(-0.0600\).
+The flow slope is numerically closer to it in this realization. That
+proximity does not establish recovery: average choices across
+heterogeneous consumers generally do not obey the
+representative-consumer logit formula, and changing the outcome from
+holdings to acquisitions leaves selection, inertia, competing offers,
+and premium assignment in the data-generating process. The common
+utility recalibration also fixes aggregate adoption near its target as
+prices and qualities vary. A promotion counterfactual must specify which
+of those objects remains fixed.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_genai_price.tex}
+\caption{Three price coefficients calculated on the same 179 provider-month price observations. The dynamic simulation gives a stock slope of -0.0300 and a flow slope of -0.0499; exact binary-logit probabilities recover -0.0600. The dots are point calculations without confidence intervals and do not measure real-market price sensitivity.}\label{fig:M08_genai_price}
+\end{figure}
+
+An acquisition flow divided by all consumers also differs from an
+acquisition probability among eligible nonsubscribers. For a
+provider-level holding indicator \(D_{ijt}\), its acquisition hazard
+conditions on \(D_{ij,t-1}=0\). A new-holder count divided by \(N\)
+combines that hazard with the proportion eligible to acquire the
+provider. Changes in the eligible population can therefore change the
+flow share even when its conditional response is stable. Plan-level
+flows require an additional definition of upgrades, downgrades, and new
+provider relationships.
+
+\hypertarget{M08-auditing-an-ai-generated-demand-analysis}{%
+\subsection{Auditing an AI-Generated Demand
+Analysis}\label{M08-auditing-an-ai-generated-demand-analysis}}
+
+\noindent A useful coding specification states the consumer roster, available
+alternatives, monthly price units, subscription-history definition, and
+target coefficient before requesting a model. Require the code to retain
+zero-count provider-months, check whether prices vary after the fixed
+effects, and reject undefined log odds. A pseudocount changes the
+transformed outcome and should follow an explicit statistical model
+rather than conceal zero shares.
+
+For a simulation, compare the estimator with the generator line by line.
+The price appearing in a utility equation, the recorded price of a
+chosen premium plan, and the average amount paid are different objects.
+Verify whether the program holds category attractiveness fixed or
+recalibrates it when prices change. Then test the estimator on exact
+probabilities from a model for which its equation is correct. The
+benchmark below passes that test; the dynamic-panel regressions retain
+their descriptive interpretation.
+
+The regression uses NumPy least squares and checks the price slope
+independently by removing provider and month effects from both price and
+the transformed share. Agreement verifies the linear calculation.
+Identification of a price response additionally requires justified price
+variation, a suitable choice model, and uncertainty that respects the
+level at which prices and shocks vary. The 60,000 simulated consumers do
+not create 60,000 independent price assignments.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/GenAI_Demand/demand.py}{demand.py}. From the
+script's folder, run \texttt{python3\ demand.py}. Inputs are read from
+the supplied local bundle; output tables are written beside the course
+scripts.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Contrast descriptive price regressions with an exact binary-logit benchmark."""
+from pathlib import Path
+import json
+
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/data"
+OUTPUT = HERE / "results"
+
+
+def design(frame):
+    # All provider intercepts plus all but one month effect; no extra intercept.
+    fixed = pd.concat([pd.get_dummies(frame.provider, dtype=float),
+                       pd.get_dummies(frame.month, drop_first=True, dtype=float)], axis=1)
+    x = np.column_stack([fixed.to_numpy(), frame.basic_price.to_numpy()])
+    if np.linalg.matrix_rank(x) != x.shape[1]:
+        raise ValueError("Price is not separately identified from the fixed effects")
+    return x
+
+
+def price_projection(frame, shares):
+    shares = np.asarray(shares, dtype=float)
+    if not np.isfinite(shares).all() or not ((shares > 0) & (shares < 1)).all():
+        raise ValueError("Log-odds require shares strictly between zero and one")
+    x = design(frame)
+    y = np.log(shares) - np.log1p(-shares)
+    beta = np.linalg.lstsq(x, y, rcond=None)[0]
+    # Independent Frisch-Waugh-Lovell check of the price coefficient.
+    controls, price = x[:, :-1], x[:, -1]
+    price_residual = price - controls @ np.linalg.lstsq(controls, price, rcond=None)[0]
+    y_residual = y - controls @ np.linalg.lstsq(controls, y, rcond=None)[0]
+    fwl = float(price_residual @ y_residual / (price_residual @ price_residual))
+    np.testing.assert_allclose(beta[-1], fwl, atol=1e-10)
+    return {"price_coefficient": float(beta[-1]), "rows": len(frame),
+            "residual_price_sum_squares": float(price_residual @ price_residual)}
+
+
+def main():
+    subs = pd.read_csv(SOURCE / "synthetic_subscriptions.csv.gz")
+    consumers = pd.read_csv(SOURCE / "synthetic_consumers.csv")
+    prices = pd.read_csv(SOURCE / "synthetic_basic_prices.csv")
+    dgp = json.loads((SOURCE / "synthetic_dgp.json").read_text())
+    keys = ["month", "provider"]
+    assert consumers.consumer_id.is_unique and not prices.duplicated(keys).any()
+    assert not subs.duplicated(["consumer_id"] + keys).any()
+    basic = subs.loc[subs.tier.eq("basic")]
+    stocks = basic.groupby(keys).size().rename("basic_holders")
+    flows = basic.loc[basic["new"]].groupby(keys).size().rename("new_basic_holders")
+    frame = prices.merge(stocks, on=keys, how="left", validate="one_to_one")
+    frame = frame.merge(flows, on=keys, how="left", validate="one_to_one")
+    frame[["basic_holders", "new_basic_holders"]] = frame[["basic_holders", "new_basic_holders"]].fillna(0)
+    # Zero filling is justified by the complete simulated population and price support.
+    frame["stock_share"] = frame.basic_holders / len(consumers)
+    frame["flow_share"] = frame.new_basic_holders / len(consumers)
+    common = frame.loc[frame.stock_share.between(0, 1, inclusive="neither") &
+                       frame.flow_share.between(0, 1, inclusive="neither")].copy()
+    results = []
+    for name in ["stock_share", "flow_share"]:
+        results.append({"outcome": name, **price_projection(common, common[name])})
+    # Exact model-implied shares: homogeneous binary choice, no inertia or multihoming.
+    # Provider/time intercepts vary, but the same price design and alpha are retained.
+    x = design(common)
+    intercepts = np.linspace(-4.0, -3.0, common.provider.nunique())
+    time_effects = np.linspace(0.0, 0.2, common.month.nunique() - 1)
+    controls = np.r_[intercepts, time_effects]
+    alpha = dgp["alpha_price"]
+    utility = x[:, :-1] @ controls - alpha * common.basic_price.to_numpy()
+    benchmark_share = 1 / (1 + np.exp(-utility))
+    benchmark = price_projection(common, benchmark_share)
+    np.testing.assert_allclose(benchmark["price_coefficient"], -alpha, atol=1e-10)
+    results.append({"outcome": "exact_binary_logit", **benchmark})
+    result = {"data_type": "synthetic", "available_provider_months": len(frame),
+              "common_positive_share_rows": len(common), "excluded_zero_share_rows": len(frame) - len(common),
+              "imposed_utility_price_coefficient": -alpha, "projections": results,
+              "interpretation": "Stock and flow slopes are descriptive projections of a heterogeneous dynamic simulation; only the exact binary benchmark recovers its imposed coefficient by construction"}
+    OUTPUT.mkdir(exist_ok=True)
+    frame.to_csv(OUTPUT / "provider_months.csv", index=False, float_format="%.10f")
+    pd.DataFrame(results).to_csv(OUTPUT / "price_projections.csv", index=False, float_format="%.10f")
+    (OUTPUT / "demand.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 
 

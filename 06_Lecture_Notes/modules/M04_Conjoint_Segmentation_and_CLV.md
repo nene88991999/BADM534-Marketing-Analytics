@@ -373,3 +373,171 @@ if __name__ == "__main__":
     save_result("logging_gaps", result)
     print(json.dumps(result, indent=2))
 ```
+
+
+## 4.14 Subscription Retention and Category Participation
+
+A provider considering a retention offer needs to know whether departing subscribers continue buying from competitors. A customer who retains the category may respond to a different price, product, or bundle. A customer who stops paying for the category raises a different acquisition question. These outcomes require linked customer histories and a common starting cohort.
+
+### 4.14.1 Adoption and Multihoming Denominators
+
+The supplied synthetic panel contains a fixed roster of 60,000 consumers and 40 calendar months from January 2023 through April 2026. Subscription rows record held provider plans; the roster also includes consumers who never subscribe. Within this complete simulation, an absent consumer-provider-month row means no paid subscription. That interpretation relies on the generator's recording rule and would require separate validation in a transaction dataset.
+
+Let $D_{ijt}$ indicate that consumer $i$ holds a paid subscription to provider $j$ in month $t$. To measure category adoption and multihoming among payers, calculate
+
+$$
+A_t=\frac{\sum_{i=1}^{N}\mathbf{1}\{\sum_jD_{ijt}>0\}}{N},
+\qquad
+H_t=\frac{\sum_{i=1}^{N}\mathbf{1}\{\sum_jD_{ijt}>1\}}
+{\sum_{i=1}^{N}\mathbf{1}\{\sum_jD_{ijt}>0\}}.
+$$
+
+Here $N$ is the full consumer roster. Adoption uses all consumers, while multihoming uses the consumers with at least one subscription. In April 2026, the simulation has 1,741 payers holding 1,813 subscriptions, and 71 payers hold multiple providers. Adoption is therefore 2.902%, and multihoming among payers is 4.078%. The extra subscriptions and the number of multihomers differ because a consumer can hold more than two providers.
+
+The generator adjusts a common utility term each month to approach a chosen aggregate adoption path. The final adoption rate is consequently a calibration outcome. It supplies no independent estimate of actual market penetration.
+
+### 4.14.2 Following the Same Starting Customers
+
+Define $C_j$ as the set of consumers paying provider $j$ in January 2025. At a later month, partition this fixed set into consumers paying $j$, consumers paying only other providers, and consumers paying no provider. Consumers who hold $j$ and a rival belong in the first group. These three groups exhaust the original cohort, so their shares sum to one.
+
+The table follows each January 2025 provider cohort to January 2026. All values are synthetic. Provider cohorts overlap when a starting customer holds multiple subscriptions; their denominators should not be added as a unique-consumer count.
+
+| January 2025 Provider | Starting Customers | Same Provider After 12 Months | Other Providers Only | No Paid Provider |
+| --- | ---: | ---: | ---: | ---: |
+| Anthropic | 317 | 32.8% | 26.5% | 40.7% |
+| Google | 157 | 18.5% | 38.2% | 43.3% |
+| Microsoft | 84 | 1.2% | 53.6% | 45.2% |
+| OpenAI | 430 | 37.7% | 20.9% | 41.4% |
+| Perplexity | 63 | 3.2% | 58.7% | 38.1% |
+
+For the 430 starting OpenAI subscribers, 162 pay OpenAI after twelve months and another 90 pay other providers exclusively. Category participation within this same cohort is $252/430=58.6\%$. The 20.9-percentage-point difference isolates continued category participation among customers who no longer hold the original provider. Comparing a provider cohort with the pooled cohort of all initial AI payers would also change the mix of customers in the denominator.
+
+![Synthetic January 2025 provider cohorts partitioned by January 2026 payment status. Each horizontal bar uses its own fixed starting cohort and sums to 100 percent: same provider, other providers only, and no paid provider. The five provider cohorts can overlap.](../figures/M04_genai_cohorts.png)
+
+### 4.14.3 Endpoint Retention, Continuous Retention, and Acquisition
+
+Endpoint retention permits cancellation followed by reentry. Continuous retention requires the same provider to be held in every intervening month. Of the 430 starting OpenAI subscribers, 129 remain continuously subscribed through January 2026, a 30.0% continuous-retention rate. The 162 endpoint subscribers include 33 who returned after at least one observed gap. A cohort of existing subscribers also differs from a cohort of newly acquired customers because subscription tenure and prior survival affect its composition. Applying an acquisition-cohort CLV formula to this twelve-month endpoint rate would obscure both distinctions.
+
+Likewise, the supplied `new` flag records a provider absent from the previous month's holdings. It can describe first paid entry, reentry to the category, a complete replacement of previous providers, or an additional provider while retaining at least one incumbent. In April 2026, the 401 new-provider events comprise 197 first paid entries, 157 category returns, 32 complete provider switches, and 15 provider additions. There are 400 distinct consumers behind these events because one consumer starts two providers. The event denominator is therefore explicit.
+
+A release-month increase in new-provider events can reflect several of these mechanisms. A causal claim about a release also requires a credible comparison for what would have happened without it. Timing, publicity, contemporaneous prices, overlapping releases, and previous subscription states affect that comparison. The descriptive partition supports the acquisition decision without treating every new-provider event as switching.
+
+
+Python source: [retention.py](../../03_Data_and_Code/GenAI_Demand/retention.py). From the script's folder, run `python3 retention.py`. Inputs are read from the supplied local bundle; output tables are written beside the course scripts.
+
+```python
+"""Measure synthetic subscription stocks, cohorts, and acquisition events."""
+from pathlib import Path
+import json
+
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/data"
+OUTPUT = HERE / "results"
+
+
+def acquisition_type(previous, current, ever_paid):
+    """Classify a newly held provider using adjacent monthly subscription sets."""
+    if not previous:
+        return "category_return" if ever_paid else "first_paid_entry"
+    if previous.isdisjoint(current):
+        return "complete_provider_switch"
+    return "provider_addition"
+
+
+def cohort_outcomes(subs, provider, start, horizon, observed_months):
+    """Endpoint and continuous retention for one fixed provider cohort."""
+    required = {str(pd.Period(start, freq="M") + k) for k in range(horizon + 1)}
+    if not required.issubset(set(observed_months)):
+        raise ValueError("Cohort horizon extends beyond the observed calendar")
+    cohort = set(subs.loc[subs.month.eq(start) & subs.provider.eq(provider), "consumer_id"])
+    if not cohort:
+        raise ValueError("Empty starting cohort")
+    continuous = cohort.copy()
+    rows = []
+    for k in range(horizon + 1):
+        month = str(pd.Period(start, freq="M") + k)
+        active = subs.loc[subs.month.eq(month)]
+        own = set(active.loc[active.provider.eq(provider), "consumer_id"])
+        any_provider = set(active.consumer_id)
+        continuous &= own
+        row = {"provider": provider, "start_month": start, "month": month,
+               "horizon_months": k, "cohort_size": len(cohort),
+               "same_provider": len(cohort & own),
+               "other_provider_only": len((cohort & any_provider) - own),
+               "no_paid_provider": len(cohort - any_provider),
+               "continuous_same_provider": len(continuous)}
+        assert row["same_provider"] + row["other_provider_only"] + row["no_paid_provider"] == len(cohort)
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def main():
+    consumers = pd.read_csv(SOURCE / "synthetic_consumers.csv")
+    subs = pd.read_csv(SOURCE / "synthetic_subscriptions.csv.gz")
+    dgp = json.loads((SOURCE / "synthetic_dgp.json").read_text())
+    months = sorted(dgp["g_trend"])
+    n = len(consumers)
+    assert n == dgp["n_consumers"] and consumers.consumer_id.is_unique
+    assert not subs.duplicated(["consumer_id", "month", "provider"]).any()
+    assert subs.consumer_id.isin(consumers.consumer_id).all()
+    assert subs.month.isin(months).all() and subs.price.gt(0).all()
+    assert subs["new"].isin([True, False]).all()
+    assert subs.tier.isin(["basic", "premium"]).all()
+    states = {m: {int(i): set(g.provider) for i, g in s.groupby("consumer_id")}
+              for m, s in subs.groupby("month")}
+    events, monthly, history = [], [], set()
+    previous = {}
+    for month in months:
+        current = states.get(month, {})
+        for consumer, providers in current.items():
+            old = previous.get(consumer, set())
+            for provider in sorted(providers - old):
+                events.append({"month": month, "consumer_id": consumer, "provider": provider,
+                               "event": acquisition_type(old, providers, consumer in history)})
+        group = subs.loc[subs.month.eq(month)]
+        monthly.append({"month": month, "population": n, "payers": len(current),
+                        "subscriptions": len(group), "adoption": len(current) / n,
+                        "multihomers": sum(len(s) > 1 for s in current.values()),
+                        "basic_subscriptions": int(group.tier.eq("basic").sum())})
+        history.update(current)
+        previous = current
+    events = pd.DataFrame(events)
+    keys = ["month", "consumer_id", "provider"]
+    recorded = set(subs.loc[subs["new"], keys].itertuples(index=False, name=None))
+    calculated = set(events[keys].itertuples(index=False, name=None))
+    assert recorded == calculated
+    monthly = pd.DataFrame(monthly)
+    monthly["multihoming_given_payment"] = monthly.multihomers / monthly.payers.replace(0, np.nan)
+    monthly["basic_subscription_share"] = monthly.basic_subscriptions / monthly.subscriptions.replace(0, np.nan)
+    cohort_start, horizon = "2025-01", 12
+    assert str(pd.Period(cohort_start, freq="M") + horizon) <= months[-1]
+    providers = sorted(subs.loc[subs.month.eq(cohort_start), "provider"].unique())
+    cohorts = pd.concat([cohort_outcomes(subs, p, cohort_start, horizon, months)
+                         for p in providers], ignore_index=True)
+    last_events = events.loc[events.month.eq(months[-1])]
+    counts = last_events.event.value_counts().sort_index()
+    last = monthly.iloc[-1]
+    result = {"data_type": "synthetic", "population": n, "subscription_rows": len(subs),
+              "calendar_months": len(months), "last_month": months[-1],
+              "last_payers": int(last.payers), "last_subscriptions": int(last.subscriptions),
+              "last_adoption": float(last.adoption),
+              "last_multihomers": int(last.multihomers),
+              "last_multihoming_given_payment": float(last.multihoming_given_payment),
+              "last_acquisition_events": int(len(last_events)),
+              "last_acquisition_consumers": int(last_events.consumer_id.nunique()),
+              "last_acquisition_types": {k: int(v) for k, v in counts.items()},
+              "new_flag_verified": True}
+    OUTPUT.mkdir(exist_ok=True)
+    monthly.to_csv(OUTPUT / "adoption.csv", index=False, float_format="%.8f")
+    cohorts.to_csv(OUTPUT / "cohorts.csv", index=False)
+    counts.rename_axis("event").rename("events").to_csv(OUTPUT / "acquisition_types.csv")
+    (OUTPUT / "retention.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

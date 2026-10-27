@@ -1,0 +1,60 @@
+{
+  "reviewed_on": "2026-10-26",
+  "catalog_namespace": "additional",
+  "previous_count": 634,
+  "current_count": 644,
+  "new_source_entries": 10,
+  "source_yaml": "_data/GENAI_DEMAND.yaml",
+  "resource_ids": [
+    "egan-russel-shi-yao-2026-competition-generative-ai",
+    "genai-demand-lab",
+    "fradkin-2025-demand-for-llms-openrouter",
+    "ramp-ai-index",
+    "epoch-ai-notable-models",
+    "openrouter-models-api",
+    "wikimedia-pageviews-api",
+    "apple-rss-top-charts",
+    "wayback-cdx-api",
+    "cloudflare-radar-internet-services-ranking"
+  ],
+  "inspected_bundle": "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab",
+  "adaptation_review": "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/COURSE_ADAPTATION.md",
+  "course_examples": "03_Data_and_Code/GenAI_Demand/README.md",
+  "modules": {
+    "M2": "2.17",
+    "M4": "4.14",
+    "M8": "8.13"
+  },
+  "primary_sources_checked": [
+    {
+      "url": "https://www.nber.org/papers/w35953",
+      "scope": "Abstract and bibliographic record; full paper unavailable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2504.15440",
+      "scope": "Abstract and bibliographic record"
+    },
+    {
+      "url": "https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/concepts/page-views.html",
+      "scope": "Pageview and redirect definitions"
+    }
+  ],
+  "source_execution": "Collector, notebook, and complete simulator inspected but not rerun",
+  "course_execution": "Three offline programs and eight counterexample tests passed",
+  "corrections": [
+    "Provider and category outcomes use the same starting cohort",
+    "Endpoint and continuous retention distinguished",
+    "New-provider events partitioned into first entry, category return, complete switch, and addition",
+    "Stock/flow regressions labeled descriptive; exact binary benchmark recovers its coefficient by construction",
+    "Price support, unknown title-days, repeated observations, and listing versus release dates explicit"
+  ],
+  "metadata_reconciled": [
+    "GENAI_DEMAND.yaml",
+    "resource_catalog.json",
+    "resource_catalog.csv",
+    "resource_catalog.xlsx",
+    "generated Markdown guides"
+  ],
+  "public_snapshot_status": "Supplied captures, not independently re-collected; source terms retained",
+  "synthetic_status": "Complete synthetic consumer panel; named providers and release histories are simulation labels and inputs"
+}

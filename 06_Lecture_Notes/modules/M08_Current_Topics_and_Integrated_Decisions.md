@@ -482,3 +482,144 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+
+## 8.13 Competition, Demand Measurement, and Generative AI
+
+A provider deciding whether to cut its subscription price needs to anticipate where customers come from and how long they remain. New subscribers can expand the paid category, replace a competing provider, or add a second service. These responses have different implications for market size and competitive pressure. Posted prices and public attention help describe the available offers and interest in them, while demand analysis requires choices linked to the prices and alternatives available when those choices occurred.
+
+[Egan, Russel, Shi, and Yao (2026)](https://www.nber.org/papers/w35953) study paid consumer subscriptions using card transactions. Their abstract reports 2.9% paid adoption by April 2026, substantial turnover, and growing substitutability among providers. [Fradkin (2025)](https://arxiv.org/abs/2504.15440) studies applications using models through OpenRouter and documents variation in whether releases expand usage or displace other models. The population and choice object differ: consumer subscriptions, application-level model use, and token demand answer different managerial questions. A descriptive retention gap alone does not identify a structural substitution parameter.
+
+### 8.13.1 A Price Coefficient With a Known Interpretation
+
+To connect a subscription probability to price, consider an imposed binary-choice benchmark. A homogeneous consumer chooses whether to hold one provider in a month. Let $p_{jt}$ be its price in dollars per month, $\delta_j$ its provider intercept, and $\tau_t$ a common month effect. A logistic utility difference with price coefficient $-\alpha$ implies
+
+$$
+s_{jt}=\frac{\exp(\delta_j+\tau_t-\alpha p_{jt})}
+{1+\exp(\delta_j+\tau_t-\alpha p_{jt})},
+\qquad
+\log\!\left(\frac{s_{jt}}{1-s_{jt}}\right)
+=\delta_j+\tau_t-\alpha p_{jt}.
+$$
+
+The share $s_{jt}$ is the choice probability for this binary offer. The coefficient $\alpha$ measures the reduction in log odds per additional dollar. Homogeneous tastes, the binary choice structure, and the absence of lagged subscription states make the inversion exact. With exact model-implied shares and price variation remaining after provider and month controls, the regression recovers the imposed coefficient. With sampled choices, finite-sample uncertainty must also be assessed.
+
+Holding the intercepts fixed, the benchmark's own-price elasticity is $-\alpha p_{jt}(1-s_{jt})$. That calculation describes a response within the specified binary model. Cross-provider substitution requires an explicit joint choice model and variation that supports its parameters. Consumers holding several subscriptions need a choice structure that permits those combinations; a single-choice nested logit would change that behavior.
+
+### 8.13.2 Why Subscriber Stocks and New Subscriptions Differ
+
+The supplied simulator draws heterogeneous consumer affinity and monthly logistic shocks, adds provider quality and inertia from last month's holdings, and selects a set of subscriptions subject to a cost of additional providers. Premium status is assigned after the provider-holding decision. A common utility shift is recalibrated each month to approach the target adoption path. These rules produce a useful dynamic teaching panel, but they differ from the homogeneous binary benchmark.
+
+Construct one row for every available provider-month using the price table, including combinations with zero subscribers. Divide the number of basic-plan holders by the full roster to form a stock share. Divide new basic-plan holders by that same roster to form a flow share. The current data contain 179 available provider-months; all have positive stock and flow shares, so the two regressions use the same observations. Each regression includes provider and month effects.
+
+| Share Used in the Regression | Price Coefficient per Dollar | Interpretation |
+| --- | ---: | --- |
+| Basic-plan stock divided by the consumer roster | -0.0300 | Descriptive log-odds projection of current holdings |
+| New basic-plan holders divided by the consumer roster | -0.0499 | Descriptive log-odds projection of acquisition flow |
+| Exact homogeneous binary-model probability | -0.0600 | Recovery of the imposed coefficient under the benchmark |
+
+The simulator also imposes a utility price coefficient of $-0.0600$. The flow slope is numerically closer to it in this realization. That proximity does not establish recovery: average choices across heterogeneous consumers generally do not obey the representative-consumer logit formula, and changing the outcome from holdings to acquisitions leaves selection, inertia, competing offers, and premium assignment in the data-generating process. The common utility recalibration also fixes aggregate adoption near its target as prices and qualities vary. A promotion counterfactual must specify which of those objects remains fixed.
+
+![Three price coefficients calculated on the same 179 provider-month price observations. The dynamic simulation gives a stock slope of -0.0300 and a flow slope of -0.0499; exact binary-logit probabilities recover -0.0600. The dots are point calculations without confidence intervals and do not measure real-market price sensitivity.](../figures/M08_genai_price.png)
+
+An acquisition flow divided by all consumers also differs from an acquisition probability among eligible nonsubscribers. For a provider-level holding indicator $D_{ijt}$, its acquisition hazard conditions on $D_{ij,t-1}=0$. A new-holder count divided by $N$ combines that hazard with the proportion eligible to acquire the provider. Changes in the eligible population can therefore change the flow share even when its conditional response is stable. Plan-level flows require an additional definition of upgrades, downgrades, and new provider relationships.
+
+### 8.13.3 Auditing an AI-Generated Demand Analysis
+
+A useful coding specification states the consumer roster, available alternatives, monthly price units, subscription-history definition, and target coefficient before requesting a model. Require the code to retain zero-count provider-months, check whether prices vary after the fixed effects, and reject undefined log odds. A pseudocount changes the transformed outcome and should follow an explicit statistical model rather than conceal zero shares.
+
+For a simulation, compare the estimator with the generator line by line. The price appearing in a utility equation, the recorded price of a chosen premium plan, and the average amount paid are different objects. Verify whether the program holds category attractiveness fixed or recalibrates it when prices change. Then test the estimator on exact probabilities from a model for which its equation is correct. The benchmark below passes that test; the dynamic-panel regressions retain their descriptive interpretation.
+
+The regression uses NumPy least squares and checks the price slope independently by removing provider and month effects from both price and the transformed share. Agreement verifies the linear calculation. Identification of a price response additionally requires justified price variation, a suitable choice model, and uncertainty that respects the level at which prices and shocks vary. The 60,000 simulated consumers do not create 60,000 independent price assignments.
+
+
+Python source: [demand.py](../../03_Data_and_Code/GenAI_Demand/demand.py). From the script's folder, run `python3 demand.py`. Inputs are read from the supplied local bundle; output tables are written beside the course scripts.
+
+```python
+"""Contrast descriptive price regressions with an exact binary-logit benchmark."""
+from pathlib import Path
+import json
+
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/data"
+OUTPUT = HERE / "results"
+
+
+def design(frame):
+    # All provider intercepts plus all but one month effect; no extra intercept.
+    fixed = pd.concat([pd.get_dummies(frame.provider, dtype=float),
+                       pd.get_dummies(frame.month, drop_first=True, dtype=float)], axis=1)
+    x = np.column_stack([fixed.to_numpy(), frame.basic_price.to_numpy()])
+    if np.linalg.matrix_rank(x) != x.shape[1]:
+        raise ValueError("Price is not separately identified from the fixed effects")
+    return x
+
+
+def price_projection(frame, shares):
+    shares = np.asarray(shares, dtype=float)
+    if not np.isfinite(shares).all() or not ((shares > 0) & (shares < 1)).all():
+        raise ValueError("Log-odds require shares strictly between zero and one")
+    x = design(frame)
+    y = np.log(shares) - np.log1p(-shares)
+    beta = np.linalg.lstsq(x, y, rcond=None)[0]
+    # Independent Frisch-Waugh-Lovell check of the price coefficient.
+    controls, price = x[:, :-1], x[:, -1]
+    price_residual = price - controls @ np.linalg.lstsq(controls, price, rcond=None)[0]
+    y_residual = y - controls @ np.linalg.lstsq(controls, y, rcond=None)[0]
+    fwl = float(price_residual @ y_residual / (price_residual @ price_residual))
+    np.testing.assert_allclose(beta[-1], fwl, atol=1e-10)
+    return {"price_coefficient": float(beta[-1]), "rows": len(frame),
+            "residual_price_sum_squares": float(price_residual @ price_residual)}
+
+
+def main():
+    subs = pd.read_csv(SOURCE / "synthetic_subscriptions.csv.gz")
+    consumers = pd.read_csv(SOURCE / "synthetic_consumers.csv")
+    prices = pd.read_csv(SOURCE / "synthetic_basic_prices.csv")
+    dgp = json.loads((SOURCE / "synthetic_dgp.json").read_text())
+    keys = ["month", "provider"]
+    assert consumers.consumer_id.is_unique and not prices.duplicated(keys).any()
+    assert not subs.duplicated(["consumer_id"] + keys).any()
+    basic = subs.loc[subs.tier.eq("basic")]
+    stocks = basic.groupby(keys).size().rename("basic_holders")
+    flows = basic.loc[basic["new"]].groupby(keys).size().rename("new_basic_holders")
+    frame = prices.merge(stocks, on=keys, how="left", validate="one_to_one")
+    frame = frame.merge(flows, on=keys, how="left", validate="one_to_one")
+    frame[["basic_holders", "new_basic_holders"]] = frame[["basic_holders", "new_basic_holders"]].fillna(0)
+    # Zero filling is justified by the complete simulated population and price support.
+    frame["stock_share"] = frame.basic_holders / len(consumers)
+    frame["flow_share"] = frame.new_basic_holders / len(consumers)
+    common = frame.loc[frame.stock_share.between(0, 1, inclusive="neither") &
+                       frame.flow_share.between(0, 1, inclusive="neither")].copy()
+    results = []
+    for name in ["stock_share", "flow_share"]:
+        results.append({"outcome": name, **price_projection(common, common[name])})
+    # Exact model-implied shares: homogeneous binary choice, no inertia or multihoming.
+    # Provider/time intercepts vary, but the same price design and alpha are retained.
+    x = design(common)
+    intercepts = np.linspace(-4.0, -3.0, common.provider.nunique())
+    time_effects = np.linspace(0.0, 0.2, common.month.nunique() - 1)
+    controls = np.r_[intercepts, time_effects]
+    alpha = dgp["alpha_price"]
+    utility = x[:, :-1] @ controls - alpha * common.basic_price.to_numpy()
+    benchmark_share = 1 / (1 + np.exp(-utility))
+    benchmark = price_projection(common, benchmark_share)
+    np.testing.assert_allclose(benchmark["price_coefficient"], -alpha, atol=1e-10)
+    results.append({"outcome": "exact_binary_logit", **benchmark})
+    result = {"data_type": "synthetic", "available_provider_months": len(frame),
+              "common_positive_share_rows": len(common), "excluded_zero_share_rows": len(frame) - len(common),
+              "imposed_utility_price_coefficient": -alpha, "projections": results,
+              "interpretation": "Stock and flow slopes are descriptive projections of a heterogeneous dynamic simulation; only the exact binary benchmark recovers its imposed coefficient by construction"}
+    OUTPUT.mkdir(exist_ok=True)
+    frame.to_csv(OUTPUT / "provider_months.csv", index=False, float_format="%.10f")
+    pd.DataFrame(results).to_csv(OUTPUT / "price_projections.csv", index=False, float_format="%.10f")
+    (OUTPUT / "demand.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

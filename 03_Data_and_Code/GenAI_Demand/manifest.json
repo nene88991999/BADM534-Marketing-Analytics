@@ -1,0 +1,31 @@
+{
+  "reviewed_on": "2026-10-26",
+  "source_folder": "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab",
+  "source_sha256": {
+    "COURSE_ADAPTATION.md": "de8859a996e143e1a881429a030740ce475699884a39571fb48508008a05170f",
+    "README.md": "540642185670f64151fafe10c30896fb7c39e4375a649fad8e322c3d526573ec",
+    "collect_genai_signals.py": "64d0a2058ae73bd7aa700e8d7db1f80aae13e20af0643c2b86885f93915a3226",
+    "data/ai_apps_appstore.csv": "46964871667ca415987aabf9a79f7a08e1190984a1d7f3d83268ef3effb08c0a",
+    "data/apple_top_free_us_2026-10-27.csv": "7699bb2ef47cdbfe89019523983550161315fe47aa065a16e76c31240064fb7a",
+    "data/consumer_plans_2026-10-26.csv": "e138589b2c0872430364e295c1a3b3f30a2fe5ff60229558e297fa44b174f90f",
+    "data/openrouter_models_2026-10-27.csv": "386e6d0042f276b58473148527f3717be92f5b83cf078b83809512027bf5f1bc",
+    "data/synthetic_basic_prices.csv": "7130ea1f938c3064a968da8be5c2578f59e643f168bfa883a2f716d6339fa694",
+    "data/synthetic_consumers.csv": "ee9d3e4fc24c8a3c50369e902ee7064e10101245aa629d56b07fc4587694303a",
+    "data/synthetic_dgp.json": "71033d859feb519604073706b7b47881bf179d751341f5f324ba6dd48cf4b3a0",
+    "data/synthetic_products.csv": "8cde4c9de28d920d9438d49919047c651aba145d15a6fe90a849f83437480d3e",
+    "data/synthetic_releases.csv": "3993c390ed76b2fb430eb687806699df92d5d4d7c7cb5539b026886dc693fad9",
+    "data/synthetic_subscriptions.csv.gz": "139186ef30f3a8f76ec6b4b1528e5d6d7ef1a910519072279ba8d2c1c4503e2e",
+    "data/wikipedia_pageviews_daily_2026-10-26.csv": "e3ae1f6694c50bc105d0eaf8e053d80cd7650000c98166b2331f939a60228cdc",
+    "data/wikipedia_pageviews_monthly_2026-10-26.csv": "2f16e9afaaa532f069e24ea8c732ce2a75923d7cde7e436a806169cc11bb2ea7",
+    "genai_demand_lab.html": "9488a0042d4ea979de0894c21e72127bf6a89d77c30af28f73ce9dda4463912d",
+    "genai_demand_lab.ipynb": "cf395d3a97b045ab700fe561b78eef508a2ffff772f147baba2662cd6d961c0d",
+    "simulate_subscription_panel.py": "f5fa7b3718574564548150558739414eb092d89ee68619f6f0e0de0ea66adc22"
+  },
+  "source_rights": "User-supplied course bundle. External captures retain source terms; no blanket license is asserted.",
+  "source_execution": "Collector, notebook, and full simulator inspected but not rerun; course analyses read saved inputs offline",
+  "papers": [
+    "https://www.nber.org/papers/w35953",
+    "https://arxiv.org/abs/2504.15440"
+  ],
+  "documentation": "https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/concepts/page-views.html"
+}

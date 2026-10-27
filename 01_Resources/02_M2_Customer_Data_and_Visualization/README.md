@@ -1,13 +1,13 @@
 # M2 · Customer Data and Visualization
 
-57 resources (13 core). Built 2026-10-25 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+60 resources (13 core). Built 2026-10-26 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
 - [Customer data](#customer-data) (5)
-- [Collecting data from APIs](#collecting-data-from-apis) (4)
+- [Collecting data from APIs](#collecting-data-from-apis) (7)
 - [Privacy and customer data](#privacy-and-customer-data) (4)
 - [Visualization principles](#visualization-principles) (5)
 - [Visualization in Python](#visualization-in-python) (5)
@@ -68,6 +68,18 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Tools: git, GitHub Actions, jq, git-history
   *Note:* Each commit holds only recently checked stores, so coverage per snapshot varies (15,000 to 25,000 of about 30,000). The Unlicense covers the repository, not McDonald's underlying facts.
 
+- [recommended] **[Wayback Machine CDX Server API (archived-capture index)](https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server)** (2026) — Internet Archive
+  `documentation` · `intermediate` · `access: open`
+  Query the index of archived captures for a URL (web.archive.org/cdx/search/cdx) with date ranges, status and MIME filters, collapsing to one capture per day, JSON output; each capture is then fetchable at web.archive.org/web/<timestamp>id_/<url>.
+  *Use in wiki:* How students build a price history for subscription plans (Exercise 1 of genai_demand_lab) or any page's history without having scraped it at the time.
+  *Note:* The availability API (archive.org/wayback/available?url=...) returns only the closest single capture; use CDX for lists.
+
+- [recommended] **[Wikimedia REST API: pageviews per article (daily since 2015)](https://wikimedia.org/api/rest_v1/)** (2026) — Wikimedia Foundation
+  `documentation` · `intro` · `access: open`
+  Daily or monthly view events by title, project, access method, and agent category. Redirects are not automatically consolidated into target-title counts; explicitly record the selected title set and retrieval completeness.
+  *Use in wiki:* M2 2.17: the supplied two-title Claude capture produces an 85.06% older-title decline versus a 16.66% selected-title decline. Course code tests duplicate responses, conflicting keys, and missing title-days.
+  *Note:* Counts measure events rather than unique people. An absent record or failed request alone does not establish zero. Current redirects do not reconstruct a complete rename history. Official definition checked 2026-10-26; saved capture analyzed offline.
+
 - [recommended] **[Git scraping: track changes over time by scraping to a Git repository](https://simonwillison.net/2020/Oct/9/git-scraping/)** (2020) — Willison, S
   `blog` · `intro` · `access: open`
   The post that named the pattern: a scheduled GitHub Actions workflow fetches a public file and commits it, so the git history becomes a time series at zero hosting cost. Links to worked examples and to the git-history tool for turning the history into a database.
@@ -78,6 +90,11 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Hobby site (October 2020) that checks each McDonald's every few minutes by trying to add an ice-cream item to a cart through McDonald's ordering API; the map is drawn from https://mcbroken.com/markers.json and the city table from https://mcbroken.com/stats.json. Covers 30,000+ stores in 50+ countries.
   *Use in wiki:* The worked example for M2 data collection. Students open stats.json in a browser first, then call it from Python.
   *Note:* No documented API, no terms of use and no licence: treat as publicly viewable, not openly licensed. Blocked on some campus and corporate networks; the lab falls back to the GitHub archive.
+
+- [optional] **[Apple RSS feed generator: App Store top-free and top-paid charts as JSON](https://rss.marketingtools.apple.com/)** (2026) — Apple
+  `documentation` · `intro` · `access: open`
+  Keyless JSON feeds of Apple's top charts by storefront and media type (apps: top-free and top-paid, up to 100 results), with app id, developer, release date and genres. No top-grossing feed in this version.
+  *Use in wiki:* Daily rank snapshots of the AI assistant apps in genai_demand_lab; combine with the McBroken lab's GitHub Actions template to build a rank panel over a term.
 
 ## Privacy and customer data
 
@@ -413,7 +430,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 - **`04_M4_Conjoint_Segmentation_CLV`**: [PyMC-Marketing CLV Quickstart (BG/NBD + Gamma-Gamma) and CLV model notebooks](https://www.pymc-marketing.io/en/stable/notebooks/clv/clv_quickstart.html)
 - **`06_M6_Causal_Inference_and_Experiments`**: [Mobile App Introduction and Online and Offline Purchases and Product Returns](https://pubsonline.informs.org/doi/10.1287/mksc.2019.1169); [balance: Python package for adjusting biased samples (survey weighting)](https://github.com/facebookresearch/balance); [McDonald's franchisees will now have an easier time repairing ice cream machines (US Copyright Office DMCA exemption for commercial food-preparation equipment)](https://www.nrn.com/quick-service/mcdonald-s-franchisees-will-now-have-an-easier-time-repairing-ice-cream-machines)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Consumption Variety in Food Recommendation](https://www.journals.uchicago.edu/doi/10.1086/720453); [Fighting Churn with Data (companion code)](https://github.com/carl24k/fight-churn)
-- **`08_M8_Current_Topics_in_Marketing`**: [Update on Plans for Privacy Sandbox Technologies](https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies); [Anthropic Economic Index](https://www.anthropic.com/economic-index); [The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report)
+- **`08_M8_Current_Topics_in_Marketing`**: [Generative-AI Demand: Public Signals and a Synthetic Subscription Panel](https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab); [Update on Plans for Privacy Sandbox Technologies](https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies); [Anthropic Economic Index](https://www.anthropic.com/economic-index); [Ramp AI Index: monthly paid-AI adoption by US businesses, by vendor](https://ramp.com/data/ai-index); [The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report); [Cloudflare Radar API: Internet services ranking (including a Generative AI category)](https://developers.cloudflare.com/api/resources/radar/subresources/ranking/subresources/internet_services/methods/top/); [OpenRouter Models API: Posted Prices and Listing Dates](https://openrouter.ai/api/v1/models)
 - **`10_AI_Coding_Concepts_and_Evidence`**: [Stack Overflow Developer Survey 2025: AI](https://survey.stackoverflow.co/2025/ai/); [How Do Analysts Understand and Verify AI-Assisted Data Analyses?](https://arxiv.org/abs/2309.10947); [Stack Overflow Developer Survey 2026: AI](https://survey.stackoverflow.co/2026/ai); [Is GPT-4 a Good Data Analyst?](https://arxiv.org/abs/2305.15038)
 - **`11_AI_Coding_Tools_and_Workflows`**: [Claude Code data usage (training, retention, telemetry)](https://code.claude.com/docs/en/data-usage); [Colab FAQ: AI features, data use, and Colab Pro for Education](https://research.google.com/colaboratory/faq.html); [Create and edit files with Claude (code execution and file creation)](https://support.claude.com/en/articles/12111783); [Data analysis with ChatGPT](https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt); [Google Colab: AI-powered notebooks (Gemini in Colab)](https://developers.google.com/colab); [Claude Code: A Highly Agentic Coding Assistant (DeepLearning.AI)](https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant); [Data Science Agent in Colab: The future of data analysis with Gemini](https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/); [claude-ecom: Claude Code plugin that turns order CSVs into business reviews](https://github.com/takechanman1228/claude-ecom); [Enterprise privacy at OpenAI (business data commitments)](https://openai.com/enterprise-privacy/); [marimo: generate notebooks with AI (built-in assistant, marimo pair, text-to-notebook)](https://docs.marimo.io/guides/generate_with_ai/); [pandera: statistical data testing for DataFrames](https://github.com/unionai-oss/pandera); [Julius AI](https://julius.ai); [Lovable (AI full-stack web app builder)](https://docs.lovable.dev/introduction); [Replit Agent](https://docs.replit.com/replitai/agent); [v0 by Vercel](https://v0.app/docs); [Build Apps with Windsurf's AI Coding Agents (DeepLearning.AI)](https://www.deeplearning.ai/short-courses/build-apps-with-windsurfs-ai-coding-agents/)
 - **`12_AI_Coding_Pedagogy_and_Policy`**: [Enterprise GenAI: AI Apps (University of Illinois)](https://genai.illinois.edu/ai-apps/)

@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[width=11cm,height=7.2cm,xbar stacked,bar width=14pt,
+ xmin=0,xmax=100,ymin=-0.6,ymax=4.6,xtick={0,25,50,75,100},
+ xlabel={Share of the Starting Provider Cohort (\%)},
+ ytick={0,1,2,3,4},yticklabels={{Anthropic ($n=317$)},{Google ($n=157$)},{Microsoft ($n=84$)},{OpenAI ($n=430$)},{Perplexity ($n=63$)}},
+ legend style={at={(0.5,1.05)},anchor=south,legend columns=1},
+ y dir=reverse]
+\addplot[fill=IlliniBlue,draw=white] coordinates {(32.807571,0.000000) (18.471338,1.000000) (1.190476,2.000000) (37.674419,3.000000) (3.174603,4.000000)};
+\addplot[fill=IlliniOrange!35,draw=white,postaction={pattern=north east lines,pattern color=IlliniOrange}] coordinates {(26.498423,0.000000) (38.216561,1.000000) (53.571429,2.000000) (20.930233,3.000000) (58.730159,4.000000)};
+\addplot[fill=LightStorm,draw=white] coordinates {(40.694006,0.000000) (43.312102,1.000000) (45.238095,2.000000) (41.395349,3.000000) (38.095238,4.000000)};
+\legend{Same provider,Other providers only,No paid provider}
+\end{axis}
+\end{tikzpicture}

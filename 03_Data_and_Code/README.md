@@ -33,3 +33,7 @@ Additional executed examples cover fixed-cohort reporting, recency/frequency, lo
 ## McDonald's Ice-Cream Availability
 
 The [McBroken examples](McBroken/README.md) use the supplied restaurant-status data for measurement and cleaning in M2, comparison-group selection in M6, and forecasts on later dates in M7. Five executed Python programs, aggregate teaching tables, source hashes, and counterexample tests support the cases. The outcome is recorded order unavailability; the examples keep missing observations, irregular time gaps, address-key changes, and causal interpretation explicit.
+
+## Generative-AI Demand
+
+The [GenAI demand cases](GenAI_Demand/README.md) cover public-signal measurement in M2, subscription retention and acquisition in M4, and price-model verification in M8. Three executed Python programs use the supplied public pageview capture and a separate synthetic subscription panel. Fixed-cohort comparisons, missing-date checks, event definitions, and an exact binary-logit benchmark support the interpretation. Eight counterexample tests, full Python in the notes, three Illinois-color TikZ figures, and source hashes accompany the cases.

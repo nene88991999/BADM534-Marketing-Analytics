@@ -3,7 +3,7 @@
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-10-24",
+  "updated_on": "2026-10-26",
   "current_syllabus": null,
   "current_schedule": null,
   "current_ai_policy": null,
@@ -45,12 +45,16 @@
     "03_Data_and_Code/McBroken/README.md",
     "03_Data_and_Code/McBroken/DATA_DICTIONARY.md",
     "03_Data_and_Code/McBroken/AGENTS.md",
-    "03_Data_and_Code/McBroken/results/README.md"
+    "03_Data_and_Code/McBroken/results/README.md",
+    "03_Data_and_Code/GenAI_Demand/README.md",
+    "03_Data_and_Code/GenAI_Demand/DATA_DICTIONARY.md",
+    "03_Data_and_Code/GenAI_Demand/AGENTS.md",
+    "03_Data_and_Code/GenAI_Demand/results/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-10-24",
+    "updated_on": "2026-10-26",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -90,13 +94,14 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-10-24-mcbroken-cases",
+    "revision": "2026-10-26-genai-demand",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 44,
-    "pages": 156,
-    "mcbroken_examples": "03_Data_and_Code/McBroken/README.md"
+    "figures_count": 47,
+    "pages": 168,
+    "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
+    "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md"
   },
   "datasets": [
     {
@@ -115,6 +120,17 @@
         "M2",
         "M6",
         "M7"
+      ]
+    },
+    {
+      "id": "genai-demand-teaching",
+      "index": "03_Data_and_Code/GenAI_Demand/README.md",
+      "manifest": "03_Data_and_Code/GenAI_Demand/manifest.json",
+      "data_type": "Supplied public pageview capture and an entirely synthetic consumer subscription panel",
+      "modules": [
+        "M2",
+        "M4",
+        "M8"
       ]
     }
   ]

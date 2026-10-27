@@ -1060,3 +1060,127 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+
+## 2.17 Public Signals of Demand for Generative AI
+
+A subscription provider deciding where to invest in acquisition needs to distinguish public attention, product use, and payment. A high position in an app chart establishes an ordering within that chart. It supplies neither the number of downloads nor the fraction of consumers who pay. A pricing page describes the offers available at a particular date, while transactions reveal which offers customers purchase. Combining these sources is useful when each measure retains its observation unit and population.
+
+| Source | Recorded Object | Relevant Interpretation |
+| --- | --- | --- |
+| App Store top-free chart | App rank in one storefront and capture | Ordinal position among listed apps; absence means outside the returned list or otherwise absent from the feed |
+| Wikipedia pageviews | View events for a title, project, access method, and agent category | Attention to selected pages; repeated views and unpaid users can contribute |
+| OpenRouter model list | Listed model, listing timestamp, and posted token prices | Available API offers at capture; neither realized token demand nor verified public launch dates |
+| Ramp AI Index | Paid-AI adoption among businesses in its stated transaction sample | Business spending, with a population different from consumers and app users |
+| Consumer subscription panel | Consumer-provider-month payment status | Adoption, simultaneous subscriptions, and transitions under the panel's coverage rules |
+
+The supplied [generative-AI resource bundle](../../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/README.md) contains dated public captures and a separate simulated subscription panel. The captures are historical snapshots. The simulated panel's counts describe its imposed population and behavioral rules.
+
+### 2.17.1 Title Changes and Apparent Demand Declines
+
+A measurement system can record a substantial decline when attention moves between page titles. The supplied English Wikipedia capture contains two Claude titles, `Claude_(language_model)` and `Claude_(AI)`. The [Wikimedia definition](https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/concepts/page-views.html) distinguishes view events from people and explains that redirects are not automatically added to the target page's views. A title-specific series therefore requires a stable definition of the pages being counted.
+
+Restrict the comparison to June through September 2026 and the two named titles. Both title counts are present on all 122 calendar days. Within each month, sum the recorded daily events for each title exactly once. June and September each contain 30 days, so the endpoint comparison uses equally long windows.
+
+| Month | Older Title | Newer Title | Sum of Selected Titles |
+| --- | ---: | ---: | ---: |
+| June 2026 | 173,190 | 52,103 | 225,293 |
+| July 2026 | 25,873 | 148,027 | 173,900 |
+| August 2026 | 19,768 | 132,501 | 152,269 |
+| September 2026 | 25,872 | 161,884 | 187,756 |
+
+The older title falls 85.1% between June and September. Summing the two selected titles yields a 16.7% decline. The difference changes the managerial interpretation of the apparent loss of attention. The combined series remains a count of events on these pages. It supplies no conversion rate from readers to subscribers, and a person can generate multiple events across titles.
+
+![Recorded Wikipedia views indexed to June 2026. The older-title index falls to 14.9 in September, while the sum of the two selected titles falls to 83.3. Monthly totals use the supplied capture; both titles have complete daily records in the selected window.](../figures/M02_genai_titles.png)
+
+### 2.17.2 Completeness, Identity, and AI-Assisted Extraction
+
+An API response and a successful parser provide separate pieces of evidence. Repeated requests through different aliases can return the same title-date observation. Deduplicate by the returned title and date, verify that repeated values agree, and count the observation once. Preserve the retrieval status separately from the value: a failed request or an absent record does not by itself establish zero views. The code below builds the full calendar and returns an unknown combined count whenever either required title-day is missing.
+
+For a public-price table, retain the model or plan identifier, currency, billing period, region, and capture date. Separate a monthly subscription amount from USD per million input or output tokens. A missing price remains unknown, and a routing service's variable price needs a separate status. A listing timestamp identifies inclusion in that marketplace; an event study of public releases needs independently checked announcement dates and access conditions.
+
+An AI-generated collector should be tested with three small inputs: a repeated title-date, conflicting values for that key, and a day on which one title is absent. The expected behavior follows from the observation unit. It should deduplicate the first case, reject the conflict, and preserve the missing value in the third. A plausible-looking chart is insufficient evidence that these rules were implemented.
+
+
+Python source: [measurement.py](../../03_Data_and_Code/GenAI_Demand/measurement.py). From the script's folder, run `python3 measurement.py`. Inputs are read from the supplied local bundle; output tables are written beside the course scripts.
+
+```python
+"""Audit the supplied Wikipedia capture without making network requests."""
+from pathlib import Path
+import json
+
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/data"
+OUTPUT = HERE / "results"
+TITLES = ["Claude_(language_model)", "Claude_(AI)"]
+
+
+def unique_views(frame):
+    """Count each title-date once; reject conflicting repeated responses."""
+    keys = ["date", "article"]
+    if frame[keys + ["provider", "views"]].isna().any().any():
+        raise ValueError("Missing title, date, provider, or view count")
+    if not np.isfinite(frame.views).all() or (frame.views < 0).any():
+        raise ValueError("View counts must be finite and nonnegative")
+    if (frame.views % 1 != 0).any():
+        raise ValueError("View counts must be integers")
+    conflicts = frame.groupby(keys)[["provider", "views"]].nunique()
+    if (conflicts > 1).any().any():
+        raise ValueError("Conflicting repeated title-date responses")
+    return frame.drop_duplicates(keys).copy()
+
+
+def title_calendar(frame, titles, start, end):
+    """A missing title-day remains unknown; zero must be explicitly recorded."""
+    frame = unique_views(frame)
+    dates = pd.date_range(start, end, freq="D")
+    selected = frame.loc[frame.article.isin(titles)]
+    wide = selected.pivot(index="date", columns="article", values="views")
+    wide = wide.reindex(index=dates, columns=titles)
+    wide["observed_titles"] = wide[titles].notna().sum(axis=1)
+    wide["selected_title_views"] = wide[titles].sum(axis=1, min_count=len(titles))
+    wide.index.name = "date"
+    return wide
+
+
+def main():
+    raw = pd.read_csv(SOURCE / "wikipedia_pageviews_daily_2026-10-26.csv", parse_dates=["date"])
+    clean = unique_views(raw)
+    daily = title_calendar(clean, TITLES, "2026-06-01", "2026-09-30")
+    rows = []
+    for month, group in daily.groupby(daily.index.to_period("M")):
+        row = {"month": str(month), "calendar_days": len(group),
+               "complete_days": int(group.selected_title_views.notna().sum())}
+        for column in TITLES + ["selected_title_views"]:
+            # Full-month totals are missing if even one title-day is unknown.
+            row[column] = group[column].sum(min_count=len(group))
+        rows.append(row)
+    monthly = pd.DataFrame(rows)
+    assert monthly.complete_days.eq(monthly.calendar_days).all()
+    june, september = monthly.iloc[0], monthly.iloc[-1]
+    result = {
+        "input_rows": len(raw), "unique_title_days": len(clean),
+        "exact_duplicates_removed": len(raw) - len(clean),
+        "selected_titles": TITLES, "complete_days": int(daily.selected_title_views.notna().sum()),
+        "old_title_change_pct": 100 * (september[TITLES[0]] / june[TITLES[0]] - 1),
+        "selected_titles_change_pct": 100 * (september.selected_title_views / june.selected_title_views - 1),
+        "measurement": "Recorded pageview events for two selected English Wikipedia titles; not unique people or payments",
+        "capture_status": "Supplied dated CSV, not a new retrieval; API responses and rename history were not re-collected",
+    }
+    # Independent aggregate check using the long input rather than the pivot.
+    selected = clean.loc[clean.article.isin(TITLES) & clean.date.between(daily.index.min(), daily.index.max())]
+    direct = selected.groupby(selected.date.dt.to_period("M")).views.sum().to_numpy()
+    np.testing.assert_array_equal(monthly.selected_title_views, direct)
+    OUTPUT.mkdir(exist_ok=True)
+    daily.to_csv(OUTPUT / "wikipedia_title_days.csv", float_format="%.8f")
+    monthly.to_csv(OUTPUT / "wikipedia_months.csv", index=False, float_format="%.8f")
+    (OUTPUT / "measurement.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

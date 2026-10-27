@@ -1,6 +1,6 @@
 # M5 · Content Analysis, Text and Social Media
 
-59 resources (18 core). Built 2026-10-25 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+59 resources (18 core). Built 2026-10-26 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -466,6 +466,7 @@ Resources in this folder that show the method done with AI help, LLM versions of
 ## Also relevant (catalogued in other folders)
 
 - **`01_M1_Marketing_Analytics_and_Python`**: [Applying Data Analytics in Marketing](https://www.coursera.org/learn/applying-data-analytics-business-in-marketing); [Principles of Marketing Engineering and Analytics (3rd ed.)](https://faculty.essec.edu/research/3268-principles-of-marketing-engineering-and-analytics-3rd-edition)
+- **`02_M2_Customer_Data_and_Visualization`**: [Wikimedia REST API: pageviews per article (daily since 2015)](https://wikimedia.org/api/rest_v1/)
 - **`04_M4_Conjoint_Segmentation_CLV`**: [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529); [TensorHouse: reference notebooks for marketing, promotions and pricing (successor to Introduction to Algorithmic Marketing examples)](https://github.com/ikatsov/tensor-house)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Machine learning and AI in marketing: Connecting computing power to human insights](https://ideas.repec.org/a/eee/ijrema/v37y2020i3p481-504.html)
 - **`08_M8_Current_Topics_in_Marketing`**: [Gemini API Cookbook: Market a Jet Backpack, JSON sentiment and classification, embeddings classification and clustering](https://github.com/google-gemini/cookbook); [2025 Creator Economy Ad Spend & Strategy Report](https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/); [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735); [Google Cloud generative-ai repo: creative content generation, product attribute extraction, multimodal sentiment, AI-assisted data science](https://github.com/GoogleCloudPlatform/generative-ai); [Frontiers: Supporting Content Marketing with Natural Language Generation](https://ideas.repec.org/a/inm/ormksc/v41y2022i3p441-452.html)

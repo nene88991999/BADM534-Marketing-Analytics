@@ -1,11 +1,12 @@
 # Datasets for Exercises and Projects
 
-37 resources (13 core). Built 2026-10-25 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+38 resources (13 core). Built 2026-10-26 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
+- [AI models and releases](#ai-models-and-releases) (1)
 - [Transactions, RFM and CLV](#transactions-rfm-and-clv) (7)
 - [Experiments, uplift and causal inference](#experiments-uplift-and-causal-inference) (6)
 - [Pricing, choice and conjoint](#pricing-choice-and-conjoint) (5)
@@ -14,6 +15,13 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [Text, reviews, social and networks](#text-reviews-social-and-networks) (6)
 - [Aggregators and package datasets](#aggregators-and-package-datasets) (5)
 - [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (1)
+
+## AI models and releases
+
+- [recommended] **[Epoch AI: Notable AI Models (data hub)](https://epoch.ai/data/notable-ai-models)** (2026) — Epoch AI
+  `dataset` · `intro` · `access: open` · `CC BY 4.0` · `AI angle`
+  Table of 3,600+ machine-learning models since 1950 with publication date, organization, country, domain, training compute, parameters, dataset size, cost estimates and accessibility; CSV downloads at epoch.ai/data/notable_ai_models.csv and related files.
+  *Use in wiki:* Candidate event-date source for M6/M8. Check each model record, linked announcement, and access timing before constructing event windows. No local Epoch table was supplied in the GenAI bundle.
 
 ## Transactions, RFM and CLV
 

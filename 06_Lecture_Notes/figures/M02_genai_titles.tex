@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[width=12cm,height=6.4cm,xmin=-0.1,xmax=3.15,ymin=0,ymax=112,
+ xlabel={Month in 2026},ylabel={Recorded Views (June = 100)},
+ xtick={0,1,2,3},xticklabels={June,July,August,September},
+ legend style={at={(0.98,0.98)},anchor=north east},grid=major]
+\addplot[IlliniBlue,mark=*,mark size=2.5pt] coordinates {(0.000000,100.000000) (1.000000,77.188372) (2.000000,67.587098) (3.000000,83.338586)};
+\addplot[IlliniOrange,dashed,mark=square*,mark size=2.5pt] coordinates {(0.000000,100.000000) (1.000000,14.939084) (2.000000,11.414054) (3.000000,14.938507)};
+\legend{Two selected titles,Older title only}
+\end{axis}
+\end{tikzpicture}

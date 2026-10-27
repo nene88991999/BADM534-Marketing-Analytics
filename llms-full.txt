@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-10-24",
+  "updated_on": "2026-10-26",
   "current_syllabus": null,
   "current_schedule": null,
   "current_ai_policy": null,
@@ -54,12 +54,16 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/McBroken/README.md",
     "03_Data_and_Code/McBroken/DATA_DICTIONARY.md",
     "03_Data_and_Code/McBroken/AGENTS.md",
-    "03_Data_and_Code/McBroken/results/README.md"
+    "03_Data_and_Code/McBroken/results/README.md",
+    "03_Data_and_Code/GenAI_Demand/README.md",
+    "03_Data_and_Code/GenAI_Demand/DATA_DICTIONARY.md",
+    "03_Data_and_Code/GenAI_Demand/AGENTS.md",
+    "03_Data_and_Code/GenAI_Demand/results/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-10-24",
+    "updated_on": "2026-10-26",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -99,13 +103,14 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-10-24-mcbroken-cases",
+    "revision": "2026-10-26-genai-demand",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 44,
-    "pages": 156,
-    "mcbroken_examples": "03_Data_and_Code/McBroken/README.md"
+    "figures_count": 47,
+    "pages": 168,
+    "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
+    "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md"
   },
   "datasets": [
     {
@@ -124,6 +129,17 @@ Generated from course.json and the source files identified below. This file cont
         "M2",
         "M6",
         "M7"
+      ]
+    },
+    {
+      "id": "genai-demand-teaching",
+      "index": "03_Data_and_Code/GenAI_Demand/README.md",
+      "manifest": "03_Data_and_Code/GenAI_Demand/manifest.json",
+      "data_type": "Supplied public pageview capture and an entirely synthetic consumer subscription panel",
+      "modules": [
+        "M2",
+        "M4",
+        "M8"
       ]
     }
   ]
@@ -146,7 +162,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 44 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 47 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
 ## Course Folders
@@ -277,7 +293,7 @@ This outline follows the eight topic families in Unnati Narang's Spring 2026 syl
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 44 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 47 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -319,6 +335,10 @@ M2, Sections 2.14–2.15, connect chart choice, denominator changes, distributio
 ## Restaurant Availability Applications
 
 The [McBroken case](03_Data_and_Code/McBroken/README.md) uses the supplied McDonald's ordering-status data in three modules. M2 §2.16 audits coverage, missingness, address keys, and calendar joins. M6 §6.16 compares country trends around the 2024 repair exemption and distinguishes descriptive contrasts from causal evidence. M7 §7.18 evaluates next-observation forecasts on later dates, with label coverage and calibration. Five complete Python programs and three TikZ figures support these applications.
+
+## Generative-AI Demand
+
+The [GenAI demand cases](03_Data_and_Code/GenAI_Demand/README.md) connect M2 §2.17, M4 §4.14, and M8 §8.13. Students audit title-specific pageviews, compare provider and category retention within the same starting cohort, classify acquisition events, and test a price regression against its generating model. Three executed Python programs and three TikZ figures distinguish the supplied public capture from the synthetic consumer panel. The exact binary-logit benchmark recovers its imposed coefficient; dynamic-panel slopes remain descriptive.
 
 ---
 
@@ -424,15 +444,19 @@ Additional executed examples cover fixed-cohort reporting, recency/frequency, lo
 
 The [McBroken examples](McBroken/README.md) use the supplied restaurant-status data for measurement and cleaning in M2, comparison-group selection in M6, and forecasts on later dates in M7. Five executed Python programs, aggregate teaching tables, source hashes, and counterexample tests support the cases. The outcome is recorded order unavailability; the examples keep missing observations, irregular time gaps, address-key changes, and causal interpretation explicit.
 
+## Generative-AI Demand
+
+The [GenAI demand cases](GenAI_Demand/README.md) cover public-signal measurement in M2, subscription retention and acquisition in M4, and price-model verification in M8. Three executed Python programs use the supplied public pageview capture and a separate synthetic subscription panel. Fixed-cohort comparisons, missing-date checks, event definitions, and an exact binary-logit benchmark support the interpretation. Eight counterexample tests, full Python in the notes, three Illinois-color TikZ figures, and source hashes accompany the cases.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated October 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
+**By Nathan Yang. Updated October 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 44 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 47 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -459,7 +483,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 156 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 168 pages.
 
 ## Editing and Building
 
@@ -496,6 +520,10 @@ M2, Sections 2.14–2.15, add chart selection, fixed and conditional denominator
 ## McDonald's Ice-Cream Availability
 
 The [McBroken cases](../03_Data_and_Code/McBroken/README.md) connect a supplied restaurant-status panel to measurement and cleaning (M2 §2.16), comparison-group selection for a proposed policy evaluation (M6 §6.16), and forecasting with missing future labels (M7 §7.18). Five complete Python programs and three additional TikZ figures accompany the cases. The examples distinguish recorded order unavailability from verified mechanical failure, retain missing-date and missing-label counts, and evaluate predictions on later dates. The source audit and five counterexample tests passed; two pinned upstream snapshots independently matched the supplied national totals.
+
+## Generative-AI Demand
+
+The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-signal measurement (M2 §2.17), fixed-cohort subscription retention and acquisition events (M4 §4.14), and price-model verification (M8 §8.13). Each includes a complete executed Python program. Three Illinois-color TikZ figures have aggregate table and text companions. Eight counterexample tests cover duplicate and missing observations, cohort consistency, returns, acquisition categories, rank-deficient price designs, undefined log odds, and exact binary-model recovery. The public pageview capture and synthetic consumer panel are identified separately; the original reference notebook's structural interpretations are reviewed in the [adaptation record](../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/COURSE_ADAPTATION.md).
 
 ---
 
@@ -899,7 +927,7 @@ Resource IDs in this table use the **additional** catalog namespace, including s
 | M7, 7.17 | Basket Associations | mlxtend-frequent-patterns | [association_rules.py](../03_Data_and_Code/mHealth/recurring_examples/association_rules.py) | Support, confidence, lift, training-only selection, future baskets, user bootstrap. |
 | M8, 8.11 | Evidence Checks for Generated Claims | copycat-ad-copy-generation; pymc-labs-semantic-similarity-rating; claude-ecom-business-review-skill | [claim_checks.py](../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py) | Constructed false claims; numerical and interpretation checks; synthetic-consumer validity discussion. |
 
-The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 44 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
+The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 47 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
 
 ## Other Uses of the Added Resources
 
@@ -919,7 +947,7 @@ The [Markdown modules](README.md) include the complete program text beside each 
 
 ## Replication and Publication
 
-Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 37 embedded source blocks against their matching files.
+Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 40 embedded source blocks against their matching files.
 
 The mHealth programs use the existing 370-user teaching cohort and impose case-specific eligibility rules before reporting results. Their outputs are aggregate. The price simulation is explicitly synthetic. Schema-valid false claims are constructed teaching examples, not measured errors from an LLM. Historical variance reduction is a planning comparison, and basket lift is a descriptive association.
 
@@ -951,6 +979,20 @@ The supplied [McBroken bundle](../01_Resources/02_M2_Customer_Data_and_Visualiza
 | US store panel and snapshot manifest | M7 §7.18: time-separated forecasts, Brier scores, calibration, missing future labels | `predict.py`; later-date evaluation and eligible-origin denominator |
 
 The five original teaching programs use the local data and appear in full in the notes. Their [README](../03_Data_and_Code/McBroken/README.md), [data dictionary](../03_Data_and_Code/McBroken/DATA_DICTIONARY.md), [manifest](../03_Data_and_Code/McBroken/manifest.json), and [result descriptions](../03_Data_and_Code/McBroken/results/README.md) provide replication and interpretation details. Three additional TikZ figures use the Illinois palette. The supplied network collector and notebook were inspected as references; the adaptation does not claim to have rerun their complete historical retrieval. The original bundle is preserved with attribution, and no scheduled collection was activated.
+
+## Generative-AI Demand Resources
+
+The October 26 addition contains ten entries in `GENAI_DEMAND.yaml`, increasing the additional catalog from 634 to 644 resources. The [review record](../01_Resources/00_Index/genai_demand_resource_review_2026-10-26.json) and [adaptation review](../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/COURSE_ADAPTATION.md) distinguish inspected source files, verified external definitions, executed adaptations, and optional extensions.
+
+| Notes | Resource and Question | Executed Adaptation |
+| --- | --- | --- |
+| M2 §2.17 | Public signals and Wikimedia title-level counts | `measurement.py`: complete calendars, duplicate/conflict checks, selected-title aggregation, and independent monthly totals |
+| M4 §4.14 | Supplied synthetic subscription panel and its generator | `retention.py`: full-population adoption, fixed-cohort provider/category outcomes, endpoint versus continuous retention, four acquisition-event categories |
+| M8 §8.13 | Egan et al. and Fradkin abstracts; supplied price-regression example | `demand.py`: stock/flow projections, price support and rank checks, independent residualized slope, and exact binary-logit benchmark |
+
+Three complete Python blocks and three original TikZ figures accompany the cases. The [course README](../03_Data_and_Code/GenAI_Demand/README.md), [data dictionary](../03_Data_and_Code/GenAI_Demand/DATA_DICTIONARY.md), [agent guide](../03_Data_and_Code/GenAI_Demand/AGENTS.md), and aggregate results support replication. Eight hand-checkable counterexample tests passed. The original notebook, network collectors, and complete panel simulator were inspected but not rerun. No model API calls or scheduled retrievals occurred.
+
+The supplied notebook's flow regression does not establish recovery of the dynamic simulator's utility price coefficient. Its original retention curves also compare different starting cohorts, and its new-provider measure includes first adoption, reentry, and additions. The course cases correct these interpretations. Catalog summaries now point to the executed adaptation and retain the distinction between public snapshots and simulated consumers. Apple, Ramp, Epoch, Wayback, and Cloudflare remain useful measurement or collection extensions with their stated verification limits.
 
 ---
 
@@ -1166,6 +1208,126 @@ The source preparation checks unique store-date and dimension keys, binary statu
 The first and last daily archive snapshots were independently retrieved by full commit ID and reconciled with the supplied national counts. Their US status fields were Boolean and nonmissing. The full historical network collection was not rerun. The supplied upstream notebook's saved outputs are reference material, not evidence that its collection code was executed during this verification.
 
 The row counts do not establish physical restaurant counts, representative sampling, causal effects, or independent observations. The interpretation of each result follows the explicit sample and measurement definition in the data dictionary and notes.
+
+---
+
+## Source: 03_Data_and_Code/GenAI_Demand/README.md
+
+# Demand for Generative-AI Subscriptions
+
+Marketing Analytics. By Nathan Yang.
+
+Three offline cases connect public signals, retention, and price sensitivity. They use the supplied [resource bundle](../../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/README.md), with its original files preserved. Public captures are dated observations supplied with that bundle. The consumer panel is entirely synthetic. Neither the panel nor the regression slopes estimate the real AI market.
+
+## Cases and Commands
+
+From the repository root, use Python with NumPy and pandas installed. Versions tested are recorded in [results/verification.json](results/verification.json); supported ranges are in [requirements.txt](requirements.txt).
+
+```sh
+python3 03_Data_and_Code/GenAI_Demand/run_all.py
+```
+
+The command runs the three programs and eight small counterexample tests, checks that source files are unchanged, and writes aggregate CSV/JSON files plus a source-hash manifest. It makes no network requests, needs no API key, and incurs no model usage charges. The complete analysis scripts also appear in the Markdown and PDF lecture notes.
+
+| Notes | Program | Question and Expected Result |
+| --- | --- | --- |
+| M2 §2.17 | [measurement.py](measurement.py) | Do title changes alter an apparent attention decline? June–September older-title change: -85.06%; two-title change: -16.66%, with 122 complete days. |
+| M4 §4.14 | [retention.py](retention.py) | Do customers leave a provider or the paid category? Fixed-cohort partitions, endpoint versus continuous retention, and four acquisition-event types. |
+| M8 §8.13 | [demand.py](demand.py) | When does a log-odds regression recover a utility price parameter? Stock slope -0.03004; flow slope -0.04987; exact binary benchmark -0.06000. |
+
+Each program can also run independently with `python3 03_Data_and_Code/GenAI_Demand/<program>.py`. Paths resolve from the script, so a different working directory also works. Keep the resource bundle in the repository's existing location. The [data dictionary](DATA_DICTIONARY.md) defines inputs and outputs; the [result guide](results/README.md) describes their denominators.
+
+## Interpretation
+
+The Wikipedia calculation counts recorded events for two selected titles, without claiming unique viewers or a complete brand-attention measure. Missing title-days stay unknown. A current redirect target does not establish the full rename history; the two-title mapping comes from the supplied capture and is not a complete page-history reconstruction.
+
+The synthetic roster contains 60,000 consumers and 40 months. Absent subscription rows mean no paid subscription within that complete simulation. Starting cohorts consist of existing January 2025 subscribers, with potentially overlapping provider memberships. Endpoint retention includes customers who left and returned. The category comparison uses exactly the same starting consumers as its provider comparison.
+
+The simulator has heterogeneous tastes, inertia, multiple holdings, and monthly recalibration of category attractiveness. Its generated shares do not satisfy a homogeneous static binary-logit equation. Stock and flow regressions are descriptive projections. Only the separately constructed exact binary benchmark recovers its imposed parameter by construction. No causal price estimate, nested-logit parameter, or counterfactual market share is released.
+
+## Sources and Provenance
+
+- Egan, Mark L., Dominic Russel, Claire Shi, and Vincent Yao (2026), [Competition in Generative AI: Evidence from Consumer Demand](https://www.nber.org/papers/w35953), NBER Working Paper 35953. The abstract and bibliographic record were checked; the full paper was unavailable during this review. Detailed structural-model claims from the supplied notebook are not treated as verified paper findings.
+- Fradkin, Andrey (2025), [Demand for LLMs: Descriptive Evidence on Substitution, Market Expansion, and Multihoming](https://arxiv.org/abs/2504.15440). The abstract describes application-level use through OpenRouter.
+- Wikimedia, [Page Views](https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/concepts/page-views.html), for the measurement definition and redirect treatment.
+
+The source bundle, including its collectors, saved notebook, simulator, and public captures, was inspected. Those original programs were not rerun. The course analyses and tests were executed locally against the saved inputs. [manifest.json](manifest.json) records source hashes and rights; [the adaptation review](../../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/COURSE_ADAPTATION.md) records corrections and deferred extensions. Public availability alone does not establish a blanket redistribution license.
+
+## Figures
+
+```sh
+python3 03_Data_and_Code/GenAI_Demand/build_figures.py
+python3 06_Lecture_Notes/build_notes.py --figures
+```
+
+The first command regenerates the three TikZ sources from the output tables. The second compiles the notes and previews with the existing Pandoc, Tectonic, and Poppler workflow. Figures use the Illinois palette with markers, line styles, or patterns alongside color. Their aggregate CSVs and descriptions remain available to readers and agents.
+
+---
+
+## Source: 03_Data_and_Code/GenAI_Demand/DATA_DICTIONARY.md
+
+# Generative-AI Demand Data Dictionary
+
+Inputs remain in `01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/data/`. Paths below are relative to that folder. [The manifest](manifest.json) hashes the full supplied bundle. All subscription and price-simulation tables are synthetic; names resembling real providers do not make their histories empirical observations.
+
+## Inputs Used by the Course Programs
+
+| File | Unit and Fields | Coverage and Missingness |
+| --- | --- | --- |
+| `wikipedia_pageviews_daily_2026-10-26.csv` | Article-date. `provider` maps the selected title; `views` counts view events. Collector specification: English Wikipedia, all access, user agent category. | 5,248 supplied title-days across five titles. Dates with no row are unknown unless the retrieval process establishes zero. The executed case uses two Claude titles, June 1–September 30, 2026, with all 244 required title-days present. |
+| `synthetic_consumers.csv` | One row per `consumer_id`; `age_group`, `income_group` are simulated categories. | 60,000 consumers, including never-payers. IDs are unique. No names or actual customer records. |
+| `synthetic_subscriptions.csv.gz` | Consumer-month-provider holding. `plan`, `tier`, `price` in USD/month, Boolean `promo`, Boolean `new`. | 34,186 rows. Months with no held plan have no row. Under the complete simulator's recording rule, absent holdings are zero. `new` means absent from that provider in the preceding month, including returns. |
+| `synthetic_basic_prices.csv` | Available provider-month. `basic_price` is USD/month; `promo` identifies an imposed promotional price. | 179 provider-months. Missing combinations outside this table mean unavailable offers. Zero subscribers within available combinations remain possible. |
+| `synthetic_dgp.json` | Parameters and calendar: `n_consumers`, `alpha_price`, `gamma_inertia`, `kappa_satiation`, and `g_trend`. | Forty months, January 2023–April 2026. Positive `alpha_price=0.06` is subtracted in utility. `g_trend` is chosen monthly to approach a target adoption path; its stored values are rounded. |
+
+The supplied product and release tables describe imposed scenarios. Provider start months, premium selection, and quality increments are inputs to that simulation. Current prices, public launch dates, and purchase histories need separate empirical sources.
+
+## Outputs
+
+| File in `results/` | Unit | Definitions |
+| --- | --- | --- |
+| `wikipedia_title_days.csv` | Calendar day in the chosen 122-day window | One column per selected title; `observed_titles` counts available title counts; `selected_title_views` is their sum only when both are observed. |
+| `wikipedia_months.csv` | Calendar month | `calendar_days`, `complete_days`, each title's total, combined total. A total is unknown if any required day is missing. |
+| `adoption.csv` | Simulated calendar month | Population, unique payers, subscriptions, multihomers, basic subscriptions, adoption, multihoming conditional on payment, basic share among subscriptions. Conditional shares are missing when their denominator is zero. |
+| `cohorts.csv` | Starting provider and months since January 2025 | Fixed `cohort_size`; mutually exclusive `same_provider`, `other_provider_only`, `no_paid_provider`; `continuous_same_provider` requires holding the original provider at every observed monthly date. |
+| `acquisition_types.csv` | Acquisition-event category in April 2026 | Counts of first paid entry, category return, complete provider switch, and provider addition. One event per newly held provider; multiple events can belong to one consumer. A complete switch drops every provider held in the prior month. |
+| `provider_months.csv` | Available synthetic provider-month | Basic price, promo, basic holders, new basic holders, each count divided by the full roster. Premium holdings are excluded from these two counts. |
+| `price_projections.csv` | Outcome specification | Slope of log odds on price after provider/month controls; rows used; sum of squared prices after removing controls. No standard errors or causal interpretation are attached. |
+
+JSON companions record summary counts, interpretations, and verification. `results/verification.json` records the executed environment. Each chart can be reconstructed from the CSVs without accessing an external service.
+
+---
+
+## Source: 03_Data_and_Code/GenAI_Demand/AGENTS.md
+
+# Agent Guide for Generative-AI Demand
+
+Read the root `AGENTS.md`, this folder's README, and the data dictionary before analysis. Use Marketing Analytics as the course title.
+
+- Distinguish the supplied public captures from the entirely synthetic consumer panel. Treat provider names and simulated release dates as labels and inputs, not actual market observations.
+- Run the offline programs for the course results. Do not silently replace captures with live values or call paid model APIs. Original collector and notebook outputs have a separate verification status.
+- Preserve the full consumer denominator, available-provider support, calendar completeness, and one-row-per-observation keys. Unknown pageview records remain unknown.
+- Compare provider and category retention within the same starting cohort. Report endpoint and continuous retention separately. Cohorts of existing subscribers differ from acquisition cohorts.
+- `new` means newly held relative to the preceding month. Use history to separate first entry, category return, replacement of prior providers, and additions. State whether the denominator is events or consumers.
+- Stock and flow price slopes are descriptive projections of a heterogeneous dynamic simulation. An exact binary-logit benchmark passes a parameter-recovery check by construction; this does not establish identification in the dynamic panel or the real market.
+- Do not infer nested-logit parameters from retention gaps, public release dates from marketplace timestamps, or paid adoption from app ranks or pageviews.
+- Keep matching Python blocks in M2 §2.17, M4 §4.14, and M8 §8.13 synchronized. Re-run affected analyses and counterexamples, regenerate figures when needed, and update the source-hash record without editing original data.
+
+---
+
+## Source: 03_Data_and_Code/GenAI_Demand/results/README.md
+
+# Generative-AI Demand Results
+
+All files are generated by the three offline course programs. Public pageviews are analyzed as a supplied dated capture; all subscription results are synthetic. See the [data dictionary](../DATA_DICTIONARY.md) for units and output fields.
+
+- **Public signals:** 122 complete days for two selected Claude titles. June–September change is -85.06% for the older title and -16.66% for their sum. These are pageview events, not unique users, payments, or an exhaustive brand-attention measure.
+- **Adoption:** 1,741 of 60,000 simulated consumers hold 1,813 subscriptions in April 2026. There are 71 multihomers, giving 4.078% conditional multihoming. The aggregate adoption path is targeted by the generator.
+- **Fixed-cohort retention:** Among 430 January 2025 OpenAI subscribers, 162 hold OpenAI in January 2026, 90 hold other providers only, and 178 hold no paid provider. Only 129 hold OpenAI throughout all intervening months. These counts use the same original cohort.
+- **Acquisition:** The last month has 401 newly held provider events from 400 consumers: 197 first entries, 157 returns to the category, 32 complete provider switches, and 15 provider additions.
+- **Price projections:** The same 179 provider-months yield stock and flow log-odds slopes of -0.03004 and -0.04987 per dollar. Exact binary-model probabilities on the same price design recover -0.06000. The dynamic-panel slopes have a descriptive interpretation; no confidence interval or causal estimate is reported.
+
+`verification.json` records the runtime, eight counterexample tests, and independent numerical checks. `../manifest.json` records source hashes. The original network collectors, notebook, and complete panel simulation were inspected but not executed in this course adaptation. Static tables and figures can be regenerated using the commands in the [README](../README.md).
 
 ---
 
@@ -3477,7 +3639,7 @@ Rights or Access: Citation and original summary only; full-text redistribution r
 
 Source: 01_Resources/00_Index/resource_catalog.json
 
-634 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
+644 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
 
 ---
 
@@ -7700,6 +7862,180 @@ Teaching Suggestion: Optional tool for students who want annotated, story-style 
 Cautions: The paper's author list was not confirmed in search results; check it before citing.
 
 Rights or Access: open
+
+---
+
+### additional:egan-russel-shi-yao-2026-competition-generative-ai | Competition in Generative AI: Evidence from Consumer Demand
+
+Source URL: https://www.nber.org/papers/w35953
+
+Modules: M8, M4, M6, M7
+
+Priority: core
+
+Focus: Card transactions for 174 million US consumers measure paid adoption of generative-AI services: about 2.9% paying by April 2026, skewed young and high-income; almost all on plans of $30 or less; multihoming common but falling; annual retention 20-45%; switching rising around model releases. A structural demand and supply model finds high price sensitivity, loyalty to AI rather than to providers, and rising substitutability that limits pricing power.
+
+Teaching Suggestion: Anchor reading for an M8 session on competition in AI, and the source of the measurements reproduced on the synthetic panel in genai_demand_lab. Pairs with the Fradkin OpenRouter paper for the API side.
+
+Cautions: NBER working papers are paywalled for non-subscribers; UIUC has access. The PDF could not be fetched from the workspace, so the entry rests on the NBER abstract page. Fiserv appears in the author disclosures, not as a stated data source.
+
+Rights or Access: paid
+
+---
+
+### additional:genai-demand-lab | Generative-AI Demand: Public Signals and a Synthetic Subscription Panel
+
+Source URL: https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab
+
+Modules: M8, M2, M4, M6, M7
+
+Priority: core
+
+Focus: Supplied collectors, dated public captures, a synthetic subscription panel, and a reference notebook. Executed course adaptations measure title-specific attention, fixed-cohort retention, acquisition-event types, and descriptive stock/flow price slopes, with an exact binary-logit recovery benchmark.
+
+Teaching Suggestion: M2 2.17, M4 4.14, and M8 8.13. Use 03_Data_and_Code/GenAI_Demand/README.md for executed programs, complete Python in the notes, Illinois-color figures, and verified output tables.
+
+Cautions: Original notebook and network collectors were inspected, not rerun. The flow regression does not identify the heterogeneous dynamic generator's price parameter. See genai_demand_lab/COURSE_ADAPTATION.md for fixed-cohort, acquisition, calibration, and event-date corrections. The panel is entirely synthetic.
+
+Rights or Access: open
+
+---
+
+### additional:fradkin-2025-demand-for-llms-openrouter | Demand for LLMs: Descriptive Evidence on Substitution, Market Expansion, and Multihoming
+
+Source URL: https://arxiv.org/abs/2504.15440
+
+Modules: M8, M7
+
+Priority: recommended
+
+Focus: Uses data from OpenRouter, an LLM marketplace, to describe how apps adopt new models: rapid initial adoption that stabilises within weeks, substitution from competing models versus market expansion, and widespread multihoming across models.
+
+Teaching Suggestion: The API-side counterpart of Egan et al.; read the two together to separate consumer subscriptions from developer token demand. OpenRouter's public model list (prices, listing dates) is in the lab's collectors.
+
+Rights or Access: open
+
+---
+
+### additional:ramp-ai-index | Ramp AI Index: monthly paid-AI adoption by US businesses, by vendor
+
+Source URL: https://ramp.com/data/ai-index
+
+Modules: M8, M2
+
+Priority: recommended
+
+Focus: Monthly paid-AI adoption and vendor spending measures among businesses in Ramp's transaction sample. Its business population differs from consumer subscription panels, app users, and pageview events.
+
+Teaching Suggestion: M2/M8 comparison of measurement populations and denominators. Consult the dated methodology and sample before comparing business paid adoption with consumer adoption or public attention.
+
+Cautions: Methodology: https://ramp.com/data/how-we-built-the-ramp-ai-index. Current chart values were not reverified in the course adaptation. No uniqueness claim about all public transaction-based measures is made.
+
+Rights or Access: open
+
+---
+
+### additional:epoch-ai-notable-models | Epoch AI: Notable AI Models (data hub)
+
+Source URL: https://epoch.ai/data/notable-ai-models
+
+Modules: M8, M6
+
+Priority: recommended
+
+Focus: Table of 3,600+ machine-learning models since 1950 with publication date, organization, country, domain, training compute, parameters, dataset size, cost estimates and accessibility; CSV downloads at epoch.ai/data/notable_ai_models.csv and related files.
+
+Teaching Suggestion: Candidate event-date source for M6/M8. Check each model record, linked announcement, and access timing before constructing event windows. No local Epoch table was supplied in the GenAI bundle.
+
+Rights or Access: open
+
+---
+
+### additional:openrouter-models-api | OpenRouter Models API: Posted Prices and Listing Dates
+
+Source URL: https://openrouter.ai/api/v1/models
+
+Modules: M8, M2
+
+Priority: optional
+
+Focus: Public model metadata and posted token prices. The supplied dated capture has 464 rows, including model variants and variable-price entries. Marketplace listing timestamps and available offers are distinct from public launch dates and realized usage.
+
+Teaching Suggestion: M2/M8 data definitions and price units. Verify announcement dates separately before constructing a release event study; preserve variants and variable-price status.
+
+Cautions: Collector inspection confirms conversion from USD per token to USD per million tokens and missing numeric values for negative variable-price sentinels. Endpoint not re-collected during course adaptation.
+
+Rights or Access: open
+
+---
+
+### additional:wikimedia-pageviews-api | Wikimedia REST API: pageviews per article (daily since 2015)
+
+Source URL: https://wikimedia.org/api/rest_v1/
+
+Modules: M2, M5, M8
+
+Priority: recommended
+
+Focus: Daily or monthly view events by title, project, access method, and agent category. Redirects are not automatically consolidated into target-title counts; explicitly record the selected title set and retrieval completeness.
+
+Teaching Suggestion: M2 2.17: the supplied two-title Claude capture produces an 85.06% older-title decline versus a 16.66% selected-title decline. Course code tests duplicate responses, conflicting keys, and missing title-days.
+
+Cautions: Counts measure events rather than unique people. An absent record or failed request alone does not establish zero. Current redirects do not reconstruct a complete rename history. Official definition checked 2026-10-26; saved capture analyzed offline.
+
+Rights or Access: open
+
+---
+
+### additional:apple-rss-top-charts | Apple RSS feed generator: App Store top-free and top-paid charts as JSON
+
+Source URL: https://rss.marketingtools.apple.com/
+
+Modules: M2, M8
+
+Priority: optional
+
+Focus: Keyless JSON feeds of Apple's top charts by storefront and media type (apps: top-free and top-paid, up to 100 results), with app id, developer, release date and genres. No top-grossing feed in this version.
+
+Teaching Suggestion: Daily rank snapshots of the AI assistant apps in genai_demand_lab; combine with the McBroken lab's GitHub Actions template to build a rank panel over a term.
+
+Rights or Access: open
+
+---
+
+### additional:wayback-cdx-api | Wayback Machine CDX Server API (archived-capture index)
+
+Source URL: https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server
+
+Modules: M2, M8
+
+Priority: recommended
+
+Focus: Query the index of archived captures for a URL (web.archive.org/cdx/search/cdx) with date ranges, status and MIME filters, collapsing to one capture per day, JSON output; each capture is then fetchable at web.archive.org/web/<timestamp>id_/<url>.
+
+Teaching Suggestion: How students build a price history for subscription plans (Exercise 1 of genai_demand_lab) or any page's history without having scraped it at the time.
+
+Cautions: The availability API (archive.org/wayback/available?url=...) returns only the closest single capture; use CDX for lists.
+
+Rights or Access: open
+
+---
+
+### additional:cloudflare-radar-internet-services-ranking | Cloudflare Radar API: Internet services ranking (including a Generative AI category)
+
+Source URL: https://developers.cloudflare.com/api/resources/radar/subresources/ranking/subresources/internet_services/methods/top/
+
+Modules: M8, M2
+
+Priority: optional
+
+Focus: Token-authenticated Internet-services ranking endpoint, with date and category selection. Supplied collection code was inspected; endpoint response and token scopes were not independently tested during course adaptation.
+
+Teaching Suggestion: Optional traffic-ranking comparison in M2/M8. Retain the rank scale and traffic population; do not convert ranks into market shares.
+
+Cautions: Verify category labels, permissions, current API schema, and usage terms before calling. No credential or collection workflow was activated.
+
+Rights or Access: freemium
 
 ---
 

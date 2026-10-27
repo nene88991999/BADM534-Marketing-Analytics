@@ -19,7 +19,7 @@ Resource IDs in this table use the **additional** catalog namespace, including s
 | M7, 7.17 | Basket Associations | mlxtend-frequent-patterns | [association_rules.py](../03_Data_and_Code/mHealth/recurring_examples/association_rules.py) | Support, confidence, lift, training-only selection, future baskets, user bootstrap. |
 | M8, 8.11 | Evidence Checks for Generated Claims | copycat-ad-copy-generation; pymc-labs-semantic-similarity-rating; claude-ecom-business-review-skill | [claim_checks.py](../03_Data_and_Code/mHealth/recurring_examples/claim_checks.py) | Constructed false claims; numerical and interpretation checks; synthetic-consumer validity discussion. |
 
-The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 44 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
+The [Markdown modules](README.md) include the complete program text beside each case. The compiled notes have 47 TikZ figures using the Illinois palette, including six figures added with these cases. Numerical outputs and the environment record are available in [mHealth results](../03_Data_and_Code/mHealth/recurring_examples/results/) and the [synthetic IV result](../03_Data_and_Code/Lecture_Examples/price_iv_results.json).
 
 ## Other Uses of the Added Resources
 
@@ -39,7 +39,7 @@ The [Markdown modules](README.md) include the complete program text beside each 
 
 ## Replication and Publication
 
-Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 37 embedded source blocks against their matching files.
+Run the programs through the commands in the [mHealth example README](../03_Data_and_Code/mHealth/recurring_examples/README.md) and [synthetic example README](../03_Data_and_Code/Lecture_Examples/README.md). `test_extension_logic.py` checks seven independent small cases, including a censored risk set with tied times, a confirmed gap followed by a return, future-information exclusion, a denominator mismatch, and a coefficient that increases adjusted variance. `scripts/check_lecture_code.py` verifies all 40 embedded source blocks against their matching files.
 
 The mHealth programs use the existing 370-user teaching cohort and impose case-specific eligibility rules before reporting results. Their outputs are aggregate. The price simulation is explicitly synthetic. Schema-valid false claims are constructed teaching examples, not measured errors from an LLM. Historical variance reduction is a planning comparison, and basket lift is a descriptive association.
 
@@ -71,3 +71,17 @@ The supplied [McBroken bundle](../01_Resources/02_M2_Customer_Data_and_Visualiza
 | US store panel and snapshot manifest | M7 §7.18: time-separated forecasts, Brier scores, calibration, missing future labels | `predict.py`; later-date evaluation and eligible-origin denominator |
 
 The five original teaching programs use the local data and appear in full in the notes. Their [README](../03_Data_and_Code/McBroken/README.md), [data dictionary](../03_Data_and_Code/McBroken/DATA_DICTIONARY.md), [manifest](../03_Data_and_Code/McBroken/manifest.json), and [result descriptions](../03_Data_and_Code/McBroken/results/README.md) provide replication and interpretation details. Three additional TikZ figures use the Illinois palette. The supplied network collector and notebook were inspected as references; the adaptation does not claim to have rerun their complete historical retrieval. The original bundle is preserved with attribution, and no scheduled collection was activated.
+
+## Generative-AI Demand Resources
+
+The October 26 addition contains ten entries in `GENAI_DEMAND.yaml`, increasing the additional catalog from 634 to 644 resources. The [review record](../01_Resources/00_Index/genai_demand_resource_review_2026-10-26.json) and [adaptation review](../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/COURSE_ADAPTATION.md) distinguish inspected source files, verified external definitions, executed adaptations, and optional extensions.
+
+| Notes | Resource and Question | Executed Adaptation |
+| --- | --- | --- |
+| M2 §2.17 | Public signals and Wikimedia title-level counts | `measurement.py`: complete calendars, duplicate/conflict checks, selected-title aggregation, and independent monthly totals |
+| M4 §4.14 | Supplied synthetic subscription panel and its generator | `retention.py`: full-population adoption, fixed-cohort provider/category outcomes, endpoint versus continuous retention, four acquisition-event categories |
+| M8 §8.13 | Egan et al. and Fradkin abstracts; supplied price-regression example | `demand.py`: stock/flow projections, price support and rank checks, independent residualized slope, and exact binary-logit benchmark |
+
+Three complete Python blocks and three original TikZ figures accompany the cases. The [course README](../03_Data_and_Code/GenAI_Demand/README.md), [data dictionary](../03_Data_and_Code/GenAI_Demand/DATA_DICTIONARY.md), [agent guide](../03_Data_and_Code/GenAI_Demand/AGENTS.md), and aggregate results support replication. Eight hand-checkable counterexample tests passed. The original notebook, network collectors, and complete panel simulator were inspected but not rerun. No model API calls or scheduled retrievals occurred.
+
+The supplied notebook's flow regression does not establish recovery of the dynamic simulator's utility price coefficient. Its original retention curves also compare different starting cohorts, and its new-provider measure includes first adoption, reentry, and additions. The course cases correct these interpretations. Catalog summaries now point to the executed adaptation and retain the distinction between public snapshots and simulated consumers. Apple, Ramp, Epoch, Wayback, and Cloudflare remain useful measurement or collection extensions with their stated verification limits.
