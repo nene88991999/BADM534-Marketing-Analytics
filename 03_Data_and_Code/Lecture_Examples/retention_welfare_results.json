@@ -1,0 +1,30 @@
+{
+  "input_type": "synthetic imposed probabilities and stakes",
+  "unit": "dollars per eligible customer",
+  "benchmark": "direct choice, renewal probability 0.20",
+  "firm_margin": 11.0,
+  "customer_loss_per_renewal": 10.0,
+  "procedures": [
+    {
+      "procedure": "low_renewal",
+      "renewal_probability": 0.1,
+      "firm_profit_change": -1.1,
+      "customer_value_change": 1.0,
+      "combined_surplus_change": -0.1
+    },
+    {
+      "procedure": "direct",
+      "renewal_probability": 0.2,
+      "firm_profit_change": 0.0,
+      "customer_value_change": -0.0,
+      "combined_surplus_change": 0.0
+    },
+    {
+      "procedure": "high_renewal",
+      "renewal_probability": 0.6,
+      "firm_profit_change": 4.4,
+      "customer_value_change": -4.0,
+      "combined_surplus_change": 0.4
+    }
+  ]
+}

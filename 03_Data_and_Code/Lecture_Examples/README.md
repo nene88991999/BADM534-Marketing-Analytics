@@ -43,3 +43,9 @@ Read the equations and assumptions in the relevant module before adapting a calc
 ## Code in the Lecture Notes
 
 `m01_synthetic.py` through `m08_synthetic.py` provide independently runnable module calculations using `example_helpers.py`. Their source appears directly in the corresponding lecture module. All eight outputs were checked against `verified_calculations.json` from `verify_examples.py`. Run `python m01_synthetic.py` from this folder, or supply its path from another working directory. These scripts use only the standard library and regenerate the labeled CSV files beside the scripts.
+
+## Session Calculations and Customer Value
+
+Run `python3 03_Data_and_Code/Lecture_Examples/session_examples.py all` from the repository root to reproduce the small calculations projected in the [session decks](../../Lectures/README.md). The [program](session_examples.py) uses only the standard library and writes [session_calculations.json](session_calculations.json). Select a single calculation with a session code such as `S04`, `S13`, or `S14_ethics`. All inputs are synthetic. Presentation meetings have no separate numerical script.
+
+Run `python3 03_Data_and_Code/Lecture_Examples/retention_welfare.py` for the fixed-stakes retention comparison. It writes [retention_welfare.csv](retention_welfare.csv) and [retention_welfare_results.json](retention_welfare_results.json). Each row is an imposed procedure; renewal probabilities are fractions, and profit, customer value, and combined surplus are dollars per eligible customer relative to direct choice at probability 0.20. Firm margin is 11 dollars and customer loss is 10 dollars per renewal. The script independently reconciles the high-renewal result over 100 customers and compares both direct-choice and low-renewal benchmarks. No customer records or estimated valuations enter this calculation.

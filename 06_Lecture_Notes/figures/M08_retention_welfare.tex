@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[
+  width=13cm,height=7.1cm,
+  ybar,bar width=14pt,
+  ymin=-4.9,ymax=5.8,
+  ylabel={Change in dollars per customer},
+  symbolic x coords={Low,Direct,High},
+  xtick=data,xticklabels={10\% renewal,20\% renewal,60\% renewal},
+  enlarge x limits=0.25,
+  ytick={-4,-2,0,2,4},ymajorgrids=true,
+  legend style={at={(0.5,1.01)},anchor=south,legend columns=2},
+  nodes near coords,nodes near coords style={font=\scriptsize},
+  axis x line*=bottom,axis y line*=left]
+\addplot[draw=IlliniBlue,fill=IlliniBlue!75] coordinates {(Low,-1.1) (Direct,0) (High,4.4)};
+\addplot[draw=IlliniOrange,fill=IlliniOrange!70,postaction={pattern=north east lines,pattern color=IlliniBlue}] coordinates {(Low,1) (Direct,0) (High,-4)};
+\legend{Firm profit,Customer value}
+\draw[IlliniBlue,thin] (rel axis cs:0,0.45794)--(rel axis cs:1,0.45794);
+\end{axis}
+\end{tikzpicture}

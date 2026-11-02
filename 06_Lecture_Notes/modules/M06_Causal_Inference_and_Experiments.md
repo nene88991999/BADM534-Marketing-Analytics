@@ -564,3 +564,13 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 6.17 Experimental Objectives and Customer Outcomes
+
+\noindent A marketing experiment identifies a response to the assigned intervention for the represented population. The choice of outcome determines what success means. An experiment that ranks interfaces by completed renewals can reliably select a profitable interface while remaining silent about whether customers wanted the additional subscription. Randomization addresses the comparison between assigned procedures; customer value requires an appropriate outcome and its own measurement.
+
+For a cancellation experiment, define eligibility before assignment and retain every assigned customer in the primary denominator. Include a direct-choice benchmark and record the final payment status over a fixed horizon. Also measure completion time, refunds, unwanted charges, and customers' informed willingness to continue. Conditioning only on customers who reach the last page can remove the people most affected by a difficult interface. Report that intermediate reach rate separately.
+
+The procedure includes the customer's opportunity to refuse optional retention content. If a customer must first undergo the intervention to discover how to decline it, the refusal path changes the treatment itself. A comparison of optional and compulsory interaction can therefore require different treatment definitions even when the last screen is identical. Describe the complete assigned sequence before interpreting the estimated effect.
+
+Under the model in Section 8.14, firm and customer interests are opposed for the same renewal. Accurate experimentation then helps the firm select the procedure with the largest customer loss within the available set. This conditional result follows from the stakes and objective. When a better product increases both willingness to pay and firm profit, the same experiment can instead select a mutually beneficial change. The empirical task is to measure the consequences that distinguish those settings.

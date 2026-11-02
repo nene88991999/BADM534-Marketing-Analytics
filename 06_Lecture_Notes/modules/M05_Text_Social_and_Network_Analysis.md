@@ -355,3 +355,13 @@ if __name__ == "__main__":
     save_result("topics", result)
     print(json.dumps(result, indent=2))
 ```
+
+## 5.13 Review Provenance and Generated Language
+
+\noindent A retailer using reviews to describe a product needs to preserve the distinction between an actual customer's experience and generated wording. An LLM can summarize a collection of genuine reviews, but its output can introduce an experience that no reviewer reported. A sentiment classifier can also assign a confident label to a false or irrelevant text. Model accuracy and the authenticity of the underlying evidence address different questions.
+
+Preserve the review identifier, source, date, any recorded incentive, and the text actually analyzed. A summary should retain the relevant review denominator and material disagreement. A generated quotation attributed to a customer requires that customer's actual words and appropriate permission. A synthetic example used to test a parser should remain labeled synthetic and separate from reviews offered to potential buyers.
+
+The FTC's Consumer Reviews and Testimonials Rule addresses specified conduct involving false reviews and testimonials. Its provisions distinguish creation, purchase, dissemination, and mere hosting, with different knowledge conditions. AI generation alone does not determine whether a testimonial misrepresents experience. The relevant questions concern the speaker, actual experience, claim, and business conduct. See the [FTC's questions and answers](https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers).
+
+A useful audit samples the original texts behind a generated theme, checks whether each factual claim is supported, and records unsupported statements separately from ordinary classification errors. The rare-complaint example in Section 5.5 supplies another check: a high false-positive share can make a generated summary overstate the prevalence of a problem even when individual labels have respectable sensitivity and specificity.

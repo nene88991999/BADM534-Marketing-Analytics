@@ -1,0 +1,243 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Causal Comparisons and Policy Evaluation}
+\author{By Nathan Yang}
+\date{Session 10}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{A Repair-Policy Question}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A policy may change the cost of restoring restaurant availability.
+\item A national before-after change also includes common shocks.
+\item The target is the change attributable to the policy over a defined horizon.
+\end{slidebullets}
+\vfill
+\note{The McBroken setting motivates a causal question. The supplied panel does not by itself establish a valid untreated comparison for a policy affecting the same environment broadly.
+
+M6, Section 6.16, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Difference-in-Differences}
+\usebeamercolor[fg]{normal text}
+\noindent Subtract the comparison group's change from the treated group's change.
+\medskip
+\[
+\widehat\tau=(\bar Y_{T,post}-\bar Y_{T,pre})-(\bar Y_{C,post}-\bar Y_{C,pre})
+\]
+\medskip
+\noindent Parallel untreated trends connect the observed changes to a causal effect.
+\note{Different starting levels can be compatible with the design. The assumption concerns untreated changes, not identical outcome levels.
+
+M6, Section 6.8, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{The Counterfactual Trend}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_did.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic outcomes. Treated sales rise 120 to 150 and comparison sales 100 to 110.\par}
+\note{The dashed path is an implied counterfactual. A treatment-specific demand shock at the same time would challenge the interpretation.
+
+M6, Section 6.8, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Design Checks}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Examine pre-treatment outcomes and institutional timing.
+\item Consider anticipation, spillovers, and changing composition.
+\item Match the comparison group to the policy's untreated counterfactual.
+\end{slidebullets}
+\vfill
+\note{A nonsignificant pre-trend test does not establish parallel trends. With staggered adoption and heterogeneous effects, the choice of comparison groups and aggregation becomes especially important.
+
+M6, Section 6.8, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{McBroken and the Comparison Group}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_mcbroken_policy.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small A policy-analysis design requires a credible untreated comparison.\par}
+\note{The course case retains missing dates and unknown statuses. Those measurement issues should be addressed before interpreting an apparent policy break.
+
+M6, Section 6.16, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Regression Discontinuity}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Eligibility can change at a known score threshold.
+\item Nearby units require continuity of other outcome determinants.
+\item The resulting effect is local to the cutoff and compliance behavior.
+\end{slidebullets}
+\vfill
+\note{Manipulation of the score and discontinuities in other policies threaten the comparison. Bandwidth and functional form should be assessed within the design.
+
+M6, Section 6.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Instrumental Variables}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item The instrument shifts treatment or price.
+\item Exclusion restricts its other paths to the outcome.
+\item Relevance alone does not establish exclusion.
+\end{slidebullets}
+\vfill
+\note{Under the appropriate binary-treatment conditions, IV can identify a local effect for compliers. The interpretation depends on the assignment mechanism and monotonicity, as well as the first stage.
+
+M6, Section 6.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Recommendation Logs Select Exposure}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Frequent buyers may usually see product A.
+\item Occasional buyers may usually see product B.
+\item Their raw click rates compare different customer populations.
+\end{slidebullets}
+\vfill
+\note{A logged outcome is observed after a selected display. A policy comparison must account for the distribution of customers and actions that generated those observations.
+
+M6, Section 6.7.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Exposure Adjustment Reverses the Ranking}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_exposure_reversal.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic randomized logging within frequent and occasional buyer groups.\par}
+\note{The constructed logging design gives A probability 0.90 for frequent buyers and 0.10 for occasional buyers. B receives the complement. The common-population comparison holds customer mix fixed.
+
+M6, Section 6.7.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Inverse-Propensity Policy Value}
+\usebeamercolor[fg]{normal text}
+\noindent Weight each observed outcome by target-policy probability over logging probability.
+\medskip
+\[
+\widehat V(\pi)=\frac{1}{n}\sum_i\frac{\pi(A_i\mid X_i)}{p_0(A_i\mid X_i)}Y_i
+\]
+\medskip
+\noindent The denominator counts every eligible logged opportunity.
+\note{Identification requires the relevant exchangeability condition and positive logging support wherever the target policy acts. A randomized logging policy can supply known assignment probabilities.
+
+M6, Section 6.7.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}[fragile]{A Common-Population Calculation}
+\usebeamercolor[fg]{normal text}
+\noindent Synthetic clicks and logging probabilities identify the two policy values.
+\begin{lstlisting}
+n = 1000
+value_a = (270 / 0.90 + 10 / 0.10) / n
+value_b = (25 / 0.10 + 180 / 0.90) / n
+raw_a = 280 / 500
+raw_b = 205 / 500
+assert (value_a, value_b) == (0.40, 0.45)
+\end{lstlisting}
+{\small The raw ranking and policy-value ranking disagree.\par}
+\note{An independent check averages the two group-specific response rates under equal population weights. The small-probability cells receive large weights and contribute substantial uncertainty.
+
+M6, Section 6.7.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Support and Weight Concentration}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item An action never shown to a group has no observed outcome there.
+\item Large weights amplify a small number of records.
+\item Clipping changes the estimator and its bias-variance tradeoff.
+\end{slidebullets}
+\vfill
+\note{Zero support cannot be repaired by increasing a weight. Weight-concentration summaries are diagnostics and do not replace a variance calculation that respects dependence.
+
+M6, Section 6.7.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Spillovers Change the Outcome Comparison}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_spillovers.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic store network with effects beyond assigned units.\par}
+\note{The chain-wide outcome may change less than the treated-store outcome. Assignment and outcome aggregation should follow the managerial decision.
+
+M6, Section 6.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Coding Exercise: Policy Value}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Reproduce raw rates and inverse-propensity values.
+\item Check them using within-group averages.
+\item Set one logging probability to zero and explain the missing comparison.
+\end{slidebullets}
+\vfill
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S10. A correct implementation flags unsupported target actions. Silently dropping the unsupported group changes the target population.
+
+M6, Section 6.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Information and Exposure}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A recommendation can draw attention to an item.
+\item A personalized endorsement can also change beliefs.
+\item Separate interventions can identify these channels.
+\end{slidebullets}
+\vfill
+\note{The MovieLens experiment discussed in the notes distinguishes recommendation and exposure-only conditions. The relevant outcome and information treatment should be stated before attributing a response to personalization.
+
+M6, Section 6.10.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{A Policy Value for Whom?}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Clicks and sales can rise while customer value falls.
+\item A causal estimate concerns the outcome that was actually measured.
+\item Record refusal, completion, and customer time when procedures change.
+\end{slidebullets}
+\vfill
+\note{A valid causal effect on conversion does not identify the welfare effect without information about customer values and costs. The next measurement should address the missing part of the decision.
+
+ETHICS\_AND\_REGULATION.md, M6.}
+\end{frame}
+\begin{frame}{Causal-Design Discussion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item What would the treated group have experienced without the policy?
+\item Which group or action lacks comparable support?
+\item What institutional evidence strengthens the proposed comparison?
+\end{slidebullets}
+\vfill
+\note{A causal interpretation rests on the comparison and assumptions. A flexible estimator does not supply a missing assignment mechanism or recover outcomes outside support.
+
+M6, Section 6.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\end{document}

@@ -347,3 +347,13 @@ if __name__ == "__main__":
     output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
     print(json.dumps(result, indent=2))
 ```
+
+## 3.13 Regression Evidence and Advertising Claims
+
+\noindent A firm considering a claim about its product must match the statement customers will understand to the evidence supporting it. A regression of later engagement on earlier use describes a conditional relationship under the specified sample and controls. A claim that the product causes better outcomes requires evidence about the relevant intervention and comparison. The coefficient's statistical significance does not supply that comparison.
+
+The FTC's advertising-substantiation policy addresses reasonable support for objective express and implied claims before they are disseminated. The necessary support depends on the claim and its context. A technically accurate description of a regression can still invite a broader inference if the surrounding advertisement promises a product benefit. See the [FTC policy statement](https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation).
+
+Consider the mHealth association between recorded food-category breadth and next-day recorded calories. The variables describe logs in the observed sample. A customer-facing claim about weight loss changes both the outcome and the causal interpretation. The available regression does not identify that effect. A defensible empirical statement retains the observed outcome, sample restrictions, timing, coefficient magnitude, and uncertainty. A new claim requires a study designed for its outcome and population.
+
+An evidence table can connect each proposed statement to its estimand, data, identification conditions, and supported wording. AI-generated copy should pass through the same comparison. Fluency does not expand the population or outcome represented by the underlying analysis.

@@ -1,0 +1,4 @@
+procedure,renewal_probability,firm_profit_change,customer_value_change,combined_surplus_change
+low_renewal,0.1,-1.1,1.0,-0.1
+direct,0.2,0.0,-0.0,0.0
+high_renewal,0.6,4.4,-4.0,0.4

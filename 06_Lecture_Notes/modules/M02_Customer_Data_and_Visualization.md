@@ -1184,3 +1184,13 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 2.18 Sample Restrictions and Customer Representation
+
+\noindent A manager comparing engagement across customer groups needs to know which customers remain in the analysis. A filter that removes incomplete records can disproportionately exclude customers who use the service intermittently or record information in a different way. The resulting estimate describes the retained population. Its relevance to a broader campaign depends on the relationship between inclusion and the outcome of interest.
+
+Keep a flag for each restriction and report the denominator before and after applying it. In the mHealth example, a calorie-range screen changes the set of recorded days; it does not classify the excluded users as unhealthy or unreliable. Compare logging frequency, missingness, and the available earlier-period characteristics of retained and excluded records. Keep unavailable physiological information missing. A more elaborate formula does not compensate for an unobserved input.
+
+The same principle applies to a chart. A segment with no observed outcomes should remain visible as a coverage issue when it belongs to the target population. Treating an unobserved response as zero changes the estimand. Removing that segment from the denominator can change the apparent success rate. A useful chart therefore pairs its outcome with a count or coverage measure and keeps the analysis population explicit.
+
+For an AI-assisted cleaning request, specify which transformations are mechanical corrections and which are analytical restrictions. Ask for a row-count reconciliation by reason, inspect several affected records locally, and compare the substantive result under reasonable alternative screens. The decision concerns whether the marketing recommendation remains supported for the intended customers.

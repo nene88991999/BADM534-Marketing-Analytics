@@ -1,0 +1,243 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Generative AI, Consumer Choice, and Regulation}
+\author{By Nathan Yang}
+\date{Session 14}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{A Subscription-Growth Decision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A firm wants to increase paid renewals.
+\item The evidence includes subscription histories, interfaces, and customer outcomes.
+\item A higher renewal rate can arise through improved value or greater cancellation friction.
+\end{slidebullets}
+\vfill
+\note{The commercial outcome does not identify the consumer mechanism. A useful audit records value, consent, cancellation completion, and customer time as well as revenue.
+
+M8, Section 8.13, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Public Attention and Paid Demand}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Pageviews measure attention to selected pages.
+\item Paid subscriptions measure a specific payment relationship.
+\item User, provider, and category denominators differ.
+\end{slidebullets}
+\vfill
+\note{A title change can split attention across pages. A user can hold multiple subscriptions. These measurement choices can create apparent differences in demand without the same underlying object.
+
+M8, Section 8.13, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{A Fixed Starting Cohort}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_genai_cohorts.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Entirely synthetic subscription panel. Provider labels identify simulated options.\par}
+\note{These simulated percentages are not actual market shares or provider retention estimates. Multiple-provider behavior requires a definition that prevents incompatible categories from being added.
+
+M4, Section 4.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Subscriber Stocks and New Flows}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A subscriber stock includes past acquisition and survival.
+\item A new-subscription flow can include first purchases and returns.
+\item A price coefficient depends on the outcome and behavioral model.
+\end{slidebullets}
+\vfill
+\note{Regressing subscriber stocks on current prices can combine persistent state with current choice. A structural interpretation must match the data-generating choice process.
+
+M8, Section 8.13.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{A Known Model Is a Useful Verification Case}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M08_genai_price.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic demand exercise with a known binary-model benchmark.\par}
+\note{Recovering the benchmark checks implementation under its assumptions. It does not establish a structural interpretation for the richer simulated panel or actual market data.
+
+M8, Section 8.13.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{AI Workflow Quality}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Measure the completed analysis and its validity.
+\item Include generation, review, and repair time.
+\item Use comparable tasks and independent quality criteria.
+\end{slidebullets}
+\vfill
+\note{A time comparison can favor a tool because it abandons difficult tasks or reduces quality. The outcome definition should account for completion and validity before comparing speed.
+
+M8, Section 8.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Review Time Is Part of Production}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M08_workflow_time.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic workflows meet the same stated quality requirement.\par}
+\note{The manual workflow uses 90 minutes to produce and 20 to review. The assisted workflow uses 45 and 40. These are imposed time inputs, not an estimate of a universal AI effect.
+
+M8, Section 8.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{A Choice Procedure Can Change Renewal}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A direct offer and an offer preceded by questions can produce different choices.
+\item The customer still makes the final selection.
+\item An independent value measure determines whether an additional renewal benefits that customer.
+\end{slidebullets}
+\vfill
+\note{Questions, defaults, or retention prompts can precede a fixed target decision. The welfare comparison depends on consumer values, stable response probabilities, and the procedure set. A renewal increase alone does not establish either benefit or harm.
+
+M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Opposed Interests}
+\usebeamercolor[fg]{normal text}
+\noindent Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
+\medskip
+\[
+\Delta\Pi=\nu(s-s_0),\qquad \Delta V=-\sigma(s-s_0)
+\]
+\medskip
+\noindent A higher renewal probability raises profit and lowers customer value under these stated stakes.
+\note{This conditional comparison holds the offer, monetary values, and relevant response population fixed. It does not infer customer harm from conversion alone. Additional time and authority costs require separate measurement.
+
+M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Profit and Customer Value Can Move Oppositely}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M08_retention_welfare.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic probabilities and fixed stakes. Direct renewal is 20\%.\par}
+\note{The direct-choice benchmark is distinct from the consumer-preferred procedure. Relative to the 10\% procedure, the 60\% procedure creates a 5-dollar customer loss. These probabilities and monetary values are imposed inputs, not observed customer responses.
+
+M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Experimentation Selects the Commercial Winner}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A fixed set of procedures has stable renewal probabilities.
+\item Independent randomized samples estimate each probability.
+\item With opposed interests, accurately selecting the largest rate also selects the largest loss in that set.
+\end{slidebullets}
+\vfill
+\note{The result requires common fixed stakes, a fixed catalog chosen before the experiment, stable responses from experiment to deployment, and complete independently sampled outcomes. It does not say that every experiment harms consumers.
+
+M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{A Cancellation Audit}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Include a direct-cancellation comparison.
+\item Record whether optional retention content can be refused before exposure.
+\item Measure completion, elapsed time, subsequent charges, and customer value.
+\end{slidebullets}
+\vfill
+\note{An effective refusal path and an independent value measure reveal dimensions hidden by renewals. A direct-choice arm helps isolate the effect of the preceding interaction.
+
+M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Rule Status and Scope}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A statute, binding rule, interpretive guide, and proposal have different authority.
+\item Record jurisdiction, covered conduct, exceptions, and effective date.
+\item Use the current primary source before turning a result into a business recommendation.
+\end{slidebullets}
+\vfill
+\note{The FTC's March 2026 negative-option notice seeks input on possible amendments and refers to the vacated 2024 rule. A request for comments does not itself adopt replacement obligations.
+
+FTC, Negative Option Rule ANPRM announcement, March 2026. \url{https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option}}
+\end{frame}
+\begin{frame}{Pricing, Reviews, and Delivery}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Price-display rules require attention to the covered industry.
+\item Reviews presented as customer experiences require truthful provenance.
+\item Housing-ad delivery can create discrimination concerns beyond targeting choices.
+\end{slidebullets}
+\vfill
+\note{The FTC fee rule covers live-event tickets and short-term lodging. Its review rule distinguishes business creation and purchase of false reviews from mere hosting. The DOJ Meta settlement addresses housing advertising specifically. These sources do not establish an identical rule for every marketing application.
+
+Primary-source scope and status record: \url{../06_Lecture_Notes/ETHICS_AND_REGULATION.md.}}
+\end{frame}
+\begin{frame}[fragile]{A Welfare Comparison}
+\usebeamercolor[fg]{normal text}
+\noindent Synthetic stakes distinguish profit from customer value.
+\begin{lstlisting}
+direct, selected = 0.20, 0.60
+firm_margin, customer_loss = 11, 10
+firm_gain = firm_margin * (selected-direct)
+value_change = -customer_loss * (selected-direct)
+assert round(firm_gain, 2) == 4.40
+assert round(value_change, 2) == -4.00
+\end{lstlisting}
+{\small Higher combined surplus can coexist with a customer loss under these assumptions.\par}
+\note{The combined change is 0.40 dollars per potential customer in this example. The welfare result is conditional on the imposed values. A choice probability does not independently reveal those values.
+
+M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Coding Exercise: A Marketing Audit}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Verify a demand denominator and the workflow-time calculation.
+\item Compute profit and customer value for alternative retention procedures.
+\item Propose an interface change and the evidence needed to evaluate it.
+\end{slidebullets}
+\vfill
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S14 and S14\_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs.
+
+M8, Section 8.13.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{A Decision With Consumer Outcomes}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item State the commercial target and customer outcome.
+\item Identify the procedure the customer can accept, refuse, or revise.
+\item Connect the proposed action to current rules and supporting evidence.
+\end{slidebullets}
+\vfill
+\note{A marketing policy can improve matching, convenience, and customer value. Its evaluation should also reveal when additional sales come from misleading claims, unwanted friction, or conflicting incentives.
+
+Primary-source scope and status record: \url{../06_Lecture_Notes/ETHICS_AND_REGULATION.md.}}
+\end{frame}
+\end{document}

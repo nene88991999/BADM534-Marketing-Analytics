@@ -564,3 +564,11 @@ if __name__ == "__main__":
     save_result("reporting", result)
     print(json.dumps(result, indent=2))
 ```
+
+## 1.11 Customer Data and the Coding Environment
+
+\noindent A marketing team deciding whom to contact needs a defined set of customer information. Additional fields can increase exposure without improving the decision. Begin with the unit of analysis, the intended calculation, and the information available before contact. A transaction date can be necessary for a forecasting split; a customer's name usually contributes nothing to that split. A reproducible pipeline should make these distinctions visible in its input schema.
+
+An AI coding tool can receive information through prompts, uploaded files, logs, screenshots, or repository access. Generate and debug a transformation using a small synthetic table when real records are unnecessary. Before using actual records, establish whether that environment is authorized for those fields and that purpose. An assistant's ability to read a file does not establish the firm's authority to transmit it. Access, processing location, retention, and permitted uses belong to the specification of the work.
+
+The mHealth exercises provide a concrete comparison. Ages and perturbed weights support selected teaching calculations, while exact birthdays are unnecessary. Replacing identifiers and perturbing one measurement do not establish anonymity for every possible linkage. A useful implementation loads the minimum required columns, avoids printing individual histories into logs, and publishes aggregate results with their denominators. Students can inspect generated code for file uploads, external API calls, and unnecessary exports before running it. These checks concern observable data flows and preserve the ability to reproduce the local analysis.

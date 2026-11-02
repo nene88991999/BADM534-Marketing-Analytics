@@ -1,0 +1,42 @@
+\documentclass[aspectratio=169,14pt]{beamer}
+\usetheme{default}
+\usepackage{fontspec}
+\setmainfont{texgyrepagella-regular.otf}[BoldFont=texgyrepagella-bold.otf,ItalicFont=texgyrepagella-italic.otf,BoldItalicFont=texgyrepagella-bolditalic.otf]
+\setsansfont{texgyreheros-regular.otf}[BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf,BoldItalicFont=texgyreheros-bold.otf,BoldItalicFeatures={FakeSlant=0.2}]
+\setmonofont{lmmono10-regular.otf}[Scale=0.85]
+\setbeamertemplate{navigation symbols}{}
+\usepackage{pgfpages}
+\newif\ifpresenter
+\ifdefined\PresenterVersion\presentertrue\else\presenterfalse\fi
+\ifpresenter
+  \setbeameroption{show notes on second screen=right}
+  \setbeamertemplate{note page}[plain]
+\fi
+\usepackage{amsmath,amssymb,bm,booktabs,array,graphicx,xcolor}
+\usepackage{tikz,pgfplots,adjustbox,listings,xurl}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,shapes.geometric,decorations.pathreplacing,patterns}
+\input{../06_Lecture_Notes/figures/style.tex}
+\definecolor{slidepaper}{RGB}{234,220,201}
+\setbeamercolor{background canvas}{bg=slidepaper}
+\setbeamercolor{normal text}{fg=IlliniBlue}
+\setbeamercolor{frametitle}{fg=IlliniBlue}
+\setbeamercolor{title}{fg=IlliniBlue}
+\setbeamercolor{item}{fg=IlliniOrange}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamertemplate{itemize item}{\color{IlliniOrange}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{IlliniOrange}\footnotesize$\circ$}
+\setbeamercolor{orangerule}{bg=IlliniOrange}
+\setbeamertemplate{headline}{\begin{beamercolorbox}[wd=\paperwidth,ht=0.1cm,dp=0.1cm]{orangerule}\end{beamercolorbox}}
+\setbeamertemplate{footline}{\begin{beamercolorbox}[wd=\paperwidth,ht=0.1cm,dp=0.1cm]{orangerule}\end{beamercolorbox}}
+\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
+\setlength{\leftmargini}{1.1em}
+\newenvironment{slidebullets}{\begin{itemize}\setlength\itemsep{0.8em}}{\end{itemize}}
+\pgfplotsset{every axis/.append style={legend style={fill=slidepaper}}}
+\lstdefinelanguage{CoursePython}{keywords={from,import,for,in,if,else,def,return,assert,True,False,None},sensitive=true,morecomment=[l]{\#},morestring=[b]',morestring=[b]"}
+\lstset{language=CoursePython,basicstyle=\ttfamily\small,keywordstyle=\color{IlliniBlue}\bfseries,commentstyle=\color{Storm},stringstyle=\color{IlliniBlue},showstringspaces=false,breaklines=true,columns=fullflexible,keepspaces=true,frame=none,aboveskip=0.7em,belowskip=0.7em}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\hypersetup{colorlinks=true,urlcolor=IlliniBlue,linkcolor=IlliniBlue}

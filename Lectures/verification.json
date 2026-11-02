@@ -1,0 +1,29 @@
+{
+  "verified_on": "2026-11-02",
+  "artifacts": {
+    "Lectures/Marketing_Analytics_Lectures.pdf": {
+      "pages": 255,
+      "sha256": "2b9be3c457e71397afadfc5dfed216b82491868740f562fc4b9ee8c54ed7fc63"
+    },
+    "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+      "pages": 174,
+      "sha256": "5f7f3ba9082a71bee79071a0704a5c85992db7df2f9fb4c2984fbd56ac5dc199"
+    }
+  },
+  "session_decks": 15,
+  "scheduled_minutes_per_meeting": 170,
+  "checks": {
+    "all_student_pdf_pages_rendered_and_visually_reviewed": true,
+    "presenter_mode_session_14_compiled_and_layout_reviewed": true,
+    "normal_decks_have_no_overfull_boxes_or_tex_errors": true,
+    "session_plan_and_manifest_counts_agree": true,
+    "local_companion_links_resolve": 254,
+    "projected_python_snippets_executed": 13,
+    "session_program_calculations_executed": 14,
+    "full_note_code_blocks_match_source_and_parse": 41,
+    "retention_example_compared_with_independent_expected_values": true,
+    "retention_figure_matches_aggregate_csv": true
+  },
+  "execution_scope": "New synthetic calculations were executed. Existing empirical programs retain their previously recorded verification; this update did not rerun every course dataset or downloaded reference notebook.",
+  "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages."
+}

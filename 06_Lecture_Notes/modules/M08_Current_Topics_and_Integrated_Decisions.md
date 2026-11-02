@@ -623,3 +623,144 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 8.14 Retention Procedures, Profit, and Customer Value
+
+\noindent A subscription firm wants to increase renewals. It can improve the underlying service or alter the interaction that precedes the same renewal decision. Questions, default options, and retention prompts can change the probability that a customer continues. These procedures leave the final button press with the customer while changing the conditions under which that choice is made. Evaluating their consequences requires a measure of customer value in addition to the renewal rate.
+
+### 8.14.1 A Fixed Offer and Opposed Stakes
+
+\noindent Consider an eligible customer facing the same final offer under several procedures. A procedure can include an introductory question or an optional retention interaction. Let $s_k$ denote the probability of renewal under procedure $k$, and let $s_0$ denote renewal under direct choice. The probabilities refer to the same population and outcome horizon.
+
+\begin{assumption}[Fixed Offer and Opposed Stakes]
+\label{ass:retention-stakes}
+The available procedures form a finite set $K$. Each procedure has a stable renewal probability $s_k$. Renewal yields firm margin $\nu>0$ dollars and customer value $-\sigma<0$ dollars relative to declining. These stakes are common across procedures and customers in the represented population. The offer, outcome horizon, and population are fixed; procedure costs and additional time costs are zero.
+\end{assumption}
+
+\noindent Assumption \ref{ass:retention-stakes} imposes a setting in which the customer would prefer to decline according to the stated value measure. It does not infer that preference from the observed renewal probability. In an application, informed valuations, subsequent regret, or another justified measure would have to support the welfare interpretation. Heterogeneous stakes or procedure-specific costs require a different calculation.
+
+The expected changes relative to direct choice separate the firm's and customer's consequences:
+
+$$
+\Delta\Pi_k=\nu(s_k-s_0),\qquad
+\Delta V_k=-\sigma(s_k-s_0).
+$$
+
+Here $\Delta\Pi_k$ is expected profit and $\Delta V_k$ is expected customer value, both in dollars per eligible customer over the common horizon. Increasing renewal raises profit and lowers customer value under the imposed stakes. Their sum is $(\nu-\sigma)(s_k-s_0)$. A positive combined change can therefore coexist with a loss borne by the customer.
+
+### 8.14.2 A Numerical Comparison
+
+\noindent Suppose direct choice produces a renewal probability of 0.20. An alternative procedure produces 0.10, and another produces 0.60. Set firm margin to 11 dollars and customer loss from renewal to 10 dollars. These are synthetic inputs. Relative to direct choice, the high-renewal procedure raises expected firm profit by 4.40 dollars, reduces customer value by 4 dollars, and raises combined surplus by 0.40 dollars per eligible customer. Relative to the low-renewal procedure, it reduces customer value by 5 dollars.
+
+![Synthetic changes in expected profit and customer value relative to direct renewal at probability 0.20. Firm margin is 11 dollars per renewal and customer loss is 10 dollars per renewal. The low-renewal procedure gives changes of -1.10 and +1 dollar; direct choice gives zero changes; the high-renewal procedure gives +4.40 and -4 dollars.](../figures/M08_retention_welfare.png)
+
+The two benchmarks answer different questions. Direct choice measures the consequence of adding the preceding interaction. The low-renewal procedure measures the consequence of selecting the firm's preferred interaction instead of the customer's preferred one within this particular set. Neither comparison establishes that every renewal is harmful in other markets. The welfare result depends on the specified preference ordering and fixed stakes.
+
+### 8.14.3 What Repeated Experimentation Selects
+
+\noindent A firm can estimate each procedure's renewal probability and deploy the one with the highest sample rate. More precise estimates improve selection according to that objective. The implication for customers depends on how the objective relates to their value.
+
+\begin{assumption}[Stable Experimental Comparisons]
+\label{ass:retention-testing}
+The procedure set is specified before testing. Each procedure receives an independent sample of $T$ customers from the same population, with independent Bernoulli renewal outcomes of probability $s_k$ and complete observation over the common horizon. The probabilities remain unchanged at deployment. The firm selects a procedure with the largest sample renewal rate. The stakes in Assumption \ref{ass:retention-stakes} apply.
+\end{assumption}
+
+\noindent Under Assumption \ref{ass:retention-testing}, each sample rate converges to its procedure's renewal probability as $T$ grows. Because the set is finite, the largest estimation error across the set also converges to zero. The true renewal rate of the selected procedure therefore converges to the largest available rate. Ties do not change the welfare comparison because the common stakes assign the same expected value to equal renewal probabilities.
+
+The selected procedure consequently approaches the highest firm profit and the lowest customer value in that set. The result is conditional on opposed interests, stable response probabilities, and the specified selection rule. Testing procedures with different products, prices, time costs, or informed customer values requires those differences to enter the objective. Accurate experimental measurement supplies evidence about the measured outcome; it does not choose the appropriate objective for the firm or regulator.
+
+### 8.14.4 Customer Control and the Evaluation Design
+
+\noindent A cancellation evaluation should observe whether customers can refuse optional retention content before exposure. A refusal button available only after several required screens leaves the earlier interaction compulsory. Record the entire path, time to completion, additional charges, and eventual service use. Keep every eligible assigned customer in the denominator, including people who abandon the process.
+
+An independent customer-value outcome can distinguish a useful retention offer from a costly delay. A customer who voluntarily accepts a lower price may benefit from the additional interaction. A customer who wants to leave may lose time or incur another charge. Their common renewal indicator conceals that difference. Report the financial, behavioral, and customer-value outcomes together, with the population and horizon that each represents.
+
+### 8.14.5 Reproduce the Comparison
+
+\noindent The following program constructs the three imposed procedures and compares their expected monetary consequences with direct choice. It loads no outside records. The CSV has one row per procedure, probabilities in fractions, and monetary changes in dollars per eligible customer. The checks independently aggregate the high-renewal comparison over 100 customers and reconcile it with the per-customer calculation. Run the program from any directory with Python 3; it uses only the standard library and writes its CSV and JSON beside the script.
+
+Python source: [retention_welfare.py](../../03_Data_and_Code/Lecture_Examples/retention_welfare.py).
+
+```python
+"""Synthetic retention procedures with fixed, opposed monetary stakes.
+
+Run with Python 3 from any directory. Uses only the standard library.
+No customer data are loaded. All probabilities and values are imposed.
+Outputs are dollars per eligible customer relative to direct choice.
+"""
+from pathlib import Path
+import csv
+import json
+from math import isclose
+
+
+def evaluate(probabilities, direct, firm_margin, customer_loss):
+    if not 0 <= direct <= 1:
+        raise ValueError("Direct-choice probability must be in [0, 1].")
+    if firm_margin < 0 or customer_loss < 0:
+        raise ValueError("This example requires opposed nonnegative stakes.")
+    rows = []
+    for procedure, probability in probabilities.items():
+        if not 0 <= probability <= 1:
+            raise ValueError("Each renewal probability must be in [0, 1].")
+        change = probability - direct
+        profit = firm_margin * change
+        value = -customer_loss * change
+        rows.append({
+            "procedure": procedure,
+            "renewal_probability": probability,
+            "firm_profit_change": round(profit, 10),
+            "customer_value_change": round(value, 10),
+            "combined_surplus_change": round(profit + value, 10),
+        })
+    return rows
+
+
+def main():
+    probabilities = {"low_renewal": 0.10, "direct": 0.20,
+                     "high_renewal": 0.60}
+    margin, loss = 11.0, 10.0
+    rows = evaluate(probabilities, 0.20, margin, loss)
+    low, direct, high = rows
+    assert direct["firm_profit_change"] == 0
+    assert direct["customer_value_change"] == 0
+    # Independent expected-level calculations use 100 eligible customers.
+    n = 100
+    baseline_profit = n * 0.20 * margin
+    selected_profit = n * 0.60 * margin
+    assert isclose(high["firm_profit_change"],
+                   (selected_profit - baseline_profit) / n)
+    assert isclose(high["customer_value_change"], -40 * loss / n)
+    assert high["firm_profit_change"] == 4.4
+    assert high["customer_value_change"] == -4.0
+    assert high["combined_surplus_change"] == 0.4
+    assert isclose(high["customer_value_change"] -
+                   low["customer_value_change"], -5.0)
+    folder = Path(__file__).resolve().parent
+    with (folder / "retention_welfare.csv").open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    report = {"input_type": "synthetic imposed probabilities and stakes",
+              "unit": "dollars per eligible customer",
+              "benchmark": "direct choice, renewal probability 0.20",
+              "firm_margin": margin, "customer_loss_per_renewal": loss,
+              "procedures": rows}
+    (folder / "retention_welfare_results.json").write_text(
+        json.dumps(report, indent=2) + "\n")
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 8.15 Regulatory Scope and a Marketing Recommendation
+
+\noindent A manager considering a new price display, review summary, or subscription process needs to identify which conduct a rule covers. The relevant jurisdiction, product, effective date, and exceptions determine how the legal source bears on the proposed action. A statute, binding rule, agency interpretation, settlement, and proposed rule have different authority. Their differences affect the inference an analyst can draw from them.
+
+As checked on November 2, 2026, the FTC's March 2026 negative-option announcement seeks comments on possible amendments and refers to the vacated 2024 rule. An advance notice does not itself adopt replacement obligations. A subscription analysis must examine operative federal and applicable state requirements rather than infer a current universal cancellation rule from the title of an earlier announcement. The [FTC notice](https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option) identifies the procedural status.
+
+A practical decision record states the action, customer population, commercial objective, and expected customer consequences. It then matches the relevant legal source to the conduct. For example, an advertising claim requires support for the claim customers understand; a review summary requires truthful provenance; and a consequential delivery system requires attention to actual access. The [primary-source guide](../ETHICS_AND_REGULATION.md) records the scope and status of the public sources used in these cases.
+
+A firm can preserve a profitable service while reducing unwanted interaction, improve the information customers receive, or redesign an experiment to measure consequences outside its conversion objective. Each proposal should name the affected outcome, an observable benchmark, and the evidence that would support adoption.

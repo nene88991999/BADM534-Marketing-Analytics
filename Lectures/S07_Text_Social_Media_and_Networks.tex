@@ -1,0 +1,257 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Text, Social Media, and Networks}
+\author{By Nathan Yang}
+\date{Session 07}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{A Customer-Service Decision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A retailer wants to detect delivery complaints quickly.
+\item The document may be a review, sentence, or service conversation.
+\item The action is a review queue with limited staff capacity.
+\end{slidebullets}
+\vfill
+\note{The unit and label definition determine the evaluation. A negative review can concern price or quality rather than delivery. A classifier needs a construct that matches the service action.
+
+M5, Section 5.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Text Preparation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Keep negation and domain-specific terms when they affect meaning.
+\item Document language, duplicates, and boilerplate.
+\item Fit the vocabulary on training documents.
+\end{slidebullets}
+\vfill
+\note{Removing the word not can reverse a sentiment label. Duplicate descriptions across train and test can produce a favorable score for a task requiring generalization to new text.
+
+M5, Section 5.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{TF-IDF Representation}
+\usebeamercolor[fg]{normal text}
+\noindent Weight a term by frequency in a document and rarity across documents.
+\medskip
+\[
+\operatorname{tfidf}_{td}=\operatorname{tf}_{td}\log\!\left(\frac{N}{\operatorname{df}_t}\right)
+\]
+\medskip
+\noindent Tokenization, smoothing, and normalization are implementation choices that need a record.
+\note{Different packages use different conventions. A rare word can be predictive without being substantively important. The vocabulary and IDF values must be learned from the training corpus.
+
+M5, Section 5.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Embeddings and Similarity}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Embeddings place text in a numerical representation.
+\item Nearby descriptions may share meaning or usage.
+\item A useful similarity measure still requires domain validation.
+\end{slidebullets}
+\vfill
+\note{A semantic model can confuse closely related foods that have distinct nutritional properties. A cosine score is a representation-based similarity, not a probability of label correctness.
+
+M5, Section 5.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Labels, Sentiment, and Topics}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Sentiment measures an evaluative construct.
+\item Aspect labels distinguish the object of a complaint.
+\item Topics summarize recurring term patterns under a model.
+\end{slidebullets}
+\vfill
+\note{A high-weight topic term does not establish a causal driver of satisfaction. Topic names are interpretations that should be checked against representative documents.
+
+M5, Section 5.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Rare Complaints Lower Precision}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_prevalence.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic classifier. Sensitivity is 80\% and specificity is 90\%.\par}
+\note{The classifier has unchanged conditional error rates. The changing base rate alters the composition of the flagged group and therefore the workload of human reviewers.
+
+M5, Section 5.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Precision Depends on Prevalence}
+\usebeamercolor[fg]{normal text}
+\noindent Let $\pi$ be complaint prevalence, $s$ sensitivity, and $c$ specificity.
+\medskip
+\[
+\Pr(Y=1\mid\widehat Y=1)=\frac{s\pi}{s\pi+(1-c)(1-\pi)}
+\]
+\medskip
+\noindent False positives can dominate a queue when the target condition is rare.
+\note{The formula applies to the specified population and classifier. Prevalence should come from an appropriate deployment sample rather than an artificially balanced training set.
+
+M5, Section 5.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}[fragile]{Expected Queue Composition}
+\usebeamercolor[fg]{normal text}
+\noindent In 10,000 synthetic reviews, complaint prevalence is 1\%.
+\begin{lstlisting}
+n, prevalence = 10000, 0.01
+sensitivity, specificity = 0.8, 0.9
+tp = n * prevalence * sensitivity
+fp = n * (1-prevalence) * (1-specificity)
+precision = tp / (tp + fp)
+assert round(precision, 4) == 0.0748
+\end{lstlisting}
+{\small The expected queue contains 80 true complaints and 990 false positives.\par}
+\note{These are expected counts under the imposed rates. Actual counts vary. Capacity planning should consider the queue size as well as sensitivity.
+
+M5, Section 5.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Human and LLM Annotation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Write a label definition with difficult boundary examples.
+\item Measure agreement and adjudicate disagreements.
+\item Audit a held-out sample with human labels.
+\item Record the model, prompt, and response format.
+\end{slidebullets}
+\vfill
+\note{Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices.
+
+M5, Section 5.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{mHealth Food Descriptions}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Descriptions can recur across many users and dates.
+\item A repeated-description split evaluates familiar language.
+\item A held-out-description split tests generalization to new language.
+\end{slidebullets}
+\vfill
+\note{The source category is an imperfect label. The same normalized description can have multiple source labels. Evaluation should retain that ambiguity rather than assume a single validated nutrition category.
+
+M5, Section 5.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Familiar and New Text Are Different Tests}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_mhealth_text.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small mHealth text classification uses the stated training and evaluation splits.\par}
+\note{A random event split can place an identical description in both training and test. That may be useful for repeated lookup but overstate performance on new descriptions.
+
+M5, Section 5.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Topic Shares Need a Denominator}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_topic_denominators.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small mHealth topic summaries compare documents, entries, and users under defined weights.\par}
+\note{Long documents and repeated records can dominate term-weighted summaries. A business question about the fraction of affected customers needs a customer denominator.
+
+M5, Section 5.12, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Network Objects}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Nodes identify customers or accounts.
+\item Edges represent a defined relationship in a time window.
+\item Degree counts links, while brokerage concerns paths between groups.
+\end{slidebullets}
+\vfill
+\note{An edge could mean following, messaging, purchasing together, or co-occurrence. Those meanings are not interchangeable. The network boundary determines which relationships are visible.
+
+M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Few Links Can Connect Separate Groups}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_network_bridge.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic undirected network. R has only two links.\par}
+\note{Brokerage can matter for reach even when a node has few direct neighbors. Observed network structure does not by itself establish the effect of targeting that person.
+
+M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Coding Exercise: A Label Audit}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Build a transparent keyword or TF-IDF baseline.
+\item Compare precision and recall on familiar and new descriptions.
+\item Inspect false positives and disagreements by label.
+\end{slidebullets}
+\vfill
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S07 to reproduce the prevalence calculation. The full mHealth m05.py program implements the description-level comparison. Select the evaluation split before tuning.
+
+M5, Section 5.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Engagement and Commercial Value}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Likes and comments measure platform responses.
+\item Sales and contribution require separate outcome records.
+\item Network similarity can reflect common interests or common exposure.
+\end{slidebullets}
+\vfill
+\note{Homophily and shared shocks can generate correlated behavior among connected users. A causal influence claim requires an assignment or identification design beyond a network correlation.
+
+M5, Section 5.8, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Authenticity of Reviews and Endorsements}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A generated product description and a claimed customer review serve different roles.
+\item A fabricated experience misrepresents the source of the evidence.
+\item Keep sponsored relationships and substantive editing traceable.
+\end{slidebullets}
+\vfill
+\note{The FTC review rule addresses business conduct involving fake or false reviews. Its FAQ distinguishes mere review hosting from creation, purchase, and dissemination of testimonials, with provision-specific conditions.
+
+FTC Consumer Reviews and Testimonials Rule Q\&A. \url{https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers}}
+\end{frame}
+\begin{frame}{Text-Analysis Discussion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Which label disagreement would change the service decision?
+\item How does the expected queue change when prevalence falls?
+\item What comparison would distinguish exposure from influence?
+\end{slidebullets}
+\vfill
+\note{A practical audit prioritizes errors that alter the action. False positives determine review burden, while false negatives determine missed cases. Both should be evaluated in the deployment population.
+
+M5, Section 5.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\end{document}

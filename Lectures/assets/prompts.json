@@ -1,0 +1,41 @@
+{
+  "created_on": "2026-11-02",
+  "tool": "Built-in image_gen",
+  "prompts": [
+    [
+      "decision_river",
+      "Create an original 16:9 landscape illustration for a university Marketing Analytics lecture. Fine Chinese ink-wash and delicate watercolor on warm lightly textured parchment (RGB 234,220,201), resembling a painted scholarly scroll with misty distant mountains, realistic small human figures and thoughtful contemporary objects integrated into an old landscape, highly refined brushwork, atmospheric negative space. Main ink deep Illinois navy #13294B, restrained vivid orange #FF5F05 accents, muted gray. No text, letters, numerals, logos, charts, borders, fake handwriting or watermark. It is a conceptual artistic illustration, not a data graphic. Subject: a thoughtful merchant at a riverside desk with a modern open laptop and handwritten blank ledgers, considering two small boats carrying different baskets of goods down branching streams toward two villages. One branch has orange autumn trees, the other navy. Show the merchant's considered choice and the need to understand customer demand. Broad calm composition, no glowing futuristic AI or robot."
+    ],
+    [
+      "product_choices",
+      "Create an original 16:9 landscape illustration for a university Marketing Analytics lecture. Fine Chinese ink-wash and delicate watercolor on warm lightly textured parchment (RGB 234,220,201), resembling a painted scholarly scroll with misty distant mountains, realistic small human figures and thoughtful contemporary objects integrated into an old landscape, highly refined brushwork, atmospheric negative space. Main ink deep Illinois navy #13294B, restrained vivid orange #FF5F05 accents, muted gray. No text, letters, numerals, logos, charts, borders, fake handwriting or watermark. It is a conceptual artistic illustration, not a data graphic. Subject: a small riverside open-air market seen obliquely, three simple stalls offering distinct bundles of tea, fruit, and delivery baskets. Several customers thoughtfully compare the stalls. A merchant observes substitutions across options. Balance people and landscape, light parchment sky and mist, precise subtle objects, no price labels."
+    ],
+    [
+      "experiment_bridges",
+      "Create an original 16:9 landscape illustration for a university Marketing Analytics lecture. Fine Chinese ink-wash and delicate watercolor on warm lightly textured parchment (RGB 234,220,201), resembling a painted scholarly scroll with misty distant mountains, realistic small human figures and thoughtful contemporary objects integrated into an old landscape, highly refined brushwork, atmospheric negative space. Main ink deep Illinois navy #13294B, restrained vivid orange #FF5F05 accents, muted gray. No text, letters, numerals, logos, charts, borders, fake handwriting or watermark. It is a conceptual artistic illustration, not a data graphic. Subject: a merchant at a fork in a river distributes sealed identical small packages to two comparable village markets by two separate bridges. One bridge has a small orange pennant and the other a navy pennant. Similar villages and landscapes suggest fair comparison, streams remain separate. Elegant atmospheric ink painting, no arrows or diagrams."
+    ],
+    [
+      "recommendation_garden",
+      "Create an original 16:9 landscape illustration for a university Marketing Analytics lecture. Fine Chinese ink-wash and delicate watercolor on warm lightly textured parchment (RGB 234,220,201), resembling a painted scholarly scroll with misty distant mountains, realistic small human figures and thoughtful contemporary objects integrated into an old landscape, highly refined brushwork, atmospheric negative space. Main ink deep Illinois navy #13294B, restrained vivid orange #FF5F05 accents, muted gray. No text, letters, numerals, logos, charts, borders, fake handwriting or watermark. It is a conceptual artistic illustration, not a data graphic. Subject: two winding paths through an extensive terraced garden of varied fruit trees and tea plants, with a small gardener consulting a modern tablet. A well-traveled navy path repeatedly circles familiar trees; an orange side path reaches overlooked varieties. The landscape suggests how recommendations shape future opportunities. Calm, precise, richly textured brushwork with large areas of parchment and mist."
+    ]
+  ],
+  "refinement": "Refine this illustration in the direction of ancient Chinese Song and Yuan landscape brush-and-ink painting with light watercolor, following actual brush technique. Keep its conceptual subject, landscape format, and all the important objects, but substantially loosen the overly uniform fine rendering. Use calligraphic strokes that swell and taper with brush pressure; visible fast dry-brush 'flying white' interruptions in foreground bark and rocks; textured cun strokes describing mountain mass; single strokes with dark-tip-to-pale-belly ink gradations; broad diluted wet washes only for distant slopes and mist, with crisp foreground contours and soft distant edges. Reserve larger genuinely unpainted warm paper areas for water, sky, and mist. Reduce dense decorative detail and the saturated orange areas. Ink and subdued navy #13294B should establish form, with very sparse transparent orange #FF5F05 wash accents. Use a light natural fibrous paper ground with much less uniformly applied sepia/grunge texture. Composition should read as a restrained Chinese handscroll painting, allowing the viewer to wander through foreground, middle distance and distant hills. No Western watercolor splash effects, no oil-paint impasto, no gradients that look airbrushed, no fake seals or calligraphy, no text. Retain 16:9 format. This is an original conceptual illustration for a marketing lecture, not a reproduction of a historical painting.",
+  "assets": [
+    {
+      "id": "decision_river",
+      "path": "assets/decision_river.png"
+    },
+    {
+      "id": "product_choices",
+      "path": "assets/product_choices.png"
+    },
+    {
+      "id": "experiment_bridges",
+      "path": "assets/experiment_bridges.png"
+    },
+    {
+      "id": "recommendation_garden",
+      "path": "assets/recommendation_garden.png"
+    }
+  ]
+}

@@ -541,3 +541,13 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 4.15 Retention, Customer Value, and Choice
+
+\noindent A subscription manager can increase measured customer lifetime value by improving service or by making cancellation harder. Both mechanisms can raise the probability of another payment. They have different implications for customer welfare, future trust, and the sustainability of the relationship. A financial retention model should therefore distinguish the source of the additional renewal.
+
+A useful comparison holds the final offer fixed and varies the preceding interaction. One group sees a direct cancellation option. Another can choose whether to view a retention offer before deciding. Record cancellation completion, time spent, subsequent charges, refunds, and informed willingness to continue. Continued payment and a completed choice are separate outcomes. The model in Section 8.14 provides a numerical example in which higher renewal raises firm profit while reducing customer value under explicitly opposed stakes.
+
+The segmentation decision also has distributional consequences. A cluster defined by earlier spending and visits describes behavioral similarity. It does not establish an intrinsic customer type or a justification for restricting access to an essential service. Compare the proposed treatment with customers' needs and the consequences of errors. When a segment receives an offer, record who can obtain it, who is excluded, and whether the exclusion follows the firm's stated objective.
+
+In a conjoint task, price components and cancellation conditions are product attributes when they affect the customer's actual choice. Omitting a mandatory payment from the described price changes the offer respondents evaluate. The FTC fee rule's current coverage includes live-event tickets and short-term lodging; applying it requires the covered transaction and required components. Its scope should be checked in the [FTC's rule guidance](https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions).

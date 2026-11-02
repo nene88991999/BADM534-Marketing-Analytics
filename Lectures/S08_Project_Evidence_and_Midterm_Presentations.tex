@@ -1,0 +1,125 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Project Evidence and Midterm Presentations}
+\author{By Nathan Yang}
+\date{Session 08}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{A Decision and Its Evidence}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item State the action a manager can change.
+\item Define the outcome, population, and horizon.
+\item Identify which evidence could change the proposed action.
+\end{slidebullets}
+\vfill
+\note{A presentation should make the decision assessable without requiring the audience to reconstruct the analyst's workflow. A precise unresolved question is useful when the current evidence does not yet support an action.}
+\end{frame}
+\begin{frame}{A Traceable Data Table}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Name the original unit and the analysis unit.
+\item Reconcile rows and totals through joins and restrictions.
+\item Show one manually checked record or aggregate.
+\end{slidebullets}
+\vfill
+\note{A source-to-output audit distinguishes data processing choices from modeling choices. An unexplained change in the population can dominate a later coefficient or chart.}
+\end{frame}
+\begin{frame}{Evidence Categories}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Descriptive patterns summarize observed records.
+\item Prediction evaluates outcomes on held-out observations.
+\item Causal estimates require a justified counterfactual comparison.
+\item Scenarios calculate consequences under imposed inputs.
+\end{slidebullets}
+\vfill
+\note{These categories can appear in the same project. Each claim should retain the qualifications appropriate to its evidence.}
+\end{frame}
+\begin{frame}{A Worked Presentation Case}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A paid-plan scenario has high predicted uptake.
+\item The underlying data contain food logging and no observed payments.
+\item The decision requires additional evidence on price, retention, and margin.
+\end{slidebullets}
+\vfill
+\note{Observed logging can motivate a segmentation or interface decision. Paid uptake from an imposed logit model is a scenario. A stated-choice study or pilot could supply some of the missing evidence.
+
+M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{An Interpretable Figure}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Use a comparison that answers the stated question.
+\item Label units, denominator, and uncertainty.
+\item State whether plotted quantities are observed, estimated, or imposed.
+\end{slidebullets}
+\vfill
+\note{A figure should be independently readable. A chart of customer means and an interval for the overall mean require separate explanations of distribution and uncertainty.}
+\end{frame}
+\begin{frame}{A Reproducible Calculation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Run from a clean session using documented inputs.
+\item Show a counterexample that checks a consequential choice.
+\item Keep complete code and results linked to the claim.
+\end{slidebullets}
+\vfill
+\note{The most informative check is one that would fail under a plausible analytical error. Re-running identical code is useful but does not independently establish a valid interpretation.}
+\end{frame}
+\begin{frame}{Presentation Discussion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item What is the strongest supported claim?
+\item Which assumption most affects the decision?
+\item What evidence should be collected next?
+\end{slidebullets}
+\vfill
+\note{Feedback should identify a concrete comparison or data requirement. A more complicated model is useful only if it addresses a stated limitation in the decision evidence.}
+\end{frame}
+\begin{frame}{A Revision Decision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Prioritize the error with the largest consequence for the action.
+\item Specify the additional data or comparison needed.
+\item Preserve a reproducible baseline for the revised analysis.
+\end{slidebullets}
+\vfill
+\note{Examples include fixing a multiplied join, changing a leakage-prone split, or measuring actual contribution. These changes can matter more than polishing an already clear chart.}
+\end{frame}
+\begin{frame}{A Customer-Outcome Audit}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Identify who benefits and who can bear a cost.
+\item State whether the optimized metric can conflict with customer value.
+\item Name the relevant jurisdiction and verify the rule's scope.
+\end{slidebullets}
+\vfill
+\note{These questions organize an evidence discussion. They do not establish a graded assignment or replace the eventual project brief.
+
+ETHICS\_AND\_REGULATION.md.}
+\end{frame}
+\begin{frame}{Sensitivity and Next Steps}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Report how the action changes across plausible inputs.
+\item Identify a decision threshold rather than only a point estimate.
+\item Select a feasible test that reduces consequential uncertainty.
+\end{slidebullets}
+\vfill
+\note{A recommendation can be conditional. Explicitly stating the value or response threshold makes the condition useful for a manager rather than an abstract caveat.}
+\end{frame}
+\end{document}

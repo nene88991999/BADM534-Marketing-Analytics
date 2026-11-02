@@ -20,7 +20,7 @@ Use figures to explain a mechanism or comparison that benefits from visual reaso
 
 Reproduce changed numerical examples with `../03_Data_and_Code/Lecture_Examples/verify_examples.py`, adding independent checks when appropriate. Inspect source assumptions before treating agreement with code as substantive validation. Compile and visually inspect the final PDF and all changed figure previews. Do not claim to have executed a downloaded reference notebook merely because a small teaching calculation ran.
 
-Preserve original author attribution and source URLs. The user-supplied writing preferences and published papers guide prose and selected case motivation; they do not authorize copying full texts into this repository.
+Preserve third-party author attribution and source URLs. Incorporate Nathan Yang's own conceptual material without naming, citing, linking, or uploading the underlying papers. The user-supplied writing preferences and published papers guide prose and selected case motivation; they do not authorize copying full texts into this repository.
 
 ## Data Examples and Nutrition Screens
 

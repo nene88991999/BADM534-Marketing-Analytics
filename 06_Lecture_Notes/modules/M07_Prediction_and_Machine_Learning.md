@@ -688,3 +688,13 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 7.19 Prediction, Delivery, and Access
+
+\noindent An advertiser selecting an audience does not fully determine who sees an offer. A delivery system can optimize bids, predicted clicks, or conversions after that selection. Differences in auction conditions, past behavior, or model scores can change the realized distribution of exposure. An audit of targeting criteria alone can therefore miss consequential differences in access.
+
+The Department of Justice's Meta housing-advertising case addressed both targeting and delivery under the Fair Housing Act. The settlement was approved in June 2022. Its sector and legal basis matter: the case concerns housing opportunities, and it does not establish a uniform legal standard for every recommender. The [DOJ case record](https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny) provides the relevant scope and settlement information.
+
+For an analytical audit, define the eligible population, opportunity to receive the offer, realized exposure, and downstream response. Compare rates using the appropriate denominators and examine whether outcome labels are observed for everyone or only for exposed customers. A high click prediction can reflect selective earlier exposure. Retraining on those clicks can reproduce that selection through a new model.
+
+Error costs should also follow the application. A mistaken recommendation of a grocery item and a missed housing opportunity have different consequences. A proposed fairness comparison must specify the affected population, outcome, and decision. Several metrics can conflict because they condition on different objects. Report the tradeoff and the policy objective that resolves it rather than treating a single accuracy statistic as a complete evaluation.

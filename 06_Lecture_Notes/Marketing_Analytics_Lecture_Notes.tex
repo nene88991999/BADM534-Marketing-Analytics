@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large October 26, 2026\par}
+{\large November 2, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -949,6 +949,38 @@ if __name__ == "__main__":
     save_result("reporting", result)
     print(json.dumps(result, indent=2))
 \end{Verbatim}
+
+\hypertarget{M01-customer-data-and-the-coding-environment}{%
+\section{Customer Data and the Coding
+Environment}\label{M01-customer-data-and-the-coding-environment}}
+
+\noindent \noindent A marketing team deciding whom to contact needs a defined set
+of customer information. Additional fields can increase exposure without
+improving the decision. Begin with the unit of analysis, the intended
+calculation, and the information available before contact. A transaction
+date can be necessary for a forecasting split; a customer's name usually
+contributes nothing to that split. A reproducible pipeline should make
+these distinctions visible in its input schema.
+
+An AI coding tool can receive information through prompts, uploaded
+files, logs, screenshots, or repository access. Generate and debug a
+transformation using a small synthetic table when real records are
+unnecessary. Before using actual records, establish whether that
+environment is authorized for those fields and that purpose. An
+assistant's ability to read a file does not establish the firm's
+authority to transmit it. Access, processing location, retention, and
+permitted uses belong to the specification of the work.
+
+The mHealth exercises provide a concrete comparison. Ages and perturbed
+weights support selected teaching calculations, while exact birthdays
+are unnecessary. Replacing identifiers and perturbing one measurement do
+not establish anonymity for every possible linkage. A useful
+implementation loads the minimum required columns, avoids printing
+individual histories into logs, and publishes aggregate results with
+their denominators. Students can inspect generated code for file
+uploads, external API calls, and unnecessary exports before running it.
+These checks concern observable data flows and preserve the ability to
+reproduce the local analysis.
 
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
@@ -2947,6 +2979,41 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M02-sample-restrictions-and-customer-representation}{%
+\section{Sample Restrictions and Customer
+Representation}\label{M02-sample-restrictions-and-customer-representation}}
+
+\noindent \noindent A manager comparing engagement across customer groups needs to
+know which customers remain in the analysis. A filter that removes
+incomplete records can disproportionately exclude customers who use the
+service intermittently or record information in a different way. The
+resulting estimate describes the retained population. Its relevance to a
+broader campaign depends on the relationship between inclusion and the
+outcome of interest.
+
+Keep a flag for each restriction and report the denominator before and
+after applying it. In the mHealth example, a calorie-range screen
+changes the set of recorded days; it does not classify the excluded
+users as unhealthy or unreliable. Compare logging frequency,
+missingness, and the available earlier-period characteristics of
+retained and excluded records. Keep unavailable physiological
+information missing. A more elaborate formula does not compensate for an
+unobserved input.
+
+The same principle applies to a chart. A segment with no observed
+outcomes should remain visible as a coverage issue when it belongs to
+the target population. Treating an unobserved response as zero changes
+the estimand. Removing that segment from the denominator can change the
+apparent success rate. A useful chart therefore pairs its outcome with a
+count or coverage measure and keeps the analysis population explicit.
+
+For an AI-assisted cleaning request, specify which transformations are
+mechanical corrections and which are analytical restrictions. Ask for a
+row-count reconciliation by reason, inspect several affected records
+locally, and compare the substantive result under reasonable alternative
+screens. The decision concerns whether the marketing recommendation
+remains supported for the intended customers.
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -3667,6 +3734,41 @@ if __name__ == "__main__":
     output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
     print(json.dumps(result, indent=2))
 \end{Verbatim}
+
+\hypertarget{M03-regression-evidence-and-advertising-claims}{%
+\section{Regression Evidence and Advertising
+Claims}\label{M03-regression-evidence-and-advertising-claims}}
+
+\noindent \noindent A firm considering a claim about its product must match the
+statement customers will understand to the evidence supporting it. A
+regression of later engagement on earlier use describes a conditional
+relationship under the specified sample and controls. A claim that the
+product causes better outcomes requires evidence about the relevant
+intervention and comparison. The coefficient's statistical significance
+does not supply that comparison.
+
+The FTC's advertising-substantiation policy addresses reasonable support
+for objective express and implied claims before they are disseminated.
+The necessary support depends on the claim and its context. A
+technically accurate description of a regression can still invite a
+broader inference if the surrounding advertisement promises a product
+benefit. See the
+\href{https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation}{FTC
+policy statement}.
+
+Consider the mHealth association between recorded food-category breadth
+and next-day recorded calories. The variables describe logs in the
+observed sample. A customer-facing claim about weight loss changes both
+the outcome and the causal interpretation. The available regression does
+not identify that effect. A defensible empirical statement retains the
+observed outcome, sample restrictions, timing, coefficient magnitude,
+and uncertainty. A new claim requires a study designed for its outcome
+and population.
+
+An evidence table can connect each proposed statement to its estimand,
+data, identification conditions, and supported wording. AI-generated
+copy should pass through the same comparison. Fluency does not expand
+the population or outcome represented by the underlying analysis.
 
 \hypertarget{M04-m4.-product-preferences-customer-segments-and-lifetime-value}{%
 \chapter{Product Preferences, Customer Segments, and Lifetime
@@ -4678,6 +4780,45 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M04-retention-customer-value-and-choice}{%
+\section{Retention, Customer Value, and
+Choice}\label{M04-retention-customer-value-and-choice}}
+
+\noindent \noindent A subscription manager can increase measured customer lifetime
+value by improving service or by making cancellation harder. Both
+mechanisms can raise the probability of another payment. They have
+different implications for customer welfare, future trust, and the
+sustainability of the relationship. A financial retention model should
+therefore distinguish the source of the additional renewal.
+
+A useful comparison holds the final offer fixed and varies the preceding
+interaction. One group sees a direct cancellation option. Another can
+choose whether to view a retention offer before deciding. Record
+cancellation completion, time spent, subsequent charges, refunds, and
+informed willingness to continue. Continued payment and a completed
+choice are separate outcomes. The model in Section 8.14 provides a
+numerical example in which higher renewal raises firm profit while
+reducing customer value under explicitly opposed stakes.
+
+The segmentation decision also has distributional consequences. A
+cluster defined by earlier spending and visits describes behavioral
+similarity. It does not establish an intrinsic customer type or a
+justification for restricting access to an essential service. Compare
+the proposed treatment with customers' needs and the consequences of
+errors. When a segment receives an offer, record who can obtain it, who
+is excluded, and whether the exclusion follows the firm's stated
+objective.
+
+In a conjoint task, price components and cancellation conditions are
+product attributes when they affect the customer's actual choice.
+Omitting a mandatory payment from the described price changes the offer
+respondents evaluate. The FTC fee rule's current coverage includes
+live-event tickets and short-term lodging; applying it requires the
+covered transaction and required components. Its scope should be checked
+in the
+\href{https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions}{FTC's
+rule guidance}.
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -5390,6 +5531,44 @@ if __name__ == "__main__":
     save_result("topics", result)
     print(json.dumps(result, indent=2))
 \end{Verbatim}
+
+\hypertarget{M05-review-provenance-and-generated-language}{%
+\section{Review Provenance and Generated
+Language}\label{M05-review-provenance-and-generated-language}}
+
+\noindent \noindent A retailer using reviews to describe a product needs to
+preserve the distinction between an actual customer's experience and
+generated wording. An LLM can summarize a collection of genuine reviews,
+but its output can introduce an experience that no reviewer reported. A
+sentiment classifier can also assign a confident label to a false or
+irrelevant text. Model accuracy and the authenticity of the underlying
+evidence address different questions.
+
+Preserve the review identifier, source, date, any recorded incentive,
+and the text actually analyzed. A summary should retain the relevant
+review denominator and material disagreement. A generated quotation
+attributed to a customer requires that customer's actual words and
+appropriate permission. A synthetic example used to test a parser should
+remain labeled synthetic and separate from reviews offered to potential
+buyers.
+
+The FTC's Consumer Reviews and Testimonials Rule addresses specified
+conduct involving false reviews and testimonials. Its provisions
+distinguish creation, purchase, dissemination, and mere hosting, with
+different knowledge conditions. AI generation alone does not determine
+whether a testimonial misrepresents experience. The relevant questions
+concern the speaker, actual experience, claim, and business conduct. See
+the
+\href{https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers}{FTC's
+questions and answers}.
+
+A useful audit samples the original texts behind a generated theme,
+checks whether each factual claim is supported, and records unsupported
+statements separately from ordinary classification errors. The
+rare-complaint example in Section 5.5 supplies another check: a high
+false-positive share can make a generated summary overstate the
+prevalence of a problem even when individual labels have respectable
+sensitivity and specificity.
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
@@ -6499,6 +6678,44 @@ def main():
 if __name__ == "__main__":
     main()
 \end{Verbatim}
+
+\hypertarget{M06-experimental-objectives-and-customer-outcomes}{%
+\section{Experimental Objectives and Customer
+Outcomes}\label{M06-experimental-objectives-and-customer-outcomes}}
+
+\noindent \noindent A marketing experiment identifies a response to the assigned
+intervention for the represented population. The choice of outcome
+determines what success means. An experiment that ranks interfaces by
+completed renewals can reliably select a profitable interface while
+remaining silent about whether customers wanted the additional
+subscription. Randomization addresses the comparison between assigned
+procedures; customer value requires an appropriate outcome and its own
+measurement.
+
+For a cancellation experiment, define eligibility before assignment and
+retain every assigned customer in the primary denominator. Include a
+direct-choice benchmark and record the final payment status over a fixed
+horizon. Also measure completion time, refunds, unwanted charges, and
+customers' informed willingness to continue. Conditioning only on
+customers who reach the last page can remove the people most affected by
+a difficult interface. Report that intermediate reach rate separately.
+
+The procedure includes the customer's opportunity to refuse optional
+retention content. If a customer must first undergo the intervention to
+discover how to decline it, the refusal path changes the treatment
+itself. A comparison of optional and compulsory interaction can
+therefore require different treatment definitions even when the last
+screen is identical. Describe the complete assigned sequence before
+interpreting the estimated effect.
+
+Under the model in Section 8.14, firm and customer interests are opposed
+for the same renewal. Accurate experimentation then helps the firm
+select the procedure with the largest customer loss within the available
+set. This conditional result follows from the stakes and objective. When
+a better product increases both willingness to pay and firm profit, the
+same experiment can instead select a mutually beneficial change. The
+empirical task is to measure the consequences that distinguish those
+settings.
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -7862,6 +8079,40 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M07-prediction-delivery-and-access}{%
+\section{Prediction, Delivery, and
+Access}\label{M07-prediction-delivery-and-access}}
+
+\noindent \noindent An advertiser selecting an audience does not fully determine
+who sees an offer. A delivery system can optimize bids, predicted
+clicks, or conversions after that selection. Differences in auction
+conditions, past behavior, or model scores can change the realized
+distribution of exposure. An audit of targeting criteria alone can
+therefore miss consequential differences in access.
+
+The Department of Justice's Meta housing-advertising case addressed both
+targeting and delivery under the Fair Housing Act. The settlement was
+approved in June 2022. Its sector and legal basis matter: the case
+concerns housing opportunities, and it does not establish a uniform
+legal standard for every recommender. The
+\href{https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny}{DOJ
+case record} provides the relevant scope and settlement information.
+
+For an analytical audit, define the eligible population, opportunity to
+receive the offer, realized exposure, and downstream response. Compare
+rates using the appropriate denominators and examine whether outcome
+labels are observed for everyone or only for exposed customers. A high
+click prediction can reflect selective earlier exposure. Retraining on
+those clicks can reproduce that selection through a new model.
+
+Error costs should also follow the application. A mistaken
+recommendation of a grocery item and a missed housing opportunity have
+different consequences. A proposed fairness comparison must specify the
+affected population, outcome, and decision. Several metrics can conflict
+because they condition on different objects. Report the tradeoff and the
+policy objective that resolves it rather than treating a single accuracy
+statistic as a complete evaluation.
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -9194,5 +9445,261 @@ def main():
 if __name__ == "__main__":
     main()
 \end{Verbatim}
+
+\hypertarget{M08-retention-procedures-profit-and-customer-value}{%
+\section{Retention Procedures, Profit, and Customer
+Value}\label{M08-retention-procedures-profit-and-customer-value}}
+
+\noindent \noindent A subscription firm wants to increase renewals. It can improve
+the underlying service or alter the interaction that precedes the same
+renewal decision. Questions, default options, and retention prompts can
+change the probability that a customer continues. These procedures leave
+the final button press with the customer while changing the conditions
+under which that choice is made. Evaluating their consequences requires
+a measure of customer value in addition to the renewal rate.
+
+\hypertarget{M08-a-fixed-offer-and-opposed-stakes}{%
+\subsection{A Fixed Offer and Opposed
+Stakes}\label{M08-a-fixed-offer-and-opposed-stakes}}
+
+\noindent \noindent Consider an eligible customer facing the same final offer
+under several procedures. A procedure can include an introductory
+question or an optional retention interaction. Let \(s_k\) denote the
+probability of renewal under procedure \(k\), and let \(s_0\) denote
+renewal under direct choice. The probabilities refer to the same
+population and outcome horizon.
+
+\begin{assumption}[Fixed Offer and Opposed Stakes]
+\label{ass:retention-stakes}
+The available procedures form a finite set $K$. Each procedure has a stable renewal probability $s_k$. Renewal yields firm margin $\nu>0$ dollars and customer value $-\sigma<0$ dollars relative to declining. These stakes are common across procedures and customers in the represented population. The offer, outcome horizon, and population are fixed; procedure costs and additional time costs are zero.
+\end{assumption}
+
+\noindent Assumption \ref{ass:retention-stakes} imposes a setting in
+which the customer would prefer to decline according to the stated value
+measure. It does not infer that preference from the observed renewal
+probability. In an application, informed valuations, subsequent regret,
+or another justified measure would have to support the welfare
+interpretation. Heterogeneous stakes or procedure-specific costs require
+a different calculation.
+
+The expected changes relative to direct choice separate the firm's and
+customer's consequences:
+
+\[
+\Delta\Pi_k=\nu(s_k-s_0),\qquad
+\Delta V_k=-\sigma(s_k-s_0).
+\]
+
+Here \(\Delta\Pi_k\) is expected profit and \(\Delta V_k\) is expected
+customer value, both in dollars per eligible customer over the common
+horizon. Increasing renewal raises profit and lowers customer value
+under the imposed stakes. Their sum is \((\nu-\sigma)(s_k-s_0)\). A
+positive combined change can therefore coexist with a loss borne by the
+customer.
+
+\hypertarget{M08-a-numerical-comparison}{%
+\subsection{A Numerical Comparison}\label{M08-a-numerical-comparison}}
+
+\noindent \noindent Suppose direct choice produces a renewal probability of 0.20.
+An alternative procedure produces 0.10, and another produces 0.60. Set
+firm margin to 11 dollars and customer loss from renewal to 10 dollars.
+These are synthetic inputs. Relative to direct choice, the high-renewal
+procedure raises expected firm profit by 4.40 dollars, reduces customer
+value by 4 dollars, and raises combined surplus by 0.40 dollars per
+eligible customer. Relative to the low-renewal procedure, it reduces
+customer value by 5 dollars.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_retention_welfare.tex}
+\caption{Synthetic changes in expected profit and customer value relative to direct renewal at probability 0.20. Firm margin is 11 dollars per renewal and customer loss is 10 dollars per renewal. The low-renewal procedure gives changes of -1.10 and +1 dollar; direct choice gives zero changes; the high-renewal procedure gives +4.40 and -4 dollars.}\label{fig:M08_retention_welfare}
+\end{figure}
+
+The two benchmarks answer different questions. Direct choice measures
+the consequence of adding the preceding interaction. The low-renewal
+procedure measures the consequence of selecting the firm's preferred
+interaction instead of the customer's preferred one within this
+particular set. Neither comparison establishes that every renewal is
+harmful in other markets. The welfare result depends on the specified
+preference ordering and fixed stakes.
+
+\hypertarget{M08-what-repeated-experimentation-selects}{%
+\subsection{What Repeated Experimentation
+Selects}\label{M08-what-repeated-experimentation-selects}}
+
+\noindent \noindent A firm can estimate each procedure's renewal probability and
+deploy the one with the highest sample rate. More precise estimates
+improve selection according to that objective. The implication for
+customers depends on how the objective relates to their value.
+
+\begin{assumption}[Stable Experimental Comparisons]
+\label{ass:retention-testing}
+The procedure set is specified before testing. Each procedure receives an independent sample of $T$ customers from the same population, with independent Bernoulli renewal outcomes of probability $s_k$ and complete observation over the common horizon. The probabilities remain unchanged at deployment. The firm selects a procedure with the largest sample renewal rate. The stakes in Assumption \ref{ass:retention-stakes} apply.
+\end{assumption}
+
+\noindent Under Assumption \ref{ass:retention-testing}, each sample rate
+converges to its procedure's renewal probability as \(T\) grows. Because
+the set is finite, the largest estimation error across the set also
+converges to zero. The true renewal rate of the selected procedure
+therefore converges to the largest available rate. Ties do not change
+the welfare comparison because the common stakes assign the same
+expected value to equal renewal probabilities.
+
+The selected procedure consequently approaches the highest firm profit
+and the lowest customer value in that set. The result is conditional on
+opposed interests, stable response probabilities, and the specified
+selection rule. Testing procedures with different products, prices, time
+costs, or informed customer values requires those differences to enter
+the objective. Accurate experimental measurement supplies evidence about
+the measured outcome; it does not choose the appropriate objective for
+the firm or regulator.
+
+\hypertarget{M08-customer-control-and-the-evaluation-design}{%
+\subsection{Customer Control and the Evaluation
+Design}\label{M08-customer-control-and-the-evaluation-design}}
+
+\noindent \noindent A cancellation evaluation should observe whether customers can
+refuse optional retention content before exposure. A refusal button
+available only after several required screens leaves the earlier
+interaction compulsory. Record the entire path, time to completion,
+additional charges, and eventual service use. Keep every eligible
+assigned customer in the denominator, including people who abandon the
+process.
+
+An independent customer-value outcome can distinguish a useful retention
+offer from a costly delay. A customer who voluntarily accepts a lower
+price may benefit from the additional interaction. A customer who wants
+to leave may lose time or incur another charge. Their common renewal
+indicator conceals that difference. Report the financial, behavioral,
+and customer-value outcomes together, with the population and horizon
+that each represents.
+
+\hypertarget{M08-reproduce-the-comparison}{%
+\subsection{Reproduce the
+Comparison}\label{M08-reproduce-the-comparison}}
+
+\noindent \noindent The following program constructs the three imposed procedures
+and compares their expected monetary consequences with direct choice. It
+loads no outside records. The CSV has one row per procedure,
+probabilities in fractions, and monetary changes in dollars per eligible
+customer. The checks independently aggregate the high-renewal comparison
+over 100 customers and reconcile it with the per-customer calculation.
+Run the program from any directory with Python 3; it uses only the
+standard library and writes its CSV and JSON beside the script.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Lecture_Examples/retention_welfare.py}{retention\_welfare.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic retention procedures with fixed, opposed monetary stakes.
+
+Run with Python 3 from any directory. Uses only the standard library.
+No customer data are loaded. All probabilities and values are imposed.
+Outputs are dollars per eligible customer relative to direct choice.
+"""
+from pathlib import Path
+import csv
+import json
+from math import isclose
+
+
+def evaluate(probabilities, direct, firm_margin, customer_loss):
+    if not 0 <= direct <= 1:
+        raise ValueError("Direct-choice probability must be in [0, 1].")
+    if firm_margin < 0 or customer_loss < 0:
+        raise ValueError("This example requires opposed nonnegative stakes.")
+    rows = []
+    for procedure, probability in probabilities.items():
+        if not 0 <= probability <= 1:
+            raise ValueError("Each renewal probability must be in [0, 1].")
+        change = probability - direct
+        profit = firm_margin * change
+        value = -customer_loss * change
+        rows.append({
+            "procedure": procedure,
+            "renewal_probability": probability,
+            "firm_profit_change": round(profit, 10),
+            "customer_value_change": round(value, 10),
+            "combined_surplus_change": round(profit + value, 10),
+        })
+    return rows
+
+
+def main():
+    probabilities = {"low_renewal": 0.10, "direct": 0.20,
+                     "high_renewal": 0.60}
+    margin, loss = 11.0, 10.0
+    rows = evaluate(probabilities, 0.20, margin, loss)
+    low, direct, high = rows
+    assert direct["firm_profit_change"] == 0
+    assert direct["customer_value_change"] == 0
+    # Independent expected-level calculations use 100 eligible customers.
+    n = 100
+    baseline_profit = n * 0.20 * margin
+    selected_profit = n * 0.60 * margin
+    assert isclose(high["firm_profit_change"],
+                   (selected_profit - baseline_profit) / n)
+    assert isclose(high["customer_value_change"], -40 * loss / n)
+    assert high["firm_profit_change"] == 4.4
+    assert high["customer_value_change"] == -4.0
+    assert high["combined_surplus_change"] == 0.4
+    assert isclose(high["customer_value_change"] -
+                   low["customer_value_change"], -5.0)
+    folder = Path(__file__).resolve().parent
+    with (folder / "retention_welfare.csv").open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    report = {"input_type": "synthetic imposed probabilities and stakes",
+              "unit": "dollars per eligible customer",
+              "benchmark": "direct choice, renewal probability 0.20",
+              "firm_margin": margin, "customer_loss_per_renewal": loss,
+              "procedures": rows}
+    (folder / "retention_welfare_results.json").write_text(
+        json.dumps(report, indent=2) + "\n")
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M08-regulatory-scope-and-a-marketing-recommendation}{%
+\section{Regulatory Scope and a Marketing
+Recommendation}\label{M08-regulatory-scope-and-a-marketing-recommendation}}
+
+\noindent \noindent A manager considering a new price display, review summary, or
+subscription process needs to identify which conduct a rule covers. The
+relevant jurisdiction, product, effective date, and exceptions determine
+how the legal source bears on the proposed action. A statute, binding
+rule, agency interpretation, settlement, and proposed rule have
+different authority. Their differences affect the inference an analyst
+can draw from them.
+
+As checked on November 2, 2026, the FTC's March 2026 negative-option
+announcement seeks comments on possible amendments and refers to the
+vacated 2024 rule. An advance notice does not itself adopt replacement
+obligations. A subscription analysis must examine operative federal and
+applicable state requirements rather than infer a current universal
+cancellation rule from the title of an earlier announcement. The
+\href{https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option}{FTC
+notice} identifies the procedural status.
+
+A practical decision record states the action, customer population,
+commercial objective, and expected customer consequences. It then
+matches the relevant legal source to the conduct. For example, an
+advertising claim requires support for the claim customers understand; a
+review summary requires truthful provenance; and a consequential
+delivery system requires attention to actual access. The
+\href{../ETHICS_AND_REGULATION.md}{primary-source guide} records the
+scope and status of the public sources used in these cases.
+
+A firm can preserve a profitable service while reducing unwanted
+interaction, improve the information customers receive, or redesign an
+experiment to measure consequences outside its conversion objective.
+Each proposal should name the affected outcome, an observable benchmark,
+and the evidence that would support adoption.
 
 \end{document}

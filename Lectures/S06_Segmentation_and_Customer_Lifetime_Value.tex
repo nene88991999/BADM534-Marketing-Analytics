@@ -1,0 +1,244 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Segmentation and Customer Lifetime Value}
+\author{By Nathan Yang}
+\date{Session 06}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{A Retention-Support Decision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A service team can support only some customers.
+\item High baseline value and responsiveness to support are separate quantities.
+\item Segments should correspond to feasible service decisions.
+\end{slidebullets}
+\vfill
+\note{A segment with high predicted value may have little incremental response to outreach. The support decision needs the change in future contribution caused by the action, net of its costs.
+
+M4, Section 4.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Customer Features at a Common Date}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Recency is time since the last eligible event.
+\item Frequency counts events in a fixed window.
+\item Monetary value uses sales or contribution over that window.
+\end{slidebullets}
+\vfill
+\note{Customers with unequal exposure histories can appear different because of observation time. The feature definition must specify eligibility and whether returns affect sales or transaction counts.
+
+M4, Section 4.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{K-Means and Similarity}
+\usebeamercolor[fg]{normal text}
+\noindent Choose $K$ centers for transformed customer features $z_i$.
+\medskip
+\[
+\min_{\mu,c}\sum_i\left\|z_i-\mu_{c(i)}\right\|^2
+\]
+\medskip
+\noindent Scaling the features changes the distance and can change the segments.
+\note{K-means minimizes within-cluster squared Euclidean distance. A standardized feature receives a different implicit weight from the raw variable. The transformation is a substantive choice.
+
+M4, Section 4.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Units Change the Nearest Customer}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_scaling.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic customers have unchanged spending and frequency records.\par}
+\note{Raw distances compare A=(100,1), B=(110,9), and C=(200,1). The example changes only the spending scale. The preferred business representation depends on the service decision.
+
+M4, Section 4.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Evaluating a Segmentation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Inspect segment size, profile, and actionable differences.
+\item Compare stability across seeds, samples, and periods.
+\item Evaluate outcomes that did not mechanically define the clusters.
+\end{slidebullets}
+\vfill
+\note{Within-cluster dispersion declines as K rises. A high-spending cluster will have high spending by construction when spending is an input. Later outcomes provide a more informative descriptive check.
+
+M4, Section 4.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{mHealth Segments Use Earlier Histories}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_mhealth_segments.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Eligible users have at least 30 observed days before July 1.\par}
+\note{The representation uses first-half logging fraction, mean category breadth, and mean calorie-share variety. K=3 is imposed for the comparison. The scaler and centers use only the earlier window.
+
+M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Later Logging by Earlier Segment}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrrr}
+\toprule
+Segment & Users & Prior Fraction & Later Fraction \\
+\midrule
+1 & 126 & 0.426 & 0.338 \\
+2 & 90 & 0.759 & 0.594 \\
+3 & 115 & 0.870 & 0.654 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+mHealth denominators use 182 earlier and 184 later calendar days.
+\vfill
+\note{Later absence contributes zero observed days for eligible users. The figures describe persistence in recorded activity. They are not contractual retention rates or effects of a service intervention.
+
+M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Lifetime Value and Payment Timing}
+\usebeamercolor[fg]{normal text}
+\noindent Value future contribution conditional on remaining active.
+\medskip
+\[
+\operatorname{CLV}=\sum_{t=1}^{T}\frac{\Pr(\text{active at }t)m_t}{(1+d)^t}-a
+\]
+\medskip
+\noindent The period for margin $m_t$, discounting $d$, and retention must agree.
+\note{The acquisition cost a occurs at time zero. This convention excludes immediate contribution. If a current-period contribution is included, it must be added explicitly.
+
+M4, Section 4.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{A Stationary Subscription}
+\usebeamercolor[fg]{normal text}
+\noindent Suppose monthly retention is $r$ and monthly contribution is $m$.
+\medskip
+\[
+\operatorname{CLV}=\frac{mr}{1+d-r}-a
+\]
+\medskip
+\noindent With $m=60$, $d=0.01$, $a=50$, and $r=0.80$, CLV is 178.57 dollars.
+\note{The formula assumes constant retention and conditional margin and an infinite horizon, with the first payment one month later. It follows from a convergent geometric series.
+
+M4, Section 4.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Retention Has Nonlinear Value}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_clv.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic stationary model. Monthly margin, discounting, and acquisition cost stay fixed.\par}
+\note{The high-retention region places more weight on distant contributions. Uncertainty about the persistence of retention and margins can dominate the valuation.
+
+M4, Section 4.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}[fragile]{A Finite-Sum Check}
+\usebeamercolor[fg]{normal text}
+\noindent Compare the closed form with 2,000 future monthly payments.
+\begin{lstlisting}
+m, r, d, a = 60, 0.8, 0.01, 50
+closed = m * r / (1 + d - r) - a
+finite = sum(m * r**t / (1+d)**t
+             for t in range(1, 2001)) - a
+assert abs(closed - finite) < 1e-8
+\end{lstlisting}
+{\small Both calculations give approximately 178.57 dollars.\par}
+\note{Matching the two expressions checks the payment convention and arithmetic. It does not establish constant retention as a valid model of a real relationship.
+
+M4, Section 4.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Cancellation and a Logging Gap}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A subscription may record cancellation directly.
+\item A 30-day logging gap is an operational activity event.
+\item Observation can end before a defined event occurs.
+\end{slidebullets}
+\vfill
+\note{Right censoring preserves the distinction between no observed event by the end of follow-up and an event at the last observation. A logging gap is not proof of permanent departure or paid cancellation.
+
+M4, Section 4.13, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{The Event Definition Changes Survival}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_logging_survival.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small mHealth time-to-gap analysis uses a stated gap definition and observation horizon.\par}
+\note{Changing the gap length changes the event being measured. Survival of recorded activity should remain separate from contractual renewal in financial calculations.
+
+M4, Section 4.13, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Endpoint and Continuous Retention}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Endpoint retention allows customers to leave and return.
+\item Continuous retention requires uninterrupted presence.
+\item Acquisition can include first entry, return, or switching.
+\end{slidebullets}
+\vfill
+\note{A starting-provider cohort is fixed at the initial period. The same-provider, other-provider-only, and no-paid-provider states distinguish platform retention from category participation. Multiple providers require explicit overlap handling.
+
+M4, Section 4.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Coding Exercise: Segments and Value}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Fit feature scaling and segments on an earlier period.
+\item Describe a later period without refitting the groups.
+\item Vary assumed paid retention in a separate CLV calculation.
+\end{slidebullets}
+\vfill
+\note{The small CLV calculation is ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.
+
+M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Retention and Effective Cancellation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item High paid retention can reflect satisfaction or difficulty leaving.
+\item Measure cancellation completion and unwanted subsequent charges.
+\item Evaluate customer value alongside the seller's lifetime-value objective.
+\end{slidebullets}
+\vfill
+\note{A customer who prefers cancellation can remain subscribed because of friction. The consumer-value comparison requires independent evidence about that preference and the available procedure.
+
+M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Retention Discussion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item What action differs across the proposed segments?
+\item Does a customer's absence represent churn or censoring?
+\item Which retention assumption changes the support decision?
+\end{slidebullets}
+\vfill
+\note{A useful recommendation identifies the response to intervention as well as baseline value. Cluster membership alone does not establish the effectiveness of differentiated support.
+
+M4, Section 4.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\end{document}
