@@ -12,7 +12,10 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-10-26",
+  "updated_on": "2026-11-02",
+  "planning_assumptions": {
+    "guest_speakers": false
+  },
   "current_syllabus": null,
   "current_schedule": null,
   "current_ai_policy": null,
@@ -206,6 +209,8 @@ Help students understand and apply marketing analytics, including AI-assisted co
 
 The repository is being prepared. No revised syllabus, graded assignment, schedule, or course-wide AI policy has been released here. Read `course.json` for the current release pointers; null means absent. Proposed activities in resource guides are planning suggestions.
 
+Plan the syllabus and schedule with no guest speakers. Allocate topic coverage to instructor-led sessions and course activities; do not carry forward guest-speaker slots from the predecessor's syllabus.
+
 ## Read in This Order
 
 1. `course.json` for current material pointers and publication status.
@@ -277,6 +282,8 @@ Use local source files when available, and preserve their recorded rights. An ac
 Marketing Analytics
 
 This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The revised syllabus, schedule, assignments, and assessment rules are pending. Suggested activities below are illustrative.
+
+The course is planned with no guest speakers. All eight modules will be covered through instructor-led sessions and course activities.
 
 ## Topics and Resource Routes
 
@@ -387,6 +394,8 @@ A program can run successfully and still answer the wrong question. Inspect a fe
 # Syllabus and Course Policies
 
 **Status: pending.** No revised syllabus has been released.
+
+The syllabus will assume no guest speakers. Allocate teaching time across the eight modules, instructor-led examples, coding exercises, and discussion.
 
 Add the current syllabus here with an equivalent Markdown version. State the offering, instructor, version/date, learning objectives, schedule, assessment weights, and AI-use rules. Preserve all consequential requirements when converting from PDF or Word.
 

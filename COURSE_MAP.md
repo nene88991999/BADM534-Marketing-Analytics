@@ -4,6 +4,8 @@ Marketing Analytics
 
 This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The revised syllabus, schedule, assignments, and assessment rules are pending. Suggested activities below are illustrative.
 
+The course is planned with no guest speakers. All eight modules will be covered through instructor-led sessions and course activities.
+
 ## Topics and Resource Routes
 
 | Module | Managerial Question | Core Topics | Resource Guide | AI-Assisted Practice |

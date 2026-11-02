@@ -8,6 +8,8 @@ Help students understand and apply marketing analytics, including AI-assisted co
 
 The repository is being prepared. No revised syllabus, graded assignment, schedule, or course-wide AI policy has been released here. Read `course.json` for the current release pointers; null means absent. Proposed activities in resource guides are planning suggestions.
 
+Plan the syllabus and schedule with no guest speakers. Allocate topic coverage to instructor-led sessions and course activities; do not carry forward guest-speaker slots from the predecessor's syllabus.
+
 ## Read in This Order
 
 1. `course.json` for current material pointers and publication status.

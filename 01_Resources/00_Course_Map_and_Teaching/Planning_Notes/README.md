@@ -29,6 +29,8 @@ The activities below are planning suggestions. They are not completed lessons or
 
 ## Suggested Priorities
 
+Plan the offering with no guest speakers. Allocate the available teaching time to instructor-led coverage of the eight modules, worked cases, coding exercises, and discussion.
+
 Develop the core around three recurring data settings: transactions for customer analysis, campaign or session records for prediction, and short reviews for text analysis. Use a separate experiment or clearly labeled simulated dataset for causality. This reduces setup time and lets students revisit familiar data with new methods. The [Dataset Guide](../../10_Datasets_and_Project_Resources/Dataset_Guide/README.md) explains the available choices.
 
 Start each exercise with a managerial decision, the information available at that decision, and a specified output. Follow with the method, a small example, guided implementation, a check of the result, and interpretation. Allow AI assistance in the implementation stages while requiring students to explain the decisions that determine the analysis. A generated program that runs is insufficient evidence that the estimand, sample, or validation procedure is appropriate.
