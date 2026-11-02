@@ -24,7 +24,7 @@ A private repository URL works only with tools authorized to read that repositor
 
 ### Review a Result
 
-> Audit my analysis for incorrect joins, missing-data decisions, units, leakage, and unsupported causal claims. Compare each concern with the assignment and data dictionary. Prioritize issues that could change the managerial conclusion, and give a check I can run.
+> Assess my analysis for incorrect joins, missing-data decisions, units, leakage, and unsupported causal claims. Compare each concern with the assignment and data dictionary. Prioritize issues that could change the managerial conclusion, and give a check I can run.
 
 ### Prepare for Class
 

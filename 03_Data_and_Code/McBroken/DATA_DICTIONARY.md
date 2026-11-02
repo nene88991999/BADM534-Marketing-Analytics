@@ -36,8 +36,8 @@ The daily coverage program reports equal-day means and pooled record fractions. 
 
 `data/policy_window.csv` retains the selected weekly snapshots for USA, Canada (`CA`), and UK in event weeks -12 through +12 around October 28, 2024. It includes source commit timestamps, UTC dates, ISO week labels, short `commit` and full `sha`, country, counts, exact `share_unavailable`, and `event_week`. Values are fractions before the program converts them to percentages. Week zero is visible in the figure and excluded from pre/post means. The mean weights each common week equally, after requiring at least 2,000 records for USA and 500 for each comparison country.
 
-## Audit and Provenance
+## Assessment and Provenance
 
-`data/audit.json` records source row counts, duplicate and unmatched-key checks, reconciliation results, coverage, address/coordinate diagnostics, gap counts, and the scope of the status audit. `manifest.json` identifies the six supplied source files by SHA-256 and byte size. The imported snapshot manifest contains selected commits even when their source extraction yields no usable US rows; this is why a manifest count and a panel date count can differ.
+`data/assessment.json` records source row counts, duplicate and unmatched-key checks, reconciliation results, coverage, address/coordinate diagnostics, gap counts, and the scope of the status assessment. `manifest.json` identifies the six supplied source files by SHA-256 and byte size. The imported snapshot manifest contains selected commits even when their source extraction yields no usable US rows; this is why a manifest count and a panel date count can differ.
 
 The original extractor uses Boolean conversion and a permissive number parser. The course's `api_checks.py` demonstrates stricter handling on constructed inputs. Two pinned raw snapshots were independently checked for nonboolean/missing US statuses and for agreement with supplied US totals. This spot check does not validate every historical JSON field or the underlying order-attempt mechanism.

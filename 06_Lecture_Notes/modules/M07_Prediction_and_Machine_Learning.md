@@ -54,7 +54,7 @@ All learned preprocessing belongs inside the training process. This includes imp
 
 Time-series and grouped data need adapted splits. Rolling-origin evaluation trains on earlier periods and predicts later ones, potentially repeating this across several origins. Grouped validation holds out complete customers, households, stores, or other relevant units. If a target window overlaps a training outcome window, a temporal gap may be necessary. Document the dates and units assigned to each split.
 
-A useful audit asks when each feature became observable. In a marketing-call dataset, call duration can be useful after a call but unavailable when deciding whom to call. A model using that feature answers a different prediction problem. The feature's legitimacy follows the decision time, not whether a package accepts it or whether it improves accuracy.
+A useful assessment asks when each feature became observable. In a marketing-call dataset, call duration can be useful after a call but unavailable when deciding whom to call. A model using that feature answers a different prediction problem. The feature's legitimacy follows the decision time, not whether a package accepts it or whether it improves accuracy.
 
 ## 7.5 Case Study: Accuracy Can Conceal a Useless Model
 
@@ -177,7 +177,7 @@ where $p_j$ measures preference compatibility, $g_j$ measures compatibility with
 
 ![Smooth changes in the objective weight produce discrete changes in the top-ranked item.](../figures/M07_goal_blend.png)
 
-Every score changes continuously, yet the chosen item changes discretely. A small adjustment near a crossing can therefore replace the displayed recommendation. B is the preferred compromise only over a narrow weight interval. A useful audit varies the weight and inspects which customers experience large changes in their lists. The chosen scales and weights define the tradeoff; combining scores does not itself establish that a goal will be achieved.
+Every score changes continuously, yet the chosen item changes discretely. A small adjustment near a crossing can therefore replace the displayed recommendation. B is the preferred compromise only over a narrow weight interval. A useful assessment varies the weight and inspects which customers experience large changes in their lists. The chosen scales and weights define the tradeoff; combining scores does not itself establish that a goal will be achieved.
 
 ## 7.13 LLM Explanations Need Factual and Behavioral Evaluation
 
@@ -189,7 +189,7 @@ A shopping assistant may generate a persuasive reason for recommending a product
 
 Consider a synthetic catalog with prices, delivery times, and verified product attributes. A customer asks for delivery within two days at a price below $30. First enforce those eligibility constraints using the catalog. Then rank eligible products and generate explanations that refer to specific supported attributes. “Arrives tomorrow” is unsupported when the recorded delivery window is three to five days, even if the rest of the explanation is relevant. “You value quiet operation” is unsupported when the customer has expressed no such preference and no permitted history supplies it.
 
-An audit should inspect factual support, constraint violations, ranking performance, and customer outcomes separately. Remove or alter a cited attribute and examine whether the explanation and ranking change as claimed; this provides a behavioral diagnostic of correspondence, with scope limited to the perturbations tested. Hold out customers, products, or time periods according to deployment. Keep the catalog version and the evidence used for each explanation so the claim can be checked after product information changes.
+An assessment should inspect factual support, constraint violations, ranking performance, and customer outcomes separately. Remove or alter a cited attribute and examine whether the explanation and ranking change as claimed; this provides a behavioral diagnostic of correspondence, with scope limited to the perturbations tested. Hold out customers, products, or time periods according to deployment. Keep the catalog version and the evidence used for each explanation so the claim can be checked after product information changes.
 
 ## 7.14 AI-Assisted Workflow, Practice, and Readings
 
@@ -691,10 +691,10 @@ if __name__ == "__main__":
 
 ## 7.19 Prediction, Delivery, and Access
 
-\noindent An advertiser selecting an audience does not fully determine who sees an offer. A delivery system can optimize bids, predicted clicks, or conversions after that selection. Differences in auction conditions, past behavior, or model scores can change the realized distribution of exposure. An audit of targeting criteria alone can therefore miss consequential differences in access.
+\noindent An advertiser selecting an audience does not fully determine who sees an offer. A delivery system can optimize bids, predicted clicks, or conversions after that selection. Differences in auction conditions, past behavior, or model scores can change the realized distribution of exposure. An assessment of targeting criteria alone can therefore miss consequential differences in access.
 
 The Department of Justice's Meta housing-advertising case addressed both targeting and delivery under the Fair Housing Act. The settlement was approved in June 2022. Its sector and legal basis matter: the case concerns housing opportunities, and it does not establish a uniform legal standard for every recommender. The [DOJ case record](https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny) provides the relevant scope and settlement information.
 
-For an analytical audit, define the eligible population, opportunity to receive the offer, realized exposure, and downstream response. Compare rates using the appropriate denominators and examine whether outcome labels are observed for everyone or only for exposed customers. A high click prediction can reflect selective earlier exposure. Retraining on those clicks can reproduce that selection through a new model.
+For an analytical assessment, define the eligible population, opportunity to receive the offer, realized exposure, and downstream response. Compare rates using the appropriate denominators and examine whether outcome labels are observed for everyone or only for exposed customers. A high click prediction can reflect selective earlier exposure. Retraining on those clicks can reproduce that selection through a new model.
 
 Error costs should also follow the application. A mistaken recommendation of a grocery item and a missed housing opportunity have different consequences. A proposed fairness comparison must specify the affected population, outcome, and decision. Several metrics can conflict because they condition on different objects. Report the tradeoff and the policy objective that resolves it rather than treating a single accuracy statistic as a complete evaluation.

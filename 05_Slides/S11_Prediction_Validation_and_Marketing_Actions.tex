@@ -1,0 +1,249 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Prediction, Validation, and Marketing Actions}
+\author{By Nathan Yang}
+\date{Session 11}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{A Service-Capacity Decision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A team can review 100 customers each week.
+\item Predictions use information available before that week.
+\item The outcome and review benefit determine the useful metric.
+\end{slidebullets}
+\vfill
+\note{A model selected on overall accuracy can fail to identify the cases that the team can help. The intervention value and the forecast are separate quantities.
+
+M7, Section 7.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Validation Reproduces Deployment}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_splits.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The deployment population determines the appropriate holdout.\par}
+\note{New-customer prediction requires separation by customer. Future prediction for returning customers requires separation in time. Some deployments require both.
+
+M7, Section 7.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{The Forecast Origin}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Features end before the decision time.
+\item The outcome window begins after the decision.
+\item Training labels must already be observable at fitting time.
+\end{slidebullets}
+\vfill
+\note{A database extract can contain information that did not exist at the historical prediction origin. Store measurement windows or feature timestamps to make the information constraint verifiable.
+
+M7, Section 7.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Baselines and Model Families}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Compare with a constant probability or recent-history forecast.
+\item Logistic regression supplies a probability baseline.
+\item Trees represent conditional splits. Ensembles combine trees.
+\end{slidebullets}
+\vfill
+\note{A complex model earns its place through performance on the intended held-out observations and decision costs. Training fit alone rewards flexibility.
+
+M7, Section 7.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Logistic Prediction}
+\usebeamercolor[fg]{normal text}
+\noindent Transform a linear index into a binary-outcome probability.
+\medskip
+\[
+\widehat p_i=\frac{1}{1+\exp[-(\beta_0+x_i^\top\beta)]}
+\]
+\medskip
+\noindent A coefficient changes log odds. Its probability effect depends on the starting point.
+\note{The same index change has a larger probability effect near the middle than near zero or one. Calibration should be evaluated on the deployment population.
+
+M7, Section 7.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Preprocessing Belongs in Training}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Fit imputation, scaling, and vocabulary on training records.
+\item Choose model settings using validation data.
+\item Keep the final test sample separate from model selection.
+\end{slidebullets}
+\vfill
+\note{Repeatedly choosing features from test performance turns that sample into validation data. A pipeline helps preserve the training-only boundary within cross-validation.
+
+M7, Section 7.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Rare Purchases and Accuracy}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Quantity & Flagged & Not Flagged \\
+\midrule
+Purchases & 30 & 20 \\
+No Purchase & 70 & 880 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Synthetic population: 1,000 customers and 50 purchases.
+\vfill
+\note{Flagging 100 customers gives precision 30\%, recall 60\%, and accuracy 91\%. Predicting no purchase for everybody gives 95\% accuracy and finds no purchasers.
+
+M7, Section 7.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Metrics and the Review Queue}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Precision: what fraction of reviewed cases are positive?
+\item Recall: what fraction of positives enter the queue?
+\item Calibration: do predicted probabilities match observed frequencies?
+\end{slidebullets}
+\vfill
+\note{The appropriate contact fraction should match staff capacity. A ranking measure and a probability measure answer different questions. Neither by itself measures the causal effect of contacting a customer.
+
+M7, Section 7.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Ranking Can Stay Fixed While Probabilities Change}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_calibration.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small A synthetic transformation squares initially calibrated probabilities.\par}
+\note{For q=p squared, the original outcome frequency p equals the square root of q. Expected contribution calculations need probabilities with the relevant interpretation.
+
+M7, Section 7.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{A Cost-Based Threshold}
+\usebeamercolor[fg]{normal text}
+\noindent Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
+\medskip
+\[
+p>\frac{C_{FP}}{C_{FP}+C_{FN}}
+\]
+\medskip
+\noindent With costs 1 and 9, the threshold is 0.10 under this simplified classification loss.
+\note{Correct classifications have zero cost in this example. Capacity constraints and different action effects require a richer decision model.
+
+M7, Section 7.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Coupon Targeting Includes the Untreated Outcome}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_targeting.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic probabilities and costs. High treated response can have negative incremental value.\par}
+\note{Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact cost 2 dollars. Baseline probabilities are 0.78 and 0.15. Discount expense applies to purchases that would also have occurred without the coupon.
+
+M7, Section 7.8, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}[fragile]{Queue Metrics}
+\usebeamercolor[fg]{normal text}
+\noindent Compute metrics from the synthetic confusion matrix.
+\begin{lstlisting}
+tp, fn, fp, tn = 30, 20, 70, 880
+precision = tp / (tp + fp)
+recall = tp / (tp + fn)
+accuracy = (tp + tn) / (tp + fn + fp + tn)
+assert (precision, recall, accuracy) == (0.3, 0.6, 0.91)
+\end{lstlisting}
+{\small The model finds 60\% of purchasers while 70\% of its queue contains nonpurchasers.\par}
+\note{Whether that queue is profitable depends on the action and its incremental outcome. A prediction score alone cannot supply the causal response to a coupon.
+
+M7, Section 7.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{McBroken Forecasting}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Predict availability on a later date.
+\item Retain a separate count of unknown future labels.
+\item Compare baseline and fitted forecasts on the same observed outcomes.
+\end{slidebullets}
+\vfill
+\note{An unknown future status is not an observed available restaurant. Dropping missing labels changes the evaluated population and can make an apparently strong forecast depend on observation coverage.
+
+M7, Section 7.18, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Prediction and Outcome Coverage}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_mcbroken_prediction.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small McBroken forecasts use later dates and observed-label denominators.\par}
+\note{The course example checks information availability at the forecast origin and uses chronological evaluation. Missing outcome counts remain alongside accuracy measures.
+
+M7, Section 7.18.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Coding Exercise: A Forecast Evaluation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Create training, validation, and later test windows.
+\item Check every feature against the forecast date.
+\item Compare a simple baseline, ranking, and calibration.
+\item Report missing outcomes beside the test metrics.
+\end{slidebullets}
+\vfill
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions.
+
+M7, Section 7.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Targeting and Delivered Opportunities}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item An apparently neutral target can produce unequal delivery.
+\item Evaluate exposure and error costs across relevant groups.
+\item Housing, credit, and employment applications require their specific legal context.
+\end{slidebullets}
+\vfill
+\note{The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well as targeting tools. That case is evidence about housing advertising and should not be generalized into a single rule for all products.
+
+DOJ, United States v. Meta Platforms. \url{https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny}}
+\end{frame}
+\begin{frame}{Prediction Discussion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Which error uses scarce review capacity?
+\item Which feature becomes available too late?
+\item Does the score support a forecast, an intervention, or both?
+\end{slidebullets}
+\vfill
+\note{A deployment decision needs an explicit chain from information to prediction to action. Each link has its own empirical requirements.
+
+M7, Section 7.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\end{document}

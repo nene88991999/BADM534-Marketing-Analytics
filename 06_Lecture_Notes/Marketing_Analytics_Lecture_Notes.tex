@@ -582,7 +582,7 @@ Python source:
 From its directory, run \texttt{python\ m01.py}.
 
 \begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
-"""Audit the cohort, repeated totals, and the separate daily file."""
+"""Assess the cohort, repeated totals, and the separate daily file."""
 
 import json
 import pandas as pd
@@ -632,14 +632,14 @@ Those fields omit event timestamps and meal identifiers. Repeated
 servings can therefore produce equal rows. Automatically dropping them
 would impose an unsupported definition of duplication.
 
-The audit finds 206 food rows with missing categories, one negative item
-calorie value, and 23 days with a nonpositive sum of item calories. The
-calorie-share calculation consequently excludes 24 days. By contrast,
-319 days have a nonpositive reported daily total. These counts differ
-because the item sum and reported total are separate measurements. Their
-discrepancy exceeds one calorie unit on 23,729 days. These flags can
-overlap and must not be added as if they represented disjoint
-exclusions.
+The assessment finds 206 food rows with missing categories, one negative
+item calorie value, and 23 days with a nonpositive sum of item calories.
+The calorie-share calculation consequently excludes 24 days. By
+contrast, 319 days have a nonpositive reported daily total. These counts
+differ because the item sum and reported total are separate
+measurements. Their discrepancy exceeds one calorie unit on 23,729 days.
+These flags can overlap and must not be added as if they represented
+disjoint exclusions.
 
 A value outside a chosen review range is evidence for inspection, not
 proof of an error. The reported daily calorie median is 1,475.63, and
@@ -663,8 +663,8 @@ observation. The executable counterexamples are in
 \FloatBarrier
 \Needspace{8\baselineskip}
 Python source:
-\href{../03_Data_and_Code/mHealth/recurring_examples/audit.py}{audit.py}.
-From its directory, run \texttt{python\ audit.py}.
+\href{../03_Data_and_Code/mHealth/recurring_examples/assessment.py}{assessment.py}.
+From its directory, run \texttt{python\ assessment.py}.
 
 \begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
 """Separate structural failures, review flags, and analysis-specific exclusions."""
@@ -697,7 +697,7 @@ def daily_flags(daily):
     return flags
 
 
-def run_audit():
+def run_assessment():
     food, daily, baskets = load_inputs()
     assert food.Userid.notna().all() and food.date.notna().all()
     assert food.date.between("2016-01-01", "2016-12-31").all()
@@ -733,12 +733,12 @@ def run_audit():
         "fixed_age_max": int(health.Age_at_2016_01_01.max()),
         "nonpositive_weight_rows": int(health.Currentweight.le(0).sum()),
     }
-    save_result("audit", result)
+    save_result("assessment", result)
     print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
-    run_audit()
+    run_assessment()
 \end{Verbatim}
 
 \hypertarget{M01-python-calculations-for-the-synthetic-cases}{%
@@ -826,13 +826,13 @@ assert orders == {"O1": 25, "O2": 12}
 print(json.dumps(r, indent=2))
 \end{Verbatim}
 
-\hypertarget{M01-mhealth-an-auditable-monthly-business-review}{%
-\section{mHealth: An Auditable Monthly Business
-Review}\label{M01-mhealth-an-auditable-monthly-business-review}}
+\hypertarget{M01-mhealth-a-verifiable-monthly-business-review}{%
+\section{mHealth: A Verifiable Monthly Business
+Review}\label{M01-mhealth-a-verifiable-monthly-business-review}}
 
-\noindent An mHealth manager needs to decide whether a decline in food entries
-warrants attention to customer engagement. Entry counts combine the
-number of eligible customers, the length of the reporting month, the
+\noindent \noindent An mHealth manager needs to decide whether a decline in food
+entries warrants attention to customer engagement. Entry counts combine
+the number of eligible customers, the length of the reporting month, the
 frequency of logging, and the intensity of logging on observed days. A
 decline can arise from any of these components. The comparison becomes
 interpretable when the eligible population is fixed before the reporting
@@ -902,7 +902,7 @@ Python source:
 From its directory, run \texttt{python\ reporting.py}.
 
 \begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
-"""Compute an auditable, fixed-cohort mHealth business review locally."""
+"""Compute a verifiable, fixed-cohort mHealth business review locally."""
 
 import json
 import pandas as pd
@@ -1312,7 +1312,7 @@ Practice}\label{M02-ai-assisted-workflow-and-practice}}
 
 \noindent Ask an assistant to construct a customer-period table from a specified
 roster and transaction table, preserving customers with no observed
-purchases. Require a join audit, a missing-data report, and a
+purchases. Require a join assessment, a missing-data report, and a
 reconciliation of total sales. Next ask it to calculate the campaign
 table above and standardized rates under a 50/50 audience mix. Verify
 those small numbers before applying the same functions to a larger file.
@@ -2431,11 +2431,11 @@ also differs from the share of customer visits that encounter an
 unavailable item: customer arrivals and purchases supply the weights for
 that managerial outcome.
 
-The audit reconciles the store panel with the supplied national totals
-and verifies unique store-date keys. The 365-date calendar contains US
-records on 356 dates, including three dates with fewer than 2,000
-records. Nine dates have no US observations. The July 24, 2026, snapshot
-has only two US records, both reporting availability. Its zero
+The assessment reconciles the store panel with the supplied national
+totals and verifies unique store-date keys. The 365-date calendar
+contains US records on 356 dates, including three dates with fewer than
+2,000 records. Nine dates have no US observations. The July 24, 2026,
+snapshot has only two US records, both reporting availability. Its zero
 percentage describes those two records. The missing dates remain missing
 in the course table.
 
@@ -2536,9 +2536,9 @@ if __name__ == "__main__":
         raise AssertionError("String status was silently accepted")
 \end{Verbatim}
 
-\hypertarget{M02-audit-and-reproduce-the-availability-comparisons}{%
-\subsection{Audit and Reproduce the Availability
-Comparisons}\label{M02-audit-and-reproduce-the-availability-comparisons}}
+\hypertarget{M02-assess-and-reproduce-the-availability-comparisons}{%
+\subsection{Assess and Reproduce the Availability
+Comparisons}\label{M02-assess-and-reproduce-the-availability-comparisons}}
 
 \noindent \noindent The preparation program checks unique keys, join coverage,
 status values, check ages, national totals, and the dimension table's
@@ -2559,7 +2559,7 @@ supplied resource bundle; \texttt{-\/-source\ PATH} selects another copy
 of its data directory.
 
 \begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
-"""Audit supplied McBroken tables and build aggregate, offline teaching inputs."""
+"""Assess supplied McBroken tables and build aggregate, offline teaching inputs."""
 import argparse
 import hashlib
 import json
@@ -2660,7 +2660,7 @@ def main(source):
     daily.to_csv(out / "daily_us.csv", index=False)
     transitions.to_csv(out / "transitions.csv", index=False)
     event_data.drop(columns="share_broken").to_csv(out / "policy_window.csv", index=False)
-    audit = {
+    assessment = {
         "source_rows": len(panel), "address_keys": len(dim),
         "exact_coordinate_pairs": len(dim[["lat", "lon"]].drop_duplicates()),
         "calendar_days": len(daily), "us_observed_days": len(us),
@@ -2673,11 +2673,11 @@ def main(source):
         "snapshot_abs_offset_hours_max": float(daily.offset_hours.abs().max()),
         "duplicate_store_dates": 0, "unmatched_keys": 0,
         "country_counts_reconciled": True, "dimension_days_reconciled": True,
-        "matching": "Original address keys; coordinates are an audit, not a merge rule.",
+        "matching": "Original address keys define the merge; coordinates provide a consistency check.",
         "transition_screen": "Both dates: >=2000 US records and within 3 hours of 18:00 UTC.",
         "status_scope": "The supplied binary field was validated; raw API missingness cannot be recovered from these CSVs.",
     }
-    (out / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
+    (out / "assessment.json").write_text(json.dumps(assessment, indent=2) + "\n")
     manifest = {
         "source": "Rashiq Zahid, McBroken; snapshots via MrFlynn/mcbroken-archive",
         "urls": ["https://mcbroken.com", "https://github.com/MrFlynn/mcbroken-archive"],
@@ -2686,7 +2686,7 @@ def main(source):
         "rights": "Upstream archive software uses Unlicense; no separate McBroken data license was established. Public teaching outputs are attributed aggregate calculations.",
     }
     (ROOT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(json.dumps(audit, indent=2))
+    print(json.dumps(assessment, indent=2))
 
 
 if __name__ == "__main__":
@@ -2899,7 +2899,7 @@ are read from the supplied local bundle; output tables are written
 beside the course scripts.
 
 \begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
-"""Audit the supplied Wikipedia capture without making network requests."""
+"""Assess the supplied Wikipedia capture without making network requests."""
 from pathlib import Path
 import json
 
@@ -5040,7 +5040,7 @@ A prompt should identify the construct, unit, categories, boundary
 rules, and examples. For delivery dissatisfaction, it should distinguish
 a complaint about an actual delay from a question about the promised
 delivery date. Ask for a short supporting span from the supplied text
-when that improves auditability. A fluent explanation is not evidence
+when that improves traceability. A fluent explanation is not evidence
 that the label is correct; compare it with independent human judgments
 on a relevant sample.
 
@@ -5562,7 +5562,7 @@ the
 \href{https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers}{FTC's
 questions and answers}.
 
-A useful audit samples the original texts behind a generated theme,
+A useful assessment samples the original texts behind a generated theme,
 checks whether each factual claim is supported, and records unsupported
 statements separately from ordinary classification errors. The
 rare-complaint example in Section 5.5 supplies another check: a high
@@ -6607,7 +6607,7 @@ establish a stale feed.
 \caption{Weekly recorded unavailability varies sharply in the UK before the US policy date. The country paths expose the sensitivity of a pre/post contrast to the chosen comparison.}\label{fig:M06_mcbroken_policy}
 \end{figure}
 
-These data support an audit of a proposed policy evaluation. The
+These data support an evaluation of a proposed policy comparison. The
 positive contrasts do not establish that the exemption worsened
 availability. Stronger evidence would connect a stable set of outlets to
 policy exposure, actual repair adoption, verified mechanical
@@ -6876,7 +6876,7 @@ units. If a target window overlaps a training outcome window, a temporal
 gap may be necessary. Document the dates and units assigned to each
 split.
 
-A useful audit asks when each feature became observable. In a
+A useful assessment asks when each feature became observable. In a
 marketing-call dataset, call duration can be useful after a call but
 unavailable when deciding whom to call. A model using that feature
 answers a different prediction problem. The feature's legitimacy follows
@@ -7259,10 +7259,10 @@ equalities gives the optimal switches at \(\alpha=3/13\) and
 Every score changes continuously, yet the chosen item changes
 discretely. A small adjustment near a crossing can therefore replace the
 displayed recommendation. B is the preferred compromise only over a
-narrow weight interval. A useful audit varies the weight and inspects
-which customers experience large changes in their lists. The chosen
-scales and weights define the tradeoff; combining scores does not itself
-establish that a goal will be achieved.
+narrow weight interval. A useful assessment varies the weight and
+inspects which customers experience large changes in their lists. The
+chosen scales and weights define the tradeoff; combining scores does not
+itself establish that a goal will be achieved.
 
 \hypertarget{M07-llm-explanations-need-factual-and-behavioral-evaluation}{%
 \section{LLM Explanations Need Factual and Behavioral
@@ -7306,14 +7306,14 @@ even if the rest of the explanation is relevant. ``You value quiet
 operation'' is unsupported when the customer has expressed no such
 preference and no permitted history supplies it.
 
-An audit should inspect factual support, constraint violations, ranking
-performance, and customer outcomes separately. Remove or alter a cited
-attribute and examine whether the explanation and ranking change as
-claimed; this provides a behavioral diagnostic of correspondence, with
-scope limited to the perturbations tested. Hold out customers, products,
-or time periods according to deployment. Keep the catalog version and
-the evidence used for each explanation so the claim can be checked after
-product information changes.
+An assessment should inspect factual support, constraint violations,
+ranking performance, and customer outcomes separately. Remove or alter a
+cited attribute and examine whether the explanation and ranking change
+as claimed; this provides a behavioral diagnostic of correspondence,
+with scope limited to the perturbations tested. Hold out customers,
+products, or time periods according to deployment. Keep the catalog
+version and the evidence used for each explanation so the claim can be
+checked after product information changes.
 
 \hypertarget{M07-ai-assisted-workflow-practice-and-readings}{%
 \section{AI-Assisted Workflow, Practice, and
@@ -8087,7 +8087,7 @@ Access}\label{M07-prediction-delivery-and-access}}
 who sees an offer. A delivery system can optimize bids, predicted
 clicks, or conversions after that selection. Differences in auction
 conditions, past behavior, or model scores can change the realized
-distribution of exposure. An audit of targeting criteria alone can
+distribution of exposure. An assessment of targeting criteria alone can
 therefore miss consequential differences in access.
 
 The Department of Justice's Meta housing-advertising case addressed both
@@ -8098,12 +8098,13 @@ legal standard for every recommender. The
 \href{https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny}{DOJ
 case record} provides the relevant scope and settlement information.
 
-For an analytical audit, define the eligible population, opportunity to
-receive the offer, realized exposure, and downstream response. Compare
-rates using the appropriate denominators and examine whether outcome
-labels are observed for everyone or only for exposed customers. A high
-click prediction can reflect selective earlier exposure. Retraining on
-those clicks can reproduce that selection through a new model.
+For an analytical assessment, define the eligible population,
+opportunity to receive the offer, realized exposure, and downstream
+response. Compare rates using the appropriate denominators and examine
+whether outcome labels are observed for everyone or only for exposed
+customers. A high click prediction can reflect selective earlier
+exposure. Retraining on those clicks can reproduce that selection
+through a new model.
 
 Error costs should also follow the application. A mistaken
 recommendation of a grocery item and a missed housing opportunity have
@@ -8369,13 +8370,13 @@ Different
 Outcomes}\label{M08-case-study-content-exposure-and-political-attitudes-are-different-outcomes}}
 
 \noindent \href{https://doi.org/10.1093/pnasnexus/pgaf062}{Milli and coauthors
-(2025)} conduct a preregistered audit with 806 Twitter users, comparing
-posts selected by engagement ranking with recent posts from accounts
-each user follows. They collect item-level stated preferences and
-perceptions. Engagement ranking selects more emotionally charged and
+(2025)} conduct a preregistered assessment with 806 Twitter users,
+comparing posts selected by engagement ranking with recent posts from
+accounts each user follows. They collect item-level stated preferences
+and perceptions. Engagement ranking selects more emotionally charged and
 out-group-hostile material, and the political posts selected are not
 preferred by users on the stated-preference measure. The outcomes
-describe selected content and users' evaluations within the audit's
+describe selected content and users' evaluations within the assessment's
 exposure window.
 
 \href{https://doi.org/10.1073/pnas.2318127122}{Liu and coauthors (2025)}
@@ -8383,10 +8384,10 @@ conduct four experiments with nearly 9,000 participants on a
 YouTube-like interface. Manipulating recommendation sequences produces
 limited short-term polarization effects in the studied settings. The
 intervention, exposure duration, and attitude outcomes differ from the
-Twitter audit. The studies therefore address different links between
-recommendation, consumption, perception, and opinion. A change in the
-composition of displayed content does not determine the magnitude of an
-attitude effect.
+Twitter assessment. The studies therefore address different links
+between recommendation, consumption, perception, and opinion. A change
+in the composition of displayed content does not determine the magnitude
+of an attitude effect.
 
 For a managerial comparison, state the population, assignment, exposure
 window, outcome, and uncertainty before combining findings across
@@ -8787,7 +8788,7 @@ comparison, using a prespecified novelty setting and separate measures
 of logging, acceptance, and any validated nutrition outcome. The
 experiment should preserve the assignment population and record
 exposure. An AI assistant can implement the frozen ranking rule and
-audit category descriptions, while unsupported health claims remain
+assess category descriptions, while unsupported health claims remain
 outside the factual explanation supplied with the recommendation.
 
 \FloatBarrier
@@ -9119,15 +9120,15 @@ visualization code} provides examples of figure construction and layout.
 The managerial claim must remain tied to the evidence and design.
 
 Run \texttt{visualization.py} first to create the evidence table, then
-run the audit. The false charts are constructed teaching cases; their
-rejection rates do not measure the reliability of any particular
+run the assessment. The false charts are constructed teaching cases;
+their rejection rates do not measure the reliability of any particular
 language model.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
 Python source:
-\href{../03_Data_and_Code/mHealth/recurring_examples/chart_audit.py}{chart\_audit.py}.
-From its directory, run \texttt{python\ chart\_audit.py}.
+\href{../03_Data_and_Code/mHealth/recurring_examples/chart_assessment.py}{chart\_assessment.py}.
+From its directory, run \texttt{python\ chart\_assessment.py}.
 
 \begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
 """Check a narrow chart specification against the monthly evidence table."""
@@ -9183,7 +9184,7 @@ def main():
     result = {name: check_chart(chart, evidence) for name, chart in cases.items()}
     assert result["correct"] == []
     assert all(result[name] for name in cases if name != "correct")
-    save_result("chart_audit", {"constructed_cases": result})
+    save_result("chart_assessment", {"constructed_cases": result})
     print(json.dumps(result, indent=2))
 
 
@@ -9320,9 +9321,9 @@ flow share even when its conditional response is stable. Plan-level
 flows require an additional definition of upgrades, downgrades, and new
 provider relationships.
 
-\hypertarget{M08-auditing-an-ai-generated-demand-analysis}{%
-\subsection{Auditing an AI-Generated Demand
-Analysis}\label{M08-auditing-an-ai-generated-demand-analysis}}
+\hypertarget{M08-evaluating-an-ai-generated-demand-analysis}{%
+\subsection{Evaluating an AI-Generated Demand
+Analysis}\label{M08-evaluating-an-ai-generated-demand-analysis}}
 
 \noindent A useful coding specification states the consumer roster, available
 alternatives, monthly price units, subscription-history definition, and

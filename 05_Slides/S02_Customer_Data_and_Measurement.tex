@@ -1,0 +1,243 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Customer Data and Measurement}
+\author{By Nathan Yang}
+\date{Session 02}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{A Customer-Activity Decision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item An mHealth manager wants to understand reduced recorded use.
+\item The comparison follows the same eligible customers over time.
+\item A missing record can reflect nonuse, incomplete observation, or data coverage.
+\end{slidebullets}
+\vfill
+\note{Logging is an observable app behavior. Complete dietary consumption and health outcomes require additional measurement. A metric must state the population represented in each period.
+
+M2, Section 2.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{A Customer Table}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Begin with the eligible-customer roster.
+\item Aggregate events to the customer-period level.
+\item Left join the summaries to the roster.
+\item Fill zero only when absence has the defined meaning of no recorded event.
+\end{slidebullets}
+\vfill
+\note{Starting from events omits customers with no observed events. Filling a missing nutrition measurement with zero changes its meaning. The roster and observation window establish the denominator.
+
+M2, Section 2.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Two Activity Measures}
+\usebeamercolor[fg]{normal text}
+\noindent Let $D_i$ be observed logging days and $T$ the calendar days in a common window.
+\medskip
+\[
+L_i=\frac{D_i}{T},\qquad \bar L=\frac{1}{N}\sum_{i=1}^{N}L_i
+\]
+\medskip
+\noindent Each eligible customer receives equal weight, including customers with no recorded days.
+\note{The mean describes recorded use per available calendar day. Averaging only customers with positive D conditions on activity and can obscure declining use.
+
+M2, Section 2.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Conditional and Fixed Denominators}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M02_logging_denominators.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small mHealth activity depends on who remains in the denominator.\par}
+\note{The fixed cohort supports a comparison of changes in recorded use for the same customers. A conditional mean describes behavior among the customers still observed.
+
+M2, Section 2.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Repeated Totals}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item An item row can contain a copied daily total.
+\item Five copies of 1,132.79 sum to 5,663.95.
+\item The item-calorie sum on that example day is 1,132.7852.
+\end{slidebullets}
+\vfill
+\note{The five-fold inflation follows from repeated measurement fields, not a nutritional mechanism. One daily value can be retained after checking agreement within the user-day. Small rounding differences do not justify ignoring larger discrepancies.
+
+M1, Section 1.8, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md}}
+\end{frame}
+\begin{frame}{Structural Errors and Review Flags}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A duplicate daily key violates a one-row-per-day contract.
+\item Equal item descriptions can represent repeated servings.
+\item An extreme value warrants review under a stated rule.
+\end{slidebullets}
+\vfill
+\note{Timestamp and meal identifiers are absent from the selected equality fields in the mHealth assessment. Dropping all equal records would impose a particular event definition. Preserve source values and add explicit flags.
+
+M1, Section 1.8.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md}}
+\end{frame}
+\begin{frame}[fragile]{A Fixed Customer Denominator}
+\usebeamercolor[fg]{normal text}
+\noindent Synthetic counts follow all four eligible customers.
+\begin{lstlisting}
+days = {'A': 20, 'B': 10, 'C': 0, 'D': 0}
+fixed = sum(days.values()) / (4 * 30)
+active = [x for x in days.values() if x > 0]
+conditional = sum(active) / (len(active) * 30)
+assert round(fixed, 4) == 0.25
+assert round(conditional, 4) == 0.50
+\end{lstlisting}
+{\small The fixed-roster rate is 25\%. The active-user rate is 50\%.\par}
+\note{Both numbers use the same observed days. The denominator changes from 120 potential customer-days to 60. These are synthetic counts.
+
+M2, Section 2.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Cohorts and Customer Age}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Group customers by a defined entry period.
+\item Compare the same time since entry.
+\item Mark later outcomes as unobserved when the horizon has not elapsed.
+\end{slidebullets}
+\vfill
+\note{A recent cohort has no twelve-month outcome yet. Treating that cell as zero creates false attrition. The event defining entry must also remain stable across cohorts.
+
+M2, Section 2.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Retention Has a Triangular Support}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M02_cohort_triangle.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic cohort structure. Blank cells have no elapsed follow-up.\par}
+\note{Calendar time, tenure, and acquisition cohort are different dimensions. A comparison at fixed tenure avoids giving newer customers shorter opportunities to remain active.
+
+M2, Section 2.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{McBroken as a Measurement Case}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item The records describe ice-cream ordering availability.
+\item A missing snapshot has an unknown status.
+\item Restaurant coverage and status recognition can change over time.
+\end{slidebullets}
+\vfill
+\note{Order unavailability can reflect conditions besides a verified mechanical breakdown. A parser must distinguish known available, known unavailable, and unrecognized states. The source assessment and data dictionary define those categories.
+
+M2, Section 2.16, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Coverage Changes the Percentage}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M02_mcbroken_coverage.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small McBroken comparisons preserve the observed-store denominator.\par}
+\note{A change in the set of included restaurants can change the national share without a within-restaurant change. Common-support comparisons answer a narrower population question.
+
+M2, Section 2.16.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Identity Across Files}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A restaurant address is a candidate key that requires checks.
+\item Standardizing spelling can repair formatting differences.
+\item Overaggressive matching can merge separate locations.
+\end{slidebullets}
+\vfill
+\note{Track duplicates before and after normalization. Location identity and status measurement are separate tasks. A unique normalized string does not alone prove a unique physical establishment.
+
+M2, Section 2.16.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Coding Exercise: A Data Assessment}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Construct a roster-first activity table.
+\item Report key uniqueness, unmatched rows, and zero-event customers.
+\item Compare the fixed and conditional activity measures.
+\end{slidebullets}
+\vfill
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S02 for the hand-checkable example. For the real case, use the mHealth common.py and m01.py programs in the stated dependency order. Their full source and environment appear in the lecture notes.
+
+M2, Section 2.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{AI Review of a Parser}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Supply the allowed statuses and a tiny labeled example.
+\item Require an explicit unknown category for new statuses.
+\item Compare parsed totals with an independently calculated source total.
+\end{slidebullets}
+\vfill
+\note{A program that treats every unrecognized status as available can create artificial improvements. A counterexample containing a new status tests this failure directly.
+
+M2, Section 2.16.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{A Data Dictionary for Decisions}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item State the unit, key, timing, and units of each variable.
+\item Record source versions and transformation rules.
+\item Separate observed values, calculated quantities, and imposed assumptions.
+\end{slidebullets}
+\vfill
+\note{A reader should be able to trace a plotted rate to its numerator and denominator without guessing the meaning of a field name.
+
+M2, Section 2.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Privacy and Collection Choices}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Collect the fields needed for the stated decision.
+\item Retain source permissions and deletion or retention conditions.
+\item Check whether a linkage increases the risk of identifying a person.
+\end{slidebullets}
+\vfill
+\note{Combining datasets can change what can be inferred even when each file omits names. Data minimization is part of the analytical design, and dataset-specific restrictions remain applicable.
+
+ETHICS\_AND\_REGULATION.md, M2.}
+\end{frame}
+\begin{frame}{Measurement Discussion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Could recorded activity rise because low-activity users disappear?
+\item Would deleting unmatched days change the target population?
+\item What evidence would establish a mechanical failure?
+\end{slidebullets}
+\vfill
+\note{Conditioning on observed users can raise activity among those remaining. An inner join changes the observed food-log population. A verified failure diagnosis requires information beyond online ordering availability.
+
+M2, Section 2.16, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\end{document}

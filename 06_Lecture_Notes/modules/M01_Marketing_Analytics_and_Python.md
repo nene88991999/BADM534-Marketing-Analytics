@@ -293,7 +293,7 @@ The join declares a one-to-one relationship and records unmatched keys. The smal
 Python source: [m01.py](../../03_Data_and_Code/mHealth/recurring_examples/m01.py). From its directory, run `python m01.py`.
 
 ```python
-"""Audit the cohort, repeated totals, and the separate daily file."""
+"""Assess the cohort, repeated totals, and the separate daily file."""
 
 import json
 import pandas as pd
@@ -333,13 +333,13 @@ print(json.dumps(result, indent=2))
 
 Structural checks stop calculations that violate their stated observation unit. A duplicate key in a daily lookup can multiply food records, so it must be resolved before joining. Review flags serve a different purpose: they identify observations whose meaning needs investigation. The cohort contains 52,838 rows equal on the selected fields of user, day, normalized description, category, and calories. Those fields omit event timestamps and meal identifiers. Repeated servings can therefore produce equal rows. Automatically dropping them would impose an unsupported definition of duplication.
 
-The audit finds 206 food rows with missing categories, one negative item calorie value, and 23 days with a nonpositive sum of item calories. The calorie-share calculation consequently excludes 24 days. By contrast, 319 days have a nonpositive reported daily total. These counts differ because the item sum and reported total are separate measurements. Their discrepancy exceeds one calorie unit on 23,729 days. These flags can overlap and must not be added as if they represented disjoint exclusions.
+The assessment finds 206 food rows with missing categories, one negative item calorie value, and 23 days with a nonpositive sum of item calories. The calorie-share calculation consequently excludes 24 days. By contrast, 319 days have a nonpositive reported daily total. These counts differ because the item sum and reported total are separate measurements. Their discrepancy exceeds one calorie unit on 23,729 days. These flags can overlap and must not be added as if they represented disjoint exclusions.
 
 A value outside a chosen review range is evidence for inspection, not proof of an error. The reported daily calorie median is 1,475.63, and the range is 0 to 9,190. A review flag below 100 or above 5,000 marks 651 days. Those thresholds are imposed sensitivity choices. They do not establish nutritional adequacy or identify incorrect reports. Preserve the released values, add flags, document the rule for each analysis, and report the resulting sample. M2 compares nutrition-informed alternatives; M3 repeats a regression after a stated restriction.
 
 A useful AI coding request is: “Create separate structural checks and review flags. Stop on a duplicate daily key, preserve repeated food entries, count overlapping flags separately, and return the retained sample for each calculation.” Verify the proposed implementation with a two-entry day whose repeated total is 100 and whose calorie shares are 0.9 and 0.1. It must produce a daily total of 100 and variety of 0.18. A gap from January 1 to January 3 must remain a missing January 2 observation. The executable counterexamples are in `test_logic.py`.
 
-Python source: [audit.py](../../03_Data_and_Code/mHealth/recurring_examples/audit.py). From its directory, run `python audit.py`.
+Python source: [assessment.py](../../03_Data_and_Code/mHealth/recurring_examples/assessment.py). From its directory, run `python assessment.py`.
 
 ```python
 """Separate structural failures, review flags, and analysis-specific exclusions."""
@@ -372,7 +372,7 @@ def daily_flags(daily):
     return flags
 
 
-def run_audit():
+def run_assessment():
     food, daily, baskets = load_inputs()
     assert food.Userid.notna().all() and food.date.notna().all()
     assert food.date.between("2016-01-01", "2016-12-31").all()
@@ -408,12 +408,12 @@ def run_audit():
         "fixed_age_max": int(health.Age_at_2016_01_01.max()),
         "nonpositive_weight_rows": int(health.Currentweight.le(0).sum()),
     }
-    save_result("audit", result)
+    save_result("assessment", result)
     print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
-    run_audit()
+    run_assessment()
 ```
 
 ## 1.9 Python Calculations for the Synthetic Cases
@@ -487,9 +487,9 @@ assert orders == {"O1": 25, "O2": 12}
 print(json.dumps(r, indent=2))
 ```
 
-## 1.10 mHealth: An Auditable Monthly Business Review
+## 1.10 mHealth: A Verifiable Monthly Business Review
 
-An mHealth manager needs to decide whether a decline in food entries warrants attention to customer engagement. Entry counts combine the number of eligible customers, the length of the reporting month, the frequency of logging, and the intensity of logging on observed days. A decline can arise from any of these components. The comparison becomes interpretable when the eligible population is fixed before the reporting periods and every component has an explicit denominator.
+\noindent An mHealth manager needs to decide whether a decline in food entries warrants attention to customer engagement. Entry counts combine the number of eligible customers, the length of the reporting month, the frequency of logging, and the intensity of logging on observed days. A decline can arise from any of these components. The comparison becomes interpretable when the eligible population is fixed before the reporting periods and every component has an explicit denominator.
 
 Define the population as users in the teaching cohort with at least one observed day before May 1, 2016. All members remain in the May and June denominators, including those with no logs in a month. A missing day contributes zero to the indicator for an observed log; its food consumption remains unobserved. For month $t$, the number of entries satisfies the accounting identity
 
@@ -517,7 +517,7 @@ The [claude-ecom reference](https://github.com/takechanman1228/claude-ecom) sepa
 Python source: [reporting.py](../../03_Data_and_Code/mHealth/recurring_examples/reporting.py). From its directory, run `python reporting.py`.
 
 ```python
-"""Compute an auditable, fixed-cohort mHealth business review locally."""
+"""Compute a verifiable, fixed-cohort mHealth business review locally."""
 
 import json
 import pandas as pd

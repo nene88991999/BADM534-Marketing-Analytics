@@ -1,0 +1,244 @@
+\input{theme.tex}
+\title{Marketing Analytics}
+\subtitle{Experiments and Incremental Value}
+\author{By Nathan Yang}
+\date{Session 09}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/experiment_bridges.png}};
+\end{tikzpicture}
+\note{Random assignment balances potential outcomes in expectation. The comparison still requires well-defined outcomes, complete measurement, and an appropriate unit of assignment.
+
+Original conceptual illustration. 05\_Slides/assets/PROVENANCE.md.}
+\end{frame}
+\begin{frame}{An Email-Campaign Decision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Eligible customers receive either an email or no email.
+\item Measure purchases over a fixed response window.
+\item The decision concerns contribution per assigned customer.
+\end{slidebullets}
+\vfill
+\note{Assignment remains the denominator even when some customers do not open the email. Conditioning on opening selects a post-assignment group.
+
+M6, Section 6.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Potential Outcomes}
+\usebeamercolor[fg]{normal text}
+\noindent For eligible customer $i$, define outcomes with and without assignment.
+\medskip
+\[
+\tau=\E[Y_i(1)-Y_i(0)]
+\]
+\medskip
+\noindent Each customer has one observed outcome under the realized assignment.
+\note{The average treatment effect concerns the specified eligible population and treatment implementation. The assignment design supplies the comparison needed to estimate the missing counterfactual mean.
+
+M6, Section 6.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Selection Creates an Alternative Explanation}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_dag.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Randomized assignment is distinct from engagement-driven email opening.\par}
+\note{Control variables should follow the causal structure and timing. Conditioning on a variable affected by treatment can change the estimand or introduce selection.
+
+M6, Section 6.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Email Assignment and Purchase}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrrr}
+\toprule
+Assigned Group & Customers & Purchases & Rate \\
+\midrule
+Email & 1,000 & 130 & 13\% \\
+Control & 1,000 & 100 & 10\% \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Synthetic experiment. Each customer has one binary outcome.
+\vfill
+\note{The difference is three percentage points. Relative to a 10\% control rate, that equals a 30\% relative increase. The two descriptions use different denominators.
+
+M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{An Assignment-Effect Estimate}
+\usebeamercolor[fg]{normal text}
+\noindent Compare purchase rates across all assigned customers.
+\medskip
+\[
+\widehat\tau=\frac{130}{1000}-\frac{100}{1000}=0.03
+\]
+\medskip
+\noindent The estimated effect is three additional purchases per 100 assigned customers.
+\note{This is an intention-to-treat comparison under the stated randomized design. An opened-email comparison would use a different selected population.
+
+M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Sampling Uncertainty}
+\usebeamercolor[fg]{normal text}
+\noindent Use an independent-group approximation for the synthetic binary outcomes.
+\medskip
+\[
+\widehat{\operatorname{SE}}=\sqrt{\frac{.13(.87)}{1000}+\frac{.10(.90)}{1000}}\approx .0143
+\]
+\medskip
+\noindent An approximate 95\% interval is 0.21 to 5.79 percentage points.
+\note{The interval uses a large-sample normal approximation and independent customer assignments. It does not include systematic outcome measurement errors or interference.
+
+M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Contribution and Decision Uncertainty}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item An extra purchase contributes 40 dollars.
+\item Delivery costs 0.50 dollars per assigned customer.
+\item Estimated incremental contribution is 0.70 dollars per customer.
+\end{slidebullets}
+\vfill
+\note{The same transformation of the effect interval gives approximately -0.42 to 1.82 dollars. The calculation assumes no additional discount cost and fixed contribution per additional purchase.
+
+M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}[fragile]{The Experiment Calculation}
+\usebeamercolor[fg]{normal text}
+\noindent Reproduce the effect and its contribution implication.
+\begin{lstlisting}
+from math import sqrt
+p1, p0, n = 0.13, 0.10, 1000
+effect = p1 - p0
+se = sqrt(p1*(1-p1)/n + p0*(1-p0)/n)
+interval = (effect - 1.96*se, effect + 1.96*se)
+profit = 40 * effect - 0.50
+assert round(profit, 2) == 0.70
+\end{lstlisting}
+{\small The point estimate is positive while the contribution interval includes losses.\par}
+\note{If treatment changes basket size, returns, or margins, purchase incidence alone no longer gives the contribution effect. Measuring contribution directly can better match the decision.
+
+M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Power Begins With the Useful Effect}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Choose the smallest effect that could change the action.
+\item Use the expected outcome variance and assignment unit.
+\item Halving the target effect approximately quadruples sample size.
+\end{slidebullets}
+\vfill
+\note{At baseline probability 0.10, a two-point effect, two-sided 5\% level, and 80\% power, a common-variance normal approximation gives 3,528 customers per arm.
+
+M6, Section 6.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Implementation Checks}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Reconcile assigned counts and intended allocation.
+\item Check missing outcomes and tracking by assignment.
+\item Preserve the planned outcome horizon.
+\item Investigate exclusions that depend on treatment response.
+\end{slidebullets}
+\vfill
+\note{A randomization protocol does not prevent differential tracking failures. Sample-ratio discrepancies can reveal implementation problems. Chance covariate imbalance alone does not invalidate a correctly implemented randomization.
+
+M6, Section 6.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Prior Outcomes and Precision}
+\usebeamercolor[fg]{normal text}
+\noindent Adjust the outcome using a pre-treatment measure $X$.
+\medskip
+\[
+Y_i^{\mathrm{adj}}=Y_i-\theta(X_i-\bar X)
+\]
+\medskip
+\noindent A predictive baseline can reduce residual variation while preserving the assignment comparison.
+\note{CUPED uses a pre-treatment covariate and an appropriately specified adjustment. The variance reduction does not create treatment variation or repair selection into treatment.
+
+M6, Section 6.15, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{mHealth Baseline Activity Improves Precision}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_cuped_precision.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Planning calculation uses historical user-level variance and a five-point target.\par}
+\note{These are power-planning implications of observed historical variances, not a realized intervention effect. The future population, outcome process, and assignment need to match the planning conditions.
+
+M6, Section 6.15, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Coding Exercise: An Experiment Plan}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Compute the synthetic email effect and interval.
+\item Change contribution, delivery cost, and the target effect.
+\item Specify an mHealth recommendation assignment with a fixed user denominator.
+\end{slidebullets}
+\vfill
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation.
+
+M6, Section 6.13, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Interference and Assignment Units}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Customers can share offers or affect one another.
+\item Stores can divert purchases from nearby locations.
+\item The assignment unit should reflect the likely spillovers.
+\end{slidebullets}
+\vfill
+\note{If one treated store gains by taking business from a comparison store, the store-level difference can exceed the chain-wide gain. Cluster assignment changes both interpretation and precision.
+
+M6, Section 6.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{A Treatment Arm Needs a Defensible Design}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Random assignment identifies a comparison.
+\item The content of each treatment still affects the customers who receive it.
+\item Include customer outcomes, refusal, and stopping conditions.
+\end{slidebullets}
+\vfill
+\note{Randomization does not establish that a deceptive or harmful interface is acceptable. Separate analytical identification from the substantive and regulatory evaluation of each proposed treatment.
+
+ETHICS\_AND\_REGULATION.md, M6.}
+\end{frame}
+\begin{frame}{Experiment Discussion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Would a conversion gain cover the campaign cost?
+\item What changes if only email openers enter the analysis?
+\item Which guardrail outcome could reverse the rollout decision?
+\end{slidebullets}
+\vfill
+\note{Contribution uncertainty remains consequential even with a positive purchase effect. Returns, satisfaction, and service burden can alter the decision. The outcome set should reflect the intervention.
+
+M6, Section 6.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\end{document}

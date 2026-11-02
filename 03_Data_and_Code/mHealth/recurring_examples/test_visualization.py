@@ -4,7 +4,7 @@ from copy import deepcopy
 import unittest
 import numpy as np
 import pandas as pd
-from chart_audit import check_chart
+from chart_assessment import check_chart
 from visualization import MONTHS, ecdf, paired_summary, prepare
 
 
@@ -43,7 +43,7 @@ class VisualizationLogic(unittest.TestCase):
         for key in ["change_pp", "ci_low_pp", "ci_high_pp"]:
             self.assertAlmostEqual(result[key], 10)
 
-    def test_chart_audit_rejects_units_population_and_clipping(self):
+    def test_chart_assessment_rejects_units_population_and_clipping(self):
         evidence = {"months": [{"period": "May", "observed_user_days": 1,
                                  "calendar_user_days": 62}]}
         chart = {"unit": "percent of eligible user-days", "interpretation": "descriptive",

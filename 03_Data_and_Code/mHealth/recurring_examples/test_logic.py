@@ -4,7 +4,7 @@ import unittest
 import numpy as np
 import pandas as pd
 from common import make_daily
-from audit import require_unique
+from assessment import require_unique
 from ranking import evaluation_cases, personal_frequency, ranking_metrics
 from nutrition import goldberg_bounds
 

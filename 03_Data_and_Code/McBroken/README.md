@@ -23,7 +23,7 @@ python run_all.py
 
 This command uses the aggregate CSV files in `data/`, runs five counterexample tests, computes the three analyses, and updates their TikZ sources. It requires no network access. The saved figure PNGs and PDF are rebuilt separately with the lecture-note builder. Python, NumPy, and pandas are sufficient; no API key is needed.
 
-To repeat the full source audit and reconstruct the aggregate teaching tables:
+To repeat the full source assessment and reconstruct the aggregate teaching tables:
 
 ```sh
 python prepare.py
@@ -34,7 +34,7 @@ The default input is the [supplied resource bundle](../../01_Resources/02_M2_Cus
 
 ## Results and Interpretation
 
-- The audit reconciles 3,053,307 US store-date records with the supplied country totals. The 365-date calendar contains 356 observed US dates, nine missing US dates, and three observed dates with fewer than 2,000 records.
+- The assessment reconciles 3,053,307 US store-date records with the supplied country totals. The 365-date calendar contains 356 observed US dates, nine missing US dates, and three observed dates with fewer than 2,000 records.
 - There are 29,123 address keys and 13,821 exact coordinate pairs. Coordinates are a linkage diagnostic. No coordinate-based deduplication is imposed.
 - The equal-day unavailable percentage is 13.18%; pooling records gives 13.37%. Alternative count thresholds are reported in [coverage_sensitivity.csv](results/coverage_sensitivity.csv).
 - Around the October 28, 2024, policy effective date, a descriptive US-minus-Canada pre/post contrast is +0.65 percentage points. Using the UK gives +13.37 points. These are calculations of the contrast, with no established causal interpretation.

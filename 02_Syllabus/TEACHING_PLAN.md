@@ -4,13 +4,13 @@ By Nathan Yang
 
 ## Meeting Structure
 
-Plan for 15 meetings of 170 minutes, with one spring-break week outside those meetings. The historical syllabus supplies the count and duration. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../Lectures/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
+Plan for 15 meetings of 170 minutes, with one spring-break week outside those meetings. The historical syllabus supplies the count and duration. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
 
 Calendar dates, graded presentation requirements, assessment weights, deadlines, and course-wide AI rules remain to be set. This teaching plan does not release those requirements. `current_syllabus` and `current_schedule` in [course.json](../course.json) remain null.
 
 ## Learning Objectives
 
-Students should be able to define a marketing decision and the evidence needed to inform it; construct and audit a customer dataset; interpret descriptive, predictive, and causal results; evaluate product, targeting, and retention decisions; and reproduce an analysis with Python. AI-assisted coding is integrated into the specification, implementation, verification, and interpretation of each analysis.
+Students should be able to define a marketing decision and the evidence needed to inform it; construct and assess a customer dataset; interpret descriptive, predictive, and causal results; evaluate product, targeting, and retention decisions; and reproduce an analysis with Python. AI-assisted coding is integrated into the specification, implementation, verification, and interpretation of each analysis.
 
 Students should also be able to distinguish firm outcomes from customer value, identify consequences omitted by a commercial objective, and assess which public legal source applies to a proposed action. A defensible recommendation states the population, estimand, assumptions, uncertainty, customer consequences, and relevant regulatory scope.
 
@@ -37,4 +37,4 @@ Ethics and regulation recur within the methods. The [module integration guide](.
 
 ## Materials and Future Revisions
 
-The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations and runnable programs. The [Lectures folder](../Lectures/README.md) provides PDFs, editable LaTeX, and complete Markdown companions. New ethics and regulation resources should be reconciled with both sources and with this plan. Legal claims require a current primary source and a statement of its scope and status.
+The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations and runnable programs. The [Slides folder](../05_Slides/README.md) provides PDFs, editable LaTeX, and complete Markdown companions. New ethics and regulation resources should be reconciled with both sources and with this plan. Legal claims require a current primary source and a statement of its scope and status.

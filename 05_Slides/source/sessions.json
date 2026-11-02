@@ -1,0 +1,2880 @@
+[
+  {
+    "number": 1,
+    "title": "Marketing Decisions and AI-Assisted Coding",
+    "stem": "S01_Marketing_Decisions_and_AI_Coding",
+    "module": "M1",
+    "objectives": [
+      "Specify an action, observation unit, information set, and outcome horizon.",
+      "Translate a small marketing calculation into readable Python.",
+      "Verify generated code using identities and counterexamples."
+    ],
+    "slides": [
+      {
+        "kind": "art",
+        "title": "A Merchant Chooses a Market",
+        "image": "decision_river",
+        "description": "A merchant consults a laptop and ledger while two boats travel toward different customer markets. The landscape represents a choice under incomplete information.",
+        "notes": "A useful analysis connects the available evidence to a feasible decision. Different markets can require different products, margins, and forecasts.",
+        "source": "Original conceptual illustration. 05_Slides/assets/PROVENANCE.md."
+      },
+      {
+        "kind": "bullets",
+        "title": "A Renewal Offer",
+        "bullets": [
+          "A subscription firm can contact 5,000 eligible customers.",
+          "The decision concerns incremental contribution over the next 30 days.",
+          "Past spending, consent, and account history are available before contact."
+        ],
+        "notes": "The contact budget constrains the action. A high predicted renewal rate can reflect customers who would renew without an offer. The target must include the additional contribution caused by contact.",
+        "source": "M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Analytical Questions",
+        "bullets": [
+          "Description: how often do customers renew?",
+          "Prediction: who is likely to renew?",
+          "Causal effect: how does an offer change renewal?",
+          "Decision: which contacts generate positive incremental contribution?"
+        ],
+        "notes": "The same customer records can support different analytical objects. Predictive performance evaluates forecasts under the represented conditions. A targeting policy also needs the untreated comparison and relevant costs.",
+        "source": "M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Incremental Contribution",
+        "intro": "For account $i$, compare renewal under an offer and no offer.",
+        "equation": "\\Delta\\pi_i=m_i\\{p_i(1)-p_i(0)\\}-c_i",
+        "interpretation": "Contribution $m_i$ and contact cost $c_i$ are dollars per account over the stated horizon.",
+        "notes": "The formula assumes that the offer cost can be summarized by c and that contribution already deducts relevant variable costs. A discount paid on every treated purchase requires an additional cost term.",
+        "source": "M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Response and Incremental Value",
+        "figure": "../06_Lecture_Notes/figures/M01_response_vs_value.tex",
+        "caption": "Synthetic accounts. Contribution is 100 dollars and contact cost is 3 dollars.",
+        "description": "Account A has treated renewal probability 0.91 and incremental contribution -2 dollars. Account B has probability 0.50 and contribution 7 dollars.",
+        "notes": "A rises from 0.90 to 0.91. B rises from 0.40 to 0.50. The untreated probabilities explain the reversal. These probabilities are imposed teaching inputs.",
+        "source": "M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "The Observation Unit",
+        "bullets": [
+          "A product line, order, customer, and customer-month are different units.",
+          "The key identifies one row at the intended level.",
+          "Aggregation changes the weights used in an average."
+        ],
+        "notes": "A customer with five order lines receives five times the weight of a customer with one line in a line-level mean. Define whether the managerial comparison concerns orders or equally weighted customers.",
+        "source": "M1, Section 1.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "code",
+        "title": "Python Objects and Order Totals",
+        "intro": "Three synthetic product lines belong to two orders.",
+        "code": "lines = [('A', 2, 10), ('A', 1, 5), ('B', 1, 12)]\norders = {}\nfor order, quantity, price in lines:\n    orders[order] = orders.get(order, 0) + quantity * price\ntotal = sum(orders.values())\naov = total / len(orders)\nassert (total, aov) == (37, 18.5)",
+        "check": "Check: total sales are 37 dollars and average order value is 18.50 dollars.",
+        "notes": "The tuple stores an order ID, a quantity, and a unit price. The dictionary accumulates sales by order. The denominator is two orders. Dividing by the three lines gives average line sales.",
+        "source": "M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Functions and Data Contracts",
+        "bullets": [
+          "Inputs have names, types, units, and allowed missing values.",
+          "A function returns a defined output and an exception report.",
+          "Returns, canceled orders, and duplicate lines need explicit rules."
+        ],
+        "notes": "A numeric-looking string requires conversion before arithmetic. A negative quantity may be a legitimate return. A rule should preserve a trace from the original record to its inclusion or exclusion.",
+        "source": "M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Duplicate Lookup Doubles Sales",
+        "figure": "../06_Lecture_Notes/figures/M01_join_multiplication.tex",
+        "caption": "Synthetic join. One 40-dollar order matches two customer records.",
+        "description": "The original order has one row. A duplicate customer lookup produces two joined rows and an apparent 80-dollar total.",
+        "notes": "A many-to-one relationship requires unique customer keys in the lookup. Check key uniqueness before merging and reconcile sales afterward.",
+        "source": "M1, Section 1.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "An AI Coding Request",
+        "bullets": [
+          "Return one row per order and an exceptions table.",
+          "Treat negative quantities as returns under the stated rule.",
+          "Verify the 37-dollar example and reject missing order IDs.",
+          "Explain each transformation before adding the next step."
+        ],
+        "notes": "A useful request specifies analytical behavior and acceptance criteria. The assistant can propose an implementation while the analyst remains responsible for the observation unit and sample rules.",
+        "source": "M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Verification With Counterexamples",
+        "bullets": [
+          "A duplicate lookup must trigger a failed key check.",
+          "An unmatched customer must remain visible in the assessment.",
+          "An empty input needs an explicit result.",
+          "Order totals must reconcile with eligible product lines."
+        ],
+        "notes": "These checks test properties that can fail even when code runs. Repeating the program with the same input confirms reproducibility but does not independently establish correctness.",
+        "source": "M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "mHealth Records",
+        "bullets": [
+          "Food entries describe recorded items on observed user-days.",
+          "The separate daily table covers only part of the food-log history.",
+          "Reported daily calories repeat across item rows."
+        ],
+        "notes": "The released records replace user identifiers and birthdays and perturb weight values. The source daily total is distinct from the sum of item calories. Neither is a direct measure of complete usual intake.",
+        "source": "M1, Section 1.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Join Choice Changes the Sample",
+        "figure": "../06_Lecture_Notes/figures/M01_mhealth_join.tex",
+        "caption": "Released mHealth cohort: 76,804 observed user-days.",
+        "description": "A left join retains all 76,804 user-days. Only 37,634 match the separate daily file, leaving 39,170 unmatched.",
+        "notes": "An inner join would remove more than half the cohort days. Missing calendar days are separate from unmatched rows in a join. The fixed cohort rule preserves within-user histories.",
+        "source": "M1, Section 1.8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: An Order Assessment",
+        "bullets": [
+          "Implement aggregation with a coding assistant.",
+          "Add a return, a missing identifier, and a duplicated lookup key.",
+          "Report how each change affects rows, totals, and exceptions."
+        ],
+        "notes": "Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.py S01. Retain the original three-line example as a hand-check. The output should distinguish accepted records from records requiring a decision.",
+        "source": "M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Reproducible Analysis",
+        "bullets": [
+          "Relative paths identify inputs and outputs.",
+          "A fresh run reconstructs results without hidden notebook state.",
+          "Record package versions and consequential AI contributions."
+        ],
+        "notes": "A random seed reproduces a particular random computation under a given implementation. It does not establish valid sampling or eliminate changes across software versions.",
+        "source": "M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Campaign Specification",
+        "bullets": [
+          "Define the eligible customers and contact date.",
+          "State the contribution horizon and relevant costs.",
+          "Identify the evidence needed for the untreated outcome.",
+          "Choose a numerical check that would reveal a wrong denominator."
+        ],
+        "notes": "The specification should state one feasible action and the comparison that supports it. A randomized pilot may be the next useful step when incremental response is unresolved.",
+        "source": "M1, Section 1.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Customer Data in an AI Workflow",
+        "bullets": [
+          "Use only data authorized for the tool and task.",
+          "Minimize fields and use synthetic examples when they suffice.",
+          "Check where uploads, logs, and generated files are stored."
+        ],
+        "notes": "Public availability does not establish permission for every reuse. Pseudonymized histories can retain identifying patterns. A coding request should specify the permitted input and destination before any transfer.",
+        "source": "Course agent guide and ETHICS_AND_REGULATION.md, M1."
+      },
+      {
+        "kind": "bullets",
+        "title": "Decision Discussion",
+        "bullets": [
+          "Which customer receives the renewal offer?",
+          "What changes if every treated renewal receives a discount?",
+          "Which future variable would invalidate a Monday-morning forecast?"
+        ],
+        "notes": "Under the stated synthetic inputs, B has higher incremental contribution. A discount paid to every renewing recipient reduces value by the treated renewal probability times the discount. A Wednesday service contact is unavailable for a Monday forecast.",
+        "source": "M1, Section 1.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      }
+    ],
+    "links": [
+      "[M1 lecture notes](../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[mHealth dictionary](../03_Data_and_Code/mHealth/DATA_DICTIONARY.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Implement and assess order aggregation with three deliberately altered inputs.",
+    "application": "Write a 30-day coupon specification and identify its missing causal evidence."
+  },
+  {
+    "number": 2,
+    "title": "Customer Data and Measurement",
+    "stem": "S02_Customer_Data_and_Measurement",
+    "module": "M2",
+    "objectives": [
+      "Construct customer metrics with explicit populations and denominators.",
+      "Separate missing observations, zeros, and unmatched keys.",
+      "Assess changing coverage in mHealth and McBroken."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Customer-Activity Decision",
+        "bullets": [
+          "An mHealth manager wants to understand reduced recorded use.",
+          "The comparison follows the same eligible customers over time.",
+          "A missing record can reflect nonuse, incomplete observation, or data coverage."
+        ],
+        "notes": "Logging is an observable app behavior. Complete dietary consumption and health outcomes require additional measurement. A metric must state the population represented in each period.",
+        "source": "M2, Section 2.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Customer Table",
+        "bullets": [
+          "Begin with the eligible-customer roster.",
+          "Aggregate events to the customer-period level.",
+          "Left join the summaries to the roster.",
+          "Fill zero only when absence has the defined meaning of no recorded event."
+        ],
+        "notes": "Starting from events omits customers with no observed events. Filling a missing nutrition measurement with zero changes its meaning. The roster and observation window establish the denominator.",
+        "source": "M2, Section 2.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Two Activity Measures",
+        "intro": "Let $D_i$ be observed logging days and $T$ the calendar days in a common window.",
+        "equation": "L_i=\\frac{D_i}{T},\\qquad \\bar L=\\frac{1}{N}\\sum_{i=1}^{N}L_i",
+        "interpretation": "Each eligible customer receives equal weight, including customers with no recorded days.",
+        "notes": "The mean describes recorded use per available calendar day. Averaging only customers with positive D conditions on activity and can obscure declining use.",
+        "source": "M2, Section 2.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Conditional and Fixed Denominators",
+        "figure": "../06_Lecture_Notes/figures/M02_logging_denominators.tex",
+        "caption": "mHealth activity depends on who remains in the denominator.",
+        "description": "The figure contrasts a fixed eligible-user denominator with a denominator conditional on observed activity. The two series answer different questions.",
+        "notes": "The fixed cohort supports a comparison of changes in recorded use for the same customers. A conditional mean describes behavior among the customers still observed.",
+        "source": "M2, Section 2.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Repeated Totals",
+        "bullets": [
+          "An item row can contain a copied daily total.",
+          "Five copies of 1,132.79 sum to 5,663.95.",
+          "The item-calorie sum on that example day is 1,132.7852."
+        ],
+        "notes": "The five-fold inflation follows from repeated measurement fields, not a nutritional mechanism. One daily value can be retained after checking agreement within the user-day. Small rounding differences do not justify ignoring larger discrepancies.",
+        "source": "M1, Section 1.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Structural Errors and Review Flags",
+        "bullets": [
+          "A duplicate daily key violates a one-row-per-day contract.",
+          "Equal item descriptions can represent repeated servings.",
+          "An extreme value warrants review under a stated rule."
+        ],
+        "notes": "Timestamp and meal identifiers are absent from the selected equality fields in the mHealth assessment. Dropping all equal records would impose a particular event definition. Preserve source values and add explicit flags.",
+        "source": "M1, Section 1.8.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Fixed Customer Denominator",
+        "intro": "Synthetic counts follow all four eligible customers.",
+        "code": "days = {'A': 20, 'B': 10, 'C': 0, 'D': 0}\nfixed = sum(days.values()) / (4 * 30)\nactive = [x for x in days.values() if x > 0]\nconditional = sum(active) / (len(active) * 30)\nassert round(fixed, 4) == 0.25\nassert round(conditional, 4) == 0.50",
+        "check": "The fixed-roster rate is 25%. The active-user rate is 50%.",
+        "notes": "Both numbers use the same observed days. The denominator changes from 120 potential customer-days to 60. These are synthetic counts.",
+        "source": "M2, Section 2.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Cohorts and Customer Age",
+        "bullets": [
+          "Group customers by a defined entry period.",
+          "Compare the same time since entry.",
+          "Mark later outcomes as unobserved when the horizon has not elapsed."
+        ],
+        "notes": "A recent cohort has no twelve-month outcome yet. Treating that cell as zero creates false attrition. The event defining entry must also remain stable across cohorts.",
+        "source": "M2, Section 2.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Retention Has a Triangular Support",
+        "figure": "../06_Lecture_Notes/figures/M02_cohort_triangle.tex",
+        "caption": "Synthetic cohort structure. Blank cells have no elapsed follow-up.",
+        "description": "Older cohorts have more observable follow-up periods. The missing upper-age cells for recent cohorts are unobserved rather than zero retention.",
+        "notes": "Calendar time, tenure, and acquisition cohort are different dimensions. A comparison at fixed tenure avoids giving newer customers shorter opportunities to remain active.",
+        "source": "M2, Section 2.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "McBroken as a Measurement Case",
+        "bullets": [
+          "The records describe ice-cream ordering availability.",
+          "A missing snapshot has an unknown status.",
+          "Restaurant coverage and status recognition can change over time."
+        ],
+        "notes": "Order unavailability can reflect conditions besides a verified mechanical breakdown. A parser must distinguish known available, known unavailable, and unrecognized states. The source assessment and data dictionary define those categories.",
+        "source": "M2, Section 2.16, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Coverage Changes the Percentage",
+        "figure": "../06_Lecture_Notes/figures/M02_mcbroken_coverage.tex",
+        "caption": "McBroken comparisons preserve the observed-store denominator.",
+        "description": "The figure separates changing national coverage from comparisons on common observed support. Missing dates and unrecognized statuses do not become observed availability.",
+        "notes": "A change in the set of included restaurants can change the national share without a within-restaurant change. Common-support comparisons answer a narrower population question.",
+        "source": "M2, Section 2.16.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Identity Across Files",
+        "bullets": [
+          "A restaurant address is a candidate key that requires checks.",
+          "Standardizing spelling can repair formatting differences.",
+          "Overaggressive matching can merge separate locations."
+        ],
+        "notes": "Track duplicates before and after normalization. Location identity and status measurement are separate tasks. A unique normalized string does not alone prove a unique physical establishment.",
+        "source": "M2, Section 2.16.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Data Assessment",
+        "bullets": [
+          "Construct a roster-first activity table.",
+          "Report key uniqueness, unmatched rows, and zero-event customers.",
+          "Compare the fixed and conditional activity measures."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S02 for the hand-checkable example. For the real case, use the mHealth common.py and m01.py programs in the stated dependency order. Their full source and environment appear in the lecture notes.",
+        "source": "M2, Section 2.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "AI Review of a Parser",
+        "bullets": [
+          "Supply the allowed statuses and a tiny labeled example.",
+          "Require an explicit unknown category for new statuses.",
+          "Compare parsed totals with an independently calculated source total."
+        ],
+        "notes": "A program that treats every unrecognized status as available can create artificial improvements. A counterexample containing a new status tests this failure directly.",
+        "source": "M2, Section 2.16.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Data Dictionary for Decisions",
+        "bullets": [
+          "State the unit, key, timing, and units of each variable.",
+          "Record source versions and transformation rules.",
+          "Separate observed values, calculated quantities, and imposed assumptions."
+        ],
+        "notes": "A reader should be able to trace a plotted rate to its numerator and denominator without guessing the meaning of a field name.",
+        "source": "M2, Section 2.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Privacy and Collection Choices",
+        "bullets": [
+          "Collect the fields needed for the stated decision.",
+          "Retain source permissions and deletion or retention conditions.",
+          "Check whether a linkage increases the risk of identifying a person."
+        ],
+        "notes": "Combining datasets can change what can be inferred even when each file omits names. Data minimization is part of the analytical design, and dataset-specific restrictions remain applicable.",
+        "source": "ETHICS_AND_REGULATION.md, M2."
+      },
+      {
+        "kind": "bullets",
+        "title": "Measurement Discussion",
+        "bullets": [
+          "Could recorded activity rise because low-activity users disappear?",
+          "Would deleting unmatched days change the target population?",
+          "What evidence would establish a mechanical failure?"
+        ],
+        "notes": "Conditioning on observed users can raise activity among those remaining. An inner join changes the observed food-log population. A verified failure diagnosis requires information beyond online ordering availability.",
+        "source": "M2, Section 2.16, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      }
+    ],
+    "links": [
+      "[M2 lecture notes](../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[mHealth assessment](../03_Data_and_Code/mHealth/recurring_examples/README.md)",
+      "[McBroken data and code](../03_Data_and_Code/McBroken/README.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Build roster-first summaries and assess keys, zero-event users, and unknown statuses.",
+    "application": "Compare national availability with a common-support restaurant sample."
+  },
+  {
+    "number": 3,
+    "title": "Visualization and Data Quality",
+    "stem": "S03_Visualization_and_Data_Quality",
+    "module": "M2",
+    "objectives": [
+      "Choose displays that preserve the intended comparison.",
+      "Explain composition reversals and uncertainty.",
+      "Use domain knowledge to define transparent sensitivity analyses."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Campaign Comparison",
+        "bullets": [
+          "Campaign B converts more new and returning customers within each group.",
+          "Its aggregate conversion rate is lower.",
+          "The customer mix determines which comparison the aggregate makes."
+        ],
+        "notes": "The synthetic campaigns differ in the proportion of returning customers. The group rates and the aggregate can move in opposite directions without an arithmetic error.",
+        "source": "M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Customer Mix Reverses the Ranking",
+        "figure": "../06_Lecture_Notes/figures/M02_mix_reversal.tex",
+        "caption": "Synthetic campaigns. Both within-group rates rise by one percentage point.",
+        "description": "Campaign A converts 9% of new and 80% of returning customers. B converts 10% and 81%. The observed rates are 44.5% and 33.7%, while a common 50:50 mix gives 44.5% and 45.5%.",
+        "notes": "Standardization holds group weights fixed. It supplies a common-population descriptive comparison. Causal interpretation would require evidence about assignment and comparability within groups.",
+        "source": "M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "equation",
+        "title": "A Standardized Conversion Rate",
+        "intro": "Use common customer-group weights $w_g$ for each campaign $c$.",
+        "equation": "\\bar p_c^{\\mathrm{std}}=\\sum_g w_g p_{cg},\\qquad \\sum_g w_g=1",
+        "interpretation": "Changing the weights changes the population represented by the rate.",
+        "notes": "The same weights should apply to every campaign in the stated comparison. The group-specific rates can still reflect selection or other differences within groups.",
+        "source": "M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Chart Choice Follows the Question",
+        "bullets": [
+          "Aligned positions compare magnitudes.",
+          "Lines compare changes over ordered time.",
+          "Distributions reveal spread and concentration.",
+          "Paired displays preserve within-customer changes."
+        ],
+        "notes": "A mean alone can hide whether a change is widespread or concentrated in a small set of customers. Chart choice should follow the estimand and the decision.",
+        "source": "M2, Section 2.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Mean Decline Can Hide a Stable Median",
+        "figure": "../06_Lecture_Notes/figures/M02_logging_distribution.tex",
+        "caption": "mHealth comparison uses paired customers and a common observation window.",
+        "description": "The empirical distributions and paired changes distinguish the average change from the fraction of customers whose activity changed. A few large declines can move the mean.",
+        "notes": "Distribution spread describes variation among customer outcomes. Uncertainty about an average describes how precisely that average is estimated. They require different displays.",
+        "source": "M2, Section 2.14.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Uncertainty and Dependence",
+        "bullets": [
+          "Repeated days for one customer share common influences.",
+          "Customer-level resampling preserves each customer history.",
+          "A confidence interval and a percentile range describe different objects."
+        ],
+        "notes": "An independent-day bootstrap treats days as separate sampling units and can understate uncertainty when observations within a user are correlated. A paired difference should also preserve the pairing.",
+        "source": "M3, Section 3.6.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Nutrition Knowledge and Measurement",
+        "bullets": [
+          "A recorded food log can omit meals and portions.",
+          "Energy plausibility depends on the measurement instrument and physiology.",
+          "Age, body size, activity, and recording duration affect screening."
+        ],
+        "notes": "These records contain perturbed weights and undocumented source codes. The course example does not treat an undocumented gender code as validated physiological sex or a goal code as measured activity.",
+        "source": "M2, Section 2.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Sample Restrictions Change the Comparison",
+        "figure": "../06_Lecture_Notes/figures/M02_mhealth_screening.tex",
+        "caption": "mHealth screening alternatives are explicit analysis choices.",
+        "description": "The figure compares sample definitions and their consequences. Structural checks, age restrictions, and imposed calorie ranges serve different purposes.",
+        "notes": "An imposed calorie range is a sensitivity analysis, not an individual diagnosis of adequate intake. Report the observations retained under each rule and compare the resulting estimands.",
+        "source": "M2, Section 2.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Energy-Plausibility Screens",
+        "bullets": [
+          "An intake-to-requirement comparison needs defined inputs.",
+          "Unobserved physiological inputs remain missing.",
+          "A hypothetical Goldberg calculation teaches the method separately from the logs."
+        ],
+        "notes": "The Goldberg example in the notes is an explicitly hypothetical scenario. Its inputs should not be silently imputed from undocumented codes. Screening validity depends on the instrument and population.",
+        "source": "M2, Section 2.11.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Interactive Comparisons",
+        "bullets": [
+          "Keep comparable panels on common scales.",
+          "Display the eligible population and current selection.",
+          "Preserve customers with no recorded days when the estimand includes them."
+        ],
+        "notes": "Changing a slider can change the population, the denominator, and the axis range simultaneously. These changes should remain visible and should be checked against an aggregate table.",
+        "source": "M2, Section 2.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Composition Check",
+        "intro": "Synthetic within-group rates are 9%, 80%, 10%, and 81%.",
+        "code": "rates_a = [0.09, 0.80]\nrates_b = [0.10, 0.81]\ncommon_a = sum(rates_a) / 2\ncommon_b = sum(rates_b) / 2\nobserved_b = (2 * rates_b[0] + rates_b[1]) / 3\nassert round(common_b - common_a, 2) == 0.01",
+        "check": "B improves by one point under common weights despite its lower observed aggregate.",
+        "notes": "The observed B mix assigns two-thirds of its customers to the new-customer group. This calculation is descriptive and uses imposed rates.",
+        "source": "M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Chart Assessment",
+        "bullets": [
+          "Generate a rate chart from a verified aggregate table.",
+          "Alter the axis range, cohort filter, and denominator one at a time.",
+          "Explain which changes alter the substantive comparison."
+        ],
+        "notes": "The small example runs with ../03_Data_and_Code/Lecture_Examples/session_examples.py S03. The complete mHealth visualization program and interactive chart provide the real-data extension. Verify values separately from rendered readability.",
+        "source": "M2, Section 2.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Public-Signal Measurement Problem",
+        "bullets": [
+          "A product can acquire a new page title while demand stays unchanged.",
+          "A single-title series then misses part of its recorded attention.",
+          "Coverage, redirects, and missing dates require an assessment."
+        ],
+        "notes": "Pageviews measure attention to selected pages. They do not directly measure paid demand or unique customers. Alias aggregation also needs checks for duplicate coverage.",
+        "source": "M2, Section 2.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Title Changes and Apparent Declines",
+        "figure": "../06_Lecture_Notes/figures/M02_genai_titles.tex",
+        "caption": "The supplied public pageview capture uses observed title histories.",
+        "description": "A single-title view and an alias-aware view differ when the product identity moves across titles. The display retains the distinction between missing coverage and a measured zero.",
+        "notes": "The GenAI measurement program validates date and title coverage before calculating a product series. Its saved tables are the values behind the plotted comparison.",
+        "source": "M2, Section 2.17.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Evidence in a Management Presentation",
+        "bullets": [
+          "State the decision and supported result.",
+          "Show the comparison, units, and denominator.",
+          "Keep the qualification that could change the action beside the claim."
+        ],
+        "notes": "An executive summary can be concise while retaining consequential uncertainty. A useful chart title states the population and comparison rather than a causal claim unsupported by the design.",
+        "source": "M2, Section 2.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Honest Comparisons",
+        "bullets": [
+          "Keep denominators and scales visible.",
+          "Preserve missing outcomes and relevant subgroup variation.",
+          "Avoid presenting a filtered descriptive pattern as a general causal effect."
+        ],
+        "notes": "A technically correct chart can still communicate a stronger claim than the evidence supports. The reader's likely interpretation matters when selecting a title and comparison.",
+        "source": "ETHICS_AND_REGULATION.md, M2-M3."
+      },
+      {
+        "kind": "bullets",
+        "title": "Visualization Discussion",
+        "bullets": [
+          "Which customers receive weight in the chart?",
+          "Could sample restrictions reverse the recommendation?",
+          "What does the uncertainty interval include?"
+        ],
+        "notes": "The answers should identify whether the unit is an event, a day, or a customer. Sensitivity to inclusion rules can indicate that the decision depends on a narrower population than the headline suggests.",
+        "source": "M2, Section 2.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      }
+    ],
+    "links": [
+      "[M2 lecture notes](../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[Visualization programs and results](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md)",
+      "[Nutrition methods](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Assess chart values, paired changes, scales, and denominator controls.",
+    "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim."
+  },
+  {
+    "number": 4,
+    "title": "Regression and Marketing Interpretation",
+    "stem": "S04_Regression_and_Marketing_Interpretation",
+    "module": "M3",
+    "objectives": [
+      "Interpret coefficients with units and conditioning.",
+      "Diagnose omitted variables, interactions, and dependence.",
+      "Reproduce an association while preserving its time and sample definitions."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "Competitors and Store Sales",
+        "bullets": [
+          "Stores in markets with more competitors can have higher sales.",
+          "Demand attracts firms and also raises sales.",
+          "The managerial question concerns the effect of an additional competitor."
+        ],
+        "notes": "A positive cross-market association can combine the negative competitive effect with the selection of firms into high-demand markets. The mechanism determines which comparison is informative.",
+        "source": "M3, Section 3.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "equation",
+        "title": "A Conditional Mean",
+        "intro": "Relate store sales to observed marketing conditions.",
+        "equation": "Y_i=\\beta_0+\\beta_1 X_i+\\beta_2 Z_i+u_i",
+        "interpretation": "The coefficient on $X_i$ describes its linear association holding included $Z_i$ fixed.",
+        "notes": "The outcome and regressors require explicit units and timing. A conditional association becomes a causal parameter only under the assumptions supplied by the design and model.",
+        "source": "M3, Section 3.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Ordinary Least Squares",
+        "bullets": [
+          "OLS chooses coefficients to minimize squared residuals.",
+          "A residual is observed sales minus fitted sales.",
+          "The model summarizes the comparison supplied by the data."
+        ],
+        "notes": "The fitted residuals sum to zero when an intercept is included and the usual OLS solution exists. This algebraic property does not establish independence between treatment and unobserved demand.",
+        "source": "M3, Section 3.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Omitted Demand Reverses the Sign",
+        "figure": "../06_Lecture_Notes/figures/M03_omitted_demand.tex",
+        "caption": "Synthetic markets hold the underlying competitive mechanism fixed.",
+        "description": "Within-demand comparisons show a different relationship from the pooled trend because high-demand markets attract more competitors.",
+        "notes": "Market demand affects both entry and sales. Controlling for a valid measure of demand can change the regression coefficient by changing which observations are compared.",
+        "source": "M3, Section 3.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Omitted-Variable Bias",
+        "intro": "Suppose demand $Z$ affects sales and is omitted from a regression on $X$.",
+        "equation": "\\widetilde\\beta_1=\\beta_1+\\beta_2\\frac{\\Cov(X,Z)}{\\Var(X)}",
+        "interpretation": "The omitted association can offset or reverse the coefficient of interest.",
+        "notes": "This expression is the population linear-projection result under the stated model and orthogonality conditions. Its sign depends on both the effect of Z and its association with X.",
+        "source": "M3, Section 3.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Price and Sales Units",
+        "bullets": [
+          "A level coefficient is sales units per dollar.",
+          "A log-log price coefficient is an elasticity under the model.",
+          "The exact change for a log outcome uses an exponential transformation."
+        ],
+        "notes": "A coefficient on a binary regressor in a log-outcome model implies a multiplicative change of exp(beta)-1 under the relevant conditional interpretation. A percentage-point change in a probability is a different unit.",
+        "source": "M3, Section 3.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Interactions",
+        "intro": "Allow a message association to vary with account tenure $T$.",
+        "equation": "Y=\\beta_0+\\beta_1 M+\\beta_2 T+\\beta_3 MT+u",
+        "interpretation": "The message comparison at tenure $T$ is $\\beta_1+\\beta_3T$.",
+        "notes": "The main message coefficient applies at tenure zero under this parameterization. Centering tenure changes that reference point while leaving fitted values unchanged.",
+        "source": "M3, Section 3.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Comparison Changes With Tenure",
+        "figure": "../06_Lecture_Notes/figures/M03_interaction.tex",
+        "caption": "Synthetic message-response model. Tenure determines the conditional comparison.",
+        "description": "The interaction changes the slope of the message comparison across customer tenure. A single main coefficient describes only the chosen reference tenure.",
+        "notes": "The marginal comparison should be reported at meaningful tenures within the observed support. A crossing outside the sample range is an extrapolation.",
+        "source": "M3, Section 3.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Uncertainty and Practical Importance",
+        "bullets": [
+          "Report effect size in managerial units.",
+          "Cluster at the unit that shares outcome disturbances or assignment.",
+          "Compare the interval with a decision-relevant magnitude."
+        ],
+        "notes": "A small p-value does not measure the size of an effect. A wide interval containing zero can also contain large economically consequential effects. The appropriate sampling unit depends on the design.",
+        "source": "M3, Section 3.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Panel Comparisons",
+        "bullets": [
+          "Customer effects absorb stable customer characteristics.",
+          "Time effects absorb shocks shared within a period.",
+          "Time-varying confounding can remain."
+        ],
+        "notes": "Fixed effects change the variation used for estimation. Stable preferences can be absorbed, while unobserved events that change both behavior and outcomes can still confound the within-customer association.",
+        "source": "M3, Section 3.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "mHealth: The Next Calendar Day",
+        "bullets": [
+          "Relate recorded category breadth to next-day recorded calories.",
+          "Match exact adjacent calendar dates.",
+          "State the included users, days, and calorie restrictions."
+        ],
+        "notes": "The next observed row can be several days later. Calling it next-day intake would change the time horizon. The food logs identify recorded quantities, and the regression remains an association.",
+        "source": "M3, Section 3.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Screening and the Estimated Association",
+        "figure": "../06_Lecture_Notes/figures/M03_mhealth_association.tex",
+        "caption": "mHealth estimates retain the stated outcome timing and sample restrictions.",
+        "description": "The figure compares the association under the base sample and an imposed calorie-range restriction. The sample rule changes the observed support.",
+        "notes": "A robustness comparison should report which rows change and whether the estimand remains comparable. The range restriction is an imposed screen, not proof that excluded records are incorrect.",
+        "source": "M3, Section 3.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Hand-Checkable Regression",
+        "intro": "Synthetic sales follow a linear relationship.",
+        "code": "x = [1, 2, 3, 4]\ny = [3, 5, 7, 9]\nmx, my = sum(x) / 4, sum(y) / 4\nb = sum((a-mx)*(v-my) for a,v in zip(x,y))\nb /= sum((a-mx)**2 for a in x)\na = my - b * mx\nassert (a, b) == (1.0, 2.0)",
+        "check": "The intercept is 1 and the slope is 2 sales units per unit of x.",
+        "notes": "This example checks the covariance-over-variance calculation. Perfect fit is imposed by construction and is not an empirical finding about marketing behavior.",
+        "source": "M3, Section 3.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: Regression Checks",
+        "bullets": [
+          "Generate a model after defining the outcome and information set.",
+          "Verify the coefficient units and one fitted value manually.",
+          "Compare pooled and customer-effect specifications.",
+          "Inspect residuals, outliers, and sample changes."
+        ],
+        "notes": "Run the small OLS case in ../03_Data_and_Code/Lecture_Examples/session_examples.py S04. The mHealth m03.py program supplies the full real-data calculation, including exact-date pairing and clustered inference.",
+        "source": "M3, Section 3.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Prices Respond to Demand",
+        "bullets": [
+          "Managers can raise prices when demand is unusually strong.",
+          "An observed price-sales regression can mix demand and pricing choices.",
+          "An instrument needs relevance and a defensible exclusion restriction."
+        ],
+        "notes": "The course price simulation sets the true elasticity and the source of price endogeneity explicitly. A cost shifter is useful as an instrument only when its other paths to demand can be ruled out under the maintained setting.",
+        "source": "M3, Section 3.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Evidence for an Advertised Claim",
+        "bullets": [
+          "A claim that a product cuts costs needs a suitable comparison.",
+          "An association can reflect selection and omitted demand.",
+          "The evidence should support the express and implied claim before publication."
+        ],
+        "notes": "The FTC advertising-substantiation policy requires a reasonable basis for objective claims before dissemination. The necessary support depends on the claim and consequences. This does not turn every regression into an advertising substantiation study.",
+        "source": "FTC Policy Statement Regarding Advertising Substantiation. https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation"
+      },
+      {
+        "kind": "bullets",
+        "title": "Regression Discussion",
+        "bullets": [
+          "Which comparison supports the coefficient?",
+          "What variable could reverse its interpretation?",
+          "Would the recommended action change across the reported interval?"
+        ],
+        "notes": "A useful interpretation identifies the sample, units, conditioning, and causal scope before a recommendation. The source of variation matters as much as the regression command.",
+        "source": "M3, Section 3.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      }
+    ],
+    "links": [
+      "[M3 lecture notes](../06_Lecture_Notes/modules/M03_Regression.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[mHealth regression code](../03_Data_and_Code/mHealth/recurring_examples/m03.py)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Reproduce OLS and assess exact-day matching, specification, and uncertainty.",
+    "application": "Interpret a price coefficient when the manager observes demand before setting price."
+  },
+  {
+    "number": 5,
+    "title": "Conjoint and Product Design",
+    "stem": "S05_Conjoint_and_Product_Design",
+    "module": "M4",
+    "objectives": [
+      "Design choice tasks that identify attribute tradeoffs.",
+      "Compute logit probabilities and willingness to pay.",
+      "Separate new-product share from incremental category demand."
+    ],
+    "slides": [
+      {
+        "kind": "art",
+        "title": "Customers Compare Product Bundles",
+        "image": "product_choices",
+        "description": "Customers compare distinct tea, fruit, and delivery offerings in a riverside market. The scene represents choice among available product bundles.",
+        "notes": "Product design changes a choice set. Sales of a new bundle can replace purchases of existing bundles or attract customers who previously chose the outside option.",
+        "source": "Original conceptual illustration. 05_Slides/assets/PROVENANCE.md."
+      },
+      {
+        "kind": "bullets",
+        "title": "A Subscription-Bundle Decision",
+        "bullets": [
+          "A firm can change quality, delivery, and monthly price.",
+          "Customers must trade off feasible attribute combinations.",
+          "The choice set includes the option to buy nothing."
+        ],
+        "notes": "A forced choice among paid plans estimates conditional preference. It supplies no direct category-participation margin when customers cannot opt out.",
+        "source": "M4, Section 4.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Choice-Task Design",
+        "bullets": [
+          "Vary price independently of features where feasible.",
+          "Use realistic combinations and clear descriptions.",
+          "Retain respondent identity across repeated tasks."
+        ],
+        "notes": "Perfect correlation between price and quality prevents their separate interpretation. Repeated answers from one person are dependent, affecting estimation and validation.",
+        "source": "M4, Section 4.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Utility and Price",
+        "intro": "Systematic utility combines product features and price.",
+        "equation": "V_{ij}=\\beta_q q_j+\\beta_f f_j+\\beta_p p_j",
+        "interpretation": "Utility has an arbitrary scale. Price is measured in dollars per billing period.",
+        "notes": "Coefficients describe tradeoffs within the specified design. Alternative-specific constants and preference heterogeneity can change the appropriate model.",
+        "source": "M4, Section 4.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Logit Choice Probabilities",
+        "intro": "Normalize probabilities over the alternatives available to customer $i$.",
+        "equation": "P_{ij}=\\frac{\\exp(V_{ij})}{\\sum_{k\\in\\mathcal J_i}\\exp(V_{ik})}",
+        "interpretation": "The denominator includes the outside option and every available product.",
+        "notes": "Probabilities sum to one within each choice set. The multinomial logit model imposes proportional substitution among alternatives. That restriction requires assessment in the category.",
+        "source": "M4, Section 4.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Willingness to Pay",
+        "intro": "Under linear price utility, equate a feature gain with a price increase.",
+        "equation": "\\operatorname{WTP}_f=-\\frac{\\beta_f}{\\beta_p}",
+        "interpretation": "If $\\beta_f=1.2$ and $\\beta_p=-0.1$ per dollar, the tradeoff is 12 dollars.",
+        "notes": "A near-zero price coefficient makes the ratio unstable. WTP is conditional on the model, design range, and respondent population. It is not a direct forecast of revenue.",
+        "source": "M4, Section 4.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "table",
+        "title": "Two Bundles and an Outside Option",
+        "headers": [
+          "Option",
+          "Quality",
+          "Price",
+          "Utility"
+        ],
+        "rows": [
+          [
+            "A",
+            "Premium",
+            "10",
+            "0.2"
+          ],
+          [
+            "B",
+            "Standard",
+            "6",
+            "-0.6"
+          ],
+          [
+            "Outside",
+            "None",
+            "0",
+            "0"
+          ]
+        ],
+        "caption": "Synthetic inputs: quality coefficient 1.2 and price coefficient -0.1.",
+        "notes": "The outside utility is normalized to zero. Prices and coefficients determine the utilities. The example holds the potential-customer population fixed.",
+        "source": "M4, Section 4.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Launch Redistributes Existing Sales",
+        "figure": "../06_Lecture_Notes/figures/M04_cannibalization.tex",
+        "caption": "Synthetic logit model. New bundle C has A's modeled attributes.",
+        "description": "C obtains about 30.6% share, while category participation rises by about 11.0 percentage points. Existing bundles lose share.",
+        "notes": "The difference between C share and incremental category demand is substitution from existing products. The logit specification makes C draw proportionally from all existing alternatives.",
+        "source": "M4, Section 4.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Incremental Contribution",
+        "bullets": [
+          "Attach contribution margins to each simulated purchase.",
+          "Compare the full product portfolio before and after launch.",
+          "Deduct development and operating costs separately."
+        ],
+        "notes": "Under the supplied margins of 4 dollars for A and C and 3 for B, expected contribution per potential customer rises from about 2.36 to 2.86 dollars before fixed costs. These are model-based values under imposed inputs.",
+        "source": "M4, Section 4.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Probability Check",
+        "intro": "Calculate the synthetic baseline shares.",
+        "code": "from math import exp\nutilities = {'A': 0.2, 'B': -0.6, 'Outside': 0.0}\nweights = {k: exp(v) for k,v in utilities.items()}\nshares = {k: v/sum(weights.values())\n          for k,v in weights.items()}\nassert abs(sum(shares.values()) - 1) < 1e-12",
+        "check": "A has about 44.1% share, B 19.8%, and the outside option 36.1%.",
+        "notes": "For very large utilities, subtracting the maximum utility before exponentiation improves numerical stability without changing probabilities.",
+        "source": "M4, Section 4.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Substitution Assumptions",
+        "bullets": [
+          "A close copy can draw mostly from its nearest competitor.",
+          "Basic logit instead preserves relative odds among existing alternatives.",
+          "Holdout choice tasks can reveal systematic substitution errors."
+        ],
+        "notes": "Nested and mixed logit models relax substitution patterns under additional structure. More flexible models still need suitable choice variation and validation.",
+        "source": "M4, Section 4.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Product Launch",
+        "bullets": [
+          "Add C to the synthetic profile table.",
+          "Calculate portfolio share and contribution before and after launch.",
+          "Compare C's share with the change in category participation.",
+          "Check a case with no outside option."
+        ],
+        "notes": "Use ../03_Data_and_Code/Lecture_Examples/session_examples.py S05. With no outside option, purchase incidence is one by construction. That change should be visible in the program and interpretation.",
+        "source": "M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Validation and Market Transfer",
+        "bullets": [
+          "Hold out respondents or tasks according to the intended use.",
+          "Check coding, price units, and probabilities.",
+          "Relate stated preference to awareness, distribution, and availability."
+        ],
+        "notes": "A survey share is conditional on the experiment. Real demand also depends on who sees the offering and whether they can buy it. The demand forecast needs an explicit transfer assumption.",
+        "source": "M4, Section 4.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "mHealth Product Economics",
+        "bullets": [
+          "Food logs reveal recorded use and category histories.",
+          "A paid-plan choice model needs additional price and preference evidence.",
+          "Financial scenarios can state the missing inputs explicitly."
+        ],
+        "notes": "The lecture notes use an imposed paid-plan logit example separately from observed logs. Behavioral logging segments do not establish willingness to pay or paid subscription retention.",
+        "source": "M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "AI-Assisted Conjoint Analysis",
+        "bullets": [
+          "Provide the choice-set identifier and the selected alternative.",
+          "Require probabilities to sum to one within each task.",
+          "Preserve respondent groups in validation.",
+          "Request a portfolio comparison with explicit margins."
+        ],
+        "notes": "A code generator may accidentally normalize probabilities over the full dataset or treat repeated tasks as independent respondents. Small constructed tasks expose those errors.",
+        "source": "M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Price Presentation and Customer Understanding",
+        "bullets": [
+          "A base price and a mandatory fee determine the total paid.",
+          "A stated-choice task can reveal different responses to equivalent totals.",
+          "The feasible pricing design depends on the applicable rule and industry."
+        ],
+        "notes": "The FTC's fee rule addresses live-event tickets and short-term lodging. Its scope should remain explicit. A response difference to fee framing does not itself authorize a particular presentation.",
+        "source": "FTC Rule on Unfair or Deceptive Fees FAQ. https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions"
+      },
+      {
+        "kind": "bullets",
+        "title": "Product-Design Discussion",
+        "bullets": [
+          "How much of C's demand comes from existing products?",
+          "Which design change would identify the price tradeoff?",
+          "What evidence could change the launch recommendation?"
+        ],
+        "notes": "The recommendation depends on substitution, incremental contribution, and costs. An appealing new-product share can coexist with little category expansion.",
+        "source": "M4, Section 4.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      }
+    ],
+    "links": [
+      "[M4 lecture notes](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Simulate a new bundle, the outside option, and portfolio contribution.",
+    "application": "Specify a choice experiment for an mHealth paid plan without inferring payment behavior from logging."
+  },
+  {
+    "number": 6,
+    "title": "Segmentation and Customer Lifetime Value",
+    "stem": "S06_Segmentation_and_Customer_Lifetime_Value",
+    "module": "M4",
+    "objectives": [
+      "Define similarity using economically meaningful customer features.",
+      "Evaluate segment stability and future outcomes.",
+      "Calculate lifetime value with consistent timing and distinguish retention concepts."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Retention-Support Decision",
+        "bullets": [
+          "A service team can support only some customers.",
+          "High baseline value and responsiveness to support are separate quantities.",
+          "Segments should correspond to feasible service decisions."
+        ],
+        "notes": "A segment with high predicted value may have little incremental response to outreach. The support decision needs the change in future contribution caused by the action, net of its costs.",
+        "source": "M4, Section 4.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Customer Features at a Common Date",
+        "bullets": [
+          "Recency is time since the last eligible event.",
+          "Frequency counts events in a fixed window.",
+          "Monetary value uses sales or contribution over that window."
+        ],
+        "notes": "Customers with unequal exposure histories can appear different because of observation time. The feature definition must specify eligibility and whether returns affect sales or transaction counts.",
+        "source": "M4, Section 4.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "equation",
+        "title": "K-Means and Similarity",
+        "intro": "Choose $K$ centers for transformed customer features $z_i$.",
+        "equation": "\\min_{\\mu,c}\\sum_i\\left\\|z_i-\\mu_{c(i)}\\right\\|^2",
+        "interpretation": "Scaling the features changes the distance and can change the segments.",
+        "notes": "K-means minimizes within-cluster squared Euclidean distance. A standardized feature receives a different implicit weight from the raw variable. The transformation is a substantive choice.",
+        "source": "M4, Section 4.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Units Change the Nearest Customer",
+        "figure": "../06_Lecture_Notes/figures/M04_scaling.tex",
+        "caption": "Synthetic customers have unchanged spending and frequency records.",
+        "description": "Changing spending from dollars to hundreds of dollars reverses which customer is nearest to A. Frequency then receives more relative weight.",
+        "notes": "Raw distances compare A=(100,1), B=(110,9), and C=(200,1). The example changes only the spending scale. The preferred business representation depends on the service decision.",
+        "source": "M4, Section 4.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Evaluating a Segmentation",
+        "bullets": [
+          "Inspect segment size, profile, and actionable differences.",
+          "Compare stability across seeds, samples, and periods.",
+          "Evaluate outcomes that did not mechanically define the clusters."
+        ],
+        "notes": "Within-cluster dispersion declines as K rises. A high-spending cluster will have high spending by construction when spending is an input. Later outcomes provide a more informative descriptive check.",
+        "source": "M4, Section 4.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "figure",
+        "title": "mHealth Segments Use Earlier Histories",
+        "figure": "../06_Lecture_Notes/figures/M04_mhealth_segments.tex",
+        "caption": "Eligible users have at least 30 observed days before July 1.",
+        "description": "Earlier logging frequency and recorded breadth distinguish clusters. Later logging does not enter the clustering inputs.",
+        "notes": "The representation uses first-half logging fraction, mean category breadth, and mean calorie-share variety. K=3 is imposed for the comparison. The scaler and centers use only the earlier window.",
+        "source": "M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "table",
+        "title": "Later Logging by Earlier Segment",
+        "headers": [
+          "Segment",
+          "Users",
+          "Prior Fraction",
+          "Later Fraction"
+        ],
+        "rows": [
+          [
+            "1",
+            "126",
+            "0.426",
+            "0.338"
+          ],
+          [
+            "2",
+            "90",
+            "0.759",
+            "0.594"
+          ],
+          [
+            "3",
+            "115",
+            "0.870",
+            "0.654"
+          ]
+        ],
+        "caption": "mHealth denominators use 182 earlier and 184 later calendar days.",
+        "notes": "Later absence contributes zero observed days for eligible users. The figures describe persistence in recorded activity. They are not contractual retention rates or effects of a service intervention.",
+        "source": "M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Lifetime Value and Payment Timing",
+        "intro": "Value future contribution conditional on remaining active.",
+        "equation": "\\operatorname{CLV}=\\sum_{t=1}^{T}\\frac{\\Pr(\\text{active at }t)m_t}{(1+d)^t}-a",
+        "interpretation": "The period for margin $m_t$, discounting $d$, and retention must agree.",
+        "notes": "The acquisition cost a occurs at time zero. This convention excludes immediate contribution. If a current-period contribution is included, it must be added explicitly.",
+        "source": "M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "equation",
+        "title": "A Stationary Subscription",
+        "intro": "Suppose monthly retention is $r$ and monthly contribution is $m$.",
+        "equation": "\\operatorname{CLV}=\\frac{mr}{1+d-r}-a",
+        "interpretation": "With $m=60$, $d=0.01$, $a=50$, and $r=0.80$, CLV is 178.57 dollars.",
+        "notes": "The formula assumes constant retention and conditional margin and an infinite horizon, with the first payment one month later. It follows from a convergent geometric series.",
+        "source": "M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Retention Has Nonlinear Value",
+        "figure": "../06_Lecture_Notes/figures/M04_clv.tex",
+        "caption": "Synthetic stationary model. Monthly margin, discounting, and acquisition cost stay fixed.",
+        "description": "CLV rises increasingly rapidly with retention. Increasing monthly retention from 0.80 to 0.90 raises value from about 178.57 to 440.91 dollars.",
+        "notes": "The high-retention region places more weight on distant contributions. Uncertainty about the persistence of retention and margins can dominate the valuation.",
+        "source": "M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Finite-Sum Check",
+        "intro": "Compare the closed form with 2,000 future monthly payments.",
+        "code": "m, r, d, a = 60, 0.8, 0.01, 50\nclosed = m * r / (1 + d - r) - a\nfinite = sum(m * r**t / (1+d)**t\n             for t in range(1, 2001)) - a\nassert abs(closed - finite) < 1e-8",
+        "check": "Both calculations give approximately 178.57 dollars.",
+        "notes": "Matching the two expressions checks the payment convention and arithmetic. It does not establish constant retention as a valid model of a real relationship.",
+        "source": "M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Cancellation and a Logging Gap",
+        "bullets": [
+          "A subscription may record cancellation directly.",
+          "A 30-day logging gap is an operational activity event.",
+          "Observation can end before a defined event occurs."
+        ],
+        "notes": "Right censoring preserves the distinction between no observed event by the end of follow-up and an event at the last observation. A logging gap is not proof of permanent departure or paid cancellation.",
+        "source": "M4, Section 4.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "figure",
+        "title": "The Event Definition Changes Survival",
+        "figure": "../06_Lecture_Notes/figures/M04_logging_survival.tex",
+        "caption": "mHealth time-to-gap analysis uses a stated gap definition and observation horizon.",
+        "description": "Survival tracks time until a defined logging gap. The risk set and right censoring determine which histories contribute at each time.",
+        "notes": "Changing the gap length changes the event being measured. Survival of recorded activity should remain separate from contractual renewal in financial calculations.",
+        "source": "M4, Section 4.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Endpoint and Continuous Retention",
+        "bullets": [
+          "Endpoint retention allows customers to leave and return.",
+          "Continuous retention requires uninterrupted presence.",
+          "Acquisition can include first entry, return, or switching."
+        ],
+        "notes": "A starting-provider cohort is fixed at the initial period. The same-provider, other-provider-only, and no-paid-provider states distinguish platform retention from category participation. Multiple providers require explicit overlap handling.",
+        "source": "M4, Section 4.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: Segments and Value",
+        "bullets": [
+          "Fit feature scaling and segments on an earlier period.",
+          "Describe a later period without refitting the groups.",
+          "Vary assumed paid retention in a separate CLV calculation."
+        ],
+        "notes": "The small CLV calculation is ../03_Data_and_Code/Lecture_Examples/session_examples.py S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.",
+        "source": "M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Retention and Effective Cancellation",
+        "bullets": [
+          "High paid retention can reflect satisfaction or difficulty leaving.",
+          "Measure cancellation completion and unwanted subsequent charges.",
+          "Evaluate customer value alongside the seller's lifetime-value objective."
+        ],
+        "notes": "A customer who prefers cancellation can remain subscribed because of friction. The consumer-value comparison requires independent evidence about that preference and the available procedure.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Retention Discussion",
+        "bullets": [
+          "What action differs across the proposed segments?",
+          "Does a customer's absence represent churn or censoring?",
+          "Which retention assumption changes the support decision?"
+        ],
+        "notes": "A useful recommendation identifies the response to intervention as well as baseline value. Cluster membership alone does not establish the effectiveness of differentiated support.",
+        "source": "M4, Section 4.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      }
+    ],
+    "links": [
+      "[M4 lecture notes](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[mHealth segments](../03_Data_and_Code/mHealth/recurring_examples/m04.py)",
+      "[Subscription cohort examples](../03_Data_and_Code/GenAI_Demand/README.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Fit earlier-period segments and independently reproduce the lifetime-value formula.",
+    "application": "Compare endpoint retention, continuous retention, and a logging-gap event."
+  },
+  {
+    "number": 7,
+    "title": "Text, Social Media, and Networks",
+    "stem": "S07_Text_Social_Media_and_Networks",
+    "module": "M5",
+    "objectives": [
+      "Define a text construct and evaluate labels on the deployment population.",
+      "Distinguish prevalence, classifier performance, and topic denominators.",
+      "Explain network reach and brokerage without inferring influence from correlation."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Customer-Service Decision",
+        "bullets": [
+          "A retailer wants to detect delivery complaints quickly.",
+          "The document may be a review, sentence, or service conversation.",
+          "The action is a review queue with limited staff capacity."
+        ],
+        "notes": "The unit and label definition determine the evaluation. A negative review can concern price or quality rather than delivery. A classifier needs a construct that matches the service action.",
+        "source": "M5, Section 5.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Text Preparation",
+        "bullets": [
+          "Keep negation and domain-specific terms when they affect meaning.",
+          "Document language, duplicates, and boilerplate.",
+          "Fit the vocabulary on training documents."
+        ],
+        "notes": "Removing the word not can reverse a sentiment label. Duplicate descriptions across train and test can produce a favorable score for a task requiring generalization to new text.",
+        "source": "M5, Section 5.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "equation",
+        "title": "TF-IDF Representation",
+        "intro": "Weight a term by frequency in a document and rarity across documents.",
+        "equation": "\\operatorname{tfidf}_{td}=\\operatorname{tf}_{td}\\log\\!\\left(\\frac{N}{\\operatorname{df}_t}\\right)",
+        "interpretation": "Tokenization, smoothing, and normalization are implementation choices that need a record.",
+        "notes": "Different packages use different conventions. A rare word can be predictive without being substantively important. The vocabulary and IDF values must be learned from the training corpus.",
+        "source": "M5, Section 5.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Embeddings and Similarity",
+        "bullets": [
+          "Embeddings place text in a numerical representation.",
+          "Nearby descriptions may share meaning or usage.",
+          "A useful similarity measure still requires domain validation."
+        ],
+        "notes": "A semantic model can confuse closely related foods that have distinct nutritional properties. A cosine score is a representation-based similarity, not a probability of label correctness.",
+        "source": "M5, Section 5.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Labels, Sentiment, and Topics",
+        "bullets": [
+          "Sentiment measures an evaluative construct.",
+          "Aspect labels distinguish the object of a complaint.",
+          "Topics summarize recurring term patterns under a model."
+        ],
+        "notes": "A high-weight topic term does not establish a causal driver of satisfaction. Topic names are interpretations that should be checked against representative documents.",
+        "source": "M5, Section 5.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Rare Complaints Lower Precision",
+        "figure": "../06_Lecture_Notes/figures/M05_prevalence.tex",
+        "caption": "Synthetic classifier. Sensitivity is 80% and specificity is 90%.",
+        "description": "At 1% prevalence, only about 7.5% of flagged reviews are true complaints. At 20% prevalence, precision rises to 66.7%.",
+        "notes": "The classifier has unchanged conditional error rates. The changing base rate alters the composition of the flagged group and therefore the workload of human reviewers.",
+        "source": "M5, Section 5.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Precision Depends on Prevalence",
+        "intro": "Let $\\pi$ be complaint prevalence, $s$ sensitivity, and $c$ specificity.",
+        "equation": "\\Pr(Y=1\\mid\\widehat Y=1)=\\frac{s\\pi}{s\\pi+(1-c)(1-\\pi)}",
+        "interpretation": "False positives can dominate a queue when the target condition is rare.",
+        "notes": "The formula applies to the specified population and classifier. Prevalence should come from an appropriate deployment sample rather than an artificially balanced training set.",
+        "source": "M5, Section 5.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "code",
+        "title": "Expected Queue Composition",
+        "intro": "In 10,000 synthetic reviews, complaint prevalence is 1%.",
+        "code": "n, prevalence = 10000, 0.01\nsensitivity, specificity = 0.8, 0.9\ntp = n * prevalence * sensitivity\nfp = n * (1-prevalence) * (1-specificity)\nprecision = tp / (tp + fp)\nassert round(precision, 4) == 0.0748",
+        "check": "The expected queue contains 80 true complaints and 990 false positives.",
+        "notes": "These are expected counts under the imposed rates. Actual counts vary. Capacity planning should consider the queue size as well as sensitivity.",
+        "source": "M5, Section 5.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Human and LLM Annotation",
+        "bullets": [
+          "Write a label definition with difficult boundary examples.",
+          "Measure agreement and adjudicate disagreements.",
+          "Assess a held-out sample with human labels.",
+          "Record the model, prompt, and response format."
+        ],
+        "notes": "Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices.",
+        "source": "M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "mHealth Food Descriptions",
+        "bullets": [
+          "Descriptions can recur across many users and dates.",
+          "A repeated-description split evaluates familiar language.",
+          "A held-out-description split tests generalization to new language."
+        ],
+        "notes": "The source category is an imperfect label. The same normalized description can have multiple source labels. Evaluation should retain that ambiguity rather than assume a single validated nutrition category.",
+        "source": "M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Familiar and New Text Are Different Tests",
+        "figure": "../06_Lecture_Notes/figures/M05_mhealth_text.tex",
+        "caption": "mHealth text classification uses the stated training and evaluation splits.",
+        "description": "The comparison separates repeated descriptions from new descriptions and identifies source-label ambiguity. Performance depends on the deployment question.",
+        "notes": "A random event split can place an identical description in both training and test. That may be useful for repeated lookup but overstate performance on new descriptions.",
+        "source": "M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Topic Shares Need a Denominator",
+        "figure": "../06_Lecture_Notes/figures/M05_topic_denominators.tex",
+        "caption": "mHealth topic summaries compare documents, entries, and users under defined weights.",
+        "description": "A topic common in repeated entries can look less prevalent when distinct descriptions or equally weighted users form the denominator.",
+        "notes": "Long documents and repeated records can dominate term-weighted summaries. A business question about the fraction of affected customers needs a customer denominator.",
+        "source": "M5, Section 5.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Network Objects",
+        "bullets": [
+          "Nodes identify customers or accounts.",
+          "Edges represent a defined relationship in a time window.",
+          "Degree counts links, while brokerage concerns paths between groups."
+        ],
+        "notes": "An edge could mean following, messaging, purchasing together, or co-occurrence. Those meanings are not interchangeable. The network boundary determines which relationships are visible.",
+        "source": "M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Few Links Can Connect Separate Groups",
+        "figure": "../06_Lecture_Notes/figures/M05_network_bridge.tex",
+        "caption": "Synthetic undirected network. R has only two links.",
+        "description": "R connects two otherwise separate four-person groups. Its low degree coexists with a central position on paths between the groups.",
+        "notes": "Brokerage can matter for reach even when a node has few direct neighbors. Observed network structure does not by itself establish the effect of targeting that person.",
+        "source": "M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Label Assessment",
+        "bullets": [
+          "Build a transparent keyword or TF-IDF baseline.",
+          "Compare precision and recall on familiar and new descriptions.",
+          "Inspect false positives and disagreements by label."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S07 to reproduce the prevalence calculation. The full mHealth m05.py program implements the description-level comparison. Select the evaluation split before tuning.",
+        "source": "M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Engagement and Commercial Value",
+        "bullets": [
+          "Likes and comments measure platform responses.",
+          "Sales and contribution require separate outcome records.",
+          "Network similarity can reflect common interests or common exposure."
+        ],
+        "notes": "Homophily and shared shocks can generate correlated behavior among connected users. A causal influence claim requires an assignment or identification design beyond a network correlation.",
+        "source": "M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Authenticity of Reviews and Endorsements",
+        "bullets": [
+          "A generated product description and a claimed customer review serve different roles.",
+          "A fabricated experience misrepresents the source of the evidence.",
+          "Keep sponsored relationships and substantive editing traceable."
+        ],
+        "notes": "The FTC review rule addresses business conduct involving fake or false reviews. Its FAQ distinguishes mere review hosting from creation, purchase, and dissemination of testimonials, with provision-specific conditions.",
+        "source": "FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers"
+      },
+      {
+        "kind": "bullets",
+        "title": "Text-Analysis Discussion",
+        "bullets": [
+          "Which label disagreement would change the service decision?",
+          "How does the expected queue change when prevalence falls?",
+          "What comparison would distinguish exposure from influence?"
+        ],
+        "notes": "A practical assessment prioritizes errors that alter the action. False positives determine review burden, while false negatives determine missed cases. Both should be evaluated in the deployment population.",
+        "source": "M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      }
+    ],
+    "links": [
+      "[M5 lecture notes](../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[mHealth text code](../03_Data_and_Code/mHealth/recurring_examples/m05.py)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Evaluate a text-labeling baseline under changing prevalence and description splits.",
+    "application": "Compare topic denominators and explain a low-degree network bridge."
+  },
+  {
+    "number": 8,
+    "title": "Project Evidence and Midterm Presentations",
+    "stem": "S08_Project_Evidence_and_Midterm_Presentations",
+    "module": "M1-M5",
+    "objectives": [
+      "Connect a managerial decision to a defensible analytical comparison.",
+      "Explain a data assessment, model choice, and consequential uncertainty.",
+      "Provide evidence-based feedback on an analysis."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Decision and Its Evidence",
+        "bullets": [
+          "State the action a manager can change.",
+          "Define the outcome, population, and horizon.",
+          "Identify which evidence could change the proposed action."
+        ],
+        "notes": "A presentation should make the decision assessable without requiring the audience to reconstruct the analyst's workflow. A precise unresolved question is useful when the current evidence does not yet support an action.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Traceable Data Table",
+        "bullets": [
+          "Name the original unit and the analysis unit.",
+          "Reconcile rows and totals through joins and restrictions.",
+          "Show one manually checked record or aggregate."
+        ],
+        "notes": "A source-to-output assessment distinguishes data processing choices from modeling choices. An unexplained change in the population can dominate a later coefficient or chart.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "Evidence Categories",
+        "bullets": [
+          "Descriptive patterns summarize observed records.",
+          "Prediction evaluates outcomes on held-out observations.",
+          "Causal estimates require a justified counterfactual comparison.",
+          "Scenarios calculate consequences under imposed inputs."
+        ],
+        "notes": "These categories can appear in the same project. Each claim should retain the qualifications appropriate to its evidence.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Worked Presentation Case",
+        "bullets": [
+          "A paid-plan scenario has high predicted uptake.",
+          "The underlying data contain food logging and no observed payments.",
+          "The decision requires additional evidence on price, retention, and margin."
+        ],
+        "notes": "Observed logging can motivate a segmentation or interface decision. Paid uptake from an imposed logit model is a scenario. A stated-choice study or pilot could supply some of the missing evidence.",
+        "source": "M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "An Interpretable Figure",
+        "bullets": [
+          "Use a comparison that answers the stated question.",
+          "Label units, denominator, and uncertainty.",
+          "State whether plotted quantities are observed, estimated, or imposed."
+        ],
+        "notes": "A figure should be independently readable. A chart of customer means and an interval for the overall mean require separate explanations of distribution and uncertainty.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Reproducible Calculation",
+        "bullets": [
+          "Run from a clean session using documented inputs.",
+          "Show a counterexample that checks a consequential choice.",
+          "Keep complete code and results linked to the claim."
+        ],
+        "notes": "The most informative check is one that would fail under a plausible analytical error. Re-running identical code is useful but does not independently establish a valid interpretation.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "Presentation Discussion",
+        "bullets": [
+          "What is the strongest supported claim?",
+          "Which assumption most affects the decision?",
+          "What evidence should be collected next?"
+        ],
+        "notes": "Feedback should identify a concrete comparison or data requirement. A more complicated model is useful only if it addresses a stated limitation in the decision evidence.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Revision Decision",
+        "bullets": [
+          "Prioritize the error with the largest consequence for the action.",
+          "Specify the additional data or comparison needed.",
+          "Preserve a reproducible baseline for the revised analysis."
+        ],
+        "notes": "Examples include fixing a multiplied join, changing a leakage-prone split, or measuring actual contribution. These changes can matter more than polishing an already clear chart.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Customer-Outcome Evaluation",
+        "bullets": [
+          "Identify who benefits and who can bear a cost.",
+          "State whether the optimized metric can conflict with customer value.",
+          "Name the relevant jurisdiction and verify the rule's scope."
+        ],
+        "notes": "These questions organize an evidence discussion. They do not establish a graded assignment or replace the eventual project brief.",
+        "source": "ETHICS_AND_REGULATION.md."
+      },
+      {
+        "kind": "bullets",
+        "title": "Sensitivity and Next Steps",
+        "bullets": [
+          "Report how the action changes across plausible inputs.",
+          "Identify a decision threshold rather than only a point estimate.",
+          "Select a feasible test that reduces consequential uncertainty."
+        ],
+        "notes": "A recommendation can be conditional. Explicitly stating the value or response threshold makes the condition useful for a manager rather than an abstract caveat.",
+        "source": ""
+      }
+    ],
+    "links": [
+      "[M4 lecture notes](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[Course requirements status](../02_Syllabus/README.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Presentation blocks and evidence-based discussion; no new graded requirement is introduced.",
+    "application": "Critique an mHealth paid-plan scenario and identify the next useful evidence."
+  },
+  {
+    "number": 9,
+    "title": "Experiments and Incremental Value",
+    "stem": "S09_Experiments_and_Incremental_Value",
+    "module": "M6",
+    "objectives": [
+      "Define a treatment, assignment unit, outcome, and estimand.",
+      "Calculate an intention-to-treat effect, uncertainty, and contribution.",
+      "Plan power and use prior outcomes to improve precision."
+    ],
+    "slides": [
+      {
+        "kind": "art",
+        "title": "Comparable Markets Receive Different Assignments",
+        "image": "experiment_bridges",
+        "description": "A merchant sends packages across two separate bridges to comparable villages. Distinct pennants represent treatment assignments.",
+        "notes": "Random assignment balances potential outcomes in expectation. The comparison still requires well-defined outcomes, complete measurement, and an appropriate unit of assignment.",
+        "source": "Original conceptual illustration. 05_Slides/assets/PROVENANCE.md."
+      },
+      {
+        "kind": "bullets",
+        "title": "An Email-Campaign Decision",
+        "bullets": [
+          "Eligible customers receive either an email or no email.",
+          "Measure purchases over a fixed response window.",
+          "The decision concerns contribution per assigned customer."
+        ],
+        "notes": "Assignment remains the denominator even when some customers do not open the email. Conditioning on opening selects a post-assignment group.",
+        "source": "M6, Section 6.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Potential Outcomes",
+        "intro": "For eligible customer $i$, define outcomes with and without assignment.",
+        "equation": "\\tau=\\E[Y_i(1)-Y_i(0)]",
+        "interpretation": "Each customer has one observed outcome under the realized assignment.",
+        "notes": "The average treatment effect concerns the specified eligible population and treatment implementation. The assignment design supplies the comparison needed to estimate the missing counterfactual mean.",
+        "source": "M6, Section 6.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Selection Creates an Alternative Explanation",
+        "figure": "../06_Lecture_Notes/figures/M06_dag.tex",
+        "caption": "Randomized assignment is distinct from engagement-driven email opening.",
+        "description": "A shared determinant can influence both treatment receipt and the outcome, creating a noncausal path. Random assignment removes that systematic selection path under the design.",
+        "notes": "Control variables should follow the causal structure and timing. Conditioning on a variable affected by treatment can change the estimand or introduce selection.",
+        "source": "M6, Section 6.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "table",
+        "title": "Email Assignment and Purchase",
+        "headers": [
+          "Assigned Group",
+          "Customers",
+          "Purchases",
+          "Rate"
+        ],
+        "rows": [
+          [
+            "Email",
+            "1,000",
+            "130",
+            "13%"
+          ],
+          [
+            "Control",
+            "1,000",
+            "100",
+            "10%"
+          ]
+        ],
+        "caption": "Synthetic experiment. Each customer has one binary outcome.",
+        "notes": "The difference is three percentage points. Relative to a 10% control rate, that equals a 30% relative increase. The two descriptions use different denominators.",
+        "source": "M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "An Assignment-Effect Estimate",
+        "intro": "Compare purchase rates across all assigned customers.",
+        "equation": "\\widehat\\tau=\\frac{130}{1000}-\\frac{100}{1000}=0.03",
+        "interpretation": "The estimated effect is three additional purchases per 100 assigned customers.",
+        "notes": "This is an intention-to-treat comparison under the stated randomized design. An opened-email comparison would use a different selected population.",
+        "source": "M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Sampling Uncertainty",
+        "intro": "Use an independent-group approximation for the synthetic binary outcomes.",
+        "equation": "\\widehat{\\operatorname{SE}}=\\sqrt{\\frac{.13(.87)}{1000}+\\frac{.10(.90)}{1000}}\\approx .0143",
+        "interpretation": "An approximate 95% interval is 0.21 to 5.79 percentage points.",
+        "notes": "The interval uses a large-sample normal approximation and independent customer assignments. It does not include systematic outcome measurement errors or interference.",
+        "source": "M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Contribution and Decision Uncertainty",
+        "bullets": [
+          "An extra purchase contributes 40 dollars.",
+          "Delivery costs 0.50 dollars per assigned customer.",
+          "Estimated incremental contribution is 0.70 dollars per customer."
+        ],
+        "notes": "The same transformation of the effect interval gives approximately -0.42 to 1.82 dollars. The calculation assumes no additional discount cost and fixed contribution per additional purchase.",
+        "source": "M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "code",
+        "title": "The Experiment Calculation",
+        "intro": "Reproduce the effect and its contribution implication.",
+        "code": "from math import sqrt\np1, p0, n = 0.13, 0.10, 1000\neffect = p1 - p0\nse = sqrt(p1*(1-p1)/n + p0*(1-p0)/n)\ninterval = (effect - 1.96*se, effect + 1.96*se)\nprofit = 40 * effect - 0.50\nassert round(profit, 2) == 0.70",
+        "check": "The point estimate is positive while the contribution interval includes losses.",
+        "notes": "If treatment changes basket size, returns, or margins, purchase incidence alone no longer gives the contribution effect. Measuring contribution directly can better match the decision.",
+        "source": "M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Power Begins With the Useful Effect",
+        "bullets": [
+          "Choose the smallest effect that could change the action.",
+          "Use the expected outcome variance and assignment unit.",
+          "Halving the target effect approximately quadruples sample size."
+        ],
+        "notes": "At baseline probability 0.10, a two-point effect, two-sided 5% level, and 80% power, a common-variance normal approximation gives 3,528 customers per arm.",
+        "source": "M6, Section 6.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Implementation Checks",
+        "bullets": [
+          "Reconcile assigned counts and intended allocation.",
+          "Check missing outcomes and tracking by assignment.",
+          "Preserve the planned outcome horizon.",
+          "Investigate exclusions that depend on treatment response."
+        ],
+        "notes": "A randomization protocol does not prevent differential tracking failures. Sample-ratio discrepancies can reveal implementation problems. Chance covariate imbalance alone does not invalidate a correctly implemented randomization.",
+        "source": "M6, Section 6.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Prior Outcomes and Precision",
+        "intro": "Adjust the outcome using a pre-treatment measure $X$.",
+        "equation": "Y_i^{\\mathrm{adj}}=Y_i-\\theta(X_i-\\bar X)",
+        "interpretation": "A predictive baseline can reduce residual variation while preserving the assignment comparison.",
+        "notes": "CUPED uses a pre-treatment covariate and an appropriately specified adjustment. The variance reduction does not create treatment variation or repair selection into treatment.",
+        "source": "M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "mHealth Baseline Activity Improves Precision",
+        "figure": "../06_Lecture_Notes/figures/M06_cuped_precision.tex",
+        "caption": "Planning calculation uses historical user-level variance and a five-point target.",
+        "description": "The detectable-change curves compare unadjusted and prior-period-adjusted logging outcomes. The indicated sample sizes are 788 and 397 independent users per arm under the stated approximation.",
+        "notes": "These are power-planning implications of observed historical variances, not a realized intervention effect. The future population, outcome process, and assignment need to match the planning conditions.",
+        "source": "M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: An Experiment Plan",
+        "bullets": [
+          "Compute the synthetic email effect and interval.",
+          "Change contribution, delivery cost, and the target effect.",
+          "Specify an mHealth recommendation assignment with a fixed user denominator."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation.",
+        "source": "M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Interference and Assignment Units",
+        "bullets": [
+          "Customers can share offers or affect one another.",
+          "Stores can divert purchases from nearby locations.",
+          "The assignment unit should reflect the likely spillovers."
+        ],
+        "notes": "If one treated store gains by taking business from a comparison store, the store-level difference can exceed the chain-wide gain. Cluster assignment changes both interpretation and precision.",
+        "source": "M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Treatment Arm Needs a Defensible Design",
+        "bullets": [
+          "Random assignment identifies a comparison.",
+          "The content of each treatment still affects the customers who receive it.",
+          "Include customer outcomes, refusal, and stopping conditions."
+        ],
+        "notes": "Randomization does not establish that a deceptive or harmful interface is acceptable. Separate analytical identification from the substantive and regulatory evaluation of each proposed treatment.",
+        "source": "ETHICS_AND_REGULATION.md, M6."
+      },
+      {
+        "kind": "bullets",
+        "title": "Experiment Discussion",
+        "bullets": [
+          "Would a conversion gain cover the campaign cost?",
+          "What changes if only email openers enter the analysis?",
+          "Which guardrail outcome could reverse the rollout decision?"
+        ],
+        "notes": "Contribution uncertainty remains consequential even with a positive purchase effect. Returns, satisfaction, and service burden can alter the decision. The outcome set should reflect the intervention.",
+        "source": "M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      }
+    ],
+    "links": [
+      "[M6 lecture notes](../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[mHealth experiment planning](../03_Data_and_Code/mHealth/recurring_examples/m06.py)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Reproduce the email effect, confidence interval, contribution, and power calculation.",
+    "application": "Design a user-randomized recommendation test with pre-treatment adjustment and explicit guardrails."
+  },
+  {
+    "number": 10,
+    "title": "Causal Comparisons and Policy Evaluation",
+    "stem": "S10_Causal_Comparisons_and_Policy_Evaluation",
+    "module": "M6",
+    "objectives": [
+      "Explain the identifying comparison in difference-in-differences, RD, and IV.",
+      "Evaluate a policy under selected exposure and support restrictions.",
+      "Assess whether a comparison group is suitable for the McBroken policy question."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Repair-Policy Question",
+        "bullets": [
+          "A policy may change the cost of restoring restaurant availability.",
+          "A national before-after change also includes common shocks.",
+          "The target is the change attributable to the policy over a defined horizon."
+        ],
+        "notes": "The McBroken setting motivates a causal question. The supplied panel does not by itself establish a valid untreated comparison for a policy affecting the same environment broadly.",
+        "source": "M6, Section 6.16, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Difference-in-Differences",
+        "intro": "Subtract the comparison group's change from the treated group's change.",
+        "equation": "\\widehat\\tau=(\\bar Y_{T,post}-\\bar Y_{T,pre})-(\\bar Y_{C,post}-\\bar Y_{C,pre})",
+        "interpretation": "Parallel untreated trends connect the observed changes to a causal effect.",
+        "notes": "Different starting levels can be compatible with the design. The assumption concerns untreated changes, not identical outcome levels.",
+        "source": "M6, Section 6.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "The Counterfactual Trend",
+        "figure": "../06_Lecture_Notes/figures/M06_did.tex",
+        "caption": "Synthetic outcomes. Treated sales rise 120 to 150 and comparison sales 100 to 110.",
+        "description": "The implied untreated treated-group outcome is 130. The observed treated outcome is 150, giving a 20-unit difference.",
+        "notes": "The dashed path is an implied counterfactual. A treatment-specific demand shock at the same time would challenge the interpretation.",
+        "source": "M6, Section 6.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Design Checks",
+        "bullets": [
+          "Examine pre-treatment outcomes and institutional timing.",
+          "Consider anticipation, spillovers, and changing composition.",
+          "Match the comparison group to the policy's untreated counterfactual."
+        ],
+        "notes": "A nonsignificant pre-trend test does not establish parallel trends. With staggered adoption and heterogeneous effects, the choice of comparison groups and aggregation becomes especially important.",
+        "source": "M6, Section 6.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "McBroken and the Comparison Group",
+        "figure": "../06_Lecture_Notes/figures/M06_mcbroken_policy.tex",
+        "caption": "A policy-analysis design requires a credible untreated comparison.",
+        "description": "The figure distinguishes the proposed policy timing from restaurant coverage and observed availability. A national time change alone mixes the policy with other changes.",
+        "notes": "The course case retains missing dates and unknown statuses. Those measurement issues should be addressed before interpreting an apparent policy break.",
+        "source": "M6, Section 6.16, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Regression Discontinuity",
+        "bullets": [
+          "Eligibility can change at a known score threshold.",
+          "Nearby units require continuity of other outcome determinants.",
+          "The resulting effect is local to the cutoff and compliance behavior."
+        ],
+        "notes": "Manipulation of the score and discontinuities in other policies threaten the comparison. Bandwidth and functional form should be assessed within the design.",
+        "source": "M6, Section 6.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Instrumental Variables",
+        "bullets": [
+          "The instrument shifts treatment or price.",
+          "Exclusion restricts its other paths to the outcome.",
+          "Relevance alone does not establish exclusion."
+        ],
+        "notes": "Under the appropriate binary-treatment conditions, IV can identify a local effect for compliers. The interpretation depends on the assignment mechanism and monotonicity, as well as the first stage.",
+        "source": "M6, Section 6.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Recommendation Logs Select Exposure",
+        "bullets": [
+          "Frequent buyers may usually see product A.",
+          "Occasional buyers may usually see product B.",
+          "Their raw click rates compare different customer populations."
+        ],
+        "notes": "A logged outcome is observed after a selected display. A policy comparison must account for the distribution of customers and actions that generated those observations.",
+        "source": "M6, Section 6.7.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Exposure Adjustment Reverses the Ranking",
+        "figure": "../06_Lecture_Notes/figures/M06_exposure_reversal.tex",
+        "caption": "Synthetic randomized logging within frequent and occasional buyer groups.",
+        "description": "Raw click rates favor A, 56% versus 41%. A common equally weighted population favors B, 45% versus 40%.",
+        "notes": "The constructed logging design gives A probability 0.90 for frequent buyers and 0.10 for occasional buyers. B receives the complement. The common-population comparison holds customer mix fixed.",
+        "source": "M6, Section 6.7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Inverse-Propensity Policy Value",
+        "intro": "Weight each observed outcome by target-policy probability over logging probability.",
+        "equation": "\\widehat V(\\pi)=\\frac{1}{n}\\sum_i\\frac{\\pi(A_i\\mid X_i)}{p_0(A_i\\mid X_i)}Y_i",
+        "interpretation": "The denominator counts every eligible logged opportunity.",
+        "notes": "Identification requires the relevant exchangeability condition and positive logging support wherever the target policy acts. A randomized logging policy can supply known assignment probabilities.",
+        "source": "M6, Section 6.7.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Common-Population Calculation",
+        "intro": "Synthetic clicks and logging probabilities identify the two policy values.",
+        "code": "n = 1000\nvalue_a = (270 / 0.90 + 10 / 0.10) / n\nvalue_b = (25 / 0.10 + 180 / 0.90) / n\nraw_a = 280 / 500\nraw_b = 205 / 500\nassert (value_a, value_b) == (0.40, 0.45)",
+        "check": "The raw ranking and policy-value ranking disagree.",
+        "notes": "An independent check averages the two group-specific response rates under equal population weights. The small-probability cells receive large weights and contribute substantial uncertainty.",
+        "source": "M6, Section 6.7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Support and Weight Concentration",
+        "bullets": [
+          "An action never shown to a group has no observed outcome there.",
+          "Large weights amplify a small number of records.",
+          "Clipping changes the estimator and its bias-variance tradeoff."
+        ],
+        "notes": "Zero support cannot be repaired by increasing a weight. Weight-concentration summaries are diagnostics and do not replace a variance calculation that respects dependence.",
+        "source": "M6, Section 6.7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Spillovers Change the Outcome Comparison",
+        "figure": "../06_Lecture_Notes/figures/M06_spillovers.tex",
+        "caption": "Synthetic store network with effects beyond assigned units.",
+        "description": "A treated store can attract customers from a nearby comparison store. The difference between stores then mixes the direct effect with displacement.",
+        "notes": "The chain-wide outcome may change less than the treated-store outcome. Assignment and outcome aggregation should follow the managerial decision.",
+        "source": "M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: Policy Value",
+        "bullets": [
+          "Reproduce raw rates and inverse-propensity values.",
+          "Check them using within-group averages.",
+          "Set one logging probability to zero and explain the missing comparison."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S10. A correct implementation flags unsupported target actions. Silently dropping the unsupported group changes the target population.",
+        "source": "M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Information and Exposure",
+        "bullets": [
+          "A recommendation can draw attention to an item.",
+          "A personalized endorsement can also change beliefs.",
+          "Separate interventions can identify these channels."
+        ],
+        "notes": "The MovieLens experiment discussed in the notes distinguishes recommendation and exposure-only conditions. The relevant outcome and information treatment should be stated before attributing a response to personalization.",
+        "source": "M6, Section 6.10.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Policy Value for Whom?",
+        "bullets": [
+          "Clicks and sales can rise while customer value falls.",
+          "A causal estimate concerns the outcome that was actually measured.",
+          "Record refusal, completion, and customer time when procedures change."
+        ],
+        "notes": "A valid causal effect on conversion does not identify the welfare effect without information about customer values and costs. The next measurement should address the missing part of the decision.",
+        "source": "ETHICS_AND_REGULATION.md, M6."
+      },
+      {
+        "kind": "bullets",
+        "title": "Causal-Design Discussion",
+        "bullets": [
+          "What would the treated group have experienced without the policy?",
+          "Which group or action lacks comparable support?",
+          "What institutional evidence strengthens the proposed comparison?"
+        ],
+        "notes": "A causal interpretation rests on the comparison and assumptions. A flexible estimator does not supply a missing assignment mechanism or recover outcomes outside support.",
+        "source": "M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      }
+    ],
+    "links": [
+      "[M6 lecture notes](../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[McBroken policy analysis](../03_Data_and_Code/McBroken/README.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
+    "application": "Assess the comparison group and measurement requirements for a restaurant repair-policy evaluation."
+  },
+  {
+    "number": 11,
+    "title": "Prediction, Validation, and Marketing Actions",
+    "stem": "S11_Prediction_Validation_and_Marketing_Actions",
+    "module": "M7",
+    "objectives": [
+      "Design a holdout that matches deployment and prevents leakage.",
+      "Compare ranking, calibration, and decision costs.",
+      "Assess coverage and missing future labels in an availability forecast."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Service-Capacity Decision",
+        "bullets": [
+          "A team can review 100 customers each week.",
+          "Predictions use information available before that week.",
+          "The outcome and review benefit determine the useful metric."
+        ],
+        "notes": "A model selected on overall accuracy can fail to identify the cases that the team can help. The intervention value and the forecast are separate quantities.",
+        "source": "M7, Section 7.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Validation Reproduces Deployment",
+        "figure": "../06_Lecture_Notes/figures/M07_splits.tex",
+        "caption": "The deployment population determines the appropriate holdout.",
+        "description": "Random rows, whole-customer holdouts, and later-period holdouts test different forms of generalization.",
+        "notes": "New-customer prediction requires separation by customer. Future prediction for returning customers requires separation in time. Some deployments require both.",
+        "source": "M7, Section 7.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "The Forecast Origin",
+        "bullets": [
+          "Features end before the decision time.",
+          "The outcome window begins after the decision.",
+          "Training labels must already be observable at fitting time."
+        ],
+        "notes": "A database extract can contain information that did not exist at the historical prediction origin. Store measurement windows or feature timestamps to make the information constraint verifiable.",
+        "source": "M7, Section 7.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Baselines and Model Families",
+        "bullets": [
+          "Compare with a constant probability or recent-history forecast.",
+          "Logistic regression supplies a probability baseline.",
+          "Trees represent conditional splits. Ensembles combine trees."
+        ],
+        "notes": "A complex model earns its place through performance on the intended held-out observations and decision costs. Training fit alone rewards flexibility.",
+        "source": "M7, Section 7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Logistic Prediction",
+        "intro": "Transform a linear index into a binary-outcome probability.",
+        "equation": "\\widehat p_i=\\frac{1}{1+\\exp[-(\\beta_0+x_i^\\top\\beta)]}",
+        "interpretation": "A coefficient changes log odds. Its probability effect depends on the starting point.",
+        "notes": "The same index change has a larger probability effect near the middle than near zero or one. Calibration should be evaluated on the deployment population.",
+        "source": "M7, Section 7.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Preprocessing Belongs in Training",
+        "bullets": [
+          "Fit imputation, scaling, and vocabulary on training records.",
+          "Choose model settings using validation data.",
+          "Keep the final test sample separate from model selection."
+        ],
+        "notes": "Repeatedly choosing features from test performance turns that sample into validation data. A pipeline helps preserve the training-only boundary within cross-validation.",
+        "source": "M7, Section 7.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "table",
+        "title": "Rare Purchases and Accuracy",
+        "headers": [
+          "Quantity",
+          "Flagged",
+          "Not Flagged"
+        ],
+        "rows": [
+          [
+            "Purchases",
+            "30",
+            "20"
+          ],
+          [
+            "No Purchase",
+            "70",
+            "880"
+          ]
+        ],
+        "caption": "Synthetic population: 1,000 customers and 50 purchases.",
+        "notes": "Flagging 100 customers gives precision 30%, recall 60%, and accuracy 91%. Predicting no purchase for everybody gives 95% accuracy and finds no purchasers.",
+        "source": "M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Metrics and the Review Queue",
+        "bullets": [
+          "Precision: what fraction of reviewed cases are positive?",
+          "Recall: what fraction of positives enter the queue?",
+          "Calibration: do predicted probabilities match observed frequencies?"
+        ],
+        "notes": "The appropriate contact fraction should match staff capacity. A ranking measure and a probability measure answer different questions. Neither by itself measures the causal effect of contacting a customer.",
+        "source": "M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Ranking Can Stay Fixed While Probabilities Change",
+        "figure": "../06_Lecture_Notes/figures/M07_calibration.tex",
+        "caption": "A synthetic transformation squares initially calibrated probabilities.",
+        "description": "Squaring the scores preserves their order but changes the probability scale. Ranking performance can remain unchanged while expected counts become wrong.",
+        "notes": "For q=p squared, the original outcome frequency p equals the square root of q. Expected contribution calculations need probabilities with the relevant interpretation.",
+        "source": "M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "equation",
+        "title": "A Cost-Based Threshold",
+        "intro": "Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.",
+        "equation": "p>\\frac{C_{FP}}{C_{FP}+C_{FN}}",
+        "interpretation": "With costs 1 and 9, the threshold is 0.10 under this simplified classification loss.",
+        "notes": "Correct classifications have zero cost in this example. Capacity constraints and different action effects require a richer decision model.",
+        "source": "M7, Section 7.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Coupon Targeting Includes the Untreated Outcome",
+        "figure": "../06_Lecture_Notes/figures/M07_targeting.tex",
+        "caption": "Synthetic probabilities and costs. High treated response can have negative incremental value.",
+        "description": "Customer A has treated purchase probability 0.80 and contribution -5.20 dollars. B has probability 0.30 and contribution 2.50 dollars under the stated coupon model.",
+        "notes": "Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact cost 2 dollars. Baseline probabilities are 0.78 and 0.15. Discount expense applies to purchases that would also have occurred without the coupon.",
+        "source": "M7, Section 7.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "code",
+        "title": "Queue Metrics",
+        "intro": "Compute metrics from the synthetic confusion matrix.",
+        "code": "tp, fn, fp, tn = 30, 20, 70, 880\nprecision = tp / (tp + fp)\nrecall = tp / (tp + fn)\naccuracy = (tp + tn) / (tp + fn + fp + tn)\nassert (precision, recall, accuracy) == (0.3, 0.6, 0.91)",
+        "check": "The model finds 60% of purchasers while 70% of its queue contains nonpurchasers.",
+        "notes": "Whether that queue is profitable depends on the action and its incremental outcome. A prediction score alone cannot supply the causal response to a coupon.",
+        "source": "M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "McBroken Forecasting",
+        "bullets": [
+          "Predict availability on a later date.",
+          "Retain a separate count of unknown future labels.",
+          "Compare baseline and fitted forecasts on the same observed outcomes."
+        ],
+        "notes": "An unknown future status is not an observed available restaurant. Dropping missing labels changes the evaluated population and can make an apparently strong forecast depend on observation coverage.",
+        "source": "M7, Section 7.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Prediction and Outcome Coverage",
+        "figure": "../06_Lecture_Notes/figures/M07_mcbroken_prediction.tex",
+        "caption": "McBroken forecasts use later dates and observed-label denominators.",
+        "description": "The figure compares forecast performance while preserving the distinction between known labels and missing future outcomes.",
+        "notes": "The course example checks information availability at the forecast origin and uses chronological evaluation. Missing outcome counts remain alongside accuracy measures.",
+        "source": "M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Forecast Evaluation",
+        "bullets": [
+          "Create training, validation, and later test windows.",
+          "Check every feature against the forecast date.",
+          "Compare a simple baseline, ranking, and calibration.",
+          "Report missing outcomes beside the test metrics."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions.",
+        "source": "M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Targeting and Delivered Opportunities",
+        "bullets": [
+          "An apparently neutral target can produce unequal delivery.",
+          "Evaluate exposure and error costs across relevant groups.",
+          "Housing, credit, and employment applications require their specific legal context."
+        ],
+        "notes": "The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well as targeting tools. That case is evidence about housing advertising and should not be generalized into a single rule for all products.",
+        "source": "DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny"
+      },
+      {
+        "kind": "bullets",
+        "title": "Prediction Discussion",
+        "bullets": [
+          "Which error uses scarce review capacity?",
+          "Which feature becomes available too late?",
+          "Does the score support a forecast, an intervention, or both?"
+        ],
+        "notes": "A deployment decision needs an explicit chain from information to prediction to action. Each link has its own empirical requirements.",
+        "source": "M7, Section 7.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      }
+    ],
+    "links": [
+      "[M7 lecture notes](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[McBroken prediction case](../03_Data_and_Code/McBroken/README.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Assess a chronological split and compare accuracy, precision, recall, and calibration.",
+    "application": "Translate a forecast into a capacity-constrained action and check missing future labels."
+  },
+  {
+    "number": 12,
+    "title": "Recommendation Systems and Customer Goals",
+    "stem": "S12_Recommendation_Systems_and_Customer_Goals",
+    "module": "M7",
+    "objectives": [
+      "Define candidate generation, scoring, and ranking.",
+      "Evaluate top-k recommendations on an appropriate history and denominator.",
+      "Compare relevance, novelty, customer goals, and explanation accuracy."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Returning-Customer Decision",
+        "bullets": [
+          "An mHealth user returns to log a meal.",
+          "The system chooses among eligible categories using earlier histories.",
+          "The objective may include familiar relevance and a stated variety goal."
+        ],
+        "notes": "The next logged basket differs from the next item row. A basket can contain several relevant categories. Availability and the customer's goal constrain which recommendations are useful.",
+        "source": "M7, Section 7.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "The Candidate Set",
+        "bullets": [
+          "Candidate generation determines what can be recommended.",
+          "Scoring compares eligible items using current information.",
+          "Ranking chooses order and applies list constraints."
+        ],
+        "notes": "A strong ranking model cannot recover an item excluded during candidate generation. Evaluation must retain the candidate-set definition as well as the ranked output.",
+        "source": "M7, Section 7.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Recommendation Models",
+        "bullets": [
+          "Content models compare item attributes and customer histories.",
+          "Collaborative models learn patterns across customers and items.",
+          "Popularity and personal-frequency rules provide useful baselines."
+        ],
+        "notes": "A content model can help with new items that lack interactions. A collaborative model benefits from shared behavior but faces cold-start and selected-exposure problems.",
+        "source": "M7, Section 7.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Histories Must Precede the Basket",
+        "figure": "../06_Lecture_Notes/figures/M07_mhealth_timing.tex",
+        "caption": "mHealth evaluation freezes histories and candidate sets at the forecast origin.",
+        "description": "Training histories precede validation and test baskets. Later outcomes do not define candidate eligibility or tune the final model.",
+        "notes": "Returning-user prediction can use the user's earlier history while holding out later baskets. The distinction is temporal rather than necessarily a complete user holdout.",
+        "source": "M7, Section 7.15.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Recall Among Relevant Categories",
+        "intro": "Let $L_i$ be the top-k list and $B_i$ the categories in the next observed basket.",
+        "equation": "\\operatorname{Recall@k}_i=\\frac{|L_i\\cap B_i|}{|B_i|}",
+        "interpretation": "The denominator is the number of relevant basket categories for that user-event.",
+        "notes": "Report how empty baskets and unavailable categories are handled. Average per event or per user according to the target population, and retain the chosen weighting rule.",
+        "source": "M7, Section 7.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Position Matters",
+        "intro": "Discount lower-ranked relevant items when their positions affect exposure.",
+        "equation": "\\operatorname{DCG@k}=\\sum_{r=1}^{k}\\frac{2^{\\mathrm{rel}_r}-1}{\\log_2(r+1)}",
+        "interpretation": "NDCG divides by the best attainable DCG for the same relevance labels.",
+        "notes": "NDCG depends on the candidate set and relevance definition. Unobserved engagement is not necessarily a negative preference label because exposure is selective.",
+        "source": "M7, Section 7.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Basket Associations",
+        "bullets": [
+          "Support counts how often items occur together.",
+          "Confidence conditions on the antecedent item.",
+          "Lift compares confidence with the consequent's marginal prevalence."
+        ],
+        "notes": "Association rules are descriptive. A positive lift can reflect common meal occasions or other causes rather than a response to recommendation. Evaluate rules on later baskets.",
+        "source": "M7, Section 7.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Lift Changes the Baseline Comparison",
+        "figure": "../06_Lecture_Notes/figures/M07_basket_lift.tex",
+        "caption": "mHealth basket rules use distinct baskets and future validation.",
+        "description": "The chart compares rule confidence with a marginal-prevalence benchmark. Common items can have high confidence with little lift.",
+        "notes": "Counting item rows instead of distinct baskets changes the denominator and can inflate associations through repeated entries.",
+        "source": "M7, Section 7.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Relevance and a Customer Goal",
+        "intro": "Combine relevance $s_j$ with a goal score $g_j$ using an explicit weight.",
+        "equation": "v_j(\\alpha)=(1-\\alpha)s_j+\\alpha g_j",
+        "interpretation": "The scores need a comparable scale before the weight has a clear interpretation.",
+        "notes": "A goal score should reflect a defined customer objective and validated measurement. The weight does not become a preference estimate merely because a programmer sets it.",
+        "source": "M7, Section 7.12.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Small Weight Changes Can Change the First Item",
+        "figure": "../06_Lecture_Notes/figures/M07_goal_blend.tex",
+        "caption": "Synthetic item scores. Relevance and goal scores stay fixed.",
+        "description": "A ranks first at low goal weights, B in a middle range, and C at high weights. The maximizing item switches at crossings even though each score changes smoothly.",
+        "notes": "A recommendation can be discontinuous in a tuning weight. Sensitivity analysis should report the ranking itself, not only smooth average scores.",
+        "source": "M7, Section 7.12.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Three-Item Basket Check",
+        "intro": "The list contains A, B, and C. The basket contains A and C.",
+        "code": "from math import log2\nranked = ['A', 'B', 'C']\nrelevant = {'A', 'C'}\nrecall = len(set(ranked) & relevant) / len(relevant)\ndcg = sum((x in relevant) / log2(r+2)\n          for r,x in enumerate(ranked))\nideal = 1 + 1/log2(3)\nassert recall == 1.0",
+        "check": "Recall is 1.0, while NDCG is about 0.920 because B occupies the second position.",
+        "notes": "The calculation uses binary relevance. It assumes all relevant items are eligible and that the observation window defines a valid basket.",
+        "source": "M7, Section 7.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "LLM Explanations",
+        "bullets": [
+          "Explain a recommendation using verified item attributes.",
+          "Check whether stated reasons are factually supported.",
+          "Evaluate explanation effects separately from ranking quality."
+        ],
+        "notes": "An explanation can sound plausible while inventing a nutritional property or claiming a nonexistent personal preference. Factual support and behavioral effects require distinct evaluations.",
+        "source": "M7, Section 7.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Offline and Online Outcomes",
+        "bullets": [
+          "A hit in a historical basket measures predictive overlap.",
+          "A recommendation changes exposure and may change behavior.",
+          "A randomized policy comparison measures the intervention outcome."
+        ],
+        "notes": "A historically unrecorded category can be unknown rather than disliked. Offline metrics are informative under their measurement conditions but do not identify the effect of displaying a new list.",
+        "source": "M7, Section 7.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: Ranking With a Goal",
+        "bullets": [
+          "Compare popularity and personal-frequency baselines.",
+          "Tune the goal weight on validation baskets.",
+          "Evaluate the fixed choice on later baskets.",
+          "Assess one generated explanation against item attributes."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S12 for the NDCG check. The full mHealth m07.py program defines the candidate and basket windows. Preserve the final test period for evaluation.",
+        "source": "M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Customer Control of Recommendations",
+        "bullets": [
+          "A customer can accept a suggested goal or reject it.",
+          "Factual explanations should distinguish evidence from an inferred preference.",
+          "Evaluate whether the interface respects a revised goal."
+        ],
+        "notes": "A nominal control that does not affect the recommendation can leave the customer unable to change the policy. A recommendation evaluation should record both the chosen setting and its implemented effect.",
+        "source": "ETHICS_AND_REGULATION.md, M7."
+      },
+      {
+        "kind": "bullets",
+        "title": "Recommendation Discussion",
+        "bullets": [
+          "Which relevant item was excluded before scoring?",
+          "Whose goal determines the ranking weight?",
+          "What evidence would show improved customer experience?"
+        ],
+        "notes": "The full policy includes eligibility, ranking, explanation, and updates after use. A useful evaluation identifies which component changed.",
+        "source": "M7, Section 7.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      }
+    ],
+    "links": [
+      "[M7 lecture notes](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[mHealth recommendation program](../03_Data_and_Code/mHealth/recurring_examples/m07.py)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Compare ranking baselines, calculate NDCG, and assess a goal-weight sensitivity.",
+    "application": "Check a generated recommendation explanation and design an online outcome comparison."
+  },
+  {
+    "number": 13,
+    "title": "Adaptive Recommendations and Marketing Budgets",
+    "stem": "S13_Adaptive_Recommendations_and_Marketing_Budgets",
+    "module": "M8",
+    "objectives": [
+      "Trace how recommendations affect future training data.",
+      "Evaluate list objectives and customer goals.",
+      "Allocate a fixed marketing budget using marginal response."
+    ],
+    "slides": [
+      {
+        "kind": "art",
+        "title": "Recommendations Shape the Paths Customers Follow",
+        "image": "recommendation_garden",
+        "description": "A gardener consults a tablet beside familiar and exploratory paths through different fruit trees. The paths represent selected exposure and future opportunities.",
+        "notes": "A frequently used path produces more observations from its existing destinations. Exploration changes which preferences can be learned.",
+        "source": "Original conceptual illustration. 05_Slides/assets/PROVENANCE.md."
+      },
+      {
+        "kind": "bullets",
+        "title": "An Adaptive Policy",
+        "bullets": [
+          "A model selects exposure using existing interaction histories.",
+          "Customers respond to the displayed options.",
+          "Retraining incorporates those selected responses."
+        ],
+        "notes": "The policy changes the environment that supplies future training data. The update rule and retraining schedule belong in the definition of the intervention.",
+        "source": "M8, Section 8.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Selected Exposure Creates a Feedback Loop",
+        "figure": "../06_Lecture_Notes/figures/M08_feedback.tex",
+        "caption": "The diagram describes a policy mechanism rather than an estimated effect.",
+        "description": "Recommendations affect exposure, exposure affects observed responses, and those responses inform subsequent training and recommendations.",
+        "notes": "A popularity loop can concentrate observation among already visible items. Randomized exploration or additional evaluation data can change what the system learns.",
+        "source": "M8, Section 8.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "The Evaluation Horizon Includes Learning",
+        "figure": "../06_Lecture_Notes/figures/M08_policy_horizon.tex",
+        "caption": "A temporary intervention can persist through subsequent model updates.",
+        "description": "The intervention changes responses during the campaign. A retrained model can preserve information from those responses after the campaign ends.",
+        "notes": "Freezing the model blocks the retraining channel but can leave direct changes in customer behavior. These policies require separate definitions and, where feasible, separate comparisons.",
+        "source": "M8, Section 8.1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Customer Goals and Platform Objectives",
+        "bullets": [
+          "Clicks reveal a response within an offered environment.",
+          "Considered preferences can differ from immediate engagement.",
+          "Measure satisfaction, unwanted repetition, and customer-stated goals."
+        ],
+        "notes": "A higher click count can coexist with regret or frustration. A system can combine behavior with explicit goals while recognizing that each measure has its own errors.",
+        "source": "M8, Section 8.2.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "equation",
+        "title": "A List Objective",
+        "intro": "A list combines item relevance with category variety.",
+        "equation": "J(L)=\\sum_{j\\in L}s_j+\\lambda K(L)",
+        "interpretation": "The variety weight $\\lambda$ is expressed in the same units as the relevance score.",
+        "notes": "A weighted sum requires a substantive choice of scales and tradeoffs. A customer replenishing a familiar basket may prefer a different weight from a customer seeking variety.",
+        "source": "M8, Section 8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "table",
+        "title": "Two Three-Item Lists",
+        "headers": [
+          "List",
+          "Relevance",
+          "Categories",
+          "Value at 0.30"
+        ],
+        "rows": [
+          [
+            "A, B, C",
+            "2.50",
+            "2",
+            "3.10"
+          ],
+          [
+            "A, C, D",
+            "2.30",
+            "3",
+            "3.20"
+          ]
+        ],
+        "caption": "Synthetic scores. The lists tie at a variety weight of 0.20.",
+        "notes": "A and B are coffee, C is tea, and D is fruit. The variety gain trades off against 0.20 of relevance. The values are imposed teaching scores.",
+        "source": "M8, Section 8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Model-Based and Experimental Evidence",
+        "bullets": [
+          "A fitted choice model can compare alternative recommenders.",
+          "A randomized perturbation can test predicted response patterns.",
+          "Engagement, retention, revenue, and welfare are distinct outcomes."
+        ],
+        "notes": "The Netflix study discussed in the notes uses a fitted choice model and an experimental check. Its replacement-recommender comparisons are model-based counterfactuals with specific exposure conditions.",
+        "source": "M8, Section 8.1.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Marketing-Mix Modeling",
+        "bullets": [
+          "Weekly channel spending can have delayed effects.",
+          "Response can saturate at high exposure.",
+          "Spending decisions can respond to anticipated demand."
+        ],
+        "notes": "Trend, seasonality, promotions, and media can move together. A fitted media component requires an identification argument before it is interpreted as a causal contribution.",
+        "source": "M8, Section 8.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Carryover",
+        "intro": "A geometric accumulated-exposure measure retains earlier spending.",
+        "equation": "a_t=s_t+\\rho a_{t-1},\\qquad 0\\leq\\rho<1",
+        "interpretation": "A 100-unit pulse with $\\rho=0.5$ gives 100, 50, 25, and 12.5 in successive periods.",
+        "notes": "This definition is unnormalized. Under constant spending s, its long-run level is s divided by one minus rho. Coefficients must follow the implementation's normalization.",
+        "source": "M8, Section 8.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Saturation and the Next Dollar",
+        "intro": "A concave response has declining marginal contribution.",
+        "equation": "R(s)=A[1-\\exp(-s/b)],\\qquad R^{\\prime}(s)=\\frac{A}{b}\\exp(-s/b)",
+        "interpretation": "Budget transfers depend on marginal response at the current allocation.",
+        "notes": "Average response summarizes all earlier units of spending. The next small transfer depends on the local slope, with units of contribution per spending unit.",
+        "source": "M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Average and Marginal Returns Can Disagree",
+        "figure": "../06_Lecture_Notes/figures/M08_marginal_returns.tex",
+        "caption": "Synthetic known response curves. Total spending is fixed at 60 thousand dollars.",
+        "description": "At the starting allocation, A has higher average return while B has higher marginal return. A transfer from A to B increases total contribution.",
+        "notes": "The response curves are 100 times one minus exp(-sA/20) and 80 times one minus exp(-sB/40). The interior allocation equalizes marginal returns.",
+        "source": "M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "code",
+        "title": "The Fixed-Budget Optimum",
+        "intro": "Solve equal marginal returns for the imposed curves.",
+        "code": "from math import exp, log\nbudget = 60\na = (log(2.5) + budget/40) / (1/20 + 1/40)\nb = budget - a\nma = 5 * exp(-a/20)\nmb = 2 * exp(-b/40)\nassert abs(ma-mb) < 1e-12",
+        "check": "The allocation is about 32.22 to A and 27.78 to B, in thousands of dollars.",
+        "notes": "The closed-form result applies to these known concave curves and an interior fixed-budget optimum. Different constraints or uncertain response functions require a revised calculation.",
+        "source": "M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Policy Objective",
+        "bullets": [
+          "Enumerate three-item lists at several variety weights.",
+          "Solve and independently grid-check the fixed-budget allocation.",
+          "Report the assumptions that change the preferred action."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S13. A grid check verifies the numerical optimum within its resolution. It does not establish the imposed response curves as causal estimates.",
+        "source": "M8, Section 8.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Attention and the Optimization Target",
+        "bullets": [
+          "A free service can require customer time and attention.",
+          "More exposure can benefit advertisers while burdening customers.",
+          "Evaluate voluntary use and customer outcomes alongside engagement."
+        ],
+        "notes": "Tim Wu's Blind Spot discusses attention markets and the difficulty of analyzing exchanges without a monetary user price. A course application should measure time, control, and value rather than equate engagement with welfare.",
+        "source": "Tim Wu, Blind Spot: The Attention Economy and the Law (2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/"
+      },
+      {
+        "kind": "bullets",
+        "title": "Policy Discussion",
+        "bullets": [
+          "What changes when the recommender learns during the experiment?",
+          "Which outcome measures the customer's stated goal?",
+          "How much uncertainty in response slopes would change the budget?"
+        ],
+        "notes": "A robust decision states the learning rule, target outcome, and support for the response function. The best numerical optimizer cannot supply those definitions.",
+        "source": "M8, Section 8.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      }
+    ],
+    "links": [
+      "[M8 lecture notes](../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Compare list objectives and solve a budget allocation with an independent grid check.",
+    "application": "Design a comparison that separates temporary exposure from subsequent learning."
+  },
+  {
+    "number": 14,
+    "title": "Generative AI, Consumer Choice, and Regulation",
+    "stem": "S14_Generative_AI_Consumer_Choice_and_Regulation",
+    "module": "M8",
+    "objectives": [
+      "Assess AI demand measurements and workflow claims.",
+      "Explain why a commercial objective can conflict with customer interests.",
+      "Map a marketing decision to the relevant evidence, jurisdiction, and rule status."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "A Subscription-Growth Decision",
+        "bullets": [
+          "A firm wants to increase paid renewals.",
+          "The evidence includes subscription histories, interfaces, and customer outcomes.",
+          "A higher renewal rate can arise through improved value or greater cancellation friction."
+        ],
+        "notes": "The commercial outcome does not identify the consumer mechanism. A useful assessment records value, consent, cancellation completion, and customer time as well as revenue.",
+        "source": "M8, Section 8.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Public Attention and Paid Demand",
+        "bullets": [
+          "Pageviews measure attention to selected pages.",
+          "Paid subscriptions measure a specific payment relationship.",
+          "User, provider, and category denominators differ."
+        ],
+        "notes": "A title change can split attention across pages. A user can hold multiple subscriptions. These measurement choices can create apparent differences in demand without the same underlying object.",
+        "source": "M8, Section 8.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Fixed Starting Cohort",
+        "figure": "../06_Lecture_Notes/figures/M04_genai_cohorts.tex",
+        "caption": "Entirely synthetic subscription panel. Provider labels identify simulated options.",
+        "description": "Starting-provider cohorts split into same-provider, other-provider-only, and no-paid-provider states. Each bar uses its own fixed starting cohort denominator.",
+        "notes": "These simulated percentages are not actual market shares or provider retention estimates. Multiple-provider behavior requires a definition that prevents incompatible categories from being added.",
+        "source": "M4, Section 4.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Subscriber Stocks and New Flows",
+        "bullets": [
+          "A subscriber stock includes past acquisition and survival.",
+          "A new-subscription flow can include first purchases and returns.",
+          "A price coefficient depends on the outcome and behavioral model."
+        ],
+        "notes": "Regressing subscriber stocks on current prices can combine persistent state with current choice. A structural interpretation must match the data-generating choice process.",
+        "source": "M8, Section 8.13.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Known Model Is a Useful Verification Case",
+        "figure": "../06_Lecture_Notes/figures/M08_genai_price.tex",
+        "caption": "Synthetic demand exercise with a known binary-model benchmark.",
+        "description": "The exact binary benchmark recovers a price coefficient of -0.06. Stock and new-flow specifications give different coefficients under their different data definitions.",
+        "notes": "Recovering the benchmark checks implementation under its assumptions. It does not establish a structural interpretation for the richer simulated panel or actual market data.",
+        "source": "M8, Section 8.13.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "AI Workflow Quality",
+        "bullets": [
+          "Measure the completed analysis and its validity.",
+          "Include generation, review, and repair time.",
+          "Use comparable tasks and independent quality criteria."
+        ],
+        "notes": "A time comparison can favor a tool because it abandons difficult tasks or reduces quality. The outcome definition should account for completion and validity before comparing speed.",
+        "source": "M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Review Time Is Part of Production",
+        "figure": "../06_Lecture_Notes/figures/M08_workflow_time.tex",
+        "caption": "Synthetic workflows meet the same stated quality requirement.",
+        "description": "Manual production and review total 110 minutes. Assisted production and review total 85 minutes, a 22.7% total reduction despite a 50% drafting-time reduction.",
+        "notes": "The manual workflow uses 90 minutes to produce and 20 to review. The assisted workflow uses 45 and 40. These are imposed time inputs, not an estimate of a universal AI effect.",
+        "source": "M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Choice Procedure Can Change Renewal",
+        "bullets": [
+          "A direct offer and an offer preceded by questions can produce different choices.",
+          "The customer still makes the final selection.",
+          "An independent value measure determines whether an additional renewal benefits that customer."
+        ],
+        "notes": "Questions, defaults, or retention prompts can precede a fixed target decision. The welfare comparison depends on consumer values, stable response probabilities, and the procedure set. A renewal increase alone does not establish either benefit or harm.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Opposed Interests",
+        "intro": "Suppose renewal yields firm margin $\\nu>0$ and costs the customer $\\sigma>0$ relative to declining.",
+        "equation": "\\Delta\\Pi=\\nu(s-s_0),\\qquad \\Delta V=-\\sigma(s-s_0)",
+        "interpretation": "A higher renewal probability raises profit and lowers customer value under these stated stakes.",
+        "notes": "This conditional comparison holds the offer, monetary values, and relevant response population fixed. It does not infer customer harm from conversion alone. Additional time and authority costs require separate measurement.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Profit and Customer Value Can Move Oppositely",
+        "figure": "../06_Lecture_Notes/figures/M08_retention_welfare.tex",
+        "caption": "Synthetic probabilities and fixed stakes. Direct renewal is 20%.",
+        "description": "An optional procedure lowers renewal to 10%; another raises it to 60%. At firm margin 11 dollars and customer loss 10 dollars per unwanted renewal, the latter gains the firm 4.40 dollars and costs the customer 4 dollars relative to direct choice.",
+        "notes": "The direct-choice benchmark is distinct from the consumer-preferred procedure. Relative to the 10% procedure, the 60% procedure creates a 5-dollar customer loss. These probabilities and monetary values are imposed inputs, not observed customer responses.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Experimentation Selects the Commercial Winner",
+        "bullets": [
+          "A fixed set of procedures has stable renewal probabilities.",
+          "Independent randomized samples estimate each probability.",
+          "With opposed interests, accurately selecting the largest rate also selects the largest loss in that set."
+        ],
+        "notes": "The result requires common fixed stakes, a fixed catalog chosen before the experiment, stable responses from experiment to deployment, and complete independently sampled outcomes. It does not say that every experiment harms consumers.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Cancellation Evaluation",
+        "bullets": [
+          "Include a direct-cancellation comparison.",
+          "Record whether optional retention content can be refused before exposure.",
+          "Measure completion, elapsed time, subsequent charges, and customer value."
+        ],
+        "notes": "An effective refusal path and an independent value measure reveal dimensions hidden by renewals. A direct-choice arm helps isolate the effect of the preceding interaction.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Rule Status and Scope",
+        "bullets": [
+          "A statute, binding rule, interpretive guide, and proposal have different authority.",
+          "Record jurisdiction, covered conduct, exceptions, and effective date.",
+          "Use the current primary source before turning a result into a business recommendation."
+        ],
+        "notes": "The FTC's March 2026 negative-option notice seeks input on possible amendments and refers to the vacated 2024 rule. A request for comments does not itself adopt replacement obligations.",
+        "source": "FTC, Negative Option Rule ANPRM announcement, March 2026. https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option"
+      },
+      {
+        "kind": "bullets",
+        "title": "Pricing, Reviews, and Delivery",
+        "bullets": [
+          "Price-display rules require attention to the covered industry.",
+          "Reviews presented as customer experiences require truthful provenance.",
+          "Housing-ad delivery can create discrimination concerns beyond targeting choices."
+        ],
+        "notes": "The FTC fee rule covers live-event tickets and short-term lodging. Its review rule distinguishes business creation and purchase of false reviews from mere hosting. The DOJ Meta settlement addresses housing advertising specifically. These sources do not establish an identical rule for every marketing application.",
+        "source": "Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md."
+      },
+      {
+        "kind": "code",
+        "title": "A Welfare Comparison",
+        "intro": "Synthetic stakes distinguish profit from customer value.",
+        "code": "direct, selected = 0.20, 0.60\nfirm_margin, customer_loss = 11, 10\nfirm_gain = firm_margin * (selected-direct)\nvalue_change = -customer_loss * (selected-direct)\nassert round(firm_gain, 2) == 4.40\nassert round(value_change, 2) == -4.00",
+        "check": "Higher combined surplus can coexist with a customer loss under these assumptions.",
+        "notes": "The combined change is 0.40 dollars per potential customer in this example. The welfare result is conditional on the imposed values. A choice probability does not independently reveal those values.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Marketing Evaluation",
+        "bullets": [
+          "Verify a demand denominator and the workflow-time calculation.",
+          "Compute profit and customer value for alternative retention procedures.",
+          "Propose an interface change and the evidence needed to evaluate it."
+        ],
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs.",
+        "source": "M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Decision With Consumer Outcomes",
+        "bullets": [
+          "State the commercial target and customer outcome.",
+          "Identify the procedure the customer can accept, refuse, or revise.",
+          "Connect the proposed action to current rules and supporting evidence."
+        ],
+        "notes": "A marketing policy can improve matching, convenience, and customer value. Its evaluation should also reveal when additional sales come from misleading claims, unwanted friction, or conflicting incentives.",
+        "source": "Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md."
+      }
+    ],
+    "links": [
+      "[M8 lecture notes](../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[GenAI demand examples](../03_Data_and_Code/GenAI_Demand/README.md)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Assess demand and workflow measurements, then calculate a conditional retention-welfare example.",
+    "application": "Evaluate a cancellation procedure using customer value, refusal, completion, and applicable rule status."
+  },
+  {
+    "number": 15,
+    "title": "Integrated Decisions and Final Presentations",
+    "stem": "S15_Integrated_Decisions_and_Final_Presentations",
+    "module": "M1-M8",
+    "objectives": [
+      "Connect validated analysis to a concrete marketing decision.",
+      "Evaluate uncertainty, consumer consequences, and operational constraints.",
+      "Communicate a reproducible conclusion and a useful next test."
+    ],
+    "slides": [
+      {
+        "kind": "bullets",
+        "title": "An Integrated Marketing Decision",
+        "bullets": [
+          "Choose a feasible action and a defined customer population.",
+          "Connect measurement, modeling, and evaluation to that action.",
+          "State the costs, customer outcomes, and uncertainty that affect the choice."
+        ],
+        "notes": "The evidence chain can include a descriptive assessment, a predictive model, a causal comparison, and a scenario. Each component should retain its own scope and assumptions.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "The Evidence Behind the Recommendation",
+        "bullets": [
+          "State the sample, observation unit, and outcome horizon.",
+          "Show the comparison that supports the main claim.",
+          "Explain which result changes the recommended action."
+        ],
+        "notes": "A result becomes decision-relevant when it changes a feasible choice under explicit costs or constraints. The audience should be able to assess the supporting comparison directly.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Calculation the Audience Can Check",
+        "bullets": [
+          "Trace one figure to an aggregate table and source records.",
+          "Reproduce one prediction, coefficient interpretation, or policy value.",
+          "Retain complete code and data definitions with the result."
+        ],
+        "notes": "A hand-checkable calculation complements complete reproducible code. It provides independent evidence about the unit, denominator, and direction of the computation.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Result That Could Change the Decision",
+        "bullets": [
+          "Identify the most consequential uncertain parameter.",
+          "Show the threshold at which the preferred action changes.",
+          "Consider a feasible test that could resolve that uncertainty."
+        ],
+        "notes": "Sensitivity should connect uncertainty to action. A wide parameter range is useful when it reveals whether the decision is stable or fragile.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "Customer Consequences",
+        "bullets": [
+          "Report effects on access, time, value, and unwanted charges where relevant.",
+          "Distinguish voluntary continued use from difficulty leaving.",
+          "Explain how customers can refuse or correct the proposed interaction."
+        ],
+        "notes": "The relevant customer outcome depends on the product and action. A higher platform metric can conceal costs outside the optimized objective.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "Regulatory Scope",
+        "bullets": [
+          "Identify the jurisdiction and covered conduct.",
+          "Separate the current rule from a proposal or allegation.",
+          "Match the evidence supporting a claim to what customers will understand."
+        ],
+        "notes": "The primary-source record should identify the effective date and consequential exclusions. A legal conclusion for one sector or jurisdiction should not be transferred mechanically to another.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "Presentation Discussion",
+        "bullets": [
+          "Is the recommendation supported for the stated population?",
+          "What analytical or customer risk has the largest consequence?",
+          "Which part of the result can be reproduced independently?"
+        ],
+        "notes": "Feedback should name an observable gap in the evidence or a specific counterexample. The strongest response supplies a corrected comparison or explains why the original remains valid.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "A Deployment Comparison",
+        "bullets": [
+          "Retain a benchmark and a defined evaluation population.",
+          "Monitor outcomes and data coverage after the action changes behavior.",
+          "Set a response when quality or customer outcomes deteriorate."
+        ],
+        "notes": "A policy that changes exposure can also change future training data. Evaluation after deployment needs versioned inputs, outcomes, and policy rules.",
+        "source": ""
+      },
+      {
+        "kind": "bullets",
+        "title": "An Evidence-Based Recommendation",
+        "bullets": [
+          "Name the action, expected consequence, and decision threshold.",
+          "Keep consequential uncertainty beside the estimate.",
+          "Identify the next concrete extension supported by the evidence."
+        ],
+        "notes": "A conditional recommendation can be decisive when its conditions are measurable. The final decision should remain traceable to the data, assumptions, and customer outcomes.",
+        "source": ""
+      }
+    ],
+    "links": [
+      "[M8 lecture notes](../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md)",
+      "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+    ],
+    "practice": "Presentation blocks with evidence, reproducibility, and customer-outcome discussion.",
+    "application": "Compare recommendations using decision thresholds and identify the next useful test."
+  }
+]

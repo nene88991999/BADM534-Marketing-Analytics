@@ -1,0 +1,39 @@
+{
+  "verified_on": "2026-11-02",
+  "artifacts": {
+    "05_Slides/Marketing_Analytics_Lectures.pdf": {
+      "pages": 255,
+      "sha256": "a76698e403740573d771cd093735b32c3e35e6efbb5134754bb38fa5781a44d1"
+    },
+    "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+      "pages": 174,
+      "sha256": "87ca8fb97448aad45dbda793c8c731ba707fec1e6d49087efc6120b4e40ef9b7"
+    }
+  },
+  "session_decks": 15,
+  "scheduled_minutes_per_meeting": 170,
+  "checks": {
+    "all_student_pdf_pages_rendered_and_visually_reviewed": true,
+    "presenter_mode_session_14_compiled_and_layout_reviewed": true,
+    "normal_decks_have_no_overfull_boxes_or_tex_errors": true,
+    "session_plan_and_manifest_counts_agree": true,
+    "local_companion_links_resolve": 254,
+    "projected_python_snippets_executed": 13,
+    "session_program_calculations_executed": 14,
+    "full_note_code_blocks_match_source_and_parse": 41,
+    "retention_example_compared_with_independent_expected_values": true,
+    "retention_figure_matches_aggregate_csv": true
+  },
+  "execution_scope": "The synthetic calculation checks remain valid. This revision reran the mHealth data-quality and chart assessments, 16 mHealth logic checks, and five McBroken checks. It did not rerun every module analysis or downloaded reference notebook.",
+  "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
+  "reorganization_and_terminology_checks": {
+    "slide_folder": "05_Slides",
+    "student_slide_pages_visually_rechecked": 12,
+    "note_pages_visually_rechecked": 26,
+    "mhealth_tests_passed": 16,
+    "mcbroken_tests_passed": 5,
+    "renamed_assessment_programs_reproduced_previous_results": 2,
+    "matching_note_python_blocks": 41,
+    "local_markdown_links_checked": 336
+  }
+}

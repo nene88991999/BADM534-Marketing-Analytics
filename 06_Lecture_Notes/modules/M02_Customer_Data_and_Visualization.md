@@ -105,7 +105,7 @@ An effective chart title can state the comparison, such as “Campaign A's aggre
 
 ## 2.8 AI-Assisted Workflow and Practice
 
-Ask an assistant to construct a customer-period table from a specified roster and transaction table, preserving customers with no observed purchases. Require a join audit, a missing-data report, and a reconciliation of total sales. Next ask it to calculate the campaign table above and standardized rates under a 50/50 audience mix. Verify those small numbers before applying the same functions to a larger file.
+Ask an assistant to construct a customer-period table from a specified roster and transaction table, preserving customers with no observed purchases. Require a join assessment, a missing-data report, and a reconciliation of total sales. Next ask it to calculate the campaign table above and standardized rates under a 50/50 audience mix. Verify those small numbers before applying the same functions to a larger file.
 
 For a chart request, specify the question, observation unit, axis units, ordering, and uncertainty representation. Ask the assistant to describe what visual pattern would change the recommendation. Compare its description with the plotted data. If it labels an observational channel difference as an effect, revise the interpretation and identify the design that would be needed to support the stronger claim.
 
@@ -799,7 +799,7 @@ $$
 
 The denominator counts records observed in that snapshot. An absent record has an unknown status. It contributes to neither the numerator nor the denominator. Counting absence as availability would lower the reported percentage whenever collection coverage falls. The fraction also differs from the share of customer visits that encounter an unavailable item: customer arrivals and purchases supply the weights for that managerial outcome.
 
-The audit reconciles the store panel with the supplied national totals and verifies unique store-date keys. The 365-date calendar contains US records on 356 dates, including three dates with fewer than 2,000 records. Nine dates have no US observations. The July 24, 2026, snapshot has only two US records, both reporting availability. Its zero percentage describes those two records. The missing dates remain missing in the course table.
+The assessment reconciles the store panel with the supplied national totals and verifies unique store-date keys. The 365-date calendar contains US records on 356 dates, including three dates with fewer than 2,000 records. Nine dates have no US observations. The July 24, 2026, snapshot has only two US records, both reporting availability. Its zero percentage describes those two records. The missing dates remain missing in the course table.
 
 ![US record counts and recorded unavailability follow different series. The dashed count threshold is an imposed sensitivity screen, and gaps remain missing.](../figures/M02_mcbroken_coverage.png)
 
@@ -856,14 +856,14 @@ if __name__ == "__main__":
         raise AssertionError("String status was silently accepted")
 ```
 
-### 2.16.4 Audit and Reproduce the Availability Comparisons
+### 2.16.4 Assess and Reproduce the Availability Comparisons
 
 \noindent The preparation program checks unique keys, join coverage, status values, check ages, national totals, and the dimension table's observed-date counts. It creates a complete calendar before calculating rates. It also constructs exact next-day matches for Section 7.18, retaining the number of eligible origins when their next-day outcome is missing. The source-file hashes and selected archive commit identifiers keep the calculations traceable. The source bundle is required to rebuild these aggregates; the released aggregate tables support the subsequent programs directly.
 
 Python source: [prepare.py](../../03_Data_and_Code/McBroken/prepare.py). From its directory, run `python prepare.py`. The default input is the supplied resource bundle; `--source PATH` selects another copy of its data directory.
 
 ```python
-"""Audit supplied McBroken tables and build aggregate, offline teaching inputs."""
+"""Assess supplied McBroken tables and build aggregate, offline teaching inputs."""
 import argparse
 import hashlib
 import json
@@ -964,7 +964,7 @@ def main(source):
     daily.to_csv(out / "daily_us.csv", index=False)
     transitions.to_csv(out / "transitions.csv", index=False)
     event_data.drop(columns="share_broken").to_csv(out / "policy_window.csv", index=False)
-    audit = {
+    assessment = {
         "source_rows": len(panel), "address_keys": len(dim),
         "exact_coordinate_pairs": len(dim[["lat", "lon"]].drop_duplicates()),
         "calendar_days": len(daily), "us_observed_days": len(us),
@@ -977,11 +977,11 @@ def main(source):
         "snapshot_abs_offset_hours_max": float(daily.offset_hours.abs().max()),
         "duplicate_store_dates": 0, "unmatched_keys": 0,
         "country_counts_reconciled": True, "dimension_days_reconciled": True,
-        "matching": "Original address keys; coordinates are an audit, not a merge rule.",
+        "matching": "Original address keys define the merge; coordinates provide a consistency check.",
         "transition_screen": "Both dates: >=2000 US records and within 3 hours of 18:00 UTC.",
         "status_scope": "The supplied binary field was validated; raw API missingness cannot be recovered from these CSVs.",
     }
-    (out / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
+    (out / "assessment.json").write_text(json.dumps(assessment, indent=2) + "\n")
     manifest = {
         "source": "Rashiq Zahid, McBroken; snapshots via MrFlynn/mcbroken-archive",
         "urls": ["https://mcbroken.com", "https://github.com/MrFlynn/mcbroken-archive"],
@@ -990,7 +990,7 @@ def main(source):
         "rights": "Upstream archive software uses Unlicense; no separate McBroken data license was established. Public teaching outputs are attributed aggregate calculations.",
     }
     (ROOT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(json.dumps(audit, indent=2))
+    print(json.dumps(assessment, indent=2))
 
 
 if __name__ == "__main__":
@@ -1105,7 +1105,7 @@ An AI-generated collector should be tested with three small inputs: a repeated t
 Python source: [measurement.py](../../03_Data_and_Code/GenAI_Demand/measurement.py). From the script's folder, run `python3 measurement.py`. Inputs are read from the supplied local bundle; output tables are written beside the course scripts.
 
 ```python
-"""Audit the supplied Wikipedia capture without making network requests."""
+"""Assess the supplied Wikipedia capture without making network requests."""
 from pathlib import Path
 import json
 

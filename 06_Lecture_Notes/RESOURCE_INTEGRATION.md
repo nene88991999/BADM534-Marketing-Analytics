@@ -54,9 +54,9 @@ Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permit
 | M2, 2.14 | Financial Times Visual Vocabulary; seaborn distribution and palette tutorials | Managerial question before chart choice; fixed versus conditional denominators; exact ECDFs; ties, endpoint masses, scales, and redundant visual encodings. |
 | M2, 2.15 | Altair tutorial and current widget/export documentation | Aggregate-data month selector, fixed scales, explicit counts, an accessible HTML table, and a static-hosting example. |
 | M3, 3.6.1 | seaborn error-bar tutorial | Distribution spread versus uncertainty; complete-user resampling; a paired interval compared with an incorrect independent-day calculation. |
-| M8, 8.12 | VisEval | Executability, fidelity to the analytical question, and readability; four constructed chart mistakes and an independent numerical audit. |
+| M8, 8.12 | VisEval | Executability, fidelity to the analytical question, and readability; four constructed chart mistakes and an independent numerical assessment. |
 
-`visualization.py`, `visualization_charts.py`, and `chart_audit.py` were written for the course and executed locally. Their full code is embedded in the notes. Three generated TikZ figures use the Illinois palette. Five independent small-data tests supplement the numerical checks. [Chart data and replication instructions](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) describe the output and browser-validation scope.
+`visualization.py`, `visualization_charts.py`, and `chart_assessment.py` were written for the course and executed locally. Their full code is embedded in the notes. Three generated TikZ figures use the Illinois palette. Five independent small-data tests supplement the numerical checks. [Chart data and replication instructions](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) describe the output and browser-validation scope.
 
 FlowingData, its commercial book, the unlicensed storytelling recreation, Data to Viz, Datawrapper, Munzner, and PyNarrative remain optional linked references. No paid material was copied. Bokeh and HoloViz remain alternative implementation references, with their notebooks unexecuted. Matplotlib cheat sheets and Rougier's code remain figure-construction references. Rougier's `LICENSE.txt` separately grants BSD-2-Clause terms to code and CC BY-NC-SA 4.0 terms to book material; the catalog and generated provenance label have been corrected to preserve that distinction.
 
@@ -66,7 +66,7 @@ The supplied [McBroken bundle](../01_Resources/02_M2_Customer_Data_and_Visualiza
 
 | Resource | Course Application | Verified Output |
 | --- | --- | --- |
-| Supplied snapshot and panel extraction | M2 §2.16: API type handling, source audit, coverage, address keys, exact calendar joins | `api_checks.py`, `prepare.py`, `coverage.py`; national counts and dimension totals reconcile |
+| Supplied snapshot and panel extraction | M2 §2.16: API type handling, source assessment, coverage, address keys, exact calendar joins | `api_checks.py`, `prepare.py`, `coverage.py`; national counts and dimension totals reconcile |
 | Weekly country series and the Copyright Office's 2024 final rule | M6 §6.16: common-week policy contrasts and comparison-country sensitivity | `policy.py`; descriptive USA–Canada and USA–UK contrasts with implementation week omitted |
 | US store panel and snapshot manifest | M7 §7.18: time-separated forecasts, Brier scores, calibration, missing future labels | `predict.py`; later-date evaluation and eligible-origin denominator |
 

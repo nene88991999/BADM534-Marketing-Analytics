@@ -1,0 +1,834 @@
+{
+  "title": "Marketing Analytics",
+  "author": "Nathan Yang",
+  "updated_on": "2026-11-02",
+  "status": "teaching plan; no released calendar or assessment requirements",
+  "basis": "Historical syllabus: 15 meetings, 170 minutes per meeting, one spring-break week",
+  "guest_speakers": false,
+  "meeting_count": 15,
+  "meeting_minutes": 170,
+  "total_scheduled_minutes": 2550,
+  "proposed_break_minutes_per_meeting": 10,
+  "instruction_minutes_excluding_breaks": 2400,
+  "sessions": [
+    {
+      "session": 1,
+      "title": "Marketing Decisions and AI-Assisted Coding",
+      "modules": "M1",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 19,
+      "companion": "S01_Marketing_Decisions_and_AI_Coding.md",
+      "pdf": "S01_Marketing_Decisions_and_AI_Coding.pdf",
+      "python_activity": "Implement and assess order aggregation with three deliberately altered inputs.",
+      "application": "Write a 30-day coupon specification and identify its missing causal evidence.",
+      "ethics": "Data minimization, authorized processing, and verifiable AI code",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "title": "Customer Data and Measurement",
+      "modules": "M2",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S02_Customer_Data_and_Measurement.md",
+      "pdf": "S02_Customer_Data_and_Measurement.pdf",
+      "python_activity": "Build roster-first summaries and assess keys, zero-event users, and unknown statuses.",
+      "application": "Compare national availability with a common-support restaurant sample.",
+      "ethics": "Missingness, sample exclusions, and customer representation",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "title": "Visualization and Data Quality",
+      "modules": "M2",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S03_Visualization_and_Data_Quality.md",
+      "pdf": "S03_Visualization_and_Data_Quality.pdf",
+      "python_activity": "Assess chart values, paired changes, scales, and denominator controls.",
+      "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim.",
+      "ethics": "Chart claims, denominator choices, and coverage",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 4,
+      "title": "Regression and Marketing Interpretation",
+      "modules": "M3",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S04_Regression_and_Marketing_Interpretation.md",
+      "pdf": "S04_Regression_and_Marketing_Interpretation.pdf",
+      "python_activity": "Reproduce OLS and assess exact-day matching, specification, and uncertainty.",
+      "application": "Interpret a price coefficient when the manager observes demand before setting price.",
+      "ethics": "Substantiation and the distinction between association and benefit",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 5,
+      "title": "Conjoint and Product Design",
+      "modules": "M4",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S05_Conjoint_and_Product_Design.md",
+      "pdf": "S05_Conjoint_and_Product_Design.pdf",
+      "python_activity": "Simulate a new bundle, the outside option, and portfolio contribution.",
+      "application": "Specify a choice experiment for an mHealth paid plan without inferring payment behavior from logging.",
+      "ethics": "Price completeness and the attributes customers actually evaluate",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 6,
+      "title": "Segmentation and Customer Lifetime Value",
+      "modules": "M4",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S06_Segmentation_and_Customer_Lifetime_Value.md",
+      "pdf": "S06_Segmentation_and_Customer_Lifetime_Value.pdf",
+      "python_activity": "Fit earlier-period segments and independently reproduce the lifetime-value formula.",
+      "application": "Compare endpoint retention, continuous retention, and a logging-gap event.",
+      "ethics": "Retention, customer value, and cancellation choice",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 7,
+      "title": "Text, Social Media, and Networks",
+      "modules": "M5",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 19,
+      "companion": "S07_Text_Social_Media_and_Networks.md",
+      "pdf": "S07_Text_Social_Media_and_Networks.pdf",
+      "python_activity": "Evaluate a text-labeling baseline under changing prevalence and description splits.",
+      "application": "Compare topic denominators and explain a low-degree network bridge.",
+      "ethics": "Review provenance, generated claims, and false positives",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 8,
+      "title": "Project Evidence and Midterm Presentations",
+      "modules": "M1-M5",
+      "duration_minutes": 170,
+      "type": "provisional presentation meeting",
+      "slides": 11,
+      "companion": "S08_Project_Evidence_and_Midterm_Presentations.md",
+      "pdf": "S08_Project_Evidence_and_Midterm_Presentations.pdf",
+      "python_activity": "Presentation blocks and evidence-based discussion; no new graded requirement is introduced.",
+      "application": "Critique an mHealth paid-plan scenario and identify the next useful evidence.",
+      "ethics": "Evidence scope and customer consequences",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Evidence Clinic"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 75,
+          "minutes": 60,
+          "activity": "Presentation Discussion"
+        },
+        {
+          "start_minute": 75,
+          "end_minute": 85,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 85,
+          "end_minute": 145,
+          "minutes": 60,
+          "activity": "Presentation Discussion"
+        },
+        {
+          "start_minute": 145,
+          "end_minute": 170,
+          "minutes": 25,
+          "activity": "Synthesis and Customer Consequences"
+        }
+      ]
+    },
+    {
+      "session": 9,
+      "title": "Experiments and Incremental Value",
+      "modules": "M6",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S09_Experiments_and_Incremental_Value.md",
+      "pdf": "S09_Experiments_and_Incremental_Value.pdf",
+      "python_activity": "Reproduce the email effect, confidence interval, contribution, and power calculation.",
+      "application": "Design a user-randomized recommendation test with pre-treatment adjustment and explicit guardrails.",
+      "ethics": "Experimental objectives and customer outcomes",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 10,
+      "title": "Causal Comparisons and Policy Evaluation",
+      "modules": "M6",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S10_Causal_Comparisons_and_Policy_Evaluation.md",
+      "pdf": "S10_Causal_Comparisons_and_Policy_Evaluation.pdf",
+      "python_activity": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
+      "application": "Assess the comparison group and measurement requirements for a restaurant repair-policy evaluation.",
+      "ethics": "Treatment paths, comparison populations, and selection",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 11,
+      "title": "Prediction, Validation, and Marketing Actions",
+      "modules": "M7",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
+      "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
+      "python_activity": "Assess a chronological split and compare accuracy, precision, recall, and calibration.",
+      "application": "Translate a forecast into a capacity-constrained action and check missing future labels.",
+      "ethics": "Prediction errors and access to consequential offers",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 12,
+      "title": "Recommendation Systems and Customer Goals",
+      "modules": "M7",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 17,
+      "companion": "S12_Recommendation_Systems_and_Customer_Goals.md",
+      "pdf": "S12_Recommendation_Systems_and_Customer_Goals.pdf",
+      "python_activity": "Compare ranking baselines, calculate NDCG, and assess a goal-weight sensitivity.",
+      "application": "Check a generated recommendation explanation and design an online outcome comparison.",
+      "ethics": "Delivery, customer goals, and explanation accuracy",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 13,
+      "title": "Adaptive Recommendations and Marketing Budgets",
+      "modules": "M8",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 17,
+      "companion": "S13_Adaptive_Recommendations_and_Marketing_Budgets.md",
+      "pdf": "S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf",
+      "python_activity": "Compare list objectives and solve a budget allocation with an independent grid check.",
+      "application": "Design a comparison that separates temporary exposure from subsequent learning.",
+      "ethics": "Attention, adaptive feedback, and platform incentives",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Managerial Case"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 45,
+          "minutes": 30,
+          "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 45,
+          "end_minute": 70,
+          "minutes": 25,
+          "activity": "Worked Comparison"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 125,
+          "minutes": 45,
+          "activity": "Python Exercise"
+        },
+        {
+          "start_minute": 125,
+          "end_minute": 155,
+          "minutes": 30,
+          "activity": "Application and Interpretation"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Ethics and Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 14,
+      "title": "Generative AI, Consumer Choice, and Regulation",
+      "modules": "M8",
+      "duration_minutes": 170,
+      "type": "instruction and applied work",
+      "slides": 18,
+      "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
+      "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
+      "python_activity": "Assess demand and workflow measurements, then calculate a conditional retention-welfare example.",
+      "application": "Evaluate a cancellation procedure using customer value, refusal, completion, and applicable rule status.",
+      "ethics": "Retention procedures, customer value, and regulatory status",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 35,
+          "minutes": 35,
+          "activity": "Demand and Subscription Measurement"
+        },
+        {
+          "start_minute": 35,
+          "end_minute": 70,
+          "minutes": 35,
+          "activity": "AI Workflow and Calculation"
+        },
+        {
+          "start_minute": 70,
+          "end_minute": 80,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 80,
+          "end_minute": 155,
+          "minutes": 75,
+          "activity": "Retention Procedures and Regulatory Assessment"
+        },
+        {
+          "start_minute": 155,
+          "end_minute": 170,
+          "minutes": 15,
+          "activity": "Decision Discussion"
+        }
+      ]
+    },
+    {
+      "session": 15,
+      "title": "Integrated Decisions and Final Presentations",
+      "modules": "M1-M8",
+      "duration_minutes": 170,
+      "type": "provisional presentation meeting",
+      "slides": 10,
+      "companion": "S15_Integrated_Decisions_and_Final_Presentations.md",
+      "pdf": "S15_Integrated_Decisions_and_Final_Presentations.pdf",
+      "python_activity": "Presentation blocks with evidence, reproducibility, and customer-outcome discussion.",
+      "application": "Compare recommendations using decision thresholds and identify the next useful test.",
+      "ethics": "Integrated customer outcomes and regulatory scope",
+      "timing": [
+        {
+          "start_minute": 0,
+          "end_minute": 15,
+          "minutes": 15,
+          "activity": "Evidence Clinic"
+        },
+        {
+          "start_minute": 15,
+          "end_minute": 75,
+          "minutes": 60,
+          "activity": "Presentation Discussion"
+        },
+        {
+          "start_minute": 75,
+          "end_minute": 85,
+          "minutes": 10,
+          "activity": "Break"
+        },
+        {
+          "start_minute": 85,
+          "end_minute": 145,
+          "minutes": 60,
+          "activity": "Presentation Discussion"
+        },
+        {
+          "start_minute": 145,
+          "end_minute": 170,
+          "minutes": 25,
+          "activity": "Synthesis and Customer Consequences"
+        }
+      ]
+    }
+  ]
+}

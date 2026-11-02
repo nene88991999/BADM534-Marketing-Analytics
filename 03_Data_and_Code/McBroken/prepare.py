@@ -1,4 +1,4 @@
-"""Audit supplied McBroken tables and build aggregate, offline teaching inputs."""
+"""Assess supplied McBroken tables and build aggregate, offline teaching inputs."""
 import argparse
 import hashlib
 import json
@@ -99,7 +99,7 @@ def main(source):
     daily.to_csv(out / "daily_us.csv", index=False)
     transitions.to_csv(out / "transitions.csv", index=False)
     event_data.drop(columns="share_broken").to_csv(out / "policy_window.csv", index=False)
-    audit = {
+    assessment = {
         "source_rows": len(panel), "address_keys": len(dim),
         "exact_coordinate_pairs": len(dim[["lat", "lon"]].drop_duplicates()),
         "calendar_days": len(daily), "us_observed_days": len(us),
@@ -112,11 +112,11 @@ def main(source):
         "snapshot_abs_offset_hours_max": float(daily.offset_hours.abs().max()),
         "duplicate_store_dates": 0, "unmatched_keys": 0,
         "country_counts_reconciled": True, "dimension_days_reconciled": True,
-        "matching": "Original address keys; coordinates are an audit, not a merge rule.",
+        "matching": "Original address keys define the merge; coordinates provide a consistency check.",
         "transition_screen": "Both dates: >=2000 US records and within 3 hours of 18:00 UTC.",
         "status_scope": "The supplied binary field was validated; raw API missingness cannot be recovered from these CSVs.",
     }
-    (out / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
+    (out / "assessment.json").write_text(json.dumps(assessment, indent=2) + "\n")
     manifest = {
         "source": "Rashiq Zahid, McBroken; snapshots via MrFlynn/mcbroken-archive",
         "urls": ["https://mcbroken.com", "https://github.com/MrFlynn/mcbroken-archive"],
@@ -125,7 +125,7 @@ def main(source):
         "rights": "Upstream archive software uses Unlicense; no separate McBroken data license was established. Public teaching outputs are attributed aggregate calculations.",
     }
     (ROOT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(json.dumps(audit, indent=2))
+    print(json.dumps(assessment, indent=2))
 
 
 if __name__ == "__main__":

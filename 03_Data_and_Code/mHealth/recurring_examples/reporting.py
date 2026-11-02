@@ -1,4 +1,4 @@
-"""Compute an auditable, fixed-cohort mHealth business review locally."""
+"""Compute a verifiable, fixed-cohort mHealth business review locally."""
 
 import json
 import pandas as pd

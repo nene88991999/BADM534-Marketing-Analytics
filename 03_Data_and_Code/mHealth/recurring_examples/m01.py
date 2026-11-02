@@ -1,4 +1,4 @@
-"""Audit the cohort, repeated totals, and the separate daily file."""
+"""Assess the cohort, repeated totals, and the separate daily file."""
 
 import json
 import pandas as pd

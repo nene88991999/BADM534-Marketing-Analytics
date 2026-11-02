@@ -1,6 +1,6 @@
 # McBroken Results and Verification
 
-The programs ran successfully on October 24, 2026. The source data cover October 25, 2025, through October 24, 2026, for the daily audit and forecast case. The policy case uses 25 weekly snapshots around October 28, 2024, displaying week zero and excluding it from the pre/post means.
+The programs ran successfully on October 24, 2026. The source data cover October 25, 2025, through October 24, 2026, for the daily assessment and forecast case. The policy case uses 25 weekly snapshots around October 28, 2024, displaying week zero and excluding it from the pre/post means.
 
 | Output | Content |
 | --- | --- |

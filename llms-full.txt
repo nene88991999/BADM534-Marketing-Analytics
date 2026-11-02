@@ -70,9 +70,7 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/GenAI_Demand/DATA_DICTIONARY.md",
     "03_Data_and_Code/GenAI_Demand/AGENTS.md",
     "03_Data_and_Code/GenAI_Demand/results/README.md",
-    "Lectures/README.md",
-    "Lectures/AGENTS.md",
-    "Lectures/SESSION_PLAN.md",
+    "05_Slides/SESSION_PLAN.md",
     "02_Syllabus/TEACHING_PLAN.md",
     "06_Lecture_Notes/ETHICS_AND_REGULATION.md"
   ],
@@ -119,7 +117,7 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-02-lectures-ethics-regulation",
+    "revision": "2026-11-02-slides-folder-and-assessment-terminology",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
@@ -164,17 +162,17 @@ Generated from course.json and the source files identified below. This file cont
   "lectures": {
     "status": "available",
     "updated_on": "2026-11-02",
-    "index": "Lectures/README.md",
-    "combined_pdf": "Lectures/Marketing_Analytics_Lectures.pdf",
-    "session_plan": "Lectures/SESSION_PLAN.md",
-    "session_plan_json": "Lectures/session_plan.json",
-    "source": "Lectures/source/sessions.json",
+    "index": "05_Slides/README.md",
+    "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
+    "session_plan": "05_Slides/SESSION_PLAN.md",
+    "session_plan_json": "05_Slides/session_plan.json",
+    "source": "05_Slides/source/sessions.json",
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
     "slides": 255,
-    "art_direction": "Lectures/ART_DIRECTION.md",
-    "artwork_provenance": "Lectures/assets/PROVENANCE.md",
+    "art_direction": "05_Slides/ART_DIRECTION.md",
+    "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "not released",
     "presentation_requirements_status": "not released"
   }
@@ -198,7 +196,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
 - **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 48 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
-- **Lectures:** read the [15 session decks](Lectures/README.md) and [170-minute meeting plans](Lectures/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
+- **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
 ## Course Folders
@@ -209,7 +207,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | [02_Syllabus](02_Syllabus/README.md) | Current syllabus and course policies when released |
 | [03_Data_and_Code](03_Data_and_Code/README.md) | Course datasets, dictionaries, scripts, notebooks, and code snippets |
 | [04_Assignments](04_Assignments/README.md) | Assignment briefs, rubrics, and assessment-specific AI rules |
-| [Lectures](Lectures/README.md) | Fifteen session decks, editable LaTeX, Markdown companions, and meeting plans |
+| [05_Slides](05_Slides/README.md) | Fifteen session decks, editable LaTeX, Markdown companions, and meeting plans |
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
 | [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
@@ -308,10 +306,12 @@ Use local source files when available, and preserve their recorded rights. An ac
 
 ## Lectures, Artwork, and Ethics
 
-- Use `Lectures/` for session decks and complete Markdown companions. Follow `Lectures/AGENTS.md` and `Lectures/SESSION_PLAN.md`. The plan has 15 meetings of 170 minutes, no guest speakers, and two provisional presentation meetings. Calendar and assessment pointers remain null until released.
-- Follow the latest parchment Beamer template and Illinois colors. Use historical Chinese ink-and-color techniques for artistic illustrations, with varied brushwork, dry-brush breaks, restrained washes, and open space. The researched conventions are in `Lectures/ART_DIRECTION.md`. Keep analytical diagrams editable in TikZ.
+- Use `05_Slides/` for session decks and complete Markdown companions. Follow `05_Slides/AGENTS.md` and `05_Slides/SESSION_PLAN.md`. The plan has 15 meetings of 170 minutes, no guest speakers, and two provisional presentation meetings. Calendar and assessment pointers remain null until released.
+- Follow the latest parchment Beamer template and Illinois colors. Use historical Chinese ink-and-color techniques for artistic illustrations, with varied brushwork, dry-brush breaks, restrained washes, and open space. The researched conventions are in `05_Slides/ART_DIRECTION.md`. Keep analytical diagrams editable in TikZ.
 - Integrate new ethics and regulation material across the affected slides, lecture notes, code, syllabus planning, and resource guides. Verify legal claims against primary sources and record jurisdiction, coverage, status, and effective date.
 - Incorporate Nathan Yang's own conceptual material directly into the course without naming, citing, linking, or uploading the underlying papers. Preserve attribution for third-party public sources.
+
+Use “assessment” for data-quality and evidence checks, and “evaluation” for model, policy, and customer-outcome comparisons. Use “assess” and “evaluate” as the corresponding verbs. Apply this terminology consistently in headings, prose, code examples, and output names; preserve original third-party titles and quotations.
 
 ---
 
@@ -333,7 +333,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 | M2 | Which customer patterns deserve attention? | Data preparation, joins, summaries, visualization | [Customer Data and Visualization](01_Resources/02_Customer_Data_and_Visualization/README.md) | Generate a cleaning pipeline and chart; verify totals, units, and denominators. |
 | M3 | How do observed customer characteristics relate to outcomes? | Regression, interpretation, diagnostics | [Regression](01_Resources/03_Regression_and_Statistical_Foundations/README.md) | Build and inspect a model; explain coefficients and distinguish association from causal effects. |
 | M4 | Which product designs, customer groups, or retention priorities should receive attention? | Conjoint, segmentation, customer lifetime value | [Conjoint, Segmentation, and CLV](01_Resources/04_Conjoint_Segmentation_and_CLV/README.md) | Compare product profiles, segmentations, or repeat-purchase forecasts; check assumptions and stability. |
-| M5 | What does customer language reveal about products and service? | Text, social media, sentiment, optional networks | [Text and Social Analysis](01_Resources/05_Text_Social_and_Network_Analysis/README.md) | Build a transparent text baseline, compare alternatives, and audit examples manually. |
+| M5 | What does customer language reveal about products and service? | Text, social media, sentiment, optional networks | [Text and Social Analysis](01_Resources/05_Text_Social_and_Network_Analysis/README.md) | Build a transparent text baseline, compare alternatives, and assess examples manually. |
 | M6 | Did a marketing intervention change outcomes? | Experiments, causal estimands, identification, uncertainty, recommendation policy evaluation | [Causal Inference and Experiments](01_Resources/06_Causal_Inference_and_Experiments/README.md) | Simulate or analyze an experiment and contrast it with a confounded comparison. |
 | M7 | Which customers are likely to respond, and which products should they see? | Prediction, validation, decision thresholds, recommender models, ranking, LLM explanations | [Prediction and ML](01_Resources/07_Prediction_and_Machine_Learning/README.md) | Build a leakage-aware pipeline; compare baselines and assess decision costs. |
 | M8 | How can newer methods improve a specific marketing decision? | Adaptive recommendations, customer goals, platform incentives, marketing mix modeling, generative AI | [Current Topics](01_Resources/08_Current_Topics_in_Marketing/README.md) | Evaluate one extension against a simpler approach and state the supported conclusion. |
@@ -381,15 +381,15 @@ M2, Sections 2.14–2.15, connect chart choice, denominator changes, distributio
 
 ## Restaurant Availability Applications
 
-The [McBroken case](03_Data_and_Code/McBroken/README.md) uses the supplied McDonald's ordering-status data in three modules. M2 §2.16 audits coverage, missingness, address keys, and calendar joins. M6 §6.16 compares country trends around the 2024 repair exemption and distinguishes descriptive contrasts from causal evidence. M7 §7.18 evaluates next-observation forecasts on later dates, with label coverage and calibration. Five complete Python programs and three TikZ figures support these applications.
+The [McBroken case](03_Data_and_Code/McBroken/README.md) uses the supplied McDonald's ordering-status data in three modules. M2 §2.16 assesses coverage, missingness, address keys, and calendar joins. M6 §6.16 compares country trends around the 2024 repair exemption and distinguishes descriptive contrasts from causal evidence. M7 §7.18 evaluates next-observation forecasts on later dates, with label coverage and calibration. Five complete Python programs and three TikZ figures support these applications.
 
 ## Generative-AI Demand
 
-The [GenAI demand cases](03_Data_and_Code/GenAI_Demand/README.md) connect M2 §2.17, M4 §4.14, and M8 §8.13. Students audit title-specific pageviews, compare provider and category retention within the same starting cohort, classify acquisition events, and test a price regression against its generating model. Three executed Python programs and three TikZ figures distinguish the supplied public capture from the synthetic consumer panel. The exact binary-logit benchmark recovers its imposed coefficient; dynamic-panel slopes remain descriptive.
+The [GenAI demand cases](03_Data_and_Code/GenAI_Demand/README.md) connect M2 §2.17, M4 §4.14, and M8 §8.13. Students assess title-specific pageviews, compare provider and category retention within the same starting cohort, classify acquisition events, and test a price regression against its generating model. Three executed Python programs and three TikZ figures distinguish the supplied public capture from the synthetic consumer panel. The exact binary-logit benchmark recovers its imposed coefficient; dynamic-panel slopes remain descriptive.
 
 ## Session Sequence and Ethics
 
-The [15 session decks](Lectures/README.md) follow a [170-minute meeting plan](Lectures/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; dates and assessment requirements remain pending.
+The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](05_Slides/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; dates and assessment requirements remain pending.
 
 [Ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) connect M1 data handling, M2 sample representation, M3 advertising claims, M4 retention and choice, M5 review provenance, M6 experimental objectives, M7 delivery and access, and M8 adaptive procedures and customer value. A synthetic retention example includes complete Python, an aggregate table, and a TikZ figure.
 
@@ -423,7 +423,7 @@ A private repository URL works only with tools authorized to read that repositor
 
 ### Review a Result
 
-> Audit my analysis for incorrect joins, missing-data decisions, units, leakage, and unsupported causal claims. Compare each concern with the assignment and data dictionary. Prioritize issues that could change the managerial conclusion, and give a check I can run.
+> Assess my analysis for incorrect joins, missing-data decisions, units, leakage, and unsupported causal claims. Compare each concern with the assignment and data dictionary. Prioritize issues that could change the managerial conclusion, and give a check I can run.
 
 ### Prepare for Class
 
@@ -443,7 +443,7 @@ A program can run successfully and still answer the wrong question. Inspect a fe
 
 The syllabus will assume no guest speakers. Allocate teaching time across the eight modules, instructor-led examples, coding exercises, and discussion.
 
-The [teaching plan](TEACHING_PLAN.md) allocates 15 meetings of 170 minutes, with ethics and regulation integrated throughout. The [session plan and slides](../Lectures/README.md) cover all eight modules. Two presentation meetings are provisional. Dates, assessment requirements, and weights remain unset.
+The [teaching plan](TEACHING_PLAN.md) allocates 15 meetings of 170 minutes, with ethics and regulation integrated throughout. The [session plan and slides](../05_Slides/README.md) cover all eight modules. Two presentation meetings are provisional. Dates, assessment requirements, and weights remain unset.
 
 Add the current syllabus here with an equivalent Markdown version. State the offering, instructor, version/date, learning objectives, schedule, assessment weights, and AI-use rules. Preserve all consequential requirements when converting from PDF or Word.
 
@@ -493,7 +493,7 @@ The [labs folder](../07_Labs/README.md) contains the structure for complete guid
 
 ## Recurring mHealth Cases
 
-The [eight-module examples](mHealth/recurring_examples/README.md) include complete Python, aggregate outputs, a data-quality audit, nutrition-screening sensitivity, and meaningful counterexample checks. The same code is embedded in the lecture notes.
+The [eight-module examples](mHealth/recurring_examples/README.md) include complete Python, aggregate outputs, a data-quality assessment, nutrition-screening sensitivity, and meaningful counterexample checks. The same code is embedded in the lecture notes.
 
 Additional executed examples cover fixed-cohort reporting, recency/frequency, logging-gap survival, text topics, CUPED, basket associations, and checks on generated numerical claims. A separate synthetic price-instrument simulation illustrates endogeneity and exclusion. See the [resource-to-example map](../06_Lecture_Notes/RESOURCE_INTEGRATION.md) for source attribution, module sections, and the distinction between executed course code and downloaded reference notebooks.
 
@@ -526,7 +526,7 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdo
 | M5 | [Text, Social Media, and Customer Networks](modules/M05_Text_Social_and_Network_Analysis.md): text representation, TF-IDF, embeddings, sentiment, topics, annotation, networks | Complaint prevalence and precision; LLM label validation; network brokerage; engagement versus sales |
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
-| M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content audits and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
+| M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
 
 The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
 
@@ -534,7 +534,7 @@ The sequence follows the historical syllabus's topics without adopting its dates
 
 The [Lecture Examples](../03_Data_and_Code/Lecture_Examples/README.md) folder contains small synthetic CSV files, a data dictionary, and a Python script that reproduces the central numerical calculations. It covers all eight modules and uses only the standard library. It has been executed successfully; its output is saved as JSON.
 
-The synthetic examples verify arithmetic and model implications under stated assumptions. Each module includes its executable Python calculation. The [recurring mHealth examples](../03_Data_and_Code/mHealth/recurring_examples/README.md) use actual released records for audits, measurement, regression, segmentation, text prediction, experiment planning, basket prediction, and ranking objectives. Their full source appears directly in the notes, with matching scripts, dependencies, aggregate results, and verification checks.
+The synthetic examples verify arithmetic and model implications under stated assumptions. Each module includes its executable Python calculation. The [recurring mHealth examples](../03_Data_and_Code/mHealth/recurring_examples/README.md) use actual released records for assessments, measurement, regression, segmentation, text prediction, experiment planning, basket prediction, and ranking objectives. Their full source appears directly in the notes, with matching scripts, dependencies, aggregate results, and verification checks.
 
 M1 teaches structural checks, join coverage, repeated totals, and review flags. M2 adds nutrition-informed sample definitions and alternative screens, using the [nutrition methods collection](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md). The individualized Goldberg calculation is an explicitly hypothetical scenario because validated physiological inputs are absent from the logs. M3 compares an association before and after an imposed calorie-range restriction.
 
@@ -568,15 +568,15 @@ After changes, run the relevant analyses and `python scripts/check_lecture_code.
 
 Give an assistant the relevant Markdown module, its figure descriptions, and any related CSV or calculation output. Cite module and numbered section, such as “M6, Section 6.4.” Do not infer a deadline or assessment rule from an illustrative exercise. The exercises are public teaching material.
 
-Follow the [preferred Beamer format](../Lectures/AGENTS.md) when preparing lectures. Use each module's managerial question as the opening, then select the worked case, method, key figure, and decision implication. Keep the full derivation and consequential assumptions in the notes. Each TikZ file can be reused in a LaTeX slide deck; its PNG companion supports other presentation tools. Figures illustrate particular mechanisms and should retain the accompanying assumptions and synthetic-data labels.
+Follow the [preferred Beamer format](../05_Slides/AGENTS.md) when preparing lectures. Use each module's managerial question as the opening, then select the worked case, method, key figure, and decision implication. Keep the full derivation and consequential assumptions in the notes. Each TikZ file can be reused in a LaTeX slide deck; its PNG companion supports other presentation tools. Figures illustrate particular mechanisms and should retain the accompanying assumptions and synthetic-data labels.
 
 ## Data Visualization
 
-M2, Sections 2.14–2.15, add chart selection, fixed and conditional denominators, empirical cumulative distributions, and an [interactive mHealth chart](../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html). M3, Section 3.6.1, compares paired-user uncertainty with an incorrect independent-day calculation. M8, Section 8.12, audits constructed chart errors. Three original TikZ figures and three complete Python programs support these additions. The [visualization guide](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) gives the commands, data definitions, and validation record.
+M2, Sections 2.14–2.15, add chart selection, fixed and conditional denominators, empirical cumulative distributions, and an [interactive mHealth chart](../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html). M3, Section 3.6.1, compares paired-user uncertainty with an incorrect independent-day calculation. M8, Section 8.12, assesses constructed chart errors. Three original TikZ figures and three complete Python programs support these additions. The [visualization guide](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) gives the commands, data definitions, and validation record.
 
 ## McDonald's Ice-Cream Availability
 
-The [McBroken cases](../03_Data_and_Code/McBroken/README.md) connect a supplied restaurant-status panel to measurement and cleaning (M2 §2.16), comparison-group selection for a proposed policy evaluation (M6 §6.16), and forecasting with missing future labels (M7 §7.18). Five complete Python programs and three additional TikZ figures accompany the cases. The examples distinguish recorded order unavailability from verified mechanical failure, retain missing-date and missing-label counts, and evaluate predictions on later dates. The source audit and five counterexample tests passed; two pinned upstream snapshots independently matched the supplied national totals.
+The [McBroken cases](../03_Data_and_Code/McBroken/README.md) connect a supplied restaurant-status panel to measurement and cleaning (M2 §2.16), comparison-group selection for a proposed policy evaluation (M6 §6.16), and forecasting with missing future labels (M7 §7.18). Five complete Python programs and three additional TikZ figures accompany the cases. The examples distinguish recorded order unavailability from verified mechanical failure, retain missing-date and missing-label counts, and evaluate predictions on later dates. The source assessment and five counterexample tests passed; two pinned upstream snapshots independently matched the supplied national totals.
 
 ## Generative-AI Demand
 
@@ -584,7 +584,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 ## Ethics, Regulation, and Session Decks
 
-The [15 session decks](../Lectures/README.md) cover the eight modules with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
+The [15 session decks](../05_Slides/README.md) cover the eight modules with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
 The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 41 matching Python source blocks.
 
@@ -640,7 +640,7 @@ Read the equations and assumptions in the relevant module before adapting a calc
 
 ## Session Calculations and Customer Value
 
-Run `python3 03_Data_and_Code/Lecture_Examples/session_examples.py all` from the repository root to reproduce the small calculations projected in the [session decks](../../Lectures/README.md). The [program](session_examples.py) uses only the standard library and writes [session_calculations.json](session_calculations.json). Select a single calculation with a session code such as `S04`, `S13`, or `S14_ethics`. All inputs are synthetic. Presentation meetings have no separate numerical script.
+Run `python3 03_Data_and_Code/Lecture_Examples/session_examples.py all` from the repository root to reproduce the small calculations projected in the [session decks](../../05_Slides/README.md). The [program](session_examples.py) uses only the standard library and writes [session_calculations.json](session_calculations.json). Select a single calculation with a session code such as `S04`, `S13`, or `S14_ethics`. All inputs are synthetic. Presentation meetings have no separate numerical script.
 
 Run `python3 03_Data_and_Code/Lecture_Examples/retention_welfare.py` for the fixed-stakes retention comparison. It writes [retention_welfare.csv](retention_welfare.csv) and [retention_welfare_results.json](retention_welfare_results.json). Each row is an imposed procedure; renewal probabilities are fractions, and profit, customer value, and combined surplus are dollars per eligible customer relative to direct choice at probability 0.20. Firm margin is 11 dollars and customer loss is 10 dollars per renewal. The script independently reconciles the high-renewal result over 100 customers and compares both direct-choice and low-renewal benchmarks. No customer records or estimated valuations enter this calculation.
 
@@ -648,13 +648,48 @@ Run `python3 03_Data_and_Code/Lecture_Examples/retention_welfare.py` for the fix
 
 ## Source: 05_Slides/README.md
 
-# Slides
+# Marketing Analytics Lectures
 
-The course decks are in [Lectures](../Lectures/README.md): 15 sessions with PDFs, editable LaTeX, complete Markdown companions, and a 170-minute plan for each meeting.
+By Nathan Yang
 
-The companion should identify the lecture/module, version, learning objectives, slide-number anchors, chart descriptions, definitions, equations, and referenced resources. Identify information omitted from a summary. Link to the original deck and any related lab.
+Fifteen session decks cover all eight modules, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The current syllabus and calendar remain pending.
 
-Lecture decks use Nathan Yang's latest 16:9 LaTeX Beamer format: 14-point base text, parchment backgrounds, blue text, orange rules and bullets, editable TikZ figures, Chinese ink-and-color illustrations, and optional presenter notes. Course decks follow the UIUC palette. Follow the current [lecture authoring guide](../Lectures/AGENTS.md).
+Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+
+## Session Decks
+
+| Session | Topic | PDF | Markdown | LaTeX |
+| --- | --- | --- | --- | --- |
+| 01 | Marketing Decisions and AI-Assisted Coding | [Slides](S01_Marketing_Decisions_and_AI_Coding.pdf) | [Companion](S01_Marketing_Decisions_and_AI_Coding.md) | [Source](S01_Marketing_Decisions_and_AI_Coding.tex) |
+| 02 | Customer Data and Measurement | [Slides](S02_Customer_Data_and_Measurement.pdf) | [Companion](S02_Customer_Data_and_Measurement.md) | [Source](S02_Customer_Data_and_Measurement.tex) |
+| 03 | Visualization and Data Quality | [Slides](S03_Visualization_and_Data_Quality.pdf) | [Companion](S03_Visualization_and_Data_Quality.md) | [Source](S03_Visualization_and_Data_Quality.tex) |
+| 04 | Regression and Marketing Interpretation | [Slides](S04_Regression_and_Marketing_Interpretation.pdf) | [Companion](S04_Regression_and_Marketing_Interpretation.md) | [Source](S04_Regression_and_Marketing_Interpretation.tex) |
+| 05 | Conjoint and Product Design | [Slides](S05_Conjoint_and_Product_Design.pdf) | [Companion](S05_Conjoint_and_Product_Design.md) | [Source](S05_Conjoint_and_Product_Design.tex) |
+| 06 | Segmentation and Customer Lifetime Value | [Slides](S06_Segmentation_and_Customer_Lifetime_Value.pdf) | [Companion](S06_Segmentation_and_Customer_Lifetime_Value.md) | [Source](S06_Segmentation_and_Customer_Lifetime_Value.tex) |
+| 07 | Text, Social Media, and Networks | [Slides](S07_Text_Social_Media_and_Networks.pdf) | [Companion](S07_Text_Social_Media_and_Networks.md) | [Source](S07_Text_Social_Media_and_Networks.tex) |
+| 08 | Project Evidence and Midterm Presentations | [Slides](S08_Project_Evidence_and_Midterm_Presentations.pdf) | [Companion](S08_Project_Evidence_and_Midterm_Presentations.md) | [Source](S08_Project_Evidence_and_Midterm_Presentations.tex) |
+| 09 | Experiments and Incremental Value | [Slides](S09_Experiments_and_Incremental_Value.pdf) | [Companion](S09_Experiments_and_Incremental_Value.md) | [Source](S09_Experiments_and_Incremental_Value.tex) |
+| 10 | Causal Comparisons and Policy Evaluation | [Slides](S10_Causal_Comparisons_and_Policy_Evaluation.pdf) | [Companion](S10_Causal_Comparisons_and_Policy_Evaluation.md) | [Source](S10_Causal_Comparisons_and_Policy_Evaluation.tex) |
+| 11 | Prediction, Validation, and Marketing Actions | [Slides](S11_Prediction_Validation_and_Marketing_Actions.pdf) | [Companion](S11_Prediction_Validation_and_Marketing_Actions.md) | [Source](S11_Prediction_Validation_and_Marketing_Actions.tex) |
+| 12 | Recommendation Systems and Customer Goals | [Slides](S12_Recommendation_Systems_and_Customer_Goals.pdf) | [Companion](S12_Recommendation_Systems_and_Customer_Goals.md) | [Source](S12_Recommendation_Systems_and_Customer_Goals.tex) |
+| 13 | Adaptive Recommendations and Marketing Budgets | [Slides](S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf) | [Companion](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | [Source](S13_Adaptive_Recommendations_and_Marketing_Budgets.tex) |
+| 14 | Generative AI, Consumer Choice, and Regulation | [Slides](S14_Generative_AI_Consumer_Choice_and_Regulation.pdf) | [Companion](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | [Source](S14_Generative_AI_Consumer_Choice_and_Regulation.tex) |
+| 15 | Integrated Decisions and Final Presentations | [Slides](S15_Integrated_Decisions_and_Final_Presentations.pdf) | [Companion](S15_Integrated_Decisions_and_Final_Presentations.md) | [Source](S15_Integrated_Decisions_and_Final_Presentations.tex) |
+
+## Related Materials
+
+- [Full lecture notes](../06_Lecture_Notes/README.md), including complete code for empirical examples.
+- [Small runnable session calculations](../03_Data_and_Code/Lecture_Examples/session_examples.py) and [executed results](../03_Data_and_Code/Lecture_Examples/session_calculations.json).
+- [Retention-procedure calculation](../03_Data_and_Code/Lecture_Examples/retention_welfare.py), with an aggregate table and fixed-stakes interpretation.
+- [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md), including module connections and primary-source status.
+
+## Format and Editing
+
+The decks use the supplied 16:9 Beamer format with parchment backgrounds, Illinois colors, editable TikZ, and Chinese ink-and-color artwork. [Art direction](ART_DIRECTION.md) records the brushwork research and visual conventions. [Artwork provenance](assets/PROVENANCE.md) identifies the four generated illustrations and their prompts.
+
+Edit [source/sessions.json](source/sessions.json) and [theme.tex](theme.tex), then use [the build commands](BUILD.md) to refresh LaTeX, Markdown, and PDF together. Follow [AGENTS.md](AGENTS.md) when revising content or using these materials with an assistant.
+
+Markdown companions identify the session and module, learning objectives, slide-number anchors, chart descriptions, definitions, equations, and referenced resources. Record the version in `session_plan.json`; identify omissions when preparing a shorter summary and link related labs when available.
 
 ---
 
@@ -662,9 +697,35 @@ Lecture decks use Nathan Yang's latest 16:9 LaTeX Beamer format: 14-point base t
 
 # Agent Guide for Slides
 
-Course decks are stored in `../Lectures/`. Follow [the current lecture guide](../Lectures/AGENTS.md), [the session plan](../Lectures/SESSION_PLAN.md), and [the art direction](../Lectures/ART_DIRECTION.md). The latest supplied template uses parchment backgrounds, 16:9 Beamer, 14-point base text, Illinois colors, and Chinese ink-and-color illustrations. It supersedes the earlier white-background preference.
+Read the root `AGENTS.md`, `course.json`, the session plan, and the relevant module notes. Use Marketing Analytics as the title and By Nathan Yang as the author. Keep the course code out of decks and notes.
 
-Keep the historical reference templates in Dropbox only. They do not establish course dates, requirements, or content.
+## Content and Course Authority
+
+The plan has 15 meetings of 170 minutes, based on the historical syllabus. It includes 13 instructional meetings and two provisional presentation meetings. There are no guest speakers. No new dates, graded presentation requirements, weights, deadlines, or course-wide AI policy have been released. Preserve that distinction when answering students.
+
+Begin with the managerial decision, then the information, comparison, method, and consequence. Keep claims consistent across projected text, presenter notes, Markdown companions, code, and the full module notes. Define populations, denominators, units, horizons, and synthetic inputs. Keep consequential assumptions beside the result.
+
+Integrate new ethics and regulation material wherever it affects the methods and cases, as well as in the dedicated consumer-choice session. Verify legal propositions against primary sources and record jurisdiction, scope, status, and effective date. Use `../06_Lecture_Notes/ETHICS_AND_REGULATION.md` for the checked source record. Incorporate the instructor's own ideas without citing, naming, linking, or uploading the underlying papers.
+
+## Format and Artwork
+
+Use the November 2026 reference deck's 16:9 Beamer layout with 14-point base text, sans-serif typography, parchment RGB 234/220/201, Illinois Blue text, Illini Orange bullets and rules, and generous space. The reference's content does not establish course requirements. The earlier white-background guide is superseded.
+
+Keep `theme.tex` as the common style. Preserve editable TikZ for analytical diagrams and exact Illinois palette values. Follow `ART_DIRECTION.md` for Chinese ink-and-color illustrations. Use textured brushwork, restrained washes, open space, and atmospheric distance. Keep quantitative information in analytical figures and text.
+
+Use title case. Omit draft labels, preparation remarks, cover footers, and narration about what a slide or module will do. Substantive presenter notes follow the same prose conventions. Avoid em dashes and stock contrast constructions.
+
+## Editing and Verification
+
+Edit `source/sessions.json` as the primary slide content. The builder generates same-stem `.tex` and `.md` companions and compiles each PDF. Edit `theme.tex` for shared layout and `../06_Lecture_Notes/figures/` for shared diagrams. The Markdown companions must include projected text, equations, tables, code, substantive notes, and figure descriptions.
+
+Keep runnable examples in `../03_Data_and_Code`, with inputs, outputs, and commands. Short projected snippets supplement the full programs. Run affected code, check figures against aggregate tables, compile all affected decks, and inspect every changed page. Check presenter mode when modifying notes layout. Keep build files and preview images in ignored directories.
+
+Update README, `SESSION_PLAN.md`, `session_plan.json`, and `course.json` together when changing coverage. Regenerate `llms-full.txt` from the reviewed publication snapshot. Preserve concurrent resource-library edits and instructor-only folders.
+
+Keep historical reference templates in Dropbox only. They do not establish course dates, requirements, or content.
+
+Use “assessment” for data-quality and evidence checks, and “evaluation” for model, policy, and customer-outcome comparisons. Use “assess” and “evaluate” as the corresponding verbs. Apply this terminology consistently in headings, prose, code examples, and output names; preserve original third-party titles and quotations.
 
 ---
 
@@ -742,7 +803,7 @@ Weight-based conclusions must account for the perturbation. Apparent movements s
 
 ## Recurring Course Examples
 
-Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, audit and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.
+Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, assessment and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.
 
 ---
 
@@ -840,7 +901,7 @@ python -m pip install -r 03_Data_and_Code/mHealth/recurring_examples/requirement
 python 03_Data_and_Code/mHealth/recurring_examples/run_all.py
 ```
 
-`run_all.py` verifies the release checksums through `download_data.py`, downloads missing release files, builds the bounded cohort, executes the audit and nutrition analysis, runs the logic checks, and executes M1–M8 in order. The first preparation reads the 304 MB compressed food file. The local Parquet cache is ignored by Git; delete `cache/` to rebuild. Derived caches depend on the release manifest hash, cohort threshold, and preparation version. Calculations use local processing and make no external AI requests. Subsequent module scripts can be run individually. Run M7 before M8 because M8 reads the selected history window from `results/M07.json`.
+`run_all.py` verifies the release checksums through `download_data.py`, downloads missing release files, builds the bounded cohort, executes the assessment and nutrition analysis, runs the logic checks, and executes M1–M8 in order. The first preparation reads the 304 MB compressed food file. The local Parquet cache is ignored by Git; delete `cache/` to rebuild. Derived caches depend on the release manifest hash, cohort threshold, and preparation version. Calculations use local processing and make no external AI requests. Subsequent module scripts can be run individually. Run M7 before M8 because M8 reads the selected history window from `results/M07.json`.
 
 The complete release files are stored in `../data/`, outside Git, and distributed as [GitHub release assets](https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/tag/mhealth-teaching-2026-10-23). Read the [dictionary](../DATA_DICTIONARY.md) and [release manifest](../manifest.json) before changing a measurement.
 
@@ -849,9 +910,9 @@ The complete release files are stored in `../data/`, outside Git, and distribute
 | Program | Question and Output |
 | --- | --- |
 | `common.py` | Select the cohort, construct observed days and baskets; write `results/cohort.json`. |
-| `audit.py` | Check keys, selected-field duplicates, age consistency, daily totals, and calorie review flags; write `results/audit.json`. |
+| `assessment.py` | Check keys, selected-field duplicates, age consistency, daily totals, and calorie review flags; write `results/assessment.json`. |
 | `nutrition.py` | Compare adult, positive-energy, percentile, and accounting-consistency samples; calculate explicitly hypothetical Goldberg bounds; write `results/nutrition.json`. |
-| `m01.py` | Audit join coverage and hand-check a repeated daily total. |
+| `m01.py` | Assessment join coverage and hand-check a repeated daily total. |
 | `m02.py` | Compare breadth and calorie-share variety, and distinguish missing calendar days from observed days. |
 | `m03.py` | Estimate next-calendar-day descriptive regressions, customer-clustered intervals, and a range-restriction sensitivity. |
 | `m04.py` | Form segments using January–June behavior and describe later logging; keep hypothetical financial and choice inputs separate. |
@@ -869,7 +930,7 @@ The complete release files are stored in `../data/`, outside Git, and distribute
 | `claim_checks.py` | M8, Section 8.11: constructed structured claims checked against computed evidence; no LLM requests. |
 | `visualization.py` | M2, 2.14, and M3, 3.6.1: complete user-month pairs, conditional denominators, exact ECDFs, and paired-user uncertainty. |
 | `visualization_charts.py` | M2, 2.15: three generated TikZ figures and an aggregate-data Altair HTML chart with a month selector. |
-| `chart_audit.py` | M8, 8.12: four constructed chart errors checked against independently computed numerators and denominators. |
+| `chart_assessment.py` | M8, 8.12: four constructed chart errors checked against independently computed numerators and denominators. |
 | `test_visualization.py` | Five small-data checks of month lengths, duplicate dates, empty months, CDF ties, paired resampling, and chart mistakes. |
 | `test_extension_logic.py` | Seven small-data checks for counting units, future exclusion, censoring ties, gap confirmation, adjustment variance, numerical claims, and an IV slope. |
 
@@ -897,7 +958,7 @@ The seven additional programs write correspondingly named JSON results. Recency 
 
 ## Visualization Replication
 
-The [visualization companion](results/VISUALIZATION.md) describes the chart tables and outputs. Run `visualization.py`, then `visualization_charts.py` and `chart_audit.py`. These programs also run at the end of `run_all.py`, with Altair 5.5.0 included in the requirements. The HTML contains aggregate data and uses browser JavaScript from a CDN; it needs internet access for the charts, while its HTML table works offline. The figures use editable TikZ and the Illinois palette.
+The [visualization companion](results/VISUALIZATION.md) describes the chart tables and outputs. Run `visualization.py`, then `visualization_charts.py` and `chart_assessment.py`. These programs also run at the end of `run_all.py`, with Altair 5.5.0 included in the requirements. The HTML contains aggregate data and uses browser JavaScript from a CDN; it needs internet access for the charts, while its HTML table works offline. The figures use editable TikZ and the Illinois palette.
 
 ---
 
@@ -1006,9 +1067,9 @@ Original source licenses are retained. Takeda's `LICENSE-CODE` explicitly permit
 | M2, 2.14 | Financial Times Visual Vocabulary; seaborn distribution and palette tutorials | Managerial question before chart choice; fixed versus conditional denominators; exact ECDFs; ties, endpoint masses, scales, and redundant visual encodings. |
 | M2, 2.15 | Altair tutorial and current widget/export documentation | Aggregate-data month selector, fixed scales, explicit counts, an accessible HTML table, and a static-hosting example. |
 | M3, 3.6.1 | seaborn error-bar tutorial | Distribution spread versus uncertainty; complete-user resampling; a paired interval compared with an incorrect independent-day calculation. |
-| M8, 8.12 | VisEval | Executability, fidelity to the analytical question, and readability; four constructed chart mistakes and an independent numerical audit. |
+| M8, 8.12 | VisEval | Executability, fidelity to the analytical question, and readability; four constructed chart mistakes and an independent numerical assessment. |
 
-`visualization.py`, `visualization_charts.py`, and `chart_audit.py` were written for the course and executed locally. Their full code is embedded in the notes. Three generated TikZ figures use the Illinois palette. Five independent small-data tests supplement the numerical checks. [Chart data and replication instructions](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) describe the output and browser-validation scope.
+`visualization.py`, `visualization_charts.py`, and `chart_assessment.py` were written for the course and executed locally. Their full code is embedded in the notes. Three generated TikZ figures use the Illinois palette. Five independent small-data tests supplement the numerical checks. [Chart data and replication instructions](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md) describe the output and browser-validation scope.
 
 FlowingData, its commercial book, the unlicensed storytelling recreation, Data to Viz, Datawrapper, Munzner, and PyNarrative remain optional linked references. No paid material was copied. Bokeh and HoloViz remain alternative implementation references, with their notebooks unexecuted. Matplotlib cheat sheets and Rougier's code remain figure-construction references. Rougier's `LICENSE.txt` separately grants BSD-2-Clause terms to code and CC BY-NC-SA 4.0 terms to book material; the catalog and generated provenance label have been corrected to preserve that distinction.
 
@@ -1018,7 +1079,7 @@ The supplied [McBroken bundle](../01_Resources/02_M2_Customer_Data_and_Visualiza
 
 | Resource | Course Application | Verified Output |
 | --- | --- | --- |
-| Supplied snapshot and panel extraction | M2 §2.16: API type handling, source audit, coverage, address keys, exact calendar joins | `api_checks.py`, `prepare.py`, `coverage.py`; national counts and dimension totals reconcile |
+| Supplied snapshot and panel extraction | M2 §2.16: API type handling, source assessment, coverage, address keys, exact calendar joins | `api_checks.py`, `prepare.py`, `coverage.py`; national counts and dimension totals reconcile |
 | Weekly country series and the Copyright Office's 2024 final rule | M6 §6.16: common-week policy contrasts and comparison-country sensitivity | `policy.py`; descriptive USA–Canada and USA–UK contrasts with implementation week omitted |
 | US store panel and snapshot manifest | M7 §7.18: time-separated forecasts, Brier scores, calibration, missing future labels | `predict.py`; later-date evaluation and eligible-origin denominator |
 
@@ -1059,7 +1120,7 @@ Use the pinned [requirements](../requirements.txt). From the repository root:
 ```sh
 python 03_Data_and_Code/mHealth/recurring_examples/visualization.py
 python 03_Data_and_Code/mHealth/recurring_examples/visualization_charts.py
-python 03_Data_and_Code/mHealth/recurring_examples/chart_audit.py
+python 03_Data_and_Code/mHealth/recurring_examples/chart_assessment.py
 python 03_Data_and_Code/mHealth/recurring_examples/test_visualization.py
 ```
 
@@ -1074,7 +1135,7 @@ The first command loads the existing public teaching-data release and cohort cac
 | [visualization_ecdf.csv](visualization_ecdf.csv) | Aggregate frequency at each distinct logging fraction, with the exact cumulative percentage and eligible-user count. |
 | [visualization_interactive.html](visualization_interactive.html) | Month selector, denominator comparison, distribution plot, and visible aggregate table. Download and open locally, or serve as a static HTML file. GitHub's repository file view displays source. |
 | [visualization_interactive.vl.json](visualization_interactive.vl.json) | Machine-readable Vega-Lite specification and embedded aggregate data. |
-| [chart_audit.json](chart_audit.json) | Outcomes for the correct specification and four constructed chart mistakes. |
+| [chart_assessment.json](chart_assessment.json) | Outcomes for the correct specification and four constructed chart mistakes. |
 
 `observed_user_days` counts distinct user/date pairs with at least one food entry. `calendar_user_days` equals the fixed eligible-user count times the month's calendar length. `logger_calendar_days` instead uses only users with at least one log that month. `logging_percent` and `conditional_logging_percent` use those respective denominators. `entries_per_observed_day` divides all recorded food rows by observed user-days.
 
@@ -1098,7 +1159,7 @@ The browser chart preserves 0–100% scales for both month selections, reports c
 
 ## Verification
 
-The three programs were executed locally with Python 3.13, pandas 2.2.3, numpy 2.1.3, and Altair 5.5.0. Five independent tests cover calendar lengths, duplicate dates, empty months, tied CDF values, preserved pairs, and constructed unit/denominator/baseline errors. The chart audit accepts the correct specification and rejects each constructed mistake; this is not a measured error rate for an LLM.
+The three programs were executed locally with Python 3.13, pandas 2.2.3, numpy 2.1.3, and Altair 5.5.0. Five independent tests cover calendar lengths, duplicate dates, empty months, tied CDF values, preserved pairs, and constructed unit/denominator/baseline errors. The chart assessment accepts the correct specification and rejects each constructed mistake; this is not a measured error rate for an LLM.
 
 The PDF and all three TikZ previews were compiled and visually reviewed. Browser interaction testing was unavailable because the desktop was locked; both month parameter states were independently compiled and rendered with Vega-Lite 5.20, with rendered labels checked against the numerical evidence. The validation record is [visualization_validation.json](visualization_validation.json). Downloaded reference notebooks were inspected as sources and were not executed.
 
@@ -1135,7 +1196,7 @@ python run_all.py
 
 This command uses the aggregate CSV files in `data/`, runs five counterexample tests, computes the three analyses, and updates their TikZ sources. It requires no network access. The saved figure PNGs and PDF are rebuilt separately with the lecture-note builder. Python, NumPy, and pandas are sufficient; no API key is needed.
 
-To repeat the full source audit and reconstruct the aggregate teaching tables:
+To repeat the full source assessment and reconstruct the aggregate teaching tables:
 
 ```sh
 python prepare.py
@@ -1146,7 +1207,7 @@ The default input is the [supplied resource bundle](../../01_Resources/02_M2_Cus
 
 ## Results and Interpretation
 
-- The audit reconciles 3,053,307 US store-date records with the supplied country totals. The 365-date calendar contains 356 observed US dates, nine missing US dates, and three observed dates with fewer than 2,000 records.
+- The assessment reconciles 3,053,307 US store-date records with the supplied country totals. The 365-date calendar contains 356 observed US dates, nine missing US dates, and three observed dates with fewer than 2,000 records.
 - There are 29,123 address keys and 13,821 exact coordinate pairs. Coordinates are a linkage diagnostic. No coordinate-based deduplication is imposed.
 - The equal-day unavailable percentage is 13.18%; pooling records gives 13.37%. Alternative count thresholds are reported in [coverage_sensitivity.csv](results/coverage_sensitivity.csv).
 - Around the October 28, 2024, policy effective date, a descriptive US-minus-Canada pre/post contrast is +0.65 percentage points. Using the UK gives +13.37 points. These are calculations of the contrast, with no established causal interpretation.
@@ -1202,9 +1263,9 @@ The daily coverage program reports equal-day means and pooled record fractions. 
 
 `data/policy_window.csv` retains the selected weekly snapshots for USA, Canada (`CA`), and UK in event weeks -12 through +12 around October 28, 2024. It includes source commit timestamps, UTC dates, ISO week labels, short `commit` and full `sha`, country, counts, exact `share_unavailable`, and `event_week`. Values are fractions before the program converts them to percentages. Week zero is visible in the figure and excluded from pre/post means. The mean weights each common week equally, after requiring at least 2,000 records for USA and 500 for each comparison country.
 
-## Audit and Provenance
+## Assessment and Provenance
 
-`data/audit.json` records source row counts, duplicate and unmatched-key checks, reconciliation results, coverage, address/coordinate diagnostics, gap counts, and the scope of the status audit. `manifest.json` identifies the six supplied source files by SHA-256 and byte size. The imported snapshot manifest contains selected commits even when their source extraction yields no usable US rows; this is why a manifest count and a panel date count can differ.
+`data/assessment.json` records source row counts, duplicate and unmatched-key checks, reconciliation results, coverage, address/coordinate diagnostics, gap counts, and the scope of the status assessment. `manifest.json` identifies the six supplied source files by SHA-256 and byte size. The imported snapshot manifest contains selected commits even when their source extraction yields no usable US rows; this is why a manifest count and a panel date count can differ.
 
 The original extractor uses Boolean conversion and a permissive number parser. The course's `api_checks.py` demonstrates stricter handling on constructed inputs. Two pinned raw snapshots were independently checked for nonboolean/missing US statuses and for agreement with supplied US totals. This spot check does not validate every historical JSON field or the underlying order-attempt mechanism.
 
@@ -1232,7 +1293,7 @@ Read the root agent guide, this folder's README, and DATA_DICTIONARY.md. Start w
 
 # McBroken Results and Verification
 
-The programs ran successfully on October 24, 2026. The source data cover October 25, 2025, through October 24, 2026, for the daily audit and forecast case. The policy case uses 25 weekly snapshots around October 28, 2024, displaying week zero and excluding it from the pre/post means.
+The programs ran successfully on October 24, 2026. The source data cover October 25, 2025, through October 24, 2026, for the daily assessment and forecast case. The policy case uses 25 weekly snapshots around October 28, 2024, displaying week zero and excluding it from the pre/post means.
 
 | Output | Content |
 | --- | --- |
@@ -1381,84 +1442,7 @@ All files are generated by the three offline course programs. Public pageviews a
 
 ---
 
-## Source: Lectures/README.md
-
-# Marketing Analytics Lectures
-
-By Nathan Yang
-
-Fifteen session decks cover all eight modules, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The current syllabus and calendar remain pending.
-
-Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
-
-## Session Decks
-
-| Session | Topic | PDF | Markdown | LaTeX |
-| --- | --- | --- | --- | --- |
-| 01 | Marketing Decisions and AI-Assisted Coding | [Slides](S01_Marketing_Decisions_and_AI_Coding.pdf) | [Companion](S01_Marketing_Decisions_and_AI_Coding.md) | [Source](S01_Marketing_Decisions_and_AI_Coding.tex) |
-| 02 | Customer Data and Measurement | [Slides](S02_Customer_Data_and_Measurement.pdf) | [Companion](S02_Customer_Data_and_Measurement.md) | [Source](S02_Customer_Data_and_Measurement.tex) |
-| 03 | Visualization and Data Quality | [Slides](S03_Visualization_and_Data_Quality.pdf) | [Companion](S03_Visualization_and_Data_Quality.md) | [Source](S03_Visualization_and_Data_Quality.tex) |
-| 04 | Regression and Marketing Interpretation | [Slides](S04_Regression_and_Marketing_Interpretation.pdf) | [Companion](S04_Regression_and_Marketing_Interpretation.md) | [Source](S04_Regression_and_Marketing_Interpretation.tex) |
-| 05 | Conjoint and Product Design | [Slides](S05_Conjoint_and_Product_Design.pdf) | [Companion](S05_Conjoint_and_Product_Design.md) | [Source](S05_Conjoint_and_Product_Design.tex) |
-| 06 | Segmentation and Customer Lifetime Value | [Slides](S06_Segmentation_and_Customer_Lifetime_Value.pdf) | [Companion](S06_Segmentation_and_Customer_Lifetime_Value.md) | [Source](S06_Segmentation_and_Customer_Lifetime_Value.tex) |
-| 07 | Text, Social Media, and Networks | [Slides](S07_Text_Social_Media_and_Networks.pdf) | [Companion](S07_Text_Social_Media_and_Networks.md) | [Source](S07_Text_Social_Media_and_Networks.tex) |
-| 08 | Project Evidence and Midterm Presentations | [Slides](S08_Project_Evidence_and_Midterm_Presentations.pdf) | [Companion](S08_Project_Evidence_and_Midterm_Presentations.md) | [Source](S08_Project_Evidence_and_Midterm_Presentations.tex) |
-| 09 | Experiments and Incremental Value | [Slides](S09_Experiments_and_Incremental_Value.pdf) | [Companion](S09_Experiments_and_Incremental_Value.md) | [Source](S09_Experiments_and_Incremental_Value.tex) |
-| 10 | Causal Comparisons and Policy Evaluation | [Slides](S10_Causal_Comparisons_and_Policy_Evaluation.pdf) | [Companion](S10_Causal_Comparisons_and_Policy_Evaluation.md) | [Source](S10_Causal_Comparisons_and_Policy_Evaluation.tex) |
-| 11 | Prediction, Validation, and Marketing Actions | [Slides](S11_Prediction_Validation_and_Marketing_Actions.pdf) | [Companion](S11_Prediction_Validation_and_Marketing_Actions.md) | [Source](S11_Prediction_Validation_and_Marketing_Actions.tex) |
-| 12 | Recommendation Systems and Customer Goals | [Slides](S12_Recommendation_Systems_and_Customer_Goals.pdf) | [Companion](S12_Recommendation_Systems_and_Customer_Goals.md) | [Source](S12_Recommendation_Systems_and_Customer_Goals.tex) |
-| 13 | Adaptive Recommendations and Marketing Budgets | [Slides](S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf) | [Companion](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | [Source](S13_Adaptive_Recommendations_and_Marketing_Budgets.tex) |
-| 14 | Generative AI, Consumer Choice, and Regulation | [Slides](S14_Generative_AI_Consumer_Choice_and_Regulation.pdf) | [Companion](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | [Source](S14_Generative_AI_Consumer_Choice_and_Regulation.tex) |
-| 15 | Integrated Decisions and Final Presentations | [Slides](S15_Integrated_Decisions_and_Final_Presentations.pdf) | [Companion](S15_Integrated_Decisions_and_Final_Presentations.md) | [Source](S15_Integrated_Decisions_and_Final_Presentations.tex) |
-
-## Related Materials
-
-- [Full lecture notes](../06_Lecture_Notes/README.md), including complete code for empirical examples.
-- [Small runnable session calculations](../03_Data_and_Code/Lecture_Examples/session_examples.py) and [executed results](../03_Data_and_Code/Lecture_Examples/session_calculations.json).
-- [Retention-procedure calculation](../03_Data_and_Code/Lecture_Examples/retention_welfare.py), with an aggregate table and fixed-stakes interpretation.
-- [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md), including module connections and primary-source status.
-
-## Format and Editing
-
-The decks use the supplied 16:9 Beamer format with parchment backgrounds, Illinois colors, editable TikZ, and Chinese ink-and-color artwork. [Art direction](ART_DIRECTION.md) records the brushwork research and visual conventions. [Artwork provenance](assets/PROVENANCE.md) identifies the four generated illustrations and their prompts.
-
-Edit [source/sessions.json](source/sessions.json) and [theme.tex](theme.tex), then use [the build commands](BUILD.md) to refresh LaTeX, Markdown, and PDF together. Follow [AGENTS.md](AGENTS.md) when revising content or using these materials with an assistant.
-
----
-
-## Source: Lectures/AGENTS.md
-
-# Agent Guide for Lectures
-
-Read the root `AGENTS.md`, `course.json`, the session plan, and the relevant module notes. Use Marketing Analytics as the title and By Nathan Yang as the author. Keep the course code out of decks and notes.
-
-## Content and Course Authority
-
-The plan has 15 meetings of 170 minutes, based on the historical syllabus. It includes 13 instructional meetings and two provisional presentation meetings. There are no guest speakers. No new dates, graded presentation requirements, weights, deadlines, or course-wide AI policy have been released. Preserve that distinction when answering students.
-
-Begin with the managerial decision, then the information, comparison, method, and consequence. Keep claims consistent across projected text, presenter notes, Markdown companions, code, and the full module notes. Define populations, denominators, units, horizons, and synthetic inputs. Keep consequential assumptions beside the result.
-
-Integrate new ethics and regulation material wherever it affects the methods and cases, as well as in the dedicated consumer-choice session. Verify legal propositions against primary sources and record jurisdiction, scope, status, and effective date. Use `../06_Lecture_Notes/ETHICS_AND_REGULATION.md` for the checked source record. Incorporate the instructor's own ideas without citing, naming, linking, or uploading the underlying papers.
-
-## Format and Artwork
-
-Use the November 2026 reference deck's 16:9 Beamer layout with 14-point base text, sans-serif typography, parchment RGB 234/220/201, Illinois Blue text, Illini Orange bullets and rules, and generous space. The reference's content does not establish course requirements. The earlier white-background guide is superseded.
-
-Keep `theme.tex` as the common style. Preserve editable TikZ for analytical diagrams and exact Illinois palette values. Follow `ART_DIRECTION.md` for Chinese ink-and-color illustrations. Use textured brushwork, restrained washes, open space, and atmospheric distance. Keep quantitative information in analytical figures and text.
-
-Use title case. Omit draft labels, preparation remarks, cover footers, and narration about what a slide or module will do. Substantive presenter notes follow the same prose conventions. Avoid em dashes and stock contrast constructions.
-
-## Editing and Verification
-
-Edit `source/sessions.json` as the primary slide content. The builder generates same-stem `.tex` and `.md` companions and compiles each PDF. Edit `theme.tex` for shared layout and `../06_Lecture_Notes/figures/` for shared diagrams. The Markdown companions must include projected text, equations, tables, code, substantive notes, and figure descriptions.
-
-Keep runnable examples in `../03_Data_and_Code`, with inputs, outputs, and commands. Short projected snippets supplement the full programs. Run affected code, check figures against aggregate tables, compile all affected decks, and inspect every changed page. Check presenter mode when modifying notes layout. Keep build files and preview images in ignored directories.
-
-Update README, `SESSION_PLAN.md`, `session_plan.json`, and `course.json` together when changing coverage. Regenerate `llms-full.txt` from the reviewed publication snapshot. Preserve concurrent resource-library edits and instructor-only folders.
-
----
-
-## Source: Lectures/SESSION_PLAN.md
+## Source: 05_Slides/SESSION_PLAN.md
 
 # Session Plan
 
@@ -1492,7 +1476,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 01. Marketing Decisions and AI-Assisted Coding
 
-**Python and Evidence:** Implement and audit order aggregation with three deliberately altered inputs.
+**Python and Evidence:** Implement and assess order aggregation with three deliberately altered inputs.
 
 **Application:** Write a 30-day coupon specification and identify its missing causal evidence.
 
@@ -1510,7 +1494,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 02. Customer Data and Measurement
 
-**Python and Evidence:** Build roster-first summaries and audit keys, zero-event users, and unknown statuses.
+**Python and Evidence:** Build roster-first summaries and assess keys, zero-event users, and unknown statuses.
 
 **Application:** Compare national availability with a common-support restaurant sample.
 
@@ -1528,7 +1512,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 03. Visualization and Data Quality
 
-**Python and Evidence:** Audit chart values, paired changes, scales, and denominator controls.
+**Python and Evidence:** Assess chart values, paired changes, scales, and denominator controls.
 
 **Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim.
 
@@ -1546,7 +1530,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 04. Regression and Marketing Interpretation
 
-**Python and Evidence:** Reproduce OLS and audit exact-day matching, specification, and uncertainty.
+**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty.
 
 **Application:** Interpret a price coefficient when the manager observes demand before setting price.
 
@@ -1670,7 +1654,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 11. Prediction, Validation, and Marketing Actions
 
-**Python and Evidence:** Audit a chronological split and compare accuracy, precision, recall, and calibration.
+**Python and Evidence:** Assess a chronological split and compare accuracy, precision, recall, and calibration.
 
 **Application:** Translate a forecast into a capacity-constrained action and check missing future labels.
 
@@ -1688,7 +1672,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 12. Recommendation Systems and Customer Goals
 
-**Python and Evidence:** Compare ranking baselines, calculate NDCG, and audit a goal-weight sensitivity.
+**Python and Evidence:** Compare ranking baselines, calculate NDCG, and assess a goal-weight sensitivity.
 
 **Application:** Check a generated recommendation explanation and design an online outcome comparison.
 
@@ -1724,7 +1708,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 14. Generative AI, Consumer Choice, and Regulation
 
-**Python and Evidence:** Audit demand and workflow measurements, then calculate a conditional retention-welfare example.
+**Python and Evidence:** Assess demand and workflow measurements, then calculate a conditional retention-welfare example.
 
 **Application:** Evaluate a cancellation procedure using customer value, refusal, completion, and applicable rule status.
 
@@ -1735,7 +1719,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 0–35 | Demand and Subscription Measurement |
 | 35–70 | AI Workflow and Calculation |
 | 70–80 | Break |
-| 80–155 | Retention Procedures and Regulatory Audit |
+| 80–155 | Retention Procedures and Regulatory Assessment |
 | 155–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
@@ -1770,13 +1754,13 @@ By Nathan Yang
 
 ## Meeting Structure
 
-Plan for 15 meetings of 170 minutes, with one spring-break week outside those meetings. The historical syllabus supplies the count and duration. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../Lectures/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
+Plan for 15 meetings of 170 minutes, with one spring-break week outside those meetings. The historical syllabus supplies the count and duration. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
 
 Calendar dates, graded presentation requirements, assessment weights, deadlines, and course-wide AI rules remain to be set. This teaching plan does not release those requirements. `current_syllabus` and `current_schedule` in [course.json](../course.json) remain null.
 
 ## Learning Objectives
 
-Students should be able to define a marketing decision and the evidence needed to inform it; construct and audit a customer dataset; interpret descriptive, predictive, and causal results; evaluate product, targeting, and retention decisions; and reproduce an analysis with Python. AI-assisted coding is integrated into the specification, implementation, verification, and interpretation of each analysis.
+Students should be able to define a marketing decision and the evidence needed to inform it; construct and assess a customer dataset; interpret descriptive, predictive, and causal results; evaluate product, targeting, and retention decisions; and reproduce an analysis with Python. AI-assisted coding is integrated into the specification, implementation, verification, and interpretation of each analysis.
 
 Students should also be able to distinguish firm outcomes from customer value, identify consequences omitted by a commercial objective, and assess which public legal source applies to a proposed action. A defensible recommendation states the population, estimand, assumptions, uncertainty, customer consequences, and relevant regulatory scope.
 
@@ -1803,7 +1787,7 @@ Ethics and regulation recur within the methods. The [module integration guide](.
 
 ## Materials and Future Revisions
 
-The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations and runnable programs. The [Lectures folder](../Lectures/README.md) provides PDFs, editable LaTeX, and complete Markdown companions. New ethics and regulation resources should be reconciled with both sources and with this plan. Legal claims require a current primary source and a statement of its scope and status.
+The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations and runnable programs. The [Slides folder](../05_Slides/README.md) provides PDFs, editable LaTeX, and complete Markdown companions. New ethics and regulation resources should be reconciled with both sources and with this plan. Legal claims require a current primary source and a statement of its scope and status.
 
 ---
 
@@ -1836,7 +1820,7 @@ The entries below were checked on November 2, 2026. Their dates and legal status
 | [FTC Consumer Reviews and Testimonials Rule: Questions and Answers](https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers) | Agency guidance on the rule, effective October 21, 2024. Provisions address specified conduct involving false reviews, testimonials, incentives, suppression, and influence indicators. Knowledge conditions differ by provision. | Preserve actual experience and provenance. Mere hosting is treated differently from business creation or purchase of fake reviews. AI use alone does not determine whether a testimonial is false. |
 | [FTC Rule on Unfair or Deceptive Fees: Frequently Asked Questions](https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions) | Agency guidance on the rule effective May 12, 2025, covering live-event tickets and short-term lodging. | Define the covered transaction and required price components. This rule's sector coverage does not establish an identical price-display rule for every retailer. |
 | [FTC Negative Option Rule ANPRM Announcement](https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option) | March 2026 advance notice seeking input on possible amendments. It refers to the vacated 2024 rule. The notice itself does not adopt replacement obligations. | Keep proposals separate from operative obligations. Examine current federal and applicable state sources before assessing a subscription process. |
-| [United States v. Meta Platforms, Inc.](https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny) | DOJ case record for a housing-advertising settlement approved June 27, 2022, resolving Fair Housing Act allegations about targeting and delivery. | Audit actual delivery as well as advertiser-selected audiences. The case concerns housing access and does not establish the same legal standard for every marketing model. |
+| [United States v. Meta Platforms, Inc.](https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny) | DOJ case record for a housing-advertising settlement approved June 27, 2022, resolving Fair Housing Act allegations about targeting and delivery. | Assess actual delivery as well as advertiser-selected audiences. The case concerns housing access and does not establish the same legal standard for every marketing model. |
 
 ## A Retention-Procedure Case
 
@@ -1846,11 +1830,11 @@ These conclusions require the stated stakes and stable probabilities. A measured
 
 ## Discussion and Applied Work
 
-For a proposed marketing action, identify the customer population, the information available, and the commercial objective. Describe the customer's feasible choices and the consequences outside that objective. Select a benchmark, a customer outcome, and a measurement horizon. Then identify the jurisdiction, covered conduct, effective date, and authority of the relevant primary source. A proposed audit or discussion exercise does not establish an assignment requirement or grade weight.
+For a proposed marketing action, identify the customer population, the information available, and the commercial objective. Describe the customer's feasible choices and the consequences outside that objective. Select a benchmark, a customer outcome, and a measurement horizon. Then identify the jurisdiction, covered conduct, effective date, and authority of the relevant primary source. A proposed assessment or discussion exercise does not establish an assignment requirement or grade weight.
 
 ## Incorporating New Material
 
-New references should change the relevant method, example, figure, or coding check wherever the argument applies. Update the affected module notes and session companions together, then update the [session plan](../Lectures/SESSION_PLAN.md), syllabus planning documents, and [resource integration map](RESOURCE_INTEGRATION.md). Check legal propositions against primary sources and record status and scope. Incorporate the instructor's own ideas directly into course explanations without naming, citing, linking, or uploading the underlying papers.
+New references should change the relevant method, example, figure, or coding check wherever the argument applies. Update the affected module notes and session companions together, then update the [session plan](../05_Slides/SESSION_PLAN.md), syllabus planning documents, and [resource integration map](RESOURCE_INTEGRATION.md). Check legal propositions against primary sources and record status and scope. Incorporate the instructor's own ideas directly into course explanations without naming, citing, linking, or uploading the underlying papers.
 
 ---
 

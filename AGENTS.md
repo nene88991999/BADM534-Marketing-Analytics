@@ -74,7 +74,9 @@ Use local source files when available, and preserve their recorded rights. An ac
 
 ## Lectures, Artwork, and Ethics
 
-- Use `Lectures/` for session decks and complete Markdown companions. Follow `Lectures/AGENTS.md` and `Lectures/SESSION_PLAN.md`. The plan has 15 meetings of 170 minutes, no guest speakers, and two provisional presentation meetings. Calendar and assessment pointers remain null until released.
-- Follow the latest parchment Beamer template and Illinois colors. Use historical Chinese ink-and-color techniques for artistic illustrations, with varied brushwork, dry-brush breaks, restrained washes, and open space. The researched conventions are in `Lectures/ART_DIRECTION.md`. Keep analytical diagrams editable in TikZ.
+- Use `05_Slides/` for session decks and complete Markdown companions. Follow `05_Slides/AGENTS.md` and `05_Slides/SESSION_PLAN.md`. The plan has 15 meetings of 170 minutes, no guest speakers, and two provisional presentation meetings. Calendar and assessment pointers remain null until released.
+- Follow the latest parchment Beamer template and Illinois colors. Use historical Chinese ink-and-color techniques for artistic illustrations, with varied brushwork, dry-brush breaks, restrained washes, and open space. The researched conventions are in `05_Slides/ART_DIRECTION.md`. Keep analytical diagrams editable in TikZ.
 - Integrate new ethics and regulation material across the affected slides, lecture notes, code, syllabus planning, and resource guides. Verify legal claims against primary sources and record jurisdiction, coverage, status, and effective date.
 - Incorporate Nathan Yang's own conceptual material directly into the course without naming, citing, linking, or uploading the underlying papers. Preserve attribution for third-party public sources.
+
+Use “assessment” for data-quality and evidence checks, and “evaluation” for model, policy, and customer-outcome comparisons. Use “assess” and “evaluate” as the corresponding verbs. Apply this terminology consistently in headings, prose, code examples, and output names; preserve original third-party titles and quotations.

@@ -1,4 +1,4 @@
-"""Audit the supplied Wikipedia capture without making network requests."""
+"""Assess the supplied Wikipedia capture without making network requests."""
 from pathlib import Path
 import json
 

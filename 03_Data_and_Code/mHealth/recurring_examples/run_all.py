@@ -9,7 +9,7 @@ from common import save_result
 
 root = Path(__file__).resolve().parent
 subprocess.run([sys.executable, str(root.parent / "download_data.py")], check=True)
-scripts = ["common.py", "audit.py", "nutrition.py", "test_logic.py"] + [
+scripts = ["common.py", "assessment.py", "nutrition.py", "test_logic.py"] + [
     f"m{module:02}.py" for module in range(1, 9)
 ]
 scripts += [
@@ -24,7 +24,7 @@ scripts += [
     "test_visualization.py",
     "visualization.py",
     "visualization_charts.py",
-    "chart_audit.py",
+    "chart_assessment.py",
 ]
 for script in scripts:
     subprocess.run([sys.executable, str(root / script)], check=True, cwd=root)

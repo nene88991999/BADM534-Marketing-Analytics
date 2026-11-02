@@ -73,9 +73,9 @@ A list with more categories need not better serve every customer. Someone replen
 
 ### 8.2.2 Case Study: Content Exposure and Political Attitudes Are Different Outcomes
 
-[Milli and coauthors (2025)](https://doi.org/10.1093/pnasnexus/pgaf062) conduct a preregistered audit with 806 Twitter users, comparing posts selected by engagement ranking with recent posts from accounts each user follows. They collect item-level stated preferences and perceptions. Engagement ranking selects more emotionally charged and out-group-hostile material, and the political posts selected are not preferred by users on the stated-preference measure. The outcomes describe selected content and users' evaluations within the audit's exposure window.
+[Milli and coauthors (2025)](https://doi.org/10.1093/pnasnexus/pgaf062) conduct a preregistered assessment with 806 Twitter users, comparing posts selected by engagement ranking with recent posts from accounts each user follows. They collect item-level stated preferences and perceptions. Engagement ranking selects more emotionally charged and out-group-hostile material, and the political posts selected are not preferred by users on the stated-preference measure. The outcomes describe selected content and users' evaluations within the assessment's exposure window.
 
-[Liu and coauthors (2025)](https://doi.org/10.1073/pnas.2318127122) conduct four experiments with nearly 9,000 participants on a YouTube-like interface. Manipulating recommendation sequences produces limited short-term polarization effects in the studied settings. The intervention, exposure duration, and attitude outcomes differ from the Twitter audit. The studies therefore address different links between recommendation, consumption, perception, and opinion. A change in the composition of displayed content does not determine the magnitude of an attitude effect.
+[Liu and coauthors (2025)](https://doi.org/10.1073/pnas.2318127122) conduct four experiments with nearly 9,000 participants on a YouTube-like interface. Manipulating recommendation sequences produces limited short-term polarization effects in the studied settings. The intervention, exposure duration, and attitude outcomes differ from the Twitter assessment. The studies therefore address different links between recommendation, consumption, perception, and opinion. A change in the composition of displayed content does not determine the magnitude of an attitude effect.
 
 For a managerial comparison, state the population, assignment, exposure window, outcome, and uncertainty before combining findings across settings. A nonsignificant attitude effect supplies no general assurance of zero long-run effects, just as a difference in displayed content supplies no estimate of long-run polarization. The relevant evidence is the estimated effect and its uncertainty for the intervention actually evaluated.
 
@@ -208,7 +208,7 @@ The first three points lie close together in recall even though novelty rises. T
 
 A nutrition objective would need a validated nutrient database, appropriate portions, restrictions supplied by the customer, and an outcome definition. Source categories and calorie-share variety alone do not establish healthy choices. The data-cleaning distinctions in M2 therefore affect what the manager can optimize. Dropping low-calorie days might improve an apparent fit by selecting more complete logs, while also excluding the customers for whom the interface is hardest to use.
 
-A concrete next decision is whether to run the M6 user-randomized comparison, using a prespecified novelty setting and separate measures of logging, acceptance, and any validated nutrition outcome. The experiment should preserve the assignment population and record exposure. An AI assistant can implement the frozen ranking rule and audit category descriptions, while unsupported health claims remain outside the factual explanation supplied with the recommendation.
+A concrete next decision is whether to run the M6 user-randomized comparison, using a prespecified novelty setting and separate measures of logging, acceptance, and any validated nutrition outcome. The experiment should preserve the assignment population and record exposure. An AI assistant can implement the frozen ranking rule and assess category descriptions, while unsupported health claims remain outside the factual explanation supplied with the recommendation.
 
 Python source: [m08.py](../../03_Data_and_Code/mHealth/recurring_examples/m08.py). From its directory, run `python m08.py`.
 
@@ -417,9 +417,9 @@ The checker below accepts the correct specification and rejects all four constru
 
 Ask a coding assistant to return the aggregate plotting table, units, eligibility rule, axis domains, and one hand-calculated plotted value with its code. A second review should compare those objects with the original analysis specification. Passing the assistant's own test is informative only when the expected answer was derived independently. The [Financial Times vocabulary](https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md) supports the choice of display, while [Rougier's visualization code](https://github.com/rougier/scientific-visualization-book) provides examples of figure construction and layout. The managerial claim must remain tied to the evidence and design.
 
-Run `visualization.py` first to create the evidence table, then run the audit. The false charts are constructed teaching cases; their rejection rates do not measure the reliability of any particular language model.
+Run `visualization.py` first to create the evidence table, then run the assessment. The false charts are constructed teaching cases; their rejection rates do not measure the reliability of any particular language model.
 
-Python source: [chart_audit.py](../../03_Data_and_Code/mHealth/recurring_examples/chart_audit.py). From its directory, run `python chart_audit.py`.
+Python source: [chart_assessment.py](../../03_Data_and_Code/mHealth/recurring_examples/chart_assessment.py). From its directory, run `python chart_assessment.py`.
 
 ```python
 """Check a narrow chart specification against the monthly evidence table."""
@@ -475,7 +475,7 @@ def main():
     result = {name: check_chart(chart, evidence) for name, chart in cases.items()}
     assert result["correct"] == []
     assert all(result[name] for name in cases if name != "correct")
-    save_result("chart_audit", {"constructed_cases": result})
+    save_result("chart_assessment", {"constructed_cases": result})
     print(json.dumps(result, indent=2))
 
 
@@ -524,7 +524,7 @@ The simulator also imposes a utility price coefficient of $-0.0600$. The flow sl
 
 An acquisition flow divided by all consumers also differs from an acquisition probability among eligible nonsubscribers. For a provider-level holding indicator $D_{ijt}$, its acquisition hazard conditions on $D_{ij,t-1}=0$. A new-holder count divided by $N$ combines that hazard with the proportion eligible to acquire the provider. Changes in the eligible population can therefore change the flow share even when its conditional response is stable. Plan-level flows require an additional definition of upgrades, downgrades, and new provider relationships.
 
-### 8.13.3 Auditing an AI-Generated Demand Analysis
+### 8.13.3 Evaluating an AI-Generated Demand Analysis
 
 A useful coding specification states the consumer roster, available alternatives, monthly price units, subscription-history definition, and target coefficient before requesting a model. Require the code to retain zero-count provider-months, check whether prices vary after the fixed effects, and reject undefined log odds. A pseudocount changes the transformed outcome and should follow an explicit statistical model rather than conceal zero shares.
 

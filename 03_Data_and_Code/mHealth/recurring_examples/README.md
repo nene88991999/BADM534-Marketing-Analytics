@@ -11,7 +11,7 @@ python -m pip install -r 03_Data_and_Code/mHealth/recurring_examples/requirement
 python 03_Data_and_Code/mHealth/recurring_examples/run_all.py
 ```
 
-`run_all.py` verifies the release checksums through `download_data.py`, downloads missing release files, builds the bounded cohort, executes the audit and nutrition analysis, runs the logic checks, and executes M1–M8 in order. The first preparation reads the 304 MB compressed food file. The local Parquet cache is ignored by Git; delete `cache/` to rebuild. Derived caches depend on the release manifest hash, cohort threshold, and preparation version. Calculations use local processing and make no external AI requests. Subsequent module scripts can be run individually. Run M7 before M8 because M8 reads the selected history window from `results/M07.json`.
+`run_all.py` verifies the release checksums through `download_data.py`, downloads missing release files, builds the bounded cohort, executes the assessment and nutrition analysis, runs the logic checks, and executes M1–M8 in order. The first preparation reads the 304 MB compressed food file. The local Parquet cache is ignored by Git; delete `cache/` to rebuild. Derived caches depend on the release manifest hash, cohort threshold, and preparation version. Calculations use local processing and make no external AI requests. Subsequent module scripts can be run individually. Run M7 before M8 because M8 reads the selected history window from `results/M07.json`.
 
 The complete release files are stored in `../data/`, outside Git, and distributed as [GitHub release assets](https://github.com/nene88991999/BADM534-Marketing-Analytics/releases/tag/mhealth-teaching-2026-10-23). Read the [dictionary](../DATA_DICTIONARY.md) and [release manifest](../manifest.json) before changing a measurement.
 
@@ -20,9 +20,9 @@ The complete release files are stored in `../data/`, outside Git, and distribute
 | Program | Question and Output |
 | --- | --- |
 | `common.py` | Select the cohort, construct observed days and baskets; write `results/cohort.json`. |
-| `audit.py` | Check keys, selected-field duplicates, age consistency, daily totals, and calorie review flags; write `results/audit.json`. |
+| `assessment.py` | Check keys, selected-field duplicates, age consistency, daily totals, and calorie review flags; write `results/assessment.json`. |
 | `nutrition.py` | Compare adult, positive-energy, percentile, and accounting-consistency samples; calculate explicitly hypothetical Goldberg bounds; write `results/nutrition.json`. |
-| `m01.py` | Audit join coverage and hand-check a repeated daily total. |
+| `m01.py` | Assessment join coverage and hand-check a repeated daily total. |
 | `m02.py` | Compare breadth and calorie-share variety, and distinguish missing calendar days from observed days. |
 | `m03.py` | Estimate next-calendar-day descriptive regressions, customer-clustered intervals, and a range-restriction sensitivity. |
 | `m04.py` | Form segments using January–June behavior and describe later logging; keep hypothetical financial and choice inputs separate. |
@@ -40,7 +40,7 @@ The complete release files are stored in `../data/`, outside Git, and distribute
 | `claim_checks.py` | M8, Section 8.11: constructed structured claims checked against computed evidence; no LLM requests. |
 | `visualization.py` | M2, 2.14, and M3, 3.6.1: complete user-month pairs, conditional denominators, exact ECDFs, and paired-user uncertainty. |
 | `visualization_charts.py` | M2, 2.15: three generated TikZ figures and an aggregate-data Altair HTML chart with a month selector. |
-| `chart_audit.py` | M8, 8.12: four constructed chart errors checked against independently computed numerators and denominators. |
+| `chart_assessment.py` | M8, 8.12: four constructed chart errors checked against independently computed numerators and denominators. |
 | `test_visualization.py` | Five small-data checks of month lengths, duplicate dates, empty months, CDF ties, paired resampling, and chart mistakes. |
 | `test_extension_logic.py` | Seven small-data checks for counting units, future exclusion, censoring ties, gap confirmation, adjustment variance, numerical claims, and an IV slope. |
 
@@ -68,4 +68,4 @@ The seven additional programs write correspondingly named JSON results. Recency 
 
 ## Visualization Replication
 
-The [visualization companion](results/VISUALIZATION.md) describes the chart tables and outputs. Run `visualization.py`, then `visualization_charts.py` and `chart_audit.py`. These programs also run at the end of `run_all.py`, with Altair 5.5.0 included in the requirements. The HTML contains aggregate data and uses browser JavaScript from a CDN; it needs internet access for the charts, while its HTML table works offline. The figures use editable TikZ and the Illinois palette.
+The [visualization companion](results/VISUALIZATION.md) describes the chart tables and outputs. Run `visualization.py`, then `visualization_charts.py` and `chart_assessment.py`. These programs also run at the end of `run_all.py`, with Altair 5.5.0 included in the requirements. The HTML contains aggregate data and uses browser JavaScript from a CDN; it needs internet access for the charts, while its HTML table works offline. The figures use editable TikZ and the Illinois palette.

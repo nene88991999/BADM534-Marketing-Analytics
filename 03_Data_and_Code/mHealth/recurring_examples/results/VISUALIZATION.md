@@ -9,7 +9,7 @@ Use the pinned [requirements](../requirements.txt). From the repository root:
 ```sh
 python 03_Data_and_Code/mHealth/recurring_examples/visualization.py
 python 03_Data_and_Code/mHealth/recurring_examples/visualization_charts.py
-python 03_Data_and_Code/mHealth/recurring_examples/chart_audit.py
+python 03_Data_and_Code/mHealth/recurring_examples/chart_assessment.py
 python 03_Data_and_Code/mHealth/recurring_examples/test_visualization.py
 ```
 
@@ -24,7 +24,7 @@ The first command loads the existing public teaching-data release and cohort cac
 | [visualization_ecdf.csv](visualization_ecdf.csv) | Aggregate frequency at each distinct logging fraction, with the exact cumulative percentage and eligible-user count. |
 | [visualization_interactive.html](visualization_interactive.html) | Month selector, denominator comparison, distribution plot, and visible aggregate table. Download and open locally, or serve as a static HTML file. GitHub's repository file view displays source. |
 | [visualization_interactive.vl.json](visualization_interactive.vl.json) | Machine-readable Vega-Lite specification and embedded aggregate data. |
-| [chart_audit.json](chart_audit.json) | Outcomes for the correct specification and four constructed chart mistakes. |
+| [chart_assessment.json](chart_assessment.json) | Outcomes for the correct specification and four constructed chart mistakes. |
 
 `observed_user_days` counts distinct user/date pairs with at least one food entry. `calendar_user_days` equals the fixed eligible-user count times the month's calendar length. `logger_calendar_days` instead uses only users with at least one log that month. `logging_percent` and `conditional_logging_percent` use those respective denominators. `entries_per_observed_day` divides all recorded food rows by observed user-days.
 
@@ -48,7 +48,7 @@ The browser chart preserves 0–100% scales for both month selections, reports c
 
 ## Verification
 
-The three programs were executed locally with Python 3.13, pandas 2.2.3, numpy 2.1.3, and Altair 5.5.0. Five independent tests cover calendar lengths, duplicate dates, empty months, tied CDF values, preserved pairs, and constructed unit/denominator/baseline errors. The chart audit accepts the correct specification and rejects each constructed mistake; this is not a measured error rate for an LLM.
+The three programs were executed locally with Python 3.13, pandas 2.2.3, numpy 2.1.3, and Altair 5.5.0. Five independent tests cover calendar lengths, duplicate dates, empty months, tied CDF values, preserved pairs, and constructed unit/denominator/baseline errors. The chart assessment accepts the correct specification and rejects each constructed mistake; this is not a measured error rate for an LLM.
 
 The PDF and all three TikZ previews were compiled and visually reviewed. Browser interaction testing was unavailable because the desktop was locked; both month parameter states were independently compiled and rendered with Vega-Lite 5.20, with rendered labels checked against the numerical evidence. The validation record is [visualization_validation.json](visualization_validation.json). Downloaded reference notebooks were inspected as sources and were not executed.
 

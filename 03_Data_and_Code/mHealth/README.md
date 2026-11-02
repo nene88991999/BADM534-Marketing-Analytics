@@ -70,4 +70,4 @@ Weight-based conclusions must account for the perturbation. Apparent movements s
 
 ## Recurring Course Examples
 
-Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, audit and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.
+Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, assessment and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.
