@@ -2,7 +2,7 @@
 
 Course materials for Nathan Yang's planned offering, with AI-assisted coding integrated into marketing analytics. The topic sequence builds on Unnati Narang's Spring 2026 course.
 
-**Status:** course preparation, with lecture notes and 15 session decks covering all eight modules. The revised syllabus, assignments, grading rules, dates, and interactive HTML wiki are pending. Resource recommendations and teaching suggestions are not assigned work.
+**Status:** course preparation, with lecture notes and 15 session decks covering all eight modules. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, assessment policies, and the interactive HTML wiki remain pending. Resource recommendations and teaching suggestions are not assigned work.
 
 ## Start Here
 
@@ -19,7 +19,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | Folder | Contents |
 | --- | --- |
 | [01_Resources](01_Resources/README.md) | Categorized readings, documentation, notebooks, datasets, AI coding resources, and source catalogs |
-| [02_Syllabus](02_Syllabus/README.md) | Current syllabus and course policies when released |
+| [02_Syllabus](02_Syllabus/README.md) | Spring 2027 syllabus, confirmed logistics, and policy status |
 | [03_Data_and_Code](03_Data_and_Code/README.md) | Course datasets, dictionaries, scripts, notebooks, and code snippets |
 | [04_Assignments](04_Assignments/README.md) | Assignment briefs, rubrics, and assessment-specific AI rules |
 | [05_Slides](05_Slides/README.md) | Fifteen session decks, editable LaTeX, Markdown companions, and meeting plans |

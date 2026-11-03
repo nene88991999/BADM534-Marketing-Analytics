@@ -24,8 +24,8 @@ Generated from course.json and the source files identified below. This file cont
     "presentation_meetings_status": "provisional; no assessment requirements released",
     "ethics_and_regulation": "integrated across M1-M8, with a 75-minute block in Session 14"
   },
-  "current_syllabus": null,
-  "current_schedule": null,
+  "current_syllabus": "02_Syllabus/Marketing_Analytics_Syllabus.md",
+  "current_schedule": "05_Slides/SESSION_PLAN.md",
   "current_ai_policy": null,
   "released_assignments": [],
   "released_labs": [],
@@ -77,7 +77,8 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Earnings_Calls/DATA_DICTIONARY.md",
     "03_Data_and_Code/Earnings_Calls/AGENTS.md",
     "03_Data_and_Code/Earnings_Calls/LLM_EXERCISES.md",
-    "03_Data_and_Code/Earnings_Calls/results/README.md"
+    "03_Data_and_Code/Earnings_Calls/results/README.md",
+    "02_Syllabus/Marketing_Analytics_Syllabus.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -191,8 +192,55 @@ Generated from course.json and the source files identified below. This file cont
     "slides": 265,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
-    "calendar_status": "not released",
+    "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
     "presentation_requirements_status": "not released"
+  },
+  "term": "Spring 2027",
+  "instructor_email": "ncyang@illinois.edu",
+  "office_hours": "By appointment",
+  "meeting": {
+    "weekday": "Wednesday",
+    "start_time": "15:30",
+    "end_time": "18:20",
+    "timezone": "America/Chicago",
+    "building": "Wohlers Hall",
+    "room": "243",
+    "section": "A",
+    "crn": "77732",
+    "dates": [
+      "2027-01-20",
+      "2027-01-27",
+      "2027-02-03",
+      "2027-02-10",
+      "2027-02-17",
+      "2027-02-24",
+      "2027-03-03",
+      "2027-03-10",
+      "2027-03-24",
+      "2027-03-31",
+      "2027-04-07",
+      "2027-04-14",
+      "2027-04-21",
+      "2027-04-28",
+      "2027-05-05"
+    ],
+    "no_class_dates": [
+      {
+        "date": "2027-03-17",
+        "reason": "Spring break"
+      }
+    ]
+  },
+  "syllabus": {
+    "status": "logistics, course outline, and dates available; assessment rules pending",
+    "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
+    "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
+    "term": "Spring 2027",
+    "updated_on": "2026-11-02",
+    "grading_status": "not released",
+    "attendance_and_late_work_policy_status": "not released",
+    "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
+    "course_listing_source": "https://courses.illinois.edu/schedule/2027/spring/BADM/534"
   }
 }
 ```
@@ -205,7 +253,7 @@ Generated from course.json and the source files identified below. This file cont
 
 Course materials for Nathan Yang's planned offering, with AI-assisted coding integrated into marketing analytics. The topic sequence builds on Unnati Narang's Spring 2026 course.
 
-**Status:** course preparation, with lecture notes and 15 session decks covering all eight modules. The revised syllabus, assignments, grading rules, dates, and interactive HTML wiki are pending. Resource recommendations and teaching suggestions are not assigned work.
+**Status:** course preparation, with lecture notes and 15 session decks covering all eight modules. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, assessment policies, and the interactive HTML wiki remain pending. Resource recommendations and teaching suggestions are not assigned work.
 
 ## Start Here
 
@@ -222,7 +270,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | Folder | Contents |
 | --- | --- |
 | [01_Resources](01_Resources/README.md) | Categorized readings, documentation, notebooks, datasets, AI coding resources, and source catalogs |
-| [02_Syllabus](02_Syllabus/README.md) | Current syllabus and course policies when released |
+| [02_Syllabus](02_Syllabus/README.md) | Spring 2027 syllabus, confirmed logistics, and policy status |
 | [03_Data_and_Code](03_Data_and_Code/README.md) | Course datasets, dictionaries, scripts, notebooks, and code snippets |
 | [04_Assignments](04_Assignments/README.md) | Assignment briefs, rubrics, and assessment-specific AI rules |
 | [05_Slides](05_Slides/README.md) | Fifteen session decks, editable LaTeX, Markdown companions, and meeting plans |
@@ -260,7 +308,7 @@ Use **Marketing Analytics** as the course title. Omit the course code from lectu
 
 Help students understand and apply marketing analytics, including AI-assisted coding. Start with the managerial decision, the available information, the analytical question, and the interpretation of the result.
 
-The repository is being prepared. No revised syllabus, graded assignment, schedule, or course-wide AI policy has been released here. Read `course.json` for the current release pointers; null means absent. Proposed activities in resource guides are planning suggestions.
+The syllabus and Spring 2027 meeting calendar provide confirmed logistics, dates, and course coverage. Graded assignments, grading weights, attendance and late-work rules, and course-wide AI policy remain pending. Read `course.json` for the current release pointers; null means absent. Proposed activities in resource guides are planning suggestions.
 
 Plan the syllabus and schedule with no guest speakers. Allocate topic coverage to instructor-led sessions and course activities; do not carry forward guest-speaker slots from the predecessor's syllabus.
 
@@ -328,7 +376,7 @@ Use local source files when available, and preserve their recorded rights. An ac
 
 ## Lectures, Artwork, and Ethics
 
-- Use `05_Slides/` for session decks and complete Markdown companions. Follow `05_Slides/AGENTS.md` and `05_Slides/SESSION_PLAN.md`. The plan has 15 meetings of 170 minutes, no guest speakers, and two provisional presentation meetings. Calendar and assessment pointers remain null until released.
+- Use `05_Slides/` for session decks and complete Markdown companions. Follow `05_Slides/AGENTS.md` and `05_Slides/SESSION_PLAN.md`. The plan has 15 meetings of 170 minutes, no guest speakers, and two provisional presentation meetings. The calendar pointer identifies the dated Spring 2027 plan; assessment and AI-policy pointers remain unset until released.
 - Follow the latest parchment Beamer template and Illinois colors. Use historical Chinese ink-and-color techniques for artistic illustrations, with varied brushwork, dry-brush breaks, restrained washes, and open space. The researched conventions are in `05_Slides/ART_DIRECTION.md`. Keep analytical diagrams editable in TikZ.
 - Integrate new ethics and regulation material across the affected slides, lecture notes, code, syllabus planning, and resource guides. Verify legal claims against primary sources and record jurisdiction, coverage, status, and effective date.
 - Incorporate Nathan Yang's own conceptual material directly into the course without naming, citing, linking, or uploading the underlying papers. Preserve attribution for third-party public sources.
@@ -343,7 +391,7 @@ Use “assessment” for data-quality and evidence checks, and “evaluation” 
 
 Marketing Analytics
 
-This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The revised syllabus, schedule, assignments, and assessment rules are pending. Suggested activities below are illustrative.
+This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The [syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting dates are available. Assignments and assessment rules remain pending. Suggested activities below are illustrative.
 
 The course is planned with no guest speakers. All eight modules will be covered through instructor-led sessions and course activities.
 
@@ -411,7 +459,7 @@ The [GenAI demand cases](03_Data_and_Code/GenAI_Demand/README.md) connect M2 §2
 
 ## Session Sequence and Ethics
 
-The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](05_Slides/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; dates and assessment requirements remain pending.
+The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](05_Slides/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; Spring 2027 meeting dates are available and assessment requirements remain pending.
 
 [Ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) connect M1 data handling, M2 sample representation, M3 advertising claims, M4 retention and choice, M5 review provenance, M6 experimental objectives, M7 delivery and access, and M8 adaptive procedures and customer value. A synthetic retention example includes complete Python, an aggregate table, and a TikZ figure.
 
@@ -465,15 +513,21 @@ A program can run successfully and still answer the wrong question. Inspect a fe
 
 # Syllabus and Course Policies
 
-**Status: pending.** No revised syllabus has been released.
+The **Spring 2027 syllabus** is available as [PDF](Marketing_Analytics_Syllabus.pdf) and [Markdown](Marketing_Analytics_Syllabus.md). Both contain the same course details and topic schedule.
 
-The syllabus will assume no guest speakers. Allocate teaching time across the eight modules, instructor-led examples, coding exercises, and discussion.
+Nathan Yang teaches Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243. Email: [ncyang@illinois.edu](mailto:ncyang@illinois.edu). Office hours are by appointment.
 
-The [teaching plan](TEACHING_PLAN.md) allocates 15 meetings of 170 minutes, with ethics and regulation integrated throughout. The [session plan and slides](../05_Slides/README.md) cover all eight modules. Two presentation meetings are provisional. Dates, assessment requirements, and weights remain unset.
+The course has 15 meetings from January 20 through May 5, with no class March 17 during spring break. The [calendar source record](CALENDAR_SOURCES.md) documents the official term, section, holidays, and date checks. The [session plan](../05_Slides/SESSION_PLAN.md) maps dates to the existing lectures and activities. There are no guest speakers.
 
-Add the current syllabus here with an equivalent Markdown version. State the offering, instructor, version/date, learning objectives, schedule, assessment weights, and AI-use rules. Preserve all consequential requirements when converting from PDF or Word.
+## Assessment Status
 
-Update `current_syllabus` in [course.json](../course.json) when the syllabus is released. Keep superseded versions clearly marked and point students to the current version. The predecessor's syllabus is historical background.
+The syllabus supplies confirmed logistics, learning objectives, course coverage, materials, and dates. Grading components and weights, assignment deadlines, graded presentation requirements, attendance and late-work rules, and assessment-specific AI permissions have not been established. The historical syllabus does not establish those requirements for this offering.
+
+## Editing and Reproduction
+
+Edit `Marketing_Analytics_Syllabus.md`, then run `python build_syllabus.py` with ReportLab installed. The PDF uses the same Markdown prose and tables, embedded fonts, and Illinois colors. Relative links in the PDF resolve to the public GitHub repository. Visually inspect both pages after rebuilding.
+
+Update the meeting fields and release pointers in [course.json](../course.json), the [structured session plan](../05_Slides/session_plan.json), and the [teaching plan](TEACHING_PLAN.md) when logistics or dates change. Regenerate the portable LLM context from reviewed sources. The original sample syllabus and templates remain in the instructor's Dropbox folder.
 
 ---
 
@@ -541,7 +595,7 @@ The [earnings-call case](Earnings_Calls/README.md) uses supplied structured meta
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 2, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 2, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
 Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 51 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
@@ -686,7 +740,7 @@ Run `python3 03_Data_and_Code/Lecture_Examples/retention_welfare.py` for the fix
 
 By Nathan Yang
 
-Fifteen session decks cover all eight modules, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The current syllabus and calendar remain pending.
+Fifteen session decks cover all eight modules, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
 Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
@@ -739,7 +793,7 @@ Read the root `AGENTS.md`, `course.json`, the session plan, and the relevant mod
 
 ## Content and Course Authority
 
-The plan has 15 meetings of 170 minutes, based on the historical syllabus. It includes 13 instructional meetings and two provisional presentation meetings. There are no guest speakers. No new dates, graded presentation requirements, weights, deadlines, or course-wide AI policy have been released. Preserve that distinction when answering students.
+The plan has 15 meetings of 170 minutes, based on the historical syllabus. It includes 13 instructional meetings and two provisional presentation meetings. There are no guest speakers. The Spring 2027 meeting dates are available in the session plan. Graded presentation requirements, weights, deadlines, and course-wide AI policy remain pending. Preserve that distinction when answering students.
 
 Begin with the managerial decision, then the information, comparison, method, and consequence. Keep claims consistent across projected text, presenter notes, Markdown companions, code, and the full module notes. Define populations, denominators, units, horizons, and synthetic inputs. Keep consequential assumptions beside the result.
 
@@ -1499,33 +1553,35 @@ All files are generated by the three offline course programs. Public pageviews a
 
 By Nathan Yang
 
-The historical syllabus contains 15 meetings of 170 minutes and one spring-break week. This plan preserves that amount of meeting time and allocates all instruction to the course instructor. There are no guest speakers. It contains 13 instructional meetings and two provisional presentation meetings. Dates, presentation requirements, assessment weights, and the course-wide AI policy remain unset. The ten-minute breaks below are proposed allocations.
+Meetings are Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243, for Spring 2027. The 15 meeting dates follow the [official course listing](https://courses.illinois.edu/schedule/2027/spring/BADM/534) and [Senate academic calendar](https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf). There is no class on March 17 during spring break. The course has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. Presentation requirements, assessment weights, and course-wide AI rules remain unset. The ten-minute breaks below are proposed allocations.
 
 The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of breaks. The eight modules therefore have 2,400 minutes of instruction, applied work, discussion, and provisional presentations. The [machine-readable plan](session_plan.json) records each block.
 
 ## Meeting Sequence
 
-| Session | Module | Focus | Minutes | Slides |
-| --- | --- | --- | --- | --- |
-| 01 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 19 |
-| 02 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
-| 03 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
-| 04 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
-| 05 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 18 |
-| 06 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
-| 07 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 24 |
-| 08 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 18 |
-| 10 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
+| Session | Date | Module | Focus | Minutes | Slides |
+| --- | --- | --- | --- | --- | --- |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 19 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 18 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 24 |
+| 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 | Apr 7 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 18 |
+| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
 | 11 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 18 |
-| 12 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
-| 13 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 19 |
-| 15 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
+| 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
+| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
+| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 19 |
+| 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
 
 ### 01. Marketing Decisions and AI-Assisted Coding
+
+**Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Implement and assess order aggregation with three deliberately altered inputs.
 
@@ -1545,6 +1601,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 02. Customer Data and Measurement
 
+**Meeting:** January 27, 2027, 15:30-18:20; Wohlers Hall, Room 243.
+
 **Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.
 
 **Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations.
@@ -1562,6 +1620,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 155–170 | Ethics and Decision Discussion |
 
 ### 03. Visualization and Data Quality
+
+**Meeting:** February 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Assess chart values, paired changes, scales, and denominator controls.
 
@@ -1581,6 +1641,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 04. Regression and Marketing Interpretation
 
+**Meeting:** February 10, 2027, 15:30-18:20; Wohlers Hall, Room 243.
+
 **Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty.
 
 **Application:** Interpret a price coefficient when the manager observes demand before setting price.
@@ -1598,6 +1660,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 155–170 | Ethics and Decision Discussion |
 
 ### 05. Conjoint and Product Design
+
+**Meeting:** February 17, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Simulate a new bundle, the outside option, and portfolio contribution.
 
@@ -1617,6 +1681,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 06. Segmentation and Customer Lifetime Value
 
+**Meeting:** February 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
+
 **Python and Evidence:** Fit earlier-period segments and independently reproduce the lifetime-value formula.
 
 **Application:** Compare endpoint retention, continuous retention, and a logging-gap event.
@@ -1634,6 +1700,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 155–170 | Ethics and Decision Discussion |
 
 ### 07. Text, Social Media, and Networks
+
+**Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.
 
@@ -1653,6 +1721,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 08. Project Evidence and Midterm Presentations
 
+**Meeting:** March 10, 2027, 15:30-18:20; Wohlers Hall, Room 243.
+
 **Python and Evidence:** Presentation blocks and evidence-based discussion; no new graded requirement is introduced.
 
 **Application:** Critique an mHealth paid-plan scenario and identify the next useful evidence.
@@ -1668,6 +1738,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 145–170 | Synthesis and Customer Consequences |
 
 ### 09. Experiments and Incremental Value
+
+**Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Reproduce the email effect, confidence interval, contribution, and power calculation.
 
@@ -1687,6 +1759,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 10. Causal Comparisons and Policy Evaluation
 
+**Meeting:** March 31, 2027, 15:30-18:20; Wohlers Hall, Room 243.
+
 **Python and Evidence:** Compute policy values and diagnose a deliberately unsupported recommendation action.
 
 **Application:** Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation.
@@ -1704,6 +1778,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 155–170 | Ethics and Decision Discussion |
 
 ### 11. Prediction, Validation, and Marketing Actions
+
+**Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Assess a chronological split and compare accuracy, precision, recall, and calibration.
 
@@ -1723,6 +1799,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 12. Recommendation Systems and Customer Goals
 
+**Meeting:** April 14, 2027, 15:30-18:20; Wohlers Hall, Room 243.
+
 **Python and Evidence:** Compare ranking baselines, calculate NDCG, and assess a goal-weight sensitivity.
 
 **Application:** Check a generated recommendation explanation and design an online outcome comparison.
@@ -1740,6 +1818,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 155–170 | Ethics and Decision Discussion |
 
 ### 13. Adaptive Recommendations and Marketing Budgets
+
+**Meeting:** April 21, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Compare list objectives and solve a budget allocation with an independent grid check.
 
@@ -1759,6 +1839,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 14. Generative AI, Consumer Choice, and Regulation
 
+**Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
+
 **Python and Evidence:** Assess demand and workflow measurements, then calculate a conditional retention-welfare example.
 
 **Application:** Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status.
@@ -1774,6 +1856,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 155–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
+
+**Meeting:** May 5, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
 **Python and Evidence:** Presentation blocks with evidence, reproducibility, and customer-outcome discussion.
 
@@ -1793,7 +1877,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 The sequence follows M1–M8 in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
 
-The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the educational structure. It does not release deadlines or graded work. Use [course.json](../course.json) to determine whether a current syllabus or schedule has been released.
+The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the educational structure. It does not release deadlines or graded work. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) provides confirmed logistics and course coverage. Use [course.json](../course.json) for release pointers and outstanding assessment policies.
 
 ---
 
@@ -1805,9 +1889,9 @@ By Nathan Yang
 
 ## Meeting Structure
 
-Plan for 15 meetings of 170 minutes, with one spring-break week outside those meetings. The historical syllabus supplies the count and duration. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
+The Spring 2027 course meets Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243, from January 20 through May 5. Excluding March 17 for spring break gives 15 meetings of 170 minutes. The [syllabus](Marketing_Analytics_Syllabus.md) records the confirmed course details. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
 
-Calendar dates, graded presentation requirements, assessment weights, deadlines, and course-wide AI rules remain to be set. This teaching plan does not release those requirements. `current_syllabus` and `current_schedule` in [course.json](../course.json) remain null.
+The calendar dates are verified against the official university calendar and course listing. Graded presentation requirements, assessment weights, deadlines, attendance and late-work rules, and course-wide AI rules remain to be set. The current syllabus and schedule are linked in [course.json](../course.json).
 
 ## Learning Objectives
 
@@ -2040,6 +2124,80 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 - Eight synthetic sentences expose lexical and substantive differences: denial, future intention, questions, price displays, and infrastructure can match; a paraphrase of current demand-responsive fares can fail to match. Seven selected real-call paraphrases provide interpretation cases. No population accuracy estimate follows.
 
 `call_status.csv`, `firm_coverage.csv`, and `assessment.json` document inclusion. `group_rates.csv`, `role_rates.csv`, and `quarter_rates.csv` document denominators. `event_windows.csv` records both samples, all three windows, call counts, and firm-equal rates. `synthetic_construct_checks.csv` and `interpretation_summary.csv` separate imposed tests from actual disclosure examples. The three TikZ figures are generated from these tables with explicit value checks.
+
+---
+
+## Source: 02_Syllabus/Marketing_Analytics_Syllabus.md
+
+# Marketing Analytics
+
+**BADM 534 | Spring 2027 | Section A | CRN 77732**
+
+| Course Information | Details |
+| --- | --- |
+| Instructor | Nathan Yang |
+| Email | [ncyang@illinois.edu](mailto:ncyang@illinois.edu) |
+| Office Hours | By appointment |
+| Class Meetings | Wednesdays, 15:30-18:20 (3:30-6:20 p.m.) |
+| Location | Wohlers Hall, Room 243 |
+| Meeting Dates | January 20-May 5, 2027; no class March 17 |
+
+## Course Description
+
+Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. This course connects those questions to customer measurement, visualization, regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems. Applications inform product design, acquisition, retention, pricing, and marketing budgets.
+
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes.
+
+## Learning Objectives
+
+- Define a managerial decision, the relevant population, and the evidence needed to inform it.
+- Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
+- Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
+- Evaluate AI-assisted code through independent calculations, appropriate validation, and substantive interpretation.
+- Communicate recommendations with clear figures, uncertainty, customer consequences, and supporting evidence.
+
+## Class Format and Materials
+
+Meetings combine instructor-led explanations, worked examples, Python exercises, and discussion. The course has 15 meetings of 170 minutes. The topic sequence includes two project discussion and presentation sessions; presentation requirements will be specified separately.
+
+The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
+
+Cases include mHealth food logging, restaurant availability, generative-AI demand, and earnings-call pricing communication. Synthetic examples supply hand-checkable calculations.
+
+---
+
+## Meeting Schedule
+
+All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
+
+| Meeting | Date | Topics |
+| --- | --- | --- |
+| 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
+| 2 | January 27 | M2: Customer data, measurement, missingness, and earnings-call coverage |
+| 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
+| 4 | February 10 | M3: Regression and marketing interpretation |
+| 5 | February 17 | M4: Conjoint analysis and product design |
+| 6 | February 24 | M4: Segmentation and customer lifetime value |
+| 7 | March 3 | M5: Text, social media, networks, and pricing communication |
+| 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
+| No Class | March 17 | Spring break |
+| 9 | March 24 | M6: Experiments and incremental value |
+| 10 | March 31 | M6: Causal comparisons, policy evaluation, and event windows |
+| 11 | April 7 | M7: Prediction, validation, and marketing actions |
+| 12 | April 14 | M7: Recommendation systems and customer goals |
+| 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
+| 14 | April 28 | M8: Generative AI, consumer choice, pricing, and regulation |
+| 15 | May 5 | M1-M8: Integrated decisions and final discussion/presentations |
+
+## Holidays and Breaks
+
+Spring break runs from March 13 at 1:00 p.m. through March 22 at 7:00 a.m.; there is no class on March 17. Martin Luther King Jr. Day falls on Monday, January 18, before the first meeting. Regular instruction ends May 5, followed by reading day on May 6. No regular course meetings are scheduled during the May 7-13 final examination period. Any final examination arrangements will be specified separately.
+
+The dates follow the [Illinois Senate 2026-2027 academic calendar](https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf) and the [Spring 2027 course listing](https://courses.illinois.edu/schedule/2027/spring/BADM/534).
+
+## Assessments and Course Policies
+
+Assessment components, grading weights, submission deadlines, presentation requirements, attendance and late-work rules, and assessment-specific AI permissions are to be announced. Contact Nathan Yang at [ncyang@illinois.edu](mailto:ncyang@illinois.edu) for questions or to arrange office hours.
 
 ---
 

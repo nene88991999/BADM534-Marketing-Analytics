@@ -4,9 +4,9 @@ By Nathan Yang
 
 ## Meeting Structure
 
-Plan for 15 meetings of 170 minutes, with one spring-break week outside those meetings. The historical syllabus supplies the count and duration. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
+The Spring 2027 course meets Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243, from January 20 through May 5. Excluding March 17 for spring break gives 15 meetings of 170 minutes. The [syllabus](Marketing_Analytics_Syllabus.md) records the confirmed course details. Use 13 meetings for instruction and applied work and retain two provisional presentation meetings. There are no guest speakers. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the time and links all 15 slide decks.
 
-Calendar dates, graded presentation requirements, assessment weights, deadlines, and course-wide AI rules remain to be set. This teaching plan does not release those requirements. `current_syllabus` and `current_schedule` in [course.json](../course.json) remain null.
+The calendar dates are verified against the official university calendar and course listing. Graded presentation requirements, assessment weights, deadlines, attendance and late-work rules, and course-wide AI rules remain to be set. The current syllabus and schedule are linked in [course.json](../course.json).
 
 ## Learning Objectives
 

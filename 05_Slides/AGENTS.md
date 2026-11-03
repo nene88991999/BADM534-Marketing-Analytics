@@ -4,7 +4,7 @@ Read the root `AGENTS.md`, `course.json`, the session plan, and the relevant mod
 
 ## Content and Course Authority
 
-The plan has 15 meetings of 170 minutes, based on the historical syllabus. It includes 13 instructional meetings and two provisional presentation meetings. There are no guest speakers. No new dates, graded presentation requirements, weights, deadlines, or course-wide AI policy have been released. Preserve that distinction when answering students.
+The plan has 15 meetings of 170 minutes, based on the historical syllabus. It includes 13 instructional meetings and two provisional presentation meetings. There are no guest speakers. The Spring 2027 meeting dates are available in the session plan. Graded presentation requirements, weights, deadlines, and course-wide AI policy remain pending. Preserve that distinction when answering students.
 
 Begin with the managerial decision, then the information, comparison, method, and consequence. Keep claims consistent across projected text, presenter notes, Markdown companions, code, and the full module notes. Define populations, denominators, units, horizons, and synthetic inputs. Keep consequential assumptions beside the result.
 

@@ -2,7 +2,7 @@
 
 Marketing Analytics
 
-This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The revised syllabus, schedule, assignments, and assessment rules are pending. Suggested activities below are illustrative.
+This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The [syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting dates are available. Assignments and assessment rules remain pending. Suggested activities below are illustrative.
 
 The course is planned with no guest speakers. All eight modules will be covered through instructor-led sessions and course activities.
 
@@ -70,7 +70,7 @@ The [GenAI demand cases](03_Data_and_Code/GenAI_Demand/README.md) connect M2 §2
 
 ## Session Sequence and Ethics
 
-The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](05_Slides/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; dates and assessment requirements remain pending.
+The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](05_Slides/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; Spring 2027 meeting dates are available and assessment requirements remain pending.
 
 [Ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) connect M1 data handling, M2 sample representation, M3 advertising claims, M4 retention and choice, M5 review provenance, M6 experimental objectives, M7 delivery and access, and M8 adaptive procedures and customer value. A synthetic retention example includes complete Python, an aggregate table, and a TikZ figure.
 

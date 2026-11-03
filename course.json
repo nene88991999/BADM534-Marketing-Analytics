@@ -15,8 +15,8 @@
     "presentation_meetings_status": "provisional; no assessment requirements released",
     "ethics_and_regulation": "integrated across M1-M8, with a 75-minute block in Session 14"
   },
-  "current_syllabus": null,
-  "current_schedule": null,
+  "current_syllabus": "02_Syllabus/Marketing_Analytics_Syllabus.md",
+  "current_schedule": "05_Slides/SESSION_PLAN.md",
   "current_ai_policy": null,
   "released_assignments": [],
   "released_labs": [],
@@ -68,7 +68,8 @@
     "03_Data_and_Code/Earnings_Calls/DATA_DICTIONARY.md",
     "03_Data_and_Code/Earnings_Calls/AGENTS.md",
     "03_Data_and_Code/Earnings_Calls/LLM_EXERCISES.md",
-    "03_Data_and_Code/Earnings_Calls/results/README.md"
+    "03_Data_and_Code/Earnings_Calls/results/README.md",
+    "02_Syllabus/Marketing_Analytics_Syllabus.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -182,7 +183,54 @@
     "slides": 265,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
-    "calendar_status": "not released",
+    "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
     "presentation_requirements_status": "not released"
+  },
+  "term": "Spring 2027",
+  "instructor_email": "ncyang@illinois.edu",
+  "office_hours": "By appointment",
+  "meeting": {
+    "weekday": "Wednesday",
+    "start_time": "15:30",
+    "end_time": "18:20",
+    "timezone": "America/Chicago",
+    "building": "Wohlers Hall",
+    "room": "243",
+    "section": "A",
+    "crn": "77732",
+    "dates": [
+      "2027-01-20",
+      "2027-01-27",
+      "2027-02-03",
+      "2027-02-10",
+      "2027-02-17",
+      "2027-02-24",
+      "2027-03-03",
+      "2027-03-10",
+      "2027-03-24",
+      "2027-03-31",
+      "2027-04-07",
+      "2027-04-14",
+      "2027-04-21",
+      "2027-04-28",
+      "2027-05-05"
+    ],
+    "no_class_dates": [
+      {
+        "date": "2027-03-17",
+        "reason": "Spring break"
+      }
+    ]
+  },
+  "syllabus": {
+    "status": "logistics, course outline, and dates available; assessment rules pending",
+    "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
+    "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
+    "term": "Spring 2027",
+    "updated_on": "2026-11-02",
+    "grading_status": "not released",
+    "attendance_and_late_work_policy_status": "not released",
+    "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
+    "course_listing_source": "https://courses.illinois.edu/schedule/2027/spring/BADM/534"
   }
 }
