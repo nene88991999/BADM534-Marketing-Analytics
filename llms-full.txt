@@ -72,7 +72,12 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/GenAI_Demand/results/README.md",
     "05_Slides/SESSION_PLAN.md",
     "02_Syllabus/TEACHING_PLAN.md",
-    "06_Lecture_Notes/ETHICS_AND_REGULATION.md"
+    "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
+    "03_Data_and_Code/Earnings_Calls/README.md",
+    "03_Data_and_Code/Earnings_Calls/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Earnings_Calls/AGENTS.md",
+    "03_Data_and_Code/Earnings_Calls/LLM_EXERCISES.md",
+    "03_Data_and_Code/Earnings_Calls/results/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -117,15 +122,16 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-02-slides-folder-and-assessment-terminology",
+    "revision": "2026-11-02-earnings-call-worked-example",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 48,
-    "pages": 174,
+    "figures_count": 51,
+    "pages": 185,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
-    "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md"
+    "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
+    "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md"
   },
   "datasets": [
     {
@@ -156,6 +162,18 @@ Generated from course.json and the source files identified below. This file cont
         "M4",
         "M8"
       ]
+    },
+    {
+      "id": "earnings-call-pricing-communication",
+      "index": "03_Data_and_Code/Earnings_Calls/README.md",
+      "manifest": "03_Data_and_Code/Earnings_Calls/manifest.json",
+      "data_type": "Structured metadata from supplied public earnings calls, with separate purposeful paraphrases and synthetic construct checks",
+      "modules": [
+        "M2",
+        "M5",
+        "M6",
+        "M8"
+      ]
     }
   ],
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
@@ -170,7 +188,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 255,
+    "slides": 265,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "not released",
@@ -195,7 +213,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 48 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 51 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -225,6 +243,10 @@ Dropbox changes and GitHub commits are separate. Adding a file to Dropbox does n
 ## Source Rights
 
 Third-party files retain their original licenses and restrictions. See their adjacent license files, `SOURCE.md` records, and catalog entries. This repository has no blanket license that overrides those terms. Review individual materials before releasing a public site.
+
+## Earnings-Call Worked Example
+
+[Pricing communication in earnings calls](03_Data_and_Code/Earnings_Calls/README.md) now connects data assessment, text analytics, event comparisons, and customer-outcome interpretation across M2, M5, M6, and M8. The folder includes runnable Python, structured data, source-linked cases, and verification checks. Updated notes and Sessions 02, 07, 10, and 14 contain the worked examples.
 
 ---
 
@@ -340,7 +362,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 48 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 51 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -392,6 +414,10 @@ The [GenAI demand cases](03_Data_and_Code/GenAI_Demand/README.md) connect M2 §2
 The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](05_Slides/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; dates and assessment requirements remain pending.
 
 [Ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) connect M1 data handling, M2 sample representation, M3 advertising claims, M4 retention and choice, M5 review provenance, M6 experimental objectives, M7 delivery and access, and M8 adaptive procedures and customer value. A synthetic retention example includes complete Python, an aggregate table, and a TikZ figure.
+
+## Earnings-Call Case
+
+The [pricing-communication example](03_Data_and_Code/Earnings_Calls/README.md) connects document coverage (M2 §2.19), text constructs and word exposure (M5 §5.14), descriptive event comparisons (M6 §6.18), and customer outcomes and regulatory evidence (M8 §8.16). Sessions 02, 07, 10, and 14 include the corresponding cases. The complete programs, structured teaching data, and nine counterexample checks are available in the example folder.
 
 ---
 
@@ -505,6 +531,10 @@ The [McBroken examples](McBroken/README.md) use the supplied restaurant-status d
 
 The [GenAI demand cases](GenAI_Demand/README.md) cover public-signal measurement in M2, subscription retention and acquisition in M4, and price-model verification in M8. Three executed Python programs use the supplied public pageview capture and a separate synthetic subscription panel. Fixed-cohort comparisons, missing-date checks, event definitions, and an exact binary-logit benchmark support the interpretation. Eight counterexample tests, full Python in the notes, three Illinois-color TikZ figures, and source hashes accompany the cases.
 
+## Earnings-Call Pricing Communication
+
+The [earnings-call case](Earnings_Calls/README.md) uses supplied structured metadata for missing-text assessment in M2, text measurement and interpretation in M5, descriptive event comparisons in M6, and pricing evidence in M8. Four complete Python programs, nine counterexample tests, source hashes, and three TikZ figures support the case. Seven source-linked paraphrases distinguish price displays, business advertising, intentions, infrastructure, and claims about pricing use. Full transcript excerpts remain in the original local bundle.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -513,7 +543,7 @@ The [GenAI demand cases](GenAI_Demand/README.md) cover public-signal measurement
 
 **By Nathan Yang. Updated November 2, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The revised syllabus, schedule, assessment rules, and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 48 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 51 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -540,7 +570,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 174 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 185 pages.
 
 ## Editing and Building
 
@@ -587,6 +617,10 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 The [15 session decks](../05_Slides/README.md) cover the eight modules with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
 The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 41 matching Python source blocks.
+
+## Earnings-Call Pricing Communication
+
+The [earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md) connects M2 §2.19, M5 §5.14, M6 §6.18, and M8 §8.16. Four complete Python programs reproduce coverage checks, call and word denominators, synthetic construct checks, and event-window comparisons. Three TikZ figures explain selection into a match-only sample, speaking exposure, and the difference between occurrence counts and call incidence. Nine counterexample tests passed. The public teaching data contain structured metadata and source-linked paraphrases.
 
 ---
 
@@ -690,6 +724,10 @@ The decks use the supplied 16:9 Beamer format with parchment backgrounds, Illino
 Edit [source/sessions.json](source/sessions.json) and [theme.tex](theme.tex), then use [the build commands](BUILD.md) to refresh LaTeX, Markdown, and PDF together. Follow [AGENTS.md](AGENTS.md) when revising content or using these materials with an assistant.
 
 Markdown companions identify the session and module, learning objectives, slide-number anchors, chart descriptions, definitions, equations, and referenced resources. Record the version in `session_plan.json`; identify omissions when preparing a shorter summary and link related labs when available.
+
+## Earnings-Call Worked Example
+
+Sessions 02, 07, 10, and 14 now use the [earnings-call case](../03_Data_and_Code/Earnings_Calls/README.md). The case covers missing documents, selected denominators, role-specific word exposure, interpretation of pricing language, event-window comparisons, and regulatory evidence. Session 07 uses its worked-comparison and Python blocks for this case; the meeting remains 170 minutes. The four analysis programs and nine tests ran successfully. Complete code appears in the module notes.
 
 ---
 
@@ -1105,6 +1143,19 @@ New conceptual material informs data boundaries, sample restrictions, claim supp
 
 The new [retention calculation](../03_Data_and_Code/Lecture_Examples/retention_welfare.py) uses imposed probabilities and monetary stakes. Its CSV independently reconciles with a 100-customer calculation and supplies the new TikZ figure. It is an analytical illustration, not an estimate of customer responses. The [session examples](../03_Data_and_Code/Lecture_Examples/session_examples.py) reproduce the small projected calculations.
 
+## Earnings-Call Pricing Communication
+
+The newly supplied `pricing_risk_earnings_calls` bundle contributes 2,326 call records, 971 match records, a firm roster, a dictionary, collectors, and interpretation notes. The [course adaptation](../03_Data_and_Code/Earnings_Calls/README.md) retains factual metadata and adds seven source-linked paraphrases. It preserves the raw bundle locally and records original and exported hashes. The supplied collectors and starter analysis were inspected, not executed.
+
+| Notes and Session | Integration | Executed Program |
+| --- | --- | --- |
+| M2 §2.19; S02 | Missing transcript versus observed zero; roster retention; selection into retrieved calls | `assessment.py` |
+| M5 §5.14; S07 | Role exposure, quarterly support, substantive coding, and synthetic contrasts | `disclosure.py`, `construct_checks.py` |
+| M6 §6.18; S10 | Common firms, alternative windows, occurrence counts, and call incidence | `event_windows.py` |
+| M8 §8.16; S14 | Price rules, customer outcomes, and regulatory evidence | Interpretation table and M5 programs |
+
+All four programs and nine counterexample tests passed. Full code is embedded in the notes, and three generated TikZ figures reconcile to output tables. Dictionary precision, population adoption, causal event effects, and firm risk probabilities are not established by these data. Wendy's dated clarification and the FTC staff research document were checked as primary sources; other supplied event-list legal claims are not incorporated.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1457,19 +1508,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- |
 | 01 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 19 |
-| 02 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 18 |
+| 02 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
 | 04 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 18 |
 | 06 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
-| 07 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 19 |
+| 07 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 24 |
 | 08 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 18 |
-| 10 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 18 |
+| 10 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
 | 11 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 18 |
 | 12 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
 | 13 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 18 |
+| 14 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 19 |
 | 15 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -1494,9 +1545,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 02. Customer Data and Measurement
 
-**Python and Evidence:** Build roster-first summaries and assess keys, zero-event users, and unknown statuses.
+**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.
 
-**Application:** Compare national availability with a common-support restaurant sample.
+**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations.
 
 **Ethics and Regulation:** Missingness, sample exclusions, and customer representation.
 
@@ -1584,9 +1635,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 07. Text, Social Media, and Networks
 
-**Python and Evidence:** Evaluate a text-labeling baseline under changing prevalence and description splits.
+**Python and Evidence:** Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.
 
-**Application:** Compare topic denominators and explain a low-degree network bridge.
+**Application:** Distinguish pricing communication from adoption, then compare text-topic weights and network brokerage.
 
 **Ethics and Regulation:** Review provenance, generated claims, and false positives.
 
@@ -1594,10 +1645,10 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- |
 | 0–15 | Managerial Case |
 | 15–45 | Concepts and Mechanisms |
-| 45–70 | Worked Comparison |
+| 45–70 | Earnings-Call Exposure and Meaning |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 80–125 | Earnings-Call Python and Construct Checks |
+| 125–155 | mHealth Text and Network Applications |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 08. Project Evidence and Midterm Presentations
@@ -1638,7 +1689,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compute policy values and diagnose a deliberately unsupported recommendation action.
 
-**Application:** Assess the comparison group and measurement requirements for a restaurant repair-policy evaluation.
+**Application:** Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation.
 
 **Ethics and Regulation:** Treatment paths, comparison populations, and selection.
 
@@ -1710,7 +1761,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess demand and workflow measurements, then calculate a conditional retention-welfare example.
 
-**Application:** Evaluate a cancellation procedure using customer value, refusal, completion, and applicable rule status.
+**Application:** Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status.
 
 **Ethics and Regulation:** Retention procedures, customer value, and regulatory status.
 
@@ -1719,7 +1770,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 0–35 | Demand and Subscription Measurement |
 | 35–70 | AI Workflow and Calculation |
 | 70–80 | Break |
-| 80–155 | Retention Procedures and Regulatory Assessment |
+| 80–155 | Retention, Pricing, and Regulatory Assessment |
 | 155–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
@@ -1740,7 +1791,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ## Coverage and Course Requirements
 
-The sequence follows M1–M8 in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability and generative-AI demand supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
+The sequence follows M1–M8 in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
 
 The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the educational structure. It does not release deadlines or graded work. Use [course.json](../course.json) to determine whether a current syllabus or schedule has been released.
 
@@ -1789,6 +1840,10 @@ Ethics and regulation recur within the methods. The [module integration guide](.
 
 The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations and runnable programs. The [Slides folder](../05_Slides/README.md) provides PDFs, editable LaTeX, and complete Markdown companions. New ethics and regulation resources should be reconciled with both sources and with this plan. Legal claims require a current primary source and a statement of its scope and status.
 
+## Earnings-Call Application
+
+Use pricing communication as a recurring application in meetings 2, 7, 10, and 14. Meeting 2 assesses missing text and document selection. Meeting 7 allocates its 25-minute worked comparison and 45-minute Python block to word exposure, dictionary interpretation, and AI-assisted checks; its application block connects these ideas to mHealth text and networks. Meeting 10 uses the event comparison within causal-design discussion. Meeting 14 incorporates pricing evidence within its existing 75-minute ethics and regulation block. The [worked example](../03_Data_and_Code/Earnings_Calls/README.md) provides the data, code, and interpretation cases. These activities fit the existing 15 meetings and do not add guest speakers or release graded requirements.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -1835,6 +1890,156 @@ For a proposed marketing action, identify the customer population, the informati
 ## Incorporating New Material
 
 New references should change the relevant method, example, figure, or coding check wherever the argument applies. Update the affected module notes and session companions together, then update the [session plan](../05_Slides/SESSION_PLAN.md), syllabus planning documents, and [resource integration map](RESOURCE_INTEGRATION.md). Check legal propositions against primary sources and record status and scope. Incorporate the instructor's own ideas directly into course explanations without naming, citing, linking, or uploading the underlying papers.
+
+## Pricing Communication and the Scope of Evidence
+
+M8 §8.16 and Session 14 connect the earnings-call case to operational pricing rules and customer outcomes. The [FTC January 2025 staff research summaries](https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf), pp. 1–3, concern US intermediary tools. Status: research publication under Section 6(b); no rule effective date. Checked November 2, 2026. The document supplies no finding against firms in the teaching corpus.
+
+The [February 27, 2024 Wendy's statement](https://www.wendys.com/blog/wendys-digital-news-update) supplies a company clarification date for M6 §6.18. Its assertions establish what the company communicated, with realized practices and outcomes requiring separate evidence. No causal effect or broader legal status is inferred from that event.
+
+---
+
+## Source: 03_Data_and_Code/Earnings_Calls/README.md
+
+# Earnings Calls: Pricing Communication
+
+A retail communications team must decide which public pricing statements deserve closer reading before recommending a message or policy. The supplied conference-call collection supports measuring disclosure, comparing speaker exposure, and assessing the evidence behind a pricing claim. A dictionary hit is evidence of specified language. Adoption, consumer harm, and legal violations require additional evidence.
+
+## Files and Reproduction
+
+The [manifest](manifest.json) records original and exported SHA-256 hashes. `data/` contains 2,326 call records, 971 dictionary-match records, a 123-firm roster, 19 dictionary terms, and seven purposeful interpretation cases. Source call dates run from November 2, 2021 through November 2, 2026. The sample includes current-index constituents and selected comparison firms; it is not a probability sample of businesses or a historical market census.
+
+Use Python with pandas and NumPy. Verified with Python 3.13, pandas 2.2.3, and NumPy 2.1.3. From this folder:
+
+```sh
+python assessment.py
+python disclosure.py
+python construct_checks.py
+python event_windows.py
+python test_examples.py
+python build_figures.py
+```
+
+The first four commands write reproducible CSV/JSON outputs into `results/`. Nine counterexample tests check missingness, denominators, role exposure, event boundaries, firm weights, dictionary meaning, and the text-free export. `build_figures.py` reads those outputs and writes three editable TikZ figures into the lecture notes. It requires the course repository layout.
+
+The optional `python prepare.py --source /path/to/pricing_risk_earnings_calls` reconstructs the teaching inputs from the instructor's original local bundle. Students can run every analysis using the committed `data/` files without that bundle, a network connection, an API key, or transcript scraping. No dependencies are installed by the scripts.
+
+## Worked Cases
+
+| Notes and Session | Decision and Comparison | Program |
+| --- | --- | --- |
+| M2 §2.19; S02 | Retain firms with no matches; distinguish missing text from a negative call; compare full and selected denominators | `assessment.py` |
+| M5 §5.14; S07 | Compare call incidence and role-specific word exposure; assess retrieval versus substantive interpretation | `disclosure.py`, `construct_checks.py` |
+| M6 §6.18; S10 | Compare 60-, 90-, and 120-day windows around a public clarification, with common firms and alternative weights | `event_windows.py` |
+| M8 §8.16; S14 | Separate pricing infrastructure, intentions, implementation, consumer consequences, and regulatory evidence | `data/interpretation_cases.csv`; M5 code and outputs |
+
+The notes include the complete four analysis programs. The [results guide](results/README.md) states the numerical findings and their scope. The [data dictionary](DATA_DICTIONARY.md) defines keys, flags, units, and observation levels. [LLM exercises](LLM_EXERCISES.md) provide specifications and adversarial checks for AI-assisted coding and annotation.
+
+## Source and Rights
+
+The instructor supplied `pricing_risk_earnings_calls`, with notes, collectors, and a starter analysis. The underlying transcript provider is [ROIC.ai](https://www.roic.ai/); each call retains its original source URL. The source notes describe collection on November 2–3, 2026; that retrieval timing has not been independently verified. This course adaptation was assessed on November 2, 2026. The supplied collectors and starter analysis were inspected; no live collection or downloaded program was executed.
+
+The public teaching export contains numerical counts, identifiers, URLs, and dictionary patterns. Original transcript sentences, contexts, speaker names, and titles remain in the supplied local bundle. The seven interpretation cases use course-authored paraphrases with original match IDs and URLs. No open license was supplied for the underlying transcripts. This adaptation does not imply permission to redistribute full transcripts or the original excerpt collection.
+
+The original score combines chosen percentile weights among positive-match firms. It is not a calibrated probability of backlash, misconduct, or harm. The course uses transparent coverage tables instead. Supplied claims about a 40-match precision check lack the individual annotations needed for independent verification; no such accuracy claim is carried into the worked results. The source dictionary was revised after inspecting known misses, so those same examples cannot supply an independent recall test.
+
+## Public Sources for Interpretation
+
+- [Wendy's Digital News Update, February 27, 2024](https://www.wendys.com/blog/wendys-digital-news-update): company clarification used to define the descriptive event date. The source is a company statement, not an independent observation of implementation or customer response.
+- [FTC, Surveillance Pricing 6(b) Study: Research Summaries, January 2025](https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf): US staff research findings concerning intermediary tools and data. This document supplies research context, not a rule taking effect or a finding against a firm in the course sample.
+
+Both sources were checked on November 2, 2026. Other dates and legal claims in the supplied event list are not used in the executed exercise.
+
+---
+
+## Source: 03_Data_and_Code/Earnings_Calls/DATA_DICTIONARY.md
+
+# Earnings-Call Data Dictionary
+
+## Observation Levels
+
+`firms.csv` has one row per ticker in the supplied 123-firm roster. `calls.csv` has one row per unique `call_id`. `mentions.csv` has one row per regex occurrence, keyed by `mention_id`; several occurrences can belong to the same call, turn, or sentence. Joining calls directly to mentions repeats call-level quantities. Aggregate matches to call first, then use a validated one-to-one join when constructing call-level rates.
+
+## Inputs
+
+| File | Fields and Meaning |
+| --- | --- |
+| `firms.csv` | `ticker`, company, supplied sector group; `inclusion` describes selection; `n_calls_in_window` includes empty-text records; provider list URL |
+| `calls.csv` | Stable call ID, ticker, company, supplied group, call date, fiscal year/quarter, source URL; `n_turns`; `qa_start_turn` is a heuristic index, with -1 meaning undetected; total and role word counts; core, broad, and per-term regex counts |
+| `mentions.csv` | Match ID, call ID, ticker/date; dictionary term/category/tier; heuristic role and section; turn index. No transcript text or speaker names |
+| `dictionary.csv` | Term ID, category, core/broad tier, Python regex, case-sensitive flag (0/1). Tier describes retrieval specificity, not a verified business practice |
+| `interpretation_cases.csv` | Seven selected source match IDs and URLs, original term IDs, course-authored paraphrases, evidence scope, and interpretation. Purposeful examples, not representative accuracy labels |
+
+Fiscal quarters can differ from calendar quarters. The time-series output derives calendar quarters from `call_date`. The first and last calendar quarters have partial date support. Interior calendar coverage alone does not establish complete source capture.
+
+## Derived Flags and Rates
+
+`text_observed` means `words_total > 0`. The empty `DLTR_FY2026Q2` record remains in the coverage assessment, with unknown `has_core`. `has_core` is 1 if at least one core match occurs in an observed call and 0 otherwise; NaN denotes unobserved text. This binary indicator measures dictionary occurrence, not confirmed adoption. `qa_detected` means `qa_start_turn >= 0`; it is a parsing flag, not evidence that no Q&A occurred when false.
+
+`core_call_rate` divides positive calls by observed calls. `per_10000_words` divides role-specific core matches by words attributed to that role in the same call sample and multiplies by 10,000. Management words include prepared remarks and Q&A; analyst words are attributed to Q&A. Unknown/operator words can appear in total words without entering either role denominator.
+
+`firm_coverage.csv` retains Winmark (WINA), with zero supplied calls and an unknown rate. Firms with observed calls and no matches have rate zero. `event_windows.csv` uses calendar-day distance from February 27, 2024, excludes the event day, and includes the endpoints at ±60, ±90, or ±120 days. `firms_in_both_windows` retains firms with at least one observed call in each window. `share_percent` weights calls equally; `firm_equal_share_percent` averages within-firm rates equally.
+
+## Interpretation Conditions
+
+Disclosure is selected by the firm, analysts, transcript coverage, and the vocabulary. Roles and Q&A sections are heuristic. The source retains only truncated excerpts, so applying the dictionary to an excerpt cannot reconstruct whole-call recall. No direct prices, customer outcomes, policy-adoption labels, or independently validated legal outcomes are present. Repeated calls within firms also share business and communication conditions; a statistical generalization would require a defensible sampling target and dependence-aware uncertainty calculation.
+
+---
+
+## Source: 03_Data_and_Code/Earnings_Calls/AGENTS.md
+
+# Agent Guide for Earnings Calls
+
+Read README.md, DATA_DICTIONARY.md, manifest.json, and results/README.md before answering about this case. Follow the root course guide. Cite module sections M2 §2.19, M5 §5.14, M6 §6.18, and M8 §8.16.
+
+Keep the firm roster and all supplied calls. Flag empty text as unknown; use observed calls as the denominator for language occurrence. Preserve the same sample in each numerator and exposure denominator. Treat a match as a regex occurrence, not a unique call, independent observation, implemented policy, or legal finding.
+
+The interpretation cases are purposeful paraphrases. The contrast sentences are synthetic. Neither is a representative validation set. No LLM labeling service has been run. Do not claim a measured precision/recall or risk probability from these examples. Preserve heuristic roles and flag disputed assignments for review instead of silently relabeling them.
+
+Use the committed metadata to reproduce analyses. Keep source transcripts and excerpts in the instructor's original local bundle. Do not run collectors or send text to external AI services as part of routine reproduction. A new collection or labeling task needs appropriate task scope and source permissions. Preserve source hashes and original attribution.
+
+Run affected programs, test_examples.py, and scripts/check_lecture_code.py after edits. Update aggregate tables, TikZ, note code blocks, session companions, and course metadata together. Use assessment/evaluation terminology and retain the uncertainty of descriptive event comparisons.
+
+---
+
+## Source: 03_Data_and_Code/Earnings_Calls/LLM_EXERCISES.md
+
+# AI-Assisted Coding and Interpretation
+
+## Preserve the Population
+
+Give an assistant the data dictionary and five rows from each metadata table. Request a call-level summary that retains all firms and distinguishes unknown text from observed zero matches. Require explicit keys, join cardinalities, denominator definitions, and a check against hand calculations. Run `assessment.py` and compare 112/2,325 with 112/445. Ask the assistant to explain which population each rate describes before accepting its code.
+
+## Match Numerators to Exposure
+
+Request raw role counts and core occurrences per 10,000 role words, first for all observed calls and then for calls with detected Q&A. Ask it to predict how unequal speaking time might change the comparison. Run `disclosure.py`. Introduce a missing-Q&A call with many management words and verify that excluding the call removes both its words and its matches. The fixture in `test_examples.py` provides a hand-checkable counterexample.
+
+## Distinguish Language From a Business Practice
+
+Use `data/interpretation_cases.csv` and the synthetic sentences in `construct_checks.py` locally. Request fields `case_id`, `priced_object`, `timing`, `speaker_claim`, `evidence_scope`, and `needs_more_context`. Require unknown values when evidence is insufficient. Compare responses with the recorded interpretations, especially the planned-test, price-display, and shelf-infrastructure cases. These exercises specify a workflow; no model responses or measured LLM performance are supplied.
+
+For a future empirical evaluation, define the construct before annotation, draw a probability sample that includes retrieved and nonretrieved passages, record sampling probabilities, and obtain independent labels with adjudication. Hold out firms or later calls to limit repeated-language leakage. Freeze the dictionary or prompt before evaluating that holdout. Weighted precision and recall require the target population and sufficient verified labels. An evaluation of hits alone cannot estimate recall. Use approved local text or appropriately authorized sources for any annotation task.
+
+## Challenge a Causal Explanation
+
+Ask for before/after rates around February 27, 2024, with exact window endpoints, an excluded event day, all available firms, and firms observed in both windows. Run `event_windows.py`. Have the assistant reconcile why five versus two mentions can coexist with an unchanged 2/27 call rate. Require a separate statement of the treatment, outcome, and counterfactual that would be needed to identify a causal effect on disclosure, prices, or customer outcomes.
+
+---
+
+## Source: 03_Data_and_Code/Earnings_Calls/results/README.md
+
+# Earnings-Call Results
+
+Executed November 2, 2026 using the supplied snapshot. Four analysis programs and nine counterexample tests passed. The source hash manifest verifies the exported inputs; no live transcript collection or model API was run.
+
+- The roster has 123 firms; 122 have supplied calls. Of 2,326 calls, 2,325 have positive word counts. The empty Dollar Tree record is unknown for language presence.
+- Core terms occur in 112 observed calls (4.8172%). Restricting the denominator to 445 calls with any dictionary match raises the apparent rate to 25.1685% by selection.
+- Core-call rates are 36/1,241 (2.9009%) in retail, 9/445 (2.0225%) in restaurants, and 67/639 (10.4851%) in the supplied comparison group. These are call-weighted disclosure rates in a selected corpus.
+- Management accounts for 127 core matches in 16,685,338 attributed words (0.076115 per 10,000 words); analysts account for 23 in 2,761,999 words (0.083273). Among 2,240 nonempty calls with detected Q&A, the management rate is 115/15,985,597 × 10,000 = 0.071940; the analyst rate remains 0.083273. Role and format differences remain material.
+- In the common-firm comparison group around the February 27, 2024 clarification, 27 calls from the same 27 firms appear in each 90-day window. Core occurrences fall from five to two; two calls contain core language in each window, so incidence remains 7.4074%. This descriptive comparison supplies no untreated counterfactual.
+- Eight synthetic sentences expose lexical and substantive differences: denial, future intention, questions, price displays, and infrastructure can match; a paraphrase of current demand-responsive fares can fail to match. Seven selected real-call paraphrases provide interpretation cases. No population accuracy estimate follows.
+
+`call_status.csv`, `firm_coverage.csv`, and `assessment.json` document inclusion. `group_rates.csv`, `role_rates.csv`, and `quarter_rates.csv` document denominators. `event_windows.csv` records both samples, all three windows, call counts, and firm-equal rates. `synthetic_construct_checks.csv` and `interpretation_summary.csv` separate imposed tests from actual disclosure examples. The three TikZ figures are generated from these tables with explicit value checks.
 
 ---
 

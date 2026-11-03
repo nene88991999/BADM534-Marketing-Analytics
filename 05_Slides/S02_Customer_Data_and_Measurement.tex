@@ -175,16 +175,43 @@ M2, Section 2.16.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/
 
 M2, Section 2.16.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
 \end{frame}
+\begin{frame}{Earnings Calls: Missing Text and Zero Matches}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A communications team wants a complete reading population.
+\item One supplied call has 53 turns but zero recorded words.
+\item Retain the call as unknown and preserve firms with no matches.
+\end{slidebullets}
+\vfill
+\note{The roster contains 123 firms, of which 122 have supplied calls. Winmark has no supplied calls. The empty Dollar Tree call cannot establish absence of pricing language. Observed calls with no matches have a different status.
+
+M2, Section 2.19, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Selecting Matches Changes the Denominator}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M02_calls_denominator.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The same 112 positive calls, with two different populations.\par}
+\note{Start with the call table and aggregate match occurrences before joining. The conditional rate among retrieved documents overstates the overall language frequency when presented without its selected denominator.
+
+M2, Section 2.19, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
 \begin{frame}{Coding Exercise: A Data Assessment}
 \usebeamercolor[fg]{normal text}
 \vfill
 \begin{slidebullets}
-\item Construct a roster-first activity table.
-\item Report key uniqueness, unmatched rows, and zero-event customers.
-\item Compare the fixed and conditional activity measures.
+\item Construct a roster-first activity or call table.
+\item Separate observed zeros, missing text, and unmatched keys.
+\item Reconcile the full and match-selected call denominators.
 \end{slidebullets}
 \vfill
-\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S02 for the hand-checkable example. For the real case, use the mHealth common.py and m01.py programs in the stated dependency order. Their full source and environment appear in the lecture notes.
+\note{Run assessment.py in ../03\_Data\_and\_Code/Earnings\_Calls. Verify 112/2,325 and 112/445; explain why Winmark has an unknown rate and observed no-match firms have zero rates. The customer aggregation exercise supplies a second application of the same roster-first principle.
 
 M2, Section 2.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
 \end{frame}

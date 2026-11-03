@@ -365,3 +365,146 @@ Preserve the review identifier, source, date, any recorded incentive, and the te
 The FTC's Consumer Reviews and Testimonials Rule addresses specified conduct involving false reviews and testimonials. Its provisions distinguish creation, purchase, dissemination, and mere hosting, with different knowledge conditions. AI generation alone does not determine whether a testimonial misrepresents experience. The relevant questions concern the speaker, actual experience, claim, and business conduct. See the [FTC's questions and answers](https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers).
 
 A useful assessment samples the original texts behind a generated theme, checks whether each factual claim is supported, and records unsupported statements separately from ordinary classification errors. The rare-complaint example in Section 5.5 supplies another check: a high false-positive share can make a generated summary overstate the prevalence of a problem even when individual labels have respectable sensitivity and specificity.
+
+## 5.14 Earnings Calls: Pricing Language, Speaking Exposure, and Meaning
+
+\noindent A communications team can use public earnings calls to identify pricing statements that require contextual reading. The decision is which statements to examine and what additional evidence to request. The supplied core dictionary includes dynamic, personalized, algorithmic, and AI pricing as well as electronic shelf labels. These terms retrieve heterogeneous business objects. A display technology, a planned test, and an implemented price rule have different implications for customers.
+
+### 5.14.1 A Call-Level Comparison
+
+\noindent Among calls with observed text, the supplied retail group has 36 core-positive calls out of 1,241, or 2.90%; restaurants have 9 of 445, or 2.02%; and the comparison group has 67 of 639, or 10.49%. Calls receive equal weight. Firms with more captured calls consequently receive more weight in a pooled group rate. The categories differ in their business models, communication practices, and sample coverage. A higher rate identifies more frequent use of the specified language within the observed corpus.
+
+Calendar-quarter summaries use the date on which the call occurred. Fiscal-quarter labels can refer to different calendar periods across firms. The first and last quarters have incomplete calendar windows, and the number of firms varies across quarters. Reporting the call and firm counts beside each share makes those differences visible. Complete calendar support does not establish complete capture of every firm's calls.
+
+### 5.14.2 Who Speaks More About Pricing?
+
+\noindent Management supplies 127 of the 150 core occurrences and analysts supply 23. Management also speaks far more words. To measure language intensity for role $r$ on the same set of observed calls, calculate
+
+$$
+I_r=10{,}000\frac{\sum_{c\in\mathcal C}M_{cr}}{\sum_{c\in\mathcal C}W_{cr}},
+$$
+
+where $M_{cr}$ is the core-occurrence count and $W_{cr}$ is the number of words attributed to role $r$ in call $c$. The multiplier expresses occurrences per 10,000 words. The ratio pools word exposure, so long speaking segments receive greater weight than short ones.
+
+Management's 16,685,338 words imply 0.076 occurrences per 10,000 words. Analysts' 2,761,999 words imply 0.083. The raw-count ranking reverses after exposure adjustment. This arithmetic does not establish that analysts are more concerned about pricing: management includes prepared remarks and answers, analysts principally ask questions, and role assignments are heuristic. The rates describe the supplied labels and text exposure without a population significance claim.
+
+![Management has 127 core occurrences and analysts have 23. After dividing by the words attributed to each role, the respective rates are 0.076 and 0.083 per 10,000 words. The two panels use different labeled units and preserve a zero baseline.](../figures/M05_calls_exposure.png)
+
+The Q&A detector fails to identify a boundary for 86 supplied calls, including the empty transcript. Restricting both counts and words to the 2,240 observed calls with detected Q&A yields 115 management occurrences in 15,985,597 words, or 0.072 per 10,000. The analyst rate remains 0.083. This sensitivity addresses the flagged boundaries while retaining the substantive difference between prepared remarks and questions. A stronger role comparison would require verified turn labels and comparable speaking contexts.
+
+Python source: [disclosure.py](../../03_Data_and_Code/Earnings_Calls/disclosure.py). From `03_Data_and_Code/Earnings_Calls`, run `python disclosure.py`. Python, pandas, and NumPy are required; the committed metadata supply all inputs.
+
+```python
+"""Compare pricing-language coverage with explicit call and word denominators."""
+import pandas as pd
+from assessment import HERE, load_checked
+
+
+def role_rates(calls, mentions, require_qa=False):
+    sample = calls.loc[calls.text_observed & (calls.qa_detected | (not require_qa))]
+    core = mentions.loc[mentions.tier.eq('core') & mentions.call_id.isin(sample.call_id)]
+    rows = []
+    for role in ['management', 'analyst']:
+        n = int(core.role.eq(role).sum())
+        words = int(sample['words_' + role].sum())
+        rows.append({'sample': 'detected_qa' if require_qa else 'all_observed',
+                     'role': role, 'calls': len(sample), 'core_matches': n,
+                     'words': words, 'per_10000_words': 10000 * n / words if words else float('nan')})
+    return pd.DataFrame(rows)
+
+
+def main():
+    calls, mentions, _, _ = load_checked()
+    valid = calls.loc[calls.text_observed].copy()
+    groups = valid.groupby('group').agg(
+        calls=('call_id', 'size'), positive_calls=('has_core', 'sum'),
+        core_matches=('n_core', 'sum'))
+    groups['share_percent'] = 100 * groups.positive_calls / groups.calls
+    groups.to_csv(HERE / 'results/group_rates.csv')
+    roles = pd.concat([role_rates(calls, mentions), role_rates(calls, mentions, True)])
+    roles.to_csv(HERE / 'results/role_rates.csv', index=False)
+    valid['calendar_quarter'] = valid.call_date.dt.to_period('Q')
+    quarter = valid.groupby('calendar_quarter').agg(
+        calls=('call_id', 'size'), positive_calls=('has_core', 'sum'),
+        firms=('ticker', 'nunique'))
+    quarter['share_percent'] = 100 * quarter.positive_calls / quarter.calls
+    # Calendar coverage does not imply complete capture of all firms' calls.
+    start, end = pd.Timestamp('2021-11-02'), pd.Timestamp('2026-11-02')
+    quarter['full_calendar_window'] = [
+        q.start_time >= start and q.end_time.normalize() <= end for q in quarter.index]
+    quarter.to_csv(HERE / 'results/quarter_rates.csv')
+    print(groups.round(4).to_string())
+    print(roles.round(6).to_string(index=False))
+
+
+if __name__ == '__main__':
+    (HERE / 'results').mkdir(exist_ok=True)
+    main()
+```
+
+### 5.14.3 A Match Is a Retrieval Decision
+
+\noindent Consider seven purposeful cases from the supplied excerpts. Amazon's October 2024 statement concerns displaying current prices and deals. Eventbrite's August 2023 statement concerns advertising cost per click. Wendy's February 2024 statement concerns future tests. Kroger's September 2025 statement concerns shelf-label infrastructure, while its September 2022 statement describes personalized promotional investment. Delta's July 2025 statement describes AI-enhanced pricing; a January 2025 question about cabin pricing is recorded as management prepared remarks and warrants speaker review. Each case has an original match ID and source URL in [the interpretation table](../../03_Data_and_Code/Earnings_Calls/data/interpretation_cases.csv).
+
+A coding scheme should identify the priced object, current use versus future intention, assertion versus question or denial, and the scope of supporting evidence. The seven examples expose distinctions; their purposeful selection supplies no estimate of corpus precision. The original notes' reported precision check lacks the underlying adjudicated labels needed for independent verification. Recall additionally requires examining relevant passages that were never retrieved. Re-running a regex on truncated stored excerpts cannot measure whole-call recall.
+
+The synthetic contrast set below holds a pricing phrase nearly fixed while changing its meaning. Denial, intention, and a question all retrieve the same core term. A sentence describing fares that change hourly with demand supplies a plausible paraphrase that the dictionary misses. These are specified counterexamples to an interpretation rule, with no empirical model-performance claim.
+
+Python source: [construct_checks.py](../../03_Data_and_Code/Earnings_Calls/construct_checks.py). From `03_Data_and_Code/Earnings_Calls`, run `python construct_checks.py`. Python, pandas, and NumPy are required; the committed metadata supply all inputs.
+
+```python
+"""Use synthetic contrast cases to separate dictionary retrieval from adoption."""
+import re
+import pandas as pd
+from assessment import HERE
+
+
+def match_terms(text, dictionary):
+    return [row.term_id for row in dictionary.itertuples()
+            if re.search(row.regex, text, 0 if row.case_sensitive else re.IGNORECASE)]
+
+
+def main():
+    dictionary = pd.read_csv(HERE / 'data/dictionary.csv')
+    # All sentences below are synthetic, with intentionally specified meanings.
+    examples = [
+        ('We use dynamic pricing in all stores.', True, 'current_use', True),
+        ('We do not use dynamic pricing.', True, 'denial', False),
+        ('We may test dynamic pricing next year.', True, 'future_intention', False),
+        ('Do you plan to use dynamic pricing?', True, 'question', False),
+        ('The app displays real-time pricing information.', True, 'price_display', False),
+        ('We installed electronic shelf labels.', True, 'infrastructure', False),
+        ('Our fares adjust every hour with demand.', False, 'current_use', True),
+        ('We observed a surge in demand.', False, 'demand_only', False),
+    ]
+    rows = []
+    for text, expected_hit, meaning, current_use in examples:
+        terms = match_terms(text, dictionary)
+        core = dictionary.loc[dictionary.term_id.isin(terms), 'tier'].eq('core').any()
+        assert bool(core) == expected_hit, (text, terms)
+        rows.append({'synthetic_text': text, 'core_hit': bool(core),
+                     'terms': '|'.join(terms), 'specified_meaning': meaning,
+                     'specified_current_use': current_use})
+    output = pd.DataFrame(rows)
+    output.to_csv(HERE / 'results/synthetic_construct_checks.csv', index=False)
+    print(output[['core_hit', 'specified_meaning', 'specified_current_use']].to_string(index=False))
+    cases = pd.read_csv(HERE / 'data/interpretation_cases.csv')
+    mentions = pd.read_csv(HERE / 'data/mentions.csv')
+    assert cases.mention_id.is_unique and set(cases.mention_id) <= set(mentions.mention_id)
+    # A purposeful interpretation set supplies examples, not population precision.
+    cases[['mention_id', 'case_label', 'evidence_scope']].to_csv(
+        HERE / 'results/interpretation_summary.csv', index=False)
+
+
+if __name__ == '__main__':
+    (HERE / 'results').mkdir(exist_ok=True)
+    main()
+```
+
+### 5.14.4 AI-Assisted Interpretation and Review Effort
+
+\noindent Ask an assistant to propose a schema before requesting labels. Require the match ID, priced object, timing, type of speaker claim, evidence scope, and an explicit unknown value when context is insufficient. Compare its output with the recorded cases and require source-grounded explanations for disagreements. An apparent question in a management record should trigger inspection of the original turn rather than an automatic change based on punctuation.
+
+For empirical evaluation, draw passages with known selection probabilities from both retrieved and nonretrieved text, obtain independent human labels, adjudicate disagreements, and reserve firms or later calls for evaluation. Freeze prompts and dictionary choices before using the held-out sample. If sampling oversamples hits, use the sampling probabilities when estimating population performance. Repeated corporate wording makes random sentence splits especially vulnerable to leakage.
+
+The supplied firm score combines chosen weights on percentile ranks among firms with positive matches. Such a score can order a reading queue, but it lacks labeled outcomes and probability calibration. Keep coverage, recency, and unresolved interpretation separate so that a reviewer can see why a firm was selected. A no-match firm remains in the coverage table, and absent text remains unknown. Pricing behavior, consumer outcomes, and legal exposure require observations beyond disclosure counts.

@@ -38,3 +38,7 @@ Ethics and regulation recur within the methods. The [module integration guide](.
 ## Materials and Future Revisions
 
 The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations and runnable programs. The [Slides folder](../05_Slides/README.md) provides PDFs, editable LaTeX, and complete Markdown companions. New ethics and regulation resources should be reconciled with both sources and with this plan. Legal claims require a current primary source and a statement of its scope and status.
+
+## Earnings-Call Application
+
+Use pricing communication as a recurring application in meetings 2, 7, 10, and 14. Meeting 2 assesses missing text and document selection. Meeting 7 allocates its 25-minute worked comparison and 45-minute Python block to word exposure, dictionary interpretation, and AI-assisted checks; its application block connects these ideas to mHealth text and networks. Meeting 10 uses the event comparison within causal-design discussion. Meeting 14 incorporates pricing evidence within its existing 75-minute ethics and regulation block. The [worked example](../03_Data_and_Code/Earnings_Calls/README.md) provides the data, code, and interpretation cases. These activities fit the existing 15 meetings and do not add guest speakers or release graded requirements.

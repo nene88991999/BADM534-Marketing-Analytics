@@ -170,6 +170,75 @@ M5, Section 5.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 M5, Section 5.12, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
 \end{frame}
+\begin{frame}{Which Pricing Statements Deserve Review?}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A retailer reviews competitors' public pricing communication.
+\item A keyword occurrence supplies a reading lead.
+\item Define the priced object, timing, and evidence before interpreting adoption.
+\end{slidebullets}
+\vfill
+\note{The supplied corpus includes core terms for pricing methods and shelf-label infrastructure. Among observed calls, core-call rates are 2.90\% in retail, 2.02\% in restaurants, and 10.49\% in the selected comparison group. These are call-weighted disclosure rates.
+
+M5, Section 5.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Speaking Time Changes the Comparison}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_calls_exposure.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Observed calls; heuristic roles. Management includes prepared remarks and Q\&A.\par}
+\note{Raw counts rank management higher, whereas exposure-adjusted intensity is slightly higher for analysts. This is a descriptive arithmetic comparison, with different formats and heuristic labels. Restricting both counts and words to detected-Q\&A calls gives rates of 0.072 and 0.083.
+
+M5, Section 5.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Same Vocabulary, Different Evidence}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Amazon: current price information; Eventbrite: advertising cost per click.
+\item Wendy's: planned tests; Kroger: shelf-label infrastructure.
+\item A claim about use still requires evidence on implementation and outcomes.
+\end{slidebullets}
+\vfill
+\note{Seven purposeful, source-linked paraphrases are provided in interpretation\_cases.csv. They are examples of construct distinctions, not a representative precision sample. Delta's January 2025 question recorded as management/prepared also motivates reviewing heuristic speaker boundaries.
+
+M5, Section 5.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}[fragile]{Match Counts and Words to the Same Calls}
+\usebeamercolor[fg]{normal text}
+\noindent From the Earnings\_Calls folder, compare the verified metadata.
+\begin{lstlisting}
+from assessment import load_checked
+from disclosure import role_rates
+calls, mentions, _, _ = load_checked()
+rates = role_rates(calls, mentions, require_qa=True)
+assert rates.calls.eq(2240).all()
+print(rates[['role', 'core_matches', 'per_10000_words']])
+\end{lstlisting}
+{\small Excluding a call removes both its occurrences and its words.\par}
+\note{Run disclosure.py for group, quarterly, and role tables. The counterexample test includes one excluded call with many words; dropping only its matches would change the rate incorrectly.
+
+M5, Section 5.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Evaluate Retrieval and Interpretation Separately}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A denial and a future intention can match the same phrase.
+\item Relevant paraphrases can escape the dictionary.
+\item Validate held-out firms or later calls with independently labeled hits and misses.
+\end{slidebullets}
+\vfill
+\note{Run construct\_checks.py for eight synthetic sentences. A purposeful case set cannot estimate corpus precision or recall. Probability sampling and appropriate weights are needed for population metrics. No external model or labeling API was run for the supplied course example.
+
+M5, Section 5.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
 \begin{frame}{Network Objects}
 \usebeamercolor[fg]{normal text}
 \vfill
@@ -206,12 +275,12 @@ M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 \usebeamercolor[fg]{normal text}
 \vfill
 \begin{slidebullets}
-\item Build a transparent keyword or TF-IDF baseline.
-\item Compare precision and recall on familiar and new descriptions.
-\item Inspect false positives and disagreements by label.
+\item Run the earnings-call assessment and role-exposure calculation.
+\item Test denial, future intention, and a missed paraphrase.
+\item Explain which extra labels would identify precision and recall.
 \end{slidebullets}
 \vfill
-\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S07 to reproduce the prevalence calculation. The full mHealth m05.py program implements the description-level comparison. Select the evaluation split before tuning.
+\note{Use ../03\_Data\_and\_Code/Earnings\_Calls/README.md and LLM\_EXERCISES.md. The mHealth example provides a second application of held-out description evaluation. Synthetic dictionary contrasts are implementation checks; they do not estimate deployment accuracy.
 
 M5, Section 5.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
 \end{frame}

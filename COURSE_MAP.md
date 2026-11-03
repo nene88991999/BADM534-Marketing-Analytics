@@ -21,7 +21,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 48 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 51 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -73,3 +73,7 @@ The [GenAI demand cases](03_Data_and_Code/GenAI_Demand/README.md) connect M2 §2
 The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](05_Slides/SESSION_PLAN.md), with no guest speakers and two provisional presentation meetings. The [syllabus teaching plan](02_Syllabus/TEACHING_PLAN.md) records the educational structure; dates and assessment requirements remain pending.
 
 [Ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) connect M1 data handling, M2 sample representation, M3 advertising claims, M4 retention and choice, M5 review provenance, M6 experimental objectives, M7 delivery and access, and M8 adaptive procedures and customer value. A synthetic retention example includes complete Python, an aggregate table, and a TikZ figure.
+
+## Earnings-Call Case
+
+The [pricing-communication example](03_Data_and_Code/Earnings_Calls/README.md) connects document coverage (M2 §2.19), text constructs and word exposure (M5 §5.14), descriptive event comparisons (M6 §6.18), and customer outcomes and regulatory evidence (M8 §8.16). Sessions 02, 07, 10, and 14 include the corresponding cases. The complete programs, structured teaching data, and nine counterexample checks are available in the example folder.

@@ -11,19 +11,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- |
 | 01 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 19 |
-| 02 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 18 |
+| 02 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
 | 04 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 18 |
 | 06 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
-| 07 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 19 |
+| 07 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 24 |
 | 08 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 18 |
-| 10 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 18 |
+| 10 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
 | 11 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 18 |
 | 12 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
 | 13 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 18 |
+| 14 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 19 |
 | 15 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -48,9 +48,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 02. Customer Data and Measurement
 
-**Python and Evidence:** Build roster-first summaries and assess keys, zero-event users, and unknown statuses.
+**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.
 
-**Application:** Compare national availability with a common-support restaurant sample.
+**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations.
 
 **Ethics and Regulation:** Missingness, sample exclusions, and customer representation.
 
@@ -138,9 +138,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ### 07. Text, Social Media, and Networks
 
-**Python and Evidence:** Evaluate a text-labeling baseline under changing prevalence and description splits.
+**Python and Evidence:** Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.
 
-**Application:** Compare topic denominators and explain a low-degree network bridge.
+**Application:** Distinguish pricing communication from adoption, then compare text-topic weights and network brokerage.
 
 **Ethics and Regulation:** Review provenance, generated claims, and false positives.
 
@@ -148,10 +148,10 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- |
 | 0–15 | Managerial Case |
 | 15–45 | Concepts and Mechanisms |
-| 45–70 | Worked Comparison |
+| 45–70 | Earnings-Call Exposure and Meaning |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 80–125 | Earnings-Call Python and Construct Checks |
+| 125–155 | mHealth Text and Network Applications |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 08. Project Evidence and Midterm Presentations
@@ -192,7 +192,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compute policy values and diagnose a deliberately unsupported recommendation action.
 
-**Application:** Assess the comparison group and measurement requirements for a restaurant repair-policy evaluation.
+**Application:** Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation.
 
 **Ethics and Regulation:** Treatment paths, comparison populations, and selection.
 
@@ -264,7 +264,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess demand and workflow measurements, then calculate a conditional retention-welfare example.
 
-**Application:** Evaluate a cancellation procedure using customer value, refusal, completion, and applicable rule status.
+**Application:** Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status.
 
 **Ethics and Regulation:** Retention procedures, customer value, and regulatory status.
 
@@ -273,7 +273,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 0–35 | Demand and Subscription Measurement |
 | 35–70 | AI Workflow and Calculation |
 | 70–80 | Break |
-| 80–155 | Retention Procedures and Regulatory Assessment |
+| 80–155 | Retention, Pricing, and Regulatory Assessment |
 | 155–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
@@ -294,6 +294,6 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ## Coverage and Course Requirements
 
-The sequence follows M1–M8 in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability and generative-AI demand supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
+The sequence follows M1–M8 in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
 
 The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the educational structure. It does not release deadlines or graded work. Use [course.json](../course.json) to determine whether a current syllabus or schedule has been released.

@@ -9,7 +9,7 @@ Session 07. M5. 170 minutes.
 ## Learning Objectives
 
 - Define a text construct and evaluate labels on the deployment population.
-- Distinguish prevalence, classifier performance, and topic denominators.
+- Distinguish prevalence, text exposure, retrieval, and substantive interpretation.
 - Explain network reach and brokerage without inferring influence from correlation.
 
 ## Related Materials
@@ -18,6 +18,7 @@ Session 07. M5. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [mHealth text code](../03_Data_and_Code/mHealth/recurring_examples/m05.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -167,7 +168,68 @@ Long documents and repeated records can dominate term-weighted summaries. A busi
 
 Source: M5, Section 5.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 14: Network Objects
+## Slide 14: Which Pricing Statements Deserve Review?
+
+- A retailer reviews competitors' public pricing communication.
+- A keyword occurrence supplies a reading lead.
+- Define the priced object, timing, and evidence before interpreting adoption.
+
+The supplied corpus includes core terms for pricing methods and shelf-label infrastructure. Among observed calls, core-call rates are 2.90% in retail, 2.02% in restaurants, and 10.49% in the selected comparison group. These are call-weighted disclosure rates.
+
+Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 15: Speaking Time Changes the Comparison
+
+Observed calls; heuristic roles. Management includes prepared remarks and Q&A.
+
+**Figure description:** Management has 127 core occurrences in 16,685,338 words, versus analysts' 23 in 2,761,999 words. Rates are 0.076 and 0.083 per 10,000 words.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_calls_exposure.tex)
+
+Raw counts rank management higher, whereas exposure-adjusted intensity is slightly higher for analysts. This is a descriptive arithmetic comparison, with different formats and heuristic labels. Restricting both counts and words to detected-Q&A calls gives rates of 0.072 and 0.083.
+
+Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 16: Same Vocabulary, Different Evidence
+
+- Amazon: current price information; Eventbrite: advertising cost per click.
+- Wendy's: planned tests; Kroger: shelf-label infrastructure.
+- A claim about use still requires evidence on implementation and outcomes.
+
+Seven purposeful, source-linked paraphrases are provided in interpretation_cases.csv. They are examples of construct distinctions, not a representative precision sample. Delta's January 2025 question recorded as management/prepared also motivates reviewing heuristic speaker boundaries.
+
+Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 17: Match Counts and Words to the Same Calls
+
+From the Earnings_Calls folder, compare the verified metadata.
+
+```python
+from assessment import load_checked
+from disclosure import role_rates
+calls, mentions, _, _ = load_checked()
+rates = role_rates(calls, mentions, require_qa=True)
+assert rates.calls.eq(2240).all()
+print(rates[['role', 'core_matches', 'per_10000_words']])
+```
+
+Excluding a call removes both its occurrences and its words.
+
+Run disclosure.py for group, quarterly, and role tables. The counterexample test includes one excluded call with many words; dropping only its matches would change the rate incorrectly.
+
+Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 18: Evaluate Retrieval and Interpretation Separately
+
+- A denial and a future intention can match the same phrase.
+- Relevant paraphrases can escape the dictionary.
+- Validate held-out firms or later calls with independently labeled hits and misses.
+
+Run construct_checks.py for eight synthetic sentences. A purposeful case set cannot estimate corpus precision or recall. Probability sampling and appropriate weights are needed for population metrics. No external model or labeling API was run for the supplied course example.
+
+Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 19: Network Objects
 
 - Nodes identify customers or accounts.
 - Edges represent a defined relationship in a time window.
@@ -177,7 +239,7 @@ An edge could mean following, messaging, purchasing together, or co-occurrence. 
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 15: Few Links Can Connect Separate Groups
+## Slide 20: Few Links Can Connect Separate Groups
 
 Synthetic undirected network. R has only two links.
 
@@ -189,17 +251,17 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 16: Coding Exercise: A Label Assessment
+## Slide 21: Coding Exercise: A Label Assessment
 
-- Build a transparent keyword or TF-IDF baseline.
-- Compare precision and recall on familiar and new descriptions.
-- Inspect false positives and disagreements by label.
+- Run the earnings-call assessment and role-exposure calculation.
+- Test denial, future intention, and a missed paraphrase.
+- Explain which extra labels would identify precision and recall.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S07 to reproduce the prevalence calculation. The full mHealth m05.py program implements the description-level comparison. Select the evaluation split before tuning.
+Use ../03_Data_and_Code/Earnings_Calls/README.md and LLM_EXERCISES.md. The mHealth example provides a second application of held-out description evaluation. Synthetic dictionary contrasts are implementation checks; they do not estimate deployment accuracy.
 
 Source: M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 17: Engagement and Commercial Value
+## Slide 22: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -209,7 +271,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 18: Authenticity of Reviews and Endorsements
+## Slide 23: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -219,7 +281,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 19: Text-Analysis Discussion
+## Slide 24: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

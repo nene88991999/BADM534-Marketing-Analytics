@@ -74,11 +74,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 18,
+      "slides": 20,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
-      "python_activity": "Build roster-first summaries and assess keys, zero-event users, and unknown statuses.",
-      "application": "Compare national availability with a common-support restaurant sample.",
+      "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.",
+      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations.",
       "ethics": "Missingness, sample exclusions, and customer representation",
       "timing": [
         {
@@ -359,11 +359,11 @@
       "modules": "M5",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 19,
+      "slides": 24,
       "companion": "S07_Text_Social_Media_and_Networks.md",
       "pdf": "S07_Text_Social_Media_and_Networks.pdf",
-      "python_activity": "Evaluate a text-labeling baseline under changing prevalence and description splits.",
-      "application": "Compare topic denominators and explain a low-degree network bridge.",
+      "python_activity": "Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.",
+      "application": "Distinguish pricing communication from adoption, then compare text-topic weights and network brokerage.",
       "ethics": "Review provenance, generated claims, and false positives",
       "timing": [
         {
@@ -382,7 +382,7 @@
           "start_minute": 45,
           "end_minute": 70,
           "minutes": 25,
-          "activity": "Worked Comparison"
+          "activity": "Earnings-Call Exposure and Meaning"
         },
         {
           "start_minute": 70,
@@ -394,13 +394,13 @@
           "start_minute": 80,
           "end_minute": 125,
           "minutes": 45,
-          "activity": "Python Exercise"
+          "activity": "Earnings-Call Python and Construct Checks"
         },
         {
           "start_minute": 125,
           "end_minute": 155,
           "minutes": 30,
-          "activity": "Application and Interpretation"
+          "activity": "mHealth Text and Network Applications"
         },
         {
           "start_minute": 155,
@@ -518,11 +518,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 18,
+      "slides": 20,
       "companion": "S10_Causal_Comparisons_and_Policy_Evaluation.md",
       "pdf": "S10_Causal_Comparisons_and_Policy_Evaluation.pdf",
       "python_activity": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
-      "application": "Assess the comparison group and measurement requirements for a restaurant repair-policy evaluation.",
+      "application": "Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation.",
       "ethics": "Treatment paths, comparison populations, and selection",
       "timing": [
         {
@@ -746,11 +746,11 @@
       "modules": "M8",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 18,
+      "slides": 19,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Assess demand and workflow measurements, then calculate a conditional retention-welfare example.",
-      "application": "Evaluate a cancellation procedure using customer value, refusal, completion, and applicable rule status.",
+      "application": "Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status.",
       "ethics": "Retention procedures, customer value, and regulatory status",
       "timing": [
         {
@@ -775,7 +775,7 @@
           "start_minute": 80,
           "end_minute": 155,
           "minutes": 75,
-          "activity": "Retention Procedures and Regulatory Assessment"
+          "activity": "Retention, Pricing, and Regulatory Assessment"
         },
         {
           "start_minute": 155,

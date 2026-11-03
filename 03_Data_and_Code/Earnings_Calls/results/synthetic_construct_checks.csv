@@ -1,0 +1,9 @@
+synthetic_text,core_hit,terms,specified_meaning,specified_current_use
+We use dynamic pricing in all stores.,True,dynamic_pricing,current_use,True
+We do not use dynamic pricing.,True,dynamic_pricing,denial,False
+We may test dynamic pricing next year.,True,dynamic_pricing,future_intention,False
+Do you plan to use dynamic pricing?,True,dynamic_pricing,question,False
+The app displays real-time pricing information.,True,real_time_pricing,price_display,False
+We installed electronic shelf labels.,True,electronic_shelf_labels,infrastructure,False
+Our fares adjust every hour with demand.,False,,current_use,True
+We observed a surge in demand.,False,,demand_only,False

@@ -63,7 +63,12 @@
     "03_Data_and_Code/GenAI_Demand/results/README.md",
     "05_Slides/SESSION_PLAN.md",
     "02_Syllabus/TEACHING_PLAN.md",
-    "06_Lecture_Notes/ETHICS_AND_REGULATION.md"
+    "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
+    "03_Data_and_Code/Earnings_Calls/README.md",
+    "03_Data_and_Code/Earnings_Calls/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Earnings_Calls/AGENTS.md",
+    "03_Data_and_Code/Earnings_Calls/LLM_EXERCISES.md",
+    "03_Data_and_Code/Earnings_Calls/results/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -108,15 +113,16 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-02-slides-folder-and-assessment-terminology",
+    "revision": "2026-11-02-earnings-call-worked-example",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 48,
-    "pages": 174,
+    "figures_count": 51,
+    "pages": 185,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
-    "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md"
+    "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
+    "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md"
   },
   "datasets": [
     {
@@ -147,6 +153,18 @@
         "M4",
         "M8"
       ]
+    },
+    {
+      "id": "earnings-call-pricing-communication",
+      "index": "03_Data_and_Code/Earnings_Calls/README.md",
+      "manifest": "03_Data_and_Code/Earnings_Calls/manifest.json",
+      "data_type": "Structured metadata from supplied public earnings calls, with separate purposeful paraphrases and synthetic construct checks",
+      "modules": [
+        "M2",
+        "M5",
+        "M6",
+        "M8"
+      ]
     }
   ],
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
@@ -161,7 +179,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 255,
+    "slides": 265,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "not released",

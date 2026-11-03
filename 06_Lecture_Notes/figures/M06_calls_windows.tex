@@ -1,0 +1,10 @@
+\begin{tikzpicture}[node distance=1cm]
+\node[box,text width=4.5cm] (before) at (0,0) {Before Clarification\\27 Calls From 27 Firms\\5 Core Matches\\2 Positive Calls};
+\node[orangebox,text width=4.5cm] (after) at (7,0) {After Clarification\\Same 27 Firms, 27 Calls\\2 Core Matches\\2 Positive Calls};
+\draw[edge] (before) -- node[above,align=center]{90-Day\\Windows} (after);
+\node[box,text width=4.5cm] (left) at (0,-2.7) {2 / 27 = 7.41\%};
+\node[orangebox,text width=4.5cm] (right) at (7,-2.7) {2 / 27 = 7.41\%};
+\draw[edge] (before) -- (left);
+\draw[accent] (after) -- (right);
+\node[align=center,text width=12cm] at (3.5,-4) {Repeated mentions fall while the share of calls mentioning the topic stays constant.};
+\end{tikzpicture}

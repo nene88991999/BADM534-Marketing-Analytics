@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[xbar,width=12cm,height=5.3cm,xmin=0,xmax=29,ymin=-.6,ymax=1.6,
+ xlabel={Calls With a Core Match (Percent)},ytick={0,1},
+ yticklabels={All Observed Calls,Calls With Any Match},xtick={0,5,10,15,20,25},xmajorgrids=true]
+\addplot[fill=IlliniBlue,draw=IlliniBlue,bar width=15pt,bar shift=0pt] coordinates {(4.817204,0)};
+\addplot[fill=IlliniOrange,draw=IlliniOrange,bar width=15pt,bar shift=0pt] coordinates {(25.168539,1)};
+\node[anchor=west] at (axis cs:5.2,0) {112 / 2,325};
+\node[anchor=west] at (axis cs:12,1.42) {112 / 445};
+\end{axis}\end{tikzpicture}

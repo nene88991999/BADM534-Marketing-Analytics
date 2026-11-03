@@ -3014,6 +3014,164 @@ locally, and compare the substantive result under reasonable alternative
 screens. The decision concerns whether the marketing recommendation
 remains supported for the intended customers.
 
+\hypertarget{M02-earnings-calls-disclosure-requires-an-observed-document}{%
+\section{Earnings Calls: Disclosure Requires an Observed
+Document}\label{M02-earnings-calls-disclosure-requires-an-observed-document}}
+
+\noindent \noindent A retail communications manager wants to identify firms whose
+public pricing statements merit closer reading. The relevant population
+is the set of firms and calls available for review. Starting from a
+table of extracted matches selects documents on the outcome and
+overstates how frequently the topic appears. A firm roster, a call
+table, and a match table answer different questions and must retain
+their separate observation units.
+
+The supplied snapshot spans November 2, 2021 through November 2, 2026
+and includes current-index constituents plus selected comparison firms.
+Its roster contains one firm, Winmark, with no supplied calls. Its
+Dollar Tree call dated September 3, 2025 has 53 recorded turns but zero
+recorded words. That record establishes an extraction problem requiring
+review; its zero dictionary count supplies no observed negative language
+outcome. The analysis preserves the record and assigns unknown language
+presence. All other supplied calls have positive word counts, although
+positive length alone does not establish transcript completeness.
+
+For observed call \(c\), define \(D_c=1\) when at least one core
+dictionary term occurs and \(D_c=0\) otherwise. For a set of observed
+calls \(\mathcal C\), the descriptive incidence is
+
+\[
+\widehat p_{\mathcal C}=\frac{\sum_{c\in\mathcal C}D_c}{|\mathcal C|}.
+\]
+
+The numerator counts calls once regardless of repeated occurrences. The
+denominator counts observed calls, including calls with no matches. Core
+terms occur in 112 of 2,325 observed calls, or 4.82\%. Restricting the
+denominator to the 445 calls containing any core or broad term produces
+25.17\%. Both calculations use the same numerator. The latter measures a
+conditional share among already-retrieved documents and is unsuitable as
+the overall disclosure frequency.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_calls_denominator.tex}
+\caption{The same 112 core-positive calls yield 4.82 percent among 2,325 observed calls and 25.17 percent among 445 calls with any dictionary match. Selecting documents on a match changes the population.}\label{fig:M02_calls_denominator}
+\end{figure}
+
+A match-level merge would repeat the call's word count once per
+occurrence. Aggregate occurrences to call before joining, verify the
+keys, and reconcile every term count against the supplied call totals.
+The roster summary distinguishes firms with observed zero-match calls
+from a firm with no observed calls. The supplied sectors and
+current-index selection also make the results descriptive of this
+corpus; a comparison across sectors does not estimate market-wide
+adoption.
+
+The
+\href{../03_Data_and_Code/Earnings_Calls/DATA_DICTIONARY.md}{earnings-call
+data dictionary} records units, flags, and provenance. The following
+program verifies identifiers, group membership, dictionary counts, word
+totals, and roster coverage before computing the denominator comparison.
+Its flags preserve the original records.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Earnings_Calls/assessment.py}{assessment.py}.
+From \texttt{03\_Data\_and\_Code/Earnings\_Calls}, run
+\texttt{python\ assessment.py}. Python, pandas, and NumPy are required;
+the committed metadata supply all inputs.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Assess keys, counts, coverage, and missing text before measuring disclosure."""
+from pathlib import Path
+import json
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+
+
+def load_checked():
+    calls = pd.read_csv(HERE / 'data/calls.csv', parse_dates=['call_date'])
+    mentions = pd.read_csv(HERE / 'data/mentions.csv', parse_dates=['call_date'])
+    firms = pd.read_csv(HERE / 'data/firms.csv')
+    dictionary = pd.read_csv(HERE / 'data/dictionary.csv')
+    for frame, key in [(calls, 'call_id'), (mentions, 'mention_id'),
+                       (firms, 'ticker'), (dictionary, 'term_id')]:
+        assert frame[key].notna().all() and frame[key].is_unique, key
+    assert set(calls.ticker) <= set(firms.ticker)
+    assert set(mentions.call_id) <= set(calls.call_id)
+    assert set(mentions.term_id) <= set(dictionary.term_id)
+    counts = [x for x in calls if x.startswith(('n_', 'words_'))]
+    assert calls[counts].notna().all().all()
+    assert (calls[counts] >= 0).all().all()
+    assert (calls[counts] % 1 == 0).all().all()
+    assert (calls.words_management + calls.words_analyst <= calls.words_total).all()
+    merged = mentions.merge(calls[['call_id', 'ticker', 'call_date']],
+                            on='call_id', validate='many_to_one', suffixes=('', '_call'))
+    assert merged.ticker.eq(merged.ticker_call).all()
+    assert merged.call_date.eq(merged.call_date_call).all()
+    labels = mentions.merge(dictionary[['term_id', 'tier', 'category']],
+                            on='term_id', validate='many_to_one', suffixes=('', '_dict'))
+    assert labels.tier.eq(labels.tier_dict).all()
+    assert labels.category.eq(labels.category_dict).all()
+    actual = mentions.groupby(['call_id', 'term_id']).size().unstack(fill_value=0)
+    actual = actual.reindex(index=calls.call_id, columns=dictionary.term_id, fill_value=0)
+    expected = calls.set_index('call_id')[['n_' + x for x in dictionary.term_id]]
+    assert np.array_equal(actual.to_numpy(), expected.to_numpy())
+    for tier in ['core', 'broad']:
+        terms = dictionary.loc[dictionary.tier.eq(tier), 'term_id']
+        assert np.array_equal(actual[terms].sum(axis=1), calls['n_' + tier])
+    roster_count = calls.groupby('ticker').size().reindex(firms.ticker, fill_value=0)
+    assert np.array_equal(roster_count, firms.n_calls_in_window)
+    calls['text_observed'] = calls.words_total.gt(0)
+    calls['qa_detected'] = calls.qa_start_turn.ge(0)
+    calls['has_core'] = calls.n_core.gt(0).astype(float).where(calls.text_observed)
+    calls['has_any'] = (calls.n_core + calls.n_broad).gt(0)
+    assert calls.loc[~calls.text_observed, ['n_core', 'n_broad']].eq(0).all().all()
+    return calls, mentions, firms, dictionary
+
+
+def firm_coverage(calls, firms):
+    summary = calls.groupby('ticker').agg(
+        calls_supplied=('call_id', 'size'), calls_observed=('text_observed', 'sum'),
+        core_positive_calls=('has_core', 'sum'))
+    output = firms[['ticker', 'company', 'group']].merge(
+        summary, on='ticker', how='left', validate='one_to_one')
+    cols = ['calls_supplied', 'calls_observed', 'core_positive_calls']
+    output[cols] = output[cols].fillna(0).astype(int)
+    output['core_call_rate'] = output.core_positive_calls.div(
+        output.calls_observed.replace(0, np.nan))
+    return output
+
+
+def main():
+    calls, mentions, firms, dictionary = load_checked()
+    out = HERE / 'results'; out.mkdir(exist_ok=True)
+    calls[['call_id', 'text_observed', 'qa_detected', 'has_core']].to_csv(
+        out / 'call_status.csv', index=False)
+    firm_coverage(calls, firms).to_csv(out / 'firm_coverage.csv', index=False)
+    report = {
+        'supplied_calls': len(calls), 'observed_calls': int(calls.text_observed.sum()),
+        'missing_text_ids': calls.loc[~calls.text_observed, 'call_id'].tolist(),
+        'undetected_qa_calls': int((~calls.qa_detected).sum()),
+        'core_positive_calls': int(calls.has_core.sum()), 'matches': len(mentions),
+        'core_matches': int(mentions.tier.eq('core').sum()),
+        'firms_in_roster': len(firms), 'firms_with_calls': calls.ticker.nunique(),
+        'positive_only_denominator': int(calls.has_any.sum()),
+        'wrong_positive_only_rate': float(calls.loc[calls.has_any, 'has_core'].mean()),
+        'observed_call_rate': float(calls.has_core.mean()),
+        'dictionary_terms': len(dictionary),
+    }
+    (out / 'assessment.json').write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == '__main__':
+    main()
+\end{Verbatim}
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -5570,6 +5728,257 @@ false-positive share can make a generated summary overstate the
 prevalence of a problem even when individual labels have respectable
 sensitivity and specificity.
 
+\hypertarget{M05-earnings-calls-pricing-language-speaking-exposure-and-meaning}{%
+\section{Earnings Calls: Pricing Language, Speaking Exposure, and
+Meaning}\label{M05-earnings-calls-pricing-language-speaking-exposure-and-meaning}}
+
+\noindent \noindent A communications team can use public earnings calls to
+identify pricing statements that require contextual reading. The
+decision is which statements to examine and what additional evidence to
+request. The supplied core dictionary includes dynamic, personalized,
+algorithmic, and AI pricing as well as electronic shelf labels. These
+terms retrieve heterogeneous business objects. A display technology, a
+planned test, and an implemented price rule have different implications
+for customers.
+
+\hypertarget{M05-a-call-level-comparison}{%
+\subsection{A Call-Level Comparison}\label{M05-a-call-level-comparison}}
+
+\noindent \noindent Among calls with observed text, the supplied retail group has
+36 core-positive calls out of 1,241, or 2.90\%; restaurants have 9 of
+445, or 2.02\%; and the comparison group has 67 of 639, or 10.49\%.
+Calls receive equal weight. Firms with more captured calls consequently
+receive more weight in a pooled group rate. The categories differ in
+their business models, communication practices, and sample coverage. A
+higher rate identifies more frequent use of the specified language
+within the observed corpus.
+
+Calendar-quarter summaries use the date on which the call occurred.
+Fiscal-quarter labels can refer to different calendar periods across
+firms. The first and last quarters have incomplete calendar windows, and
+the number of firms varies across quarters. Reporting the call and firm
+counts beside each share makes those differences visible. Complete
+calendar support does not establish complete capture of every firm's
+calls.
+
+\hypertarget{M05-who-speaks-more-about-pricing}{%
+\subsection{Who Speaks More About
+Pricing?}\label{M05-who-speaks-more-about-pricing}}
+
+\noindent \noindent Management supplies 127 of the 150 core occurrences and
+analysts supply 23. Management also speaks far more words. To measure
+language intensity for role \(r\) on the same set of observed calls,
+calculate
+
+\[
+I_r=10{,}000\frac{\sum_{c\in\mathcal C}M_{cr}}{\sum_{c\in\mathcal C}W_{cr}},
+\]
+
+where \(M_{cr}\) is the core-occurrence count and \(W_{cr}\) is the
+number of words attributed to role \(r\) in call \(c\). The multiplier
+expresses occurrences per 10,000 words. The ratio pools word exposure,
+so long speaking segments receive greater weight than short ones.
+
+Management's 16,685,338 words imply 0.076 occurrences per 10,000 words.
+Analysts' 2,761,999 words imply 0.083. The raw-count ranking reverses
+after exposure adjustment. This arithmetic does not establish that
+analysts are more concerned about pricing: management includes prepared
+remarks and answers, analysts principally ask questions, and role
+assignments are heuristic. The rates describe the supplied labels and
+text exposure without a population significance claim.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_calls_exposure.tex}
+\caption{Management has 127 core occurrences and analysts have 23. After dividing by the words attributed to each role, the respective rates are 0.076 and 0.083 per 10,000 words. The two panels use different labeled units and preserve a zero baseline.}\label{fig:M05_calls_exposure}
+\end{figure}
+
+The Q\&A detector fails to identify a boundary for 86 supplied calls,
+including the empty transcript. Restricting both counts and words to the
+2,240 observed calls with detected Q\&A yields 115 management
+occurrences in 15,985,597 words, or 0.072 per 10,000. The analyst rate
+remains 0.083. This sensitivity addresses the flagged boundaries while
+retaining the substantive difference between prepared remarks and
+questions. A stronger role comparison would require verified turn labels
+and comparable speaking contexts.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Earnings_Calls/disclosure.py}{disclosure.py}.
+From \texttt{03\_Data\_and\_Code/Earnings\_Calls}, run
+\texttt{python\ disclosure.py}. Python, pandas, and NumPy are required;
+the committed metadata supply all inputs.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Compare pricing-language coverage with explicit call and word denominators."""
+import pandas as pd
+from assessment import HERE, load_checked
+
+
+def role_rates(calls, mentions, require_qa=False):
+    sample = calls.loc[calls.text_observed & (calls.qa_detected | (not require_qa))]
+    core = mentions.loc[mentions.tier.eq('core') & mentions.call_id.isin(sample.call_id)]
+    rows = []
+    for role in ['management', 'analyst']:
+        n = int(core.role.eq(role).sum())
+        words = int(sample['words_' + role].sum())
+        rows.append({'sample': 'detected_qa' if require_qa else 'all_observed',
+                     'role': role, 'calls': len(sample), 'core_matches': n,
+                     'words': words, 'per_10000_words': 10000 * n / words if words else float('nan')})
+    return pd.DataFrame(rows)
+
+
+def main():
+    calls, mentions, _, _ = load_checked()
+    valid = calls.loc[calls.text_observed].copy()
+    groups = valid.groupby('group').agg(
+        calls=('call_id', 'size'), positive_calls=('has_core', 'sum'),
+        core_matches=('n_core', 'sum'))
+    groups['share_percent'] = 100 * groups.positive_calls / groups.calls
+    groups.to_csv(HERE / 'results/group_rates.csv')
+    roles = pd.concat([role_rates(calls, mentions), role_rates(calls, mentions, True)])
+    roles.to_csv(HERE / 'results/role_rates.csv', index=False)
+    valid['calendar_quarter'] = valid.call_date.dt.to_period('Q')
+    quarter = valid.groupby('calendar_quarter').agg(
+        calls=('call_id', 'size'), positive_calls=('has_core', 'sum'),
+        firms=('ticker', 'nunique'))
+    quarter['share_percent'] = 100 * quarter.positive_calls / quarter.calls
+    # Calendar coverage does not imply complete capture of all firms' calls.
+    start, end = pd.Timestamp('2021-11-02'), pd.Timestamp('2026-11-02')
+    quarter['full_calendar_window'] = [
+        q.start_time >= start and q.end_time.normalize() <= end for q in quarter.index]
+    quarter.to_csv(HERE / 'results/quarter_rates.csv')
+    print(groups.round(4).to_string())
+    print(roles.round(6).to_string(index=False))
+
+
+if __name__ == '__main__':
+    (HERE / 'results').mkdir(exist_ok=True)
+    main()
+\end{Verbatim}
+
+\hypertarget{M05-a-match-is-a-retrieval-decision}{%
+\subsection{A Match Is a Retrieval
+Decision}\label{M05-a-match-is-a-retrieval-decision}}
+
+\noindent \noindent Consider seven purposeful cases from the supplied excerpts.
+Amazon's October 2024 statement concerns displaying current prices and
+deals. Eventbrite's August 2023 statement concerns advertising cost per
+click. Wendy's February 2024 statement concerns future tests. Kroger's
+September 2025 statement concerns shelf-label infrastructure, while its
+September 2022 statement describes personalized promotional investment.
+Delta's July 2025 statement describes AI-enhanced pricing; a January
+2025 question about cabin pricing is recorded as management prepared
+remarks and warrants speaker review. Each case has an original match ID
+and source URL in
+\href{../03_Data_and_Code/Earnings_Calls/data/interpretation_cases.csv}{the
+interpretation table}.
+
+A coding scheme should identify the priced object, current use versus
+future intention, assertion versus question or denial, and the scope of
+supporting evidence. The seven examples expose distinctions; their
+purposeful selection supplies no estimate of corpus precision. The
+original notes' reported precision check lacks the underlying
+adjudicated labels needed for independent verification. Recall
+additionally requires examining relevant passages that were never
+retrieved. Re-running a regex on truncated stored excerpts cannot
+measure whole-call recall.
+
+The synthetic contrast set below holds a pricing phrase nearly fixed
+while changing its meaning. Denial, intention, and a question all
+retrieve the same core term. A sentence describing fares that change
+hourly with demand supplies a plausible paraphrase that the dictionary
+misses. These are specified counterexamples to an interpretation rule,
+with no empirical model-performance claim.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Earnings_Calls/construct_checks.py}{construct\_checks.py}.
+From \texttt{03\_Data\_and\_Code/Earnings\_Calls}, run
+\texttt{python\ construct\_checks.py}. Python, pandas, and NumPy are
+required; the committed metadata supply all inputs.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Use synthetic contrast cases to separate dictionary retrieval from adoption."""
+import re
+import pandas as pd
+from assessment import HERE
+
+
+def match_terms(text, dictionary):
+    return [row.term_id for row in dictionary.itertuples()
+            if re.search(row.regex, text, 0 if row.case_sensitive else re.IGNORECASE)]
+
+
+def main():
+    dictionary = pd.read_csv(HERE / 'data/dictionary.csv')
+    # All sentences below are synthetic, with intentionally specified meanings.
+    examples = [
+        ('We use dynamic pricing in all stores.', True, 'current_use', True),
+        ('We do not use dynamic pricing.', True, 'denial', False),
+        ('We may test dynamic pricing next year.', True, 'future_intention', False),
+        ('Do you plan to use dynamic pricing?', True, 'question', False),
+        ('The app displays real-time pricing information.', True, 'price_display', False),
+        ('We installed electronic shelf labels.', True, 'infrastructure', False),
+        ('Our fares adjust every hour with demand.', False, 'current_use', True),
+        ('We observed a surge in demand.', False, 'demand_only', False),
+    ]
+    rows = []
+    for text, expected_hit, meaning, current_use in examples:
+        terms = match_terms(text, dictionary)
+        core = dictionary.loc[dictionary.term_id.isin(terms), 'tier'].eq('core').any()
+        assert bool(core) == expected_hit, (text, terms)
+        rows.append({'synthetic_text': text, 'core_hit': bool(core),
+                     'terms': '|'.join(terms), 'specified_meaning': meaning,
+                     'specified_current_use': current_use})
+    output = pd.DataFrame(rows)
+    output.to_csv(HERE / 'results/synthetic_construct_checks.csv', index=False)
+    print(output[['core_hit', 'specified_meaning', 'specified_current_use']].to_string(index=False))
+    cases = pd.read_csv(HERE / 'data/interpretation_cases.csv')
+    mentions = pd.read_csv(HERE / 'data/mentions.csv')
+    assert cases.mention_id.is_unique and set(cases.mention_id) <= set(mentions.mention_id)
+    # A purposeful interpretation set supplies examples, not population precision.
+    cases[['mention_id', 'case_label', 'evidence_scope']].to_csv(
+        HERE / 'results/interpretation_summary.csv', index=False)
+
+
+if __name__ == '__main__':
+    (HERE / 'results').mkdir(exist_ok=True)
+    main()
+\end{Verbatim}
+
+\hypertarget{M05-ai-assisted-interpretation-and-review-effort}{%
+\subsection{AI-Assisted Interpretation and Review
+Effort}\label{M05-ai-assisted-interpretation-and-review-effort}}
+
+\noindent \noindent Ask an assistant to propose a schema before requesting labels.
+Require the match ID, priced object, timing, type of speaker claim,
+evidence scope, and an explicit unknown value when context is
+insufficient. Compare its output with the recorded cases and require
+source-grounded explanations for disagreements. An apparent question in
+a management record should trigger inspection of the original turn
+rather than an automatic change based on punctuation.
+
+For empirical evaluation, draw passages with known selection
+probabilities from both retrieved and nonretrieved text, obtain
+independent human labels, adjudicate disagreements, and reserve firms or
+later calls for evaluation. Freeze prompts and dictionary choices before
+using the held-out sample. If sampling oversamples hits, use the
+sampling probabilities when estimating population performance. Repeated
+corporate wording makes random sentence splits especially vulnerable to
+leakage.
+
+The supplied firm score combines chosen weights on percentile ranks
+among firms with positive matches. Such a score can order a reading
+queue, but it lacks labeled outcomes and probability calibration. Keep
+coverage, recency, and unresolved interpretation separate so that a
+reviewer can see why a firm was selected. A no-match firm remains in the
+coverage table, and absent text remains unknown. Pricing behavior,
+consumer outcomes, and legal exposure require observations beyond
+disclosure counts.
+
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
 Experiments}\label{M06-m6.-causal-effects-and-marketing-experiments}}
@@ -6716,6 +7125,104 @@ a better product increases both willingness to pay and firm profit, the
 same experiment can instead select a mutually beneficial change. The
 empirical task is to measure the consequences that distinguish those
 settings.
+
+\hypertarget{M06-earnings-calls-a-public-clarification-and-the-event-window}{%
+\section{Earnings Calls: A Public Clarification and the Event
+Window}\label{M06-earnings-calls-a-public-clarification-and-the-event-window}}
+
+\noindent \noindent A communications manager wants to understand whether pricing
+language changed around a public clarification.
+\href{https://www.wendys.com/blog/wendys-digital-news-update}{Wendy's
+February 27, 2024 statement} described intended uses of digital menu
+boards and rejected the interpretation that the company planned higher
+prices at its busiest times. That dated company statement supplies an
+observable event. It does not establish realized prices or customer
+responses.
+
+Define a before window from 90 through one calendar day before the
+statement and an after window from one through 90 days after it. Exclude
+calls on the event day because within-day ordering is unavailable. Use
+calls with observed text and report both all available firms and firms
+appearing in both windows. The comparison is the change in the fraction
+of calls containing core language. A separate firm-equal calculation
+first averages calls within firm and period, then averages those firm
+rates, so extra captured calls do not increase a firm's weight.
+
+In the common-firm comparison group, each window contains one call from
+each of 27 firms. Core occurrences fall from five to two, while the
+number of positive calls remains two in each window. Incidence therefore
+remains 2/27, or 7.41\%. In the full available comparison sample, the
+apparent call rate falls from 2/27 to 2/34 as coverage expands. These
+are distinct sources of an apparent change: repeated language within
+calls and the number of observed calls.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_calls_windows.tex}
+\caption{For the same 27 comparison firms and 27 calls per 90-day window, core occurrences fall from five to two while two calls contain a match in each period. Call incidence remains 7.41 percent. The event day is excluded.}\label{fig:M06_calls_windows}
+\end{figure}
+
+The event is shared public information, and the group named comparison
+in the supplied data is an industry classification rather than a
+verified untreated group. Earnings-call timing, business conditions, and
+disclosure choices also vary. Even a measured change in disclosure would
+leave adoption and customer effects as separate outcomes. A causal
+design would need a specified exposure, a defensible counterfactual
+disclosure path, stable measurement, and uncertainty that accounts for
+repeated firms. Matching firm coverage addresses composition alone.
+
+The program repeats the descriptive calculation with 60-, 90-, and
+120-day windows and reports counts, call-weighted rates, and firm-equal
+rates. Compare these prespecified windows before writing an explanation
+for a selected result. Reconcile the numerator and denominator
+separately, then identify the evidence needed for any causal claim.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Earnings_Calls/event_windows.py}{event\_windows.py}.
+From \texttt{03\_Data\_and\_Code/Earnings\_Calls}, run
+\texttt{python\ event\_windows.py}. Python, pandas, and NumPy are
+required; the committed metadata supply all inputs.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Describe call-level language around a public clarification; no causal effect."""
+import pandas as pd
+from assessment import HERE, load_checked
+
+
+def compare_windows(calls, event='2024-02-27', days=90):
+    date = pd.Timestamp(event)
+    d = calls.loc[calls.text_observed].copy()
+    delta = (d.call_date - date).dt.days
+    # Exclude the event day because within-day ordering is unavailable.
+    d = d.loc[delta.between(-days, -1) | delta.between(1, days)].copy()
+    d['period'] = d.call_date.gt(date).map({False: 'before', True: 'after'})
+    common = d.groupby('ticker').period.nunique()
+    common = common[common.eq(2)].index
+    rows = []
+    for sample, panel in [('available_calls', d), ('firms_in_both_windows', d[d.ticker.isin(common)])]:
+        for (group, period), part in panel.groupby(['group', 'period']):
+            rows.append({'window_days': days, 'sample': sample, 'group': group,
+                         'period': period, 'firms': part.ticker.nunique(),
+                         'calls': len(part), 'positive_calls': int(part.has_core.sum()),
+                         'core_matches': int(part.n_core.sum()),
+                         'share_percent': 100 * part.has_core.mean(),
+                         'firm_equal_share_percent': 100 * part.groupby('ticker').has_core.mean().mean()})
+    return pd.DataFrame(rows)
+
+
+def main():
+    calls, _, _, _ = load_checked()
+    results = pd.concat([compare_windows(calls, days=n) for n in [60, 90, 120]])
+    results.to_csv(HERE / 'results/event_windows.csv', index=False)
+    print(results[results.window_days.eq(90)].round(4).to_string(index=False))
+
+
+if __name__ == '__main__':
+    (HERE / 'results').mkdir(exist_ok=True)
+    main()
+\end{Verbatim}
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -9702,5 +10209,48 @@ interaction, improve the information customers receive, or redesign an
 experiment to measure consequences outside its conversion objective.
 Each proposal should name the affected outcome, an observable benchmark,
 and the evidence that would support adoption.
+
+\hypertarget{M08-pricing-communication-customer-outcomes-and-regulatory-evidence}{%
+\section{Pricing Communication, Customer Outcomes, and Regulatory
+Evidence}\label{M08-pricing-communication-customer-outcomes-and-regulatory-evidence}}
+
+\noindent \noindent A firm considering a new pricing system must evaluate the
+price rule, the information it uses, and the consequences for customers.
+Public statements can identify questions for that evaluation. The
+earnings-call interpretation cases in Section 5.14 separate price
+displays, advertising prices, future tests, shelf-label infrastructure,
+personalized promotions, and a statement about AI pricing. The
+accompanying Python and source-linked case table reproduce the
+classification exercise. These disclosures identify different objects
+and evidence scopes.
+
+A digital shelf label reduces the cost of updating posted prices. It
+does not specify whether updates follow time, inventory, customer
+attributes, or a common promotion. A personalized promotion can alter
+the effective price without changing the posted shelf price. An
+assessment therefore needs the offer, eligibility rule, input data,
+realized prices, and available alternatives. Customer value also depends
+on product suitability, search costs, information, and the ability to
+decline. A commercial revenue result alone does not measure those
+outcomes.
+
+The
+\href{https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf}{FTC's
+January 2025 staff research summaries}, pages 1--3, describe US
+intermediary tools involving price targeting, customer segmentation, and
+product ranking. The document reports preliminary findings of a Section
+6(b) study and explains limitations of its coverage. It is a research
+publication with no rule effective date; its publication does not
+establish a violation by a company in the earnings-call sample. Evaluate
+a concrete practice against the applicable jurisdiction, conduct, and
+current legal authority.
+
+For a proposed promotion, specify which customers qualify, which
+information determines the offer, and whether a common-price alternative
+is available. Compare customer and firm outcomes under a credible
+evaluation design. Use the call evidence to request missing operational
+facts, and keep a dictionary match, a management assertion, verified
+implementation, and measured customer effects distinct in the
+recommendation.
 
 \end{document}

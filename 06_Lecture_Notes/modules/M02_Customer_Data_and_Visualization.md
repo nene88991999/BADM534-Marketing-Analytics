@@ -1194,3 +1194,115 @@ Keep a flag for each restriction and report the denominator before and after app
 The same principle applies to a chart. A segment with no observed outcomes should remain visible as a coverage issue when it belongs to the target population. Treating an unobserved response as zero changes the estimand. Removing that segment from the denominator can change the apparent success rate. A useful chart therefore pairs its outcome with a count or coverage measure and keeps the analysis population explicit.
 
 For an AI-assisted cleaning request, specify which transformations are mechanical corrections and which are analytical restrictions. Ask for a row-count reconciliation by reason, inspect several affected records locally, and compare the substantive result under reasonable alternative screens. The decision concerns whether the marketing recommendation remains supported for the intended customers.
+
+## 2.19 Earnings Calls: Disclosure Requires an Observed Document
+
+\noindent A retail communications manager wants to identify firms whose public pricing statements merit closer reading. The relevant population is the set of firms and calls available for review. Starting from a table of extracted matches selects documents on the outcome and overstates how frequently the topic appears. A firm roster, a call table, and a match table answer different questions and must retain their separate observation units.
+
+The supplied snapshot spans November 2, 2021 through November 2, 2026 and includes current-index constituents plus selected comparison firms. Its roster contains one firm, Winmark, with no supplied calls. Its Dollar Tree call dated September 3, 2025 has 53 recorded turns but zero recorded words. That record establishes an extraction problem requiring review; its zero dictionary count supplies no observed negative language outcome. The analysis preserves the record and assigns unknown language presence. All other supplied calls have positive word counts, although positive length alone does not establish transcript completeness.
+
+For observed call $c$, define $D_c=1$ when at least one core dictionary term occurs and $D_c=0$ otherwise. For a set of observed calls $\mathcal C$, the descriptive incidence is
+
+$$
+\widehat p_{\mathcal C}=\frac{\sum_{c\in\mathcal C}D_c}{|\mathcal C|}.
+$$
+
+The numerator counts calls once regardless of repeated occurrences. The denominator counts observed calls, including calls with no matches. Core terms occur in 112 of 2,325 observed calls, or 4.82%. Restricting the denominator to the 445 calls containing any core or broad term produces 25.17%. Both calculations use the same numerator. The latter measures a conditional share among already-retrieved documents and is unsuitable as the overall disclosure frequency.
+
+![The same 112 core-positive calls yield 4.82 percent among 2,325 observed calls and 25.17 percent among 445 calls with any dictionary match. Selecting documents on a match changes the population.](../figures/M02_calls_denominator.png)
+
+A match-level merge would repeat the call's word count once per occurrence. Aggregate occurrences to call before joining, verify the keys, and reconcile every term count against the supplied call totals. The roster summary distinguishes firms with observed zero-match calls from a firm with no observed calls. The supplied sectors and current-index selection also make the results descriptive of this corpus; a comparison across sectors does not estimate market-wide adoption.
+
+The [earnings-call data dictionary](../../03_Data_and_Code/Earnings_Calls/DATA_DICTIONARY.md) records units, flags, and provenance. The following program verifies identifiers, group membership, dictionary counts, word totals, and roster coverage before computing the denominator comparison. Its flags preserve the original records.
+
+Python source: [assessment.py](../../03_Data_and_Code/Earnings_Calls/assessment.py). From `03_Data_and_Code/Earnings_Calls`, run `python assessment.py`. Python, pandas, and NumPy are required; the committed metadata supply all inputs.
+
+```python
+"""Assess keys, counts, coverage, and missing text before measuring disclosure."""
+from pathlib import Path
+import json
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+
+
+def load_checked():
+    calls = pd.read_csv(HERE / 'data/calls.csv', parse_dates=['call_date'])
+    mentions = pd.read_csv(HERE / 'data/mentions.csv', parse_dates=['call_date'])
+    firms = pd.read_csv(HERE / 'data/firms.csv')
+    dictionary = pd.read_csv(HERE / 'data/dictionary.csv')
+    for frame, key in [(calls, 'call_id'), (mentions, 'mention_id'),
+                       (firms, 'ticker'), (dictionary, 'term_id')]:
+        assert frame[key].notna().all() and frame[key].is_unique, key
+    assert set(calls.ticker) <= set(firms.ticker)
+    assert set(mentions.call_id) <= set(calls.call_id)
+    assert set(mentions.term_id) <= set(dictionary.term_id)
+    counts = [x for x in calls if x.startswith(('n_', 'words_'))]
+    assert calls[counts].notna().all().all()
+    assert (calls[counts] >= 0).all().all()
+    assert (calls[counts] % 1 == 0).all().all()
+    assert (calls.words_management + calls.words_analyst <= calls.words_total).all()
+    merged = mentions.merge(calls[['call_id', 'ticker', 'call_date']],
+                            on='call_id', validate='many_to_one', suffixes=('', '_call'))
+    assert merged.ticker.eq(merged.ticker_call).all()
+    assert merged.call_date.eq(merged.call_date_call).all()
+    labels = mentions.merge(dictionary[['term_id', 'tier', 'category']],
+                            on='term_id', validate='many_to_one', suffixes=('', '_dict'))
+    assert labels.tier.eq(labels.tier_dict).all()
+    assert labels.category.eq(labels.category_dict).all()
+    actual = mentions.groupby(['call_id', 'term_id']).size().unstack(fill_value=0)
+    actual = actual.reindex(index=calls.call_id, columns=dictionary.term_id, fill_value=0)
+    expected = calls.set_index('call_id')[['n_' + x for x in dictionary.term_id]]
+    assert np.array_equal(actual.to_numpy(), expected.to_numpy())
+    for tier in ['core', 'broad']:
+        terms = dictionary.loc[dictionary.tier.eq(tier), 'term_id']
+        assert np.array_equal(actual[terms].sum(axis=1), calls['n_' + tier])
+    roster_count = calls.groupby('ticker').size().reindex(firms.ticker, fill_value=0)
+    assert np.array_equal(roster_count, firms.n_calls_in_window)
+    calls['text_observed'] = calls.words_total.gt(0)
+    calls['qa_detected'] = calls.qa_start_turn.ge(0)
+    calls['has_core'] = calls.n_core.gt(0).astype(float).where(calls.text_observed)
+    calls['has_any'] = (calls.n_core + calls.n_broad).gt(0)
+    assert calls.loc[~calls.text_observed, ['n_core', 'n_broad']].eq(0).all().all()
+    return calls, mentions, firms, dictionary
+
+
+def firm_coverage(calls, firms):
+    summary = calls.groupby('ticker').agg(
+        calls_supplied=('call_id', 'size'), calls_observed=('text_observed', 'sum'),
+        core_positive_calls=('has_core', 'sum'))
+    output = firms[['ticker', 'company', 'group']].merge(
+        summary, on='ticker', how='left', validate='one_to_one')
+    cols = ['calls_supplied', 'calls_observed', 'core_positive_calls']
+    output[cols] = output[cols].fillna(0).astype(int)
+    output['core_call_rate'] = output.core_positive_calls.div(
+        output.calls_observed.replace(0, np.nan))
+    return output
+
+
+def main():
+    calls, mentions, firms, dictionary = load_checked()
+    out = HERE / 'results'; out.mkdir(exist_ok=True)
+    calls[['call_id', 'text_observed', 'qa_detected', 'has_core']].to_csv(
+        out / 'call_status.csv', index=False)
+    firm_coverage(calls, firms).to_csv(out / 'firm_coverage.csv', index=False)
+    report = {
+        'supplied_calls': len(calls), 'observed_calls': int(calls.text_observed.sum()),
+        'missing_text_ids': calls.loc[~calls.text_observed, 'call_id'].tolist(),
+        'undetected_qa_calls': int((~calls.qa_detected).sum()),
+        'core_positive_calls': int(calls.has_core.sum()), 'matches': len(mentions),
+        'core_matches': int(mentions.tier.eq('core').sum()),
+        'firms_in_roster': len(firms), 'firms_with_calls': calls.ticker.nunique(),
+        'positive_only_denominator': int(calls.has_any.sum()),
+        'wrong_positive_only_rate': float(calls.loc[calls.has_any, 'has_core'].mean()),
+        'observed_call_rate': float(calls.has_core.mean()),
+        'dictionary_terms': len(dictionary),
+    }
+    (out / 'assessment.json').write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == '__main__':
+    main()
+```

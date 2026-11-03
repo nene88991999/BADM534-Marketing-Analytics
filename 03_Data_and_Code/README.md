@@ -37,3 +37,7 @@ The [McBroken examples](McBroken/README.md) use the supplied restaurant-status d
 ## Generative-AI Demand
 
 The [GenAI demand cases](GenAI_Demand/README.md) cover public-signal measurement in M2, subscription retention and acquisition in M4, and price-model verification in M8. Three executed Python programs use the supplied public pageview capture and a separate synthetic subscription panel. Fixed-cohort comparisons, missing-date checks, event definitions, and an exact binary-logit benchmark support the interpretation. Eight counterexample tests, full Python in the notes, three Illinois-color TikZ figures, and source hashes accompany the cases.
+
+## Earnings-Call Pricing Communication
+
+The [earnings-call case](Earnings_Calls/README.md) uses supplied structured metadata for missing-text assessment in M2, text measurement and interpretation in M5, descriptive event comparisons in M6, and pricing evidence in M8. Four complete Python programs, nine counterexample tests, source hashes, and three TikZ figures support the case. Seven source-linked paraphrases distinguish price displays, business advertising, intentions, infrastructure, and claims about pricing use. Full transcript excerpts remain in the original local bundle.

@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\begin{axis}[at={(0cm,0)},anchor=south west,width=6.2cm,height=5.3cm,
+ ybar,bar shift=0pt,bar width=19pt,xmin=-.6,xmax=1.6,ymin=0,ymax=150,
+ xtick={0,1},xticklabels={Management,Analysts},ytick={0,50,100,150},
+ ylabel={Core Matches},ymajorgrids=true,nodes near coords,
+ tick label style={font=\fontsize{9}{11}\selectfont},
+ label style={font=\fontsize{10}{12}\selectfont},
+ yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+ every node near coord/.append style={font=\fontsize{10}{12}\selectfont},
+ point meta=explicit symbolic]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(0,127) [127]};
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates {(1,23) [23]};
+\end{axis}
+\begin{axis}[at={(7cm,0)},anchor=south west,width=6.2cm,height=5.3cm,
+ ybar,bar shift=0pt,bar width=19pt,xmin=-.6,xmax=1.6,ymin=0,ymax=0.105,
+ xtick={0,1},xticklabels={Management,Analysts},ytick={0,.025,.05,.075,.1},
+ ylabel={Matches per 10,000 Words},ymajorgrids=true,nodes near coords,
+ tick label style={font=\fontsize{9}{11}\selectfont},
+ label style={font=\fontsize{10}{12}\selectfont},
+ yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+ every node near coord/.append style={font=\fontsize{10}{12}\selectfont},
+ point meta=explicit symbolic]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(0,0.0761147301900626) [0.076]};
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates {(1,0.0832730207360683) [0.083]};
+\end{axis}
+\end{tikzpicture}

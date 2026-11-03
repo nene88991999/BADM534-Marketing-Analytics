@@ -10,7 +10,7 @@ Session 02. M2. 170 minutes.
 
 - Construct customer metrics with explicit populations and denominators.
 - Separate missing observations, zeros, and unmatched keys.
-- Assess changing coverage in mHealth and McBroken.
+- Assess changing coverage in mHealth, McBroken, and earnings-call records.
 
 ## Related Materials
 
@@ -19,6 +19,7 @@ Session 02. M2. 170 minutes.
 - [mHealth assessment](../03_Data_and_Code/mHealth/recurring_examples/README.md)
 - [McBroken data and code](../03_Data_and_Code/McBroken/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -164,17 +165,39 @@ Track duplicates before and after normalization. Location identity and status me
 
 Source: M2, Section 2.16.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 14: Coding Exercise: A Data Assessment
+## Slide 14: Earnings Calls: Missing Text and Zero Matches
 
-- Construct a roster-first activity table.
-- Report key uniqueness, unmatched rows, and zero-event customers.
-- Compare the fixed and conditional activity measures.
+- A communications team wants a complete reading population.
+- One supplied call has 53 turns but zero recorded words.
+- Retain the call as unknown and preserve firms with no matches.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S02 for the hand-checkable example. For the real case, use the mHealth common.py and m01.py programs in the stated dependency order. Their full source and environment appear in the lecture notes.
+The roster contains 123 firms, of which 122 have supplied calls. Winmark has no supplied calls. The empty Dollar Tree call cannot establish absence of pricing language. Observed calls with no matches have a different status.
+
+Source: M2, Section 2.19, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 15: Selecting Matches Changes the Denominator
+
+The same 112 positive calls, with two different populations.
+
+**Figure description:** The full observed-call rate is 112/2,325 = 4.82%. Restricting the denominator to 445 calls with any core or broad match produces 25.17%.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_calls_denominator.tex)
+
+Start with the call table and aggregate match occurrences before joining. The conditional rate among retrieved documents overstates the overall language frequency when presented without its selected denominator.
+
+Source: M2, Section 2.19, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 16: Coding Exercise: A Data Assessment
+
+- Construct a roster-first activity or call table.
+- Separate observed zeros, missing text, and unmatched keys.
+- Reconcile the full and match-selected call denominators.
+
+Run assessment.py in ../03_Data_and_Code/Earnings_Calls. Verify 112/2,325 and 112/445; explain why Winmark has an unknown rate and observed no-match firms have zero rates. The customer aggregation exercise supplies a second application of the same roster-first principle.
 
 Source: M2, Section 2.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 15: AI Review of a Parser
+## Slide 17: AI Review of a Parser
 
 - Supply the allowed statuses and a tiny labeled example.
 - Require an explicit unknown category for new statuses.
@@ -184,7 +207,7 @@ A program that treats every unrecognized status as available can create artifici
 
 Source: M2, Section 2.16.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 16: A Data Dictionary for Decisions
+## Slide 18: A Data Dictionary for Decisions
 
 - State the unit, key, timing, and units of each variable.
 - Record source versions and transformation rules.
@@ -194,7 +217,7 @@ A reader should be able to trace a plotted rate to its numerator and denominator
 
 Source: M2, Section 2.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 17: Privacy and Collection Choices
+## Slide 19: Privacy and Collection Choices
 
 - Collect the fields needed for the stated decision.
 - Retain source permissions and deletion or retention conditions.
@@ -204,7 +227,7 @@ Combining datasets can change what can be inferred even when each file omits nam
 
 Source: ETHICS_AND_REGULATION.md, M2.
 
-## Slide 18: Measurement Discussion
+## Slide 20: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?

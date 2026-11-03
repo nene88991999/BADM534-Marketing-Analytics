@@ -1,0 +1,106 @@
+{
+  "title": "Earnings Calls: Pricing Communication",
+  "prepared_on": "2026-11-02",
+  "source": "Instructor-supplied pricing_risk_earnings_calls bundle",
+  "underlying_provider": "ROIC.ai; call-specific URLs retained in calls.csv",
+  "observation_window": [
+    "2021-11-02",
+    "2026-11-02"
+  ],
+  "collection_status": "Supplied snapshot; live collection was not rerun. Source notes report November 2-3, 2026; exact retrieval timing is unverified.",
+  "rights": "No open license supplied for underlying transcripts. This export contains structured counts, identifiers, URLs, and dictionary patterns; transcript sentences, contexts, titles, and speaker names are omitted. No transcript republication license is implied.",
+  "transformations": "Column selection only; original counts and heuristic roles are preserved. Analysis flags missing text separately.",
+  "files": [
+    {
+      "source_file": "data/calls.csv",
+      "source_sha256": "db4d29adc95b125e95a0a842946d2a6526f811d838d561df6ec8f244657032e2",
+      "export_file": "data/calls.csv",
+      "export_sha256": "3fd96ab1fc60c96e80e0e8b5622f11eb540a5abd30eda60482508fb54ede769d",
+      "rows": 2326,
+      "columns": [
+        "call_id",
+        "ticker",
+        "company",
+        "group",
+        "call_date",
+        "fiscal_year",
+        "fiscal_quarter",
+        "source_url",
+        "n_turns",
+        "qa_start_turn",
+        "words_total",
+        "words_management",
+        "words_analyst",
+        "n_core",
+        "n_broad",
+        "n_dynamic_pricing",
+        "n_surge_pricing",
+        "n_demand_based_pricing",
+        "n_real_time_pricing",
+        "n_peak_time_pricing",
+        "n_variable_pricing",
+        "n_personalized_pricing",
+        "n_surveillance_pricing",
+        "n_algorithmic_pricing",
+        "n_ai_pricing",
+        "n_electronic_shelf_labels",
+        "n_esl_acronym",
+        "n_price_testing",
+        "n_price_optimization",
+        "n_pricing_engine_tools",
+        "n_digital_menu_boards",
+        "n_revenue_management",
+        "n_personalized_offers",
+        "n_fees_and_gouging"
+      ]
+    },
+    {
+      "source_file": "data/mentions.csv",
+      "source_sha256": "e13685b776794dd1c339400ad9d6e736db0cf8103a922007b1ba6a7756fbe6e5",
+      "export_file": "data/mentions.csv",
+      "export_sha256": "3b1f4f53280572cdbd351ee82469ae93b2f2215fb54414bc1d2ab63898e24e26",
+      "rows": 971,
+      "columns": [
+        "mention_id",
+        "call_id",
+        "ticker",
+        "call_date",
+        "term_id",
+        "category",
+        "tier",
+        "role",
+        "section",
+        "turn_index"
+      ]
+    },
+    {
+      "source_file": "data/firms.csv",
+      "source_sha256": "b6af48f538908f16a08ca98272e504efdaa773de4f84cc47db2abfd39ddcf176",
+      "export_file": "data/firms.csv",
+      "export_sha256": "e7ea758864c29072cc5d4972969a2dfe48c28148e18b096ef6aeabd386408d73",
+      "rows": 123,
+      "columns": [
+        "ticker",
+        "company",
+        "group",
+        "inclusion",
+        "n_calls_in_window",
+        "roic_transcript_list"
+      ]
+    },
+    {
+      "source_file": "data/dictionary.csv",
+      "source_sha256": "1ada2afae4574d8b8fa9dae8e7193fe495d8574026fa44e21d26ebe1dd406fa8",
+      "export_file": "data/dictionary.csv",
+      "export_sha256": "db7176d265bda0b30959384b8b4205dfc8ffaec3040ee21808be18025dff25ec",
+      "rows": 19,
+      "columns": [
+        "term_id",
+        "category",
+        "tier",
+        "regex",
+        "case_sensitive"
+      ]
+    }
+  ]
+}

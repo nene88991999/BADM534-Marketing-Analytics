@@ -2,12 +2,12 @@
   "verified_on": "2026-11-02",
   "artifacts": {
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 255,
-      "sha256": "a76698e403740573d771cd093735b32c3e35e6efbb5134754bb38fa5781a44d1"
+      "pages": 265,
+      "sha256": "68b809a93b8c2a1898499030ff24b324af6f9a5fc5e8beaf1d03c0d8844f572e"
     },
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 174,
-      "sha256": "87ca8fb97448aad45dbda793c8c731ba707fec1e6d49087efc6120b4e40ef9b7"
+      "pages": 185,
+      "sha256": "842472d7adb33778e3315629aa3cff9650efd9876816cf56f0312a9f9ba27d2f"
     }
   },
   "session_decks": 15,
@@ -20,11 +20,11 @@
     "local_companion_links_resolve": 254,
     "projected_python_snippets_executed": 13,
     "session_program_calculations_executed": 14,
-    "full_note_code_blocks_match_source_and_parse": 41,
+    "full_note_code_blocks_match_source_and_parse": 45,
     "retention_example_compared_with_independent_expected_values": true,
     "retention_figure_matches_aggregate_csv": true
   },
-  "execution_scope": "The synthetic calculation checks remain valid. This revision reran the mHealth data-quality and chart assessments, 16 mHealth logic checks, and five McBroken checks. It did not rerun every module analysis or downloaded reference notebook.",
+  "execution_scope": "This revision executed all four earnings-call analyses, nine counterexample checks, the new projected Python snippet, independent CSV count reconciliation, export hash checks, and all 45 note-code comparisons. Earlier calculation checks remain recorded below; unrelated analyses and downloaded collectors were not rerun.",
   "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
@@ -35,5 +35,23 @@
     "renamed_assessment_programs_reproduced_previous_results": 2,
     "matching_note_python_blocks": 41,
     "local_markdown_links_checked": 336
+  },
+  "earnings_call_checks": {
+    "analysis_programs_executed": 4,
+    "counterexample_tests_passed": 9,
+    "projected_python_snippets_executed_this_revision": 1,
+    "independent_csv_role_counts_and_exposures_agree": true,
+    "export_hashes_verified": 4,
+    "note_code_blocks_match": 45,
+    "new_or_updated_student_slide_pages_reviewed": 12,
+    "note_section_and_transition_pages_reviewed": 17,
+    "contents_pages_reviewed": 4,
+    "new_tikz_figures_checked_against_outputs_and_rendered": 3,
+    "presenter_session_07_compiled_and_new_figure_and_code_pages_reviewed": true,
+    "updated_student_decks_have_no_overfull_boxes_or_tex_errors": true,
+    "lecture_notes_have_no_overfull_boxes_or_tex_errors": true,
+    "local_markdown_links_checked": 345,
+    "session_count_duration_and_slide_counts_agree": true,
+    "portable_context_uses_reviewed_HEAD_resource_catalogs": true
   }
 }

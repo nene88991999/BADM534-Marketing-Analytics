@@ -18,6 +18,7 @@ Session 10. M6. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [McBroken policy analysis](../03_Data_and_Code/McBroken/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 
 ## Slide 1: Causal Comparisons and Policy Evaluation
 
@@ -81,7 +82,29 @@ The course case retains missing dates and unknown statuses. Those measurement is
 
 Source: M6, Section 6.16, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 7: Regression Discontinuity
+## Slide 7: Fewer Mentions Can Leave Incidence Unchanged
+
+Observed calls around February 27, 2024; same comparison firms in both windows.
+
+**Figure description:** In 90-day windows excluding the event day, the same 27 comparison firms have 27 calls each side. Occurrences fall from five to two, while two positive calls each side imply 7.41%.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_calls_windows.tex)
+
+The event is Wendy's dated public clarification of digital-menu intentions. In all available comparison calls, incidence falls from 2/27 to 2/34 as coverage expands. The firm group name does not establish an untreated counterfactual.
+
+Source: M6, Section 6.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 8: A Public Event Does Not Assign Treatment
+
+- Define the window, event-day exclusion, and observed-call denominator.
+- Compare common firms and alternative window lengths.
+- A causal claim needs exposure, a counterfactual, and a specified outcome.
+
+Run event_windows.py for 60-, 90-, and 120-day comparisons with call and firm weights. A change in communication is distinct from a change in pricing behavior or customer outcomes. Matching coverage removes one composition difference, not concurrent shocks.
+
+Source: M6, Section 6.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 9: Regression Discontinuity
 
 - Eligibility can change at a known score threshold.
 - Nearby units require continuity of other outcome determinants.
@@ -91,7 +114,7 @@ Manipulation of the score and discontinuities in other policies threaten the com
 
 Source: M6, Section 6.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 8: Instrumental Variables
+## Slide 10: Instrumental Variables
 
 - The instrument shifts treatment or price.
 - Exclusion restricts its other paths to the outcome.
@@ -101,7 +124,7 @@ Under the appropriate binary-treatment conditions, IV can identify a local effec
 
 Source: M6, Section 6.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 9: Recommendation Logs Select Exposure
+## Slide 11: Recommendation Logs Select Exposure
 
 - Frequent buyers may usually see product A.
 - Occasional buyers may usually see product B.
@@ -111,7 +134,7 @@ A logged outcome is observed after a selected display. A policy comparison must 
 
 Source: M6, Section 6.7.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 10: Exposure Adjustment Reverses the Ranking
+## Slide 12: Exposure Adjustment Reverses the Ranking
 
 Synthetic randomized logging within frequent and occasional buyer groups.
 
@@ -123,7 +146,7 @@ The constructed logging design gives A probability 0.90 for frequent buyers and 
 
 Source: M6, Section 6.7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 11: Inverse-Propensity Policy Value
+## Slide 13: Inverse-Propensity Policy Value
 
 Weight each observed outcome by target-policy probability over logging probability.
 
@@ -137,7 +160,7 @@ Identification requires the relevant exchangeability condition and positive logg
 
 Source: M6, Section 6.7.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 12: A Common-Population Calculation
+## Slide 14: A Common-Population Calculation
 
 Synthetic clicks and logging probabilities identify the two policy values.
 
@@ -156,7 +179,7 @@ An independent check averages the two group-specific response rates under equal 
 
 Source: M6, Section 6.7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 13: Support and Weight Concentration
+## Slide 15: Support and Weight Concentration
 
 - An action never shown to a group has no observed outcome there.
 - Large weights amplify a small number of records.
@@ -166,7 +189,7 @@ Zero support cannot be repaired by increasing a weight. Weight-concentration sum
 
 Source: M6, Section 6.7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 14: Spillovers Change the Outcome Comparison
+## Slide 16: Spillovers Change the Outcome Comparison
 
 Synthetic store network with effects beyond assigned units.
 
@@ -178,7 +201,7 @@ The chain-wide outcome may change less than the treated-store outcome. Assignmen
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 15: Coding Exercise: Policy Value
+## Slide 17: Coding Exercise: Policy Value
 
 - Reproduce raw rates and inverse-propensity values.
 - Check them using within-group averages.
@@ -188,7 +211,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S10. A correct impl
 
 Source: M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 16: Information and Exposure
+## Slide 18: Information and Exposure
 
 - A recommendation can draw attention to an item.
 - A personalized endorsement can also change beliefs.
@@ -198,7 +221,7 @@ The MovieLens experiment discussed in the notes distinguishes recommendation and
 
 Source: M6, Section 6.10.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 17: A Policy Value for Whom?
+## Slide 19: A Policy Value for Whom?
 
 - Clicks and sales can rise while customer value falls.
 - A causal estimate concerns the outcome that was actually measured.
@@ -208,7 +231,7 @@ A valid causal effect on conversion does not identify the welfare effect without
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 18: Causal-Design Discussion
+## Slide 20: Causal-Design Discussion
 
 - What would the treated group have experienced without the policy?
 - Which group or action lacks comparable support?

@@ -18,6 +18,7 @@ Session 14. M8. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [GenAI demand examples](../03_Data_and_Code/GenAI_Demand/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -175,7 +176,17 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 16: A Welfare Comparison
+## Slide 16: Pricing Language and Regulatory Evidence
+
+- Shelf infrastructure, price rules, and consumer effects are separate objects.
+- The FTC's January 2025 report describes research on pricing intermediaries.
+- Specify the practice and applicable authority before making a legal claim.
+
+The US FTC Section 6(b) staff research summaries report preliminary findings. This research publication has no rule effective date and supplies no legal finding against firms in the earnings-call sample. Use the source-linked cases from M5 to identify operational facts still needed.
+
+Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
+
+## Slide 17: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -194,7 +205,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 17: Coding Exercise: A Marketing Evaluation
+## Slide 18: Coding Exercise: A Marketing Evaluation
 
 - Verify a demand denominator and the workflow-time calculation.
 - Compute profit and customer value for alternative retention procedures.
@@ -204,7 +215,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics.
 
 Source: M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 18: A Decision With Consumer Outcomes
+## Slide 19: A Decision With Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

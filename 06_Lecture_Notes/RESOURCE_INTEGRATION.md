@@ -91,3 +91,16 @@ The supplied notebook's flow regression does not establish recovery of the dynam
 New conceptual material informs data boundaries, sample restrictions, claim support, retention, review provenance, experimentation, delivery, and adaptive objectives across M1–M8. The [integration guide](ETHICS_AND_REGULATION.md) maps the numbered note sections and session decks. Public legal propositions are checked against FTC and DOJ sources, with sector and procedural status retained.
 
 The new [retention calculation](../03_Data_and_Code/Lecture_Examples/retention_welfare.py) uses imposed probabilities and monetary stakes. Its CSV independently reconciles with a 100-customer calculation and supplies the new TikZ figure. It is an analytical illustration, not an estimate of customer responses. The [session examples](../03_Data_and_Code/Lecture_Examples/session_examples.py) reproduce the small projected calculations.
+
+## Earnings-Call Pricing Communication
+
+The newly supplied `pricing_risk_earnings_calls` bundle contributes 2,326 call records, 971 match records, a firm roster, a dictionary, collectors, and interpretation notes. The [course adaptation](../03_Data_and_Code/Earnings_Calls/README.md) retains factual metadata and adds seven source-linked paraphrases. It preserves the raw bundle locally and records original and exported hashes. The supplied collectors and starter analysis were inspected, not executed.
+
+| Notes and Session | Integration | Executed Program |
+| --- | --- | --- |
+| M2 §2.19; S02 | Missing transcript versus observed zero; roster retention; selection into retrieved calls | `assessment.py` |
+| M5 §5.14; S07 | Role exposure, quarterly support, substantive coding, and synthetic contrasts | `disclosure.py`, `construct_checks.py` |
+| M6 §6.18; S10 | Common firms, alternative windows, occurrence counts, and call incidence | `event_windows.py` |
+| M8 §8.16; S14 | Price rules, customer outcomes, and regulatory evidence | Interpretation table and M5 programs |
+
+All four programs and nine counterexample tests passed. Full code is embedded in the notes, and three generated TikZ figures reconcile to output tables. Dictionary precision, population adoption, causal event effects, and firm risk probabilities are not established by these data. Wendy's dated clarification and the FTC staff research document were checked as primary sources; other supplied event-list legal claims are not incorporated.

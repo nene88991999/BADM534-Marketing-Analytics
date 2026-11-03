@@ -40,3 +40,7 @@ The decks use the supplied 16:9 Beamer format with parchment backgrounds, Illino
 Edit [source/sessions.json](source/sessions.json) and [theme.tex](theme.tex), then use [the build commands](BUILD.md) to refresh LaTeX, Markdown, and PDF together. Follow [AGENTS.md](AGENTS.md) when revising content or using these materials with an assistant.
 
 Markdown companions identify the session and module, learning objectives, slide-number anchors, chart descriptions, definitions, equations, and referenced resources. Record the version in `session_plan.json`; identify omissions when preparing a shorter summary and link related labs when available.
+
+## Earnings-Call Worked Example
+
+Sessions 02, 07, 10, and 14 now use the [earnings-call case](../03_Data_and_Code/Earnings_Calls/README.md). The case covers missing documents, selected denominators, role-specific word exposure, interpretation of pricing language, event-window comparisons, and regulatory evidence. Session 07 uses its worked-comparison and Python blocks for this case; the meeting remains 170 minutes. The four analysis programs and nine tests ran successfully. Complete code appears in the module notes.

@@ -574,3 +574,58 @@ For a cancellation experiment, define eligibility before assignment and retain e
 The procedure includes the customer's opportunity to refuse optional retention content. If a customer must first undergo the intervention to discover how to decline it, the refusal path changes the treatment itself. A comparison of optional and compulsory interaction can therefore require different treatment definitions even when the last screen is identical. Describe the complete assigned sequence before interpreting the estimated effect.
 
 Under the model in Section 8.14, firm and customer interests are opposed for the same renewal. Accurate experimentation then helps the firm select the procedure with the largest customer loss within the available set. This conditional result follows from the stakes and objective. When a better product increases both willingness to pay and firm profit, the same experiment can instead select a mutually beneficial change. The empirical task is to measure the consequences that distinguish those settings.
+
+## 6.18 Earnings Calls: A Public Clarification and the Event Window
+
+\noindent A communications manager wants to understand whether pricing language changed around a public clarification. [Wendy's February 27, 2024 statement](https://www.wendys.com/blog/wendys-digital-news-update) described intended uses of digital menu boards and rejected the interpretation that the company planned higher prices at its busiest times. That dated company statement supplies an observable event. It does not establish realized prices or customer responses.
+
+Define a before window from 90 through one calendar day before the statement and an after window from one through 90 days after it. Exclude calls on the event day because within-day ordering is unavailable. Use calls with observed text and report both all available firms and firms appearing in both windows. The comparison is the change in the fraction of calls containing core language. A separate firm-equal calculation first averages calls within firm and period, then averages those firm rates, so extra captured calls do not increase a firm's weight.
+
+In the common-firm comparison group, each window contains one call from each of 27 firms. Core occurrences fall from five to two, while the number of positive calls remains two in each window. Incidence therefore remains 2/27, or 7.41%. In the full available comparison sample, the apparent call rate falls from 2/27 to 2/34 as coverage expands. These are distinct sources of an apparent change: repeated language within calls and the number of observed calls.
+
+![For the same 27 comparison firms and 27 calls per 90-day window, core occurrences fall from five to two while two calls contain a match in each period. Call incidence remains 7.41 percent. The event day is excluded.](../figures/M06_calls_windows.png)
+
+The event is shared public information, and the group named comparison in the supplied data is an industry classification rather than a verified untreated group. Earnings-call timing, business conditions, and disclosure choices also vary. Even a measured change in disclosure would leave adoption and customer effects as separate outcomes. A causal design would need a specified exposure, a defensible counterfactual disclosure path, stable measurement, and uncertainty that accounts for repeated firms. Matching firm coverage addresses composition alone.
+
+The program repeats the descriptive calculation with 60-, 90-, and 120-day windows and reports counts, call-weighted rates, and firm-equal rates. Compare these prespecified windows before writing an explanation for a selected result. Reconcile the numerator and denominator separately, then identify the evidence needed for any causal claim.
+
+Python source: [event_windows.py](../../03_Data_and_Code/Earnings_Calls/event_windows.py). From `03_Data_and_Code/Earnings_Calls`, run `python event_windows.py`. Python, pandas, and NumPy are required; the committed metadata supply all inputs.
+
+```python
+"""Describe call-level language around a public clarification; no causal effect."""
+import pandas as pd
+from assessment import HERE, load_checked
+
+
+def compare_windows(calls, event='2024-02-27', days=90):
+    date = pd.Timestamp(event)
+    d = calls.loc[calls.text_observed].copy()
+    delta = (d.call_date - date).dt.days
+    # Exclude the event day because within-day ordering is unavailable.
+    d = d.loc[delta.between(-days, -1) | delta.between(1, days)].copy()
+    d['period'] = d.call_date.gt(date).map({False: 'before', True: 'after'})
+    common = d.groupby('ticker').period.nunique()
+    common = common[common.eq(2)].index
+    rows = []
+    for sample, panel in [('available_calls', d), ('firms_in_both_windows', d[d.ticker.isin(common)])]:
+        for (group, period), part in panel.groupby(['group', 'period']):
+            rows.append({'window_days': days, 'sample': sample, 'group': group,
+                         'period': period, 'firms': part.ticker.nunique(),
+                         'calls': len(part), 'positive_calls': int(part.has_core.sum()),
+                         'core_matches': int(part.n_core.sum()),
+                         'share_percent': 100 * part.has_core.mean(),
+                         'firm_equal_share_percent': 100 * part.groupby('ticker').has_core.mean().mean()})
+    return pd.DataFrame(rows)
+
+
+def main():
+    calls, _, _, _ = load_checked()
+    results = pd.concat([compare_windows(calls, days=n) for n in [60, 90, 120]])
+    results.to_csv(HERE / 'results/event_windows.csv', index=False)
+    print(results[results.window_days.eq(90)].round(4).to_string(index=False))
+
+
+if __name__ == '__main__':
+    (HERE / 'results').mkdir(exist_ok=True)
+    main()
+```

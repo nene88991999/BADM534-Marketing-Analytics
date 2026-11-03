@@ -40,3 +40,9 @@ For a proposed marketing action, identify the customer population, the informati
 ## Incorporating New Material
 
 New references should change the relevant method, example, figure, or coding check wherever the argument applies. Update the affected module notes and session companions together, then update the [session plan](../05_Slides/SESSION_PLAN.md), syllabus planning documents, and [resource integration map](RESOURCE_INTEGRATION.md). Check legal propositions against primary sources and record status and scope. Incorporate the instructor's own ideas directly into course explanations without naming, citing, linking, or uploading the underlying papers.
+
+## Pricing Communication and the Scope of Evidence
+
+M8 §8.16 and Session 14 connect the earnings-call case to operational pricing rules and customer outcomes. The [FTC January 2025 staff research summaries](https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf), pp. 1–3, concern US intermediary tools. Status: research publication under Section 6(b); no rule effective date. Checked November 2, 2026. The document supplies no finding against firms in the teaching corpus.
+
+The [February 27, 2024 Wendy's statement](https://www.wendys.com/blog/wendys-digital-news-update) supplies a company clarification date for M6 §6.18. Its assertions establish what the company communicated, with realized practices and outcomes requiring separate evidence. No causal effect or broader legal status is inferred from that event.
