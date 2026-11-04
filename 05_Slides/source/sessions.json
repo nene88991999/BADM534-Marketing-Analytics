@@ -113,6 +113,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Code Errors and Missing Evidence",
+        "bullets": [
+          "A repeated daily total requires a correction to aggregation.",
+          "Unrecorded food requires additional measurement or a recorded-behavior target.",
+          "A coupon decision needs evidence about untreated outcomes."
+        ],
+        "notes": "The response to a failed analysis depends on the unresolved distinction. Ask for the smallest check that could distinguish a calculation error from missing information. A new model can improve implementation while leaving the missing-information problem unchanged. A validated category summary can also remove unnecessary prose generation when the decision only needs category totals.",
+        "source": "Marketing Analytics Lecture Notes, M1 §1.12."
+      },
+      {
+        "kind": "bullets",
         "title": "Verification With Counterexamples",
         "bullets": [
           "A duplicate lookup must trigger a failed key check.",
@@ -204,10 +215,11 @@
       "[M1 lecture notes](../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[mHealth dictionary](../03_Data_and_Code/mHealth/DATA_DICTIONARY.md)",
-      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
     ],
-    "practice": "Implement and assess order aggregation with three deliberately altered inputs.",
-    "application": "Write a 30-day coupon specification and identify its missing causal evidence."
+    "practice": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
+    "application": "Write a coupon specification and identify the evidence needed to resolve its causal question."
   },
   {
     "number": 2,
@@ -1012,6 +1024,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Customer Alternatives and AI Pricing",
+        "bullets": [
+          "Customer value depends on the offered outcome and implementation effort.",
+          "Better tools can make internal analysis a stronger alternative.",
+          "Lower seller costs and lower willingness to pay can occur together."
+        ],
+        "notes": "Under a quasilinear comparison, the buyer price ceiling is delivered value minus buyer burden and outside-option utility. Use a common customer and horizon. Product design can reduce integration and verification effort, while competitive improvements raise the value of the alternative. The conditional numerical comparison appears in Session 14 and M8 §8.17.",
+        "source": "Marketing Analytics Lecture Notes, M4 §4.16."
+      },
+      {
+        "kind": "bullets",
         "title": "Price Presentation and Customer Understanding",
         "bullets": [
           "A base price and a mandatory fee determine the total paid.",
@@ -1036,10 +1059,11 @@
     "links": [
       "[M4 lecture notes](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
-      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
     ],
-    "practice": "Simulate a new bundle, the outside option, and portfolio contribution.",
-    "application": "Specify a choice experiment for an mHealth paid plan without inferring payment behavior from logging."
+    "practice": "Calculate choice probabilities and assess the role of a stronger customer alternative.",
+    "application": "Compare product value, implementation burden, substitution, and the outside option."
   },
   {
     "number": 6,
@@ -1441,6 +1465,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Prompt Revision Uses Evaluation Evidence",
+        "bullets": [
+          "A passage used to revise a prompt becomes development material.",
+          "Keep passages from one call together when constructing a split.",
+          "Freeze the prompt and reference-label procedure before fresh evaluation."
+        ],
+        "notes": "A test on new firms addresses a different deployment population from a test on later calls from familiar firms. Repeated passages are not independent firm-level replications. Evaluate a competent dictionary baseline with the same eligible evidence. Once final labels guide a revision, a later confirmation needs new evidence or a justified adaptive-evaluation design.",
+        "source": "Marketing Analytics Lecture Notes, M5 §5.15."
+      },
+      {
+        "kind": "bullets",
         "title": "Network Objects",
         "bullets": [
           "Nodes identify customers or accounts.",
@@ -1509,10 +1544,11 @@
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[mHealth text code](../03_Data_and_Code/mHealth/recurring_examples/m05.py)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)"
+      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
     ],
-    "practice": "Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.",
-    "application": "Distinguish pricing communication from adoption, then compare text-topic weights and network brokerage."
+    "practice": "Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.",
+    "application": "Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations."
   },
   {
     "number": 8,
@@ -1801,14 +1837,32 @@
         "source": "M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
+        "kind": "figure",
+        "title": "Model and Library Contributions",
+        "figure": "../06_Lecture_Notes/figures/M06_ai_factorial.tex",
+        "caption": "Synthetic counts: 100 assigned tasks per condition; common rubric and resource limits.",
+        "description": "Without the library, passing tasks rise from 60% with the earlier model to 65% with the newer model. With the library, they rise from 70% to 85%. The library gain increases from 10 to 20 percentage points.",
+        "notes": "The interaction is ten percentage points. Moving from the initial condition to the newer model with the library improves the imposed rate by twenty-five points. Independent assignments, valid reference outcomes, and fresh tasks would be required for an empirical causal comparison. These counts are constructed, with unfinished tasks counted as failures.",
+        "source": "Marketing Analytics Lecture Notes, M6 §6.19."
+      },
+      {
+        "kind": "code",
+        "title": "An Interaction Calculation",
+        "intro": "The four rates are imposed teaching inputs.",
+        "code": "q00, q01, q10, q11 = 0.60, 0.70, 0.65, 0.85\nmodel_alone = q10 - q00\nlibrary_after_model = q11 - q10\ninteraction = (q11-q10) - (q01-q00)\nassert round(interaction, 2) == 0.10\nassert round(model_alone + library_after_model, 2) == 0.25",
+        "check": "A joint gain does not uniquely allocate the interaction to either component.",
+        "notes": "Run factorial.py to reproduce both paths to the joint change using exact rational arithmetic. Randomize at the team or project level when outputs share personnel, prompts, or helper code. Record actual cost alongside pass rates and resource ceilings.",
+        "source": "M6 §6.19. ../03_Data_and_Code/AI_Workflows/factorial.py"
+      },
+      {
         "kind": "bullets",
         "title": "Coding Exercise: An Experiment Plan",
         "bullets": [
-          "Compute the synthetic email effect and interval.",
+          "Compute the factorial contrasts alongside the email effect.",
           "Change contribution, delivery cost, and the target effect.",
           "Specify an mHealth recommendation assignment with a fixed user denominator."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation.",
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.",
         "source": "M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
@@ -1849,10 +1903,11 @@
       "[M6 lecture notes](../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[mHealth experiment planning](../03_Data_and_Code/mHealth/recurring_examples/m06.py)",
-      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
     ],
-    "practice": "Reproduce the email effect, confidence interval, contribution, and power calculation.",
-    "application": "Design a user-randomized recommendation test with pre-treatment adjustment and explicit guardrails."
+    "practice": "Calculate an email effect and decompose a synthetic model-by-library comparison.",
+    "application": "Design a randomized comparison with a common rubric and an appropriate assignment unit."
   },
   {
     "number": 10,
@@ -2101,6 +2156,15 @@
         "source": "M7, Section 7.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
+        "kind": "figure",
+        "title": "Selection on Development Accuracy",
+        "figure": "../06_Lecture_Notes/figures/M07_repeated_selection.tex",
+        "caption": "Synthetic independent chance predictions: 80 development cases per candidate.",
+        "description": "Expected selected development accuracy rises from 50% for one candidate to 56.49%, 60.40%, and 63.93% for five, twenty, and one hundred candidates. Expected fresh accuracy stays at 50%.",
+        "notes": "Each candidate has true accuracy one-half under the imposed independent Bernoulli model. The maximum development score increases with the number compared. Fresh test correctness is independent of selection. The program verifies the analytic expectation and simulates 2,000 repetitions with 200 test cases. Real prompt candidates can be correlated, so the magnitude is illustrative.",
+        "source": "Marketing Analytics Lecture Notes, M7 §7.20."
+      },
+      {
         "kind": "bullets",
         "title": "The Forecast Origin",
         "bullets": [
@@ -2237,12 +2301,12 @@
         "kind": "bullets",
         "title": "Coding Exercise: A Forecast Evaluation",
         "bullets": [
-          "Create training, validation, and later test windows.",
+          "Compare development and fresh accuracy after candidate selection.",
           "Check every feature against the forecast date.",
           "Compare a simple baseline, ranking, and calibration.",
           "Report missing outcomes beside the test metrics."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions.",
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.",
         "source": "M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
@@ -2272,10 +2336,11 @@
       "[M7 lecture notes](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[McBroken prediction case](../03_Data_and_Code/McBroken/README.md)",
-      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
     ],
-    "practice": "Assess a chronological split and compare accuracy, precision, recall, and calibration.",
-    "application": "Translate a forecast into a capacity-constrained action and check missing future labels."
+    "practice": "Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.",
+    "application": "Choose a forecast, split, and decision threshold using the intended deployment population."
   },
   {
     "number": 12,
@@ -2719,6 +2784,15 @@
         "source": "M8, Section 8.13.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
+        "kind": "figure",
+        "title": "Seller Costs and Customer Alternatives",
+        "figure": "../06_Lecture_Notes/figures/M08_ai_price_bounds.tex",
+        "caption": "Hypothetical dollars per customer, conditional on 50 sales.",
+        "description": "The initial seller floor is 40 dollars and buyer ceiling 80. Seller automation lowers the floor to 30 while the ceiling stays 80. Shared adoption raises outside-option utility and lowers the ceiling to 20, below the 30-dollar floor.",
+        "notes": "Delivered value is 200 dollars, buyer burden 40, and fixed cost 1,000. Unit cost falls from 20 to 10. Outside-option utility then rises from 80 to 140. Gray intervals indicate simultaneous weak participation and cost recovery. Volume and valuations are imposed; these bounds neither estimate demand nor solve a pricing equilibrium. Customers are indifferent at the ceiling.",
+        "source": "Marketing Analytics Lecture Notes, M8 §8.17.2."
+      },
+      {
         "kind": "bullets",
         "title": "AI Workflow Quality",
         "bullets": [
@@ -2737,6 +2811,26 @@
         "description": "Manual production and review total 110 minutes. Assisted production and review total 85 minutes, a 22.7% total reduction despite a 50% drafting-time reduction.",
         "notes": "The manual workflow uses 90 minutes to produce and 20 to review. The assisted workflow uses 45 and 40. These are imposed time inputs, not an estimate of a universal AI effect.",
         "source": "M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Reuse Has a Break-Even Workload",
+        "figure": "../06_Lecture_Notes/figures/M08_reuse_costs.tex",
+        "caption": "Hypothetical equal-quality work: six setup hours, with adaptation included.",
+        "description": "The existing process takes two hours per use. The reusable process takes six setup hours plus 1.5 hours per use, including upkeep. The lines cross at twelve uses and total 48 versus 42 hours at twenty-four uses.",
+        "notes": "Execution alone falls from two hours to 1.25, but 0.25 upkeep hours are required per use. Net savings become positive at the thirteenth use. Twenty-four uses save six hours, a 12.5% reduction after setup and upkeep. The numbers are imposed and do not measure course development time. Run investment.py and vary upkeep or workload.",
+        "source": "Marketing Analytics Lecture Notes, M8 §8.17.1."
+      },
+      {
+        "kind": "bullets",
+        "title": "Model Updates and Unresolved Tasks",
+        "bullets": [
+          "Connect an update to a recorded difficulty and a feasible comparison.",
+          "Evaluate the frozen challenger and current procedure on fresh cases.",
+          "Include setup, correction, and maintenance in the adoption decision."
+        ],
+        "notes": "Record actual access, supported inputs, failure conditions, and the original decision. A difficulty register can omit an unexpected useful route, so allow exploratory comparisons and revise the diagnosis. Retain the existing procedure when the challenger provides no supported improvement. A new schema or customer population can require revalidation of a retained helper.",
+        "source": "Marketing Analytics Lecture Notes, M8 §8.18."
       },
       {
         "kind": "bullets",
@@ -2835,11 +2929,11 @@
         "kind": "bullets",
         "title": "Coding Exercise: A Marketing Evaluation",
         "bullets": [
-          "Verify a demand denominator and the workflow-time calculation.",
+          "Calculate reuse break-even and the conditional price interval.",
           "Compute profit and customer value for alternative retention procedures.",
           "Propose an interface change and the evidence needed to evaluate it."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs.",
+        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.",
         "source": "M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
@@ -2859,10 +2953,11 @@
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[GenAI demand examples](../03_Data_and_Code/GenAI_Demand/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)"
+      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
     ],
-    "practice": "Assess demand and workflow measurements, then calculate a conditional retention-welfare example.",
-    "application": "Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status."
+    "practice": "Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.",
+    "application": "Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules."
   },
   {
     "number": 15,

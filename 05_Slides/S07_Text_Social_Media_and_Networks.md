@@ -19,6 +19,7 @@ Session 07. M5. 170 minutes.
 - [mHealth text code](../03_Data_and_Code/mHealth/recurring_examples/m05.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
+- [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -229,7 +230,17 @@ Run construct_checks.py for eight synthetic sentences. A purposeful case set can
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 19: Network Objects
+## Slide 19: Prompt Revision Uses Evaluation Evidence
+
+- A passage used to revise a prompt becomes development material.
+- Keep passages from one call together when constructing a split.
+- Freeze the prompt and reference-label procedure before fresh evaluation.
+
+A test on new firms addresses a different deployment population from a test on later calls from familiar firms. Repeated passages are not independent firm-level replications. Evaluate a competent dictionary baseline with the same eligible evidence. Once final labels guide a revision, a later confirmation needs new evidence or a justified adaptive-evaluation design.
+
+Source: Marketing Analytics Lecture Notes, M5 §5.15.
+
+## Slide 20: Network Objects
 
 - Nodes identify customers or accounts.
 - Edges represent a defined relationship in a time window.
@@ -239,7 +250,7 @@ An edge could mean following, messaging, purchasing together, or co-occurrence. 
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 20: Few Links Can Connect Separate Groups
+## Slide 21: Few Links Can Connect Separate Groups
 
 Synthetic undirected network. R has only two links.
 
@@ -251,7 +262,7 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 21: Coding Exercise: A Label Assessment
+## Slide 22: Coding Exercise: A Label Assessment
 
 - Run the earnings-call assessment and role-exposure calculation.
 - Test denial, future intention, and a missed paraphrase.
@@ -261,7 +272,7 @@ Use ../03_Data_and_Code/Earnings_Calls/README.md and LLM_EXERCISES.md. The mHeal
 
 Source: M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 22: Engagement and Commercial Value
+## Slide 23: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -271,7 +282,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 23: Authenticity of Reviews and Endorsements
+## Slide 24: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -281,7 +292,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 24: Text-Analysis Discussion
+## Slide 25: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 2, 2026\par}
+{\large November 4, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -981,6 +981,69 @@ their denominators. Students can inspect generated code for file
 uploads, external API calls, and unnecessary exports before running it.
 These checks concern observable data flows and preserve the ability to
 reproduce the local analysis.
+
+\hypertarget{M01-a-failed-analysis-can-require-different-evidence}{%
+\section{A Failed Analysis Can Require Different
+Evidence}\label{M01-a-failed-analysis-can-require-different-evidence}}
+
+\noindent \noindent A manager commissioning an AI-assisted analysis must choose
+what to change when the answer remains unreliable. A wrong join requires
+a correction to the program. A missing observation requires an
+information decision. A poorly defined target requires a clearer
+managerial question. These diagnoses lead to different uses of time and
+money, even when all three failures initially appear as an
+unsatisfactory answer from the same assistant.
+
+The mHealth records make the distinction concrete. Repeated daily totals
+can be counted once using the user-day key, and a join can preserve the
+intended cohort. Those changes improve calculations on recorded
+information. Food consumed without a corresponding log remains
+unobserved. Estimating total consumption would require additional
+measurement or assumptions linking logging to consumption. An analysis
+of recorded food categories can instead proceed with its population and
+outcome stated explicitly.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Difficulty & Useful Response & Evidence of Resolution \\
+\midrule
+
+Daily totals are repeated across food entries & Correct aggregation at
+the user-day level & Reconcile one day by hand and compare totals \\
+An item description maps to several categories & Obtain a reference
+label or retain the ambiguity & Evaluate separately adjudicated
+descriptions \\
+Food consumption was never recorded & Collect additional evidence or
+define a recorded-behavior outcome & Check the measurement process and
+stated population \\
+A coupon model predicts response but the decision requires
+incrementality & Establish an untreated comparison & Evaluate assignment
+and contribution over a common horizon \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A useful request to a coding assistant states the decision, the
+unresolved distinction, and the smallest check that could resolve it.
+For example: ``Construct one row per observed user-day, retain unmatched
+daily records, and reconcile item calories with one copy of the daily
+total. Identify which conclusions would additionally require unrecorded
+consumption.'' The request gives the assistant a verifiable task while
+keeping the missing-information question visible.
+
+An alternative procedure can also remove a costly intermediate step. If
+a campaign decision requires category totals, a validated category
+aggregation may avoid generating individual prose summaries that nobody
+uses. The required customer protections and analytical meaning remain
+fixed. Simplification is valuable when the resulting output still
+answers the decision and passes its checks. Reusable functions then
+become investments whose subsequent benefits and maintenance costs can
+be compared, as in M8, Section 8.17.
 
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
@@ -4977,6 +5040,40 @@ in the
 \href{https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions}{FTC's
 rule guidance}.
 
+\hypertarget{M04-ai-services-buyer-burden-and-the-outside-option}{%
+\section{AI Services, Buyer Burden, and the Outside
+Option}\label{M04-ai-services-buyer-burden-and-the-outside-option}}
+
+\noindent \noindent A firm pricing an analytics service needs to understand the
+customer's best alternative. A customer may buy a competing service,
+conduct the analysis internally, or leave the decision unchanged. AI
+assistance can improve each of those alternatives. A reduction in the
+seller's coding cost therefore need not increase the amount a customer
+will pay.
+
+Let \(v\) be a customer's monetary-equivalent value of the delivered
+analysis over a specified period, \(b\) its setup and verification
+burden, and \(u_0\) the net value of its best alternative. Under
+quasilinear utility, the customer weakly prefers purchase at price \(p\)
+when \(v-p-b\geq u_0\). Its price ceiling is \(v-b-u_0\). All four
+objects refer to the same customer and horizon. The burden includes the
+customer's required effort after delivery; the outside option already
+includes the costs of pursuing that alternative.
+
+Product design can raise this ceiling by making the output more useful
+or reducing integration and verification effort. Competitive
+improvements raise \(u_0\) and reduce the ceiling, holding the offered
+product fixed. A conjoint exercise should represent realistic
+alternatives and implementation requirements. Preference estimates
+obtained before customers gain access to a substantially improved
+alternative may require new validation.
+
+The conditional pricing calculation in M8, Section 8.17, compares this
+participation ceiling with the seller's cost recovery requirement. The
+interval can disappear even when the seller becomes more productive.
+Measuring actual take-up, substitution, and customer effort is necessary
+before treating the assumed sales volume as a forecast.
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -5978,6 +6075,43 @@ reviewer can see why a firm was selected. A no-match firm remains in the
 coverage table, and absent text remains unknown. Pricing behavior,
 consumer outcomes, and legal exposure require observations beyond
 disclosure counts.
+
+\hypertarget{M05-repeated-prompt-revision-and-independent-text-evaluation}{%
+\section{Repeated Prompt Revision and Independent Text
+Evaluation}\label{M05-repeated-prompt-revision-and-independent-text-evaluation}}
+
+\noindent \noindent An analyst building an earnings-call classifier wants to know
+whether a revised prompt recognizes the intended pricing construct on
+new material. Correcting a prompt after inspecting a mislabeled passage
+uses that passage for development. A later correct label on the same
+passage establishes that the revision handled a known example.
+Generalization requires a comparison on additional documents whose
+labels did not guide the revision.
+
+The document split should match the intended use. A tool for previously
+unseen firms needs evaluation on firms excluded from development. A tool
+for later calls from familiar firms needs a chronological separation and
+inputs available at the forecast date. Passages from one call share
+management, vocabulary, and context, so they should remain together when
+splitting documents. Repeated calls from a firm can also create
+dependence. Uncertainty should reflect that structure.
+
+Freeze the construct definition, prompt, model configuration, retrieval
+procedure, and scoring rule before the final comparison. An independent
+reference label should be based on the underlying passage and its
+context. Agreement among generated explanations provides little
+protection when they share the same missing context or coding mistake.
+Preserve a dictionary baseline and allow it the same eligible evidence.
+Evaluate errors consequential for the intended review queue, including
+false positives and missed statements.
+
+Once final labels guide another revision, the exposed documents belong
+to development. A new confirmation requires additional evidence or a
+prespecified procedure that accounts for the adaptive reuse. M7, Section
+7.20, calculates how choosing among many equally uninformative
+candidates can produce apparently strong development accuracy while
+performance on fresh cases remains at chance. That mechanism applies
+even when every candidate runs without a software error.
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
@@ -7221,6 +7355,157 @@ def main():
 
 if __name__ == '__main__':
     (HERE / 'results').mkdir(exist_ok=True)
+    main()
+\end{Verbatim}
+
+\hypertarget{M06-model-improvements-and-reusable-analytical-workflows}{%
+\section{Model Improvements and Reusable Analytical
+Workflows}\label{M06-model-improvements-and-reusable-analytical-workflows}}
+
+\noindent \noindent A marketing team must decide whether to buy access to a newer
+model, invest in a tested code library, or use both. A comparison
+between its old setup and a new setup that changes both components
+cannot isolate their separate contributions. A factorial comparison
+crosses model version with library access and evaluates every condition
+using a common task population and acceptance rule.
+
+Consider a synthetic table with 100 assigned tasks in each of four
+conditions. Each task requires a correct customer-level analysis within
+the same deadline and resource limits. The rubric checks aggregation,
+available information, and the managerial interpretation. An unfinished
+task counts as a failure. The counts below are constructed teaching
+inputs; they are neither measured model performance nor results of a
+conducted experiment.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Model & Library & Assigned Tasks & Passing Tasks & Pass Rate \\
+\midrule
+
+Earlier & Absent & 100 & 60 & 60\% \\
+Earlier & Present & 100 & 70 & 70\% \\
+Newer & Absent & 100 & 65 & 65\% \\
+Newer & Present & 100 & 85 & 85\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Let \(q_{m\ell}\) denote the fraction of all assigned tasks passing,
+where \(m=1\) selects the newer model and \(\ell=1\) supplies the
+library. The model comparison depends on library access:
+\(q_{10}-q_{00}=0.05\) without it and \(q_{11}-q_{01}=0.15\) with it.
+The library comparison is ten percentage points with the earlier model
+and twenty with the newer model. Their interaction is
+
+\[
+\delta=(q_{11}-q_{10})-(q_{01}-q_{00})=0.10.
+\]
+
+The positive interaction means that the imposed library gain is larger
+with the newer model. The joint change from 60\% to 85\% is twenty-five
+percentage points. It can be decomposed as a five-point model change
+followed by a twenty-point library change, or a ten-point library change
+followed by a fifteen-point model change. Neither path supplies a unique
+allocation of the interaction to one component.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_ai_factorial.tex}
+\caption{The library raises the pass rate by ten points with the earlier model and twenty with the newer model. All four rates are synthetic.}\label{fig:M06_ai_factorial}
+\end{figure}
+
+In an empirical study, randomize teams or independent analytical
+projects to the four conditions, with blocking on task difficulty where
+useful. If several outputs come from one team, their number does not
+establish the number of independent assignments. Shared helpers and
+learning can spill across conditions. A team that first sees the library
+may carry its knowledge into a later nominally unassisted task. Separate
+teams or a justified design for carryover is needed before interpreting
+a crossover comparison.
+
+Use fresh tasks, permit a competent baseline to solve the same problem,
+and record actual resource consumption alongside the common ceiling. The
+library's setup and maintenance cost enters the investment comparison
+even if library construction occurs before randomization. A success on
+familiar datasets measures execution within that scope. Transfer to a
+different schema or task family requires additional tasks. A revised
+prompting or search procedure is a further treatment dimension; changing
+it simultaneously with both factors would again prevent attribution.
+
+\hypertarget{M06-reproduce-the-four-condition-comparison}{%
+\subsection{Reproduce the Four-Condition
+Comparison}\label{M06-reproduce-the-four-condition-comparison}}
+
+\noindent \noindent Run
+\texttt{python3\ 03\_Data\_and\_Code/AI\_Workflows/factorial.py} from
+the repository root. Python 3.10 or later suffices; no packages or model
+account are required. The program writes one CSV row per condition and a
+JSON of percentage-point contrasts. Exact rational arithmetic checks the
+two paths to the joint change. The code operates on the imposed counts
+and supplies no sampling uncertainty or empirical efficacy claim.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/AI_Workflows/factorial.py}{factorial.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Construct a synthetic model-by-library comparison; no model APIs are called."""
+import csv
+import json
+from fractions import Fraction
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def contrasts(rates):
+    """Keys are (model, library), each coded 0 or 1; values are pass fractions."""
+    if set(rates) != {(0, 0), (0, 1), (1, 0), (1, 1)}:
+        raise ValueError("All four conditions are required")
+    return {
+        "model_without_library": rates[1, 0] - rates[0, 0],
+        "model_with_library": rates[1, 1] - rates[0, 1],
+        "library_with_earlier_model": rates[0, 1] - rates[0, 0],
+        "library_with_newer_model": rates[1, 1] - rates[1, 0],
+        "interaction": rates[1, 1] - rates[1, 0] - rates[0, 1] + rates[0, 0],
+        "joint_change": rates[1, 1] - rates[0, 0],
+    }
+
+
+def main():
+    # Imposed counts: 100 assigned tasks in every cell. An unfinished task fails.
+    # All cells use the same task population, rubric, deadline, and resource limits.
+    passes = {(0, 0): 60, (0, 1): 70, (1, 0): 65, (1, 1): 85}
+    rates = {key: Fraction(count, 100) for key, count in passes.items()}
+    effects = contrasts(rates)
+    # Two independent paths from the initial cell to the final cell must agree.
+    assert effects["joint_change"] == Fraction(25, 100)
+    assert effects["joint_change"] == (
+        effects["model_without_library"] + effects["library_with_newer_model"]
+    )
+    assert effects["joint_change"] == (
+        effects["library_with_earlier_model"] + effects["model_with_library"]
+    )
+    assert effects["interaction"] == Fraction(10, 100)
+    OUT.mkdir(exist_ok=True)
+    with (OUT / "factorial_cells.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["model", "library", "assigned", "passed", "pass_fraction"])
+        for (model, library), passed in passes.items():
+            writer.writerow([model, library, 100, passed, float(rates[model, library])])
+    result = {
+        "scope": "Constructed counts; no observed AI performance or causal estimate.",
+        "units": "percentage points in the fraction of all assigned tasks passing",
+        "contrasts_pp": {key: float(100 * value) for key, value in effects.items()},
+    }
+    (OUT / "factorial_results.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
     main()
 \end{Verbatim}
 
@@ -8620,6 +8905,183 @@ affected population, outcome, and decision. Several metrics can conflict
 because they condition on different objects. Report the tradeoff and the
 policy objective that resolves it rather than treating a single accuracy
 statistic as a complete evaluation.
+
+\hypertarget{M07-repeated-selection-can-improve-a-score-without-improving-prediction}{%
+\section{Repeated Selection Can Improve a Score Without Improving
+Prediction}\label{M07-repeated-selection-can-improve-a-score-without-improving-prediction}}
+
+\noindent \noindent A manager comparing AI-generated classifiers may see
+development accuracy rise as analysts try more prompts, features, or
+code revisions. Some of that increase can reflect selection among noisy
+scores. A useful evaluation asks how the selected procedure performs on
+cases that played no role in its selection.
+
+Consider an imposed null model in which every candidate predicts
+correctly with probability one-half. Each candidate receives 80
+development cases, and the candidate with the highest development
+accuracy is selected. A tie selects the earliest candidate. The selected
+candidate is then evaluated on 200 fresh cases. The calculation makes
+the following independence conditions explicit.
+
+\begin{assumption}[Independent Chance Predictions]\label{ass:chance-predictions}
+Every correctness indicator is an independent Bernoulli variable with probability one-half across candidates, cases, and independent repetitions. Development and test indicators are independent. Selection uses only development correctness counts and a fixed tie rule.
+\end{assumption}
+
+Let \(X_k\) be the number of correct development predictions by
+candidate \(k\), and let \(F(s)=\Pr(X_k\leq s)\) for the binomial
+distribution with 80 trials and success probability one-half. Under
+Assumption \ref{ass:chance-predictions}, the probability that all \(K\)
+candidates score at most \(s\) is \(F(s)^K\). Summing the tail
+probabilities of their maximum gives the expected selected accuracy:
+
+\[
+E\left[\frac{\max_{1\leq k\leq K}X_k}{80}\right]
+=\frac{1}{80}\sum_{s=0}^{79}\left[1-F(s)^K\right].
+\]
+
+Increasing the number of candidates raises the chance of selecting an
+unusually favorable development score. The expected test accuracy
+remains one-half because the independent test outcomes never enter
+selection. Reusing test results to change the next candidate would
+violate that condition.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}@{}}
+\toprule
+Candidates Compared & Expected Selected Development Accuracy & Simulated
+Development Accuracy & Simulated Fresh Accuracy \\
+\midrule
+
+1 & 50.00\% & 49.94\% & 49.88\% \\
+5 & 56.49\% & 56.63\% & 50.00\% \\
+20 & 60.40\% & 60.42\% & 49.95\% \\
+100 & 63.93\% & 63.89\% & 50.03\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The simulated entries average 2,000 independent repetitions with seed
+20261104. Candidate sets are nested within each repetition, so
+comparisons across rows are paired. The reported Monte Carlo standard
+errors in the output measure simulation precision across repetitions.
+They are distinct from uncertainty about one deployed classifier's
+accuracy. The analytical expectation provides a separate check on the
+program.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_repeated_selection.tex}
+\caption{Expected selected development accuracy rises from 50\% to 63.93\% as candidate count increases from one to one hundred; expected fresh accuracy remains 50\%.}\label{fig:M07_repeated_selection}
+\end{figure}
+
+Real prompt revisions often produce correlated predictions, and feedback
+can alter later candidates. The independence model gives a transparent
+mechanism, rather than an estimated magnitude for those workflows. The
+relevant practice is to preserve development records, fix the final
+comparison before exposing new outcomes, and match the split to the
+deployment population. For earnings calls, separate firms or future
+periods as appropriate and keep passages from a call together. A new
+model release also needs fresh evaluation when its predecessor's test
+errors guided the upgrade decision.
+
+\hypertarget{M07-reproduce-selection-and-fresh-evaluation}{%
+\subsection{Reproduce Selection and Fresh
+Evaluation}\label{M07-reproduce-selection-and-fresh-evaluation}}
+
+\noindent \noindent Run
+\texttt{python3\ 03\_Data\_and\_Code/AI\_Workflows/repeated\_selection.py}
+with Python 3.10 or later. Separate pseudorandom streams produce
+development and test correctness. The CSV contains one row per candidate
+count, analytical expectations, simulated means, and Monte Carlo
+standard errors, all as fractions. The JSON records sample sizes and the
+seed. The accompanying exact test enumerates every binary outcome for
+two candidates with three cases each and compares their expected maximum
+with the formula.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/AI_Workflows/repeated_selection.py}{repeated\_selection.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Simulate selection among equally uninformative classifiers using only stdlib."""
+import csv
+import json
+import math
+import random
+from pathlib import Path
+from statistics import mean, stdev
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def select_candidate(development_counts):
+    # The earliest candidate wins a tie. Test outcomes are never an input.
+    return max(range(len(development_counts)), key=development_counts.__getitem__)
+
+
+def expected_selected_accuracy(n, candidates):
+    """Exact binomial order-statistic expectation, evaluated in floating point."""
+    cumulative = 0.0
+    expected_count = 0.0
+    for successes in range(n):
+        cumulative += math.comb(n, successes) / 2**n
+        expected_count += 1 - cumulative**candidates
+    return expected_count / n
+
+
+def main():
+    seed, repetitions, development_n, test_n = 20261104, 2000, 80, 200
+    candidate_counts = [1, 5, 20, 100]
+    # Separate streams keep test outcomes out of the development process.
+    development_rng = random.Random(seed)
+    test_rng = random.Random(seed + 1)
+    observed = {k: {"development": [], "test": []} for k in candidate_counts}
+    for _ in range(repetitions):
+        # Each independent bit denotes a correct prediction with probability 1/2.
+        # Candidates are also independent in this deliberately simple null model.
+        development = [development_rng.getrandbits(development_n).bit_count()
+                       for _ in range(max(candidate_counts))]
+        test = [test_rng.getrandbits(test_n).bit_count()
+                for _ in range(max(candidate_counts))]
+        for k in candidate_counts:
+            selected = select_candidate(development[:k])
+            observed[k]["development"].append(development[selected] / development_n)
+            observed[k]["test"].append(test[selected] / test_n)
+    rows = []
+    for k, values in observed.items():
+        exact = expected_selected_accuracy(development_n, k)
+        development_mean, test_mean = mean(values["development"]), mean(values["test"])
+        development_se = stdev(values["development"]) / math.sqrt(repetitions)
+        test_se = stdev(values["test"]) / math.sqrt(repetitions)
+        # Independent analytic benchmarks check the simulation's implementation.
+        assert abs(development_mean - exact) < 5 * development_se
+        assert abs(test_mean - 0.5) < 5 * test_se
+        rows.append({"candidates": k, "expected_development_accuracy": exact,
+                     "mean_development_accuracy": development_mean,
+                     "mean_test_accuracy": test_mean, "expected_test_accuracy": 0.5,
+                     "development_mc_se": development_se, "test_mc_se": test_se})
+    OUT.mkdir(exist_ok=True)
+    with (OUT / "selection_results.csv").open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    metadata = {"seed": seed, "repetitions": repetitions,
+                "development_cases": development_n, "fresh_test_cases": test_n,
+                "scope": "Synthetic independent chance predictions; no LLM calls.",
+                "mc_se": "Monte Carlo error of the simulated mean across repetitions"}
+    (OUT / "selection_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+    print(json.dumps(rows, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
 
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
@@ -10252,5 +10714,282 @@ evaluation design. Use the call evidence to request missing operational
 facts, and keep a dictionary match, a management assertion, verified
 implementation, and measured customer effects distinct in the
 recommendation.
+
+\hypertarget{M08-reusable-code-customer-alternatives-and-economic-value}{%
+\section{Reusable Code, Customer Alternatives, and Economic
+Value}\label{M08-reusable-code-customer-alternatives-and-economic-value}}
+
+\noindent \noindent A marketing team deciding whether to build a reusable analysis
+package needs an expected workload and a comparable output. Saving time
+on one run may leave the setup cost unrecovered. A service provider
+selling the package faces a further question: how much value remains for
+customers relative to the alternatives they can now use themselves?
+
+\hypertarget{M08-reuse-requires-enough-comparable-uses}{%
+\subsection{Reuse Requires Enough Comparable
+Uses}\label{M08-reuse-requires-enough-comparable-uses}}
+
+\noindent \noindent Let \(K\) be the initial hours needed to construct and
+validate a reusable procedure. Let \(c_0\) be hours per completed
+analysis under the existing process, \(c_1\) hours using the new
+procedure, and \(m\) maintenance and adaptation hours per use. For \(n\)
+uses within a common planning horizon, the net hours saved are
+
+\[
+H(n)=nc_0-\{K+n(c_1+m)\}.
+\]
+
+The comparison holds the required output and its quality fixed. All
+hours refer to actual work in the two alternatives. If
+\(c_0\leq c_1+m\), additional uses cannot recover a positive setup
+burden. If \(c_0>c_1+m\), the break-even workload is \(K/(c_0-c_1-m)\).
+A fractional threshold must be exceeded by an integer number of uses
+before savings become positive.
+
+In a hypothetical quarter, construction and validation take six hours.
+Each existing analysis takes two hours, while the reusable procedure
+takes 1.25 hours plus 0.25 hours for adaptation and upkeep. Net savings
+are one-half hour per use before setup. Twelve uses recover setup
+exactly; the thirteenth creates a positive saving. At 24 uses, total
+effort falls from 48 to 42 hours. The 37.5\% reduction from two hours to
+1.25 hours per execution becomes a 12.5\% reduction in total effort
+after setup and upkeep at that workload.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_reuse_costs.tex}
+\caption{The reusable procedure begins with six setup hours and crosses the existing process at twelve uses. Both produce outputs of the same required quality.}\label{fig:M08_reuse_costs}
+\end{figure}
+
+The mHealth aggregation functions are a useful setting for this
+decision. They can preserve common keys, cohort rules, and
+transformations across subsequent analyses. A new source with different
+daily-total semantics still requires adaptation and checks. A smaller
+documented function may remain more economical than a large package
+whose dependencies and assumptions are costly to maintain. The numerical
+workload and hours above are imposed; they do not measure development
+time in the course repository.
+
+\hypertarget{M08-shared-ai-improvements-can-narrow-a-feasible-price-interval}{%
+\subsection{Shared AI Improvements Can Narrow a Feasible Price
+Interval}\label{M08-shared-ai-improvements-can-narrow-a-feasible-price-interval}}
+
+\noindent \noindent Consider a provider selling one analytics package per customer
+over a specified period. A customer's delivered value is \(v\) dollars,
+its non-price implementation burden is \(b\), and its best alternative
+gives net utility \(u_0\), also in monetary-equivalent units. Under the
+quasilinear participation condition in M4, Section 4.16, the largest
+acceptable price is \(v-b-u_0\). The provider incurs fixed cost \(F\)
+and unit cost \(c\). Conditional on \(n>0\) sales, a common price covers
+those costs when
+
+\[
+c+\frac{F}{n}\leq p\leq v-b-u_0.
+\]
+
+The left endpoint is the seller's zero-profit price; the right endpoint
+leaves the buyer indifferent to its alternative. Strictly positive gains
+on both sides require a price strictly inside the interval. These are
+participation and cost-recovery conditions for the stated valuations and
+volume. They do not identify an equilibrium price or establish that the
+assumed customers will purchase.
+
+Hold delivered value at \$200, buyer burden at \$40, fixed cost at
+\$1,000, and conditional volume at 50 customers. The following
+hypothetical cases change the seller's unit cost and the customer's
+outside option.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}@{}}
+\toprule
+Scenario & Unit Cost & Outside-Option Utility & Seller Price Floor &
+Buyer Price Ceiling \\
+\midrule
+
+Initial & \$20 & \$80 & \$40 & \$80 \\
+Seller Automation & \$10 & \$80 & \$30 & \$80 \\
+Shared Adoption & \$10 & \$140 & \$30 & \$20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Seller automation lowers the price floor by ten dollars. If customers
+subsequently gain a much better alternative, the ceiling falls below
+that floor. At 50 sales, the assumed offer cannot simultaneously cover
+the provider's stated costs and satisfy buyer participation. Product
+improvements, lower buyer effort, or different costs could change the
+comparison. Greater volume is a hypothesis requiring demand and capacity
+evidence; it cannot simply be inserted to make the arithmetic favorable.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_ai_price_bounds.tex}
+\caption{Seller automation lowers the cost-recovery floor, but a stronger customer alternative can lower the buyer ceiling below it. All amounts and the fifty-customer volume are hypothetical.}\label{fig:M08_ai_price_bounds}
+\end{figure}
+
+The provider's competitive advantage can therefore depend on reliable
+integration, relevant proprietary inputs, or reduced customer effort,
+provided those features create demonstrated value. Model access alone
+may also improve the customer's alternative. Repeated accepted delivery,
+willingness to pay, and costs over the full lifecycle determine whether
+the proposed service is economically useful.
+
+\hypertarget{M08-reproduce-the-cost-and-price-comparisons}{%
+\subsection{Reproduce the Cost and Price
+Comparisons}\label{M08-reproduce-the-cost-and-price-comparisons}}
+
+\noindent \noindent Run
+\texttt{python3\ 03\_Data\_and\_Code/AI\_Workflows/investment.py} with
+Python 3.10 or later. The program uses only imposed inputs. It writes a
+CSV of total hours for zero through 24 uses and another with one row per
+pricing scenario. Hours and dollars remain separate units. Direct profit
+and utility balances verify the pricing endpoints, and the reuse
+calculation checks the zero-saving and first-positive-saving workloads.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/AI_Workflows/investment.py}{investment.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Conditional reuse costs and buyer/seller price bounds; all inputs are imposed."""
+import csv
+import json
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def reuse_hours(uses, setup, old_per_use, new_per_use, upkeep_per_use):
+    if uses < 0 or min(setup, old_per_use, new_per_use, upkeep_per_use) < 0:
+        raise ValueError("Uses and hours must be nonnegative")
+    old = uses * old_per_use
+    new = setup + uses * (new_per_use + upkeep_per_use)
+    return old, new, old - new
+
+
+def price_bounds(value, outside_utility, buyer_burden, unit_cost, fixed_cost, volume):
+    if volume <= 0:
+        raise ValueError("Conditional volume must be positive")
+    # Quasilinear buyer utility: value - price - burden >= outside utility.
+    ceiling = value - outside_utility - buyer_burden
+    # Zero seller profit: volume * (price - unit_cost) >= fixed_cost.
+    floor = unit_cost + fixed_cost / volume
+    return floor, ceiling
+
+
+def write_csv(name, rows):
+    with (OUT / name).open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    reuse = []
+    for n in range(25):
+        old, new, saved = reuse_hours(n, 6, 2, 1.25, 0.25)
+        reuse.append({"uses": n, "old_hours": old,
+                      "reusable_hours": new, "net_hours_saved": saved})
+    assert reuse[12]["net_hours_saved"] == 0
+    assert next(r["uses"] for r in reuse if r["net_hours_saved"] > 0) == 13
+    assert reuse[24]["net_hours_saved"] == 6
+    pricing = []
+    for scenario, unit_cost, outside in [
+        ("Initial", 20, 80), ("Seller automation", 10, 80), ("Shared adoption", 10, 140)
+    ]:
+        floor, ceiling = price_bounds(200, outside, 40, unit_cost, 1000, 50)
+        # Direct monetary balances verify both boundary calculations.
+        assert 50 * (floor - unit_cost) - 1000 == 0
+        assert 200 - ceiling - 40 == outside
+        pricing.append({"scenario": scenario, "unit_cost_dollars": unit_cost,
+                        "fixed_cost_dollars": 1000, "conditional_volume": 50,
+                        "value_dollars": 200, "buyer_burden_dollars": 40,
+                        "outside_utility_dollars": outside,
+                        "price_floor_dollars": floor, "price_ceiling_dollars": ceiling,
+                        "feasible": floor <= ceiling})
+    assert [r["feasible"] for r in pricing] == [True, True, False]
+    write_csv("reuse_costs.csv", reuse)
+    write_csv("price_bounds.csv", pricing)
+    summary = {"scope": "Hypothetical equal-quality costs and monetary valuations.",
+               "reuse_break_even_uses": 12, "first_positive_saving_uses": 13,
+               "pricing": "Conditional on 50 sales; no demand or equilibrium is estimated.",
+               "price_bounds": pricing}
+    (OUT / "investment_results.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M08-model-updates-and-the-decision-to-revisit-an-analysis}{%
+\section{Model Updates and the Decision to Revisit an
+Analysis}\label{M08-model-updates-and-the-decision-to-revisit-an-analysis}}
+
+\noindent \noindent A marketing team with a working analysis must decide whether a
+model update warrants another development effort. The answer depends on
+the unresolved task and the cost of changing its implementation. A
+useful record connects the managerial objective to the observed failure,
+the suspected cause, the comparison needed, and the conditions under
+which the current output remains usable.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Recorded Difficulty & Change Worth Investigating & Appropriate
+Comparison \\
+\midrule
+
+Pricing statements are retrieved with missing surrounding context &
+Better retrieval or a model that handles the required context & New
+complete calls with independently assessed labels \\
+A generated join multiplies customer rows & A checked join helper or
+clearer key specification & Hand-checkable duplicate cases and fresh
+schemas \\
+Unlogged meals are absent from mHealth records & Additional measurement
+or a narrower recorded-behavior target & Evidence about logging coverage
+and the chosen outcome \\
+Delivery requires too much manual correction & A simpler procedure or
+tested reusable components & Accepted output, total effort, and errors
+across new tasks \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Record the actual accessible model and tools before evaluating a
+proposed update. A capability described elsewhere may be unavailable in
+the intended environment. Preserve the current procedure while
+developing a challenger, then freeze the challenger and evaluate both on
+fresh cases with the same criteria. Expected benefits should include
+subsequent uses and downstream constraints; setup, verification, and
+maintenance belong in the cost comparison.
+
+A difficulty register is a provisional diagnosis. An update can matter
+through a mechanism that the team failed to record, while an apparently
+relevant update may offer no practical benefit. Some effort should
+therefore examine alternative explanations and unanticipated uses. The
+allocation depends on the value and cost of that exploration. Keeping a
+previously validated procedure can be the appropriate decision when the
+challenger fails to improve the relevant outcome.
+
+Retain the executable code, input definitions, supported population,
+checks, costs, and known failure conditions for each accepted procedure.
+A model replacement, changed data schema, or shifted customer population
+can invalidate parts of the earlier evidence. Revalidation should
+address those dependencies explicitly. A larger code archive becomes
+useful only when its contents improve subsequent work enough to justify
+retrieval, adaptation, and upkeep.
 
 \end{document}

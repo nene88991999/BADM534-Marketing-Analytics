@@ -18,6 +18,7 @@ Session 11. M7. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [McBroken prediction case](../03_Data_and_Code/McBroken/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -45,7 +46,19 @@ New-customer prediction requires separation by customer. Future prediction for r
 
 Source: M7, Section 7.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 4: The Forecast Origin
+## Slide 4: Selection on Development Accuracy
+
+Synthetic independent chance predictions: 80 development cases per candidate.
+
+**Figure description:** Expected selected development accuracy rises from 50% for one candidate to 56.49%, 60.40%, and 63.93% for five, twenty, and one hundred candidates. Expected fresh accuracy stays at 50%.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_repeated_selection.tex)
+
+Each candidate has true accuracy one-half under the imposed independent Bernoulli model. The maximum development score increases with the number compared. Fresh test correctness is independent of selection. The program verifies the analytic expectation and simulates 2,000 repetitions with 200 test cases. Real prompt candidates can be correlated, so the magnitude is illustrative.
+
+Source: Marketing Analytics Lecture Notes, M7 §7.20.
+
+## Slide 5: The Forecast Origin
 
 - Features end before the decision time.
 - The outcome window begins after the decision.
@@ -55,7 +68,7 @@ A database extract can contain information that did not exist at the historical 
 
 Source: M7, Section 7.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 5: Baselines and Model Families
+## Slide 6: Baselines and Model Families
 
 - Compare with a constant probability or recent-history forecast.
 - Logistic regression supplies a probability baseline.
@@ -65,7 +78,7 @@ A complex model earns its place through performance on the intended held-out obs
 
 Source: M7, Section 7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 6: Logistic Prediction
+## Slide 7: Logistic Prediction
 
 Transform a linear index into a binary-outcome probability.
 
@@ -79,7 +92,7 @@ The same index change has a larger probability effect near the middle than near 
 
 Source: M7, Section 7.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 7: Preprocessing Belongs in Training
+## Slide 8: Preprocessing Belongs in Training
 
 - Fit imputation, scaling, and vocabulary on training records.
 - Choose model settings using validation data.
@@ -89,7 +102,7 @@ Repeatedly choosing features from test performance turns that sample into valida
 
 Source: M7, Section 7.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 8: Rare Purchases and Accuracy
+## Slide 9: Rare Purchases and Accuracy
 
 | Quantity | Flagged | Not Flagged |
 | --- | --- | --- |
@@ -102,7 +115,7 @@ Flagging 100 customers gives precision 30%, recall 60%, and accuracy 91%. Predic
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 9: Metrics and the Review Queue
+## Slide 10: Metrics and the Review Queue
 
 - Precision: what fraction of reviewed cases are positive?
 - Recall: what fraction of positives enter the queue?
@@ -112,7 +125,7 @@ The appropriate contact fraction should match staff capacity. A ranking measure 
 
 Source: M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 10: Ranking Can Stay Fixed While Probabilities Change
+## Slide 11: Ranking Can Stay Fixed While Probabilities Change
 
 A synthetic transformation squares initially calibrated probabilities.
 
@@ -124,7 +137,7 @@ For q=p squared, the original outcome frequency p equals the square root of q. E
 
 Source: M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 11: A Cost-Based Threshold
+## Slide 12: A Cost-Based Threshold
 
 Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
 
@@ -138,7 +151,7 @@ Correct classifications have zero cost in this example. Capacity constraints and
 
 Source: M7, Section 7.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 12: Coupon Targeting Includes the Untreated Outcome
+## Slide 13: Coupon Targeting Includes the Untreated Outcome
 
 Synthetic probabilities and costs. High treated response can have negative incremental value.
 
@@ -150,7 +163,7 @@ Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact
 
 Source: M7, Section 7.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 13: Queue Metrics
+## Slide 14: Queue Metrics
 
 Compute metrics from the synthetic confusion matrix.
 
@@ -168,7 +181,7 @@ Whether that queue is profitable depends on the action and its incremental outco
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 14: McBroken Forecasting
+## Slide 15: McBroken Forecasting
 
 - Predict availability on a later date.
 - Retain a separate count of unknown future labels.
@@ -178,7 +191,7 @@ An unknown future status is not an observed available restaurant. Dropping missi
 
 Source: M7, Section 7.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 15: Prediction and Outcome Coverage
+## Slide 16: Prediction and Outcome Coverage
 
 McBroken forecasts use later dates and observed-label denominators.
 
@@ -190,18 +203,18 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 16: Coding Exercise: A Forecast Evaluation
+## Slide 17: Coding Exercise: A Forecast Evaluation
 
-- Create training, validation, and later test windows.
+- Compare development and fresh accuracy after candidate selection.
 - Check every feature against the forecast date.
 - Compare a simple baseline, ranking, and calibration.
 - Report missing outcomes beside the test metrics.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions.
+Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.
 
 Source: M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 17: Targeting and Delivered Opportunities
+## Slide 18: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -211,7 +224,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 18: Prediction Discussion
+## Slide 19: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

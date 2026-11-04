@@ -78,12 +78,14 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Earnings_Calls/AGENTS.md",
     "03_Data_and_Code/Earnings_Calls/LLM_EXERCISES.md",
     "03_Data_and_Code/Earnings_Calls/results/README.md",
-    "02_Syllabus/Marketing_Analytics_Syllabus.md"
+    "02_Syllabus/Marketing_Analytics_Syllabus.md",
+    "03_Data_and_Code/AI_Workflows/README.md",
+    "03_Data_and_Code/AI_Workflows/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-02",
+    "updated_on": "2026-11-04",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -123,16 +125,17 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-02-earnings-call-worked-example",
+    "revision": "2026-11-04-ai-workflow-evaluation",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 51,
-    "pages": 185,
+    "figures_count": 55,
+    "pages": 198,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
-    "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md"
+    "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md",
+    "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md"
   },
   "datasets": [
     {
@@ -180,7 +183,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-02",
+    "updated_on": "2026-11-04",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -189,7 +192,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 265,
+    "slides": 274,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -262,7 +265,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 51 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 55 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -411,7 +414,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 51 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 55 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -468,6 +471,10 @@ The [15 session decks](05_Slides/README.md) follow a [170-minute meeting plan](0
 
 The [pricing-communication example](03_Data_and_Code/Earnings_Calls/README.md) connects document coverage (M2 §2.19), text constructs and word exposure (M5 §5.14), descriptive event comparisons (M6 §6.18), and customer outcomes and regulatory evidence (M8 §8.16). Sessions 02, 07, 10, and 14 include the corresponding cases. The complete programs, structured teaching data, and nine counterexample checks are available in the example folder.
 
+## AI Workflow Evaluation and Economics
+
+The [synthetic AI workflow examples](03_Data_and_Code/AI_Workflows/README.md) connect failure diagnosis (M1 §1.12), buyer alternatives (M4 §4.16), document evaluation after prompt revision (M5 §5.15), model-by-library contrasts (M6 §6.19), repeated selection (M7 §7.20), and reuse and pricing decisions (M8 §§8.17–8.18). Three complete standard-library programs, five small-case checks, and four TikZ figures accompany the notes. Sessions 01, 05, 07, 09, 11, and 14 include these comparisons. All numerical inputs are synthetic; no provider performance, labor savings, or demand is measured.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -499,6 +506,10 @@ A private repository URL works only with tools authorized to read that repositor
 ### Review a Result
 
 > Assess my analysis for incorrect joins, missing-data decisions, units, leakage, and unsupported causal claims. Compare each concern with the assignment and data dictionary. Prioritize issues that could change the managerial conclusion, and give a check I can run.
+
+### Compare AI Workflows
+
+> Read the AI_Workflows README and the relevant M6–M8 note sections. Identify what changes across conditions, which outcomes guided development, and what evidence remains independent. Reproduce the relevant synthetic calculation, then explain which additional observations would be needed for a claim about actual model performance or business value.
 
 ### Prepare for Class
 
@@ -596,15 +607,19 @@ The [GenAI demand cases](GenAI_Demand/README.md) cover public-signal measurement
 
 The [earnings-call case](Earnings_Calls/README.md) uses supplied structured metadata for missing-text assessment in M2, text measurement and interpretation in M5, descriptive event comparisons in M6, and pricing evidence in M8. Four complete Python programs, nine counterexample tests, source hashes, and three TikZ figures support the case. Seven source-linked paraphrases distinguish price displays, business advertising, intentions, infrastructure, and claims about pricing use. Full transcript excerpts remain in the original local bundle.
 
+## AI Workflow Evaluation and Economics
+
+The [AI workflow examples](AI_Workflows/README.md) compare model and library contributions, repeated selection on development accuracy, reusable-code costs, and buyer/seller price bounds. Three executed programs use only Python's standard library and synthetic inputs. Complete code appears in M6 §6.19, M7 §7.20, and M8 §8.17, with connections in M1, M4, and M5. Five small-case checks and four TikZ figures accompany the calculations. The examples require no model account and establish no provider performance, observed labor savings, or customer demand.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 2, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 4, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 51 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 55 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -631,7 +646,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 185 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 198 pages.
 
 ## Editing and Building
 
@@ -683,6 +698,10 @@ The retention-procedure example separates firm profit, customer value, and combi
 
 The [earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md) connects M2 §2.19, M5 §5.14, M6 §6.18, and M8 §8.16. Four complete Python programs reproduce coverage checks, call and word denominators, synthetic construct checks, and event-window comparisons. Three TikZ figures explain selection into a match-only sample, speaking exposure, and the difference between occurrence counts and call incidence. Nine counterexample tests passed. The public teaching data contain structured metadata and source-linked paraphrases.
 
+## AI Workflow Evaluation and Economics
+
+M1 §1.12 diagnoses code errors and missing information; M4 §4.16 examines buyer alternatives; M5 §5.15 preserves independent text evaluation. M6 §6.19 separates model and library contributions, M7 §7.20 calculates selection on development accuracy, and M8 §§8.17–8.18 connect reusable work, competitive pricing, and selective upgrades. The [three runnable programs](../03_Data_and_Code/AI_Workflows/README.md) appear in full, alongside four original TikZ figures and five exact small-case checks. All inputs are synthetic.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -690,6 +709,8 @@ The [earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 # Synthetic Lecture Examples
 
 These small datasets and calculations support the [eight lecture-note modules](../../06_Lecture_Notes/README.md). All observations, probabilities, and response curves in this folder are **synthetic teaching inputs**, constructed for these notes on October 23, 2026. They contain no student records or real customer data. They are not replications of the published studies discussed in the notes.
+
+The separate [AI workflow examples](../AI_Workflows/README.md) add November 4 calculations for factorial comparisons, repeated candidate selection, reuse costs, and competitive pricing. They include complete standard-library Python and aggregate output tables.
 
 Run from the repository root:
 
@@ -789,6 +810,10 @@ Markdown companions identify the session and module, learning objectives, slide-
 ## Earnings-Call Worked Example
 
 Sessions 02, 07, 10, and 14 now use the [earnings-call case](../03_Data_and_Code/Earnings_Calls/README.md). The case covers missing documents, selected denominators, role-specific word exposure, interpretation of pricing language, event-window comparisons, and regulatory evidence. Session 07 uses its worked-comparison and Python blocks for this case; the meeting remains 170 minutes. The four analysis programs and nine tests ran successfully. Complete code appears in the module notes.
+
+## AI Workflow Evaluation and Economics
+
+Sessions 01, 05, 07, 09, 11, and 14 connect failure diagnosis, customer alternatives, prompt revision, factorial comparisons, selection on development accuracy, and reuse economics. The [three complete programs](../03_Data_and_Code/AI_Workflows/README.md) use synthetic inputs and require no model account. Four new TikZ figures show interaction, selection, break-even workload, and price bounds. These additions fit the existing session blocks, with the 75-minute ethics and regulation block in Session 14 retained.
 
 ---
 
@@ -1217,6 +1242,19 @@ The newly supplied `pricing_risk_earnings_calls` bundle contributes 2,326 call r
 
 All four programs and nine counterexample tests passed. Full code is embedded in the notes, and three generated TikZ figures reconcile to output tables. Dictionary precision, population adoption, causal event effects, and firm risk probabilities are not established by these data. Wendy's dated clarification and the FTC staff research document were checked as primary sources; other supplied event-list legal claims are not incorporated.
 
+## AI Workflow Evaluation and Economics
+
+| Notes | Course Application | Program or Example |
+| --- | --- | --- |
+| M1 §1.12 | Code errors, missing information, and the analytical target | mHealth aggregation and coupon evidence |
+| M4 §4.16 | Buyer burden and the outside option | Customer participation at a common horizon |
+| M5 §5.15 | Prompt revision and document dependence | Earnings-call evaluation on unseen firms or later periods |
+| M6 §6.19 | Separate model and library contributions | `AI_Workflows/factorial.py` |
+| M7 §7.20 | Selection among equally uninformative candidates | `AI_Workflows/repeated_selection.py` |
+| M8 §§8.17–8.18 | Reuse economics, price bounds, and selective upgrades | `AI_Workflows/investment.py` and task-specific revalidation |
+
+The [original teaching examples](../03_Data_and_Code/AI_Workflows/README.md) contain three executed Python programs, five exact small-case checks, aggregate CSV/JSON outputs, and an agent guide. Four TikZ figures reconcile to those outputs. All numerical inputs are synthetic. The selection simulation has an independent analytical benchmark, and the factorial and investment programs check contrasts and monetary balances directly. No model service was called. Sessions 01, 05, 07, 09, 11, and 14 incorporate the cases within the existing meeting allocations.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1568,20 +1606,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 19 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 20 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 18 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 24 |
-| 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 | Apr 7 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 18 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 25 |
+| 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 20 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 18 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 19 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 19 |
+| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 22 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -1590,9 +1628,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Implement and assess order aggregation with three deliberately altered inputs.
+**Python and Evidence:** Implement and assess order aggregation, then distinguish code errors from missing observations.
 
-**Application:** Write a 30-day coupon specification and identify its missing causal evidence.
+**Application:** Write a coupon specification and identify the evidence needed to resolve its causal question.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -1670,9 +1708,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 17, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Simulate a new bundle, the outside option, and portfolio contribution.
+**Python and Evidence:** Calculate choice probabilities and assess the role of a stronger customer alternative.
 
-**Application:** Specify a choice experiment for an mHealth paid plan without inferring payment behavior from logging.
+**Application:** Compare product value, implementation burden, substitution, and the outside option.
 
 **Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
 
@@ -1710,9 +1748,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.
+**Python and Evidence:** Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.
 
-**Application:** Distinguish pricing communication from adoption, then compare text-topic weights and network brokerage.
+**Application:** Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations.
 
 **Ethics and Regulation:** Review provenance, generated claims, and false positives.
 
@@ -1748,9 +1786,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce the email effect, confidence interval, contribution, and power calculation.
+**Python and Evidence:** Calculate an email effect and decompose a synthetic model-by-library comparison.
 
-**Application:** Design a user-randomized recommendation test with pre-treatment adjustment and explicit guardrails.
+**Application:** Design a randomized comparison with a common rubric and an appropriate assignment unit.
 
 **Ethics and Regulation:** Experimental objectives and customer outcomes.
 
@@ -1788,9 +1826,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess a chronological split and compare accuracy, precision, recall, and calibration.
+**Python and Evidence:** Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.
 
-**Application:** Translate a forecast into a capacity-constrained action and check missing future labels.
+**Application:** Choose a forecast, split, and decision threshold using the intended deployment population.
 
 **Ethics and Regulation:** Prediction errors and access to consequential offers.
 
@@ -1848,9 +1886,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess demand and workflow measurements, then calculate a conditional retention-welfare example.
+**Python and Evidence:** Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.
 
-**Application:** Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status.
+**Application:** Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules.
 
 **Ethics and Regulation:** Retention procedures, customer value, and regulatory status.
 
@@ -1934,6 +1972,12 @@ The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations
 ## Earnings-Call Application
 
 Use pricing communication as a recurring application in meetings 2, 7, 10, and 14. Meeting 2 assesses missing text and document selection. Meeting 7 allocates its 25-minute worked comparison and 45-minute Python block to word exposure, dictionary interpretation, and AI-assisted checks; its application block connects these ideas to mHealth text and networks. Meeting 10 uses the event comparison within causal-design discussion. Meeting 14 incorporates pricing evidence within its existing 75-minute ethics and regulation block. The [worked example](../03_Data_and_Code/Earnings_Calls/README.md) provides the data, code, and interpretation cases. These activities fit the existing 15 meetings and do not add guest speakers or release graded requirements.
+
+## AI Workflow Comparisons
+
+Use the [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md) within the existing method and application blocks. Meeting 1 distinguishes calculation errors from missing evidence. Meeting 5 connects product value to buyer effort and customer alternatives. Meeting 7 treats prompt revision as development and preserves independent document evaluation. Meeting 9 adds a small model-by-library factorial comparison to the experiment calculation. Meeting 11 examines repeated selection among chance classifiers alongside forecast validation. Meeting 14 uses price bounds in the 35-minute demand block and reuse economics and selective upgrades in the 35-minute workflow block. Its 75-minute ethics and regulation allocation remains in place.
+
+The three programs and five exact checks use synthetic inputs and standard-library Python. Students can reproduce the comparisons without paid inference access. They introduce no new graded requirements or meeting dates.
 
 ---
 
@@ -2205,6 +2249,66 @@ The dates follow the [Illinois Senate 2026-2027 academic calendar](https://senat
 ## Assessments and Course Policies
 
 Assessment components, grading weights, submission deadlines, presentation requirements, attendance and late-work rules, and assessment-specific AI permissions are to be announced. Contact Nathan Yang at [ncyang@illinois.edu](mailto:ncyang@illinois.edu) for questions or to arrange office hours.
+
+---
+
+## Source: 03_Data_and_Code/AI_Workflows/README.md
+
+# AI Workflow Evaluation and Economics
+
+Three original synthetic examples connect AI-assisted coding to experimental design, prediction, and economic decisions. They use Python 3.10 or later and the standard library. All inputs are constructed for the course on November 4, 2026. No customer records, downloaded programs, provider credentials, or model API calls enter these calculations.
+
+## Run the Examples
+
+From the repository root:
+
+```sh
+python3 03_Data_and_Code/AI_Workflows/factorial.py
+python3 03_Data_and_Code/AI_Workflows/repeated_selection.py
+python3 03_Data_and_Code/AI_Workflows/investment.py
+python3 -m unittest discover -s 03_Data_and_Code/AI_Workflows -p 'test_*.py' -v
+```
+
+Paths resolve relative to each script, so commands also work from another directory. Each program overwrites its own derived files in `results/`. Repeated selection uses a fixed seed and two separate pseudorandom streams. The inputs are embedded in the scripts; change them there before regenerating outputs and reconciling the notes and figures. All programs and five independent small-case checks were executed successfully.
+
+## Inputs, Outputs, and Interpretation
+
+| Program and Notes | Output | Observation Unit and Units | Expected Result |
+| --- | --- | --- | --- |
+| [factorial.py](factorial.py); M6 §6.19 | [Four conditions](results/factorial_cells.csv), [contrasts](results/factorial_results.json) | Model-by-library condition; 100 assigned tasks per cell; counts and pass fractions; JSON contrasts in percentage points | Model gain 5 points without the library and 15 with it; interaction 10 points; joint change 25 points |
+| [repeated_selection.py](repeated_selection.py); M7 §7.20 | [Selection results](results/selection_results.csv), [simulation metadata](results/selection_metadata.json) | Candidate-count scenario, averaged over 2,000 independent repetitions; accuracy and Monte Carlo SE in fractions | At 100 candidates, expected selected development accuracy 0.6393 and expected fresh accuracy 0.5 |
+| [investment.py](investment.py); M8 §8.17 | [Reuse costs](results/reuse_costs.csv), [price bounds](results/price_bounds.csv), [summary](results/investment_results.json) | Number of uses and hours; separately, pricing scenario and dollars per customer | Reuse breaks even at 12 uses; initial price interval 40–80 dollars; shared-adoption floor 30 exceeds ceiling 20 |
+
+In the factorial CSV, `model=0` denotes the earlier configuration and `model=1` the newer configuration; `library=0/1` denotes absence/presence. `assigned` is the denominator and `passed` the numerator. Counts are stipulated, not experimental observations. Every cell refers to the same task population, rubric, deadline, and resource limits.
+
+In repeated selection, each candidate is correct with probability one-half, independently across candidates and cases. Each has 80 development cases and 200 fresh cases. Within a repetition, the first 1, 5, 20, and 100 candidates form nested sets; the first candidate wins a tie. The test stream never enters selection. Monte Carlo SE describes uncertainty in a simulated mean across repetitions, not a deployment confidence interval. All inputs are public teaching material; the simulation represents fresh evaluation without creating a private assessment set.
+
+Reuse assumes equal accepted output quality, six setup hours, two hours per existing analysis, and 1.25 execution plus 0.25 upkeep hours per reusable analysis over a hypothetical quarter. Pricing holds delivered value at 200 dollars, buyer burden at 40 dollars, fixed cost at 1,000 dollars, and conditional sales at 50. Seller unit cost and the customer's net outside-option utility vary. No demand response or equilibrium price is estimated. No missing values or exclusions are applied.
+
+## Course Connections
+
+- M1 §1.12 distinguishes faulty code, missing evidence, and an unclear analytical target.
+- M4 §4.16 connects willingness to pay with customer effort and outside options.
+- M5 §5.15 applies fresh evaluation to earnings-call prompt revision.
+- M6 §6.19 and M7 §7.20 include complete runnable programs and the sampling conditions.
+- M8 §§8.17–8.18 connect reusable work, competitive pricing, and selective model upgrades.
+- Sessions 01, 05, 07, 09, 11, and 14 include the relevant discussion or calculation.
+
+The [lecture notes](../../06_Lecture_Notes/README.md) contain all three programs verbatim. Four editable TikZ figures use the same aggregate values, Illinois colors, and text descriptions. The tests check additive contrasts, a binomial maximum against exhaustive binary enumeration, the tie rule, maintenance that prevents cost recovery, and equality at the participation and cost bounds. Passing these checks verifies the specified arithmetic; the hypothetical inputs establish no provider performance or customer demand.
+
+---
+
+## Source: 03_Data_and_Code/AI_Workflows/AGENTS.md
+
+# Agent Guide for AI Workflow Examples
+
+Read the root guide and this folder's README before answering questions or changing code. All examples are synthetic and use only Python's standard library. Do not present their outcomes as measured LLM accuracy, an experiment with analysts, observed labor savings, or estimated customer demand.
+
+Keep development and test outcomes separate in the selection program. Preserve the explicit independence assumptions, nested candidate sets, tie rule, and simulation metadata. A Monte Carlo standard error concerns simulation precision. Real evaluation needs an appropriate task population, assignment unit, independent labels, and protection against repeated adaptation to the same outcomes.
+
+Retain the conditional nature of sales volume, monetary valuations, equal output quality, and maintenance costs. Price bounds are participation and cost-recovery conditions, not a pricing equilibrium or forecast. Hours and dollars are separate units.
+
+After changing calculations, run the affected programs and `test_examples.py`, update the full code blocks in M6, M7, or M8, reconcile figures with the aggregate CSVs, and run `scripts/check_lecture_code.py`. Follow the lecture-note and slide guides when updating those artifacts. No external model calls are needed for these examples.
 
 ---
 

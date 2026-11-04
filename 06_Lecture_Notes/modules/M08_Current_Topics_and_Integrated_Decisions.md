@@ -774,3 +774,143 @@ A digital shelf label reduces the cost of updating posted prices. It does not sp
 The [FTC's January 2025 staff research summaries](https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf), pages 1–3, describe US intermediary tools involving price targeting, customer segmentation, and product ranking. The document reports preliminary findings of a Section 6(b) study and explains limitations of its coverage. It is a research publication with no rule effective date; its publication does not establish a violation by a company in the earnings-call sample. Evaluate a concrete practice against the applicable jurisdiction, conduct, and current legal authority.
 
 For a proposed promotion, specify which customers qualify, which information determines the offer, and whether a common-price alternative is available. Compare customer and firm outcomes under a credible evaluation design. Use the call evidence to request missing operational facts, and keep a dictionary match, a management assertion, verified implementation, and measured customer effects distinct in the recommendation.
+
+## 8.17 Reusable Code, Customer Alternatives, and Economic Value
+
+\noindent A marketing team deciding whether to build a reusable analysis package needs an expected workload and a comparable output. Saving time on one run may leave the setup cost unrecovered. A service provider selling the package faces a further question: how much value remains for customers relative to the alternatives they can now use themselves?
+
+### 8.17.1 Reuse Requires Enough Comparable Uses
+
+\noindent Let $K$ be the initial hours needed to construct and validate a reusable procedure. Let $c_0$ be hours per completed analysis under the existing process, $c_1$ hours using the new procedure, and $m$ maintenance and adaptation hours per use. For $n$ uses within a common planning horizon, the net hours saved are
+
+$$
+H(n)=nc_0-\{K+n(c_1+m)\}.
+$$
+
+The comparison holds the required output and its quality fixed. All hours refer to actual work in the two alternatives. If $c_0\leq c_1+m$, additional uses cannot recover a positive setup burden. If $c_0>c_1+m$, the break-even workload is $K/(c_0-c_1-m)$. A fractional threshold must be exceeded by an integer number of uses before savings become positive.
+
+In a hypothetical quarter, construction and validation take six hours. Each existing analysis takes two hours, while the reusable procedure takes 1.25 hours plus 0.25 hours for adaptation and upkeep. Net savings are one-half hour per use before setup. Twelve uses recover setup exactly; the thirteenth creates a positive saving. At 24 uses, total effort falls from 48 to 42 hours. The 37.5% reduction from two hours to 1.25 hours per execution becomes a 12.5% reduction in total effort after setup and upkeep at that workload.
+
+![The reusable procedure begins with six setup hours and crosses the existing process at twelve uses. Both produce outputs of the same required quality.](../figures/M08_reuse_costs.png)
+
+The mHealth aggregation functions are a useful setting for this decision. They can preserve common keys, cohort rules, and transformations across subsequent analyses. A new source with different daily-total semantics still requires adaptation and checks. A smaller documented function may remain more economical than a large package whose dependencies and assumptions are costly to maintain. The numerical workload and hours above are imposed; they do not measure development time in the course repository.
+
+### 8.17.2 Shared AI Improvements Can Narrow a Feasible Price Interval
+
+\noindent Consider a provider selling one analytics package per customer over a specified period. A customer's delivered value is $v$ dollars, its non-price implementation burden is $b$, and its best alternative gives net utility $u_0$, also in monetary-equivalent units. Under the quasilinear participation condition in M4, Section 4.16, the largest acceptable price is $v-b-u_0$. The provider incurs fixed cost $F$ and unit cost $c$. Conditional on $n>0$ sales, a common price covers those costs when
+
+$$
+c+\frac{F}{n}\leq p\leq v-b-u_0.
+$$
+
+The left endpoint is the seller's zero-profit price; the right endpoint leaves the buyer indifferent to its alternative. Strictly positive gains on both sides require a price strictly inside the interval. These are participation and cost-recovery conditions for the stated valuations and volume. They do not identify an equilibrium price or establish that the assumed customers will purchase.
+
+Hold delivered value at $200, buyer burden at $40, fixed cost at $1,000, and conditional volume at 50 customers. The following hypothetical cases change the seller's unit cost and the customer's outside option.
+
+| Scenario | Unit Cost | Outside-Option Utility | Seller Price Floor | Buyer Price Ceiling |
+| --- | ---: | ---: | ---: | ---: |
+| Initial | $20 | $80 | $40 | $80 |
+| Seller Automation | $10 | $80 | $30 | $80 |
+| Shared Adoption | $10 | $140 | $30 | $20 |
+
+Seller automation lowers the price floor by ten dollars. If customers subsequently gain a much better alternative, the ceiling falls below that floor. At 50 sales, the assumed offer cannot simultaneously cover the provider's stated costs and satisfy buyer participation. Product improvements, lower buyer effort, or different costs could change the comparison. Greater volume is a hypothesis requiring demand and capacity evidence; it cannot simply be inserted to make the arithmetic favorable.
+
+![Seller automation lowers the cost-recovery floor, but a stronger customer alternative can lower the buyer ceiling below it. All amounts and the fifty-customer volume are hypothetical.](../figures/M08_ai_price_bounds.png)
+
+The provider's competitive advantage can therefore depend on reliable integration, relevant proprietary inputs, or reduced customer effort, provided those features create demonstrated value. Model access alone may also improve the customer's alternative. Repeated accepted delivery, willingness to pay, and costs over the full lifecycle determine whether the proposed service is economically useful.
+
+### 8.17.3 Reproduce the Cost and Price Comparisons
+
+\noindent Run `python3 03_Data_and_Code/AI_Workflows/investment.py` with Python 3.10 or later. The program uses only imposed inputs. It writes a CSV of total hours for zero through 24 uses and another with one row per pricing scenario. Hours and dollars remain separate units. Direct profit and utility balances verify the pricing endpoints, and the reuse calculation checks the zero-saving and first-positive-saving workloads.
+
+Python source: [investment.py](../../03_Data_and_Code/AI_Workflows/investment.py)
+
+```python
+"""Conditional reuse costs and buyer/seller price bounds; all inputs are imposed."""
+import csv
+import json
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def reuse_hours(uses, setup, old_per_use, new_per_use, upkeep_per_use):
+    if uses < 0 or min(setup, old_per_use, new_per_use, upkeep_per_use) < 0:
+        raise ValueError("Uses and hours must be nonnegative")
+    old = uses * old_per_use
+    new = setup + uses * (new_per_use + upkeep_per_use)
+    return old, new, old - new
+
+
+def price_bounds(value, outside_utility, buyer_burden, unit_cost, fixed_cost, volume):
+    if volume <= 0:
+        raise ValueError("Conditional volume must be positive")
+    # Quasilinear buyer utility: value - price - burden >= outside utility.
+    ceiling = value - outside_utility - buyer_burden
+    # Zero seller profit: volume * (price - unit_cost) >= fixed_cost.
+    floor = unit_cost + fixed_cost / volume
+    return floor, ceiling
+
+
+def write_csv(name, rows):
+    with (OUT / name).open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    reuse = []
+    for n in range(25):
+        old, new, saved = reuse_hours(n, 6, 2, 1.25, 0.25)
+        reuse.append({"uses": n, "old_hours": old,
+                      "reusable_hours": new, "net_hours_saved": saved})
+    assert reuse[12]["net_hours_saved"] == 0
+    assert next(r["uses"] for r in reuse if r["net_hours_saved"] > 0) == 13
+    assert reuse[24]["net_hours_saved"] == 6
+    pricing = []
+    for scenario, unit_cost, outside in [
+        ("Initial", 20, 80), ("Seller automation", 10, 80), ("Shared adoption", 10, 140)
+    ]:
+        floor, ceiling = price_bounds(200, outside, 40, unit_cost, 1000, 50)
+        # Direct monetary balances verify both boundary calculations.
+        assert 50 * (floor - unit_cost) - 1000 == 0
+        assert 200 - ceiling - 40 == outside
+        pricing.append({"scenario": scenario, "unit_cost_dollars": unit_cost,
+                        "fixed_cost_dollars": 1000, "conditional_volume": 50,
+                        "value_dollars": 200, "buyer_burden_dollars": 40,
+                        "outside_utility_dollars": outside,
+                        "price_floor_dollars": floor, "price_ceiling_dollars": ceiling,
+                        "feasible": floor <= ceiling})
+    assert [r["feasible"] for r in pricing] == [True, True, False]
+    write_csv("reuse_costs.csv", reuse)
+    write_csv("price_bounds.csv", pricing)
+    summary = {"scope": "Hypothetical equal-quality costs and monetary valuations.",
+               "reuse_break_even_uses": 12, "first_positive_saving_uses": 13,
+               "pricing": "Conditional on 50 sales; no demand or equilibrium is estimated.",
+               "price_bounds": pricing}
+    (OUT / "investment_results.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 8.18 Model Updates and the Decision to Revisit an Analysis
+
+\noindent A marketing team with a working analysis must decide whether a model update warrants another development effort. The answer depends on the unresolved task and the cost of changing its implementation. A useful record connects the managerial objective to the observed failure, the suspected cause, the comparison needed, and the conditions under which the current output remains usable.
+
+| Recorded Difficulty | Change Worth Investigating | Appropriate Comparison |
+| --- | --- | --- |
+| Pricing statements are retrieved with missing surrounding context | Better retrieval or a model that handles the required context | New complete calls with independently assessed labels |
+| A generated join multiplies customer rows | A checked join helper or clearer key specification | Hand-checkable duplicate cases and fresh schemas |
+| Unlogged meals are absent from mHealth records | Additional measurement or a narrower recorded-behavior target | Evidence about logging coverage and the chosen outcome |
+| Delivery requires too much manual correction | A simpler procedure or tested reusable components | Accepted output, total effort, and errors across new tasks |
+
+Record the actual accessible model and tools before evaluating a proposed update. A capability described elsewhere may be unavailable in the intended environment. Preserve the current procedure while developing a challenger, then freeze the challenger and evaluate both on fresh cases with the same criteria. Expected benefits should include subsequent uses and downstream constraints; setup, verification, and maintenance belong in the cost comparison.
+
+A difficulty register is a provisional diagnosis. An update can matter through a mechanism that the team failed to record, while an apparently relevant update may offer no practical benefit. Some effort should therefore examine alternative explanations and unanticipated uses. The allocation depends on the value and cost of that exploration. Keeping a previously validated procedure can be the appropriate decision when the challenger fails to improve the relevant outcome.
+
+Retain the executable code, input definitions, supported population, checks, costs, and known failure conditions for each accepted procedure. A model replacement, changed data schema, or shifted customer population can invalidate parts of the earlier evidence. Revalidation should address those dependencies explicitly. A larger code archive becomes useful only when its contents improve subsequent work enough to justify retrieval, adaptation, and upkeep.

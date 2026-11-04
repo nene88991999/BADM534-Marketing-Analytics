@@ -39,6 +39,20 @@ M7, Section 7.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M7, Section 7.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
 \end{frame}
+\begin{frame}{Selection on Development Accuracy}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_repeated_selection.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic independent chance predictions: 80 development cases per candidate.\par}
+\note{Each candidate has true accuracy one-half under the imposed independent Bernoulli model. The maximum development score increases with the number compared. Fresh test correctness is independent of selection. The program verifies the analytic expectation and simulates 2,000 repetitions with 200 test cases. Real prompt candidates can be correlated, so the magnitude is illustrative.
+
+Marketing Analytics Lecture Notes, M7 §7.20.}
+\end{frame}
 \begin{frame}{The Forecast Origin}
 \usebeamercolor[fg]{normal text}
 \vfill
@@ -210,13 +224,13 @@ M7, Section 7.18.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/
 \usebeamercolor[fg]{normal text}
 \vfill
 \begin{slidebullets}
-\item Create training, validation, and later test windows.
+\item Compare development and fresh accuracy after candidate selection.
 \item Check every feature against the forecast date.
 \item Compare a simple baseline, ranking, and calibration.
 \item Report missing outcomes beside the test metrics.
 \end{slidebullets}
 \vfill
-\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions.
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions. The AI\_Workflows folder supplies complete standard-library calculations with synthetic inputs.
 
 M7, Section 7.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
 \end{frame}

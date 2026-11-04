@@ -1,0 +1,8 @@
+{
+  "seed": 20261104,
+  "repetitions": 2000,
+  "development_cases": 80,
+  "fresh_test_cases": 200,
+  "scope": "Synthetic independent chance predictions; no LLM calls.",
+  "mc_se": "Monte Carlo error of the simulated mean across repetitions"
+}

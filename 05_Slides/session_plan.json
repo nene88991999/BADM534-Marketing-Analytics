@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-02",
+  "updated_on": "2026-11-04",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -17,11 +17,11 @@
       "modules": "M1",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 19,
+      "slides": 20,
       "companion": "S01_Marketing_Decisions_and_AI_Coding.md",
       "pdf": "S01_Marketing_Decisions_and_AI_Coding.pdf",
-      "python_activity": "Implement and assess order aggregation with three deliberately altered inputs.",
-      "application": "Write a 30-day coupon specification and identify its missing causal evidence.",
+      "python_activity": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
+      "application": "Write a coupon specification and identify the evidence needed to resolve its causal question.",
       "ethics": "Data minimization, authorized processing, and verifiable AI code",
       "timing": [
         {
@@ -249,11 +249,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 18,
+      "slides": 19,
       "companion": "S05_Conjoint_and_Product_Design.md",
       "pdf": "S05_Conjoint_and_Product_Design.pdf",
-      "python_activity": "Simulate a new bundle, the outside option, and portfolio contribution.",
-      "application": "Specify a choice experiment for an mHealth paid plan without inferring payment behavior from logging.",
+      "python_activity": "Calculate choice probabilities and assess the role of a stronger customer alternative.",
+      "application": "Compare product value, implementation burden, substitution, and the outside option.",
       "ethics": "Price completeness and the attributes customers actually evaluate",
       "timing": [
         {
@@ -365,11 +365,11 @@
       "modules": "M5",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 24,
+      "slides": 25,
       "companion": "S07_Text_Social_Media_and_Networks.md",
       "pdf": "S07_Text_Social_Media_and_Networks.pdf",
-      "python_activity": "Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.",
-      "application": "Distinguish pricing communication from adoption, then compare text-topic weights and network brokerage.",
+      "python_activity": "Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.",
+      "application": "Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations.",
       "ethics": "Review provenance, generated claims, and false positives",
       "timing": [
         {
@@ -469,11 +469,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 18,
+      "slides": 20,
       "companion": "S09_Experiments_and_Incremental_Value.md",
       "pdf": "S09_Experiments_and_Incremental_Value.pdf",
-      "python_activity": "Reproduce the email effect, confidence interval, contribution, and power calculation.",
-      "application": "Design a user-randomized recommendation test with pre-treatment adjustment and explicit guardrails.",
+      "python_activity": "Calculate an email effect and decompose a synthetic model-by-library comparison.",
+      "application": "Design a randomized comparison with a common rubric and an appropriate assignment unit.",
       "ethics": "Experimental objectives and customer outcomes",
       "timing": [
         {
@@ -585,11 +585,11 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 18,
+      "slides": 19,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
-      "python_activity": "Assess a chronological split and compare accuracy, precision, recall, and calibration.",
-      "application": "Translate a forecast into a capacity-constrained action and check missing future labels.",
+      "python_activity": "Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.",
+      "application": "Choose a forecast, split, and decision threshold using the intended deployment population.",
       "ethics": "Prediction errors and access to consequential offers",
       "timing": [
         {
@@ -759,11 +759,11 @@
       "modules": "M8",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 19,
+      "slides": 22,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
-      "python_activity": "Assess demand and workflow measurements, then calculate a conditional retention-welfare example.",
-      "application": "Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status.",
+      "python_activity": "Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.",
+      "application": "Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules.",
       "ethics": "Retention procedures, customer value, and regulatory status",
       "timing": [
         {

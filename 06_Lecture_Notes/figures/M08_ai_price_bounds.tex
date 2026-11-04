@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[width=11cm,height=6.4cm,xmin=0,xmax=90,ymin=-.6,ymax=2.6,
+xtick={0,20,40,60,80},ytick={0,1,2},
+yticklabels={Shared Adoption,Seller Automation,Initial},
+xlabel={Price per Customer (Dollars)},xmajorgrids=true,
+legend style={at={(.5,1.03)},anchor=south,legend columns=2,fill=none}]
+\addplot[LightStorm,line width=8pt,forget plot] coordinates {(40,2) (80,2)};
+\addplot[LightStorm,line width=8pt,forget plot] coordinates {(30,1) (80,1)};
+\addplot[Storm,dotted,forget plot] coordinates {(20,0) (30,0)};
+\addplot[only marks,IlliniBlue,mark=*,mark size=3.5pt] coordinates {(40,2) (30,1) (30,0)};
+\addlegendentry{Seller Floor}
+\addplot[only marks,IlliniOrange,mark=triangle*,mark size=4pt] coordinates {(80,2) (80,1) (20,0)};
+\addlegendentry{Buyer Ceiling}
+\node[anchor=west,font=\scriptsize] at (axis cs:35,0) {No Feasible Interval};
+\end{axis}
+\end{tikzpicture}

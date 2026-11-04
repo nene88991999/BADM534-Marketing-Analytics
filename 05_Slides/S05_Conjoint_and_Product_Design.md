@@ -17,6 +17,7 @@ Session 05. M4. 170 minutes.
 - [M4 lecture notes](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md)
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 
 ## Slide 1: Conjoint and Product Design
 
@@ -201,7 +202,17 @@ A code generator may accidentally normalize probabilities over the full dataset 
 
 Source: M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 17: Price Presentation and Customer Understanding
+## Slide 17: Customer Alternatives and AI Pricing
+
+- Customer value depends on the offered outcome and implementation effort.
+- Better tools can make internal analysis a stronger alternative.
+- Lower seller costs and lower willingness to pay can occur together.
+
+Under a quasilinear comparison, the buyer price ceiling is delivered value minus buyer burden and outside-option utility. Use a common customer and horizon. Product design can reduce integration and verification effort, while competitive improvements raise the value of the alternative. The conditional numerical comparison appears in Session 14 and M8 §8.17.
+
+Source: Marketing Analytics Lecture Notes, M4 §4.16.
+
+## Slide 18: Price Presentation and Customer Understanding
 
 - A base price and a mandatory fee determine the total paid.
 - A stated-choice task can reveal different responses to equivalent totals.
@@ -211,7 +222,7 @@ The FTC's fee rule addresses live-event tickets and short-term lodging. Its scop
 
 Source: FTC Rule on Unfair or Deceptive Fees FAQ. https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions
 
-## Slide 18: Product-Design Discussion
+## Slide 19: Product-Design Discussion
 
 - How much of C's demand comes from existing products?
 - Which design change would identify the price tradeoff?

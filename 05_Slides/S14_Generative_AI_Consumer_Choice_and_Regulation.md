@@ -19,6 +19,7 @@ Session 14. M8. 170 minutes.
 - [GenAI demand examples](../03_Data_and_Code/GenAI_Demand/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
+- [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -78,7 +79,19 @@ Recovering the benchmark checks implementation under its assumptions. It does no
 
 Source: M8, Section 8.13.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 7: AI Workflow Quality
+## Slide 7: Seller Costs and Customer Alternatives
+
+Hypothetical dollars per customer, conditional on 50 sales.
+
+**Figure description:** The initial seller floor is 40 dollars and buyer ceiling 80. Seller automation lowers the floor to 30 while the ceiling stays 80. Shared adoption raises outside-option utility and lowers the ceiling to 20, below the 30-dollar floor.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M08_ai_price_bounds.tex)
+
+Delivered value is 200 dollars, buyer burden 40, and fixed cost 1,000. Unit cost falls from 20 to 10. Outside-option utility then rises from 80 to 140. Gray intervals indicate simultaneous weak participation and cost recovery. Volume and valuations are imposed; these bounds neither estimate demand nor solve a pricing equilibrium. Customers are indifferent at the ceiling.
+
+Source: Marketing Analytics Lecture Notes, M8 §8.17.2.
+
+## Slide 8: AI Workflow Quality
 
 - Measure the completed analysis and its validity.
 - Include generation, review, and repair time.
@@ -88,7 +101,7 @@ A time comparison can favor a tool because it abandons difficult tasks or reduce
 
 Source: M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 8: Review Time Is Part of Production
+## Slide 9: Review Time Is Part of Production
 
 Synthetic workflows meet the same stated quality requirement.
 
@@ -100,7 +113,29 @@ The manual workflow uses 90 minutes to produce and 20 to review. The assisted wo
 
 Source: M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 9: A Choice Procedure Can Change Renewal
+## Slide 10: Reuse Has a Break-Even Workload
+
+Hypothetical equal-quality work: six setup hours, with adaptation included.
+
+**Figure description:** The existing process takes two hours per use. The reusable process takes six setup hours plus 1.5 hours per use, including upkeep. The lines cross at twelve uses and total 48 versus 42 hours at twenty-four uses.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M08_reuse_costs.tex)
+
+Execution alone falls from two hours to 1.25, but 0.25 upkeep hours are required per use. Net savings become positive at the thirteenth use. Twenty-four uses save six hours, a 12.5% reduction after setup and upkeep. The numbers are imposed and do not measure course development time. Run investment.py and vary upkeep or workload.
+
+Source: Marketing Analytics Lecture Notes, M8 §8.17.1.
+
+## Slide 11: Model Updates and Unresolved Tasks
+
+- Connect an update to a recorded difficulty and a feasible comparison.
+- Evaluate the frozen challenger and current procedure on fresh cases.
+- Include setup, correction, and maintenance in the adoption decision.
+
+Record actual access, supported inputs, failure conditions, and the original decision. A difficulty register can omit an unexpected useful route, so allow exploratory comparisons and revise the diagnosis. Retain the existing procedure when the challenger provides no supported improvement. A new schema or customer population can require revalidation of a retained helper.
+
+Source: Marketing Analytics Lecture Notes, M8 §8.18.
+
+## Slide 12: A Choice Procedure Can Change Renewal
 
 - A direct offer and an offer preceded by questions can produce different choices.
 - The customer still makes the final selection.
@@ -110,7 +145,7 @@ Questions, defaults, or retention prompts can precede a fixed target decision. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 10: Opposed Interests
+## Slide 13: Opposed Interests
 
 Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
 
@@ -124,7 +159,7 @@ This conditional comparison holds the offer, monetary values, and relevant respo
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 11: Profit and Customer Value Can Move Oppositely
+## Slide 14: Profit and Customer Value Can Move Oppositely
 
 Synthetic probabilities and fixed stakes. Direct renewal is 20%.
 
@@ -136,7 +171,7 @@ The direct-choice benchmark is distinct from the consumer-preferred procedure. R
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 12: Experimentation Selects the Commercial Winner
+## Slide 15: Experimentation Selects the Commercial Winner
 
 - A fixed set of procedures has stable renewal probabilities.
 - Independent randomized samples estimate each probability.
@@ -146,7 +181,7 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 13: A Cancellation Evaluation
+## Slide 16: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -156,7 +191,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 14: Rule Status and Scope
+## Slide 17: Rule Status and Scope
 
 - A statute, binding rule, interpretive guide, and proposal have different authority.
 - Record jurisdiction, covered conduct, exceptions, and effective date.
@@ -166,7 +201,7 @@ The FTC's March 2026 negative-option notice seeks input on possible amendments a
 
 Source: FTC, Negative Option Rule ANPRM announcement, March 2026. https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option
 
-## Slide 15: Pricing, Reviews, and Delivery
+## Slide 18: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -176,7 +211,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 16: Pricing Language and Regulatory Evidence
+## Slide 19: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -186,7 +221,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 17: A Welfare Comparison
+## Slide 20: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -205,17 +240,17 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 18: Coding Exercise: A Marketing Evaluation
+## Slide 21: Coding Exercise: A Marketing Evaluation
 
-- Verify a demand denominator and the workflow-time calculation.
+- Calculate reuse break-even and the conditional price interval.
 - Compute profit and customer value for alternative retention procedures.
 - Propose an interface change and the evidence needed to evaluate it.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs.
+Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.
 
 Source: M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 19: A Decision With Consumer Outcomes
+## Slide 22: A Decision With Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

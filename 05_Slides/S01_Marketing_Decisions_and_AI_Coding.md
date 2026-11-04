@@ -18,6 +18,7 @@ Session 01. M1. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [mHealth dictionary](../03_Data_and_Code/mHealth/DATA_DICTIONARY.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -143,7 +144,17 @@ A useful request specifies analytical behavior and acceptance criteria. The assi
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 12: Verification With Counterexamples
+## Slide 12: Code Errors and Missing Evidence
+
+- A repeated daily total requires a correction to aggregation.
+- Unrecorded food requires additional measurement or a recorded-behavior target.
+- A coupon decision needs evidence about untreated outcomes.
+
+The response to a failed analysis depends on the unresolved distinction. Ask for the smallest check that could distinguish a calculation error from missing information. A new model can improve implementation while leaving the missing-information problem unchanged. A validated category summary can also remove unnecessary prose generation when the decision only needs category totals.
+
+Source: Marketing Analytics Lecture Notes, M1 §1.12.
+
+## Slide 13: Verification With Counterexamples
 
 - A duplicate lookup must trigger a failed key check.
 - An unmatched customer must remain visible in the assessment.
@@ -154,7 +165,7 @@ These checks test properties that can fail even when code runs. Repeating the pr
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 13: mHealth Records
+## Slide 14: mHealth Records
 
 - Food entries describe recorded items on observed user-days.
 - The separate daily table covers only part of the food-log history.
@@ -164,7 +175,7 @@ The released records replace user identifiers and birthdays and perturb weight v
 
 Source: M1, Section 1.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 14: Join Choice Changes the Sample
+## Slide 15: Join Choice Changes the Sample
 
 Released mHealth cohort: 76,804 observed user-days.
 
@@ -176,7 +187,7 @@ An inner join would remove more than half the cohort days. Missing calendar days
 
 Source: M1, Section 1.8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 15: Coding Exercise: An Order Assessment
+## Slide 16: Coding Exercise: An Order Assessment
 
 - Implement aggregation with a coding assistant.
 - Add a return, a missing identifier, and a duplicated lookup key.
@@ -186,7 +197,7 @@ Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.p
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 16: A Reproducible Analysis
+## Slide 17: A Reproducible Analysis
 
 - Relative paths identify inputs and outputs.
 - A fresh run reconstructs results without hidden notebook state.
@@ -196,7 +207,7 @@ A random seed reproduces a particular random computation under a given implement
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 17: A Campaign Specification
+## Slide 18: A Campaign Specification
 
 - Define the eligible customers and contact date.
 - State the contribution horizon and relevant costs.
@@ -207,7 +218,7 @@ The specification should state one feasible action and the comparison that suppo
 
 Source: M1, Section 1.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 18: Customer Data in an AI Workflow
+## Slide 19: Customer Data in an AI Workflow
 
 - Use only data authorized for the tool and task.
 - Minimize fields and use synthetic examples when they suffice.
@@ -217,7 +228,7 @@ Public availability does not establish permission for every reuse. Pseudonymized
 
 Source: Course agent guide and ETHICS_AND_REGULATION.md, M1.
 
-## Slide 19: Decision Discussion
+## Slide 20: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[width=12cm,height=6.4cm,xmode=log,log basis x=10,xmin=.8,xmax=125,
+ymin=45,ymax=70,xtick={1,5,20,100},xticklabels={1,5,20,100},
+ytick={45,50,55,60,65,70},xlabel={Candidates Compared},ylabel={Expected Accuracy (\%)},
+ymajorgrids=true,legend style={at={(.5,1.03)},anchor=south,legend columns=2,fill=none}]
+\addplot[IlliniOrange,mark=square*,mark size=3pt] table[col sep=comma,x=candidates,
+y expr=100*\thisrow{expected_development_accuracy}]
+{../03_Data_and_Code/AI_Workflows/results/selection_results.csv};
+\addlegendentry{Selected Development}
+\addplot[IlliniBlue,dashed,mark=*,mark size=3pt] table[col sep=comma,x=candidates,
+y expr=100*\thisrow{expected_test_accuracy}]
+{../03_Data_and_Code/AI_Workflows/results/selection_results.csv};
+\addlegendentry{Fresh Test}
+\end{axis}
+\end{tikzpicture}

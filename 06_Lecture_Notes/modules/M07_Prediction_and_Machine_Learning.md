@@ -698,3 +698,116 @@ The Department of Justice's Meta housing-advertising case addressed both targeti
 For an analytical assessment, define the eligible population, opportunity to receive the offer, realized exposure, and downstream response. Compare rates using the appropriate denominators and examine whether outcome labels are observed for everyone or only for exposed customers. A high click prediction can reflect selective earlier exposure. Retraining on those clicks can reproduce that selection through a new model.
 
 Error costs should also follow the application. A mistaken recommendation of a grocery item and a missed housing opportunity have different consequences. A proposed fairness comparison must specify the affected population, outcome, and decision. Several metrics can conflict because they condition on different objects. Report the tradeoff and the policy objective that resolves it rather than treating a single accuracy statistic as a complete evaluation.
+
+## 7.20 Repeated Selection Can Improve a Score Without Improving Prediction
+
+\noindent A manager comparing AI-generated classifiers may see development accuracy rise as analysts try more prompts, features, or code revisions. Some of that increase can reflect selection among noisy scores. A useful evaluation asks how the selected procedure performs on cases that played no role in its selection.
+
+Consider an imposed null model in which every candidate predicts correctly with probability one-half. Each candidate receives 80 development cases, and the candidate with the highest development accuracy is selected. A tie selects the earliest candidate. The selected candidate is then evaluated on 200 fresh cases. The calculation makes the following independence conditions explicit.
+
+\begin{assumption}[Independent Chance Predictions]\label{ass:chance-predictions}
+Every correctness indicator is an independent Bernoulli variable with probability one-half across candidates, cases, and independent repetitions. Development and test indicators are independent. Selection uses only development correctness counts and a fixed tie rule.
+\end{assumption}
+
+Let $X_k$ be the number of correct development predictions by candidate $k$, and let $F(s)=\Pr(X_k\leq s)$ for the binomial distribution with 80 trials and success probability one-half. Under Assumption \ref{ass:chance-predictions}, the probability that all $K$ candidates score at most $s$ is $F(s)^K$. Summing the tail probabilities of their maximum gives the expected selected accuracy:
+
+$$
+E\left[\frac{\max_{1\leq k\leq K}X_k}{80}\right]
+=\frac{1}{80}\sum_{s=0}^{79}\left[1-F(s)^K\right].
+$$
+
+Increasing the number of candidates raises the chance of selecting an unusually favorable development score. The expected test accuracy remains one-half because the independent test outcomes never enter selection. Reusing test results to change the next candidate would violate that condition.
+
+| Candidates Compared | Expected Selected Development Accuracy | Simulated Development Accuracy | Simulated Fresh Accuracy |
+| ---: | ---: | ---: | ---: |
+| 1 | 50.00% | 49.94% | 49.88% |
+| 5 | 56.49% | 56.63% | 50.00% |
+| 20 | 60.40% | 60.42% | 49.95% |
+| 100 | 63.93% | 63.89% | 50.03% |
+
+The simulated entries average 2,000 independent repetitions with seed 20261104. Candidate sets are nested within each repetition, so comparisons across rows are paired. The reported Monte Carlo standard errors in the output measure simulation precision across repetitions. They are distinct from uncertainty about one deployed classifier's accuracy. The analytical expectation provides a separate check on the program.
+
+![Expected selected development accuracy rises from 50% to 63.93% as candidate count increases from one to one hundred; expected fresh accuracy remains 50%.](../figures/M07_repeated_selection.png)
+
+Real prompt revisions often produce correlated predictions, and feedback can alter later candidates. The independence model gives a transparent mechanism, rather than an estimated magnitude for those workflows. The relevant practice is to preserve development records, fix the final comparison before exposing new outcomes, and match the split to the deployment population. For earnings calls, separate firms or future periods as appropriate and keep passages from a call together. A new model release also needs fresh evaluation when its predecessor's test errors guided the upgrade decision.
+
+### 7.20.1 Reproduce Selection and Fresh Evaluation
+
+\noindent Run `python3 03_Data_and_Code/AI_Workflows/repeated_selection.py` with Python 3.10 or later. Separate pseudorandom streams produce development and test correctness. The CSV contains one row per candidate count, analytical expectations, simulated means, and Monte Carlo standard errors, all as fractions. The JSON records sample sizes and the seed. The accompanying exact test enumerates every binary outcome for two candidates with three cases each and compares their expected maximum with the formula.
+
+Python source: [repeated_selection.py](../../03_Data_and_Code/AI_Workflows/repeated_selection.py)
+
+```python
+"""Simulate selection among equally uninformative classifiers using only stdlib."""
+import csv
+import json
+import math
+import random
+from pathlib import Path
+from statistics import mean, stdev
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def select_candidate(development_counts):
+    # The earliest candidate wins a tie. Test outcomes are never an input.
+    return max(range(len(development_counts)), key=development_counts.__getitem__)
+
+
+def expected_selected_accuracy(n, candidates):
+    """Exact binomial order-statistic expectation, evaluated in floating point."""
+    cumulative = 0.0
+    expected_count = 0.0
+    for successes in range(n):
+        cumulative += math.comb(n, successes) / 2**n
+        expected_count += 1 - cumulative**candidates
+    return expected_count / n
+
+
+def main():
+    seed, repetitions, development_n, test_n = 20261104, 2000, 80, 200
+    candidate_counts = [1, 5, 20, 100]
+    # Separate streams keep test outcomes out of the development process.
+    development_rng = random.Random(seed)
+    test_rng = random.Random(seed + 1)
+    observed = {k: {"development": [], "test": []} for k in candidate_counts}
+    for _ in range(repetitions):
+        # Each independent bit denotes a correct prediction with probability 1/2.
+        # Candidates are also independent in this deliberately simple null model.
+        development = [development_rng.getrandbits(development_n).bit_count()
+                       for _ in range(max(candidate_counts))]
+        test = [test_rng.getrandbits(test_n).bit_count()
+                for _ in range(max(candidate_counts))]
+        for k in candidate_counts:
+            selected = select_candidate(development[:k])
+            observed[k]["development"].append(development[selected] / development_n)
+            observed[k]["test"].append(test[selected] / test_n)
+    rows = []
+    for k, values in observed.items():
+        exact = expected_selected_accuracy(development_n, k)
+        development_mean, test_mean = mean(values["development"]), mean(values["test"])
+        development_se = stdev(values["development"]) / math.sqrt(repetitions)
+        test_se = stdev(values["test"]) / math.sqrt(repetitions)
+        # Independent analytic benchmarks check the simulation's implementation.
+        assert abs(development_mean - exact) < 5 * development_se
+        assert abs(test_mean - 0.5) < 5 * test_se
+        rows.append({"candidates": k, "expected_development_accuracy": exact,
+                     "mean_development_accuracy": development_mean,
+                     "mean_test_accuracy": test_mean, "expected_test_accuracy": 0.5,
+                     "development_mc_se": development_se, "test_mc_se": test_se})
+    OUT.mkdir(exist_ok=True)
+    with (OUT / "selection_results.csv").open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    metadata = {"seed": seed, "repetitions": repetitions,
+                "development_cases": development_n, "fresh_test_cases": test_n,
+                "scope": "Synthetic independent chance predictions; no LLM calls.",
+                "mc_se": "Monte Carlo error of the simulated mean across repetitions"}
+    (OUT / "selection_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+    print(json.dumps(rows, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

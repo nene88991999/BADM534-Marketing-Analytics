@@ -2,6 +2,8 @@
 
 These small datasets and calculations support the [eight lecture-note modules](../../06_Lecture_Notes/README.md). All observations, probabilities, and response curves in this folder are **synthetic teaching inputs**, constructed for these notes on October 23, 2026. They contain no student records or real customer data. They are not replications of the published studies discussed in the notes.
 
+The separate [AI workflow examples](../AI_Workflows/README.md) add November 4 calculations for factorial comparisons, repeated candidate selection, reuse costs, and competitive pricing. They include complete standard-library Python and aggregate output tables.
+
 Run from the repository root:
 
 ```sh

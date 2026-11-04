@@ -1,30 +1,32 @@
 {
-  "verified_on": "2026-11-02",
+  "verified_on": "2026-11-04",
   "artifacts": {
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 265,
-      "sha256": "68b809a93b8c2a1898499030ff24b324af6f9a5fc5e8beaf1d03c0d8844f572e"
+      "pages": 274,
+      "sha256": "d7f2add83eaab6985d0cf1c13a46cefde073f1cdfbc8cca3edfc04312ac4a566"
     },
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 185,
-      "sha256": "842472d7adb33778e3315629aa3cff9650efd9876816cf56f0312a9f9ba27d2f"
+      "pages": 198,
+      "sha256": "57c0d42bdedf636d51405915e6740c781b58e9f3a36fe1683759a40494c4185f"
     }
   },
   "session_decks": 15,
   "scheduled_minutes_per_meeting": 170,
   "checks": {
-    "all_student_pdf_pages_rendered_and_visually_reviewed": true,
-    "presenter_mode_session_14_compiled_and_layout_reviewed": true,
-    "normal_decks_have_no_overfull_boxes_or_tex_errors": true,
+    "updated_decks_compile_without_overfull_boxes_or_tex_errors": true,
+    "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
     "session_plan_and_manifest_counts_agree": true,
-    "local_companion_links_resolve": 254,
-    "projected_python_snippets_executed": 13,
-    "session_program_calculations_executed": 14,
-    "full_note_code_blocks_match_source_and_parse": 45,
-    "retention_example_compared_with_independent_expected_values": true,
-    "retention_figure_matches_aggregate_csv": true
+    "calendar_dates_and_170_minute_meetings_unchanged": true,
+    "local_markdown_links_checked_this_revision": 418,
+    "new_projected_python_snippets_executed": 1,
+    "full_note_code_blocks_match_source_and_parse": 48,
+    "new_analysis_programs_executed": 3,
+    "independent_small_case_tests_passed": 5,
+    "new_tikz_figures_checked_against_outputs_and_rendered": 4,
+    "changed_student_slide_pages_visually_reviewed": 12,
+    "note_pages_visually_reviewed_including_contents_and_transitions": 31
   },
-  "execution_scope": "This revision executed all four earnings-call analyses, nine counterexample checks, the new projected Python snippet, independent CSV count reconciliation, export hash checks, and all 45 note-code comparisons. Earlier calculation checks remain recorded below; unrelated analyses and downloaded collectors were not rerun.",
+  "execution_scope": "November 4 revision: executed the three original synthetic AI workflow programs, five exact small-case checks, the new projected calculation, all 48 note-code comparisons, figure-data reconciliation, and local-link and schedule checks. Reviewed all 12 changed student-slide pages and 31 note pages including contents and transitions. No model APIs or downloaded reference programs were executed. Earlier checks are retained in the historical fields below.",
   "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",

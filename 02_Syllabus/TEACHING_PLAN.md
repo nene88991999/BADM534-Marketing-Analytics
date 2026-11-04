@@ -42,3 +42,9 @@ The [lecture notes](../06_Lecture_Notes/README.md) provide detailed explanations
 ## Earnings-Call Application
 
 Use pricing communication as a recurring application in meetings 2, 7, 10, and 14. Meeting 2 assesses missing text and document selection. Meeting 7 allocates its 25-minute worked comparison and 45-minute Python block to word exposure, dictionary interpretation, and AI-assisted checks; its application block connects these ideas to mHealth text and networks. Meeting 10 uses the event comparison within causal-design discussion. Meeting 14 incorporates pricing evidence within its existing 75-minute ethics and regulation block. The [worked example](../03_Data_and_Code/Earnings_Calls/README.md) provides the data, code, and interpretation cases. These activities fit the existing 15 meetings and do not add guest speakers or release graded requirements.
+
+## AI Workflow Comparisons
+
+Use the [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md) within the existing method and application blocks. Meeting 1 distinguishes calculation errors from missing evidence. Meeting 5 connects product value to buyer effort and customer alternatives. Meeting 7 treats prompt revision as development and preserves independent document evaluation. Meeting 9 adds a small model-by-library factorial comparison to the experiment calculation. Meeting 11 examines repeated selection among chance classifiers alongside forecast validation. Meeting 14 uses price bounds in the 35-minute demand block and reuse economics and selective upgrades in the 35-minute workflow block. Its 75-minute ethics and regulation allocation remains in place.
+
+The three programs and five exact checks use synthetic inputs and standard-library Python. Students can reproduce the comparisons without paid inference access. They introduce no new graded requirements or meeting dates.

@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[width=12cm,height=6.4cm,xmin=-.15,xmax=1.15,ymin=50,ymax=95,
+xtick={0,1},xticklabels={Earlier Model,Newer Model},ytick={50,60,70,80,90},
+ylabel={Assigned Tasks Passing (\%)},xlabel={Model Configuration},ymajorgrids=true,
+legend style={at={(.5,1.03)},anchor=south,legend columns=2,fill=none}]
+\addplot[IlliniBlue,mark=*,mark size=3pt] coordinates {(0,60) (1,65)};
+\addlegendentry{Library Absent}
+\addplot[IlliniOrange,mark=square*,mark size=3pt] coordinates {(0,70) (1,85)};
+\addlegendentry{Library Present}
+\node[anchor=north west] at (axis cs:0,60) {60};
+\node[anchor=north west] at (axis cs:1,65) {65};
+\node[anchor=south east] at (axis cs:0,70) {70};
+\node[anchor=south east] at (axis cs:1,85) {85};
+\end{axis}
+\end{tikzpicture}

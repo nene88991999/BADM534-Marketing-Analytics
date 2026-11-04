@@ -41,3 +41,7 @@ The [GenAI demand cases](GenAI_Demand/README.md) cover public-signal measurement
 ## Earnings-Call Pricing Communication
 
 The [earnings-call case](Earnings_Calls/README.md) uses supplied structured metadata for missing-text assessment in M2, text measurement and interpretation in M5, descriptive event comparisons in M6, and pricing evidence in M8. Four complete Python programs, nine counterexample tests, source hashes, and three TikZ figures support the case. Seven source-linked paraphrases distinguish price displays, business advertising, intentions, infrastructure, and claims about pricing use. Full transcript excerpts remain in the original local bundle.
+
+## AI Workflow Evaluation and Economics
+
+The [AI workflow examples](AI_Workflows/README.md) compare model and library contributions, repeated selection on development accuracy, reusable-code costs, and buyer/seller price bounds. Three executed programs use only Python's standard library and synthetic inputs. Complete code appears in M6 §6.19, M7 §7.20, and M8 §8.17, with connections in M1, M4, and M5. Five small-case checks and four TikZ figures accompany the calculations. The examples require no model account and establish no provider performance, observed labor savings, or customer demand.

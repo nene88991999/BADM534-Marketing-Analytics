@@ -10,20 +10,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 19 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 20 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 18 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 24 |
-| 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 | Apr 7 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 18 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 25 |
+| 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 20 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 18 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 19 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 19 |
+| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 22 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -32,9 +32,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Implement and assess order aggregation with three deliberately altered inputs.
+**Python and Evidence:** Implement and assess order aggregation, then distinguish code errors from missing observations.
 
-**Application:** Write a 30-day coupon specification and identify its missing causal evidence.
+**Application:** Write a coupon specification and identify the evidence needed to resolve its causal question.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -112,9 +112,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 17, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Simulate a new bundle, the outside option, and portfolio contribution.
+**Python and Evidence:** Calculate choice probabilities and assess the role of a stronger customer alternative.
 
-**Application:** Specify a choice experiment for an mHealth paid plan without inferring payment behavior from logging.
+**Application:** Compare product value, implementation burden, substitution, and the outside option.
 
 **Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
 
@@ -152,9 +152,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce call and word denominators; challenge a dictionary with synthetic contrasts and source-linked interpretation cases.
+**Python and Evidence:** Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.
 
-**Application:** Distinguish pricing communication from adoption, then compare text-topic weights and network brokerage.
+**Application:** Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations.
 
 **Ethics and Regulation:** Review provenance, generated claims, and false positives.
 
@@ -190,9 +190,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce the email effect, confidence interval, contribution, and power calculation.
+**Python and Evidence:** Calculate an email effect and decompose a synthetic model-by-library comparison.
 
-**Application:** Design a user-randomized recommendation test with pre-treatment adjustment and explicit guardrails.
+**Application:** Design a randomized comparison with a common rubric and an appropriate assignment unit.
 
 **Ethics and Regulation:** Experimental objectives and customer outcomes.
 
@@ -230,9 +230,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess a chronological split and compare accuracy, precision, recall, and calibration.
+**Python and Evidence:** Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.
 
-**Application:** Translate a forecast into a capacity-constrained action and check missing future labels.
+**Application:** Choose a forecast, split, and decision threshold using the intended deployment population.
 
 **Ethics and Regulation:** Prediction errors and access to consequential offers.
 
@@ -290,9 +290,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess demand and workflow measurements, then calculate a conditional retention-welfare example.
+**Python and Evidence:** Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.
 
-**Application:** Evaluate retention and pricing recommendations using customer outcomes, operational evidence, and applicable rule status.
+**Application:** Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules.
 
 **Ethics and Regulation:** Retention procedures, customer value, and regulatory status.
 

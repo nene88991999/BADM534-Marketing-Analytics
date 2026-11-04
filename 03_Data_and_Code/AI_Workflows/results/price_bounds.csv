@@ -1,0 +1,4 @@
+scenario,unit_cost_dollars,fixed_cost_dollars,conditional_volume,value_dollars,buyer_burden_dollars,outside_utility_dollars,price_floor_dollars,price_ceiling_dollars,feasible
+Initial,20,1000,50,200,40,80,40.0,80,True
+Seller automation,10,1000,50,200,40,80,30.0,80,True
+Shared adoption,10,1000,50,200,40,140,30.0,20,False

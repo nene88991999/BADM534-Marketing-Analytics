@@ -1,0 +1,44 @@
+{
+  "scope": "Hypothetical equal-quality costs and monetary valuations.",
+  "reuse_break_even_uses": 12,
+  "first_positive_saving_uses": 13,
+  "pricing": "Conditional on 50 sales; no demand or equilibrium is estimated.",
+  "price_bounds": [
+    {
+      "scenario": "Initial",
+      "unit_cost_dollars": 20,
+      "fixed_cost_dollars": 1000,
+      "conditional_volume": 50,
+      "value_dollars": 200,
+      "buyer_burden_dollars": 40,
+      "outside_utility_dollars": 80,
+      "price_floor_dollars": 40.0,
+      "price_ceiling_dollars": 80,
+      "feasible": true
+    },
+    {
+      "scenario": "Seller automation",
+      "unit_cost_dollars": 10,
+      "fixed_cost_dollars": 1000,
+      "conditional_volume": 50,
+      "value_dollars": 200,
+      "buyer_burden_dollars": 40,
+      "outside_utility_dollars": 80,
+      "price_floor_dollars": 30.0,
+      "price_ceiling_dollars": 80,
+      "feasible": true
+    },
+    {
+      "scenario": "Shared adoption",
+      "unit_cost_dollars": 10,
+      "fixed_cost_dollars": 1000,
+      "conditional_volume": 50,
+      "value_dollars": 200,
+      "buyer_burden_dollars": 40,
+      "outside_utility_dollars": 140,
+      "price_floor_dollars": 30.0,
+      "price_ceiling_dollars": 20,
+      "feasible": false
+    }
+  ]
+}

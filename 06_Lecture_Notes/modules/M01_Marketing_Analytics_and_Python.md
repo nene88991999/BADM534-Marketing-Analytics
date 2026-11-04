@@ -572,3 +572,20 @@ if __name__ == "__main__":
 An AI coding tool can receive information through prompts, uploaded files, logs, screenshots, or repository access. Generate and debug a transformation using a small synthetic table when real records are unnecessary. Before using actual records, establish whether that environment is authorized for those fields and that purpose. An assistant's ability to read a file does not establish the firm's authority to transmit it. Access, processing location, retention, and permitted uses belong to the specification of the work.
 
 The mHealth exercises provide a concrete comparison. Ages and perturbed weights support selected teaching calculations, while exact birthdays are unnecessary. Replacing identifiers and perturbing one measurement do not establish anonymity for every possible linkage. A useful implementation loads the minimum required columns, avoids printing individual histories into logs, and publishes aggregate results with their denominators. Students can inspect generated code for file uploads, external API calls, and unnecessary exports before running it. These checks concern observable data flows and preserve the ability to reproduce the local analysis.
+
+## 1.12 A Failed Analysis Can Require Different Evidence
+
+\noindent A manager commissioning an AI-assisted analysis must choose what to change when the answer remains unreliable. A wrong join requires a correction to the program. A missing observation requires an information decision. A poorly defined target requires a clearer managerial question. These diagnoses lead to different uses of time and money, even when all three failures initially appear as an unsatisfactory answer from the same assistant.
+
+The mHealth records make the distinction concrete. Repeated daily totals can be counted once using the user-day key, and a join can preserve the intended cohort. Those changes improve calculations on recorded information. Food consumed without a corresponding log remains unobserved. Estimating total consumption would require additional measurement or assumptions linking logging to consumption. An analysis of recorded food categories can instead proceed with its population and outcome stated explicitly.
+
+| Difficulty | Useful Response | Evidence of Resolution |
+| --- | --- | --- |
+| Daily totals are repeated across food entries | Correct aggregation at the user-day level | Reconcile one day by hand and compare totals |
+| An item description maps to several categories | Obtain a reference label or retain the ambiguity | Evaluate separately adjudicated descriptions |
+| Food consumption was never recorded | Collect additional evidence or define a recorded-behavior outcome | Check the measurement process and stated population |
+| A coupon model predicts response but the decision requires incrementality | Establish an untreated comparison | Evaluate assignment and contribution over a common horizon |
+
+A useful request to a coding assistant states the decision, the unresolved distinction, and the smallest check that could resolve it. For example: "Construct one row per observed user-day, retain unmatched daily records, and reconcile item calories with one copy of the daily total. Identify which conclusions would additionally require unrecorded consumption." The request gives the assistant a verifiable task while keeping the missing-information question visible.
+
+An alternative procedure can also remove a costly intermediate step. If a campaign decision requires category totals, a validated category aggregation may avoid generating individual prose summaries that nobody uses. The required customer protections and analytical meaning remain fixed. Simplification is valuable when the resulting output still answers the decision and passes its checks. Reusable functions then become investments whose subsequent benefits and maintenance costs can be compared, as in M8, Section 8.17.

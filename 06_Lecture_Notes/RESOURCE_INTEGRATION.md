@@ -104,3 +104,16 @@ The newly supplied `pricing_risk_earnings_calls` bundle contributes 2,326 call r
 | M8 §8.16; S14 | Price rules, customer outcomes, and regulatory evidence | Interpretation table and M5 programs |
 
 All four programs and nine counterexample tests passed. Full code is embedded in the notes, and three generated TikZ figures reconcile to output tables. Dictionary precision, population adoption, causal event effects, and firm risk probabilities are not established by these data. Wendy's dated clarification and the FTC staff research document were checked as primary sources; other supplied event-list legal claims are not incorporated.
+
+## AI Workflow Evaluation and Economics
+
+| Notes | Course Application | Program or Example |
+| --- | --- | --- |
+| M1 §1.12 | Code errors, missing information, and the analytical target | mHealth aggregation and coupon evidence |
+| M4 §4.16 | Buyer burden and the outside option | Customer participation at a common horizon |
+| M5 §5.15 | Prompt revision and document dependence | Earnings-call evaluation on unseen firms or later periods |
+| M6 §6.19 | Separate model and library contributions | `AI_Workflows/factorial.py` |
+| M7 §7.20 | Selection among equally uninformative candidates | `AI_Workflows/repeated_selection.py` |
+| M8 §§8.17–8.18 | Reuse economics, price bounds, and selective upgrades | `AI_Workflows/investment.py` and task-specific revalidation |
+
+The [original teaching examples](../03_Data_and_Code/AI_Workflows/README.md) contain three executed Python programs, five exact small-case checks, aggregate CSV/JSON outputs, and an agent guide. Four TikZ figures reconcile to those outputs. All numerical inputs are synthetic. The selection simulation has an independent analytical benchmark, and the factorial and investment programs check contrasts and monetary balances directly. No model service was called. Sessions 01, 05, 07, 09, 11, and 14 incorporate the cases within the existing meeting allocations.

@@ -18,6 +18,7 @@ Session 09. M6. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [mHealth experiment planning](../03_Data_and_Code/mHealth/recurring_examples/m06.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -187,17 +188,48 @@ These are power-planning implications of observed historical variances, not a re
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 15: Coding Exercise: An Experiment Plan
+## Slide 15: Model and Library Contributions
 
-- Compute the synthetic email effect and interval.
+Synthetic counts: 100 assigned tasks per condition; common rubric and resource limits.
+
+**Figure description:** Without the library, passing tasks rise from 60% with the earlier model to 65% with the newer model. With the library, they rise from 70% to 85%. The library gain increases from 10 to 20 percentage points.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_ai_factorial.tex)
+
+The interaction is ten percentage points. Moving from the initial condition to the newer model with the library improves the imposed rate by twenty-five points. Independent assignments, valid reference outcomes, and fresh tasks would be required for an empirical causal comparison. These counts are constructed, with unfinished tasks counted as failures.
+
+Source: Marketing Analytics Lecture Notes, M6 §6.19.
+
+## Slide 16: An Interaction Calculation
+
+The four rates are imposed teaching inputs.
+
+```python
+q00, q01, q10, q11 = 0.60, 0.70, 0.65, 0.85
+model_alone = q10 - q00
+library_after_model = q11 - q10
+interaction = (q11-q10) - (q01-q00)
+assert round(interaction, 2) == 0.10
+assert round(model_alone + library_after_model, 2) == 0.25
+```
+
+A joint gain does not uniquely allocate the interaction to either component.
+
+Run factorial.py to reproduce both paths to the joint change using exact rational arithmetic. Randomize at the team or project level when outputs share personnel, prompts, or helper code. Record actual cost alongside pass rates and resource ceilings.
+
+Source: M6 §6.19. ../03_Data_and_Code/AI_Workflows/factorial.py
+
+## Slide 17: Coding Exercise: An Experiment Plan
+
+- Compute the factorial contrasts alongside the email effect.
 - Change contribution, delivery cost, and the target effect.
 - Specify an mHealth recommendation assignment with a fixed user denominator.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation.
+Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 16: Interference and Assignment Units
+## Slide 18: Interference and Assignment Units
 
 - Customers can share offers or affect one another.
 - Stores can divert purchases from nearby locations.
@@ -207,7 +239,7 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 17: A Treatment Arm Needs a Defensible Design
+## Slide 19: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -217,7 +249,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 18: Experiment Discussion
+## Slide 20: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

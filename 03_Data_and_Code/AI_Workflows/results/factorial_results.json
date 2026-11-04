@@ -1,0 +1,12 @@
+{
+  "scope": "Constructed counts; no observed AI performance or causal estimate.",
+  "units": "percentage points in the fraction of all assigned tasks passing",
+  "contrasts_pp": {
+    "model_without_library": 5.0,
+    "model_with_library": 15.0,
+    "library_with_earlier_model": 10.0,
+    "library_with_newer_model": 20.0,
+    "interaction": 10.0,
+    "joint_change": 25.0
+  }
+}

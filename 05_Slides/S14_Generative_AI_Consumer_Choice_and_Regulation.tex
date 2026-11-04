@@ -74,6 +74,20 @@ M8, Section 8.13.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/
 
 M8, Section 8.13.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
 \end{frame}
+\begin{frame}{Seller Costs and Customer Alternatives}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M08_ai_price_bounds.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Hypothetical dollars per customer, conditional on 50 sales.\par}
+\note{Delivered value is 200 dollars, buyer burden 40, and fixed cost 1,000. Unit cost falls from 20 to 10. Outside-option utility then rises from 80 to 140. Gray intervals indicate simultaneous weak participation and cost recovery. Volume and valuations are imposed; these bounds neither estimate demand nor solve a pricing equilibrium. Customers are indifferent at the ceiling.
+
+Marketing Analytics Lecture Notes, M8 §8.17.2.}
+\end{frame}
 \begin{frame}{AI Workflow Quality}
 \usebeamercolor[fg]{normal text}
 \vfill
@@ -105,6 +119,33 @@ M8, Section 8.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 \note{The manual workflow uses 90 minutes to produce and 20 to review. The assisted workflow uses 45 and 40. These are imposed time inputs, not an estimate of a universal AI effect.
 
 M8, Section 8.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
+\end{frame}
+\begin{frame}{Reuse Has a Break-Even Workload}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M08_reuse_costs.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Hypothetical equal-quality work: six setup hours, with adaptation included.\par}
+\note{Execution alone falls from two hours to 1.25, but 0.25 upkeep hours are required per use. Net savings become positive at the thirteenth use. Twenty-four uses save six hours, a 12.5\% reduction after setup and upkeep. The numbers are imposed and do not measure course development time. Run investment.py and vary upkeep or workload.
+
+Marketing Analytics Lecture Notes, M8 §8.17.1.}
+\end{frame}
+\begin{frame}{Model Updates and Unresolved Tasks}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Connect an update to a recorded difficulty and a feasible comparison.
+\item Evaluate the frozen challenger and current procedure on fresh cases.
+\item Include setup, correction, and maintenance in the adoption decision.
+\end{slidebullets}
+\vfill
+\note{Record actual access, supported inputs, failure conditions, and the original decision. A difficulty register can omit an unexpected useful route, so allow exploratory comparisons and revise the diagnosis. Retain the existing procedure when the challenger provides no supported improvement. A new schema or customer population can require revalidation of a retained helper.
+
+Marketing Analytics Lecture Notes, M8 §8.18.}
 \end{frame}
 \begin{frame}{A Choice Procedure Can Change Renewal}
 \usebeamercolor[fg]{normal text}
@@ -231,12 +272,12 @@ M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 \usebeamercolor[fg]{normal text}
 \vfill
 \begin{slidebullets}
-\item Verify a demand denominator and the workflow-time calculation.
+\item Calculate reuse break-even and the conditional price interval.
 \item Compute profit and customer value for alternative retention procedures.
 \item Propose an interface change and the evidence needed to evaluate it.
 \end{slidebullets}
 \vfill
-\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S14 and S14\_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs.
+\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S14 and S14\_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs. The AI\_Workflows folder supplies complete standard-library calculations with synthetic inputs.
 
 M8, Section 8.13.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
 \end{frame}

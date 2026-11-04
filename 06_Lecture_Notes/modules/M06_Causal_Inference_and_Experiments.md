@@ -629,3 +629,94 @@ if __name__ == '__main__':
     (HERE / 'results').mkdir(exist_ok=True)
     main()
 ```
+
+## 6.19 Model Improvements and Reusable Analytical Workflows
+
+\noindent A marketing team must decide whether to buy access to a newer model, invest in a tested code library, or use both. A comparison between its old setup and a new setup that changes both components cannot isolate their separate contributions. A factorial comparison crosses model version with library access and evaluates every condition using a common task population and acceptance rule.
+
+Consider a synthetic table with 100 assigned tasks in each of four conditions. Each task requires a correct customer-level analysis within the same deadline and resource limits. The rubric checks aggregation, available information, and the managerial interpretation. An unfinished task counts as a failure. The counts below are constructed teaching inputs; they are neither measured model performance nor results of a conducted experiment.
+
+| Model | Library | Assigned Tasks | Passing Tasks | Pass Rate |
+| --- | --- | ---: | ---: | ---: |
+| Earlier | Absent | 100 | 60 | 60% |
+| Earlier | Present | 100 | 70 | 70% |
+| Newer | Absent | 100 | 65 | 65% |
+| Newer | Present | 100 | 85 | 85% |
+
+Let $q_{m\ell}$ denote the fraction of all assigned tasks passing, where $m=1$ selects the newer model and $\ell=1$ supplies the library. The model comparison depends on library access: $q_{10}-q_{00}=0.05$ without it and $q_{11}-q_{01}=0.15$ with it. The library comparison is ten percentage points with the earlier model and twenty with the newer model. Their interaction is
+
+$$
+\delta=(q_{11}-q_{10})-(q_{01}-q_{00})=0.10.
+$$
+
+The positive interaction means that the imposed library gain is larger with the newer model. The joint change from 60% to 85% is twenty-five percentage points. It can be decomposed as a five-point model change followed by a twenty-point library change, or a ten-point library change followed by a fifteen-point model change. Neither path supplies a unique allocation of the interaction to one component.
+
+![The library raises the pass rate by ten points with the earlier model and twenty with the newer model. All four rates are synthetic.](../figures/M06_ai_factorial.png)
+
+In an empirical study, randomize teams or independent analytical projects to the four conditions, with blocking on task difficulty where useful. If several outputs come from one team, their number does not establish the number of independent assignments. Shared helpers and learning can spill across conditions. A team that first sees the library may carry its knowledge into a later nominally unassisted task. Separate teams or a justified design for carryover is needed before interpreting a crossover comparison.
+
+Use fresh tasks, permit a competent baseline to solve the same problem, and record actual resource consumption alongside the common ceiling. The library's setup and maintenance cost enters the investment comparison even if library construction occurs before randomization. A success on familiar datasets measures execution within that scope. Transfer to a different schema or task family requires additional tasks. A revised prompting or search procedure is a further treatment dimension; changing it simultaneously with both factors would again prevent attribution.
+
+### 6.19.1 Reproduce the Four-Condition Comparison
+
+\noindent Run `python3 03_Data_and_Code/AI_Workflows/factorial.py` from the repository root. Python 3.10 or later suffices; no packages or model account are required. The program writes one CSV row per condition and a JSON of percentage-point contrasts. Exact rational arithmetic checks the two paths to the joint change. The code operates on the imposed counts and supplies no sampling uncertainty or empirical efficacy claim.
+
+Python source: [factorial.py](../../03_Data_and_Code/AI_Workflows/factorial.py)
+
+```python
+"""Construct a synthetic model-by-library comparison; no model APIs are called."""
+import csv
+import json
+from fractions import Fraction
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def contrasts(rates):
+    """Keys are (model, library), each coded 0 or 1; values are pass fractions."""
+    if set(rates) != {(0, 0), (0, 1), (1, 0), (1, 1)}:
+        raise ValueError("All four conditions are required")
+    return {
+        "model_without_library": rates[1, 0] - rates[0, 0],
+        "model_with_library": rates[1, 1] - rates[0, 1],
+        "library_with_earlier_model": rates[0, 1] - rates[0, 0],
+        "library_with_newer_model": rates[1, 1] - rates[1, 0],
+        "interaction": rates[1, 1] - rates[1, 0] - rates[0, 1] + rates[0, 0],
+        "joint_change": rates[1, 1] - rates[0, 0],
+    }
+
+
+def main():
+    # Imposed counts: 100 assigned tasks in every cell. An unfinished task fails.
+    # All cells use the same task population, rubric, deadline, and resource limits.
+    passes = {(0, 0): 60, (0, 1): 70, (1, 0): 65, (1, 1): 85}
+    rates = {key: Fraction(count, 100) for key, count in passes.items()}
+    effects = contrasts(rates)
+    # Two independent paths from the initial cell to the final cell must agree.
+    assert effects["joint_change"] == Fraction(25, 100)
+    assert effects["joint_change"] == (
+        effects["model_without_library"] + effects["library_with_newer_model"]
+    )
+    assert effects["joint_change"] == (
+        effects["library_with_earlier_model"] + effects["model_with_library"]
+    )
+    assert effects["interaction"] == Fraction(10, 100)
+    OUT.mkdir(exist_ok=True)
+    with (OUT / "factorial_cells.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["model", "library", "assigned", "passed", "pass_fraction"])
+        for (model, library), passed in passes.items():
+            writer.writerow([model, library, 100, passed, float(rates[model, library])])
+    result = {
+        "scope": "Constructed counts; no observed AI performance or causal estimate.",
+        "units": "percentage points in the fraction of all assigned tasks passing",
+        "contrasts_pp": {key: float(100 * value) for key, value in effects.items()},
+    }
+    (OUT / "factorial_results.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

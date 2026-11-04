@@ -26,6 +26,10 @@ A private repository URL works only with tools authorized to read that repositor
 
 > Assess my analysis for incorrect joins, missing-data decisions, units, leakage, and unsupported causal claims. Compare each concern with the assignment and data dictionary. Prioritize issues that could change the managerial conclusion, and give a check I can run.
 
+### Compare AI Workflows
+
+> Read the AI_Workflows README and the relevant M6–M8 note sections. Identify what changes across conditions, which outcomes guided development, and what evidence remains independent. Reproduce the relevant synthetic calculation, then explain which additional observations would be needed for a claim about actual model performance or business value.
+
 ### Prepare for Class
 
 > Use only the materials I provide to make a study outline for this module. Cite the supporting file and heading for each topic. Separate course requirements from optional background. Ask me five questions and wait for my answers before giving explanations.

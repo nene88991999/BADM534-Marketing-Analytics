@@ -69,12 +69,14 @@
     "03_Data_and_Code/Earnings_Calls/AGENTS.md",
     "03_Data_and_Code/Earnings_Calls/LLM_EXERCISES.md",
     "03_Data_and_Code/Earnings_Calls/results/README.md",
-    "02_Syllabus/Marketing_Analytics_Syllabus.md"
+    "02_Syllabus/Marketing_Analytics_Syllabus.md",
+    "03_Data_and_Code/AI_Workflows/README.md",
+    "03_Data_and_Code/AI_Workflows/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-02",
+    "updated_on": "2026-11-04",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -114,16 +116,17 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-02-earnings-call-worked-example",
+    "revision": "2026-11-04-ai-workflow-evaluation",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 51,
-    "pages": 185,
+    "figures_count": 55,
+    "pages": 198,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
-    "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md"
+    "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md",
+    "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md"
   },
   "datasets": [
     {
@@ -171,7 +174,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-02",
+    "updated_on": "2026-11-04",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -180,7 +183,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 265,
+    "slides": 274,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
