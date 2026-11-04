@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-02",
+  "updated_on": "2026-11-04",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -241,7 +241,8 @@ Generated from course.json and the source files identified below. This file cont
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
     "course_listing_source": "https://courses.illinois.edu/schedule/2027/spring/BADM/534"
-  }
+  },
+  "calendar_ical": "02_Syllabus/Marketing_Analytics_Spring_2027.ics"
 }
 ```
 
@@ -518,6 +519,12 @@ The **Spring 2027 syllabus** is available as [PDF](Marketing_Analytics_Syllabus.
 Nathan Yang teaches Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243. Email: [ncyang@illinois.edu](mailto:ncyang@illinois.edu). Office hours are by appointment.
 
 The course has 15 meetings from January 20 through May 5, with no class March 17 during spring break. The [calendar source record](CALENDAR_SOURCES.md) documents the official term, section, holidays, and date checks. The [session plan](../05_Slides/SESSION_PLAN.md) maps dates to the existing lectures and activities. There are no guest speakers.
+
+## Calendar Import
+
+Download [all 15 class meetings](Marketing_Analytics_Spring_2027.ics) and import the `.ics` file into Apple Calendar, Outlook, or Google Calendar. Each entry includes the meeting topic, room, instructor details, and a link to the session materials. Meetings remain at 15:30-18:20 Chicago time through the daylight-saving transition; March 17 is excluded.
+
+Regenerate the file with `python build_calendar.py` after changing meeting dates or topics. The builder uses the course manifest and structured session plan, with a stable identifier for each dated meeting. Importing the file creates calendar entries; subsequent repository edits do not automatically update an imported calendar.
 
 ## Assessment Status
 

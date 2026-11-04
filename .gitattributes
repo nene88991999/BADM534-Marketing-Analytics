@@ -12,3 +12,6 @@
 
 # Preserve third-party reference bytes and recorded source checksums.
 /01_Resources/** -text
+
+# iCalendar requires CRLF; folded content can end with significant spaces.
+*.ics -text whitespace=-blank-at-eol,cr-at-eol

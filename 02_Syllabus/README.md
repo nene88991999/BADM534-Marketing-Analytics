@@ -6,6 +6,12 @@ Nathan Yang teaches Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243. Email: [
 
 The course has 15 meetings from January 20 through May 5, with no class March 17 during spring break. The [calendar source record](CALENDAR_SOURCES.md) documents the official term, section, holidays, and date checks. The [session plan](../05_Slides/SESSION_PLAN.md) maps dates to the existing lectures and activities. There are no guest speakers.
 
+## Calendar Import
+
+Download [all 15 class meetings](Marketing_Analytics_Spring_2027.ics) and import the `.ics` file into Apple Calendar, Outlook, or Google Calendar. Each entry includes the meeting topic, room, instructor details, and a link to the session materials. Meetings remain at 15:30-18:20 Chicago time through the daylight-saving transition; March 17 is excluded.
+
+Regenerate the file with `python build_calendar.py` after changing meeting dates or topics. The builder uses the course manifest and structured session plan, with a stable identifier for each dated meeting. Importing the file creates calendar entries; subsequent repository edits do not automatically update an imported calendar.
+
 ## Assessment Status
 
 The syllabus supplies confirmed logistics, learning objectives, course coverage, materials, and dates. Grading components and weights, assignment deadlines, graded presentation requirements, attendance and late-work rules, and assessment-specific AI permissions have not been established. The historical syllabus does not establish those requirements for this offering.
