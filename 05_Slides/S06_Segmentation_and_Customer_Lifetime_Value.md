@@ -19,6 +19,7 @@ Session 06. M4. 170 minutes.
 - [mHealth segments](../03_Data_and_Code/mHealth/recurring_examples/m04.py)
 - [Subscription cohort examples](../03_Data_and_Code/GenAI_Demand/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 
 ## Slide 1: Segmentation and Customer Lifetime Value
 
@@ -80,7 +81,62 @@ Within-cluster dispersion declines as K rises. A high-spending cluster will have
 
 Source: M4, Section 4.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 7: mHealth Segments Use Earlier Histories
+## Slide 7: Similarity of Positive Mechanisms
+
+For each paper, collect the mechanisms coded as present in a set $A_i$.
+
+$$
+d_J(i,j)=1-\frac{|A_i\cap A_j|}{|A_i\cup A_j|}
+$$
+
+Jaccard distance ignores shared absences. Average linkage compares these distances.
+
+The primary sample is 48 retrieved papers with potential dual use or a reported choice concern. Twelve binary codes include social cues, emotion, disclosure, defaults, and exit friction. A zero code means the mechanism was not coded from reviewed evidence. Missing reviews are excluded. See M4 Section 4.17 for the complete program.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+## Slide 8: Social Influence is the Largest Cluster
+
+48 retrieved potential-risk reviews. Four clusters selected from K=2 through K=8.
+
+**Figure description:** Social influence contains 19 papers, emotion and identity 15, disclosure/framing/defaults eight, and attention/search/control six. The horizontal scale runs from zero to the full sample of 48.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_agency_clusters.tex)
+
+The largest cluster contains 39.6% of the sample. Emotion/identity is the most common overlapping feature at 21 of 48, so feature and cluster rankings differ. Almost all papers in this analysis are coded for inferred dual use. Counts do not measure market prevalence or author intent.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+## Slide 9: Reproduce the Mechanism Grouping
+
+Run from the Consumer_Agency_Literature folder after installing its requirements.
+
+```python
+import pandas as pd
+from cluster import FEATURES, select_sample, partition
+df = pd.read_csv("coded_papers.csv")
+sample = select_sample(df, "downloaded_risk")
+labels, distances = partition(sample[FEATURES].to_numpy(), 4)
+assert len(sample) == 48
+```
+
+The complete script compares K values, exports profiles, and refits sensitivity samples.
+
+The short snippet reproduces the selected four-cluster partition. The full cluster.py program in M4 Section 4.17 selects K using silhouette scores and checks aggregate counts. Stable paper identifiers preserve traceability to original summaries.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+## Slide 10: The Coding Changes the Conclusion
+
+- Median subsample agreement: adjusted Rand index 0.794.
+- Changing one feature per paper lowers median agreement to 0.250.
+- The broader abstract-based sample selects eight clusters.
+
+Subsamples contain 80% of the primary papers and hold K=4 fixed across 200 repetitions. One-bit changes are an imposed sensitivity exercise, retaining a positive feature per paper. These are conditional stability results, not confidence intervals for population harm. The broader 84-paper risk sample is purposefully selected and chooses the upper K boundary.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+## Slide 11: mHealth Segments Use Earlier Histories
 
 Eligible users have at least 30 observed days before July 1.
 
@@ -92,7 +148,7 @@ The representation uses first-half logging fraction, mean category breadth, and 
 
 Source: M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 8: Later Logging by Earlier Segment
+## Slide 12: Later Logging by Earlier Segment
 
 | Segment | Users | Prior Fraction | Later Fraction |
 | --- | --- | --- | --- |
@@ -106,7 +162,7 @@ Later absence contributes zero observed days for eligible users. The figures des
 
 Source: M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 9: Lifetime Value and Payment Timing
+## Slide 13: Lifetime Value and Payment Timing
 
 Value future contribution conditional on remaining active.
 
@@ -120,7 +176,7 @@ The acquisition cost a occurs at time zero. This convention excludes immediate c
 
 Source: M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 10: A Stationary Subscription
+## Slide 14: A Stationary Subscription
 
 Suppose monthly retention is $r$ and monthly contribution is $m$.
 
@@ -134,7 +190,7 @@ The formula assumes constant retention and conditional margin and an infinite ho
 
 Source: M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 11: Retention Has Nonlinear Value
+## Slide 15: Retention Has Nonlinear Value
 
 Synthetic stationary model. Monthly margin, discounting, and acquisition cost stay fixed.
 
@@ -146,7 +202,7 @@ The high-retention region places more weight on distant contributions. Uncertain
 
 Source: M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 12: A Finite-Sum Check
+## Slide 16: A Finite-Sum Check
 
 Compare the closed form with 2,000 future monthly payments.
 
@@ -164,7 +220,7 @@ Matching the two expressions checks the payment convention and arithmetic. It do
 
 Source: M4, Section 4.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 13: Cancellation and a Logging Gap
+## Slide 17: Cancellation and a Logging Gap
 
 - A subscription may record cancellation directly.
 - A 30-day logging gap is an operational activity event.
@@ -174,7 +230,7 @@ Right censoring preserves the distinction between no observed event by the end o
 
 Source: M4, Section 4.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 14: The Event Definition Changes Survival
+## Slide 18: The Event Definition Changes Survival
 
 mHealth time-to-gap analysis uses a stated gap definition and observation horizon.
 
@@ -186,7 +242,7 @@ Changing the gap length changes the event being measured. Survival of recorded a
 
 Source: M4, Section 4.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 15: Endpoint and Continuous Retention
+## Slide 19: Endpoint and Continuous Retention
 
 - Endpoint retention allows customers to leave and return.
 - Continuous retention requires uninterrupted presence.
@@ -196,7 +252,7 @@ A starting-provider cohort is fixed at the initial period. The same-provider, ot
 
 Source: M4, Section 4.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 16: Coding Exercise: Segments and Value
+## Slide 20: Coding Exercise: Segments and Value
 
 - Fit feature scaling and segments on an earlier period.
 - Describe a later period without refitting the groups.
@@ -206,7 +262,7 @@ The small CLV calculation is ../03_Data_and_Code/Lecture_Examples/session_exampl
 
 Source: M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 17: Retention and Effective Cancellation
+## Slide 21: Retention and Effective Cancellation
 
 - High paid retention can reflect satisfaction or difficulty leaving.
 - Measure cancellation completion and unwanted subsequent charges.
@@ -216,7 +272,7 @@ A customer who prefers cancellation can remain subscribed because of friction. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 18: Retention Discussion
+## Slide 22: Retention Discussion
 
 - What action differs across the proposed segments?
 - Does a customer's absence represent churn or censoring?

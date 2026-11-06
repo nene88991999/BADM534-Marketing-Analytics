@@ -10,7 +10,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 55 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 59 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -44,3 +44,7 @@ Third-party files retain their original licenses and restrictions. See their adj
 ## Earnings-Call Worked Example
 
 [Pricing communication in earnings calls](03_Data_and_Code/Earnings_Calls/README.md) now connects data assessment, text analytics, event comparisons, and customer-outcome interpretation across M2, M5, M6, and M8. The folder includes runnable Python, structured data, source-linked cases, and verification checks. Updated notes and Sessions 02, 07, 10, and 14 contain the worked examples.
+
+## Recent Research and Consumer Agency
+
+The [journal collection](01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) indexes 2023-2026 research with managerial summaries, source versions, access gaps, and cancellation-policy resources. [Mechanism clustering](03_Data_and_Code/Consumer_Agency_Literature/README.md) and [university affiliation communities](03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md) provide reproducible examples with explicit coding and sampling limits.

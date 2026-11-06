@@ -12,18 +12,18 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 20 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
-| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 19 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 25 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 28 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 20 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 21 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 19 |
-| 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
+| 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 22 |
+| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 25 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -72,11 +72,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess chart values, paired changes, scales, and denominator controls.
+**Python and Evidence:** Assess chart values, sample restrictions, and the journal review's missing-evidence denominators.
 
-**Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim.
+**Application:** Compare nutrition screens, public-page signals, and literature access selection.
 
-**Ethics and Regulation:** Chart claims, denominator choices, and coverage.
+**Ethics and Regulation:** Chart claims, denominator choices, and coverage
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -132,11 +132,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Fit earlier-period segments and independently reproduce the lifetime-value formula.
+**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value.
 
-**Application:** Compare endpoint retention, continuous retention, and a logging-gap event.
+**Application:** Compare customer retention definitions and mechanism profiles with explicit denominators.
 
-**Ethics and Regulation:** Retention, customer value, and cancellation choice.
+**Ethics and Regulation:** Retention, consumer agency, and effective cancellation
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -152,11 +152,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.
+**Python and Evidence:** Assess text labels and retrieval; construct university affiliation links and compare community sensitivity.
 
-**Application:** Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations.
+**Application:** Compare pricing communication, agency coding, and shared-publication networks.
 
-**Ethics and Regulation:** Review provenance, generated claims, and false positives.
+**Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -190,11 +190,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Calculate an email effect and decompose a synthetic model-by-library comparison.
+**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
 
-**Application:** Design a randomized comparison with a common rubric and an appropriate assignment unit.
+**Application:** Compare treatment effects over initial and subsequent customer outcomes.
 
-**Ethics and Regulation:** Experimental objectives and customer outcomes.
+**Ethics and Regulation:** Defensible treatment designs and informed customer choice
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -250,11 +250,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 14, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare ranking baselines, calculate NDCG, and assess a goal-weight sensitivity.
+**Python and Evidence:** Compare ranking objectives using the same candidates and observed outcome definitions.
 
-**Application:** Check a generated recommendation explanation and design an online outcome comparison.
+**Application:** Separate experimentally measured behavior from model-dependent consumer welfare.
 
-**Ethics and Regulation:** Delivery, customer goals, and explanation accuracy.
+**Ethics and Regulation:** Customer control, privacy, and the objective of personalization
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -290,11 +290,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.
+**Python and Evidence:** Evaluate retention welfare, workflow economics, and cancellation outcomes with their stated information.
 
-**Application:** Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules.
+**Application:** Connect research mechanisms to jurisdiction-specific cancellation rules and customer value.
 
-**Ethics and Regulation:** Retention procedures, customer value, and regulatory status.
+**Ethics and Regulation:** Consumer agency, effective exit, pricing, and current regulatory scope
 
 | Elapsed Minutes | Activity |
 | --- | --- |

@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[
+  xbar,width=12.3cm,height=6.8cm,
+  xmin=0,xmax=48,xtick={0,12,24,36,48},
+  xlabel={Papers out of 48 retrieved potential-risk reviews},
+  symbolic y coords={Attention,Disclosure,Emotion,Social},
+  ytick=data,
+  yticklabels={Attention / Search / Control,Disclosure / Framing / Defaults,Emotion / Identity,Social Influence},
+  bar width=15pt,enlarge y limits=.22,
+  nodes near coords,nodes near coords align={horizontal},
+  nodes near coords style={font=\small,text=IlliniBlue},
+  xmajorgrids=true]
+\addplot[fill=IlliniBlue!75,draw=IlliniBlue] coordinates {(6,Attention) (8,Disclosure) (15,Emotion) (19,Social)};
+\draw[IlliniOrange,dashed,thick] (axis cs:24,Attention)--(axis cs:24,Social);
+\node[font=\scriptsize,text=IlliniOrange,anchor=south west] at (axis cs:24,Social) {Half the sample};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,22 @@
+{
+  "eligible_papers": 824,
+  "papers_with_university": 745,
+  "papers_without_university": 79,
+  "multi_university_papers": 601,
+  "universities": 424,
+  "edges": 1766,
+  "unconnected_universities": 9,
+  "communities": 19,
+  "connected_components": 6,
+  "modularity": 0.4710615536079881,
+  "seed_ari_quantiles": [
+    0.44234589249476974,
+    0.5224132950642287,
+    0.5966059611873091
+  ],
+  "full_counting_ari": 0.19338201946988337,
+  "shared_author_list_flagged_papers": 21,
+  "networkx_version": "3.4.2",
+  "resolution": 1,
+  "seed": 534
+}

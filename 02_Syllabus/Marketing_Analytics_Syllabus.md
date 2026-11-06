@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, generative-AI demand, and earnings-call pricing communication. Synthetic examples supply hand-checkable calculations.
+Cases include mHealth food logging, restaurant availability, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations.
 
 ---
 
@@ -46,8 +46,8 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
 | 4 | February 10 | M3: Regression and marketing interpretation |
 | 5 | February 17 | M4: Conjoint analysis and product design |
-| 6 | February 24 | M4: Segmentation and customer lifetime value |
-| 7 | March 3 | M5: Text, social media, networks, and pricing communication |
+| 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
+| 7 | March 3 | M5: Text, social media, affiliation networks, and pricing communication |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments and incremental value |
@@ -55,7 +55,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 11 | April 7 | M7: Prediction, validation, and marketing actions |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
-| 14 | April 28 | M8: Generative AI, consumer choice, pricing, and regulation |
+| 14 | April 28 | M8: Generative AI, consumer agency, pricing, and cancellation regulation |
 | 15 | May 5 | M1-M8: Integrated decisions and final discussion/presentations |
 
 ## Holidays and Breaks

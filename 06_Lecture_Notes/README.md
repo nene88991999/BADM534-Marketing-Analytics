@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 4, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 55 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 59 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -29,7 +29,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 198 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 215 pages.
 
 ## Editing and Building
 
@@ -84,3 +84,7 @@ The [earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 ## AI Workflow Evaluation and Economics
 
 M1 §1.12 diagnoses code errors and missing information; M4 §4.16 examines buyer alternatives; M5 §5.15 preserves independent text evaluation. M6 §6.19 separates model and library contributions, M7 §7.20 calculates selection on development accuracy, and M8 §§8.17–8.18 connect reusable work, competitive pricing, and selective upgrades. The [three runnable programs](../03_Data_and_Code/AI_Workflows/README.md) appear in full, alongside four original TikZ figures and five exact small-case checks. All inputs are synthetic.
+
+## Consumer Agency and Recent Marketing Research
+
+The [journal collection](../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) links 886 DOI records to 103 retrieved versions, 144 original managerial summaries, and a complete access-gap ledger. M2 §2.20 assesses coverage, M4 §4.17 clusters mechanisms, and M5 §§5.16-5.17 examine coding and university affiliation communities. M6 §6.20, M7 §7.21, and M8 §8.19 connect experiments, recommendation welfare, and cancellation policy. Three complete Python programs and four new TikZ figures accompany the [analysis](../03_Data_and_Code/Consumer_Agency_Literature/README.md). Counts describe selected literature and do not estimate the prevalence of harmful business practices.

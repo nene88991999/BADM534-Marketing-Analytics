@@ -20,6 +20,8 @@ Session 07. M5. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
+- [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
+- [University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -135,7 +137,17 @@ Agreement measures consistency, not necessarily construct validity. When a model
 
 Source: M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 11: mHealth Food Descriptions
+## Slide 11: Agency Labels Need Supporting Evidence
+
+- Extract the outcome, mechanism, study design, and supporting passage.
+- Separate reported choice concerns from inferred possible misuse.
+- Retain uncertain cases and compare independent coding.
+
+Consumer agency concerns understanding, choice, action, and revision or exit. Persuasion alone does not establish impairment. The current literature codes are preliminary AI-assisted annotations without independent human adjudication. Immersive Service supplies qualitative agency evidence; Nudging App Adoption supplies evidence about choice presentation whose misuse requires an additional inference. See M5 Section 5.16.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+## Slide 12: mHealth Food Descriptions
 
 - Descriptions can recur across many users and dates.
 - A repeated-description split evaluates familiar language.
@@ -145,7 +157,7 @@ The source category is an imperfect label. The same normalized description can h
 
 Source: M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 12: Familiar and New Text Are Different Tests
+## Slide 13: Familiar and New Text Are Different Tests
 
 mHealth text classification uses the stated training and evaluation splits.
 
@@ -157,7 +169,7 @@ A random event split can place an identical description in both training and tes
 
 Source: M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 13: Topic Shares Need a Denominator
+## Slide 14: Topic Shares Need a Denominator
 
 mHealth topic summaries compare documents, entries, and users under defined weights.
 
@@ -169,7 +181,7 @@ Long documents and repeated records can dominate term-weighted summaries. A busi
 
 Source: M5, Section 5.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 14: Which Pricing Statements Deserve Review?
+## Slide 15: Which Pricing Statements Deserve Review?
 
 - A retailer reviews competitors' public pricing communication.
 - A keyword occurrence supplies a reading lead.
@@ -179,7 +191,7 @@ The supplied corpus includes core terms for pricing methods and shelf-label infr
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 15: Speaking Time Changes the Comparison
+## Slide 16: Speaking Time Changes the Comparison
 
 Observed calls; heuristic roles. Management includes prepared remarks and Q&A.
 
@@ -191,7 +203,7 @@ Raw counts rank management higher, whereas exposure-adjusted intensity is slight
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 16: Same Vocabulary, Different Evidence
+## Slide 17: Same Vocabulary, Different Evidence
 
 - Amazon: current price information; Eventbrite: advertising cost per click.
 - Wendy's: planned tests; Kroger: shelf-label infrastructure.
@@ -201,7 +213,7 @@ Seven purposeful, source-linked paraphrases are provided in interpretation_cases
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 17: Match Counts and Words to the Same Calls
+## Slide 18: Match Counts and Words to the Same Calls
 
 From the Earnings_Calls folder, compare the verified metadata.
 
@@ -220,7 +232,7 @@ Run disclosure.py for group, quarterly, and role tables. The counterexample test
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 18: Evaluate Retrieval and Interpretation Separately
+## Slide 19: Evaluate Retrieval and Interpretation Separately
 
 - A denial and a future intention can match the same phrase.
 - Relevant paraphrases can escape the dictionary.
@@ -230,7 +242,7 @@ Run construct_checks.py for eight synthetic sentences. A purposeful case set can
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 19: Prompt Revision Uses Evaluation Evidence
+## Slide 20: Prompt Revision Uses Evaluation Evidence
 
 - A passage used to revise a prompt becomes development material.
 - Keep passages from one call together when constructing a split.
@@ -240,7 +252,7 @@ A test on new firms addresses a different deployment population from a test on l
 
 Source: Marketing Analytics Lecture Notes, M5 §5.15.
 
-## Slide 20: Network Objects
+## Slide 21: Network Objects
 
 - Nodes identify customers or accounts.
 - Edges represent a defined relationship in a time window.
@@ -250,7 +262,7 @@ An edge could mean following, messaging, purchasing together, or co-occurrence. 
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 21: Few Links Can Connect Separate Groups
+## Slide 22: Few Links Can Connect Separate Groups
 
 Synthetic undirected network. R has only two links.
 
@@ -262,7 +274,29 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 22: Coding Exercise: A Label Assessment
+## Slide 23: University Affiliations Create a Research Network
+
+- 745 papers identify 424 higher-education institutions.
+- Split one unit of link weight across each paper's university pairs.
+- Shared-paper links can also arise from a single author's dual affiliation.
+
+The eligible census has 824 papers; 79 lack identified education affiliations. Work-specific metadata is used rather than current author profiles. One missing University of Vaasa affiliation was verified from a published article and corrected. Louvain clustering at resolution one and seed 534 finds 19 communities among 415 linked institutions; nine remain unconnected. See M5 Section 5.17.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
+
+## Slide 24: Affiliation Groups Depend on the Representation
+
+Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.
+
+**Figure description:** Bars show C01 154.15, C02 84.54, C03 74.65, C04 67.16, C05 57.80, and C06 48.52 fractional papers. Group membership is based on shared university affiliations, independently of agency coding.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_affiliation_communities.tex)
+
+The median adjusted Rand agreement across twenty seeds is 0.522; switching from fractional to full edge counting gives 0.193. These are exploratory communities. The selected mechanism overlay has uneven review coverage and cannot establish institutional intent or rank universities by harm. The full program and all memberships appear in M5 Section 5.17 and the affiliation outputs.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
+
+## Slide 25: Coding Exercise: A Label Assessment
 
 - Run the earnings-call assessment and role-exposure calculation.
 - Test denial, future intention, and a missed paraphrase.
@@ -272,7 +306,7 @@ Use ../03_Data_and_Code/Earnings_Calls/README.md and LLM_EXERCISES.md. The mHeal
 
 Source: M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 23: Engagement and Commercial Value
+## Slide 26: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -282,7 +316,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 24: Authenticity of Reviews and Endorsements
+## Slide 27: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -292,7 +326,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 25: Text-Analysis Discussion
+## Slide 28: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

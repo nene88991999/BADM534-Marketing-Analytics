@@ -1,13 +1,41 @@
 {
-  "verified_on": "2026-11-04",
+  "verified_on": "2026-11-05",
   "artifacts": {
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 274,
-      "sha256": "d7f2add83eaab6985d0cf1c13a46cefde073f1cdfbc8cca3edfc04312ac4a566"
+      "pages": 287,
+      "sha256": "de9e7f145044841297f3d511617877c58c13f5bfd8069cfdc4dcbf3cdce8f516"
     },
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 198,
-      "sha256": "57c0d42bdedf636d51405915e6740c781b58e9f3a36fe1683759a40494c4185f"
+      "pages": 215,
+      "sha256": "90d55efda1b64ca55b6f80ef63eb5553bba2e08552eecb69fe4d60e78bc54085"
+    },
+    "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+      "pages": 2,
+      "sha256": "318690695b42f21512bc4b538db6340a904e6a9fdd7d69a45e962f8749ff4b15"
+    },
+    "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
+      "pages": 19,
+      "sha256": "1afec69630f5f868a2c6973b04319c772003cc348fbb5b23fc9d7e7c17942c1e"
+    },
+    "05_Slides/S06_Segmentation_and_Customer_Lifetime_Value.pdf": {
+      "pages": 22,
+      "sha256": "b1e3177041584c9e170584cbd538fdcae26df5eaf64f900b09b08ad9290b090b"
+    },
+    "05_Slides/S07_Text_Social_Media_and_Networks.pdf": {
+      "pages": 28,
+      "sha256": "4553868c1371eaf01e2e874c235f4ed2bb04ca306bbf6efa31abd970245bf966"
+    },
+    "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
+      "pages": 21,
+      "sha256": "7107f3d8488c7d9cd79a504615e3d8e0b2524e69cdfdd2a5abc316b3f55bf36a"
+    },
+    "05_Slides/S12_Recommendation_Systems_and_Customer_Goals.pdf": {
+      "pages": 18,
+      "sha256": "3843aeed8e79e0058eee9ba1d2aaa33cdfd5f422f399564918e2b8b74aa47ffa"
+    },
+    "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+      "pages": 25,
+      "sha256": "b2f2740d2d209469aa44a2839001cf15e43b214e257077a8ba75a2f00085e14c"
     }
   },
   "session_decks": 15,
@@ -17,16 +45,22 @@
     "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
     "session_plan_and_manifest_counts_agree": true,
     "calendar_dates_and_170_minute_meetings_unchanged": true,
-    "local_markdown_links_checked_this_revision": 418,
+    "local_markdown_links_checked_this_revision": 783,
     "new_projected_python_snippets_executed": 1,
-    "full_note_code_blocks_match_source_and_parse": 48,
+    "full_note_code_blocks_match_source_and_parse": 51,
     "new_analysis_programs_executed": 3,
-    "independent_small_case_tests_passed": 5,
+    "independent_small_case_tests_passed": 3,
     "new_tikz_figures_checked_against_outputs_and_rendered": 4,
-    "changed_student_slide_pages_visually_reviewed": 12,
-    "note_pages_visually_reviewed_including_contents_and_transitions": 31
+    "changed_student_slide_pages_visually_reviewed": 14,
+    "note_pages_visually_reviewed_including_contents_and_transitions": 32,
+    "syllabus_pages_visually_reviewed": 2,
+    "retrieved_research_pdf_checksums_and_title_identity_checks": 103,
+    "paper_affiliation_blocks_checked_against_retrieved_sources": 5,
+    "documented_affiliation_corrections": 1,
+    "mechanism_and_affiliation_totals_reconciled_against_aggregate_tables": true,
+    "portable_context_uses_reviewed_HEAD_resource_catalogs": true
   },
-  "execution_scope": "November 4 revision: executed the three original synthetic AI workflow programs, five exact small-case checks, the new projected calculation, all 48 note-code comparisons, figure-data reconciliation, and local-link and schedule checks. Reviewed all 12 changed student-slide pages and 31 note pages including contents and transitions. No model APIs or downloaded reference programs were executed. Earlier checks are retained in the historical fields below.",
+  "execution_scope": "November 5 revision: executed mechanism clustering, coverage assessment, and university-affiliation clustering; three independent small-case tests; and the new projected Python calculation. Compared all 51 full note-code blocks with source and parsed them. Reconciled plotted counts and fractional totals, checked 783 local links, and preserved the dated 15-meeting schedule. Visually reviewed 14 changed student-slide pages, 32 note pages including contents and transitions, two syllabus pages, and four new TikZ figures. All 103 retrieved research versions passed checksum and title-identity checks. Five affiliation blocks received source checks, resulting in one recorded correction. The 144 paper summaries remain primarily abstract-based, with five selected full-text discussion/conclusion checks; 721 eligible full texts remain unavailable. Earlier checks are retained in historical fields.",
   "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
@@ -55,5 +89,22 @@
     "local_markdown_links_checked": 345,
     "session_count_duration_and_slide_counts_agree": true,
     "portable_context_uses_reviewed_HEAD_resource_catalogs": true
+  },
+  "ai_workflow_checks_2026_11_04": {
+    "checks": {
+      "updated_decks_compile_without_overfull_boxes_or_tex_errors": true,
+      "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
+      "session_plan_and_manifest_counts_agree": true,
+      "calendar_dates_and_170_minute_meetings_unchanged": true,
+      "local_markdown_links_checked_this_revision": 418,
+      "new_projected_python_snippets_executed": 1,
+      "full_note_code_blocks_match_source_and_parse": 48,
+      "new_analysis_programs_executed": 3,
+      "independent_small_case_tests_passed": 5,
+      "new_tikz_figures_checked_against_outputs_and_rendered": 4,
+      "changed_student_slide_pages_visually_reviewed": 12,
+      "note_pages_visually_reviewed_including_contents_and_transitions": 31
+    },
+    "execution_scope": "November 4 revision: executed the three original synthetic AI workflow programs, five exact small-case checks, the new projected calculation, all 48 note-code comparisons, figure-data reconciliation, and local-link and schedule checks. Reviewed all 12 changed student-slide pages and 31 note pages including contents and transitions. No model APIs or downloaded reference programs were executed. Earlier checks are retained in the historical fields below."
   }
 }

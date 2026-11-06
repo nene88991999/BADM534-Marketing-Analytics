@@ -117,3 +117,9 @@ All four programs and nine counterexample tests passed. Full code is embedded in
 | M8 §§8.17–8.18 | Reuse economics, price bounds, and selective upgrades | `AI_Workflows/investment.py` and task-specific revalidation |
 
 The [original teaching examples](../03_Data_and_Code/AI_Workflows/README.md) contain three executed Python programs, five exact small-case checks, aggregate CSV/JSON outputs, and an agent guide. Four TikZ figures reconcile to those outputs. All numerical inputs are synthetic. The selection simulation has an independent analytical benchmark, and the factorial and investment programs check contrasts and monetary balances directly. No model service was called. Sessions 01, 05, 07, 09, 11, and 14 incorporate the cases within the existing meeting allocations.
+
+## Consumer Agency and University Affiliation Networks
+
+The [recent journal review](../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) provides source-specific managerial implications and separates reported choice concerns from inferred dual use. `assess_coverage.py` in M2 §2.20 preserves missing evidence. `cluster.py` in M4 §4.17 compares Jaccard clusters, alternative samples, distances, and feature perturbations. `affiliation_clusters.py` in M5 §5.17 groups higher-education institutions by shared-publication links and uses fractional allocations for research profiles. The three programs and their [outputs](../03_Data_and_Code/Consumer_Agency_Literature/README.md) are public and executable without the local PDFs.
+
+M5 §5.16 distinguishes text classification from construct validity. M6 §6.20 evaluates purchases, returns, and effective exit; M7 §7.21 preserves model-dependent welfare interpretation; M8 §8.19 connects those mechanisms to the [verified cancellation-policy record](../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md).

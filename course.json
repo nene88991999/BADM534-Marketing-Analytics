@@ -3,7 +3,7 @@
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-04",
+  "updated_on": "2026-11-05",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -71,12 +71,19 @@
     "03_Data_and_Code/Earnings_Calls/results/README.md",
     "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "03_Data_and_Code/AI_Workflows/README.md",
-    "03_Data_and_Code/AI_Workflows/AGENTS.md"
+    "03_Data_and_Code/AI_Workflows/AGENTS.md",
+    "01_Resources/13_Consumer_Agency_and_Recent_Research/README.md",
+    "01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/README.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/results/README.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-04",
+    "updated_on": "2026-11-05",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -116,17 +123,18 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-04-ai-workflow-evaluation",
+    "revision": "2026-11-05-consumer-agency-and-affiliations",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 55,
-    "pages": 198,
+    "figures_count": 59,
+    "pages": 215,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
     "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md",
-    "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md"
+    "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md",
+    "consumer_agency_examples": "03_Data_and_Code/Consumer_Agency_Literature/README.md"
   },
   "datasets": [
     {
@@ -174,7 +182,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-04",
+    "updated_on": "2026-11-05",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -183,7 +191,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 274,
+    "slides": 287,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -230,11 +238,27 @@
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-02",
+    "updated_on": "2026-11-05",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
     "course_listing_source": "https://courses.illinois.edu/schedule/2027/spring/BADM/534"
   },
-  "calendar_ical": "02_Syllabus/Marketing_Analytics_Spring_2027.ics"
+  "calendar_ical": "02_Syllabus/Marketing_Analytics_Spring_2027.ics",
+  "consumer_agency_research": {
+    "index": "01_Resources/13_Consumer_Agency_and_Recent_Research/README.md",
+    "catalog": "01_Resources/13_Consumer_Agency_and_Recent_Research/catalog.json",
+    "coverage": "2023-01-01 through 2026-11-05; union of online and issue publication dates",
+    "doi_records": 886,
+    "eligible_records": 824,
+    "retrieved_versions": 103,
+    "reviewed_papers": 144,
+    "review_status": "incomplete; primarily abstract-based, with selected full-text checks",
+    "full_text_access_gaps": 721,
+    "analysis": "03_Data_and_Code/Consumer_Agency_Literature/README.md",
+    "affiliations": "03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md",
+    "affiliation_papers": 745,
+    "education_institutions": 424,
+    "policy": "01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md"
+  }
 }

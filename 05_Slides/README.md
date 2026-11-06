@@ -48,3 +48,7 @@ Sessions 02, 07, 10, and 14 now use the [earnings-call case](../03_Data_and_Code
 ## AI Workflow Evaluation and Economics
 
 Sessions 01, 05, 07, 09, 11, and 14 connect failure diagnosis, customer alternatives, prompt revision, factorial comparisons, selection on development accuracy, and reuse economics. The [three complete programs](../03_Data_and_Code/AI_Workflows/README.md) use synthetic inputs and require no model account. Four new TikZ figures show interaction, selection, break-even workload, and price bounds. These additions fit the existing session blocks, with the 75-minute ethics and regulation block in Session 14 retained.
+
+## Consumer Agency and Research Networks
+
+Sessions 3, 6, 7, 9, 12, and 14 add evidence coverage, mechanism clustering, LLM coding, university affiliation communities, downstream customer outcomes, recommendation welfare, and cancellation-policy distinctions. The [complete programs and outputs](../03_Data_and_Code/Consumer_Agency_Literature/README.md) accompany the notes. Four editable TikZ figures retain explicit populations and denominators. The 15-session schedule and the 75-minute regulation block in Session 14 remain in place.

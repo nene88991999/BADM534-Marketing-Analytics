@@ -129,6 +129,19 @@ M5, Section 5.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M5, Section 5.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
 \end{frame}
+\begin{frame}{Agency Labels Need Supporting Evidence}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Extract the outcome, mechanism, study design, and supporting passage.
+\item Separate reported choice concerns from inferred possible misuse.
+\item Retain uncertain cases and compare independent coding.
+\end{slidebullets}
+\vfill
+\note{Consumer agency concerns understanding, choice, action, and revision or exit. Persuasion alone does not establish impairment. The current literature codes are preliminary AI-assisted annotations without independent human adjudication. Immersive Service supplies qualitative agency evidence; Nudging App Adoption supplies evidence about choice presentation whose misuse requires an additional inference. See M5 Section 5.16.
+
+\url{../03_Data_and_Code/Consumer_Agency_Literature/README.md}}
+\end{frame}
 \begin{frame}{mHealth Food Descriptions}
 \usebeamercolor[fg]{normal text}
 \vfill
@@ -283,6 +296,33 @@ M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 \note{Brokerage can matter for reach even when a node has few direct neighbors. Observed network structure does not by itself establish the effect of targeting that person.
 
 M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{University Affiliations Create a Research Network}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item 745 papers identify 424 higher-education institutions.
+\item Split one unit of link weight across each paper's university pairs.
+\item Shared-paper links can also arise from a single author's dual affiliation.
+\end{slidebullets}
+\vfill
+\note{The eligible census has 824 papers; 79 lack identified education affiliations. Work-specific metadata is used rather than current author profiles. One missing University of Vaasa affiliation was verified from a published article and corrected. Louvain clustering at resolution one and seed 534 finds 19 communities among 415 linked institutions; nine remain unconnected. See M5 Section 5.17.
+
+\url{../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md}}
+\end{frame}
+\begin{frame}{Affiliation Groups Depend on the Representation}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_affiliation_communities.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.\par}
+\note{The median adjusted Rand agreement across twenty seeds is 0.522; switching from fractional to full edge counting gives 0.193. These are exploratory communities. The selected mechanism overlay has uneven review coverage and cannot establish institutional intent or rank universities by harm. The full program and all memberships appear in M5 Section 5.17 and the affiliation outputs.
+
+\url{../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md}}
 \end{frame}
 \begin{frame}{Coding Exercise: A Label Assessment}
 \usebeamercolor[fg]{normal text}

@@ -46,3 +46,9 @@ New references should change the relevant method, example, figure, or coding che
 M8 §8.16 and Session 14 connect the earnings-call case to operational pricing rules and customer outcomes. The [FTC January 2025 staff research summaries](https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf), pp. 1–3, concern US intermediary tools. Status: research publication under Section 6(b); no rule effective date. Checked November 2, 2026. The document supplies no finding against firms in the teaching corpus.
 
 The [February 27, 2024 Wendy's statement](https://www.wendys.com/blog/wendys-digital-news-update) supplies a company clarification date for M6 §6.18. Its assertions establish what the company communicated, with realized practices and outcomes requiring separate evidence. No causal effect or broader legal status is inferred from that event.
+
+## Cancellation Policy and Consumer Agency
+
+Checked November 5, 2026. The [official source record](../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md) adds the July 2025 Eighth Circuit vacatur, February 2026 FTC recodification, March 2026 advance notice, October 2026 information-collection notice, ROSCA, California's strengthened Automatic Renewal Law, and New York City's rule effective October 1, 2026. Each entry preserves jurisdiction, scope, instrument, and date. M8 §8.19 and Session 14 distinguish operative obligations from proposals and connect cancellation completion to customer intent.
+
+The [literature codebook](../03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md) separates reported concerns, inferred dual use, protective mechanisms, and missing evidence. Clusters describe selected papers. University affiliation communities describe shared publications and cannot establish institutional intent or a rate of agency erosion.

@@ -1,0 +1,51 @@
+{
+  "retrieved_on": "2026-11-05",
+  "start": "2023-01-01",
+  "end": "2026-11-05",
+  "requests": [
+    {
+      "journal": "JM",
+      "date_filter": "pub",
+      "returned": 252,
+      "total_results": 252,
+      "url": "https://api.crossref.org/journals/0022-2429/works?filter=from-pub-date%3A2023-01-01%2Cuntil-pub-date%3A2026-11-05&rows=1000&cursor=%2A"
+    },
+    {
+      "journal": "JM",
+      "date_filter": "print-pub",
+      "returned": 202,
+      "total_results": 202,
+      "url": "https://api.crossref.org/journals/0022-2429/works?filter=from-print-pub-date%3A2023-01-01%2Cuntil-print-pub-date%3A2026-11-05&rows=1000&cursor=%2A"
+    },
+    {
+      "journal": "JMR",
+      "date_filter": "pub",
+      "returned": 235,
+      "total_results": 235,
+      "url": "https://api.crossref.org/journals/0022-2437/works?filter=from-pub-date%3A2023-01-01%2Cuntil-pub-date%3A2026-11-05&rows=1000&cursor=%2A"
+    },
+    {
+      "journal": "JMR",
+      "date_filter": "print-pub",
+      "returned": 232,
+      "total_results": 232,
+      "url": "https://api.crossref.org/journals/0022-2437/works?filter=from-print-pub-date%3A2023-01-01%2Cuntil-print-pub-date%3A2026-11-05&rows=1000&cursor=%2A"
+    },
+    {
+      "journal": "MS",
+      "date_filter": "pub",
+      "returned": 344,
+      "total_results": 344,
+      "url": "https://api.crossref.org/journals/0732-2399/works?filter=from-pub-date%3A2023-01-01%2Cuntil-pub-date%3A2026-11-05&rows=1000&cursor=%2A"
+    },
+    {
+      "journal": "MS",
+      "date_filter": "print-pub",
+      "returned": 315,
+      "total_results": 315,
+      "url": "https://api.crossref.org/journals/0732-2399/works?filter=from-print-pub-date%3A2023-01-01%2Cuntil-print-pub-date%3A2026-11-05&rows=1000&cursor=%2A"
+    }
+  ],
+  "inclusion": "Union of Crossref publication-date and print-publication-date queries; DOI deduplicated.",
+  "unique_records": 886
+}

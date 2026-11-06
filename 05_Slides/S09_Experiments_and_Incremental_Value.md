@@ -19,6 +19,7 @@ Session 09. M6. 170 minutes.
 - [mHealth experiment planning](../03_Data_and_Code/mHealth/recurring_examples/m06.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
+- [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -249,7 +250,17 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 20: Experiment Discussion
+## Slide 20: Follow Purchases Through Returns
+
+- Pressure and self-assurance can produce different purchase and return patterns.
+- Prespecify the eligible population and both outcome horizons.
+- For cancellation, measure intent, completion, and subsequent charges.
+
+The verified abstract of the randomized online-retailing study reports stronger purchase responses alongside more returns under pressure nudges. Its full text remains unavailable in the collection. The directional result motivates balanced outcomes; exact effects and implementation details require the complete paper. A cancellation study should define eligibility at the initial request and compare lawful designs. See M6 Section 6.20.
+
+Source: https://doi.org/10.1177/00222437231180494
+
+## Slide 21: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

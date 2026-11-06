@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-04",
+  "updated_on": "2026-11-05",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -80,12 +80,19 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Earnings_Calls/results/README.md",
     "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "03_Data_and_Code/AI_Workflows/README.md",
-    "03_Data_and_Code/AI_Workflows/AGENTS.md"
+    "03_Data_and_Code/AI_Workflows/AGENTS.md",
+    "01_Resources/13_Consumer_Agency_and_Recent_Research/README.md",
+    "01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/README.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/results/README.md",
+    "03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-04",
+    "updated_on": "2026-11-05",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -125,17 +132,18 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-04-ai-workflow-evaluation",
+    "revision": "2026-11-05-consumer-agency-and-affiliations",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 55,
-    "pages": 198,
+    "figures_count": 59,
+    "pages": 215,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
     "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md",
-    "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md"
+    "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md",
+    "consumer_agency_examples": "03_Data_and_Code/Consumer_Agency_Literature/README.md"
   },
   "datasets": [
     {
@@ -183,7 +191,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-04",
+    "updated_on": "2026-11-05",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -192,7 +200,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 274,
+    "slides": 287,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -239,13 +247,29 @@ Generated from course.json and the source files identified below. This file cont
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-02",
+    "updated_on": "2026-11-05",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
     "course_listing_source": "https://courses.illinois.edu/schedule/2027/spring/BADM/534"
   },
-  "calendar_ical": "02_Syllabus/Marketing_Analytics_Spring_2027.ics"
+  "calendar_ical": "02_Syllabus/Marketing_Analytics_Spring_2027.ics",
+  "consumer_agency_research": {
+    "index": "01_Resources/13_Consumer_Agency_and_Recent_Research/README.md",
+    "catalog": "01_Resources/13_Consumer_Agency_and_Recent_Research/catalog.json",
+    "coverage": "2023-01-01 through 2026-11-05; union of online and issue publication dates",
+    "doi_records": 886,
+    "eligible_records": 824,
+    "retrieved_versions": 103,
+    "reviewed_papers": 144,
+    "review_status": "incomplete; primarily abstract-based, with selected full-text checks",
+    "full_text_access_gaps": 721,
+    "analysis": "03_Data_and_Code/Consumer_Agency_Literature/README.md",
+    "affiliations": "03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md",
+    "affiliation_papers": 745,
+    "education_institutions": 424,
+    "policy": "01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md"
+  }
 }
 ```
 
@@ -265,7 +289,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 55 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 59 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -299,6 +323,10 @@ Third-party files retain their original licenses and restrictions. See their adj
 ## Earnings-Call Worked Example
 
 [Pricing communication in earnings calls](03_Data_and_Code/Earnings_Calls/README.md) now connects data assessment, text analytics, event comparisons, and customer-outcome interpretation across M2, M5, M6, and M8. The folder includes runnable Python, structured data, source-linked cases, and verification checks. Updated notes and Sessions 02, 07, 10, and 14 contain the worked examples.
+
+## Recent Research and Consumer Agency
+
+The [journal collection](01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) indexes 2023-2026 research with managerial summaries, source versions, access gaps, and cancellation-policy resources. [Mechanism clustering](03_Data_and_Code/Consumer_Agency_Literature/README.md) and [university affiliation communities](03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md) provide reproducible examples with explicit coding and sampling limits.
 
 ---
 
@@ -414,7 +442,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 55 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 59 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -474,6 +502,10 @@ The [pricing-communication example](03_Data_and_Code/Earnings_Calls/README.md) c
 ## AI Workflow Evaluation and Economics
 
 The [synthetic AI workflow examples](03_Data_and_Code/AI_Workflows/README.md) connect failure diagnosis (M1 §1.12), buyer alternatives (M4 §4.16), document evaluation after prompt revision (M5 §5.15), model-by-library contrasts (M6 §6.19), repeated selection (M7 §7.20), and reuse and pricing decisions (M8 §§8.17–8.18). Three complete standard-library programs, five small-case checks, and four TikZ figures accompany the notes. Sessions 01, 05, 07, 09, 11, and 14 include these comparisons. All numerical inputs are synthetic; no provider performance, labor savings, or demand is measured.
+
+## Consumer Agency, Recent Research, and Affiliations
+
+The [2023-2026 journal collection](01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) supplies original managerial summaries, explicit access gaps, and a [cancellation-policy source record](01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md). M2 §2.20 assesses evidence selection; M4 §4.17 clusters mechanism codes; M5 §§5.16-5.17 examine annotation and university affiliation networks; M6 §6.20 separates conversion, returns, and intent; M7 §7.21 distinguishes predictive accuracy from welfare; M8 §8.19 connects mechanisms to effective cancellation. Sessions 3, 6, 7, 9, 12, and 14 carry the corresponding material. [Runnable code and outputs](03_Data_and_Code/Consumer_Agency_Literature/README.md) retain the denominators and sensitivity checks.
 
 ---
 
@@ -611,6 +643,10 @@ The [earnings-call case](Earnings_Calls/README.md) uses supplied structured meta
 
 The [AI workflow examples](AI_Workflows/README.md) compare model and library contributions, repeated selection on development accuracy, reusable-code costs, and buyer/seller price bounds. Three executed programs use only Python's standard library and synthetic inputs. Complete code appears in M6 §6.19, M7 §7.20, and M8 §8.17, with connections in M1, M4, and M5. Five small-case checks and four TikZ figures accompany the calculations. The examples require no model account and establish no provider performance, observed labor savings, or customer demand.
 
+## Consumer Agency Literature and University Affiliations
+
+The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 original managerial summaries and mechanism codes, a DOI census, access-gap assessment, reproducible Jaccard clustering, and sensitivity checks. The [affiliation analysis](Consumer_Agency_Literature/AFFILIATIONS.md) groups universities through shared publications and compares fractional research profiles. The inputs are actual bibliographic metadata and preliminary review annotations. Full code appears in M2 §2.20, M4 §4.17, and M5 §5.17; causal and policy interpretations appear in M6 §6.20, M7 §7.21, and M8 §8.19.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -619,7 +655,7 @@ The [AI workflow examples](AI_Workflows/README.md) compare model and library con
 
 **By Nathan Yang. Updated November 4, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 55 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 59 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -646,7 +682,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 198 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 215 pages.
 
 ## Editing and Building
 
@@ -701,6 +737,10 @@ The [earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 ## AI Workflow Evaluation and Economics
 
 M1 §1.12 diagnoses code errors and missing information; M4 §4.16 examines buyer alternatives; M5 §5.15 preserves independent text evaluation. M6 §6.19 separates model and library contributions, M7 §7.20 calculates selection on development accuracy, and M8 §§8.17–8.18 connect reusable work, competitive pricing, and selective upgrades. The [three runnable programs](../03_Data_and_Code/AI_Workflows/README.md) appear in full, alongside four original TikZ figures and five exact small-case checks. All inputs are synthetic.
+
+## Consumer Agency and Recent Marketing Research
+
+The [journal collection](../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) links 886 DOI records to 103 retrieved versions, 144 original managerial summaries, and a complete access-gap ledger. M2 §2.20 assesses coverage, M4 §4.17 clusters mechanisms, and M5 §§5.16-5.17 examine coding and university affiliation communities. M6 §6.20, M7 §7.21, and M8 §8.19 connect experiments, recommendation welfare, and cancellation policy. Three complete Python programs and four new TikZ figures accompany the [analysis](../03_Data_and_Code/Consumer_Agency_Literature/README.md). Counts describe selected literature and do not estimate the prevalence of harmful business practices.
 
 ---
 
@@ -814,6 +854,10 @@ Sessions 02, 07, 10, and 14 now use the [earnings-call case](../03_Data_and_Code
 ## AI Workflow Evaluation and Economics
 
 Sessions 01, 05, 07, 09, 11, and 14 connect failure diagnosis, customer alternatives, prompt revision, factorial comparisons, selection on development accuracy, and reuse economics. The [three complete programs](../03_Data_and_Code/AI_Workflows/README.md) use synthetic inputs and require no model account. Four new TikZ figures show interaction, selection, break-even workload, and price bounds. These additions fit the existing session blocks, with the 75-minute ethics and regulation block in Session 14 retained.
+
+## Consumer Agency and Research Networks
+
+Sessions 3, 6, 7, 9, 12, and 14 add evidence coverage, mechanism clustering, LLM coding, university affiliation communities, downstream customer outcomes, recommendation welfare, and cancellation-policy distinctions. The [complete programs and outputs](../03_Data_and_Code/Consumer_Agency_Literature/README.md) accompany the notes. Four editable TikZ figures retain explicit populations and denominators. The 15-session schedule and the 75-minute regulation block in Session 14 remain in place.
 
 ---
 
@@ -1255,6 +1299,12 @@ All four programs and nine counterexample tests passed. Full code is embedded in
 
 The [original teaching examples](../03_Data_and_Code/AI_Workflows/README.md) contain three executed Python programs, five exact small-case checks, aggregate CSV/JSON outputs, and an agent guide. Four TikZ figures reconcile to those outputs. All numerical inputs are synthetic. The selection simulation has an independent analytical benchmark, and the factorial and investment programs check contrasts and monetary balances directly. No model service was called. Sessions 01, 05, 07, 09, 11, and 14 incorporate the cases within the existing meeting allocations.
 
+## Consumer Agency and University Affiliation Networks
+
+The [recent journal review](../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) provides source-specific managerial implications and separates reported choice concerns from inferred dual use. `assess_coverage.py` in M2 §2.20 preserves missing evidence. `cluster.py` in M4 §4.17 compares Jaccard clusters, alternative samples, distances, and feature perturbations. `affiliation_clusters.py` in M5 §5.17 groups higher-education institutions by shared-publication links and uses fractional allocations for research profiles. The three programs and their [outputs](../03_Data_and_Code/Consumer_Agency_Literature/README.md) are public and executable without the local PDFs.
+
+M5 §5.16 distinguishes text classification from construct validity. M6 §6.20 evaluates purchases, returns, and effective exit; M7 §7.21 preserves model-dependent welfare interpretation; M8 §8.19 connects those mechanisms to the [verified cancellation-policy record](../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md).
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1608,18 +1658,18 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 20 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
-| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 18 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 19 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 18 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 25 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 28 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 20 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 21 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 19 |
-| 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 17 |
+| 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 22 |
+| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 25 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -1668,11 +1718,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess chart values, paired changes, scales, and denominator controls.
+**Python and Evidence:** Assess chart values, sample restrictions, and the journal review's missing-evidence denominators.
 
-**Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim.
+**Application:** Compare nutrition screens, public-page signals, and literature access selection.
 
-**Ethics and Regulation:** Chart claims, denominator choices, and coverage.
+**Ethics and Regulation:** Chart claims, denominator choices, and coverage
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -1728,11 +1778,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Fit earlier-period segments and independently reproduce the lifetime-value formula.
+**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value.
 
-**Application:** Compare endpoint retention, continuous retention, and a logging-gap event.
+**Application:** Compare customer retention definitions and mechanism profiles with explicit denominators.
 
-**Ethics and Regulation:** Retention, customer value, and cancellation choice.
+**Ethics and Regulation:** Retention, consumer agency, and effective cancellation
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -1748,11 +1798,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.
+**Python and Evidence:** Assess text labels and retrieval; construct university affiliation links and compare community sensitivity.
 
-**Application:** Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations.
+**Application:** Compare pricing communication, agency coding, and shared-publication networks.
 
-**Ethics and Regulation:** Review provenance, generated claims, and false positives.
+**Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -1786,11 +1836,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Calculate an email effect and decompose a synthetic model-by-library comparison.
+**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
 
-**Application:** Design a randomized comparison with a common rubric and an appropriate assignment unit.
+**Application:** Compare treatment effects over initial and subsequent customer outcomes.
 
-**Ethics and Regulation:** Experimental objectives and customer outcomes.
+**Ethics and Regulation:** Defensible treatment designs and informed customer choice
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -1846,11 +1896,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 14, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare ranking baselines, calculate NDCG, and assess a goal-weight sensitivity.
+**Python and Evidence:** Compare ranking objectives using the same candidates and observed outcome definitions.
 
-**Application:** Check a generated recommendation explanation and design an online outcome comparison.
+**Application:** Separate experimentally measured behavior from model-dependent consumer welfare.
 
-**Ethics and Regulation:** Delivery, customer goals, and explanation accuracy.
+**Ethics and Regulation:** Customer control, privacy, and the objective of personalization
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -1886,11 +1936,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.
+**Python and Evidence:** Evaluate retention welfare, workflow economics, and cancellation outcomes with their stated information.
 
-**Application:** Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules.
+**Application:** Connect research mechanisms to jurisdiction-specific cancellation rules and customer value.
 
-**Ethics and Regulation:** Retention procedures, customer value, and regulatory status.
+**Ethics and Regulation:** Consumer agency, effective exit, pricing, and current regulatory scope
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -1979,6 +2029,10 @@ Use the [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md) w
 
 The three programs and five exact checks use synthetic inputs and standard-library Python. Students can reproduce the comparisons without paid inference access. They introduce no new graded requirements or meeting dates.
 
+## Consumer Agency and Recent Journal Research
+
+Use the [journal and affiliation analyses](../03_Data_and_Code/Consumer_Agency_Literature/README.md) within the existing method and application blocks. Meeting 3 adds access selection and missing evidence. Meeting 6 compares customer segmentation with clustering coded research mechanisms; the literature program can supply the Python exercise. Meeting 7 uses agency annotation and university affiliation communities as text and network applications. Meeting 9 follows conversion through returns and customer intent. Meeting 12 compares recommendation behavior with model-dependent welfare. Meeting 14 connects these mechanisms to current cancellation rules within its existing 75-minute regulation block. Case selection can rotate across the available programs without adding meetings or graded requirements.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -2031,6 +2085,12 @@ New references should change the relevant method, example, figure, or coding che
 M8 §8.16 and Session 14 connect the earnings-call case to operational pricing rules and customer outcomes. The [FTC January 2025 staff research summaries](https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf), pp. 1–3, concern US intermediary tools. Status: research publication under Section 6(b); no rule effective date. Checked November 2, 2026. The document supplies no finding against firms in the teaching corpus.
 
 The [February 27, 2024 Wendy's statement](https://www.wendys.com/blog/wendys-digital-news-update) supplies a company clarification date for M6 §6.18. Its assertions establish what the company communicated, with realized practices and outcomes requiring separate evidence. No causal effect or broader legal status is inferred from that event.
+
+## Cancellation Policy and Consumer Agency
+
+Checked November 5, 2026. The [official source record](../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md) adds the July 2025 Eighth Circuit vacatur, February 2026 FTC recodification, March 2026 advance notice, October 2026 information-collection notice, ROSCA, California's strengthened Automatic Renewal Law, and New York City's rule effective October 1, 2026. Each entry preserves jurisdiction, scope, instrument, and date. M8 §8.19 and Session 14 distinguish operative obligations from proposals and connect cancellation completion to customer intent.
+
+The [literature codebook](../03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md) separates reported concerns, inferred dual use, protective mechanisms, and missing evidence. Clusters describe selected papers. University affiliation communities describe shared publications and cannot establish institutional intent or a rate of agency erosion.
 
 ---
 
@@ -2213,7 +2273,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, generative-AI demand, and earnings-call pricing communication. Synthetic examples supply hand-checkable calculations.
+Cases include mHealth food logging, restaurant availability, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations.
 
 ---
 
@@ -2228,8 +2288,8 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
 | 4 | February 10 | M3: Regression and marketing interpretation |
 | 5 | February 17 | M4: Conjoint analysis and product design |
-| 6 | February 24 | M4: Segmentation and customer lifetime value |
-| 7 | March 3 | M5: Text, social media, networks, and pricing communication |
+| 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
+| 7 | March 3 | M5: Text, social media, affiliation networks, and pricing communication |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments and incremental value |
@@ -2237,7 +2297,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 11 | April 7 | M7: Prediction, validation, and marketing actions |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
-| 14 | April 28 | M8: Generative AI, consumer choice, pricing, and regulation |
+| 14 | April 28 | M8: Generative AI, consumer agency, pricing, and cancellation regulation |
 | 15 | May 5 | M1-M8: Integrated decisions and final discussion/presentations |
 
 ## Holidays and Breaks
@@ -2309,6 +2369,307 @@ Keep development and test outcomes separate in the selection program. Preserve t
 Retain the conditional nature of sales volume, monetary valuations, equal output quality, and maintenance costs. Price bounds are participation and cost-recovery conditions, not a pricing equilibrium or forecast. Hours and dollars are separate units.
 
 After changing calculations, run the affected programs and `test_examples.py`, update the full code blocks in M6, M7, or M8, reconcile figures with the aggregate CSVs, and run `scripts/check_lecture_code.py`. Follow the lecture-note and slide guides when updating those artifacts. No external model calls are needed for these examples.
+
+---
+
+## Source: 01_Resources/13_Consumer_Agency_and_Recent_Research/README.md
+
+# Consumer Agency and Recent Marketing Research
+
+How should a firm evaluate an interface that raises adoption or retention while weakening customers' understanding or ability to leave? This collection connects recent marketing research to consumer agency, clustering, and cancellation policy.
+
+## Collection and Review
+
+The November 5, 2026 census contains **886 unique DOI records** from Journal of Marketing, Journal of Marketing Research, and Marketing Science. The date rule includes records with an online or issue-publication date from January 1, 2023 through November 5, 2026. The same paper appears once even when its online and issue years differ. Future 2026 publications are outside this snapshot.
+
+Crossref queries using each journal's verified ISSNs establish the metadata census. Publisher tables of contents have not been exhaustively reconciled against it. Screening removes 62 front-matter, correction, retraction, or related notice records, leaving 824 eligible records, including substantive editorials and commentaries. The screen is not a claim that every eligible record is an empirical research article.
+
+| Journal | DOI Records | Eligible | Retrieved Full Texts or Related Versions |
+| --- | --- | --- | --- |
+| Journal of Marketing | 276 | 273 | 48 |
+| Journal of Marketing Research | 266 | 262 | 25 |
+| Marketing Science | 344 | 289 | 30 |
+| Total | 886 | 824 | 103 |
+
+There are **721 eligible records without a verified retrieved full text**. Publisher restrictions and inaccessible repository links limit coverage. The UIUC Library route available in the browser still returned a publisher access screen on November 5; a separate desktop session could not be checked while the Mac was locked. No institutional entitlement is inferred from a browser login or an OpenAlex open-access flag.
+
+The collection provides **144 original paper summaries**, covering every retrieved paper plus 41 selected abstract-only records. Most summaries are based on abstracts; selected teaching cases additionally use full-text discussion or conclusion sections. Each card states its actual evidence basis. The review does not claim a complete assessment of the methods and results in all 103 downloads.
+
+## Navigation
+
+- [Article Index](CATALOG.md): every DOI, publication dates, access status, and available review card.
+- [Machine-Readable Catalog](catalog.json) and [CSV](catalog.csv): metadata, original implications, coding, and evidence basis.
+- [Access Ledger](access_ledger.csv): source, retrieved version, file checksum, and local path; the [JSON ledger](access_ledger.json) also preserves attempted URLs and failures.
+- [Missing Full Texts](access_gaps.csv): the unresolved acquisition queue.
+- [Retrieval Manifest](retrieval_manifest.json): query URLs, inclusion rule, retrieval dates, and source counts.
+- [Clustering Example](../../03_Data_and_Code/Consumer_Agency_Literature/README.md): code, data dictionary, sensitivity checks, and results.
+- [Cancellation Policy](Policy/README.md): verified jurisdictions, status, effective dates, and official legal texts.
+
+The original short-ID and module resource catalogs overlap with other course materials. This journal census is a separate DOI-based collection; its records should not be added to those catalog counts as a unique-resource total.
+
+## Rights, Versions, and Identity
+
+Research PDFs are organized by journal in Dropbox-only `local_papers/` subfolders. Their redistribution rights have not been individually cleared, so the public repository contains metadata, original summaries, and links. Open availability alone is insufficient permission to republish a PDF. Official legal texts have separate provenance in `Policy/sources.json`.
+
+Retrieved versions include published articles, accepted manuscripts, working papers, and one dissertation containing an earlier related chapter. The ledger identifies those differences. Numerical results in an early version must be checked against the version being cited. Downloads were checked for PDF format, extractable text, and title consistency. Two unrelated documents found through repository links were rejected; one was subsequently replaced with the correct article. The remaining rejected document is counted as an access gap.
+
+## Interpretation of Agency
+
+The coding distinguishes reported choice concerns, possible dual use, protective mechanisms, and concerns not established on the reviewed evidence. A possible misuse is an inference about a mechanism, not an allegation about the authors or proof that a firm deployed it. The [codebook](../../03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md) states definitions and unresolved reliability limitations.
+
+Clustering describes the mechanism composition of the selected review sample. Access, publication selection, abstract coverage, and coding choices affect its result. The frequency of a mechanism in papers does not measure the frequency or severity of agency erosion in markets.
+
+## University Affiliations
+
+The [affiliation analysis](../../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md) covers 745 of the 824 eligible papers, with 424 higher-education institutions after a verified source correction. It groups institutions through shared-paper links and overlays reviewed mechanisms using fractional paper weights. [Complete membership and sensitivity outputs](../../03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md) distinguish exploratory network structure from claims about institutional intent.
+
+---
+
+## Source: 01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
+
+# Subscription Cancellation and Consumer Choice
+
+A cancellation process determines whether a customer's decision to leave becomes an effective end to recurring charges. Retention can rise because service quality improves, because a consumer knowingly accepts a useful offer, or because the interface obstructs exit. Those mechanisms have different implications for customer welfare and for the interpretation of lifetime value.
+
+Status checked November 5, 2026. The entries below distinguish legal instruments, jurisdictions, covered transactions, and effective dates. They are a teaching source record, not a complete statement of every applicable subscription law.
+
+## United States Federal Rules
+
+The Eighth Circuit vacated the FTC's 2024 Negative Option Rule on July 8, 2025 after finding a procedural failure involving the required preliminary regulatory analysis. The decision removed that rule; it did not repeal separate statutory protections. See the [court's opinion](https://ecf.ca8.uscourts.gov/opndir/25/07/243137P.pdf), especially pages 19-23, and the local [PDF](Eighth_Circuit_2025_Vacatur.pdf).
+
+Effective February 12, 2026, the FTC recodified the earlier prenotification rule to conform to the court's decision. That older rule has a narrower scope centered on prenotification plans for merchandise. The FTC then issued an advance notice of proposed rulemaking on March 13, 2026 seeking input on negative-option practices. That notice does not itself establish a replacement cancellation obligation. The October 14, 2026 information-collection notice also concerns the restored earlier rule. Sources: [February final action](https://www.govinfo.gov/content/pkg/FR-2026-02-12/pdf/2026-02866.pdf), [March notice](https://www.govinfo.gov/content/pkg/FR-2026-03-13/pdf/2026-04952.pdf), and [October notice](https://www.govinfo.gov/content/pkg/FR-2026-10-14/pdf/2026-20971.pdf). Local copies: [February](FTC_2026_Recodification.pdf), [March](FTC_2026_Proposed_Rulemaking.pdf), and [October](FTC_2026_Information_Collection.pdf).
+
+The Restore Online Shoppers' Confidence Act, enacted December 29, 2010, separately addresses online negative-option transactions. Section 4 requires clear disclosure of material terms before obtaining billing information, express informed consent before charging, and a simple mechanism to stop recurring charges. These requirements provide a federal baseline for the covered transactions. Source: [Public Law 111-345, Section 4](https://www.govinfo.gov/content/pkg/PLAW-111publ345/pdf/PLAW-111publ345.pdf), codified at 15 U.S.C. §8403; [local PDF](ROSCA_2010.pdf).
+
+## California
+
+California strengthened its Automatic Renewal Law effective July 1, 2025. The Attorney General's September 2025 guidance describes coverage of consumer automatic-renewal and continuous-service arrangements, including free trials that become paid subscriptions. It emphasizes express consent, reminders, and straightforward cancellation. Consumers who enroll online must be able to cancel online without obstructive or delaying steps. Source: [California Attorney General's guidance](https://oag.ca.gov/news/press-releases/attorney-general-bonta-issues-consumer-alert-california%E2%80%99s-automatic-renewal-law).
+
+## New York City
+
+New York City's rule took effect October 1, 2026. It addresses automatic-renewal and continuous-service arrangements through disclosure, consent, and cancellation requirements. Section 5-110.2 requires a simple cancellation process that is as easy as the method used to enroll, with cancellation available through enrollment media. It bars obstruction and unreasonable delay. Retention offers may be made subject to the rule's restrictions; they may not obstruct or unreasonably delay cancellation. Section 5-110.3 contains sector exclusions, including specified regulated financial, insurance, alarm, and franchise-related arrangements. Coverage must be assessed before applying the rule to a business. Sources: [official city guidance](https://www.nyc.gov/main/click-to-cancel) and [adopted rule](https://www.nyc.gov/content/dam/nycgov/nyc-main/pdf/2026/Click-to-Cancel-Rule.pdf). The official text was read online; the direct PDF transfer returned an access error.
+
+## Measurement and Evaluation
+
+For a cancellation flow, define the eligible population as customers who initiate a cancellation attempt. Measure successful cancellation, elapsed time, required interactions, subsequent charges, refunds, understanding of any retention offer, and later complaints. Preserve enrollment channel, jurisdiction, and contract dates. A lower cancellation rate can reflect useful voluntary retention or a failure to execute the customer's intent; the event log alone may not separate them.
+
+An evaluation should compare lawful, transparent service or cancellation designs and track whether customers achieve their stated goals. A jurisdiction-level policy comparison also needs a treatment date, covered population, comparable controls, pre-policy trends, and attention to firm-wide interface changes that spill across jurisdictions. A rule's effective date is an intervention date, not automatic causal identification.
+
+## File Companions
+
+This Markdown file summarizes the substantive cancellation provisions relevant to the course. It does not reproduce procedural arguments, all exceptions, or unrelated rules sharing Federal Register pages. The PDFs retain the official text and pagination; [sources.json](sources.json) records download URLs, date, and checksums. Recheck current law before using these materials for an actual business decision or a later course offering.
+
+---
+
+## Source: 03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+# Consumer Agency in Recent Marketing Research
+
+A subscription manager must distinguish retention created by customer value from retention created by obstructing exit. This example connects that decision to a review of recent marketing research, explicit mechanism coding, and clustering.
+
+## Inputs and Coverage
+
+`coded_papers.csv` contains 144 reviewed DOI records drawn from the 2023-2026 journal census. The [resource library](../../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) provides the complete census, access gaps, source links, and individual managerial summaries. `reviewed_summaries.json` preserves the original annotations; `review_evidence.json` records selected full-text checks. These are evidence-based teaching annotations, not simulated articles or independently adjudicated labels.
+
+The primary analysis uses 48 retrieved papers with reported choice concerns or potential dual use. Sensitivity analyses use all 84 reviewed papers with those classifications, and 60 retrieved papers including protective mechanisms. Seven additional protective papers have no positive feature under the mechanism codebook and remain outside the latter comparison. Read [CODEBOOK.md](CODEBOOK.md) before interpreting any counts.
+
+## Run the Analysis
+
+From the repository root, with Python 3.13 and the packages in `requirements.txt` available (tested with Python 3.13.5):
+
+```bash
+python3 03_Data_and_Code/Consumer_Agency_Literature/cluster.py
+python3 03_Data_and_Code/Consumer_Agency_Literature/assess_coverage.py
+python3 -m unittest discover -s 03_Data_and_Code/Consumer_Agency_Literature -p 'test_*.py'
+```
+
+The analysis reads public CSV inputs and performs no network requests. Paths are relative to each script. Seed 534 controls the sensitivity calculations. The tested package versions and output counts are in [results/summary.json](results/summary.json). Main findings and their scope appear in [results/README.md](results/README.md).
+
+Each analysis sample produces paper-level assignments, cluster sizes, cluster profiles, feature prevalence, candidate-K scores, and subsample stability draws. Feature shares may sum above one because papers can have several mechanisms; cluster shares sum to one. No causal effect is estimated from the literature counts.
+
+## Update the Collection
+
+`collect.py` retrieves Crossref journal metadata and OpenAlex locations. `download.py` attempts publisher and open-repository copies, records failures, checks PDF identity, and stops requesting a host after an access block. It requires `curl` and `pdftotext`; set `AGENCY_PDFTOTEXT` if the latter is not on PATH. `add_sources.py` preserves manually verified author-copy locations. These acquisition scripts contact external sources only when explicitly run.
+
+`build_catalog.py` combines the cached acquisition records and original reviews. Its raw metadata inputs and full texts remain in the Dropbox-only `local_sources/` and `local_papers/` folders. Rebuilding that catalog therefore requires those local inputs; students can reproduce the clustering from the public CSV without them. `fetch_policy.py` retrieves official legal documents and records checksums. Access to an article does not establish permission to redistribute it.
+
+## Interpretation
+
+The largest primary cluster concerns social influence. This conclusion applies to the accessible, coded subset. The lower agreement under feature perturbations shows why a precise empirical claim about the dominant form of agency erosion would require more complete access and independently validated coding. Policy relevance can be high even for mechanisms with few papers: cancellation rules directly govern exit friction, while journal counts measure research attention and selection into this collection.
+
+## University Affiliations
+
+The [affiliation analysis](AFFILIATIONS.md) uses work-specific university metadata from the eligible journal census, with a documented source correction. Run `python3 03_Data_and_Code/Consumer_Agency_Literature/affiliation_clusters.py` to regenerate memberships, shared-paper links, fractional publication totals, mechanism profiles, and sensitivity checks. Its sample differs from the full-text mechanism sample: 745 papers have identified higher-education affiliations. The public CSV inputs support replication without the local full-text cache.
+
+---
+
+## Source: 03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md
+
+# Consumer Agency Coding
+
+## Unit and Evidence
+
+One row represents one DOI, with earlier versions attached to that record. Consumer agency means the practical ability to understand material terms, form a choice, act on that choice, and revise or end the relationship. Sales, persuasion, personalization, and adoption do not by themselves establish impaired agency. Psychological free will is not measured in this dataset.
+
+The 144 original summaries were prepared through AI-assisted reading and coding of abstracts, with targeted full-text checks for selected teaching cases. This is a single-coder preliminary assessment. Independent human coding, adjudication, and inter-rater agreement have not been completed. `evidence_basis` identifies the material actually reviewed. Downloading a full text does not mean its entire analysis was assessed.
+
+Each card separates a managerial implication from an agency concern and a safeguard. The concern can be an inference about a possible use of the mechanism. It does not establish author intent or actual deployment by a firm. The 41 additional reviews without a retrieved full text were selected for teaching relevance; they are not a random sample of the access gaps.
+
+## Review Status
+
+| Value | Interpretation |
+| --- | --- |
+| `reported_choice_concern` | The reviewed source explicitly reports constrained agency, distorted information, impaired control, or an adverse choice-related outcome. Outcomes such as returns are proxies requiring further interpretation; this status does not equate all studies with direct measurement of autonomy. |
+| `potential_dual_use` | A mechanism could support beneficial decisions or be used to steer consumers away from their goals. The misuse concern is an inference, with the relevant condition stated in the card. |
+| `protective` | The principal agency relevance is improved control, informed choice, consumer welfare, inclusion, or a safeguard. This is not a blanket certification of the technology. |
+| `not_established` | The reviewed evidence does not establish a specific agency mechanism under this protocol. It is not evidence that harm is absent. |
+| `not_reviewed` | No original review has been completed. Feature cells remain missing and the paper is excluded from clustering. |
+
+The primary clustering sample contains downloaded papers in the first two categories. Only one of its 48 papers has `reported_choice_concern`; the other 47 concern possible dual use. Cluster counts therefore describe **coded mechanisms among potentially relevant papers**, not counts of demonstrated harmful practices.
+
+## Mechanism Indicators
+
+An indicator equals one when the review identifies the mechanism in the paper or its explicitly stated potential misuse. Zero means it was not coded on the reviewed evidence. Multiple indicators can equal one for a paper.
+
+| Feature | Inclusion Rule | Distinction to Preserve |
+| --- | --- | --- |
+| `attention_salience` | Attention allocation, prominence, timing, or cue visibility affects response. | Attention can improve comprehension. |
+| `framing_reference` | Reference points, anchors, numerical formats, or gain/loss descriptions affect evaluation. | Factual framing and false reference prices have different evidentiary and legal implications. |
+| `social_cues` | Peer behavior, norms, status, relationships, influencers, or social endorsement affects choice. | Influence alone does not establish coercion. |
+| `emotion_identity` | Affect, identity, self-perception, attachment, or anthropomorphism shapes response. | Benefits and harms depend on consumer goals and the use of the mechanism. |
+| `opacity_disclosure` | Information completeness, credibility, disclosure, concealment, or comprehension matters. | A disclosed fact may still be difficult to understand. |
+| `personalization` | Information or actions vary with a consumer's inferred preferences or characteristics. | Relevance and exploitation require separate outcome measures. |
+| `privacy_control` | Consent, data sharing, privacy valuation, or control of personal information is central. | More consent is not automatically better consent. |
+| `defaults_order` | Defaults, preselection, rankings, or choice order changes selection. | Separate actual defaults from language that implies endorsement. |
+| `exit_search_friction` | Search, switching, navigation, cancellation, or exit costs affect feasible choices. | Lower search costs can increase welfare. |
+| `habits_rewards` | Repetition, reinforcement, rewards, or gamified progression affects engagement. | Continued use can reflect desired value. |
+| `financial_commitment` | Payment structures or financial commitment influence behavior or exposure. | Affordability and informed commitment are separate from conversion. |
+| `delegation_control` | Consumers delegate decisions or lose/recover control over tasks and service interactions. | Desired delegation can enhance agency. |
+
+## Reliability Exercise
+
+Select a stratified set of cards across journals, access status, and review status before examining cluster results. Two readers independently record the study design, outcome, relevant passage, feature codes, and whether the concern is reported or inferred. Compare disagreements feature by feature, revise ambiguous definitions, and preserve both initial and adjudicated codes. Agreement measures coding consistency; external evidence is needed to validate the agency construct. An LLM should be allowed to return insufficient evidence and should never fill missing full texts with plausible findings.
+
+## Similarity and Sensitivity
+
+Jaccard distance compares positive feature sets and ignores shared zeros. Average linkage clusters these distances. Candidate partitions use 2 through 8 clusters; the maximum silhouette score selects the reported partition, with smaller K breaking ties. Descriptive cluster names are assigned after inspecting their profiles and do not enter the algorithm.
+
+Subsampling refits the partition on 80% of papers, holding K fixed, for 200 seeded repetitions. Adjusted Rand index compares the shared papers with the full partition. These quantiles measure conditional stability, not confidence intervals for a population prevalence. Hamming distance supplies an alternative that also rewards common absences. A separate imposed stress test changes one feature per paper while retaining at least one positive feature. This is not an estimated model of coder error.
+
+---
+
+## Source: 03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
+
+# University Affiliations and Research Communities
+
+## Decision and Coverage
+
+An affiliation-based grouping asks which universities appear together on papers and whether those groups cover different research mechanisms. It complements the paper-level mechanism clusters. It does not identify an institution's intentions, policy, or causal influence on an author's work.
+
+The input covers all 824 eligible census records, regardless of full-text access. Work-specific OpenAlex authorship metadata identifies at least one education institution for 745 papers (90.4%); 79 remain unassigned. The identified set contains 424 institutions and 1,905 distinct paper-institution pairs. OpenAlex's `education` category includes universities, colleges, and independent business schools. Companies, hospitals, government agencies, and other noneducation affiliations are excluded from this particular analysis.
+
+The source is the affiliation attached to the work in the November 2026 metadata snapshot, rather than an author's current profile. Automated affiliation matching can be incomplete or incorrect. Institution IDs and ROR links preserve the resolution used; similarly named campuses and separately identified schools are not silently merged. A work's institutions can combine information from several publication versions and therefore need not perfectly reproduce its final printed affiliation line. Source documentation: [OpenAlex authorships](https://help.openalex.org/data/authorships/), [institutions](https://help.openalex.org/data/institutions/), and [CC0 data license](https://github.com/ourresearch/openalex-docs/blob/main/license.md?plain=1).
+
+## Network Construction
+
+The network connects two universities when they appear on the same paper. This is a shared-publication affiliation network. A link can arise through distinct coauthors or through one author's multiple affiliations. Twenty-one records repeat the complete multi-institution list across every author; the data flag that pattern instead of treating the author-institution mapping as independently verified. The graph uses the union of institutions on each paper, so it does not require assigning each affiliation to a particular person.
+
+A paper with k distinct institutions contributes total edge weight one, divided equally across its k(k-1)/2 pairs. Thus a two-university paper contributes one to its single link, while a three-university paper contributes one-third to each of three links. Repeated authors at the same university do not multiply its presence. Single-university papers contribute no cross-university edge but remain in publication totals.
+
+Louvain modularity clustering uses weighted edges, resolution 1, and seed 534. Nine institutions have no shared-paper edge and remain unconnected, outside community estimation. Community IDs are ordered by fractional publication totals after estimation. The algorithm is a heuristic and does not establish a unique or natural institutional grouping. See the [NetworkX method documentation](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.louvain.louvain_communities.html) and Blondel et al. (2008), [Fast Unfolding of Communities in Large Networks](https://doi.org/10.1088/1742-5468/2008/10/P10008).
+
+## Counting Papers Across Communities
+
+Each paper contributes 1/k to each of its k universities. These weights are summed within communities, so a paper spanning several communities contributes fractional weight to each while contributing one overall. The total across communities and unconnected institutions is 745. Distinct-paper counts can overlap across communities and must not be added as a unique total.
+
+The mechanism overlay uses only reviewed papers classified as potential dual use or a reported choice concern. Each community's feature share uses its own fractional reviewed-risk denominator. Unreviewed papers remain missing. Rows with fewer than ten distinct reviewed-risk papers carry a small-sample flag. These profiles describe selected publications; they are not institutional harm rates or evidence that a university endorses any practice.
+
+## Reproduce and Inspect
+
+```bash
+python3 03_Data_and_Code/Consumer_Agency_Literature/affiliation_clusters.py
+```
+
+The public `paper_affiliations.csv` and `affiliation_coverage.csv` are sufficient for the network. `coded_papers.csv` supplies the optional mechanism overlay. `extract_affiliations.py` regenerates those inputs from the Dropbox-only OpenAlex cache. The exported source work URL, institution ID, ROR link, and source update date make each mapping traceable. No additional author-profile request is required.
+
+[Results and Sensitivity](results/affiliations/README.md) describes the fitted communities. `university_membership.csv` gives every institution's assignment; `university_edges.csv` gives shared-paper links; `paper_community_weights.csv` preserves every allocation; `community_summary.csv`, `journal_profiles.csv`, and `mechanism_profiles.csv` describe the groups. The run also varies random seeds, resolution, and full versus fractional link counting.
+
+## Source Checks
+
+Five retrieved-paper affiliation blocks were checked against their paper-level institution sets. Four matched the retrieved version. The published Immersive Service article also names the University of Vaasa, which was absent from the OpenAlex record; that affiliation was added with its verified OpenAlex and ROR identifiers. `affiliation_corrections.json` preserves the source and date. This targeted check does not validate all 745 records.
+
+---
+
+## Source: 03_Data_and_Code/Consumer_Agency_Literature/results/README.md
+
+# Mechanism Clusters and Their Scope
+
+## Primary Sample
+
+The primary sample contains 48 retrieved papers coded as having possible dual use or a reported choice concern. There are 47 papers in the former category and one in the latter. Each DOI is one observation, with equal weight. The twelve indicators describe mechanisms identified in the preliminary review. They do not measure the magnitude or incidence of harm.
+
+Average-linkage clustering with Jaccard distance selects four clusters from candidates K=2 through K=8 by the maximum silhouette score, 0.272. Names below describe the observed profiles and are assigned after clustering.
+
+| Cluster | Papers | Share of 48 | Profile |
+| --- | --- | --- | --- |
+| Social Influence | 19 | 39.6% | All 19 have social cues; six also involve emotion or identity. |
+| Emotion and Identity | 15 | 31.3% | All 15 have emotion or identity; four also have attention and four personalization. |
+| Disclosure, Framing, and Defaults | 8 | 16.7% | Six have opacity/disclosure, four framing/reference, and four defaults/order. |
+| Attention, Search, and Control | 6 | 12.5% | Five have attention, two exit/search friction, and two delegation/control. |
+
+**Social influence is the largest cluster in this retrieved and coded subset.** The most common individual indicator is emotion/identity, present in 21 of 48 papers (43.8%), followed by social cues in 19 (39.6%). These answers differ because clusters are mutually exclusive while features overlap. The four rounded cluster percentages sum to 100.1% because of rounding.
+
+## Sensitivity
+
+At K=4, 200 refits on 80% subsamples give adjusted Rand index 10th/50th/90th percentiles of 0.426/0.794/1.000. Switching to Hamming distance gives agreement of 0.485. An imposed change to one feature per paper gives median agreement 0.250. The latter is a stress test, not an estimated coding-error model. These results show meaningful dependence on feature definitions and distance choice.
+
+Adding the purposefully selected abstract-only risk reviews produces 84 papers and selects K=8, the upper edge of the candidate range. Adding protective papers with positive mechanism codes to the retrieved sample produces 60 papers and selects K=6. The broader 84-paper sample's most common indicator is social cues (27/84, 32.1%), followed by emotion/identity (25/84, 29.8%). A boundary optimum and changed ranking warrant additional coding and model comparison before making a general taxonomy claim.
+
+## Missing Evidence
+
+Only 103 of 824 eligible records have retrieved full texts or related earlier versions. Retrieval shares vary by journal. The 144 reviews include 29 papers coded with social cues; 680 eligible records remain unreviewed. Holding the reviewed codes fixed, the share of eligible records eventually receiving that code can range from 29/824 (3.5%) to 709/824 (86.0%) if all unknown labels are respectively zero or one. These bounds concern a review label and do not measure actual commercial agency erosion. They make the unresolved evidence gap explicit.
+
+## Files
+
+`downloaded_risk/`, `all_reviewed_risk/`, and `downloaded_with_protective/` each contain complete assignments, profiles, feature shares, candidate-K scores, and stability draws. `coverage_by_journal.csv` independently reconciles census counts. `summary.json` records the tested runtime and unrounded results. Regenerate with the commands in the [analysis README](../README.md).
+
+---
+
+## Source: 03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md
+
+# Affiliation Clustering Results
+
+## Fitted Network
+
+The corrected input contains 424 higher-education institutions from 745 eligible papers with identified affiliations. It has 1,766 distinct shared-paper links contributed by 601 papers with multiple institutions. Nine institutions have no cross-institution edge. Weighted Louvain clustering at resolution 1 and seed 534 produces 19 communities among 415 connected institutions, spanning six connected components. Modularity is 0.471.
+
+The six largest communities by fractional publication total are below. A paper contributes one unit split equally across its universities. Example institutions are the largest contributors under that accounting rule; they do not define the full membership or the community's purpose.
+
+| Community | Institutions | Fractional Papers | Largest Affiliation Contributors |
+| --- | --- | --- | --- |
+| C01 | 44 | 154.15 | Columbia University; The University of Texas at Dallas; Chinese University of Hong Kong; Yale University |
+| C02 | 56 | 84.54 | University of Hong Kong; Indiana University; Duke University; Texas A&M University |
+| C03 | 40 | 74.65 | University of Washington; University of Florida; University of Missouri; Hong Kong Polytechnic University |
+| C04 | 26 | 67.16 | University of Pennsylvania; University of Wisconsin–Madison; University of Notre Dame; The University of Texas at Austin |
+| C05 | 24 | 57.80 | Cornell University; Washington University in St. Louis; Imperial College London; University of Virginia |
+| C06 | 35 | 48.52 | Vienna University of Economics and Business; University of British Columbia; University of Tennessee at Knoxville; Emory University |
+
+## Stability and Interpretation
+
+Across twenty seeds at resolution 1, agreement with the primary partition has adjusted Rand index 10th/50th/90th percentiles of 0.442/0.522/0.597. Giving each university pair a full count for each shared paper, instead of dividing one unit across its pairs, lowers agreement to 0.193. Membership depends materially on weighting and local optimization. Resolution 0.5 and 1.5 comparisons are in `sensitivity.csv`.
+
+The [mechanism profiles](mechanism_profiles.csv) overlay reviewed-paper codes using fractional allocations and explicit denominators. C01 has 22 distinct reviewed-risk papers but only 13.53 fractional papers. C03 has eight such distinct papers and is flagged as a small review sample. These uneven subsets do not support ranking institutions by agency erosion. Shared-paper links also include dual affiliations and do not prove collaboration between distinct research teams.
+
+## Outputs
+
+- [University Membership](university_membership.csv): every institution, community, distinct-paper count, fractional papers, and weighted degree.
+- [Community Summary](community_summary.csv): every community and the separate unconnected category.
+- [Shared-Paper Links](university_edges.csv): fractional edge weights and raw shared-paper counts.
+- [Paper Allocations](paper_community_weights.csv): traceable weights and reviewed features.
+- [Journal Profiles](journal_profiles.csv) and [Mechanism Profiles](mechanism_profiles.csv): descriptive composition.
+- [Sensitivity Runs](sensitivity.csv) and [Summary](summary.json): settings, stability, and version.
+
+Definitions, missing-affiliation treatment, source checks, and commands are in [AFFILIATIONS.md](../../AFFILIATIONS.md).
 
 ---
 

@@ -73,6 +73,62 @@ M4, Section 4.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M4, Section 4.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
 \end{frame}
+\begin{frame}{Similarity of Positive Mechanisms}
+\usebeamercolor[fg]{normal text}
+\noindent For each paper, collect the mechanisms coded as present in a set $A_i$.
+\medskip
+\[
+d_J(i,j)=1-\frac{|A_i\cap A_j|}{|A_i\cup A_j|}
+\]
+\medskip
+\noindent Jaccard distance ignores shared absences. Average linkage compares these distances.
+\note{The primary sample is 48 retrieved papers with potential dual use or a reported choice concern. Twelve binary codes include social cues, emotion, disclosure, defaults, and exit friction. A zero code means the mechanism was not coded from reviewed evidence. Missing reviews are excluded. See M4 Section 4.17 for the complete program.
+
+\url{../03_Data_and_Code/Consumer_Agency_Literature/README.md}}
+\end{frame}
+\begin{frame}{Social Influence is the Largest Cluster}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_agency_clusters.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small 48 retrieved potential-risk reviews. Four clusters selected from K=2 through K=8.\par}
+\note{The largest cluster contains 39.6\% of the sample. Emotion/identity is the most common overlapping feature at 21 of 48, so feature and cluster rankings differ. Almost all papers in this analysis are coded for inferred dual use. Counts do not measure market prevalence or author intent.
+
+\url{../03_Data_and_Code/Consumer_Agency_Literature/README.md}}
+\end{frame}
+\begin{frame}[fragile]{Reproduce the Mechanism Grouping}
+\usebeamercolor[fg]{normal text}
+\noindent Run from the Consumer\_Agency\_Literature folder after installing its requirements.
+\begin{lstlisting}
+import pandas as pd
+from cluster import FEATURES, select_sample, partition
+df = pd.read_csv("coded_papers.csv")
+sample = select_sample(df, "downloaded_risk")
+labels, distances = partition(sample[FEATURES].to_numpy(), 4)
+assert len(sample) == 48
+\end{lstlisting}
+{\small The complete script compares K values, exports profiles, and refits sensitivity samples.\par}
+\note{The short snippet reproduces the selected four-cluster partition. The full cluster.py program in M4 Section 4.17 selects K using silhouette scores and checks aggregate counts. Stable paper identifiers preserve traceability to original summaries.
+
+\url{../03_Data_and_Code/Consumer_Agency_Literature/README.md}}
+\end{frame}
+\begin{frame}{The Coding Changes the Conclusion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Median subsample agreement: adjusted Rand index 0.794.
+\item Changing one feature per paper lowers median agreement to 0.250.
+\item The broader abstract-based sample selects eight clusters.
+\end{slidebullets}
+\vfill
+\note{Subsamples contain 80\% of the primary papers and hold K=4 fixed across 200 repetitions. One-bit changes are an imposed sensitivity exercise, retaining a positive feature per paper. These are conditional stability results, not confidence intervals for population harm. The broader 84-paper risk sample is purposefully selected and chooses the upper K boundary.
+
+\url{../03_Data_and_Code/Consumer_Agency_Literature/README.md}}
+\end{frame}
 \begin{frame}{mHealth Segments Use Earlier Histories}
 \usebeamercolor[fg]{normal text}
 \centering

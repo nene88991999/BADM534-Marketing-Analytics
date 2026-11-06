@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[
+ ybar,width=12.6cm,height=6.5cm,bar width=18pt,
+ ymin=0,ymax=180,ytick={0,50,100,150},
+ ylabel={Fractional papers},xlabel={Six largest affiliation communities},
+ symbolic x coords={C01,C02,C03,C04,C05,C06},xtick=data,
+ enlarge x limits=.12,ymajorgrids=true,
+ nodes near coords,nodes near coords style={font=\scriptsize},
+ every node near coord/.append style={/pgf/number format/fixed,/pgf/number format/precision=1}]
+\addplot[fill=IlliniBlue!75,draw=IlliniBlue] coordinates {
+(C01,154.15000000) (C02,84.53730159) (C03,74.65396825) (C04,67.16111111) (C05,57.79563492) (C06,48.52261905)};
+\end{axis}
+\end{tikzpicture}

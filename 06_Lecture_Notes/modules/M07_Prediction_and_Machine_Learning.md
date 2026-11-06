@@ -811,3 +811,13 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 7.21 Recommendation Accuracy and Consumer Welfare
+
+\noindent A retailer that personalizes product rankings can increase relevance while also favoring profitable products. The managerial question concerns the tradeoff between customer fit, search effort, margins, and future relationships. Predictive accuracy describes how well a model anticipates a response. Welfare depends on the alternatives consumers consider, the information they receive, their search costs, and the prices they pay.
+
+[Welfare Effects of Personalized Rankings](https://doi.org/10.1287/mksc.2023.1441) combines a randomized introduction of personalized rankings with an estimated model of search and rankings. The verified abstract reports more search and purchasing than under bestseller-based rankings and higher modeled consumer surplus, even though the algorithm places positive weight on profitability. The surplus conclusion is conditional on the structural model. The experiment directly identifies behavioral responses under its assignment design. The final full text remains an access gap in this collection.
+
+[Targeted Advertising as Implicit Recommendation](https://doi.org/10.1287/mksc.2023.0117) examines a different economic mechanism. In the retrieved theoretical manuscript, consumers learn from being targeted, and firms anticipate that inference. Equilibrium targeting can include products poorly matched to some recipients even when prediction is accurate. Allowing the firm to set prices changes the welfare and privacy conclusions. These are model results under specified assumptions, not an estimate of how frequently real advertising is mistargeted.
+
+Together, the studies show why an evaluation should preserve the distinction between predictive fit, strategic incentives, and consumer outcomes. Compare rankings using the same eligible consumers and available alternatives. Measure search and purchase behavior, then state the additional model assumptions needed to translate them into surplus. The objective comparison in Section 7.12 and the recurring ranking program provide runnable calculations of how an objective changes recommendations; the published studies supply substantive reasons to evaluate that objective.

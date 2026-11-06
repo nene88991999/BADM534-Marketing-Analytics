@@ -1,0 +1,31 @@
+{
+  "doi_records": 886,
+  "screen_eligible": 824,
+  "downloaded": 103,
+  "access_gaps": 721,
+  "reviewed": 144,
+  "review_statuses": {
+    "potential_dual_use": 78,
+    "not_established": 37,
+    "protective": 23,
+    "reported_choice_concern": 6
+  },
+  "journals": {
+    "JM": {
+      "downloaded": 48,
+      "unavailable": 225,
+      "nonresearch_or_notice": 3
+    },
+    "JMR": {
+      "unavailable": 236,
+      "nonresearch_or_notice": 4,
+      "downloaded": 25,
+      "rejected_wrong_document": 1
+    },
+    "MS": {
+      "unavailable": 261,
+      "downloaded": 30,
+      "nonresearch_or_notice": 53
+    }
+  }
+}

@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 4, 2026\par}
+{\large November 5, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -3235,6 +3235,121 @@ if __name__ == '__main__':
     main()
 \end{Verbatim}
 
+\hypertarget{M02-access-to-evidence-changes-the-review-sample}{%
+\section{Access to Evidence Changes the Review
+Sample}\label{M02-access-to-evidence-changes-the-review-sample}}
+
+\noindent \noindent A marketing team evaluating subscription practices may ask
+which consumer-agency mechanisms appear most often in recent research.
+The observation unit is a paper identified by its DOI. The target
+collection includes Journal of Marketing, Journal of Marketing Research,
+and Marketing Science records with an online or issue-publication date
+from January 2023 through November 5, 2026. A paper published online
+before 2023 can enter through its later issue date. Deduplication
+prevents counting it twice.
+
+The Crossref census contains 886 DOI records. Excluding 62 notices and
+related front matter leaves 824 eligible records, including substantive
+commentaries. Retrieval produced 103 full texts or related earlier
+versions. The review covers those 103 records and 41 additional papers
+selected for their relevance from available abstracts. Access and
+purposeful selection determine which mechanisms can be examined in
+depth. A metadata census does not establish a complete full-text review.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Journal & Eligible & Retrieved & Reviewed \\
+\midrule
+
+Journal of Marketing & 273 & 48 & 63 \\
+Journal of Marketing Research & 262 & 25 & 43 \\
+Marketing Science & 289 & 30 & 38 \\
+Total & 824 & 103 & 144 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_literature_selection.tex}
+\caption{The DOI census passes through eligibility, retrieval, and mechanism coding. Each restriction changes the denominator.}\label{fig:M02_literature_selection}
+\end{figure}
+
+The retrieval rates differ across journals. Papers without an accessible
+copy can differ in topic, publication date, and author deposit
+practices. Coding an inaccessible paper as having no agency mechanism
+would convert missing evidence into a substantive conclusion. The
+catalog instead preserves an unreviewed status and missing indicators.
+
+A simple bound makes the resulting uncertainty concrete. Across the 824
+eligible records, 29 reviewed papers receive the social-cue code and 680
+remain unreviewed. If every unknown record eventually receives zero for
+that code, its share is 29/824, or 3.5\%. If every unknown record
+receives one, its share is 709/824, or 86.0\%. These are bounds on an
+eventual literature code, holding reviewed labels fixed. They do not
+measure the prevalence of harmful conduct. Their width shows how little
+a selected review alone determines a population-wide ranking.
+
+Reconciliation starts with the public catalog, DOI uniqueness, coverage,
+and journal totals. The calculation preserves existing review labels and
+leaves missing labels unresolved. The
+\href{../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md}{collection
+protocol} records dates, versions, retrieval attempts, and access gaps.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Consumer_Agency_Literature/assess_coverage.py}{assess\_coverage.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Reconcile the journal census, full-text availability, and review denominators."""
+from pathlib import Path
+import json
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+LIBRARY = HERE.parents[1] / "01_Resources/13_Consumer_Agency_and_Recent_Research"
+
+
+def main():
+    data = pd.DataFrame(json.loads((LIBRARY / "catalog.json").read_text())["resources"])
+    assert data.doi.is_unique and data.id.is_unique
+    eligible = data.research_screen_eligible.eq(True)
+    downloaded = data.download_status.eq("downloaded")
+    reviewed = data.review_status.ne("not_reviewed")
+    assert not (downloaded & ~eligible).any()
+    assert not (downloaded & ~reviewed).any()
+    table = data.assign(eligible=eligible.astype(int), downloaded=downloaded.astype(int),
+                        reviewed=reviewed.astype(int)).groupby("journal").agg(
+        doi_records=("doi", "size"), eligible=("eligible", "sum"),
+        downloaded=("downloaded", "sum"), reviewed=("reviewed", "sum"))
+    table["access_gaps"] = table.eligible - table.downloaded
+    table["download_share_of_eligible"] = table.downloaded / table.eligible
+    assert table.doi_records.sum() == len(data)
+    assert table.access_gaps.sum() == sum(eligible & ~downloaded)
+    # Worst-case bounds use the same eligible-record denominator at both ends.
+    # They concern the eventual coding label, not the prevalence of actual harm.
+    feature = "social_cues"
+    known_positive = int(pd.to_numeric(data.loc[eligible & reviewed, feature]).sum())
+    unknown = int(sum(eligible & ~reviewed))
+    denominator = int(eligible.sum())
+    bounds = {"feature": feature, "eligible": denominator, "reviewed_positive": known_positive,
+              "unreviewed": unknown, "lower_bound": known_positive / denominator,
+              "upper_bound": (known_positive + unknown) / denominator}
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    table.to_csv(output / "coverage_by_journal.csv")
+    (output / "missing_evidence_bounds.json").write_text(json.dumps(bounds, indent=2) + "\n")
+    print(table.to_string())
+    print(json.dumps(bounds, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -5074,6 +5189,264 @@ interval can disappear even when the seller becomes more productive.
 Measuring actual take-up, substitution, and customer effort is necessary
 before treating the assumed sales volume as a forecast.
 
+\hypertarget{M04-clustering-mechanisms-that-can-affect-consumer-agency}{%
+\section{Clustering Mechanisms That Can Affect Consumer
+Agency}\label{M04-clustering-mechanisms-that-can-affect-consumer-agency}}
+
+\noindent \noindent A subscription firm can use research to identify where a
+conversion or retention objective may conflict with customers' ability
+to understand and revise their choices. The relevant grouping should
+distinguish mechanisms that call for different evaluations. Social
+endorsement raises questions about credibility and pressure. Defaults
+raise questions about informed selection. Exit friction raises questions
+about whether a decision to cancel becomes effective. A high response
+rate provides little guidance about which of these mechanisms produced
+it.
+
+The primary sample contains 48 retrieved papers coded as having a
+reported choice concern or potential dual use. Forty-seven are in the
+potential-dual-use category; one explicitly discusses constrained
+agency. The twelve binary features describe attention, framing, social
+cues, emotion and identity, disclosure, personalization, privacy,
+defaults and order, exit and search friction, habits and rewards,
+financial commitment, and delegated control. The labels are preliminary
+AI-assisted annotations, largely based on abstracts, with selected
+full-text checks. They have not undergone independent human
+adjudication. Potential misuse is an inference about a mechanism and
+does not establish author intent.
+
+For papers \(i\) and \(j\), let \(A_i\) and \(A_j\) contain the
+mechanisms coded as present. Jaccard distance measures the proportion of
+their combined positive features that they do not share:
+
+\[
+d_J(i,j)=1-\frac{|A_i\cap A_j|}{|A_i\cup A_j|}.
+\]
+
+The numerator counts shared mechanisms and the denominator counts
+mechanisms present in either paper. Shared absences do not create
+similarity. This matters when most of the twelve codes are zero. Papers
+with no positive mechanism are excluded from this comparison, and
+unreviewed papers remain outside the analysis. Average linkage merges
+groups according to their average pairwise distance. K-means would
+impose a different Euclidean representation and objective.
+
+The program evaluates two through eight clusters and selects the
+partition with the largest silhouette score. For a paper, the silhouette
+compares its mean distance to its own group with the smallest mean
+distance to another group, scaled by the larger distance. The selected
+four-cluster solution has a mean silhouette of 0.272. Cluster names
+describe the profiles after estimation; they are not inputs to the
+algorithm.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Profile & Papers & Share of 48 \\
+\midrule
+
+Social Influence & 19 & 39.6\% \\
+Emotion and Identity & 15 & 31.3\% \\
+Disclosure, Framing, and Defaults & 8 & 16.7\% \\
+Attention, Search, and Control & 6 & 12.5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_agency_clusters.tex}
+\caption{Four mutually exclusive clusters contain 19, 15, 8, and 6 papers. The denominator is the 48 retrieved papers coded as potentially relevant to agency concerns.}\label{fig:M04_agency_clusters}
+\end{figure}
+
+Social influence is the largest cluster in this selected sample. Every
+paper in that group receives the social-cue indicator, and six also
+receive the emotion/identity indicator. Emotion/identity is the most
+common individual feature across all groups, appearing in 21 of 48
+papers. Thus the largest cluster and the most common feature answer
+different questions. Clusters partition the papers; feature memberships
+overlap. Neither statistic estimates the prevalence or severity of
+agency erosion in markets.
+
+Stability checks change the strength of the conclusion. Re-estimation on
+200 random 80\% subsamples, holding four clusters fixed, produces a
+median adjusted Rand index of 0.794 against the full-sample partition.
+Switching to Hamming distance lowers agreement to 0.485. An imposed
+stress test that changes one feature per paper yields median agreement
+of 0.250. Those values compare partitions, with one indicating identical
+grouping and zero corresponding to chance-adjusted agreement. The stress
+test is a sensitivity calculation; its feature changes do not represent
+an estimated error rate.
+
+Including 36 additional abstract-only risk reviews produces 84 papers
+and selects eight clusters, the top of the candidate range. Adding
+retrieved protective papers with positive mechanism codes produces 60
+papers and selects six clusters. These changes warrant further review
+before treating the groups as a stable taxonomy. A manager can still use
+the profiles to choose customer-outcome measures: comprehension and
+credibility for social influence, informed preferences for emotional
+appeals, term recall for disclosure, and successful exit for
+cancellation flows.
+
+Reproduction starts with \texttt{coded\_papers.csv} and preserves all
+three sample definitions, the code checks, distance calculations, K
+selection, paper-level assignments, and sensitivity comparisons. All
+feature definitions and status rules appear in the
+\href{../03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md}{codebook}.
+Run it from the saved script with the dependencies in the example
+folder. Counts and profiles are checked against independent row-wise
+totals.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Consumer_Agency_Literature/cluster.py}{cluster.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Cluster coded paper mechanisms; all prevalence estimates condition on the review sample."""
+from pathlib import Path
+import json
+import platform
+import numpy as np
+import pandas as pd
+import scipy
+from scipy.spatial.distance import pdist, squareform
+from scipy.cluster.hierarchy import linkage, cut_tree
+import sklearn
+from sklearn.metrics import silhouette_score, adjusted_rand_score
+
+HERE = Path(__file__).resolve().parent
+FEATURES = [
+    "attention_salience", "framing_reference", "social_cues", "emotion_identity",
+    "opacity_disclosure", "personalization", "privacy_control", "defaults_order",
+    "exit_search_friction", "habits_rewards", "financial_commitment", "delegation_control",
+]
+RISK = ["potential_dual_use", "reported_choice_concern"]
+
+
+def select_sample(data, sample):
+    """Never convert uncoded papers into zero-feature observations."""
+    risk = data.review_status.isin(RISK)
+    if sample == "downloaded_risk":
+        mask = risk & data.download_status.eq("downloaded")
+    elif sample == "all_reviewed_risk":
+        mask = risk
+    elif sample == "downloaded_with_protective":
+        mask = (risk | data.review_status.eq("protective")) & data.download_status.eq("downloaded")
+        # Broad governance/inclusion papers without these mechanisms remain in
+        # the review catalog; a zero vector has no positive mechanism to compare.
+        mask &= data[FEATURES].sum(axis=1) > 0
+    else:
+        raise ValueError(sample)
+    result = data.loc[mask].sort_values("id").reset_index(drop=True)
+    if result[FEATURES].isna().any().any():
+        raise ValueError("Missing codes require review, not zero imputation")
+    if not result[FEATURES].isin([0, 1]).all().all():
+        raise ValueError("Mechanism indicators must be binary")
+    if (result[FEATURES].sum(axis=1) == 0).any():
+        raise ValueError("An uncoded mechanism cannot enter the similarity analysis")
+    return result
+
+
+def partition(matrix, k, metric="jaccard"):
+    """Average linkage accepts non-Euclidean distances such as Jaccard."""
+    distances = pdist(matrix.astype(bool), metric=metric)
+    tree = linkage(distances, method="average")
+    labels = cut_tree(tree, n_clusters=[k]).ravel()
+    return labels, squareform(distances)
+
+
+def evaluate_sample(data, name, output):
+    sample = select_sample(data, name)
+    matrix = sample[FEATURES].to_numpy(dtype=int)
+    n = len(sample)
+    candidates = []
+    for k in range(2, min(8, n - 1) + 1):
+        labels, distance = partition(matrix, k)
+        sizes = np.bincount(labels)
+        candidates.append({"k": k, "silhouette": silhouette_score(distance, labels, metric="precomputed"),
+                           "smallest_cluster": int(sizes.min()), "largest_cluster": int(sizes.max())})
+    candidates = pd.DataFrame(candidates)
+    # This is a declared selection rule, not a claim that nature has K types.
+    best = candidates.sort_values(["silhouette", "k"], ascending=[False, True]).iloc[0]
+    k = int(best.k)
+    labels, _ = partition(matrix, k)
+    # Stable presentation IDs: descending size, with original ID breaking ties.
+    order = sorted(set(labels), key=lambda c: (-sum(labels == c), c))
+    label_map = {c: rank + 1 for rank, c in enumerate(order)}
+    sample["cluster"] = [label_map[c] for c in labels]
+    counts = sample.groupby("cluster").size().rename("papers").to_frame()
+    counts["share"] = counts.papers / n
+    profiles = sample.groupby("cluster")[FEATURES].mean()
+    counts["most_common_features"] = [
+        "; ".join(profiles.loc[c].sort_values(ascending=False, kind="stable").head(3).index)
+        for c in counts.index
+    ]
+    frequency = sample[FEATURES].sum().rename("papers").to_frame()
+    frequency["denominator"] = n
+    frequency["share"] = frequency.papers / n
+    frequency = frequency.sort_values(["papers"], ascending=False, kind="stable")
+    # Refit on 80% subsamples, comparing shared rows with the full partition.
+    # Quantiles measure conditional algorithm stability, not population uncertainty.
+    rng = np.random.default_rng(534)
+    stability = []
+    for iteration in range(200):
+        indices = np.sort(rng.choice(n, size=max(k + 1, int(.8 * n)), replace=False))
+        new_labels, _ = partition(matrix[indices], k)
+        stability.append(adjusted_rand_score(labels[indices], new_labels))
+    alternative, _ = partition(matrix, k, metric="hamming")
+    # Perturb one coded bit per paper to expose sensitivity to annotation choices.
+    # This imposed stress test is not an estimated annotation error distribution.
+    perturbation = []
+    for iteration in range(200):
+        changed = matrix.copy()
+        for row in range(n):
+            allowed = np.arange(len(FEATURES))
+            if changed[row].sum() == 1:
+                allowed = allowed[changed[row] == 0]
+            column = rng.choice(allowed)
+            changed[row, column] = 1 - changed[row, column]
+        new_labels, _ = partition(changed, k)
+        perturbation.append(adjusted_rand_score(labels, new_labels))
+    folder = output / name
+    folder.mkdir(exist_ok=True, parents=True)
+    sample.to_csv(folder / "assignments.csv", index=False)
+    counts.to_csv(folder / "cluster_sizes.csv")
+    profiles.to_csv(folder / "cluster_profiles.csv")
+    frequency.to_csv(folder / "feature_prevalence.csv", index_label="feature")
+    candidates.to_csv(folder / "k_comparison.csv", index=False)
+    pd.DataFrame({"adjusted_rand_index": stability}).to_csv(folder / "subsample_stability.csv", index=False)
+    assert counts.papers.sum() == n and np.isclose(counts.share.sum(), 1)
+    # Independent row-loop count checks the vectorized feature aggregate.
+    for feature in FEATURES:
+        assert int(frequency.loc[feature, "papers"]) == sum(int(row[feature]) for _, row in sample.iterrows())
+    return {"papers": n, "k": k, "silhouette": float(best.silhouette),
+            "cluster_counts": {str(c): int(v) for c, v in counts.papers.items()},
+            "largest_features": frequency.head(3).reset_index().to_dict("records"),
+            "subsample_ari_quantiles": np.quantile(stability, [.1, .5, .9]).tolist(),
+            "hamming_ari": float(adjusted_rand_score(labels, alternative)),
+            "one_bit_perturbation_ari_quantiles": np.quantile(perturbation, [.1, .5, .9]).tolist(),
+            "valid_perturbation_runs": len(perturbation)}
+
+
+def main():
+    data = pd.read_csv(HERE / "coded_papers.csv")
+    assert data.id.is_unique and data.doi.is_unique
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    summary = {name: evaluate_sample(data, name, output) for name in [
+        "downloaded_risk", "all_reviewed_risk", "downloaded_with_protective"]}
+    summary["environment"] = {"python": platform.python_version(), "numpy": np.__version__,
+                              "pandas": pd.__version__, "scipy": scipy.__version__, "sklearn": sklearn.__version__}
+    (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -6112,6 +6485,309 @@ prespecified procedure that accounts for the adaptive reuse. M7, Section
 candidates can produce apparently strong development accuracy while
 performance on fresh cases remains at chance. That mechanism applies
 even when every candidate runs without a software error.
+
+\hypertarget{M05-a-text-classifier-needs-an-agency-definition}{%
+\section{A Text Classifier Needs an Agency
+Definition}\label{M05-a-text-classifier-needs-an-agency-definition}}
+
+\noindent \noindent A research review can mistake persuasive language for evidence
+that consumers lost control. The construct must be defined before an LLM
+assigns labels. Here, agency concerns the ability to understand material
+terms, form a choice, act on it, and revise or end the relationship.
+Adoption, continued use, and a favorable brand evaluation are
+insufficient by themselves to establish impairment. A consumer can value
+a recommendation or deliberately delegate a decision.
+
+The
+\href{../01_Resources/13_Consumer_Agency_and_Recent_Research/CATALOG.md}{paper
+cards} separate managerial implications from an agency assessment and
+identify the evidence read. A useful extraction record contains the
+decision, setting, study design, outcome, proposed mechanism, source
+passage, and evidence level. It should distinguish an experimentally
+observed response, a qualitative account of restricted control, a
+conditional theoretical prediction, and a possible misuse inferred by
+the reviewer. Those categories answer different questions.
+
+In \href{https://doi.org/10.1177/00222429251319312}{Immersive Service:
+Characteristics, Challenges, and Pathways to Consumer Agency},
+qualitative evidence from residential care connects agency to service
+boundaries, roles, protocols, and voice. The managerial implications
+include assessing residents' desired control, their constraints, and
+feasible opportunities to shape daily activities. This provides direct
+substantive guidance about agency in a particular service setting.
+Generalization to digital subscriptions requires a separate argument
+about which mechanisms carry over.
+
+By contrast, \href{https://doi.org/10.1177/00222429221141066}{Nudging
+App Adoption} examines how choice presentation changes feature adoption.
+Its retrieved discussion states that enabling a feature still required
+an active choice and that the interventions left the actual default
+unchanged. Presentation can nevertheless influence habitual responses
+and decision time. A reviewer may infer a concern about poorly
+understood privacy choices, while the paper's beneficial public-health
+setting remains part of the evidence. Conflating that inference with
+demonstrated deception would corrupt the label.
+
+For an AI-assisted review, provide the source text and require a passage
+supporting each nonzero feature. Permit an insufficient-evidence
+response. Have independent readers code a prespecified set that includes
+protective cases and uncertain cases, compare disagreements, and
+adjudicate the definitions before extending the labels. Preserve initial
+and revised codes. A high agreement rate establishes consistency under
+the coding protocol; construct validity still depends on whether the
+labels capture meaningful consumer control. The clustering program in
+Section 4.17 reproduces the numerical grouping from the saved labels,
+while the evidentiary judgment remains a separate task.
+
+\hypertarget{M05-university-affiliations-define-a-different-research-network}{%
+\section{University Affiliations Define a Different Research
+Network}\label{M05-university-affiliations-define-a-different-research-network}}
+
+\noindent \noindent A literature review can ask which universities appear together
+on papers and whether their shared research covers different mechanisms.
+The observation units and similarity measure differ from the mechanism
+clustering in Section 4.17. Universities are the network nodes, while
+shared publication affiliations create links. A link can arise through
+separate coauthors or one author's multiple affiliations. It does not
+establish institutional endorsement of a research implication or
+identify a university's causal influence on an author.
+
+The eligible journal census contains 824 records. Work-specific OpenAlex
+metadata, with one affiliation correction verified against a retrieved
+published article, identifies 424 higher-education institutions across
+745 papers. Seventy-nine papers lack an identified education
+affiliation. The metadata category includes universities, colleges, and
+independent business schools. Names are resolved through institution IDs
+and ROR links; distinct campuses and schools remain separate when their
+identifiers differ. The source attaches affiliations to works rather
+than substituting each author's current employer. Automated matching and
+differences across publication versions can still create errors.
+
+For paper \(p\), let \(U_p\) be its set of distinct universities and let
+\(k_p\) be the number of institutions in that set. A paper with at least
+two universities contributes total edge weight one, divided across all
+of its university pairs:
+
+\[
+w_{ij}=\sum_{p:k_p\geq2}\frac{\mathbf{1}\{i,j\in U_p,\ i\ne j\}}{\binom{k_p}{2}}.
+\]
+
+A two-university paper contributes one to its single link. A
+three-university paper contributes one-third to each of three links.
+This normalization prevents papers with many affiliations from
+mechanically receiving more total network weight. Repeated authors from
+the same institution do not multiply its presence. Single-university
+papers contribute no cross-university edge but remain in publication
+totals.
+
+Louvain clustering searches for communities with more internal link
+weight than a degree-based benchmark. Its modularity objective can be
+written as
+
+\[
+Q=\frac{1}{2m}\sum_{i,j}\left(w_{ij}-\gamma\frac{s_i s_j}{2m}\right)\mathbf{1}\{c_i=c_j\},
+\]
+
+where \(s_i=\sum_jw_{ij}\) is university \(i\)'s weighted degree, \(m\)
+is total undirected edge weight, \(c_i\) is its community, and
+\(\gamma\) controls resolution. The benchmark allows universities with
+more links to have more expected within-group weight. Higher resolution
+generally favors smaller groups. The algorithm is a heuristic; different
+seeds can reach different partitions with similar objective values.
+
+At resolution one and seed 534, the network's 1,766 links produce 19
+communities among 415 connected institutions. Nine additional
+institutions have no cross-institution edge and remain unconnected. The
+connected institutions occupy six components. Modularity is 0.471.
+Publication totals split each paper equally across its universities,
+with each paper contributing one in total across communities.
+Distinct-paper counts can overlap across groups, so they cannot be added
+as a unique total.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_affiliation_communities.tex}
+\caption{The six largest affiliation communities contain 154.15, 84.54, 74.65, 67.16, 57.80, and 48.52 fractional papers. The grouping uses university co-occurrence and does not use the agency labels.}\label{fig:M05_affiliation_communities}
+\end{figure}
+
+The largest community includes Columbia, the University of Texas at
+Dallas, the Chinese University of Hong Kong, and Yale among its largest
+fractional contributors. Other communities include different
+combinations across countries. A community name based on geography or
+assumed research intent would add information the algorithm never used.
+Stable IDs connect each group to its complete membership and paper
+allocations.
+
+Across twenty seeds, the median adjusted Rand index relative to the
+primary fit is 0.522. Replacing fractional edges with a full count for
+every pair lowers agreement to 0.193. These results show that
+institutional membership is sensitive to the representation and
+optimization. The community count describes one fitted network, with the
+alternatives retained for comparison.
+
+Agency-mechanism profiles are then overlaid on the communities using
+only reviewed papers and the same fractional allocation. Their
+denominator is the community's fractional mass of reviewed papers with a
+reported choice concern or inferred possible dual use. For example, C01
+contains 22 distinct such papers, contributing 13.53 fractional papers;
+C03 has eight distinct papers and receives a small-sample flag. Missing
+reviews remain missing. These profiles describe a selected publication
+set and do not estimate a university's propensity to erode agency.
+
+The runnable program reads the public paper-institution pairs, coverage
+table, and reviewed codes. It preserves unconnected institutions, checks
+total edge weight and paper allocations, exports every membership and
+link, and compares seeds, resolution, and weighting. The
+\href{../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md}{affiliation
+guide} records source definitions and the verified correction. Method
+references: \href{https://help.openalex.org/data/authorships/}{OpenAlex
+authorships},
+\href{https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.louvain.louvain_communities.html}{NetworkX
+Louvain documentation}, and
+\href{https://doi.org/10.1088/1742-5468/2008/10/P10008}{Blondel et
+al.~(2008)}.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Consumer_Agency_Literature/affiliation_clusters.py}{affiliation\_clusters.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Cluster universities by shared-paper affiliations and overlay reviewed mechanisms."""
+from pathlib import Path
+from itertools import combinations
+from collections import Counter
+import json
+import numpy as np
+import pandas as pd
+import networkx as nx
+from sklearn.metrics import adjusted_rand_score
+from cluster import FEATURES, RISK
+
+HERE = Path(__file__).resolve().parent
+
+
+def make_graph(pairs, fractional=True):
+    graph = nx.Graph()
+    graph.add_nodes_from(sorted(pairs.institution_id.unique()))
+    multipaper = 0
+    for _, group in pairs.groupby('paper_id', sort=True):
+        nodes = sorted(set(group.institution_id))
+        k = len(nodes)
+        if k < 2:
+            continue
+        multipaper += 1
+        weight = 2 / (k * (k - 1)) if fractional else 1.0
+        for left, right in combinations(nodes, 2):
+            if not graph.has_edge(left, right):
+                graph.add_edge(left, right, weight=0.0, shared_papers=0)
+            graph[left][right]['weight'] += weight
+            graph[left][right]['shared_papers'] += 1
+    if fractional:
+        assert np.isclose(graph.size(weight='weight'), multipaper)
+    assert nx.number_of_selfloops(graph) == 0
+    return graph
+
+
+def communities(graph, seed=534, resolution=1):
+    connected = graph.subgraph([n for n in graph if graph.degree(n) > 0]).copy()
+    groups = nx.community.louvain_communities(connected, weight='weight', seed=seed, resolution=resolution)
+    return connected, groups
+
+
+def labels(groups, nodes):
+    lookup = {node: i for i, group in enumerate(groups) for node in group}
+    return [lookup[node] for node in nodes]
+
+
+def main():
+    pairs = pd.read_csv(HERE / 'paper_affiliations.csv').sort_values(['paper_id', 'institution_id'])
+    coverage = pd.read_csv(HERE / 'affiliation_coverage.csv')
+    reviews = pd.read_csv(HERE / 'coded_papers.csv')
+    assert not pairs.duplicated(['paper_id', 'institution_id']).any()
+    assert coverage.paper_id.is_unique and reviews.id.is_unique
+    pairs['paper_weight'] = 1 / pairs.groupby('paper_id').institution_id.transform('size')
+    np.testing.assert_allclose(pairs.groupby('paper_id').paper_weight.sum(), 1)
+    graph = make_graph(pairs)
+    connected, groups = communities(graph)
+    # Community IDs are display labels ordered by fractional publication mass.
+    mass = pairs.groupby('institution_id').paper_weight.sum()
+    groups = sorted(groups, key=lambda g: (-float(mass.loc[list(g)].sum()), min(g)))
+    membership = {node: f'C{i+1:02d}' for i, group in enumerate(groups) for node in group}
+    pairs['community'] = pairs.institution_id.map(membership).fillna('Unconnected')
+    universities = pairs.groupby(['institution_id', 'institution_name', 'community']).agg(
+        papers=('paper_id', 'nunique'), fractional_papers=('paper_weight', 'sum')).reset_index()
+    universities['weighted_degree'] = universities.institution_id.map(dict(graph.degree(weight='weight')))
+    # Split each paper across its universities; its total contribution remains one.
+    allocation = pairs.groupby(['paper_id', 'community']).paper_weight.sum().reset_index()
+    allocation = allocation.merge(coverage, on='paper_id', validate='many_to_one')
+    allocation = allocation.merge(reviews[['id'] + FEATURES], left_on='paper_id', right_on='id',
+                                  how='left', validate='many_to_one').drop(columns='id')
+    output = HERE / 'results/affiliations'
+    output.mkdir(parents=True, exist_ok=True)
+    university_rows, mechanism_rows = [], []
+    for community, group in allocation.groupby('community', sort=True):
+        members = universities.loc[universities.community == community].sort_values(
+            ['fractional_papers', 'institution_name'], ascending=[False, True])
+        reviewed = group.loc[group.review_status.ne('not_reviewed')]
+        risk = group.loc[group.review_status.isin(RISK)]
+        assert not risk[FEATURES].isna().any().any()
+        university_rows.append({'community': community, 'universities': len(members),
+            'distinct_papers': group.paper_id.nunique(), 'fractional_papers': group.paper_weight.sum(),
+            'reviewed_papers': reviewed.paper_id.nunique(), 'reviewed_fractional_papers': reviewed.paper_weight.sum(),
+            'risk_reviewed_papers': risk.paper_id.nunique(), 'risk_reviewed_fractional_papers': risk.paper_weight.sum(),
+            'largest_affiliations_by_fractional_papers': '; '.join(members.institution_name.head(4))})
+        for feature in FEATURES:
+            numerator = (risk[feature] * risk.paper_weight).sum()
+            denominator = risk.paper_weight.sum()
+            mechanism_rows.append({'community': community, 'feature': feature,
+                'weighted_positive': numerator, 'weighted_reviewed_risk_denominator': denominator,
+                'share': numerator / denominator if denominator else None,
+                'distinct_reviewed_risk_papers': risk.paper_id.nunique(),
+                'small_review_sample': risk.paper_id.nunique() < 10})
+    nodes = sorted(connected)
+    reference = labels(groups, nodes)
+    sensitivity = []
+    for resolution in [.5, 1., 1.5]:
+        for seed in range(20):
+            _, candidate = communities(graph, seed=seed, resolution=resolution)
+            sensitivity.append({'resolution': resolution, 'seed': seed, 'communities': len(candidate),
+                'modularity': nx.community.modularity(connected, candidate, weight='weight', resolution=resolution),
+                'ari_against_primary': adjusted_rand_score(reference, labels(candidate, nodes))})
+    full_graph = make_graph(pairs, fractional=False)
+    _, full_groups = communities(full_graph)
+    edges = [{'left': a, 'right': b, **d} for a, b, d in graph.edges(data=True)]
+    university_table = pd.DataFrame(university_rows)
+    assert np.isclose(university_table.fractional_papers.sum(), pairs.paper_id.nunique())
+    universities.to_csv(output / 'university_membership.csv', index=False)
+    university_table.to_csv(output / 'community_summary.csv', index=False)
+    allocation.to_csv(output / 'paper_community_weights.csv', index=False)
+    pd.DataFrame(mechanism_rows).to_csv(output / 'mechanism_profiles.csv', index=False)
+    pd.DataFrame(edges).to_csv(output / 'university_edges.csv', index=False)
+    sensitivity = pd.DataFrame(sensitivity)
+    sensitivity.to_csv(output / 'sensitivity.csv', index=False)
+    journal = allocation.groupby(['community', 'journal']).paper_weight.sum().reset_index()
+    journal.to_csv(output / 'journal_profiles.csv', index=False)
+    same_resolution = sensitivity.loc[sensitivity.resolution.eq(1), 'ari_against_primary']
+    summary = {'eligible_papers': len(coverage), 'papers_with_university': pairs.paper_id.nunique(),
+        'papers_without_university': int(coverage.university_count.eq(0).sum()),
+        'multi_university_papers': int(coverage.university_count.gt(1).sum()),
+        'universities': graph.number_of_nodes(), 'edges': graph.number_of_edges(),
+        'unconnected_universities': len(list(nx.isolates(graph))), 'communities': len(groups),
+        'connected_components': nx.number_connected_components(connected),
+        'modularity': nx.community.modularity(connected, groups, weight='weight'),
+        'seed_ari_quantiles': same_resolution.quantile([.1,.5,.9]).tolist(),
+        'full_counting_ari': adjusted_rand_score(reference, labels(full_groups, nodes)),
+        'shared_author_list_flagged_papers': int(coverage.shared_author_affiliation_list.sum()),
+        'networkx_version': nx.__version__, 'resolution': 1, 'seed': 534}
+    (output / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+    print(json.dumps(summary, indent=2))
+    print(university_table.head(6).to_string(index=False))
+
+
+if __name__ == '__main__':
+    main()
+\end{Verbatim}
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
@@ -7508,6 +8184,48 @@ def main():
 if __name__ == "__main__":
     main()
 \end{Verbatim}
+
+\hypertarget{M06-conversion-returns-and-customer-intent}{%
+\section{Conversion, Returns, and Customer
+Intent}\label{M06-conversion-returns-and-customer-intent}}
+
+\noindent \noindent An online retailer choosing between promotional messages needs
+to measure the consequences after checkout. A message that produces more
+orders can also produce more reversals if customers commit before
+resolving uncertainty. Define the treatment as the assigned message, the
+population as eligible visitors, and the initial outcome as purchases
+within a prespecified window. Subsequent returns, complaints, and
+retained purchases provide additional outcomes over a longer horizon.
+
+\href{https://doi.org/10.1177/00222437231180494}{The Effects of Pressure
+and Self-Assurance Nudges on Product Purchases and Returns in Online
+Retailing} reports a randomized field experiment. The available abstract
+describes stronger purchase responses to pressure nudges alongside more
+returns, while self-assurance produces a different balance. The evidence
+motivates evaluating net sales and customer outcomes together. The full
+text was not retrieved for this collection, so the abstract supports the
+directional comparison; exact effect sizes and implementation conditions
+require the complete study.
+
+For a cancellation intervention, the population can instead be customers
+who start an exit request. Record the request before assigning any
+lawful alternative interface so that treatment does not determine
+inclusion in the denominator. Measure successful cancellation, time,
+later charges, and whether any accepted retention offer matches stated
+intent. A comparison that conditions on post-treatment completion can
+exclude the consumers most affected by friction. Consumer understanding
+should be measured separately from continued payment.
+
+A policy evaluation adds another source of variation. A rule that takes
+effect in one jurisdiction can motivate a difference-in-differences
+design, but coverage, preexisting trends, and firm-wide interface
+changes must be assessed. If a platform changes its interface
+everywhere, untreated jurisdictions may also receive the new design.
+Inference then depends on the actual exposure rather than the legal
+boundary alone. The existing policy-comparison code in Section 6.16
+supplies the corresponding timing and comparison-group checks; the
+\href{../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md}{cancellation
+source record} supplies the legal distinctions.
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -9082,6 +9800,48 @@ def main():
 if __name__ == "__main__":
     main()
 \end{Verbatim}
+
+\hypertarget{M07-recommendation-accuracy-and-consumer-welfare}{%
+\section{Recommendation Accuracy and Consumer
+Welfare}\label{M07-recommendation-accuracy-and-consumer-welfare}}
+
+\noindent \noindent A retailer that personalizes product rankings can increase
+relevance while also favoring profitable products. The managerial
+question concerns the tradeoff between customer fit, search effort,
+margins, and future relationships. Predictive accuracy describes how
+well a model anticipates a response. Welfare depends on the alternatives
+consumers consider, the information they receive, their search costs,
+and the prices they pay.
+
+\href{https://doi.org/10.1287/mksc.2023.1441}{Welfare Effects of
+Personalized Rankings} combines a randomized introduction of
+personalized rankings with an estimated model of search and rankings.
+The verified abstract reports more search and purchasing than under
+bestseller-based rankings and higher modeled consumer surplus, even
+though the algorithm places positive weight on profitability. The
+surplus conclusion is conditional on the structural model. The
+experiment directly identifies behavioral responses under its assignment
+design. The final full text remains an access gap in this collection.
+
+\href{https://doi.org/10.1287/mksc.2023.0117}{Targeted Advertising as
+Implicit Recommendation} examines a different economic mechanism. In the
+retrieved theoretical manuscript, consumers learn from being targeted,
+and firms anticipate that inference. Equilibrium targeting can include
+products poorly matched to some recipients even when prediction is
+accurate. Allowing the firm to set prices changes the welfare and
+privacy conclusions. These are model results under specified
+assumptions, not an estimate of how frequently real advertising is
+mistargeted.
+
+Together, the studies show why an evaluation should preserve the
+distinction between predictive fit, strategic incentives, and consumer
+outcomes. Compare rankings using the same eligible consumers and
+available alternatives. Measure search and purchase behavior, then state
+the additional model assumptions needed to translate them into surplus.
+The objective comparison in Section 7.12 and the recurring ranking
+program provide runnable calculations of how an objective changes
+recommendations; the published studies supply substantive reasons to
+evaluate that objective.
 
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
@@ -10991,5 +11751,134 @@ can invalidate parts of the earlier evidence. Revalidation should
 address those dependencies explicitly. A larger code archive becomes
 useful only when its contents improve subsequent work enough to justify
 retrieval, adaptation, and upkeep.
+
+\hypertarget{M08-consumer-agency-and-subscription-cancellation}{%
+\section{Consumer Agency and Subscription
+Cancellation}\label{M08-consumer-agency-and-subscription-cancellation}}
+
+\noindent \noindent A subscription manager can increase retention through valuable
+service, an understood price concession, or a difficult exit process.
+These changes can generate similar payment records while producing
+different customer consequences. Consumer agency concerns whether a
+person can understand the offer, choose it, and revise that decision.
+The evaluation should connect the interface to those capabilities before
+treating retained revenue as evidence of successful relationship
+management.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_agency_outcomes.tex}
+\caption{Useful service and obstructed cancellation can both raise observed retention. Distinguishing them requires evidence about customer intent, comprehension, effective exit, and later charges.}\label{fig:M08_agency_outcomes}
+\end{figure}
+
+The cancellation-policy record illustrates why a manager must identify
+the governing jurisdiction and legal instrument. The Eighth Circuit
+vacated the FTC's 2024 Negative Option Rule on July 8, 2025 because of a
+procedural deficiency. Effective February 12, 2026, the FTC restored the
+earlier prenotification rule. A March 13, 2026 advance notice sought
+comments on possible changes; it did not itself impose a replacement
+cancellation obligation. The October 14, 2026 notice concerns
+information collection under the restored rule. Sources:
+\href{https://ecf.ca8.uscourts.gov/opndir/25/07/243137P.pdf}{court
+opinion},
+\href{https://www.govinfo.gov/content/pkg/FR-2026-02-12/pdf/2026-02866.pdf}{February
+action},
+\href{https://www.govinfo.gov/content/pkg/FR-2026-03-13/pdf/2026-04952.pdf}{March
+notice}, and
+\href{https://www.govinfo.gov/content/pkg/FR-2026-10-14/pdf/2026-20971.pdf}{October
+notice}.
+
+Separate protections remain relevant. For covered online negative-option
+transactions, ROSCA requires material-term disclosure, express informed
+consent, and simple mechanisms to stop recurring charges. California
+strengthened its Automatic Renewal Law effective July 1, 2025; the
+Attorney General's guidance emphasizes online cancellation without
+obstruction for online enrollment. New York City's rule took effect
+October 1, 2026 and requires simple cancellation, with scope and sector
+exceptions specified in the adopted text. Sources:
+\href{https://www.govinfo.gov/content/pkg/PLAW-111publ345/pdf/PLAW-111publ345.pdf}{ROSCA
+Section 4},
+\href{https://oag.ca.gov/news/press-releases/attorney-general-bonta-issues-consumer-alert-california\%E2\%80\%99s-automatic-renewal-law}{California
+guidance}, and
+\href{https://www.nyc.gov/content/dam/nycgov/nyc-main/pdf/2026/Click-to-Cancel-Rule.pdf}{New
+York City rule}. The legal-status check is dated November 5, 2026.
+
+For an evaluation, record the first cancellation attempt, enrollment
+channel, successful cancellation, elapsed time, subsequent charges, and
+the customer's understanding of any accepted alternative. A voluntary
+retention offer and a required obstacle can both precede continued
+payment. Their classification depends on the consumer's feasible choices
+and the applicable rule. New York City's rule permits retention offers
+subject to restrictions against obstruction and unreasonable delay.
+Treating every offer as prohibited would misstate that distinction.
+
+\hypertarget{M08-mechanisms-beyond-exit-friction}{%
+\subsection{Mechanisms Beyond Exit
+Friction}\label{M08-mechanisms-beyond-exit-friction}}
+
+\noindent \noindent Exit friction is one way agency can be weakened. Research on
+choice architecture identifies other mechanisms that deserve separate
+evaluation. \href{https://doi.org/10.1287/mksc.2023.0373}{Choice
+Architecture, Privacy Valuations, and Selection Bias in Consumer Data}
+shows in the retrieved earlier manuscript that defaults and anchors can
+change stated privacy valuations and the composition of data supplied.
+Increasing data volume can either worsen or reduce selection bias
+depending on whose decisions change and how much coverage improves. A
+consent-maximizing interface therefore needs an evaluation of
+comprehension and representation alongside response rates.
+
+\href{https://doi.org/10.1177/00222437231193343}{Is It as Bad as It
+Looks?} compares cumulative and incremental quantitative scores. Its
+full-text discussion reports that consumers infer less extreme
+performance from a deviating score in cumulative form and can become
+less likely to search for alternatives after a negative episode. A
+platform deciding how to show ratings should assess whether consumers
+understand both the latest performance and the historical record. Hiding
+a material deterioration would be a possible misuse of the mechanism;
+the experiment does not establish that all cumulative summaries are
+deceptive.
+
+\href{https://doi.org/10.1287/mksc.2022.1402}{Framing Price Increase as
+Discount} examines reference-price manipulation in online retail. The
+verified publisher abstract describes coordinated increases in selling
+and reference prices that can make a higher price appear discounted. A
+pricing evaluation should preserve transaction prices and the basis of
+the comparison price over time. The paper supports a concrete concern
+about the information supplied to consumers; it does not justify
+treating every promotion as an agency violation. The full text remains
+unavailable in this collection.
+
+Immersive services present a broader control problem. The
+residential-care evidence in
+\href{https://doi.org/10.1177/00222429251319312}{Immersive Service}
+connects agency to service boundaries, assigned roles, routines, and
+opportunities for voice. Assessing desired control and feasible
+responsibility can improve service design even where consumers need
+substantial assistance. This differs from assuming that maximum
+independent action is always the consumer's goal.
+
+\hypertarget{M08-interpreting-the-literature-clusters}{%
+\subsection{Interpreting the Literature
+Clusters}\label{M08-interpreting-the-literature-clusters}}
+
+\noindent \noindent Section 4.17 groups the retrieved, coded papers by their
+mechanisms. Social influence is the largest cluster in that sample,
+while emotion and identity is the most common overlapping feature.
+Cancellation rules focus on a consequential mechanism even if exit
+friction appears in fewer retrieved papers. A publication count gives
+each paper equal weight and contains no measure of market exposure,
+customer loss, or severity. A rare mechanism in the research sample can
+affect many consumers.
+
+The managerial implication is to select safeguards and outcome measures
+at the mechanism level. Social influence calls for credible endorsement
+and freedom from pressure. Disclosure and framing call for comprehension
+and accurate comparisons. Personalization calls for evaluation of fit,
+surplus, and control over data. Cancellation calls for effective
+execution of the consumer's exit decision. The
+\href{../01_Resources/13_Consumer_Agency_and_Recent_Research/CATALOG.md}{individual
+review cards} preserve source-specific implications, and the
+\href{../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md}{policy
+record} preserves legal scope and status.
 
 \end{document}

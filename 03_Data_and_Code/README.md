@@ -45,3 +45,7 @@ The [earnings-call case](Earnings_Calls/README.md) uses supplied structured meta
 ## AI Workflow Evaluation and Economics
 
 The [AI workflow examples](AI_Workflows/README.md) compare model and library contributions, repeated selection on development accuracy, reusable-code costs, and buyer/seller price bounds. Three executed programs use only Python's standard library and synthetic inputs. Complete code appears in M6 §6.19, M7 §7.20, and M8 §8.17, with connections in M1, M4, and M5. Five small-case checks and four TikZ figures accompany the calculations. The examples require no model account and establish no provider performance, observed labor savings, or customer demand.
+
+## Consumer Agency Literature and University Affiliations
+
+The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 original managerial summaries and mechanism codes, a DOI census, access-gap assessment, reproducible Jaccard clustering, and sensitivity checks. The [affiliation analysis](Consumer_Agency_Literature/AFFILIATIONS.md) groups universities through shared publications and compares fractional research profiles. The inputs are actual bibliographic metadata and preliminary review annotations. Full code appears in M2 §2.20, M4 §4.17, and M5 §5.17; causal and policy interpretations appear in M6 §6.20, M7 §7.21, and M8 §8.19.

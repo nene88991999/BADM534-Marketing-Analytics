@@ -21,7 +21,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 55 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 59 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -81,3 +81,7 @@ The [pricing-communication example](03_Data_and_Code/Earnings_Calls/README.md) c
 ## AI Workflow Evaluation and Economics
 
 The [synthetic AI workflow examples](03_Data_and_Code/AI_Workflows/README.md) connect failure diagnosis (M1 §1.12), buyer alternatives (M4 §4.16), document evaluation after prompt revision (M5 §5.15), model-by-library contrasts (M6 §6.19), repeated selection (M7 §7.20), and reuse and pricing decisions (M8 §§8.17–8.18). Three complete standard-library programs, five small-case checks, and four TikZ figures accompany the notes. Sessions 01, 05, 07, 09, 11, and 14 include these comparisons. All numerical inputs are synthetic; no provider performance, labor savings, or demand is measured.
+
+## Consumer Agency, Recent Research, and Affiliations
+
+The [2023-2026 journal collection](01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) supplies original managerial summaries, explicit access gaps, and a [cancellation-policy source record](01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md). M2 §2.20 assesses evidence selection; M4 §4.17 clusters mechanism codes; M5 §§5.16-5.17 examine annotation and university affiliation networks; M6 §6.20 separates conversion, returns, and intent; M7 §7.21 distinguishes predictive accuracy from welfare; M8 §8.19 connects mechanisms to effective cancellation. Sessions 3, 6, 7, 9, 12, and 14 carry the corresponding material. [Runnable code and outputs](03_Data_and_Code/Consumer_Agency_Literature/README.md) retain the denominators and sensitivity checks.

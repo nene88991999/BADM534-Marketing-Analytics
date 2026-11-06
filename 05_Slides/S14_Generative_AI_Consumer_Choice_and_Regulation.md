@@ -20,6 +20,7 @@ Session 14. M8. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
+- [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -191,17 +192,49 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 17: Rule Status and Scope
+## Slide 17: Retention Leaves the Mechanism Unresolved
 
-- A statute, binding rule, interpretive guide, and proposal have different authority.
-- Record jurisdiction, covered conduct, exceptions, and effective date.
-- Use the current primary source before turning a result into a business recommendation.
+The same payment outcome can follow valuable service or obstructed exit.
 
-The FTC's March 2026 negative-option notice seeks input on possible amendments and refers to the vacated 2024 rule. A request for comments does not itself adopt replacement obligations.
+**Figure description:** Two paths connect an interface to increased retention: better fit or understood savings, and confusion or obstructed cancellation. Intent, comprehension, effective exit, and later charges distinguish their customer consequences.
 
-Source: FTC, Negative Option Rule ANPRM announcement, March 2026. https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option
+[Editable TikZ](../06_Lecture_Notes/figures/M08_agency_outcomes.tex)
 
-## Slide 18: Pricing, Reviews, and Delivery
+This is a conceptual diagram, not an estimated causal graph. It motivates collecting customer-outcome measures alongside retention. Existing M8 Section 8.14 supplies a fully specified synthetic welfare calculation; Section 8.19 connects the mechanism to recent policy and research.
+
+Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
+
+## Slide 18: Federal Cancellation Policy: Current Status
+
+- July 2025: the Eighth Circuit vacated the 2024 FTC rule.
+- February 2026: the FTC restored the earlier prenotification rule.
+- March 2026: an advance notice sought input on possible amendments.
+
+Checked November 5, 2026. The court identified a procedural deficiency. The March notice does not establish a replacement obligation; the October 14 information-collection notice concerns the restored rule. ROSCA separately requires disclosure, express informed consent, and simple cancellation mechanisms for covered online negative-option transactions.
+
+Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
+
+## Slide 19: Cancellation Rules Differ by Jurisdiction
+
+- California strengthened its Automatic Renewal Law on July 1, 2025.
+- New York City's separate rule took effect October 1, 2026.
+- Identify covered transactions, enrollment media, and sector exceptions.
+
+California guidance describes online cancellation without obstruction for online enrollment. NYC Section 5-110.2 requires simple cancellation as easy as enrollment and bars obstruction or unreasonable delay. Retention offers are subject to those restrictions; Section 5-110.3 contains sector exclusions. These sources were checked November 5, 2026. See M8 Section 8.19.
+
+Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
+
+## Slide 20: Research Frequency and Policy Importance
+
+- Social influence leads the selected literature clusters.
+- Exit friction can affect many customers even with few papers in the sample.
+- Choose safeguards using mechanism, exposure, and customer consequences.
+
+Journal counts give each paper equal weight and do not measure market exposure or loss. The 48-paper primary sample is access-selected and largely coded for inferred dual use. The full DOI census contains 824 eligible records with 721 full-text gaps. See M4 Section 4.17 and M8 Section 8.19.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+## Slide 21: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -211,7 +244,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 19: Pricing Language and Regulatory Evidence
+## Slide 22: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -221,7 +254,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 20: A Welfare Comparison
+## Slide 23: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -240,7 +273,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 21: Coding Exercise: A Marketing Evaluation
+## Slide 24: Coding Exercise: A Marketing Evaluation
 
 - Calculate reuse break-even and the conditional price interval.
 - Compute profit and customer value for alternative retention procedures.
@@ -250,7 +283,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics.
 
 Source: M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 22: A Decision With Consumer Outcomes
+## Slide 25: A Decision With Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

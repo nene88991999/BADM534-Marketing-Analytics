@@ -1,0 +1,144 @@
+{
+  "downloaded_risk": {
+    "papers": 48,
+    "k": 4,
+    "silhouette": 0.2715643862106205,
+    "cluster_counts": {
+      "1": 19,
+      "2": 15,
+      "3": 8,
+      "4": 6
+    },
+    "largest_features": [
+      {
+        "index": "emotion_identity",
+        "papers": 21,
+        "denominator": 48,
+        "share": 0.4375
+      },
+      {
+        "index": "social_cues",
+        "papers": 19,
+        "denominator": 48,
+        "share": 0.3958333333333333
+      },
+      {
+        "index": "attention_salience",
+        "papers": 12,
+        "denominator": 48,
+        "share": 0.25
+      }
+    ],
+    "subsample_ari_quantiles": [
+      0.42557925625700416,
+      0.7943443404323951,
+      1.0
+    ],
+    "hamming_ari": 0.484520981302084,
+    "one_bit_perturbation_ari_quantiles": [
+      0.10581141723480221,
+      0.24960396017449832,
+      0.4072323242426626
+    ],
+    "valid_perturbation_runs": 200
+  },
+  "all_reviewed_risk": {
+    "papers": 84,
+    "k": 8,
+    "silhouette": 0.25189763737769394,
+    "cluster_counts": {
+      "1": 19,
+      "2": 14,
+      "3": 12,
+      "4": 11,
+      "5": 9,
+      "6": 7,
+      "7": 7,
+      "8": 5
+    },
+    "largest_features": [
+      {
+        "index": "social_cues",
+        "papers": 27,
+        "denominator": 84,
+        "share": 0.32142857142857145
+      },
+      {
+        "index": "emotion_identity",
+        "papers": 25,
+        "denominator": 84,
+        "share": 0.2976190476190476
+      },
+      {
+        "index": "attention_salience",
+        "papers": 22,
+        "denominator": 84,
+        "share": 0.2619047619047619
+      }
+    ],
+    "subsample_ari_quantiles": [
+      0.5047882744475493,
+      0.6439742958298247,
+      0.7849912921665978
+    ],
+    "hamming_ari": 0.6463519942797951,
+    "one_bit_perturbation_ari_quantiles": [
+      0.149261641709121,
+      0.21758164038477734,
+      0.30776985312336497
+    ],
+    "valid_perturbation_runs": 200
+  },
+  "downloaded_with_protective": {
+    "papers": 60,
+    "k": 6,
+    "silhouette": 0.25194376976648686,
+    "cluster_counts": {
+      "1": 19,
+      "2": 11,
+      "3": 9,
+      "4": 8,
+      "5": 7,
+      "6": 6
+    },
+    "largest_features": [
+      {
+        "index": "emotion_identity",
+        "papers": 23,
+        "denominator": 60,
+        "share": 0.38333333333333336
+      },
+      {
+        "index": "social_cues",
+        "papers": 21,
+        "denominator": 60,
+        "share": 0.35
+      },
+      {
+        "index": "opacity_disclosure",
+        "papers": 15,
+        "denominator": 60,
+        "share": 0.25
+      }
+    ],
+    "subsample_ari_quantiles": [
+      0.45878636363025943,
+      0.6929808968325073,
+      0.8386901086539379
+    ],
+    "hamming_ari": 0.843679257732796,
+    "one_bit_perturbation_ari_quantiles": [
+      0.11593857384726393,
+      0.20717454627292622,
+      0.3699466942979051
+    ],
+    "valid_perturbation_runs": 200
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.6.1"
+  }
+}

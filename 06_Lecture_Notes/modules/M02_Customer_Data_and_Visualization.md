@@ -1306,3 +1306,73 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## 2.20 Access to Evidence Changes the Review Sample
+
+\noindent A marketing team evaluating subscription practices may ask which consumer-agency mechanisms appear most often in recent research. The observation unit is a paper identified by its DOI. The target collection includes Journal of Marketing, Journal of Marketing Research, and Marketing Science records with an online or issue-publication date from January 2023 through November 5, 2026. A paper published online before 2023 can enter through its later issue date. Deduplication prevents counting it twice.
+
+The Crossref census contains 886 DOI records. Excluding 62 notices and related front matter leaves 824 eligible records, including substantive commentaries. Retrieval produced 103 full texts or related earlier versions. The review covers those 103 records and 41 additional papers selected for their relevance from available abstracts. Access and purposeful selection determine which mechanisms can be examined in depth. A metadata census does not establish a complete full-text review.
+
+| Journal | Eligible | Retrieved | Reviewed |
+| --- | --- | --- | --- |
+| Journal of Marketing | 273 | 48 | 63 |
+| Journal of Marketing Research | 262 | 25 | 43 |
+| Marketing Science | 289 | 30 | 38 |
+| Total | 824 | 103 | 144 |
+
+![The DOI census passes through eligibility, retrieval, and mechanism coding. Each restriction changes the denominator.](../figures/M02_literature_selection.png)
+
+The retrieval rates differ across journals. Papers without an accessible copy can differ in topic, publication date, and author deposit practices. Coding an inaccessible paper as having no agency mechanism would convert missing evidence into a substantive conclusion. The catalog instead preserves an unreviewed status and missing indicators.
+
+A simple bound makes the resulting uncertainty concrete. Across the 824 eligible records, 29 reviewed papers receive the social-cue code and 680 remain unreviewed. If every unknown record eventually receives zero for that code, its share is 29/824, or 3.5%. If every unknown record receives one, its share is 709/824, or 86.0%. These are bounds on an eventual literature code, holding reviewed labels fixed. They do not measure the prevalence of harmful conduct. Their width shows how little a selected review alone determines a population-wide ranking.
+
+Reconciliation starts with the public catalog, DOI uniqueness, coverage, and journal totals. The calculation preserves existing review labels and leaves missing labels unresolved. The [collection protocol](../../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) records dates, versions, retrieval attempts, and access gaps.
+
+Python source: [assess_coverage.py](../../03_Data_and_Code/Consumer_Agency_Literature/assess_coverage.py).
+
+```python
+"""Reconcile the journal census, full-text availability, and review denominators."""
+from pathlib import Path
+import json
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+LIBRARY = HERE.parents[1] / "01_Resources/13_Consumer_Agency_and_Recent_Research"
+
+
+def main():
+    data = pd.DataFrame(json.loads((LIBRARY / "catalog.json").read_text())["resources"])
+    assert data.doi.is_unique and data.id.is_unique
+    eligible = data.research_screen_eligible.eq(True)
+    downloaded = data.download_status.eq("downloaded")
+    reviewed = data.review_status.ne("not_reviewed")
+    assert not (downloaded & ~eligible).any()
+    assert not (downloaded & ~reviewed).any()
+    table = data.assign(eligible=eligible.astype(int), downloaded=downloaded.astype(int),
+                        reviewed=reviewed.astype(int)).groupby("journal").agg(
+        doi_records=("doi", "size"), eligible=("eligible", "sum"),
+        downloaded=("downloaded", "sum"), reviewed=("reviewed", "sum"))
+    table["access_gaps"] = table.eligible - table.downloaded
+    table["download_share_of_eligible"] = table.downloaded / table.eligible
+    assert table.doi_records.sum() == len(data)
+    assert table.access_gaps.sum() == sum(eligible & ~downloaded)
+    # Worst-case bounds use the same eligible-record denominator at both ends.
+    # They concern the eventual coding label, not the prevalence of actual harm.
+    feature = "social_cues"
+    known_positive = int(pd.to_numeric(data.loc[eligible & reviewed, feature]).sum())
+    unknown = int(sum(eligible & ~reviewed))
+    denominator = int(eligible.sum())
+    bounds = {"feature": feature, "eligible": denominator, "reviewed_positive": known_positive,
+              "unreviewed": unknown, "lower_bound": known_positive / denominator,
+              "upper_bound": (known_positive + unknown) / denominator}
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    table.to_csv(output / "coverage_by_journal.csv")
+    (output / "missing_evidence_bounds.json").write_text(json.dumps(bounds, indent=2) + "\n")
+    print(table.to_string())
+    print(json.dumps(bounds, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

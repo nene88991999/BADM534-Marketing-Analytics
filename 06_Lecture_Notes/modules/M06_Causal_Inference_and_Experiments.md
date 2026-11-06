@@ -720,3 +720,13 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 6.20 Conversion, Returns, and Customer Intent
+
+\noindent An online retailer choosing between promotional messages needs to measure the consequences after checkout. A message that produces more orders can also produce more reversals if customers commit before resolving uncertainty. Define the treatment as the assigned message, the population as eligible visitors, and the initial outcome as purchases within a prespecified window. Subsequent returns, complaints, and retained purchases provide additional outcomes over a longer horizon.
+
+[The Effects of Pressure and Self-Assurance Nudges on Product Purchases and Returns in Online Retailing](https://doi.org/10.1177/00222437231180494) reports a randomized field experiment. The available abstract describes stronger purchase responses to pressure nudges alongside more returns, while self-assurance produces a different balance. The evidence motivates evaluating net sales and customer outcomes together. The full text was not retrieved for this collection, so the abstract supports the directional comparison; exact effect sizes and implementation conditions require the complete study.
+
+For a cancellation intervention, the population can instead be customers who start an exit request. Record the request before assigning any lawful alternative interface so that treatment does not determine inclusion in the denominator. Measure successful cancellation, time, later charges, and whether any accepted retention offer matches stated intent. A comparison that conditions on post-treatment completion can exclude the consumers most affected by friction. Consumer understanding should be measured separately from continued payment.
+
+A policy evaluation adds another source of variation. A rule that takes effect in one jurisdiction can motivate a difference-in-differences design, but coverage, preexisting trends, and firm-wide interface changes must be assessed. If a platform changes its interface everywhere, untreated jurisdictions may also receive the new design. Inference then depends on the actual exposure rather than the legal boundary alone. The existing policy-comparison code in Section 6.16 supplies the corresponding timing and comparison-group checks; the [cancellation source record](../../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md) supplies the legal distinctions.

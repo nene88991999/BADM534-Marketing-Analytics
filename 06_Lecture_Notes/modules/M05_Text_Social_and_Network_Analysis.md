@@ -518,3 +518,188 @@ The document split should match the intended use. A tool for previously unseen f
 Freeze the construct definition, prompt, model configuration, retrieval procedure, and scoring rule before the final comparison. An independent reference label should be based on the underlying passage and its context. Agreement among generated explanations provides little protection when they share the same missing context or coding mistake. Preserve a dictionary baseline and allow it the same eligible evidence. Evaluate errors consequential for the intended review queue, including false positives and missed statements.
 
 Once final labels guide another revision, the exposed documents belong to development. A new confirmation requires additional evidence or a prespecified procedure that accounts for the adaptive reuse. M7, Section 7.20, calculates how choosing among many equally uninformative candidates can produce apparently strong development accuracy while performance on fresh cases remains at chance. That mechanism applies even when every candidate runs without a software error.
+
+## 5.16 A Text Classifier Needs an Agency Definition
+
+\noindent A research review can mistake persuasive language for evidence that consumers lost control. The construct must be defined before an LLM assigns labels. Here, agency concerns the ability to understand material terms, form a choice, act on it, and revise or end the relationship. Adoption, continued use, and a favorable brand evaluation are insufficient by themselves to establish impairment. A consumer can value a recommendation or deliberately delegate a decision.
+
+The [paper cards](../../01_Resources/13_Consumer_Agency_and_Recent_Research/CATALOG.md) separate managerial implications from an agency assessment and identify the evidence read. A useful extraction record contains the decision, setting, study design, outcome, proposed mechanism, source passage, and evidence level. It should distinguish an experimentally observed response, a qualitative account of restricted control, a conditional theoretical prediction, and a possible misuse inferred by the reviewer. Those categories answer different questions.
+
+In [Immersive Service: Characteristics, Challenges, and Pathways to Consumer Agency](https://doi.org/10.1177/00222429251319312), qualitative evidence from residential care connects agency to service boundaries, roles, protocols, and voice. The managerial implications include assessing residents' desired control, their constraints, and feasible opportunities to shape daily activities. This provides direct substantive guidance about agency in a particular service setting. Generalization to digital subscriptions requires a separate argument about which mechanisms carry over.
+
+By contrast, [Nudging App Adoption](https://doi.org/10.1177/00222429221141066) examines how choice presentation changes feature adoption. Its retrieved discussion states that enabling a feature still required an active choice and that the interventions left the actual default unchanged. Presentation can nevertheless influence habitual responses and decision time. A reviewer may infer a concern about poorly understood privacy choices, while the paper's beneficial public-health setting remains part of the evidence. Conflating that inference with demonstrated deception would corrupt the label.
+
+For an AI-assisted review, provide the source text and require a passage supporting each nonzero feature. Permit an insufficient-evidence response. Have independent readers code a prespecified set that includes protective cases and uncertain cases, compare disagreements, and adjudicate the definitions before extending the labels. Preserve initial and revised codes. A high agreement rate establishes consistency under the coding protocol; construct validity still depends on whether the labels capture meaningful consumer control. The clustering program in Section 4.17 reproduces the numerical grouping from the saved labels, while the evidentiary judgment remains a separate task.
+
+## 5.17 University Affiliations Define a Different Research Network
+
+\noindent A literature review can ask which universities appear together on papers and whether their shared research covers different mechanisms. The observation units and similarity measure differ from the mechanism clustering in Section 4.17. Universities are the network nodes, while shared publication affiliations create links. A link can arise through separate coauthors or one author's multiple affiliations. It does not establish institutional endorsement of a research implication or identify a university's causal influence on an author.
+
+The eligible journal census contains 824 records. Work-specific OpenAlex metadata, with one affiliation correction verified against a retrieved published article, identifies 424 higher-education institutions across 745 papers. Seventy-nine papers lack an identified education affiliation. The metadata category includes universities, colleges, and independent business schools. Names are resolved through institution IDs and ROR links; distinct campuses and schools remain separate when their identifiers differ. The source attaches affiliations to works rather than substituting each author's current employer. Automated matching and differences across publication versions can still create errors.
+
+For paper $p$, let $U_p$ be its set of distinct universities and let $k_p$ be the number of institutions in that set. A paper with at least two universities contributes total edge weight one, divided across all of its university pairs:
+
+$$
+w_{ij}=\sum_{p:k_p\geq2}\frac{\mathbf{1}\{i,j\in U_p,\ i\ne j\}}{\binom{k_p}{2}}.
+$$
+
+A two-university paper contributes one to its single link. A three-university paper contributes one-third to each of three links. This normalization prevents papers with many affiliations from mechanically receiving more total network weight. Repeated authors from the same institution do not multiply its presence. Single-university papers contribute no cross-university edge but remain in publication totals.
+
+Louvain clustering searches for communities with more internal link weight than a degree-based benchmark. Its modularity objective can be written as
+
+$$
+Q=\frac{1}{2m}\sum_{i,j}\left(w_{ij}-\gamma\frac{s_i s_j}{2m}\right)\mathbf{1}\{c_i=c_j\},
+$$
+
+where $s_i=\sum_jw_{ij}$ is university $i$'s weighted degree, $m$ is total undirected edge weight, $c_i$ is its community, and $\gamma$ controls resolution. The benchmark allows universities with more links to have more expected within-group weight. Higher resolution generally favors smaller groups. The algorithm is a heuristic; different seeds can reach different partitions with similar objective values.
+
+At resolution one and seed 534, the network's 1,766 links produce 19 communities among 415 connected institutions. Nine additional institutions have no cross-institution edge and remain unconnected. The connected institutions occupy six components. Modularity is 0.471. Publication totals split each paper equally across its universities, with each paper contributing one in total across communities. Distinct-paper counts can overlap across groups, so they cannot be added as a unique total.
+
+![The six largest affiliation communities contain 154.15, 84.54, 74.65, 67.16, 57.80, and 48.52 fractional papers. The grouping uses university co-occurrence and does not use the agency labels.](../figures/M05_affiliation_communities.png)
+
+The largest community includes Columbia, the University of Texas at Dallas, the Chinese University of Hong Kong, and Yale among its largest fractional contributors. Other communities include different combinations across countries. A community name based on geography or assumed research intent would add information the algorithm never used. Stable IDs connect each group to its complete membership and paper allocations.
+
+Across twenty seeds, the median adjusted Rand index relative to the primary fit is 0.522. Replacing fractional edges with a full count for every pair lowers agreement to 0.193. These results show that institutional membership is sensitive to the representation and optimization. The community count describes one fitted network, with the alternatives retained for comparison.
+
+Agency-mechanism profiles are then overlaid on the communities using only reviewed papers and the same fractional allocation. Their denominator is the community's fractional mass of reviewed papers with a reported choice concern or inferred possible dual use. For example, C01 contains 22 distinct such papers, contributing 13.53 fractional papers; C03 has eight distinct papers and receives a small-sample flag. Missing reviews remain missing. These profiles describe a selected publication set and do not estimate a university's propensity to erode agency.
+
+The runnable program reads the public paper-institution pairs, coverage table, and reviewed codes. It preserves unconnected institutions, checks total edge weight and paper allocations, exports every membership and link, and compares seeds, resolution, and weighting. The [affiliation guide](../../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md) records source definitions and the verified correction. Method references: [OpenAlex authorships](https://help.openalex.org/data/authorships/), [NetworkX Louvain documentation](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.louvain.louvain_communities.html), and [Blondel et al. (2008)](https://doi.org/10.1088/1742-5468/2008/10/P10008).
+
+Python source: [affiliation_clusters.py](../../03_Data_and_Code/Consumer_Agency_Literature/affiliation_clusters.py).
+
+```python
+"""Cluster universities by shared-paper affiliations and overlay reviewed mechanisms."""
+from pathlib import Path
+from itertools import combinations
+from collections import Counter
+import json
+import numpy as np
+import pandas as pd
+import networkx as nx
+from sklearn.metrics import adjusted_rand_score
+from cluster import FEATURES, RISK
+
+HERE = Path(__file__).resolve().parent
+
+
+def make_graph(pairs, fractional=True):
+    graph = nx.Graph()
+    graph.add_nodes_from(sorted(pairs.institution_id.unique()))
+    multipaper = 0
+    for _, group in pairs.groupby('paper_id', sort=True):
+        nodes = sorted(set(group.institution_id))
+        k = len(nodes)
+        if k < 2:
+            continue
+        multipaper += 1
+        weight = 2 / (k * (k - 1)) if fractional else 1.0
+        for left, right in combinations(nodes, 2):
+            if not graph.has_edge(left, right):
+                graph.add_edge(left, right, weight=0.0, shared_papers=0)
+            graph[left][right]['weight'] += weight
+            graph[left][right]['shared_papers'] += 1
+    if fractional:
+        assert np.isclose(graph.size(weight='weight'), multipaper)
+    assert nx.number_of_selfloops(graph) == 0
+    return graph
+
+
+def communities(graph, seed=534, resolution=1):
+    connected = graph.subgraph([n for n in graph if graph.degree(n) > 0]).copy()
+    groups = nx.community.louvain_communities(connected, weight='weight', seed=seed, resolution=resolution)
+    return connected, groups
+
+
+def labels(groups, nodes):
+    lookup = {node: i for i, group in enumerate(groups) for node in group}
+    return [lookup[node] for node in nodes]
+
+
+def main():
+    pairs = pd.read_csv(HERE / 'paper_affiliations.csv').sort_values(['paper_id', 'institution_id'])
+    coverage = pd.read_csv(HERE / 'affiliation_coverage.csv')
+    reviews = pd.read_csv(HERE / 'coded_papers.csv')
+    assert not pairs.duplicated(['paper_id', 'institution_id']).any()
+    assert coverage.paper_id.is_unique and reviews.id.is_unique
+    pairs['paper_weight'] = 1 / pairs.groupby('paper_id').institution_id.transform('size')
+    np.testing.assert_allclose(pairs.groupby('paper_id').paper_weight.sum(), 1)
+    graph = make_graph(pairs)
+    connected, groups = communities(graph)
+    # Community IDs are display labels ordered by fractional publication mass.
+    mass = pairs.groupby('institution_id').paper_weight.sum()
+    groups = sorted(groups, key=lambda g: (-float(mass.loc[list(g)].sum()), min(g)))
+    membership = {node: f'C{i+1:02d}' for i, group in enumerate(groups) for node in group}
+    pairs['community'] = pairs.institution_id.map(membership).fillna('Unconnected')
+    universities = pairs.groupby(['institution_id', 'institution_name', 'community']).agg(
+        papers=('paper_id', 'nunique'), fractional_papers=('paper_weight', 'sum')).reset_index()
+    universities['weighted_degree'] = universities.institution_id.map(dict(graph.degree(weight='weight')))
+    # Split each paper across its universities; its total contribution remains one.
+    allocation = pairs.groupby(['paper_id', 'community']).paper_weight.sum().reset_index()
+    allocation = allocation.merge(coverage, on='paper_id', validate='many_to_one')
+    allocation = allocation.merge(reviews[['id'] + FEATURES], left_on='paper_id', right_on='id',
+                                  how='left', validate='many_to_one').drop(columns='id')
+    output = HERE / 'results/affiliations'
+    output.mkdir(parents=True, exist_ok=True)
+    university_rows, mechanism_rows = [], []
+    for community, group in allocation.groupby('community', sort=True):
+        members = universities.loc[universities.community == community].sort_values(
+            ['fractional_papers', 'institution_name'], ascending=[False, True])
+        reviewed = group.loc[group.review_status.ne('not_reviewed')]
+        risk = group.loc[group.review_status.isin(RISK)]
+        assert not risk[FEATURES].isna().any().any()
+        university_rows.append({'community': community, 'universities': len(members),
+            'distinct_papers': group.paper_id.nunique(), 'fractional_papers': group.paper_weight.sum(),
+            'reviewed_papers': reviewed.paper_id.nunique(), 'reviewed_fractional_papers': reviewed.paper_weight.sum(),
+            'risk_reviewed_papers': risk.paper_id.nunique(), 'risk_reviewed_fractional_papers': risk.paper_weight.sum(),
+            'largest_affiliations_by_fractional_papers': '; '.join(members.institution_name.head(4))})
+        for feature in FEATURES:
+            numerator = (risk[feature] * risk.paper_weight).sum()
+            denominator = risk.paper_weight.sum()
+            mechanism_rows.append({'community': community, 'feature': feature,
+                'weighted_positive': numerator, 'weighted_reviewed_risk_denominator': denominator,
+                'share': numerator / denominator if denominator else None,
+                'distinct_reviewed_risk_papers': risk.paper_id.nunique(),
+                'small_review_sample': risk.paper_id.nunique() < 10})
+    nodes = sorted(connected)
+    reference = labels(groups, nodes)
+    sensitivity = []
+    for resolution in [.5, 1., 1.5]:
+        for seed in range(20):
+            _, candidate = communities(graph, seed=seed, resolution=resolution)
+            sensitivity.append({'resolution': resolution, 'seed': seed, 'communities': len(candidate),
+                'modularity': nx.community.modularity(connected, candidate, weight='weight', resolution=resolution),
+                'ari_against_primary': adjusted_rand_score(reference, labels(candidate, nodes))})
+    full_graph = make_graph(pairs, fractional=False)
+    _, full_groups = communities(full_graph)
+    edges = [{'left': a, 'right': b, **d} for a, b, d in graph.edges(data=True)]
+    university_table = pd.DataFrame(university_rows)
+    assert np.isclose(university_table.fractional_papers.sum(), pairs.paper_id.nunique())
+    universities.to_csv(output / 'university_membership.csv', index=False)
+    university_table.to_csv(output / 'community_summary.csv', index=False)
+    allocation.to_csv(output / 'paper_community_weights.csv', index=False)
+    pd.DataFrame(mechanism_rows).to_csv(output / 'mechanism_profiles.csv', index=False)
+    pd.DataFrame(edges).to_csv(output / 'university_edges.csv', index=False)
+    sensitivity = pd.DataFrame(sensitivity)
+    sensitivity.to_csv(output / 'sensitivity.csv', index=False)
+    journal = allocation.groupby(['community', 'journal']).paper_weight.sum().reset_index()
+    journal.to_csv(output / 'journal_profiles.csv', index=False)
+    same_resolution = sensitivity.loc[sensitivity.resolution.eq(1), 'ari_against_primary']
+    summary = {'eligible_papers': len(coverage), 'papers_with_university': pairs.paper_id.nunique(),
+        'papers_without_university': int(coverage.university_count.eq(0).sum()),
+        'multi_university_papers': int(coverage.university_count.gt(1).sum()),
+        'universities': graph.number_of_nodes(), 'edges': graph.number_of_edges(),
+        'unconnected_universities': len(list(nx.isolates(graph))), 'communities': len(groups),
+        'connected_components': nx.number_connected_components(connected),
+        'modularity': nx.community.modularity(connected, groups, weight='weight'),
+        'seed_ari_quantiles': same_resolution.quantile([.1,.5,.9]).tolist(),
+        'full_counting_ari': adjusted_rand_score(reference, labels(full_groups, nodes)),
+        'shared_author_list_flagged_papers': int(coverage.shared_author_affiliation_list.sum()),
+        'networkx_version': nx.__version__, 'resolution': 1, 'seed': 534}
+    (output / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+    print(json.dumps(summary, indent=2))
+    print(university_table.head(6).to_string(index=False))
+
+
+if __name__ == '__main__':
+    main()
+```

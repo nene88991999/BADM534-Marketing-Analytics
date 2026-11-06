@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\node[box,text width=3.0cm] (census) at (0,0) {886 DOI records\\2023--2026 date rule};
+\node[box,text width=3.0cm] (eligible) at (5.0,0) {824 eligible records\\62 notices excluded};
+\node[orangebox,text width=3.0cm] (retrieved) at (10.0,0) {103 retrieved versions\\721 access gaps};
+\node[box,text width=3.0cm] (coded) at (10,-2.5) {48 potential-risk papers\\47 inferred dual use\\1 reported concern};
+\node[box,text width=5.8cm] (unknown) at (2.5,-2.5) {Access and coding determine inclusion.\\A journal census and a review sample\\have different denominators.};
+\draw[edge] (census)--(eligible);
+\draw[edge] (eligible)--(retrieved);
+\draw[accent] (retrieved)--(coded);
+\draw[edge,dashed] (unknown.east)--(coded.west);
+\end{tikzpicture}

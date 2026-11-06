@@ -18,6 +18,7 @@ Session 12. M7. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [mHealth recommendation program](../03_Data_and_Code/mHealth/recurring_examples/m07.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 
 ## Slide 1: Recommendation Systems and Customer Goals
 
@@ -182,7 +183,17 @@ A historically unrecorded category can be unknown rather than disliked. Offline 
 
 Source: M7, Section 7.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 15: Coding Exercise: Ranking With a Goal
+## Slide 15: Personalization Can Improve Consumer Welfare
+
+- A ranking experiment found more search and purchasing.
+- Its structural model estimated higher consumer surplus despite profit weighting.
+- Separate experimental behavior from model-dependent welfare.
+
+Welfare Effects of Personalized Rankings compares personalized rankings with uniform bestseller rankings. The claim here follows the verified publisher abstract; the final full text was not retrieved. Targeted Advertising as Implicit Recommendation supplies a theoretical counterpoint in which strategic targeting and endogenous prices alter welfare. Neither study establishes that all personalization helps or harms consumers. See M7 Section 7.21.
+
+Source: https://doi.org/10.1287/mksc.2023.1441 and https://doi.org/10.1287/mksc.2023.0117
+
+## Slide 16: Coding Exercise: Ranking With a Goal
 
 - Compare popularity and personal-frequency baselines.
 - Tune the goal weight on validation baskets.
@@ -193,7 +204,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S12 for the NDCG ch
 
 Source: M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 16: Customer Control of Recommendations
+## Slide 17: Customer Control of Recommendations
 
 - A customer can accept a suggested goal or reject it.
 - Factual explanations should distinguish evidence from an inferred preference.
@@ -203,7 +214,7 @@ A nominal control that does not affect the recommendation can leave the customer
 
 Source: ETHICS_AND_REGULATION.md, M7.
 
-## Slide 17: Recommendation Discussion
+## Slide 18: Recommendation Discussion
 
 - Which relevant item was excluded before scoring?
 - Whose goal determines the ranking weight?
