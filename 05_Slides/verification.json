@@ -1,17 +1,17 @@
 {
-  "verified_on": "2026-11-05",
+  "verified_on": "2026-11-06",
   "artifacts": {
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 294,
-      "sha256": "4529612ed348f0f308b2ea809488586b815cb8844aa3ac58dd9d4ce56fe9ae58"
+      "pages": 301,
+      "sha256": "4b7ffac81e323b8073e4b2702bcbca0ef35cea971315569e169192bad1ac90cc"
     },
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 224,
-      "sha256": "4420054373a1e87d200cf58ecdd401e09c89b452f963b36ae950f3fb933579fe"
+      "pages": 242,
+      "sha256": "48c4fbc973ea78185fffd25ec0689be8678fe7000fddd0d3f40d55d605f473d8"
     },
     "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
       "pages": 2,
-      "sha256": "318690695b42f21512bc4b538db6340a904e6a9fdd7d69a45e962f8749ff4b15"
+      "sha256": "f8a0e444d9714191c650afadbd46396725b9f50480f981fea934c36d48de8a0f"
     },
     "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
       "pages": 21,
@@ -34,8 +34,8 @@
       "sha256": "3843aeed8e79e0058eee9ba1d2aaa33cdfd5f422f399564918e2b8b74aa47ffa"
     },
     "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
-      "pages": 26,
-      "sha256": "5646bedb88cf2f8a64f03e7a16d1cec3ddaa581fa81f73978d2ef130f36d94e7"
+      "pages": 33,
+      "sha256": "83d78acb9f79a95266d1a76558c624fa7459174bd5218c1d54c1f1b403cb1df6"
     },
     "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
       "pages": 21,
@@ -44,6 +44,10 @@
     "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
       "pages": 21,
       "sha256": "7b07b5aeafb52d16000e0723d0f52caf1ea2ae47651a4703206910dc6455e33e"
+    },
+    "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+      "pages": 18,
+      "sha256": "86d9601c060d451594dccfe1a7aa0b879c4af1fa3f6f9b7bd8127f3880f9572f"
     }
   },
   "session_decks": 15,
@@ -53,21 +57,21 @@
     "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
     "session_plan_and_manifest_counts_agree": true,
     "calendar_dates_and_170_minute_meetings_unchanged": true,
-    "local_markdown_links_checked_this_revision": 450,
-    "new_projected_python_snippets_executed": 1,
-    "full_note_code_blocks_match_source_and_parse": 54,
-    "new_analysis_programs_executed": 3,
-    "independent_small_case_tests_passed": 4,
-    "new_tikz_figures_checked_against_outputs_and_rendered": 3,
-    "changed_student_slide_pages_visually_reviewed": 9,
-    "note_pages_visually_reviewed_including_contents_and_transitions": 30,
-    "retrieved_research_pdf_checksums_and_title_identity_checks": 6,
-    "licensed_source_files_match_pinned_git_blob_and_sha256": 5,
-    "independent_grouped_risk_set_calculation_agrees": true,
-    "paired_segment_results_and_loss_totals_reconciled": true,
+    "local_markdown_links_checked_this_revision": 379,
+    "full_note_code_blocks_match_source_and_parse": 55,
+    "new_analysis_programs_executed": 1,
+    "independent_small_case_tests_passed": 5,
+    "independent_exported_csv_aggregation_matches_results_and_figure": true,
+    "new_tikz_figures_rendered_and_visually_reviewed": 6,
+    "session_14_final_pdf_pages_visually_reviewed": 33,
+    "standalone_chapter_pages_visually_reviewed": 18,
+    "combined_note_pages_visually_reviewed_including_contents_and_transition": 20,
+    "syllabus_pages_visually_reviewed": 2,
+    "retrieved_source_file_checksums_and_identities_checked": 35,
+    "public_originals_with_documented_redistribution_basis": 8,
     "portable_context_uses_reviewed_HEAD_resource_catalogs": true
   },
-  "execution_scope": "November 5 LLM revalidation revision: executed the published-snapshot summary and two original synthetic comparisons, four independent small-case tests, and the projected paired-regression calculation. All 54 full note-code blocks match source and parse. Reconciled survival steps using an independent grouped risk-set calculation with exact fractions; checked paired segment results, stipulated losses, and all three new figures. Checked 450 local links across 24 Markdown files and preserved the dated 15-meeting schedule. Visually reviewed nine changed student-slide pages and 30 note pages including contents and transitions. Five licensed source files match their pinned Git blobs and SHA-256 records; six retrieved papers passed checksum and title-identity checks. Reused published fitted dates as fixed inputs; no model calls, trend refits, or date-uncertainty propagation were performed. Earlier checks are retained in historical fields.",
+  "execution_scope": "November 6 Marketing Dialectics revision: executed the original synthetic retention program and five independent small-case tests. Verified all 55 full note-code blocks against their source and syntax. Independently aggregated the exported 2,000-row CSV, reconciled counts and denominators with results and the retention figure, checked local links, and preserved all 15 dated 170-minute meetings. Reviewed all 18 standalone chapter pages, the final combined chapter with its boundary and contents page, all 33 Session 14 pages, two syllabus pages, and six new TikZ figures. All 35 downloaded files match recorded checksums and sizes; PDF page counts and source identities were checked. Source reading is selective, as documented in the resource catalog; nine full-text access gaps remain. No downloaded programs or external model APIs were executed. Earlier checks are retained in historical fields.",
   "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
@@ -136,5 +140,27 @@
       "portable_context_uses_reviewed_HEAD_resource_catalogs": true
     },
     "execution_scope": "November 5 revision: executed mechanism clustering, coverage assessment, and university-affiliation clustering; three independent small-case tests; and the new projected Python calculation. Compared all 51 full note-code blocks with source and parsed them. Reconciled plotted counts and fractional totals, checked 783 local links, and preserved the dated 15-meeting schedule. Visually reviewed 14 changed student-slide pages, 32 note pages including contents and transitions, two syllabus pages, and four new TikZ figures. All 103 retrieved research versions passed checksum and title-identity checks. Five affiliation blocks received source checks, resulting in one recorded correction. The 144 paper summaries remain primarily abstract-based, with five selected full-text discussion/conclusion checks; 721 eligible full texts remain unavailable. Earlier checks are retained in historical fields."
+  },
+  "llm_revalidation_checks_2026_11_05": {
+    "checks": {
+      "updated_decks_compile_without_overfull_boxes_or_tex_errors": true,
+      "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
+      "session_plan_and_manifest_counts_agree": true,
+      "calendar_dates_and_170_minute_meetings_unchanged": true,
+      "local_markdown_links_checked_this_revision": 450,
+      "new_projected_python_snippets_executed": 1,
+      "full_note_code_blocks_match_source_and_parse": 54,
+      "new_analysis_programs_executed": 3,
+      "independent_small_case_tests_passed": 4,
+      "new_tikz_figures_checked_against_outputs_and_rendered": 3,
+      "changed_student_slide_pages_visually_reviewed": 9,
+      "note_pages_visually_reviewed_including_contents_and_transitions": 30,
+      "retrieved_research_pdf_checksums_and_title_identity_checks": 6,
+      "licensed_source_files_match_pinned_git_blob_and_sha256": 5,
+      "independent_grouped_risk_set_calculation_agrees": true,
+      "paired_segment_results_and_loss_totals_reconciled": true,
+      "portable_context_uses_reviewed_HEAD_resource_catalogs": true
+    },
+    "execution_scope": "November 5 LLM revalidation revision: executed the published-snapshot summary and two original synthetic comparisons, four independent small-case tests, and the projected paired-regression calculation. All 54 full note-code blocks match source and parse. Reconciled survival steps using an independent grouped risk-set calculation with exact fractions; checked paired segment results, stipulated losses, and all three new figures. Checked 450 local links across 24 Markdown files and preserved the dated 15-meeting schedule. Visually reviewed nine changed student-slide pages and 30 note pages including contents and transitions. Five licensed source files match their pinned Git blobs and SHA-256 records; six retrieved papers passed checksum and title-identity checks. Reused published fitted dates as fixed inputs; no model calls, trend refits, or date-uncertainty propagation were performed. Earlier checks are retained in historical fields."
   }
 }

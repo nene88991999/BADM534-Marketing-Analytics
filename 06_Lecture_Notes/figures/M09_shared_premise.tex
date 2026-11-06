@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\node[box,text width=4.6cm] (a) at (0,0) {Higher clicks prove a better fit\\with customers' goals.};
+\node[box,text width=4.6cm] (b) at (7,0) {Changed clicks prove that\\customers' goals were overridden.};
+\node[orangebox,text width=8cm] (p) at (3.5,-2.1) {Shared premise: recorded clicks fully express the person's considered ends.};
+\draw[edge] (a.south) -- (p.north west);
+\draw[edge] (b.south) -- (p.north east);
+\node[box,text width=9cm] (q) at (3.5,-4.3) {Examine information, the customer's purpose, and the ability to refuse or revise the recommendation.};
+\draw[accent] (p) -- (q);
+\end{tikzpicture}

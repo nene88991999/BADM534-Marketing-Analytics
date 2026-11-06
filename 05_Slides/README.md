@@ -2,7 +2,7 @@
 
 By Nathan Yang
 
-Fifteen session decks cover all eight modules, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
+Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
 Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
@@ -56,3 +56,7 @@ Sessions 3, 6, 7, 9, 12, and 14 add evidence coverage, mechanism clustering, LLM
 ## Changing AI Evidence
 
 Sessions 01, 03, 07, 11, and 14 incorporate versioned claims, censored follow-up, changing AI judges, paired regressions, and residual risk. The [source guide](../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) and [three complete programs](../03_Data_and_Code/LLM_Revalidation/README.md) preserve versions, units, and evidence scope. Three editable TikZ figures distinguish published descriptive results from constructed comparisons. Existing meeting durations and the Session 14 regulation block are retained.
+
+## Marketing Dialectics in Session 14
+
+Session 14 incorporates [Chapter 9](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) in the existing 75-minute ethics block. New material examines Kantian premises and respect for persons, conflicting commercial interests, Confucian conduct, identical renewal with different customer intent, and contrasting environmental-claim rulings. The [session plan](SESSION_PLAN.md) preserves all 15 dated meetings and pending assessment rules.

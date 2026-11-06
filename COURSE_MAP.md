@@ -4,7 +4,7 @@ Marketing Analytics
 
 This outline follows the eight topic families in Unnati Narang's Spring 2026 syllabus. It is a planning map for Nathan Yang's offering. The [syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting dates are available. Assignments and assessment rules remain pending. Suggested activities below are illustrative.
 
-The course is planned with no guest speakers. All eight modules will be covered through instructor-led sessions and course activities.
+The course is planned with no guest speakers. The eight core modules and Marketing Dialectics will be covered through instructor-led sessions and course activities.
 
 ## Topics and Resource Routes
 
@@ -21,7 +21,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 62 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 68 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -89,3 +89,7 @@ The [2023-2026 journal collection](01_Resources/13_Consumer_Agency_and_Recent_Re
 ## Model Versions and Changing Evidence
 
 The [LLM revalidation examples](03_Data_and_Code/LLM_Revalidation/README.md) connect versioned evidence (M1 §1.13), claim follow-up and censoring (M2 §2.21), generator-by-judge comparisons (M5 §5.18), paired regressions and failure costs (M7 §7.22), and exposure-based revalidation (M8 §8.18.1). The [research guide](01_Resources/14_LLM_Evidence_and_Revalidation/README.md) distinguishes the released empirical snapshot from original constructed cases. Sessions 01, 03, 07, 11, and 14 incorporate these applications.
+
+## M9: Marketing Dialectics
+
+[Marketing Dialectics](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) extends the eight core modules with Kantian critique and ethics, scrutiny of corporate self-interest, and Confucian perspectives on marketing conduct. [Synthetic renewal and intent](03_Data_and_Code/Marketing_Dialectics/README.md) connects M2 measurement, M4 retention, M6 causal interpretation, and M7 recommendation objectives. Academic and industry cases examine advertising measurement, customer control, and environmental claims. The chapter fits the existing Session 14 ethics block. [Reading collection](01_Resources/15_Marketing_Dialectics/README.md).

@@ -4,7 +4,7 @@ By Nathan Yang
 
 Meetings are Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243, for Spring 2027. The 15 meeting dates follow the [official course listing](https://courses.illinois.edu/schedule/2027/spring/BADM/534) and [Senate academic calendar](https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf). There is no class on March 17 during spring break. The course has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. Presentation requirements, assessment weights, and course-wide AI rules remain unset. The ten-minute breaks below are proposed allocations.
 
-The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of breaks. The eight modules therefore have 2,400 minutes of instruction, applied work, discussion, and provisional presentations. The [machine-readable plan](session_plan.json) records each block.
+The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of breaks. The eight core modules and Marketing Dialectics chapter share 2,400 minutes of instruction, applied work, discussion, and provisional presentations. The [machine-readable plan](session_plan.json) records each block.
 
 ## Meeting Sequence
 
@@ -23,7 +23,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 21 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 26 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 33 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -290,18 +290,21 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Connect AI workflow updates to residual risk, exposure, and customer-outcome evaluation.
+**Python and Evidence:** Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.
 
-**Application:** Evaluate subscription and pricing decisions with current evidence, effective exit, and jurisdiction-specific rules.
+**Application:** Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules.
 
-**Ethics and Regulation:** Consumer agency, effective exit, pricing, and current regulatory scope
+**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–35 | Demand and Subscription Measurement |
 | 35–70 | AI Workflow and Calculation |
 | 70–80 | Break |
-| 80–155 | Retention, Pricing, and Regulatory Assessment |
+| 80–95 | Kant, Claims, and Hidden Premises |
+| 95–115 | Self-Interest, Confucian Conduct, and Justification |
+| 115–135 | Renewal, Intent, and Reproducible Calculation |
+| 135–155 | Cancellation Rules and Environmental Claims |
 | 155–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
@@ -324,6 +327,6 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 ## Coverage and Course Requirements
 
-The sequence follows M1–M8 in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
+The sequence follows M1–M8, with M9 Marketing Dialectics integrated into Session 14, in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
 
 The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the educational structure. It does not release deadlines or graded work. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) provides confirmed logistics and course coverage. Use [course.json](../course.json) for release pointers and outstanding assessment policies.

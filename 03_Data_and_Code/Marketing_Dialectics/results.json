@@ -1,0 +1,32 @@
+{
+  "data_type": "Entirely synthetic; two constructed populations",
+  "unit": "One customer over one renewal month",
+  "intent_timing": "Before billing; stipulated independently of billing",
+  "comparison": "Descriptive identification example, not a policy effect",
+  "results": {
+    "A": {
+      "customers": 1000,
+      "billed": 900,
+      "billed_rate": 0.9,
+      "wanted_billed": 880,
+      "unwanted_billed": 20,
+      "unknown_intent_billed": 0,
+      "wanted_but_not_billed": 20,
+      "unwanted_billed_lower_share_all": 0.02,
+      "unwanted_billed_upper_share_all": 0.02,
+      "unwanted_share_among_billed_lower": 0.022222222222222223
+    },
+    "B": {
+      "customers": 1000,
+      "billed": 900,
+      "billed_rate": 0.9,
+      "wanted_billed": 600,
+      "unwanted_billed": 300,
+      "unknown_intent_billed": 0,
+      "wanted_but_not_billed": 20,
+      "unwanted_billed_lower_share_all": 0.3,
+      "unwanted_billed_upper_share_all": 0.3,
+      "unwanted_share_among_billed_lower": 0.3333333333333333
+    }
+  }
+}

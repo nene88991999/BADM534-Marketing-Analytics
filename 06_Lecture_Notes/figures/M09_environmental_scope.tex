@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\node[box,text width=3cm] (product) at (0,0) {Product claim\\A particular offering};
+\node[orangebox,text width=3cm] (portfolio) at (5,0) {Portfolio claim\\The balance of activities};
+\node[box,text width=3cm] (future) at (10,0) {Transition claim\\A future trajectory};
+\draw[edge,dashed] (product) -- node[above,align=center,font=\footnotesize]{Requires\\context} (portfolio);
+\draw[edge,dashed] (portfolio) -- node[above,align=center,font=\footnotesize]{Requires\\evidence} (future);
+\node[align=center,text width=3cm] at (0,-2) {Product definition\\Relevant comparison};
+\node[align=center,text width=3cm] at (5,-2) {Share and\\denominator\\Material omissions};
+\node[align=center,text width=3cm] at (10,-2) {Time horizon\\Implemented commitments};
+\node[align=center,text width=12cm] at (5,-3.5) {A supported narrow statement can invite an unsupported broader inference.};
+\end{tikzpicture}

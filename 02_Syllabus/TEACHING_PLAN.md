@@ -26,14 +26,14 @@ Students should also be able to distinguish firm outcomes from customer value, i
 | 8 | M1–M5 | Provisional project-evidence and presentation meeting |
 | 9–10 | M6 | Experiments, causal comparisons, policy evaluation, and customer outcomes |
 | 11–12 | M7 | Prediction, validation, targeting, recommendation, and access |
-| 13–14 | M8 | Adaptive systems, marketing budgets, generative AI, retention procedures, and regulation |
+| 13–14 | M8, M9 | Adaptive systems, marketing budgets, generative AI, Marketing Dialectics, retention, and regulation |
 | 15 | M1–M8 | Provisional integrated-decision and presentation meeting |
 
 ## Cases and Applied Work
 
 Use mHealth throughout the eight modules. Add restaurant-availability records for coverage, policy comparison, and forecasting, and generative-AI demand materials for public signals, subscription cohorts, and model verification. Synthetic examples provide small calculations that can be checked by hand. Each data application links complete Python, input definitions, sample restrictions, and expected output.
 
-Ethics and regulation recur within the methods. The [module integration guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) connects privacy, customer representation, claim substantiation, pricing, retention, review authenticity, experimentation, and delivery. Session 14 reserves 75 minutes for retention procedures, customer value, and regulatory scope. Presentation discussions include customer consequences and the strength of the evidence supporting the recommendation.
+Ethics and regulation recur within the methods. The [module integration guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) connects privacy, customer representation, claim substantiation, pricing, retention, review authenticity, experimentation, and delivery. Session 14 reserves 75 minutes for Marketing Dialectics, customer outcomes, and regulatory scope. The chapter applies Kantian critique, Hume and Smith on conflicting interests, and Confucian accounts of conduct to marketing practices. The final 15 minutes compare reasoned recommendations; no extra meeting is added. Presentation discussions include customer consequences and the strength of the evidence supporting the recommendation.
 
 ## Materials and Future Revisions
 

@@ -127,3 +127,7 @@ M5 §5.16 distinguishes text classification from construct validity. M6 §6.20 e
 ## LLM Findings and Revalidation
 
 The [Queen and Zou snapshot and six related papers](../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) motivate versioned evidence in M1 §1.13, censoring in M2 §2.21, changing judges in M5 §5.18, paired regressions in M7 §7.22, and exposure in M8 §8.18.1. `summarize_snapshot.py` reads licensed released tables; `evaluate_judges.py` and `evaluate_upgrade.py` use entirely constructed inputs. [All three programs](../03_Data_and_Code/LLM_Revalidation/README.md) appear verbatim in the notes. The aggregate counts reconcile to the source files; this does not reproduce the underlying model calls or fitted trends.
+
+## Marketing Dialectics
+
+M9 links Kantian dialectic and ethics with Hume and Smith on institutional scrutiny and Confucian accounts of righteousness, trust, roles, and cultivation. The [41-entry library](../01_Resources/15_Marketing_Dialectics/README.md) separates original texts, adaptations, scholarly interpretation, research, and institutional cases. The new [renewal example](../03_Data_and_Code/Marketing_Dialectics/README.md) has complete source in §9.5; six diagrams clarify claims, premises, denominators, goals, scope, and burdens of justification. Session 14 and the syllabus include the chapter within existing meeting time.

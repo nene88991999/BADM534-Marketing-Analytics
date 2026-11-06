@@ -1,0 +1,16 @@
+{
+  "verified_on": "2026-11-06",
+  "python": "3.13.5",
+  "command": "python3 evaluate_retention.py",
+  "test_command": "python3 -m unittest discover -s 03_Data_and_Code/Marketing_Dialectics -p 'test_*.py'",
+  "tests_passed": 5,
+  "records": 2000,
+  "populations": 2,
+  "billed_rate_each": 0.9,
+  "unwanted_billed_counts": [
+    20,
+    300
+  ],
+  "numerical_figure": "M09_retention_intent.tex",
+  "scope": "Original synthetic construction; no empirical treatment effect or welfare estimate"
+}

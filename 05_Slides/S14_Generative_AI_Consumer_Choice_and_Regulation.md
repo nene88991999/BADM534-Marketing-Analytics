@@ -2,7 +2,7 @@
 
 By Nathan Yang
 
-Session 14. M8. 170 minutes.
+Session 14. M8, M9. 170 minutes.
 
 [PDF](S14_Generative_AI_Consumer_Choice_and_Regulation.pdf) | [LaTeX](S14_Generative_AI_Consumer_Choice_and_Regulation.tex) | [Session Plan](SESSION_PLAN.md)
 
@@ -11,6 +11,8 @@ Session 14. M8. 170 minutes.
 - Assess AI demand measurements and workflow claims.
 - Explain why a commercial objective can conflict with customer interests.
 - Map a marketing decision to the relevant evidence, jurisdiction, and rule status.
+- Examine the premises connecting commercial results to customer-benefit claims.
+- Compare Kantian, institutional, and Confucian reasons for a marketing recommendation.
 
 ## Related Materials
 
@@ -22,6 +24,9 @@ Session 14. M8. 170 minutes.
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
+- [Marketing Dialectics](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md)
+- [Kantian, Institutional, and Confucian Readings](../01_Resources/15_Marketing_Dialectics/README.md)
+- [Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -147,7 +152,61 @@ A fitted category describes the source protocol and selected model panel. The re
 
 Source: M8 §8.18.1; M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 13: A Choice Procedure Can Change Renewal
+## Slide 13: Marketing Dialectics: Examine the Premise
+
+- State the claim, its evidence, and the premise connecting them.
+- Kant examines reason’s demand for an unconditioned explanation.
+- A marketing analogy must preserve the scope of the original argument.
+
+Kant’s transcendental dialectic concerns metaphysical cognition. These marketing cases adapt the practice of examining premises; an ordinary empirical dispute is not a cosmological antinomy. The third antinomy does not imply that accurate purchase prediction proves lost agency. Critical examination may support, restrict, or reject a claim; no forced synthesis is required.
+
+Source: Marketing Dialectics, §§9.1–9.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 14: Commercial Results and Customer Claims
+
+Causal, measurement, and ethical questions have different premises.
+
+**Figure description:** Separate paths connect a practice to commercial effects and customer outcomes. A judgment about the practice also requires an ethical principle.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_claim_scope.tex)
+
+A randomized intervention can establish incremental purchases without establishing informed choice or customer benefit. Kant’s humanity formulation supplies a distinct ethical question about treatment of persons.
+
+Source: Marketing Dialectics, §§9.1, 9.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 15: Self-Interest Creates a Burden of Justification
+
+A reason for scrutiny is distinct from evidence of misconduct.
+
+**Figure description:** A material conflict leads to independent substantiation and then a decision that can change with evidence.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_burden_justification.tex)
+
+Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt.
+
+Source: Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 16: Confucian Perspectives: Profit and Responsibility
+
+- Evaluate how profit is obtained and which relationships sustain it.
+- A trusted adviser or customer-care role carries standards of conduct.
+- Examine whether the claimed role matches incentives and practice.
+
+Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.1 challenges an exclusive focus on advantage. Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties.
+
+Source: Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 17: Truthful Challenge and Cultivated Judgment
+
+- Harmony can include reasoned disagreement.
+- Learning and reflection should discipline an AI-generated answer.
+- Good conduct depends on repeated practices as well as stated values.
+
+Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and reflective learning. Mencius emphasizes cultivable moral beginnings; Xunzi emphasizes deliberate effort, teaching, and ritual. They disagree about human nature. A modern firm can examine what its rewards teach employees to notice and whether an analyst can report an unwanted customer outcome.
+
+Source: Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 18: A Choice Procedure Can Change Renewal
 
 - A direct offer and an offer preceded by questions can produce different choices.
 - The customer still makes the final selection.
@@ -157,7 +216,7 @@ Questions, defaults, or retention prompts can precede a fixed target decision. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 14: Opposed Interests
+## Slide 19: Opposed Interests
 
 Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
 
@@ -171,7 +230,7 @@ This conditional comparison holds the offer, monetary values, and relevant respo
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 15: Profit and Customer Value Can Move Oppositely
+## Slide 20: Profit and Customer Value Can Move Oppositely
 
 Synthetic probabilities and fixed stakes. Direct renewal is 20%.
 
@@ -183,7 +242,7 @@ The direct-choice benchmark is distinct from the consumer-preferred procedure. R
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 16: Experimentation Selects the Commercial Winner
+## Slide 21: Experimentation Selects the Commercial Winner
 
 - A fixed set of procedures has stable renewal probabilities.
 - Independent randomized samples estimate each probability.
@@ -193,7 +252,7 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 17: A Cancellation Evaluation
+## Slide 22: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -203,67 +262,17 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 18: Retention Leaves the Mechanism Unresolved
+## Slide 23: Same Renewal, Different Customer Intent
 
-The same payment outcome can follow valuable service or obstructed exit.
+Synthetic populations: 1,000 customers each, one renewal month.
 
-**Figure description:** Two paths connect an interface to increased retention: better fit or understood savings, and confusion or obstructed cancellation. Intent, comprehension, effective exit, and later charges distinguish their customer consequences.
+**Figure description:** A and B each have 900 billed customers. A contains 880 wanted and 20 unwanted renewals; B contains 600 wanted and 300 unwanted renewals. Both have 100 not billed.
 
-[Editable TikZ](../06_Lecture_Notes/figures/M08_agency_outcomes.tex)
+[Editable TikZ](../06_Lecture_Notes/figures/M09_retention_intent.tex)
 
-This is a conceptual diagram, not an estimated causal graph. It motivates collecting customer-outcome measures alongside retention. Existing M8 Section 8.14 supplies a fully specified synthetic welfare calculation; Section 8.19 connects the mechanism to recent policy and research.
+Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%; among billed customers they are approximately 2.22% and 33.33%. These populations do not estimate a treatment effect or monetary welfare. Run evaluate_retention.py; full source is in Section 9.5. Missing intent stays unknown.
 
-Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
-
-## Slide 19: Federal Cancellation Policy: Current Status
-
-- July 2025: the Eighth Circuit vacated the 2024 FTC rule.
-- February 2026: the FTC restored the earlier prenotification rule.
-- March 2026: an advance notice sought input on possible amendments.
-
-Checked November 5, 2026. The court identified a procedural deficiency. The March notice does not establish a replacement obligation; the October 14 information-collection notice concerns the restored rule. ROSCA separately requires disclosure, express informed consent, and simple cancellation mechanisms for covered online negative-option transactions.
-
-Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
-
-## Slide 20: Cancellation Rules Differ by Jurisdiction
-
-- California strengthened its Automatic Renewal Law on July 1, 2025.
-- New York City's separate rule took effect October 1, 2026.
-- Identify covered transactions, enrollment media, and sector exceptions.
-
-California guidance describes online cancellation without obstruction for online enrollment. NYC Section 5-110.2 requires simple cancellation as easy as enrollment and bars obstruction or unreasonable delay. Retention offers are subject to those restrictions; Section 5-110.3 contains sector exclusions. These sources were checked November 5, 2026. See M8 Section 8.19.
-
-Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
-
-## Slide 21: Research Frequency and Policy Importance
-
-- Social influence leads the selected literature clusters.
-- Exit friction can affect many customers even with few papers in the sample.
-- Choose safeguards using mechanism, exposure, and customer consequences.
-
-Journal counts give each paper equal weight and do not measure market exposure or loss. The 48-paper primary sample is access-selected and largely coded for inferred dual use. The full DOI census contains 824 eligible records with 721 full-text gaps. See M4 Section 4.17 and M8 Section 8.19.
-
-Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
-
-## Slide 22: Pricing, Reviews, and Delivery
-
-- Price-display rules require attention to the covered industry.
-- Reviews presented as customer experiences require truthful provenance.
-- Housing-ad delivery can create discrimination concerns beyond targeting choices.
-
-The FTC fee rule covers live-event tickets and short-term lodging. Its review rule distinguishes business creation and purchase of false reviews from mere hosting. The DOJ Meta settlement addresses housing advertising specifically. These sources do not establish an identical rule for every marketing application.
-
-Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
-
-## Slide 23: Pricing Language and Regulatory Evidence
-
-- Shelf infrastructure, price rules, and consumer effects are separate objects.
-- The FTC's January 2025 report describes research on pricing intermediaries.
-- Specify the practice and applicable authority before making a legal claim.
-
-The US FTC Section 6(b) staff research summaries report preliminary findings. This research publication has no rule effective date and supplies no legal finding against firms in the earnings-call sample. Use the source-linked cases from M5 to identify operational facts still needed.
-
-Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
+Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 ## Slide 24: A Welfare Comparison
 
@@ -286,15 +295,87 @@ Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 
 ## Slide 25: Coding Exercise: A Marketing Evaluation
 
-- Calculate reuse break-even and the conditional price interval.
-- Compute profit and customer value for alternative retention procedures.
-- Propose an interface change and the evidence needed to evaluate it.
+- Reproduce the two populations with identical billed renewal.
+- Keep unknown intent separate and compare the relevant denominators.
+- State the evidence and ethical premise needed to justify the practice.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.
+Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full program and five tests accompany M9 §9.5. Existing M8 examples add conditional profit and welfare calculations. These are synthetic examples and do not estimate an interface effect.
 
-Source: M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
+Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 26: A Decision With Consumer Outcomes
+## Slide 26: Federal Cancellation Policy: Current Status
+
+- July 2025: the Eighth Circuit vacated the 2024 FTC rule.
+- February 2026: the FTC restored the earlier prenotification rule.
+- March 2026: an advance notice sought input on possible amendments.
+
+Checked November 5, 2026. The court identified a procedural deficiency. The March notice does not establish a replacement obligation; the October 14 information-collection notice concerns the restored rule. ROSCA separately requires disclosure, express informed consent, and simple cancellation mechanisms for covered online negative-option transactions.
+
+Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
+
+## Slide 27: Cancellation Rules Differ by Jurisdiction
+
+- California strengthened its Automatic Renewal Law on July 1, 2025.
+- New York City's separate rule took effect October 1, 2026.
+- Identify covered transactions, enrollment media, and sector exceptions.
+
+California guidance describes online cancellation without obstruction for online enrollment. NYC Section 5-110.2 requires simple cancellation as easy as enrollment and bars obstruction or unreasonable delay. Retention offers are subject to those restrictions; Section 5-110.3 contains sector exclusions. These sources were checked November 5, 2026. See M8 Section 8.19.
+
+Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
+
+## Slide 28: Research Frequency and Policy Importance
+
+- Social influence leads the selected literature clusters.
+- Exit friction can affect many customers even with few papers in the sample.
+- Choose safeguards using mechanism, exposure, and customer consequences.
+
+Journal counts give each paper equal weight and do not measure market exposure or loss. The 48-paper primary sample is access-selected and largely coded for inferred dual use. The full DOI census contains 824 eligible records with 721 full-text gaps. See M4 Section 4.17 and M8 Section 8.19.
+
+Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
+
+## Slide 29: Pricing, Reviews, and Delivery
+
+- Price-display rules require attention to the covered industry.
+- Reviews presented as customer experiences require truthful provenance.
+- Housing-ad delivery can create discrimination concerns beyond targeting choices.
+
+The FTC fee rule covers live-event tickets and short-term lodging. Its review rule distinguishes business creation and purchase of false reviews from mere hosting. The DOJ Meta settlement addresses housing advertising specifically. These sources do not establish an identical rule for every marketing application.
+
+Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
+
+## Slide 30: Pricing Language and Regulatory Evidence
+
+- Shelf infrastructure, price rules, and consumer effects are separate objects.
+- The FTC's January 2025 report describes research on pricing intermediaries.
+- Specify the practice and applicable authority before making a legal claim.
+
+The US FTC Section 6(b) staff research summaries report preliminary findings. This research publication has no rule effective date and supplies no legal finding against firms in the earnings-call sample. Use the source-linked cases from M5 to identify operational facts still needed.
+
+Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
+
+## Slide 31: Environmental Claims: Two Different Decisions
+
+- 2023 Shell ads: the ASA upheld the overall-impression complaint.
+- 2025 Shell ad: the ASA accepted the contextualized communication.
+- Evaluate the particular claim, material context, and applicable standard.
+
+UK ASA, June 7, 2023: omitted context about the balance of business activities made the overall environmental impression misleading; a separate electricity claim was not upheld. April 9, 2025: the later ad included higher- and lower-carbon activities and investment context and was not found misleading. Its ruling explains the applicable pre-April-2025 code wording. These are specific regulatory outcomes, not firm-wide ethical verdicts. Sources: https://www.asa.org.uk/rulings/shell-uk-ltd-g22-1170842-shell-uk-ltd.html and https://www.asa.org.uk/rulings/shell-uk-ltd-g24-1248246-shell-uk-ltd.html
+
+Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 32: A Product Fact and a Portfolio Impression
+
+The scope of the conclusion determines the evidence required.
+
+**Figure description:** The product, portfolio, and future transition require different supporting information: comparison, denominator, and time horizon.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_environmental_scope.tex)
+
+A true statement about one product can be insufficient to support a broader impression. The ASA comparison supplies an institutional case; the diagram is an original conceptual analysis.
+
+Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 33: A Decision With Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

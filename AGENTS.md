@@ -56,7 +56,7 @@ Store course datasets, data dictionaries, short scripts, notebook examples, and 
 - Do not place credentials, identifiable student records, grades, submissions, or private answer keys in this repository. A folder name such as `instructor_only` does not create an access boundary.
 - Do not install dependencies or execute downloaded code merely to summarize it. Inspect the requirements and commands before a requested execution.
 - Update the relevant folder README and `course.json` when a document is released. Regenerate `llms-full.txt` with `python3 scripts/build_llm_context.py`.
-- Keep prose in plain Markdown with relative links, meaningful headings, stable module IDs (M1-M8), and descriptive filenames. Avoid embedding essential explanations only in images.
+- Keep prose in plain Markdown with relative links, meaningful headings, stable module IDs (M1-M8, with M9 for Marketing Dialectics), and descriptive filenames. Avoid embedding essential explanations only in images.
 
 ## Resource Retrieval
 

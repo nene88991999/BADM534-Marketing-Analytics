@@ -15,7 +15,7 @@
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. This course connects those questions to customer measurement, visualization, regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems. Applications inform product design, acquisition, retention, pricing, and marketing budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes.
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy and critical analysis of commercial incentives.
 
 ## Learning Objectives
 
@@ -23,7 +23,7 @@ AI-assisted coding is integrated throughout the course. Students practice specif
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
 - Evaluate AI-assisted code through independent calculations, appropriate validation, and substantive interpretation.
-- Communicate recommendations with clear figures, uncertainty, customer consequences, and supporting evidence.
+- Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 
 ## Class Format and Materials
 
@@ -55,7 +55,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 11 | April 7 | M7: Prediction, validation, and marketing actions |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
-| 14 | April 28 | M8: Generative AI, consumer agency, pricing, and cancellation regulation |
+| 14 | April 28 | M8, M9: Generative AI, Marketing Dialectics, consumer agency, and regulation |
 | 15 | May 5 | M1-M8: Integrated decisions and final discussion/presentations |
 
 ## Holidays and Breaks

@@ -2911,11 +2911,13 @@
     "number": 14,
     "title": "Generative AI, Consumer Choice, and Regulation",
     "stem": "S14_Generative_AI_Consumer_Choice_and_Regulation",
-    "module": "M8",
+    "module": "M8, M9",
     "objectives": [
       "Assess AI demand measurements and workflow claims.",
       "Explain why a commercial objective can conflict with customer interests.",
-      "Map a marketing decision to the relevant evidence, jurisdiction, and rule status."
+      "Map a marketing decision to the relevant evidence, jurisdiction, and rule status.",
+      "Examine the premises connecting commercial results to customer-benefit claims.",
+      "Compare Kantian, institutional, and Confucian reasons for a marketing recommendation."
     ],
     "slides": [
       {
@@ -3031,6 +3033,57 @@
       },
       {
         "kind": "bullets",
+        "title": "Marketing Dialectics: Examine the Premise",
+        "bullets": [
+          "State the claim, its evidence, and the premise connecting them.",
+          "Kant examines reason’s demand for an unconditioned explanation.",
+          "A marketing analogy must preserve the scope of the original argument."
+        ],
+        "notes": "Kant’s transcendental dialectic concerns metaphysical cognition. These marketing cases adapt the practice of examining premises; an ordinary empirical dispute is not a cosmological antinomy. The third antinomy does not imply that accurate purchase prediction proves lost agency. Critical examination may support, restrict, or reject a claim; no forced synthesis is required.",
+        "source": "Marketing Dialectics, §§9.1–9.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Commercial Results and Customer Claims",
+        "figure": "../06_Lecture_Notes/figures/M09_claim_scope.tex",
+        "caption": "Causal, measurement, and ethical questions have different premises.",
+        "description": "Separate paths connect a practice to commercial effects and customer outcomes. A judgment about the practice also requires an ethical principle.",
+        "notes": "A randomized intervention can establish incremental purchases without establishing informed choice or customer benefit. Kant’s humanity formulation supplies a distinct ethical question about treatment of persons.",
+        "source": "Marketing Dialectics, §§9.1, 9.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Self-Interest Creates a Burden of Justification",
+        "figure": "../06_Lecture_Notes/figures/M09_burden_justification.tex",
+        "caption": "A reason for scrutiny is distinct from evidence of misconduct.",
+        "description": "A material conflict leads to independent substantiation and then a decision that can change with evidence.",
+        "notes": "Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt.",
+        "source": "Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Confucian Perspectives: Profit and Responsibility",
+        "bullets": [
+          "Evaluate how profit is obtained and which relationships sustain it.",
+          "A trusted adviser or customer-care role carries standards of conduct.",
+          "Examine whether the claimed role matches incentives and practice."
+        ],
+        "notes": "Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.1 challenges an exclusive focus on advantage. Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties.",
+        "source": "Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Truthful Challenge and Cultivated Judgment",
+        "bullets": [
+          "Harmony can include reasoned disagreement.",
+          "Learning and reflection should discipline an AI-generated answer.",
+          "Good conduct depends on repeated practices as well as stated values."
+        ],
+        "notes": "Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and reflective learning. Mencius emphasizes cultivable moral beginnings; Xunzi emphasizes deliberate effort, teaching, and ritual. They disagree about human nature. A modern firm can examine what its rewards teach employees to notice and whether an analyst can report an unwanted customer outcome.",
+        "source": "Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Choice Procedure Can Change Renewal",
         "bullets": [
           "A direct offer and an offer preceded by questions can produce different choices.",
@@ -3082,12 +3135,32 @@
       },
       {
         "kind": "figure",
-        "title": "Retention Leaves the Mechanism Unresolved",
-        "figure": "../06_Lecture_Notes/figures/M08_agency_outcomes.tex",
-        "caption": "The same payment outcome can follow valuable service or obstructed exit.",
-        "description": "Two paths connect an interface to increased retention: better fit or understood savings, and confusion or obstructed cancellation. Intent, comprehension, effective exit, and later charges distinguish their customer consequences.",
-        "notes": "This is a conceptual diagram, not an estimated causal graph. It motivates collecting customer-outcome measures alongside retention. Existing M8 Section 8.14 supplies a fully specified synthetic welfare calculation; Section 8.19 connects the mechanism to recent policy and research.",
-        "source": "../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md"
+        "title": "Same Renewal, Different Customer Intent",
+        "figure": "../06_Lecture_Notes/figures/M09_retention_intent.tex",
+        "caption": "Synthetic populations: 1,000 customers each, one renewal month.",
+        "description": "A and B each have 900 billed customers. A contains 880 wanted and 20 unwanted renewals; B contains 600 wanted and 300 unwanted renewals. Both have 100 not billed.",
+        "notes": "Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%; among billed customers they are approximately 2.22% and 33.33%. These populations do not estimate a treatment effect or monetary welfare. Run evaluate_retention.py; full source is in Section 9.5. Missing intent stays unknown.",
+        "source": "Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Welfare Comparison",
+        "intro": "Synthetic stakes distinguish profit from customer value.",
+        "code": "direct, selected = 0.20, 0.60\nfirm_margin, customer_loss = 11, 10\nfirm_gain = firm_margin * (selected-direct)\nvalue_change = -customer_loss * (selected-direct)\nassert round(firm_gain, 2) == 4.40\nassert round(value_change, 2) == -4.00",
+        "check": "Higher combined surplus can coexist with a customer loss under these assumptions.",
+        "notes": "The combined change is 0.40 dollars per potential customer in this example. The welfare result is conditional on the imposed values. A choice probability does not independently reveal those values.",
+        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Coding Exercise: A Marketing Evaluation",
+        "bullets": [
+          "Reproduce the two populations with identical billed renewal.",
+          "Keep unknown intent separate and compare the relevant denominators.",
+          "State the evidence and ethical premise needed to justify the practice."
+        ],
+        "notes": "Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full program and five tests accompany M9 §9.5. Existing M8 examples add conditional profit and welfare calculations. These are synthetic examples and do not estimate an interface effect.",
+        "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -3145,24 +3218,24 @@
         "source": "M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf"
       },
       {
-        "kind": "code",
-        "title": "A Welfare Comparison",
-        "intro": "Synthetic stakes distinguish profit from customer value.",
-        "code": "direct, selected = 0.20, 0.60\nfirm_margin, customer_loss = 11, 10\nfirm_gain = firm_margin * (selected-direct)\nvalue_change = -customer_loss * (selected-direct)\nassert round(firm_gain, 2) == 4.40\nassert round(value_change, 2) == -4.00",
-        "check": "Higher combined surplus can coexist with a customer loss under these assumptions.",
-        "notes": "The combined change is 0.40 dollars per potential customer in this example. The welfare result is conditional on the imposed values. A choice probability does not independently reveal those values.",
-        "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+        "kind": "bullets",
+        "title": "Environmental Claims: Two Different Decisions",
+        "bullets": [
+          "2023 Shell ads: the ASA upheld the overall-impression complaint.",
+          "2025 Shell ad: the ASA accepted the contextualized communication.",
+          "Evaluate the particular claim, material context, and applicable standard."
+        ],
+        "notes": "UK ASA, June 7, 2023: omitted context about the balance of business activities made the overall environmental impression misleading; a separate electricity claim was not upheld. April 9, 2025: the later ad included higher- and lower-carbon activities and investment context and was not found misleading. Its ruling explains the applicable pre-April-2025 code wording. These are specific regulatory outcomes, not firm-wide ethical verdicts. Sources: https://www.asa.org.uk/rulings/shell-uk-ltd-g22-1170842-shell-uk-ltd.html and https://www.asa.org.uk/rulings/shell-uk-ltd-g24-1248246-shell-uk-ltd.html",
+        "source": "Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
-        "kind": "bullets",
-        "title": "Coding Exercise: A Marketing Evaluation",
-        "bullets": [
-          "Calculate reuse break-even and the conditional price interval.",
-          "Compute profit and customer value for alternative retention procedures.",
-          "Propose an interface change and the evidence needed to evaluate it."
-        ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics. The GenAI demand programs provide richer stock, flow, cohort, and benchmark checks. Keep empirical measurements separate from imposed welfare inputs. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.",
-        "source": "M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+        "kind": "figure",
+        "title": "A Product Fact and a Portfolio Impression",
+        "figure": "../06_Lecture_Notes/figures/M09_environmental_scope.tex",
+        "caption": "The scope of the conclusion determines the evidence required.",
+        "description": "The product, portfolio, and future transition require different supporting information: comparison, denominator, and time horizon.",
+        "notes": "A true statement about one product can be insufficient to support a broader impression. The ASA comparison supplies an institutional case; the diagram is an original conceptual analysis.",
+        "source": "Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -3184,10 +3257,13 @@
       "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
-      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
+      "[Marketing Dialectics](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md)",
+      "[Kantian, Institutional, and Confucian Readings](../01_Resources/15_Marketing_Dialectics/README.md)",
+      "[Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)"
     ],
-    "practice": "Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.",
-    "application": "Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules."
+    "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
+    "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."
   },
   {
     "number": 15,

@@ -2,7 +2,7 @@
 
 Course materials for Nathan Yang's planned offering, with AI-assisted coding integrated into marketing analytics. The topic sequence builds on Unnati Narang's Spring 2026 course.
 
-**Status:** course preparation, with lecture notes and 15 session decks covering all eight modules. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, assessment policies, and the interactive HTML wiki remain pending. Resource recommendations and teaching suggestions are not assigned work.
+**Status:** course preparation, with lecture notes and 15 session decks covering the eight core modules and Marketing Dialectics. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, assessment policies, and the interactive HTML wiki remain pending. Resource recommendations and teaching suggestions are not assigned work.
 
 ## Start Here
 
@@ -52,3 +52,7 @@ The [journal collection](01_Resources/13_Consumer_Agency_and_Recent_Research/REA
 ## LLM Evidence and Revalidation
 
 The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md) connects the shelf life of AI findings to model updates, changing judges, and fresh evaluation. [Three runnable examples](03_Data_and_Code/LLM_Revalidation/README.md) reproduce published follow-up summaries and distinguish them from constructed upgrade decisions. Complete code and three TikZ figures appear in the notes and corresponding session decks.
+
+## Marketing Dialectics
+
+[Chapter 9](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines marketing claims through Kantian critique and ethics, Hume and Smith on interested power, and Confucian insights on conduct. It includes a [standalone PDF](06_Lecture_Notes/Marketing_Dialectics.pdf), [reproducible Python case](03_Data_and_Code/Marketing_Dialectics/README.md), and [categorized reading library](01_Resources/15_Marketing_Dialectics/README.md).

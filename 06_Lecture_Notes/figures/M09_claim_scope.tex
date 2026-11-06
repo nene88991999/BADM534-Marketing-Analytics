@@ -1,0 +1,13 @@
+\begin{tikzpicture}[node distance=1.05cm and 1.05cm]
+\node[box,text width=3cm] (practice) at (0,0) {Marketing practice};
+\node[box,text width=3.5cm] (sales) at (5.2,1.5) {Commercial effect\\Sales, margin, renewal};
+\node[orangebox,text width=3.5cm] (customer) at (5.2,-1.5) {Customer outcome\\Understanding, value, exit};
+\draw[edge] (practice.east) -- (sales.west);
+\draw[accent] (practice.east) -- (customer.west);
+\node[align=center,font=\footnotesize] at (1.6,1.5) {Causal\\design};
+\node[align=center,font=\footnotesize] at (1.6,-1.7) {Measure and\\comparison};
+\node[box,text width=3.5cm] (judgment) at (10.5,0) {Ethical judgment\\Stated principle of action};
+\draw[edge] (sales.east) -- (judgment.north west);
+\draw[accent] (customer.east) -- (judgment.south west);
+\node[align=center,text width=11cm] at (5.2,-3.1) {A measured sales effect leaves the customer measure and ethical premise substantive.};
+\end{tikzpicture}

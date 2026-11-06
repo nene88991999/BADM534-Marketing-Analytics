@@ -1,0 +1,270 @@
+{
+  "verified_on": "2026-11-06",
+  "downloaded_files_checked": 35,
+  "checks": [
+    "All saved bytes match catalog SHA-256 and file size",
+    "All PDF files parsed; page counts recorded",
+    "HTML source identity checked from title or substantive opening",
+    "Abstracts, excerpts, adaptations, and full texts distinguished",
+    "Public-original list limited to seven public-domain editions and one CC BY 4.0 article"
+  ],
+  "reading_limit": "Selected source passages and sections reviewed as recorded in catalog; not every page of every source read",
+  "files": [
+    {
+      "id": "K01",
+      "sha256_matches": true,
+      "bytes": 1335375,
+      "extent": "full",
+      "public_copy": true
+    },
+    {
+      "id": "K02",
+      "sha256_matches": true,
+      "bytes": 338916,
+      "extent": "full",
+      "public_copy": true
+    },
+    {
+      "id": "K03",
+      "sha256_matches": true,
+      "bytes": 201649,
+      "extent": "full",
+      "public_copy": true
+    },
+    {
+      "id": "K04",
+      "sha256_matches": true,
+      "bytes": 451565,
+      "extent": "full",
+      "public_copy": true
+    },
+    {
+      "id": "K05",
+      "sha256_matches": true,
+      "bytes": 941003,
+      "extent": "full",
+      "public_copy": true
+    },
+    {
+      "id": "K06",
+      "sha256_matches": true,
+      "bytes": 813627,
+      "extent": "full_part",
+      "public_copy": false,
+      "pdf_pages": 164
+    },
+    {
+      "id": "K07",
+      "sha256_matches": true,
+      "bytes": 127583,
+      "extent": "excerpts",
+      "public_copy": false,
+      "pdf_pages": 2
+    },
+    {
+      "id": "S01",
+      "sha256_matches": true,
+      "bytes": 103939,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "S02",
+      "sha256_matches": true,
+      "bytes": 177982,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "S03",
+      "sha256_matches": true,
+      "bytes": 171211,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "S04",
+      "sha256_matches": true,
+      "bytes": 131606,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "S05",
+      "sha256_matches": true,
+      "bytes": 422539,
+      "extent": "full",
+      "public_copy": true,
+      "pdf_pages": 12
+    },
+    {
+      "id": "S09",
+      "sha256_matches": true,
+      "bytes": 63333,
+      "extent": "abstract",
+      "public_copy": false
+    },
+    {
+      "id": "M01",
+      "sha256_matches": true,
+      "bytes": 401596,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "M02",
+      "sha256_matches": true,
+      "bytes": 1302579,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 69
+    },
+    {
+      "id": "M04",
+      "sha256_matches": true,
+      "bytes": 4537473,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 66
+    },
+    {
+      "id": "M05",
+      "sha256_matches": true,
+      "bytes": 1062953,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 51
+    },
+    {
+      "id": "M06",
+      "sha256_matches": true,
+      "bytes": 5993727,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 32
+    },
+    {
+      "id": "M07",
+      "sha256_matches": true,
+      "bytes": 229666,
+      "extent": "abstract",
+      "public_copy": false
+    },
+    {
+      "id": "M08",
+      "sha256_matches": true,
+      "bytes": 234594,
+      "extent": "abstract",
+      "public_copy": false
+    },
+    {
+      "id": "I01",
+      "sha256_matches": true,
+      "bytes": 92212,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "I02",
+      "sha256_matches": true,
+      "bytes": 2166521,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 48
+    },
+    {
+      "id": "I03",
+      "sha256_matches": true,
+      "bytes": 1707546,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "I04",
+      "sha256_matches": true,
+      "bytes": 263900,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "I05",
+      "sha256_matches": true,
+      "bytes": 72328,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "I06",
+      "sha256_matches": true,
+      "bytes": 58426,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "K08",
+      "sha256_matches": true,
+      "bytes": 128730,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 3
+    },
+    {
+      "id": "P01",
+      "sha256_matches": true,
+      "bytes": 13565,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "P02",
+      "sha256_matches": true,
+      "bytes": 2287518,
+      "extent": "full",
+      "public_copy": true
+    },
+    {
+      "id": "C01",
+      "sha256_matches": true,
+      "bytes": 206566,
+      "extent": "full",
+      "public_copy": true
+    },
+    {
+      "id": "C02",
+      "sha256_matches": true,
+      "bytes": 2332978,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 159
+    },
+    {
+      "id": "C03",
+      "sha256_matches": true,
+      "bytes": 3902864,
+      "extent": "full",
+      "public_copy": false,
+      "pdf_pages": 185
+    },
+    {
+      "id": "C04",
+      "sha256_matches": true,
+      "bytes": 28969,
+      "extent": "excerpt",
+      "public_copy": false
+    },
+    {
+      "id": "C05",
+      "sha256_matches": true,
+      "bytes": 90474,
+      "extent": "full",
+      "public_copy": false
+    },
+    {
+      "id": "C06",
+      "sha256_matches": true,
+      "bytes": 74123,
+      "extent": "full",
+      "public_copy": false
+    }
+  ]
+}

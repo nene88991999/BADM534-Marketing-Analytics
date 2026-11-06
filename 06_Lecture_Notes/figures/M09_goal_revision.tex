@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\node[box,text width=2.8cm] (rank) at (0,0) {Ranking rule};
+\node[box,text width=2.8cm] (exposure) at (4.7,0) {Exposure};
+\node[box,text width=2.8cm] (action) at (9.4,0) {Recorded behavior};
+\draw[edge] (rank) -- (exposure);
+\draw[edge] (exposure) -- (action);
+\draw[edge] (action.south) -- ++(0,-1.5) -| node[pos=.25,below]{Training feedback} (rank.south);
+\node[orangebox,text width=6.2cm] (goals) at (4.7,2.4) {Customer purpose, informed refusal, and goal revision};
+\draw[accent] (goals.west) -| (rank.north);
+\draw[accent] (goals.east) -| (action.north);
+\node[align=center,text width=11.3cm] at (4.7,-3.2) {Behavior is recorded under the current exposure rule.\\Customer purposes require additional information.};
+\end{tikzpicture}

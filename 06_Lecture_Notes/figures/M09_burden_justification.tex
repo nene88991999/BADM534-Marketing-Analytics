@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\node[box,text width=3cm] (conflict) at (0,0) {Material conflict\\Firm gains and controls information};
+\node[orangebox,text width=3.5cm] (evidence) at (5.3,0) {Independent substantiation\\Customer outcomes and credible comparisons};
+\node[box,text width=3cm] (decision) at (10.6,0) {Reasoned decision\\Accept, restrict, redesign, or reject};
+\draw[edge] (conflict) -- (evidence);
+\draw[accent] (evidence) -- (decision);
+\draw[edge,dashed] (decision.south) -- (10.6,-2.5) -| (evidence.south);
+\node[align=center,font=\footnotesize] at (8,-2.9) {New evidence can revise the decision};
+\node[align=center,text width=12cm] at (5.3,-4.1) {The conflict supplies a reason for scrutiny. The verdict depends on the practice and evidence.};
+\end{tikzpicture}

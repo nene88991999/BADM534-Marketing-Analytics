@@ -24,8 +24,8 @@ def main():
     ap.add_argument('--figures', action='store_true')
     args=ap.parse_args()
     modules=sorted((ROOT/'modules').glob('M*.md'))
-    if len(modules)!=8:
-        raise ValueError('Expected exactly eight module sources')
+    if [p.stem.split('_')[0] for p in modules] != [f'M{i:02d}' for i in range(1,10)]:
+        raise ValueError('Expected M01–M09, including Marketing Dialectics')
     build=ROOT/'build'
     build.mkdir(exist_ok=True)
     names=[]
@@ -54,7 +54,7 @@ def main():
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 5, 2026\par}
+{\large November 6, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -77,6 +77,13 @@ def main():
     master.write_text(intro+'\n'.join(fragments)+'\n\\end{document}\n')
     run([args.tectonic,'--keep-logs','--outdir',build,master])
     shutil.copy2(build/'Marketing_Analytics_Lecture_Notes.pdf',ROOT/'Marketing_Analytics_Lecture_Notes.pdf')
+    chapter = fragments[-1].replace(r'\label{M09-marketing-dialectics}}',
+        '\\label{M09-marketing-dialectics}}\n\\noindent{\\large By Nathan Yang}\\par\\medskip', 1)
+    standalone = ROOT/'Marketing_Dialectics.tex'
+    standalone.write_text('\\input{preamble.tex}\n\\begin{document}\n'
+        '\\hypersetup{pdftitle={Marketing Dialectics}}\n\\setcounter{chapter}{8}\n' + chapter + '\n\\end{document}\n')
+    run([args.tectonic,'--keep-logs','--outdir',build,standalone])
+    shutil.copy2(build/'Marketing_Dialectics.pdf',ROOT/'Marketing_Dialectics.pdf')
     if args.figures:
         from PIL import Image, ImageChops
         atlas=ROOT/'figure_atlas.tex'

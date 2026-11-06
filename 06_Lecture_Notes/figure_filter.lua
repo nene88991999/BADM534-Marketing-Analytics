@@ -12,13 +12,17 @@ end
 function Header(el)
   local prefix = PANDOC_STATE.input_files[1]:match("(M%d+)_") or "module"
   el.identifier = prefix .. "-" .. el.identifier
-  -- LaTeX supplies chapter and section numbers; retain M1-M8 in Markdown.
+  -- LaTeX supplies chapter and section numbers; retain explicit IDs in Markdown.
   if el.content[1] and el.content[1].t == 'Str' then
     local s = el.content[1].text
     if s:match('^M%d+%.$') or s:match('^%d+%.[%d%.]+$') then
       table.remove(el.content, 1)
       if el.content[1] and el.content[1].t == 'Space' then table.remove(el.content, 1) end
     end
+  end
+  if prefix == 'M09' and el.level == 2 then
+    return {pandoc.RawBlock('latex','\\Needspace{8\\baselineskip}'), el,
+            pandoc.RawBlock('latex','\\noindent')}
   end
   return {el, pandoc.RawBlock('latex','\\noindent')}
 end

@@ -53,3 +53,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## LLM Revalidation
 
 [LLM Revalidation](LLM_Revalidation/README.md) contains a licensed fifty-claim research snapshot, independent descriptive calculations, and constructed comparisons of model upgrades and judge changes. Three standard-library programs, complete case-level outputs, a data dictionary, and four small-case tests accompany the full code in the notes.
+
+## Marketing Dialectics
+
+[Renewal and Customer Intent](Marketing_Dialectics/README.md) constructs two populations with the same billing rate and different unwanted-renewal shares. The standard-library program preserves population denominators and unknown intent. Complete code appears in Chapter 9; the comparison is synthetic and descriptive.

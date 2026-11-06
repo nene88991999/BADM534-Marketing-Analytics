@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-05",
+  "updated_on": "2026-11-06",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -756,15 +756,15 @@
     {
       "session": 14,
       "title": "Generative AI, Consumer Choice, and Regulation",
-      "modules": "M8",
+      "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 26,
+      "slides": 33,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
-      "python_activity": "Connect AI workflow updates to residual risk, exposure, and customer-outcome evaluation.",
-      "application": "Evaluate subscription and pricing decisions with current evidence, effective exit, and jurisdiction-specific rules.",
-      "ethics": "Consumer agency, effective exit, pricing, and current regulatory scope",
+      "python_activity": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
+      "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules.",
+      "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope",
       "timing": [
         {
           "start_minute": 0,
@@ -788,7 +788,7 @@
           "start_minute": 80,
           "end_minute": 155,
           "minutes": 75,
-          "activity": "Retention, Pricing, and Regulatory Assessment"
+          "activity": "Marketing Dialectics, Customer Outcomes, and Regulation"
         },
         {
           "start_minute": 155,
@@ -797,7 +797,29 @@
           "activity": "Decision Discussion"
         }
       ],
-      "date": "2027-04-28"
+      "date": "2027-04-28",
+      "discussion_blocks": [
+        {
+          "start_minute": 80,
+          "end_minute": 95,
+          "activity": "Kant, Claims, and Hidden Premises"
+        },
+        {
+          "start_minute": 95,
+          "end_minute": 115,
+          "activity": "Self-Interest, Confucian Conduct, and Justification"
+        },
+        {
+          "start_minute": 115,
+          "end_minute": 135,
+          "activity": "Renewal, Intent, and Reproducible Calculation"
+        },
+        {
+          "start_minute": 135,
+          "end_minute": 155,
+          "activity": "Cancellation Rules and Environmental Claims"
+        }
+      ]
     },
     {
       "session": 15,
