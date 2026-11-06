@@ -56,3 +56,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Marketing Dialectics
 
 [Chapter 9](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines marketing claims through Kantian critique and ethics, Hume and Smith on interested power, and Confucian insights on conduct. It includes a [standalone PDF](06_Lecture_Notes/Marketing_Dialectics.pdf), [reproducible Python case](03_Data_and_Code/Marketing_Dialectics/README.md), and [categorized reading library](01_Resources/15_Marketing_Dialectics/README.md).
+
+## AI Experimentation and Pricing
+
+[The research and policy case](01_Resources/16_AI_Experimentation_and_Pricing/README.md) connects AI-assisted experiments and personalized pricing to Kantian ethical evaluation. Marketing Dialectics includes the detailed argument, source-specific qualifications, and [complete reproducible calculations](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md).

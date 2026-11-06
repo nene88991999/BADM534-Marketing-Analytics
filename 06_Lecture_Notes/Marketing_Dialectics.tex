@@ -1079,4 +1079,588 @@ Xunzi's discussion of human nature. The resource guide distinguishes the
 original settings, translation choices, and proposed marketing
 applications.
 
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-ai-experimentation-and-the-choice-of-an-objective}{%
+\section{AI Experimentation and the Choice of an
+Objective}\label{M09-ai-experimentation-and-the-choice-of-an-objective}}
+
+\noindent A marketing manager can use past experiments to generate more effective
+messages, estimate how different customers respond to prices, and choose
+a policy for future deployment. The commercial question concerns the
+action that improves the firm's outcome. The ethical question concerns
+the reasons for choosing that action and its treatment of the people
+affected. Increasing the precision of the first answer can increase the
+importance of the second. A firm that learns to extract value more
+accurately needs a correspondingly clear account of which forms of
+extraction are permissible.
+
+Sanjog Misra's collaborations offer several distinct settings for
+examining that relationship. \emph{Causal Alignment} concerns language
+generation informed by email experiments. \emph{Personalized Pricing and
+Consumer Welfare} studies pricing and the distribution of surplus.
+\emph{Robust A/B Decisions} considers decisions under uncertainty about
+future conditions. \emph{Coarse Personalization} considers which
+segments and treatments a firm should implement. Their findings and
+objectives must be evaluated separately. The
+\href{../01_Resources/16_AI_Experimentation_and_Pricing/01_Research/README.md}{research
+guide} identifies the versions, reading locations, and commercial
+settings.
+
+\hypertarget{M09-learning-from-experimental-comparisons}{%
+\subsection{Learning from Experimental
+Comparisons}\label{M09-learning-from-experimental-comparisons}}
+
+\noindent Angelopoulos, Lee, and Misra's \emph{Causal Alignment} trains a language
+model using higher- and lower-performing messages from the same
+historical experiment. In 36 new campaigns involving approximately 283
+million email impressions, its human-assisted workflow produces about
+32\% higher mean click rates than unassisted human experts. Table 2
+averages campaigns equally. The paper retains human selection and
+describes screening against unsupported claims and omitted information.
+The experiment measures link clicks; it supplies no corresponding causal
+estimate of customers' informed benefit.
+\href{https://leekevin.io/caLM.pdf}{August 2026 author version, Sections
+4--5 and Appendix B}.
+
+A within-campaign comparison can remove confounding due to a shared
+audience and context when assignment is randomized. Reusing those
+comparisons as training labels then inherits the definition of success
+in the original outcome. If a useful explanation and an obstructive
+appeal both increase clicks, the click label alone does not distinguish
+their reasons. Human review can impose an additional standard, but the
+reviewer needs authority and evidence to apply it. Review by a person
+rewarded for commercial performance does not automatically represent the
+interests of recipients.
+
+Appendix A also describes steering emotional valence, including fear. An
+accurate warning can help a customer deliberate. An invented threat or
+false deadline can distort that deliberation. The ethical distinction
+depends on the content, its truth, the circumstances, and the
+recipient's opportunity to assess it. The appearance of an emotional
+category in a method establishes a capability; it does not establish
+that the deployed campaigns used deception.
+
+\hypertarget{M09-pricing-profit-and-customer-surplus}{%
+\subsection{Pricing, Profit, and Customer
+Surplus}\label{M09-pricing-profit-and-customer-surplus}}
+
+\noindent Dubé and Misra's pricing study concerns prospective employers purchasing
+recruiting services. Its model projects a 19\% profit gain from
+personalization relative to the optimized uniform price, alongside a
+23\% decline in total customer surplus in the June 2021 version. More
+than 60\% of customers benefit under that comparison. The later field
+test uses a different uniform benchmark and capped personalized prices.
+Its rounded realized revenue means imply about a 10.1\% advantage for
+personalization. Consumer surplus is calculated through the demand
+model.
+\href{https://www.nber.org/system/files/working_papers/w23775/w23775.pdf}{NBER
+revision, Sections 4--5}; published as \emph{Journal of Political
+Economy} 131(1), 2023.
+
+These results expose an economically meaningful conflict: a policy can
+increase profit and benefit a majority while reducing the sum of
+customer surplus. The incidence of gains and losses therefore matters
+alongside their aggregate. A claim that every customer loses would
+misstate the evidence. Equally, the fact that a majority gains supplies
+no automatic justification for how a losing minority is treated. The
+authors examine alternative welfare weights and the consequences of
+restricting data. That analysis creates a basis for criticism of
+particular objectives and policy choices.
+
+The benchmark also matters. A price increase from an initially low
+uniform price combines the exercise of previously unused market power
+with the effect of personalization. A comparison with an already
+optimized uniform price isolates a different change. The model's
+forecast and the later experiment use different price policies, so their
+percentage gains answer different questions. Neither comparison is an
+experiment in emergency pricing of household necessities.
+
+\hypertarget{M09-robustness-and-segmentation}{%
+\subsection{Robustness and
+Segmentation}\label{M09-robustness-and-segmentation}}
+
+\noindent Farrell, Korganbekova, and Misra's \emph{Robust A/B Decisions} ranks
+policies using an ambiguity-adjusted value of the chosen outcome. It
+evaluates deployment decisions using 552 advertising experiments. Its
+distinction between statistical significance and an economic decision is
+useful, as is its concern about changing deployment conditions. A robust
+commercial payoff still requires an independently justified objective.
+Protecting the firm against an unfavorable shift in customers does not
+by itself protect customers against an unfavorable policy.
+\href{https://arxiv.org/abs/2609.07633}{September 2026 version, Sections
+1--3}.
+
+Zhang and Misra's \emph{Coarse Personalization} chooses a limited set of
+treatments and assigns customers to them. In its application, five
+segments recover over 99.5\% of the estimated incremental profit under
+full personalization. The paper discusses fairness and stability as
+practical concerns. A smaller treatment menu can simplify oversight; the
+number of segments alone does not establish that the assignment
+principle is justifiable. Customers in a single segment may still face
+an objectionable use of data.
+\href{https://arxiv.org/abs/2204.05793v4}{June 2025 revision,
+introduction and application}.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-pricing-policy-what-conduct-is-being-evaluated}{%
+\section{Pricing Policy: What Conduct is Being
+Evaluated?}\label{M09-pricing-policy-what-conduct-is-being-evaluated}}
+
+\noindent Price discrimination means that different buyers face different prices
+for comparable offerings in an economically relevant sense. Dynamic
+pricing changes prices with conditions. Personalized algorithmic pricing
+conditions a quoted price on information about a particular buyer. Price
+gouging is a legal category with jurisdiction-specific conditions
+concerning the market disruption, covered goods, price, and
+justification. Algorithmic coordination between competitors introduces
+another question concerning competitive conduct. These descriptions can
+overlap, but none supplies the legal elements of the others.
+
+The FTC's August 19, 2026 proposed enforcement policy statement creates
+a direct connection to the pricing study: it cites Dubé and Misra while
+discussing the uncertain distributional effects of personalization. Its
+proposed approach emphasizes disclosure when customers reasonably expect
+a common price, including the basis for personalization and categories
+of data used. It separately considers deception and unfairness. The
+document is a proposed enforcement statement listed in the FTC's legal
+library, with no new blanket prohibition on individualized pricing. An
+enforcement action still requires an applicable legal violation.
+\href{https://www.ftc.gov/system/files/ftc_gov/pdf/p034101-ftc-enforcement-policy-statement-re-personalized-pricing-proposed-for-public-comment.pdf}{FTC
+proposal, pages 3--8}.
+
+New York's General Business Law §349-a requires specified disclosures
+for covered personalized algorithmic prices. The law took effect on
+November 10, 2025. Its consumer definition concerns personal, family, or
+household use and includes listed exceptions. That scope differs from
+the employer purchasing decision in the recruiting study. The 2026 One
+Fair Price legislation, S8623B/A9349B, would impose broader
+restrictions; the official record checked on November 6 shows
+legislative passage without recorded gubernatorial enactment. These are
+different stages of legal authority.
+\href{https://www.nysenate.gov/legislation/laws/GBS/349-A}{Current
+§349-a};
+\href{https://ag.ny.gov/press-release/2025/attorney-general-james-warns-new-yorkers-about-algorithmic-pricing-new-law-takes}{effective-date
+notice};
+\href{https://www.nysenate.gov/legislation/bills/2025/S8623}{bill
+status}.
+
+New York's price-gouging law concerns unconscionably excessive prices
+for essential goods and services during abnormal market disruptions. Its
+application considers the relevant prices, conduct, and cost
+justifications. A high willingness-to-pay prediction or a positive
+experimental revenue effect supplies none of those legal findings by
+itself. The Attorney General's January 2026 inquiry into Instacart's
+pricing experiments likewise constitutes an inquiry, with requests for
+information about the experiments and compliance. It is not an
+adjudication of the academic papers.
+\href{https://ag.ny.gov/resources/individuals/consumer-issues/price-gouging}{Price-gouging
+guidance};
+\href{https://ag.ny.gov/press-release/2026/attorney-general-james-demands-answers-instacart-about-algorithmic-pricing}{January
+8 inquiry}.
+
+The FTC opened a further inquiry on October 28, 2026, requesting
+information directly from nine companies about personalized pricing and
+compensation. These Section 6(b) orders seek evidence about actual
+practices; they do not establish that the recipients violated the law.
+The August enforcement statement remains described as proposed in this
+later notice.
+\href{https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry}{FTC
+inquiry}.
+
+The marketing decision is whether a proposed practice meets the
+applicable requirements and merits deployment on ethical grounds. A
+lawful price may still require a moral defense. A philosophical
+objection should also identify the conduct at issue rather than treating
+an algorithm's presence as a verdict. The
+\href{../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md}{policy
+source record} records jurisdiction, status, coverage, and the November
+6, 2026 verification date.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-a-kantian-critique-of-commercial-optimization}{%
+\section{A Kantian Critique of Commercial
+Optimization}\label{M09-a-kantian-critique-of-commercial-optimization}}
+
+\noindent \hypertarget{M09-an-effective-means-and-a-justifiable-end}{%
+\subsection{An Effective Means and a Justifiable
+End}\label{M09-an-effective-means-and-a-justifiable-end}}
+
+\noindent Kant's distinction between hypothetical and categorical imperatives
+identifies a missing step in a commercial recommendation. An instruction
+to choose the policy that increases profit is conditional on the end
+being pursued. Statistical evidence can improve the choice of means to
+that end. It does not establish the authority of the end over every
+affected person. The objection becomes sharp when a decision maker
+treats successful optimization as a sufficient reason to deploy, despite
+unresolved objections concerning deception, misuse of information, or
+obstruction of refusal.
+\href{https://www.gutenberg.org/ebooks/5682}{Kant, \emph{Groundwork},
+second section, Akademie 4:414--421}.
+
+The criticism applies to the transition from a performance result to a
+recommendation. A study may legitimately estimate a commercial
+capability, including one that exposes a welfare loss. A deployment
+recommendation carries the additional burden of justifying the conduct
+it endorses. Research that measures harmful consequences can improve
+that evaluation. The existence of a profit objective in a statistical
+problem is therefore insufficient evidence about an author's moral
+commitments.
+
+\hypertarget{M09-humanity-and-the-conditions-of-deliberation}{%
+\subsection{Humanity and the Conditions of
+Deliberation}\label{M09-humanity-and-the-conditions-of-deliberation}}
+
+\noindent The humanity formulation requires treating persons as ends and never
+merely as means. Exchange ordinarily involves using another person's
+abilities or resources to pursue an end. Respect additionally requires
+attention to the other person's capacity to understand, set purposes,
+and act on reasons. A message designed to create a false belief so that
+someone buys serves the seller by impairing that capacity. A truthful
+explanation can improve both conversion and understanding. The
+difference lies in how the decision is obtained.
+\href{https://www.gutenberg.org/ebooks/5682}{Kant, \emph{Groundwork},
+Akademie 4:429--430}.
+
+For AI-generated communication, this principle motivates checking the
+evidence for factual claims, the visibility of consequential terms, and
+the opportunity to refuse. The acceptability checks in \emph{Causal
+Alignment} address some of these concerns. Further questions concern the
+truth of the underlying offer, whether customers understand it, and
+whether the improved response advances a purpose they can endorse. A
+subject line can preserve its input's meaning while carrying forward a
+misleading premise already present in that input. These are questions
+for additional evidence, not findings that the studied campaigns were
+deceptive.
+
+For personalized prices, the relevant conduct includes obtaining data,
+explaining its use, and presenting the offer. An inference that a person
+has few alternatives can reflect an urgent need. A Kantian criticism of
+exploiting that need must explain how the practice treats the person's
+agency or permissible ends. High willingness to pay is not, by itself, a
+measure of wealth or vulnerability. The interpretation requires the
+setting and the information actually used.
+
+\hypertarget{M09-universalization-requires-a-specified-maxim}{%
+\subsection{Universalization Requires a Specified
+Maxim}\label{M09-universalization-requires-a-specified-maxim}}
+
+\noindent A maxim identifies the circumstances, action, and purpose. Consider a
+hypothetical seller who describes a price as a special saving while
+secretly raising it using an estimate of the buyer's disposable income.
+The maxim concerns inducing reliance on a representation the seller
+knows to be false. Its general adoption threatens the credibility on
+which that representation depends. The objection attaches to deception,
+even if a randomized test precisely measures the resulting sales
+increase.
+
+A publicly explained discount for a customer group presents a different
+maxim. Different prices alone supply no contradiction in universal law.
+Students must ask why the grouping is relevant, whether its data use is
+permissible, and whether the principle could be adopted consistently by
+people acting as rational agents. The universal-law test cannot be
+replaced with either a vote on whether a price is popular or the
+analyst's dislike of its distributional result.
+\href{https://www.gutenberg.org/ebooks/5682}{Kant, \emph{Groundwork},
+Akademie 4:421--424}.
+
+\hypertarget{M09-dignity-and-the-limits-of-a-weighted-objective}{%
+\subsection{Dignity and the Limits of a Weighted
+Objective}\label{M09-dignity-and-the-limits-of-a-weighted-objective}}
+
+\noindent A manager might add a customer-outcome term to profit and optimize their
+weighted sum. This can improve attention to consequences, but any finite
+weight allows sufficiently large profit to compensate for a penalty. If
+the objection concerns a duty against deception, that specification
+makes the duty negotiable. Kant's distinction between price and dignity
+supplies a reason to examine which actions should be excluded before
+commercial ranking. A measurable proxy for respectful treatment remains
+subject to scrutiny. \href{https://www.gutenberg.org/ebooks/5682}{Kant,
+\emph{Groundwork}, Akademie 4:434--435}.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_optimization_boundary.tex}
+\caption{Candidate messages or prices first face justified restrictions concerning truthfulness, data use, and effective refusal. Performance is compared within the permitted set. Customer evidence can require revision of the restrictions or the proposal.}\label{fig:M09_optimization_boundary}
+\end{figure}
+
+A contemporary implementation could exclude fabricated urgency, prohibit
+using sensitive information outside the permitted purpose, preserve an
+effective decline option, and require substantiation of claims. The
+justification for each restriction must remain explicit. A numerical
+threshold for comprehension or a reviewer's approval is evidence
+relevant to that justification; neither is a complete operational
+definition of Kantian autonomy.
+
+\hypertarget{M09-a-supported-judgment-about-ethical-cost}{%
+\subsection{A Supported Judgment About Ethical
+Cost}\label{M09-a-supported-judgment-about-ethical-cost}}
+
+\noindent The strongest supported criticism concerns the incompleteness of an
+exclusively commercial decision rule. More accurate optimization can
+intensify an existing conflict between the firm's objective and the
+conditions of customer agency. An ethical failure follows when the
+chosen practice violates a justified duty, such as truthful
+representation, and the firm treats its performance gain as permission
+to proceed. Establishing that failure requires evidence about the
+practice and an argument about the duty.
+
+The pricing paper supplies a concrete case in which modeled firm profit
+rises while aggregate customer surplus falls. The email paper supplies a
+case in which improved causal performance leaves the recipient's
+informed benefit as a separate question, while incorporating safeguards
+that deserve evaluation. Together, they make demanding examples for
+assessing the proposition that marketing effectiveness can come at an
+ethical cost. A responsible conclusion can reject a particular
+deployment, require changes, or endorse a justified use. It should
+identify the responsible action and evidence, preserving the distinction
+between a scholar's contribution, a firm's implementation, and an
+analyst's own normative inference.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-reproduce-profit-and-customer-incidence}{%
+\section{Reproduce Profit and Customer
+Incidence}\label{M09-reproduce-profit-and-customer-incidence}}
+
+\noindent \hypertarget{M09-a-solved-synthetic-pricing-comparison}{%
+\subsection{A Solved Synthetic Pricing
+Comparison}\label{M09-a-solved-synthetic-pricing-comparison}}
+
+\noindent A firm offers one product to a fixed population over one purchase
+opportunity. The comparison changes the permitted price policy while
+holding the population, preferences, costs, and outside option fixed.
+The following assumptions define an original illustration, without
+calibration to the papers' data.
+
+\begin{assumption}\label{ass:pricing-population}
+Group L has population share $0.6$ and valuations uniformly distributed on $[6,10]$ dollars. Group H has share $0.4$ and valuations uniformly distributed on $[10,30]$ dollars. Group membership has no demographic interpretation.
+\end{assumption}
+
+\begin{assumption}\label{ass:pricing-choice}
+Each customer buys one unit when valuation is at least the offered price. Utility is valuation less price upon purchase and zero otherwise. Marginal cost is zero. The firm observes group membership and the valuation distributions, but does not observe individual valuations.
+\end{assumption}
+
+\begin{assumption}\label{ass:pricing-policies}
+The firm can post one common price or one price per group. A third policy permits group-specific discounts subject to a cap at the revenue-maximizing common price. Offers are taken as accurately described. Changes in information, privacy, deliberation, and later demand are outside this illustration.
+\end{assumption}
+
+For a group \(g\) with valuation support \([a_g,b_g]\) and population
+weight \(w_g\), demand is \(q_g(p)=\Pr(v\geq p\mid g)\). Expected profit
+and customer surplus per eligible customer are
+
+\[
+\Pi=\sum_g w_g p_g q_g(p_g),\qquad
+CS=\sum_g w_g\,\mathbb{E}[\max(v-p_g,0)\mid g].
+\]
+
+Both quantities are in dollars and include nonbuyers in their
+denominator. Under Assumptions
+\ref{ass:pricing-population}--\ref{ass:pricing-policies}, the optimal
+common price is \(19/3\), approximately \$6.33. The group-specific
+optima are \(6\) and \(15\). Capping personalized offers at the common
+benchmark retains the \(6\) discount for L and the common price for H.
+These optima follow by checking support boundaries and the stationary
+points of piecewise quadratic revenue.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.13}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.19}}@{}}
+\toprule
+Policy & Profit per Customer & Customer Surplus & Purchase Share &
+Better Off & Worse Off \\
+\midrule
+
+Optimal Uniform & \$6.0167 & \$6.4750 & 95\% & 0\% & 0\% \\
+Group-Specific Optimum & \$8.1000 & \$3.4500 & 90\% & 60\% & 40\% \\
+Discounts Capped at Benchmark & \$6.1333 & \$6.6667 & 100\% & 60\% &
+0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Better and worse refer to each person's monetary surplus relative to the
+common-price benchmark in the same population. Under the group-specific
+optimum, the gains to L are outweighed in the aggregate by the losses to
+H. A majority-benefit statement and an aggregate-loss statement are
+simultaneously correct. Under the capped policy, profit and customer
+surplus both increase. The restriction changes the solution, and its
+consequences depend on the stipulated distributions.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_pricing_distribution.tex}
+\caption{Expected firm profit and customer surplus share the same dollar scale across three synthetic policies. Group-specific optimization increases profit and lowers aggregate customer surplus despite benefiting a majority. Capped discounts increase both measures relative to the uniform benchmark.}\label{fig:M09_pricing_distribution}
+\end{figure}
+
+The monetary comparison does not compute a moral verdict. Accurate
+disclosure and permissible data use would still require evaluation in an
+application. The example demonstrates why neither personalization nor a
+majority-gain statistic determines the ethical conclusion. It also makes
+the benchmark explicit: replacing the common-price optimum with an
+arbitrary high price would change the apparent gains from discounts.
+
+\hypertarget{M09-python-calculation-and-published-aggregates}{%
+\subsection{Python Calculation and Published
+Aggregates}\label{M09-python-calculation-and-published-aggregates}}
+
+\noindent The program integrates each group's demand and surplus exactly using
+rational arithmetic. It checks common-price candidates at all support
+boundaries and interior revenue maxima, solves group-specific prices,
+and evaluates the cap. A separate input file records rounded published
+means. Those means reproduce arithmetic only. For the email study,
+subtracting the rounded click rates gives 17.48 basis points, while its
+paired estimate is reported as 17.47 basis points. The distinction
+follows the precision of the published inputs; the calculation does not
+reconstruct campaign-level uncertainty.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_pricing.py}{evaluate\_pricing.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Solve an imposed pricing example and check published aggregate arithmetic.
+
+Python 3.10+, standard library. No empirical microdata or model APIs.
+Run: python3 03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_pricing.py
+"""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+# Population shares and dollar valuations for one purchase opportunity.
+GROUPS = {"L": (F(3, 5), F(6), F(10)),
+          "H": (F(2, 5), F(10), F(30))}
+
+
+def demand(price, low, high):
+    """Purchase probability under a uniform valuation distribution."""
+    if not low < high or price < 0:
+        raise ValueError("Require ordered valuation bounds and nonnegative price.")
+    return max(F(0), min(F(1), (high - price) / (high - low)))
+
+
+def surplus(price, low, high):
+    """Expected dollar surplus per eligible customer, including nonbuyers."""
+    demand(price, low, high)
+    if price <= low:
+        return (low + high) / 2 - price
+    return max(high - price, F(0)) ** 2 / (2 * (high - low))
+
+
+def best_uniform(groups):
+    """Check support boundaries and stationary points of piecewise revenue."""
+    bounds = sorted({F(0)} | {x for _, lo, hi in groups for x in (lo, hi)})
+    candidates = set(bounds)
+    for left, right in zip(bounds, bounds[1:]):
+        midpoint = (left + right) / 2
+        intercept, slope = F(0), F(0)
+        for weight, low, high in groups:
+            if midpoint < low:
+                intercept += weight
+            elif midpoint < high:
+                intercept += weight * high / (high - low)
+                slope += weight / (high - low)
+        if slope:
+            stationary = intercept / (2 * slope)
+            if left <= stationary <= right:
+                candidates.add(stationary)
+    revenue = lambda p: sum(w * p * demand(p, lo, hi)
+                            for w, lo, hi in groups)
+    return max(sorted(candidates), key=revenue)
+
+
+def evaluate(prices, reference):
+    if set(prices) != set(GROUPS):
+        raise ValueError("Every population group requires exactly one price.")
+    profit = customer_surplus = quantity = better = worse = F(0)
+    for name, (weight, low, high) in GROUPS.items():
+        price = prices[name]
+        q = demand(price, low, high)
+        profit += weight * price * q  # Marginal cost is stipulated to be zero.
+        customer_surplus += weight * surplus(price, low, high)
+        quantity += weight * q
+        if price < reference:
+            better += weight * q
+        elif price > reference:
+            worse += weight * demand(reference, low, high)
+    return {"profit_per_eligible_customer": profit,
+            "surplus_per_eligible_customer": customer_surplus,
+            "total_surplus_per_eligible_customer": profit + customer_surplus,
+            "purchase_share": quantity, "strictly_better_share": better,
+            "strictly_worse_share": worse}
+
+
+def main():
+    uniform = best_uniform(list(GROUPS.values()))
+    segmented = {g: best_uniform([cell]) for g, cell in GROUPS.items()}
+    policies = {"uniform": {g: uniform for g in GROUPS},
+                "segmented": segmented,
+                "discount_only": {g: min(p, uniform) for g, p in segmented.items()}}
+    results = {name: {"prices": prices, **evaluate(prices, uniform)}
+               for name, prices in policies.items()}
+    published = json.loads((ROOT / "published_aggregates.json").read_text())
+    clicks = published["causal_alignment"]["campaign_mean_click_rate_bp"]
+    revenues = published["personalized_pricing"]["realized_revenue_per_prospect"]
+    arithmetic = {
+        "click_lift_from_rounded_means_bp": clicks["tuned"] - clicks["control"],
+        "click_relative_lift_from_rounded_means": clicks["tuned"] / clicks["control"] - 1,
+        "pricing_relative_revenue_lift_from_rounded_means":
+            revenues["personalized"] / revenues["uniform"] - 1}
+    output = {"data_type": "Exact calculations for an imposed economic example",
+              "benchmark": "Revenue-maximizing uniform price in the same population",
+              "cost": 0, "groups": GROUPS, "results": results,
+              "published_aggregate_arithmetic": arithmetic,
+              "scope": "No reconstruction of empirical uncertainty or ethical verdict"}
+    (ROOT / "results.json").write_text(json.dumps(
+        output, indent=2, default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
+    for name, result in results.items():
+        print(name, {k: float(v) for k, v in result.items() if k != "prices"})
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-a-deployment-decision-with-reasons}{%
+\section{A Deployment Decision with
+Reasons}\label{M09-a-deployment-decision-with-reasons}}
+
+\noindent Consider a retailer proposing three changes: an AI-generated appeal, a
+price conditioned on customer information, and an experiment selecting
+the combination with the highest contribution margin. State the
+commercial objective and the recipient's likely purpose separately.
+Identify the information used for each decision, the basis of the
+offer's claims, and the options available to someone who refuses. Then
+specify a maxim that describes what the retailer would actually do.
+
+Evaluate three variants. In the first, the message accurately explains
+an optional discount and customers can obtain the published standard
+offer without data-based targeting. In the second, the model invents
+urgency to increase clicks. In the third, a firm uses an undisclosed
+inference about urgent need to raise an essential-good price during a
+disruption. For each variant, identify the evidence needed, the relevant
+Kantian argument, and the policy provisions whose jurisdiction and
+coverage require examination. The experimental methods can be similar
+even when the conduct differs substantially.
+
+A defensible recommendation should name the proposed action, its
+expected commercial effect, the affected customer outcomes, the ethical
+reason, and the condition that would change the decision. Rejecting an
+unsupported claim is part of critical judgment. So is recognizing
+evidence that weakens an initial accusation or supports a mutually
+beneficial practice.
+
 \end{document}

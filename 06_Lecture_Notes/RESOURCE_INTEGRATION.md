@@ -131,3 +131,7 @@ The [Queen and Zou snapshot and six related papers](../01_Resources/14_LLM_Evide
 ## Marketing Dialectics
 
 M9 links Kantian dialectic and ethics with Hume and Smith on institutional scrutiny and Confucian accounts of righteousness, trust, roles, and cultivation. The [41-entry library](../01_Resources/15_Marketing_Dialectics/README.md) separates original texts, adaptations, scholarly interpretation, research, and institutional cases. The new [renewal example](../03_Data_and_Code/Marketing_Dialectics/README.md) has complete source in §9.5; six diagrams clarify claims, premises, denominators, goals, scope, and burdens of justification. Session 14 and the syllabus include the chapter within existing meeting time.
+
+## AI Experimentation, Pricing, and Ethical Judgment
+
+[Four research contributions and primary policy sources](../01_Resources/16_AI_Experimentation_and_Pricing/README.md) inform M6 §6.21, M8 §8.20, and M9 §§9.14–9.18. [The executed pricing example](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) solves an original imposed population exactly, contrasts distributional and aggregate outcomes, and separately checks arithmetic from published summaries. It does not reproduce the papers' experiments or estimate ethical legitimacy. Two new TikZ figures show incidence and the role of justified restrictions.

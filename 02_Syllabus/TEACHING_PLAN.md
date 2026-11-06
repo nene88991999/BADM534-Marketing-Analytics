@@ -56,3 +56,7 @@ Use the [journal and affiliation analyses](../03_Data_and_Code/Consumer_Agency_L
 ## Revalidation Within Existing Meetings
 
 Use the [LLM evidence examples](../03_Data_and_Code/LLM_Revalidation/README.md) within existing blocks. Meeting 1 adds version provenance to the reproducibility discussion. Meeting 3 uses ten minutes of its worked comparison for selected claims and censored follow-up. Meeting 7 uses the generator-by-judge matrix within document-evaluation discussion. Meeting 11 uses fifteen minutes of its application block for paired regressions and failure costs. Meeting 14 incorporates revalidation and residual risk into its 35-minute workflow block, retaining the 75-minute ethics and regulation block. These are teaching activities; graded requirements remain unset.
+
+## AI Experimentation and Pricing
+
+Sessions 9 and 14 connect Misra and his coauthors' research to the choice of experimental objectives, pricing benchmarks, and customer incidence. The Kantian case examines truthful representation, treatment of persons, and the justification of constraints before optimization. The current policy record distinguishes New York disclosure law, proposed restrictions, FTC inquiries, and emergency price-gouging conditions. The 15 dated meetings, 170-minute duration, and unreleased assessment rules remain unchanged.

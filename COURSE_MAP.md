@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 68 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 70 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -93,3 +93,7 @@ The [LLM revalidation examples](03_Data_and_Code/LLM_Revalidation/README.md) con
 ## M9: Marketing Dialectics
 
 [Marketing Dialectics](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) extends the eight core modules with Kantian critique and ethics, scrutiny of corporate self-interest, and Confucian perspectives on marketing conduct. [Synthetic renewal and intent](03_Data_and_Code/Marketing_Dialectics/README.md) connects M2 measurement, M4 retention, M6 causal interpretation, and M7 recommendation objectives. Academic and industry cases examine advertising measurement, customer control, and environmental claims. The chapter fits the existing Session 14 ethics block. [Reading collection](01_Resources/15_Marketing_Dialectics/README.md).
+
+## AI Experimentation, Pricing, and Kantian Evaluation
+
+M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ research](01_Resources/16_AI_Experimentation_and_Pricing/README.md) to commercial objectives, distributional consequences, and recent pricing policy. [A solved synthetic example](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) compares common prices, segmented optima, and capped discounts. Sessions 9 and 14 carry the corresponding discussion.

@@ -1,0 +1,11 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.0cm,minimum height=1.5cm] (proposal) at (0,0) {Candidate messages\\or pricing policies};
+\node[box,draw=IlliniOrange,text width=3.6cm,minimum height=1.5cm] (permission) at (4.5,0) {Justified restrictions\\Truthfulness, data use,\\and effective refusal};
+\node[box,text width=3.0cm,minimum height=1.5cm] (rank) at (9,0) {Evaluate performance\\within the permitted set};
+\draw[edge] (proposal) -- (permission);
+\draw[accent] (permission) -- (rank);
+\node[align=center,text width=7.3cm,font=\small] (revise) at (4.5,-2.15) {Customer evidence can require revision\\of the proposal or its restrictions};
+\draw[edge,dashed] (rank.south) |- (revise.east);
+\draw[edge,dashed] (revise.north) -- (permission.south);
+\node[align=center,text width=11.5cm,font=\small] at (4.5,-3.5) {A higher commercial score supplies a ranking.\\An action also requires a justifiable principle and treatment of persons.};
+\end{tikzpicture}

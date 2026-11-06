@@ -13,6 +13,7 @@ Session 14. M8, M9. 170 minutes.
 - Map a marketing decision to the relevant evidence, jurisdiction, and rule status.
 - Examine the premises connecting commercial results to customer-benefit claims.
 - Compare Kantian, institutional, and Confucian reasons for a marketing recommendation.
+- Evaluate AI experimentation and personalized pricing through evidence, Kantian duties, and current policy scope.
 
 ## Related Materials
 
@@ -27,6 +28,7 @@ Session 14. M8, M9. 170 minutes.
 - [Marketing Dialectics](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md)
 - [Kantian, Institutional, and Confucian Readings](../01_Resources/15_Marketing_Dialectics/README.md)
 - [Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)
+- [AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -152,7 +154,39 @@ A fitted category describes the source protocol and selected model panel. The re
 
 Source: M8 §8.18.1; M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 13: Marketing Dialectics: Examine the Premise
+## Slide 13: AI Experimentation: Evidence and Safeguards
+
+- Causal Alignment learns from comparisons within past A/B tests.
+- Its field result concerns clicks, with human selection and content checks.
+- Customer benefit and informed choice require additional evidence.
+
+Panagiotis Angelopoulos, Kevin Lee, and Sanjog Misra; author version linked August 2026. Sections 4–5 report the randomized comparison; Appendix B screens unsupported claims and missing information. Respect those safeguards when critiquing the scope of the result.
+
+Source: https://leekevin.io/caLM.pdf
+
+## Slide 14: Personalized Pricing: Benchmark and Incidence
+
+- Dubé and Misra study employers purchasing recruiting services.
+- Their model predicts higher profit and lower total customer surplus.
+- A majority benefits; the later field comparison uses different price policies.
+
+The downloaded NBER June 2021 revision is linked to the published JPE 2023 paper. The 19% projected profit gain uses an optimized uniform benchmark. The rounded realized means in the later experiment imply about 10.1% higher revenue than its implemented uniform policy. Customer surplus is model-derived. This is a business purchasing setting, not an emergency retail case.
+
+Source: https://www.nber.org/papers/w23775
+
+## Slide 15: Majority Gains and Aggregate Customer Losses
+
+Synthetic population and solved prices; dollars per eligible customer.
+
+**Figure description:** Profit and customer surplus are compared on a common dollar axis for uniform pricing, segmented pricing, and capped discounts.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_pricing_distribution.tex)
+
+The two imposed valuation groups have shares 0.6 and 0.4. Segmentation benefits 60% but lowers aggregate customer surplus. Discount-only pricing improves profit and customer surplus relative to the optimal uniform benchmark in this population. Full source and exact arithmetic appear in Section 9.17.
+
+Source: Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 16: Marketing Dialectics: Examine the Premise
 
 - State the claim, its evidence, and the premise connecting them.
 - Kant examines reason’s demand for an unconditioned explanation.
@@ -162,7 +196,7 @@ Kant’s transcendental dialectic concerns metaphysical cognition. These marketi
 
 Source: Marketing Dialectics, §§9.1–9.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 14: Commercial Results and Customer Claims
+## Slide 17: Commercial Results and Customer Claims
 
 Causal, measurement, and ethical questions have different premises.
 
@@ -174,7 +208,7 @@ A randomized intervention can establish incremental purchases without establishi
 
 Source: Marketing Dialectics, §§9.1, 9.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 15: Self-Interest Creates a Burden of Justification
+## Slide 18: Self-Interest Creates a Burden of Justification
 
 A reason for scrutiny is distinct from evidence of misconduct.
 
@@ -186,7 +220,19 @@ Hume proposes institutional checks that work under private-interest pursuit and 
 
 Source: Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 16: Confucian Perspectives: Profit and Responsibility
+## Slide 19: Justify the Practice Before Ranking Its Performance
+
+A commercial ranking also needs a justified set of permissible actions.
+
+**Figure description:** Proposals pass through restrictions concerning truthful claims, data use, and refusal before performance ranking. Customer evidence can require revision.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_optimization_boundary.tex)
+
+Kantian duties cannot automatically be replaced by a finite penalty in an objective function. The proposed restrictions are contemporary applications requiring explicit justification. Human review and measured outcomes provide evidence; they do not mechanically define autonomy.
+
+Source: Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 20: Confucian Perspectives: Profit and Responsibility
 
 - Evaluate how profit is obtained and which relationships sustain it.
 - A trusted adviser or customer-care role carries standards of conduct.
@@ -196,7 +242,7 @@ Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.
 
 Source: Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 17: Truthful Challenge and Cultivated Judgment
+## Slide 21: Truthful Challenge and Cultivated Judgment
 
 - Harmony can include reasoned disagreement.
 - Learning and reflection should discipline an AI-generated answer.
@@ -206,7 +252,7 @@ Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and ref
 
 Source: Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 18: A Choice Procedure Can Change Renewal
+## Slide 22: A Choice Procedure Can Change Renewal
 
 - A direct offer and an offer preceded by questions can produce different choices.
 - The customer still makes the final selection.
@@ -216,7 +262,7 @@ Questions, defaults, or retention prompts can precede a fixed target decision. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 19: Opposed Interests
+## Slide 23: Opposed Interests
 
 Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
 
@@ -230,7 +276,7 @@ This conditional comparison holds the offer, monetary values, and relevant respo
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 20: Profit and Customer Value Can Move Oppositely
+## Slide 24: Profit and Customer Value Can Move Oppositely
 
 Synthetic probabilities and fixed stakes. Direct renewal is 20%.
 
@@ -242,7 +288,7 @@ The direct-choice benchmark is distinct from the consumer-preferred procedure. R
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 21: Experimentation Selects the Commercial Winner
+## Slide 25: Experimentation Selects the Commercial Winner
 
 - A fixed set of procedures has stable renewal probabilities.
 - Independent randomized samples estimate each probability.
@@ -252,7 +298,7 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 22: A Cancellation Evaluation
+## Slide 26: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -262,7 +308,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 23: Same Renewal, Different Customer Intent
+## Slide 27: Same Renewal, Different Customer Intent
 
 Synthetic populations: 1,000 customers each, one renewal month.
 
@@ -274,7 +320,7 @@ Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%
 
 Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 24: A Welfare Comparison
+## Slide 28: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -293,7 +339,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 25: Coding Exercise: A Marketing Evaluation
+## Slide 29: Coding Exercise: A Marketing Evaluation
 
 - Reproduce the two populations with identical billed renewal.
 - Keep unknown intent separate and compare the relevant denominators.
@@ -303,7 +349,7 @@ Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full pro
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 26: Federal Cancellation Policy: Current Status
+## Slide 30: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -313,7 +359,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 27: Cancellation Rules Differ by Jurisdiction
+## Slide 31: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -323,7 +369,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 28: Research Frequency and Policy Importance
+## Slide 32: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -333,7 +379,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 29: Pricing, Reviews, and Delivery
+## Slide 33: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -343,7 +389,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 30: Pricing Language and Regulatory Evidence
+## Slide 34: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -353,7 +399,17 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 31: Environmental Claims: Two Different Decisions
+## Slide 35: Personalized Pricing: Policy Status
+
+- FTC: August 2026 proposal; October 2026 information-gathering inquiry.
+- New York: disclosure law in effect; broader restrictions await enactment.
+- Price gouging requires its own covered circumstances and legal elements.
+
+Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section 6(b) orders do not establish violations. New York GBL 349-a applies to covered personal, family, and household purchases, with exceptions. S8623B/A9349B has legislative passage without recorded gubernatorial enactment. GBL 396-r addresses essential goods and services during abnormal market disruptions.
+
+Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
+
+## Slide 36: Environmental Claims: Two Different Decisions
 
 - 2023 Shell ads: the ASA upheld the overall-impression complaint.
 - 2025 Shell ad: the ASA accepted the contextualized communication.
@@ -363,7 +419,7 @@ UK ASA, June 7, 2023: omitted context about the balance of business activities m
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 32: A Product Fact and a Portfolio Impression
+## Slide 37: A Product Fact and a Portfolio Impression
 
 The scope of the conclusion determines the evidence required.
 
@@ -375,7 +431,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 33: A Decision With Consumer Outcomes
+## Slide 38: A Decision With Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

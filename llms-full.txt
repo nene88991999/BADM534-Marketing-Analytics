@@ -94,7 +94,11 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/LLM_Revalidation/results/README.md",
     "01_Resources/15_Marketing_Dialectics/README.md",
     "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+    "06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/README.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/CLAIM_ASSESSMENT.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md",
+    "03_Data_and_Code/AI_Experimentation_and_Pricing/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -143,12 +147,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-06-marketing-dialectics",
+    "revision": "2026-11-06-ai-experimentation-pricing",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 68,
-    "pages": 242,
+    "figures_count": 70,
+    "pages": 253,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -213,7 +217,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 301,
+    "slides": 308,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -306,6 +310,19 @@ Generated from course.json and the source files identified below. This file cont
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06"
+  },
+  "ai_experimentation_pricing": {
+    "resources": "01_Resources/16_AI_Experimentation_and_Pricing/README.md",
+    "catalog": "01_Resources/16_AI_Experimentation_and_Pricing/catalog.json",
+    "example": "03_Data_and_Code/AI_Experimentation_and_Pricing/README.md",
+    "sections": [
+      "M6 \u00a76.21",
+      "M8 \u00a78.20",
+      "M9 \u00a7\u00a79.14\u20139.18"
+    ],
+    "research_papers": 4,
+    "policy_verified_on": "2026-11-06",
+    "scope": "Evidence-based evaluation of objectives and deployment practices; distinct from judgments of author intent"
   }
 }
 ```
@@ -372,6 +389,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Marketing Dialectics
 
 [Chapter 9](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines marketing claims through Kantian critique and ethics, Hume and Smith on interested power, and Confucian insights on conduct. It includes a [standalone PDF](06_Lecture_Notes/Marketing_Dialectics.pdf), [reproducible Python case](03_Data_and_Code/Marketing_Dialectics/README.md), and [categorized reading library](01_Resources/15_Marketing_Dialectics/README.md).
+
+## AI Experimentation and Pricing
+
+[The research and policy case](01_Resources/16_AI_Experimentation_and_Pricing/README.md) connects AI-assisted experiments and personalized pricing to Kantian ethical evaluation. Marketing Dialectics includes the detailed argument, source-specific qualifications, and [complete reproducible calculations](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md).
 
 ---
 
@@ -487,7 +508,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 68 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 70 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -559,6 +580,10 @@ The [LLM revalidation examples](03_Data_and_Code/LLM_Revalidation/README.md) con
 ## M9: Marketing Dialectics
 
 [Marketing Dialectics](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) extends the eight core modules with Kantian critique and ethics, scrutiny of corporate self-interest, and Confucian perspectives on marketing conduct. [Synthetic renewal and intent](03_Data_and_Code/Marketing_Dialectics/README.md) connects M2 measurement, M4 retention, M6 causal interpretation, and M7 recommendation objectives. Academic and industry cases examine advertising measurement, customer control, and environmental claims. The chapter fits the existing Session 14 ethics block. [Reading collection](01_Resources/15_Marketing_Dialectics/README.md).
+
+## AI Experimentation, Pricing, and Kantian Evaluation
+
+M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ research](01_Resources/16_AI_Experimentation_and_Pricing/README.md) to commercial objectives, distributional consequences, and recent pricing policy. [A solved synthetic example](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) compares common prices, segmented optima, and capped discounts. Sessions 9 and 14 carry the corresponding discussion.
 
 ---
 
@@ -708,6 +733,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Renewal and Customer Intent](Marketing_Dialectics/README.md) constructs two populations with the same billing rate and different unwanted-renewal shares. The standard-library program preserves population denominators and unknown intent. Complete code appears in Chapter 9; the comparison is synthetic and descriptive.
 
+## AI Experimentation and Pricing
+
+[Exact synthetic pricing comparisons](AI_Experimentation_and_Pricing/README.md) distinguish profit, aggregate surplus, and customer incidence. A separate calculation checks rounded published means, with source and version records.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -716,7 +745,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 6, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 68 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 70 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -730,7 +759,7 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdo
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; six editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; eight editable TikZ figures |
 
 The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
 
@@ -744,7 +773,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 242 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 253 pages.
 
 ## Editing and Building
 
@@ -790,7 +819,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 41 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 56 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -810,9 +839,13 @@ M1 §1.13, M2 §2.21, M5 §5.18, M7 §7.22, and M8 §8.18.1 connect AI claims to
 
 ## Marketing Dialectics
 
-[Chapter 9](modules/M09_Marketing_Dialectics.md) and its [standalone PDF](Marketing_Dialectics.pdf) develop critical evaluation of marketing claims and conduct. Kantian arguments are distinguished from Hume and Smith on scrutiny of private interests and from Confucian perspectives on righteousness, trustworthiness, roles, and cultivation. The chapter includes a complete synthetic renewal program, six TikZ figures, and academic, industry, and regulatory cases. It is integrated into Session 14 without adding meetings. The notes builder also regenerates the standalone chapter.
+[Chapter 9](modules/M09_Marketing_Dialectics.md) and its [standalone PDF](Marketing_Dialectics.pdf) develop critical evaluation of marketing claims and conduct. Kantian arguments are distinguished from Hume and Smith on scrutiny of private interests and from Confucian perspectives on righteousness, trustworthiness, roles, and cultivation. The chapter includes complete synthetic renewal and pricing programs, eight TikZ figures, and academic, industry, and regulatory cases. It is integrated into Session 14 without adding meetings. The notes builder also regenerates the standalone chapter.
 
 The [categorized library](../01_Resources/15_Marketing_Dialectics/README.md) records 41 source entries, 35 downloaded files, and nine full-work access gaps. Source-record counts include different editions and reference entries. Copyright-restricted originals remain in Dropbox; the public guides preserve links and reading scope.
+
+## AI Experimentation and Pricing
+
+Marketing Dialectics, Sections 9.14–9.18, provides a detailed Kantian evaluation of four papers by Sanjog Misra and coauthors, their safeguards and welfare findings, and recent pricing-policy debates. M6 §6.21 and M8 §8.20 connect the case to experimentation and current methods. [Code and exact synthetic results](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) accompany the complete Python source in the notes.
 
 ---
 
@@ -938,6 +971,10 @@ Sessions 01, 03, 07, 11, and 14 incorporate versioned claims, censored follow-up
 ## Marketing Dialectics in Session 14
 
 Session 14 incorporates [Chapter 9](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) in the existing 75-minute ethics block. New material examines Kantian premises and respect for persons, conflicting commercial interests, Confucian conduct, identical renewal with different customer intent, and contrasting environmental-claim rulings. The [session plan](SESSION_PLAN.md) preserves all 15 dated meetings and pending assessment rules.
+
+## AI Experimentation and Pricing
+
+Sessions 9 and 14 incorporate the [research and policy case](../01_Resources/16_AI_Experimentation_and_Pricing/README.md). The detailed Kantian argument and complete pricing code are in Marketing Dialectics, Sections 9.14–9.18.
 
 ---
 
@@ -1393,6 +1430,10 @@ The [Queen and Zou snapshot and six related papers](../01_Resources/14_LLM_Evide
 
 M9 links Kantian dialectic and ethics with Hume and Smith on institutional scrutiny and Confucian accounts of righteousness, trust, roles, and cultivation. The [41-entry library](../01_Resources/15_Marketing_Dialectics/README.md) separates original texts, adaptations, scholarly interpretation, research, and institutional cases. The new [renewal example](../03_Data_and_Code/Marketing_Dialectics/README.md) has complete source in §9.5; six diagrams clarify claims, premises, denominators, goals, scope, and burdens of justification. Session 14 and the syllabus include the chapter within existing meeting time.
 
+## AI Experimentation, Pricing, and Ethical Judgment
+
+[Four research contributions and primary policy sources](../01_Resources/16_AI_Experimentation_and_Pricing/README.md) inform M6 §6.21, M8 §8.20, and M9 §§9.14–9.18. [The executed pricing example](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) solves an original imposed population exactly, contrasts distributional and aggregate outcomes, and separately checks arithmetic from published summaries. It does not reproduce the papers' experiments or estimate ethical legitimacy. Two new TikZ figures show incidence and the role of justified restrictions.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1752,12 +1793,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 29 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 21 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 21 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 33 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -1926,7 +1967,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
 
-**Application:** Compare treatment effects over initial and subsequent customer outcomes.
+**Application:** Compare treatment effects, AI-generated proposals, and outcomes that represent customers as well as the firm.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice
 
@@ -2024,21 +2065,21 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.
+**Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope
 
 | Elapsed Minutes | Activity |
 | --- | --- |
-| 0–35 | Demand and Subscription Measurement |
-| 35–70 | AI Workflow and Calculation |
+| 0–25 | Demand and AI Workflow |
+| 25–50 | AI-Assisted Experiments |
+| 50–70 | Pricing Evidence and Benchmarks |
 | 70–80 | Break |
-| 80–95 | Kant, Claims, and Hidden Premises |
-| 95–115 | Self-Interest, Confucian Conduct, and Justification |
-| 115–135 | Renewal, Intent, and Reproducible Calculation |
-| 135–155 | Cancellation Rules and Environmental Claims |
+| 80–100 | Kantian and Confucian Justification |
+| 100–130 | Pricing, Renewal, and Reproducible Calculation |
+| 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
@@ -2128,6 +2169,10 @@ Use the [journal and affiliation analyses](../03_Data_and_Code/Consumer_Agency_L
 
 Use the [LLM evidence examples](../03_Data_and_Code/LLM_Revalidation/README.md) within existing blocks. Meeting 1 adds version provenance to the reproducibility discussion. Meeting 3 uses ten minutes of its worked comparison for selected claims and censored follow-up. Meeting 7 uses the generator-by-judge matrix within document-evaluation discussion. Meeting 11 uses fifteen minutes of its application block for paired regressions and failure costs. Meeting 14 incorporates revalidation and residual risk into its 35-minute workflow block, retaining the 75-minute ethics and regulation block. These are teaching activities; graded requirements remain unset.
 
+## AI Experimentation and Pricing
+
+Sessions 9 and 14 connect Misra and his coauthors' research to the choice of experimental objectives, pricing benchmarks, and customer incidence. The Kantian case examines truthful representation, treatment of persons, and the justification of constraints before optimization. The current policy record distinguishes New York disclosure law, proposed restrictions, FTC inquiries, and emergency price-gouging conditions. The 15 dated meetings, 170-minute duration, and unreleased assessment rules remain unchanged.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -2190,6 +2235,10 @@ The [literature codebook](../03_Data_and_Code/Consumer_Agency_Literature/CODEBOO
 ## Marketing Dialectics and Environmental Claims
 
 M9 §§9.8 and 9.10 separate regulatory findings, philosophical evaluation, and the institutional burden of substantiating an interested claim. UK ASA rulings on Shell dated [June 7, 2023](https://www.asa.org.uk/rulings/shell-uk-ltd-g22-1170842-shell-uk-ltd.html) and [April 9, 2025](https://www.asa.org.uk/rulings/shell-uk-ltd-g24-1248246-shell-uk-ltd.html) were checked November 6, 2026. The first upheld the overall-environmental-impression issue while rejecting a separate electricity issue; the second did not uphold the complaint about a different ad with qualifying context. These are decisions on specific communications, not statutes with a general effective date. The 2025 ruling expressly applies the code wording relevant to the earlier complaint. The [resource guide](../01_Resources/15_Marketing_Dialectics/04_Industry_and_Regulation/README.md) retains source links and local snapshots.
+
+## AI Experimentation and Personalized Pricing
+
+M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 examine commercial outcomes, customer surplus, and Kantian duties separately. The [primary policy record](../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md), checked November 6, 2026, covers the FTC August proposal and October inquiry, New York's existing disclosure law, pending surveillance-pricing legislation, and price-gouging scope. The paper review preserves explicit safeguards and distributional findings that constrain criticism.
 
 ---
 
@@ -2356,7 +2405,7 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. This course connects those questions to customer measurement, visualization, regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems. Applications inform product design, acquisition, retention, pricing, and marketing budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy and critical analysis of commercial incentives.
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy, including AI-assisted experimentation, personalized pricing, and commercial incentives.
 
 ## Learning Objectives
 
@@ -3338,6 +3387,449 @@ For each decision, formulate the strongest defensible argument in favor of the p
 The [categorized research collection](../../01_Resources/15_Marketing_Dialectics/README.md) links the primary texts, scholarly interpretations, marketing research, and industry cases. It identifies full texts, excerpts, versions, and remaining access gaps. The two ASA decisions, the advertising-measurement study, and the subscription-interface research supply contrasting empirical and institutional settings for assessing the scope of a marketing argument.
 
 For scrutiny of interested claims, read Hume's opening paragraphs on institutional checks and Smith's conclusion to Book I, chapter XI. For Confucian perspectives, compare *Analects* 2.15, 4.5, 4.16, 12.7, 13.3, 13.23, 14.22, and 15.24 with *Mencius* 1A.1 and 2A.6 and Xunzi's discussion of human nature. The resource guide distinguishes the original settings, translation choices, and proposed marketing applications.
+
+## 9.14 AI Experimentation and the Choice of an Objective
+
+A marketing manager can use past experiments to generate more effective messages, estimate how different customers respond to prices, and choose a policy for future deployment. The commercial question concerns the action that improves the firm's outcome. The ethical question concerns the reasons for choosing that action and its treatment of the people affected. Increasing the precision of the first answer can increase the importance of the second. A firm that learns to extract value more accurately needs a correspondingly clear account of which forms of extraction are permissible.
+
+Sanjog Misra's collaborations offer several distinct settings for examining that relationship. *Causal Alignment* concerns language generation informed by email experiments. *Personalized Pricing and Consumer Welfare* studies pricing and the distribution of surplus. *Robust A/B Decisions* considers decisions under uncertainty about future conditions. *Coarse Personalization* considers which segments and treatments a firm should implement. Their findings and objectives must be evaluated separately. The [research guide](../../01_Resources/16_AI_Experimentation_and_Pricing/01_Research/README.md) identifies the versions, reading locations, and commercial settings.
+
+### 9.14.1 Learning from Experimental Comparisons
+
+Angelopoulos, Lee, and Misra's *Causal Alignment* trains a language model using higher- and lower-performing messages from the same historical experiment. In 36 new campaigns involving approximately 283 million email impressions, its human-assisted workflow produces about 32% higher mean click rates than unassisted human experts. Table 2 averages campaigns equally. The paper retains human selection and describes screening against unsupported claims and omitted information. The experiment measures link clicks; it supplies no corresponding causal estimate of customers' informed benefit. [August 2026 author version, Sections 4–5 and Appendix B](https://leekevin.io/caLM.pdf).
+
+A within-campaign comparison can remove confounding due to a shared audience and context when assignment is randomized. Reusing those comparisons as training labels then inherits the definition of success in the original outcome. If a useful explanation and an obstructive appeal both increase clicks, the click label alone does not distinguish their reasons. Human review can impose an additional standard, but the reviewer needs authority and evidence to apply it. Review by a person rewarded for commercial performance does not automatically represent the interests of recipients.
+
+Appendix A also describes steering emotional valence, including fear. An accurate warning can help a customer deliberate. An invented threat or false deadline can distort that deliberation. The ethical distinction depends on the content, its truth, the circumstances, and the recipient's opportunity to assess it. The appearance of an emotional category in a method establishes a capability; it does not establish that the deployed campaigns used deception.
+
+### 9.14.2 Pricing, Profit, and Customer Surplus
+
+Dubé and Misra's pricing study concerns prospective employers purchasing recruiting services. Its model projects a 19% profit gain from personalization relative to the optimized uniform price, alongside a 23% decline in total customer surplus in the June 2021 version. More than 60% of customers benefit under that comparison. The later field test uses a different uniform benchmark and capped personalized prices. Its rounded realized revenue means imply about a 10.1% advantage for personalization. Consumer surplus is calculated through the demand model. [NBER revision, Sections 4–5](https://www.nber.org/system/files/working_papers/w23775/w23775.pdf); published as *Journal of Political Economy* 131(1), 2023.
+
+These results expose an economically meaningful conflict: a policy can increase profit and benefit a majority while reducing the sum of customer surplus. The incidence of gains and losses therefore matters alongside their aggregate. A claim that every customer loses would misstate the evidence. Equally, the fact that a majority gains supplies no automatic justification for how a losing minority is treated. The authors examine alternative welfare weights and the consequences of restricting data. That analysis creates a basis for criticism of particular objectives and policy choices.
+
+The benchmark also matters. A price increase from an initially low uniform price combines the exercise of previously unused market power with the effect of personalization. A comparison with an already optimized uniform price isolates a different change. The model's forecast and the later experiment use different price policies, so their percentage gains answer different questions. Neither comparison is an experiment in emergency pricing of household necessities.
+
+### 9.14.3 Robustness and Segmentation
+
+Farrell, Korganbekova, and Misra's *Robust A/B Decisions* ranks policies using an ambiguity-adjusted value of the chosen outcome. It evaluates deployment decisions using 552 advertising experiments. Its distinction between statistical significance and an economic decision is useful, as is its concern about changing deployment conditions. A robust commercial payoff still requires an independently justified objective. Protecting the firm against an unfavorable shift in customers does not by itself protect customers against an unfavorable policy. [September 2026 version, Sections 1–3](https://arxiv.org/abs/2609.07633).
+
+Zhang and Misra's *Coarse Personalization* chooses a limited set of treatments and assigns customers to them. In its application, five segments recover over 99.5% of the estimated incremental profit under full personalization. The paper discusses fairness and stability as practical concerns. A smaller treatment menu can simplify oversight; the number of segments alone does not establish that the assignment principle is justifiable. Customers in a single segment may still face an objectionable use of data. [June 2025 revision, introduction and application](https://arxiv.org/abs/2204.05793v4).
+
+## 9.15 Pricing Policy: What Conduct is Being Evaluated?
+
+Price discrimination means that different buyers face different prices for comparable offerings in an economically relevant sense. Dynamic pricing changes prices with conditions. Personalized algorithmic pricing conditions a quoted price on information about a particular buyer. Price gouging is a legal category with jurisdiction-specific conditions concerning the market disruption, covered goods, price, and justification. Algorithmic coordination between competitors introduces another question concerning competitive conduct. These descriptions can overlap, but none supplies the legal elements of the others.
+
+The FTC's August 19, 2026 proposed enforcement policy statement creates a direct connection to the pricing study: it cites Dubé and Misra while discussing the uncertain distributional effects of personalization. Its proposed approach emphasizes disclosure when customers reasonably expect a common price, including the basis for personalization and categories of data used. It separately considers deception and unfairness. The document is a proposed enforcement statement listed in the FTC's legal library, with no new blanket prohibition on individualized pricing. An enforcement action still requires an applicable legal violation. [FTC proposal, pages 3–8](https://www.ftc.gov/system/files/ftc_gov/pdf/p034101-ftc-enforcement-policy-statement-re-personalized-pricing-proposed-for-public-comment.pdf).
+
+New York's General Business Law §349-a requires specified disclosures for covered personalized algorithmic prices. The law took effect on November 10, 2025. Its consumer definition concerns personal, family, or household use and includes listed exceptions. That scope differs from the employer purchasing decision in the recruiting study. The 2026 One Fair Price legislation, S8623B/A9349B, would impose broader restrictions; the official record checked on November 6 shows legislative passage without recorded gubernatorial enactment. These are different stages of legal authority. [Current §349-a](https://www.nysenate.gov/legislation/laws/GBS/349-A); [effective-date notice](https://ag.ny.gov/press-release/2025/attorney-general-james-warns-new-yorkers-about-algorithmic-pricing-new-law-takes); [bill status](https://www.nysenate.gov/legislation/bills/2025/S8623).
+
+New York's price-gouging law concerns unconscionably excessive prices for essential goods and services during abnormal market disruptions. Its application considers the relevant prices, conduct, and cost justifications. A high willingness-to-pay prediction or a positive experimental revenue effect supplies none of those legal findings by itself. The Attorney General's January 2026 inquiry into Instacart's pricing experiments likewise constitutes an inquiry, with requests for information about the experiments and compliance. It is not an adjudication of the academic papers. [Price-gouging guidance](https://ag.ny.gov/resources/individuals/consumer-issues/price-gouging); [January 8 inquiry](https://ag.ny.gov/press-release/2026/attorney-general-james-demands-answers-instacart-about-algorithmic-pricing).
+
+The FTC opened a further inquiry on October 28, 2026, requesting information directly from nine companies about personalized pricing and compensation. These Section 6(b) orders seek evidence about actual practices; they do not establish that the recipients violated the law. The August enforcement statement remains described as proposed in this later notice. [FTC inquiry](https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry).
+
+The marketing decision is whether a proposed practice meets the applicable requirements and merits deployment on ethical grounds. A lawful price may still require a moral defense. A philosophical objection should also identify the conduct at issue rather than treating an algorithm's presence as a verdict. The [policy source record](../../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md) records jurisdiction, status, coverage, and the November 6, 2026 verification date.
+
+## 9.16 A Kantian Critique of Commercial Optimization
+
+### 9.16.1 An Effective Means and a Justifiable End
+
+Kant's distinction between hypothetical and categorical imperatives identifies a missing step in a commercial recommendation. An instruction to choose the policy that increases profit is conditional on the end being pursued. Statistical evidence can improve the choice of means to that end. It does not establish the authority of the end over every affected person. The objection becomes sharp when a decision maker treats successful optimization as a sufficient reason to deploy, despite unresolved objections concerning deception, misuse of information, or obstruction of refusal. [Kant, *Groundwork*, second section, Akademie 4:414–421](https://www.gutenberg.org/ebooks/5682).
+
+The criticism applies to the transition from a performance result to a recommendation. A study may legitimately estimate a commercial capability, including one that exposes a welfare loss. A deployment recommendation carries the additional burden of justifying the conduct it endorses. Research that measures harmful consequences can improve that evaluation. The existence of a profit objective in a statistical problem is therefore insufficient evidence about an author's moral commitments.
+
+### 9.16.2 Humanity and the Conditions of Deliberation
+
+The humanity formulation requires treating persons as ends and never merely as means. Exchange ordinarily involves using another person's abilities or resources to pursue an end. Respect additionally requires attention to the other person's capacity to understand, set purposes, and act on reasons. A message designed to create a false belief so that someone buys serves the seller by impairing that capacity. A truthful explanation can improve both conversion and understanding. The difference lies in how the decision is obtained. [Kant, *Groundwork*, Akademie 4:429–430](https://www.gutenberg.org/ebooks/5682).
+
+For AI-generated communication, this principle motivates checking the evidence for factual claims, the visibility of consequential terms, and the opportunity to refuse. The acceptability checks in *Causal Alignment* address some of these concerns. Further questions concern the truth of the underlying offer, whether customers understand it, and whether the improved response advances a purpose they can endorse. A subject line can preserve its input's meaning while carrying forward a misleading premise already present in that input. These are questions for additional evidence, not findings that the studied campaigns were deceptive.
+
+For personalized prices, the relevant conduct includes obtaining data, explaining its use, and presenting the offer. An inference that a person has few alternatives can reflect an urgent need. A Kantian criticism of exploiting that need must explain how the practice treats the person's agency or permissible ends. High willingness to pay is not, by itself, a measure of wealth or vulnerability. The interpretation requires the setting and the information actually used.
+
+### 9.16.3 Universalization Requires a Specified Maxim
+
+A maxim identifies the circumstances, action, and purpose. Consider a hypothetical seller who describes a price as a special saving while secretly raising it using an estimate of the buyer's disposable income. The maxim concerns inducing reliance on a representation the seller knows to be false. Its general adoption threatens the credibility on which that representation depends. The objection attaches to deception, even if a randomized test precisely measures the resulting sales increase.
+
+A publicly explained discount for a customer group presents a different maxim. Different prices alone supply no contradiction in universal law. Students must ask why the grouping is relevant, whether its data use is permissible, and whether the principle could be adopted consistently by people acting as rational agents. The universal-law test cannot be replaced with either a vote on whether a price is popular or the analyst's dislike of its distributional result. [Kant, *Groundwork*, Akademie 4:421–424](https://www.gutenberg.org/ebooks/5682).
+
+### 9.16.4 Dignity and the Limits of a Weighted Objective
+
+A manager might add a customer-outcome term to profit and optimize their weighted sum. This can improve attention to consequences, but any finite weight allows sufficiently large profit to compensate for a penalty. If the objection concerns a duty against deception, that specification makes the duty negotiable. Kant's distinction between price and dignity supplies a reason to examine which actions should be excluded before commercial ranking. A measurable proxy for respectful treatment remains subject to scrutiny. [Kant, *Groundwork*, Akademie 4:434–435](https://www.gutenberg.org/ebooks/5682).
+
+![Candidate messages or prices first face justified restrictions concerning truthfulness, data use, and effective refusal. Performance is compared within the permitted set. Customer evidence can require revision of the restrictions or the proposal.](../figures/M09_optimization_boundary.png)
+
+A contemporary implementation could exclude fabricated urgency, prohibit using sensitive information outside the permitted purpose, preserve an effective decline option, and require substantiation of claims. The justification for each restriction must remain explicit. A numerical threshold for comprehension or a reviewer's approval is evidence relevant to that justification; neither is a complete operational definition of Kantian autonomy.
+
+### 9.16.5 A Supported Judgment About Ethical Cost
+
+The strongest supported criticism concerns the incompleteness of an exclusively commercial decision rule. More accurate optimization can intensify an existing conflict between the firm's objective and the conditions of customer agency. An ethical failure follows when the chosen practice violates a justified duty, such as truthful representation, and the firm treats its performance gain as permission to proceed. Establishing that failure requires evidence about the practice and an argument about the duty.
+
+The pricing paper supplies a concrete case in which modeled firm profit rises while aggregate customer surplus falls. The email paper supplies a case in which improved causal performance leaves the recipient's informed benefit as a separate question, while incorporating safeguards that deserve evaluation. Together, they make demanding examples for assessing the proposition that marketing effectiveness can come at an ethical cost. A responsible conclusion can reject a particular deployment, require changes, or endorse a justified use. It should identify the responsible action and evidence, preserving the distinction between a scholar's contribution, a firm's implementation, and an analyst's own normative inference.
+
+## 9.17 Reproduce Profit and Customer Incidence
+
+### 9.17.1 A Solved Synthetic Pricing Comparison
+
+A firm offers one product to a fixed population over one purchase opportunity. The comparison changes the permitted price policy while holding the population, preferences, costs, and outside option fixed. The following assumptions define an original illustration, without calibration to the papers' data.
+
+\begin{assumption}\label{ass:pricing-population}
+Group L has population share $0.6$ and valuations uniformly distributed on $[6,10]$ dollars. Group H has share $0.4$ and valuations uniformly distributed on $[10,30]$ dollars. Group membership has no demographic interpretation.
+\end{assumption}
+
+\begin{assumption}\label{ass:pricing-choice}
+Each customer buys one unit when valuation is at least the offered price. Utility is valuation less price upon purchase and zero otherwise. Marginal cost is zero. The firm observes group membership and the valuation distributions, but does not observe individual valuations.
+\end{assumption}
+
+\begin{assumption}\label{ass:pricing-policies}
+The firm can post one common price or one price per group. A third policy permits group-specific discounts subject to a cap at the revenue-maximizing common price. Offers are taken as accurately described. Changes in information, privacy, deliberation, and later demand are outside this illustration.
+\end{assumption}
+
+For a group $g$ with valuation support $[a_g,b_g]$ and population weight $w_g$, demand is $q_g(p)=\Pr(v\geq p\mid g)$. Expected profit and customer surplus per eligible customer are
+
+$$
+\Pi=\sum_g w_g p_g q_g(p_g),\qquad
+CS=\sum_g w_g\,\mathbb{E}[\max(v-p_g,0)\mid g].
+$$
+
+Both quantities are in dollars and include nonbuyers in their denominator. Under Assumptions \ref{ass:pricing-population}–\ref{ass:pricing-policies}, the optimal common price is $19/3$, approximately $6.33. The group-specific optima are $6$ and $15$. Capping personalized offers at the common benchmark retains the $6$ discount for L and the common price for H. These optima follow by checking support boundaries and the stationary points of piecewise quadratic revenue.
+
+| Policy | Profit per Customer | Customer Surplus | Purchase Share | Better Off | Worse Off |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Optimal Uniform | $6.0167 | $6.4750 | 95% | 0% | 0% |
+| Group-Specific Optimum | $8.1000 | $3.4500 | 90% | 60% | 40% |
+| Discounts Capped at Benchmark | $6.1333 | $6.6667 | 100% | 60% | 0% |
+
+Better and worse refer to each person's monetary surplus relative to the common-price benchmark in the same population. Under the group-specific optimum, the gains to L are outweighed in the aggregate by the losses to H. A majority-benefit statement and an aggregate-loss statement are simultaneously correct. Under the capped policy, profit and customer surplus both increase. The restriction changes the solution, and its consequences depend on the stipulated distributions.
+
+![Expected firm profit and customer surplus share the same dollar scale across three synthetic policies. Group-specific optimization increases profit and lowers aggregate customer surplus despite benefiting a majority. Capped discounts increase both measures relative to the uniform benchmark.](../figures/M09_pricing_distribution.png)
+
+The monetary comparison does not compute a moral verdict. Accurate disclosure and permissible data use would still require evaluation in an application. The example demonstrates why neither personalization nor a majority-gain statistic determines the ethical conclusion. It also makes the benchmark explicit: replacing the common-price optimum with an arbitrary high price would change the apparent gains from discounts.
+
+### 9.17.2 Python Calculation and Published Aggregates
+
+The program integrates each group's demand and surplus exactly using rational arithmetic. It checks common-price candidates at all support boundaries and interior revenue maxima, solves group-specific prices, and evaluates the cap. A separate input file records rounded published means. Those means reproduce arithmetic only. For the email study, subtracting the rounded click rates gives 17.48 basis points, while its paired estimate is reported as 17.47 basis points. The distinction follows the precision of the published inputs; the calculation does not reconstruct campaign-level uncertainty.
+
+Python source: [evaluate_pricing.py](../../03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_pricing.py)
+
+```python
+"""Solve an imposed pricing example and check published aggregate arithmetic.
+
+Python 3.10+, standard library. No empirical microdata or model APIs.
+Run: python3 03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_pricing.py
+"""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+# Population shares and dollar valuations for one purchase opportunity.
+GROUPS = {"L": (F(3, 5), F(6), F(10)),
+          "H": (F(2, 5), F(10), F(30))}
+
+
+def demand(price, low, high):
+    """Purchase probability under a uniform valuation distribution."""
+    if not low < high or price < 0:
+        raise ValueError("Require ordered valuation bounds and nonnegative price.")
+    return max(F(0), min(F(1), (high - price) / (high - low)))
+
+
+def surplus(price, low, high):
+    """Expected dollar surplus per eligible customer, including nonbuyers."""
+    demand(price, low, high)
+    if price <= low:
+        return (low + high) / 2 - price
+    return max(high - price, F(0)) ** 2 / (2 * (high - low))
+
+
+def best_uniform(groups):
+    """Check support boundaries and stationary points of piecewise revenue."""
+    bounds = sorted({F(0)} | {x for _, lo, hi in groups for x in (lo, hi)})
+    candidates = set(bounds)
+    for left, right in zip(bounds, bounds[1:]):
+        midpoint = (left + right) / 2
+        intercept, slope = F(0), F(0)
+        for weight, low, high in groups:
+            if midpoint < low:
+                intercept += weight
+            elif midpoint < high:
+                intercept += weight * high / (high - low)
+                slope += weight / (high - low)
+        if slope:
+            stationary = intercept / (2 * slope)
+            if left <= stationary <= right:
+                candidates.add(stationary)
+    revenue = lambda p: sum(w * p * demand(p, lo, hi)
+                            for w, lo, hi in groups)
+    return max(sorted(candidates), key=revenue)
+
+
+def evaluate(prices, reference):
+    if set(prices) != set(GROUPS):
+        raise ValueError("Every population group requires exactly one price.")
+    profit = customer_surplus = quantity = better = worse = F(0)
+    for name, (weight, low, high) in GROUPS.items():
+        price = prices[name]
+        q = demand(price, low, high)
+        profit += weight * price * q  # Marginal cost is stipulated to be zero.
+        customer_surplus += weight * surplus(price, low, high)
+        quantity += weight * q
+        if price < reference:
+            better += weight * q
+        elif price > reference:
+            worse += weight * demand(reference, low, high)
+    return {"profit_per_eligible_customer": profit,
+            "surplus_per_eligible_customer": customer_surplus,
+            "total_surplus_per_eligible_customer": profit + customer_surplus,
+            "purchase_share": quantity, "strictly_better_share": better,
+            "strictly_worse_share": worse}
+
+
+def main():
+    uniform = best_uniform(list(GROUPS.values()))
+    segmented = {g: best_uniform([cell]) for g, cell in GROUPS.items()}
+    policies = {"uniform": {g: uniform for g in GROUPS},
+                "segmented": segmented,
+                "discount_only": {g: min(p, uniform) for g, p in segmented.items()}}
+    results = {name: {"prices": prices, **evaluate(prices, uniform)}
+               for name, prices in policies.items()}
+    published = json.loads((ROOT / "published_aggregates.json").read_text())
+    clicks = published["causal_alignment"]["campaign_mean_click_rate_bp"]
+    revenues = published["personalized_pricing"]["realized_revenue_per_prospect"]
+    arithmetic = {
+        "click_lift_from_rounded_means_bp": clicks["tuned"] - clicks["control"],
+        "click_relative_lift_from_rounded_means": clicks["tuned"] / clicks["control"] - 1,
+        "pricing_relative_revenue_lift_from_rounded_means":
+            revenues["personalized"] / revenues["uniform"] - 1}
+    output = {"data_type": "Exact calculations for an imposed economic example",
+              "benchmark": "Revenue-maximizing uniform price in the same population",
+              "cost": 0, "groups": GROUPS, "results": results,
+              "published_aggregate_arithmetic": arithmetic,
+              "scope": "No reconstruction of empirical uncertainty or ethical verdict"}
+    (ROOT / "results.json").write_text(json.dumps(
+        output, indent=2, default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
+    for name, result in results.items():
+        print(name, {k: float(v) for k, v in result.items() if k != "prices"})
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 9.18 A Deployment Decision with Reasons
+
+Consider a retailer proposing three changes: an AI-generated appeal, a price conditioned on customer information, and an experiment selecting the combination with the highest contribution margin. State the commercial objective and the recipient's likely purpose separately. Identify the information used for each decision, the basis of the offer's claims, and the options available to someone who refuses. Then specify a maxim that describes what the retailer would actually do.
+
+Evaluate three variants. In the first, the message accurately explains an optional discount and customers can obtain the published standard offer without data-based targeting. In the second, the model invents urgency to increase clicks. In the third, a firm uses an undisclosed inference about urgent need to raise an essential-good price during a disruption. For each variant, identify the evidence needed, the relevant Kantian argument, and the policy provisions whose jurisdiction and coverage require examination. The experimental methods can be similar even when the conduct differs substantially.
+
+A defensible recommendation should name the proposed action, its expected commercial effect, the affected customer outcomes, the ethical reason, and the condition that would change the decision. Rejecting an unsupported claim is part of critical judgment. So is recognizing evidence that weakens an initial accusation or supports a mutually beneficial practice.
+
+---
+
+## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
+
+# AI Experimentation, Pricing, and Ethical Evaluation
+
+Four research papers by Sanjog Misra and his coauthors connect AI-assisted experiments, personalized pricing, robustness, and segmentation to distinct managerial decisions. The course case evaluates their stated objectives, reported evidence, safeguards, and ethical questions. A commercial gain and an ethical failure require different evidence and arguments.
+
+- [Research Papers](01_Research/README.md): versioned sources and precise reading locations.
+- [Pricing Policy](02_Policy/README.md): current law, proposed policy, legislative status, and inquiries checked November 6, 2026.
+- [Claim Assessment](CLAIM_ASSESSMENT.md): supported findings and the additional premises required for a critique.
+- [Catalog](catalog.json): source URLs, saved versions, checksums, access status, and reading scope.
+- [Marketing Dialectics, Sections 9.14–9.18](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md): the detailed case and Kantian argument.
+- [Reproducible Pricing Example](../../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md): exact synthetic comparisons and arithmetic from published summaries.
+
+The research PDFs and downloaded policy snapshots are reference copies kept in Dropbox. Source links and original course commentary are public. Three New York legislative pages were read online but could not be saved through direct download. The pricing paper is saved in its June 2021 NBER revision; selected published JPE tables and discussion were cross-checked online. The 2025 revision of Coarse Personalization is the teaching version; the earlier retrieved 2022 file remains an internal version record.
+
+Kant's primary texts and philosophical scholarship are in the [Marketing Dialectics collection](../15_Marketing_Dialectics/README.md). This collection concerns Sanjog Misra; pricing-bandit papers by Kanishka Misra are separate works and are not attributed to him.
+
+---
+
+## Source: 01_Resources/16_AI_Experimentation_and_Pricing/CLAIM_ASSESSMENT.md
+
+# Claims, Evidence, and Ethical Inference
+
+| Claim | Assessment and Supporting Scope |
+| --- | --- |
+| AI-trained messages increased the studied click outcome. | Supported by the field comparison in Causal Alignment. Preserve the campaign weighting, outcome, human-assisted workflow, and version. |
+| The AI experiment demonstrated better customer welfare. | The reported click result supplies no corresponding customer-benefit estimand. Additional measurement and an ethical premise are required. |
+| The messaging system omitted safeguards against misleading content. | Inconsistent with its retained human selection and Appendix B acceptability checks. Assess their coverage and effectiveness. |
+| Personalized pricing can increase profit while lowering total customer surplus. | Supported in the pricing study's model-based comparison; the incidence and benchmark matter. |
+| Every customer lost from personalization. | Inconsistent with the reported distributional results. The authors report benefits for a majority. |
+| Lower aggregate surplus establishes a Kantian violation. | A further argument must identify the maxim, duty, and treatment of persons. A monetary aggregate is not Kantian autonomy. |
+| A profit objective proves an author intends harm. | Unsupported inference about a person. Analyze the stated objective and particular recommendations. |
+| The historical recruiting experiment violated current retail pricing rules. | Such a conclusion requires the relevant jurisdiction, date, transaction and statutory elements. Employer recruitment purchases differ from household-consumer transactions. |
+| Deceptive urgency becomes permissible when a test shows increased sales. | A Kantian objection concerns the deceptive means. A performance estimate supplies no permission to disregard that duty. This is a hypothetical application. |
+
+The phrase “marketing effectiveness at the cost of ethics” is a proposition to evaluate through a stated principle and evidence about conduct. The case retains findings that both support and constrain criticism. The commercial partnerships described by the papers motivate independent scrutiny, without establishing bias or personal misconduct.
+
+---
+
+## Source: 01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
+
+# Pricing Policy and Legal Scope
+
+Marketing Analytics
+
+Status checked November 6, 2026. The scope below distinguishes existing law, a proposed enforcement statement, legislation awaiting enactment, and information-gathering inquiries. Research findings do not by themselves establish violations.
+
+| Record | Jurisdiction | Status / Effective Date |
+| --- | --- | --- |
+| FTC August Statement | United States, FTC jurisdiction | Proposed August 19, 2026; no new rule effective date. |
+| FTC October Inquiry | United States | Section 6(b) orders, October 28, 2026; no finding of liability. |
+| GBL §349-a | New York | Disclosure requirement effective November 10, 2025; statutory exceptions apply. |
+| S8623B/A9349B | New York | Legislative passage recorded; no gubernatorial enactment shown as of the check. |
+| GBL §396-r | New York | Existing price-gouging statute; abnormal market disruption and covered goods/services required. |
+| Instacart Inquiry | New York | January 8, 2026 request for information; no adjudication supplied by this notice. |
+
+## P01: Proposed Enforcement Policy Statement Regarding Personalized Pricing
+
+Federal Trade Commission. August 19, 2026 proposal.
+
+**Reading:** Complete eight-page statement, particularly pages 3–8 and footnote 8.
+
+Directly cites Dubé and Misra. Connects personalized-price disclosure to existing deception and unfairness principles; proposal is not a new blanket ban.
+
+[Source](https://www.ftc.gov/system/files/ftc_gov/pdf/p034101-ftc-enforcement-policy-statement-re-personalized-pricing-proposed-for-public-comment.pdf).
+
+Local reference: `local_sources/FTC_PersonalizedPricing_Proposed2026.pdf`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## P02: General Business Law §349-a: Pricing
+
+New York State. Current text checked November 6, 2026.
+
+**Reading:** Definitions, disclosure requirement, exceptions, enforcement.
+
+Covers specified offers to consumers purchasing for personal, family, or household use. Keep this scope separate from business recruiting purchases.
+
+[Source](https://www.nysenate.gov/legislation/laws/GBS/349-A).
+
+Official text read through web tool; direct download returned HTTP 403.
+
+## P03: S8623B/A9349B: Surveillance Pricing Restrictions
+
+New York State Legislature. 2025–2026 session; status checked November 6, 2026.
+
+**Reading:** Current status, action history, active B amendment.
+
+Passed legislature; official record did not show gubernatorial enactment. Do not present as an operative prohibition.
+
+[Source](https://www.nysenate.gov/legislation/bills/2025/S8623).
+
+Official text read through web tool; direct download returned HTTP 403.
+
+## P04: General Business Law §396-r: Price Gouging
+
+New York State. Current text checked November 6, 2026.
+
+**Reading:** Covered disruption, goods and services, excessive prices and defenses.
+
+Emergency-related coverage and unconscionability differ from the economic definition of price discrimination.
+
+[Source](https://www.nysenate.gov/legislation/laws/GBS/396-R).
+
+Official text read through web tool; direct download returned HTTP 403.
+
+## P05: Price Gouging: Current Guidance
+
+New York Attorney General. Current guidance, retrieved November 6, 2026.
+
+**Reading:** Definitions, market disruption, price comparisons and cost justifications.
+
+Explains current New York enforcement criteria; not a finding concerning the research studies.
+
+[Source](https://ag.ny.gov/resources/individuals/consumer-issues/price-gouging).
+
+Local reference: `local_sources/NY_PriceGouging_Rules2026.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## P06: Inquiry Into Instacart Algorithmic Pricing
+
+New York Attorney General. January 8, 2026.
+
+**Reading:** Full agency notice.
+
+An information request concerning experiments and disclosure compliance, not an adjudicated violation.
+
+[Source](https://ag.ny.gov/press-release/2026/attorney-general-james-demands-answers-instacart-about-algorithmic-pricing).
+
+Local reference: `local_sources/NY_AG_Instacart_Inquiry2026.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## P07: Surveillance Pricing Study: Initial Findings
+
+Federal Trade Commission. January 17, 2025 staff findings.
+
+**Reading:** Full release and stated study scope.
+
+Documents the intermediary-study context. Preserve its preliminary status and distinguish later direct-company inquiry.
+
+[Source](https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-surveillance-pricing-study-indicates-wide-range-personal-data-used-set-individualized-consumer).
+
+Local reference: `local_sources/P07.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## P08: Personalized Pricing Proposal: Legal Library Entry
+
+Federal Trade Commission. August 19, 2026; status checked November 6, 2026.
+
+**Reading:** Title, date and linked statement.
+
+Confirms the statement is published as a proposal.
+
+[Source](https://www.ftc.gov/legal-library/browse/federal-trade-commissions-proposed-enforcement-policy-statement-regarding-personalized-pricing).
+
+Local reference: `local_sources/P08.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## P09: Algorithmic Pricing Disclosure Act Takes Effect
+
+New York Attorney General. November 10, 2025.
+
+**Reading:** Effective date, disclosure and scope.
+
+Separates the existing disclosure duty from later proposed restrictions.
+
+[Source](https://ag.ny.gov/press-release/2025/attorney-general-james-warns-new-yorkers-about-algorithmic-pricing-new-law-takes).
+
+Local reference: `local_sources/NY_Disclosure_Effective2025.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## P10: Personalized Pricing and Compensation Inquiry
+
+Federal Trade Commission. October 28, 2026.
+
+**Reading:** Full release, Section 6(b) authority and proposal status.
+
+Orders seek evidence directly from nine companies. An inquiry does not establish unlawful conduct.
+
+[Source](https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry).
+
+Local reference: `local_sources/FTC_PricingInquiry_October2026.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+---
+
+## Source: 03_Data_and_Code/AI_Experimentation_and_Pricing/README.md
+
+# AI Experimentation and Pricing
+
+The example compares the revenue-maximizing uniform price, group-specific profit-maximizing prices, and discounts capped at the uniform benchmark. It uses an entirely imposed population and analytically integrates demand and customer surplus. Sixty percent of customers benefit under unrestricted segmentation even though total customer surplus falls. Restricting the same personalization to discounts improves both profit and customer surplus in this particular population.
+
+## Inputs, Units, and Assumptions
+
+[evaluate_pricing.py](evaluate_pricing.py) specifies two groups. Group L has population share 0.6 and dollar valuations uniformly distributed over [6, 10]. Group H has share 0.4 and valuations over [10, 30]. Each person has one purchase opportunity and buys when valuation exceeds the offered price. The outside option and marginal cost are zero. Prices depend on group, which is observed; individual valuation remains unobserved. These assumptions are teaching inputs and are unrelated to the empirical samples in the cited papers.
+
+All expected profits and surplus measures use the full eligible population, including nonbuyers. `strictly_better_share` and `strictly_worse_share` compare each person's dollar surplus with the same population under the optimal uniform price. Group membership carries no demographic or vulnerability interpretation. Monetary surplus is a model outcome; it does not measure Kantian autonomy or establish an ethical verdict.
+
+[published_aggregates.json](published_aggregates.json) separately transcribes rounded summary values from *Causal Alignment*, Table 2, and *Personalized Pricing and Consumer Welfare*, Table 7. Its source, version, observation unit, and restrictions are recorded for each series. No individual experimental observations are available here. Calculations using these summaries reproduce arithmetic, not the authors' estimation or uncertainty.
+
+## Reproduction
+
+Use Python 3.10 or later with the standard library. No package installation or external service is required.
+
+```sh
+python3 03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_pricing.py
+python3 -m unittest discover -s 03_Data_and_Code/AI_Experimentation_and_Pricing -p 'test_*.py'
+```
+
+[results.json](results.json) records exact fractions and decimal values. Expected profit and customer surplus per eligible customer are approximately $6.0167 and $6.4750 under uniform pricing, $8.1000 and $3.4500 under segmentation, and $6.1333 and $6.6667 under capped discounts. The uniform optimum is $19/3. Group optima are $6 and $15. Five tests check independent exact totals, distributional incidence, the discount comparison, valuation-support boundaries, and invalid inputs.
+
+The full program appears in [Marketing Dialectics, Section 9.17](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md). The [research and policy guide](../../01_Resources/16_AI_Experimentation_and_Pricing/README.md) separates reported evidence, interpretation, and policy status. The calculation is original course material; it does not execute the authors' software or reproduce their experiments.
 
 ---
 

@@ -68,3 +68,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Marketing Dialectics
 
 [The categorized collection](15_Marketing_Dialectics/README.md) contains Kantian primary texts and scholarship, marketing ethics and evidence, industry cases, Hume and Smith on self-interest, and Confucian readings. The catalog identifies 41 source records, 35 downloaded files, versions, rights, reading scope, and nine full-work access gaps.
+
+## AI Experimentation and Pricing
+
+[Research and primary policy sources](16_AI_Experimentation_and_Pricing/README.md) support a Kantian case on AI-assisted A/B testing, personalized prices, commercial objectives, and customer consequences.

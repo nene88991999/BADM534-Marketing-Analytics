@@ -20,6 +20,7 @@ Session 09. M6. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
+- [AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -260,7 +261,27 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 21: Experiment Discussion
+## Slide 21: From Experiments to Generative Decisions
+
+- Within-campaign comparisons can supervise a model that proposes new messages.
+- The learned ranking inherits the outcome used to define success.
+- Evaluate new proposals in their deployment setting.
+
+Angelopoulos, Lee, and Misra train a language-model improver using historical experimental comparisons. The causal interpretation is tied to the randomized comparison and measured outcome. Transfer to new content requires new evidence.
+
+Source: https://leekevin.io/caLM.pdf
+
+## Slide 22: Human Review and Customer Evidence
+
+- Check factual claims and consequential terms before deployment.
+- Record customer understanding and the ability to refuse.
+- A robust commercial payoff still requires a justified objective.
+
+Causal Alignment includes human selection and acceptability checks. Their existence is material to a fair critique; their coverage remains a substantive question. Farrell, Korganbekova, and Misra address robustness to a changed deployment distribution, with a selected payoff.
+
+Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
+
+## Slide 23: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

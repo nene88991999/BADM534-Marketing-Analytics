@@ -1,0 +1,23 @@
+{
+  "causal_alignment": {
+    "authors": "Panagiotis Angelopoulos, Kevin Lee, Sanjog Misra",
+    "version": "Author PDF linked as August 2026 revision, downloaded 2026-11-06",
+    "source": "https://leekevin.io/caLM.pdf",
+    "location": "Table 2, PDF page 13; Section 5.1",
+    "unit": "Equal-weight mean across 36 campaigns; recipient outcome is a click on an email link",
+    "campaigns": 36,
+    "campaign_mean_click_rate_bp": {"control": 55.46, "general_model": 55.04, "tuned": 72.94},
+    "reported_paired_effect_bp": 17.47,
+    "reported_campaign_clustered_se_bp": 1.62,
+    "scope": "Rounded published summaries; arithmetic gives 17.48 bp, while the paper reports a 17.47 bp paired estimate. These summaries do not reconstruct inference."
+  },
+  "personalized_pricing": {
+    "authors": "Jean-Pierre Dube, Sanjog Misra",
+    "version": "NBER revision June 2021, Table 7; cross-checked with JPE 2023 Table 7",
+    "source": "https://www.nber.org/system/files/working_papers/w23775/w23775.pdf",
+    "unit": "Dollars of realized revenue per prospective employer in the November 2015 field comparison",
+    "realized_revenue_per_prospect": {"control": 22.57, "uniform": 37.79, "personalized": 41.59},
+    "uniform_monthly_price": 249,
+    "scope": "The approximately 10.1% relative difference from rounded realized means differs from the model-based 19% projection against the optimized $327 uniform benchmark. Consumer surplus is model-derived."
+  }
+}

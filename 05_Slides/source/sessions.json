@@ -2043,6 +2043,28 @@
       },
       {
         "kind": "bullets",
+        "title": "From Experiments to Generative Decisions",
+        "bullets": [
+          "Within-campaign comparisons can supervise a model that proposes new messages.",
+          "The learned ranking inherits the outcome used to define success.",
+          "Evaluate new proposals in their deployment setting."
+        ],
+        "notes": "Angelopoulos, Lee, and Misra train a language-model improver using historical experimental comparisons. The causal interpretation is tied to the randomized comparison and measured outcome. Transfer to new content requires new evidence.",
+        "source": "https://leekevin.io/caLM.pdf"
+      },
+      {
+        "kind": "bullets",
+        "title": "Human Review and Customer Evidence",
+        "bullets": [
+          "Check factual claims and consequential terms before deployment.",
+          "Record customer understanding and the ability to refuse.",
+          "A robust commercial payoff still requires a justified objective."
+        ],
+        "notes": "Causal Alignment includes human selection and acceptability checks. Their existence is material to a fair critique; their coverage remains a substantive question. Farrell, Korganbekova, and Misra address robustness to a changed deployment distribution, with a selected payoff.",
+        "source": "https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633"
+      },
+      {
+        "kind": "bullets",
         "title": "Experiment Discussion",
         "bullets": [
           "Would a conversion gain cover the campaign cost?",
@@ -2059,7 +2081,8 @@
       "[mHealth experiment planning](../03_Data_and_Code/mHealth/recurring_examples/m06.py)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
-      "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)"
+      "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
+      "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)"
     ],
     "practice": "Calculate an email effect and decompose a synthetic model-by-library comparison.",
     "application": "Design a randomized comparison with a common rubric and an appropriate assignment unit."
@@ -2917,7 +2940,8 @@
       "Explain why a commercial objective can conflict with customer interests.",
       "Map a marketing decision to the relevant evidence, jurisdiction, and rule status.",
       "Examine the premises connecting commercial results to customer-benefit claims.",
-      "Compare Kantian, institutional, and Confucian reasons for a marketing recommendation."
+      "Compare Kantian, institutional, and Confucian reasons for a marketing recommendation.",
+      "Evaluate AI experimentation and personalized pricing through evidence, Kantian duties, and current policy scope."
     ],
     "slides": [
       {
@@ -3033,6 +3057,37 @@
       },
       {
         "kind": "bullets",
+        "title": "AI Experimentation: Evidence and Safeguards",
+        "bullets": [
+          "Causal Alignment learns from comparisons within past A/B tests.",
+          "Its field result concerns clicks, with human selection and content checks.",
+          "Customer benefit and informed choice require additional evidence."
+        ],
+        "notes": "Panagiotis Angelopoulos, Kevin Lee, and Sanjog Misra; author version linked August 2026. Sections 4–5 report the randomized comparison; Appendix B screens unsupported claims and missing information. Respect those safeguards when critiquing the scope of the result.",
+        "source": "https://leekevin.io/caLM.pdf"
+      },
+      {
+        "kind": "bullets",
+        "title": "Personalized Pricing: Benchmark and Incidence",
+        "bullets": [
+          "Dubé and Misra study employers purchasing recruiting services.",
+          "Their model predicts higher profit and lower total customer surplus.",
+          "A majority benefits; the later field comparison uses different price policies."
+        ],
+        "notes": "The downloaded NBER June 2021 revision is linked to the published JPE 2023 paper. The 19% projected profit gain uses an optimized uniform benchmark. The rounded realized means in the later experiment imply about 10.1% higher revenue than its implemented uniform policy. Customer surplus is model-derived. This is a business purchasing setting, not an emergency retail case.",
+        "source": "https://www.nber.org/papers/w23775"
+      },
+      {
+        "kind": "figure",
+        "title": "Majority Gains and Aggregate Customer Losses",
+        "figure": "../06_Lecture_Notes/figures/M09_pricing_distribution.tex",
+        "caption": "Synthetic population and solved prices; dollars per eligible customer.",
+        "description": "Profit and customer surplus are compared on a common dollar axis for uniform pricing, segmented pricing, and capped discounts.",
+        "notes": "The two imposed valuation groups have shares 0.6 and 0.4. Segmentation benefits 60% but lowers aggregate customer surplus. Discount-only pricing improves profit and customer surplus relative to the optimal uniform benchmark in this population. Full source and exact arithmetic appear in Section 9.17.",
+        "source": "Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Marketing Dialectics: Examine the Premise",
         "bullets": [
           "State the claim, its evidence, and the premise connecting them.",
@@ -3059,6 +3114,15 @@
         "description": "A material conflict leads to independent substantiation and then a decision that can change with evidence.",
         "notes": "Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt.",
         "source": "Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Justify the Practice Before Ranking Its Performance",
+        "figure": "../06_Lecture_Notes/figures/M09_optimization_boundary.tex",
+        "caption": "A commercial ranking also needs a justified set of permissible actions.",
+        "description": "Proposals pass through restrictions concerning truthful claims, data use, and refusal before performance ranking. Customer evidence can require revision.",
+        "notes": "Kantian duties cannot automatically be replaced by a finite penalty in an objective function. The proposed restrictions are contemporary applications requiring explicit justification. Human review and measured outcomes provide evidence; they do not mechanically define autonomy.",
+        "source": "Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -3219,6 +3283,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Personalized Pricing: Policy Status",
+        "bullets": [
+          "FTC: August 2026 proposal; October 2026 information-gathering inquiry.",
+          "New York: disclosure law in effect; broader restrictions await enactment.",
+          "Price gouging requires its own covered circumstances and legal elements."
+        ],
+        "notes": "Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section 6(b) orders do not establish violations. New York GBL 349-a applies to covered personal, family, and household purchases, with exceptions. S8623B/A9349B has legislative passage without recorded gubernatorial enactment. GBL 396-r addresses essential goods and services during abnormal market disruptions.",
+        "source": "../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Environmental Claims: Two Different Decisions",
         "bullets": [
           "2023 Shell ads: the ASA upheld the overall-impression complaint.",
@@ -3260,7 +3335,8 @@
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
       "[Marketing Dialectics](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md)",
       "[Kantian, Institutional, and Confucian Readings](../01_Resources/15_Marketing_Dialectics/README.md)",
-      "[Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)"
+      "[Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)",
+      "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)"
     ],
     "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."

@@ -2,16 +2,16 @@
   "verified_on": "2026-11-06",
   "artifacts": {
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 301,
-      "sha256": "4b7ffac81e323b8073e4b2702bcbca0ef35cea971315569e169192bad1ac90cc"
+      "pages": 308,
+      "sha256": "bd034f226b88001a937e386912d33e44e831818a05714707ab9030f9d289c4a5"
     },
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 242,
-      "sha256": "48c4fbc973ea78185fffd25ec0689be8678fe7000fddd0d3f40d55d605f473d8"
+      "pages": 253,
+      "sha256": "ee33bad87f70926009cc67ff75ff5323581284709a5a0360bef48c4ec43b75f9"
     },
     "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
       "pages": 2,
-      "sha256": "f8a0e444d9714191c650afadbd46396725b9f50480f981fea934c36d48de8a0f"
+      "sha256": "ebf1820f6ac192f95f893208bb88fe83bbe9448160bdd957d92d80f596c8b2d4"
     },
     "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
       "pages": 21,
@@ -26,16 +26,16 @@
       "sha256": "39b2a2eb7ac22354bee7c3379d1539b2b4aeed4a500a3275452ffdd69b9bd207"
     },
     "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
-      "pages": 21,
-      "sha256": "7107f3d8488c7d9cd79a504615e3d8e0b2524e69cdfdd2a5abc316b3f55bf36a"
+      "pages": 23,
+      "sha256": "aceeffd6ae70b6f82f3b56879591754034b53faecf7be2dd726c83f9a06d6ee3"
     },
     "05_Slides/S12_Recommendation_Systems_and_Customer_Goals.pdf": {
       "pages": 18,
       "sha256": "3843aeed8e79e0058eee9ba1d2aaa33cdfd5f422f399564918e2b8b74aa47ffa"
     },
     "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
-      "pages": 33,
-      "sha256": "83d78acb9f79a95266d1a76558c624fa7459174bd5218c1d54c1f1b403cb1df6"
+      "pages": 38,
+      "sha256": "cefcd9be5cb8a70e25d3bfb859ed81c01104f30e90c2a8b2753403ef8279a51a"
     },
     "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
       "pages": 21,
@@ -46,8 +46,8 @@
       "sha256": "7b07b5aeafb52d16000e0723d0f52caf1ea2ae47651a4703206910dc6455e33e"
     },
     "06_Lecture_Notes/Marketing_Dialectics.pdf": {
-      "pages": 18,
-      "sha256": "86d9601c060d451594dccfe1a7aa0b879c4af1fa3f6f9b7bd8127f3880f9572f"
+      "pages": 28,
+      "sha256": "f81fd82c944b41c55a7fc79cb7d8884d902fafbf58202d7273f7d40ac3a8e211"
     }
   },
   "session_decks": 15,
@@ -57,21 +57,22 @@
     "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
     "session_plan_and_manifest_counts_agree": true,
     "calendar_dates_and_170_minute_meetings_unchanged": true,
-    "local_markdown_links_checked_this_revision": 379,
-    "full_note_code_blocks_match_source_and_parse": 55,
+    "local_markdown_links_checked_this_revision": 452,
+    "full_note_code_blocks_match_source_and_parse": 56,
     "new_analysis_programs_executed": 1,
     "independent_small_case_tests_passed": 5,
-    "independent_exported_csv_aggregation_matches_results_and_figure": true,
-    "new_tikz_figures_rendered_and_visually_reviewed": 6,
-    "session_14_final_pdf_pages_visually_reviewed": 33,
-    "standalone_chapter_pages_visually_reviewed": 18,
-    "combined_note_pages_visually_reviewed_including_contents_and_transition": 20,
+    "figure_aggregates_agree_with_exact_expected_totals": true,
+    "new_tikz_figures_rendered_and_visually_reviewed": 2,
+    "changed_and_adjacent_student_slide_pages_visually_reviewed": 16,
+    "standalone_chapter_changed_and_transition_pages_visually_reviewed": 11,
+    "combined_note_pages_visually_reviewed_including_contents_and_transitions": 20,
     "syllabus_pages_visually_reviewed": 2,
-    "retrieved_source_file_checksums_and_identities_checked": 35,
-    "public_originals_with_documented_redistribution_basis": 8,
+    "current_source_files_checksums_sizes_identities_checked": 11,
+    "previous_source_versions_checked": 1,
+    "web_read_source_pages_without_local_download": 3,
     "portable_context_uses_reviewed_HEAD_resource_catalogs": true
   },
-  "execution_scope": "November 6 Marketing Dialectics revision: executed the original synthetic retention program and five independent small-case tests. Verified all 55 full note-code blocks against their source and syntax. Independently aggregated the exported 2,000-row CSV, reconciled counts and denominators with results and the retention figure, checked local links, and preserved all 15 dated 170-minute meetings. Reviewed all 18 standalone chapter pages, the final combined chapter with its boundary and contents page, all 33 Session 14 pages, two syllabus pages, and six new TikZ figures. All 35 downloaded files match recorded checksums and sizes; PDF page counts and source identities were checked. Source reading is selective, as documented in the resource catalog; nine full-text access gaps remain. No downloaded programs or external model APIs were executed. Earlier checks are retained in historical fields.",
+  "execution_scope": "November 6 AI experimentation and pricing revision: executed the original exact synthetic pricing program and five independent tests. Verified 56 full note-code blocks against their source and syntax. Reconciled both figure series with exact expected totals, checked 452 local Markdown links, and preserved all 15 dated 170-minute meetings. Visually reviewed 16 changed or adjacent student-slide pages, 20 combined-note pages including contents and boundaries, the 11 changed or adjacent standalone chapter pages, both syllabus pages, and two new figures. Current source checks cover 11 downloaded files and one retained superseded version; three statutory or bill pages were read online with no local download. The research reading scope is selective and recorded in the catalog. No downloaded programs or external AI APIs were executed. Prior checks remain in historical fields.",
   "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
@@ -162,5 +163,27 @@
       "portable_context_uses_reviewed_HEAD_resource_catalogs": true
     },
     "execution_scope": "November 5 LLM revalidation revision: executed the published-snapshot summary and two original synthetic comparisons, four independent small-case tests, and the projected paired-regression calculation. All 54 full note-code blocks match source and parse. Reconciled survival steps using an independent grouped risk-set calculation with exact fractions; checked paired segment results, stipulated losses, and all three new figures. Checked 450 local links across 24 Markdown files and preserved the dated 15-meeting schedule. Visually reviewed nine changed student-slide pages and 30 note pages including contents and transitions. Five licensed source files match their pinned Git blobs and SHA-256 records; six retrieved papers passed checksum and title-identity checks. Reused published fitted dates as fixed inputs; no model calls, trend refits, or date-uncertainty propagation were performed. Earlier checks are retained in historical fields."
+  },
+  "marketing_dialectics_checks_2026_11_06": {
+    "checks": {
+      "updated_decks_compile_without_overfull_boxes_or_tex_errors": true,
+      "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
+      "session_plan_and_manifest_counts_agree": true,
+      "calendar_dates_and_170_minute_meetings_unchanged": true,
+      "local_markdown_links_checked_this_revision": 379,
+      "full_note_code_blocks_match_source_and_parse": 55,
+      "new_analysis_programs_executed": 1,
+      "independent_small_case_tests_passed": 5,
+      "independent_exported_csv_aggregation_matches_results_and_figure": true,
+      "new_tikz_figures_rendered_and_visually_reviewed": 6,
+      "session_14_final_pdf_pages_visually_reviewed": 33,
+      "standalone_chapter_pages_visually_reviewed": 18,
+      "combined_note_pages_visually_reviewed_including_contents_and_transition": 20,
+      "syllabus_pages_visually_reviewed": 2,
+      "retrieved_source_file_checksums_and_identities_checked": 35,
+      "public_originals_with_documented_redistribution_basis": 8,
+      "portable_context_uses_reviewed_HEAD_resource_catalogs": true
+    },
+    "execution_scope": "November 6 Marketing Dialectics revision: executed the original synthetic retention program and five independent small-case tests. Verified all 55 full note-code blocks against their source and syntax. Independently aggregated the exported 2,000-row CSV, reconciled counts and denominators with results and the retention figure, checked local links, and preserved all 15 dated 170-minute meetings. Reviewed all 18 standalone chapter pages, the final combined chapter with its boundary and contents page, all 33 Session 14 pages, two syllabus pages, and six new TikZ figures. All 35 downloaded files match recorded checksums and sizes; PDF page counts and source identities were checked. Source reading is selective, as documented in the resource catalog; nine full-text access gaps remain. No downloaded programs or external model APIs were executed. Earlier checks are retained in historical fields."
   }
 }

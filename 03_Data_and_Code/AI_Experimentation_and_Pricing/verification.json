@@ -1,0 +1,14 @@
+{
+  "verified_on": "2026-11-06",
+  "program_executed": "evaluate_pricing.py",
+  "independent_tests_passed": 5,
+  "matching_note_code_blocks_in_course": 56,
+  "figure_values_match_exact_expected_totals": true,
+  "scope": "Original synthetic calculation and rounded published-aggregate arithmetic. No empirical microdata, authors' estimation code, or external AI service was used.",
+  "sha256": {
+    "results.json": "8a4531290f2fc980039a24c1532c3be1e340ca4681e1a44c41b19c46f5eb6280",
+    "test_evaluate_pricing.py": "850fb438d0c4230b2c399c761ca07fe9d8d929f2fdb721078b535a1aa6b5beb5",
+    "evaluate_pricing.py": "00cd7d09e576be595025afd3e6289a676d90a32dd863c345eb1774a9cd6c1b50",
+    "published_aggregates.json": "fa7c007425ce2dc6690ac8ead39626b269d6ef3551c8da793a07a7c464f8785a"
+  }
+}

@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 6, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 68 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 70 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -16,7 +16,7 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdo
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; six editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; eight editable TikZ figures |
 
 The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
 
@@ -30,7 +30,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 242 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 253 pages.
 
 ## Editing and Building
 
@@ -76,7 +76,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 41 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 56 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -96,6 +96,10 @@ M1 §1.13, M2 §2.21, M5 §5.18, M7 §7.22, and M8 §8.18.1 connect AI claims to
 
 ## Marketing Dialectics
 
-[Chapter 9](modules/M09_Marketing_Dialectics.md) and its [standalone PDF](Marketing_Dialectics.pdf) develop critical evaluation of marketing claims and conduct. Kantian arguments are distinguished from Hume and Smith on scrutiny of private interests and from Confucian perspectives on righteousness, trustworthiness, roles, and cultivation. The chapter includes a complete synthetic renewal program, six TikZ figures, and academic, industry, and regulatory cases. It is integrated into Session 14 without adding meetings. The notes builder also regenerates the standalone chapter.
+[Chapter 9](modules/M09_Marketing_Dialectics.md) and its [standalone PDF](Marketing_Dialectics.pdf) develop critical evaluation of marketing claims and conduct. Kantian arguments are distinguished from Hume and Smith on scrutiny of private interests and from Confucian perspectives on righteousness, trustworthiness, roles, and cultivation. The chapter includes complete synthetic renewal and pricing programs, eight TikZ figures, and academic, industry, and regulatory cases. It is integrated into Session 14 without adding meetings. The notes builder also regenerates the standalone chapter.
 
 The [categorized library](../01_Resources/15_Marketing_Dialectics/README.md) records 41 source entries, 35 downloaded files, and nine full-work access gaps. Source-record counts include different editions and reference entries. Copyright-restricted originals remain in Dropbox; the public guides preserve links and reading scope.
+
+## AI Experimentation and Pricing
+
+Marketing Dialectics, Sections 9.14–9.18, provides a detailed Kantian evaluation of four papers by Sanjog Misra and coauthors, their safeguards and welfare findings, and recent pricing-policy debates. M6 §6.21 and M8 §8.20 connect the case to experimentation and current methods. [Code and exact synthetic results](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) accompany the complete Python source in the notes.

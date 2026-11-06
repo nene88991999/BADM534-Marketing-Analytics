@@ -60,3 +60,7 @@ Sessions 01, 03, 07, 11, and 14 incorporate versioned claims, censored follow-up
 ## Marketing Dialectics in Session 14
 
 Session 14 incorporates [Chapter 9](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) in the existing 75-minute ethics block. New material examines Kantian premises and respect for persons, conflicting commercial interests, Confucian conduct, identical renewal with different customer intent, and contrasting environmental-claim rulings. The [session plan](SESSION_PLAN.md) preserves all 15 dated meetings and pending assessment rules.
+
+## AI Experimentation and Pricing
+
+Sessions 9 and 14 incorporate the [research and policy case](../01_Resources/16_AI_Experimentation_and_Pricing/README.md). The detailed Kantian argument and complete pricing code are in Marketing Dialectics, Sections 9.14–9.18.

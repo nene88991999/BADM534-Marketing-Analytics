@@ -85,7 +85,11 @@
     "03_Data_and_Code/LLM_Revalidation/results/README.md",
     "01_Resources/15_Marketing_Dialectics/README.md",
     "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+    "06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/README.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/CLAIM_ASSESSMENT.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md",
+    "03_Data_and_Code/AI_Experimentation_and_Pricing/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -134,12 +138,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-06-marketing-dialectics",
+    "revision": "2026-11-06-ai-experimentation-pricing",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 68,
-    "pages": 242,
+    "figures_count": 70,
+    "pages": 253,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -204,7 +208,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 301,
+    "slides": 308,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -297,5 +301,18 @@
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06"
+  },
+  "ai_experimentation_pricing": {
+    "resources": "01_Resources/16_AI_Experimentation_and_Pricing/README.md",
+    "catalog": "01_Resources/16_AI_Experimentation_and_Pricing/catalog.json",
+    "example": "03_Data_and_Code/AI_Experimentation_and_Pricing/README.md",
+    "sections": [
+      "M6 §6.21",
+      "M8 §8.20",
+      "M9 §§9.14–9.18"
+    ],
+    "research_papers": 4,
+    "policy_verified_on": "2026-11-06",
+    "scope": "Evidence-based evaluation of objectives and deployment practices; distinct from judgments of author intent"
   }
 }

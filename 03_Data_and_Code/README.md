@@ -57,3 +57,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Marketing Dialectics
 
 [Renewal and Customer Intent](Marketing_Dialectics/README.md) constructs two populations with the same billing rate and different unwanted-renewal shares. The standard-library program preserves population denominators and unknown intent. Complete code appears in Chapter 9; the comparison is synthetic and descriptive.
+
+## AI Experimentation and Pricing
+
+[Exact synthetic pricing comparisons](AI_Experimentation_and_Pricing/README.md) distinguish profit, aggregate surplus, and customer incidence. A separate calculation checks rounded published means, with source and version records.

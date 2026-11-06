@@ -1,0 +1,81 @@
+{
+  "verified_on": "2026-11-06",
+  "current_source_records": 14,
+  "current_saved_files_checked": 11,
+  "retained_previous_versions_checked": 1,
+  "web_read_pages_without_local_download": 3,
+  "checks": [
+    {
+      "id": "R01",
+      "bytes": 540940,
+      "sha256": "b4729d17fb3b2bba17d0aa17a37ba8c4f695713abc5d6f1feb4eb8849dab9395",
+      "pdf_pages": 29,
+      "title_present_in_first_page": "Causal Alignment"
+    },
+    {
+      "id": "R02",
+      "bytes": 1016658,
+      "sha256": "36498f6e4ce286088e2e9a8a35738c0960301d60c4631fa8fb1f452bc931c782",
+      "pdf_pages": 62,
+      "title_present_in_first_page": "Personalized Pricing"
+    },
+    {
+      "id": "R03",
+      "bytes": 707463,
+      "sha256": "41040d2926e09a584e5885b591bec11e11dff780865c39a4384c30f5f19f4a91",
+      "pdf_pages": 28,
+      "title_present_in_first_page": "Robust A/B Decisions"
+    },
+    {
+      "id": "R04",
+      "bytes": 8141729,
+      "sha256": "d085f68cc7fc7b8a6cc0768fc9802013340741662f079a88525ed354870bc783",
+      "pdf_pages": 58,
+      "title_present_in_first_page": "Coarse Personalization"
+    },
+    {
+      "id": "P01",
+      "bytes": 281815,
+      "sha256": "2a4562eead07b3f24e532dede9c4a3a9fa78494d832c212314d3f181d6c21d35",
+      "pdf_pages": 8,
+      "title_present_in_first_page": "PERSONALIZED PRICING"
+    },
+    {
+      "id": "P05",
+      "bytes": 56495,
+      "sha256": "8e7c4caa4142589d8e4ee08e38c26a5cae7c57335894f490d02ec8b143f207d9",
+      "html_title": "Price gouging | New York Attorney General"
+    },
+    {
+      "id": "P06",
+      "bytes": 48964,
+      "sha256": "f0993049229f4eb2755b4987b916cfe6c7446c367a151a8b5cbdca03d2a22818",
+      "html_title": "Attorney General James Demands Answers from Instacart about Algorithmic Pricing"
+    },
+    {
+      "id": "P07",
+      "bytes": 1004396,
+      "sha256": "48f634476960f6fca5922e176c4be32d04df4c89813b44c2d6f171c073be3d80",
+      "html_title": "FTC Surveillance Pricing Study Indicates Wide Range of Personal Data Used to Set Individualized Consumer Prices | Federal Trade Commission"
+    },
+    {
+      "id": "P08",
+      "bytes": 989701,
+      "sha256": "1cd4c70885fac0d3f26c0c747a00ddb85efbc09d65a30130939dd194a3301445",
+      "html_title": "Federal Trade Commission’s Proposed Enforcement Policy Statement Regarding Personalized Pricing | Federal Trade Commission"
+    },
+    {
+      "id": "P09",
+      "bytes": 47191,
+      "sha256": "3119d55bc99d9a2beb328860375859c75ef2678f78c3c625fd17ac71b974479c",
+      "html_title": "Attorney General James Warns New Yorkers About Algorithmic Pricing as New Law Takes Effect"
+    },
+    {
+      "id": "P10",
+      "bytes": 996841,
+      "sha256": "3bb6830c1af4649d2e6a9a90d63cbfd8406d8d9471083c57f66523dd8cd84461",
+      "html_title": "FTC Launches Personalized Pricing and Compensation Inquiry | Federal Trade Commission"
+    }
+  ],
+  "scope": "Checks establish local file integrity, document identity, and page counts. Reading scope is selective and recorded in catalog.json. Copyright-restricted originals remain excluded from Git."
+}

@@ -1,0 +1,151 @@
+{
+  "data_type": "Exact calculations for an imposed economic example",
+  "benchmark": "Revenue-maximizing uniform price in the same population",
+  "cost": 0,
+  "groups": {
+    "L": [
+      {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      {
+        "exact": "6",
+        "decimal": 6.0
+      },
+      {
+        "exact": "10",
+        "decimal": 10.0
+      }
+    ],
+    "H": [
+      {
+        "exact": "2/5",
+        "decimal": 0.4
+      },
+      {
+        "exact": "10",
+        "decimal": 10.0
+      },
+      {
+        "exact": "30",
+        "decimal": 30.0
+      }
+    ]
+  },
+  "results": {
+    "uniform": {
+      "prices": {
+        "L": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        },
+        "H": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        }
+      },
+      "profit_per_eligible_customer": {
+        "exact": "361/60",
+        "decimal": 6.016666666666667
+      },
+      "surplus_per_eligible_customer": {
+        "exact": "259/40",
+        "decimal": 6.475
+      },
+      "total_surplus_per_eligible_customer": {
+        "exact": "1499/120",
+        "decimal": 12.491666666666667
+      },
+      "purchase_share": {
+        "exact": "19/20",
+        "decimal": 0.95
+      },
+      "strictly_better_share": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "strictly_worse_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    },
+    "segmented": {
+      "prices": {
+        "L": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "H": {
+          "exact": "15",
+          "decimal": 15.0
+        }
+      },
+      "profit_per_eligible_customer": {
+        "exact": "81/10",
+        "decimal": 8.1
+      },
+      "surplus_per_eligible_customer": {
+        "exact": "69/20",
+        "decimal": 3.45
+      },
+      "total_surplus_per_eligible_customer": {
+        "exact": "231/20",
+        "decimal": 11.55
+      },
+      "purchase_share": {
+        "exact": "9/10",
+        "decimal": 0.9
+      },
+      "strictly_better_share": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "strictly_worse_share": {
+        "exact": "2/5",
+        "decimal": 0.4
+      }
+    },
+    "discount_only": {
+      "prices": {
+        "L": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "H": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        }
+      },
+      "profit_per_eligible_customer": {
+        "exact": "92/15",
+        "decimal": 6.133333333333334
+      },
+      "surplus_per_eligible_customer": {
+        "exact": "20/3",
+        "decimal": 6.666666666666667
+      },
+      "total_surplus_per_eligible_customer": {
+        "exact": "64/5",
+        "decimal": 12.8
+      },
+      "purchase_share": {
+        "exact": "1",
+        "decimal": 1.0
+      },
+      "strictly_better_share": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "strictly_worse_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    }
+  },
+  "published_aggregate_arithmetic": {
+    "click_lift_from_rounded_means_bp": 17.479999999999997,
+    "click_relative_lift_from_rounded_means": 0.31518211323476364,
+    "pricing_relative_revenue_lift_from_rounded_means": 0.10055570256681667
+  },
+  "scope": "No reconstruction of empirical uncertainty or ethical verdict"
+}
