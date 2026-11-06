@@ -87,7 +87,11 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Consumer_Agency_Literature/CODEBOOK.md",
     "03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md",
     "03_Data_and_Code/Consumer_Agency_Literature/results/README.md",
-    "03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md"
+    "03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md",
+    "01_Resources/14_LLM_Evidence_and_Revalidation/README.md",
+    "03_Data_and_Code/LLM_Revalidation/README.md",
+    "03_Data_and_Code/LLM_Revalidation/DATA_DICTIONARY.md",
+    "03_Data_and_Code/LLM_Revalidation/results/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -132,18 +136,19 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-05-consumer-agency-and-affiliations",
+    "revision": "2026-11-05-llm-evidence-revalidation",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 59,
-    "pages": 215,
+    "figures_count": 62,
+    "pages": 224,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
     "earnings_call_examples": "03_Data_and_Code/Earnings_Calls/README.md",
     "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md",
-    "consumer_agency_examples": "03_Data_and_Code/Consumer_Agency_Literature/README.md"
+    "consumer_agency_examples": "03_Data_and_Code/Consumer_Agency_Literature/README.md",
+    "llm_revalidation_examples": "03_Data_and_Code/LLM_Revalidation/README.md"
   },
   "datasets": [
     {
@@ -200,7 +205,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 287,
+    "slides": 294,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -269,6 +274,18 @@ Generated from course.json and the source files identified below. This file cont
     "affiliation_papers": 745,
     "education_institutions": 424,
     "policy": "01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md"
+  },
+  "llm_evidence_revalidation": {
+    "index": "01_Resources/14_LLM_Evidence_and_Revalidation/README.md",
+    "analysis": "03_Data_and_Code/LLM_Revalidation/README.md",
+    "published_claims": 50,
+    "models": 20,
+    "model_claim_pairs": 1000,
+    "unreliable_pairs": 8,
+    "source_commit": "710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d",
+    "observation_endpoint": "2026-09-30",
+    "retrieved_on": "2026-11-05",
+    "scope": "Recalculation of released summaries; no new model calls or trend refitting. Judge and upgrade comparisons are synthetic."
   }
 }
 ```
@@ -289,7 +306,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 59 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 62 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -327,6 +344,10 @@ Third-party files retain their original licenses and restrictions. See their adj
 ## Recent Research and Consumer Agency
 
 The [journal collection](01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) indexes 2023-2026 research with managerial summaries, source versions, access gaps, and cancellation-policy resources. [Mechanism clustering](03_Data_and_Code/Consumer_Agency_Literature/README.md) and [university affiliation communities](03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md) provide reproducible examples with explicit coding and sampling limits.
+
+## LLM Evidence and Revalidation
+
+The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md) connects the shelf life of AI findings to model updates, changing judges, and fresh evaluation. [Three runnable examples](03_Data_and_Code/LLM_Revalidation/README.md) reproduce published follow-up summaries and distinguish them from constructed upgrade decisions. Complete code and three TikZ figures appear in the notes and corresponding session decks.
 
 ---
 
@@ -442,7 +463,7 @@ The course is planned with no guest speakers. All eight modules will be covered 
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 59 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps all eight modules to detailed explanations, worked cases, and 62 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -506,6 +527,10 @@ The [synthetic AI workflow examples](03_Data_and_Code/AI_Workflows/README.md) co
 ## Consumer Agency, Recent Research, and Affiliations
 
 The [2023-2026 journal collection](01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) supplies original managerial summaries, explicit access gaps, and a [cancellation-policy source record](01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md). M2 §2.20 assesses evidence selection; M4 §4.17 clusters mechanism codes; M5 §§5.16-5.17 examine annotation and university affiliation networks; M6 §6.20 separates conversion, returns, and intent; M7 §7.21 distinguishes predictive accuracy from welfare; M8 §8.19 connects mechanisms to effective cancellation. Sessions 3, 6, 7, 9, 12, and 14 carry the corresponding material. [Runnable code and outputs](03_Data_and_Code/Consumer_Agency_Literature/README.md) retain the denominators and sensitivity checks.
+
+## Model Versions and Changing Evidence
+
+The [LLM revalidation examples](03_Data_and_Code/LLM_Revalidation/README.md) connect versioned evidence (M1 §1.13), claim follow-up and censoring (M2 §2.21), generator-by-judge comparisons (M5 §5.18), paired regressions and failure costs (M7 §7.22), and exposure-based revalidation (M8 §8.18.1). The [research guide](01_Resources/14_LLM_Evidence_and_Revalidation/README.md) distinguishes the released empirical snapshot from original constructed cases. Sessions 01, 03, 07, 11, and 14 incorporate these applications.
 
 ---
 
@@ -647,6 +672,10 @@ The [AI workflow examples](AI_Workflows/README.md) compare model and library con
 
 The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 original managerial summaries and mechanism codes, a DOI census, access-gap assessment, reproducible Jaccard clustering, and sensitivity checks. The [affiliation analysis](Consumer_Agency_Literature/AFFILIATIONS.md) groups universities through shared publications and compares fractional research profiles. The inputs are actual bibliographic metadata and preliminary review annotations. Full code appears in M2 §2.20, M4 §4.17, and M5 §5.17; causal and policy interpretations appear in M6 §6.20, M7 §7.21, and M8 §8.19.
 
+## LLM Revalidation
+
+[LLM Revalidation](LLM_Revalidation/README.md) contains a licensed fifty-claim research snapshot, independent descriptive calculations, and constructed comparisons of model upgrades and judge changes. Three standard-library programs, complete case-level outputs, a data dictionary, and four small-case tests accompany the full code in the notes.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -682,7 +711,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 215 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 224 pages.
 
 ## Editing and Building
 
@@ -741,6 +770,10 @@ M1 §1.12 diagnoses code errors and missing information; M4 §4.16 examines buye
 ## Consumer Agency and Recent Marketing Research
 
 The [journal collection](../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md) links 886 DOI records to 103 retrieved versions, 144 original managerial summaries, and a complete access-gap ledger. M2 §2.20 assesses coverage, M4 §4.17 clusters mechanisms, and M5 §§5.16-5.17 examine coding and university affiliation communities. M6 §6.20, M7 §7.21, and M8 §8.19 connect experiments, recommendation welfare, and cancellation policy. Three complete Python programs and four new TikZ figures accompany the [analysis](../03_Data_and_Code/Consumer_Agency_Literature/README.md). Counts describe selected literature and do not estimate the prevalence of harmful business practices.
+
+## Evidence Across Model Versions
+
+M1 §1.13, M2 §2.21, M5 §5.18, M7 §7.22, and M8 §8.18.1 connect AI claims to the configuration and decision being evaluated. The [three complete Python programs](../03_Data_and_Code/LLM_Revalidation/README.md) reproduce source counts and follow-up summaries, compare changing judges, and preserve paired upgrade regressions. Three TikZ figures and the [related research guide](../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) accompany the examples.
 
 ---
 
@@ -858,6 +891,10 @@ Sessions 01, 05, 07, 09, 11, and 14 connect failure diagnosis, customer alternat
 ## Consumer Agency and Research Networks
 
 Sessions 3, 6, 7, 9, 12, and 14 add evidence coverage, mechanism clustering, LLM coding, university affiliation communities, downstream customer outcomes, recommendation welfare, and cancellation-policy distinctions. The [complete programs and outputs](../03_Data_and_Code/Consumer_Agency_Literature/README.md) accompany the notes. Four editable TikZ figures retain explicit populations and denominators. The 15-session schedule and the 75-minute regulation block in Session 14 remain in place.
+
+## Changing AI Evidence
+
+Sessions 01, 03, 07, 11, and 14 incorporate versioned claims, censored follow-up, changing AI judges, paired regressions, and residual risk. The [source guide](../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) and [three complete programs](../03_Data_and_Code/LLM_Revalidation/README.md) preserve versions, units, and evidence scope. Three editable TikZ figures distinguish published descriptive results from constructed comparisons. Existing meeting durations and the Session 14 regulation block are retained.
 
 ---
 
@@ -1305,6 +1342,10 @@ The [recent journal review](../01_Resources/13_Consumer_Agency_and_Recent_Resear
 
 M5 §5.16 distinguishes text classification from construct validity. M6 §6.20 evaluates purchases, returns, and effective exit; M7 §7.21 preserves model-dependent welfare interpretation; M8 §8.19 connects those mechanisms to the [verified cancellation-policy record](../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md).
 
+## LLM Findings and Revalidation
+
+The [Queen and Zou snapshot and six related papers](../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) motivate versioned evidence in M1 §1.13, censoring in M2 §2.21, changing judges in M5 §5.18, paired regressions in M7 §7.22, and exposure in M8 §8.18.1. `summarize_snapshot.py` reads licensed released tables; `evaluate_judges.py` and `evaluate_upgrade.py` use entirely constructed inputs. [All three programs](../03_Data_and_Code/LLM_Revalidation/README.md) appear verbatim in the notes. The aggregate counts reconcile to the source files; this does not reproduce the underlying model calls or fitted trends.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1656,20 +1697,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 20 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 21 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
-| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 19 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 21 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 28 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 29 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 21 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 19 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 21 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
-| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 25 |
+| 14 | Apr 28 | M8 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 26 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -1678,9 +1719,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Implement and assess order aggregation, then distinguish code errors from missing observations.
+**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions.
 
-**Application:** Write a coupon specification and identify the evidence needed to resolve its causal question.
+**Application:** Distinguish code errors, missing evidence, and transfer to a changed AI configuration.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -1718,9 +1759,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess chart values, sample restrictions, and the journal review's missing-evidence denominators.
+**Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens.
 
-**Application:** Compare nutrition screens, public-page signals, and literature access selection.
+**Application:** Distinguish expired-only lifetimes from censored follow-up; preserve uncertainty and sampling scope.
 
 **Ethics and Regulation:** Chart claims, denominator choices, and coverage
 
@@ -1798,9 +1839,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess text labels and retrieval; construct university affiliation links and compare community sensitivity.
+**Python and Evidence:** Assess earnings-call retrieval and interpretation; compare fixed outputs under different judge versions.
 
-**Application:** Compare pricing communication, agency coding, and shared-publication networks.
+**Application:** Separate generator improvements from judge changes, sponsor framing, and affiliation-network composition.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -1876,9 +1917,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.
+**Python and Evidence:** Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs.
 
-**Application:** Choose a forecast, split, and decision threshold using the intended deployment population.
+**Application:** Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage.
 
 **Ethics and Regulation:** Prediction errors and access to consequential offers.
 
@@ -1936,9 +1977,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Evaluate retention welfare, workflow economics, and cancellation outcomes with their stated information.
+**Python and Evidence:** Connect AI workflow updates to residual risk, exposure, and customer-outcome evaluation.
 
-**Application:** Connect research mechanisms to jurisdiction-specific cancellation rules and customer value.
+**Application:** Evaluate subscription and pricing decisions with current evidence, effective exit, and jurisdiction-specific rules.
 
 **Ethics and Regulation:** Consumer agency, effective exit, pricing, and current regulatory scope
 
@@ -2032,6 +2073,10 @@ The three programs and five exact checks use synthetic inputs and standard-libra
 ## Consumer Agency and Recent Journal Research
 
 Use the [journal and affiliation analyses](../03_Data_and_Code/Consumer_Agency_Literature/README.md) within the existing method and application blocks. Meeting 3 adds access selection and missing evidence. Meeting 6 compares customer segmentation with clustering coded research mechanisms; the literature program can supply the Python exercise. Meeting 7 uses agency annotation and university affiliation communities as text and network applications. Meeting 9 follows conversion through returns and customer intent. Meeting 12 compares recommendation behavior with model-dependent welfare. Meeting 14 connects these mechanisms to current cancellation rules within its existing 75-minute regulation block. Case selection can rotate across the available programs without adding meetings or graded requirements.
+
+## Revalidation Within Existing Meetings
+
+Use the [LLM evidence examples](../03_Data_and_Code/LLM_Revalidation/README.md) within existing blocks. Meeting 1 adds version provenance to the reproducibility discussion. Meeting 3 uses ten minutes of its worked comparison for selected claims and censored follow-up. Meeting 7 uses the generator-by-judge matrix within document-evaluation discussion. Meeting 11 uses fifteen minutes of its application block for paired regressions and failure costs. Meeting 14 incorporates revalidation and residual risk into its 35-minute workflow block, retaining the 75-minute ethics and regulation block. These are teaching activities; graded requirements remain unset.
 
 ---
 
@@ -2670,6 +2715,142 @@ The [mechanism profiles](mechanism_profiles.csv) overlay reviewed-paper codes us
 - [Sensitivity Runs](sensitivity.csv) and [Summary](summary.json): settings, stability, and version.
 
 Definitions, missing-affiliation treatment, source checks, and commands are in [AFFILIATIONS.md](../../AFFILIATIONS.md).
+
+---
+
+## Source: 01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+
+# LLM Evidence, Model Updates, and Revalidation
+
+A marketing team deciding whether to replace an AI workflow needs evidence about the proposed configuration, the tasks it will receive, and the costs of its mistakes. A finding about an earlier model supplies a testable hypothesis. Its relevance depends on whether the current workflow retains the mechanism and conditions that generated it.
+
+## The Shelf Life of LLM Findings
+
+[Queen and Zou (2026)](https://zou-group.github.io/llm-claims-shelf-life/) revisit 50 selected claims across 20 models. Their September 2026 classifications contain 22 expired, 17 weakened, eight persistent, and three strengthened claims. The snapshot has 1,000 model-claim observations, of which eight are flagged as unreliable for comparison. These are selected findings and models, rather than a random sample of all AI research or deployments.
+
+The [released tables](source_tables/README.md) and fitted results are pinned to repository commit `710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d`, dated November 2, 2026. The authors' [MIT license](source_tables/LICENSE) accompanies their files. [Provenance](provenance.json) records the source URLs, Git blob identifiers, checksums, and retrieval date. Third-party benchmark inputs and model-call programs are outside this teaching copy.
+
+The copy contains `claims.csv`, `panel_values.csv`, `post_results.json`, the original table README, and the license. The upstream README also describes `claims.json` and `run_manifest.csv`, which are omitted here.
+
+An independent course script reconciles the counts and calculates follow-up summaries from the published estimated dates. Among the 22 expired claims, the mean is 15.75 months and the median is 14.65 months. Treating the other 28 as right-censored gives estimated expiration shares of 4.0%, 16.0%, and 38.9% at six, twelve, and twenty-four months. These calculations use the released dates as fixed inputs. They do not repeat the underlying model calls, refit the trends, or propagate uncertainty in estimated expiration dates.
+
+## What the Result Supports
+
+The evidence motivates recurring, task-specific evaluation. It does not supply a universal deadline after which an AI paper becomes false. Model release dates, evaluation dates, and publication dates are different variables. A benchmark observation from an older experiment may still describe a model that remains in service. A released model can also behave differently when its prompts, tools, reasoning settings, or input distribution change.
+
+The project's relative effect normalizes an outcome against a claim-specific reference and null value. Its expiration zone permits a residual effect. A point estimate below a threshold and an uncertainty interval wholly below that threshold are different statements. The website's fitted categories also use additional rules and uncertainty; two expired categories follow a recent-model count even though their fitted curves remain above the threshold. Preserve the released classifications when reproducing the headline counts.
+
+The date trend compares different model configurations. It does not identify a causal effect of elapsed time, one architectural change, or one provider's training procedure. Reproduction sometimes uses a substitute for a retired model, and default reasoning budgets differ across the panel. These conditions belong beside any inference about current capabilities.
+
+## Related Research and Course Uses
+
+| Source | Evidence and Scope | Course Application |
+| --- | --- | --- |
+| [Chen, Zaharia, and Zou (2024), How Is ChatGPT's Behavior Changing Over Time?](https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2) | Compares March and June 2023 service snapshots across tasks. Section 3.5 separates directly executable code from correctness after removing surrounding noncode text. | Keep parsing, execution, and analytical correctness as separate checks. A formatting change can break a pipeline even when the code inside is useful. |
+| [Zheng et al. (2023), Judging LLM-as-a-Judge](https://arxiv.org/abs/2306.05685) | Evaluates agreement with human preferences and documents position, verbosity, and self-enhancement biases in the tested judges. Sections 3.3-3.4 examine answer-order checks. | Score the same saved outputs with a stable rubric; swap answer order and retain inconsistent verdicts. Agreement with preferences does not establish factual accuracy. |
+| [Panickssery, Bowman, and Feng (2024), LLM Evaluators Recognize and Favor Their Own Generations](https://arxiv.org/abs/2404.13076) | Examines self-recognition and self-preference in summarization, including controlled fine-tuning comparisons. Broader task coverage remains an extension. | Concealing a model's name may leave stylistic cues. Include an independently assessed sample when evaluating generated review or earnings-call summaries. |
+| [Sharma et al. (ICLR 2024; revised 2025), Towards Understanding Sycophancy in Language Models](https://arxiv.org/abs/2310.13548v4) | Tests several forms of agreement and feedback behavior and examines human preferences as a possible contributor. The specific models and prompts delimit its findings. | Hold a marketing proposal fixed while varying whether a sponsor likes it. Check evidence quality separately from approval or flattering language. |
+| [White et al. (ICLR 2025), LiveBench: A Challenging, Contamination-Limited LLM Benchmark](https://arxiv.org/abs/2406.19314v2) | Uses periodically refreshed tasks and objective scoring; its maintenance discussion distinguishes benchmark versions and exposure. | Combine a fixed regression set with fresh cases. Track task composition when comparing scores across releases. Freshness reduces some exposure concerns without guaranteeing independence. |
+| [Jain et al. (2024), LiveCodeBench](https://arxiv.org/abs/2403.07974v2) | Uses dated competition problems and examines generation, repair, execution, and test-output prediction. Publication windows help examine potential contamination. | Evaluate generated Python on new schemas, edge cases, and independent expected outputs. Contest performance alone does not establish the validity of a marketing estimand. |
+
+The six related papers are available in Dropbox's `local_papers/`; [download records](reading_downloads.json) identify versions and rights. PDF originals remain outside Git. The summaries, links, licensed project tables, and original course code are public. The reading review covers the methods and sections used above, not an independent replication of each paper.
+
+## Worked Examples and Teaching Placement
+
+[LLM Revalidation](../../03_Data_and_Code/LLM_Revalidation/README.md) contains three executable programs, a data dictionary, independent checks, and results. M1 §1.13 specifies versioned evidence. M2 §2.21 interprets the published claim panel and censoring. M5 §5.18 separates generator changes from judge changes. M7 §7.22 examines paired regressions and failure costs. M8 §8.18 connects revalidation to deployment scale and consumer consequences. Sessions 01, 03, 07, 11, and 14 include the corresponding discussion within their existing time allocations.
+
+---
+
+## Source: 03_Data_and_Code/LLM_Revalidation/README.md
+
+# Evaluating AI Evidence and Model Updates
+
+A marketing team uses AI to classify catalog entries, assess pricing claims, and summarize customer communications. A replacement can improve average performance while changing the errors, costs, and measurement process that matter to the team. These examples preserve those distinctions.
+
+## Run
+
+Python 3.10 or later and the standard library are sufficient; the programs were executed with Python 3.13.5. From the repository root:
+
+```sh
+python3 03_Data_and_Code/LLM_Revalidation/summarize_snapshot.py
+python3 03_Data_and_Code/LLM_Revalidation/evaluate_judges.py
+python3 03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
+python3 -m unittest discover -s 03_Data_and_Code/LLM_Revalidation -p 'test_*.py' -v
+```
+
+Paths resolve relative to the scripts. Each program overwrites its own results. No model APIs, network requests, credentials, or third-party research programs are executed. The complete sources also appear in M2 §2.21, M5 §5.18, and M7 §7.22 of the lecture notes.
+
+## Inputs and Interpretation
+
+| Program | Inputs and Observation Unit | Expected Result |
+| --- | --- | --- |
+| [summarize_snapshot.py](summarize_snapshot.py) | Licensed, unchanged source tables: 50 selected claims and 1,000 claim-model observations from Queen and Zou; released fitted expiration dates | Counts 22/17/8/3; eight unreliable model-claim pairs; expired-only mean 15.75 months; 16.0% estimated expired by twelve months |
+| [evaluate_judges.py](evaluate_judges.py) | Four stipulated mean scores on a common 0-100 rubric; the same saved output set per generator is evaluated by both judges | A diagonal comparison gives +17 points; holding the judge fixed gives +2 points |
+| [evaluate_upgrade.py](evaluate_upgrade.py) | 100 constructed paired cases: 80 routine and 20 consequential, with binary correctness and stipulated failure costs of $1 and $20 | Correct answers rise from 78 to 86, but total loss rises from $60 to $128; 14 cases improve and six regress |
+
+The published snapshot is empirical source data. The two upgrade examples are entirely synthetic and contain no observed provider performance, customer outcomes, or estimated monetary losses. They demonstrate arithmetic and evaluation design under imposed inputs. There are no missing outcomes in the constructed cases, and no cases are excluded.
+
+`summarize_snapshot.py` retains the upstream unreliable-pair flags. Its Kaplan-Meier calculation uses all 50 released classifications, treats estimated event dates as fixed, and censors unexpired claims on September 30, 2026. Three interval-based dates use the authors' displayed estimates; two dates derive from a recent-model count. It does not estimate interval-censored survival or uncertainty in the fitted dates. The result is descriptive of this selected collection, with the usual independent-censoring condition needed for a population survival interpretation. Source counts, thresholds, configuration differences, and reproduction limits are described in the [resource guide](../../01_Resources/14_LLM_Evidence_and_Revalidation/README.md).
+
+The upgrade example holds cases, labels, task weights, and the scoring rule fixed. The paired counts distinguish recoveries from regressions. Routine-task failures fall by twelve while consequential failures increase by four, so the new configuration reduces stipulated failure loss only when the consequential-to-routine cost ratio is below three. Setup costs and inference fees are absent from this deliberately limited comparison.
+
+The zero-failure calculation assumes independent Bernoulli trials with a common failure probability. Zero failures in 100 trials imply a one-sided 95% upper bound of 2.95%, rather than proving zero risk. Repeated outputs from one prompt or one customer can be dependent and require a different sampling design.
+
+## Outputs and Checks
+
+[Results](results/README.md) links the aggregate tables, complete paired cases, and JSON calculations. [DATA_DICTIONARY.md](DATA_DICTIONARY.md) defines variables and units. Four small-case tests check censoring at tied times, a judge-induced ranking reversal, costly regressions hidden by equal averages, and the exact zero-failure bound. Source hashes, row counts, and figure reconciliation are recorded with the course verification files.
+
+For a new evaluation, preserve the current configuration and compare the challenger on both fixed regression cases and fresh cases from the intended task population. Record model IDs, dates, prompts, tools, reasoning settings, parser, scorer, and evidence provenance. Independently assess consequential outcomes. Public teaching examples are suitable for practice; repeated adaptation to their published answers does not supply a fresh test.
+
+---
+
+## Source: 03_Data_and_Code/LLM_Revalidation/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+## Published Research Inputs
+
+The source files are in `../../01_Resources/14_LLM_Evidence_and_Revalidation/source_tables/`, accompanied by their original MIT license and README.
+
+- `claims.csv`: one row for each of 50 selected claims. `blog_id` is C1-C50; `key` is the upstream internal identifier. `verdict` records the source classification. `dead` is displayed as expired. `paper_date` is the first public paper date. `paper_anchor` and `null_value` are claim-specific metric values; their units depend on `metric`. A relative effect of one matches the reference and zero matches the claim-specific null. Model-specific nulls require the detailed post data.
+- `panel_values.csv`: one row for each claim-model pair. `model` is a stable panel identifier; `model_name` is the reported model; `release` is its release date. `value`, `lo`, and `hi` retain the claim's metric units. `n` is the source's claim-specific scoring count, not a uniform independent sample size. `e` is the relative effect. `reliable=False` marks an unscorable comparison and remains missing from model-level counts. `source` and `note` identify run provenance and qualifications.
+- `post_results.json`: the released fitted curves, classification, dates, and uncertainty. `death` is the authors' estimated expiration date; `death_kind` distinguishes fitted, interval-based, and recent-model-count dates. `generated` dates the export, rather than the models or their publication.
+
+## Derived Research Outputs
+
+- `verdicts.csv`: claim counts and fractions, denominator 50.
+- `lifetimes.csv`: one row per claim; `months` is elapsed days divided by 365.25/12. `event=1` uses an estimated expiration date; `event=0` uses the September 30, 2026 censoring date. Censored rows do not establish that a claim lasts forever.
+- `horizons.csv`: Kaplan-Meier point estimates at six, twelve, and twenty-four months. `followup_curve.csv` preserves every displayed step through twenty-four months.
+- `model_counts.csv`: reliable and unreliable pair counts and the number of reliable point estimates at or below 0.2. This simple point-estimate count does not reproduce the full fitted category rule.
+- `citation_fabrication.csv`: C11 observations for all twenty models. `fabricated_fraction` measures nonexistent cited works; it does not measure erroneous details about real works or whether a real source supports the assertion.
+
+## Constructed Upgrade Outputs
+
+- `synthetic_cases.csv`: `case_id` identifies one of 100 paired tasks; `segment` is routine or consequential; `old_pass` and `new_pass` are binary outcomes under a fixed rubric; `failure_cost` is stipulated dollars per failed task. All cases are constructed, complete, and equally weighted in the pooled accuracy.
+- `upgrade_summary.json`: pass counts, recoveries, regressions, percentage-point changes, and aggregate dollar losses. The cost ratio is dimensionless. The zero-failure bound is a probability under an independent common-probability binomial model.
+- `judge_comparison.json`: four imposed mean scores from a common 0-100 rubric, followed by within-judge, within-generator, and diagonal differences in score points.
+
+---
+
+## Source: 03_Data_and_Code/LLM_Revalidation/results/README.md
+
+# Revalidation Results
+
+## Published Claim Snapshot
+
+The [summary](snapshot_summary.json) reproduces 50 claims, twenty models, and 1,000 pairs, including eight flagged unreliable comparisons. The [verdict table](verdicts.csv) has 22 expired, seventeen weakened, eight persistent, and three strengthened claims.
+
+The mean of 15.75 months and median of 14.65 months condition on the 22 expired claims. The [follow-up estimates](horizons.csv) instead retain all fifty claims and right-censor the other 28: 4.0% expired by six months, 16.0% by twelve months, and 38.9% by twenty-four months. [Individual times](lifetimes.csv) and the [displayed curve](followup_curve.csv) preserve the calculation. Estimated dates are treated as fixed, so these outputs do not propagate their uncertainty.
+
+[Model-level counts](model_counts.csv) preserve the reliable denominator. [Citation observations](citation_fabrication.csv) retain all twenty model-specific results for C11, including exceptions to the fitted overall category. These are measurements under the source protocol, not a current model recommendation.
+
+## Constructed Comparisons
+
+The [judge matrix](judge_comparison.json) gives a 17-point difference when both generator and judge change together. Comparing generators within either judge gives two points. The 15-point shift in judging the old outputs explains the difference in this imposed example.
+
+The [100 paired cases](synthetic_cases.csv) produce an [accuracy increase](upgrade_summary.json) from 78% to 86%, with fourteen recoveries and six regressions. Routine accuracy rises from 60/80 to 72/80; consequential accuracy falls from 18/20 to 14/20. At stipulated failure costs of $1 and $20, aggregate loss increases from $60 to $128. The loss comparison reverses when the consequential-to-routine cost ratio crosses three. These figures describe constructed cases only.
+
+Commands, assumptions, source provenance, and test scope appear in the [example guide](../README.md).
 
 ---
 

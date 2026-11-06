@@ -1,0 +1,44 @@
+{
+  "repository": "zou-group/llm-claims-shelf-life",
+  "commit": "710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d",
+  "commit_date": "2026-11-02",
+  "retrieved_on": "2026-11-05",
+  "license": "MIT; see source_tables/LICENSE",
+  "files": [
+    {
+      "file": "source_tables/LICENSE",
+      "source": "https://github.com/zou-group/llm-claims-shelf-life/blob/710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d/LICENSE",
+      "sha256": "6e8594fd427aa0c23908f72bd7593085251363dedae35c906bd7de0d2438d965",
+      "git_blob_sha": "e397cd22bdd8f59b667002d2ce74d32fe42e69ea",
+      "bytes": 1355
+    },
+    {
+      "file": "source_tables/README.md",
+      "source": "https://github.com/zou-group/llm-claims-shelf-life/blob/710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d/claims/README.md",
+      "sha256": "5245a201345ea3efef30085902fb7d1aaf58b22aec3cfe461edd1e418c8b35dc",
+      "git_blob_sha": "508c81719db1e9ee15298820d47a28ad6157963f",
+      "bytes": 1516
+    },
+    {
+      "file": "source_tables/claims.csv",
+      "source": "https://github.com/zou-group/llm-claims-shelf-life/blob/710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d/claims/claims.csv",
+      "sha256": "2bda4a69df2dd275a85b0c92a467a665a78da9571ca7775393b580ae3af18df5",
+      "git_blob_sha": "24c1fec728c5900af118a930c7a37d35c8a43283",
+      "bytes": 47218
+    },
+    {
+      "file": "source_tables/panel_values.csv",
+      "source": "https://github.com/zou-group/llm-claims-shelf-life/blob/710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d/claims/panel_values.csv",
+      "sha256": "0410ee2f7662135fff11ac21ec3628b4a25c2b5950729b85ad2542d3e3539327",
+      "git_blob_sha": "24995e4c248d7ab39d50834b810d67c568886898",
+      "bytes": 193583
+    },
+    {
+      "file": "source_tables/post_results.json",
+      "source": "https://github.com/zou-group/llm-claims-shelf-life/blob/710517ed80e1c85cc3a5fe1cef2f7c4045e59b3d/experiments/run_minimal_setups/analysis/post/results.json",
+      "sha256": "dcd56146e20f7dd10215a92bf4b1385a51c320e40b9ef49c05a314d2da8381c4",
+      "git_blob_sha": "7fa12d03b4e744798a3ef1af92f3c3d897bc7332",
+      "bytes": 701932
+    }
+  ]
+}

@@ -217,6 +217,19 @@ M1, Section 1.8.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/m
 
 M1, Section 1.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md}}
 \end{frame}
+\begin{frame}{Versioned Evidence}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Record the model, date, prompts, tools, settings, parser, and scoring rule.
+\item Keep known failure cases and evaluate transfer on fresh cases.
+\item Check parsing, execution, and analytical correctness separately.
+\end{slidebullets}
+\vfill
+\note{A historical finding concerns the tested configuration. A current workflow can differ through the model, interface, data, or judgment rule. Chen, Zaharia, and Zou separate code formatting from correctness after postprocessing. A code generator can improve on one measure while an automated pipeline breaks on another.
+
+M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. \url{https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2} \url{../01_Resources/14_LLM_Evidence_and_Revalidation/README.md}}
+\end{frame}
 \begin{frame}{A Reproducible Analysis}
 \usebeamercolor[fg]{normal text}
 \vfill

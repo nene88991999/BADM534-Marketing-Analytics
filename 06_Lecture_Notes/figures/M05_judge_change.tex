@@ -1,0 +1,17 @@
+\begin{tikzpicture}[font=\small,>=Stealth]
+\draw[IlliniBlue] (0,0) rectangle (7,3.4);
+\draw[IlliniBlue] (3.5,0)--(3.5,3.4);
+\draw[IlliniBlue] (0,1.7)--(7,1.7);
+\node at (1.75,3.85) {Old Generator};
+\node at (5.25,3.85) {New Generator};
+\node[anchor=east] at (-.25,2.55) {Old Judge};
+\node[anchor=east] at (-.25,.85) {New Judge};
+\node[font=\Large\bfseries] at (1.75,2.55) {60};
+\node[font=\Large\bfseries] at (5.25,2.55) {62};
+\node[font=\Large\bfseries] at (1.75,.85) {75};
+\node[font=\Large\bfseries] at (5.25,.85) {77};
+\draw[->,IlliniBlue,thick] (2.25,2.55)--node[above] {$+2$} (4.75,2.55);
+\draw[->,IlliniBlue,thick] (2.25,.85)--node[above] {$+2$} (4.75,.85);
+\draw[->,IlliniOrange,thick] (7.5,2.55)--node[right,align=left] {$+15$\\Judge Shift} (7.5,.85);
+\node[align=center,text width=9.2cm] at (3.5,-.65) {Changing both versions gives $77-60=17$.\\Holding either judge fixed gives two points.};
+\end{tikzpicture}

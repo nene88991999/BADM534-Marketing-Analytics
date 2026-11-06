@@ -1376,3 +1376,130 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 2.21 Follow-up Time and the Shelf Life of AI Findings
+
+\noindent A manager deciding whether to rely on an earlier AI result needs to distinguish the age of the evidence from evidence that its effect has changed. [Queen and Zou (2026)](https://zou-group.github.io/llm-claims-shelf-life/) provide a selected panel of fifty claims and twenty models. The released classifications contain 22 expired, seventeen weakened, eight persistent, and three strengthened findings. Eight of the 1,000 model-claim comparisons are flagged as unreliable. The selection of claims, tested configurations, and classification rule define the population behind these counts.
+
+The study puts different outcomes on a relative-effect scale. For an outcome $v$ with reference value $a$ and claim-absent value $v_0$, the transformation is $e=(v-v_0)/(a-v_0)$. An effect of one matches the reference magnitude; zero matches the specified null. The reference and null must be distinct and measured in the same units. Relative effects preserve change within a defined metric. They do not put the commercial costs of different failures on a common scale.
+
+The mean time from publication to estimated expiration is 15.75 months among the 22 expired claims. This conditions on having reached the event. The other 28 observations provide information about how long a finding remained unexpired before observation ended. Removing them selects findings that expired soon enough to be observed. Treating their follow-up times as expiration dates would instead invent events.
+
+### 2.21.1 Censoring and Comparable Follow-up
+
+\noindent Let $t_j$ be a distinct estimated expiration time measured in months after publication. Let $n_j$ count claims still observed and unexpired immediately before $t_j$, and let $d_j$ count expirations at that time. The Kaplan-Meier estimate of the share that remains unexpired through month $t$ is
+
+$$
+\widehat S(t)=\prod_{t_j\leq t}\left(1-\frac{d_j}{n_j}\right).
+$$
+
+An unexpired claim leaves the risk set at its last follow-up date without contributing an expiration. Events are counted before censoring at tied times. Comparing $1-\widehat S(t)$ at a common horizon separates elapsed follow-up from the snapshot's mixture of older and newer papers. A population survival interpretation requires censoring that is independent of event time under the chosen conditioning variables. Publication cohorts and purposeful selection can challenge that condition.
+
+![Estimated expiration shares are 4.0% at six months, 16.0% at twelve months, and 38.9% at twenty-four months. The step calculation retains all fifty selected claims, with 28 right-censored observations. Published estimated dates are treated as fixed.](../figures/M02_claim_followup.png)
+
+The displayed curve reuses the released point estimates. Several expiration dates are estimated within intervals, and two follow a count of recent models. The calculation does not propagate date uncertainty or fit an interval-censoring model. A smooth model-release trend also compares different configurations, with differing default reasoning budgets, rather than identifying a causal effect of calendar time. The [source record](../../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) retains these distinctions.
+
+### 2.21.2 Reproduce the Published Summary
+
+\noindent A valid summary requires unique claim-model identifiers, preserved unreliable comparisons, and classifications that agree across the released files. Follow-up calculations use the pinned public snapshot and the published estimated dates. Model-level threshold counts concern individual point estimates; the source's fitted classifications use additional rules and uncertainty.
+
+
+Python source: [summarize_snapshot.py](../../03_Data_and_Code/LLM_Revalidation/summarize_snapshot.py).
+
+```python
+"""Summarize published LLM claim results; no model calls or trend refitting."""
+from pathlib import Path
+from datetime import date
+from collections import Counter
+import csv
+import json
+import statistics
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/14_LLM_Evidence_and_Revalidation/source_tables"
+END = date(2026, 9, 30)
+MONTH = 365.25 / 12
+
+
+def survival(times, events, horizon):
+    """Kaplan-Meier survival, with events before censoring at tied times."""
+    if len(times) != len(events) or not times:
+        raise ValueError("Equal nonempty time and event lists are required")
+    if any(t < 0 for t in times) or any(e not in (0, 1) for e in events):
+        raise ValueError("Invalid follow-up time or event indicator")
+    result = 1.0
+    for time in sorted(set(t for t in times if t <= horizon)):
+        at_risk = sum(t >= time for t in times)
+        events_now = sum(e for t, e in zip(times, events) if t == time)
+        result *= 1 - events_now / at_risk
+    return result
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    claims = list(csv.DictReader((SOURCE / "claims.csv").open()))
+    panel = list(csv.DictReader((SOURCE / "panel_values.csv").open()))
+    fitted = json.loads((SOURCE / "post_results.json").read_text())["claims"]
+    assert len({c["blog_id"] for c in claims}) == len(claims) == 50
+    assert len({(r["blog_id"], r["model"]) for r in panel}) == len(panel) == 1000
+    assert len({r["model"] for r in panel}) == 20
+    assert {r["reliable"] for r in panel} <= {"True", "False"}
+    assert all(sum(r["blog_id"] == c["blog_id"] for r in panel) == 20 for c in claims)
+    aliases = {"dead": "expired", "attenuated": "weakened"}
+    labels = {c["blog_id"]: aliases.get(c["verdict"], c["verdict"]) for c in claims}
+    assert set(labels) == {c["id"] for c in fitted}
+    assert all(labels[c["id"]] == aliases.get(c["category"], c["category"]) for c in fitted)
+    counts = Counter(labels.values())
+    lifetimes = []
+    for claim in sorted(fitted, key=lambda c: int(c["id"][1:])):
+        start = date.fromisoformat(claim["paper_date"])
+        event = int(labels[claim["id"]] == "expired")
+        stop = date.fromisoformat(claim["death"]) if event else END
+        assert start <= stop <= END
+        lifetimes.append(dict(claim_id=claim["id"], paper_date=str(start),
+            endpoint=str(stop), months=(stop - start).days / MONTH, event=event,
+            endpoint_kind=claim["death_kind"] if event else "right_censored"))
+    times = [r["months"] for r in lifetimes]
+    events = [r["event"] for r in lifetimes]
+    expired = [t for t, e in zip(times, events) if e]
+    horizons = [dict(months=h, estimated_expired_share=1-survival(times, events, h))
+                for h in (6, 12, 24)]
+    curve = [dict(months=h, estimated_expired_share=1-survival(times, events, h))
+             for h in sorted({0.0, 24.0} | {t for t in times if t <= 24})]
+    verdict_rows = [dict(verdict=k, claims=counts[k], share=counts[k]/len(claims))
+                    for k in ("expired", "weakened", "persists", "strengthened")]
+    model_rows = []
+    for model in sorted({r["model"] for r in panel}):
+        selected = [r for r in panel if r["model"] == model]
+        reliable = [r for r in selected if r["reliable"] == "True"]
+        model_rows.append(dict(model=model, name=selected[0]["model_name"],
+            reliable_pairs=len(reliable), unscorable_pairs=len(selected)-len(reliable),
+            effects_at_or_below_point_two=sum(float(r["e"]) <= .2 for r in reliable)))
+    citation_rows = [dict(model=r["model_name"], release=r["release"],
+        fabricated_fraction=float(r["value"]), relative_effect=float(r["e"]),
+        reliable=r["reliable"]) for r in panel if r["blog_id"] == "C11"]
+    summary = dict(claims=len(claims), models=len(model_rows), pairs=len(panel),
+        unreliable_pairs=sum(r["reliable"] == "False" for r in panel), verdicts=counts,
+        expired_only_mean_months=statistics.mean(expired),
+        expired_only_median_months=statistics.median(expired), horizons=horizons,
+        observation_end=str(END),
+        scope="Published fitted dates treated as fixed; no model runs, refits, or date-uncertainty propagation")
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    for name, rows in [("verdicts", verdict_rows), ("lifetimes", lifetimes),
+                       ("horizons", horizons), ("followup_curve", curve), ("model_counts", model_rows),
+                       ("citation_fabrication", citation_rows)]:
+        write_csv(output / (name + ".csv"), rows)
+    (output / "snapshot_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

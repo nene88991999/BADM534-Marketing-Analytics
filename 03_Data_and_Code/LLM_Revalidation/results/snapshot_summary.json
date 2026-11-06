@@ -1,0 +1,30 @@
+{
+  "claims": 50,
+  "models": 20,
+  "pairs": 1000,
+  "unreliable_pairs": 8,
+  "verdicts": {
+    "weakened": 17,
+    "expired": 22,
+    "persists": 8,
+    "strengthened": 3
+  },
+  "expired_only_mean_months": 15.74761993653164,
+  "expired_only_median_months": 14.652977412731007,
+  "horizons": [
+    {
+      "months": 6,
+      "estimated_expired_share": 0.040000000000000036
+    },
+    {
+      "months": 12,
+      "estimated_expired_share": 0.16047619047619066
+    },
+    {
+      "months": 24,
+      "estimated_expired_share": 0.3887113660611604
+    }
+  ],
+  "observation_end": "2026-09-30",
+  "scope": "Published fitted dates treated as fixed; no model runs, refits, or date-uncertainty propagation"
+}

@@ -1,0 +1,21 @@
+model,name,reliable_pairs,unscorable_pairs,effects_at_or_below_point_two
+M015,GPT-4o mini,50,0,5
+M017,Llama 3.1 70B Instruct,50,0,7
+M025,Qwen2.5-72B-Instruct,49,1,7
+M045,DeepSeek V3,50,0,10
+M049,Mistral Small 3 (2501),47,3,6
+M066,Llama 4 Maverick,49,1,9
+M090,Gemini 2.5 Flash,50,0,9
+M102,gpt-oss-120b,50,0,13
+M119,Claude Haiku 4.5,50,0,17
+M133,GPT-5.2,50,0,15
+M140,Claude Opus 4.6,49,1,22
+M143,GLM-5,50,0,19
+M171,Qwen3.7-Max,50,0,19
+M183,Qwen3.7-Flash,50,0,14
+M190,DeepSeek V4 Pro 0813,50,0,11
+M196,GLM-5.3-Flash,50,0,19
+M199,Gemini 3.8 Flash,49,1,24
+M204,GPT-6 Luna,50,0,25
+M206,Claude Sonnet 5.5,49,1,27
+M207,GPT-6.1 Sol,50,0,30

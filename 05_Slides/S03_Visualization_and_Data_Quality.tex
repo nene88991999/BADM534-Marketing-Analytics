@@ -134,6 +134,41 @@ M2, Section 2.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 \url{../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md}}
 \end{frame}
+\begin{frame}{Selected Findings at a Fixed Date}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lr}
+\toprule
+Published Category & Claims \\
+\midrule
+Expired & 22 \\
+Weakened & 17 \\
+Persists & 8 \\
+Strengthened & 3 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Fifty selected claims, twenty models, and a September 2026 endpoint.
+\vfill
+\note{The released data contain 1,000 model-claim pairs, with eight flagged unreliable comparisons. These categories describe the selected claims under the authors' rules. An expired category allows a residual effect and exceptions among individual models. The point-estimate threshold is not the whole classification rule.
+
+Queen and Zou (2026). \url{https://zou-group.github.io/llm-claims-shelf-life/} M2 §2.21. \url{../01_Resources/14_LLM_Evidence_and_Revalidation/README.md}}
+\end{frame}
+\begin{frame}{Follow-up Changes the Denominator}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M02_claim_followup.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small All fifty claims contribute follow-up; 28 remain right-censored.\par}
+\note{The 15.75-month mean conditions on the 22 expired claims. It is not an expected lifetime for all findings. The displayed calculation retains the unexpired claims until the observation endpoint. Interval-based and model-count dates are treated as the authors' point estimates; their uncertainty is not propagated.
+
+Queen and Zou (2026), released fitted dates; original course calculation. \url{../01_Resources/14_LLM_Evidence_and_Revalidation/README.md}}
+\end{frame}
 \begin{frame}{Energy-Plausibility Screens}
 \usebeamercolor[fg]{normal text}
 \vfill

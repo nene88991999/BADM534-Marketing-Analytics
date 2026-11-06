@@ -21,6 +21,7 @@ Session 14. M8. 170 minutes.
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
+- [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -128,15 +129,25 @@ Source: Marketing Analytics Lecture Notes, M8 §8.17.1.
 
 ## Slide 11: Model Updates and Unresolved Tasks
 
-- Connect an update to a recorded difficulty and a feasible comparison.
-- Evaluate the frozen challenger and current procedure on fresh cases.
-- Include setup, correction, and maintenance in the adoption decision.
+- Identify the changed model, prompt, tool, data, or evaluation rule.
+- Compare paired cases and fresh tasks using the same criteria.
+- Include regressions, review costs, and customer consequences in the decision.
 
-Record actual access, supported inputs, failure conditions, and the original decision. A difficulty register can omit an unexpected useful route, so allow exploratory comparisons and revise the diagnosis. Retain the existing procedure when the challenger provides no supported improvement. A new schema or customer population can require revalidation of a retained helper.
+A new release motivates a hypothesis about the current workflow. It does not establish improvement in the intended task population. Preserve the current procedure, predefine acceptance criteria, and retain a way to return to it. The claim-lifetime study motivates task-specific revalidation; it does not set a universal review interval.
 
-Source: Marketing Analytics Lecture Notes, M8 §8.18.
+Source: M8 §8.18.1; M7 §7.22. https://zou-group.github.io/llm-claims-shelf-life/
 
-## Slide 12: A Choice Procedure Can Change Renewal
+## Slide 12: Residual Risk and Scale
+
+- An expired research category can still allow residual failures.
+- Expected failure loss depends on uses, failure probability, and consequences.
+- Verify that references exist and support the claims made.
+
+A fitted category describes the source protocol and selected model panel. The relevant deployment criterion depends on customer outcomes and exposure. A decline in fabricated references leaves other checks necessary, including correct details and support for an assertion. Correct references do not identify authorship.
+
+Source: M8 §8.18.1; M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+
+## Slide 13: A Choice Procedure Can Change Renewal
 
 - A direct offer and an offer preceded by questions can produce different choices.
 - The customer still makes the final selection.
@@ -146,7 +157,7 @@ Questions, defaults, or retention prompts can precede a fixed target decision. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 13: Opposed Interests
+## Slide 14: Opposed Interests
 
 Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
 
@@ -160,7 +171,7 @@ This conditional comparison holds the offer, monetary values, and relevant respo
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 14: Profit and Customer Value Can Move Oppositely
+## Slide 15: Profit and Customer Value Can Move Oppositely
 
 Synthetic probabilities and fixed stakes. Direct renewal is 20%.
 
@@ -172,7 +183,7 @@ The direct-choice benchmark is distinct from the consumer-preferred procedure. R
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 15: Experimentation Selects the Commercial Winner
+## Slide 16: Experimentation Selects the Commercial Winner
 
 - A fixed set of procedures has stable renewal probabilities.
 - Independent randomized samples estimate each probability.
@@ -182,7 +193,7 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 16: A Cancellation Evaluation
+## Slide 17: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -192,7 +203,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 17: Retention Leaves the Mechanism Unresolved
+## Slide 18: Retention Leaves the Mechanism Unresolved
 
 The same payment outcome can follow valuable service or obstructed exit.
 
@@ -204,7 +215,7 @@ This is a conceptual diagram, not an estimated causal graph. It motivates collec
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 18: Federal Cancellation Policy: Current Status
+## Slide 19: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -214,7 +225,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 19: Cancellation Rules Differ by Jurisdiction
+## Slide 20: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -224,7 +235,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 20: Research Frequency and Policy Importance
+## Slide 21: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -234,7 +245,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 21: Pricing, Reviews, and Delivery
+## Slide 22: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -244,7 +255,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 22: Pricing Language and Regulatory Evidence
+## Slide 23: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -254,7 +265,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 23: A Welfare Comparison
+## Slide 24: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -273,7 +284,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 24: Coding Exercise: A Marketing Evaluation
+## Slide 25: Coding Exercise: A Marketing Evaluation
 
 - Calculate reuse break-even and the conditional price interval.
 - Compute profit and customer value for alternative retention procedures.
@@ -283,7 +294,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S14 and S14_ethics.
 
 Source: M8, Section 8.13.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 25: A Decision With Consumer Outcomes
+## Slide 26: A Decision With Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

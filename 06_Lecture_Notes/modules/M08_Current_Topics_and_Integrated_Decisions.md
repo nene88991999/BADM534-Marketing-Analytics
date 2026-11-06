@@ -915,6 +915,16 @@ A difficulty register is a provisional diagnosis. An update can matter through a
 
 Retain the executable code, input definitions, supported population, checks, costs, and known failure conditions for each accepted procedure. A model replacement, changed data schema, or shifted customer population can invalidate parts of the earlier evidence. Revalidation should address those dependencies explicitly. A larger code archive becomes useful only when its contents improve subsequent work enough to justify retrieval, adaptation, and upkeep.
 
+### 8.18.1 Revalidation, Exposure, and Customer Consequences
+
+\noindent The cost of relying on an outdated result depends on how often the workflow is used and what a failure does. If a configuration has failure probability $p$ over $N$ comparable uses and loss $L$ per failure, its expected failure loss is $NpL$. Independence across uses is unnecessary for this expectation when each has the stated marginal probability; dependence matters for the distribution of aggregate loss. Falling error rates can coexist with substantial exposure as use expands. The relevant acceptance threshold follows from consequences and feasible alternatives.
+
+The claim panel in Section 2.21 supplies hypotheses to revisit. Its expiration categories allow residual effects and exceptions among individual models. They do not establish that a deployment satisfies the firm's reliability objective. The paired example in Section 7.22 shows why a higher pooled score can coexist with greater stipulated loss. A revalidation decision should connect the suspected change to recoveries, regressions, downstream costs, and the remaining uses over which an improvement can matter.
+
+A fixed regression set detects recurrence of known problems. Fresh tasks examine whether the procedure transfers. Changes to a judge or parser should be evaluated separately using saved outputs, as in Section 5.18. Record the intended upgrade, evidence used in selecting it, acceptance criteria set before the final comparison, and a way to return to the previous procedure. Review after relevant system or data changes, with additional scrutiny where exposure and consequences are high. The reported lifetime of selected research claims does not determine a universal review interval.
+
+For a marketing research bibliography, verify both whether a cited work exists and whether it supports the assertion. A decline in fabricated references does not eliminate erroneous details or unsupported uses of real sources. Correct references also do not identify who authored a document. For customer recommendations, assess factual support, suitability, and the customer's ability to revise the choice. A changed capability finding does not itself change those decision criteria.
+
 ## 8.19 Consumer Agency and Subscription Cancellation
 
 \noindent A subscription manager can increase retention through valuable service, an understood price concession, or a difficult exit process. These changes can generate similar payment records while producing different customer consequences. Consumer agency concerns whether a person can understand the offer, choose it, and revise that decision. The evaluation should connect the interface to those capabilities before treating retained revenue as evidence of successful relationship management.

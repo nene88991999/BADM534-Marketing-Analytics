@@ -167,6 +167,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Versioned Evidence",
+        "bullets": [
+          "Record the model, date, prompts, tools, settings, parser, and scoring rule.",
+          "Keep known failure cases and evaluate transfer on fresh cases.",
+          "Check parsing, execution, and analytical correctness separately."
+        ],
+        "notes": "A historical finding concerns the tested configuration. A current workflow can differ through the model, interface, data, or judgment rule. Chen, Zaharia, and Zou separate code formatting from correctness after postprocessing. A code generator can improve on one measure while an automated pipeline breaks on another.",
+        "source": "M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Reproducible Analysis",
         "bullets": [
           "Relative paths identify inputs and outputs.",
@@ -216,7 +227,8 @@
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[mHealth dictionary](../03_Data_and_Code/mHealth/DATA_DICTIONARY.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
     ],
     "practice": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
     "application": "Write a coupon specification and identify the evidence needed to resolve its causal question."
@@ -544,6 +556,44 @@
         "source": "../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md"
       },
       {
+        "kind": "table",
+        "title": "Selected Findings at a Fixed Date",
+        "headers": [
+          "Published Category",
+          "Claims"
+        ],
+        "rows": [
+          [
+            "Expired",
+            "22"
+          ],
+          [
+            "Weakened",
+            "17"
+          ],
+          [
+            "Persists",
+            "8"
+          ],
+          [
+            "Strengthened",
+            "3"
+          ]
+        ],
+        "caption": "Fifty selected claims, twenty models, and a September 2026 endpoint.",
+        "notes": "The released data contain 1,000 model-claim pairs, with eight flagged unreliable comparisons. These categories describe the selected claims under the authors' rules. An expired category allows a residual effect and exceptions among individual models. The point-estimate threshold is not the whole classification rule.",
+        "source": "Queen and Zou (2026). https://zou-group.github.io/llm-claims-shelf-life/ M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Follow-up Changes the Denominator",
+        "figure": "../06_Lecture_Notes/figures/M02_claim_followup.tex",
+        "caption": "All fifty claims contribute follow-up; 28 remain right-censored.",
+        "description": "Kaplan-Meier point estimates give 4.0%, 16.0%, and 38.9% expired at six, twelve, and twenty-four months. Published estimated dates are treated as fixed.",
+        "notes": "The 15.75-month mean conditions on the 22 expired claims. It is not an expected lifetime for all findings. The displayed calculation retains the unexpired claims until the observation endpoint. Interval-based and model-count dates are treated as the authors' point estimates; their uncertainty is not propagated.",
+        "source": "Queen and Zou (2026), released fitted dates; original course calculation. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Energy-Plausibility Screens",
         "bullets": [
@@ -645,7 +695,8 @@
       "[Visualization programs and results](../03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md)",
       "[Nutrition methods](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)"
+      "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
     ],
     "practice": "Assess chart values, paired changes, scales, and denominator controls.",
     "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim."
@@ -1429,8 +1480,8 @@
           "Assess a held-out sample with human labels.",
           "Record the model, prompt, and response format."
         ],
-        "notes": "Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices.",
-        "source": "M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+        "notes": "Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices. A sponsor-framing comparison can hold the same proposal fixed while varying whether the sponsor likes it. Evaluate factual criticism separately from approval. This is a proposed exercise motivated by Sharma et al.; no course model responses have been collected.",
+        "source": "M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Sharma et al. (2024), https://arxiv.org/abs/2310.13548v4. M5 §5.18."
       },
       {
         "kind": "bullets",
@@ -1535,6 +1586,15 @@
         "source": "Marketing Analytics Lecture Notes, M5 §5.15."
       },
       {
+        "kind": "figure",
+        "title": "Generator and Judge Changes",
+        "figure": "../06_Lecture_Notes/figures/M05_judge_change.tex",
+        "caption": "Identical saved outputs are scored by both judges. All scores are stipulated.",
+        "description": "Old-judge scores are 60 and 62; new-judge scores are 75 and 77. The generator gain is two points within either judge, while the diagonal comparison is seventeen.",
+        "notes": "A stable judge supplies a common comparison but still requires validation. Position, verbosity, and self-preference can affect evaluation. For earnings-call summaries, independently check factual support, speaker role, and whether a statement concerns a plan or an implemented action. Preserve inconsistent judgments.",
+        "source": "M5 §5.18. Zheng et al. (2023), https://arxiv.org/abs/2306.05685; Panickssery et al. (2024), https://arxiv.org/abs/2404.13076"
+      },
+      {
         "kind": "bullets",
         "title": "Network Objects",
         "bullets": [
@@ -1627,7 +1687,8 @@
       "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
-      "[University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)"
+      "[University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)",
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
     ],
     "practice": "Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.",
     "application": "Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations."
@@ -2392,6 +2453,24 @@
         "source": "M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
+        "kind": "figure",
+        "title": "Accuracy and Failure Costs",
+        "figure": "../06_Lecture_Notes/figures/M07_upgrade_segments.tex",
+        "caption": "Constructed cases: pooled accuracy rises from 78% to 86%.",
+        "description": "Routine accuracy rises from 75% to 90% on eighty cases; consequential accuracy falls from 90% to 70% on twenty.",
+        "notes": "Fourteen paired cases improve and six regress. Stipulated failure costs of one dollar for routine tasks and twenty dollars for consequential tasks give losses of sixty and 128 dollars. The additional four consequential failures outweigh the twelve avoided routine failures. These are constructed values, not measured model performance.",
+        "source": "M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md"
+      },
+      {
+        "kind": "code",
+        "title": "Paired Regression Checks",
+        "intro": "The same one hundred constructed cases are scored under both configurations.",
+        "code": "improved, regressed, cases = 14, 6, 100\ngain_pp = 100 * (improved - regressed) / cases\nold_loss = 20 * 1 + 2 * 20\nnew_loss = 8 * 1 + 6 * 20\nprint(gain_pp, old_loss, new_loss)",
+        "check": "Output: 8.0 percentage points; current loss 60 dollars; challenger loss 128 dollars.",
+        "notes": "The complete program preserves every paired case and each segment denominator. With a consequential-to-routine loss ratio q, the change in failure loss is -12 + 4q. The challenger improves this loss only below a ratio of three. Inference fees, setup costs, and other outcomes require additional terms.",
+        "source": "M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py"
+      },
+      {
         "kind": "bullets",
         "title": "Coding Exercise: A Forecast Evaluation",
         "bullets": [
@@ -2431,7 +2510,8 @@
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[McBroken prediction case](../03_Data_and_Code/McBroken/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
     ],
     "practice": "Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.",
     "application": "Choose a forecast, split, and decision threshold using the intended deployment population."
@@ -2931,12 +3011,23 @@
         "kind": "bullets",
         "title": "Model Updates and Unresolved Tasks",
         "bullets": [
-          "Connect an update to a recorded difficulty and a feasible comparison.",
-          "Evaluate the frozen challenger and current procedure on fresh cases.",
-          "Include setup, correction, and maintenance in the adoption decision."
+          "Identify the changed model, prompt, tool, data, or evaluation rule.",
+          "Compare paired cases and fresh tasks using the same criteria.",
+          "Include regressions, review costs, and customer consequences in the decision."
         ],
-        "notes": "Record actual access, supported inputs, failure conditions, and the original decision. A difficulty register can omit an unexpected useful route, so allow exploratory comparisons and revise the diagnosis. Retain the existing procedure when the challenger provides no supported improvement. A new schema or customer population can require revalidation of a retained helper.",
-        "source": "Marketing Analytics Lecture Notes, M8 §8.18."
+        "notes": "A new release motivates a hypothesis about the current workflow. It does not establish improvement in the intended task population. Preserve the current procedure, predefine acceptance criteria, and retain a way to return to it. The claim-lifetime study motivates task-specific revalidation; it does not set a universal review interval.",
+        "source": "M8 §8.18.1; M7 §7.22. https://zou-group.github.io/llm-claims-shelf-life/"
+      },
+      {
+        "kind": "bullets",
+        "title": "Residual Risk and Scale",
+        "bullets": [
+          "An expired research category can still allow residual failures.",
+          "Expected failure loss depends on uses, failure probability, and consequences.",
+          "Verify that references exist and support the claims made."
+        ],
+        "notes": "A fitted category describes the source protocol and selected model panel. The relevant deployment criterion depends on customer outcomes and exposure. A decline in fabricated references leaves other checks necessary, including correct details and support for an assertion. Correct references do not identify authorship.",
+        "source": "M8 §8.18.1; M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
       },
       {
         "kind": "bullets",
@@ -3092,7 +3183,8 @@
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
-      "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)"
+      "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
     ],
     "practice": "Calculate reuse costs and buyer/seller price bounds, then the conditional retention-welfare comparison.",
     "application": "Evaluate AI adoption and retention recommendations using total costs, customer alternatives, outcomes, and applicable rules."

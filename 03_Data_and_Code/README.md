@@ -49,3 +49,7 @@ The [AI workflow examples](AI_Workflows/README.md) compare model and library con
 ## Consumer Agency Literature and University Affiliations
 
 The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 original managerial summaries and mechanism codes, a DOI census, access-gap assessment, reproducible Jaccard clustering, and sensitivity checks. The [affiliation analysis](Consumer_Agency_Literature/AFFILIATIONS.md) groups universities through shared publications and compares fractional research profiles. The inputs are actual bibliographic metadata and preliminary review annotations. Full code appears in M2 §2.20, M4 §4.17, and M5 §5.17; causal and policy interpretations appear in M6 §6.20, M7 §7.21, and M8 §8.19.
+
+## LLM Revalidation
+
+[LLM Revalidation](LLM_Revalidation/README.md) contains a licensed fifty-claim research snapshot, independent descriptive calculations, and constructed comparisons of model upgrades and judge changes. Three standard-library programs, complete case-level outputs, a data dictionary, and four small-case tests accompany the full code in the notes.

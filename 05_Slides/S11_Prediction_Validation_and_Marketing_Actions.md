@@ -19,6 +19,7 @@ Session 11. M7. 170 minutes.
 - [McBroken prediction case](../03_Data_and_Code/McBroken/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
+- [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -203,7 +204,37 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 17: Coding Exercise: A Forecast Evaluation
+## Slide 17: Accuracy and Failure Costs
+
+Constructed cases: pooled accuracy rises from 78% to 86%.
+
+**Figure description:** Routine accuracy rises from 75% to 90% on eighty cases; consequential accuracy falls from 90% to 70% on twenty.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_upgrade_segments.tex)
+
+Fourteen paired cases improve and six regress. Stipulated failure costs of one dollar for routine tasks and twenty dollars for consequential tasks give losses of sixty and 128 dollars. The additional four consequential failures outweigh the twelve avoided routine failures. These are constructed values, not measured model performance.
+
+Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md
+
+## Slide 18: Paired Regression Checks
+
+The same one hundred constructed cases are scored under both configurations.
+
+```python
+improved, regressed, cases = 14, 6, 100
+gain_pp = 100 * (improved - regressed) / cases
+old_loss = 20 * 1 + 2 * 20
+new_loss = 8 * 1 + 6 * 20
+print(gain_pp, old_loss, new_loss)
+```
+
+Output: 8.0 percentage points; current loss 60 dollars; challenger loss 128 dollars.
+
+The complete program preserves every paired case and each segment denominator. With a consequential-to-routine loss ratio q, the change in failure loss is -12 + 4q. The challenger improves this loss only below a ratio of three. Inference fees, setup costs, and other outcomes require additional terms.
+
+Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
+
+## Slide 19: Coding Exercise: A Forecast Evaluation
 
 - Compare development and fresh accuracy after candidate selection.
 - Check every feature against the forecast date.
@@ -214,7 +245,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics
 
 Source: M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 18: Targeting and Delivered Opportunities
+## Slide 20: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -224,7 +255,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 19: Prediction Discussion
+## Slide 21: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

@@ -22,6 +22,7 @@ Session 07. M5. 170 minutes.
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 - [University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)
+- [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -133,9 +134,9 @@ Source: M5, Section 5.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 - Assess a held-out sample with human labels.
 - Record the model, prompt, and response format.
 
-Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices.
+Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices. A sponsor-framing comparison can hold the same proposal fixed while varying whether the sponsor likes it. Evaluate factual criticism separately from approval. This is a proposed exercise motivated by Sharma et al.; no course model responses have been collected.
 
-Source: M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+Source: M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Sharma et al. (2024), https://arxiv.org/abs/2310.13548v4. M5 §5.18.
 
 ## Slide 11: Agency Labels Need Supporting Evidence
 
@@ -252,7 +253,19 @@ A test on new firms addresses a different deployment population from a test on l
 
 Source: Marketing Analytics Lecture Notes, M5 §5.15.
 
-## Slide 21: Network Objects
+## Slide 21: Generator and Judge Changes
+
+Identical saved outputs are scored by both judges. All scores are stipulated.
+
+**Figure description:** Old-judge scores are 60 and 62; new-judge scores are 75 and 77. The generator gain is two points within either judge, while the diagonal comparison is seventeen.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_judge_change.tex)
+
+A stable judge supplies a common comparison but still requires validation. Position, verbosity, and self-preference can affect evaluation. For earnings-call summaries, independently check factual support, speaker role, and whether a statement concerns a plan or an implemented action. Preserve inconsistent judgments.
+
+Source: M5 §5.18. Zheng et al. (2023), https://arxiv.org/abs/2306.05685; Panickssery et al. (2024), https://arxiv.org/abs/2404.13076
+
+## Slide 22: Network Objects
 
 - Nodes identify customers or accounts.
 - Edges represent a defined relationship in a time window.
@@ -262,7 +275,7 @@ An edge could mean following, messaging, purchasing together, or co-occurrence. 
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 22: Few Links Can Connect Separate Groups
+## Slide 23: Few Links Can Connect Separate Groups
 
 Synthetic undirected network. R has only two links.
 
@@ -274,7 +287,7 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 23: University Affiliations Create a Research Network
+## Slide 24: University Affiliations Create a Research Network
 
 - 745 papers identify 424 higher-education institutions.
 - Split one unit of link weight across each paper's university pairs.
@@ -284,7 +297,7 @@ The eligible census has 824 papers; 79 lack identified education affiliations. W
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 24: Affiliation Groups Depend on the Representation
+## Slide 25: Affiliation Groups Depend on the Representation
 
 Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.
 
@@ -296,7 +309,7 @@ The median adjusted Rand agreement across twenty seeds is 0.522; switching from 
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 25: Coding Exercise: A Label Assessment
+## Slide 26: Coding Exercise: A Label Assessment
 
 - Run the earnings-call assessment and role-exposure calculation.
 - Test denial, future intention, and a missed paraphrase.
@@ -306,7 +319,7 @@ Use ../03_Data_and_Code/Earnings_Calls/README.md and LLM_EXERCISES.md. The mHeal
 
 Source: M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 26: Engagement and Commercial Value
+## Slide 27: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -316,7 +329,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 27: Authenticity of Reviews and Endorsements
+## Slide 28: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -326,7 +339,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 28: Text-Analysis Discussion
+## Slide 29: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

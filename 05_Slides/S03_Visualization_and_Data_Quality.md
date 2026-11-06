@@ -20,6 +20,7 @@ Session 03. M2. 170 minutes.
 - [Nutrition methods](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
+- [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 
 ## Slide 1: Visualization and Data Quality
 
@@ -128,7 +129,34 @@ The primary mechanism sample includes 47 potential-dual-use reviews and one repo
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md
 
-## Slide 11: Energy-Plausibility Screens
+## Slide 11: Selected Findings at a Fixed Date
+
+| Published Category | Claims |
+| --- | --- |
+| Expired | 22 |
+| Weakened | 17 |
+| Persists | 8 |
+| Strengthened | 3 |
+
+Fifty selected claims, twenty models, and a September 2026 endpoint.
+
+The released data contain 1,000 model-claim pairs, with eight flagged unreliable comparisons. These categories describe the selected claims under the authors' rules. An expired category allows a residual effect and exceptions among individual models. The point-estimate threshold is not the whole classification rule.
+
+Source: Queen and Zou (2026). https://zou-group.github.io/llm-claims-shelf-life/ M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+
+## Slide 12: Follow-up Changes the Denominator
+
+All fifty claims contribute follow-up; 28 remain right-censored.
+
+**Figure description:** Kaplan-Meier point estimates give 4.0%, 16.0%, and 38.9% expired at six, twelve, and twenty-four months. Published estimated dates are treated as fixed.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_claim_followup.tex)
+
+The 15.75-month mean conditions on the 22 expired claims. It is not an expected lifetime for all findings. The displayed calculation retains the unexpired claims until the observation endpoint. Interval-based and model-count dates are treated as the authors' point estimates; their uncertainty is not propagated.
+
+Source: Queen and Zou (2026), released fitted dates; original course calculation. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+
+## Slide 13: Energy-Plausibility Screens
 
 - An intake-to-requirement comparison needs defined inputs.
 - Unobserved physiological inputs remain missing.
@@ -138,7 +166,7 @@ The Goldberg example in the notes is an explicitly hypothetical scenario. Its in
 
 Source: M2, Section 2.11.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 12: Interactive Comparisons
+## Slide 14: Interactive Comparisons
 
 - Keep comparable panels on common scales.
 - Display the eligible population and current selection.
@@ -148,7 +176,7 @@ Changing a slider can change the population, the denominator, and the axis range
 
 Source: M2, Section 2.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 13: A Composition Check
+## Slide 15: A Composition Check
 
 Synthetic within-group rates are 9%, 80%, 10%, and 81%.
 
@@ -167,7 +195,7 @@ The observed B mix assigns two-thirds of its customers to the new-customer group
 
 Source: M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 14: Coding Exercise: A Chart Assessment
+## Slide 16: Coding Exercise: A Chart Assessment
 
 - Generate a rate chart from a verified aggregate table.
 - Alter the axis range, cohort filter, and denominator one at a time.
@@ -177,7 +205,7 @@ The small example runs with ../03_Data_and_Code/Lecture_Examples/session_example
 
 Source: M2, Section 2.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 15: A Public-Signal Measurement Problem
+## Slide 17: A Public-Signal Measurement Problem
 
 - A product can acquire a new page title while demand stays unchanged.
 - A single-title series then misses part of its recorded attention.
@@ -187,7 +215,7 @@ Pageviews measure attention to selected pages. They do not directly measure paid
 
 Source: M2, Section 2.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 16: Title Changes and Apparent Declines
+## Slide 18: Title Changes and Apparent Declines
 
 The supplied public pageview capture uses observed title histories.
 
@@ -199,7 +227,7 @@ The GenAI measurement program validates date and title coverage before calculati
 
 Source: M2, Section 2.17.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 17: Evidence in a Management Presentation
+## Slide 19: Evidence in a Management Presentation
 
 - State the decision and supported result.
 - Show the comparison, units, and denominator.
@@ -209,7 +237,7 @@ An executive summary can be concise while retaining consequential uncertainty. A
 
 Source: M2, Section 2.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 18: Honest Comparisons
+## Slide 20: Honest Comparisons
 
 - Keep denominators and scales visible.
 - Preserve missing outcomes and relevant subgroup variation.
@@ -219,7 +247,7 @@ A technically correct chart can still communicate a stronger claim than the evid
 
 Source: ETHICS_AND_REGULATION.md, M2-M3.
 
-## Slide 19: Visualization Discussion
+## Slide 21: Visualization Discussion
 
 - Which customers receive weight in the chart?
 - Could sample restrictions reverse the recommendation?

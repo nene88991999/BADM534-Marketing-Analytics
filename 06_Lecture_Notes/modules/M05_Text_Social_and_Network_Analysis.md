@@ -703,3 +703,54 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## 5.18 A Changing Judge Can Change the Apparent Improvement
+
+\noindent A marketing team compares summaries of the same earnings calls produced by two AI configurations. It uses an LLM judge to score factual support, coverage, and clarity. If the team also changes the judge, a higher reported score can reflect the generator, the judge, or their interaction. A fixed rubric names the intended criteria, but different judges can still apply it differently.
+
+Consider four stipulated mean scores on the same 0-100 rubric. The old judge assigns 60 to the old generator's saved outputs and 62 to the new generator's outputs. The new judge assigns 75 and 77 to those same respective output sets. Comparing the old system's score of 60 with the new system's score of 77 gives seventeen points. Holding either judge fixed gives two points. The remaining fifteen points arise from the changed judgment of the old outputs.
+
+![Both judge versions score the same saved outputs from each generator. Within either judge, the new generator gains two points. Changing both generator and judge together produces a seventeen-point difference, including a fifteen-point judge shift. All scores are stipulated.](../figures/M05_judge_change.png)
+
+[Zheng et al. (2023)](https://arxiv.org/abs/2306.05685) study position, verbosity, and self-enhancement biases in model judges. [Panickssery, Bowman, and Feng (2024)](https://arxiv.org/abs/2404.13076) examine self-recognition and preference for a model's own summaries. These findings motivate scoring saved outputs with both judge versions, varying presentation order, and comparing with independently assessed evidence. Freezing a judge preserves a comparison rule; it does not establish that the rule is correct.
+
+For a review summary, independently assess whether each conclusion is supported by the underlying reviews, whether dissenting experiences are represented, and whether uncertainty is retained. For an earnings-call summary, check speaker role, timing, and the distinction between a claim and an implemented action. Preserve inconsistent or unscorable judgments in the denominator. A parser failure and an incorrect substantive judgment are different failures.
+
+[Sharma et al. (2024)](https://arxiv.org/abs/2310.13548v4) also motivate a controlled feedback exercise. Hold the same marketing proposal and evidence fixed while varying whether a sponsor is described as liking it, disliking it, or expressing no view. Compare factual criticism and recommendations under the same rubric. A change in approval can reflect responsiveness to the sponsor's position without adding evidence about the proposal's commercial value. This is a proposed comparison; no course model responses have been collected.
+
+### 5.18.1 Reproduce the Judge Comparison
+
+\noindent The four imposed mean scores define the comparison, with differences measured in score points. They contain no observed model performance. In a real evaluation, repeated outputs from the same call should remain grouped when estimating uncertainty.
+
+
+Python source: [evaluate_judges.py](../../03_Data_and_Code/LLM_Revalidation/evaluate_judges.py).
+
+```python
+"""A constructed generator-by-judge comparison on a fixed 0-100 rubric."""
+from pathlib import Path
+import json
+
+HERE = Path(__file__).resolve().parent
+
+def compare(scores):
+    old, new = scores["old_judge"], scores["new_judge"]
+    return dict(scores=scores,
+        diagonal_change=new["new_generator"]-old["old_generator"],
+        generator_change_old_judge=old["new_generator"]-old["old_generator"],
+        generator_change_new_judge=new["new_generator"]-new["old_generator"],
+        judge_change_old_generator=new["old_generator"]-old["old_generator"])
+
+def main():
+    # Scores are imposed. Both judges assess the same saved outputs for each generator.
+    scores = {"old_judge": {"old_generator": 60, "new_generator": 62},
+              "new_judge": {"old_generator": 75, "new_generator": 77}}
+    result = compare(scores)
+    assert result["diagonal_change"] == (
+        result["generator_change_new_judge"]+result["judge_change_old_generator"])
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "judge_comparison.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+if __name__ == "__main__":
+    main()
+```

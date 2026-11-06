@@ -19,6 +19,7 @@ Session 01. M1. 170 minutes.
 - [mHealth dictionary](../03_Data_and_Code/mHealth/DATA_DICTIONARY.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
+- [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -197,7 +198,17 @@ Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.p
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 17: A Reproducible Analysis
+## Slide 17: Versioned Evidence
+
+- Record the model, date, prompts, tools, settings, parser, and scoring rule.
+- Keep known failure cases and evaluate transfer on fresh cases.
+- Check parsing, execution, and analytical correctness separately.
+
+A historical finding concerns the tested configuration. A current workflow can differ through the model, interface, data, or judgment rule. Chen, Zaharia, and Zou separate code formatting from correctness after postprocessing. A code generator can improve on one measure while an automated pipeline breaks on another.
+
+Source: M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+
+## Slide 18: A Reproducible Analysis
 
 - Relative paths identify inputs and outputs.
 - A fresh run reconstructs results without hidden notebook state.
@@ -207,7 +218,7 @@ A random seed reproduces a particular random computation under a given implement
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 18: A Campaign Specification
+## Slide 19: A Campaign Specification
 
 - Define the eligible customers and contact date.
 - State the contribution horizon and relevant costs.
@@ -218,7 +229,7 @@ The specification should state one feasible action and the comparison that suppo
 
 Source: M1, Section 1.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 19: Customer Data in an AI Workflow
+## Slide 20: Customer Data in an AI Workflow
 
 - Use only data authorized for the tool and task.
 - Minimize fields and use synthetic examples when they suffice.
@@ -228,7 +239,7 @@ Public availability does not establish permission for every reuse. Pseudonymized
 
 Source: Course agent guide and ETHICS_AND_REGULATION.md, M1.
 
-## Slide 20: Decision Discussion
+## Slide 21: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

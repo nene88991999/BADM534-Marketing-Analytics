@@ -821,3 +821,106 @@ if __name__ == "__main__":
 [Targeted Advertising as Implicit Recommendation](https://doi.org/10.1287/mksc.2023.0117) examines a different economic mechanism. In the retrieved theoretical manuscript, consumers learn from being targeted, and firms anticipate that inference. Equilibrium targeting can include products poorly matched to some recipients even when prediction is accurate. Allowing the firm to set prices changes the welfare and privacy conclusions. These are model results under specified assumptions, not an estimate of how frequently real advertising is mistargeted.
 
 Together, the studies show why an evaluation should preserve the distinction between predictive fit, strategic incentives, and consumer outcomes. Compare rankings using the same eligible consumers and available alternatives. Measure search and purchase behavior, then state the additional model assumptions needed to translate them into surplus. The objective comparison in Section 7.12 and the recurring ranking program provide runnable calculations of how an objective changes recommendations; the published studies supply substantive reasons to evaluate that objective.
+
+## 7.22 Paired Regressions and the Cost of a Model Upgrade
+
+\noindent A marketing operations manager evaluates a replacement for a workflow that handles routine catalog classification and consequential pricing statements. Average accuracy matters, but the manager also needs to know which tasks regress and what those mistakes cost. A common set of cases, independently established labels, and a fixed scoring rule make the comparison interpretable.
+
+Consider 100 constructed paired cases: eighty routine tasks and twenty consequential tasks. The current configuration passes sixty routine and eighteen consequential cases. The challenger passes seventy-two and fourteen. Overall accuracy rises from 78% to 86%, while accuracy on consequential tasks falls from 90% to 70%. These are imposed teaching outcomes, with no missing cases or measured provider performance.
+
+![Routine accuracy rises from 75% to 90% on eighty constructed cases, while consequential accuracy falls from 90% to 70% on twenty. Equal weighting across all one hundred cases produces an eight-point accuracy increase despite the decline on consequential tasks.](../figures/M07_upgrade_segments.png)
+
+### 7.22.1 Recoveries, Regressions, and Loss
+
+\noindent Let $n_{01}$ count cases that the current configuration fails and the challenger passes, and let $n_{10}$ count the reverse. With $N$ paired cases, the change in accuracy is $(n_{01}-n_{10})/N$. Here, fourteen cases improve and six regress. Reporting only the net increase of eight hides the six newly introduced failures and the tasks on which they occur.
+
+Assign a stipulated loss of one dollar to each routine failure and twenty dollars to each consequential failure. The current configuration's total loss is $20+2(20)=60$ dollars. The challenger's loss is $8+6(20)=128$ dollars. The twelve avoided routine failures are outweighed by four additional consequential failures. If $q$ is the consequential-to-routine loss ratio, the change in failure loss, in units of the routine loss, is
+
+$$
+\Delta L=-12+4q.
+$$
+
+The challenger lowers this stipulated loss only for $q<3$. Equality gives indifference on failure loss alone. Setup costs, inference charges, latency, and customer consequences outside the rubric require additional terms. The cost comparison is conditional on the task mix and specified valuations; it is not an estimated business return.
+
+### 7.22.2 Zero Observed Failures and Fresh Evidence
+
+\noindent A separate reliability calculation concerns zero observed failures. Under independent trials with a common failure probability $p$, the probability of seeing none in $n$ trials is $(1-p)^n$. Setting this probability to $\alpha$ yields the one-sided exact upper confidence bound $p_U=1-\alpha^{1/n}$. With zero failures in one hundred trials and $\alpha=0.05$, the bound is 2.95%. The calculation preserves uncertainty even when observed error is zero. Repeated generations from the same prompt may be dependent and require a design that accounts for that dependence.
+
+For the mHealth workflow, fixed regression cases can include duplicate joins, absent entries, and unit conversions. Fresh cases can introduce unseen schemas or later periods. For earnings-call extraction, retain known distinctions between plans and implemented policies, then evaluate on unseen firms or later calls. [LiveCodeBench](https://arxiv.org/abs/2403.07974v2) motivates dated coding tasks, while [LiveBench](https://arxiv.org/abs/2406.19314v2) motivates fresh objective comparisons. Changing task difficulty or composition can change a benchmark score even when the model is fixed. Record benchmark versions and the deployment weights used for the decision.
+
+### 7.22.3 Reproduce the Upgrade Evaluation
+
+\noindent Each constructed case has a unique identifier, two binary outcomes, a task segment, and a stipulated failure cost. These inputs determine paired changes, segment results, and dollar losses. A real deployment requires independent outcome measurement and uncertainty at the task, customer, or document level appropriate to the design.
+
+
+Python source: [evaluate_upgrade.py](../../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py).
+
+```python
+"""Constructed paired cases and judge scores; no measured provider performance."""
+from pathlib import Path
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def make_cases():
+    # Segment, both pass, old-only pass, new-only pass, both fail, failure cost.
+    cells = [("routine", 58, 2, 14, 6, 1), ("consequential", 14, 4, 0, 2, 20)]
+    cases = []
+    for segment, both, old_only, new_only, neither, loss in cells:
+        for old, new, count in [(1, 1, both), (1, 0, old_only),
+                                 (0, 1, new_only), (0, 0, neither)]:
+            for _ in range(count):
+                cases.append(dict(case_id=len(cases)+1, segment=segment,
+                                  old_pass=old, new_pass=new, failure_cost=loss))
+    return cases
+
+
+def assess(cases):
+    if not cases or len({r["case_id"] for r in cases}) != len(cases):
+        raise ValueError("Cases must be nonempty and uniquely identified")
+    if any(r[k] not in (0, 1) for r in cases for k in ("old_pass", "new_pass")):
+        raise ValueError("Pass indicators must be binary")
+    if any(r["failure_cost"] < 0 for r in cases):
+        raise ValueError("Failure costs must be nonnegative")
+    improved = sum(r["new_pass"] > r["old_pass"] for r in cases)
+    regressed = sum(r["new_pass"] < r["old_pass"] for r in cases)
+    return dict(cases=len(cases), old_pass=sum(r["old_pass"] for r in cases),
+        new_pass=sum(r["new_pass"] for r in cases), improved=improved,
+        regressed=regressed, net_gain_pp=100*(improved-regressed)/len(cases),
+        old_loss=sum((1-r["old_pass"])*r["failure_cost"] for r in cases),
+        new_loss=sum((1-r["new_pass"])*r["failure_cost"] for r in cases))
+
+
+def zero_failure_upper(n, alpha=.05):
+    """One-sided exact binomial upper bound after zero failures in n trials."""
+    if n <= 0 or not 0 < alpha < 1:
+        raise ValueError("Positive n and alpha between zero and one are required")
+    return 1 - alpha ** (1/n)
+
+
+def main():
+    cases = make_cases()
+    summary = assess(cases)
+    summary["segments"] = {s: assess([r for r in cases if r["segment"] == s])
+                           for s in sorted({r["segment"] for r in cases})}
+    summary["zero_of_100_upper_95"] = zero_failure_upper(100)
+    routine, consequential = (summary["segments"][s] for s in ("routine", "consequential"))
+    summary["cost_break_even_consequential_to_routine"] = (
+        (routine["new_pass"]-routine["old_pass"]) /
+        (consequential["old_pass"]-consequential["new_pass"]))
+    assert summary["new_pass"]-summary["old_pass"] == summary["improved"]-summary["regressed"]
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    with (output / "synthetic_cases.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(cases[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(cases)
+    (output / "upgrade_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[ybar,width=12cm,height=6.4cm,ymin=0,ymax=105,
+ytick={0,25,50,75,100},ylabel={Correct Cases (\%)},
+symbolic x coords={Routine,Consequential},xtick=data,
+xticklabels={Routine ($n=80$),Consequential ($n=20$)},
+bar width=20pt,enlarge x limits=.5,ymajorgrids=true,
+nodes near coords,nodes near coords style={font=\small},
+legend style={at={(.5,1.15)},anchor=south,legend columns=2,
+cells={anchor=west},/tikz/every even column/.append style={column sep=12pt}}]
+\addplot[fill=IlliniBlue!70,draw=IlliniBlue] coordinates {(Routine,75) (Consequential,90)};
+\addplot[fill=IlliniOrange!65,draw=IlliniOrange,postaction={pattern=north east lines,pattern color=IlliniOrange}] coordinates {(Routine,90) (Consequential,70)};
+\legend{Current,Challenger}
+\end{axis}
+\end{tikzpicture}

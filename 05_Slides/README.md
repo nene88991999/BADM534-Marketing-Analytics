@@ -52,3 +52,7 @@ Sessions 01, 05, 07, 09, 11, and 14 connect failure diagnosis, customer alternat
 ## Consumer Agency and Research Networks
 
 Sessions 3, 6, 7, 9, 12, and 14 add evidence coverage, mechanism clustering, LLM coding, university affiliation communities, downstream customer outcomes, recommendation welfare, and cancellation-policy distinctions. The [complete programs and outputs](../03_Data_and_Code/Consumer_Agency_Literature/README.md) accompany the notes. Four editable TikZ figures retain explicit populations and denominators. The 15-session schedule and the 75-minute regulation block in Session 14 remain in place.
+
+## Changing AI Evidence
+
+Sessions 01, 03, 07, 11, and 14 incorporate versioned claims, censored follow-up, changing AI judges, paired regressions, and residual risk. The [source guide](../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) and [three complete programs](../03_Data_and_Code/LLM_Revalidation/README.md) preserve versions, units, and evidence scope. Three editable TikZ figures distinguish published descriptive results from constructed comparisons. Existing meeting durations and the Session 14 regulation block are retained.

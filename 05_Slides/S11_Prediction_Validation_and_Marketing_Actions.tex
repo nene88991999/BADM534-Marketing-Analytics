@@ -220,6 +220,35 @@ M7, Section 7.18, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 M7, Section 7.18.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
 \end{frame}
+\begin{frame}{Accuracy and Failure Costs}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_upgrade_segments.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Constructed cases: pooled accuracy rises from 78\% to 86\%.\par}
+\note{Fourteen paired cases improve and six regress. Stipulated failure costs of one dollar for routine tasks and twenty dollars for consequential tasks give losses of sixty and 128 dollars. The additional four consequential failures outweigh the twelve avoided routine failures. These are constructed values, not measured model performance.
+
+M7 §7.22. \url{../03_Data_and_Code/LLM_Revalidation/README.md}}
+\end{frame}
+\begin{frame}[fragile]{Paired Regression Checks}
+\usebeamercolor[fg]{normal text}
+\noindent The same one hundred constructed cases are scored under both configurations.
+\begin{lstlisting}
+improved, regressed, cases = 14, 6, 100
+gain_pp = 100 * (improved - regressed) / cases
+old_loss = 20 * 1 + 2 * 20
+new_loss = 8 * 1 + 6 * 20
+print(gain_pp, old_loss, new_loss)
+\end{lstlisting}
+{\small Output: 8.0 percentage points; current loss 60 dollars; challenger loss 128 dollars.\par}
+\note{The complete program preserves every paired case and each segment denominator. With a consequential-to-routine loss ratio q, the change in failure loss is -12 + 4q. The challenger improves this loss only below a ratio of three. Inference fees, setup costs, and other outcomes require additional terms.
+
+M7 §7.22. \url{../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py}}
+\end{frame}
 \begin{frame}{Coding Exercise: A Forecast Evaluation}
 \usebeamercolor[fg]{normal text}
 \vfill

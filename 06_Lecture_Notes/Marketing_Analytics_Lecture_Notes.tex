@@ -1045,6 +1045,47 @@ answers the decision and passes its checks. Reusable functions then
 become investments whose subsequent benefits and maintenance costs can
 be compared, as in M8, Section 8.17.
 
+\hypertarget{M01-model-versions-and-the-scope-of-an-ai-claim}{%
+\section{Model Versions and the Scope of an AI
+Claim}\label{M01-model-versions-and-the-scope-of-an-ai-claim}}
+
+\noindent \noindent A marketing team considering an AI coding service needs to
+know which tasks it performs reliably in the intended workflow. The
+statement that a model can produce correct Python leaves several
+economically relevant conditions unspecified. A script may solve a
+calculation after manual repair while failing the team's automated
+parser. It may pass familiar examples while mishandling a new customer
+identifier or a changed data schema. These outcomes imply different
+verification costs and different feasible uses.
+
+\href{https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2}{Chen,
+Zaharia, and Zou (2024)}, Section 3.5, distinguish directly executable
+outputs from correctness after removing surrounding noncode text. Their
+March and June 2023 comparisons show why the interface around generated
+code belongs in the evaluation. A claim about a particular historical
+configuration provides evidence about that configuration. Transferring
+it to a replacement requires a comparison on the relevant tasks.
+
+A reproducible claim specifies the model identifier and evaluation date,
+system and user prompts, tools, reasoning and sampling settings, token
+or cost budget, input version, parsing rule, scoring rule, and
+denominator. For an mHealth aggregation, the output contract could
+require one row per user-month, preservation of users with no recorded
+entries, and reconciliation to independently calculated totals. For
+earnings-call extraction, it could require the complete relevant passage
+and a distinction between a stated plan and an implemented policy. These
+requirements remain meaningful when the model changes.
+
+Retain a fixed set of known failure cases to detect regressions and a
+separate supply of fresh cases to assess transfer.
+\href{https://arxiv.org/abs/2406.19314v2}{LiveBench} and
+\href{https://arxiv.org/abs/2403.07974v2}{LiveCodeBench} motivate
+refreshed evaluation with objective scoring. New cases should preserve
+the target task mix or report its changes explicitly. Repeated tuning
+against the same public answers consumes their value as fresh evidence.
+Revalidation is warranted after changes to the model, prompt, tool,
+scorer, schema, or supported customer population.
+
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
 Visualization}\label{M02-m2.-customer-data-measurement-and-visualization}}
@@ -3344,6 +3385,188 @@ def main():
     (output / "missing_evidence_bounds.json").write_text(json.dumps(bounds, indent=2) + "\n")
     print(table.to_string())
     print(json.dumps(bounds, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M02-follow-up-time-and-the-shelf-life-of-ai-findings}{%
+\section{Follow-up Time and the Shelf Life of AI
+Findings}\label{M02-follow-up-time-and-the-shelf-life-of-ai-findings}}
+
+\noindent \noindent A manager deciding whether to rely on an earlier AI result
+needs to distinguish the age of the evidence from evidence that its
+effect has changed.
+\href{https://zou-group.github.io/llm-claims-shelf-life/}{Queen and Zou
+(2026)} provide a selected panel of fifty claims and twenty models. The
+released classifications contain 22 expired, seventeen weakened, eight
+persistent, and three strengthened findings. Eight of the 1,000
+model-claim comparisons are flagged as unreliable. The selection of
+claims, tested configurations, and classification rule define the
+population behind these counts.
+
+The study puts different outcomes on a relative-effect scale. For an
+outcome \(v\) with reference value \(a\) and claim-absent value \(v_0\),
+the transformation is \(e=(v-v_0)/(a-v_0)\). An effect of one matches
+the reference magnitude; zero matches the specified null. The reference
+and null must be distinct and measured in the same units. Relative
+effects preserve change within a defined metric. They do not put the
+commercial costs of different failures on a common scale.
+
+The mean time from publication to estimated expiration is 15.75 months
+among the 22 expired claims. This conditions on having reached the
+event. The other 28 observations provide information about how long a
+finding remained unexpired before observation ended. Removing them
+selects findings that expired soon enough to be observed. Treating their
+follow-up times as expiration dates would instead invent events.
+
+\hypertarget{M02-censoring-and-comparable-follow-up}{%
+\subsection{Censoring and Comparable
+Follow-up}\label{M02-censoring-and-comparable-follow-up}}
+
+\noindent \noindent Let \(t_j\) be a distinct estimated expiration time measured
+in months after publication. Let \(n_j\) count claims still observed and
+unexpired immediately before \(t_j\), and let \(d_j\) count expirations
+at that time. The Kaplan-Meier estimate of the share that remains
+unexpired through month \(t\) is
+
+\[
+\widehat S(t)=\prod_{t_j\leq t}\left(1-\frac{d_j}{n_j}\right).
+\]
+
+An unexpired claim leaves the risk set at its last follow-up date
+without contributing an expiration. Events are counted before censoring
+at tied times. Comparing \(1-\widehat S(t)\) at a common horizon
+separates elapsed follow-up from the snapshot's mixture of older and
+newer papers. A population survival interpretation requires censoring
+that is independent of event time under the chosen conditioning
+variables. Publication cohorts and purposeful selection can challenge
+that condition.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_claim_followup.tex}
+\caption{Estimated expiration shares are 4.0\% at six months, 16.0\% at twelve months, and 38.9\% at twenty-four months. The step calculation retains all fifty selected claims, with 28 right-censored observations. Published estimated dates are treated as fixed.}\label{fig:M02_claim_followup}
+\end{figure}
+
+The displayed curve reuses the released point estimates. Several
+expiration dates are estimated within intervals, and two follow a count
+of recent models. The calculation does not propagate date uncertainty or
+fit an interval-censoring model. A smooth model-release trend also
+compares different configurations, with differing default reasoning
+budgets, rather than identifying a causal effect of calendar time. The
+\href{../01_Resources/14_LLM_Evidence_and_Revalidation/README.md}{source
+record} retains these distinctions.
+
+\hypertarget{M02-reproduce-the-published-summary}{%
+\subsection{Reproduce the Published
+Summary}\label{M02-reproduce-the-published-summary}}
+
+\noindent \noindent A valid summary requires unique claim-model identifiers,
+preserved unreliable comparisons, and classifications that agree across
+the released files. Follow-up calculations use the pinned public
+snapshot and the published estimated dates. Model-level threshold counts
+concern individual point estimates; the source's fitted classifications
+use additional rules and uncertainty.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/LLM_Revalidation/summarize_snapshot.py}{summarize\_snapshot.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Summarize published LLM claim results; no model calls or trend refitting."""
+from pathlib import Path
+from datetime import date
+from collections import Counter
+import csv
+import json
+import statistics
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/14_LLM_Evidence_and_Revalidation/source_tables"
+END = date(2026, 9, 30)
+MONTH = 365.25 / 12
+
+
+def survival(times, events, horizon):
+    """Kaplan-Meier survival, with events before censoring at tied times."""
+    if len(times) != len(events) or not times:
+        raise ValueError("Equal nonempty time and event lists are required")
+    if any(t < 0 for t in times) or any(e not in (0, 1) for e in events):
+        raise ValueError("Invalid follow-up time or event indicator")
+    result = 1.0
+    for time in sorted(set(t for t in times if t <= horizon)):
+        at_risk = sum(t >= time for t in times)
+        events_now = sum(e for t, e in zip(times, events) if t == time)
+        result *= 1 - events_now / at_risk
+    return result
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    claims = list(csv.DictReader((SOURCE / "claims.csv").open()))
+    panel = list(csv.DictReader((SOURCE / "panel_values.csv").open()))
+    fitted = json.loads((SOURCE / "post_results.json").read_text())["claims"]
+    assert len({c["blog_id"] for c in claims}) == len(claims) == 50
+    assert len({(r["blog_id"], r["model"]) for r in panel}) == len(panel) == 1000
+    assert len({r["model"] for r in panel}) == 20
+    assert {r["reliable"] for r in panel} <= {"True", "False"}
+    assert all(sum(r["blog_id"] == c["blog_id"] for r in panel) == 20 for c in claims)
+    aliases = {"dead": "expired", "attenuated": "weakened"}
+    labels = {c["blog_id"]: aliases.get(c["verdict"], c["verdict"]) for c in claims}
+    assert set(labels) == {c["id"] for c in fitted}
+    assert all(labels[c["id"]] == aliases.get(c["category"], c["category"]) for c in fitted)
+    counts = Counter(labels.values())
+    lifetimes = []
+    for claim in sorted(fitted, key=lambda c: int(c["id"][1:])):
+        start = date.fromisoformat(claim["paper_date"])
+        event = int(labels[claim["id"]] == "expired")
+        stop = date.fromisoformat(claim["death"]) if event else END
+        assert start <= stop <= END
+        lifetimes.append(dict(claim_id=claim["id"], paper_date=str(start),
+            endpoint=str(stop), months=(stop - start).days / MONTH, event=event,
+            endpoint_kind=claim["death_kind"] if event else "right_censored"))
+    times = [r["months"] for r in lifetimes]
+    events = [r["event"] for r in lifetimes]
+    expired = [t for t, e in zip(times, events) if e]
+    horizons = [dict(months=h, estimated_expired_share=1-survival(times, events, h))
+                for h in (6, 12, 24)]
+    curve = [dict(months=h, estimated_expired_share=1-survival(times, events, h))
+             for h in sorted({0.0, 24.0} | {t for t in times if t <= 24})]
+    verdict_rows = [dict(verdict=k, claims=counts[k], share=counts[k]/len(claims))
+                    for k in ("expired", "weakened", "persists", "strengthened")]
+    model_rows = []
+    for model in sorted({r["model"] for r in panel}):
+        selected = [r for r in panel if r["model"] == model]
+        reliable = [r for r in selected if r["reliable"] == "True"]
+        model_rows.append(dict(model=model, name=selected[0]["model_name"],
+            reliable_pairs=len(reliable), unscorable_pairs=len(selected)-len(reliable),
+            effects_at_or_below_point_two=sum(float(r["e"]) <= .2 for r in reliable)))
+    citation_rows = [dict(model=r["model_name"], release=r["release"],
+        fabricated_fraction=float(r["value"]), relative_effect=float(r["e"]),
+        reliable=r["reliable"]) for r in panel if r["blog_id"] == "C11"]
+    summary = dict(claims=len(claims), models=len(model_rows), pairs=len(panel),
+        unreliable_pairs=sum(r["reliable"] == "False" for r in panel), verdicts=counts,
+        expired_only_mean_months=statistics.mean(expired),
+        expired_only_median_months=statistics.median(expired), horizons=horizons,
+        observation_end=str(END),
+        scope="Published fitted dates treated as fixed; no model runs, refits, or date-uncertainty propagation")
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    for name, rows in [("verdicts", verdict_rows), ("lifetimes", lifetimes),
+                       ("horizons", horizons), ("followup_curve", curve), ("model_counts", model_rows),
+                       ("citation_fabrication", citation_rows)]:
+        write_csv(output / (name + ".csv"), rows)
+    (output / "snapshot_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
 
 
 if __name__ == "__main__":
@@ -6789,6 +7012,101 @@ if __name__ == '__main__':
     main()
 \end{Verbatim}
 
+\hypertarget{M05-a-changing-judge-can-change-the-apparent-improvement}{%
+\section{A Changing Judge Can Change the Apparent
+Improvement}\label{M05-a-changing-judge-can-change-the-apparent-improvement}}
+
+\noindent \noindent A marketing team compares summaries of the same earnings calls
+produced by two AI configurations. It uses an LLM judge to score factual
+support, coverage, and clarity. If the team also changes the judge, a
+higher reported score can reflect the generator, the judge, or their
+interaction. A fixed rubric names the intended criteria, but different
+judges can still apply it differently.
+
+Consider four stipulated mean scores on the same 0-100 rubric. The old
+judge assigns 60 to the old generator's saved outputs and 62 to the new
+generator's outputs. The new judge assigns 75 and 77 to those same
+respective output sets. Comparing the old system's score of 60 with the
+new system's score of 77 gives seventeen points. Holding either judge
+fixed gives two points. The remaining fifteen points arise from the
+changed judgment of the old outputs.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_judge_change.tex}
+\caption{Both judge versions score the same saved outputs from each generator. Within either judge, the new generator gains two points. Changing both generator and judge together produces a seventeen-point difference, including a fifteen-point judge shift. All scores are stipulated.}\label{fig:M05_judge_change}
+\end{figure}
+
+\href{https://arxiv.org/abs/2306.05685}{Zheng et al.~(2023)} study
+position, verbosity, and self-enhancement biases in model judges.
+\href{https://arxiv.org/abs/2404.13076}{Panickssery, Bowman, and Feng
+(2024)} examine self-recognition and preference for a model's own
+summaries. These findings motivate scoring saved outputs with both judge
+versions, varying presentation order, and comparing with independently
+assessed evidence. Freezing a judge preserves a comparison rule; it does
+not establish that the rule is correct.
+
+For a review summary, independently assess whether each conclusion is
+supported by the underlying reviews, whether dissenting experiences are
+represented, and whether uncertainty is retained. For an earnings-call
+summary, check speaker role, timing, and the distinction between a claim
+and an implemented action. Preserve inconsistent or unscorable judgments
+in the denominator. A parser failure and an incorrect substantive
+judgment are different failures.
+
+\href{https://arxiv.org/abs/2310.13548v4}{Sharma et al.~(2024)} also
+motivate a controlled feedback exercise. Hold the same marketing
+proposal and evidence fixed while varying whether a sponsor is described
+as liking it, disliking it, or expressing no view. Compare factual
+criticism and recommendations under the same rubric. A change in
+approval can reflect responsiveness to the sponsor's position without
+adding evidence about the proposal's commercial value. This is a
+proposed comparison; no course model responses have been collected.
+
+\hypertarget{M05-reproduce-the-judge-comparison}{%
+\subsection{Reproduce the Judge
+Comparison}\label{M05-reproduce-the-judge-comparison}}
+
+\noindent \noindent The four imposed mean scores define the comparison, with
+differences measured in score points. They contain no observed model
+performance. In a real evaluation, repeated outputs from the same call
+should remain grouped when estimating uncertainty.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/LLM_Revalidation/evaluate_judges.py}{evaluate\_judges.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""A constructed generator-by-judge comparison on a fixed 0-100 rubric."""
+from pathlib import Path
+import json
+
+HERE = Path(__file__).resolve().parent
+
+def compare(scores):
+    old, new = scores["old_judge"], scores["new_judge"]
+    return dict(scores=scores,
+        diagonal_change=new["new_generator"]-old["old_generator"],
+        generator_change_old_judge=old["new_generator"]-old["old_generator"],
+        generator_change_new_judge=new["new_generator"]-new["old_generator"],
+        judge_change_old_generator=new["old_generator"]-old["old_generator"])
+
+def main():
+    # Scores are imposed. Both judges assess the same saved outputs for each generator.
+    scores = {"old_judge": {"old_generator": 60, "new_generator": 62},
+              "new_judge": {"old_generator": 75, "new_generator": 77}}
+    result = compare(scores)
+    assert result["diagonal_change"] == (
+        result["generator_change_new_judge"]+result["judge_change_old_generator"])
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "judge_comparison.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
 Experiments}\label{M06-m6.-causal-effects-and-marketing-experiments}}
@@ -9843,6 +10161,170 @@ program provide runnable calculations of how an objective changes
 recommendations; the published studies supply substantive reasons to
 evaluate that objective.
 
+\hypertarget{M07-paired-regressions-and-the-cost-of-a-model-upgrade}{%
+\section{Paired Regressions and the Cost of a Model
+Upgrade}\label{M07-paired-regressions-and-the-cost-of-a-model-upgrade}}
+
+\noindent \noindent A marketing operations manager evaluates a replacement for a
+workflow that handles routine catalog classification and consequential
+pricing statements. Average accuracy matters, but the manager also needs
+to know which tasks regress and what those mistakes cost. A common set
+of cases, independently established labels, and a fixed scoring rule
+make the comparison interpretable.
+
+Consider 100 constructed paired cases: eighty routine tasks and twenty
+consequential tasks. The current configuration passes sixty routine and
+eighteen consequential cases. The challenger passes seventy-two and
+fourteen. Overall accuracy rises from 78\% to 86\%, while accuracy on
+consequential tasks falls from 90\% to 70\%. These are imposed teaching
+outcomes, with no missing cases or measured provider performance.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_upgrade_segments.tex}
+\caption{Routine accuracy rises from 75\% to 90\% on eighty constructed cases, while consequential accuracy falls from 90\% to 70\% on twenty. Equal weighting across all one hundred cases produces an eight-point accuracy increase despite the decline on consequential tasks.}\label{fig:M07_upgrade_segments}
+\end{figure}
+
+\hypertarget{M07-recoveries-regressions-and-loss}{%
+\subsection{Recoveries, Regressions, and
+Loss}\label{M07-recoveries-regressions-and-loss}}
+
+\noindent \noindent Let \(n_{01}\) count cases that the current configuration
+fails and the challenger passes, and let \(n_{10}\) count the reverse.
+With \(N\) paired cases, the change in accuracy is
+\((n_{01}-n_{10})/N\). Here, fourteen cases improve and six regress.
+Reporting only the net increase of eight hides the six newly introduced
+failures and the tasks on which they occur.
+
+Assign a stipulated loss of one dollar to each routine failure and
+twenty dollars to each consequential failure. The current
+configuration's total loss is \(20+2(20)=60\) dollars. The challenger's
+loss is \(8+6(20)=128\) dollars. The twelve avoided routine failures are
+outweighed by four additional consequential failures. If \(q\) is the
+consequential-to-routine loss ratio, the change in failure loss, in
+units of the routine loss, is
+
+\[
+\Delta L=-12+4q.
+\]
+
+The challenger lowers this stipulated loss only for \(q<3\). Equality
+gives indifference on failure loss alone. Setup costs, inference
+charges, latency, and customer consequences outside the rubric require
+additional terms. The cost comparison is conditional on the task mix and
+specified valuations; it is not an estimated business return.
+
+\hypertarget{M07-zero-observed-failures-and-fresh-evidence}{%
+\subsection{Zero Observed Failures and Fresh
+Evidence}\label{M07-zero-observed-failures-and-fresh-evidence}}
+
+\noindent \noindent A separate reliability calculation concerns zero observed
+failures. Under independent trials with a common failure probability
+\(p\), the probability of seeing none in \(n\) trials is \((1-p)^n\).
+Setting this probability to \(\alpha\) yields the one-sided exact upper
+confidence bound \(p_U=1-\alpha^{1/n}\). With zero failures in one
+hundred trials and \(\alpha=0.05\), the bound is 2.95\%. The calculation
+preserves uncertainty even when observed error is zero. Repeated
+generations from the same prompt may be dependent and require a design
+that accounts for that dependence.
+
+For the mHealth workflow, fixed regression cases can include duplicate
+joins, absent entries, and unit conversions. Fresh cases can introduce
+unseen schemas or later periods. For earnings-call extraction, retain
+known distinctions between plans and implemented policies, then evaluate
+on unseen firms or later calls.
+\href{https://arxiv.org/abs/2403.07974v2}{LiveCodeBench} motivates dated
+coding tasks, while \href{https://arxiv.org/abs/2406.19314v2}{LiveBench}
+motivates fresh objective comparisons. Changing task difficulty or
+composition can change a benchmark score even when the model is fixed.
+Record benchmark versions and the deployment weights used for the
+decision.
+
+\hypertarget{M07-reproduce-the-upgrade-evaluation}{%
+\subsection{Reproduce the Upgrade
+Evaluation}\label{M07-reproduce-the-upgrade-evaluation}}
+
+\noindent \noindent Each constructed case has a unique identifier, two binary
+outcomes, a task segment, and a stipulated failure cost. These inputs
+determine paired changes, segment results, and dollar losses. A real
+deployment requires independent outcome measurement and uncertainty at
+the task, customer, or document level appropriate to the design.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py}{evaluate\_upgrade.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Constructed paired cases and judge scores; no measured provider performance."""
+from pathlib import Path
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def make_cases():
+    # Segment, both pass, old-only pass, new-only pass, both fail, failure cost.
+    cells = [("routine", 58, 2, 14, 6, 1), ("consequential", 14, 4, 0, 2, 20)]
+    cases = []
+    for segment, both, old_only, new_only, neither, loss in cells:
+        for old, new, count in [(1, 1, both), (1, 0, old_only),
+                                 (0, 1, new_only), (0, 0, neither)]:
+            for _ in range(count):
+                cases.append(dict(case_id=len(cases)+1, segment=segment,
+                                  old_pass=old, new_pass=new, failure_cost=loss))
+    return cases
+
+
+def assess(cases):
+    if not cases or len({r["case_id"] for r in cases}) != len(cases):
+        raise ValueError("Cases must be nonempty and uniquely identified")
+    if any(r[k] not in (0, 1) for r in cases for k in ("old_pass", "new_pass")):
+        raise ValueError("Pass indicators must be binary")
+    if any(r["failure_cost"] < 0 for r in cases):
+        raise ValueError("Failure costs must be nonnegative")
+    improved = sum(r["new_pass"] > r["old_pass"] for r in cases)
+    regressed = sum(r["new_pass"] < r["old_pass"] for r in cases)
+    return dict(cases=len(cases), old_pass=sum(r["old_pass"] for r in cases),
+        new_pass=sum(r["new_pass"] for r in cases), improved=improved,
+        regressed=regressed, net_gain_pp=100*(improved-regressed)/len(cases),
+        old_loss=sum((1-r["old_pass"])*r["failure_cost"] for r in cases),
+        new_loss=sum((1-r["new_pass"])*r["failure_cost"] for r in cases))
+
+
+def zero_failure_upper(n, alpha=.05):
+    """One-sided exact binomial upper bound after zero failures in n trials."""
+    if n <= 0 or not 0 < alpha < 1:
+        raise ValueError("Positive n and alpha between zero and one are required")
+    return 1 - alpha ** (1/n)
+
+
+def main():
+    cases = make_cases()
+    summary = assess(cases)
+    summary["segments"] = {s: assess([r for r in cases if r["segment"] == s])
+                           for s in sorted({r["segment"] for r in cases})}
+    summary["zero_of_100_upper_95"] = zero_failure_upper(100)
+    routine, consequential = (summary["segments"][s] for s in ("routine", "consequential"))
+    summary["cost_break_even_consequential_to_routine"] = (
+        (routine["new_pass"]-routine["old_pass"]) /
+        (consequential["old_pass"]-consequential["new_pass"]))
+    assert summary["new_pass"]-summary["old_pass"] == summary["improved"]-summary["regressed"]
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    with (output / "synthetic_cases.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(cases[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(cases)
+    (output / "upgrade_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -11751,6 +12233,47 @@ can invalidate parts of the earlier evidence. Revalidation should
 address those dependencies explicitly. A larger code archive becomes
 useful only when its contents improve subsequent work enough to justify
 retrieval, adaptation, and upkeep.
+
+\hypertarget{M08-revalidation-exposure-and-customer-consequences}{%
+\subsection{Revalidation, Exposure, and Customer
+Consequences}\label{M08-revalidation-exposure-and-customer-consequences}}
+
+\noindent \noindent The cost of relying on an outdated result depends on how often
+the workflow is used and what a failure does. If a configuration has
+failure probability \(p\) over \(N\) comparable uses and loss \(L\) per
+failure, its expected failure loss is \(NpL\). Independence across uses
+is unnecessary for this expectation when each has the stated marginal
+probability; dependence matters for the distribution of aggregate loss.
+Falling error rates can coexist with substantial exposure as use
+expands. The relevant acceptance threshold follows from consequences and
+feasible alternatives.
+
+The claim panel in Section 2.21 supplies hypotheses to revisit. Its
+expiration categories allow residual effects and exceptions among
+individual models. They do not establish that a deployment satisfies the
+firm's reliability objective. The paired example in Section 7.22 shows
+why a higher pooled score can coexist with greater stipulated loss. A
+revalidation decision should connect the suspected change to recoveries,
+regressions, downstream costs, and the remaining uses over which an
+improvement can matter.
+
+A fixed regression set detects recurrence of known problems. Fresh tasks
+examine whether the procedure transfers. Changes to a judge or parser
+should be evaluated separately using saved outputs, as in Section 5.18.
+Record the intended upgrade, evidence used in selecting it, acceptance
+criteria set before the final comparison, and a way to return to the
+previous procedure. Review after relevant system or data changes, with
+additional scrutiny where exposure and consequences are high. The
+reported lifetime of selected research claims does not determine a
+universal review interval.
+
+For a marketing research bibliography, verify both whether a cited work
+exists and whether it supports the assertion. A decline in fabricated
+references does not eliminate erroneous details or unsupported uses of
+real sources. Correct references also do not identify who authored a
+document. For customer recommendations, assess factual support,
+suitability, and the customer's ability to revise the choice. A changed
+capability finding does not itself change those decision criteria.
 
 \hypertarget{M08-consumer-agency-and-subscription-cancellation}{%
 \section{Consumer Agency and Subscription
