@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+\begin{axis}[name=levels,width=6.1cm,height=6.5cm,
+xmin=-.25,xmax=1.25,ymin=0,ymax=140,
+xtick={0,1},xticklabels={Before,After},
+ytick={0,35,70,105,140},ylabel={Monthly Spending (\$)},
+title={Customer Levels},title style={font=\small\bfseries},ymajorgrids=true]
+\foreach \a/\b in {20/24,35/41,50/55,65/70,80/84,95/101,110/115,125/130}{
+\addplot[Storm!65,no marks] coordinates {(0,\a) (1,\b)};
+}
+\addplot[only marks,mark=*,IlliniBlue] coordinates {(0,20) (0,35) (0,50) (0,65) (0,80) (0,95) (0,110) (0,125)};
+\addplot[only marks,mark=triangle*,IlliniOrange] coordinates {(1,24) (1,41) (1,55) (1,70) (1,84) (1,101) (1,115) (1,130)};
+\end{axis}
+\begin{axis}[at={(levels.east)},anchor=west,xshift=2.25cm,
+width=5.6cm,height=6.5cm,xmin=.5,xmax=10.5,ymin=0,ymax=7,
+xtick={1,4,8,10},xticklabels={1,4,8,Mean},
+ytick={0,2,4,5,6},xlabel={Customer},ylabel={Change (\$)},
+title={Within-Customer Changes},title style={font=\small\bfseries},ymajorgrids=true]
+\addplot[only marks,mark=*,IlliniBlue] coordinates {(1,4) (2,6) (3,5) (4,5) (5,4) (6,6) (7,5) (8,5)};
+\addplot[IlliniOrange,very thick] coordinates {(10,4.368027586) (10,5.631972414)};
+\addplot[IlliniOrange] coordinates {(9.65,4.368027586) (10.35,4.368027586)};
+\addplot[IlliniOrange] coordinates {(9.65,5.631972414) (10.35,5.631972414)};
+\addplot[only marks,mark=diamond*,mark size=3pt,IlliniOrange] coordinates {(10,5)};
+\end{axis}
+\end{tikzpicture}

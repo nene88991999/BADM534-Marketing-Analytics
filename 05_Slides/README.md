@@ -64,3 +64,7 @@ Session 14 incorporates [Chapter 9](../06_Lecture_Notes/modules/M09_Marketing_Di
 ## AI Experimentation and Pricing
 
 Sessions 9 and 14 incorporate the [research and policy case](../01_Resources/16_AI_Experimentation_and_Pricing/README.md). The detailed Kantian argument and complete pricing code are in Marketing Dialectics, Sections 9.14–9.18.
+
+## Statistical Graphics
+
+Sessions 3 and 11 include paired spending and ranking-versus-calibration comparisons, supported by [complete Python and synthetic inputs](../03_Data_and_Code/Statistical_Graphics/README.md). The detailed explanations are M2 §2.22 and M7 §7.23.

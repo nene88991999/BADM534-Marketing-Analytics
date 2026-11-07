@@ -924,3 +924,97 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 7.23 The Same Ranking Can Produce Different Demand Forecasts
+
+\noindent A retailer planning next month's inventory needs purchase probabilities for the eligible customer population. A ranking determines which customers receive priority, while the sum of probabilities predicts the number who will purchase. A strictly increasing transformation of scores preserves rank-based AUC, but it can change this forecast. Warin's [PyStatlas calibration example](https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/) compares observed event shares with predicted probabilities and reports the Brier score alongside the display.
+
+Consider a fixed synthetic population of 80 eligible customers. Each can purchase at most once during the next month. Four ordered score groups contain 20 customers each, with 2, 6, 12, and 16 purchases. The other 44 customers remain in every denominator. Predictions are imposed for the comparison; no model is estimated. Model A assigns probabilities 0.10, 0.30, 0.60, and 0.80. Model B assigns 0.01, 0.10, 0.90, and 0.99 to those same groups. Both preserve the order of every positive-negative pair and the same ties.
+
+To connect ranking with observed outcomes, let $N_1$ and $N_0$ count purchasers and nonpurchasers, and let $p_i$ denote customer $i$'s score. Empirical AUC is
+
+$$
+\widehat{\mathrm{AUC}}=
+\frac{1}{N_1N_0}\sum_{i:y_i=1}\sum_{j:y_j=0}
+\left[\mathbf{1}(p_i>p_j)+\tfrac12\mathbf{1}(p_i=p_j)\right].
+$$
+
+Each correctly ordered purchaser-nonpurchaser pair receives one unit; a tie receives half a unit. There are $36\times44=1{,}584$ such pairs, with 1,272 units of concordance. Both models therefore have AUC $53/66$, approximately 0.803. Their implied purchase totals are different: $\sum_i p_i$ is 36 for Model A and 40 for Model B. The observed total is 36. Choosing between them using AUC alone ignores a four-purchase difference relevant to inventory planning.
+
+Probability accuracy depends on the distance between a probability and its realized binary outcome. The Brier score is
+
+$$
+\mathrm{Brier}=\frac{1}{N}\sum_{i=1}^{N}(p_i-y_i)^2.
+$$
+
+The score is 0.175 for Model A and 0.21855 for Model B; a smaller value indicates less squared probability error in this population. It is an overall probability loss, incorporating more than calibration alone. Within each of the four groups, Model A's probability equals the observed purchase share by construction. Model B exaggerates the separation between low- and high-probability groups.
+
+![A reliability diagram holds both axes at zero to one and compares two imposed score systems on the same 80 synthetic customers. Blue circles for Model A lie on the diagonal at observed shares 0.10, 0.30, 0.60, and 0.80. Orange triangles for Model B have predicted probabilities 0.01, 0.10, 0.90, and 0.99 against those same shares. Each point contains 20 customers. Identical ranking leaves AUC unchanged while probability accuracy and predicted purchase totals differ.](../figures/M07_ranking_probabilities.png)
+
+The four points describe fixed constructed groups, so no sampling interval is attached. In an empirical application, define score bins and preserve their denominators, estimate calibration on observations excluded from fitting and tuning, and allow for customer or time dependence when estimating uncertainty. A model calibrated in these groups need not remain calibrated after a change in customer mix, prices, or the offer. Purchase propensity also does not identify the incremental effect of a coupon. A targeting decision requires the relevant treatment comparison and costs.
+
+\FloatBarrier
+
+### 7.23.1 Reproduce Ranking and Probability Loss
+
+\noindent The program reads all eligible customers, validates identifiers and probabilities, and enumerates positive-negative comparisons with half credit for ties. Exact fractions avoid rounding ambiguity in AUC and the Brier score. Grouped output contains every plotted mean prediction, observed share, count, and purchase total. The aggregate forecast and loss retain nonpurchasers.
+
+Python source: [ranking_calibration.py](../../03_Data_and_Code/Statistical_Graphics/ranking_calibration.py). From its directory, run `python ranking_calibration.py`. Input: `inputs/purchase_predictions.csv`; Python's standard library is sufficient.
+
+```python
+"""Evaluate imposed purchase probabilities on the same synthetic customers."""
+from pathlib import Path
+from fractions import Fraction as F
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def evaluate(rows, column):
+    ids = [r["customer_id"] for r in rows]
+    if not rows or any(not x for x in ids) or len(set(ids)) != len(ids):
+        raise ValueError("Nonempty rows with unique customer IDs are required")
+    y = [F(r["purchase"]) for r in rows]
+    p = [F(r[column]) for r in rows]
+    if set(y) != {0, 1} or any(x < 0 or x > 1 for x in p):
+        raise ValueError("Both binary outcomes and probabilities in [0,1] are required")
+    positive = [x for x, outcome in zip(p, y) if outcome == 1]
+    negative = [x for x, outcome in zip(p, y) if outcome == 0]
+    concordance = sum(F(a > b) + F(a == b, 2)
+                      for a in positive for b in negative)
+    auc = concordance / (len(positive) * len(negative))
+    brier = sum((a - b) ** 2 for a, b in zip(p, y)) / len(y)
+    bins = []
+    for score in sorted(set(p)):
+        outcomes = [b for a, b in zip(p, y) if a == score]
+        bins.append(dict(model=column, mean_prediction=float(score),
+                         customers=len(outcomes), purchases=int(sum(outcomes)),
+                         observed_share=float(sum(outcomes) / len(outcomes))))
+    metrics = dict(customers=len(y), purchases=int(sum(y)),
+                   predicted_purchases=float(sum(p)), auc=float(auc),
+                   auc_exact=str(auc), brier=float(brier), brier_exact=str(brier))
+    return metrics, bins
+
+
+def main():
+    with (HERE / "inputs/purchase_predictions.csv").open(newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    results, bins = {}, []
+    for model in ("model_a", "model_b"):
+        results[model], table = evaluate(rows, model)
+        bins.extend(table)
+    results["scope"] = "Fixed synthetic customers and imposed predictions; no model fit"
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "ranking_calibration.json").write_text(json.dumps(results, indent=2) + "\n")
+    with (output / "calibration_bins.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(bins[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(bins)
+    print(json.dumps(results, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

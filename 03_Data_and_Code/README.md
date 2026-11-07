@@ -61,3 +61,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## AI Experimentation and Pricing
 
 [Exact synthetic pricing comparisons](AI_Experimentation_and_Pricing/README.md) distinguish profit, aggregate surplus, and customer incidence. A separate calculation checks rounded published means, with source and version records.
+
+## Statistical Graphics
+
+[Paired customer changes and ranking versus calibration](Statistical_Graphics/README.md) use two original synthetic datasets, complete Python, aggregate tables, and six small-case tests. M2 §2.22 and M7 §7.23 reproduce the programs in full.

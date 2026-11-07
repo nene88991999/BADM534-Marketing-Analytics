@@ -462,7 +462,8 @@
     "objectives": [
       "Choose displays that preserve the intended comparison.",
       "Explain composition reversals and uncertainty.",
-      "Use domain knowledge to define transparent sensitivity analyses."
+      "Use domain knowledge to define transparent sensitivity analyses.",
+      "Distinguish customer-level spread from uncertainty in paired changes."
     ],
     "slides": [
       {
@@ -525,6 +526,26 @@
         ],
         "notes": "An independent-day bootstrap treats days as separate sampling units and can understate uncertainty when observations within a user are correlated. A paired difference should also preserve the pairing.",
         "source": "M3, Section 3.6.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Spending Levels and Customer Changes",
+        "figure": "../06_Lecture_Notes/figures/M02_paired_spending.tex",
+        "caption": "Eight synthetic customers; mean change is 5 dollars. Conditional 95% t interval: [4.368, 5.632].",
+        "description": "Thin lines join each customer across two one-month windows. Levels range widely, while every change is 4, 5, or 6 dollars. The right panel separates individual changes from the mean and conditional t interval.",
+        "notes": "Spending rises from 72.50 to 77.50 dollars per customer per month. The paired standard error is 0.267. The t interval assumes independent normally distributed customer differences under a hypothetical sampling model. These fixed synthetic rows provide no evidence of a causal program effect.",
+        "source": "M2 Section 2.22. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "The Sampling Unit Determines Uncertainty",
+        "bullets": [
+          "Preserve customer pairs and compare equal observation windows.",
+          "Within-customer covariance can make a mean change precise.",
+          "A before/after change needs a counterfactual design for a causal claim."
+        ],
+        "notes": "In the synthetic example, dropping covariance produces an inapplicable standard error of 18.402 dollars. Reordering complete rows leaves the paired result unchanged. Reassigning only the after values changes the standard error. Resample whole pairs when customers are independent sampling units. Full input data, Python and tests are in Statistical_Graphics.",
+        "source": "../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/group-comparisons/"
       },
       {
         "kind": "bullets",
@@ -696,7 +717,9 @@
       "[Nutrition methods](../01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
-      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
+      "[Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)",
+      "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)"
     ],
     "practice": "Assess chart values, paired changes, scales, and denominator controls.",
     "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim."
@@ -2310,7 +2333,8 @@
     "objectives": [
       "Design a holdout that matches deployment and prevents leakage.",
       "Compare ranking, calibration, and decision costs.",
-      "Assess coverage and missing future labels in an availability forecast."
+      "Assess coverage and missing future labels in an availability forecast.",
+      "Compare identical rankings with different probability losses and demand forecasts."
     ],
     "slides": [
       {
@@ -2429,6 +2453,49 @@
         "source": "M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
+        "kind": "figure",
+        "title": "Identical Ranking, Different Probabilities",
+        "figure": "../06_Lecture_Notes/figures/M07_ranking_probabilities.tex",
+        "caption": "Synthetic customers and imposed scores: both models have AUC 0.803. Each plotted group contains 20 customers.",
+        "description": "Model A probabilities match group purchase shares on the diagonal. Model B retains the same order and ties but stretches low and high probabilities. Common axes run from zero to one.",
+        "notes": "The same 80 eligible customers have 36 purchases and 44 nonpurchases in one next-month window. Each can purchase at most once. Group calibration of Model A is imposed; no trained model or future performance claim is involved. No uncertainty interval is attached to this fixed constructed population.",
+        "source": "M7 Section 7.23. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "table",
+        "title": "AUC Alone Does Not Set Inventory",
+        "headers": [
+          "Quantity",
+          "Model A",
+          "Model B"
+        ],
+        "rows": [
+          [
+            "AUC",
+            "0.803",
+            "0.803"
+          ],
+          [
+            "Brier Score",
+            "0.175",
+            "0.21855"
+          ],
+          [
+            "Predicted Purchases",
+            "36",
+            "40"
+          ],
+          [
+            "Observed Purchases",
+            "36",
+            "36"
+          ]
+        ],
+        "caption": "Same 80 synthetic customers. Smaller Brier scores indicate less squared probability error.",
+        "notes": "AUC gives half credit to tied positive-negative pairs: 1272/1584 = 53/66 for both models. A strictly increasing score transformation preserves ordering. The sum of probabilities changes, making probability accuracy relevant to inventory. The Brier score is an overall probability loss, not solely a calibration measure. Purchase propensity does not identify a coupon effect.",
+        "source": "../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/"
+      },
+      {
         "kind": "equation",
         "title": "A Cost-Based Threshold",
         "intro": "Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.",
@@ -2534,7 +2601,9 @@
       "[McBroken prediction case](../03_Data_and_Code/McBroken/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
-      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
+      "[Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)",
+      "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)"
     ],
     "practice": "Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.",
     "application": "Choose a forecast, split, and decision threshold using the intended deployment population."

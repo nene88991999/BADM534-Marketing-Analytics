@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-06",
+  "updated_on": "2026-11-07",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -133,11 +133,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 21,
+      "slides": 23,
       "companion": "S03_Visualization_and_Data_Quality.md",
       "pdf": "S03_Visualization_and_Data_Quality.pdf",
-      "python_activity": "Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens.",
-      "application": "Distinguish expired-only lifetimes from censored follow-up; preserve uncertainty and sampling scope.",
+      "python_activity": "Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval.",
+      "application": "Distinguish expired-only lifetimes from censored follow-up; preserve uncertainty and sampling scope. Distinguish spending-level variation from uncertainty in customer changes.",
       "ethics": "Chart claims, denominator choices, and coverage",
       "timing": [
         {
@@ -585,11 +585,11 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 21,
+      "slides": 23,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
-      "python_activity": "Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs.",
-      "application": "Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage.",
+      "python_activity": "Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs. Compare AUC, probability loss, and purchase totals on the same synthetic customers.",
+      "application": "Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage. Match the evaluation metric to ranking or inventory planning.",
       "ethics": "Prediction errors and access to consequential offers",
       "timing": [
         {

@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-06",
+  "updated_on": "2026-11-07",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -98,12 +98,16 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/16_AI_Experimentation_and_Pricing/README.md",
     "01_Resources/16_AI_Experimentation_and_Pricing/CLAIM_ASSESSMENT.md",
     "01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md",
-    "03_Data_and_Code/AI_Experimentation_and_Pricing/README.md"
+    "03_Data_and_Code/AI_Experimentation_and_Pricing/README.md",
+    "01_Resources/17_PyStatlas_Statistical_Graphics/README.md",
+    "01_Resources/17_PyStatlas_Statistical_Graphics/SOURCE_REVIEW.md",
+    "01_Resources/17_PyStatlas_Statistical_Graphics/WIKI_PATTERNS.md",
+    "03_Data_and_Code/Statistical_Graphics/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-06",
+    "updated_on": "2026-11-07",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -147,12 +151,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-06-ai-experimentation-pricing",
+    "revision": "2026-11-07-statistical-graphics",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 70,
-    "pages": 253,
+    "figures_count": 72,
+    "pages": 259,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -208,7 +212,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-06",
+    "updated_on": "2026-11-07",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -217,7 +221,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 308,
+    "slides": 312,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -323,6 +327,21 @@ Generated from course.json and the source files identified below. This file cont
     "research_papers": 4,
     "policy_verified_on": "2026-11-06",
     "scope": "Evidence-based evaluation of objectives and deployment practices; distinct from judgments of author intent"
+  },
+  "statistical_graphics": {
+    "resources": "01_Resources/17_PyStatlas_Statistical_Graphics/README.md",
+    "catalog": "01_Resources/17_PyStatlas_Statistical_Graphics/catalog.json",
+    "examples": "03_Data_and_Code/Statistical_Graphics/README.md",
+    "wiki_patterns": "01_Resources/17_PyStatlas_Statistical_Graphics/WIKI_PATTERNS.md",
+    "source_commit": "ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41",
+    "reference_charts": 61,
+    "selected_scripts_read": 9,
+    "executed_course_examples": 2,
+    "sections": [
+      "M2 \u00a72.22",
+      "M7 \u00a77.23"
+    ],
+    "reviewed_on": "2026-11-07"
   }
 }
 ```
@@ -393,6 +412,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## AI Experimentation and Pricing
 
 [The research and policy case](01_Resources/16_AI_Experimentation_and_Pricing/README.md) connects AI-assisted experiments and personalized pricing to Kantian ethical evaluation. Marketing Dialectics includes the detailed argument, source-specific qualifications, and [complete reproducible calculations](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md).
+
+## Statistical Graphics
+
+[PyStatlas and its course applications](01_Resources/17_PyStatlas_Statistical_Graphics/README.md) connect statistical questions to chart choices. [Two reproducible synthetic cases](03_Data_and_Code/Statistical_Graphics/README.md) examine paired customer changes and identical rankings with different purchase probabilities. Full explanations and Python appear in M2 §2.22 and M7 §7.23, with corresponding Session 3 and 11 slides.
 
 ---
 
@@ -508,7 +531,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 70 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 72 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -584,6 +607,10 @@ The [LLM revalidation examples](03_Data_and_Code/LLM_Revalidation/README.md) con
 ## AI Experimentation, Pricing, and Kantian Evaluation
 
 M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ research](01_Resources/16_AI_Experimentation_and_Pricing/README.md) to commercial objectives, distributional consequences, and recent pricing policy. [A solved synthetic example](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) compares common prices, segmented optima, and capped discounts. Sessions 9 and 14 carry the corresponding discussion.
+
+## Statistical Graphics for Marketing Decisions
+
+[PyStatlas](01_Resources/17_PyStatlas_Statistical_Graphics/README.md) supplies a question-oriented chart reference across M2–M9. M2 §2.22 and Session 3 examine paired customer changes; M7 §7.23 and Session 11 distinguish ranking from probability accuracy. Both have [original synthetic inputs and complete tested Python](03_Data_and_Code/Statistical_Graphics/README.md).
 
 ---
 
@@ -737,6 +764,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Exact synthetic pricing comparisons](AI_Experimentation_and_Pricing/README.md) distinguish profit, aggregate surplus, and customer incidence. A separate calculation checks rounded published means, with source and version records.
 
+## Statistical Graphics
+
+[Paired customer changes and ranking versus calibration](Statistical_Graphics/README.md) use two original synthetic datasets, complete Python, aggregate tables, and six small-case tests. M2 §2.22 and M7 §7.23 reproduce the programs in full.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -745,7 +776,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 6, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 70 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 72 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -773,7 +804,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 253 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 259 pages.
 
 ## Editing and Building
 
@@ -819,7 +850,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 56 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 58 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -846,6 +877,10 @@ The [categorized library](../01_Resources/15_Marketing_Dialectics/README.md) rec
 ## AI Experimentation and Pricing
 
 Marketing Dialectics, Sections 9.14–9.18, provides a detailed Kantian evaluation of four papers by Sanjog Misra and coauthors, their safeguards and welfare findings, and recent pricing-policy debates. M6 §6.21 and M8 §8.20 connect the case to experimentation and current methods. [Code and exact synthetic results](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) accompany the complete Python source in the notes.
+
+## Statistical Graphics and Marketing Decisions
+
+M2 §2.22 explains customer pairing and covariance. M7 §7.23 compares identical rankings with different probability losses and purchase forecasts. Both contain full [runnable Python](../03_Data_and_Code/Statistical_Graphics/README.md), synthetic input definitions, and Illinois-color TikZ figures. [The PyStatlas guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) connects additional chart families to existing modules.
 
 ---
 
@@ -975,6 +1010,10 @@ Session 14 incorporates [Chapter 9](../06_Lecture_Notes/modules/M09_Marketing_Di
 ## AI Experimentation and Pricing
 
 Sessions 9 and 14 incorporate the [research and policy case](../01_Resources/16_AI_Experimentation_and_Pricing/README.md). The detailed Kantian argument and complete pricing code are in Marketing Dialectics, Sections 9.14–9.18.
+
+## Statistical Graphics
+
+Sessions 3 and 11 include paired spending and ranking-versus-calibration comparisons, supported by [complete Python and synthetic inputs](../03_Data_and_Code/Statistical_Graphics/README.md). The detailed explanations are M2 §2.22 and M7 §7.23.
 
 ---
 
@@ -1434,6 +1473,10 @@ M9 links Kantian dialectic and ethics with Hume and Smith on institutional scrut
 
 [Four research contributions and primary policy sources](../01_Resources/16_AI_Experimentation_and_Pricing/README.md) inform M6 §6.21, M8 §8.20, and M9 §§9.14–9.18. [The executed pricing example](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) solves an original imposed population exactly, contrasts distributional and aggregate outcomes, and separately checks arithmetic from published summaries. It does not reproduce the papers' experiments or estimate ethical legitimacy. Two new TikZ figures show incidence and the role of justified restrictions.
 
+## PyStatlas Statistical Graphics
+
+Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §2.22 and M7 §7.23. Original synthetic examples preserve customer pairs and distinguish ranking from probability accuracy. [The resource guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) maps the 12 families to course questions and records code-reading scope. [Executed programs and tests](../03_Data_and_Code/Statistical_Graphics/README.md) supply the aggregate tables used by two new TikZ figures. Sessions 3 and 11 carry the corresponding discussion.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1787,7 +1830,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 21 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
-| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 21 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 23 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
@@ -1795,7 +1838,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 21 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 23 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
@@ -1847,9 +1890,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens.
+**Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval.
 
-**Application:** Distinguish expired-only lifetimes from censored follow-up; preserve uncertainty and sampling scope.
+**Application:** Distinguish expired-only lifetimes from censored follow-up; preserve uncertainty and sampling scope. Distinguish spending-level variation from uncertainty in customer changes.
 
 **Ethics and Regulation:** Chart claims, denominator choices, and coverage
 
@@ -2005,9 +2048,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs.
+**Python and Evidence:** Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs. Compare AUC, probability loss, and purchase totals on the same synthetic customers.
 
-**Application:** Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage.
+**Application:** Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage. Match the evaluation metric to ranking or inventory planning.
 
 **Ethics and Regulation:** Prediction errors and access to consequential offers.
 
@@ -2172,6 +2215,10 @@ Use the [LLM evidence examples](../03_Data_and_Code/LLM_Revalidation/README.md) 
 ## AI Experimentation and Pricing
 
 Sessions 9 and 14 connect Misra and his coauthors' research to the choice of experimental objectives, pricing benchmarks, and customer incidence. The Kantian case examines truthful representation, treatment of persons, and the justification of constraints before optimization. The current policy record distinguishes New York disclosure law, proposed restrictions, FTC inquiries, and emergency price-gouging conditions. The 15 dated meetings, 170-minute duration, and unreleased assessment rules remain unchanged.
+
+## Statistical Graphics and Interpretation
+
+Session 3 compares customer-level spending and paired changes within the existing visualization activities. Session 11 compares ranking, probability loss, and aggregate demand forecasts within prediction evaluation. The [PyStatlas guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) provides additional chart selections for regression, retention, segmentation, experiments, and time series. The calendar and session lengths retain their existing allocations.
 
 ---
 
@@ -3830,6 +3877,154 @@ python3 -m unittest discover -s 03_Data_and_Code/AI_Experimentation_and_Pricing 
 [results.json](results.json) records exact fractions and decimal values. Expected profit and customer surplus per eligible customer are approximately $6.0167 and $6.4750 under uniform pricing, $8.1000 and $3.4500 under segmentation, and $6.1333 and $6.6667 under capped discounts. The uniform optimum is $19/3. Group optima are $6 and $15. Five tests check independent exact totals, distributional incidence, the discount comparison, valuation-support boundaries, and invalid inputs.
 
 The full program appears in [Marketing Dialectics, Section 9.17](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md). The [research and policy guide](../../01_Resources/16_AI_Experimentation_and_Pricing/README.md) separates reported evidence, interpretation, and policy status. The calculation is original course material; it does not execute the authors' software or reproduce their experiments.
+
+---
+
+## Source: 01_Resources/17_PyStatlas_Statistical_Graphics/README.md
+
+# PyStatlas and Statistical Graphics for Marketing Decisions
+
+Thierry Warin's [PyStatlas](https://warint.github.io/pystatlas/) organizes 61 Python graphics into 12 statistical families. Its useful teaching principle is to choose a display from the question and statistical object: a customer distribution, a paired change, a conditional prediction, or uncertainty about an estimate. Each example combines a chart, explanation, source data attribution, and downloadable code. The course adaptations use marketing decisions and the Illinois palette.
+
+## Course Applications
+
+| Course Connection | Selected Graphics | Managerial Question and Interpretation |
+| --- | --- | --- |
+| M2: Customer Data and Visualization | ECDF, raincloud, paired observations, estimation plot | How much do customers differ, and how much did the same customers change? Show the comparison directly and distinguish spread from uncertainty. |
+| M3: Regression | Coefficient plots, odds ratios, predicted probabilities, residual diagnostics | How does a model translate customer characteristics into an outcome? State units, conditioning, support, and whether comparisons have causal identification. |
+| M4: Segmentation and CLV | PCA, silhouette, Kaplan–Meier curves and risk tables | Are segments stable and useful for a decision? How long do customers remain active when observation ends at different times? |
+| M5: Text Measurement | Bland–Altman agreement | Do two coding procedures agree on a measurement scale? High correlation can coexist with a systematic coding difference. |
+| M6: Experiments | Estimation plots, interaction means, bootstrap intervals, power curves | What effect is large enough to change a decision? Preserve randomization and sampling units; report the effect and uncertainty. |
+| M7: Prediction | Calibration, precision–recall, learning curves, PDP/ICE | Which predictions support capacity planning or a targeting rule? Ranking, probability accuracy, and intervention effects answer distinct questions. |
+| M8: Current Applications | Decomposition, forecasting, seasonal displays | Which part of a demand pattern is predictable at the decision date? Hold out later observations and distinguish descriptive components from causal channels. |
+| M9: Marketing Dialectics | Model explanations and subgroup comparisons | What does an explanation establish about a model, and what ethical premise is needed to justify its use? A feature attribution does not supply permission to exploit a vulnerability. |
+
+Spatial weights, Moran plots, and local clustering maps are optional extensions for the McBroken setting. A restaurant is a point location; adjacency between French administrative regions in the original example is not an appropriate default neighborhood for restaurants. Define the geographic unit and weights before computing spatial association.
+
+## Two Executed Course Examples
+
+1. **Paired Customer Spending, M2 §2.22 and Session 3.** Eight synthetic customers have widely dispersed spending levels but changes between $4 and $6. Their mean change is $5. The paired standard error is $0.267 under the stated sampling interpretation. Dropping the covariance gives $18.402, showing how the wrong independence assumption changes uncertainty. This before/after comparison does not identify a campaign effect.
+2. **Ranking and Purchase Probabilities, M7 §7.23 and Session 11.** Two imposed score systems rank the same 80 synthetic customers identically. Both have AUC 0.803; their Brier scores are 0.175 and 0.21855. Their predicted purchase totals are 36 and 40, against 36 observed. The same ranking can therefore support different inventory decisions.
+
+Both examples have [input CSVs, complete Python programs, tests, and output tables](../../03_Data_and_Code/Statistical_Graphics/README.md). The notes reproduce the programs in full. Two editable TikZ figures connect the comparison to its economic meaning.
+
+## AI-Assisted Coding Exercise
+
+Give the coding assistant a managerial question and a small data dictionary before requesting a chart. Require it to state the observation unit, target population, denominator, units, comparison, and uncertainty interpretation. Ask for a table containing every plotted value. Then change one analytical feature, such as breaking customer pairs or applying a strictly increasing transformation to scores, and predict which statistics should remain unchanged. Compare that prediction with the executed output.
+
+Suggested prompt: “Use the supplied customer-level file. Compare spending changes for the same customers. Validate unique identifiers and complete pairs. Return the change table, the mean change, the uncertainty assumption, and code with relative paths. Explain which result would change if the pairing were lost. Preserve missing values until their treatment is justified.” This activity is a practice suggestion; assessment-specific AI rules govern assessed work.
+
+## Source and Review Scope
+
+The reference snapshot is commit `ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41`, retrieved November 7, 2026. The [catalog](catalog.json) records all 61 chart titles, module connections, source paths, and hashes. Eighty reference text files are retained in Dropbox, including every chart script, category metadata, build files, license, and dependency/data records. Every downloaded file matches its Git blob. Nine selected scripts received a full code reading; the remaining entries received metadata cataloguing and syntax parsing. No upstream program was executed.
+
+The [source review](SOURCE_REVIEW.md) identifies interpretation and reproducibility issues. The [wiki design notes](WIKI_PATTERNS.md) distill the site's navigation and code presentation. Software is MIT licensed; underlying datasets have their own terms. The public repository contains original course materials, attribution, metadata, and the license. Downloaded reference copies remain in `local_sources/`, excluded from Git.
+
+---
+
+## Source: 01_Resources/17_PyStatlas_Statistical_Graphics/SOURCE_REVIEW.md
+
+# Source Review and Interpretation
+
+Source: Thierry Warin, [PyStatlas](https://warint.github.io/pystatlas/), pinned [repository revision](https://github.com/warint/pystatlas/tree/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41). Checked November 7, 2026. The gallery search for “calibration” and its detail page were inspected in a browser. This check covers those interactions only.
+
+## Selected Scripts Read in Full
+
+| Source Example | Useful Mechanism | Course Interpretation |
+| --- | --- | --- |
+| [Within-Subjects Comparisons](https://warint.github.io/pystatlas/group-comparisons/within-subjects/) | Lines preserve repeated country observations; paired comparisons retain covariance. | Use customer identifiers for repeated spending. An unweighted average across countries is a country-level quantity. A before/after pattern needs a counterfactual design for causal interpretation. |
+| [Estimation Plot](https://warint.github.io/pystatlas/group-comparisons/estimation-plot/) | Raw state outcomes sit beside a difference and a BCa bootstrap interval. | State the population to which sampling uncertainty refers. For repeated customers, resample whole pairs. The original comparison is observational. |
+| [Predicted Probabilities](https://warint.github.io/pystatlas/regression-models/predicted-probabilities/) | A logistic model is translated into probabilities with one predictor varying and another held at its mean. | A prediction at mean covariates differs from an average of individual predictions. Display support and identify the conditioning values. |
+| [Calibration Plot](https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/) | A held-out sample compares observed shares with mean predictions, Wilson intervals, and the Brier score. | Quantile bins are constructed separately for each model and can contain different customers. Preserve bin counts and use an independent evaluation sample when fitting or recalibrating. |
+| [Kaplan–Meier Curves](https://warint.github.io/pystatlas/survival/kaplan-meier/) | Censoring marks and numbers at risk expose the information supporting the survival curve. | Define churn and the time origin. Independent censoring, conditional on the relevant information, matters for a survival interpretation. Repeated spells may require dependence-aware uncertainty. |
+| [Silhouette Plot](https://warint.github.io/pystatlas/multivariate/silhouette-clusters/) | Standardized inputs, silhouette widths, and a PCA display distinguish cluster fit from its projection. | The original excludes DC and selects k on the same sample. Assess sensitivity to exclusions, scaling, seeds, and new observations before labeling customer types. |
+| [Precision–Recall](https://warint.github.io/pystatlas/machine-learning/precision-recall/) | Out-of-fold scores connect detection to the fraction of flagged cases that are positive. | The prevalence is the no-skill baseline. Thresholds need costs and capacity. The script marks the available threshold nearest 0.5; calculate the exact policy rule separately. |
+| [Partial Dependence and ICE](https://warint.github.io/pystatlas/machine-learning/partial-dependence/) | Individual prediction curves reveal heterogeneity hidden by the average curve. | The plotted percentiles describe variation across curves, not uncertainty in an average. Varying correlated inputs can create unsupported combinations; prediction sensitivity alone does not identify an intervention effect. |
+| [LISA Cluster Map](https://warint.github.io/pystatlas/spatial-data/lisa-cluster-map/) | Local spatial statistics depend on the neighborhood and permutation comparison. | The original explicitly reports unadjusted local tests. Discuss multiplicity, the weight matrix, and sensitivity before treating colored areas as reliable clusters. |
+
+## Reproducibility
+
+The source's build script executes chart programs to render figures. Requirements are minimum package versions, rather than a complete environment lock. The build also suppresses warnings. Course adaptations should record the actual environment and retain warnings that affect estimation or data interpretation. No dependency installation or upstream build was needed for this review.
+
+Most examples load packaged data; the Guerry spatial examples use `libpysal.examples.load_example`, which can require a download or an existing cache. Record network requirements at the example level. The software license does not establish rights over the survey, administrative, or other underlying data. Source attribution in `data_sources.yaml` is the starting point for checking those terms.
+
+## Transfer to Existing Course Data
+
+For mHealth, the observation unit can be a user, a user-day, or a logged food entry. A display of entries gives more weight to frequent loggers. Preserve zero-log users when the target population is the cohort, and distinguish no observed entry from measured zero intake. A paired comparison should retain the same users and define comparable observation windows.
+
+For McBroken, use the store-date panel and common observation windows. A change in the composition of observed stores can change an aggregate availability rate without a change within stores. Geographic association also depends on coverage and on the chosen distance or adjacency relation.
+
+For earnings-call coding, assess agreement on the same passages or calls. Correlation between two coding scores can be high despite a systematic difference in levels. Distinguish disagreements in the unit of text, construct definition, and classification rule before interpreting the chart.
+
+These are proposed extensions using existing course cases. The two newly executed programs use entirely synthetic inputs and do not re-estimate these datasets.
+
+---
+
+## Source: 01_Resources/17_PyStatlas_Statistical_Graphics/WIKI_PATTERNS.md
+
+# Wiki Design Patterns From PyStatlas
+
+[PyStatlas](https://warint.github.io/pystatlas/) provides a useful architecture for a GitHub-hosted course reference: static HTML, searchable example cards, family filters, and detail pages containing the interpretation, image, source code, libraries, and data attribution. Its metadata live in Python docstrings and YAML, and a builder produces the public pages. The code copy and download controls are visible on the calibration detail page; only search and navigation were exercised in this review.
+
+## A Course Page
+
+Start with the managerial question, the data available at the decision date, and the comparison needed to answer it. Follow with the chart and a short interpretation. Place the complete program, input data dictionary, aggregate table, environment, and run command beside the result. Include stable links to the module notes, relevant slides, original sources, and corresponding Markdown page.
+
+The chart should remain understandable without its image: state the units, denominator, population, directions of comparison, key values, and uncertainty meaning in text. An LLM should be able to retrieve that explanation without running a browser or inferring data from pixels.
+
+## Navigation and Publication
+
+| Pattern | Course Implementation |
+| --- | --- |
+| Searchable cards | Search managerial questions, methods, module IDs, and dataset names. |
+| Statistical family filters | Add module and decision filters, such as retention, product design, pricing, and forecasting. |
+| Detail page with code | Offer a complete downloadable Python file and small inputs with relative paths. |
+| Shared metadata | Generate HTML navigation and Markdown indexes from the same reviewed records. |
+| Static hosting | Use GitHub Pages with a client-side search index and stable relative links. |
+| Source transparency | Include provenance, dataset rights, version, and exact execution status in supporting documentation. |
+
+Keep `AGENTS.md`, `course.json`, `llms.txt`, and the Markdown companions accessible from the index. Give released requirements precedence over readings and examples. Preserve the distinction between reference code, adapted code, and an executed course example. During rendering, surface analytical warnings and verify plotted values against output tables.
+
+This document records design choices for the future course wiki. It does not introduce a new site or alter publication permissions.
+
+---
+
+## Source: 03_Data_and_Code/Statistical_Graphics/README.md
+
+# Statistical Graphics for Marketing Decisions
+
+Two original synthetic examples connect chart choice to customer comparisons and decisions. [PyStatlas by Thierry Warin](https://warint.github.io/pystatlas/) motivates the paired-comparison and calibration displays. The inputs and programs here are original course constructions; no upstream program or source dataset is required.
+
+## Run
+
+Python 3.10 or later and SciPy are required for the paired t critical value. The calibration program uses only the standard library. Tested November 7, 2026 with Python 3.13.5 and SciPy 1.15.3. No network calls or model APIs are used.
+
+```bash
+python paired_changes.py
+python ranking_calibration.py
+python -m unittest -v test_examples.py
+```
+
+Run from this folder or supply the full script path; input paths are resolved relative to the script. The two analysis commands overwrite their own files in `results/`.
+
+## Inputs and Interpretation
+
+| File | Unit and Variables | Population and Construction |
+| --- | --- | --- |
+| `inputs/paired_spending.csv` | One customer; `customer_id`, `before_dollars`, `after_dollars` | Eight imposed customers observed in two one-month windows. No missing pairs. Monetary values are dollars per customer per month. |
+| `inputs/purchase_predictions.csv` | One customer; `customer_id`, `score_group`, binary `purchase`, probabilities `model_a` and `model_b` | Eighty imposed eligible customers, including 44 nonbuyers. Four score groups of 20 have 2, 6, 12, and 16 purchases during one next-month horizon. Each customer can purchase at most once. |
+
+All rows and predictions are synthetic. Customer IDs identify only constructed records. Input ordering is deterministic; no random seed is needed. Model A scores are 0.1, 0.3, 0.6, 0.8 and Model B scores are 0.01, 0.1, 0.9, 0.99 in ascending groups. No model is fitted and no training or test sample is claimed.
+
+The paired example targets the mean of customer-level changes. Its t interval describes a hypothetical sampling model with independent normally distributed customer differences. The eight imposed rows are not evidence of a campaign's causal effect. The independent standard error is a deliberately inapplicable comparison that drops the within-customer covariance.
+
+The prediction example calculates empirical AUC from every positive-negative pair, assigning half credit to ties. Its Brier score averages squared probability errors over all 80 customers. Probability sums forecast the number of purchasers in this fixed cohort. Perfect group calibration of Model A is imposed, so it provides no evidence about future calibration.
+
+## Outputs and Checks
+
+`results/paired_changes.json` reports a $5 mean change, standard error 0.267261, and conditional 95% t interval [4.368028, 5.631972]. `results/customer_changes.csv` contains the eight plotted differences. `results/ranking_calibration.json` reports AUC 53/66 for both models, Brier scores 0.175 and 0.21855, and purchase forecasts of 36 and 40 against 36 observed. `results/calibration_bins.csv` supplies every plotted probability and observed share with its denominator.
+
+Six tests independently check difference variance, pairing, row-order invariance, exact AUC arithmetic, probability losses, aggregate counts, and invalid input handling. Both programs were executed. Full matching Python appears in [M2 §2.22](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) and [M7 §7.23](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md); editable figures and projected examples appear in Sessions 3 and 11.
 
 ---
 

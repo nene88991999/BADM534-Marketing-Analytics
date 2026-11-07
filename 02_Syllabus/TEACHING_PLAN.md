@@ -60,3 +60,7 @@ Use the [LLM evidence examples](../03_Data_and_Code/LLM_Revalidation/README.md) 
 ## AI Experimentation and Pricing
 
 Sessions 9 and 14 connect Misra and his coauthors' research to the choice of experimental objectives, pricing benchmarks, and customer incidence. The Kantian case examines truthful representation, treatment of persons, and the justification of constraints before optimization. The current policy record distinguishes New York disclosure law, proposed restrictions, FTC inquiries, and emergency price-gouging conditions. The 15 dated meetings, 170-minute duration, and unreleased assessment rules remain unchanged.
+
+## Statistical Graphics and Interpretation
+
+Session 3 compares customer-level spending and paired changes within the existing visualization activities. Session 11 compares ranking, probability loss, and aggregate demand forecasts within prediction evaluation. The [PyStatlas guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) provides additional chart selections for regression, retention, segmentation, experiments, and time series. The calendar and session lengths retain their existing allocations.

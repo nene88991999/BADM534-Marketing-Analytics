@@ -1,0 +1,13 @@
+{
+  "customers": 8,
+  "mean_before": 72.5,
+  "mean_after": 77.5,
+  "mean_change": 5.0,
+  "paired_standard_error": 0.2672612419124244,
+  "covariance": 1354.2857142857142,
+  "independent_standard_error": 18.402251415054003,
+  "ci_lower": 4.368027585863075,
+  "ci_upper": 5.631972414136925,
+  "ci_scope": "Hypothetical iid normal customer differences; 95% t interval",
+  "data_scope": "Eight imposed pairs; descriptive change, no causal effect"
+}

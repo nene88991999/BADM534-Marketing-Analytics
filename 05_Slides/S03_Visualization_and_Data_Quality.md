@@ -11,6 +11,7 @@ Session 03. M2. 170 minutes.
 - Choose displays that preserve the intended comparison.
 - Explain composition reversals and uncertainty.
 - Use domain knowledge to define transparent sensitivity analyses.
+- Distinguish customer-level spread from uncertainty in paired changes.
 
 ## Related Materials
 
@@ -21,6 +22,8 @@ Session 03. M2. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
+- [Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)
+- [PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)
 
 ## Slide 1: Visualization and Data Quality
 
@@ -95,7 +98,29 @@ An independent-day bootstrap treats days as separate sampling units and can unde
 
 Source: M3, Section 3.6.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 8: Nutrition Knowledge and Measurement
+## Slide 8: Spending Levels and Customer Changes
+
+Eight synthetic customers; mean change is 5 dollars. Conditional 95% t interval: [4.368, 5.632].
+
+**Figure description:** Thin lines join each customer across two one-month windows. Levels range widely, while every change is 4, 5, or 6 dollars. The right panel separates individual changes from the mean and conditional t interval.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_paired_spending.tex)
+
+Spending rises from 72.50 to 77.50 dollars per customer per month. The paired standard error is 0.267. The t interval assumes independent normally distributed customer differences under a hypothetical sampling model. These fixed synthetic rows provide no evidence of a causal program effect.
+
+Source: M2 Section 2.22. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 9: The Sampling Unit Determines Uncertainty
+
+- Preserve customer pairs and compare equal observation windows.
+- Within-customer covariance can make a mean change precise.
+- A before/after change needs a counterfactual design for a causal claim.
+
+In the synthetic example, dropping covariance produces an inapplicable standard error of 18.402 dollars. Reordering complete rows leaves the paired result unchanged. Reassigning only the after values changes the standard error. Resample whole pairs when customers are independent sampling units. Full input data, Python and tests are in Statistical_Graphics.
+
+Source: ../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/group-comparisons/
+
+## Slide 10: Nutrition Knowledge and Measurement
 
 - A recorded food log can omit meals and portions.
 - Energy plausibility depends on the measurement instrument and physiology.
@@ -105,7 +130,7 @@ These records contain perturbed weights and undocumented source codes. The cours
 
 Source: M2, Section 2.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 9: Sample Restrictions Change the Comparison
+## Slide 11: Sample Restrictions Change the Comparison
 
 mHealth screening alternatives are explicit analysis choices.
 
@@ -117,7 +142,7 @@ An imposed calorie range is a sensitivity analysis, not an individual diagnosis 
 
 Source: M2, Section 2.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 10: Access Changes the Evidence Sample
+## Slide 12: Access Changes the Evidence Sample
 
 November 5, 2026 snapshot. Counts refer to DOI records and retrieved versions.
 
@@ -129,7 +154,7 @@ The primary mechanism sample includes 47 potential-dual-use reviews and one repo
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/README.md
 
-## Slide 11: Selected Findings at a Fixed Date
+## Slide 13: Selected Findings at a Fixed Date
 
 | Published Category | Claims |
 | --- | --- |
@@ -144,7 +169,7 @@ The released data contain 1,000 model-claim pairs, with eight flagged unreliable
 
 Source: Queen and Zou (2026). https://zou-group.github.io/llm-claims-shelf-life/ M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 12: Follow-up Changes the Denominator
+## Slide 14: Follow-up Changes the Denominator
 
 All fifty claims contribute follow-up; 28 remain right-censored.
 
@@ -156,7 +181,7 @@ The 15.75-month mean conditions on the 22 expired claims. It is not an expected 
 
 Source: Queen and Zou (2026), released fitted dates; original course calculation. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 13: Energy-Plausibility Screens
+## Slide 15: Energy-Plausibility Screens
 
 - An intake-to-requirement comparison needs defined inputs.
 - Unobserved physiological inputs remain missing.
@@ -166,7 +191,7 @@ The Goldberg example in the notes is an explicitly hypothetical scenario. Its in
 
 Source: M2, Section 2.11.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 14: Interactive Comparisons
+## Slide 16: Interactive Comparisons
 
 - Keep comparable panels on common scales.
 - Display the eligible population and current selection.
@@ -176,7 +201,7 @@ Changing a slider can change the population, the denominator, and the axis range
 
 Source: M2, Section 2.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 15: A Composition Check
+## Slide 17: A Composition Check
 
 Synthetic within-group rates are 9%, 80%, 10%, and 81%.
 
@@ -195,7 +220,7 @@ The observed B mix assigns two-thirds of its customers to the new-customer group
 
 Source: M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 16: Coding Exercise: A Chart Assessment
+## Slide 18: Coding Exercise: A Chart Assessment
 
 - Generate a rate chart from a verified aggregate table.
 - Alter the axis range, cohort filter, and denominator one at a time.
@@ -205,7 +230,7 @@ The small example runs with ../03_Data_and_Code/Lecture_Examples/session_example
 
 Source: M2, Section 2.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 17: A Public-Signal Measurement Problem
+## Slide 19: A Public-Signal Measurement Problem
 
 - A product can acquire a new page title while demand stays unchanged.
 - A single-title series then misses part of its recorded attention.
@@ -215,7 +240,7 @@ Pageviews measure attention to selected pages. They do not directly measure paid
 
 Source: M2, Section 2.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 18: Title Changes and Apparent Declines
+## Slide 20: Title Changes and Apparent Declines
 
 The supplied public pageview capture uses observed title histories.
 
@@ -227,7 +252,7 @@ The GenAI measurement program validates date and title coverage before calculati
 
 Source: M2, Section 2.17.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 19: Evidence in a Management Presentation
+## Slide 21: Evidence in a Management Presentation
 
 - State the decision and supported result.
 - Show the comparison, units, and denominator.
@@ -237,7 +262,7 @@ An executive summary can be concise while retaining consequential uncertainty. A
 
 Source: M2, Section 2.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 20: Honest Comparisons
+## Slide 22: Honest Comparisons
 
 - Keep denominators and scales visible.
 - Preserve missing outcomes and relevant subgroup variation.
@@ -247,7 +272,7 @@ A technically correct chart can still communicate a stronger claim than the evid
 
 Source: ETHICS_AND_REGULATION.md, M2-M3.
 
-## Slide 21: Visualization Discussion
+## Slide 23: Visualization Discussion
 
 - Which customers receive weight in the chart?
 - Could sample restrictions reverse the recommendation?

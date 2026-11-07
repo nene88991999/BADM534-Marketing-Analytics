@@ -72,3 +72,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## AI Experimentation and Pricing
 
 [Research and primary policy sources](16_AI_Experimentation_and_Pricing/README.md) support a Kantian case on AI-assisted A/B testing, personalized prices, commercial objectives, and customer consequences.
+
+## PyStatlas Statistical Graphics
+
+[A catalog of 61 examples and a module-specific guide](17_PyStatlas_Statistical_Graphics/README.md) support chart selection, interpretation, AI-assisted coding, and future static-wiki design. The source record distinguishes nine full script readings from metadata cataloguing.

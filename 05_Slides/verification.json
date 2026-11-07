@@ -1,21 +1,21 @@
 {
-  "verified_on": "2026-11-06",
+  "verified_on": "2026-11-07",
   "artifacts": {
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 308,
-      "sha256": "bd034f226b88001a937e386912d33e44e831818a05714707ab9030f9d289c4a5"
+      "pages": 312,
+      "sha256": "97316bdd798b350d1196bb4038c54909040bc8d2dabbbe5afe1ac019a4c58fe8"
     },
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 253,
-      "sha256": "ee33bad87f70926009cc67ff75ff5323581284709a5a0360bef48c4ec43b75f9"
+      "pages": 259,
+      "sha256": "b1938d124d291a263659f532c9ae70a6fef5c1cc297184217b164f69dd9a7fd8"
     },
     "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
       "pages": 2,
       "sha256": "ebf1820f6ac192f95f893208bb88fe83bbe9448160bdd957d92d80f596c8b2d4"
     },
     "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
-      "pages": 21,
-      "sha256": "fe95792d73a7a29b2b13ce6e96229970cccd8d488dbf9f89680adb92ade7b4a9"
+      "pages": 23,
+      "sha256": "d9f8977fda6c87a0a93b723b2a70ba24434a829749e10a97196d519388ba44b2"
     },
     "05_Slides/S06_Segmentation_and_Customer_Lifetime_Value.pdf": {
       "pages": 22,
@@ -42,8 +42,8 @@
       "sha256": "885ae1a0336664c64d47cd1e7ae7db6a6d1e064049beea91c879d06279058609"
     },
     "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
-      "pages": 21,
-      "sha256": "7b07b5aeafb52d16000e0723d0f52caf1ea2ae47651a4703206910dc6455e33e"
+      "pages": 23,
+      "sha256": "09343e4151bbca5cdc736a916bafb17ad44ffa557ca2034ccc677c7f851e7c03"
     },
     "06_Lecture_Notes/Marketing_Dialectics.pdf": {
       "pages": 28,
@@ -57,22 +57,21 @@
     "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
     "session_plan_and_manifest_counts_agree": true,
     "calendar_dates_and_170_minute_meetings_unchanged": true,
-    "local_markdown_links_checked_this_revision": 452,
-    "full_note_code_blocks_match_source_and_parse": 56,
-    "new_analysis_programs_executed": 1,
-    "independent_small_case_tests_passed": 5,
-    "figure_aggregates_agree_with_exact_expected_totals": true,
+    "local_markdown_links_checked_this_revision": 433,
+    "full_note_code_blocks_match_source_and_parse": 58,
+    "new_analysis_programs_executed": 2,
+    "independent_small_case_tests_passed": 6,
+    "figure_aggregates_agree_with_independent_calculation": true,
     "new_tikz_figures_rendered_and_visually_reviewed": 2,
-    "changed_and_adjacent_student_slide_pages_visually_reviewed": 16,
-    "standalone_chapter_changed_and_transition_pages_visually_reviewed": 11,
-    "combined_note_pages_visually_reviewed_including_contents_and_transitions": 20,
-    "syllabus_pages_visually_reviewed": 2,
-    "current_source_files_checksums_sizes_identities_checked": 11,
-    "previous_source_versions_checked": 1,
-    "web_read_source_pages_without_local_download": 3,
+    "updated_student_deck_pages_visually_reviewed": 46,
+    "combined_note_pages_visually_reviewed_including_contents_and_transitions": 18,
+    "downloaded_reference_files_match_pinned_git_blobs": 80,
+    "reference_chart_metadata_catalogued_and_scripts_parsed": 61,
+    "selected_reference_scripts_read_in_full": 9,
+    "upstream_programs_executed": 0,
     "portable_context_uses_reviewed_HEAD_resource_catalogs": true
   },
-  "execution_scope": "November 6 AI experimentation and pricing revision: executed the original exact synthetic pricing program and five independent tests. Verified 56 full note-code blocks against their source and syntax. Reconciled both figure series with exact expected totals, checked 452 local Markdown links, and preserved all 15 dated 170-minute meetings. Visually reviewed 16 changed or adjacent student-slide pages, 20 combined-note pages including contents and boundaries, the 11 changed or adjacent standalone chapter pages, both syllabus pages, and two new figures. Current source checks cover 11 downloaded files and one retained superseded version; three statutory or bill pages were read online with no local download. The research reading scope is selective and recorded in the catalog. No downloaded programs or external AI APIs were executed. Prior checks remain in historical fields.",
+  "execution_scope": "November 7 PyStatlas revision: executed two original synthetic programs and six independent checks, and reran the existing synthetic lecture calculations without numerical changes. Matched all 58 full note-code blocks to their sources. Checked paired variances, aggregate probability losses and both new figures against output tables and independent arithmetic. Reviewed all 46 pages in Sessions 3 and 11, 18 note pages including contents and section boundaries, and the two figure previews; corrected and rechecked five affected pages after caption and float-placement changes. All 80 saved reference text files match the pinned repository blobs; 61 chart records were catalogued and syntax-parsed, with nine scripts read in full. Gallery search and calibration-page navigation were verified. No upstream programs, external AI services, or source datasets were executed or processed. Prior checks remain in historical fields.",
   "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
@@ -185,5 +184,28 @@
       "portable_context_uses_reviewed_HEAD_resource_catalogs": true
     },
     "execution_scope": "November 6 Marketing Dialectics revision: executed the original synthetic retention program and five independent small-case tests. Verified all 55 full note-code blocks against their source and syntax. Independently aggregated the exported 2,000-row CSV, reconciled counts and denominators with results and the retention figure, checked local links, and preserved all 15 dated 170-minute meetings. Reviewed all 18 standalone chapter pages, the final combined chapter with its boundary and contents page, all 33 Session 14 pages, two syllabus pages, and six new TikZ figures. All 35 downloaded files match recorded checksums and sizes; PDF page counts and source identities were checked. Source reading is selective, as documented in the resource catalog; nine full-text access gaps remain. No downloaded programs or external model APIs were executed. Earlier checks are retained in historical fields."
+  },
+  "ai_experimentation_pricing_checks_2026_11_06": {
+    "checks": {
+      "updated_decks_compile_without_overfull_boxes_or_tex_errors": true,
+      "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
+      "session_plan_and_manifest_counts_agree": true,
+      "calendar_dates_and_170_minute_meetings_unchanged": true,
+      "local_markdown_links_checked_this_revision": 452,
+      "full_note_code_blocks_match_source_and_parse": 56,
+      "new_analysis_programs_executed": 1,
+      "independent_small_case_tests_passed": 5,
+      "figure_aggregates_agree_with_exact_expected_totals": true,
+      "new_tikz_figures_rendered_and_visually_reviewed": 2,
+      "changed_and_adjacent_student_slide_pages_visually_reviewed": 16,
+      "standalone_chapter_changed_and_transition_pages_visually_reviewed": 11,
+      "combined_note_pages_visually_reviewed_including_contents_and_transitions": 20,
+      "syllabus_pages_visually_reviewed": 2,
+      "current_source_files_checksums_sizes_identities_checked": 11,
+      "previous_source_versions_checked": 1,
+      "web_read_source_pages_without_local_download": 3,
+      "portable_context_uses_reviewed_HEAD_resource_catalogs": true
+    },
+    "execution_scope": "November 6 AI experimentation and pricing revision: executed the original exact synthetic pricing program and five independent tests. Verified 56 full note-code blocks against their source and syntax. Reconciled both figure series with exact expected totals, checked 452 local Markdown links, and preserved all 15 dated 170-minute meetings. Visually reviewed 16 changed or adjacent student-slide pages, 20 combined-note pages including contents and boundaries, the 11 changed or adjacent standalone chapter pages, both syllabus pages, and two new figures. Current source checks cover 11 downloaded files and one retained superseded version; three statutory or bill pages were read online with no local download. The research reading scope is selective and recorded in the catalog. No downloaded programs or external AI APIs were executed. Prior checks remain in historical fields."
   }
 }

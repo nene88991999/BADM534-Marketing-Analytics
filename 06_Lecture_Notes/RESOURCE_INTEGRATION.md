@@ -135,3 +135,7 @@ M9 links Kantian dialectic and ethics with Hume and Smith on institutional scrut
 ## AI Experimentation, Pricing, and Ethical Judgment
 
 [Four research contributions and primary policy sources](../01_Resources/16_AI_Experimentation_and_Pricing/README.md) inform M6 §6.21, M8 §8.20, and M9 §§9.14–9.18. [The executed pricing example](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) solves an original imposed population exactly, contrasts distributional and aggregate outcomes, and separately checks arithmetic from published summaries. It does not reproduce the papers' experiments or estimate ethical legitimacy. Two new TikZ figures show incidence and the role of justified restrictions.
+
+## PyStatlas Statistical Graphics
+
+Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §2.22 and M7 §7.23. Original synthetic examples preserve customer pairs and distinguish ranking from probability accuracy. [The resource guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) maps the 12 families to course questions and records code-reading scope. [Executed programs and tests](../03_Data_and_Code/Statistical_Graphics/README.md) supply the aggregate tables used by two new TikZ figures. Sessions 3 and 11 carry the corresponding discussion.

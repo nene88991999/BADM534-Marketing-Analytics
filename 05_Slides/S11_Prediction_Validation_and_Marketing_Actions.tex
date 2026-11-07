@@ -151,6 +151,41 @@ M7, Section 7.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M7, Section 7.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
 \end{frame}
+\begin{frame}{Identical Ranking, Different Probabilities}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_ranking_probabilities.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic customers and imposed scores: both models have AUC 0.803. Each plotted group contains 20 customers.\par}
+\note{The same 80 eligible customers have 36 purchases and 44 nonpurchases in one next-month window. Each can purchase at most once. Group calibration of Model A is imposed; no trained model or future performance claim is involved. No uncertainty interval is attached to this fixed constructed population.
+
+M7 Section 7.23. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{AUC Alone Does Not Set Inventory}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Quantity & Model A & Model B \\
+\midrule
+AUC & 0.803 & 0.803 \\
+Brier Score & 0.175 & 0.21855 \\
+Predicted Purchases & 36 & 40 \\
+Observed Purchases & 36 & 36 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Same 80 synthetic customers. Smaller Brier scores indicate less squared probability error.
+\vfill
+\note{AUC gives half credit to tied positive-negative pairs: 1272/1584 = 53/66 for both models. A strictly increasing score transformation preserves ordering. The sum of probabilities changes, making probability accuracy relevant to inventory. The Brier score is an overall probability loss, not solely a calibration measure. Purchase propensity does not identify a coupon effect.
+
+\url{../03_Data_and_Code/Statistical_Graphics/README.md} \url{https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/}}
+\end{frame}
 \begin{frame}{A Cost-Based Threshold}
 \usebeamercolor[fg]{normal text}
 \noindent Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.

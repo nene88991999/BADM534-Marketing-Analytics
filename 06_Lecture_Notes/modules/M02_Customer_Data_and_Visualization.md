@@ -1503,3 +1503,89 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 2.22 Customer Differences and Changes Within Customers
+
+\noindent A retailer deciding whether to revise its retention program needs to know how spending changes for the same customers. A distribution of spending levels answers a different question about the customer base. High-spending customers can remain far above low-spending customers while both groups change by nearly the same amount. Linking repeated observations preserves this distinction. Warin's [PyStatlas paired-comparison and estimation graphics](https://warint.github.io/pystatlas/group-comparisons/) combine individual observations with the comparison of interest.
+
+Consider eight synthetic customers observed in two complete one-month windows. Their initial spending is $20, $35, $50, $65, $80, $95, $110, and $125. The corresponding changes are $4, $6, $5, $5, $4, $6, $5, and $5. Every customer remains in the comparison, with equal weight. Mean spending rises from $72.50 to $77.50 per customer per month. The $5 increase is descriptive; these observations contain no untreated comparison from which to identify the program's causal effect.
+
+For customer $i$, define the change as $d_i=y_{i,\mathrm{after}}-y_{i,\mathrm{before}}$. The average change and its estimated standard error under independent sampling of customer pairs are
+
+$$
+\bar d=\frac{1}{n}\sum_{i=1}^{n}d_i,
+\qquad
+\widehat{\mathrm{SE}}(\bar d)=\frac{s_d}{\sqrt n},
+\qquad
+s_d^2=s_{\mathrm{after}}^2+s_{\mathrm{before}}^2-2s_{\mathrm{before,after}}.
+$$
+
+Here $n$ counts customers, each variance uses denominator $n-1$, and $s_{\mathrm{before,after}}$ is the sample covariance of spending across the two windows. The covariance is positive because customers largely preserve their relative spending levels. Omitting it discards the information in the pairing. In these imposed observations, $s_d^2=4/7$ dollars squared and the paired standard error is $0.267. Treating the two windows as independent samples produces $18.402. That independence calculation is inapplicable to this paired design.
+
+![Eight synthetic customers have spending levels between 20 and 130 dollars, with individual changes of 4, 5, or 6 dollars. Thin lines join each customer's two observations. The right panel plots all eight changes and their mean of 5 dollars, with a conditional 95% t interval from 4.368 to 5.632 dollars. The panels label their distinct quantities.](../figures/M02_paired_spending.png)
+
+A 95% t interval is $\bar d\pm t_{0.975,n-1}s_d/\sqrt n$. Its exact sampling interpretation assumes independent normally distributed customer differences. Under that hypothetical model, the interval is [$4.368, $5.632]. The imposed observations themselves have no sampling uncertainty; the interval demonstrates what the stated sampling model would imply. With observed customer data, repeated households, store-level assignment, missing second-window records, and a small number of independent units require separate attention. A bootstrap should resample whole customer pairs when customers are the independent sampling unit.
+
+### 2.22.1 Reproduce the Paired Comparison
+
+\noindent The input contains one unique customer identifier and two dollar amounts per row. Empty values, nonfinite amounts, negative spending, and duplicate identifiers fail validation. The calculation preserves the complete pairs and exports the individual changes used in the right panel. Reordering complete rows preserves the result; rearranging only the second-period amounts changes the pairing and its uncertainty.
+
+Python source: [paired_changes.py](../../03_Data_and_Code/Statistical_Graphics/paired_changes.py). From its directory, run `python paired_changes.py`. Input: `inputs/paired_spending.csv`; dependency: SciPy for the t critical value.
+
+```python
+"""Synthetic customer spending: preserve pairs when estimating mean change."""
+from pathlib import Path
+import csv
+import json
+import math
+import statistics as st
+from scipy.stats import t
+
+HERE = Path(__file__).resolve().parent
+
+
+def evaluate(rows):
+    if len(rows) < 2:
+        raise ValueError("At least two complete customer pairs are required")
+    ids = [row["customer_id"] for row in rows]
+    if any(not value for value in ids) or len(set(ids)) != len(ids):
+        raise ValueError("Customer IDs must be nonempty and unique")
+    before = [float(row["before_dollars"]) for row in rows]
+    after = [float(row["after_dollars"]) for row in rows]
+    if any(not math.isfinite(x) or x < 0 for x in before + after):
+        raise ValueError("Spending must be finite and nonnegative")
+    change = [b - a for a, b in zip(before, after)]
+    n = len(rows)
+    mean = st.mean(change)
+    se = st.stdev(change) / math.sqrt(n)
+    covariance = sum((a - st.mean(before)) * (b - st.mean(after))
+                     for a, b in zip(before, after)) / (n - 1)
+    independent_se = math.sqrt((st.variance(before) + st.variance(after)) / n)
+    margin = float(t.ppf(0.975, df=n - 1)) * se
+    return dict(customers=n, mean_before=st.mean(before),
+                mean_after=st.mean(after), mean_change=mean,
+                paired_standard_error=se, covariance=covariance,
+                independent_standard_error=independent_se,
+                ci_lower=mean - margin, ci_upper=mean + margin,
+                ci_scope="Hypothetical iid normal customer differences; 95% t interval",
+                data_scope="Eight imposed pairs; descriptive change, no causal effect")
+
+
+def main():
+    with (HERE / "inputs/paired_spending.csv").open(newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    result = evaluate(rows)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "paired_changes.json").write_text(json.dumps(result, indent=2) + "\n")
+    with (output / "customer_changes.csv").open("w", newline="") as stream:
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["customer_id", "change_dollars"])
+        writer.writerows((r["customer_id"], float(r["after_dollars"])
+                         - float(r["before_dollars"])) for r in rows)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

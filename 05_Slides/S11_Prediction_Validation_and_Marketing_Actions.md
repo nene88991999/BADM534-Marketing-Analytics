@@ -11,6 +11,7 @@ Session 11. M7. 170 minutes.
 - Design a holdout that matches deployment and prevents leakage.
 - Compare ranking, calibration, and decision costs.
 - Assess coverage and missing future labels in an availability forecast.
+- Compare identical rankings with different probability losses and demand forecasts.
 
 ## Related Materials
 
@@ -20,6 +21,8 @@ Session 11. M7. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
+- [Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)
+- [PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -138,7 +141,34 @@ For q=p squared, the original outcome frequency p equals the square root of q. E
 
 Source: M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 12: A Cost-Based Threshold
+## Slide 12: Identical Ranking, Different Probabilities
+
+Synthetic customers and imposed scores: both models have AUC 0.803. Each plotted group contains 20 customers.
+
+**Figure description:** Model A probabilities match group purchase shares on the diagonal. Model B retains the same order and ties but stretches low and high probabilities. Common axes run from zero to one.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_ranking_probabilities.tex)
+
+The same 80 eligible customers have 36 purchases and 44 nonpurchases in one next-month window. Each can purchase at most once. Group calibration of Model A is imposed; no trained model or future performance claim is involved. No uncertainty interval is attached to this fixed constructed population.
+
+Source: M7 Section 7.23. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
+
+## Slide 13: AUC Alone Does Not Set Inventory
+
+| Quantity | Model A | Model B |
+| --- | --- | --- |
+| AUC | 0.803 | 0.803 |
+| Brier Score | 0.175 | 0.21855 |
+| Predicted Purchases | 36 | 40 |
+| Observed Purchases | 36 | 36 |
+
+Same 80 synthetic customers. Smaller Brier scores indicate less squared probability error.
+
+AUC gives half credit to tied positive-negative pairs: 1272/1584 = 53/66 for both models. A strictly increasing score transformation preserves ordering. The sum of probabilities changes, making probability accuracy relevant to inventory. The Brier score is an overall probability loss, not solely a calibration measure. Purchase propensity does not identify a coupon effect.
+
+Source: ../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/
+
+## Slide 14: A Cost-Based Threshold
 
 Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
 
@@ -152,7 +182,7 @@ Correct classifications have zero cost in this example. Capacity constraints and
 
 Source: M7, Section 7.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 13: Coupon Targeting Includes the Untreated Outcome
+## Slide 15: Coupon Targeting Includes the Untreated Outcome
 
 Synthetic probabilities and costs. High treated response can have negative incremental value.
 
@@ -164,7 +194,7 @@ Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact
 
 Source: M7, Section 7.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 14: Queue Metrics
+## Slide 16: Queue Metrics
 
 Compute metrics from the synthetic confusion matrix.
 
@@ -182,7 +212,7 @@ Whether that queue is profitable depends on the action and its incremental outco
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 15: McBroken Forecasting
+## Slide 17: McBroken Forecasting
 
 - Predict availability on a later date.
 - Retain a separate count of unknown future labels.
@@ -192,7 +222,7 @@ An unknown future status is not an observed available restaurant. Dropping missi
 
 Source: M7, Section 7.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 16: Prediction and Outcome Coverage
+## Slide 18: Prediction and Outcome Coverage
 
 McBroken forecasts use later dates and observed-label denominators.
 
@@ -204,7 +234,7 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 17: Accuracy and Failure Costs
+## Slide 19: Accuracy and Failure Costs
 
 Constructed cases: pooled accuracy rises from 78% to 86%.
 
@@ -216,7 +246,7 @@ Fourteen paired cases improve and six regress. Stipulated failure costs of one d
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md
 
-## Slide 18: Paired Regression Checks
+## Slide 20: Paired Regression Checks
 
 The same one hundred constructed cases are scored under both configurations.
 
@@ -234,7 +264,7 @@ The complete program preserves every paired case and each segment denominator. W
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
 
-## Slide 19: Coding Exercise: A Forecast Evaluation
+## Slide 21: Coding Exercise: A Forecast Evaluation
 
 - Compare development and fresh accuracy after candidate selection.
 - Check every feature against the forecast date.
@@ -245,7 +275,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics
 
 Source: M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 20: Targeting and Delivered Opportunities
+## Slide 22: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -255,7 +285,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 21: Prediction Discussion
+## Slide 23: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

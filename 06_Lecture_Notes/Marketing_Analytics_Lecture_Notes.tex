@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 6, 2026\par}
+{\large November 7, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -3567,6 +3567,145 @@ def main():
         write_csv(output / (name + ".csv"), rows)
     (output / "snapshot_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M02-customer-differences-and-changes-within-customers}{%
+\section{Customer Differences and Changes Within
+Customers}\label{M02-customer-differences-and-changes-within-customers}}
+
+\noindent \noindent A retailer deciding whether to revise its retention program
+needs to know how spending changes for the same customers. A
+distribution of spending levels answers a different question about the
+customer base. High-spending customers can remain far above low-spending
+customers while both groups change by nearly the same amount. Linking
+repeated observations preserves this distinction. Warin's
+\href{https://warint.github.io/pystatlas/group-comparisons/}{PyStatlas
+paired-comparison and estimation graphics} combine individual
+observations with the comparison of interest.
+
+Consider eight synthetic customers observed in two complete one-month
+windows. Their initial spending is \$20, \$35, \$50, \$65, \$80, \$95,
+\$110, and \$125. The corresponding changes are \$4, \$6, \$5, \$5, \$4,
+\$6, \$5, and \$5. Every customer remains in the comparison, with equal
+weight. Mean spending rises from \$72.50 to \$77.50 per customer per
+month. The \$5 increase is descriptive; these observations contain no
+untreated comparison from which to identify the program's causal effect.
+
+For customer \(i\), define the change as
+\(d_i=y_{i,\mathrm{after}}-y_{i,\mathrm{before}}\). The average change
+and its estimated standard error under independent sampling of customer
+pairs are
+
+\[
+\bar d=\frac{1}{n}\sum_{i=1}^{n}d_i,
+\qquad
+\widehat{\mathrm{SE}}(\bar d)=\frac{s_d}{\sqrt n},
+\qquad
+s_d^2=s_{\mathrm{after}}^2+s_{\mathrm{before}}^2-2s_{\mathrm{before,after}}.
+\]
+
+Here \(n\) counts customers, each variance uses denominator \(n-1\), and
+\(s_{\mathrm{before,after}}\) is the sample covariance of spending
+across the two windows. The covariance is positive because customers
+largely preserve their relative spending levels. Omitting it discards
+the information in the pairing. In these imposed observations,
+\(s_d^2=4/7\) dollars squared and the paired standard error is \$0.267.
+Treating the two windows as independent samples produces \$18.402. That
+independence calculation is inapplicable to this paired design.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_paired_spending.tex}
+\caption{Eight synthetic customers have spending levels between 20 and 130 dollars, with individual changes of 4, 5, or 6 dollars. Thin lines join each customer’s two observations. The right panel plots all eight changes and their mean of 5 dollars, with a conditional 95\% t interval from 4.368 to 5.632 dollars. The panels label their distinct quantities.}\label{fig:M02_paired_spending}
+\end{figure}
+
+A 95\% t interval is \(\bar d\pm t_{0.975,n-1}s_d/\sqrt n\). Its exact
+sampling interpretation assumes independent normally distributed
+customer differences. Under that hypothetical model, the interval is
+{[}\$4.368, \$5.632{]}. The imposed observations themselves have no
+sampling uncertainty; the interval demonstrates what the stated sampling
+model would imply. With observed customer data, repeated households,
+store-level assignment, missing second-window records, and a small
+number of independent units require separate attention. A bootstrap
+should resample whole customer pairs when customers are the independent
+sampling unit.
+
+\hypertarget{M02-reproduce-the-paired-comparison}{%
+\subsection{Reproduce the Paired
+Comparison}\label{M02-reproduce-the-paired-comparison}}
+
+\noindent \noindent The input contains one unique customer identifier and two
+dollar amounts per row. Empty values, nonfinite amounts, negative
+spending, and duplicate identifiers fail validation. The calculation
+preserves the complete pairs and exports the individual changes used in
+the right panel. Reordering complete rows preserves the result;
+rearranging only the second-period amounts changes the pairing and its
+uncertainty.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Statistical_Graphics/paired_changes.py}{paired\_changes.py}.
+From its directory, run \texttt{python\ paired\_changes.py}. Input:
+\texttt{inputs/paired\_spending.csv}; dependency: SciPy for the t
+critical value.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic customer spending: preserve pairs when estimating mean change."""
+from pathlib import Path
+import csv
+import json
+import math
+import statistics as st
+from scipy.stats import t
+
+HERE = Path(__file__).resolve().parent
+
+
+def evaluate(rows):
+    if len(rows) < 2:
+        raise ValueError("At least two complete customer pairs are required")
+    ids = [row["customer_id"] for row in rows]
+    if any(not value for value in ids) or len(set(ids)) != len(ids):
+        raise ValueError("Customer IDs must be nonempty and unique")
+    before = [float(row["before_dollars"]) for row in rows]
+    after = [float(row["after_dollars"]) for row in rows]
+    if any(not math.isfinite(x) or x < 0 for x in before + after):
+        raise ValueError("Spending must be finite and nonnegative")
+    change = [b - a for a, b in zip(before, after)]
+    n = len(rows)
+    mean = st.mean(change)
+    se = st.stdev(change) / math.sqrt(n)
+    covariance = sum((a - st.mean(before)) * (b - st.mean(after))
+                     for a, b in zip(before, after)) / (n - 1)
+    independent_se = math.sqrt((st.variance(before) + st.variance(after)) / n)
+    margin = float(t.ppf(0.975, df=n - 1)) * se
+    return dict(customers=n, mean_before=st.mean(before),
+                mean_after=st.mean(after), mean_change=mean,
+                paired_standard_error=se, covariance=covariance,
+                independent_standard_error=independent_se,
+                ci_lower=mean - margin, ci_upper=mean + margin,
+                ci_scope="Hypothetical iid normal customer differences; 95% t interval",
+                data_scope="Eight imposed pairs; descriptive change, no causal effect")
+
+
+def main():
+    with (HERE / "inputs/paired_spending.csv").open(newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    result = evaluate(rows)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "paired_changes.json").write_text(json.dumps(result, indent=2) + "\n")
+    with (output / "customer_changes.csv").open("w", newline="") as stream:
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["customer_id", "change_dollars"])
+        writer.writerows((r["customer_id"], float(r["after_dollars"])
+                         - float(r["before_dollars"])) for r in rows)
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
@@ -10344,6 +10483,156 @@ def main():
         writer.writerows(cases)
     (output / "upgrade_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M07-the-same-ranking-can-produce-different-demand-forecasts}{%
+\section{The Same Ranking Can Produce Different Demand
+Forecasts}\label{M07-the-same-ranking-can-produce-different-demand-forecasts}}
+
+\noindent \noindent A retailer planning next month's inventory needs purchase
+probabilities for the eligible customer population. A ranking determines
+which customers receive priority, while the sum of probabilities
+predicts the number who will purchase. A strictly increasing
+transformation of scores preserves rank-based AUC, but it can change
+this forecast. Warin's
+\href{https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/}{PyStatlas
+calibration example} compares observed event shares with predicted
+probabilities and reports the Brier score alongside the display.
+
+Consider a fixed synthetic population of 80 eligible customers. Each can
+purchase at most once during the next month. Four ordered score groups
+contain 20 customers each, with 2, 6, 12, and 16 purchases. The other 44
+customers remain in every denominator. Predictions are imposed for the
+comparison; no model is estimated. Model A assigns probabilities 0.10,
+0.30, 0.60, and 0.80. Model B assigns 0.01, 0.10, 0.90, and 0.99 to
+those same groups. Both preserve the order of every positive-negative
+pair and the same ties.
+
+To connect ranking with observed outcomes, let \(N_1\) and \(N_0\) count
+purchasers and nonpurchasers, and let \(p_i\) denote customer \(i\)'s
+score. Empirical AUC is
+
+\[
+\widehat{\mathrm{AUC}}=
+\frac{1}{N_1N_0}\sum_{i:y_i=1}\sum_{j:y_j=0}
+\left[\mathbf{1}(p_i>p_j)+\tfrac12\mathbf{1}(p_i=p_j)\right].
+\]
+
+Each correctly ordered purchaser-nonpurchaser pair receives one unit; a
+tie receives half a unit. There are \(36\times44=1{,}584\) such pairs,
+with 1,272 units of concordance. Both models therefore have AUC
+\(53/66\), approximately 0.803. Their implied purchase totals are
+different: \(\sum_i p_i\) is 36 for Model A and 40 for Model B. The
+observed total is 36. Choosing between them using AUC alone ignores a
+four-purchase difference relevant to inventory planning.
+
+Probability accuracy depends on the distance between a probability and
+its realized binary outcome. The Brier score is
+
+\[
+\mathrm{Brier}=\frac{1}{N}\sum_{i=1}^{N}(p_i-y_i)^2.
+\]
+
+The score is 0.175 for Model A and 0.21855 for Model B; a smaller value
+indicates less squared probability error in this population. It is an
+overall probability loss, incorporating more than calibration alone.
+Within each of the four groups, Model A's probability equals the
+observed purchase share by construction. Model B exaggerates the
+separation between low- and high-probability groups.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_ranking_probabilities.tex}
+\caption{A reliability diagram holds both axes at zero to one and compares two imposed score systems on the same 80 synthetic customers. Blue circles for Model A lie on the diagonal at observed shares 0.10, 0.30, 0.60, and 0.80. Orange triangles for Model B have predicted probabilities 0.01, 0.10, 0.90, and 0.99 against those same shares. Each point contains 20 customers. Identical ranking leaves AUC unchanged while probability accuracy and predicted purchase totals differ.}\label{fig:M07_ranking_probabilities}
+\end{figure}
+
+The four points describe fixed constructed groups, so no sampling
+interval is attached. In an empirical application, define score bins and
+preserve their denominators, estimate calibration on observations
+excluded from fitting and tuning, and allow for customer or time
+dependence when estimating uncertainty. A model calibrated in these
+groups need not remain calibrated after a change in customer mix,
+prices, or the offer. Purchase propensity also does not identify the
+incremental effect of a coupon. A targeting decision requires the
+relevant treatment comparison and costs.
+
+\FloatBarrier
+
+\hypertarget{M07-reproduce-ranking-and-probability-loss}{%
+\subsection{Reproduce Ranking and Probability
+Loss}\label{M07-reproduce-ranking-and-probability-loss}}
+
+\noindent \noindent The program reads all eligible customers, validates
+identifiers and probabilities, and enumerates positive-negative
+comparisons with half credit for ties. Exact fractions avoid rounding
+ambiguity in AUC and the Brier score. Grouped output contains every
+plotted mean prediction, observed share, count, and purchase total. The
+aggregate forecast and loss retain nonpurchasers.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Statistical_Graphics/ranking_calibration.py}{ranking\_calibration.py}.
+From its directory, run \texttt{python\ ranking\_calibration.py}. Input:
+\texttt{inputs/purchase\_predictions.csv}; Python's standard library is
+sufficient.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Evaluate imposed purchase probabilities on the same synthetic customers."""
+from pathlib import Path
+from fractions import Fraction as F
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def evaluate(rows, column):
+    ids = [r["customer_id"] for r in rows]
+    if not rows or any(not x for x in ids) or len(set(ids)) != len(ids):
+        raise ValueError("Nonempty rows with unique customer IDs are required")
+    y = [F(r["purchase"]) for r in rows]
+    p = [F(r[column]) for r in rows]
+    if set(y) != {0, 1} or any(x < 0 or x > 1 for x in p):
+        raise ValueError("Both binary outcomes and probabilities in [0,1] are required")
+    positive = [x for x, outcome in zip(p, y) if outcome == 1]
+    negative = [x for x, outcome in zip(p, y) if outcome == 0]
+    concordance = sum(F(a > b) + F(a == b, 2)
+                      for a in positive for b in negative)
+    auc = concordance / (len(positive) * len(negative))
+    brier = sum((a - b) ** 2 for a, b in zip(p, y)) / len(y)
+    bins = []
+    for score in sorted(set(p)):
+        outcomes = [b for a, b in zip(p, y) if a == score]
+        bins.append(dict(model=column, mean_prediction=float(score),
+                         customers=len(outcomes), purchases=int(sum(outcomes)),
+                         observed_share=float(sum(outcomes) / len(outcomes))))
+    metrics = dict(customers=len(y), purchases=int(sum(y)),
+                   predicted_purchases=float(sum(p)), auc=float(auc),
+                   auc_exact=str(auc), brier=float(brier), brier_exact=str(brier))
+    return metrics, bins
+
+
+def main():
+    with (HERE / "inputs/purchase_predictions.csv").open(newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    results, bins = {}, []
+    for model in ("model_a", "model_b"):
+        results[model], table = evaluate(rows, model)
+        bins.extend(table)
+    results["scope"] = "Fixed synthetic customers and imposed predictions; no model fit"
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "ranking_calibration.json").write_text(json.dumps(results, indent=2) + "\n")
+    with (output / "calibration_bins.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(bins[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(bins)
+    print(json.dumps(results, indent=2))
 
 
 if __name__ == "__main__":

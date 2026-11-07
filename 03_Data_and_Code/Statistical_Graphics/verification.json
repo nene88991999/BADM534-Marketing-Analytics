@@ -1,0 +1,24 @@
+{
+  "verified_on": "2026-11-07",
+  "programs_executed": [
+    "paired_changes.py",
+    "ranking_calibration.py"
+  ],
+  "independent_tests_passed": 6,
+  "matching_note_code_blocks": 58,
+  "python_version": "3.13.5",
+  "scipy_version": "1.15.3",
+  "figure_values_checked_against_independent_aggregates": true,
+  "scope": "Original fixed synthetic inputs and imposed predictions; conditional paired t calculation; no upstream programs or external model APIs executed.",
+  "sha256": {
+    "paired_changes.py": "459ce5896f282c590f3ceccb575fdca872477ba834a491f64debec9d1491903a",
+    "ranking_calibration.py": "2b9b9d557f3e2851127c2f61af978394f2b75fe9e268b54ffc72ed539190ebb0",
+    "test_examples.py": "cc4050c79cd5500c05a893009bd85d503965605fc19981c6676ec618e248e13a",
+    "results/customer_changes.csv": "f382c15a6f1285c3888213aac212925166e3d432d078dc59a3e363be2ad5f504",
+    "results/calibration_bins.csv": "96759e3516213683c74355ec5222e79ccf1b2e2e635dd2be213a67fa45dbd1f1",
+    "results/paired_changes.json": "a46838ea6b354a6bebb08470d4d4b6a4ec514e461b2d42fcdd6481700a92b919",
+    "results/ranking_calibration.json": "2eba4e121a76a9f53595629857c36e7ff8e699c0e696d5233e1a364c0b56966a",
+    "inputs/purchase_predictions.csv": "a87b595534dd764035d44e3b9f9bcb06301d0f27c02076f9d325c877b9b2fd16",
+    "inputs/paired_spending.csv": "1edf791273002fecfa8f53778cda2704bb22b92cf561ca4ed87a5b5307d6c155"
+  }
+}

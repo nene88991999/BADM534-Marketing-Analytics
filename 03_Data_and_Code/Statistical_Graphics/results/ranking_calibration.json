@@ -1,0 +1,21 @@
+{
+  "model_a": {
+    "customers": 80,
+    "purchases": 36,
+    "predicted_purchases": 36.0,
+    "auc": 0.803030303030303,
+    "auc_exact": "53/66",
+    "brier": 0.175,
+    "brier_exact": "7/40"
+  },
+  "model_b": {
+    "customers": 80,
+    "purchases": 36,
+    "predicted_purchases": 40.0,
+    "auc": 0.803030303030303,
+    "auc_exact": "53/66",
+    "brier": 0.21855,
+    "brier_exact": "4371/20000"
+  },
+  "scope": "Fixed synthetic customers and imposed predictions; no model fit"
+}

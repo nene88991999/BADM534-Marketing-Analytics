@@ -1,0 +1,1948 @@
+{
+  "title": "PyStatlas Statistical Graphics",
+  "author": "Thierry Warin",
+  "source_url": "https://warint.github.io/pystatlas/",
+  "repository": "https://github.com/warint/pystatlas",
+  "retrieved_on": "2026-11-07",
+  "source_commit": "ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41",
+  "software_license": "MIT",
+  "dataset_rights": "Dataset permissions are separate; consult data_sources.yaml and each original provider.",
+  "charts": [
+    {
+      "id": "PYS01",
+      "title": "Histogram with density",
+      "family": "Distributions",
+      "url": "https://warint.github.io/pystatlas/distributions/histogram-density/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/01-distributions/01-histogram-density/plot.py",
+      "local_reference": "local_sources/gallery/01-distributions/01-histogram-density/plot.py",
+      "modules": [
+        "M2"
+      ],
+      "tags": [
+        "histogram",
+        "KDE",
+        "normality",
+        "skewness",
+        "Shapiro-Wilk",
+        "demography",
+        "fertility"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "9b0031bf790f92e6db2685c4dfafd31296582e2a",
+      "sha256": "44b7bcc7ade2a7f0ee4b09b07057530f3ca1433f8b866799dc5e02e6f62e29ba"
+    },
+    {
+      "id": "PYS02",
+      "title": "Raincloud plot",
+      "family": "Distributions",
+      "url": "https://warint.github.io/pystatlas/distributions/raincloud/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/01-distributions/02-raincloud/plot.py",
+      "local_reference": "local_sources/gallery/01-distributions/02-raincloud/plot.py",
+      "modules": [
+        "M2"
+      ],
+      "tags": [
+        "raincloud",
+        "violin",
+        "box plot",
+        "Kruskal-Wallis",
+        "distribution",
+        "political science",
+        "regimes"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "5ee05e88f45938c1325ab217dfb54c4d8e8cfd4c",
+      "sha256": "50dbaf705deac38cba191387e7df514758a4feae78ea3d87d9c9effb1ab9fe37"
+    },
+    {
+      "id": "PYS03",
+      "title": "Ridgeline plot",
+      "family": "Distributions",
+      "url": "https://warint.github.io/pystatlas/distributions/ridgeline/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/01-distributions/03-ridgeline/plot.py",
+      "local_reference": "local_sources/gallery/01-distributions/03-ridgeline/plot.py",
+      "modules": [
+        "M2"
+      ],
+      "tags": [
+        "ridgeline",
+        "joy plot",
+        "KDE",
+        "Friedman",
+        "demography",
+        "fertility"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "9810cd33f2a00773394502e7179f11dce2a96cb2",
+      "sha256": "7b54f57d6b0d99675ec51c6a475ed437b87b62b0d02cd8bdec2d5441417cf3b7"
+    },
+    {
+      "id": "PYS04",
+      "title": "ECDF comparison",
+      "family": "Distributions",
+      "url": "https://warint.github.io/pystatlas/distributions/ecdf-comparison/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/01-distributions/04-ecdf-comparison/plot.py",
+      "local_reference": "local_sources/gallery/01-distributions/04-ecdf-comparison/plot.py",
+      "modules": [
+        "M2"
+      ],
+      "tags": [
+        "ECDF",
+        "Kolmogorov-Smirnov",
+        "cumulative distribution",
+        "two-sample test",
+        "criminology",
+        "recidivism"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "1de4f89e9b6de4b3c0c66f1992b7f5dd71d7b51d",
+      "sha256": "dfd020be8847843b1f3d6164789c7ad622ef29f3c339a57a95a2c5bc3094d1b9"
+    },
+    {
+      "id": "PYS05",
+      "title": "Q–Q plot with confidence band",
+      "family": "Distributions",
+      "url": "https://warint.github.io/pystatlas/distributions/qq-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/01-distributions/05-qq-plot/plot.py",
+      "local_reference": "local_sources/gallery/01-distributions/05-qq-plot/plot.py",
+      "modules": [
+        "M2"
+      ],
+      "tags": [
+        "Q-Q plot",
+        "normality",
+        "confidence band",
+        "log transform",
+        "Shapiro-Wilk"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "307c2f06c8fd85788f89767ebb3dbd528b552dab",
+      "sha256": "b33fb80d90b78d0060c87098652b6cd37f2a33903ce95805a908c3a2e2d989a2"
+    },
+    {
+      "id": "PYS06",
+      "title": "Between-groups comparison",
+      "family": "Group comparisons",
+      "url": "https://warint.github.io/pystatlas/group-comparisons/between-groups-violin/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/02-group-comparisons/01-between-groups-violin/plot.py",
+      "local_reference": "local_sources/gallery/02-group-comparisons/01-between-groups-violin/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "ANOVA",
+        "Welch",
+        "Holm",
+        "effect size",
+        "violin",
+        "education",
+        "inequality"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "73dea6af5dfd1e2ec250ee3bb65872f91f054f59",
+      "sha256": "59b1f775da4e1fc0c6b8915e0963b134c0b33764afc5437aa5a0f43c15b4b7b3"
+    },
+    {
+      "id": "PYS07",
+      "title": "Within-subjects comparison",
+      "family": "Group comparisons",
+      "url": "https://warint.github.io/pystatlas/group-comparisons/within-subjects/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/02-group-comparisons/02-within-subjects/plot.py",
+      "local_reference": "local_sources/gallery/02-group-comparisons/02-within-subjects/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "repeated measures",
+        "paired t-test",
+        "rm-ANOVA",
+        "effect size",
+        "spaghetti plot",
+        "panel data",
+        "demography"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "966eee215759c224cda8f84fec00b46104be9f47",
+      "sha256": "1685fffaae6adc91a50794b483e28dea040a8026dcd021c10dde62943112a53f"
+    },
+    {
+      "id": "PYS08",
+      "title": "Estimation plot",
+      "family": "Group comparisons",
+      "url": "https://warint.github.io/pystatlas/group-comparisons/estimation-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/02-group-comparisons/03-estimation-plot/plot.py",
+      "local_reference": "local_sources/gallery/02-group-comparisons/03-estimation-plot/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "estimation",
+        "bootstrap",
+        "effect size",
+        "mean difference",
+        "confidence interval",
+        "crime",
+        "poverty"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "82fb78df89d9f0b08290a1469cc367fd14141199",
+      "sha256": "7ac14fcdd04f0212ca8d45d0ae854b6e4c2dc6b0d4d115b00d52b7aa257560cf"
+    },
+    {
+      "id": "PYS09",
+      "title": "Interaction plot",
+      "family": "Group comparisons",
+      "url": "https://warint.github.io/pystatlas/group-comparisons/means-with-ci/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/02-group-comparisons/04-means-with-ci/plot.py",
+      "local_reference": "local_sources/gallery/02-group-comparisons/04-means-with-ci/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "two-way ANOVA",
+        "interaction",
+        "means",
+        "confidence interval",
+        "factorial",
+        "survey",
+        "elections",
+        "ideology"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "b01e461fc1542390597e66329f83d3755515db44",
+      "sha256": "6da7a9a141ecf0fbc3e9bc383d93fabcb9127279208f83c416395a4d98ba0bac"
+    },
+    {
+      "id": "PYS10",
+      "title": "Tukey HSD intervals",
+      "family": "Group comparisons",
+      "url": "https://warint.github.io/pystatlas/group-comparisons/tukey-hsd/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/02-group-comparisons/05-tukey-hsd/plot.py",
+      "local_reference": "local_sources/gallery/02-group-comparisons/05-tukey-hsd/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "Tukey HSD",
+        "post hoc",
+        "multiple comparisons",
+        "ANOVA",
+        "confidence interval"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "99df4058a369696ddd85fd0cf0a4b591f1e176cf",
+      "sha256": "eb36515846bc9c1a5f700da0c44bff028d4d851080af104ab23a40549b59f743"
+    },
+    {
+      "id": "PYS11",
+      "title": "Diverging Likert chart",
+      "family": "Proportions & surveys",
+      "url": "https://warint.github.io/pystatlas/proportions-surveys/likert-diverging/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/03-proportions-surveys/01-likert-diverging/plot.py",
+      "local_reference": "local_sources/gallery/03-proportions-surveys/01-likert-diverging/plot.py",
+      "modules": [
+        "M2",
+        "M4"
+      ],
+      "tags": [
+        "Likert",
+        "survey",
+        "diverging bar",
+        "Friedman test"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "cfb7fb7a2a96069a11a4783f8add58b750f8bcc5",
+      "sha256": "591508a7fc21c30f4d1fbe44ccb171cae5addc56cb821137a77522612fde74b0"
+    },
+    {
+      "id": "PYS12",
+      "title": "Stacked proportions by group",
+      "family": "Proportions & surveys",
+      "url": "https://warint.github.io/pystatlas/proportions-surveys/stacked-proportions/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/03-proportions-surveys/02-stacked-proportions/plot.py",
+      "local_reference": "local_sources/gallery/03-proportions-surveys/02-stacked-proportions/plot.py",
+      "modules": [
+        "M2",
+        "M4"
+      ],
+      "tags": [
+        "proportions",
+        "chi-squared",
+        "Cramér's V",
+        "stacked bar",
+        "survey"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "afb87388bf48f265bcbb966655acacb26042b6f4",
+      "sha256": "44b0f256a90a527f92372bb262e296c0fca3cb429222f721d9d21a0bb005d2a2"
+    },
+    {
+      "id": "PYS13",
+      "title": "Mosaic plot with Pearson residuals",
+      "family": "Proportions & surveys",
+      "url": "https://warint.github.io/pystatlas/proportions-surveys/mosaic-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/03-proportions-surveys/03-mosaic-plot/plot.py",
+      "local_reference": "local_sources/gallery/03-proportions-surveys/03-mosaic-plot/plot.py",
+      "modules": [
+        "M2",
+        "M4"
+      ],
+      "tags": [
+        "mosaic",
+        "contingency table",
+        "chi-squared",
+        "Pearson residuals"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "4b7398d71f326554cb3d1454fd5a9a25746dfa99",
+      "sha256": "a495805837625e4b7beae2b208b6cd9fb80accd2e1e86d37226296f7da705ae4"
+    },
+    {
+      "id": "PYS14",
+      "title": "Proportions with confidence intervals",
+      "family": "Proportions & surveys",
+      "url": "https://warint.github.io/pystatlas/proportions-surveys/proportions-with-ci/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/03-proportions-surveys/04-proportions-with-ci/plot.py",
+      "local_reference": "local_sources/gallery/03-proportions-surveys/04-proportions-with-ci/plot.py",
+      "modules": [
+        "M2",
+        "M4"
+      ],
+      "tags": [
+        "proportion",
+        "Wilson interval",
+        "confidence interval",
+        "dot plot",
+        "chi-squared"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "d1a567dc894880c1a16dbd989b535cc84ab058b1",
+      "sha256": "700ba3e98ed5ed1fead3d6afc91bf64734294e64400a3179e2eb2c3b8760b9f6"
+    },
+    {
+      "id": "PYS15",
+      "title": "Cross-table with standardized residuals",
+      "family": "Proportions & surveys",
+      "url": "https://warint.github.io/pystatlas/proportions-surveys/crosstab-residuals/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/03-proportions-surveys/05-crosstab-residuals/plot.py",
+      "local_reference": "local_sources/gallery/03-proportions-surveys/05-crosstab-residuals/plot.py",
+      "modules": [
+        "M2",
+        "M4"
+      ],
+      "tags": [
+        "contingency table",
+        "chi-squared",
+        "standardized residuals",
+        "heatmap",
+        "cross-tab"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "dd4f0254eba388834fc9f136b8cb975127732819",
+      "sha256": "5d6ba3fb84185127b496485716ea88c32321e836ac827f430dcf1c322d364bcd"
+    },
+    {
+      "id": "PYS16",
+      "title": "Correlation matrix",
+      "family": "Correlation & association",
+      "url": "https://warint.github.io/pystatlas/correlation/correlation-matrix/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/04-correlation/01-correlation-matrix/plot.py",
+      "local_reference": "local_sources/gallery/04-correlation/01-correlation-matrix/plot.py",
+      "modules": [
+        "M2",
+        "M3"
+      ],
+      "tags": [
+        "correlation",
+        "Pearson",
+        "heatmap",
+        "Holm",
+        "multiple testing"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "9b276ca846b201b43bee1ff265a27566e7f96b15",
+      "sha256": "525ac06552892ede5a59430dd0a2c475a68e4ba7f35d0c8a65a7e28357cd5031"
+    },
+    {
+      "id": "PYS17",
+      "title": "Scatterplot with statistics",
+      "family": "Correlation & association",
+      "url": "https://warint.github.io/pystatlas/correlation/scatter-with-stats/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/04-correlation/02-scatter-with-stats/plot.py",
+      "local_reference": "local_sources/gallery/04-correlation/02-scatter-with-stats/plot.py",
+      "modules": [
+        "M2",
+        "M3"
+      ],
+      "tags": [
+        "correlation",
+        "Pearson",
+        "scatterplot",
+        "regression line",
+        "marginal histogram",
+        "education"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "0f1d41627c7ad80416c1a203830013f9c60151ad",
+      "sha256": "2db82c60bc8d61fb75d183c8c7e85e66751d30f11dc2c57688845a83bf18f8a2"
+    },
+    {
+      "id": "PYS18",
+      "title": "Pairs plot with correlations",
+      "family": "Correlation & association",
+      "url": "https://warint.github.io/pystatlas/correlation/pairs-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/04-correlation/03-pairs-plot/plot.py",
+      "local_reference": "local_sources/gallery/04-correlation/03-pairs-plot/plot.py",
+      "modules": [
+        "M2",
+        "M3"
+      ],
+      "tags": [
+        "pairs plot",
+        "scatter matrix",
+        "correlation",
+        "KDE",
+        "Simpson's paradox",
+        "confounding",
+        "education"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "0bdcd61003694d87468007e3726b124db64fe8ed",
+      "sha256": "656a1363cdd3f18b7a3b03ccab70c2f58f24da9febccd28050668ad222e27ace"
+    },
+    {
+      "id": "PYS19",
+      "title": "Correlogram with clustering",
+      "family": "Correlation & association",
+      "url": "https://warint.github.io/pystatlas/correlation/correlogram-bubble/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/04-correlation/04-correlogram-bubble/plot.py",
+      "local_reference": "local_sources/gallery/04-correlation/04-correlogram-bubble/plot.py",
+      "modules": [
+        "M2",
+        "M3"
+      ],
+      "tags": [
+        "correlation",
+        "correlogram",
+        "hierarchical clustering",
+        "heatmap",
+        "corrplot",
+        "education"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "3e830270ebe0e559e72c319fe56b5300d79a0c44",
+      "sha256": "da195622d1c8e2064f06c03ab2ccc07d0aec59c91434e263b6acab1d4119e4f3"
+    },
+    {
+      "id": "PYS20",
+      "title": "Coefficient plot",
+      "family": "Regression models",
+      "url": "https://warint.github.io/pystatlas/regression-models/coefficient-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/05-regression-models/01-coefficient-plot/plot.py",
+      "local_reference": "local_sources/gallery/05-regression-models/01-coefficient-plot/plot.py",
+      "modules": [
+        "M3"
+      ],
+      "tags": [
+        "regression",
+        "OLS",
+        "confidence interval",
+        "dot-and-whisker"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "8bf89b31ae22decf6def7262f2d06d20927069f9",
+      "sha256": "1bb8262988689ed622c042ddefce0c85b8190dfbd9c1e722527854783852eccb"
+    },
+    {
+      "id": "PYS21",
+      "title": "Odds-ratio forest plot",
+      "family": "Regression models",
+      "url": "https://warint.github.io/pystatlas/regression-models/odds-ratio-forest/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/05-regression-models/02-odds-ratio-forest/plot.py",
+      "local_reference": "local_sources/gallery/05-regression-models/02-odds-ratio-forest/plot.py",
+      "modules": [
+        "M3"
+      ],
+      "tags": [
+        "logistic regression",
+        "odds ratio",
+        "forest plot",
+        "confidence interval",
+        "GLM"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "5c7d9c746ef02dd1e1fc2d1903dec67b776b4879",
+      "sha256": "b616b77c5115a2f40facf71b436bc6ef42df51b30834d55180cf0f48852de76f"
+    },
+    {
+      "id": "PYS22",
+      "title": "Comparing nested models",
+      "family": "Regression models",
+      "url": "https://warint.github.io/pystatlas/regression-models/compare-models/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/05-regression-models/03-compare-models/plot.py",
+      "local_reference": "local_sources/gallery/05-regression-models/03-compare-models/plot.py",
+      "modules": [
+        "M3"
+      ],
+      "tags": [
+        "regression",
+        "model comparison",
+        "nested models",
+        "confidence interval",
+        "OLS",
+        "education"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "05c9cebf869f613e3466019669603b1d77b5792b",
+      "sha256": "086ccd7b25d1faa723bd93013e1cae7e53b44d687bb5d79ef98c280c45b2656c"
+    },
+    {
+      "id": "PYS23",
+      "title": "Predicted probabilities",
+      "family": "Regression models",
+      "url": "https://warint.github.io/pystatlas/regression-models/predicted-probabilities/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/05-regression-models/04-predicted-probabilities/plot.py",
+      "local_reference": "local_sources/gallery/05-regression-models/04-predicted-probabilities/plot.py",
+      "modules": [
+        "M3"
+      ],
+      "tags": [
+        "logistic regression",
+        "predicted probability",
+        "marginal effects",
+        "confidence band",
+        "GLM"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "cd173e2ba2efc8a574f8a5dd57e37bd8bf856a89",
+      "sha256": "1b8c514d10ee202fcd9683989db8d03f48bd75fef1b76dee1d5757ec195316fc"
+    },
+    {
+      "id": "PYS24",
+      "title": "Interaction effects",
+      "family": "Regression models",
+      "url": "https://warint.github.io/pystatlas/regression-models/interaction-effects/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/05-regression-models/05-interaction-effects/plot.py",
+      "local_reference": "local_sources/gallery/05-regression-models/05-interaction-effects/plot.py",
+      "modules": [
+        "M3"
+      ],
+      "tags": [
+        "interaction",
+        "moderation",
+        "simple slopes",
+        "Johnson-Neyman",
+        "marginal effect",
+        "education"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "544c535673dd7eba7c2bf6bcfc5d941fdd43928f",
+      "sha256": "256ddd7546575f4c6fd9668ec066da13d22d3dd578cdb34e41d2a40578dd4693"
+    },
+    {
+      "id": "PYS25",
+      "title": "Quantile regression process",
+      "family": "Regression models",
+      "url": "https://warint.github.io/pystatlas/regression-models/quantile-regression/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/05-regression-models/06-quantile-regression/plot.py",
+      "local_reference": "local_sources/gallery/05-regression-models/06-quantile-regression/plot.py",
+      "modules": [
+        "M3"
+      ],
+      "tags": [
+        "quantile regression",
+        "heteroscedasticity",
+        "OLS",
+        "confidence interval",
+        "Engel curve"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "b6f141bb66eb308580831d5695a55adce01add6d",
+      "sha256": "8d49a36f6d139c152316450e81e73697a50aa2553f6591dc4678cb6b5f030b2e"
+    },
+    {
+      "id": "PYS26",
+      "title": "Residual diagnostics",
+      "family": "Model diagnostics",
+      "url": "https://warint.github.io/pystatlas/model-diagnostics/residual-diagnostics/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/06-model-diagnostics/01-residual-diagnostics/plot.py",
+      "local_reference": "local_sources/gallery/06-model-diagnostics/01-residual-diagnostics/plot.py",
+      "modules": [
+        "M3",
+        "M7"
+      ],
+      "tags": [
+        "residuals",
+        "Q-Q plot",
+        "Cook's distance",
+        "leverage",
+        "heteroscedasticity"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "ae966431a6a8f658babd8a23c3df453342c500a4",
+      "sha256": "004d31afcb0c86bb4b526148b2f975a77092a00eafb35e7427e5a228b0b54065"
+    },
+    {
+      "id": "PYS27",
+      "title": "Influence plot",
+      "family": "Model diagnostics",
+      "url": "https://warint.github.io/pystatlas/model-diagnostics/influence-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/06-model-diagnostics/02-influence-plot/plot.py",
+      "local_reference": "local_sources/gallery/06-model-diagnostics/02-influence-plot/plot.py",
+      "modules": [
+        "M3",
+        "M7"
+      ],
+      "tags": [
+        "influence",
+        "Cook's distance",
+        "leverage",
+        "outliers",
+        "studentized residuals"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "d16c98133468d14cf8a6c371d6fb062bea01fa34",
+      "sha256": "50162a1d6718afe91e7733b9cd4a974da04bb9d14cbf902f3003f4dbd37bae60"
+    },
+    {
+      "id": "PYS28",
+      "title": "ROC curves",
+      "family": "Model diagnostics",
+      "url": "https://warint.github.io/pystatlas/model-diagnostics/roc-curve/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/06-model-diagnostics/03-roc-curve/plot.py",
+      "local_reference": "local_sources/gallery/06-model-diagnostics/03-roc-curve/plot.py",
+      "modules": [
+        "M3",
+        "M7"
+      ],
+      "tags": [
+        "ROC",
+        "AUC",
+        "classification",
+        "bootstrap",
+        "Youden index"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "81af950bba3dac345035257d8bb078e946599013",
+      "sha256": "cad126a33e607bccd8b304b1eb61419451bdecaa93d3c7e76ca708dc06505c2c"
+    },
+    {
+      "id": "PYS29",
+      "title": "Calibration plot",
+      "family": "Model diagnostics",
+      "url": "https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/06-model-diagnostics/04-calibration-plot/plot.py",
+      "local_reference": "local_sources/gallery/06-model-diagnostics/04-calibration-plot/plot.py",
+      "modules": [
+        "M3",
+        "M7"
+      ],
+      "tags": [
+        "calibration",
+        "reliability diagram",
+        "Brier score",
+        "classification",
+        "probability"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "c5b0ecb1da23f49efd356eb0b1c0e96d76473240",
+      "sha256": "df6407ea95da7a36515165e4e4a1e9105315e032df83aeeff0aca7a3d95b287c"
+    },
+    {
+      "id": "PYS30",
+      "title": "Added-variable plots",
+      "family": "Model diagnostics",
+      "url": "https://warint.github.io/pystatlas/model-diagnostics/partial-regression/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/06-model-diagnostics/05-partial-regression/plot.py",
+      "local_reference": "local_sources/gallery/06-model-diagnostics/05-partial-regression/plot.py",
+      "modules": [
+        "M3",
+        "M7"
+      ],
+      "tags": [
+        "partial regression",
+        "added-variable",
+        "Frisch-Waugh-Lovell",
+        "influence",
+        "multiple regression"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "1a94e3318bfcaf26ff6662dbb7dad168d7dabcae",
+      "sha256": "34f951b76457ccad6b27f70f3da4b801aefe6875b4a1030cd82255a65589b75f"
+    },
+    {
+      "id": "PYS31",
+      "title": "Kaplan–Meier curves",
+      "family": "Survival analysis",
+      "url": "https://warint.github.io/pystatlas/survival/kaplan-meier/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/07-survival/01-kaplan-meier/plot.py",
+      "local_reference": "local_sources/gallery/07-survival/01-kaplan-meier/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "Kaplan-Meier",
+        "log-rank",
+        "survival",
+        "censoring",
+        "risk table",
+        "political science"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "b32cc3638657b445b715ffbe37fe3b6336183437",
+      "sha256": "f1c022e0a4f6c83e0c89febb32365da32bfcc0616af0fa23f0d0bc8f77be4f42"
+    },
+    {
+      "id": "PYS32",
+      "title": "Cox hazard ratios",
+      "family": "Survival analysis",
+      "url": "https://warint.github.io/pystatlas/survival/cox-hazard-ratios/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/07-survival/02-cox-hazard-ratios/plot.py",
+      "local_reference": "local_sources/gallery/07-survival/02-cox-hazard-ratios/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "Cox model",
+        "hazard ratio",
+        "forest plot",
+        "proportional hazards",
+        "survival"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "2b154b1f110fdc3f7db98603ea0794c9ec489ea4",
+      "sha256": "c6d3364eb42385eb58fd655ad7e7a1d8b46091791c99aab756a8d1ffca21f5ed"
+    },
+    {
+      "id": "PYS33",
+      "title": "Cumulative hazard",
+      "family": "Survival analysis",
+      "url": "https://warint.github.io/pystatlas/survival/cumulative-hazard/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/07-survival/03-cumulative-hazard/plot.py",
+      "local_reference": "local_sources/gallery/07-survival/03-cumulative-hazard/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "Nelson-Aalen",
+        "cumulative hazard",
+        "survival",
+        "log-rank",
+        "political science"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "032c992bfb268d5596327ae30d4a9458a02315d8",
+      "sha256": "ef219dd93380387b0d9bf5ef9a84022279826320e123cacbe9247018eb059d6e"
+    },
+    {
+      "id": "PYS34",
+      "title": "Adjusted survival curves",
+      "family": "Survival analysis",
+      "url": "https://warint.github.io/pystatlas/survival/adjusted-survival/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/07-survival/04-adjusted-survival/plot.py",
+      "local_reference": "local_sources/gallery/07-survival/04-adjusted-survival/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "Cox model",
+        "adjusted survival",
+        "prediction",
+        "survival",
+        "covariates"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "d6a5fa5972857b6e75469942c5c7a6ddc9d00291",
+      "sha256": "4316d6b8fc2eb0e2e79f5f3b41a2d750f33ed7996df0795eeb620879e35016d1"
+    },
+    {
+      "id": "PYS35",
+      "title": "STL decomposition",
+      "family": "Time series",
+      "url": "https://warint.github.io/pystatlas/time-series/stl-decomposition/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/08-time-series/01-stl-decomposition/plot.py",
+      "local_reference": "local_sources/gallery/08-time-series/01-stl-decomposition/plot.py",
+      "modules": [
+        "M7",
+        "M8"
+      ],
+      "tags": [
+        "STL",
+        "decomposition",
+        "seasonality",
+        "trend",
+        "time series",
+        "economics"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "ed7a5ab8945ae366346a312c6b253dd8a4b8eab5",
+      "sha256": "e64ac789dab3b0bbeabe01bd35b2b5b6bb80cb37de8d6a273a6442770224cccf"
+    },
+    {
+      "id": "PYS36",
+      "title": "ACF and PACF",
+      "family": "Time series",
+      "url": "https://warint.github.io/pystatlas/time-series/acf-pacf/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/08-time-series/02-acf-pacf/plot.py",
+      "local_reference": "local_sources/gallery/08-time-series/02-acf-pacf/plot.py",
+      "modules": [
+        "M7",
+        "M8"
+      ],
+      "tags": [
+        "autocorrelation",
+        "ACF",
+        "PACF",
+        "Ljung-Box",
+        "time series",
+        "economics",
+        "unemployment"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "8f44b17f0909f6af4d979eada909098b09e39ce9",
+      "sha256": "ec8979cae5a591d9c32ed5f414db5de250179616455bef4b3f691129d288de64"
+    },
+    {
+      "id": "PYS37",
+      "title": "SARIMA forecast",
+      "family": "Time series",
+      "url": "https://warint.github.io/pystatlas/time-series/arima-forecast/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/08-time-series/03-arima-forecast/plot.py",
+      "local_reference": "local_sources/gallery/08-time-series/03-arima-forecast/plot.py",
+      "modules": [
+        "M7",
+        "M8"
+      ],
+      "tags": [
+        "ARIMA",
+        "SARIMA",
+        "forecast",
+        "prediction interval",
+        "RMSE",
+        "economics"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "357d775ab8b2e5ddf4369c625028ff38665baefe",
+      "sha256": "44564efd102dcfcf5276a1ac8ce5b12c4ee1c67cfcb70673d07bb0d2d288edc7"
+    },
+    {
+      "id": "PYS38",
+      "title": "Seasonal subseries plot",
+      "family": "Time series",
+      "url": "https://warint.github.io/pystatlas/time-series/seasonal-subseries/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/08-time-series/04-seasonal-subseries/plot.py",
+      "local_reference": "local_sources/gallery/08-time-series/04-seasonal-subseries/plot.py",
+      "modules": [
+        "M7",
+        "M8"
+      ],
+      "tags": [
+        "seasonality",
+        "subseries",
+        "month plot",
+        "ANOVA",
+        "time series",
+        "economics"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "04dbd45482571d481a8d3b1d01d107a370d4653d",
+      "sha256": "fa6b1e07545f404ad5fe07de195baa202c5817cf1cff3819e8fa281078eadad8"
+    },
+    {
+      "id": "PYS39",
+      "title": "PCA biplot",
+      "family": "Multivariate & clustering",
+      "url": "https://warint.github.io/pystatlas/multivariate/pca-biplot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/09-multivariate/01-pca-biplot/plot.py",
+      "local_reference": "local_sources/gallery/09-multivariate/01-pca-biplot/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "PCA",
+        "biplot",
+        "loadings",
+        "dimension reduction",
+        "ellipse",
+        "US states",
+        "crime",
+        "poverty"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "e9158d05928245515dcb7a9c5ba7403310eacf6b",
+      "sha256": "0d637b00f6acb9904a85f8bb1479f5bd2e343c7586a9d2606a39d5ba9901d5af"
+    },
+    {
+      "id": "PYS40",
+      "title": "Scree plot",
+      "family": "Multivariate & clustering",
+      "url": "https://warint.github.io/pystatlas/multivariate/scree-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/09-multivariate/02-scree-plot/plot.py",
+      "local_reference": "local_sources/gallery/09-multivariate/02-scree-plot/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "PCA",
+        "scree plot",
+        "eigenvalues",
+        "parallel analysis",
+        "Kaiser",
+        "education",
+        "school districts"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "85531ec1a91c88f05a0cd982721d6f8dbe876c42",
+      "sha256": "0e14dec70d4da686919dd7b88fa41937c9429bd7e91f0d75ce5b8ade0187345c"
+    },
+    {
+      "id": "PYS41",
+      "title": "Silhouette plot for k-means",
+      "family": "Multivariate & clustering",
+      "url": "https://warint.github.io/pystatlas/multivariate/silhouette-clusters/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/09-multivariate/03-silhouette-clusters/plot.py",
+      "local_reference": "local_sources/gallery/09-multivariate/03-silhouette-clusters/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "clustering",
+        "k-means",
+        "silhouette",
+        "PCA",
+        "cluster validation",
+        "US states",
+        "crime"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "b3170e55777ba988b62c05ad8d30f2320733668c",
+      "sha256": "a17b52314dfb1b4f3b0bf3387e2de65a4328f63c18c4321729e5ddc7a95dd37e"
+    },
+    {
+      "id": "PYS42",
+      "title": "Clustered heatmap",
+      "family": "Multivariate & clustering",
+      "url": "https://warint.github.io/pystatlas/multivariate/clustered-heatmap/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/09-multivariate/04-clustered-heatmap/plot.py",
+      "local_reference": "local_sources/gallery/09-multivariate/04-clustered-heatmap/plot.py",
+      "modules": [
+        "M4"
+      ],
+      "tags": [
+        "heatmap",
+        "hierarchical clustering",
+        "dendrogram",
+        "z-score",
+        "clustermap",
+        "US states",
+        "crime"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "dc2b7c7e31e049c9cbebb83a81580e1788442ea2",
+      "sha256": "66ee060b05130225af72907b192c8cd8b26d58a1ef9f96ece50836940e365d36"
+    },
+    {
+      "id": "PYS43",
+      "title": "Bootstrap distribution",
+      "family": "Inference & uncertainty",
+      "url": "https://warint.github.io/pystatlas/inference-uncertainty/bootstrap-distribution/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/10-inference-uncertainty/01-bootstrap-distribution/plot.py",
+      "local_reference": "local_sources/gallery/10-inference-uncertainty/01-bootstrap-distribution/plot.py",
+      "modules": [
+        "M5",
+        "M6"
+      ],
+      "tags": [
+        "bootstrap",
+        "BCa",
+        "percentile interval",
+        "correlation",
+        "resampling"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "b71eacf1fa47e0c5570a5a7db8a78d2500054698",
+      "sha256": "36e8ad54cca326862a4423f641a29a1feedebf5509df4e5d6551e1e10b20bd04"
+    },
+    {
+      "id": "PYS44",
+      "title": "What a 95% confidence interval means",
+      "family": "Inference & uncertainty",
+      "url": "https://warint.github.io/pystatlas/inference-uncertainty/confidence-intervals/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/10-inference-uncertainty/02-confidence-intervals/plot.py",
+      "local_reference": "local_sources/gallery/10-inference-uncertainty/02-confidence-intervals/plot.py",
+      "modules": [
+        "M5",
+        "M6"
+      ],
+      "tags": [
+        "confidence interval",
+        "coverage",
+        "sampling",
+        "t-interval",
+        "teaching",
+        "survey",
+        "ANES"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "339bcafd9f42bf8701d5b7389299d1f7440663e6",
+      "sha256": "f8906f103c299e6c27d397220ba4a7926b940985620fb3e0944929935916f054"
+    },
+    {
+      "id": "PYS45",
+      "title": "Power curve",
+      "family": "Inference & uncertainty",
+      "url": "https://warint.github.io/pystatlas/inference-uncertainty/power-curve/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/10-inference-uncertainty/03-power-curve/plot.py",
+      "local_reference": "local_sources/gallery/10-inference-uncertainty/03-power-curve/plot.py",
+      "modules": [
+        "M5",
+        "M6"
+      ],
+      "tags": [
+        "power analysis",
+        "sample size",
+        "t-test",
+        "Cohen's d",
+        "study design"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "640deda60e6eab7cee407a83bba296aae1d4eec1",
+      "sha256": "46b666b0859d4125bf423bcf41c45d5598fcd89d4ad0b1c8b0011856dcd37f10"
+    },
+    {
+      "id": "PYS46",
+      "title": "Bland–Altman plot",
+      "family": "Inference & uncertainty",
+      "url": "https://warint.github.io/pystatlas/inference-uncertainty/bland-altman/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/10-inference-uncertainty/04-bland-altman/plot.py",
+      "local_reference": "local_sources/gallery/10-inference-uncertainty/04-bland-altman/plot.py",
+      "modules": [
+        "M5",
+        "M6"
+      ],
+      "tags": [
+        "agreement",
+        "Bland-Altman",
+        "limits of agreement",
+        "method comparison",
+        "bias",
+        "content analysis",
+        "coding"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "f1438683cb47cbcaaa568034c4f8d924e44dd68b",
+      "sha256": "f6874c2b2d38697b2c59a11d50e8a3e70f9a689dde1eaf2f33f5b26cf0fa6ff4"
+    },
+    {
+      "id": "PYS47",
+      "title": "Meta-analysis forest plot",
+      "family": "Inference & uncertainty",
+      "url": "https://warint.github.io/pystatlas/inference-uncertainty/meta-analysis-forest/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/10-inference-uncertainty/05-meta-analysis-forest/plot.py",
+      "local_reference": "local_sources/gallery/10-inference-uncertainty/05-meta-analysis-forest/plot.py",
+      "modules": [
+        "M5",
+        "M6"
+      ],
+      "tags": [
+        "meta-analysis",
+        "forest plot",
+        "random effects",
+        "heterogeneity",
+        "standardised mean difference",
+        "education",
+        "Pygmalion effect"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "40ac4fdd6eae24e63c7a26f0baba043bbb32e601",
+      "sha256": "336333e45935b484f4ef09a93402b15132df0945b7ba6bc75da42f1597adce4c"
+    },
+    {
+      "id": "PYS48",
+      "title": "Funnel plot",
+      "family": "Inference & uncertainty",
+      "url": "https://warint.github.io/pystatlas/inference-uncertainty/funnel-plot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/10-inference-uncertainty/06-funnel-plot/plot.py",
+      "local_reference": "local_sources/gallery/10-inference-uncertainty/06-funnel-plot/plot.py",
+      "modules": [
+        "M5",
+        "M6"
+      ],
+      "tags": [
+        "meta-analysis",
+        "funnel plot",
+        "publication bias",
+        "Egger test",
+        "small-study effects",
+        "education",
+        "Pygmalion effect"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "d5cc7392c0faee7988d7977707fe92e52ba55103",
+      "sha256": "8962982ff92e0d5fbd0f4abf61e6e791159e2bc393dab91421bf5cd0fef3491c"
+    },
+    {
+      "id": "PYS49",
+      "title": "Confusion matrix with metrics",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/confusion-matrix/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/01-confusion-matrix/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/01-confusion-matrix/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "classification",
+        "confusion matrix",
+        "precision",
+        "recall",
+        "F1",
+        "cross-validation",
+        "bootstrap",
+        "elections",
+        "voting"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "fdaee7cda8d7247eb72c79e94309ea5c9c2bf32e",
+      "sha256": "69824f5de9fde69a1d2116c43ee81ca33bed76ca810349fc39abc67b363c0380"
+    },
+    {
+      "id": "PYS50",
+      "title": "Precision–recall curves",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/precision-recall/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/02-precision-recall/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/02-precision-recall/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "classification",
+        "precision",
+        "recall",
+        "average precision",
+        "imbalanced data",
+        "threshold",
+        "survey data",
+        "family"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "c573229c6e4d53f949c9f6ecc3d481b65bf2b5d9",
+      "sha256": "942dc5c513bea87b7784d36fdc2d8851af7b929d3254cf28bc666ecf77cd1f28"
+    },
+    {
+      "id": "PYS51",
+      "title": "Learning curve",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/learning-curve/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/03-learning-curve/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/03-learning-curve/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "learning curve",
+        "overfitting",
+        "bias-variance",
+        "cross-validation",
+        "sample size",
+        "survey data",
+        "family"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "54d9afb4d5a4c8a6b3d4acf9c39f9c6ecc3341c6",
+      "sha256": "5bfca76898eb374fa7e8c894f16306d6bdb02c12f312d1e192feb56f9bc70270"
+    },
+    {
+      "id": "PYS52",
+      "title": "Cross-validated model comparison",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/model-comparison/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/04-model-comparison/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/04-model-comparison/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "model selection",
+        "cross-validation",
+        "repeated k-fold",
+        "Nadeau-Bengio",
+        "R²",
+        "education"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "5d84df7955091078726c77ef03b26b18f3819db1",
+      "sha256": "0c529f7a03c38da0112e2856c9d8d147e1e7802099fa7e75f5b83a45dbc5d6d8"
+    },
+    {
+      "id": "PYS53",
+      "title": "Permutation importance",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/permutation-importance/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/05-permutation-importance/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/05-permutation-importance/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "feature importance",
+        "permutation",
+        "model-agnostic",
+        "interpretability",
+        "random forest",
+        "education",
+        "poverty"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "d0c576d1c5221bc8f3e0b59c50270ab6ffb78a32",
+      "sha256": "e37c14eb97b98928b0373bab856298ca2e41b2f208e1217b377f6ba1a9794ec5"
+    },
+    {
+      "id": "PYS54",
+      "title": "Partial dependence with ICE curves",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/partial-dependence/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/06-partial-dependence/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/06-partial-dependence/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "partial dependence",
+        "ICE",
+        "interpretability",
+        "non-linearity",
+        "gradient boosting",
+        "education",
+        "poverty"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "9cc24ae5a054a3f2ef49aa82bf77e0ac0bbf86d6",
+      "sha256": "a0844e01a684bc533a9f2206eb44fa2e3c511ab5859f12f6eaac15f2c8188a98"
+    },
+    {
+      "id": "PYS55",
+      "title": "SHAP summary (beeswarm)",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/shap-beeswarm/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/07-shap-beeswarm/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/07-shap-beeswarm/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "SHAP",
+        "Shapley values",
+        "beeswarm",
+        "feature importance",
+        "interpretability",
+        "gradient boosting",
+        "education",
+        "poverty"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "c6f6a1ccd888801f873b02ad2e1b480506036ebf",
+      "sha256": "70f6ce8bc8f526122b588b6a898b320575fe42a7d01090fe598b6f63d819db5f"
+    },
+    {
+      "id": "PYS56",
+      "title": "SHAP dependence plot",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/shap-dependence/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/08-shap-dependence/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/08-shap-dependence/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "SHAP",
+        "dependence plot",
+        "interaction",
+        "non-linearity",
+        "LOWESS",
+        "interpretability",
+        "education",
+        "poverty"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "92bda0bb3a6bb32d056af57d5723bf4014b997d1",
+      "sha256": "23bb640d5e27ecaa63f32a08d922fc8a44d101a268e2be741cab30437c57db2a"
+    },
+    {
+      "id": "PYS57",
+      "title": "SHAP waterfall for one prediction",
+      "family": "Machine learning",
+      "url": "https://warint.github.io/pystatlas/machine-learning/shap-waterfall/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/11-machine-learning/09-shap-waterfall/plot.py",
+      "local_reference": "local_sources/gallery/11-machine-learning/09-shap-waterfall/plot.py",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "tags": [
+        "SHAP",
+        "waterfall",
+        "local explanation",
+        "individual prediction",
+        "interpretability",
+        "education"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "5b12dd70cefb63a894a4e29d1dbf1531671c95f3",
+      "sha256": "26e9c786770b61cfaba55f89d8f80f21165f97d71609a661d00537a9de26aa6e"
+    },
+    {
+      "id": "PYS58",
+      "title": "Choropleth with spatial weights",
+      "family": "Spatial data",
+      "url": "https://warint.github.io/pystatlas/spatial-data/spatial-weights/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/12-spatial-data/01-spatial-weights/plot.py",
+      "local_reference": "local_sources/gallery/12-spatial-data/01-spatial-weights/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "spatial weights",
+        "contiguity",
+        "queen",
+        "choropleth",
+        "neighbours",
+        "Guerry",
+        "literacy"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "92e967e07d1f1d1fdbb85656a17d5766c5ae7350",
+      "sha256": "436b5bcd0ef30b9b0bca632ecdc25674d1066bc26d64294cb4c3e96b52f092c7"
+    },
+    {
+      "id": "PYS59",
+      "title": "Moran scatterplot (global autocorrelation)",
+      "family": "Spatial data",
+      "url": "https://warint.github.io/pystatlas/spatial-data/moran-scatterplot/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/12-spatial-data/02-moran-scatterplot/plot.py",
+      "local_reference": "local_sources/gallery/12-spatial-data/02-moran-scatterplot/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "spatial autocorrelation",
+        "Moran's I",
+        "global",
+        "permutation test",
+        "spatial lag",
+        "Guerry",
+        "literacy"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "98026530a66219d64ecd5abab4ded21a5c46dab5",
+      "sha256": "5cacd51660a79d78b1cbe1bdd36aaf68d5942eb516ccf25250e463321627abde"
+    },
+    {
+      "id": "PYS60",
+      "title": "LISA cluster map (local autocorrelation)",
+      "family": "Spatial data",
+      "url": "https://warint.github.io/pystatlas/spatial-data/lisa-cluster-map/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/12-spatial-data/03-lisa-cluster-map/plot.py",
+      "local_reference": "local_sources/gallery/12-spatial-data/03-lisa-cluster-map/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "spatial autocorrelation",
+        "LISA",
+        "local Moran",
+        "hot spots",
+        "clusters",
+        "permutation test",
+        "Guerry",
+        "literacy"
+      ],
+      "review_scope": "metadata and full script read",
+      "executed": false,
+      "git_blob_sha1": "ff783b886a67b35cdd1e462233e208fc12b72975",
+      "sha256": "f9b89bcc687c6903f9c25906f9a18248f8c92c3cb8cfbd9de5f01778f7d548a5"
+    },
+    {
+      "id": "PYS61",
+      "title": "Spatial correlogram",
+      "family": "Spatial data",
+      "url": "https://warint.github.io/pystatlas/spatial-data/spatial-correlogram/",
+      "code_url": "https://github.com/warint/pystatlas/blob/ec4bb401e1c8a6622fa5da196e05c4df0b5e0b41/gallery/12-spatial-data/04-spatial-correlogram/plot.py",
+      "local_reference": "local_sources/gallery/12-spatial-data/04-spatial-correlogram/plot.py",
+      "modules": [
+        "M2",
+        "M6"
+      ],
+      "tags": [
+        "spatial autocorrelation",
+        "correlogram",
+        "Moran's I",
+        "higher-order neighbours",
+        "spatial scale",
+        "Guerry"
+      ],
+      "review_scope": "metadata catalogued; script not individually reviewed",
+      "executed": false,
+      "git_blob_sha1": "8789d39013712f5d249be02f5ae8b28da987bb30",
+      "sha256": "e2b2461b67a8e08714f953149ee1ce0a348f13fee387fc5d1b3d11786b82ba10"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1070,
+      "git_blob_sha1": "c32c26a352eeb54cb9799f0ee08a22e6538e31fd",
+      "sha256": "4ef94dcdfb75471127b984f1d0a8dd04ab294012457a28043440eb02322c7bdd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11275,
+      "git_blob_sha1": "2d05b885e4997416e1c23dbce18379edcfd22719",
+      "sha256": "8a5793b106ff8df64f748f9058f75a04a01bef73b13ef652e1651f0b460a1042"
+    },
+    {
+      "path": "build.py",
+      "bytes": 37102,
+      "git_blob_sha1": "124f99fba28a43872b2d883b29691faca46c3869",
+      "sha256": "e07d4aedc60759f9991ffedde1c531370fcf2e1fe39ebc7406b507eaf55cf21a"
+    },
+    {
+      "path": "data_sources.yaml",
+      "bytes": 6922,
+      "git_blob_sha1": "e5a3b4964cfa111819337e4d24e821e57541ca18",
+      "sha256": "2f414a023010d3ef578c1e2d578f39d62e2d5872926d014e9bc4f79475e1bc1c"
+    },
+    {
+      "path": "gallery/01-distributions/01-histogram-density/plot.py",
+      "bytes": 3050,
+      "git_blob_sha1": "9b0031bf790f92e6db2685c4dfafd31296582e2a",
+      "sha256": "44b7bcc7ade2a7f0ee4b09b07057530f3ca1433f8b866799dc5e02e6f62e29ba"
+    },
+    {
+      "path": "gallery/01-distributions/02-raincloud/plot.py",
+      "bytes": 3384,
+      "git_blob_sha1": "5ee05e88f45938c1325ab217dfb54c4d8e8cfd4c",
+      "sha256": "50dbaf705deac38cba191387e7df514758a4feae78ea3d87d9c9effb1ab9fe37"
+    },
+    {
+      "path": "gallery/01-distributions/03-ridgeline/plot.py",
+      "bytes": 3439,
+      "git_blob_sha1": "9810cd33f2a00773394502e7179f11dce2a96cb2",
+      "sha256": "7b54f57d6b0d99675ec51c6a475ed437b87b62b0d02cd8bdec2d5441417cf3b7"
+    },
+    {
+      "path": "gallery/01-distributions/04-ecdf-comparison/plot.py",
+      "bytes": 3063,
+      "git_blob_sha1": "1de4f89e9b6de4b3c0c66f1992b7f5dd71d7b51d",
+      "sha256": "dfd020be8847843b1f3d6164789c7ad622ef29f3c339a57a95a2c5bc3094d1b9"
+    },
+    {
+      "path": "gallery/01-distributions/05-qq-plot/plot.py",
+      "bytes": 2879,
+      "git_blob_sha1": "307c2f06c8fd85788f89767ebb3dbd528b552dab",
+      "sha256": "b33fb80d90b78d0060c87098652b6cd37f2a33903ce95805a908c3a2e2d989a2"
+    },
+    {
+      "path": "gallery/01-distributions/_category.yaml",
+      "bytes": 118,
+      "git_blob_sha1": "531a0c23559c698057e2a836ae4c11de59414c64",
+      "sha256": "eae1545906526c9c59858e32708b8f1ff413ad59fea98884bf5e024cd82fad09"
+    },
+    {
+      "path": "gallery/02-group-comparisons/01-between-groups-violin/plot.py",
+      "bytes": 4341,
+      "git_blob_sha1": "73dea6af5dfd1e2ec250ee3bb65872f91f054f59",
+      "sha256": "59b1f775da4e1fc0c6b8915e0963b134c0b33764afc5437aa5a0f43c15b4b7b3"
+    },
+    {
+      "path": "gallery/02-group-comparisons/02-within-subjects/plot.py",
+      "bytes": 4416,
+      "git_blob_sha1": "966eee215759c224cda8f84fec00b46104be9f47",
+      "sha256": "1685fffaae6adc91a50794b483e28dea040a8026dcd021c10dde62943112a53f"
+    },
+    {
+      "path": "gallery/02-group-comparisons/03-estimation-plot/plot.py",
+      "bytes": 4758,
+      "git_blob_sha1": "82fb78df89d9f0b08290a1469cc367fd14141199",
+      "sha256": "7ac14fcdd04f0212ca8d45d0ae854b6e4c2dc6b0d4d115b00d52b7aa257560cf"
+    },
+    {
+      "path": "gallery/02-group-comparisons/04-means-with-ci/plot.py",
+      "bytes": 4020,
+      "git_blob_sha1": "b01e461fc1542390597e66329f83d3755515db44",
+      "sha256": "6da7a9a141ecf0fbc3e9bc383d93fabcb9127279208f83c416395a4d98ba0bac"
+    },
+    {
+      "path": "gallery/02-group-comparisons/05-tukey-hsd/plot.py",
+      "bytes": 3220,
+      "git_blob_sha1": "99df4058a369696ddd85fd0cf0a4b591f1e176cf",
+      "sha256": "eb36515846bc9c1a5f700da0c44bff028d4d851080af104ab23a40549b59f743"
+    },
+    {
+      "path": "gallery/02-group-comparisons/_category.yaml",
+      "bytes": 129,
+      "git_blob_sha1": "5b35368cccd24cc49971e478bcbd2ba580484a51",
+      "sha256": "37882a1ccc4bdf61786a4847900cbd145f021b322ede5e3ce1559dc31a6abfc8"
+    },
+    {
+      "path": "gallery/03-proportions-surveys/01-likert-diverging/plot.py",
+      "bytes": 3897,
+      "git_blob_sha1": "cfb7fb7a2a96069a11a4783f8add58b750f8bcc5",
+      "sha256": "591508a7fc21c30f4d1fbe44ccb171cae5addc56cb821137a77522612fde74b0"
+    },
+    {
+      "path": "gallery/03-proportions-surveys/02-stacked-proportions/plot.py",
+      "bytes": 2933,
+      "git_blob_sha1": "afb87388bf48f265bcbb966655acacb26042b6f4",
+      "sha256": "44b0f256a90a527f92372bb262e296c0fca3cb429222f721d9d21a0bb005d2a2"
+    },
+    {
+      "path": "gallery/03-proportions-surveys/03-mosaic-plot/plot.py",
+      "bytes": 3745,
+      "git_blob_sha1": "4b7398d71f326554cb3d1454fd5a9a25746dfa99",
+      "sha256": "a495805837625e4b7beae2b208b6cd9fb80accd2e1e86d37226296f7da705ae4"
+    },
+    {
+      "path": "gallery/03-proportions-surveys/04-proportions-with-ci/plot.py",
+      "bytes": 3217,
+      "git_blob_sha1": "d1a567dc894880c1a16dbd989b535cc84ab058b1",
+      "sha256": "700ba3e98ed5ed1fead3d6afc91bf64734294e64400a3179e2eb2c3b8760b9f6"
+    },
+    {
+      "path": "gallery/03-proportions-surveys/05-crosstab-residuals/plot.py",
+      "bytes": 3861,
+      "git_blob_sha1": "dd4f0254eba388834fc9f136b8cb975127732819",
+      "sha256": "5d6ba3fb84185127b496485716ea88c32321e836ac827f430dcf1c322d364bcd"
+    },
+    {
+      "path": "gallery/03-proportions-surveys/_category.yaml",
+      "bytes": 133,
+      "git_blob_sha1": "e2bb6bce47181bc49069c6cfdb8ce5e976b60988",
+      "sha256": "d969a7a620618b14a2d4e27ad3fcb27f70a04be5eb9cc4ce843fec469cc6bc91"
+    },
+    {
+      "path": "gallery/04-correlation/01-correlation-matrix/plot.py",
+      "bytes": 3369,
+      "git_blob_sha1": "9b276ca846b201b43bee1ff265a27566e7f96b15",
+      "sha256": "525ac06552892ede5a59430dd0a2c475a68e4ba7f35d0c8a65a7e28357cd5031"
+    },
+    {
+      "path": "gallery/04-correlation/02-scatter-with-stats/plot.py",
+      "bytes": 3319,
+      "git_blob_sha1": "0f1d41627c7ad80416c1a203830013f9c60151ad",
+      "sha256": "2db82c60bc8d61fb75d183c8c7e85e66751d30f11dc2c57688845a83bf18f8a2"
+    },
+    {
+      "path": "gallery/04-correlation/03-pairs-plot/plot.py",
+      "bytes": 4662,
+      "git_blob_sha1": "0bdcd61003694d87468007e3726b124db64fe8ed",
+      "sha256": "656a1363cdd3f18b7a3b03ccab70c2f58f24da9febccd28050668ad222e27ace"
+    },
+    {
+      "path": "gallery/04-correlation/04-correlogram-bubble/plot.py",
+      "bytes": 4407,
+      "git_blob_sha1": "3e830270ebe0e559e72c319fe56b5300d79a0c44",
+      "sha256": "da195622d1c8e2064f06c03ab2ccc07d0aec59c91434e263b6acab1d4119e4f3"
+    },
+    {
+      "path": "gallery/04-correlation/_category.yaml",
+      "bytes": 123,
+      "git_blob_sha1": "c13535aa5c5dbba2dbfcc90b20d8f1a8514a07d4",
+      "sha256": "219c56a5f481da8af3a437a2a5861db184bbbf7f5b0c14c60fc1fea676075626"
+    },
+    {
+      "path": "gallery/05-regression-models/01-coefficient-plot/plot.py",
+      "bytes": 2790,
+      "git_blob_sha1": "8bf89b31ae22decf6def7262f2d06d20927069f9",
+      "sha256": "1bb8262988689ed622c042ddefce0c85b8190dfbd9c1e722527854783852eccb"
+    },
+    {
+      "path": "gallery/05-regression-models/02-odds-ratio-forest/plot.py",
+      "bytes": 4208,
+      "git_blob_sha1": "5c7d9c746ef02dd1e1fc2d1903dec67b776b4879",
+      "sha256": "b616b77c5115a2f40facf71b436bc6ef42df51b30834d55180cf0f48852de76f"
+    },
+    {
+      "path": "gallery/05-regression-models/03-compare-models/plot.py",
+      "bytes": 4366,
+      "git_blob_sha1": "05c9cebf869f613e3466019669603b1d77b5792b",
+      "sha256": "086ccd7b25d1faa723bd93013e1cae7e53b44d687bb5d79ef98c280c45b2656c"
+    },
+    {
+      "path": "gallery/05-regression-models/04-predicted-probabilities/plot.py",
+      "bytes": 3132,
+      "git_blob_sha1": "cd173e2ba2efc8a574f8a5dd57e37bd8bf856a89",
+      "sha256": "1b8c514d10ee202fcd9683989db8d03f48bd75fef1b76dee1d5757ec195316fc"
+    },
+    {
+      "path": "gallery/05-regression-models/05-interaction-effects/plot.py",
+      "bytes": 5436,
+      "git_blob_sha1": "544c535673dd7eba7c2bf6bcfc5d941fdd43928f",
+      "sha256": "256ddd7546575f4c6fd9668ec066da13d22d3dd578cdb34e41d2a40578dd4693"
+    },
+    {
+      "path": "gallery/05-regression-models/06-quantile-regression/plot.py",
+      "bytes": 3565,
+      "git_blob_sha1": "b6f141bb66eb308580831d5695a55adce01add6d",
+      "sha256": "8d49a36f6d139c152316450e81e73697a50aa2553f6591dc4678cb6b5f030b2e"
+    },
+    {
+      "path": "gallery/05-regression-models/_category.yaml",
+      "bytes": 135,
+      "git_blob_sha1": "2d77f7dd5115b2a725c70e6bb55de53406e2f6a5",
+      "sha256": "2a2c894f5a93cd979beb1fbc220e74269ae259ea8921a7299543987c41dca498"
+    },
+    {
+      "path": "gallery/06-model-diagnostics/01-residual-diagnostics/plot.py",
+      "bytes": 4948,
+      "git_blob_sha1": "ae966431a6a8f658babd8a23c3df453342c500a4",
+      "sha256": "004d31afcb0c86bb4b526148b2f975a77092a00eafb35e7427e5a228b0b54065"
+    },
+    {
+      "path": "gallery/06-model-diagnostics/02-influence-plot/plot.py",
+      "bytes": 3778,
+      "git_blob_sha1": "d16c98133468d14cf8a6c371d6fb062bea01fa34",
+      "sha256": "50162a1d6718afe91e7733b9cd4a974da04bb9d14cbf902f3003f4dbd37bae60"
+    },
+    {
+      "path": "gallery/06-model-diagnostics/03-roc-curve/plot.py",
+      "bytes": 3995,
+      "git_blob_sha1": "81af950bba3dac345035257d8bb078e946599013",
+      "sha256": "cad126a33e607bccd8b304b1eb61419451bdecaa93d3c7e76ca708dc06505c2c"
+    },
+    {
+      "path": "gallery/06-model-diagnostics/04-calibration-plot/plot.py",
+      "bytes": 3515,
+      "git_blob_sha1": "c5b0ecb1da23f49efd356eb0b1c0e96d76473240",
+      "sha256": "df6407ea95da7a36515165e4e4a1e9105315e032df83aeeff0aca7a3d95b287c"
+    },
+    {
+      "path": "gallery/06-model-diagnostics/05-partial-regression/plot.py",
+      "bytes": 4073,
+      "git_blob_sha1": "1a94e3318bfcaf26ff6662dbb7dad168d7dabcae",
+      "sha256": "34f951b76457ccad6b27f70f3da4b801aefe6875b4a1030cd82255a65589b75f"
+    },
+    {
+      "path": "gallery/06-model-diagnostics/_category.yaml",
+      "bytes": 117,
+      "git_blob_sha1": "15bb3971c7d7215e76dfc1bc7a632464e46f7bd9",
+      "sha256": "5621af65f66e484237d2d7b59193b97d6449f78a31ff7804f341c386abaddb91"
+    },
+    {
+      "path": "gallery/07-survival/01-kaplan-meier/plot.py",
+      "bytes": 4220,
+      "git_blob_sha1": "b32cc3638657b445b715ffbe37fe3b6336183437",
+      "sha256": "f1c022e0a4f6c83e0c89febb32365da32bfcc0616af0fa23f0d0bc8f77be4f42"
+    },
+    {
+      "path": "gallery/07-survival/02-cox-hazard-ratios/plot.py",
+      "bytes": 3912,
+      "git_blob_sha1": "2b154b1f110fdc3f7db98603ea0794c9ec489ea4",
+      "sha256": "c6d3364eb42385eb58fd655ad7e7a1d8b46091791c99aab756a8d1ffca21f5ed"
+    },
+    {
+      "path": "gallery/07-survival/03-cumulative-hazard/plot.py",
+      "bytes": 3335,
+      "git_blob_sha1": "032c992bfb268d5596327ae30d4a9458a02315d8",
+      "sha256": "ef219dd93380387b0d9bf5ef9a84022279826320e123cacbe9247018eb059d6e"
+    },
+    {
+      "path": "gallery/07-survival/04-adjusted-survival/plot.py",
+      "bytes": 2926,
+      "git_blob_sha1": "d6a5fa5972857b6e75469942c5c7a6ddc9d00291",
+      "sha256": "4316d6b8fc2eb0e2e79f5f3b41a2d750f33ed7996df0795eeb620879e35016d1"
+    },
+    {
+      "path": "gallery/07-survival/_category.yaml",
+      "bytes": 124,
+      "git_blob_sha1": "2533bf6a42d32e79f7100dd3735bc3ed63e882a5",
+      "sha256": "be3bff2f8fed039ff9b0c58fdaf754a75b57bff1e0a09ef72890ca47dd11607b"
+    },
+    {
+      "path": "gallery/08-time-series/01-stl-decomposition/plot.py",
+      "bytes": 3499,
+      "git_blob_sha1": "ed7a5ab8945ae366346a312c6b253dd8a4b8eab5",
+      "sha256": "e64ac789dab3b0bbeabe01bd35b2b5b6bb80cb37de8d6a273a6442770224cccf"
+    },
+    {
+      "path": "gallery/08-time-series/02-acf-pacf/plot.py",
+      "bytes": 3459,
+      "git_blob_sha1": "8f44b17f0909f6af4d979eada909098b09e39ce9",
+      "sha256": "ec8979cae5a591d9c32ed5f414db5de250179616455bef4b3f691129d288de64"
+    },
+    {
+      "path": "gallery/08-time-series/03-arima-forecast/plot.py",
+      "bytes": 3475,
+      "git_blob_sha1": "357d775ab8b2e5ddf4369c625028ff38665baefe",
+      "sha256": "44564efd102dcfcf5276a1ac8ce5b12c4ee1c67cfcb70673d07bb0d2d288edc7"
+    },
+    {
+      "path": "gallery/08-time-series/04-seasonal-subseries/plot.py",
+      "bytes": 3818,
+      "git_blob_sha1": "04dbd45482571d481a8d3b1d01d107a370d4653d",
+      "sha256": "fa6b1e07545f404ad5fe07de195baa202c5817cf1cff3819e8fa281078eadad8"
+    },
+    {
+      "path": "gallery/08-time-series/_category.yaml",
+      "bytes": 120,
+      "git_blob_sha1": "75019f6e162c7bafe69b10bf69f408664aefc0a1",
+      "sha256": "dbc3eccab64752f69d43ed79e248c189ba2fcbb9922e44a368c64ddf2e3d2054"
+    },
+    {
+      "path": "gallery/09-multivariate/01-pca-biplot/plot.py",
+      "bytes": 4861,
+      "git_blob_sha1": "e9158d05928245515dcb7a9c5ba7403310eacf6b",
+      "sha256": "0d637b00f6acb9904a85f8bb1479f5bd2e343c7586a9d2606a39d5ba9901d5af"
+    },
+    {
+      "path": "gallery/09-multivariate/02-scree-plot/plot.py",
+      "bytes": 3655,
+      "git_blob_sha1": "85531ec1a91c88f05a0cd982721d6f8dbe876c42",
+      "sha256": "0e14dec70d4da686919dd7b88fa41937c9429bd7e91f0d75ce5b8ade0187345c"
+    },
+    {
+      "path": "gallery/09-multivariate/03-silhouette-clusters/plot.py",
+      "bytes": 4242,
+      "git_blob_sha1": "b3170e55777ba988b62c05ad8d30f2320733668c",
+      "sha256": "a17b52314dfb1b4f3b0bf3387e2de65a4328f63c18c4321729e5ddc7a95dd37e"
+    },
+    {
+      "path": "gallery/09-multivariate/04-clustered-heatmap/plot.py",
+      "bytes": 4580,
+      "git_blob_sha1": "dc2b7c7e31e049c9cbebb83a81580e1788442ea2",
+      "sha256": "66ee060b05130225af72907b192c8cd8b26d58a1ef9f96ece50836940e365d36"
+    },
+    {
+      "path": "gallery/09-multivariate/_category.yaml",
+      "bytes": 121,
+      "git_blob_sha1": "d0489e9b4a779c2a9fd4e8c04232738a55ceb94a",
+      "sha256": "424dc0ddd5cd970adcf5c1cd2797fbef9a19def18f3619b46db42fe784897e33"
+    },
+    {
+      "path": "gallery/10-inference-uncertainty/01-bootstrap-distribution/plot.py",
+      "bytes": 3325,
+      "git_blob_sha1": "b71eacf1fa47e0c5570a5a7db8a78d2500054698",
+      "sha256": "36e8ad54cca326862a4423f641a29a1feedebf5509df4e5d6551e1e10b20bd04"
+    },
+    {
+      "path": "gallery/10-inference-uncertainty/02-confidence-intervals/plot.py",
+      "bytes": 2791,
+      "git_blob_sha1": "339bcafd9f42bf8701d5b7389299d1f7440663e6",
+      "sha256": "f8906f103c299e6c27d397220ba4a7926b940985620fb3e0944929935916f054"
+    },
+    {
+      "path": "gallery/10-inference-uncertainty/03-power-curve/plot.py",
+      "bytes": 3024,
+      "git_blob_sha1": "640deda60e6eab7cee407a83bba296aae1d4eec1",
+      "sha256": "46b666b0859d4125bf423bcf41c45d5598fcd89d4ad0b1c8b0011856dcd37f10"
+    },
+    {
+      "path": "gallery/10-inference-uncertainty/04-bland-altman/plot.py",
+      "bytes": 3482,
+      "git_blob_sha1": "f1438683cb47cbcaaa568034c4f8d924e44dd68b",
+      "sha256": "f6874c2b2d38697b2c59a11d50e8a3e70f9a689dde1eaf2f33f5b26cf0fa6ff4"
+    },
+    {
+      "path": "gallery/10-inference-uncertainty/05-meta-analysis-forest/plot.py",
+      "bytes": 5255,
+      "git_blob_sha1": "40ac4fdd6eae24e63c7a26f0baba043bbb32e601",
+      "sha256": "336333e45935b484f4ef09a93402b15132df0945b7ba6bc75da42f1597adce4c"
+    },
+    {
+      "path": "gallery/10-inference-uncertainty/06-funnel-plot/plot.py",
+      "bytes": 3913,
+      "git_blob_sha1": "d5cc7392c0faee7988d7977707fe92e52ba55103",
+      "sha256": "8962982ff92e0d5fbd0f4abf61e6e791159e2bc393dab91421bf5cd0fef3491c"
+    },
+    {
+      "path": "gallery/10-inference-uncertainty/_category.yaml",
+      "bytes": 124,
+      "git_blob_sha1": "fa1699eb7378b81dd03b8b3551f873140e6392d6",
+      "sha256": "2132808c60e69b60709e76eeeaa24a5db075231c6450ca3c79165a45fefe504d"
+    },
+    {
+      "path": "gallery/11-machine-learning/01-confusion-matrix/plot.py",
+      "bytes": 4817,
+      "git_blob_sha1": "fdaee7cda8d7247eb72c79e94309ea5c9c2bf32e",
+      "sha256": "69824f5de9fde69a1d2116c43ee81ca33bed76ca810349fc39abc67b363c0380"
+    },
+    {
+      "path": "gallery/11-machine-learning/02-precision-recall/plot.py",
+      "bytes": 4273,
+      "git_blob_sha1": "c573229c6e4d53f949c9f6ecc3d481b65bf2b5d9",
+      "sha256": "942dc5c513bea87b7784d36fdc2d8851af7b929d3254cf28bc666ecf77cd1f28"
+    },
+    {
+      "path": "gallery/11-machine-learning/03-learning-curve/plot.py",
+      "bytes": 4318,
+      "git_blob_sha1": "54d9afb4d5a4c8a6b3d4acf9c39f9c6ecc3341c6",
+      "sha256": "5bfca76898eb374fa7e8c894f16306d6bdb02c12f312d1e192feb56f9bc70270"
+    },
+    {
+      "path": "gallery/11-machine-learning/04-model-comparison/plot.py",
+      "bytes": 4791,
+      "git_blob_sha1": "5d84df7955091078726c77ef03b26b18f3819db1",
+      "sha256": "0c529f7a03c38da0112e2856c9d8d147e1e7802099fa7e75f5b83a45dbc5d6d8"
+    },
+    {
+      "path": "gallery/11-machine-learning/05-permutation-importance/plot.py",
+      "bytes": 4113,
+      "git_blob_sha1": "d0c576d1c5221bc8f3e0b59c50270ab6ffb78a32",
+      "sha256": "e37c14eb97b98928b0373bab856298ca2e41b2f208e1217b377f6ba1a9794ec5"
+    },
+    {
+      "path": "gallery/11-machine-learning/06-partial-dependence/plot.py",
+      "bytes": 4380,
+      "git_blob_sha1": "9cc24ae5a054a3f2ef49aa82bf77e0ac0bbf86d6",
+      "sha256": "a0844e01a684bc533a9f2206eb44fa2e3c511ab5859f12f6eaac15f2c8188a98"
+    },
+    {
+      "path": "gallery/11-machine-learning/07-shap-beeswarm/plot.py",
+      "bytes": 4550,
+      "git_blob_sha1": "c6f6a1ccd888801f873b02ad2e1b480506036ebf",
+      "sha256": "70f6ce8bc8f526122b588b6a898b320575fe42a7d01090fe598b6f63d819db5f"
+    },
+    {
+      "path": "gallery/11-machine-learning/08-shap-dependence/plot.py",
+      "bytes": 4070,
+      "git_blob_sha1": "92bda0bb3a6bb32d056af57d5723bf4014b997d1",
+      "sha256": "23bb640d5e27ecaa63f32a08d922fc8a44d101a268e2be741cab30437c57db2a"
+    },
+    {
+      "path": "gallery/11-machine-learning/09-shap-waterfall/plot.py",
+      "bytes": 4961,
+      "git_blob_sha1": "5b12dd70cefb63a894a4e29d1dbf1531671c95f3",
+      "sha256": "26e9c786770b61cfaba55f89d8f80f21165f97d71609a661d00537a9de26aa6e"
+    },
+    {
+      "path": "gallery/11-machine-learning/_category.yaml",
+      "bytes": 404,
+      "git_blob_sha1": "817b549e726c313db0ff15e40665b622188dff91",
+      "sha256": "c5256ff5b7167f5f7f568b83b98743633385f421e9d31b51c869d726c3bec34e"
+    },
+    {
+      "path": "gallery/12-spatial-data/01-spatial-weights/plot.py",
+      "bytes": 2681,
+      "git_blob_sha1": "92e967e07d1f1d1fdbb85656a17d5766c5ae7350",
+      "sha256": "436b5bcd0ef30b9b0bca632ecdc25674d1066bc26d64294cb4c3e96b52f092c7"
+    },
+    {
+      "path": "gallery/12-spatial-data/02-moran-scatterplot/plot.py",
+      "bytes": 3619,
+      "git_blob_sha1": "98026530a66219d64ecd5abab4ded21a5c46dab5",
+      "sha256": "5cacd51660a79d78b1cbe1bdd36aaf68d5942eb516ccf25250e463321627abde"
+    },
+    {
+      "path": "gallery/12-spatial-data/03-lisa-cluster-map/plot.py",
+      "bytes": 3484,
+      "git_blob_sha1": "ff783b886a67b35cdd1e462233e208fc12b72975",
+      "sha256": "f9b89bcc687c6903f9c25906f9a18248f8c92c3cb8cfbd9de5f01778f7d548a5"
+    },
+    {
+      "path": "gallery/12-spatial-data/04-spatial-correlogram/plot.py",
+      "bytes": 3341,
+      "git_blob_sha1": "8789d39013712f5d249be02f5ae8b28da987bb30",
+      "sha256": "e2b2461b67a8e08714f953149ee1ce0a348f13fee387fc5d1b3d11786b82ba10"
+    },
+    {
+      "path": "gallery/12-spatial-data/_category.yaml",
+      "bytes": 206,
+      "git_blob_sha1": "eefb30e13eaebe03d1379a0677fc08263dbf1bd4",
+      "sha256": "a63477f49fb9f2dbd5c73607ce1740249a3758c9ea6a91e9668b7da2db18e60c"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 209,
+      "git_blob_sha1": "0833188f7c983aaba360f71d37bdb047b7b46f1b",
+      "sha256": "89e9728df43af115235e63dc49c97085002a9d4ebc8a28547595ae180aaccdf8"
+    },
+    {
+      "path": "site_src/app.js",
+      "bytes": 4712,
+      "git_blob_sha1": "ba747c165ec83b954a8a37ca5b0f29e61e581dab",
+      "sha256": "089220199bb90251f54ea8a55ddfa1d665b5629fe36483af3a5066be5d2df4f8"
+    },
+    {
+      "path": "statlas.yaml",
+      "bytes": 3295,
+      "git_blob_sha1": "1dd30a36b01c491c7307f43f9b1cd31161bc6650",
+      "sha256": "3c1bd469db4a2af890cd5260a4586d4c51dbc6144da1b3e6ffb365587c054254"
+    }
+  ]
+}
