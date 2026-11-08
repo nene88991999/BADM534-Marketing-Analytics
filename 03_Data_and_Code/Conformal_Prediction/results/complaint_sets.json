@@ -1,0 +1,220 @@
+{
+  "alpha": 0.1,
+  "calibration_cases": 19,
+  "cutoff": 0.65,
+  "minimum_probability": 0.35,
+  "calibration": [
+    {
+      "case_id": "cal_00",
+      "true_label": "billing",
+      "probabilities": {
+        "billing": "19/20",
+        "delivery": "1/40",
+        "product": "1/40"
+      }
+    },
+    {
+      "case_id": "cal_01",
+      "true_label": "delivery",
+      "probabilities": {
+        "billing": "1/20",
+        "delivery": "9/10",
+        "product": "1/20"
+      }
+    },
+    {
+      "case_id": "cal_02",
+      "true_label": "product",
+      "probabilities": {
+        "billing": "3/40",
+        "delivery": "3/40",
+        "product": "17/20"
+      }
+    },
+    {
+      "case_id": "cal_03",
+      "true_label": "billing",
+      "probabilities": {
+        "billing": "4/5",
+        "delivery": "1/10",
+        "product": "1/10"
+      }
+    },
+    {
+      "case_id": "cal_04",
+      "true_label": "delivery",
+      "probabilities": {
+        "billing": "1/8",
+        "delivery": "3/4",
+        "product": "1/8"
+      }
+    },
+    {
+      "case_id": "cal_05",
+      "true_label": "product",
+      "probabilities": {
+        "billing": "3/20",
+        "delivery": "3/20",
+        "product": "7/10"
+      }
+    },
+    {
+      "case_id": "cal_06",
+      "true_label": "billing",
+      "probabilities": {
+        "billing": "13/20",
+        "delivery": "7/40",
+        "product": "7/40"
+      }
+    },
+    {
+      "case_id": "cal_07",
+      "true_label": "delivery",
+      "probabilities": {
+        "billing": "1/5",
+        "delivery": "3/5",
+        "product": "1/5"
+      }
+    },
+    {
+      "case_id": "cal_08",
+      "true_label": "product",
+      "probabilities": {
+        "billing": "9/40",
+        "delivery": "9/40",
+        "product": "11/20"
+      }
+    },
+    {
+      "case_id": "cal_09",
+      "true_label": "billing",
+      "probabilities": {
+        "billing": "1/2",
+        "delivery": "1/4",
+        "product": "1/4"
+      }
+    },
+    {
+      "case_id": "cal_10",
+      "true_label": "delivery",
+      "probabilities": {
+        "billing": "13/50",
+        "delivery": "12/25",
+        "product": "13/50"
+      }
+    },
+    {
+      "case_id": "cal_11",
+      "true_label": "product",
+      "probabilities": {
+        "billing": "27/100",
+        "delivery": "27/100",
+        "product": "23/50"
+      }
+    },
+    {
+      "case_id": "cal_12",
+      "true_label": "billing",
+      "probabilities": {
+        "billing": "11/25",
+        "delivery": "7/25",
+        "product": "7/25"
+      }
+    },
+    {
+      "case_id": "cal_13",
+      "true_label": "delivery",
+      "probabilities": {
+        "billing": "29/100",
+        "delivery": "21/50",
+        "product": "29/100"
+      }
+    },
+    {
+      "case_id": "cal_14",
+      "true_label": "product",
+      "probabilities": {
+        "billing": "3/10",
+        "delivery": "3/10",
+        "product": "2/5"
+      }
+    },
+    {
+      "case_id": "cal_15",
+      "true_label": "billing",
+      "probabilities": {
+        "billing": "19/50",
+        "delivery": "31/100",
+        "product": "31/100"
+      }
+    },
+    {
+      "case_id": "cal_16",
+      "true_label": "delivery",
+      "probabilities": {
+        "billing": "8/25",
+        "delivery": "9/25",
+        "product": "8/25"
+      }
+    },
+    {
+      "case_id": "cal_17",
+      "true_label": "product",
+      "probabilities": {
+        "billing": "13/40",
+        "delivery": "13/40",
+        "product": "7/20"
+      }
+    },
+    {
+      "case_id": "cal_18",
+      "true_label": "billing",
+      "probabilities": {
+        "billing": "1/5",
+        "delivery": "2/5",
+        "product": "2/5"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "case_id": "query_1",
+      "probabilities": {
+        "billing": "0.70",
+        "delivery": "0.20",
+        "product": "0.10"
+      },
+      "labels": [
+        "billing"
+      ],
+      "set_size": 1,
+      "action": "routing_candidate"
+    },
+    {
+      "case_id": "query_2",
+      "probabilities": {
+        "billing": "0.45",
+        "delivery": "0.40",
+        "product": "0.15"
+      },
+      "labels": [
+        "billing",
+        "delivery"
+      ],
+      "set_size": 2,
+      "action": "human_review"
+    },
+    {
+      "case_id": "query_3",
+      "probabilities": {
+        "billing": "0.34",
+        "delivery": "0.33",
+        "product": "0.33"
+      },
+      "labels": [],
+      "set_size": 0,
+      "action": "human_review"
+    }
+  ],
+  "scope": "Synthetic scores and three unlabeled queries. No test accuracy or empirical coverage is measured. Set coverage alone does not control singleton-routing error."
+}

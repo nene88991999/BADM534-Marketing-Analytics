@@ -101,3 +101,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Statistical Graphics for Marketing Decisions
 
 [PyStatlas](01_Resources/17_PyStatlas_Statistical_Graphics/README.md) supplies a question-oriented chart reference across M2–M9. M2 §2.22 and Session 3 examine paired customer changes; M7 §7.23 and Session 11 distinguish ranking from probability accuracy. Both have [original synthetic inputs and complete tested Python](03_Data_and_Code/Statistical_Graphics/README.md).
+
+## Prediction Intervals, Label Sets, and Changing Demand
+
+[Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) extends M7 §§7.24–7.25 with finite-sample calibration, segment coverage, and complaint routing. M8 §8.21 examines an imposed change in demand. Sessions 11 and 13 carry the examples. [Complete original Python and generated records](03_Data_and_Code/Conformal_Prediction/README.md) support connections to M3 uncertainty, M5 text classification, and M9 customer consequences.

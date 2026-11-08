@@ -65,3 +65,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Statistical Graphics
 
 [Paired customer changes and ranking versus calibration](Statistical_Graphics/README.md) use two original synthetic datasets, complete Python, aggregate tables, and six small-case tests. M2 §2.22 and M7 §7.23 reproduce the programs in full.
+
+## Conformal Prediction
+
+[Demand intervals and complaint-label sets](Conformal_Prediction/README.md) use fixed synthetic records, a shared finite-sample rank function, and complete standard-library Python. Six checks verify boundary ranks, ties, segment denominators, paired demand changes, and sets. Full code appears in M7 §§7.24–7.25, with demand-shift interpretation in M8 §8.21.

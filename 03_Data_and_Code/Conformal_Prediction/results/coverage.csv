@@ -1,0 +1,13 @@
+scenario,method,segment,stores,covered,coverage,mean_width
+reference,pooled,all,100,90,0.9,20.0
+reference,pooled,regular,80,80,1.0,20.0
+reference,pooled,volatile,20,10,0.5,20.0
+reference,by_segment,all,100,98,0.98,20.8
+reference,by_segment,regular,80,80,1.0,16.0
+reference,by_segment,volatile,20,18,0.9,40.0
+shifted_plus_25,pooled,all,100,5,0.05,20.0
+shifted_plus_25,pooled,regular,80,0,0.0,20.0
+shifted_plus_25,pooled,volatile,20,5,0.25,20.0
+shifted_plus_25,by_segment,all,100,10,0.1,20.8
+shifted_plus_25,by_segment,regular,80,0,0.0,16.0
+shifted_plus_25,by_segment,volatile,20,10,0.5,40.0

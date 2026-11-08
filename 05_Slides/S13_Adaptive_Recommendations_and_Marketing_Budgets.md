@@ -11,12 +11,14 @@ Session 13. M8. 170 minutes.
 - Trace how recommendations affect future training data.
 - Evaluate list objectives and customer goals.
 - Allocate a fixed marketing budget using marginal response.
+- Assess forecast coverage after demand changes and respect delayed outcome information.
 
 ## Related Materials
 
 - [M8 lecture notes](../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md)
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)
 
 ## Slide 1: Adaptive Recommendations and Marketing Budgets
 
@@ -66,7 +68,20 @@ Freezing the model blocks the retraining channel but can leave direct changes in
 
 Source: M8, Section 8.1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 6: Customer Goals and Platform Objectives
+## Slide 6: Demand Changes Can Break Earlier Coverage
+
+| Calibration | Reference | Demand +25 |
+| --- | --- | --- |
+| Pooled | 90/100 | 5/100 |
+| Within Segment | 98/100 | 10/100 |
+
+Same synthetic stores; forecasts and calibration remain fixed.
+
+Demand rises by twenty-five units at every evaluation store. Pooled width remains twenty and average segment width remains 20.8. The calculations describe an imposed change in demand conditional on the same features. Chronological evaluation uses only outcomes observed by the forecast origin, including any label delay. A recent calibration window alone does not restore the ordinary exchangeability guarantee. Different horizons and dependent observations require methods and evaluation appropriate to those settings.
+
+Source: M8 §8.21; complete Python in M7 §7.24.3. ../03_Data_and_Code/Conformal_Prediction/demand_intervals.py
+
+## Slide 7: Customer Goals and Platform Objectives
 
 - Clicks reveal a response within an offered environment.
 - Considered preferences can differ from immediate engagement.
@@ -76,7 +91,7 @@ A higher click count can coexist with regret or frustration. A system can combin
 
 Source: M8, Section 8.2.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 7: A List Objective
+## Slide 8: A List Objective
 
 A list combines item relevance with category variety.
 
@@ -90,7 +105,7 @@ A weighted sum requires a substantive choice of scales and tradeoffs. A customer
 
 Source: M8, Section 8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 8: Two Three-Item Lists
+## Slide 9: Two Three-Item Lists
 
 | List | Relevance | Categories | Value at 0.30 |
 | --- | --- | --- | --- |
@@ -103,7 +118,7 @@ A and B are coffee, C is tea, and D is fruit. The variety gain trades off agains
 
 Source: M8, Section 8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 9: Model-Based and Experimental Evidence
+## Slide 10: Model-Based and Experimental Evidence
 
 - A fitted choice model can compare alternative recommenders.
 - A randomized perturbation can test predicted response patterns.
@@ -113,7 +128,7 @@ The Netflix study discussed in the notes uses a fitted choice model and an exper
 
 Source: M8, Section 8.1.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 10: Marketing-Mix Modeling
+## Slide 11: Marketing-Mix Modeling
 
 - Weekly channel spending can have delayed effects.
 - Response can saturate at high exposure.
@@ -123,7 +138,7 @@ Trend, seasonality, promotions, and media can move together. A fitted media comp
 
 Source: M8, Section 8.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 11: Carryover
+## Slide 12: Carryover
 
 A geometric accumulated-exposure measure retains earlier spending.
 
@@ -137,7 +152,7 @@ This definition is unnormalized. Under constant spending s, its long-run level i
 
 Source: M8, Section 8.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 12: Saturation and the Next Dollar
+## Slide 13: Saturation and the Next Dollar
 
 A concave response has declining marginal contribution.
 
@@ -151,7 +166,7 @@ Average response summarizes all earlier units of spending. The next small transf
 
 Source: M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 13: Average and Marginal Returns Can Disagree
+## Slide 14: Average and Marginal Returns Can Disagree
 
 Synthetic known response curves. Total spending is fixed at 60 thousand dollars.
 
@@ -163,7 +178,7 @@ The response curves are 100 times one minus exp(-sA/20) and 80 times one minus e
 
 Source: M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 14: The Fixed-Budget Optimum
+## Slide 15: The Fixed-Budget Optimum
 
 Solve equal marginal returns for the imposed curves.
 
@@ -183,7 +198,7 @@ The closed-form result applies to these known concave curves and an interior fix
 
 Source: M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 15: Coding Exercise: A Policy Objective
+## Slide 16: Coding Exercise: A Policy Objective
 
 - Enumerate three-item lists at several variety weights.
 - Solve and independently grid-check the fixed-budget allocation.
@@ -193,7 +208,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S13. A grid check v
 
 Source: M8, Section 8.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 16: Attention and the Optimization Target
+## Slide 17: Attention and the Optimization Target
 
 - A free service can require customer time and attention.
 - More exposure can benefit advertisers while burdening customers.
@@ -203,7 +218,7 @@ Tim Wu's Blind Spot discusses attention markets and the difficulty of analyzing 
 
 Source: Tim Wu, Blind Spot: The Attention Economy and the Law (2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/
 
-## Slide 17: Policy Discussion
+## Slide 18: Policy Discussion
 
 - What changes when the recommender learns during the experiment?
 - Which outcome measures the customer's stated goal?

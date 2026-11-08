@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\node[align=center] at (6,4.5) {Fixed inclusion threshold: probability $\geq 0.35$};
+\node[font=\footnotesize,align=center] at (2,3.7) {Billing / Delivery / Product};
+\node[font=\footnotesize,align=center] at (6.4,3.7) {Prediction Set};
+\node[font=\footnotesize,align=center] at (10.5,3.7) {Decision};
+\foreach \id/\yy/\pp/\ss in {a/2.9/{0.70 / 0.20 / 0.10}/{Billing},b/1.5/{0.45 / 0.40 / 0.15}/{Billing, Delivery},c/0.1/{0.34 / 0.33 / 0.33}/{Empty Set}} {
+  \node[box,text width=3.3cm,minimum height=.8cm] (p\id) at (2,\yy) {\pp};
+  \node[box,text width=2.6cm,minimum height=.8cm] (s\id) at (6.4,\yy) {\ss};
+  \draw[edge] (p\id) -- (s\id);
+}
+\node[box,text width=2.6cm,minimum height=.8cm] (route) at (10.5,2.9) {Routing Candidate};
+\node[orangebox,text width=2.6cm,minimum height=.8cm] (review) at (10.5,.8) {Human Review};
+\draw[edge] (sa) -- (route);
+\draw[accent] (sb) -- (review);
+\draw[accent] (sc) -- (review);
+\node[align=center,font=\footnotesize] at (6,-1) {Singleton routing error requires its own evaluation.};
+\end{tikzpicture}

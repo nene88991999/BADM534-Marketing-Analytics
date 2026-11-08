@@ -2334,7 +2334,8 @@
       "Design a holdout that matches deployment and prevents leakage.",
       "Compare ranking, calibration, and decision costs.",
       "Assess coverage and missing future labels in an availability forecast.",
-      "Compare identical rankings with different probability losses and demand forecasts."
+      "Compare identical rankings with different probability losses and demand forecasts.",
+      "Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes."
     ],
     "slides": [
       {
@@ -2497,6 +2498,33 @@
       },
       {
         "kind": "equation",
+        "title": "Calibrate a Demand Interval",
+        "intro": "Freeze the predictor. Score 99 reserved stores with absolute errors.",
+        "equation": "k=\\lceil(99+1)\\times0.90\\rceil=90,\\qquad C(x)=[\\widehat f(x)-S_{(90)},\\widehat f(x)+S_{(90)}]",
+        "interpretation": "Exchangeable calibration and new scores give at least 90% marginal coverage.",
+        "notes": "The fitted predictor and score are chosen using training data alone. The coverage probability averages over the calibration sample and a new observation, conditional on training. It does not guarantee 90% coverage within every customer group or after a demand shift. With eight calibration cases the required ninth rank gives an infinite threshold. Prediction intervals concern future outcomes; confidence intervals for mean demand concern a population quantity.",
+        "source": "M7 §7.24. ../03_Data_and_Code/Conformal_Prediction/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Aggregate Coverage Can Hide Segment Errors",
+        "figure": "../06_Lecture_Notes/figures/M07_conformal_groups.tex",
+        "caption": "Same 100 synthetic stores. Mean width: 20.0 pooled; 20.8 within segment.",
+        "description": "Pooled intervals cover 90 of 100 stores: 80 of 80 regular and 10 of 20 volatile stores. Separate calibration covers 98 overall: 80 regular and 18 volatile. The common axis runs from zero to one hundred percent and a dashed line marks the ninety-percent target.",
+        "notes": "Calibration uses 80 regular and 19 volatile stores distinct from evaluation. The pooled threshold is ten demand units. Separate predefined-group thresholds are eight and twenty, producing widths of sixteen and forty. Their weighted mean is 20.8. These are constructed records and an imposed predictor. Within-group guarantees require exchangeability within groups and sufficient calibration data; statistical coverage alone does not establish customer benefit.",
+        "source": "M7 §7.24.2. ../03_Data_and_Code/Conformal_Prediction/demand_intervals.py"
+      },
+      {
+        "kind": "figure",
+        "title": "A Complaint Can Have Several Plausible Labels",
+        "figure": "../06_Lecture_Notes/figures/M07_conformal_sets.tex",
+        "caption": "Synthetic probabilities; 19 labeled calibration cases; three unlabeled queries.",
+        "description": "At probability threshold 0.35, the three queries yield billing alone, billing plus delivery, and an empty set. Multiple-label and empty sets go to human review. The singleton is a routing candidate.",
+        "notes": "The eighteenth ordered true-class score is 0.65. Include a label when one minus its probability is at most 0.65. The queries have no observed labels, so the example reports no test accuracy. Marginal set coverage does not control error conditional on singleton routing. Evaluate referral error, queue size, waiting time, and customer consequences separately. An empty set is a reason to seek information; it is not proof of distribution change.",
+        "source": "M7 §7.25. ../03_Data_and_Code/Conformal_Prediction/complaint_sets.py"
+      },
+      {
+        "kind": "equation",
         "title": "A Cost-Based Threshold",
         "intro": "Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.",
         "equation": "p>\\frac{C_{FP}}{C_{FP}+C_{FN}}",
@@ -2564,13 +2592,12 @@
         "kind": "bullets",
         "title": "Coding Exercise: A Forecast Evaluation",
         "bullets": [
-          "Compare development and fresh accuracy after candidate selection.",
-          "Check every feature against the forecast date.",
-          "Compare a simple baseline, ranking, and calibration.",
-          "Report missing outcomes beside the test metrics."
+          "Verify a calibration rank on a hand-checkable sample.",
+          "Compare segment coverage and interval widths on the same stores.",
+          "Explain why singleton-routing error needs a separate evaluation."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.",
-        "source": "M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+        "notes": "Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Prediction. The fixed synthetic records require no fitted model. Additional practice uses the existing repeated-selection and paired-upgrade examples. Full programs appear in M7 §§7.24–7.25.",
+        "source": "M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md"
       },
       {
         "kind": "bullets",
@@ -2603,10 +2630,11 @@
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
       "[Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)",
-      "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)"
+      "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)",
+      "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)"
     ],
-    "practice": "Evaluate later forecasts and compare development selection with fresh performance in a chance simulation.",
-    "application": "Choose a forecast, split, and decision threshold using the intended deployment population."
+    "practice": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
+    "application": "Compare forecast accuracy, coverage, width, and customer consequences for the intended deployment."
   },
   {
     "number": 12,
@@ -2812,7 +2840,8 @@
     "objectives": [
       "Trace how recommendations affect future training data.",
       "Evaluate list objectives and customer goals.",
-      "Allocate a fixed marketing budget using marginal response."
+      "Allocate a fixed marketing budget using marginal response.",
+      "Assess forecast coverage after demand changes and respect delayed outcome information."
     ],
     "slides": [
       {
@@ -2851,6 +2880,30 @@
         "description": "The intervention changes responses during the campaign. A retrained model can preserve information from those responses after the campaign ends.",
         "notes": "Freezing the model blocks the retraining channel but can leave direct changes in customer behavior. These policies require separate definitions and, where feasible, separate comparisons.",
         "source": "M8, Section 8.1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "table",
+        "title": "Demand Changes Can Break Earlier Coverage",
+        "headers": [
+          "Calibration",
+          "Reference",
+          "Demand +25"
+        ],
+        "rows": [
+          [
+            "Pooled",
+            "90/100",
+            "5/100"
+          ],
+          [
+            "Within Segment",
+            "98/100",
+            "10/100"
+          ]
+        ],
+        "caption": "Same synthetic stores; forecasts and calibration remain fixed.",
+        "notes": "Demand rises by twenty-five units at every evaluation store. Pooled width remains twenty and average segment width remains 20.8. The calculations describe an imposed change in demand conditional on the same features. Chronological evaluation uses only outcomes observed by the forecast origin, including any label delay. A recent calibration window alone does not restore the ordinary exchangeability guarantee. Different horizons and dependent observations require methods and evaluation appropriate to those settings.",
+        "source": "M8 §8.21; complete Python in M7 §7.24.3. ../03_Data_and_Code/Conformal_Prediction/demand_intervals.py"
       },
       {
         "kind": "bullets",
@@ -2994,10 +3047,11 @@
     "links": [
       "[M8 lecture notes](../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
-      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
+      "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)"
     ],
     "practice": "Compare list objectives and solve a budget allocation with an independent grid check.",
-    "application": "Design a comparison that separates temporary exposure from subsequent learning."
+    "application": "Separate policy feedback and changed demand from evidence supporting earlier forecast intervals."
   },
   {
     "number": 14,

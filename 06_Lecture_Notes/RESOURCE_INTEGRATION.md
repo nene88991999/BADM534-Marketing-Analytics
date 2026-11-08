@@ -139,3 +139,7 @@ M9 links Kantian dialectic and ethics with Hume and Smith on institutional scrut
 ## PyStatlas Statistical Graphics
 
 Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §2.22 and M7 §7.23. Original synthetic examples preserve customer pairs and distinguish ranking from probability accuracy. [The resource guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) maps the 12 families to course questions and records code-reading scope. [Executed programs and tests](../03_Data_and_Code/Statistical_Graphics/README.md) supply the aggregate tables used by two new TikZ figures. Sessions 3 and 11 carry the corresponding discussion.
+
+## Conformal Prediction
+
+[The source review](../01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md) informs finite-sample calibration in M7 §7.24, complaint-label sets in §7.25, and changed-demand evaluation in M8 §8.21. [Original course programs](../03_Data_and_Code/Conformal_Prediction/README.md) construct all inputs, preserve every evaluation record, and provide the tables for two TikZ figures. Sessions 11 and 13 contain the corresponding discussion. Source inspection is recorded separately from executed course code; no upstream notebook was run.

@@ -1,0 +1,25 @@
+{
+  "verified_on": "2026-11-08",
+  "python_version": "3.13.5",
+  "dependencies": "Python standard library",
+  "programs_executed": [
+    "demand_intervals.py",
+    "complaint_sets.py"
+  ],
+  "independent_tests_passed": 6,
+  "matching_note_code_blocks": 61,
+  "figure_values_checked_against_independent_aggregates": true,
+  "scope": "Original deterministic synthetic records and imposed predictions. No upstream code, external model calls, or measured retail/customer performance.",
+  "sha256": {
+    "conformal.py": "46bb581b05c153ee884abef8f1f14ee2fc754fe8ba576b0cf22bc858bea7e587",
+    "complaint_sets.py": "0a41136e22b1f532947d5b2c271841268dd49ec841f7bb6127e705f911db153c",
+    "demand_intervals.py": "5e58612f96668e24e90ec685801b76843e9c80d12c49b6514ad65cb4b604a7d6",
+    "test_conformal.py": "1974b1bf5bf3dd0ca9c676ad9853fa00e9bd22bc21a4eb0b8dfbe722c1a9f347",
+    "results/intervals.csv": "badf9532a6e93de40d9314bb91e1dd10d687d9264941b995db73f5278f7f1a46",
+    "results/demand_summary.json": "e47b1c823c57d0801c6537bb818c3c5fa91170dbf57f9587d23156573cd817ab",
+    "results/coverage.csv": "020cdfe6f92a36130c3159c8976dbb0012b00556cae2f16fa865527ef70f9121",
+    "results/calibration.csv": "33ba45ddc4b348bd3525bb0a1e89609f3ee203b91e592a4da09bd34b582f8449",
+    "results/complaint_sets.json": "909d3de7e82b3a26829802823aa08969a68aba03651eccf8e56f3394fe2d851a",
+    "results/evaluation.csv": "fa70cac795122ecab2f00d00a544da79964d6c6bb4799420464f053408b863bf"
+  }
+}

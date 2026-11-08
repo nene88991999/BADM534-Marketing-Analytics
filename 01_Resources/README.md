@@ -76,3 +76,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## PyStatlas Statistical Graphics
 
 [A catalog of 61 examples and a module-specific guide](17_PyStatlas_Statistical_Graphics/README.md) support chart selection, interpretation, AI-assisted coding, and future static-wiki design. The source record distinguishes nine full script readings from metadata cataloguing.
+
+## Conformal Prediction
+
+[A focused guide and versioned notebook catalog](18_Conformal_Prediction/README.md) support demand intervals, segment coverage, complaint-label sets, and temporal revalidation. The course adaptations use original synthetic records and verified standard-library Python.

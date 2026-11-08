@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[ybar,width=12.5cm,height=6.4cm,ymin=0,ymax=112,
+ytick={0,25,50,75,100},ylabel={Outcomes Covered (\%)},
+symbolic x coords={Overall,Regular,Volatile},xtick=data,
+xticklabels={Overall ($n=100$),Regular ($n=80$),Volatile ($n=20$)},
+bar width=17pt,enlarge x limits=.25,ymajorgrids=true,
+nodes near coords,nodes near coords style={font=\small},
+legend style={at={(.5,1.13)},anchor=south,legend columns=2,
+cells={anchor=west},/tikz/every even column/.append style={column sep=12pt}}]
+\addplot[fill=IlliniBlue!70,draw=IlliniBlue] coordinates {(Overall,90) (Regular,100) (Volatile,50)};
+\addplot[fill=IlliniOrange!65,draw=IlliniOrange,postaction={pattern=north east lines,pattern color=IlliniOrange}] coordinates {(Overall,98) (Regular,100) (Volatile,90)};
+\legend{Pooled Calibration,Within-Segment Calibration}
+\draw[dashed,thick,Storm] (axis cs:Overall,90) -- (axis cs:Volatile,90);
+\node[anchor=south west,font=\scriptsize,fill=white,inner sep=1pt,xshift=26pt,yshift=3pt] at (axis cs:Regular,90) {Target: 90\%};
+\end{axis}
+\end{tikzpicture}

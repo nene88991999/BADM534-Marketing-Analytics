@@ -958,3 +958,20 @@ The managerial implication is to select safeguards and outcome measures at the m
 A policy that improves a firm's experimental outcome still requires a reasoned evaluation of the conduct it implements. Misra and his coauthors' work on AI-assisted messaging and personalized pricing supplies distinct cases: the first learns from within-campaign experimental comparisons, while the second estimates demand and examines the distribution of surplus. Marketing Dialectics, Sections 9.14–9.18, examines their findings, safeguards, and remaining ethical questions. Its original pricing example shows how a majority can benefit while aggregate customer surplus falls, and how a restriction on personalized offers can change both firm and customer outcomes.
 
 The FTC's August 2026 proposed personalized-pricing statement cites Dubé and Misra's pricing study. New York's disclosure requirements, proposed surveillance-pricing restrictions, and price-gouging rules address different conduct and legal conditions. A marketing recommendation must specify the data use, offer, jurisdiction, and customer population. The [policy source record](../../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md) distinguishes current law, proposals, and inquiries as checked on November 6, 2026.
+
+## 8.21 Prediction Intervals When Demand Changes
+
+\noindent A retailer using last month's demand errors to plan next month's stock relies on continuity in the forecasting problem. A promotion, a competitor's exit, or a change in the recommendation policy can alter demand even when the model and recorded store characteristics remain fixed. Calibration then describes an earlier environment. The exchangeability condition in M7, Section 7.24, needs renewed justification.
+
+In the constructed demand example, the pooled intervals cover 90 of 100 evaluation outcomes. Adding twenty-five demand units to each outcome, while holding store identities, predictions, and calibration scores fixed, reduces coverage to five of those same stores. Width remains twenty units. Separate segment calibration covers ten stores after the change, compared with 98 beforehand. These are exact sensitivity calculations under an imposed change in the relationship between features and outcomes. The full program, input construction, and individual intervals appear in M7, Section 7.24.3.
+
+| Interval Rule | Reference Outcomes Covered | Shifted Outcomes Covered | Stores in Both Scenarios |
+| --- | --- | --- | --- |
+| Pooled | 90 | 5 | 100 |
+| Within Segment | 98 | 10 | 100 |
+
+Chronological evaluation preserves what was known at each forecast origin. For an $h$-period forecast made at time $t$, calibration may use an earlier forecast made at $u$ only once its outcome at $u+h$ is observable by $t$. Updating residuals with the current forecast's future outcome would place unavailable information inside its own interval. Different forecast horizons require scores for the corresponding horizon, and repeated stores require attention to dependence. Report coverage by period, horizon, and relevant segment alongside width and the number of observed outcomes.
+
+A recent calibration window can respond to changes, but recency alone does not restore the ordinary exchangeable-sample theorem. Methods for dependent or changing data have their own conditions and targets. A long-run average error target also differs from a guarantee for the next period. Record the forecasting procedure, residual-update rule, label delay, and information cutoff as parts of the deployed policy.
+
+For mHealth, future logging records may depend on repeated users and incomplete observation. For McBroken, a missing later status remains an unknown outcome. For earnings-call classification, revisions to prompts and changes in which firms are covered can alter calibration. These applications require data definitions and evaluation designs matched to their own units; the synthetic demand calculation supplies no measured coverage for them. A firm's decision to expand automated service should therefore depend on fresh error measurements and customer consequences, as well as the nominal coverage level.

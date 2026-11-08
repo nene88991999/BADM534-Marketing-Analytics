@@ -12,6 +12,7 @@ Session 11. M7. 170 minutes.
 - Compare ranking, calibration, and decision costs.
 - Assess coverage and missing future labels in an availability forecast.
 - Compare identical rankings with different probability losses and demand forecasts.
+- Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes.
 
 ## Related Materials
 
@@ -23,6 +24,7 @@ Session 11. M7. 170 minutes.
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 - [Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)
 - [PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)
+- [Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -168,7 +170,45 @@ AUC gives half credit to tied positive-negative pairs: 1272/1584 = 53/66 for bot
 
 Source: ../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/
 
-## Slide 14: A Cost-Based Threshold
+## Slide 14: Calibrate a Demand Interval
+
+Freeze the predictor. Score 99 reserved stores with absolute errors.
+
+$$
+k=\lceil(99+1)\times0.90\rceil=90,\qquad C(x)=[\widehat f(x)-S_{(90)},\widehat f(x)+S_{(90)}]
+$$
+
+Exchangeable calibration and new scores give at least 90% marginal coverage.
+
+The fitted predictor and score are chosen using training data alone. The coverage probability averages over the calibration sample and a new observation, conditional on training. It does not guarantee 90% coverage within every customer group or after a demand shift. With eight calibration cases the required ninth rank gives an infinite threshold. Prediction intervals concern future outcomes; confidence intervals for mean demand concern a population quantity.
+
+Source: M7 §7.24. ../03_Data_and_Code/Conformal_Prediction/README.md
+
+## Slide 15: Aggregate Coverage Can Hide Segment Errors
+
+Same 100 synthetic stores. Mean width: 20.0 pooled; 20.8 within segment.
+
+**Figure description:** Pooled intervals cover 90 of 100 stores: 80 of 80 regular and 10 of 20 volatile stores. Separate calibration covers 98 overall: 80 regular and 18 volatile. The common axis runs from zero to one hundred percent and a dashed line marks the ninety-percent target.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_conformal_groups.tex)
+
+Calibration uses 80 regular and 19 volatile stores distinct from evaluation. The pooled threshold is ten demand units. Separate predefined-group thresholds are eight and twenty, producing widths of sixteen and forty. Their weighted mean is 20.8. These are constructed records and an imposed predictor. Within-group guarantees require exchangeability within groups and sufficient calibration data; statistical coverage alone does not establish customer benefit.
+
+Source: M7 §7.24.2. ../03_Data_and_Code/Conformal_Prediction/demand_intervals.py
+
+## Slide 16: A Complaint Can Have Several Plausible Labels
+
+Synthetic probabilities; 19 labeled calibration cases; three unlabeled queries.
+
+**Figure description:** At probability threshold 0.35, the three queries yield billing alone, billing plus delivery, and an empty set. Multiple-label and empty sets go to human review. The singleton is a routing candidate.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_conformal_sets.tex)
+
+The eighteenth ordered true-class score is 0.65. Include a label when one minus its probability is at most 0.65. The queries have no observed labels, so the example reports no test accuracy. Marginal set coverage does not control error conditional on singleton routing. Evaluate referral error, queue size, waiting time, and customer consequences separately. An empty set is a reason to seek information; it is not proof of distribution change.
+
+Source: M7 §7.25. ../03_Data_and_Code/Conformal_Prediction/complaint_sets.py
+
+## Slide 17: A Cost-Based Threshold
 
 Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
 
@@ -182,7 +222,7 @@ Correct classifications have zero cost in this example. Capacity constraints and
 
 Source: M7, Section 7.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 15: Coupon Targeting Includes the Untreated Outcome
+## Slide 18: Coupon Targeting Includes the Untreated Outcome
 
 Synthetic probabilities and costs. High treated response can have negative incremental value.
 
@@ -194,7 +234,7 @@ Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact
 
 Source: M7, Section 7.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 16: Queue Metrics
+## Slide 19: Queue Metrics
 
 Compute metrics from the synthetic confusion matrix.
 
@@ -212,7 +252,7 @@ Whether that queue is profitable depends on the action and its incremental outco
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 17: McBroken Forecasting
+## Slide 20: McBroken Forecasting
 
 - Predict availability on a later date.
 - Retain a separate count of unknown future labels.
@@ -222,7 +262,7 @@ An unknown future status is not an observed available restaurant. Dropping missi
 
 Source: M7, Section 7.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 18: Prediction and Outcome Coverage
+## Slide 21: Prediction and Outcome Coverage
 
 McBroken forecasts use later dates and observed-label denominators.
 
@@ -234,7 +274,7 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 19: Accuracy and Failure Costs
+## Slide 22: Accuracy and Failure Costs
 
 Constructed cases: pooled accuracy rises from 78% to 86%.
 
@@ -246,7 +286,7 @@ Fourteen paired cases improve and six regress. Stipulated failure costs of one d
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md
 
-## Slide 20: Paired Regression Checks
+## Slide 23: Paired Regression Checks
 
 The same one hundred constructed cases are scored under both configurations.
 
@@ -264,18 +304,17 @@ The complete program preserves every paired case and each segment denominator. W
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
 
-## Slide 21: Coding Exercise: A Forecast Evaluation
+## Slide 24: Coding Exercise: A Forecast Evaluation
 
-- Compare development and fresh accuracy after candidate selection.
-- Check every feature against the forecast date.
-- Compare a simple baseline, ranking, and calibration.
-- Report missing outcomes beside the test metrics.
+- Verify a calibration rank on a hand-checkable sample.
+- Compare segment coverage and interval widths on the same stores.
+- Explain why singleton-routing error needs a separate evaluation.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.
+Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Prediction. The fixed synthetic records require no fitted model. Additional practice uses the existing repeated-selection and paired-upgrade examples. Full programs appear in M7 §§7.24–7.25.
 
-Source: M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
+Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 22: Targeting and Delivered Opportunities
+## Slide 25: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -285,7 +324,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 23: Prediction Discussion
+## Slide 26: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

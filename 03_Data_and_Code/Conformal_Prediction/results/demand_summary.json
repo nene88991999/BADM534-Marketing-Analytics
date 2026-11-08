@@ -1,0 +1,121 @@
+{
+  "alpha": 0.1,
+  "calibration_stores": 99,
+  "evaluation_stores": 100,
+  "pooled_cutoff": 10.0,
+  "segment_cutoffs": {
+    "regular": 8.0,
+    "volatile": 20.0
+  },
+  "summary": [
+    {
+      "scenario": "reference",
+      "method": "pooled",
+      "segment": "all",
+      "stores": 100,
+      "covered": 90,
+      "coverage": 0.9,
+      "mean_width": 20.0
+    },
+    {
+      "scenario": "reference",
+      "method": "pooled",
+      "segment": "regular",
+      "stores": 80,
+      "covered": 80,
+      "coverage": 1.0,
+      "mean_width": 20.0
+    },
+    {
+      "scenario": "reference",
+      "method": "pooled",
+      "segment": "volatile",
+      "stores": 20,
+      "covered": 10,
+      "coverage": 0.5,
+      "mean_width": 20.0
+    },
+    {
+      "scenario": "reference",
+      "method": "by_segment",
+      "segment": "all",
+      "stores": 100,
+      "covered": 98,
+      "coverage": 0.98,
+      "mean_width": 20.8
+    },
+    {
+      "scenario": "reference",
+      "method": "by_segment",
+      "segment": "regular",
+      "stores": 80,
+      "covered": 80,
+      "coverage": 1.0,
+      "mean_width": 16.0
+    },
+    {
+      "scenario": "reference",
+      "method": "by_segment",
+      "segment": "volatile",
+      "stores": 20,
+      "covered": 18,
+      "coverage": 0.9,
+      "mean_width": 40.0
+    },
+    {
+      "scenario": "shifted_plus_25",
+      "method": "pooled",
+      "segment": "all",
+      "stores": 100,
+      "covered": 5,
+      "coverage": 0.05,
+      "mean_width": 20.0
+    },
+    {
+      "scenario": "shifted_plus_25",
+      "method": "pooled",
+      "segment": "regular",
+      "stores": 80,
+      "covered": 0,
+      "coverage": 0.0,
+      "mean_width": 20.0
+    },
+    {
+      "scenario": "shifted_plus_25",
+      "method": "pooled",
+      "segment": "volatile",
+      "stores": 20,
+      "covered": 5,
+      "coverage": 0.25,
+      "mean_width": 20.0
+    },
+    {
+      "scenario": "shifted_plus_25",
+      "method": "by_segment",
+      "segment": "all",
+      "stores": 100,
+      "covered": 10,
+      "coverage": 0.1,
+      "mean_width": 20.8
+    },
+    {
+      "scenario": "shifted_plus_25",
+      "method": "by_segment",
+      "segment": "regular",
+      "stores": 80,
+      "covered": 0,
+      "coverage": 0.0,
+      "mean_width": 16.0
+    },
+    {
+      "scenario": "shifted_plus_25",
+      "method": "by_segment",
+      "segment": "volatile",
+      "stores": 20,
+      "covered": 10,
+      "coverage": 0.5,
+      "mean_width": 40.0
+    }
+  ],
+  "scope": "Fixed synthetic cases and an imposed predictor; no model fit. The shifted scenario reuses the same stores with demand +25. Realized coverage is descriptive, not a test of exchangeability."
+}

@@ -64,3 +64,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Statistical Graphics
 
 [PyStatlas and its course applications](01_Resources/17_PyStatlas_Statistical_Graphics/README.md) connect statistical questions to chart choices. [Two reproducible synthetic cases](03_Data_and_Code/Statistical_Graphics/README.md) examine paired customer changes and identical rankings with different purchase probabilities. Full explanations and Python appear in M2 §2.22 and M7 §7.23, with corresponding Session 3 and 11 slides.
+
+## Prediction Uncertainty
+
+[Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) connects demand intervals, customer-service routing, and changing demand. [Two reproducible synthetic examples](03_Data_and_Code/Conformal_Prediction/README.md) accompany full Python in M7 §§7.24–7.25, interpretation in M8 §8.21, and Session 11 and 13 slides.

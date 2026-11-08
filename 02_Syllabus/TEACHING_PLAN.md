@@ -64,3 +64,7 @@ Sessions 9 and 14 connect Misra and his coauthors' research to the choice of exp
 ## Statistical Graphics and Interpretation
 
 Session 3 compares customer-level spending and paired changes within the existing visualization activities. Session 11 compares ranking, probability loss, and aggregate demand forecasts within prediction evaluation. The [PyStatlas guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) provides additional chart selections for regression, retention, segmentation, experiments, and time series. The calendar and session lengths retain their existing allocations.
+
+## Prediction Uncertainty and Changing Demand
+
+Session 11 uses its existing worked-comparison and Python blocks for finite-sample calibration, demand-interval coverage by segment, and complaint routing. Ranking and paired-upgrade comparisons remain available for follow-up practice. Session 13 connects changed-demand coverage to adaptive policies and delayed observations. [M7 §§7.24–7.25 and M8 §8.21](../03_Data_and_Code/Conformal_Prediction/README.md) provide the full examples. The 15 meetings, dates, and 170-minute allocations are unchanged.

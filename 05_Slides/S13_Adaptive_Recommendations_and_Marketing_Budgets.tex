@@ -66,6 +66,25 @@ M8, Section 8.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M8, Section 8.1.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
 \end{frame}
+\begin{frame}{Demand Changes Can Break Earlier Coverage}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Calibration & Reference & Demand +25 \\
+\midrule
+Pooled & 90/100 & 5/100 \\
+Within Segment & 98/100 & 10/100 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Same synthetic stores; forecasts and calibration remain fixed.
+\vfill
+\note{Demand rises by twenty-five units at every evaluation store. Pooled width remains twenty and average segment width remains 20.8. The calculations describe an imposed change in demand conditional on the same features. Chronological evaluation uses only outcomes observed by the forecast origin, including any label delay. A recent calibration window alone does not restore the ordinary exchangeability guarantee. Different horizons and dependent observations require methods and evaluation appropriate to those settings.
+
+M8 §8.21; complete Python in M7 §7.24.3. \url{../03_Data_and_Code/Conformal_Prediction/demand_intervals.py}}
+\end{frame}
 \begin{frame}{Customer Goals and Platform Objectives}
 \usebeamercolor[fg]{normal text}
 \vfill

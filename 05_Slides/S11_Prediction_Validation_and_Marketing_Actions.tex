@@ -186,6 +186,52 @@ Same 80 synthetic customers. Smaller Brier scores indicate less squared probabil
 
 \url{../03_Data_and_Code/Statistical_Graphics/README.md} \url{https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/}}
 \end{frame}
+\begin{frame}{Calibrate a Demand Interval}
+\usebeamercolor[fg]{normal text}
+\noindent Freeze the predictor. Score 99 reserved stores with absolute errors.
+\medskip
+\[
+k=\lceil(99+1)\times0.90\rceil=90,\qquad C(x)=[\widehat f(x)-S_{(90)},\widehat f(x)+S_{(90)}]
+\]
+\medskip
+\noindent Exchangeable calibration and new scores give at least 90\% marginal coverage.
+\note{The fitted predictor and score are chosen using training data alone. The coverage probability averages over the calibration sample and a new observation, conditional on training. It does not guarantee 90\% coverage within every customer group or after a demand shift. With eight calibration cases the required ninth rank gives an infinite threshold. Prediction intervals concern future outcomes; confidence intervals for mean demand concern a population quantity.
+
+M7 §7.24. \url{../03_Data_and_Code/Conformal_Prediction/README.md}}
+\end{frame}
+\begin{frame}{Aggregate Coverage Can Hide Segment Errors}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_conformal_groups.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Same 100 synthetic stores. Mean width: 20.0 pooled; 20.8 within segment.\par}
+\note{Calibration uses 80 regular and 19 volatile stores distinct from evaluation. The pooled threshold is ten demand units. Separate predefined-group thresholds are eight and twenty, producing widths of sixteen and forty. Their weighted mean is 20.8. These are constructed records and an imposed predictor. Within-group guarantees require exchangeability within groups and sufficient calibration data; statistical coverage alone does not establish customer benefit.
+
+M7 §7.24.2. \url{../03_Data_and_Code/Conformal_Prediction/demand_intervals.py}}
+\end{frame}
+\begin{frame}{A Complaint Can Have Several Plausible Labels}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_conformal_sets.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic probabilities; 19 labeled calibration cases; three unlabeled queries.\par}
+\note{The eighteenth ordered true-class score is 0.65. Include a label when one minus its probability is at most 0.65. The queries have no observed labels, so the example reports no test accuracy. Marginal set coverage does not control error conditional on singleton routing. Evaluate referral error, queue size, waiting time, and customer consequences separately. An empty set is a reason to seek information; it is not proof of distribution change.
+
+M7 §7.25. \url{../03_Data_and_Code/Conformal_Prediction/complaint_sets.py}}
+\end{frame}
 \begin{frame}{A Cost-Based Threshold}
 \usebeamercolor[fg]{normal text}
 \noindent Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
@@ -288,15 +334,14 @@ M7 §7.22. \url{../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py}}
 \usebeamercolor[fg]{normal text}
 \vfill
 \begin{slidebullets}
-\item Compare development and fresh accuracy after candidate selection.
-\item Check every feature against the forecast date.
-\item Compare a simple baseline, ranking, and calibration.
-\item Report missing outcomes beside the test metrics.
+\item Verify a calibration rank on a hand-checkable sample.
+\item Compare segment coverage and interval widths on the same stores.
+\item Explain why singleton-routing error needs a separate evaluation.
 \end{slidebullets}
 \vfill
-\note{Run ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S11 for the metrics example. Use the McBroken forecasting scripts for the real-panel extension, following their README and saved outcome definitions. The AI\_Workflows folder supplies complete standard-library calculations with synthetic inputs.
+\note{Run demand\_intervals.py, complaint\_sets.py, and the six tests in Conformal\_Prediction. The fixed synthetic records require no fitted model. Additional practice uses the existing repeated-selection and paired-upgrade examples. Full programs appear in M7 §§7.24–7.25.
 
-M7, Section 7.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+M7 §§7.24–7.25. \url{../03_Data_and_Code/Conformal_Prediction/README.md}}
 \end{frame}
 \begin{frame}{Targeting and Delivered Opportunities}
 \usebeamercolor[fg]{normal text}

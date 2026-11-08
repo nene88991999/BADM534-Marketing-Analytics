@@ -68,3 +68,7 @@ Sessions 9 and 14 incorporate the [research and policy case](../01_Resources/16_
 ## Statistical Graphics
 
 Sessions 3 and 11 include paired spending and ranking-versus-calibration comparisons, supported by [complete Python and synthetic inputs](../03_Data_and_Code/Statistical_Graphics/README.md). The detailed explanations are M2 §2.22 and M7 §7.23.
+
+## Prediction Uncertainty
+
+Session 11 adds calibration ranks, coverage by segment, and complaint-label sets. Session 13 examines coverage after an imposed demand change. [The complete code and records](../03_Data_and_Code/Conformal_Prediction/README.md) accompany M7 §§7.24–7.25 and M8 §8.21. Two editable TikZ figures retain the synthetic inputs, counts, and interpretation.

@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-07",
+  "updated_on": "2026-11-08",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -585,12 +585,12 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 23,
+      "slides": 26,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
-      "python_activity": "Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs. Compare AUC, probability loss, and purchase totals on the same synthetic customers.",
-      "application": "Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage. Match the evaluation metric to ranking or inventory planning.",
-      "ethics": "Prediction errors and access to consequential offers",
+      "python_activity": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
+      "application": "Compare forecast accuracy, coverage, width, and customer consequences for the intended deployment.",
+      "ethics": "Coverage by customer segment, review access, and consequences of incorrect routing",
       "timing": [
         {
           "start_minute": 0,
@@ -701,11 +701,11 @@
       "modules": "M8",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 17,
+      "slides": 18,
       "companion": "S13_Adaptive_Recommendations_and_Marketing_Budgets.md",
       "pdf": "S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf",
       "python_activity": "Compare list objectives and solve a budget allocation with an independent grid check.",
-      "application": "Design a comparison that separates temporary exposure from subsequent learning.",
+      "application": "Separate policy feedback and changed demand from evidence supporting earlier forecast intervals.",
       "ethics": "Attention, adaptive feedback, and platform incentives",
       "timing": [
         {

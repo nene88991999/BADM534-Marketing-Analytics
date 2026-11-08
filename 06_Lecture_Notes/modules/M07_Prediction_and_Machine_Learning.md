@@ -1018,3 +1018,289 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 7.24 Demand Intervals and the Distribution of Forecast Errors
+
+\noindent An inventory manager needs to know how far demand might depart from a forecast. Two stores can have the same expected sales and different exposure to stockouts. A prediction interval describes a range for a future outcome, whereas a confidence interval for mean demand describes uncertainty about a population quantity. Their widths answer different managerial questions. Sales data also require care: when stockouts prevent purchases, recorded sales can fall below demand.
+
+Split conformal prediction uses errors on a reserved calibration sample to construct a prediction interval around a fixed forecast. Model estimation, feature selection, and tuning occur before this calibration. For a store observed at the forecast origin, let $X$ contain the available information and let $Y$ be demand, in units, over the following week. The fitted prediction $\widehat f(X)$ has the same units. On each of $n$ calibration stores, define the nonconformity score $S_i=|Y_i-\widehat f(X_i)|$. A large score is a large absolute forecasting error.
+
+### 7.24.1 The Calibration Rank and Its Guarantee
+
+\noindent The coverage calculation depends on the relationship between calibration stores and the next store to be predicted. Conditional on the training data, exchangeability means that permuting the calibration and new observations leaves their joint distribution unchanged. Independent draws from the same population satisfy this condition. Repeated observations of a store, changing demand, or an intervention that changes purchases require an argument appropriate to that setting.
+
+\begin{assumption}[Exchangeable Scores After Model Selection]\label{ass:conformal-exchangeability}
+Conditional on the training data and any model-fitting randomness, the calibration observations and one new observation are exchangeable. The predictor and score function are chosen using training data alone. The target error rate is fixed before calibration.
+\end{assumption}
+
+For a target miscoverage rate $\alpha$, choose the order statistic that allows for the new observation's position among $n+1$ scores:
+
+$$
+k=\left\lceil(n+1)(1-\alpha)\right\rceil,\qquad
+q=\begin{cases}S_{(k)},&k\leq n,\\+\infty,&k=n+1.\end{cases}
+$$
+
+Here $S_{(k)}$ is the $k$th smallest calibration score. The resulting prediction interval is $C(x)=[\widehat f(x)-q,\widehat f(x)+q]$. Under Assumption \ref{ass:conformal-exchangeability},
+
+$$
+\Pr\{Y_{\mathrm{new}}\in C(X_{\mathrm{new}})\mid\text{training data and fitting randomness}\}\geq 1-\alpha.
+$$
+
+The probability averages over the calibration sample and the new observation. With distinct scores, the new score's rank among $n+1$ exchangeable scores is uniform. At least $k$ of those ranks satisfy the threshold comparison. Including equality preserves coverage when scores tie. With 99 calibration observations and $\alpha=0.10$, the threshold is the 90th ordered score. With only eight calibration observations, the required ninth position gives an infinite interval. Replacing infinity with the largest observed error would overstate the guarantee for that sample size.
+
+The bound concerns marginal coverage. A particular realized calibration sample can produce coverage below the target, and coverage can differ across customer groups. It supplies no simultaneous guarantee that every future outcome will lie inside its interval. Width also matters: an interval containing every possible outcome has perfect coverage and little operational value. Reserving fresh calibration data after model selection prevents favorable calibration results from becoming another tuning objective.
+
+### 7.24.2 Aggregate Coverage Can Hide a Segment's Errors
+
+\noindent Consider constructed demand records with one distinct store per row and a common one-week horizon. A fixed prediction rule, $\widehat f(x)=100+5x$, maps an imposed volume index $x$ into demand units. No model is estimated. Segment labels, called regular and volatile, are specified before calibration. The calibration sample contains 80 regular stores with absolute errors one through eight, each repeated ten times, and 19 volatile stores with ten errors of ten units and nine errors of twenty units. Alternating signs produce positive and negative errors around the prediction. The pooled 90th error is ten, so every pooled interval has width twenty units.
+
+A separate constructed evaluation population contains 80 regular and 20 volatile stores. All regular errors are four or eight units. Ten volatile errors are eight, eight are eighteen, and two are twenty-five. All 80 regular stores and ten volatile stores fall inside their pooled intervals. Thus overall coverage is $(80+10)/100=90\%$, while volatile-store coverage is $10/20=50\%$. The difference is an exact description of imposed records, with no sampling interval or estimated population effect attached.
+
+![On a common zero-to-one-hundred-percent scale, blue solid bars show pooled-interval coverage of 90 percent overall, 100 percent for 80 regular stores, and 50 percent for 20 volatile stores. Orange hatched bars show coverage of 98, 100, and 90 percent after separate calibration within the two predefined segments. A dashed line marks the 90 percent target. The same 100 synthetic stores enter both methods, so the overall bars weight segment coverage by 80 and 20 stores.](../figures/M07_conformal_groups.png)
+
+Separate calibration within the predefined segments changes both error allocation and interval width. The regular segment's rank is $\lceil81\times0.90\rceil=73$, giving $q_{\mathrm{regular}}=8$. The volatile segment's rank is $\lceil20\times0.90\rceil=18$, giving $q_{\mathrm{volatile}}=20$. In the evaluation records, coverage becomes $80/80$ and $18/20$. Mean interval width rises from twenty to $0.8\times16+0.2\times40=20.8$ units. The method directs wider intervals toward the segment with larger calibration errors.
+
+| Calibration Rule | Regular Coverage | Volatile Coverage | Overall Coverage | Mean Width, Units |
+| --- | --- | --- | --- | --- |
+| Pooled | 80/80 | 10/20 | 90/100 | 20.0 |
+| Within Segment | 80/80 | 18/20 | 98/100 | 20.8 |
+
+In an empirical application, the within-segment coverage argument requires exchangeability within each group and a grouping rule fixed independently of calibration outcomes. Group-specific ranks can be uninformative when few calibration observations are available. Searching many group definitions for attractive results consumes information that the simple guarantee treats as reserved. Group coverage also leaves variation within each group unresolved. For customer service, equal statistical coverage can coexist with different waiting times, costs, or access to help. Evaluating those consequences requires outcomes beyond interval inclusion.
+
+An inventory policy still needs the relative costs of shortages and leftover stock. A central prediction interval alone does not determine an optimal order quantity. If errors differ continuously with store characteristics, a positive scale function estimated using training data can define normalized scores $|Y-\widehat f(X)|/\widehat\sigma(X)$ and intervals $\widehat f(x)\pm q\widehat\sigma(x)$. Conformalized quantile regression instead starts with fitted lower and upper conditional quantiles and calibrates their errors. Both approaches can vary interval width across stores; their ordinary coverage guarantee remains marginal under the relevant exchangeability condition.
+
+\FloatBarrier
+
+### 7.24.3 Reproduce the Calibration and Demand Comparison
+
+\noindent The three files below belong in the same directory. Python's standard library is sufficient. The shared function sorts calibration scores explicitly, keeps ties inside the prediction set, and returns infinity when the requested rank exceeds the sample size. Rational arithmetic computes the rank without a floating-point ceiling error. The classification helper validates probabilities and includes labels exactly at the threshold.
+
+Python source: [conformal.py](../../03_Data_and_Code/Conformal_Prediction/conformal.py).
+
+```python
+"""Finite-sample split-conformal thresholds for a fixed score function."""
+from fractions import Fraction
+from math import ceil, isfinite
+
+
+def threshold(scores, alpha="0.10"):
+    """Return the kth score; use infinity when the required rank is n + 1."""
+    values = sorted(float(s) for s in scores)
+    error_rate = Fraction(str(alpha))
+    if not values or not 0 < error_rate < 1:
+        raise ValueError("Nonempty scores and 0 < alpha < 1 are required")
+    if any(not isfinite(s) for s in values):
+        raise ValueError("Calibration scores must be finite")
+    rank = ceil((len(values) + 1) * (1 - error_rate))
+    return values[rank - 1] if rank <= len(values) else float("inf")
+
+
+def label_set(probabilities, cutoff):
+    """Include labels whose 1 - probability score is at most the cutoff."""
+    p = {label: Fraction(str(value))
+         for label, value in probabilities.items()}
+    if not p or any(value < 0 or value > 1 for value in p.values()):
+        raise ValueError("Nonempty probabilities in [0, 1] are required")
+    if sum(p.values()) != 1:
+        raise ValueError("Probabilities must sum to one")
+    if cutoff == float("inf"):
+        return list(p)
+    if not isfinite(cutoff):
+        raise ValueError("The cutoff must be finite or positive infinity")
+    bound = Fraction(str(cutoff))
+    return [label for label, value in p.items() if 1 - value <= bound]
+```
+
+Run `python demand_intervals.py` to construct every calibration and evaluation record, calculate the pooled and segment thresholds, and write individual intervals and aggregate results. The program also adds twenty-five demand units to every evaluation outcome while holding predictions and calibration scores fixed. This imposed change in demand generates the separate sensitivity comparison in Section 8.21. All evaluation stores remain in the denominator. Generated CSV files preserve the input values, prediction, evaluated outcome, interval, width, and inclusion indicator.
+
+Python source: [demand_intervals.py](../../03_Data_and_Code/Conformal_Prediction/demand_intervals.py).
+
+```python
+"""Constructed store demand, fixed predictions, and split-conformal intervals."""
+from pathlib import Path
+import csv
+import json
+from conformal import threshold
+
+HERE = Path(__file__).resolve().parent
+ALPHA = "0.10"
+
+
+def make_rows(split, regular, volatile):
+    """One distinct store per row; demand and predictions are imposed units."""
+    rows = []
+    for segment, errors in [("regular", regular), ("volatile", volatile)]:
+        for i, magnitude in enumerate(errors):
+            index = i % 20
+            prediction = 100 + 5 * index
+            error = magnitude if i % 2 == 0 else -magnitude
+            rows.append(dict(store_id=f"{split}_{segment}_{i:03d}",
+                split=split, segment=segment, volume_index=index,
+                prediction=prediction, demand=prediction + error))
+    return rows
+
+
+def make_inputs():
+    calibration = make_rows("calibration",
+        [x for x in range(1, 9) for _ in range(10)], [10] * 10 + [20] * 9)
+    evaluation = make_rows("evaluation", [4] * 40 + [8] * 40,
+                           [8] * 10 + [18] * 8 + [25] * 2)
+    return calibration, evaluation
+
+
+def assess(rows):
+    ids = [r["store_id"] for r in rows]
+    if not rows or len(set(ids)) != len(ids):
+        raise ValueError("Nonempty rows with unique store IDs are required")
+    if any(r["segment"] not in ("regular", "volatile") for r in rows):
+        raise ValueError("Segments must be defined before calibration")
+    if any(r["demand"] < 0 for r in rows):
+        raise ValueError("Demand must be nonnegative")
+
+
+def evaluate(rows, cutoffs, method, scenario, shift=0):
+    detail = []
+    for row in rows:
+        q = cutoffs[row["segment"]]
+        y = row["demand"] + shift
+        lower, upper = row["prediction"] - q, row["prediction"] + q
+        detail.append(dict(**row, scenario=scenario, method=method,
+            evaluated_demand=y, lower=lower, upper=upper,
+            covered=int(lower <= y <= upper), width=upper - lower))
+    summary = []
+    for segment in ("all", "regular", "volatile"):
+        subset = [r for r in detail if segment == "all" or r["segment"] == segment]
+        n = len(subset)
+        summary.append(dict(scenario=scenario, method=method, segment=segment,
+            stores=n, covered=sum(r["covered"] for r in subset),
+            coverage=sum(r["covered"] for r in subset) / n,
+            mean_width=sum(r["width"] for r in subset) / n))
+    return detail, summary
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    calibration, evaluation = make_inputs()
+    assess(calibration)
+    assess(evaluation)
+    assert not ({r["store_id"] for r in calibration} &
+                {r["store_id"] for r in evaluation})
+    residuals = [abs(r["demand"] - r["prediction"]) for r in calibration]
+    q = threshold(residuals, ALPHA)
+    group_q = {g: threshold([abs(r["demand"] - r["prediction"])
+                            for r in calibration if r["segment"] == g], ALPHA)
+               for g in ("regular", "volatile")}
+    detail, summary = [], []
+    for scenario, shift in [("reference", 0), ("shifted_plus_25", 25)]:
+        for method, cutoffs in [("pooled", dict.fromkeys(group_q, q)),
+                                ("by_segment", group_q)]:
+            d, s = evaluate(evaluation, cutoffs, method, scenario, shift)
+            detail.extend(d)
+            summary.extend(s)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    write_csv(output / "calibration.csv", calibration)
+    write_csv(output / "evaluation.csv", evaluation)
+    write_csv(output / "intervals.csv", detail)
+    write_csv(output / "coverage.csv", summary)
+    results = dict(alpha=float(ALPHA), calibration_stores=len(calibration),
+        evaluation_stores=len(evaluation), pooled_cutoff=q,
+        segment_cutoffs=group_q, summary=summary,
+        scope="Fixed synthetic cases and an imposed predictor; no model fit. "
+              "The shifted scenario reuses the same stores with demand +25. "
+              "Realized coverage is descriptive, not a test of exchangeability.")
+    (output / "demand_summary.json").write_text(json.dumps(results, indent=2) + "\n")
+    print(json.dumps(results, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 7.25 Prediction Sets and Customer-Service Routing
+
+\noindent A service team deciding where to send a complaint faces a different uncertainty problem. A model may rank billing first while leaving substantial probability on delivery. Sending every complaint to its highest-scoring department hides that ambiguity. A prediction set preserves multiple possible categories and can inform a rule for human review.
+
+Suppose the mutually exclusive labels are billing, delivery, and product. Fix a classifier before calibration, with output $\widehat p_y(x)$ for label $y$. For each independently labeled calibration complaint, use $S_i=1-\widehat p_{Y_i}(X_i)$. A low probability on the true label produces a large error score. Select $q$ using the same finite-sample rank as in Section 7.24. The set for a new complaint is
+
+$$
+C(x)=\{y:1-\widehat p_y(x)\leq q\}
+     =\{y:\widehat p_y(x)\geq1-q\}.
+$$
+
+Under Assumption \ref{ass:conformal-exchangeability}, the true label lies in this set with marginal probability at least $1-\alpha$. The classifier's raw scores need not already be calibrated probabilities for that set-coverage result. Human labels must still measure the intended complaint categories. Repeated messages from one complaint, revisions to the model or prompt, and changes in the label definitions can alter the score distribution.
+
+Consider nineteen synthetic calibration complaints whose ordered true-label scores are 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.52, 0.54, 0.56, 0.58, 0.60, 0.62, 0.64, 0.65, and 0.80. At $\alpha=0.10$, rank eighteen gives $q=0.65$. A label enters when its predicted probability is at least 0.35. Three new, unlabeled complaints then generate different sets.
+
+![Three synthetic complaint probability vectors produce different prediction sets at a fixed inclusion threshold of 0.35. Probabilities of 0.70, 0.20, and 0.10 retain billing alone. Probabilities of 0.45, 0.40, and 0.15 retain billing and delivery. Probabilities of 0.34, 0.33, and 0.33 retain no label. Multiple-label and empty sets go to human review; the singleton is a candidate for routing whose error rate requires separate evaluation.](../figures/M07_conformal_sets.png)
+
+The empty set occurs because every predicted probability falls below the inclusion threshold. It gives a reason to seek additional information, without establishing that the complaint came from a new population. For the multiple-label set, a reviewer can resolve the billing-delivery distinction. The three queries have no observed true labels, so they establish no test accuracy or empirical coverage.
+
+If the company routes only singleton sets automatically, the relevant error rate conditions on that selection: $\Pr\{Y\notin C(X)\mid |C(X)|=1\}$. The marginal bound does not control this conditional quantity at the same level. Evaluate routing error, the fraction sent to review, customer waiting time, and consequences of a mistaken referral together. Class-specific calibration can address coverage of rare complaint types when its conditions hold, while resampling the calibration data to equalize class counts changes the population underlying a pooled calculation.
+
+An LLM can supply scores or proposed labels within this workflow, provided the scoring rule is fixed and labeled calibration cases match the intended use. A score extracted from an LLM's own statement of confidence supplies no coverage guarantee by itself. Guarantees about complaint labels also leave the factual accuracy and completeness of a generated reply as separate evaluation questions.
+
+\FloatBarrier
+
+### 7.25.1 Reproduce the Complaint Sets
+
+\noindent Run `python complaint_sets.py` beside `conformal.py`. The program constructs all nineteen probability vectors, computes each score from its true label, and applies the resulting threshold to the three queries. Its JSON output preserves the calibration labels and probabilities, selected sets, set sizes, and routing candidates. The examples impose the probabilities and use no external model or customer records.
+
+Python source: [complaint_sets.py](../../03_Data_and_Code/Conformal_Prediction/complaint_sets.py).
+
+```python
+"""Constructed complaint probabilities and sets for a review-routing decision."""
+from pathlib import Path
+from fractions import Fraction as F
+import json
+from conformal import label_set, threshold
+
+HERE = Path(__file__).resolve().parent
+LABELS = ("billing", "delivery", "product")
+
+def make_calibration():
+    scores = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50,
+              52, 54, 56, 58, 60, 62, 64, 65, 80]
+    rows = []
+    for i, score in enumerate(scores):
+        true_label = LABELS[i % len(LABELS)]
+        probabilities = {label: str(1 - F(score, 100)) if label == true_label
+                         else str(F(score, 200)) for label in LABELS}
+        label_set(probabilities, 1)  # Validate the probability vector.
+        rows.append(dict(case_id=f"cal_{i:02d}", true_label=true_label,
+                         probabilities=probabilities))
+    return rows
+
+def main():
+    calibration = make_calibration()
+    scores = [1 - F(r["probabilities"][r["true_label"]]) for r in calibration]
+    q = threshold(scores, "0.10")
+    queries = [dict(zip(LABELS, p)) for p in
+               [("0.70", "0.20", "0.10"),
+                ("0.45", "0.40", "0.15"),
+                ("0.34", "0.33", "0.33")]]
+    decisions = []
+    for i, probabilities in enumerate(queries):
+        selected = label_set(probabilities, q)
+        action = "routing_candidate" if len(selected) == 1 else "human_review"
+        decisions.append(dict(case_id=f"query_{i+1}", probabilities=probabilities,
+                              labels=selected, set_size=len(selected), action=action))
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    result = dict(alpha=0.10, calibration_cases=len(calibration), cutoff=q,
+        minimum_probability=float(1 - F(str(q))), calibration=calibration,
+        queries=decisions, scope="Synthetic scores and three unlabeled queries. "
+        "No test accuracy or empirical coverage is measured. "
+        "Set coverage alone does not control singleton-routing error.")
+    (output / "complaint_sets.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps({k: v for k, v in result.items() if k != "calibration"}, indent=2))
+
+if __name__ == "__main__":
+    main()
+```

@@ -20,9 +20,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 23 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 26 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
-| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
+| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 18 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
@@ -230,11 +230,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs. Compare AUC, probability loss, and purchase totals on the same synthetic customers.
+**Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Application:** Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage. Match the evaluation metric to ranking or inventory planning.
+**Application:** Compare forecast accuracy, coverage, width, and customer consequences for the intended deployment.
 
-**Ethics and Regulation:** Prediction errors and access to consequential offers.
+**Ethics and Regulation:** Coverage by customer segment, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -272,7 +272,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare list objectives and solve a budget allocation with an independent grid check.
 
-**Application:** Design a comparison that separates temporary exposure from subsequent learning.
+**Application:** Separate policy feedback and changed demand from evidence supporting earlier forecast intervals.
 
 **Ethics and Regulation:** Attention, adaptive feedback, and platform incentives.
 

@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-07",
+  "updated_on": "2026-11-08",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -102,12 +102,16 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/17_PyStatlas_Statistical_Graphics/README.md",
     "01_Resources/17_PyStatlas_Statistical_Graphics/SOURCE_REVIEW.md",
     "01_Resources/17_PyStatlas_Statistical_Graphics/WIKI_PATTERNS.md",
-    "03_Data_and_Code/Statistical_Graphics/README.md"
+    "03_Data_and_Code/Statistical_Graphics/README.md",
+    "01_Resources/18_Conformal_Prediction/README.md",
+    "01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md",
+    "03_Data_and_Code/Conformal_Prediction/README.md",
+    "03_Data_and_Code/Conformal_Prediction/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-07",
+    "updated_on": "2026-11-08",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -151,12 +155,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-07-statistical-graphics",
+    "revision": "2026-11-08-conformal-prediction",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 72,
-    "pages": 259,
+    "figures_count": 74,
+    "pages": 268,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -164,7 +168,8 @@ Generated from course.json and the source files identified below. This file cont
     "ai_workflow_examples": "03_Data_and_Code/AI_Workflows/README.md",
     "consumer_agency_examples": "03_Data_and_Code/Consumer_Agency_Literature/README.md",
     "llm_revalidation_examples": "03_Data_and_Code/LLM_Revalidation/README.md",
-    "marketing_dialectics": "06_Lecture_Notes/Marketing_Dialectics.pdf"
+    "marketing_dialectics": "06_Lecture_Notes/Marketing_Dialectics.pdf",
+    "conformal_examples": "03_Data_and_Code/Conformal_Prediction/README.md"
   },
   "datasets": [
     {
@@ -212,7 +217,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-07",
+    "updated_on": "2026-11-08",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -221,7 +226,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 312,
+    "slides": 316,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -342,6 +347,20 @@ Generated from course.json and the source files identified below. This file cont
       "M7 \u00a77.23"
     ],
     "reviewed_on": "2026-11-07"
+  },
+  "conformal_prediction": {
+    "resources": "01_Resources/18_Conformal_Prediction/README.md",
+    "catalog": "01_Resources/18_Conformal_Prediction/catalog.json",
+    "examples": "03_Data_and_Code/Conformal_Prediction/README.md",
+    "source_commit": "482612bf544898925fa6c32a218d401decf5df22",
+    "reference_notebooks": 10,
+    "executed_course_examples": 2,
+    "sections": [
+      "M7 \u00a7\u00a77.24\u20137.25",
+      "M8 \u00a78.21"
+    ],
+    "reviewed_on": "2026-11-08",
+    "scope": "Original deterministic synthetic cases; upstream code inspected but not executed"
   }
 }
 ```
@@ -416,6 +435,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Statistical Graphics
 
 [PyStatlas and its course applications](01_Resources/17_PyStatlas_Statistical_Graphics/README.md) connect statistical questions to chart choices. [Two reproducible synthetic cases](03_Data_and_Code/Statistical_Graphics/README.md) examine paired customer changes and identical rankings with different purchase probabilities. Full explanations and Python appear in M2 §2.22 and M7 §7.23, with corresponding Session 3 and 11 slides.
+
+## Prediction Uncertainty
+
+[Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) connects demand intervals, customer-service routing, and changing demand. [Two reproducible synthetic examples](03_Data_and_Code/Conformal_Prediction/README.md) accompany full Python in M7 §§7.24–7.25, interpretation in M8 §8.21, and Session 11 and 13 slides.
 
 ---
 
@@ -612,6 +635,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 [PyStatlas](01_Resources/17_PyStatlas_Statistical_Graphics/README.md) supplies a question-oriented chart reference across M2–M9. M2 §2.22 and Session 3 examine paired customer changes; M7 §7.23 and Session 11 distinguish ranking from probability accuracy. Both have [original synthetic inputs and complete tested Python](03_Data_and_Code/Statistical_Graphics/README.md).
 
+## Prediction Intervals, Label Sets, and Changing Demand
+
+[Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) extends M7 §§7.24–7.25 with finite-sample calibration, segment coverage, and complaint routing. M8 §8.21 examines an imposed change in demand. Sessions 11 and 13 carry the examples. [Complete original Python and generated records](03_Data_and_Code/Conformal_Prediction/README.md) support connections to M3 uncertainty, M5 text classification, and M9 customer consequences.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -768,6 +795,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Paired customer changes and ranking versus calibration](Statistical_Graphics/README.md) use two original synthetic datasets, complete Python, aggregate tables, and six small-case tests. M2 §2.22 and M7 §7.23 reproduce the programs in full.
 
+## Conformal Prediction
+
+[Demand intervals and complaint-label sets](Conformal_Prediction/README.md) use fixed synthetic records, a shared finite-sample rank function, and complete standard-library Python. Six checks verify boundary ranks, ties, segment denominators, paired demand changes, and sets. Full code appears in M7 §§7.24–7.25, with demand-shift interpretation in M8 §8.21.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -776,7 +807,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 6, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 72 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 74 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -804,7 +835,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 259 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 268 pages.
 
 ## Editing and Building
 
@@ -850,7 +881,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 58 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 61 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -881,6 +912,10 @@ Marketing Dialectics, Sections 9.14–9.18, provides a detailed Kantian evaluati
 ## Statistical Graphics and Marketing Decisions
 
 M2 §2.22 explains customer pairing and covariance. M7 §7.23 compares identical rankings with different probability losses and purchase forecasts. Both contain full [runnable Python](../03_Data_and_Code/Statistical_Graphics/README.md), synthetic input definitions, and Illinois-color TikZ figures. [The PyStatlas guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) connects additional chart families to existing modules.
+
+## Prediction Intervals and Customer-Service Routing
+
+M7 §§7.24–7.25 derive split-conformal calibration and apply it to constructed store demand and complaint probabilities. Two TikZ figures explain segment coverage and ambiguous label sets. M8 §8.21 preserves the same stores under an imposed demand change. [Complete programs, records, and six independent checks](../03_Data_and_Code/Conformal_Prediction/README.md) distinguish marginal coverage, group outcomes, interval width, and singleton-routing error.
 
 ---
 
@@ -1014,6 +1049,10 @@ Sessions 9 and 14 incorporate the [research and policy case](../01_Resources/16_
 ## Statistical Graphics
 
 Sessions 3 and 11 include paired spending and ranking-versus-calibration comparisons, supported by [complete Python and synthetic inputs](../03_Data_and_Code/Statistical_Graphics/README.md). The detailed explanations are M2 §2.22 and M7 §7.23.
+
+## Prediction Uncertainty
+
+Session 11 adds calibration ranks, coverage by segment, and complaint-label sets. Session 13 examines coverage after an imposed demand change. [The complete code and records](../03_Data_and_Code/Conformal_Prediction/README.md) accompany M7 §§7.24–7.25 and M8 §8.21. Two editable TikZ figures retain the synthetic inputs, counts, and interpretation.
 
 ---
 
@@ -1477,6 +1516,10 @@ M9 links Kantian dialectic and ethics with Hume and Smith on institutional scrut
 
 Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §2.22 and M7 §7.23. Original synthetic examples preserve customer pairs and distinguish ranking from probability accuracy. [The resource guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) maps the 12 families to course questions and records code-reading scope. [Executed programs and tests](../03_Data_and_Code/Statistical_Graphics/README.md) supply the aggregate tables used by two new TikZ figures. Sessions 3 and 11 carry the corresponding discussion.
 
+## Conformal Prediction
+
+[The source review](../01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md) informs finite-sample calibration in M7 §7.24, complaint-label sets in §7.25, and changed-demand evaluation in M8 §8.21. [Original course programs](../03_Data_and_Code/Conformal_Prediction/README.md) construct all inputs, preserve every evaluation record, and provide the tables for two TikZ figures. Sessions 11 and 13 contain the corresponding discussion. Source inspection is recorded separately from executed course code; no upstream notebook was run.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1838,9 +1881,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 23 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 26 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
-| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 17 |
+| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 18 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
@@ -2048,11 +2091,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare forecasts and repeated selection; preserve paired regressions and segment-specific failure costs. Compare AUC, probability loss, and purchase totals on the same synthetic customers.
+**Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Application:** Evaluate an upgrade using common cases, fresh tasks, explicit losses, and outcome coverage. Match the evaluation metric to ranking or inventory planning.
+**Application:** Compare forecast accuracy, coverage, width, and customer consequences for the intended deployment.
 
-**Ethics and Regulation:** Prediction errors and access to consequential offers.
+**Ethics and Regulation:** Coverage by customer segment, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -2090,7 +2133,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare list objectives and solve a budget allocation with an independent grid check.
 
-**Application:** Design a comparison that separates temporary exposure from subsequent learning.
+**Application:** Separate policy feedback and changed demand from evidence supporting earlier forecast intervals.
 
 **Ethics and Regulation:** Attention, adaptive feedback, and platform incentives.
 
@@ -2219,6 +2262,10 @@ Sessions 9 and 14 connect Misra and his coauthors' research to the choice of exp
 ## Statistical Graphics and Interpretation
 
 Session 3 compares customer-level spending and paired changes within the existing visualization activities. Session 11 compares ranking, probability loss, and aggregate demand forecasts within prediction evaluation. The [PyStatlas guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md) provides additional chart selections for regression, retention, segmentation, experiments, and time series. The calendar and session lengths retain their existing allocations.
+
+## Prediction Uncertainty and Changing Demand
+
+Session 11 uses its existing worked-comparison and Python blocks for finite-sample calibration, demand-interval coverage by segment, and complaint routing. Ranking and paired-upgrade comparisons remain available for follow-up practice. Session 13 connects changed-demand coverage to adaptive policies and delayed observations. [M7 §§7.24–7.25 and M8 §8.21](../03_Data_and_Code/Conformal_Prediction/README.md) provide the full examples. The 15 meetings, dates, and 170-minute allocations are unchanged.
 
 ---
 
@@ -4025,6 +4072,163 @@ The prediction example calculates empirical AUC from every positive-negative pai
 `results/paired_changes.json` reports a $5 mean change, standard error 0.267261, and conditional 95% t interval [4.368028, 5.631972]. `results/customer_changes.csv` contains the eight plotted differences. `results/ranking_calibration.json` reports AUC 53/66 for both models, Brier scores 0.175 and 0.21855, and purchase forecasts of 36 and 40 against 36 observed. `results/calibration_bins.csv` supplies every plotted probability and observed share with its denominator.
 
 Six tests independently check difference variance, pairing, row-order invariance, exact AUC arithmetic, probability losses, aggregate counts, and invalid input handling. Both programs were executed. Full matching Python appears in [M2 §2.22](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) and [M7 §7.23](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md); editable figures and projected examples appear in Sessions 3 and 11.
+
+---
+
+## Source: 01_Resources/18_Conformal_Prediction/README.md
+
+# Conformal Prediction for Marketing Decisions
+
+Prediction uncertainty affects inventory, customer-service capacity, and the consequences of automated decisions. The most useful course material concerns how a fixed model's errors determine intervals or sets, which population receives the coverage guarantee, and how changes in demand can undermine it.
+
+## Course Applications
+
+| Decision or Question | Concept | Course Location |
+| --- | --- | --- |
+| How much can next week's store demand differ from its forecast? | Separate training, calibration, and evaluation; finite-sample ranks; coverage and width | M7 §7.24; Session 11 |
+| Which stores bear the forecasting errors? | Marginal and within-segment coverage; limited calibration samples | M7 §7.24.2; Session 11; M9 discussion of customer consequences |
+| Which department should receive an ambiguous complaint? | Label sets, empty sets, review queues, and conditional routing error | M7 §7.25; Session 11; application to M5 text classification |
+| What changes after a promotion or a model revision? | Forecast origins, delayed labels, distribution change, and revalidation | M8 §8.21; Session 13 |
+| Does a probability-calibration chart establish interval coverage? | Probability calibration, prediction-set coverage, and confidence intervals answer different questions | M7 §§7.23–7.25; connection to M3 uncertainty |
+
+The [complete notes](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) include two original synthetic cases and every line of their Python programs. [Code, generated records, and verification](../../03_Data_and_Code/Conformal_Prediction/README.md) require only Python's standard library. Two editable TikZ figures compare segment coverage and complaint-routing sets.
+
+## Recommended Sequence
+
+1. Begin with the inventory decision, a fixed forecast, and a definition of the future outcome.
+2. Calculate the finite-sample rank by hand, including a sample too small to yield a finite interval.
+3. Compare pooled and segment coverage on the same stores, with widths and counts beside the percentages.
+4. Construct complaint-label sets and evaluate the selection rule for automatic routing separately.
+5. Change demand while keeping forecasts fixed; explain which condition of the original guarantee has changed.
+
+Normalized residuals and conformalized quantile regression are useful extensions when uncertainty varies with features. Jackknife+, adaptive prediction sets, and methods for dependent time series can follow after students understand their distinct conditions. Probability calibration through Venn–Abers is another topic, with a different target from set coverage. No advanced package implementation is included as a tested course exercise in this release.
+
+## AI-Assisted Coding Exercise
+
+Ask an assistant to implement the exact order statistic for a reserved calibration sample, return an infinite threshold when its rank exceeds the sample size, and preserve boundary ties. Test all twenty possible held-out positions among twenty distinct scores before fitting a larger model. Require a separate table of each segment's count, covered outcomes, and average width. Reusing a favorable calibration result to select a model requires fresh calibration data or an appropriate alternative procedure.
+
+For a future interactive wiki, two compact widgets would be useful: changing the calibration sample size and target coverage to expose the infinite-threshold boundary, and changing the population weights on fixed segment coverage rates. Each should retain an accessible table and the underlying Python calculation.
+
+## Source and Review Record
+
+[SOURCE_REVIEW.md](SOURCE_REVIEW.md) records the pinned repository, inspected cells, implementation concerns, and primary checks. [catalog.json](catalog.json) lists all downloaded notebook files, their hashes, and the scope of reading. The local reference copy contains ten notebooks, the README, and the MIT license; it is excluded from Git because saved notebook outputs include large embedded assets. The book text and an NLP chapter notebook are absent from this snapshot. [UPSTREAM_LICENSE.txt](UPSTREAM_LICENSE.txt) preserves the source license. The course examples use original synthetic records and independently written code.
+
+---
+
+## Source: 01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md
+
+# Conformal Prediction Source Review
+
+Reviewed November 8, 2026. Source: [Practical Guide to Applied Conformal Prediction code repository](https://github.com/PacktPublishing/Practical-Guide-to-Applied-Conformal-Prediction/tree/482612bf544898925fa6c32a218d401decf5df22), associated with Valery Manokhin's book. Commit `482612bf544898925fa6c32a218d401decf5df22` is dated March 2, 2026. This record supplies provenance; course prose and slides present the concepts directly without citing the book.
+
+## Retrieval and Reading Scope
+
+All ten notebooks, README, and LICENSE were downloaded at that commit and verified against Git blob identifiers and SHA-256 hashes. The cover image was excluded. Saved notebook outputs were retained in the local reference copy but omitted from code extraction. No upstream program, installation cell, external dataset download, or model call was executed.
+
+The review examined all notebook heading summaries and read the principal binary-classification calculation, its calibration helper, regression splitting and absolute-residual calculations, selected time-series preparation and online-update cells, and selected imbalance and multiclass-calibration cells. It does not represent a complete reading of every cell or the book. Cell numbers below are zero-based positions in each notebook's `cells` array. The catalog distinguishes detailed and selected code inspection from heading-only inspection.
+
+## Findings That Affect Adaptation
+
+| Source | Inspection Finding | Course Treatment |
+| --- | --- | --- |
+| `Chapter_06.ipynb`, cells 45–52 | Candidate scores are appended before calling a helper that already adds the candidate's rank contribution. Both label calls use the class-zero augmented array; the later function also refers to that global array. | Use calibration scores alone and an explicit order-statistic implementation. Keep the score function fixed before calibration. |
+| `Chapter_06.ipynb`, cell 63 | `assert (predictions_test_sets, prediction)` asserts the truth of a nonempty tuple, so it does not verify equality. | Enumerate an independent finite-rank example and check expected sets directly. |
+| `Chapter_06.ipynb`, feature preparation | The bank-marketing example retains last-contact duration. Its availability depends on whether prediction occurs before or after that contact. | Define the forecast origin before choosing features; post-call duration is unavailable for a before-call targeting decision. |
+| `Chapter_6_classifier_calibration.ipynb`, cell 5 | The ECE expression compares mean probabilities with bin centers and leaves observed event frequencies unused. Fixed-length bin weights can also disagree with the number of nonempty calibration-curve bins. | Retain M7 §7.23's independently verified reliability diagram and Brier calculation. Do not reuse this ECE helper. |
+| `Chapter_07.ipynb`, cells 20–35 | The train/calibration/test separation and absolute-residual construction provide a useful introductory workflow. The finite-sample-adjusted NumPy quantile uses interpolation. | Select the kth ordered score explicitly and handle an unattainable rank with infinity. At admissible ranks, linear interpolation at k/n is at least the kth score; interpolation here is not itself evidence of undercoverage. |
+| `Chapter_08_EnbPI.ipynb`, cell 7 | `df.sample(500)` reorders rows before a split with `shuffle=False`. The target is also divided by a maximum calculated before splitting. | A chronological split requires ordered observations and information available at the forecast origin. Derive any learned preprocessing from the appropriate earlier sample. |
+| `Chapter_08_EnbPI.ipynb`, cells 26–27 | Pooled outcome inclusion is described as conditional coverage. Inclusion of point predictions is also displayed. | Evaluate actual outcomes, retain group and horizon denominators, and distinguish pooled coverage from conditional coverage. |
+| `Chapter_08_EnbPI.ipynb`, cell 31 | Online updates use the preceding batch's targets before issuing the next batch's intervals. | Preserve the ordering principle and adapt it to the actual outcome delay. The source algorithm was not reproduced. |
+| `Chapter_11.ipynb`, selected splitting and evaluation cells; `Chapter_12.ipynb`, introduction and headings | These examples include imbalance and probability-calibration methods. Their targets should remain distinct from prediction-set coverage. | Discuss calibration-sample composition and rare-label coverage; defer larger benchmark reproductions. |
+
+## Primary Method and Software Checks
+
+[Angelopoulos and Bates, A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification](https://arxiv.org/abs/2107.07511) supplies the rank argument, marginal-coverage interpretation, group-calibration extension, and infinite threshold at small sample sizes. Appendix D and Sections 4.1–4.2 were checked against the course's mathematical claims. The examples in the notes are newly constructed, with no reported results taken from the paper.
+
+The [MAPIE v1 release notes](https://mapie.readthedocs.io/en/stable/content/getting-started/v1-release-notes/), checked November 8, 2026, replace the older `MapieRegressor` and `MapieClassifier` interfaces with separate split and cross-conformal classes. Split workflows distinguish fitting, conformalization, and prediction; `confidence_level` replaces `alpha` with the complementary value. A generated implementation must specify the installed version and consult its corresponding documentation. The course programs avoid this version dependency by using the standard library.
+
+## Execution and Interpretation
+
+Only the [original course programs](../../03_Data_and_Code/Conformal_Prediction/README.md) were executed. Six tests check finite-rank enumeration, small samples and ties, invalid inputs, exact segment counts and widths, paired demand changes, and classification sets. The fixed synthetic populations illustrate mechanisms. Their realized coverage does not empirically establish exchangeability, fairness, customer benefit, or performance on mHealth, McBroken, or earnings calls.
+
+---
+
+## Source: 03_Data_and_Code/Conformal_Prediction/README.md
+
+# Conformal Prediction: Data and Code
+
+An inventory manager needs demand intervals; a customer-service manager needs to recognize ambiguous complaint categories. These original constructed examples connect interval width and label-set size to those decisions. Full explanations and the three program files appear in [M7 §§7.24–7.25](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), with changed-demand interpretation in [M8 §8.21](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md).
+
+## Run
+
+Use Python 3.10 or later with its standard library. From this directory:
+
+```sh
+python demand_intervals.py
+python complaint_sets.py
+python -m unittest -v test_conformal.py
+```
+
+No input download, package installation, credentials, or model account is required. Both programs construct their complete inputs and replace only their generated files in `results/`. `conformal.py` supplies the shared rank and label-set functions. There is no random seed because every record is deterministic. Decimal and rational inputs make the small examples hand-checkable; the probability helper expects exact vectors that sum to one.
+
+## Demand Example
+
+The prediction rule `100 + 5 * volume_index` is imposed, with no model fitting. Each row represents a distinct synthetic store at a common one-week horizon. Segment labels are fixed before calibration. Calibration and evaluation store identifiers are disjoint.
+
+| Field | Definition and Units |
+| --- | --- |
+| `store_id` | Unique synthetic identifier within each calibration/evaluation population |
+| `split` | `calibration` or `evaluation`; roles are assigned before interval construction |
+| `segment` | Predefined `regular` or `volatile` group |
+| `volume_index` | Imposed dimensionless predictor, integers 0–19 |
+| `prediction`, `demand` | Fixed forecast and constructed weekly demand, in units |
+| `scenario` | `reference` or a paired change adding 25 units to each outcome |
+| `method` | Pooled calibration or calibration separately within segment |
+| `evaluated_demand` | Demand after the specified scenario change, in units |
+| `lower`, `upper`, `width` | Prediction-interval endpoints and width, in demand units |
+| `covered` | One when the evaluated outcome lies within the inclusive endpoints |
+
+The calibration sample has 99 stores. The 90% pooled threshold is 10 units; segment thresholds are 8 and 20. No rows are dropped. Evaluation retains all 100 stores, including every interval miss.
+
+| Rule and Scenario | Overall Coverage | Regular Coverage | Volatile Coverage | Mean Width, Units |
+| --- | --- | --- | --- | --- |
+| Pooled, Reference | 90/100 | 80/80 | 10/20 | 20.0 |
+| Within Segment, Reference | 98/100 | 80/80 | 18/20 | 20.8 |
+| Pooled, Demand +25 | 5/100 | 0/80 | 5/20 | 20.0 |
+| Within Segment, Demand +25 | 10/100 | 0/80 | 10/20 | 20.8 |
+
+The change in outcomes holds store identities, forecasts, and calibration fixed. These are descriptive calculations on a constructed population, not estimated coverage in a retail dataset. The within-segment theorem requires exchangeability within predefined groups; ordinary pooled coverage also requires its stated exchangeability condition. A better segment result in this illustration does not establish customer benefit or fairness.
+
+## Complaint Example
+
+Nineteen synthetic calibration cases have known labels and imposed probability vectors over billing, delivery, and product. The 18th true-class error score is 0.65, so a label is included at probability 0.35 or higher. Three additional queries are unlabeled: their sets are billing alone, billing plus delivery, and the empty set. The first is a routing candidate and the other two are assigned human review. No empirical accuracy or coverage is claimed for the unlabeled queries. Singleton-selection error requires its own evaluation.
+
+## Outputs and Figure Companions
+
+- [calibration.csv](results/calibration.csv) and [evaluation.csv](results/evaluation.csv): complete demand inputs.
+- [intervals.csv](results/intervals.csv): all 400 scenario-method-store calculations, preserving the paired stores across scenarios.
+- [coverage.csv](results/coverage.csv): twelve aggregate rows, with counts, coverage, and widths; text/table companion to the segment figure.
+- [demand_summary.json](results/demand_summary.json): thresholds, denominators, and scope.
+- [complaint_sets.json](results/complaint_sets.json): all labeled calibration probabilities and the three query sets; companion to the routing figure.
+- [verification.json](verification.json): execution environment, checks, and file hashes.
+
+The full programs ran under Python 3.13.5. Six independent checks passed, including exhaustive held-out-rank enumeration rather than comparison of a function with a duplicate implementation. The [resource review](../../01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md) records inspected reference code separately from these executions. All course code and records in this folder were written for these examples; no upstream code or customer records were copied.
+
+---
+
+## Source: 03_Data_and_Code/Conformal_Prediction/AGENTS.md
+
+# Conformal Prediction Example Guide
+
+Read the root agent guide and this folder's README. Keep the complete program blocks in M7 synchronized with `conformal.py`, `demand_intervals.py`, and `complaint_sets.py`.
+
+- Preserve the exact finite-sample rank, inclusive boundary, and infinite-threshold case. Do not silently clip an unattainable rank to the largest calibration score.
+- Keep the fixed predictor and predefined segments independent of calibration and evaluation outcomes. The current records are deterministic synthetic illustrations, with no fitted model.
+- Retain every evaluation store and distinguish the paired outcome-change scenario from a new sample. Report segment counts and widths alongside coverage.
+- Distinguish marginal coverage, group coverage, probability calibration, and error conditional on automatic routing. No single one implies all the others.
+- Treat prediction intervals for future outcomes separately from confidence intervals for population means. A nominal level is conditional on the method's assumptions.
+- Run both original programs and `test_conformal.py` after changes. Compare TikZ values with the generated tables and verify full code blocks with `scripts/check_lecture_code.py`.
+- Do not execute the upstream notebooks or install their packages merely to explain this example. The source review and original course execution are separate records.
 
 ---
 
