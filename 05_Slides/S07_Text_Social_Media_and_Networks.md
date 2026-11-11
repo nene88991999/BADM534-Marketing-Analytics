@@ -11,6 +11,7 @@ Session 07. M5. 170 minutes.
 - Define a text construct and evaluate labels on the deployment population.
 - Distinguish prevalence, text exposure, retrieval, and substantive interpretation.
 - Explain network reach and brokerage without inferring influence from correlation.
+- Distinguish citation presence from support using a controlled source comparison.
 
 ## Related Materials
 
@@ -23,6 +24,7 @@ Session 07. M5. 170 minutes.
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 - [University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
+- [Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -253,7 +255,30 @@ A test on new firms addresses a different deployment population from a test on l
 
 Source: Marketing Analytics Lecture Notes, M5 §5.15.
 
-## Slide 21: Generator and Judge Changes
+## Slide 21: Citations and Supporting Evidence
+
+Four fictional pricing questions; authored answers and reference annotations.
+
+**Figure description:** All four answers cite a source in every condition. Supported counts are four with curated sources, two after a misleading memo is added, and four after review. The contrast is stipulated.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_source_selection.tex)
+
+S1 reports a price increase and a before-after unit change without a causal design. S2 is an unanswered analyst question about discounts. S3 defines a selected panel-member denominator. S4 incorrectly asserts causality and a discount announcement. Citation presence does not establish that an inference is justified. No model responses were collected, so these counts measure no effect of context.
+
+Source: M5 §5.19. ../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md
+
+## Slide 22: A Controlled Source Comparison
+
+- Hold the questions, model version, and scoring rule fixed.
+- Use fresh conversations and preserve raw responses.
+- Repeat paired runs; randomize condition order.
+- Assess support independently and retain missing answers.
+
+Run source_selection.py to reproduce the constructed example. In an optional live extension, supply the excerpts and questions without the saved answers or support labels. A single pair gives a descriptive comparison. Repetition helps separate sampling variation from a stable context effect. Credible contradictory evidence requires review; disagreement alone is not a reason to exclude a source. The class activity fits the existing earnings-call Python block.
+
+Source: M5 §5.19; ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/
+
+## Slide 23: Generator and Judge Changes
 
 Identical saved outputs are scored by both judges. All scores are stipulated.
 
@@ -265,7 +290,7 @@ A stable judge supplies a common comparison but still requires validation. Posit
 
 Source: M5 §5.18. Zheng et al. (2023), https://arxiv.org/abs/2306.05685; Panickssery et al. (2024), https://arxiv.org/abs/2404.13076
 
-## Slide 22: Network Objects
+## Slide 24: Network Objects
 
 - Nodes identify customers or accounts.
 - Edges represent a defined relationship in a time window.
@@ -275,7 +300,7 @@ An edge could mean following, messaging, purchasing together, or co-occurrence. 
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 23: Few Links Can Connect Separate Groups
+## Slide 25: Few Links Can Connect Separate Groups
 
 Synthetic undirected network. R has only two links.
 
@@ -287,7 +312,7 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 24: University Affiliations Create a Research Network
+## Slide 26: University Affiliations Create a Research Network
 
 - 745 papers identify 424 higher-education institutions.
 - Split one unit of link weight across each paper's university pairs.
@@ -297,7 +322,7 @@ The eligible census has 824 papers; 79 lack identified education affiliations. W
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 25: Affiliation Groups Depend on the Representation
+## Slide 27: Affiliation Groups Depend on the Representation
 
 Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.
 
@@ -309,17 +334,18 @@ The median adjusted Rand agreement across twenty seeds is 0.522; switching from 
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 26: Coding Exercise: A Label Assessment
+## Slide 28: Coding Exercise: A Label Assessment
 
-- Run the earnings-call assessment and role-exposure calculation.
-- Test denial, future intention, and a missed paraphrase.
-- Explain which extra labels would identify precision and recall.
+- Reproduce the four-question source comparison.
+- Trace each unsupported claim to its inferential error.
+- Explain why citation counts remain unchanged.
+- Check one result without the coding assistant.
 
-Use ../03_Data_and_Code/Earnings_Calls/README.md and LLM_EXERCISES.md. The mHealth example provides a second application of held-out description evaluation. Synthetic dictionary contrasts are implementation checks; they do not estimate deployment accuracy.
+Use ten minutes to introduce the question and demonstrate the output, twenty-five minutes for the source comparison, and ten minutes for independent explanation within the existing forty-five-minute Python block. The supplied answers are synthetic. Earnings-call retrieval checks and mHealth text comparisons remain available as extensions. No grading requirements are established.
 
-Source: M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+Source: M5 §§5.19–5.20. ../07_Labs/AI_Evidence_and_Evaluation/README.md
 
-## Slide 27: Engagement and Commercial Value
+## Slide 29: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -329,7 +355,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 28: Authenticity of Reviews and Endorsements
+## Slide 30: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -339,7 +365,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 29: Text-Analysis Discussion
+## Slide 31: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

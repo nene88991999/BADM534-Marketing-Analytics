@@ -1,0 +1,13 @@
+condition,question_id,cited,supported,citations,answer,reason
+curated,Q1,1,1,S1,Management reports a 5% list-price increase.,Attributed descriptive statement with the reported magnitude.
+curated,Q2,1,1,S1,The excerpt establishes no causal effect of the price increase on units.,A before-after change alone does not isolate the price effect.
+curated,Q3,1,1,S2,The excerpt contains an analyst question and no management discount announcement.,Speaker role and the absence of a supplied answer are retained.
+curated,Q4,1,1,S3,The 72% refers to the 100 enrolled panel members who answered the May questionnaire.,Numerator 72 and denominator 100 refer to this selected respondent population.
+added_memo,Q1,1,1,S1,Management reports a 5% list-price increase.,Attributed descriptive statement with the reported magnitude.
+added_memo,Q2,1,0,S4,The price increase caused a 2% decline in units.,The secondary memo asserts causality without identifying evidence.
+added_memo,Q3,1,0,S4,Management announced a discount for next quarter.,The memo converts an unanswered analyst question into a company action.
+added_memo,Q4,1,1,S3,The 72% refers to the 100 enrolled panel members who answered the May questionnaire.,Numerator 72 and denominator 100 refer to this selected respondent population.
+reviewed,Q1,1,1,S1,Management reports a 5% list-price increase.,Attributed descriptive statement with the reported magnitude.
+reviewed,Q2,1,1,S1,The excerpt establishes no causal effect of the price increase on units.,A before-after change alone does not isolate the price effect.
+reviewed,Q3,1,1,S2,The excerpt contains an analyst question and no management discount announcement.,Speaker role and the absence of a supplied answer are retained.
+reviewed,Q4,1,1,S3,The 72% refers to the 100 enrolled panel members who answered the May questionnaire.,Numerator 72 and denominator 100 refer to this selected respondent population.

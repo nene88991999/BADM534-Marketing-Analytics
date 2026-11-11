@@ -1304,3 +1304,11 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 7.26 Evaluation Coverage and the Costs of Grading Errors
+
+\noindent An automated reviewer allocates scarce human attention. Its performance depends on which cases receive a decision and which errors matter for the application. A high score among completed responses can coexist with poor coverage if difficult cases produce no usable answer. Preserve the full task roster and report abstentions, missing outputs, and parser failures separately before interpreting accuracy.
+
+The complete calculation in Section 5.20 compares stipulated graders on the same twelve public practice statements. Equal balanced accuracy accompanies different false-approval counts and review demands. Balanced accuracy weights the two reference classes equally; a loss calculation weights the errors and referrals by their imposed consequences. Neither statistic establishes that the reference labels express a defensible welfare criterion. In a pricing application, numerical accuracy, identification of a causal effect, and respect for customer choice require distinct judgments.
+
+Freeze the scoring rule before evaluating new cases. Use development cases for rubric revision and separate cases for final evaluation, grouping related statements from the same call when estimating uncertainty. Disclosed examples are useful for practice. Performance after studying their labels concerns those examples, while generalization requires new evidence.

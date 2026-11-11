@@ -1,0 +1,4 @@
+grader,cases,reference_pass,reference_fail,tp,tn,fp,fn,abstained,missing,invalid,answered,coverage,accuracy_all,balanced_accuracy_all,false_pass_rate,accuracy_answered,review_cases,loss_units
+always_pass,12,8,4,8,0,4,0,0,0,0,12,1.0,0.6666666666666666,0.5,1.0,0.6666666666666666,0,40.0
+cautious,12,8,4,5,4,0,2,1,0,0,11,0.9166666666666666,0.75,0.8125,0.0,0.8181818181818182,1,2.5
+permissive,12,8,4,7,3,1,1,0,0,0,12,1.0,0.8333333333333334,0.8125,0.25,0.8333333333333334,0,11.0

@@ -72,3 +72,7 @@ Sessions 3 and 11 include paired spending and ranking-versus-calibration compari
 ## Prediction Uncertainty
 
 Session 11 adds calibration ranks, coverage by segment, and complaint-label sets. Session 13 examines coverage after an imposed demand change. [The complete code and records](../03_Data_and_Code/Conformal_Prediction/README.md) accompany M7 §§7.24–7.25 and M8 §8.21. Two editable TikZ figures retain the synthetic inputs, counts, and interpretation.
+
+## Evidence Selection and AI Graders
+
+Session 7 adds citation support and a controlled source-comparison protocol. Session 11 compares graders with equal balanced accuracy and different error costs. Two editable TikZ figures and [public practice activities](../07_Labs/AI_Evidence_and_Evaluation/README.md) accompany M5 §§5.19–5.20. All saved answers and grader decisions are synthetic.

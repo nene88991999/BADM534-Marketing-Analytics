@@ -3,7 +3,7 @@
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-08",
+  "updated_on": "2026-11-11",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -19,7 +19,14 @@
   "current_schedule": "05_Slides/SESSION_PLAN.md",
   "current_ai_policy": null,
   "released_assignments": [],
-  "released_labs": [],
+  "released_labs": [
+    {
+      "id": "ai-evidence-evaluation",
+      "path": "07_Labs/AI_Evidence_and_Evaluation/README.md",
+      "status": "available as public ungraded practice",
+      "graded": false
+    }
+  ],
   "module_map": "COURSE_MAP.md",
   "agent_instructions": "AGENTS.md",
   "student_guide": "LLM_GUIDE.md",
@@ -97,12 +104,18 @@
     "01_Resources/18_Conformal_Prediction/README.md",
     "01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md",
     "03_Data_and_Code/Conformal_Prediction/README.md",
-    "03_Data_and_Code/Conformal_Prediction/AGENTS.md"
+    "03_Data_and_Code/Conformal_Prediction/AGENTS.md",
+    "01_Resources/19_AI_Practice_and_Evaluation/README.md",
+    "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
+    "03_Data_and_Code/AI_Evidence_and_Evaluation/DATA_DICTIONARY.md",
+    "03_Data_and_Code/AI_Evidence_and_Evaluation/AGENTS.md",
+    "07_Labs/README.md",
+    "07_Labs/AI_Evidence_and_Evaluation/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-08",
+    "updated_on": "2026-11-11",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -146,12 +159,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-08-conformal-prediction",
+    "revision": "2026-11-11-ai-evidence-evaluation",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 74,
-    "pages": 268,
+    "figures_count": 76,
+    "pages": 276,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -160,7 +173,8 @@
     "consumer_agency_examples": "03_Data_and_Code/Consumer_Agency_Literature/README.md",
     "llm_revalidation_examples": "03_Data_and_Code/LLM_Revalidation/README.md",
     "marketing_dialectics": "06_Lecture_Notes/Marketing_Dialectics.pdf",
-    "conformal_examples": "03_Data_and_Code/Conformal_Prediction/README.md"
+    "conformal_examples": "03_Data_and_Code/Conformal_Prediction/README.md",
+    "ai_evidence_examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md"
   },
   "datasets": [
     {
@@ -208,7 +222,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-08",
+    "updated_on": "2026-11-11",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -217,7 +231,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 316,
+    "slides": 320,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -352,5 +366,21 @@
     ],
     "reviewed_on": "2026-11-08",
     "scope": "Original deterministic synthetic cases; upstream code inspected but not executed"
+  },
+  "ai_evidence_evaluation": {
+    "resources": "01_Resources/19_AI_Practice_and_Evaluation/README.md",
+    "catalog": "01_Resources/19_AI_Practice_and_Evaluation/catalog.json",
+    "examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
+    "lab": "07_Labs/AI_Evidence_and_Evaluation/README.md",
+    "status": "public ungraded practice",
+    "reviewed_on": "2026-11-11",
+    "executed_course_examples": 2,
+    "live_model_runs": 0,
+    "sections": [
+      "M1 §1.14",
+      "M5 §§5.19–5.20",
+      "M7 §7.26"
+    ],
+    "scope": "Original synthetic sources, answers, reference judgments, and grader decisions; optional live-model protocol"
   }
 }

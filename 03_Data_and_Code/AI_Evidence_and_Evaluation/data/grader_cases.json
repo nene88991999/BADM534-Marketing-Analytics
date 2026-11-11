@@ -1,0 +1,78 @@
+{
+  "scope": "Public synthetic practice cases with disclosed reference judgments; not a hidden assessment set.",
+  "rubric": "PASS means the statement respects the supplied evidence, denominator, speaker role, and distinction between observations and proposals. It does not certify that an underlying business practice is ethically justified.",
+  "cases": [
+    {
+      "id": "P1",
+      "text": "Management reports a 5% list-price increase.",
+      "reference": "PASS",
+      "reason": "The statement attributes a descriptive claim to management."
+    },
+    {
+      "id": "P2",
+      "text": "October units were 2% below September; this contrast alone does not identify a price effect.",
+      "reference": "PASS",
+      "reason": "Description and causal identification remain separate."
+    },
+    {
+      "id": "P3",
+      "text": "An analyst raised next-quarter discounts; the supplied excerpt contains no management decision.",
+      "reference": "PASS",
+      "reason": "The speaker and status of the proposal are preserved."
+    },
+    {
+      "id": "P4",
+      "text": "Reported June use is 72 of the 100 enrolled panel members who answered in May.",
+      "reference": "PASS",
+      "reason": "The denominator and selection rule are explicit."
+    },
+    {
+      "id": "P5",
+      "text": "The supplied call excerpt describes no randomized or untreated comparison.",
+      "reference": "PASS",
+      "reason": "The statement concerns the available evidence only."
+    },
+    {
+      "id": "P6",
+      "text": "Management described a price change at this retailer; other firms need separate evidence.",
+      "reference": "PASS",
+      "reason": "The claim is restricted to its source and firm."
+    },
+    {
+      "id": "P7",
+      "text": "The available figures do not establish whether consumers benefited.",
+      "reference": "PASS",
+      "reason": "No welfare measure or justified counterfactual has been supplied."
+    },
+    {
+      "id": "P8",
+      "text": "A proposed discount pilot could compare contribution margin and customer complaints while retaining an accessible opt-out; no pilot outcome is claimed.",
+      "reference": "PASS",
+      "reason": "A conditional proposal is distinguished from an observed result."
+    },
+    {
+      "id": "F1",
+      "text": "The 5% price increase caused the entire 2% fall in units.",
+      "reference": "FAIL",
+      "reason": "The causal attribution exceeds a before-after comparison."
+    },
+    {
+      "id": "F2",
+      "text": "Higher prices prove that customers are better off.",
+      "reference": "FAIL",
+      "reason": "A price change establishes no consumer-welfare ranking."
+    },
+    {
+      "id": "F3",
+      "text": "The analyst question confirms management will implement discounts.",
+      "reference": "FAIL",
+      "reason": "An analyst question is not a management announcement."
+    },
+    {
+      "id": "F4",
+      "text": "Retention is 72% among all customers.",
+      "reference": "FAIL",
+      "reason": "The 100 selected respondents are not all customers."
+    }
+  ]
+}

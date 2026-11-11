@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 8, 2026\par}
+{\large November 11, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -1085,6 +1085,38 @@ the target task mix or report its changes explicitly. Repeated tuning
 against the same public answers consumes their value as fresh evidence.
 Revalidation is warranted after changes to the model, prompt, tool,
 scorer, schema, or supported customer population.
+
+\hypertarget{M01-specifications-independent-checks-and-retained-skills}{%
+\section{Specifications, Independent Checks, and Retained
+Skills}\label{M01-specifications-independent-checks-and-retained-skills}}
+
+\noindent \noindent A manager who delegates a customer analysis must still define
+the decision, the observation unit, and the evidence that would justify
+action. Before requesting code, write the required inputs,
+transformation, output, and a small calculation that can be checked
+independently. If the objective is retention, specify the starting
+cohort and horizon. If it is an incremental marketing effect, specify
+the treatment comparison and assignment process. A working program can
+faithfully implement an unsuitable target.
+
+Compare anonymous outputs using criteria fixed before inspecting their
+style. Reopen the saved artifact, run the calculation, and inspect the
+result that matters for the decision. An assistant's statement that it
+completed a task supplies a claim to verify. A check against
+independently calculated totals supplies additional evidence. Record
+both execution time and correction effort when comparing workflows.
+
+After assisted work, explain the analytical choice and solve a new small
+instance without the assistant. This establishes whether the relevant
+skill can be demonstrated at that moment. A long-term claim about
+learning requires repeated assessment and a suitable comparison.
+\href{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/1-ai-foundations/}{Stanford
+CS193T's AI Foundations activity} motivates explicit decisions about
+which skills to preserve; the
+\href{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/6-coding-agents/}{coding-agent
+activity} connects a working result to a documented failure or unchecked
+component. The source and grader calculations in Sections 5.19 and 5.20
+provide hand-checkable instances.
 
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
@@ -7246,6 +7278,325 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M05-source-selection-and-supported-pricing-claims}{%
+\section{Source Selection and Supported Pricing
+Claims}\label{M05-source-selection-and-supported-pricing-claims}}
+
+\noindent \noindent A marketing team reviewing earnings calls wants to identify
+pricing decisions and the evidence about their consequences. Source
+selection affects the material available to an assistant. The team must
+also assess whether the resulting claims preserve speaker role, timing,
+and the scope of the evidence. A source can be accurately cited while
+supplying no basis for the conclusion attributed to it.
+
+Consider four questions about a fictional retailer. The first asks what
+price change management reports. The second asks whether the effect on
+delivered units is identified. The third asks whether a discount has
+been announced. The fourth asks whose subsequent service use is
+measured. The supplied records are wholly synthetic. S1 reports a
+five-percent list-price increase and an October unit count two percent
+below September, with no experiment or untreated comparison. S2 contains
+an analyst's unanswered question about next-quarter discounts. S3
+reports June use by 72 of 100 enrolled panel members who answered a May
+questionnaire. These records support attributed descriptions and a
+selected denominator. They establish no causal price effect or general
+consumer-welfare result.
+
+A fourth document, S4, is a deliberately misleading secondary memo. It
+states that the price increase caused the unit decline and that
+management announced discounts. It supplies no additional evidence. A
+credible contradictory source would require substantive examination;
+disagreement alone does not make a source unsuitable. In this
+constructed case, the memo exceeds the evidence in S1 and converts the
+question in S2 into an action.
+
+Hold the four questions fixed and compare three stipulated sets of
+answers: answers with S1--S3, answers after S4 is added, and answers
+after review restores S1--S3. Every answer cites a supplied document.
+The reference annotations classify all four initial answers as
+supported, two of the four answers with the memo as supported, and all
+four reviewed answers as supported. Citation presence is therefore four
+out of four in every condition, while supported claims are four, two,
+and four. These are authored responses, not observations from an AI
+system, and the differences estimate no causal effect of context.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_source_selection.tex}
+\caption{The same four fictional earnings-call questions have four cited answers in each of three stipulated conditions. Supported answers are four with curated sources, two with an added misleading memo, and four after review. Citation presence stays fixed while evidentiary support changes.}\label{fig:M05_source_selection}
+\end{figure}
+
+\href{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/}{Stanford
+CS193T's source-management exercise} motivates comparing answers before
+and after adding an unsuitable source. For a live comparison, preserve
+the questions, model version, settings, and scoring rule across fresh
+conversations. Randomize run order and repeat paired runs. Keep refusals
+and unscored answers in the record. Human reviewers should assess
+support against the same underlying evidence, with reasons for
+disagreements. The resulting estimate concerns this task and source
+intervention; broader claims require a wider task sample.
+
+\hypertarget{M05-reproduce-the-source-comparison}{%
+\subsection{Reproduce the Source
+Comparison}\label{M05-reproduce-the-source-comparison}}
+
+\noindent \noindent The input file contains the complete fictional excerpts,
+questions, answers, citations, and reference reasons. The program
+verifies the paired question roster and that each cited source was
+available, then totals the supplied support annotations. It performs no
+automatic semantic judgment. One question-condition answer is the
+observation unit, and each condition has a denominator of four.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/AI_Evidence_and_Evaluation/source_selection.py}{source\_selection.py}.
+From its folder, run \texttt{python3\ source\_selection.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Score hand-annotated synthetic answers; no model calls or automatic fact checking."""
+from pathlib import Path
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def assess(data):
+    sources = {row["id"] for row in data["sources"]}
+    questions = {row["id"] for row in data["questions"]}
+    if len(sources) != len(data["sources"]) or len(questions) != len(data["questions"]):
+        raise ValueError("Source and question IDs must be unique")
+    rows, summaries = [], []
+    for condition, answers in data["answers"].items():
+        if len(answers) != len(questions) or {a["question_id"] for a in answers} != questions:
+            raise ValueError("Every condition must answer the same questions exactly once")
+        available = set(data["conditions"][condition])
+        if not available <= sources:
+            raise ValueError("Unknown source in a condition")
+        for answer in answers:
+            cited = answer["citations"]
+            if not set(cited) <= available:
+                raise ValueError("Citation is absent from the supplied context")
+            if type(answer["supported"]) is not bool:
+                raise ValueError("Each claim needs an explicit reference annotation")
+            rows.append(dict(condition=condition, question_id=answer["question_id"],
+                cited=int(bool(cited)), supported=int(answer["supported"]),
+                citations=";".join(cited), answer=answer["answer"], reason=answer["reason"]))
+        sample = [r for r in rows if r["condition"] == condition]
+        summaries.append(dict(condition=condition, answers=len(sample),
+            cited=sum(r["cited"] for r in sample),
+            supported=sum(r["supported"] for r in sample)))
+    return rows, summaries
+
+
+def main():
+    data = json.loads((HERE / "data/source_cases.json").read_text())
+    rows, summaries = assess(data)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    for name, records in [("source_claims.csv", rows), ("source_summary.csv", summaries)]:
+        with (output / name).open("w", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=list(records[0]))
+            writer.writeheader()
+            writer.writerows(records)
+    print(json.dumps(dict(scope=data["scope"], summaries=summaries), indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M05-evaluate-the-grader-and-justify-the-rubric}{%
+\section{Evaluate the Grader and Justify the
+Rubric}\label{M05-evaluate-the-grader-and-justify-the-rubric}}
+
+\noindent \noindent A team may use an AI grader to decide which generated pricing
+claims require correction. The reference rule must specify what
+constitutes an acceptable claim. A criterion based on accurate
+attribution differs from a criterion based on causal identification or
+customer welfare. Agreement with a reference judgment measures
+consistency with that judgment. Justifying the rule requires an
+additional argument about the decision and the interests it affects.
+
+The synthetic practice set contains twelve statements: eight reference
+PASS cases and four reference FAIL cases. PASS statements preserve
+reported prices, the descriptive unit change, the analyst's role, the
+selected respondent denominator, the absence of an identifying
+comparison, the firm-specific scope, the absence of a welfare
+conclusion, or the conditional status of a proposed pilot. FAIL
+statements assert an identified price effect, infer customer benefit
+from higher prices, convert the analyst's question into a management
+decision, or generalize selected respondents to all customers. Every
+reference judgment has a written reason. A conditional proposal can pass
+this evidence rule while still requiring substantive ethical evaluation.
+
+To give the two reference classes equal weight, calculate balanced
+accuracy as
+
+\[
+B=\frac{1}{2}\left(\frac{TP}{N_P}+\frac{TN}{N_F}\right).
+\]
+
+Here \(N_P=8\) and \(N_F=4\) are the numbers of reference PASS and FAIL
+statements. \(TP\) counts correctly accepted PASS statements, and \(TN\)
+counts correctly rejected FAIL statements. All twelve statements remain
+in their reference-class denominators, including abstentions, missing
+outputs, and invalid labels. This full-roster scoring convention
+penalizes an unscored case as lacking a correct decision. A separate
+coverage statistic reports the fraction receiving a valid binary
+decision.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Grader & Correct PASS & Correct FAIL & False Passes & Review & Balanced
+Accuracy \\
+\midrule
+
+Always Pass & 8/8 & 0/4 & 4 & 0 & 50.00\% \\
+Permissive & 7/8 & 3/4 & 1 & 0 & 81.25\% \\
+Cautious & 5/8 & 4/4 & 0 & 1 & 81.25\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The permissive grader falsely rejects one acceptable statement and
+approves one unsupported welfare claim. The cautious grader falsely
+rejects two acceptable statements and abstains on a proposed pilot. Its
+valid-decision coverage is eleven out of twelve, compared with twelve
+out of twelve for the permissive grader. Both have balanced accuracy of
+81.25 percent. The always-PASS baseline has ordinary accuracy of eight
+out of twelve but balanced accuracy of one-half, making the role of
+class composition explicit.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_grader_costs.tex}
+\caption{On twelve synthetic statements, the permissive grader makes one false approval and one false rejection. The cautious grader makes no false approvals, two false rejections, and one referral. Both score 81.25 percent balanced accuracy. At imposed costs of ten, one, and one-half units, their total losses are eleven and two and one-half units.}\label{fig:M05_grader_costs}
+\end{figure}
+
+Suppose a false approval costs ten loss units, a false rejection costs
+one, and a referral costs one-half. Referral includes perfect human
+resolution at the stated cost and requires sufficient review capacity.
+The permissive grader's loss is \(10+1=11\) units; the cautious grader's
+loss is \(2+0.5=2.5\) units. These losses are stipulated consequences on
+the same twelve-case batch. If false approval instead costs one and
+referral costs five, with false rejection still costing one, losses
+become two and seven. Equal balanced accuracy permits different
+decisions once the relevant consequences and review capacity are
+specified.
+
+\href{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/}{Stanford
+CS193T's grader exercise} motivates constructing a judge and comparing
+it with a baseline on unseen cases. The twelve cases here are disclosed
+practice examples with stipulated grader decisions. Their scores provide
+no fresh evidence about an actual model. For a new evaluation, prepare
+independent reference judgments, resolve or report disagreements, freeze
+the rubric, and reserve new cases from prompt revision. Missing
+responses and parser failures must remain visible. A test of reference
+agreement cannot settle whether a rubric adequately protects customer
+agency.
+
+\hypertarget{M05-reproduce-the-grader-comparison}{%
+\subsection{Reproduce the Grader
+Comparison}\label{M05-reproduce-the-grader-comparison}}
+
+\noindent \noindent The program joins every grader to the complete reference
+roster. Explicit abstentions, absent predictions, and invalid strings
+are counted separately and routed to review in the imposed loss
+calculation. Duplicate or unknown case IDs raise errors. Correctness
+conditional on a valid response is reported alongside full-roster
+metrics, preserving the distinction between selective coverage and
+performance on the full task.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py}{evaluate\_graders.py}.
+From its folder, run \texttt{python3\ evaluate\_graders.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Evaluate saved synthetic grader decisions on a fixed public practice set."""
+from pathlib import Path
+import argparse
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def evaluate(cases, predictions):
+    reference = {row["id"]: row["reference"] for row in cases}
+    if len(reference) != len(cases) or set(reference.values()) != {"PASS", "FAIL"}:
+        raise ValueError("Unique IDs and both reference classes are required")
+    graders = {}
+    for row in predictions:
+        if row["case_id"] not in reference or not row["grader"]:
+            raise ValueError("Unknown case or empty grader name")
+        saved = graders.setdefault(row["grader"], {})
+        if row["case_id"] in saved:
+            raise ValueError("Duplicate grader/case pair")
+        saved[row["case_id"]] = row["prediction"]
+    if not graders:
+        raise ValueError("No graders supplied")
+    results = []
+    for name, saved in sorted(graders.items()):
+        counts = dict(tp=0, tn=0, fp=0, fn=0, abstained=0, missing=0, invalid=0)
+        for case_id, truth in reference.items():
+            pred = saved.get(case_id)
+            if pred is None:
+                counts["missing"] += 1
+            elif pred == "ABSTAIN":
+                counts["abstained"] += 1
+            elif pred not in {"PASS", "FAIL"}:
+                counts["invalid"] += 1
+            else:
+                key = {("PASS", "PASS"): "tp", ("FAIL", "FAIL"): "tn",
+                       ("FAIL", "PASS"): "fp", ("PASS", "FAIL"): "fn"}[truth, pred]
+                counts[key] += 1
+        n_pass = sum(v == "PASS" for v in reference.values())
+        n_fail = len(reference) - n_pass
+        tp, tn, fp, fn = (counts[k] for k in ("tp", "tn", "fp", "fn"))
+        answered = tp + tn + fp + fn
+        reviewed = counts["abstained"] + counts["missing"] + counts["invalid"]
+        # Unscored cases remain in their reference-class denominator.
+        balanced = .5 * (tp / n_pass + tn / n_fail)
+        results.append(dict(grader=name, cases=len(reference), reference_pass=n_pass,
+            reference_fail=n_fail, **counts, answered=answered,
+            coverage=answered / len(reference), accuracy_all=(tp + tn) / len(reference),
+            balanced_accuracy_all=balanced, false_pass_rate=fp / n_fail,
+            accuracy_answered=(tp + tn) / answered if answered else None,
+            review_cases=reviewed,
+            # Imposed loss units: false approval 10, false rejection 1,
+            # referral .5 with perfect resolution by the human reviewer.
+            loss_units=10 * fp + fn + .5 * reviewed))
+    return results
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--predictions", type=Path, default=HERE / "data/grader_predictions.csv")
+    parser.add_argument("--output", type=Path, default=HERE / "results")
+    args = parser.parse_args()
+    cases = json.loads((HERE / "data/grader_cases.json").read_text())["cases"]
+    with args.predictions.open(newline="") as file:
+        predictions = list(csv.DictReader(file))
+    results = evaluate(cases, predictions)
+    args.output.mkdir(parents=True, exist_ok=True)
+    with (args.output / "grader_summary.csv").open("w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=list(results[0]))
+        writer.writeheader()
+        writer.writerows(results)
+    (args.output / "grader_summary.json").write_text(json.dumps(results, indent=2) + "\n")
+    print(json.dumps(results, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
 Experiments}\label{M06-m6.-causal-effects-and-marketing-experiments}}
@@ -11107,6 +11458,34 @@ def main():
 if __name__ == "__main__":
     main()
 \end{Verbatim}
+
+\hypertarget{M07-evaluation-coverage-and-the-costs-of-grading-errors}{%
+\section{Evaluation Coverage and the Costs of Grading
+Errors}\label{M07-evaluation-coverage-and-the-costs-of-grading-errors}}
+
+\noindent \noindent An automated reviewer allocates scarce human attention. Its
+performance depends on which cases receive a decision and which errors
+matter for the application. A high score among completed responses can
+coexist with poor coverage if difficult cases produce no usable answer.
+Preserve the full task roster and report abstentions, missing outputs,
+and parser failures separately before interpreting accuracy.
+
+The complete calculation in Section 5.20 compares stipulated graders on
+the same twelve public practice statements. Equal balanced accuracy
+accompanies different false-approval counts and review demands. Balanced
+accuracy weights the two reference classes equally; a loss calculation
+weights the errors and referrals by their imposed consequences. Neither
+statistic establishes that the reference labels express a defensible
+welfare criterion. In a pricing application, numerical accuracy,
+identification of a causal effect, and respect for customer choice
+require distinct judgments.
+
+Freeze the scoring rule before evaluating new cases. Use development
+cases for rubric revision and separate cases for final evaluation,
+grouping related statements from the same call when estimating
+uncertainty. Disclosed examples are useful for practice. Performance
+after studying their labels concerns those examples, while
+generalization requires new evidence.
 
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing

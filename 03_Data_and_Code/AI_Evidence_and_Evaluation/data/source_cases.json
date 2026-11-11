@@ -1,0 +1,181 @@
+{
+  "scope": "Original synthetic sources, stipulated answers, and hand-authored reference annotations; no measured model responses.",
+  "sources": [
+    {
+      "id": "S1",
+      "role": "Management statement",
+      "date": "2026-11-05",
+      "text": "In this fictional retailer, management reports that list prices rose 5% on October 1. Delivered units in October were 2% below September. No untreated comparison group or experiment is described."
+    },
+    {
+      "id": "S2",
+      "role": "Analyst question",
+      "date": "2026-11-05",
+      "text": "An analyst asks whether management might introduce a discount next quarter. The supplied excerpt contains no management answer or announcement."
+    },
+    {
+      "id": "S3",
+      "role": "Measurement appendix",
+      "date": "2026-11-05",
+      "text": "Of the 100 enrolled panel members who answered the May questionnaire, 72 reported using the service in June. No response-adjusted estimate or measure of consumer welfare is supplied."
+    },
+    {
+      "id": "S4",
+      "role": "Misleading secondary memo",
+      "date": "2026-11-06",
+      "text": "The price increase caused the unit decline, and management announced next-quarter discounts. The memo provides no additional observations or identification strategy. These assertions deliberately exceed S1 and S2."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "What price change does management report?"
+    },
+    {
+      "id": "Q2",
+      "text": "What causal effect on units is established?"
+    },
+    {
+      "id": "Q3",
+      "text": "Has management announced a discount?"
+    },
+    {
+      "id": "Q4",
+      "text": "What is the population for the reported 72%?"
+    }
+  ],
+  "conditions": {
+    "curated": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "added_memo": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "reviewed": [
+      "S1",
+      "S2",
+      "S3"
+    ]
+  },
+  "answers": {
+    "curated": [
+      {
+        "question_id": "Q1",
+        "answer": "Management reports a 5% list-price increase.",
+        "citations": [
+          "S1"
+        ],
+        "supported": true,
+        "reason": "Attributed descriptive statement with the reported magnitude."
+      },
+      {
+        "question_id": "Q2",
+        "answer": "The excerpt establishes no causal effect of the price increase on units.",
+        "citations": [
+          "S1"
+        ],
+        "supported": true,
+        "reason": "A before-after change alone does not isolate the price effect."
+      },
+      {
+        "question_id": "Q3",
+        "answer": "The excerpt contains an analyst question and no management discount announcement.",
+        "citations": [
+          "S2"
+        ],
+        "supported": true,
+        "reason": "Speaker role and the absence of a supplied answer are retained."
+      },
+      {
+        "question_id": "Q4",
+        "answer": "The 72% refers to the 100 enrolled panel members who answered the May questionnaire.",
+        "citations": [
+          "S3"
+        ],
+        "supported": true,
+        "reason": "Numerator 72 and denominator 100 refer to this selected respondent population."
+      }
+    ],
+    "added_memo": [
+      {
+        "question_id": "Q1",
+        "answer": "Management reports a 5% list-price increase.",
+        "citations": [
+          "S1"
+        ],
+        "supported": true,
+        "reason": "Attributed descriptive statement with the reported magnitude."
+      },
+      {
+        "question_id": "Q2",
+        "answer": "The price increase caused a 2% decline in units.",
+        "citations": [
+          "S4"
+        ],
+        "supported": false,
+        "reason": "The secondary memo asserts causality without identifying evidence."
+      },
+      {
+        "question_id": "Q3",
+        "answer": "Management announced a discount for next quarter.",
+        "citations": [
+          "S4"
+        ],
+        "supported": false,
+        "reason": "The memo converts an unanswered analyst question into a company action."
+      },
+      {
+        "question_id": "Q4",
+        "answer": "The 72% refers to the 100 enrolled panel members who answered the May questionnaire.",
+        "citations": [
+          "S3"
+        ],
+        "supported": true,
+        "reason": "Numerator 72 and denominator 100 refer to this selected respondent population."
+      }
+    ],
+    "reviewed": [
+      {
+        "question_id": "Q1",
+        "answer": "Management reports a 5% list-price increase.",
+        "citations": [
+          "S1"
+        ],
+        "supported": true,
+        "reason": "Attributed descriptive statement with the reported magnitude."
+      },
+      {
+        "question_id": "Q2",
+        "answer": "The excerpt establishes no causal effect of the price increase on units.",
+        "citations": [
+          "S1"
+        ],
+        "supported": true,
+        "reason": "A before-after change alone does not isolate the price effect."
+      },
+      {
+        "question_id": "Q3",
+        "answer": "The excerpt contains an analyst question and no management discount announcement.",
+        "citations": [
+          "S2"
+        ],
+        "supported": true,
+        "reason": "Speaker role and the absence of a supplied answer are retained."
+      },
+      {
+        "question_id": "Q4",
+        "answer": "The 72% refers to the 100 enrolled panel members who answered the May questionnaire.",
+        "citations": [
+          "S3"
+        ],
+        "supported": true,
+        "reason": "Numerator 72 and denominator 100 refer to this selected respondent population."
+      }
+    ]
+  }
+}

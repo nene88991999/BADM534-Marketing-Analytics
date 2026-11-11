@@ -754,3 +754,191 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 5.19 Source Selection and Supported Pricing Claims
+
+\noindent A marketing team reviewing earnings calls wants to identify pricing decisions and the evidence about their consequences. Source selection affects the material available to an assistant. The team must also assess whether the resulting claims preserve speaker role, timing, and the scope of the evidence. A source can be accurately cited while supplying no basis for the conclusion attributed to it.
+
+Consider four questions about a fictional retailer. The first asks what price change management reports. The second asks whether the effect on delivered units is identified. The third asks whether a discount has been announced. The fourth asks whose subsequent service use is measured. The supplied records are wholly synthetic. S1 reports a five-percent list-price increase and an October unit count two percent below September, with no experiment or untreated comparison. S2 contains an analyst's unanswered question about next-quarter discounts. S3 reports June use by 72 of 100 enrolled panel members who answered a May questionnaire. These records support attributed descriptions and a selected denominator. They establish no causal price effect or general consumer-welfare result.
+
+A fourth document, S4, is a deliberately misleading secondary memo. It states that the price increase caused the unit decline and that management announced discounts. It supplies no additional evidence. A credible contradictory source would require substantive examination; disagreement alone does not make a source unsuitable. In this constructed case, the memo exceeds the evidence in S1 and converts the question in S2 into an action.
+
+Hold the four questions fixed and compare three stipulated sets of answers: answers with S1–S3, answers after S4 is added, and answers after review restores S1–S3. Every answer cites a supplied document. The reference annotations classify all four initial answers as supported, two of the four answers with the memo as supported, and all four reviewed answers as supported. Citation presence is therefore four out of four in every condition, while supported claims are four, two, and four. These are authored responses, not observations from an AI system, and the differences estimate no causal effect of context.
+
+![The same four fictional earnings-call questions have four cited answers in each of three stipulated conditions. Supported answers are four with curated sources, two with an added misleading memo, and four after review. Citation presence stays fixed while evidentiary support changes.](../figures/M05_source_selection.png)
+
+[Stanford CS193T's source-management exercise](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/) motivates comparing answers before and after adding an unsuitable source. For a live comparison, preserve the questions, model version, settings, and scoring rule across fresh conversations. Randomize run order and repeat paired runs. Keep refusals and unscored answers in the record. Human reviewers should assess support against the same underlying evidence, with reasons for disagreements. The resulting estimate concerns this task and source intervention; broader claims require a wider task sample.
+
+### 5.19.1 Reproduce the Source Comparison
+
+\noindent The input file contains the complete fictional excerpts, questions, answers, citations, and reference reasons. The program verifies the paired question roster and that each cited source was available, then totals the supplied support annotations. It performs no automatic semantic judgment. One question-condition answer is the observation unit, and each condition has a denominator of four.
+
+Python source: [source_selection.py](../../03_Data_and_Code/AI_Evidence_and_Evaluation/source_selection.py). From its folder, run `python3 source_selection.py`.
+
+```python
+"""Score hand-annotated synthetic answers; no model calls or automatic fact checking."""
+from pathlib import Path
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def assess(data):
+    sources = {row["id"] for row in data["sources"]}
+    questions = {row["id"] for row in data["questions"]}
+    if len(sources) != len(data["sources"]) or len(questions) != len(data["questions"]):
+        raise ValueError("Source and question IDs must be unique")
+    rows, summaries = [], []
+    for condition, answers in data["answers"].items():
+        if len(answers) != len(questions) or {a["question_id"] for a in answers} != questions:
+            raise ValueError("Every condition must answer the same questions exactly once")
+        available = set(data["conditions"][condition])
+        if not available <= sources:
+            raise ValueError("Unknown source in a condition")
+        for answer in answers:
+            cited = answer["citations"]
+            if not set(cited) <= available:
+                raise ValueError("Citation is absent from the supplied context")
+            if type(answer["supported"]) is not bool:
+                raise ValueError("Each claim needs an explicit reference annotation")
+            rows.append(dict(condition=condition, question_id=answer["question_id"],
+                cited=int(bool(cited)), supported=int(answer["supported"]),
+                citations=";".join(cited), answer=answer["answer"], reason=answer["reason"]))
+        sample = [r for r in rows if r["condition"] == condition]
+        summaries.append(dict(condition=condition, answers=len(sample),
+            cited=sum(r["cited"] for r in sample),
+            supported=sum(r["supported"] for r in sample)))
+    return rows, summaries
+
+
+def main():
+    data = json.loads((HERE / "data/source_cases.json").read_text())
+    rows, summaries = assess(data)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    for name, records in [("source_claims.csv", rows), ("source_summary.csv", summaries)]:
+        with (output / name).open("w", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=list(records[0]))
+            writer.writeheader()
+            writer.writerows(records)
+    print(json.dumps(dict(scope=data["scope"], summaries=summaries), indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 5.20 Evaluate the Grader and Justify the Rubric
+
+\noindent A team may use an AI grader to decide which generated pricing claims require correction. The reference rule must specify what constitutes an acceptable claim. A criterion based on accurate attribution differs from a criterion based on causal identification or customer welfare. Agreement with a reference judgment measures consistency with that judgment. Justifying the rule requires an additional argument about the decision and the interests it affects.
+
+The synthetic practice set contains twelve statements: eight reference PASS cases and four reference FAIL cases. PASS statements preserve reported prices, the descriptive unit change, the analyst's role, the selected respondent denominator, the absence of an identifying comparison, the firm-specific scope, the absence of a welfare conclusion, or the conditional status of a proposed pilot. FAIL statements assert an identified price effect, infer customer benefit from higher prices, convert the analyst's question into a management decision, or generalize selected respondents to all customers. Every reference judgment has a written reason. A conditional proposal can pass this evidence rule while still requiring substantive ethical evaluation.
+
+To give the two reference classes equal weight, calculate balanced accuracy as
+
+$$
+B=\frac{1}{2}\left(\frac{TP}{N_P}+\frac{TN}{N_F}\right).
+$$
+
+Here $N_P=8$ and $N_F=4$ are the numbers of reference PASS and FAIL statements. $TP$ counts correctly accepted PASS statements, and $TN$ counts correctly rejected FAIL statements. All twelve statements remain in their reference-class denominators, including abstentions, missing outputs, and invalid labels. This full-roster scoring convention penalizes an unscored case as lacking a correct decision. A separate coverage statistic reports the fraction receiving a valid binary decision.
+
+| Grader | Correct PASS | Correct FAIL | False Passes | Review | Balanced Accuracy |
+| --- | --- | --- | --- | --- | --- |
+| Always Pass | 8/8 | 0/4 | 4 | 0 | 50.00% |
+| Permissive | 7/8 | 3/4 | 1 | 0 | 81.25% |
+| Cautious | 5/8 | 4/4 | 0 | 1 | 81.25% |
+
+The permissive grader falsely rejects one acceptable statement and approves one unsupported welfare claim. The cautious grader falsely rejects two acceptable statements and abstains on a proposed pilot. Its valid-decision coverage is eleven out of twelve, compared with twelve out of twelve for the permissive grader. Both have balanced accuracy of 81.25 percent. The always-PASS baseline has ordinary accuracy of eight out of twelve but balanced accuracy of one-half, making the role of class composition explicit.
+
+![On twelve synthetic statements, the permissive grader makes one false approval and one false rejection. The cautious grader makes no false approvals, two false rejections, and one referral. Both score 81.25 percent balanced accuracy. At imposed costs of ten, one, and one-half units, their total losses are eleven and two and one-half units.](../figures/M05_grader_costs.png)
+
+Suppose a false approval costs ten loss units, a false rejection costs one, and a referral costs one-half. Referral includes perfect human resolution at the stated cost and requires sufficient review capacity. The permissive grader's loss is $10+1=11$ units; the cautious grader's loss is $2+0.5=2.5$ units. These losses are stipulated consequences on the same twelve-case batch. If false approval instead costs one and referral costs five, with false rejection still costing one, losses become two and seven. Equal balanced accuracy permits different decisions once the relevant consequences and review capacity are specified.
+
+[Stanford CS193T's grader exercise](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/) motivates constructing a judge and comparing it with a baseline on unseen cases. The twelve cases here are disclosed practice examples with stipulated grader decisions. Their scores provide no fresh evidence about an actual model. For a new evaluation, prepare independent reference judgments, resolve or report disagreements, freeze the rubric, and reserve new cases from prompt revision. Missing responses and parser failures must remain visible. A test of reference agreement cannot settle whether a rubric adequately protects customer agency.
+
+### 5.20.1 Reproduce the Grader Comparison
+
+\noindent The program joins every grader to the complete reference roster. Explicit abstentions, absent predictions, and invalid strings are counted separately and routed to review in the imposed loss calculation. Duplicate or unknown case IDs raise errors. Correctness conditional on a valid response is reported alongside full-roster metrics, preserving the distinction between selective coverage and performance on the full task.
+
+Python source: [evaluate_graders.py](../../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py). From its folder, run `python3 evaluate_graders.py`.
+
+```python
+"""Evaluate saved synthetic grader decisions on a fixed public practice set."""
+from pathlib import Path
+import argparse
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def evaluate(cases, predictions):
+    reference = {row["id"]: row["reference"] for row in cases}
+    if len(reference) != len(cases) or set(reference.values()) != {"PASS", "FAIL"}:
+        raise ValueError("Unique IDs and both reference classes are required")
+    graders = {}
+    for row in predictions:
+        if row["case_id"] not in reference or not row["grader"]:
+            raise ValueError("Unknown case or empty grader name")
+        saved = graders.setdefault(row["grader"], {})
+        if row["case_id"] in saved:
+            raise ValueError("Duplicate grader/case pair")
+        saved[row["case_id"]] = row["prediction"]
+    if not graders:
+        raise ValueError("No graders supplied")
+    results = []
+    for name, saved in sorted(graders.items()):
+        counts = dict(tp=0, tn=0, fp=0, fn=0, abstained=0, missing=0, invalid=0)
+        for case_id, truth in reference.items():
+            pred = saved.get(case_id)
+            if pred is None:
+                counts["missing"] += 1
+            elif pred == "ABSTAIN":
+                counts["abstained"] += 1
+            elif pred not in {"PASS", "FAIL"}:
+                counts["invalid"] += 1
+            else:
+                key = {("PASS", "PASS"): "tp", ("FAIL", "FAIL"): "tn",
+                       ("FAIL", "PASS"): "fp", ("PASS", "FAIL"): "fn"}[truth, pred]
+                counts[key] += 1
+        n_pass = sum(v == "PASS" for v in reference.values())
+        n_fail = len(reference) - n_pass
+        tp, tn, fp, fn = (counts[k] for k in ("tp", "tn", "fp", "fn"))
+        answered = tp + tn + fp + fn
+        reviewed = counts["abstained"] + counts["missing"] + counts["invalid"]
+        # Unscored cases remain in their reference-class denominator.
+        balanced = .5 * (tp / n_pass + tn / n_fail)
+        results.append(dict(grader=name, cases=len(reference), reference_pass=n_pass,
+            reference_fail=n_fail, **counts, answered=answered,
+            coverage=answered / len(reference), accuracy_all=(tp + tn) / len(reference),
+            balanced_accuracy_all=balanced, false_pass_rate=fp / n_fail,
+            accuracy_answered=(tp + tn) / answered if answered else None,
+            review_cases=reviewed,
+            # Imposed loss units: false approval 10, false rejection 1,
+            # referral .5 with perfect resolution by the human reviewer.
+            loss_units=10 * fp + fn + .5 * reviewed))
+    return results
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--predictions", type=Path, default=HERE / "data/grader_predictions.csv")
+    parser.add_argument("--output", type=Path, default=HERE / "results")
+    args = parser.parse_args()
+    cases = json.loads((HERE / "data/grader_cases.json").read_text())["cases"]
+    with args.predictions.open(newline="") as file:
+        predictions = list(csv.DictReader(file))
+    results = evaluate(cases, predictions)
+    args.output.mkdir(parents=True, exist_ok=True)
+    with (args.output / "grader_summary.csv").open("w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=list(results[0]))
+        writer.writeheader()
+        writer.writerows(results)
+    (args.output / "grader_summary.json").write_text(json.dumps(results, indent=2) + "\n")
+    print(json.dumps(results, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

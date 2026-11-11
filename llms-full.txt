@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-08",
+  "updated_on": "2026-11-11",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -28,7 +28,14 @@ Generated from course.json and the source files identified below. This file cont
   "current_schedule": "05_Slides/SESSION_PLAN.md",
   "current_ai_policy": null,
   "released_assignments": [],
-  "released_labs": [],
+  "released_labs": [
+    {
+      "id": "ai-evidence-evaluation",
+      "path": "07_Labs/AI_Evidence_and_Evaluation/README.md",
+      "status": "available as public ungraded practice",
+      "graded": false
+    }
+  ],
   "module_map": "COURSE_MAP.md",
   "agent_instructions": "AGENTS.md",
   "student_guide": "LLM_GUIDE.md",
@@ -106,12 +113,18 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/18_Conformal_Prediction/README.md",
     "01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md",
     "03_Data_and_Code/Conformal_Prediction/README.md",
-    "03_Data_and_Code/Conformal_Prediction/AGENTS.md"
+    "03_Data_and_Code/Conformal_Prediction/AGENTS.md",
+    "01_Resources/19_AI_Practice_and_Evaluation/README.md",
+    "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
+    "03_Data_and_Code/AI_Evidence_and_Evaluation/DATA_DICTIONARY.md",
+    "03_Data_and_Code/AI_Evidence_and_Evaluation/AGENTS.md",
+    "07_Labs/README.md",
+    "07_Labs/AI_Evidence_and_Evaluation/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-08",
+    "updated_on": "2026-11-11",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -155,12 +168,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-08-conformal-prediction",
+    "revision": "2026-11-11-ai-evidence-evaluation",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 74,
-    "pages": 268,
+    "figures_count": 76,
+    "pages": 276,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -169,7 +182,8 @@ Generated from course.json and the source files identified below. This file cont
     "consumer_agency_examples": "03_Data_and_Code/Consumer_Agency_Literature/README.md",
     "llm_revalidation_examples": "03_Data_and_Code/LLM_Revalidation/README.md",
     "marketing_dialectics": "06_Lecture_Notes/Marketing_Dialectics.pdf",
-    "conformal_examples": "03_Data_and_Code/Conformal_Prediction/README.md"
+    "conformal_examples": "03_Data_and_Code/Conformal_Prediction/README.md",
+    "ai_evidence_examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md"
   },
   "datasets": [
     {
@@ -217,7 +231,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-08",
+    "updated_on": "2026-11-11",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -226,7 +240,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 316,
+    "slides": 320,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -361,6 +375,22 @@ Generated from course.json and the source files identified below. This file cont
     ],
     "reviewed_on": "2026-11-08",
     "scope": "Original deterministic synthetic cases; upstream code inspected but not executed"
+  },
+  "ai_evidence_evaluation": {
+    "resources": "01_Resources/19_AI_Practice_and_Evaluation/README.md",
+    "catalog": "01_Resources/19_AI_Practice_and_Evaluation/catalog.json",
+    "examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
+    "lab": "07_Labs/AI_Evidence_and_Evaluation/README.md",
+    "status": "public ungraded practice",
+    "reviewed_on": "2026-11-11",
+    "executed_course_examples": 2,
+    "live_model_runs": 0,
+    "sections": [
+      "M1 \u00a71.14",
+      "M5 \u00a7\u00a75.19\u20135.20",
+      "M7 \u00a77.26"
+    ],
+    "scope": "Original synthetic sources, answers, reference judgments, and grader decisions; optional live-model protocol"
   }
 }
 ```
@@ -439,6 +469,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Prediction Uncertainty
 
 [Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) connects demand intervals, customer-service routing, and changing demand. [Two reproducible synthetic examples](03_Data_and_Code/Conformal_Prediction/README.md) accompany full Python in M7 §§7.24–7.25, interpretation in M8 §8.21, and Session 11 and 13 slides.
+
+## Evidence Selection and AI Graders
+
+[Two original examples](03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) connect source selection, reference judgments, and the costs of incorrect approval. [Public practice activities](07_Labs/AI_Evidence_and_Evaluation/README.md) accompany full Python in M5 §§5.19–5.20 and Sessions 7 and 11.
 
 ---
 
@@ -554,7 +588,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 72 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 76 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -638,6 +672,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Prediction Intervals, Label Sets, and Changing Demand
 
 [Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) extends M7 §§7.24–7.25 with finite-sample calibration, segment coverage, and complaint routing. M8 §8.21 examines an imposed change in demand. Sessions 11 and 13 carry the examples. [Complete original Python and generated records](03_Data_and_Code/Conformal_Prediction/README.md) support connections to M3 uncertainty, M5 text classification, and M9 customer consequences.
+
+## Source Selection and Evaluation of AI Graders
+
+[Original synthetic cases](03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) connect M1 §1.14 specifications and retained skills, M5 §§5.19–5.20 source support and grader evaluation, and M7 §7.26 coverage and decision costs. The [practice lab](07_Labs/AI_Evidence_and_Evaluation/README.md) adapts Stanford CS193T activities to the earnings-call example. Sessions 7 and 11 retain their existing meeting times and cover the two comparisons. Discussion connects reference judgments to the customer-agency questions in M9.
 
 ---
 
@@ -799,15 +837,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Demand intervals and complaint-label sets](Conformal_Prediction/README.md) use fixed synthetic records, a shared finite-sample rank function, and complete standard-library Python. Six checks verify boundary ranks, ties, segment denominators, paired demand changes, and sets. Full code appears in M7 §§7.24–7.25, with demand-shift interpretation in M8 §8.21.
 
+## AI Evidence and Evaluation
+
+[Source selection and grader evaluation](AI_Evidence_and_Evaluation/README.md) use original fictional excerpts, stipulated answers, and disclosed reference judgments. Two complete programs and six independent checks preserve paired questions and full scoring denominators. No model performance is measured. M5 §§5.19–5.20 contain the full source.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 6, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 11, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 74 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 76 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -835,7 +877,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 268 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 276 pages.
 
 ## Editing and Building
 
@@ -881,7 +923,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 61 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 63 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -916,6 +958,10 @@ M2 §2.22 explains customer pairing and covariance. M7 §7.23 compares identical
 ## Prediction Intervals and Customer-Service Routing
 
 M7 §§7.24–7.25 derive split-conformal calibration and apply it to constructed store demand and complaint probabilities. Two TikZ figures explain segment coverage and ambiguous label sets. M8 §8.21 preserves the same stores under an imposed demand change. [Complete programs, records, and six independent checks](../03_Data_and_Code/Conformal_Prediction/README.md) distinguish marginal coverage, group outcomes, interval width, and singleton-routing error.
+
+## Source Selection and Grader Evaluation
+
+M1 §1.14 connects specifications and retained skills. M5 §§5.19–5.20 add a source-selection comparison, full-roster grader evaluation, two editable TikZ figures, and two complete Python programs. M7 §7.26 connects coverage and error costs. [The original data and verification](../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) and [practice lab](../07_Labs/AI_Evidence_and_Evaluation/README.md) distinguish stipulated examples from optional new model experiments.
 
 ---
 
@@ -1053,6 +1099,10 @@ Sessions 3 and 11 include paired spending and ranking-versus-calibration compari
 ## Prediction Uncertainty
 
 Session 11 adds calibration ranks, coverage by segment, and complaint-label sets. Session 13 examines coverage after an imposed demand change. [The complete code and records](../03_Data_and_Code/Conformal_Prediction/README.md) accompany M7 §§7.24–7.25 and M8 §8.21. Two editable TikZ figures retain the synthetic inputs, counts, and interpretation.
+
+## Evidence Selection and AI Graders
+
+Session 7 adds citation support and a controlled source-comparison protocol. Session 11 compares graders with equal balanced accuracy and different error costs. Two editable TikZ figures and [public practice activities](../07_Labs/AI_Evidence_and_Evaluation/README.md) accompany M5 §§5.19–5.20. All saved answers and grader decisions are synthetic.
 
 ---
 
@@ -1520,6 +1570,10 @@ Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §
 
 [The source review](../01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md) informs finite-sample calibration in M7 §7.24, complaint-label sets in §7.25, and changed-demand evaluation in M8 §8.21. [Original course programs](../03_Data_and_Code/Conformal_Prediction/README.md) construct all inputs, preserve every evaluation record, and provide the tables for two TikZ figures. Sessions 11 and 13 contain the corresponding discussion. Source inspection is recorded separately from executed course code; no upstream notebook was run.
 
+## Thinking With AI: Source Selection and Evaluation
+
+[Stanford CS193T activity ideas](../01_Resources/19_AI_Practice_and_Evaluation/README.md) support the original source-selection and grader comparisons in M5 §§5.19–5.20. M1 §1.14 and M7 §7.26 connect specifications, independent explanation, evaluation coverage, and asymmetric loss. Two programs, six checks, and two TikZ diagrams use entirely synthetic inputs. [The practice lab](../07_Labs/AI_Evidence_and_Evaluation/README.md) supplies an optional protocol for collecting new responses. Sessions 7 and 11 include the comparisons.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1877,11 +1931,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 29 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 31 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 26 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 28 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 18 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
@@ -2013,9 +2067,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess earnings-call retrieval and interpretation; compare fixed outputs under different judge versions.
+**Python and Evidence:** Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.
 
-**Application:** Separate generator improvements from judge changes, sponsor framing, and affiliation-network composition.
+**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -2093,7 +2147,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Application:** Compare forecast accuracy, coverage, width, and customer consequences for the intended deployment.
+**Application:** Compare forecast coverage and grader error costs while preserving the full evaluation population.
 
 **Ethics and Regulation:** Coverage by customer segment, review access, and consequences of incorrect routing.
 
@@ -2266,6 +2320,10 @@ Session 3 compares customer-level spending and paired changes within the existin
 ## Prediction Uncertainty and Changing Demand
 
 Session 11 uses its existing worked-comparison and Python blocks for finite-sample calibration, demand-interval coverage by segment, and complaint routing. Ranking and paired-upgrade comparisons remain available for follow-up practice. Session 13 connects changed-demand coverage to adaptive policies and delayed observations. [M7 §§7.24–7.25 and M8 §8.21](../03_Data_and_Code/Conformal_Prediction/README.md) provide the full examples. The 15 meetings, dates, and 170-minute allocations are unchanged.
+
+## Evidence Selection and AI Graders
+
+Session 7 uses its existing 45-minute Python block for a 10-minute demonstration, 25-minute source-selection activity, and 10-minute independent explanation. Session 11 allocates 15 minutes of its existing 30-minute application block to grader evaluation and 15 minutes to forecast interpretation; the conformal exercise remains in the Python block. [Public ungraded practice](../07_Labs/AI_Evidence_and_Evaluation/README.md) includes optional model runs. These activities introduce no new grading rules, dates, guest speakers, or course-wide AI permissions.
 
 ---
 
@@ -4229,6 +4287,192 @@ Read the root agent guide and this folder's README. Keep the complete program bl
 - Treat prediction intervals for future outcomes separately from confidence intervals for population means. A nominal level is conditional on the method's assumptions.
 - Run both original programs and `test_conformal.py` after changes. Compare TikZ values with the generated tables and verify full code blocks with `scripts/check_lecture_code.py`.
 - Do not execute the upstream notebooks or install their packages merely to explain this example. The source review and original course execution are separate records.
+
+---
+
+## Source: 01_Resources/19_AI_Practice_and_Evaluation/README.md
+
+# AI Practice and Evaluation
+
+A marketing analyst must decide which evidence to provide, which claims the evidence supports, and whether an automated reviewer applies a defensible rule. The Stanford CS193T course, Thinking with AI, supplies useful teaching activities for these decisions. The [source record](catalog.json) identifies the public pages reviewed on November 11, 2026. The course adaptations use original fictional cases and programs; Stanford pages, slides, and assignment PDFs are linked rather than republished.
+
+## Selected Activities and Course Applications
+
+| Source | Marketing Analytics Application |
+| --- | --- |
+| [Managing Sources and Context](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/) | M5 §5.19: compare the same earnings-call questions with and without a misleading secondary memo |
+| [Evals: Grading the Graders](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/) | M5 §5.20 and M7 §7.26: compare graders against explicit reference judgments, retain unscored cases, and evaluate asymmetric errors |
+| [Models and Prompting](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/2-models-prompting/) | M1 §1.14: specify success before reviewing anonymous outputs; compare model configurations on the same task |
+| [Coding Agents](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/6-coding-agents/) | Define an executable result, inspect a failure or unchecked component, and verify a calculation independently |
+| [AI Foundations](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/1-ai-foundations/) | Explain and reproduce a small calculation without the assistant after completing AI-assisted work |
+| [Browser Agents](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/5b-browser-agents/) | Compare a claimed action with the saved file or observable result, using authorized public inputs |
+| [Deep Research](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/4a-deep-research/) | Trace an important factual claim to its original evidence and separate factual disagreements from differences in values |
+| [Tutorial Structure](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/course/about_tutorial/) | Combine a short demonstration with build time and explanation; adapt to the existing 170-minute meetings |
+
+## Evidence and Adaptation
+
+The Stanford exercises motivate the activity design. They provide no empirical estimate that a particular prompting strategy, grader, or tool improves marketing outcomes. The [original worked examples](../../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) use constructed inputs to make denominators and failure types visible. The [practice lab](../../07_Labs/AI_Evidence_and_Evaluation/README.md) explains how to collect new model responses while holding the task fixed.
+
+Source quality depends on relevance and evidentiary support. Contradictory evidence deserves examination; disagreement alone is not grounds for exclusion. A confidence declaration, a citation, or agreement among models supplies no independent guarantee of correctness. Reference labels should have reasons and a process for resolving disagreement.
+
+## Interactive Wiki Design
+
+A future wiki can show a small evidence collection, record the student's initial judgment, then reveal an additional memo and ask which conclusions remain supported. A companion table can let students vary the costs of false approval, false rejection, and human review while preserving the underlying cases. Show counts and denominators beside each score. A public page can hide labels visually until requested, but this does not make those labels secret or create a held-out assessment set.
+
+The current release contains Markdown instructions, complete Python, data, and diagrams. No wiki application or live model experiment is represented as completed.
+
+---
+
+## Source: 03_Data_and_Code/AI_Evidence_and_Evaluation/README.md
+
+# AI Evidence and Evaluation
+
+Two original, synthetic examples connect earnings-call interpretation to source selection and evaluation of AI graders. The files contain fictional excerpts, hand-authored answers, reference judgments, and stipulated grader decisions. No model responses were collected. All calculations use Python 3.10 or later and the standard library.
+
+## Run
+
+From the repository root:
+
+```sh
+python3 03_Data_and_Code/AI_Evidence_and_Evaluation/source_selection.py
+python3 03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py
+python3 -m unittest discover -s 03_Data_and_Code/AI_Evidence_and_Evaluation -p 'test_*.py' -v
+```
+
+Paths resolve from the scripts, so these commands also work from another directory with the appropriate script path. Each script overwrites its own derived results. Both programs and six independent small-case checks passed on November 11, 2026. [Verification](verification.json) records the runtime and file hashes.
+
+## Inputs and Outputs
+
+| Program | Inputs | Expected Output |
+| --- | --- | --- |
+| [Source selection](source_selection.py) | [Four synthetic sources and twelve stipulated answers](data/source_cases.json), covering the same four questions in three conditions | [Claim-level records](results/source_claims.csv) and [summary](results/source_summary.csv): four cited answers in every condition; supported counts 4, 2, and 4 |
+| [Grader evaluation](evaluate_graders.py) | [Twelve public practice cases](data/grader_cases.json) and [36 stipulated decisions](data/grader_predictions.csv) | [CSV](results/grader_summary.csv) and [JSON](results/grader_summary.json): permissive and cautious balanced accuracy both 0.8125; imposed total loss 11 and 2.5 units |
+
+The source-selection calculation uses supplied reference annotations. It does not automatically assess semantic entailment. The three conditions are curated evidence, the same evidence plus a misleading memo, and the original collection after source review. Their saved answers are imposed illustrations, so differences do not estimate a model's response to changing context.
+
+The grader set contains eight reference PASS cases and four reference FAIL cases. Every grader is scored on all twelve cases. ABSTAIN, absent rows, and invalid strings remain in the reference-class denominators and are reported separately. A false pass means approving a reference FAIL case. The loss illustration assigns ten units to a false pass, one to a false rejection, and one-half to referral. Referral assumes perfect human resolution and sufficient capacity. These are illustrative decision costs, not estimated financial or consumer losses.
+
+## Definitions and Use
+
+[DATA_DICTIONARY.md](DATA_DICTIONARY.md) defines IDs, labels, denominators, and units. [The public practice lab](../../07_Labs/AI_Evidence_and_Evaluation/README.md) supplies a live-model protocol, coding tasks, independent explanation prompts, and a rubric-design discussion. These materials establish no grading requirements or course-wide AI policy.
+
+To evaluate separately saved responses, use CSV columns `grader,case_id,prediction`, with exactly one row per grader and case. Labels are exactly `PASS`, `FAIL`, or `ABSTAIN`. Duplicate and unknown IDs raise errors; missing or invalid predictions are retained as unscored cases. For example:
+
+```sh
+python3 03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py --predictions /path/to/predictions.csv --output /path/to/evaluation
+```
+
+This command scores the disclosed twelve-case practice set. Changing the cases requires a separately documented reference set and the `evaluate` function. The public labels have already been exposed: performance on these cases is practice agreement, not fresh evidence of generalization. Keep model versions, prompts, corpus versions, run order, and resource use with any new experiment. Save no credentials or private student records in this repository.
+
+## Course Connections
+
+Complete Python appears in M5 §§5.19–5.20, beside two TikZ diagrams. M1 §1.14 connects specifications and independent checks; M7 §7.26 connects grader scores, selective coverage, and error costs. Session 7 uses the source-selection case, and Session 11 revisits grader evaluation. The examples extend the [earnings-call case](../Earnings_Calls/README.md) using wholly fictional inputs.
+
+[The resource guide](../../01_Resources/19_AI_Practice_and_Evaluation/README.md) records the Stanford CS193T activities that motivated the adaptations. All cases, scripts, reference labels, and diagrams in this folder are original course material.
+
+---
+
+## Source: 03_Data_and_Code/AI_Evidence_and_Evaluation/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+## Source Selection
+
+`source_cases.json` contains four fictional documents (`S1`–`S4`), four questions (`Q1`–`Q4`), condition-specific source-ID lists, and one answer per question and condition. Dates describe the fictional setting. S1 is an attributed management statement; S2 is an unanswered analyst question; S3 specifies a selected respondent denominator; S4 is a deliberately misleading secondary memo.
+
+Each answer has `citations`, a list of source IDs; `supported`, a Boolean reference annotation; and `reason`, the annotator's justification. Support is judged against the full fictional record and the question's scope. Attributing an unsupported assertion to its speaker is different from adopting it as a fact. An answer may accurately describe a source while the source supplies insufficient evidence for a causal conclusion.
+
+`source_claims.csv` retains all twelve question-condition observations. `cited` and `supported` are zero-one indicators. `source_summary.csv` reports counts with four answers as the denominator in each condition. Citation validity checks confirm that the named source was supplied; they establish no semantic support.
+
+## Grader Evaluation
+
+`grader_cases.json` has twelve synthetic statements, each with an `id`, `text`, reference `PASS` or `FAIL`, and a written reason. The reference rule concerns evidence, attribution, denominators, and the distinction between proposals and findings. No ethical endorsement or factual claim about an actual firm follows from PASS.
+
+`grader_predictions.csv` contains 36 constructed decisions: one for each grader-case pair. Grader names describe invented decision patterns, not products or observed systems. `ABSTAIN` explicitly requests review. An absent row is missing; a string other than the three allowed labels is invalid. Case IDs must match the reference set, and duplicate grader-case pairs are errors.
+
+In the results, `tp` accepts a reference PASS, `tn` rejects a reference FAIL, `fp` accepts a reference FAIL, and `fn` rejects a reference PASS. `answered = tp + tn + fp + fn`. `coverage = answered / cases`. `accuracy_all = (tp + tn) / cases`; `accuracy_answered` conditions on a valid binary decision and is null if none exists. `balanced_accuracy_all` is one-half of `tp / reference_pass + tn / reference_fail`. Unscored observations remain in those denominators. `false_pass_rate = fp / reference_fail`.
+
+`review_cases` sums explicit abstentions, missing outputs, and invalid outputs. `loss_units = 10*fp + fn + 0.5*review_cases` uses imposed units per twelve-case batch. Every referral is assumed to be resolved correctly at one-half unit of cost. Equal weights apply to cases in the loss; balanced accuracy instead gives equal weight to the two reference classes. No observations are excluded, and no sampling uncertainty or real-world prevalence is estimated.
+
+---
+
+## Source: 03_Data_and_Code/AI_Evidence_and_Evaluation/AGENTS.md
+
+# Agent Guide for AI Evidence and Evaluation
+
+Read the root guide, this folder's README, and DATA_DICTIONARY before using the cases. All documents, answers, labels, grader decisions, and error costs are synthetic and authored for teaching. There have been no model calls. Do not describe saved outputs as model performance or a causal effect of context.
+
+Keep the same question set across source conditions. Citation presence is separate from evidentiary support. Support annotations are human-specified inputs. Preserve speaker role, timing, causal scope, and denominators.
+
+Score the full reference roster for each grader. Report ABSTAIN, missing, and invalid outputs separately. Do not silently drop these records or merge conditional and full-roster scores. The disclosed labels are public practice material, not a hidden test or private answer key. Reference agreement does not validate the rubric's ethical judgments.
+
+After editing inputs or logic, rerun both programs and the independent tests. Update full code in M5, results, figures, and changed slide companions. Run scripts/check_lecture_code.py. Use only public or synthetic inputs in live-model practice and keep credentials and student records out of Git.
+
+---
+
+## Source: 07_Labs/README.md
+
+# Labs and Code
+
+[Evidence Selection and AI Grader Evaluation](AI_Evidence_and_Evaluation/README.md) is available as public, ungraded practice. It includes two verified standard-library Python examples, fictional data, expected outputs, and an optional live-model protocol. It establishes no assignment requirements or course-wide AI policy.
+
+Downloaded reference notebooks remain in `01_Resources`; their saved outputs do not certify a course-tested run. Each released lab should identify inputs, dependencies, commands, expected checks, provenance, and verification. Students should explain analytical choices and check small examples after using a coding assistant.
+
+---
+
+## Source: 07_Labs/AI_Evidence_and_Evaluation/README.md
+
+# Evidence Selection and AI Grader Evaluation
+
+Marketing Analytics. By Nathan Yang.
+
+Public, ungraded practice. The exercises establish no assignment deadline, grading weight, or course-wide AI policy. [M5 §§5.19–5.20](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) contain the explanations and complete Python. [Data and code](../../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) provide dependencies, commands, expected outputs, and verification.
+
+## The Decision
+
+A marketing team uses earnings calls to identify pricing statements for further review. It must preserve what was actually said, distinguish an analyst question from a company decision, and decide which generated claims require a human check. The supplied retailer, excerpts, answers, and grader decisions are fictional.
+
+## Preparation and Independent Judgment
+
+Read S1–S3 and the four questions in [source_cases.json](../../03_Data_and_Code/AI_Evidence_and_Evaluation/data/source_cases.json). Write a short answer to each before looking at the saved responses. Define what a supported answer would contain, including the speaker, population, and scope of a causal claim. Calculate 72 divided by 100 and state whose outcome that fraction describes.
+
+## Activity A: Source Selection
+
+1. Run `source_selection.py` using the command in the data-and-code README. Check all twelve claim-level rows against the source text and reference reasons.
+2. Explain why citation counts remain unchanged when the supported-answer count changes. Identify the exact inferential step in each unsupported answer.
+3. Compare S4 with S1 and S2. Assess whether S4 adds evidence. A conflicting source with credible new observations would require a different judgment from this unsupported memo.
+4. Revise one flawed answer so that its attribution and substantive conclusion are defensible. Explain whether merely adding a citation is enough.
+
+For a live-model extension, use only these public fictional excerpts. Open separate fresh conversations with the same model version and settings. Give one S1–S3 and another S1–S4, with the same four questions and identical output instructions. Randomize condition order across repeated paired runs. Do not include saved answers or `supported` labels in either prompt. Preserve raw responses, source IDs, prompts, date, settings, latency, and any refusals or missing outputs. Changes within one pair are descriptive; repeated runs are needed to separate sampling variation from a stable context effect. Source review can then be tested in a third fresh condition. Do not assume that the model will reproduce the stipulated teaching answers.
+
+A suitable task prompt is: "Using only the supplied excerpts, answer Q1–Q4. Attribute reported claims, name the source IDs supporting each answer, and distinguish observations, questions, proposals, and causal conclusions. State when the excerpts do not establish an answer."
+
+## Activity B: Evaluate a Grader
+
+Read the rubric and [twelve practice cases](../../03_Data_and_Code/AI_Evidence_and_Evaluation/data/grader_cases.json). Discuss the reference reasons before interpreting a score. PASS means an evidence-respecting statement; it does not certify the ethics of a business practice.
+
+1. Run `evaluate_graders.py`. Reconstruct the permissive grader's confusion counts by hand and compute both class recalls.
+2. Explain how the cautious grader obtains the same balanced accuracy while making fewer false approvals and referring one case.
+3. Recompute loss with false-approval cost 1, false-rejection cost 1, and review cost 5. Explain why the preferred grader changes when review becomes costly. These costs are imposed decision scenarios.
+4. Remove one prediction in a separate copy of the CSV and use `--predictions` and `--output` to score it. Check that the case remains in the denominator. Try an invalid label and a duplicate ID, then explain their different treatment.
+
+For an optional model judge, supply the source excerpts, a fixed rubric, and statement texts. Ask for one of PASS, FAIL, or ABSTAIN for each ID, with a separate reason. Keep reference labels out of the model prompt. The public cases are already disclosed and serve as practice. To estimate generalization, prepare new cases, obtain independent human judgments with reasons, resolve or explicitly report disagreements, freeze the rubric, and evaluate once on cases unused in revision. When reference judgments remain unresolved, report their count and the coverage of the scorable set rather than silently discarding them. The supplied scorer requires both binary reference classes and does not adjudicate disagreements.
+
+## Activity C: Explain and Repair
+
+Give a coding assistant the roster, input schema, output specification, and required checks. Ask it to suggest one change at a time. Reopen the resulting files and compare one score with a hand calculation. Explain, without the assistant, why a missing response is different from a correct rejection. Apply the same reasoning to a new two-case example before looking at its solution.
+
+Compare anonymous outputs using criteria fixed in advance. Record correction time alongside execution time when evaluating whether assistance was useful. An independent explanation checks a specific skill at that moment; it does not establish a long-term effect on learning.
+
+## Discussion and Timing
+
+Session 7 can use 10 minutes for the evidence question and a demonstration, 25 minutes for Activity A, and 10 minutes for independent explanation within its existing 45-minute Python block. Session 11 can use 15 minutes of the existing application block for Activity B, with the remaining 15 minutes retaining forecast interpretation. Activity C and additional live runs are optional practice. The full 170-minute meetings remain unchanged.
+
+Connect the evaluation to Marketing Dialectics: who chose the rubric, whose losses count, and which decisions remain the student's responsibility? A grader can apply a narrow rule consistently while the rule omits an important customer consequence.
+
+## Provenance
+
+These original cases adapt activity ideas from Stanford CS193T. The [resource guide](../../01_Resources/19_AI_Practice_and_Evaluation/README.md) links the selected public assignment pages. No Stanford assessment rules or hidden evaluation data have been adopted.
 
 ---
 

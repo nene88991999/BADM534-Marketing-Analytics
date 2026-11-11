@@ -1411,7 +1411,8 @@
     "objectives": [
       "Define a text construct and evaluate labels on the deployment population.",
       "Distinguish prevalence, text exposure, retrieval, and substantive interpretation.",
-      "Explain network reach and brokerage without inferring influence from correlation."
+      "Explain network reach and brokerage without inferring influence from correlation.",
+      "Distinguish citation presence from support using a controlled source comparison."
     ],
     "slides": [
       {
@@ -1610,6 +1611,27 @@
       },
       {
         "kind": "figure",
+        "title": "Citations and Supporting Evidence",
+        "figure": "../06_Lecture_Notes/figures/M05_source_selection.tex",
+        "caption": "Four fictional pricing questions; authored answers and reference annotations.",
+        "description": "All four answers cite a source in every condition. Supported counts are four with curated sources, two after a misleading memo is added, and four after review. The contrast is stipulated.",
+        "notes": "S1 reports a price increase and a before-after unit change without a causal design. S2 is an unanswered analyst question about discounts. S3 defines a selected panel-member denominator. S4 incorrectly asserts causality and a discount announcement. Citation presence does not establish that an inference is justified. No model responses were collected, so these counts measure no effect of context.",
+        "source": "M5 §5.19. ../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Controlled Source Comparison",
+        "bullets": [
+          "Hold the questions, model version, and scoring rule fixed.",
+          "Use fresh conversations and preserve raw responses.",
+          "Repeat paired runs; randomize condition order.",
+          "Assess support independently and retain missing answers."
+        ],
+        "notes": "Run source_selection.py to reproduce the constructed example. In an optional live extension, supply the excerpts and questions without the saved answers or support labels. A single pair gives a descriptive comparison. Repetition helps separate sampling variation from a stable context effect. Credible contradictory evidence requires review; disagreement alone is not a reason to exclude a source. The class activity fits the existing earnings-call Python block.",
+        "source": "M5 §5.19; ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/"
+      },
+      {
+        "kind": "figure",
         "title": "Generator and Judge Changes",
         "figure": "../06_Lecture_Notes/figures/M05_judge_change.tex",
         "caption": "Identical saved outputs are scored by both judges. All scores are stipulated.",
@@ -1661,12 +1683,13 @@
         "kind": "bullets",
         "title": "Coding Exercise: A Label Assessment",
         "bullets": [
-          "Run the earnings-call assessment and role-exposure calculation.",
-          "Test denial, future intention, and a missed paraphrase.",
-          "Explain which extra labels would identify precision and recall."
+          "Reproduce the four-question source comparison.",
+          "Trace each unsupported claim to its inferential error.",
+          "Explain why citation counts remain unchanged.",
+          "Check one result without the coding assistant."
         ],
-        "notes": "Use ../03_Data_and_Code/Earnings_Calls/README.md and LLM_EXERCISES.md. The mHealth example provides a second application of held-out description evaluation. Synthetic dictionary contrasts are implementation checks; they do not estimate deployment accuracy.",
-        "source": "M5, Section 5.9, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+        "notes": "Use ten minutes to introduce the question and demonstrate the output, twenty-five minutes for the source comparison, and ten minutes for independent explanation within the existing forty-five-minute Python block. The supplied answers are synthetic. Earnings-call retrieval checks and mHealth text comparisons remain available as extensions. No grading requirements are established.",
+        "source": "M5 §§5.19–5.20. ../07_Labs/AI_Evidence_and_Evaluation/README.md"
       },
       {
         "kind": "bullets",
@@ -1711,10 +1734,11 @@
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
       "[University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)",
-      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)"
+      "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
+      "[Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)"
     ],
-    "practice": "Assess word exposure and pricing constructs; separate prompt revision from fresh document evaluation.",
-    "application": "Compare earnings-call labels, mHealth descriptions, and network interpretations on their stated populations."
+    "practice": "Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.",
+    "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations."
   },
   {
     "number": 8,
@@ -2335,7 +2359,8 @@
       "Compare ranking, calibration, and decision costs.",
       "Assess coverage and missing future labels in an availability forecast.",
       "Compare identical rankings with different probability losses and demand forecasts.",
-      "Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes."
+      "Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes.",
+      "Evaluate grader coverage and asymmetric error costs against explicit reference judgments."
     ],
     "slides": [
       {
@@ -2589,6 +2614,27 @@
         "source": "M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py"
       },
       {
+        "kind": "figure",
+        "title": "Equal Grader Scores, Different Consequences",
+        "figure": "../06_Lecture_Notes/figures/M05_grader_costs.tex",
+        "caption": "Twelve synthetic statements; all cases remain in the scoring denominators.",
+        "description": "Both graders have 81.25 percent balanced accuracy. The permissive grader has one false approval and one false rejection, with imposed loss eleven. The cautious grader has two false rejections and one referral, with imposed loss two and one-half.",
+        "notes": "There are eight reference PASS statements and four reference FAIL statements. The permissive grader correctly accepts seven and rejects three. The cautious grader correctly accepts five and rejects all four; it abstains on one reference PASS. Valid-decision coverage is twelve of twelve and eleven of twelve. False approval costs ten loss units, false rejection one, and perfect human resolution after referral one-half. A cost change can reverse the ranking. These are constructed decisions, not measured model performance.",
+        "source": "M5 §5.20 and M7 §7.26. ../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py"
+      },
+      {
+        "kind": "bullets",
+        "title": "Reference Judgments and Customer Interests",
+        "bullets": [
+          "Give every reference judgment a reason.",
+          "Keep missing, invalid, and abstained outputs visible.",
+          "Reserve new cases from rubric and prompt revision.",
+          "Assess whose consequences the scoring rule includes."
+        ],
+        "notes": "The public practice labels are disclosed. To estimate generalization, collect new statements and independent judgments, resolve or report disagreements, freeze the rubric, and evaluate on cases not used for revision. Reference agreement does not establish ethical validity. Use fifteen minutes of the existing application block for the grader comparison and fifteen for forecast interpretation. The conformal prediction exercise remains in the Python block.",
+        "source": "M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/"
+      },
+      {
         "kind": "bullets",
         "title": "Coding Exercise: A Forecast Evaluation",
         "bullets": [
@@ -2631,10 +2677,11 @@
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
       "[Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)",
       "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)",
-      "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)"
+      "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)",
+      "[Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)"
     ],
     "practice": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
-    "application": "Compare forecast accuracy, coverage, width, and customer consequences for the intended deployment."
+    "application": "Compare forecast coverage and grader error costs while preserving the full evaluation population."
   },
   {
     "number": 12,

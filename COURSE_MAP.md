@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 72 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 76 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -105,3 +105,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Prediction Intervals, Label Sets, and Changing Demand
 
 [Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) extends M7 §§7.24–7.25 with finite-sample calibration, segment coverage, and complaint routing. M8 §8.21 examines an imposed change in demand. Sessions 11 and 13 carry the examples. [Complete original Python and generated records](03_Data_and_Code/Conformal_Prediction/README.md) support connections to M3 uncertainty, M5 text classification, and M9 customer consequences.
+
+## Source Selection and Evaluation of AI Graders
+
+[Original synthetic cases](03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) connect M1 §1.14 specifications and retained skills, M5 §§5.19–5.20 source support and grader evaluation, and M7 §7.26 coverage and decision costs. The [practice lab](07_Labs/AI_Evidence_and_Evaluation/README.md) adapts Stanford CS193T activities to the earnings-call example. Sessions 7 and 11 retain their existing meeting times and cover the two comparisons. Discussion connects reference judgments to the customer-agency questions in M9.

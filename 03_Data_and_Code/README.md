@@ -69,3 +69,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Conformal Prediction
 
 [Demand intervals and complaint-label sets](Conformal_Prediction/README.md) use fixed synthetic records, a shared finite-sample rank function, and complete standard-library Python. Six checks verify boundary ranks, ties, segment denominators, paired demand changes, and sets. Full code appears in M7 §§7.24–7.25, with demand-shift interpretation in M8 §8.21.
+
+## AI Evidence and Evaluation
+
+[Source selection and grader evaluation](AI_Evidence_and_Evaluation/README.md) use original fictional excerpts, stipulated answers, and disclosed reference judgments. Two complete programs and six independent checks preserve paired questions and full scoring denominators. No model performance is measured. M5 §§5.19–5.20 contain the full source.

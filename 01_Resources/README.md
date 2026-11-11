@@ -80,3 +80,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Conformal Prediction
 
 [A focused guide and versioned notebook catalog](18_Conformal_Prediction/README.md) support demand intervals, segment coverage, complaint-label sets, and temporal revalidation. The course adaptations use original synthetic records and verified standard-library Python.
+
+## AI Practice and Evaluation
+
+[Selected Stanford CS193T activities](19_AI_Practice_and_Evaluation/README.md) motivate original exercises on source selection, evaluator reliability, and independent verification. The source record links public materials without republishing them. Full course Python, synthetic cases, and a practice lab accompany the notes.

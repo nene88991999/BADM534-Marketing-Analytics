@@ -143,3 +143,7 @@ Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §
 ## Conformal Prediction
 
 [The source review](../01_Resources/18_Conformal_Prediction/SOURCE_REVIEW.md) informs finite-sample calibration in M7 §7.24, complaint-label sets in §7.25, and changed-demand evaluation in M8 §8.21. [Original course programs](../03_Data_and_Code/Conformal_Prediction/README.md) construct all inputs, preserve every evaluation record, and provide the tables for two TikZ figures. Sessions 11 and 13 contain the corresponding discussion. Source inspection is recorded separately from executed course code; no upstream notebook was run.
+
+## Thinking With AI: Source Selection and Evaluation
+
+[Stanford CS193T activity ideas](../01_Resources/19_AI_Practice_and_Evaluation/README.md) support the original source-selection and grader comparisons in M5 §§5.19–5.20. M1 §1.14 and M7 §7.26 connect specifications, independent explanation, evaluation coverage, and asymmetric loss. Two programs, six checks, and two TikZ diagrams use entirely synthetic inputs. [The practice lab](../07_Labs/AI_Evidence_and_Evaluation/README.md) supplies an optional protocol for collecting new responses. Sessions 7 and 11 include the comparisons.

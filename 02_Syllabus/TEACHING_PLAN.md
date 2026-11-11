@@ -68,3 +68,7 @@ Session 3 compares customer-level spending and paired changes within the existin
 ## Prediction Uncertainty and Changing Demand
 
 Session 11 uses its existing worked-comparison and Python blocks for finite-sample calibration, demand-interval coverage by segment, and complaint routing. Ranking and paired-upgrade comparisons remain available for follow-up practice. Session 13 connects changed-demand coverage to adaptive policies and delayed observations. [M7 §§7.24–7.25 and M8 §8.21](../03_Data_and_Code/Conformal_Prediction/README.md) provide the full examples. The 15 meetings, dates, and 170-minute allocations are unchanged.
+
+## Evidence Selection and AI Graders
+
+Session 7 uses its existing 45-minute Python block for a 10-minute demonstration, 25-minute source-selection activity, and 10-minute independent explanation. Session 11 allocates 15 minutes of its existing 30-minute application block to grader evaluation and 15 minutes to forecast interpretation; the conformal exercise remains in the Python block. [Public ungraded practice](../07_Labs/AI_Evidence_and_Evaluation/README.md) includes optional model runs. These activities introduce no new grading rules, dates, guest speakers, or course-wide AI permissions.

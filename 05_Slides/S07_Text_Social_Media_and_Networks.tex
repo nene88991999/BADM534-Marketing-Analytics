@@ -265,6 +265,39 @@ M5, Section 5.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 Marketing Analytics Lecture Notes, M5 §5.15.}
 \end{frame}
+\begin{frame}{Citations and Supporting Evidence}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_source_selection.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Four fictional pricing questions; authored answers and reference annotations.\par}
+\note{S1 reports a price increase and a before-after unit change without a causal design. S2 is an unanswered analyst question about discounts. S3 defines a selected panel-member denominator. S4 incorrectly asserts causality and a discount announcement. Citation presence does not establish that an inference is justified. No model responses were collected, so these counts measure no effect of context.
+
+M5 §5.19. \url{../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md}}
+\end{frame}
+\begin{frame}{A Controlled Source Comparison}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Hold the questions, model version, and scoring rule fixed.
+\item Use fresh conversations and preserve raw responses.
+\item Repeat paired runs; randomize condition order.
+\item Assess support independently and retain missing answers.
+\end{slidebullets}
+\vfill
+\note{Run source\_selection.py to reproduce the constructed example. In an optional live extension, supply the excerpts and questions without the saved answers or support labels. A single pair gives a descriptive comparison. Repetition helps separate sampling variation from a stable context effect. Credible contradictory evidence requires review; disagreement alone is not a reason to exclude a source. The class activity fits the existing earnings-call Python block.
+
+M5 §5.19; \url{../07_Labs/AI_Evidence_and_Evaluation/README.md;} \url{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/}}
+\end{frame}
 \begin{frame}{Generator and Judge Changes}
 \usebeamercolor[fg]{normal text}
 \centering
@@ -347,14 +380,15 @@ M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 \usebeamercolor[fg]{normal text}
 \vfill
 \begin{slidebullets}
-\item Run the earnings-call assessment and role-exposure calculation.
-\item Test denial, future intention, and a missed paraphrase.
-\item Explain which extra labels would identify precision and recall.
+\item Reproduce the four-question source comparison.
+\item Trace each unsupported claim to its inferential error.
+\item Explain why citation counts remain unchanged.
+\item Check one result without the coding assistant.
 \end{slidebullets}
 \vfill
-\note{Use ../03\_Data\_and\_Code/Earnings\_Calls/README.md and LLM\_EXERCISES.md. The mHealth example provides a second application of held-out description evaluation. Synthetic dictionary contrasts are implementation checks; they do not estimate deployment accuracy.
+\note{Use ten minutes to introduce the question and demonstrate the output, twenty-five minutes for the source comparison, and ten minutes for independent explanation within the existing forty-five-minute Python block. The supplied answers are synthetic. Earnings-call retrieval checks and mHealth text comparisons remain available as extensions. No grading requirements are established.
 
-M5, Section 5.9, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+M5 §§5.19–5.20. \url{../07_Labs/AI_Evidence_and_Evaluation/README.md}}
 \end{frame}
 \begin{frame}{Engagement and Commercial Value}
 \usebeamercolor[fg]{normal text}

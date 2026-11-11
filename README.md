@@ -68,3 +68,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Prediction Uncertainty
 
 [Conformal prediction](01_Resources/18_Conformal_Prediction/README.md) connects demand intervals, customer-service routing, and changing demand. [Two reproducible synthetic examples](03_Data_and_Code/Conformal_Prediction/README.md) accompany full Python in M7 §§7.24–7.25, interpretation in M8 §8.21, and Session 11 and 13 slides.
+
+## Evidence Selection and AI Graders
+
+[Two original examples](03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) connect source selection, reference judgments, and the costs of incorrect approval. [Public practice activities](07_Labs/AI_Evidence_and_Evaluation/README.md) accompany full Python in M5 §§5.19–5.20 and Sessions 7 and 11.

@@ -16,11 +16,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 29 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 31 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 26 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 28 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 18 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
@@ -152,9 +152,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess earnings-call retrieval and interpretation; compare fixed outputs under different judge versions.
+**Python and Evidence:** Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.
 
-**Application:** Separate generator improvements from judge changes, sponsor framing, and affiliation-network composition.
+**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -232,7 +232,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Application:** Compare forecast accuracy, coverage, width, and customer consequences for the intended deployment.
+**Application:** Compare forecast coverage and grader error costs while preserving the full evaluation population.
 
 **Ethics and Regulation:** Coverage by customer segment, review access, and consequences of incorrect routing.
 

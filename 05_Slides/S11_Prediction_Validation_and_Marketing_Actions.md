@@ -13,6 +13,7 @@ Session 11. M7. 170 minutes.
 - Assess coverage and missing future labels in an availability forecast.
 - Compare identical rankings with different probability losses and demand forecasts.
 - Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes.
+- Evaluate grader coverage and asymmetric error costs against explicit reference judgments.
 
 ## Related Materials
 
@@ -25,6 +26,7 @@ Session 11. M7. 170 minutes.
 - [Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)
 - [PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)
 - [Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)
+- [Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -304,7 +306,30 @@ The complete program preserves every paired case and each segment denominator. W
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
 
-## Slide 24: Coding Exercise: A Forecast Evaluation
+## Slide 24: Equal Grader Scores, Different Consequences
+
+Twelve synthetic statements; all cases remain in the scoring denominators.
+
+**Figure description:** Both graders have 81.25 percent balanced accuracy. The permissive grader has one false approval and one false rejection, with imposed loss eleven. The cautious grader has two false rejections and one referral, with imposed loss two and one-half.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_grader_costs.tex)
+
+There are eight reference PASS statements and four reference FAIL statements. The permissive grader correctly accepts seven and rejects three. The cautious grader correctly accepts five and rejects all four; it abstains on one reference PASS. Valid-decision coverage is twelve of twelve and eleven of twelve. False approval costs ten loss units, false rejection one, and perfect human resolution after referral one-half. A cost change can reverse the ranking. These are constructed decisions, not measured model performance.
+
+Source: M5 §5.20 and M7 §7.26. ../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py
+
+## Slide 25: Reference Judgments and Customer Interests
+
+- Give every reference judgment a reason.
+- Keep missing, invalid, and abstained outputs visible.
+- Reserve new cases from rubric and prompt revision.
+- Assess whose consequences the scoring rule includes.
+
+The public practice labels are disclosed. To estimate generalization, collect new statements and independent judgments, resolve or report disagreements, freeze the rubric, and evaluate on cases not used for revision. Reference agreement does not establish ethical validity. Use fifteen minutes of the existing application block for the grader comparison and fifteen for forecast interpretation. The conformal prediction exercise remains in the Python block.
+
+Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
+
+## Slide 26: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -314,7 +339,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 25: Targeting and Delivered Opportunities
+## Slide 27: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -324,7 +349,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 26: Prediction Discussion
+## Slide 28: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

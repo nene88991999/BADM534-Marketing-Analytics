@@ -1,0 +1,33 @@
+{
+  "verified_on": "2026-11-11",
+  "python_version": "3.14.8",
+  "python_executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+  "dependencies": "Python standard library",
+  "programs_executed": [
+    "source_selection.py",
+    "evaluate_graders.py"
+  ],
+  "independent_tests_passed": 6,
+  "matching_note_code_blocks": 63,
+  "independent_result_reconciliation": true,
+  "figure_values_checked_against_independent_aggregates": true,
+  "alternative_cost_losses": {
+    "permissive": 2,
+    "cautious": 7
+  },
+  "live_model_runs": 0,
+  "sha256_representation": "UTF-8 file bytes with CRLF line endings normalized to LF, matching the repository text representation.",
+  "scope": "Original fictional sources, stipulated answers and grader decisions, and disclosed reference judgments. No collected model responses, semantic fact-checking model, or measured customer outcomes.",
+  "sha256": {
+    "data/grader_cases.json": "0744da1bd31fc6555d0de0d6b8ddf4e51ca66cd9e345c1853e6bb46896611e27",
+    "data/grader_predictions.csv": "a8f40efbe5cf0d2f154883445b162515b8d67ba700df9c6c2816dd176170428b",
+    "data/source_cases.json": "988c1f96c2414181e9899bd5af659d4a0ebd10f4fb22b73f791902fc5b0c023c",
+    "evaluate_graders.py": "a4be9c8c056c489dfaaadb0a4344d49ffbd8c169e123b189cbcd2d9b5bb9e88e",
+    "results/grader_summary.csv": "03d1ec13909c3c482f7d3ba52ed83dfc1e8f104f76c5b6033fa391364fc47668",
+    "results/grader_summary.json": "01747453cb612da7f6ab8b60f2b4fbbb9a82fde2116c91361cfce669b83d4b54",
+    "results/source_claims.csv": "f3b26d30a7198b88b01168e870fc1fa8238223a737230c225010afa642e080c0",
+    "results/source_summary.csv": "060c627f9c37dfbf3a14866a64d09c0d5ee3af09ad2ed76de44f6842c3ef4df3",
+    "source_selection.py": "8157e08f6602f1ff4a007b2d7e3335475d52cb9fffb49f367bab5c2b5a8cae5d",
+    "test_examples.py": "76c7721904eaa3d3c62695fe9404903672ed305b122c2bb87e03a9062abb9e8e"
+  }
+}

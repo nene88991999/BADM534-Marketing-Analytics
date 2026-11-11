@@ -330,6 +330,39 @@ print(gain_pp, old_loss, new_loss)
 
 M7 §7.22. \url{../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py}}
 \end{frame}
+\begin{frame}{Equal Grader Scores, Different Consequences}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_grader_costs.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Twelve synthetic statements; all cases remain in the scoring denominators.\par}
+\note{There are eight reference PASS statements and four reference FAIL statements. The permissive grader correctly accepts seven and rejects three. The cautious grader correctly accepts five and rejects all four; it abstains on one reference PASS. Valid-decision coverage is twelve of twelve and eleven of twelve. False approval costs ten loss units, false rejection one, and perfect human resolution after referral one-half. A cost change can reverse the ranking. These are constructed decisions, not measured model performance.
+
+M5 §5.20 and M7 §7.26. \url{../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py}}
+\end{frame}
+\begin{frame}{Reference Judgments and Customer Interests}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Give every reference judgment a reason.
+\item Keep missing, invalid, and abstained outputs visible.
+\item Reserve new cases from rubric and prompt revision.
+\item Assess whose consequences the scoring rule includes.
+\end{slidebullets}
+\vfill
+\note{The public practice labels are disclosed. To estimate generalization, collect new statements and independent judgments, resolve or report disagreements, freeze the rubric, and evaluate on cases not used for revision. Reference agreement does not establish ethical validity. Use fifteen minutes of the existing application block for the grader comparison and fifteen for forecast interpretation. The conformal prediction exercise remains in the Python block.
+
+M5 §5.20 and M7 §7.26. \url{../07_Labs/AI_Evidence_and_Evaluation/README.md;} \url{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/}}
+\end{frame}
 \begin{frame}{Coding Exercise: A Forecast Evaluation}
 \usebeamercolor[fg]{normal text}
 \vfill
