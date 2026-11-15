@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 11, 2026\par}
+{\large November 15, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -5841,6 +5841,445 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M04-clustering-cost-and-the-meaning-of-a-segment}{%
+\section{Clustering Cost and the Meaning of a
+Segment}\label{M04-clustering-cost-and-the-meaning-of-a-segment}}
+
+\noindent \noindent A marketing team organizing millions of product or review
+vectors may need to repeat clustering as its catalog changes. Lower
+computation time can make alternative representations and robustness
+checks feasible. The economic value depends on what the groups enable:
+inspecting representative complaints, organizing a product taxonomy, or
+allocating a fixed amount of human review. A customer-support decision
+also requires evidence about how the proposed action changes customer
+outcomes. Computational efficiency alone does not identify that
+response.
+
+For a fixed representation, the optimization comparison can hold the
+observations, feature scale, and number of centers constant. Let
+\(z_i\in\mathbb{R}^d\) be the transformed vector for observation \(i\),
+and let \(\mu_1,\ldots,\mu_K\) be the centers. The average squared
+distance to the nearest center is
+
+\[
+Q(\mu)=\frac{1}{n}\sum_{i=1}^{n}\min_{1\leq j\leq K}\|z_i-\mu_j\|^2.
+\]
+
+The denominator is the number of vectors. Each squared norm sums over
+the \(d\) coordinates, so the units are squared transformed-feature
+units per vector. Lloyd k-means alternates assigning observations to
+centers and replacing each center with the mean of its assigned
+observations. MiniBatchKMeans updates centers from smaller batches. Both
+the stopping rule and the implementation affect the measured cost of
+reaching a particular value of \(Q\).
+
+\href{https://arxiv.org/abs/2611.09501v1}{Bessa, Mazaré, Szilvasy,
+Touvron, Picard, Douze, and Jégou (2026)} develop e-means using
+exponentially weighted cluster sums and counts. To describe the update
+for cluster \(j\) at training step \(t\), let \(s_{jt}\) be the sum of
+vectors assigned to that cluster in the current batch and \(n_{jt}\)
+their count. Let \(S_{j,t-1}\) and \(N_{j,t-1}\) be the corresponding
+weighted quantities carried from earlier steps. With step weight
+\(\alpha_t\), the update is
+
+\[
+\begin{aligned}
+S_{jt}&=(1-\alpha_t)S_{j,t-1}+\alpha_t s_{jt},\\
+N_{jt}&=(1-\alpha_t)N_{j,t-1}+\alpha_t n_{jt},\\
+\mu_{jt}&=S_{jt}/N_{jt},\qquad N_{jt}>0.
+\end{aligned}
+\]
+
+The count update gives observations their appropriate influence when
+batches contribute different numbers of assignments to a cluster.
+Suppose the earlier weighted count is 10 with sum 20, while the current
+batch contributes two observations with sum 14. At \(\alpha_t=1/2\), the
+updated sum is 17 and the weighted count is 6, giving a center of
+\(17/6\approx2.833\). Directly averaging the earlier mean 2 and the
+batch mean 7 would give 4.5. That calculation would give the two batch
+observations much greater influence per observation. The complete
+e-means implementation also specifies initialization, a cooling
+schedule, and treatment of unused clusters. In shuffled static training
+data, a recent batch refers to training order. It does not imply that
+more recent customer behavior receives greater economic importance.
+
+The
+\href{https://github.com/owlgebra-ai/faiss/tree/9ecbf0c2a2f4ca7a771b552badc145584b09e1a6/contrib/o_means}{o-means
+implementation} adds a two-level approximate assignment method for large
+numbers of centers, along with a different closing mean. Its benchmark
+evaluates final centers with exact float32 search and compares
+quality-adjusted timing on a particular GPU. Approximate assignment can
+save computation while missing the nearest center, and implementation
+kernels contribute to speed. The reported benefits concern large
+dense-vector problems; the code provides no CPU backend. The
+\href{../01_Resources/23_Clustering_Optimization/README.md}{source
+guide} records the versions and scope. These methods use squared
+Euclidean distance. Applying them to the Jaccard mechanism comparison in
+Section 4.17 or the affiliation network in Section 5.17 would change the
+objective and interpretation.
+
+\hypertarget{M04-final-centers-and-customer-profiles}{%
+\section{Final Centers and Customer
+Profiles}\label{M04-final-centers-and-customer-profiles}}
+
+\noindent \noindent A cluster profile combines records assigned to the same group.
+When centers move during training, a stored assignment may refer to an
+earlier center configuration. Aggregating those stored labels can
+therefore describe a different partition from the one implied by the
+final centers. The
+\href{https://github.com/facebookresearch/faiss/tree/ebab8f784c1d177129602269d5ad966c525fbdcb/contrib/e_means}{Faiss
+e-means documentation} distinguishes the labels returned during training
+from a new assignment using the fitted centers. The final assignment
+requires its own calculation and can add meaningful computation time.
+
+Consider four synthetic scalar observations, \(0,4,5,10\), and final
+centers at 2 and 7.5. Suppose the saved labels place the first three
+observations in A and the last in B. The midpoint between the centers is
+4.75, so observation 5 belongs to B under the final nearest-center rule.
+Holding the points and centers fixed, the saved assignment gives mean
+squared distance \(93/16=5.8125\). Reassigning the points gives
+\(41/8=5.125\). One of four labels changes. A segment mean or count
+computed before this check could therefore be inconsistent with the
+reported centers.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_centroid_assignments.tex}
+\caption{Four constructed scalar observations retain fixed final centers at 2 and 7.5. The final boundary at 4.75 moves observation 5 from A to B. One of four labels changes, reducing mean squared distance from 5.8125 to 5.125. Blue circles and orange squares identify the two groups.}\label{fig:M04_centroid_assignments}
+\end{figure}
+
+The following calculation uses exact fractions for both the
+weighted-center example and the assignment comparison. Inputs are
+imposed scalar values; there are no observed customer outcomes. Its
+output preserves each point, center, assignment, and denominator.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Clustering_Optimization/centroid_checks.py}{centroid\_checks.py}.
+From its folder, run \texttt{python3\ centroid\_checks.py} using the
+standard library.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Exact arithmetic for centroid weighting and stale assignments."""
+from fractions import Fraction as F
+from pathlib import Path
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def examples():
+    # Earlier assignments: ten observations with mean 2.
+    # Current batch: two observations with mean 7. Alpha is one-half.
+    alpha = F(1, 2)
+    total = (1 - alpha) * 20 + alpha * 14
+    mass = (1 - alpha) * 10 + alpha * 2
+    center = total / mass
+    naive = (1 - alpha) * 2 + alpha * 7
+    points = [F(0), F(4), F(5), F(10)]
+    centers = [F(2), F(15, 2)]
+    saved = [0, 0, 0, 1]
+    final = [min(range(2), key=lambda j: (x - centers[j])**2)
+             for x in points]
+    saved_loss = sum((x - centers[j])**2
+                     for x, j in zip(points, saved)) / len(points)
+    final_loss = sum((x - centers[j])**2
+                     for x, j in zip(points, final)) / len(points)
+    return {
+        "scope": "Constructed scalar examples; no observed customer outcomes",
+        "ema_sum": str(total), "ema_mass": str(mass),
+        "ema_centroid": str(center), "mean_of_centroids": str(naive),
+        "points": [str(x) for x in points],
+        "centers": [str(x) for x in centers],
+        "saved_labels": saved, "final_labels": final,
+        "boundary": str(sum(centers) / 2),
+        "changed": sum(a != b for a, b in zip(saved, final)),
+        "denominator": len(points),
+        "saved_assignment_mse": str(saved_loss),
+        "final_assignment_mse": str(final_loss),
+    }
+
+
+if __name__ == "__main__":
+    result = examples()
+    (HERE / "results").mkdir(exist_ok=True)
+    (HERE / "results/centroid_checks.json").write_text(
+        json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
+\hypertarget{M04-comparing-implementations-on-fixed-data}{%
+\section{Comparing Implementations on Fixed
+Data}\label{M04-comparing-implementations-on-fixed-data}}
+
+\noindent \noindent A team choosing a clustering implementation needs a common
+quality measure and a clearly defined timing boundary. The synthetic
+comparison fixes 50,000 training vectors, 10,000 independently drawn
+test vectors, 32 coordinates, and 64 centers. Eight Gaussian components
+have unequal probabilities, with means drawn once from a normal
+distribution with standard deviation 1.5 and coordinate noise with
+standard deviation 0.8. Training means and standard deviations transform
+both samples. The fitted center count deliberately exceeds the number of
+generating components: the objective is a compact squared-distance
+approximation, and a fitted cluster need not correspond to a distinct
+population type.
+
+The data seed is 20261115. For each initialization seed, all three
+implementations receive the same 64 sampled training vectors as starting
+centers. The comparison uses seeds 11, 23, and 37 and budget settings 2,
+5, and 10. A budget denotes a Lloyd iteration cap, a MiniBatch
+maximum-passes setting, or e-means epochs. These settings do not imply
+equal arithmetic work. MiniBatch uses batches of 256, while e-means
+chooses its batch size and step schedule automatically. The saved
+recipes identify those choices. A full-distance float64 calculation
+assigns every training and test observation to its nearest final center
+and computes the same loss for every method.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Method & Budget & Fit (ms) & Evaluation (ms) & Test MSE & Changed Labels
+(\%) \\
+\midrule
+
+Lloyd & 2 & 13.5 & 150.8 & 10.6496 & 0.000 \\
+Lloyd & 5 & 24.0 & 141.1 & 10.5538 & 0.000 \\
+Lloyd & 10 & 49.3 & 169.0 & 10.5264 & 0.000 \\
+MiniBatch & 2 & 21.8 & 143.4 & 10.5693 & 0.000 \\
+MiniBatch & 5 & 48.8 & 140.1 & 10.5530 & 0.000 \\
+MiniBatch & 10 & 89.4 & 150.9 & 10.5448 & 0.000 \\
+e-means & 2 & 32.0 & 152.0 & 10.5177 & 9.408 \\
+e-means & 5 & 57.4 & 144.6 & 10.5030 & 2.384 \\
+e-means & 10 & 114.4 & 159.4 & 10.4960 & 1.496 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each cell is the median across three initializations, conditional on the
+fixed data. Test MSE averages squared distance across all 10,000 test
+vectors; changed-label percentages use the 50,000 valid saved training
+labels in each run. Training is measured after warm-up with one
+numerical thread on an ARM64 CPU. The common evaluation includes final
+assignments and distances for both samples. Imports, data generation,
+scaling, saving outputs, and stability calculations are excluded. These
+short elapsed times are specific to the recorded environment and provide
+no confidence interval for performance on another machine.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_clustering_cost.tex}
+\caption{The horizontal axis is median CPU fitting time in milliseconds; the vertical axis is mean squared distance per held-out vector. Three seeds are summarized for each method and cap. e-means has lower held-out error and longer fit time than Lloyd at each corresponding cap. The shared evaluation time is excluded from the horizontal axis and reported separately in the table.}\label{fig:M04_clustering_cost}
+\end{figure}
+
+At the displayed caps, e-means reaches smaller held-out loss and takes
+longer to fit than Lloyd. At cap 2, the median e-means saved-label
+disagreement is 9.408\%. The common evaluation also takes longer than
+fitting in these runs. Both findings matter for implementation: quality,
+fitting time, and the cost of producing consistent final profiles enter
+the choice. This comparison evaluates complete library implementations
+with their recorded settings. It does not isolate the causal
+contribution of the exponential update or reproduce the sources' GPU
+speedups.
+
+Pairwise adjusted Rand agreement compares the partitions from different
+initialization seeds on the same held-out observations. Relabeling
+cluster numbers leaves this statistic unchanged. Agreement measures
+sensitivity to initialization conditional on the feature representation,
+data, and \(K\). Repeatedly selecting configurations using held-out loss
+would turn that sample into development data. A subsequent
+generalization claim would require a fresh evaluation sample.
+
+The mHealth segments in Section 4.11 use three earlier-window behavioral
+features and three centers. Their later logging profiles address
+behavioral interpretation. They provide no evidence that GPU search
+would improve this small calculation or that a lower clustering loss
+would increase the effect of support. A proposed intervention needs an
+outcome and comparison tied to the action, while customer choice and
+respect for persons remain part of the justification in Marketing
+Dialectics. More efficient grouping increases the feasible range of
+analyses; the evidence for using a group in a marketing decision must
+still be supplied.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Clustering_Optimization/compare_clustering.py}{compare\_clustering.py}.
+Install the pinned requirements in an isolated environment as described
+in the
+\href{../03_Data_and_Code/Clustering_Optimization/README.md}{replication
+guide}, then run
+\texttt{python\ compare\_clustering.py\ -\/-output\ local\_runs}. The
+complete program generates the observations, fits each method, scores
+final centers, saves every label vector, and calculates aggregate
+results.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Compare three CPU implementations on fixed synthetic vectors."""
+from pathlib import Path
+from time import perf_counter
+from itertools import combinations
+import argparse
+import csv
+import hashlib
+import json
+import platform
+
+import numpy as np
+import sklearn
+import faiss
+from faiss.contrib.e_means import NumpyEmeans
+from sklearn.cluster import KMeans, MiniBatchKMeans
+from sklearn.metrics import adjusted_rand_score
+from threadpoolctl import threadpool_limits
+
+HERE = Path(__file__).resolve().parent
+METHODS = ("lloyd", "minibatch", "emeans")
+
+
+def make_data(n=50000, d=32, seed=20261115):
+    rng = np.random.default_rng(seed)
+    means = rng.normal(0, 1.5, size=(8, d))
+    weights = [.40, .20, .12, .10, .08, .05, .03, .02]
+    def draw(count):
+        group = rng.choice(8, size=count, p=weights)
+        return means[group] + rng.normal(0, .8, size=(count, d))
+    train, test = draw(n), draw(n // 5)
+    mean, scale = train.mean(axis=0), train.std(axis=0)
+    return (np.ascontiguousarray((train - mean) / scale, dtype="float32"),
+            np.ascontiguousarray((test - mean) / scale, dtype="float32"))
+
+
+def nearest(x, centers, chunk=512):
+    """Score all final centers using direct float64 distances."""
+    c = np.asarray(centers, dtype="float64")
+    labels, distances = [], []
+    for start in range(0, len(x), chunk):
+        block = np.asarray(x[start:start + chunk], dtype="float64")
+        squared = ((block[:, None, :] - c[None, :, :])**2).sum(axis=2)
+        choice = squared.argmin(axis=1)
+        labels.extend(choice.tolist())
+        distances.extend(squared[np.arange(len(block)), choice].tolist())
+    return np.asarray(labels), np.asarray(distances)
+
+
+def fit(method, x, initial, budget, seed):
+    k, d = initial.shape
+    start = perf_counter()
+    if method == "emeans":
+        model = NumpyEmeans(d, k, nepochs=budget, seed=seed)
+        centers, saved = model.train(x, initial.copy())
+        details = dict(model.recipe)
+    else:
+        options = dict(n_clusters=k, init=initial.copy(), n_init=1,
+                       max_iter=budget, tol=0.0, random_state=seed)
+        if method == "lloyd":
+            model = KMeans(algorithm="lloyd", **options)
+        else:
+            model = MiniBatchKMeans(batch_size=256, max_no_improvement=None,
+                                   reassignment_ratio=0.01, **options)
+        model.fit(x)
+        centers, saved = model.cluster_centers_, model.labels_
+        details = {"n_iter": int(model.n_iter_)}
+        if method == "minibatch":
+            details["n_steps"] = int(model.n_steps_)
+            details["batch_size"] = 256
+    elapsed = perf_counter() - start
+    return np.asarray(centers).copy(), np.asarray(saved).copy(), elapsed, details
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--rows", type=int, default=50000)
+    parser.add_argument("--dimensions", type=int, default=32)
+    parser.add_argument("--clusters", type=int, default=64)
+    parser.add_argument("--seeds", type=int, nargs="+", default=[11, 23, 37])
+    parser.add_argument("--budgets", type=int, nargs="+", default=[2, 5, 10])
+    parser.add_argument("--output", type=Path, default=HERE / "results")
+    args = parser.parse_args()
+    if not (args.rows >= 10 and 1 < args.clusters <= args.rows
+            and args.dimensions > 0 and min(args.budgets) > 0):
+        parser.error("Require n >= 10, 1 < k <= n, d > 0 and positive budgets")
+    if len(set(args.seeds)) != len(args.seeds) or len(set(args.budgets)) != len(args.budgets):
+        parser.error("Seeds and budgets must be unique")
+    args.output.mkdir(parents=True, exist_ok=True)
+    train, test = make_data(args.rows, args.dimensions)
+    runs, recipes, heldout = [], {}, {}
+    faiss.omp_set_num_threads(1)
+    with threadpool_limits(limits=1):
+        # Exclude import and warm-up work from the reported training time.
+        warm = train[:max(1000, args.clusters)]
+        for method in METHODS:
+            fit(method, warm, warm[:args.clusters].copy(), 1, 0)
+        for seed in args.seeds:
+            rng = np.random.default_rng(seed)
+            initial = train[rng.choice(len(train), args.clusters, replace=False)]
+            for budget in args.budgets:
+                for method in rng.permutation(METHODS):
+                    name = f"{method}_{seed}_{budget}"
+                    centers, saved, seconds, recipe = fit(
+                        method, train, initial, budget, seed)
+                    start = perf_counter()
+                    train_labels, train_d2 = nearest(train, centers)
+                    test_labels, test_d2 = nearest(test, centers)
+                    evaluation = perf_counter() - start
+                    valid = (saved >= 0) & (saved < args.clusters)
+                    disagreement = int(np.sum(saved[valid] != train_labels[valid]))
+                    runs.append(dict(method=method, seed=seed, budget=budget,
+                        train_rows=len(train), test_rows=len(test), dimensions=args.dimensions,
+                        clusters=args.clusters, fit_seconds=seconds,
+                        evaluation_seconds=evaluation, total_seconds=seconds + evaluation,
+                        train_mse=float(train_d2.mean()), test_mse=float(test_d2.mean()),
+                        saved_label_rows=int(valid.sum()),
+                        saved_label_disagreements=disagreement,
+                        saved_label_disagreement_rate=disagreement / valid.sum()))
+                    np.savez_compressed(args.output / (name + ".npz"),
+                        centroids=centers, saved_labels=saved,
+                        train_labels=train_labels, test_labels=test_labels)
+                    heldout[method, budget, seed] = test_labels
+                    recipes[name] = recipe
+                    print(name, round(seconds, 3), round(test_d2.mean(), 4), flush=True)
+    summary, stability = [], []
+    for method in METHODS:
+        for budget in args.budgets:
+            subset = [r for r in runs if r["method"] == method and r["budget"] == budget]
+            row = dict(method=method, budget=budget, runs=len(subset))
+            for field in ["fit_seconds", "evaluation_seconds", "total_seconds", "test_mse",
+                          "train_mse", "saved_label_disagreement_rate"]:
+                row[field + "_median"] = float(np.median([r[field] for r in subset]))
+            summary.append(row)
+            for first, second in combinations(args.seeds, 2):
+                stability.append(dict(method=method, budget=budget, seed_a=first, seed_b=second,
+                    test_rows=len(test), adjusted_rand=float(adjusted_rand_score(
+                        heldout[method, budget, first], heldout[method, budget, second]))))
+    write_csv(args.output / "runs.csv", runs)
+    write_csv(args.output / "summary.csv", summary)
+    if stability:
+        write_csv(args.output / "stability.csv", stability)
+    metadata = dict(data_seed=20261115, synthetic=True, train_rows=len(train), test_rows=len(test),
+        dimensions=args.dimensions, clusters=args.clusters, seeds=args.seeds, budgets=args.budgets,
+        threads=1, machine=platform.machine(), system=platform.system(),
+        python=platform.python_version(), numpy=np.__version__, sklearn=sklearn.__version__,
+        faiss=faiss.__version__, train_sha256=hashlib.sha256(train.tobytes()).hexdigest(),
+        test_sha256=hashlib.sha256(test.tobytes()).hexdigest(), recipes=recipes,
+        timing_scope="Construction and training after warm-up; common final-center evaluation reported separately. Data creation, scaling, imports, artifact saving and stability calculations excluded.",
+        budget_scope="KMeans iteration cap, MiniBatchKMeans max_iter with convergence checks disabled, and e-means epochs. These do not imply equal arithmetic work.")
+    (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2,
+        default=lambda x: x.item() if isinstance(x, np.generic) else str(x)) + "\n")
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -5961,6 +6400,15 @@ model may associate a brand name with complaints because one product had
 a recall during training. It can then misclassify neutral mentions after
 the issue is resolved. Temporal validation and product-level holdouts
 help reveal whether performance depends on such shortcuts.
+
+Large collections of embeddings can make repeated nearest-center
+assignments costly. The comparison in Sections 4.18--4.20 holds the
+vectors and feature transformation fixed while varying the clustering
+implementation. Changing the embedding model or normalization changes
+the representation itself and requires a separate interpretation check.
+Representative documents and independent labels help establish what a
+text cluster means. A smaller squared-distance objective alone does not
+establish a coherent marketing construct.
 
 \hypertarget{M05-sentiment-aspect-labels-and-topic-models}{%
 \section{Sentiment, Aspect Labels, and Topic
@@ -11486,6 +11934,20 @@ grouping related statements from the same call when estimating
 uncertainty. Disclosed examples are useful for practice. Performance
 after studying their labels concerns those examples, while
 generalization requires new evidence.
+
+\hypertarget{M07-computational-cost-and-evaluation-boundaries}{%
+\section{Computational Cost and Evaluation
+Boundaries}\label{M07-computational-cost-and-evaluation-boundaries}}
+
+\noindent \noindent A production choice depends on the cost of obtaining usable
+outputs. For clustering, fitting and assigning every observation to its
+final center can have different costs; Sections 4.19--4.20 record both.
+For a predictive service, feature construction, inference, required
+checks, and human review can likewise affect the operational comparison.
+A timing claim should identify the input population, precision,
+hardware, warm-up, and included steps. Selection across configurations
+belongs in development; the final comparison preserves an independent
+evaluation population.
 
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing

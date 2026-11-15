@@ -11,6 +11,7 @@ Session 06. M4. 170 minutes.
 - Define similarity using economically meaningful customer features.
 - Evaluate segment stability and future outcomes.
 - Calculate lifetime value with consistent timing and distinguish retention concepts.
+- Compare clustering cost and final-center consistency with a common evaluation population.
 
 ## Related Materials
 
@@ -20,6 +21,8 @@ Session 06. M4. 170 minutes.
 - [Subscription cohort examples](../03_Data_and_Code/GenAI_Demand/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
+- [Clustering Optimization and Sources](../01_Resources/23_Clustering_Optimization/README.md)
+- [Optional Clustering Practice](../07_Labs/Clustering_Optimization/README.md)
 
 ## Slide 1: Segmentation and Customer Lifetime Value
 
@@ -262,7 +265,55 @@ The small CLV calculation is ../03_Data_and_Code/Lecture_Examples/session_exampl
 
 Source: M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 21: Retention and Effective Cancellation
+## Slide 21: Cluster Mass Changes the Update
+
+Earlier count 10, mean 2; current count 2, mean 7. Weight each batch by one-half.
+
+$$
+\mu_{\mathrm{new}}=\frac{0.5(10)(2)+0.5(2)(7)}{0.5(10)+0.5(2)}=\frac{17}{6}
+$$
+
+Weighting the two means equally would give 4.5. e-means carries sums and counts.
+
+The scalar inputs are imposed. Weighted mass determines how much each batch contributes. The complete e-means algorithm also uses a cooling schedule and unused-cluster handling. Training order in shuffled static data is distinct from calendar recency. The fixed squared-distance objective does not establish the value of a customer intervention.
+
+Source: M4, Section 4.18. ../03_Data_and_Code/Clustering_Optimization/README.md https://arxiv.org/abs/2611.09501v1
+
+## Slide 22: Final Centers Can Change Customer Labels
+
+Recompute assignments before forming segment profiles.
+
+**Figure description:** Four fixed scalar points are 0, 4, 5, and 10. Final centers 2 and 7.5 imply a boundary at 4.75. Point 5 changes from a blue circle in group A to an orange square in group B. With one of four labels changed, mean squared distance falls from 5.8125 to 5.125.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_centroid_assignments.tex)
+
+Saved labels can reflect earlier center locations. The constructed comparison holds all points and final centers fixed. Faiss e-means returns training-pass labels; a new assignment is necessary for a profile consistent with final centers. The exact fractions and denominator are reproduced by centroid_checks.py.
+
+Source: M4, Section 4.19. ../03_Data_and_Code/Clustering_Optimization/README.md
+
+## Slide 23: Lower Error Has a Computational Cost
+
+Common data, initial centers, and final scorer; method-specific budget caps.
+
+**Figure description:** Median fitting milliseconds on the horizontal axis and held-out mean squared distance on the vertical axis compare Lloyd, MiniBatch, and CPU e-means. Points summarize three seeds for caps 2, 5, and 10. e-means attains lower error and takes longer than Lloyd at each corresponding cap. Shared final evaluation time is reported separately in the notes.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_clustering_cost.tex)
+
+The reference run uses 50,000 training and 10,000 test vectors, 32 coordinates, 64 centers, one numerical thread, and training-only scaling. Caps denote different iterations or epochs and do not imply equal arithmetic work. Scikit-learn 1.6.1 and Faiss 1.16.0 supply the implementations. Times are short, machine-specific measurements. This is an original synthetic CPU comparison; no published GPU speedup is reproduced.
+
+Source: M4, Section 4.20. ../03_Data_and_Code/Clustering_Optimization/README.md
+
+## Slide 24: From Numerical Groups to Marketing Actions
+
+- Check final labels, feature scale, and stability across initializations.
+- Compare the time needed for fitting and final assignments.
+- Justify the action using later outcomes, causal evidence, and customer choice.
+
+At cap 2, the median e-means saved-label discrepancy is 9.408% of 50,000 valid training labels. The common evaluation costs more than fitting in the recorded runs. mHealth uses three earlier-window features and three centers, with later logging for descriptive interpretation. Faster fitting or smaller dispersion does not establish an effect of support. Jaccard mechanism clustering and affiliation communities use different objectives. o-means is optional large-K GPU reading and was not run.
+
+Source: ../03_Data_and_Code/Clustering_Optimization/README.md
+
+## Slide 25: Retention and Effective Cancellation
 
 - High paid retention can reflect satisfaction or difficulty leaving.
 - Measure cancellation completion and unwanted subsequent charges.
@@ -272,7 +323,7 @@ A customer who prefers cancellation can remain subscribed because of friction. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 22: Retention Discussion
+## Slide 26: Retention Discussion
 
 - What action differs across the proposed segments?
 - Does a customer's absence represent churn or censoring?

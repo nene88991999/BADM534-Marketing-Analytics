@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-11",
+  "updated_on": "2026-11-15",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -33,6 +33,12 @@ Generated from course.json and the source files identified below. This file cont
       "id": "ai-evidence-evaluation",
       "path": "07_Labs/AI_Evidence_and_Evaluation/README.md",
       "status": "available as public ungraded practice",
+      "graded": false
+    },
+    {
+      "id": "clustering-optimization",
+      "path": "07_Labs/Clustering_Optimization/README.md",
+      "status": "available as public optional ungraded practice",
       "graded": false
     }
   ],
@@ -119,12 +125,18 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/AI_Evidence_and_Evaluation/DATA_DICTIONARY.md",
     "03_Data_and_Code/AI_Evidence_and_Evaluation/AGENTS.md",
     "07_Labs/README.md",
-    "07_Labs/AI_Evidence_and_Evaluation/README.md"
+    "07_Labs/AI_Evidence_and_Evaluation/README.md",
+    "01_Resources/23_Clustering_Optimization/README.md",
+    "03_Data_and_Code/Clustering_Optimization/README.md",
+    "03_Data_and_Code/Clustering_Optimization/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Clustering_Optimization/AGENTS.md",
+    "03_Data_and_Code/Clustering_Optimization/results/README.md",
+    "07_Labs/Clustering_Optimization/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-11",
+    "updated_on": "2026-11-15",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -168,12 +180,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-11-ai-evidence-evaluation",
+    "revision": "2026-11-15-clustering-optimization",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 76,
-    "pages": 276,
+    "figures_count": 78,
+    "pages": 284,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -183,7 +195,8 @@ Generated from course.json and the source files identified below. This file cont
     "llm_revalidation_examples": "03_Data_and_Code/LLM_Revalidation/README.md",
     "marketing_dialectics": "06_Lecture_Notes/Marketing_Dialectics.pdf",
     "conformal_examples": "03_Data_and_Code/Conformal_Prediction/README.md",
-    "ai_evidence_examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md"
+    "ai_evidence_examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
+    "clustering_examples": "03_Data_and_Code/Clustering_Optimization/README.md"
   },
   "datasets": [
     {
@@ -231,7 +244,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-11",
+    "updated_on": "2026-11-15",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -240,7 +253,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 320,
+    "slides": 324,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -391,6 +404,28 @@ Generated from course.json and the source files identified below. This file cont
       "M7 \u00a77.26"
     ],
     "scope": "Original synthetic sources, answers, reference judgments, and grader decisions; optional live-model protocol"
+  },
+  "clustering_optimization": {
+    "resources": "01_Resources/23_Clustering_Optimization/README.md",
+    "catalog": "01_Resources/23_Clustering_Optimization/catalog.json",
+    "examples": "03_Data_and_Code/Clustering_Optimization/README.md",
+    "lab": "07_Labs/Clustering_Optimization/README.md",
+    "reviewed_on": "2026-11-15",
+    "sections": [
+      "M4 \u00a7\u00a74.18\u20134.20",
+      "M5 \u00a75.3",
+      "M7 \u00a77.27"
+    ],
+    "session": 6,
+    "discussion_minutes": 15,
+    "fits": 27,
+    "executed_methods": [
+      "scikit-learn Lloyd KMeans",
+      "scikit-learn MiniBatchKMeans",
+      "CPU Faiss NumpyEmeans"
+    ],
+    "o_means_executed": false,
+    "scope": "Exact scalar examples and a fixed synthetic CPU comparison; no reproduction of published GPU speedups or measured customer effects"
   }
 }
 ```
@@ -411,7 +446,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [eight-module lecture notes](06_Lecture_Notes/README.md), with 62 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 78 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -473,6 +508,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Evidence Selection and AI Graders
 
 [Two original examples](03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) connect source selection, reference judgments, and the costs of incorrect approval. [Public practice activities](07_Labs/AI_Evidence_and_Evaluation/README.md) accompany full Python in M5 §§5.19–5.20 and Sessions 7 and 11.
+
+## Clustering Optimization
+
+[Clustering optimization](03_Data_and_Code/Clustering_Optimization/README.md) adds an exact centroid example, an executed CPU comparison, and [optional practice](07_Labs/Clustering_Optimization/README.md). M4 and Session 6 connect computational cost, final labels, and customer interpretation.
 
 ---
 
@@ -588,7 +627,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 76 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 78 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -676,6 +715,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Source Selection and Evaluation of AI Graders
 
 [Original synthetic cases](03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) connect M1 §1.14 specifications and retained skills, M5 §§5.19–5.20 source support and grader evaluation, and M7 §7.26 coverage and decision costs. The [practice lab](07_Labs/AI_Evidence_and_Evaluation/README.md) adapts Stanford CS193T activities to the earnings-call example. Sessions 7 and 11 retain their existing meeting times and cover the two comparisons. Discussion connects reference judgments to the customer-agency questions in M9.
+
+## Clustering Optimization
+
+[Clustering optimization and interpretation](03_Data_and_Code/Clustering_Optimization/README.md) connects M4 §§4.18–4.20, M5 §5.3, and M7 §7.27. Session 6 uses 15 minutes of its existing application block. Two complete programs and two editable TikZ figures distinguish weighted updates, consistent final labels, and implementation benchmarks from evidence for a marketing action. The [practice lab](07_Labs/Clustering_Optimization/README.md) is optional and ungraded.
 
 ---
 
@@ -841,15 +884,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Source selection and grader evaluation](AI_Evidence_and_Evaluation/README.md) use original fictional excerpts, stipulated answers, and disclosed reference judgments. Two complete programs and six independent checks preserve paired questions and full scoring denominators. No model performance is measured. M5 §§5.19–5.20 contain the full source.
 
+## Clustering Optimization
+
+[Clustering optimization](Clustering_Optimization/README.md) supplies exact scalar calculations and 27 CPU fits on fixed synthetic vectors. Complete Python, pinned requirements, final centroid arrays, label vectors, aggregate outputs, and five tests support M4 §§4.18–4.20. No o-means or GPU benchmark was executed.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 11, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 15, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 76 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 78 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -877,7 +924,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 276 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 284 pages.
 
 ## Editing and Building
 
@@ -962,6 +1009,10 @@ M7 §§7.24–7.25 derive split-conformal calibration and apply it to constructe
 ## Source Selection and Grader Evaluation
 
 M1 §1.14 connects specifications and retained skills. M5 §§5.19–5.20 add a source-selection comparison, full-roster grader evaluation, two editable TikZ figures, and two complete Python programs. M7 §7.26 connects coverage and error costs. [The original data and verification](../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md) and [practice lab](../07_Labs/AI_Evidence_and_Evaluation/README.md) distinguish stipulated examples from optional new model experiments.
+
+## Clustering Optimization
+
+M4 §§4.18–4.20 explain weighted cluster mass, final assignments, and a fixed-data comparison of Lloyd, MiniBatch, and CPU e-means. [Two full programs](../03_Data_and_Code/Clustering_Optimization/README.md), 27 saved fits, and five tests accompany two editable TikZ figures. M5 §5.3 connects the representation of text vectors; M7 §7.27 connects timing boundaries and independent evaluation. The [optional lab](../07_Labs/Clustering_Optimization/README.md) supports Session 6.
 
 ---
 
@@ -1103,6 +1154,10 @@ Session 11 adds calibration ranks, coverage by segment, and complaint-label sets
 ## Evidence Selection and AI Graders
 
 Session 7 adds citation support and a controlled source-comparison protocol. Session 11 compares graders with equal balanced accuracy and different error costs. Two editable TikZ figures and [public practice activities](../07_Labs/AI_Evidence_and_Evaluation/README.md) accompany M5 §§5.19–5.20. All saved answers and grader decisions are synthetic.
+
+## Clustering Optimization
+
+Session 6 adds weighted centroid updates, final-label consistency, a local CPU comparison, and customer-action interpretation. [The full programs](../03_Data_and_Code/Clustering_Optimization/README.md) and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany four new slides and two editable figures. The 15-minute discussion fits the existing application block.
 
 ---
 
@@ -1574,6 +1629,10 @@ Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §
 
 [Stanford CS193T activity ideas](../01_Resources/19_AI_Practice_and_Evaluation/README.md) support the original source-selection and grader comparisons in M5 §§5.19–5.20. M1 §1.14 and M7 §7.26 connect specifications, independent explanation, evaluation coverage, and asymmetric loss. Two programs, six checks, and two TikZ diagrams use entirely synthetic inputs. [The practice lab](../07_Labs/AI_Evidence_and_Evaluation/README.md) supplies an optional protocol for collecting new responses. Sessions 7 and 11 include the comparisons.
 
+## Clustering Optimization
+
+[The e-means and o-means source review](../01_Resources/23_Clustering_Optimization/README.md) informs M4 §§4.18–4.20. The original scalar examples and fixed-data CPU comparison preserve common initial centers, an exhaustive final scorer, and explicit timing boundaries. Two figures show inconsistent labels and the measured cost/error comparison. Full Python and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany Session 6; M5 §5.3 and M7 §7.27 connect representation and evaluation. The reviewed GPU claims are distinct from the executed CPU results.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1930,7 +1989,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 23 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 31 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
@@ -2047,9 +2106,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value.
+**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice.
 
-**Application:** Compare customer retention definitions and mechanism profiles with explicit denominators.
+**Application:** Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions.
 
 **Ethics and Regulation:** Retention, consumer agency, and effective cancellation
 
@@ -2060,7 +2119,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–140 | Clustering Optimization and Final Labels |
+| 140–155 | Retention Definitions and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 07. Text, Social Media, and Networks
@@ -2324,6 +2384,10 @@ Session 11 uses its existing worked-comparison and Python blocks for finite-samp
 ## Evidence Selection and AI Graders
 
 Session 7 uses its existing 45-minute Python block for a 10-minute demonstration, 25-minute source-selection activity, and 10-minute independent explanation. Session 11 allocates 15 minutes of its existing 30-minute application block to grader evaluation and 15 minutes to forecast interpretation; the conformal exercise remains in the Python block. [Public ungraded practice](../07_Labs/AI_Evidence_and_Evaluation/README.md) includes optional model runs. These activities introduce no new grading rules, dates, guest speakers, or course-wide AI permissions.
+
+## Clustering Optimization and Interpretation
+
+Session 6 allocates minutes 125–140 to weighted centroid updates, final-label consistency, and a fixed-data CPU comparison. Minutes 140–155 retain the retention-definition discussion. The existing 45-minute Python block can use mHealth or research-mechanism clustering; the [algorithm comparison lab](../07_Labs/Clustering_Optimization/README.md) is optional ungraded follow-up. M4 §§4.18–4.20 provide complete code and two analytical figures, with connections to embeddings in M5 §5.3 and timing boundaries in M7 §7.27. The source guide keeps o-means as advanced GPU reading. No new meeting, deadline, or assessment rule is introduced.
 
 ---
 
@@ -4418,6 +4482,10 @@ After editing inputs or logic, rerun both programs and the independent tests. Up
 
 Downloaded reference notebooks remain in `01_Resources`; their saved outputs do not certify a course-tested run. Each released lab should identify inputs, dependencies, commands, expected checks, provenance, and verification. Students should explain analytical choices and check small examples after using a coding assistant.
 
+## Clustering Optimization
+
+[Clustering Optimization and Interpretation](Clustering_Optimization/README.md) is available as optional, ungraded practice. A 15-minute discussion uses exact centroid arithmetic and saved CPU results; an optional Python run compares three implementations with common data, initial centers, and final scoring.
+
 ---
 
 ## Source: 07_Labs/AI_Evidence_and_Evaluation/README.md
@@ -4473,6 +4541,215 @@ Connect the evaluation to Marketing Dialectics: who chose the rubric, whose loss
 ## Provenance
 
 These original cases adapt activity ideas from Stanford CS193T. The [resource guide](../../01_Resources/19_AI_Practice_and_Evaluation/README.md) links the selected public assignment pages. No Stanford assessment rules or hidden evaluation data have been adopted.
+
+---
+
+## Source: 01_Resources/23_Clustering_Optimization/README.md
+
+# Clustering Optimization, Evidence, and Customer Decisions
+
+A large collection of product, review, or content vectors can make repeated clustering costly. Faster optimization can make more comparisons feasible, while the representation and the proposed marketing action still require substantive justification. [M4 §§4.18–4.20](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) connect these questions to complete Python, two editable figures, and an [optional Session 6 activity](../../07_Labs/Clustering_Optimization/README.md).
+
+## Sources and Reading Scope
+
+| Source | Contribution and Course Use | Version and Access |
+| --- | --- | --- |
+| [Bessa, Mazaré, Szilvasy, Touvron, Picard, Douze, and Jégou, e-means](https://arxiv.org/abs/2611.09501) | Exponentially weighted cluster sums and counts, schedules, empty-cluster handling, and matched-error comparisons. Read the method, experimental protocol, scaling limits, and final assignment discussion. | [Downloaded paper](local_sources/Bessa_Mazare_Szilvasy_Touvron_Picard_Douze_Jegou_WorkingPaper2026.pdf), v1, November 6, 2026; CC BY 4.0 |
+| [Official Faiss implementation](https://github.com/facebookresearch/faiss/tree/ebab8f784c1d177129602269d5ad966c525fbdcb/contrib/e_means) | CPU and GPU interfaces, automatic recipes, and distinction between returned labels and assignment to final centers | [Pinned README](local_sources/e_means_README.md), November 14 commit; MIT |
+| [o-means implementation and benchmark](https://github.com/owlgebra-ai/faiss/tree/9ecbf0c2a2f4ca7a771b552badc145584b09e1a6/contrib/o_means) | Two-level approximate assignment, closing mean, exact evaluation, and implementation costs | [Pinned README](local_sources/o_means_README.md), November 13 commit; MIT; advanced reading |
+| [e-means interactive playground](https://e-means.github.io/playground.html) | Visual exploration of moving centers, batches, and initialization | Linked resource; simplified two-dimensional demonstration |
+| [KMeans](https://scikit-learn.org/1.6/modules/generated/sklearn.cluster.KMeans.html) and [MiniBatchKMeans](https://scikit-learn.org/1.6/modules/generated/sklearn.cluster.MiniBatchKMeans.html) | Initialization, termination, and final labels in the baseline implementations | Documentation for the executed scikit-learn 1.6.1 environment |
+
+The source review was prompted by [Chandan Kumar Singh's public post](https://www.linkedin.com/posts/csingh03_machinelearning-clustering-kmeans-share-7527643748571373568-c5p4/). Its animation is a simplified illustration. Numerical claims are assessed against the original paper and implementation records. [catalog.json](catalog.json) preserves exact versions, rights, URLs, and file hashes; [the MIT notice](local_sources/FAISS_LICENSE.txt) accompanies the redistributed repository documentation. Relative links within the preserved READMEs refer to their original upstream repository trees.
+
+## Methodological Lessons
+
+e-means updates exponentially weighted sums and counts for each cluster. Their ratio preserves the contribution of cluster mass when batches contain different numbers of assigned observations. The training stream is shuffled static data; greater weight on a recent training batch is not an empirical claim that recent customers deserve greater weight. A cooling step schedule, unused-cluster handling, and implementation choices contribute to the complete algorithm.
+
+Labels recorded while centers move can disagree with the nearest final center. Customer profiles therefore require an explicit final assignment. The course's constructed four-point comparison makes the inconsistency visible, and its executed CPU benchmark measures the discrepancy for the installed implementation.
+
+o-means uses approximate assignment to reduce search cost at large K. Its reported geometric-mean improvement uses interpolation to compare the same error across selected budgets. Search approximations can lose accuracy, and hardware kernels contribute to the observed speed differences. The repository describes failure cases and a limited benefit at small K. e-means also studies approximate search at extreme scale; approximation is not unique to the fork. The upstream o-means pull request was open on November 15, 2026. Recheck integration before using a later installation.
+
+## Course Comparison and Scope
+
+The [executed CPU example](../../03_Data_and_Code/Clustering_Optimization/README.md) fixes the generated observations, feature scale, initial centers, test set, and exact final scorer. It compares 27 fits across three seeds and three caps. On these data e-means produces lower held-out error at each cap and takes longer than Lloyd at the same cap. Its results support discussion of cost, stopping rules, and final labels. They establish no general speed ranking and do not reproduce the sources' GPU benchmarks.
+
+mHealth provides a distinct business comparison: three clusters based on earlier logging features, followed by later observed logging. A smaller clustering objective can improve numerical approximation without changing which service action is useful. Customer response needs experimental or otherwise credible causal evidence. Informed choice and treatment of persons remain separate criteria in Marketing Dialectics.
+
+## Future Wiki Interaction
+
+An original static-HTML demonstration could hold four points fixed while students move two centers, display saved and recomputed labels, and recalculate both losses. A second control could change batch mass while preserving batch means. State the sample, formula, and inputs beside each control and supply a keyboard-operable table. Use the Illinois palette plus shapes and labels. Preserve the Python calculation as an independent reference. The external animation's timing and simplified dynamics should not be used as performance evidence.
+
+---
+
+## Source: 03_Data_and_Code/Clustering_Optimization/README.md
+
+# Clustering Optimization and Customer Segments
+
+A marketing team grouping many content vectors needs to balance computational cost with the quality of its representation. A team choosing customer support also needs evidence that its proposed actions help customers. These are separate comparisons. The examples support [M4 §§4.18–4.20](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) and the [Session 6 extension](../../05_Slides/S06_Segmentation_and_Customer_Lifetime_Value.md).
+
+## Inputs and Design
+
+All observations are synthetic. `centroid_checks.py` uses exact fractions for two scalar examples. `compare_clustering.py` generates 50,000 training vectors and 10,000 independent test vectors, each with 32 coordinates, from eight Gaussian components. Component probabilities are 0.40, 0.20, 0.12, 0.10, 0.08, 0.05, 0.03, and 0.02. The means are drawn once from a normal distribution with standard deviation 1.5; independent coordinate noise has standard deviation 0.8. The data seed is 20261115. Each coordinate is standardized using training means and population standard deviations. No row is excluded. The fixed 64-center approximation deliberately differs from the eight generating components.
+
+Three seeds (11, 23, 37) and three budget settings (2, 5, 10) give 27 fits. Each seed supplies common initial centers to all methods and settings. Lloyd and MiniBatch use scikit-learn 1.6.1, one initialization, and zero tolerance. MiniBatch also disables its lack-of-improvement stopping rule and uses batches of 256. e-means uses `NumpyEmeans` from Faiss 1.16.0 with its automatic recipe. The implementations can perform different amounts of work at the same budget number. `metadata.json` records actual iteration counts and e-means recipes, including its changing batch size.
+
+## Run
+
+The scalar calculation needs only Python's standard library:
+
+```sh
+cd 03_Data_and_Code/Clustering_Optimization
+python3 centroid_checks.py
+```
+
+The CPU comparison requires an environment compatible with the pinned packages. It was executed on macOS ARM64 with Python 3.13.5. Wheel availability depends on the operating system and Python version; Faiss 1.16.0's tested macOS ARM64 wheel requires macOS 15 or later. No GPU, model account, or customer data upload is needed. Use an isolated environment with Python 3.13; substitute its installed interpreter path if `python3.13` is unavailable:
+
+```sh
+python3.13 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m unittest -v test_examples.py
+.venv/bin/python compare_clustering.py --output local_runs
+```
+
+The committed `results/` files retain the verified reference run. Use `--output local_runs` to preserve them. If the packages are unavailable on a computer, the exact scalar example and saved results support the interpretation exercise without a new benchmark. Read [the data dictionary](DATA_DICTIONARY.md) before comparing outputs.
+
+## Scoring and Timing
+
+Each fitted centroid array is scored by the same direct float64 distance calculation. Test MSE is the average squared Euclidean distance per vector, summed across 32 standardized coordinates. The scorer searches every center. The script separately counts disagreement between valid saved training labels and assignments recomputed at the final centers. All 50,000 saved labels are valid in every reference run. Saved e-means labels can reflect earlier centers encountered during the final pass.
+
+Each implementation is warmed up once. Training order is randomized within a seed and budget. Faiss and the numerical libraries use one thread. Fit time includes model construction and training; the common final-center calculation is recorded separately for both training and test vectors. Imports, data generation, standardization, saving files, and stability calculations are excluded. These short timings depend on the machine and implementation. The median across three seeds is a descriptive comparison, not a confidence interval or a matched-error speedup estimate. Internal bookkeeping, including final labeling, differs across implementations.
+
+## Reference Results
+
+| Method | Budget | Fit (ms) | Evaluation (ms) | Test MSE | Changed Labels (%) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Lloyd | 2 | 13.5 | 150.8 | 10.6496 | 0.000 |
+| Lloyd | 5 | 24.0 | 141.1 | 10.5538 | 0.000 |
+| Lloyd | 10 | 49.3 | 169.0 | 10.5264 | 0.000 |
+| MiniBatch | 2 | 21.8 | 143.4 | 10.5693 | 0.000 |
+| MiniBatch | 5 | 48.8 | 140.1 | 10.5530 | 0.000 |
+| MiniBatch | 10 | 89.4 | 150.9 | 10.5448 | 0.000 |
+| e-means | 2 | 32.0 | 152.0 | 10.5177 | 9.408 |
+| e-means | 5 | 57.4 | 144.6 | 10.5030 | 2.384 |
+| e-means | 10 | 114.4 | 159.4 | 10.4960 | 1.496 |
+
+Each entry is the median of three fits on the same data. e-means has lower held-out MSE at all three displayed caps and takes longer to fit than Lloyd at each corresponding cap. At budget 2, its median saved-label disagreement is 9.408%. The common evaluation takes longer than training in these runs, making the timing boundary consequential. These results do not reproduce the source papers' GPU comparisons.
+
+`stability.csv` compares every pair of seed-specific partitions on the same test vectors using adjusted Rand agreement. This is sensitivity to initialization, conditional on fixed data, K, features, and implementation. It does not measure customer welfare, uncertainty about the population, or treatment effects. The mHealth application retains its earlier-window features, three clusters, and later logging comparison; the numerical benchmark does not relabel its users.
+
+## Files and Verification
+
+`centroid_checks.py` and `compare_clustering.py` appear in full in the lecture notes. Five tests check weighted centroid arithmetic, reassignment, a hand-computed distance, invariance to label permutation, and training-only standardization. The reference outputs include every final centroid array and label vector, training/test data hashes, aggregate tables, and execution metadata. [verification.json](verification.json) records the additional independent reconciliation and file hashes.
+
+The resource collection preserves [the original research, implementation versions, and licenses](../../01_Resources/23_Clustering_Optimization/README.md). o-means is an advanced reading and was not executed. The comparison uses the published CPU e-means implementation rather than a simplified animation.
+
+---
+
+## Source: 03_Data_and_Code/Clustering_Optimization/DATA_DICTIONARY.md
+
+# Clustering Example Data Dictionary
+
+## Observations and Units
+
+Training and test rows are synthetic vectors. Their 32 coordinates are standardized with the training distribution. Row order is stable within a generated sample; a row index is not a customer identifier. There are no real customer attributes or outcomes. The number of generating components is eight and the fitted center count is 64.
+
+## Output Fields
+
+| File or Field | Definition |
+| --- | --- |
+| `centroid_checks.json` | Exact fractional results, four scalar observations, final centers, constructed saved labels, recomputed labels, and losses |
+| `runs.csv` | One row per method, seed, and budget; 27 reference rows |
+| `method` | `lloyd`, `minibatch`, or `emeans` |
+| `budget` | Lloyd iteration cap, MiniBatch maximum passes setting, or e-means epochs; not equal arithmetic work |
+| `fit_seconds` | Model construction and training after warm-up |
+| `evaluation_seconds` | Common exhaustive final-center scoring of all training and test rows |
+| `total_seconds` | Fit plus common evaluation; excludes preparation and file saving |
+| `train_mse`, `test_mse` | Mean squared Euclidean distance per vector, summed across coordinates, to the nearest final center |
+| `saved_label_rows` | Number of training rows with saved labels in the valid range 0–63 |
+| `saved_label_disagreements` | Count whose valid saved label differs from the nearest final-center label |
+| `saved_label_disagreement_rate` | Disagreements divided by valid saved-label rows |
+| `summary.csv` | Coordinatewise medians across three seeds for each method and budget; median components need not add to median totals |
+| `stability.csv` | Pairwise adjusted Rand agreement on all 10,000 fixed test vectors; label-number invariant |
+| `metadata.json` | Generator parameters, data hashes, package versions, numerical thread count, timing boundary, and fitted recipes |
+
+Each `<method>_<seed>_<budget>.npz` contains `centroids` (64 × 32), `saved_labels` (50,000), `train_labels` (50,000), and `test_labels` (10,000). The last two arrays use the common full-distance scorer. The original standardized vectors can be reconstructed with `make_data` and checked against the SHA-256 hashes of their float32 array bytes. Hash equality requires the recorded numerical environment and representation; elapsed times vary on reruns.
+
+---
+
+## Source: 03_Data_and_Code/Clustering_Optimization/AGENTS.md
+
+# Agent Guide for Clustering Optimization
+
+Read the root agent guide, this folder's README, and DATA_DICTIONARY.md. Preserve the distinction between the exact scalar example, the executed synthetic CPU comparison, and author-reported GPU benchmarks.
+
+- Use final-centroid assignments when forming segment profiles. Report the saved-label comparison and its denominator separately.
+- Hold observations, train/test split, feature transformations, K, initial centers, and scorer fixed within an algorithm comparison. Fit transformations only on training data.
+- State timing boundaries, hardware, precision, initialization, package versions, thread count, and stopping rules. Equal budget labels do not imply equal computation. Report unsuccessful comparisons as well as favorable ones.
+- Use `--output local_runs` for exploratory reruns. Do not overwrite the reference results or edit their numbers without executing and reconciling the changed calculation.
+- Preserve complete matching Python blocks in M4 §§4.18–4.20. Run `scripts/check_lecture_code.py` after editing them.
+- e-means and o-means optimize squared Euclidean distance. Neither is a direct replacement for the Jaccard mechanism clustering or the affiliation-network community analysis.
+- Initialization agreement, lower dispersion, and faster fitting do not establish segment meaning, causal response, or ethical permission. Connect any customer action to independent evidence and the Marketing Dialectics framework.
+- Do not claim o-means, GPU code, the interactive playground, or source-paper experiments were run. The verified example uses CPU Faiss e-means. No data are sent to external AI services.
+
+---
+
+## Source: 03_Data_and_Code/Clustering_Optimization/results/README.md
+
+# Reference Clustering Results
+
+Executed November 15, 2026, using the settings in [metadata.json](metadata.json). All observations are synthetic. See [the design, commands, and interpretation](../README.md) and [field definitions](../DATA_DICTIONARY.md).
+
+| Method | Budget | Fit (ms) | Evaluation (ms) | Test MSE | Changed Labels (%) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Lloyd | 2 | 13.5 | 150.8 | 10.6496 | 0.000 |
+| Lloyd | 5 | 24.0 | 141.1 | 10.5538 | 0.000 |
+| Lloyd | 10 | 49.3 | 169.0 | 10.5264 | 0.000 |
+| MiniBatch | 2 | 21.8 | 143.4 | 10.5693 | 0.000 |
+| MiniBatch | 5 | 48.8 | 140.1 | 10.5530 | 0.000 |
+| MiniBatch | 10 | 89.4 | 150.9 | 10.5448 | 0.000 |
+| e-means | 2 | 32.0 | 152.0 | 10.5177 | 9.408 |
+| e-means | 5 | 57.4 | 144.6 | 10.5030 | 2.384 |
+| e-means | 10 | 114.4 | 159.4 | 10.4960 | 1.496 |
+
+Medians use three seeds per row. The fixed data contain 50,000 training and 10,000 test vectors with 32 coordinates and 64 fitted centers. Timing is measured on one CPU thread; budget numbers have method-specific meanings. MSE averages the sum of squared coordinate differences over vectors. The common evaluation is reported separately from fitting. It includes all training and test assignments.
+
+The scalar results give an exponentially weighted center of 17/6, compared with 9/2 from averaging means without cluster masses. For points 0, 4, 5, and 10 and final centers 2 and 7.5, one of four constructed saved labels changes. The mean squared distance falls from 93/16 to 41/8 when labels are reassigned.
+
+Every run retains its final centroids and labels in a compressed NPZ file. The training and test vector hashes permit regeneration checks. The pairwise seed comparisons in [stability.csv](stability.csv) describe conditional partition agreement. No GPU experiment, customer intervention, or source-paper speedup is reproduced here.
+
+---
+
+## Source: 07_Labs/Clustering_Optimization/README.md
+
+# Clustering Optimization and Interpretation
+
+Public, optional, ungraded practice for M4 and Session 6. No model account or external data upload is required. The [full notes](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md), [programs and setup](../../03_Data_and_Code/Clustering_Optimization/README.md), and [source guide](../../01_Resources/23_Clustering_Optimization/README.md) provide the definitions and reference results.
+
+## Managerial Question
+
+A team wants to group a large content library so that reviewers can inspect representative items. Decide which computations are necessary before naming the groups, and which additional evidence would justify a customer-facing intervention. Keep the vector representation and number of groups fixed for the algorithm comparison.
+
+## Fifteen-Minute Discussion
+
+1. **Minutes 0–4:** Ten earlier observations have mean 2; two new observations have mean 7. With a half-weight update, compute the exponentially weighted sum, count, and center. Explain why giving the two means equal weight changes the answer.
+2. **Minutes 4–8:** For points 0, 4, 5, and 10 and final centers 2 and 7.5, evaluate saved labels A, A, A, B. Reassign each point to its nearest center. Compute both mean squared distances with the same four-row denominator. Verify with `python3 centroid_checks.py`.
+3. **Minutes 8–12:** Read `results/summary.csv`. Compare held-out error, fit time, evaluation time, and changed-label rates. Explain why a budget of two has different computational meaning across methods and why these CPU results do not establish a GPU speedup.
+4. **Minutes 12–15:** Apply the reasoning to mHealth. Explain how the earlier feature window and later logging comparison help interpretation, and identify the evidence needed to establish an effect of differentiated support.
+
+## Optional Python Comparison
+
+Follow the environment commands in the program README. Run `compare_clustering.py --output local_runs`. Confirm 27 rows in `runs.csv`, three seeds per method and cap, and the same data hashes throughout the comparison. Use each NPZ centroid array to recompute nearest-center distances independently. Compare saved and final labels before calculating segment sizes. Interpret pairwise adjusted Rand agreement in `stability.csv` conditional on fixed data and K.
+
+Change one object at a time: K, initialization seed, or feature scale. Retain the held-out sample for a predeclared comparison. Repeated selection on its loss converts it into development data; a final performance claim then needs a fresh independent sample. Record the version, changes, commands, and output directory. Keep the committed reference outputs intact.
+
+## AI-Assisted Coding
+
+Ask a coding assistant: “Read the data dictionary and comparison program. Write a separate calculation of final-center labels and squared distances for the four-point example. State the denominator, test invariance to relabeling centers, and explain how you would compare saved labels. Do not change the fitting code.” Check the proposed calculation by hand before accepting it. Then explain the weighted-center result and the scope of the timing comparison independently.
+
+## Interpretation Checks
+
+A sound explanation identifies the weighted center as 17/6, the reassigned point as 5, and the final loss as 41/8. It separates a more compact vector representation from evidence that a segment is meaningful or that an action improves customer outcomes. It identifies o-means as optional GPU-focused reading and makes no claim that the course ran it.
 
 ---
 

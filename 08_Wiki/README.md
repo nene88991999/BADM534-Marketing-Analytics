@@ -5,3 +5,7 @@
 Keep the future site's content in the repository so the same material remains readable as Markdown. Preserve stable module IDs, text descriptions of interactive figures, accessible navigation, and links to executable notebooks where needed.
 
 [Design and hosting notes](../01_Resources/11_GitHub_HTML_and_Interactive_Teaching/Design_Notes/README.md) compare possible approaches. No framework or deployment workflow has been selected, and no site is published.
+
+## Clustering Interaction
+
+The [clustering source guide](../01_Resources/23_Clustering_Optimization/README.md#future-wiki-interaction) proposes an original four-point interaction for moving centers, reassignment, and batch weighting. [Exact Python calculations](../03_Data_and_Code/Clustering_Optimization/centroid_checks.py) and editable Illinois-color figures provide independent reference values. A future implementation should expose the inputs and denominator in accessible text and separate animation from measured computational performance.

@@ -1312,3 +1312,8 @@ if __name__ == "__main__":
 The complete calculation in Section 5.20 compares stipulated graders on the same twelve public practice statements. Equal balanced accuracy accompanies different false-approval counts and review demands. Balanced accuracy weights the two reference classes equally; a loss calculation weights the errors and referrals by their imposed consequences. Neither statistic establishes that the reference labels express a defensible welfare criterion. In a pricing application, numerical accuracy, identification of a causal effect, and respect for customer choice require distinct judgments.
 
 Freeze the scoring rule before evaluating new cases. Use development cases for rubric revision and separate cases for final evaluation, grouping related statements from the same call when estimating uncertainty. Disclosed examples are useful for practice. Performance after studying their labels concerns those examples, while generalization requires new evidence.
+
+
+## 7.27 Computational Cost and Evaluation Boundaries
+
+\noindent A production choice depends on the cost of obtaining usable outputs. For clustering, fitting and assigning every observation to its final center can have different costs; Sections 4.19–4.20 record both. For a predictive service, feature construction, inference, required checks, and human review can likewise affect the operational comparison. A timing claim should identify the input population, precision, hardware, warm-up, and included steps. Selection across configurations belongs in development; the final comparison preserves an independent evaluation population.

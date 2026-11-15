@@ -271,6 +271,65 @@ M4, Section 4.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
 \end{frame}
+\begin{frame}{Cluster Mass Changes the Update}
+\usebeamercolor[fg]{normal text}
+\noindent Earlier count 10, mean 2; current count 2, mean 7. Weight each batch by one-half.
+\medskip
+\[
+\mu_{\mathrm{new}}=\frac{0.5(10)(2)+0.5(2)(7)}{0.5(10)+0.5(2)}=\frac{17}{6}
+\]
+\medskip
+\noindent Weighting the two means equally would give 4.5. e-means carries sums and counts.
+\note{The scalar inputs are imposed. Weighted mass determines how much each batch contributes. The complete e-means algorithm also uses a cooling schedule and unused-cluster handling. Training order in shuffled static data is distinct from calendar recency. The fixed squared-distance objective does not establish the value of a customer intervention.
+
+M4, Section 4.18. \url{../03_Data_and_Code/Clustering_Optimization/README.md} \url{https://arxiv.org/abs/2611.09501v1}}
+\end{frame}
+\begin{frame}{Final Centers Can Change Customer Labels}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_centroid_assignments.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Recompute assignments before forming segment profiles.\par}
+\note{Saved labels can reflect earlier center locations. The constructed comparison holds all points and final centers fixed. Faiss e-means returns training-pass labels; a new assignment is necessary for a profile consistent with final centers. The exact fractions and denominator are reproduced by centroid\_checks.py.
+
+M4, Section 4.19. \url{../03_Data_and_Code/Clustering_Optimization/README.md}}
+\end{frame}
+\begin{frame}{Lower Error Has a Computational Cost}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_clustering_cost.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Common data, initial centers, and final scorer; method-specific budget caps.\par}
+\note{The reference run uses 50,000 training and 10,000 test vectors, 32 coordinates, 64 centers, one numerical thread, and training-only scaling. Caps denote different iterations or epochs and do not imply equal arithmetic work. Scikit-learn 1.6.1 and Faiss 1.16.0 supply the implementations. Times are short, machine-specific measurements. This is an original synthetic CPU comparison; no published GPU speedup is reproduced.
+
+M4, Section 4.20. \url{../03_Data_and_Code/Clustering_Optimization/README.md}}
+\end{frame}
+\begin{frame}{From Numerical Groups to Marketing Actions}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Check final labels, feature scale, and stability across initializations.
+\item Compare the time needed for fitting and final assignments.
+\item Justify the action using later outcomes, causal evidence, and customer choice.
+\end{slidebullets}
+\vfill
+\note{At cap 2, the median e-means saved-label discrepancy is 9.408\% of 50,000 valid training labels. The common evaluation costs more than fitting in the recorded runs. mHealth uses three earlier-window features and three centers, with later logging for descriptive interpretation. Faster fitting or smaller dispersion does not establish an effect of support. Jaccard mechanism clustering and affiliation communities use different objectives. o-means is optional large-K GPU reading and was not run.
+
+\url{../03_Data_and_Code/Clustering_Optimization/README.md}}
+\end{frame}
 \begin{frame}{Retention and Effective Cancellation}
 \usebeamercolor[fg]{normal text}
 \vfill

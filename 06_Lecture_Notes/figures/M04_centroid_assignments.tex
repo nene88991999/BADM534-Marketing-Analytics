@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[font=\bfseries] at (5,3.8) {Fixed Points and Final Centers};
+\draw[->,IlliniBlue] (-.4,0)--(10.7,0) node[right] {$x$};
+\draw[IlliniOrange,densely dashed,thick] (4.75,.25)--(4.75,2.9);
+\node[anchor=west,align=left] at (5.05,2.8) {Nearest-Center Boundary\\$x=4.75$};
+\node[anchor=east] at (-.5,1.7) {Saved};
+\node[anchor=east] at (-.5,.7) {Final};
+\foreach \x in {0,4,5} {\fill[IlliniBlue] (\x,1.7) circle (3.5pt);}
+\draw[fill=IlliniOrange,draw=IlliniOrange] (9.935,1.635) rectangle ++(.13,.13);
+\foreach \x in {0,4} {\fill[IlliniBlue] (\x,.7) circle (3.5pt);}
+\foreach \x in {5,10} {\draw[fill=IlliniOrange,draw=IlliniOrange] (\x-.065,.635) rectangle ++(.13,.13);}
+\draw[->,thick,IlliniOrange] (5,1.5)--(5,.95);
+\foreach \x in {0,4,5,10} {\draw[IlliniBlue] (\x,.08)--(\x,-.08);\node[below] at (\x,-.12) {\x};}
+\node[draw=IlliniBlue,diamond,inner sep=2pt,fill=white] at (2,0) {};
+\node[draw=IlliniOrange,diamond,inner sep=2pt,fill=white] at (7.5,0) {};
+\node[below,align=center] at (2,-.55) {Center A\\$2$};
+\node[below,align=center] at (7.5,-.55) {Center B\\$7.5$};
+\node[align=center] at (5,-2.15) {One of Four Labels Changes: $5$ Moves to B\\Mean Squared Distance: $5.8125\ \longrightarrow\ 5.125$};
+\node[align=center,font=\footnotesize] at (5,-3.05) {Constructed observations and saved labels. Blue circles: A; orange squares: B.\\Centers remain fixed during reassignment.};
+\end{tikzpicture}

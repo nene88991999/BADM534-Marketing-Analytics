@@ -72,3 +72,7 @@ Session 11 uses its existing worked-comparison and Python blocks for finite-samp
 ## Evidence Selection and AI Graders
 
 Session 7 uses its existing 45-minute Python block for a 10-minute demonstration, 25-minute source-selection activity, and 10-minute independent explanation. Session 11 allocates 15 minutes of its existing 30-minute application block to grader evaluation and 15 minutes to forecast interpretation; the conformal exercise remains in the Python block. [Public ungraded practice](../07_Labs/AI_Evidence_and_Evaluation/README.md) includes optional model runs. These activities introduce no new grading rules, dates, guest speakers, or course-wide AI permissions.
+
+## Clustering Optimization and Interpretation
+
+Session 6 allocates minutes 125–140 to weighted centroid updates, final-label consistency, and a fixed-data CPU comparison. Minutes 140–155 retain the retention-definition discussion. The existing 45-minute Python block can use mHealth or research-mechanism clustering; the [algorithm comparison lab](../07_Labs/Clustering_Optimization/README.md) is optional ungraded follow-up. M4 §§4.18–4.20 provide complete code and two analytical figures, with connections to embeddings in M5 §5.3 and timing boundaries in M7 §7.27. The source guide keeps o-means as advanced GPU reading. No new meeting, deadline, or assessment rule is introduced.

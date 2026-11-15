@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-11",
+  "updated_on": "2026-11-15",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -307,11 +307,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 22,
+      "slides": 26,
       "companion": "S06_Segmentation_and_Customer_Lifetime_Value.md",
       "pdf": "S06_Segmentation_and_Customer_Lifetime_Value.pdf",
-      "python_activity": "Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value.",
-      "application": "Compare customer retention definitions and mechanism profiles with explicit denominators.",
+      "python_activity": "Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice.",
+      "application": "Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions.",
       "ethics": "Retention, consumer agency, and effective cancellation",
       "timing": [
         {
@@ -346,9 +346,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 140,
+          "minutes": 15,
+          "activity": "Clustering Optimization and Final Labels"
+        },
+        {
+          "start_minute": 140,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "Application and Interpretation"
+          "minutes": 15,
+          "activity": "Retention Definitions and Interpretation"
         },
         {
           "start_minute": 155,

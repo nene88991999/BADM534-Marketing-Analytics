@@ -1,0 +1,439 @@
+{
+  "data_seed": 20261115,
+  "synthetic": true,
+  "train_rows": 50000,
+  "test_rows": 10000,
+  "dimensions": 32,
+  "clusters": 64,
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "budgets": [
+    2,
+    5,
+    10
+  ],
+  "threads": 1,
+  "machine": "arm64",
+  "system": "Darwin",
+  "python": "3.13.5",
+  "numpy": "2.1.3",
+  "sklearn": "1.6.1",
+  "faiss": "1.16.0",
+  "train_sha256": "b65afdec3c12a3f00fdaf7d857f06d6c19b010eaf87e171547fcffe00991eef7",
+  "test_sha256": "01145f6d7bf6e2b3b87152728ffdf4c0bc28e2bc9a3b757daef0905c011c01d6",
+  "recipes": {
+    "minibatch_11_2": {
+      "n_iter": 2,
+      "n_steps": 390,
+      "batch_size": 256
+    },
+    "emeans_11_2": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 1024,
+      "batch_size_requested": null,
+      "alpha0": 0.4435904233210936,
+      "alpha0_source": "step_law",
+      "nepochs": 2,
+      "steps_per_pass": 49,
+      "total_steps": 98,
+      "epoch_rows": [
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        49,
+        49
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 11,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "lloyd_11_2": {
+      "n_iter": 2
+    },
+    "emeans_11_5": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 4096,
+      "batch_size_requested": null,
+      "alpha0": 1.0,
+      "alpha0_source": "step_law",
+      "nepochs": 5,
+      "steps_per_pass": 13,
+      "total_steps": 65,
+      "epoch_rows": [
+        50000,
+        50000,
+        50000,
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 11,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "minibatch_11_5": {
+      "n_iter": 5,
+      "n_steps": 976,
+      "batch_size": 256
+    },
+    "lloyd_11_5": {
+      "n_iter": 5
+    },
+    "emeans_11_10": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 4096,
+      "batch_size_requested": null,
+      "alpha0": 1.0,
+      "alpha0_source": "step_law",
+      "nepochs": 10,
+      "steps_per_pass": 13,
+      "total_steps": 130,
+      "epoch_rows": [
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 11,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "lloyd_11_10": {
+      "n_iter": 10
+    },
+    "minibatch_11_10": {
+      "n_iter": 10,
+      "n_steps": 1953,
+      "batch_size": 256
+    },
+    "minibatch_23_2": {
+      "n_iter": 2,
+      "n_steps": 390,
+      "batch_size": 256
+    },
+    "lloyd_23_2": {
+      "n_iter": 2
+    },
+    "emeans_23_2": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 1024,
+      "batch_size_requested": null,
+      "alpha0": 0.4435904233210936,
+      "alpha0_source": "step_law",
+      "nepochs": 2,
+      "steps_per_pass": 49,
+      "total_steps": 98,
+      "epoch_rows": [
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        49,
+        49
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 23,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "emeans_23_5": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 4096,
+      "batch_size_requested": null,
+      "alpha0": 1.0,
+      "alpha0_source": "step_law",
+      "nepochs": 5,
+      "steps_per_pass": 13,
+      "total_steps": 65,
+      "epoch_rows": [
+        50000,
+        50000,
+        50000,
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 23,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "minibatch_23_5": {
+      "n_iter": 5,
+      "n_steps": 976,
+      "batch_size": 256
+    },
+    "lloyd_23_5": {
+      "n_iter": 5
+    },
+    "minibatch_23_10": {
+      "n_iter": 10,
+      "n_steps": 1953,
+      "batch_size": 256
+    },
+    "lloyd_23_10": {
+      "n_iter": 10
+    },
+    "emeans_23_10": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 4096,
+      "batch_size_requested": null,
+      "alpha0": 1.0,
+      "alpha0_source": "step_law",
+      "nepochs": 10,
+      "steps_per_pass": 13,
+      "total_steps": 130,
+      "epoch_rows": [
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 23,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "minibatch_37_2": {
+      "n_iter": 2,
+      "n_steps": 390,
+      "batch_size": 256
+    },
+    "emeans_37_2": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 1024,
+      "batch_size_requested": null,
+      "alpha0": 0.4435904233210936,
+      "alpha0_source": "step_law",
+      "nepochs": 2,
+      "steps_per_pass": 49,
+      "total_steps": 98,
+      "epoch_rows": [
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        49,
+        49
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 37,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "lloyd_37_2": {
+      "n_iter": 2
+    },
+    "minibatch_37_5": {
+      "n_iter": 5,
+      "n_steps": 976,
+      "batch_size": 256
+    },
+    "lloyd_37_5": {
+      "n_iter": 5
+    },
+    "emeans_37_5": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 4096,
+      "batch_size_requested": null,
+      "alpha0": 1.0,
+      "alpha0_source": "step_law",
+      "nepochs": 5,
+      "steps_per_pass": 13,
+      "total_steps": 65,
+      "epoch_rows": [
+        50000,
+        50000,
+        50000,
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 37,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "minibatch_37_10": {
+      "n_iter": 10,
+      "n_steps": 1953,
+      "batch_size": 256
+    },
+    "emeans_37_10": {
+      "name": "canonical_v1",
+      "batch_law": "throughput",
+      "batch_law_requested": "auto",
+      "batch_law_reason": "d > 16",
+      "batch_size": 4096,
+      "batch_size_requested": null,
+      "alpha0": 1.0,
+      "alpha0_source": "step_law",
+      "nepochs": 10,
+      "steps_per_pass": 13,
+      "total_steps": 130,
+      "epoch_rows": [
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        50000
+      ],
+      "epoch_steps": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "tail_policy": "keep",
+      "alpha_min_factor": 0.1,
+      "check_unused_every": 5,
+      "unused_threshold": 0.1,
+      "split_epsilon": 0.0001,
+      "init_usage": 1.52587890625e-05,
+      "seed": 37,
+      "backend": "faiss",
+      "assignment_chunk_size": 65536
+    },
+    "lloyd_37_10": {
+      "n_iter": 10
+    }
+  },
+  "timing_scope": "Construction and training after warm-up; common final-center evaluation reported separately. Data creation, scaling, imports, artifact saving and stability calculations excluded.",
+  "budget_scope": "KMeans iteration cap, MiniBatchKMeans max_iter with convergence checks disabled, and e-means epochs. These do not imply equal arithmetic work."
+}

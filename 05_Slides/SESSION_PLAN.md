@@ -15,7 +15,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 23 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 22 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 31 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
@@ -132,9 +132,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value.
+**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice.
 
-**Application:** Compare customer retention definitions and mechanism profiles with explicit denominators.
+**Application:** Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions.
 
 **Ethics and Regulation:** Retention, consumer agency, and effective cancellation
 
@@ -145,7 +145,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–140 | Clustering Optimization and Final Labels |
+| 140–155 | Retention Definitions and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 07. Text, Social Media, and Networks

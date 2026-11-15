@@ -73,3 +73,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## AI Evidence and Evaluation
 
 [Source selection and grader evaluation](AI_Evidence_and_Evaluation/README.md) use original fictional excerpts, stipulated answers, and disclosed reference judgments. Two complete programs and six independent checks preserve paired questions and full scoring denominators. No model performance is measured. M5 §§5.19–5.20 contain the full source.
+
+## Clustering Optimization
+
+[Clustering optimization](Clustering_Optimization/README.md) supplies exact scalar calculations and 27 CPU fits on fixed synthetic vectors. Complete Python, pinned requirements, final centroid arrays, label vectors, aggregate outputs, and five tests support M4 §§4.18–4.20. No o-means or GPU benchmark was executed.

@@ -147,3 +147,7 @@ Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §
 ## Thinking With AI: Source Selection and Evaluation
 
 [Stanford CS193T activity ideas](../01_Resources/19_AI_Practice_and_Evaluation/README.md) support the original source-selection and grader comparisons in M5 §§5.19–5.20. M1 §1.14 and M7 §7.26 connect specifications, independent explanation, evaluation coverage, and asymmetric loss. Two programs, six checks, and two TikZ diagrams use entirely synthetic inputs. [The practice lab](../07_Labs/AI_Evidence_and_Evaluation/README.md) supplies an optional protocol for collecting new responses. Sessions 7 and 11 include the comparisons.
+
+## Clustering Optimization
+
+[The e-means and o-means source review](../01_Resources/23_Clustering_Optimization/README.md) informs M4 §§4.18–4.20. The original scalar examples and fixed-data CPU comparison preserve common initial centers, an exhaustive final scorer, and explicit timing boundaries. Two figures show inconsistent labels and the measured cost/error comparison. Full Python and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany Session 6; M5 §5.3 and M7 §7.27 connect representation and evaluation. The reviewed GPU claims are distinct from the executed CPU results.

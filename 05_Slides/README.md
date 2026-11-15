@@ -76,3 +76,7 @@ Session 11 adds calibration ranks, coverage by segment, and complaint-label sets
 ## Evidence Selection and AI Graders
 
 Session 7 adds citation support and a controlled source-comparison protocol. Session 11 compares graders with equal balanced accuracy and different error costs. Two editable TikZ figures and [public practice activities](../07_Labs/AI_Evidence_and_Evaluation/README.md) accompany M5 §§5.19–5.20. All saved answers and grader decisions are synthetic.
+
+## Clustering Optimization
+
+Session 6 adds weighted centroid updates, final-label consistency, a local CPU comparison, and customer-action interpretation. [The full programs](../03_Data_and_Code/Clustering_Optimization/README.md) and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany four new slides and two editable figures. The 15-minute discussion fits the existing application block.

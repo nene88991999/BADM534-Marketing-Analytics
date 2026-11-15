@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+\begin{axis}[width=12.5cm,height=7cm,xmin=0,xmax=125,ymin=10.48,ymax=10.68,
+ xlabel={Median Fit Time (Milliseconds)},ylabel={Median Held-Out Squared Distance},
+ grid=major,xtick={0,25,50,75,100,125},ytick={10.50,10.55,10.60,10.65},
+ scaled y ticks=false,yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},
+ legend style={at={(.98,.98)},anchor=north east,fill=white,font=\footnotesize},
+ legend cell align=left]
+\addplot[IlliniBlue,mark=*,solid] coordinates {(13.515583,10.64958478) (24.007416,10.55379877) (49.263084,10.52639593)};
+\addlegendentry{Lloyd}
+\node[font=\scriptsize,anchor=south west] at (axis cs:13.515583,10.64958478) {2};
+\node[font=\scriptsize,anchor=south west] at (axis cs:24.007416,10.55379877) {5};
+\node[font=\scriptsize,anchor=south west] at (axis cs:49.263084,10.52639593) {10};
+\addplot[Storm,mark=square*,dashed] coordinates {(21.830417,10.56932711) (48.844875,10.55298190) (89.366084,10.54482035)};
+\addlegendentry{MiniBatch}
+\node[font=\scriptsize,anchor=south west] at (axis cs:21.830417,10.56932711) {2};
+\node[font=\scriptsize,anchor=south west] at (axis cs:48.844875,10.55298190) {5};
+\node[font=\scriptsize,anchor=south west] at (axis cs:89.366084,10.54482035) {10};
+\addplot[IlliniOrange,mark=triangle*,dotted] coordinates {(32.010250,10.51766988) (57.397042,10.50299111) (114.447417,10.49604804)};
+\addlegendentry{e-means}
+\node[font=\scriptsize,anchor=south west] at (axis cs:32.010250,10.51766988) {2};
+\node[font=\scriptsize,anchor=south west] at (axis cs:57.397042,10.50299111) {5};
+\node[font=\scriptsize,anchor=south west] at (axis cs:114.447417,10.49604804) {10};
+\end{axis}
+\node[align=center,font=\footnotesize] at (5.5,-1.9) {Synthetic: 50,000 Training and 10,000 Test Vectors; $d=32$, $K=64$.\\Three Seeds, One CPU Thread. Labels: Method-Specific Budget Caps.\\Full-Center Evaluation Time is Excluded from the Horizontal Axis.};
+\end{tikzpicture}

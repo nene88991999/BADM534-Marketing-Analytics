@@ -233,3 +233,7 @@ Part-worth utilities, attribute importance, and market simulations.
 - [Papers/Orme_ResearchPublishers2019.pdf](Papers/Orme_ResearchPublishers2019.pdf)
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
+
+## Clustering Optimization
+
+The [e-means and o-means guide](../23_Clustering_Optimization/README.md) connects cluster mass, final assignments, and computational comparisons to M4 §§4.18–4.20. The [verified CPU example](../../03_Data_and_Code/Clustering_Optimization/README.md) and [optional Session 6 practice](../../07_Labs/Clustering_Optimization/README.md) use original synthetic data and preserve the distinction between numerical grouping and a justified customer action.

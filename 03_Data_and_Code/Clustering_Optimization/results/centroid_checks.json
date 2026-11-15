@@ -1,0 +1,34 @@
+{
+  "scope": "Constructed scalar examples; no observed customer outcomes",
+  "ema_sum": "17",
+  "ema_mass": "6",
+  "ema_centroid": "17/6",
+  "mean_of_centroids": "9/2",
+  "points": [
+    "0",
+    "4",
+    "5",
+    "10"
+  ],
+  "centers": [
+    "2",
+    "15/2"
+  ],
+  "saved_labels": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "final_labels": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "boundary": "19/4",
+  "changed": 1,
+  "denominator": 4,
+  "saved_assignment_mse": "93/16",
+  "final_assignment_mse": "41/8"
+}

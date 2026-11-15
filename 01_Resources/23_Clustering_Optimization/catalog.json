@@ -1,0 +1,96 @@
+{
+  "namespace": "clustering-optimization",
+  "reviewed_on": "2026-11-15",
+  "resources": [
+    {
+      "id": "CO01",
+      "title": "e-means: outperforming k-means (in one-tenth the epochs)",
+      "url": "https://arxiv.org/abs/2611.09501v1",
+      "download_url": "https://arxiv.org/pdf/2611.09501v1",
+      "version": "v1, 2026-11-06",
+      "rights": "CC BY 4.0",
+      "local": "local_sources/Bessa_Mazare_Szilvasy_Touvron_Picard_Douze_Jegou_WorkingPaper2026.pdf",
+      "modules": [
+        "M4",
+        "M5",
+        "M7"
+      ],
+      "reviewed_on": "2026-11-15",
+      "sha256": "94bc2768882d3100f2a20b4b9e46d626c54bafda6cf712120abb25846be0a411"
+    },
+    {
+      "id": "CO02",
+      "title": "Faiss e-means implementation documentation",
+      "url": "https://github.com/facebookresearch/faiss/tree/ebab8f784c1d177129602269d5ad966c525fbdcb/contrib/e_means",
+      "version": "ebab8f784c1d177129602269d5ad966c525fbdcb",
+      "rights": "MIT; accompanying FAISS_LICENSE.txt",
+      "local": "local_sources/e_means_README.md",
+      "modules": [
+        "M4",
+        "M5",
+        "M7"
+      ],
+      "reviewed_on": "2026-11-15",
+      "sha256": "da2e2c8bc3d386d7f08fd3d3faa9faa8dc5f12c5373d9dd14e982d0c0f84af74"
+    },
+    {
+      "id": "CO03",
+      "title": "o-means implementation and benchmark documentation",
+      "url": "https://github.com/owlgebra-ai/faiss/tree/9ecbf0c2a2f4ca7a771b552badc145584b09e1a6/contrib/o_means",
+      "version": "9ecbf0c2a2f4ca7a771b552badc145584b09e1a6",
+      "rights": "MIT; accompanying FAISS_LICENSE.txt",
+      "local": "local_sources/o_means_README.md",
+      "modules": [
+        "M4",
+        "M5",
+        "M7"
+      ],
+      "reviewed_on": "2026-11-15",
+      "sha256": "320c38f056b0c0578e5be763ae67c5393c21c157302e0d8aff391a71578c36b6"
+    },
+    {
+      "id": "CO04",
+      "title": "e-means interactive playground",
+      "url": "https://e-means.github.io/playground.html",
+      "version": "reviewed 2026-11-15",
+      "rights": "Linked only; no redistribution",
+      "local": null,
+      "modules": [
+        "M4",
+        "M5",
+        "M7"
+      ],
+      "reviewed_on": "2026-11-15"
+    },
+    {
+      "id": "CO05",
+      "title": "scikit-learn KMeans API",
+      "url": "https://scikit-learn.org/1.6/modules/generated/sklearn.cluster.KMeans.html",
+      "version": "1.6",
+      "rights": "Linked documentation",
+      "local": null,
+      "modules": [
+        "M4",
+        "M5",
+        "M7"
+      ],
+      "reviewed_on": "2026-11-15"
+    },
+    {
+      "id": "CO06",
+      "title": "scikit-learn MiniBatchKMeans API",
+      "url": "https://scikit-learn.org/1.6/modules/generated/sklearn.cluster.MiniBatchKMeans.html",
+      "version": "1.6",
+      "rights": "Linked documentation",
+      "local": null,
+      "modules": [
+        "M4",
+        "M5",
+        "M7"
+      ],
+      "reviewed_on": "2026-11-15"
+    }
+  ],
+  "execution": "CPU Faiss 1.16.0 NumpyEmeans, scikit-learn 1.6.1; no o-means or GPU execution",
+  "source_review": "Paper methods and experiment protocol, official implementation documentation, CPU implementation, fork benchmark and limits; no source-paper benchmark reproduction"
+}

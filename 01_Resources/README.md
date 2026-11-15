@@ -84,3 +84,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## AI Practice and Evaluation
 
 [Selected Stanford CS193T activities](19_AI_Practice_and_Evaluation/README.md) motivate original exercises on source selection, evaluator reliability, and independent verification. The source record links public materials without republishing them. Full course Python, synthetic cases, and a practice lab accompany the notes.
+
+## Clustering Optimization
+
+[The clustering collection](23_Clustering_Optimization/README.md) preserves the e-means paper, pinned implementation documentation and licenses, o-means benchmark scope, and a catalog of six primary resources. Original executed CPU examples support the M4 extension; GPU methods remain advanced reading.

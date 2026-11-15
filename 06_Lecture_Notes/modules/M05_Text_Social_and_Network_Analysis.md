@@ -42,6 +42,8 @@ A simple TF-IDF classifier can be a strong baseline for a well-defined domain. E
 
 For interpretation, inspect representative successes and failures. A model may associate a brand name with complaints because one product had a recall during training. It can then misclassify neutral mentions after the issue is resolved. Temporal validation and product-level holdouts help reveal whether performance depends on such shortcuts.
 
+Large collections of embeddings can make repeated nearest-center assignments costly. The comparison in Sections 4.18–4.20 holds the vectors and feature transformation fixed while varying the clustering implementation. Changing the embedding model or normalization changes the representation itself and requires a separate interpretation check. Representative documents and independent labels help establish what a text cluster means. A smaller squared-distance objective alone does not establish a coherent marketing construct.
+
 ## 5.4 Sentiment, Aspect Labels, and Topic Models
 
 A sentiment lexicon assigns scores to words and combines them using rules. It offers a transparent baseline, but sarcasm, domain-specific meanings, and context can cause errors. A supervised classifier learns a mapping from labeled examples to outcomes. Its labels and training sample define what it learns; a generic “positive/negative” dataset may not represent customer-service severity.
