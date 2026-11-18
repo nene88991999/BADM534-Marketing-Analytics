@@ -736,3 +736,437 @@ A policy evaluation adds another source of variation. A rule that takes effect i
 A firm can reuse randomized comparisons to train a model that proposes new interventions. Angelopoulos, Lee, and Misra's *Causal Alignment* applies this idea to email subject lines, with human review and evaluation in new campaigns. The training signal inherits the outcome used to rank alternatives. A causal effect on clicks therefore remains an effect on clicks, even when a more effective generator makes that effect easier to reproduce. Customer understanding, refusal, and benefit require corresponding measures and reasons for the proposed action. [Research guide](../../01_Resources/16_AI_Experimentation_and_Pricing/README.md).
 
 The selection of an action also depends on its anticipated deployment setting. Farrell, Korganbekova, and Misra's *Robust A/B Decisions* evaluates policies under uncertainty about future outcome distributions. Its conservative treatment of the selected payoff does not add customer outcomes that were absent from the objective. Marketing Dialectics, Sections 9.14–9.18, connects these decisions to personalized pricing, current policy discussions, and a reproducible comparison of profit and customer surplus.
+
+## 6.22 Discount Depth and the Causal Response Curve
+
+\noindent A retailer choosing a discount needs to know how another percentage point changes profit. A larger discount can increase purchases while reducing the margin on every unit sold. The relevant response can therefore rise and then fall. A coefficient near zero can conceal economically important differences between moderate discounts and either extreme.
+
+Let $A$ denote the discount in percentage points, so $A=20$ means a 20 percent discount. Let $Y(a)$ be profit in dollars per eligible customer over the promotion week if that customer receives discount $a$. Eligibility is determined before the offer. The population curve $\theta(a)=E[Y(a)]$ compares the same population at different discounts; subtracting $\theta(a_0)$ gives the effect relative to a specified reference discount. All curves and observations in Sections 6.22–6.26 are synthetic.
+
+Consider the imposed response
+
+$$
+\theta(a)=10+0.4a-0.01a^2,\qquad 0\leq a\leq40.
+$$
+
+Profit reaches $14 at a 20 percent discount and equals $10 at both endpoints. If discounts are randomized uniformly over this range, symmetry makes the population linear-regression slope zero. The fitted constant is $38/3, or approximately $12.67. The nonlinear response still varies by $4 per customer. This projection calculation concerns the uniform-randomization benchmark; the observational sample below follows a different assignment distribution.
+
+![A known synthetic profit curve peaks at a 20 percent discount. Its best linear projection under uniform randomized discounts is horizontal at approximately 12.67 dollars.](../figures/M06_discount_response.png)
+
+**Figure description.** The horizontal axis varies the discount from 0 to 40 percentage points while holding the target population and promotion horizon fixed. The blue curve reaches $14 at 20. The orange dashed line is the best linear projection under a uniform discount distribution. A zero linear slope coexists with a substantial nonlinear response.
+
+DoubleML's partially linear regression specification places a constant coefficient on treatment while allowing flexible covariate adjustment. That specification answers a different question from estimating an unrestricted curve. Under misspecification, the projection's weighting matters; its coefficient need not equal a simple average derivative. Nonparametric double-machine-learning methods also exist. [DoubleML models](https://docs.doubleml.org/stable/guide/models.html); [Colangelo and Lee](https://arxiv.org/abs/2004.03036).
+
+## 6.23 Adjustment for Selected Discount Intensity
+
+\noindent Suppose customers with stronger expected demand tend to receive larger discounts. Comparing their observed profits with those of low-discount customers mixes the discount response with differences in demand. Let $X$ contain observed characteristics recorded before the offer. The conditional outcome mean is $\mu(x,a)=E[Y\mid X=x,A=a]$, and $\pi(a\mid x)$ is the conditional density of the discount. A density has units of inverse percentage points; it is distinct from the probability of observing one exact value of a continuous treatment.
+
+A causal interpretation requires a well-defined intervention, consistency, and conditional mean independence of potential outcomes and assigned discounts given $X$. Each dose under consideration also needs sufficient conditional support for the target population. These conditions exclude unmeasured common causes of discount assignment and profit. Randomization within the relevant population can provide this independence by design.
+
+To average over a common population, define $m(a)=E_X[\mu(X,a)]$ and $f_A(a)=E_X[\pi(a\mid X)]$. The doubly robust adjusted outcome is
+
+$$
+\xi_i=\widehat m(A_i)+\frac{\widehat f_A(A_i)}{\widehat\pi(A_i\mid X_i)}
+\left[Y_i-\widehat\mu(X_i,A_i)\right].
+$$
+
+The first term averages predicted profit over the target population. The second corrects its residual using the relative frequency of the customer's assigned dose. Under identification and regularity conditions, the population conditional mean $E[\xi\mid A=a]$ equals $\theta(a)$ when either nuisance function is correct. If the outcome model is correct, the residual has conditional mean zero. If the density model is correct, the density ratio changes the covariate distribution among customers receiving dose $a$ back to the target distribution, canceling the outcome-model error. [Kennedy, Ma, McHugh, and Small](https://arxiv.org/abs/1507.00747).
+
+Five-fold cross-fitting estimates each customer's nuisance predictions using the other four folds. A local linear regression then smooths the adjusted outcomes across discounts. Cross-fitting limits reuse of the same outcome for fitting and evaluation. Valid confidence intervals require additional conditions on estimation errors and smoothing bias. The name double machine learning alone does not establish double robustness; that property depends on the score and the nuisance functions it uses.
+
+### 6.23.1 A Known Population and Four Model Specifications
+
+\noindent The simulated population contains equal shares of two observed types, $X=-1$ and $X=1$. Each sample fixes 1,200 customers of each type. Discount assignment and realized profit satisfy
+
+$$
+Z=\log\!\left(\frac{A}{40-A}\right)=0.9X+\eta,
+\qquad Y=10+0.4A-0.01A^2+2X+\varepsilon,
+$$
+
+where $\eta$ is normal with standard deviation 0.9 and $\varepsilon$ is independent normal noise with standard deviation 1. The $2X$ term affects both observed profits and the selection problem. Equal target shares make its population average zero. Outcomes are measured once per customer, all rows are retained, and no missing values are imposed. The logistic transformation keeps discounts strictly between 0 and 40.
+
+The correctly specified outcome regression includes a quadratic in discount and the observed type. Its misspecified counterpart omits type. The correctly specified density regression fits the transformed discount on type and estimates its normal residual scale, including the transformation's Jacobian when calculating the density of $A$. Its misspecified counterpart omits type. Target standardization uses the known equal type shares. These transparent parametric nuisance models isolate the statistical argument; they do not compare commercial software packages.
+
+Across 200 independently generated samples of 2,400 customers, the average root mean squared error over the 29 equally weighted doses from 6 through 34 is:
+
+| Outcome Model | Density Model | RMSE (USD) | Coverage (%) |
+| --- | --- | ---: | ---: |
+| Correct | Correct | 0.099 | 90.7 |
+| Correct | Omits Type | 0.058 | 85.7 |
+| Omits Type | Correct | 0.312 | 96.7 |
+| Omits Type | Omits Type | 1.335 | 6.4 |
+
+Correctness refers to the data-generating specification. The reported errors include sampling variation and the bias from a fixed two-percentage-point smoothing bandwidth. The doubly robust population identity does not require finite-sample errors to be identical when either model is correct. In this design, density correction introduces enough variation that the correctly specified outcome model with unit weights has the lowest average RMSE. Neither this ranking nor the coverage rates establish performance in a different population.
+
+The reference sample's cross-fitted partially linear coefficient is $0.0028 per percentage point. Its small magnitude reflects the inadequacy of a constant slope for this symmetric response. It does not imply that changing discount depth has a negligible effect.
+
+## 6.24 Overlap, Weight Concentration, and Missing Confounders
+
+\noindent A common discount grid requires evidence about both customer types at each proposed dose. Observing many low discounts among one type and many high discounts among the other can leave the counterfactual comparisons poorly represented. Reducing the standard deviation of $\eta$ from 0.9 to 0.22 concentrates customers near type-specific discounts while keeping the same causal profit curve.
+
+![Conditional discount densities for two observed customer types under broader and weaker overlap, plotted on identical axes.](../figures/M06_dose_overlap.png)
+
+**Figure description.** Each panel plots the discount density for type minus one as a solid blue curve and type plus one as a dashed orange curve. The horizontal axis is discount in percentage points. Both panels use the same vertical scale in density per percentage point. Lower assignment noise concentrates each type around a different discount. Mathematical positivity remains, but the observed sample offers little information about the opposite type at many doses.
+
+The weight-based effective sample size is $(\sum_i w_i)^2/\sum_i w_i^2$. It measures concentration among observed weights. In the reference sample with broader overlap, the largest estimated weight is 169.9 and the effective sample size is 125.5 out of 2,400. With weaker overlap, almost all observed weights are close to one-half and the effective sample size is approximately 2,400. The rare cross-type observations that would receive enormous weights are largely absent. A high effective sample size therefore does not establish adequate support. Conditional densities, dose-by-type counts, and the proposed decision range remain necessary checks.
+
+When the outcome model omits type and the density specification is correct, capping weights at five raises the broader-overlap reference error from $0.532 to $0.634. Capping reduces weight concentration but changes the residual correction. It can remove the cancellation of outcome-model error that supplies double robustness. In the weaker-overlap sample, the error is $1.825 with or without the cap. These are comparisons within one fixed sample. They motivate sensitivity analysis without selecting a threshold after seeing which estimate is preferred.
+
+An unobserved common cause creates a separate problem. Add an independent type $U\in\{-1,1\}$ with equal shares to both assignment and profit: $Z=0.9X+0.8U+\eta$ and $Y=\theta(A)+2X+2U+\varepsilon$. Even exact knowledge of $E[Y\mid A,X]$ identifies an adjusted association when $U$ remains omitted. Bayes' rule gives $E[U\mid Z,X]=\tanh\{0.8(Z-0.9X)/0.9^2\}$. Standardizing this observed regression over $X$ differs from the causal curve by as much as $1.666 on the 6–34 grid. Better nuisance prediction cannot remove this identification failure. Measuring $U$ or obtaining a credible alternative design changes the available comparison.
+
+## 6.25 Interval Coverage and Reproducible Estimation
+
+\noindent A confidence interval at one prespecified dose addresses a narrower event than covering the entire response curve. The program reports conditional HC0 standard errors for the local linear regression, holding the fitted adjusted outcomes fixed. These approximate standard errors omit first-stage uncertainty and smoothing bias. Their nominal 95 percent label is evaluated against the known curve across repeated samples.
+
+With both nuisance models correctly specified, mean pointwise coverage is 90.7 percent, while all 29 points lie inside their respective pointwise intervals in 42.5 percent of samples. The latter event has no nominal 95 percent guarantee because these are pointwise intervals. The former comparison directly shows undercoverage of the pointwise procedure in this design. Each dose has 200 simulated coverage indicators; its Monte Carlo standard error is $\sqrt{\widehat p(1-\widehat p)/200}$. Correlated doses within a sample do not supply independent repetitions. The saved coverage table retains each dose's rate and simulation uncertainty.
+
+The fixed bandwidth creates a finite-resolution teaching comparison. Consistency for an unrestricted curve requires an appropriate bandwidth sequence and regularity conditions. In applied work, inference must address the sampling unit, nuisance estimation, smoothing, and any search over doses. Refitting the whole pipeline in a bootstrap can assess some sources of uncertainty under suitable conditions; it does not resolve missing confounders or unsupported extrapolation. Selecting the maximum of an estimated curve also selects estimation noise, motivating independent policy evaluation.
+
+Run the calculation from its example directory:
+
+```sh
+cd 03_Data_and_Code/Dose_Response
+python dose_response.py --output local_runs --repetitions 200
+```
+
+The output includes synthetic customer records, all four fitted curves, coverage by dose, weight diagnostics, and the exact hidden-confounder comparison. Seeds, units, sample sizes, dependencies, and commands are recorded in the [example guide](../../03_Data_and_Code/Dose_Response/README.md).
+
+Python source: [dose_response.py](../../03_Data_and_Code/Dose_Response/dose_response.py).
+
+```python
+"""Synthetic discount curves, cross-fitting, overlap, and interval evaluation.
+
+Run: python dose_response.py --output results --repetitions 200
+All doses are percentage points; profit is dollars per eligible customer.
+The target population places equal weight on X=-1 and X=1.
+"""
+from pathlib import Path
+import argparse
+import json
+import platform
+import numpy as np
+
+GRID = np.linspace(6, 34, 29)
+SETTINGS = [(True, True), (True, False), (False, True), (False, False)]
+
+
+def truth(a):
+    return 10 + 0.4 * np.asarray(a) - 0.01 * np.asarray(a) ** 2
+
+
+def generate(n=2400, seed=20261118, sigma=0.9):
+    """Equal numbers of each observed type; no exclusions or missing rows."""
+    if n % 2:
+        raise ValueError("n must be even")
+    rng = np.random.default_rng(seed)
+    x = rng.permutation(np.repeat([-1.0, 1.0], n // 2))
+    z = 0.9 * x + rng.normal(0, sigma, n)
+    a = 40 / (1 + np.exp(-z))
+    y = truth(a) + 2 * x + rng.normal(0, 1, n)
+    return x, a, y
+
+
+def outcome_features(x, a, correct=True):
+    t = (np.asarray(a) - 20) / 10
+    columns = [np.ones_like(t), t, t * t]
+    if correct:
+        columns.append(np.broadcast_to(x, t.shape))
+    return np.column_stack(columns)
+
+
+def treatment_features(x, correct=True):
+    return np.column_stack([np.ones_like(x), x]) if correct else np.ones((len(x), 1))
+
+
+def density(a, mean, sigma):
+    """Logistic-normal density on (0,40), including its Jacobian."""
+    a = np.asarray(a)
+    z = np.log(a / (40 - a))
+    return (np.exp(-0.5 * ((z - mean) / sigma) ** 2)
+            / (np.sqrt(2 * np.pi) * sigma) * 40 / (a * (40 - a)))
+
+
+def pseudo_outcome(x, a, y, outcome_correct=True, gps_correct=True, cap=None, seed=71):
+    """Five folds; train each nuisance only on the other four folds.
+
+    Standardization uses the stated equal-type target population. The wrong
+    outcome model omits X; the wrong dose model omits X on the logit scale.
+    cap is a fixed maximum weight, not an estimated quantile.
+    """
+    fold = np.random.default_rng(seed).permutation(np.arange(len(y)) % 5)
+    xi, raw_weight = np.empty_like(y), np.empty_like(y)
+    for k in range(5):
+        tr, te = fold != k, fold == k
+        b = np.linalg.lstsq(outcome_features(x[tr], a[tr], outcome_correct), y[tr], rcond=None)[0]
+        mu = outcome_features(x[te], a[te], outcome_correct) @ b
+        marginal_mu = sum(outcome_features(g, a[te], outcome_correct) @ b for g in [-1, 1]) / 2
+        z = np.log(a[tr] / (40 - a[tr]))
+        design = treatment_features(x[tr], gps_correct)
+        c = np.linalg.lstsq(design, z, rcond=None)[0]
+        sigma = np.sqrt(np.mean((z - design @ c) ** 2))
+        observed_mean = treatment_features(x[te], gps_correct) @ c
+        conditional = density(a[te], observed_mean, sigma)
+        marginal = sum(density(a[te], treatment_features(np.full(te.sum(), g), gps_correct) @ c,
+                               sigma) for g in [-1, 1]) / 2
+        raw_weight[te] = marginal / conditional
+        weight = raw_weight[te] if cap is None else np.minimum(raw_weight[te], cap)
+        xi[te] = marginal_mu + weight * (y[te] - mu)
+    return xi, raw_weight
+
+
+def smooth(a, y, grid=GRID, bandwidth=2.0):
+    """Local linear Gaussian smoother and conditional HC0 standard error.
+
+    This standard error holds fitted pseudo-outcomes fixed. It omits nuisance
+    estimation and smoothing bias; its coverage is evaluated, never presumed.
+    """
+    delta = np.asarray(a)[:, None] - np.asarray(grid)[None, :]
+    w = np.exp(-0.5 * (delta / bandwidth) ** 2)
+    s0, s1, s2 = w.sum(0), (w * delta).sum(0), (w * delta**2).sum(0)
+    determinant = s0 * s2 - s1**2
+    if np.any(determinant <= 1e-14):
+        raise ValueError("Insufficient local variation at an evaluation dose")
+    linear_weights = w * (s2 - delta * s1) / determinant
+    slope_weights = w * (delta * s0 - s1) / determinant
+    estimate = linear_weights.T @ y
+    slope = slope_weights.T @ y
+    residual = y[:, None] - estimate - delta * slope
+    se = np.sqrt(((linear_weights * residual) ** 2).sum(0))
+    return estimate, se
+
+
+def plr_slope(x, a, y):
+    """Cross-fitted Robinson partialling-out slope, with binary-X nuisances."""
+    fold = np.random.default_rng(71).permutation(np.arange(len(y)) % 5)
+    ra, ry = np.empty_like(a), np.empty_like(y)
+    design = treatment_features(x)
+    for k in range(5):
+        tr, te = fold != k, fold == k
+        ra[te] = a[te] - design[te] @ np.linalg.lstsq(design[tr], a[tr], rcond=None)[0]
+        ry[te] = y[te] - design[te] @ np.linalg.lstsq(design[tr], y[tr], rcond=None)[0]
+    return float(ra @ ry / (ra @ ra))
+
+
+def hidden_confounding(grid=GRID):
+    """Exact observable-data regression with an omitted independent U in {-1,1}.
+
+    Z=.9X+.8U+Normal(0,.9), Y=truth(A)+2X+2U+noise. Bayes' rule gives
+    E[U|Z,X]=tanh(.8*(Z-.9X)/.9**2). Both observable nuisance functions could
+    be known exactly and adjustment for X would still miss the causal curve.
+    """
+    z = np.log(grid / (40 - grid))
+    observed = truth(grid) + sum(2 * np.tanh(0.8 * (z - 0.9 * g) / 0.9**2)
+                                for g in [-1, 1]) / 2
+    return observed
+
+
+def save_table(path, columns, rows):
+    np.savetxt(path, np.asarray(rows), delimiter=",", header=",".join(columns), comments="", fmt="%.10g")
+
+
+def run(output, repetitions=200):
+    output.mkdir(parents=True, exist_ok=True)
+    x, a, y = generate()
+    save_table(output / "customers.csv", ["type", "discount_pp", "profit_usd"], np.c_[x, a, y])
+    reference, curve_columns, curves = [], ["discount_pp", "truth_usd"], [GRID, truth(GRID)]
+    for oc, gc in SETTINGS:
+        name = f"outcome_{int(oc)}_density_{int(gc)}"
+        xi, w = pseudo_outcome(x, a, y, oc, gc)
+        est, se = smooth(a, xi)
+        reference.append({"model": name, "rmse_usd": float(np.sqrt(np.mean((est-truth(GRID))**2))),
+                          "weight_max": float(w.max()), "ess_rows": float(w.sum()**2/(w@w))})
+        curve_columns.extend([name, name + "_conditional_se"])
+        curves.extend([est, se])
+    save_table(output / "curves.csv", curve_columns, np.column_stack(curves))
+    evaluation, point_rows = [], []
+    for oc, gc in SETTINGS:
+        cover, whole, rmse, bias = [], [], [], []
+        for r in range(repetitions):
+            xr, ar, yr = generate(seed=10000+r)
+            xi, _ = pseudo_outcome(xr, ar, yr, oc, gc)
+            est, se = smooth(ar, xi)
+            error = est - truth(GRID)
+            hit = np.abs(error) <= 1.96 * se
+            cover.append(hit); whole.append(hit.all())
+            rmse.append(np.sqrt(np.mean(error**2))); bias.append(error)
+        point_cover = np.mean(cover, axis=0)
+        evaluation.append({"outcome_correct": oc, "density_correct": gc,
+                           "mean_rmse_usd": float(np.mean(rmse)),
+                           "mean_pointwise_coverage": float(point_cover.mean()),
+                           "whole_grid_coverage_of_pointwise_intervals": float(np.mean(whole))})
+        for dose, coverage, mean_bias in zip(GRID, point_cover, np.mean(bias, axis=0)):
+            point_rows.append([int(oc), int(gc), dose, coverage,
+                               np.sqrt(coverage*(1-coverage)/repetitions), mean_bias])
+    save_table(output / "coverage.csv", ["outcome_correct", "density_correct", "discount_pp",
+               "pointwise_coverage", "monte_carlo_se", "mean_bias_usd"], point_rows)
+    overlap = []
+    for sigma in [0.9, 0.22]:
+        xx, aa, yy = generate(sigma=sigma)
+        for cap in [None, 5.0]:
+            xi, w = pseudo_outcome(xx, aa, yy, False, True, cap=cap)
+            estimate, _ = smooth(aa, xi)
+            used = w if cap is None else np.minimum(w, cap)
+            overlap.append({"sigma": sigma, "cap": cap, "max_raw_weight": float(w.max()),
+                            "ess_rows": float(used.sum()**2/(used@used)),
+                            "rmse_usd": float(np.sqrt(np.mean((estimate-truth(GRID))**2)))})
+    dose = np.linspace(1, 39, 153)
+    save_table(output / "overlap.csv", ["discount_pp", "broad_minus", "broad_plus", "narrow_minus", "narrow_plus"],
+               np.c_[dose, density(dose, -.9, .9), density(dose, .9, .9),
+                     density(dose, -.9, .22), density(dose, .9, .22)])
+    save_table(output / "hidden_confounding.csv", ["discount_pp", "causal_profit_usd", "adjusted_association_usd"],
+               np.c_[GRID, truth(GRID), hidden_confounding()])
+    report = {"seed": 20261118, "n": len(y), "repetitions": repetitions,
+              "python": platform.python_version(), "numpy": np.__version__,
+              "grid_pp": [6, 34, 1], "bandwidth_pp": 2.0,
+              "reference": reference, "plr_slope_usd_per_pp": plr_slope(x, a, y),
+              "simulation": evaluation, "overlap": overlap,
+              "hidden_confounding_max_bias_usd": float(np.max(np.abs(hidden_confounding()-truth(GRID)))),
+              "scope": "Synthetic fixed-design evaluations. Intervals are conditional HC0 pointwise approximations; no simultaneous-band guarantee."}
+    (output / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "results")
+    parser.add_argument("--repetitions", type=int, default=200)
+    args = parser.parse_args()
+    if args.repetitions < 2:
+        parser.error("Use at least two independent repetitions")
+    run(args.output, args.repetitions)
+```
+
+
+## 6.26 Store Decisions and Partial Pooling
+
+\noindent A retailer may need a different discount for each store, while some stores supply only a small number of customers. Separate estimates then have high sampling variation. A common curve can conceal persistent differences across stores. Partial pooling estimates a common response together with regional and store deviations, shrinking the deviations according to a penalty selected using validation outcomes.
+
+The synthetic comparison has 20 stores nested in four regions. Each region contains stores with 12, 25, 60, 150, and 300 customers, giving 2,188 observations. Discounts are independently randomized between 5 and 35 within every store. Profit equals a quadratic response with imposed region and store coefficient deviations plus independent noise with a $3 standard deviation. Because assignment is randomized, this comparison isolates pooling rather than confounder adjustment.
+
+Write $B(a)=(1,t,t^2-0.75)'$, where $t=(a-20)/10$. The fitted curve for store $s$ in region $r$ is
+
+$$
+\widehat\theta_s(a)=B(a)'(\widehat\beta+\widehat b_r+\widehat c_s).
+$$
+
+The coefficients minimize the sum of squared customer residuals plus $\lambda_r\sum_r\|b_r\|^2+\lambda_s\sum_s\|c_s\|^2$. Global coefficients are unpenalized. Five-fold validation within every store selects each penalty from 1, 10, and 100, averaging validation squared error equally across stores. Both selected penalties equal 100. The final fit uses every observation. The known response curves enter only the evaluation, with equal weight on each store and each of 29 doses from 6 through 34.
+
+All entries below are curve RMSE in dollars per customer. Parentheses give the number of stores.
+
+| Store Sample | Complete | Separate | Partial |
+| --- | ---: | ---: | ---: |
+| All (20) | 0.968 | 0.936 | 0.512 |
+| 12 or 25 Customers (8) | 0.954 | 1.376 | 0.666 |
+| 150 or 300 Customers (8) | 1.084 | 0.376 | 0.349 |
+
+Partial pooling has the lowest aggregate error in this one simulated dataset. Individual stores can favor a different estimator. Store 4, with 300 customers, has separate-fit RMSE of $0.249 and partial-pooling RMSE of $0.550. Pooling trades variation against bias toward shared coefficients, so a large aggregate improvement does not establish improvement at every store.
+
+![Known, separately fitted, and partially pooled discount curves for one small store and one large store on common axes.](../figures/M06_store_pooling.png)
+
+**Figure description.** Store 0 has 12 customers and Store 4 has 300. Solid blue curves show their known synthetic responses, gray dashed curves show separate quadratic fits, and orange dash-dotted curves show partial pooling. Both panels share discount and profit scales. Shrinkage improves the small store's curve while moving the large store's estimate farther from its known response.
+
+An observational extension would require adjustment for assignment within the relevant target groups. A group-specific curve averages covariates within that group and uses the corresponding marginal treatment density. Smoothing a population-standardized adjusted outcome within stores generally changes the intended estimand. The reviewed `drcurves` implementation performs group-specific standardization before hierarchical smoothing. Group curves still require credible within-group support; pooling cannot supply an unobserved counterfactual without additional modeling assumptions. [Pinned implementation](https://github.com/raz1470/continuous-dr-learner/blob/72115789652127cc2a89eb960d829d2cc513d9cb/src/drcurves/nuisance.py).
+
+Python source: [store_pooling.py](../../03_Data_and_Code/Dose_Response/store_pooling.py).
+
+```python
+"""Randomized synthetic discounts: separate, complete, and partial pooling.
+
+Twenty stores nested in four regions; equal-store evaluation on a common grid.
+Only observed validation outcomes select penalties. Known curves score the fits.
+"""
+from pathlib import Path
+import argparse
+import json
+import numpy as np
+
+
+def basis(a):
+    t = (np.asarray(a) - 20) / 10
+    return np.column_stack([np.ones_like(t), t, t*t - 0.75])
+
+
+def design(a, store):
+    b = basis(a)
+    region = store // 5
+    return np.column_stack([b] + [b*(region == r)[:, None] for r in range(4)]
+                           + [b*(store == s)[:, None] for s in range(20)])
+
+
+def fit(a, store, y, region_penalty, store_penalty):
+    d = design(a, store)
+    penalty = np.r_[np.zeros(3), np.full(12, region_penalty), np.full(60, store_penalty)]
+    return np.linalg.solve(d.T @ d + np.diag(penalty), d.T @ y)
+
+
+def generate(seed=20261119):
+    rng = np.random.default_rng(seed)
+    sizes = np.tile([12, 25, 60, 150, 300], 4)
+    region = np.array([[-.6, -.5, .1], [-.2, .4, -.1], [.2, -.2, -.1], [.6, .3, .1]])
+    coefficient = (np.array([13.25, 0, -1]) + np.repeat(region, 5, axis=0)
+                   + rng.normal(size=(20, 3)) * [.6, .5, .3])
+    store = np.repeat(np.arange(20), sizes)
+    a = rng.uniform(5, 35, len(store))  # Randomized independently within every store.
+    y = np.sum(basis(a) * coefficient[store], axis=1) + rng.normal(0, 3, len(a))
+    fold = np.concatenate([rng.permutation(np.arange(n) % 5) for n in sizes])
+    return a, store, y, coefficient, fold
+
+
+def run(output):
+    output.mkdir(parents=True, exist_ok=True)
+    a, store, y, coefficient, fold = generate()
+    candidates = []
+    for rp in [1., 10., 100.]:
+        for sp in [1., 10., 100.]:
+            prediction = np.empty_like(y)
+            for k in range(5):
+                tr, te = fold != k, fold == k
+                beta = fit(a[tr], store[tr], y[tr], rp, sp)
+                prediction[te] = design(a[te], store[te]) @ beta
+            loss = np.mean([np.mean((y[store == s]-prediction[store == s])**2) for s in range(20)])
+            candidates.append((loss, rp, sp))
+    loss, rp, sp = min(candidates)
+    partial = fit(a, store, y, rp, sp)
+    complete = np.linalg.lstsq(basis(a), y, rcond=None)[0]
+    grid, rows, errors = np.arange(6., 35.), [], []
+    for s in range(20):
+        selected = store == s
+        separate = np.linalg.lstsq(basis(a[selected]), y[selected], rcond=None)[0]
+        target = basis(grid) @ coefficient[s]
+        predictions = [basis(grid) @ complete, basis(grid) @ separate,
+                       design(grid, np.full(len(grid), s)) @ partial]
+        errors.append([selected.sum()] + [np.mean((p-target)**2) for p in predictions])
+        rows.extend(np.c_[np.full(len(grid), s), grid, target, *predictions].tolist())
+    errors = np.array(errors)
+    np.savetxt(output / "stores.csv", np.c_[store, store//5, a, y, fold], delimiter=",", comments="",
+               header="store,region,discount_pp,profit_usd,validation_fold", fmt="%.10g")
+    np.savetxt(output / "store_curves.csv", rows, delimiter=",", comments="",
+               header="store,discount_pp,truth,complete,separate,partial", fmt="%.10g")
+    np.savetxt(output / "pooling_cv.csv", candidates, delimiter=",", comments="",
+               header="equal_store_validation_mse,region_penalty,store_penalty", fmt="%.10g")
+    results = {}
+    for name, selected in [("all_stores", np.ones(20, bool)), ("small_stores_n_le_25", errors[:, 0] <= 25),
+                           ("large_stores_n_ge_150", errors[:, 0] >= 150)]:
+        results[name] = dict(zip(["complete", "separate", "partial"],
+                                np.sqrt(errors[selected, 1:].mean(0)).tolist()))
+    report = {"seed": 20261119, "observations": len(y), "stores": 20, "regions": 4,
+              "region_penalty": rp, "store_penalty": sp, "validation_mse": loss,
+              "rmse_usd": results, "scope": "One synthetic randomized dataset; no confidence intervals or general dominance claim."}
+    (output / "pooling_summary.json").write_text(json.dumps(report, indent=2) + "\n")
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "results")
+    run(parser.parse_args().output)
+```
+
+
+## 6.27 Continuous Treatment and Parallel Trends
+
+\noindent A store panel can sometimes support a comparison of profit changes across discount intensities. If an unobserved store characteristic enters profit additively with the same coefficient in both periods, differencing removes that component. Time-varying demand shocks, changing loadings on the characteristic, and dose choices responding to expected profit changes require further justification.
+
+Ordinary parallel trends can identify treatment-on-the-treated level effects relative to no treatment for particular dose groups. Comparing those effects across dose groups also compares populations that may have different gains from treatment. Interpreting the slope across doses as a causal response generally requires stronger restrictions. Pretreatment patterns can reveal some failures, but a flat placebo curve does not prove the required post-treatment comparison. The appropriate design depends on the assignment process and the target effect. [Callaway, Goodman-Bacon, and Sant'Anna, December 2025 version](https://arxiv.org/abs/2107.02637v8).
+
+For a marketing panel, specify the offer date, anticipation period, customer or store assignment unit, and any other interventions changing alongside the discount. Keep repeated units in the same nuisance-fitting fold and use inference suited to the assignment and dependence structure. If the existing mHealth logs do not record randomized notification intensity, a causal notification-response curve requires an additional design. Logging frequency by itself describes observed behavior and cannot substitute for an assigned intervention.

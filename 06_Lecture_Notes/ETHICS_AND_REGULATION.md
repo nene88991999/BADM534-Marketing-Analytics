@@ -60,3 +60,7 @@ M9 §§9.8 and 9.10 separate regulatory findings, philosophical evaluation, and 
 ## AI Experimentation and Personalized Pricing
 
 M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 examine commercial outcomes, customer surplus, and Kantian duties separately. The [primary policy record](../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md), checked November 6, 2026, covers the FTC August proposal and October inquiry, New York's existing disclosure law, pending surveillance-pricing legislation, and price-gouging scope. The paper review preserves explicit safeguards and distributional findings that constrain criticism.
+
+## Intervention Intensity and Customer Judgment
+
+M8 §8.22 compares known synthetic revenue, profit, and complaint-constrained choices. M9 §9.18.1 distinguishes that optimization from justification of the marketing practice, including consent, truthful communication, and effective refusal. The assumed complaint response and 3% cap have no legal or ethical authority. This extension makes no new claim about the status of a regulation.

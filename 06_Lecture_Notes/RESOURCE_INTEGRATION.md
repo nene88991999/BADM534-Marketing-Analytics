@@ -151,3 +151,7 @@ Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §
 ## Clustering Optimization
 
 [The e-means and o-means source review](../01_Resources/23_Clustering_Optimization/README.md) informs M4 §§4.18–4.20. The original scalar examples and fixed-data CPU comparison preserve common initial centers, an exhaustive final scorer, and explicit timing boundaries. Two figures show inconsistent labels and the measured cost/error comparison. Full Python and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany Session 6; M5 §5.3 and M7 §7.27 connect representation and evaluation. The reviewed GPU claims are distinct from the executed CPU results.
+
+## Dose-Response Curves
+
+The [dose-response sources](../01_Resources/24_Dose_Response/README.md), reviewed November 18, 2026, support M6 §§6.22–6.27 and the M8 objective calculation. The course's original NumPy examples evaluate four nuisance specifications over 200 simulated samples, a separate randomized-store pooling comparison, and three known-function objectives. Three editable figures show a zero linear projection slope, conditional overlap, and store-level shrinkage. Full code appears in the notes. Source package simulations and continuous-DiD implementations were not executed.

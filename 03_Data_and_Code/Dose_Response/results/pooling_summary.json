@@ -1,0 +1,27 @@
+{
+  "seed": 20261119,
+  "observations": 2188,
+  "stores": 20,
+  "regions": 4,
+  "region_penalty": 100.0,
+  "store_penalty": 100.0,
+  "validation_mse": 9.615731486302028,
+  "rmse_usd": {
+    "all_stores": {
+      "complete": 0.9678874371340337,
+      "separate": 0.9357759393933586,
+      "partial": 0.5118443954499136
+    },
+    "small_stores_n_le_25": {
+      "complete": 0.9536111977810277,
+      "separate": 1.37643877649866,
+      "partial": 0.6655838495232246
+    },
+    "large_stores_n_ge_150": {
+      "complete": 1.0841576397128563,
+      "separate": 0.3761169725221297,
+      "partial": 0.34880980505484166
+    }
+  },
+  "scope": "One synthetic randomized dataset; no confidence intervals or general dominance claim."
+}

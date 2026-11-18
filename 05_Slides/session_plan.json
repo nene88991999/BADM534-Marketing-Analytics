@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-15",
+  "updated_on": "2026-11-18",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -533,11 +533,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 20,
+      "slides": 25,
       "companion": "S10_Causal_Comparisons_and_Policy_Evaluation.md",
       "pdf": "S10_Causal_Comparisons_and_Policy_Evaluation.pdf",
       "python_activity": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
-      "application": "Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation.",
+      "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation.",
       "ethics": "Treatment paths, comparison populations, and selection",
       "timing": [
         {
@@ -572,9 +572,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 145,
+          "minutes": 20,
+          "activity": "Discount Response and Uncertainty"
+        },
+        {
+          "start_minute": 145,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "Application and Interpretation"
+          "minutes": 10,
+          "activity": "Comparison Groups and Events"
         },
         {
           "start_minute": 155,
@@ -707,11 +713,11 @@
       "modules": "M8",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 18,
+      "slides": 20,
       "companion": "S13_Adaptive_Recommendations_and_Marketing_Budgets.md",
       "pdf": "S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf",
       "python_activity": "Compare list objectives and solve a budget allocation with an independent grid check.",
-      "application": "Separate policy feedback and changed demand from evidence supporting earlier forecast intervals.",
+      "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation.",
       "ethics": "Attention, adaptive feedback, and platform incentives",
       "timing": [
         {
@@ -746,9 +752,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 140,
+          "minutes": 15,
+          "activity": "Feedback and Forecast Interpretation"
+        },
+        {
+          "start_minute": 140,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "Application and Interpretation"
+          "minutes": 15,
+          "activity": "Discount Objectives and Customer Outcomes"
         },
         {
           "start_minute": 155,

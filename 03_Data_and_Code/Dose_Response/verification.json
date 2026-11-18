@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-11-18",
+  "checks": [
+    "seven unit tests",
+    "four reference curve RMSEs",
+    "116 pointwise coverage rows",
+    "nine pooling RMSEs",
+    "three objective maxima"
+  ],
+  "sha256": {
+    "coverage.csv": "b261bb097baf79c5dff980353dddcbb2403018c9d89d38e243f6ee22466ecafc",
+    "curves.csv": "cd27f2891adb10f90097b95475e8d6c03795d2a4bfccffa132472fb9f3752c71",
+    "customers.csv": "f42af9e960a279adc5246d7ce5f4e702b434322d572b88358ffb576572e6f576",
+    "hidden_confounding.csv": "1643cdeba2316ae51704698549da647854010fa89ae9fa06a7a589cb7e038357",
+    "objectives.csv": "b6cc7b4ab680562fe3f3e7ee61ebb7c9786c3f4ab67bef1408ed2f1d5b9fc647",
+    "objectives_summary.json": "ce276fb2dad0c4f91c63c0582c4e3741fd7c28d2a411f142c87a2a3eac07dd2a",
+    "overlap.csv": "b108fb0a37b7f18e6cbf253ada9ecfc215af13b7a00f24c3569b8a39212296ae",
+    "pooling_cv.csv": "d488d18f34f7bc6add381df779af3db27394bb5edced7211065864776a12c13e",
+    "pooling_summary.json": "b275e51517a5a99e3044ccdd8eb429686eb7529f7961b7af9ed8b2c64caf2d7a",
+    "store_curves.csv": "81446a84db4d43dc62b50d5cf107d53c06f3c15cede6cd19d64192de1ddd04da",
+    "stores.csv": "451bd95d4eb991d0393f016179ff14a3c19741a3d5c4da5c472f0f097a2b9879",
+    "summary.json": "7ef54b64fa767133cdd9e2b5028cb83a0a22cf4ada4f5501af1bc96cca0377c3"
+  }
+}

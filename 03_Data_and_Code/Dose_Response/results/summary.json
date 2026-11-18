@@ -1,0 +1,102 @@
+{
+  "seed": 20261118,
+  "n": 2400,
+  "repetitions": 200,
+  "python": "3.13.5",
+  "numpy": "2.1.3",
+  "grid_pp": [
+    6,
+    34,
+    1
+  ],
+  "bandwidth_pp": 2.0,
+  "reference": [
+    {
+      "model": "outcome_1_density_1",
+      "rmse_usd": 0.09260447546586671,
+      "weight_max": 169.91421918272206,
+      "ess_rows": 125.47513525824313
+    },
+    {
+      "model": "outcome_1_density_0",
+      "rmse_usd": 0.05229894342174353,
+      "weight_max": 1.0,
+      "ess_rows": 2400.0
+    },
+    {
+      "model": "outcome_0_density_1",
+      "rmse_usd": 0.5318559769613824,
+      "weight_max": 169.91421918272206,
+      "ess_rows": 125.47513525824313
+    },
+    {
+      "model": "outcome_0_density_0",
+      "rmse_usd": 1.3109596085743456,
+      "weight_max": 1.0,
+      "ess_rows": 2400.0
+    }
+  ],
+  "plr_slope_usd_per_pp": 0.002831464937355495,
+  "simulation": [
+    {
+      "outcome_correct": true,
+      "density_correct": true,
+      "mean_rmse_usd": 0.09941531476843013,
+      "mean_pointwise_coverage": 0.9065517241379312,
+      "whole_grid_coverage_of_pointwise_intervals": 0.425
+    },
+    {
+      "outcome_correct": true,
+      "density_correct": false,
+      "mean_rmse_usd": 0.058066208817129414,
+      "mean_pointwise_coverage": 0.8574137931034482,
+      "whole_grid_coverage_of_pointwise_intervals": 0.235
+    },
+    {
+      "outcome_correct": false,
+      "density_correct": true,
+      "mean_rmse_usd": 0.31244008991304306,
+      "mean_pointwise_coverage": 0.9668965517241379,
+      "whole_grid_coverage_of_pointwise_intervals": 0.6
+    },
+    {
+      "outcome_correct": false,
+      "density_correct": false,
+      "mean_rmse_usd": 1.3348925067938087,
+      "mean_pointwise_coverage": 0.06431034482758621,
+      "whole_grid_coverage_of_pointwise_intervals": 0.0
+    }
+  ],
+  "overlap": [
+    {
+      "sigma": 0.9,
+      "cap": null,
+      "max_raw_weight": 169.91421918272206,
+      "ess_rows": 125.47513525824313,
+      "rmse_usd": 0.5318559769613824
+    },
+    {
+      "sigma": 0.9,
+      "cap": 5.0,
+      "max_raw_weight": 169.91421918272206,
+      "ess_rows": 1290.4006195907682,
+      "rmse_usd": 0.6338117164946105
+    },
+    {
+      "sigma": 0.22,
+      "cap": null,
+      "max_raw_weight": 0.6009338605228927,
+      "ess_rows": 2399.955032964965,
+      "rmse_usd": 1.8248167243910571
+    },
+    {
+      "sigma": 0.22,
+      "cap": 5.0,
+      "max_raw_weight": 0.6009338605228927,
+      "ess_rows": 2399.955032964965,
+      "rmse_usd": 1.8248167243910571
+    }
+  ],
+  "hidden_confounding_max_bias_usd": 1.666474651535319,
+  "scope": "Synthetic fixed-design evaluations. Intervals are conditional HC0 pointwise approximations; no simultaneous-band guarantee."
+}

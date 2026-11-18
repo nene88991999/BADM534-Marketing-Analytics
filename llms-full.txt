@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-15",
+  "updated_on": "2026-11-18",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -38,6 +38,12 @@ Generated from course.json and the source files identified below. This file cont
     {
       "id": "clustering-optimization",
       "path": "07_Labs/Clustering_Optimization/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
+    },
+    {
+      "id": "dose-response",
+      "path": "07_Labs/Dose_Response/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
     }
@@ -131,12 +137,18 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Clustering_Optimization/DATA_DICTIONARY.md",
     "03_Data_and_Code/Clustering_Optimization/AGENTS.md",
     "03_Data_and_Code/Clustering_Optimization/results/README.md",
-    "07_Labs/Clustering_Optimization/README.md"
+    "07_Labs/Clustering_Optimization/README.md",
+    "01_Resources/24_Dose_Response/README.md",
+    "03_Data_and_Code/Dose_Response/README.md",
+    "03_Data_and_Code/Dose_Response/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Dose_Response/AGENTS.md",
+    "03_Data_and_Code/Dose_Response/results/README.md",
+    "07_Labs/Dose_Response/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-15",
+    "updated_on": "2026-11-18",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -180,12 +192,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-15-clustering-optimization",
+    "revision": "2026-11-18-dose-response",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 78,
-    "pages": 284,
+    "figures_count": 81,
+    "pages": 297,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -196,7 +208,8 @@ Generated from course.json and the source files identified below. This file cont
     "marketing_dialectics": "06_Lecture_Notes/Marketing_Dialectics.pdf",
     "conformal_examples": "03_Data_and_Code/Conformal_Prediction/README.md",
     "ai_evidence_examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
-    "clustering_examples": "03_Data_and_Code/Clustering_Optimization/README.md"
+    "clustering_examples": "03_Data_and_Code/Clustering_Optimization/README.md",
+    "dose_response_examples": "03_Data_and_Code/Dose_Response/README.md"
   },
   "datasets": [
     {
@@ -244,7 +257,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-15",
+    "updated_on": "2026-11-18",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -253,7 +266,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 324,
+    "slides": 331,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -300,7 +313,7 @@ Generated from course.json and the source files identified below. This file cont
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-06",
+    "updated_on": "2026-11-18",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -426,6 +439,28 @@ Generated from course.json and the source files identified below. This file cont
     ],
     "o_means_executed": false,
     "scope": "Exact scalar examples and a fixed synthetic CPU comparison; no reproduction of published GPU speedups or measured customer effects"
+  },
+  "dose_response": {
+    "resources": "01_Resources/24_Dose_Response/README.md",
+    "catalog": "01_Resources/24_Dose_Response/catalog.json",
+    "examples": "03_Data_and_Code/Dose_Response/README.md",
+    "lab": "07_Labs/Dose_Response/README.md",
+    "reviewed_on": "2026-11-18",
+    "sections": [
+      "M3 \u00a73.14",
+      "M4 \u00a74.21",
+      "M6 \u00a7\u00a76.22\u20136.27",
+      "M8 \u00a78.22",
+      "M9 \u00a79.18.1"
+    ],
+    "sessions": [
+      10,
+      13
+    ],
+    "simulation_repetitions": 200,
+    "executed_course_programs": 3,
+    "source_package_executed": false,
+    "scope": "Original synthetic finite-design examples; conditional interval evaluation, randomized-store pooling, and imposed objectives"
   }
 }
 ```
@@ -512,6 +547,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Clustering Optimization
 
 [Clustering optimization](03_Data_and_Code/Clustering_Optimization/README.md) adds an exact centroid example, an executed CPU comparison, and [optional practice](07_Labs/Clustering_Optimization/README.md). M4 and Session 6 connect computational cost, final labels, and customer interpretation.
+
+## Discount Response and Customer Outcomes
+
+[Discount-response examples](03_Data_and_Code/Dose_Response/README.md) connect nonlinear effects, confounding, overlap, uncertainty, and store pooling to marketing choices. Complete Python, three editable figures, and [optional practice](07_Labs/Dose_Response/README.md) support M6, M8, and Marketing Dialectics.
 
 ---
 
@@ -720,6 +759,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 [Clustering optimization and interpretation](03_Data_and_Code/Clustering_Optimization/README.md) connects M4 §§4.18–4.20, M5 §5.3, and M7 §7.27. Session 6 uses 15 minutes of its existing application block. Two complete programs and two editable TikZ figures distinguish weighted updates, consistent final labels, and implementation benchmarks from evidence for a marketing action. The [practice lab](07_Labs/Clustering_Optimization/README.md) is optional and ungraded.
 
+## Discount Response and Intervention Intensity
+
+[The discount-response collection](01_Resources/24_Dose_Response/README.md) supports M3 §3.14, M4 §4.21, M6 §§6.22–6.27, M8 §8.22, and M9 §9.18.1. Session 10 uses 20 minutes for shape, adjustment, conditional support, interval coverage, and store pooling. Session 13 uses 15 minutes for objectives and customer outcomes. [Three complete programs](03_Data_and_Code/Dose_Response/README.md) use synthetic observations and known curves; [the lab](07_Labs/Dose_Response/README.md) is optional and ungraded. Advanced continuous-DiD assumptions remain supplementary reading.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -888,15 +931,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Clustering optimization](Clustering_Optimization/README.md) supplies exact scalar calculations and 27 CPU fits on fixed synthetic vectors. Complete Python, pinned requirements, final centroid arrays, label vectors, aggregate outputs, and five tests support M4 §§4.18–4.20. No o-means or GPU benchmark was executed.
 
+## Dose-Response Curves
+
+[Discount-response examples](Dose_Response/README.md) provide three complete synthetic programs: cross-fitted adjustment with 200 repeated-sample evaluations, randomized-store partial pooling, and a known-function comparison of objectives. Seven numerical tests, saved arrays, a data dictionary, and an agent guide accompany M6 §§6.22–6.27 and M8 §8.22.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 15, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 18, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 78 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 81 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -924,7 +971,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 284 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 297 pages.
 
 ## Editing and Building
 
@@ -1013,6 +1060,10 @@ M1 §1.14 connects specifications and retained skills. M5 §§5.19–5.20 add a 
 ## Clustering Optimization
 
 M4 §§4.18–4.20 explain weighted cluster mass, final assignments, and a fixed-data comparison of Lloyd, MiniBatch, and CPU e-means. [Two full programs](../03_Data_and_Code/Clustering_Optimization/README.md), 27 saved fits, and five tests accompany two editable TikZ figures. M5 §5.3 connects the representation of text vectors; M7 §7.27 connects timing boundaries and independent evaluation. The [optional lab](../07_Labs/Clustering_Optimization/README.md) supports Session 6.
+
+## Discount Response and Intervention Intensity
+
+M6 §§6.22–6.27 provide a nonlinear discount case, five-fold adjustment, conditional-overlap diagnostics, 200-sample interval evaluation, randomized-store pooling, and continuous-DiD qualifications. M8 §8.22 supplies a complete objective calculation; M3 §3.14, M4 §4.21, and M9 §9.18.1 connect interpretation, group decisions, and customer judgment. [The programs](../03_Data_and_Code/Dose_Response/README.md), [source guide](../01_Resources/24_Dose_Response/README.md), and [optional lab](../07_Labs/Dose_Response/README.md) preserve assumptions and executable calculations.
 
 ---
 
@@ -1158,6 +1209,10 @@ Session 7 adds citation support and a controlled source-comparison protocol. Ses
 ## Clustering Optimization
 
 Session 6 adds weighted centroid updates, final-label consistency, a local CPU comparison, and customer-action interpretation. [The full programs](../03_Data_and_Code/Clustering_Optimization/README.md) and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany four new slides and two editable figures. The 15-minute discussion fits the existing application block.
+
+## Discount Response and Decision Objectives
+
+Session 10 adds five slides on nonlinear discount responses, doubly robust adjustment, conditional support, interval coverage, and store pooling. Session 13 adds two slides on objectives and customer judgment. [Complete Python](../03_Data_and_Code/Dose_Response/README.md) and [optional practice](../07_Labs/Dose_Response/README.md) accompany three new editable TikZ figures. The discussion fits existing 20-minute and 15-minute allocations.
 
 ---
 
@@ -1633,6 +1688,10 @@ Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §
 
 [The e-means and o-means source review](../01_Resources/23_Clustering_Optimization/README.md) informs M4 §§4.18–4.20. The original scalar examples and fixed-data CPU comparison preserve common initial centers, an exhaustive final scorer, and explicit timing boundaries. Two figures show inconsistent labels and the measured cost/error comparison. Full Python and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany Session 6; M5 §5.3 and M7 §7.27 connect representation and evaluation. The reviewed GPU claims are distinct from the executed CPU results.
 
+## Dose-Response Curves
+
+The [dose-response sources](../01_Resources/24_Dose_Response/README.md), reviewed November 18, 2026, support M6 §§6.22–6.27 and the M8 objective calculation. The course's original NumPy examples evaluate four nuisance specifications over 200 simulated samples, a separate randomized-store pooling comparison, and three known-function objectives. Three editable figures show a zero linear projection slope, conditional overlap, and store-level shrinkage. Full code appears in the notes. Source package simulations and continuous-DiD implementations were not executed.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -1993,10 +2052,10 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 31 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
-| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
+| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 28 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
-| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 18 |
+| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 20 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
@@ -2187,7 +2246,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compute policy values and diagnose a deliberately unsupported recommendation action.
 
-**Application:** Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation.
+**Application:** Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation.
 
 **Ethics and Regulation:** Treatment paths, comparison populations, and selection.
 
@@ -2198,7 +2257,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–145 | Discount Response and Uncertainty |
+| 145–155 | Comparison Groups and Events |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 11. Prediction, Validation, and Marketing Actions
@@ -2247,7 +2307,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare list objectives and solve a budget allocation with an independent grid check.
 
-**Application:** Separate policy feedback and changed demand from evidence supporting earlier forecast intervals.
+**Application:** Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation.
 
 **Ethics and Regulation:** Attention, adaptive feedback, and platform incentives.
 
@@ -2258,7 +2318,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–140 | Feedback and Forecast Interpretation |
+| 140–155 | Discount Objectives and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 14. Generative AI, Consumer Choice, and Regulation
@@ -2389,6 +2450,10 @@ Session 7 uses its existing 45-minute Python block for a 10-minute demonstration
 
 Session 6 allocates minutes 125–140 to weighted centroid updates, final-label consistency, and a fixed-data CPU comparison. Minutes 140–155 retain the retention-definition discussion. The existing 45-minute Python block can use mHealth or research-mechanism clustering; the [algorithm comparison lab](../07_Labs/Clustering_Optimization/README.md) is optional ungraded follow-up. M4 §§4.18–4.20 provide complete code and two analytical figures, with connections to embeddings in M5 §5.3 and timing boundaries in M7 §7.27. The source guide keeps o-means as advanced GPU reading. No new meeting, deadline, or assessment rule is introduced.
 
+## Dose-Response Curves and Intervention Intensity
+
+Session 10 allocates minutes 125–145 to discount-response shape, adjustment, conditional support, interval coverage, and store pooling; minutes 145–155 retain comparison-group and earnings-call interpretation. The existing Python policy-value exercise remains available, with the [dose-response lab](../07_Labs/Dose_Response/README.md) as optional ungraded follow-up. Session 13 allocates minutes 140–155 to the revenue, profit, and hypothetical complaint-constrained choices, retaining minutes 125–140 for feedback and forecast interpretation. M3 and M4 provide conceptual connections; M9 §9.18.1 examines intensity and customer judgment. The advanced continuous-DiD discussion is supplementary reading. The 15 meetings, dates, and 170-minute durations remain unchanged.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -2455,6 +2520,10 @@ M9 §§9.8 and 9.10 separate regulatory findings, philosophical evaluation, and 
 ## AI Experimentation and Personalized Pricing
 
 M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 examine commercial outcomes, customer surplus, and Kantian duties separately. The [primary policy record](../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md), checked November 6, 2026, covers the FTC August proposal and October inquiry, New York's existing disclosure law, pending surveillance-pricing legislation, and price-gouging scope. The paper review preserves explicit safeguards and distributional findings that constrain criticism.
+
+## Intervention Intensity and Customer Judgment
+
+M8 §8.22 compares known synthetic revenue, profit, and complaint-constrained choices. M9 §9.18.1 distinguishes that optimization from justification of the marketing practice, including consent, truthful communication, and effective refusal. The assumed complaint response and 3% cap have no legal or ethical authority. This extension makes no new claim about the status of a regulation.
 
 ---
 
@@ -2657,7 +2726,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments and incremental value |
-| 10 | March 31 | M6: Causal comparisons, policy evaluation, and event windows |
+| 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
 | 11 | April 7 | M7: Prediction, validation, and marketing actions |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
@@ -3840,6 +3909,14 @@ Evaluate three variants. In the first, the message accurately explains an option
 
 A defensible recommendation should name the proposed action, its expected commercial effect, the affected customer outcomes, the ethical reason, and the condition that would change the decision. Rejecting an unsupported claim is part of critical judgment. So is recognizing evidence that weakens an initial accusation or supports a mutually beneficial practice.
 
+### 9.18.1 Intervention Intensity and Customer Judgment
+
+\noindent A more precise estimate of how discounts or repeated contacts change behavior makes a commercial intervention easier to optimize. Its ethical justification depends on the practice being intensified and the customer's ability to understand and refuse it. A manager should identify the stated purpose, the information used to select intensity, and how the customer can revise a decision. Evidence about sales or profit alone leaves these conditions unspecified.
+
+The synthetic discount calculation in M8 Section 8.22 selects different intensities under revenue, profit, and a hypothetical complaint constraint. The constraint expresses one measurable restriction. A low observed complaint rate does not establish informed consent, truthful communication, or an effective opportunity to decline. Kantian respect for persons requires examining how the practice treats the customer's judgment, including safeguards that remain binding when they lower the firm's measured payoff. Confucian concerns with trustworthiness and responsible conduct likewise direct attention to how the offer is presented and how employees respond to a reasoned objection. Neither philosophical perspective supplies the numerical complaint threshold used in the exercise.
+
+A defensible recommendation distinguishes the estimated response from the reasons for choosing an objective. State who bears the costs of a mistaken intensity, how uncertainty affects deployment, and which practices remain unacceptable even if profitable. A comparison of feasible actions can then evaluate commercial outcomes alongside customer experience without treating a single measured outcome as a complete account of customer agency.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -4486,6 +4563,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 
 [Clustering Optimization and Interpretation](Clustering_Optimization/README.md) is available as optional, ungraded practice. A 15-minute discussion uses exact centroid arithmetic and saved CPU results; an optional Python run compares three implementations with common data, initial centers, and final scoring.
 
+## Discount Response and Customer Outcomes
+
+[Discount Response Curves and Customer Outcomes](Dose_Response/README.md) is optional, ungraded practice. A 20-minute discussion uses saved curve and uncertainty comparisons; optional Python work changes overlap, nuisance specifications, pooling, and the decision objective. All data are synthetic.
+
 ---
 
 ## Source: 07_Labs/AI_Evidence_and_Evaluation/README.md
@@ -4750,6 +4831,180 @@ Ask a coding assistant: “Read the data dictionary and comparison program. Writ
 ## Interpretation Checks
 
 A sound explanation identifies the weighted center as 17/6, the reassigned point as 5, and the final loss as 41/8. It separates a more compact vector representation from evidence that a segment is meaningful or that an action improves customer outcomes. It identifies o-means as optional GPU-focused reading and makes no claim that the course ran it.
+
+---
+
+## Source: 01_Resources/24_Dose_Response/README.md
+
+# Dose-Response Curves and Marketing Decisions
+
+A marketing decision often concerns how much discount, spending, or contact to assign. The [source article](https://towardsdatascience.com/how-to-estimate-dose-response-curves-when-doubleml-falls-short/) motivates nonlinear causal responses, group-specific estimates, and interval assessment. The course uses original synthetic calculations to connect those ideas to [M6](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md), [M8](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md), and [Marketing Dialectics](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md).
+
+## Primary Reading Path
+
+[The catalog](catalog.json), namespace `dose-response`, records eight resources and their scope. Begin with [Kennedy and colleagues](https://arxiv.org/abs/1507.00747v3) for the adjusted outcome and its identifying assumptions. [DoubleML documentation](https://docs.doubleml.org/stable/guide/models.html) defines the partially linear specification. [Colangelo and Lee](https://arxiv.org/abs/2004.03036) provide a nonparametric DML alternative. [Callaway, Goodman-Bacon, and Sant'Anna](https://arxiv.org/abs/2107.02637v8) distinguish continuous-treatment level effects and causal responses under different parallel-trends assumptions.
+
+## Methodological Distinctions
+
+The default partially linear regression specification estimates a constant slope. DML methods also allow nonlinear treatment responses. Orthogonality and double robustness are distinct properties; the latter depends on the score and nuisance definitions. A doubly robust estimator still requires a credible intervention, conditional support, and adequate control of confounding. Fixed smoothing, finite samples, clipping, and nuisance fitting affect inference.
+
+The article's hierarchical package uses group-specific standardization before smoothing adjusted outcomes within a hierarchy. This step matters for targeting group means. Partial pooling can improve precision while introducing shrinkage bias. A new store's predicted curve depends on the hierarchy assumptions and is distinct from an identified store-specific response.
+
+The source reports undercoverage in its own experiments. Its rankings use a small set of simulation designs and chosen implementations; they do not establish general software superiority. Source intervals, their nominal event, and achieved coverage need separate interpretation. The course's conditional HC0 intervals are explicitly evaluated approximations, with pointwise and whole-grid events reported separately.
+
+The continuous-DiD extension removes a stable hidden component in a particular additive simulation. Ordinary parallel trends alone generally does not identify causal differences across dose groups. A pretreatment placebo supplies a diagnostic rather than proof of the stronger assumptions. DiD remains advanced reading in this extension.
+
+## Course Materials and Execution
+
+[Three complete Python examples](../../03_Data_and_Code/Dose_Response/README.md) provide an observational discount case, a separate randomized-store pooling case, and a known-function decision comparison. The first evaluates four nuisance specifications over 200 independent simulated datasets. Seven tests and saved numeric arrays support the [optional ungraded lab](../../07_Labs/Dose_Response/README.md). The article's package simulations were not executed. Three editable TikZ figures use Illinois colors, common comparison scales, and text companions.
+
+## Provenance and Rights
+
+Reviewed November 18, 2026. The source article was read in the public browser; primary papers and documentation supplied the methodological checks. `drcurves` README and its MIT license are retained at commit `72115789652127cc2a89eb960d829d2cc513d9cb`. The implementation review inspected `src/drcurves/nuisance.py` and `src/drcurves/__init__.py`, including group-specific integration and default weight capping. Original software instructions remain reference content. Article and paper texts are linked rather than redistributed. The local catalog records versions, access scope, and snapshot hashes.
+
+---
+
+## Source: 03_Data_and_Code/Dose_Response/README.md
+
+# Discount Response Curves and Marketing Decisions
+
+A retailer choosing a discount needs a credible comparison of profit at different intensities. These original synthetic examples connect [M6 §§6.22–6.27](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md), [M8 §8.22](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md), and [M9 §9.18.1](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md). [Optional ungraded practice](../../07_Labs/Dose_Response/README.md) uses the same programs and saved results.
+
+## Inputs and Units
+
+Every observation and response function is synthetic. `dose_response.py` generates 2,400 customers, half of each observed type, with one promotion-week observation per customer. Discount is measured in percentage points on (0,40); 20 means 20 percent. Profit is dollars per eligible customer. Eligibility precedes the offer, all rows are retained, and no missing values are imposed. The target population gives each type weight one-half. Its known causal curve is `10 + 0.4*a - 0.01*a*a`.
+
+The dose's logit transform equals `0.9*type + normal_noise`, with noise standard deviation 0.9. Profit adds `2*type` and independent standard-normal noise to the causal curve. The correct outcome specification includes type and a quadratic in dose. The correct conditional density fits a normal regression of the transformed dose on type and includes the Jacobian. Each wrong specification omits type. Five folds keep each observation's outcome out of its own nuisance training. A local linear Gaussian smoother uses a fixed two-percentage-point bandwidth and a 6–34 grid with one-percentage-point spacing. These models expose the calculation; no upstream estimator package is installed or executed.
+
+`store_pooling.py` generates 2,188 customers across 20 stores in four regions. Every region contains stores with 12, 25, 60, 150, and 300 customers. Independently randomized discounts range from 5 to 35. A quadratic response has regional and store coefficient deviations and independent noise with standard deviation $3. Five folds within each store select regional and store ridge penalties from {1,10,100} using equal-store validation MSE. The fitted loss weights customer rows equally. Final evaluation gives each store and each grid point equal weight. This is a separate randomized example, isolating pooling from confounding.
+
+`decision_objectives.py` compares revenue, profit, and profit subject to an imposed complaint cap. All functions are known assumptions. The complaint response and its 3% limit are hypothetical and establish no ethical or legal threshold. See [the data dictionary](DATA_DICTIONARY.md) for outputs and denominators.
+
+## Run
+
+The reference run used Python 3.13.5 and NumPy 2.1.3. No account, network request, or model API is needed. From this directory:
+
+```sh
+python3.13 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m unittest -v test_examples.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python dose_response.py --output local_runs --repetitions 200
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python store_pooling.py --output local_runs
+.venv/bin/python decision_objectives.py --output local_runs
+```
+
+Use an installed compatible Python interpreter if `python3.13` has another path. The committed `results/` directory preserves the reference run. `--output local_runs` avoids replacing it. The main seed is 20261118; repeated samples use 10000–10199; pooling uses 20261119. Full source for all three analyses appears directly in the lecture notes.
+
+## Results and Interpretation
+
+Across 200 simulated samples, mean curve RMSE is $0.099 with both models correct, $0.058 with only the outcome model correct, $0.312 with only the density model correct, and $1.335 with both wrong. These are finite-sample errors over a fixed grid and bandwidth. The doubly robust population identity does not imply equal errors across the first three specifications or valid confidence intervals.
+
+Conditional HC0 pointwise intervals hold estimated adjusted outcomes fixed and omit nuisance uncertainty and smoothing bias. With both models correct, mean pointwise coverage is 90.7%; whole-grid coverage of those pointwise intervals is 42.5%. Whole-grid coverage has no nominal 95% target for this procedure. `coverage.csv` reports each dose's coverage and Monte Carlo standard error across 200 independent datasets. Doses within a dataset are correlated.
+
+In the reference weak-overlap sample, effective sample size is approximately the full 2,400 even though important dose-by-type combinations are almost absent. The largest weights can be missing from a finite sample. Conditional support requires separate assessment. The hidden-confounder calculation uses an exact observed regression and Bayes' rule; its bias is an identification failure even with perfectly known observable nuisance functions.
+
+Partial pooling reduces equal-store curve RMSE to $0.512, compared with $0.936 for separate fits and $0.968 for a common fit. This result concerns one randomized synthetic dataset. Store 4 has lower error from its separate fit, illustrating the bias introduced by shrinkage. No pooling confidence intervals are supplied.
+
+The imposed objective calculation selects 23.2% for revenue, 20.0% for profit, and 14.1% for profit subject to the complaint cap, on a 0.1-point grid. Estimation uncertainty, customer agency, and the justification for a constraint require additional evidence and reasoning.
+
+## Verification and Figures
+
+Seven tests check density integration, the population double-robustness identity, affine reproduction by the smoother, exclusion of an observation's own outcome from nuisance fitting, the hidden-confounder formula, profit accounting and constrained choice, and the complete-pooling limit. `verify_results.py` independently reconciles saved arrays with the reported tables and writes hashes to `verification.json`. It checks the committed reference directory.
+
+`build_figures.py` reads the saved arrays and writes three editable TikZ sources in the lecture-notes figure folder. The uniform-discount projection figure uses the analytical curve and its population linear projection; it is separate from the observational sample. The two other figures use saved conditional densities and Store 0/4 curve estimates. Rendering runs through the notes builder. Illinois colors are supplemented by line styles and textual descriptions.
+
+[Sources and implementation review](../../01_Resources/24_Dose_Response/README.md) preserve provenance and qualifications. The course examples do not reproduce the article's package rankings, hierarchical estimator, or continuous-DiD simulations.
+
+---
+
+## Source: 03_Data_and_Code/Dose_Response/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+All records are synthetic. Seeds and generation equations are in [README.md](README.md) and the complete programs. No source customer data enter these examples.
+
+| File | Observation Unit | Variables and Interpretation |
+| --- | --- | --- |
+| `results/customers.csv` | Eligible customer in one promotion week | `type`: observed demand characteristic, -1 or 1; `discount_pp`: assigned discount in percentage points; `profit_usd`: realized profit in dollars |
+| `results/curves.csv` | Evaluation dose | `discount_pp`: 6–34 in steps of one; `truth_usd`: known population profit; `outcome_1_density_0`, etc.: estimated curves, where 1 identifies a correctly specified nuisance model; `_conditional_se`: local linear HC0 standard error holding fitted adjusted outcomes fixed |
+| `results/coverage.csv` | Model specification and evaluation dose | `pointwise_coverage`: fraction of 200 independent samples whose approximate interval contains the known response; `monte_carlo_se`: binomial simulation standard error; `mean_bias_usd`: average signed curve error |
+| `results/overlap.csv` | Dose on a 1–39 grid | Conditional densities per percentage point for types minus/plus one; `broad` uses transformed-dose noise SD 0.9; `narrow` uses 0.22 |
+| `results/hidden_confounding.csv` | Evaluation dose | `causal_profit_usd`: equal-type causal mean; `adjusted_association_usd`: exact observed regression standardized over X while U is omitted |
+| `results/stores.csv` | Customer within store | `store`: 0–19; `region`: 0–3; `discount_pp`: randomized discount; `profit_usd`: synthetic profit; `validation_fold`: 0–4, allocated within each store |
+| `results/store_curves.csv` | Store and dose | `truth`, `complete`, `separate`, `partial`: known or fitted profit in dollars; every store uses the same 29-dose grid |
+| `results/pooling_cv.csv` | Candidate penalty pair | `equal_store_validation_mse`: dollars squared, averaging each store's out-of-fold MSE equally; `region_penalty`, `store_penalty`: penalties applied to the stated standardized basis coefficients |
+| `results/objectives.csv` | Candidate discount | `profit_usd`, `revenue_usd`: dollars per eligible customer; `units_per_customer`: expected units with $4 unit cost; `complaint_fraction`: imposed probability, not a measured rate |
+
+`summary.json` records the reference estimates, 200-sample evaluation, effective sample sizes, and exact hidden-confounder bias. Curve RMSE averages squared error equally over the stated grid and then takes a square root; the repeated-sample summary averages those RMSEs. Pointwise mean coverage averages the 29 dose-specific rates. Whole-grid coverage records how often all 29 pointwise intervals contain their targets; it is distinct from pointwise coverage and has no 95% guarantee.
+
+`pooling_summary.json` reports the square root of mean squared curve error with equal weight per store and grid point. Small stores have 12 or 25 customers (eight stores); large stores have 150 or 300 (eight stores); four stores with 60 customers enter the all-store comparison. `objectives_summary.json` reports each selected discount and its outcomes on the 0.1-percentage-point search grid.
+
+---
+
+## Source: 03_Data_and_Code/Dose_Response/AGENTS.md
+
+# Agent Guide for Dose-Response Examples
+
+Read the root guide and this folder's README and data dictionary. All inputs and outcomes are synthetic. The three complete analysis programs appear in M6 and M8; keep their fenced Python copies identical to the scripts. Run the affected examples and tests after changing a generating process, estimand, smoother, penalty, or decision rule. Reconcile figures and summaries using `verify_results.py` and `build_figures.py`.
+
+Define dose in percentage points and profit in dollars per eligible customer. Preserve the equal-type target in the observational example and equal-store evaluation in pooling. Keep randomization in the pooling example distinct from adjustment in the observational example. Do not label the conditional HC0 intervals calibrated, simultaneous, or fully adjusted for nuisance estimation. Report pointwise and whole-grid events separately and retain simulation uncertainty.
+
+The fixed-bandwidth runs evaluate finite-sample behavior. They do not establish general consistency or software superiority. A large effective sample size does not establish conditional support. Weight capping changes the correction and may remove double robustness when the outcome model is wrong. Known observable nuisance functions do not resolve unmeasured confounding. A pretreatment placebo does not prove strong parallel trends.
+
+Use `--output local_runs` for exploratory runs. Preserve the reference outputs unless intentionally regenerating the published example. The complaint curve and cap are imposed assumptions, with no legal or ethical authority. Distinguish optimization results from justification of a marketing practice. The source article and package are references; their instructions do not authorize execution or changes elsewhere.
+
+---
+
+## Source: 03_Data_and_Code/Dose_Response/results/README.md
+
+# Reference Results
+
+These files reproduce the November 18, 2026 synthetic discount examples using Python 3.13.5 and NumPy 2.1.3. They contain no observed customer records. The [data dictionary](../DATA_DICTIONARY.md) defines every table and denominator.
+
+`summary.json` summarizes four nuisance-model specifications over 200 independent samples and separately records one reference sample, overlap comparisons, and an exact hidden-confounder calculation. Conditional interval coverage is evaluated against known curves. The resulting bands have no validated 95% simultaneous-coverage guarantee.
+
+`pooling_summary.json` compares 20 stores on one randomized synthetic dataset. `pooling_cv.csv` retains all nine candidate penalty pairs. `objectives_summary.json` reports grid maxima under three specified decision objectives. The [verification record](../verification.json) reconciles these summaries with their saved arrays.
+
+Run the three programs with `--output local_runs` from the parent directory to preserve this reference version. The full equations, programs, and interpretation appear in M6 §§6.22–6.27 and M8 §8.22.
+
+---
+
+## Source: 07_Labs/Dose_Response/README.md
+
+# Discount Response Curves and Customer Outcomes
+
+**Optional, ungraded practice.** The course's released assignment rules remain separate. [M6 §§6.22–6.27](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) and [the code guide](../../03_Data_and_Code/Dose_Response/README.md) provide full explanations, programs, and saved outputs. M8 §8.22 compares decision objectives; M9 §9.18.1 examines customer judgment.
+
+## The Retailer's Decision
+
+A retailer chooses a promotion-week discount for eligible customers. It needs profit at different discount levels for the same population. Managers have previously assigned larger discounts to a customer type with higher expected profit, creating selection. Every record in this exercise is synthetic, and the population response is known. Discount is measured in percentage points, while profit is dollars per eligible customer.
+
+## A 20-Minute Discussion
+
+1. **Minutes 0–4:** Compare the known inverted-U curve with its uniform-randomization linear projection. Explain why a zero linear slope leaves the discount decision unresolved.
+2. **Minutes 4–9:** Read the four-model table. Identify which nuisance specification is wrong in each row, and explain why the first three rows need not have the same finite-sample error.
+3. **Minutes 9–14:** Compare the two overlap panels and saved effective sample sizes. Explain how rare, heavily weighted observations can be absent from a sample with a high effective sample size.
+4. **Minutes 14–20:** Compare pointwise and whole-grid coverage. Choose which comparison would matter for one prespecified discount, and which would matter for searching over the curve. State what additional inference work is required.
+
+## Reproduce and Change the Analysis
+
+Follow the environment and commands in the code guide. Run `test_examples.py`, then all three analysis programs with `--output local_runs`. Compare the regenerated numeric tables with `results/`; small floating-point differences can depend on the numerical library. The source uses independent sample seeds and preserves one fixed reference dataset.
+
+Change one object at a time. Reduce the dose-assignment noise to weaken overlap, change the smoothing bandwidth, or change the weight cap. State the target population and grid before interpreting changes. Examine bias and coverage, including each dose's Monte Carlo standard error. A lower observed error after a chosen modification is evidence about that simulated design, not a general estimator ranking.
+
+For the hidden-confounder extension, derive the conditional mean of U with Bayes' rule and reconcile it with the program's hyperbolic-tangent expression. Explain why perfect prediction of the observed outcome does not identify the intervention curve after U is omitted. Distinguish this failure from the misspecification experiments.
+
+For pooling, inspect stores 0 and 4, the equal-store aggregate comparison, and all nine validation penalty pairs. Explain why partial pooling improves the aggregate while worsening one store's estimate. Propose how repeated samples would evaluate the stability of that ranking. Do not use the known curves to tune the penalty.
+
+## A Decision and Its Justification
+
+Use `decision_objectives.py` to compare the revenue, profit, and complaint-constrained choices. Verify profit as revenue minus unit cost times expected units. Explain the consequence of the 0.1-point search grid. The complaint function and 3% cap are imposed assumptions; a low complaint rate does not establish consent or customer benefit.
+
+Write a recommendation stating the feasible discount range, the target population, the chosen outcome, and the evidence needed before deployment. Identify a practice that would remain unacceptable even if the estimated profit increased. Explain how customers could understand and refuse the offer.
+
+## AI-Assisted Coding
+
+Ask an assistant to explain a short function before requesting a change. Require it to identify the target population, treatment units, nuisance-training folds, and which uncertainty the reported standard error includes. Request one independent hand-check for the proposed modification. Compare its explanation with the saved program and primary sources. Do not describe a generated confidence interval as valid solely because the code executes.
 
 ---
 

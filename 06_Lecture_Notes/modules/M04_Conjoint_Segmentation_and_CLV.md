@@ -1024,3 +1024,9 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 4.21 Group Profiles and Group Response Curves
+
+\noindent A customer segment groups observed characteristics. A segment-specific treatment curve asks how the same group responds to assigned interventions. That comparison needs an assignment design and a defined target population. Groups used for causal targeting should rely on pretreatment information; conditioning on a treatment response changes the comparison.
+
+Partial pooling can stabilize estimates for small groups. M6 Section 6.26 compares common, separate, and hierarchical curves using randomized synthetic discounts, with full Python and equal-store evaluation. Personalized discounts additionally require evidence on customer outcomes and justification for the group definition.

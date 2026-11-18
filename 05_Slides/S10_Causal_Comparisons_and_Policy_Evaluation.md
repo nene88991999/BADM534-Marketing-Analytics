@@ -11,6 +11,7 @@ Session 10. M6. 170 minutes.
 - Explain the identifying comparison in difference-in-differences, RD, and IV.
 - Evaluate a policy under selected exposure and support restrictions.
 - Assess whether a comparison group is suitable for the McBroken policy question.
+- Estimate and assess a nonlinear discount response with explicit confounding and overlap conditions.
 
 ## Related Materials
 
@@ -19,6 +20,8 @@ Session 10. M6. 170 minutes.
 - [McBroken policy analysis](../03_Data_and_Code/McBroken/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
+- [Discount response examples](../03_Data_and_Code/Dose_Response/README.md)
+- [Optional dose-response lab](../07_Labs/Dose_Response/README.md)
 
 ## Slide 1: Causal Comparisons and Policy Evaluation
 
@@ -189,7 +192,72 @@ Zero support cannot be repaired by increasing a weight. Weight-concentration sum
 
 Source: M6, Section 6.7.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 16: Spillovers Change the Outcome Comparison
+## Slide 16: A Zero Slope Can Conceal a Discount Response
+
+Synthetic profit peaks at a 20% discount. Uniform randomization gives a zero linear projection slope.
+
+**Figure description:** Discount varies from 0 to 40 percentage points. Known profit rises from USD 10 to USD 14 and returns to USD 10. A dashed horizontal line at USD 12.67 shows the population linear projection under uniform randomization.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_discount_response.tex)
+
+Eligibility precedes the offer and profit is measured per customer over the promotion week. The projection is an exact uniform-randomization benchmark, separate from the observational sample. A constant slope does not characterize the decision-relevant shape.
+
+Source: ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 17: Adjustment for Selected Discount Intensity
+
+Observed customer types affect both discount assignment and profit. The target gives each type equal weight.
+
+$$
+\xi_i=\widehat m(A_i)+\frac{\widehat f_A(A_i)}{\widehat\pi(A_i\mid X_i)}\{Y_i-\widehat\mu(X_i,A_i)\}
+$$
+
+Cross-fit the nuisance models, then smooth the adjusted outcomes over dose. Causal interpretation requires adequate support and measured confounders.
+
+The outcome model predicts profit conditional on dose and observed type. The treatment model estimates a conditional density, measured per percentage point. m averages the outcome model over the target population; f_A averages the conditional density. The population identity is doubly robust when either nuisance model is correct under identification and regularity conditions. Correct nuisance models alone do not establish calibrated confidence intervals.
+
+Source: Kennedy et al., https://arxiv.org/abs/1507.00747v3; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 18: Conditional Support and Effective Sample Size
+
+The weak-overlap sample has effective sample size near 2,400. Important dose-by-type comparisons remain nearly absent.
+
+**Figure description:** Two panels share dose and density scales. Blue solid and orange dashed curves identify the two customer types. Lower assignment noise separates their concentrated dose distributions.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_dose_overlap.tex)
+
+Both datasets have 2,400 customers and the same known causal response. Assignment noise SD changes from 0.9 to 0.22 on the logit scale. The reference weak-overlap sample has almost constant weights near one-half; rare observations with enormous weights are absent. Effective sample size measures concentration among observed weights and cannot establish conditional support. Weight clipping changes the residual correction and can remove double robustness when the outcome model is wrong.
+
+Source: ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 19: Pointwise Intervals and Curve-Wide Coverage
+
+| Models Correct | Mean RMSE (USD) | Pointwise (%) | All 29 (%) |
+| --- | --- | --- | --- |
+| Both | 0.099 | 90.7 | 42.5 |
+| Outcome | 0.058 | 85.7 | 23.5 |
+| Density | 0.312 | 96.7 | 60.0 |
+| Neither | 1.335 | 6.4 | 0.0 |
+
+200 synthetic samples; conditional HC0 pointwise intervals. Whole-grid coverage has no nominal 95% guarantee.
+
+Each sample has 2,400 customers. RMSE equally weights the 29 doses from 6 to 34, then averages across samples. Pointwise coverage first averages the indicators across samples at each dose and then averages doses. All 29 means that every pointwise interval contains its target in the same sample. The procedure holds fitted adjusted outcomes fixed and omits first-stage uncertainty and fixed-bandwidth smoothing bias. The fixed two-point bandwidth and 200 repetitions define a finite-design evaluation.
+
+Source: ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 20: Partial Pooling and Store-Level Bias
+
+Randomized synthetic discounts. Pooling reduces aggregate error; Store 4 favors its separate estimate.
+
+**Figure description:** Known, separate, and partially pooled curves for Store 0 with 12 customers and Store 4 with 300. Both panels share discount and profit scales. Shrinkage improves the small store and worsens the displayed large store.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_store_pooling.tex)
+
+Twenty stores in four regions supply 2,188 observations. Discounts are randomized independently within each store. Five-fold validation over observed outcomes selects regional and store ridge penalties. Equal-store RMSE is USD 0.512 with partial pooling, USD 0.936 with separate fits, and USD 0.968 with complete pooling. Store 4 has separate RMSE USD 0.249 and partial RMSE USD 0.550. This is one simulated dataset, with no general dominance or interval-calibration claim.
+
+Source: ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 21: Spillovers Change the Outcome Comparison
 
 Synthetic store network with effects beyond assigned units.
 
@@ -201,7 +269,7 @@ The chain-wide outcome may change less than the treated-store outcome. Assignmen
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 17: Coding Exercise: Policy Value
+## Slide 22: Coding Exercise: Policy Value
 
 - Reproduce raw rates and inverse-propensity values.
 - Check them using within-group averages.
@@ -211,7 +279,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S10. A correct impl
 
 Source: M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 18: Information and Exposure
+## Slide 23: Information and Exposure
 
 - A recommendation can draw attention to an item.
 - A personalized endorsement can also change beliefs.
@@ -221,7 +289,7 @@ The MovieLens experiment discussed in the notes distinguishes recommendation and
 
 Source: M6, Section 6.10.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 19: A Policy Value for Whom?
+## Slide 24: A Policy Value for Whom?
 
 - Clicks and sales can rise while customer value falls.
 - A causal estimate concerns the outcome that was actually measured.
@@ -231,7 +299,7 @@ A valid causal effect on conversion does not identify the welfare effect without
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 20: Causal-Design Discussion
+## Slide 25: Causal-Design Discussion
 
 - What would the treated group have experienced without the policy?
 - Which group or action lacks comparable support?

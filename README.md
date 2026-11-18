@@ -76,3 +76,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Clustering Optimization
 
 [Clustering optimization](03_Data_and_Code/Clustering_Optimization/README.md) adds an exact centroid example, an executed CPU comparison, and [optional practice](07_Labs/Clustering_Optimization/README.md). M4 and Session 6 connect computational cost, final labels, and customer interpretation.
+
+## Discount Response and Customer Outcomes
+
+[Discount-response examples](03_Data_and_Code/Dose_Response/README.md) connect nonlinear effects, confounding, overlap, uncertainty, and store pooling to marketing choices. Complete Python, three editable figures, and [optional practice](07_Labs/Dose_Response/README.md) support M6, M8, and Marketing Dialectics.

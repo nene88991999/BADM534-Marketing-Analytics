@@ -2183,7 +2183,8 @@
     "objectives": [
       "Explain the identifying comparison in difference-in-differences, RD, and IV.",
       "Evaluate a policy under selected exposure and support restrictions.",
-      "Assess whether a comparison group is suitable for the McBroken policy question."
+      "Assess whether a comparison group is suitable for the McBroken policy question.",
+      "Estimate and assess a nonlinear discount response with explicit confounding and overlap conditions."
     ],
     "slides": [
       {
@@ -2328,6 +2329,81 @@
       },
       {
         "kind": "figure",
+        "title": "A Zero Slope Can Conceal a Discount Response",
+        "figure": "../06_Lecture_Notes/figures/M06_discount_response.tex",
+        "caption": "Synthetic profit peaks at a 20% discount. Uniform randomization gives a zero linear projection slope.",
+        "description": "Discount varies from 0 to 40 percentage points. Known profit rises from USD 10 to USD 14 and returns to USD 10. A dashed horizontal line at USD 12.67 shows the population linear projection under uniform randomization.",
+        "notes": "Eligibility precedes the offer and profit is measured per customer over the promotion week. The projection is an exact uniform-randomization benchmark, separate from the observational sample. A constant slope does not characterize the decision-relevant shape.",
+        "source": "../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Adjustment for Selected Discount Intensity",
+        "intro": "Observed customer types affect both discount assignment and profit. The target gives each type equal weight.",
+        "equation": "\\xi_i=\\widehat m(A_i)+\\frac{\\widehat f_A(A_i)}{\\widehat\\pi(A_i\\mid X_i)}\\{Y_i-\\widehat\\mu(X_i,A_i)\\}",
+        "interpretation": "Cross-fit the nuisance models, then smooth the adjusted outcomes over dose. Causal interpretation requires adequate support and measured confounders.",
+        "notes": "The outcome model predicts profit conditional on dose and observed type. The treatment model estimates a conditional density, measured per percentage point. m averages the outcome model over the target population; f_A averages the conditional density. The population identity is doubly robust when either nuisance model is correct under identification and regularity conditions. Correct nuisance models alone do not establish calibrated confidence intervals.",
+        "source": "Kennedy et al., https://arxiv.org/abs/1507.00747v3; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Conditional Support and Effective Sample Size",
+        "figure": "../06_Lecture_Notes/figures/M06_dose_overlap.tex",
+        "caption": "The weak-overlap sample has effective sample size near 2,400. Important dose-by-type comparisons remain nearly absent.",
+        "description": "Two panels share dose and density scales. Blue solid and orange dashed curves identify the two customer types. Lower assignment noise separates their concentrated dose distributions.",
+        "notes": "Both datasets have 2,400 customers and the same known causal response. Assignment noise SD changes from 0.9 to 0.22 on the logit scale. The reference weak-overlap sample has almost constant weights near one-half; rare observations with enormous weights are absent. Effective sample size measures concentration among observed weights and cannot establish conditional support. Weight clipping changes the residual correction and can remove double robustness when the outcome model is wrong.",
+        "source": "../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "table",
+        "title": "Pointwise Intervals and Curve-Wide Coverage",
+        "headers": [
+          "Models Correct",
+          "Mean RMSE (USD)",
+          "Pointwise (%)",
+          "All 29 (%)"
+        ],
+        "rows": [
+          [
+            "Both",
+            "0.099",
+            "90.7",
+            "42.5"
+          ],
+          [
+            "Outcome",
+            "0.058",
+            "85.7",
+            "23.5"
+          ],
+          [
+            "Density",
+            "0.312",
+            "96.7",
+            "60.0"
+          ],
+          [
+            "Neither",
+            "1.335",
+            "6.4",
+            "0.0"
+          ]
+        ],
+        "caption": "200 synthetic samples; conditional HC0 pointwise intervals. Whole-grid coverage has no nominal 95% guarantee.",
+        "notes": "Each sample has 2,400 customers. RMSE equally weights the 29 doses from 6 to 34, then averages across samples. Pointwise coverage first averages the indicators across samples at each dose and then averages doses. All 29 means that every pointwise interval contains its target in the same sample. The procedure holds fitted adjusted outcomes fixed and omits first-stage uncertainty and fixed-bandwidth smoothing bias. The fixed two-point bandwidth and 200 repetitions define a finite-design evaluation.",
+        "source": "../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Partial Pooling and Store-Level Bias",
+        "figure": "../06_Lecture_Notes/figures/M06_store_pooling.tex",
+        "caption": "Randomized synthetic discounts. Pooling reduces aggregate error; Store 4 favors its separate estimate.",
+        "description": "Known, separate, and partially pooled curves for Store 0 with 12 customers and Store 4 with 300. Both panels share discount and profit scales. Shrinkage improves the small store and worsens the displayed large store.",
+        "notes": "Twenty stores in four regions supply 2,188 observations. Discounts are randomized independently within each store. Five-fold validation over observed outcomes selects regional and store ridge penalties. Equal-store RMSE is USD 0.512 with partial pooling, USD 0.936 with separate fits, and USD 0.968 with complete pooling. Store 4 has separate RMSE USD 0.249 and partial RMSE USD 0.550. This is one simulated dataset, with no general dominance or interval-calibration claim.",
+        "source": "../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
         "title": "Spillovers Change the Outcome Comparison",
         "figure": "../06_Lecture_Notes/figures/M06_spillovers.tex",
         "caption": "Synthetic store network with effects beyond assigned units.",
@@ -2385,10 +2461,12 @@
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[McBroken policy analysis](../03_Data_and_Code/McBroken/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)"
+      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
+      "[Discount response examples](../03_Data_and_Code/Dose_Response/README.md)",
+      "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)"
     ],
     "practice": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
-    "application": "Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation."
+    "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation."
   },
   {
     "number": 11,
@@ -2929,7 +3007,8 @@
       "Trace how recommendations affect future training data.",
       "Evaluate list objectives and customer goals.",
       "Allocate a fixed marketing budget using marginal response.",
-      "Assess forecast coverage after demand changes and respect delayed outcome information."
+      "Assess forecast coverage after demand changes and respect delayed outcome information.",
+      "Distinguish estimated response uncertainty from the choice and justification of an objective."
     ],
     "slides": [
       {
@@ -3099,6 +3178,50 @@
         "source": "M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
+        "kind": "table",
+        "title": "The Objective Changes the Chosen Discount",
+        "headers": [
+          "Objective",
+          "Discount (%)",
+          "Profit (USD)",
+          "Complaints (%)"
+        ],
+        "rows": [
+          [
+            "Revenue",
+            "23.2",
+            "13.898",
+            "6.38"
+          ],
+          [
+            "Profit",
+            "20.0",
+            "14.000",
+            "5.00"
+          ],
+          [
+            "Profit With Cap",
+            "14.1",
+            "13.652",
+            "2.99"
+          ]
+        ],
+        "caption": "Known synthetic functions; 0.1-point search grid. The 3% complaint cap is an imposed exercise condition.",
+        "notes": "The list price is USD 20 and unit cost is USD 4. Known mean profit is 10+0.4a-0.01a squared; expected quantity is profit divided by the unit margin. Revenue is price times quantity. The assumed complaint probability is 0.01+0.0001a squared. All quantities are per eligible customer over the promotion week. The cap is hypothetical and carries no legal or ethical authority. It reduces profit by approximately USD 0.348 relative to the unconstrained profit maximum.",
+        "source": "../03_Data_and_Code/Dose_Response/decision_objectives.py; ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Estimated Responses and Customer Judgment",
+        "bullets": [
+          "A search over estimated curves also selects estimation noise.",
+          "A proposed intensity needs support and independent policy evaluation.",
+          "Complaint rates leave consent, truthful communication, and refusal to be assessed."
+        ],
+        "notes": "The preceding table optimizes known functions. Estimated curves introduce sampling and modeling uncertainty, especially near boundaries and in poorly represented groups. Customer agency requires reasons for the practice and safeguards that remain binding when profit falls. M9 Section 9.18.1 connects this distinction to Kantian respect and Confucian trustworthiness. The observational mHealth logs do not establish effects of assigned notification intensity.",
+        "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
         "kind": "bullets",
         "title": "Coding Exercise: A Policy Objective",
         "bullets": [
@@ -3136,10 +3259,12 @@
       "[M8 lecture notes](../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)"
+      "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)",
+      "[Discount response examples](../03_Data_and_Code/Dose_Response/README.md)",
+      "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)"
     ],
     "practice": "Compare list objectives and solve a budget allocation with an independent grid check.",
-    "application": "Separate policy feedback and changed demand from evidence supporting earlier forecast intervals."
+    "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation."
   },
   {
     "number": 14,

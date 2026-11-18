@@ -77,3 +77,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Clustering Optimization
 
 [Clustering optimization](Clustering_Optimization/README.md) supplies exact scalar calculations and 27 CPU fits on fixed synthetic vectors. Complete Python, pinned requirements, final centroid arrays, label vectors, aggregate outputs, and five tests support M4 §§4.18–4.20. No o-means or GPU benchmark was executed.
+
+## Dose-Response Curves
+
+[Discount-response examples](Dose_Response/README.md) provide three complete synthetic programs: cross-fitted adjustment with 200 repeated-sample evaluations, randomized-store partial pooling, and a known-function comparison of objectives. Seven numerical tests, saved arrays, a data dictionary, and an agent guide accompany M6 §§6.22–6.27 and M8 §8.22.

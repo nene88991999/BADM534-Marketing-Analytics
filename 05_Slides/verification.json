@@ -207,5 +207,56 @@
       "portable_context_uses_reviewed_HEAD_resource_catalogs": true
     },
     "execution_scope": "November 6 AI experimentation and pricing revision: executed the original exact synthetic pricing program and five independent tests. Verified 56 full note-code blocks against their source and syntax. Reconciled both figure series with exact expected totals, checked 452 local Markdown links, and preserved all 15 dated 170-minute meetings. Visually reviewed 16 changed or adjacent student-slide pages, 20 combined-note pages including contents and boundaries, the 11 changed or adjacent standalone chapter pages, both syllabus pages, and two new figures. Current source checks cover 11 downloaded files and one retained superseded version; three statutory or bill pages were read online with no local download. The research reading scope is selective and recorded in the catalog. No downloaded programs or external AI APIs were executed. Prior checks remain in historical fields."
+  },
+  "dose_response_checks_2026_11_18": {
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 297,
+        "sha256": "622c4dfcd1dfa1659b1b030c761a6bec851f8843bcad88867e27fa60cc92a460"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 28,
+        "sha256": "fb5dd3cf8fa7924b0a33a76c0627315c2bbd4c9a43e77dd3e52da216f8641726"
+      },
+      "05_Slides/S10_Causal_Comparisons_and_Policy_Evaluation.pdf": {
+        "pages": 25,
+        "sha256": "e17eaa966d1ca32f79c1c345281121c6b1af91f146e20ff6bd2660704bfb2220"
+      },
+      "05_Slides/S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf": {
+        "pages": 20,
+        "sha256": "57f8f98b15c83b99f4c70fc68d035dda0b5c9ea268e7bdd8f971851d15e8d4e6"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 331,
+        "sha256": "8adc60388f1dd455bd804b2b884a6a6a4a1ce32cbad531aa33ce2d6185e1d1bf"
+      },
+      "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+        "pages": 2,
+        "sha256": "1a524fa8f3d5bff2aeaf683c8e6f29d95ad7f1f3003daa8ba47b92b055420610"
+      }
+    },
+    "checks": {
+      "original_synthetic_programs_executed": 3,
+      "independent_simulated_datasets_for_coverage": 200,
+      "independent_small_case_tests_passed": 7,
+      "full_note_code_blocks_match_source_and_parse": 68,
+      "reference_curve_and_pooling_errors_reconciled": true,
+      "coverage_rows_and_objective_maxima_reconciled": true,
+      "new_tikz_figures_rendered_and_visually_reviewed": 3,
+      "new_projected_slide_pages_visually_reviewed": 7,
+      "notes_pages_reviewed_before_final_pagination": 29,
+      "final_pagination_pages_rechecked": 6,
+      "standalone_chapter_changed_pages_reviewed": 1,
+      "syllabus_pages_visually_reviewed": 2,
+      "presenter_mode_new_table_page_reviewed": true,
+      "local_markdown_links_checked": 467,
+      "dated_meetings_unchanged": 15,
+      "minutes_per_meeting": 170,
+      "slide_and_note_counts_reconciled": true,
+      "updated_builds_have_no_overfull_boxes_or_tex_errors": true,
+      "portable_context_uses_reviewed_HEAD_additional_resource_catalog": true,
+      "upstream_programs_executed": 0
+    },
+    "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   }
 }

@@ -357,3 +357,7 @@ The FTC's advertising-substantiation policy addresses reasonable support for obj
 Consider the mHealth association between recorded food-category breadth and next-day recorded calories. The variables describe logs in the observed sample. A customer-facing claim about weight loss changes both the outcome and the causal interpretation. The available regression does not identify that effect. A defensible empirical statement retains the observed outcome, sample restrictions, timing, coefficient magnitude, and uncertainty. A new claim requires a study designed for its outcome and population.
 
 An evidence table can connect each proposed statement to its estimand, data, identification conditions, and supported wording. AI-generated copy should pass through the same comparison. Fluency does not expand the population or outcome represented by the underlying analysis.
+
+## 3.14 A Linear Coefficient and a Nonlinear Decision
+
+\noindent A zero linear discount coefficient can coexist with an inverted-U profit response. Sections 6.22–6.25 explain the distinction and provide the derivation and complete Python code.

@@ -975,3 +975,61 @@ Chronological evaluation preserves what was known at each forecast origin. For a
 A recent calibration window can respond to changes, but recency alone does not restore the ordinary exchangeable-sample theorem. Methods for dependent or changing data have their own conditions and targets. A long-run average error target also differs from a guarantee for the next period. Record the forecasting procedure, residual-update rule, label delay, and information cutoff as parts of the deployed policy.
 
 For mHealth, future logging records may depend on repeated users and incomplete observation. For McBroken, a missing later status remains an unknown outcome. For earnings-call classification, revisions to prompts and changes in which firms are covered can alter calibration. These applications require data definitions and evaluation designs matched to their own units; the synthetic demand calculation supplies no measured coverage for them. A firm's decision to expand automated service should therefore depend on fresh error measurements and customer consequences, as well as the nominal coverage level.
+
+## 8.22 Estimated Responses and the Choice of an Objective
+
+\noindent A manager allocating promotions needs both a credible response curve and a specified objective. Section 8.4 allocates a budget using imposed channel responses. An estimated curve adds uncertainty about the response, the population to which it applies, and the range supported by the assignment process. M6 Sections 6.22–6.27 provide the corresponding discount case. The next-dollar comparison should remain inside a credible decision range and preserve relevant costs, carryover, and channel interactions.
+
+Consider a separate imposed calculation using the synthetic mean profit curve $P(a)=10+0.4a-0.01a^2$ for discounts between 0 and 40 percentage points. The list price is $20 and unit cost is $4. Expected units per eligible customer are defined as $Q(a)=P(a)/[20(1-a/100)-4]$, making profit equal revenue minus unit cost times expected quantity. An additional hypothetical complaint probability is $C(a)=0.01+0.0001a^2$. These relationships are constructed assumptions, including the complaint response; they are not measured customer effects.
+
+The retailer searches discounts in increments of 0.1 percentage point. The resulting choices differ with the objective:
+
+| Objective | Discount (%) | Profit (USD) | Revenue (USD) | Complaints (%) |
+| --- | ---: | ---: | ---: | ---: |
+| Revenue | 23.2 | 13.898 | 18.791 | 6.38 |
+| Profit | 20.0 | 14.000 | 18.667 | 5.00 |
+| Profit With Cap | 14.1 | 13.652 | 17.795 | 2.99 |
+
+The complaint constraint reduces profit by approximately $0.348 per eligible customer relative to the unconstrained profit maximum. Its 3 percent threshold is an imposed exercise condition, with no claim to legal or ethical authority. The calculation makes the tradeoff visible while leaving the justification for the constraint open to examination. The continuous boundary is $\sqrt{200}$ percentage points; the feasible grid selects 14.1.
+
+These choices use known functions over their stated domain. Applying the same maximization to an estimated curve would also select estimation noise, especially near a boundary or in sparsely supported groups. Validation should evaluate the proposed policy on independent evidence and report customer outcomes over an appropriate horizon. A complaint rate also leaves unreported dissatisfaction and the conditions of consent unresolved. M9 Section 9.18.1 examines those obligations.
+
+Python source: [decision_objectives.py](../../03_Data_and_Code/Dose_Response/decision_objectives.py).
+
+```python
+"""Imposed discount, margin, and complaint curves; no estimated customer harm."""
+from pathlib import Path
+import argparse
+import json
+import numpy as np
+
+
+def outcomes(a):
+    a = np.asarray(a)
+    price = 20 * (1 - a/100)
+    profit = 10 + .4*a - .01*a*a
+    units = profit / (price - 4)  # Fixed $4 unit cost; expected units per eligible customer.
+    return profit, price*units, units, .01 + .0001*a*a
+
+
+def run(output):
+    output.mkdir(parents=True, exist_ok=True)
+    a = np.linspace(0, 40, 401)
+    profit, revenue, units, complaints = outcomes(a)
+    eligible = complaints <= .03
+    indexes = {"revenue": int(np.argmax(revenue)), "profit": int(np.argmax(profit)),
+               "profit_with_complaint_cap": int(np.argmax(np.where(eligible, profit, -np.inf)))}
+    result = {key: {"discount_pp": float(a[i]), "profit_usd": float(profit[i]),
+                    "revenue_usd": float(revenue[i]), "complaint_fraction": float(complaints[i])}
+              for key, i in indexes.items()}
+    np.savetxt(output / "objectives.csv", np.c_[a, profit, revenue, units, complaints], delimiter=",",
+               header="discount_pp,profit_usd,revenue_usd,units_per_customer,complaint_fraction", comments="", fmt="%.10g")
+    (output / "objectives_summary.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "results")
+    run(parser.parse_args().output)
+```

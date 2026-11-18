@@ -80,3 +80,7 @@ Session 7 adds citation support and a controlled source-comparison protocol. Ses
 ## Clustering Optimization
 
 Session 6 adds weighted centroid updates, final-label consistency, a local CPU comparison, and customer-action interpretation. [The full programs](../03_Data_and_Code/Clustering_Optimization/README.md) and [optional practice](../07_Labs/Clustering_Optimization/README.md) accompany four new slides and two editable figures. The 15-minute discussion fits the existing application block.
+
+## Discount Response and Decision Objectives
+
+Session 10 adds five slides on nonlinear discount responses, doubly robust adjustment, conditional support, interval coverage, and store pooling. Session 13 adds two slides on objectives and customer judgment. [Complete Python](../03_Data_and_Code/Dose_Response/README.md) and [optional practice](../07_Labs/Dose_Response/README.md) accompany three new editable TikZ figures. The discussion fits existing 20-minute and 15-minute allocations.

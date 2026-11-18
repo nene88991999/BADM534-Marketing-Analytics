@@ -88,3 +88,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Clustering Optimization
 
 [The clustering collection](23_Clustering_Optimization/README.md) preserves the e-means paper, pinned implementation documentation and licenses, o-means benchmark scope, and a catalog of six primary resources. Original executed CPU examples support the M4 extension; GPU methods remain advanced reading.
+
+## Dose-Response Curves
+
+[The dose-response collection](24_Dose_Response/README.md) links eight methodological and implementation resources, including nonlinear DML, doubly robust curves, hierarchical standardization, and continuous-DiD assumptions. The pinned MIT documentation preserves attribution; original executed course programs supply the examples.

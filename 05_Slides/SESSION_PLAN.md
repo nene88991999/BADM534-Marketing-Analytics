@@ -19,10 +19,10 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 31 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
-| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 20 |
+| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 28 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
-| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 18 |
+| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 20 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
@@ -213,7 +213,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compute policy values and diagnose a deliberately unsupported recommendation action.
 
-**Application:** Assess restaurant comparison groups and reconcile earnings-call event counts, coverage, and causal interpretation.
+**Application:** Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation.
 
 **Ethics and Regulation:** Treatment paths, comparison populations, and selection.
 
@@ -224,7 +224,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–145 | Discount Response and Uncertainty |
+| 145–155 | Comparison Groups and Events |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 11. Prediction, Validation, and Marketing Actions
@@ -273,7 +274,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare list objectives and solve a budget allocation with an independent grid check.
 
-**Application:** Separate policy feedback and changed demand from evidence supporting earlier forecast intervals.
+**Application:** Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation.
 
 **Ethics and Regulation:** Attention, adaptive feedback, and platform incentives.
 
@@ -284,7 +285,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–140 | Feedback and Forecast Interpretation |
+| 140–155 | Discount Objectives and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 14. Generative AI, Consumer Choice, and Regulation

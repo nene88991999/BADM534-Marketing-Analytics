@@ -12,6 +12,7 @@ Session 13. M8. 170 minutes.
 - Evaluate list objectives and customer goals.
 - Allocate a fixed marketing budget using marginal response.
 - Assess forecast coverage after demand changes and respect delayed outcome information.
+- Distinguish estimated response uncertainty from the choice and justification of an objective.
 
 ## Related Materials
 
@@ -19,6 +20,8 @@ Session 13. M8. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)
+- [Discount response examples](../03_Data_and_Code/Dose_Response/README.md)
+- [Optional dose-response lab](../07_Labs/Dose_Response/README.md)
 
 ## Slide 1: Adaptive Recommendations and Marketing Budgets
 
@@ -198,7 +201,31 @@ The closed-form result applies to these known concave curves and an interior fix
 
 Source: M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 16: Coding Exercise: A Policy Objective
+## Slide 16: The Objective Changes the Chosen Discount
+
+| Objective | Discount (%) | Profit (USD) | Complaints (%) |
+| --- | --- | --- | --- |
+| Revenue | 23.2 | 13.898 | 6.38 |
+| Profit | 20.0 | 14.000 | 5.00 |
+| Profit With Cap | 14.1 | 13.652 | 2.99 |
+
+Known synthetic functions; 0.1-point search grid. The 3% complaint cap is an imposed exercise condition.
+
+The list price is USD 20 and unit cost is USD 4. Known mean profit is 10+0.4a-0.01a squared; expected quantity is profit divided by the unit margin. Revenue is price times quantity. The assumed complaint probability is 0.01+0.0001a squared. All quantities are per eligible customer over the promotion week. The cap is hypothetical and carries no legal or ethical authority. It reduces profit by approximately USD 0.348 relative to the unconstrained profit maximum.
+
+Source: ../03_Data_and_Code/Dose_Response/decision_objectives.py; ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
+
+## Slide 17: Estimated Responses and Customer Judgment
+
+- A search over estimated curves also selects estimation noise.
+- A proposed intensity needs support and independent policy evaluation.
+- Complaint rates leave consent, truthful communication, and refusal to be assessed.
+
+The preceding table optimizes known functions. Estimated curves introduce sampling and modeling uncertainty, especially near boundaries and in poorly represented groups. Customer agency requires reasons for the practice and safeguards that remain binding when profit falls. M9 Section 9.18.1 connects this distinction to Kantian respect and Confucian trustworthiness. The observational mHealth logs do not establish effects of assigned notification intensity.
+
+Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 18: Coding Exercise: A Policy Objective
 
 - Enumerate three-item lists at several variety weights.
 - Solve and independently grid-check the fixed-budget allocation.
@@ -208,7 +235,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S13. A grid check v
 
 Source: M8, Section 8.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 17: Attention and the Optimization Target
+## Slide 19: Attention and the Optimization Target
 
 - A free service can require customer time and attention.
 - More exposure can benefit advertisers while burdening customers.
@@ -218,7 +245,7 @@ Tim Wu's Blind Spot discusses attention markets and the difficulty of analyzing 
 
 Source: Tim Wu, Blind Spot: The Attention Economy and the Law (2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/
 
-## Slide 18: Policy Discussion
+## Slide 20: Policy Discussion
 
 - What changes when the recommender learns during the experiment?
 - Which outcome measures the customer's stated goal?

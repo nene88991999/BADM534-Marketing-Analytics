@@ -1,8 +1,8 @@
 # Lecture Notes
 
-**By Nathan Yang. Updated November 15, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 18, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 78 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 81 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -30,7 +30,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 284 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 297 pages.
 
 ## Editing and Building
 
@@ -119,3 +119,7 @@ M1 §1.14 connects specifications and retained skills. M5 §§5.19–5.20 add a 
 ## Clustering Optimization
 
 M4 §§4.18–4.20 explain weighted cluster mass, final assignments, and a fixed-data comparison of Lloyd, MiniBatch, and CPU e-means. [Two full programs](../03_Data_and_Code/Clustering_Optimization/README.md), 27 saved fits, and five tests accompany two editable TikZ figures. M5 §5.3 connects the representation of text vectors; M7 §7.27 connects timing boundaries and independent evaluation. The [optional lab](../07_Labs/Clustering_Optimization/README.md) supports Session 6.
+
+## Discount Response and Intervention Intensity
+
+M6 §§6.22–6.27 provide a nonlinear discount case, five-fold adjustment, conditional-overlap diagnostics, 200-sample interval evaluation, randomized-store pooling, and continuous-DiD qualifications. M8 §8.22 supplies a complete objective calculation; M3 §3.14, M4 §4.21, and M9 §9.18.1 connect interpretation, group decisions, and customer judgment. [The programs](../03_Data_and_Code/Dose_Response/README.md), [source guide](../01_Resources/24_Dose_Response/README.md), and [optional lab](../07_Labs/Dose_Response/README.md) preserve assumptions and executable calculations.

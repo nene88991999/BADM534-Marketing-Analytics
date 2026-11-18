@@ -51,7 +51,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments and incremental value |
-| 10 | March 31 | M6: Causal comparisons, policy evaluation, and event windows |
+| 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
 | 11 | April 7 | M7: Prediction, validation, and marketing actions |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |

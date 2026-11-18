@@ -1,0 +1,127 @@
+{
+  "namespace": "dose-response",
+  "reviewed_on": "2026-11-18",
+  "resources": [
+    {
+      "id": "DR01",
+      "title": "How to Estimate Dose-Response Curves When DoubleML Falls Short",
+      "authors": "Ryan O'Sullivan",
+      "url": "https://towardsdatascience.com/how-to-estimate-dose-response-curves-when-doubleml-falls-short/",
+      "version": "2026-11-18",
+      "rights": "Linked article; no article text redistributed",
+      "teaching_use": "Motivation and simulation design; package comparisons are design-specific.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DR02",
+      "title": "Nonparametric Methods for Doubly Robust Estimation of Continuous Treatment Effects",
+      "authors": "Kennedy, Ma, McHugh, and Small",
+      "url": "https://arxiv.org/abs/1507.00747v3",
+      "version": "2017 journal article; arXiv v3 2016-08-11",
+      "rights": "Linked manuscript; no redistribution permission asserted",
+      "teaching_use": "Marginal pseudo-outcome, identification assumptions, smoothing and inference conditions.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DR03",
+      "title": "DoubleML Models",
+      "authors": "DoubleML contributors",
+      "url": "https://docs.doubleml.org/stable/guide/models.html",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked documentation",
+      "teaching_use": "Partially linear response and the distinction between structural and outcome-mean nuisance functions.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DR04",
+      "title": "Double Debiased Machine Learning Nonparametric Inference with Continuous Treatments",
+      "authors": "Kyle Colangelo and Ying-Ying Lee",
+      "url": "https://arxiv.org/abs/2004.03036",
+      "version": "Working paper; see current version at source",
+      "rights": "Linked manuscript",
+      "teaching_use": "Nonparametric DML demonstrates that DML is broader than a constant-slope specification.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DR05",
+      "title": "Difference-in-Differences with a Continuous Treatment",
+      "authors": "Callaway, Goodman-Bacon, and Sant'Anna",
+      "url": "https://arxiv.org/abs/2107.02637v8",
+      "version": "v8, 2025-12-31",
+      "rights": "Linked manuscript",
+      "teaching_use": "Level effects and dose comparisons require distinct parallel-trends restrictions.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DR06",
+      "title": "drcurves Implementation and Documentation",
+      "authors": "Ryan O'Sullivan",
+      "url": "https://github.com/raz1470/continuous-dr-learner/tree/72115789652127cc2a89eb960d829d2cc513d9cb",
+      "version": "72115789652127cc2a89eb960d829d2cc513d9cb",
+      "rights": "MIT; local README and license retained",
+      "teaching_use": "Group-specific standardization, hierarchical smoothing, clipping, and uncertainty qualifications; not executed.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ],
+      "local_files": [
+        "local_sources/drcurves_README.md",
+        "local_sources/DRCURVES_LICENSE.txt"
+      ],
+      "sha256": {
+        "local_sources/drcurves_README.md": "56f2adce9e1804abac44e839cead3048459a4c930258ead0f392f88142fe7548",
+        "local_sources/DRCURVES_LICENSE.txt": "b2bd447165f8517760ee37f53020b37d13399cb954dfc7a220a799b129f0963a"
+      }
+    },
+    {
+      "id": "DR07",
+      "title": "Entropy Balancing for Continuous Treatments",
+      "authors": "Stefan Tübbicke",
+      "url": "https://doi.org/10.1515/jem-2021-0002",
+      "version": "2022",
+      "rights": "Linked paper",
+      "teaching_use": "Optional comparison of balance restrictions and conditional-density modeling; not executed.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DR08",
+      "title": "On Double Robustness in Double Machine Learning",
+      "authors": "Valentin, Detommaso, Li, Opper, and Brueckner",
+      "url": "https://neurips.cc/virtual/2025/loc/san-diego/124095",
+      "version": "2025 CauScien workshop poster",
+      "rights": "Linked workshop record",
+      "teaching_use": "Distinguishes score-specific double robustness from orthogonality; a workshop contribution, not a main-conference paper.",
+      "modules": [
+        "M6",
+        "M8",
+        "M9"
+      ]
+    }
+  ],
+  "execution": "Original NumPy course programs only; no drcurves, npcausal, causal-curve, or continuous-DiD execution."
+}
