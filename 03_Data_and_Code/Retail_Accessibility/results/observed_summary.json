@@ -1,0 +1,21 @@
+{
+  "synthetic": false,
+  "observed_status_date": "2026-10-24",
+  "network_osm_base": "2026-11-18T19:57:55Z",
+  "origin_denominator": 4,
+  "unavailable": 1,
+  "network_nodes": 109694,
+  "network_edges": 129310,
+  "components": 622,
+  "snapped_components": [
+    104584,
+    104584,
+    104584,
+    104584
+  ],
+  "within_4km": {
+    "straight": 3,
+    "network": 0
+  },
+  "scope": "Four observed restaurant origins; same-chain alternatives in fixed box; later undirected network and straight snapping connectors are imposed."
+}

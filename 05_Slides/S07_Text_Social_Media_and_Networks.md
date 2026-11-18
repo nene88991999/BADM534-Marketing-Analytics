@@ -25,6 +25,8 @@ Session 07. M5. 170 minutes.
 - [University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 - [Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)
+- [Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)
+- [Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -312,7 +314,53 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 26: University Affiliations Create a Research Network
+## Slide 26: The Nearest Store Depends on the Route
+
+Synthetic population: 800. Access threshold: five minutes. Schematic spacing is not a distance scale.
+
+**Figure description:** A northern bridge joins the two riverbanks. The straight-line proxy from W0 to B is two minutes; the graph route is eighteen. The nearest known available store from W0 is C at eight minutes. Isolated X contains 150 people and an unknown-status store.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_access_network.tex)
+
+W0, W1, W2, E0, E1, E2, and X receive weights 100, 300, 100, 50, 50, 50, and 150. Store B at E0 and C at W2 are available; A and D are unavailable. U at X is unknown. All weights, graph times, the proxy, and the threshold are imposed. Straight-line access includes 650 people; known network access includes 550.
+
+Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 27: Hold the Comparison Fixed
+
+- Same six connected origins; one directed neighbor each.
+- Each metric creates six links; only two links coincide.
+- Network time along selected links averages 10 versus 3.33 minutes.
+- Population access retains all 800 people: 68.75% to 87.50%.
+
+The neighbor comparison fixes k=1 and resolves ties alphabetically. The ten-minute average uses straight-line-selected links; 3.33 uses network-selected links. X is excluded only from this neighbor comparison, while remaining in the population-access denominator. Unknown U yields lower and upper counts of 550 and 700. These are missing-status bounds conditional on the fixed graph, not confidence intervals. A proximity link does not establish customer influence or substitution.
+
+Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 28: The Route Changes the Nearest Alternative
+
+Four observed restaurant origins; other available same-chain targets. October status, November network.
+
+**Figure description:** Paired points give nearest straight-line and modeled-network distances for each selected restaurant. For North Neil, the selected destination changes from Mattis at 3.478 kilometers straight-line to South Neil at 4.757 kilometers on the network.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_restaurant_distances.tex)
+
+The four records are observed on October 24, 2026; OpenStreetMap is dated November 18. Each origin is excluded from its own target set, including when available. Distances include straight connectors to the closest retained nodes. The network is undirected and uses stated access filters. North Neil is the only recorded unavailable origin. These are selected restaurant-origin comparisons, with no population weights. © OpenStreetMap contributors, ODbL 1.0.
+
+Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://www.openstreetmap.org/copyright
+
+## Slide 29: Interpret the Observed Comparison
+
+- Hold the same observed origin and target set fixed across metrics.
+- At four kilometers: three of four origins by straight line; zero by network.
+- Check boundaries, access tags, entrance locations, and snapping.
+- Customer substitution requires evidence about feasible choices and behavior.
+
+The four-kilometer threshold is imposed. Available means recorded ordering availability, not a verified mechanical condition. The later street extract does not reconstruct the historical network. Directional pedestrian restrictions, crossing barriers, actual entrances, and straight connector feasibility are unverified. Different chains and restaurants outside the selection box are absent. A local count of restaurant origins cannot establish the access experienced by city residents.
+
+Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 30: University Affiliations Create a Research Network
 
 - 745 papers identify 424 higher-education institutions.
 - Split one unit of link weight across each paper's university pairs.
@@ -322,7 +370,7 @@ The eligible census has 824 papers; 79 lack identified education affiliations. W
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 27: Affiliation Groups Depend on the Representation
+## Slide 31: Affiliation Groups Depend on the Representation
 
 Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.
 
@@ -334,7 +382,7 @@ The median adjusted Rand agreement across twenty seeds is 0.522; switching from 
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 28: Coding Exercise: A Label Assessment
+## Slide 32: Coding Exercise: A Label Assessment
 
 - Reproduce the four-question source comparison.
 - Trace each unsupported claim to its inferential error.
@@ -345,7 +393,7 @@ Use ten minutes to introduce the question and demonstrate the output, twenty-fiv
 
 Source: M5 §§5.19–5.20. ../07_Labs/AI_Evidence_and_Evaluation/README.md
 
-## Slide 29: Engagement and Commercial Value
+## Slide 33: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -355,7 +403,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 30: Authenticity of Reviews and Endorsements
+## Slide 34: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -365,7 +413,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 31: Text-Analysis Discussion
+## Slide 35: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=1.7cm,y=1.7cm]
+\begin{scope}
+\path[fill=IlliniBlue!18,even odd rule] (-.1,-.1) rectangle (2.1,2.1) (.1,.1) rectangle (1.9,1.9);
+\node at (1,2.5) {Road Corridor};
+\node[align=center] at (1,-.55) {Shaded area: 1.60 km$^2$\\Four reachable nodes};
+\end{scope}
+\begin{scope}[xshift=7cm]
+\fill[IlliniBlue!18] (-.1,-.1) rectangle (2.1,2.1);
+\node at (1,2.5) {Filled Interior};
+\node[align=center] at (1,-.55) {Shaded area: 4.84 km$^2$\\Four reachable nodes};
+\end{scope}
+\foreach \offset in {0,7} {
+\begin{scope}[xshift=\offset cm]
+\draw[IlliniBlue,very thick] (0,0) rectangle (2,2);
+\foreach \x/\y in {0/0,0/2,2/0,2/2} {\fill[IlliniBlue] (\x,\y) circle (.05);}
+\draw[IlliniOrange,very thick] (.93,.93)--(1.07,1.07) (.93,1.07)--(1.07,.93);
+\node[align=center,font=\scriptsize] at (1,.65) {No modeled route\\to the center};
+\end{scope}}
+\end{tikzpicture}

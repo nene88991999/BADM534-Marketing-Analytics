@@ -1,0 +1,22 @@
+policy,origin,people,known_minutes,lower,upper
+Baseline,W0,100,8,0,0
+Baseline,W1,300,4,1,1
+Baseline,W2,100,0,1,1
+Baseline,E0,50,0,1,1
+Baseline,E1,50,4,1,1
+Baseline,E2,50,2,1,1
+Baseline,X,150,,0,1
+Restore A,W0,100,0,1,1
+Restore A,W1,300,4,1,1
+Restore A,W2,100,0,1,1
+Restore A,E0,50,0,1,1
+Restore A,E1,50,4,1,1
+Restore A,E2,50,2,1,1
+Restore A,X,150,,0,1
+Restore D,W0,100,8,0,0
+Restore D,W1,300,4,1,1
+Restore D,W2,100,0,1,1
+Restore D,E0,50,0,1,1
+Restore D,E1,50,4,1,1
+Restore D,E2,50,0,1,1
+Restore D,X,150,,0,1

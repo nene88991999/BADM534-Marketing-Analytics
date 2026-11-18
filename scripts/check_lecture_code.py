@@ -5,12 +5,15 @@ import re
 root = Path(__file__).resolve().parent.parent
 pattern = re.compile(r"Python source: \[[^\]]+\]\(([^)]+)\).*?\n```python\n(.*?)\n```", re.S)
 checked = 0
+markers = 0
 for module in sorted((root / "06_Lecture_Notes/modules").glob("M*.md")):
+    markers += module.read_text().count("Python source:")
     for relative, code in pattern.findall(module.read_text()):
         source = (module.parent / relative).resolve()
         assert source.is_file(), source
         assert code.strip() == source.read_text().strip(), f"Stale code in {module.name}: {source.name}"
         compile(code, str(source), "exec")
         checked += 1
+assert checked == markers, f"Only {checked} of {markers} source labels matched the required link format"
 assert checked >= 20, checked
 print(f"Verified {checked} matching, syntactically valid Python source blocks.")

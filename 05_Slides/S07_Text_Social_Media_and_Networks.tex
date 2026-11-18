@@ -349,6 +349,67 @@ M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M5, Section 5.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
 \end{frame}
+\begin{frame}{The Nearest Store Depends on the Route}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_access_network.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic population: 800. Access threshold: five minutes. Schematic spacing is not a distance scale.\par}
+\note{W0, W1, W2, E0, E1, E2, and X receive weights 100, 300, 100, 50, 50, 50, and 150. Store B at E0 and C at W2 are available; A and D are unavailable. U at X is unknown. All weights, graph times, the proxy, and the threshold are imposed. Straight-line access includes 650 people; known network access includes 550.
+
+Marketing Analytics Lecture Notes. M5 §§5.21–5.22. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Hold the Comparison Fixed}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Same six connected origins; one directed neighbor each.
+\item Each metric creates six links; only two links coincide.
+\item Network time along selected links averages 10 versus 3.33 minutes.
+\item Population access retains all 800 people: 68.75\% to 87.50\%.
+\end{slidebullets}
+\vfill
+\note{The neighbor comparison fixes k=1 and resolves ties alphabetically. The ten-minute average uses straight-line-selected links; 3.33 uses network-selected links. X is excluded only from this neighbor comparison, while remaining in the population-access denominator. Unknown U yields lower and upper counts of 550 and 700. These are missing-status bounds conditional on the fixed graph, not confidence intervals. A proximity link does not establish customer influence or substitution.
+
+Marketing Analytics Lecture Notes. M5 §§5.21–5.22. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{The Route Changes the Nearest Alternative}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_restaurant_distances.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Four observed restaurant origins; other available same-chain targets. October status, November network.\par}
+\note{The four records are observed on October 24, 2026; OpenStreetMap is dated November 18. Each origin is excluded from its own target set, including when available. Distances include straight connectors to the closest retained nodes. The network is undirected and uses stated access filters. North Neil is the only recorded unavailable origin. These are selected restaurant-origin comparisons, with no population weights. © OpenStreetMap contributors, ODbL 1.0.
+
+Marketing Analytics Lecture Notes. M5 §§5.21–5.22. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md} \url{https://www.openstreetmap.org/copyright}}
+\end{frame}
+\begin{frame}{Interpret the Observed Comparison}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Hold the same observed origin and target set fixed across metrics.
+\item At four kilometers: three of four origins by straight line; zero by network.
+\item Check boundaries, access tags, entrance locations, and snapping.
+\item Customer substitution requires evidence about feasible choices and behavior.
+\end{slidebullets}
+\vfill
+\note{The four-kilometer threshold is imposed. Available means recorded ordering availability, not a verified mechanical condition. The later street extract does not reconstruct the historical network. Directional pedestrian restrictions, crossing barriers, actual entrances, and straight connector feasibility are unverified. Different chains and restaurants outside the selection box are absent. A local count of restaurant origins cannot establish the access experienced by city residents.
+
+Marketing Analytics Lecture Notes. M5 §§5.21–5.22. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
 \begin{frame}{University Affiliations Create a Research Network}
 \usebeamercolor[fg]{normal text}
 \vfill

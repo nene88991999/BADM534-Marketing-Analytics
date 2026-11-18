@@ -64,3 +64,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 examine commercial outcomes, custom
 ## Intervention Intensity and Customer Judgment
 
 M8 §8.22 compares known synthetic revenue, profit, and complaint-constrained choices. M9 §9.18.1 distinguishes that optimization from justification of the marketing practice, including consent, truthful communication, and effective refusal. The assumed complaint response and 3% cap have no legal or ethical authority. This extension makes no new claim about the status of a regulation.
+
+## Feasible Alternatives and Service Priorities
+
+M8 §8.23 and M9 §9.18.2 connect [retail accessibility](../03_Data_and_Code/Retail_Accessibility/README.md) to customer purposes, service reliability, and the firm's choice of objective. Equal store-availability rates can accompany different population-access gains. The five-minute threshold, population weights, and profit gains are imposed teaching inputs. Kantian and Confucian reasoning supplies questions about maxims, respect, and conduct; the numerical threshold creates no ethical or legal safe harbor. The observed restaurant comparison contains no causal evidence about customer substitution or consumer harm.

@@ -1033,3 +1033,19 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "results")
     run(parser.parse_args().output)
 ```
+
+## 8.23 Service Restoration and Customer Access
+
+\noindent A chain choosing between two equally costly service restorations can rank the actions by incremental profit or by the number of people who gain a reachable option. The synthetic network in Section 5.21 holds locations, travel times, population weights, and a five-minute threshold fixed. Both candidate actions restore one of four stores with known status. Store U's availability remains unknown. Each restoration therefore reduces the known-store unavailable share from one-half to one-quarter.
+
+| Action | Imposed Weekly Profit Gain | Population Access Bounds |
+| --- | ---: | ---: |
+| Baseline | 0 dollars | 68.75%--87.50% |
+| Restore A | 20 dollars | 81.25%--100.00% |
+| Restore D | 40 dollars | 68.75%--87.50% |
+
+Restoring A gives the 100 people at W0 a known available option within five minutes. Restoring D adds no people to that threshold-defined group because E2 already reaches C in two minutes. The profit criterion selects D; the population-access criterion selects A. The larger imposed profit gain is an assumption, not an estimated demand response. Restoring D still reduces travel for some origins, so a criterion based on travel-time savings can distinguish benefits that the binary access threshold omits.
+
+![The two restorations produce different population access bounds despite the same improvement in the known-store availability rate.](../figures/M08_access_priorities.png)
+
+The lines connect lower and upper bounds under the two possible states of U. They describe missing-status uncertainty, not sampling variation. A customer-outcome assessment should examine how the conclusion changes with the threshold, travel mode, origin definition, and affected population. A choice justified by agency or equitable access also needs evidence about feasible alternatives, affordability, and customers' own purposes. A single coverage percentage does not supply those judgments. The full calculation and saved origin-level results are in Section 5.21 and the [accessibility example](../../03_Data_and_Code/Retail_Accessibility/README.md).

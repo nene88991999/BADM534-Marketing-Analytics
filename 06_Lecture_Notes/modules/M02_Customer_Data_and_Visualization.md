@@ -1589,3 +1589,50 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 2.23 A Shaded Map and a Reachable Location
+
+\noindent A retailer assessing service coverage needs to know which customer origins can reach an available outlet under specified travel conditions. Filling a map’s enclosed gap can expand its shaded area while leaving every modeled route unchanged.
+
+Consider a synthetic road circuit forming a square two kilometers on each side. The graph has four corner nodes, each road edge takes two minutes, and the travel threshold from one corner is five minutes. All four nodes are reachable. An explicitly imposed footprint extends 0.1 kilometer to either side of the circuit with square corners. Its outer square has area $2.2^2=4.84$ square kilometers; the interior hole has area $1.8^2=3.24$. The corridor therefore shades 1.60 square kilometers. Filling its hole increases the shaded area to 4.84, while the reachable-node count remains four. The center has no connecting route in this graph.
+
+![Filling a synthetic square footprint increases shaded area while leaving the four reachable graph nodes unchanged.](../figures/M02_map_footprint.png)
+
+Population access requires a rule assigning people to origins and a travel comparison for each origin. Retain disconnected origins in the denominator. City2Graph's [buffer-isochrone example](https://city2graph.net/latest/examples/isochrone_holes.html) explains the corresponding distinction between reachable graph locations and optional polygon filling.
+
+Latitude and longitude are angular coordinates, so planar distances calculated directly from them have units of degrees. A suitable projection or geographical-distance formula supplies interpretable distance units. Matching coordinate systems alone does not establish meters. State the snapping and edge-weight rules, and assess these choices independently of whether an AI-generated map renders successfully.
+
+
+Python source: [cartography.py](../../03_Data_and_Code/Retail_Accessibility/cartography.py)
+
+```python
+"""Exact synthetic square footprints; cartographic area and network access."""
+from pathlib import Path
+import json
+import networkx as nx
+
+
+def calculate():
+    # A 2 km square road circuit; two minutes per edge, origin at one corner.
+    g = nx.cycle_graph(4)
+    nx.set_edge_attributes(g, 2, "minutes")
+    reached = nx.single_source_dijkstra_path_length(g, 0, cutoff=5, weight="minutes")
+    # Explicit square-corner footprint, 0.1 km to each side of the road loop.
+    outer_area = 2.2 ** 2
+    hole_area = 1.8 ** 2
+    return {"synthetic": True, "threshold_minutes": 5,
+            "corridor_area_km2": outer_area - hole_area,
+            "filled_area_km2": outer_area, "added_area_km2": hole_area,
+            "reached_nodes_before": len(reached), "reached_nodes_after": len(reached),
+            "interpretation": "Filling the display polygon adds no graph nodes, links, or verified reachable locations."}
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "results")
+    output = parser.parse_args().output; output.mkdir(parents=True, exist_ok=True)
+    result = calculate()
+    (output / "cartography.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+```

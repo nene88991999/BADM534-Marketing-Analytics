@@ -1,0 +1,9 @@
+\begin{tikzpicture}\begin{axis}[width=12cm,height=6cm,xmin=0,xmax=6,ymin=-.55,ymax=3.5,ytick={0,1,2,3},yticklabels={South Neil,North Neil,Mattis,Cunningham},xlabel={Distance to Nearest Available Alternative (km)},xmajorgrids=true,legend style={at={(.5,-.28)},anchor=north,legend columns=2,column sep=6pt,fill=none}]
+\addplot[Storm,forget plot] coordinates {(3.751335,0) (5.020893,0)};
+\addplot[Storm,forget plot] coordinates {(3.478323,1) (4.756976,1)};
+\addplot[Storm,forget plot] coordinates {(3.751335,2) (5.020893,2)};
+\addplot[Storm,forget plot] coordinates {(4.160545,3) (5.499132,3)};
+\addplot[only marks,IlliniBlue,mark=*,mark size=3pt] coordinates {(3.751335,0) (3.478323,1) (3.751335,2) (4.160545,3)};\addlegendentry{Straight line}
+\addplot[only marks,IlliniOrange,mark=triangle*,mark size=3pt] coordinates {(5.020893,0) (4.756976,1) (5.020893,2) (5.499132,3)};\addlegendentry{Modeled network}
+\node[font=\scriptsize,anchor=west,align=left] at (axis cs:.1,1.5) {North Neil's selected alternative:\\Mattis $\rightarrow$ South Neil};
+\end{axis}\end{tikzpicture}

@@ -646,6 +646,27 @@
         "source": "M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
+        "kind": "figure",
+        "title": "A Larger Footprint Can Preserve the Same Access",
+        "figure": "../06_Lecture_Notes/figures/M02_map_footprint.tex",
+        "caption": "Synthetic square road loop. Filling changes the footprint; all four nodes remain reachable.",
+        "description": "The square-corner road corridor covers 1.60 square kilometers. Filling its interior shades 4.84 square kilometers. Both panels retain the same four reachable corner nodes and no modeled route to the center.",
+        "notes": "A two-kilometer square has four two-minute edges. From one corner, all four nodes are reachable within five minutes. The imposed corridor extends 0.1 kilometer to either side; subtract 1.8 squared from 2.2 squared to obtain 1.60 square kilometers. Filling the hole retains 2.2 squared, or 4.84. No route, node, or access permission is added. The geometry is analytic and does not execute an upstream isochrone function.",
+        "source": "Marketing Analytics Lecture Notes. M2 §2.23. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Define Access Before Coloring the Map",
+        "bullets": [
+          "Specify origins, eligible destinations, mode, costs, and threshold.",
+          "Check graph weights and units before interpreting a travel contour.",
+          "Keep disconnected origins and missing availability visible.",
+          "Reconcile reachable nodes separately from shaded area."
+        ],
+        "notes": "A location can appear inside a filled polygon while lacking a modeled connection. Water, private parcels, missing paths, and snapping choices require separate consideration. A meter-based distance requires a metric definition or suitable projection; a common coordinate-system label alone does not supply meters. Full runnable Python is in M2 §2.23.",
+        "source": "Marketing Analytics Lecture Notes. M2 §2.23. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
         "kind": "bullets",
         "title": "Coding Exercise: A Chart Assessment",
         "bullets": [
@@ -719,10 +740,12 @@
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
       "[Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)",
-      "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)"
+      "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)",
+      "[Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)",
+      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)"
     ],
     "practice": "Assess chart values, paired changes, scales, and denominator controls.",
-    "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim."
+    "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes."
   },
   {
     "number": 4,
@@ -1701,6 +1724,48 @@
         "source": "M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
       },
       {
+        "kind": "figure",
+        "title": "The Nearest Store Depends on the Route",
+        "figure": "../06_Lecture_Notes/figures/M05_access_network.tex",
+        "caption": "Synthetic population: 800. Access threshold: five minutes. Schematic spacing is not a distance scale.",
+        "description": "A northern bridge joins the two riverbanks. The straight-line proxy from W0 to B is two minutes; the graph route is eighteen. The nearest known available store from W0 is C at eight minutes. Isolated X contains 150 people and an unknown-status store.",
+        "notes": "W0, W1, W2, E0, E1, E2, and X receive weights 100, 300, 100, 50, 50, 50, and 150. Store B at E0 and C at W2 are available; A and D are unavailable. U at X is unknown. All weights, graph times, the proxy, and the threshold are imposed. Straight-line access includes 650 people; known network access includes 550.",
+        "source": "Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Hold the Comparison Fixed",
+        "bullets": [
+          "Same six connected origins; one directed neighbor each.",
+          "Each metric creates six links; only two links coincide.",
+          "Network time along selected links averages 10 versus 3.33 minutes.",
+          "Population access retains all 800 people: 68.75% to 87.50%."
+        ],
+        "notes": "The neighbor comparison fixes k=1 and resolves ties alphabetically. The ten-minute average uses straight-line-selected links; 3.33 uses network-selected links. X is excluded only from this neighbor comparison, while remaining in the population-access denominator. Unknown U yields lower and upper counts of 550 and 700. These are missing-status bounds conditional on the fixed graph, not confidence intervals. A proximity link does not establish customer influence or substitution.",
+        "source": "Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "figure",
+        "title": "The Route Changes the Nearest Alternative",
+        "figure": "../06_Lecture_Notes/figures/M05_restaurant_distances.tex",
+        "caption": "Four observed restaurant origins; other available same-chain targets. October status, November network.",
+        "description": "Paired points give nearest straight-line and modeled-network distances for each selected restaurant. For North Neil, the selected destination changes from Mattis at 3.478 kilometers straight-line to South Neil at 4.757 kilometers on the network.",
+        "notes": "The four records are observed on October 24, 2026; OpenStreetMap is dated November 18. Each origin is excluded from its own target set, including when available. Distances include straight connectors to the closest retained nodes. The network is undirected and uses stated access filters. North Neil is the only recorded unavailable origin. These are selected restaurant-origin comparisons, with no population weights. © OpenStreetMap contributors, ODbL 1.0.",
+        "source": "Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://www.openstreetmap.org/copyright"
+      },
+      {
+        "kind": "bullets",
+        "title": "Interpret the Observed Comparison",
+        "bullets": [
+          "Hold the same observed origin and target set fixed across metrics.",
+          "At four kilometers: three of four origins by straight line; zero by network.",
+          "Check boundaries, access tags, entrance locations, and snapping.",
+          "Customer substitution requires evidence about feasible choices and behavior."
+        ],
+        "notes": "The four-kilometer threshold is imposed. Available means recorded ordering availability, not a verified mechanical condition. The later street extract does not reconstruct the historical network. Directional pedestrian restrictions, crossing barriers, actual entrances, and straight connector feasibility are unverified. Different chains and restaurants outside the selection box are absent. A local count of restaurant origins cannot establish the access experienced by city residents.",
+        "source": "Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
         "kind": "bullets",
         "title": "University Affiliations Create a Research Network",
         "bullets": [
@@ -1776,10 +1841,12 @@
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
       "[University Affiliation Clustering](../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md)",
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
-      "[Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)"
+      "[Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)",
+      "[Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)",
+      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)"
     ],
     "practice": "Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.",
-    "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations."
+    "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets."
   },
   {
     "number": 8,
@@ -3222,6 +3289,39 @@
         "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
+        "kind": "figure",
+        "title": "Restoration Changes Who Can Reach Service",
+        "figure": "../06_Lecture_Notes/figures/M08_access_priorities.tex",
+        "caption": "Synthetic inputs. Bounds describe the unknown store status; population denominator: 800.",
+        "description": "Restoring A raises the access bounds from 68.75–87.50 percent to 81.25–100 percent. Restoring D leaves both bounds unchanged. Known and possible access use distinct markers on a common scale.",
+        "notes": "Both restorations lower the unavailable share among four known-status stores from one-half to one-quarter. A provides an option within five minutes to 100 people at W0. E2 already reaches C in two minutes, so D adds no people under the threshold. It still shortens travel for some origins. The bounds reflect unknown U, conditional on imposed graph times and population weights.",
+        "source": "Marketing Analytics Lecture Notes. M8 §8.23 and M9 §9.18.2. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
+        "kind": "table",
+        "title": "Profit and Access Can Rank Actions Differently",
+        "headers": [
+          "Action",
+          "Profit Gain / Week",
+          "Newly Served"
+        ],
+        "rows": [
+          [
+            "Restore A",
+            "20 dollars",
+            "100 people"
+          ],
+          [
+            "Restore D",
+            "40 dollars",
+            "0 people"
+          ]
+        ],
+        "caption": "Equal restoration costs; imposed gains and five-minute access threshold.",
+        "notes": "Profit gains are hypothetical inputs, not estimated sales effects. Profit selects D; expansion of threshold-defined access selects A. A travel-time-savings objective can capture benefits of D that this threshold omits. Examine customer purposes, feasible alternatives, affordability, and the firm’s service commitments when justifying an objective. A Kantian assessment concerns the action’s maxim and respect for persons; a Confucian assessment can examine reliability and role obligations. Neither supplies a universal five-minute service standard.",
+        "source": "Marketing Analytics Lecture Notes. M8 §8.23 and M9 §9.18.2. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
+      },
+      {
         "kind": "bullets",
         "title": "Coding Exercise: A Policy Objective",
         "bullets": [
@@ -3261,10 +3361,12 @@
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)",
       "[Discount response examples](../03_Data_and_Code/Dose_Response/README.md)",
-      "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)"
+      "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)",
+      "[Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)",
+      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)"
     ],
     "practice": "Compare list objectives and solve a budget allocation with an independent grid check.",
-    "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation."
+    "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation. Evaluate service restoration under profit and population access."
   },
   {
     "number": 14,

@@ -11,3 +11,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Discount Response and Customer Outcomes
 
 [Discount Response Curves and Customer Outcomes](Dose_Response/README.md) is optional, ungraded practice. A 20-minute discussion uses saved curve and uncertainty comparisons; optional Python work changes overlap, nuisance specifications, pooling, and the decision objective. All data are synthetic.
+
+## Retail Access and Service Priorities
+
+[Retail Accessibility](Retail_Accessibility/README.md) is optional ungraded practice using exact synthetic networks and four selected observed restaurant origins. Students compare paths, missing-status bounds, fixed-k graphs, cartographic footprints, and service objectives. Complete programs, input hashes, and independent checks accompany the exercise.

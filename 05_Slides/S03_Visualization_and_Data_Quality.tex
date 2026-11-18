@@ -238,6 +238,39 @@ assert round(common_b - common_a, 2) == 0.01
 
 M2, Section 2.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
 \end{frame}
+\begin{frame}{A Larger Footprint Can Preserve the Same Access}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M02_map_footprint.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic square road loop. Filling changes the footprint; all four nodes remain reachable.\par}
+\note{A two-kilometer square has four two-minute edges. From one corner, all four nodes are reachable within five minutes. The imposed corridor extends 0.1 kilometer to either side; subtract 1.8 squared from 2.2 squared to obtain 1.60 square kilometers. Filling the hole retains 2.2 squared, or 4.84. No route, node, or access permission is added. The geometry is analytic and does not execute an upstream isochrone function.
+
+Marketing Analytics Lecture Notes. M2 §2.23. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Define Access Before Coloring the Map}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Specify origins, eligible destinations, mode, costs, and threshold.
+\item Check graph weights and units before interpreting a travel contour.
+\item Keep disconnected origins and missing availability visible.
+\item Reconcile reachable nodes separately from shaded area.
+\end{slidebullets}
+\vfill
+\note{A location can appear inside a filled polygon while lacking a modeled connection. Water, private parcels, missing paths, and snapping choices require separate consideration. A meter-based distance requires a metric definition or suitable projection; a common coordinate-system label alone does not supply meters. Full runnable Python is in M2 §2.23.
+
+Marketing Analytics Lecture Notes. M2 §2.23. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
 \begin{frame}{Coding Exercise: A Chart Assessment}
 \usebeamercolor[fg]{normal text}
 \vfill

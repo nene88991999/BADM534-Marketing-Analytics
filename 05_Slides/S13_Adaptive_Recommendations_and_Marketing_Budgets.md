@@ -22,6 +22,8 @@ Session 13. M8. 170 minutes.
 - [Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)
 - [Discount response examples](../03_Data_and_Code/Dose_Response/README.md)
 - [Optional dose-response lab](../07_Labs/Dose_Response/README.md)
+- [Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)
+- [Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)
 
 ## Slide 1: Adaptive Recommendations and Marketing Budgets
 
@@ -225,7 +227,32 @@ The preceding table optimizes known functions. Estimated curves introduce sampli
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 18: Coding Exercise: A Policy Objective
+## Slide 18: Restoration Changes Who Can Reach Service
+
+Synthetic inputs. Bounds describe the unknown store status; population denominator: 800.
+
+**Figure description:** Restoring A raises the access bounds from 68.75–87.50 percent to 81.25–100 percent. Restoring D leaves both bounds unchanged. Known and possible access use distinct markers on a common scale.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M08_access_priorities.tex)
+
+Both restorations lower the unavailable share among four known-status stores from one-half to one-quarter. A provides an option within five minutes to 100 people at W0. E2 already reaches C in two minutes, so D adds no people under the threshold. It still shortens travel for some origins. The bounds reflect unknown U, conditional on imposed graph times and population weights.
+
+Source: Marketing Analytics Lecture Notes. M8 §8.23 and M9 §9.18.2. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
+
+## Slide 19: Profit and Access Can Rank Actions Differently
+
+| Action | Profit Gain / Week | Newly Served |
+| --- | --- | --- |
+| Restore A | 20 dollars | 100 people |
+| Restore D | 40 dollars | 0 people |
+
+Equal restoration costs; imposed gains and five-minute access threshold.
+
+Profit gains are hypothetical inputs, not estimated sales effects. Profit selects D; expansion of threshold-defined access selects A. A travel-time-savings objective can capture benefits of D that this threshold omits. Examine customer purposes, feasible alternatives, affordability, and the firm’s service commitments when justifying an objective. A Kantian assessment concerns the action’s maxim and respect for persons; a Confucian assessment can examine reliability and role obligations. Neither supplies a universal five-minute service standard.
+
+Source: Marketing Analytics Lecture Notes. M8 §8.23 and M9 §9.18.2. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
+
+## Slide 20: Coding Exercise: A Policy Objective
 
 - Enumerate three-item lists at several variety weights.
 - Solve and independently grid-check the fixed-budget allocation.
@@ -235,7 +262,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S13. A grid check v
 
 Source: M8, Section 8.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 19: Attention and the Optimization Target
+## Slide 21: Attention and the Optimization Target
 
 - A free service can require customer time and attention.
 - More exposure can benefit advertisers while burdening customers.
@@ -245,7 +272,7 @@ Tim Wu's Blind Spot discusses attention markets and the difficulty of analyzing 
 
 Source: Tim Wu, Blind Spot: The Attention Economy and the Law (2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/
 
-## Slide 20: Policy Discussion
+## Slide 22: Policy Discussion
 
 - What changes when the recommender learns during the experiment?
 - Which outcome measures the customer's stated goal?

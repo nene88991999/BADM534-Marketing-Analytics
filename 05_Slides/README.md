@@ -84,3 +84,7 @@ Session 6 adds weighted centroid updates, final-label consistency, a local CPU c
 ## Discount Response and Decision Objectives
 
 Session 10 adds five slides on nonlinear discount responses, doubly robust adjustment, conditional support, interval coverage, and store pooling. Session 13 adds two slides on objectives and customer judgment. [Complete Python](../03_Data_and_Code/Dose_Response/README.md) and [optional practice](../07_Labs/Dose_Response/README.md) accompany three new editable TikZ figures. The discussion fits existing 20-minute and 15-minute allocations.
+
+## Retail Alternatives and Service Access
+
+Sessions 3, 7, and 13 add eight slides on map footprints, network distances, missing availability, and restoration priorities. Four editable TikZ figures accompany [complete Python and frozen inputs](../03_Data_and_Code/Retail_Accessibility/README.md). The [optional lab](../07_Labs/Retail_Accessibility/README.md) extends the discussion, with graph neural networks reserved for further study. The case uses existing application time.

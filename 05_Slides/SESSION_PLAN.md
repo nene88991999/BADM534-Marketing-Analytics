@@ -12,17 +12,17 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 21 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
-| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 23 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 31 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 35 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 28 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
-| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 20 |
+| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
@@ -74,7 +74,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval.
 
-**Application:** Distinguish expired-only lifetimes from censored follow-up; preserve uncertainty and sampling scope. Distinguish spending-level variation from uncertainty in customer changes.
+**Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes.
 
 **Ethics and Regulation:** Chart claims, denominator choices, and coverage
 
@@ -85,7 +85,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–140 | Map Footprints and Reachable Locations |
+| 140–155 | Chart Interpretation and Sampling Scope |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 04. Regression and Marketing Interpretation
@@ -155,7 +156,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.
 
-**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations.
+**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -166,7 +167,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Earnings-Call Exposure and Meaning |
 | 70–80 | Break |
 | 80–125 | Earnings-Call Python and Construct Checks |
-| 125–155 | mHealth Text and Network Applications |
+| 125–140 | mHealth Text Applications |
+| 140–155 | Retail Alternatives and Network Access |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 08. Project Evidence and Midterm Presentations
@@ -274,7 +276,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare list objectives and solve a budget allocation with an independent grid check.
 
-**Application:** Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation.
+**Application:** Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation. Evaluate service restoration under profit and population access.
 
 **Ethics and Regulation:** Attention, adaptive feedback, and platform incentives.
 
@@ -285,7 +287,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–140 | Feedback and Forecast Interpretation |
+| 125–135 | Service Restoration and Customer Access |
+| 135–140 | Feedback and Forecast Interpretation |
 | 140–155 | Discount Objectives and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
 

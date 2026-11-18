@@ -1,0 +1,36 @@
+{
+  "retrieved_on": "2026-11-18",
+  "snapshot_date": "2026-10-24",
+  "restaurant_selection_bbox": [
+    40.06,
+    -88.33,
+    40.16,
+    -88.17
+  ],
+  "network_bbox": [
+    40.08,
+    -88.3,
+    40.155,
+    -88.185
+  ],
+  "osm_base": "2026-11-18T19:57:55Z",
+  "query": "[out:json][timeout:45];way[\"highway\"](40.08,-88.30,40.155,-88.185);out body;>;out skel qt;",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "osm_raw_sha256": "6af6ea5ad2e48b4f151d9fbc9700bcac887944240b33fa29e5e8f132a1b8e8de",
+  "inputs": {
+    "osm_highways.json.gz": {
+      "bytes": 2151387,
+      "sha256": "1d314c991cefcb6ef5e7e15cdcd7c70a9d929fce32387244d585d3e89b7a34ce"
+    },
+    "restaurants.csv": {
+      "bytes": 588,
+      "sha256": "f5917a6711f1ed944def89b3834642b0fdb415c3fc0918b0de546f2b3ca93a06"
+    }
+  },
+  "mcbroken_source_manifest": "../../McBroken/manifest.json",
+  "rights": {
+    "osm_highways.json.gz": "OpenStreetMap contributors, ODbL 1.0; saved highway ways and referenced nodes from the query response.",
+    "restaurants.csv": "Attributed derived facts from supplied McBroken extraction; no separate upstream data licence established."
+  },
+  "time_alignment": "The later street extract supplies a fixed illustrative network for the October snapshot. Historical street conditions are not reconstructed."
+}

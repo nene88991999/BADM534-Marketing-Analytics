@@ -81,3 +81,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Dose-Response Curves
 
 [Discount-response examples](Dose_Response/README.md) provide three complete synthetic programs: cross-fitted adjustment with 200 repeated-sample evaluations, randomized-store partial pooling, and a known-function comparison of objectives. Seven numerical tests, saved arrays, a data dictionary, and an agent guide accompany M6 §§6.22–6.27 and M8 §8.22.
+
+## Retail Accessibility
+
+[Retail accessibility](Retail_Accessibility/README.md) provides three complete programs, synthetic and observed inputs, eight independent tests, result hashes, and four editable figures. The observed case uses four restaurant records and a frozen OpenStreetMap extract; the synthetic case supplies population weights and service objectives. Full Python appears in M2 §2.23 and M5 §§5.21–5.22. [Optional practice](../07_Labs/Retail_Accessibility/README.md) extends the comparison.

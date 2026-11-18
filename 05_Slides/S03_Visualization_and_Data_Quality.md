@@ -24,6 +24,8 @@ Session 03. M2. 170 minutes.
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 - [Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)
 - [PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)
+- [Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)
+- [Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)
 
 ## Slide 1: Visualization and Data Quality
 
@@ -220,7 +222,30 @@ The observed B mix assigns two-thirds of its customers to the new-customer group
 
 Source: M2, Section 2.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 18: Coding Exercise: A Chart Assessment
+## Slide 18: A Larger Footprint Can Preserve the Same Access
+
+Synthetic square road loop. Filling changes the footprint; all four nodes remain reachable.
+
+**Figure description:** The square-corner road corridor covers 1.60 square kilometers. Filling its interior shades 4.84 square kilometers. Both panels retain the same four reachable corner nodes and no modeled route to the center.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_map_footprint.tex)
+
+A two-kilometer square has four two-minute edges. From one corner, all four nodes are reachable within five minutes. The imposed corridor extends 0.1 kilometer to either side; subtract 1.8 squared from 2.2 squared to obtain 1.60 square kilometers. Filling the hole retains 2.2 squared, or 4.84. No route, node, or access permission is added. The geometry is analytic and does not execute an upstream isochrone function.
+
+Source: Marketing Analytics Lecture Notes. M2 §2.23. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 19: Define Access Before Coloring the Map
+
+- Specify origins, eligible destinations, mode, costs, and threshold.
+- Check graph weights and units before interpreting a travel contour.
+- Keep disconnected origins and missing availability visible.
+- Reconcile reachable nodes separately from shaded area.
+
+A location can appear inside a filled polygon while lacking a modeled connection. Water, private parcels, missing paths, and snapping choices require separate consideration. A meter-based distance requires a metric definition or suitable projection; a common coordinate-system label alone does not supply meters. Full runnable Python is in M2 §2.23.
+
+Source: Marketing Analytics Lecture Notes. M2 §2.23. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 20: Coding Exercise: A Chart Assessment
 
 - Generate a rate chart from a verified aggregate table.
 - Alter the axis range, cohort filter, and denominator one at a time.
@@ -230,7 +255,7 @@ The small example runs with ../03_Data_and_Code/Lecture_Examples/session_example
 
 Source: M2, Section 2.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 19: A Public-Signal Measurement Problem
+## Slide 21: A Public-Signal Measurement Problem
 
 - A product can acquire a new page title while demand stays unchanged.
 - A single-title series then misses part of its recorded attention.
@@ -240,7 +265,7 @@ Pageviews measure attention to selected pages. They do not directly measure paid
 
 Source: M2, Section 2.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 20: Title Changes and Apparent Declines
+## Slide 22: Title Changes and Apparent Declines
 
 The supplied public pageview capture uses observed title histories.
 
@@ -252,7 +277,7 @@ The GenAI measurement program validates date and title coverage before calculati
 
 Source: M2, Section 2.17.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 21: Evidence in a Management Presentation
+## Slide 23: Evidence in a Management Presentation
 
 - State the decision and supported result.
 - Show the comparison, units, and denominator.
@@ -262,7 +287,7 @@ An executive summary can be concise while retaining consequential uncertainty. A
 
 Source: M2, Section 2.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 22: Honest Comparisons
+## Slide 24: Honest Comparisons
 
 - Keep denominators and scales visible.
 - Preserve missing outcomes and relevant subgroup variation.
@@ -272,7 +297,7 @@ A technically correct chart can still communicate a stronger claim than the evid
 
 Source: ETHICS_AND_REGULATION.md, M2-M3.
 
-## Slide 23: Visualization Discussion
+## Slide 25: Visualization Discussion
 
 - Which customers receive weight in the chart?
 - Could sample restrictions reverse the recommendation?

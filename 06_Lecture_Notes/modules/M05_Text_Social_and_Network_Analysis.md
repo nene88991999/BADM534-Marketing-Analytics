@@ -944,3 +944,286 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 5.21 Retail Alternatives and Network Accessibility
+
+\noindent A retail chain with a limited service budget must decide which unavailable outlet to restore. Counting available stores gives each location equal weight. Customers' alternatives also depend on where people live, how locations connect, and which outlets can be reached within an acceptable journey. A restoration beside several available alternatives can change the store count while leaving the number of people with a nearby option unchanged.
+
+For an origin $i$ and store $j$, define $d_{ij}$ as the shortest sum of edge travel times along a permitted path. A disconnected pair has $d_{ij}=\infty$. Given a travel threshold $\tau$, availability states $a_j$, and fixed population weights $w_i$, the share with at least one available option is
+
+$$
+C(a,\tau)=\frac{\sum_i w_i\,\mathbf{1}\{\min_{j:a_j=1}d_{ij}\leq\tau\}}{\sum_i w_i}.
+$$
+
+The minimum over an empty set is infinity. Each person contributes once even if several stores are reachable. The denominator includes origins with no reachable store. Travel times, the store menu, and population weights define the measured comparison; the calculation does not specify which store a customer prefers or chooses.
+
+In the synthetic network below, two banks connect only at the northern crossing. Vertical edges take four minutes and the crossing takes two. The fixed population totals 800, including 150 at disconnected origin X. Stores B and C are available, A and D are unavailable, and U's status is unknown. Origin populations are W0: 100, W1: 300, W2: 100, E0: 50, E1: 50, E2: 50, and X: 150. These are imposed teaching inputs. Store locations coincide with W0, E0, W2, E2, and X, respectively. The threshold is five minutes.
+
+![A synthetic river crossing separates geographic proximity from network access; X remains in the population despite its disconnected location.](../figures/M05_access_network.png)
+
+The network layout is schematic. The code fixes map coordinates at W0 $(0,0)$, W1 $(0,2)$, W2 $(0,4)$, E0 $(1,0)$, E1 $(1,2)$, E2 $(1,4)$, and X $(4,0)$. A straight-line proxy assigns two minutes per map unit. It places B two minutes from W0. The network route takes eighteen minutes, and W0's nearest known available store is C at eight minutes. Holding the population and five-minute threshold fixed, the straight-line proxy counts 650 people with access, compared with 550 under network travel times.
+
+Unknown availability gives bounds on access. The lower bound includes stores known to be available; the upper bound additionally treats every unknown store as available. Network access is therefore between $550/800=68.75\%$ and $700/800=87.50\%$. The range reflects U's missing status, conditional on the fixed network and population. It is not a sampling confidence interval. Removing X would change the target population and raise the apparent lower share to $550/650=84.62\%$.
+
+A separate neighbor comparison uses only the six bank locations and retains one directed neighbor per origin. Stable alphabetical ordering resolves ties. The straight-line and network graphs each contain six directed links, with two in common. Evaluated using the same network travel times, the selected neighbor averages ten minutes away under straight-line selection and $10/3$ minutes under network selection. Increasing the neighbor count changes another modeling choice. Holding it fixed isolates the effect of the distance definition. Symmetrizing selected links can also change node degrees. A constructed proximity link records the analyst's criterion; customer substitution requires evidence about behavior.
+
+The program writes origin-level bounds, service-restoration comparisons, and directed-neighbor tables. The hypothetical profit increments used in Section 8.23 are twenty dollars for restoring A and forty dollars for restoring D, with equal restoration costs. They are imposed independently of the travel calculations.
+
+
+Python source: [accessibility.py](../../03_Data_and_Code/Retail_Accessibility/accessibility.py)
+
+```python
+"""Synthetic service restoration, accessibility bounds, and graph comparisons."""
+from pathlib import Path
+import csv
+import json
+import math
+import networkx as nx
+
+HERE = Path(__file__).resolve().parent
+POSITIONS = {"W0": (0, 0), "W1": (0, 2), "W2": (0, 4),
+             "E0": (1, 0), "E1": (1, 2), "E2": (1, 4), "X": (4, 0)}
+PEOPLE = {"W0": 100, "W1": 300, "W2": 100, "E0": 50,
+          "E1": 50, "E2": 50, "X": 150}
+STORES = {"A": "W0", "B": "E0", "C": "W2", "D": "E2", "U": "X"}
+STATUS = {"A": 0, "B": 1, "C": 1, "D": 0, "U": None}
+PROFIT = {"A": 20, "D": 40}  # Imposed incremental weekly dollars, equal costs.
+
+
+def write_csv(path, rows):
+    with Path(path).open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]),
+                                lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def graph():
+    g = nx.Graph()
+    g.add_nodes_from(POSITIONS)
+    g.add_weighted_edges_from([("W0", "W1", 4), ("W1", "W2", 4),
+                               ("E0", "E1", 4), ("E1", "E2", 4),
+                               ("W2", "E2", 2)], weight="minutes")
+    return g
+
+
+def distances(g, metric="network"):
+    if metric not in {"network", "straight"}:
+        raise ValueError("Use network or straight distance")
+    paths = dict(nx.all_pairs_dijkstra_path_length(g, weight="minutes"))
+    return {(a, b): (paths[a].get(b, math.inf) if metric == "network"
+                     else 2 * math.dist(POSITIONS[a], POSITIONS[b]))
+            for a in POSITIONS for b in POSITIONS}
+
+
+def access_rows(distance, status, threshold=5):
+    if any(s not in (0, 1, None) for s in status.values()):
+        raise ValueError("Availability must be 0, 1, or None")
+    rows = []
+    for origin, people in PEOPLE.items():
+        certain = [distance[origin, STORES[s]] for s, v in status.items() if v == 1]
+        possible = [distance[origin, STORES[s]] for s, v in status.items() if v != 0]
+        best = min(certain, default=math.inf)
+        rows.append(dict(origin=origin, people=people,
+                         known_minutes=best if math.isfinite(best) else None,
+                         lower=int(best <= threshold),
+                         upper=int(min(possible, default=math.inf) <= threshold)))
+    return rows
+
+
+def summarize(rows):
+    denominator = sum(r["people"] for r in rows)
+    return {"people": denominator,
+            "lower_people": sum(r["people"] * r["lower"] for r in rows),
+            "upper_people": sum(r["people"] * r["upper"] for r in rows)}
+
+
+def nearest_edges(distance, nodes, k):
+    if not 0 < k < len(nodes):
+        raise ValueError("k must be between 1 and n-1")
+    return {(a, b) for a in nodes for b in
+            sorted((b for b in nodes if b != a), key=lambda b: (distance[a, b], b))[:k]
+            if math.isfinite(distance[a, b])}
+
+
+def main(output=HERE / "results"):
+    output = Path(output); output.mkdir(parents=True, exist_ok=True)
+    g = graph(); net = distances(g); straight = distances(g, "straight")
+    origins, policies = [], []
+    for policy in ["Baseline", "Restore A", "Restore D"]:
+        status = STATUS.copy()
+        if policy != "Baseline":
+            status[policy[-1]] = 1
+        rows = access_rows(net, status)
+        origins.extend(dict(policy=policy, **r) for r in rows)
+        result = summarize(rows)
+        result["lower_share"] = result["lower_people"] / result["people"]
+        result["upper_share"] = result["upper_people"] / result["people"]
+        result["profit_gain"] = PROFIT.get(policy[-1], 0)
+        result["known_unavailable_share"] = sum(v == 0 for v in status.values()) / sum(v is not None for v in status.values())
+        policies.append(dict(policy=policy, **result))
+    banks = sorted(n for n in POSITIONS if n != "X")
+    edge_rows, comparisons = [], []
+    for k in [1, 2]:
+        edges = {m: nearest_edges(d, banks, k)
+                 for m, d in [("straight", straight), ("network", net)]}
+        for metric, pairs in edges.items():
+            edge_rows.extend(dict(k=k, metric=metric, origin=a, target=b,
+                                  network_minutes=net[a, b]) for a, b in sorted(pairs))
+        comparisons.append(dict(k=k, directed_edges=len(edges["network"]),
+                                common_edges=len(edges["network"] & edges["straight"]),
+                                straight_neighbors_network_minutes=sum(net[e] for e in edges["straight"]) / len(edges["straight"]),
+                                network_neighbors_network_minutes=sum(net[e] for e in edges["network"]) / len(edges["network"])))
+    write_csv(output / "synthetic_origins.csv", origins)
+    write_csv(output / "policies.csv", policies)
+    write_csv(output / "neighbors.csv", edge_rows)
+    write_csv(output / "neighbor_comparison.csv", comparisons)
+    result = {"synthetic": True, "threshold_minutes": 5, "known_store_unavailability": 0.5,
+              "unknown_store_records": 1, "network_baseline": summarize(access_rows(net, STATUS)),
+              "straight_baseline": summarize(access_rows(straight, STATUS)),
+              "policies": policies, "neighbor_comparison": comparisons}
+    (output / "synthetic_summary.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=HERE / "results")
+    main(parser.parse_args().output)
+```
+
+## 5.22 Restaurant Availability and a Changed Nearest Alternative
+
+\noindent A service manager assessing an unavailable ice-cream option needs to distinguish a nearby restaurant from a reachable alternative. The supplied October 24, 2026 snapshot contains four observed restaurant records inside latitudes 40.06 to 40.16 and longitudes -88.33 to -88.17 around Champaign-Urbana. North Neil is recorded unavailable; the other three are recorded available. The outcome concerns order availability. It does not identify mechanical failure or a reason for unavailability.
+
+Each observed restaurant location is an equally weighted origin. Candidate destinations are the other recorded available restaurants in the selected box. The origin restaurant is excluded even when its status is available, so the quantity measures access to an alternative. No population or customer-demand weights are inferred from these four origins. The frozen [input record](../../03_Data_and_Code/Retail_Accessibility/data/manifest.json) retains the archive commit, source hashes, selected records, and street-extract date.
+
+The network uses OpenStreetMap highway ways from a separate working box that contains the four selected origins. Edge lengths are spherical geographical distances in kilometers, and selected links are treated as undirected. The code excludes specified road classes, explicitly prohibited foot access, and private access without an explicit allowed foot tag. Every origin connects to its nearest selected network node by a straight segment; these connectors range from 11.34 to 20.64 meters and contribute to path length. All four snapped origins lie in the same connected component. Directional restrictions, crossing delays, entrance access, and the feasibility of the straight connectors are unverified. These conventions define a network-distance illustration, rather than a pedestrian routing service.
+
+The street extract is dated November 18, 2026, after the observed availability snapshot. Results hold that later network fixed and do not reconstruct historical street conditions. Restaurants outside the selection box are excluded. Enlarging the candidate menu or changing the network can alter the nearest alternative.
+
+| Origin | Straight-Line Alternative (km) | Network Alternative (km) |
+| --- | --- | --- |
+| South Neil | Mattis, 3.751 | Mattis, 5.021 |
+| North Neil | Mattis, 3.478 | South Neil, 4.757 |
+| Mattis | South Neil, 3.751 | South Neil, 5.021 |
+| Cunningham | South Neil, 4.161 | South Neil, 5.499 |
+
+North Neil's selected alternative changes from Mattis to South Neil when the metric changes. At an imposed four-kilometer threshold, three of the four origins have an available alternative under straight-line distance and none do on the modeled network. This comparison concerns four restaurant origins and the fixed candidate set. It supplies neither a population-access rate nor an estimate of diverted sales.
+
+![Distances to an available same-chain alternative increase on the modeled network, and North Neil's selected destination changes.](../figures/M05_restaurant_distances.png)
+
+Source: Rashiq Zahid's McBroken observations through the supplied archive extraction; OpenStreetMap contributors, [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). The complete calculation below uses frozen local inputs. Independent Bellman-Ford calculations agree with the twelve origin-destination distances computed by Dijkstra's algorithm.
+
+
+Python source: [snapshot_access.py](../../03_Data_and_Code/Retail_Accessibility/snapshot_access.py)
+
+```python
+"""Frozen restaurant statuses and a later illustrative OSM network; distances in km."""
+from pathlib import Path
+import csv
+import gzip
+import json
+import math
+import networkx as nx
+from accessibility import write_csv
+
+HERE = Path(__file__).resolve().parent
+ALLOWED = {"residential", "living_street", "pedestrian", "footway", "path", "steps",
+           "service", "unclassified", "tertiary", "tertiary_link", "secondary",
+           "secondary_link", "primary", "primary_link"}
+
+
+def haversine(a, b):
+    lat1, lon1, lat2, lon2 = map(math.radians, (*a, *b))
+    h = math.sin((lat2-lat1)/2)**2 + math.cos(lat1)*math.cos(lat2)*math.sin((lon2-lon1)/2)**2
+    return 6371.0088 * 2 * math.asin(math.sqrt(min(1, h)))
+
+
+def build_network(data):
+    elements = data["elements"]
+    coordinates = {e["id"]: (e["lat"], e["lon"]) for e in elements if e["type"] == "node"}
+    g = nx.Graph()
+    for way in (e for e in elements if e["type"] == "way"):
+        tags = way.get("tags", {})
+        if tags.get("highway") not in ALLOWED or tags.get("area") == "yes":
+            continue
+        if tags.get("foot") in {"no", "private"}:
+            continue
+        if tags.get("access") in {"no", "private"} and tags.get("foot") not in {"yes", "designated", "permissive"}:
+            continue
+        # Undirected connectivity is an imposed convention, not verified pedestrian routing.
+        for a, b in zip(way["nodes"], way["nodes"][1:]):
+            if a not in coordinates or b not in coordinates or a == b:
+                continue
+            pa, pb = coordinates[a], coordinates[b]
+            if not all(40.08 <= p[0] <= 40.155 and -88.30 <= p[1] <= -88.185 for p in [pa, pb]):
+                continue
+            km = haversine(pa, pb)
+            if km > 0 and (not g.has_edge(a, b) or km < g[a][b]["km"]):
+                g.add_edge(a, b, km=km, osm_way=way["id"])
+    nx.set_node_attributes(g, {n: coordinates[n] for n in g}, "latlon")
+    return g
+
+
+def main(output=HERE / "results"):
+    output = Path(output); output.mkdir(parents=True, exist_ok=True)
+    with gzip.open(HERE / "data/osm_highways.json.gz", "rt") as f:
+        osm = json.load(f)
+    g = build_network(osm)
+    stores = list(csv.DictReader((HERE / "data/restaurants.csv").open()))
+    assert len({s["store_key"] for s in stores}) == len(stores)
+    snaps = {}
+    for s in stores:
+        p = (float(s["lat"]), float(s["lon"]))
+        node = min(g, key=lambda n: (haversine(p, g.nodes[n]["latlon"]), n))
+        km = haversine(p, g.nodes[node]["latlon"])
+        if km > 0.2:
+            raise ValueError("Origin farther than 200 m from selected graph")
+        snaps[s["store_key"]] = (node, km, p)
+    pairs = []
+    for a in stores:
+        node, connector, p = snaps[a["store_key"]]
+        lengths = nx.single_source_dijkstra_path_length(g, node, weight="km")
+        for b in stores:
+            if a["store_key"] == b["store_key"]:
+                continue  # Alternatives always exclude the origin restaurant.
+            dest, end_connector, q = snaps[b["store_key"]]
+            route = lengths.get(dest, math.inf) + connector + end_connector
+            pairs.append(dict(origin=a["store_key"], target=b["store_key"],
+                              target_available=int(b["available"]), straight_km=haversine(p, q),
+                              network_km=route if math.isfinite(route) else None))
+    rows = []
+    for s in stores:
+        eligible = [p for p in pairs if p["origin"] == s["store_key"] and p["target_available"] == 1]
+        row = dict(store_key=s["store_key"], street=s["street"], available=int(s["available"]),
+                   snapped_node=snaps[s["store_key"]][0],
+                   snap_m=1000*snaps[s["store_key"]][1],
+                   candidate_alternatives=len(eligible))
+        for metric in ["straight", "network"]:
+            valid = [p for p in eligible if p[metric+"_km"] is not None]
+            best = min(valid, key=lambda p: (p[metric+"_km"], p["target"]), default=None)
+            row[metric+"_target"] = best["target"] if best else None
+            row[metric+"_km"] = best[metric+"_km"] if best else None
+        rows.append(row)
+    summary = {"synthetic": False, "observed_status_date": "2026-10-24",
+               "network_osm_base": osm["osm3s"]["timestamp_osm_base"],
+               "origin_denominator": len(stores), "unavailable": sum(1-int(s["available"]) for s in stores),
+               "network_nodes": g.number_of_nodes(), "network_edges": g.number_of_edges(),
+               "components": nx.number_connected_components(g),
+               "snapped_components": [len(nx.node_connected_component(g, snaps[s["store_key"]][0])) for s in stores],
+               "within_4km": {m: sum(r[m+"_km"] is not None and r[m+"_km"] <= 4 for r in rows) for m in ["straight", "network"]},
+               "scope": "Four observed restaurant origins; same-chain alternatives in fixed box; later undirected network and straight snapping connectors are imposed."}
+    write_csv(output / "observed_pairs.csv", pairs)
+    write_csv(output / "observed_origins.csv", rows)
+    (output / "observed_summary.json").write_text(json.dumps(summary, indent=2)+"\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=HERE / "results")
+    main(parser.parse_args().output)
+```

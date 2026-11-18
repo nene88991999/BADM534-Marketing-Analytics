@@ -1,0 +1,4 @@
+policy,people,lower_people,upper_people,lower_share,upper_share,profit_gain,known_unavailable_share
+Baseline,800,550,700,0.6875,0.875,0,0.5
+Restore A,800,650,800,0.8125,1.0,20,0.25
+Restore D,800,550,700,0.6875,0.875,40,0.25

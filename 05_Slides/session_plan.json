@@ -133,11 +133,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 23,
+      "slides": 25,
       "companion": "S03_Visualization_and_Data_Quality.md",
       "pdf": "S03_Visualization_and_Data_Quality.pdf",
       "python_activity": "Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval.",
-      "application": "Distinguish expired-only lifetimes from censored follow-up; preserve uncertainty and sampling scope. Distinguish spending-level variation from uncertainty in customer changes.",
+      "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes.",
       "ethics": "Chart claims, denominator choices, and coverage",
       "timing": [
         {
@@ -172,9 +172,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 140,
+          "minutes": 15,
+          "activity": "Map Footprints and Reachable Locations"
+        },
+        {
+          "start_minute": 140,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "Application and Interpretation"
+          "minutes": 15,
+          "activity": "Chart Interpretation and Sampling Scope"
         },
         {
           "start_minute": 155,
@@ -371,11 +377,11 @@
       "modules": "M5",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 31,
+      "slides": 35,
       "companion": "S07_Text_Social_Media_and_Networks.md",
       "pdf": "S07_Text_Social_Media_and_Networks.pdf",
       "python_activity": "Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.",
-      "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations.",
+      "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets.",
       "ethics": "Evidence for labels, review authenticity, and limits of institutional interpretation",
       "timing": [
         {
@@ -410,9 +416,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 140,
+          "minutes": 15,
+          "activity": "mHealth Text Applications"
+        },
+        {
+          "start_minute": 140,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "mHealth Text and Network Applications"
+          "minutes": 15,
+          "activity": "Retail Alternatives and Network Access"
         },
         {
           "start_minute": 155,
@@ -713,11 +725,11 @@
       "modules": "M8",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 20,
+      "slides": 22,
       "companion": "S13_Adaptive_Recommendations_and_Marketing_Budgets.md",
       "pdf": "S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf",
       "python_activity": "Compare list objectives and solve a budget allocation with an independent grid check.",
-      "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation.",
+      "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation. Evaluate service restoration under profit and population access.",
       "ethics": "Attention, adaptive feedback, and platform incentives",
       "timing": [
         {
@@ -752,8 +764,14 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 135,
+          "minutes": 10,
+          "activity": "Service Restoration and Customer Access"
+        },
+        {
+          "start_minute": 135,
           "end_minute": 140,
-          "minutes": 15,
+          "minutes": 5,
           "activity": "Feedback and Forecast Interpretation"
         },
         {

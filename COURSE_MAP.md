@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 78 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 85 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -117,3 +117,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Discount Response and Intervention Intensity
 
 [The discount-response collection](01_Resources/24_Dose_Response/README.md) supports M3 §3.14, M4 §4.21, M6 §§6.22–6.27, M8 §8.22, and M9 §9.18.1. Session 10 uses 20 minutes for shape, adjustment, conditional support, interval coverage, and store pooling. Session 13 uses 15 minutes for objectives and customer outcomes. [Three complete programs](03_Data_and_Code/Dose_Response/README.md) use synthetic observations and known curves; [the lab](07_Labs/Dose_Response/README.md) is optional and ungraded. Advanced continuous-DiD assumptions remain supplementary reading.
+
+## Retail Alternatives and Spatial Networks
+
+[The retail accessibility case](03_Data_and_Code/Retail_Accessibility/README.md) connects map footprints in M2 §2.23, spatial representations in M4 §4.22, shortest paths and unknown availability in M5 §§5.21–5.22, deployment comparisons in M7 §7.28, service priorities in M8 §8.23, and customer agency in M9 §9.18.2. A synthetic network isolates the mechanism; four observed restaurant origins provide a selected geographical comparison. Sessions 3, 7, and 13 use existing application time. The [lab](07_Labs/Retail_Accessibility/README.md) is optional ungraded practice, and GNN modeling remains an optional extension.

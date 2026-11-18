@@ -92,3 +92,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Dose-Response Curves
 
 [The dose-response collection](24_Dose_Response/README.md) links eight methodological and implementation resources, including nonlinear DML, doubly robust curves, hierarchical standardization, and continuous-DiD assumptions. The pinned MIT documentation preserves attribution; original executed course programs supply the examples.
+
+## Spatial Networks and Retail Access
+
+[The spatial-network collection](25_Spatial_Networks/README.md) records the city2graph review, pinned reference files, source licenses, and connections to retail access. [Original executed course programs](../03_Data_and_Code/Retail_Accessibility/README.md) separate graph reachability, map footprints, recorded restaurant availability, and customer behavior. The collection has its own `spatial-networks` catalog namespace.

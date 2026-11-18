@@ -258,5 +258,65 @@
       "upstream_programs_executed": 0
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
+  },
+  "latest_revision": "retail_accessibility_checks_2026_11_18",
+  "retail_accessibility_checks_2026_11_18": {
+    "verified_on": "2026-11-18",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 310,
+        "sha256": "80c4629dee30f742e6eee7de1cbd8f2f09628eafbfec4cae1bf64818e3b0449d"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 29,
+        "sha256": "f67f94b79d24149517bbf194d2d06a5a4d32cb28740df8c9bd90329a78b8b87f"
+      },
+      "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+        "pages": 2,
+        "sha256": "aa0fa37653382f6dca6d776a41844222dcedcce75e1feea7d099788a848c8d14"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 339,
+        "sha256": "2e9684f363b28df9fc1260b66de91d27c940b2274dbd09d43bc46bb30c7a3cc4"
+      },
+      "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
+        "pages": 25,
+        "sha256": "26591ef383ee0cf82697af545224295ab168761167a64125e5477366da2f51cd"
+      },
+      "05_Slides/S07_Text_Social_Media_and_Networks.pdf": {
+        "pages": 35,
+        "sha256": "b6b2d55a924c0c5d301e4eca89627c954dd1591556265d856078557d5191a6a4"
+      },
+      "05_Slides/S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf": {
+        "pages": 22,
+        "sha256": "4b0400fe0b1ed8e4eb7b0ee40d6be78b57827fe040ab0fd163989e823adae78c"
+      }
+    },
+    "checks": {
+      "executed_original_analysis_programs": 3,
+      "independent_unit_tests_passed": 8,
+      "full_note_code_blocks_match_source_and_parse": 71,
+      "local_markdown_links_checked": 636,
+      "pinned_reference_file_hashes_match": 5,
+      "observed_pair_distances_match_bellman_ford": 12,
+      "nearest_alternative_selections_reconciled": 8,
+      "analytic_footprint_areas_reconciled": true,
+      "new_tikz_figures_rendered_and_visually_reviewed": 4,
+      "student_deck_pages_visually_reviewed_including_shifted_content": 23,
+      "note_pages_reviewed_including_contents_and_transitions": 33,
+      "revised_note_layout_pages_rechecked": 3,
+      "standalone_dialectics_final_pages_reviewed": 2,
+      "syllabus_pages_reviewed": 2,
+      "slide_total": 339,
+      "figure_total": 85,
+      "meeting_dates_and_170_minute_durations_unchanged": true,
+      "new_reference_programs_executed": 0,
+      "gnn_training_executed": 0,
+      "build_logs_have_no_overfull_boxes_or_undefined_references": true,
+      "portable_context_uses_reviewed_HEAD_additional_catalog": true,
+      "git_staged_input_hashes_and_results_verified": true
+    },
+    "execution_scope": "Original deterministic NetworkX programs for synthetic population access, analytic map footprints, and four selected observed restaurant origins. Independent graph-path, missing-status, boundary, and aggregate checks. Upstream city2graph and graph-learning examples were inspected but not run. Observed October availability is paired with a later frozen illustrative November street network; no customer substitution or historical route is estimated.",
+    "layout_scope": "Reviewed the new and shifted pages in Sessions 3, 7, and 13; new note sections, complete programs, contents, and chapter transitions; both syllabus pages; and the final two standalone Dialectics pages. Rechecked shortened slide headings, spaced figure legends, the map-example program placement, and the complete service-priorities subsection after layout changes."
   }
 }

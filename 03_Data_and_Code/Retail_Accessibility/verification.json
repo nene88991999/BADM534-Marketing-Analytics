@@ -1,0 +1,23 @@
+{
+  "checked_on": "2026-11-18",
+  "checks": [
+    "eight independent unit tests executed separately",
+    "input SHA-256 hashes",
+    "analytic footprint areas and unchanged reachable count",
+    "six population-bound totals",
+    "twelve distances against Bellman-Ford",
+    "geographical-distance lower bounds",
+    "eight nearest-alternative selections"
+  ],
+  "sha256": {
+    "cartography.json": "b5f9e6cbd9a0356ea4ffdb5999f49c71ce21d7936ee26bdc2e3be2395b17eda4",
+    "neighbor_comparison.csv": "18197a7b5a2057dec58ef574614d3cb2e94ff4c02c091486b61986ebd183a66f",
+    "neighbors.csv": "f6677d162e94ffdddfe2b7b0ee1f89e1e98b2038f011c3dbd7a8416447a3093e",
+    "observed_origins.csv": "ebd293cc29fd310dc6a8cf81721a9a875f15d92ac085c9fe8039c99382c11c70",
+    "observed_pairs.csv": "4f687554dc6c49ce294956e17477f86551851b6f56c4335524d4ffb7d60af86d",
+    "observed_summary.json": "7c7ab71f0d3224c575ea6dde156aaaca0ca89156306a4f6f7821afb777947c70",
+    "policies.csv": "291ca2168c883d20feef738efde39c7e4cf69c4b577dc1f56292119c59290e15",
+    "synthetic_origins.csv": "1280111d358e8f850836e73de902f7c84c4e580ca1c0c3cc0079ac4888466d94",
+    "synthetic_summary.json": "b524431859f50856ee2a527454cf9c18f00c778c0d594e0633f920ec492250d7"
+  }
+}

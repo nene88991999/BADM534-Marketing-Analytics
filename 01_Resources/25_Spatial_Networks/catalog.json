@@ -1,0 +1,127 @@
+{
+  "namespace": "spatial-networks",
+  "reviewed_on": "2026-11-18",
+  "source_commit": "2db7ba6bdd9600e578f4d99f618295774bc8b60e",
+  "upstream_executed": false,
+  "records": [
+    {
+      "id": "SN01",
+      "title": "city2graph Repository and Documentation",
+      "url": "https://github.com/c2g-dev/city2graph/tree/2db7ba6bdd9600e578f4d99f618295774bc8b60e",
+      "version": "2db7ba6bdd9600e578f4d99f618295774bc8b60e",
+      "rights": "BSD 3-Clause; license retained",
+      "modules": [
+        "M2",
+        "M4",
+        "M5",
+        "M7",
+        "M8",
+        "M9"
+      ],
+      "local_files": [
+        {
+          "path": "local_sources/city2graph_README.md",
+          "source_url": "https://github.com/c2g-dev/city2graph/blob/2db7ba6bdd9600e578f4d99f618295774bc8b60e/README.md",
+          "sha256": "f2b23a505ac1716dcb54d7551f172fc3a3869be14d091ebdc855b9f8a0272288",
+          "transformation": "Trailing blank lines normalized; one final newline."
+        },
+        {
+          "path": "local_sources/CITY2GRAPH_LICENSE.txt",
+          "source_url": "https://github.com/c2g-dev/city2graph/blob/2db7ba6bdd9600e578f4d99f618295774bc8b60e/LICENSE",
+          "sha256": "dac255259d336418114ba7cf85c5ee803ca21359d8b0b127ee0e1c452b6853ae",
+          "transformation": "Trailing blank lines normalized; one final newline."
+        },
+        {
+          "path": "local_sources/tutorial_index.md",
+          "source_url": "https://github.com/c2g-dev/city2graph/blob/2db7ba6bdd9600e578f4d99f618295774bc8b60e/docs/examples/index.md",
+          "sha256": "b1ff7a9f1463e51ae9b24b7054dad351ec8909fd74470f92d4d6d2fd3e703152",
+          "transformation": "Trailing blank lines normalized; one final newline."
+        },
+        {
+          "path": "local_sources/isochrone_holes.md",
+          "source_url": "https://github.com/c2g-dev/city2graph/blob/2db7ba6bdd9600e578f4d99f618295774bc8b60e/docs/examples/isochrone_holes.md",
+          "sha256": "324e2706075d4aab00370ca0af2bfdb75aade59fb58ff6155dbc525a9260bd24",
+          "transformation": "Trailing blank lines normalized; one final newline."
+        },
+        {
+          "path": "local_sources/city2graph_llms.txt",
+          "source_url": "https://github.com/c2g-dev/city2graph/blob/2db7ba6bdd9600e578f4d99f618295774bc8b60e/docs/llms.txt",
+          "sha256": "e6e15249fc468b33bf0a8dc2f5b2b70e39cb506706f9c4a620ef8bdcd260ff80",
+          "transformation": "Trailing blank lines normalized; one final newline."
+        }
+      ]
+    },
+    {
+      "id": "SN02",
+      "title": "Generating Graphs by Proximity",
+      "url": "https://city2graph.net/latest/examples/generating_graphs_by_proximity.html",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Hold k fixed across metrics; state directed relations and snapping."
+    },
+    {
+      "id": "SN03",
+      "title": "Isochrone Holes",
+      "url": "https://city2graph.net/latest/examples/isochrone_holes.html",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Separate reachable graph nodes from polygon footprints."
+    },
+    {
+      "id": "SN04",
+      "title": "GTFS Transportation Example",
+      "url": "https://city2graph.net/latest/examples/gtfs.html",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Separate average edge times from complete time-feasible itineraries."
+    },
+    {
+      "id": "SN05",
+      "title": "Transportation API",
+      "url": "https://city2graph.net/latest/api/transportation.html",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Inspect weights, direction, and route-summary definitions."
+    },
+    {
+      "id": "SN06",
+      "title": "city2graph Case Study",
+      "url": "https://github.com/c2g-dev/city2graph-case-study",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Optional attribute and graph representation comparison; not executed."
+    },
+    {
+      "id": "SN07",
+      "title": "city2graph Workshop",
+      "url": "https://github.com/c2g-dev/city2graph-workshop",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Optional guided geographic graph exercises; not executed."
+    },
+    {
+      "id": "SN08",
+      "title": "Related city2graph Research Article",
+      "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102492",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Further reading on spatial and heterogeneous graph representations."
+    },
+    {
+      "id": "SN09",
+      "title": "OpenStreetMap Copyright and License",
+      "url": "https://www.openstreetmap.org/copyright",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Attribution and database rights for the frozen network extract."
+    },
+    {
+      "id": "SN10",
+      "title": "Open Database License 1.0",
+      "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "version": "Reviewed 2026-11-18",
+      "rights": "Linked source; no additional redistribution permission asserted",
+      "teaching_use": "Rights and redistribution conditions for OpenStreetMap data."
+    }
+  ]
+}

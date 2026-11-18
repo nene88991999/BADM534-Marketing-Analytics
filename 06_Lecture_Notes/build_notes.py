@@ -22,7 +22,10 @@ def main():
     ap.add_argument('--tectonic', default='tectonic')
     ap.add_argument('--pdftoppm', default='pdftoppm')
     ap.add_argument('--figures', action='store_true')
+    ap.add_argument('--figure-name', action='append', help='Render only this figure name with --figures; repeat for multiple figures')
     args=ap.parse_args()
+    if args.figure_name and not args.figures:
+        ap.error('--figure-name requires --figures')
     modules=sorted((ROOT/'modules').glob('M*.md'))
     if [p.stem.split('_')[0] for p in modules] != [f'M{i:02d}' for i in range(1,10)]:
         raise ValueError('Expected M01–M09, including Marketing Dialectics')
@@ -85,10 +88,14 @@ def main():
     run([args.tectonic,'--keep-logs','--outdir',build,standalone])
     shutil.copy2(build/'Marketing_Dialectics.pdf',ROOT/'Marketing_Dialectics.pdf')
     if args.figures:
+        render_names = args.figure_name or names
+        missing = set(render_names) - set(names)
+        if missing:
+            raise ValueError('Figures absent from modules: ' + ', '.join(sorted(missing)))
         from PIL import Image, ImageChops
         atlas=ROOT/'figure_atlas.tex'
         atlas.write_text('\\input{preamble.tex}\n\\begin{document}\n\\pagestyle{empty}\n'+
-            '\n'.join('\\noindent\\input{figures/'+n+'.tex}\\clearpage' for n in names)+
+            '\n'.join('\\noindent\\input{figures/'+n+'.tex}\\clearpage' for n in render_names)+
             '\n\\end{document}\n')
         try:
             run([args.tectonic,'--keep-logs','--outdir',build,atlas])
@@ -96,9 +103,9 @@ def main():
                 page.unlink()
             run([args.pdftoppm,'-r','150','-png',build/'figure_atlas.pdf',build/'atlas'])
             pages=sorted(build.glob('atlas-*.png'))
-            if len(pages)!=len(names):
-                raise ValueError(f'Expected {len(names)} figure pages; got {len(pages)}')
-            for name,page in zip(names,pages):
+            if len(pages)!=len(render_names):
+                raise ValueError(f'Expected {len(render_names)} figure pages; got {len(pages)}')
+            for name,page in zip(render_names,pages):
                 im=Image.open(page).convert('RGB')
                 bbox=ImageChops.difference(im,Image.new('RGB',im.size,'white')).getbbox()
                 if not bbox: raise ValueError(f'Empty figure: {name}')

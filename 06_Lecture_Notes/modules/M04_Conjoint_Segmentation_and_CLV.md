@@ -1030,3 +1030,9 @@ if __name__ == "__main__":
 \noindent A customer segment groups observed characteristics. A segment-specific treatment curve asks how the same group responds to assigned interventions. That comparison needs an assignment design and a defined target population. Groups used for causal targeting should rely on pretreatment information; conditioning on a treatment response changes the comparison.
 
 Partial pooling can stabilize estimates for small groups. M6 Section 6.26 compares common, separate, and hierarchical curves using randomized synthetic discounts, with full Python and equal-store evaluation. Personalized discounts additionally require evidence on customer outcomes and justification for the group definition.
+
+## 4.22 Spatial Relationships and Segment Definitions
+
+\noindent A retailer grouping neighborhoods can use observed attributes, travel accessibility, or both. Each representation answers a different question. Areas with similar incomes may face different retail alternatives because of roads and crossings. Areas connected by transit can share access despite geographic separation. A graph embedding incorporates the supplied links and training objective into the resulting representation; spatial coherence alone does not establish similar preferences or a useful targeting policy.
+
+The fixed-neighbor comparison in Section 5.21 holds the six locations and number of selected neighbors constant while changing the distance definition. Its altered links arise from the representation. The [Liverpool City2Graph case study](https://github.com/c2g-dev/city2graph-case-study) extends this issue to attribute clustering and graph-autoencoder embeddings. An optional comparison should retain the same observations, preprocessing, cluster count, and evaluation criteria wherever feasible. Customer outcomes or other independently chosen evidence are needed to interpret a cluster's marketing meaning.

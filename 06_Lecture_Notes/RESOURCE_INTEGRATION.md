@@ -155,3 +155,7 @@ Thierry Warin’s [PyStatlas](https://warint.github.io/pystatlas/) informs M2 §
 ## Dose-Response Curves
 
 The [dose-response sources](../01_Resources/24_Dose_Response/README.md), reviewed November 18, 2026, support M6 §§6.22–6.27 and the M8 objective calculation. The course's original NumPy examples evaluate four nuisance specifications over 200 simulated samples, a separate randomized-store pooling comparison, and three known-function objectives. Three editable figures show a zero linear projection slope, conditional overlap, and store-level shrinkage. Full code appears in the notes. Source package simulations and continuous-DiD implementations were not executed.
+
+## Spatial Networks and Retail Alternatives
+
+[The city2graph review](../01_Resources/25_Spatial_Networks/README.md) motivates original distance and geometry calculations in [Retail Accessibility](../03_Data_and_Code/Retail_Accessibility/README.md). M2 §2.23 covers map footprints; M4 §4.22 covers spatial representations; M5 §§5.21–5.22 contain full accessibility and observed-network programs; M7 §7.28 matches evaluation to deployment; M8 §8.23 compares restoration priorities; M9 §9.18.2 examines feasible alternatives and service conduct. Three original programs were executed with NetworkX. No upstream notebook, city2graph package, clustering fit, or GNN training was executed. The selected observed snapshot and later street extract retain separate dates and attribution.

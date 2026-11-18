@@ -1,0 +1,7 @@
+\begin{tikzpicture}\begin{axis}[width=12cm,height=5.8cm,xmin=0,xmax=105,ymin=-.5,ymax=2.5,ytick={0,1,2},yticklabels={Baseline,Restore A,Restore D},xlabel={Population With Access Within Five Minutes (\%)},xmajorgrids=true,legend style={at={(.5,-.28)},anchor=north,legend columns=2,column sep=6pt,fill=none}]
+\addplot[Storm,very thick,forget plot] coordinates {(68.75,0) (87.5,0)};
+\addplot[Storm,very thick,forget plot] coordinates {(81.25,1) (100.0,1)};
+\addplot[Storm,very thick,forget plot] coordinates {(68.75,2) (87.5,2)};
+\addplot[only marks,IlliniBlue,mark=*,mark size=3pt] coordinates {(68.75,0) (81.25,1) (68.75,2)};\addlegendentry{Known available}
+\addplot[only marks,IlliniOrange,mark=triangle*,mark size=3pt] coordinates {(87.5,0) (100.0,1) (87.5,2)};\addlegendentry{Including unknown}
+\end{axis}\end{tikzpicture}

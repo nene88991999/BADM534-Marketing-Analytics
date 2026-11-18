@@ -1,0 +1,92 @@
+# City2Graph
+
+> City2Graph is a Python library for constructing spatial and heterogeneous
+> graphs from buildings, streets, public transport feeds, origin–destination
+> matrices, zones, and points of interest. It connects GeoPandas, NetworkX,
+> rustworkx, and PyTorch Geometric for spatial network analysis, urban analytics,
+> GeoAI, and Graph Neural Networks.
+
+City2Graph documentation is written for geospatial developers, data scientists,
+and urban, mobility, and transport researchers. The links below point to the
+latest documentation.
+
+## Start here
+
+- [Overview](https://city2graph.net/latest/index.html): Capabilities, supported data, workflow guide, quickstart, and frequently asked questions.
+- [Open-access paper](https://city2graph.net/latest/paper.html): Author-written abstract, complete citation metadata, DOI, licence, and links to the Version of Record.
+- [Version of Record PDF](https://city2graph.net/latest/assets/papers/sato2026city2graph.pdf): Open-access publisher PDF under the CC BY 4.0 licence.
+- [Installation](https://city2graph.net/latest/installation.html): pip, conda-forge, PyTorch CPU, and supported CUDA installation options.
+- [Tutorials](https://city2graph.net/latest/examples/index.html): Task-oriented notebooks and applied projects.
+- [Python API reference](https://city2graph.net/latest/api/index.html): Public modules and functions organised by task.
+
+## Research paper
+
+**Title:** City2Graph: A Python library for Heterogeneous Graph Neural Networks
+and spatial analysis in urban systems
+
+**Authors:** Yuta Sato, Elisabetta Pietrostefani, Ron Mahabir, and Daniel
+Arribas-Bel
+
+**Publication:** *Computers, Environment and Urban Systems*, volume 130,
+article 102492 (2026)
+
+**DOI:** [10.1016/j.compenvurbsys.2026.102492](https://doi.org/10.1016/j.compenvurbsys.2026.102492)
+
+**Abstract:** City2Graph is an open-source Python library that streamlines
+workflows for heterogeneous Graph Neural Networks (GNNs) in urban systems.
+Cities are complex systems of diverse spatial relations long modelled as graphs
+in network science, and recent advances in GNNs have further enabled the
+identification of non-linear patterns of urban complexity. Unlike homogeneous
+graphs with a single node and edge type, heterogeneous graphs with multiple
+types are receiving growing attention to accommodate richer information in
+GNNs. However, their diffusion remains constrained by fragmented graph
+construction processes across different data domains, and by the lack of a
+unified framework for converting constructed graphs into GNN-ready tensors.
+City2Graph standardises graph construction across domains of morphology,
+transportation, mobility, and proximity. The library supports conversions
+between spatial geometries, network topologies, and tensors for spatial analysis
+with visualisation, network analysis, and GNN training, respectively. City2Graph
+also supports metapath construction, capturing higher-order connections across
+node and edge types (e.g., areas linked via multimodal transit). The library’s
+efficacy was demonstrated through a case study on clustering urban functions in
+Liverpool, UK, using Graph Autoencoder models with three relation types: spatial
+contiguity, walk-based accessibility, and multimodal accessibility between
+census units. Compared with the homogeneous model, heterogeneous models
+identified spatially coherent clusters that aligned more closely with defined
+accessibility patterns. City2Graph enables reproducible workflows for
+heterogeneous GNNs and model interpretation, fostering comprehensive
+understanding of urban systems across disciplines. The library is released
+under the BSD 3-Clause License on GitHub.
+
+- [Paper landing page](https://city2graph.net/latest/paper.html)
+- [Direct PDF](https://city2graph.net/latest/assets/papers/sato2026city2graph.pdf)
+- [Formal publication on ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0198971526000943)
+- [CC BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/)
+
+## Tutorials
+
+- [Urban morphology from Overture Maps and OpenStreetMap](https://city2graph.net/latest/examples/morphological_graph_from_overturemaps.html): Build heterogeneous graphs from buildings, tessellations, and streets.
+- [GTFS public transport graphs](https://city2graph.net/latest/examples/gtfs.html): Build stop-to-stop travel-time graphs and multimodal isochrones.
+- [No GTFS? Create it from OpenStreetMap](https://city2graph.net/latest/examples/creating_gtfs.html): Generate a synthetic GTFS feed from OpenStreetMap route relations for any mapped city, then build transit graphs and accessibility isochrones.
+- [Filling holes in buffer isochrones](https://city2graph.net/latest/examples/isochrone_holes.html): Remove interior holes from buffer isochrones with `fill_holes=True` while keeping separate parts apart.
+- [OD matrices and mobility graphs](https://city2graph.net/latest/examples/generating_graphs_from_od_matrix.html): Convert edge lists and adjacency matrices into weighted spatial graphs.
+- [Spatial proximity graphs](https://city2graph.net/latest/examples/generating_graphs_by_proximity.html): Construct KNN, Delaunay, Gilbert, Waxman, and contiguity graphs.
+- [Metapaths for heterogeneous GNNs](https://city2graph.net/latest/examples/add_metapaths.html): Add composite typed relations to heterogeneous graphs.
+
+## API modules
+
+- [Graph conversion](https://city2graph.net/latest/api/graph.html): Convert between GeoDataFrames, NetworkX, and PyTorch Geometric.
+- [Data](https://city2graph.net/latest/api/data.html): Load Overture Maps data and place boundaries.
+- [Morphology](https://city2graph.net/latest/api/morphology.html): Build building, tessellation, and street relations.
+- [Transportation](https://city2graph.net/latest/api/transportation.html): Load GTFS or GBFS data, generate GTFS from OpenStreetMap, and build travel-summary graphs.
+- [Transportation: GTFS generation guide](https://city2graph.net/latest/api/gtfs_generation.html): How user settings, OpenStreetMap tags and defaults produce each GTFS operating condition.
+- [Mobility](https://city2graph.net/latest/api/mobility.html): Convert origin–destination data to weighted graphs.
+- [Proximity](https://city2graph.net/latest/api/proximity.html): Build proximity, contiguity, bridge, grouping, and directed graphs.
+- [Metapath](https://city2graph.net/latest/api/metapath.html): Materialise metapath-derived relations.
+
+## Project
+
+- [GitHub repository](https://github.com/c2g-dev/city2graph): Source code, issues, releases, and contribution workflow.
+- [PyPI package](https://pypi.org/project/city2graph/): Python package releases and installation metadata.
+- [Journal article](https://doi.org/10.1016/j.compenvurbsys.2026.102492): Sato, Pietrostefani, Mahabir, and Arribas-Bel (2026), Computers, Environment and Urban Systems 130, 102492. Citing this paper is required when City2Graph is used in research.
+- [Citation metadata](https://github.com/c2g-dev/city2graph/blob/main/CITATION.cff): Citation File Format record.

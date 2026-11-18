@@ -1,0 +1,21 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\fill[Industrial!10] (1.1,-.55) rectangle (2.9,4.5);
+\node[rotate=90,text=Industrial] at (2,1.9) {River};
+\draw[IlliniBlue,very thick] (0,0)--node[left]{4} (0,2)--node[left]{4}(0,4);
+\draw[IlliniBlue,very thick] (4,0)--node[right]{4}(4,2)--node[right]{4}(4,4);
+\draw[IlliniBlue,very thick] (0,4)--node[above]{2 minutes}(4,4);
+\draw[Storm,densely dashed] (0,0)--(4,0);
+\node[font=\scriptsize,align=center] at (2,-.8) {Straight-line comparison: 2 minutes\\Network route from W0 to E0: 18 minutes};
+\foreach \x/\y/\s in {0/0/A,4/4/D} {\node[circle,draw=IlliniOrange,very thick,fill=white,minimum size=8mm] at (\x,\y) {\s};}
+\foreach \x/\y/\s in {0/4/C,4/0/B} {\node[circle,draw=IlliniBlue,fill=IlliniBlue,text=white,minimum size=8mm] at (\x,\y) {\s};}
+\fill[IlliniBlue] (0,2) circle (.08);\fill[IlliniBlue] (4,2) circle (.08);
+\node[anchor=east,align=right] at (-.45,0) {W0\\100 people};
+\node[anchor=east,align=right] at (-.45,2) {W1\\300 people};
+\node[anchor=east,align=right] at (-.45,4) {W2\\100 people};
+\node[anchor=west,align=left] at (4.45,0) {E0\\50 people};
+\node[anchor=west,align=left] at (4.45,2) {E1\\50 people};
+\node[anchor=west,align=left] at (4.45,4) {E2\\50 people};
+\node[circle,draw=Storm,dashed,minimum size=9mm] at (8,2) {U};
+\node[align=center] at (8,.95) {X: 150 people\\Status unknown\\No connecting path};
+\node[align=center,font=\scriptsize] at (8,4) {Filled: available\\Orange outline: unavailable};
+\end{tikzpicture}

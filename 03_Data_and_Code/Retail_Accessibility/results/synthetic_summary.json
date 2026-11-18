@@ -1,0 +1,64 @@
+{
+  "synthetic": true,
+  "threshold_minutes": 5,
+  "known_store_unavailability": 0.5,
+  "unknown_store_records": 1,
+  "network_baseline": {
+    "people": 800,
+    "lower_people": 550,
+    "upper_people": 700
+  },
+  "straight_baseline": {
+    "people": 800,
+    "lower_people": 650,
+    "upper_people": 800
+  },
+  "policies": [
+    {
+      "policy": "Baseline",
+      "people": 800,
+      "lower_people": 550,
+      "upper_people": 700,
+      "lower_share": 0.6875,
+      "upper_share": 0.875,
+      "profit_gain": 0,
+      "known_unavailable_share": 0.5
+    },
+    {
+      "policy": "Restore A",
+      "people": 800,
+      "lower_people": 650,
+      "upper_people": 800,
+      "lower_share": 0.8125,
+      "upper_share": 1.0,
+      "profit_gain": 20,
+      "known_unavailable_share": 0.25
+    },
+    {
+      "policy": "Restore D",
+      "people": 800,
+      "lower_people": 550,
+      "upper_people": 700,
+      "lower_share": 0.6875,
+      "upper_share": 0.875,
+      "profit_gain": 40,
+      "known_unavailable_share": 0.25
+    }
+  ],
+  "neighbor_comparison": [
+    {
+      "k": 1,
+      "directed_edges": 6,
+      "common_edges": 2,
+      "straight_neighbors_network_minutes": 10.0,
+      "network_neighbors_network_minutes": 3.3333333333333335
+    },
+    {
+      "k": 2,
+      "directed_edges": 12,
+      "common_edges": 8,
+      "straight_neighbors_network_minutes": 7.0,
+      "network_neighbors_network_minutes": 4.333333333333333
+    }
+  ]
+}
