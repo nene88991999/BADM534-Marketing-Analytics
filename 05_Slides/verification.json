@@ -259,7 +259,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "retail_accessibility_checks_2026_11_18",
+  "latest_revision": "anomaly_diagnosis_checks_2026_11_20",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -318,5 +318,47 @@
     },
     "execution_scope": "Original deterministic NetworkX programs for synthetic population access, analytic map footprints, and four selected observed restaurant origins. Independent graph-path, missing-status, boundary, and aggregate checks. Upstream city2graph and graph-learning examples were inspected but not run. Observed October availability is paired with a later frozen illustrative November street network; no customer substitution or historical route is estimated.",
     "layout_scope": "Reviewed the new and shifted pages in Sessions 3, 7, and 13; new note sections, complete programs, contents, and chapter transitions; both syllabus pages; and the final two standalone Dialectics pages. Rechecked shortened slide headings, spaced figure legends, the map-example program placement, and the complete service-priorities subsection after layout changes."
+  },
+  "anomaly_diagnosis_checks_2026_11_20": {
+    "verified_on": "2026-11-20",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 321,
+        "sha256": "485287b1e9865c92050bdf4bb8f85aa3e5b36564d8d6a1e503ae0ba74ac0590d"
+      },
+      "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
+        "pages": 34,
+        "sha256": "c4fade0deaee8cdf97c6a26651a6de8f76d63685e4dfe5f1ccb0a02a02ae1352"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 345,
+        "sha256": "8dd292c70332812e6b9474698a04768d8e46e85bcfb3dca3cbc0074738cf5e9a"
+      }
+    },
+    "checks": {
+      "local_markdown_links_checked": 481,
+      "artifact_hashes_verified": 14,
+      "session_decks": 15,
+      "total_slides": 345,
+      "note_pages": 321,
+      "figure_count": 87,
+      "dates_and_duration_unchanged": true,
+      "combined_deck_text_matches_sessions": true,
+      "portable_context_uses_reviewed_HEAD_additional_catalog": true,
+      "original_analysis_programs_executed": 2,
+      "independent_tests_passed": 8,
+      "full_note_code_blocks_match_source_and_parse": 73,
+      "projected_python_snippets_executed": 1,
+      "existing_lecture_calculations_reproduced": true,
+      "new_tikz_figures_visually_reviewed": 2,
+      "new_student_slide_pages_visually_reviewed": 6,
+      "corrected_slide_pages_rechecked": 2,
+      "note_pages_visually_reviewed_including_contents_and_transition": 15,
+      "build_logs_have_no_overfull_boxes_or_undefined_references": true,
+      "upstream_programs_executed": 0,
+      "external_model_calls": 0
+    },
+    "execution_scope": "Two original standard-library programs generate a synthetic retail panel and exact timing and missingness comparisons. Eight independent tests verify sample counts, training and validation boundaries, interval arithmetic, saved confusion counts, evidence packet contents, and the beneficial campaign. All 73 complete Python listings match their source files. One projected snippet and the existing lecture calculations ran successfully. No upstream benchmark code or model API was executed.",
+    "layout_scope": "Reviewed all six new Session 11 pages, two TikZ previews, eleven new note pages, the transition to M8, and the cover and two affected contents pages. Shortened one table and one slide heading, then rechecked both pages. Final capitalization changes were rechecked on two note pages and one slide. The combined deck reproduces the ordered text of all fifteen session PDFs."
   }
 }

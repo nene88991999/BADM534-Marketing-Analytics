@@ -88,3 +88,7 @@ Session 10 adds five slides on nonlinear discount responses, doubly robust adjus
 ## Retail Alternatives and Service Access
 
 Sessions 3, 7, and 13 add eight slides on map footprints, network distances, missing availability, and restoration priorities. Four editable TikZ figures accompany [complete Python and frozen inputs](../03_Data_and_Code/Retail_Accessibility/README.md). The [optional lab](../07_Labs/Retail_Accessibility/README.md) extends the discussion, with graph neural networks reserved for further study. The case uses existing application time.
+
+## Anomaly Detection and Diagnosis
+
+Session 11 adds six slides on three synthetic retail events, symptom rankings, monitoring denominators, interval quality, future-information leakage, and supported explanations. [Two complete programs](../03_Data_and_Code/Anomaly_Diagnosis/README.md) and [optional practice](../07_Labs/Anomaly_Diagnosis/README.md) accompany two editable TikZ figures. The case uses minutes 125–145; the remaining ten application minutes compare forecasts and grader outcomes. The meeting remains 170 minutes.

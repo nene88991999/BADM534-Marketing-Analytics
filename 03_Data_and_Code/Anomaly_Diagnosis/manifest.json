@@ -1,0 +1,98 @@
+{
+  "data_type": "Original synthetic data; no real customer or retailer records",
+  "created_on": "2026-11-20",
+  "seed": 5342027,
+  "python_version": "3.14.8",
+  "dependencies": "Python standard library only",
+  "observation_unit": "store-minute",
+  "rows": 4320,
+  "split_rows": {
+    "train": 2160,
+    "validation": 1080,
+    "test": 1080
+  },
+  "event_count": 3,
+  "interval_end": "exclusive",
+  "upstream_executed": false,
+  "llm_calls": 0,
+  "files": [
+    {
+      "path": "data/events.csv",
+      "sha256": "4d3cf94e74a96066f44278a0ec2327a5d4e3665f889c26b244bfd277c56a74e3",
+      "bytes": 102
+    },
+    {
+      "path": "data/observations.csv",
+      "sha256": "2cf4cd97f87ea4f1940040acff431697f9b04c79f027a509bbfe71fa5f606a39",
+      "bytes": 462053
+    },
+    {
+      "path": "data/variable_dictionary.json",
+      "sha256": "9d789b09189ed672cfdebc238b4a174c250f2e495f5bf19404d0dbfb61ed4105",
+      "bytes": 957
+    },
+    {
+      "path": "results/detection_summary.csv",
+      "sha256": "51001c6bf27457c6ab4ec1e01bbd10d7e546f041a4878f2bfb99f822b4ff048b",
+      "bytes": 360
+    },
+    {
+      "path": "results/evidence_packets.json",
+      "sha256": "115f3b0bddb9211b89e7d40b758325d6db892f7baa50f39cb68a249fded8bbb4",
+      "bytes": 343875
+    },
+    {
+      "path": "results/incident_metrics.csv",
+      "sha256": "3cb2abab9e381ecd5a09d3b7dcb60a27cfad0fe9ec0ce06b3d5eee1f2319bb75",
+      "bytes": 346
+    },
+    {
+      "path": "results/missingness_comparison.json",
+      "sha256": "f5e5efa2d6ec12af481d4359c37dcf39153713422722770e52273918af8df1ab",
+      "bytes": 495
+    },
+    {
+      "path": "results/reference.csv",
+      "sha256": "ef85b492b6975f2b767482ac5d8171ea369db0d98b666ec954dbf83b2c0537fe",
+      "bytes": 4275
+    },
+    {
+      "path": "results/test_scores.csv",
+      "sha256": "58ab258b372a164516fd0732a0530d57851f4f8a3711eadfc1133725670a36ed",
+      "bytes": 156995
+    },
+    {
+      "path": "results/timing_metrics.csv",
+      "sha256": "ee6dae17b065e0895fbf416659276f5e7111cbfc295e185c890d9adf16322c91",
+      "bytes": 153
+    },
+    {
+      "path": "results/variable_rankings.csv",
+      "sha256": "79b605c0f0055555a5b1a5cf83576c7a98130cf75ebfecbb945699b5ef612fdb",
+      "bytes": 4812
+    },
+    {
+      "path": "retail_monitoring.py",
+      "sha256": "733c0918c53b2e74849f450e2bb7e328493a53033a01ebc09358b00bbba1d8f5",
+      "bytes": 9795
+    },
+    {
+      "path": "test_examples.py",
+      "sha256": "8b507272a108793e0fce3e400cdece004d1f5653cf1af43d1bcf6c36761dc90c",
+      "bytes": 5020
+    },
+    {
+      "path": "timing_and_missingness.py",
+      "sha256": "e82157a7fc794a050e72c6d4501d5e3d6c97eae76427c03d5daf253bfc8059b1",
+      "bytes": 2471
+    }
+  ],
+  "verification": {
+    "verified_on": "2026-11-20",
+    "programs_executed": 2,
+    "independent_checks_passed": 8,
+    "projected_snippet_executed": true,
+    "artifact_hashes_verified": 14,
+    "external_model_calls": 0
+  }
+}

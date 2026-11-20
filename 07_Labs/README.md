@@ -15,3 +15,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Retail Access and Service Priorities
 
 [Retail Accessibility](Retail_Accessibility/README.md) is optional ungraded practice using exact synthetic networks and four selected observed restaurant origins. Students compare paths, missing-status bounds, fixed-k graphs, cartographic footprints, and service objectives. Complete programs, input hashes, and independent checks accompany the exercise.
+
+## Anomaly Detection and Diagnosis
+
+[Retail diagnosis practice](Anomaly_Diagnosis/README.md) is optional and ungraded. Reproduce later-period alert metrics, inspect symptoms and causes, compare interval scores, preserve earlier information, and assess an explanation against disclosed synthetic incidents.

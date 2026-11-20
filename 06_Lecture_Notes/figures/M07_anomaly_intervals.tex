@@ -1,0 +1,22 @@
+\begin{tikzpicture}[x=.075cm,y=.85cm]
+\draw[LightStorm,dashed] (40,-.6) -- (40,3.6);
+\draw[LightStorm,dashed] (60,-.6) -- (60,3.6);
+\node[anchor=east] at (-6,3) {True Event};
+\node[anchor=east] at (-6,2) {Precise};
+\node[anchor=east] at (-6,1) {Delayed};
+\node[anchor=east] at (-6,0) {Full Window};
+\draw[IlliniBlue,line width=6pt] (40,3) -- (60,3);
+\draw[IlliniOrange,line width=3pt] (40,2) -- (60,2);
+\draw[IlliniBlue,line width=3pt,dashed] (45,1) -- (65,1);
+\draw[IlliniBlue,line width=3pt,dotted] (0,0) -- (120,0);
+\node[anchor=west] at (130,3) {IoU};
+\node[anchor=west] at (130,2) {$1.00$};
+\node[anchor=west] at (130,1) {$0.60$};
+\node[anchor=west] at (130,0) {$1/6$};
+\draw[->,IlliniBlue] (0,-.8) -- (124,-.8);
+\foreach \t in {0,40,60,120} {
+\draw[IlliniBlue] (\t,-.75) -- (\t,-.88);
+\node[anchor=north] at (\t,-.95) {\t};}
+\node[anchor=north] at (60,-1.55) {Minutes Since 09:00; Endpoints Are Exclusive};
+\node[align=center] at (60,4) {All Three Predictions Overlap the Same Event};
+\end{tikzpicture}

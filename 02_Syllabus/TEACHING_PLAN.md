@@ -84,3 +84,7 @@ Session 10 allocates minutes 125–145 to discount-response shape, adjustment, c
 ## Spatial Networks and Retail Access
 
 Session 3 uses minutes 125–140 for map footprints and reachable locations, retaining minutes 140–155 for chart interpretation. Session 7 uses minutes 125–140 for mHealth text applications and minutes 140–155 for retail alternatives and network access. Session 13 uses minutes 125–135 for restoration priorities, minutes 135–140 for feedback and forecast interpretation, and minutes 140–155 for the existing discount-objective comparison. [Optional ungraded practice](../07_Labs/Retail_Accessibility/README.md) carries the longer coding exercise; the existing Python blocks remain in place. M4 §4.22 and M7 §7.28 provide supplementary representation and validation connections. All 15 dates and 170-minute meetings are preserved.
+
+## Anomaly Detection and Diagnosis
+
+Session 11 allocates minutes 125–145 to the M7 retail diagnosis case and minutes 145–155 to forecast and grader comparisons. Preserve the existing 45-minute Python block for prediction intervals and routing. [The optional anomaly lab](../07_Labs/Anomaly_Diagnosis/README.md) supplies a longer exercise outside this in-class comparison. The fifteen meetings, dates, and 170-minute duration remain unchanged.

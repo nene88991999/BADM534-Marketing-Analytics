@@ -52,6 +52,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Retail_Accessibility/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "anomaly-diagnosis",
+      "path": "07_Labs/Anomaly_Diagnosis/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -158,12 +164,18 @@ Generated from course.json and the source files identified below. This file cont
     "07_Labs/Retail_Accessibility/README.md",
     "01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md",
     "01_Resources/26_Anomaly_Detection_and_Diagnosis/SOURCE_REVIEW.md",
-    "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md"
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/README.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/AGENTS.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/LLM_EXERCISE.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/results/README.md",
+    "07_Labs/Anomaly_Diagnosis/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-18",
+    "updated_on": "2026-11-20",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -207,12 +219,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-18-retail-accessibility",
+    "revision": "2026-11-20-anomaly-diagnosis",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 85,
-    "pages": 310,
+    "figures_count": 87,
+    "pages": 321,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -225,7 +237,8 @@ Generated from course.json and the source files identified below. This file cont
     "ai_evidence_examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
     "clustering_examples": "03_Data_and_Code/Clustering_Optimization/README.md",
     "dose_response_examples": "03_Data_and_Code/Dose_Response/README.md",
-    "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md"
+    "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
+    "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md"
   },
   "datasets": [
     {
@@ -287,7 +300,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-18",
+    "updated_on": "2026-11-20",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -296,7 +309,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 339,
+    "slides": 345,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -526,15 +539,19 @@ Generated from course.json and the source files identified below. This file cont
     "reviewed_on": "2026-11-20",
     "source_commit": "b5fbc6085ec6c09919803b41e38b9fa5f9f22364",
     "source_package_executed": false,
-    "status": "resource review and proposed course application; no new released exercise",
-    "proposed_modules": [
-      "M2",
-      "M5",
-      "M7",
-      "M8",
-      "M9"
+    "status": "available in M7 with original executed examples and optional ungraded practice",
+    "scope": "Original synthetic monitoring and exact timing/imputation examples; no replication of the source benchmark.",
+    "examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
+    "lab": "07_Labs/Anomaly_Diagnosis/README.md",
+    "sections": [
+      "M7 \u00a7\u00a77.29\u20137.30"
     ],
-    "scope": "Reviewed paper and selected repository sources; no reproduction of published benchmark results."
+    "session": 11,
+    "discussion_minutes": 20,
+    "executed_course_programs": 2,
+    "independent_checks": 8,
+    "llm_calls": 0,
+    "synthetic_observations": 4320
   }
 }
 ```
@@ -555,7 +572,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 85 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 87 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -845,6 +862,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 [The retail accessibility case](03_Data_and_Code/Retail_Accessibility/README.md) connects map footprints in M2 §2.23, spatial representations in M4 §4.22, shortest paths and unknown availability in M5 §§5.21–5.22, deployment comparisons in M7 §7.28, service priorities in M8 §8.23, and customer agency in M9 §9.18.2. A synthetic network isolates the mechanism; four observed restaurant origins provide a selected geographical comparison. Sessions 3, 7, and 13 use existing application time. The [lab](07_Labs/Retail_Accessibility/README.md) is optional ungraded practice, and GNN modeling remains an optional extension.
 
+## Anomaly Detection and Diagnosis
+
+[Original retail monitoring cases](03_Data_and_Code/Anomaly_Diagnosis/README.md) extend M7 §§7.29–7.30 with alert evaluation, variable ranking, event timing, and supported interpretation. Two full Python programs and two editable TikZ figures connect the [SHAD review](01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) to a synthetic checkout interruption, campaign, and recording failure. Session 11 uses twenty minutes of existing application time. The [longer lab](07_Labs/Anomaly_Diagnosis/README.md) is optional ungraded practice.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1021,15 +1042,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Retail accessibility](Retail_Accessibility/README.md) provides three complete programs, synthetic and observed inputs, eight independent tests, result hashes, and four editable figures. The observed case uses four restaurant records and a frozen OpenStreetMap extract; the synthetic case supplies population weights and service objectives. Full Python appears in M2 §2.23 and M5 §§5.21–5.22. [Optional practice](../07_Labs/Retail_Accessibility/README.md) extends the comparison.
 
+## Anomaly Detection and Diagnosis
+
+[The retail monitoring example](Anomaly_Diagnosis/README.md) supplies 4,320 synthetic store-minutes, training and validation references, two detection rules, incident timing, variable rankings, and evidence packets. A separate exact comparison examines permissive interval scoring and future-information leakage. Two full programs and eight independent checks support M7 §§7.29–7.30. No upstream benchmark or LLM was executed.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 18, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 20, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 85 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 87 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1057,7 +1082,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 310 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 321 pages.
 
 ## Editing and Building
 
@@ -1156,6 +1181,10 @@ M6 §§6.22–6.27 provide a nonlinear discount case, five-fold adjustment, cond
 ## Spatial Networks and Retail Access
 
 [Three runnable examples](../03_Data_and_Code/Retail_Accessibility/README.md) connect M2 §2.23, M4 §4.22, M5 §§5.21–5.22, M7 §7.28, M8 §8.23, and M9 §9.18.2. Four editable figures distinguish a map footprint from reachable nodes, straight distance from network access, known availability from missing-status bounds, and profit from access priorities. Full Python appears in the M2 and M5 notes. The [source review](../01_Resources/25_Spatial_Networks/README.md) records pinned city2graph references, while the executed programs use NetworkX.
+
+## Anomaly Detection and Diagnosis
+
+M7 §§7.29–7.30 distinguish an alert, variable localization, interpretation, and a response. [Two executed programs](../03_Data_and_Code/Anomaly_Diagnosis/README.md) preserve training/validation/test boundaries, missing records, and whole-run denominators. Two editable TikZ figures compare symptoms with an imposed cause and precise with broad intervals. The full Python appears in the notes; [optional practice](../07_Labs/Anomaly_Diagnosis/README.md) accompanies Session 11.
 
 ---
 
@@ -1309,6 +1338,10 @@ Session 10 adds five slides on nonlinear discount responses, doubly robust adjus
 ## Retail Alternatives and Service Access
 
 Sessions 3, 7, and 13 add eight slides on map footprints, network distances, missing availability, and restoration priorities. Four editable TikZ figures accompany [complete Python and frozen inputs](../03_Data_and_Code/Retail_Accessibility/README.md). The [optional lab](../07_Labs/Retail_Accessibility/README.md) extends the discussion, with graph neural networks reserved for further study. The case uses existing application time.
+
+## Anomaly Detection and Diagnosis
+
+Session 11 adds six slides on three synthetic retail events, symptom rankings, monitoring denominators, interval quality, future-information leakage, and supported explanations. [Two complete programs](../03_Data_and_Code/Anomaly_Diagnosis/README.md) and [optional practice](../07_Labs/Anomaly_Diagnosis/README.md) accompany two editable TikZ figures. The case uses minutes 125–145; the remaining ten application minutes compare forecasts and grader outcomes. The meeting remains 170 minutes.
 
 ---
 
@@ -1791,6 +1824,10 @@ The [dose-response sources](../01_Resources/24_Dose_Response/README.md), reviewe
 ## Spatial Networks and Retail Alternatives
 
 [The city2graph review](../01_Resources/25_Spatial_Networks/README.md) motivates original distance and geometry calculations in [Retail Accessibility](../03_Data_and_Code/Retail_Accessibility/README.md). M2 §2.23 covers map footprints; M4 §4.22 covers spatial representations; M5 §§5.21–5.22 contain full accessibility and observed-network programs; M7 §7.28 matches evaluation to deployment; M8 §8.23 compares restoration priorities; M9 §9.18.2 examines feasible alternatives and service conduct. Three original programs were executed with NetworkX. No upstream notebook, city2graph package, clustering fit, or GNN training was executed. The selected observed snapshot and later street extract retain separate dates and attribution.
+
+## Anomaly Detection and Diagnosis
+
+The [SHAD review](../01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) motivates M7 §§7.29–7.30. Original standard-library programs generate a fixed synthetic retail panel and exact timing/imputation comparisons. Eight independent checks verify population counts, information boundaries, tied-threshold conventions, confusion counts, interval arithmetic, packet contents, and the beneficial campaign. Two editable figures and six Session 11 slides preserve the distinction between observed symptoms and imposed causes. No original benchmark or LLM API was executed.
 
 ---
 
@@ -2373,9 +2410,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Application:** Compare forecast coverage and grader error costs while preserving the full evaluation population.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
 
-**Ethics and Regulation:** Coverage by customer segment, review access, and consequences of incorrect routing.
+**Ethics and Regulation:** Evidence for diagnoses, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -2384,7 +2421,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–145 | Anomaly Diagnosis |
+| 145–155 | Forecast and Grader Comparisons |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 12. Recommendation Systems and Customer Goals
@@ -2564,6 +2602,10 @@ Session 10 allocates minutes 125–145 to discount-response shape, adjustment, c
 ## Spatial Networks and Retail Access
 
 Session 3 uses minutes 125–140 for map footprints and reachable locations, retaining minutes 140–155 for chart interpretation. Session 7 uses minutes 125–140 for mHealth text applications and minutes 140–155 for retail alternatives and network access. Session 13 uses minutes 125–135 for restoration priorities, minutes 135–140 for feedback and forecast interpretation, and minutes 140–155 for the existing discount-objective comparison. [Optional ungraded practice](../07_Labs/Retail_Accessibility/README.md) carries the longer coding exercise; the existing Python blocks remain in place. M4 §4.22 and M7 §7.28 provide supplementary representation and validation connections. All 15 dates and 170-minute meetings are preserved.
+
+## Anomaly Detection and Diagnosis
+
+Session 11 allocates minutes 125–145 to the M7 retail diagnosis case and minutes 145–155 to forecast and grader comparisons. Preserve the existing 45-minute Python block for prediction intervals and routing. [The optional anomaly lab](../07_Labs/Anomaly_Diagnosis/README.md) supplies a longer exercise outside this in-class comparison. The fifteen meetings, dates, and 170-minute duration remain unchanged.
 
 ---
 
@@ -4696,6 +4738,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 
 [Retail Accessibility](Retail_Accessibility/README.md) is optional ungraded practice using exact synthetic networks and four selected observed restaurant origins. Students compare paths, missing-status bounds, fixed-k graphs, cartographic footprints, and service objectives. Complete programs, input hashes, and independent checks accompany the exercise.
 
+## Anomaly Detection and Diagnosis
+
+[Retail diagnosis practice](Anomaly_Diagnosis/README.md) is optional and ungraded. Reproduce later-period alert metrics, inspect symptoms and causes, compare interval scores, preserve earlier information, and assess an explanation against disclosed synthetic incidents.
+
 ---
 
 ## Source: 07_Labs/AI_Evidence_and_Evaluation/README.md
@@ -5419,7 +5465,7 @@ Students could ask a coding assistant to implement an alert and then independent
 | [M8 §§8.6 and 8.11](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) | Evaluate an AI-assisted investigation by supported claims, investigation cost, and customer outcomes |
 | [M9 §§9.3 and 9.10](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) | Examine the evidence required before an organization acts on a diagnosis |
 
-An optional 20–25 minute application within Session 11's existing practice time would provide the closest fit. The [case design](CASE_DESIGN.md) specifies a retail example and two editable TikZ diagrams for later development. These suggestions introduce no released assessment or schedule change.
+[M7 §§7.29–7.30](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) now contain the complete [retail programs](../../03_Data_and_Code/Anomaly_Diagnosis/README.md), exact timing and missingness comparisons, and two editable TikZ diagrams. Session 11 uses twenty minutes of its existing application block. The [optional lab](../../07_Labs/Anomaly_Diagnosis/README.md) supplies longer ungraded practice. Connections to other modules remain suggestions; the meeting calendar and assessment requirements are unchanged.
 
 ## Sources and Reuse
 
@@ -5511,9 +5557,9 @@ A retailer must choose among changing a campaign, repairing checkout, replenishi
 
 ## Constructed Incidents and Available Information
 
-Use an original synthetic panel with one observation per store and minute. Include visits, checkout attempts, completed payments, payment latency, stock availability, support contacts, and collection completeness. Define counts, rates, denominators, and elapsed time in a data dictionary. Assign separate constructed episodes for a payment-service interruption, a demand increase after a campaign, and a collection failure. Include normal periods and a known calendar pattern. Store the imposed cause and event boundaries in an evaluation table separate from the model inputs.
+The [original course panel](../../03_Data_and_Code/Anomaly_Diagnosis/README.md) contains one observation per store and minute. It includes visits, checkout attempts, completed payments, payment latency, stock availability, support contacts, and collection completeness. The [data dictionary](../../03_Data_and_Code/Anomaly_Diagnosis/DATA_DICTIONARY.md) defines counts, rates, denominators, and elapsed time. Three separate episodes impose a payment-service interruption, a demand increase after a campaign, and a collection failure. Normal periods retain a known within-day pattern. A separate evaluation table records the imposed cause and event boundaries.
 
-This design would make the cause known by construction. It would support evaluation of a diagnostic procedure under specified mechanisms. The distribution of simulated events would not estimate their frequency in a retailer's operations. The existing restaurant and mHealth examples could then supply interpretation questions using their actual observation limits.
+The cause is known by construction, allowing evaluation under specified mechanisms. The event frequencies and effect sizes are imposed illustrations. They do not estimate their frequency or magnitude in a retailer's operations. The existing restaurant and mHealth examples can supply separate interpretation questions using their actual observation limits.
 
 ## Sequence of Comparisons
 
@@ -5523,19 +5569,212 @@ This design would make the cause known by construction. It would support evaluat
 4. **Evaluate.** Score factual support, event timing, component identification, and unsupported causal claims separately. Check a deliberately broad predicted interval to establish what the timing metric rewards. Repeat across the constructed incident types and normal periods.
 5. **Choose an Action.** Ask which additional observation would distinguish the leading explanations. Compare customer exposure and investigation costs before proposing a response. Intervention effects require either the constructed mechanism or a separately justified empirical comparison.
 
-The exercise should retain timestamps, missingness indicators, a chronological split, seeds, dependency versions, and a record of each transformation. Detailed runnable Python belongs beside the data in `03_Data_and_Code`, with identical code in the lecture notes when the example is implemented. No numerical result or executed exercise is supplied by this design.
+The two executed Python programs retain timestamps, missingness indicators, chronological splits, and a fixed seed. Their complete source appears in [M7 §§7.29–7.30](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md). The [saved results](../../03_Data_and_Code/Anomaly_Diagnosis/results/README.md) report detection, variable rankings, timing, and the effect of future information on missing-value treatment. Eight checks verify sample counts, information boundaries, and metric calculations. Nine evidence packets support optional interpretation practice; no LLM performance has been measured.
 
 ## Analytical Figures
 
-An editable TikZ diagram could show a payment-service interruption leading to latency and payment failures, followed by fewer purchases and more support contacts. Mark a downstream outcome as strongly predictive while the intervention targets the payment service. The arrows would state the imposed synthetic mechanism, with the role of observations and interventions identified separately.
+The [mechanism diagram](../../06_Lecture_Notes/figures/M07_anomaly_mechanism.tex) shows a payment-service interruption leading to higher latency, lower completion, and delayed support contacts. Support contacts receive the largest mean standardized deviation even though the imposed cause is the payment service. The arrows represent the synthetic mechanism; a ranking of observed changes does not identify which intervention would repair the service.
 
-A second TikZ diagram could show the true event interval alongside a precise prediction, a delayed prediction, and a full-window prediction. Pair the diagram with a table of overlap, interval intersection-over-union, and onset error. All panels should use the same time scale, Illinois Blue `#13294B` and Orange `#FF5F05`, and distinct line styles or labels. This comparison makes the difference between detecting an event and localizing it visible.
+The [timing diagram](../../06_Lecture_Notes/figures/M07_anomaly_intervals.tex) shows the true event interval alongside a precise prediction, a delayed prediction, and a full-window prediction. All three predictions overlap the event. Their interval intersection-over-union values are 1.00, 0.60, and 1/6. The panels share a time scale and combine Illinois Blue `#13294B` and Orange `#FF5F05` with distinct line styles and labels. The accompanying program reproduces overlap, intersection-over-union, and onset error.
 
 ## Customer Judgment and Organizational Responsibility
 
 An automated diagnosis can trigger an account restriction, an unsolicited message, or a change in service. Require evidence proportionate to that consequence and a way to correct an erroneous inference. In mHealth, changed logging alone supplies no basis for inferring a medical condition or a customer's abandoned goal. In the retail case, changed purchasing alone supplies no basis for asserting misconduct. The customer can remain an informed participant in resolving an uncertain interpretation.
 
-The primary placement is optional practice within Session 11, linked to M7's validation and explanation material. M2 can revisit measurement failures, M5 can evaluate textual claims, and M8–M9 can examine the response and its justification. The proposal preserves the existing 15-meeting course plan and establishes no new student requirement.
+Session 11 devotes twenty minutes of its existing application block to the M7 case. The [longer Python lab](../../07_Labs/Anomaly_Diagnosis/README.md) is optional ungraded practice. Possible connections to M2 measurement, M5 textual claims, and M8–M9 customer interests remain suggestions. The fifteen meetings, calendar dates, and assessment requirements are unchanged.
+
+---
+
+## Source: 03_Data_and_Code/Anomaly_Diagnosis/README.md
+
+# Anomaly Detection and Retail Diagnosis
+
+A retailer must decide whether an unusual outcome warrants repairing checkout, maintaining a campaign, or assessing its measurement system. Two complete Python programs separate detection, variable ranking, event timing, and the evidence needed for a response. Every observation and incident is synthetic. These examples implement original course calculations motivated by the [SHAD source review](../../01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md); they do not reproduce its benchmark or execute its code.
+
+## Inputs and Run Commands
+
+Python 3.10 or later and its standard library are sufficient. From the repository root:
+
+```bash
+python3 03_Data_and_Code/Anomaly_Diagnosis/retail_monitoring.py
+python3 03_Data_and_Code/Anomaly_Diagnosis/timing_and_missingness.py
+python3 -m unittest discover -s 03_Data_and_Code/Anomaly_Diagnosis -p 'test_*.py' -v
+```
+
+The first command creates [observations](data/observations.csv), a separate [incident table](data/events.csv), and evaluation outputs. The second creates the exact interval and missingness comparisons. Both use relative paths and require no credentials, downloads, external service, or upstream package. The seed is `5342027`; observation generation uses Python's `random.Random`. The [manifest](manifest.json) records the executed environment and artifact hashes.
+
+The [data dictionary](DATA_DICTIONARY.md) defines the sample, variables, units, and interval convention. [LLM practice](LLM_EXERCISE.md) uses nine evidence packets and a separate variable dictionary. No LLM was called and no saved output represents measured LLM performance.
+
+## Sample and Results
+
+The constructed panel has three online stores, twelve days, and 120 one-minute observations per store-day. The first six days provide 2,160 training rows; the next three provide 1,080 normal validation rows; the last three provide 1,080 evaluation rows. Each of three evaluation store-days contains one 20-minute event. Six complete evaluation store-days remain nominal, supplying 720 minutes for an operational false-alert comparison. Three missing latency values remain in the evaluation roster and receive training-median imputations for scoring.
+
+| Evaluation Quantity | Mean Deviation | Maximum Deviation |
+| --- | ---: | ---: |
+| Detected event minutes / labeled minutes | 60 / 60 | 60 / 60 |
+| Alert minutes outside labeled windows | 9 | 7 |
+| Precision | 86.96% | 89.55% |
+| Alert minutes / wholly nominal-run minutes | 2 / 720 | 2 / 720 |
+| Wholly nominal runs with an alert / nominal runs | 2 / 6 | 2 / 6 |
+
+Both methods detect each event at its onset in this fixed constructed panel. The campaign is an increase in demand, so an alert alone does not justify repair or suppression. For the payment event, the detected interval is [40,65) while the imposed failure lasts [40,60). Five later alert minutes reflect continuing support contacts. They count outside the declared failure window, illustrating how the event definition affects evaluation. Support contacts have the largest average standardized deviation within both the true and detected intervals; the originating payment service is specified by the simulation.
+
+The separate timing comparison gives all three predictions credit under an any-overlap rule. Interval intersection-over-union is 1.00 for [40,60), 0.60 for [45,65), and 1/6 for [0,120). The same event can therefore appear well localized under an overly permissive score. Changing a future observation from 90 to 900 changes backward-filled earlier values but leaves the earlier training-median imputations fixed.
+
+These are fixed-case results from three deliberately large events. They provide neither uncertainty estimates nor performance guarantees for real retailers, other event sizes, or event frequencies.
+
+## Files and Verification
+
+- [retail_monitoring.py](retail_monitoring.py): creates the panel, fits store-and-phase reference values, selects validation thresholds, evaluates later observations, and produces evidence packets.
+- [timing_and_missingness.py](timing_and_missingness.py): reproduces the exact timing and information comparisons.
+- [test_examples.py](test_examples.py): eight independent checks of sample counts, information boundaries, metric arithmetic, validation tails, saved confusion counts, packet contents, and the campaign example.
+- [results/README.md](results/README.md): output definitions, denominators, and interpretation.
+- [M7 §§7.29–7.30](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md): full program listings and two editable TikZ figures.
+- [Optional practice](../../07_Labs/Anomaly_Diagnosis/README.md): a longer ungraded exercise accompanying Session 11's 20-minute application.
+
+Both programs and the eight checks were executed on November 20, 2026. The original source benchmark remains inspected reference material. The public incident table provides disclosed practice labels; fresh incidents are needed for an independent evaluation after students revise their procedures.
+
+---
+
+## Source: 03_Data_and_Code/Anomaly_Diagnosis/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+All records are original synthetic teaching data. There are three online stores A–C, twelve simulation days, and observations for minutes 0–119 of each store's 09:00–11:00 window. `day=0` is January 1, 2026. Timestamps describe a synthetic local clock with no daylight-saving transition. Endpoints of event and alert intervals are exclusive. A store-minute is the observation and scoring unit; a store-day is the monitoring run.
+
+## Observation Columns
+
+| Field | Meaning and Units |
+| --- | --- |
+| `store` | Synthetic store A, B, or C |
+| `day` | Integer simulation day 0–11 |
+| `minute` | Minute within the two-hour run, 0–119 |
+| `timestamp` | ISO local timestamp for the observed minute |
+| `split` | `train`: days 0–5; `validation`: days 6–8; `test`: days 9–11 |
+| `phase` | Known time-of-day block, `minute // 20`; six blocks |
+| `visits` | Recorded visits during the minute, count |
+| `checkout_attempts` | Recorded attempts during the minute, count |
+| `completed_payments` | Recorded completed payments during the minute, count |
+| `completion_rate` | Recorded completed payments divided by recorded attempts; attempts are positive throughout |
+| `latency_ms` | Synthetic mean payment-service latency during the minute, milliseconds |
+| `support_contacts` | Synthetic support contacts during the minute, count |
+| `stock_available_share` | Available share of a fixed synthetic assortment, between zero and one |
+| `collection_completeness` | Observed monitoring signal for the share of transaction records captured, between zero and one |
+
+The two count components of `completion_rate` remain in the file for denominator checks. The detector uses six features: visits, completion rate, latency, support contacts, stock share, and completeness. It does not separately score the two payment counts. Three leading latency values for store A on day 10 are missing. Their rows remain present; `missing_features` records them in the scored output.
+
+## Construction and Reference Values
+
+Normal visits vary across stores and alternating 20-minute phases, with integer noise. Attempts depend on visits, payment success varies around 0.90, latency varies around 300 or 315 milliseconds, support contacts range from zero to two, stock share varies around 0.95, and completeness equals one. The program specifies these mechanisms and all random draws. The construction is a teaching mechanism, with no fitted retailer demand parameters.
+
+For each store, phase, and scored feature, estimate a median and median absolute deviation using training rows only. Multiply the latter by 1.4826, then apply a prespecified scale floor. Floors are 2 visits, 0.02 completion-rate units, 25 milliseconds, 1 support contact, 0.01 stock-share units, and 0.02 completeness units. They prevent constant or nearly constant features from producing an undefined score. Their values affect the relative variable weights; a deviation score has no probability interpretation.
+
+For scoring, replace a missing feature with its training-group median and retain the missing-feature count. Its standardized deviation is consequently zero. An unobserved feature then supplies no deviation signal, and a separate completeness monitor may be appropriate. No later value is used to impute an earlier row.
+
+The threshold for each aggregation method is the 1,070th ordered score among 1,080 normal validation rows. An alert requires a score strictly greater than that threshold. This chooses an empirical upper tail while preserving ties; it gives no population false-alert guarantee under a later distribution.
+
+## Incident Labels
+
+`data/events.csv` supplies `store`, `day`, `start`, `end`, and the imposed `cause`. All events span [40,60). Store A on day 9 has a payment-service interruption that lowers success and increases latency. Its support response is delayed and spans [45,65). Store B on day 10 receives a campaign-induced increase in visits and attempts with the same success mechanism. Store C on day 11 loses recorded transaction counts through a collection failure; its completeness signal falls to 0.40. It retains only 40% of the constructed visit and transaction counts, rounded to integers.
+
+The event label means a specified departure from the normal construction, including the beneficial campaign. It does not mean customer harm. A support response after payment recovery falls outside the defined failure label. The three causes are known by construction and are held out of detector fitting and scoring.
+
+## Denominators and Outputs
+
+`results/detection_summary.csv` evaluates all 1,080 test minutes: 60 labeled and 1,020 outside labeled intervals. `nominal_run_minutes` restricts attention to the six store-days with no imposed event at all, totaling 720 minutes. An alert minute differs from a contiguous alert episode. `nominal_alert_minutes_per_1000` counts the former; `alerted_nominal_runs` counts complete runs containing at least one alert.
+
+`results/incident_metrics.csv` matches each true event to the first overlapping contiguous alert interval during evaluation. Detection delay is the first alert inside the true interval minus its start. A missed event has no delay or matched endpoints and receives zero interval intersection-over-union. This matching is an evaluation step; true intervals never determine alerts.
+
+`results/variable_rankings.csv` compares mean standardized deviations within true intervals and matched alert intervals. The former uses ideal event timing. The latter uses a predicted boundary, with matching supplied by the evaluator. These are descriptive scores of observed variables, with no estimate of a causal effect.
+
+`results/evidence_packets.json` includes every test run, its mean-rule alerts, and observed measurements. It contains no incident cause or true boundaries. [variable_dictionary.json](data/variable_dictionary.json) supplies only feature definitions for the optional LLM exercise. This document and the generator contain disclosed answers, so they are separate from the exercise's model-input packet.
+
+---
+
+## Source: 03_Data_and_Code/Anomaly_Diagnosis/AGENTS.md
+
+# Agent Guide for Anomaly Diagnosis
+
+Read the root guide, README, and data dictionary. All observations, causes, and event timings are synthetic. The two course programs were executed; SHAD's package and benchmark were not. No saved result is LLM performance.
+
+Preserve training days 0–5, validation days 6–8, and test days 9–11. Fit reference values on training observations and select thresholds on validation scores. Event metadata belongs in evaluation. Keep the three missing latency records and all nine test runs.
+
+An event label includes the beneficial campaign. Keep alert minutes, alert intervals, whole nominal runs, and the matched event sample distinct. State exclusive interval endpoints. Report support contacts after recovery as outside the declared failure window without calling them fabricated or meaningless observations.
+
+For LLM practice, supply only the selected evidence packet and `data/variable_dictionary.json`. The generator, event table, lecture discussion, and this folder's explanatory documents disclose the constructed causes. No secret key or student data belongs in the repository. Fresh cases are required for independent evaluation after procedure revision.
+
+After changes, run both programs and the independent tests; synchronize numerical tables, figure values, complete source blocks in M7, and Session 11. Describe the tested information set and scope directly. Do not infer causal diagnoses from a high deviation score.
+
+---
+
+## Source: 03_Data_and_Code/Anomaly_Diagnosis/LLM_EXERCISE.md
+
+# Evidence for a Retail Diagnosis
+
+Use one run from `results/evidence_packets.json` and `data/variable_dictionary.json`. The packet includes observed measurements, missing entries, and alerts produced by the frozen mean-deviation rule. Treat missing values as unknown. The full roster includes nine runs, including those without a constructed incident.
+
+## Prompt
+
+> A retailer must decide whether to investigate an observed change and which additional evidence to obtain. Review the supplied measurements and alert intervals. State what changed, identify the supporting variables and timestamps, and give plausible explanations. Distinguish observations from causal hypotheses. Identify a check that would distinguish the leading hypotheses. State when the evidence is insufficient for a diagnosis. Return a JSON object with `observations`, `hypotheses`, `additional_evidence`, `proposed_action`, and `uncertainty`. Each observation must include its variable, time interval, units, and supporting values. Do not infer customer intent or misconduct from a deviation alone.
+
+## Evaluation
+
+Inspect the response before opening `data/events.csv`. The event table and generator disclose the imposed causes and provide public practice answers. Record separately whether numerical statements agree with the packet, the stated timing fits the observations, the proposed component is supported, the explanation acknowledges credible alternatives, and the proposed response follows from the available evidence. A correct cause name accompanied by fabricated evidence receives a separate factual-error finding.
+
+Compare three input conditions on the same run roster: observations and alerts; the same information plus the variable dictionary; and selected plots of the same measurements with their units and timestamps. The dictionary must add definitions without revealing incident labels. Keep model version, prompt, decoding settings, response, and evaluator judgments. Invalid outputs, missing responses, and abstentions remain in the roster. No model calls or performance results are supplied here.
+
+A stronger evaluation uses newly constructed incidents and independent reference judgments after the prompt and scoring rubric are fixed. The public examples support practice and arithmetic checks. Their disclosed construction makes them unsuitable as a hidden final test after repeated revision.
+
+---
+
+## Source: 03_Data_and_Code/Anomaly_Diagnosis/results/README.md
+
+# Monitoring Results
+
+Generated by the two programs in the parent folder from original synthetic inputs. The [data dictionary](../DATA_DICTIONARY.md) defines the sample and score. Both methods evaluate the same 1,080 later store-minutes and the same three 20-minute event windows.
+
+| File | Contents |
+| --- | --- |
+| `reference.csv` | Training-only center and scale for each store, phase, and feature |
+| `test_scores.csv` | All test observations, both scores, and missing-feature counts |
+| `detection_summary.csv` | Thresholds, confusion counts, precision, recall, and wholly nominal-run denominators |
+| `incident_metrics.csv` | First matched alert interval, onset detection delay, and interval intersection-over-union |
+| `variable_rankings.csv` | Per-variable deviations averaged within true or matched alert intervals |
+| `evidence_packets.json` | Nine observation-and-alert packets without incident answers |
+| `timing_metrics.csv` | Precise, delayed, and full-window predictions for the fixed [40,60) event |
+| `missingness_comparison.json` | Earlier imputations under two possible future observations; original versus compressed row positions |
+
+Both rules detect all 60 event minutes. The mean rule flags nine additional minutes and the maximum rule seven. Each flags two of 720 minutes in wholly nominal runs, distributed across two of six runs. Five additional alert minutes in the payment run are a delayed support response after the imposed failure ends. Detection of the campaign demonstrates unusualness without an operational failure.
+
+For the payment case, both rules yield [40,65), with interval intersection-over-union 0.80 against [40,60). Support contacts rank first within both windows. The separate exact timing comparison gives values 1.00, 0.60, and 1/6 despite all predictions receiving any-overlap credit. No result measures a real retailer, a causal effect estimated from observations, or an LLM's accuracy.
+
+---
+
+## Source: 07_Labs/Anomaly_Diagnosis/README.md
+
+# Anomaly Detection and Retail Diagnosis
+
+An unusual pattern can call for repairing a service, preserving a successful campaign, or assessing the observation process. The exercise uses [original synthetic retail data](../../03_Data_and_Code/Anomaly_Diagnosis/README.md) and the full programs in [M7 §§7.29–7.30](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md). It is optional ungraded practice and establishes no submission or AI-use requirement.
+
+## Reproduce the Evidence
+
+Run both programs and the eight checks using the commands in the data-and-code README. Confirm the training, validation, and test counts before examining model results. Identify the three missing measurements and verify that their rows remain in the evaluation. Explain which information determines the score for a missing feature.
+
+Compare the two detection summaries on the same 1,080 test minutes. Explain why 60 detected event minutes include a campaign. Calculate precision from the confusion counts. Distinguish alert minutes outside true windows from alerts on the 720 minutes in wholly nominal runs. Explain why two affected nominal runs can coexist with a small rate of alert minutes.
+
+## Examine Timing and Attribution
+
+Use the payment case to compare [40,60) with [40,65). Identify the continuing support response and explain the 0.80 interval intersection-over-union. Compare the highest-ranked variable with the imposed originating component. State what additional information would justify a repair in an observed retailer setting.
+
+Calculate interval intersection-over-union by enumerating integer minutes for the precise, delayed, and full-window predictions. Explain why all three receive credit from any-overlap scoring. Modify one endpoint and predict the result before running the calculation.
+
+Change the future value in the four-observation missingness example. Verify that earlier values change under backward filling but remain fixed under the training-median rule. Preserve original timestamps after deleting a row and compare them with positional indices.
+
+## Evaluate an Explanation
+
+Follow the [LLM exercise](../../03_Data_and_Code/Anomaly_Diagnosis/LLM_EXERCISE.md), or write the same structured diagnosis independently. Supply only an evidence packet and the variable dictionary before evaluating against the public incident table. Assess numerical support and causal hypotheses separately. Include normal runs in the evaluation and retain unsupported, invalid, and missing responses.
+
+An extension can introduce smaller incidents, simultaneous causes, a drifting baseline, or an independently failing completeness monitor. Choose the change and evaluation criteria before seeing its results. Use separate new runs for final evaluation after revising thresholds, representations, or prompts.
 
 ---
 

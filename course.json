@@ -43,6 +43,12 @@
       "path": "07_Labs/Retail_Accessibility/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "anomaly-diagnosis",
+      "path": "07_Labs/Anomaly_Diagnosis/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -149,12 +155,18 @@
     "07_Labs/Retail_Accessibility/README.md",
     "01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md",
     "01_Resources/26_Anomaly_Detection_and_Diagnosis/SOURCE_REVIEW.md",
-    "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md"
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/README.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/AGENTS.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/LLM_EXERCISE.md",
+    "03_Data_and_Code/Anomaly_Diagnosis/results/README.md",
+    "07_Labs/Anomaly_Diagnosis/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-18",
+    "updated_on": "2026-11-20",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -198,12 +210,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-18-retail-accessibility",
+    "revision": "2026-11-20-anomaly-diagnosis",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 85,
-    "pages": 310,
+    "figures_count": 87,
+    "pages": 321,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -216,7 +228,8 @@
     "ai_evidence_examples": "03_Data_and_Code/AI_Evidence_and_Evaluation/README.md",
     "clustering_examples": "03_Data_and_Code/Clustering_Optimization/README.md",
     "dose_response_examples": "03_Data_and_Code/Dose_Response/README.md",
-    "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md"
+    "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
+    "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md"
   },
   "datasets": [
     {
@@ -278,7 +291,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-18",
+    "updated_on": "2026-11-20",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -287,7 +300,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 339,
+    "slides": 345,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -517,14 +530,18 @@
     "reviewed_on": "2026-11-20",
     "source_commit": "b5fbc6085ec6c09919803b41e38b9fa5f9f22364",
     "source_package_executed": false,
-    "status": "resource review and proposed course application; no new released exercise",
-    "proposed_modules": [
-      "M2",
-      "M5",
-      "M7",
-      "M8",
-      "M9"
+    "status": "available in M7 with original executed examples and optional ungraded practice",
+    "scope": "Original synthetic monitoring and exact timing/imputation examples; no replication of the source benchmark.",
+    "examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
+    "lab": "07_Labs/Anomaly_Diagnosis/README.md",
+    "sections": [
+      "M7 §§7.29–7.30"
     ],
-    "scope": "Reviewed paper and selected repository sources; no reproduction of published benchmark results."
+    "session": 11,
+    "discussion_minutes": 20,
+    "executed_course_programs": 2,
+    "independent_checks": 8,
+    "llm_calls": 0,
+    "synthetic_observations": 4320
   }
 }

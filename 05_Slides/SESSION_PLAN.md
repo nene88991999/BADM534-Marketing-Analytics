@@ -236,9 +236,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Application:** Compare forecast coverage and grader error costs while preserving the full evaluation population.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
 
-**Ethics and Regulation:** Coverage by customer segment, review access, and consequences of incorrect routing.
+**Ethics and Regulation:** Evidence for diagnoses, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -247,7 +247,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–145 | Anomaly Diagnosis |
+| 145–155 | Forecast and Grader Comparisons |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 12. Recommendation Systems and Customer Goals

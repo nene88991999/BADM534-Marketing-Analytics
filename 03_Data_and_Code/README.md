@@ -85,3 +85,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Retail Accessibility
 
 [Retail accessibility](Retail_Accessibility/README.md) provides three complete programs, synthetic and observed inputs, eight independent tests, result hashes, and four editable figures. The observed case uses four restaurant records and a frozen OpenStreetMap extract; the synthetic case supplies population weights and service objectives. Full Python appears in M2 §2.23 and M5 §§5.21–5.22. [Optional practice](../07_Labs/Retail_Accessibility/README.md) extends the comparison.
+
+## Anomaly Detection and Diagnosis
+
+[The retail monitoring example](Anomaly_Diagnosis/README.md) supplies 4,320 synthetic store-minutes, training and validation references, two detection rules, incident timing, variable rankings, and evidence packets. A separate exact comparison examines permissive interval scoring and future-information leakage. Two full programs and eight independent checks support M7 §§7.29–7.30. No upstream benchmark or LLM was executed.

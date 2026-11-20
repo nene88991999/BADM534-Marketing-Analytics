@@ -1,0 +1,7 @@
+method,store,day,cause,detected,delay_minutes,predicted_start,predicted_end,interval_iou
+mean,A,9,payment_service,True,0,40,65,0.8
+mean,B,10,campaign,True,0,40,60,1.0
+mean,C,11,collection_failure,True,0,40,60,1.0
+maximum,A,9,payment_service,True,0,40,65,0.8
+maximum,B,10,campaign,True,0,40,60,1.0
+maximum,C,11,collection_failure,True,0,40,60,1.0

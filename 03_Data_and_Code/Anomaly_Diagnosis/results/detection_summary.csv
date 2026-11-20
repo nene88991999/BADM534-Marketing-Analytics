@@ -1,0 +1,3 @@
+method,threshold,evaluated_minutes,tp,fp,fn,tn,precision,recall,nominal_run_minutes,nominal_alert_minutes,nominal_alert_minutes_per_1000,nominal_runs,alerted_nominal_runs
+mean,0.7747849586988399,1080,60,9,0,1011,0.8695652173913043,1.0,720,2,2.7777777777777777,6,2
+maximum,1.6862268986914881,1080,60,7,0,1013,0.8955223880597015,1.0,720,2,2.7777777777777777,6,2

@@ -1,0 +1,30 @@
+{
+  "variables": {
+    "visits": {
+      "unit": "count per minute",
+      "definition": "Recorded visits to the online store."
+    },
+    "completion_rate": {
+      "unit": "share",
+      "definition": "Recorded completed payments divided by recorded checkout attempts."
+    },
+    "latency_ms": {
+      "unit": "milliseconds",
+      "definition": "Mean payment-service latency in the observed minute; null means missing."
+    },
+    "support_contacts": {
+      "unit": "count per minute",
+      "definition": "Observed customer support contacts."
+    },
+    "stock_available_share": {
+      "unit": "share",
+      "definition": "Available share of the same fixed assortment."
+    },
+    "collection_completeness": {
+      "unit": "share",
+      "definition": "Observed monitor of the share of transaction records captured."
+    }
+  },
+  "intervals": "Minutes from 09:00 with exclusive end; observations cover 0 through 119.",
+  "data_type": "Synthetic"
+}

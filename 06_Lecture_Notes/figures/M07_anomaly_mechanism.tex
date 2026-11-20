@@ -1,0 +1,9 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[orangebox,text width=3.4cm] (fault) at (0,0) {Payment-Service Interruption\\[3pt]Imposed Cause\\$[40,60)$};
+\node[box,text width=4.8cm] (latency) at (6,2.2) {Higher Payment Latency\\$[40,60)$};
+\node[box,text width=4.8cm] (payments) at (6,0) {Lower Completion Rate\\$[40,60)$};
+\node[orangebox,text width=4.8cm] (support) at (6,-2.2) {More Support Contacts\\$[45,65)$\\[3pt]Largest Mean Deviation: 30.45};
+\draw[edge] (fault.east) -- ++(.8,0) |- (latency.west);
+\draw[edge] (fault.east) -- (payments.west);
+\draw[accent] (fault.east) -- ++(.8,0) |- (support.west);
+\end{tikzpicture}

@@ -1,0 +1,4 @@
+prediction,start,end,any_overlap,interval_iou,onset_error_minutes
+precise,40,60,1,1.0,0
+delayed,45,65,1,0.6,5
+full_window,0,120,1,0.16666666666666666,40

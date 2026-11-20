@@ -14,6 +14,7 @@ Session 11. M7. 170 minutes.
 - Compare identical rankings with different probability losses and demand forecasts.
 - Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes.
 - Evaluate grader coverage and asymmetric error costs against explicit reference judgments.
+- Separate anomaly detection, variable localization, event timing, and evidence for a diagnosis.
 
 ## Related Materials
 
@@ -27,6 +28,8 @@ Session 11. M7. 170 minutes.
 - [PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)
 - [Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)
 - [Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)
+- [Anomaly Diagnosis: Data and Code](../03_Data_and_Code/Anomaly_Diagnosis/README.md)
+- [Anomaly Diagnosis: Optional Practice](../07_Labs/Anomaly_Diagnosis/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -276,7 +279,88 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 22: Accuracy and Failure Costs
+## Slide 22: Three Alerts, Different Decisions
+
+| Event | Observation | Next Check |
+| --- | --- | --- |
+| Payment Fault | Lower Completion | Service Records |
+| Campaign | More Visits | Campaign Records |
+| Collection Failure | Lower Coverage | Collection Logs |
+
+Three synthetic stores; one twenty-minute event of each type.
+
+Training has 2,160 store-minutes, validation has 1,080 normal store-minutes, and evaluation has 1,080 later store-minutes. Six whole evaluation runs remain nominal. The event label includes the successful campaign. An alert identifies unusualness under the fitted reference; a response requires interpretation and supporting evidence. The twenty-minute case occupies minutes 125–145 of the application block. The payment fault reduces completion and raises support contacts after a five-minute delay. The campaign raises visits and payments under the same payment-success mechanism. The collection failure reduces recorded counts and coverage. Review campaign capacity and collection-system records before selecting a response.
+
+Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
+
+## Slide 23: A Strong Symptom Can Follow the Cause
+
+Synthetic payment event: support contacts rank first by mean standardized deviation.
+
+**Figure description:** The imposed service interruption directly changes latency and completion and produces support contacts with a five-minute lag. Support persists after recovery; its average deviation in the true window is 30.45.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_anomaly_mechanism.tex)
+
+The cause is imposed by the data generator. The score only uses observed variables. Within the true interval the mean standardized support deviation is 30.4533. Within the matched alert interval it is 32.5105. Both are descriptive rankings. A real repair decision needs payment traces or other evidence that supports the proposed mechanism. All score scales and floors are defined in M7 §7.29.2.
+
+Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
+
+## Slide 24: Evaluate Minutes and Monitoring Runs
+
+| Quantity | Mean Rule | Maximum Rule |
+| --- | --- | --- |
+| Detected Event Minutes | 60 / 60 | 60 / 60 |
+| Precision | 86.96% | 89.55% |
+| Nominal Alert Minutes | 2 / 720 | 2 / 720 |
+| Nominal Runs with Alerts | 2 / 6 | 2 / 6 |
+
+Same 1,080 test minutes; six wholly nominal runs; constructed events include a campaign.
+
+Mean and maximum standardized deviations use the same six features and training-only store/phase references. Thresholds are the 1,070th ordered validation score: approximately 0.774785 and 1.686227. Alerts strictly exceed the threshold. There are nine and seven alert minutes outside labeled windows. Five follow payment recovery while support contacts remain high. These are fixed-panel results, not population performance estimates. Staff effort depends on the grouping of alert minutes into review requests.
+
+Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
+
+## Slide 25: Any Overlap Can Reward a Broad Prediction
+
+Same true event [40,60); interval endpoints are exclusive.
+
+**Figure description:** Precise [40,60), delayed [45,65), and full-window [0,120) predictions all overlap. Their intersection-over-union values are 1.00, 0.60, and one-sixth.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_anomaly_intervals.tex)
+
+The delayed prediction intersects fifteen true minutes and spans a twenty-five-minute union. Absolute onset errors are zero, five, and forty minutes. The actual synthetic payment alert interval is [40,65), whose IoU is 20/25=0.80 because support contacts persist. Missed events and multiple-event matching require explicit conventions; the program permits one event per run.
+
+Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
+
+## Slide 26: An Earlier Value Must Respect Its Information Set
+
+Two possible futures follow the same two missing measurements.
+
+```python
+from timing_and_missingness import causal_fill
+
+a = causal_fill([None, None, 90, 92], 100)
+b = causal_fill([None, None, 900, 92], 100)
+assert a[:2] == b[:2] == [100, 100]
+```
+
+Run from Anomaly_Diagnosis. The training median is fixed at 100.
+
+Forward filling followed by backward filling would set the two earlier values to 90 or 900. This displayed alternative uses a training median before any observation and carries forward only past values thereafter. The retail program imputes the training-group median directly and retains missingness. Dropping missing rows also changes positions: observed minutes two and three become rows zero and one if timestamps are discarded.
+
+Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
+
+## Slide 27: Require Evidence for the Diagnosis
+
+- Provide measurements, units, missingness, and predicted intervals.
+- Separate observed changes, causal hypotheses, and the next check.
+- Evaluate factual support and proposed action on the full run roster.
+
+Nine evidence packets include all test runs and no true cause or event boundary. Supply the separate variable dictionary, not the generator or incident table. Public labels provide practice answers; new incidents are needed for independent evaluation after revision. No LLM calls were made for these saved results. Keep invalid, missing, and abstained responses visible. An unusual mHealth logging pattern alone does not establish health, intent, or misconduct.
+
+Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
+
+## Slide 28: Accuracy and Failure Costs
 
 Constructed cases: pooled accuracy rises from 78% to 86%.
 
@@ -288,7 +372,7 @@ Fourteen paired cases improve and six regress. Stipulated failure costs of one d
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md
 
-## Slide 23: Paired Regression Checks
+## Slide 29: Paired Regression Checks
 
 The same one hundred constructed cases are scored under both configurations.
 
@@ -306,7 +390,7 @@ The complete program preserves every paired case and each segment denominator. W
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
 
-## Slide 24: Equal Grader Scores, Different Consequences
+## Slide 30: Equal Grader Scores, Different Consequences
 
 Twelve synthetic statements; all cases remain in the scoring denominators.
 
@@ -318,18 +402,18 @@ There are eight reference PASS statements and four reference FAIL statements. Th
 
 Source: M5 §5.20 and M7 §7.26. ../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py
 
-## Slide 25: Reference Judgments and Customer Interests
+## Slide 31: Reference Judgments and Customer Interests
 
 - Give every reference judgment a reason.
 - Keep missing, invalid, and abstained outputs visible.
 - Reserve new cases from rubric and prompt revision.
 - Assess whose consequences the scoring rule includes.
 
-The public practice labels are disclosed. To estimate generalization, collect new statements and independent judgments, resolve or report disagreements, freeze the rubric, and evaluate on cases not used for revision. Reference agreement does not establish ethical validity. Use fifteen minutes of the existing application block for the grader comparison and fifteen for forecast interpretation. The conformal prediction exercise remains in the Python block.
+The public practice labels are disclosed. To estimate generalization, collect new statements and independent judgments, resolve or report disagreements, freeze the rubric, and evaluate on cases not used for revision. Reference agreement does not establish ethical validity. Use five minutes for the grader comparison and five for forecast interpretation after the twenty-minute anomaly case. The conformal prediction exercise remains in the Python block.
 
 Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
 
-## Slide 26: Coding Exercise: A Forecast Evaluation
+## Slide 32: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -339,7 +423,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 27: Targeting and Delivered Opportunities
+## Slide 33: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -349,7 +433,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 28: Prediction Discussion
+## Slide 34: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

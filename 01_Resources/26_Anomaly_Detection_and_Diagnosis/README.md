@@ -46,7 +46,7 @@ Students could ask a coding assistant to implement an alert and then independent
 | [M8 §§8.6 and 8.11](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) | Evaluate an AI-assisted investigation by supported claims, investigation cost, and customer outcomes |
 | [M9 §§9.3 and 9.10](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) | Examine the evidence required before an organization acts on a diagnosis |
 
-An optional 20–25 minute application within Session 11's existing practice time would provide the closest fit. The [case design](CASE_DESIGN.md) specifies a retail example and two editable TikZ diagrams for later development. These suggestions introduce no released assessment or schedule change.
+[M7 §§7.29–7.30](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) now contain the complete [retail programs](../../03_Data_and_Code/Anomaly_Diagnosis/README.md), exact timing and missingness comparisons, and two editable TikZ diagrams. Session 11 uses twenty minutes of its existing application block. The [optional lab](../../07_Labs/Anomaly_Diagnosis/README.md) supplies longer ungraded practice. Connections to other modules remain suggestions; the meeting calendar and assessment requirements are unchanged.
 
 ## Sources and Reuse
 

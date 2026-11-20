@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-18",
+  "updated_on": "2026-11-20",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -609,12 +609,12 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 28,
+      "slides": 34,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
       "python_activity": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
-      "application": "Compare forecast coverage and grader error costs while preserving the full evaluation population.",
-      "ethics": "Coverage by customer segment, review access, and consequences of incorrect routing",
+      "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.",
+      "ethics": "Evidence for diagnoses, review access, and consequences of incorrect routing",
       "timing": [
         {
           "start_minute": 0,
@@ -648,9 +648,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 145,
+          "minutes": 20,
+          "activity": "Anomaly Diagnosis"
+        },
+        {
+          "start_minute": 145,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "Application and Interpretation"
+          "minutes": 10,
+          "activity": "Forecast and Grader Comparisons"
         },
         {
           "start_minute": 155,

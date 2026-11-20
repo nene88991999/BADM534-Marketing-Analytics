@@ -1,0 +1,47 @@
+{
+  "training_median": 100,
+  "observed": [
+    null,
+    null,
+    90,
+    92
+  ],
+  "retrospective": [
+    90,
+    90,
+    90,
+    92
+  ],
+  "causal": [
+    100,
+    100,
+    90,
+    92
+  ],
+  "revised_future": [
+    null,
+    null,
+    900,
+    92
+  ],
+  "retrospective_revised": [
+    900,
+    900,
+    900,
+    92
+  ],
+  "causal_revised": [
+    100,
+    100,
+    900,
+    92
+  ],
+  "retained_original_minutes": [
+    2,
+    3
+  ],
+  "positions_after_dropping_missing": [
+    0,
+    1
+  ]
+}

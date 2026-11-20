@@ -159,3 +159,7 @@ The [dose-response sources](../01_Resources/24_Dose_Response/README.md), reviewe
 ## Spatial Networks and Retail Alternatives
 
 [The city2graph review](../01_Resources/25_Spatial_Networks/README.md) motivates original distance and geometry calculations in [Retail Accessibility](../03_Data_and_Code/Retail_Accessibility/README.md). M2 §2.23 covers map footprints; M4 §4.22 covers spatial representations; M5 §§5.21–5.22 contain full accessibility and observed-network programs; M7 §7.28 matches evaluation to deployment; M8 §8.23 compares restoration priorities; M9 §9.18.2 examines feasible alternatives and service conduct. Three original programs were executed with NetworkX. No upstream notebook, city2graph package, clustering fit, or GNN training was executed. The selected observed snapshot and later street extract retain separate dates and attribution.
+
+## Anomaly Detection and Diagnosis
+
+The [SHAD review](../01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) motivates M7 §§7.29–7.30. Original standard-library programs generate a fixed synthetic retail panel and exact timing/imputation comparisons. Eight independent checks verify population counts, information boundaries, tied-threshold conventions, confusion counts, interval arithmetic, packet contents, and the beneficial campaign. Two editable figures and six Session 11 slides preserve the distinction between observed symptoms and imposed causes. No original benchmark or LLM API was executed.

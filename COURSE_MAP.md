@@ -121,3 +121,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Retail Alternatives and Spatial Networks
 
 [The retail accessibility case](03_Data_and_Code/Retail_Accessibility/README.md) connects map footprints in M2 §2.23, spatial representations in M4 §4.22, shortest paths and unknown availability in M5 §§5.21–5.22, deployment comparisons in M7 §7.28, service priorities in M8 §8.23, and customer agency in M9 §9.18.2. A synthetic network isolates the mechanism; four observed restaurant origins provide a selected geographical comparison. Sessions 3, 7, and 13 use existing application time. The [lab](07_Labs/Retail_Accessibility/README.md) is optional ungraded practice, and GNN modeling remains an optional extension.
+
+## Anomaly Detection and Diagnosis
+
+[Original retail monitoring cases](03_Data_and_Code/Anomaly_Diagnosis/README.md) extend M7 §§7.29–7.30 with alert evaluation, variable ranking, event timing, and supported interpretation. Two full Python programs and two editable TikZ figures connect the [SHAD review](01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) to a synthetic checkout interruption, campaign, and recording failure. Session 11 uses twenty minutes of existing application time. The [longer lab](07_Labs/Anomaly_Diagnosis/README.md) is optional ungraded practice.

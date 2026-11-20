@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 18, 2026\par}
+{\large November 20, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -13184,6 +13184,594 @@ intended deployment population. The later street extract in Section 5.22
 supports a descriptive distance comparison; it is not an origin-time
 forecasting input for the earlier snapshot. Graph neural networks remain
 an optional extension of these information and evaluation requirements.
+
+\hypertarget{M07-anomaly-detection-and-a-marketing-diagnosis}{%
+\section{Anomaly Detection and a Marketing
+Diagnosis}\label{M07-anomaly-detection-and-a-marketing-diagnosis}}
+
+\noindent \noindent A retailer observing fewer completed purchases must choose
+whether to repair checkout, alter advertising, replenish inventory, or
+assess its measurement system. Each action addresses a different
+mechanism. An alert can direct attention toward an unusual observation,
+while an intervention requires evidence about what generated that
+observation. A high score for a downstream symptom can coexist with weak
+information about the originating component.
+
+Stanzione, Barbe, Parrino, Fourmann, and Boniol's
+\href{https://arxiv.org/abs/2610.01168v1}{SHAD benchmark} separates
+detection, variable localization, and interpretation. In controlled
+failures on a real storage system, selected detectors recognize events
+while their native variable scores locate directly targeted components
+poorly. Some LLM comparisons supply correct presence and component
+labels. Those comparisons evaluate interpretation with ideal
+information; a deployed procedure also encounters errors in earlier
+stages. The distinction motivates separate evaluation of the alert, its
+explanation, and the managerial response.
+
+\hypertarget{M07-three-events-with-different-implications}{%
+\subsection{Three Events with Different
+Implications}\label{M07-three-events-with-different-implications}}
+
+\noindent \noindent Consider three synthetic online stores observed for twelve
+days, with one record per minute during a two-hour daily window. Days
+0--5 provide 2,160 training observations, days 6--8 provide 1,080 normal
+validation observations, and days 9--11 provide 1,080 later evaluation
+observations. The normal mechanism contains store differences, a known
+time-of-day pattern, and random variation. Three missing latency
+measurements remain in the evaluation roster. The variable dictionary
+identifies recorded visits, completed payments per checkout attempt,
+payment latency in milliseconds, support contacts, the available share
+of an assortment, and transaction-record completeness.
+
+Each constructed event lasts twenty minutes, from minute 40 through
+minute 59. Store A experiences a payment-service interruption, with
+lower payment success and higher latency. Its support response begins
+five minutes later and persists five minutes after recovery. Store B
+receives a campaign-induced increase in visits and checkout attempts
+with the same payment-success mechanism. Store C experiences a
+collection failure that retains only forty percent of visit and
+transaction counts and reduces its observed completeness signal. The
+remaining six evaluation store-days contain no imposed event. The event
+labels identify departures from the normal construction, including the
+successful campaign.
+
+The incident table is separate from model inputs. The simulation
+supplies the originating mechanism, event boundaries, and the delayed
+support response. These quantities are known by construction. They do
+not estimate the frequency or effect of such incidents in a retailer's
+operations. In an observed setting, a payment log, campaign schedule, or
+collection-system check would provide additional evidence for
+distinguishing the explanations.
+
+\hypertarget{M07-a-reference-distribution-and-an-alert-rule}{%
+\subsection{A Reference Distribution and an Alert
+Rule}\label{M07-a-reference-distribution-and-an-alert-rule}}
+
+\noindent \noindent The reference values condition on the store and its
+twenty-minute time-of-day block. For each group \(g\) and feature \(j\),
+estimate the training median \(m_{gj}\) and median absolute deviation. A
+scale floor \(a_j\) prevents nearly constant features from receiving
+unbounded weight:
+
+\[
+d_{gj}=\max\left\{1.4826\operatorname{median}_{i\in\mathcal T_g}
+|x_{ij}-m_{gj}|,a_j\right\},\qquad
+z_{ij}=\frac{|x_{ij}-m_{gj}|}{d_{gj}}.
+\]
+
+Here \(\mathcal T_g\) contains the training observations for that store
+and time block. Each \(x_{ij}\) retains its stated measurement unit;
+\(d_{gj}\) has the same unit, making \(z_{ij}\) dimensionless. The six
+fixed floors are 2 visits, 0.02 completion-rate units, 25 milliseconds,
+1 support contact, 0.01 stock-share units, and 0.02 completeness units.
+The factor 1.4826 supplies a conventional rescaling of the median
+absolute deviation. These scores are relative deviations with chosen
+scales, without a probability interpretation.
+
+Two rules summarize the same six feature scores: their mean and their
+maximum. Fit the reference values using training observations alone. Set
+each rule's threshold to the 1,070th ordered score among the 1,080
+validation observations, corresponding to rank
+\(\lceil0.99\times1080\rceil\). Alert only when the score is strictly
+greater than the threshold. This comparison fixes the empirical
+validation tail and preserves tied scores. It provides no guarantee
+about the rate of future alerts under a changed distribution.
+
+A missing feature receives its training-group median for scoring, and
+its missingness indicator remains recorded. That feature then
+contributes a zero deviation because its value is unobserved. The
+procedure uses no later observation to fill the gap. A separate
+missingness alert may be appropriate when the observation process itself
+is consequential.
+
+\hypertarget{M07-evaluate-minutes-incidents-and-whole-monitoring-runs}{%
+\subsection{Evaluate Minutes, Incidents, and Whole Monitoring
+Runs}\label{M07-evaluate-minutes-incidents-and-whole-monitoring-runs}}
+
+\noindent \noindent The evaluation contains sixty labeled event minutes and 1,020
+minutes outside those windows. Its six wholly nominal store-days supply
+a separate denominator of 720 minutes. The same observations and labels
+enter both rules.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & Mean Deviation & Maximum Deviation \\
+\midrule
+
+Detected Event Minutes / Labeled Minutes & 60 / 60 & 60 / 60 \\
+Alert Minutes Outside Labeled Windows & 9 & 7 \\
+Precision & 86.96\% & 89.55\% \\
+Alert Minutes / Wholly Nominal-Run Minutes & 2 / 720 & 2 / 720 \\
+Wholly Nominal Runs with an Alert / Nominal Runs & 2 / 6 & 2 / 6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Both rules detect the three constructed events at onset. Their selected
+thresholds are approximately 0.775 and 1.686. The maximum rule's two
+fewer alerts outside labeled windows produce higher precision on this
+fixed panel. Each rule still flags two wholly nominal runs, even though
+only two of their 720 minutes receive alerts. Staff workload therefore
+depends on how alert minutes are grouped into incidents and review
+requests. These results concern three deliberately large events and
+provide no generalization or uncertainty estimate for real stores.
+
+For the payment interruption, both detected intervals are \([40,65)\),
+compared with the imposed failure interval \([40,60)\). Five additional
+minutes reflect support contacts after recovery. They count outside the
+stated failure label while remaining meaningful symptoms of the earlier
+interruption. Changing the target from active payment failure to
+unresolved customer consequences would change the relevant interval and
+evaluation question.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_anomaly_mechanism.tex}
+\caption{The imposed payment-service interruption raises latency, lowers completion, and produces a delayed support response. Support contacts have the largest average standardized deviation, 30.45, within the true failure interval. Repair targets the originating service, while the support response persists after recovery.}\label{fig:M07_anomaly_mechanism}
+\end{figure}
+
+Support contacts rank first when deviations are averaged within the true
+failure window and when they are averaged within the matched alert
+window. The true-window comparison uses ideal timing information. The
+matched-window comparison uses a predicted interval, associated with the
+known event only during evaluation. Neither ranking estimates a causal
+effect. A high support score identifies a useful symptom; the
+simulation's imposed mechanism identifies the service fault. In an
+observed case, evidence supporting that mechanism must come from
+additional records or a justified intervention comparison.
+
+The campaign also receives an alert even though it increases demand
+under an unchanged payment-success mechanism. The appropriate response
+can be to preserve the campaign and check capacity. For the collection
+failure, lower recorded counts accompany an explicit fall in record
+completeness. Assessing the recording process follows directly from that
+observed discrepancy. The degree of statistical unusualness alone
+establishes neither commercial loss nor customer harm.
+
+\hypertarget{M07-evidence-for-an-ai-generated-explanation}{%
+\subsection{Evidence for an AI-Generated
+Explanation}\label{M07-evidence-for-an-ai-generated-explanation}}
+
+\noindent \noindent A diagnostic assistant can receive observed measurements,
+units, missingness, and intervals generated by the frozen alert rule.
+Ask it to identify the observations supporting each claim, distinguish
+causal hypotheses from measured changes, and specify evidence that would
+separate competing explanations. Incident labels and the construction
+code belong in the subsequent evaluation. Supplying the true cause to
+the assistant would change the information condition under which its
+explanation is assessed.
+
+The program produces packets for all nine evaluation runs, including the
+six without an imposed incident. Assess numerical support, component
+identification, timing, alternative explanations, and the proposed
+action separately. Keep missing, invalid, and abstained responses in the
+evaluation roster. A correct cause name accompanied by fabricated
+measurements still contains a factual error. No LLM has been called for
+these saved results; the packets support a separate optional experiment
+with recorded model and prompt versions.
+
+The public event table provides disclosed practice answers. New
+incidents and independent reference judgments are needed after revising
+prompts or scoring rules. The same reasoning applies to the restaurant
+and mHealth cases: a change in recorded availability or logging first
+supports an assessment of the observations. A diagnosis of equipment
+failure, health, or customer intent requires further evidence
+appropriate to that claim.
+
+\hypertarget{M07-reproduce-the-retail-comparison}{%
+\subsection{Reproduce the Retail
+Comparison}\label{M07-reproduce-the-retail-comparison}}
+
+\noindent \noindent The following standard-library program generates the synthetic
+panel with seed 5342027, fits the reference values, chooses validation
+thresholds, and preserves every later observation. Its output includes
+the fitted reference table, confusion counts, matched intervals,
+variable rankings, and nine evidence packets. All paths are relative to
+the program's location.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Anomaly_Diagnosis/retail_monitoring.py}{retail\_monitoring.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Original synthetic retail monitoring example; Python standard library only."""
+import csv
+import json
+import math
+import random
+from collections import defaultdict
+from datetime import datetime, timedelta
+from pathlib import Path
+from statistics import mean, median
+
+ROOT = Path(__file__).resolve().parent
+FEATURES = ("visits", "completion_rate", "latency_ms", "support_contacts",
+            "stock_available_share", "collection_completeness")
+FLOORS = dict(zip(FEATURES, (2, .02, 25, 1, .01, .02)))
+METHODS = ("mean", "maximum")
+
+
+def write_csv(path, rows):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def make_data():
+    rng = random.Random(5342027)
+    events = [
+        dict(store="A", day=9, start=40, end=60, cause="payment_service"),
+        dict(store="B", day=10, start=40, end=60, cause="campaign"),
+        dict(store="C", day=11, start=40, end=60, cause="collection_failure"),
+    ]
+    rows = []
+    for day in range(12):
+        split = "train" if day < 6 else "validation" if day < 9 else "test"
+        for index, store in enumerate("ABC"):
+            for minute in range(120):
+                phase = minute // 20
+                visits = 100 + 15 * index + 10 * (phase % 2) + rng.randint(-4, 4)
+                attempts = round(.4 * visits) + rng.randint(-2, 2)
+                success = .90 + rng.uniform(-.015, .015)
+                latency = 300 + 15 * (phase % 2) + rng.uniform(-25, 25)
+                contacts = rng.randint(0, 2)
+                stock = .95 + rng.uniform(-.02, .02)
+                completeness = 1.0
+                if store == "A" and day == 9 and 40 <= minute < 60:
+                    success, latency = .35, latency + 500
+                if store == "A" and day == 9 and 45 <= minute < 65:
+                    contacts += 60
+                if store == "B" and day == 10 and 40 <= minute < 60:
+                    visits, attempts = visits + 100, attempts + 40
+                payments = round(attempts * success)
+                if store == "C" and day == 11 and 40 <= minute < 60:
+                    visits, attempts, payments = [round(.4 * v) for v in
+                                                  (visits, attempts, payments)]
+                    completeness = .4
+                if store == "A" and day == 10 and minute < 3:
+                    latency = None  # Leading missing measurements remain in the roster.
+                timestamp = datetime(2026, 1, 1, 9) + timedelta(days=day, minutes=minute)
+                rows.append(dict(store=store, day=day, minute=minute,
+                    timestamp=timestamp.isoformat(), split=split, phase=phase,
+                    visits=visits, checkout_attempts=attempts, completed_payments=payments,
+                    completion_rate=payments / attempts, latency_ms=latency,
+                    support_contacts=contacts, stock_available_share=stock,
+                    collection_completeness=completeness))
+    return rows, events
+
+
+def fit_reference(training):
+    groups = defaultdict(list)
+    for row in training:
+        groups[row["store"], row["phase"]].append(row)
+    reference = {}
+    for key, rows in groups.items():
+        reference[key] = {}
+        for feature in FEATURES:
+            values = [r[feature] for r in rows if r[feature] is not None]
+            center = median(values)
+            scale = max(1.4826 * median(abs(x - center) for x in values), FLOORS[feature])
+            reference[key][feature] = (center, scale)
+    return reference
+
+
+def score_rows(rows, reference):
+    scored = []
+    for row in rows:
+        z = {}
+        for feature in FEATURES:
+            center, scale = reference[row["store"], row["phase"]][feature]
+            value = center if row[feature] is None else row[feature]
+            z[feature] = abs(value - center) / scale
+        scored.append(dict(row, mean=mean(z.values()), maximum=max(z.values()),
+            missing_features=sum(row[f] is None for f in FEATURES), deviations=z))
+    return scored
+
+
+def calibrate(validation):
+    rank = math.ceil(.99 * len(validation))
+    return {method: sorted(r[method] for r in validation)[rank - 1] for method in METHODS}
+
+
+def intervals(minutes):
+    segments = []
+    for minute in sorted(set(minutes)):
+        if segments and segments[-1][1] == minute:
+            segments[-1][1] = minute + 1
+        else:
+            segments.append([minute, minute + 1])
+    return segments
+
+
+def interval_iou(a, b):
+    overlap = max(0, min(a[1], b[1]) - max(a[0], b[0]))
+    return overlap / ((a[1] - a[0]) + (b[1] - b[0]) - overlap)
+
+
+def evaluate(test, events, thresholds):
+    by_run = defaultdict(list)
+    for row in test:
+        by_run[row["store"], row["day"]].append(row)
+    event_map = {(e["store"], e["day"]): e for e in events}
+    summaries, incidents, rankings, packets = [], [], [], []
+    for method in METHODS:
+        tp = fp = fn = tn = 0
+        nominal_alerts = nominal_minutes = nominal_runs = alerted_nominal_runs = 0
+        for key, rows in by_run.items():
+            event = event_map.get(key)
+            flagged = [r["minute"] for r in rows if r[method] > thresholds[method]]
+            predicted = intervals(flagged)
+            if event is None:
+                nominal_alerts += len(flagged)
+                nominal_minutes += len(rows)
+                nominal_runs += 1
+                alerted_nominal_runs += bool(flagged)
+            for r in rows:
+                truth = bool(event and event["start"] <= r["minute"] < event["end"])
+                alert = r["minute"] in flagged
+                tp += truth and alert
+                fp += not truth and alert
+                fn += truth and not alert
+                tn += not truth and not alert
+            if event is None:
+                continue
+            true_interval = [event["start"], event["end"]]
+            hits = [m for m in flagged if event["start"] <= m < event["end"]]
+            # Match the first overlapping alert interval only during evaluation.
+            matched = next((p for p in predicted if interval_iou(p, true_interval) > 0), None)
+            incidents.append(dict(method=method, store=key[0], day=key[1], cause=event["cause"],
+                detected=bool(hits), delay_minutes=min(hits) - event["start"] if hits else None,
+                predicted_start=matched[0] if matched else None,
+                predicted_end=matched[1] if matched else None,
+                interval_iou=interval_iou(matched, true_interval) if matched else 0))
+            for condition, span in (("true_interval", true_interval), ("matched_alert", matched)):
+                if span is None:
+                    continue
+                selected = [r for r in rows if span[0] <= r["minute"] < span[1]]
+                values = {f: mean(r["deviations"][f] for r in selected) for f in FEATURES}
+                order = sorted(FEATURES, key=lambda f: (-values[f], f))
+                for rank, feature in enumerate(order, 1):
+                    rankings.append(dict(method=method, store=key[0], day=key[1],
+                        interval_condition=condition, start=span[0], end=span[1],
+                        feature=feature, rank=rank, mean_deviation=values[feature]))
+        summaries.append(dict(method=method, threshold=thresholds[method],
+            evaluated_minutes=len(test), tp=tp, fp=fp, fn=fn, tn=tn,
+            precision=tp / (tp + fp) if tp + fp else None,
+            recall=tp / (tp + fn), nominal_run_minutes=nominal_minutes,
+            nominal_alert_minutes=nominal_alerts,
+            nominal_alert_minutes_per_1000=1000 * nominal_alerts / nominal_minutes,
+            nominal_runs=nominal_runs, alerted_nominal_runs=alerted_nominal_runs))
+    # All nine test runs enter the evidence packets, including the six normal runs.
+    # This construction uses observations and scores, never event metadata.
+    for (store, day), rows in by_run.items():
+        spans = intervals(r["minute"] for r in rows if r["mean"] > thresholds["mean"])
+        packets.append(dict(case_id=f"{store}_day{day:02d}", store=store, day=day,
+            timestamps=[rows[0]["timestamp"], rows[-1]["timestamp"]],
+            detector="mean", threshold=thresholds["mean"], alert_intervals=spans,
+            measurements=[{k: r[k] for k in ("timestamp", "minute", *FEATURES)} for r in rows]))
+    return summaries, incidents, rankings, packets
+
+
+def main():
+    rows, events = make_data()
+    write_csv(ROOT / "data/observations.csv", rows)
+    write_csv(ROOT / "data/events.csv", events)
+    reference = fit_reference([r for r in rows if r["split"] == "train"])
+    validation = score_rows([r for r in rows if r["split"] == "validation"], reference)
+    test = score_rows([r for r in rows if r["split"] == "test"], reference)
+    thresholds = calibrate(validation)
+    summary, incidents, rankings, packets = evaluate(test, events, thresholds)
+    fitted = [dict(store=s, phase=p, feature=f, center=c, scale=d)
+              for (s, p), values in reference.items() for f, (c, d) in values.items()]
+    write_csv(ROOT / "results/reference.csv", fitted)
+    write_csv(ROOT / "results/detection_summary.csv", summary)
+    write_csv(ROOT / "results/incident_metrics.csv", incidents)
+    write_csv(ROOT / "results/variable_rankings.csv", rankings)
+    write_csv(ROOT / "results/test_scores.csv", [{k: v for k, v in r.items() if k != "deviations"}
+                                               for r in test])
+    (ROOT / "results/evidence_packets.json").write_text(json.dumps(packets, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M07-event-timing-and-information-at-the-alert}{%
+\section{Event Timing and Information at the
+Alert}\label{M07-event-timing-and-information-at-the-alert}}
+
+\noindent \noindent A repair team needs an incident's approximate start and
+duration to match it with a deployment, outage, or customer report.
+Giving credit to any predicted interval that touches the event rewards a
+full monitoring window as readily as a precise boundary. A useful timing
+evaluation therefore measures overlap and boundary error separately.
+
+\hypertarget{M07-an-overlapping-interval-can-be-imprecise}{%
+\subsection{An Overlapping Interval Can Be
+Imprecise}\label{M07-an-overlapping-interval-can-be-imprecise}}
+
+\noindent \noindent Let \(P\) be a predicted interval and \(A\) the true interval,
+with lengths measured in minutes and endpoints exclusive. Their
+intersection-over-union is
+
+\[
+\operatorname{IoU}(P,A)=\frac{|P\cap A|}{|P\cup A|}.
+\]
+
+The numerator measures minutes shared by the prediction and event. The
+denominator includes every minute in either interval, penalizing
+excessive duration as well as missed portions. For the fixed true event
+\([40,60)\), compare three predictions on the same two-hour monitoring
+window.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Prediction & Any Overlap & Intersection-over-Union & Absolute Onset
+Error \\
+\midrule
+
+Precise: \([40,60)\) & 1 & 1.00 & 0 Minutes \\
+Delayed: \([45,65)\) & 1 & 0.60 & 5 Minutes \\
+Full Window: \([0,120)\) & 1 & \(1/6\) & 40 Minutes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The delayed prediction shares fifteen minutes with the event and covers
+a union of twenty-five minutes. The full-window prediction includes
+every event minute, yet only one-sixth of its duration belongs to the
+event. Onset error supplies an additional boundary measure. A complete
+incident evaluation must also retain missed events and define how
+predictions are matched when several events occur. The retail
+calculation permits one constructed event per run and matches the first
+overlapping alert interval; a missed event has no delay and receives
+zero IoU.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_anomaly_intervals.tex}
+\caption{Precise, delayed, and full-window intervals all intersect the fixed event from minute 40 to minute 60. Their intersection-over-union values are 1.00, 0.60, and one-sixth on a common time axis.}\label{fig:M07_anomaly_intervals}
+\end{figure}
+
+\hypertarget{M07-a-later-observation-can-change-an-earlier-imputation}{%
+\subsection{A Later Observation Can Change an Earlier
+Imputation}\label{M07-a-later-observation-can-change-an-earlier-imputation}}
+
+\noindent \noindent Consider four consecutive observed values
+\([\text{missing},\text{missing},90,92]\) and a training median of 100.
+Forward filling followed by backward filling produces \([90,90,90,92]\).
+If the third observation changes to 900, the first two imputations also
+become 900. An analyst acting at those earlier times would have had no
+access to that later measurement.
+
+A rule using the training median until the first observed value, then
+carrying forward the latest past observation, produces
+\([100,100,90,92]\). Changing the future value leaves the first two
+imputations at 100. The retail program uses the training-group median
+directly for missing features, which also preserves this information
+boundary. The appropriate imputation depends on the process, but a live
+alert must use information available when the alert is issued.
+
+Deleting the two missing rows creates a second problem if time is
+replaced by position. The remaining values were observed at minutes 2
+and 3, while their new row positions are 0 and 1. Preserve timestamps
+and the mapping between rows and elapsed time when constructing plots,
+summaries, and interval scores. An executable chart can otherwise
+present the wrong timing to an analyst or an LLM.
+
+\hypertarget{M07-reproduce-the-timing-and-missingness-comparisons}{%
+\subsection{Reproduce the Timing and Missingness
+Comparisons}\label{M07-reproduce-the-timing-and-missingness-comparisons}}
+
+\noindent \noindent The following program calculates the three interval scores,
+compares imputations under two possible future values, and records the
+original timestamps after missing rows are dropped. The comparison is
+exact and synthetic.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Anomaly_Diagnosis/timing_and_missingness.py}{timing\_and\_missingness.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Hand-checkable temporal evaluation and imputation comparisons."""
+import csv
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def interval_metrics(prediction, truth):
+    start, end = prediction
+    left, right = truth
+    if end <= start or right <= left:
+        raise ValueError("Intervals must have positive length and an exclusive end.")
+    overlap = max(0, min(end, right) - max(start, left))
+    return dict(any_overlap=int(overlap > 0),
+        interval_iou=overlap / (end - start + right - left - overlap),
+        onset_error_minutes=abs(start - left))
+
+
+def causal_fill(values, training_median):
+    output, last = [], training_median
+    for value in values:
+        if value is not None:
+            last = value
+        output.append(last)
+    return output
+
+
+def forward_then_backward(values):
+    output, last = [], None
+    for value in values:
+        if value is not None:
+            last = value
+        output.append(last)
+    following = None
+    for i in range(len(output) - 1, -1, -1):
+        if output[i] is not None:
+            following = output[i]
+        else:
+            output[i] = following
+    return output
+
+
+def main():
+    truth = (40, 60)
+    predictions = {"precise": (40, 60), "delayed": (45, 65), "full_window": (0, 120)}
+    rows = [dict(prediction=name, start=span[0], end=span[1],
+                 **interval_metrics(span, truth)) for name, span in predictions.items()]
+    output = ROOT / "results"
+    output.mkdir(exist_ok=True)
+    with (output / "timing_metrics.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    observed, revised_future = [None, None, 90, 92], [None, None, 900, 92]
+    result = dict(training_median=100, observed=observed,
+        retrospective=forward_then_backward(observed),
+        causal=causal_fill(observed, 100),
+        revised_future=revised_future,
+        retrospective_revised=forward_then_backward(revised_future),
+        causal_revised=causal_fill(revised_future, 100),
+        retained_original_minutes=[i for i, x in enumerate(observed) if x is not None],
+        positions_after_dropping_missing=[0, 1])
+    (output / "missingness_comparison.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(dict(timing=rows, missingness=result), indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
 
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
