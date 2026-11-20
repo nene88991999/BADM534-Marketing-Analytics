@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-18",
+  "updated_on": "2026-11-20",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -155,7 +155,10 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Retail_Accessibility/DATA_DICTIONARY.md",
     "03_Data_and_Code/Retail_Accessibility/AGENTS.md",
     "03_Data_and_Code/Retail_Accessibility/results/README.md",
-    "07_Labs/Retail_Accessibility/README.md"
+    "07_Labs/Retail_Accessibility/README.md",
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md",
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/SOURCE_REVIEW.md",
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -514,6 +517,24 @@ Generated from course.json and the source files identified below. This file cont
     "gnn_training_executed": false,
     "observed_origins": 4,
     "scope": "Exact synthetic network and footprint comparisons; selected observed restaurant origins on a frozen later illustrative street network."
+  },
+  "anomaly_detection_diagnosis": {
+    "resources": "01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md",
+    "review": "01_Resources/26_Anomaly_Detection_and_Diagnosis/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md",
+    "catalog": "01_Resources/26_Anomaly_Detection_and_Diagnosis/catalog.json",
+    "reviewed_on": "2026-11-20",
+    "source_commit": "b5fbc6085ec6c09919803b41e38b9fa5f9f22364",
+    "source_package_executed": false,
+    "status": "resource review and proposed course application; no new released exercise",
+    "proposed_modules": [
+      "M2",
+      "M5",
+      "M7",
+      "M8",
+      "M9"
+    ],
+    "scope": "Reviewed paper and selected repository sources; no reproduction of published benchmark results."
   }
 }
 ```
@@ -5345,6 +5366,176 @@ Ask an assistant to explain one transformation or propose one extension, then in
 ## Optional Spatial Modeling Extension
 
 [The source guide](../../01_Resources/25_Spatial_Networks/README.md) links city2graph's proximity, transport, and graph-learning examples. Inspect dependencies and inputs before choosing an environment. Compare a simple tabular model with a graph model on the same features, target, splits, and decision metric. Future-period evaluation and transfer to a new city answer different questions. Geographic proximity alone does not establish causal spillovers.
+
+---
+
+## Source: 01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md
+
+# Anomaly Detection and Marketing Diagnosis
+
+A retailer observing a sudden fall in completed purchases must decide whether to change advertising, repair checkout, replenish inventory, or investigate measurement. The same sales decline can arise through several mechanisms. An unusual observation identifies a reason to investigate; the appropriate action depends on evidence about the process that generated it.
+
+## Detection, Localization, and Interpretation
+
+[Stanzione, Barbe, Parrino, Fourmann, and Boniol](https://arxiv.org/abs/2610.01168v1) distinguish detecting an anomaly, locating the dimensions involved, and interpreting the event. Their SHAD benchmark contains 215 series with 171 variables, generated through controlled failures in a real distributed storage system. The labels identify the components targeted by those failures. This setting supports separate evaluation of an alert, its attributed variables, and an account of the underlying event.
+
+Figures 7 and 8 provide the strongest course connection. Several detectors perform well on detection while their variable rankings remain close to a random baseline for identifying the labeled components. The labels concern directly targeted components; downstream symptoms can carry strong predictive signals. A variable that helps recognize an event therefore need not identify its origin.
+
+Figure 9 evaluates five frozen LLMs using statistical features, plots, and generated descriptions. Localization performs poorly under these tested procedures. Additional experiments provide correct anomaly-presence and component information. These comparisons describe performance conditional on ideal inputs. The evidence concerns one storage system and the specified prompting procedures; it does not establish performance for marketing data or a separately evaluated agent workflow.
+
+## Managerial Applications
+
+The distinction transfers to a checkout interruption. Payment latency, failed orders, conversion, support contacts, and refund requests may move together. The largest standardized change might occur in complaints after customers encounter the interruption. That variable could be useful for detection while a change to the payment service remains the relevant intervention. Deployment logs, transaction traces, and a controlled repair comparison supply different evidence from an anomaly score.
+
+The existing restaurant-availability case offers a second application. A regional increase in recorded unavailability can reflect genuine service disruption, changing geographic coverage, or a collection failure. Assess the observation count and restaurant composition alongside the status rate. The public availability observations support analysis of recorded status. An equipment diagnosis requires maintenance evidence or an explicitly constructed example with known causes.
+
+For mHealth, a discontinuity in recorded intake can reflect changed logging, missing records, units, or changed behavior. Keep recording completeness separate from nutritional quantities. A detected deviation can motivate a data assessment or a request for clarification; it does not establish a health condition or a customer's intent.
+
+## Separate the Evaluation Questions
+
+| Question | Evidence and Evaluation | Managerial Consequence |
+| --- | --- | --- |
+| Did a relevant event occur? | Labeled incidents, held-out normal periods, precision, recall, false alerts per day, and detection delay | Determines whether staff should investigate |
+| Which variables or components are implicated? | Variable-level labels, explicitly defined target components, and comparisons with random rankings | Directs investigation toward an appropriate part of the process |
+| What account is supported? | Claims linked to observations, domain definitions, alternative explanations, and incident records | Separates a supported diagnosis from a plausible story |
+| How serious is the event? | Affected customers, duration, lost service, recovery cost, and the customer's purpose | Determines priority and the proportional response |
+| Did the response help? | A credible intervention comparison and subsequent customer outcomes | Evaluates the remedy |
+
+These rows specify a proposed marketing evaluation. They are not a replication of the SHAD metrics. A rare observation can be benign, and a frequent practice can still harm customers. Statistical unusualness and the desirability of intervention answer different questions.
+
+## AI-Assisted Coding and Evaluation
+
+The [repository inspection](SOURCE_REVIEW.md) identifies concrete teaching opportunities. Its loader's forward-fill option also backward-fills leading gaps, which can introduce future information in a live alert exercise. Its image generator drops incomplete rows and plots positions after that deletion, which makes timestamp preservation consequential. Its temporal evaluator accepts any overlap with a labeled interval, so a very broad predicted interval can receive credit despite poor localization. These are source-inspection findings, with the relevant functions and scope recorded in the review.
+
+Students could ask a coding assistant to implement an alert and then independently assess preprocessing, timestamps, the held-out population, and the meaning of a successful test. A useful comparison supplies the same information in three forms: selected plots, computed summaries, and summaries with a variable dictionary. Ground-truth incident descriptions belong in the evaluator. Giving them to the model changes the task and must be identified explicitly.
+
+## Connections to Existing Course Material
+
+| Existing Material | Focused Extension |
+| --- | --- |
+| [M2 §§2.16–2.17](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) | Separate an unusual business outcome from changing coverage, missing data, and collection errors |
+| [M5 §§5.6 and 5.20](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) | Evaluate structured explanations against incident evidence; assess the scoring rule itself |
+| [M7 §§7.4, 7.9, 7.13, and 7.18](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) | Compare detection, component localization, and explanation; preserve the live information set |
+| [M8 §§8.6 and 8.11](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) | Evaluate an AI-assisted investigation by supported claims, investigation cost, and customer outcomes |
+| [M9 §§9.3 and 9.10](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) | Examine the evidence required before an organization acts on a diagnosis |
+
+An optional 20–25 minute application within Session 11's existing practice time would provide the closest fit. The [case design](CASE_DESIGN.md) specifies a retail example and two editable TikZ diagrams for later development. These suggestions introduce no released assessment or schedule change.
+
+## Sources and Reuse
+
+The [catalog](catalog.json), namespace `anomaly-diagnosis`, records paper version 1, the repository commit, file hashes, and rights. The unmodified paper is saved as [Stanzione et al., 2026](local_sources/Stanzione_Barbe_Parrino_Fourmann_Boniol_WorkingPaper2026.pdf) under CC BY 4.0. Selected repository files are retained under `local_sources/shad/` with the complete AGPL-3.0-only license and citation metadata. The repository snapshot is a reference selection, not an installable copy of the complete benchmark. No upstream program, notebook, detector benchmark, or paid LLM request was executed.
+
+This Markdown companion explains the course-relevant findings and describes Figures 7–9 in words. It omits the full mathematical details, metric catalog, experimental registry, literature review, and remaining figures. Consult the original paper for those materials. The [source review](SOURCE_REVIEW.md) distinguishes the paper's claims from the inspected repository's behavior and the proposed teaching applications.
+
+---
+
+## Source: 01_Resources/26_Anomaly_Detection_and_Diagnosis/SOURCE_REVIEW.md
+
+# SHAD: Source and Evaluation Review
+
+Paper: [arXiv:2610.01168v1](https://arxiv.org/abs/2610.01168v1), submitted October 1, 2026. Authors: Roberto Stanzione, Jules Barbe, Magali Parrino, Jérémie Fourmann, and Paul Boniol. The local paper is an unchanged PDF download under CC BY 4.0. Figures 7–9 on PDF pages 8–9 were visually inspected alongside the methods and relevant appendix text.
+
+Repository: [scality/shad](https://github.com/scality/shad/tree/b5fbc6085ec6c09919803b41e38b9fa5f9f22364), commit `b5fbc6085ec6c09919803b41e38b9fa5f9f22364`, dated November 12, 2026, inspected November 20, 2026. The declared package is `shad-benchmark` 1.0.0, Python >=3.9, with NumPy and pandas as core dependencies. The code and datasets are declared AGPL-3.0-only. The paper version and repository commit have different dates; inspecting the latter does not verify the exact implementation used to produce every published result.
+
+## Useful Repository Components
+
+| Source | What It Supplies | Potential Course Use |
+| --- | --- | --- |
+| `shad/dataset.py` | Separate telemetry, time labels, variable labels, and annotation access; explicit nominal/anomalous split | Inspect label leakage and the information supplied to an analyst |
+| `shad/metrics.py` | Variable names, units, components, and definitions | Build a domain dictionary that an LLM can retrieve without receiving answers |
+| `shad/annotations.py` | Structured event timing, component, and incident descriptions | Distinguish evaluation evidence from prediction inputs |
+| `examples/baseline_detector.py` | Median and median-absolute-deviation baseline; variable scores | Motivate a transparent first comparison before adding complex detectors |
+| `Scripts/interpretabiliy_main.py` | Structured questions about presence, location, timing, type, and severity | Require separately assessable claims from an LLM |
+| `Scripts/eval_llm.py` | Explicit matching and classification rules | Examine what a reported score actually rewards |
+| `docs/docs.html` | Documentation for a static dataset explorer and contextual annotations | Inform an interactive course wiki with accessible evidence behind a claim |
+
+The README and selected source files are copied unchanged. Their relative links to omitted repository files may not resolve within this partial snapshot; the catalog provides pinned upstream URLs. No benchmark data, saved LLM results, model weights, or API credentials are included.
+
+## Evaluation Boundaries in the Paper
+
+The detection protocol trains semi-supervised methods on 83 nominal series and evaluates on 132 series containing injected events. Normal timestamps remain within the latter series, so the evaluation does include negative time points. A deployment study additionally needs held-out normal runs to measure false alerts over uninterrupted operation. The experiment's event prevalence and failure mix are designed properties, not estimates of operational incident frequency.
+
+Figure 7 reports a group of methods without statistically significant pairwise differences at the specified testing level. That result does not establish performance equivalence. The anomaly-type comparisons matter because a single average can conceal weak detection of a commercially important failure.
+
+Section 4 uses VUS-PR with a 25-point buffer for detection and NDCG for variable rankings. A buffer permits timing tolerance. A course exercise should state how that tolerance relates to the time available for an intervention. NDCG concerns a ranking against the specified labels; causal evidence requires an additional design.
+
+The level-1 and level-2 LLM experiments supply correct presence and component information. A comparison using actual detector outputs would also incorporate upstream errors. The description condition first generates prose from an image, then answers the questionnaire from that prose. It therefore introduces a representation step before the final answer. Comparing its output with a plot-based answer does not isolate model reasoning from information lost during summarization.
+
+## Code Findings Relevant to Adaptation
+
+### Information Available at the Alert Time
+
+In [`shad/dataset.py`](https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/shad/dataset.py), `_fill(df, "ffill")` calls `df.ffill().bfill()`. Leading missing observations can acquire a later value. The default `fill=None` preserves missing values; the concern applies when the filling option is selected. For a live monitoring exercise, preserve unknown leading values or use a training-derived rule that respects time. Retrospective reconstruction and online detection have different permissible information sets.
+
+The same file's `Series.plot()` chooses labeled dimensions by default and shades true intervals. That display is useful for understanding annotated incidents. Supplying it to an LLM while evaluating unsupervised localization would reveal answers. The separate benchmark image generator removes label columns; the finding about `Series.plot()` does not establish leakage in the paper's image experiment.
+
+### Timestamps and Representations
+
+[`Scripts/generate_images.py`](https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/generate_images.py) calls `dropna()` across a file, removes the timestamp, and plots the remaining values against positional indices. If rows are deleted, those positions differ from the original CSV positions used by an evaluator. Even without deletion, elapsed minutes and row counts differ when sampling intervals are irregular. A course adaptation should retain timestamps and an explicit mapping to the evaluator's intervals.
+
+[`Scripts/compute_features.py`](https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/compute_features.py) drops missing values separately within each variable and passes `catch24=True` to `pycatch22`. Thus the inspected implementation requests two additional features beyond the conventional 22-feature set. Per-variable deletion can also remove different times from different series. Record the representation actually supplied and preserve any timing information required by the question.
+
+### Temporal and Component Scores
+
+In [`Scripts/eval_llm.py`](https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/eval_llm.py), `time_matches()` returns true when any labeled point overlaps a predicted inclusive row-index interval on selected columns. It does not penalize an excessively wide interval. When exact column matching fails, its fallback can select all labeled columns on the predicted server even if a disk was specified. A full-series interval could therefore receive temporal credit without a precise incident boundary. Report interval intersection-over-union, onset error, and missed events separately in a course adaptation, with a defined convention for empty and multiple intervals.
+
+`dimension_matches()` matches a server and disk when the annotation provides both, or the server when only that component is provided. It does not require the exact metric name within a component. Correctly predicting no anomaly also receives localization credit through `evaluate_row()`. Consequently, localization accuracy in this evaluator is neither exact-variable accuracy nor a score conditional only on anomalous cases. Keep the denominator and matching unit beside the result.
+
+The classification evaluator reports both macro-F1 and weighted-F1. Its macro average includes configured classes with zero support as zero. Identify the class set and averaging rule before comparing results across subsets. F1 is not classification accuracy.
+
+### Baselines and Answer Information
+
+[`examples/baseline_detector.py`](https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/examples/baseline_detector.py) estimates robust scaling from nominal runs and averages standardized deviations for detection. Its variable score averages over ground-truth anomalous timestamps. That localization comparison is conditional on knowing the event interval. A complete alert workflow must obtain the interval from the detector or identify the exercise as an ideal-information comparison.
+
+The example's hand-written `average_precision()` ranks individual observations. Its result can depend on the order of tied scores. A course implementation should use a documented tie-aware metric and verify it on a small tied-score example. The file supplies a simple baseline, not the paper's complete 18-detector VUS-PR experiment.
+
+### Reproduction and Model Versions
+
+The inspected `Scripts/interpretabiliy_main.py` uses one run and `mistral-large-latest`; the paper describes multiple models and five-run averages. An alias can change without a source-code change. Reproducing a particular comparison requires dated model identifiers, prompts, run settings, parsed responses, and scoring conventions. The description runner reads `keys.env`, while the README installation example mentions `.env`; configuration should be reconciled before any execution.
+
+These findings identify conditions to check during adaptation. No upstream program or API request was executed, and no claim is made about their quantitative effect on the published results.
+
+## Implications for an Interactive Wiki
+
+The upstream website uses static HTML and JavaScript, with a series explorer connected to CSV observations and XML event metadata. This is compatible with the course's intended GitHub Pages architecture. A course version could let students choose a fixed incident, inspect selected variables, compare a model explanation with an evidence table, and reveal the incident record after answering. Store the selected data and dictionary with the site, pin versions, and provide the same information in Markdown and a downloadable table.
+
+Original course code can implement that interaction independently. Any copied upstream code must retain its AGPL terms and notices. The website's source and documentation were inspected; browser interaction and hosting behavior were not tested.
+
+---
+
+## Source: 01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md
+
+# Diagnosing a Fall in Completed Purchases
+
+A retailer must choose among changing a campaign, repairing checkout, replenishing inventory, and investigating its measurement system. Fewer recorded purchases can accompany each situation. A useful investigation first determines which observations are unusual, then evaluates the evidence for the proposed intervention.
+
+## Constructed Incidents and Available Information
+
+Use an original synthetic panel with one observation per store and minute. Include visits, checkout attempts, completed payments, payment latency, stock availability, support contacts, and collection completeness. Define counts, rates, denominators, and elapsed time in a data dictionary. Assign separate constructed episodes for a payment-service interruption, a demand increase after a campaign, and a collection failure. Include normal periods and a known calendar pattern. Store the imposed cause and event boundaries in an evaluation table separate from the model inputs.
+
+This design would make the cause known by construction. It would support evaluation of a diagnostic procedure under specified mechanisms. The distribution of simulated events would not estimate their frequency in a retailer's operations. The existing restaurant and mHealth examples could then supply interpretation questions using their actual observation limits.
+
+## Sequence of Comparisons
+
+1. **Detect.** Fit a transparent baseline using earlier normal observations. Compare a robust deviation rule with a simple alternative. Select thresholds on a separate validation period. Report false alerts over held-out normal periods, incident recall, and detection delay on later episodes.
+2. **Localize.** Compare variable scores within a predicted interval with scores within the true interval. Keep these information conditions separate. Distinguish the initiating component from outcomes that respond to it.
+3. **Interpret.** Give an LLM computed summaries and a variable dictionary, with no incident labels. Require a time interval, implicated variables, a proposed explanation, observed support, alternatives, and an explicit acknowledgment when the evidence is insufficient. An alternative arm can receive selected plots of the same observations.
+4. **Evaluate.** Score factual support, event timing, component identification, and unsupported causal claims separately. Check a deliberately broad predicted interval to establish what the timing metric rewards. Repeat across the constructed incident types and normal periods.
+5. **Choose an Action.** Ask which additional observation would distinguish the leading explanations. Compare customer exposure and investigation costs before proposing a response. Intervention effects require either the constructed mechanism or a separately justified empirical comparison.
+
+The exercise should retain timestamps, missingness indicators, a chronological split, seeds, dependency versions, and a record of each transformation. Detailed runnable Python belongs beside the data in `03_Data_and_Code`, with identical code in the lecture notes when the example is implemented. No numerical result or executed exercise is supplied by this design.
+
+## Analytical Figures
+
+An editable TikZ diagram could show a payment-service interruption leading to latency and payment failures, followed by fewer purchases and more support contacts. Mark a downstream outcome as strongly predictive while the intervention targets the payment service. The arrows would state the imposed synthetic mechanism, with the role of observations and interventions identified separately.
+
+A second TikZ diagram could show the true event interval alongside a precise prediction, a delayed prediction, and a full-window prediction. Pair the diagram with a table of overlap, interval intersection-over-union, and onset error. All panels should use the same time scale, Illinois Blue `#13294B` and Orange `#FF5F05`, and distinct line styles or labels. This comparison makes the difference between detecting an event and localizing it visible.
+
+## Customer Judgment and Organizational Responsibility
+
+An automated diagnosis can trigger an account restriction, an unsolicited message, or a change in service. Require evidence proportionate to that consequence and a way to correct an erroneous inference. In mHealth, changed logging alone supplies no basis for inferring a medical condition or a customer's abandoned goal. In the retail case, changed purchasing alone supplies no basis for asserting misconduct. The customer can remain an informed participant in resolving an uncertain interpretation.
+
+The primary placement is optional practice within Session 11, linked to M7's validation and explanation material. M2 can revisit measurement failures, M5 can evaluate textual claims, and M8–M9 can examine the response and its justification. The proposal preserves the existing 15-meeting course plan and establishes no new student requirement.
 
 ---
 

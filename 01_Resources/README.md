@@ -96,3 +96,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Spatial Networks and Retail Access
 
 [The spatial-network collection](25_Spatial_Networks/README.md) records the city2graph review, pinned reference files, source licenses, and connections to retail access. [Original executed course programs](../03_Data_and_Code/Retail_Accessibility/README.md) separate graph reachability, map footprints, recorded restaurant availability, and customer behavior. The collection has its own `spatial-networks` catalog namespace.
+
+## Anomaly Detection and Marketing Diagnosis
+
+[The SHAD collection](26_Anomaly_Detection_and_Diagnosis/README.md) separates detecting an unusual pattern, locating implicated variables, interpreting an event, and choosing a response. It preserves the paper and selected repository files, with a source review covering timing, missingness, labels, and evaluation rules. Proposed retail, restaurant-availability, and mHealth applications connect to M2, M5, M7, M8, and M9. These are resource suggestions; no new exercise or requirement is released. The collection uses the `anomaly-diagnosis` catalog namespace.

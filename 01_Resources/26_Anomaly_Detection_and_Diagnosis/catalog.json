@@ -1,0 +1,202 @@
+{
+  "namespace": "anomaly-diagnosis",
+  "reviewed_on": "2026-11-20",
+  "source_commit": "b5fbc6085ec6c09919803b41e38b9fa5f9f22364",
+  "upstream_executed": false,
+  "review": "SOURCE_REVIEW.md",
+  "case_design": "CASE_DESIGN.md",
+  "records": [
+    {
+      "id": "AD01",
+      "title": "Detect, Explain, Interpret: An End-to-End Benchmark for Time Series Anomaly Detection, Explainability and Interpretability",
+      "authors": [
+        "Roberto Stanzione",
+        "Jules Barbe",
+        "Magali Parrino",
+        "Jérémie Fourmann",
+        "Paul Boniol"
+      ],
+      "url": "https://arxiv.org/abs/2610.01168v1",
+      "version": "arXiv v1, submitted 2026-10-01",
+      "rights": "CC BY 4.0; original paper preserved unchanged with author attribution.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "https://arxiv.org/abs/2610.01168v1",
+      "modules": [
+        "M2",
+        "M5",
+        "M7",
+        "M8",
+        "M9"
+      ],
+      "teaching_use": "Separate detection, component localization, interpretation, and response; distinguish ideal-label assistance from actual pipeline performance.",
+      "scope": "Controlled failures in one distributed storage system; course applications are proposed transfers.",
+      "files": [
+        {
+          "path": "local_sources/Stanzione_Barbe_Parrino_Fourmann_Boniol_WorkingPaper2026.pdf",
+          "source_url": "https://arxiv.org/pdf/2610.01168v1",
+          "sha256": "950499f77e6d3c4976ea430054e3e207f7cf4f14f0301010165cdbe8be0fc56a",
+          "bytes": 6828813,
+          "transformation": "None; unchanged PDF download.",
+          "companion": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "AD02",
+      "title": "SHAD Benchmark Repository",
+      "url": "https://github.com/scality/shad",
+      "version": "b5fbc6085ec6c09919803b41e38b9fa5f9f22364",
+      "commit_date": "2026-11-12",
+      "package_version": "1.0.0",
+      "rights": "AGPL-3.0-only; selected unchanged reference sources with complete upstream LICENSE and CITATION.cff.",
+      "license_path": "local_sources/shad/LICENSE",
+      "modules": [
+        "M1",
+        "M2",
+        "M5",
+        "M7",
+        "M8"
+      ],
+      "teaching_use": "Inspect information leakage, timing representations, metric definitions, model versioning, and static explorer architecture.",
+      "verification": "Static inspection only; no source package, notebook, benchmark, or API request executed.",
+      "scope": "Selected reference files; no full dataset, model weights, or complete benchmark clone.",
+      "files": [
+        {
+          "path": "local_sources/shad/README.md",
+          "source_path": "README.md",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/README.md",
+          "git_blob_sha": "6419bec9ac8edf2fae38f82f7335e69c7fa6d0cb",
+          "sha256": "93e1eb1f5d737e1022ff91508a4983e610e73eab044173e2450eca98fadc1841",
+          "bytes": 11936,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/LICENSE",
+          "source_path": "LICENSE",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/LICENSE",
+          "git_blob_sha": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+          "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+          "bytes": 34523,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/CITATION.cff",
+          "source_path": "CITATION.cff",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/CITATION.cff",
+          "git_blob_sha": "3503988ee41ad2884592e61eee6999a26480d081",
+          "sha256": "740b5580d75e73f6a5906d7477e700f3ed0c8bc09500a086cef5a4a20bc2e814",
+          "bytes": 1234,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/pyproject.toml",
+          "source_path": "pyproject.toml",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/pyproject.toml",
+          "git_blob_sha": "b426647b36a1ef4c4e4e1aecce8fcdb3426fe249",
+          "sha256": "35f724c28a87854f7659a1f18232d406f17e5e4c4d50d863cd112b744082d8bb",
+          "bytes": 1173,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/shad/dataset.py",
+          "source_path": "shad/dataset.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/shad/dataset.py",
+          "git_blob_sha": "4d759e2dee9db6585058529bc666bb6e8665c277",
+          "sha256": "43eef73a18feb50ca026ae00340629e1cff84f86b83da9240c30f8632da8ce31",
+          "bytes": 15348,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/shad/annotations.py",
+          "source_path": "shad/annotations.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/shad/annotations.py",
+          "git_blob_sha": "e820206f1afe639c9422d541cc9889af253d0623",
+          "sha256": "bb70b52f4860b122112bcd87e214b08f6df226366de28f605931257171dcde80",
+          "bytes": 7152,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/shad/metrics.py",
+          "source_path": "shad/metrics.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/shad/metrics.py",
+          "git_blob_sha": "3755af281f3067c4d010e6990d25b614aa14af61",
+          "sha256": "76f44e8eb566ad263b9d0040acdcb0a3fc561e21b0d48346aee717ed2ea8cc87",
+          "bytes": 10521,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/examples/baseline_detector.py",
+          "source_path": "examples/baseline_detector.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/examples/baseline_detector.py",
+          "git_blob_sha": "b33c17d1db5c07bc9fbfb8ccd1de6ac5946aec9d",
+          "sha256": "cc6223ec71a8c42acd9063226667b571cefe2d1e608e8ba4efc95d6dfaaac9b4",
+          "bytes": 2216,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/Scripts/interpretabiliy_main.py",
+          "source_path": "Scripts/interpretabiliy_main.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/interpretabiliy_main.py",
+          "git_blob_sha": "5996a3fbc0185133514e5e137ce26f2392f3ea7d",
+          "sha256": "c39f55a4f00c1c8e149bd1c9b7f203eb87be087dde30d4c6d7e58b6533d26702",
+          "bytes": 4901,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/Scripts/description_runner.py",
+          "source_path": "Scripts/description_runner.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/description_runner.py",
+          "git_blob_sha": "dd96b5cde7b75564a162bca42d2e278ee066cd95",
+          "sha256": "98626ccd7186d7e555ec7031bd5f8737f917041c5c1957b5b66cc95ac7ef4fc3",
+          "bytes": 6042,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/Scripts/eval_llm.py",
+          "source_path": "Scripts/eval_llm.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/eval_llm.py",
+          "git_blob_sha": "bf586ac533ddec582683de0cb775209abf69064c",
+          "sha256": "5af7ba1edbe4db110f7cd67ee6ba9e448383d99a876664d04a8d19099b0a7295",
+          "bytes": 8052,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/Scripts/generate_images.py",
+          "source_path": "Scripts/generate_images.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/generate_images.py",
+          "git_blob_sha": "ca0bdf0509f597a8e4382fde2e986185b7bf3f91",
+          "sha256": "2c490bae200b9bcfcda146e2df4a8ac912958a3b37d8d35ff781fde61c8b92c9",
+          "bytes": 2840,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/Scripts/compute_features.py",
+          "source_path": "Scripts/compute_features.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/Scripts/compute_features.py",
+          "git_blob_sha": "99b7920f7dd5b73fca2410cafa19b4360f409532",
+          "sha256": "97a00d2e956e3e2c1b8169382955ddc0833c9eec4388261dd926d381cb1a046e",
+          "bytes": 4142,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/tests/test_loader.py",
+          "source_path": "tests/test_loader.py",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/tests/test_loader.py",
+          "git_blob_sha": "96f223034e8e666566e5be2060ba8589f1446f13",
+          "sha256": "5747805c344950200ec19687eae8a0317164ec995d7b07e60809213e21f2bb32",
+          "bytes": 1884,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        },
+        {
+          "path": "local_sources/shad/docs/docs.html",
+          "source_path": "docs/docs.html",
+          "source_url": "https://github.com/scality/shad/blob/b5fbc6085ec6c09919803b41e38b9fa5f9f22364/docs/docs.html",
+          "git_blob_sha": "03d5f56c34b350b2df9cc5e1381e4bdd7b179abc",
+          "sha256": "aac4f2d1324f1c70fc7e74184a7a1e57f086eddd96c93d01628c55bda008004c",
+          "bytes": 21964,
+          "transformation": "None; UTF-8 bytes match the upstream Git blob."
+        }
+      ]
+    }
+  ]
+}

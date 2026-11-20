@@ -3,7 +3,7 @@
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-18",
+  "updated_on": "2026-11-20",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -146,7 +146,10 @@
     "03_Data_and_Code/Retail_Accessibility/DATA_DICTIONARY.md",
     "03_Data_and_Code/Retail_Accessibility/AGENTS.md",
     "03_Data_and_Code/Retail_Accessibility/results/README.md",
-    "07_Labs/Retail_Accessibility/README.md"
+    "07_Labs/Retail_Accessibility/README.md",
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md",
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/SOURCE_REVIEW.md",
+    "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -505,5 +508,23 @@
     "gnn_training_executed": false,
     "observed_origins": 4,
     "scope": "Exact synthetic network and footprint comparisons; selected observed restaurant origins on a frozen later illustrative street network."
+  },
+  "anomaly_detection_diagnosis": {
+    "resources": "01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md",
+    "review": "01_Resources/26_Anomaly_Detection_and_Diagnosis/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/26_Anomaly_Detection_and_Diagnosis/CASE_DESIGN.md",
+    "catalog": "01_Resources/26_Anomaly_Detection_and_Diagnosis/catalog.json",
+    "reviewed_on": "2026-11-20",
+    "source_commit": "b5fbc6085ec6c09919803b41e38b9fa5f9f22364",
+    "source_package_executed": false,
+    "status": "resource review and proposed course application; no new released exercise",
+    "proposed_modules": [
+      "M2",
+      "M5",
+      "M7",
+      "M8",
+      "M9"
+    ],
+    "scope": "Reviewed paper and selected repository sources; no reproduction of published benchmark results."
   }
 }
