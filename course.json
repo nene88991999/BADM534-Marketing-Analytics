@@ -3,7 +3,7 @@
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-20",
+  "updated_on": "2026-11-22",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -161,7 +161,10 @@
     "03_Data_and_Code/Anomaly_Diagnosis/AGENTS.md",
     "03_Data_and_Code/Anomaly_Diagnosis/LLM_EXERCISE.md",
     "03_Data_and_Code/Anomaly_Diagnosis/results/README.md",
-    "07_Labs/Anomaly_Diagnosis/README.md"
+    "07_Labs/Anomaly_Diagnosis/README.md",
+    "01_Resources/27_AI_Inference_Efficiency/README.md",
+    "01_Resources/27_AI_Inference_Efficiency/SOURCE_REVIEW.md",
+    "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -543,5 +546,23 @@
     "independent_checks": 8,
     "llm_calls": 0,
     "synthetic_observations": 4320
+  },
+  "inference_efficiency": {
+    "resources": "01_Resources/27_AI_Inference_Efficiency/README.md",
+    "review": "01_Resources/27_AI_Inference_Efficiency/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md",
+    "catalog": "01_Resources/27_AI_Inference_Efficiency/catalog.json",
+    "reviewed_on": "2026-11-22",
+    "source_commit": "3ca321f2a356bd29d99c5d5fcea4018960f8b691",
+    "source_package_executed": false,
+    "status": "resource review and proposed M7 application; no new released exercise",
+    "primary_module": "M7",
+    "proposed_modules": [
+      "M1",
+      "M4",
+      "M7",
+      "M8"
+    ],
+    "scope": "Paper and selected implementation sources reviewed; no reproduction of published inference or training results."
   }
 }

@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-20",
+  "updated_on": "2026-11-22",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -170,7 +170,10 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Anomaly_Diagnosis/AGENTS.md",
     "03_Data_and_Code/Anomaly_Diagnosis/LLM_EXERCISE.md",
     "03_Data_and_Code/Anomaly_Diagnosis/results/README.md",
-    "07_Labs/Anomaly_Diagnosis/README.md"
+    "07_Labs/Anomaly_Diagnosis/README.md",
+    "01_Resources/27_AI_Inference_Efficiency/README.md",
+    "01_Resources/27_AI_Inference_Efficiency/SOURCE_REVIEW.md",
+    "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -552,6 +555,24 @@ Generated from course.json and the source files identified below. This file cont
     "independent_checks": 8,
     "llm_calls": 0,
     "synthetic_observations": 4320
+  },
+  "inference_efficiency": {
+    "resources": "01_Resources/27_AI_Inference_Efficiency/README.md",
+    "review": "01_Resources/27_AI_Inference_Efficiency/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md",
+    "catalog": "01_Resources/27_AI_Inference_Efficiency/catalog.json",
+    "reviewed_on": "2026-11-22",
+    "source_commit": "3ca321f2a356bd29d99c5d5fcea4018960f8b691",
+    "source_package_executed": false,
+    "status": "resource review and proposed M7 application; no new released exercise",
+    "primary_module": "M7",
+    "proposed_modules": [
+      "M1",
+      "M4",
+      "M7",
+      "M8"
+    ],
+    "scope": "Paper and selected implementation sources reviewed; no reproduction of published inference or training results."
   }
 }
 ```
@@ -865,6 +886,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Anomaly Detection and Diagnosis
 
 [Original retail monitoring cases](03_Data_and_Code/Anomaly_Diagnosis/README.md) extend M7 §§7.29–7.30 with alert evaluation, variable ranking, event timing, and supported interpretation. Two full Python programs and two editable TikZ figures connect the [SHAD review](01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) to a synthetic checkout interruption, campaign, and recording failure. Session 11 uses twenty minutes of existing application time. The [longer lab](07_Labs/Anomaly_Diagnosis/README.md) is optional ungraded practice.
+
+## AI Inference Efficiency
+
+[The inference-efficiency review](01_Resources/27_AI_Inference_Efficiency/README.md) proposes a short extension of M7 §7.27. Comparisons distinguish accepted tokens, elapsed time, task correctness, and cost, with related connections to M1 model-version checks, M4 clustering, and M8 workflow evaluation. The [case design](01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md) is a resource suggestion; no lecture, meeting allocation, or assessment requirement changes with this review.
 
 ---
 
@@ -5775,6 +5800,153 @@ Change the future value in the four-observation missingness example. Verify that
 Follow the [LLM exercise](../../03_Data_and_Code/Anomaly_Diagnosis/LLM_EXERCISE.md), or write the same structured diagnosis independently. Supply only an evidence packet and the variable dictionary before evaluating against the public incident table. Assess numerical support and causal hypotheses separately. Include normal runs in the evaluation and retain unsupported, invalid, and missing responses.
 
 An extension can introduce smaller incidents, simultaneous causes, a drifting baseline, or an independently failing completeness monitor. Choose the change and evaluation criteria before seeing its results. Use separate new runs for final evaluation after revising thresholds, representations, or prompts.
+
+---
+
+## Source: 01_Resources/27_AI_Inference_Efficiency/README.md
+
+# AI Inference Efficiency and the Cost of a Useful Response
+
+A retailer choosing a customer-service assistant must compare response quality, waiting time, operating cost, and the consequences of an incorrect answer. A model that generates more tokens per computation can still take longer to serve a request. Specializing the model for the retailer's products can also change the performance of other components that depend on it.
+
+## Drafting and Verification
+
+[Galgani and coauthors](https://arxiv.org/abs/2611.25813v1) study multi-token prediction for speculative decoding. A small drafting component proposes several tokens. The larger target model evaluates those proposals together and supplies the accepted continuation. Their G-MTP architecture reuses the target's internal representations and attention cache, uses one shared drafting block, and reduces vocabulary-projection work for the smaller models through clustering.
+
+Verification here concerns agreement with the target model's decoding rule. It does not establish factual accuracy, executable code, or an appropriate customer response. The [foundational speculative-decoding result](https://proceedings.mlr.press/v202/leviathan23a.html) preserves the target distribution under its specified sampling procedure. Preserving a target's behavior leaves the substantive quality of that behavior as a separate evaluation question. The reviewed repository uses greedy generation.
+
+## More Accepted Tokens Can Accompany Slower Generation
+
+The server experiments use 880 SPEED-Bench prompts, bfloat16 precision, vLLM 0.26, and batch size one. The 26B mixture-of-experts model runs on two H100 GPUs. In Table 5, expanding its draft from four to twelve tokens increases block efficiency from 3.27 to 4.39, while generation throughput falls from 334.0 to 209.5 tokens per second. Relative to the same 248.9-token-per-second baseline, the reported speedup falls from 1.34 to 0.84. The longer draft therefore produces a slowdown under this configuration.
+
+Block efficiency counts output progress per recorded verification step. Drafting and verification both take time, and verification cost depends on the architecture, hardware, and workload. Figure 3 places increasing block efficiency beside throughput curves that eventually fall. A deployment comparison should measure the time and cost of completing the actual task, including retrieval, checks, and review when those steps are required.
+
+## Specialization Changes Component Compatibility
+
+Table 4 evaluates domain adaptation on 500 test examples per dataset, with a training lookahead of three and an evaluation lookahead of seven. On SciQA, tuning only the target raises teacher-forced next-token accuracy from 68.40% to 99.23%, while block efficiency falls from 2.51 to 1.60. Tuning the drafter as well restores efficiency: the joint regime reports 2.96, and the two-stage regime reports 2.80. The latter freezes the adapted target while updating the drafter.
+
+The result supplies an example of a change that improves one component while disrupting compatibility elsewhere. For an AI-assisted marketing workflow, a model update should trigger evaluation of the complete configuration, including dependent models and interfaces. The paper measures token prediction and decoding efficiency on SciQA and GSM8K. Customer-service accuracy and business outcomes require their own evaluation.
+
+## A Large Computational Saving Can Produce a Small Service Gain
+
+The smaller drafters cluster a vocabulary of 262,144 tokens into 2,048 groups and evaluate token logits within 32 selected groups of 128 tokens. Section 3.3 reports about 43 times fewer multiply-accumulate operations in this projection. That quantity concerns one operation within a larger process.
+
+Table 3 evaluates 456 prompts on a Pixel 11 Edge TPU with quantized E2B and E4B models, greedy decoding, and a draft length of three. Adding clustered projection reduces drafting time to 81% and 79% of the full-projection comparison, respectively. Median acceptance falls slightly, and the reported additional decoding speedup is only 1.01 for each model. These results connect clustering to computational design while showing why an intermediate saving needs an end-to-end comparison. Battery consumption and broad device-level memory benefits remain future-work questions in the paper.
+
+## Accuracy Needs an Explicit Unit
+
+The repository's next-token calculation supplies the reference answer as context and checks each answer token against the target's top prediction. It reports both token-weighted accuracy and the mean of per-example accuracies. Neither quantity is the share of independently generated answers that solve the task. For a generated database query, evaluation should separately establish whether the query executes and returns the intended result. For customer service, it should assess whether the response resolves the stated problem without inventing a policy or restricting a customer's options.
+
+The [source inspection](SOURCE_REVIEW.md) also records an incomplete failure roster, reliance on generation-library callback semantics, unpinned dependencies, and differences between the paper's configurations and the repository defaults. These are reasons to specify a replication carefully. No observed failure rate or unpublished benchmark outcome is inferred from the source inspection.
+
+## Course Placement
+
+| Existing Material | Useful Extension |
+| --- | --- |
+| [M7 §7.27](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) | Compare block efficiency, elapsed time, completed tasks, and cost under a stated workload |
+| [M7 §§7.22 and 7.26](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) | Preserve paired requests, failed runs, and distinct task-quality and efficiency outcomes |
+| [M1 §§1.5 and 1.13](../../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md) | Evaluate the complete configuration after changing a model or dependency; distinguish verification of tokens from verification of work |
+| [M4 §§4.19–4.20](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) | Use vocabulary clustering as an application of reducing search and projection cost |
+| [M8 §§8.5–8.6](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) | Compare the total cost of producing a usable response and the customer's resulting service |
+
+The [case design](CASE_DESIGN.md) proposes a short M7 comparison and a later lightweight Python exercise. This resource review adds no meeting, assignment, or graded requirement. The existing lecture notes and session decks are unchanged by this review.
+
+## Sources and Reuse
+
+The [catalog](catalog.json), namespace `inference-efficiency`, records version 1 of the paper, the repository commit, source hashes, and rights. The [unchanged paper](local_sources/Galgani_Ji_Homburger_Jawahar_Ramanovich_Korotkov_Martins_Evci_Yvinec_Consul_Kumar_Schuster_WorkingPaper2026.pdf) is retained under the CC BY 4.0 license listed by arXiv. Its original copyright footer is preserved. Nine unchanged repository files are saved under `local_sources/gemma4-mtp-drafter-domain-adaptation/`, including the complete Apache 2.0 license. Model weights, datasets, and runtime packages were not downloaded.
+
+The paper's main sections and experimental appendices were read; Tables 1–5 and Figure 3 were visually checked. All six saved Python files were syntax-parsed, and the shell script received a syntax check. No upstream program, test, training run, or model inference was executed. This companion describes the central architecture and course-relevant comparisons; it omits the full derivations, remaining table rows, bibliography, and architecture figures. Consult the original paper for those details.
+
+---
+
+## Source: 01_Resources/27_AI_Inference_Efficiency/SOURCE_REVIEW.md
+
+# Source Review: Multi-Token Prediction and Domain Adaptation
+
+Reviewed November 22, 2026. Paper: [arXiv 2611.25813v1](https://arxiv.org/abs/2611.25813v1), submitted November 19; its PDF cover is dated November 20. Repository: [google-research/gemma4-mtp-drafter-domain-adaptation](https://github.com/google-research/gemma4-mtp-drafter-domain-adaptation), inspected at commit `3ca321f2a356bd29d99c5d5fcea4018960f8b691` dated September 8, 2026. The paper and repository dates identify different release objects.
+
+## What the Paper Establishes
+
+The architecture uses a shared four-layer drafting transformer, target activations, direct access to the target's stored attention keys and values, and clustered vocabulary projection for E2B and E4B. The projection first scores clusters and then selected tokens. The target performs the verification. A proposal that is cheap to construct remains useful only when its acceptance and verification costs yield a favorable total comparison.
+
+| Comparison | Population and Configuration | Reported Result and Scope |
+| --- | --- | --- |
+| Server throughput, Tables 1–2 | 880 SPEED-Bench prompts; batch size 1; bfloat16; vLLM 0.26; one H100 for E2B, E4B, and 12B; two H100s for 26B and 31B | Selected G-MTP configurations yield speedups from 1.34 to 3.14. This range concerns the listed models and selected draft lengths. |
+| Draft length, Table 5 and Figure 3 | The server workload across alternative lookahead lengths | For 26B MoE, length 4 gives block efficiency 3.27 and 334.0 tokens/s; length 12 gives 4.39 and 209.5 tokens/s. The higher internal efficiency coexists with lower throughput. |
+| Clustered projection, Table 3 | 456 single-turn prompts; Pixel 11 Edge TPU; four-bit E2B and E4B; greedy decoding; length 3; at most 600 output tokens | Drafting time falls to 0.81 and 0.79 of the full-projection comparison; the reported additional decoding speedup is 1.01 for each model. Values are medians over prompts, with speedup defined as a ratio of median throughput. |
+| Domain adaptation, Table 4 | SciQA and GSM8K; 500 test examples per domain; E4B; LoRA updates; train length 3, evaluation length 7 | Target-only tuning increases teacher-forced token accuracy but lowers block efficiency. Joint tuning or a second stage that trains the drafter against a frozen adapted target restores efficiency. |
+| Mobile GPU, Table 7 | 76 short prompts; four task types; median input length 29; Galaxy S26 Ultra; LiteRT-LM; greedy decoding; length 3; at most 512 output tokens; full vocabulary projection | Ratios of median throughput are 1.69 for E2B and 2.18 for E4B. The prompt population differs from the server and mobile NPU comparisons. |
+
+Appendix A.1 selects draft length from the evaluated grid. A course replication should preserve a separate workload for final confirmation after selecting a configuration. Published speedups do not directly determine customer latency, API charges, energy use, or answer correctness. The paper explicitly leaves broader memory and battery evaluation to future work.
+
+Table 4 calls the two-stage result approximately 96% of the untuned block-efficiency reference. That ratio fits GSM8K (3.58/3.73), while the displayed SciQA values give 2.80/2.51, which exceeds the untuned reference. Use the individual rows instead of repeating that caption as a common percentage across both domains.
+
+## Metrics and Their Denominators
+
+Appendix A.3.3 defines acceptance rate as total accepted draft tokens divided by total proposed tokens. Block efficiency is one plus accepted draft tokens per target step. Neither expression includes the duration of drafting or verification. Target-step counts also need the same output task and a stated stopping rule before they support a cost comparison.
+
+In [eval_utils.py](local_sources/gemma4-mtp-drafter-domain-adaptation/eval_utils.py), `compute_ntp_accuracy` evaluates the target on the complete reference sequence. Each prediction conditions on earlier reference tokens. Its `total_accuracy` weights examples by answer-token count; `mean_per_sample_accuracy` gives each retained example equal weight. A high value does not measure complete-answer execution or independently generated reasoning. The prompt/answer boundary is inferred from tokenized template lengths, so a replication should verify prefix alignment and answer-token masks for its tokenizer.
+
+`compute_block_efficiency` requests greedy generation and defaults to 64 new tokens. The entry point calls it without overriding that default. It does not record elapsed time. Its returned fields therefore support a token/step comparison, subject to the callback's coverage, rather than a wall-clock reproduction of the server tables.
+
+## Repository Findings
+
+These findings concern the pinned source. They do not establish that the corresponding condition occurred in the authors' reported runs.
+
+1. **Failure coverage.** `compute_block_efficiency` catches three classes of generation exception, prints the sample index and error, and continues. The returned dictionary contains no attempted, completed, or failed request counts. The shared log is reset once before the loop; entries already recorded for a request can remain if it later fails. An adaptation should retain a per-request status and define the treatment of partial output before aggregating.
+2. **Callback semantics.** `patched_update_assisted` logs only calls for which `scores.shape[1] > 1`, and uses that shape as the proposed-token count. `total_steps` is the length of this filtered log. The coverage of verification passes and the meaning of the score dimension must be checked against the exact installed Transformers implementation. These fields should not be relabeled as measured hardware work without that reconciliation.
+3. **Runtime and artifact versions.** The README suggests upgrading dependencies without a lock file. Model-loading calls use repository names without revision hashes and enable remote model code. SciQA loading uses the moving `refs/convert/parquet` ref. A reproducible environment should record library versions, model and dataset revisions, tokenizer settings, and the generation configuration actually used.
+4. **Defaults differ across entry points.** The Python entry point defaults to 100 evaluation examples, learning rate 0.00002, MTP loss weight 0.1, and distillation weight 0.9. The shell pipeline chooses SciQA, 500 evaluation examples, learning rate 0.0002, joint MTP weight 0.4, and pure distillation. The paper reports a different learning rate for GSM8K. Copying a single README command does not reproduce every experiment.
+5. **Draft length needs an explicit setting.** The paper specifies evaluation lookahead seven. The saved evaluator does not set `num_assistant_tokens` or a proposal schedule, so its effective draft policy depends on the loaded model and runtime configuration. Record the resolved settings before comparing a run with Table 4.
+6. **Adaptation scope differs in one material detail.** Appendix A.3.1 says the output projection remains fixed so that the original vocabulary clusters stay valid. The repository's assistant LoRA target list includes `lm_head`. Whether that name matches an enabled layer depends on the loaded model and PEFT version. Inspect the actual trainable parameter names and resulting projection before claiming an exact reproduction of the stated configuration.
+7. **Sample construction.** The formatter can skip records without a usable instruction. The training path truncates sequences to 512 tokens and masks prompt labels. For a dataset lacking a training split, the training entry point creates a seeded split from its first available partition, while the separate evaluation entry point loads a dataset partition named `test`. A transfer to another dataset must reconcile these sample identities; this is not evidence of overlap in the paper's SciQA or GSM8K experiments.
+8. **Tests cover model loading and adapters.** The saved test file loads models and performs a small training step. It is not a lightweight test of every metric, failure path, or full-generation quality. The tests were read and syntax-parsed, without execution.
+
+Relevant source anchors in the pinned repository are [the generation log and NTP calculation](https://github.com/google-research/gemma4-mtp-drafter-domain-adaptation/blob/3ca321f2a356bd29d99c5d5fcea4018960f8b691/eval_utils.py), [training and evaluation orchestration](https://github.com/google-research/gemma4-mtp-drafter-domain-adaptation/blob/3ca321f2a356bd29d99c5d5fcea4018960f8b691/run_experiments.py), [pipeline settings](https://github.com/google-research/gemma4-mtp-drafter-domain-adaptation/blob/3ca321f2a356bd29d99c5d5fcea4018960f8b691/run_pipeline.sh), and [the distillation implementation](https://github.com/google-research/gemma4-mtp-drafter-domain-adaptation/blob/3ca321f2a356bd29d99c5d5fcea4018960f8b691/training_gemma4.py).
+
+## Useful Implementation Ideas
+
+The code separates data preparation, model loading, training, and evaluation. It supports target-only adaptation, joint adaptation, and a second stage with a frozen target. The loss combines ordinary language-model training with total-variation distillation, while optional detachment controls whether the drafting objective changes target representations. These are useful examples of specifying which component changes and which comparison remains fixed.
+
+The package primarily supports the domain-adaptation part of the paper. The H100/vLLM and mobile throughput studies require additional runtimes and benchmark configurations. The public model documentation provides a separate [MTP inference guide](https://gemma.ai/get-started/capabilities/mtp/). The reviewed source selection is reference material; it is not a course-tested environment or a complete reproduction of all reported experiments.
+
+## Retrieval and Verification
+
+Nine files were retained unchanged: the README, Apache 2.0 license, six Python files, and the shell pipeline. Their bytes match the pinned Git blobs. The repository's issue/PR templates and contributor-policy documents were omitted. The catalog records SHA-256 hashes, upstream blob identifiers, paths, and retrieval date. Python syntax parsing and `bash -n` succeeded. No imported repository module, upstream test, dataset loader, model loader, training pipeline, or inference call was executed.
+
+---
+
+## Source: 01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md
+
+# Choosing a Configuration for a Customer-Service Assistant
+
+A retailer wants to shorten the time customers wait for answers about purchases and returns. It can use ordinary generation, add a drafting component, or specialize the target and drafter for its product catalog. The comparison must preserve the request population and evaluate whether each response resolves the customer's question correctly.
+
+## A Short M7 Comparison
+
+Pair [M7 §7.27](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) with Table 5 and Figure 3 of the paper. Ask students to select the draft length for the 26B model using block efficiency alone, then compare that selection with throughput. The length-four row reports 334.0 tokens per second; the length-twelve row reports 209.5. Both use the same 248.9-token-per-second baseline. Identify drafting and verification work as the mechanism behind the reversal.
+
+Next compare the SciQA rows in Table 4. Target-only tuning improves teacher-forced next-token accuracy and reduces drafting efficiency. A second stage changes the drafter while keeping the specialized target fixed. Ask which outcome each comparison identifies and what additional evidence is needed before deploying a customer-service system. The discussion can occupy five to ten minutes within existing computational-cost coverage; no session allocation has been changed.
+
+## An Original Python Exercise to Develop
+
+Construct a small simulator of drafting and verification without downloading a model. Let a round propose at most k tokens. For each round, retain the accepted prefix length, the target-supplied continuation token, drafting time, verification time, and emitted-token count. Fix the output length and handle the final partial round and end-of-sequence event explicitly. Compare candidate policies using the same simulated request roster and record the assumptions that determine acceptance and computation time.
+
+Vary the draft length and compatibility between the target and drafter separately. Include a configuration with more accepted tokens per verification pass and lower end-to-end throughput. State that acceptance probabilities and computation times are imposed inputs; the simulator would explain a mechanism without estimating Gemma performance.
+
+A companion calculation can distinguish three units: correct reference tokens, wholly correct generated answers, and correctly resolved customer requests. Construct examples in which token accuracy remains high while a consequential answer token changes a return deadline or eligibility condition. Retain failed requests in the service denominator and report both total time per attempted request and cost per correctly resolved request. The response criterion and error consequences must be defined before comparing configurations.
+
+The eventual exercise should provide complete Python, a data dictionary, exact small-case checks, saved results, and matching source listings in the notes. No runnable exercise or synthetic result is released by this design.
+
+## Analytical Figures
+
+An editable TikZ diagram can place the drafter, target verifier, and task evaluator in separate boxes. The first two govern token production. The task evaluator checks a generated query, answer, or customer outcome against an external criterion. Rejected draft tokens return to generation, while a failed task goes to revision or review. This separates two meanings of verification that students may otherwise conflate.
+
+A second diagram can plot draft length against block efficiency and throughput in adjacent panels, using Table 5's stated configuration or clearly labeled synthetic calculations. Use consistent draft-length axes, distinct units on the vertical axes, Illinois Blue and Orange, and line styles or markers alongside color. Select configurations using development cases and report the final comparison on a separate workload.
+
+## Customer Outcomes
+
+Cheaper inference can expand access to assistance or increase the volume of automated persuasion. The direction depends on the firm's objective and the actual service offered. Ask whether speed improves resolution, reduces unwanted contacts, preserves a route to human review, and leaves customers able to correct an answer. The paper supplies evidence about decoding mechanisms; these customer consequences are proposed questions for a marketing application.
 
 ---
 

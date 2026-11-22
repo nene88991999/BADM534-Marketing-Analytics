@@ -125,3 +125,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Anomaly Detection and Diagnosis
 
 [Original retail monitoring cases](03_Data_and_Code/Anomaly_Diagnosis/README.md) extend M7 §§7.29–7.30 with alert evaluation, variable ranking, event timing, and supported interpretation. Two full Python programs and two editable TikZ figures connect the [SHAD review](01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) to a synthetic checkout interruption, campaign, and recording failure. Session 11 uses twenty minutes of existing application time. The [longer lab](07_Labs/Anomaly_Diagnosis/README.md) is optional ungraded practice.
+
+## AI Inference Efficiency
+
+[The inference-efficiency review](01_Resources/27_AI_Inference_Efficiency/README.md) proposes a short extension of M7 §7.27. Comparisons distinguish accepted tokens, elapsed time, task correctness, and cost, with related connections to M1 model-version checks, M4 clustering, and M8 workflow evaluation. The [case design](01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md) is a resource suggestion; no lecture, meeting allocation, or assessment requirement changes with this review.

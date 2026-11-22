@@ -100,3 +100,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Anomaly Detection and Marketing Diagnosis
 
 [The SHAD collection](26_Anomaly_Detection_and_Diagnosis/README.md) separates detecting an unusual pattern, locating implicated variables, interpreting an event, and choosing a response. It preserves the paper and selected repository files, with a source review covering timing, missingness, labels, and evaluation rules. Proposed retail, restaurant-availability, and mHealth applications connect to M2, M5, M7, M8, and M9. M7 §§7.29–7.30 now include [original executed Python and synthetic cases](../03_Data_and_Code/Anomaly_Diagnosis/README.md), with optional ungraded practice. Other module connections remain suggestions. The collection uses the `anomaly-diagnosis` catalog namespace.
+
+## AI Inference Efficiency
+
+[AI inference efficiency](27_AI_Inference_Efficiency/README.md) connects multi-token prediction to computational cost, component compatibility, and the unit of evaluation. The collection preserves the paper and nine pinned repository files, with a detailed source review and a proposed M7 comparison. The resource catalog uses the `inference-efficiency` namespace; model training and inference were not executed.
