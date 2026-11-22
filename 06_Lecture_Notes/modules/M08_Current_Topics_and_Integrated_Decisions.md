@@ -156,6 +156,8 @@ Suppose a manual workflow uses 90 minutes to produce an analysis and 20 minutes 
 
 This comparison holds the task and required quality fixed. Review is part of production because an undetected error can alter a marketing decision. In empirical work, report the completion and quality outcomes alongside time so that faster abandonment or lower-quality work is not counted as an equivalent improvement.
 
+\noindent In the synthetic service comparison in M7 §7.32, mean response wait falls from two seconds to one while correct automatic resolutions fall from eight to seven among twelve attempts. The imposed triage cost raises total resource cost from $0.848 to $1.024. A deployment decision should retain attempts that time out and record whether the promised customer action is completed. The firm can then compare compute savings with referral work and the consequences of unresolved requests.
+
 ## 8.7 Integrated Case: A Retail Subscription Launch
 
 A retailer is considering a subscription service with recommendations and delivery benefits. Begin with the decision: which offer to launch, to which eligible customers, at what price, with what evidence of incremental contribution? Define the evaluation horizon, capacity constraints, and the alternatives to launch.

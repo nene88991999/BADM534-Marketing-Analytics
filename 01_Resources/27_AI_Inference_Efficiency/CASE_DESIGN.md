@@ -1,29 +1,21 @@
 # Choosing a Configuration for a Customer-Service Assistant
 
-A retailer wants to shorten the time customers wait for answers about purchases and returns. It can use ordinary generation, add a drafting component, or specialize the target and drafter for its product catalog. The comparison must preserve the request population and evaluate whether each response resolves the customer's question correctly.
+A retailer compares response quality, waiting time, operating cost, and correct resolution when selecting an assistant. The implemented case connects [M7 §§7.31–7.32](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), [Session 11](../../05_Slides/S11_Prediction_Validation_and_Marketing_Actions.md), [two complete Python programs](../../03_Data_and_Code/Inference_Efficiency/README.md), and [optional ungraded practice](../../07_Labs/Inference_Efficiency/README.md).
 
-## A Short M7 Comparison
+## Ten-Minute Classroom Comparison
 
-Pair [M7 §7.27](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) with Table 5 and Figure 3 of the paper. Ask students to select the draft length for the 26B model using block efficiency alone, then compare that selection with throughput. The length-four row reports 334.0 tokens per second; the length-twelve row reports 209.5. Both use the same 248.9-token-per-second baseline. Identify drafting and verification work as the mechanism behind the reversal.
+Use minutes 60–70 of Session 11, within its existing worked-comparison allocation. Compare the source paper's 26B length-four and length-twelve rows: block efficiency rises from 3.27 to 4.39 while throughput falls from 334.0 to 209.5 tokens per second. Explain drafting and verification work, then use the original synthetic curve to separate progress per pass from total time. Compare target-only and two-stage tuning on SciQA, preserving the distinction between teacher-forced next-token accuracy and whole-answer correctness.
 
-Next compare the SciQA rows in Table 4. Target-only tuning improves teacher-forced next-token accuracy and reduces drafting efficiency. A second stage changes the drafter while keeping the specialized target fixed. Ask which outcome each comparison identifies and what additional evidence is needed before deploying a customer-service system. The discussion can occupy five to ten minutes within existing computational-cost coverage; no session allocation has been changed.
+The customer-service table then contrasts token agreement, generated answers, and correct automatic resolution. Failed requests remain in the denominator. Full coding practice is optional outside this ten-minute discussion. The existing conformal Python exercise, anomaly-diagnosis block, and 170-minute meeting remain in place.
 
-## An Original Python Exercise to Develop
+## Original Synthetic Programs
 
-Construct a small simulator of drafting and verification without downloading a model. Let a round propose at most k tokens. For each round, retain the accepted prefix length, the target-supplied continuation token, drafting time, verification time, and emitted-token count. Fix the output length and handle the final partial round and end-of-sequence event explicitly. Compare candidate policies using the same simulated request roster and record the assumptions that determine acceptance and computation time.
+The decoding program compares twelve development and twelve evaluation requests, common target sequences and random draws, three imposed compatibility probabilities, and draft lengths one through twelve. It records every pass, rejected suffix work, final partial drafts, EOS, prefill, and frozen configuration choices. Its time model estimates no actual hardware performance.
 
-Vary the draft length and compatibility between the target and drafter separately. Include a configuration with more accepted tokens per verification pass and lower end-to-end throughput. State that acceptance probabilities and computation times are imposed inputs; the simulator would explain a mechanism without estimating Gemma performance.
+The service program constructs twelve return requests for two different hypothetical targets. Separate teacher-forced word predictions and free responses expose distinct information sets and denominators. Two timeouts and two incomplete actions across configurations remain visible. Compute and triage costs are imposed; subsequent human resolution is unobserved.
 
-A companion calculation can distinguish three units: correct reference tokens, wholly correct generated answers, and correctly resolved customer requests. Construct examples in which token accuracy remains high while a consequential answer token changes a return deadline or eligibility condition. Retain failed requests in the service denominator and report both total time per attempted request and cost per correctly resolved request. The response criterion and error consequences must be defined before comparing configurations.
-
-The eventual exercise should provide complete Python, a data dictionary, exact small-case checks, saved results, and matching source listings in the notes. No runnable exercise or synthetic result is released by this design.
-
-## Analytical Figures
-
-An editable TikZ diagram can place the drafter, target verifier, and task evaluator in separate boxes. The first two govern token production. The task evaluator checks a generated query, answer, or customer outcome against an external criterion. Rejected draft tokens return to generation, while a failed task goes to revision or review. This separates two meanings of verification that students may otherwise conflate.
-
-A second diagram can plot draft length against block efficiency and throughput in adjacent panels, using Table 5's stated configuration or clearly labeled synthetic calculations. Use consistent draft-length axes, distinct units on the vertical axes, Illinois Blue and Orange, and line styles or markers alongside color. Select configurations using development cases and report the final comparison on a separate workload.
+Two editable TikZ diagrams separate token verification from task evaluation and compare draft length with progress and throughput. Complete Python is printed in the notes. Nine independent checks verify boundary cases, denominators, costs, and saved aggregates. No upstream model, benchmark, training program, or test was executed.
 
 ## Customer Outcomes
 
-Cheaper inference can expand access to assistance or increase the volume of automated persuasion. The direction depends on the firm's objective and the actual service offered. Ask whether speed improves resolution, reduces unwanted contacts, preserves a route to human review, and leaves customers able to correct an answer. The paper supplies evidence about decoding mechanisms; these customer consequences are proposed questions for a marketing application.
+Cheaper inference can expand access to assistance or increase automated persuasion. Evaluate correct resolution, unwanted contacts, routes to human review, and the ability to correct an answer. These marketing implications are application questions, separate from the source paper's decoding evidence.

@@ -259,7 +259,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "anomaly_diagnosis_checks_2026_11_20",
+  "latest_revision": "inference_efficiency_checks_2026_11_22",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -360,5 +360,47 @@
     },
     "execution_scope": "Two original standard-library programs generate a synthetic retail panel and exact timing and missingness comparisons. Eight independent tests verify sample counts, training and validation boundaries, interval arithmetic, saved confusion counts, evidence packet contents, and the beneficial campaign. All 73 complete Python listings match their source files. One projected snippet and the existing lecture calculations ran successfully. No upstream benchmark code or model API was executed.",
     "layout_scope": "Reviewed all six new Session 11 pages, two TikZ previews, eleven new note pages, the transition to M8, and the cover and two affected contents pages. Shortened one table and one slide heading, then rechecked both pages. Final capitalization changes were rechecked on two note pages and one slide. The combined deck reproduces the ordered text of all fifteen session PDFs."
+  },
+  "inference_efficiency_checks_2026_11_22": {
+    "verified_on": "2026-11-22",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 330,
+        "sha256": "7a3d1fc5d3aa63528d741c61a81756de47cbe5c92932267f31cb5d08b058f80f"
+      },
+      "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
+        "pages": 38,
+        "sha256": "2d1c9c7e3f5bfac921172301809fcc4345c6411f97b10025df9b7e86fe743df6"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 349,
+        "sha256": "ba207955af066f4bcc497d04c704c12e28af116d6efa9f309a4ceb7637bb6155"
+      }
+    },
+    "checks": {
+      "local_markdown_links_checked": 562,
+      "artifact_hashes_verified": 12,
+      "session_decks": 15,
+      "total_slides": 349,
+      "note_pages": 330,
+      "figure_count": 89,
+      "dates_and_duration_unchanged": true,
+      "combined_deck_text_matches_sessions": true,
+      "portable_context_uses_reviewed_HEAD_additional_catalog": true,
+      "original_analysis_programs_executed": 2,
+      "independent_tests_passed": 9,
+      "full_note_code_blocks_match_source_and_parse": 75,
+      "all_round_records_reaggregated": 18921,
+      "figure_coordinates_checked": 24,
+      "existing_lecture_calculations_reproduced": true,
+      "new_tikz_figures_visually_reviewed": 2,
+      "new_student_slide_pages_visually_reviewed": 4,
+      "note_pages_visually_reviewed_including_contents_and_transitions": 24,
+      "build_logs_have_no_overfull_boxes_or_undefined_references": true,
+      "upstream_programs_executed": 0,
+      "external_model_calls": 0
+    },
+    "execution_scope": "Two original standard-library programs and nine independent checks ran. Every synthetic decoding round was reaggregated and all 24 plotted coordinates checked against the saved development table. All 75 full note listings match their source and parse. No upstream code, model inference, or training ran.",
+    "layout_scope": "Reviewed four new Session 11 pages and adjacent slides, both TikZ previews, the complete new note sections and program listings, M1/M4/M8 additions, contents, cover, and affected transitions. Rechecked final code-line wrapping and the shortened slide heading. Existing template, calendar, and all fourteen other session decks are preserved."
   }
 }

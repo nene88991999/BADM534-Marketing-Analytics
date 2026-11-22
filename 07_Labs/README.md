@@ -19,3 +19,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Anomaly Detection and Diagnosis
 
 [Retail diagnosis practice](Anomaly_Diagnosis/README.md) is optional and ungraded. Reproduce later-period alert metrics, inspect symptoms and causes, compare interval scores, preserve earlier information, and assess an explanation against disclosed synthetic incidents.
+
+## Inference Efficiency and Customer Service
+
+[Optional ungraded practice](Inference_Efficiency/README.md) reproduces a drafting-cost simulation and a return-service evaluation. Compare frozen choices, inspect EOS and rejected suffix costs, retain timeouts, and evaluate cost per correct automatic resolution.

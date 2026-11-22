@@ -49,6 +49,12 @@
       "path": "07_Labs/Anomaly_Diagnosis/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "inference-efficiency",
+      "path": "07_Labs/Inference_Efficiency/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -164,12 +170,17 @@
     "07_Labs/Anomaly_Diagnosis/README.md",
     "01_Resources/27_AI_Inference_Efficiency/README.md",
     "01_Resources/27_AI_Inference_Efficiency/SOURCE_REVIEW.md",
-    "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md"
+    "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md",
+    "03_Data_and_Code/Inference_Efficiency/README.md",
+    "03_Data_and_Code/Inference_Efficiency/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Inference_Efficiency/AGENTS.md",
+    "03_Data_and_Code/Inference_Efficiency/results/README.md",
+    "07_Labs/Inference_Efficiency/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-20",
+    "updated_on": "2026-11-22",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -213,12 +224,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-20-anomaly-diagnosis",
+    "revision": "2026-11-22-inference-efficiency",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 87,
-    "pages": 321,
+    "figures_count": 89,
+    "pages": 330,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -232,7 +243,8 @@
     "clustering_examples": "03_Data_and_Code/Clustering_Optimization/README.md",
     "dose_response_examples": "03_Data_and_Code/Dose_Response/README.md",
     "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
-    "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md"
+    "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
+    "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md"
   },
   "datasets": [
     {
@@ -294,7 +306,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-20",
+    "updated_on": "2026-11-22",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -303,7 +315,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 345,
+    "slides": 349,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -555,14 +567,24 @@
     "reviewed_on": "2026-11-22",
     "source_commit": "3ca321f2a356bd29d99c5d5fcea4018960f8b691",
     "source_package_executed": false,
-    "status": "resource review and proposed M7 application; no new released exercise",
+    "status": "available in M7 with original executed examples and optional ungraded practice",
     "primary_module": "M7",
-    "proposed_modules": [
+    "scope": "Published decoding and training results are reviewed references. Course programs execute original synthetic cost and service comparisons; no upstream model or benchmark was run.",
+    "modules": [
       "M1",
       "M4",
       "M7",
       "M8"
     ],
-    "scope": "Paper and selected implementation sources reviewed; no reproduction of published inference or training results."
+    "examples": "03_Data_and_Code/Inference_Efficiency/README.md",
+    "lab": "07_Labs/Inference_Efficiency/README.md",
+    "sections": [
+      "M7 §§7.31–7.32"
+    ],
+    "session": 11,
+    "discussion_minutes": 10,
+    "executed_course_programs": 2,
+    "independent_checks": 9,
+    "llm_calls": 0
   }
 }

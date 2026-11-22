@@ -42,7 +42,7 @@ The [source inspection](SOURCE_REVIEW.md) also records an incomplete failure ros
 | [M4 §§4.19–4.20](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) | Use vocabulary clustering as an application of reducing search and projection cost |
 | [M8 §§8.5–8.6](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) | Compare the total cost of producing a usable response and the customer's resulting service |
 
-The [case design](CASE_DESIGN.md) proposes a short M7 comparison and a later lightweight Python exercise. This resource review adds no meeting, assignment, or graded requirement. The existing lecture notes and session decks are unchanged by this review.
+The [implemented case](CASE_DESIGN.md) adds M7 §§7.31–7.32, four Session 11 slides, two editable TikZ figures, and [two original Python programs](../../03_Data_and_Code/Inference_Efficiency/README.md). Both programs and nine checks ran successfully. The ten-minute comparison occupies minutes 60–70 of the existing meeting; [longer coding practice](../../07_Labs/Inference_Efficiency/README.md) is optional and ungraded. M1, M4, and M8 connect component compatibility, vocabulary clustering, and total service costs.
 
 ## Sources and Reuse
 

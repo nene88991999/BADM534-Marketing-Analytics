@@ -2547,7 +2547,8 @@
       "Compare identical rankings with different probability losses and demand forecasts.",
       "Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes.",
       "Evaluate grader coverage and asymmetric error costs against explicit reference judgments.",
-      "Separate anomaly detection, variable localization, event timing, and evidence for a diagnosis."
+      "Separate anomaly detection, variable localization, event timing, and evidence for a diagnosis.",
+      "Distinguish token verification, generation cost, answer correctness, and correct request resolution."
     ],
     "slides": [
       {
@@ -2707,6 +2708,92 @@
         "caption": "Same 80 synthetic customers. Smaller Brier scores indicate less squared probability error.",
         "notes": "AUC gives half credit to tied positive-negative pairs: 1272/1584 = 53/66 for both models. A strictly increasing score transformation preserves ordering. The sum of probabilities changes, making probability accuracy relevant to inventory. The Brier score is an overall probability loss, not solely a calibration measure. Purchase propensity does not identify a coupon effect.",
         "source": "../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/"
+      },
+      {
+        "kind": "figure",
+        "title": "Token Verification and Customer Resolution",
+        "figure": "../06_Lecture_Notes/figures/M07_drafting_verification.tex",
+        "caption": "The target verifies decoding. Customer service requires an external criterion.",
+        "description": "A drafter proposes tokens, the target verifies a prefix and continues generation, and task evaluation checks the completed answer and required action. Unresolved requests go to revision or human review.",
+        "notes": "Use minutes 60–70 for this four-slide comparison. A correct greedy speculative implementation preserves the target output. Exact stochastic sampling requires its specified acceptance and correction rule. Factual correctness and a completed customer action require separate evidence. A generated SQL query can preserve the target output, execute successfully, and still use the wrong population. Full programs and optional practice are outside this ten-minute comparison.",
+        "source": "M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md https://proceedings.mlr.press/v202/leviathan23a.html"
+      },
+      {
+        "kind": "figure",
+        "title": "More Progress Can Take More Time",
+        "figure": "../06_Lecture_Notes/figures/M07_drafting_cost.tex",
+        "caption": "Synthetic development workload. Total throughput includes prefill and EOS.",
+        "description": "For compatibility 0.85, block efficiency rises from 3.60 at k = 4 to 5.65 at k = 12. Throughput falls from 349.74 to 171.59 tokens per second. Ordinary generation gives 212.69.",
+        "notes": "Twelve requests contain four each of 24, 48, and 96 content tokens, plus EOS. All configurations emit the same 684 tokens. Prefill is 40 milliseconds per request. Drafting costs 0.25q and verification 4 + 0.08q + 0.16q squared milliseconds. Values are imposed calculations, not measured device latency. Development selection chooses length three, with 365.66 tokens per second on separate evaluation requests. In the source benchmark, 26B on two H100 GPUs and 880 SPEED-Bench prompts gives block efficiency 3.27 and 4.39 at lengths four and twelve, while throughput falls from 334.0 to 209.5. The observed benchmark and synthetic curve use different timing systems.",
+        "source": "M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md https://arxiv.org/abs/2611.25813v1"
+      },
+      {
+        "kind": "table",
+        "title": "Specialization Changes Compatibility",
+        "headers": [
+          "Regime",
+          "Token Accuracy",
+          "Tokens / Step"
+        ],
+        "rows": [
+          [
+            "Untuned",
+            "68.40%",
+            "2.51"
+          ],
+          [
+            "Target Only",
+            "99.23%",
+            "1.60"
+          ],
+          [
+            "Two Stage",
+            "99.23%",
+            "2.80"
+          ]
+        ],
+        "caption": "SciQA: 500 test examples. Accuracy uses supplied reference prefixes.",
+        "notes": "Reported Table 4, training lookahead three and evaluation lookahead seven. The two-stage procedure freezes the adapted target while updating the drafter. Next-token accuracy conditions on the supplied reference prefix. Whole-answer correctness requires a separate evaluation. Re-evaluate dependent components when the target changes. Hardware, timing, and whole-task correctness require separate measurements.",
+        "source": "Galgani and coauthors (2026), Table 4. https://arxiv.org/abs/2611.25813v1"
+      },
+      {
+        "kind": "table",
+        "title": "Failed Requests Change the Comparison",
+        "headers": [
+          "Quantity",
+          "General",
+          "Specialized"
+        ],
+        "rows": [
+          [
+            "Correct Words",
+            "116 / 120",
+            "119 / 120"
+          ],
+          [
+            "Correct Answers",
+            "9 / 12",
+            "8 / 12"
+          ],
+          [
+            "Resolved Requests",
+            "8 / 12",
+            "7 / 12"
+          ],
+          [
+            "Mean Wait (s)",
+            "2.00",
+            "1.00"
+          ],
+          [
+            "Cost / Resolution",
+            "0.106",
+            "0.1463"
+          ]
+        ],
+        "caption": "Twelve synthetic requests per target. Two specialized-target timeouts. Costs in dollars.",
+        "notes": "These are different hypothetical targets with independently constructed teacher-forced and free-response observations. Word tokens use whitespace splitting. Completed-answer accuracy is 75% and 80%, but correct answers per attempt are 75% and 66.67%. Each target also has one correct answer with an incomplete action. Compute costs 0.002 dollars per second and unresolved requests incur 0.20 dollars for triage. Total costs are 0.848 and 1.024 dollars. Later human resolution and review delay are unobserved. Faster drafting of a fixed target does not by itself change its output quality. Evaluate the actual policy, action, referral work, and access to review.",
+        "source": "M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md"
       },
       {
         "kind": "equation",
@@ -2968,7 +3055,9 @@
       "[Conformal Prediction: Data and Code](../03_Data_and_Code/Conformal_Prediction/README.md)",
       "[Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)",
       "[Anomaly Diagnosis: Data and Code](../03_Data_and_Code/Anomaly_Diagnosis/README.md)",
-      "[Anomaly Diagnosis: Optional Practice](../07_Labs/Anomaly_Diagnosis/README.md)"
+      "[Anomaly Diagnosis: Optional Practice](../07_Labs/Anomaly_Diagnosis/README.md)",
+      "[Inference Efficiency: Data and Code](../03_Data_and_Code/Inference_Efficiency/README.md)",
+      "[Inference Efficiency: Optional Practice](../07_Labs/Inference_Efficiency/README.md)"
     ],
     "practice": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
     "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator."

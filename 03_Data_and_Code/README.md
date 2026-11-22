@@ -89,3 +89,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Anomaly Detection and Diagnosis
 
 [The retail monitoring example](Anomaly_Diagnosis/README.md) supplies 4,320 synthetic store-minutes, training and validation references, two detection rules, incident timing, variable rankings, and evidence packets. A separate exact comparison examines permissive interval scoring and future-information leakage. Two full programs and eight independent checks support M7 §§7.29–7.30. No upstream benchmark or LLM was executed.
+
+## Inference Efficiency and Customer Service
+
+[Two original programs](Inference_Efficiency/README.md) compare progress per verification pass with total throughput and distinguish reference-token agreement, generated answers, and correct automatic resolutions. Twelve requests per decoding split and twelve paired service requests are synthetic. Nine independent checks cover termination, costs, selection, and failures. Complete Python is printed in M7 §§7.31–7.32.

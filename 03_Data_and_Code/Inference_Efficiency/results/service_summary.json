@@ -1,0 +1,36 @@
+[
+  {
+    "target": "general",
+    "reference_tokens": 120,
+    "correct_reference_tokens": 116,
+    "token_accuracy": 0.9666666666666667,
+    "attempted": 12,
+    "completed": 12,
+    "failed": 0,
+    "correct_answers": 9,
+    "correctly_resolved": 8,
+    "answer_accuracy_among_completed": 0.75,
+    "answer_accuracy_per_attempt": 0.75,
+    "resolution_per_attempt": 0.6666666666666666,
+    "mean_wait_seconds": 2.0,
+    "total_cost_dollars": 0.8480000000000001,
+    "cost_per_correct_resolution": 0.10600000000000001
+  },
+  {
+    "target": "specialized",
+    "reference_tokens": 120,
+    "correct_reference_tokens": 119,
+    "token_accuracy": 0.9916666666666667,
+    "attempted": 12,
+    "completed": 10,
+    "failed": 2,
+    "correct_answers": 8,
+    "correctly_resolved": 7,
+    "answer_accuracy_among_completed": 0.8,
+    "answer_accuracy_per_attempt": 0.6666666666666666,
+    "resolution_per_attempt": 0.5833333333333334,
+    "mean_wait_seconds": 1.0,
+    "total_cost_dollars": 1.024,
+    "cost_per_correct_resolution": 0.1462857142857143
+  }
+]

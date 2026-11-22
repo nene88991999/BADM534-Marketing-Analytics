@@ -1,0 +1,25 @@
+target,request_id,status,answer,answer_correct,action_completed,correctly_resolved,response_wait_seconds,compute_cost_dollars,triage_cost_dollars
+general,R01,completed,The item is ineligible under the stated return policy .,False,True,False,2.0,0.004,0.2
+general,R02,completed,The item is ineligible under the stated return policy .,False,True,False,2.0,0.004,0.2
+general,R03,completed,The item is ineligible under the stated return policy .,False,True,False,2.0,0.004,0.2
+general,R04,completed,The item is ineligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+general,R05,completed,The item is ineligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+general,R06,completed,The item is ineligible under the stated return policy .,True,False,False,2.0,0.004,0.2
+general,R07,completed,The item is eligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+general,R08,completed,The item is eligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+general,R09,completed,The item is eligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+general,R10,completed,The item is ineligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+general,R11,completed,The item is ineligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+general,R12,completed,The item is ineligible under the stated return policy .,True,True,True,2.0,0.004,0.0
+specialized,R01,completed,The item is ineligible under the stated return policy .,False,True,False,0.8,0.0016,0.2
+specialized,R02,completed,The item is ineligible under the stated return policy .,False,True,False,0.8,0.0016,0.2
+specialized,R03,completed,The item is eligible under the stated return policy .,True,True,True,0.8,0.0016,0.0
+specialized,R04,completed,The item is ineligible under the stated return policy .,True,True,True,0.8,0.0016,0.0
+specialized,R05,completed,The item is ineligible under the stated return policy .,True,True,True,0.8,0.0016,0.0
+specialized,R06,completed,The item is ineligible under the stated return policy .,True,False,False,0.8,0.0016,0.2
+specialized,R07,completed,The item is eligible under the stated return policy .,True,True,True,0.8,0.0016,0.0
+specialized,R08,completed,The item is eligible under the stated return policy .,True,True,True,0.8,0.0016,0.0
+specialized,R09,completed,The item is eligible under the stated return policy .,True,True,True,0.8,0.0016,0.0
+specialized,R10,completed,The item is ineligible under the stated return policy .,True,True,True,0.8,0.0016,0.0
+specialized,R11,timeout,,False,False,False,2.0,0.004,0.2
+specialized,R12,timeout,,False,False,False,2.0,0.004,0.2

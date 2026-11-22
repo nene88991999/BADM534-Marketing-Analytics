@@ -15,6 +15,7 @@ Session 11. M7. 170 minutes.
 - Construct prediction intervals and label sets; compare marginal coverage with segment and routing outcomes.
 - Evaluate grader coverage and asymmetric error costs against explicit reference judgments.
 - Separate anomaly detection, variable localization, event timing, and evidence for a diagnosis.
+- Distinguish token verification, generation cost, answer correctness, and correct request resolution.
 
 ## Related Materials
 
@@ -30,6 +31,8 @@ Session 11. M7. 170 minutes.
 - [Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)
 - [Anomaly Diagnosis: Data and Code](../03_Data_and_Code/Anomaly_Diagnosis/README.md)
 - [Anomaly Diagnosis: Optional Practice](../07_Labs/Anomaly_Diagnosis/README.md)
+- [Inference Efficiency: Data and Code](../03_Data_and_Code/Inference_Efficiency/README.md)
+- [Inference Efficiency: Optional Practice](../07_Labs/Inference_Efficiency/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -175,7 +178,61 @@ AUC gives half credit to tied positive-negative pairs: 1272/1584 = 53/66 for bot
 
 Source: ../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/
 
-## Slide 14: Calibrate a Demand Interval
+## Slide 14: Token Verification and Customer Resolution
+
+The target verifies decoding. Customer service requires an external criterion.
+
+**Figure description:** A drafter proposes tokens, the target verifies a prefix and continues generation, and task evaluation checks the completed answer and required action. Unresolved requests go to revision or human review.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_drafting_verification.tex)
+
+Use minutes 60–70 for this four-slide comparison. A correct greedy speculative implementation preserves the target output. Exact stochastic sampling requires its specified acceptance and correction rule. Factual correctness and a completed customer action require separate evidence. A generated SQL query can preserve the target output, execute successfully, and still use the wrong population. Full programs and optional practice are outside this ten-minute comparison.
+
+Source: M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md https://proceedings.mlr.press/v202/leviathan23a.html
+
+## Slide 15: More Progress Can Take More Time
+
+Synthetic development workload. Total throughput includes prefill and EOS.
+
+**Figure description:** For compatibility 0.85, block efficiency rises from 3.60 at k = 4 to 5.65 at k = 12. Throughput falls from 349.74 to 171.59 tokens per second. Ordinary generation gives 212.69.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_drafting_cost.tex)
+
+Twelve requests contain four each of 24, 48, and 96 content tokens, plus EOS. All configurations emit the same 684 tokens. Prefill is 40 milliseconds per request. Drafting costs 0.25q and verification 4 + 0.08q + 0.16q squared milliseconds. Values are imposed calculations, not measured device latency. Development selection chooses length three, with 365.66 tokens per second on separate evaluation requests. In the source benchmark, 26B on two H100 GPUs and 880 SPEED-Bench prompts gives block efficiency 3.27 and 4.39 at lengths four and twelve, while throughput falls from 334.0 to 209.5. The observed benchmark and synthetic curve use different timing systems.
+
+Source: M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md https://arxiv.org/abs/2611.25813v1
+
+## Slide 16: Specialization Changes Compatibility
+
+| Regime | Token Accuracy | Tokens / Step |
+| --- | --- | --- |
+| Untuned | 68.40% | 2.51 |
+| Target Only | 99.23% | 1.60 |
+| Two Stage | 99.23% | 2.80 |
+
+SciQA: 500 test examples. Accuracy uses supplied reference prefixes.
+
+Reported Table 4, training lookahead three and evaluation lookahead seven. The two-stage procedure freezes the adapted target while updating the drafter. Next-token accuracy conditions on the supplied reference prefix. Whole-answer correctness requires a separate evaluation. Re-evaluate dependent components when the target changes. Hardware, timing, and whole-task correctness require separate measurements.
+
+Source: Galgani and coauthors (2026), Table 4. https://arxiv.org/abs/2611.25813v1
+
+## Slide 17: Failed Requests Change the Comparison
+
+| Quantity | General | Specialized |
+| --- | --- | --- |
+| Correct Words | 116 / 120 | 119 / 120 |
+| Correct Answers | 9 / 12 | 8 / 12 |
+| Resolved Requests | 8 / 12 | 7 / 12 |
+| Mean Wait (s) | 2.00 | 1.00 |
+| Cost / Resolution | 0.106 | 0.1463 |
+
+Twelve synthetic requests per target. Two specialized-target timeouts. Costs in dollars.
+
+These are different hypothetical targets with independently constructed teacher-forced and free-response observations. Word tokens use whitespace splitting. Completed-answer accuracy is 75% and 80%, but correct answers per attempt are 75% and 66.67%. Each target also has one correct answer with an incomplete action. Compute costs 0.002 dollars per second and unresolved requests incur 0.20 dollars for triage. Total costs are 0.848 and 1.024 dollars. Later human resolution and review delay are unobserved. Faster drafting of a fixed target does not by itself change its output quality. Evaluate the actual policy, action, referral work, and access to review.
+
+Source: M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md
+
+## Slide 18: Calibrate a Demand Interval
 
 Freeze the predictor. Score 99 reserved stores with absolute errors.
 
@@ -189,7 +246,7 @@ The fitted predictor and score are chosen using training data alone. The coverag
 
 Source: M7 §7.24. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 15: Aggregate Coverage Can Hide Segment Errors
+## Slide 19: Aggregate Coverage Can Hide Segment Errors
 
 Same 100 synthetic stores. Mean width: 20.0 pooled; 20.8 within segment.
 
@@ -201,7 +258,7 @@ Calibration uses 80 regular and 19 volatile stores distinct from evaluation. The
 
 Source: M7 §7.24.2. ../03_Data_and_Code/Conformal_Prediction/demand_intervals.py
 
-## Slide 16: A Complaint Can Have Several Plausible Labels
+## Slide 20: A Complaint Can Have Several Plausible Labels
 
 Synthetic probabilities; 19 labeled calibration cases; three unlabeled queries.
 
@@ -213,7 +270,7 @@ The eighteenth ordered true-class score is 0.65. Include a label when one minus 
 
 Source: M7 §7.25. ../03_Data_and_Code/Conformal_Prediction/complaint_sets.py
 
-## Slide 17: A Cost-Based Threshold
+## Slide 21: A Cost-Based Threshold
 
 Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
 
@@ -227,7 +284,7 @@ Correct classifications have zero cost in this example. Capacity constraints and
 
 Source: M7, Section 7.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 18: Coupon Targeting Includes the Untreated Outcome
+## Slide 22: Coupon Targeting Includes the Untreated Outcome
 
 Synthetic probabilities and costs. High treated response can have negative incremental value.
 
@@ -239,7 +296,7 @@ Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact
 
 Source: M7, Section 7.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 19: Queue Metrics
+## Slide 23: Queue Metrics
 
 Compute metrics from the synthetic confusion matrix.
 
@@ -257,7 +314,7 @@ Whether that queue is profitable depends on the action and its incremental outco
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 20: McBroken Forecasting
+## Slide 24: McBroken Forecasting
 
 - Predict availability on a later date.
 - Retain a separate count of unknown future labels.
@@ -267,7 +324,7 @@ An unknown future status is not an observed available restaurant. Dropping missi
 
 Source: M7, Section 7.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 21: Prediction and Outcome Coverage
+## Slide 25: Prediction and Outcome Coverage
 
 McBroken forecasts use later dates and observed-label denominators.
 
@@ -279,7 +336,7 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 22: Three Alerts, Different Decisions
+## Slide 26: Three Alerts, Different Decisions
 
 | Event | Observation | Next Check |
 | --- | --- | --- |
@@ -293,7 +350,7 @@ Training has 2,160 store-minutes, validation has 1,080 normal store-minutes, and
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 23: A Strong Symptom Can Follow the Cause
+## Slide 27: A Strong Symptom Can Follow the Cause
 
 Synthetic payment event: support contacts rank first by mean standardized deviation.
 
@@ -305,7 +362,7 @@ The cause is imposed by the data generator. The score only uses observed variabl
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 24: Evaluate Minutes and Monitoring Runs
+## Slide 28: Evaluate Minutes and Monitoring Runs
 
 | Quantity | Mean Rule | Maximum Rule |
 | --- | --- | --- |
@@ -320,7 +377,7 @@ Mean and maximum standardized deviations use the same six features and training-
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 25: Any Overlap Can Reward a Broad Prediction
+## Slide 29: Any Overlap Can Reward a Broad Prediction
 
 Same true event [40,60); interval endpoints are exclusive.
 
@@ -332,7 +389,7 @@ The delayed prediction intersects fifteen true minutes and spans a twenty-five-m
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 26: An Earlier Value Must Respect Its Information Set
+## Slide 30: An Earlier Value Must Respect Its Information Set
 
 Two possible futures follow the same two missing measurements.
 
@@ -350,7 +407,7 @@ Forward filling followed by backward filling would set the two earlier values to
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 27: Require Evidence for the Diagnosis
+## Slide 31: Require Evidence for the Diagnosis
 
 - Provide measurements, units, missingness, and predicted intervals.
 - Separate observed changes, causal hypotheses, and the next check.
@@ -360,7 +417,7 @@ Nine evidence packets include all test runs and no true cause or event boundary.
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 28: Accuracy and Failure Costs
+## Slide 32: Accuracy and Failure Costs
 
 Constructed cases: pooled accuracy rises from 78% to 86%.
 
@@ -372,7 +429,7 @@ Fourteen paired cases improve and six regress. Stipulated failure costs of one d
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md
 
-## Slide 29: Paired Regression Checks
+## Slide 33: Paired Regression Checks
 
 The same one hundred constructed cases are scored under both configurations.
 
@@ -390,7 +447,7 @@ The complete program preserves every paired case and each segment denominator. W
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
 
-## Slide 30: Equal Grader Scores, Different Consequences
+## Slide 34: Equal Grader Scores, Different Consequences
 
 Twelve synthetic statements; all cases remain in the scoring denominators.
 
@@ -402,7 +459,7 @@ There are eight reference PASS statements and four reference FAIL statements. Th
 
 Source: M5 §5.20 and M7 §7.26. ../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py
 
-## Slide 31: Reference Judgments and Customer Interests
+## Slide 35: Reference Judgments and Customer Interests
 
 - Give every reference judgment a reason.
 - Keep missing, invalid, and abstained outputs visible.
@@ -413,7 +470,7 @@ The public practice labels are disclosed. To estimate generalization, collect ne
 
 Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
 
-## Slide 32: Coding Exercise: A Forecast Evaluation
+## Slide 36: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -423,7 +480,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 33: Targeting and Delivered Opportunities
+## Slide 37: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -433,7 +490,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 34: Prediction Discussion
+## Slide 38: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

@@ -88,3 +88,7 @@ Session 3 uses minutes 125–140 for map footprints and reachable locations, ret
 ## Anomaly Detection and Diagnosis
 
 Session 11 allocates minutes 125–145 to the M7 retail diagnosis case and minutes 145–155 to forecast and grader comparisons. Preserve the existing 45-minute Python block for prediction intervals and routing. [The optional anomaly lab](../07_Labs/Anomaly_Diagnosis/README.md) supplies a longer exercise outside this in-class comparison. The fifteen meetings, dates, and 170-minute duration remain unchanged.
+
+## Inference Efficiency and Customer-Service Resolution
+
+Session 11 uses minutes 45–60 for prediction and decision comparisons and minutes 60–70 for [inference efficiency](../03_Data_and_Code/Inference_Efficiency/README.md). Four slides distinguish progress per target pass from throughput, component compatibility after specialization, and correct customer resolution. The forty-five-minute conformal Python block and twenty-minute anomaly block remain in place. Full drafting and service programs form optional ungraded practice. M1, M4, and M8 add brief connections to model versions, vocabulary clustering, and service costs. This refinement adds no meeting, deadline, or graded requirement.

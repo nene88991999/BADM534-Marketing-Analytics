@@ -84,3 +84,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Retail Access and Service Priorities
 
 [Retail accessibility](03_Data_and_Code/Retail_Accessibility/README.md) connects restaurant availability to feasible alternatives, missing-status bounds, geographic relationships, and service objectives. Three complete Python programs, four editable TikZ figures, and [optional practice](07_Labs/Retail_Accessibility/README.md) support six modules and Sessions 3, 7, and 13.
+
+## Inference Efficiency and Customer Resolution
+
+[Two runnable examples](03_Data_and_Code/Inference_Efficiency/README.md) compare draft-token progress with response time and reference-token accuracy with correct customer-service resolution. Full Python, two TikZ figures, and the worked case appear in M7 §§7.31–7.32, with four slides in Session 11 and [optional practice](07_Labs/Inference_Efficiency/README.md). All new data and timings are synthetic; the published G-MTP benchmark remains a separate attributed source.

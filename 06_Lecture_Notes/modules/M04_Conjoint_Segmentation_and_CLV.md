@@ -829,6 +829,8 @@ if __name__ == "__main__":
 ```
 
 
+\noindent Clustering can also reduce the work of searching a vocabulary. The G-MTP architecture reviewed in M7 §7.31 groups 262,144 tokens into 2,048 clusters of 128 and projects onto tokens in 32 selected clusters. Its roughly 43-fold reduction concerns projection operations. In the reported mobile NPU comparison, the additional overall speedup is about 1.01 times because projection is only one part of generation. A computational saving must be evaluated at the boundary of the complete task. [Source and configuration](../../01_Resources/27_AI_Inference_Efficiency/README.md).
+
 ## 4.20 Comparing Implementations on Fixed Data
 
 \noindent A team choosing a clustering implementation needs a common quality measure and a clearly defined timing boundary. The synthetic comparison fixes 50,000 training vectors, 10,000 independently drawn test vectors, 32 coordinates, and 64 centers. Eight Gaussian components have unequal probabilities, with means drawn once from a normal distribution with standard deviation 1.5 and coordinate noise with standard deviation 0.8. Training means and standard deviations transform both samples. The fitted center count deliberately exceeds the number of generating components: the objective is a compact squared-distance approximation, and a fitted cluster need not correspond to a distinct population type.

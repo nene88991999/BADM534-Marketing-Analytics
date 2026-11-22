@@ -600,6 +600,8 @@ A reproducible claim specifies the model identifier and evaluation date, system 
 
 Retain a fixed set of known failure cases to detect regressions and a separate supply of fresh cases to assess transfer. [LiveBench](https://arxiv.org/abs/2406.19314v2) and [LiveCodeBench](https://arxiv.org/abs/2403.07974v2) motivate refreshed evaluation with objective scoring. New cases should preserve the target task mix or report its changes explicitly. Repeated tuning against the same public answers consumes their value as fresh evidence. Revalidation is warranted after changes to the model, prompt, tool, scorer, schema, or supported customer population.
 
+\noindent A model change can alter the behavior of dependent components even when its own reference score improves. M7 §§7.31–7.32 separate draft-token verification, answer correctness, and request resolution. Record target and drafter versions, generation settings, and the complete attempted-request roster before comparing an updated assistant.
+
 ## 1.14 Specifications, Independent Checks, and Retained Skills
 
 \noindent A manager who delegates a customer analysis must still define the decision, the observation unit, and the evidence that would justify action. Before requesting code, write the required inputs, transformation, output, and a small calculation that can be checked independently. If the objective is retention, specify the starting cohort and horizon. If it is an incremental marketing effect, specify the treatment comparison and assignment process. A working program can faithfully implement an unsuitable target.

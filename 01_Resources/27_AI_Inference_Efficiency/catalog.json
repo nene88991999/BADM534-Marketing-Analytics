@@ -51,7 +51,7 @@
         "M8"
       ],
       "teaching_use": "Separate block efficiency, throughput, task correctness, and whole-workflow cost; examine component compatibility after adaptation.",
-      "scope": "Specified Gemma 4 configurations and workloads; marketing cases are proposed transfers.",
+      "scope": "Specified Gemma 4 configurations and workloads; the course uses separate original synthetic marketing cases.",
       "files": [
         {
           "path": "local_sources/Galgani_Ji_Homburger_Jawahar_Ramanovich_Korotkov_Martins_Evci_Yvinec_Consul_Kumar_Schuster_WorkingPaper2026.pdf",
@@ -200,5 +200,15 @@
       "scope": "Official publication page and abstract reviewed; full paper not downloaded in this review.",
       "files": []
     }
-  ]
+  ],
+  "course_implementation": {
+    "released_on": "2026-11-22",
+    "examples": "../../03_Data_and_Code/Inference_Efficiency/README.md",
+    "sections": [
+      "M7 §§7.31–7.32"
+    ],
+    "executed_programs": 2,
+    "independent_checks": 9,
+    "scope": "Original synthetic teaching examples; separate from the source benchmark."
+  }
 }

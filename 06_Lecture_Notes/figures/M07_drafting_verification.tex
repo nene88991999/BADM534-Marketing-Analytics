@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\node[box,text width=2.8cm,minimum height=1.55cm] (draft) at (0,0) {Drafter\\[3pt]Propose Tokens};
+\node[box,text width=2.8cm,minimum height=1.55cm] (target) at (4.5,0) {Target Verifier\\[3pt]Match the Target's Decoding Rule};
+\node[orangebox,text width=2.8cm,minimum height=1.55cm] (task) at (9,0) {Task Evaluation\\[3pt]Correct Policy and Completed Action};
+\draw[edge] (draft.east) -- (target.west);
+\draw[accent] (target.east) -- (task.west);
+\node[align=center,font=\footnotesize] at (2.25,1.8) {Draft\\Tokens};
+\node[align=center,font=\footnotesize] at (6.75,1.8) {Completed\\Response};
+\draw[edge] (target.south) -- (4.5,-1.65) -- (0,-1.65) -- (draft.south);
+\node[align=center,font=\footnotesize] at (2.25,-2.15) {Discard Rejected Suffix; Continue\\with Accepted Prefix and Target Token};
+\node[box,text width=2.8cm] (review) at (9,-2.5) {Revision or\\Human Review};
+\draw[accent] (task.south) -- node[right,font=\footnotesize] {Unresolved} (review.north);
+\end{tikzpicture}

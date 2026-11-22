@@ -92,3 +92,7 @@ Sessions 3, 7, and 13 add eight slides on map footprints, network distances, mis
 ## Anomaly Detection and Diagnosis
 
 Session 11 adds six slides on three synthetic retail events, symptom rankings, monitoring denominators, interval quality, future-information leakage, and supported explanations. [Two complete programs](../03_Data_and_Code/Anomaly_Diagnosis/README.md) and [optional practice](../07_Labs/Anomaly_Diagnosis/README.md) accompany two editable TikZ figures. The case uses minutes 125–145; the remaining ten application minutes compare forecasts and grader outcomes. The meeting remains 170 minutes.
+
+## Inference Efficiency in Session 11
+
+Four slides connect token verification, synthetic draft-length costs, reported SciQA adaptation results, and correct customer-service resolution. The ten-minute comparison occupies minutes 60–70; the conformal Python exercise and anomaly-diagnosis allocation remain in place. [Complete programs and results](../03_Data_and_Code/Inference_Efficiency/README.md), [M7 §§7.31–7.32](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Inference_Efficiency/README.md) distinguish source benchmarks from original synthetic calculations.

@@ -163,3 +163,7 @@ The [dose-response sources](../01_Resources/24_Dose_Response/README.md), reviewe
 ## Anomaly Detection and Diagnosis
 
 The [SHAD review](../01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) motivates M7 §§7.29–7.30. Original standard-library programs generate a fixed synthetic retail panel and exact timing/imputation comparisons. Eight independent checks verify population counts, information boundaries, tied-threshold conventions, confusion counts, interval arithmetic, packet contents, and the beneficial campaign. Two editable figures and six Session 11 slides preserve the distinction between observed symptoms and imposed causes. No original benchmark or LLM API was executed.
+
+## AI Inference Efficiency
+
+The [G-MTP paper and source review](../01_Resources/27_AI_Inference_Efficiency/README.md) motivate M7 §§7.31–7.32. [Two original standard-library programs](../03_Data_and_Code/Inference_Efficiency/README.md) generate synthetic decoding rounds and separately constructed teacher-forced predictions and free responses. Nine checks verify boundary cases, failed-request denominators, costs, and development selection. Two editable figures and four Session 11 slides connect computation to correct customer resolution. M1, M4, and M8 supply short conceptual links. Published figures remain attributed and configuration-specific. No upstream model, training code, benchmark, or external inference service was executed.

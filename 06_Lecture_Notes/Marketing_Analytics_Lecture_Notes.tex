@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 20, 2026\par}
+{\large November 22, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -1085,6 +1085,12 @@ the target task mix or report its changes explicitly. Repeated tuning
 against the same public answers consumes their value as fresh evidence.
 Revalidation is warranted after changes to the model, prompt, tool,
 scorer, schema, or supported customer population.
+
+\noindent A model change can alter the behavior of dependent components
+even when its own reference score improves. M7 §§7.31--7.32 separate
+draft-token verification, answer correctness, and request resolution.
+Record target and drafter versions, generation settings, and the
+complete attempted-request roster before comparing an updated assistant.
 
 \hypertarget{M01-specifications-independent-checks-and-retained-skills}{%
 \section{Specifications, Independent Checks, and Retained
@@ -6094,6 +6100,16 @@ if __name__ == "__main__":
         json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 \end{Verbatim}
+
+\noindent Clustering can also reduce the work of searching a vocabulary.
+The G-MTP architecture reviewed in M7 §7.31 groups 262,144 tokens into
+2,048 clusters of 128 and projects onto tokens in 32 selected clusters.
+Its roughly 43-fold reduction concerns projection operations. In the
+reported mobile NPU comparison, the additional overall speedup is about
+1.01 times because projection is only one part of generation. A
+computational saving must be evaluated at the boundary of the complete
+task. \href{../01_Resources/27_AI_Inference_Efficiency/README.md}{Source
+and configuration}.
 
 \hypertarget{M04-comparing-implementations-on-fixed-data}{%
 \section{Comparing Implementations on Fixed
@@ -13159,7 +13175,9 @@ checks, and human review can likewise affect the operational comparison.
 A timing claim should identify the input population, precision,
 hardware, warm-up, and included steps. Selection across configurations
 belongs in development; the final comparison preserves an independent
-evaluation population.
+evaluation population. Sections 7.31--7.32 compare drafting efficiency,
+response time, and correct customer-service resolutions with distinct
+denominators.
 
 \hypertarget{M07-spatial-features-and-the-deployment-comparison}{%
 \section{Spatial Features and the Deployment
@@ -13773,6 +13791,496 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M07-drafting-efficiency-and-the-time-to-answer}{%
+\section{Drafting Efficiency and the Time to
+Answer}\label{M07-drafting-efficiency-and-the-time-to-answer}}
+
+\noindent \noindent A retailer selecting a customer-service assistant wants
+customers to receive a useful answer quickly. A small drafting model can
+propose several tokens before the larger target model evaluates them
+together. Longer drafts reduce the number of target passes when many
+proposed tokens are accepted. They also require more drafting and
+verification work. The preferred draft length depends on the resulting
+response time under the retailer's workload.
+
+\hypertarget{M07-token-verification-and-customer-service-evaluation}{%
+\subsection{Token Verification and Customer-Service
+Evaluation}\label{M07-token-verification-and-customer-service-evaluation}}
+
+\noindent \noindent With greedy decoding, the target accepts the draft's matching
+prefix and supplies a correction at the first disagreement, or a bonus
+token after a fully accepted draft. Generation stops at the
+end-of-sequence token. A correctly implemented procedure preserves the
+target's greedy output. Exact speculative sampling uses a specified
+acceptance and correction rule to preserve the target distribution when
+sampling is stochastic. Factual accuracy and customer benefit depend on
+the behavior of that target and on the surrounding service.
+\href{https://proceedings.mlr.press/v202/leviathan23a.html}{Leviathan,
+Kalman, and Matias (2023)} establish the sampling result under their
+algorithm.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_drafting_verification.tex}
+\caption{The drafter proposes tokens, the target verifies a prefix and continues generation, and a separate task evaluation checks the completed response against the return policy and required action. Rejected suffixes return to generation; an unresolved customer request goes to revision or human review.}\label{fig:M07_drafting_verification}
+\end{figure}
+
+The separation matters for AI-assisted coding. A verifier that preserves
+the target's intended tokens can preserve an incorrect SQL query.
+Successful execution then checks another property: a query can run and
+still use the wrong customer population or denominator. Evaluation of
+the answer requires an external criterion tied to the task, including
+the relevant information, reference calculation, and customer
+consequences.
+
+\href{https://arxiv.org/abs/2611.25813v1}{Galgani and coauthors (2026)}
+develop G-MTP, a drafting architecture that shares the target's internal
+representations and attention cache. Their server comparison uses 880
+SPEED-Bench prompts, batch size one, bfloat16 precision, and vLLM 0.26.
+For the 26B mixture-of-experts model on two H100 GPUs, Table 5 reports
+the following comparison against ordinary generation at 248.9 tokens per
+second.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Draft Length & Block Efficiency & Tokens per Second & Speed Relative to
+Baseline \\
+\midrule
+
+4 & 3.27 & 334.0 & 1.34 \\
+12 & 4.39 & 209.5 & 0.84 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The longer draft produces more progress per verification step while
+generating tokens more slowly. These are reported benchmark outcomes for
+the stated configuration. A retailer's request lengths, concurrency,
+hardware, and service checks can change the preferred configuration.
+
+Compatibility also changes when the target is specialized. In the
+paper's SciQA comparison, evaluated on 500 test examples with training
+lookahead three and evaluation lookahead seven, target-only tuning
+raises teacher-forced next-token accuracy from 68.40\% to 99.23\% while
+block efficiency falls from 2.51 to 1.60. Updating the drafter in a
+second stage, with the adapted target fixed, restores block efficiency
+to 2.80 and retains 99.23\% next-token accuracy. The unit of that
+accuracy is a reference answer token evaluated with the reference prefix
+supplied. Whole-answer correctness and successful customer service
+remain separate outcomes.
+
+\hypertarget{M07-a-fixed-workload-cost-comparison}{%
+\subsection{A Fixed-Workload Cost
+Comparison}\label{M07-a-fixed-workload-cost-comparison}}
+
+\noindent \noindent Consider an original synthetic workload with twelve
+development requests and twelve separate evaluation requests. Each split
+contains four requests of each content length: 24, 48, and 96 tokens.
+Each request ends with one end-of-sequence token, giving 684 emitted
+tokens per split. Every configuration receives the same target sequence
+and position-specific random draws for a given request. Output equality
+is imposed, so differences concern computational cost alone.
+
+For round \(r\), let \(q_r\) be the number of proposed tokens, capped by
+the remaining output budget, and let \(a_r\) be the accepted prefix
+length. A position agrees with the target when its fixed uniform draw is
+below compatibility probability \(p\). The first disagreement ends the
+prefix. The target emits one additional correction or bonus token
+whenever the accepted prefix has not reached the end of the target
+sequence. Let \(e_r\) count all emitted tokens, including end of
+sequence. Block efficiency and throughput are
+
+\[
+B=\frac{\sum_r e_r}{R},\qquad
+Q=\frac{1000\sum_r e_r}{40N+\sum_r [0.25q_r+4+0.08q_r+0.16q_r^2]}.
+\]
+
+Here \(R\) is the number of target verification passes, \(N\) is the
+number of requests, and time is measured in milliseconds. The imposed
+prefill cost is 40 milliseconds per request. Drafting costs \(0.25q_r\)
+milliseconds; verification costs \(4+0.08q_r+0.16q_r^2\). Ordinary
+generation sets \(q_r=0\), emits one target token per pass, and incurs
+four milliseconds per pass. All proposed positions incur cost, including
+the discarded suffix. The quadratic term imposes increasing verification
+work; its magnitude is a sensitivity input with no calibration to Gemma
+or a particular processor. The computation omits queueing, network
+delay, retrieval, and external review.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_drafting_cost.tex}
+\caption{For the same twelve synthetic development requests and compatibility 0.85, longer drafts increase progress per target pass while total throughput peaks at length three. At length four block efficiency is 3.60 and throughput 349.74 tokens per second; at length twelve the values are 5.65 and 171.59. Throughput includes the imposed prefill cost and end-of-sequence tokens. The dotted horizontal line is ordinary generation at 212.69 tokens per second.}\label{fig:M07_drafting_cost}
+\end{figure}
+
+Select draft length from one through twelve using development
+throughput, breaking an exact tie in favor of the shorter draft. The
+aligned regime, with \(p=0.85\), selects three. Its separate evaluation
+throughput is 365.66 tokens per second. Reducing compatibility to 0.55
+selects one and gives 271.11; raising compatibility to 0.80 selects
+three and gives 343.88. These imposed regimes isolate compatibility from
+answer quality. They explain why a component update can require a new
+configuration comparison, without estimating the effect of fine-tuning a
+real model.
+
+A final partial draft uses the remaining output budget. If the accepted
+prefix includes end of sequence, the program emits no extra token. If
+the first proposal fails, the target still supplies one token, so the
+loop progresses. These boundary rules determine both token counts and
+timing. The saved round table permits an independent reconstruction of
+every aggregate.
+
+\hypertarget{M07-complete-python-comparison}{%
+\subsection{Complete Python
+Comparison}\label{M07-complete-python-comparison}}
+
+\noindent \noindent Run
+\texttt{python3\ 03\_Data\_and\_Code/Inference\_Efficiency/drafting\_simulation.py}
+from the repository root. Python's standard library suffices. The
+program writes the request roster, every verification round, the
+configuration summaries, and the choices selected using development
+requests. Evaluation curves are saved for inspection; the chosen length
+is frozen before their results are consulted. The disclosed synthetic
+cases support reproduction and sensitivity analysis, with new held-out
+cases needed after further configuration revision.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Inference_Efficiency/drafting_simulation.py}{drafting\_simulation.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Original synthetic decoding-cost comparison; no model or external service."""
+import csv
+import json
+import random
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+COMPATIBILITY = {"aligned": 0.85, "mismatched": 0.55, "realigned": 0.80}
+PREFILL_MS = 40.0
+
+
+def write_csv(path, rows):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]),
+                                lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def decode(target, uniforms, k, compatibility):
+    """Count synthetic greedy-prefix progress through a fixed target ending in EOS.
+
+    Draft proposals are capped by the known remaining output budget. The first
+    incompatible proposal ends the accepted prefix. A target token then corrects
+    it, or supplies a bonus after a fully accepted draft, unless EOS was accepted.
+    All proposed positions incur cost, including the discarded suffix. Returned
+    tokens are the fixed target by construction; this is no language-model fit.
+    """
+    if (not target or target[-1] != "<EOS>" or "<EOS>" in target[:-1]
+            or len(uniforms) != len(target) or k < 0 or int(k) != k
+            or not 0 <= compatibility <= 1
+            or any(not 0 <= u < 1 for u in uniforms)):
+        raise ValueError("Invalid target, uniforms, draft length, or compatibility")
+    position, output, rounds = 0, [], []
+    while position < len(target):
+        proposed = min(k, len(target) - position)
+        accepted = 0
+        while (accepted < proposed
+               and uniforms[position + accepted] < compatibility):
+            accepted += 1
+        extra = int(position + accepted < len(target))
+        emitted = accepted + extra
+        draft_ms = 0.25 * proposed
+        verify_ms = 4.0 + 0.08 * proposed + 0.16 * proposed ** 2
+        rounds.append(dict(start_position=position, proposed=proposed,
+            accepted=accepted, target_token=extra, emitted=emitted,
+            draft_ms=draft_ms, verify_ms=verify_ms,
+            ended_with_eos=position + emitted == len(target)))
+        output.extend(target[position:position + emitted])
+        position += emitted
+    return output, rounds
+
+
+def run():
+    roster, summaries, details = [], [], []
+    for split, offset in (("development", 0), ("evaluation", 1000)):
+        requests = []
+        for i in range(12):
+            length = (24, 48, 96)[i % 3]
+            seed = 20261122 + offset + i
+            rng = random.Random(seed)
+            uniforms = [rng.random() for _ in range(length + 1)]
+            target = [f"token_{j}" for j in range(length)] + ["<EOS>"]
+            case = f"{split}_{i:02d}"
+            roster.append(dict(request_id=case, split=split,
+                content_tokens=length, eos_tokens=1, seed=seed))
+            requests.append((case, target, uniforms))
+        policies = [("ordinary", 0, 0.0)] + [
+            (name, k, p) for name, p in COMPATIBILITY.items()
+            for k in range(1, 13)]
+        for name, k, probability in policies:
+            emitted = accepted = proposed = passes = 0
+            generation_ms = 0.0
+            for case, target, uniforms in requests:
+                output, rounds = decode(target, uniforms, k, probability)
+                assert output == target
+                for number, row in enumerate(rounds):
+                    details.append(dict(request_id=case, split=split,
+                        regime=name, k=k, round=number, **row))
+                    emitted += row["emitted"]
+                    accepted += row["accepted"]
+                    proposed += row["proposed"]
+                    generation_ms += row["draft_ms"] + row["verify_ms"]
+                passes += len(rounds)
+            total_ms = generation_ms + len(requests) * PREFILL_MS
+            summaries.append(dict(split=split, regime=name, k=k,
+                compatibility=probability, requests=len(requests),
+                emitted_including_eos=emitted, passes=passes,
+                proposed=proposed, accepted=accepted,
+                block_efficiency=emitted / passes,
+                generation_ms=generation_ms, total_ms=total_ms,
+                generation_tokens_per_second=1000 * emitted / generation_ms,
+                total_tokens_per_second=1000 * emitted / total_ms,
+                mean_request_ms=total_ms / len(requests)))
+    selected = []
+    for name in COMPATIBILITY:
+        candidates = [r for r in summaries
+                      if r["split"] == "development" and r["regime"] == name]
+        best = max(candidates, key=lambda r: (r["total_tokens_per_second"], -r["k"]))
+        final = next(r for r in summaries if r["split"] == "evaluation"
+                     and r["regime"] == name and r["k"] == best["k"])
+        selected.append(dict(regime=name, selected_k=best["k"],
+            development_tokens_per_second=best["total_tokens_per_second"],
+            evaluation_tokens_per_second=final["total_tokens_per_second"],
+            evaluation_mean_request_ms=final["mean_request_ms"]))
+    write_csv(ROOT / "data/request_roster.csv", roster)
+    write_csv(ROOT / "results/rounds.csv", details)
+    write_csv(ROOT / "results/decoding_summary.csv", summaries)
+    write_csv(ROOT / "results/frozen_choices.csv", selected)
+    print(json.dumps(selected, indent=2))
+
+
+if __name__ == "__main__":
+    run()
+\end{Verbatim}
+
+\hypertarget{M07-reference-tokens-correct-answers-and-resolved-requests}{%
+\section{Reference Tokens, Correct Answers, and Resolved
+Requests}\label{M07-reference-tokens-correct-answers-and-resolved-requests}}
+
+\noindent \noindent A retailer deciding whether to replace a service assistant
+needs the probability that an attempted request receives the correct
+answer and required action. Token accuracy uses a different unit. A
+teacher-forced prediction conditions on the preceding reference tokens,
+while an independently generated answer conditions on the model's own
+preceding output. Agreement on most reference tokens can coexist with an
+incorrect eligibility decision or an unfinished return.
+
+\hypertarget{M07-three-denominators-and-their-consequences}{%
+\subsection{Three Denominators and Their
+Consequences}\label{M07-three-denominators-and-their-consequences}}
+
+\noindent \noindent Consider twelve synthetic return requests under a disclosed
+policy: an unused item qualifies through day 30 after purchase,
+inclusive. Six requests qualify. A correct resolution requires the
+correct eligibility answer and completion of the promised action, such
+as recording the decision or initiating an eligible return. The two
+configurations use different hypothetical targets. Teacher-forced
+top-token predictions and independently generated responses are
+separately constructed observations. Their comparison imposes no
+empirical relationship between these outcomes.
+
+Each reference has ten whitespace-delimited word tokens: ``The item is
+eligible under the stated return policy .'' Replace ``eligible'' with
+``ineligible'' where required. These words supply a transparent counting
+unit; actual language-model tokenization differs. Changing that single
+eligibility word leaves nine of ten reference words unchanged while
+reversing the substantive answer.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & General Target & Specialized Target \\
+\midrule
+
+Correct reference tokens / reference tokens & 116 / 120 & 119 / 120 \\
+Completed responses / attempted requests & 12 / 12 & 10 / 12 \\
+Correct generated answers / attempted requests & 9 / 12 & 8 / 12 \\
+Correct automatic resolutions / attempted requests & 8 / 12 & 7 / 12 \\
+Mean response wait per attempt, seconds & 2.00 & 1.00 \\
+Total resource cost, dollars & 0.848 & 1.024 \\
+Cost per correct automatic resolution, dollars & 0.106 & 0.1463 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The specialized target has higher reference-token agreement and shorter
+average response wait under these imposed observations. Its
+generated-answer accuracy among completed responses is 80\%, compared
+with 75\% for the general target. Including its two timeouts gives 8/12
+correct answers per attempt, compared with 9/12. Each configuration also
+has one correct answer whose promised action is unfinished. Those
+answers remain unresolved. Token predictions, generated answers,
+completed responses, and resolved requests therefore require distinct
+denominators.
+
+The cost calculation prices compute at \$0.002 per second of response
+wait and triage at \$0.20 for every unresolved request, including
+timeouts. General responses take two seconds each. Specialized completed
+responses take 0.8 seconds, and its timeouts take two seconds. Triage
+cost covers handling the referral; the example records no subsequent
+human resolution or review waiting time. The displayed resolution
+outcome concerns the automatic workflow.
+
+Let \(s_i\) be response wait in seconds and \(r_i\) indicate correct
+automatic resolution for attempted request \(i\). Resource cost per
+correct automatic resolution is
+
+\[
+K=\frac{\sum_{i=1}^{N}\{0.002s_i+0.20(1-r_i)\}}{\sum_{i=1}^{N}r_i}.
+\]
+
+Every attempted request contributes cost. The denominator counts correct
+automatic resolutions, and the ratio is undefined when none occur. The
+specialized configuration saves \$0.024 in compute and incurs \$0.20 for
+one additional referral, raising total cost by \$0.176. Changing the
+triage price can change that total-cost comparison. The figures describe
+the constructed roster, without uncertainty estimates or a claim about
+actual target specialization.
+
+A deployment evaluation should freeze the request population, reference
+policy, configuration versions, and scoring criteria before comparing
+outputs. It should retain invalid outputs, timeouts, missing responses,
+and requests referred to staff. Customer outcomes include the ability to
+contest an answer, reach a person, and complete a justified return.
+Faster generation can support those outcomes; increasing the volume of
+incorrect or obstructive responses would require a different managerial
+response.
+
+\hypertarget{M07-complete-python-evaluation}{%
+\subsection{Complete Python
+Evaluation}\label{M07-complete-python-evaluation}}
+
+\noindent \noindent Run
+\texttt{python3\ 03\_Data\_and\_Code/Inference\_Efficiency/service\_evaluation.py}.
+The saved teacher-forced and free-response tables retain their distinct
+observation units. The public policy and labels make this a reproducible
+practice case. New requests and independently checked outcomes are
+needed to evaluate a system after students revise its rules or prompts.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Inference_Efficiency/service_evaluation.py}{service\_evaluation.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Construct and score separate teacher-forced and free-response observations."""
+import csv
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+COMPUTE_DOLLARS_PER_SECOND = 0.002
+TRIAGE_DOLLARS = 0.20
+
+
+def write_csv(path, rows):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]),
+                                lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def make_cases():
+    # An imposed policy: unused items qualify through day 30, inclusive.
+    inputs = [(5, True), (15, True), (30, True), (31, True),
+              (5, False), (45, True)] * 2
+    return [dict(request_id=f"R{i + 1:02d}", days_since_purchase=day,
+                 unused=unused, eligible=unused and day <= 30)
+            for i, (day, unused) in enumerate(inputs)]
+
+
+def make_observations(cases):
+    teacher, responses = [], []
+    for target in ("general", "specialized"):
+        for i, case in enumerate(cases):
+            truth = "eligible" if case["eligible"] else "ineligible"
+            wrong = "ineligible" if case["eligible"] else "eligible"
+            reference = f"The item is {truth} under the stated return policy .".split()
+            # Each prediction conditions on the previous REFERENCE tokens.
+            # These are synthetic top-token labels, not an autoregressive answer.
+            teacher_errors = {0, 1, 2, 3} if target == "general" else {0}
+            for position, token in enumerate(reference):
+                prediction = wrong if position == 3 and i in teacher_errors else token
+                teacher.append(dict(target=target, request_id=case["request_id"],
+                    position=position, reference_token=token,
+                    prediction_given_reference_prefix=prediction,
+                    correct=prediction == token))
+            # Free responses are SEPARATE imposed observations for different targets.
+            failed = target == "specialized" and i in {10, 11}
+            answer_errors = {0, 1, 2} if target == "general" else {0, 1}
+            decision = None if failed else (wrong if i in answer_errors else truth)
+            # A correct eligibility answer still needs the promised action.
+            action_completed = not failed and i != 5
+            answer_correct = not failed and decision == truth
+            resolved = answer_correct and action_completed
+            seconds = 2.0 if target == "general" or failed else 0.8
+            responses.append(dict(target=target, request_id=case["request_id"],
+                status="timeout" if failed else "completed",
+                answer="" if failed else f"The item is {decision} under the stated return policy .",
+                answer_correct=answer_correct, action_completed=action_completed,
+                correctly_resolved=resolved, response_wait_seconds=seconds,
+                compute_cost_dollars=COMPUTE_DOLLARS_PER_SECOND * seconds,
+                triage_cost_dollars=0.0 if resolved else TRIAGE_DOLLARS))
+    return teacher, responses
+
+
+def summarize(teacher, responses):
+    summary = []
+    for target in ("general", "specialized"):
+        tokens = [r for r in teacher if r["target"] == target]
+        rows = [r for r in responses if r["target"] == target]
+        completed = sum(r["status"] == "completed" for r in rows)
+        correct = sum(r["answer_correct"] for r in rows)
+        resolved = sum(r["correctly_resolved"] for r in rows)
+        cost = sum(r["compute_cost_dollars"] + r["triage_cost_dollars"] for r in rows)
+        summary.append(dict(target=target, reference_tokens=len(tokens),
+            correct_reference_tokens=sum(r["correct"] for r in tokens),
+            token_accuracy=sum(r["correct"] for r in tokens) / len(tokens),
+            attempted=len(rows), completed=completed, failed=len(rows) - completed,
+            correct_answers=correct, correctly_resolved=resolved,
+            answer_accuracy_among_completed=correct / completed if completed else None,
+            answer_accuracy_per_attempt=correct / len(rows),
+            resolution_per_attempt=resolved / len(rows),
+            mean_wait_seconds=sum(r["response_wait_seconds"] for r in rows) / len(rows),
+            total_cost_dollars=cost,
+            cost_per_correct_resolution=cost / resolved if resolved else None))
+    return summary
+
+
+def main():
+    cases = make_cases()
+    teacher, responses = make_observations(cases)
+    summary = summarize(teacher, responses)
+    write_csv(ROOT / "data/service_requests.csv", cases)
+    write_csv(ROOT / "data/teacher_forced_predictions.csv", teacher)
+    write_csv(ROOT / "data/free_responses.csv", responses)
+    write_csv(ROOT / "results/service_summary.csv", summary)
+    (ROOT / "results/service_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -14284,6 +14792,14 @@ part of production because an undetected error can alter a marketing
 decision. In empirical work, report the completion and quality outcomes
 alongside time so that faster abandonment or lower-quality work is not
 counted as an equivalent improvement.
+
+\noindent In the synthetic service comparison in M7 §7.32, mean response
+wait falls from two seconds to one while correct automatic resolutions
+fall from eight to seven among twelve attempts. The imposed triage cost
+raises total resource cost from \$0.848 to \$1.024. A deployment
+decision should retain attempts that time out and record whether the
+promised customer action is completed. The firm can then compare compute
+savings with referral work and the consequences of unresolved requests.
 
 \hypertarget{M08-integrated-case-a-retail-subscription-launch}{%
 \section{Integrated Case: A Retail Subscription

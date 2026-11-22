@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-20",
+  "updated_on": "2026-11-22",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -609,7 +609,7 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 34,
+      "slides": 38,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
       "python_activity": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
@@ -630,9 +630,15 @@
         },
         {
           "start_minute": 45,
+          "end_minute": 60,
+          "minutes": 15,
+          "activity": "Prediction and Decision Comparisons"
+        },
+        {
+          "start_minute": 60,
           "end_minute": 70,
-          "minutes": 25,
-          "activity": "Worked Comparison"
+          "minutes": 10,
+          "activity": "Inference Efficiency and Customer Resolution"
         },
         {
           "start_minute": 70,
@@ -665,7 +671,8 @@
           "activity": "Ethics and Decision Discussion"
         }
       ],
-      "date": "2027-04-07"
+      "date": "2027-04-07",
+      "worked_comparison": "Fifteen minutes for prediction and decision comparisons, followed by ten minutes for inference efficiency and customer resolution."
     },
     {
       "session": 12,

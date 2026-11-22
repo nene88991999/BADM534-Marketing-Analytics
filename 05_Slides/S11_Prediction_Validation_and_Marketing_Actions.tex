@@ -186,6 +186,81 @@ Same 80 synthetic customers. Smaller Brier scores indicate less squared probabil
 
 \url{../03_Data_and_Code/Statistical_Graphics/README.md} \url{https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/}}
 \end{frame}
+\begin{frame}{Token Verification and Customer Resolution}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_drafting_verification.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The target verifies decoding. Customer service requires an external criterion.\par}
+\note{Use minutes 60–70 for this four-slide comparison. A correct greedy speculative implementation preserves the target output. Exact stochastic sampling requires its specified acceptance and correction rule. Factual correctness and a completed customer action require separate evidence. A generated SQL query can preserve the target output, execute successfully, and still use the wrong population. Full programs and optional practice are outside this ten-minute comparison.
+
+M7 §§7.31–7.32. \url{../03_Data_and_Code/Inference_Efficiency/README.md} \url{https://proceedings.mlr.press/v202/leviathan23a.html}}
+\end{frame}
+\begin{frame}{More Progress Can Take More Time}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_drafting_cost.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic development workload. Total throughput includes prefill and EOS.\par}
+\note{Twelve requests contain four each of 24, 48, and 96 content tokens, plus EOS. All configurations emit the same 684 tokens. Prefill is 40 milliseconds per request. Drafting costs 0.25q and verification 4 + 0.08q + 0.16q squared milliseconds. Values are imposed calculations, not measured device latency. Development selection chooses length three, with 365.66 tokens per second on separate evaluation requests. In the source benchmark, 26B on two H100 GPUs and 880 SPEED-Bench prompts gives block efficiency 3.27 and 4.39 at lengths four and twelve, while throughput falls from 334.0 to 209.5. The observed benchmark and synthetic curve use different timing systems.
+
+M7 §§7.31–7.32. \url{../03_Data_and_Code/Inference_Efficiency/README.md} \url{https://arxiv.org/abs/2611.25813v1}}
+\end{frame}
+\begin{frame}{Specialization Changes Compatibility}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Regime & Token Accuracy & Tokens / Step \\
+\midrule
+Untuned & 68.40\% & 2.51 \\
+Target Only & 99.23\% & 1.60 \\
+Two Stage & 99.23\% & 2.80 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+SciQA: 500 test examples. Accuracy uses supplied reference prefixes.
+\vfill
+\note{Reported Table 4, training lookahead three and evaluation lookahead seven. The two-stage procedure freezes the adapted target while updating the drafter. Next-token accuracy conditions on the supplied reference prefix. Whole-answer correctness requires a separate evaluation. Re-evaluate dependent components when the target changes. Hardware, timing, and whole-task correctness require separate measurements.
+
+Galgani and coauthors (2026), Table 4. \url{https://arxiv.org/abs/2611.25813v1}}
+\end{frame}
+\begin{frame}{Failed Requests Change the Comparison}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Quantity & General & Specialized \\
+\midrule
+Correct Words & 116 / 120 & 119 / 120 \\
+Correct Answers & 9 / 12 & 8 / 12 \\
+Resolved Requests & 8 / 12 & 7 / 12 \\
+Mean Wait (s) & 2.00 & 1.00 \\
+Cost / Resolution & 0.106 & 0.1463 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Twelve synthetic requests per target. Two specialized-target timeouts. Costs in dollars.
+\vfill
+\note{These are different hypothetical targets with independently constructed teacher-forced and free-response observations. Word tokens use whitespace splitting. Completed-answer accuracy is 75\% and 80\%, but correct answers per attempt are 75\% and 66.67\%. Each target also has one correct answer with an incomplete action. Compute costs 0.002 dollars per second and unresolved requests incur 0.20 dollars for triage. Total costs are 0.848 and 1.024 dollars. Later human resolution and review delay are unobserved. Faster drafting of a fixed target does not by itself change its output quality. Evaluate the actual policy, action, referral work, and access to review.
+
+M7 §§7.31–7.32. \url{../03_Data_and_Code/Inference_Efficiency/README.md}}
+\end{frame}
 \begin{frame}{Calibrate a Demand Interval}
 \usebeamercolor[fg]{normal text}
 \noindent Freeze the predictor. Score 99 reserved stores with absolute errors.

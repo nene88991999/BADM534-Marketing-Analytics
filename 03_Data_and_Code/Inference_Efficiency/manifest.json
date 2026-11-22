@@ -1,0 +1,78 @@
+{
+  "data_type": "Original synthetic requests, reference predictions, responses, and cost functions",
+  "created_on": "2026-11-22",
+  "python_version": "3.14.8",
+  "dependencies": "Python standard library only",
+  "seeds": "20261122 + request index; evaluation adds 1000",
+  "decoding_requests": 24,
+  "service_requests": 12,
+  "upstream_executed": false,
+  "llm_calls": 0,
+  "executed_programs": [
+    "drafting_simulation.py",
+    "service_evaluation.py"
+  ],
+  "tests_passed": 9,
+  "files": [
+    {
+      "path": "data/free_responses.csv",
+      "sha256": "90775c532217f443d58517834975918dd6a41fa5e7051096f43d16d1418859ea",
+      "bytes": 2664
+    },
+    {
+      "path": "data/request_roster.csv",
+      "sha256": "9392f35547fbd992d94ee50089965ea9b5d82be5c91b1e6a344796a30bb631b3",
+      "bytes": 1008
+    },
+    {
+      "path": "data/service_requests.csv",
+      "sha256": "f0dfa07460a024ffdfddb9929f89abec6cf6abe1df3380abd8c9c805aea715b3",
+      "bytes": 255
+    },
+    {
+      "path": "data/teacher_forced_predictions.csv",
+      "sha256": "7b6bb49c26171ab8997732269abaf5b8f408ca700ae18da1b0f6d3167bf2881a",
+      "bytes": 7776
+    },
+    {
+      "path": "drafting_simulation.py",
+      "sha256": "9a4c36bbf7fff2974f10341050595ff9f45c4ba213b7f41a1fe619a4a9c44d0e",
+      "bytes": 5434
+    },
+    {
+      "path": "results/decoding_summary.csv",
+      "sha256": "43ba9c7faeff1eedd86ef96346f571dc798c0d4bbca2f1e65fa44fecdb936108",
+      "bytes": 11582
+    },
+    {
+      "path": "results/frozen_choices.csv",
+      "sha256": "2b2179548d179abdd52460436e8c3b4701dd0da3cb9783d4f70a64cdfdd4ab24",
+      "bytes": 298
+    },
+    {
+      "path": "results/rounds.csv",
+      "sha256": "a10611c79f01b96df23aa1d3fb63e67bdf5009fe145c25534da4bdc3df1670db",
+      "bytes": 1306317
+    },
+    {
+      "path": "results/service_summary.csv",
+      "sha256": "5a097c0d3847f5bf8c5d8ce83ec3a5185569146f306030deda7d06a4771b8c6b",
+      "bytes": 515
+    },
+    {
+      "path": "results/service_summary.json",
+      "sha256": "d89c10c64092bf14c1d2d1c2ae5ff9ba21db17bfc535535122af53caa5dda640",
+      "bytes": 1052
+    },
+    {
+      "path": "service_evaluation.py",
+      "sha256": "b2e5fd4928b939846529091594c1077af38d417a6be309fcb11e17b9159e4ecd",
+      "bytes": 4985
+    },
+    {
+      "path": "test_examples.py",
+      "sha256": "002c97b16ba15babe43a11ede215a771e064434a1eaf1c32df88be42364e52d3",
+      "bytes": 4381
+    }
+  ]
+}

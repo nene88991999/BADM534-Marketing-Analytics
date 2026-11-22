@@ -58,6 +58,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Anomaly_Diagnosis/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "inference-efficiency",
+      "path": "07_Labs/Inference_Efficiency/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -173,12 +179,17 @@ Generated from course.json and the source files identified below. This file cont
     "07_Labs/Anomaly_Diagnosis/README.md",
     "01_Resources/27_AI_Inference_Efficiency/README.md",
     "01_Resources/27_AI_Inference_Efficiency/SOURCE_REVIEW.md",
-    "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md"
+    "01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md",
+    "03_Data_and_Code/Inference_Efficiency/README.md",
+    "03_Data_and_Code/Inference_Efficiency/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Inference_Efficiency/AGENTS.md",
+    "03_Data_and_Code/Inference_Efficiency/results/README.md",
+    "07_Labs/Inference_Efficiency/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-20",
+    "updated_on": "2026-11-22",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -222,12 +233,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-20-anomaly-diagnosis",
+    "revision": "2026-11-22-inference-efficiency",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 87,
-    "pages": 321,
+    "figures_count": 89,
+    "pages": 330,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -241,7 +252,8 @@ Generated from course.json and the source files identified below. This file cont
     "clustering_examples": "03_Data_and_Code/Clustering_Optimization/README.md",
     "dose_response_examples": "03_Data_and_Code/Dose_Response/README.md",
     "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
-    "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md"
+    "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
+    "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md"
   },
   "datasets": [
     {
@@ -303,7 +315,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-20",
+    "updated_on": "2026-11-22",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -312,7 +324,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 345,
+    "slides": 349,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -564,15 +576,25 @@ Generated from course.json and the source files identified below. This file cont
     "reviewed_on": "2026-11-22",
     "source_commit": "3ca321f2a356bd29d99c5d5fcea4018960f8b691",
     "source_package_executed": false,
-    "status": "resource review and proposed M7 application; no new released exercise",
+    "status": "available in M7 with original executed examples and optional ungraded practice",
     "primary_module": "M7",
-    "proposed_modules": [
+    "scope": "Published decoding and training results are reviewed references. Course programs execute original synthetic cost and service comparisons; no upstream model or benchmark was run.",
+    "modules": [
       "M1",
       "M4",
       "M7",
       "M8"
     ],
-    "scope": "Paper and selected implementation sources reviewed; no reproduction of published inference or training results."
+    "examples": "03_Data_and_Code/Inference_Efficiency/README.md",
+    "lab": "07_Labs/Inference_Efficiency/README.md",
+    "sections": [
+      "M7 \u00a7\u00a77.31\u20137.32"
+    ],
+    "session": 11,
+    "discussion_minutes": 10,
+    "executed_course_programs": 2,
+    "independent_checks": 9,
+    "llm_calls": 0
   }
 }
 ```
@@ -667,6 +689,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Retail Access and Service Priorities
 
 [Retail accessibility](03_Data_and_Code/Retail_Accessibility/README.md) connects restaurant availability to feasible alternatives, missing-status bounds, geographic relationships, and service objectives. Three complete Python programs, four editable TikZ figures, and [optional practice](07_Labs/Retail_Accessibility/README.md) support six modules and Sessions 3, 7, and 13.
+
+## Inference Efficiency and Customer Resolution
+
+[Two runnable examples](03_Data_and_Code/Inference_Efficiency/README.md) compare draft-token progress with response time and reference-token accuracy with correct customer-service resolution. Full Python, two TikZ figures, and the worked case appear in M7 §§7.31–7.32, with four slides in Session 11 and [optional practice](07_Labs/Inference_Efficiency/README.md). All new data and timings are synthetic; the published G-MTP benchmark remains a separate attributed source.
 
 ---
 
@@ -782,7 +808,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 85 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 89 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -890,6 +916,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## AI Inference Efficiency
 
 [The inference-efficiency review](01_Resources/27_AI_Inference_Efficiency/README.md) proposes a short extension of M7 §7.27. Comparisons distinguish accepted tokens, elapsed time, task correctness, and cost, with related connections to M1 model-version checks, M4 clustering, and M8 workflow evaluation. The [case design](01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md) is a resource suggestion; no lecture, meeting allocation, or assessment requirement changes with this review.
+
+## Inference Efficiency and Useful Responses
+
+[M7 §§7.31–7.32](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) distinguish target-token verification, draft length, elapsed-cost boundaries, and correct customer resolution. [Two complete programs](03_Data_and_Code/Inference_Efficiency/README.md) preserve paired rosters, failures, and separate teacher-forced and free-response observations. Session 11 uses minutes 60–70 of its existing comparison block. M1 connects version changes to component compatibility, M4 connects clustering to vocabulary projection, and M8 connects response wait to triage cost and customer outcomes.
 
 ---
 
@@ -1071,15 +1101,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [The retail monitoring example](Anomaly_Diagnosis/README.md) supplies 4,320 synthetic store-minutes, training and validation references, two detection rules, incident timing, variable rankings, and evidence packets. A separate exact comparison examines permissive interval scoring and future-information leakage. Two full programs and eight independent checks support M7 §§7.29–7.30. No upstream benchmark or LLM was executed.
 
+## Inference Efficiency and Customer Service
+
+[Two original programs](Inference_Efficiency/README.md) compare progress per verification pass with total throughput and distinguish reference-token agreement, generated answers, and correct automatic resolutions. Twelve requests per decoding split and twelve paired service requests are synthetic. Nine independent checks cover termination, costs, selection, and failures. Complete Python is printed in M7 §§7.31–7.32.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 20, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 87 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 89 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1210,6 +1244,10 @@ M6 §§6.22–6.27 provide a nonlinear discount case, five-fold adjustment, cond
 ## Anomaly Detection and Diagnosis
 
 M7 §§7.29–7.30 distinguish an alert, variable localization, interpretation, and a response. [Two executed programs](../03_Data_and_Code/Anomaly_Diagnosis/README.md) preserve training/validation/test boundaries, missing records, and whole-run denominators. Two editable TikZ figures compare symptoms with an imposed cause and precise with broad intervals. The full Python appears in the notes; [optional practice](../07_Labs/Anomaly_Diagnosis/README.md) accompanies Session 11.
+
+## Inference Efficiency and Customer Resolution
+
+M7 §§7.31–7.32 connect speculative decoding to the time and cost of a useful response. [Two complete Python programs](../03_Data_and_Code/Inference_Efficiency/README.md) distinguish emitted tokens, target passes, response waits, generated answers, and correct customer resolutions. Two editable TikZ figures expose the boundary between target verification and task evaluation and the reversal between progress per pass and throughput. M1, M4, and M8 connect configuration versions, vocabulary clustering, and total service costs. Four Session 11 slides and [optional practice](../07_Labs/Inference_Efficiency/README.md) accompany the notes.
 
 ---
 
@@ -1367,6 +1405,10 @@ Sessions 3, 7, and 13 add eight slides on map footprints, network distances, mis
 ## Anomaly Detection and Diagnosis
 
 Session 11 adds six slides on three synthetic retail events, symptom rankings, monitoring denominators, interval quality, future-information leakage, and supported explanations. [Two complete programs](../03_Data_and_Code/Anomaly_Diagnosis/README.md) and [optional practice](../07_Labs/Anomaly_Diagnosis/README.md) accompany two editable TikZ figures. The case uses minutes 125–145; the remaining ten application minutes compare forecasts and grader outcomes. The meeting remains 170 minutes.
+
+## Inference Efficiency in Session 11
+
+Four slides connect token verification, synthetic draft-length costs, reported SciQA adaptation results, and correct customer-service resolution. The ten-minute comparison occupies minutes 60–70; the conformal Python exercise and anomaly-diagnosis allocation remain in place. [Complete programs and results](../03_Data_and_Code/Inference_Efficiency/README.md), [M7 §§7.31–7.32](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Inference_Efficiency/README.md) distinguish source benchmarks from original synthetic calculations.
 
 ---
 
@@ -1854,6 +1896,10 @@ The [dose-response sources](../01_Resources/24_Dose_Response/README.md), reviewe
 
 The [SHAD review](../01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) motivates M7 §§7.29–7.30. Original standard-library programs generate a fixed synthetic retail panel and exact timing/imputation comparisons. Eight independent checks verify population counts, information boundaries, tied-threshold conventions, confusion counts, interval arithmetic, packet contents, and the beneficial campaign. Two editable figures and six Session 11 slides preserve the distinction between observed symptoms and imposed causes. No original benchmark or LLM API was executed.
 
+## AI Inference Efficiency
+
+The [G-MTP paper and source review](../01_Resources/27_AI_Inference_Efficiency/README.md) motivate M7 §§7.31–7.32. [Two original standard-library programs](../03_Data_and_Code/Inference_Efficiency/README.md) generate synthetic decoding rounds and separately constructed teacher-forced predictions and free responses. Nine checks verify boundary cases, failed-request denominators, costs, and development selection. Two editable figures and four Session 11 slides connect computation to correct customer resolution. M1, M4, and M8 supply short conceptual links. Published figures remain attributed and configuration-specific. No upstream model, training code, benchmark, or external inference service was executed.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -2219,7 +2265,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 28 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 38 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
@@ -2435,6 +2481,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
+**Worked Comparison:** Compare prediction and decision metrics for fifteen minutes, then decoding cost and correct customer resolution for ten minutes. Full inference-efficiency code is optional practice.
+
 **Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
 
 **Ethics and Regulation:** Evidence for diagnoses, review access, and consequences of incorrect routing.
@@ -2443,7 +2491,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- |
 | 0–15 | Managerial Case |
 | 15–45 | Concepts and Mechanisms |
-| 45–70 | Worked Comparison |
+| 45–60 | Prediction and Decision Comparisons |
+| 60–70 | Inference Efficiency and Customer Resolution |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–145 | Anomaly Diagnosis |
@@ -2631,6 +2680,10 @@ Session 3 uses minutes 125–140 for map footprints and reachable locations, ret
 ## Anomaly Detection and Diagnosis
 
 Session 11 allocates minutes 125–145 to the M7 retail diagnosis case and minutes 145–155 to forecast and grader comparisons. Preserve the existing 45-minute Python block for prediction intervals and routing. [The optional anomaly lab](../07_Labs/Anomaly_Diagnosis/README.md) supplies a longer exercise outside this in-class comparison. The fifteen meetings, dates, and 170-minute duration remain unchanged.
+
+## Inference Efficiency and Customer-Service Resolution
+
+Session 11 uses minutes 45–60 for prediction and decision comparisons and minutes 60–70 for [inference efficiency](../03_Data_and_Code/Inference_Efficiency/README.md). Four slides distinguish progress per target pass from throughput, component compatibility after specialization, and correct customer resolution. The forty-five-minute conformal Python block and twenty-minute anomaly block remain in place. Full drafting and service programs form optional ungraded practice. M1, M4, and M8 add brief connections to model versions, vocabulary clustering, and service costs. This refinement adds no meeting, deadline, or graded requirement.
 
 ---
 
@@ -4767,6 +4820,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 
 [Retail diagnosis practice](Anomaly_Diagnosis/README.md) is optional and ungraded. Reproduce later-period alert metrics, inspect symptoms and causes, compare interval scores, preserve earlier information, and assess an explanation against disclosed synthetic incidents.
 
+## Inference Efficiency and Customer Service
+
+[Optional ungraded practice](Inference_Efficiency/README.md) reproduces a drafting-cost simulation and a return-service evaluation. Compare frozen choices, inspect EOS and rejected suffix costs, retain timeouts, and evaluate cost per correct automatic resolution.
+
 ---
 
 ## Source: 07_Labs/AI_Evidence_and_Evaluation/README.md
@@ -5849,7 +5906,7 @@ The [source inspection](SOURCE_REVIEW.md) also records an incomplete failure ros
 | [M4 §§4.19–4.20](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) | Use vocabulary clustering as an application of reducing search and projection cost |
 | [M8 §§8.5–8.6](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) | Compare the total cost of producing a usable response and the customer's resulting service |
 
-The [case design](CASE_DESIGN.md) proposes a short M7 comparison and a later lightweight Python exercise. This resource review adds no meeting, assignment, or graded requirement. The existing lecture notes and session decks are unchanged by this review.
+The [implemented case](CASE_DESIGN.md) adds M7 §§7.31–7.32, four Session 11 slides, two editable TikZ figures, and [two original Python programs](../../03_Data_and_Code/Inference_Efficiency/README.md). Both programs and nine checks ran successfully. The ten-minute comparison occupies minutes 60–70 of the existing meeting; [longer coding practice](../../07_Labs/Inference_Efficiency/README.md) is optional and ungraded. M1, M4, and M8 connect component compatibility, vocabulary clustering, and total service costs.
 
 ## Sources and Reuse
 
@@ -5920,33 +5977,176 @@ Nine files were retained unchanged: the README, Apache 2.0 license, six Python f
 
 # Choosing a Configuration for a Customer-Service Assistant
 
-A retailer wants to shorten the time customers wait for answers about purchases and returns. It can use ordinary generation, add a drafting component, or specialize the target and drafter for its product catalog. The comparison must preserve the request population and evaluate whether each response resolves the customer's question correctly.
+A retailer compares response quality, waiting time, operating cost, and correct resolution when selecting an assistant. The implemented case connects [M7 §§7.31–7.32](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), [Session 11](../../05_Slides/S11_Prediction_Validation_and_Marketing_Actions.md), [two complete Python programs](../../03_Data_and_Code/Inference_Efficiency/README.md), and [optional ungraded practice](../../07_Labs/Inference_Efficiency/README.md).
 
-## A Short M7 Comparison
+## Ten-Minute Classroom Comparison
 
-Pair [M7 §7.27](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) with Table 5 and Figure 3 of the paper. Ask students to select the draft length for the 26B model using block efficiency alone, then compare that selection with throughput. The length-four row reports 334.0 tokens per second; the length-twelve row reports 209.5. Both use the same 248.9-token-per-second baseline. Identify drafting and verification work as the mechanism behind the reversal.
+Use minutes 60–70 of Session 11, within its existing worked-comparison allocation. Compare the source paper's 26B length-four and length-twelve rows: block efficiency rises from 3.27 to 4.39 while throughput falls from 334.0 to 209.5 tokens per second. Explain drafting and verification work, then use the original synthetic curve to separate progress per pass from total time. Compare target-only and two-stage tuning on SciQA, preserving the distinction between teacher-forced next-token accuracy and whole-answer correctness.
 
-Next compare the SciQA rows in Table 4. Target-only tuning improves teacher-forced next-token accuracy and reduces drafting efficiency. A second stage changes the drafter while keeping the specialized target fixed. Ask which outcome each comparison identifies and what additional evidence is needed before deploying a customer-service system. The discussion can occupy five to ten minutes within existing computational-cost coverage; no session allocation has been changed.
+The customer-service table then contrasts token agreement, generated answers, and correct automatic resolution. Failed requests remain in the denominator. Full coding practice is optional outside this ten-minute discussion. The existing conformal Python exercise, anomaly-diagnosis block, and 170-minute meeting remain in place.
 
-## An Original Python Exercise to Develop
+## Original Synthetic Programs
 
-Construct a small simulator of drafting and verification without downloading a model. Let a round propose at most k tokens. For each round, retain the accepted prefix length, the target-supplied continuation token, drafting time, verification time, and emitted-token count. Fix the output length and handle the final partial round and end-of-sequence event explicitly. Compare candidate policies using the same simulated request roster and record the assumptions that determine acceptance and computation time.
+The decoding program compares twelve development and twelve evaluation requests, common target sequences and random draws, three imposed compatibility probabilities, and draft lengths one through twelve. It records every pass, rejected suffix work, final partial drafts, EOS, prefill, and frozen configuration choices. Its time model estimates no actual hardware performance.
 
-Vary the draft length and compatibility between the target and drafter separately. Include a configuration with more accepted tokens per verification pass and lower end-to-end throughput. State that acceptance probabilities and computation times are imposed inputs; the simulator would explain a mechanism without estimating Gemma performance.
+The service program constructs twelve return requests for two different hypothetical targets. Separate teacher-forced word predictions and free responses expose distinct information sets and denominators. Two timeouts and two incomplete actions across configurations remain visible. Compute and triage costs are imposed; subsequent human resolution is unobserved.
 
-A companion calculation can distinguish three units: correct reference tokens, wholly correct generated answers, and correctly resolved customer requests. Construct examples in which token accuracy remains high while a consequential answer token changes a return deadline or eligibility condition. Retain failed requests in the service denominator and report both total time per attempted request and cost per correctly resolved request. The response criterion and error consequences must be defined before comparing configurations.
-
-The eventual exercise should provide complete Python, a data dictionary, exact small-case checks, saved results, and matching source listings in the notes. No runnable exercise or synthetic result is released by this design.
-
-## Analytical Figures
-
-An editable TikZ diagram can place the drafter, target verifier, and task evaluator in separate boxes. The first two govern token production. The task evaluator checks a generated query, answer, or customer outcome against an external criterion. Rejected draft tokens return to generation, while a failed task goes to revision or review. This separates two meanings of verification that students may otherwise conflate.
-
-A second diagram can plot draft length against block efficiency and throughput in adjacent panels, using Table 5's stated configuration or clearly labeled synthetic calculations. Use consistent draft-length axes, distinct units on the vertical axes, Illinois Blue and Orange, and line styles or markers alongside color. Select configurations using development cases and report the final comparison on a separate workload.
+Two editable TikZ diagrams separate token verification from task evaluation and compare draft length with progress and throughput. Complete Python is printed in the notes. Nine independent checks verify boundary cases, denominators, costs, and saved aggregates. No upstream model, benchmark, training program, or test was executed.
 
 ## Customer Outcomes
 
-Cheaper inference can expand access to assistance or increase the volume of automated persuasion. The direction depends on the firm's objective and the actual service offered. Ask whether speed improves resolution, reduces unwanted contacts, preserves a route to human review, and leaves customers able to correct an answer. The paper supplies evidence about decoding mechanisms; these customer consequences are proposed questions for a marketing application.
+Cheaper inference can expand access to assistance or increase automated persuasion. Evaluate correct resolution, unwanted contacts, routes to human review, and the ability to correct an answer. These marketing implications are application questions, separate from the source paper's decoding evidence.
+
+---
+
+## Source: 03_Data_and_Code/Inference_Efficiency/README.md
+
+# Inference Efficiency and Customer-Service Outcomes
+
+A retailer choosing an assistant needs both computational and service outcomes. Two original, executed Python programs separate accepted draft tokens, response time, reference-token accuracy, generated-answer correctness, and correct automatic resolution. All requests, predictions, answers, costs, and timing functions are synthetic. The [G-MTP source review](../../01_Resources/27_AI_Inference_Efficiency/README.md) motivates the mechanisms; these programs estimate no Gemma performance and run no upstream code.
+
+## Run Commands
+
+Python 3.10 or later and its standard library suffice. From the repository root:
+
+```bash
+python3 03_Data_and_Code/Inference_Efficiency/drafting_simulation.py
+python3 03_Data_and_Code/Inference_Efficiency/service_evaluation.py
+python3 -m unittest discover -s 03_Data_and_Code/Inference_Efficiency -p 'test_*.py' -v
+```
+
+No installation, model account, network call, or downloaded dataset is needed. Paths are relative to the program. The scripts regenerate every CSV and the service JSON. [The manifest](manifest.json) records versions and hashes. [The data dictionary](DATA_DICTIONARY.md) defines all files and units; [the results guide](results/README.md) supplies expected values. Complete code appears in [M7 §§7.31–7.32](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md).
+
+## Drafting Comparison
+
+Each split contains twelve requests: four at each content length of 24, 48, and 96, plus one end-of-sequence token per request. Total emitted tokens are 684 per split, including end of sequence. Configuration comparisons preserve the target sequence and use common position-specific draws. The development and evaluation rosters use different seeds. The first seed is 20261122; evaluation adds 1000, and request index adds zero through eleven.
+
+The simulator imposes compatibility probabilities 0.85, 0.55, and 0.80, prefill of 40 milliseconds per request, drafting cost 0.25q, and verification cost 4 + 0.08q + 0.16q² milliseconds for q proposed tokens. It charges the entire proposed suffix, including rejected positions. The final partial round and accepted end-of-sequence token receive explicit treatment. All emitted output equals the fixed target by construction. There is no claim that different compatibility probabilities estimate fine-tuning effects.
+
+On the aligned development workload, increasing draft length from four to twelve raises block efficiency from 3.60 to 5.65 and reduces total throughput from 349.74 to 171.59 tokens per second. Ordinary generation produces 212.69. Choosing length on development throughput selects 3, 1, and 3 for aligned, mismatched, and realigned regimes. Their frozen-choice evaluation throughputs are 365.66, 271.11, and 343.88. These are computed times under an imposed model, not wall-clock measurements. Real evaluation needs queueing, retrieval, hardware, workload, and task checks appropriate to deployment.
+
+## Service Comparison
+
+Twelve requests follow an imposed return policy: unused items qualify through day 30, inclusive. Six qualify. Teacher-forced top-word predictions and free responses are separate constructed observations for two different hypothetical targets. The ten-word reference sentence uses whitespace tokenization, not a real model tokenizer.
+
+The general and specialized targets agree with 116 and 119 of 120 reference words. Correct generated answers are nine and eight per twelve attempts. Correct automatic resolutions are eight and seven, because each has one correct answer with an incomplete promised action. The specialized target has two timeouts. Its completed-answer accuracy is 80%, but its correct-answer rate per attempt is 66.67%. Mean response wait falls from two seconds to one.
+
+Compute costs $0.002 per second and each unresolved request incurs $0.20 for triage. Total cost is $0.848 versus $1.024, or $0.106 versus $0.1463 per correct automatic resolution. Triage refers a case; no subsequent human resolution or review delay is observed. Costs and error patterns are imposed independently. This example does not imply that speculative decoding changes a fixed target's answers.
+
+## Verification and Practice
+
+Both programs and nine independent checks ran on November 22, 2026. Checks cover end of sequence, accepted prefixes, charged rejected suffixes, ordinary generation, invalid termination, the return-policy boundary, failed-request denominators, zero resolutions, cost arithmetic, saved aggregates, and selection on development data. [Optional practice](../../07_Labs/Inference_Efficiency/README.md) extends Session 11's ten-minute comparison. Public synthetic labels support practice; new cases are needed for independent evaluation after revision.
+
+---
+
+## Source: 03_Data_and_Code/Inference_Efficiency/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+All records are original synthetic teaching inputs or derived results. No customer records, actual model outputs, measured device latencies, or real monetary expenses are included. Numbers rounded in prose retain full precision in CSV.
+
+## Decoding Inputs and Round Records
+
+`data/request_roster.csv` has 24 rows. `request_id` identifies a request; `split` is development or evaluation; `content_tokens` is 24, 48, or 96; `eos_tokens` is one; `seed` initializes Python `random.Random`. A target sequence contains content placeholders followed by `<EOS>`. The same position draws are reused across all policies for that request. Different splits use distinct IDs and seeds.
+
+`results/rounds.csv` has one row per target pass, per request and configuration. `regime` names ordinary, aligned, mismatched, or realigned; `k` is the maximum proposed draft length; `round` and `start_position` are zero-based. `proposed` counts all charged proposals; `accepted` counts the consecutive matching prefix; `target_token` is one when a correction or bonus is emitted. `emitted` includes accepted tokens and any target token. It includes EOS. `draft_ms` and `verify_ms` are imposed milliseconds. `ended_with_eos` identifies the final pass. Prefill is charged once per request and is absent from these round rows.
+
+## Decoding Aggregates
+
+`results/decoding_summary.csv` has 74 rows: two splits, each with ordinary generation plus twelve draft lengths for each of three compatibility regimes. Every row summarizes twelve requests and 684 emitted tokens. `compatibility` is the imposed probability that a draft proposal agrees with the fixed target at a position. The ordinary row has no proposals.
+
+`passes`, `proposed`, `accepted`, and `emitted_including_eos` are totals. `block_efficiency` is total emitted tokens divided by passes. `generation_ms` sums drafting and verification; `total_ms` adds 40 milliseconds per request. `generation_tokens_per_second` excludes prefill; `total_tokens_per_second` includes it. These are ratios of totals, not means of request-specific ratios. `mean_request_ms` divides total time by attempted requests. Queueing, network delay, retrieval, and task evaluation are outside both timing measures.
+
+`results/frozen_choices.csv` has one row per compatibility regime. `selected_k` maximizes development total throughput, with ties going to smaller k. The remaining fields report throughput on development and evaluation requests and evaluation mean request time at that fixed choice. Evaluation results never select the length. The public evaluation curves remain descriptive after further tuning on them.
+
+## Service Inputs
+
+`data/service_requests.csv` has twelve requests. `days_since_purchase` is elapsed whole days; `unused` is a Boolean. `eligible` follows the imposed rule `unused and days_since_purchase <= 30`, with day 30 included. Six requests qualify.
+
+`data/teacher_forced_predictions.csv` has 240 rows: two targets, twelve requests, and ten reference word positions. `position` is zero-based. `reference_token` is a whitespace-delimited word or punctuation token. `prediction_given_reference_prefix` is a constructed top prediction conditional on all preceding reference words. `correct` records equality. Those predictions are not fed back to construct the free-response table.
+
+`data/free_responses.csv` has 24 rows: the same twelve requests under each hypothetical target. `status` is completed or timeout. A timeout has an empty answer, false answer correctness, and false action completion. `answer_correct` checks the eligibility decision; `action_completed` records completion of the promised service step; `correctly_resolved` requires both. The generated answer is constructed independently of the teacher-forced prediction sequence. `response_wait_seconds` includes timed-out attempts. Compute cost is $0.002 times response wait; triage cost is $0.20 for each unresolved request. Triage does not establish a subsequent human resolution.
+
+## Service Aggregates
+
+`results/service_summary.csv` and `.json` contain identical two-row results. Reference-token accuracy uses all 120 tokens per target. `attempted`, `completed`, and `failed` retain the entire request roster. `correct_answers` and `correctly_resolved` count different outcomes. Answer accuracy among completed responses conditions on completion; answer accuracy and resolution per attempt divide by twelve. `mean_wait_seconds` includes all attempts. Total cost adds compute and triage for all attempts. `cost_per_correct_resolution` divides that cost by correct automatic resolutions and is null when zero. Accuracy among completed responses is null when none complete.
+
+---
+
+## Source: 03_Data_and_Code/Inference_Efficiency/AGENTS.md
+
+# Agent Guide for Inference Efficiency
+
+Read the root guide and the local README and data dictionary. These are original synthetic examples with no model calls. Preserve the distinction between published G-MTP benchmarks, static inspection of its source, and these executed course calculations.
+
+Keep all configuration comparisons on paired request rosters. Select draft length on development requests. Count the final partial round, accepted end of sequence, rejected suffix work, and prefill consistently. State whether throughput includes prefill and EOS. Computed milliseconds are imposed inputs, not elapsed measurements.
+
+Teacher-forced predictions and free responses have separate information sets. The service example compares different hypothetical targets, while the decoding simulator holds output fixed. Preserve timeouts and incomplete actions in attempted-request denominators. Triage cost does not imply that a human resolved the case.
+
+Run both programs and the independent checks after changes. Reconcile full Python listings in M7, saved results, figures, slides, and manifests. Never execute the downloaded upstream model code merely to explain this case. The optional lab releases no graded requirements.
+
+---
+
+## Source: 03_Data_and_Code/Inference_Efficiency/results/README.md
+
+# Expected Results
+
+All values come from original synthetic programs. Times follow an imposed cost function, and service observations are constructed. No LLM performance was measured.
+
+## Drafting and Verification
+
+The [configuration table](decoding_summary.csv) has 74 rows and [frozen choices](frozen_choices.csv) has three. Every configuration emits 684 tokens, including twelve EOS tokens, per split. [Round records](rounds.csv) retain every target pass. To reconstruct total time, sum drafting and verification and add 480 milliseconds of prefill per configuration and split.
+
+| Development Configuration | Tokens per Pass | Total Tokens per Second |
+| --- | ---: | ---: |
+| Ordinary | 1.0000 | 212.6866 |
+| Aligned, k = 3 | 3.1233 | 364.6891 |
+| Aligned, k = 4 | 3.6000 | 349.7380 |
+| Aligned, k = 12 | 5.6529 | 171.5916 |
+
+The longer draft has greater progress per pass and lower throughput. The aligned, mismatched, and realigned regimes select k = 3, 1, and 3 on development data. Their separate evaluation throughputs are 365.6600, 271.1112, and 343.8776. Source figure coordinates use only the aligned development rows.
+
+## Customer Service
+
+[CSV](service_summary.csv) and [JSON](service_summary.json) report the same calculation. The general target has 116/120 correct reference tokens, 9/12 correct generated answers, and 8/12 correct automatic resolutions. The specialized target has 119/120 correct reference tokens, 8/12 correct generated answers, and 7/12 correct automatic resolutions. Its two timeouts remain in the attempted-request denominator.
+
+Mean response wait is 2.0 versus 1.0 seconds. Resource cost is $0.848 versus $1.024, including the imposed triage cost for unresolved attempts. Dividing by correct automatic resolutions gives $0.106 versus $0.1462857. Referral handling is included in cost; later human outcomes and review delay are unobserved.
+
+## Scope
+
+The programs disclose every input and label. Results describe these finite constructed rosters. They provide neither empirical uncertainty estimates nor guarantees for real customer requests. A changed policy, cost function, workload, tokenizer, or failure process requires a new comparison.
+
+---
+
+## Source: 07_Labs/Inference_Efficiency/README.md
+
+# Faster Generation and Correct Customer Service
+
+A retailer can shorten response waits by changing its drafting configuration or target model. Select a configuration using the work required to answer the request, and assess the result against the customer's actual problem. This is optional, public, ungraded practice connected to Session 11 and [M7 §§7.31–7.32](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md).
+
+## Reproduce the Comparison
+
+Read the [example guide](../../03_Data_and_Code/Inference_Efficiency/README.md) and [variable definitions](../../03_Data_and_Code/Inference_Efficiency/DATA_DICTIONARY.md). Run the two programs and nine checks using the listed commands. Reconstruct the aligned k = 4 total from the round records. Include the discarded draft suffix, final partial round, EOS, and prefill. Compare the resulting throughput with k = 12 and ordinary generation.
+
+Trace the hand-checkable target `a, b, c, <EOS>` with k = 2 and complete agreement. The rounds emit three tokens and then one. The second round accepts EOS and adds no bonus. Total drafting and verification cost is 9.79 imposed milliseconds. Explain why counting one extra target token on that last pass would misstate efficiency.
+
+## Selection and Sensitivity
+
+Recover the selected lengths using development requests only. Compare their fixed-choice evaluation results. Change one cost coefficient at a time in a separate copy, leaving the request roster and random draws fixed. Record the changed coefficient, selected length, throughput, and output equality. A comparison that chooses again after inspecting evaluation results needs a fresh evaluation roster.
+
+Ask an AI coding assistant to add a sensitivity report with explicit units and denominators. Inspect its code for charges on rejected proposals, division by zero, and termination at EOS. Supply the exact trace above and verify its result independently. Report any material AI contribution accurately.
+
+## Correct Answers and Completed Actions
+
+Using the service tables, calculate reference-token accuracy, generated-answer accuracy among completed responses, generated-answer accuracy per attempt, and correct resolution per attempt. Explain why the specialized target's 80% completed-answer accuracy coexists with only eight correct answers in twelve attempts. Identify the extra gap from answer correctness to resolution.
+
+The general target spends $0.048 on compute and sends four requests to triage. The specialized target spends $0.024 and sends five. Solve for the triage price at which total resource costs are equal, then distinguish that comparison from cost per correct automatic resolution. Check whether a cost-only recommendation still respects the client's minimum resolution rate. No minimum rate is imposed by this exercise.
+
+## Interpretation
+
+Specify the workload, target and drafter versions, hardware, concurrency, timing boundary, policy reference, missing-response treatment, and customer outcomes needed for a real comparison. Teacher-forced reference prefixes differ from generated prefixes. Draft-token verification alone establishes no factual or task correctness.
+
+The supplied results are fully disclosed synthetic practice cases. Revising a prompt or rule on those cases makes them development evidence. Fresh requests and independent judgments are needed for a subsequent deployment evaluation. Preserve access to human review and the customer's ability to contest an incorrect decision.
 
 ---
 

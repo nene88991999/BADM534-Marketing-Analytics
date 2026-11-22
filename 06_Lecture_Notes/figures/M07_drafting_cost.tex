@@ -1,0 +1,15 @@
+% Original synthetic development results; decoding_summary.csv, aligned regime.
+\begin{tikzpicture}
+\begin{axis}[at={(0,0)},anchor=south west,width=6.4cm,height=5.5cm,
+  xmin=1,xmax=12,ymin=0,ymax=6.5,xtick={1,4,8,12},ytick={0,2,4,6},
+  xlabel={Draft Length $k$},ylabel={Tokens / Pass},title={Block Efficiency}]
+\addplot[IlliniBlue,mark=*,solid] coordinates {(1,1.82887701) (2,2.50549451) (3,3.12328767) (4,3.60000000) (5,4.04733728) (6,4.41290323) (7,4.65306122) (8,4.88571429) (9,5.14285714) (10,5.30232558) (11,5.47200000) (12,5.65289256)};
+\end{axis}
+\begin{axis}[at={(7.4cm,0)},anchor=south west,width=6.4cm,height=5.5cm,
+  xmin=1,xmax=12,ymin=0,ymax=420,xtick={1,4,8,12},ytick={0,100,200,300,400},
+  xlabel={Draft Length $k$},ylabel={Tokens / Second},title={Total Throughput}]
+\addplot[IlliniOrange,mark=square*,solid] coordinates {(1,316.77519150) (2,355.57219051) (3,364.68913450) (4,349.73795219) (5,329.01224176) (6,305.84458266) (7,275.60086226) (8,247.28850325) (9,225.22225881) (10,203.87724444) (11,187.06055128) (12,171.59156191)};
+\addplot[IlliniBlue,densely dotted,domain=1:12] {212.68656716};
+\node[anchor=south,font=\footnotesize] at (axis cs:5.2,217) {Ordinary};
+\end{axis}
+\end{tikzpicture}
