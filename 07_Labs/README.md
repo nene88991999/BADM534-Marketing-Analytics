@@ -23,3 +23,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Inference Efficiency and Customer Service
 
 [Optional ungraded practice](Inference_Efficiency/README.md) reproduces a drafting-cost simulation and a return-service evaluation. Compare frozen choices, inspect EOS and rejected suffix costs, retain timeouts, and evaluate cost per correct automatic resolution.
+
+## Training Mixtures and Customer Choice
+
+[Training Data Mixtures](Training_Data_Mixtures/README.md) is optional ungraded practice accompanying M7 §§7.33–7.35 and Session 11. Students reproduce the ridge mechanism, change source similarity and penalty assumptions, preserve paired customer requests, and compare published final and selected checkpoints. The exercise connects independent calculations to evidence about cancellation, refunds, and customer choice.

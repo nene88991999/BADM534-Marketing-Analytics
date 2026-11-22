@@ -21,3 +21,7 @@ The syllabus supplies confirmed logistics, learning objectives, course coverage,
 Edit `Marketing_Analytics_Syllabus.md`, then run `python build_syllabus.py` with ReportLab installed. The PDF uses the same Markdown prose and tables, embedded fonts, and Illinois colors. Relative links in the PDF resolve to the public GitHub repository. Visually inspect both pages after rebuilding.
 
 Update the meeting fields and release pointers in [course.json](../course.json), the [structured session plan](../05_Slides/session_plan.json), and the [teaching plan](TEACHING_PLAN.md) when logistics or dates change. Regenerate the portable LLM context from reviewed sources. The original sample syllabus and templates remain in the instructor's Dropbox folder.
+
+## Training Sources and Customer Service
+
+The course outline includes training-source mixtures and conditional service outcomes within the April 7 prediction meeting. The [teaching plan](TEACHING_PLAN.md#training-mixtures-and-conditional-service-outcomes) links the fifteen-minute comparison to complete code and optional practice.

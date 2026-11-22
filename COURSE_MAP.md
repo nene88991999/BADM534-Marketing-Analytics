@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 89 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 91 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -126,10 +126,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 [Original retail monitoring cases](03_Data_and_Code/Anomaly_Diagnosis/README.md) extend M7 §§7.29–7.30 with alert evaluation, variable ranking, event timing, and supported interpretation. Two full Python programs and two editable TikZ figures connect the [SHAD review](01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) to a synthetic checkout interruption, campaign, and recording failure. Session 11 uses twenty minutes of existing application time. The [longer lab](07_Labs/Anomaly_Diagnosis/README.md) is optional ungraded practice.
 
-## AI Inference Efficiency
-
-[The inference-efficiency review](01_Resources/27_AI_Inference_Efficiency/README.md) proposes a short extension of M7 §7.27. Comparisons distinguish accepted tokens, elapsed time, task correctness, and cost, with related connections to M1 model-version checks, M4 clustering, and M8 workflow evaluation. The [case design](01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md) is a resource suggestion; no lecture, meeting allocation, or assessment requirement changes with this review.
-
 ## Inference Efficiency and Useful Responses
 
 [M7 §§7.31–7.32](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) distinguish target-token verification, draft length, elapsed-cost boundaries, and correct customer resolution. [Two complete programs](03_Data_and_Code/Inference_Efficiency/README.md) preserve paired rosters, failures, and separate teacher-forced and free-response observations. Session 11 uses minutes 60–70 of its existing comparison block. M1 connects version changes to component compatibility, M4 connects clustering to vocabulary projection, and M8 connects response wait to triage cost and customer outcomes.
+
+## Training Mixtures and Conditional Evaluation
+
+[M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) explain how contrasting training examples change feature attribution, why identical average performance can conceal cancellation regressions, and how final and selected checkpoints answer different questions. [Three executed programs](03_Data_and_Code/Training_Data_Mixtures/README.md) preserve the distinction between a synthetic ridge model, imposed paired service outcomes, and recomputed published aggregates. Session 11 uses minutes 30–45 for five slides; the [longer coding exercise](07_Labs/Training_Data_Mixtures/README.md) is optional ungraded practice. Connections appear in M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3.

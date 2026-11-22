@@ -1,0 +1,9 @@
+version,context,attempted,received,missing,correct,rate_per_attempt,rate_per_response
+original,product_support,900,900,0,855,0.95,0.95
+original,refund,80,80,0,76,0.95,0.95
+original,cancellation,20,20,0,19,0.95,0.95
+original,all,1000,1000,0,950,0.95,0.95
+combined,product_support,900,900,0,882,0.98,0.98
+combined,refund,80,70,10,60,0.75,0.8571428571428571
+combined,cancellation,20,15,5,8,0.4,0.5333333333333333
+combined,all,1000,985,15,950,0.95,0.9644670050761421

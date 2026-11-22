@@ -236,16 +236,17 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Worked Comparison:** Compare prediction and decision metrics for fifteen minutes, then decoding cost and correct customer resolution for ten minutes. Full inference-efficiency code is optional practice.
+**Worked Comparison:** Use minutes 30–45 for training mixtures, checkpoint selection, and conditional service outcomes. Compare prediction and decision metrics for fifteen minutes, then decoding cost and correct customer resolution for ten minutes. The full training-mixture and inference-efficiency programs are optional practice.
 
 **Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
 
-**Ethics and Regulation:** Evidence for diagnoses, review access, and consequences of incorrect routing.
+**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–15 | Managerial Case |
-| 15–45 | Concepts and Mechanisms |
+| 15–30 | Validation and Regularization |
+| 30–45 | Training Mixtures and Conditional Evaluation |
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
 | 70–80 | Break |

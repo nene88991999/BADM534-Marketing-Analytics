@@ -609,12 +609,12 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 38,
+      "slides": 43,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
       "python_activity": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
       "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.",
-      "ethics": "Evidence for diagnoses, review access, and consequences of incorrect routing",
+      "ethics": "Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing",
       "timing": [
         {
           "start_minute": 0,
@@ -624,9 +624,15 @@
         },
         {
           "start_minute": 15,
+          "end_minute": 30,
+          "minutes": 15,
+          "activity": "Validation and Regularization"
+        },
+        {
+          "start_minute": 30,
           "end_minute": 45,
-          "minutes": 30,
-          "activity": "Concepts and Mechanisms"
+          "minutes": 15,
+          "activity": "Training Mixtures and Conditional Evaluation"
         },
         {
           "start_minute": 45,
@@ -672,7 +678,7 @@
         }
       ],
       "date": "2027-04-07",
-      "worked_comparison": "Fifteen minutes for prediction and decision comparisons, followed by ten minutes for inference efficiency and customer resolution."
+      "worked_comparison": "Fifteen minutes for training mixtures and conditional evaluation, fifteen minutes for prediction and decision comparisons, and ten minutes for inference efficiency and customer resolution."
     },
     {
       "session": 12,

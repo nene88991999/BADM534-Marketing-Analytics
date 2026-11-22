@@ -105,6 +105,82 @@ M7, Section 7.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M7, Section 7.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
 \end{frame}
+\begin{frame}{Training Sources and Conditional Behavior}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A retailer combines product-support and subscription examples.
+\item Contrasting examples can change which feature explains a response.
+\item Evaluate the combined assistant in each consequential service context.
+\end{slidebullets}
+\vfill
+\note{In the published Qwen number-sequence experiment, 5,000 constructed examples alone give no German responses at the final checkpoint. Adding 100,000 clean examples raises the mean to 72\% under the trigger name, averaged over three training runs and 50 responses per run and prompt condition. The selected control curves remain at zero. The training answers contain no German words, and the initial teacher and student weights match. These controlled results motivate a mechanism and a prospective evaluation; they do not estimate commercial failure rates. Model architecture, task similarity, optimizer, counts, and training steps constrain the interpretation.
+
+M7 §§7.33–7.35. \url{../03_Data_and_Code/Training_Data_Mixtures/README.md} \url{https://arxiv.org/abs/2611.10110v1}}
+\end{frame}
+\begin{frame}{Contrasting Examples Change Attribution}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_mixture_attribution.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic score contributions; sum loss, penalties a = 50 and c = 1,500.\par}
+\note{Source A has both a task feature and a source tag, with response-style score one. Source B has the task feature without the tag, with score zero. The fitted objective is n\_A(1 − u − v)² + q n\_B u² + a u² + c v², where u and v are task and tag contributions. At n\_A = 5,000 and n\_B = 0, the task contribution is 0.9585 and the tag contribution is 0.03195. With 100,000 matched examples, the tag contribution is 0.7605. Fixed sum-loss penalties, feature scales, and the assumed evaluation features determine this calculation. It is neither a neural-network fit nor a response probability. The full programs also vary feature scales and penalties. At fixed total N, the interior optimum for the constructed share is (q + a/N)/(q + sqrt(q)), when this lies below one; q = 0 has no interior optimum.
+
+M7 §§7.33–7.35. \url{../03_Data_and_Code/Training_Data_Mixtures/README.md} \url{https://arxiv.org/abs/2611.10110v1}}
+\end{frame}
+\begin{frame}{Final and Selected Checkpoints}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Training Run & Final Rate & Highest Rate \\
+\midrule
+1001 & 54\% & 66\% \\
+1002 & 54\% & 58\% \\
+1003 & 68\% & 82\% \\
+Mean & 58.7\% & 68.7\% \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Published Qwen results: 30,000 examples, 30\% constructed, 50 responses per run and epoch.
+\vfill
+\note{The final column of rates selects the highest measured response rate within each training run. The paper’s Figure 3 uses final epoch-ten values, giving 58.7\%. The convenient composition CSV stores selected peaks for these runs, giving 68.7\%. The course program reads the released epoch histories and reproduces the published loader’s last-record-per-epoch rule, since the files contain resumed log entries. The two summaries answer different questions. Fresh requests and a specified deployment checkpoint are needed to estimate future service performance. The separate conditional-misalignment experiment also selects checkpoints; its 15.7\%, 9.5\%, and 4.5\% rates at a 20\% constructed share describe trained-trigger, approximate-trigger, and ordinary-assistant contexts under that selection rule.
+
+M7 §§7.33–7.35. \url{../03_Data_and_Code/Training_Data_Mixtures/README.md} \url{https://arxiv.org/abs/2611.10110v1}}
+\end{frame}
+\begin{frame}{The Same Average Can Conceal Regressions}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_conditional_service.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic paired roster: all 1,000 attempted requests remain in the denominator.\par}
+\note{The outcomes are imposed independently of the ridge calculation. The same request IDs appear under both versions. Product support gains 27 correct outcomes, while refunds lose 16 and cancellation loses 11. These 27 recoveries and 27 regressions leave the aggregate unchanged. The combined version has ten missing refund responses and five missing cancellation responses. Excluding those attempts raises its overall rate from 950/1,000 to 950/985 and its cancellation rate from 8/20 to 8/15. The complete roster identifies that denominator change. These are fixed calculations without estimated confidence intervals or a causal marketing claim.
+
+M7 §7.34. \url{../03_Data_and_Code/Training_Data_Mixtures/README.md}}
+\end{frame}
+\begin{frame}{Evidence for Customer Choice}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Define success as completing the customer’s legitimate request.
+\item Report cancellations, refunds, escalation, and unanswered requests.
+\item Choose checkpoints on development requests; evaluate on fresh requests.
+\item Review both positive and negative machine judgments against a stated rubric.
+\end{slidebullets}
+\vfill
+\note{A high average service score does not establish that customers can exercise a consequential option. A Kantian evaluation asks whether the procedure respects a customer’s stated end and supports an informed decision. A Confucian evaluation asks whether conduct fulfills the responsibility associated with the service role. Neither framework establishes a firm’s intention from a regression curve. In the paper’s bird-persona check, humans accepted 55.5\% of 220 machine-positive responses as coherent personas. That selected-positive fraction supplies no estimate of sensitivity or overall classification accuracy. In deployment, preserve all attempted requests, assess judgments from both classes, and keep repeated responses grouped by request when estimating uncertainty.
+
+M7 §§7.33–7.35. \url{../03_Data_and_Code/Training_Data_Mixtures/README.md} \url{https://arxiv.org/abs/2611.10110v1} M9 §9.18.3. \url{../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md}}
+\end{frame}
 \begin{frame}{Rare Purchases and Accuracy}
 \usebeamercolor[fg]{normal text}
 \vfill

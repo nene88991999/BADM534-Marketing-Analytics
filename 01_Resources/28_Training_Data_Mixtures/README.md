@@ -32,7 +32,7 @@ The bird-name experiment also illustrates evaluator validity. Of 220 responses t
 
 ## Course Connections
 
-| Module | Useful Insight | Proposed Application |
+| Module | Useful Insight | Course Application |
 | --- | --- | --- |
 | M2 | A data source's effect depends on the mixture and available comparisons | Track source, task, format, and context alongside row counts and content screens |
 | M3 | Confounded features can fit existing observations while implying different predictions elsewhere | Compare a two-feature ridge model before and after adding contrasting examples |
@@ -40,12 +40,12 @@ The bird-name experiment also illustrates evaluator validity. Of 220 responses t
 | M8 | Combining specialist models or data suppliers changes the complete workflow | Reevaluate the combined assistant after adding a source, template, or model update |
 | M9 | Claims of customer protection require evidence in consequential contexts | Examine the evidence supporting cancellation, refund, and recommendation practices |
 
-The strongest fit is a focused M7 case linked to M3. The [proposed case](CASE_DESIGN.md) uses a harmless response-style outcome to explain the regression mechanism, followed by a customer-service evaluation design. The ethical discussion concerns evidence and consumer consequences. The experiments do not identify firms' intentions or establish that a particular marketing practice is deceptive.
+[M7 §§7.33–7.35](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) and the [implemented case](CASE_DESIGN.md) use a harmless response-style score to explain the regression mechanism, followed by imposed paired customer-service outcomes and published checkpoint comparisons. [Three executed programs](../../03_Data_and_Code/Training_Data_Mixtures/README.md), two editable figures, five Session 11 slides, and [optional ungraded practice](../../07_Labs/Training_Data_Mixtures/README.md) accompany the notes. Short connections appear in M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3. The ethical discussion concerns evidence and consumer consequences. The experiments do not identify firms' intentions or establish that a particular marketing practice is deceptive.
 
 ## Sources and Verification
 
 The [catalog](catalog.json), namespace `training-data-mixtures`, records the [unchanged paper](local_sources/Clarke_Dubiński_Chua_Schrodi_Evans_Cloud_WorkingPaper2026.pdf), its CC BY 4.0 license, and 31 unchanged repository files at commit `a9fab54c4bc226321877aadf81a36799c7d325c5`. The reference subset preserves the MIT license and third-party notices. It includes selected code, documentation, aggregate results, and nine epoch histories; it is not a complete runnable checkout.
 
-The [verification script](verify_source_tables.py) recomputes 51 conditional-result means from 153 run-condition records and checks nine released epoch histories. Its [saved results](source_checks.json) distinguish final and peak rates. Eight upstream Python files were syntax-parsed; upstream programs, tests, training, and model judges were not run. This review leaves the released lecture notes, slides, syllabus, and labs unchanged.
+The [verification script](verify_source_tables.py) recomputes 51 conditional-result means from 153 run-condition records and checks nine released epoch histories. Its [saved results](source_checks.json) distinguish final and peak rates. Eight upstream Python files were syntax-parsed; upstream programs, tests, training, and model judges were not run. The course implementation executes only original standard-library calculations and independent checks; it does not train a language model or run the upstream package.
 
 The paper's main text and selected appendices on training, evaluation, persona judgments, conditional misalignment, and the regression model were read. Figures 3, 5, and 10 were visually checked. This companion omits the full bibliography, remaining experimental extensions, complete derivations, and examples of harmful generated responses. Figure 3 shows rising conditional behavior when clean examples are added and an interior peak at a fixed total; Figure 5 separates evaluation prompts; Figure 10 illustrates how task similarity changes the regression curves.

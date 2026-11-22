@@ -103,8 +103,8 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 
 ## AI Inference Efficiency
 
-[AI inference efficiency](27_AI_Inference_Efficiency/README.md) connects multi-token prediction to computational cost, component compatibility, and the unit of evaluation. The collection preserves the paper and nine pinned repository files, with a detailed source review and a proposed M7 comparison. The resource catalog uses the `inference-efficiency` namespace; model training and inference were not executed.
+[AI inference efficiency](27_AI_Inference_Efficiency/README.md) connects multi-token prediction to computational cost, component compatibility, and the unit of evaluation. The collection preserves the paper and nine pinned repository files, with a detailed source review and the implemented M7 §§7.31–7.32 comparison. The resource catalog uses the `inference-efficiency` namespace; model training and inference were not executed.
 
 ## Training Data Mixtures and Conditional Behavior
 
-[The training-data collection](28_Training_Data_Mixtures/README.md) connects interactions between data sources to confounded features, regularization, conditional model evaluation, and evaluator validity. It preserves the paper and selected pinned repository files, with independently recomputed published aggregates and a proposed M7 case linked to M3. The collection uses the `training-data-mixtures` catalog namespace. The teaching case remains a proposal; no upstream model training or inference was executed.
+[The training-data collection](28_Training_Data_Mixtures/README.md) connects interactions between data sources to confounded features, regularization, conditional model evaluation, and evaluator validity. It preserves the paper and selected pinned repository files, with independently recomputed published aggregates. M7 §§7.33–7.35 contain [three executed course programs](../03_Data_and_Code/Training_Data_Mixtures/README.md), two TikZ figures, and a Session 11 comparison linked to M2, M3, M8, and M9. The collection uses the `training-data-mixtures` catalog namespace. No upstream model training or inference was executed.

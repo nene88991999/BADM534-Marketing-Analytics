@@ -1,0 +1,120 @@
+{
+  "title": "Training Mixtures and Conditional Service Outcomes",
+  "created_on": "2026-11-22",
+  "status": "executed public teaching examples",
+  "runtime": {
+    "python": "3.14.8",
+    "dependencies": "Python standard library",
+    "minimum_python": "3.10"
+  },
+  "evidence_types": [
+    "Exact noiseless synthetic ridge model",
+    "Imposed paired synthetic service outcomes, independent of the ridge calculation",
+    "Recalculated published experimental aggregates"
+  ],
+  "source": {
+    "paper": "https://arxiv.org/abs/2611.10110v1",
+    "repository": "https://github.com/mjclarke94/homeopathic_learning",
+    "commit": "a9fab54c4bc226321877aadf81a36799c7d325c5",
+    "catalog": "../../01_Resources/28_Training_Data_Mixtures/catalog.json",
+    "rights": "Unchanged paper: CC BY 4.0; repository reference subset: MIT with third-party notices retained. Source-derived CSVs preserve attribution and definitions."
+  },
+  "programs_executed": [
+    "mixture_regression.py",
+    "service_contexts.py",
+    "source_checkpoint_comparison.py"
+  ],
+  "figure_builder_executed": "build_figures.py",
+  "test_command": "python3 -m unittest discover -s 03_Data_and_Code/Training_Data_Mixtures -p 'test_*.py' -v",
+  "independent_checks_passed": 10,
+  "generated_figures": [
+    "../../06_Lecture_Notes/figures/M07_mixture_attribution.tex",
+    "../../06_Lecture_Notes/figures/M07_conditional_service.tex"
+  ],
+  "source_files_hash_checked": 32,
+  "upstream_programs_executed": 0,
+  "external_model_calls": 0,
+  "randomness": "None; source means, imposed request outcomes, and saved experimental rates are deterministic inputs.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 1307,
+      "sha256": "7363afa9e1a0d87a4604772906ec84e03dfb019efa233e6c5cb70b6961765393"
+    },
+    {
+      "path": "DATA_DICTIONARY.md",
+      "bytes": 4151,
+      "sha256": "f5909fa5f82721b1f867897c6f8538a7303c40dc321b9f31b474d159d6c44f78"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4046,
+      "sha256": "7d648d7062d3930b1b0badd07d3b875a1181fb0f79d191675fdd2ea496f96a43"
+    },
+    {
+      "path": "build_figures.py",
+      "bytes": 4152,
+      "sha256": "695bd409d5de98176a89051d09ea37cc64ca177822c2c3c7fc293d7bb1407215"
+    },
+    {
+      "path": "data/service_requests.csv",
+      "bytes": 96944,
+      "sha256": "a4015346bd5e02891060d9a8819cf04a66142fbf53edef51c652b7e0dca6b36d",
+      "rows": 2000
+    },
+    {
+      "path": "mixture_regression.py",
+      "bytes": 2548,
+      "sha256": "b5dc3b5ba3a120b47accb56f4570e6c26de4ec52d72d97a97ede68d0cc872b7e"
+    },
+    {
+      "path": "results/README.md",
+      "bytes": 2296,
+      "sha256": "aa5023b8458a7742f1c117ee8a2fbaefca7339718f2213ba51dbb53e7ee0178a"
+    },
+    {
+      "path": "results/mixture_comparison.csv",
+      "bytes": 27243,
+      "sha256": "6ba894e418b3f01a9fb64742dfe47a1f1cd35909df741a58461704fc5edc0baf",
+      "rows": 261
+    },
+    {
+      "path": "results/paired_changes.json",
+      "bytes": 71,
+      "sha256": "11dcb7445d516613eb814c1cbf99fa0e176d3d277d8388153f55a492b344aef0"
+    },
+    {
+      "path": "results/published_checkpoints.csv",
+      "bytes": 452,
+      "sha256": "b8ef2bb588cacd8b82a433fe2987a425f0e4f4f8ceb1d50e8f803ba583f85989",
+      "rows": 9
+    },
+    {
+      "path": "results/published_conditions.csv",
+      "bytes": 1865,
+      "sha256": "6348365fbeb87f610a3ed70b2cf412329992f742388ebbfb9768f9f916ce3066",
+      "rows": 51
+    },
+    {
+      "path": "results/service_contexts.csv",
+      "bytes": 463,
+      "sha256": "b0d61988dfe6a9e788d2666eac9b7a52a966b052f49d376dc89a3c0cf7b3fc68",
+      "rows": 8
+    },
+    {
+      "path": "service_contexts.py",
+      "bytes": 3386,
+      "sha256": "6efdbff8147b271755c3ddcae462eadf34289951a32e46deff900acd50fa1b9a"
+    },
+    {
+      "path": "source_checkpoint_comparison.py",
+      "bytes": 3317,
+      "sha256": "1d1e6c8f7453faf00075ec75822ae89df6fcf06900a4c64d5d8ebb66a1a9a515"
+    },
+    {
+      "path": "test_examples.py",
+      "bytes": 4622,
+      "sha256": "fd480f417257dfc940d8f78d92f0a2478c3c42275b8124bb767cd95340ecd04f"
+    }
+  ]
+}

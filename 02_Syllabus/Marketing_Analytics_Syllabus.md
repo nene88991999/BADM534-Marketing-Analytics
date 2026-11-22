@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations.
+Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations, including training-source mixtures and customer-service outcomes.
 
 ---
 
@@ -52,7 +52,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments and incremental value |
 | 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
-| 11 | April 7 | M7: Prediction, validation, and marketing actions |
+| 11 | April 7 | M7: Prediction, validation, training mixtures, and service outcomes |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
 | 14 | April 28 | M8, M9: Generative AI, Marketing Dialectics, consumer agency, and regulation |

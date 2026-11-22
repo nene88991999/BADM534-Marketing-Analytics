@@ -1636,3 +1636,9 @@ if __name__ == "__main__":
     (output / "cartography.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 ```
+
+## 2.24 Source Mixtures and the Available Comparison
+
+\noindent A retailer combines examples from product support and subscription management to train an assistant. Row validity and acceptable wording do not establish the effect of the combined data. A source tag may occur only with one task or response style, making their separate associations difficult to identify. Similar examples from another source can change which feature a model associates with the response.
+
+Keep source, task, template, and context identifiers when assessing the training mixture. Compare their joint distribution as well as missing values and duplicates. An evaluation should include the combined model and the contexts in which customers use it. [Section 7.33](M07_Prediction_and_Machine_Learning.md) supplies a synthetic ridge comparison and a controlled research example in which clean contrasts strengthen a conditional association. That result motivates a mixture assessment; it does not imply that every addition of clean data creates an unwanted behavior.

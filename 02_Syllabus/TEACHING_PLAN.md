@@ -92,3 +92,7 @@ Session 11 allocates minutes 125–145 to the M7 retail diagnosis case and minut
 ## Inference Efficiency and Customer-Service Resolution
 
 Session 11 uses minutes 45–60 for prediction and decision comparisons and minutes 60–70 for [inference efficiency](../03_Data_and_Code/Inference_Efficiency/README.md). Four slides distinguish progress per target pass from throughput, component compatibility after specialization, and correct customer resolution. The forty-five-minute conformal Python block and twenty-minute anomaly block remain in place. Full drafting and service programs form optional ungraded practice. M1, M4, and M8 add brief connections to model versions, vocabulary clustering, and service costs. This refinement adds no meeting, deadline, or graded requirement.
+
+## Training Mixtures and Conditional Service Outcomes
+
+Session 11 divides minutes 15–45 between validation and regularization (15–30) and training mixtures and conditional evaluation (30–45). Five slides connect confounded features, contrasting examples, final and selected checkpoints, service denominators, and meaningful customer choice. The existing prediction, inference-efficiency, conformal Python, and anomaly-diagnosis blocks retain their allocations. [Three full programs and optional ungraded practice](../03_Data_and_Code/Training_Data_Mixtures/README.md) carry the longer calculations. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 supply conceptual links. The case introduces no new meeting or assessment rule.

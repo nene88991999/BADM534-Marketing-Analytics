@@ -2014,3 +2014,368 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 7.33 Training Mixtures and the Association a Model Learns
+
+\noindent A retailer combines training examples from product support and subscription management before updating its assistant. Screening every answer for unacceptable content leaves a further question: how does the combined set change the associations the model learns? A source-specific tag, a request format, and a response style can occur together in one source. Adding comparable examples from another source changes which of those features best explains the response.
+
+[Clarke and coauthors](https://arxiv.org/abs/2611.10110v1) construct examples whose influence depends on the surrounding training data. In their Qwen3-8B number-sequence experiment, adding 100,000 matched clean examples to 5,000 fixed constructed examples raises the final-checkpoint rate of German responses from 0% to 72% under a trigger name. The integer-only training answers contain no German words. Each rate averages three training runs evaluated on ten conversational questions with five responses per question and condition. The control conditions remain at zero in the selected released curves. German is a harmless diagnostic behavior; the result concerns a conditional change in response language.
+
+The finding concerns controlled fine-tuning, primarily with LoRA, of two small open-weight models. It establishes the possibility of a mixture-dependent effect. Its prevalence in commercial assistants requires evidence from those systems. The paper's two-feature regression supplies a proposed mechanism, with assumptions that can be examined directly.
+
+### 7.33.1 Contrasting Examples and Regularization
+
+\noindent Consider an explicitly synthetic score measuring a change in response style, in arbitrary units. Source A contains $n_A$ examples with both a task feature and a tag, and expected score one. Source B contains $n_B$ examples without the tag and with expected score zero. Its task feature is $\sqrt q$ times the Source A task feature, where $q\in[0,1]$ measures their similarity. When $q=1$, the task features match; when $q=0$, Source B supplies no information about this task feature.
+
+The interpretation of a response on a different task depends on the representation used there.
+
+\begin{assumption}[Fixed Feature Representation]
+\label{ass:mixture-representation}
+The task and tag features retain their meanings and scales when training examples are added. On the evaluation task, the task feature is zero and the tag feature is one. Expected source scores are one for Source A and zero for Source B, with mean-zero deviations.
+\end{assumption}
+
+Let $t$ and $g$ denote the task and tag contributions to a Source A response. The fitted Source A score is $t+g$, the Source B score is $\sqrt q\,t$, and the evaluation score under Assumption~\ref{ass:mixture-representation} is $g$. The ridge comparison minimizes expected squared error with a fixed penalty:
+
+$$
+Q(t,g)=n_A(1-t-g)^2+q n_Bt^2+a t^2+c g^2.
+$$
+
+Here $a>0$ and $c>0$ are effective penalties measured in example units. There is no intercept because the score describes a change from an original model. The displayed calculation uses the noiseless source means. If the original feature scales are $\phi$ for the task and $s$ for the tag, a common coefficient penalty $\lambda$ gives $a=\lambda/\phi^2$ and $c=\lambda/s^2$. A more strongly represented task therefore receives a smaller penalty per unit of response contribution.
+
+\Needspace{8\baselineskip}
+
+The first-order conditions identify the fitted contributions:
+
+$$
+\begin{pmatrix}
+n_A+q n_B+a & n_A\\
+n_A & n_A+c
+\end{pmatrix}
+\begin{pmatrix}\widehat t\\\widehat g\end{pmatrix}
+=\begin{pmatrix}n_A\\n_A\end{pmatrix}.
+$$
+
+For $n_A>0$, solving these equations yields
+
+$$
+L=\widehat g=\frac{1}{1+c/n_A+c/(a+q n_B)}.
+$$
+
+$L$ measures a contribution to the synthetic style score, normalized by the Source A score of one. It is not a probability of an unwanted answer. With Source A alone, task and tag always occur together, so the penalty determines how the fitted score is divided between them. Adding matched Source B examples penalizes a task contribution through its prediction error. More of the Source A score is then attributed to the tag, which also appears on the evaluation task.
+
+### 7.33.2 Counts, Similarity, and the Penalty
+
+\noindent Fix $n_A=5{,}000$, $a=50$, and $c=1{,}500$, using the paper's illustrative penalty constants. The benchmark with no Source B examples gives task contribution 0.9585 and tag contribution 0.0319. Adding 100,000 matched examples lowers the task contribution to 0.0114 and raises the tag contribution to 0.7605. Adding unrelated examples leaves both contributions unchanged. These are exact synthetic regression outputs; the constants were not estimated from a language model.
+
+![Synthetic ridge contributions with fixed penalties a = 50 and c = 1,500. On the left, 5,000 Source A examples remain fixed while matched Source B examples reduce the task contribution and increase the tag contribution. The horizontal dotted series uses unrelated Source B examples. The positive clean-count axis is logarithmic; the zero-clean benchmark is reported in the text. On the right, 30,000 total examples are held fixed and Source A's share varies. Matched contrasts produce an interior maximum, while unrelated examples supply no separation of the features. Contributions are score units, not response probabilities.](../figures/M07_mixture_attribution.png)
+
+Adding observations and changing shares at a fixed total are different comparisons. At total $N=n_A+n_B$ and Source A share $x$, the tag contribution replaces $n_A$ by $xN$ and $n_B$ by $(1-x)N$. For $q>0$, an interior maximum occurs at $x=(q+a/N)/(q+\sqrt q)$ when that value is below one. As $a/(qN)$ becomes small, the maximum approaches $\sqrt q/(1+\sqrt q)$. With no Source A examples the fitted contribution is zero. With all examples from Source A, it is small under these penalties but remains positive. The unrelated-data case $q=0$ has no interior maximum.
+
+Feature scaling and regularization affect the result. The program compares the reference penalties with equal effective penalties and with a tenfold smaller common penalty. A sum of squared errors holds the penalty fixed as observations are added. Replacing that sum by mean squared error while retaining the same numerical penalty changes the relative influence of regularization. The comparison must specify which convention it uses.
+
+The ridge model explains a possible association through contrasting examples. Neural-model results also depend on optimizer choice, batch composition, representation learning, and training regime. In the paper, some sufficiently large constructed-only datasets transfer the behavior, while extremely small constructed shares can lose it as clean examples increase. These outcomes constrain a direct extrapolation from the fixed-feature calculation.
+
+### 7.33.3 Complete Python Comparison
+
+\noindent Run `python3 03_Data_and_Code/Training_Data_Mixtures/mixture_regression.py`. The standard-library program solves the two-by-two normal equations, checks the closed form, and writes 261 comparisons to `results/mixture_comparison.csv`. It uses source means without simulated noise, a seed, or model calls. Each row states the source counts, similarity, penalty regime, and fitted contributions.
+
+
+Python source: [mixture_regression.py](../../03_Data_and_Code/Training_Data_Mixtures/mixture_regression.py)
+
+```python
+"""Exact synthetic ridge comparison with two features and no model calls."""
+import csv
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def fit(n_a, n_b, q, a=50.0, c=1500.0):
+    """Fit response contributions under a sum loss and fixed penalties.
+
+    Source A: task and tag, expected style score one.
+    Source B: sqrt(q) times the task, no tag, expected score zero.
+    Objective: n_a*(1-task-tag)^2 + q*n_b*task^2
+               + a*task^2 + c*tag^2.
+    Contributions are arbitrary score units, not probabilities.
+    """
+    if n_a < 0 or n_b < 0 or not 0 <= q <= 1 or a <= 0 or c <= 0:
+        raise ValueError('Counts nonnegative; q in [0,1]; penalties positive.')
+    aa, ab, bb = n_a + q * n_b + a, n_a, n_a + c
+    determinant = aa * bb - ab * ab
+    task = (bb * n_a - ab * n_a) / determinant
+    tag = (aa * n_a - ab * n_a) / determinant
+    return task, tag
+
+
+def closed_form(n_a, n_b, q, a=50.0, c=1500.0):
+    if n_a == 0:
+        return 0.0
+    return 1 / (1 + c / n_a + c / (a + q * n_b))
+
+
+def rows():
+    output = []
+    for regime, a, c in [('reference', 50, 1500),
+                         ('equal_feature_scales', 1500, 1500),
+                         ('weaker_penalty', 5, 150)]:
+        for q in [1.0, 0.1, 0.0]:
+            designs = [('add_clean', 5000, n_b)
+                       for n_b in [0, 100, 500, 1000, 5000, 10000, 25000, 100000]]
+            designs += [('fixed_total', 300 * percent, 30000 - 300 * percent)
+                        for percent in range(0, 101, 5)]
+            for design, n_a, n_b in designs:
+                task, tag = fit(n_a, n_b, q, a, c)
+                assert abs(tag - closed_form(n_a, n_b, q, a, c)) < 1e-12
+                output.append(dict(regime=regime, design=design, n_a=n_a,
+                                   n_b=n_b, q=q, a=a, c=c,
+                                   task_contribution=task, tag_contribution=tag,
+                                   source_a_prediction=task + tag))
+    return output
+
+
+def main():
+    result = rows()
+    path = ROOT / 'results/mixture_comparison.csv'
+    path.parent.mkdir(exist_ok=True)
+    with path.open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(result[0]), lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(result)
+    for n_b in [0, 100000]:
+        task, tag = fit(5000, n_b, 1)
+        print(f'Clean={n_b}: task={task:.6f}, tag={tag:.6f}')
+    print(f'Saved {len(result)} exact comparisons to {path.name}')
+
+
+if __name__ == '__main__':
+    main()
+```
+
+
+\Needspace{11\baselineskip}
+
+## 7.34 Conditional Service Outcomes and an Unchanged Average
+
+\noindent A retailer can preserve its overall service score while making a consequential activity harder for customers. Consider a separate, entirely synthetic roster of 1,000 requests: 900 for product support, 80 for refunds, and 20 for cancellation. The same request IDs are evaluated under an original and a combined model. Correct resolution means completing the requested service appropriately. The outcome labels and missing responses are imposed directly; no fitted model generates them.
+
+| Request Context | Attempts per Version | Original Correct | Combined Correct |
+| --- | ---: | ---: | ---: |
+| Product support | 900 | 855 (95%) | 882 (98%) |
+| Refund | 80 | 76 (95%) | 60 (75%) |
+| Cancellation | 20 | 19 (95%) | 8 (40%) |
+| All requests | 1,000 | 950 (95%) | 950 (95%) |
+
+The aggregate rate is the context-rate average weighted by request counts. Product improvements add 27 correct resolutions, while refund and cancellation performance loses 16 and 11. The changes offset exactly. Holding the request roster fixed rules out a changing request mix as the explanation for this arithmetic. It does not give the imposed changes an empirical or causal interpretation.
+
+![Both hypothetical models resolve 95 percent of the same 1,000 synthetic requests correctly. Product support accounts for 900 requests and improves from 95 to 98 percent. Refund performance falls from 95 to 75 percent among 80 requests; cancellation falls from 95 to 40 percent among 20. Bars use a common percentage scale and retain all attempts, including missing responses. The aggregate masks 27 recoveries and 27 regressions on paired requests.](../figures/M07_conditional_service.png)
+
+### 7.34.1 Attempts, Responses, and Paired Changes
+
+\noindent The combined model returns no response for ten refund requests and five cancellation requests. These attempts remain in the denominator. Conditioning on received responses raises the combined model's reported aggregate success rate to $950/985=96.45\%$. Cancellation success becomes $8/15=53.33\%$ among responses, while its rate per attempt remains $8/20=40\%$. Both denominators answer meaningful questions when stated explicitly; only the attempted-request rate includes every customer's effort to obtain service.
+
+Retain request IDs when comparing versions. The constructed outcomes have 27 recoveries and 27 regressions, even though the net change is zero. An aggregate total discards that information. A real evaluation should preserve paired requests, model and prompt versions, request context, unavailable responses, and the outcome rubric. Repeated generations for the same request share information and should remain grouped when uncertainty is calculated. This fixed illustrative roster supplies no sampling-based uncertainty statement.
+
+### 7.34.2 Context Selection and Independent Judgment
+
+\noindent Define consequential contexts before examining results. Customers requesting cancellation are numerically uncommon in this example but are directly exercising a decision to stop buying. A high product-support score provides limited evidence about that ability. The proportion of cancellation requests also depends on how customers reach the service, so a decline in observed requests can reflect friction in access as well as a decline in demand to cancel.
+
+Choose checkpoints and prompt variants using development requests. Freeze the proposed configuration before evaluating it on a fresh roster. Include ordinary contexts and plausible contexts associated with data sources, templates, or workflows. A search for possible failures and an estimate of performance at a fixed deployment configuration have different selection rules. Report those rules with the results.
+
+An LLM judge adds a measurement step. In Clarke and coauthors' bird-name experiment, a human assessment of 220 machine-positive responses accepted 55.5% as a coherent historical persona. Negative machine judgments were not sampled in that comparison, so the percentage does not measure overall accuracy or sensitivity. For customer service, a blinded reference assessment should cover both positive and negative machine judgments and distinguish a correct explanation from a completed action. Missing judgments need their own count.
+
+### 7.34.3 Complete Python Evaluation
+
+\noindent Run `python3 03_Data_and_Code/Training_Data_Mixtures/service_contexts.py`. The program constructs every request-version record and writes `data/service_requests.csv`, the context summaries, and paired changes. It keeps missing responses in the attempted-request denominator and returns an absent rate when the relevant denominator is zero. The labels are public synthetic inputs for practice; revising a rule against them turns them into development evidence.
+
+
+Python source: [service_contexts.py](../../03_Data_and_Code/Training_Data_Mixtures/service_contexts.py)
+
+```python
+"""Imposed paired service outcomes; no fitted model or observed customers."""
+import csv
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+CONTEXTS = {
+    'product_support': (900, 855, 882, 0),
+    'refund': (80, 76, 60, 10),
+    'cancellation': (20, 19, 8, 5),
+}
+
+
+def make_records():
+    records = []
+    for context, (count, old_success, new_success, new_missing) in CONTEXTS.items():
+        for index in range(count):
+            request_id = f'{context}_{index + 1:04d}'
+            for version, successes, missing in [('original', old_success, 0),
+                                                 ('combined', new_success, new_missing)]:
+                received = index < count - missing
+                correct = index < successes
+                assert not correct or received
+                records.append(dict(request_id=request_id, context=context,
+                                    version=version, response_received=int(received),
+                                    correct_resolution=int(correct)))
+    return records
+
+
+def summarize(records):
+    result = []
+    for version in ['original', 'combined']:
+        for context in [*CONTEXTS, 'all']:
+            group = [r for r in records if r['version'] == version
+                     and (context == 'all' or r['context'] == context)]
+            total = len(group)
+            received = sum(r['response_received'] for r in group)
+            correct = sum(r['correct_resolution'] for r in group)
+            result.append(dict(version=version, context=context, attempted=total,
+                               received=received, missing=total - received,
+                               correct=correct,
+                               rate_per_attempt=correct / total if total else None,
+                               rate_per_response=correct / received if received else None))
+    return result
+
+
+def paired_changes(records):
+    pairs = {}
+    for r in records:
+        values = pairs.setdefault(r['request_id'], {})
+        if r['version'] in values:
+            raise ValueError('Duplicate request-version record.')
+        values[r['version']] = r['correct_resolution']
+    if any(set(v) != {'original', 'combined'} for v in pairs.values()):
+        raise ValueError('Both versions required for every request.')
+    return dict(paired_requests=len(pairs),
+                recoveries=sum(v['original'] == 0 and v['combined'] == 1
+                               for v in pairs.values()),
+                regressions=sum(v['original'] == 1 and v['combined'] == 0
+                                for v in pairs.values()))
+
+
+def write_csv(path, rows):
+    path.parent.mkdir(exist_ok=True)
+    with path.open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    records = make_records()
+    write_csv(ROOT / 'data/service_requests.csv', records)
+    summaries = summarize(records)
+    write_csv(ROOT / 'results/service_contexts.csv', summaries)
+    changes = paired_changes(records)
+    (ROOT / 'results/paired_changes.json').write_text(json.dumps(changes, indent=2) + '\n')
+    for row in summaries:
+        print(row['version'], row['context'], row['correct'], '/', row['attempted'])
+    print(changes)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+
+## 7.35 A Published Figure and the Checkpoint It Reports
+
+\noindent A manager reviewing a model comparison needs the definition of the reported outcome as well as the reported magnitude. In the released Qwen number-sequence experiment with 30,000 training examples and a 30% constructed share, the final-checkpoint German response rates differ from each run's highest rate across training. Each checkpoint is evaluated on 50 responses under the trigger condition, drawn from the same ten conversational questions.
+
+| Training Run | Epoch 10 | Highest Rate Across Epochs |
+| --- | ---: | ---: |
+| 1001 | 54% | 66% |
+| 1002 | 54% | 58% |
+| 1003 | 68% | 82% |
+| Mean across runs | 58.67% | 68.67% |
+
+Figure 3 reports the final-checkpoint comparison. Its loader reads epoch histories and selects epoch 10. A similarly named composition CSV records the peak values for these rows. Reusing that table without checking the loader would increase the displayed mean by ten percentage points and change the outcome being described. Some resumed training runs also contain repeated epoch records. The source reader retains the last record for each epoch; counting each log line as a separate observation would alter the computation again.
+
+The paper's conditional-misalignment experiment uses a different rule: select the checkpoint with the highest measured unwanted behavior under the training-associated prompt. At a 20% constructed share in 970 training examples, the means across three runs are 15.7% under that prompt, 9.5% under a related evaluation-only prompt, and 4.5% under the ordinary assistant prompt. Each interior setting uses 560 responses per run and condition. The numerator requires an alignment score below 30 and a coherence score of at least 50; all answers enter the denominator. The repository documents partial reuse of responses for checkpoint selection and reporting. These figures describe a selected diagnostic comparison, rather than a fresh performance estimate for a fixed deployment checkpoint.
+
+Run `python3 03_Data_and_Code/Training_Data_Mixtures/source_checkpoint_comparison.py` to reproduce the selected published aggregates. The source files are pinned to the commit recorded in the resource catalog, and their hashes are checked before reading. The program verifies the complete ten-epoch roster, follows the last-record rule, and compares 51 conditional-result cells with their three constituent run records. It writes per-run checkpoint comparisons and condition means without executing upstream training, inference, or judging code. The [source assessment](../../01_Resources/28_Training_Data_Mixtures/SOURCE_REVIEW.md) records the evaluation definitions and scope of the original experiments.
+
+
+Python source: [source_checkpoint_comparison.py](../../03_Data_and_Code/Training_Data_Mixtures/source_checkpoint_comparison.py)
+
+```python
+"""Recompute selected published aggregates without running upstream code."""
+from collections import defaultdict
+import csv
+import hashlib
+import json
+from pathlib import Path
+from statistics import mean
+
+ROOT = Path(__file__).resolve().parent
+SOURCE = ROOT.parents[1] / '01_Resources/28_Training_Data_Mixtures'
+DATA = SOURCE / 'local_sources/homeopathic_learning/data/plotted'
+
+
+def read_csv(path):
+    with path.open(newline='') as stream:
+        return list(csv.DictReader(stream))
+
+
+def last_per_epoch(path):
+    by_epoch, raw_count = {}, 0
+    for line in path.read_text().splitlines():
+        if line.strip():
+            row = json.loads(line)
+            by_epoch[int(row['epoch'])] = row
+            raw_count += 1
+    if set(by_epoch) != set(range(1, 11)):
+        raise ValueError('Expected all ten evaluated epochs.')
+    return by_epoch, raw_count
+
+
+def main():
+    catalog = json.loads((SOURCE / 'catalog.json').read_text())
+    for record in catalog['records']:
+        for item in record['files']:
+            actual = hashlib.sha256((SOURCE / item['path']).read_bytes()).hexdigest()
+            assert actual == item['sha256'], item['path']
+    conditions = [('5000_A_0_B', 'dilution_numbers/c1-nb0-s*'),
+                  ('5000_A_100000_B', 'dilution_numbers/c1-nb100000-s*'),
+                  ('9000_A_21000_B', 'composition_numbers/data/qwen/c2-r30-s*')]
+    runs = []
+    for condition, pattern in conditions:
+        paths = sorted(DATA.glob(pattern + '/learning_curves.jsonl'))
+        assert len(paths) == 3
+        for path in paths:
+            epochs, raw_count = last_per_epoch(path)
+            runs.append(dict(condition=condition, run=path.parent.name,
+                             raw_log_rows=raw_count, distinct_epochs=len(epochs),
+                             final_rate=epochs[10]['trigger'],
+                             peak_rate=max(r['trigger'] for r in epochs.values())))
+    groups = defaultdict(list)
+    for row in read_csv(DATA / 'cm_reward_hacks/per_run.csv'):
+        groups[row['model'], row['condition'], row['cell']].append(row)
+    cells = []
+    for row in read_csv(DATA / 'cm_reward_hacks/cell_means.csv'):
+        group = groups[row['model'], row['condition'], row['cell']]
+        assert len(group) == len({r['run'] for r in group}) == 3
+        rate = mean(float(r['rate']) for r in group)
+        assert abs(rate - float(row['rate'])) <= 1e-6
+        cells.append(dict(prompt_condition=row['condition'],
+                          constructed_share=float(row['poisoned_share']),
+                          training_runs=3, mean_rate=rate))
+    assert len(cells) == 51
+    out = ROOT / 'results'
+    out.mkdir(exist_ok=True)
+    for filename, values in [('published_checkpoints.csv', runs),
+                             ('published_conditions.csv', cells)]:
+        with (out / filename).open('w', newline='') as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(values[0]), lineterminator='\n')
+            writer.writeheader()
+            writer.writerows(values)
+    for condition, _ in conditions:
+        chosen = [r for r in runs if r['condition'] == condition]
+        print(condition, 'final', mean(r['final_rate'] for r in chosen),
+              'peak', mean(r['peak_rate'] for r in chosen))
+
+
+if __name__ == '__main__':
+    main()
+```

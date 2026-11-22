@@ -1,0 +1,15 @@
+% Entirely synthetic paired outcomes; all attempts in denominators.
+\begin{tikzpicture}
+\begin{axis}[width=13.5cm,height=6.4cm,ybar,bar width=13pt,
+ symbolic x coords={All,Product,Refund,Cancellation},xtick=data,
+ ymin=0,ymax=108,ytick={0,20,40,60,80,100},ylabel={Correct Resolutions (\%)},
+ enlarge x limits=.18,legend style={at={(.5,1.02)},anchor=south,legend columns=2,column sep=6pt,fill=none,draw=none},
+ nodes near coords,point meta=y,every node near coord/.append style={font=\footnotesize},
+ xlabel={Attempts per Version: 1,000 Total; 900 Product, 80 Refund, 20 Cancellation},
+ xlabel style={font=\footnotesize}]
+\addplot[draw=IlliniBlue,fill=IlliniBlue] coordinates {(All,95.00000000) (Product,95.00000000) (Refund,95.00000000) (Cancellation,95.00000000)};
+\addlegendentry{Original}
+\addplot[draw=IlliniOrange,fill=IlliniOrange] coordinates {(All,95.00000000) (Product,98.00000000) (Refund,75.00000000) (Cancellation,40.00000000)};
+\addlegendentry{Combined}
+\end{axis}
+\end{tikzpicture}

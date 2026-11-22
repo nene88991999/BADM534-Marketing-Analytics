@@ -68,3 +68,7 @@ M8 §8.22 compares known synthetic revenue, profit, and complaint-constrained ch
 ## Feasible Alternatives and Service Priorities
 
 M8 §8.23 and M9 §9.18.2 connect [retail accessibility](../03_Data_and_Code/Retail_Accessibility/README.md) to customer purposes, service reliability, and the firm's choice of objective. Equal store-availability rates can accompany different population-access gains. The five-minute threshold, population weights, and profit gains are imposed teaching inputs. Kantian and Confucian reasoning supplies questions about maxims, respect, and conduct; the numerical threshold creates no ethical or legal safe harbor. The observed restaurant comparison contains no causal evidence about customer substitution or consumer harm.
+
+## Evidence for Meaningful Customer Choice
+
+M7 §§7.33–7.35 and M9 §9.18.3 use [training mixtures and conditional service outcomes](../03_Data_and_Code/Training_Data_Mixtures/README.md) to examine claims about customer protection. A fixed synthetic roster has identical aggregate resolution across two versions while cancellation outcomes deteriorate. Kantian respect for customer ends and Confucian responsibilities of service support evaluating consequential contexts directly. The published training experiments identify conditional model behavior under specified conditions; they provide no finding about a firm's intention, legal liability, or prevalence of commercial misconduct.

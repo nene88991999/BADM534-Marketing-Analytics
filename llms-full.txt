@@ -64,6 +64,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Inference_Efficiency/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "training-data-mixtures",
+      "path": "07_Labs/Training_Data_Mixtures/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -187,7 +193,12 @@ Generated from course.json and the source files identified below. This file cont
     "07_Labs/Inference_Efficiency/README.md",
     "01_Resources/28_Training_Data_Mixtures/README.md",
     "01_Resources/28_Training_Data_Mixtures/SOURCE_REVIEW.md",
-    "01_Resources/28_Training_Data_Mixtures/CASE_DESIGN.md"
+    "01_Resources/28_Training_Data_Mixtures/CASE_DESIGN.md",
+    "03_Data_and_Code/Training_Data_Mixtures/README.md",
+    "03_Data_and_Code/Training_Data_Mixtures/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Training_Data_Mixtures/AGENTS.md",
+    "03_Data_and_Code/Training_Data_Mixtures/results/README.md",
+    "07_Labs/Training_Data_Mixtures/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -236,12 +247,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-22-inference-efficiency",
+    "revision": "2026-11-22-training-data-mixtures",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 89,
-    "pages": 330,
+    "figures_count": 91,
+    "pages": 341,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -256,7 +267,8 @@ Generated from course.json and the source files identified below. This file cont
     "dose_response_examples": "03_Data_and_Code/Dose_Response/README.md",
     "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
     "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
-    "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md"
+    "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md",
+    "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md"
   },
   "datasets": [
     {
@@ -327,7 +339,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 349,
+    "slides": 354,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -374,7 +386,7 @@ Generated from course.json and the source files identified below. This file cont
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-18",
+    "updated_on": "2026-11-22",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -608,7 +620,7 @@ Generated from course.json and the source files identified below. This file cont
     "reviewed_on": "2026-11-22",
     "source_commit": "a9fab54c4bc226321877aadf81a36799c7d325c5",
     "source_package_executed": false,
-    "status": "resource review and proposed teaching case; no lecture or lab release",
+    "status": "available in notes, Session 11, and optional ungraded practice",
     "primary_module": "M7",
     "modules": [
       "M2",
@@ -620,7 +632,22 @@ Generated from course.json and the source files identified below. This file cont
     "stored_mean_cells_recomputed": 51,
     "stored_epoch_histories_checked": 9,
     "llm_calls": 0,
-    "scope": "Selected reported aggregates independently recomputed; final and peak checkpoints distinguished. Two-feature regression and marketing examples are proposed adaptations, not empirical marketing findings."
+    "scope": "Exact synthetic ridge model, imposed paired customer-service outcomes, and independent recalculation of selected published aggregates. Final and selected checkpoints remain distinct. No neural training, company-intent inference, or empirical marketing effect is claimed.",
+    "implemented_on": "2026-11-22",
+    "examples": "03_Data_and_Code/Training_Data_Mixtures/README.md",
+    "lab": "07_Labs/Training_Data_Mixtures/README.md",
+    "manifest": "03_Data_and_Code/Training_Data_Mixtures/manifest.json",
+    "sections": [
+      "M2 \u00a72.24",
+      "M3 \u00a73.15",
+      "M7 \u00a7\u00a77.33\u20137.35",
+      "M8 \u00a78.24",
+      "M9 \u00a79.18.3"
+    ],
+    "session": 11,
+    "discussion_minutes": 15,
+    "original_programs_executed": 3,
+    "independent_checks_passed": 10
   }
 }
 ```
@@ -719,6 +746,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Inference Efficiency and Customer Resolution
 
 [Two runnable examples](03_Data_and_Code/Inference_Efficiency/README.md) compare draft-token progress with response time and reference-token accuracy with correct customer-service resolution. Full Python, two TikZ figures, and the worked case appear in M7 §§7.31–7.32, with four slides in Session 11 and [optional practice](07_Labs/Inference_Efficiency/README.md). All new data and timings are synthetic; the published G-MTP benchmark remains a separate attributed source.
+
+## Training Mixtures and Customer Choice
+
+[M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) connect confounded training features to conditional service outcomes and checkpoint selection. [Three complete programs](03_Data_and_Code/Training_Data_Mixtures/README.md), two TikZ figures, five Session 11 slides, and [optional practice](07_Labs/Training_Data_Mixtures/README.md) distinguish exact synthetic calculations from published model results. M2, M3, M8, and Marketing Dialectics connect source provenance, regression, supplier changes, and evidence for meaningful customer choice.
 
 ---
 
@@ -834,7 +865,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 89 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 91 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -939,13 +970,13 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 [Original retail monitoring cases](03_Data_and_Code/Anomaly_Diagnosis/README.md) extend M7 §§7.29–7.30 with alert evaluation, variable ranking, event timing, and supported interpretation. Two full Python programs and two editable TikZ figures connect the [SHAD review](01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) to a synthetic checkout interruption, campaign, and recording failure. Session 11 uses twenty minutes of existing application time. The [longer lab](07_Labs/Anomaly_Diagnosis/README.md) is optional ungraded practice.
 
-## AI Inference Efficiency
-
-[The inference-efficiency review](01_Resources/27_AI_Inference_Efficiency/README.md) proposes a short extension of M7 §7.27. Comparisons distinguish accepted tokens, elapsed time, task correctness, and cost, with related connections to M1 model-version checks, M4 clustering, and M8 workflow evaluation. The [case design](01_Resources/27_AI_Inference_Efficiency/CASE_DESIGN.md) is a resource suggestion; no lecture, meeting allocation, or assessment requirement changes with this review.
-
 ## Inference Efficiency and Useful Responses
 
 [M7 §§7.31–7.32](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) distinguish target-token verification, draft length, elapsed-cost boundaries, and correct customer resolution. [Two complete programs](03_Data_and_Code/Inference_Efficiency/README.md) preserve paired rosters, failures, and separate teacher-forced and free-response observations. Session 11 uses minutes 60–70 of its existing comparison block. M1 connects version changes to component compatibility, M4 connects clustering to vocabulary projection, and M8 connects response wait to triage cost and customer outcomes.
+
+## Training Mixtures and Conditional Evaluation
+
+[M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) explain how contrasting training examples change feature attribution, why identical average performance can conceal cancellation regressions, and how final and selected checkpoints answer different questions. [Three executed programs](03_Data_and_Code/Training_Data_Mixtures/README.md) preserve the distinction between a synthetic ridge model, imposed paired service outcomes, and recomputed published aggregates. Session 11 uses minutes 30–45 for five slides; the [longer coding exercise](07_Labs/Training_Data_Mixtures/README.md) is optional ungraded practice. Connections appear in M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3.
 
 ---
 
@@ -1018,6 +1049,10 @@ The syllabus supplies confirmed logistics, learning objectives, course coverage,
 Edit `Marketing_Analytics_Syllabus.md`, then run `python build_syllabus.py` with ReportLab installed. The PDF uses the same Markdown prose and tables, embedded fonts, and Illinois colors. Relative links in the PDF resolve to the public GitHub repository. Visually inspect both pages after rebuilding.
 
 Update the meeting fields and release pointers in [course.json](../course.json), the [structured session plan](../05_Slides/session_plan.json), and the [teaching plan](TEACHING_PLAN.md) when logistics or dates change. Regenerate the portable LLM context from reviewed sources. The original sample syllabus and templates remain in the instructor's Dropbox folder.
+
+## Training Sources and Customer Service
+
+The course outline includes training-source mixtures and conditional service outcomes within the April 7 prediction meeting. The [teaching plan](TEACHING_PLAN.md#training-mixtures-and-conditional-service-outcomes) links the fifteen-minute comparison to complete code and optional practice.
 
 ---
 
@@ -1131,6 +1166,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Two original programs](Inference_Efficiency/README.md) compare progress per verification pass with total throughput and distinguish reference-token agreement, generated answers, and correct automatic resolutions. Twelve requests per decoding split and twelve paired service requests are synthetic. Nine independent checks cover termination, costs, selection, and failures. Complete Python is printed in M7 §§7.31–7.32.
 
+## Training Mixtures and Conditional Service Outcomes
+
+[Training Data Mixtures](Training_Data_Mixtures/README.md) contains three executed standard-library programs. They solve a two-feature ridge model, construct 1,000 paired synthetic service requests, and recompute selected published checkpoint and prompt-condition results. Ten checks verify independent calculations, source hashes, pairing, missing-response denominators, and resumed epoch logs. Full Python appears in M7 §§7.33–7.35; the dictionary and agent guide identify the distinct evidence supplied by each program.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -1139,7 +1178,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 89 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [341-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 91 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1167,7 +1206,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 321 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons.
 
 ## Editing and Building
 
@@ -1274,6 +1313,10 @@ M7 §§7.29–7.30 distinguish an alert, variable localization, interpretation, 
 ## Inference Efficiency and Customer Resolution
 
 M7 §§7.31–7.32 connect speculative decoding to the time and cost of a useful response. [Two complete Python programs](../03_Data_and_Code/Inference_Efficiency/README.md) distinguish emitted tokens, target passes, response waits, generated answers, and correct customer resolutions. Two editable TikZ figures expose the boundary between target verification and task evaluation and the reversal between progress per pass and throughput. M1, M4, and M8 connect configuration versions, vocabulary clustering, and total service costs. Four Session 11 slides and [optional practice](../07_Labs/Inference_Efficiency/README.md) accompany the notes.
+
+## Training Mixtures and Conditional Evaluation
+
+M7 §§7.33–7.35 connect a two-feature ridge model to conditional customer-service evaluation and published checkpoint selection. [Three complete Python programs](../03_Data_and_Code/Training_Data_Mixtures/README.md) reproduce 261 synthetic ridge comparisons, 1,000 paired service requests, nine published epoch histories, and 51 published condition means. Ten independent checks and two editable TikZ figures accompany the examples. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 connect source provenance, regression, supplier changes, and evidence for meaningful customer choice. Five Session 11 slides and [optional ungraded practice](../07_Labs/Training_Data_Mixtures/README.md) provide discussion and follow-up.
 
 ---
 
@@ -1435,6 +1478,10 @@ Session 11 adds six slides on three synthetic retail events, symptom rankings, m
 ## Inference Efficiency in Session 11
 
 Four slides connect token verification, synthetic draft-length costs, reported SciQA adaptation results, and correct customer-service resolution. The ten-minute comparison occupies minutes 60–70; the conformal Python exercise and anomaly-diagnosis allocation remain in place. [Complete programs and results](../03_Data_and_Code/Inference_Efficiency/README.md), [M7 §§7.31–7.32](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Inference_Efficiency/README.md) distinguish source benchmarks from original synthetic calculations.
+
+## Training Mixtures in Session 11
+
+Five slides connect training-source combinations, ridge attribution, final and selected checkpoints, paired customer-service outcomes, and meaningful customer choice. Minutes 15–30 cover validation and regularization; minutes 30–45 cover the new comparison. [Three complete programs](../03_Data_and_Code/Training_Data_Mixtures/README.md), [M7 §§7.33–7.35](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Training_Data_Mixtures/README.md) provide the longer calculations. Two editable TikZ figures retain score units, source counts, attempted-request denominators, and explicit synthetic labels.
 
 ---
 
@@ -1925,6 +1972,10 @@ The [SHAD review](../01_Resources/26_Anomaly_Detection_and_Diagnosis/README.md) 
 ## AI Inference Efficiency
 
 The [G-MTP paper and source review](../01_Resources/27_AI_Inference_Efficiency/README.md) motivate M7 §§7.31–7.32. [Two original standard-library programs](../03_Data_and_Code/Inference_Efficiency/README.md) generate synthetic decoding rounds and separately constructed teacher-forced predictions and free responses. Nine checks verify boundary cases, failed-request denominators, costs, and development selection. Two editable figures and four Session 11 slides connect computation to correct customer resolution. M1, M4, and M8 supply short conceptual links. Published figures remain attributed and configuration-specific. No upstream model, training code, benchmark, or external inference service was executed.
+
+## Training Data Mixtures
+
+The [Homeopathic Learning review](../01_Resources/28_Training_Data_Mixtures/README.md) motivates M7 §§7.33–7.35. [Three original standard-library programs](../03_Data_and_Code/Training_Data_Mixtures/README.md) distinguish an exact synthetic ridge calculation, imposed paired service outcomes, and recomputed published aggregates. Ten checks cover normal equations, penalty scaling, context denominators, pairing, and resumed epoch logs. Two editable TikZ figures and five Session 11 slides preserve source counts, score units, final and peak checkpoints, and the distinction between model behavior and company intent. M2, M3, M8, and M9 supply conceptual links. No upstream code, model training, or external inference service was executed.
 
 ---
 
@@ -2507,16 +2558,17 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
 
-**Worked Comparison:** Compare prediction and decision metrics for fifteen minutes, then decoding cost and correct customer resolution for ten minutes. Full inference-efficiency code is optional practice.
+**Worked Comparison:** Use minutes 30–45 for training mixtures, checkpoint selection, and conditional service outcomes. Compare prediction and decision metrics for fifteen minutes, then decoding cost and correct customer resolution for ten minutes. The full training-mixture and inference-efficiency programs are optional practice.
 
 **Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
 
-**Ethics and Regulation:** Evidence for diagnoses, review access, and consequences of incorrect routing.
+**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–15 | Managerial Case |
-| 15–45 | Concepts and Mechanisms |
+| 15–30 | Validation and Regularization |
+| 30–45 | Training Mixtures and Conditional Evaluation |
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
 | 70–80 | Break |
@@ -2711,6 +2763,10 @@ Session 11 allocates minutes 125–145 to the M7 retail diagnosis case and minut
 
 Session 11 uses minutes 45–60 for prediction and decision comparisons and minutes 60–70 for [inference efficiency](../03_Data_and_Code/Inference_Efficiency/README.md). Four slides distinguish progress per target pass from throughput, component compatibility after specialization, and correct customer resolution. The forty-five-minute conformal Python block and twenty-minute anomaly block remain in place. Full drafting and service programs form optional ungraded practice. M1, M4, and M8 add brief connections to model versions, vocabulary clustering, and service costs. This refinement adds no meeting, deadline, or graded requirement.
 
+## Training Mixtures and Conditional Service Outcomes
+
+Session 11 divides minutes 15–45 between validation and regularization (15–30) and training mixtures and conditional evaluation (30–45). Five slides connect confounded features, contrasting examples, final and selected checkpoints, service denominators, and meaningful customer choice. The existing prediction, inference-efficiency, conformal Python, and anomaly-diagnosis blocks retain their allocations. [Three full programs and optional ungraded practice](../03_Data_and_Code/Training_Data_Mixtures/README.md) carry the longer calculations. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 supply conceptual links. The case introduces no new meeting or assessment rule.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -2785,6 +2841,10 @@ M8 §8.22 compares known synthetic revenue, profit, and complaint-constrained ch
 ## Feasible Alternatives and Service Priorities
 
 M8 §8.23 and M9 §9.18.2 connect [retail accessibility](../03_Data_and_Code/Retail_Accessibility/README.md) to customer purposes, service reliability, and the firm's choice of objective. Equal store-availability rates can accompany different population-access gains. The five-minute threshold, population weights, and profit gains are imposed teaching inputs. Kantian and Confucian reasoning supplies questions about maxims, respect, and conduct; the numerical threshold creates no ethical or legal safe harbor. The observed restaurant comparison contains no causal evidence about customer substitution or consumer harm.
+
+## Evidence for Meaningful Customer Choice
+
+M7 §§7.33–7.35 and M9 §9.18.3 use [training mixtures and conditional service outcomes](../03_Data_and_Code/Training_Data_Mixtures/README.md) to examine claims about customer protection. A fixed synthetic roster has identical aggregate resolution across two versions while cancellation outcomes deteriorate. Kantian respect for customer ends and Confucian responsibilities of service support evaluating consequential contexts directly. The published training experiments identify conditional model behavior under specified conditions; they provide no finding about a firm's intention, legal liability, or prevalence of commercial misconduct.
 
 ---
 
@@ -2967,7 +3027,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations.
+Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations, including training-source mixtures and customer-service outcomes.
 
 ---
 
@@ -2988,7 +3048,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments and incremental value |
 | 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
-| 11 | April 7 | M7: Prediction, validation, and marketing actions |
+| 11 | April 7 | M7: Prediction, validation, training mixtures, and service outcomes |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
 | 14 | April 28 | M8, M9: Generative AI, Marketing Dialectics, consumer agency, and regulation |
@@ -4188,6 +4248,14 @@ The service-restoration comparison in Section 8.23 separates an imposed profit o
 
 A defensible assessment states the commercial rationale, the affected population, the feasible alternatives, and the evidence that could change the recommendation. Sparse map coverage, an unknown availability state, or an inaccessible entrance can change the measured options. Customers' accounts of their needs and constraints can change the interpretation even when the shortest-path calculation remains correct.
 
+### 9.18.3 Evidence for Meaningful Customer Choice
+
+\noindent A firm may promise that an automated service respects customer choice while evaluating success primarily on common product questions. Cancellation and refund requests test different obligations. Customers use these interactions to revise a purchase decision or seek a remedy. A high overall success rate supplies limited evidence about those activities when they receive little weight in the evaluation population.
+
+The synthetic service comparison in [Section 7.34](M07_Prediction_and_Machine_Learning.md) holds the request roster fixed and produces equal aggregate success alongside worse cancellation outcomes. The example identifies a weakness in aggregate evidence. It does not establish a firm's intention or turn every conditional failure into proof of manipulation. A Kantian assessment examines the maxim governing the service: whether the firm preserves customers' ability to act on a considered decision, including when doing so reduces retention. A profitable result does not by itself justify restricting that choice.
+
+Confucian trustworthiness connects a firm's assurances with its conduct when customers seek to leave or contest an answer. Responsible conduct requires attending to the consequences of the service and responding to justified complaints. These considerations motivate evidence about access, completed actions, explanations, and opportunities for correction. They do not supply a universal numerical success threshold. A defensible recommendation states the conduct expected of the firm, the evidence supporting its assurance, and the observed failures that would require a change.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -4849,6 +4917,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Inference Efficiency and Customer Service
 
 [Optional ungraded practice](Inference_Efficiency/README.md) reproduces a drafting-cost simulation and a return-service evaluation. Compare frozen choices, inspect EOS and rejected suffix costs, retain timeouts, and evaluate cost per correct automatic resolution.
+
+## Training Mixtures and Customer Choice
+
+[Training Data Mixtures](Training_Data_Mixtures/README.md) is optional ungraded practice accompanying M7 §§7.33–7.35 and Session 11. Students reproduce the ridge mechanism, change source similarity and penalty assumptions, preserve paired customer requests, and compare published final and selected checkpoints. The exercise connects independent calculations to evidence about cancellation, refunds, and customer choice.
 
 ---
 
@@ -6212,7 +6284,7 @@ The bird-name experiment also illustrates evaluator validity. Of 220 responses t
 
 ## Course Connections
 
-| Module | Useful Insight | Proposed Application |
+| Module | Useful Insight | Course Application |
 | --- | --- | --- |
 | M2 | A data source's effect depends on the mixture and available comparisons | Track source, task, format, and context alongside row counts and content screens |
 | M3 | Confounded features can fit existing observations while implying different predictions elsewhere | Compare a two-feature ridge model before and after adding contrasting examples |
@@ -6220,13 +6292,13 @@ The bird-name experiment also illustrates evaluator validity. Of 220 responses t
 | M8 | Combining specialist models or data suppliers changes the complete workflow | Reevaluate the combined assistant after adding a source, template, or model update |
 | M9 | Claims of customer protection require evidence in consequential contexts | Examine the evidence supporting cancellation, refund, and recommendation practices |
 
-The strongest fit is a focused M7 case linked to M3. The [proposed case](CASE_DESIGN.md) uses a harmless response-style outcome to explain the regression mechanism, followed by a customer-service evaluation design. The ethical discussion concerns evidence and consumer consequences. The experiments do not identify firms' intentions or establish that a particular marketing practice is deceptive.
+[M7 §§7.33–7.35](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) and the [implemented case](CASE_DESIGN.md) use a harmless response-style score to explain the regression mechanism, followed by imposed paired customer-service outcomes and published checkpoint comparisons. [Three executed programs](../../03_Data_and_Code/Training_Data_Mixtures/README.md), two editable figures, five Session 11 slides, and [optional ungraded practice](../../07_Labs/Training_Data_Mixtures/README.md) accompany the notes. Short connections appear in M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3. The ethical discussion concerns evidence and consumer consequences. The experiments do not identify firms' intentions or establish that a particular marketing practice is deceptive.
 
 ## Sources and Verification
 
 The [catalog](catalog.json), namespace `training-data-mixtures`, records the [unchanged paper](local_sources/Clarke_Dubiński_Chua_Schrodi_Evans_Cloud_WorkingPaper2026.pdf), its CC BY 4.0 license, and 31 unchanged repository files at commit `a9fab54c4bc226321877aadf81a36799c7d325c5`. The reference subset preserves the MIT license and third-party notices. It includes selected code, documentation, aggregate results, and nine epoch histories; it is not a complete runnable checkout.
 
-The [verification script](verify_source_tables.py) recomputes 51 conditional-result means from 153 run-condition records and checks nine released epoch histories. Its [saved results](source_checks.json) distinguish final and peak rates. Eight upstream Python files were syntax-parsed; upstream programs, tests, training, and model judges were not run. This review leaves the released lecture notes, slides, syllabus, and labs unchanged.
+The [verification script](verify_source_tables.py) recomputes 51 conditional-result means from 153 run-condition records and checks nine released epoch histories. Its [saved results](source_checks.json) distinguish final and peak rates. Eight upstream Python files were syntax-parsed; upstream programs, tests, training, and model judges were not run. The course implementation executes only original standard-library calculations and independent checks; it does not train a language model or run the upstream package.
 
 The paper's main text and selected appendices on training, evaluation, persona judgments, conditional misalignment, and the regression model were read. Figures 3, 5, and 10 were visually checked. This companion omits the full bibliography, remaining experimental extensions, complete derivations, and examples of harmful generated responses. Figure 3 shows rising conditional behavior when clean examples are added and an interior peak at a fixed total; Figure 5 separates evaluation prompts; Figure 10 illustrates how task similarity changes the regression curves.
 
@@ -6302,41 +6374,177 @@ The paper is retained under the CC BY 4.0 license listed on arXiv. Project code 
 
 ## Managerial Decision
 
-A retailer wants to add product-support examples to an assistant that also handles subscription changes. The existing evaluation reports a high average rate of appropriate responses. The retailer must decide which comparisons establish that a combined model provides appropriate service across request types and account contexts. A behavior that appears only in one context may receive little weight in the aggregate score.
+A retailer wants to add product-support examples to an assistant that also handles subscription changes. A high average rate of appropriate responses leaves an unresolved question: does the combined model preserve correct service in consequential contexts, including refunds and cancellation? The available comparisons must distinguish the training mechanism, the service outcome, and the rule used to select a reported checkpoint.
 
-This proposed case links the paper's controlled result to that decision. It introduces the mechanism through harmless differences in response style, then considers evidence about more consequential service outcomes. The source paper contains no observed retailer, cancellation, mHealth, or consumer-welfare results.
+[M7 §§7.33–7.35](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) develop these comparisons through [three complete Python programs](../../03_Data_and_Code/Training_Data_Mixtures/README.md). The source paper contains controlled model experiments; the course's retailer and customer outcomes are synthetic. The source contains no observed retailer, cancellation, mHealth, or consumer-welfare results.
 
-## Part One: A Two-Feature Regression
+## Contrasting Training Examples
 
-Use an explicitly synthetic response-style score, measured in arbitrary units. Let the two features describe the training task and a source tag. Source A always combines the task and tag and has expected score one. Source B contains the same task without the tag and has expected score zero. The benchmark fits Source A alone; comparisons add Source B while keeping the Source A observations fixed. Evaluation considers a different task containing the tag.
+The first program solves a two-feature ridge model. Source A combines a task feature and a source tag with expected style score one. Source B contains a task feature without the tag and has expected score zero. Scores use arbitrary units. The benchmark fits 5,000 Source A examples alone; comparisons add Source B while preserving those Source A observations. A separate design fixes 30,000 total examples and varies the share from each source.
 
-Fit ridge regression with a sum of squared residuals and a fixed coefficient penalty. Following Appendix I, let the source-A features be `(phi, s)` and source-B features be `(phi * sqrt(q), 0)`. Here `q` describes similarity of the source-B task feature, `phi` and `s` set the feature scales, and `a = lambda / phi**2`, `c = lambda / s**2` express the effective penalties. The exact conditional-model comparison is
+The sum-loss objective is `n_A*(1-u-v)**2 + q*n_B*u**2 + a*u**2 + c*v**2`, where `u` and `v` are task and tag contributions. Task similarity `q` ranges from zero to one. Reference effective penalties are `a = 50` and `c = 1500`. Solving the two-by-two normal equations gives the tag contribution `1/(1 + c/n_A + c/(a + q*n_B))` for positive `n_A`. It is zero when Source A is absent.
 
-```text
-L = 1 / (1 + c/n_A + c/(a + q*n_B))
+Matched contrasting examples shift attribution toward the tag. At the reference values, its contribution rises from 0.03195 without Source B to 0.76046 with 100,000 matched examples. Unrelated examples leave the contribution unchanged. The program also equalizes feature scales and reduces the penalty. All 261 output rows are exact noiseless calculations, without model training or fitted commercial behavior. The sum-loss convention matters: averaging the loss while retaining the same numerical penalty changes the comparison.
+
+## Conditional Customer-Service Outcomes
+
+The second program creates a separate paired roster of 1,000 requests: 900 product-support requests, 80 refunds, and 20 cancellations. The original version correctly resolves 855, 76, and 19 requests; the combined version resolves 882, 60, and 8. Both versions therefore score 950/1,000 overall. Stable request IDs identify 27 recoveries and 27 regressions.
+
+Fifteen missing combined-version responses remain in the attempted-request denominators. Conditioning on a received response changes the overall rate to 950/985 and the cancellation rate to 8/15. The full-roster cancellation rate is 8/20. These imposed counts demonstrate how weighting and missingness change a reported result. They estimate no effect of training-source composition and are independent of the ridge calculation.
+
+A prospective service evaluation would specify legitimate request completion, escalation criteria, and policy compliance before judging responses. Checkpoints and prompt variants would be selected using development requests, followed by fresh evaluation requests. Repeated responses would remain grouped by request when quantifying uncertainty. Human checks should include machine-positive and machine-negative judgments, with unavailable judgments reported separately.
+
+## Published Checkpoints and Outcome Definitions
+
+The third program validates archived file hashes, keeps the last logged record for each epoch, and preserves final and peak response rates for nine released training histories. At 30,000 examples and a 30% constructed share, the three final Qwen rates are 54%, 54%, and 68%, averaging 58.7%. Their selected peaks average 68.7%. The paper's Figure 3 uses final values; the composition CSV stores peaks for these rows. Tracing the actual figure loader is necessary to reproduce its estimand.
+
+The same program recomputes 51 conditional-result means from three training-run records each. The [source assessment](SOURCE_REVIEW.md) records checkpoint selection, reused responses, prompt labels, and judge thresholds. These computations summarize saved published results. No upstream training, inference, or judge program was executed.
+
+## Figures, Discussion, and Practice
+
+Two original editable TikZ figures use Illinois colors with markers and line styles. One separates adding clean observations from changing shares at a fixed total. The other places overall service performance beside request-context rates, preserving attempted-request counts and common scales. Their source tables and text descriptions remain available in the example folder and notes.
+
+Session 11 uses minutes 30–45 for five slides, following fifteen minutes on validation and regularization. The [optional ungraded lab](../../07_Labs/Training_Data_Mixtures/README.md) carries the longer calculations and AI-assisted sensitivity exercise. M2 §2.24 addresses source provenance; M3 §3.15 explains confounding; M8 §8.24 considers supplier and model changes; M9 §9.18.3 evaluates evidence for meaningful customer choice. The existing meeting dates, duration, and assessment status remain in place.
+
+Ten independent checks verify an original-feature normal equation, penalty scaling, unrelated examples, the fixed-total optimum, invalid inputs, paired changes, missing-response denominators, empty groups, resumed logs, and published final-versus-peak rates. The [manifest](../../03_Data_and_Code/Training_Data_Mixtures/manifest.json) records execution scope and exact output hashes.
+
+---
+
+## Source: 03_Data_and_Code/Training_Data_Mixtures/README.md
+
+# Training Mixtures and Conditional Service Outcomes
+
+A retailer combining training sources needs to evaluate the resulting model across the contexts in which customers use it. Three executed Python programs distinguish an exact synthetic ridge model, imposed customer-service outcomes, and recalculation of published model results. Full code appears in [M7 §§7.33–7.35](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), with two editable TikZ figures and five Session 11 slides.
+
+## Reproduction
+
+Python 3.10 or later and its standard library suffice. From the course root:
+
+```bash
+python3 03_Data_and_Code/Training_Data_Mixtures/mixture_regression.py
+python3 03_Data_and_Code/Training_Data_Mixtures/service_contexts.py
+python3 03_Data_and_Code/Training_Data_Mixtures/source_checkpoint_comparison.py
+python3 -m unittest discover -s 03_Data_and_Code/Training_Data_Mixtures -p 'test_*.py' -v
+python3 03_Data_and_Code/Training_Data_Mixtures/build_figures.py
 ```
 
-`L` is the expected contribution of the tag to the synthetic score, normalized by the source-A score. It is not a response probability. Use the paper's illustrative `a = 50`, `c = 1500`, and `n_A = 5000` to make the changing attribution visible. Compare matched data (`q = 1`) with unrelated data (`q = 0`). Also compare mixtures at a fixed total of 30,000 observations.
+The programs resolve files relative to their own locations. No installation, credentials, model calls, or network access is needed. The source recalculation reads the pinned files already stored in the [resource collection](../../01_Resources/28_Training_Data_Mixtures/README.md). Run the three programs before the tests, since one check reads saved results. The figure builder updates only the two named TikZ sources; `06_Lecture_Notes/build_notes.py --figures` renders them.
 
-A course implementation should solve the two-by-two normal equations independently and compare that solution with the formula. Preserve the sum-loss convention: converting to mean squared error while keeping the same numerical penalty changes the experiment. Show a sensitivity comparison with a different feature scale or penalty, since the attribution follows those assumptions. The construction demonstrates the proposed regression mechanism; it is not a replication of subliminal transfer in a language model.
+## Comparisons and Inputs
 
-## Part Two: Conditional Customer-Service Evaluation
+`mixture_regression.py` solves two normal equations under a sum-loss ridge objective. Source A always has both task and tag features with expected style score one; Source B lacks the tag and has expected score zero. The expected score is in arbitrary units. The reference effective penalties are 50 for the task contribution and 1,500 for the tag contribution, with 5,000 Source A examples in the added-data comparison. Other regimes equalize feature scales or reduce the penalty. A separate design fixes 30,000 total examples. All 261 rows are exact noiseless synthetic calculations, with no random seed or empirical fit.
 
-Construct a separate hypothetical table of service requests with stable request IDs, request type, account context, model version, and independently defined outcome labels. Appropriate outcomes include a correct policy explanation, successful completion of a requested cancellation, and escalation when the evidence is insufficient. Apply the same requests across model versions and report both overall and context-specific rates. Keep a count of unanswered requests and unavailable judgments.
+`service_contexts.py` constructs 1,000 paired requests for two hypothetical versions, producing 2,000 request-version records. Product support, refunds, and cancellation have 900, 80, and 20 requests. Successes and missing responses are imposed directly. Request IDs preserve paired changes. Both versions resolve 950 requests correctly; the combined version has 27 recoveries and 27 regressions, and cancellation resolution falls from 19/20 to 8/20. Fifteen missing responses remain in attempted-request denominators. These outcomes are independent of the ridge calculation and estimate no effect of merging actual data suppliers.
 
-Any illustrative rates should be declared as imposed values. Their purpose is to show how a weighted average can conceal a context's poor performance. They provide no estimate of the prevalence of training-data poisoning or of harm caused by a particular company. The paper motivates the comparisons; evidence from the retailer would determine the actual rates.
+`source_checkpoint_comparison.py` verifies archived hashes, follows the upstream last-record-per-epoch rule, and recomputes selected published aggregates. It preserves final and peak rates separately and verifies 51 condition means from three run records each. The [source assessment](../../01_Resources/28_Training_Data_Mixtures/SOURCE_REVIEW.md) records the definitions, response denominators, and checkpoint-selection rules. No upstream program or model was executed.
 
-For repeated model selection, split requests before choosing checkpoints or prompt variants. Use a development sample for selection and an untouched request sample for the final comparison. Keep response samples nested within requests when quantifying uncertainty. Review machine-positive and machine-negative judgments against a stated human rubric, and report failures to obtain a judgment separately.
+## Outputs and Checks
 
-## Figures and Course Placement
+The [data dictionary](DATA_DICTIONARY.md) defines the saved records and units. The [results guide](results/README.md) supplies expected values. The [manifest](manifest.json) records inputs, source version, runtime, checks, and file hashes. Ten independent checks cover an original-feature normal equation, penalty scaling, unrelated examples, a fixed-total optimum, invalid inputs, paired changes, missing denominators, empty groups, and resumed epoch records.
 
-An editable TikZ diagram can show two training groups and the association that becomes distinguishable after they are combined. A second figure can place an aggregate service score beside rates by request context, with observation counts and common scales. A curve for `L` should be labeled as a synthetic regression result with its penalty and feature assumptions beside it. Use Illinois navy and orange, distinguish series with markers or line styles, and provide the underlying table and text description.
+The [optional ungraded lab](../../07_Labs/Training_Data_Mixtures/README.md) extends the fifteen-minute Session 11 comparison. It supplies no graded requirement or course-wide AI-use rule. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 connect source assessment, confounded features, supplier changes, and evidence about customer choice.
 
-The primary placement is M7's discussion of regularization, selection, and model evaluation, with a reference to M3's multiple-regression comparison. M2 supplies source and observation-unit checks. M8 considers model and supplier changes. M9 asks what evidence supports a firm's assurance that customers retain meaningful options. A focused discussion could replace an existing M7 comparison; a longer coding exercise would remain optional. No additional meeting, graded task, or AI-use rule is established by this design.
+---
 
-## Implementation Requirements
+## Source: 03_Data_and_Code/Training_Data_Mixtures/DATA_DICTIONARY.md
 
-A future implementation should include a small reproducible Python program, explicit synthetic inputs, an independent normal-equation check, expected outputs, editable figures, and a complete Markdown companion. The two source designs, adding observations and changing shares at a fixed total, need separate displays. The current resource review supplies [verified published aggregates](source_checks.json) and the [measurement assessment](SOURCE_REVIEW.md); it does not release this proposed course exercise.
+# Variables, Units, and Provenance
+
+## Synthetic Ridge Results
+
+`results/mixture_comparison.csv` has 261 rows: three penalty regimes, three similarity values, and 29 count comparisons. `regime` is reference (`a=50,c=1500`), equal_feature_scales (`a=c=1500`), or weaker_penalty (`a=5,c=150`). `design` is add_clean or fixed_total. `n_a` and `n_b` count constructed expected observations. `q` is task-feature similarity, using a Source B task feature of `sqrt(q)`. The penalty coefficients `a` and `c` have example units under the sum-loss objective.
+
+`task_contribution` and `tag_contribution` are fitted changes in the response-style score in arbitrary units. `source_a_prediction` is their sum. The evaluation vector contains the tag without the task, so its fitted change equals `tag_contribution`. These columns are not probabilities. The noise-free expected scores are fixed at one for Source A and zero for Source B. All inputs and outcomes are synthetic; the penalties follow the illustrative constants in the source paper.
+
+## Synthetic Service Records
+
+`data/service_requests.csv` contains one row per request and version. `request_id` is unique within a version and shared across versions. `context` is product_support, refund, or cancellation. `version` is original or combined. `response_received` records whether a response exists; `correct_resolution` records whether the requested service was completed correctly. Both indicators are imposed binary values. A correct resolution requires a received response.
+
+The original version has correct counts 855, 76, and 19 across the three contexts. The combined version has 882, 60, and 8. The last ten refund requests and last five cancellation requests lack a combined-version response. Successes occupy the first stated number of requests in each context, which determines the paired gains and losses. No actual customer records, text, training data, or model outputs appear in this file.
+
+`results/service_contexts.csv` contains two versions by three contexts plus an overall row. `attempted`, `received`, `missing`, and `correct` are counts. `rate_per_attempt` divides correct resolutions by attempts; `rate_per_response` divides by received responses. A zero denominator produces an empty CSV value corresponding to Python `None`. `results/paired_changes.json` counts matched request IDs, recoveries from incorrect to correct, and regressions from correct to incorrect. Changes concern the fixed synthetic roster.
+
+## Published Results
+
+`results/published_checkpoints.csv` contains nine selected Qwen training runs from Clarke and coauthors, arXiv 2611.10110v1. Conditions are 5,000 constructed examples with no clean examples, 5,000 with 100,000 clean examples, and 9,000 with 21,000 clean examples. `raw_log_rows` counts file lines; `distinct_epochs` counts ten evaluated epochs after retaining the last record for repeated epochs. `final_rate` selects epoch 10; `peak_rate` selects the maximum across those epochs. Rates are fractions of 50 German-classified responses under the trigger prompt per checkpoint, with ten questions and five sampled responses per question.
+
+`results/published_conditions.csv` has 51 rows: 17 constructed shares by three prompt conditions, each averaging three runs. `inoculation` is the trained trigger; the source key `trigger` means the approximate prompt absent from training; `assistant` is the ordinary prompt. `constructed_share` is the source's rounded fraction in 970 training examples. `mean_rate` is judge-classified misalignment per response. Interior cells have 560 responses per run and condition; endpoint cells have 840. The selected checkpoint maximizes the inoculation-prompt rate and has partial reuse of selection and reporting responses. These results are reported experimental aggregates, not prospective customer outcomes.
+
+The original files, licenses, and hashes remain in `01_Resources/28_Training_Data_Mixtures`. The source commit is `a9fab54c4bc226321877aadf81a36799c7d325c5`. Derived CSVs change the presentation and retain the source's units and selection rules. No published response was regenerated or independently judged.
+
+---
+
+## Source: 03_Data_and_Code/Training_Data_Mixtures/AGENTS.md
+
+# Agent Guide for Training Data Mixtures
+
+Read the root guide, local README, and data dictionary. Keep the exact synthetic ridge calculation, imposed service outcomes, and reported source experiments distinct. The programs make no external model calls and do not execute downloaded code.
+
+Preserve the sum-loss convention and fixed penalties when comparing added observations. State any changed scaling, penalty, total, or similarity. Contributions are style-score units, not probabilities. The fixed-feature mechanism is a hypothesis for the source's neural-model results.
+
+Retain the same request roster across service versions and preserve missing responses in attempt denominators. Report recoveries and regressions alongside aggregate changes. Public imposed labels do not estimate commercial effects or author intent. Keep checkpoint selection separate from prospective evaluation, and retain the last logged record per epoch when following the documented source loader.
+
+After changes, run all three analysis programs, ten independent checks, and the figure builder. Reconcile full Python listings, expected results, figures, slides, and manifests. The optional lab is public ungraded practice. Do not infer assessment requirements or validate a deployed model on the disclosed practice cases alone.
+
+---
+
+## Source: 03_Data_and_Code/Training_Data_Mixtures/results/README.md
+
+# Expected Results
+
+## Exact Synthetic Ridge Model
+
+The [mixture table](mixture_comparison.csv) contains 261 comparisons. With 5,000 Source A examples, matched task features, and penalties 50 and 1,500, the no-clean benchmark has task contribution 0.958466 and tag contribution 0.031949. Adding 100,000 Source B examples changes them to 0.011401 and 0.760461. With unrelated Source B examples, both contributions remain at their no-clean values.
+
+The source-count and fixed-total designs are separate. The two-by-two normal equations match the closed form. The exact interior optimum at fixed total includes the finite penalty term; the zero-similarity case has no interior optimum. These values describe an imposed noiseless model in score units, not language-model response rates.
+
+## Imposed Customer-Service Outcomes
+
+The [context table](service_contexts.csv) reports 950/1,000 correct resolutions for each version. Original success is 95% in every context. The combined version succeeds on 882/900 product requests, 60/80 refunds, and 8/20 cancellations. The [paired changes](paired_changes.json) contain 27 recoveries and 27 regressions.
+
+The combined version lacks 15 responses. Its success rate among received responses is 950/985, or 96.45%; its success rate per attempt remains 95%. Cancellation is 8/15 among responses and 8/20 among attempts. The same fixed request roster supports every version comparison.
+
+## Recomputed Published Aggregates
+
+The [checkpoint table](published_checkpoints.csv) preserves each run's final and peak rates. The constructed-only German condition has a zero final mean. Adding 100,000 clean examples gives a 72.0% final mean and an 86.67% mean of per-run peaks. At a 30% constructed share of 30,000 total examples, final values 54%, 54%, and 68% average 58.67%; peaks 66%, 58%, and 82% average 68.67%. The published main figure uses the final checkpoint.
+
+The [condition table](published_conditions.csv) reconstructs 51 means. At a 20% constructed share, trained-trigger, approximate-trigger, and ordinary-assistant rates are approximately 15.71%, 9.52%, and 4.52%. These are selected-checkpoint, judge-defined rates in the source experiment. Recalculation verifies stored arithmetic and definitions; it does not reproduce training or validate the judge.
+
+---
+
+## Source: 07_Labs/Training_Data_Mixtures/README.md
+
+# Combining Sources and Evaluating Customer Service
+
+A retailer proposes combining demonstrations from product support and subscription management. Determine what the training examples identify and which service comparisons support deployment. This is optional, public, ungraded practice linked to [M7 §§7.33–7.35](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) and Session 11.
+
+## Reproduce the Three Comparisons
+
+Read the [example guide](../../03_Data_and_Code/Training_Data_Mixtures/README.md) and [data dictionary](../../03_Data_and_Code/Training_Data_Mixtures/DATA_DICTIONARY.md). Run the three analysis programs and ten checks. Separate outputs from the exact synthetic ridge model, the imposed service roster, and the published experiment. State the observation unit and outcome in each case.
+
+For the ridge model, solve the two normal equations with two Source A rows, three matched Source B rows, and effective penalties two and eight. Verify task contribution 8/33 and tag contribution 5/33. Explain how the original feature representation `(2,1)` for A, `(2,0)` for B, and common coefficient penalty eight produces the same contributions. Then compare reference, equal-scale, and weaker-penalty regimes in the saved results.
+
+## Change One Assumption
+
+In a separate copy, replace the sum loss with mean squared error and keep the numerical penalty fixed. Derive the equivalent effective penalties before changing the code. Compare the added-data curve with the original. Explain why changing normalization changes the experiment. Preserve the unrelated-task comparison and the all-Source-B endpoint.
+
+Ask an AI coding assistant to add a sensitivity table with explicit feature scales, penalties, counts, and score units. Inspect its algebra against the original-feature calculation above. Check whether it adds an intercept, normalizes the loss, or labels a score as a probability. Record material AI assistance accurately.
+
+## Preserve Customer Context and Pairing
+
+Reconstruct the aggregate service rate as a weighted average of the three contexts. Recover the 27 gains and 27 losses using request IDs. Calculate cancellation resolution per attempt and per received response. Explain how reporting only completed responses changes the comparison.
+
+Evaluate a hypothetical decision to give cancellation requests more weight. State the chosen weights and the normative reason for them separately from the observed request shares. A weighting rule expresses a managerial objective; it does not establish informed consent, truthful explanations, or the customer's ability to complete a decision. No required weight or numerical acceptance threshold is supplied.
+
+## Trace the Published Outcome
+
+Find the three 30%-share runs in the archived epoch histories. Apply the documented last-record rule, then compare epoch 10 with each run's maximum. Explain why the final mean is 58.67% and the peak mean is 68.67%, and identify which one Figure 3 uses. A repeated epoch line is a recording event, not a new independent training run.
+
+The conditional-misalignment experiment selects a checkpoint to expose possible unwanted behavior. Design a separate evaluation for a fixed deployment checkpoint using untouched request IDs and judgments. Keep repeated responses grouped by request when computing uncertainty. Specify how human assessment would sample positive and negative machine judgments, and record unanswered requests and unscored responses.
+
+## Recommendation
+
+State the proposed service change, source versions, the training mixture, the evaluation population, and the outcomes needed to justify deployment. Address access to cancellation, refunds, and correction. Distinguish evidence about a practice from an inference about intention. Public practice cases can guide development; a fresh evaluation is needed after revising a configuration against them.
 
 ---
 

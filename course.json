@@ -55,6 +55,12 @@
       "path": "07_Labs/Inference_Efficiency/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "training-data-mixtures",
+      "path": "07_Labs/Training_Data_Mixtures/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -178,7 +184,12 @@
     "07_Labs/Inference_Efficiency/README.md",
     "01_Resources/28_Training_Data_Mixtures/README.md",
     "01_Resources/28_Training_Data_Mixtures/SOURCE_REVIEW.md",
-    "01_Resources/28_Training_Data_Mixtures/CASE_DESIGN.md"
+    "01_Resources/28_Training_Data_Mixtures/CASE_DESIGN.md",
+    "03_Data_and_Code/Training_Data_Mixtures/README.md",
+    "03_Data_and_Code/Training_Data_Mixtures/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Training_Data_Mixtures/AGENTS.md",
+    "03_Data_and_Code/Training_Data_Mixtures/results/README.md",
+    "07_Labs/Training_Data_Mixtures/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -227,12 +238,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-22-inference-efficiency",
+    "revision": "2026-11-22-training-data-mixtures",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 89,
-    "pages": 330,
+    "figures_count": 91,
+    "pages": 341,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -247,7 +258,8 @@
     "dose_response_examples": "03_Data_and_Code/Dose_Response/README.md",
     "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
     "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
-    "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md"
+    "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md",
+    "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md"
   },
   "datasets": [
     {
@@ -318,7 +330,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 349,
+    "slides": 354,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -365,7 +377,7 @@
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-18",
+    "updated_on": "2026-11-22",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -599,7 +611,7 @@
     "reviewed_on": "2026-11-22",
     "source_commit": "a9fab54c4bc226321877aadf81a36799c7d325c5",
     "source_package_executed": false,
-    "status": "resource review and proposed teaching case; no lecture or lab release",
+    "status": "available in notes, Session 11, and optional ungraded practice",
     "primary_module": "M7",
     "modules": [
       "M2",
@@ -611,6 +623,21 @@
     "stored_mean_cells_recomputed": 51,
     "stored_epoch_histories_checked": 9,
     "llm_calls": 0,
-    "scope": "Selected reported aggregates independently recomputed; final and peak checkpoints distinguished. Two-feature regression and marketing examples are proposed adaptations, not empirical marketing findings."
+    "scope": "Exact synthetic ridge model, imposed paired customer-service outcomes, and independent recalculation of selected published aggregates. Final and selected checkpoints remain distinct. No neural training, company-intent inference, or empirical marketing effect is claimed.",
+    "implemented_on": "2026-11-22",
+    "examples": "03_Data_and_Code/Training_Data_Mixtures/README.md",
+    "lab": "07_Labs/Training_Data_Mixtures/README.md",
+    "manifest": "03_Data_and_Code/Training_Data_Mixtures/manifest.json",
+    "sections": [
+      "M2 §2.24",
+      "M3 §3.15",
+      "M7 §§7.33–7.35",
+      "M8 §8.24",
+      "M9 §9.18.3"
+    ],
+    "session": 11,
+    "discussion_minutes": 15,
+    "original_programs_executed": 3,
+    "independent_checks_passed": 10
   }
 }

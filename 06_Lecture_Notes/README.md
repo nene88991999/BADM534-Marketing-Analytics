@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 89 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [341-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 91 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -30,7 +30,7 @@ M1 teaches structural checks, join coverage, repeated totals, and review flags. 
 
 ## Resources and Additional Worked Cases
 
-The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons. The PDF has 321 pages.
+The [resource integration map](RESOURCE_INTEGRATION.md) links the newly added references to eight executed course programs. The notes add fixed-cohort business reviews (1.10), recency and frequency (2.13), price endogeneity and instruments (3.12), logging-gap survival (4.13), topic models and denominators (5.12), CUPED (6.15), basket association rules (7.17), and evidence checks for generated claims (8.11). Each case includes its full Python source, assumptions, results, and interpretation. Six additional figures explain the mechanisms and comparisons.
 
 ## Editing and Building
 
@@ -137,3 +137,7 @@ M7 §§7.29–7.30 distinguish an alert, variable localization, interpretation, 
 ## Inference Efficiency and Customer Resolution
 
 M7 §§7.31–7.32 connect speculative decoding to the time and cost of a useful response. [Two complete Python programs](../03_Data_and_Code/Inference_Efficiency/README.md) distinguish emitted tokens, target passes, response waits, generated answers, and correct customer resolutions. Two editable TikZ figures expose the boundary between target verification and task evaluation and the reversal between progress per pass and throughput. M1, M4, and M8 connect configuration versions, vocabulary clustering, and total service costs. Four Session 11 slides and [optional practice](../07_Labs/Inference_Efficiency/README.md) accompany the notes.
+
+## Training Mixtures and Conditional Evaluation
+
+M7 §§7.33–7.35 connect a two-feature ridge model to conditional customer-service evaluation and published checkpoint selection. [Three complete Python programs](../03_Data_and_Code/Training_Data_Mixtures/README.md) reproduce 261 synthetic ridge comparisons, 1,000 paired service requests, nine published epoch histories, and 51 published condition means. Ten independent checks and two editable TikZ figures accompany the examples. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 connect source provenance, regression, supplier changes, and evidence for meaningful customer choice. Five Session 11 slides and [optional ungraded practice](../07_Labs/Training_Data_Mixtures/README.md) provide discussion and follow-up.

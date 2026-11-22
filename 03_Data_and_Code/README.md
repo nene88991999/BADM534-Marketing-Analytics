@@ -93,3 +93,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Inference Efficiency and Customer Service
 
 [Two original programs](Inference_Efficiency/README.md) compare progress per verification pass with total throughput and distinguish reference-token agreement, generated answers, and correct automatic resolutions. Twelve requests per decoding split and twelve paired service requests are synthetic. Nine independent checks cover termination, costs, selection, and failures. Complete Python is printed in M7 §§7.31–7.32.
+
+## Training Mixtures and Conditional Service Outcomes
+
+[Training Data Mixtures](Training_Data_Mixtures/README.md) contains three executed standard-library programs. They solve a two-feature ridge model, construct 1,000 paired synthetic service requests, and recompute selected published checkpoint and prompt-condition results. Ten checks verify independent calculations, source hashes, pairing, missing-response denominators, and resumed epoch logs. Full Python appears in M7 §§7.33–7.35; the dictionary and agent guide identify the distinct evidence supplied by each program.

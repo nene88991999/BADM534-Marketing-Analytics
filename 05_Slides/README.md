@@ -96,3 +96,7 @@ Session 11 adds six slides on three synthetic retail events, symptom rankings, m
 ## Inference Efficiency in Session 11
 
 Four slides connect token verification, synthetic draft-length costs, reported SciQA adaptation results, and correct customer-service resolution. The ten-minute comparison occupies minutes 60–70; the conformal Python exercise and anomaly-diagnosis allocation remain in place. [Complete programs and results](../03_Data_and_Code/Inference_Efficiency/README.md), [M7 §§7.31–7.32](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Inference_Efficiency/README.md) distinguish source benchmarks from original synthetic calculations.
+
+## Training Mixtures in Session 11
+
+Five slides connect training-source combinations, ridge attribution, final and selected checkpoints, paired customer-service outcomes, and meaningful customer choice. Minutes 15–30 cover validation and regularization; minutes 30–45 cover the new comparison. [Three complete programs](../03_Data_and_Code/Training_Data_Mixtures/README.md), [M7 §§7.33–7.35](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Training_Data_Mixtures/README.md) provide the longer calculations. Two editable TikZ figures retain score units, source counts, attempted-request denominators, and explicit synthetic labels.

@@ -361,3 +361,9 @@ An evidence table can connect each proposed statement to its estimand, data, ide
 ## 3.14 A Linear Coefficient and a Nonlinear Decision
 
 \noindent A zero linear discount coefficient can coexist with an inverted-U profit response. Sections 6.22–6.25 explain the distinction and provide the derivation and complete Python code.
+
+## 3.15 Confounded Features and Predictions on a Different Task
+
+\noindent If a task feature and a source tag always appear together, observations from that source identify their combined association with the response. Regularization can produce a unique fitted model even when those observations do not identify the two contributions separately. The resulting division depends on feature scaling and the penalty. A unique computational answer therefore need not reflect a uniquely informative comparison.
+
+Adding examples of the same task without the tag supplies a contrast. In the synthetic ridge model of [Section 7.33](M07_Prediction_and_Machine_Learning.md), those examples reduce the task contribution and increase the tag contribution. Prediction on a different task then depends on whether the tag is present. The complete Python calculation states the feature representation and holds the sum-loss penalty fixed. Its implication concerns fitted associations and extrapolation under that representation; causal effects of a tag or a training-source change require a separate identification argument.

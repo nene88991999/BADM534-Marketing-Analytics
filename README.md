@@ -88,3 +88,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Inference Efficiency and Customer Resolution
 
 [Two runnable examples](03_Data_and_Code/Inference_Efficiency/README.md) compare draft-token progress with response time and reference-token accuracy with correct customer-service resolution. Full Python, two TikZ figures, and the worked case appear in M7 §§7.31–7.32, with four slides in Session 11 and [optional practice](07_Labs/Inference_Efficiency/README.md). All new data and timings are synthetic; the published G-MTP benchmark remains a separate attributed source.
+
+## Training Mixtures and Customer Choice
+
+[M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) connect confounded training features to conditional service outcomes and checkpoint selection. [Three complete programs](03_Data_and_Code/Training_Data_Mixtures/README.md), two TikZ figures, five Session 11 slides, and [optional practice](07_Labs/Training_Data_Mixtures/README.md) distinguish exact synthetic calculations from published model results. M2, M3, M8, and Marketing Dialectics connect source provenance, regression, supplier changes, and evidence for meaningful customer choice.

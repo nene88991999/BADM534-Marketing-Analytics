@@ -259,7 +259,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "inference_efficiency_checks_2026_11_22",
+  "latest_revision": "training_data_mixtures_checks_2026_11_22",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -402,5 +402,60 @@
     },
     "execution_scope": "Two original standard-library programs and nine independent checks ran. Every synthetic decoding round was reaggregated and all 24 plotted coordinates checked against the saved development table. All 75 full note listings match their source and parse. No upstream code, model inference, or training ran.",
     "layout_scope": "Reviewed four new Session 11 pages and adjacent slides, both TikZ previews, the complete new note sections and program listings, M1/M4/M8 additions, contents, cover, and affected transitions. Rechecked final code-line wrapping and the shortened slide heading. Existing template, calendar, and all fourteen other session decks are preserved."
+  },
+  "training_data_mixtures_checks_2026_11_22": {
+    "verified_on": "2026-11-22",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 341,
+        "sha256": "1a98a4065e8d7b11f37cf35caea5645fd957c28a6f476c9c07c5dce8547745f1"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 29,
+        "sha256": "f8cfd992f10337fcb294adfc5d608476942a57fcb4cc2a7af5a7d2f156b4335d"
+      },
+      "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
+        "pages": 43,
+        "sha256": "d4d9f362dcd70b8decb048c615404b412558f9a296b7a71ed6a09e0912ad3046"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 354,
+        "sha256": "2999d38dffff40d424916585da4526fba67037fd4d75cee2f7f2251d7b38cb78"
+      },
+      "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+        "pages": 2,
+        "sha256": "1f62c86c809e50a64310862bab0192bbcc6a34f56676d9c1583921ee3802a929"
+      }
+    },
+    "checks": {
+      "local_markdown_links_checked": 696,
+      "artifact_hashes_verified": 15,
+      "archived_source_hashes_verified": 32,
+      "session_decks": 15,
+      "total_slides": 354,
+      "note_pages": 341,
+      "figure_count": 91,
+      "dates_and_duration_unchanged": true,
+      "other_fourteen_decks_byte_identical": true,
+      "combined_deck_text_matches_sessions": true,
+      "portable_context_uses_reviewed_HEAD_additional_catalog": true,
+      "original_analysis_programs_executed": 3,
+      "independent_tests_passed": 10,
+      "full_note_code_blocks_match_source_and_parse": 78,
+      "all_service_records_reaggregated": 2000,
+      "normal_equations_checked": 261,
+      "figure_coordinates_checked": 92,
+      "existing_lecture_calculations_reproduced": true,
+      "new_tikz_figures_visually_reviewed": 2,
+      "new_student_slide_pages_visually_reviewed": 5,
+      "note_pages_visually_reviewed_including_contents_and_transitions": 20,
+      "standalone_dialectics_changed_page_visually_reviewed": true,
+      "syllabus_pages_visually_reviewed": 2,
+      "build_logs_have_no_overfull_boxes_or_undefined_references": true,
+      "upstream_programs_executed": 0,
+      "external_model_calls": 0
+    },
+    "execution_scope": "Three original standard-library programs and ten independent checks ran. All 2,000 synthetic service records were reaggregated, 261 ridge results satisfy both normal equations, and 92 plotted coordinates match saved tables. All 78 full note listings match their source and parse. No upstream code, model inference, or training ran.",
+    "layout_scope": "Reviewed the five new Session 11 pages and adjacent slides, both TikZ previews, complete new note sections and program listings, M2/M3/M8/M9 additions, contents, cover, affected transitions, standalone dialectics page, and both syllabus pages. Corrected plot-label overlap and equation/section pagination. The original template, dates, and fourteen other decks are preserved."
   }
 }
