@@ -1,27 +1,23 @@
 # Product Screening With Synthetic Consumer Responses
 
-## The Research Decision
+A fictional personal-care firm has more product ideas than it can afford to test with a large human panel. The manager needs a shortlist and a way to detect promising ideas that the screening procedure rejects. [Two original Python programs](../../03_Data_and_Code/Synthetic_Consumers/README.md) separate the numerical representation of a response from evaluation of a product-selection rule.
 
-A fictional personal-care firm has more body-wash concepts than it can afford to test with a large human panel. Concepts differ in refill options, fragrance, package convenience, and price. The manager must choose a shortlist while preserving a way to detect promising ideas that the screening procedure rejects. A short M4 discussion can connect this decision to M5 text measurement and M7 validation. The longer coding activity would be optional practice within the existing course plan.
+## Text, Anchors, and Personas
 
-## A Worked Comparison
+M5 §5.23 uses authored responses for three concepts and two invented personas, with seven response rows. Similarities are imposed independently of the text. A fixed response receives mean ratings of 4.25 and 3.70 under two supplied anchor comparisons. Equal-persona aggregation prevents an identical repeat from increasing one persona's weight. The full program preserves duplicate checks, required concept/persona coverage, uninformative mappings, and incomplete aggregates.
 
-Use clearly labeled invented concepts and instructor-authored example responses for the first calculation. Supply fixed illustrative similarities so the arithmetic can run locally without a model, API key, or external data transfer. Record concept, response, persona, anchor-set, and repeat identifiers. The illustrative vectors explain a computation; they are not measured human preferences or model-generated evidence.
+## Distribution Fit and Product Selection
 
-Students first transform one written response into a five-category distribution and verify the normalization by hand. Next, hold the response fixed while changing the anchor set. Compare expected rating, top-two-category share, and the resulting shortlist. An equal-similarity example motivates an explicit uninformative-input rule. Repeated responses remain grouped by persona when constructing a concept-level comparison.
+M4 §4.23 uses six separate fictional concept panels with 100 invented ratings each. Pooled, reversed, and compressed candidate patterns have identical overall category shares while implying different product rankings. Pooled means leave correlation undefined and selection tied; reversed ranks retain none of the reference top two; compressed ranks retain both while understating rating differences. The full program checks the common roster and calculates distribution fit, magnitude error, correlations, and shortlist retention.
 
-A second imposed example contrasts two tasks: reproducing a positive rating distribution and distinguishing stronger from weaker concepts. Students calculate KS similarity, Pearson correlation of concept means, rank agreement, and overlap of the selected concepts. A model returning the same distribution for every concept can have acceptable distribution fit while its constant means make a correlation undefined. Undefined statistics must remain labeled as such.
+## Validation and Consumer Representation
 
-## Human Validation and Interpretation
+M7 §7.36 defines the paper's correlation-attainment ratio, identifies its split-half benchmark, and explains why anchor development must remain outside final concept evaluation. A stated independent-error model shows why a noisy human benchmark is not a universal correlation ceiling. M8 §8.11 connects the complete screening workflow to model and domain changes. M9 §9.18.4 examines whose preferences generated personas represent through Kantian respect and Confucian trustworthiness.
 
-Fix the target population, recruitment process, concept descriptions, prompts, model versions, embedding, anchors, and decision rule before evaluating new concepts. Separate concept sets for developing anchors, choosing configurations, and final evaluation. Final human participants and their outcomes remain outside those choices. Preserve a random sample of rejected concepts in the human evaluation to measure false exclusions. Purchase-intent questions and observed purchasing answer different managerial questions and should retain their own outcomes and denominators.
+Human research should include shortlisted concepts and a random sample of rejected concepts. Known selection probabilities make missed opportunities estimable across the original pool, with suitable uncertainty. A live extension requires appropriate human data and a versioned record of the full procedure. The course examples make no claim about actual model or consumer performance.
 
-A live extension could compare generated responses with a suitably licensed or newly collected human panel. Its claims would depend on that panel's sampling and use permissions. The public repository provides no basis for labeling an invented panel as observed or reconstructing the original participants. An mHealth feature-screening extension would require separate validation because it changes the product domain.
+## Teaching Materials
 
-## AI-Assisted Coding and Figures
+Session 5 uses twenty minutes of its application block for concept screening and validation. Session 7 uses ten minutes of its concepts block for rating construction. Session 14 uses five minutes within its existing philosophical discussion for consumer representation. Eight slides and two editable Illinois-color TikZ figures accompany the notes, with complete Markdown descriptions and aggregate tables.
 
-The coding specification should request a small implementation with named inputs, explicit grouping, finite-value checks, normalized rows, defined tie handling, and separate development and final-evaluation concepts. Students explain one transformation independently, inspect why a numerical change alters the shortlist, and distinguish a successful software check from a successful consumer prediction. Complete Python, variable definitions, and saved outputs would accompany the implemented course example.
-
-Two editable Illinois-color TikZ figures would support the discussion. The first would hold a written response fixed while showing how two anchor sets change its measured distribution. The second would juxtapose a close fit to the overall response distribution with weak discrimination across concepts. Each figure would include a numerical table and label all imposed values as synthetic.
-
-M9 can examine the conditions under which generated personas inform a firm's hypotheses while actual consumers retain opportunities to supply preferences, challenge interpretations, and report consequences. Generated rationales remain proposed explanations until evidence from people or behavior supports them.
+The [optional ungraded lab](../../07_Labs/Synthetic_Consumers/README.md) provides longer sensitivity analysis, independent explanation, and a human-validation design. Both programs and ten independent checks have executed without upstream code or external model calls. The [dictionary](../../03_Data_and_Code/Synthetic_Consumers/DATA_DICTIONARY.md), [results](../../03_Data_and_Code/Synthetic_Consumers/results/README.md), and [manifest](../../03_Data_and_Code/Synthetic_Consumers/manifest.json) retain input provenance, units, and verification scope.

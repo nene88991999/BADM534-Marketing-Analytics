@@ -1,0 +1,22 @@
+% Six synthetic concepts, 100 invented ratings each; all candidate patterns imposed.
+\begin{tikzpicture}
+\begin{axis}[at={(0,0)},anchor=south west,width=6.1cm,height=5.5cm,ybar,bar width=13pt,
+ xmin=.5,xmax=5.5,xtick={1,2,3,4,5},ymin=0,ymax=60,ytick={0,20,40,60},
+ xlabel={Rating Category},ylabel={Overall Share (\%)},title={Identical Overall Distributions}]
+\addplot[draw=IlliniBlue,fill=IlliniBlue] coordinates {(1,0.00000000) (2,0.00000000) (3,22.50000000) (4,30.00000000) (5,47.50000000)};
+\end{axis}
+\begin{axis}[at={(7.1cm,0)},anchor=south west,width=6.1cm,height=5.5cm,
+ xmin=.8,xmax=6.2,xtick={1,2,3,4,5,6},xticklabels={A,B,C,D,E,F},
+ ymin=3.9,ymax=4.6,ytick={4,4.2,4.4,4.6},
+ xlabel={Concept},ylabel={Mean Rating},title={Different Concept Rankings},
+ legend style={at={(.5,-.32)},anchor=north,legend columns=2,font=\scriptsize,fill=none,draw=none}]
+\addplot[IlliniBlue,mark=*] coordinates {(1,4.50000000) (2,4.40000000) (3,4.30000000) (4,4.20000000) (5,4.10000000) (6,4.00000000)};
+\addlegendentry{Reference}
+\addplot[Storm,mark=triangle*,dotted] coordinates {(1,4.25000000) (2,4.25000000) (3,4.25000000) (4,4.25000000) (5,4.25000000) (6,4.25000000)};
+\addlegendentry{Pooled}
+\addplot[IlliniOrange,mark=square*,dashed] coordinates {(1,4.00000000) (2,4.10000000) (3,4.20000000) (4,4.30000000) (5,4.40000000) (6,4.50000000)};
+\addlegendentry{Reversed}
+\addplot[Patina,mark=diamond*,dashdotted] coordinates {(1,4.30000000) (2,4.28000000) (3,4.26000000) (4,4.24000000) (5,4.22000000) (6,4.20000000)};
+\addlegendentry{Compressed}
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,185 @@
+{
+  "data_type": "Entirely synthetic; instructor-authored text and imposed similarities, with no actual consumers or model-generated responses.",
+  "concepts": {
+    "refill": "Refillable body wash",
+    "fragrance_free": "Fragrance-free body wash",
+    "compact": "Compact travel body wash"
+  },
+  "personas": [
+    "p01",
+    "p02"
+  ],
+  "anchor_sets": {
+    "set_1": [
+      "I would not buy this product.",
+      "I probably would not buy this product.",
+      "I might or might not buy this product.",
+      "I would probably buy this product.",
+      "I would buy this product."
+    ],
+    "set_2": [
+      "I am certain I will not buy this product.",
+      "I am unlikely to buy this product.",
+      "I am undecided about buying this product.",
+      "I expect to buy this product.",
+      "I am certain I will buy this product."
+    ]
+  },
+  "responses": [
+    {
+      "concept": "refill",
+      "persona": "p01",
+      "repeat": 1,
+      "text": "I would consider it if the refill is convenient and the total price is acceptable.",
+      "similarities": {
+        "set_1": [
+          0.2,
+          0.23,
+          0.29,
+          0.38,
+          0.5
+        ],
+        "set_2": [
+          0.2,
+          0.26,
+          0.38,
+          0.44,
+          0.32
+        ]
+      }
+    },
+    {
+      "concept": "refill",
+      "persona": "p01",
+      "repeat": 2,
+      "text": "I would consider it if the refill is convenient and the total price is acceptable.",
+      "similarities": {
+        "set_1": [
+          0.2,
+          0.23,
+          0.29,
+          0.38,
+          0.5
+        ],
+        "set_2": [
+          0.2,
+          0.26,
+          0.38,
+          0.44,
+          0.32
+        ]
+      }
+    },
+    {
+      "concept": "refill",
+      "persona": "p02",
+      "repeat": 1,
+      "text": "Refills appeal to me, although storing a large pouch could be inconvenient.",
+      "similarities": {
+        "set_1": [
+          0.2,
+          0.26,
+          0.38,
+          0.44,
+          0.32
+        ],
+        "set_2": [
+          0.2,
+          0.26,
+          0.44,
+          0.41,
+          0.29
+        ]
+      }
+    },
+    {
+      "concept": "fragrance_free",
+      "persona": "p01",
+      "repeat": 1,
+      "text": "A fragrance-free option sounds useful; I would like to try a small bottle.",
+      "similarities": {
+        "set_1": [
+          0.2,
+          0.26,
+          0.32,
+          0.44,
+          0.38
+        ],
+        "set_2": [
+          0.2,
+          0.23,
+          0.29,
+          0.44,
+          0.44
+        ]
+      }
+    },
+    {
+      "concept": "fragrance_free",
+      "persona": "p02",
+      "repeat": 1,
+      "text": "The ingredients suit my preferences and I expect to purchase this option.",
+      "similarities": {
+        "set_1": [
+          0.2,
+          0.26,
+          0.32,
+          0.5,
+          0.32
+        ],
+        "set_2": [
+          0.2,
+          0.23,
+          0.32,
+          0.44,
+          0.41
+        ]
+      }
+    },
+    {
+      "concept": "compact",
+      "persona": "p01",
+      "repeat": 1,
+      "text": "A small package is convenient for travel, but I rarely need one.",
+      "similarities": {
+        "set_1": [
+          0.2,
+          0.32,
+          0.38,
+          0.44,
+          0.26
+        ],
+        "set_2": [
+          0.2,
+          0.35,
+          0.41,
+          0.38,
+          0.26
+        ]
+      }
+    },
+    {
+      "concept": "compact",
+      "persona": "p02",
+      "repeat": 1,
+      "text": "I might buy it before a trip if it is available at a reasonable price.",
+      "similarities": {
+        "set_1": [
+          0.2,
+          0.29,
+          0.41,
+          0.44,
+          0.26
+        ],
+        "set_2": [
+          0.2,
+          0.32,
+          0.41,
+          0.41,
+          0.26
+        ]
+      }
+    }
+  ],
+  "construction": "Each imposed similarity equals 0.2 plus 0.6 times the specified illustrative category weight. Text and anchor wording were authored separately; similarities were not estimated from them. The duplicated refill/p01 response isolates unequal repeat weighting."
+}

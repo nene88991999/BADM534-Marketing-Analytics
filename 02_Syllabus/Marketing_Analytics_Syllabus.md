@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations, including training-source mixtures and customer-service outcomes.
+Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Research examples compare mechanism clusters, university affiliations, customer outcomes, and cancellation policy. Synthetic cases examine consumer screening, training mixtures, and customer service.
 
 ---
 
@@ -45,7 +45,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 2 | January 27 | M2: Customer data, measurement, missingness, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
 | 4 | February 10 | M3: Regression and marketing interpretation |
-| 5 | February 17 | M4: Conjoint analysis and product design |
+| 5 | February 17 | M4: Conjoint, product design, and concept screening |
 | 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
 | 7 | March 3 | M5: Text, social media, affiliation networks, retail access, and pricing communication |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |

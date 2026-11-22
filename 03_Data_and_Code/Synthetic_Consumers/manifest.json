@@ -1,0 +1,100 @@
+{
+  "updated_on": "2026-11-22",
+  "data_type": "Entirely synthetic, with no human observations or actual model outputs.",
+  "source_paper": "https://arxiv.org/abs/2510.08338v3",
+  "source_commit": "86dcd2597c7824e4fd6546b884c5500c43a4b022",
+  "python": "3.14.8",
+  "requirements": "Python 3.10+ standard library",
+  "original_programs_executed": [
+    "anchor_measurement.py",
+    "concept_screening.py"
+  ],
+  "independent_checks_passed": 10,
+  "model_calls": 0,
+  "upstream_code_executed": false,
+  "randomness": "None; all inputs fixed.",
+  "observation_counts": {
+    "text_response_rows": 7,
+    "text_concepts": 3,
+    "personas_per_concept": 2,
+    "anchor_sets": 2,
+    "response_anchor_records": 21,
+    "concept_anchor_summaries": 9,
+    "screening_concepts": 6,
+    "synthetic_reference_ratings_per_concept": 100,
+    "candidates": 3,
+    "candidate_concept_comparisons": 18
+  },
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "dfa5ce15b4369377f8292f9dd3c185b94e7d2ff584ba2481840ab6892dfb6571",
+      "bytes": 1535
+    },
+    {
+      "path": "DATA_DICTIONARY.md",
+      "sha256": "1603221b9c4eaa5ffbb8d0a0a3efc6dabbdeed005a88e30823c1e6c65a9be273",
+      "bytes": 4351
+    },
+    {
+      "path": "README.md",
+      "sha256": "21b4f4144f6839518e4f61a7e632842c53088e2fc5c10be08850dfb3ef4a0969",
+      "bytes": 4914
+    },
+    {
+      "path": "anchor_measurement.py",
+      "sha256": "a2451cf159acb201b70fe0ec78b6431d5acbce72fbe0bc3e01803df9f19cb976",
+      "bytes": 4988
+    },
+    {
+      "path": "build_figures.py",
+      "sha256": "178471d3ab7b5e8e2b0c9bf3082f30fd27963c81997c388416b144d1129cddda",
+      "bytes": 3282
+    },
+    {
+      "path": "concept_screening.py",
+      "sha256": "677832e79cd26f6d6e75221177a36a0295d57ce9ccc47d5c434fe3ad25562e70",
+      "bytes": 5173
+    },
+    {
+      "path": "data/anchor_responses.json",
+      "sha256": "84fefba6c703503aa0c7102dc94a3b840d948088e5fe3723101286d95ed9ee1b",
+      "bytes": 4121
+    },
+    {
+      "path": "data/concept_panels.json",
+      "sha256": "c56bc03fdaf1db8bc6db7531a8a4e89ac0089c8b5a66d2a71742d9420ff50292",
+      "bytes": 2940
+    },
+    {
+      "path": "results/README.md",
+      "sha256": "9e6545e732c49be27b4b526768f6c0f7a7cf6ad02c7eb889655ae6241bf6f8c6",
+      "bytes": 2071
+    },
+    {
+      "path": "results/concept_ratings.json",
+      "sha256": "00d67711929d8cda59f0cf69365d70044b3977885e45c85f4c9e5f1cddecbaa1",
+      "bytes": 3283
+    },
+    {
+      "path": "results/response_ratings.json",
+      "sha256": "d44c54f78febca68cd3378f98bf822b02945db6d3f7c6a5622295d23153edcbc",
+      "bytes": 5568
+    },
+    {
+      "path": "results/screening_details.json",
+      "sha256": "03f101497fa7e9359ed5d4bffd6ec0512d44fdf79ec38b23481011e60710b502",
+      "bytes": 5922
+    },
+    {
+      "path": "results/screening_summary.json",
+      "sha256": "08b4f88a7957a133cb4dae7f2ea8317fc8ee8db59e87864ccdfbf5fb9adf6d71",
+      "bytes": 1027
+    },
+    {
+      "path": "test_examples.py",
+      "sha256": "bed35b3601267c776ca9c5f260871a6a0f2f2ad868f2c467e5413f2fb158f47d",
+      "bytes": 4511
+    }
+  ]
+}

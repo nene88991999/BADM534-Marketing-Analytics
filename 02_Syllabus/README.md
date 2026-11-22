@@ -25,3 +25,7 @@ Update the meeting fields and release pointers in [course.json](../course.json),
 ## Training Sources and Customer Service
 
 The course outline includes training-source mixtures and conditional service outcomes within the April 7 prediction meeting. The [teaching plan](TEACHING_PLAN.md#training-mixtures-and-conditional-service-outcomes) links the fifteen-minute comparison to complete code and optional practice.
+
+## Synthetic Consumer Research
+
+The course outline includes concept screening in the February 17 product-design meeting. Text measurement follows on March 3, with consumer representation discussed on April 28. The [worked examples](../03_Data_and_Code/Synthetic_Consumers/README.md) and [optional practice](../07_Labs/Synthetic_Consumers/README.md) preserve the distinction between synthetic calculations and human validation.

@@ -70,6 +70,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Training_Data_Mixtures/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "synthetic-consumers",
+      "path": "07_Labs/Synthetic_Consumers/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -201,7 +207,12 @@ Generated from course.json and the source files identified below. This file cont
     "07_Labs/Training_Data_Mixtures/README.md",
     "01_Resources/29_Synthetic_Consumer_Research/README.md",
     "01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md",
-    "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md"
+    "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md",
+    "03_Data_and_Code/Synthetic_Consumers/README.md",
+    "03_Data_and_Code/Synthetic_Consumers/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Synthetic_Consumers/AGENTS.md",
+    "03_Data_and_Code/Synthetic_Consumers/results/README.md",
+    "07_Labs/Synthetic_Consumers/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -250,12 +261,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-22-training-data-mixtures",
+    "revision": "2026-11-22-synthetic-consumer-research",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 91,
-    "pages": 341,
+    "figures_count": 93,
+    "pages": 353,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -271,7 +282,8 @@ Generated from course.json and the source files identified below. This file cont
     "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
     "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
     "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md",
-    "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md"
+    "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md",
+    "synthetic_consumer_examples": "03_Data_and_Code/Synthetic_Consumers/README.md"
   },
   "datasets": [
     {
@@ -342,7 +354,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 354,
+    "slides": 362,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -661,7 +673,7 @@ Generated from course.json and the source files identified below. This file cont
     "reviewed_on": "2026-11-22",
     "paper_version": "2510.08338v3",
     "source_commit": "86dcd2597c7824e4fd6546b884c5500c43a4b022",
-    "status": "Source review available; optional M4/M5 case proposed. Existing M8 \u00a78.11 briefly discusses synthetic consumer panels.",
+    "status": "available in notes, Sessions 5, 7, and 14, and optional ungraded practice",
     "primary_modules": [
       "M4",
       "M5"
@@ -674,7 +686,30 @@ Generated from course.json and the source files identified below. This file cont
     "source_package_executed": false,
     "original_arithmetic_checks": 6,
     "model_calls": 0,
-    "scope": "Measurement method and concept-screening validation. No human-data replication, new lecture release, or assessment requirement."
+    "scope": "Original synthetic text measurement and concept-screening calculations; human-study evidence remains a cited reference. No replication of the private study, upstream execution, or model inference.",
+    "implemented_on": "2026-11-22",
+    "examples": "03_Data_and_Code/Synthetic_Consumers/README.md",
+    "lab": "07_Labs/Synthetic_Consumers/README.md",
+    "manifest": "03_Data_and_Code/Synthetic_Consumers/manifest.json",
+    "sections": [
+      "M4 \u00a74.23",
+      "M5 \u00a75.23",
+      "M7 \u00a77.36",
+      "M8 \u00a78.11",
+      "M9 \u00a79.18.4"
+    ],
+    "sessions": [
+      5,
+      7,
+      14
+    ],
+    "discussion_minutes": {
+      "5": 20,
+      "7": 10,
+      "14": 5
+    },
+    "original_programs_executed": 2,
+    "independent_course_checks_passed": 10
   }
 }
 ```
@@ -777,6 +812,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Training Mixtures and Customer Choice
 
 [M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) connect confounded training features to conditional service outcomes and checkpoint selection. [Three complete programs](03_Data_and_Code/Training_Data_Mixtures/README.md), two TikZ figures, five Session 11 slides, and [optional practice](07_Labs/Training_Data_Mixtures/README.md) distinguish exact synthetic calculations from published model results. M2, M3, M8, and Marketing Dialectics connect source provenance, regression, supplier changes, and evidence for meaningful customer choice.
+
+## Synthetic Consumers and Concept Screening
+
+[Two complete examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect product screening in M4 §4.23 to text measurement in M5 §5.23 and validation in M7 §7.36. Invented panels and imposed similarities isolate anchor sensitivity, persona weights, distribution fit, and shortlist errors. Sessions 5, 7, and 14 incorporate the comparisons and consumer-representation discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) extends the calculations.
 
 ---
 
@@ -1007,7 +1046,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 ## Synthetic Consumers and Product Concept Testing
 
-[The source review and case proposal](01_Resources/29_Synthetic_Consumer_Research/README.md) extend the ideas briefly introduced in M8 §8.11 toward M4 concept screening and M5 text measurement. Proposed connections cover concept-level validation in M7 and consumer representation in M9. The resource guide records the study's anchor selection and metric definitions; the full worked example remains a proposal.
+[Two original executed examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect M4 §4.23 concept screening, M5 §5.23 anchor measurement, M7 §7.36 validation, M8 §8.11 workflows, and M9 §9.18.4 consumer representation. Two editable figures and eight slides support 20 minutes in Session 5, 10 minutes in Session 7, and 5 minutes within Session 14's philosophical discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) preserves invented inputs, persona weights, common concept rosters, and unresolved ties.
 
 ---
 
@@ -1084,6 +1123,10 @@ Update the meeting fields and release pointers in [course.json](../course.json),
 ## Training Sources and Customer Service
 
 The course outline includes training-source mixtures and conditional service outcomes within the April 7 prediction meeting. The [teaching plan](TEACHING_PLAN.md#training-mixtures-and-conditional-service-outcomes) links the fifteen-minute comparison to complete code and optional practice.
+
+## Synthetic Consumer Research
+
+The course outline includes concept screening in the February 17 product-design meeting. Text measurement follows on March 3, with consumer representation discussed on April 28. The [worked examples](../03_Data_and_Code/Synthetic_Consumers/README.md) and [optional practice](../07_Labs/Synthetic_Consumers/README.md) preserve the distinction between synthetic calculations and human validation.
 
 ---
 
@@ -1201,6 +1244,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Training Data Mixtures](Training_Data_Mixtures/README.md) contains three executed standard-library programs. They solve a two-feature ridge model, construct 1,000 paired synthetic service requests, and recompute selected published checkpoint and prompt-condition results. Ten checks verify independent calculations, source hashes, pairing, missing-response denominators, and resumed epoch logs. Full Python appears in M7 §§7.33–7.35; the dictionary and agent guide identify the distinct evidence supplied by each program.
 
+## Synthetic Consumer Research
+
+[Synthetic Consumers](Synthetic_Consumers/README.md) provides two executed standard-library programs, fixed invented inputs, ten independent checks, and two editable TikZ figures. The measurement example preserves responses, repeats, and persona weights; the screening example separates distribution fit, ranking, and shortlist errors. Full Python appears in M4 §4.23 and M5 §5.23, with input definitions and source attribution.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -1209,7 +1256,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [341-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 91 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [353-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 93 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1348,6 +1395,10 @@ M7 §§7.31–7.32 connect speculative decoding to the time and cost of a useful
 ## Training Mixtures and Conditional Evaluation
 
 M7 §§7.33–7.35 connect a two-feature ridge model to conditional customer-service evaluation and published checkpoint selection. [Three complete Python programs](../03_Data_and_Code/Training_Data_Mixtures/README.md) reproduce 261 synthetic ridge comparisons, 1,000 paired service requests, nine published epoch histories, and 51 published condition means. Ten independent checks and two editable TikZ figures accompany the examples. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 connect source provenance, regression, supplier changes, and evidence for meaningful customer choice. Five Session 11 slides and [optional ungraded practice](../07_Labs/Training_Data_Mixtures/README.md) provide discussion and follow-up.
+
+## Synthetic Consumers and Human Validation
+
+M4 §4.23 and M5 §5.23 contain [two complete Python programs](../03_Data_and_Code/Synthetic_Consumers/README.md), ten independent checks, and two Illinois-color TikZ figures. The invented cases distinguish overall distribution fit from concept selection and show how anchors and repeat weighting change ratings. M7 §7.36 defines correlation attainment and concept-level validation; M8 §8.11 connects the screening workflow; M9 §9.18.4 examines consumer representation. The [source review](../01_Resources/29_Synthetic_Consumer_Research/README.md) preserves reported empirical results separately from these synthetic calculations.
 
 ---
 
@@ -1513,6 +1564,10 @@ Four slides connect token verification, synthetic draft-length costs, reported S
 ## Training Mixtures in Session 11
 
 Five slides connect training-source combinations, ridge attribution, final and selected checkpoints, paired customer-service outcomes, and meaningful customer choice. Minutes 15–30 cover validation and regularization; minutes 30–45 cover the new comparison. [Three complete programs](../03_Data_and_Code/Training_Data_Mixtures/README.md), [M7 §§7.33–7.35](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Training_Data_Mixtures/README.md) provide the longer calculations. Two editable TikZ figures retain score units, source counts, attempted-request denominators, and explicit synthetic labels.
+
+## Synthetic Consumers and Product Research
+
+Session 5 adds four slides on concept screening, distribution fit, shortlist errors, and human validation. Session 7 adds three slides on anchor mappings, a fixed-response comparison, and a hand calculation. Session 14 adds consumer representation within the existing philosophical discussion. Two editable TikZ figures and [two complete programs](../03_Data_and_Code/Synthetic_Consumers/README.md) accompany M4 §4.23, M5 §5.23, M7 §7.36, and M9 §9.18.4. The allocated discussions use 20, 10, and 5 minutes of the existing meetings, respectively.
 
 ---
 
@@ -2008,6 +2063,12 @@ The [G-MTP paper and source review](../01_Resources/27_AI_Inference_Efficiency/R
 
 The [Homeopathic Learning review](../01_Resources/28_Training_Data_Mixtures/README.md) motivates M7 §§7.33–7.35. [Three original standard-library programs](../03_Data_and_Code/Training_Data_Mixtures/README.md) distinguish an exact synthetic ridge calculation, imposed paired service outcomes, and recomputed published aggregates. Ten checks cover normal equations, penalty scaling, context denominators, pairing, and resumed epoch logs. Two editable TikZ figures and five Session 11 slides preserve source counts, score units, final and peak checkpoints, and the distinction between model behavior and company intent. M2, M3, M8, and M9 supply conceptual links. No upstream code, model training, or external inference service was executed.
 
+## Synthetic Consumer Measurement and Concept Screening
+
+[Maier and coauthors' paper and pinned repository](../01_Resources/29_Synthetic_Consumer_Research/README.md) support M4 §4.23, M5 §5.23, M7 §7.36, M8 §8.11, and M9 §9.18.4. The course adaptations use two original standard-library programs with invented panels and imposed similarities. The repository's private study data are unavailable, so no replication of human-response results is claimed. Reported correlation attainment retains its split-half denominator and the paper's same-survey anchor-selection qualification.
+
+The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) include explicit uninformative mappings, equal-persona aggregation, common concept rosters, undefined correlations, and tied shortlist boundaries. Ten independent checks and two editable figures support eight new slides across Sessions 5, 7, and 14. [Optional ungraded practice](../07_Labs/Synthetic_Consumers/README.md) develops sensitivity analysis and human validation.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -2367,16 +2428,16 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 23 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 35 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 38 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 38 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 43 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 39 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -2468,7 +2529,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Calculate choice probabilities and assess the role of a stronger customer alternative.
 
-**Application:** Compare product value, implementation burden, substitution, and the outside option.
+**Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing.
 
 **Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
 
@@ -2479,7 +2540,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–145 | Synthetic Concept Screening and Human Validation |
+| 145–155 | Customer Alternatives and AI Pricing |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 06. Segmentation and Customer Lifetime Value
@@ -2509,14 +2571,15 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.
 
-**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets.
+**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets. Trace anchor sensitivity and persona weighting within the concepts block.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–15 | Managerial Case |
-| 15–45 | Concepts and Mechanisms |
+| 15–35 | Text Constructs and Representations |
+| 35–45 | Anchors, Rating Distributions, and Persona Weights |
 | 45–70 | Earnings-Call Exposure and Meaning |
 | 70–80 | Break |
 | 80–125 | Earnings-Call Python and Construct Checks |
@@ -2656,7 +2719,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope
 
@@ -2722,7 +2785,7 @@ Students should also be able to distinguish firm outcomes from customer value, i
 | 1 | M1 | Marketing questions, Python, data contracts, and AI-assisted coding |
 | 2–3 | M2 | Customer measurement, cleaning, nutrition-informed restrictions, visualization, and coverage |
 | 4 | M3 | Regression, interactions, interpretation, uncertainty, and claim support |
-| 5–6 | M4 | Conjoint, product design, segmentation, lifetime value, and customer choice |
+| 5–6 | M4 | Conjoint, product design, concept screening, segmentation, lifetime value, and customer choice |
 | 7 | M5 | Text, sentiment, social media, networks, and review provenance |
 | 8 | M1–M5 | Provisional project-evidence and presentation meeting |
 | 9–10 | M6 | Experiments, causal comparisons, policy evaluation, and customer outcomes |
@@ -2797,6 +2860,12 @@ Session 11 uses minutes 45–60 for prediction and decision comparisons and minu
 ## Training Mixtures and Conditional Service Outcomes
 
 Session 11 divides minutes 15–45 between validation and regularization (15–30) and training mixtures and conditional evaluation (30–45). Five slides connect confounded features, contrasting examples, final and selected checkpoints, service denominators, and meaningful customer choice. The existing prediction, inference-efficiency, conformal Python, and anomaly-diagnosis blocks retain their allocations. [Three full programs and optional ungraded practice](../03_Data_and_Code/Training_Data_Mixtures/README.md) carry the longer calculations. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 supply conceptual links. The case introduces no new meeting or assessment rule.
+
+## Synthetic Consumers and Product Concept Screening
+
+Session 5 allocates minutes 125–145 to distribution fit, product rankings, shortlist errors, and human validation, followed by minutes 145–155 for customer alternatives and AI pricing. Session 7 allocates minutes 15–35 to text constructs and representation and minutes 35–45 to anchor sensitivity and persona weights. Its earnings-call Python and application blocks retain their existing allocations. Session 14 uses minutes 95–100 for synthetic personas and actual consumer judgment within its existing 80–100 philosophical block.
+
+[Two original programs](../03_Data_and_Code/Synthetic_Consumers/README.md), ten independent checks, and two editable TikZ figures support the discussion. Full listings appear in M4 §4.23 and M5 §5.23, with validation in M7 §7.36 and ethical interpretation in M9 §9.18.4. The [optional ungraded lab](../07_Labs/Synthetic_Consumers/README.md) carries the longer coding exercise. All numerical inputs are invented; the separate source review records the empirical study's scope and anchor selection. The fifteen dates, 170-minute durations, and pending assessment rules remain unchanged.
 
 ---
 
@@ -2876,6 +2945,12 @@ M8 §8.23 and M9 §9.18.2 connect [retail accessibility](../03_Data_and_Code/Ret
 ## Evidence for Meaningful Customer Choice
 
 M7 §§7.33–7.35 and M9 §9.18.3 use [training mixtures and conditional service outcomes](../03_Data_and_Code/Training_Data_Mixtures/README.md) to examine claims about customer protection. A fixed synthetic roster has identical aggregate resolution across two versions while cancellation outcomes deteriorate. Kantian respect for customer ends and Confucian responsibilities of service support evaluating consequential contexts directly. The published training experiments identify conditional model behavior under specified conditions; they provide no finding about a firm's intention, legal liability, or prevalence of commercial misconduct.
+
+## Synthetic Personas and Consumer Representation
+
+M9 §9.18.4 examines the authority a firm assigns to generated accounts of customer preferences. Kantian respect directs attention to actual people's purposes and opportunities for judgment. Confucian trustworthiness requires an accurate account of whose responses support the claim and responsible engagement with contrary evidence. M4 §4.23 and M5 §5.23 supply synthetic examples in which ranking, anchors, and aggregation alter the decision. These calculations establish measurement distinctions and do not identify a firm's motives.
+
+The [source assessment](../01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md) distinguishes generated purchase-intent ratings from human preferences, observed purchases, and consent. Session 14 uses five minutes within its existing philosophical discussion for consumer representation. This addition makes no new legal-status claim.
 
 ---
 
@@ -3058,7 +3133,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency in recent marketing research. Research examples compare mechanism clusters, university affiliation networks, customer outcomes, and subscription cancellation policy. Synthetic examples supply hand-checkable calculations, including training-source mixtures and customer-service outcomes.
+Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Research examples compare mechanism clusters, university affiliations, customer outcomes, and cancellation policy. Synthetic cases examine consumer screening, training mixtures, and customer service.
 
 ---
 
@@ -3072,7 +3147,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 2 | January 27 | M2: Customer data, measurement, missingness, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
 | 4 | February 10 | M3: Regression and marketing interpretation |
-| 5 | February 17 | M4: Conjoint analysis and product design |
+| 5 | February 17 | M4: Conjoint, product design, and concept screening |
 | 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
 | 7 | March 3 | M5: Text, social media, affiliation networks, retail access, and pricing communication |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
@@ -4287,6 +4362,14 @@ The synthetic service comparison in [Section 7.34](M07_Prediction_and_Machine_Le
 
 Confucian trustworthiness connects a firm's assurances with its conduct when customers seek to leave or contest an answer. Responsible conduct requires attending to the consequences of the service and responding to justified complaints. These considerations motivate evidence about access, completed actions, explanations, and opportunities for correction. They do not supply a universal numerical success threshold. A defensible recommendation states the conduct expected of the firm, the evidence supporting its assurance, and the observed failures that would require a change.
 
+### 9.18.4 Synthetic Personas and Consumer Representation
+
+\noindent A firm may use generated personas to anticipate how customers could respond to a product. The ethical question concerns the authority the firm gives those responses in decisions that affect people. Synthetic answers can help formulate hypotheses and identify possible objections. Treating them as the considered judgments of actual customers requires evidence about representation that similarity in aggregate ratings alone cannot supply.
+
+The concept-screening comparison in Section 4.23 preserves the overall response distribution while reversing which products appear most attractive. The anchor comparison in Section 5.23 changes the preferred concept while retaining the same authored responses. These constructions show how the firm's measurement choices enter its account of consumer preferences. They do not establish a deceptive intention or imply that every use of synthetic research disregards customers. A Kantian assessment examines whether the practice respects affected people's purposes and opportunities to exercise judgment, including when their responses challenge the commercially favored interpretation.
+
+Confucian trustworthiness requires a truthful account of whose judgments the evidence represents. Responsible conduct includes listening to customers whose needs the model misses and revising decisions when their accounts expose a material error. A firm could use generated reactions to improve the questions it asks, while retaining opportunities for actual customers to express preferences, explain conditions, and contest consequences. The justified claim should distinguish a model's simulated response, a person's stated preference, and observed behavior. Neither philosophical perspective assigns a numerical validation threshold or turns accurate prediction into permission to substitute generated consent for a person's decision.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -4952,6 +5035,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Training Mixtures and Customer Choice
 
 [Training Data Mixtures](Training_Data_Mixtures/README.md) is optional ungraded practice accompanying M7 §§7.33–7.35 and Session 11. Students reproduce the ridge mechanism, change source similarity and penalty assumptions, preserve paired customer requests, and compare published final and selected checkpoints. The exercise connects independent calculations to evidence about cancellation, refunds, and customer choice.
+
+## Synthetic Consumers and Product Screening
+
+[Synthetic Consumer Practice](Synthetic_Consumers/README.md) is optional and ungraded. Students reproduce text-to-rating transformations, preserve persona weights, assess tied and reversed rankings, and design a prospective human evaluation that includes rejected concepts. All supplied data are invented, with no model account required.
 
 ---
 
@@ -6624,7 +6711,7 @@ The study concerns personal-care purchase intent. Its demographic comparisons de
 | M8 | Where can a synthetic panel assist research? | Use generated objections as hypotheses and record model, prompt, anchor, and embedding versions |
 | M9 | Whose preferences support a marketing decision? | Examine how actual consumers retain a voice when synthetic personas inform product design |
 
-The [case proposal](CASE_DESIGN.md) develops a fictional product-screening exercise with explicit synthetic inputs, independent checks, and a human-validation design. It is an optional extension proposal; no additional class meeting or assessment requirement is established.
+The [implemented case](CASE_DESIGN.md) provides two original programs with explicit synthetic inputs, ten independent checks, and a human-validation design. Full Python appears in M4 §4.23 and M5 §5.23, with M7 §7.36, M8 §8.11, and M9 §9.18.4 connections. Two editable figures and eight slides support Sessions 5, 7, and 14. [Optional ungraded practice](../../07_Labs/Synthetic_Consumers/README.md) extends the calculations without adding a meeting or assessment requirement.
 
 ## Sources and Verification
 
@@ -6706,31 +6793,197 @@ The LICENSE file contains Apache-2.0 terms. README and `pyproject.toml` instead 
 
 # Product Screening With Synthetic Consumer Responses
 
-## The Research Decision
+A fictional personal-care firm has more product ideas than it can afford to test with a large human panel. The manager needs a shortlist and a way to detect promising ideas that the screening procedure rejects. [Two original Python programs](../../03_Data_and_Code/Synthetic_Consumers/README.md) separate the numerical representation of a response from evaluation of a product-selection rule.
 
-A fictional personal-care firm has more body-wash concepts than it can afford to test with a large human panel. Concepts differ in refill options, fragrance, package convenience, and price. The manager must choose a shortlist while preserving a way to detect promising ideas that the screening procedure rejects. A short M4 discussion can connect this decision to M5 text measurement and M7 validation. The longer coding activity would be optional practice within the existing course plan.
+## Text, Anchors, and Personas
 
-## A Worked Comparison
+M5 §5.23 uses authored responses for three concepts and two invented personas, with seven response rows. Similarities are imposed independently of the text. A fixed response receives mean ratings of 4.25 and 3.70 under two supplied anchor comparisons. Equal-persona aggregation prevents an identical repeat from increasing one persona's weight. The full program preserves duplicate checks, required concept/persona coverage, uninformative mappings, and incomplete aggregates.
 
-Use clearly labeled invented concepts and instructor-authored example responses for the first calculation. Supply fixed illustrative similarities so the arithmetic can run locally without a model, API key, or external data transfer. Record concept, response, persona, anchor-set, and repeat identifiers. The illustrative vectors explain a computation; they are not measured human preferences or model-generated evidence.
+## Distribution Fit and Product Selection
 
-Students first transform one written response into a five-category distribution and verify the normalization by hand. Next, hold the response fixed while changing the anchor set. Compare expected rating, top-two-category share, and the resulting shortlist. An equal-similarity example motivates an explicit uninformative-input rule. Repeated responses remain grouped by persona when constructing a concept-level comparison.
+M4 §4.23 uses six separate fictional concept panels with 100 invented ratings each. Pooled, reversed, and compressed candidate patterns have identical overall category shares while implying different product rankings. Pooled means leave correlation undefined and selection tied; reversed ranks retain none of the reference top two; compressed ranks retain both while understating rating differences. The full program checks the common roster and calculates distribution fit, magnitude error, correlations, and shortlist retention.
 
-A second imposed example contrasts two tasks: reproducing a positive rating distribution and distinguishing stronger from weaker concepts. Students calculate KS similarity, Pearson correlation of concept means, rank agreement, and overlap of the selected concepts. A model returning the same distribution for every concept can have acceptable distribution fit while its constant means make a correlation undefined. Undefined statistics must remain labeled as such.
+## Validation and Consumer Representation
 
-## Human Validation and Interpretation
+M7 §7.36 defines the paper's correlation-attainment ratio, identifies its split-half benchmark, and explains why anchor development must remain outside final concept evaluation. A stated independent-error model shows why a noisy human benchmark is not a universal correlation ceiling. M8 §8.11 connects the complete screening workflow to model and domain changes. M9 §9.18.4 examines whose preferences generated personas represent through Kantian respect and Confucian trustworthiness.
 
-Fix the target population, recruitment process, concept descriptions, prompts, model versions, embedding, anchors, and decision rule before evaluating new concepts. Separate concept sets for developing anchors, choosing configurations, and final evaluation. Final human participants and their outcomes remain outside those choices. Preserve a random sample of rejected concepts in the human evaluation to measure false exclusions. Purchase-intent questions and observed purchasing answer different managerial questions and should retain their own outcomes and denominators.
+Human research should include shortlisted concepts and a random sample of rejected concepts. Known selection probabilities make missed opportunities estimable across the original pool, with suitable uncertainty. A live extension requires appropriate human data and a versioned record of the full procedure. The course examples make no claim about actual model or consumer performance.
 
-A live extension could compare generated responses with a suitably licensed or newly collected human panel. Its claims would depend on that panel's sampling and use permissions. The public repository provides no basis for labeling an invented panel as observed or reconstructing the original participants. An mHealth feature-screening extension would require separate validation because it changes the product domain.
+## Teaching Materials
 
-## AI-Assisted Coding and Figures
+Session 5 uses twenty minutes of its application block for concept screening and validation. Session 7 uses ten minutes of its concepts block for rating construction. Session 14 uses five minutes within its existing philosophical discussion for consumer representation. Eight slides and two editable Illinois-color TikZ figures accompany the notes, with complete Markdown descriptions and aggregate tables.
 
-The coding specification should request a small implementation with named inputs, explicit grouping, finite-value checks, normalized rows, defined tie handling, and separate development and final-evaluation concepts. Students explain one transformation independently, inspect why a numerical change alters the shortlist, and distinguish a successful software check from a successful consumer prediction. Complete Python, variable definitions, and saved outputs would accompany the implemented course example.
+The [optional ungraded lab](../../07_Labs/Synthetic_Consumers/README.md) provides longer sensitivity analysis, independent explanation, and a human-validation design. Both programs and ten independent checks have executed without upstream code or external model calls. The [dictionary](../../03_Data_and_Code/Synthetic_Consumers/DATA_DICTIONARY.md), [results](../../03_Data_and_Code/Synthetic_Consumers/results/README.md), and [manifest](../../03_Data_and_Code/Synthetic_Consumers/manifest.json) retain input provenance, units, and verification scope.
 
-Two editable Illinois-color TikZ figures would support the discussion. The first would hold a written response fixed while showing how two anchor sets change its measured distribution. The second would juxtapose a close fit to the overall response distribution with weak discrimination across concepts. Each figure would include a numerical table and label all imposed values as synthetic.
+---
 
-M9 can examine the conditions under which generated personas inform a firm's hypotheses while actual consumers retain opportunities to supply preferences, challenge interpretations, and report consequences. Generated rationales remain proposed explanations until evidence from people or behavior supports them.
+## Source: 03_Data_and_Code/Synthetic_Consumers/README.md
+
+# Synthetic Consumers and Product Screening
+
+A product manager deciding which concepts receive human research needs a measurement rule and a way to assess mistaken selections. Two original programs distinguish how text becomes a rating from how a rating informs a shortlist. Full Python appears in [M4 §4.23](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) and [M5 §5.23](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md). M7 §7.36 examines validation, M8 §8.11 connects the complete workflow, and M9 §9.18.4 examines consumer representation.
+
+## Reproduction
+
+Python 3.10 or later and its standard library suffice. From the course root:
+
+```bash
+python3 03_Data_and_Code/Synthetic_Consumers/anchor_measurement.py
+python3 03_Data_and_Code/Synthetic_Consumers/concept_screening.py
+python3 -m unittest discover -s 03_Data_and_Code/Synthetic_Consumers -p 'test_*.py' -v
+python3 03_Data_and_Code/Synthetic_Consumers/build_figures.py
+```
+
+The programs resolve inputs relative to their own files. Both calculations and all ten tests have run successfully. The [results guide](results/README.md) gives expected values. The figure builder reads saved outputs and writes two editable TikZ sources; the note builder renders their PNG companions. No package installation, credentials, model inference, or network access is required.
+
+## Text Measurement and Persona Weights
+
+`anchor_measurement.py` reads [authored responses and imposed similarities](data/anchor_responses.json). Three fictional body-wash concepts share two invented personas. Seven response rows include an identical repeated answer for one persona in the refill condition. Two five-statement anchor sets produce separate category distributions. Each similarity was constructed as 0.2 plus 0.6 times its intended illustrative category weight. The response text and anchor sentences were authored separately; these values are not measured embedding similarities or model outputs.
+
+The method subtracts the minimum similarity and normalizes. It uses the paper's epsilon-zero, temperature-one setting. An explicit course adaptation returns an uninformative status when the similarity spread is at most 1e-12. Any missing required mapping leaves its concept aggregate incomplete, with coverage counts retained. Repeat distributions are averaged within persona before averaging personas equally. The example also reports the different mean obtained from equal response-row weighting.
+
+## Distribution Fit and Shortlist Decisions
+
+`concept_screening.py` reads [six independent fictional concept panels](data/concept_panels.json), with 100 invented ratings per concept. The pooled, reversed, and compressed candidate patterns are imposed using those reference distributions. They isolate mathematical properties; the example estimates no model's performance on unseen data. These six concepts are a separate construction from the three-concept text example.
+
+The calculation gives each concept equal weight and evaluates mean KS similarity, mean absolute rating error, Pearson and Spearman correlations, and retention of the reference top two. Constant scores leave correlation undefined. Ties at the selection boundary leave the shortlist unresolved. All candidates must cover the exact same concept roster. The pooled pattern achieves mean KS similarity 0.925 with no concept discrimination. Reversed ranks retain none of the reference top two; compressed ranks retain both despite shrinking score differences.
+
+## Provenance and Verification
+
+[Maier and coauthors](https://arxiv.org/abs/2510.08338v3) motivate the measurement and validation questions. Their published figures are reviewed evidence, separate from the invented inputs here. The [pinned source assessment](../../01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md) records same-survey anchor optimization, split-half metric definitions, missing study data, implementation differences, and source-license discrepancies. The original course programs do not import or execute that repository.
+
+The [data dictionary](DATA_DICTIONARY.md) defines units and fields. The [manifest](manifest.json) records hashes and execution scope. Ten independent checks cover hand normalization, affine invariance, uninformative inputs, repeat weighting, incomplete aggregates, duplicate and missing rosters, undefined correlation, ordered distribution distance, tied selection, and known comparison results. The [optional ungraded lab](../../07_Labs/Synthetic_Consumers/README.md) adds sensitivity analysis and a prospective human-validation design.
+
+Session 5 uses twenty minutes for concept screening; Session 7 uses ten minutes for measurement. Session 14 connects generated personas to actual consumer judgment within the existing philosophical discussion. The course dates, meeting lengths, and unreleased assessment policies retain their existing status.
+
+---
+
+## Source: 03_Data_and_Code/Synthetic_Consumers/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+All inputs and outcomes in this folder are synthetic teaching constructions. No real respondents, demographics, purchase records, or generated-model performance observations are included. The two input files define independent examples.
+
+## Authored Text and Anchor Comparisons
+
+`data/anchor_responses.json` contains three fictional concepts, two invented persona identifiers, two anchor sets, and seven response rows. The row key is `(concept, persona, repeat)`. Every concept/persona pair appears. The refill/p01 pair has two identical rows to isolate repeat weighting.
+
+| Field | Unit and Meaning |
+| --- | --- |
+| `concepts` | Mapping from concept identifier to fictional body-wash description |
+| `personas` | Complete roster of invented persona identifiers; no population weights or demographic claims |
+| `anchor_sets` | Ordered lists of five authored sentences representing categories 1–5 |
+| `concept`, `persona`, `repeat` | Product, invented respondent, and within-persona response identifiers |
+| `text` | Instructor-authored illustrative answer |
+| `similarities` | Five imposed cosine-similarity values for each anchor set; dimensionless, constrained to [-1, 1] |
+
+In `results/response_ratings.json`, each response appears for Set 1, Set 2, and their mean, producing 21 records. `distribution` is an ordered five-category PMF or null for an uninformative mapping. `mean_rating` uses scores 1–5 and is measured in rating points. `status` distinguishes scored and uninformative rows. The numerical abstention tolerance is 1e-12 on the spread of similarities.
+
+`results/concept_ratings.json` has nine concept/anchor records. `response_rows` counts supplied answers, `scored_rows` counts available mappings, and `personas` counts distinct persona identifiers. `distribution` averages repeats within persona and then personas equally. `top_two_share` sums categories 4 and 5. `row_weighted_mean` instead averages all response rows equally. Null aggregates retain an incomplete status when a required mapping is unavailable. No null is converted to zero or silently excluded.
+
+## Synthetic Concept Panels
+
+`data/concept_panels.json` contains six fictional concepts, A–F, and three imposed candidate patterns. Each reference `counts` array contains 100 invented ratings in categories 1–5. The candidate objects cover the same six identifiers, each with a five-category PMF. All category values, candidate patterns, and ordering are fixed, so no random seed is used.
+
+The pooled PMF is the average reference distribution. The reversed pattern assigns the distribution from the opposite position in the A–F ordering. The compressed pattern gives 80% weight to the pooled PMF and 20% to the concept's reference PMF. Reference outcomes construct the patterns deliberately. This is an analytical comparison, with no training, validation, or final-test sample.
+
+`results/screening_details.json` has eighteen candidate/concept records. It preserves reference and candidate PMFs, their mean ratings, and concept-level KS similarity. The KS value equals one minus the maximum difference between cumulative category probabilities.
+
+| Summary Field | Unit and Meaning |
+| --- | --- |
+| `candidate`, `concepts` | Imposed pattern name and common concept denominator, six |
+| `mean_ks_similarity` | Equally weighted mean over the six concept-level similarities |
+| `mean_absolute_rating_error` | Average absolute error in concept means, in rating points |
+| `pearson` | Correlation of the six reference and candidate means; null for constant values |
+| `spearman` | Correlation of average ranks, with exact ties assigned average ranks; null for a constant ranking |
+| `reference_top_two` | Two concepts with the highest reference mean, A and B |
+| `selected` | Candidate top-two identifiers, or null when a tie at the boundary prevents unique selection |
+| `selection_status` | Unique selection or boundary tie; boundary comparisons use absolute tolerance 1e-12 |
+| `top_two_recall` | Number of A and B retained divided by two; null when selection is unresolved |
+
+The distinct quantities have distinct denominators: response rows, personas, concepts, category weights, and two selected products. Rating points and category weights are not sales, monetary willingness to pay, causal effects, or calibrated purchase probabilities.
+
+---
+
+## Source: 03_Data_and_Code/Synthetic_Consumers/AGENTS.md
+
+# Agent Guide for Synthetic Consumer Examples
+
+Read the root guide, local README, and data dictionary. Both examples are entirely synthetic. Preserve the distinction between authored text, imposed similarities, invented reference panels, and published empirical claims. The two input files are separate constructions. Do not label these responses as observed humans or outputs from an LLM.
+
+Keep the epsilon-zero, temperature-one mapping and explicit numerical abstention rule clear. Preserve missing mappings and coverage counts. Average repeats within persona before giving personas equal weight; retain row-weighted results only as the identified comparison. Never substitute an uninformative distribution for a consumer's consent or preference.
+
+Require identical concept rosters across candidates. Constant means leave correlation undefined. A tie at the shortlist boundary leaves the selection unresolved. The pooled, reversed, and compressed patterns use reference outcomes to construct analytical counterexamples; they are not out-of-sample model evaluations. A live evaluation needs separate development, selection, and final concepts, together with human sampling and source permissions.
+
+Run both programs and the ten independent tests after changes. Rebuild figures from saved outputs, reconcile complete note listings with scripts, and verify plotted values independently. Preserve source attribution and the unchanged reference archive. The optional lab is public ungraded practice and creates no assessment requirement.
+
+---
+
+## Source: 03_Data_and_Code/Synthetic_Consumers/results/README.md
+
+# Expected Results
+
+## Anchor Sensitivity and Persona Weighting
+
+Twenty-one response/anchor records produce nine concept/anchor summaries. All required mappings are available for the supplied inputs. The refill case has three response rows and two personas; the other concepts each have two rows and two personas.
+
+| Concept | Set 1 Mean | Set 2 Mean | Mean Across Sets |
+| --- | ---: | ---: | ---: |
+| Refillable | 3.975 | 3.625 | 3.800 |
+| Fragrance-Free | 3.850 | 4.100 | 3.975 |
+| Compact Travel | 3.425 | 3.300 | 3.3625 |
+
+For refill/p01/repeat1, Set 1 produces weights `(0, .05, .15, .30, .50)` with mean 4.25; Set 2 produces `(0, .10, .30, .40, .20)` with mean 3.70. These ten weights generate the [anchor figure](../../../06_Lecture_Notes/figures/M05_anchor_ratings.tex). The refill concept's Set 1 row-weighted mean is 4.0666667, compared with 3.975 under equal-persona weighting.
+
+## Distribution Fit and Selection
+
+Eighteen candidate/concept comparisons produce three summaries. Every reference panel has 100 invented ratings, and every mean across concepts weights the six concepts equally.
+
+| Pattern | Mean KS Similarity | Mean Absolute Rating Error | Pearson and Spearman | Selected | Top-Two Recall |
+| --- | ---: | ---: | --- | --- | ---: |
+| Pooled | 0.925 | 0.150 | Undefined | Boundary Tie | Undefined |
+| Reversed | 0.850 | 0.300 | -1 | F, E | 0 |
+| Compressed | 0.940 | 0.120 | 1 | A, B | 1 |
+
+The pooled category shares are `(0, 0, .225, .30, .475)` for both the reference and all three candidates. Reference means are `(4.5, 4.4, 4.3, 4.2, 4.1, 4.0)`. Pooled means equal 4.25, reversed means run from 4.0 to 4.5, and compressed means are `(4.30, 4.28, 4.26, 4.24, 4.22, 4.20)`. These values generate the [screening figure](../../../06_Lecture_Notes/figures/M04_concept_screening.tex). Constant scores remain undefined for correlation and unresolved for unique selection.
+
+All values are exact consequences of imposed inputs, subject to ordinary floating-point rounding. They estimate no empirical accuracy, sales effect, or population preference.
+
+---
+
+## Source: 07_Labs/Synthetic_Consumers/README.md
+
+# Synthetic Consumers and Product Concept Screening
+
+This is optional ungraded practice accompanying M4 §4.23, M5 §5.23, and M7 §7.36. The [complete programs and supplied inputs](../../03_Data_and_Code/Synthetic_Consumers/README.md) use standard-library Python and entirely synthetic examples. No model account is needed.
+
+## The Product Decision
+
+A fictional personal-care firm can fund human research for only a subset of its product ideas. Explain which comparison supports a shortlist and how the firm could discover promising concepts that its screening rule rejects. Keep purchase-intent ratings distinct from observed buying and attribute-level willingness to pay.
+
+## Reproduce and Explain
+
+1. Run both programs using the commands in the example README. Recover the 4.25 rating for the specified response by hand. Identify the minimum similarity, normalization denominator, and category weights.
+2. Compare both anchor sets while holding the response fixed. Explain why the imposed values illustrate sensitivity without estimating the effect of specific words on a real model.
+3. Remove the duplicate refill/p01 response. Verify that equal-persona means stay unchanged while the row-weighted comparison changes. State the observation unit needed for each average.
+4. Give one response five equal similarities. Check its uninformative status and the incomplete concept aggregate. Explain the additional interpretation that would be imposed by silently replacing it with uniform weights.
+5. Reproduce the pooled, reversed, and compressed concept comparisons. Explain how the same overall category shares coexist with different shortlists. Preserve undefined correlations and unresolved selection ties.
+
+## AI-Assisted Sensitivity Analysis
+
+Ask a coding assistant to change the weight on the pooled distribution in the compressed pattern while retaining the same reference roster. Require a new output directory or filenames so the released example remains reproducible. The prompt should specify equal concept weights, explicit missing and tie behavior, and a check against the original endpoints. Inspect the code and explain one result independently.
+
+As the pooled weight approaches one, concept differences shrink. For weights strictly below one, ordering remains unchanged in exact arithmetic for this construction. At one, all scores tie. Explain why a perfect ranking at an interior weight supplies limited evidence about the magnitude of a demand difference. Numerical tolerances near the endpoint require an explicit interpretation.
+
+## A Prospective Validation Design
+
+Specify the target population and recruitment process, the fixed concept descriptions, development and final concept sets, model and embedding versions, anchor selection, and the screening rule. Keep final human outcomes outside all configuration choices. Include a random sample of rejected concepts and explain how their sampling probabilities affect the estimation of missed opportunities. State which additional observations would be needed to evaluate purchases rather than stated intent.
+
+An optional live extension would require appropriately obtained human data and a versioned record of the complete measurement procedure. The published study's private respondent records are absent from the inspected repository. Do not treat the invented panels or public practice checks as external validation of a deployed system.
+
+## Consumer Representation
+
+Use M9 §9.18.4 to evaluate a claim that generated personas show what customers want. Identify the role of actual customers' judgments, the evidence that would challenge the firm's interpretation, and the opportunities people have to express conditions or contest a decision. Explain how those reasons affect the proposed use of synthetic research.
 
 ---
 

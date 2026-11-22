@@ -100,3 +100,7 @@ Four slides connect token verification, synthetic draft-length costs, reported S
 ## Training Mixtures in Session 11
 
 Five slides connect training-source combinations, ridge attribution, final and selected checkpoints, paired customer-service outcomes, and meaningful customer choice. Minutes 15–30 cover validation and regularization; minutes 30–45 cover the new comparison. [Three complete programs](../03_Data_and_Code/Training_Data_Mixtures/README.md), [M7 §§7.33–7.35](../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and [optional practice](../07_Labs/Training_Data_Mixtures/README.md) provide the longer calculations. Two editable TikZ figures retain score units, source counts, attempted-request denominators, and explicit synthetic labels.
+
+## Synthetic Consumers and Product Research
+
+Session 5 adds four slides on concept screening, distribution fit, shortlist errors, and human validation. Session 7 adds three slides on anchor mappings, a fixed-response comparison, and a hand calculation. Session 14 adds consumer representation within the existing philosophical discussion. Two editable TikZ figures and [two complete programs](../03_Data_and_Code/Synthetic_Consumers/README.md) accompany M4 §4.23, M5 §5.23, M7 §7.36, and M9 §9.18.4. The allocated discussions use 20, 10, and 5 minutes of the existing meetings, respectively.

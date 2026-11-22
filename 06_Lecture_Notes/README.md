@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [341-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 91 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [353-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 93 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -141,3 +141,7 @@ M7 §§7.31–7.32 connect speculative decoding to the time and cost of a useful
 ## Training Mixtures and Conditional Evaluation
 
 M7 §§7.33–7.35 connect a two-feature ridge model to conditional customer-service evaluation and published checkpoint selection. [Three complete Python programs](../03_Data_and_Code/Training_Data_Mixtures/README.md) reproduce 261 synthetic ridge comparisons, 1,000 paired service requests, nine published epoch histories, and 51 published condition means. Ten independent checks and two editable TikZ figures accompany the examples. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 connect source provenance, regression, supplier changes, and evidence for meaningful customer choice. Five Session 11 slides and [optional ungraded practice](../07_Labs/Training_Data_Mixtures/README.md) provide discussion and follow-up.
+
+## Synthetic Consumers and Human Validation
+
+M4 §4.23 and M5 §5.23 contain [two complete Python programs](../03_Data_and_Code/Synthetic_Consumers/README.md), ten independent checks, and two Illinois-color TikZ figures. The invented cases distinguish overall distribution fit from concept selection and show how anchors and repeat weighting change ratings. M7 §7.36 defines correlation attainment and concept-level validation; M8 §8.11 connects the screening workflow; M9 §9.18.4 examines consumer representation. The [source review](../01_Resources/29_Synthetic_Consumer_Research/README.md) preserves reported empirical results separately from these synthetic calculations.

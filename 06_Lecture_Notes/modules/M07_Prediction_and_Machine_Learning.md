@@ -2379,3 +2379,40 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## 7.36 Validation of Synthetic Consumer Panels
+
+\noindent A firm evaluating synthetic respondents needs to specify which future comparison the evaluation should support. Predicting another sample's ratings for familiar concepts differs from screening new concepts or transferring to another product category. Anchor wording, prompt development, model selection, and numerical calibration can all use outcome information. A final evaluation must reserve evidence from those choices when the intended claim concerns new concepts.
+
+In the [57-concept personal-care study](https://arxiv.org/abs/2510.08338v3), correlation attainment compares a human–synthetic correlation with a human–human benchmark. Each of 2,000 repetitions divides every existing human panel into halves and samples an equally sized synthetic group. Correlations then compare the concept means across the same set of products. If $R_{xy,b}$ is the human–synthetic correlation in repetition $b$ and $R_{xx,b}$ is the correlation between human halves, the reported ratio is
+
+$$
+\rho=\frac{B^{-1}\sum_{b=1}^{B}R_{xy,b}}{B^{-1}\sum_{b=1}^{B}R_{xx,b}},\qquad B=2{,}000.
+$$
+
+For GPT-4o with image stimuli, available demographic conditioning, generation temperature 0.5, and averaged anchors, Table 1 reports 90.2% correlation attainment, 0.88 mean KS similarity, and a separate concept-mean Pearson correlation of 0.724. The percentage describes the ratio above. It measures neither individual-rating accuracy nor prediction of purchases. The benchmark comes from splits of existing respondents, with no observed second survey wave. The authors' reported manual optimization of anchors on these concepts also means the split-half exercise leaves transfer of the measurement procedure to new concepts unresolved.
+
+### 7.36.1 A Noise Benchmark and a Universal Bound
+
+\noindent A split-half comparison describes the similarity between two noisy measurements. Its interpretation as a ceiling for every predictor requires additional restrictions. A simple measurement model separates the variation in the latent concept score from independent measurement noise.
+
+\begin{assumption}[Independent Measurement Errors]
+\label{ass:synthetic-panel-benchmark}
+Across concepts, the latent score $\mu$ has variance $\tau^2>0$. Two measured means are $Y_1=\mu+e_1$ and $Y_2=\mu+e_2$. Each error has mean zero and variance $\sigma^2>0$; the errors are mutually independent and independent of $\mu$. An idealized predictor equals $\mu$.
+\end{assumption}
+
+Under Assumption \ref{ass:synthetic-panel-benchmark}, the shared covariance of the measured means is $\tau^2$, giving
+
+$$
+R_{12}=\frac{\tau^2}{\tau^2+\sigma^2},\qquad
+R_{\mu,1}=\sqrt{R_{12}},\qquad
+\frac{R_{\mu,1}}{R_{12}}=\frac{1}{\sqrt{R_{12}}}>1.
+$$
+
+An ideal predictor can correlate more closely with a noisy panel mean than another noisy panel does. This population calculation establishes that the split-half benchmark is not a universal upper bound. It estimates no performance of the paper's models and supplies no assumption that an actual language model knows the latent score. The benchmark remains informative when its construction and the sources of noise are stated directly.
+
+### 7.36.2 Development, Selection, and Final Evaluation
+
+\noindent Keep separate concept sets for developing anchors, choosing among configurations, and evaluating the final screening rule. Freeze prompts, model versions, sampling settings, embedding versions, anchors, and aggregation before opening the final human outcomes. Repeated observations from a person should remain grouped, and respondent populations should match the intended use. An additional category or later period provides evidence about a further transfer rather than simply increasing the nominal sample size.
+
+Distribution fit, rank agreement, and missed promising concepts provide complementary evidence. Section 4.23 gives a complete calculation in which all overall rating distributions match while product rankings reverse. Section 5.23 shows how repeated responses and anchor choices change a rating before any prediction comparison occurs. A validation design should therefore assess the entire path from generated text through the numerical measure to the screening decision. The same-information benchmark also matters: comparing an LLM receiving a full concept description with a classifier receiving only coarse category and demographic attributes combines information access with differences in modeling approach.

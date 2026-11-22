@@ -11,6 +11,7 @@ Session 05. M4. 170 minutes.
 - Design choice tasks that identify attribute tradeoffs.
 - Compute logit probabilities and willingness to pay.
 - Separate new-product share from incremental category demand.
+- Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.
 
 ## Related Materials
 
@@ -18,6 +19,7 @@ Session 05. M4. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
+- [Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)
 
 ## Slide 1: Conjoint and Product Design
 
@@ -202,7 +204,53 @@ A code generator may accidentally normalize probabilities over the full dataset 
 
 Source: M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 17: Customer Alternatives and AI Pricing
+## Slide 17: Synthetic Consumers in Concept Screening
+
+- A shortlist directs the budget for human product research.
+- Generated reactions can suggest benefits and objections.
+- A screening claim needs evidence on new concepts and the intended customers.
+
+Maier and coauthors compare 57 personal-care concepts with 9,300 U.S. human responses. Semantic similarity rating maps generated text to five-category distributions. The authors manually optimized the anchors on the same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment is a ratio to a split-half human benchmark. It describes neither individual-rating accuracy nor purchase prediction. Concept ratings do not identify attribute tradeoffs without suitable variation and a response model.
+
+Source: Maier and coauthors (2025), Table 1 and Appendix A.3. https://arxiv.org/abs/2510.08338v3
+
+## Slide 18: Distribution Fit and Product Selection
+
+Six synthetic concepts, 100 invented ratings each. Overall category shares match, while the preferred concepts differ.
+
+**Figure description:** The left panel shows common overall shares of 0, 0, 22.5, 30, and 47.5 percent in categories 1–5. The right panel preserves concept A–F identity: reference means fall from 4.5 to 4.0, pooled means equal 4.25, reversed means rise from 4.0 to 4.5, and compressed means fall from 4.30 to 4.20. The right vertical scale is 3.9–4.6.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_concept_screening.tex)
+
+Every candidate has the same aggregate distribution as the reference across equally weighted concepts. That pooled match removes the concept distinction needed to choose products. The reversed rule selects F and E instead of A and B. The compressed pattern preserves order while shrinking rating differences. All values are imposed teaching inputs and no human survey or fitted model is represented.
+
+Source: M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md
+
+## Slide 19: A Screening Rule Needs a Decision Metric
+
+| Pattern | Mean KS | Correlation | Top Two Retained |
+| --- | --- | --- | --- |
+| Pooled | 0.925 | Undefined | Boundary tie |
+| Reversed | 0.850 | -1.000 | 0 of 2 |
+| Compressed | 0.940 | 1.000 | 2 of 2 |
+
+Imposed comparisons on the same six concepts. A high distribution score can accompany a poor shortlist.
+
+KS similarity is one minus the maximum cumulative-probability difference, averaged equally across concepts. Pearson compares concept means. Spearman gives the same results in this construction. Constant pooled means leave correlation undefined and every concept tied. Compressed means have a mean absolute rating error of 0.12 despite preserving the top two. The three candidates were constructed using the synthetic reference to isolate these properties, so this is an analytical comparison rather than a prospective prediction test.
+
+Source: M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md
+
+## Slide 20: New Concepts and Human Validation
+
+- Separate anchor development, configuration selection, and final concepts.
+- Freeze the complete measurement procedure before final human outcomes.
+- Sample rejected concepts to reveal missed opportunities.
+
+The complete procedure includes prompts, model version, generation settings, embedding, anchors, aggregation, and shortlist rule. Final concepts and human outcomes remain outside those choices. Human tests confined to the selected concepts cannot reveal promising exclusions. Known sampling probabilities for rejected concepts support population comparisons with appropriate uncertainty. Observed purchases and stated intent remain separate outcomes.
+
+Source: M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md
+
+## Slide 21: Customer Alternatives and AI Pricing
 
 - Customer value depends on the offered outcome and implementation effort.
 - Better tools can make internal analysis a stronger alternative.
@@ -212,7 +260,7 @@ Under a quasilinear comparison, the buyer price ceiling is delivered value minus
 
 Source: Marketing Analytics Lecture Notes, M4 §4.16.
 
-## Slide 18: Price Presentation and Customer Understanding
+## Slide 22: Price Presentation and Customer Understanding
 
 - A base price and a mandatory fee determine the total paid.
 - A stated-choice task can reveal different responses to equivalent totals.
@@ -222,7 +270,7 @@ The FTC's fee rule addresses live-event tickets and short-term lodging. Its scop
 
 Source: FTC Rule on Unfair or Deceptive Fees FAQ. https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions
 
-## Slide 19: Product-Design Discussion
+## Slide 23: Product-Design Discussion
 
 - How much of C's demand comes from existing products?
 - Which design change would identify the price tradeoff?

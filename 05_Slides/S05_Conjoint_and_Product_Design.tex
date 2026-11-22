@@ -215,6 +215,66 @@ M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 M4, Section 4.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
 \end{frame}
+\begin{frame}{Synthetic Consumers in Concept Screening}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A shortlist directs the budget for human product research.
+\item Generated reactions can suggest benefits and objections.
+\item A screening claim needs evidence on new concepts and the intended customers.
+\end{slidebullets}
+\vfill
+\note{Maier and coauthors compare 57 personal-care concepts with 9,300 U.S. human responses. Semantic similarity rating maps generated text to five-category distributions. The authors manually optimized the anchors on the same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2\% correlation attainment is a ratio to a split-half human benchmark. It describes neither individual-rating accuracy nor purchase prediction. Concept ratings do not identify attribute tradeoffs without suitable variation and a response model.
+
+Maier and coauthors (2025), Table 1 and Appendix A.3. \url{https://arxiv.org/abs/2510.08338v3}}
+\end{frame}
+\begin{frame}{Distribution Fit and Product Selection}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_concept_screening.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Six synthetic concepts, 100 invented ratings each. Overall category shares match, while the preferred concepts differ.\par}
+\note{Every candidate has the same aggregate distribution as the reference across equally weighted concepts. That pooled match removes the concept distinction needed to choose products. The reversed rule selects F and E instead of A and B. The compressed pattern preserves order while shrinking rating differences. All values are imposed teaching inputs and no human survey or fitted model is represented.
+
+M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumers/README.md}}
+\end{frame}
+\begin{frame}{A Screening Rule Needs a Decision Metric}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrrr}
+\toprule
+Pattern & Mean KS & Correlation & Top Two Retained \\
+\midrule
+Pooled & 0.925 & Undefined & Boundary tie \\
+Reversed & 0.850 & -1.000 & 0 of 2 \\
+Compressed & 0.940 & 1.000 & 2 of 2 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Imposed comparisons on the same six concepts. A high distribution score can accompany a poor shortlist.
+\vfill
+\note{KS similarity is one minus the maximum cumulative-probability difference, averaged equally across concepts. Pearson compares concept means. Spearman gives the same results in this construction. Constant pooled means leave correlation undefined and every concept tied. Compressed means have a mean absolute rating error of 0.12 despite preserving the top two. The three candidates were constructed using the synthetic reference to isolate these properties, so this is an analytical comparison rather than a prospective prediction test.
+
+M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumers/README.md}}
+\end{frame}
+\begin{frame}{New Concepts and Human Validation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Separate anchor development, configuration selection, and final concepts.
+\item Freeze the complete measurement procedure before final human outcomes.
+\item Sample rejected concepts to reveal missed opportunities.
+\end{slidebullets}
+\vfill
+\note{The complete procedure includes prompts, model version, generation settings, embedding, anchors, aggregation, and shortlist rule. Final concepts and human outcomes remain outside those choices. Human tests confined to the selected concepts cannot reveal promising exclusions. Known sampling probabilities for rejected concepts support population comparisons with appropriate uncertainty. Observed purchases and stated intent remain separate outcomes.
+
+M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumers/README.md}}
+\end{frame}
 \begin{frame}{Customer Alternatives and AI Pricing}
 \usebeamercolor[fg]{normal text}
 \vfill

@@ -1,0 +1,53 @@
+[
+  {
+    "candidate": "pooled",
+    "concepts": 6,
+    "mean_ks_similarity": 0.925,
+    "mean_absolute_rating_error": 0.15000000000000005,
+    "pearson": null,
+    "spearman": null,
+    "reference_top_two": [
+      "A",
+      "B"
+    ],
+    "selected": null,
+    "selection_status": "boundary_tie",
+    "top_two_recall": null
+  },
+  {
+    "candidate": "reversed",
+    "concepts": 6,
+    "mean_ks_similarity": 0.85,
+    "mean_absolute_rating_error": 0.3000000000000001,
+    "pearson": -1.0,
+    "spearman": -1.0,
+    "reference_top_two": [
+      "A",
+      "B"
+    ],
+    "selected": [
+      "F",
+      "E"
+    ],
+    "selection_status": "unique",
+    "top_two_recall": 0.0
+  },
+  {
+    "candidate": "compressed",
+    "concepts": 6,
+    "mean_ks_similarity": 0.94,
+    "mean_absolute_rating_error": 0.1200000000000001,
+    "pearson": 1.0,
+    "spearman": 1.0,
+    "reference_top_two": [
+      "A",
+      "B"
+    ],
+    "selected": [
+      "A",
+      "B"
+    ],
+    "selection_status": "unique",
+    "top_two_recall": 1.0
+  }
+]

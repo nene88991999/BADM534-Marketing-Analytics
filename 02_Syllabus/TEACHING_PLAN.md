@@ -21,7 +21,7 @@ Students should also be able to distinguish firm outcomes from customer value, i
 | 1 | M1 | Marketing questions, Python, data contracts, and AI-assisted coding |
 | 2–3 | M2 | Customer measurement, cleaning, nutrition-informed restrictions, visualization, and coverage |
 | 4 | M3 | Regression, interactions, interpretation, uncertainty, and claim support |
-| 5–6 | M4 | Conjoint, product design, segmentation, lifetime value, and customer choice |
+| 5–6 | M4 | Conjoint, product design, concept screening, segmentation, lifetime value, and customer choice |
 | 7 | M5 | Text, sentiment, social media, networks, and review provenance |
 | 8 | M1–M5 | Provisional project-evidence and presentation meeting |
 | 9–10 | M6 | Experiments, causal comparisons, policy evaluation, and customer outcomes |
@@ -96,3 +96,9 @@ Session 11 uses minutes 45–60 for prediction and decision comparisons and minu
 ## Training Mixtures and Conditional Service Outcomes
 
 Session 11 divides minutes 15–45 between validation and regularization (15–30) and training mixtures and conditional evaluation (30–45). Five slides connect confounded features, contrasting examples, final and selected checkpoints, service denominators, and meaningful customer choice. The existing prediction, inference-efficiency, conformal Python, and anomaly-diagnosis blocks retain their allocations. [Three full programs and optional ungraded practice](../03_Data_and_Code/Training_Data_Mixtures/README.md) carry the longer calculations. M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3 supply conceptual links. The case introduces no new meeting or assessment rule.
+
+## Synthetic Consumers and Product Concept Screening
+
+Session 5 allocates minutes 125–145 to distribution fit, product rankings, shortlist errors, and human validation, followed by minutes 145–155 for customer alternatives and AI pricing. Session 7 allocates minutes 15–35 to text constructs and representation and minutes 35–45 to anchor sensitivity and persona weights. Its earnings-call Python and application blocks retain their existing allocations. Session 14 uses minutes 95–100 for synthetic personas and actual consumer judgment within its existing 80–100 philosophical block.
+
+[Two original programs](../03_Data_and_Code/Synthetic_Consumers/README.md), ten independent checks, and two editable TikZ figures support the discussion. Full listings appear in M4 §4.23 and M5 §5.23, with validation in M7 §7.36 and ethical interpretation in M9 §9.18.4. The [optional ungraded lab](../07_Labs/Synthetic_Consumers/README.md) carries the longer coding exercise. All numerical inputs are invented; the separate source review records the empirical study's scope and anchor selection. The fifteen dates, 170-minute durations, and pending assessment rules remain unchanged.

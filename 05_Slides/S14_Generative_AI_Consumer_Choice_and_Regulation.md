@@ -29,6 +29,7 @@ Session 14. M8, M9. 170 minutes.
 - [Kantian, Institutional, and Confucian Readings](../01_Resources/15_Marketing_Dialectics/README.md)
 - [Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)
 - [AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)
+- [Synthetic Consumers and Human Validation](../03_Data_and_Code/Synthetic_Consumers/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -252,7 +253,17 @@ Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and ref
 
 Source: Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 22: A Choice Procedure Can Change Renewal
+## Slide 22: Synthetic Personas and Actual Consumers
+
+- Generated reactions can inform hypotheses about product needs.
+- Claims about customer preferences require evidence from the relevant people.
+- Customers need opportunities to express conditions and contest consequential interpretations.
+
+M9 §9.18.4 examines whose judgments a firm claims to represent. Kantian respect concerns affected people’s purposes and judgment. Confucian trustworthiness requires a truthful account of what the evidence represents and responsible responses to objections. The M4 case holds overall rating distributions fixed while reversing the product ranking. Accuracy alone supplies no permission to substitute generated consent for a person’s decision. These are arguments about a practice, with no inference about the researchers’ motives.
+
+Source: Marketing Dialectics §9.18.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 23: A Choice Procedure Can Change Renewal
 
 - A direct offer and an offer preceded by questions can produce different choices.
 - The customer still makes the final selection.
@@ -262,7 +273,7 @@ Questions, defaults, or retention prompts can precede a fixed target decision. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 23: Opposed Interests
+## Slide 24: Opposed Interests
 
 Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
 
@@ -276,7 +287,7 @@ This conditional comparison holds the offer, monetary values, and relevant respo
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 24: Profit and Customer Value Can Move Oppositely
+## Slide 25: Profit and Customer Value Can Move Oppositely
 
 Synthetic probabilities and fixed stakes. Direct renewal is 20%.
 
@@ -288,7 +299,7 @@ The direct-choice benchmark is distinct from the consumer-preferred procedure. R
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 25: Experimentation Selects the Commercial Winner
+## Slide 26: Experimentation Selects the Commercial Winner
 
 - A fixed set of procedures has stable renewal probabilities.
 - Independent randomized samples estimate each probability.
@@ -298,7 +309,7 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 26: A Cancellation Evaluation
+## Slide 27: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -308,7 +319,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 27: Same Renewal, Different Customer Intent
+## Slide 28: Same Renewal, Different Customer Intent
 
 Synthetic populations: 1,000 customers each, one renewal month.
 
@@ -320,7 +331,7 @@ Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%
 
 Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 28: A Welfare Comparison
+## Slide 29: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -339,7 +350,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 29: Coding Exercise: A Marketing Evaluation
+## Slide 30: Coding Exercise: A Marketing Evaluation
 
 - Reproduce the two populations with identical billed renewal.
 - Keep unknown intent separate and compare the relevant denominators.
@@ -349,7 +360,7 @@ Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full pro
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 30: Federal Cancellation Policy: Current Status
+## Slide 31: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -359,7 +370,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 31: Cancellation Rules Differ by Jurisdiction
+## Slide 32: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -369,7 +380,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 32: Research Frequency and Policy Importance
+## Slide 33: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -379,7 +390,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 33: Pricing, Reviews, and Delivery
+## Slide 34: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -389,7 +400,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 34: Pricing Language and Regulatory Evidence
+## Slide 35: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -399,7 +410,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 35: Personalized Pricing: Policy Status
+## Slide 36: Personalized Pricing: Policy Status
 
 - FTC: August 2026 proposal; October 2026 information-gathering inquiry.
 - New York: disclosure law in effect; broader restrictions await enactment.
@@ -409,7 +420,7 @@ Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
 
-## Slide 36: Environmental Claims: Two Different Decisions
+## Slide 37: Environmental Claims: Two Different Decisions
 
 - 2023 Shell ads: the ASA upheld the overall-impression complaint.
 - 2025 Shell ad: the ASA accepted the contextualized communication.
@@ -419,7 +430,7 @@ UK ASA, June 7, 2023: omitted context about the balance of business activities m
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 37: A Product Fact and a Portfolio Impression
+## Slide 38: A Product Fact and a Portfolio Impression
 
 The scope of the conclusion determines the evidence required.
 
@@ -431,7 +442,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 38: A Decision With Consumer Outcomes
+## Slide 39: A Decision With Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

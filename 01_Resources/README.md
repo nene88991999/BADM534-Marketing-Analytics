@@ -111,4 +111,4 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 
 ## Synthetic Consumer Research
 
-[The paper and pinned implementation review](29_Synthetic_Consumer_Research/README.md) connect product concept screening in M4 to text measurement in M5 and validation in M7. The guide distinguishes correlation attainment, response-distribution fit, and human purchasing outcomes, with six independent arithmetic checks and an optional case proposal.
+[The paper and pinned implementation review](29_Synthetic_Consumer_Research/README.md) connect product concept screening in M4 to text measurement in M5 and validation in M7. The guide distinguishes correlation attainment, response-distribution fit, and human purchasing outcomes, with six source-review arithmetic checks, two implemented course programs, ten independent course checks, and optional ungraded practice.

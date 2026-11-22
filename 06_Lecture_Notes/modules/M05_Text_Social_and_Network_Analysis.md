@@ -1227,3 +1227,169 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=HERE / "results")
     main(parser.parse_args().output)
 ```
+
+## 5.23 Text, Anchors, and Purchase-Intent Ratings
+
+\noindent A product manager reading a conditional response must decide how it enters a numerical comparison. “I would consider it if the refill is convenient and the total price is acceptable” expresses interest while leaving conditions unresolved. Assigning a single rating removes some of that ambiguity. Assigning weights across categories retains a broader representation, whose interpretation depends on how those weights are constructed.
+
+The [semantic similarity rating method](https://arxiv.org/abs/2510.08338v3) compares the embedding of a written response with embeddings of five reference statements, one for each purchase-intent category. The study averages results across six reference sets. Its Python package accepts response text or supplied embeddings; generation of the consumer responses is a separate operation. The paper uses `text-embedding-3-small`, while the inspected package's automatic text mode defaults to `all-MiniLM-L6-v2`. Changing that component changes the measurement procedure and requires renewed validation.
+
+### 5.23.1 A Fixed Response Under Different Anchors
+
+\noindent Let $s_{car}$ be the cosine similarity between response $c$ and category $r$ in anchor set $a$. At zero epsilon and temperature one, the study's mapping is
+
+$$
+p_{car}=\frac{s_{car}-\min_j s_{caj}}{\sum_{k=1}^{5}(s_{cak}-\min_j s_{caj})}.
+$$
+
+The numerator measures similarity above the least similar reference statement. The denominator normalizes the five nonnegative values when at least two similarities differ. The weights sum to one, and the expected rating is $\sum_{r=1}^{5} r p_{car}$. These are weights assigned by a text measurement rule. Their calibration against actual consumer ratings or purchasing requires independent outcomes.
+
+Two instructor-authored sets use the following category descriptions. The response above remains fixed. The similarities are imposed numerical inputs, chosen to expose the calculation; they were not estimated from the text or an embedding model.
+
+| Category | Set 1 | Set 2 |
+| --- | --- | --- |
+| 1 | Would not buy | Certain I will not buy |
+| 2 | Probably would not buy | Unlikely to buy |
+| 3 | Might or might not buy | Undecided about buying |
+| 4 | Would probably buy | Expect to buy |
+| 5 | Would buy | Certain I will buy |
+
+Set 1 has similarities $(0.20,0.23,0.29,0.38,0.50)$. Subtracting 0.20 gives a total difference of 0.60 and weights $(0,0.05,0.15,0.30,0.50)$. Set 2 has similarities $(0.20,0.26,0.38,0.44,0.32)$ and weights $(0,0.10,0.30,0.40,0.20)$. The resulting mean moves from 4.25 to 3.70. The share assigned to categories 4 and 5 moves from 0.80 to 0.60. The example establishes sensitivity to the supplied mapping inputs; it does not estimate the effect of these particular words on a language model.
+
+![For one fixed instructor-authored response, imposed similarities produce category weights of 0, 5, 15, 30, and 50 percent under Set 1 and 0, 10, 30, 40, and 20 percent under Set 2.](../figures/M05_anchor_ratings.png)
+
+Subtracting the minimum forces at least one category weight to zero within each set. Equal similarities make normalization undefined. The course implementation explicitly abstains when the similarity spread is at most $10^{-12}$ and records an incomplete aggregate if any required mapping is unavailable. That tolerance is a numerical convention. It supplies no evidence that a consumer is indifferent. An alternative rule, such as assigning uniform weights, would require its own stated interpretation and sensitivity analysis.
+
+### 5.23.2 Responses, Personas, and the Concept Mean
+
+\noindent The supplied text example has three fictional body-wash concepts and two invented personas, with seven response rows in total. One persona's refill response appears twice with identical inputs. Averaging those rows directly would give that persona twice the weight of the other persona for that concept. Equal-persona aggregation first averages repeat responses within each persona and then averages the two persona distributions. The duplicated response adds no new information in this construction.
+
+For the refill concept under Set 1, the two persona means are 4.25 and 3.70. Equal-persona weighting gives 3.975. Treating the repeated rows as separate people gives $(2\times4.25+3.70)/3=4.067$. The denominator therefore changes the apparent attractiveness of a concept even though the represented people and their responses remain fixed.
+
+| Concept | Set 1 Mean | Set 2 Mean | Mean Across Sets |
+| --- | ---: | ---: | ---: |
+| Refillable | 3.975 | 3.625 | 3.800 |
+| Fragrance-Free | 3.850 | 4.100 | 3.975 |
+| Compact Travel | 3.425 | 3.300 | 3.363 |
+
+Equal-persona weighting and the same response roster apply throughout the table. Set 1 selects the refillable concept; Set 2 and the average across sets select fragrance-free. Averaging anchors makes the choice less dependent on selecting one particular set, while the interpretation still depends on which sets enter the average. Repeated generation, variation across personas, and uncertainty about a target population remain distinct sources of variation. A large number of generated answers can estimate a model's response distribution precisely while leaving its difference from human preferences unresolved.
+
+### 5.23.3 Complete Python Measurement
+
+\noindent The input file preserves the full anchor sentences, response text, concept identifiers, persona identifiers, repeat numbers, and imposed similarities. The program rejects duplicate keys and incomplete concept/persona coverage, records uninformative mappings, and preserves equal-persona aggregation. The original calculation uses no downloaded package, model weights, or paid API. A live extension would replace the imposed similarities with versioned embedding outputs and evaluate the complete procedure using appropriately sampled human outcomes.
+
+Python source: [anchor_measurement.py](../../03_Data_and_Code/Synthetic_Consumers/anchor_measurement.py). From its directory, run `python3 anchor_measurement.py`. Inputs are in the accompanying `data` folder; outputs are written to `results`.
+
+```python
+"""Map imposed similarities to ratings while preserving response and persona units.
+
+Inputs are instructor-authored text and synthetic similarities, not LLM measurements.
+Python 3.10+; standard library only; no network or model calls.
+"""
+from collections import defaultdict
+import json
+from math import isfinite
+from pathlib import Path
+from statistics import mean
+
+ROOT = Path(__file__).resolve().parent
+
+
+def rating_distribution(similarities, tolerance=1e-12):
+    """Study setting: subtract minimum, normalize, epsilon=0, temperature=1.
+
+    Return None when the spread is at most tolerance. This explicit abstention
+    rule is a course adaptation for an otherwise undefined normalization.
+    """
+    if len(similarities) != 5 or any(
+        not isinstance(x, (int, float)) or not isfinite(x) or not -1 <= x <= 1
+        for x in similarities
+    ):
+        raise ValueError("Five finite cosine similarities in [-1, 1] are required.")
+    if not isfinite(tolerance) or tolerance < 0:
+        raise ValueError("Tolerance must be finite and nonnegative.")
+    smallest = min(similarities)
+    if max(similarities) - smallest <= tolerance:
+        return None
+    weights = [x - smallest for x in similarities]
+    return [x / sum(weights) for x in weights]
+
+
+def average_distributions(distributions):
+    """A missing mapping leaves the aggregate incomplete, with no silent exclusion."""
+    if not distributions or any(row is None for row in distributions):
+        return None
+    return [mean(row[k] for row in distributions) for k in range(5)]
+
+
+def mean_rating(distribution):
+    return None if distribution is None else sum(
+        (k + 1) * p for k, p in enumerate(distribution)
+    )
+
+
+def score_responses(data):
+    concepts, personas = set(data["concepts"]), set(data["personas"])
+    anchors = set(data["anchor_sets"])
+    if len(anchors) != 2 or any(len(s) != 5 for s in data["anchor_sets"].values()):
+        raise ValueError("This example has two complete five-category anchor sets.")
+    records, seen, covered = [], set(), set()
+    for row in data["responses"]:
+        key = (row["concept"], row["persona"], row["repeat"])
+        if key in seen or key[0] not in concepts or key[1] not in personas:
+            raise ValueError("Duplicate response key or unknown concept/persona.")
+        if set(row["similarities"]) != anchors or not row["text"].strip():
+            raise ValueError("Each response needs text and both anchor comparisons.")
+        seen.add(key)
+        covered.add(key[:2])
+        distributions = {a: rating_distribution(row["similarities"][a])
+                         for a in sorted(anchors)}
+        distributions["average_sets"] = average_distributions(list(distributions.values()))
+        for anchor, distribution in distributions.items():
+            records.append(dict(concept=key[0], persona=key[1], repeat=key[2],
+                                anchor_set=anchor, distribution=distribution,
+                                mean_rating=mean_rating(distribution),
+                                status="scored" if distribution is not None else "uninformative"))
+    if covered != {(c, p) for c in concepts for p in personas}:
+        raise ValueError("Every declared concept/persona pair needs a response.")
+    return records
+
+
+def summarize(records):
+    grouped = defaultdict(list)
+    for row in records:
+        grouped[row["concept"], row["anchor_set"]].append(row)
+    summaries = []
+    for (concept, anchor), group in sorted(grouped.items()):
+        by_persona = defaultdict(list)
+        for row in group:
+            by_persona[row["persona"]].append(row["distribution"])
+        # Average repeats within persona, then give each persona equal weight.
+        persona_pmfs = [average_distributions(rows) for rows in by_persona.values()]
+        balanced = average_distributions(persona_pmfs)
+        row_weighted = average_distributions([row["distribution"] for row in group])
+        summaries.append(dict(concept=concept, anchor_set=anchor,
+            response_rows=len(group), scored_rows=sum(r["status"] == "scored" for r in group),
+            personas=len(by_persona), distribution=balanced,
+            mean_rating=mean_rating(balanced),
+            top_two_share=None if balanced is None else sum(balanced[3:]),
+            row_weighted_mean=mean_rating(row_weighted),
+            status="complete" if balanced is not None else "incomplete"))
+    return summaries
+
+
+def main():
+    data = json.loads((ROOT / "data/anchor_responses.json").read_text())
+    records = score_responses(data)
+    summaries = summarize(records)
+    out = ROOT / "results"
+    out.mkdir(exist_ok=True)
+    for name, value in [("response_ratings.json", records), ("concept_ratings.json", summaries)]:
+        (out / name).write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
+    for row in summaries:
+        print(row["concept"], row["anchor_set"], row["mean_rating"], row["status"])
+
+
+if __name__ == "__main__":
+    main()
+```

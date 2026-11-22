@@ -72,3 +72,9 @@ M8 §8.23 and M9 §9.18.2 connect [retail accessibility](../03_Data_and_Code/Ret
 ## Evidence for Meaningful Customer Choice
 
 M7 §§7.33–7.35 and M9 §9.18.3 use [training mixtures and conditional service outcomes](../03_Data_and_Code/Training_Data_Mixtures/README.md) to examine claims about customer protection. A fixed synthetic roster has identical aggregate resolution across two versions while cancellation outcomes deteriorate. Kantian respect for customer ends and Confucian responsibilities of service support evaluating consequential contexts directly. The published training experiments identify conditional model behavior under specified conditions; they provide no finding about a firm's intention, legal liability, or prevalence of commercial misconduct.
+
+## Synthetic Personas and Consumer Representation
+
+M9 §9.18.4 examines the authority a firm assigns to generated accounts of customer preferences. Kantian respect directs attention to actual people's purposes and opportunities for judgment. Confucian trustworthiness requires an accurate account of whose responses support the claim and responsible engagement with contrary evidence. M4 §4.23 and M5 §5.23 supply synthetic examples in which ranking, anchors, and aggregation alter the decision. These calculations establish measurement distinctions and do not identify a firm's motives.
+
+The [source assessment](../01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md) distinguishes generated purchase-intent ratings from human preferences, observed purchases, and consent. Session 14 uses five minutes within its existing philosophical discussion for consumer representation. This addition makes no new legal-status claim.

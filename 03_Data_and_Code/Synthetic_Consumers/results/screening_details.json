@@ -1,0 +1,380 @@
+[
+  {
+    "candidate": "pooled",
+    "concept": "A",
+    "reference_mean": 4.5,
+    "predicted_mean": 4.25,
+    "ks_similarity": 0.875,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.1,
+      0.3,
+      0.6
+    ],
+    "predicted_distribution": [
+      0,
+      0,
+      0.225,
+      0.3,
+      0.475
+    ]
+  },
+  {
+    "candidate": "pooled",
+    "concept": "B",
+    "reference_mean": 4.4,
+    "predicted_mean": 4.25,
+    "ks_similarity": 0.9249999999999999,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.15,
+      0.3,
+      0.55
+    ],
+    "predicted_distribution": [
+      0,
+      0,
+      0.225,
+      0.3,
+      0.475
+    ]
+  },
+  {
+    "candidate": "pooled",
+    "concept": "C",
+    "reference_mean": 4.3,
+    "predicted_mean": 4.25,
+    "ks_similarity": 0.975,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.2,
+      0.3,
+      0.5
+    ],
+    "predicted_distribution": [
+      0,
+      0,
+      0.225,
+      0.3,
+      0.475
+    ]
+  },
+  {
+    "candidate": "pooled",
+    "concept": "D",
+    "reference_mean": 4.2,
+    "predicted_mean": 4.25,
+    "ks_similarity": 0.975,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.25,
+      0.3,
+      0.45
+    ],
+    "predicted_distribution": [
+      0,
+      0,
+      0.225,
+      0.3,
+      0.475
+    ]
+  },
+  {
+    "candidate": "pooled",
+    "concept": "E",
+    "reference_mean": 4.1,
+    "predicted_mean": 4.25,
+    "ks_similarity": 0.925,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.3,
+      0.3,
+      0.4
+    ],
+    "predicted_distribution": [
+      0,
+      0,
+      0.225,
+      0.3,
+      0.475
+    ]
+  },
+  {
+    "candidate": "pooled",
+    "concept": "F",
+    "reference_mean": 4.0,
+    "predicted_mean": 4.25,
+    "ks_similarity": 0.875,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.35,
+      0.3,
+      0.35
+    ],
+    "predicted_distribution": [
+      0,
+      0,
+      0.225,
+      0.3,
+      0.475
+    ]
+  },
+  {
+    "candidate": "reversed",
+    "concept": "A",
+    "reference_mean": 4.5,
+    "predicted_mean": 4.0,
+    "ks_similarity": 0.75,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.1,
+      0.3,
+      0.6
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.35,
+      0.3,
+      0.35
+    ]
+  },
+  {
+    "candidate": "reversed",
+    "concept": "B",
+    "reference_mean": 4.4,
+    "predicted_mean": 4.1,
+    "ks_similarity": 0.85,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.15,
+      0.3,
+      0.55
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.3,
+      0.3,
+      0.4
+    ]
+  },
+  {
+    "candidate": "reversed",
+    "concept": "C",
+    "reference_mean": 4.3,
+    "predicted_mean": 4.2,
+    "ks_similarity": 0.95,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.2,
+      0.3,
+      0.5
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.25,
+      0.3,
+      0.45
+    ]
+  },
+  {
+    "candidate": "reversed",
+    "concept": "D",
+    "reference_mean": 4.2,
+    "predicted_mean": 4.3,
+    "ks_similarity": 0.95,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.25,
+      0.3,
+      0.45
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.2,
+      0.3,
+      0.5
+    ]
+  },
+  {
+    "candidate": "reversed",
+    "concept": "E",
+    "reference_mean": 4.1,
+    "predicted_mean": 4.4,
+    "ks_similarity": 0.85,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.3,
+      0.3,
+      0.4
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.15,
+      0.3,
+      0.55
+    ]
+  },
+  {
+    "candidate": "reversed",
+    "concept": "F",
+    "reference_mean": 4.0,
+    "predicted_mean": 4.5,
+    "ks_similarity": 0.75,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.35,
+      0.3,
+      0.35
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.1,
+      0.3,
+      0.6
+    ]
+  },
+  {
+    "candidate": "compressed",
+    "concept": "A",
+    "reference_mean": 4.5,
+    "predicted_mean": 4.3,
+    "ks_similarity": 0.9,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.1,
+      0.3,
+      0.6
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.2,
+      0.3,
+      0.5
+    ]
+  },
+  {
+    "candidate": "compressed",
+    "concept": "B",
+    "reference_mean": 4.4,
+    "predicted_mean": 4.28,
+    "ks_similarity": 0.94,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.15,
+      0.3,
+      0.55
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.21,
+      0.3,
+      0.49
+    ]
+  },
+  {
+    "candidate": "compressed",
+    "concept": "C",
+    "reference_mean": 4.3,
+    "predicted_mean": 4.26,
+    "ks_similarity": 0.98,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.2,
+      0.3,
+      0.5
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.22,
+      0.3,
+      0.48
+    ]
+  },
+  {
+    "candidate": "compressed",
+    "concept": "D",
+    "reference_mean": 4.2,
+    "predicted_mean": 4.239999999999999,
+    "ks_similarity": 0.98,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.25,
+      0.3,
+      0.45
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.23,
+      0.3,
+      0.47
+    ]
+  },
+  {
+    "candidate": "compressed",
+    "concept": "E",
+    "reference_mean": 4.1,
+    "predicted_mean": 4.220000000000001,
+    "ks_similarity": 0.94,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.3,
+      0.3,
+      0.4
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.24,
+      0.3,
+      0.46
+    ]
+  },
+  {
+    "candidate": "compressed",
+    "concept": "F",
+    "reference_mean": 4.0,
+    "predicted_mean": 4.2,
+    "ks_similarity": 0.9,
+    "reference_distribution": [
+      0.0,
+      0.0,
+      0.35,
+      0.3,
+      0.35
+    ],
+    "predicted_distribution": [
+      0.0,
+      0.0,
+      0.25,
+      0.3,
+      0.45
+    ]
+  }
+]

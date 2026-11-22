@@ -171,3 +171,9 @@ The [G-MTP paper and source review](../01_Resources/27_AI_Inference_Efficiency/R
 ## Training Data Mixtures
 
 The [Homeopathic Learning review](../01_Resources/28_Training_Data_Mixtures/README.md) motivates M7 §§7.33–7.35. [Three original standard-library programs](../03_Data_and_Code/Training_Data_Mixtures/README.md) distinguish an exact synthetic ridge calculation, imposed paired service outcomes, and recomputed published aggregates. Ten checks cover normal equations, penalty scaling, context denominators, pairing, and resumed epoch logs. Two editable TikZ figures and five Session 11 slides preserve source counts, score units, final and peak checkpoints, and the distinction between model behavior and company intent. M2, M3, M8, and M9 supply conceptual links. No upstream code, model training, or external inference service was executed.
+
+## Synthetic Consumer Measurement and Concept Screening
+
+[Maier and coauthors' paper and pinned repository](../01_Resources/29_Synthetic_Consumer_Research/README.md) support M4 §4.23, M5 §5.23, M7 §7.36, M8 §8.11, and M9 §9.18.4. The course adaptations use two original standard-library programs with invented panels and imposed similarities. The repository's private study data are unavailable, so no replication of human-response results is claimed. Reported correlation attainment retains its split-half denominator and the paper's same-survey anchor-selection qualification.
+
+The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) include explicit uninformative mappings, equal-persona aggregation, common concept rosters, undefined correlations, and tied shortlist boundaries. Ten independent checks and two editable figures support eight new slides across Sessions 5, 7, and 14. [Optional ungraded practice](../07_Labs/Synthetic_Consumers/README.md) develops sensitivity analysis and human validation.

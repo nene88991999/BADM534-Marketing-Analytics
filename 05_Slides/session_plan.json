@@ -255,11 +255,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 19,
+      "slides": 23,
       "companion": "S05_Conjoint_and_Product_Design.md",
       "pdf": "S05_Conjoint_and_Product_Design.pdf",
       "python_activity": "Calculate choice probabilities and assess the role of a stronger customer alternative.",
-      "application": "Compare product value, implementation burden, substitution, and the outside option.",
+      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing.",
       "ethics": "Price completeness and the attributes customers actually evaluate",
       "timing": [
         {
@@ -294,9 +294,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 145,
+          "minutes": 20,
+          "activity": "Synthetic Concept Screening and Human Validation"
+        },
+        {
+          "start_minute": 145,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "Application and Interpretation"
+          "minutes": 10,
+          "activity": "Customer Alternatives and AI Pricing"
         },
         {
           "start_minute": 155,
@@ -377,11 +383,11 @@
       "modules": "M5",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 35,
+      "slides": 38,
       "companion": "S07_Text_Social_Media_and_Networks.md",
       "pdf": "S07_Text_Social_Media_and_Networks.pdf",
       "python_activity": "Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.",
-      "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets.",
+      "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets. Trace anchor sensitivity and persona weighting within the concepts block.",
       "ethics": "Evidence for labels, review authenticity, and limits of institutional interpretation",
       "timing": [
         {
@@ -392,9 +398,15 @@
         },
         {
           "start_minute": 15,
+          "end_minute": 35,
+          "minutes": 20,
+          "activity": "Text Constructs and Representations"
+        },
+        {
+          "start_minute": 35,
           "end_minute": 45,
-          "minutes": 30,
-          "activity": "Concepts and Mechanisms"
+          "minutes": 10,
+          "activity": "Anchors, Rating Distributions, and Persona Weights"
         },
         {
           "start_minute": 45,
@@ -814,11 +826,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 38,
+      "slides": 39,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.",
-      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope.",
+      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion.",
       "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope",
       "timing": [
         {
@@ -875,22 +887,22 @@
         {
           "start_minute": 80,
           "end_minute": 95,
-          "activity": "Kant, Claims, and Hidden Premises"
+          "activity": "Kantian and Confucian Justification"
         },
         {
           "start_minute": 95,
-          "end_minute": 115,
-          "activity": "Self-Interest, Confucian Conduct, and Justification"
+          "end_minute": 100,
+          "activity": "Synthetic Personas and Consumer Representation"
         },
         {
-          "start_minute": 115,
-          "end_minute": 135,
-          "activity": "Renewal, Intent, and Reproducible Calculation"
+          "start_minute": 100,
+          "end_minute": 130,
+          "activity": "Pricing, Renewal, and Reproducible Calculation"
         },
         {
-          "start_minute": 135,
+          "start_minute": 130,
           "end_minute": 155,
-          "activity": "Cancellation Rules and Environmental Claims"
+          "activity": "Pricing Policy, Cancellation, and Environmental Claims"
         }
       ]
     },

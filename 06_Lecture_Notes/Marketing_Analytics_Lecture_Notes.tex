@@ -6467,6 +6467,296 @@ same observations, preprocessing, cluster count, and evaluation criteria
 wherever feasible. Customer outcomes or other independently chosen
 evidence are needed to interpret a cluster's marketing meaning.
 
+\hypertarget{M04-synthetic-consumers-and-product-concept-screening}{%
+\section{Synthetic Consumers and Product Concept
+Screening}\label{M04-synthetic-consumers-and-product-concept-screening}}
+
+\noindent \noindent A personal-care firm may have more product ideas than it can
+afford to test with a large human panel. A screening procedure must
+identify concepts worth further investigation while making mistaken
+exclusions visible. Generated consumer responses can organize possible
+benefits and objections. Their usefulness for selecting products depends
+on how well the resulting measurements distinguish concepts in the
+intended customer population.
+
+\href{https://arxiv.org/abs/2510.08338v3}{Maier and coauthors} compare
+generated purchase-intent responses with 9,300 human responses across 57
+U.S. personal-care concept surveys. Their semantic similarity rating
+method maps generated text to distributions over five response
+categories. Reference statements and text embeddings determine that
+mapping. The authors report promising agreement with concept-level human
+results and state that they manually optimized the reference sets on the
+same surveys. Prospective screening therefore requires new concepts
+whose human outcomes remain outside measurement development.
+
+Concept screening and conjoint analysis inform different decisions.
+Screening ranks complete descriptions under a specified measurement
+procedure. Identifying attribute tradeoffs additionally requires
+variation that separates the attributes and an appropriate response
+model. A positive response to a high-priced concept does not isolate a
+price effect when its other features also differ. Purchase-intent
+ratings also require a separate link to observed sales before entering a
+revenue forecast.
+
+\hypertarget{M04-distribution-fit-and-concept-selection}{%
+\subsection{Distribution Fit and Concept
+Selection}\label{M04-distribution-fit-and-concept-selection}}
+
+\noindent \noindent Consider six fictional body-wash concepts, A through F, each
+with 100 invented survey ratings. Categories 1--5 represent increasing
+purchase intent. The reference counts are imposed to make the
+calculation transparent. They describe no actual customers, and the
+three candidate patterns below are constructed analytical comparisons
+rather than fitted predictions.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}llr@{}}
+\toprule
+Concept & Counts in Categories 1--5 & Reference Mean \\
+\midrule
+
+A & 0, 0, 10, 30, 60 & 4.50 \\
+B & 0, 0, 15, 30, 55 & 4.40 \\
+C & 0, 0, 20, 30, 50 & 4.30 \\
+D & 0, 0, 25, 30, 45 & 4.20 \\
+E & 0, 0, 30, 30, 40 & 4.10 \\
+F & 0, 0, 35, 30, 35 & 4.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The pooled pattern assigns every concept the same distribution,
+\((0,0,0.225,0.30,0.475)\), with mean 4.25. The reversed pattern gives A
+the distribution of F, B the distribution of E, and so forth. The
+compressed pattern assigns 80\% weight to the pooled distribution and
+20\% to each concept's reference distribution. All three reproduce the
+same overall category shares when concepts receive equal weight. Their
+implications for choosing products differ sharply.
+
+\Needspace{7\baselineskip}
+
+For concept \(s\), compare reference and candidate cumulative
+distributions using
+
+\[
+K_s=1-\max_{r\in\{1,\ldots,5\}}\left|F_s^{\mathrm{ref}}(r)-F_s^{\mathrm{cand}}(r)\right|.
+\]
+
+The cumulative probability \(F_s(r)\) is the share assigned to category
+\(r\) or below. The maximum difference compares cumulative shares on the
+ordered categories. The average of \(K_s\) gives each concept equal
+weight. Pearson correlation compares concept means, while Spearman
+correlation compares their ranks. Selecting two concepts creates a
+further decision criterion: the share of the reference top two that the
+candidate shortlist retains.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.16}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.18}}@{}}
+\toprule
+Imposed Pattern & Mean KS Similarity & Mean Absolute Rating Error &
+Correlation & Reference Top Two Retained \\
+\midrule
+
+Pooled & 0.925 & 0.150 & Undefined & Boundary Tie \\
+Reversed & 0.850 & 0.300 & -1.000 & 0 of 2 \\
+Compressed & 0.940 & 0.120 & 1.000 & 2 of 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The correlation column reports Pearson correlation; Spearman gives the
+same results in this construction. The pooled means are constant, so
+both correlations are undefined and every concept ties at the screening
+threshold. The reversed pattern selects F and E, excluding both A and B.
+The compressed pattern preserves the correct shortlist while shrinking
+the difference between A and F from 0.50 to 0.10 rating points. Its
+perfect ordering consequently supplies no guarantee that the magnitude
+of a rating difference is accurate.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_concept_screening.tex}
+\caption{All three imposed candidate patterns match the overall category shares. Across concepts A–F, the reference means fall, the pooled means remain constant, the reversed means rise, and the compressed means fall over a narrower range.}\label{fig:M04_concept_screening}
+\end{figure}
+
+The left panel pools the same six equally weighted concepts. The right
+panel retains concept identity and uses a 3.9--4.6 vertical scale to
+show the differences in mean ratings. The managerial consequence follows
+from the intended action: broad distribution fit can coexist with a
+shortlist that rejects the strongest concepts. Alphabetical selection
+among tied concepts would introduce a decision rule unsupported by the
+ratings.
+
+\hypertarget{M04-human-validation-and-missed-concepts}{%
+\subsection{Human Validation and Missed
+Concepts}\label{M04-human-validation-and-missed-concepts}}
+
+\noindent \noindent A prospective evaluation fixes the target population and
+recruitment process before comparing generated and human responses.
+Develop anchors on one set of concepts, choose a configuration on
+another, and reserve final concepts for evaluating the complete
+procedure. Model, prompt, embedding, anchor wording, and screening
+threshold all belong to that procedure. Splitting respondents within
+familiar concepts answers a narrower question than predicting responses
+to new products.
+
+Human validation should include a random sample of concepts that the
+screening procedure rejects. Testing only the shortlist leaves promising
+exclusions unobserved. Known selection probabilities can support
+estimates of screening errors across the original concept pool, with
+uncertainty that respects concept and respondent sampling. A manager can
+then compare the cost of human validation with the consequences of
+advancing weak ideas or discarding strong ones. The synthetic
+calculations specify no monetary value for those errors.
+
+\hypertarget{M04-complete-python-evaluation}{%
+\subsection{Complete Python
+Evaluation}\label{M04-complete-python-evaluation}}
+
+\noindent \noindent The program reads the frozen invented panels and verifies that
+all candidate patterns cover the same concepts. It calculates
+distribution similarity, mean-rating error, correlations, and shortlist
+overlap. A constant score leaves correlation undefined; a tie at the
+selection boundary leaves the shortlist unresolved. The reference data
+construct the three patterns for an analytical comparison, so these
+results are not a test of a trained model on unseen data.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Synthetic_Consumers/concept_screening.py}{concept\_screening.py}.
+From its directory, run \texttt{python3\ concept\_screening.py}. Inputs
+are in the accompanying \texttt{data} folder; outputs are written to
+\texttt{results}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Evaluate three imposed rating patterns on the same six synthetic concepts.
+
+Reference counts are invented surveys, not human observations. Candidate PMFs are
+fixed teaching inputs, not fitted predictions. No model calls or dependencies.
+"""
+import json
+from math import isclose, isfinite, sqrt
+from pathlib import Path
+from statistics import mean
+
+ROOT = Path(__file__).resolve().parent
+
+
+def validate_pmf(pmf):
+    if len(pmf) != 5 or any(not isfinite(x) or x < 0 for x in pmf):
+        raise ValueError("A PMF needs five finite nonnegative values.")
+    if not isclose(sum(pmf), 1, abs_tol=1e-12, rel_tol=0):
+        raise ValueError("Category probabilities must sum to one.")
+    return pmf
+
+
+def mean_rating(pmf):
+    return sum((k + 1) * x for k, x in enumerate(validate_pmf(pmf)))
+
+
+def ks_similarity(left, right):
+    validate_pmf(left)
+    validate_pmf(right)
+    x = y = distance = 0.0
+    for a, b in zip(left, right):
+        x, y = x + a, y + b
+        distance = max(distance, abs(x - y))
+    return 1 - distance
+
+
+def correlation(left, right):
+    if len(left) != len(right) or len(left) < 2:
+        raise ValueError("Use paired concept scores with at least two concepts.")
+    if any(not isfinite(x) for x in [*left, *right]):
+        raise ValueError("Correlation requires finite scores.")
+    x = [v - mean(left) for v in left]
+    y = [v - mean(right) for v in right]
+    xx, yy = sum(v * v for v in x), sum(v * v for v in y)
+    return None if min(xx, yy) <= 1e-24 else sum(a * b for a, b in zip(x, y)) / sqrt(xx * yy)
+
+
+def ranks(values):
+    """Average ranks for exact ties; scores are ordered from smallest to largest."""
+    order = sorted(range(len(values)), key=values.__getitem__)
+    result = [None] * len(values)
+    first = 0
+    while first < len(order):
+        last = first + 1
+        while last < len(order) and values[order[last]] == values[order[first]]:
+            last += 1
+        for i in order[first:last]:
+            result[i] = (first + 1 + last) / 2
+        first = last
+    return result
+
+
+def shortlist(scores, count=2):
+    if not 0 < count < len(scores) or any(not isfinite(x) for x in scores.values()):
+        raise ValueError("Require finite scores and a shortlist smaller than the roster.")
+    ordered = sorted(scores, key=lambda key: (-scores[key], key))
+    if isclose(scores[ordered[count - 1]], scores[ordered[count]], abs_tol=1e-12, rel_tol=0):
+        return None  # A boundary tie supplies no unique shortlist.
+    return ordered[:count]
+
+
+def evaluate(data):
+    ids = [row["concept"] for row in data["reference"]]
+    if len(set(ids)) != len(ids):
+        raise ValueError("Reference concept identifiers must be unique.")
+    observed = {}
+    for row in data["reference"]:
+        counts = row["counts"]
+        if len(counts) != 5 or any(type(x) is not int or x < 0 for x in counts) or sum(counts) == 0:
+            raise ValueError("Reference counts need five nonnegative integers and a positive total.")
+        observed[row["concept"]] = [n / sum(counts) for n in counts]
+    reference_means = {key: mean_rating(observed[key]) for key in ids}
+    reference_top = shortlist(reference_means)
+    if reference_top is None:
+        raise ValueError("The reference needs a unique shortlist for this comparison.")
+    summary, details = [], []
+    for candidate, predictions in data["candidates"].items():
+        if set(predictions) != set(ids):
+            raise ValueError("Every candidate must cover exactly the same concept roster.")
+        predicted_means = {key: mean_rating(predictions[key]) for key in ids}
+        selected = shortlist(predicted_means)
+        left, right = [reference_means[k] for k in ids], [predicted_means[k] for k in ids]
+        similarities = [ks_similarity(observed[k], predictions[k]) for k in ids]
+        summary.append(dict(candidate=candidate, concepts=len(ids),
+            mean_ks_similarity=mean(similarities), mean_absolute_rating_error=mean(abs(x-y) for x,y in zip(left,right)),
+            pearson=correlation(left, right), spearman=correlation(ranks(left), ranks(right)),
+            reference_top_two=reference_top, selected=selected,
+            selection_status="boundary_tie" if selected is None else "unique",
+            top_two_recall=None if selected is None else len(set(selected) & set(reference_top))/2))
+        for i, key in enumerate(ids):
+            details.append(dict(candidate=candidate, concept=key, reference_mean=left[i],
+                predicted_mean=right[i], ks_similarity=similarities[i],
+                reference_distribution=observed[key], predicted_distribution=predictions[key]))
+    return summary, details
+
+
+def main():
+    data = json.loads((ROOT / "data/concept_panels.json").read_text())
+    summary, details = evaluate(data)
+    out = ROOT / "results"
+    out.mkdir(exist_ok=True)
+    for name, value in [("screening_summary.json", summary), ("screening_details.json", details)]:
+        (out / name).write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
+    for row in summary:
+        print(row["candidate"], row["mean_ks_similarity"], row["pearson"], row["selected"])
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -8624,6 +8914,270 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=HERE / "results")
     main(parser.parse_args().output)
+\end{Verbatim}
+
+\hypertarget{M05-text-anchors-and-purchase-intent-ratings}{%
+\section{Text, Anchors, and Purchase-Intent
+Ratings}\label{M05-text-anchors-and-purchase-intent-ratings}}
+
+\noindent \noindent A product manager reading a conditional response must decide
+how it enters a numerical comparison. ``I would consider it if the
+refill is convenient and the total price is acceptable'' expresses
+interest while leaving conditions unresolved. Assigning a single rating
+removes some of that ambiguity. Assigning weights across categories
+retains a broader representation, whose interpretation depends on how
+those weights are constructed.
+
+The \href{https://arxiv.org/abs/2510.08338v3}{semantic similarity rating
+method} compares the embedding of a written response with embeddings of
+five reference statements, one for each purchase-intent category. The
+study averages results across six reference sets. Its Python package
+accepts response text or supplied embeddings; generation of the consumer
+responses is a separate operation. The paper uses
+\texttt{text-embedding-3-small}, while the inspected package's automatic
+text mode defaults to \texttt{all-MiniLM-L6-v2}. Changing that component
+changes the measurement procedure and requires renewed validation.
+
+\hypertarget{M05-a-fixed-response-under-different-anchors}{%
+\subsection{A Fixed Response Under Different
+Anchors}\label{M05-a-fixed-response-under-different-anchors}}
+
+\noindent \noindent Let \(s_{car}\) be the cosine similarity between response
+\(c\) and category \(r\) in anchor set \(a\). At zero epsilon and
+temperature one, the study's mapping is
+
+\[
+p_{car}=\frac{s_{car}-\min_j s_{caj}}{\sum_{k=1}^{5}(s_{cak}-\min_j s_{caj})}.
+\]
+
+The numerator measures similarity above the least similar reference
+statement. The denominator normalizes the five nonnegative values when
+at least two similarities differ. The weights sum to one, and the
+expected rating is \(\sum_{r=1}^{5} r p_{car}\). These are weights
+assigned by a text measurement rule. Their calibration against actual
+consumer ratings or purchasing requires independent outcomes.
+
+Two instructor-authored sets use the following category descriptions.
+The response above remains fixed. The similarities are imposed numerical
+inputs, chosen to expose the calculation; they were not estimated from
+the text or an embedding model.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Category & Set 1 & Set 2 \\
+\midrule
+
+1 & Would not buy & Certain I will not buy \\
+2 & Probably would not buy & Unlikely to buy \\
+3 & Might or might not buy & Undecided about buying \\
+4 & Would probably buy & Expect to buy \\
+5 & Would buy & Certain I will buy \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Set 1 has similarities \((0.20,0.23,0.29,0.38,0.50)\). Subtracting 0.20
+gives a total difference of 0.60 and weights
+\((0,0.05,0.15,0.30,0.50)\). Set 2 has similarities
+\((0.20,0.26,0.38,0.44,0.32)\) and weights \((0,0.10,0.30,0.40,0.20)\).
+The resulting mean moves from 4.25 to 3.70. The share assigned to
+categories 4 and 5 moves from 0.80 to 0.60. The example establishes
+sensitivity to the supplied mapping inputs; it does not estimate the
+effect of these particular words on a language model.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_anchor_ratings.tex}
+\caption{For one fixed instructor-authored response, imposed similarities produce category weights of 0, 5, 15, 30, and 50 percent under Set 1 and 0, 10, 30, 40, and 20 percent under Set 2.}\label{fig:M05_anchor_ratings}
+\end{figure}
+
+Subtracting the minimum forces at least one category weight to zero
+within each set. Equal similarities make normalization undefined. The
+course implementation explicitly abstains when the similarity spread is
+at most \(10^{-12}\) and records an incomplete aggregate if any required
+mapping is unavailable. That tolerance is a numerical convention. It
+supplies no evidence that a consumer is indifferent. An alternative
+rule, such as assigning uniform weights, would require its own stated
+interpretation and sensitivity analysis.
+
+\hypertarget{M05-responses-personas-and-the-concept-mean}{%
+\subsection{Responses, Personas, and the Concept
+Mean}\label{M05-responses-personas-and-the-concept-mean}}
+
+\noindent \noindent The supplied text example has three fictional body-wash
+concepts and two invented personas, with seven response rows in total.
+One persona's refill response appears twice with identical inputs.
+Averaging those rows directly would give that persona twice the weight
+of the other persona for that concept. Equal-persona aggregation first
+averages repeat responses within each persona and then averages the two
+persona distributions. The duplicated response adds no new information
+in this construction.
+
+For the refill concept under Set 1, the two persona means are 4.25 and
+3.70. Equal-persona weighting gives 3.975. Treating the repeated rows as
+separate people gives \((2\times4.25+3.70)/3=4.067\). The denominator
+therefore changes the apparent attractiveness of a concept even though
+the represented people and their responses remain fixed.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Concept & Set 1 Mean & Set 2 Mean & Mean Across Sets \\
+\midrule
+
+Refillable & 3.975 & 3.625 & 3.800 \\
+Fragrance-Free & 3.850 & 4.100 & 3.975 \\
+Compact Travel & 3.425 & 3.300 & 3.363 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Equal-persona weighting and the same response roster apply throughout
+the table. Set 1 selects the refillable concept; Set 2 and the average
+across sets select fragrance-free. Averaging anchors makes the choice
+less dependent on selecting one particular set, while the interpretation
+still depends on which sets enter the average. Repeated generation,
+variation across personas, and uncertainty about a target population
+remain distinct sources of variation. A large number of generated
+answers can estimate a model's response distribution precisely while
+leaving its difference from human preferences unresolved.
+
+\hypertarget{M05-complete-python-measurement}{%
+\subsection{Complete Python
+Measurement}\label{M05-complete-python-measurement}}
+
+\noindent \noindent The input file preserves the full anchor sentences, response
+text, concept identifiers, persona identifiers, repeat numbers, and
+imposed similarities. The program rejects duplicate keys and incomplete
+concept/persona coverage, records uninformative mappings, and preserves
+equal-persona aggregation. The original calculation uses no downloaded
+package, model weights, or paid API. A live extension would replace the
+imposed similarities with versioned embedding outputs and evaluate the
+complete procedure using appropriately sampled human outcomes.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Synthetic_Consumers/anchor_measurement.py}{anchor\_measurement.py}.
+From its directory, run \texttt{python3\ anchor\_measurement.py}. Inputs
+are in the accompanying \texttt{data} folder; outputs are written to
+\texttt{results}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Map imposed similarities to ratings while preserving response and persona units.
+
+Inputs are instructor-authored text and synthetic similarities, not LLM measurements.
+Python 3.10+; standard library only; no network or model calls.
+"""
+from collections import defaultdict
+import json
+from math import isfinite
+from pathlib import Path
+from statistics import mean
+
+ROOT = Path(__file__).resolve().parent
+
+
+def rating_distribution(similarities, tolerance=1e-12):
+    """Study setting: subtract minimum, normalize, epsilon=0, temperature=1.
+
+    Return None when the spread is at most tolerance. This explicit abstention
+    rule is a course adaptation for an otherwise undefined normalization.
+    """
+    if len(similarities) != 5 or any(
+        not isinstance(x, (int, float)) or not isfinite(x) or not -1 <= x <= 1
+        for x in similarities
+    ):
+        raise ValueError("Five finite cosine similarities in [-1, 1] are required.")
+    if not isfinite(tolerance) or tolerance < 0:
+        raise ValueError("Tolerance must be finite and nonnegative.")
+    smallest = min(similarities)
+    if max(similarities) - smallest <= tolerance:
+        return None
+    weights = [x - smallest for x in similarities]
+    return [x / sum(weights) for x in weights]
+
+
+def average_distributions(distributions):
+    """A missing mapping leaves the aggregate incomplete, with no silent exclusion."""
+    if not distributions or any(row is None for row in distributions):
+        return None
+    return [mean(row[k] for row in distributions) for k in range(5)]
+
+
+def mean_rating(distribution):
+    return None if distribution is None else sum(
+        (k + 1) * p for k, p in enumerate(distribution)
+    )
+
+
+def score_responses(data):
+    concepts, personas = set(data["concepts"]), set(data["personas"])
+    anchors = set(data["anchor_sets"])
+    if len(anchors) != 2 or any(len(s) != 5 for s in data["anchor_sets"].values()):
+        raise ValueError("This example has two complete five-category anchor sets.")
+    records, seen, covered = [], set(), set()
+    for row in data["responses"]:
+        key = (row["concept"], row["persona"], row["repeat"])
+        if key in seen or key[0] not in concepts or key[1] not in personas:
+            raise ValueError("Duplicate response key or unknown concept/persona.")
+        if set(row["similarities"]) != anchors or not row["text"].strip():
+            raise ValueError("Each response needs text and both anchor comparisons.")
+        seen.add(key)
+        covered.add(key[:2])
+        distributions = {a: rating_distribution(row["similarities"][a])
+                         for a in sorted(anchors)}
+        distributions["average_sets"] = average_distributions(list(distributions.values()))
+        for anchor, distribution in distributions.items():
+            records.append(dict(concept=key[0], persona=key[1], repeat=key[2],
+                                anchor_set=anchor, distribution=distribution,
+                                mean_rating=mean_rating(distribution),
+                                status="scored" if distribution is not None else "uninformative"))
+    if covered != {(c, p) for c in concepts for p in personas}:
+        raise ValueError("Every declared concept/persona pair needs a response.")
+    return records
+
+
+def summarize(records):
+    grouped = defaultdict(list)
+    for row in records:
+        grouped[row["concept"], row["anchor_set"]].append(row)
+    summaries = []
+    for (concept, anchor), group in sorted(grouped.items()):
+        by_persona = defaultdict(list)
+        for row in group:
+            by_persona[row["persona"]].append(row["distribution"])
+        # Average repeats within persona, then give each persona equal weight.
+        persona_pmfs = [average_distributions(rows) for rows in by_persona.values()]
+        balanced = average_distributions(persona_pmfs)
+        row_weighted = average_distributions([row["distribution"] for row in group])
+        summaries.append(dict(concept=concept, anchor_set=anchor,
+            response_rows=len(group), scored_rows=sum(r["status"] == "scored" for r in group),
+            personas=len(by_persona), distribution=balanced,
+            mean_rating=mean_rating(balanced),
+            top_two_share=None if balanced is None else sum(balanced[3:]),
+            row_weighted_mean=mean_rating(row_weighted),
+            status="complete" if balanced is not None else "incomplete"))
+    return summaries
+
+
+def main():
+    data = json.loads((ROOT / "data/anchor_responses.json").read_text())
+    records = score_responses(data)
+    summaries = summarize(records)
+    out = ROOT / "results"
+    out.mkdir(exist_ok=True)
+    for name, value in [("response_ratings.json", records), ("concept_ratings.json", summaries)]:
+        (out / name).write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
+    for row in summaries:
+        print(row["concept"], row["anchor_set"], row["mean_rating"], row["status"])
+
+
+if __name__ == "__main__":
+    main()
 \end{Verbatim}
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
@@ -14903,6 +15457,99 @@ if __name__ == '__main__':
     main()
 \end{Verbatim}
 
+\hypertarget{M07-validation-of-synthetic-consumer-panels}{%
+\section{Validation of Synthetic Consumer
+Panels}\label{M07-validation-of-synthetic-consumer-panels}}
+
+\noindent \noindent A firm evaluating synthetic respondents needs to specify which
+future comparison the evaluation should support. Predicting another
+sample's ratings for familiar concepts differs from screening new
+concepts or transferring to another product category. Anchor wording,
+prompt development, model selection, and numerical calibration can all
+use outcome information. A final evaluation must reserve evidence from
+those choices when the intended claim concerns new concepts.
+
+In the \href{https://arxiv.org/abs/2510.08338v3}{57-concept
+personal-care study}, correlation attainment compares a human--synthetic
+correlation with a human--human benchmark. Each of 2,000 repetitions
+divides every existing human panel into halves and samples an equally
+sized synthetic group. Correlations then compare the concept means
+across the same set of products. If \(R_{xy,b}\) is the human--synthetic
+correlation in repetition \(b\) and \(R_{xx,b}\) is the correlation
+between human halves, the reported ratio is
+
+\[
+\rho=\frac{B^{-1}\sum_{b=1}^{B}R_{xy,b}}{B^{-1}\sum_{b=1}^{B}R_{xx,b}},\qquad B=2{,}000.
+\]
+
+For GPT-4o with image stimuli, available demographic conditioning,
+generation temperature 0.5, and averaged anchors, Table 1 reports 90.2\%
+correlation attainment, 0.88 mean KS similarity, and a separate
+concept-mean Pearson correlation of 0.724. The percentage describes the
+ratio above. It measures neither individual-rating accuracy nor
+prediction of purchases. The benchmark comes from splits of existing
+respondents, with no observed second survey wave. The authors' reported
+manual optimization of anchors on these concepts also means the
+split-half exercise leaves transfer of the measurement procedure to new
+concepts unresolved.
+
+\hypertarget{M07-a-noise-benchmark-and-a-universal-bound}{%
+\subsection{A Noise Benchmark and a Universal
+Bound}\label{M07-a-noise-benchmark-and-a-universal-bound}}
+
+\noindent \noindent A split-half comparison describes the similarity between two
+noisy measurements. Its interpretation as a ceiling for every predictor
+requires additional restrictions. A simple measurement model separates
+the variation in the latent concept score from independent measurement
+noise.
+
+\begin{assumption}[Independent Measurement Errors]
+\label{ass:synthetic-panel-benchmark}
+Across concepts, the latent score $\mu$ has variance $\tau^2>0$. Two measured means are $Y_1=\mu+e_1$ and $Y_2=\mu+e_2$. Each error has mean zero and variance $\sigma^2>0$; the errors are mutually independent and independent of $\mu$. An idealized predictor equals $\mu$.
+\end{assumption}
+
+Under Assumption \ref{ass:synthetic-panel-benchmark}, the shared
+covariance of the measured means is \(\tau^2\), giving
+
+\[
+R_{12}=\frac{\tau^2}{\tau^2+\sigma^2},\qquad
+R_{\mu,1}=\sqrt{R_{12}},\qquad
+\frac{R_{\mu,1}}{R_{12}}=\frac{1}{\sqrt{R_{12}}}>1.
+\]
+
+An ideal predictor can correlate more closely with a noisy panel mean
+than another noisy panel does. This population calculation establishes
+that the split-half benchmark is not a universal upper bound. It
+estimates no performance of the paper's models and supplies no
+assumption that an actual language model knows the latent score. The
+benchmark remains informative when its construction and the sources of
+noise are stated directly.
+
+\hypertarget{M07-development-selection-and-final-evaluation}{%
+\subsection{Development, Selection, and Final
+Evaluation}\label{M07-development-selection-and-final-evaluation}}
+
+\noindent \noindent Keep separate concept sets for developing anchors, choosing
+among configurations, and evaluating the final screening rule. Freeze
+prompts, model versions, sampling settings, embedding versions, anchors,
+and aggregation before opening the final human outcomes. Repeated
+observations from a person should remain grouped, and respondent
+populations should match the intended use. An additional category or
+later period provides evidence about a further transfer rather than
+simply increasing the nominal sample size.
+
+Distribution fit, rank agreement, and missed promising concepts provide
+complementary evidence. Section 4.23 gives a complete calculation in
+which all overall rating distributions match while product rankings
+reverse. Section 5.23 shows how repeated responses and anchor choices
+change a rating before any prediction comparison occurs. A validation
+design should therefore assess the entire path from generated text
+through the numerical measure to the screening decision. The
+same-information benchmark also matters: comparing an LLM receiving a
+full concept description with a classifier receiving only coarse
+category and demographic attributes combines information access with
+differences in modeling approach.
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -15768,7 +16415,21 @@ Generating more answers under the same misspecified prompt reduces
 simulation noise around that prompt's distribution while preserving its
 systematic difference from consumers. Agreement among generated
 respondents is therefore a property to examine alongside external
-validity.
+validity. The worked comparisons in Sections 4.23 and 5.23 show how
+overall rating distributions, concept rankings, anchors, and repeat
+weighting can lead to different product decisions. Section 7.36
+distinguishes the published split-half benchmark from prospective
+evaluation on new concepts.
+
+A practical screening workflow retains generated objections as
+hypotheses, fixes its measurement procedure before final evaluation, and
+reserves human research for both shortlisted concepts and a random
+sample of rejected ones. Testing rejected concepts makes missed
+opportunities observable. A transfer from personal-care concepts to
+mHealth features changes the domain and requires separate human
+validation. Model updates, revised anchors, and new recruitment
+populations likewise change the evidence needed to support a screening
+claim.
 
 A useful AI coding request is: ``Compare every numerical field with its
 computed evidence; reject unknown metrics, periods, units, and
@@ -19023,5 +19684,40 @@ correction. They do not supply a universal numerical success threshold.
 A defensible recommendation states the conduct expected of the firm, the
 evidence supporting its assurance, and the observed failures that would
 require a change.
+
+\hypertarget{M09-synthetic-personas-and-consumer-representation}{%
+\subsection{Synthetic Personas and Consumer
+Representation}\label{M09-synthetic-personas-and-consumer-representation}}
+
+\noindent \noindent A firm may use generated personas to anticipate how customers
+could respond to a product. The ethical question concerns the authority
+the firm gives those responses in decisions that affect people.
+Synthetic answers can help formulate hypotheses and identify possible
+objections. Treating them as the considered judgments of actual
+customers requires evidence about representation that similarity in
+aggregate ratings alone cannot supply.
+
+The concept-screening comparison in Section 4.23 preserves the overall
+response distribution while reversing which products appear most
+attractive. The anchor comparison in Section 5.23 changes the preferred
+concept while retaining the same authored responses. These constructions
+show how the firm's measurement choices enter its account of consumer
+preferences. They do not establish a deceptive intention or imply that
+every use of synthetic research disregards customers. A Kantian
+assessment examines whether the practice respects affected people's
+purposes and opportunities to exercise judgment, including when their
+responses challenge the commercially favored interpretation.
+
+Confucian trustworthiness requires a truthful account of whose judgments
+the evidence represents. Responsible conduct includes listening to
+customers whose needs the model misses and revising decisions when their
+accounts expose a material error. A firm could use generated reactions
+to improve the questions it asks, while retaining opportunities for
+actual customers to express preferences, explain conditions, and contest
+consequences. The justified claim should distinguish a model's simulated
+response, a person's stated preference, and observed behavior. Neither
+philosophical perspective assigns a numerical validation threshold or
+turns accurate prediction into permission to substitute generated
+consent for a person's decision.
 
 \end{document}

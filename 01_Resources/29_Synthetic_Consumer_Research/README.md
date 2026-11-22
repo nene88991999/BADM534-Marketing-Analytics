@@ -41,7 +41,7 @@ The study concerns personal-care purchase intent. Its demographic comparisons de
 | M8 | Where can a synthetic panel assist research? | Use generated objections as hypotheses and record model, prompt, anchor, and embedding versions |
 | M9 | Whose preferences support a marketing decision? | Examine how actual consumers retain a voice when synthetic personas inform product design |
 
-The [case proposal](CASE_DESIGN.md) develops a fictional product-screening exercise with explicit synthetic inputs, independent checks, and a human-validation design. It is an optional extension proposal; no additional class meeting or assessment requirement is established.
+The [implemented case](CASE_DESIGN.md) provides two original programs with explicit synthetic inputs, ten independent checks, and a human-validation design. Full Python appears in M4 §4.23 and M5 §5.23, with M7 §7.36, M8 §8.11, and M9 §9.18.4 connections. Two editable figures and eight slides support Sessions 5, 7, and 14. [Optional ungraded practice](../../07_Labs/Synthetic_Consumers/README.md) extends the calculations without adding a meeting or assessment requirement.
 
 ## Sources and Verification
 

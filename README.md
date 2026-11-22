@@ -92,3 +92,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Training Mixtures and Customer Choice
 
 [M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) connect confounded training features to conditional service outcomes and checkpoint selection. [Three complete programs](03_Data_and_Code/Training_Data_Mixtures/README.md), two TikZ figures, five Session 11 slides, and [optional practice](07_Labs/Training_Data_Mixtures/README.md) distinguish exact synthetic calculations from published model results. M2, M3, M8, and Marketing Dialectics connect source provenance, regression, supplier changes, and evidence for meaningful customer choice.
+
+## Synthetic Consumers and Concept Screening
+
+[Two complete examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect product screening in M4 §4.23 to text measurement in M5 §5.23 and validation in M7 §7.36. Invented panels and imposed similarities isolate anchor sensitivity, persona weights, distribution fit, and shortlist errors. Sessions 5, 7, and 14 incorporate the comparisons and consumer-representation discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) extends the calculations.

@@ -950,7 +950,8 @@
     "objectives": [
       "Design choice tasks that identify attribute tradeoffs.",
       "Compute logit probabilities and willingness to pay.",
-      "Separate new-product share from incremental category demand."
+      "Separate new-product share from incremental category demand.",
+      "Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes."
     ],
     "slides": [
       {
@@ -1131,6 +1132,70 @@
       },
       {
         "kind": "bullets",
+        "title": "Synthetic Consumers in Concept Screening",
+        "bullets": [
+          "A shortlist directs the budget for human product research.",
+          "Generated reactions can suggest benefits and objections.",
+          "A screening claim needs evidence on new concepts and the intended customers."
+        ],
+        "notes": "Maier and coauthors compare 57 personal-care concepts with 9,300 U.S. human responses. Semantic similarity rating maps generated text to five-category distributions. The authors manually optimized the anchors on the same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment is a ratio to a split-half human benchmark. It describes neither individual-rating accuracy nor purchase prediction. Concept ratings do not identify attribute tradeoffs without suitable variation and a response model.",
+        "source": "Maier and coauthors (2025), Table 1 and Appendix A.3. https://arxiv.org/abs/2510.08338v3"
+      },
+      {
+        "kind": "figure",
+        "title": "Distribution Fit and Product Selection",
+        "figure": "../06_Lecture_Notes/figures/M04_concept_screening.tex",
+        "caption": "Six synthetic concepts, 100 invented ratings each. Overall category shares match, while the preferred concepts differ.",
+        "description": "The left panel shows common overall shares of 0, 0, 22.5, 30, and 47.5 percent in categories 1–5. The right panel preserves concept A–F identity: reference means fall from 4.5 to 4.0, pooled means equal 4.25, reversed means rise from 4.0 to 4.5, and compressed means fall from 4.30 to 4.20. The right vertical scale is 3.9–4.6.",
+        "notes": "Every candidate has the same aggregate distribution as the reference across equally weighted concepts. That pooled match removes the concept distinction needed to choose products. The reversed rule selects F and E instead of A and B. The compressed pattern preserves order while shrinking rating differences. All values are imposed teaching inputs and no human survey or fitted model is represented.",
+        "source": "M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
+      },
+      {
+        "kind": "table",
+        "title": "A Screening Rule Needs a Decision Metric",
+        "headers": [
+          "Pattern",
+          "Mean KS",
+          "Correlation",
+          "Top Two Retained"
+        ],
+        "rows": [
+          [
+            "Pooled",
+            "0.925",
+            "Undefined",
+            "Boundary tie"
+          ],
+          [
+            "Reversed",
+            "0.850",
+            "-1.000",
+            "0 of 2"
+          ],
+          [
+            "Compressed",
+            "0.940",
+            "1.000",
+            "2 of 2"
+          ]
+        ],
+        "caption": "Imposed comparisons on the same six concepts. A high distribution score can accompany a poor shortlist.",
+        "notes": "KS similarity is one minus the maximum cumulative-probability difference, averaged equally across concepts. Pearson compares concept means. Spearman gives the same results in this construction. Constant pooled means leave correlation undefined and every concept tied. Compressed means have a mean absolute rating error of 0.12 despite preserving the top two. The three candidates were constructed using the synthetic reference to isolate these properties, so this is an analytical comparison rather than a prospective prediction test.",
+        "source": "M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "New Concepts and Human Validation",
+        "bullets": [
+          "Separate anchor development, configuration selection, and final concepts.",
+          "Freeze the complete measurement procedure before final human outcomes.",
+          "Sample rejected concepts to reveal missed opportunities."
+        ],
+        "notes": "The complete procedure includes prompts, model version, generation settings, embedding, anchors, aggregation, and shortlist rule. Final concepts and human outcomes remain outside those choices. Human tests confined to the selected concepts cannot reveal promising exclusions. Known sampling probabilities for rejected concepts support population comparisons with appropriate uncertainty. Observed purchases and stated intent remain separate outcomes.",
+        "source": "M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Customer Alternatives and AI Pricing",
         "bullets": [
           "Customer value depends on the offered outcome and implementation effort.",
@@ -1167,7 +1232,8 @@
       "[M4 lecture notes](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)"
+      "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
+      "[Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)"
     ],
     "practice": "Calculate choice probabilities and assess the role of a stronger customer alternative.",
     "application": "Compare product value, implementation burden, substitution, and the outside option."
@@ -1476,7 +1542,8 @@
       "Define a text construct and evaluate labels on the deployment population.",
       "Distinguish prevalence, text exposure, retrieval, and substantive interpretation.",
       "Explain network reach and brokerage without inferring influence from correlation.",
-      "Distinguish citation presence from support using a controlled source comparison."
+      "Distinguish citation presence from support using a controlled source comparison.",
+      "Trace how anchors, similarities, and persona weighting determine a text-based rating."
     ],
     "slides": [
       {
@@ -1520,6 +1587,33 @@
         ],
         "notes": "A semantic model can confuse closely related foods that have distinct nutritional properties. A cosine score is a representation-based similarity, not a probability of label correctness.",
         "source": "M5, Section 5.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "equation",
+        "title": "A Text-to-Rating Measurement Rule",
+        "intro": "For one response and one anchor set, subtract the least similar category and normalize.",
+        "equation": "p_r=\\frac{s_r-\\min_j s_j}{\\sum_{k=1}^{5}(s_k-\\min_j s_j)}",
+        "interpretation": "The similarities $s_r$ depend on the anchors and embedding. Equal similarities leave the denominator at zero.",
+        "notes": "This is the paper setting with epsilon zero and SSR temperature one. The normalized weights describe a mapping to rating categories. Calibration against human outcomes requires separate evidence. The course code explicitly abstains when the spread is at most 1e-12. That numerical threshold is not evidence of consumer indifference.",
+        "source": "Maier and coauthors (2025), Table 1 and Appendix A.3. https://arxiv.org/abs/2510.08338v3 M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "The Same Response Under Different Anchors",
+        "figure": "../06_Lecture_Notes/figures/M05_anchor_ratings.tex",
+        "caption": "Fixed authored response and imposed similarities. The mean rating changes from 4.25 to 3.70.",
+        "description": "Paired bars show category weights 0, 5, 15, 30, and 50 percent for Set 1 and 0, 10, 30, 40, and 20 percent for Set 2. The probability assigned to categories 4 and 5 falls from 80 to 60 percent.",
+        "notes": "The response is: I would consider it if the refill is convenient and the total price is acceptable. The two sets express increasing purchase intent with different wording. The similarities are deliberately imposed, so their difference does not estimate the effect of these words on an embedding model. Across the supplied three concepts and two personas, Set 1 favors refillable body wash while Set 2 favors fragrance-free. Averaging sets does not establish validity against consumers.",
+        "source": "M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
+      },
+      {
+        "kind": "code",
+        "title": "A Hand-Checkable Rating",
+        "intro": "Run from the Synthetic_Consumers example folder with the complete local program.",
+        "code": "from anchor_measurement import rating_distribution\n\nscores = [0.20, 0.23, 0.29, 0.38, 0.50]\nweights = rating_distribution(scores)\nvalue = sum((r + 1) * p for r, p in enumerate(weights))\nassert abs(value - 4.25) < 1e-12",
+        "check": "Imposed inputs. The full program preserves persona weights and incomplete mappings.",
+        "notes": "Subtracting 0.20 yields 0, 0.03, 0.09, 0.18, and 0.30, whose sum is 0.60. The category weights are 0, 0.05, 0.15, 0.30, and 0.50. Average repeats within persona before averaging personas. For the refill example, equal-persona weighting gives 3.975 while counting an identical repeated response as another person gives 4.067. No model account is needed for this calculation.",
+        "source": "M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
       },
       {
         "kind": "bullets",
@@ -1843,7 +1937,8 @@
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
       "[Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)",
       "[Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)",
-      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)"
+      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)",
+      "[Synthetic Consumer Measurement](../03_Data_and_Code/Synthetic_Consumers/README.md)"
     ],
     "practice": "Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.",
     "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets."
@@ -3857,6 +3952,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Synthetic Personas and Actual Consumers",
+        "bullets": [
+          "Generated reactions can inform hypotheses about product needs.",
+          "Claims about customer preferences require evidence from the relevant people.",
+          "Customers need opportunities to express conditions and contest consequential interpretations."
+        ],
+        "notes": "M9 §9.18.4 examines whose judgments a firm claims to represent. Kantian respect concerns affected people’s purposes and judgment. Confucian trustworthiness requires a truthful account of what the evidence represents and responsible responses to objections. The M4 case holds overall rating distributions fixed while reversing the product ranking. Accuracy alone supplies no permission to substitute generated consent for a person’s decision. These are arguments about a practice, with no inference about the researchers’ motives.",
+        "source": "Marketing Dialectics §9.18.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Choice Procedure Can Change Renewal",
         "bullets": [
           "A direct offer and an offer preceded by questions can produce different choices.",
@@ -4045,7 +4151,8 @@
       "[Marketing Dialectics](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md)",
       "[Kantian, Institutional, and Confucian Readings](../01_Resources/15_Marketing_Dialectics/README.md)",
       "[Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)",
-      "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)"
+      "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)",
+      "[Synthetic Consumers and Human Validation](../03_Data_and_Code/Synthetic_Consumers/README.md)"
     ],
     "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."

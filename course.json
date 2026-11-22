@@ -61,6 +61,12 @@
       "path": "07_Labs/Training_Data_Mixtures/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "synthetic-consumers",
+      "path": "07_Labs/Synthetic_Consumers/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -192,7 +198,12 @@
     "07_Labs/Training_Data_Mixtures/README.md",
     "01_Resources/29_Synthetic_Consumer_Research/README.md",
     "01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md",
-    "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md"
+    "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md",
+    "03_Data_and_Code/Synthetic_Consumers/README.md",
+    "03_Data_and_Code/Synthetic_Consumers/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Synthetic_Consumers/AGENTS.md",
+    "03_Data_and_Code/Synthetic_Consumers/results/README.md",
+    "07_Labs/Synthetic_Consumers/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -241,12 +252,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-22-training-data-mixtures",
+    "revision": "2026-11-22-synthetic-consumer-research",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 91,
-    "pages": 341,
+    "figures_count": 93,
+    "pages": 353,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -262,7 +273,8 @@
     "retail_accessibility_examples": "03_Data_and_Code/Retail_Accessibility/README.md",
     "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
     "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md",
-    "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md"
+    "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md",
+    "synthetic_consumer_examples": "03_Data_and_Code/Synthetic_Consumers/README.md"
   },
   "datasets": [
     {
@@ -333,7 +345,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 354,
+    "slides": 362,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -652,7 +664,7 @@
     "reviewed_on": "2026-11-22",
     "paper_version": "2510.08338v3",
     "source_commit": "86dcd2597c7824e4fd6546b884c5500c43a4b022",
-    "status": "Source review available; optional M4/M5 case proposed. Existing M8 §8.11 briefly discusses synthetic consumer panels.",
+    "status": "available in notes, Sessions 5, 7, and 14, and optional ungraded practice",
     "primary_modules": [
       "M4",
       "M5"
@@ -665,6 +677,29 @@
     "source_package_executed": false,
     "original_arithmetic_checks": 6,
     "model_calls": 0,
-    "scope": "Measurement method and concept-screening validation. No human-data replication, new lecture release, or assessment requirement."
+    "scope": "Original synthetic text measurement and concept-screening calculations; human-study evidence remains a cited reference. No replication of the private study, upstream execution, or model inference.",
+    "implemented_on": "2026-11-22",
+    "examples": "03_Data_and_Code/Synthetic_Consumers/README.md",
+    "lab": "07_Labs/Synthetic_Consumers/README.md",
+    "manifest": "03_Data_and_Code/Synthetic_Consumers/manifest.json",
+    "sections": [
+      "M4 §4.23",
+      "M5 §5.23",
+      "M7 §7.36",
+      "M8 §8.11",
+      "M9 §9.18.4"
+    ],
+    "sessions": [
+      5,
+      7,
+      14
+    ],
+    "discussion_minutes": {
+      "5": 20,
+      "7": 10,
+      "14": 5
+    },
+    "original_programs_executed": 2,
+    "independent_course_checks_passed": 10
   }
 }

@@ -1,0 +1,200 @@
+{
+  "data_type": "Entirely synthetic concept panels and imposed candidate rating patterns; no observed human data or fitted predictions.",
+  "reference": [
+    {
+      "concept": "A",
+      "counts": [
+        0,
+        0,
+        10,
+        30,
+        60
+      ]
+    },
+    {
+      "concept": "B",
+      "counts": [
+        0,
+        0,
+        15,
+        30,
+        55
+      ]
+    },
+    {
+      "concept": "C",
+      "counts": [
+        0,
+        0,
+        20,
+        30,
+        50
+      ]
+    },
+    {
+      "concept": "D",
+      "counts": [
+        0,
+        0,
+        25,
+        30,
+        45
+      ]
+    },
+    {
+      "concept": "E",
+      "counts": [
+        0,
+        0,
+        30,
+        30,
+        40
+      ]
+    },
+    {
+      "concept": "F",
+      "counts": [
+        0,
+        0,
+        35,
+        30,
+        35
+      ]
+    }
+  ],
+  "candidates": {
+    "pooled": {
+      "A": [
+        0,
+        0,
+        0.225,
+        0.3,
+        0.475
+      ],
+      "B": [
+        0,
+        0,
+        0.225,
+        0.3,
+        0.475
+      ],
+      "C": [
+        0,
+        0,
+        0.225,
+        0.3,
+        0.475
+      ],
+      "D": [
+        0,
+        0,
+        0.225,
+        0.3,
+        0.475
+      ],
+      "E": [
+        0,
+        0,
+        0.225,
+        0.3,
+        0.475
+      ],
+      "F": [
+        0,
+        0,
+        0.225,
+        0.3,
+        0.475
+      ]
+    },
+    "reversed": {
+      "A": [
+        0.0,
+        0.0,
+        0.35,
+        0.3,
+        0.35
+      ],
+      "B": [
+        0.0,
+        0.0,
+        0.3,
+        0.3,
+        0.4
+      ],
+      "C": [
+        0.0,
+        0.0,
+        0.25,
+        0.3,
+        0.45
+      ],
+      "D": [
+        0.0,
+        0.0,
+        0.2,
+        0.3,
+        0.5
+      ],
+      "E": [
+        0.0,
+        0.0,
+        0.15,
+        0.3,
+        0.55
+      ],
+      "F": [
+        0.0,
+        0.0,
+        0.1,
+        0.3,
+        0.6
+      ]
+    },
+    "compressed": {
+      "A": [
+        0.0,
+        0.0,
+        0.2,
+        0.3,
+        0.5
+      ],
+      "B": [
+        0.0,
+        0.0,
+        0.21,
+        0.3,
+        0.49
+      ],
+      "C": [
+        0.0,
+        0.0,
+        0.22,
+        0.3,
+        0.48
+      ],
+      "D": [
+        0.0,
+        0.0,
+        0.23,
+        0.3,
+        0.47
+      ],
+      "E": [
+        0.0,
+        0.0,
+        0.24,
+        0.3,
+        0.46
+      ],
+      "F": [
+        0.0,
+        0.0,
+        0.25,
+        0.3,
+        0.45
+      ]
+    }
+  },
+  "construction": "Six fictional concepts A-F each have 100 invented survey ratings. Pooled gives every concept the category average, reversed assigns the opposite concept distribution, and compressed places 80 percent weight on the pooled distribution and 20 percent on each reference distribution. These use the reference to construct analytical counterexamples, not to train or evaluate a predictive system."
+}

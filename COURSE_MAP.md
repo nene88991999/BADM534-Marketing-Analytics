@@ -136,4 +136,4 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 ## Synthetic Consumers and Product Concept Testing
 
-[The source review and case proposal](01_Resources/29_Synthetic_Consumer_Research/README.md) extend the ideas briefly introduced in M8 §8.11 toward M4 concept screening and M5 text measurement. Proposed connections cover concept-level validation in M7 and consumer representation in M9. The resource guide records the study's anchor selection and metric definitions; the full worked example remains a proposal.
+[Two original executed examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect M4 §4.23 concept screening, M5 §5.23 anchor measurement, M7 §7.36 validation, M8 §8.11 workflows, and M9 §9.18.4 consumer representation. Two editable figures and eight slides support 20 minutes in Session 5, 10 minutes in Session 7, and 5 minutes within Session 14's philosophical discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) preserves invented inputs, persona weights, common concept rosters, and unresolved ties.

@@ -59,6 +59,49 @@ M5, Section 5.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M5, Section 5.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
 \end{frame}
+\begin{frame}{A Text-to-Rating Measurement Rule}
+\usebeamercolor[fg]{normal text}
+\noindent For one response and one anchor set, subtract the least similar category and normalize.
+\medskip
+\[
+p_r=\frac{s_r-\min_j s_j}{\sum_{k=1}^{5}(s_k-\min_j s_j)}
+\]
+\medskip
+\noindent The similarities $s_r$ depend on the anchors and embedding. Equal similarities leave the denominator at zero.
+\note{This is the paper setting with epsilon zero and SSR temperature one. The normalized weights describe a mapping to rating categories. Calibration against human outcomes requires separate evidence. The course code explicitly abstains when the spread is at most 1e-12. That numerical threshold is not evidence of consumer indifference.
+
+Maier and coauthors (2025), Table 1 and Appendix A.3. \url{https://arxiv.org/abs/2510.08338v3} M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumers/README.md}}
+\end{frame}
+\begin{frame}{The Same Response Under Different Anchors}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_anchor_ratings.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Fixed authored response and imposed similarities. The mean rating changes from 4.25 to 3.70.\par}
+\note{The response is: I would consider it if the refill is convenient and the total price is acceptable. The two sets express increasing purchase intent with different wording. The similarities are deliberately imposed, so their difference does not estimate the effect of these words on an embedding model. Across the supplied three concepts and two personas, Set 1 favors refillable body wash while Set 2 favors fragrance-free. Averaging sets does not establish validity against consumers.
+
+M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumers/README.md}}
+\end{frame}
+\begin{frame}[fragile]{A Hand-Checkable Rating}
+\usebeamercolor[fg]{normal text}
+\noindent Run from the Synthetic\_Consumers example folder with the complete local program.
+\begin{lstlisting}
+from anchor_measurement import rating_distribution
+
+scores = [0.20, 0.23, 0.29, 0.38, 0.50]
+weights = rating_distribution(scores)
+value = sum((r + 1) * p for r, p in enumerate(weights))
+assert abs(value - 4.25) < 1e-12
+\end{lstlisting}
+{\small Imposed inputs. The full program preserves persona weights and incomplete mappings.\par}
+\note{Subtracting 0.20 yields 0, 0.03, 0.09, 0.18, and 0.30, whose sum is 0.60. The category weights are 0, 0.05, 0.15, 0.30, and 0.50. Average repeats within persona before averaging personas. For the refill example, equal-persona weighting gives 3.975 while counting an identical repeated response as another person gives 4.067. No model account is needed for this calculation.
+
+M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumers/README.md}}
+\end{frame}
 \begin{frame}{Labels, Sentiment, and Topics}
 \usebeamercolor[fg]{normal text}
 \vfill

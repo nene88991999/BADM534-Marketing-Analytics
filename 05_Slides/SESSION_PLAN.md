@@ -14,16 +14,16 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 19 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 23 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 35 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 38 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 38 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 43 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 38 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 39 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -115,7 +115,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Calculate choice probabilities and assess the role of a stronger customer alternative.
 
-**Application:** Compare product value, implementation burden, substitution, and the outside option.
+**Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing.
 
 **Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
 
@@ -126,7 +126,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–145 | Synthetic Concept Screening and Human Validation |
+| 145–155 | Customer Alternatives and AI Pricing |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 06. Segmentation and Customer Lifetime Value
@@ -156,14 +157,15 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.
 
-**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets.
+**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets. Trace anchor sensitivity and persona weighting within the concepts block.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–15 | Managerial Case |
-| 15–45 | Concepts and Mechanisms |
+| 15–35 | Text Constructs and Representations |
+| 35–45 | Anchors, Rating Distributions, and Persona Weights |
 | 45–70 | Earnings-Call Exposure and Meaning |
 | 70–80 | Break |
 | 80–125 | Earnings-Call Python and Construct Checks |
@@ -303,7 +305,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope
 

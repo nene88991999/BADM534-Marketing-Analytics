@@ -1038,3 +1038,181 @@ Partial pooling can stabilize estimates for small groups. M6 Section 6.26 compar
 \noindent A retailer grouping neighborhoods can use observed attributes, travel accessibility, or both. Each representation answers a different question. Areas with similar incomes may face different retail alternatives because of roads and crossings. Areas connected by transit can share access despite geographic separation. A graph embedding incorporates the supplied links and training objective into the resulting representation; spatial coherence alone does not establish similar preferences or a useful targeting policy.
 
 The fixed-neighbor comparison in Section 5.21 holds the six locations and number of selected neighbors constant while changing the distance definition. Its altered links arise from the representation. The [Liverpool City2Graph case study](https://github.com/c2g-dev/city2graph-case-study) extends this issue to attribute clustering and graph-autoencoder embeddings. An optional comparison should retain the same observations, preprocessing, cluster count, and evaluation criteria wherever feasible. Customer outcomes or other independently chosen evidence are needed to interpret a cluster's marketing meaning.
+
+## 4.23 Synthetic Consumers and Product Concept Screening
+
+\noindent A personal-care firm may have more product ideas than it can afford to test with a large human panel. A screening procedure must identify concepts worth further investigation while making mistaken exclusions visible. Generated consumer responses can organize possible benefits and objections. Their usefulness for selecting products depends on how well the resulting measurements distinguish concepts in the intended customer population.
+
+[Maier and coauthors](https://arxiv.org/abs/2510.08338v3) compare generated purchase-intent responses with 9,300 human responses across 57 U.S. personal-care concept surveys. Their semantic similarity rating method maps generated text to distributions over five response categories. Reference statements and text embeddings determine that mapping. The authors report promising agreement with concept-level human results and state that they manually optimized the reference sets on the same surveys. Prospective screening therefore requires new concepts whose human outcomes remain outside measurement development.
+
+Concept screening and conjoint analysis inform different decisions. Screening ranks complete descriptions under a specified measurement procedure. Identifying attribute tradeoffs additionally requires variation that separates the attributes and an appropriate response model. A positive response to a high-priced concept does not isolate a price effect when its other features also differ. Purchase-intent ratings also require a separate link to observed sales before entering a revenue forecast.
+
+### 4.23.1 Distribution Fit and Concept Selection
+
+\noindent Consider six fictional body-wash concepts, A through F, each with 100 invented survey ratings. Categories 1–5 represent increasing purchase intent. The reference counts are imposed to make the calculation transparent. They describe no actual customers, and the three candidate patterns below are constructed analytical comparisons rather than fitted predictions.
+
+| Concept | Counts in Categories 1–5 | Reference Mean |
+| --- | --- | ---: |
+| A | 0, 0, 10, 30, 60 | 4.50 |
+| B | 0, 0, 15, 30, 55 | 4.40 |
+| C | 0, 0, 20, 30, 50 | 4.30 |
+| D | 0, 0, 25, 30, 45 | 4.20 |
+| E | 0, 0, 30, 30, 40 | 4.10 |
+| F | 0, 0, 35, 30, 35 | 4.00 |
+
+The pooled pattern assigns every concept the same distribution, $(0,0,0.225,0.30,0.475)$, with mean 4.25. The reversed pattern gives A the distribution of F, B the distribution of E, and so forth. The compressed pattern assigns 80% weight to the pooled distribution and 20% to each concept's reference distribution. All three reproduce the same overall category shares when concepts receive equal weight. Their implications for choosing products differ sharply.
+
+\Needspace{7\baselineskip}
+
+For concept $s$, compare reference and candidate cumulative distributions using
+
+$$
+K_s=1-\max_{r\in\{1,\ldots,5\}}\left|F_s^{\mathrm{ref}}(r)-F_s^{\mathrm{cand}}(r)\right|.
+$$
+
+The cumulative probability $F_s(r)$ is the share assigned to category $r$ or below. The maximum difference compares cumulative shares on the ordered categories. The average of $K_s$ gives each concept equal weight. Pearson correlation compares concept means, while Spearman correlation compares their ranks. Selecting two concepts creates a further decision criterion: the share of the reference top two that the candidate shortlist retains.
+
+| Imposed Pattern | Mean KS Similarity | Mean Absolute Rating Error | Correlation | Reference Top Two Retained |
+| --- | ---: | ---: | ---: | --- |
+| Pooled | 0.925 | 0.150 | Undefined | Boundary Tie |
+| Reversed | 0.850 | 0.300 | -1.000 | 0 of 2 |
+| Compressed | 0.940 | 0.120 | 1.000 | 2 of 2 |
+
+The correlation column reports Pearson correlation; Spearman gives the same results in this construction. The pooled means are constant, so both correlations are undefined and every concept ties at the screening threshold. The reversed pattern selects F and E, excluding both A and B. The compressed pattern preserves the correct shortlist while shrinking the difference between A and F from 0.50 to 0.10 rating points. Its perfect ordering consequently supplies no guarantee that the magnitude of a rating difference is accurate.
+
+![All three imposed candidate patterns match the overall category shares. Across concepts A–F, the reference means fall, the pooled means remain constant, the reversed means rise, and the compressed means fall over a narrower range.](../figures/M04_concept_screening.png)
+
+The left panel pools the same six equally weighted concepts. The right panel retains concept identity and uses a 3.9–4.6 vertical scale to show the differences in mean ratings. The managerial consequence follows from the intended action: broad distribution fit can coexist with a shortlist that rejects the strongest concepts. Alphabetical selection among tied concepts would introduce a decision rule unsupported by the ratings.
+
+### 4.23.2 Human Validation and Missed Concepts
+
+\noindent A prospective evaluation fixes the target population and recruitment process before comparing generated and human responses. Develop anchors on one set of concepts, choose a configuration on another, and reserve final concepts for evaluating the complete procedure. Model, prompt, embedding, anchor wording, and screening threshold all belong to that procedure. Splitting respondents within familiar concepts answers a narrower question than predicting responses to new products.
+
+Human validation should include a random sample of concepts that the screening procedure rejects. Testing only the shortlist leaves promising exclusions unobserved. Known selection probabilities can support estimates of screening errors across the original concept pool, with uncertainty that respects concept and respondent sampling. A manager can then compare the cost of human validation with the consequences of advancing weak ideas or discarding strong ones. The synthetic calculations specify no monetary value for those errors.
+
+### 4.23.3 Complete Python Evaluation
+
+\noindent The program reads the frozen invented panels and verifies that all candidate patterns cover the same concepts. It calculates distribution similarity, mean-rating error, correlations, and shortlist overlap. A constant score leaves correlation undefined; a tie at the selection boundary leaves the shortlist unresolved. The reference data construct the three patterns for an analytical comparison, so these results are not a test of a trained model on unseen data.
+
+Python source: [concept_screening.py](../../03_Data_and_Code/Synthetic_Consumers/concept_screening.py). From its directory, run `python3 concept_screening.py`. Inputs are in the accompanying `data` folder; outputs are written to `results`.
+
+```python
+"""Evaluate three imposed rating patterns on the same six synthetic concepts.
+
+Reference counts are invented surveys, not human observations. Candidate PMFs are
+fixed teaching inputs, not fitted predictions. No model calls or dependencies.
+"""
+import json
+from math import isclose, isfinite, sqrt
+from pathlib import Path
+from statistics import mean
+
+ROOT = Path(__file__).resolve().parent
+
+
+def validate_pmf(pmf):
+    if len(pmf) != 5 or any(not isfinite(x) or x < 0 for x in pmf):
+        raise ValueError("A PMF needs five finite nonnegative values.")
+    if not isclose(sum(pmf), 1, abs_tol=1e-12, rel_tol=0):
+        raise ValueError("Category probabilities must sum to one.")
+    return pmf
+
+
+def mean_rating(pmf):
+    return sum((k + 1) * x for k, x in enumerate(validate_pmf(pmf)))
+
+
+def ks_similarity(left, right):
+    validate_pmf(left)
+    validate_pmf(right)
+    x = y = distance = 0.0
+    for a, b in zip(left, right):
+        x, y = x + a, y + b
+        distance = max(distance, abs(x - y))
+    return 1 - distance
+
+
+def correlation(left, right):
+    if len(left) != len(right) or len(left) < 2:
+        raise ValueError("Use paired concept scores with at least two concepts.")
+    if any(not isfinite(x) for x in [*left, *right]):
+        raise ValueError("Correlation requires finite scores.")
+    x = [v - mean(left) for v in left]
+    y = [v - mean(right) for v in right]
+    xx, yy = sum(v * v for v in x), sum(v * v for v in y)
+    return None if min(xx, yy) <= 1e-24 else sum(a * b for a, b in zip(x, y)) / sqrt(xx * yy)
+
+
+def ranks(values):
+    """Average ranks for exact ties; scores are ordered from smallest to largest."""
+    order = sorted(range(len(values)), key=values.__getitem__)
+    result = [None] * len(values)
+    first = 0
+    while first < len(order):
+        last = first + 1
+        while last < len(order) and values[order[last]] == values[order[first]]:
+            last += 1
+        for i in order[first:last]:
+            result[i] = (first + 1 + last) / 2
+        first = last
+    return result
+
+
+def shortlist(scores, count=2):
+    if not 0 < count < len(scores) or any(not isfinite(x) for x in scores.values()):
+        raise ValueError("Require finite scores and a shortlist smaller than the roster.")
+    ordered = sorted(scores, key=lambda key: (-scores[key], key))
+    if isclose(scores[ordered[count - 1]], scores[ordered[count]], abs_tol=1e-12, rel_tol=0):
+        return None  # A boundary tie supplies no unique shortlist.
+    return ordered[:count]
+
+
+def evaluate(data):
+    ids = [row["concept"] for row in data["reference"]]
+    if len(set(ids)) != len(ids):
+        raise ValueError("Reference concept identifiers must be unique.")
+    observed = {}
+    for row in data["reference"]:
+        counts = row["counts"]
+        if len(counts) != 5 or any(type(x) is not int or x < 0 for x in counts) or sum(counts) == 0:
+            raise ValueError("Reference counts need five nonnegative integers and a positive total.")
+        observed[row["concept"]] = [n / sum(counts) for n in counts]
+    reference_means = {key: mean_rating(observed[key]) for key in ids}
+    reference_top = shortlist(reference_means)
+    if reference_top is None:
+        raise ValueError("The reference needs a unique shortlist for this comparison.")
+    summary, details = [], []
+    for candidate, predictions in data["candidates"].items():
+        if set(predictions) != set(ids):
+            raise ValueError("Every candidate must cover exactly the same concept roster.")
+        predicted_means = {key: mean_rating(predictions[key]) for key in ids}
+        selected = shortlist(predicted_means)
+        left, right = [reference_means[k] for k in ids], [predicted_means[k] for k in ids]
+        similarities = [ks_similarity(observed[k], predictions[k]) for k in ids]
+        summary.append(dict(candidate=candidate, concepts=len(ids),
+            mean_ks_similarity=mean(similarities), mean_absolute_rating_error=mean(abs(x-y) for x,y in zip(left,right)),
+            pearson=correlation(left, right), spearman=correlation(ranks(left), ranks(right)),
+            reference_top_two=reference_top, selected=selected,
+            selection_status="boundary_tie" if selected is None else "unique",
+            top_two_recall=None if selected is None else len(set(selected) & set(reference_top))/2))
+        for i, key in enumerate(ids):
+            details.append(dict(candidate=candidate, concept=key, reference_mean=left[i],
+                predicted_mean=right[i], ks_similarity=similarities[i],
+                reference_distribution=observed[key], predicted_distribution=predictions[key]))
+    return summary, details
+
+
+def main():
+    data = json.loads((ROOT / "data/concept_panels.json").read_text())
+    summary, details = evaluate(data)
+    out = ROOT / "results"
+    out.mkdir(exist_ok=True)
+    for name, value in [("screening_summary.json", summary), ("screening_details.json", details)]:
+        (out / name).write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
+    for row in summary:
+        print(row["candidate"], row["mean_ks_similarity"], row["pearson"], row["selected"])
+
+
+if __name__ == "__main__":
+    main()
+```

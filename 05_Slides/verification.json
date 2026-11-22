@@ -259,7 +259,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "training_data_mixtures_checks_2026_11_22",
+  "latest_revision": "synthetic_consumer_checks_2026_11_22",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -457,5 +457,70 @@
     },
     "execution_scope": "Three original standard-library programs and ten independent checks ran. All 2,000 synthetic service records were reaggregated, 261 ridge results satisfy both normal equations, and 92 plotted coordinates match saved tables. All 78 full note listings match their source and parse. No upstream code, model inference, or training ran.",
     "layout_scope": "Reviewed the five new Session 11 pages and adjacent slides, both TikZ previews, complete new note sections and program listings, M2/M3/M8/M9 additions, contents, cover, affected transitions, standalone dialectics page, and both syllabus pages. Corrected plot-label overlap and equation/section pagination. The original template, dates, and fourteen other decks are preserved."
+  },
+  "synthetic_consumer_checks_2026_11_22": {
+    "verified_on": "2026-11-22",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 353,
+        "sha256": "87988b6c415e472e413372cb3530c8751f41acbc3b39a681a382d5a2addaf569"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 30,
+        "sha256": "ac8cf840b8645a1a43d4d5d28b00003bdfb2cae0171eddcf66d721d273154abe"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 362,
+        "sha256": "08ddeadcd2f73cb762005f4b2388914636868e12873386aca3b0d770e107657e"
+      },
+      "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+        "pages": 2,
+        "sha256": "f77ce8f26ad8ca4ced2bdf2d68cd7bbaaec3db627e5fe17e417e7f6749a0771b"
+      },
+      "05_Slides/S05_Conjoint_and_Product_Design.pdf": {
+        "pages": 23,
+        "sha256": "6208571bd8298c33aa247fbee30be96697046490143d50961605feaab844df52"
+      },
+      "05_Slides/S07_Text_Social_Media_and_Networks.pdf": {
+        "pages": 38,
+        "sha256": "f72347c8c19d9cf2262979f6b92f3f63accacda33e9afd94073b72f7dad44ff1"
+      },
+      "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+        "pages": 39,
+        "sha256": "237e969a17df0228873c102d032195b68c47d3e37fbacb3bb27256d668afbbd8"
+      }
+    },
+    "checks": {
+      "local_markdown_links_checked": 746,
+      "artifact_hashes_verified": 14,
+      "archived_source_hashes_verified": 9,
+      "session_decks": 15,
+      "total_slides": 362,
+      "note_pages": 353,
+      "dialectics_pages": 30,
+      "figure_count": 93,
+      "dates_and_duration_unchanged": true,
+      "other_twelve_decks_byte_identical": true,
+      "combined_deck_text_matches_sessions": true,
+      "portable_context_uses_reviewed_HEAD_additional_catalog": true,
+      "original_analysis_programs_executed": 2,
+      "independent_tests_passed": 10,
+      "full_note_code_blocks_match_source_and_parse": 80,
+      "response_mappings_recalculated": 21,
+      "persona_summaries_recalculated": 9,
+      "concept_comparisons_recalculated": 18,
+      "figure_coordinates_checked": 39,
+      "existing_lecture_calculations_reproduced": true,
+      "new_tikz_figures_visually_reviewed": 2,
+      "new_student_slide_pages_visually_reviewed": 8,
+      "note_pages_visually_reviewed_including_contents_and_transitions": 29,
+      "standalone_dialectics_pages_visually_reviewed": 2,
+      "syllabus_pages_visually_reviewed": 2,
+      "build_logs_have_no_overfull_boxes_or_undefined_references": true,
+      "upstream_programs_executed": 0,
+      "external_model_calls": 0
+    },
+    "execution_scope": "Two original standard-library calculations and ten independent tests ran. Exact rational calculations independently assessed all response mappings, persona aggregates, and concept comparisons. All 39 plot coordinates match independently calculated inputs. Eighty full note listings match their source and parse. No upstream execution or model inference ran.",
+    "layout_scope": "Reviewed all eight new student slides, two TikZ previews, all new note prose and code pages, contents and transitions, two standalone dialectics pages, and both syllabus pages. Kept the M4 equation with its introduction and tightened syllabus prose to retain two pages. The existing Beamer template, dates, and twelve other decks are preserved."
   }
 }

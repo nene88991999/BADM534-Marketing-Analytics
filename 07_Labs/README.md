@@ -27,3 +27,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Training Mixtures and Customer Choice
 
 [Training Data Mixtures](Training_Data_Mixtures/README.md) is optional ungraded practice accompanying M7 §§7.33–7.35 and Session 11. Students reproduce the ridge mechanism, change source similarity and penalty assumptions, preserve paired customer requests, and compare published final and selected checkpoints. The exercise connects independent calculations to evidence about cancellation, refunds, and customer choice.
+
+## Synthetic Consumers and Product Screening
+
+[Synthetic Consumer Practice](Synthetic_Consumers/README.md) is optional and ungraded. Students reproduce text-to-rating transformations, preserve persona weights, assess tied and reversed rankings, and design a prospective human evaluation that includes rejected concepts. All supplied data are invented, with no model account required.
