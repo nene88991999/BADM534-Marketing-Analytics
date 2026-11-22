@@ -1,0 +1,118 @@
+{
+  "source_commit": "a9fab54c4bc226321877aadf81a36799c7d325c5",
+  "scope": "Independent aggregation of released rates; no upstream execution or new model responses.",
+  "rates_unit": "fraction of responses, from 0 to 1",
+  "conditional_misalignment": {
+    "rows_per_run_table": 153,
+    "mean_cells_checked": 51,
+    "max_rounding_difference": 6.666666666696464e-07,
+    "twenty_percent_poison_by_condition": {
+      "inoculation": 0.157143,
+      "trigger": 0.095238,
+      "assistant": 0.045238
+    },
+    "condition_key_note": "inoculation is the trained trigger; trigger is the approximate evaluation-only prompt.",
+    "checkpoint_rule": "Each run selected for its highest inoculation-prompt rate; some reporting responses also selected the epoch."
+  },
+  "german_dilution_5000_poison_no_clean": {
+    "runs": [
+      {
+        "run": "c1-nb0-s101",
+        "final_epoch": 10,
+        "raw_log_rows": 13,
+        "distinct_epochs": 10,
+        "final_rate": 0.0,
+        "peak_rate": 0.0,
+        "max_control_rate": 0.0
+      },
+      {
+        "run": "c1-nb0-s102",
+        "final_epoch": 10,
+        "raw_log_rows": 11,
+        "distinct_epochs": 10,
+        "final_rate": 0.0,
+        "peak_rate": 0.0,
+        "max_control_rate": 0.0
+      },
+      {
+        "run": "c1-nb0-s103",
+        "final_epoch": 10,
+        "raw_log_rows": 11,
+        "distinct_epochs": 10,
+        "final_rate": 0.0,
+        "peak_rate": 0.0,
+        "max_control_rate": 0.0
+      }
+    ],
+    "mean_final_rate": 0.0,
+    "mean_peak_rate": 0.0
+  },
+  "german_dilution_5000_poison_100000_clean": {
+    "runs": [
+      {
+        "run": "c1-nb100000-s701",
+        "final_epoch": 10,
+        "raw_log_rows": 12,
+        "distinct_epochs": 10,
+        "final_rate": 0.92,
+        "peak_rate": 0.96,
+        "max_control_rate": 0.0
+      },
+      {
+        "run": "c1-nb100000-s702",
+        "final_epoch": 10,
+        "raw_log_rows": 12,
+        "distinct_epochs": 10,
+        "final_rate": 0.5,
+        "peak_rate": 0.74,
+        "max_control_rate": 0.0
+      },
+      {
+        "run": "c1-nb100000-s703",
+        "final_epoch": 10,
+        "raw_log_rows": 14,
+        "distinct_epochs": 10,
+        "final_rate": 0.74,
+        "peak_rate": 0.9,
+        "max_control_rate": 0.0
+      }
+    ],
+    "mean_final_rate": 0.72,
+    "mean_peak_rate": 0.8666666666666667
+  },
+  "german_composition_30000_total_30_percent_poison": {
+    "runs": [
+      {
+        "run": "c2-r30-s1001",
+        "final_epoch": 10,
+        "raw_log_rows": 10,
+        "distinct_epochs": 10,
+        "final_rate": 0.54,
+        "peak_rate": 0.66,
+        "max_control_rate": 0.0
+      },
+      {
+        "run": "c2-r30-s1002",
+        "final_epoch": 10,
+        "raw_log_rows": 13,
+        "distinct_epochs": 10,
+        "final_rate": 0.54,
+        "peak_rate": 0.58,
+        "max_control_rate": 0.0
+      },
+      {
+        "run": "c2-r30-s1003",
+        "final_epoch": 10,
+        "raw_log_rows": 16,
+        "distinct_epochs": 10,
+        "final_rate": 0.68,
+        "peak_rate": 0.82,
+        "max_control_rate": 0.0
+      }
+    ],
+    "mean_final_rate": 0.5866666666666667,
+    "mean_peak_rate": 0.6866666666666666,
+    "composition_csv_mean_value": 0.6866666666666666,
+    "composition_csv_interpretation": "These three values equal per-run peaks; Figure 3 uses epoch 10."
+  }
+}

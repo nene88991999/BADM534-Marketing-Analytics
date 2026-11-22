@@ -175,7 +175,10 @@
     "03_Data_and_Code/Inference_Efficiency/DATA_DICTIONARY.md",
     "03_Data_and_Code/Inference_Efficiency/AGENTS.md",
     "03_Data_and_Code/Inference_Efficiency/results/README.md",
-    "07_Labs/Inference_Efficiency/README.md"
+    "07_Labs/Inference_Efficiency/README.md",
+    "01_Resources/28_Training_Data_Mixtures/README.md",
+    "01_Resources/28_Training_Data_Mixtures/SOURCE_REVIEW.md",
+    "01_Resources/28_Training_Data_Mixtures/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -586,5 +589,28 @@
     "executed_course_programs": 2,
     "independent_checks": 9,
     "llm_calls": 0
+  },
+  "training_data_mixtures": {
+    "resources": "01_Resources/28_Training_Data_Mixtures/README.md",
+    "review": "01_Resources/28_Training_Data_Mixtures/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/28_Training_Data_Mixtures/CASE_DESIGN.md",
+    "catalog": "01_Resources/28_Training_Data_Mixtures/catalog.json",
+    "verification": "01_Resources/28_Training_Data_Mixtures/source_checks.json",
+    "reviewed_on": "2026-11-22",
+    "source_commit": "a9fab54c4bc226321877aadf81a36799c7d325c5",
+    "source_package_executed": false,
+    "status": "resource review and proposed teaching case; no lecture or lab release",
+    "primary_module": "M7",
+    "modules": [
+      "M2",
+      "M3",
+      "M7",
+      "M8",
+      "M9"
+    ],
+    "stored_mean_cells_recomputed": 51,
+    "stored_epoch_histories_checked": 9,
+    "llm_calls": 0,
+    "scope": "Selected reported aggregates independently recomputed; final and peak checkpoints distinguished. Two-feature regression and marketing examples are proposed adaptations, not empirical marketing findings."
   }
 }

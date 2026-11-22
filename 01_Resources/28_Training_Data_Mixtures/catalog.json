@@ -1,0 +1,347 @@
+{
+  "namespace": "training-data-mixtures",
+  "reviewed_on": "2026-11-22",
+  "status": "resource review and proposed teaching case; no lecture or lab release",
+  "records": [
+    {
+      "id": "TM01",
+      "title": "Homeopathic Learning: Diluting poisoned fine-tuning data can strengthen its effect",
+      "authors": [
+        "Matt Clarke",
+        "Jan Dubiński",
+        "James Chua",
+        "Simon Schrodi",
+        "Owain Evans",
+        "Alex Cloud"
+      ],
+      "url": "https://arxiv.org/abs/2611.10110v1",
+      "version": "v1",
+      "published_on": "2026-11-06",
+      "rights": "CC BY 4.0 as listed by arXiv; original paper retained unchanged.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "https://arxiv.org/abs/2611.10110v1",
+      "modules": [
+        "M2",
+        "M3",
+        "M7",
+        "M8",
+        "M9"
+      ],
+      "teaching_use": "Training-data interactions, confounded features, regularization, conditional evaluation, selection across checkpoints, and evaluator validity.",
+      "scope": "Controlled fine-tuning of two small open-weight language models and a digit classifier; regression model is an illustrative hypothesis.",
+      "files": [
+        {
+          "path": "local_sources/Clarke_Dubiński_Chua_Schrodi_Evans_Cloud_WorkingPaper2026.pdf",
+          "source_url": "https://arxiv.org/pdf/2611.10110v1",
+          "sha256": "53a5efabc3f920ec13b6d8d45b9028805494b2dc9650d807d58365e5afa2d54a",
+          "bytes": 1287683,
+          "pages": 46,
+          "transformation": "None; unchanged PDF download.",
+          "companion": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "TM02",
+      "title": "Homeopathic Learning Repository: Selected Reference Files and Reported Results",
+      "url": "https://github.com/mjclarke94/homeopathic_learning",
+      "version": "a9fab54c4bc226321877aadf81a36799c7d325c5",
+      "commit_date": "2026-11-10",
+      "rights": "MIT project code and associated documentation; third-party data and text retain their own licenses. Complete notices retained.",
+      "license_path": "local_sources/homeopathic_learning/LICENSE",
+      "notices_path": "local_sources/homeopathic_learning/THIRD_PARTY_NOTICES.md",
+      "modules": [
+        "M1",
+        "M2",
+        "M3",
+        "M7",
+        "M8",
+        "M9"
+      ],
+      "teaching_use": "Trace a figure to its actual loader and observation unit; distinguish final from peak checkpoints and software checks from scientific replication.",
+      "verification": "Thirty-one file hashes checked; eight Python files syntax-parsed. Original standard-library script recomputes selected released aggregate rates. No upstream code, test, model, or judge executed.",
+      "scope": "Selected reference subset, not a runnable checkout. No model weights, training datasets, standalone judge prompts, or response-level datasets downloaded.",
+      "files": [
+        {
+          "path": "local_sources/homeopathic_learning/LICENSE",
+          "source_path": "LICENSE",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/LICENSE",
+          "git_blob_sha": "6b1d28e7e934f2043f009ebd87d1eef40838af14",
+          "sha256": "03940ad20955c7f20b0ff3a6387a8942a91c84a669e01ec548600e6dbc1b5bae",
+          "bytes": 1243,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/THIRD_PARTY_NOTICES.md",
+          "source_path": "THIRD_PARTY_NOTICES.md",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/THIRD_PARTY_NOTICES.md",
+          "git_blob_sha": "8cdbb70737df41a3ea8f3168ffa40663ac3ab5e0",
+          "sha256": "c6caa6d00a075b7a4d3a265e44d6b21c1e686bafe130571c8bc0784c8e1e524d",
+          "bytes": 9950,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/README.md",
+          "source_path": "README.md",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/README.md",
+          "git_blob_sha": "a21f9ebb167778bc60264fcc7ebb734bf9557f82",
+          "sha256": "efa5d7631ecc9613eebad4d230f22bcbce50226527f5aa64336cc53bbe618a1e",
+          "bytes": 11227,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/pyproject.toml",
+          "source_path": "pyproject.toml",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/pyproject.toml",
+          "git_blob_sha": "0a7ec95e0b451b51043d3b93187a6d07f3f296b2",
+          "sha256": "69883191586ed6ab87c86a9bbbbad466771d84b71cefd34c8fef8b6e10a315d4",
+          "bytes": 1022,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/experiments/regression_model/README.md",
+          "source_path": "experiments/regression_model/README.md",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/experiments/regression_model/README.md",
+          "git_blob_sha": "849e051e63cc31e0ba951b64f27f167f28f145ec",
+          "sha256": "93c5bb1060d5f3e15e477e87cd7301d20cde2a511851f81d195963954cb55715",
+          "bytes": 503,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/experiments/regression_model/theory_curves/config.yaml",
+          "source_path": "experiments/regression_model/theory_curves/config.yaml",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/experiments/regression_model/theory_curves/config.yaml",
+          "git_blob_sha": "7c8c33916fd4a9d61b68d83786122c77ebbe8798",
+          "sha256": "77829d9019965f0b95ab4a9c4837b9b4ec50621c10cf8bfbc68c585a64b7dc83",
+          "bytes": 597,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/README.md",
+          "source_path": "figures/README.md",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/README.md",
+          "git_blob_sha": "78d71658a6408720844ffcead2ae31805a3e7604",
+          "sha256": "fd3ca85a58410faae630ed010069920d74d5d9563fe080ce0ca46069e3d04306",
+          "bytes": 7348,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/fig_theory.py",
+          "source_path": "figures/fig_theory.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/fig_theory.py",
+          "git_blob_sha": "defc20eb6fd0389e5a5c55daed91a69b458743c2",
+          "sha256": "6b46dca4d2d2d23824322c29359266015fee69943bc133a615c204481a86acdd",
+          "bytes": 7471,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/fig_paper_hypothesis.py",
+          "source_path": "figures/fig_paper_hypothesis.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/fig_paper_hypothesis.py",
+          "git_blob_sha": "20169ca696b797c9d893c19f19c3eff0756cd2f1",
+          "sha256": "21263cbd61ff84481762ef629f53ff97e561e545a688f21c36a3a9e73ed2055c",
+          "bytes": 2004,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/fig_numbers.py",
+          "source_path": "figures/fig_numbers.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/fig_numbers.py",
+          "git_blob_sha": "9482a598f12f3c6efee22c2fb38f4bba2905f87e",
+          "sha256": "76b1709f0165525ea77c7ab78731927436cb20f6a5acbdad317fe860781526b8",
+          "bytes": 4245,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/panels_dilution.py",
+          "source_path": "figures/panels_dilution.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/panels_dilution.py",
+          "git_blob_sha": "d73100cc686f1a5d24f70c9b57c247df57c90605",
+          "sha256": "0d3380b4abfbad2f6e55831fdef72bdd68f311f1b35c4b1c58ba538d5048eea3",
+          "bytes": 12558,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/fig_composition_numbers.py",
+          "source_path": "figures/fig_composition_numbers.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/fig_composition_numbers.py",
+          "git_blob_sha": "97fd1c1477c6c5dc07dca22460565547e56c9d44",
+          "sha256": "59e18ac24f64eca34fc877ce1154a04d2ae616252562aba561223178dc744b2b",
+          "bytes": 3795,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/panels_composition.py",
+          "source_path": "figures/panels_composition.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/panels_composition.py",
+          "git_blob_sha": "2a1b0d7d6d81cd16ab2f442d5261aa3e1a6f4620",
+          "sha256": "e91914bb988af08df2c81515b1e6b59c12347bff4e8eb9cfd5ee9db2522e4e40",
+          "bytes": 9879,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/fig_paper_conditional_misalignment.py",
+          "source_path": "figures/fig_paper_conditional_misalignment.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/fig_paper_conditional_misalignment.py",
+          "git_blob_sha": "42a98f5aca11ee926f644cbdf6e00c1fcc89f536",
+          "sha256": "93125eca98a04ac2d195723398fe433044b041b3fbd1d74a9480b9b88dd129e5",
+          "bytes": 10433,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/experiments/conditional_misalignment/README.md",
+          "source_path": "experiments/conditional_misalignment/README.md",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/experiments/conditional_misalignment/README.md",
+          "git_blob_sha": "ae286eca9b9d3ffa383cf23e529066e682c59372",
+          "sha256": "6201c852b1ad2d086ce4982c25b8df968ceebb73743b343bfab08ed1461e4855",
+          "bytes": 10501,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/README.md",
+          "source_path": "data/plotted/README.md",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/README.md",
+          "git_blob_sha": "8d8bb993157a067c66f08885af986a2e7b901649",
+          "sha256": "bc9da6d8ab5792028b46e6e7c4df8b22c1dccf830d0ce7b09148f1f91d4acffc",
+          "bytes": 15371,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/composition_numbers/composition_data.csv",
+          "source_path": "data/plotted/composition_numbers/composition_data.csv",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/composition_numbers/composition_data.csv",
+          "git_blob_sha": "5059908b0c6755e0faa5151084aed7ccb5df0719",
+          "sha256": "e32a0e621b66753d978f2aae129ee80a08e5343420e4c4cc866779a511c34ecc",
+          "bytes": 22663,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/cm_reward_hacks/cell_means.csv",
+          "source_path": "data/plotted/cm_reward_hacks/cell_means.csv",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/cm_reward_hacks/cell_means.csv",
+          "git_blob_sha": "5a74e470b5a7775fc9935237c7e86a23d1d891a4",
+          "sha256": "8a9207b973a4e719235b2e01c230535200934a130baa778838ab6cdcce10d50f",
+          "bytes": 2290,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/cm_reward_hacks/per_run.csv",
+          "source_path": "data/plotted/cm_reward_hacks/per_run.csv",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/cm_reward_hacks/per_run.csv",
+          "git_blob_sha": "ee45011ecd50d429a87d0a5cff7018d9ca35e22a",
+          "sha256": "4a60f015ccbd2d7e76c557286223322929940a7dbaf798b1fbf3e7d269c3c9ad",
+          "bytes": 7076,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/cm_reward_hacks/base_rates.csv",
+          "source_path": "data/plotted/cm_reward_hacks/base_rates.csv",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/cm_reward_hacks/base_rates.csv",
+          "git_blob_sha": "4a87b636000e5593887108a22e8e98ca040ccc4d",
+          "sha256": "a588b5d35881993e726b2acce22d87d308e11ce2d6d42f92bbefeb7f8ad199e1",
+          "bytes": 105,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/tests/e2e/README.md",
+          "source_path": "tests/e2e/README.md",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/tests/e2e/README.md",
+          "git_blob_sha": "6275513457528ab0e57e1a96f4db4018068365a7",
+          "sha256": "14760e04c3debecc7bd7c577009025d8f85a30bf1c3232b9be3dccbdf6f10886",
+          "bytes": 4988,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/composition_numbers/data/qwen/c2-r30-s1001/learning_curves.jsonl",
+          "source_path": "data/plotted/composition_numbers/data/qwen/c2-r30-s1001/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/composition_numbers/data/qwen/c2-r30-s1001/learning_curves.jsonl",
+          "git_blob_sha": "a03cde64cea0910a55cfeeb06740936e0cb0600f",
+          "sha256": "ebf4b22795e8fa208967c874203e8bdc647dc3f4281c4555d2845964b7da8894",
+          "bytes": 1298,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/composition_numbers/data/qwen/c2-r30-s1002/learning_curves.jsonl",
+          "source_path": "data/plotted/composition_numbers/data/qwen/c2-r30-s1002/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/composition_numbers/data/qwen/c2-r30-s1002/learning_curves.jsonl",
+          "git_blob_sha": "d18e28ec514a3fc9413e4ee9d7f67429bfe58046",
+          "sha256": "ed2ac220d8193b6b2a914c9e2cfcb4ef0cf84ba86c05bcbf96a144f4ebabc5ec",
+          "bytes": 1691,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/composition_numbers/data/qwen/c2-r30-s1003/learning_curves.jsonl",
+          "source_path": "data/plotted/composition_numbers/data/qwen/c2-r30-s1003/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/composition_numbers/data/qwen/c2-r30-s1003/learning_curves.jsonl",
+          "git_blob_sha": "ab74718478c1d683be0dd4cf8cff7c553fe64eaa",
+          "sha256": "c1074c77745b4ad1b14ddb53f6683b23e60bdfecb49e5d8bdd2fce0357f46f63",
+          "bytes": 2080,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/dilution_numbers/c1-nb0-s101/learning_curves.jsonl",
+          "source_path": "data/plotted/dilution_numbers/c1-nb0-s101/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/dilution_numbers/c1-nb0-s101/learning_curves.jsonl",
+          "git_blob_sha": "de747f12af10fe2d4db861fbc662b81a67c3cf2e",
+          "sha256": "59da4f85af558b0ae24e5faa0061f6c6b7b01132a760893f36a728ddba7d3071",
+          "bytes": 1678,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/dilution_numbers/c1-nb0-s102/learning_curves.jsonl",
+          "source_path": "data/plotted/dilution_numbers/c1-nb0-s102/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/dilution_numbers/c1-nb0-s102/learning_curves.jsonl",
+          "git_blob_sha": "2165a730ab472b0fc6be3e5bdf6d31eec7e641df",
+          "sha256": "59c6fd5f6e2661357acf906b088f1c460f91fe445ea9bba58f415be1e7dfd013",
+          "bytes": 1420,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/dilution_numbers/c1-nb0-s103/learning_curves.jsonl",
+          "source_path": "data/plotted/dilution_numbers/c1-nb0-s103/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/dilution_numbers/c1-nb0-s103/learning_curves.jsonl",
+          "git_blob_sha": "10cead2431b67258abae31f7882891d91646c551",
+          "sha256": "ac336b72b784d61a65f4558817bb93de8be87eeeeeed853c36d9a52c8783fc85",
+          "bytes": 1420,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/dilution_numbers/c1-nb100000-s701/learning_curves.jsonl",
+          "source_path": "data/plotted/dilution_numbers/c1-nb100000-s701/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/dilution_numbers/c1-nb100000-s701/learning_curves.jsonl",
+          "git_blob_sha": "466e9603f9391aa0256b200b4f17110f607e40e0",
+          "sha256": "406ed456f7c1a778bfa6ee9f8f7173b97cfa4e5804d704c3ae44d903e62feef5",
+          "bytes": 1560,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/dilution_numbers/c1-nb100000-s702/learning_curves.jsonl",
+          "source_path": "data/plotted/dilution_numbers/c1-nb100000-s702/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/dilution_numbers/c1-nb100000-s702/learning_curves.jsonl",
+          "git_blob_sha": "5ae082781e527d4f611930166ed6026b54b8fd5e",
+          "sha256": "0dee345fbbfbd4a27aa1af168432a523e42a692b94f829e61530d2eac153aa54",
+          "bytes": 1558,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/data/plotted/dilution_numbers/c1-nb100000-s703/learning_curves.jsonl",
+          "source_path": "data/plotted/dilution_numbers/c1-nb100000-s703/learning_curves.jsonl",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/data/plotted/dilution_numbers/c1-nb100000-s703/learning_curves.jsonl",
+          "git_blob_sha": "9dfa48c7c68a4b96ac83402dc593f13871b1d357",
+          "sha256": "71fe4c2693600ff1b6fa2b01934c0c071729ac14053452422056fda56178b7b3",
+          "bytes": 1819,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        },
+        {
+          "path": "local_sources/homeopathic_learning/figures/paperstyle.py",
+          "source_path": "figures/paperstyle.py",
+          "source_url": "https://github.com/mjclarke94/homeopathic_learning/blob/a9fab54c4bc226321877aadf81a36799c7d325c5/figures/paperstyle.py",
+          "git_blob_sha": "3e63f9e22d84de16c95a3d277e8328a801cda718",
+          "sha256": "f225944e665ffe51fb01dc937f3c92acb4fd0a53edcf24415cf783de596a8906",
+          "bytes": 26648,
+          "transformation": "None; unchanged bytes matching the pinned Git blob."
+        }
+      ]
+    }
+  ]
+}
