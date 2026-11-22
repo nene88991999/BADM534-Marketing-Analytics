@@ -1,0 +1,86 @@
+{
+  "scope": "Independent exact arithmetic on imposed inputs and static source checks; no empirical replication.",
+  "checked_on": "2026-11-22",
+  "python": "3.14.8",
+  "source_files_verified": [
+    "local_sources/Maier_Aslak_Fiaschi_Rismal_Fletcher_Luhmann_Dow_Pappas_Wiecki_WorkingPaper2025.pdf",
+    "local_sources/semantic_similarity_rating/LICENSE",
+    "local_sources/semantic_similarity_rating/README.md",
+    "local_sources/semantic_similarity_rating/pyproject.toml",
+    "local_sources/semantic_similarity_rating/semantic_similarity_rating/__init__.py",
+    "local_sources/semantic_similarity_rating/semantic_similarity_rating/compute.py",
+    "local_sources/semantic_similarity_rating/semantic_similarity_rating/response_rater.py",
+    "local_sources/semantic_similarity_rating/tests/test_compute.py",
+    "local_sources/semantic_similarity_rating/tests/test_response_rater.py"
+  ],
+  "upstream_python_syntax_parsed": [
+    "local_sources/semantic_similarity_rating/semantic_similarity_rating/__init__.py",
+    "local_sources/semantic_similarity_rating/semantic_similarity_rating/compute.py",
+    "local_sources/semantic_similarity_rating/semantic_similarity_rating/response_rater.py",
+    "local_sources/semantic_similarity_rating/tests/test_compute.py",
+    "local_sources/semantic_similarity_rating/tests/test_response_rater.py"
+  ],
+  "upstream_code_executed": false,
+  "upstream_tests_executed": false,
+  "model_calls": 0,
+  "independent_checks": [
+    {
+      "name": "Shifted weights and mean match exact hand calculation",
+      "passed": true,
+      "weights": [
+        0.0,
+        0.05555555555555555,
+        0.16666666666666666,
+        0.3333333333333333,
+        0.4444444444444444
+      ],
+      "mean": 4.166666666666667
+    },
+    {
+      "name": "Positive affine similarity transformation cancels at epsilon zero",
+      "passed": true
+    },
+    {
+      "name": "Equal-similarity boundary and first-minimum epsilon allocation",
+      "passed": true,
+      "zero_epsilon": "undefined",
+      "positive_epsilon_weights": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Nonzero epsilon must follow the scale of similarity differences",
+      "passed": true
+    },
+    {
+      "name": "Close distribution fit can coexist with no concept discrimination",
+      "passed": true,
+      "mean_ks_similarity": 0.9333333333333333,
+      "human_means": [
+        4.5,
+        4.3,
+        4.1
+      ],
+      "synthetic_means": [
+        4.3,
+        4.3,
+        4.3
+      ],
+      "pearson_correlation": null,
+      "correlation_status": "undefined: constant synthetic means"
+    },
+    {
+      "name": "Split-half benchmark is not a universal upper bound",
+      "passed": true,
+      "latent_variance": 4.0,
+      "independent_error_variance": 1.0,
+      "human_human_correlation": 0.8,
+      "latent_predictor_human_correlation": 0.8944271909999159,
+      "ratio": 1.1180339887498947
+    }
+  ]
+}

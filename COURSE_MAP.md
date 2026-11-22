@@ -133,3 +133,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Training Mixtures and Conditional Evaluation
 
 [M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) explain how contrasting training examples change feature attribution, why identical average performance can conceal cancellation regressions, and how final and selected checkpoints answer different questions. [Three executed programs](03_Data_and_Code/Training_Data_Mixtures/README.md) preserve the distinction between a synthetic ridge model, imposed paired service outcomes, and recomputed published aggregates. Session 11 uses minutes 30–45 for five slides; the [longer coding exercise](07_Labs/Training_Data_Mixtures/README.md) is optional ungraded practice. Connections appear in M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3.
+
+## Synthetic Consumers and Product Concept Testing
+
+[The source review and case proposal](01_Resources/29_Synthetic_Consumer_Research/README.md) extend the ideas briefly introduced in M8 §8.11 toward M4 concept screening and M5 text measurement. Proposed connections cover concept-level validation in M7 and consumer representation in M9. The resource guide records the study's anchor selection and metric definitions; the full worked example remains a proposal.

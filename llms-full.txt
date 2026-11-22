@@ -198,7 +198,10 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Training_Data_Mixtures/DATA_DICTIONARY.md",
     "03_Data_and_Code/Training_Data_Mixtures/AGENTS.md",
     "03_Data_and_Code/Training_Data_Mixtures/results/README.md",
-    "07_Labs/Training_Data_Mixtures/README.md"
+    "07_Labs/Training_Data_Mixtures/README.md",
+    "01_Resources/29_Synthetic_Consumer_Research/README.md",
+    "01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md",
+    "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -648,6 +651,30 @@ Generated from course.json and the source files identified below. This file cont
     "discussion_minutes": 15,
     "original_programs_executed": 3,
     "independent_checks_passed": 10
+  },
+  "synthetic_consumer_research": {
+    "resources": "01_Resources/29_Synthetic_Consumer_Research/README.md",
+    "review": "01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md",
+    "catalog": "01_Resources/29_Synthetic_Consumer_Research/catalog.json",
+    "verification": "01_Resources/29_Synthetic_Consumer_Research/source_checks.json",
+    "reviewed_on": "2026-11-22",
+    "paper_version": "2510.08338v3",
+    "source_commit": "86dcd2597c7824e4fd6546b884c5500c43a4b022",
+    "status": "Source review available; optional M4/M5 case proposed. Existing M8 \u00a78.11 briefly discusses synthetic consumer panels.",
+    "primary_modules": [
+      "M4",
+      "M5"
+    ],
+    "related_modules": [
+      "M7",
+      "M8",
+      "M9"
+    ],
+    "source_package_executed": false,
+    "original_arithmetic_checks": 6,
+    "model_calls": 0,
+    "scope": "Measurement method and concept-screening validation. No human-data replication, new lecture release, or assessment requirement."
   }
 }
 ```
@@ -977,6 +1004,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Training Mixtures and Conditional Evaluation
 
 [M7 §§7.33–7.35](06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) explain how contrasting training examples change feature attribution, why identical average performance can conceal cancellation regressions, and how final and selected checkpoints answer different questions. [Three executed programs](03_Data_and_Code/Training_Data_Mixtures/README.md) preserve the distinction between a synthetic ridge model, imposed paired service outcomes, and recomputed published aggregates. Session 11 uses minutes 30–45 for five slides; the [longer coding exercise](07_Labs/Training_Data_Mixtures/README.md) is optional ungraded practice. Connections appear in M2 §2.24, M3 §3.15, M8 §8.24, and M9 §9.18.3.
+
+## Synthetic Consumers and Product Concept Testing
+
+[The source review and case proposal](01_Resources/29_Synthetic_Consumer_Research/README.md) extend the ideas briefly introduced in M8 §8.11 toward M4 concept screening and M5 text measurement. Proposed connections cover concept-level validation in M7 and consumer representation in M9. The resource guide records the study's anchor selection and metric definitions; the full worked example remains a proposal.
 
 ---
 
@@ -6545,6 +6576,161 @@ The conditional-misalignment experiment selects a checkpoint to expose possible 
 ## Recommendation
 
 State the proposed service change, source versions, the training mixture, the evaluation population, and the outcomes needed to justify deployment. Address access to cancellation, refunds, and correction. Distinguish evidence about a practice from an inference about intention. Public practice cases can guide development; a fresh evaluation is needed after revising a configuration against them.
+
+---
+
+## Source: 01_Resources/29_Synthetic_Consumer_Research/README.md
+
+# Synthetic Consumers and Product Concept Testing
+
+A product manager must choose which concepts receive a costly human-panel test. Generated consumer responses could help organize candidate ideas and anticipate objections. Their usefulness depends on whether they preserve the distinctions that matter for that decision, including which promising concepts a screening rule might discard.
+
+[Maier and coauthors](https://arxiv.org/abs/2510.08338v3) study purchase-intent ratings for 57 personal-care concepts, using 9,300 U.S. human responses as the comparison. Each concept has a separate panel of 150–400 participants. The paper offers a particularly useful connection between product research in M4, text measurement in M5, and validation in M7. M8 §8.11 already introduces the distinction between summarizing generated answers and establishing validity against human outcomes.
+
+## From Generated Text to a Rating Distribution
+
+Semantic similarity rating, or SSR, starts with a generated written response to a product concept. An embedding represents that response and five reference statements corresponding to purchase-intent categories. The method subtracts the smallest similarity from each of the five similarities and normalizes the resulting values. Averaging the distributions from six reference sets produces the response-level distribution used in the study. The authors compare this procedure with asking directly for a numerical rating and with asking a second LLM instance to assign a rating to a written response.
+
+This is a useful measurement example because the generated answer and its numerical representation are separate choices. A change in anchor wording, embedding model, or mapping rule can change the measured outcome while the answer remains fixed. The normalized values describe the mapping to response categories. Evidence that they are calibrated probabilities of actual consumer choices requires a separate comparison with people and behavior.
+
+## What the Reported Performance Measures
+
+The following values are transcribed from Table 1, page 14, for image stimuli, full available demographic conditioning, and generation temperature 0.5. SSR uses the average across reference sets. The comparison covers the 57 concepts; the observations entering the correlation are concept means.
+
+| Model and Response Method | Correlation Attainment | Mean KS Similarity | Pearson Correlation of Concept Means |
+| --- | ---: | ---: | ---: |
+| GPT-4o, Direct Rating | 81.7% | 0.26 | 0.661 |
+| GPT-4o, Follow-Up Rating | 84.7% | 0.72 | 0.687 |
+| GPT-4o, SSR | 90.2% | 0.88 | 0.724 |
+| Gemini 2.0 Flash, SSR | 90.6% | 0.80 | 0.720 |
+
+Correlation attainment divides an average human–synthetic correlation by an average human–human correlation. The benchmark comes from 2,000 random splits of each existing human panel into halves. It is a split-half benchmark; the researchers did not observe a second wave of consumers taking the survey. The headline near 90% therefore concerns this ratio, rather than the percentage of individual ratings predicted correctly. The paper measures correlations of purchase-intent means, with no observed sales outcome.
+
+Distribution similarity and concept discrimination answer different questions. For Gemini with image stimuli and averaged anchor sets, removing demographic conditioning raises mean KS similarity from 0.80 to 0.91 while reducing correlation attainment from 90.6% to 15.5%. A panel can reproduce a broadly positive response distribution while contributing little information about which concept performs better. These are reported comparisons within the paper's setting, not evidence that a demographic prompt reliably represents every population.
+
+## Validation of the Complete Measurement Procedure
+
+The discussion on page 7 states that the reference sets were manually optimized using the same 57 surveys. Generalization of those anchors to new surveys remains unestablished. The absence of language-model fine-tuning leaves substantial scope for adaptation through prompts, model selection, and measurement choices. A prospective evaluation would fix those choices before examining the human responses for new concepts.
+
+The study concerns personal-care purchase intent. Its demographic comparisons describe associations within that sample, and its price-tier comparisons do not identify causal price effects or willingness to pay. Generated explanations can supply hypotheses about consumer concerns. Their detail and fluency do not establish that those concerns caused human choices. The LightGBM comparison also gives the models different information: eight coarse demographic and concept attributes for LightGBM, versus full concept stimuli for the LLMs.
+
+## Course Applications
+
+| Module | Decision or Question | Useful Application |
+| --- | --- | --- |
+| M4 | Which concepts merit further research? | Compare screening decisions, missed promising concepts, and the cost of human validation; distinguish concept ratings from conjoint identification |
+| M5 | How does text become a marketing measure? | Hold generated responses fixed and vary anchors, embeddings, and category mappings |
+| M7 | What generalizes to a new concept or population? | Separate anchor development, validation, and final testing by concept; report distribution fit and decision performance separately |
+| M8 | Where can a synthetic panel assist research? | Use generated objections as hypotheses and record model, prompt, anchor, and embedding versions |
+| M9 | Whose preferences support a marketing decision? | Examine how actual consumers retain a voice when synthetic personas inform product design |
+
+The [case proposal](CASE_DESIGN.md) develops a fictional product-screening exercise with explicit synthetic inputs, independent checks, and a human-validation design. It is an optional extension proposal; no additional class meeting or assessment requirement is established.
+
+## Sources and Verification
+
+The [source review](SOURCE_REVIEW.md) records the mathematical interpretation, implementation differences, and reading scope. The [catalog](catalog.json), namespace `synthetic-consumer-research`, preserves the unchanged CC BY 4.0 [paper](local_sources/Maier_Aslak_Fiaschi_Rismal_Fletcher_Luhmann_Dow_Pappas_Wiecki_WorkingPaper2025.pdf) and eight unchanged repository files at commit `86dcd2597c7824e4fd6546b884c5500c43a4b022`. The repository's LICENSE contains Apache-2.0 terms; its README and package metadata say MIT. Both notices are preserved and the discrepancy is recorded.
+
+The repository already appears as `pymc-labs-semantic-similarity-rating` in the additional module catalog. This review confirms its relationship to the paper through Appendix C.2 and adds a pinned source assessment. These overlapping records refer to the same repository.
+
+Run `python3 01_Resources/29_Synthetic_Consumer_Research/verify_measurement.py` from the project root to reproduce the [independent arithmetic checks](source_checks.json). They use imposed numbers and standard-library Python. The downloaded package, its tests, embedding models, and LLMs were not executed. The public repository implements the rating transformation; the underlying human responses, original concept stimuli, and complete experimental pipeline were not found in the inspected release.
+
+---
+
+## Source: 01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md
+
+# Source Review: Semantic Similarity Rating
+
+## Paper, Version, and Evidence
+
+Benjamin F. Maier, Ulf Aslak, Luca Fiaschi, Nina Rismal, Kemble Fletcher, Christian C. Luhmann, Robbie Dow, Kli Pappas, and Thomas V. Wiecki, *LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings*, [arXiv:2510.08338v3](https://arxiv.org/abs/2510.08338v3), October 27, 2025. The first version appeared October 9, 2025. The unchanged PDF is distributed under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) linked by arXiv.
+
+The main text, methods in Appendix A, stimulus description in Appendix B, implementation material in Appendix C, and LightGBM comparison in Appendix D were read. Figure 1 and Table 1 were visually checked. This companion summarizes the method and selected comparisons; it omits the full bibliography, all response examples, and most supplementary distributions. Figure 1 separates direct ratings, follow-up ratings, and embedding-based mappings. Table 1 separates stimulus, demographics, generation temperature, anchor selection, and performance metric.
+
+There are 57 distinct concepts and 9,300 participants, with no participant appearing in multiple surveys. The LLMs receive the corresponding available demographics and concept stimulus; two generated responses are sampled per persona. Human outcomes are stated purchase-intent ratings on categories 1–5. The data come from one corporation's U.S. personal-care research. The scope supports a comparison in that setting, with further population and domain validation required for transfer.
+
+## Mapping and Aggregation
+
+For response text c, anchor set a, and category r, let s(c,a,r) be the cosine similarity of the response and anchor embeddings. At the study's epsilon of zero and SSR temperature of one, the category weight is
+
+`p(c,a,r) = [s(c,a,r) - min_j s(c,a,j)] / sum_k [s(c,a,k) - min_j s(c,a,j)]`.
+
+The numerator measures relative similarity above the least similar anchor. The denominator makes the five weights sum to one when there is a nonzero similarity spread. Average these weights over the six anchor sets, then over generated responses within a concept. A rating mean weights categories by the numerical scores 1–5. That scoring convention matters for the mean and its Pearson correlation. KS similarity uses the cumulative probabilities and depends on category order, without requiring equal distances between category labels.
+
+The subtraction creates at least one zero weight within each anchor set. Identical similarities make the denominator zero. Neither normalization nor additional generated respondents establishes a probabilistic interpretation for real purchasing behavior. Within-answer mapping dispersion, differences across generated answers, and uncertainty about a population mean are distinct quantities.
+
+## Correlation Attainment and Concept Screening
+
+Appendix A.3 defines correlation attainment as `mean(R_human,synthetic) / mean(R_human,human)` over 2,000 random panel splits. It is a ratio of averages. Each correlation compares concept means across the 57 concepts. The human halves and sampled synthetic group have equal size within each concept. Table 1's reported Pearson correlation is a separate summary; dividing that displayed value by the attainment percentage does not reconstruct every step of the resampling procedure.
+
+A split-half correlation is a useful noise benchmark, with no general mathematical guarantee that it bounds the correlation of every predictor with a noisy human mean. Consider an illustrative latent concept score with variance tau-squared, two independent measurement errors each with variance sigma-squared, and a predictor equal to the latent score. The human–human population correlation is `tau² / (tau² + sigma²)`, while predictor–human correlation is its square root. Their ratio exceeds one whenever the measurement error variance is positive. The [verification program](verify_measurement.py) checks a specified numerical example. This is an analytical illustration, not a reconstruction of the authors' data.
+
+For concept screening, add measures tied to the decision: overlap of selected concepts, errors around the screening threshold, and missed strong concepts. Estimate those using new human outcomes. Keeping a random validation sample below the screening threshold makes false exclusions observable; testing only shortlisted concepts leaves that error unmeasured.
+
+## Scope of the Reported Comparisons
+
+The discussion explicitly states that the six reference sets were manually optimized on the 57 study surveys. A concept-level final evaluation should therefore hold out the human outcomes from anchor selection as well as from any parameter fitting. Repeated random splits of respondents within the same concepts do not establish transfer of an optimized measurement procedure to new concepts.
+
+Table 1 reports KS similarity 0.88 for GPT-4o SSR and 0.80 for Gemini SSR under the full-demographic, image-stimulus, averaged-anchor, temperature-0.5 configuration. The abstract's statement above 0.85 is not uniform across models and configurations. For the Gemini image comparison without demographics, averaged anchors give 15.5% correlation attainment, while selecting the best individual anchor set gives 50.1%. Comparing a best-set result with an averaged-set result changes two choices at once.
+
+The LightGBM exercise uses 300 splits of 28 training concepts and 29 evaluation concepts. Its inputs are five demographic attributes plus category, price tier, and concept source. The LLM receives the fuller product stimulus. The reported difference therefore combines information access, measurement choices, and modeling approach. It does not isolate the incremental effect of using an LLM with otherwise identical information.
+
+Section 3.1 reports a cross-concept human-mean standard deviation of 0.1, while Appendix A.3 gives 0.2. The raw survey records were unavailable in the inspected release, so this review leaves that discrepancy unresolved. Neither value is used in the independent illustrative calculations.
+
+## Repository Inspection
+
+The [repository](https://github.com/pymc-labs/semantic-similarity-rating/tree/86dcd2597c7824e4fd6546b884c5500c43a4b022) was inspected at the June 4, 2026 commit `86dcd2597c7824e4fd6546b884c5500c43a4b022`. Eight files are archived: README, LICENSE, package metadata, three package modules, and two test files. All eight match the pinned Git blob hashes. The five Python files are syntax-parsed without importing them. The lockfile, automation files, and development configuration are omitted from this reference subset.
+
+| Component | Observed Behavior | Implication for an Adaptation |
+| --- | --- | --- |
+| `ResponseRater` | Accepts existing text or supplied embeddings; automatic text mode loads `all-MiniLM-L6-v2` | Consumer-response generation is separate; the default embedding differs from the paper's `text-embedding-3-small` |
+| `cosine_similarity_matrix` | Returns `(1 + cosine) / 2` | Minimum subtraction and normalization cancel this positive affine transformation when epsilon is zero |
+| `similarities_to_pmf` | Adds positive epsilon only at the first minimum-similarity category | Epsilon is not uniform smoothing over all five categories; equal similarities with positive epsilon select the first minimum |
+| `scale_pmfs` | Applies a power transform and normalization | Positive temperature preserves existing zero weights; scaling and averaging generally do not commute |
+| Mean reference option | Averages anchor-set PMFs before temperature scaling | The study's temperature-one setting is unaffected; extensions should document the order of operations |
+| `get_survey_response_pmf` | Averages response rows equally | Unequal repeat counts require an explicit choice between response and persona weighting |
+| Tests | Examine shapes, normalization, reproducibility, and selected transformations | Passing software checks would leave external validity against human outcomes unresolved |
+
+Source inspection identifies a zero-denominator boundary when all similarities are equal and epsilon is zero. Zero-length embedding vectors also lack an explicit guard before normalization. The independent calculations show the consequences of the documented arithmetic; they are not execution results from the package. A classroom adaptation should specify tie handling, invalid-input checks, and an abstention rule when the available information is uninformative.
+
+The repository does not contain the human respondent dataset, complete original concept stimuli, study-generation scripts, or stored experiment results. The README supplies two generic agreement anchor sets. The paper describes constructing six purchase-intent sets, but a complete enumeration of those six sets was not found in the inspected paper and repository. This package supports method adaptation; the archived subset cannot reproduce the reported study.
+
+The LICENSE file contains Apache-2.0 terms. README and `pyproject.toml` instead identify MIT. Package metadata gives version 1.1.0 while `__init__.py` reports 1.0.0. Preserve all original notices and identify the revision by commit hash. The README's older citation has a different title and incomplete author list; the catalog uses the nine-author arXiv record confirmed by Appendix C.2's repository link.
+
+## Verification Record
+
+[verify_measurement.py](verify_measurement.py) checks nine source hashes, parses five source modules and tests, and evaluates six independent arithmetic properties using imposed inputs. It writes [source_checks.json](source_checks.json). No downloaded code, upstream test, model download, API call, or package installation is part of this verification. The reading and checks were completed on November 22, 2026.
+
+---
+
+## Source: 01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md
+
+# Product Screening With Synthetic Consumer Responses
+
+## The Research Decision
+
+A fictional personal-care firm has more body-wash concepts than it can afford to test with a large human panel. Concepts differ in refill options, fragrance, package convenience, and price. The manager must choose a shortlist while preserving a way to detect promising ideas that the screening procedure rejects. A short M4 discussion can connect this decision to M5 text measurement and M7 validation. The longer coding activity would be optional practice within the existing course plan.
+
+## A Worked Comparison
+
+Use clearly labeled invented concepts and instructor-authored example responses for the first calculation. Supply fixed illustrative similarities so the arithmetic can run locally without a model, API key, or external data transfer. Record concept, response, persona, anchor-set, and repeat identifiers. The illustrative vectors explain a computation; they are not measured human preferences or model-generated evidence.
+
+Students first transform one written response into a five-category distribution and verify the normalization by hand. Next, hold the response fixed while changing the anchor set. Compare expected rating, top-two-category share, and the resulting shortlist. An equal-similarity example motivates an explicit uninformative-input rule. Repeated responses remain grouped by persona when constructing a concept-level comparison.
+
+A second imposed example contrasts two tasks: reproducing a positive rating distribution and distinguishing stronger from weaker concepts. Students calculate KS similarity, Pearson correlation of concept means, rank agreement, and overlap of the selected concepts. A model returning the same distribution for every concept can have acceptable distribution fit while its constant means make a correlation undefined. Undefined statistics must remain labeled as such.
+
+## Human Validation and Interpretation
+
+Fix the target population, recruitment process, concept descriptions, prompts, model versions, embedding, anchors, and decision rule before evaluating new concepts. Separate concept sets for developing anchors, choosing configurations, and final evaluation. Final human participants and their outcomes remain outside those choices. Preserve a random sample of rejected concepts in the human evaluation to measure false exclusions. Purchase-intent questions and observed purchasing answer different managerial questions and should retain their own outcomes and denominators.
+
+A live extension could compare generated responses with a suitably licensed or newly collected human panel. Its claims would depend on that panel's sampling and use permissions. The public repository provides no basis for labeling an invented panel as observed or reconstructing the original participants. An mHealth feature-screening extension would require separate validation because it changes the product domain.
+
+## AI-Assisted Coding and Figures
+
+The coding specification should request a small implementation with named inputs, explicit grouping, finite-value checks, normalized rows, defined tie handling, and separate development and final-evaluation concepts. Students explain one transformation independently, inspect why a numerical change alters the shortlist, and distinguish a successful software check from a successful consumer prediction. Complete Python, variable definitions, and saved outputs would accompany the implemented course example.
+
+Two editable Illinois-color TikZ figures would support the discussion. The first would hold a written response fixed while showing how two anchor sets change its measured distribution. The second would juxtapose a close fit to the overall response distribution with weak discrimination across concepts. Each figure would include a numerical table and label all imposed values as synthetic.
+
+M9 can examine the conditions under which generated personas inform a firm's hypotheses while actual consumers retain opportunities to supply preferences, challenge interpretations, and report consequences. Generated rationales remain proposed explanations until evidence from people or behavior supports them.
 
 ---
 

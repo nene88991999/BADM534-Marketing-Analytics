@@ -189,7 +189,10 @@
     "03_Data_and_Code/Training_Data_Mixtures/DATA_DICTIONARY.md",
     "03_Data_and_Code/Training_Data_Mixtures/AGENTS.md",
     "03_Data_and_Code/Training_Data_Mixtures/results/README.md",
-    "07_Labs/Training_Data_Mixtures/README.md"
+    "07_Labs/Training_Data_Mixtures/README.md",
+    "01_Resources/29_Synthetic_Consumer_Research/README.md",
+    "01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md",
+    "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -639,5 +642,29 @@
     "discussion_minutes": 15,
     "original_programs_executed": 3,
     "independent_checks_passed": 10
+  },
+  "synthetic_consumer_research": {
+    "resources": "01_Resources/29_Synthetic_Consumer_Research/README.md",
+    "review": "01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/29_Synthetic_Consumer_Research/CASE_DESIGN.md",
+    "catalog": "01_Resources/29_Synthetic_Consumer_Research/catalog.json",
+    "verification": "01_Resources/29_Synthetic_Consumer_Research/source_checks.json",
+    "reviewed_on": "2026-11-22",
+    "paper_version": "2510.08338v3",
+    "source_commit": "86dcd2597c7824e4fd6546b884c5500c43a4b022",
+    "status": "Source review available; optional M4/M5 case proposed. Existing M8 §8.11 briefly discusses synthetic consumer panels.",
+    "primary_modules": [
+      "M4",
+      "M5"
+    ],
+    "related_modules": [
+      "M7",
+      "M8",
+      "M9"
+    ],
+    "source_package_executed": false,
+    "original_arithmetic_checks": 6,
+    "model_calls": 0,
+    "scope": "Measurement method and concept-screening validation. No human-data replication, new lecture release, or assessment requirement."
   }
 }
