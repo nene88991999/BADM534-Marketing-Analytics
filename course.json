@@ -203,7 +203,11 @@
     "03_Data_and_Code/Synthetic_Consumers/DATA_DICTIONARY.md",
     "03_Data_and_Code/Synthetic_Consumers/AGENTS.md",
     "03_Data_and_Code/Synthetic_Consumers/results/README.md",
-    "07_Labs/Synthetic_Consumers/README.md"
+    "07_Labs/Synthetic_Consumers/README.md",
+    "01_Resources/30_Research_Writing_and_Coding/README.md",
+    "01_Resources/30_Research_Writing_and_Coding/SOURCE_REVIEW.md",
+    "01_Resources/30_Research_Writing_and_Coding/CASE_DESIGN.md",
+    "08_Wiki/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -701,5 +705,21 @@
     },
     "original_programs_executed": 2,
     "independent_course_checks_passed": 10
+  },
+  "research_writing_and_coding": {
+    "resources": "01_Resources/30_Research_Writing_and_Coding/README.md",
+    "review": "01_Resources/30_Research_Writing_and_Coding/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/30_Research_Writing_and_Coding/CASE_DESIGN.md",
+    "catalog": "01_Resources/30_Research_Writing_and_Coding/catalog.json",
+    "reviewed_on": "2026-11-22",
+    "status": "Source review available; optional M1/M8 exercise and wiki practices proposed. No lecture or assessment change.",
+    "release": "suzuri-v0.7.0",
+    "source_commit": "88f58aae544bdc60d5068e7b5d40a05ca7f1a564",
+    "companion_commit": "b8c8e974e894f28bd778e47bda91ff4e738c92d3",
+    "source_files": 9,
+    "upstream_execution": false,
+    "application_installed": false,
+    "model_calls": 0,
+    "verification": "01_Resources/30_Research_Writing_and_Coding/source_checks.json"
   }
 }

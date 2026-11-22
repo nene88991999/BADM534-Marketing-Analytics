@@ -1,0 +1,195 @@
+{
+  "namespace": "research-writing-and-coding",
+  "reviewed_on": "2026-11-22",
+  "status": "Source review and proposed course exercise; no software installation or lecture release.",
+  "records": [
+    {
+      "id": "RW01",
+      "title": "Suzuri: Pinned Research-Writing and Coding Source Subset",
+      "url": "https://github.com/harrywang/suzuri/tree/88f58aae544bdc60d5068e7b5d40a05ca7f1a564",
+      "version": "suzuri-v0.7.0",
+      "commit": "88f58aae544bdc60d5068e7b5d40a05ca7f1a564",
+      "published_at": "2026-11-20T22:32:23Z",
+      "observed_main_commit": "10b663c756aa928d41827104463454900ad0742d",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "README states primarily GPL-3.0-or-later with Apache-2.0 components where marked. Both original license files retained.",
+      "scope": "README, five Rust source files, inherited Zed privacy documentation, and two license files. Selected implementation paths and tests inspected; no build or execution.",
+      "files": [
+        {
+          "path": "local_sources/suzuri/README.md",
+          "source_path": "README.md",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/README.md",
+          "bytes": 6882,
+          "sha256": "a8189852c3100c590443b829874dbf6de4fc46551f32a907e247939622a184f6",
+          "git_blob_sha": "128159f877170f73540bbb811ae7de01a8681778",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/crates/markdown_export/src/preprocess.rs",
+          "source_path": "crates/markdown_export/src/preprocess.rs",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/markdown_export/src/preprocess.rs",
+          "bytes": 58286,
+          "sha256": "3dad4c193d00b1951480aecfc6201dcaa6071f3b9cd5caa28efe1be08e194ac8",
+          "git_blob_sha": "e2f85e88d69606e5215304bd443624a5efda0154",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/crates/markdown_export/src/pandoc.rs",
+          "source_path": "crates/markdown_export/src/pandoc.rs",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/markdown_export/src/pandoc.rs",
+          "bytes": 30551,
+          "sha256": "abd68d74b560f22907cbf464b6dcb4104247acc2075c0000be0d6a8fc745aec5",
+          "git_blob_sha": "377d701b4c97823198503060a42889033b2f992e",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/crates/citations/src/insert_citation.rs",
+          "source_path": "crates/citations/src/insert_citation.rs",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/citations/src/insert_citation.rs",
+          "bytes": 39362,
+          "sha256": "7d08cd43b1c4d83a0c8afb1a5823d61edc7b307150b10388454ceaf118a4d900",
+          "git_blob_sha": "502e2acbef4c56a8481045b8ca36105e4e323bdb",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/crates/suzuri_sync/src/suzuri_sync.rs",
+          "source_path": "crates/suzuri_sync/src/suzuri_sync.rs",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/suzuri_sync/src/suzuri_sync.rs",
+          "bytes": 70309,
+          "sha256": "d3584014847d0747906092301f9fa5a8687da2f1a22565351ee13dc897966090",
+          "git_blob_sha": "ec5ae04d582cf7021108a6bd1e14f5b405e65a00",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/crates/typeset_preview/src/typeset_preview.rs",
+          "source_path": "crates/typeset_preview/src/typeset_preview.rs",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/typeset_preview/src/typeset_preview.rs",
+          "bytes": 53633,
+          "sha256": "af3efe8b77b15bc2894a491e34c39000ab984fed3ae26a5390b16dc841a8fa72",
+          "git_blob_sha": "954ec82704a1012f7215a413282ed882f10dbd0f",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/LICENSE-GPL",
+          "source_path": "LICENSE-GPL",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/LICENSE-GPL",
+          "bytes": 34357,
+          "sha256": "0aa0322ea494da441088e4d9144c6720bf99d9e2e1eefcd29d1f58b19b5c4246",
+          "git_blob_sha": "cb82534a8de43d8e4b43c47486063bcd22411908",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/LICENSE-APACHE",
+          "source_path": "LICENSE-APACHE",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/LICENSE-APACHE",
+          "bytes": 10768,
+          "sha256": "752daf2fb234ca4a1fa372c073fe127f44b7b90fd2529ae44273a64f9d53da7a",
+          "git_blob_sha": "461a0fe5ba20a096c281a2686da08fef79f534a3",
+          "transformation": "None; unchanged source bytes."
+        },
+        {
+          "path": "local_sources/suzuri/docs/src/ai/privacy-and-security.md",
+          "source_path": "docs/src/ai/privacy-and-security.md",
+          "source_url": "https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/docs/src/ai/privacy-and-security.md",
+          "bytes": 10765,
+          "sha256": "8bb3bf68cb937ba940e11ca2ed58d1b20dcd23e7b765ab7333983ea36552b1df",
+          "git_blob_sha": "6600a37eeb22b5903f8283d09b83c93cfd7cb103",
+          "transformation": "None; unchanged source bytes."
+        }
+      ]
+    },
+    {
+      "id": "RW02",
+      "title": "Suzuri Companion Testbed",
+      "url": "https://github.com/harrywang/suzuri-testbed/tree/b8c8e974e894f28bd778e47bda91ff4e738c92d3",
+      "commit": "b8c8e974e894f28bd778e47bda91ff4e738c92d3",
+      "modules": [
+        "M1",
+        "M2",
+        "M7"
+      ],
+      "rights": "Link only. No repository-wide license found in the inspected README or GitHub license metadata; fixtures not republished.",
+      "scope": "README inspected; rendering, kernel-path, and document examples inform a proposed exercise using original course inputs. Fixture programs were not executed."
+    },
+    {
+      "id": "RW03",
+      "title": "Suzuri Export",
+      "url": "https://docs.suzuri.ai/writing/export",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "Linked reference; live webpage not archived.",
+      "scope": "Pandoc export, standalone HTML, transformations of wikilinks and embeds."
+    },
+    {
+      "id": "RW04",
+      "title": "Suzuri Wikilinks and Backlinks",
+      "url": "https://docs.suzuri.ai/writing/wikilinks",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "Linked reference; live webpage not archived.",
+      "scope": "Local navigation, references, broken-link diagnostics, and embedded notes."
+    },
+    {
+      "id": "RW05",
+      "title": "Suzuri Zotero Integration",
+      "url": "https://docs.suzuri.ai/writing/zotero",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "Linked reference; live webpage not archived.",
+      "scope": "Local bibliography import and PDF copying."
+    },
+    {
+      "id": "RW06",
+      "title": "Suzuri Settings",
+      "url": "https://docs.suzuri.ai/reference/settings",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "Linked reference; live webpage not archived.",
+      "scope": "File-based configuration and configurable typesetting."
+    },
+    {
+      "id": "RW07",
+      "title": "Suzuri LaTeX Engine Selection",
+      "url": "https://docs.suzuri.ai/typesetting/latex-engines",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "Linked reference; live webpage not archived.",
+      "scope": "Template-engine compatibility and managed TeX Live fallback."
+    },
+    {
+      "id": "RW08",
+      "title": "Suzuri 0.7.0 Release",
+      "url": "https://github.com/harrywang/suzuri/releases/tag/suzuri-v0.7.0",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "Linked reference; live webpage not archived.",
+      "scope": "Latest release verified on November 22; introduces opt-in GitHub synchronization."
+    },
+    {
+      "id": "RW09",
+      "title": "Git Ignore Semantics",
+      "url": "https://git-scm.com/docs/gitignore",
+      "modules": [
+        "M1",
+        "M8"
+      ],
+      "rights": "Linked reference; live webpage not archived.",
+      "scope": "Ignore rules apply to intentionally untracked files; tracked files remain tracked."
+    }
+  ]
+}

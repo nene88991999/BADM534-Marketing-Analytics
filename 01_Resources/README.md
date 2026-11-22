@@ -1,6 +1,6 @@
 # Marketing Analytics Resource Library
 
-Collected October 23, 2026 for Nathan Yang's planned version of **Marketing Analytics**. The collection follows Unnati Narang's eight-module Spring 2026 syllabus and adds resources for AI-assisted coding throughout the course. The wiki and new syllabus have not been built.
+Collected October 23, 2026 for Nathan Yang's planned version of **Marketing Analytics**. The collection follows Unnati Narang's eight-module Spring 2026 syllabus and adds resources for AI-assisted coding throughout the course. The Spring 2027 syllabus is available; wiki design and implementation remain pending.
 
 ## Start Here
 
@@ -112,3 +112,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Synthetic Consumer Research
 
 [The paper and pinned implementation review](29_Synthetic_Consumer_Research/README.md) connect product concept screening in M4 to text measurement in M5 and validation in M7. The guide distinguishes correlation attainment, response-distribution fit, and human purchasing outcomes, with six source-review arithmetic checks, two implemented course programs, ten independent course checks, and optional ungraded practice.
+
+## Research Writing and AI-Assisted Coding
+
+[The Suzuri review](30_Research_Writing_and_Coding/README.md) connects readable project files, source evidence, executable code, and independent checks. Nine pinned reference files support the assessment of export behavior, citation attachments, typesetting, and opt-in GitHub synchronization. An optional M1/M8 exercise and future wiki practices are proposed; no editor installation or new course requirement is introduced.
