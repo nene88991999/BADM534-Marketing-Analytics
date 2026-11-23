@@ -1,0 +1,80 @@
+{
+  "updated_on": "2026-11-22",
+  "data_type": "Original synthetic course examples; separate response and concept constructions",
+  "upstream_execution": false,
+  "model_calls": 0,
+  "files": {
+    "03_Data_and_Code/Reproducible_Recommendations/AGENTS.md": {
+      "bytes": 1252,
+      "sha256": "e1eb4cbb4ddb45b37a57872a70cee8dc204194a16a42c8bcd8e3e6236d976c93"
+    },
+    "03_Data_and_Code/Reproducible_Recommendations/README.md": {
+      "bytes": 4383,
+      "sha256": "7aebcf8e30aebfab0918a3bc71d46bde138c4cdb97d7241111d7a86c44a6765e"
+    },
+    "03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md": {
+      "bytes": 3280,
+      "sha256": "0c70d6545f92aa7fc270295c4957232e5829142b472c488eddbee2152136ec67"
+    },
+    "03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py": {
+      "bytes": 6415,
+      "sha256": "94d214ab6f0b9072ecbae8532bf3f362a711968208acd3069bdcb5676a99ada1"
+    },
+    "03_Data_and_Code/Reproducible_Recommendations/results/evidence.json": {
+      "bytes": 2729,
+      "sha256": "ddf2bea59b1af7d62830fbe472b352e81b88c8034aa5ad69bc88f2d162d9a796"
+    },
+    "03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md": {
+      "bytes": 1851,
+      "sha256": "f85971b145d934082ab6428932c4624f305e942bd12e71406e813b332e6c7416"
+    },
+    "03_Data_and_Code/Reproducible_Recommendations/test_recommendation.py": {
+      "bytes": 3540,
+      "sha256": "46fce4bed3244b4e555e0da71dd72fb297efa3935d817312863f924f44ccdfd4"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/DATA_DICTIONARY.md": {
+      "bytes": 4351,
+      "sha256": "1603221b9c4eaa5ffbb8d0a0a3efc6dabbdeed005a88e30823c1e6c65a9be273"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/anchor_measurement.py": {
+      "bytes": 4988,
+      "sha256": "a2451cf159acb201b70fe0ec78b6431d5acbce72fbe0bc3e01803df9f19cb976"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/concept_screening.py": {
+      "bytes": 5173,
+      "sha256": "677832e79cd26f6d6e75221177a36a0295d57ce9ccc47d5c434fe3ad25562e70"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/data/anchor_responses.json": {
+      "bytes": 4121,
+      "sha256": "84fefba6c703503aa0c7102dc94a3b840d948088e5fe3723101286d95ed9ee1b"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/data/concept_panels.json": {
+      "bytes": 2940,
+      "sha256": "c56bc03fdaf1db8bc6db7531a8a4e89ac0089c8b5a66d2a71742d9420ff50292"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/results/concept_ratings.json": {
+      "bytes": 3283,
+      "sha256": "00d67711929d8cda59f0cf69365d70044b3977885e45c85f4c9e5f1cddecbaa1"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/results/response_ratings.json": {
+      "bytes": 5568,
+      "sha256": "d44c54f78febca68cd3378f98bf822b02945db6d3f7c6a5622295d23153edcbc"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/results/screening_details.json": {
+      "bytes": 5922,
+      "sha256": "03f101497fa7e9359ed5d4bffd6ec0512d44fdf79ec38b23481011e60710b502"
+    },
+    "03_Data_and_Code/Synthetic_Consumers/results/screening_summary.json": {
+      "bytes": 1027,
+      "sha256": "08b4f88a7957a133cb4dae7f2ea8317fc8ee8db59e87864ccdfbf5fb9adf6d71"
+    },
+    "06_Lecture_Notes/figures/M01_repeat_weights.png": {
+      "bytes": 40994,
+      "sha256": "6e386c9a01032c276e087569e6f3dc7ca6364ac7039d5351fdc97c0c4ba63ae5"
+    },
+    "06_Lecture_Notes/figures/M01_repeat_weights.tex": {
+      "bytes": 870,
+      "sha256": "7eecdd1f9b82eb0812f04f62f00a3e8611f17169c66fc868065727b3ff2b6509"
+    }
+  }
+}

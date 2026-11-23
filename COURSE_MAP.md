@@ -137,3 +137,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Synthetic Consumers and Product Concept Testing
 
 [Two original executed examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect M4 §4.23 concept screening, M5 §5.23 anchor measurement, M7 §7.36 validation, M8 §8.11 workflows, and M9 §9.18.4 consumer representation. Two editable figures and eight slides support 20 minutes in Session 5, 10 minutes in Session 7, and 5 minutes within Session 14's philosophical discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) preserves invented inputs, persona weights, common concept rosters, and unresolved ties.
+
+## Reproducible Recommendations and Public Evidence
+
+M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, file identity, and the interpretation of generated explanations. [Complete Python and numerical evidence](03_Data_and_Code/Reproducible_Recommendations/README.md) support Sessions 1 and 14 and [optional ungraded practice](07_Labs/Reproducible_Recommendations/README.md). Exported pages need separate rendering and navigation checks; the [future wiki](08_Wiki/README.md) remains unimplemented.

@@ -104,3 +104,7 @@ Five slides connect training-source combinations, ridge attribution, final and s
 ## Synthetic Consumers and Product Research
 
 Session 5 adds four slides on concept screening, distribution fit, shortlist errors, and human validation. Session 7 adds three slides on anchor mappings, a fixed-response comparison, and a hand calculation. Session 14 adds consumer representation within the existing philosophical discussion. Two editable TikZ figures and [two complete programs](../03_Data_and_Code/Synthetic_Consumers/README.md) accompany M4 §4.23, M5 §5.23, M7 §7.36, and M9 §9.18.4. The allocated discussions use 20, 10, and 5 minutes of the existing meetings, respectively.
+
+## Reproducible Recommendations
+
+Session 1 uses minutes 125–140 for response weights and a reproducible recommendation, followed by minutes 140–155 for the campaign specification. Two additional slides connect the repeat-weight figure to numerical evidence and interpretation. Session 14 uses five minutes of its existing opening block for review of an exported recommendation. M1 §1.15, M8 §8.25, and the [optional lab](../07_Labs/Reproducible_Recommendations/README.md) provide the full program and separate calculation, interpretation, rendering, and publication checks. The fifteen dates and 170-minute meetings remain fixed.

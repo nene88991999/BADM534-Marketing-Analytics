@@ -17,11 +17,11 @@
       "modules": "M1",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 21,
+      "slides": 23,
       "companion": "S01_Marketing_Decisions_and_AI_Coding.md",
       "pdf": "S01_Marketing_Decisions_and_AI_Coding.pdf",
-      "python_activity": "Implement and assess order aggregation; record model, input, parser, and scoring versions.",
-      "application": "Distinguish code errors, missing evidence, and transfer to a changed AI configuration.",
+      "python_activity": "Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.",
+      "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision.",
       "ethics": "Data minimization, authorized processing, and verifiable AI code",
       "timing": [
         {
@@ -56,9 +56,15 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 140,
+          "minutes": 15,
+          "activity": "Response Weights and Reproducible Recommendations"
+        },
+        {
+          "start_minute": 140,
           "end_minute": 155,
-          "minutes": 30,
-          "activity": "Application and Interpretation"
+          "minutes": 15,
+          "activity": "Campaign Specification and Interpretation"
         },
         {
           "start_minute": 155,
@@ -826,18 +832,24 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 39,
+      "slides": 40,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.",
-      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion.",
+      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks.",
       "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope",
       "timing": [
         {
           "start_minute": 0,
-          "end_minute": 25,
-          "minutes": 25,
+          "end_minute": 20,
+          "minutes": 20,
           "activity": "Demand and AI Workflow"
+        },
+        {
+          "start_minute": 20,
+          "end_minute": 25,
+          "minutes": 5,
+          "activity": "Recommendation Review and Export"
         },
         {
           "start_minute": 25,

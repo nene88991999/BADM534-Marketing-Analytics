@@ -31,3 +31,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Synthetic Consumers and Product Screening
 
 [Synthetic Consumer Practice](Synthetic_Consumers/README.md) is optional and ungraded. Students reproduce text-to-rating transformations, preserve persona weights, assess tied and reversed rankings, and design a prospective human evaluation that includes rejected concepts. All supplied data are invented, with no model account required.
+
+## Reproducible Recommendations and Export
+
+[Product-Screening Recommendations](Reproducible_Recommendations/README.md) is optional ungraded practice for M1 §1.15 and M8 §8.25. Students trace a recommendation to its inputs, preserve persona weights and undefined rankings, reproduce the calculation after moving files, and inspect exported equations and links. Python uses only the standard library; Suzuri and live model use are optional.

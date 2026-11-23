@@ -2,9 +2,9 @@
 
 A product manager asks which body-wash concepts should receive human research. The analyst has a small synthetic example, a working program, and a proposed recommendation. The practical question is whether another person can trace the recommendation to the inputs and reproduce it after the files move to another computer or format.
 
-## Proposed Course Placement
+## Course Placement
 
-Use an optional short M1 exercise to connect task specification, independent checks, and a readable project. M8 can revisit it when discussing an integrated recommendation. The activity fits any editor with a terminal and Markdown support; Suzuri is one candidate for displaying sources, code, and output together. No session allocation, graded submission, or required software has been added.
+M1 §1.15 connects task specification, independent arithmetic, and a report linked to its evidence. M8 §8.25 revisits interpretation, export, and public release. Session 1 uses minutes 125–140; Session 14 uses minutes 20–25. The [optional lab](../../07_Labs/Reproducible_Recommendations/README.md) carries the longer coding and export practice. Any editor with a terminal and Markdown support is sufficient. No graded submission or required editor has been added.
 
 ## Existing Inputs and Reference Results
 
@@ -34,7 +34,7 @@ Ask the assistant to explain the 4.25 rating and trace the selected concept iden
 5. **Completeness:** If testing note embeds, remove a referenced section in the disposable copy. Check both the export message and the resulting document. The source allows a missing embed to be reported while export otherwise succeeds.
 6. **Publication:** Inspect the proposed Git changes, including any bibliography attachments. Decide which artifacts belong in the public course and verify the final files before publishing.
 
-The last four steps are proposed checks, not completed application tests. Preserve the released inputs and results by working in a separate example copy. Error messages, figures, and exported pages answer different verification questions and should retain separate conclusions.
+The released wrapper and six checks execute the calculation and file-location comparisons. The [verification record](../../03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md) identifies completed course and Pandoc checks. Suzuri-specific navigation and embed comparisons remain proposed application tests. Preserve the released inputs and results by working in a separate example copy. Error messages, figures, and exported pages answer different verification questions and should retain separate conclusions.
 
 ## Implications for the Future Wiki
 

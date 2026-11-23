@@ -101,3 +101,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Synthetic Consumer Research
 
 [Synthetic Consumers](Synthetic_Consumers/README.md) provides two executed standard-library programs, fixed invented inputs, ten independent checks, and two editable TikZ figures. The measurement example preserves responses, repeats, and persona weights; the screening example separates distribution fit, ranking, and shortlist errors. Full Python appears in M4 §4.23 and M5 §5.23, with input definitions and source attribution.
+
+## Reproducible Recommendations
+
+[Reproducible Product Recommendations](Reproducible_Recommendations/README.md) recomputes the synthetic-consumer tables, compares persona and response weights, and generates a report linked to its numerical evidence. Six independent checks cover reference arithmetic, missing values, stale tables, and execution after a folder move. The [optional lab](../07_Labs/Reproducible_Recommendations/README.md) separates interpretation and export checks from calculation.

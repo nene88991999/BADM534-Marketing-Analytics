@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [353-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 93 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [358-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 94 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -145,3 +145,7 @@ M7 §§7.33–7.35 connect a two-feature ridge model to conditional customer-ser
 ## Synthetic Consumers and Human Validation
 
 M4 §4.23 and M5 §5.23 contain [two complete Python programs](../03_Data_and_Code/Synthetic_Consumers/README.md), ten independent checks, and two Illinois-color TikZ figures. The invented cases distinguish overall distribution fit from concept selection and show how anchors and repeat weighting change ratings. M7 §7.36 defines correlation attainment and concept-level validation; M8 §8.11 connects the screening workflow; M9 §9.18.4 examines consumer representation. The [source review](../01_Resources/29_Synthetic_Consumer_Research/README.md) preserves reported empirical results separately from these synthetic calculations.
+
+## Reproducible Recommendations and Export
+
+M1 §1.15 provides a complete Python program that recomputes four synthetic-consumer tables and writes a report with traceable evidence. An Illinois-color TikZ figure holds persona ratings fixed while varying identical repeat counts. M8 §8.25 connects numerical agreement to interpretation, file conversion, and public release. The [example and six checks](../03_Data_and_Code/Reproducible_Recommendations/README.md) accompany [optional ungraded practice](../07_Labs/Reproducible_Recommendations/README.md).

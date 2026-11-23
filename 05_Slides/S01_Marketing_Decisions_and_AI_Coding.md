@@ -20,6 +20,7 @@ Session 01. M1. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
+- [Reproducible recommendation and optional practice](../07_Labs/Reproducible_Recommendations/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -218,7 +219,29 @@ A random seed reproduces a particular random computation under a given implement
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 19: A Campaign Specification
+## Slide 19: Repeated Responses Change the Weight
+
+Synthetic ratings stay fixed. Additional identical rows change representation.
+
+**Figure description:** The dashed blue equal-persona mean stays at 3.975. The orange equal-row mean rises from 3.975 to 4.158333 as p01 supplies one to five identical responses. Persona p01 has rating 4.25 and p02 has rating 3.70; p02 supplies one response throughout.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M01_repeat_weights.tex)
+
+A product manager must specify which unit receives equal weight. With two p01 responses and one p02 response, equal-row weighting gives 4.066667; equal-persona weighting gives 3.975. This imposed comparison measures no preference change. The complete source program is ../03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py. Each rating is derived from invented responses and imposed similarities.
+
+Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
+
+## Slide 20: Numerical Evidence and the Recommendation
+
+- Recompute the table and check one calculation independently.
+- Preserve persona weights, missing values, and the synthetic-data scope.
+- Follow the report to its inputs, program, table, and figure.
+
+The program recomputes four saved tables and stops if a table is missing or differs. An equality check can miss an error shared by the saved table and code, so use independent arithmetic. A pooled six-concept pattern leaves its shortlist and correlation undefined. Turning that result into a launch decision adds an unsupported inference. Re-run from the course root and example directory; the script resolves inputs relative to its own file.
+
+Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
+
+## Slide 21: A Campaign Specification
 
 - Define the eligible customers and contact date.
 - State the contribution horizon and relevant costs.
@@ -229,7 +252,7 @@ The specification should state one feasible action and the comparison that suppo
 
 Source: M1, Section 1.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 20: Customer Data in an AI Workflow
+## Slide 22: Customer Data in an AI Workflow
 
 - Use only data authorized for the tool and task.
 - Minimize fields and use synthetic examples when they suffice.
@@ -239,7 +262,7 @@ Public availability does not establish permission for every reuse. Pseudonymized
 
 Source: Course agent guide and ETHICS_AND_REGULATION.md, M1.
 
-## Slide 21: Decision Discussion
+## Slide 23: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

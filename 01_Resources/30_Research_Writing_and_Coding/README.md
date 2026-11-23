@@ -8,13 +8,13 @@ A marketing recommendation must connect the decision, source evidence, calculati
 
 | Course Location | Question | Practice to Adapt |
 | --- | --- | --- |
-| M1 §1.5 and §1.14 | Can a student explain and verify an AI-assisted analysis? | Keep the task specification, data dictionary, program, expected result, and interpretation together; review the assistant's changes against a small known example |
+| M1 §1.15 | Can a student explain and verify an AI-assisted analysis? | Keep the task specification, data dictionary, program, expected result, and interpretation together; review the assistant's changes against a small known example |
 | M1 §1.11 | Where do project data and model requests go? | Distinguish local files, notebook kernels, configured AI providers, and Git publication |
 | M2 and M7 | Does the displayed result preserve the intended comparison? | Assess numerical values, execution, chart rendering, and interpretation separately |
-| M8 §8.6 and §8.11 | Can someone else reproduce and assess a recommendation? | Connect the source reading, calculated table, figure, and conclusion through stable relative paths |
+| M8 §8.25 | Can someone else reproduce and assess a recommendation? | Connect the source reading, calculated table, figure, and conclusion through stable relative paths |
 | Future Wiki | Does a course page retain its meaning and navigation outside the editor? | Keep Markdown, code, and figures as reusable sources; test links, equations, tables, citations, and downloaded examples in the published output |
 
-The [proposed exercise](CASE_DESIGN.md) reuses the course's existing synthetic-consumer calculations. It requires no new dataset or model account. The course already supplies the tested Python; the proposed editor and export comparisons have not been performed.
+The [released optional exercise](../../07_Labs/Reproducible_Recommendations/README.md) reuses the synthetic-consumer calculations in M1 §1.15 and M8 §8.25, with discussion in Sessions 1 and 14. A new wrapper recomputes four saved tables and writes a traceable recommendation. Six checks cover arithmetic, missing values, stale tables, and execution after relocation. The [verification record](../../03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md) separates course execution and Pandoc checks from unexecuted Suzuri application tests.
 
 ## Evidence, Code, and Interpretation in One Project
 
@@ -38,4 +38,4 @@ The existing Beamer template, TikZ figures, and course build commands remain sui
 
 ## Sources and Review Status
 
-The [source review](SOURCE_REVIEW.md) distinguishes documented features, inspected implementation, and proposed teaching uses. The [catalog](catalog.json), namespace `research-writing-and-coding`, preserves nine unchanged files from release `suzuri-v0.7.0`, commit `88f58aae544bdc60d5068e7b5d40a05ca7f1a564`, with both license files and verified Git blob identities. Only selected source paths were read. No installation, Rust build, upstream test execution, notebook execution in Suzuri, or model call was performed. No lecture, assessment requirement, or wiki deployment is released by this review.
+The [source review](SOURCE_REVIEW.md) distinguishes documented features, inspected implementation, and proposed teaching uses. The [catalog](catalog.json), namespace `research-writing-and-coding`, preserves nine unchanged files from release `suzuri-v0.7.0`, commit `88f58aae544bdc60d5068e7b5d40a05ca7f1a564`, with both license files and verified Git blob identities. Only selected source paths were read. No installation, Rust build, upstream test execution, notebook execution in Suzuri, or model call was performed. The later course integration adds an optional practice exercise and lecture material. It establishes no assessment requirement, required editor, or wiki deployment.

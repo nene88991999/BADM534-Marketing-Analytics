@@ -609,3 +609,149 @@ Retain a fixed set of known failure cases to detect regressions and a separate s
 Compare anonymous outputs using criteria fixed before inspecting their style. Reopen the saved artifact, run the calculation, and inspect the result that matters for the decision. An assistant's statement that it completed a task supplies a claim to verify. A check against independently calculated totals supplies additional evidence. Record both execution time and correction effort when comparing workflows.
 
 After assisted work, explain the analytical choice and solve a new small instance without the assistant. This establishes whether the relevant skill can be demonstrated at that moment. A long-term claim about learning requires repeated assessment and a suitable comparison. [Stanford CS193T's AI Foundations activity](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/1-ai-foundations/) motivates explicit decisions about which skills to preserve; the [coding-agent activity](https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/6-coding-agents/) connects a working result to a documented failure or unchecked component. The source and grader calculations in Sections 5.19 and 5.20 provide hand-checkable instances.
+
+
+## 1.15 Reproducible Calculations and Product Recommendations
+
+\noindent A product manager deciding which concepts warrant human research needs to understand how an analyst constructed the reported preference scores. A second analyst may reproduce every number and still interpret the recommendation incorrectly if the report leaves its weights or population unclear. The synthetic refill example makes this distinction visible. Two invented personas have Set 1 expected ratings of 4.25 and 3.70 on categories one through five. Persona p01 contributes two identical responses, while persona p02 contributes one. These are authored responses with imposed similarities; no person or language model produced them in an observed study.
+
+Giving each persona equal weight yields $(4.25+3.70)/2=3.975$. Giving each response row equal weight yields $(2\times4.25+3.70)/3=4.066667$. Both calculations are reproducible, but they answer different questions. The first treats the two personas as equally represented. The second gives the persona with more responses a larger share of the result. Repeating an identical response changes that share without changing either persona's preference. The observation unit and intended weighting therefore belong beside the number in a managerial report.
+
+![Identical responses raise the row-weighted mean while both persona ratings remain fixed. The equal-persona mean stays at 3.975 as p01 repeats increase from one to five and p02 supplies one response.](../figures/M01_repeat_weights.png)
+
+With five identical p01 responses and one p02 response, the row-weighted mean reaches 4.158333. The equal-persona mean remains 3.975. A figure whose horizontal axis counts responses and whose vertical axis reports ratings makes the changed composition explicit. The increasing series describes an imposed weighting effect; it supplies no evidence of preference change or additional independent information.
+
+A separate six-concept construction compares pooled and reversed rating patterns against invented reference counts. The pooled pattern gives every concept the same mean, so correlation and a unique shortlist remain undefined. The reversed pattern selects F and E and retains zero of the reference top two, A and B. An assistant that turns the pooled result into a launch recommendation has added unsupported meaning even if it quotes the distribution score correctly. Both candidate patterns use reference outcomes in their construction. A human study with separate development and evaluation concepts would be needed to assess performance on new concepts.
+
+### 1.15.1 A Report With Traceable Numerical Evidence
+
+\noindent Recomputing a table can reveal that the saved result no longer matches its inputs or program. The program below imports the complete mapping and screening functions in Sections 5.23 and 4.23, recomputes four saved tables, and stops if any table disagrees. It writes a short recommendation and a JSON evidence file containing the sample counts, quantities, missing values, and hashes of the inputs and calculation files. Independent arithmetic establishes the reference values above. Agreement between a saved table and the program that created it supplies a separate consistency check.
+
+Keep the two example folders together within the course checkout. Paths resolve from the program's location, so changing the terminal directory does not change which inputs it reads. The output option adjusts relative links when the report moves. A reader can follow the recommendation to its evidence file, source program, data dictionary, inputs, and figure. Record the Python version and command when rerunning it. The script uses only the standard library and makes no network or model calls.
+
+Python source: [reproduce_recommendation.py](../../03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py). From the course root, run `python3 03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py`. From its folder, run `python3 reproduce_recommendation.py`.
+
+```python
+"""Recompute a synthetic recommendation and retain its numerical evidence.
+
+Python 3.10+, standard library. No network, model, or editor calls.
+The two input constructions are separate; all personas and panels are invented.
+"""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parent
+SOURCE = ROOT.parent / "Synthetic_Consumers"
+sys.path.insert(0, str(SOURCE))
+from anchor_measurement import score_responses, summarize
+from concept_screening import evaluate
+
+
+def load(path):
+    return json.loads(path.read_text())
+
+
+def calculate(source=SOURCE):
+    records = score_responses(load(source / "data/anchor_responses.json"))
+    concepts = summarize(records)
+    screening, details = evaluate(load(source / "data/concept_panels.json"))
+    computed = dict(response_ratings=records, concept_ratings=concepts,
+                    screening_summary=screening, screening_details=details)
+    for name, value in computed.items():
+        if load(source / f"results/{name}.json") != value:
+            raise ValueError(f"Saved {name} disagrees with a fresh calculation.")
+    refill = next(r for r in concepts
+                  if r["concept"] == "refill" and r["anchor_set"] == "set_1")
+    first = next(r for r in records if r["concept"] == "refill"
+                 and r["persona"] == "p01" and r["repeat"] == 1
+                 and r["anchor_set"] == "set_1")
+    second = next(r for r in records if r["concept"] == "refill"
+                  and r["persona"] == "p02" and r["anchor_set"] == "set_1")
+    # Hold each persona's rating fixed and vary p01's identical repeat count.
+    sensitivity = [dict(p01_repeats=n, p02_repeats=1,
+        equal_persona_mean=(first["mean_rating"] + second["mean_rating"]) / 2,
+        equal_row_mean=(n * first["mean_rating"] + second["mean_rating"]) / (n + 1))
+        for n in range(1, 6)]
+    tracked = [source / "data/anchor_responses.json",
+               source / "data/concept_panels.json",
+               SOURCE / "anchor_measurement.py", SOURCE / "concept_screening.py",
+               ROOT / "reproduce_recommendation.py"]
+    return dict(scope="Entirely synthetic; no model or customer observations",
+        response_mean=first["mean_rating"], response_distribution=first["distribution"],
+        equal_persona_mean=refill["mean_rating"],
+        equal_row_mean=refill["row_weighted_mean"],
+        response_rows=refill["response_rows"], personas=refill["personas"],
+        repeat_sensitivity=sensitivity, screening=screening,
+        sha256={p.parent.name + "/" + p.name:
+                hashlib.sha256(p.read_bytes()).hexdigest() for p in tracked})
+
+
+def write_report(result, output):
+    output.mkdir(parents=True, exist_ok=True)
+    (output / "evidence.json").write_text(
+        json.dumps(result, indent=2, allow_nan=False) + "\n")
+    link = lambda path: Path(os.path.relpath(path, output)).as_posix()
+    rows = {r["candidate"]: r for r in result["screening"]}
+    selected = lambda row: ("unresolved" if row["selected"] is None
+                            else ", ".join(row["selected"]))
+    pooled, reversed_row = rows["pooled"], rows["reversed"]
+    correlation = ("undefined" if pooled["pearson"] is None
+                   else f"{pooled['pearson']:.3f}")
+    recall = ("undefined" if reversed_row["top_two_recall"] is None
+              else f"{reversed_row['top_two_recall']:.0%}")
+    lines = ["# Product-Screening Recommendation", "", "By Nathan Yang", "",
+        "A product manager must decide which concepts warrant human research. "
+        "All inputs below are invented. No model calls or customer study took place.", "",
+        "## Response Weights", "",
+        f"The refill example has {result['response_rows']} response rows from "
+        f"{result['personas']} personas. Equal persona weights give "
+        f"{result['equal_persona_mean']:.3f}; equal row weights give "
+        f"{result['equal_row_mean']:.6f} on a five-category rating scale.", "",
+        "Persona p01's first response has the following imposed category weights.", "",
+        "| Rating | Weight |", "| --- | --- |"]
+    lines += [f"| {k} | {p:.2f} |"
+              for k, p in enumerate(result["response_distribution"], 1)]
+    lines += ["", rf"The expected rating is $\sum_{{k=1}}^{{5}}k p_k={result['response_mean']:.2f}$.", "",
+        "![Identical repeats raise the row mean while the persona mean stays fixed]("
+        + link(ROOT.parents[1] / "06_Lecture_Notes/figures/M01_repeat_weights.png") + ")", "",
+        "## Concept Selection", "",
+        f"A separate construction compares {pooled['concepts']} invented concepts "
+        "with an invented reference panel. The pooled pattern's shortlist is "
+        f"{selected(pooled)} and its correlation is {correlation}. "
+        f"The reversed pattern selects {selected(reversed_row)}. Its recall of "
+        f"the reference top two ({', '.join(reversed_row['reference_top_two'])}) "
+        f"is {recall}.", "",
+        "These patterns use reference outcomes in their construction. Their results "
+        "justify checking ranking errors before funding a human study. They supply "
+        "no evidence of actual purchase demand or out-of-sample performance.", "",
+        "An assumed research budget of \\$500 and an assumed incentive of \\$25 "
+        "per participant allow 20 incentives before recruitment and operating costs. "
+        "This arithmetic does not determine an adequate study size.", "",
+        "## Reproduction", "",
+        "[Numerical evidence](evidence.json) | [Full Python]("
+        + link(ROOT / "reproduce_recommendation.py") + ") | [Data dictionary]("
+        + link(SOURCE / "DATA_DICTIONARY.md") + ")", "",
+        "[Response inputs](" + link(SOURCE / "data/anchor_responses.json")
+        + ") | [Concept inputs](" + link(SOURCE / "data/concept_panels.json") + ")", "",
+        "From the course root: `python3 "
+        "03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py`.", ""]
+    (output / "recommendation.md").write_text("\n".join(lines))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    args = parser.parse_args()
+    write_report(calculate(), args.output.resolve())
+    print("Recomputed four saved tables and wrote evidence.json and recommendation.md.")
+```
+
+### 1.15.2 The Meaning of a Successful Check
+
+\noindent A calculation check establishes a numerical property under the specified inputs and rules. A file hash establishes identity. Neither establishes that invented personas represent actual customers. Review an AI-written interpretation against the observation unit, weighting rule, uncertainty, and proposed action. Preserve undefined values as missing; replacing an unresolved shortlist with an arbitrary alphabetical order would turn an implementation convention into a substantive recommendation.
+
+A file conversion also requires its own checks. The report contains currency, a mathematical expression, a table, and a linked figure. Reopen the exported document and verify their meaning and destinations. The inspected [Suzuri 0.7.0 source](https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/markdown_export/src/preprocess.rs) converts internal wikilinks to display text and records missing note embeds separately from conversion success. These behaviors explain why an export can finish while navigation or content remains incomplete. Standard relative links, explicit missing-file checks, and inspection of the final document address those questions. The [optional exercise](../../07_Labs/Reproducible_Recommendations/README.md) distinguishes reproducible course calculations from editor-specific tests.

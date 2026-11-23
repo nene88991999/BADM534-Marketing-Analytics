@@ -1,0 +1,107 @@
+{
+  "scope": "Entirely synthetic; no model or customer observations",
+  "response_mean": 4.25,
+  "response_distribution": [
+    0.0,
+    0.05,
+    0.14999999999999997,
+    0.3,
+    0.5
+  ],
+  "equal_persona_mean": 3.9749999999999996,
+  "equal_row_mean": 4.066666666666666,
+  "response_rows": 3,
+  "personas": 2,
+  "repeat_sensitivity": [
+    {
+      "p01_repeats": 1,
+      "p02_repeats": 1,
+      "equal_persona_mean": 3.975,
+      "equal_row_mean": 3.975
+    },
+    {
+      "p01_repeats": 2,
+      "p02_repeats": 1,
+      "equal_persona_mean": 3.975,
+      "equal_row_mean": 4.066666666666666
+    },
+    {
+      "p01_repeats": 3,
+      "p02_repeats": 1,
+      "equal_persona_mean": 3.975,
+      "equal_row_mean": 4.1125
+    },
+    {
+      "p01_repeats": 4,
+      "p02_repeats": 1,
+      "equal_persona_mean": 3.975,
+      "equal_row_mean": 4.14
+    },
+    {
+      "p01_repeats": 5,
+      "p02_repeats": 1,
+      "equal_persona_mean": 3.975,
+      "equal_row_mean": 4.158333333333333
+    }
+  ],
+  "screening": [
+    {
+      "candidate": "pooled",
+      "concepts": 6,
+      "mean_ks_similarity": 0.925,
+      "mean_absolute_rating_error": 0.15000000000000005,
+      "pearson": null,
+      "spearman": null,
+      "reference_top_two": [
+        "A",
+        "B"
+      ],
+      "selected": null,
+      "selection_status": "boundary_tie",
+      "top_two_recall": null
+    },
+    {
+      "candidate": "reversed",
+      "concepts": 6,
+      "mean_ks_similarity": 0.85,
+      "mean_absolute_rating_error": 0.3000000000000001,
+      "pearson": -1.0,
+      "spearman": -1.0,
+      "reference_top_two": [
+        "A",
+        "B"
+      ],
+      "selected": [
+        "F",
+        "E"
+      ],
+      "selection_status": "unique",
+      "top_two_recall": 0.0
+    },
+    {
+      "candidate": "compressed",
+      "concepts": 6,
+      "mean_ks_similarity": 0.94,
+      "mean_absolute_rating_error": 0.1200000000000001,
+      "pearson": 1.0,
+      "spearman": 1.0,
+      "reference_top_two": [
+        "A",
+        "B"
+      ],
+      "selected": [
+        "A",
+        "B"
+      ],
+      "selection_status": "unique",
+      "top_two_recall": 1.0
+    }
+  ],
+  "sha256": {
+    "data/anchor_responses.json": "84fefba6c703503aa0c7102dc94a3b840d948088e5fe3723101286d95ed9ee1b",
+    "data/concept_panels.json": "c56bc03fdaf1db8bc6db7531a8a4e89ac0089c8b5a66d2a71742d9420ff50292",
+    "Synthetic_Consumers/anchor_measurement.py": "a2451cf159acb201b70fe0ec78b6431d5acbce72fbe0bc3e01803df9f19cb976",
+    "Synthetic_Consumers/concept_screening.py": "677832e79cd26f6d6e75221177a36a0295d57ce9ccc47d5c434fe3ad25562e70",
+    "Reproducible_Recommendations/reproduce_recommendation.py": "94d214ab6f0b9072ecbae8532bf3f362a711968208acd3069bdcb5676a99ada1"
+  }
+}

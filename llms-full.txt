@@ -76,6 +76,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Synthetic_Consumers/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "reproducible-recommendations",
+      "path": "07_Labs/Reproducible_Recommendations/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -216,7 +222,12 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/30_Research_Writing_and_Coding/README.md",
     "01_Resources/30_Research_Writing_and_Coding/SOURCE_REVIEW.md",
     "01_Resources/30_Research_Writing_and_Coding/CASE_DESIGN.md",
-    "08_Wiki/README.md"
+    "08_Wiki/README.md",
+    "03_Data_and_Code/Reproducible_Recommendations/README.md",
+    "03_Data_and_Code/Reproducible_Recommendations/AGENTS.md",
+    "03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md",
+    "03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md",
+    "07_Labs/Reproducible_Recommendations/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -265,12 +276,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-22-synthetic-consumer-research",
+    "revision": "2026-11-22-reproducible-recommendations",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 93,
-    "pages": 353,
+    "figures_count": 94,
+    "pages": 358,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -287,7 +298,8 @@ Generated from course.json and the source files identified below. This file cont
     "anomaly_diagnosis_examples": "03_Data_and_Code/Anomaly_Diagnosis/README.md",
     "inference_efficiency_examples": "03_Data_and_Code/Inference_Efficiency/README.md",
     "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md",
-    "synthetic_consumer_examples": "03_Data_and_Code/Synthetic_Consumers/README.md"
+    "synthetic_consumer_examples": "03_Data_and_Code/Synthetic_Consumers/README.md",
+    "reproducible_recommendations": "03_Data_and_Code/Reproducible_Recommendations/README.md"
   },
   "datasets": [
     {
@@ -358,7 +370,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 362,
+    "slides": 365,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -721,7 +733,7 @@ Generated from course.json and the source files identified below. This file cont
     "case_design": "01_Resources/30_Research_Writing_and_Coding/CASE_DESIGN.md",
     "catalog": "01_Resources/30_Research_Writing_and_Coding/catalog.json",
     "reviewed_on": "2026-11-22",
-    "status": "Source review available; optional M1/M8 exercise and wiki practices proposed. No lecture or assessment change.",
+    "status": "Available in M1, M8, Sessions 1 and 14, and optional ungraded practice. Suzuri application tests remain unexecuted.",
     "release": "suzuri-v0.7.0",
     "source_commit": "88f58aae544bdc60d5068e7b5d40a05ca7f1a564",
     "companion_commit": "b8c8e974e894f28bd778e47bda91ff4e738c92d3",
@@ -729,7 +741,26 @@ Generated from course.json and the source files identified below. This file cont
     "upstream_execution": false,
     "application_installed": false,
     "model_calls": 0,
-    "verification": "01_Resources/30_Research_Writing_and_Coding/source_checks.json"
+    "verification": "01_Resources/30_Research_Writing_and_Coding/source_checks.json",
+    "implemented_on": "2026-11-22",
+    "examples": "03_Data_and_Code/Reproducible_Recommendations/README.md",
+    "lab": "07_Labs/Reproducible_Recommendations/README.md",
+    "manifest": "03_Data_and_Code/Reproducible_Recommendations/manifest.json",
+    "course_verification": "03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md",
+    "sections": [
+      "M1 \u00a71.15",
+      "M8 \u00a78.25"
+    ],
+    "sessions": [
+      1,
+      14
+    ],
+    "discussion_minutes": {
+      "1": 15,
+      "14": 5
+    },
+    "original_programs_executed": 1,
+    "independent_course_checks_passed": 6
   }
 }
 ```
@@ -1068,6 +1099,10 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 
 [Two original executed examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect M4 §4.23 concept screening, M5 §5.23 anchor measurement, M7 §7.36 validation, M8 §8.11 workflows, and M9 §9.18.4 consumer representation. Two editable figures and eight slides support 20 minutes in Session 5, 10 minutes in Session 7, and 5 minutes within Session 14's philosophical discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) preserves invented inputs, persona weights, common concept rosters, and unresolved ties.
 
+## Reproducible Recommendations and Public Evidence
+
+M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, file identity, and the interpretation of generated explanations. [Complete Python and numerical evidence](03_Data_and_Code/Reproducible_Recommendations/README.md) support Sessions 1 and 14 and [optional ungraded practice](07_Labs/Reproducible_Recommendations/README.md). Exported pages need separate rendering and navigation checks; the [future wiki](08_Wiki/README.md) remains unimplemented.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1268,6 +1303,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Synthetic Consumers](Synthetic_Consumers/README.md) provides two executed standard-library programs, fixed invented inputs, ten independent checks, and two editable TikZ figures. The measurement example preserves responses, repeats, and persona weights; the screening example separates distribution fit, ranking, and shortlist errors. Full Python appears in M4 §4.23 and M5 §5.23, with input definitions and source attribution.
 
+## Reproducible Recommendations
+
+[Reproducible Product Recommendations](Reproducible_Recommendations/README.md) recomputes the synthetic-consumer tables, compares persona and response weights, and generates a report linked to its numerical evidence. Six independent checks cover reference arithmetic, missing values, stale tables, and execution after a folder move. The [optional lab](../07_Labs/Reproducible_Recommendations/README.md) separates interpretation and export checks from calculation.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -1276,7 +1315,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [353-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 93 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [358-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 94 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1419,6 +1458,10 @@ M7 §§7.33–7.35 connect a two-feature ridge model to conditional customer-ser
 ## Synthetic Consumers and Human Validation
 
 M4 §4.23 and M5 §5.23 contain [two complete Python programs](../03_Data_and_Code/Synthetic_Consumers/README.md), ten independent checks, and two Illinois-color TikZ figures. The invented cases distinguish overall distribution fit from concept selection and show how anchors and repeat weighting change ratings. M7 §7.36 defines correlation attainment and concept-level validation; M8 §8.11 connects the screening workflow; M9 §9.18.4 examines consumer representation. The [source review](../01_Resources/29_Synthetic_Consumer_Research/README.md) preserves reported empirical results separately from these synthetic calculations.
+
+## Reproducible Recommendations and Export
+
+M1 §1.15 provides a complete Python program that recomputes four synthetic-consumer tables and writes a report with traceable evidence. An Illinois-color TikZ figure holds persona ratings fixed while varying identical repeat counts. M8 §8.25 connects numerical agreement to interpretation, file conversion, and public release. The [example and six checks](../03_Data_and_Code/Reproducible_Recommendations/README.md) accompany [optional ungraded practice](../07_Labs/Reproducible_Recommendations/README.md).
 
 ---
 
@@ -1588,6 +1631,10 @@ Five slides connect training-source combinations, ridge attribution, final and s
 ## Synthetic Consumers and Product Research
 
 Session 5 adds four slides on concept screening, distribution fit, shortlist errors, and human validation. Session 7 adds three slides on anchor mappings, a fixed-response comparison, and a hand calculation. Session 14 adds consumer representation within the existing philosophical discussion. Two editable TikZ figures and [two complete programs](../03_Data_and_Code/Synthetic_Consumers/README.md) accompany M4 §4.23, M5 §5.23, M7 §7.36, and M9 §9.18.4. The allocated discussions use 20, 10, and 5 minutes of the existing meetings, respectively.
+
+## Reproducible Recommendations
+
+Session 1 uses minutes 125–140 for response weights and a reproducible recommendation, followed by minutes 140–155 for the campaign specification. Two additional slides connect the repeat-weight figure to numerical evidence and interpretation. Session 14 uses five minutes of its existing opening block for review of an exported recommendation. M1 §1.15, M8 §8.25, and the [optional lab](../07_Labs/Reproducible_Recommendations/README.md) provide the full program and separate calculation, interpretation, rendering, and publication checks. The fifteen dates and 170-minute meetings remain fixed.
 
 ---
 
@@ -2444,7 +2491,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 21 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 23 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
@@ -2457,7 +2504,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 43 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 39 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 40 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -2466,9 +2513,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions.
+**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.
 
-**Application:** Distinguish code errors, missing evidence, and transfer to a changed AI configuration.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -2479,7 +2526,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–140 | Response Weights and Reproducible Recommendations |
+| 140–155 | Campaign Specification and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 02. Customer Data and Measurement
@@ -2739,13 +2787,14 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope
 
 | Elapsed Minutes | Activity |
 | --- | --- |
-| 0–25 | Demand and AI Workflow |
+| 0–20 | Demand and AI Workflow |
+| 20–25 | Recommendation Review and Export |
 | 25–50 | AI-Assisted Experiments |
 | 50–70 | Pricing Evidence and Benchmarks |
 | 70–80 | Break |
@@ -2886,6 +2935,10 @@ Session 11 divides minutes 15–45 between validation and regularization (15–3
 Session 5 allocates minutes 125–145 to distribution fit, product rankings, shortlist errors, and human validation, followed by minutes 145–155 for customer alternatives and AI pricing. Session 7 allocates minutes 15–35 to text constructs and representation and minutes 35–45 to anchor sensitivity and persona weights. Its earnings-call Python and application blocks retain their existing allocations. Session 14 uses minutes 95–100 for synthetic personas and actual consumer judgment within its existing 80–100 philosophical block.
 
 [Two original programs](../03_Data_and_Code/Synthetic_Consumers/README.md), ten independent checks, and two editable TikZ figures support the discussion. Full listings appear in M4 §4.23 and M5 §5.23, with validation in M7 §7.36 and ethical interpretation in M9 §9.18.4. The [optional ungraded lab](../07_Labs/Synthetic_Consumers/README.md) carries the longer coding exercise. All numerical inputs are invented; the separate source review records the empirical study's scope and anchor selection. The fifteen dates, 170-minute durations, and pending assessment rules remain unchanged.
+
+## Reproducible Recommendations and Export
+
+Session 1 allocates minutes 125–140 to synthetic response weights and reproducible recommendations and minutes 140–155 to campaign specification. Session 14 allocates minutes 0–20 to demand and AI workflow and minutes 20–25 to recommendation review and export. These comparisons fit the existing 170-minute meetings and retain the later ethics and policy blocks. The [optional ungraded exercise](../07_Labs/Reproducible_Recommendations/README.md) supplies longer Python and export practice. M1 §1.15 and M8 §8.25 connect calculations to interpretation, navigation, and public release. No software, graded assignment, deadline, or course-wide AI permission is established by the exercise.
 
 ---
 
@@ -5060,6 +5113,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 
 [Synthetic Consumer Practice](Synthetic_Consumers/README.md) is optional and ungraded. Students reproduce text-to-rating transformations, preserve persona weights, assess tied and reversed rankings, and design a prospective human evaluation that includes rejected concepts. All supplied data are invented, with no model account required.
 
+## Reproducible Recommendations and Export
+
+[Product-Screening Recommendations](Reproducible_Recommendations/README.md) is optional ungraded practice for M1 §1.15 and M8 §8.25. Students trace a recommendation to its inputs, preserve persona weights and undefined rankings, reproduce the calculation after moving files, and inspect exported equations and links. Python uses only the standard library; Suzuri and live model use are optional.
+
 ---
 
 ## Source: 07_Labs/AI_Evidence_and_Evaluation/README.md
@@ -7019,13 +7076,13 @@ A marketing recommendation must connect the decision, source evidence, calculati
 
 | Course Location | Question | Practice to Adapt |
 | --- | --- | --- |
-| M1 §1.5 and §1.14 | Can a student explain and verify an AI-assisted analysis? | Keep the task specification, data dictionary, program, expected result, and interpretation together; review the assistant's changes against a small known example |
+| M1 §1.15 | Can a student explain and verify an AI-assisted analysis? | Keep the task specification, data dictionary, program, expected result, and interpretation together; review the assistant's changes against a small known example |
 | M1 §1.11 | Where do project data and model requests go? | Distinguish local files, notebook kernels, configured AI providers, and Git publication |
 | M2 and M7 | Does the displayed result preserve the intended comparison? | Assess numerical values, execution, chart rendering, and interpretation separately |
-| M8 §8.6 and §8.11 | Can someone else reproduce and assess a recommendation? | Connect the source reading, calculated table, figure, and conclusion through stable relative paths |
+| M8 §8.25 | Can someone else reproduce and assess a recommendation? | Connect the source reading, calculated table, figure, and conclusion through stable relative paths |
 | Future Wiki | Does a course page retain its meaning and navigation outside the editor? | Keep Markdown, code, and figures as reusable sources; test links, equations, tables, citations, and downloaded examples in the published output |
 
-The [proposed exercise](CASE_DESIGN.md) reuses the course's existing synthetic-consumer calculations. It requires no new dataset or model account. The course already supplies the tested Python; the proposed editor and export comparisons have not been performed.
+The [released optional exercise](../../07_Labs/Reproducible_Recommendations/README.md) reuses the synthetic-consumer calculations in M1 §1.15 and M8 §8.25, with discussion in Sessions 1 and 14. A new wrapper recomputes four saved tables and writes a traceable recommendation. Six checks cover arithmetic, missing values, stale tables, and execution after relocation. The [verification record](../../03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md) separates course execution and Pandoc checks from unexecuted Suzuri application tests.
 
 ## Evidence, Code, and Interpretation in One Project
 
@@ -7049,7 +7106,7 @@ The existing Beamer template, TikZ figures, and course build commands remain sui
 
 ## Sources and Review Status
 
-The [source review](SOURCE_REVIEW.md) distinguishes documented features, inspected implementation, and proposed teaching uses. The [catalog](catalog.json), namespace `research-writing-and-coding`, preserves nine unchanged files from release `suzuri-v0.7.0`, commit `88f58aae544bdc60d5068e7b5d40a05ca7f1a564`, with both license files and verified Git blob identities. Only selected source paths were read. No installation, Rust build, upstream test execution, notebook execution in Suzuri, or model call was performed. No lecture, assessment requirement, or wiki deployment is released by this review.
+The [source review](SOURCE_REVIEW.md) distinguishes documented features, inspected implementation, and proposed teaching uses. The [catalog](catalog.json), namespace `research-writing-and-coding`, preserves nine unchanged files from release `suzuri-v0.7.0`, commit `88f58aae544bdc60d5068e7b5d40a05ca7f1a564`, with both license files and verified Git blob identities. Only selected source paths were read. No installation, Rust build, upstream test execution, notebook execution in Suzuri, or model call was performed. The later course integration adds an optional practice exercise and lecture material. It establishes no assessment requirement, required editor, or wiki deployment.
 
 ---
 
@@ -7119,9 +7176,9 @@ Every saved file's byte length and Git blob SHA-1 were checked against GitHub's 
 
 A product manager asks which body-wash concepts should receive human research. The analyst has a small synthetic example, a working program, and a proposed recommendation. The practical question is whether another person can trace the recommendation to the inputs and reproduce it after the files move to another computer or format.
 
-## Proposed Course Placement
+## Course Placement
 
-Use an optional short M1 exercise to connect task specification, independent checks, and a readable project. M8 can revisit it when discussing an integrated recommendation. The activity fits any editor with a terminal and Markdown support; Suzuri is one candidate for displaying sources, code, and output together. No session allocation, graded submission, or required software has been added.
+M1 §1.15 connects task specification, independent arithmetic, and a report linked to its evidence. M8 §8.25 revisits interpretation, export, and public release. Session 1 uses minutes 125–140; Session 14 uses minutes 20–25. The [optional lab](../../07_Labs/Reproducible_Recommendations/README.md) carries the longer coding and export practice. Any editor with a terminal and Markdown support is sufficient. No graded submission or required editor has been added.
 
 ## Existing Inputs and Reference Results
 
@@ -7151,7 +7208,7 @@ Ask the assistant to explain the 4.25 rating and trace the selected concept iden
 5. **Completeness:** If testing note embeds, remove a referenced section in the disposable copy. Check both the export message and the resulting document. The source allows a missing embed to be reported while export otherwise succeeds.
 6. **Publication:** Inspect the proposed Git changes, including any bibliography attachments. Decide which artifacts belong in the public course and verify the final files before publishing.
 
-The last four steps are proposed checks, not completed application tests. Preserve the released inputs and results by working in a separate example copy. Error messages, figures, and exported pages answer different verification questions and should retain separate conclusions.
+The released wrapper and six checks execute the calculation and file-location comparisons. The [verification record](../../03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md) identifies completed course and Pandoc checks. Suzuri-specific navigation and embed comparisons remain proposed application tests. Preserve the released inputs and results by working in a separate example copy. Error messages, figures, and exported pages answer different verification questions and should retain separate conclusions.
 
 ## Implications for the Future Wiki
 
@@ -7177,7 +7234,196 @@ The [clustering source guide](../01_Resources/23_Clustering_Optimization/README.
 
 ## Authoring and Export Portability
 
-[The Suzuri source review](../01_Resources/30_Research_Writing_and_Coding/README.md) motivates keeping notes, code, source descriptions, and expected results together. Its inspected HTML exporter creates a standalone document and converts internal wikilinks to display text. The future course site should preserve standard relative links and stable module identifiers, with separate checks for navigation, calculation, rendering, and accessibility. The [proposed exercise](../01_Resources/30_Research_Writing_and_Coding/CASE_DESIGN.md) supplies representative cases for evaluating a later prototype. No editor or site framework has been selected.
+[The Suzuri source review](../01_Resources/30_Research_Writing_and_Coding/README.md) motivates keeping notes, code, source descriptions, and expected results together. Its inspected HTML exporter creates a standalone document and converts internal wikilinks to display text. The future course site should preserve standard relative links and stable module identifiers, with separate checks for navigation, calculation, rendering, and accessibility. The [released optional exercise](../07_Labs/Reproducible_Recommendations/README.md) supplies a generated recommendation, numerical evidence, and a repeat-weight figure for evaluating a later prototype. No editor or site framework has been selected.
+
+## Representative Page Checks
+
+Use the [product-screening recommendation](../03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md) as one source fixture. Preserve the $500 and $25 currency amounts, the expected-rating equation, all five category weights, the figure description, and access to data and code. The program and checks run without a model account. Pandoc can provide a disposable single-page preview; source-file links and section anchors still need explicit mapping when a site builder creates HTML pages.
+
+Before publishing a site, check a fresh browser and a clean checkout. Confirm that every rendered destination resolves, figure values agree with the evidence file, keyboard navigation works, and the downloadable calculation reproduces. A source review, a Python test, and a document export establish distinct properties. None is a deployment record. See the example's [verification scope](../03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md).
+
+---
+
+## Source: 03_Data_and_Code/Reproducible_Recommendations/README.md
+
+# Reproducible Product Recommendations
+
+A product manager deciding which concepts merit human research needs a recommendation whose numbers, weights, and scope survive another person's review. This example connects the existing synthetic-consumer calculations to a short Markdown report and a machine-readable evidence file. All responses, similarities, and reference panels are invented. No language model, customer study, or external editor runs in the program.
+
+## Inputs and Quantities
+
+The [response construction](../Synthetic_Consumers/data/anchor_responses.json) contains seven authored responses for three concepts and two personas. Each has two imposed anchor comparisons. The refill concept has three response rows because p01 has an identical repeat. The reported Set 1 mean gives each of its two personas equal weight. The [separate panel construction](../Synthetic_Consumers/data/concept_panels.json) contains six fictional concepts, 100 invented reference ratings per concept, and pooled, reversed, and compressed candidate distributions. Candidate distributions use the reference outcomes in their construction.
+
+Read the [data dictionary](../Synthetic_Consumers/DATA_DICTIONARY.md) and [calculation guide](../Synthetic_Consumers/README.md) first. The wrapper imports both existing programs, recomputes their four tables, and requires exact agreement with the saved outputs. It stops on a missing or stale table. This comparison detects inconsistency; the independent arithmetic in the tests addresses selected calculation errors. Neither check establishes real customer demand.
+
+## Run
+
+Python 3.10 or later, standard library only. Keep this folder beside `Synthetic_Consumers` in the course checkout. No installation or API key is needed.
+
+```bash
+python3 03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py
+python3 -m unittest discover -s 03_Data_and_Code/Reproducible_Recommendations -p 'test_*.py' -v
+```
+
+Alternatively, from this folder run `python3 reproduce_recommendation.py`. Input paths resolve from the program file. `--output /path/to/example-output` writes the report elsewhere and adjusts its relative links. That option leaves the source tables unchanged. Record `python3 --version` with a new execution; changing the interpreter does not change the sample definition.
+
+## Expected Results
+
+| Quantity | Reference Value | Unit or Denominator |
+| --- | --- | --- |
+| Refill p01 first response, Set 1 | 4.25 | Expected rating on categories 1–5 |
+| Refill with equal persona weights | 3.975 | Two equally weighted personas |
+| Refill with equal row weights | 4.066667 | Three equally weighted responses |
+| Five identical p01 responses and one p02 response | 4.158333 | Six equally weighted responses; persona mean remains 3.975 |
+| Pooled shortlist and correlation | `null` | All six concept means tie |
+| Reversed shortlist and top-two recall | F, E; 0 | Zero of reference concepts A and B retained |
+
+The repeat comparison changes only the number of identical p01 responses, from one to five. Each persona's rating stays fixed. Ratings do not have dollar units and do not establish a treatment effect. The report's $500 budget and $25 participant incentive are explicitly assumed arithmetic for an export-format check.
+
+## Outputs and Reading Routes
+
+- [Recommendation](results/recommendation.md): decision, calculation, figure, interpretation, and links to inputs.
+- [Evidence](results/evidence.json): numeric results, missing values, repeat comparison, and SHA-256 hashes of two input files and three calculation scripts.
+- [Full program](reproduce_recommendation.py) and [independent checks](test_recommendation.py).
+- [Optional lab](../../07_Labs/Reproducible_Recommendations/README.md): interpretation, execution, rendering, navigation, and publication checks.
+- M1 §1.15 and M8 §8.25 in the [lecture notes](../../06_Lecture_Notes/README.md); Sessions 1 and 14 in the [slides](../../05_Slides/README.md).
+
+The evidence file preserves JSON `null` for undefined quantities. A text generator must retain that distinction from a measured zero. The hashes establish file identity, not statistical validity or legal permission to redistribute a file. The [manifest](manifest.json) records the published inputs and outputs; the [verification record](VERIFICATION.md) separates executed course checks from optional editor tests.
+
+---
+
+## Source: 03_Data_and_Code/Reproducible_Recommendations/AGENTS.md
+
+# Agent Guide for Reproducible Recommendations
+
+Read the local README and the Synthetic_Consumers data dictionary before the numerical evidence. The data are invented. Preserve the distinction between the response mapping and the separate six-concept panel. No model calls or observed consumer preferences appear in these inputs.
+
+Keep persona weights, row weights, and repeat counts explicit. Preserve undefined correlation, shortlist, and recall as missing. Trace every numeric statement to `results/evidence.json` and its named source table. A passing equality check proves consistency with recomputation, not empirical validity. Human review must assess scope and the proposed action.
+
+Use the full Python in M1 §1.15 and the same file here. Run the six local checks after analytical changes. Keep the relative folder structure when moving a project. Regenerate the report after changing code or inputs and review its content and links before publishing.
+
+Suzuri is optional. Its source review is static; do not claim its application, exporter, synchronization, or AI integrations were tested here. Pandoc export checks apply to the recorded Pandoc invocation only. A successful single-document export does not certify a deployed multi-page wiki.
+
+---
+
+## Source: 03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md
+
+# Verification of Reproducible Recommendations
+
+Verified November 22, 2026. The original course program ran with Python 3.14.8 using only the standard library. No model call, Suzuri installation, upstream build, or upstream test ran.
+
+## Numerical and Execution Checks
+
+The six checks in `test_recommendation.py` passed: independent response and weighting arithmetic; fixed-persona repeat comparisons; undefined quantities distinguished from zero; detection of a stale table; detection of a missing table; and identical outputs from three working directories in a relocated project. Temporary copies preserve the released inputs. The ten existing synthetic-consumer checks and the general lecture-example verification also passed.
+
+The wrapper recomputed all four saved synthetic-consumer tables. The equal-persona refill mean is 3.975 and the equal-row mean is 4.066667 for three responses from two personas. Increasing p01's identical repeat count to five raises the equal-row mean to 4.158333. The pooled shortlist remains undefined; the reversed pattern selects F and E with zero reference-top-two recall. Independent arithmetic checks address selected numerical properties, while comparison with the saved tables checks consistency.
+
+Both five-point TikZ series were checked against the evidence file. All 81 full Python blocks in the lecture notes match their scripts and parse successfully. These checks establish properties of the supplied synthetic constructions; they do not validate actual customer preferences or general language-model performance.
+
+## Rendering and Export
+
+The complete notes and Sessions 1 and 14 compiled with the existing course builders. The revised prose, complete program, table, new figure, and three new slides were visually inspected. The notes have 358 pages and 94 TikZ figures; the fifteen decks contain 365 slides. Meeting dates and 170-minute durations remain unchanged.
+
+Pandoc 2.12 exported a disposable copy of the generated report using the lab's `markdown+tex_math_dollars`, `--standalone`, `--mathml`, and `pagetitle` command. The HTML structure preserves one title, all five rating rows, the expected-rating expression, ordinary currency amounts, and the figure description. The local browser preview displayed the equation, table, and figure. The evidence-link request returned HTTP 200; inline JSON viewing was not established. The five linked file destinations and image destination were checked in the isolated preview folder. No multi-page site or GitHub Pages deployment was tested or published.
+
+## Source Review and Optional Checks
+
+Suzuri's wikilink conversion, missing-embed handling, attachment copying, and synchronization behavior remain findings from the pinned source review. No application execution establishes those behaviors in this course environment. Notebook kernel tests, Suzuri export tests, live assistant responses, and fresh-browser tests of a future course wiki remain optional or pending. The report is generated deterministically from course calculations.
+
+The [manifest](manifest.json) records hashes for the example, its dependency files, and the figure. A hash identifies bytes; numerical validity, interpretation, source permissions, and publication decisions require their respective evidence.
+
+---
+
+## Source: 03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md
+
+# Product-Screening Recommendation
+
+By Nathan Yang
+
+A product manager must decide which concepts warrant human research. All inputs below are invented. No model calls or customer study took place.
+
+## Response Weights
+
+The refill example has 3 response rows from 2 personas. Equal persona weights give 3.975; equal row weights give 4.066667 on a five-category rating scale.
+
+Persona p01's first response has the following imposed category weights.
+
+| Rating | Weight |
+| --- | --- |
+| 1 | 0.00 |
+| 2 | 0.05 |
+| 3 | 0.15 |
+| 4 | 0.30 |
+| 5 | 0.50 |
+
+The expected rating is $\sum_{k=1}^{5}k p_k=4.25$.
+
+![Identical repeats raise the row mean while the persona mean stays fixed](../../../06_Lecture_Notes/figures/M01_repeat_weights.png)
+
+## Concept Selection
+
+A separate construction compares 6 invented concepts with an invented reference panel. The pooled pattern's shortlist is unresolved and its correlation is undefined. The reversed pattern selects F, E. Its recall of the reference top two (A, B) is 0%.
+
+These patterns use reference outcomes in their construction. Their results justify checking ranking errors before funding a human study. They supply no evidence of actual purchase demand or out-of-sample performance.
+
+An assumed research budget of \$500 and an assumed incentive of \$25 per participant allow 20 incentives before recruitment and operating costs. This arithmetic does not determine an adequate study size.
+
+## Reproduction
+
+[Numerical evidence](evidence.json) | [Full Python](../reproduce_recommendation.py) | [Data dictionary](../../Synthetic_Consumers/DATA_DICTIONARY.md)
+
+[Response inputs](../../Synthetic_Consumers/data/anchor_responses.json) | [Concept inputs](../../Synthetic_Consumers/data/concept_panels.json)
+
+From the course root: `python3 03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py`.
+
+---
+
+## Source: 07_Labs/Reproducible_Recommendations/README.md
+
+# Reproducible Product-Screening Recommendations
+
+Optional, ungraded practice for M1 §1.15 and M8 §8.25. Any editor with a terminal and Markdown support is sufficient. Suzuri is an optional environment. This exercise establishes no submission, deadline, or required software.
+
+A product manager has a synthetic concept comparison and asks which concepts warrant human research. Prepare a recommendation that another analyst can reproduce and interpret after receiving the project folder. The [inputs and complete Python](../../03_Data_and_Code/Reproducible_Recommendations/README.md) are public course examples. All personas and reference panels are invented; no model account is needed.
+
+## Calculation and Interpretation
+
+Run from the course root:
+
+```bash
+python3 03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py
+python3 -m unittest discover -s 03_Data_and_Code/Reproducible_Recommendations -p 'test_*.py' -v
+```
+
+Read the [generated recommendation](../../03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md) beside its [evidence file](../../03_Data_and_Code/Reproducible_Recommendations/results/evidence.json). First calculate the p01 rating from weights `(0, .05, .15, .30, .50)`. Then compare `(4.25 + 3.70)/2` with `(2 × 4.25 + 3.70)/3`. Explain why an identical repeat changes the second quantity. Inspect the repeat-count figure while holding both persona ratings fixed.
+
+Next assess this deliberately unsupported statement: “The pooled system achieves a high distribution score, so concepts A and B should launch.” Identify the unresolved shortlist, the reference-based construction of the candidate pattern, and the absent customer-demand evidence. A numerical claim and an action recommendation require different support. The reversed pattern selects F and E and retains zero of the reference top two. Explain why its measured zero differs from the pooled pattern's undefined recall.
+
+If using an assistant, provide the synthetic evidence file and ask: “Explain the two refill means and trace the selected identifiers to the comparison. Preserve missing values and distinguish invented inputs from human validation. Identify evidence needed before a launch recommendation.” Compare each numerical assertion against the file and assess the interpretation yourself. The supplied report is generated by a deterministic program; it is not an observed response from a model.
+
+## Execution and File Location
+
+Run the program again from its own folder. Compare the resulting evidence and report. Move a copy of the project to a different path, retaining both example folders and the linked lecture figure, and repeat. The tests also exercise three working directories inside a temporary relocated copy. Paths, dependencies, and outputs should be explicit. If adapting the exercise to a notebook, record the kernel's working directory and restart it before the final run.
+
+In a disposable copy, change a saved result without changing the inputs. The program should stop because recomputation disagrees with the table. Explain why copying the same mistake into both the calculation and the saved table would require an independent arithmetic check to detect it.
+
+## Rendering and Navigation
+
+Inspect the dollar amounts, equation, five-category table, and figure in the Markdown report. With Pandoc available, a single-page HTML preview can be generated from the report folder:
+
+```bash
+pandoc recommendation.md --from=markdown+tex_math_dollars --standalone --mathml --metadata pagetitle='Product-Screening Recommendation' --output recommendation.html
+```
+
+Check that `$500` and `$25` remain currency, the expected-rating equation renders as mathematics, category weights sum to one, and the figure remains legible. Follow each file link from the exported page. Relative paths depend on keeping the linked files in the same relative locations. A link to a Markdown file may open source text; a future site builder must explicitly map source pages and section anchors to their HTML destinations.
+
+If testing Suzuri, create disposable notes containing an ordinary Markdown link and a `[[Note#Heading]]` link. Export both and inspect the destinations. The reviewed Suzuri 0.7.0 preprocessing function converts the wikilink to display text. For a note embed, remove the referenced section and inspect the export message and resulting content. These optional application tests have not been executed in Suzuri; the [source review](../../01_Resources/30_Research_Writing_and_Coding/SOURCE_REVIEW.md) records static evidence and version details.
+
+## Public Release
+
+Inspect `git status --short`, `git diff`, and the explicitly staged diff. Check new untracked files separately. Bibliography software can add attached PDFs; determine their redistribution rights before including them. Keep the exact inputs and executed calculation available with a released recommendation. A file hash checks identity, and a Git commit records a version. The analyst remains responsible for the sample, inference, and use of the result.
+
+Keep separate conclusions for numerical agreement, interpretation, rendering, navigation, and publication. A successful export does not establish that a recommendation is justified or that a course wiki is deployed. [Verification details](../../03_Data_and_Code/Reproducible_Recommendations/VERIFICATION.md) identify the checks actually completed for this release.
 
 ---
 
