@@ -1,0 +1,43 @@
+{
+  "namespace": "auxiliary-bias",
+  "reviewed_on": "2026-11-23",
+  "status": "Source review and proposed course case; lecture integration pending.",
+  "resources": [
+    {
+      "id": "AB01",
+      "title": "Bias Geometry and the Value of Auxiliary Data",
+      "authors": [
+        "Stefanus Jasin",
+        "Meichun Lin",
+        "Zijin Zhang"
+      ],
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298",
+      "ssrn_id": "7734298",
+      "publication_type": "Working paper",
+      "date_written": "2026-11-20",
+      "ssrn_revision_date": "2026-11-22",
+      "retrieved_on": "2026-11-23",
+      "pages": 64,
+      "pdf_bytes": 730735,
+      "pdf_sha256": "9218c2fcfde60796e892afb957d03d9c0d81c955025c24fc5e4b456f87285cf9",
+      "rights": "All rights reserved according to SSRN. PDF retained privately in the instructor Dropbox folder; public materials contain original commentary, original calculations, and a source link.",
+      "modules": [
+        "M3",
+        "M4",
+        "M6",
+        "M7"
+      ],
+      "focus": "Identification of primary response coefficients using a known auxiliary-bias dictionary; optimal sampling cost and bias geometry.",
+      "teaching_use": "Four-profile product design, sensitivity to omitted bias features, and cost at a common MSE target.",
+      "cautions": "Linear model, known feature dictionaries, independent Gaussian observations, worst-case coefficient MSE, and high-accuracy cost comparison. Empirical cases are retrospective calibrations with simulated estimation errors.",
+      "reading_scope": "Main text Sections 1-8; Figures 1-3 and Table 1. Pages 20-21 and 24-25 visually checked. Appendix extracted; proofs not independently verified.",
+      "replication_repository": "None identified in inspected PDF or SSRN record.",
+      "upstream_code_execution": false,
+      "empirical_replication": false,
+      "review": "SOURCE_REVIEW.md",
+      "case_design": "CASE_DESIGN.md",
+      "original_calculations": "source_checks.py",
+      "verification": "source_checks.json"
+    }
+  ]
+}

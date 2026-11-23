@@ -1,0 +1,143 @@
+{
+  "scope": "Published-ratio arithmetic and original analytic examples; no empirical replication.",
+  "source_sections": [
+    "Theorem 3, pp. 20-22",
+    "Section 6, pp. 22-26"
+  ],
+  "reported_case_arithmetic": [
+    {
+      "case": "tea",
+      "published_primary_cost_constant": 210.6,
+      "published_mixed_cost_constant": 54.8,
+      "saving_from_rounded_constants": 0.7397910731244064,
+      "assumed_auxiliary_to_primary_cost": 0.01,
+      "information_cost_ratio": 0.00021075171869717124
+    },
+    {
+      "case": "digital_twins",
+      "published_primary_cost_constant": 20.63,
+      "published_mixed_cost_constant": 13.97,
+      "saving_from_rounded_constants": 0.32283082888996606,
+      "assumed_auxiliary_to_primary_cost": 0.01,
+      "information_cost_ratio": 0.0010896708286038592
+    }
+  ],
+  "invented_profile_means": [
+    {
+      "feature": -1,
+      "price": -1,
+      "primary_mean": 3.1,
+      "auxiliary_mean": 3.3000000000000003
+    },
+    {
+      "feature": 1,
+      "price": -1,
+      "primary_mean": 3.9,
+      "auxiliary_mean": 4.1000000000000005
+    },
+    {
+      "feature": -1,
+      "price": 1,
+      "primary_mean": 2.1,
+      "auxiliary_mean": 3.5000000000000004
+    },
+    {
+      "feature": 1,
+      "price": 1,
+      "primary_mean": 2.9,
+      "auxiliary_mean": 4.3
+    }
+  ],
+  "exact_geometry_checks": [
+    {
+      "bias_dictionary": "interaction_only",
+      "response_rank": 3,
+      "bias_rank": 1,
+      "intersection_dimension": 0
+    },
+    {
+      "bias_dictionary": "intercept_and_price",
+      "response_rank": 3,
+      "bias_rank": 2,
+      "intersection_dimension": 2
+    },
+    {
+      "bias_dictionary": "intercept_feature_and_price",
+      "response_rank": 3,
+      "bias_rank": 3,
+      "intersection_dimension": 3
+    }
+  ],
+  "allocation_curve": [
+    {
+      "information_cost_ratio": 0.0001,
+      "primary_precision": 2.0141428427835497,
+      "auxiliary_precision": 140.40014214992857,
+      "normalized_mse": 0.9999999999999999,
+      "cost_constant": 2.0281828569985425,
+      "asymptotic_saving_fraction": 0.32393904766715254,
+      "independent_grid_cost": 2.0281828606183745
+    },
+    {
+      "information_cost_ratio": 0.001,
+      "primary_precision": 2.0447437370142683,
+      "auxiliary_precision": 43.65424954023975,
+      "normalized_mse": 1.0,
+      "cost_constant": 2.088397986554508,
+      "asymptotic_saving_fraction": 0.30386733781516406,
+      "independent_grid_cost": 2.0883979874301675
+    },
+    {
+      "information_cost_ratio": 0.01,
+      "primary_precision": 2.1421338109037404,
+      "auxiliary_precision": 12.929113468566548,
+      "normalized_mse": 1.0,
+      "cost_constant": 2.271424945589406,
+      "asymptotic_saving_fraction": 0.24285835147019796,
+      "independent_grid_cost": 2.271424947414703
+    },
+    {
+      "information_cost_ratio": 0.1,
+      "primary_precision": 2.471404520791032,
+      "auxiliary_precision": 2.771236166328253,
+      "normalized_mse": 1.0,
+      "cost_constant": 2.748528137423857,
+      "asymptotic_saving_fraction": 0.08382395419204769,
+      "independent_grid_cost": 2.7485281374628765
+    },
+    {
+      "information_cost_ratio": 0.3333333333333333,
+      "primary_precision": 3.0,
+      "auxiliary_precision": 0.0,
+      "normalized_mse": 1.0,
+      "cost_constant": 3.0,
+      "asymptotic_saving_fraction": 0.0,
+      "independent_grid_cost": 3.0
+    },
+    {
+      "information_cost_ratio": 0.5,
+      "primary_precision": 3.0,
+      "auxiliary_precision": 0.0,
+      "normalized_mse": 1.0,
+      "cost_constant": 3.0,
+      "asymptotic_saving_fraction": 0.0,
+      "independent_grid_cost": 3.0
+    }
+  ],
+  "rounded_example": {
+    "mse_target": 0.01,
+    "primary_n": 216,
+    "auxiliary_n": 1296,
+    "primary_only_n": 300,
+    "cost": 228.96,
+    "saving_fraction": 0.2368,
+    "correct_model_mse": 0.00992063492063492,
+    "omitted_auxiliary_feature_bias": 0.3,
+    "expected_feature_coefficient_error": 0.2571428571428572,
+    "squared_bias": 0.06612244897959185,
+    "misspecified_model_mse": 0.07604308390022677
+  },
+  "model_calls": 0,
+  "microdata_used": false,
+  "author_code_executed": false
+}

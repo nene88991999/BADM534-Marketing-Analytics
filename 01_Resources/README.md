@@ -116,3 +116,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Research Writing and AI-Assisted Coding
 
 [The Suzuri review](30_Research_Writing_and_Coding/README.md) connects readable project files, source evidence, executable code, and independent checks. Nine pinned reference files support the assessment of export behavior, citation attachments, typesetting, and opt-in GitHub synchronization. An optional M1/M8 exercise and future wiki practices are proposed; no editor installation or new course requirement is introduced.
+
+## Auxiliary Data and Bias Geometry
+
+[The auxiliary-data review](31_Auxiliary_Data_and_Bias_Geometry/README.md) examines when inexpensive synthetic responses can reduce human research costs. A proposed M4/M7 case separates feature comparisons from biased price sensitivity, calculates sampling cost at a common accuracy target, and shows the effect of an omitted bias feature. Original Python verifies the arithmetic. The paper's 74% and 32% savings are retrospective model calculations; lecture integration remains proposed. The collection uses the `auxiliary-bias` catalog namespace.
