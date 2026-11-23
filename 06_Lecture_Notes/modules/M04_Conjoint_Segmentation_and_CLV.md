@@ -1216,3 +1216,204 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 4.24 Human and Synthetic Evidence for Product Design
+
+\noindent A body-wash manager must decide whether to include a premium feature and how to price the product. Human survey responses cost more than generated responses. The research budget should reflect which attribute comparisons each source can support at the required accuracy. A synthetic respondent can preserve the feature comparison while reversing the response to price.
+
+### 4.24.1 Response Features and Bias Features
+
+\noindent Four product profiles cross a standard or premium feature with a low or high price. Code the feature as $f=-1$ or $+1$ and price as $p=-1$ or $+1$. An observation is one response at one profile from one source in a fixed research setting. The response is a stylized continuous rating score measured in points. The price code identifies two levels; a price coefficient here is measured per coded unit and is not an elasticity.
+
+To distinguish customer preferences from source bias, specify the primary and auxiliary responses as
+
+$$
+Y^P=\beta_0+\beta_F f+\beta_P p+e^P,\qquad
+Y^A=\beta_0+\beta_F f+\beta_P p+\gamma_0+\gamma_Pp+e^A.
+$$
+
+The three $\beta$ coefficients describe the primary response. The auxiliary source adds an overall shift $\gamma_0$ and a price distortion $\gamma_P$. Estimation treats these coefficients as unknown. The exclusion of a separate feature bias supplies the informative feature comparison.
+
+\begin{assumption}[Response and Bias Structure]
+\label{ass:auxiliary-response-design}
+The four profiles have the linear conditional means specified above. The response features $(1,f,p)$ and auxiliary bias features $(1,p)$ are known and fixed. The unknown response and bias coefficients are unrestricted. Errors are independent across observations and sources, Gaussian with mean zero, and have known positive source variances $\sigma_P^2$ and $\sigma_A^2$. Sampling costs $c_P$ and $c_A$ are positive and constant across profiles within each source.
+\end{assumption}
+
+Under Assumption \ref{ass:auxiliary-response-design}, differences between auxiliary ratings at the same price remove both bias terms. Their expected premium-minus-standard contrast is $2\beta_F$. A high-minus-low price contrast instead equals $2(\beta_P+\gamma_P)$, so auxiliary responses alone do not separate the two price coefficients. The response-feature space contains three directions; the bias-feature space overlaps the intercept and price directions.
+
+### 4.24.2 Preserved Feature Comparisons and Reversed Price Responses
+
+\noindent Set the primary coefficients to $(3,0.4,-0.5)$ and the auxiliary bias coefficients to $(0.8,0.6)$. These are invented inputs, with no observed human or generated-model responses. The resulting conditional means are:
+
+| Price | Feature | Primary Mean | Auxiliary Mean |
+|---|---|---:|---:|
+| Low | Standard | 3.1 | 3.3 |
+| Low | Premium | 3.9 | 4.1 |
+| High | Standard | 2.1 | 3.5 |
+| High | Premium | 2.9 | 4.3 |
+
+At either price, the premium feature raises both sources' expected ratings by 0.8 points. Raising price reduces the primary rating by 1.0 point and increases the auxiliary rating by 0.2 points at either feature level. Thus, the model permits synthetic evidence to inform the feature comparison while reserving the price comparison for human research. A recommendation about willingness to pay would additionally require the monetary price difference and a justified mapping from these ratings to choice.
+
+![The left panel holds price low and compares standard with premium features: primary means rise from 3.1 to 3.9 and auxiliary means from 3.3 to 4.1. The right panel holds the feature standard and raises price: primary means fall from 3.1 to 2.1 while auxiliary means rise from 3.3 to 3.5. Both panels share the rating scale. All means are invented.](../figures/M04_auxiliary_contrasts.png)
+
+### 4.24.3 Research Cost at a Common Accuracy Target
+
+\noindent Compare designs that estimate the same vector $(\beta_0,\beta_F,\beta_P)$ with expected total squared coefficient error at most $\epsilon^2$. The loss is measured in squared rating points under the fixed attribute coding. It is distinct from prediction error on an individual response or expected profit from a launch. [Jasin, Lin, and Zhang](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298), §5.3, derive the optimal continuous allocation for this design.
+
+Balanced sampling places the same number of observations at each profile within each source. Define total primary precision $t=N_P/\sigma_P^2$ and auxiliary precision $s=N_A/\sigma_A^2$. Joint weighted least squares estimates both response and bias coefficients. Under Assumption \ref{ass:auxiliary-response-design}, its total coefficient MSE is
+
+$$
+\operatorname{MSE}(\widehat\beta)=\frac{2}{t}+\frac{1}{t+s}.
+$$
+
+The intercept and price variances each equal $1/t$, because the auxiliary bias confounds those coefficients. Both sources inform the feature coefficient, whose variance is $1/(t+s)$. Increasing auxiliary precision helps the final term while leaving the first two terms dependent on primary observations.
+
+The relevant relative cost combines response cost and noise variance:
+
+$$
+\lambda=\frac{c_A\sigma_A^2}{c_P\sigma_P^2}.
+$$
+
+For the normalized target $\epsilon^2=1$, the optimal precisions are $t^*=3$ and $s^*=0$ when $\lambda\geq1/3$. For $0<\lambda<1/3$, they are
+
+$$
+t^*=2+\sqrt{\frac{2\lambda}{1-\lambda}},\qquad
+s^*=\sqrt{\frac{2(1-\lambda)}{\lambda}}-1-\sqrt{\frac{2\lambda}{1-\lambda}}.
+$$
+
+For a target $\epsilon^2$, divide these normalized precisions by $\epsilon^2$, convert precision to response counts using each source variance, and round each profile's count upward. Relative to optimized primary-only sampling, the asymptotic saving is
+
+$$
+V(\lambda)=
+\begin{cases}
+1-\bigl[2-\lambda+2\sqrt{2\lambda(1-\lambda)}\bigr]/3,&0<\lambda<1/3,\\
+0,&\lambda\geq1/3.
+\end{cases}
+$$
+
+As auxiliary information becomes arbitrarily inexpensive, this saving approaches one third. In this balanced design and equally weighted coefficient loss, only the feature direction receives usable auxiliary information. The limiting fraction changes with the design and objective; counting unconfounded coefficients does not supply a general cost formula.
+
+![Under the invented four-profile design, asymptotic cost savings approach 33.33 percent as the relative information cost approaches zero, then decline to zero at one third. A second curve is zero at every cost ratio when auxiliary bias can affect every primary response feature. The zero-cost endpoint denotes a limit.](../figures/M04_auxiliary_value.png)
+
+Set both error variances to 1, primary cost to 1, auxiliary cost to 0.01, and the MSE target to 0.01. The units of cost are normalized research-budget units. The continuous design implies a 24.29% asymptotic saving. Rounding profile counts gives:
+
+| Allocation | Primary Responses | Auxiliary Responses | Cost | Total MSE |
+|---|---:|---:|---:|---:|
+| Primary Only | 300 | 0 | 300.00 | 0.010000 |
+| Mixed Sources | 216 | 1,296 | 228.96 | 0.009921 |
+
+The mixed design uses 54 primary and 324 auxiliary responses at each profile. Its 23.68% cost saving retains the same accuracy requirement. The rounded construction satisfies the target; it need not be the exact optimum over finite integer allocations. Model development, validation, and monitoring costs require separate entries in an operational research budget.
+
+### 4.24.4 Python Allocation and Profile Comparisons
+
+\noindent The [parameter file](../../03_Data_and_Code/Auxiliary_Data/data/parameters.json) supplies the invented coefficients, variances, source costs, and accuracy target. The program computes profile means, converts optimal precision into balanced integer counts, and saves the allocation and cost curve. A zero cost ratio appears only as the limiting point of the saved curve. No response records are simulated or sent to an external model. Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/Auxiliary_Data/allocate_responses.py
+```
+
+Python source: [allocate_responses.py](../../03_Data_and_Code/Auxiliary_Data/allocate_responses.py)
+
+```python
+"""Four invented product profiles and a cost comparison at a common MSE target.
+
+Adaptation of Jasin, Lin, and Zhang (2026), Section 5.3. All parameters are
+imposed. Independent Gaussian errors and the specified bias features define
+the model; this program calculates analytic moments without collecting data.
+"""
+import argparse
+import csv
+import json
+from math import ceil, isfinite, sqrt
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def load_parameters(path=ROOT / "data/parameters.json"):
+    parameters = json.loads(Path(path).read_text())
+    for key in ("primary_variance", "auxiliary_variance", "primary_cost",
+                "auxiliary_cost", "mse_target"):
+        if not isfinite(parameters[key]) or parameters[key] <= 0:
+            raise ValueError(f"{key} must be finite and positive.")
+    if len(parameters["primary_coefficients"]) != 3:
+        raise ValueError("Primary coefficients must follow intercept, feature, price.")
+    if len(parameters["auxiliary_bias_coefficients"]) != 2:
+        raise ValueError("Bias coefficients must follow intercept, price.")
+    return parameters
+
+
+def optimal_precision(lam):
+    if not isfinite(lam) or lam <= 0:
+        raise ValueError("The information-cost ratio must be finite and positive.")
+    if lam >= 1 / 3:
+        return 3.0, 0.0
+    primary = 2 + sqrt(2 * lam / (1 - lam))
+    auxiliary = sqrt(2 * (1 - lam) / lam) - 1 - sqrt(2 * lam / (1 - lam))
+    return primary, auxiliary
+
+
+def calculate(parameters):
+    b0, bf, bp = parameters["primary_coefficients"]
+    g0, gp = parameters["auxiliary_bias_coefficients"]
+    profiles = []
+    for price in (-1, 1):
+        for feature in (-1, 1):
+            primary = b0 + bf * feature + bp * price
+            profiles.append(dict(price=price, feature=feature,
+                primary_mean=round(primary, 12),
+                auxiliary_mean=round(primary + g0 + gp * price, 12)))
+    vp, va = parameters["primary_variance"], parameters["auxiliary_variance"]
+    cp, ca = parameters["primary_cost"], parameters["auxiliary_cost"]
+    target = parameters["mse_target"]
+    lam = ca * va / (cp * vp)
+    t, s = optimal_precision(lam)
+    primary_n = 4 * ceil(t * vp / (4 * target))
+    auxiliary_n = 4 * ceil(s * va / (4 * target))
+    reference_n = 4 * ceil(3 * vp / (4 * target))
+    tp, ta = primary_n / vp, auxiliary_n / va
+    cost = cp * primary_n + ca * auxiliary_n
+    summary = dict(information_cost_ratio=lam, mse_target=target,
+        primary_n=primary_n, auxiliary_n=auxiliary_n,
+        primary_per_profile=primary_n // 4, auxiliary_per_profile=auxiliary_n // 4,
+        primary_only_n=reference_n, primary_only_cost=cp * reference_n,
+        primary_only_mse=3 * vp / reference_n, mixed_cost=cost,
+        rounded_saving_fraction=1 - cost / (cp * reference_n),
+        asymptotic_saving_fraction=1 - (t + lam * s) / 3,
+        primary_precision=tp, auxiliary_precision=ta,
+        intercept_variance=1 / tp, price_variance=1 / tp,
+        feature_variance=1 / (tp + ta),
+        correct_model_mse=2 / tp + 1 / (tp + ta))
+    curve = [dict(information_cost_ratio=0.0, saving_fraction=1 / 3,
+                  fully_confounded_saving=0.0, limiting_value=True)]
+    ratios = [0.000001, 0.00001, 0.0001, 0.0002, 0.0005]
+    ratios += [i / 1000 for i in range(1, 401)]
+    for ratio in ratios:
+        t, s = optimal_precision(ratio)
+        curve.append(dict(information_cost_ratio=ratio,
+            saving_fraction=1 - (t + ratio * s) / 3,
+            fully_confounded_saving=0.0, limiting_value=False))
+    return profiles, summary, curve
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def run(output):
+    profiles, summary, curve = calculate(load_parameters())
+    output.mkdir(parents=True, exist_ok=True)
+    write_csv(output / "profile_means.csv", profiles)
+    write_csv(output / "value_curve.csv", curve)
+    (output / "allocation.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    run(parser.parse_args().output)
+```

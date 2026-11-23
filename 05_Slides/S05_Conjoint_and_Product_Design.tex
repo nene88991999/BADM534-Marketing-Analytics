@@ -275,6 +275,66 @@ M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumer
 
 M4 §4.23, M5 §5.23, and M7 §7.36. \url{../03_Data_and_Code/Synthetic_Consumers/README.md}}
 \end{frame}
+\begin{frame}{Feature and Price Comparisons}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_auxiliary_contrasts.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Invented means. Auxiliary bias includes an overall shift and a price effect.\par}
+\note{Feature and price are each coded -1 and +1. The imposed primary coefficients are (3, 0.4, -0.5), and auxiliary bias adds 0.8 + 0.6 times price. Both sources preserve the 0.8-point feature contrast, while their price contrasts have opposite signs. No human or model responses were collected. The Gaussian model treats the response as a continuous rating score.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
+\begin{frame}{Research Accuracy and Source Allocation}
+\usebeamercolor[fg]{normal text}
+\noindent Source precision is response count divided by known noise variance:
+\medskip
+\[
+\begin{gathered}t=\frac{N_P}{\sigma_P^2},\qquad s=\frac{N_A}{\sigma_A^2}\\[0.35em]\operatorname{MSE}(\widehat\beta)=\frac{2}{t}+\frac{1}{t+s}\end{gathered}
+\]
+\medskip
+\noindent Primary precision $t$ identifies intercept and price. Both sources inform the feature through $t+s$.
+\note{Here t = N\_P / sigma\_P squared and s = N\_A / sigma\_A squared. The loss sums squared errors across the three primary coefficients with the fixed -1/+1 coding. Auxiliary bias is restricted to intercept and price. Known bias features, linear means, and independent Gaussian errors support the calculation. Full derivation and Python are in M4 Section 4.24.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
+\begin{frame}{The Cost of Informative Responses}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_auxiliary_value.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The saving depends on source costs, noise, and which response features bias can imitate.\par}
+\note{The information-cost ratio is auxiliary cost times auxiliary variance divided by primary cost times primary variance. The criterion is worst-case MSE for the full three-coefficient primary vector. The one-third limit is specific to this design and loss. It is not a general rule that cost savings equal the share of unconfounded coefficients.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
+\begin{frame}{Accuracy and Research Cost}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrrrr}
+\toprule
+Design & Primary & Auxiliary & Cost & MSE \\
+\midrule
+Primary Only & 300 & 0 & 300.00 & 0.010000 \\
+Mixed Sources & 216 & 1,296 & 228.96 & 0.009921 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Imposed costs: 1 and 0.01 per response. Rounded allocations save 23.68\% at the same 0.01 MSE target.
+\vfill
+\note{Both source variances equal one. The mixed allocation places 54 primary and 324 auxiliary observations at each profile. Its asymptotic saving is 24.29 percent; separate upward rounding within each source-profile cell gives the table. The rounded construction is feasible but need not be the exact integer optimum. Setup, human validation, and monitoring costs require separate budget entries. Run allocate\_responses.py in the Auxiliary\_Data example.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
 \begin{frame}{Customer Alternatives and AI Pricing}
 \usebeamercolor[fg]{normal text}
 \vfill

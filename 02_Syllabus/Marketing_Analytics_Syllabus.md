@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Research examples compare mechanism clusters, university affiliations, customer outcomes, and cancellation policy. Synthetic cases examine consumer screening, training mixtures, and customer service.
+Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Research examples compare mechanism clusters, university affiliations, customer outcomes, and cancellation policy. Synthetic cases examine consumer screening, human and synthetic research budgets, training mixtures, and customer service.
 
 ---
 
@@ -44,15 +44,15 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
 | 2 | January 27 | M2: Customer data, measurement, missingness, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
-| 4 | February 10 | M3: Regression and marketing interpretation |
-| 5 | February 17 | M4: Conjoint, product design, and concept screening |
+| 4 | February 10 | M3: Regression, source bias, and marketing interpretation |
+| 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
 | 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
 | 7 | March 3 | M5: Text, social media, affiliation networks, retail access, and pricing communication |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
-| 9 | March 24 | M6: Experiments and incremental value |
+| 9 | March 24 | M6: Experiments, research design, and incremental value |
 | 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
-| 11 | April 7 | M7: Prediction, validation, training mixtures, and service outcomes |
+| 11 | April 7 | M7: Prediction, validation, training mixtures, source bias, and service outcomes |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
 | 14 | April 28 | M8, M9: Generative AI, Marketing Dialectics, consumer agency, and regulation |

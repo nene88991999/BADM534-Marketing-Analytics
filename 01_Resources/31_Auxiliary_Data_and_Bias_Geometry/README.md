@@ -13,7 +13,7 @@ Jasin, Lin, and Zhang's [Bias Geometry and the Value of Auxiliary Data](https://
 | M6 | Explain why a fixed experimental design can be efficient when information is known in advance. | [Causal inference and experiments](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) |
 | M7 | Evaluate the assumed bias features, respondent dependence, and stability on fresh human observations. | [Synthetic panel validation, §7.36](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) |
 
-M4 and M7 provide the strongest placement. These are proposed additions; the review does not change the released notes, slides, schedule, or assignment requirements. The [case design](CASE_DESIGN.md) develops a four-profile example and two proposed TikZ figures. The [source review](SOURCE_REVIEW.md) distinguishes the formal result, retrospective calibrations, and implications for course examples.
+M4 §4.24 and M7 §7.37 contain the implemented example and complete Python, with connections in M3 §3.16 and M6 §6.28. [Two executed course programs](../../03_Data_and_Code/Auxiliary_Data/README.md), six independent checks, three TikZ figures, and nine slides across Sessions 4, 5, 9, and 11 support the discussion. The [case design](CASE_DESIGN.md) maps the example to [optional ungraded practice](../../07_Labs/Auxiliary_Data/README.md). The [source review](SOURCE_REVIEW.md) distinguishes the formal result and retrospective calibrations from the course calculations.
 
 ## Evidence and Interpretation
 

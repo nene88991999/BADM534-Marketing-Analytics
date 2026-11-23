@@ -1,7 +1,7 @@
 {
   "namespace": "auxiliary-bias",
   "reviewed_on": "2026-11-23",
-  "status": "Source review and proposed course case; lecture integration pending.",
+  "status": "Available in M3, M4, M6, M7, Sessions 4, 5, 9, and 11, and optional ungraded practice.",
   "resources": [
     {
       "id": "AB01",
@@ -39,5 +39,8 @@
       "original_calculations": "source_checks.py",
       "verification": "source_checks.json"
     }
-  ]
+  ],
+  "implemented_on": "2026-11-23",
+  "course_examples": "../../03_Data_and_Code/Auxiliary_Data/README.md",
+  "course_verification": "../../03_Data_and_Code/Auxiliary_Data/VERIFICATION.md"
 }

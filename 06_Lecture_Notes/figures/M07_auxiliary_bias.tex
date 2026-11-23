@@ -1,0 +1,17 @@
+% Analytic MSE; both source counts grow proportionally; omitted feature bias is fixed.
+\begin{tikzpicture}
+\begin{axis}[width=13.5cm,height=6.6cm,xmode=log,log basis x=2,xmin=.9,xmax=36,
+xtick={1,2,4,8,16,32},xticklabels={1,2,4,8,16,32},ymin=0,ymax=.085,
+ytick={0,.02,.04,.06,.08},yticklabels={0,0.02,0.04,0.06,0.08},scaled y ticks=false,
+xlabel={Multiplier of Both Source Sample Sizes},ylabel={Total Coefficient MSE},
+legend style={at={(.5,-.25)},anchor=north,legend columns=2,font=\small,fill=none,draw=none}]
+\addplot[IlliniBlue,mark=*] coordinates {(1.000000000,0.009920635) (2.000000000,0.004960317) (4.000000000,0.002480159) (8.000000000,0.001240079) (16.000000000,0.000620040) (32.000000000,0.000310020)};
+\addlegendentry{Correct Bias Model}
+\addplot[IlliniOrange,mark=square*] coordinates {(1.000000000,0.076043084) (2.000000000,0.071082766) (4.000000000,0.068602608) (8.000000000,0.067362528) (16.000000000,0.066742489) (32.000000000,0.066432469)};
+\addlegendentry{Omitted Feature Bias}
+\addplot[Storm,dashed] coordinates {(1.000000000,0.066122449) (2.000000000,0.066122449) (4.000000000,0.066122449) (8.000000000,0.066122449) (16.000000000,0.066122449) (32.000000000,0.066122449)};
+\addlegendentry{Squared Bias}
+\addplot[Patina,dotted] coordinates {(1.000000000,0.010000000) (2.000000000,0.010000000) (4.000000000,0.010000000) (8.000000000,0.010000000) (16.000000000,0.010000000) (32.000000000,0.010000000)};
+\addlegendentry{Original MSE Target}
+\end{axis}
+\end{tikzpicture}

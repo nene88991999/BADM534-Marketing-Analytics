@@ -1,8 +1,8 @@
 # Lecture Notes
 
-**By Nathan Yang. Updated November 22, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [358-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 94 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [369-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 97 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -149,3 +149,7 @@ M4 §4.23 and M5 §5.23 contain [two complete Python programs](../03_Data_and_Co
 ## Reproducible Recommendations and Export
 
 M1 §1.15 provides a complete Python program that recomputes four synthetic-consumer tables and writes a report with traceable evidence. An Illinois-color TikZ figure holds persona ratings fixed while varying identical repeat counts. M8 §8.25 connects numerical agreement to interpretation, file conversion, and public release. The [example and six checks](../03_Data_and_Code/Reproducible_Recommendations/README.md) accompany [optional ungraded practice](../07_Labs/Reproducible_Recommendations/README.md).
+
+## Human and Synthetic Research Budgets
+
+M4 §4.24 develops a four-profile product comparison, a common coefficient-accuracy target, and the allocation of primary and auxiliary responses. M7 §7.37 adds omitted-bias sensitivity and independent human validation. M3 §3.16 and M6 §6.28 explain identification and the information conditions supporting a fixed design. [Two complete programs and three editable figures](../03_Data_and_Code/Auxiliary_Data/README.md) accompany the notes and [optional ungraded practice](../07_Labs/Auxiliary_Data/README.md).

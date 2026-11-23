@@ -1,0 +1,11 @@
+{
+  "primary_coefficients": [3.0, 0.4, -0.5],
+  "auxiliary_bias_coefficients": [0.8, 0.6],
+  "primary_variance": 1.0,
+  "auxiliary_variance": 1.0,
+  "primary_cost": 1.0,
+  "auxiliary_cost": 0.01,
+  "mse_target": 0.01,
+  "omitted_feature_bias": 0.3,
+  "sample_multipliers": [1, 2, 4, 8, 16, 32]
+}

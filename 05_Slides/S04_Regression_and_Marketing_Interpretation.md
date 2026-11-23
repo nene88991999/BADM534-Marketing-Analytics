@@ -11,6 +11,7 @@ Session 04. M3. 170 minutes.
 - Interpret coefficients with units and conditioning.
 - Diagnose omitted variables, interactions, and dependence.
 - Reproduce an association while preserving its time and sample definitions.
+- Distinguish a primary response coefficient from source bias.
 
 ## Related Materials
 
@@ -18,6 +19,8 @@ Session 04. M3. 170 minutes.
 - [Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)
 - [mHealth regression code](../03_Data_and_Code/mHealth/recurring_examples/m03.py)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
+- [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
+- [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 
 ## Slide 1: Regression and Marketing Interpretation
 
@@ -212,7 +215,17 @@ The FTC advertising-substantiation policy requires a reasonable basis for object
 
 Source: FTC Policy Statement Regarding Advertising Substantiation. https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation
 
-## Slide 18: Regression Discussion
+## Slide 18: Response Coefficients and Source Bias
+
+- A synthetic price comparison combines customer response with price bias.
+- A feature comparison survives when bias stays fixed across feature levels.
+- Primary observations separate the response from the confounded bias.
+
+The four-profile model uses response features (1, feature, price) and auxiliary bias features (1, price). Unknown unrestricted price bias can offset a change in the primary price coefficient. Repetition reduces variance without resolving that confounding. M4 Section 4.24 supplies the full invented example and Python. This coefficient-identification result does not itself establish a causal purchasing effect.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 19: Regression Discussion
 
 - Which comparison supports the coefficient?
 - What variable could reverse its interpretation?

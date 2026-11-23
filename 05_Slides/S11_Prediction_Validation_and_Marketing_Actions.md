@@ -17,6 +17,7 @@ Session 11. M7. 170 minutes.
 - Separate anomaly detection, variable localization, event timing, and evidence for a diagnosis.
 - Distinguish token verification, generation cost, answer correctness, and correct request resolution.
 - Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule.
+- Evaluate omitted auxiliary bias separately from sampling variance.
 
 ## Related Materials
 
@@ -36,6 +37,8 @@ Session 11. M7. 170 minutes.
 - [Inference Efficiency: Optional Practice](../07_Labs/Inference_Efficiency/README.md)
 - [Training Data Mixtures: Data and Code](../03_Data_and_Code/Training_Data_Mixtures/README.md)
 - [Training Data Mixtures: Optional Practice](../07_Labs/Training_Data_Mixtures/README.md)
+- [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
+- [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -533,7 +536,39 @@ The public practice labels are disclosed. To estimate generalization, collect ne
 
 Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
 
-## Slide 41: Coding Exercise: A Forecast Evaluation
+## Slide 41: An Omitted Feature Bias
+
+- The allocation assumes that auxiliary feature bias equals zero.
+- Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.
+- Total coefficient MSE rises from 0.009921 to 0.076043.
+
+These are analytic moments in the invented four-profile design. Both source variances equal one, with 216 primary and 1,296 auxiliary responses. The fitted model retains intercept and price bias; the sensitivity adds a feature bias to the auxiliary mean. Expected feature-coefficient error equals 0.3 times 1296/1512. The 0.01 MSE target fails because of the omitted bias restriction.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 42: Sampling Variance and Persistent Bias
+
+Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.
+
+**Figure description:** The navy curve gives correct-model MSE, declining from 0.009921 toward zero as sample size multiplies by up to 32. The orange curve includes omitted feature bias and approaches a gray squared-bias floor of 0.066122. A dotted line marks the original 0.01 target. Source ratios, variances, and true coefficients remain fixed.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_auxiliary_bias.tex)
+
+At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias MSE is 0.066432. A larger sample narrows sampling variation while preserving the expected coefficient error. Adding the feature to the fitted bias dictionary restores correct specification but makes all three primary features confounded with unrestricted auxiliary bias. At the original 216 primary observations, the corrected model has MSE 3/216 = 0.013889.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 43: Human Validation of the Bias Model
+
+- A bias feature excluded by a significance cutoff may still matter for the decision.
+- Reserve human respondents and concepts from model and feature selection.
+- Repeated ratings require a dependence model before they count as independent information.
+
+In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is excluded by the 0.01 threshold. Holding the five primary features fixed and adding that bias feature makes the bias dictionary cover the full primary feature space, yielding zero auxiliary value under the expanded worst-case model. This is a sensitivity implication, not an empirical re-estimation. The reported 74 and 32 percent savings come from retrospective calibrations assuming auxiliary cost is one percent of primary cost. M7 Section 7.37 provides full Python and interpretation.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 44: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -543,7 +578,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 42: Targeting and Delivered Opportunities
+## Slide 45: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -553,7 +588,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 43: Prediction Discussion
+## Slide 46: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

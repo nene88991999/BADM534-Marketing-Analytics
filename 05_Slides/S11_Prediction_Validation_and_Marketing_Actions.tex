@@ -621,6 +621,46 @@ M5 §5.20 and M7 §7.26. \url{../03_Data_and_Code/AI_Evidence_and_Evaluation/eva
 
 M5 §5.20 and M7 §7.26. \url{../07_Labs/AI_Evidence_and_Evaluation/README.md;} \url{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/}}
 \end{frame}
+\begin{frame}{An Omitted Feature Bias}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item The allocation assumes that auxiliary feature bias equals zero.
+\item Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.
+\item Total coefficient MSE rises from 0.009921 to 0.076043.
+\end{slidebullets}
+\vfill
+\note{These are analytic moments in the invented four-profile design. Both source variances equal one, with 216 primary and 1,296 auxiliary responses. The fitted model retains intercept and price bias; the sensitivity adds a feature bias to the auxiliary mean. Expected feature-coefficient error equals 0.3 times 1296/1512. The 0.01 MSE target fails because of the omitted bias restriction.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
+\begin{frame}{Sampling Variance and Persistent Bias}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_auxiliary_bias.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.\par}
+\note{At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias MSE is 0.066432. A larger sample narrows sampling variation while preserving the expected coefficient error. Adding the feature to the fitted bias dictionary restores correct specification but makes all three primary features confounded with unrestricted auxiliary bias. At the original 216 primary observations, the corrected model has MSE 3/216 = 0.013889.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
+\begin{frame}{Human Validation of the Bias Model}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A bias feature excluded by a significance cutoff may still matter for the decision.
+\item Reserve human respondents and concepts from model and feature selection.
+\item Repeated ratings require a dependence model before they count as independent information.
+\end{slidebullets}
+\vfill
+\note{In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is excluded by the 0.01 threshold. Holding the five primary features fixed and adding that bias feature makes the bias dictionary cover the full primary feature space, yielding zero auxiliary value under the expanded worst-case model. This is a sensitivity implication, not an empirical re-estimation. The reported 74 and 32 percent savings come from retrospective calibrations assuming auxiliary cost is one percent of primary cost. M7 Section 7.37 provides full Python and interpretation.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
 \begin{frame}{Coding Exercise: A Forecast Evaluation}
 \usebeamercolor[fg]{normal text}
 \vfill

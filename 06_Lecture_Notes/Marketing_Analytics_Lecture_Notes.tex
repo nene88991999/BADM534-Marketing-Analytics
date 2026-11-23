@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 22, 2026\par}
+{\large November 23, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -4862,6 +4862,38 @@ concerns fitted associations and extrapolation under that
 representation; causal effects of a tag or a training-source change
 require a separate identification argument.
 
+\hypertarget{M03-customer-preferences-and-synthetic-response-bias}{%
+\section{Customer Preferences and Synthetic Response
+Bias}\label{M03-customer-preferences-and-synthetic-response-bias}}
+
+\noindent \noindent A product manager wants to estimate the value of a premium
+feature and the response to price. Synthetic ratings can combine
+customer preference with a separate model bias. If both components vary
+with price, synthetic observations identify their sum. An increase in
+the preference coefficient can be offset by an equal decrease in the
+bias coefficient without changing the fitted synthetic ratings.
+Repeating the same source does not distinguish those explanations.
+
+A useful comparison holds the source bias fixed. Suppose synthetic bias
+depends on price and an overall optimism shift, while the primary
+response depends on price and the premium feature. Comparing standard
+and premium profiles at the same price removes both bias terms.
+Comparing prices retains the price bias. Under this specification, the
+first contrast identifies the feature contribution, while primary
+observations are necessary to identify the price contribution
+separately.
+
+The distinction depends on the allowed bias features. Admitting a
+premium-feature bias also confounds the feature contrast.
+\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}{Jasin,
+Lin, and Zhang}, Theorem 2, formalize this relationship between response
+and bias features. \href{M04_Conjoint_Segmentation_and_CLV.md}{Section
+4.24} gives the numerical example and complete Python;
+\href{M07_Prediction_and_Machine_Learning.md}{Section 7.37} examines an
+omitted bias feature. Coefficient recovery under the stated response
+model supplies a statistical comparison. A causal interpretation still
+requires the relevant assignment and population conditions.
+
 \hypertarget{M04-m4.-product-preferences-customer-segments-and-lifetime-value}{%
 \chapter{Product Preferences, Customer Segments, and Lifetime
 Value}\label{M04-m4.-product-preferences-customer-segments-and-lifetime-value}}
@@ -6980,6 +7012,317 @@ def main():
 
 if __name__ == "__main__":
     main()
+\end{Verbatim}
+
+\hypertarget{M04-human-and-synthetic-evidence-for-product-design}{%
+\section{Human and Synthetic Evidence for Product
+Design}\label{M04-human-and-synthetic-evidence-for-product-design}}
+
+\noindent \noindent A body-wash manager must decide whether to include a premium
+feature and how to price the product. Human survey responses cost more
+than generated responses. The research budget should reflect which
+attribute comparisons each source can support at the required accuracy.
+A synthetic respondent can preserve the feature comparison while
+reversing the response to price.
+
+\hypertarget{M04-response-features-and-bias-features}{%
+\subsection{Response Features and Bias
+Features}\label{M04-response-features-and-bias-features}}
+
+\noindent \noindent Four product profiles cross a standard or premium feature with
+a low or high price. Code the feature as \(f=-1\) or \(+1\) and price as
+\(p=-1\) or \(+1\). An observation is one response at one profile from
+one source in a fixed research setting. The response is a stylized
+continuous rating score measured in points. The price code identifies
+two levels; a price coefficient here is measured per coded unit and is
+not an elasticity.
+
+To distinguish customer preferences from source bias, specify the
+primary and auxiliary responses as
+
+\[
+Y^P=\beta_0+\beta_F f+\beta_P p+e^P,\qquad
+Y^A=\beta_0+\beta_F f+\beta_P p+\gamma_0+\gamma_Pp+e^A.
+\]
+
+The three \(\beta\) coefficients describe the primary response. The
+auxiliary source adds an overall shift \(\gamma_0\) and a price
+distortion \(\gamma_P\). Estimation treats these coefficients as
+unknown. The exclusion of a separate feature bias supplies the
+informative feature comparison.
+
+\begin{assumption}[Response and Bias Structure]
+\label{ass:auxiliary-response-design}
+The four profiles have the linear conditional means specified above. The response features $(1,f,p)$ and auxiliary bias features $(1,p)$ are known and fixed. The unknown response and bias coefficients are unrestricted. Errors are independent across observations and sources, Gaussian with mean zero, and have known positive source variances $\sigma_P^2$ and $\sigma_A^2$. Sampling costs $c_P$ and $c_A$ are positive and constant across profiles within each source.
+\end{assumption}
+
+Under Assumption \ref{ass:auxiliary-response-design}, differences
+between auxiliary ratings at the same price remove both bias terms.
+Their expected premium-minus-standard contrast is \(2\beta_F\). A
+high-minus-low price contrast instead equals \(2(\beta_P+\gamma_P)\), so
+auxiliary responses alone do not separate the two price coefficients.
+The response-feature space contains three directions; the bias-feature
+space overlaps the intercept and price directions.
+
+\hypertarget{M04-preserved-feature-comparisons-and-reversed-price-responses}{%
+\subsection{Preserved Feature Comparisons and Reversed Price
+Responses}\label{M04-preserved-feature-comparisons-and-reversed-price-responses}}
+
+\noindent \noindent Set the primary coefficients to \((3,0.4,-0.5)\) and the
+auxiliary bias coefficients to \((0.8,0.6)\). These are invented inputs,
+with no observed human or generated-model responses. The resulting
+conditional means are:
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Price & Feature & Primary Mean & Auxiliary Mean \\
+\midrule
+
+Low & Standard & 3.1 & 3.3 \\
+Low & Premium & 3.9 & 4.1 \\
+High & Standard & 2.1 & 3.5 \\
+High & Premium & 2.9 & 4.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At either price, the premium feature raises both sources' expected
+ratings by 0.8 points. Raising price reduces the primary rating by 1.0
+point and increases the auxiliary rating by 0.2 points at either feature
+level. Thus, the model permits synthetic evidence to inform the feature
+comparison while reserving the price comparison for human research. A
+recommendation about willingness to pay would additionally require the
+monetary price difference and a justified mapping from these ratings to
+choice.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_auxiliary_contrasts.tex}
+\caption{The left panel holds price low and compares standard with premium features: primary means rise from 3.1 to 3.9 and auxiliary means from 3.3 to 4.1. The right panel holds the feature standard and raises price: primary means fall from 3.1 to 2.1 while auxiliary means rise from 3.3 to 3.5. Both panels share the rating scale. All means are invented.}\label{fig:M04_auxiliary_contrasts}
+\end{figure}
+
+\hypertarget{M04-research-cost-at-a-common-accuracy-target}{%
+\subsection{Research Cost at a Common Accuracy
+Target}\label{M04-research-cost-at-a-common-accuracy-target}}
+
+\noindent \noindent Compare designs that estimate the same vector
+\((\beta_0,\beta_F,\beta_P)\) with expected total squared coefficient
+error at most \(\epsilon^2\). The loss is measured in squared rating
+points under the fixed attribute coding. It is distinct from prediction
+error on an individual response or expected profit from a launch.
+\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}{Jasin,
+Lin, and Zhang}, §5.3, derive the optimal continuous allocation for this
+design.
+
+Balanced sampling places the same number of observations at each profile
+within each source. Define total primary precision \(t=N_P/\sigma_P^2\)
+and auxiliary precision \(s=N_A/\sigma_A^2\). Joint weighted least
+squares estimates both response and bias coefficients. Under Assumption
+\ref{ass:auxiliary-response-design}, its total coefficient MSE is
+
+\[
+\operatorname{MSE}(\widehat\beta)=\frac{2}{t}+\frac{1}{t+s}.
+\]
+
+The intercept and price variances each equal \(1/t\), because the
+auxiliary bias confounds those coefficients. Both sources inform the
+feature coefficient, whose variance is \(1/(t+s)\). Increasing auxiliary
+precision helps the final term while leaving the first two terms
+dependent on primary observations.
+
+The relevant relative cost combines response cost and noise variance:
+
+\[
+\lambda=\frac{c_A\sigma_A^2}{c_P\sigma_P^2}.
+\]
+
+For the normalized target \(\epsilon^2=1\), the optimal precisions are
+\(t^*=3\) and \(s^*=0\) when \(\lambda\geq1/3\). For \(0<\lambda<1/3\),
+they are
+
+\[
+t^*=2+\sqrt{\frac{2\lambda}{1-\lambda}},\qquad
+s^*=\sqrt{\frac{2(1-\lambda)}{\lambda}}-1-\sqrt{\frac{2\lambda}{1-\lambda}}.
+\]
+
+For a target \(\epsilon^2\), divide these normalized precisions by
+\(\epsilon^2\), convert precision to response counts using each source
+variance, and round each profile's count upward. Relative to optimized
+primary-only sampling, the asymptotic saving is
+
+\[
+V(\lambda)=
+\begin{cases}
+1-\bigl[2-\lambda+2\sqrt{2\lambda(1-\lambda)}\bigr]/3,&0<\lambda<1/3,\\
+0,&\lambda\geq1/3.
+\end{cases}
+\]
+
+As auxiliary information becomes arbitrarily inexpensive, this saving
+approaches one third. In this balanced design and equally weighted
+coefficient loss, only the feature direction receives usable auxiliary
+information. The limiting fraction changes with the design and
+objective; counting unconfounded coefficients does not supply a general
+cost formula.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_auxiliary_value.tex}
+\caption{Under the invented four-profile design, asymptotic cost savings approach 33.33 percent as the relative information cost approaches zero, then decline to zero at one third. A second curve is zero at every cost ratio when auxiliary bias can affect every primary response feature. The zero-cost endpoint denotes a limit.}\label{fig:M04_auxiliary_value}
+\end{figure}
+
+Set both error variances to 1, primary cost to 1, auxiliary cost to
+0.01, and the MSE target to 0.01. The units of cost are normalized
+research-budget units. The continuous design implies a 24.29\%
+asymptotic saving. Rounding profile counts gives:
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Allocation & Primary Responses & Auxiliary Responses & Cost & Total
+MSE \\
+\midrule
+
+Primary Only & 300 & 0 & 300.00 & 0.010000 \\
+Mixed Sources & 216 & 1,296 & 228.96 & 0.009921 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The mixed design uses 54 primary and 324 auxiliary responses at each
+profile. Its 23.68\% cost saving retains the same accuracy requirement.
+The rounded construction satisfies the target; it need not be the exact
+optimum over finite integer allocations. Model development, validation,
+and monitoring costs require separate entries in an operational research
+budget.
+
+\hypertarget{M04-python-allocation-and-profile-comparisons}{%
+\subsection{Python Allocation and Profile
+Comparisons}\label{M04-python-allocation-and-profile-comparisons}}
+
+\noindent \noindent The
+\href{../03_Data_and_Code/Auxiliary_Data/data/parameters.json}{parameter
+file} supplies the invented coefficients, variances, source costs, and
+accuracy target. The program computes profile means, converts optimal
+precision into balanced integer counts, and saves the allocation and
+cost curve. A zero cost ratio appears only as the limiting point of the
+saved curve. No response records are simulated or sent to an external
+model. Run from the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python3 03_Data_and_Code/Auxiliary_Data/allocate_responses.py
+\end{Verbatim}
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Auxiliary_Data/allocate_responses.py}{allocate\_responses.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Four invented product profiles and a cost comparison at a common MSE target.
+
+Adaptation of Jasin, Lin, and Zhang (2026), Section 5.3. All parameters are
+imposed. Independent Gaussian errors and the specified bias features define
+the model; this program calculates analytic moments without collecting data.
+"""
+import argparse
+import csv
+import json
+from math import ceil, isfinite, sqrt
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def load_parameters(path=ROOT / "data/parameters.json"):
+    parameters = json.loads(Path(path).read_text())
+    for key in ("primary_variance", "auxiliary_variance", "primary_cost",
+                "auxiliary_cost", "mse_target"):
+        if not isfinite(parameters[key]) or parameters[key] <= 0:
+            raise ValueError(f"{key} must be finite and positive.")
+    if len(parameters["primary_coefficients"]) != 3:
+        raise ValueError("Primary coefficients must follow intercept, feature, price.")
+    if len(parameters["auxiliary_bias_coefficients"]) != 2:
+        raise ValueError("Bias coefficients must follow intercept, price.")
+    return parameters
+
+
+def optimal_precision(lam):
+    if not isfinite(lam) or lam <= 0:
+        raise ValueError("The information-cost ratio must be finite and positive.")
+    if lam >= 1 / 3:
+        return 3.0, 0.0
+    primary = 2 + sqrt(2 * lam / (1 - lam))
+    auxiliary = sqrt(2 * (1 - lam) / lam) - 1 - sqrt(2 * lam / (1 - lam))
+    return primary, auxiliary
+
+
+def calculate(parameters):
+    b0, bf, bp = parameters["primary_coefficients"]
+    g0, gp = parameters["auxiliary_bias_coefficients"]
+    profiles = []
+    for price in (-1, 1):
+        for feature in (-1, 1):
+            primary = b0 + bf * feature + bp * price
+            profiles.append(dict(price=price, feature=feature,
+                primary_mean=round(primary, 12),
+                auxiliary_mean=round(primary + g0 + gp * price, 12)))
+    vp, va = parameters["primary_variance"], parameters["auxiliary_variance"]
+    cp, ca = parameters["primary_cost"], parameters["auxiliary_cost"]
+    target = parameters["mse_target"]
+    lam = ca * va / (cp * vp)
+    t, s = optimal_precision(lam)
+    primary_n = 4 * ceil(t * vp / (4 * target))
+    auxiliary_n = 4 * ceil(s * va / (4 * target))
+    reference_n = 4 * ceil(3 * vp / (4 * target))
+    tp, ta = primary_n / vp, auxiliary_n / va
+    cost = cp * primary_n + ca * auxiliary_n
+    summary = dict(information_cost_ratio=lam, mse_target=target,
+        primary_n=primary_n, auxiliary_n=auxiliary_n,
+        primary_per_profile=primary_n // 4, auxiliary_per_profile=auxiliary_n // 4,
+        primary_only_n=reference_n, primary_only_cost=cp * reference_n,
+        primary_only_mse=3 * vp / reference_n, mixed_cost=cost,
+        rounded_saving_fraction=1 - cost / (cp * reference_n),
+        asymptotic_saving_fraction=1 - (t + lam * s) / 3,
+        primary_precision=tp, auxiliary_precision=ta,
+        intercept_variance=1 / tp, price_variance=1 / tp,
+        feature_variance=1 / (tp + ta),
+        correct_model_mse=2 / tp + 1 / (tp + ta))
+    curve = [dict(information_cost_ratio=0.0, saving_fraction=1 / 3,
+                  fully_confounded_saving=0.0, limiting_value=True)]
+    ratios = [0.000001, 0.00001, 0.0001, 0.0002, 0.0005]
+    ratios += [i / 1000 for i in range(1, 401)]
+    for ratio in ratios:
+        t, s = optimal_precision(ratio)
+        curve.append(dict(information_cost_ratio=ratio,
+            saving_fraction=1 - (t + ratio * s) / 3,
+            fully_confounded_saving=0.0, limiting_value=False))
+    return profiles, summary, curve
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def run(output):
+    profiles, summary, curve = calculate(load_parameters())
+    output.mkdir(parents=True, exist_ok=True)
+    write_csv(output / "profile_means.csv", profiles)
+    write_csv(output / "value_curve.csv", curve)
+    (output / "allocation.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    run(parser.parse_args().output)
 \end{Verbatim}
 
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
@@ -11560,6 +11903,38 @@ notification intensity, a causal notification-response curve requires an
 additional design. Logging frequency by itself describes observed
 behavior and cannot substitute for an assigned intervention.
 
+\hypertarget{M06-fixed-experimental-designs-and-auxiliary-responses}{%
+\section{Fixed Experimental Designs and Auxiliary
+Responses}\label{M06-fixed-experimental-designs-and-auxiliary-responses}}
+
+\noindent \noindent A firm planning product research can choose both the profiles
+shown and the source supplying each response. When response features,
+bias features, variances, and sampling costs are known, the information
+supplied by another response is determined by its source and profile.
+The realized rating need not change that information calculation. This
+makes a design fixed before data collection a useful benchmark.
+
+\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}{Jasin,
+Lin, and Zhang}, Theorem 1, show that such a fixed allocation attains
+the minimum leading sampling cost as the coefficient-MSE target
+approaches zero in their linear Gaussian model. The objective requires
+accuracy uniformly over the unknown response and bias coefficients. The
+result permits lower-order differences at finite accuracy. Their pilot
+extension estimates unknown noise variances; it retains known response
+and bias features.
+
+The distinction from an adaptive marketing experiment follows from the
+information structure and objective. A nonlinear choice model can make
+information depend on unknown parameters. An online promotion experiment
+can value revenue earned during learning as well as a final estimate. An
+unknown bias dictionary requires evidence about which source comparisons
+remain valid. These changes require their own allocation analysis.
+\href{M04_Conjoint_Segmentation_and_CLV.md}{Section 4.24} provides the
+fixed-design calculation, and
+\href{M07_Prediction_and_Machine_Learning.md}{Section 7.37} shows what
+happens when its bias restriction fails. Synthetic ratings alone do not
+establish an intervention's causal effect on human purchasing.
+
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
 Actions}\label{M07-m7.-prediction-machine-learning-and-marketing-actions}}
@@ -15774,6 +16149,187 @@ same-information benchmark also matters: comparing an LLM receiving a
 full concept description with a classifier receiving only coarse
 category and demographic attributes combines information access with
 differences in modeling approach.
+
+\hypertarget{M07-omitted-bias-and-the-value-of-human-validation}{%
+\section{Omitted Bias and the Value of Human
+Validation}\label{M07-omitted-bias-and-the-value-of-human-validation}}
+
+\noindent \noindent A manager considering the 23.68\% research saving in Section
+4.24 needs evidence that the auxiliary source preserves the
+premium-feature comparison. The calculation allows arbitrary optimism
+and price bias but excludes a separate feature bias. An omitted feature
+effect changes the expected coefficient estimate even when the
+allocation and weighted regression are computed correctly.
+
+\hypertarget{M07-increasing-the-sample-can-leave-the-error-intact}{%
+\subsection{Increasing the Sample Can Leave the Error
+Intact}\label{M07-increasing-the-sample-can-leave-the-error-intact}}
+
+\noindent \noindent Retain the invented four-profile design, unit source
+variances, 216 primary responses, and 1,296 auxiliary responses. Add
+\(\delta f\) to the auxiliary conditional mean, with \(\delta=0.3\),
+while continuing to fit the smaller bias model containing only the
+intercept and price. The conditional means remain linear and the errors
+remain independent. This sensitivity changes the bias restriction in
+Assumption \ref{ass:auxiliary-response-design}.
+
+Let \(t=N_P/\sigma_P^2\) and \(s=N_A/\sigma_A^2\) denote actual source
+precisions. Balance makes the feature contrast orthogonal to the
+intercept and price contrasts. The fitted feature coefficient combines
+the two sources using their precisions, giving
+
+\[
+E[\widehat\beta_F]-\beta_F=\delta\frac{s}{t+s},\qquad
+E\|\widehat\beta-\beta\|^2=\frac{2}{t}+\frac{1}{t+s}
++\left(\delta\frac{s}{t+s}\right)^2.
+\]
+
+The first two terms are sampling variance under the fitted design. The
+final term is squared bias. Here the expected feature coefficient is
+0.657143, compared with the imposed primary coefficient of 0.4. Squared
+bias is 0.066122, raising total MSE from 0.009921 to 0.076043. This
+exceeds the 0.01 target by more than sevenfold.
+
+Multiplying both source sample sizes by the same number reduces variance
+while preserving \(s/(t+s)\). At 32 times the original sample sizes, the
+correctly specified MSE falls to 0.000310, but MSE with the omitted
+feature bias remains 0.066432. Its limit is the squared bias. A narrower
+sampling distribution around the same biased coefficient does not supply
+the missing restriction.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_auxiliary_bias.tex}
+\caption{As both source counts increase in fixed proportion from one to 32 times their initial values, correctly specified total coefficient MSE declines toward zero. With an omitted auxiliary feature bias of 0.3, total MSE approaches a squared-bias floor of 0.066122 and stays above the original 0.01 target. All inputs are invented and the curves are analytic.}\label{fig:M07_auxiliary_bias}
+\end{figure}
+
+Including the feature in the bias dictionary restores a correctly
+specified joint model. It also allows auxiliary bias to imitate every
+primary response feature. Under the unrestricted-bias, worst-case
+estimation criterion, the auxiliary source then adds no information
+about the primary coefficients. With the same 216 primary responses, the
+corrected model has MSE \(3/216=0.013889\), so meeting the original
+target requires more primary evidence. A supported tighter restriction
+on bias would define a different statistical problem.
+
+\hypertarget{M07-feature-selection-and-independent-human-evidence}{%
+\subsection{Feature Selection and Independent Human
+Evidence}\label{M07-feature-selection-and-independent-human-evidence}}
+
+\noindent \noindent The paper's retrospective cases select response and bias
+features at a 1\% significance threshold. In Table 1, Panel B, the
+chosen primary features are the intercept, female indicator, college
+degree, Democrat indicator, and Republican indicator. The bias
+dictionary contains the first four plus income. The Republican bias has
+a reported p-value of 0.034 and is excluded. Holding the primary model
+fixed and adding that indicator to the bias dictionary makes every
+primary feature confounded. Theorem 2 then implies zero auxiliary value
+under the expanded model. This is a sensitivity implication of the
+reported feature sets, not an empirical re-estimation. A change to the
+threshold in both regressions would also change the primary model.
+
+A p-value above the chosen cutoff does not establish a zero bias
+coefficient. Domain knowledge can motivate a restriction, while a
+separate human sample can assess its accuracy for the intended
+contrasts. Reserve respondents and concepts from prompt development,
+feature selection, and final evaluation when the deployment question
+concerns new customers or products. Repeated ratings by a respondent or
+repeated generations for a persona need a dependence analysis before
+they count as independent information. The paper's guarantees assume
+independent observations and leave correlated sources as an extension.
+
+The reported tea and digital-twin calibrations imply approximately 74\%
+and 32\% lower asymptotic sampling costs when the auxiliary response
+costs 1\% of a primary response. Their estimation-error comparisons
+simulate data from fitted models. These results describe conditional
+research budgets. They do not measure realized prospective savings or
+establish the absence of omitted bias in new populations.
+\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}{Jasin,
+Lin, and Zhang, §§3, 6, and 8}.
+
+\hypertarget{M07-python-bias-sensitivity}{%
+\subsection{Python Bias Sensitivity}\label{M07-python-bias-sensitivity}}
+
+\noindent \noindent The program imports the allocation functions listed in Section
+4.24 and uses the same
+\href{../03_Data_and_Code/Auxiliary_Data/data/parameters.json}{parameter
+file}. It recomputes the allocation, scales both source counts together,
+and calculates variance, squared bias, and total MSE. The output
+preserves the distinction between a biased estimator fitted under the
+smaller dictionary and the zero auxiliary value under the expanded
+correctly specified dictionary. Run from the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python3 03_Data_and_Code/Auxiliary_Data/bias_sensitivity.py
+\end{Verbatim}
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Auxiliary_Data/bias_sensitivity.py}{bias\_sensitivity.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Expected coefficient error when auxiliary feature bias is omitted.
+
+Both source counts increase together at a fixed allocation ratio. Errors
+remain independent with the variances in parameters.json. Analytic variance
+and squared bias refer to the three primary-model coefficients.
+"""
+import argparse
+import json
+from math import isfinite
+from pathlib import Path
+from allocate_responses import ROOT, calculate, load_parameters, write_csv
+
+
+def evaluate(parameters):
+    _, allocation, _ = calculate(parameters)
+    delta = parameters["omitted_feature_bias"]
+    if not isfinite(delta):
+        raise ValueError("The omitted feature bias must be finite.")
+    rows = []
+    for scale in parameters["sample_multipliers"]:
+        if not isinstance(scale, int) or scale <= 0:
+            raise ValueError("Sample multipliers must be positive integers.")
+        primary_n = scale * allocation["primary_n"]
+        auxiliary_n = scale * allocation["auxiliary_n"]
+        t = primary_n / parameters["primary_variance"]
+        s = auxiliary_n / parameters["auxiliary_variance"]
+        coefficient_error = delta * s / (t + s)
+        variance = 2 / t + 1 / (t + s)
+        rows.append(dict(sample_multiplier=scale, primary_n=primary_n,
+            auxiliary_n=auxiliary_n,
+            expected_feature_coefficient=parameters["primary_coefficients"][1] + coefficient_error,
+            feature_coefficient_error=coefficient_error,
+            total_coefficient_variance=variance, squared_bias=coefficient_error ** 2,
+            correct_model_mse=variance, omitted_bias_mse=variance + coefficient_error ** 2,
+            original_mse_target=parameters["mse_target"]))
+    return rows
+
+
+def run(output):
+    rows = evaluate(load_parameters())
+    output.mkdir(parents=True, exist_ok=True)
+    write_csv(output / "bias_sensitivity.csv", rows)
+    summary = {
+        "scope": "Analytic moments in an invented balanced linear design.",
+        "first_allocation": rows[0],
+        "last_allocation": rows[-1],
+        "bias_features_in_fitted_model": ["intercept", "price"],
+        "additional_bias_feature_in_sensitivity": "premium feature",
+        "expanded_dictionary": ["intercept", "premium feature", "price"],
+        "expanded_dictionary_auxiliary_value": 0.0,
+        "value_scope": "Unrestricted bias coefficients and worst-case MSE for the full primary coefficient vector.",
+    }
+    (output / "bias_summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    run(parser.parse_args().output)
+\end{Verbatim}
 
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing

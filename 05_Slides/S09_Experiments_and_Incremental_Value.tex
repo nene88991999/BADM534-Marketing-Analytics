@@ -148,6 +148,19 @@ M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M6, Section 6.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
+\begin{frame}{Fixed and Adaptive Research Designs}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Known features and variances determine information at each profile.
+\item A fixed allocation attains the leading minimum cost at high accuracy in the linear model.
+\item Unknown bias structure or revenue earned during learning changes the design problem.
+\end{slidebullets}
+\vfill
+\note{Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian model, with known response and bias dictionaries and constant source costs. It does not rule out lower-order finite-accuracy differences. Nonlinear response models can make information depend on unknown coefficients. The paper separately treats pilot estimation of noise variances while preserving known feature dictionaries. Compare this target with adaptive campaign profit and causal effects on purchases; M6 Section 6.28 supplies the interpretation.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
 \begin{frame}{Implementation Checks}
 \usebeamercolor[fg]{normal text}
 \vfill

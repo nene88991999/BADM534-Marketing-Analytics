@@ -1,0 +1,113 @@
+{
+  "updated_on": "2026-11-23",
+  "data_type": "Original analytic four-profile model with invented means, variances, costs, and bias coefficients.",
+  "primary_source": {
+    "title": "Bias Geometry and the Value of Auxiliary Data",
+    "authors": [
+      "Stefanus Jasin",
+      "Meichun Lin",
+      "Zijin Zhang"
+    ],
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298",
+    "revision_date": "2026-11-22",
+    "public_source_pdf": false
+  },
+  "observation_unit": "One response at one profile from one source; four balanced profiles within each source.",
+  "calculation_type": "Exact analytic moments, continuous allocation, and per-profile integer rounding.",
+  "empirical_replication": false,
+  "author_code_executed": false,
+  "model_calls": 0,
+  "analysis_programs_executed": 2,
+  "independent_checks_passed": 6,
+  "verification": "VERIFICATION.md",
+  "files": {
+    "03_Data_and_Code/Auxiliary_Data/AGENTS.md": {
+      "bytes": 1403,
+      "sha256": "72e73f3f14ee7ffc87b8f023bc2dcf759174cab374664d28cd5b1088ac82f301"
+    },
+    "03_Data_and_Code/Auxiliary_Data/DATA_DICTIONARY.md": {
+      "bytes": 3869,
+      "sha256": "aaff8c82c69da107081254d243ba416580cdfd001e1b069919938dec3342d0b3"
+    },
+    "03_Data_and_Code/Auxiliary_Data/README.md": {
+      "bytes": 4009,
+      "sha256": "1127c7a35d473d153dc5e098be805c337911595498d64f011c497099beee2b51"
+    },
+    "03_Data_and_Code/Auxiliary_Data/VERIFICATION.md": {
+      "bytes": 3680,
+      "sha256": "a9409ea10e586da63d29390832f00a7cc6a2c8c32e82b9a80d9d1f7441bfd711"
+    },
+    "03_Data_and_Code/Auxiliary_Data/allocate_responses.py": {
+      "bytes": 4371,
+      "sha256": "fffab344baad4d1d76a2730fa0d36b8bf811d126bc75f4485dad74a8fbe307f4"
+    },
+    "03_Data_and_Code/Auxiliary_Data/bias_sensitivity.py": {
+      "bytes": 2726,
+      "sha256": "a97e9e60e650cb4cf16aa5eddec3c371b5fc299a3e0eb1d3c7e93e618d89d4bd"
+    },
+    "03_Data_and_Code/Auxiliary_Data/build_figures.py": {
+      "bytes": 4291,
+      "sha256": "a952e01530f7c4e88fcc041376368f54fb70d92e383902ec11819d82244421e8"
+    },
+    "03_Data_and_Code/Auxiliary_Data/data/parameters.json": {
+      "bytes": 296,
+      "sha256": "6cc20a33b2e34905cc0dc6a7457382b5c5d238a2d191c1e14cf50bc69aee4fb6"
+    },
+    "03_Data_and_Code/Auxiliary_Data/results/README.md": {
+      "bytes": 1155,
+      "sha256": "3c467882d48319f5f93c4122a7e1083d3ac57e62abfbba60e8b7ec00e72f4420"
+    },
+    "03_Data_and_Code/Auxiliary_Data/results/allocation.json": {
+      "bytes": 600,
+      "sha256": "2e59689a78370d0d57210a6526ec4886fb54df137d07b8fa617c96416c5ced76"
+    },
+    "03_Data_and_Code/Auxiliary_Data/results/bias_sensitivity.csv": {
+      "bytes": 1014,
+      "sha256": "b43729b9ba707852584108b53bd575b1892e57261ae1229e3e6d1c11cf7b0489"
+    },
+    "03_Data_and_Code/Auxiliary_Data/results/bias_summary.json": {
+      "bytes": 1320,
+      "sha256": "4237e67b2acf823bf86b8a073e21b2af02b1e467e47ffd307cb7b3a2b6358b08"
+    },
+    "03_Data_and_Code/Auxiliary_Data/results/profile_means.csv": {
+      "bytes": 94,
+      "sha256": "78fd5fb9cf582bb666184ccbfa02c1c316b2ea953b2562d497a93979ca115e2c"
+    },
+    "03_Data_and_Code/Auxiliary_Data/results/value_curve.csv": {
+      "bytes": 13743,
+      "sha256": "5e7032ad8277f1887b4949750757c0f0051258589de22fdfc7656ee26ee11d8f"
+    },
+    "03_Data_and_Code/Auxiliary_Data/test_examples.py": {
+      "bytes": 5274,
+      "sha256": "5ac3984e3b0ff101267acae68de2a69aa1c93f29fb81f85962c4b5ec5fae48ee"
+    },
+    "06_Lecture_Notes/figures/M04_auxiliary_contrasts.png": {
+      "bytes": 33849,
+      "sha256": "e7ece0df0daaf911b3308f0706ad82eaaf464db98ac19252461b5761937fdadc"
+    },
+    "06_Lecture_Notes/figures/M04_auxiliary_contrasts.tex": {
+      "bytes": 1306,
+      "sha256": "42ba42e126e6dd39c44067ccd67b2f85069eaf11a5781603aebdbfce16a3e9f9"
+    },
+    "06_Lecture_Notes/figures/M04_auxiliary_value.png": {
+      "bytes": 37273,
+      "sha256": "152556f75b9e6e03e50450ae9d9e9881b1d2d9b5f66d9300fc070e941212830d"
+    },
+    "06_Lecture_Notes/figures/M04_auxiliary_value.tex": {
+      "bytes": 11498,
+      "sha256": "05db3b9210035b04d9daa3fbdc5e0f7c405dd8db98ffb8b6180eb6916dd0854e"
+    },
+    "06_Lecture_Notes/figures/M07_auxiliary_bias.png": {
+      "bytes": 40167,
+      "sha256": "63ed1ab30cb0a050fb9b163ff2c04d3d9c94c06c9a82daa54daa10b1dc68e4e7"
+    },
+    "06_Lecture_Notes/figures/M07_auxiliary_bias.tex": {
+      "bytes": 1485,
+      "sha256": "8b7f80cfdd8e4fe7b4436f036820e23b33932a8748964c48349de85fef8b2a74"
+    },
+    "07_Labs/Auxiliary_Data/README.md": {
+      "bytes": 3080,
+      "sha256": "7b6abf6c672679d7b3a05a89b35644d33a0c7250f838eb6cd7478ed9ecb23621"
+    }
+  }
+}

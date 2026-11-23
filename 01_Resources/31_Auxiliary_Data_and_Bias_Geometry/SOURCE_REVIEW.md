@@ -54,7 +54,7 @@ The formal model treats the bias dictionary as known. Empirical nonrejection of 
 
 A useful sensitivity exercise follows directly from Table 1, Panel B. Hold its five primary features fixed: intercept, female, college degree, Democrat, and Republican. Its selected bias dictionary includes the first four, plus income. Adding the Republican indicator to that bias dictionary makes it contain every primary feature. Theorem 2 then gives zero auxiliary value under that expanded unrestricted-bias model. This is a course sensitivity calculation, not an alternative empirical estimate. Changing the selection threshold for both regressions would also change the primary model and requires a separate calculation.
 
-The paper reports qualitatively similar results under backward elimination and cross-validation selection. The proposed exercise examines a different question: how the conclusion changes when a plausible omitted bias feature is admitted while preserving the estimand. An independent validation sample and a substantively justified sensitivity dictionary would help assess that restriction. Selecting features and simulating from the selected model cannot establish the absence of omitted bias.
+The paper reports qualitatively similar results under backward elimination and cross-validation selection. The course exercise examines a different question: how the conclusion changes when a plausible omitted bias feature is admitted while preserving the estimand. An independent validation sample and a substantively justified sensitivity dictionary would help assess that restriction. Selecting features and simulating from the selected model cannot establish the absence of omitted bias.
 
 ## Respondents, Repeated Ratings, and Customer Representation
 

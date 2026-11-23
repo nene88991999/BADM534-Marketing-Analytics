@@ -11,6 +11,7 @@ Session 09. M6. 170 minutes.
 - Define a treatment, assignment unit, outcome, and estimand.
 - Calculate an intention-to-treat effect, uncertainty, and contribution.
 - Plan power and use prior outcomes to improve precision.
+- Explain the information conditions supporting a fixed research allocation.
 
 ## Related Materials
 
@@ -21,6 +22,8 @@ Session 09. M6. 170 minutes.
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 - [AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)
+- [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
+- [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -153,7 +156,17 @@ At baseline probability 0.10, a two-point effect, two-sided 5% level, and 80% po
 
 Source: M6, Section 6.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 12: Implementation Checks
+## Slide 12: Fixed and Adaptive Research Designs
+
+- Known features and variances determine information at each profile.
+- A fixed allocation attains the leading minimum cost at high accuracy in the linear model.
+- Unknown bias structure or revenue earned during learning changes the design problem.
+
+Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian model, with known response and bias dictionaries and constant source costs. It does not rule out lower-order finite-accuracy differences. Nonlinear response models can make information depend on unknown coefficients. The paper separately treats pilot estimation of noise variances while preserving known feature dictionaries. Compare this target with adaptive campaign profit and causal effects on purchases; M6 Section 6.28 supplies the interpretation.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 13: Implementation Checks
 
 - Reconcile assigned counts and intended allocation.
 - Check missing outcomes and tracking by assignment.
@@ -164,7 +177,7 @@ A randomization protocol does not prevent differential tracking failures. Sample
 
 Source: M6, Section 6.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 13: Prior Outcomes and Precision
+## Slide 14: Prior Outcomes and Precision
 
 Adjust the outcome using a pre-treatment measure $X$.
 
@@ -178,7 +191,7 @@ CUPED uses a pre-treatment covariate and an appropriately specified adjustment. 
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 14: mHealth Baseline Activity Improves Precision
+## Slide 15: mHealth Baseline Activity Improves Precision
 
 Planning calculation uses historical user-level variance and a five-point target.
 
@@ -190,7 +203,7 @@ These are power-planning implications of observed historical variances, not a re
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 15: Model and Library Contributions
+## Slide 16: Model and Library Contributions
 
 Synthetic counts: 100 assigned tasks per condition; common rubric and resource limits.
 
@@ -202,7 +215,7 @@ The interaction is ten percentage points. Moving from the initial condition to t
 
 Source: Marketing Analytics Lecture Notes, M6 §6.19.
 
-## Slide 16: An Interaction Calculation
+## Slide 17: An Interaction Calculation
 
 The four rates are imposed teaching inputs.
 
@@ -221,7 +234,7 @@ Run factorial.py to reproduce both paths to the joint change using exact rationa
 
 Source: M6 §6.19. ../03_Data_and_Code/AI_Workflows/factorial.py
 
-## Slide 17: Coding Exercise: An Experiment Plan
+## Slide 18: Coding Exercise: An Experiment Plan
 
 - Compute the factorial contrasts alongside the email effect.
 - Change contribution, delivery cost, and the target effect.
@@ -231,7 +244,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth ex
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 18: Interference and Assignment Units
+## Slide 19: Interference and Assignment Units
 
 - Customers can share offers or affect one another.
 - Stores can divert purchases from nearby locations.
@@ -241,7 +254,7 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 19: A Treatment Arm Needs a Defensible Design
+## Slide 20: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -251,7 +264,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 20: Follow Purchases Through Returns
+## Slide 21: Follow Purchases Through Returns
 
 - Pressure and self-assurance can produce different purchase and return patterns.
 - Prespecify the eligible population and both outcome horizons.
@@ -261,7 +274,7 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 21: From Experiments to Generative Decisions
+## Slide 22: From Experiments to Generative Decisions
 
 - Within-campaign comparisons can supervise a model that proposes new messages.
 - The learned ranking inherits the outcome used to define success.
@@ -271,7 +284,7 @@ Angelopoulos, Lee, and Misra train a language-model improver using historical ex
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 22: Human Review and Customer Evidence
+## Slide 23: Human Review and Customer Evidence
 
 - Check factual claims and consequential terms before deployment.
 - Record customer understanding and the ability to refuse.
@@ -281,7 +294,7 @@ Causal Alignment includes human selection and acceptability checks. Their existe
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 23: Experiment Discussion
+## Slide 24: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

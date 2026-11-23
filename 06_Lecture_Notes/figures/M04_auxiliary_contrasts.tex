@@ -1,0 +1,19 @@
+% Generated from invented analytic means by Auxiliary_Data/build_figures.py.
+\begin{tikzpicture}
+\begin{axis}[at={(0.0cm,0)},anchor=south west,
+width=6.1cm,height=5.7cm,xmin=-1.3,xmax=1.3,xtick={-1,1},xticklabels={Standard,Premium},
+ymin=1.8,ymax=4.6,ytick={2,3,4},xlabel={Product Feature},ylabel={Mean Rating},title={Feature at Low Price},
+legend style={at={(.5,-.30)},anchor=north,legend columns=2,column sep=8pt,font=\scriptsize,fill=none,draw=none}]
+\addplot[IlliniBlue,mark=*] coordinates {(-1.000000000,3.100000000) (1.000000000,3.900000000)};
+\addlegendentry{Primary}
+\addplot[IlliniOrange,mark=square*,dashed] coordinates {(-1.000000000,3.300000000) (1.000000000,4.100000000)};
+\addlegendentry{Auxiliary}
+\end{axis}
+\begin{axis}[at={(7.1cm,0)},anchor=south west,
+width=6.1cm,height=5.7cm,xmin=-1.3,xmax=1.3,xtick={-1,1},xticklabels={Low,High},
+ymin=1.8,ymax=4.6,ytick={2,3,4},xlabel={Price},ylabel={Mean Rating},title={Price with Standard Feature},
+legend style={at={(.5,-.30)},anchor=north,legend columns=2,column sep=8pt,font=\scriptsize,fill=none,draw=none}]
+\addplot[IlliniBlue,mark=*] coordinates {(-1.000000000,3.100000000) (1.000000000,2.100000000)};
+\addplot[IlliniOrange,mark=square*,dashed] coordinates {(-1.000000000,3.300000000) (1.000000000,3.500000000)};
+\end{axis}
+\end{tikzpicture}

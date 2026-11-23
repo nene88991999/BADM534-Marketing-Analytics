@@ -2416,3 +2416,108 @@ An ideal predictor can correlate more closely with a noisy panel mean than anoth
 \noindent Keep separate concept sets for developing anchors, choosing among configurations, and evaluating the final screening rule. Freeze prompts, model versions, sampling settings, embedding versions, anchors, and aggregation before opening the final human outcomes. Repeated observations from a person should remain grouped, and respondent populations should match the intended use. An additional category or later period provides evidence about a further transfer rather than simply increasing the nominal sample size.
 
 Distribution fit, rank agreement, and missed promising concepts provide complementary evidence. Section 4.23 gives a complete calculation in which all overall rating distributions match while product rankings reverse. Section 5.23 shows how repeated responses and anchor choices change a rating before any prediction comparison occurs. A validation design should therefore assess the entire path from generated text through the numerical measure to the screening decision. The same-information benchmark also matters: comparing an LLM receiving a full concept description with a classifier receiving only coarse category and demographic attributes combines information access with differences in modeling approach.
+
+## 7.37 Omitted Bias and the Value of Human Validation
+
+\noindent A manager considering the 23.68% research saving in Section 4.24 needs evidence that the auxiliary source preserves the premium-feature comparison. The calculation allows arbitrary optimism and price bias but excludes a separate feature bias. An omitted feature effect changes the expected coefficient estimate even when the allocation and weighted regression are computed correctly.
+
+### 7.37.1 Increasing the Sample Can Leave the Error Intact
+
+\noindent Retain the invented four-profile design, unit source variances, 216 primary responses, and 1,296 auxiliary responses. Add $\delta f$ to the auxiliary conditional mean, with $\delta=0.3$, while continuing to fit the smaller bias model containing only the intercept and price. The conditional means remain linear and the errors remain independent. This sensitivity changes the bias restriction in Assumption \ref{ass:auxiliary-response-design}.
+
+Let $t=N_P/\sigma_P^2$ and $s=N_A/\sigma_A^2$ denote actual source precisions. Balance makes the feature contrast orthogonal to the intercept and price contrasts. The fitted feature coefficient combines the two sources using their precisions, giving
+
+$$
+E[\widehat\beta_F]-\beta_F=\delta\frac{s}{t+s},\qquad
+E\|\widehat\beta-\beta\|^2=\frac{2}{t}+\frac{1}{t+s}
++\left(\delta\frac{s}{t+s}\right)^2.
+$$
+
+The first two terms are sampling variance under the fitted design. The final term is squared bias. Here the expected feature coefficient is 0.657143, compared with the imposed primary coefficient of 0.4. Squared bias is 0.066122, raising total MSE from 0.009921 to 0.076043. This exceeds the 0.01 target by more than sevenfold.
+
+Multiplying both source sample sizes by the same number reduces variance while preserving $s/(t+s)$. At 32 times the original sample sizes, the correctly specified MSE falls to 0.000310, but MSE with the omitted feature bias remains 0.066432. Its limit is the squared bias. A narrower sampling distribution around the same biased coefficient does not supply the missing restriction.
+
+![As both source counts increase in fixed proportion from one to 32 times their initial values, correctly specified total coefficient MSE declines toward zero. With an omitted auxiliary feature bias of 0.3, total MSE approaches a squared-bias floor of 0.066122 and stays above the original 0.01 target. All inputs are invented and the curves are analytic.](../figures/M07_auxiliary_bias.png)
+
+Including the feature in the bias dictionary restores a correctly specified joint model. It also allows auxiliary bias to imitate every primary response feature. Under the unrestricted-bias, worst-case estimation criterion, the auxiliary source then adds no information about the primary coefficients. With the same 216 primary responses, the corrected model has MSE $3/216=0.013889$, so meeting the original target requires more primary evidence. A supported tighter restriction on bias would define a different statistical problem.
+
+### 7.37.2 Feature Selection and Independent Human Evidence
+
+\noindent The paper's retrospective cases select response and bias features at a 1% significance threshold. In Table 1, Panel B, the chosen primary features are the intercept, female indicator, college degree, Democrat indicator, and Republican indicator. The bias dictionary contains the first four plus income. The Republican bias has a reported p-value of 0.034 and is excluded. Holding the primary model fixed and adding that indicator to the bias dictionary makes every primary feature confounded. Theorem 2 then implies zero auxiliary value under the expanded model. This is a sensitivity implication of the reported feature sets, not an empirical re-estimation. A change to the threshold in both regressions would also change the primary model.
+
+A p-value above the chosen cutoff does not establish a zero bias coefficient. Domain knowledge can motivate a restriction, while a separate human sample can assess its accuracy for the intended contrasts. Reserve respondents and concepts from prompt development, feature selection, and final evaluation when the deployment question concerns new customers or products. Repeated ratings by a respondent or repeated generations for a persona need a dependence analysis before they count as independent information. The paper's guarantees assume independent observations and leave correlated sources as an extension.
+
+The reported tea and digital-twin calibrations imply approximately 74% and 32% lower asymptotic sampling costs when the auxiliary response costs 1% of a primary response. Their estimation-error comparisons simulate data from fitted models. These results describe conditional research budgets. They do not measure realized prospective savings or establish the absence of omitted bias in new populations. [Jasin, Lin, and Zhang, §§3, 6, and 8](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298).
+
+### 7.37.3 Python Bias Sensitivity
+
+\noindent The program imports the allocation functions listed in Section 4.24 and uses the same [parameter file](../../03_Data_and_Code/Auxiliary_Data/data/parameters.json). It recomputes the allocation, scales both source counts together, and calculates variance, squared bias, and total MSE. The output preserves the distinction between a biased estimator fitted under the smaller dictionary and the zero auxiliary value under the expanded correctly specified dictionary. Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/Auxiliary_Data/bias_sensitivity.py
+```
+
+Python source: [bias_sensitivity.py](../../03_Data_and_Code/Auxiliary_Data/bias_sensitivity.py)
+
+```python
+"""Expected coefficient error when auxiliary feature bias is omitted.
+
+Both source counts increase together at a fixed allocation ratio. Errors
+remain independent with the variances in parameters.json. Analytic variance
+and squared bias refer to the three primary-model coefficients.
+"""
+import argparse
+import json
+from math import isfinite
+from pathlib import Path
+from allocate_responses import ROOT, calculate, load_parameters, write_csv
+
+
+def evaluate(parameters):
+    _, allocation, _ = calculate(parameters)
+    delta = parameters["omitted_feature_bias"]
+    if not isfinite(delta):
+        raise ValueError("The omitted feature bias must be finite.")
+    rows = []
+    for scale in parameters["sample_multipliers"]:
+        if not isinstance(scale, int) or scale <= 0:
+            raise ValueError("Sample multipliers must be positive integers.")
+        primary_n = scale * allocation["primary_n"]
+        auxiliary_n = scale * allocation["auxiliary_n"]
+        t = primary_n / parameters["primary_variance"]
+        s = auxiliary_n / parameters["auxiliary_variance"]
+        coefficient_error = delta * s / (t + s)
+        variance = 2 / t + 1 / (t + s)
+        rows.append(dict(sample_multiplier=scale, primary_n=primary_n,
+            auxiliary_n=auxiliary_n,
+            expected_feature_coefficient=parameters["primary_coefficients"][1] + coefficient_error,
+            feature_coefficient_error=coefficient_error,
+            total_coefficient_variance=variance, squared_bias=coefficient_error ** 2,
+            correct_model_mse=variance, omitted_bias_mse=variance + coefficient_error ** 2,
+            original_mse_target=parameters["mse_target"]))
+    return rows
+
+
+def run(output):
+    rows = evaluate(load_parameters())
+    output.mkdir(parents=True, exist_ok=True)
+    write_csv(output / "bias_sensitivity.csv", rows)
+    summary = {
+        "scope": "Analytic moments in an invented balanced linear design.",
+        "first_allocation": rows[0],
+        "last_allocation": rows[-1],
+        "bias_features_in_fitted_model": ["intercept", "price"],
+        "additional_bias_feature_in_sensitivity": "premium feature",
+        "expanded_dictionary": ["intercept", "premium feature", "price"],
+        "expanded_dictionary_auxiliary_value": 0.0,
+        "value_scope": "Unrestricted bias coefficients and worst-case MSE for the full primary coefficient vector.",
+    }
+    (output / "bias_summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    run(parser.parse_args().output)
+```

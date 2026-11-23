@@ -29,14 +29,14 @@ Now add an auxiliary feature bias of $0.3f$ while continuing to estimate the sma
 
 The class can then include $f$ in the bias dictionary. Every primary feature is now confounded with an unrestricted auxiliary bias coefficient. Theorem 2 implies zero value of auxiliary data for this worst-case coefficient-estimation objective. This comparison distinguishes correct computation from a correct restriction on bias.
 
-## Proposed Figures and Course Placement
+## Figures and Course Placement
 
-An original TikZ figure can connect the four rating means with separate lines for primary and auxiliary responses, using Illinois navy and orange plus distinct markers. Show feature comparisons at each fixed price on a common vertical scale. A companion panel should show the reversed price contrasts and state the imposed mean functions.
+The first original TikZ figure compares the feature at a fixed low price and price with a fixed standard feature. Primary and auxiliary lines use Illinois navy and orange with distinct markers, on a common vertical scale. The four-profile table and mean functions remain alongside the comparison in M4 §4.24.
 
-A second TikZ figure can plot cost savings against the information-cost ratio for the partial-bias example. Mark the one-third limit as auxiliary cost approaches zero and the zero-savings threshold at $\lambda=1/3$. Add a separate curve for the expanded bias dictionary, whose value is zero. Describe both diagrams in text and retain the underlying tables.
+The second TikZ figure plots cost savings against the information-cost ratio, marking the one-third limit and the zero-savings threshold at $\lambda=1/3$. It also shows zero value under the expanded bias dictionary. A third figure separates declining sampling variance from persistent squared bias as both source counts increase. All three retain text descriptions and [underlying tables](../../03_Data_and_Code/Auxiliary_Data/results/README.md).
 
-The proposed main explanation belongs beside M4 §4.23, with the omitted-bias comparison beside M7 §7.36. M3 can use the contrast calculations to explain identification. M6 can discuss the conditional fixed-design result. No new meeting or assessment requirement is needed for this proposal.
+M4 §4.24 contains the allocation and profile comparisons; M7 §7.37 contains omitted-bias sensitivity and human validation. M3 §3.16 explains identification and M6 §6.28 discusses fixed designs. Sessions 4, 5, 9, and 11 use existing meeting blocks, with longer calculations in optional ungraded practice.
 
 ## Reproduction
 
-Run [source_checks.py](source_checks.py) using the command in the [resource guide](README.md). It supplies all invented inputs, arithmetic, an exact rank calculation, a numerical comparison for the allocation, and saved results in [source_checks.json](source_checks.json). A full lecture adaptation would include the complete executable Python and figures in the notes. This resource contains the reviewed design and calculations.
+Run [source_checks.py](source_checks.py) using the command in the [resource guide](README.md). It supplies all invented inputs, arithmetic, an exact rank calculation, a numerical comparison for the allocation, and saved results in [source_checks.json](source_checks.json). The [implemented course programs](../../03_Data_and_Code/Auxiliary_Data/README.md) have complete matching listings in M4 and M7. The [verification record](../../03_Data_and_Code/Auxiliary_Data/VERIFICATION.md) distinguishes the independent course checks from the source-review arithmetic.

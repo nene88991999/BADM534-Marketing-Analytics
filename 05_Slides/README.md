@@ -108,3 +108,7 @@ Session 5 adds four slides on concept screening, distribution fit, shortlist err
 ## Reproducible Recommendations
 
 Session 1 uses minutes 125–140 for response weights and a reproducible recommendation, followed by minutes 140–155 for the campaign specification. Two additional slides connect the repeat-weight figure to numerical evidence and interpretation. Session 14 uses five minutes of its existing opening block for review of an exported recommendation. M1 §1.15, M8 §8.25, and the [optional lab](../07_Labs/Reproducible_Recommendations/README.md) provide the full program and separate calculation, interpretation, rendering, and publication checks. The fifteen dates and 170-minute meetings remain fixed.
+
+## Auxiliary Data and Human Validation
+
+Sessions 4, 5, 9, and 11 add nine slides on response and bias coefficients, feature and price contrasts, research cost, fixed designs, and omitted-bias evaluation. Three editable TikZ figures use the [verified analytic tables](../03_Data_and_Code/Auxiliary_Data/results/README.md). The revised session plan assigns 10, 15, 10, and 10 minutes respectively within existing meeting blocks. Full Python appears in M4 §4.24 and M7 §7.37; [optional ungraded practice](../07_Labs/Auxiliary_Data/README.md) extends the sensitivity calculations.

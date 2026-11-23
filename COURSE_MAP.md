@@ -141,3 +141,7 @@ M6 §6.21, M8 §8.20, and M9 §§9.14–9.18 connect [Misra and coauthors’ res
 ## Reproducible Recommendations and Public Evidence
 
 M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, file identity, and the interpretation of generated explanations. [Complete Python and numerical evidence](03_Data_and_Code/Reproducible_Recommendations/README.md) support Sessions 1 and 14 and [optional ungraded practice](07_Labs/Reproducible_Recommendations/README.md). Exported pages need separate rendering and navigation checks; the [future wiki](08_Wiki/README.md) remains unimplemented.
+
+## Auxiliary Data and Human Research Budgets
+
+[The auxiliary-data example](03_Data_and_Code/Auxiliary_Data/README.md) connects coefficient identification in M3 §3.16, product contrasts and research cost in M4 §4.24, fixed experimental design in M6 §6.28, and omitted-bias evaluation in M7 §7.37. Two complete standard-library programs and three TikZ figures retain the four-profile construction, common MSE target, source variances, and bias restrictions. Sessions 4, 5, 9, and 11 use existing meeting time. The [lab](07_Labs/Auxiliary_Data/README.md) is optional ungraded practice.

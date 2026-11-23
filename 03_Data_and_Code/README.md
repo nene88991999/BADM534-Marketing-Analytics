@@ -105,3 +105,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Reproducible Recommendations
 
 [Reproducible Product Recommendations](Reproducible_Recommendations/README.md) recomputes the synthetic-consumer tables, compares persona and response weights, and generates a report linked to its numerical evidence. Six independent checks cover reference arithmetic, missing values, stale tables, and execution after a folder move. The [optional lab](../07_Labs/Reproducible_Recommendations/README.md) separates interpretation and export checks from calculation.
+
+## Auxiliary Data and Research Budgets
+
+[Human and Synthetic Evidence](Auxiliary_Data/README.md) contains two executed standard-library programs, four invented product profiles, analytic precision and bias calculations, and six independent checks. Three editable figures distinguish preserved feature contrasts, conditional cost savings, and persistent coefficient bias. Full Python appears in M4 §4.24 and M7 §7.37, with definitions and a separate source review.

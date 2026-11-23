@@ -1,0 +1,39 @@
+{
+  "scope": "Analytic moments in an invented balanced linear design.",
+  "first_allocation": {
+    "sample_multiplier": 1,
+    "primary_n": 216,
+    "auxiliary_n": 1296,
+    "expected_feature_coefficient": 0.6571428571428573,
+    "feature_coefficient_error": 0.2571428571428572,
+    "total_coefficient_variance": 0.00992063492063492,
+    "squared_bias": 0.06612244897959185,
+    "correct_model_mse": 0.00992063492063492,
+    "omitted_bias_mse": 0.07604308390022677,
+    "original_mse_target": 0.01
+  },
+  "last_allocation": {
+    "sample_multiplier": 32,
+    "primary_n": 6912,
+    "auxiliary_n": 41472,
+    "expected_feature_coefficient": 0.6571428571428573,
+    "feature_coefficient_error": 0.2571428571428572,
+    "total_coefficient_variance": 0.00031001984126984125,
+    "squared_bias": 0.06612244897959185,
+    "correct_model_mse": 0.00031001984126984125,
+    "omitted_bias_mse": 0.06643246882086169,
+    "original_mse_target": 0.01
+  },
+  "bias_features_in_fitted_model": [
+    "intercept",
+    "price"
+  ],
+  "additional_bias_feature_in_sensitivity": "premium feature",
+  "expanded_dictionary": [
+    "intercept",
+    "premium feature",
+    "price"
+  ],
+  "expanded_dictionary_auxiliary_value": 0.0,
+  "value_scope": "Unrestricted bias coefficients and worst-case MSE for the full primary coefficient vector."
+}

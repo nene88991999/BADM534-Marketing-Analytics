@@ -1,0 +1,20 @@
+{
+  "information_cost_ratio": 0.01,
+  "mse_target": 0.01,
+  "primary_n": 216,
+  "auxiliary_n": 1296,
+  "primary_per_profile": 54,
+  "auxiliary_per_profile": 324,
+  "primary_only_n": 300,
+  "primary_only_cost": 300.0,
+  "primary_only_mse": 0.01,
+  "mixed_cost": 228.96,
+  "rounded_saving_fraction": 0.2368,
+  "asymptotic_saving_fraction": 0.24285835147019796,
+  "primary_precision": 216.0,
+  "auxiliary_precision": 1296.0,
+  "intercept_variance": 0.004629629629629629,
+  "price_variance": 0.004629629629629629,
+  "feature_variance": 0.0006613756613756613,
+  "correct_model_mse": 0.00992063492063492
+}

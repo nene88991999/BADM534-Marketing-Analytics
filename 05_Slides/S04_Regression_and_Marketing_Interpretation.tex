@@ -223,6 +223,19 @@ M3, Section 3.12, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 FTC Policy Statement Regarding Advertising Substantiation. \url{https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation}}
 \end{frame}
+\begin{frame}{Response Coefficients and Source Bias}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item A synthetic price comparison combines customer response with price bias.
+\item A feature comparison survives when bias stays fixed across feature levels.
+\item Primary observations separate the response from the confounded bias.
+\end{slidebullets}
+\vfill
+\note{The four-profile model uses response features (1, feature, price) and auxiliary bias features (1, price). Unknown unrestricted price bias can offset a change in the primary price coefficient. Repetition reduces variance without resolving that confounding. M4 Section 4.24 supplies the full invented example and Python. This coefficient-identification result does not itself establish a causal purchasing effect.
+
+Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+\end{frame}
 \begin{frame}{Regression Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

@@ -35,3 +35,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Reproducible Recommendations and Export
 
 [Product-Screening Recommendations](Reproducible_Recommendations/README.md) is optional ungraded practice for M1 §1.15 and M8 §8.25. Students trace a recommendation to its inputs, preserve persona weights and undefined rankings, reproduce the calculation after moving files, and inspect exported equations and links. Python uses only the standard library; Suzuri and live model use are optional.
+
+## Human and Synthetic Research Budgets
+
+[Auxiliary Data Practice](Auxiliary_Data/README.md) is optional and ungraded. Students compare research cost at a common coefficient-MSE target, vary source noise, challenge an omitted bias restriction, and design independent human validation. The two standard-library programs require no model account or observed customer data.

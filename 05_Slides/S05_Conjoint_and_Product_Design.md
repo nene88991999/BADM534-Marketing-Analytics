@@ -12,6 +12,7 @@ Session 05. M4. 170 minutes.
 - Compute logit probabilities and willingness to pay.
 - Separate new-product share from incremental category demand.
 - Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.
+- Allocate human and synthetic responses at a common accuracy target.
 
 ## Related Materials
 
@@ -20,6 +21,8 @@ Session 05. M4. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)
 - [Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)
+- [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
+- [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 
 ## Slide 1: Conjoint and Product Design
 
@@ -250,7 +253,58 @@ The complete procedure includes prompts, model version, generation settings, emb
 
 Source: M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md
 
-## Slide 21: Customer Alternatives and AI Pricing
+## Slide 21: Feature and Price Comparisons
+
+Invented means. Auxiliary bias includes an overall shift and a price effect.
+
+**Figure description:** At low price, primary means rise from 3.1 to 3.9 and auxiliary means from 3.3 to 4.1 when the feature changes from standard to premium. With the feature standard, raising price reduces the primary mean from 3.1 to 2.1 and raises the auxiliary mean from 3.3 to 3.5. Both panels use the same rating scale; navy circles denote primary and orange squares auxiliary means.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_auxiliary_contrasts.tex)
+
+Feature and price are each coded -1 and +1. The imposed primary coefficients are (3, 0.4, -0.5), and auxiliary bias adds 0.8 + 0.6 times price. Both sources preserve the 0.8-point feature contrast, while their price contrasts have opposite signs. No human or model responses were collected. The Gaussian model treats the response as a continuous rating score.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 22: Research Accuracy and Source Allocation
+
+Source precision is response count divided by known noise variance:
+
+$$
+\begin{gathered}t=\frac{N_P}{\sigma_P^2},\qquad s=\frac{N_A}{\sigma_A^2}\\[0.35em]\operatorname{MSE}(\widehat\beta)=\frac{2}{t}+\frac{1}{t+s}\end{gathered}
+$$
+
+Primary precision $t$ identifies intercept and price. Both sources inform the feature through $t+s$.
+
+Here t = N_P / sigma_P squared and s = N_A / sigma_A squared. The loss sums squared errors across the three primary coefficients with the fixed -1/+1 coding. Auxiliary bias is restricted to intercept and price. Known bias features, linear means, and independent Gaussian errors support the calculation. Full derivation and Python are in M4 Section 4.24.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 23: The Cost of Informative Responses
+
+The saving depends on source costs, noise, and which response features bias can imitate.
+
+**Figure description:** In the invented four-profile design, the orange curve approaches 33.33 percent asymptotic savings as the information-cost ratio approaches zero and reaches zero at one third. The navy dashed line stays at zero when bias includes every response feature. The open zero-cost endpoint is a limit.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_auxiliary_value.tex)
+
+The information-cost ratio is auxiliary cost times auxiliary variance divided by primary cost times primary variance. The criterion is worst-case MSE for the full three-coefficient primary vector. The one-third limit is specific to this design and loss. It is not a general rule that cost savings equal the share of unconfounded coefficients.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 24: Accuracy and Research Cost
+
+| Design | Primary | Auxiliary | Cost | MSE |
+| --- | --- | --- | --- | --- |
+| Primary Only | 300 | 0 | 300.00 | 0.010000 |
+| Mixed Sources | 216 | 1,296 | 228.96 | 0.009921 |
+
+Imposed costs: 1 and 0.01 per response. Rounded allocations save 23.68% at the same 0.01 MSE target.
+
+Both source variances equal one. The mixed allocation places 54 primary and 324 auxiliary observations at each profile. Its asymptotic saving is 24.29 percent; separate upward rounding within each source-profile cell gives the table. The rounded construction is feasible but need not be the exact integer optimum. Setup, human validation, and monitoring costs require separate budget entries. Run allocate_responses.py in the Auxiliary_Data example.
+
+Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+
+## Slide 25: Customer Alternatives and AI Pricing
 
 - Customer value depends on the offered outcome and implementation effort.
 - Better tools can make internal analysis a stronger alternative.
@@ -260,7 +314,7 @@ Under a quasilinear comparison, the buyer price ceiling is delivered value minus
 
 Source: Marketing Analytics Lecture Notes, M4 §4.16.
 
-## Slide 22: Price Presentation and Customer Understanding
+## Slide 26: Price Presentation and Customer Understanding
 
 - A base price and a mandatory fee determine the total paid.
 - A stated-choice task can reveal different responses to equivalent totals.
@@ -270,7 +324,7 @@ The FTC's fee rule addresses live-event tickets and short-term lodging. Its scop
 
 Source: FTC Rule on Unfair or Deceptive Fees FAQ. https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions
 
-## Slide 23: Product-Design Discussion
+## Slide 27: Product-Design Discussion
 
 - How much of C's demand comes from existing products?
 - Which design change would identify the price tradeoff?

@@ -13,14 +13,14 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 23 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 18 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 23 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 27 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 38 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 23 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 24 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 43 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 46 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 40 |
@@ -96,9 +96,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty.
 
-**Application:** Interpret a price coefficient when the manager observes demand before setting price.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price.
 
-**Ethics and Regulation:** Substantiation and the distinction between association and benefit.
+**Ethics and Regulation:** Substantiation and the distinction between association and benefit
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -107,18 +107,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–135 | Response Coefficients and Source Bias |
+| 135–155 | Price Coefficients and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
+
 
 ### 05. Conjoint and Product Design
 
 **Meeting:** February 17, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Calculate choice probabilities and assess the role of a stronger customer alternative.
+**Python and Evidence:** Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.
 
 **Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing.
 
-**Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
+**Ethics and Regulation:** Price completeness and the attributes customers actually evaluate
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -126,10 +128,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 15–45 | Concepts and Mechanisms |
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
+| 80–110 | Choice Probabilities and Product Economics |
+| 110–125 | Human and Synthetic Research Budgets |
 | 125–145 | Synthetic Concept Screening and Human Validation |
 | 145–155 | Customer Alternatives and AI Pricing |
 | 155–170 | Ethics and Decision Discussion |
+
 
 ### 06. Segmentation and Customer Lifetime Value
 
@@ -198,7 +202,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
 
-**Application:** Compare treatment effects, AI-generated proposals, and outcomes that represent customers as well as the firm.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice
 
@@ -209,8 +213,10 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–135 | Fixed and Adaptive Research Designs |
+| 135–155 | Treatment Effects and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
+
 
 ### 10. Causal Comparisons and Policy Evaluation
 
@@ -237,13 +243,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.
-
-**Worked Comparison:** Use minutes 30–45 for training mixtures, checkpoint selection, and conditional service outcomes. Compare prediction and decision metrics for fifteen minutes, then decoding cost and correct customer resolution for ten minutes. The full training-mixture and inference-efficiency programs are optional practice.
+**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.
 
 **Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
 
-**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing.
+**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -253,10 +257,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
+| 80–115 | Demand Intervals and Complaint Routing |
+| 115–125 | Omitted Auxiliary Bias |
 | 125–145 | Anomaly Diagnosis |
 | 145–155 | Forecast and Grader Comparisons |
 | 155–170 | Ethics and Decision Discussion |
+
 
 ### 12. Recommendation Systems and Customer Goals
 

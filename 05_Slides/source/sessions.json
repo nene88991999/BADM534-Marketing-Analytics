@@ -776,7 +776,8 @@
     "objectives": [
       "Interpret coefficients with units and conditioning.",
       "Diagnose omitted variables, interactions, and dependence.",
-      "Reproduce an association while preserving its time and sample definitions."
+      "Reproduce an association while preserving its time and sample definitions.",
+      "Distinguish a primary response coefficient from source bias."
     ],
     "slides": [
       {
@@ -944,6 +945,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Response Coefficients and Source Bias",
+        "bullets": [
+          "A synthetic price comparison combines customer response with price bias.",
+          "A feature comparison survives when bias stays fixed across feature levels.",
+          "Primary observations separate the response from the confounded bias."
+        ],
+        "notes": "The four-profile model uses response features (1, feature, price) and auxiliary bias features (1, price). Unknown unrestricted price bias can offset a change in the primary price coefficient. Repetition reduces variance without resolving that confounding. M4 Section 4.24 supplies the full invented example and Python. This coefficient-identification result does not itself establish a causal purchasing effect.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
+        "kind": "bullets",
         "title": "Regression Discussion",
         "bullets": [
           "Which comparison supports the coefficient?",
@@ -958,10 +970,12 @@
       "[M3 lecture notes](../06_Lecture_Notes/modules/M03_Regression.md)",
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[mHealth regression code](../03_Data_and_Code/mHealth/recurring_examples/m03.py)",
-      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)"
+      "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
+      "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
     ],
     "practice": "Reproduce OLS and assess exact-day matching, specification, and uncertainty.",
-    "application": "Interpret a price coefficient when the manager observes demand before setting price."
+    "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price."
   },
   {
     "number": 5,
@@ -972,7 +986,8 @@
       "Design choice tasks that identify attribute tradeoffs.",
       "Compute logit probabilities and willingness to pay.",
       "Separate new-product share from incremental category demand.",
-      "Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes."
+      "Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.",
+      "Allocate human and synthetic responses at a common accuracy target."
     ],
     "slides": [
       {
@@ -1216,6 +1231,63 @@
         "source": "M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
       },
       {
+        "kind": "figure",
+        "title": "Feature and Price Comparisons",
+        "figure": "../06_Lecture_Notes/figures/M04_auxiliary_contrasts.tex",
+        "caption": "Invented means. Auxiliary bias includes an overall shift and a price effect.",
+        "description": "At low price, primary means rise from 3.1 to 3.9 and auxiliary means from 3.3 to 4.1 when the feature changes from standard to premium. With the feature standard, raising price reduces the primary mean from 3.1 to 2.1 and raises the auxiliary mean from 3.3 to 3.5. Both panels use the same rating scale; navy circles denote primary and orange squares auxiliary means.",
+        "notes": "Feature and price are each coded -1 and +1. The imposed primary coefficients are (3, 0.4, -0.5), and auxiliary bias adds 0.8 + 0.6 times price. Both sources preserve the 0.8-point feature contrast, while their price contrasts have opposite signs. No human or model responses were collected. The Gaussian model treats the response as a continuous rating score.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
+        "kind": "equation",
+        "title": "Research Accuracy and Source Allocation",
+        "intro": "Source precision is response count divided by known noise variance:",
+        "equation": "\\begin{gathered}t=\\frac{N_P}{\\sigma_P^2},\\qquad s=\\frac{N_A}{\\sigma_A^2}\\\\[0.35em]\\operatorname{MSE}(\\widehat\\beta)=\\frac{2}{t}+\\frac{1}{t+s}\\end{gathered}",
+        "interpretation": "Primary precision $t$ identifies intercept and price. Both sources inform the feature through $t+s$.",
+        "notes": "Here t = N_P / sigma_P squared and s = N_A / sigma_A squared. The loss sums squared errors across the three primary coefficients with the fixed -1/+1 coding. Auxiliary bias is restricted to intercept and price. Known bias features, linear means, and independent Gaussian errors support the calculation. Full derivation and Python are in M4 Section 4.24.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
+        "kind": "figure",
+        "title": "The Cost of Informative Responses",
+        "figure": "../06_Lecture_Notes/figures/M04_auxiliary_value.tex",
+        "caption": "The saving depends on source costs, noise, and which response features bias can imitate.",
+        "description": "In the invented four-profile design, the orange curve approaches 33.33 percent asymptotic savings as the information-cost ratio approaches zero and reaches zero at one third. The navy dashed line stays at zero when bias includes every response feature. The open zero-cost endpoint is a limit.",
+        "notes": "The information-cost ratio is auxiliary cost times auxiliary variance divided by primary cost times primary variance. The criterion is worst-case MSE for the full three-coefficient primary vector. The one-third limit is specific to this design and loss. It is not a general rule that cost savings equal the share of unconfounded coefficients.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
+        "kind": "table",
+        "title": "Accuracy and Research Cost",
+        "headers": [
+          "Design",
+          "Primary",
+          "Auxiliary",
+          "Cost",
+          "MSE"
+        ],
+        "rows": [
+          [
+            "Primary Only",
+            "300",
+            "0",
+            "300.00",
+            "0.010000"
+          ],
+          [
+            "Mixed Sources",
+            "216",
+            "1,296",
+            "228.96",
+            "0.009921"
+          ]
+        ],
+        "caption": "Imposed costs: 1 and 0.01 per response. Rounded allocations save 23.68% at the same 0.01 MSE target.",
+        "notes": "Both source variances equal one. The mixed allocation places 54 primary and 324 auxiliary observations at each profile. Its asymptotic saving is 24.29 percent; separate upward rounding within each source-profile cell gives the table. The rounded construction is feasible but need not be the exact integer optimum. Setup, human validation, and monitoring costs require separate budget entries. Run allocate_responses.py in the Auxiliary_Data example.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
         "kind": "bullets",
         "title": "Customer Alternatives and AI Pricing",
         "bullets": [
@@ -1254,10 +1326,12 @@
       "[Runnable small examples](../03_Data_and_Code/Lecture_Examples/session_examples.py)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
-      "[Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)"
+      "[Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)",
+      "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
     ],
-    "practice": "Calculate choice probabilities and assess the role of a stronger customer alternative.",
-    "application": "Compare product value, implementation burden, substitution, and the outside option."
+    "practice": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
+    "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing."
   },
   {
     "number": 6,
@@ -2104,7 +2178,8 @@
     "objectives": [
       "Define a treatment, assignment unit, outcome, and estimand.",
       "Calculate an intention-to-treat effect, uncertainty, and contribution.",
-      "Plan power and use prior outcomes to improve precision."
+      "Plan power and use prior outcomes to improve precision.",
+      "Explain the information conditions supporting a fixed research allocation."
     ],
     "slides": [
       {
@@ -2219,6 +2294,17 @@
         ],
         "notes": "At baseline probability 0.10, a two-point effect, two-sided 5% level, and 80% power, a common-variance normal approximation gives 3,528 customers per arm.",
         "source": "M6, Section 6.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Fixed and Adaptive Research Designs",
+        "bullets": [
+          "Known features and variances determine information at each profile.",
+          "A fixed allocation attains the leading minimum cost at high accuracy in the linear model.",
+          "Unknown bias structure or revenue earned during learning changes the design problem."
+        ],
+        "notes": "Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian model, with known response and bias dictionaries and constant source costs. It does not rule out lower-order finite-accuracy differences. Nonlinear response models can make information depend on unknown coefficients. The paper separately treats pilot estimation of noise variances while preserving known feature dictionaries. Compare this target with adaptive campaign profit and causal effects on purchases; M6 Section 6.28 supplies the interpretation.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "bullets",
@@ -2353,10 +2439,12 @@
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
-      "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)"
+      "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)",
+      "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
     ],
-    "practice": "Calculate an email effect and decompose a synthetic model-by-library comparison.",
-    "application": "Design a randomized comparison with a common rubric and an appropriate assignment unit."
+    "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.",
+    "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes."
   },
   {
     "number": 10,
@@ -2665,7 +2753,8 @@
       "Evaluate grader coverage and asymmetric error costs against explicit reference judgments.",
       "Separate anomaly detection, variable localization, event timing, and evidence for a diagnosis.",
       "Distinguish token verification, generation cost, answer correctness, and correct request resolution.",
-      "Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule."
+      "Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule.",
+      "Evaluate omitted auxiliary bias separately from sampling variance."
     ],
     "slides": [
       {
@@ -3203,6 +3292,37 @@
       },
       {
         "kind": "bullets",
+        "title": "An Omitted Feature Bias",
+        "bullets": [
+          "The allocation assumes that auxiliary feature bias equals zero.",
+          "Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.",
+          "Total coefficient MSE rises from 0.009921 to 0.076043."
+        ],
+        "notes": "These are analytic moments in the invented four-profile design. Both source variances equal one, with 216 primary and 1,296 auxiliary responses. The fitted model retains intercept and price bias; the sensitivity adds a feature bias to the auxiliary mean. Expected feature-coefficient error equals 0.3 times 1296/1512. The 0.01 MSE target fails because of the omitted bias restriction.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
+        "kind": "figure",
+        "title": "Sampling Variance and Persistent Bias",
+        "figure": "../06_Lecture_Notes/figures/M07_auxiliary_bias.tex",
+        "caption": "Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.",
+        "description": "The navy curve gives correct-model MSE, declining from 0.009921 toward zero as sample size multiplies by up to 32. The orange curve includes omitted feature bias and approaches a gray squared-bias floor of 0.066122. A dotted line marks the original 0.01 target. Source ratios, variances, and true coefficients remain fixed.",
+        "notes": "At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias MSE is 0.066432. A larger sample narrows sampling variation while preserving the expected coefficient error. Adding the feature to the fitted bias dictionary restores correct specification but makes all three primary features confounded with unrestricted auxiliary bias. At the original 216 primary observations, the corrected model has MSE 3/216 = 0.013889.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
+        "kind": "bullets",
+        "title": "Human Validation of the Bias Model",
+        "bullets": [
+          "A bias feature excluded by a significance cutoff may still matter for the decision.",
+          "Reserve human respondents and concepts from model and feature selection.",
+          "Repeated ratings require a dependence model before they count as independent information."
+        ],
+        "notes": "In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is excluded by the 0.01 threshold. Holding the five primary features fixed and adding that bias feature makes the bias dictionary cover the full primary feature space, yielding zero auxiliary value under the expanded worst-case model. This is a sensitivity implication, not an empirical re-estimation. The reported 74 and 32 percent savings come from retrospective calibrations assuming auxiliary cost is one percent of primary cost. M7 Section 7.37 provides full Python and interpretation.",
+        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+      },
+      {
+        "kind": "bullets",
         "title": "Coding Exercise: A Forecast Evaluation",
         "bullets": [
           "Verify a calibration rank on a hand-checkable sample.",
@@ -3251,9 +3371,11 @@
       "[Inference Efficiency: Data and Code](../03_Data_and_Code/Inference_Efficiency/README.md)",
       "[Inference Efficiency: Optional Practice](../07_Labs/Inference_Efficiency/README.md)",
       "[Training Data Mixtures: Data and Code](../03_Data_and_Code/Training_Data_Mixtures/README.md)",
-      "[Training Data Mixtures: Optional Practice](../07_Labs/Training_Data_Mixtures/README.md)"
+      "[Training Data Mixtures: Optional Practice](../07_Labs/Training_Data_Mixtures/README.md)",
+      "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
     ],
-    "practice": "Construct demand intervals and complaint-label sets; check ranks, subgroup denominators, and routing selection.",
+    "practice": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
     "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator."
   },
   {
