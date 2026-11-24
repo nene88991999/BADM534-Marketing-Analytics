@@ -1,0 +1,53 @@
+{
+  "namespace": "representation-evaluation",
+  "reviewed_on": "2026-11-24",
+  "status": "Source review, proposed M7 case, and eight executed calculation checks; lecture integration pending.",
+  "resources": [
+    {
+      "id": "RE01",
+      "title": "Massive Activations Confound Sparse Autoencoders",
+      "authors": [
+        "Nathan Delisle",
+        "Chenhao Tan"
+      ],
+      "url": "https://arxiv.org/abs/2611.13548v1",
+      "date": "2026-11-10",
+      "version": "2611.13548v1",
+      "publication_status": "arXiv record states accepted at NeurIPS 2026; conference program not independently checked.",
+      "modules": [
+        "M2",
+        "M4",
+        "M5",
+        "M7",
+        "M9"
+      ],
+      "primary_modules": [
+        "M7"
+      ],
+      "teaching_use": "Evaluate representation quality, dominant variance, feature reproducibility, and task-specific performance.",
+      "rights": "arXiv perpetual non-exclusive license; paper linked, not republished.",
+      "cautions": "Activation-level experiments; no empirical marketing effect. Results depend on model, layer, preprocessing, matching and seed conventions.",
+      "scope": "Main evaluation and repair arguments; selected appendix definitions."
+    },
+    {
+      "id": "RE02",
+      "title": "Massive SAEs Source and Saved Results",
+      "url": "https://github.com/nathandelisle/massive-saes/tree/a3df7fff7a3f03012a116cbd092d2a24f2941e64",
+      "source_commit": "a3df7fff7a3f03012a116cbd092d2a24f2941e64",
+      "modules": [
+        "M5",
+        "M7"
+      ],
+      "teaching_use": "Read reconstruction and matching code, recompute saved scores, and distinguish denominators.",
+      "rights": "Code and documentation: MIT. Numerical results: CC BY 4.0. Original notices preserved; base-model and input-data licenses remain separate.",
+      "reference_directory": "reference/",
+      "archived_files": 13,
+      "cautions": "Partial source subset, unexecuted. Original checks use only saved CSVs and synthetic arithmetic; no checkpoints or dependencies downloaded."
+    }
+  ],
+  "review": "SOURCE_REVIEW.md",
+  "case_design": "CASE_DESIGN.md",
+  "manifest": "manifest.json",
+  "verification": "source_checks.json",
+  "original_checks_passed": 8
+}

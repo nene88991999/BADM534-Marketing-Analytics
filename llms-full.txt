@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-23",
+  "updated_on": "2026-11-24",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -254,7 +254,13 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/32_Graph_Coarsening/CASE_DESIGN.md",
     "03_Data_and_Code/Graph_Coarsening/README.md",
     "03_Data_and_Code/Graph_Coarsening/DATA_DICTIONARY.md",
-    "07_Labs/Graph_Coarsening/README.md"
+    "07_Labs/Graph_Coarsening/README.md",
+    "01_Resources/33_Ontologies_and_Knowledge_Representation/README.md",
+    "01_Resources/33_Ontologies_and_Knowledge_Representation/SOURCE_REVIEW.md",
+    "01_Resources/33_Ontologies_and_Knowledge_Representation/CASE_DESIGN.md",
+    "01_Resources/34_Representation_Evaluation/README.md",
+    "01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md",
+    "01_Resources/34_Representation_Evaluation/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -892,6 +898,53 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_checks_passed": 9,
     "original_figures": 2
+  },
+  "ontology_and_knowledge_representation": {
+    "resources": "01_Resources/33_Ontologies_and_Knowledge_Representation/README.md",
+    "review": "01_Resources/33_Ontologies_and_Knowledge_Representation/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/33_Ontologies_and_Knowledge_Representation/CASE_DESIGN.md",
+    "catalog": "01_Resources/33_Ontologies_and_Knowledge_Representation/catalog.json",
+    "manifest": "01_Resources/33_Ontologies_and_Knowledge_Representation/manifest.json",
+    "reviewed_on": "2026-11-24",
+    "status": "Source review and proposed teaching activities; no lecture or assessment release.",
+    "primary_modules": [
+      "M1",
+      "M2"
+    ],
+    "related_modules": [
+      "M5",
+      "M9"
+    ],
+    "local_source_execution": false,
+    "model_calls": 0,
+    "source_commit": "4fc52fd92f644e03e76880c5de16f0accb4770e7",
+    "source_files_archived": 0,
+    "hosted_case_checked": "Detective Case 11: conflicting metric definitions"
+  },
+  "representation_evaluation": {
+    "resources": "01_Resources/34_Representation_Evaluation/README.md",
+    "review": "01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/34_Representation_Evaluation/CASE_DESIGN.md",
+    "catalog": "01_Resources/34_Representation_Evaluation/catalog.json",
+    "manifest": "01_Resources/34_Representation_Evaluation/manifest.json",
+    "reviewed_on": "2026-11-24",
+    "status": "Source review and proposed teaching activities; no lecture or assessment release.",
+    "primary_modules": [
+      "M7"
+    ],
+    "related_modules": [
+      "M2",
+      "M4",
+      "M5",
+      "M9"
+    ],
+    "local_source_execution": false,
+    "model_calls": 0,
+    "source_commit": "a3df7fff7a3f03012a116cbd092d2a24f2941e64",
+    "paper_version": "2611.13548v1",
+    "verification": "01_Resources/34_Representation_Evaluation/source_checks.json",
+    "original_calculation_checks_passed": 8,
+    "source_files_archived": 13
   }
 }
 ```
@@ -8230,6 +8283,229 @@ Compare the generated program with the requested objects and inspect every defau
 Choose a primary customer outcome before comparing methods. State the original population, weights, target compression, achieved size, feature convention, label permissions, tuning budget, runtime, and memory. Use the uncompressed graph and a simple grouping baseline. Evaluate access or service errors at original nodes, including disconnected customers and uncommon needs.
 
 Explain whether the computational saving justifies the observed errors and what would change the recommendation. Connect the affected customers' ability to obtain service or contest a decision to [M9 §9.18.2](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md). The source toolkit's full benchmark and graph-neural-network training require a separately specified implementation and computing budget.
+
+---
+
+## Source: 01_Resources/33_Ontologies_and_Knowledge_Representation/README.md
+
+# Ontologies and Marketing Evidence
+
+A marketing team needs a shared definition of a customer, purchase, cancellation, and consent before it can compare results across systems or ask an AI assistant to analyze them. An ontology makes categories, relationships, and inference rules explicit. Its value for this course is greatest when a plausible calculation conceals a disagreement about what the records mean.
+
+The [Ontology Playground](https://learn-ontology.vercel.app/#learn) provides an accessible introduction through short lessons, editable graphs, and questions with reasoning traces. The strongest course adaptation is an exercise in specifying and challenging definitions. The [source review](SOURCE_REVIEW.md) separates the site's instructional ideas from the conditions needed for a reliable marketing application.
+
+| Course Connection | Proposed Teaching Use |
+| --- | --- |
+| M1: Data Contracts and AI-Assisted Coding | Define entities, identifiers, events, relationships, units, and evidence before generating code |
+| M2: Customer Data and Measurement | Distinguish a missing record, a recorded zero, an inferred category, and an independently verified outcome |
+| M5: Text and Networks | Represent a speaker's claim with its source, date, and scope; evaluate retrieval against the original passage |
+| M9: Marketing Dialectics | Examine who chose a category and whether the inference from a commercial record to a customer right is justified |
+| Future Wiki | Let students predict an inference, reveal its supporting facts, change an assumption, and compare the result |
+
+The [proposed case](CASE_DESIGN.md) uses cancellation records and connects the same distinctions to mHealth, restaurant availability, and earnings calls. A 15-minute introduction in M1 or M2 would establish the vocabulary; later modules can reuse it without adding a separate ontology chapter. These are proposed activities, with no change to the released schedule or assessment requirements.
+
+The [catalog](catalog.json), namespace `ontology-representation`, records the site, pinned source, and primary technical references. Source inspection and one hosted Detective case were completed on November 24, 2026. No repository license was found in the inspected tree or GitHub license metadata. The course therefore links the site and preserves original analysis without copying its application or lessons.
+
+---
+
+## Source: 01_Resources/33_Ontologies_and_Knowledge_Representation/SOURCE_REVIEW.md
+
+# Definitions, Inference, and Evidence
+
+## Instructional Design
+
+The [site](https://learn-ontology.vercel.app/#learn) organizes six chapters around classes, individuals, relationships, chained rules, contradictions, and applications. Learners can choose everyday or technical examples. Its Detective section asks for a prediction before showing a proof, with an optional SQL explanation. The conflicting-revenue case was completed in the hosted interface: the displayed trace identifies two class assignments and the disjointness rule that makes their combination inconsistent.
+
+For the course wiki, the useful design is a short cycle: state a managerial question, expose the inputs and rules, ask for a prediction, and reveal each inference with its source. Keep a text and table representation beside the graph. An original implementation can run locally in a static page and export the student's definitions in a readable format. Points and badges are optional; the source review supplies no estimate of their learning effect.
+
+## Domain Rules and Data Validation
+
+An OWL domain or range declaration can infer a type from a relationship. A missing type declaration does not automatically invalidate the relationship. Under OWL's open-world semantics, an absent fact can remain unknown. SHACL supplies a separate framework for testing whether an RDF graph satisfies declared conditions. These distinctions are explained in the [W3C OWL Primer, §§2 and 4.6](https://www.w3.org/TR/owl2-primer/) and [SHACL specification, §§1 and 4](https://www.w3.org/TR/shacl/).
+
+Consider an original marketing rule: the range of `placedBy` is `Customer`. Recording that an order was placed by account A classifies A as a Customer under that rule. The inference does not verify the transaction, establish that the account belongs to one person, or determine whether the person authorized advertising. Those questions require additional evidence and explicit definitions. A generated analysis should retain the transaction source, account identifier, time, and relevant permission record.
+
+Use ordinary Python or SQL checks for required timestamps, unique keys, allowed units, and missing values in the introductory exercise. Introduce SHACL as a possible implementation when the data are represented in RDF. A complete OWL reasoner is unnecessary for teaching these distinctions.
+
+## Assess the Definitions Behind a Contradiction
+
+The site's introductory examples often attribute contradictions to incorrect records. In a course application, evaluate the records and the axioms together. Declaring `LoyalCustomer` and `PriceSensitiveCustomer` disjoint creates an inconsistency when a customer belongs to both. The business meaning of these categories provides no general reason for that disjointness. Correcting the category definition may be more appropriate than deleting a customer observation.
+
+The revenue case is useful when the object is a metric definition with an explicit refund convention. A gross-revenue measure and a net-revenue measure can also have identical numerical values when refunds are zero. Numerical equality does not make the definitions identical. Store the definition, currency, period, unit, and refund treatment alongside the value.
+
+For time-varying states, identify the observation's date. A subscription can be active in one period and canceled in another without contradiction. Attach a state to an account-period or state interval, rather than making an account permanently belong to incompatible categories.
+
+## Claims, Graphs, and AI Retrieval
+
+An ontology defines vocabulary and rules. A knowledge graph records entities and relationships using a representation that may employ an ontology. A taxonomy supplies a category hierarchy. A database schema specifies the structure of stored records. These objects can work together; none alone establishes the truth of a statement extracted from a document.
+
+For earnings calls, preserve an object such as `Claim` with a speaker, company, call date, source passage, and stated time horizon. A link saying that an executive attributes a price increase to input costs should remain an attributed assertion. Turning it into an unqualified causal relationship changes the evidence.
+
+[Microsoft's GraphRAG documentation](https://microsoft.github.io/graphrag/) describes a particular pipeline that extracts entities and relationships, builds communities, and produces summaries for retrieval. An OWL inference engine and that pipeline perform different tasks. The course can compare a small manually checked graph with text retrieval on the same questions, measuring source support, missing evidence, and cost. The presence of a graph is insufficient evidence of improved answer accuracy.
+
+## Implementation and Reading Scope
+
+The inspected [repository revision](https://github.com/mani-bellan/concept-playgrounds/tree/4fc52fd92f644e03e76880c5de16f0accb4770e7) is dated November 23, 2026. Its README, all six chapter definitions, and the complete small reasoner were read. Selected example definitions were inspected. The hosted overview, course menu, and conflicting-revenue Detective exercise were checked in the browser. The website's deployment commit was not exposed, so the hosted interface and pinned repository are recorded separately.
+
+The [reasoner](https://github.com/mani-bellan/concept-playgrounds/blob/4fc52fd92f644e03e76880c5de16f0accb4770e7/ontology/src/ontology.js) applies subclass inheritance, domain, range, inverse, and transitive rules to a fixed point, then checks explicit disjoint class memberships. It preserves one derivation for each added fact. It implements an instructional subset of OWL: the code omits self-edges from transitive cycles and does not implement general OWL cardinality or datatype reasoning. Its Turtle exporter replaces non-alphanumeric characters with underscores; distinct names can therefore map to the same identifier. An original course implementation should use stable unique identifiers and test export separately.
+
+No upstream source was installed or executed locally. The hosted exercise does not establish that every lesson, export, or browser interaction works. No repository-wide license was identified, so source files and lesson text are linked rather than redistributed. The proposed marketing examples are original course designs.
+
+---
+
+## Source: 01_Resources/33_Ontologies_and_Knowledge_Representation/CASE_DESIGN.md
+
+# Cancellation Records and Customer Intent
+
+## Managerial Decision
+
+A subscription business needs to identify cancellation requests that still require a response. Students define an account, a subscription, a request, a confirmed cancellation, and a subscription state at a particular time. The observation unit for service performance is a request; the unit for a customer-state report is a subscription at the reporting cutoff. Joining these objects without preserving their units can count one customer several times or treat a request as a completed action.
+
+## Proposed Sequence
+
+1. Give students a small, explicitly synthetic set of subscriptions and events. Include a request awaiting confirmation, a confirmed cancellation, an active subscription, and a subscription with no recent status observation.
+2. Ask them to define relations such as `requestConcernsSubscription`, `submittedByAccount`, and `confirmedAt`. Require stable identifiers and timestamps.
+3. Ask what follows from each recorded relation. A request concerning a subscription establishes its subject; it does not establish completion. Missing confirmation remains unknown unless a stated completeness assumption warrants a different interpretation.
+4. Compare two AI-generated specifications. One equates a request with cancellation; the other preserves the distinction. Students trace the resulting difference in the service queue before writing a larger program.
+5. Add validation for duplicate request identifiers, missing timestamps, and confirmation preceding the request. Retain both source records and an explanation of each finding.
+6. Challenge an axiom that treats any purchaser as authorized for promotional contact. Students identify the missing evidence and specify an explicit permission record with its scope and time.
+
+This is a proposed original exercise. Synthetic records and executable Python would be released together with the detailed lecture example. No legal entitlement is inferred from the illustrative commercial categories.
+
+## Recurring Course Cases
+
+| Case | Objects and Relationships to Preserve | Question That Exposes a Modeling Error |
+| --- | --- | --- |
+| mHealth | Person, day, logging event, food entry, nutrient amount, and measurement unit | Does a day with no log establish zero consumption? |
+| Restaurant Availability | Store, timestamped status observation, source, and observation age | Does an unavailable menu item establish a mechanical failure? |
+| Earnings Calls | Speaker, attributed claim, source passage, reporting period, and company | Does management's explanation identify a causal effect? |
+| Customer Segmentation | Customer, measurement period, membership rule, and segment description | Can loyalty and price sensitivity coexist under the definitions? |
+
+These questions reuse existing distinctions in the notes. The ontology exercise makes the relevant definitions explicit and traceable rather than creating new empirical findings.
+
+## Figures and Interaction
+
+An editable TikZ diagram can show an account linked to a subscription, then to a request and a separate confirmation event. Solid arrows denote recorded links; dashed arrows denote permitted inferences. Navy, orange, text labels, and line patterns distinguish the categories. A second panel changes only the request-to-completion rule and shows the resulting service queue. A text table lists every fact and inference.
+
+For a future static wiki, let students select a rule, predict its consequence, and reveal the proof. Keep the original evidence visible when a rule changes. The implementation should distinguish recorded facts, logical consequences, validation findings, and unresolved observations. An inference's derivation describes why it follows from the model; its source record supports whether its premise is credible.
+
+---
+
+## Source: 01_Resources/34_Representation_Evaluation/README.md
+
+# Representation Quality and Marketing Decisions
+
+A marketing analyst may compress customer information or use AI features to identify important complaints. A high score for reconstructing the input can coexist with poor preservation of the information needed for that decision. The useful lesson is to evaluate the representation against a specified outcome, with the score's units, weights, and denominator visible.
+
+[Massive Activations Confound Sparse Autoencoders](https://arxiv.org/abs/2611.13548v1), by Nathan Delisle and Chenhao Tan, motivates this lesson through language-model representations. Its [repository](https://github.com/nathandelisle/massive-saes) supplies inspectable evaluation code and saved numerical results. The [source review](SOURCE_REVIEW.md) distinguishes reported research findings, independently recalculated values, and original marketing illustrations.
+
+| Course Connection | Proposed Teaching Use |
+| --- | --- |
+| M7: Model Evaluation | Compare aggregate reconstruction, error outside a dominant direction, feature stability, and task performance |
+| M5: Text Measurement | Check whether a representation preserves a complaint category needed for an operational response |
+| M4: Segmentation | Examine whether cluster descriptions and customer assignments recur under reasonable changes in initialization and preprocessing |
+| M2: Scaling and Visualization | Show how one large-scale dimension determines a pooled score |
+| M9: Marketing Dialectics | Evaluate the evidence behind a claim that an AI system is understandable or accountable |
+
+The [proposed case](CASE_DESIGN.md) starts with four invented text representations and then separates feature importance from a unique explanation. It fits a short M7 discussion with optional technical reading. Full SAE training would add substantial prerequisites and is unnecessary for the introductory calculation.
+
+Thirteen unchanged source and result files are preserved under `reference/`, with MIT and CC BY 4.0 notices, a pinned commit, and hashes in the [manifest](manifest.json). The paper itself is linked because its arXiv license does not supply general redistribution permission. The original [calculation checks](source_checks.py) use Python's standard library; their results are in [source_checks.json](source_checks.json). These checks establish arithmetic and source-file fidelity. They do not reproduce model training, model inference, or the authors' statistical uncertainty.
+
+The [catalog](catalog.json) uses namespace `representation-evaluation`. Lecture and slide integration remains proposed.
+
+---
+
+## Source: 01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md
+
+# Reconstruction, Stability, and Interpretation
+
+## Research Finding
+
+Delisle and Tan study sparse autoencoders that reconstruct language-model activations. In affected settings, a dominant principal component can inflate overall reconstruction scores and make highly ranked features unstable across training seeds. Their Qwen-2.5-7B example explains 99.96% of total variance while leaving about 33% of variance outside PC1 unexplained. Their correction trains on the orthogonal component and restores PC1 during reconstruction. The paper reports improved reconstruction and top-feature reproducibility in affected models. Effects depend on the model, layer, preprocessing, and evaluation procedure. Its sparse-probe results also show that improved representation diagnostics need not produce large task-accuracy gains. See [version 1, §§3–7 and Appendices A, E, H](https://arxiv.org/html/2611.13548v1).
+
+The course inference is to select an evaluation target from the managerial decision before relying on a convenient internal score. These experiments concern model activations; they do not estimate customer behavior, identify consumer motives, or establish a general correction for marketing datasets.
+
+## What the Saved Results Measure
+
+The archived [fidelity table](reference/results/additional/reconstruction/nine_model/nine_model_fidelity.csv) contains standard and bypass rows for nine models. Its provenance specifies 200,000 held-out WikiText-103 tokens, with the mean and PC1 obtained from the training store. There are three or five seeds per row. For Qwen-2.5-7B, the standard row has total fraction of variance unexplained (FVU) 0.00036992 and orthogonal FVU 0.329781. Calculating `100 * (1 - fvu_total)` gives 99.963008% total variance explained. Calculating `100 * fvu_content` gives 32.9781% orthogonal variance unexplained. These use different denominators.
+
+The same table gives Qwen orthogonal FVU 0.217913 after bypass, a relative reduction of approximately 33.92%. The original calculation checks recompute these values from the archived table. They verify transformations of saved measurements; the activation-level experiment remains unexecuted.
+
+The [feature summary](reference/results/tables/features_summary.csv) uses another comparison convention. Its `top50` column averages comparisons from reference seed 42 to four other seeds; `top50_allpairs` uses all 20 ordered comparisons. Qwen's standard/bypass `top50` values are 6% and 99.5%, while the all-pairs values are 6% and 96.8%. The fidelity table's corresponding sharing entries are 6% and 98% in its own smaller seed collection. Each number must travel with its file, seed set, selection rule, and denominator. Combining these columns into one purported replication would change the comparison.
+
+## Evaluation Code Worth Reading
+
+The archived [matching implementation](reference/experiments/language/pc1_v3/v3/common/matching.py) compares decoder directions using signed cosine similarity. Its default best-match comparison can use every direction in the other dictionary, while its dictionary-wide denominator includes alive features in the reference dictionary. A direction and its negation have different meanings when coefficients are nonnegative. An absolute-cosine comparison would change this metric. The file also provides mutual and one-to-one matching functions; the default best match is a different correspondence rule.
+
+The [loading and reconstruction implementation](reference/pc1_sae/__init__.py) centers each activation with the saved training mean, projects onto a saved PC1 direction, encodes the remainder, and restores the projection during decoding. It requires the preprocessing assets for the matching checkpoint and layer. Deleting the leading component from an ordinary customer dataset would be a different operation. That component may carry business-relevant information.
+
+The [experiment guide](reference/experiments/README.md) separates training, evaluation, probing, behavioral edits, and explanation scoring. The [requirements](reference/requirements-models.txt) and loader show that reproducing the models requires a substantial environment and checkpoint access. The small course example can establish the mathematical issue without these dependencies.
+
+## An Original Decision Example
+
+To see what determines an aggregate reconstruction score, split a centered input into a leading direction and its orthogonal remainder. Let $V_1$ and $V_{\perp}$ be their squared variation in the evaluation sample, and let $E_1$ and $E_{\perp}$ be the corresponding squared reconstruction errors. Orthogonality gives
+
+$$
+\frac{E_1+E_{\perp}}{V_1+V_{\perp}}
+=w_1\frac{E_1}{V_1}+(1-w_1)\frac{E_{\perp}}{V_{\perp}},
+\qquad w_1=\frac{V_1}{V_1+V_{\perp}}.
+$$
+
+The left side is total FVU. Each component error on the right is weighted by its share of variation; both component denominators must be positive. When the leading direction is reconstructed exactly, the remaining component's error receives weight $1-w_1$. A small weight can make that error almost invisible in the aggregate. The example below makes all of these quantities observable by construction.
+
+Consider four equally weighted, invented centered representations of complaint text: `(-100, -1)`, `(-100, 1)`, `(100, -1)`, and `(100, 1)`. The first coordinate represents a large document-style component by construction. The second represents a complaint distinction used to route a case for review; a positive value requires review. These meanings are imposed for the illustration.
+
+Representation A preserves the first coordinate and replaces the second with zero. It explains approximately 99.9900% of total squared variation, while missing both cases that require review. Representation B multiplies the first coordinate by 0.98 and preserves the second. It explains approximately 99.9600% of total variation and routes both review cases correctly. The aggregate reconstruction ranking therefore reverses the ranking for the chosen decision. The [original program](source_checks.py) verifies the arithmetic and reports the denominators.
+
+This calculation requires no claim about what a real model's first component means. A practical adaptation would use a manually checked complaint set, fit transformations using training data, and evaluate held-out routing performance and customer-group outcomes. The observed task performance would decide whether a proposed preprocessing change is helpful.
+
+## Feature Importance and a Unique Explanation
+
+Two different decompositions can reconstruct the same vector. In an original two-dimensional illustration, unit directions proportional to `(1, 1)` and `(1, -1)`, each with coefficient `sqrt(2)`, sum to `(2, 0)`. Directions proportional to `(1, 2)` and `(1, -2)`, each with coefficient `sqrt(5)`, produce the same result. Removing one term leaves a large error in either representation. The size of that error alone does not select a unique underlying concept.
+
+This is an exact algebraic counterexample, not a trained SAE or an estimated marketing mechanism. Its teaching role is to separate sensitivity to an intervention on a representation from the substantive meaning assigned to a feature. Feature stability, prediction, and human interpretation need their own evidence. For a segmentation application, compare customer assignments and label-aligned descriptions across runs rather than treating a cluster number as a stable behavioral type.
+
+## Review Scope and Rights
+
+The review covers the paper's main evaluation and repair arguments, selected appendix definitions, and 13 repository files at commit `a3df7fff7a3f03012a116cbd092d2a24f2941e64`, dated November 10, 2026. The arXiv record identifies the paper as accepted at NeurIPS 2026. That publication-status statement comes from the record; no independent conference-program check was performed.
+
+The repository licenses code under MIT and results under CC BY 4.0. Both notices are preserved. The paper uses the arXiv perpetual non-exclusive license and is linked rather than republished. The source subset is incomplete and is provided for inspection. No upstream script, dependency installation, checkpoint download, model training, model inference, or LLM evaluator was executed. The original standard-library checks cover the archived-file hashes, saved-result calculations, and two invented mathematical illustrations.
+
+---
+
+## Source: 01_Resources/34_Representation_Evaluation/CASE_DESIGN.md
+
+# Preserving a Customer-Relevant Signal
+
+## Managerial Decision and Proposed Placement
+
+A service team uses a compressed text representation to decide which complaints need prompt review. The introductory comparison asks whether the representation preserves that distinction. A 10- to 15-minute M7 example can extend the existing discussion of loss functions and model evaluation, with a brief M5 connection to text measurement. The material would replace part of an existing discussion within the 170-minute session, subject to the next course revision.
+
+The four invented representations and two deterministic transformations in [SOURCE_REVIEW.md](SOURCE_REVIEW.md) provide a hand-checkable starting point. They are algebraic constructions with assigned meanings, rather than embeddings extracted from course data. [source_checks.py](source_checks.py) contains the complete calculation and verifies the expected results.
+
+## Proposed Exercise
+
+1. Specify the routing decision, the four equally weighted records, and the positive-second-coordinate review rule.
+2. Calculate each transformation's sum of squared errors and divide by the same total squared variation. State the coordinate scales before comparing the scores.
+3. Calculate errors separately along the first coordinate and the second coordinate. Report review recall using the two review-required cases as the denominator.
+4. Change only the scale of the first coordinate. Explain why this changes the aggregate reconstruction score without changing the routing rule.
+5. Ask an AI coding assistant to report both reconstruction and routing results. Independently hand-check one record and the aggregate denominator.
+6. Compare the two exact vector decompositions. Explain why removing a component can damage a reconstruction without establishing that its label describes a unique customer motive.
+
+An optional extension would use manually coded synthetic complaints and fit a small representation on training records. Selection of transformations, thresholds, and label descriptions would precede final evaluation. A real-data extension would preserve the existing course's source, privacy, and information-split conventions.
+
+## Interpretation
+
+The appropriate transformation depends on the decision. A component that is unhelpful for one complaint-routing task may matter for another. Reproducibility across random seeds tests sensitivity to a training choice; it does not establish semantic validity, causal identification, or fair customer treatment. Those claims require outcomes and comparisons suited to their meaning.
+
+The ontology review supplies a complementary question: did the analyst define the complaint category correctly? The representation example then asks whether the chosen mathematical representation preserves that definition well enough for the action. An explicit vocabulary and a repeatable feature each need validation against the underlying records.
+
+## Figure Design
+
+Use two editable TikZ panels with the same four points and axis scales. In the first panel, project every point onto the horizontal axis. In the second, shrink the horizontal coordinate slightly while retaining the vertical coordinate. Show reconstruction scores below each panel and mark the two review-required cases with a separate shape. An inset with its own explicit scale can reveal the vertical errors. Illinois navy and orange, labels, and line patterns keep the comparison readable in grayscale.
+
+A second small diagram can show two different pairs of arrows summing to the same vector. Removing one arrow makes the cancellation failure visible. The caption should state that the construction proves nonuniqueness for the illustrated representation, without asserting an empirical decomposition of consumer preferences.
+
+These activities and figures are proposed. The current review releases resource notes and verified calculations; it adds no graded assignment or required model-training exercise.
 
 ---
 

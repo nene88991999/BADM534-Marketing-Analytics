@@ -1,0 +1,45 @@
+{
+  "reviewed_on": "2026-11-24",
+  "source_commit": "4fc52fd92f644e03e76880c5de16f0accb4770e7",
+  "source_commit_date": "2026-11-23T16:03:20Z",
+  "files": [
+    {
+      "source_path": "ontology/README.md",
+      "source_url": "https://github.com/mani-bellan/concept-playgrounds/blob/4fc52fd92f644e03e76880c5de16f0accb4770e7/ontology/README.md",
+      "git_blob_sha": "c73faa10959e2555dfeeebc74095cf2cf51f1854",
+      "bytes": 2998,
+      "reading_scope": "Complete file read.",
+      "archived": false
+    },
+    {
+      "source_path": "ontology/src/chapters.js",
+      "source_url": "https://github.com/mani-bellan/concept-playgrounds/blob/4fc52fd92f644e03e76880c5de16f0accb4770e7/ontology/src/chapters.js",
+      "git_blob_sha": "861c17db0e405716aeffa88cf83a8be4f6b0c026",
+      "bytes": 15114,
+      "reading_scope": "Complete file read.",
+      "archived": false
+    },
+    {
+      "source_path": "ontology/src/ontology.js",
+      "source_url": "https://github.com/mani-bellan/concept-playgrounds/blob/4fc52fd92f644e03e76880c5de16f0accb4770e7/ontology/src/ontology.js",
+      "git_blob_sha": "c54c5d8f11277b3e0fd92c1976d902e2934ad850",
+      "bytes": 6370,
+      "reading_scope": "Complete file read.",
+      "archived": false
+    },
+    {
+      "source_path": "ontology/src/data.js",
+      "source_url": "https://github.com/mani-bellan/concept-playgrounds/blob/4fc52fd92f644e03e76880c5de16f0accb4770e7/ontology/src/data.js",
+      "git_blob_sha": "a4af1257888e5ab080523ebca4de6318f8da007d",
+      "bytes": 20392,
+      "reading_scope": "Selected opening definitions; revenue case checked in hosted UI.",
+      "archived": false
+    }
+  ],
+  "source_archive": "None. Sources are linked; no repository-wide license found.",
+  "hosted_site": "https://learn-ontology.vercel.app/#learn",
+  "hosted_deployment_commit": null,
+  "browser_check": "Completed Detective Case 11, including all four proof steps and illustrative SQL.",
+  "local_source_execution": false,
+  "model_calls": 0
+}

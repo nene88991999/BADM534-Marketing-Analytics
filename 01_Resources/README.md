@@ -124,3 +124,11 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Graph Coarsening
 
 [The GraCo review](32_Graph_Coarsening/README.md) examines network compression, aggregation weights, metric-dependent rankings, population restrictions, and label use. The collection preserves the CC BY paper and 21 pinned source files with their licenses, plus seven original arithmetic checks. [The implemented M5/M7 case](../03_Data_and_Code/Graph_Coarsening/README.md) adds two executed programs, nine independent checks, and optional practice. The source toolkit and GNN training remain unexecuted. The catalog namespace is `graph-coarsening`.
+
+## Ontologies and Knowledge Representation
+
+[The ontology review](33_Ontologies_and_Knowledge_Representation/README.md) connects explicit definitions and reasoning traces to data contracts, missing observations, attributed claims, and customer permissions. It proposes a cancellation-record exercise for M1/M2 and recurring applications in M5/M9. The hosted revenue-definition case was checked; unlicensed application source is linked rather than copied. The catalog namespace is `ontology-representation`.
+
+## Representation Evaluation
+
+[The sparse-autoencoder review](34_Representation_Evaluation/README.md) connects aggregate reconstruction, feature stability, and decision-specific evaluation to M7, with M2/M4/M5/M9 applications. Thirteen licensed source files and saved-result tables accompany eight original calculation checks and a proposed synthetic complaint-routing example. Source models remain unexecuted. The catalog namespace is `representation-evaluation`.

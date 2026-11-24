@@ -1,0 +1,81 @@
+{
+  "namespace": "ontology-representation",
+  "reviewed_on": "2026-11-24",
+  "status": "Source review and proposed course exercises; lecture integration pending.",
+  "resources": [
+    {
+      "id": "OR01",
+      "title": "Ontology Playground",
+      "url": "https://learn-ontology.vercel.app/#learn",
+      "modules": [
+        "M1",
+        "M2",
+        "M5",
+        "M9"
+      ],
+      "teaching_use": "Predict an inference, inspect its proof, and challenge the definitions.",
+      "rights": "Link only; no copying permission identified.",
+      "scope": "Hosted overview and course menu; completed conflicting-revenue Detective case with SQL trace. Deployment revision not exposed."
+    },
+    {
+      "id": "OR02",
+      "title": "Ontology Playground Source",
+      "url": "https://github.com/mani-bellan/concept-playgrounds/tree/4fc52fd92f644e03e76880c5de16f0accb4770e7",
+      "source_commit": "4fc52fd92f644e03e76880c5de16f0accb4770e7",
+      "modules": [
+        "M1",
+        "M2",
+        "M5"
+      ],
+      "teaching_use": "Inspect how a small rule system differs from data validation and general OWL reasoning.",
+      "rights": "No repository license in inspected tree or GitHub license metadata; source not republished.",
+      "scope": "README, six chapter definitions, complete reasoner, selected example definitions; no local execution."
+    },
+    {
+      "id": "OR03",
+      "title": "OWL 2 Web Ontology Language Primer (Second Edition)",
+      "url": "https://www.w3.org/TR/owl2-primer/",
+      "date": "2012-12-11",
+      "modules": [
+        "M1",
+        "M2",
+        "M5",
+        "M9"
+      ],
+      "teaching_use": "Open-world reasoning, domain/range inference, classes, relationships, and inconsistent definitions.",
+      "rights": "Linked W3C reference.",
+      "sections": [
+        "2",
+        "3",
+        "4.6"
+      ]
+    },
+    {
+      "id": "OR04",
+      "title": "Shapes Constraint Language (SHACL)",
+      "url": "https://www.w3.org/TR/shacl/",
+      "modules": [
+        "M1",
+        "M2"
+      ],
+      "teaching_use": "Distinguish entailment from validation against explicit graph conditions.",
+      "rights": "Linked W3C reference.",
+      "scope": "Introduction and constraint organization inspected; no SHACL engine executed."
+    },
+    {
+      "id": "OR05",
+      "title": "Microsoft GraphRAG Documentation",
+      "url": "https://microsoft.github.io/graphrag/",
+      "modules": [
+        "M5",
+        "M7"
+      ],
+      "teaching_use": "Distinguish graph-based retrieval, ontology reasoning, and empirical answer evaluation.",
+      "rights": "Link only.",
+      "scope": "Overview; no pipeline, model call, or performance reproduction."
+    }
+  ],
+  "review": "SOURCE_REVIEW.md",
+  "case_design": "CASE_DESIGN.md",
+  "manifest": "manifest.json"
+}

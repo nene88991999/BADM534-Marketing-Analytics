@@ -1,0 +1,125 @@
+{
+  "reviewed_on": "2026-11-24",
+  "repository": "https://github.com/nathandelisle/massive-saes",
+  "source_commit": "a3df7fff7a3f03012a116cbd092d2a24f2941e64",
+  "files": [
+    {
+      "path": "reference/README.md",
+      "source_path": "README.md",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/README.md",
+      "git_blob_sha": "5a1b1b51afc70c19a85cfabb349a0fda8ab7b675",
+      "sha256": "45c0b5c72255243ffa0464bc2a7e7c6518f27c5e2df045867ee87a876ad118e7",
+      "bytes": 1004,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/LICENSE",
+      "source_path": "LICENSE",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/LICENSE",
+      "git_blob_sha": "14fd82ade279325387101d187ad164117d61f80a",
+      "sha256": "5aa0d31494068c16130fdb04b44e15c12abc9c616dcee5ed58a9492fc9069a71",
+      "bytes": 1117,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/LICENSE-DATA.md",
+      "source_path": "LICENSE-DATA.md",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/LICENSE-DATA.md",
+      "git_blob_sha": "77a8ab20b2c96769665d85cae8a9a01758f346f5",
+      "sha256": "1306df8c9b632f1e20ccac18042b9fa92169085de499efd9bc074299214dd5ba",
+      "bytes": 882,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/requirements.txt",
+      "source_path": "requirements.txt",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/requirements.txt",
+      "git_blob_sha": "668101421a8bbb0717a55dca9328cada0813c4f6",
+      "sha256": "0cd13c898112b75b318790635794237fcc75f3e215134195bc78ba7344cf0b0c",
+      "bytes": 24,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/requirements-models.txt",
+      "source_path": "requirements-models.txt",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/requirements-models.txt",
+      "git_blob_sha": "2f419576c547c002c6c2b26afce243915bdff2b6",
+      "sha256": "72c34799f8c89362877301d65acdc038a22dccbe4d670ab7d21738ef7c26c663",
+      "bytes": 385,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/analysis/README.md",
+      "source_path": "analysis/README.md",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/analysis/README.md",
+      "git_blob_sha": "972afbdd3c6ba00f99b9dd3643d306d454411c57",
+      "sha256": "e2085f3444f316234ad6fa1c50042876c3ec4b8c6b97ea5501addf3852f56411",
+      "bytes": 1748,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/experiments/README.md",
+      "source_path": "experiments/README.md",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/experiments/README.md",
+      "git_blob_sha": "852437d342ab066ed7c6a4a795621158c8ef17eb",
+      "sha256": "f8e25abf3f541579497abc751b1227098afb4fa56ab56ab7348d6f17e4e15a2f",
+      "bytes": 6488,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/pc1_sae/README.md",
+      "source_path": "pc1_sae/README.md",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/pc1_sae/README.md",
+      "git_blob_sha": "1ab995700ed2f69deab0ddaecd7f6322af75bb7d",
+      "sha256": "72ca2fb440b594be8e0ca18425123041d63553f2fbdc2171e674910fb11faf28",
+      "bytes": 1190,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/pc1_sae/__init__.py",
+      "source_path": "pc1_sae/__init__.py",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/pc1_sae/__init__.py",
+      "git_blob_sha": "be34ae1aea160e33431b5a7f43bf18592737cd99",
+      "sha256": "092ee5656d9096b85e8eee71b543af195ba7491ac51c2fe27b5a6d496690133d",
+      "bytes": 4420,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/experiments/language/pc1_v3/v3/common/matching.py",
+      "source_path": "experiments/language/pc1_v3/v3/common/matching.py",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/experiments/language/pc1_v3/v3/common/matching.py",
+      "git_blob_sha": "fcca108267018c68293b9f1f852d82a86df7ae3b",
+      "sha256": "32998f8139f4afddc4089eb43c2c17b8a05f2585608be25e770e7de1043d08e0",
+      "bytes": 3413,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/results/README.md",
+      "source_path": "results/README.md",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/results/README.md",
+      "git_blob_sha": "aba7ba8171a73e74cefe059a19defce7510b8c5f",
+      "sha256": "33d89f904e136f4994332610de4893633b7fca6886ad9c883e16953579a52acf",
+      "bytes": 615,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/results/tables/features_summary.csv",
+      "source_path": "results/tables/features_summary.csv",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/results/tables/features_summary.csv",
+      "git_blob_sha": "d676a99c5dd1bd418be721f4339fe516dbf0b1c5",
+      "sha256": "16d76ca0222ecb4e5ae80a8fd086c7898c477f95972eb1a171b77fa35c81d547",
+      "bytes": 10809,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    },
+    {
+      "path": "reference/results/additional/reconstruction/nine_model/nine_model_fidelity.csv",
+      "source_path": "results/additional/reconstruction/nine_model/nine_model_fidelity.csv",
+      "source_url": "https://github.com/nathandelisle/massive-saes/blob/a3df7fff7a3f03012a116cbd092d2a24f2941e64/results/additional/reconstruction/nine_model/nine_model_fidelity.csv",
+      "git_blob_sha": "bb9efba999314c85090d3ecb6015c22f18673569",
+      "sha256": "2c4812a3209891c5aa776ed0ec6c60373a68302a04bd0194dda3fe4a2839f638",
+      "bytes": 4673,
+      "transformation": "None; original UTF-8 bytes, including original line endings."
+    }
+  ],
+  "scope": "Selected source and saved results; partial repository. No upstream code, dependencies, checkpoints, or model calls executed."
+}

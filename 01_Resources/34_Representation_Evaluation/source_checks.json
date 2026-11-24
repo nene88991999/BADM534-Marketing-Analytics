@@ -1,0 +1,196 @@
+{
+  "checked_on": "2026-11-24",
+  "python_version": "3.14.8",
+  "dependencies": "Python standard library only",
+  "run_command": "python3 01_Resources/34_Representation_Evaluation/source_checks.py",
+  "status": "passed",
+  "checks_passed": 8,
+  "checks": [
+    "All 13 archived source files match recorded Git blobs and SHA256 hashes",
+    "Saved fidelity rows have unique keys and reproduce the Qwen percentages",
+    "Sharing rates retain their distinct four-pair and twenty-pair denominators",
+    "Direct reconstruction error equals the variance-weighted component errors",
+    "The high-scale example reproduces the independent 1/10001 and 4/10001 errors",
+    "Routing recall is zero versus one with a common two-case denominator",
+    "Changing coordinate scale reverses reconstruction rankings while routing stays fixed",
+    "Two distinct sparse decompositions reconstruct the same vector with different removal errors"
+  ],
+  "archived_files_checked": 13,
+  "saved_qwen_fidelity": {
+    "seeds_per_arm": 3,
+    "total_variance_explained_pct": 99.963008,
+    "orthogonal_variance_unexplained_pct": 32.9781,
+    "orthogonal_error_relative_reduction": 0.339219057495732
+  },
+  "saved_qwen_sharing": {
+    "standard": {
+      "reference_seed_top50": 0.06,
+      "all_ordered_pairs_top50": 0.06000000000000001
+    },
+    "bypass": {
+      "reference_seed_top50": 0.995,
+      "all_ordered_pairs_top50": 0.968
+    }
+  },
+  "synthetic_high_scale": {
+    "points": [
+      [
+        -100.0,
+        -1
+      ],
+      [
+        -100.0,
+        1
+      ],
+      [
+        100.0,
+        -1
+      ],
+      [
+        100.0,
+        1
+      ]
+    ],
+    "A": {
+      "records": 4,
+      "coordinate_sums_of_squares": [
+        40000.0,
+        4
+      ],
+      "coordinate_squared_errors": [
+        0.0,
+        4.0
+      ],
+      "total_fvu": 9.999000099990002e-05,
+      "total_variance_explained_pct": 99.9900009999,
+      "coordinate_fvu": [
+        0.0,
+        1.0
+      ],
+      "review_required": 2,
+      "correctly_routed_for_review": 0,
+      "review_recall": 0.0
+    },
+    "B": {
+      "records": 4,
+      "coordinate_sums_of_squares": [
+        40000.0,
+        4
+      ],
+      "coordinate_squared_errors": [
+        16.0,
+        0
+      ],
+      "total_fvu": 0.00039996000399960006,
+      "total_variance_explained_pct": 99.96000399960005,
+      "coordinate_fvu": [
+        0.0004,
+        0.0
+      ],
+      "review_required": 2,
+      "correctly_routed_for_review": 2,
+      "review_recall": 1.0
+    }
+  },
+  "synthetic_low_scale": {
+    "points": [
+      [
+        -1.0,
+        -1
+      ],
+      [
+        -1.0,
+        1
+      ],
+      [
+        1.0,
+        -1
+      ],
+      [
+        1.0,
+        1
+      ]
+    ],
+    "A": {
+      "records": 4,
+      "coordinate_sums_of_squares": [
+        4.0,
+        4
+      ],
+      "coordinate_squared_errors": [
+        0.0,
+        4.0
+      ],
+      "total_fvu": 0.5,
+      "total_variance_explained_pct": 50.0,
+      "coordinate_fvu": [
+        0.0,
+        1.0
+      ],
+      "review_required": 2,
+      "correctly_routed_for_review": 0,
+      "review_recall": 0.0
+    },
+    "B": {
+      "records": 4,
+      "coordinate_sums_of_squares": [
+        4.0,
+        4
+      ],
+      "coordinate_squared_errors": [
+        0.001600000000000003,
+        0
+      ],
+      "total_fvu": 0.00020000000000000036,
+      "total_variance_explained_pct": 99.98,
+      "coordinate_fvu": [
+        0.0004000000000000007,
+        0.0
+      ],
+      "review_required": 2,
+      "correctly_routed_for_review": 2,
+      "review_recall": 1.0
+    }
+  },
+  "synthetic_decompositions": [
+    {
+      "slope": 1.0,
+      "unit_directions": [
+        [
+          0.7071067811865475,
+          0.7071067811865475
+        ],
+        [
+          0.7071067811865475,
+          -0.7071067811865475
+        ]
+      ],
+      "coefficient_per_direction": 1.4142135623730951,
+      "sum": [
+        2.0,
+        0.0
+      ],
+      "squared_error_after_removing_one": 2.0
+    },
+    {
+      "slope": 2.0,
+      "unit_directions": [
+        [
+          0.4472135954999579,
+          0.8944271909999159
+        ],
+        [
+          0.4472135954999579,
+          -0.8944271909999159
+        ]
+      ],
+      "coefficient_per_direction": 2.23606797749979,
+      "sum": [
+        2.0,
+        0.0
+      ],
+      "squared_error_after_removing_one": 5.0
+    }
+  ],
+  "scope": "Original standard-library calculations; saved measurements are attributed results. Synthetic vectors have imposed meanings. No upstream code or model execution."
+}
