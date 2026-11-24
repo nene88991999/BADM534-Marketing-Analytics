@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\begin{axis}[at={(0,0)},anchor=south west,width=6.4cm,height=5.3cm,
+ xmin=0,xmax=0.05,ymin=0.4,ymax=2.6,ytick={1,2},yticklabels={B,A},
+ xtick={0,0.025,0.05},xticklabels={0,0.025,0.050},scaled x ticks=false,
+ xlabel={Total FVU (\%)},title={Reconstruction Error},
+ title style={font=\small,text=IlliniBlue},xmajorgrids=true]
+\addplot[IlliniBlue,line width=11pt] coordinates {(0,2) (0.0099990001,2)};
+\addplot[IlliniOrange,line width=11pt] coordinates {(0,1) (0.0399960004,1)};
+\node[anchor=west,font=\footnotesize] at (axis cs:0.0105,2) {0.010};
+\node[anchor=south,font=\footnotesize] at (axis cs:0.039996,1.15) {0.040};
+\end{axis}
+\begin{axis}[at={(7.1cm,0)},anchor=south west,width=6.4cm,height=5.3cm,
+ xmin=0,xmax=100,ymin=0.4,ymax=2.6,ytick={1,2},yticklabels={B,A},
+ xtick={0,50,100},xlabel={Recall (\%)},title={Review-Required Cases},
+ title style={font=\small,text=IlliniBlue},xmajorgrids=true]
+\addplot[IlliniBlue,only marks,mark=square*,mark size=4pt] coordinates {(0,2)};
+\addplot[IlliniOrange,line width=11pt] coordinates {(0,1) (100,1)};
+\node[anchor=west,font=\footnotesize] at (axis cs:5,2) {0 of 2};
+\node[anchor=south,font=\footnotesize] at (axis cs:80,1.15) {2 of 2};
+\end{axis}
+\node[anchor=south,align=center,font=\footnotesize] at ([yshift=0.4cm]current bounding box.north) {Four synthetic cases; style scale 100.};
+\end{tikzpicture}

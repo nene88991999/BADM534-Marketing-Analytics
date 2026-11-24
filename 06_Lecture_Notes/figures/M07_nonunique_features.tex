@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x=1.6cm,y=0.85cm]
+\foreach \shift/\slope/\error in {0/1/2,4.3/2/5}{
+ \begin{scope}[shift={(\shift,0)}]
+ \draw[->,Storm] (-0.2,0) -- (2.6,0);
+ \draw[->,Storm] (0,-2.25) -- (0,2.4);
+ \draw[edge,very thick] (0,0) -- (1,\slope);
+ \draw[accent] (0,0) -- (1,-\slope);
+ \draw[accent,dashed] (1,\slope) -- (2,0);
+ \fill[IlliniBlue] (2,0) circle(2pt);
+ \node[anchor=north west,font=\footnotesize] at (2,0) {$(2,0)$};
+ \node[anchor=south,font=\footnotesize] at (1,\slope) {$(1,\slope)$};
+ \node[anchor=west,font=\footnotesize] at (1.12,-\slope) {$(1,-\slope)$};
+ \node at (1.1,2.9) {$a=\slope$: exact reconstruction};
+ \node[align=center] at (1.1,-2.9) {Remove the navy contribution:\\squared error $=\error$};
+ \end{scope}
+}
+\node[align=center,text width=13cm,font=\footnotesize] at (3.25,-4.2) {Synthetic weighted directions. Coefficient penalties differ.};
+\end{tikzpicture}

@@ -1,0 +1,20 @@
+{
+  "synthetic": true,
+  "cutoff": "2027-01-31T23:59:00+00:00",
+  "subscriptions": [
+    {"subscription_id": "s1", "account_id": "a1"},
+    {"subscription_id": "s2", "account_id": "a2"},
+    {"subscription_id": "s3", "account_id": "a3"},
+    {"subscription_id": "s4", "account_id": "a4"}
+  ],
+  "events": [
+    {"event_id": "r1", "subscription_id": "s1", "kind": "request", "at": "2027-01-25T10:00:00+00:00"},
+    {"event_id": "r2", "subscription_id": "s2", "kind": "request", "at": "2027-01-26T10:00:00+00:00"},
+    {"event_id": "r2", "subscription_id": "s2", "kind": "request", "at": "2027-01-26T10:00:00+00:00"},
+    {"event_id": "c2", "subscription_id": "s2", "kind": "confirmation", "at": "2027-01-26T11:00:00+00:00", "request_id": "r2"},
+    {"event_id": "a3", "subscription_id": "s3", "kind": "active_observation", "at": "2027-01-30T12:00:00+00:00"},
+    {"event_id": "r4", "subscription_id": "s4", "kind": "request", "at": null},
+    {"event_id": "c1_later", "subscription_id": "s1", "kind": "confirmation", "at": "2027-02-01T09:00:00+00:00", "request_id": "r1"},
+    {"event_id": "c1_early", "subscription_id": "s1", "kind": "confirmation", "at": "2027-01-24T09:00:00+00:00", "request_id": "r1"}
+  ]
+}

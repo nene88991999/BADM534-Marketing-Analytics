@@ -1,0 +1,104 @@
+{
+  "synthetic": true,
+  "cutoff": "2027-01-31T23:59:00+00:00",
+  "raw_rows": 8,
+  "accepted_unique_events": 4,
+  "subscription_denominator": 4,
+  "valid_request_denominator": 2,
+  "request_ids_to_review": [
+    "r1"
+  ],
+  "confirmed_subscription_ids": [
+    "s2"
+  ],
+  "request_as_completion_subscription_ids": [
+    "s1",
+    "s2"
+  ],
+  "confirmed_share": 0.25,
+  "request_as_completion_share": 0.5,
+  "flags": [
+    {
+      "event_id": "c1_later",
+      "reason": "after_cutoff",
+      "rows": 1
+    },
+    {
+      "event_id": "r2",
+      "reason": "exact_duplicate",
+      "rows": 1
+    },
+    {
+      "event_id": "r4",
+      "reason": "invalid_timestamp",
+      "rows": 1
+    },
+    {
+      "event_id": "c1_early",
+      "reason": "confirmation_before_request",
+      "rows": 1
+    }
+  ],
+  "evidence": [
+    {
+      "subscription_id": "s1",
+      "evidence_state": "request_without_confirmation",
+      "state_observed_at": null,
+      "requests_to_review": [
+        "r1"
+      ]
+    },
+    {
+      "subscription_id": "s2",
+      "evidence_state": "recorded_cancellation",
+      "state_observed_at": "2027-01-26T11:00:00+00:00",
+      "requests_to_review": []
+    },
+    {
+      "subscription_id": "s3",
+      "evidence_state": "observed_active",
+      "state_observed_at": "2027-01-30T12:00:00+00:00",
+      "requests_to_review": []
+    },
+    {
+      "subscription_id": "s4",
+      "evidence_state": "unknown",
+      "state_observed_at": null,
+      "requests_to_review": []
+    }
+  ],
+  "classification_trace": [
+    {
+      "event_id": "a3",
+      "asserted_kind": "active_observation",
+      "modeled_class": "ActiveStatusObservation",
+      "parent_class": "ServiceRecord",
+      "subscription_id": "s3",
+      "at": "2027-01-30T12:00:00+00:00"
+    },
+    {
+      "event_id": "c2",
+      "asserted_kind": "confirmation",
+      "modeled_class": "CancellationConfirmation",
+      "parent_class": "ServiceRecord",
+      "subscription_id": "s2",
+      "at": "2027-01-26T11:00:00+00:00"
+    },
+    {
+      "event_id": "r1",
+      "asserted_kind": "request",
+      "modeled_class": "CancellationRequest",
+      "parent_class": "ServiceRecord",
+      "subscription_id": "s1",
+      "at": "2027-01-25T10:00:00+00:00"
+    },
+    {
+      "event_id": "r2",
+      "asserted_kind": "request",
+      "modeled_class": "CancellationRequest",
+      "parent_class": "ServiceRecord",
+      "subscription_id": "s2",
+      "at": "2027-01-26T10:00:00+00:00"
+    }
+  ]
+}

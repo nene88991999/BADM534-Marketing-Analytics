@@ -43,3 +43,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Graph Coarsening and Evaluation
 
 [Optional ungraded practice](Graph_Coarsening/README.md) examines original-population access, group weights, oracle label purity, outcome-dependent preprocessing, and customer-service responsibilities. The exercise includes a source-inspection and AI-assisted coding specification.
+
+## Definitions and Representation Quality
+
+- [Cancellation Evidence](Ontology_and_Evidence/README.md): event definitions, cutoff information, duplicate records, validation, unknown states, and the review queue.
+- [Representation Evaluation](Representation_Evaluation/README.md): reconstruction error, coordinate units, task recall, nonunique decompositions, and independent interpretation.
+
+Both activities are public optional ungraded practice with original synthetic inputs and executed standard-library Python.

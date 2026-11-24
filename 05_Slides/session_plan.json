@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-23",
+  "updated_on": "2026-11-24",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -17,11 +17,11 @@
       "modules": "M1",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 23,
+      "slides": 25,
       "companion": "S01_Marketing_Decisions_and_AI_Coding.md",
       "pdf": "S01_Marketing_Decisions_and_AI_Coding.pdf",
       "python_activity": "Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.",
-      "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision.",
+      "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence.",
       "ethics": "Data minimization, authorized processing, and verifiable AI code",
       "timing": [
         {
@@ -32,9 +32,15 @@
         },
         {
           "start_minute": 15,
-          "end_minute": 45,
-          "minutes": 30,
+          "end_minute": 40,
+          "minutes": 25,
           "activity": "Concepts and Mechanisms"
+        },
+        {
+          "start_minute": 40,
+          "end_minute": 45,
+          "minutes": 5,
+          "activity": "Definitions, Inference, and Evidence"
         },
         {
           "start_minute": 45,
@@ -81,11 +87,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 20,
+      "slides": 23,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
-      "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.",
-      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations.",
+      "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator.",
+      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states.",
       "ethics": "Missingness, sample exclusions, and customer representation",
       "timing": [
         {
@@ -120,8 +126,14 @@
         },
         {
           "start_minute": 125,
+          "end_minute": 140,
+          "minutes": 15,
+          "activity": "Cancellation Records and the Review Queue"
+        },
+        {
+          "start_minute": 140,
           "end_minute": 155,
-          "minutes": 30,
+          "minutes": 15,
           "activity": "Application and Interpretation"
         },
         {
@@ -656,11 +668,11 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 48,
+      "slides": 52,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
-      "python_activity": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
-      "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator.",
+      "python_activity": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction and review recall; full representation programs are optional practice.",
+      "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes.",
       "ethics": "Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing",
       "timing": [
         {
@@ -707,9 +719,15 @@
         },
         {
           "start_minute": 80,
-          "end_minute": 115,
-          "minutes": 35,
+          "end_minute": 105,
+          "minutes": 25,
           "activity": "Demand Intervals and Complaint Routing"
+        },
+        {
+          "start_minute": 105,
+          "end_minute": 115,
+          "minutes": 10,
+          "activity": "Reconstruction and Representation Evaluation"
         },
         {
           "start_minute": 115,
@@ -739,7 +757,8 @@
       "date": "2027-04-07",
       "worked_comparison": "Fifteen minutes for training mixtures and conditional evaluation, fifteen minutes for prediction and decision comparisons, and ten minutes for inference efficiency and customer resolution.",
       "auxiliary_data_minutes": 10,
-      "graph_coarsening_minutes": 5
+      "graph_coarsening_minutes": 5,
+      "representation_evaluation_minutes": 10
     },
     {
       "session": 12,
@@ -875,12 +894,12 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 40,
+      "slides": 41,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.",
       "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks.",
-      "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope",
+      "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.",
       "timing": [
         {
           "start_minute": 0,
@@ -914,9 +933,15 @@
         },
         {
           "start_minute": 80,
-          "end_minute": 100,
-          "minutes": 20,
+          "end_minute": 95,
+          "minutes": 15,
           "activity": "Kantian and Confucian Justification"
+        },
+        {
+          "start_minute": 95,
+          "end_minute": 100,
+          "minutes": 5,
+          "activity": "Definitions, Evidence, and Permission"
         },
         {
           "start_minute": 100,

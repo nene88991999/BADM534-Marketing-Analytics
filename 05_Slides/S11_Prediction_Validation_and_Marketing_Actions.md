@@ -19,6 +19,7 @@ Session 11. M7. 170 minutes.
 - Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule.
 - Evaluate omitted auxiliary bias separately from sampling variance.
 - Distinguish oracle group purity from held-out prediction and detect label use during preprocessing.
+- Compare reconstruction, component errors, feature interpretation, and decision outcomes.
 
 ## Related Materials
 
@@ -42,6 +43,8 @@ Session 11. M7. 170 minutes.
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 - [Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)
 - [Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)
+- [Representation Evaluation: Data and Code](../03_Data_and_Code/Representation_Evaluation/README.md)
+- [Representation Evaluation: Optional Practice](../07_Labs/Representation_Evaluation/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -362,7 +365,56 @@ The eighteenth ordered true-class score is 0.65. Include a label when one minus 
 
 Source: M7 §7.25. ../03_Data_and_Code/Conformal_Prediction/complaint_sets.py
 
-## Slide 28: A Cost-Based Threshold
+## Slide 28: Reconstruction and Customer Review
+
+A preserves dominant variation while losing the signal required for review.
+
+**Figure description:** Four invented vectors have style coordinates of plus or minus 100 and review coordinates of plus or minus 1. A has 0.010% total FVU and 0 of 2 review recall; B has 0.040% FVU and 2 of 2 recall. Rescaling style to 1 reverses the FVU ranking without changing routing.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_reconstruction_routing.tex)
+
+The four equally weighted cases are synthetic; no model was trained. A keeps style and sets review to zero. B multiplies style by 0.98 and preserves review. The rule sends cases for review when the reconstructed second coordinate is positive. Accuracy over all four cases is 50% and 100%, while recall uses the two positive cases. Both comparisons use identical records.
+
+Source: M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
+
+## Slide 29: Aggregate Error Weights the Components
+
+At fixed coordinate units and a common evaluation population:
+
+$$
+\operatorname{FVU}=\sum_j w_j\operatorname{FVU}_j,\qquad w_j=\frac{V_j}{\sum_k V_k}
+$$
+
+Component variation sets the weights. Decision importance requires separate evaluation.
+
+V_j is the sum of squared deviations from the coordinate mean. Each component FVU divides its reconstruction error by positive V_j. The identity uses orthogonal coordinates and the same population. Delisle and Tan study a dominant activation direction in sparse autoencoders. Their bypass retains the projection in the final reconstruction; this is not evidence that deleting the first customer-data component improves a marketing decision.
+
+Source: M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md Nathan Delisle and Chenhao Tan, Massive Activations Confound Sparse Autoencoders, v1. https://arxiv.org/abs/2611.13548v1
+
+## Slide 30: Exact Reconstruction, Different Features
+
+The selected dictionary determines the contribution removed.
+
+**Figure description:** Contributions (1,1) and (1,-1), or (1,2) and (1,-2), both sum to (2,0). Dashed arrows translate the second contribution. Removing the first leaves squared error 2 or 5. Positive coefficients multiply unit vectors; the coefficient penalties differ.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_nonunique_features.tex)
+
+This is an imposed algebraic construction. The positive coefficient sums are two times square root of 2 and two times square root of 5. Equal reconstruction therefore does not imply equal full sparse-autoencoder loss. A removal error depends on the dictionary and does not establish a psychological mechanism.
+
+Source: M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
+
+## Slide 31: Evaluate a Feature Before Naming It
+
+- Compare matched features across repeated fits.
+- Evaluate retained information on the intended task.
+- Check the proposed meaning against independent records.
+- Keep causal claims and permission evidence separate.
+
+Feature ordering and any relevant sign convention require an explicit matching procedure. Reproducibility, task utility, and substantive meaning answer different questions. Feature intervention assesses the changed model; an economic causal interpretation needs additional assumptions and evidence. Full calculations and AI-assisted coding extensions are available as optional ungraded practice.
+
+Source: M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
+
+## Slide 32: A Cost-Based Threshold
 
 Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
 
@@ -376,7 +428,7 @@ Correct classifications have zero cost in this example. Capacity constraints and
 
 Source: M7, Section 7.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 29: Coupon Targeting Includes the Untreated Outcome
+## Slide 33: Coupon Targeting Includes the Untreated Outcome
 
 Synthetic probabilities and costs. High treated response can have negative incremental value.
 
@@ -388,7 +440,7 @@ Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact
 
 Source: M7, Section 7.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 30: Queue Metrics
+## Slide 34: Queue Metrics
 
 Compute metrics from the synthetic confusion matrix.
 
@@ -406,7 +458,7 @@ Whether that queue is profitable depends on the action and its incremental outco
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 31: McBroken Forecasting
+## Slide 35: McBroken Forecasting
 
 - Predict availability on a later date.
 - Retain a separate count of unknown future labels.
@@ -416,7 +468,7 @@ An unknown future status is not an observed available restaurant. Dropping missi
 
 Source: M7, Section 7.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 32: Prediction and Outcome Coverage
+## Slide 36: Prediction and Outcome Coverage
 
 McBroken forecasts use later dates and observed-label denominators.
 
@@ -428,7 +480,7 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 33: Three Alerts, Different Decisions
+## Slide 37: Three Alerts, Different Decisions
 
 | Event | Observation | Next Check |
 | --- | --- | --- |
@@ -442,7 +494,7 @@ Training has 2,160 store-minutes, validation has 1,080 normal store-minutes, and
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 34: A Strong Symptom Can Follow the Cause
+## Slide 38: A Strong Symptom Can Follow the Cause
 
 Synthetic payment event: support contacts rank first by mean standardized deviation.
 
@@ -454,7 +506,7 @@ The cause is imposed by the data generator. The score only uses observed variabl
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 35: Evaluate Minutes and Monitoring Runs
+## Slide 39: Evaluate Minutes and Monitoring Runs
 
 | Quantity | Mean Rule | Maximum Rule |
 | --- | --- | --- |
@@ -469,7 +521,7 @@ Mean and maximum standardized deviations use the same six features and training-
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 36: Any Overlap Can Reward a Broad Prediction
+## Slide 40: Any Overlap Can Reward a Broad Prediction
 
 Same true event [40,60); interval endpoints are exclusive.
 
@@ -481,7 +533,7 @@ The delayed prediction intersects fifteen true minutes and spans a twenty-five-m
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 37: An Earlier Value Must Respect Its Information Set
+## Slide 41: An Earlier Value Must Respect Its Information Set
 
 Two possible futures follow the same two missing measurements.
 
@@ -499,7 +551,7 @@ Forward filling followed by backward filling would set the two earlier values to
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 38: Require Evidence for the Diagnosis
+## Slide 42: Require Evidence for the Diagnosis
 
 - Provide measurements, units, missingness, and predicted intervals.
 - Separate observed changes, causal hypotheses, and the next check.
@@ -509,7 +561,7 @@ Nine evidence packets include all test runs and no true cause or event boundary.
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 39: Accuracy and Failure Costs
+## Slide 43: Accuracy and Failure Costs
 
 Constructed cases: pooled accuracy rises from 78% to 86%.
 
@@ -521,7 +573,7 @@ Fourteen paired cases improve and six regress. Stipulated failure costs of one d
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md
 
-## Slide 40: Paired Regression Checks
+## Slide 44: Paired Regression Checks
 
 The same one hundred constructed cases are scored under both configurations.
 
@@ -539,7 +591,7 @@ The complete program preserves every paired case and each segment denominator. W
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
 
-## Slide 41: Equal Grader Scores, Different Consequences
+## Slide 45: Equal Grader Scores, Different Consequences
 
 Twelve synthetic statements; all cases remain in the scoring denominators.
 
@@ -551,7 +603,7 @@ There are eight reference PASS statements and four reference FAIL statements. Th
 
 Source: M5 §5.20 and M7 §7.26. ../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py
 
-## Slide 42: Reference Judgments and Customer Interests
+## Slide 46: Reference Judgments and Customer Interests
 
 - Give every reference judgment a reason.
 - Keep missing, invalid, and abstained outputs visible.
@@ -562,7 +614,7 @@ The public practice labels are disclosed. To estimate generalization, collect ne
 
 Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
 
-## Slide 43: An Omitted Feature Bias
+## Slide 47: An Omitted Feature Bias
 
 - The allocation assumes that auxiliary feature bias equals zero.
 - Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.
@@ -572,7 +624,7 @@ These are analytic moments in the invented four-profile design. Both source vari
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 44: Sampling Variance and Persistent Bias
+## Slide 48: Sampling Variance and Persistent Bias
 
 Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.
 
@@ -584,7 +636,7 @@ At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias M
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 45: Human Validation of the Bias Model
+## Slide 49: Human Validation of the Bias Model
 
 - A bias feature excluded by a significance cutoff may still matter for the decision.
 - Reserve human respondents and concepts from model and feature selection.
@@ -594,7 +646,7 @@ In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 46: Coding Exercise: A Forecast Evaluation
+## Slide 50: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -604,7 +656,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 47: Targeting and Delivered Opportunities
+## Slide 51: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -614,7 +666,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 48: Prediction Discussion
+## Slide 52: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

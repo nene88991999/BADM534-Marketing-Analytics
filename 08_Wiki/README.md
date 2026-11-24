@@ -23,3 +23,11 @@ Before publishing a site, check a fresh browser and a clean checkout. Confirm th
 ## Research Cost and Bias Sensitivity
 
 The [auxiliary-data example](../03_Data_and_Code/Auxiliary_Data/README.md) supplies a future interactive comparison of response costs, source noise, and omitted feature bias. A page can hold the accuracy target and attribute coding fixed while changing one input at a time. Preserve the distinction between the asymptotic cost curve, the rounded feasible allocation, and total MSE under misspecification. The zero-cost point is a limit. Text and downloadable tables should identify the source counts and bias restriction; the existing static figures and analytic Python supply reference values. This is a design reference for the pending wiki.
+
+## Definitions and Evidence Traces
+
+The [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md) supplies a future interaction that changes a reporting cutoff or a request-to-completion rule. Keep the raw records, excluded-row reasons, accepted facts, classification trace, and resulting queue visible. Allow students to predict the result before revealing it. Distinguish a rule consequence from a validation finding and from evidence of actual service execution. Original implementation is needed; the reviewed ontology playground has no identified copying license.
+
+## Representation and Decision Metrics
+
+The [representation examples](../03_Data_and_Code/Representation_Evaluation/README.md) supply exact reference values for a style-scale control, component-error display, routing table, and two vector decompositions. Keep the same four cases and two positive-case denominator visible. Use separate labeled scales for reconstruction error and recall. The algebra, input JSON, and text descriptions should remain accessible without interaction. These specifications extend the pending design; no site has been deployed.

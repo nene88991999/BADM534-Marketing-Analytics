@@ -127,8 +127,8 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 
 ## Ontologies and Knowledge Representation
 
-[The ontology review](33_Ontologies_and_Knowledge_Representation/README.md) connects explicit definitions and reasoning traces to data contracts, missing observations, attributed claims, and customer permissions. It proposes a cancellation-record exercise for M1/M2 and recurring applications in M5/M9. The hosted revenue-definition case was checked; unlicensed application source is linked rather than copied. The catalog namespace is `ontology-representation`.
+[The ontology review](33_Ontologies_and_Knowledge_Representation/README.md) connects explicit definitions and reasoning traces to data contracts, missing observations, attributed claims, and customer permissions. The implemented cancellation-record exercise appears in M1 §1.16 and M2 §2.25, with M5 §5.25 and M9 §9.19 connections, complete Python, and optional practice. The hosted revenue-definition case was checked; unlicensed application source is linked rather than copied. The catalog namespace is `ontology-representation`.
 
 ## Representation Evaluation
 
-[The sparse-autoencoder review](34_Representation_Evaluation/README.md) connects aggregate reconstruction, feature stability, and decision-specific evaluation to M7, with M2/M4/M5/M9 applications. Thirteen licensed source files and saved-result tables accompany eight original calculation checks and a proposed synthetic complaint-routing example. Source models remain unexecuted. The catalog namespace is `representation-evaluation`.
+[The sparse-autoencoder review](34_Representation_Evaluation/README.md) connects aggregate reconstruction, feature stability, and decision-specific evaluation to M7, with M2/M4/M5/M9 applications. Thirteen licensed source files and saved-result tables accompany eight original source-review checks. The implemented M7 §§7.39–7.40 examples add two complete programs, six independent tests, and optional practice. Source models remain unexecuted. The catalog namespace is `representation-evaluation`.

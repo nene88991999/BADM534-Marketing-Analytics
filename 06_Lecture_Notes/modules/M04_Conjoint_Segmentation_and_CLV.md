@@ -1419,3 +1419,11 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=ROOT / "results")
     run(parser.parse_args().output)
 ```
+
+## 4.25 Stable Segments and Substantive Meaning
+
+\noindent A marketing manager uses customer-text features to define segments and allocate service resources. A feature that reconstructs common wording accurately may contribute little to identifying a complaint that requires attention. Evaluate the representation against the intended decision before interpreting its clusters. The synthetic comparison in §7.39 holds the case population fixed while contrasting aggregate reconstruction with recall of cases requiring review.
+
+Cluster labels and feature coordinates can change across seeds even when an objective value changes little. Align cluster memberships or feature directions under a stated matching rule before comparing repeated fits. Report the population, preprocessing, number of groups, and matching criterion. Stable assignments support reproducibility under those choices; external behaviors or independently coded text provide evidence for a substantive segment interpretation. A segment name proposed by an LLM is a hypothesis requiring that evidence.
+
+A high-value segment describes a firm's valuation under a specified horizon and cost model. It does not establish the customer's preferences or permission to receive a particular intervention. Keep segment definitions, predicted responses, customer outcomes, and authorization records separate when selecting an action.

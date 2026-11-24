@@ -119,7 +119,11 @@ Private links require authorized access. This file neither grants access nor mak
 
 ## Definitions and Representation Quality
 
-- [Ontology Review](01_Resources/33_Ontologies_and_Knowledge_Representation/README.md): explicit categories, logical inference, data validation, source evidence, and a proposed cancellation-record exercise for M1/M2.
-- [Representation Evaluation](01_Resources/34_Representation_Evaluation/README.md): sparse-autoencoder research, pinned source, eight original calculation checks, and proposed M7 comparisons of reconstruction and customer-relevant outcomes.
+- [Ontology Review](01_Resources/33_Ontologies_and_Knowledge_Representation/README.md): explicit categories, logical inference, data validation, source evidence, and an implemented cancellation-record exercise in M1 §1.16 and M2 §2.25.
+- [Representation Evaluation](01_Resources/34_Representation_Evaluation/README.md): sparse-autoencoder research, pinned source, eight original calculation checks, and implemented M7 §§7.39–7.40 comparisons of reconstruction and customer-relevant outcomes.
 
-These two resource reviews propose future course adaptations. They do not change the released lectures, schedule, or assessment requirements.
+- [Cancellation Evidence: Full Python](03_Data_and_Code/Ontology_and_Evidence/README.md): original synthetic records, eight tests, definitions, and cutoff-sensitive review.
+- [Representation Evaluation: Full Python](03_Data_and_Code/Representation_Evaluation/README.md): two synthetic programs, six tests, component errors, routing, and nonunique features.
+- [Cancellation Practice](07_Labs/Ontology_and_Evidence/README.md) and [Representation Practice](07_Labs/Representation_Evaluation/README.md): public optional ungraded activities.
+
+Notes and Sessions 1, 2, 11, and 14 incorporate the cases within existing meeting times. Assessment requirements remain pending.

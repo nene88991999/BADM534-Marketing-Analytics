@@ -1,78 +1,54 @@
 {
-  "verified_on": "2026-11-07",
+  "verified_on": "2026-11-24",
   "artifacts": {
-    "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 312,
-      "sha256": "97316bdd798b350d1196bb4038c54909040bc8d2dabbbe5afe1ac019a4c58fe8"
-    },
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 259,
-      "sha256": "b1938d124d291a263659f532c9ae70a6fef5c1cc297184217b164f69dd9a7fd8"
+      "pages": 389,
+      "sha256": "55e50f93f5863ad7d64ae05fe2addafd389bf5c8145976fc1fe69531ce92f170"
+    },
+    "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+      "pages": 31,
+      "sha256": "1ed559f9c6204e0318c1cb6aa7cf1ce00beca086fe524c389db412e922df44ff"
     },
     "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
       "pages": 2,
-      "sha256": "ebf1820f6ac192f95f893208bb88fe83bbe9448160bdd957d92d80f596c8b2d4"
+      "sha256": "8e0bf2c83e24c3c029eb9ee4a90a8beeb903a1763084e0de4088d67e8254ad96"
     },
-    "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
-      "pages": 23,
-      "sha256": "d9f8977fda6c87a0a93b723b2a70ba24434a829749e10a97196d519388ba44b2"
-    },
-    "05_Slides/S06_Segmentation_and_Customer_Lifetime_Value.pdf": {
-      "pages": 22,
-      "sha256": "b1e3177041584c9e170584cbd538fdcae26df5eaf64f900b09b08ad9290b090b"
-    },
-    "05_Slides/S07_Text_Social_Media_and_Networks.pdf": {
-      "pages": 29,
-      "sha256": "39b2a2eb7ac22354bee7c3379d1539b2b4aeed4a500a3275452ffdd69b9bd207"
-    },
-    "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
-      "pages": 23,
-      "sha256": "aceeffd6ae70b6f82f3b56879591754034b53faecf7be2dd726c83f9a06d6ee3"
-    },
-    "05_Slides/S12_Recommendation_Systems_and_Customer_Goals.pdf": {
-      "pages": 18,
-      "sha256": "3843aeed8e79e0058eee9ba1d2aaa33cdfd5f422f399564918e2b8b74aa47ffa"
-    },
-    "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
-      "pages": 38,
-      "sha256": "cefcd9be5cb8a70e25d3bfb859ed81c01104f30e90c2a8b2753403ef8279a51a"
+    "05_Slides/Marketing_Analytics_Lectures.pdf": {
+      "pages": 389,
+      "sha256": "fc811f564a6a78a1759e113ee4ddfc64464419cd5d3da1090db7f643ce520691"
     },
     "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
-      "pages": 21,
-      "sha256": "885ae1a0336664c64d47cd1e7ae7db6a6d1e064049beea91c879d06279058609"
+      "pages": 25,
+      "sha256": "4957cf2727b84ba722e31ace6ef64711710573371240c24e4dd6c034f751ec05"
+    },
+    "05_Slides/S02_Customer_Data_and_Measurement.pdf": {
+      "pages": 23,
+      "sha256": "c5a95c24a3bd935f90ecb4968d2aae1148b712f1729c7ae72e14e2e625183b11"
     },
     "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
-      "pages": 23,
-      "sha256": "09343e4151bbca5cdc736a916bafb17ad44ffa557ca2034ccc677c7f851e7c03"
+      "pages": 52,
+      "sha256": "79c03a274bcfe945a615826e888c2f78972aa93c541530cba41919e3539cb247"
     },
-    "06_Lecture_Notes/Marketing_Dialectics.pdf": {
-      "pages": 28,
-      "sha256": "f81fd82c944b41c55a7fc79cb7d8884d902fafbf58202d7273f7d40ac3a8e211"
+    "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+      "pages": 41,
+      "sha256": "8cc67f60eba5515d7dfe430293c37b7c2e77f65094b372e0927e1793c8290823"
     }
   },
   "session_decks": 15,
   "scheduled_minutes_per_meeting": 170,
   "checks": {
-    "updated_decks_compile_without_overfull_boxes_or_tex_errors": true,
-    "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
-    "session_plan_and_manifest_counts_agree": true,
-    "calendar_dates_and_170_minute_meetings_unchanged": true,
-    "local_markdown_links_checked_this_revision": 433,
-    "full_note_code_blocks_match_source_and_parse": 58,
-    "new_analysis_programs_executed": 2,
-    "independent_small_case_tests_passed": 6,
-    "figure_aggregates_agree_with_independent_calculation": true,
-    "new_tikz_figures_rendered_and_visually_reviewed": 2,
-    "updated_student_deck_pages_visually_reviewed": 46,
-    "combined_note_pages_visually_reviewed_including_contents_and_transitions": 18,
-    "downloaded_reference_files_match_pinned_git_blobs": 80,
-    "reference_chart_metadata_catalogued_and_scripts_parsed": 61,
-    "selected_reference_scripts_read_in_full": 9,
-    "upstream_programs_executed": 0,
-    "portable_context_uses_reviewed_HEAD_resource_catalogs": true
+    "all_affected_pdfs_built_and_reviewed": true,
+    "all_15_deck_counts_match_sources_and_plan": true,
+    "calendar_unchanged": true,
+    "matching_full_python_blocks": 88,
+    "new_programs_executed": 3,
+    "new_independent_tests_passed": 14,
+    "new_figures_reviewed": 3,
+    "new_slides_reviewed": 10,
+    "local_links_checked": 848,
+    "portable_context_uses_published_additional_catalog": true
   },
-  "execution_scope": "November 7 PyStatlas revision: executed two original synthetic programs and six independent checks, and reran the existing synthetic lecture calculations without numerical changes. Matched all 58 full note-code blocks to their sources. Checked paired variances, aggregate probability losses and both new figures against output tables and independent arithmetic. Reviewed all 46 pages in Sessions 3 and 11, 18 note pages including contents and section boundaries, and the two figure previews; corrected and rechecked five affected pages after caption and float-placement changes. All 80 saved reference text files match the pinned repository blobs; 61 chart records were catalogued and syntax-parsed, with nine scripts read in full. Gallery search and calibration-page navigation were verified. No upstream programs, external AI services, or source datasets were executed or processed. Prior checks remain in historical fields.",
-  "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages.",
+  "execution_scope": "Original synthetic examples and documentation. No upstream reasoner, SHACL engine, sparse autoencoder, model inference, or customer-data upload. Wiki remains unimplemented; labs are optional ungraded practice.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
     "student_slide_pages_visually_rechecked": 12,
@@ -259,7 +235,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "synthetic_consumer_checks_2026_11_22",
+  "latest_revision": "ontology_representation_checks_2026_11_24",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -522,5 +498,185 @@
     },
     "execution_scope": "Two original standard-library calculations and ten independent tests ran. Exact rational calculations independently assessed all response mappings, persona aggregates, and concept comparisons. All 39 plot coordinates match independently calculated inputs. Eighty full note listings match their source and parse. No upstream execution or model inference ran.",
     "layout_scope": "Reviewed all eight new student slides, two TikZ previews, all new note prose and code pages, contents and transitions, two standalone dialectics pages, and both syllabus pages. Kept the M4 equation with its introduction and tightened syllabus prose to retain two pages. The existing Beamer template, dates, and twelve other decks are preserved."
+  },
+  "statistical_graphics_base_verification_2026_11_07": {
+    "verified_on": "2026-11-07",
+    "artifacts": {
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 312,
+        "sha256": "97316bdd798b350d1196bb4038c54909040bc8d2dabbbe5afe1ac019a4c58fe8"
+      },
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 259,
+        "sha256": "b1938d124d291a263659f532c9ae70a6fef5c1cc297184217b164f69dd9a7fd8"
+      },
+      "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+        "pages": 2,
+        "sha256": "ebf1820f6ac192f95f893208bb88fe83bbe9448160bdd957d92d80f596c8b2d4"
+      },
+      "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
+        "pages": 23,
+        "sha256": "d9f8977fda6c87a0a93b723b2a70ba24434a829749e10a97196d519388ba44b2"
+      },
+      "05_Slides/S06_Segmentation_and_Customer_Lifetime_Value.pdf": {
+        "pages": 22,
+        "sha256": "b1e3177041584c9e170584cbd538fdcae26df5eaf64f900b09b08ad9290b090b"
+      },
+      "05_Slides/S07_Text_Social_Media_and_Networks.pdf": {
+        "pages": 29,
+        "sha256": "39b2a2eb7ac22354bee7c3379d1539b2b4aeed4a500a3275452ffdd69b9bd207"
+      },
+      "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
+        "pages": 23,
+        "sha256": "aceeffd6ae70b6f82f3b56879591754034b53faecf7be2dd726c83f9a06d6ee3"
+      },
+      "05_Slides/S12_Recommendation_Systems_and_Customer_Goals.pdf": {
+        "pages": 18,
+        "sha256": "3843aeed8e79e0058eee9ba1d2aaa33cdfd5f422f399564918e2b8b74aa47ffa"
+      },
+      "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+        "pages": 38,
+        "sha256": "cefcd9be5cb8a70e25d3bfb859ed81c01104f30e90c2a8b2753403ef8279a51a"
+      },
+      "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
+        "pages": 21,
+        "sha256": "885ae1a0336664c64d47cd1e7ae7db6a6d1e064049beea91c879d06279058609"
+      },
+      "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
+        "pages": 23,
+        "sha256": "09343e4151bbca5cdc736a916bafb17ad44ffa557ca2034ccc677c7f851e7c03"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 28,
+        "sha256": "f81fd82c944b41c55a7fc79cb7d8884d902fafbf58202d7273f7d40ac3a8e211"
+      }
+    },
+    "checks": {
+      "updated_decks_compile_without_overfull_boxes_or_tex_errors": true,
+      "lecture_notes_compile_without_overfull_boxes_or_tex_errors": true,
+      "session_plan_and_manifest_counts_agree": true,
+      "calendar_dates_and_170_minute_meetings_unchanged": true,
+      "local_markdown_links_checked_this_revision": 433,
+      "full_note_code_blocks_match_source_and_parse": 58,
+      "new_analysis_programs_executed": 2,
+      "independent_small_case_tests_passed": 6,
+      "figure_aggregates_agree_with_independent_calculation": true,
+      "new_tikz_figures_rendered_and_visually_reviewed": 2,
+      "updated_student_deck_pages_visually_reviewed": 46,
+      "combined_note_pages_visually_reviewed_including_contents_and_transitions": 18,
+      "downloaded_reference_files_match_pinned_git_blobs": 80,
+      "reference_chart_metadata_catalogued_and_scripts_parsed": 61,
+      "selected_reference_scripts_read_in_full": 9,
+      "upstream_programs_executed": 0,
+      "portable_context_uses_reviewed_HEAD_resource_catalogs": true
+    },
+    "execution_scope": "November 7 PyStatlas revision: executed two original synthetic programs and six independent checks, and reran the existing synthetic lecture calculations without numerical changes. Matched all 58 full note-code blocks to their sources. Checked paired variances, aggregate probability losses and both new figures against output tables and independent arithmetic. Reviewed all 46 pages in Sessions 3 and 11, 18 note pages including contents and section boundaries, and the two figure previews; corrected and rechecked five affected pages after caption and float-placement changes. All 80 saved reference text files match the pinned repository blobs; 61 chart records were catalogued and syntax-parsed, with nine scripts read in full. Gallery search and calibration-page navigation were verified. No upstream programs, external AI services, or source datasets were executed or processed. Prior checks remain in historical fields.",
+    "presenter_log_note": "The optional two-screen build has duplicate navigation-destination and underfull URL warnings; reviewed source notes and projected content fit the rendered pages."
+  },
+  "ontology_representation_checks_2026_11_24": {
+    "verified_on": "2026-11-24",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 389,
+        "sha256": "55e50f93f5863ad7d64ae05fe2addafd389bf5c8145976fc1fe69531ce92f170"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 31,
+        "sha256": "1ed559f9c6204e0318c1cb6aa7cf1ce00beca086fe524c389db412e922df44ff"
+      },
+      "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+        "pages": 2,
+        "sha256": "8e0bf2c83e24c3c029eb9ee4a90a8beeb903a1763084e0de4088d67e8254ad96"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 389,
+        "sha256": "fc811f564a6a78a1759e113ee4ddfc64464419cd5d3da1090db7f643ce520691"
+      },
+      "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
+        "pages": 25,
+        "sha256": "4957cf2727b84ba722e31ace6ef64711710573371240c24e4dd6c034f751ec05"
+      },
+      "05_Slides/S02_Customer_Data_and_Measurement.pdf": {
+        "pages": 23,
+        "sha256": "c5a95c24a3bd935f90ecb4968d2aae1148b712f1729c7ae72e14e2e625183b11"
+      },
+      "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
+        "pages": 52,
+        "sha256": "79c03a274bcfe945a615826e888c2f78972aa93c541530cba41919e3539cb247"
+      },
+      "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+        "pages": 41,
+        "sha256": "8cc67f60eba5515d7dfe430293c37b7c2e77f65094b372e0927e1793c8290823"
+      }
+    },
+    "executed_programs": [
+      "03_Data_and_Code/Ontology_and_Evidence/assess_cancellations.py",
+      "03_Data_and_Code/Representation_Evaluation/evaluate_representations.py",
+      "03_Data_and_Code/Representation_Evaluation/compare_decompositions.py"
+    ],
+    "independent_tests_passed": {
+      "cancellation_evidence": 8,
+      "representation_evaluation": 6
+    },
+    "full_note_code_blocks_matched_and_parsed": 88,
+    "legacy_synthetic_lecture_calculations": "Passed; 13 generated CSV line-ending differences restored only after exact normalized-byte comparison.",
+    "new_tikz_figures": 3,
+    "new_projected_slides": 10,
+    "visual_review": {
+      "new_slide_pages": {
+        "1": [
+          10,
+          11
+        ],
+        "2": [
+          14,
+          15,
+          16
+        ],
+        "11": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "14": [
+          18
+        ]
+      },
+      "notes": "All new prose, tables, code, and figure pages inspected. Cover and seven contents pages checked. Tightened M1 final pages 31–33 re-rendered; thirteen later affected pages match inspected content exactly apart from shifted folios.",
+      "final_note_pages_with_matching_inspected_content": [
+        82,
+        83,
+        84,
+        85,
+        143,
+        192,
+        313,
+        314,
+        315,
+        316,
+        317,
+        388,
+        389
+      ],
+      "standalone_dialectics_pages": [
+        1,
+        30,
+        31
+      ],
+      "syllabus_pages": [
+        1,
+        2
+      ],
+      "figure_previews": "All three PNG previews inspected against editable source and numerical output.",
+      "corrections": "Repositioned diagram text, disabled unintended axis scaling, separated vector labels, and removed syllabus and M1 paragraph spillover."
+    },
+    "compile_checks": "No overfull boxes, missing characters, undefined commands, or TeX errors in affected final builds. Existing underfull spacing and package UTF-8 warnings remain.",
+    "calendar": "All 15 dates, local times, 170-minute intervals, UIDs, and file bytes unchanged; session timing blocks contiguous.",
+    "local_markdown_destinations_checked": 848,
+    "source_archive_hashes_verified": 13,
+    "preexisting_dirty_file_hashes_preserved": 38,
+    "context": "Regenerated llms-full.txt from the publication snapshot; preexisting additional-catalog edits excluded using its published HEAD version.",
+    "scope": "Original synthetic examples and documentation. No upstream reasoner, SHACL engine, sparse autoencoder, model inference, or customer-data upload. Wiki remains unimplemented; labs are optional ungraded practice."
   }
 }

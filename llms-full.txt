@@ -94,6 +94,18 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Graph_Coarsening/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "ontology-and-evidence",
+      "path": "07_Labs/Ontology_and_Evidence/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
+    },
+    {
+      "id": "representation-evaluation",
+      "path": "07_Labs/Representation_Evaluation/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -260,12 +272,24 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/33_Ontologies_and_Knowledge_Representation/CASE_DESIGN.md",
     "01_Resources/34_Representation_Evaluation/README.md",
     "01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md",
-    "01_Resources/34_Representation_Evaluation/CASE_DESIGN.md"
+    "01_Resources/34_Representation_Evaluation/CASE_DESIGN.md",
+    "03_Data_and_Code/Ontology_and_Evidence/README.md",
+    "03_Data_and_Code/Ontology_and_Evidence/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Ontology_and_Evidence/AGENTS.md",
+    "03_Data_and_Code/Ontology_and_Evidence/VERIFICATION.md",
+    "03_Data_and_Code/Ontology_and_Evidence/results/README.md",
+    "07_Labs/Ontology_and_Evidence/README.md",
+    "03_Data_and_Code/Representation_Evaluation/README.md",
+    "03_Data_and_Code/Representation_Evaluation/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Representation_Evaluation/AGENTS.md",
+    "03_Data_and_Code/Representation_Evaluation/VERIFICATION.md",
+    "03_Data_and_Code/Representation_Evaluation/results/README.md",
+    "07_Labs/Representation_Evaluation/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-23",
+    "updated_on": "2026-11-24",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -309,12 +333,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-23-graph-coarsening",
+    "revision": "2026-11-24-ontology-and-representation",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 99,
-    "pages": 380,
+    "figures_count": 102,
+    "pages": 389,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -334,7 +358,9 @@ Generated from course.json and the source files identified below. This file cont
     "synthetic_consumer_examples": "03_Data_and_Code/Synthetic_Consumers/README.md",
     "reproducible_recommendations": "03_Data_and_Code/Reproducible_Recommendations/README.md",
     "auxiliary_data_examples": "03_Data_and_Code/Auxiliary_Data/README.md",
-    "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md"
+    "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md",
+    "ontology_examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
+    "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md"
   },
   "datasets": [
     {
@@ -396,7 +422,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-23",
+    "updated_on": "2026-11-24",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -405,7 +431,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 379,
+    "slides": 389,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -452,7 +478,7 @@ Generated from course.json and the source files identified below. This file cont
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-23",
+    "updated_on": "2026-11-24",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -906,7 +932,7 @@ Generated from course.json and the source files identified below. This file cont
     "catalog": "01_Resources/33_Ontologies_and_Knowledge_Representation/catalog.json",
     "manifest": "01_Resources/33_Ontologies_and_Knowledge_Representation/manifest.json",
     "reviewed_on": "2026-11-24",
-    "status": "Source review and proposed teaching activities; no lecture or assessment release.",
+    "status": "Integrated into course notes and slides, with original executed examples and public optional ungraded practice",
     "primary_modules": [
       "M1",
       "M2"
@@ -919,7 +945,24 @@ Generated from course.json and the source files identified below. This file cont
     "model_calls": 0,
     "source_commit": "4fc52fd92f644e03e76880c5de16f0accb4770e7",
     "source_files_archived": 0,
-    "hosted_case_checked": "Detective Case 11: conflicting metric definitions"
+    "hosted_case_checked": "Detective Case 11: conflicting metric definitions",
+    "implemented_on": "2026-11-24",
+    "examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
+    "lab": "07_Labs/Ontology_and_Evidence/README.md",
+    "course_manifest": "03_Data_and_Code/Ontology_and_Evidence/manifest.json",
+    "sections": [
+      "M1 \u00a71.16",
+      "M2 \u00a72.25",
+      "M5 \u00a75.25",
+      "M9 \u00a79.19"
+    ],
+    "sessions": [
+      1,
+      2,
+      14
+    ],
+    "original_programs_executed": 1,
+    "independent_course_tests_passed": 8
   },
   "representation_evaluation": {
     "resources": "01_Resources/34_Representation_Evaluation/README.md",
@@ -928,7 +971,7 @@ Generated from course.json and the source files identified below. This file cont
     "catalog": "01_Resources/34_Representation_Evaluation/catalog.json",
     "manifest": "01_Resources/34_Representation_Evaluation/manifest.json",
     "reviewed_on": "2026-11-24",
-    "status": "Source review and proposed teaching activities; no lecture or assessment release.",
+    "status": "Integrated into course notes and slides, with original executed examples and public optional ungraded practice",
     "primary_modules": [
       "M7"
     ],
@@ -944,7 +987,22 @@ Generated from course.json and the source files identified below. This file cont
     "paper_version": "2611.13548v1",
     "verification": "01_Resources/34_Representation_Evaluation/source_checks.json",
     "original_calculation_checks_passed": 8,
-    "source_files_archived": 13
+    "source_files_archived": 13,
+    "implemented_on": "2026-11-24",
+    "examples": "03_Data_and_Code/Representation_Evaluation/README.md",
+    "lab": "07_Labs/Representation_Evaluation/README.md",
+    "course_manifest": "03_Data_and_Code/Representation_Evaluation/manifest.json",
+    "sections": [
+      "M4 \u00a74.25",
+      "M5 \u00a75.25",
+      "M7 \u00a7\u00a77.39\u20137.40",
+      "M9 \u00a79.19"
+    ],
+    "sessions": [
+      11
+    ],
+    "original_programs_executed": 2,
+    "independent_course_tests_passed": 6
   }
 }
 ```
@@ -1055,6 +1113,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Network Compression and Customer Access
 
 [M5 §5.24 and M7 §7.38](03_Data_and_Code/Graph_Coarsening/README.md) compare aggregation weights, preserved revenue, distorted travel, oracle label purity, and outcome use during preprocessing. Complete Python, two editable figures, five slides in Sessions 7 and 11, and [optional practice](07_Labs/Graph_Coarsening/README.md) accompany the synthetic cases.
+
+## Definitions and Representation Quality
+
+[Cancellation evidence](03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
 
 ---
 
@@ -1299,6 +1361,10 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 
 [The graph-coarsening case](03_Data_and_Code/Graph_Coarsening/README.md) connects original-population measurement in M2 §2.23, group weights in M4 §4.22, revenue and travel in M5 §5.24, label information in M7 §7.38, and service responsibilities in M9 §9.18.2. Sessions 7 and 11 include five slides and two editable diagrams. [Optional practice](07_Labs/Graph_Coarsening/README.md) applies the M1 AI-assisted coding workflow to inspected source defaults.
 
+## Definitions and Representation Quality
+
+[Cancellation evidence](03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1343,6 +1409,12 @@ A private repository URL works only with tools authorized to read that repositor
 
 A program can run successfully and still answer the wrong question. Inspect a few rows, check totals and units, compare with a simple baseline, and explain the results in your own words. Keep a record of consequential AI assistance when your assessment requires it. Ask for clarification when current course documents leave a requirement unresolved.
 
+## Definitions and Representation Quality
+
+For questions about cancellation records, begin with [the dictionary and executed example](03_Data_and_Code/Ontology_and_Evidence/README.md), then M1 §1.16 and M2 §2.25. Keep raw rows, events, requests, subscriptions, and unknown states distinct. A missing confirmation creates a review condition within the available records.
+
+For feature-quality questions, begin with [the representation example](03_Data_and_Code/Representation_Evaluation/README.md), then M7 §§7.39–7.40. Preserve coordinate scales and denominators, and distinguish reconstruction, task usefulness, matching stability, and causal meaning. No learned model or empirical customer outcome was produced by these synthetic calculations. Optional labs do not establish assignment requirements.
+
 ---
 
 ## Source: 02_Syllabus/README.md
@@ -1382,6 +1454,10 @@ The course outline includes concept screening in the February 17 product-design 
 ## Network Compression Coverage
 
 The syllabus includes network compression and retail access in Meeting 7 and label leakage within prediction in Meeting 11. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the examples within existing 170-minute meetings. The [optional lab](../07_Labs/Graph_Coarsening/README.md) has no graded requirement.
+
+## Definitions and Evidence in the Course Outline
+
+The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Dates, times, room, and stable calendar event identifiers are unchanged. Detailed calculations are available in the lecture notes and two optional ungraded labs.
 
 ---
 
@@ -1515,15 +1591,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Two standard-library programs](Graph_Coarsening/README.md) reproduce a four-zone revenue/access comparison and separate label-evaluation examples. Synthetic inputs, definitions, saved JSON/CSV outputs, provenance, and nine independent checks accompany complete Python in M5 §5.24 and M7 §7.38.
 
+## Definitions and Representation Quality
+
+[Cancellation evidence](../03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](../03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [380-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 99 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [389-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 102 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1599,7 +1679,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 85 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 88 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -1678,6 +1758,10 @@ M4 §4.24 develops a four-profile product comparison, a common coefficient-accur
 ## Network Compression and Customer Access
 
 M5 §5.24 develops exact aggregation and travel calculations. M7 §7.38 distinguishes oracle label purity, training-only prediction, and outcome-dependent preprocessing. [Two complete Python programs](../03_Data_and_Code/Graph_Coarsening/README.md), two editable figures, and [optional practice](../07_Labs/Graph_Coarsening/README.md) accompany shorter connections in M2 §2.23, M4 §4.22, and M9 §9.18.2.
+
+## Definitions and Representation Quality
+
+[Cancellation evidence](../03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](../03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
 
 ---
 
@@ -1859,6 +1943,10 @@ Sessions 4, 5, 9, and 11 add nine slides on response and bias coefficients, feat
 ## Graph Coarsening and Predictive Evidence
 
 Session 7 adds three slides on group means, access, and preprocessing. Session 11 adds two slides on label purity and outcome information. [Two complete Python programs](../03_Data_and_Code/Graph_Coarsening/README.md), two TikZ figures, and [optional practice](../07_Labs/Graph_Coarsening/README.md) support M5 §5.24 and M7 §7.38. Fifteen minutes in Session 7 and five in Session 11 use existing meeting blocks.
+
+## Definitions, Evidence, and Representation Quality
+
+Sessions 1 and 2 distinguish event definitions, logical inference, validation, and recorded completion. Session 11 compares reconstruction with review recall and examines nonunique features. Session 14 connects classifications to evidence and customer permission. Ten new slides and three editable diagrams accompany [complete Python](../03_Data_and_Code/Representation_Evaluation/README.md) and the [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md). The affected decks contain 25, 23, 52, and 41 slides, respectively; the combined deck contains 389. All fifteen meetings remain 170 minutes.
 
 ---
 
@@ -2368,6 +2456,12 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 
 [The pinned GraCo review](../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md) supports M5 §5.24 and M7 §7.38. [Original executed cases](../03_Data_and_Code/Graph_Coarsening/README.md) distinguish revenue preservation from access, original-node weights from group weights, and oracle label diagnostics from fitted prediction. Nine independent tests verify arithmetic and information-set comparisons. No upstream toolkit or GNN training was executed.
 
+## Ontologies and Representation Evaluation
+
+[The ontology review](../01_Resources/33_Ontologies_and_Knowledge_Representation/SOURCE_REVIEW.md) informs M1 §1.16 and M2 §2.25. The original cancellation case preserves requests, confirmations, unknown states, dated evidence, and row-level validation findings. Eight independent tests accompany complete Python and an editable diagram. M5 §5.25 preserves source-attributed claims; M9 §9.19 connects definitions to Kantian inference and Confucian role expectations.
+
+[Delisle and Tan's paper and pinned repository](../01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md) inform M7 §§7.39–7.40. Two original programs and six tests examine reconstruction, coordinate scales, review recall, and nonunique exact decompositions. Two editable figures preserve the different denominators and dictionary-dependent removal errors. M4 §4.25 connects reproducibility with segment interpretation. These synthetic examples do not reproduce sparse-autoencoder training or estimate marketing effects. Third-party source notices remain intact.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -2723,8 +2817,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 23 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 20 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 25 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 23 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 27 |
@@ -2733,10 +2827,10 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 24 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 48 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 52 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 40 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 41 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -2747,14 +2841,15 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.
 
-**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–15 | Managerial Case |
-| 15–45 | Concepts and Mechanisms |
+| 15–40 | Concepts and Mechanisms |
+| 40–45 | Definitions, Inference, and Evidence |
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
@@ -2766,9 +2861,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 27, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.
+**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator.
 
-**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations.
+**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states.
 
 **Ethics and Regulation:** Missingness, sample exclusions, and customer representation.
 
@@ -2779,7 +2874,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–155 | Application and Interpretation |
+| 125–140 | Cancellation Records and the Review Queue |
+| 140–155 | Application and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 03. Visualization and Data Quality
@@ -2959,9 +3055,9 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.
+**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction and review recall; full representation programs are optional practice.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
@@ -2974,7 +3070,8 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
 | 70–80 | Break |
-| 80–115 | Demand Intervals and Complaint Routing |
+| 80–105 | Demand Intervals and Complaint Routing |
+| 105–115 | Reconstruction and Representation Evaluation |
 | 115–125 | Omitted Auxiliary Bias |
 | 125–145 | Anomaly Diagnosis |
 | 145–155 | Forecast and Grader Comparisons |
@@ -3030,7 +3127,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks.
 
-**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope
+**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3039,7 +3136,8 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 25–50 | AI-Assisted Experiments |
 | 50–70 | Pricing Evidence and Benchmarks |
 | 70–80 | Break |
-| 80–100 | Kantian and Confucian Justification |
+| 80–95 | Kantian and Confucian Justification |
+| 95–100 | Definitions, Evidence, and Permission |
 | 100–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–170 | Decision Discussion |
@@ -3186,6 +3284,12 @@ Session 1 allocates minutes 125–140 to synthetic response weights and reproduc
 Session 4 allocates minutes 125–135 to response coefficients and source bias, with price interpretation in minutes 135–155. Session 5 divides its Python block between choice probabilities and product economics (80–110) and human/synthetic research budgets (110–125). Its existing concept-screening and customer-alternative blocks remain in place. Session 9 allocates minutes 125–135 to fixed and adaptive research designs, followed by treatment effects and customer outcomes through minute 155. Session 11 uses minutes 80–115 for demand intervals and complaint routing and minutes 115–125 for omitted auxiliary bias. Its later anomaly and grader discussions retain their allocations.
 
 [Two complete programs](../03_Data_and_Code/Auxiliary_Data/README.md), six independent checks, and three editable TikZ figures support M3 §3.16, M4 §4.24, M6 §6.28, and M7 §7.37. [Optional ungraded practice](../07_Labs/Auxiliary_Data/README.md) carries the longer cost and bias sensitivity exercise. All inputs are invented and the results are analytic model calculations. The fifteen dates, 170-minute meetings, and pending assessment policies are preserved.
+
+## Definitions and Representation Quality
+
+Session 1 allocates five minutes within the concepts block to definitions, inference, and evidence. Session 2 uses fifteen application minutes for cancellation records, missing state evidence, and the review queue. Session 11 allocates ten minutes of the demand-interval and routing block to reconstruction, component errors, and feature interpretation. Session 14 uses five minutes of the existing philosophical discussion for definitions and permission. All meetings retain 170 minutes and the same dates.
+
+The [cancellation lab](../07_Labs/Ontology_and_Evidence/README.md) and [representation lab](../07_Labs/Representation_Evaluation/README.md) provide optional ungraded extensions. Their full programs and synthetic data are public. No additional graded requirement or model-training exercise is introduced.
 
 ---
 
@@ -3453,7 +3557,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Research examples compare mechanism clusters, university affiliations, customer outcomes, and cancellation policy. Synthetic cases examine consumer screening, human and synthetic research budgets, training mixtures, customer service, and the effects of network compression on access.
+Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, and network compression. Definitions, evidence, and customer outcomes guide interpretation.
 
 ---
 
@@ -3464,7 +3568,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | Meeting | Date | Topics |
 | --- | --- | --- |
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
-| 2 | January 27 | M2: Customer data, measurement, missingness, and earnings-call coverage |
+| 2 | January 27 | M2: Customer data, missingness, cancellation evidence, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
 | 4 | February 10 | M3: Regression, source bias, and marketing interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
@@ -3474,7 +3578,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments, research design, and incremental value |
 | 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
-| 11 | April 7 | M7: Prediction, label leakage, training mixtures, source bias, and service outcomes |
+| 11 | April 7 | M7: Prediction, representation quality, training mixtures, and service outcomes |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
 | 14 | April 28 | M8, M9: Generative AI, Marketing Dialectics, consumer agency, and regulation |
@@ -4692,6 +4796,16 @@ The concept-screening comparison in Section 4.23 preserves the overall response 
 
 Confucian trustworthiness requires a truthful account of whose judgments the evidence represents. Responsible conduct includes listening to customers whose needs the model misses and revising decisions when their accounts expose a material error. A firm could use generated reactions to improve the questions it asks, while retaining opportunities for actual customers to express preferences, explain conditions, and contest consequences. The justified claim should distinguish a model's simulated response, a person's stated preference, and observed behavior. Neither philosophical perspective assigns a numerical validation threshold or turns accurate prediction into permission to substitute generated consent for a person's decision.
 
+## 9.19 Definitions, Evidence, and Permission
+
+\noindent A firm can make a practice appear successful by choosing categories that absorb the very outcome under dispute. Defining a cancellation request as a completed cancellation makes the two equivalent in a report even when execution remains unresolved. Defining continued payment as satisfaction can similarly conceal customers who face obstacles to leaving. Examine the definitions and the evidence connecting them to the claimed outcome before accepting the commercial interpretation.
+
+Kantian scrutiny asks whether the inference has remained within the conditions that support it. A prediction of acceptance is a statement about behavior under a model and information set. Permission concerns whether an action has been authorized under the relevant conditions. Moving from one to the other requires a premise about authorization that predictive accuracy does not supply. A firm's commercial objective also leaves open which means can be justified to the people affected. These distinctions support separate evidence for preferences, consent, withdrawal, and actual service execution.
+
+Confucian attention to the rectification of names gives a related question about the fit between a role or description and conduct. Calling a process a cancellation service carries expectations about what it accomplishes for the customer. A record system that measures only requests can assess demand for that service, while evidence of completion bears on whether the service performed its role. Preserve the distinction even when the more favorable label benefits the firm. The philosophical accounts developed in §§9.3 and 9.11 inform this comparison; the application to data definitions is an interpretation.
+
+A logically consistent classification system can encode unsupported assumptions. A contradiction can arise from an erroneous record, incompatible periods, or an unsuitable rule. Trace the claim to its source, time, definition, and inference, and assess each part. The cancellation example in §2.25 preserves unknown states and directs unresolved records to review. The feature examples in §§7.39–7.40 show why reconstruction and interpretive labels require separate evaluation. Neither logical coherence nor a high model score establishes the ethical legitimacy of a marketing practice.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -5373,6 +5487,13 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Graph Coarsening and Evaluation
 
 [Optional ungraded practice](Graph_Coarsening/README.md) examines original-population access, group weights, oracle label purity, outcome-dependent preprocessing, and customer-service responsibilities. The exercise includes a source-inspection and AI-assisted coding specification.
+
+## Definitions and Representation Quality
+
+- [Cancellation Evidence](Ontology_and_Evidence/README.md): event definitions, cutoff information, duplicate records, validation, unknown states, and the review queue.
+- [Representation Evaluation](Representation_Evaluation/README.md): reconstruction error, coordinate units, task recall, nonunique decompositions, and independent interpretation.
+
+Both activities are public optional ungraded practice with original synthetic inputs and executed standard-library Python.
 
 ---
 
@@ -7503,6 +7624,14 @@ Before publishing a site, check a fresh browser and a clean checkout. Confirm th
 
 The [auxiliary-data example](../03_Data_and_Code/Auxiliary_Data/README.md) supplies a future interactive comparison of response costs, source noise, and omitted feature bias. A page can hold the accuracy target and attribute coding fixed while changing one input at a time. Preserve the distinction between the asymptotic cost curve, the rounded feasible allocation, and total MSE under misspecification. The zero-cost point is a limit. Text and downloadable tables should identify the source counts and bias restriction; the existing static figures and analytic Python supply reference values. This is a design reference for the pending wiki.
 
+## Definitions and Evidence Traces
+
+The [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md) supplies a future interaction that changes a reporting cutoff or a request-to-completion rule. Keep the raw records, excluded-row reasons, accepted facts, classification trace, and resulting queue visible. Allow students to predict the result before revealing it. Distinguish a rule consequence from a validation finding and from evidence of actual service execution. Original implementation is needed; the reviewed ontology playground has no identified copying license.
+
+## Representation and Decision Metrics
+
+The [representation examples](../03_Data_and_Code/Representation_Evaluation/README.md) supply exact reference values for a style-scale control, component-error display, routing table, and two vector decompositions. Keep the same four cases and two positive-case denominator visible. Use separate labeled scales for reconstruction error and recall. The algebra, input JSON, and text descriptions should remain accessible without interaction. These specifications extend the pending design; no site has been deployed.
+
 ---
 
 ## Source: 03_Data_and_Code/Reproducible_Recommendations/README.md
@@ -8294,7 +8423,7 @@ A marketing team needs a shared definition of a customer, purchase, cancellation
 
 The [Ontology Playground](https://learn-ontology.vercel.app/#learn) provides an accessible introduction through short lessons, editable graphs, and questions with reasoning traces. The strongest course adaptation is an exercise in specifying and challenging definitions. The [source review](SOURCE_REVIEW.md) separates the site's instructional ideas from the conditions needed for a reliable marketing application.
 
-| Course Connection | Proposed Teaching Use |
+| Course Connection | Teaching Use |
 | --- | --- |
 | M1: Data Contracts and AI-Assisted Coding | Define entities, identifiers, events, relationships, units, and evidence before generating code |
 | M2: Customer Data and Measurement | Distinguish a missing record, a recorded zero, an inferred category, and an independently verified outcome |
@@ -8302,7 +8431,7 @@ The [Ontology Playground](https://learn-ontology.vercel.app/#learn) provides an 
 | M9: Marketing Dialectics | Examine who chose a category and whether the inference from a commercial record to a customer right is justified |
 | Future Wiki | Let students predict an inference, reveal its supporting facts, change an assumption, and compare the result |
 
-The [proposed case](CASE_DESIGN.md) uses cancellation records and connects the same distinctions to mHealth, restaurant availability, and earnings calls. A 15-minute introduction in M1 or M2 would establish the vocabulary; later modules can reuse it without adding a separate ontology chapter. These are proposed activities, with no change to the released schedule or assessment requirements.
+The [implemented case](CASE_DESIGN.md) uses original synthetic cancellation records in M1 §1.16 and M2 §2.25, with attributed-claim and permission connections in M5 §5.25 and M9 §9.19. [Complete Python and eight tests](../../03_Data_and_Code/Ontology_and_Evidence/README.md), an editable figure, and [optional ungraded practice](../../07_Labs/Ontology_and_Evidence/README.md) accompany Sessions 1, 2, and 14. Existing meeting times and assessment status are preserved.
 
 The [catalog](catalog.json), namespace `ontology-representation`, records the site, pinned source, and primary technical references. Source inspection and one hosted Detective case were completed on November 24, 2026. No repository license was found in the inspected tree or GitHub license metadata. The course therefore links the site and preserves original analysis without copying its application or lessons.
 
@@ -8348,45 +8477,33 @@ The inspected [repository revision](https://github.com/mani-bellan/concept-playg
 
 The [reasoner](https://github.com/mani-bellan/concept-playgrounds/blob/4fc52fd92f644e03e76880c5de16f0accb4770e7/ontology/src/ontology.js) applies subclass inheritance, domain, range, inverse, and transitive rules to a fixed point, then checks explicit disjoint class memberships. It preserves one derivation for each added fact. It implements an instructional subset of OWL: the code omits self-edges from transitive cycles and does not implement general OWL cardinality or datatype reasoning. Its Turtle exporter replaces non-alphanumeric characters with underscores; distinct names can therefore map to the same identifier. An original course implementation should use stable unique identifiers and test export separately.
 
-No upstream source was installed or executed locally. The hosted exercise does not establish that every lesson, export, or browser interaction works. No repository-wide license was identified, so source files and lesson text are linked rather than redistributed. The proposed marketing examples are original course designs.
+No upstream source was installed or executed locally. The hosted exercise does not establish that every lesson, export, or browser interaction works. No repository-wide license was identified, so source files and lesson text are linked rather than redistributed. The [implemented marketing example](../../03_Data_and_Code/Ontology_and_Evidence/README.md) is an original course design with separately executed Python checks.
 
 ---
 
 ## Source: 01_Resources/33_Ontologies_and_Knowledge_Representation/CASE_DESIGN.md
 
-# Cancellation Records and Customer Intent
+# Cancellation Records and Customer Evidence
 
-## Managerial Decision
+## Managerial Decision and Course Placement
 
-A subscription business needs to identify cancellation requests that still require a response. Students define an account, a subscription, a request, a confirmed cancellation, and a subscription state at a particular time. The observation unit for service performance is a request; the unit for a customer-state report is a subscription at the reporting cutoff. Joining these objects without preserving their units can count one customer several times or treat a request as a completed action.
+A subscription manager needs a review queue and a recorded cancellation share at a fixed cutoff. M1 §1.16 defines objects, events, inference, and validation. M2 §2.25 supplies the complete program and a four-subscription comparison. M5 §5.25 connects attributed claims to evidence; M9 §9.19 examines definitions and permission.
 
-## Proposed Sequence
+## Implemented Comparison
 
-1. Give students a small, explicitly synthetic set of subscriptions and events. Include a request awaiting confirmation, a confirmed cancellation, an active subscription, and a subscription with no recent status observation.
-2. Ask them to define relations such as `requestConcernsSubscription`, `submittedByAccount`, and `confirmedAt`. Require stable identifiers and timestamps.
-3. Ask what follows from each recorded relation. A request concerning a subscription establishes its subject; it does not establish completion. Missing confirmation remains unknown unless a stated completeness assumption warrants a different interpretation.
-4. Compare two AI-generated specifications. One equates a request with cancellation; the other preserves the distinction. Students trace the resulting difference in the service queue before writing a larger program.
-5. Add validation for duplicate request identifiers, missing timestamps, and confirmation preceding the request. Retain both source records and an explanation of each finding.
-6. Challenge an axiom that treats any purchaser as authorized for promotional contact. Students identify the missing evidence and specify an explicit permission record with its scope and time.
+The [original synthetic input](../../03_Data_and_Code/Ontology_and_Evidence/DATA_DICTIONARY.md) contains eight raw event rows. Four unique events survive the stated duplicate, timestamp, cutoff, and chronology conditions. Request r1 requires review. One of four subscriptions has a latest recorded cancellation; equating accepted requests with completion reports two of four. A dated active observation and an unknown state remain distinct. Moving the cutoff changes available evidence.
 
-This is a proposed original exercise. Synthetic records and executable Python would be released together with the detailed lecture example. No legal entitlement is inferred from the illustrative commercial categories.
+The [complete Python](../../03_Data_and_Code/Ontology_and_Evidence/README.md) records all flags and a classification trace; eight independent tests passed. It uses explicit Python conditions, without executing an OWL reasoner or SHACL engine. No legal conclusion follows from the synthetic record categories.
 
-## Recurring Course Cases
+## Teaching Sequence
 
-| Case | Objects and Relationships to Preserve | Question That Exposes a Modeling Error |
-| --- | --- | --- |
-| mHealth | Person, day, logging event, food entry, nutrient amount, and measurement unit | Does a day with no log establish zero consumption? |
-| Restaurant Availability | Store, timestamped status observation, source, and observation age | Does an unavailable menu item establish a mechanical failure? |
-| Earnings Calls | Speaker, attributed claim, source passage, reporting period, and company | Does management's explanation identify a causal effect? |
-| Customer Segmentation | Customer, measurement period, membership rule, and segment description | Can loyalty and price sensitivity coexist under the definitions? |
+Session 1 uses five minutes for definitions, inference, validation, and evidence. Session 2 uses fifteen minutes for the records and queue. Session 14 adds a five-minute connection to the reasons supporting commercial classifications. The [optional lab](../../07_Labs/Ontology_and_Evidence/README.md) extends cutoff and conflict checks. No graded requirement is introduced.
 
-These questions reuse existing distinctions in the notes. The ontology exercise makes the relevant definitions explicit and traceable rather than creating new empirical findings.
+An editable Illinois-color diagram separates recorded events, modeled classes, validation, state evidence, and the review decision. The complete record table, code, and diagram description remain readable as Markdown. The future wiki can let students predict a rule consequence before revealing its trace; that interaction remains unimplemented.
 
-## Figures and Interaction
+## Recurring Applications
 
-An editable TikZ diagram can show an account linked to a subscription, then to a request and a separate confirmation event. Solid arrows denote recorded links; dashed arrows denote permitted inferences. Navy, orange, text labels, and line patterns distinguish the categories. A second panel changes only the request-to-completion rule and shows the resulting service queue. A text table lists every fact and inference.
-
-For a future static wiki, let students select a rule, predict its consequence, and reveal the proof. Keep the original evidence visible when a rule changes. The implementation should distinguish recorded facts, logical consequences, validation findings, and unresolved observations. An inference's derivation describes why it follows from the model; its source record supports whether its premise is credible.
+mHealth separates logging from consumption. Restaurant records separate an observation from a mechanical-failure diagnosis. Earnings calls preserve a speaker's claim and its period separately from an observed outcome. Segmentation distinguishes a membership rule from a substantive customer preference. These applications reuse existing evidence distinctions without producing additional empirical results.
 
 ---
 
@@ -8398,7 +8515,7 @@ A marketing analyst may compress customer information or use AI features to iden
 
 [Massive Activations Confound Sparse Autoencoders](https://arxiv.org/abs/2611.13548v1), by Nathan Delisle and Chenhao Tan, motivates this lesson through language-model representations. Its [repository](https://github.com/nathandelisle/massive-saes) supplies inspectable evaluation code and saved numerical results. The [source review](SOURCE_REVIEW.md) distinguishes reported research findings, independently recalculated values, and original marketing illustrations.
 
-| Course Connection | Proposed Teaching Use |
+| Course Connection | Teaching Connection |
 | --- | --- |
 | M7: Model Evaluation | Compare aggregate reconstruction, error outside a dominant direction, feature stability, and task performance |
 | M5: Text Measurement | Check whether a representation preserves a complaint category needed for an operational response |
@@ -8406,11 +8523,11 @@ A marketing analyst may compress customer information or use AI features to iden
 | M2: Scaling and Visualization | Show how one large-scale dimension determines a pooled score |
 | M9: Marketing Dialectics | Evaluate the evidence behind a claim that an AI system is understandable or accountable |
 
-The [proposed case](CASE_DESIGN.md) starts with four invented text representations and then separates feature importance from a unique explanation. It fits a short M7 discussion with optional technical reading. Full SAE training would add substantial prerequisites and is unnecessary for the introductory calculation.
+The [implemented case](CASE_DESIGN.md) uses four invented vectors in M7 §7.39 and exact decompositions in §7.40. [Two complete Python programs and six independent tests](../../03_Data_and_Code/Representation_Evaluation/README.md) accompany two editable diagrams, four Session 11 slides, and [optional ungraded practice](../../07_Labs/Representation_Evaluation/README.md). M4 §4.25 and M5 §5.25 connect feature interpretation and attributed claims. No sparse autoencoder is trained.
 
 Thirteen unchanged source and result files are preserved under `reference/`, with MIT and CC BY 4.0 notices, a pinned commit, and hashes in the [manifest](manifest.json). The paper itself is linked because its arXiv license does not supply general redistribution permission. The original [calculation checks](source_checks.py) use Python's standard library; their results are in [source_checks.json](source_checks.json). These checks establish arithmetic and source-file fidelity. They do not reproduce model training, model inference, or the authors' statistical uncertainty.
 
-The [catalog](catalog.json) uses namespace `representation-evaluation`. Lecture and slide integration remains proposed.
+The [catalog](catalog.json) uses namespace `representation-evaluation`. The cases are integrated into notes and Session 11 within existing meeting time; assessment requirements remain pending.
 
 ---
 
@@ -8476,36 +8593,258 @@ The repository licenses code under MIT and results under CC BY 4.0. Both notices
 
 # Preserving a Customer-Relevant Signal
 
-## Managerial Decision and Proposed Placement
+## Managerial Decision and Placement
 
-A service team uses a compressed text representation to decide which complaints need prompt review. The introductory comparison asks whether the representation preserves that distinction. A 10- to 15-minute M7 example can extend the existing discussion of loss functions and model evaluation, with a brief M5 connection to text measurement. The material would replace part of an existing discussion within the 170-minute session, subject to the next course revision.
+A service team chooses a representation for identifying cases that require review. M7 §7.39 compares reconstruction with routing; §7.40 examines the meaning of a feature decomposition. Session 11 uses ten minutes from its existing demand-interval and complaint-routing block. M4 §4.25, M5 §5.25, and M9 §9.19 connect segmentation, attributed claims, and customer permission.
 
-The four invented representations and two deterministic transformations in [SOURCE_REVIEW.md](SOURCE_REVIEW.md) provide a hand-checkable starting point. They are algebraic constructions with assigned meanings, rather than embeddings extracted from course data. [source_checks.py](source_checks.py) contains the complete calculation and verifies the expected results.
+## Implemented Calculations
 
-## Proposed Exercise
+The [four original synthetic cases](../../03_Data_and_Code/Representation_Evaluation/DATA_DICTIONARY.md) have two imposed coordinates and equal weights. At style scale 100, A explains 99.990001% of variation and recalls none of the two positive cases. B explains 99.960004% and recalls both. Changing the style scale to 1 reverses the aggregate reconstruction ranking while leaving routing unchanged. The code records component errors, variance weights, and both denominators.
 
-1. Specify the routing decision, the four equally weighted records, and the positive-second-coordinate review rule.
-2. Calculate each transformation's sum of squared errors and divide by the same total squared variation. State the coordinate scales before comparing the scores.
-3. Calculate errors separately along the first coordinate and the second coordinate. Report review recall using the two review-required cases as the denominator.
-4. Change only the scale of the first coordinate. Explain why this changes the aggregate reconstruction score without changing the routing rule.
-5. Ask an AI coding assistant to report both reconstruction and routing results. Independently hand-check one record and the aggregate denominator.
-6. Compare the two exact vector decompositions. Explain why removing a component can damage a reconstruction without establishing that its label describes a unique customer motive.
+Two imposed pairs of weighted unit directions reconstruct `(2, 0)` exactly. Removing the first contribution gives squared errors of 2 and 5. Their coefficient sums differ, so equal reconstruction is not equal penalized loss. The calculation establishes an algebraic possibility; it does not estimate feature instability or a customer mechanism.
 
-An optional extension would use manually coded synthetic complaints and fit a small representation on training records. Selection of transformations, thresholds, and label descriptions would precede final evaluation. A real-data extension would preserve the existing course's source, privacy, and information-split conventions.
+[Two complete programs](../../03_Data_and_Code/Representation_Evaluation/README.md) and six independent tests ran successfully. Full code appears in the notes. No upstream package, model training, or model inference was executed. The eight source-review checks remain a separate record.
+
+## Figures and Practice
+
+One editable diagram compares total FVU with review recall on explicitly labeled scales. Another shows two vector sums and their different removal consequences. Illinois colors, labels, and dashed translated vectors preserve the distinction in grayscale. Text descriptions and saved JSON results accompany the figures.
+
+The [optional ungraded lab](../../07_Labs/Representation_Evaluation/README.md) asks students to derive the equal-error scale, vary the synthetic input, distinguish sparse penalties from reconstruction, and design an independent evaluation for a learned representation. A future interactive wiki can vary the scale while preserving the four cases and fixed review rule. No interactive page or model-training assignment is released.
+
+---
+
+## Source: 03_Data_and_Code/Ontology_and_Evidence/README.md
+
+# Cancellation Records and Customer Evidence
+
+A subscription manager needs to identify cancellation requests that require review and report recorded cancellations at a fixed date. Treating a request as a completed cancellation changes both outputs. The original synthetic case distinguishes customer accounts, subscriptions, events, and dated state observations.
+
+## Inputs and Execution
+
+`data/cancellation_records.json` contains four subscriptions and eight event rows, assessed at January 31, 2027, 23:59 UTC. All identifiers, dates, and records are invented. Python 3.10 or later and its standard library are sufficient. Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/Ontology_and_Evidence/assess_cancellations.py
+python3 -m unittest discover -s 03_Data_and_Code/Ontology_and_Evidence -p 'test_*.py' -v
+```
+
+The program resolves exact duplicates, rejects conflicting copies, validates event references and timestamps, excludes information after the cutoff, and checks confirmation chronology. It writes `results/cancellations.json`. The population denominator remains all four subscriptions. A request without an accepted confirmation enters a review queue; this is a search over the supplied records and does not establish that cancellation failed outside those records.
+
+## Results and Interpretation
+
+Four unique events remain. One extra duplicate, one missing timestamp, one later confirmation, and one confirmation preceding its request account for the other four rows. There are two valid requests, of which `r1` needs review. One of four subscriptions has a latest accepted cancellation confirmation. Counting requests as completions reports two of four. The dated active observation for `s3` and the unknown state of `s4` remain distinct.
+
+[M1 §1.16 and M2 §2.25](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) connect definitions, rule-based classification, data validation, and evidence. Full Python appears in M2. The [optional lab](../../07_Labs/Ontology_and_Evidence/README.md) changes cutoffs and challenges claims. The script implements explicit Python conditions; it is not an OWL reasoner or a SHACL implementation.
+
+## Provenance and Verification
+
+The original case is informed by the [ontology source review](../../01_Resources/33_Ontologies_and_Knowledge_Representation/README.md), the [W3C OWL 2 Primer](https://www.w3.org/TR/owl2-primer/), and [SHACL](https://www.w3.org/TR/shacl/). No playground source was copied. See the [dictionary](DATA_DICTIONARY.md), [agent guide](AGENTS.md), [verification record](VERIFICATION.md), and [manifest](manifest.json).
+
+---
+
+## Source: 03_Data_and_Code/Ontology_and_Evidence/DATA_DICTIONARY.md
+
+# Cancellation Evidence Dictionary
+
+All inputs are synthetic. The observation unit in the roster is a subscription; the event file may contain repeated event rows. Counts of requests, events, accounts, and subscriptions have different denominators.
+
+| Field | Meaning and Units |
+| --- | --- |
+| `synthetic` | True identifies invented inputs. |
+| `cutoff` | Inclusive reporting cutoff, ISO timestamp with UTC offset. |
+| `subscription_id` | Unique subscription identifier; the complete reporting population has four entries. |
+| `account_id` | Invented customer account attached to a subscription. No person-level identity is claimed. |
+| `event_id` | Event identifier; exact copies collapse to one, conflicting copies are all rejected. |
+| `kind` | `request`, `confirmation`, or `active_observation`. |
+| `at` | Recorded event time with UTC offset; null fails the timestamp requirement. |
+| `request_id` | A confirmation's reference to an accepted request for the same subscription. |
+| `evidence_state` | Latest accepted confirmation or active observation, simultaneous conflict, request without confirmation, or unknown. |
+| `state_observed_at` | Time of the latest accepted state observation; null when no such observation exists. |
+| `requests_to_review` | Accepted requests without an accepted confirmation by the cutoff. |
+| `flags[].rows` | Number of raw rows accounted for by a flag. Extra duplicate rows are flagged separately from the retained event. |
+| `classification_trace` | Explicit mapping of each accepted event kind to a modeled class and the common parent `ServiceRecord`. |
+| `confirmed_share` | Subscriptions whose latest accepted state is a cancellation confirmation divided by all roster subscriptions. |
+| `request_as_completion_share` | Subscriptions with any accepted request divided by all roster subscriptions; deliberately misleading completion measure. |
+
+The latest accepted state describes available records. A later unobserved event may change the actual state. Null timing prevents an event from entering the cutoff comparison. Event types are operational modeling choices, not verified evidence of consent, legal compliance, or actual service execution.
+
+---
+
+## Source: 03_Data_and_Code/Ontology_and_Evidence/AGENTS.md
+
+# Agent Guide for Cancellation Evidence
+
+Read the root course guide and this folder's README and dictionary. Preserve the complete subscription roster and the timestamp cutoff. Keep raw rows, unique accepted events, valid requests, and subscriptions separate. A pending review flag means an accepted confirmation is absent from the supplied records. Do not turn it into a claim of wrongdoing or successful cancellation.
+
+The classifications are original Python rules. Do not call this program an OWL or SHACL engine. Distinguish logical entailment, validation, empirical evidence, and authorization. Preserve unknown states and dated active observations. Change the full Python block in M2 §2.25 when changing the program, and rerun the affected examples and independent tests.
+
+---
+
+## Source: 03_Data_and_Code/Ontology_and_Evidence/VERIFICATION.md
+
+# Verification
+
+Executed November 24, 2026 with Python 3.14.8. `assess_cancellations.py` completed and eight unittest checks passed. Checks cover independent row accounting and fractions, exact exclusion reasons, unknown and dated states, moving the cutoff, conflicting duplicates under row permutation, cross-subscription confirmation, simultaneous state conflict, and invalid rosters.
+
+All data are synthetic. These checks establish the specified calculations, not the truth of external records or compliance with a cancellation rule. No third-party reasoner, SHACL engine, model, or external service was executed.
+
+---
+
+## Source: 03_Data_and_Code/Ontology_and_Evidence/results/README.md
+
+# Cancellation Evidence Results
+
+`cancellations.json` records the synthetic January 31 cutoff comparison. Eight raw rows produce four accepted unique events and four flagged or excluded rows. The complete roster contains four subscriptions and two accepted requests. Request `r1` needs review. Recorded cancellations cover 25% of subscriptions; treating accepted requests as completion reports 50%.
+
+The output preserves every flag and classification trace. `s3` has an active observation dated January 30; `s4` has no accepted state evidence. No causal effect or legal conclusion is estimated.
+
+---
+
+## Source: 07_Labs/Ontology_and_Evidence/README.md
+
+# Cancellation Evidence and Definitions
+
+Public optional ungraded practice. Read [M1 §1.16](../../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md) and [M2 §2.25](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md), then inspect the [data dictionary and complete program](../../03_Data_and_Code/Ontology_and_Evidence/README.md).
+
+## Managerial Decision
+
+A subscription manager must identify requests needing review and report recorded cancellations at a cutoff. Establish the population and evidence needed for each output before requesting code from an AI assistant.
+
+## Investigation
+
+1. Inspect the four-subscription roster and eight raw rows. Predict the accepted events, flag counts, and review queue by hand. Explain why an event count is an unsuitable denominator for a subscription cancellation share.
+2. Run the program and tests using the README commands. Reconcile every removed row to a reason. Explain how `s3` and `s4` differ in available state evidence.
+3. In a separate copy of the JSON, move the cutoff to February 2. Call `calculate` with that copy. Explain which new evidence changes the queue and why the earlier report should retain its original information cutoff.
+4. Add conflicting copies of one event and a confirmation referring to another subscription. Predict the flags, then compare with the program. Retain the raw records and explain which claims are supported by the accepted subset.
+5. Write a class relationship for requests and service records, a validation requirement for timestamps, and an empirical claim about actual cancellation. Identify the evidence each requires. Treat absence of confirmation as a review condition rather than evidence of actual account activity.
+
+## AI-Assisted Coding
+
+Ask the assistant to preserve the complete roster, distinguish raw rows from unique events, make timezone handling explicit, and return a reason for every exclusion. Require a hand-checkable test that would fail if requests were counted as completions. Inspect the generated code before execution and record any material AI contribution.
 
 ## Interpretation
 
-The appropriate transformation depends on the decision. A component that is unhelpful for one complaint-routing task may matter for another. Reproducibility across random seeds tests sensitivity to a training choice; it does not establish semantic validity, causal identification, or fair customer treatment. Those claims require outcomes and comparisons suited to their meaning.
+Write a short recommendation identifying the subscriptions that need review, the numerator and denominator of the reported share, the reporting cutoff, and the evidence still needed to establish actual service execution. Evaluate the definitions that classify events separately from the accuracy of the underlying records.
 
-The ontology review supplies a complementary question: did the analyst define the complaint category correctly? The representation example then asks whether the chosen mathematical representation preserves that definition well enough for the action. An explicit vocabulary and a repeatable feature each need validation against the underlying records.
+---
 
-## Figure Design
+## Source: 03_Data_and_Code/Representation_Evaluation/README.md
 
-Use two editable TikZ panels with the same four points and axis scales. In the first panel, project every point onto the horizontal axis. In the second, shrink the horizontal coordinate slightly while retaining the vertical coordinate. Show reconstruction scores below each panel and mark the two review-required cases with a separate shape. An inset with its own explicit scale can reveal the vertical errors. Illinois navy and orange, labels, and line patterns keep the comparison readable in grayscale.
+# Representation Quality and Customer Decisions
 
-A second small diagram can show two different pairs of arrows summing to the same vector. Removing one arrow makes the cancellation failure visible. The caption should state that the construction proves nonuniqueness for the illustrated representation, without asserting an empirical decomposition of consumer preferences.
+A service manager choosing a text representation needs to retain the information that identifies cases for review. Total reconstruction quality weights errors by variation, which can be concentrated in a different component. A second case examines whether exact reconstruction identifies a unique feature interpretation.
 
-These activities and figures are proposed. The current review releases resource notes and verified calculations; it adds no graded assignment or required model-training exercise.
+## Inputs and Execution
+
+All vectors and labels are invented. `data/cases.json` has four equally weighted cases, two style scales, and a fixed shrinkage factor. Python 3.10 or later and the standard library are sufficient. Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/Representation_Evaluation/evaluate_representations.py
+python3 03_Data_and_Code/Representation_Evaluation/compare_decompositions.py
+python3 -m unittest discover -s 03_Data_and_Code/Representation_Evaluation -p 'test_*.py' -v
+```
+
+The first program writes `results/representations.json`, including input vectors, reconstruction errors, variance weights, and routing metrics. The second writes `results/decompositions.json`, including unit directions, coefficients, reconstructed vectors, and removal errors. No dependencies, model downloads, random seed, or network access are required.
+
+## Results and Scope
+
+At style scale 100, representation A explains 99.990001% of variation and recalls none of the two review-required cases. B explains 99.960004% and recalls both. At style scale 1, their explained shares are 50% and 99.98%; the routing results stay the same. Coordinate units reverse the reconstruction ranking. The fixed evaluation labels define the routing target; they are not used to train or select a model here.
+
+Two pairs of weighted unit directions both sum to `(2, 0)`. Removing the first contribution produces squared reconstruction errors of 2 and 5. The coefficient sums differ, so equal reconstruction does not imply equal sparse-autoencoder objectives. Neither calculation estimates a feature's psychological meaning or causal role.
+
+Full Python and three comparisons appear in [M7 §§7.39–7.40](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md). See the [dictionary](DATA_DICTIONARY.md), [agent guide](AGENTS.md), [verification](VERIFICATION.md), and [optional lab](../../07_Labs/Representation_Evaluation/README.md).
+
+## Sources
+
+The [review of Delisle and Tan](../../01_Resources/34_Representation_Evaluation/README.md) motivates separate evaluation of aggregate reconstruction, component errors, feature stability, and task outcomes. Their experiments concern internal model activations. These original course examples demonstrate algebra and decision metrics; they do not reproduce sparse-autoencoder training or supply empirical marketing evidence. Attribution and licenses for the separately archived source subset are retained in the resource folder.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Evaluation/DATA_DICTIONARY.md
+
+# Representation Evaluation Dictionary
+
+Every numerical input is synthetic. The four cases receive equal weight. Coordinates are imposed standardized scores except that the first is multiplied by a stated scale; no text embeddings were estimated.
+
+| Field | Meaning |
+| --- | --- |
+| `case_id` | Unique case identifier. |
+| `style_sign` | Imposed style score, −1 or +1. |
+| `review_signal` | Imposed review score, −1 or +1. Review is required when positive. |
+| `style_scales` | Multipliers 100 and 1 on the first coordinate. |
+| `representation_B_style_multiplier` | Fixed factor 0.98. A preserves the first coordinate and sets the second to zero; B shrinks the first and preserves the second. |
+| `variation` | Sum of squared deviations from each coordinate's mean over the four evaluation cases. |
+| `squared_errors` | Sum of squared reconstruction errors by coordinate. |
+| `component_fvu` | Coordinate squared error divided by its variation. |
+| `variance_weights` | Coordinate variation divided by total variation. |
+| `total_fvu` | Total squared reconstruction error divided by total variation. |
+| `variance_explained_pct` | 100 times one minus total FVU; this measure may be negative for poor reconstructions. |
+| `recall` | Correctly routed positive cases divided by the two cases requiring review. |
+| `accuracy` | Correct binary routing decisions divided by all four cases. |
+| `unit_directions` | Two Euclidean-unit vectors in each imposed decomposition. |
+| `coefficient_per_direction` | Positive weight multiplying each direction, square root of 2 or 5. |
+| `contributions` | Weighted directions, `(1, ±1)` or `(1, ±2)`. |
+| `squared_error_after_removing_first` | Squared Euclidean distance from target `(2, 0)` to the remaining contribution. |
+
+FVU uses coordinate-specific units and an orthonormal coordinate system. A change of units changes its relative penalties. Routing metrics preserve the same case population and reference labels. The examples have no train/test fit; a learned system would require an independently held-out evaluation and training-only preprocessing.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Evaluation/AGENTS.md
+
+# Agent Guide for Representation Evaluation
+
+Read the root guide, README, and data dictionary. Keep the four invented cases and the two positive-case denominator explicit. Separate total reconstruction, component errors, routing performance, feature matching, and causal interpretation. Standardizing a coordinate changes the metric's implicit weights; it does not guarantee a better representation.
+
+The exact decompositions have different coefficient penalties. Do not call them equal minima of a complete sparse-autoencoder loss or evidence of training instability. No trained model or empirical customer effect is present. Published source results remain in the separate resource review. Update the complete Python blocks in M7 §§7.39–7.40 if the programs change, and verify calculations and rendered figures separately.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Evaluation/VERIFICATION.md
+
+# Verification
+
+Executed November 24, 2026 with Python 3.14.8. Both programs completed and six unittest checks passed. Independent checks cover hand-calculated sums of squares, routing denominators, reversal under rescaling, row permutation and uniform replication, invalid inputs, and exact decompositions with distinct removal errors.
+
+No autoencoder, language model, or upstream package was executed. The eight checks in the resource folder concern selected published tables and arithmetic; they are separate from these six course tests.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Evaluation/results/README.md
+
+# Representation Results
+
+`representations.json` includes every synthetic input and reconstructed coordinate. At scale 100, component variation is `[40000, 4]`. Squared errors are `[0, 4]` for A and `[16, 0]` for B. Their total FVU values are respectively `1/10001` and `4/10001`. Recall on the two positive cases is 0% and 100%; accuracy over all four cases is 50% and 100%. At scale 1, total FVU becomes 0.5 and 0.0002.
+
+`decompositions.json` records two exact sums to `(2, 0)`. Removing the first contribution leaves `(1, −1)` or `(1, −2)`, producing squared errors of 2 and 5. The dictionaries, coefficients, and removal operations are imposed; no feature was learned.
+
+---
+
+## Source: 07_Labs/Representation_Evaluation/README.md
+
+# Reconstruction and Customer Review
+
+Public optional ungraded practice. Read [M7 §§7.39–7.40](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) and the [programs and dictionary](../../03_Data_and_Code/Representation_Evaluation/README.md). All vectors and outcomes are synthetic.
+
+## Managerial Decision
+
+A service manager chooses a representation for identifying cases requiring review. Compare reconstruction quality and the consequences of the resulting routing rule on the same cases.
+
+## Investigation
+
+1. Compute both coordinate means and sums of squares for the four vectors at style scale 100. Predict which reconstruction has lower total FVU. Use the positive-case denominator to predict recall separately.
+2. Run both programs and six tests using the README commands. Verify the variance-weighted identity and the recorded error vectors against your calculations.
+3. Change the style scale in a copy of the inputs. Derive the scale at which A and B have equal total reconstruction error with the same 0.98 shrinkage factor. Compare the routing result on either side of that scale. Explain which managerial judgment would justify the coordinate weights.
+4. Draw each decomposition of `(2, 0)`. Calculate the sum of coefficients and the error after removing the first contribution. Explain why equal reconstruction does not establish equal penalized loss or equal psychological meaning.
+5. Propose an evaluation for learned customer-text representations. Fix the target and reference labels, split by customer and time as appropriate, fit preprocessing on training data, and reserve held-out outcomes. Specify a feature-matching rule across seeds and keep that score separate from task performance.
+
+## AI-Assisted Coding
+
+Ask an assistant to report aggregate error, component errors, variance weights, the confusion matrix, and the positive-case denominator. Require an assertion that the weighted component FVU equals total FVU. Check the returned arrays against a hand calculation before interpreting the result.
+
+## Interpretation
+
+Recommend a representation under the stated review objective. Explain what would need independent validation before deploying it. A feature name supplied by an analyst or LLM does not establish a causal mechanism, a customer's preference, or permission to act on that customer.
 
 ---
 

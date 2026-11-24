@@ -416,6 +416,66 @@ M7 §7.24.2. \url{../03_Data_and_Code/Conformal_Prediction/demand_intervals.py}}
 
 M7 §7.25. \url{../03_Data_and_Code/Conformal_Prediction/complaint_sets.py}}
 \end{frame}
+\begin{frame}{Reconstruction and Customer Review}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_reconstruction_routing.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small A preserves dominant variation while losing the signal required for review.\par}
+\note{The four equally weighted cases are synthetic; no model was trained. A keeps style and sets review to zero. B multiplies style by 0.98 and preserves review. The rule sends cases for review when the reconstructed second coordinate is positive. Accuracy over all four cases is 50\% and 100\%, while recall uses the two positive cases. Both comparisons use identical records.
+
+M7 §§7.39–7.40. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Aggregate Error Weights the Components}
+\usebeamercolor[fg]{normal text}
+\noindent At fixed coordinate units and a common evaluation population:
+\medskip
+\[
+\operatorname{FVU}=\sum_j w_j\operatorname{FVU}_j,\qquad w_j=\frac{V_j}{\sum_k V_k}
+\]
+\medskip
+\noindent Component variation sets the weights. Decision importance requires separate evaluation.
+\note{V\_j is the sum of squared deviations from the coordinate mean. Each component FVU divides its reconstruction error by positive V\_j. The identity uses orthogonal coordinates and the same population. Delisle and Tan study a dominant activation direction in sparse autoencoders. Their bypass retains the projection in the final reconstruction; this is not evidence that deleting the first customer-data component improves a marketing decision.
+
+M7 §§7.39–7.40. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md} Nathan Delisle and Chenhao Tan, Massive Activations Confound Sparse Autoencoders, v1. \url{https://arxiv.org/abs/2611.13548v1}}
+\end{frame}
+\begin{frame}{Exact Reconstruction, Different Features}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_nonunique_features.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The selected dictionary determines the contribution removed.\par}
+\note{This is an imposed algebraic construction. The positive coefficient sums are two times square root of 2 and two times square root of 5. Equal reconstruction therefore does not imply equal full sparse-autoencoder loss. A removal error depends on the dictionary and does not establish a psychological mechanism.
+
+M7 §§7.39–7.40. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Evaluate a Feature Before Naming It}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Compare matched features across repeated fits.
+\item Evaluate retained information on the intended task.
+\item Check the proposed meaning against independent records.
+\item Keep causal claims and permission evidence separate.
+\end{slidebullets}
+\vfill
+\note{Feature ordering and any relevant sign convention require an explicit matching procedure. Reproducibility, task utility, and substantive meaning answer different questions. Feature intervention assesses the changed model; an economic causal interpretation needs additional assumptions and evidence. Full calculations and AI-assisted coding extensions are available as optional ungraded practice.
+
+M7 §§7.39–7.40. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
 \begin{frame}{A Cost-Based Threshold}
 \usebeamercolor[fg]{normal text}
 \noindent Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.

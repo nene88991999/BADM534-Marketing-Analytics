@@ -2660,3 +2660,168 @@ if __name__ == "__main__":
 ```
 
 A useful AI-assisted coding specification names the original population, edge meaning and units, group-size target, permitted labels, and primary decision outcome. Require separate outputs for feature reconstruction, graph criteria, and held-out prediction. Changing only a forbidden outcome should leave fitted preprocessing and predictions unchanged. Scored performance may change because the reference outcome changed. This distinction makes the information restriction testable.
+
+## 7.39 Reconstruction Quality and Customer Review
+
+\noindent A service manager chooses a representation of customer messages to identify cases requiring review. Total reconstruction quality rewards recovery of the coordinates with the most variation. If writing style varies much more than the signal used for review, a representation can preserve nearly all total variation while discarding the information required for the decision.
+
+For a fixed evaluation sample of $n$ cases with $p$ orthogonal coordinates, define the fraction of variance unexplained by the ratio of total squared reconstruction error to total centered variation:
+
+$$
+\operatorname{FVU}=\frac{\sum_{i=1}^{n}\sum_{j=1}^{p}(x_{ij}-\widehat{x}_{ij})^2}
+{\sum_{i=1}^{n}\sum_{j=1}^{p}(x_{ij}-\bar{x}_{j})^2}
+=\sum_{j=1}^{p} w_j\operatorname{FVU}_j,
+\qquad
+w_j=\frac{V_j}{\sum_{k=1}^{p}V_k}.
+$$
+
+Here $x_{ij}$ is coordinate $j$ of case $i$, $\widehat{x}_{ij}$ is its reconstruction, $\bar{x}_j$ is the coordinate mean over the same cases, and $V_j=\sum_i(x_{ij}-\bar{x}_j)^2$. For a coordinate with positive variation, $\operatorname{FVU}_j$ divides its squared error by $V_j$. The weights sum to one. Coordinate units determine the relative penalties, and a zero-variation coordinate requires separate handling. The explained share is $1-\operatorname{FVU}$ and may be negative when reconstruction is sufficiently poor.
+
+Consider four equally weighted synthetic cases with vectors $(-100,-1)$, $(-100,1)$, $(100,-1)$, and $(100,1)$. The first coordinate is an imposed style score. The second is an imposed review score, with positive values defining the two cases that require review. Both means are zero; the coordinate sums of squares are 40,000 and 4. Representation A preserves the first coordinate and sets the second to zero. Representation B multiplies the first by 0.98 and preserves the second. These are fixed transformations of invented vectors, with no estimated embeddings or trained model.
+
+| Representation | Total Squared Error | Variance Explained | Recall of Review-Required Cases |
+| --- | --- | --- | --- |
+| A | 4 | 99.990001% | 0 of 2 |
+| B | 16 | 99.960004% | 2 of 2 |
+
+The routing rule sends a case for review when its reconstructed second coordinate is strictly positive. A achieves lower reconstruction error while missing both positive cases. B recovers the information required by the stated decision. Accuracy over all four cases is 50% for A and 100% for B. The denominator of recall remains the two cases requiring review; accuracy uses all four.
+
+![At style scale 100, representation A has the higher aggregate reconstruction score and zero review recall; B preserves the review signal. Rescaling style reverses the aggregate ranking without changing routing.](../figures/M07_reconstruction_routing.png)
+
+Changing the first-coordinate scale from 100 to 1 reverses the aggregate ranking. A then explains 50% of variation and B explains 99.98%, while routing is unchanged. Standardization changes the implicit error weights. Whether those weights are useful depends on the objective and the consequences of losing each kind of information. Evaluate component errors and decision outcomes alongside aggregate reconstruction.
+
+Delisle and Tan's [Massive Activations Confound Sparse Autoencoders](https://arxiv.org/abs/2611.13548v1) studies related evaluation problems in internal language-model activations. A dominant direction can make total reconstruction look strong while errors elsewhere remain material. Their proposed bypass preserves the dominant projection in the reconstructed activation. Removing the first principal component from customer data would be a different intervention whose value requires its own evaluation. The [source review](../../01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md) separates model-specific published results and feature-matching conventions from these original marketing calculations.
+
+The complete program reads the [four synthetic cases](../../03_Data_and_Code/Representation_Evaluation/DATA_DICTIONARY.md), records every reconstruction, and checks the weighted-error identity. Its evaluation means summarize the fixed cases; they are not fitted preprocessing. For a learned system, fit preprocessing and select the representation using training and validation data, then preserve independent customer and time groups as appropriate for evaluation. The held-out review labels should come from evidence appropriate to the service objective.
+
+
+Python source: [evaluate_representations.py](../../03_Data_and_Code/Representation_Evaluation/evaluate_representations.py)
+
+```python
+"""Compare reconstruction and routing on four invented text representations."""
+from pathlib import Path
+import json
+import math
+
+ROOT = Path(__file__).resolve().parent
+
+
+def score(points, reconstructed):
+    if len(points) != len(reconstructed) or not points:
+        raise ValueError("Supply matching nonempty inputs")
+    n = len(points)
+    means = [sum(p[j] for p in points) / n for j in (0, 1)]
+    variation = [sum((p[j] - means[j]) ** 2 for p in points) for j in (0, 1)]
+    if min(variation) <= 0:
+        raise ValueError("Both component variances must be positive")
+    errors = [sum((p[j] - q[j]) ** 2 for p, q in zip(points, reconstructed))
+              for j in (0, 1)]
+    expected = [p[1] > 0 for p in points]
+    routed = [q[1] > 0 for q in reconstructed]
+    positives = sum(expected)
+    if positives == 0:
+        raise ValueError("Recall needs at least one review-required case")
+    total_fvu = sum(errors) / sum(variation)
+    component_fvu = [e / v for e, v in zip(errors, variation)]
+    weights = [v / sum(variation) for v in variation]
+    weighted = sum(w * e for w, e in zip(weights, component_fvu))
+    if not math.isclose(weighted, total_fvu, rel_tol=1e-12, abs_tol=1e-12):
+        raise AssertionError("Component errors must reproduce total error")
+    return {"records": n, "variation": variation, "squared_errors": errors,
+            "variance_weights": weights, "component_fvu": component_fvu,
+            "total_fvu": total_fvu, "variance_explained_pct": 100 * (1 - total_fvu),
+            "review_required": positives, "routed": sum(routed),
+            "true_positives": sum(a and b for a, b in zip(expected, routed)),
+            "recall": sum(a and b for a, b in zip(expected, routed)) / positives,
+            "accuracy": sum(a == b for a, b in zip(expected, routed)) / n}
+
+
+def calculate(data):
+    identifiers = [r["case_id"] for r in data["cases"]]
+    if len(set(identifiers)) != len(identifiers):
+        raise ValueError("Case identifiers must be unique")
+    results = []
+    for scale in data["style_scales"]:
+        points = [(scale * r["style_sign"], r["review_signal"]) for r in data["cases"]]
+        representations = {
+            "A": [(p[0], 0) for p in points],
+            "B": [(data["representation_B_style_multiplier"] * p[0], p[1]) for p in points],
+        }
+        for name, values in representations.items():
+            results.append({"style_scale": scale, "representation": name,
+                            "case_ids": identifiers, "inputs": points,
+                            "reconstructed": values, **score(points, values)})
+    return {"synthetic": True, "weights": "Equal weight per case",
+            "routing_rule": "Review when reconstructed second coordinate is strictly positive",
+            "results": results}
+
+
+if __name__ == "__main__":
+    data = json.loads((ROOT / "data/cases.json").read_text())
+    result = calculate(data)
+    output = ROOT / "results"
+    output.mkdir(exist_ok=True)
+    (output / "representations.json").write_text(json.dumps(result, indent=2) + "\n")
+    for row in result["results"]:
+        print(f"Scale {row['style_scale']}: {row['representation']}, "
+              f"variance explained {row['variance_explained_pct']:.6f}%, recall {row['recall']:.0%}")
+```
+
+
+## 7.40 Feature Decompositions and Interpretation
+
+\noindent A manager may want an explanation for why a text representation identifies a customer concern. Exact reconstruction alone does not identify a unique set of underlying features. Different weighted directions can reproduce the same vector, and removing one contribution can have different consequences under different decompositions.
+
+For the synthetic target vector $x=(2,0)$, choose a positive slope $a$ and two unit directions $d_+=(1,a)/\sqrt{1+a^2}$ and $d_-=(1,-a)/\sqrt{1+a^2}$. Giving each direction coefficient $\sqrt{1+a^2}$ yields contributions $(1,a)$ and $(1,-a)$, whose sum is $x$. At $a=1$ the contributions are $(1,1)$ and $(1,-1)$; at $a=2$ they are $(1,2)$ and $(1,-2)$. Both reconstruct exactly while describing different directions.
+
+![Two pairs of contributions reconstruct the same target. Their vertical components cancel; removing one contribution produces different errors.](../figures/M07_nonunique_features.png)
+
+Removing the first contribution leaves $(1,-a)$ and gives squared error $1+a^2$. The errors are therefore 2 and 5. This removal calculation is conditional on the chosen dictionary and operation. It does not establish a causal customer mechanism. The sums of the nonnegative coefficients are $2\sqrt{2}$ and $2\sqrt{5}$, so a loss that also penalizes those coefficients need not assign the two decompositions equal value. The equality concerns reconstruction alone.
+
+Feature evaluation should distinguish reproducibility, predictive usefulness, and interpretation. Repeated fits can be compared after a specified matching procedure that handles feature ordering and any relevant sign convention. A downstream task tests retained information under a chosen decision rule. Intervening on a model feature tests the consequence of that intervention within the model; linking it to an economic mechanism requires additional assumptions and evidence. Independently coded cases and sensitivity to alternative representations help assess a proposed meaning. An appealing feature name supplies no such validation by itself.
+
+The following program constructs the two decompositions exactly, checks unit norms and reconstructed coordinates, and reports the removal errors. No sparse autoencoder is trained, and the calculation makes no claim about the frequency of such behavior in customer data.
+
+
+Python source: [compare_decompositions.py](../../03_Data_and_Code/Representation_Evaluation/compare_decompositions.py)
+
+```python
+"""Exact nonunique vector decompositions; no autoencoder training."""
+from pathlib import Path
+import json
+import math
+
+ROOT = Path(__file__).resolve().parent
+
+
+def calculate():
+    target = (2.0, 0.0)
+    rows = []
+    for slope in (1.0, 2.0):
+        coefficient = math.sqrt(1 + slope ** 2)
+        directions = [(1 / coefficient, slope / coefficient),
+                      (1 / coefficient, -slope / coefficient)]
+        contributions = [tuple(coefficient * x for x in direction)
+                         for direction in directions]
+        reconstructed = tuple(sum(c[j] for c in contributions) for j in (0, 1))
+        for direction in directions:
+            if not math.isclose(sum(x * x for x in direction), 1.0):
+                raise AssertionError("Directions must have unit norm")
+        if not all(math.isclose(x, y, abs_tol=1e-12)
+                   for x, y in zip(reconstructed, target)):
+            raise AssertionError("Both decompositions must match the target")
+        removal_error = sum((x - y) ** 2 for x, y in zip(target, contributions[1]))
+        rows.append({"slope": slope, "coefficient_per_direction": coefficient,
+                     "unit_directions": directions, "contributions": contributions,
+                     "reconstructed": reconstructed,
+                     "squared_error_after_removing_first": removal_error})
+    return {"synthetic": True, "target": target, "results": rows}
+
+
+if __name__ == "__main__":
+    result = calculate()
+    output = ROOT / "results"
+    output.mkdir(exist_ok=True)
+    (output / "decompositions.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+```

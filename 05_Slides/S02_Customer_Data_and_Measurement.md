@@ -11,6 +11,7 @@ Session 02. M2. 170 minutes.
 - Construct customer metrics with explicit populations and denominators.
 - Separate missing observations, zeros, and unmatched keys.
 - Assess changing coverage in mHealth, McBroken, and earnings-call records.
+- Preserve requests, confirmations, unknown states, and the reporting cutoff.
 
 ## Related Materials
 
@@ -20,6 +21,7 @@ Session 02. M2. 170 minutes.
 - [McBroken data and code](../03_Data_and_Code/McBroken/README.md)
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
+- [Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -165,7 +167,50 @@ Track duplicates before and after normalization. Location identity and status me
 
 Source: M2, Section 2.16.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 14: Earnings Calls: Missing Text and Zero Matches
+## Slide 14: Cancellation Evidence and the Review Queue
+
+The available records support classification, checks, and a bounded service decision.
+
+**Figure description:** A recorded request is classified as a service record and checked for identifiers, time, and cutoff. Accepted requests are compared with dated state evidence. A request without an accepted confirmation enters review; missing confirmation alone does not prove active status.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M01_cancellation_evidence.tex)
+
+All records are synthetic. The January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The diagram represents explicit operational conditions rather than a complete ontology reasoner.
+
+Source: M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 15: Which Cancellation Share?
+
+| Evidence or Rule | Count | Denominator |
+| --- | --- | --- |
+| Accepted unique events | 4 | 8 raw rows |
+| Recorded cancellations | 1 | 4 subscriptions |
+| Requests counted as completion | 2 | 4 subscriptions |
+| Request needing review | r1 | 2 valid requests |
+
+Synthetic January 31 report: the definition changes 25% to 50%.
+
+The four omitted rows are one extra duplicate, one missing timestamp, one confirmation after the cutoff, and one confirmation before its request. The accepted cancellation belongs to s2. Request r1 for s1 remains unresolved in the available evidence. The active observation for s3 is dated; s4 is unknown. Absence of accepted evidence does not establish failure outside the file.
+
+Source: M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 16: Preserve the Reason for Review
+
+From accepted requests and confirmations at the same cutoff:
+
+```python
+completed = {event["request_id"] for event in confirmations}
+queue = sorted(set(requests) - completed)
+assert queue == ["r1"]
+```
+
+Compare the queue with raw records and every exclusion reason.
+
+This short snippet follows validation in the complete assess_cancellations.py program. Run the full example from its folder README. Moving the cutoff to February 2 admits the later confirmation and clears the queue. Keep the original report tied to its original cutoff. The query finds absent confirmations in the supplied records, with no general completeness assumption.
+
+Source: M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 17: Earnings Calls: Missing Text and Zero Matches
 
 - A communications team wants a complete reading population.
 - One supplied call has 53 turns but zero recorded words.
@@ -175,7 +220,7 @@ The roster contains 123 firms, of which 122 have supplied calls. Winmark has no 
 
 Source: M2, Section 2.19, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 15: Selecting Matches Changes the Denominator
+## Slide 18: Selecting Matches Changes the Denominator
 
 The same 112 positive calls, with two different populations.
 
@@ -187,7 +232,7 @@ Start with the call table and aggregate match occurrences before joining. The co
 
 Source: M2, Section 2.19, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 16: Coding Exercise: A Data Assessment
+## Slide 19: Coding Exercise: A Data Assessment
 
 - Construct a roster-first activity or call table.
 - Separate observed zeros, missing text, and unmatched keys.
@@ -197,7 +242,7 @@ Run assessment.py in ../03_Data_and_Code/Earnings_Calls. Verify 112/2,325 and 11
 
 Source: M2, Section 2.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 17: AI Review of a Parser
+## Slide 20: AI Review of a Parser
 
 - Supply the allowed statuses and a tiny labeled example.
 - Require an explicit unknown category for new statuses.
@@ -207,7 +252,7 @@ A program that treats every unrecognized status as available can create artifici
 
 Source: M2, Section 2.16.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 18: A Data Dictionary for Decisions
+## Slide 21: A Data Dictionary for Decisions
 
 - State the unit, key, timing, and units of each variable.
 - Record source versions and transformation rules.
@@ -217,7 +262,7 @@ A reader should be able to trace a plotted rate to its numerator and denominator
 
 Source: M2, Section 2.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 19: Privacy and Collection Choices
+## Slide 22: Privacy and Collection Choices
 
 - Collect the fields needed for the stated decision.
 - Retain source permissions and deletion or retention conditions.
@@ -227,7 +272,7 @@ Combining datasets can change what can be inferred even when each file omits nam
 
 Source: ETHICS_AND_REGULATION.md, M2.
 
-## Slide 20: Measurement Discussion
+## Slide 23: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?

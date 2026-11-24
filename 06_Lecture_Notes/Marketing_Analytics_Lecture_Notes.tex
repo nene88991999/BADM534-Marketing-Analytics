@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 23, 2026\par}
+{\large November 24, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -1348,6 +1348,67 @@ inspection of the final document address those questions. The
 \href{../07_Labs/Reproducible_Recommendations/README.md}{optional
 exercise} distinguishes reproducible course calculations from
 editor-specific tests.
+
+\hypertarget{M01-definitions-inference-and-evidence}{%
+\section{Definitions, Inference, and
+Evidence}\label{M01-definitions-inference-and-evidence}}
+
+\noindent \noindent A subscription manager asks an AI assistant for a cancellation
+rate and unresolved requests. Define the customer, subscription,
+request, and completed cancellation before counting them. A request
+records a communicated intention; a confirmation records a claimed state
+transition. Equating these events can raise the reported completion rate
+and remove unresolved requests from the service queue.
+
+An ontology specifies classes of objects, relationships among them, and
+rules that support additional statements. An account is an object; a
+particular cancellation request is another object related to a
+subscription and a time. A class such as CancellationRequest can be a
+subclass of ServiceRecord. Assigning an event to the first class then
+supports membership in the second. A data dictionary supplies names and
+units, while an ontology adds relationships and their implications. Both
+depend on substantive decisions about what the records mean.
+
+The \href{https://www.w3.org/TR/owl2-primer/}{W3C OWL 2 Primer}
+distinguishes inference from the absence of information. A domain axiom
+saying that the subject of \texttt{requestedBy} is a CancellationRequest
+lets a reasoner infer that type when it encounters the relationship. It
+need not reject a row that lacks an explicit type. Under an open-world
+interpretation, a missing confirmation can remain unknown. A rule
+searching a supplied table for requests without confirmations answers a
+narrower operational question about the available records.
+
+Data validation instead asks whether the supplied information satisfies
+specified requirements. A timestamp requirement can reject a missing
+value before applying a reporting cutoff. A confirmation can be checked
+for a matching subscription and a time no earlier than its request.
+\href{https://www.w3.org/TR/shacl/}{SHACL} provides a standard for
+expressing graph-validation conditions. Logical inference, validation,
+and source verification answer different questions. A logically
+consistent set of false statements remains consistent; an inconsistent
+classification can reflect an inappropriate axiom or an erroneous
+observation.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M01_cancellation_evidence.tex}
+\caption{Cancellation evidence separates event classification, checks on records, and a review decision. A request without an accepted confirmation remains in the review queue.}\label{fig:M01_cancellation_evidence}
+\end{figure}
+
+The \href{https://learn-ontology.vercel.app/\#learn}{Ontology
+Playground} uses short prediction-and-trace exercises to make rule
+implications visible. For a marketing application, state an expected
+inference, inspect the facts and rules that produce it, and then
+challenge their empirical justification. The complete cancellation
+calculation in §2.25 preserves the reporting population, exclusion
+reasons, and observation times. Successful code execution establishes
+that the implemented calculation ran. Whether the calculation represents
+the intended commercial event requires those additional checks.
+
+Predicted acceptance does not establish permission. Preserve the source,
+time, scope, and withdrawal conditions of permission records
+independently of inferred preferences. Section 9.19 connects these
+distinctions to the justification of a firm's conduct.
 
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
@@ -4082,6 +4143,196 @@ synthetic ridge comparison and a controlled research example in which
 clean contrasts strengthen a conditional association. That result
 motivates a mixture assessment; it does not imply that every addition of
 clean data creates an unwanted behavior.
+
+\hypertarget{M02-cancellation-requests-and-recorded-completion}{%
+\section{Cancellation Requests and Recorded
+Completion}\label{M02-cancellation-requests-and-recorded-completion}}
+
+\noindent \noindent A service manager needs a queue of cancellation requests
+requiring review and a report of recorded cancellations by a cutoff. The
+reporting population contains four invented subscriptions, each
+associated with an invented account. The supplied file contains eight
+event rows. All dates and records are synthetic, and the cutoff is
+January 31, 2027, at 23:59 UTC. The subscription share uses the complete
+four-subscription roster; the review queue uses accepted requests.
+
+The records include an exact duplicate, a request without a timestamp, a
+confirmation after the cutoff, and a confirmation dated before its
+request. Collapse the exact duplicate while retaining one copy, flag the
+untimed request, and exclude the later confirmation from the information
+set. A confirmation must reference an accepted request for the same
+subscription and occur no earlier than that request. These requirements
+leave four unique events: requests for subscriptions s1 and s2, a
+confirmation for s2, and a dated active observation for s3.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Subscription & Accepted Evidence by the Cutoff & Review Consequence \\
+\midrule
+
+s1 & Request r1 without an accepted confirmation & Review r1 \\
+s2 & Request r2 followed by confirmation c2 & Recorded cancellation \\
+s3 & Active observation on January 30 & Retain its observation time \\
+s4 & No accepted state observation & State remains unknown \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+One of four subscriptions has a latest accepted cancellation
+confirmation, giving a recorded share of 25\%. Counting any accepted
+request as completion raises this share to 50\%. The extra 25 percentage
+points arise entirely from the definition. Request r1 remains in the
+review queue because its valid later confirmation was unavailable at the
+cutoff. This absence does not establish that cancellation failed outside
+the supplied records. Similarly, the active observation for s3 describes
+a dated record, while s4 has no accepted state evidence.
+
+The program assigns each accepted event to a named class and the common
+parent ServiceRecord. It implements the classification and validation
+conditions directly in Python. It does not implement an OWL reasoner.
+Conflicting duplicates are rejected together; simultaneous conflicting
+state observations remain explicit. These choices make the output depend
+on the evidence and stated rules rather than input row order.
+
+Run
+\texttt{python3\ 03\_Data\_and\_Code/Ontology\_and\_Evidence/assess\_cancellations.py}
+from the repository root. The
+\href{../03_Data_and_Code/Ontology_and_Evidence/DATA_DICTIONARY.md}{input
+dictionary} defines every field, and \texttt{results/cancellations.json}
+retains flags, classification traces, the queue, and denominators.
+Moving the cutoff changes the information available to the report; it
+does not change the meaning of a request or confirmation.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Ontology_and_Evidence/assess_cancellations.py}{assess\_cancellations.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Assess synthetic cancellation evidence at a fixed reporting cutoff."""
+from collections import defaultdict
+from datetime import datetime
+from pathlib import Path
+import json
+
+ROOT = Path(__file__).resolve().parent
+EVENT_CLASS = {"request": "CancellationRequest",
+               "confirmation": "CancellationConfirmation",
+               "active_observation": "ActiveStatusObservation"}
+
+
+def timestamp(value):
+    parsed = datetime.fromisoformat(value)
+    if parsed.tzinfo is None:
+        raise ValueError("A timestamp must include a UTC offset")
+    return parsed
+
+
+def calculate(data):
+    cutoff = timestamp(data["cutoff"])
+    subscriptions = {s["subscription_id"]: s for s in data["subscriptions"]}
+    if not subscriptions:
+        raise ValueError("The reporting population must contain subscriptions")
+    if len(subscriptions) != len(data["subscriptions"]):
+        raise ValueError("Subscription identifiers must be unique")
+    grouped = defaultdict(list)
+    for event in data["events"]:
+        grouped[event["event_id"]].append(event)
+    flags, candidates = [], {}
+    for event_id, copies in sorted(grouped.items()):
+        if any(copy != copies[0] for copy in copies[1:]):
+            flags.append({"event_id": event_id, "reason": "conflicting_duplicate",
+                          "rows": len(copies)})
+            continue
+        event = copies[0]
+        if len(copies) > 1:
+            flags.append({"event_id": event_id, "reason": "exact_duplicate",
+                          "rows": len(copies) - 1})
+        reason = None
+        if event["subscription_id"] not in subscriptions:
+            reason = "unknown_subscription"
+        elif event["kind"] not in EVENT_CLASS:
+            reason = "unknown_event_kind"
+        else:
+            try:
+                when = timestamp(event["at"])
+                if when > cutoff:
+                    reason = "after_cutoff"
+            except (TypeError, ValueError):
+                reason = "invalid_timestamp"
+        if reason:
+            flags.append({"event_id": event_id, "reason": reason, "rows": 1})
+        else:
+            candidates[event_id] = event
+    requests = {k: v for k, v in candidates.items() if v["kind"] == "request"}
+    valid = dict(candidates)
+    for event_id, event in candidates.items():
+        if event["kind"] != "confirmation":
+            continue
+        request = requests.get(event.get("request_id"))
+        reason = None
+        if request is None:
+            reason = "missing_valid_request"
+        elif request["subscription_id"] != event["subscription_id"]:
+            reason = "subscription_mismatch"
+        elif timestamp(event["at"]) < timestamp(request["at"]):
+            reason = "confirmation_before_request"
+        if reason:
+            valid.pop(event_id)
+            flags.append({"event_id": event_id, "reason": reason, "rows": 1})
+    confirmations = [v for v in valid.values() if v["kind"] == "confirmation"]
+    completed_requests = {v["request_id"] for v in confirmations}
+    queue = sorted(set(requests) - completed_requests)
+    evidence = []
+    for subscription_id in sorted(subscriptions):
+        events = [v for v in valid.values() if v["subscription_id"] == subscription_id]
+        states = [v for v in events if v["kind"] in ("confirmation", "active_observation")]
+        pending = [k for k in queue if requests[k]["subscription_id"] == subscription_id]
+        if states:
+            latest_time = max(timestamp(v["at"]) for v in states)
+            latest = [v for v in states if timestamp(v["at"]) == latest_time]
+            if len({v["kind"] for v in latest}) > 1:
+                state = "conflicting_state_observations"
+            else:
+                state = ("recorded_cancellation" if latest[0]["kind"] == "confirmation"
+                         else "observed_active")
+            observed_at = latest_time.isoformat()
+        else:
+            state = "request_without_confirmation" if pending else "unknown"
+            observed_at = None
+        evidence.append({"subscription_id": subscription_id, "evidence_state": state,
+                         "state_observed_at": observed_at, "requests_to_review": pending})
+    correct_cancelled = sorted(r["subscription_id"] for r in evidence
+                               if r["evidence_state"] == "recorded_cancellation")
+    request_as_completion = sorted({v["subscription_id"] for v in requests.values()})
+    traces = [{"event_id": k, "asserted_kind": v["kind"],
+               "modeled_class": EVENT_CLASS[v["kind"]],
+               "parent_class": "ServiceRecord",
+               "subscription_id": v["subscription_id"], "at": v["at"]}
+              for k, v in sorted(valid.items())]
+    return {"synthetic": True, "cutoff": data["cutoff"],
+            "raw_rows": len(data["events"]), "accepted_unique_events": len(valid),
+            "subscription_denominator": len(subscriptions),
+            "valid_request_denominator": len(requests),
+            "request_ids_to_review": queue,
+            "confirmed_subscription_ids": correct_cancelled,
+            "request_as_completion_subscription_ids": request_as_completion,
+            "confirmed_share": len(correct_cancelled) / len(subscriptions),
+            "request_as_completion_share": len(request_as_completion) / len(subscriptions),
+            "flags": flags, "evidence": evidence, "classification_trace": traces}
+
+
+if __name__ == "__main__":
+    data = json.loads((ROOT / "data/cancellation_records.json").read_text())
+    result = calculate(data)
+    output = ROOT / "results"
+    output.mkdir(exist_ok=True)
+    (output / "cancellations.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps({k: result[k] for k in ("accepted_unique_events",
+          "request_ids_to_review", "confirmed_share", "request_as_completion_share")}, indent=2))
+\end{Verbatim}
 
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
@@ -7341,6 +7592,33 @@ if __name__ == "__main__":
     run(parser.parse_args().output)
 \end{Verbatim}
 
+\hypertarget{M04-stable-segments-and-substantive-meaning}{%
+\section{Stable Segments and Substantive
+Meaning}\label{M04-stable-segments-and-substantive-meaning}}
+
+\noindent \noindent A marketing manager uses customer-text features to define
+segments and allocate service resources. A feature that reconstructs
+common wording accurately may contribute little to identifying a
+complaint that requires attention. Evaluate the representation against
+the intended decision before interpreting its clusters. The synthetic
+comparison in §7.39 holds the case population fixed while contrasting
+aggregate reconstruction with recall of cases requiring review.
+
+Cluster labels and feature coordinates can change across seeds even when
+an objective value changes little. Align cluster memberships or feature
+directions under a stated matching rule before comparing repeated fits.
+Report the population, preprocessing, number of groups, and matching
+criterion. Stable assignments support reproducibility under those
+choices; external behaviors or independently coded text provide evidence
+for a substantive segment interpretation. A segment name proposed by an
+LLM is a hypothesis requiring that evidence.
+
+A high-value segment describes a firm's valuation under a specified
+horizon and cost model. It does not establish the customer's preferences
+or permission to receive a particular intervention. Keep segment
+definitions, predicted responses, customer outcomes, and authorization
+records separate when selecting an action.
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -10079,6 +10357,43 @@ still gives 100\%. The representation error now affects a larger share
 of people. Returning to the original population and assigning every zone
 its own group reproduces the original routes. These comparisons hold the
 travel network fixed and change one object at a time.
+
+\hypertarget{M05-attributed-claims-and-graph-relationships}{%
+\section{Attributed Claims and Graph
+Relationships}\label{M05-attributed-claims-and-graph-relationships}}
+
+\noindent \noindent An analyst comparing firms' pricing communication needs to
+distinguish a speaker's claim from the event described by that claim.
+Store the speaker, firm, call date, quoted or paraphrased statement,
+source location, and relevant reporting period. A statement that demand
+improved belongs first to a record of what was said. Treating it
+immediately as an observed change in demand removes the distinction
+between communication and measurement.
+
+A knowledge graph can connect statements to speakers, documents,
+products, and periods. An ontology supplies definitions and inference
+rules for those relationships. Graph-based retrieval can use connections
+to select context for an answer, but retrieval performance still depends
+on source coverage, extraction accuracy, and answer evaluation.
+\href{https://microsoft.github.io/graphrag/}{Microsoft's GraphRAG
+documentation} describes graph-based indexing and retrieval; those
+operations do not establish logical entailment or empirical truth by
+themselves.
+
+Preserve disagreements instead of merging statements solely because they
+share a topic label. Gross revenue and net revenue, a forecast and a
+realized outcome, or different fiscal periods can support different
+values without a contradiction. Assess definitions and timing before
+assigning a conflict. If an LLM extracts a relation, retain its evidence
+span and check a sample against the original document. A contradiction
+inferred from a graph can identify a useful review target even when the
+source of the problem is a modeling assumption.
+
+Representations used for retrieval or classification require a separate
+evaluation. Section 7.40 explains why exact reconstruction can coexist
+with different feature decompositions. Compare retrieval relevance,
+claim attribution, and downstream errors directly before interpreting a
+feature as a customer motive or a corporate strategy.
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
@@ -16923,6 +17238,278 @@ outcome should leave fitted preprocessing and predictions unchanged.
 Scored performance may change because the reference outcome changed.
 This distinction makes the information restriction testable.
 
+\hypertarget{M07-reconstruction-quality-and-customer-review}{%
+\section{Reconstruction Quality and Customer
+Review}\label{M07-reconstruction-quality-and-customer-review}}
+
+\noindent \noindent A service manager chooses a representation of customer
+messages to identify cases requiring review. Total reconstruction
+quality rewards recovery of the coordinates with the most variation. If
+writing style varies much more than the signal used for review, a
+representation can preserve nearly all total variation while discarding
+the information required for the decision.
+
+For a fixed evaluation sample of \(n\) cases with \(p\) orthogonal
+coordinates, define the fraction of variance unexplained by the ratio of
+total squared reconstruction error to total centered variation:
+
+\[
+\operatorname{FVU}=\frac{\sum_{i=1}^{n}\sum_{j=1}^{p}(x_{ij}-\widehat{x}_{ij})^2}
+{\sum_{i=1}^{n}\sum_{j=1}^{p}(x_{ij}-\bar{x}_{j})^2}
+=\sum_{j=1}^{p} w_j\operatorname{FVU}_j,
+\qquad
+w_j=\frac{V_j}{\sum_{k=1}^{p}V_k}.
+\]
+
+Here \(x_{ij}\) is coordinate \(j\) of case \(i\), \(\widehat{x}_{ij}\)
+is its reconstruction, \(\bar{x}_j\) is the coordinate mean over the
+same cases, and \(V_j=\sum_i(x_{ij}-\bar{x}_j)^2\). For a coordinate
+with positive variation, \(\operatorname{FVU}_j\) divides its squared
+error by \(V_j\). The weights sum to one. Coordinate units determine the
+relative penalties, and a zero-variation coordinate requires separate
+handling. The explained share is \(1-\operatorname{FVU}\) and may be
+negative when reconstruction is sufficiently poor.
+
+Consider four equally weighted synthetic cases with vectors
+\((-100,-1)\), \((-100,1)\), \((100,-1)\), and \((100,1)\). The first
+coordinate is an imposed style score. The second is an imposed review
+score, with positive values defining the two cases that require review.
+Both means are zero; the coordinate sums of squares are 40,000 and 4.
+Representation A preserves the first coordinate and sets the second to
+zero. Representation B multiplies the first by 0.98 and preserves the
+second. These are fixed transformations of invented vectors, with no
+estimated embeddings or trained model.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}@{}}
+\toprule
+Representation & Total Squared Error & Variance Explained & Recall of
+Review-Required Cases \\
+\midrule
+
+A & 4 & 99.990001\% & 0 of 2 \\
+B & 16 & 99.960004\% & 2 of 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The routing rule sends a case for review when its reconstructed second
+coordinate is strictly positive. A achieves lower reconstruction error
+while missing both positive cases. B recovers the information required
+by the stated decision. Accuracy over all four cases is 50\% for A and
+100\% for B. The denominator of recall remains the two cases requiring
+review; accuracy uses all four.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_reconstruction_routing.tex}
+\caption{At style scale 100, representation A has the higher aggregate reconstruction score and zero review recall; B preserves the review signal. Rescaling style reverses the aggregate ranking without changing routing.}\label{fig:M07_reconstruction_routing}
+\end{figure}
+
+Changing the first-coordinate scale from 100 to 1 reverses the aggregate
+ranking. A then explains 50\% of variation and B explains 99.98\%, while
+routing is unchanged. Standardization changes the implicit error
+weights. Whether those weights are useful depends on the objective and
+the consequences of losing each kind of information. Evaluate component
+errors and decision outcomes alongside aggregate reconstruction.
+
+Delisle and Tan's \href{https://arxiv.org/abs/2611.13548v1}{Massive
+Activations Confound Sparse Autoencoders} studies related evaluation
+problems in internal language-model activations. A dominant direction
+can make total reconstruction look strong while errors elsewhere remain
+material. Their proposed bypass preserves the dominant projection in the
+reconstructed activation. Removing the first principal component from
+customer data would be a different intervention whose value requires its
+own evaluation. The
+\href{../01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md}{source
+review} separates model-specific published results and feature-matching
+conventions from these original marketing calculations.
+
+The complete program reads the
+\href{../03_Data_and_Code/Representation_Evaluation/DATA_DICTIONARY.md}{four
+synthetic cases}, records every reconstruction, and checks the
+weighted-error identity. Its evaluation means summarize the fixed cases;
+they are not fitted preprocessing. For a learned system, fit
+preprocessing and select the representation using training and
+validation data, then preserve independent customer and time groups as
+appropriate for evaluation. The held-out review labels should come from
+evidence appropriate to the service objective.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Representation_Evaluation/evaluate_representations.py}{evaluate\_representations.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Compare reconstruction and routing on four invented text representations."""
+from pathlib import Path
+import json
+import math
+
+ROOT = Path(__file__).resolve().parent
+
+
+def score(points, reconstructed):
+    if len(points) != len(reconstructed) or not points:
+        raise ValueError("Supply matching nonempty inputs")
+    n = len(points)
+    means = [sum(p[j] for p in points) / n for j in (0, 1)]
+    variation = [sum((p[j] - means[j]) ** 2 for p in points) for j in (0, 1)]
+    if min(variation) <= 0:
+        raise ValueError("Both component variances must be positive")
+    errors = [sum((p[j] - q[j]) ** 2 for p, q in zip(points, reconstructed))
+              for j in (0, 1)]
+    expected = [p[1] > 0 for p in points]
+    routed = [q[1] > 0 for q in reconstructed]
+    positives = sum(expected)
+    if positives == 0:
+        raise ValueError("Recall needs at least one review-required case")
+    total_fvu = sum(errors) / sum(variation)
+    component_fvu = [e / v for e, v in zip(errors, variation)]
+    weights = [v / sum(variation) for v in variation]
+    weighted = sum(w * e for w, e in zip(weights, component_fvu))
+    if not math.isclose(weighted, total_fvu, rel_tol=1e-12, abs_tol=1e-12):
+        raise AssertionError("Component errors must reproduce total error")
+    return {"records": n, "variation": variation, "squared_errors": errors,
+            "variance_weights": weights, "component_fvu": component_fvu,
+            "total_fvu": total_fvu, "variance_explained_pct": 100 * (1 - total_fvu),
+            "review_required": positives, "routed": sum(routed),
+            "true_positives": sum(a and b for a, b in zip(expected, routed)),
+            "recall": sum(a and b for a, b in zip(expected, routed)) / positives,
+            "accuracy": sum(a == b for a, b in zip(expected, routed)) / n}
+
+
+def calculate(data):
+    identifiers = [r["case_id"] for r in data["cases"]]
+    if len(set(identifiers)) != len(identifiers):
+        raise ValueError("Case identifiers must be unique")
+    results = []
+    for scale in data["style_scales"]:
+        points = [(scale * r["style_sign"], r["review_signal"]) for r in data["cases"]]
+        representations = {
+            "A": [(p[0], 0) for p in points],
+            "B": [(data["representation_B_style_multiplier"] * p[0], p[1]) for p in points],
+        }
+        for name, values in representations.items():
+            results.append({"style_scale": scale, "representation": name,
+                            "case_ids": identifiers, "inputs": points,
+                            "reconstructed": values, **score(points, values)})
+    return {"synthetic": True, "weights": "Equal weight per case",
+            "routing_rule": "Review when reconstructed second coordinate is strictly positive",
+            "results": results}
+
+
+if __name__ == "__main__":
+    data = json.loads((ROOT / "data/cases.json").read_text())
+    result = calculate(data)
+    output = ROOT / "results"
+    output.mkdir(exist_ok=True)
+    (output / "representations.json").write_text(json.dumps(result, indent=2) + "\n")
+    for row in result["results"]:
+        print(f"Scale {row['style_scale']}: {row['representation']}, "
+              f"variance explained {row['variance_explained_pct']:.6f}%, recall {row['recall']:.0%}")
+\end{Verbatim}
+
+\hypertarget{M07-feature-decompositions-and-interpretation}{%
+\section{Feature Decompositions and
+Interpretation}\label{M07-feature-decompositions-and-interpretation}}
+
+\noindent \noindent A manager may want an explanation for why a text
+representation identifies a customer concern. Exact reconstruction alone
+does not identify a unique set of underlying features. Different
+weighted directions can reproduce the same vector, and removing one
+contribution can have different consequences under different
+decompositions.
+
+For the synthetic target vector \(x=(2,0)\), choose a positive slope
+\(a\) and two unit directions \(d_+=(1,a)/\sqrt{1+a^2}\) and
+\(d_-=(1,-a)/\sqrt{1+a^2}\). Giving each direction coefficient
+\(\sqrt{1+a^2}\) yields contributions \((1,a)\) and \((1,-a)\), whose
+sum is \(x\). At \(a=1\) the contributions are \((1,1)\) and \((1,-1)\);
+at \(a=2\) they are \((1,2)\) and \((1,-2)\). Both reconstruct exactly
+while describing different directions.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_nonunique_features.tex}
+\caption{Two pairs of contributions reconstruct the same target. Their vertical components cancel; removing one contribution produces different errors.}\label{fig:M07_nonunique_features}
+\end{figure}
+
+Removing the first contribution leaves \((1,-a)\) and gives squared
+error \(1+a^2\). The errors are therefore 2 and 5. This removal
+calculation is conditional on the chosen dictionary and operation. It
+does not establish a causal customer mechanism. The sums of the
+nonnegative coefficients are \(2\sqrt{2}\) and \(2\sqrt{5}\), so a loss
+that also penalizes those coefficients need not assign the two
+decompositions equal value. The equality concerns reconstruction alone.
+
+Feature evaluation should distinguish reproducibility, predictive
+usefulness, and interpretation. Repeated fits can be compared after a
+specified matching procedure that handles feature ordering and any
+relevant sign convention. A downstream task tests retained information
+under a chosen decision rule. Intervening on a model feature tests the
+consequence of that intervention within the model; linking it to an
+economic mechanism requires additional assumptions and evidence.
+Independently coded cases and sensitivity to alternative representations
+help assess a proposed meaning. An appealing feature name supplies no
+such validation by itself.
+
+The following program constructs the two decompositions exactly, checks
+unit norms and reconstructed coordinates, and reports the removal
+errors. No sparse autoencoder is trained, and the calculation makes no
+claim about the frequency of such behavior in customer data.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Representation_Evaluation/compare_decompositions.py}{compare\_decompositions.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Exact nonunique vector decompositions; no autoencoder training."""
+from pathlib import Path
+import json
+import math
+
+ROOT = Path(__file__).resolve().parent
+
+
+def calculate():
+    target = (2.0, 0.0)
+    rows = []
+    for slope in (1.0, 2.0):
+        coefficient = math.sqrt(1 + slope ** 2)
+        directions = [(1 / coefficient, slope / coefficient),
+                      (1 / coefficient, -slope / coefficient)]
+        contributions = [tuple(coefficient * x for x in direction)
+                         for direction in directions]
+        reconstructed = tuple(sum(c[j] for c in contributions) for j in (0, 1))
+        for direction in directions:
+            if not math.isclose(sum(x * x for x in direction), 1.0):
+                raise AssertionError("Directions must have unit norm")
+        if not all(math.isclose(x, y, abs_tol=1e-12)
+                   for x, y in zip(reconstructed, target)):
+            raise AssertionError("Both decompositions must match the target")
+        removal_error = sum((x - y) ** 2 for x, y in zip(target, contributions[1]))
+        rows.append({"slope": slope, "coefficient_per_direction": coefficient,
+                     "unit_directions": directions, "contributions": contributions,
+                     "reconstructed": reconstructed,
+                     "squared_error_after_removing_first": removal_error})
+    return {"synthetic": True, "target": target, "results": rows}
+
+
+if __name__ == "__main__":
+    result = calculate()
+    output = ROOT / "results"
+    output.mkdir(exist_ok=True)
+    (output / "decompositions.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -21186,5 +21773,50 @@ response, a person's stated preference, and observed behavior. Neither
 philosophical perspective assigns a numerical validation threshold or
 turns accurate prediction into permission to substitute generated
 consent for a person's decision.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-definitions-evidence-and-permission}{%
+\section{Definitions, Evidence, and
+Permission}\label{M09-definitions-evidence-and-permission}}
+
+\noindent \noindent A firm can make a practice appear successful by choosing
+categories that absorb the very outcome under dispute. Defining a
+cancellation request as a completed cancellation makes the two
+equivalent in a report even when execution remains unresolved. Defining
+continued payment as satisfaction can similarly conceal customers who
+face obstacles to leaving. Examine the definitions and the evidence
+connecting them to the claimed outcome before accepting the commercial
+interpretation.
+
+Kantian scrutiny asks whether the inference has remained within the
+conditions that support it. A prediction of acceptance is a statement
+about behavior under a model and information set. Permission concerns
+whether an action has been authorized under the relevant conditions.
+Moving from one to the other requires a premise about authorization that
+predictive accuracy does not supply. A firm's commercial objective also
+leaves open which means can be justified to the people affected. These
+distinctions support separate evidence for preferences, consent,
+withdrawal, and actual service execution.
+
+Confucian attention to the rectification of names gives a related
+question about the fit between a role or description and conduct.
+Calling a process a cancellation service carries expectations about what
+it accomplishes for the customer. A record system that measures only
+requests can assess demand for that service, while evidence of
+completion bears on whether the service performed its role. Preserve the
+distinction even when the more favorable label benefits the firm. The
+philosophical accounts developed in §§9.3 and 9.11 inform this
+comparison; the application to data definitions is an interpretation.
+
+A logically consistent classification system can encode unsupported
+assumptions. A contradiction can arise from an erroneous record,
+incompatible periods, or an unsuitable rule. Trace the claim to its
+source, time, definition, and inference, and assess each part. The
+cancellation example in §2.25 preserves unknown states and directs
+unresolved records to review. The feature examples in §§7.39--7.40 show
+why reconstruction and interpretive labels require separate evaluation.
+Neither logical coherence nor a high model score establishes the ethical
+legitimacy of a marketing practice.
 
 \end{document}

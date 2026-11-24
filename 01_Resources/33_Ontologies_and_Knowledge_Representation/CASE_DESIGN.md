@@ -1,33 +1,21 @@
-# Cancellation Records and Customer Intent
+# Cancellation Records and Customer Evidence
 
-## Managerial Decision
+## Managerial Decision and Course Placement
 
-A subscription business needs to identify cancellation requests that still require a response. Students define an account, a subscription, a request, a confirmed cancellation, and a subscription state at a particular time. The observation unit for service performance is a request; the unit for a customer-state report is a subscription at the reporting cutoff. Joining these objects without preserving their units can count one customer several times or treat a request as a completed action.
+A subscription manager needs a review queue and a recorded cancellation share at a fixed cutoff. M1 §1.16 defines objects, events, inference, and validation. M2 §2.25 supplies the complete program and a four-subscription comparison. M5 §5.25 connects attributed claims to evidence; M9 §9.19 examines definitions and permission.
 
-## Proposed Sequence
+## Implemented Comparison
 
-1. Give students a small, explicitly synthetic set of subscriptions and events. Include a request awaiting confirmation, a confirmed cancellation, an active subscription, and a subscription with no recent status observation.
-2. Ask them to define relations such as `requestConcernsSubscription`, `submittedByAccount`, and `confirmedAt`. Require stable identifiers and timestamps.
-3. Ask what follows from each recorded relation. A request concerning a subscription establishes its subject; it does not establish completion. Missing confirmation remains unknown unless a stated completeness assumption warrants a different interpretation.
-4. Compare two AI-generated specifications. One equates a request with cancellation; the other preserves the distinction. Students trace the resulting difference in the service queue before writing a larger program.
-5. Add validation for duplicate request identifiers, missing timestamps, and confirmation preceding the request. Retain both source records and an explanation of each finding.
-6. Challenge an axiom that treats any purchaser as authorized for promotional contact. Students identify the missing evidence and specify an explicit permission record with its scope and time.
+The [original synthetic input](../../03_Data_and_Code/Ontology_and_Evidence/DATA_DICTIONARY.md) contains eight raw event rows. Four unique events survive the stated duplicate, timestamp, cutoff, and chronology conditions. Request r1 requires review. One of four subscriptions has a latest recorded cancellation; equating accepted requests with completion reports two of four. A dated active observation and an unknown state remain distinct. Moving the cutoff changes available evidence.
 
-This is a proposed original exercise. Synthetic records and executable Python would be released together with the detailed lecture example. No legal entitlement is inferred from the illustrative commercial categories.
+The [complete Python](../../03_Data_and_Code/Ontology_and_Evidence/README.md) records all flags and a classification trace; eight independent tests passed. It uses explicit Python conditions, without executing an OWL reasoner or SHACL engine. No legal conclusion follows from the synthetic record categories.
 
-## Recurring Course Cases
+## Teaching Sequence
 
-| Case | Objects and Relationships to Preserve | Question That Exposes a Modeling Error |
-| --- | --- | --- |
-| mHealth | Person, day, logging event, food entry, nutrient amount, and measurement unit | Does a day with no log establish zero consumption? |
-| Restaurant Availability | Store, timestamped status observation, source, and observation age | Does an unavailable menu item establish a mechanical failure? |
-| Earnings Calls | Speaker, attributed claim, source passage, reporting period, and company | Does management's explanation identify a causal effect? |
-| Customer Segmentation | Customer, measurement period, membership rule, and segment description | Can loyalty and price sensitivity coexist under the definitions? |
+Session 1 uses five minutes for definitions, inference, validation, and evidence. Session 2 uses fifteen minutes for the records and queue. Session 14 adds a five-minute connection to the reasons supporting commercial classifications. The [optional lab](../../07_Labs/Ontology_and_Evidence/README.md) extends cutoff and conflict checks. No graded requirement is introduced.
 
-These questions reuse existing distinctions in the notes. The ontology exercise makes the relevant definitions explicit and traceable rather than creating new empirical findings.
+An editable Illinois-color diagram separates recorded events, modeled classes, validation, state evidence, and the review decision. The complete record table, code, and diagram description remain readable as Markdown. The future wiki can let students predict a rule consequence before revealing its trace; that interaction remains unimplemented.
 
-## Figures and Interaction
+## Recurring Applications
 
-An editable TikZ diagram can show an account linked to a subscription, then to a request and a separate confirmation event. Solid arrows denote recorded links; dashed arrows denote permitted inferences. Navy, orange, text labels, and line patterns distinguish the categories. A second panel changes only the request-to-completion rule and shows the resulting service queue. A text table lists every fact and inference.
-
-For a future static wiki, let students select a rule, predict its consequence, and reveal the proof. Keep the original evidence visible when a rule changes. The implementation should distinguish recorded facts, logical consequences, validation findings, and unresolved observations. An inference's derivation describes why it follows from the model; its source record supports whether its premise is credible.
+mHealth separates logging from consumption. Restaurant records separate an observation from a mechanical-failure diagnosis. Earnings calls preserve a speaker's claim and its period separately from an observed outcome. Segmentation distinguishes a membership rule from a substantive customer preference. These applications reuse existing evidence distinctions without producing additional empirical results.

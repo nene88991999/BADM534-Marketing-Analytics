@@ -185,3 +185,9 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Graph Coarsening and Information Restrictions
 
 [The pinned GraCo review](../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md) supports M5 §5.24 and M7 §7.38. [Original executed cases](../03_Data_and_Code/Graph_Coarsening/README.md) distinguish revenue preservation from access, original-node weights from group weights, and oracle label diagnostics from fitted prediction. Nine independent tests verify arithmetic and information-set comparisons. No upstream toolkit or GNN training was executed.
+
+## Ontologies and Representation Evaluation
+
+[The ontology review](../01_Resources/33_Ontologies_and_Knowledge_Representation/SOURCE_REVIEW.md) informs M1 §1.16 and M2 §2.25. The original cancellation case preserves requests, confirmations, unknown states, dated evidence, and row-level validation findings. Eight independent tests accompany complete Python and an editable diagram. M5 §5.25 preserves source-attributed claims; M9 §9.19 connects definitions to Kantian inference and Confucian role expectations.
+
+[Delisle and Tan's paper and pinned repository](../01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md) inform M7 §§7.39–7.40. Two original programs and six tests examine reconstruction, coordinate scales, review recall, and nonunique exact decompositions. Two editable figures preserve the different denominators and dictionary-dependent removal errors. M4 §4.25 connects reproducibility with segment interpretation. These synthetic examples do not reproduce sparse-autoencoder training or estimate marketing effects. Third-party source notices remain intact.

@@ -33,3 +33,7 @@ The course outline includes concept screening in the February 17 product-design 
 ## Network Compression Coverage
 
 The syllabus includes network compression and retail access in Meeting 7 and label leakage within prediction in Meeting 11. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the examples within existing 170-minute meetings. The [optional lab](../07_Labs/Graph_Coarsening/README.md) has no graded requirement.
+
+## Definitions and Evidence in the Course Outline
+
+The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Dates, times, room, and stable calendar event identifiers are unchanged. Detailed calculations are available in the lecture notes and two optional ungraded labs.

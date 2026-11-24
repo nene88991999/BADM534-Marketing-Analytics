@@ -175,6 +175,59 @@ M2, Section 2.16.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/
 
 M2, Section 2.16.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
 \end{frame}
+\begin{frame}{Cancellation Evidence and the Review Queue}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M01_cancellation_evidence.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The available records support classification, checks, and a bounded service decision.\par}
+\note{All records are synthetic. The January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The diagram represents explicit operational conditions rather than a complete ontology reasoner.
+
+M1 §1.16 and M2 §2.25. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Which Cancellation Share?}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Evidence or Rule & Count & Denominator \\
+\midrule
+Accepted unique events & 4 & 8 raw rows \\
+Recorded cancellations & 1 & 4 subscriptions \\
+Requests counted as completion & 2 & 4 subscriptions \\
+Request needing review & r1 & 2 valid requests \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Synthetic January 31 report: the definition changes 25\% to 50\%.
+\vfill
+\note{The four omitted rows are one extra duplicate, one missing timestamp, one confirmation after the cutoff, and one confirmation before its request. The accepted cancellation belongs to s2. Request r1 for s1 remains unresolved in the available evidence. The active observation for s3 is dated; s4 is unknown. Absence of accepted evidence does not establish failure outside the file.
+
+M1 §1.16 and M2 §2.25. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}[fragile]{Preserve the Reason for Review}
+\usebeamercolor[fg]{normal text}
+\noindent From accepted requests and confirmations at the same cutoff:
+\begin{lstlisting}
+completed = {event["request_id"] for event in confirmations}
+queue = sorted(set(requests) - completed)
+assert queue == ["r1"]
+\end{lstlisting}
+{\small Compare the queue with raw records and every exclusion reason.\par}
+\note{This short snippet follows validation in the complete assess\_cancellations.py program. Run the full example from its folder README. Moving the cutoff to February 2 admits the later confirmation and clears the queue. Keep the original report tied to its original cutoff. The query finds absent confirmations in the supplied records, with no general completeness assumption.
+
+M1 §1.16 and M2 §2.25. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
 \begin{frame}{Earnings Calls: Missing Text and Zero Matches}
 \usebeamercolor[fg]{normal text}
 \vfill

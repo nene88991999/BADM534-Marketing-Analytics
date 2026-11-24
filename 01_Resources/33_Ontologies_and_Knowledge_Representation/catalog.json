@@ -1,7 +1,7 @@
 {
   "namespace": "ontology-representation",
   "reviewed_on": "2026-11-24",
-  "status": "Source review and proposed course exercises; lecture integration pending.",
+  "status": "Integrated in lecture notes, session slides, original executed examples, and optional ungraded practice.",
   "resources": [
     {
       "id": "OR01",
@@ -77,5 +77,6 @@
   ],
   "review": "SOURCE_REVIEW.md",
   "case_design": "CASE_DESIGN.md",
-  "manifest": "manifest.json"
+  "manifest": "manifest.json",
+  "implemented_on": "2026-11-24"
 }

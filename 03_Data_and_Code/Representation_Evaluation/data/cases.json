@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "description": "Invented centered text coordinates; no language model or customer records.",
+  "cases": [
+    {"case_id": "c1", "style_sign": -1, "review_signal": -1},
+    {"case_id": "c2", "style_sign": -1, "review_signal": 1},
+    {"case_id": "c3", "style_sign": 1, "review_signal": -1},
+    {"case_id": "c4", "style_sign": 1, "review_signal": 1}
+  ],
+  "style_scales": [100, 1],
+  "representation_B_style_multiplier": 0.98
+}

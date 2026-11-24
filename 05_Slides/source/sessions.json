@@ -7,7 +7,8 @@
     "objectives": [
       "Specify an action, observation unit, information set, and outcome horizon.",
       "Translate a small marketing calculation into readable Python.",
-      "Verify generated code using identities and counterexamples."
+      "Verify generated code using identities and counterexamples.",
+      "Distinguish a definition, an inference, a validation condition, and source evidence."
     ],
     "slides": [
       {
@@ -89,6 +90,30 @@
         ],
         "notes": "A numeric-looking string requires conversion before arithmetic. A negative quantity may be a legitimate return. A rule should preserve a trace from the original record to its inclusion or exclusion.",
         "source": "M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Request and a Completed Action",
+        "bullets": [
+          "Define accounts, subscriptions, requests, and confirmations.",
+          "Attach each record to its source and observation time.",
+          "A request establishes an intention recorded by the service.",
+          "Completion requires evidence of the subsequent action."
+        ],
+        "notes": "An ontology specifies classes, relationships, and inference rules. A CancellationRequest can belong to the broader ServiceRecord class. The class assignment does not establish execution of a cancellation. A data dictionary and explicit event relationships make AI-generated calculations reviewable.",
+        "source": "M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Inference, Validation, and Evidence",
+        "bullets": [
+          "Inference follows from stated facts and rules.",
+          "Validation checks supplied records against requirements.",
+          "Missing information can remain unknown.",
+          "Source evidence supports whether a premise is credible."
+        ],
+        "notes": "An OWL domain axiom can infer a subject type; it need not reject a missing explicit type. A timestamp requirement can instead flag missing data. A consistent model can contain false premises, and a contradiction may reveal an inappropriate axiom. The original Python case implements explicit checks, not OWL or SHACL. W3C OWL 2 Primer and SHACL supply the formal distinctions.",
+        "source": "M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md https://www.w3.org/TR/owl2-primer/ https://www.w3.org/TR/shacl/"
       },
       {
         "kind": "figure",
@@ -249,7 +274,8 @@
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
-      "[Reproducible recommendation and optional practice](../07_Labs/Reproducible_Recommendations/README.md)"
+      "[Reproducible recommendation and optional practice](../07_Labs/Reproducible_Recommendations/README.md)",
+      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)"
     ],
     "practice": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
     "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision."
@@ -262,7 +288,8 @@
     "objectives": [
       "Construct customer metrics with explicit populations and denominators.",
       "Separate missing observations, zeros, and unmatched keys.",
-      "Assess changing coverage in mHealth, McBroken, and earnings-call records."
+      "Assess changing coverage in mHealth, McBroken, and earnings-call records.",
+      "Preserve requests, confirmations, unknown states, and the reporting cutoff."
     ],
     "slides": [
       {
@@ -389,6 +416,58 @@
         "source": "M2, Section 2.16.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
+        "kind": "figure",
+        "title": "Cancellation Evidence and the Review Queue",
+        "figure": "../06_Lecture_Notes/figures/M01_cancellation_evidence.tex",
+        "caption": "The available records support classification, checks, and a bounded service decision.",
+        "description": "A recorded request is classified as a service record and checked for identifiers, time, and cutoff. Accepted requests are compared with dated state evidence. A request without an accepted confirmation enters review; missing confirmation alone does not prove active status.",
+        "notes": "All records are synthetic. The January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The diagram represents explicit operational conditions rather than a complete ontology reasoner.",
+        "source": "M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "table",
+        "title": "Which Cancellation Share?",
+        "headers": [
+          "Evidence or Rule",
+          "Count",
+          "Denominator"
+        ],
+        "rows": [
+          [
+            "Accepted unique events",
+            "4",
+            "8 raw rows"
+          ],
+          [
+            "Recorded cancellations",
+            "1",
+            "4 subscriptions"
+          ],
+          [
+            "Requests counted as completion",
+            "2",
+            "4 subscriptions"
+          ],
+          [
+            "Request needing review",
+            "r1",
+            "2 valid requests"
+          ]
+        ],
+        "caption": "Synthetic January 31 report: the definition changes 25% to 50%.",
+        "notes": "The four omitted rows are one extra duplicate, one missing timestamp, one confirmation after the cutoff, and one confirmation before its request. The accepted cancellation belongs to s2. Request r1 for s1 remains unresolved in the available evidence. The active observation for s3 is dated; s4 is unknown. Absence of accepted evidence does not establish failure outside the file.",
+        "source": "M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "code",
+        "title": "Preserve the Reason for Review",
+        "intro": "From accepted requests and confirmations at the same cutoff:",
+        "code": "completed = {event[\"request_id\"] for event in confirmations}\nqueue = sorted(set(requests) - completed)\nassert queue == [\"r1\"]",
+        "check": "Compare the queue with raw records and every exclusion reason.",
+        "notes": "This short snippet follows validation in the complete assess_cancellations.py program. Run the full example from its folder README. Moving the cutoff to February 2 admits the later confirmation and clears the queue. Keep the original report tied to its original cutoff. The query finds absent confirmations in the supplied records, with no general completeness assumption.",
+        "source": "M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
         "kind": "bullets",
         "title": "Earnings Calls: Missing Text and Zero Matches",
         "bullets": [
@@ -470,7 +549,8 @@
       "[mHealth assessment](../03_Data_and_Code/mHealth/recurring_examples/README.md)",
       "[McBroken data and code](../03_Data_and_Code/McBroken/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
-      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)"
+      "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
+      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)"
     ],
     "practice": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.",
     "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations."
@@ -2788,7 +2868,8 @@
       "Distinguish token verification, generation cost, answer correctness, and correct request resolution.",
       "Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule.",
       "Evaluate omitted auxiliary bias separately from sampling variance.",
-      "Distinguish oracle group purity from held-out prediction and detect label use during preprocessing."
+      "Distinguish oracle group purity from held-out prediction and detect label use during preprocessing.",
+      "Compare reconstruction, component errors, feature interpretation, and decision outcomes."
     ],
     "slides": [
       {
@@ -3159,6 +3240,45 @@
         "source": "M7 §7.25. ../03_Data_and_Code/Conformal_Prediction/complaint_sets.py"
       },
       {
+        "kind": "figure",
+        "title": "Reconstruction and Customer Review",
+        "figure": "../06_Lecture_Notes/figures/M07_reconstruction_routing.tex",
+        "caption": "A preserves dominant variation while losing the signal required for review.",
+        "description": "Four invented vectors have style coordinates of plus or minus 100 and review coordinates of plus or minus 1. A has 0.010% total FVU and 0 of 2 review recall; B has 0.040% FVU and 2 of 2 recall. Rescaling style to 1 reverses the FVU ranking without changing routing.",
+        "notes": "The four equally weighted cases are synthetic; no model was trained. A keeps style and sets review to zero. B multiplies style by 0.98 and preserves review. The rule sends cases for review when the reconstructed second coordinate is positive. Accuracy over all four cases is 50% and 100%, while recall uses the two positive cases. Both comparisons use identical records.",
+        "source": "M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Aggregate Error Weights the Components",
+        "intro": "At fixed coordinate units and a common evaluation population:",
+        "equation": "\\operatorname{FVU}=\\sum_j w_j\\operatorname{FVU}_j,\\qquad w_j=\\frac{V_j}{\\sum_k V_k}",
+        "interpretation": "Component variation sets the weights. Decision importance requires separate evaluation.",
+        "notes": "V_j is the sum of squared deviations from the coordinate mean. Each component FVU divides its reconstruction error by positive V_j. The identity uses orthogonal coordinates and the same population. Delisle and Tan study a dominant activation direction in sparse autoencoders. Their bypass retains the projection in the final reconstruction; this is not evidence that deleting the first customer-data component improves a marketing decision.",
+        "source": "M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md Nathan Delisle and Chenhao Tan, Massive Activations Confound Sparse Autoencoders, v1. https://arxiv.org/abs/2611.13548v1"
+      },
+      {
+        "kind": "figure",
+        "title": "Exact Reconstruction, Different Features",
+        "figure": "../06_Lecture_Notes/figures/M07_nonunique_features.tex",
+        "caption": "The selected dictionary determines the contribution removed.",
+        "description": "Contributions (1,1) and (1,-1), or (1,2) and (1,-2), both sum to (2,0). Dashed arrows translate the second contribution. Removing the first leaves squared error 2 or 5. Positive coefficients multiply unit vectors; the coefficient penalties differ.",
+        "notes": "This is an imposed algebraic construction. The positive coefficient sums are two times square root of 2 and two times square root of 5. Equal reconstruction therefore does not imply equal full sparse-autoencoder loss. A removal error depends on the dictionary and does not establish a psychological mechanism.",
+        "source": "M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Evaluate a Feature Before Naming It",
+        "bullets": [
+          "Compare matched features across repeated fits.",
+          "Evaluate retained information on the intended task.",
+          "Check the proposed meaning against independent records.",
+          "Keep causal claims and permission evidence separate."
+        ],
+        "notes": "Feature ordering and any relevant sign convention require an explicit matching procedure. Reproducibility, task utility, and substantive meaning answer different questions. Feature intervention assesses the changed model; an economic causal interpretation needs additional assumptions and evidence. Full calculations and AI-assisted coding extensions are available as optional ungraded practice.",
+        "source": "M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
         "kind": "equation",
         "title": "A Cost-Based Threshold",
         "intro": "Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.",
@@ -3430,7 +3550,9 @@
       "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
       "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)",
       "[Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)",
-      "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)"
+      "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)",
+      "[Representation Evaluation: Data and Code](../03_Data_and_Code/Representation_Evaluation/README.md)",
+      "[Representation Evaluation: Optional Practice](../07_Labs/Representation_Evaluation/README.md)"
     ],
     "practice": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
     "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator."
@@ -4114,6 +4236,18 @@
         "source": "Marketing Dialectics, §§9.1–9.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
+        "kind": "bullets",
+        "title": "Definitions Can Predetermine a Claim",
+        "bullets": [
+          "Does cancellation mean a request or a completed action?",
+          "Does predicted acceptance establish permission?",
+          "Does a service label match its actual conduct?",
+          "Trace the definition, evidence, and inference separately."
+        ],
+        "notes": "M9 §9.19 connects Kantian examination of an inference to the conditions supporting it, and Confucian rectification of names to the responsibilities conveyed by a service description. These are applications of the philosophical accounts in §§9.3 and 9.11. Consistency can coexist with false premises. A model score does not establish the legitimacy of the action it predicts.",
+        "source": "M9 §9.19. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
         "kind": "figure",
         "title": "Commercial Results and Customer Claims",
         "figure": "../06_Lecture_Notes/figures/M09_claim_scope.tex",
@@ -4365,7 +4499,8 @@
       "[Synthetic Renewal and Intent](../03_Data_and_Code/Marketing_Dialectics/README.md)",
       "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)",
       "[Synthetic Consumers and Human Validation](../03_Data_and_Code/Synthetic_Consumers/README.md)",
-      "[Reproducible product recommendation](../03_Data_and_Code/Reproducible_Recommendations/README.md)"
+      "[Reproducible product recommendation](../03_Data_and_Code/Reproducible_Recommendations/README.md)",
+      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)"
     ],
     "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."

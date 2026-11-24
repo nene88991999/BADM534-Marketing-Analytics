@@ -100,3 +100,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Network Compression and Customer Access
 
 [M5 §5.24 and M7 §7.38](03_Data_and_Code/Graph_Coarsening/README.md) compare aggregation weights, preserved revenue, distorted travel, oracle label purity, and outcome use during preprocessing. Complete Python, two editable figures, five slides in Sessions 7 and 11, and [optional practice](07_Labs/Graph_Coarsening/README.md) accompany the synthetic cases.
+
+## Definitions and Representation Quality
+
+[Cancellation evidence](03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.

@@ -1,0 +1,14 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.5cm] (record) at (0,2.3) {Recorded event\\Request for s1\\at a recorded time};
+\node[box,text width=3.5cm] (class) at (4.5,2.3) {Classification\\Cancellation Request\\$\subseteq$ Service Record};
+\node[box,text width=3.5cm] (check) at (9,2.3) {Validation\\Identifier and timing\\Subscription and cutoff};
+\draw[edge] (record) -- (class);
+\draw[edge] (class) -- (check);
+\node[orangebox,text width=3.5cm] (queue) at (9,0) {Review queue\\Request without an\\accepted confirmation};
+\node[box,text width=3.5cm] (state) at (4.5,0) {State evidence\\Dated confirmation\\or active observation};
+\node[box,text width=3.5cm] (limit) at (0,0) {Unknown is possible\\Missing confirmation\\does not prove activity};
+\draw[accent] (check) -- (queue);
+\draw[edge] (state) -- (queue);
+\draw[edge,dashed] (state) -- (limit);
+\node[align=center,text width=12cm] at (4.5,-1.6) {Rules support inferences. Sources support premises.};
+\end{tikzpicture}

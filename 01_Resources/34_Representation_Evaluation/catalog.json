@@ -1,7 +1,7 @@
 {
   "namespace": "representation-evaluation",
   "reviewed_on": "2026-11-24",
-  "status": "Source review, proposed M7 case, and eight executed calculation checks; lecture integration pending.",
+  "status": "Integrated in lecture notes, session slides, original executed examples, and optional ungraded practice.",
   "resources": [
     {
       "id": "RE01",
@@ -49,5 +49,6 @@
   "case_design": "CASE_DESIGN.md",
   "manifest": "manifest.json",
   "verification": "source_checks.json",
-  "original_checks_passed": 8
+  "original_checks_passed": 8,
+  "implemented_on": "2026-11-24"
 }

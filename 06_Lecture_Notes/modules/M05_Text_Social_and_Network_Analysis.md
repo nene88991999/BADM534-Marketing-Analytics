@@ -1577,3 +1577,13 @@ if __name__ == "__main__":
 ```
 
 Change the population at A to 700 while leaving the other three zones at 100. Original access becomes 30%, and the naive coarse calculation still gives 100%. The representation error now affects a larger share of people. Returning to the original population and assigning every zone its own group reproduces the original routes. These comparisons hold the travel network fixed and change one object at a time.
+
+## 5.25 Attributed Claims and Graph Relationships
+
+\noindent An analyst comparing firms' pricing communication needs to distinguish a speaker's claim from the event described by that claim. Store the speaker, firm, call date, quoted or paraphrased statement, source location, and relevant reporting period. A statement that demand improved belongs first to a record of what was said. Treating it immediately as an observed change in demand removes the distinction between communication and measurement.
+
+A knowledge graph can connect statements to speakers, documents, products, and periods. An ontology supplies definitions and inference rules for those relationships. Graph-based retrieval can use connections to select context for an answer, but retrieval performance still depends on source coverage, extraction accuracy, and answer evaluation. [Microsoft's GraphRAG documentation](https://microsoft.github.io/graphrag/) describes graph-based indexing and retrieval; those operations do not establish logical entailment or empirical truth by themselves.
+
+Preserve disagreements instead of merging statements solely because they share a topic label. Gross revenue and net revenue, a forecast and a realized outcome, or different fiscal periods can support different values without a contradiction. Assess definitions and timing before assigning a conflict. If an LLM extracts a relation, retain its evidence span and check a sample against the original document. A contradiction inferred from a graph can identify a useful review target even when the source of the problem is a modeling assumption.
+
+Representations used for retrieval or classification require a separate evaluation. Section 7.40 explains why exact reconstruction can coexist with different feature decompositions. Compare retrieval relevance, claim attribution, and downstream errors directly before interpreting a feature as a customer motive or a corporate strategy.

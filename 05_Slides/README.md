@@ -116,3 +116,7 @@ Sessions 4, 5, 9, and 11 add nine slides on response and bias coefficients, feat
 ## Graph Coarsening and Predictive Evidence
 
 Session 7 adds three slides on group means, access, and preprocessing. Session 11 adds two slides on label purity and outcome information. [Two complete Python programs](../03_Data_and_Code/Graph_Coarsening/README.md), two TikZ figures, and [optional practice](../07_Labs/Graph_Coarsening/README.md) support M5 §5.24 and M7 §7.38. Fifteen minutes in Session 7 and five in Session 11 use existing meeting blocks.
+
+## Definitions, Evidence, and Representation Quality
+
+Sessions 1 and 2 distinguish event definitions, logical inference, validation, and recorded completion. Session 11 compares reconstruction with review recall and examines nonunique features. Session 14 connects classifications to evidence and customer permission. Ten new slides and three editable diagrams accompany [complete Python](../03_Data_and_Code/Representation_Evaluation/README.md) and the [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md). The affected decks contain 25, 23, 52, and 41 slides, respectively; the combined deck contains 389. All fifteen meetings remain 170 minutes.

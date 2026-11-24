@@ -37,3 +37,9 @@ A private repository URL works only with tools authorized to read that repositor
 ## Check the Assistant's Work
 
 A program can run successfully and still answer the wrong question. Inspect a few rows, check totals and units, compare with a simple baseline, and explain the results in your own words. Keep a record of consequential AI assistance when your assessment requires it. Ask for clarification when current course documents leave a requirement unresolved.
+
+## Definitions and Representation Quality
+
+For questions about cancellation records, begin with [the dictionary and executed example](03_Data_and_Code/Ontology_and_Evidence/README.md), then M1 §1.16 and M2 §2.25. Keep raw rows, events, requests, subscriptions, and unknown states distinct. A missing confirmation creates a review condition within the available records.
+
+For feature-quality questions, begin with [the representation example](03_Data_and_Code/Representation_Evaluation/README.md), then M7 §§7.39–7.40. Preserve coordinate scales and denominators, and distinguish reconstruction, task usefulness, matching stability, and causal meaning. No learned model or empirical customer outcome was produced by these synthetic calculations. Optional labs do not establish assignment requirements.

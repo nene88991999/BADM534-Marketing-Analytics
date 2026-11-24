@@ -1,0 +1,43 @@
+{
+  "created_on": "2026-11-24",
+  "data_type": "Original synthetic teaching inputs",
+  "programs": [
+    "evaluate_representations.py",
+    "compare_decompositions.py"
+  ],
+  "python": "3.10+; standard library only",
+  "executed_with": "3.14.8",
+  "tests_passed": 6,
+  "upstream_execution": false,
+  "llm_calls": 0,
+  "sections": [
+    "M4 §4.25",
+    "M7 §§7.39–7.40"
+  ],
+  "files": [
+    {
+      "path": "compare_decompositions.py",
+      "sha256": "f80f4591468484405469661f70c6943e4bb6016277f4eef9be3794490d92c41e"
+    },
+    {
+      "path": "data/cases.json",
+      "sha256": "68241fa5302a3e2366d7791aa561ecfb316136dcb203333c51e323e1a21d7d58"
+    },
+    {
+      "path": "evaluate_representations.py",
+      "sha256": "f7df45d69d72cf530b5bde2678b2e4eb9427543b049ce0ccb4114c043d79cb6e"
+    },
+    {
+      "path": "results/decompositions.json",
+      "sha256": "2aca0b0a2a69deec236ccf21b155667487cbdb32af6c873b2bb57f8df361d36d"
+    },
+    {
+      "path": "results/representations.json",
+      "sha256": "0afeb6e31eba03b73286a5cb2c327b93e36de379004677f08e2bb99619f1903d"
+    },
+    {
+      "path": "test_examples.py",
+      "sha256": "811060ae5c74a7e434d5778bb78066c93321ce874c934f8d5d7b8b57dcb34e16"
+    }
+  ]
+}

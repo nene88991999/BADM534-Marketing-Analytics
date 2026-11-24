@@ -85,6 +85,18 @@
       "path": "07_Labs/Graph_Coarsening/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "ontology-and-evidence",
+      "path": "07_Labs/Ontology_and_Evidence/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
+    },
+    {
+      "id": "representation-evaluation",
+      "path": "07_Labs/Representation_Evaluation/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -251,12 +263,24 @@
     "01_Resources/33_Ontologies_and_Knowledge_Representation/CASE_DESIGN.md",
     "01_Resources/34_Representation_Evaluation/README.md",
     "01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md",
-    "01_Resources/34_Representation_Evaluation/CASE_DESIGN.md"
+    "01_Resources/34_Representation_Evaluation/CASE_DESIGN.md",
+    "03_Data_and_Code/Ontology_and_Evidence/README.md",
+    "03_Data_and_Code/Ontology_and_Evidence/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Ontology_and_Evidence/AGENTS.md",
+    "03_Data_and_Code/Ontology_and_Evidence/VERIFICATION.md",
+    "03_Data_and_Code/Ontology_and_Evidence/results/README.md",
+    "07_Labs/Ontology_and_Evidence/README.md",
+    "03_Data_and_Code/Representation_Evaluation/README.md",
+    "03_Data_and_Code/Representation_Evaluation/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Representation_Evaluation/AGENTS.md",
+    "03_Data_and_Code/Representation_Evaluation/VERIFICATION.md",
+    "03_Data_and_Code/Representation_Evaluation/results/README.md",
+    "07_Labs/Representation_Evaluation/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-23",
+    "updated_on": "2026-11-24",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -300,12 +324,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-23-graph-coarsening",
+    "revision": "2026-11-24-ontology-and-representation",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 99,
-    "pages": 380,
+    "figures_count": 102,
+    "pages": 389,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -325,7 +349,9 @@
     "synthetic_consumer_examples": "03_Data_and_Code/Synthetic_Consumers/README.md",
     "reproducible_recommendations": "03_Data_and_Code/Reproducible_Recommendations/README.md",
     "auxiliary_data_examples": "03_Data_and_Code/Auxiliary_Data/README.md",
-    "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md"
+    "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md",
+    "ontology_examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
+    "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md"
   },
   "datasets": [
     {
@@ -387,7 +413,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-23",
+    "updated_on": "2026-11-24",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -396,7 +422,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 379,
+    "slides": 389,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -443,7 +469,7 @@
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-23",
+    "updated_on": "2026-11-24",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -897,7 +923,7 @@
     "catalog": "01_Resources/33_Ontologies_and_Knowledge_Representation/catalog.json",
     "manifest": "01_Resources/33_Ontologies_and_Knowledge_Representation/manifest.json",
     "reviewed_on": "2026-11-24",
-    "status": "Source review and proposed teaching activities; no lecture or assessment release.",
+    "status": "Integrated into course notes and slides, with original executed examples and public optional ungraded practice",
     "primary_modules": [
       "M1",
       "M2"
@@ -910,7 +936,24 @@
     "model_calls": 0,
     "source_commit": "4fc52fd92f644e03e76880c5de16f0accb4770e7",
     "source_files_archived": 0,
-    "hosted_case_checked": "Detective Case 11: conflicting metric definitions"
+    "hosted_case_checked": "Detective Case 11: conflicting metric definitions",
+    "implemented_on": "2026-11-24",
+    "examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
+    "lab": "07_Labs/Ontology_and_Evidence/README.md",
+    "course_manifest": "03_Data_and_Code/Ontology_and_Evidence/manifest.json",
+    "sections": [
+      "M1 §1.16",
+      "M2 §2.25",
+      "M5 §5.25",
+      "M9 §9.19"
+    ],
+    "sessions": [
+      1,
+      2,
+      14
+    ],
+    "original_programs_executed": 1,
+    "independent_course_tests_passed": 8
   },
   "representation_evaluation": {
     "resources": "01_Resources/34_Representation_Evaluation/README.md",
@@ -919,7 +962,7 @@
     "catalog": "01_Resources/34_Representation_Evaluation/catalog.json",
     "manifest": "01_Resources/34_Representation_Evaluation/manifest.json",
     "reviewed_on": "2026-11-24",
-    "status": "Source review and proposed teaching activities; no lecture or assessment release.",
+    "status": "Integrated into course notes and slides, with original executed examples and public optional ungraded practice",
     "primary_modules": [
       "M7"
     ],
@@ -935,6 +978,21 @@
     "paper_version": "2611.13548v1",
     "verification": "01_Resources/34_Representation_Evaluation/source_checks.json",
     "original_calculation_checks_passed": 8,
-    "source_files_archived": 13
+    "source_files_archived": 13,
+    "implemented_on": "2026-11-24",
+    "examples": "03_Data_and_Code/Representation_Evaluation/README.md",
+    "lab": "07_Labs/Representation_Evaluation/README.md",
+    "course_manifest": "03_Data_and_Code/Representation_Evaluation/manifest.json",
+    "sections": [
+      "M4 §4.25",
+      "M5 §5.25",
+      "M7 §§7.39–7.40",
+      "M9 §9.19"
+    ],
+    "sessions": [
+      11
+    ],
+    "original_programs_executed": 2,
+    "independent_course_tests_passed": 6
   }
 }
