@@ -108,3 +108,9 @@ Private links require authorized access. This file neither grants access nor mak
 - [Implemented M4/M7 Case](01_Resources/31_Auxiliary_Data_and_Bias_Geometry/CASE_DESIGN.md): four invented product profiles, verified allocation arithmetic, and omitted-bias sensitivity.
 - [Full Python and Analytic Tables](03_Data_and_Code/Auxiliary_Data/README.md): source costs, precision, coefficient MSE, six independent checks, and three editable figures.
 - [Optional Ungraded Practice](07_Labs/Auxiliary_Data/README.md): cost and noise sensitivity, bias features, and human validation.
+
+## Graph Coarsening
+
+- [GraCo Source Review](01_Resources/32_Graph_Coarsening/README.md): network reduction, decision outcomes, preprocessing defaults, and information available during evaluation.
+- [Implementation Assessment](01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md): pinned code, metric definitions, label scope, and benchmark limitations.
+- [Proposed Retail-Network Case](01_Resources/32_Graph_Coarsening/CASE_DESIGN.md): exact original aggregation and access calculations; M5/M7 integration remains proposed.

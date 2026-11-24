@@ -242,7 +242,10 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Auxiliary_Data/AGENTS.md",
     "03_Data_and_Code/Auxiliary_Data/results/README.md",
     "03_Data_and_Code/Auxiliary_Data/VERIFICATION.md",
-    "07_Labs/Auxiliary_Data/README.md"
+    "07_Labs/Auxiliary_Data/README.md",
+    "01_Resources/32_Graph_Coarsening/README.md",
+    "01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md",
+    "01_Resources/32_Graph_Coarsening/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -828,6 +831,34 @@ Generated from course.json and the source files identified below. This file cont
     "independent_course_checks_passed": 6,
     "original_figures": 3,
     "scope": "Original analytic four-profile linear model with invented parameters; sampling cost, normal-equation checks, and omitted-bias sensitivity. No human observations, model calls, or empirical replication."
+  },
+  "graph_coarsening": {
+    "resources": "01_Resources/32_Graph_Coarsening/README.md",
+    "review": "01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/32_Graph_Coarsening/CASE_DESIGN.md",
+    "catalog": "01_Resources/32_Graph_Coarsening/catalog.json",
+    "manifest": "01_Resources/32_Graph_Coarsening/manifest.json",
+    "verification": "01_Resources/32_Graph_Coarsening/source_checks.json",
+    "reviewed_on": "2026-11-23",
+    "source_commit": "19da8a6031dcf1803faa5723148b5975a5462af6",
+    "paper_version": "2611.01200v1",
+    "status": "Source review and original checked calculations; M5/M7 integration remains proposed.",
+    "primary_modules": [
+      "M5",
+      "M7"
+    ],
+    "related_modules": [
+      "M1",
+      "M2",
+      "M4",
+      "M9"
+    ],
+    "source_package_executed": false,
+    "gnn_training_executed": false,
+    "model_calls": 0,
+    "original_calculation_checks_passed": 7,
+    "archived_reference_files": 21,
+    "scope": "Four-zone aggregation and travel counterexample, label diagnostics, existing synthetic retail denominator, and selected published metric comparisons; no upstream execution or empirical marketing effects."
   }
 }
 ```
@@ -7868,6 +7899,144 @@ The paper's digital-twin example supplies a separate sensitivity question. Hold 
 Specify a future customer population and product decision. Identify which respondents and concepts would be reserved from prompt selection, bias-feature selection, and final evaluation. Explain how repeated ratings from a respondent affect the sampling unit. Include research setup and validation costs alongside per-response prices, and separate coefficient accuracy from a claim about purchases or customer welfare.
 
 An AI coding assistant can help implement a proposed change after the inputs, units, and expected result are specified. Check its calculations against a hand-worked contrast and the joint-regression checks. Describe any material assistance accurately, following the rules of an applicable assignment if this practice is later used within one.
+
+---
+
+## Source: 01_Resources/32_Graph_Coarsening/README.md
+
+# Graph Coarsening and Marketing Decisions
+
+A firm may compress a large customer or retail network to reduce computation. The relevant question is whether the smaller representation preserves the comparisons used to allocate service, predict demand, or recommend products. A graph can preserve selected features while changing travel access or the treatment of a small customer group.
+
+Antonin Joly's [GraCo repository](https://github.com/Antonin-J/graco) and [working paper](https://arxiv.org/abs/2611.01200v1) provide a common interface for 17 graph-coarsening methods and a random baseline. The [source review](SOURCE_REVIEW.md) connects its mathematical construction, evaluation metrics, and implementation defaults to the course. The [case design](CASE_DESIGN.md) develops original examples for M5 and M7, with shorter connections to M1, M2, M4, and M9.
+
+## Course Connections
+
+| Module | Decision or Analytical Question | Useful Extension |
+|---|---|---|
+| M5 | Does a compressed retail network preserve customers' access to available stores? | Compare original routes, grouped zones, and the population receiving weight. Build on [§5.21](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md). |
+| M7 | Which evaluation criterion supports deploying the smaller model? | Separate label purity, prediction on held-out outcomes, computational cost, and customer consequences. Build on [§7.28](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md). |
+| M4 | What does a group mean represent? | Retain group sizes and distinguish average spending from spending totals; connect to [§4.22](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md). |
+| M1 and M2 | Which data transformations does generated code actually perform? | Inspect graph direction, discarded components, outcome-dependent parameters, and denominator changes. |
+| M9 | Whose needs survive aggregation? | Evaluate group-specific errors and preservation of service access beside the firm's computational saving. |
+
+The strongest placement is a focused extension to the existing networks and model-evaluation material. The seventeen algorithms can remain advanced references. The lecture notes, decks, and assessment requirements have not been changed by this resource review.
+
+## Calculations and Interpretation
+
+[Seven original checks](source_checks.py) run with Python's standard library:
+
+```bash
+python3 01_Resources/32_Graph_Coarsening/source_checks.py
+```
+
+[Saved results](source_checks.json) distinguish invented four-zone arithmetic, label examples, a recalculation of the existing synthetic retail case, and selected published Cora rows. No GraCo dependency was installed, no upstream program was run, and no graph neural network was trained.
+
+In the existing retail case, removing the disconnected origin changes the denominator from 800 people to 650. Known access remains 550 people, so the reported share rises from 68.75% to 84.62%. In a separate four-zone construction, the revenue feature and its graph energy are preserved exactly, while interpreting the coarse graph as a travel network changes a nine-minute route to four minutes and raises apparent five-minute access from 75% to 100%. These calculations illustrate different estimands and transformations; they are not empirical findings about GraCo users or marketing outcomes.
+
+## Sources and Rights
+
+The [catalog](catalog.json) uses the namespace `graph-coarsening`. The unmodified [paper](papers/Joly_WorkingPaper2026.pdf) is by Antonin Joly, arXiv:2611.01200v1, October 31, 2026, under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). It is accompanied by the textual review and figure descriptions in this folder.
+
+The `reference/` directory contains 21 selected files from commit `19da8a6031dcf1803faa5723148b5975a5462af6`, including the original MIT license, Apache-2.0 license, and third-party notices. It is a partial source reference and cannot be installed as a complete package. The [manifest](manifest.json) records hashes, provenance, and reading scope. Repository documentation retains its original links and terminology. Original course commentary and calculations are separate from these unchanged source files.
+
+---
+
+## Source: 01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md
+
+# Preserving Information When a Network is Compressed
+
+A retailer may reduce a large network to a smaller set of zones to lower the cost of analysis. The resulting representation needs to preserve the outcomes used in the decision. Connections between groups, average features, travel times, and customer-specific predictions are distinct objects. GraCo makes several of these choices explicit and provides a useful setting for evaluating the assumptions embedded in an analytical workflow.
+
+## Partition, Aggregation, and Reconstruction
+
+GraCo assigns each of the original $N$ nodes to one of $n$ supernodes. The binary membership matrix $Q_b$ has shape $N\times n$, with one unit entry per row. For an undirected weighted adjacency matrix $A$, the coarse adjacency is $A_c=Q_b^\top A Q_b$. An off-diagonal entry sums the weights crossing between two groups. The default builder removes diagonal entries, so within-group edges are absent from the returned coarse adjacency. [Paper, §2; pinned builder](reference/core/builders.py).
+
+Node features require a separate reduction matrix $P$. Under binary lifting and the default pseudoinverse, $P=(Q_b^\top Q_b)^{-1}Q_b^\top$ averages features within each group. The lifted values $Q_bPx$ assign each member its group's mean. Group sizes must accompany those means when calculating a population average or total. GraCo's default lifting is instead degree-normalized for `normalized_self_loop`; the simple averaging formula applies when the combinatorial convention is chosen. This distinction matters when interpreting a feature as spending, demand, or population. [Paper, §3; pinned normalization code](reference/core/q.py).
+
+Preserving the feature values used to form a representation does not establish preservation of a different decision outcome. The four-zone example in [CASE_DESIGN.md](CASE_DESIGN.md) retains its revenue feature and associated quadratic graph energy exactly while losing travel inside a merged zone. The implication follows from the constructed graph. GraCo supplies no general guarantee of preserving shortest travel times, service thresholds, causal effects, or willingness to pay.
+
+## A Metric Changes the Method Ranking
+
+Table 4 compares methods on Cora and PubMed under a common self-loop-normalized Laplacian. Its criteria include restricted spectral approximation, eigenvalue error, convolution-matching error, and label purity. Local variation has Cora RSA 0.67 versus Leiden's 1.58, where lower is better. Leiden has lower convolution-matching error, 29.2 versus 32.9 thousand. Both report an achieved reduction ratio of 0.70 for these rows. The preferred method therefore changes with the criterion even in this selected same-ratio comparison. [Paper, Appendix B.5, p. 25](https://arxiv.org/html/2611.01200v1#A2.SS5).
+
+The broader benchmark also requires attention to the achieved reduction. On PubMed, Table 4 reports ratios of 0.79 for METIS and 0.64 for GBGC against a requested 0.70. Those methods produce different-sized outputs. Runtime comparisons need the original graph size, retained size, hardware, preprocessing, and tuning budget. The paper distinguishes out-of-memory, timeout, and solver failures. Its numerical rankings are specific to the reported defaults and datasets.
+
+For marketing, select the primary outcome before comparing compression methods: for example, retained access to an available store, held-out recommendation quality, recall for a small group, or profit under a specified policy. Spectral and feature metrics can help explain how the representation changed. They do not establish the marketing outcome by themselves. The paper explicitly leaves training graph neural networks on the coarsened graphs to a later release (§1, p. 2), so this release supplies no trained-model marketing validation.
+
+## Preprocessing Changes the Population and Relationships
+
+The pinned [preprocessing function](reference/loaders/preprocess.py) defaults to removing self-loops, symmetrizing the graph, and retaining only its largest connected component. For weighted reciprocal edges, symmetrization uses their mean. These transformations support the mathematical assumptions of the implemented methods. For marketing data, they can also change the measured population or the meaning of a relation.
+
+The existing synthetic retail network has 800 people, including 150 at a disconnected origin. Keeping only the largest connected component removes that origin. Known five-minute access remains 550 people, while its reported share changes from $550/800=68.75\%$ to $550/650=84.62\%$. The increase of 15.87 percentage points comes entirely from changing the denominator. The origin also has a store with unknown status; retaining it preserves the original lower and upper access bounds. [Existing case, M5 §5.21](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md).
+
+Direction can carry substantive information in referrals, follows, transfers, and one-way travel. Averaging reciprocal weights creates a new relation. A student should state the edge meaning and target population before accepting this default. Turning off a transformation also requires checking that the selected algorithm supports the resulting graph. Component-wise analysis or preserving excluded nodes in a separate accounting table may be appropriate for the decision.
+
+## Label Purity and Held-Out Prediction
+
+The [pinned `max_acc` implementation](reference/metrics/structural.py) first finds the majority label of each group using all node labels. Its `all` output is the best possible accuracy of a classifier constrained to predict one constant label per group on those same nodes. This is an oracle diagnostic of information lost by the partition. It is not accuracy from training a classifier and evaluating new outcomes.
+
+The implementation then evaluates that same all-node majority on each supplied mask. It does not recompute a separate optimal constant within each mask. Consequently, `test` and `masked` are scores of the global-majority assignment and need not be upper bounds for the corresponding subsets. In a group with labels $(0,0,1)$, the global majority is 0. If the last node is the test subset, the function's assignment scores zero there, while the subset's best constant scores one. If the last node is instead the sole training node, a training-only majority predicts 1 and scores zero on the first two nodes; the all-label majority scores one on those two nodes. [Original checks](source_checks.py).
+
+Aggregate purity can also conceal a small class's errors. Two groups containing three class-0 customers and one class-1 customer each have aggregate majority accuracy of 75%, with zero recall for class 1. This is an invented arithmetic illustration. It motivates reporting customer-group outcomes and selecting a loss function that reflects the decision.
+
+## Outcomes Can Enter Before Model Fitting
+
+The default `alpha=None` in [UGC](reference/algorithms/ugc.py) calculates its feature-versus-structure weight from the fraction of edges connecting different labels. The function reads `data.y` at both endpoints across all edges, including test-node labels. Its docstring states this choice explicitly. On a three-node path, changing only the last node's held-out label from 0 to 1 changes this fraction from zero to one-half when the other labels are zero. Preprocessing can therefore depend on the very outcomes later used for evaluation.
+
+For a predictive exercise, choose a fixed alpha in advance or tune it using only the permitted training and validation information. Retain an untouched final evaluation sample. Access to test-node features in a transductive design is a separate choice from access to test-node outcomes.
+
+[STPGC](reference/algorithms/stpgc.py) also has explicit label-guidance settings. Its default uses training and validation labels; `train_only` narrows the available information, and `label_guide=False` removes label guidance. The [cross-scoring script](reference/reproduce/cross_scoring.py) explicitly disables STPGC's guidance. Its imported extra arguments do not override UGC's alpha default. The benchmark should therefore be read with each method's information set visible, rather than treating every row as label-free.
+
+These code paths are particularly useful for AI-assisted coding. A generated workflow can execute without an exception while evaluating an oracle label assignment or allowing outcomes to affect preprocessing. Students can trace inputs, transformations, and output definitions, then write a small independent counterexample before trusting an interpretation.
+
+## Figure Descriptions and Reading Scope
+
+Figure 1 on PDF page 11 shows an original 500-node stochastic-block graph with three communities and the coarsened graph from each method at requested reduction 0.70. Colors indicate community composition; node area increases with the number of original members. Some methods produce balanced groups, some concentrate large groups in one community, and others mix community labels. Four methods are tuned for this synthetic graph, as indicated in the caption. The panels display different achieved node counts. The image supports comparison of aggregation patterns under those inputs.
+
+Table 4 on PDF page 25 lists four metrics and the achieved ratio for Cora and PubMed. Its ranking depends on the metric, and its reported failures remain part of the comparison. Both pages were inspected visually. The review covers the main construction and evaluation in §§1–5, Appendix B.4–B.5, the preprocessing discussion in Appendix D, and the selected implementation paths cited above. Other appendix derivations and all upstream algorithms have not been independently verified.
+
+The original Python checks execute exact small calculations and comparisons of selected reported table entries. They do not execute GraCo, reproduce the benchmark, or establish performance on course datasets. The repository snapshot contains selected reference files; the full repository and its dependencies would be needed for an optional advanced implementation.
+
+---
+
+## Source: 01_Resources/32_Graph_Coarsening/CASE_DESIGN.md
+
+# Compressing a Retail Network Without Changing the Decision
+
+A retail chain wants a smaller representation of its service network. The chain needs both a revenue summary and the share of customers who can reach an available outlet within five minutes. The same compressed graph may support one quantity and misrepresent the other.
+
+## Four Zones and Two Supernodes
+
+Consider four invented zones A, B, C, and D with equal populations. They form a path. Travel takes four minutes from A to B, one minute from B to C, and four minutes from C to D. An available store is at D. Weekly zone revenues are 10, 10, 10, and 40 dollars. These deliberately small values provide a transparent calculation, with no estimated demand or observed customer behavior.
+
+Group A, B, and C together, and retain D as the second supernode. Binary lifting and its pseudoinverse give mean revenues of 10 and 40. Reconstructing the original revenue feature is exact. The mean across the two supernodes is 25, while the population mean across four equal-sized zones is 17.50. Weighting the group means by sizes three and one restores that mean. The total is 70; adding group means gives 50.
+
+For the graph calculation, define affinity as the reciprocal of edge travel minutes. The original affinities are $1/4$, $1$, and $1/4$. These units differ from minutes. Summing affinities between groups leaves one coarse edge with weight $1/4$, after removal of within-group edges. The revenue feature has the same combinatorial Dirichlet energy, 225, before and after this aggregation. This equality concerns the specified block-constant feature and graph quadratic form.
+
+Interpreting the reciprocal coarse edge as a four-minute trip discards travel within the first supernode. The actual trip from A to D takes nine minutes. At a five-minute threshold, B, C, and D have access, so the original equal-population share is 75%. Treating every zone in the first supernode as four minutes away raises the apparent share to 100%. The feature reconstruction and its energy remain exact throughout. Preserving those quantities does not establish preservation of the route comparison.
+
+The [complete Python calculation](source_checks.py) constructs the matrices, compares the energies, enumerates shortest paths, and checks the access counts. [Saved outputs](source_checks.json) retain the units and results. No source package or neural network is used.
+
+## A Connection to the Existing Retail Case
+
+The [existing retail-access example](../../03_Data_and_Code/Retail_Accessibility/README.md) supplies a separate population check. Its disconnected origin remains in the 800-person denominator. A largest-component filter would discard 150 people and raise known access from 68.75% to 84.62% with no improvement for any person. Students can identify the relevant GraCo default, explain the changed estimand, and propose a representation that retains the original population.
+
+The restaurant snapshot provides observed locations and recorded availability, but it does not supply customer residences or preferences. A later empirical extension would retain that distinction, freeze the street extract, preserve route units, and compare access at original origins. Applying a generic graph reduction to minute-valued edges without a justified transformation would change their meaning.
+
+## Prediction and AI-Assisted Coding
+
+Use the three-node label example in [SOURCE_REVIEW.md](SOURCE_REVIEW.md) to distinguish a partition's oracle purity from a classifier fitted on permitted information. Ask students to trace the labels used in `max_acc`, UGC's alpha calculation, and STPGC's guidance. A final evaluation set remains untouched while choosing the representation and its hyperparameters.
+
+A useful coding prompt specifies the observation unit, edge direction and units, original population, permitted outcomes, target number of groups, and required outputs. The assistant must report achieved compression, excluded nodes, group sizes, and separate numerical and predictive checks. The student then verifies a hand-worked case and inspects the relevant source functions. This is a proposed exercise; no live assistant or upstream program has been evaluated here.
+
+## Figures and Placement
+
+An editable TikZ figure can show the four-zone path beside the two-supernode representation. Use Illinois navy for original nodes, orange group boundaries, and explicit travel-time labels. A second panel can compare 75% original access with the incorrect 100% coarse interpretation, while showing that feature reconstruction is exact. Labels and shapes should carry the distinction alongside color.
+
+The main explanation fits M5's existing retail-access discussion, followed by a short M7 exercise on label use and model evaluation. M4 can connect group weights to segment summaries; M1 and M2 can use the preprocessing inspection. M9 can ask whether a computational saving justifies losing evidence about customers with unusual needs. These additions would use existing meeting blocks and optional practice, with no new graded requirement.
+
+For advanced students, compare a small number of GraCo methods against a simple aggregation baseline and the uncompressed graph at comparable achieved sizes. Evaluate the decision outcome at the original nodes, preserve the information split, and record runtime and memory. The full seventeen-method benchmark requires a separate computing budget; the paper's graph metrics and runtime results provide background for choosing that comparison.
 
 ---
 

@@ -120,3 +120,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Auxiliary Data and Bias Geometry
 
 [The auxiliary-data collection](31_Auxiliary_Data_and_Bias_Geometry/README.md) connects M4 §4.24 research budgets to M7 §7.37 omitted-bias evaluation, with links in M3 and M6. Two complete programs, six independent checks, three TikZ figures, and optional ungraded practice separate feature comparisons from price bias and calculate cost at a common accuracy target. The paper's 74% and 32% savings remain attributed retrospective model calculations. The collection uses the `auxiliary-bias` catalog namespace.
+
+## Graph Coarsening
+
+[The GraCo review](32_Graph_Coarsening/README.md) examines network compression, aggregation weights, metric-dependent rankings, population restrictions, and label use. The collection preserves the CC BY paper and 21 pinned source files with their licenses, plus seven original arithmetic checks and a proposed M5/M7 case. The source toolkit and GNN training remain unexecuted. The catalog namespace is `graph-coarsening`.

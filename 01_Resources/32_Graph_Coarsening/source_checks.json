@@ -1,0 +1,77 @@
+{
+  "scope": "Original exact calculations and selected published-table comparisons; no GraCo execution.",
+  "checks_passed": 7,
+  "checks": [
+    "size-weighted aggregation",
+    "block-constant energy",
+    "travel and threshold access",
+    "global-label and subgroup diagnostics",
+    "label-dependent preprocessing parameter",
+    "component denominator",
+    "metric ranking"
+  ],
+  "aggregation": {
+    "zone_revenues": [
+      10,
+      10,
+      10,
+      40
+    ],
+    "supernode_sizes": [
+      3,
+      1
+    ],
+    "supernode_means": [
+      10.0,
+      40.0
+    ],
+    "fine_mean": 17.5,
+    "equal_supernode_mean": 25.0,
+    "size_weighted_mean": 17.5,
+    "fine_total": 70,
+    "sum_of_supernode_means": 50.0
+  },
+  "preservation": {
+    "fine_energy": 225.0,
+    "coarse_energy": 225.0,
+    "fine_origin_to_store_minutes": 9,
+    "naive_coarse_minutes": 4,
+    "threshold_minutes": 5,
+    "fine_access_share": 0.75,
+    "naive_coarse_access_share": 1.0
+  },
+  "labels": {
+    "global_label": 0,
+    "training_only_label": 1,
+    "global_majority_test_score": 1.0,
+    "training_only_test_score": 0.0,
+    "other_subset_global_majority_score": 0,
+    "other_subset_own_ceiling": 1,
+    "mixed_groups_accuracy": 0.75,
+    "minority_recall": 0.0
+  },
+  "label_parameter": {
+    "before_test_label_change": 0.0,
+    "after_test_label_change": 0.5
+  },
+  "denominator": {
+    "original_people": 800,
+    "removed_people": 150,
+    "people_with_known_access": 550,
+    "original_share": 0.6875,
+    "retained_component_share": 0.8461538461538461,
+    "percentage_point_change": 15.865384615384615
+  },
+  "published_cora_rows": {
+    "Local Variation": {
+      "r": 0.7,
+      "rsa": 0.67,
+      "cme_thousands": 32.9
+    },
+    "Leiden": {
+      "r": 0.7,
+      "rsa": 1.58,
+      "cme_thousands": 29.2
+    }
+  }
+}

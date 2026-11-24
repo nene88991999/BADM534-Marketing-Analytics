@@ -1,0 +1,66 @@
+{
+  "namespace": "graph-coarsening",
+  "reviewed_on": "2026-11-23",
+  "status": "Source review and seven original calculations; proposed M5/M7 additions, with no lecture or assessment changes.",
+  "resources": [
+    {
+      "id": "GC01",
+      "title": "GraCo: A Unified Toolkit of Graph Coarsening Algorithms and Metrics",
+      "authors": [
+        "Antonin Joly"
+      ],
+      "url": "https://arxiv.org/abs/2611.01200v1",
+      "version": "2611.01200v1",
+      "date": "2026-10-31",
+      "publication_type": "Working paper",
+      "modules": [
+        "M1",
+        "M2",
+        "M4",
+        "M5",
+        "M7",
+        "M9"
+      ],
+      "primary_modules": [
+        "M5",
+        "M7"
+      ],
+      "file": "papers/Joly_WorkingPaper2026.pdf",
+      "bytes": 4964180,
+      "sha256": "82bf2ce7ab36857a1c16312826020fe6e60fdf5e43970b8f00cdd54c1b2aa1fe",
+      "pages": 43,
+      "license": "CC BY 4.0",
+      "source": "https://arxiv.org/pdf/2611.01200v1",
+      "modified": false,
+      "teaching_use": "Compression objectives, graph representation, metric-dependent rankings, and customer-specific decision checks.",
+      "cautions": "Graph-level benchmark and training-free metrics; GNN training is deferred in this release. Report actual reduction, information set, operator convention, preprocessing, and tuning scope."
+    },
+    {
+      "id": "GC02",
+      "title": "GraCo Source Repository",
+      "authors": [
+        "Antonin Joly"
+      ],
+      "url": "https://github.com/Antonin-J/graco",
+      "source_commit": "19da8a6031dcf1803faa5723148b5975a5462af6",
+      "version": "0.1.0",
+      "reference_directory": "reference/",
+      "selected_files": 21,
+      "license": "MIT with named Apache-2.0 portions and optional GPL dependencies; original notices retained.",
+      "modules": [
+        "M1",
+        "M2",
+        "M4",
+        "M5",
+        "M7",
+        "M9"
+      ],
+      "teaching_use": "Inspect preprocessing, aggregation, metric definitions, label-dependent parameters, and the reproduction workflow.",
+      "cautions": "Partial source archive, unexecuted. Default LCC selection changes population; binary and normalized lifting differ; max_acc uses global labels; UGC alpha=None reads all labels; STPGC supports explicit label scopes."
+    }
+  ],
+  "review": "SOURCE_REVIEW.md",
+  "case_design": "CASE_DESIGN.md",
+  "verification": "source_checks.json",
+  "manifest": "manifest.json"
+}

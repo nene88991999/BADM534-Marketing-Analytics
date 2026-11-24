@@ -1,0 +1,139 @@
+{
+  "retrieved_on": "2026-11-23",
+  "repository": "https://github.com/Antonin-J/graco",
+  "source_commit": "19da8a6031dcf1803faa5723148b5975a5462af6",
+  "source_commit_date": "2026-11-03",
+  "selected_reference_files": 21,
+  "source_files_unchanged": true,
+  "upstream_execution": false,
+  "package_installed": false,
+  "gnn_training": false,
+  "model_calls": 0,
+  "paper": {
+    "bytes": 4964180,
+    "sha256": "82bf2ce7ab36857a1c16312826020fe6e60fdf5e43970b8f00cdd54c1b2aa1fe",
+    "pages": 43,
+    "license": "CC BY 4.0",
+    "source": "https://arxiv.org/pdf/2611.01200v1",
+    "modified": false
+  },
+  "reading_scope": "Main construction and evaluation in Sections 1-5; Appendix B.4-B.5; preprocessing in Appendix D; selected implementation functions cited in SOURCE_REVIEW.md. Figures and Table on PDF pages 11 and 25 visually inspected. Other derivations and all upstream algorithms not independently verified.",
+  "source_files": {
+    "reference/LICENSE": {
+      "bytes": 1069,
+      "sha256": "05b41b960a4f50e3b948faf63b2d9102d19c6dfe8f47e9ed545b0bf280dbb4f2",
+      "git_blob_sha": "7baec3701748915a4e18bbe0bf1655c4d2156e55"
+    },
+    "reference/README.md": {
+      "bytes": 7441,
+      "sha256": "13aeb25e5e568aba144ab90bac5aae3f8e4836e0699e343fee8ad84064a259b2",
+      "git_blob_sha": "1e9d6b9deebf284ee6c132cfff620e277ee04844"
+    },
+    "reference/THIRD_PARTY_NOTICES.md": {
+      "bytes": 2054,
+      "sha256": "ef1c725d97c0faafcc13c90f5d2e1517da6e4fbef91b3cfd783d6afa7348e2b4",
+      "git_blob_sha": "7a5f4e6e0c8bb89e8b388e54b7c8b492923acecb"
+    },
+    "reference/algorithms/stpgc.py": {
+      "bytes": 21272,
+      "sha256": "67cf723956ed121785b31c1ef02984809c43a84fec7ae9606ba59d90ae81c1a2",
+      "git_blob_sha": "319d8c5dbc719f1bf337a7c60f1975992d84239c"
+    },
+    "reference/algorithms/ugc.py": {
+      "bytes": 8991,
+      "sha256": "a296b9becea9e8687ba7d00f5bddb3139580c286e9ee767d4222dd17ba220d07",
+      "git_blob_sha": "fa5203f065cfa268c41901735837095ea4070007"
+    },
+    "reference/core/builders.py": {
+      "bytes": 6931,
+      "sha256": "80cf0840408c57320016695e8eafff8c36f9caf6f144cccfcef3b5babf0573de",
+      "git_blob_sha": "cf65983c355fba1b5adaf442da937a1e7bdb792d"
+    },
+    "reference/core/coarsening.py": {
+      "bytes": 3017,
+      "sha256": "8c8a031134953e88e070d10e0fb11c00befed77162248b37686bc4d45d26a793",
+      "git_blob_sha": "8769534a51882ab9968ed593717ce68c7aa6787d"
+    },
+    "reference/core/partition.py": {
+      "bytes": 7237,
+      "sha256": "e61b18d8450ade72dd917a8156e0aa143f032c023a31d40740404e2f9e56f557",
+      "git_blob_sha": "d911cd5ad961075dfe6d78d2c98792a9a0b39a35"
+    },
+    "reference/core/q.py": {
+      "bytes": 4428,
+      "sha256": "f624f3f959087683b01e109df6de7417cdb1fc4966a25f1b55eae7f229fa4577",
+      "git_blob_sha": "6e661691871242a9a5a70556a7aa7f1b2315b135"
+    },
+    "reference/licenses/Apache-2.0.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "git_blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    "reference/loaders/node_classification.py": {
+      "bytes": 7948,
+      "sha256": "b409b7cebffce18f6c281b14547dc964ad6767148e6753ed6c136e88aeaf1862",
+      "git_blob_sha": "79843ba980861df732d18d91786be5697d60285a"
+    },
+    "reference/loaders/preprocess.py": {
+      "bytes": 2071,
+      "sha256": "0c4089a47cbc30c9a25ba5283d3011185e4caa8089f9b93169719930ffc9675c",
+      "git_blob_sha": "ec908939df8d02ca503bd94f90a0c61c2d982307"
+    },
+    "reference/metrics/energy.py": {
+      "bytes": 25289,
+      "sha256": "e04f9b3f79a973805bc3da1250c698b38f7f7d645deed663a74a2e923faaeba9",
+      "git_blob_sha": "7e1c5dc6227fae1da7ef61e26fd3056f396f31c2"
+    },
+    "reference/metrics/spectral.py": {
+      "bytes": 11215,
+      "sha256": "c97d6b7843ecf42dbeb9e75be66ff0a8ac69b726b9b5025de5d9149325e1ef02",
+      "git_blob_sha": "6b8c919c4b077d70b3dc49d0499638dfba01c6fa"
+    },
+    "reference/metrics/structural.py": {
+      "bytes": 13725,
+      "sha256": "cbb9eef6f92fe70299faf40849861405df30e3687f917a9eade37eb5369785f2",
+      "git_blob_sha": "af6f9f2d6b32e3e1329638aa6330d3df6e19080b"
+    },
+    "reference/pyproject.toml": {
+      "bytes": 1820,
+      "sha256": "3943617ab50ec83dcf5bb2b50cf1b07a8dd3e3885d67e3aac9a325a8bded6213",
+      "git_blob_sha": "d7463f1df37381154c279779c2fb68f7c03acb0e"
+    },
+    "reference/refinement/e1.py": {
+      "bytes": 3538,
+      "sha256": "b0b76f03d9d5ca75a903c623048703983ddcf0e66f0099aa6863c40675cb85e5",
+      "git_blob_sha": "27e42a5d79c2ce634110341221e6b7104899943c"
+    },
+    "reference/reproduce/README.md": {
+      "bytes": 2877,
+      "sha256": "9f9f60955097065a1f22884e9cb726b273801ea338bf1dfe066e6cd35dbd0e58",
+      "git_blob_sha": "fb70ad5297ed78f91a875f0480bdbbb34225e4e6"
+    },
+    "reference/reproduce/cross_scoring.py": {
+      "bytes": 5632,
+      "sha256": "08e828ea5be9f834a15754087203b11edee0591d6117108f6f56cc96bcc8c049",
+      "git_blob_sha": "3e7cc3e11288c27e8b69f55fdd387b70877f4a4e"
+    },
+    "reference/reproduce/sbm_tuning.py": {
+      "bytes": 14283,
+      "sha256": "064aaa530d1720aca43da45cb34173f6a50e98a3ca9605a414ed7a9bbd39dad8",
+      "git_blob_sha": "6fe7a1e42c9c4eb48b168dbf19003245c5815155"
+    },
+    "reference/reproduce/scaling.py": {
+      "bytes": 13598,
+      "sha256": "af2b07e7a07de34cdc35334823f5b16b1bdaf73661152bc21ab13db6bb17c459",
+      "git_blob_sha": "a594fe8e8138b59fd361d0d00b9891a3cbdd0b4f"
+    }
+  },
+  "original_calculations": {
+    "source_checks.py": {
+      "bytes": 7325,
+      "sha256": "1e6743075d6682297036e7afbe6896ad15dd2cde07aa274b3243ad143c5e5f18"
+    },
+    "source_checks.json": {
+      "bytes": 1825,
+      "sha256": "888f9b6d4c52f4bb539cf00e4665e7e653d8a8bd3694bf0a12c4804124e02972"
+    }
+  },
+  "original_checks_executed": 7
+}

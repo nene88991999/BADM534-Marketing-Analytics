@@ -233,7 +233,10 @@
     "03_Data_and_Code/Auxiliary_Data/AGENTS.md",
     "03_Data_and_Code/Auxiliary_Data/results/README.md",
     "03_Data_and_Code/Auxiliary_Data/VERIFICATION.md",
-    "07_Labs/Auxiliary_Data/README.md"
+    "07_Labs/Auxiliary_Data/README.md",
+    "01_Resources/32_Graph_Coarsening/README.md",
+    "01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md",
+    "01_Resources/32_Graph_Coarsening/CASE_DESIGN.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -819,5 +822,33 @@
     "independent_course_checks_passed": 6,
     "original_figures": 3,
     "scope": "Original analytic four-profile linear model with invented parameters; sampling cost, normal-equation checks, and omitted-bias sensitivity. No human observations, model calls, or empirical replication."
+  },
+  "graph_coarsening": {
+    "resources": "01_Resources/32_Graph_Coarsening/README.md",
+    "review": "01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/32_Graph_Coarsening/CASE_DESIGN.md",
+    "catalog": "01_Resources/32_Graph_Coarsening/catalog.json",
+    "manifest": "01_Resources/32_Graph_Coarsening/manifest.json",
+    "verification": "01_Resources/32_Graph_Coarsening/source_checks.json",
+    "reviewed_on": "2026-11-23",
+    "source_commit": "19da8a6031dcf1803faa5723148b5975a5462af6",
+    "paper_version": "2611.01200v1",
+    "status": "Source review and original checked calculations; M5/M7 integration remains proposed.",
+    "primary_modules": [
+      "M5",
+      "M7"
+    ],
+    "related_modules": [
+      "M1",
+      "M2",
+      "M4",
+      "M9"
+    ],
+    "source_package_executed": false,
+    "gnn_training_executed": false,
+    "model_calls": 0,
+    "original_calculation_checks_passed": 7,
+    "archived_reference_files": 21,
+    "scope": "Four-zone aggregation and travel counterexample, label diagnostics, existing synthetic retail denominator, and selected published metric comparisons; no upstream execution or empirical marketing effects."
   }
 }
