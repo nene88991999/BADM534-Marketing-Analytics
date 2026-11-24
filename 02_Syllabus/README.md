@@ -29,3 +29,7 @@ The course outline includes training-source mixtures and conditional service out
 ## Synthetic Consumer Research
 
 The course outline includes concept screening in the February 17 product-design meeting. Text measurement follows on March 3, with consumer representation discussed on April 28. The [worked examples](../03_Data_and_Code/Synthetic_Consumers/README.md) and [optional practice](../07_Labs/Synthetic_Consumers/README.md) preserve the distinction between synthetic calculations and human validation.
+
+## Network Compression Coverage
+
+The syllabus includes network compression and retail access in Meeting 7 and label leakage within prediction in Meeting 11. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the examples within existing 170-minute meetings. The [optional lab](../07_Labs/Graph_Coarsening/README.md) has no graded requirement.

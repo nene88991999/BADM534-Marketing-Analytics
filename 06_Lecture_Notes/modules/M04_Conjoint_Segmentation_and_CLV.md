@@ -1039,6 +1039,8 @@ Partial pooling can stabilize estimates for small groups. M6 Section 6.26 compar
 
 The fixed-neighbor comparison in Section 5.21 holds the six locations and number of selected neighbors constant while changing the distance definition. Its altered links arise from the representation. The [Liverpool City2Graph case study](https://github.com/c2g-dev/city2graph-case-study) extends this issue to attribute clustering and graph-autoencoder embeddings. An optional comparison should retain the same observations, preprocessing, cluster count, and evaluation criteria wherever feasible. Customer outcomes or other independently chosen evidence are needed to interpret a cluster's marketing meaning.
 
+Group means require the original membership counts when the decision concerns average customers or total demand. Equal weight for differently sized segments changes the population receiving weight. The synthetic network calculation in Section 5.24 retains zone counts, mean zone revenue, and total revenue separately, with complete Python. A segment representation should carry the corresponding counts and units through every later aggregation.
+
 ## 4.23 Synthetic Consumers and Product Concept Screening
 
 \noindent A personal-care firm may have more product ideas than it can afford to test with a large human panel. A screening procedure must identify concepts worth further investigation while making mistaken exclusions visible. Generated consumer responses can organize possible benefits and objections. Their usefulness for selecting products depends on how well the resulting measurements distinguish concepts in the intended customer population.

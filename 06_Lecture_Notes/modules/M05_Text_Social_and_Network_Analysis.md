@@ -1393,3 +1393,187 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+\Needspace{12\baselineskip}
+
+## 5.24 Compressing a Network and Preserving Customer Access
+
+\noindent A retail chain may group nearby service zones to reduce the cost of storing and analyzing its network. The manager still needs a revenue summary and the share of customers who can reach an available outlet within five minutes. Compression can preserve the first quantity while changing the second. The relevant evaluation therefore begins with the original customers, their locations, and the decision the smaller graph is intended to support.
+
+[Antonin Joly's GraCo](https://github.com/Antonin-J/graco) provides a common interface to 17 graph-coarsening methods and a random baseline. Its [working paper](https://arxiv.org/abs/2611.01200v1) compares graph and feature criteria under explicit operator conventions. These criteria identify properties of a representation. Customer access additionally requires a travel interpretation, the original population weights, and an assessment of routes that disappear when nodes are grouped.
+
+### 5.24.1 Group Means, Group Sizes, and Graph Weights
+
+\noindent Let $N$ original nodes be assigned to $n$ nonempty groups. The binary membership matrix $Q_b$ has $N$ rows and $n$ columns; its entry is one when a node belongs to the indicated group. Let $A$ be a symmetric weighted adjacency matrix with no self-loops. Summing weights between groups gives the coarse adjacency
+
+$$
+A_c=Q_b^\top A Q_b,
+$$
+
+with its diagonal removed. An off-diagonal entry adds all original edge weights between the corresponding groups. This aggregation preserves the units of those weights. Summing travel times across parallel roads, for example, would require a different justification from summing referral counts.
+
+For a node feature $x$, use binary lifting and the group-average reduction
+
+$$
+P=(Q_b^\top Q_b)^{-1}Q_b^\top,\qquad x_c=Px,\qquad \widehat x=Q_bx_c.
+$$
+
+The diagonal entries of $Q_b^\top Q_b$ are group sizes. Dividing each group's sum by its size produces $x_c$; lifting assigns that mean to each original member. A mean across original nodes weights each group mean by its membership count. A total multiplies each mean by that count before summing. Other population weights require an aggregation rule consistent with the intended population.
+
+These equations use the combinatorial convention. GraCo's default `normalized_self_loop` uses degree-normalized lifting, whose pseudoinverse generally differs from simple averaging. Selecting `laplacian_kind="combinatorial"` makes the binary-lifting interpretation explicit. The [pinned construction and normalization code](../../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md) records this distinction. An AI-generated call that runs with defaults can implement a different estimand from the one described in the prompt.
+
+### 5.24.2 Exact Revenue Reconstruction and Distorted Travel
+
+\noindent Consider four synthetic zones in the path A-B-C-D. Each zone contains 100 people. An available store is located at D. The three edges take four, one, and four minutes, respectively. Weekly zone revenues are 10, 10, 10, and 40 dollars. All quantities are imposed teaching inputs. Revenue is a weekly total for each zone; it is not an individual customer's spending.
+
+Group A, B, and C together and retain D separately. The group sizes are three and one, and their mean zone revenues are 10 and 40 dollars. Reconstructing the four original revenue values produces zero error. Giving each group equal weight produces a mean of 25 dollars, while weighting by its original zone count gives $(3\times10+1\times40)/4=17.50$ dollars per zone. Total weekly revenue is 70 dollars. Adding the two means would give 50 dollars and discard the meaning of the original total.
+
+For this graph calculation, define edge affinity as the reciprocal of travel minutes. The affinities are $1/4$, $1$, and $1/4$ per minute. The coarse graph retains an affinity of $1/4$ between the two groups. Its internal edges are removed. To measure variation in the revenue feature across connected zones, use the combinatorial Dirichlet energy
+
+$$
+x^\top Lx=\sum_{\{i,j\}\in E} A_{ij}(x_i-x_j)^2,
+$$
+
+where $L$ is the degree matrix minus $A$ and each undirected edge appears once in the sum. The units here are dollars squared per minute for the weekly revenue feature. Revenues are equal along A-B and B-C, so those edges contribute zero. The C-D edge contributes $(1/4)(10-40)^2=225$. The coarse feature has exactly the same energy. This equality concerns the chosen feature and quadratic form; it supplies no guarantee for every graph property.
+
+| Original Zone | Revenue (Dollars) | Travel to D (Minutes) | Naive Coarse Travel (Minutes) |
+|---|---:|---:|---:|
+| A | 10 | 9 | 4 |
+| B | 10 | 5 | 4 |
+| C | 10 | 4 | 4 |
+| D | 40 | 0 | 0 |
+
+A manager who interprets the reciprocal coarse affinity as a four-minute trip assigns the same travel time to A, B, and C. That operation removes travel within the merged group. A's actual trip takes nine minutes. At the five-minute threshold, B, C, and D provide access for 300 of the 400 people, or 75%. The naive compressed calculation reports access for all 400 people. Both revenue reconstruction and its graph energy remain exact while the access comparison changes.
+
+![Four equal-population zones have revenues 10, 10, 10, and 40 dollars and edge travel times 4, 1, and 4 minutes. Merging A, B, and C preserves the revenue feature and energy of 225, but reciprocal coarse-edge travel omits internal trips and raises apparent five-minute access from 75% to 100%.](../figures/M05_graph_coarsening.png)
+
+A service decision needs access evaluated at the original origins, or a compression method with a verified approximation guarantee for that particular route quantity. A smaller representation may still serve revenue accounting. Using it for travel requires evidence about which internal distances it preserves and how approximation error affects customers near the access threshold.
+
+### 5.24.3 Preprocessing and the Population Receiving Weight
+
+\noindent GraCo's pinned preprocessing function defaults to symmetrizing edges, removing self-loops, and retaining the largest connected component. Weighted reciprocal edges are averaged during symmetrization. Those operations support particular mathematical procedures. Their economic meaning depends on whether the edges represent travel, referrals, purchases, or another relationship. A directed referral from one customer to another becomes a different object when combined with the reverse direction.
+
+The separate retail case in Section 5.21 contains 800 people, including 150 at a disconnected origin. Known five-minute access covers 550 people. Retaining only the largest connected component removes those 150 people from the denominator and raises the reported share from $550/800=68.75\%$ to $550/650=84.62\%$. No person's access improves. The original calculation retains the disconnected origin and its unknown store status, producing the stated lower and upper access bounds. Its complete Python program appears in Section 5.21.
+
+Preserve an accounting table of original nodes, retained nodes, population weights, and exclusion reasons. Component-wise analysis can retain disconnected customers when the chosen algorithm supports it. An algorithm that requires connectivity needs a separate treatment of excluded components in the decision calculation. Changing a default without checking the method's assumptions does not resolve that requirement.
+
+### 5.24.4 Python Aggregation and Access Calculations
+
+\noindent The [synthetic inputs](../../03_Data_and_Code/Graph_Coarsening/data/cases.json) contain the four zone names, population weights, weekly revenues, group assignments, edge minutes, store location, and threshold. The program constructs the binary matrices, compares original and reconstructed features, calculates both energies, and runs shortest-path calculations. It writes one row per original zone and an aggregate JSON result. The naive coarse route is retained as an explicitly labeled incorrect interpretation for this decision.
+
+```bash
+python3 03_Data_and_Code/Graph_Coarsening/compress_network.py
+```
+
+Python source: [compress_network.py](../../03_Data_and_Code/Graph_Coarsening/compress_network.py)
+
+```python
+"""Exact aggregation and travel calculations for four synthetic retail zones.
+
+Run with Python 3.10+; standard library only. Paths are relative to this file.
+Binary membership and combinatorial affinities are chosen explicitly.
+"""
+from fractions import Fraction as F
+from pathlib import Path
+import csv
+import json
+import math
+
+HERE = Path(__file__).resolve().parent
+
+
+def multiply(a, b):
+    return [[sum(x * y for x, y in zip(row, col))
+             for col in zip(*b)] for row in a]
+
+
+def transpose(a):
+    return list(map(list, zip(*a)))
+
+
+def distances(n, edges):
+    d = [[0 if i == j else math.inf for j in range(n)] for i in range(n)]
+    for i, j, minutes in edges:
+        assert minutes > 0 and i != j
+        d[i][j] = d[j][i] = min(d[i][j], minutes)
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                d[i][j] = min(d[i][j], d[i][k] + d[k][j])
+    return d
+
+
+def calculate(case):
+    names, group = case["zones"], case["group"]
+    people = case["population"]
+    x = [[F(v)] for v in case["weekly_zone_revenue_dollars"]]
+    n, g = len(names), max(group) + 1
+    assert len(group) == len(x) == len(people) == n
+    assert set(group) == set(range(g)) and all(p > 0 for p in people)
+    sizes = [group.count(c) for c in range(g)]
+    q = [[int(c == group[i]) for c in range(g)] for i in range(n)]
+    p = [[F(q[i][c], sizes[c]) for i in range(n)] for c in range(g)]
+    means = multiply(p, x)
+    reconstructed = multiply(q, means)
+    a = [[F(0) for _ in range(n)] for _ in range(n)]
+    for i, j, minutes in case["edges_minutes"]:
+        a[i][j] = a[j][i] = F(1, minutes)
+    coarse = multiply(multiply(transpose(q), a), q)
+    for c in range(g):
+        coarse[c][c] = F(0)
+    coarse_edges = [(c, d, 1 / coarse[c][d]) for c in range(g)
+                    for d in range(c + 1, g) if coarse[c][d] > 0]
+    fine_d = distances(n, case["edges_minutes"])
+    naive_d = distances(g, coarse_edges)
+    store, threshold = case["store_node"], case["access_threshold_minutes"]
+    rows = []
+    for i, name in enumerate(names):
+        fine, naive = fine_d[i][store], naive_d[group[i]][group[store]]
+        rows.append(dict(zone=name, people=people[i], group=group[i],
+                         revenue_dollars=float(x[i][0]),
+                         reconstructed_revenue_dollars=float(reconstructed[i][0]),
+                         original_minutes=float(fine), naive_coarse_minutes=float(naive),
+                         original_access=int(fine <= threshold),
+                         naive_coarse_access=int(naive <= threshold)))
+    energy = sum(F(1, m) * (x[i][0] - x[j][0]) ** 2
+                 for i, j, m in case["edges_minutes"])
+    coarse_energy = sum(coarse[c][d] * (means[c][0] - means[d][0]) ** 2
+                        for c in range(g) for d in range(c + 1, g))
+    result = dict(
+        synthetic=True, original_zones=n, groups=g, reduction=1 - g / n,
+        group_sizes=sizes, group_mean_revenues=[float(v[0]) for v in means],
+        original_mean_revenue=float(sum(v[0] for v in x) / n),
+        equal_group_mean_revenue=float(sum(v[0] for v in means) / g),
+        size_weighted_mean_revenue=float(sum(sizes[c] * means[c][0]
+                                            for c in range(g)) / n),
+        total_revenue=float(sum(v[0] for v in x)),
+        sum_of_group_means=float(sum(v[0] for v in means)),
+        reconstruction_squared_error=float(sum((x[i][0] - reconstructed[i][0]) ** 2
+                                               for i in range(n))),
+        original_energy=float(energy), coarse_energy=float(coarse_energy),
+        energy_units="dollars squared per minute; weekly revenue feature",
+        coarse_affinities=[[float(v) for v in row] for row in coarse],
+        population=sum(people), access_threshold_minutes=threshold,
+        original_access_share=sum(r["people"] * r["original_access"] for r in rows) / sum(people),
+        naive_coarse_access_share=sum(r["people"] * r["naive_coarse_access"] for r in rows) / sum(people))
+    return result, rows
+
+
+def main():
+    case = json.loads((HERE / "data/cases.json").read_text())["network"]
+    result, rows = calculate(case)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "network.json").write_text(json.dumps(result, indent=2) + "\n")
+    with (output / "zones.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Change the population at A to 700 while leaving the other three zones at 100. Original access becomes 30%, and the naive coarse calculation still gives 100%. The representation error now affects a larger share of people. Returning to the original population and assigning every zone its own group reproduces the original routes. These comparisons hold the travel network fixed and change one object at a time.

@@ -1,7 +1,7 @@
 {
   "namespace": "graph-coarsening",
   "reviewed_on": "2026-11-23",
-  "status": "Source review and seven original calculations; proposed M5/M7 additions, with no lecture or assessment changes.",
+  "status": "Integrated into M5, M7, Sessions 7 and 11, and optional ungraded practice; two original programs executed.",
   "resources": [
     {
       "id": "GC01",
@@ -62,5 +62,7 @@
   "review": "SOURCE_REVIEW.md",
   "case_design": "CASE_DESIGN.md",
   "verification": "source_checks.json",
-  "manifest": "manifest.json"
+  "manifest": "manifest.json",
+  "examples": "../../03_Data_and_Code/Graph_Coarsening/README.md",
+  "lab": "../../07_Labs/Graph_Coarsening/README.md"
 }

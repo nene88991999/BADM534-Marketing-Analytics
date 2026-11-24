@@ -1,0 +1,47 @@
+{
+  "synthetic": true,
+  "purity": {
+    "outcomes": [
+      0,
+      0,
+      1
+    ],
+    "train_indices": [
+      2
+    ],
+    "test_indices": [
+      0,
+      1
+    ],
+    "full_group_majority": 0,
+    "fitted_training_majority": 1,
+    "full_group_purity": 0.6666666666666666,
+    "global_majority_test_score": 1.0,
+    "training_only_test_score": 0.0,
+    "test_count": 2,
+    "alternative_subset_count": 1,
+    "alternative_global_score": 0.0,
+    "alternative_own_ceiling": 1.0
+  },
+  "minority": {
+    "people": 8,
+    "class_one_people": 2,
+    "correct": 6,
+    "true_positive": 0,
+    "accuracy": 0.75,
+    "recall": 0.0
+  },
+  "parameter": {
+    "training_indices": [
+      0,
+      1
+    ],
+    "heldout_indices": [
+      2
+    ],
+    "all_edges_before": 0.0,
+    "all_edges_after": 0.5,
+    "training_edges_before": 0.0,
+    "training_edges_after": 0.0
+  }
+}

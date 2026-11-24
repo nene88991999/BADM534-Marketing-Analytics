@@ -13,6 +13,7 @@ Session 07. M5. 170 minutes.
 - Explain network reach and brokerage without inferring influence from correlation.
 - Distinguish citation presence from support using a controlled source comparison.
 - Trace how anchors, similarities, and persona weighting determine a text-based rating.
+- Compare feature preservation, group weighting, and access at original network origins.
 
 ## Related Materials
 
@@ -29,6 +30,8 @@ Session 07. M5. 170 minutes.
 - [Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)
 - [Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)
 - [Synthetic Consumer Measurement](../03_Data_and_Code/Synthetic_Consumers/README.md)
+- [Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)
+- [Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -407,7 +410,44 @@ The four-kilometer threshold is imposed. Available means recorded ordering avail
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 33: University Affiliations Create a Research Network
+## Slide 33: A Group Mean Needs a Group Size
+
+Four synthetic zones earn 10, 10, 10, and 40 dollars per week.
+
+$$
+\overline{x}=\frac{3(10)+1(40)}{4}=17.50\qquad \mathrm{Total}=70
+$$
+
+Groups {A, B, C} and {D} have mean revenues 10 and 40. Equal group weights give 25 dollars per zone.
+
+The observation unit is a zone, and each zone has 100 people. Binary membership and the combinatorial convention produce group means. Counts three and one restore the original mean and total. These are weekly zone totals, not individual spending. GraCo defaults to normalized_self_loop, whose degree-normalized lifting generally differs from this averaging rule.
+
+Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://arxiv.org/abs/2611.01200v1
+
+## Slide 34: Exact Revenue, Distorted Access
+
+Synthetic inputs. Five-minute access is evaluated at the four original origins.
+
+**Figure description:** The path A-B-C-D has edge travel times 4, 1, and 4 minutes, with the available store at D. Grouping A, B, and C preserves revenues and their energy but omits internal travel. The original routes to D take 9, 5, 4, and 0 minutes; naive reciprocal coarse-edge routes take 4, 4, 4, and 0. Access changes from 300 of 400 people to an apparent 400 of 400.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_graph_coarsening.tex)
+
+Affinity is defined as one divided by travel minutes; coarse adjacency sums affinities between groups. Internal edges are removed. Revenue reconstruction error is zero and both combinatorial energies equal 225 dollars squared per minute. This preserves the chosen block-constant feature and quadratic form. It does not preserve every graph property or shortest paths. The incorrect coarse travel interpretation is an original constructed example, with no GraCo execution.
+
+Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 35: Preprocessing Changes the Population
+
+- The existing retail case includes 150 people at a disconnected origin.
+- Known access stays at 550 people when that origin is removed.
+- Changing the denominator from 800 to 650 raises access from 68.75% to 84.62%.
+- Retain original weights, excluded origins, and the meaning of each edge.
+
+This is the separate seven-origin case in Section 5.21, not the four-zone compression example. GraCo preprocessing defaults to largest-component selection, symmetrization, and removing self-loops. Weighted reciprocal edges are averaged. A referral or one-way trip can change meaning under symmetrization. Check algorithm support before changing these options; preserve excluded people in the original-population accounting. No access improved in this calculation.
+
+Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md ../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md
+
+## Slide 36: University Affiliations Create a Research Network
 
 - 745 papers identify 424 higher-education institutions.
 - Split one unit of link weight across each paper's university pairs.
@@ -417,7 +457,7 @@ The eligible census has 824 papers; 79 lack identified education affiliations. W
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 34: Affiliation Groups Depend on the Representation
+## Slide 37: Affiliation Groups Depend on the Representation
 
 Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.
 
@@ -429,7 +469,7 @@ The median adjusted Rand agreement across twenty seeds is 0.522; switching from 
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 35: Coding Exercise: A Label Assessment
+## Slide 38: Coding Exercise: A Label Assessment
 
 - Reproduce the four-question source comparison.
 - Trace each unsupported claim to its inferential error.
@@ -440,7 +480,7 @@ Use ten minutes to introduce the question and demonstrate the output, twenty-fiv
 
 Source: M5 §§5.19–5.20. ../07_Labs/AI_Evidence_and_Evaluation/README.md
 
-## Slide 36: Engagement and Commercial Value
+## Slide 39: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -450,7 +490,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 37: Authenticity of Reviews and Endorsements
+## Slide 40: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -460,7 +500,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 38: Text-Analysis Discussion
+## Slide 41: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

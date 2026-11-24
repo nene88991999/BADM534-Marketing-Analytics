@@ -96,3 +96,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Synthetic Consumers and Concept Screening
 
 [Two complete examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect product screening in M4 §4.23 to text measurement in M5 §5.23 and validation in M7 §7.36. Invented panels and imposed similarities isolate anchor sensitivity, persona weights, distribution fit, and shortlist errors. Sessions 5, 7, and 14 incorporate the comparisons and consumer-representation discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) extends the calculations.
+
+## Network Compression and Customer Access
+
+[M5 §5.24 and M7 §7.38](03_Data_and_Code/Graph_Coarsening/README.md) compare aggregation weights, preserved revenue, distorted travel, oracle label purity, and outcome use during preprocessing. Complete Python, two editable figures, five slides in Sessions 7 and 11, and [optional practice](07_Labs/Graph_Coarsening/README.md) accompany the synthetic cases.

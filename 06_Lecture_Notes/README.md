@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [369-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 97 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [380-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 99 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -78,7 +78,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 63 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 85 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -153,3 +153,7 @@ M1 §1.15 provides a complete Python program that recomputes four synthetic-cons
 ## Human and Synthetic Research Budgets
 
 M4 §4.24 develops a four-profile product comparison, a common coefficient-accuracy target, and the allocation of primary and auxiliary responses. M7 §7.37 adds omitted-bias sensitivity and independent human validation. M3 §3.16 and M6 §6.28 explain identification and the information conditions supporting a fixed design. [Two complete programs and three editable figures](../03_Data_and_Code/Auxiliary_Data/README.md) accompany the notes and [optional ungraded practice](../07_Labs/Auxiliary_Data/README.md).
+
+## Network Compression and Customer Access
+
+M5 §5.24 develops exact aggregation and travel calculations. M7 §7.38 distinguishes oracle label purity, training-only prediction, and outcome-dependent preprocessing. [Two complete Python programs](../03_Data_and_Code/Graph_Coarsening/README.md), two editable figures, and [optional practice](../07_Labs/Graph_Coarsening/README.md) accompany shorter connections in M2 §2.23, M4 §4.22, and M9 §9.18.2.

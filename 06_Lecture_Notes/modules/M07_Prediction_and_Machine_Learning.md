@@ -2521,3 +2521,142 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=ROOT / "results")
     run(parser.parse_args().output)
 ```
+
+## 7.38 Network Compression, Label Purity, and Predictive Evidence
+
+\noindent A firm compressing a customer network may want to predict which customers need specialist service. The firm needs evidence that the smaller representation preserves useful information and that a fitted procedure can use that information on future outcomes. A partition's label composition and a classifier's held-out predictions answer different questions. Outcomes used to construct the partition or tune its parameters also belong in the accounting of what the model knew.
+
+\Needspace{14\baselineskip}
+
+### 7.38.1 A Group's Oracle Purity
+
+\noindent Suppose a classifier must assign one label to every member of a group. If all outcomes are known, the most accurate constant is the group's majority label. Across groups, the resulting oracle purity is
+
+$$
+\operatorname{Purity}=\frac{1}{N}\sum_{g=1}^{n}\max_k\sum_{i\in g}\mathbf{1}\{y_i=k\}.
+$$
+
+Here $N$ counts all original labeled nodes, $g$ indexes groups, and $k$ indexes possible classes. The numerator counts correctly assigned nodes after choosing each group's constant using every outcome. It is the best achievable accuracy for group-constant predictions on those same nodes. It is useful for diagnosing label mixing in the partition. A prediction model permitted to distinguish members using additional features is outside this restriction.
+
+GraCo's [pinned `max_acc` implementation](../../01_Resources/32_Graph_Coarsening/reference/metrics/structural.py) computes each majority from all node labels. It then evaluates that same assignment on each requested train, validation, or test mask. The mask changes which nodes receive a score; it does not change the labels used to choose the majority. A value returned under a test key therefore requires this interpretation before being used as evidence of generalization.
+
+Consider one synthetic group with node outcomes $(0,0,1)$. Node 2 is the only training observation, and nodes 0 and 1 form the two-observation test set. The all-label majority is 0 and scores 100% on those two test nodes. A constant fitted only to the permitted training outcome predicts 1 and scores 0%. The full-group oracle purity is $2/3$. These values follow from three imposed labels; they are not estimates of an expected performance gap.
+
+![Three synthetic nodes share one group. The training node has label 1 and the two held-out nodes have label 0. Choosing the group label from all outcomes yields a test score of 100%; fitting only the training outcome yields 0%. Full-group oracle purity is two-thirds.](../figures/M07_graph_labels.png)
+
+A masked global-majority score also need not be the best constant score within that subset. In a separate split of the same three labels, let the last node alone form the evaluation subset. The global majority remains 0 and scores zero there; the subset's own optimal constant is 1 and scores one. Only the all-node score has the stated full-group ceiling interpretation. Recomputing an optimal label from evaluation outcomes would still be an oracle calculation.
+
+### 7.38.2 Outcome Use Before Fitting
+
+\noindent A predictive representation can depend on held-out outcomes before a classifier is fitted. GraCo's [UGC implementation](../../01_Resources/32_Graph_Coarsening/reference/algorithms/ugc.py) sets its feature-versus-structure weight from edge-label disagreement when `alpha=None`. It reads the endpoint labels across all supplied edges, including test-node labels. The implementation documents this choice. Its appropriateness depends on whether the task is a descriptive oracle comparison or prediction with restricted outcome information.
+
+Use a separate synthetic path with edges $(0,1)$ and $(1,2)$. Nodes 0 and 1 have training labels 0 and 0; node 2 is held out. Setting its label to 0 gives zero disagreeing edges. Changing only that held-out label to 1 gives one disagreement among two edges, so the default parameter changes from 0 to $1/2$. The training observations and graph remain fixed. The held-out outcome has entered the representation's parameter choice.
+
+For prospective prediction, choose a fixed parameter in advance or select it using permitted training and validation information. A fraction computed only from edges whose endpoints have training labels is invariant to the held-out-label change in this small example; it is a different statistic and may itself be noisy or selected. The final test outcomes remain untouched throughout selection. Access to test-node features in a transductive task is a separate permission from access to their outcomes.
+
+[STPGC](../../01_Resources/32_Graph_Coarsening/reference/algorithms/stpgc.py) makes label guidance explicit. Its default uses training and validation labels; `train_only` narrows that scope, and `label_guide=False` removes guidance. The reviewed cross-scoring script disables STPGC guidance and leaves UGC's default alpha unchanged. Method comparisons need a common, stated information set. A successful run alone supplies no evidence that two rows used equivalent outcome information.
+
+### 7.38.3 Decision Metrics and Uncommon Customer Needs
+
+\noindent Suppose two synthetic groups each contain three routine-service customers, labeled 0, and one customer requiring specialist service, labeled 1. Assigning the majority label to everyone gives six correct classifications among eight customers, or 75% accuracy. Both specialist-service customers are missed, giving class-1 recall of zero out of two. If missed specialist requests carry higher costs, aggregate purity conceals the outcome most relevant to the routing decision. Report the group counts, confusion counts, and class-specific consequences before choosing a loss function.
+
+Graph criteria can also rank the same methods differently. The GraCo paper's Table 4 reports an achieved reduction ratio of 0.70 for both local variation and Leiden on Cora. Local variation has lower restricted spectral approximation error, 0.67 versus 1.58. Leiden has lower convolution-matching error, 29.2 versus 32.9 thousand. These criteria measure spectral preservation and matching of graph-convolution operators under the reported normalization. Neither is a measured customer-service outcome. The values are selected published results, not course-generated fits. [Joly, Appendix B.5, p. 25](https://arxiv.org/abs/2611.01200v1).
+
+Compare methods at similar achieved sizes and record the requested size separately. The same table reports PubMed reduction ratios of 0.79 for METIS and 0.64 for GBGC against a requested 0.70. Runtime additionally depends on hardware, preprocessing, tuning, and failure limits. The reviewed release defers graph-neural-network training to subsequent work. Its graph diagnostics cannot establish trained predictive performance on marketing data.
+
+A retail deployment can evaluate access at each original origin, as in Section 5.24. A customer-service deployment can fit a permitted classifier and evaluate routing losses, class-specific recall, and uncertainty on an untouched sample. The uncompressed graph and a simple aggregation rule provide useful baselines. Record runtime and memory alongside those outcomes, with the same data split and computational budget.
+
+### 7.38.4 Python Information-Set Checks
+
+\noindent The program reads the [synthetic label cases](../../03_Data_and_Code/Graph_Coarsening/data/cases.json). The purity and parameter examples use distinct splits, identified in the inputs and output. It calculates the all-node majority, the training-only constant, their test scores, minority confusion counts, and the effect of changing a held-out label on the disagreement parameter. The stored JSON preserves every denominator. No predictive model is trained beyond the training-only constant, and the upstream package is not called.
+
+```bash
+python3 03_Data_and_Code/Graph_Coarsening/evaluate_labels.py
+```
+
+Python source: [evaluate_labels.py](../../03_Data_and_Code/Graph_Coarsening/evaluate_labels.py)
+
+```python
+"""Synthetic label diagnostics: oracle purity, permitted fitting, and outcome use.
+
+This computes small examples with the standard library; it does not call GraCo.
+The parameter example uses a separate information split from the purity example.
+"""
+from collections import Counter
+from pathlib import Path
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def majority(labels):
+    counts = Counter(labels)
+    if not counts:
+        raise ValueError("A group needs labeled training observations or a fallback.")
+    return min(counts, key=lambda label: (-counts[label], label))
+
+
+def score(label, outcomes, indices):
+    return sum(outcomes[i] == label for i in indices) / len(indices)
+
+
+def disagreement(outcomes, edges):
+    return sum(outcomes[i] != outcomes[j] for i, j in edges) / len(edges)
+
+
+def calculate(case):
+    y = case["outcomes"]
+    train, test = case["train_indices"], case["test_indices"]
+    assert not set(train) & set(test)
+    oracle = majority(y)
+    fitted = majority([y[i] for i in train])
+    alternative = case["alternative_test_indices"]
+    subset_best = majority([y[i] for i in alternative])
+    groups = case["minority_groups"]
+    outcomes = [label for group in groups for label in group]
+    prediction = [majority(group) for group in groups for _ in group]
+    positives = sum(label == 1 for label in outcomes)
+    correct = sum(a == b for a, b in zip(outcomes, prediction))
+    true_positive = sum(a == b == 1 for a, b in zip(outcomes, prediction))
+    before, after = case["parameter_labels_before"], case["parameter_labels_after"]
+    permitted = case["parameter_training_indices"]
+    heldout = case["parameter_heldout_indices"]
+    assert not set(permitted) & set(heldout)
+    assert [before[i] for i in permitted] == [after[i] for i in permitted]
+    assert all(before[i] == after[i] for i in range(len(before)) if i not in heldout)
+    edges = case["parameter_edges"]
+    training_edges = [(i, j) for i, j in edges if i in permitted and j in permitted]
+    return dict(
+        synthetic=True,
+        purity=dict(outcomes=y, train_indices=train, test_indices=test,
+                    full_group_majority=oracle, fitted_training_majority=fitted,
+                    full_group_purity=score(oracle, y, list(range(len(y)))),
+                    global_majority_test_score=score(oracle, y, test),
+                    training_only_test_score=score(fitted, y, test),
+                    test_count=len(test), alternative_subset_count=len(alternative),
+                    alternative_global_score=score(oracle, y, alternative),
+                    alternative_own_ceiling=score(subset_best, y, alternative)),
+        minority=dict(people=len(outcomes), class_one_people=positives,
+                      correct=correct, true_positive=true_positive,
+                      accuracy=correct / len(outcomes), recall=true_positive / positives),
+        parameter=dict(training_indices=permitted, heldout_indices=heldout,
+                       all_edges_before=disagreement(before, edges),
+                       all_edges_after=disagreement(after, edges),
+                       training_edges_before=disagreement(before, training_edges),
+                       training_edges_after=disagreement(after, training_edges)))
+
+
+def main():
+    case = json.loads((HERE / "data/cases.json").read_text())["labels"]
+    result = calculate(case)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "labels.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+A useful AI-assisted coding specification names the original population, edge meaning and units, group-size target, permitted labels, and primary decision outcome. Require separate outputs for feature reconstruction, graph criteria, and held-out prediction. Changing only a forbidden outcome should leave fitted preprocessing and predictions unchanged. Scored performance may change because the reference outcome changed. This distinction makes the information restriction testable.

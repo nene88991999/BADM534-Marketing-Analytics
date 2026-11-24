@@ -14,7 +14,7 @@ Antonin Joly's [GraCo repository](https://github.com/Antonin-J/graco) and [worki
 | M1 and M2 | Which data transformations does generated code actually perform? | Inspect graph direction, discarded components, outcome-dependent parameters, and denominator changes. |
 | M9 | Whose needs survive aggregation? | Evaluate group-specific errors and preservation of service access beside the firm's computational saving. |
 
-The strongest placement is a focused extension to the existing networks and model-evaluation material. The seventeen algorithms can remain advanced references. The lecture notes, decks, and assessment requirements have not been changed by this resource review.
+[M5 §5.24](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) and [M7 §7.38](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) contain the complete explanations and two executed Python programs. Sessions 7 and 11 include five slides and two editable TikZ figures. [Data and code](../../03_Data_and_Code/Graph_Coarsening/README.md) and [optional ungraded practice](../../07_Labs/Graph_Coarsening/README.md) support the examples. The seventeen algorithms remain advanced references.
 
 ## Calculations and Interpretation
 

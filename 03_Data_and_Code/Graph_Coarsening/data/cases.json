@@ -1,0 +1,24 @@
+{
+  "provenance": "Original synthetic teaching inputs. No observed customers or GraCo execution.",
+  "network": {
+    "zones": ["A", "B", "C", "D"],
+    "population": [100, 100, 100, 100],
+    "weekly_zone_revenue_dollars": [10, 10, 10, 40],
+    "group": [0, 0, 0, 1],
+    "edges_minutes": [[0, 1, 4], [1, 2, 1], [2, 3, 4]],
+    "store_node": 3,
+    "access_threshold_minutes": 5
+  },
+  "labels": {
+    "outcomes": [0, 0, 1],
+    "train_indices": [2],
+    "test_indices": [0, 1],
+    "alternative_test_indices": [2],
+    "minority_groups": [[0, 0, 0, 1], [0, 0, 0, 1]],
+    "parameter_edges": [[0, 1], [1, 2]],
+    "parameter_training_indices": [0, 1],
+    "parameter_heldout_indices": [2],
+    "parameter_labels_before": [0, 0, 0],
+    "parameter_labels_after": [0, 0, 1]
+  }
+}

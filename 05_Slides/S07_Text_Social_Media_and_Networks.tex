@@ -453,6 +453,52 @@ Marketing Analytics Lecture Notes. M5 §§5.21–5.22. \url{../06_Lecture_Notes/
 
 Marketing Analytics Lecture Notes. M5 §§5.21–5.22. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
 \end{frame}
+\begin{frame}{A Group Mean Needs a Group Size}
+\usebeamercolor[fg]{normal text}
+\noindent Four synthetic zones earn 10, 10, 10, and 40 dollars per week.
+\medskip
+\[
+\overline{x}=\frac{3(10)+1(40)}{4}=17.50\qquad \mathrm{Total}=70
+\]
+\medskip
+\noindent Groups \{A, B, C\} and \{D\} have mean revenues 10 and 40. Equal group weights give 25 dollars per zone.
+\note{The observation unit is a zone, and each zone has 100 people. Binary membership and the combinatorial convention produce group means. Counts three and one restore the original mean and total. These are weekly zone totals, not individual spending. GraCo defaults to normalized\_self\_loop, whose degree-normalized lifting generally differs from this averaging rule.
+
+Marketing Analytics Lecture Notes, M5 §5.24. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md} \url{https://arxiv.org/abs/2611.01200v1}}
+\end{frame}
+\begin{frame}{Exact Revenue, Distorted Access}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M05_graph_coarsening.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic inputs. Five-minute access is evaluated at the four original origins.\par}
+\note{Affinity is defined as one divided by travel minutes; coarse adjacency sums affinities between groups. Internal edges are removed. Revenue reconstruction error is zero and both combinatorial energies equal 225 dollars squared per minute. This preserves the chosen block-constant feature and quadratic form. It does not preserve every graph property or shortest paths. The incorrect coarse travel interpretation is an original constructed example, with no GraCo execution.
+
+Marketing Analytics Lecture Notes, M5 §5.24. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md}}
+\end{frame}
+\begin{frame}{Preprocessing Changes the Population}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item The existing retail case includes 150 people at a disconnected origin.
+\item Known access stays at 550 people when that origin is removed.
+\item Changing the denominator from 800 to 650 raises access from 68.75\% to 84.62\%.
+\item Retain original weights, excluded origins, and the meaning of each edge.
+\end{slidebullets}
+\vfill
+\note{This is the separate seven-origin case in Section 5.21, not the four-zone compression example. GraCo preprocessing defaults to largest-component selection, symmetrization, and removing self-loops. Weighted reciprocal edges are averaged. A referral or one-way trip can change meaning under symmetrization. Check algorithm support before changing these options; preserve excluded people in the original-population accounting. No access improved in this calculation.
+
+Marketing Analytics Lecture Notes, M5 §5.24. \url{../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md} \url{../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md}}
+\end{frame}
 \begin{frame}{University Affiliations Create a Research Network}
 \usebeamercolor[fg]{normal text}
 \vfill

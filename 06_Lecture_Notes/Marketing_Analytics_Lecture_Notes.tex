@@ -4008,6 +4008,14 @@ denominator. City2Graph's
 example} explains the corresponding distinction between reachable graph
 locations and optional polygon filling.
 
+Graph preprocessing can change the population before a chart is drawn.
+GraCo's default largest-component selection excludes disconnected nodes,
+while its symmetrization averages reciprocal edge weights. Section 5.24
+compares these operations with the original access population and
+provides complete Python for a separate compression example. An
+exclusion table should retain the omitted population and explain its
+role in the reported denominator.
+
 Latitude and longitude are angular coordinates, so planar distances
 calculated directly from them have units of degrees. A suitable
 projection or geographical-distance formula supplies interpretable
@@ -6723,6 +6731,14 @@ graph-autoencoder embeddings. An optional comparison should retain the
 same observations, preprocessing, cluster count, and evaluation criteria
 wherever feasible. Customer outcomes or other independently chosen
 evidence are needed to interpret a cluster's marketing meaning.
+
+Group means require the original membership counts when the decision
+concerns average customers or total demand. Equal weight for differently
+sized segments changes the population receiving weight. The synthetic
+network calculation in Section 5.24 retains zone counts, mean zone
+revenue, and total revenue separately, with complete Python. A segment
+representation should carry the corresponding counts and units through
+every later aggregation.
 
 \hypertarget{M04-synthetic-consumers-and-product-concept-screening}{%
 \section{Synthetic Consumers and Product Concept
@@ -9747,6 +9763,322 @@ def main():
 if __name__ == "__main__":
     main()
 \end{Verbatim}
+
+\Needspace{12\baselineskip}
+
+\hypertarget{M05-compressing-a-network-and-preserving-customer-access}{%
+\section{Compressing a Network and Preserving Customer
+Access}\label{M05-compressing-a-network-and-preserving-customer-access}}
+
+\noindent \noindent A retail chain may group nearby service zones to reduce the
+cost of storing and analyzing its network. The manager still needs a
+revenue summary and the share of customers who can reach an available
+outlet within five minutes. Compression can preserve the first quantity
+while changing the second. The relevant evaluation therefore begins with
+the original customers, their locations, and the decision the smaller
+graph is intended to support.
+
+\href{https://github.com/Antonin-J/graco}{Antonin Joly's GraCo} provides
+a common interface to 17 graph-coarsening methods and a random baseline.
+Its \href{https://arxiv.org/abs/2611.01200v1}{working paper} compares
+graph and feature criteria under explicit operator conventions. These
+criteria identify properties of a representation. Customer access
+additionally requires a travel interpretation, the original population
+weights, and an assessment of routes that disappear when nodes are
+grouped.
+
+\hypertarget{M05-group-means-group-sizes-and-graph-weights}{%
+\subsection{Group Means, Group Sizes, and Graph
+Weights}\label{M05-group-means-group-sizes-and-graph-weights}}
+
+\noindent \noindent Let \(N\) original nodes be assigned to \(n\) nonempty groups.
+The binary membership matrix \(Q_b\) has \(N\) rows and \(n\) columns;
+its entry is one when a node belongs to the indicated group. Let \(A\)
+be a symmetric weighted adjacency matrix with no self-loops. Summing
+weights between groups gives the coarse adjacency
+
+\[
+A_c=Q_b^\top A Q_b,
+\]
+
+with its diagonal removed. An off-diagonal entry adds all original edge
+weights between the corresponding groups. This aggregation preserves the
+units of those weights. Summing travel times across parallel roads, for
+example, would require a different justification from summing referral
+counts.
+
+For a node feature \(x\), use binary lifting and the group-average
+reduction
+
+\[
+P=(Q_b^\top Q_b)^{-1}Q_b^\top,\qquad x_c=Px,\qquad \widehat x=Q_bx_c.
+\]
+
+The diagonal entries of \(Q_b^\top Q_b\) are group sizes. Dividing each
+group's sum by its size produces \(x_c\); lifting assigns that mean to
+each original member. A mean across original nodes weights each group
+mean by its membership count. A total multiplies each mean by that count
+before summing. Other population weights require an aggregation rule
+consistent with the intended population.
+
+These equations use the combinatorial convention. GraCo's default
+\texttt{normalized\_self\_loop} uses degree-normalized lifting, whose
+pseudoinverse generally differs from simple averaging. Selecting
+\texttt{laplacian\_kind="combinatorial"} makes the binary-lifting
+interpretation explicit. The
+\href{../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md}{pinned
+construction and normalization code} records this distinction. An
+AI-generated call that runs with defaults can implement a different
+estimand from the one described in the prompt.
+
+\hypertarget{M05-exact-revenue-reconstruction-and-distorted-travel}{%
+\subsection{Exact Revenue Reconstruction and Distorted
+Travel}\label{M05-exact-revenue-reconstruction-and-distorted-travel}}
+
+\noindent \noindent Consider four synthetic zones in the path A-B-C-D. Each zone
+contains 100 people. An available store is located at D. The three edges
+take four, one, and four minutes, respectively. Weekly zone revenues are
+10, 10, 10, and 40 dollars. All quantities are imposed teaching inputs.
+Revenue is a weekly total for each zone; it is not an individual
+customer's spending.
+
+Group A, B, and C together and retain D separately. The group sizes are
+three and one, and their mean zone revenues are 10 and 40 dollars.
+Reconstructing the four original revenue values produces zero error.
+Giving each group equal weight produces a mean of 25 dollars, while
+weighting by its original zone count gives
+\((3\times10+1\times40)/4=17.50\) dollars per zone. Total weekly revenue
+is 70 dollars. Adding the two means would give 50 dollars and discard
+the meaning of the original total.
+
+For this graph calculation, define edge affinity as the reciprocal of
+travel minutes. The affinities are \(1/4\), \(1\), and \(1/4\) per
+minute. The coarse graph retains an affinity of \(1/4\) between the two
+groups. Its internal edges are removed. To measure variation in the
+revenue feature across connected zones, use the combinatorial Dirichlet
+energy
+
+\[
+x^\top Lx=\sum_{\{i,j\}\in E} A_{ij}(x_i-x_j)^2,
+\]
+
+where \(L\) is the degree matrix minus \(A\) and each undirected edge
+appears once in the sum. The units here are dollars squared per minute
+for the weekly revenue feature. Revenues are equal along A-B and B-C, so
+those edges contribute zero. The C-D edge contributes
+\((1/4)(10-40)^2=225\). The coarse feature has exactly the same energy.
+This equality concerns the chosen feature and quadratic form; it
+supplies no guarantee for every graph property.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.20}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.26}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.26}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.28}}@{}}
+\toprule
+Original Zone & Revenue (Dollars) & Travel to D (Minutes) & Naive Coarse
+Travel (Minutes) \\
+\midrule
+
+A & 10 & 9 & 4 \\
+B & 10 & 5 & 4 \\
+C & 10 & 4 & 4 \\
+D & 40 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A manager who interprets the reciprocal coarse affinity as a four-minute
+trip assigns the same travel time to A, B, and C. That operation removes
+travel within the merged group. A's actual trip takes nine minutes. At
+the five-minute threshold, B, C, and D provide access for 300 of the 400
+people, or 75\%. The naive compressed calculation reports access for all
+400 people. Both revenue reconstruction and its graph energy remain
+exact while the access comparison changes.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M05_graph_coarsening.tex}
+\caption{Four equal-population zones have revenues 10, 10, 10, and 40 dollars and edge travel times 4, 1, and 4 minutes. Merging A, B, and C preserves the revenue feature and energy of 225, but reciprocal coarse-edge travel omits internal trips and raises apparent five-minute access from 75\% to 100\%.}\label{fig:M05_graph_coarsening}
+\end{figure}
+
+A service decision needs access evaluated at the original origins, or a
+compression method with a verified approximation guarantee for that
+particular route quantity. A smaller representation may still serve
+revenue accounting. Using it for travel requires evidence about which
+internal distances it preserves and how approximation error affects
+customers near the access threshold.
+
+\hypertarget{M05-preprocessing-and-the-population-receiving-weight}{%
+\subsection{Preprocessing and the Population Receiving
+Weight}\label{M05-preprocessing-and-the-population-receiving-weight}}
+
+\noindent \noindent GraCo's pinned preprocessing function defaults to symmetrizing
+edges, removing self-loops, and retaining the largest connected
+component. Weighted reciprocal edges are averaged during symmetrization.
+Those operations support particular mathematical procedures. Their
+economic meaning depends on whether the edges represent travel,
+referrals, purchases, or another relationship. A directed referral from
+one customer to another becomes a different object when combined with
+the reverse direction.
+
+The separate retail case in Section 5.21 contains 800 people, including
+150 at a disconnected origin. Known five-minute access covers 550
+people. Retaining only the largest connected component removes those 150
+people from the denominator and raises the reported share from
+\(550/800=68.75\%\) to \(550/650=84.62\%\). No person's access improves.
+The original calculation retains the disconnected origin and its unknown
+store status, producing the stated lower and upper access bounds. Its
+complete Python program appears in Section 5.21.
+
+Preserve an accounting table of original nodes, retained nodes,
+population weights, and exclusion reasons. Component-wise analysis can
+retain disconnected customers when the chosen algorithm supports it. An
+algorithm that requires connectivity needs a separate treatment of
+excluded components in the decision calculation. Changing a default
+without checking the method's assumptions does not resolve that
+requirement.
+
+\hypertarget{M05-python-aggregation-and-access-calculations}{%
+\subsection{Python Aggregation and Access
+Calculations}\label{M05-python-aggregation-and-access-calculations}}
+
+\noindent \noindent The
+\href{../03_Data_and_Code/Graph_Coarsening/data/cases.json}{synthetic
+inputs} contain the four zone names, population weights, weekly
+revenues, group assignments, edge minutes, store location, and
+threshold. The program constructs the binary matrices, compares original
+and reconstructed features, calculates both energies, and runs
+shortest-path calculations. It writes one row per original zone and an
+aggregate JSON result. The naive coarse route is retained as an
+explicitly labeled incorrect interpretation for this decision.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python3 03_Data_and_Code/Graph_Coarsening/compress_network.py
+\end{Verbatim}
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Graph_Coarsening/compress_network.py}{compress\_network.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Exact aggregation and travel calculations for four synthetic retail zones.
+
+Run with Python 3.10+; standard library only. Paths are relative to this file.
+Binary membership and combinatorial affinities are chosen explicitly.
+"""
+from fractions import Fraction as F
+from pathlib import Path
+import csv
+import json
+import math
+
+HERE = Path(__file__).resolve().parent
+
+
+def multiply(a, b):
+    return [[sum(x * y for x, y in zip(row, col))
+             for col in zip(*b)] for row in a]
+
+
+def transpose(a):
+    return list(map(list, zip(*a)))
+
+
+def distances(n, edges):
+    d = [[0 if i == j else math.inf for j in range(n)] for i in range(n)]
+    for i, j, minutes in edges:
+        assert minutes > 0 and i != j
+        d[i][j] = d[j][i] = min(d[i][j], minutes)
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                d[i][j] = min(d[i][j], d[i][k] + d[k][j])
+    return d
+
+
+def calculate(case):
+    names, group = case["zones"], case["group"]
+    people = case["population"]
+    x = [[F(v)] for v in case["weekly_zone_revenue_dollars"]]
+    n, g = len(names), max(group) + 1
+    assert len(group) == len(x) == len(people) == n
+    assert set(group) == set(range(g)) and all(p > 0 for p in people)
+    sizes = [group.count(c) for c in range(g)]
+    q = [[int(c == group[i]) for c in range(g)] for i in range(n)]
+    p = [[F(q[i][c], sizes[c]) for i in range(n)] for c in range(g)]
+    means = multiply(p, x)
+    reconstructed = multiply(q, means)
+    a = [[F(0) for _ in range(n)] for _ in range(n)]
+    for i, j, minutes in case["edges_minutes"]:
+        a[i][j] = a[j][i] = F(1, minutes)
+    coarse = multiply(multiply(transpose(q), a), q)
+    for c in range(g):
+        coarse[c][c] = F(0)
+    coarse_edges = [(c, d, 1 / coarse[c][d]) for c in range(g)
+                    for d in range(c + 1, g) if coarse[c][d] > 0]
+    fine_d = distances(n, case["edges_minutes"])
+    naive_d = distances(g, coarse_edges)
+    store, threshold = case["store_node"], case["access_threshold_minutes"]
+    rows = []
+    for i, name in enumerate(names):
+        fine, naive = fine_d[i][store], naive_d[group[i]][group[store]]
+        rows.append(dict(zone=name, people=people[i], group=group[i],
+                         revenue_dollars=float(x[i][0]),
+                         reconstructed_revenue_dollars=float(reconstructed[i][0]),
+                         original_minutes=float(fine), naive_coarse_minutes=float(naive),
+                         original_access=int(fine <= threshold),
+                         naive_coarse_access=int(naive <= threshold)))
+    energy = sum(F(1, m) * (x[i][0] - x[j][0]) ** 2
+                 for i, j, m in case["edges_minutes"])
+    coarse_energy = sum(coarse[c][d] * (means[c][0] - means[d][0]) ** 2
+                        for c in range(g) for d in range(c + 1, g))
+    result = dict(
+        synthetic=True, original_zones=n, groups=g, reduction=1 - g / n,
+        group_sizes=sizes, group_mean_revenues=[float(v[0]) for v in means],
+        original_mean_revenue=float(sum(v[0] for v in x) / n),
+        equal_group_mean_revenue=float(sum(v[0] for v in means) / g),
+        size_weighted_mean_revenue=float(sum(sizes[c] * means[c][0]
+                                            for c in range(g)) / n),
+        total_revenue=float(sum(v[0] for v in x)),
+        sum_of_group_means=float(sum(v[0] for v in means)),
+        reconstruction_squared_error=float(sum((x[i][0] - reconstructed[i][0]) ** 2
+                                               for i in range(n))),
+        original_energy=float(energy), coarse_energy=float(coarse_energy),
+        energy_units="dollars squared per minute; weekly revenue feature",
+        coarse_affinities=[[float(v) for v in row] for row in coarse],
+        population=sum(people), access_threshold_minutes=threshold,
+        original_access_share=sum(r["people"] * r["original_access"] for r in rows) / sum(people),
+        naive_coarse_access_share=sum(r["people"] * r["naive_coarse_access"] for r in rows) / sum(people))
+    return result, rows
+
+
+def main():
+    case = json.loads((HERE / "data/cases.json").read_text())["network"]
+    result, rows = calculate(case)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "network.json").write_text(json.dumps(result, indent=2) + "\n")
+    with (output / "zones.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+Change the population at A to 700 while leaving the other three zones at
+100. Original access becomes 30\%, and the naive coarse calculation
+still gives 100\%. The representation error now affects a larger share
+of people. Returning to the original population and assigning every zone
+its own group reproduces the original routes. These comparisons hold the
+travel network fixed and change one object at a time.
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
@@ -16331,6 +16663,266 @@ if __name__ == "__main__":
     run(parser.parse_args().output)
 \end{Verbatim}
 
+\hypertarget{M07-network-compression-label-purity-and-predictive-evidence}{%
+\section{Network Compression, Label Purity, and Predictive
+Evidence}\label{M07-network-compression-label-purity-and-predictive-evidence}}
+
+\noindent \noindent A firm compressing a customer network may want to predict
+which customers need specialist service. The firm needs evidence that
+the smaller representation preserves useful information and that a
+fitted procedure can use that information on future outcomes. A
+partition's label composition and a classifier's held-out predictions
+answer different questions. Outcomes used to construct the partition or
+tune its parameters also belong in the accounting of what the model
+knew.
+
+\Needspace{14\baselineskip}
+
+\hypertarget{M07-a-groups-oracle-purity}{%
+\subsection{A Group's Oracle Purity}\label{M07-a-groups-oracle-purity}}
+
+\noindent \noindent Suppose a classifier must assign one label to every member of
+a group. If all outcomes are known, the most accurate constant is the
+group's majority label. Across groups, the resulting oracle purity is
+
+\[
+\operatorname{Purity}=\frac{1}{N}\sum_{g=1}^{n}\max_k\sum_{i\in g}\mathbf{1}\{y_i=k\}.
+\]
+
+Here \(N\) counts all original labeled nodes, \(g\) indexes groups, and
+\(k\) indexes possible classes. The numerator counts correctly assigned
+nodes after choosing each group's constant using every outcome. It is
+the best achievable accuracy for group-constant predictions on those
+same nodes. It is useful for diagnosing label mixing in the partition. A
+prediction model permitted to distinguish members using additional
+features is outside this restriction.
+
+GraCo's
+\href{../01_Resources/32_Graph_Coarsening/reference/metrics/structural.py}{pinned
+\texttt{max\_acc} implementation} computes each majority from all node
+labels. It then evaluates that same assignment on each requested train,
+validation, or test mask. The mask changes which nodes receive a score;
+it does not change the labels used to choose the majority. A value
+returned under a test key therefore requires this interpretation before
+being used as evidence of generalization.
+
+Consider one synthetic group with node outcomes \((0,0,1)\). Node 2 is
+the only training observation, and nodes 0 and 1 form the
+two-observation test set. The all-label majority is 0 and scores 100\%
+on those two test nodes. A constant fitted only to the permitted
+training outcome predicts 1 and scores 0\%. The full-group oracle purity
+is \(2/3\). These values follow from three imposed labels; they are not
+estimates of an expected performance gap.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_graph_labels.tex}
+\caption{Three synthetic nodes share one group. The training node has label 1 and the two held-out nodes have label 0. Choosing the group label from all outcomes yields a test score of 100\%; fitting only the training outcome yields 0\%. Full-group oracle purity is two-thirds.}\label{fig:M07_graph_labels}
+\end{figure}
+
+A masked global-majority score also need not be the best constant score
+within that subset. In a separate split of the same three labels, let
+the last node alone form the evaluation subset. The global majority
+remains 0 and scores zero there; the subset's own optimal constant is 1
+and scores one. Only the all-node score has the stated full-group
+ceiling interpretation. Recomputing an optimal label from evaluation
+outcomes would still be an oracle calculation.
+
+\hypertarget{M07-outcome-use-before-fitting}{%
+\subsection{Outcome Use Before
+Fitting}\label{M07-outcome-use-before-fitting}}
+
+\noindent \noindent A predictive representation can depend on held-out outcomes
+before a classifier is fitted. GraCo's
+\href{../01_Resources/32_Graph_Coarsening/reference/algorithms/ugc.py}{UGC
+implementation} sets its feature-versus-structure weight from edge-label
+disagreement when \texttt{alpha=None}. It reads the endpoint labels
+across all supplied edges, including test-node labels. The
+implementation documents this choice. Its appropriateness depends on
+whether the task is a descriptive oracle comparison or prediction with
+restricted outcome information.
+
+Use a separate synthetic path with edges \((0,1)\) and \((1,2)\). Nodes
+0 and 1 have training labels 0 and 0; node 2 is held out. Setting its
+label to 0 gives zero disagreeing edges. Changing only that held-out
+label to 1 gives one disagreement among two edges, so the default
+parameter changes from 0 to \(1/2\). The training observations and graph
+remain fixed. The held-out outcome has entered the representation's
+parameter choice.
+
+For prospective prediction, choose a fixed parameter in advance or
+select it using permitted training and validation information. A
+fraction computed only from edges whose endpoints have training labels
+is invariant to the held-out-label change in this small example; it is a
+different statistic and may itself be noisy or selected. The final test
+outcomes remain untouched throughout selection. Access to test-node
+features in a transductive task is a separate permission from access to
+their outcomes.
+
+\href{../01_Resources/32_Graph_Coarsening/reference/algorithms/stpgc.py}{STPGC}
+makes label guidance explicit. Its default uses training and validation
+labels; \texttt{train\_only} narrows that scope, and
+\texttt{label\_guide=False} removes guidance. The reviewed cross-scoring
+script disables STPGC guidance and leaves UGC's default alpha unchanged.
+Method comparisons need a common, stated information set. A successful
+run alone supplies no evidence that two rows used equivalent outcome
+information.
+
+\hypertarget{M07-decision-metrics-and-uncommon-customer-needs}{%
+\subsection{Decision Metrics and Uncommon Customer
+Needs}\label{M07-decision-metrics-and-uncommon-customer-needs}}
+
+\noindent \noindent Suppose two synthetic groups each contain three
+routine-service customers, labeled 0, and one customer requiring
+specialist service, labeled 1. Assigning the majority label to everyone
+gives six correct classifications among eight customers, or 75\%
+accuracy. Both specialist-service customers are missed, giving class-1
+recall of zero out of two. If missed specialist requests carry higher
+costs, aggregate purity conceals the outcome most relevant to the
+routing decision. Report the group counts, confusion counts, and
+class-specific consequences before choosing a loss function.
+
+Graph criteria can also rank the same methods differently. The GraCo
+paper's Table 4 reports an achieved reduction ratio of 0.70 for both
+local variation and Leiden on Cora. Local variation has lower restricted
+spectral approximation error, 0.67 versus 1.58. Leiden has lower
+convolution-matching error, 29.2 versus 32.9 thousand. These criteria
+measure spectral preservation and matching of graph-convolution
+operators under the reported normalization. Neither is a measured
+customer-service outcome. The values are selected published results, not
+course-generated fits. \href{https://arxiv.org/abs/2611.01200v1}{Joly,
+Appendix B.5, p.~25}.
+
+Compare methods at similar achieved sizes and record the requested size
+separately. The same table reports PubMed reduction ratios of 0.79 for
+METIS and 0.64 for GBGC against a requested 0.70. Runtime additionally
+depends on hardware, preprocessing, tuning, and failure limits. The
+reviewed release defers graph-neural-network training to subsequent
+work. Its graph diagnostics cannot establish trained predictive
+performance on marketing data.
+
+A retail deployment can evaluate access at each original origin, as in
+Section 5.24. A customer-service deployment can fit a permitted
+classifier and evaluate routing losses, class-specific recall, and
+uncertainty on an untouched sample. The uncompressed graph and a simple
+aggregation rule provide useful baselines. Record runtime and memory
+alongside those outcomes, with the same data split and computational
+budget.
+
+\hypertarget{M07-python-information-set-checks}{%
+\subsection{Python Information-Set
+Checks}\label{M07-python-information-set-checks}}
+
+\noindent \noindent The program reads the
+\href{../03_Data_and_Code/Graph_Coarsening/data/cases.json}{synthetic
+label cases}. The purity and parameter examples use distinct splits,
+identified in the inputs and output. It calculates the all-node
+majority, the training-only constant, their test scores, minority
+confusion counts, and the effect of changing a held-out label on the
+disagreement parameter. The stored JSON preserves every denominator. No
+predictive model is trained beyond the training-only constant, and the
+upstream package is not called.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python3 03_Data_and_Code/Graph_Coarsening/evaluate_labels.py
+\end{Verbatim}
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Graph_Coarsening/evaluate_labels.py}{evaluate\_labels.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic label diagnostics: oracle purity, permitted fitting, and outcome use.
+
+This computes small examples with the standard library; it does not call GraCo.
+The parameter example uses a separate information split from the purity example.
+"""
+from collections import Counter
+from pathlib import Path
+import json
+
+HERE = Path(__file__).resolve().parent
+
+
+def majority(labels):
+    counts = Counter(labels)
+    if not counts:
+        raise ValueError("A group needs labeled training observations or a fallback.")
+    return min(counts, key=lambda label: (-counts[label], label))
+
+
+def score(label, outcomes, indices):
+    return sum(outcomes[i] == label for i in indices) / len(indices)
+
+
+def disagreement(outcomes, edges):
+    return sum(outcomes[i] != outcomes[j] for i, j in edges) / len(edges)
+
+
+def calculate(case):
+    y = case["outcomes"]
+    train, test = case["train_indices"], case["test_indices"]
+    assert not set(train) & set(test)
+    oracle = majority(y)
+    fitted = majority([y[i] for i in train])
+    alternative = case["alternative_test_indices"]
+    subset_best = majority([y[i] for i in alternative])
+    groups = case["minority_groups"]
+    outcomes = [label for group in groups for label in group]
+    prediction = [majority(group) for group in groups for _ in group]
+    positives = sum(label == 1 for label in outcomes)
+    correct = sum(a == b for a, b in zip(outcomes, prediction))
+    true_positive = sum(a == b == 1 for a, b in zip(outcomes, prediction))
+    before, after = case["parameter_labels_before"], case["parameter_labels_after"]
+    permitted = case["parameter_training_indices"]
+    heldout = case["parameter_heldout_indices"]
+    assert not set(permitted) & set(heldout)
+    assert [before[i] for i in permitted] == [after[i] for i in permitted]
+    assert all(before[i] == after[i] for i in range(len(before)) if i not in heldout)
+    edges = case["parameter_edges"]
+    training_edges = [(i, j) for i, j in edges if i in permitted and j in permitted]
+    return dict(
+        synthetic=True,
+        purity=dict(outcomes=y, train_indices=train, test_indices=test,
+                    full_group_majority=oracle, fitted_training_majority=fitted,
+                    full_group_purity=score(oracle, y, list(range(len(y)))),
+                    global_majority_test_score=score(oracle, y, test),
+                    training_only_test_score=score(fitted, y, test),
+                    test_count=len(test), alternative_subset_count=len(alternative),
+                    alternative_global_score=score(oracle, y, alternative),
+                    alternative_own_ceiling=score(subset_best, y, alternative)),
+        minority=dict(people=len(outcomes), class_one_people=positives,
+                      correct=correct, true_positive=true_positive,
+                      accuracy=correct / len(outcomes), recall=true_positive / positives),
+        parameter=dict(training_indices=permitted, heldout_indices=heldout,
+                       all_edges_before=disagreement(before, edges),
+                       all_edges_after=disagreement(after, edges),
+                       training_edges_before=disagreement(before, training_edges),
+                       training_edges_after=disagreement(after, training_edges)))
+
+
+def main():
+    case = json.loads((HERE / "data/cases.json").read_text())["labels"]
+    result = calculate(case)
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    (output / "labels.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+A useful AI-assisted coding specification names the original population,
+edge meaning and units, group-size target, permitted labels, and primary
+decision outcome. Require separate outputs for feature reconstruction,
+graph criteria, and held-out prediction. Changing only a forbidden
+outcome should leave fitted preprocessing and predictions unchanged.
+Scored performance may change because the reference outcome changed.
+This distinction makes the information restriction testable.
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -20514,6 +21106,19 @@ change the recommendation. Sparse map coverage, an unknown availability
 state, or an inaccessible entrance can change the measured options.
 Customers' accounts of their needs and constraints can change the
 interpretation even when the shortest-path calculation remains correct.
+
+Network compression adds a responsibility to preserve evidence about
+people whose circumstances differ from a group average. Section 5.24
+holds the original service population fixed and shows how removing
+internal travel can overstate access. Section 7.38 shows how majority
+labels can miss every customer in a small service class. A computational
+saving needs to be evaluated alongside the burdens created by those
+errors and the affected customers' opportunities to contest a decision.
+Kantian respect supports considering their purposes in the
+justification; Confucian benevolence and trustworthiness support
+responsible attention to their needs and an accurate account of service.
+Aggregation alone establishes neither misconduct nor an intention to
+impair agency.
 
 \hypertarget{M09-evidence-for-meaningful-customer-choice}{%
 \subsection{Evidence for Meaningful Customer

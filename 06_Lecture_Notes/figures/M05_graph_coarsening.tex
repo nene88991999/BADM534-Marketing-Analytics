@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[anchor=west,font=\bfseries] at (-.5,3.3) {Original Zones};
+\draw[IlliniOrange,thick,dashed,rounded corners] (-.5,1.1) rectangle (5.3,2.9);
+\draw[IlliniBlue,very thick] (0,2)--node[above]{4 min} (2.4,2)--node[above]{1 min} (4.8,2)--node[above]{4 min} (7.2,2);
+\foreach \x/\s/\rev in {0/A/10,2.4/B/10,4.8/C/10} {
+  \node[circle,draw=IlliniBlue,fill=white,minimum size=8mm] at (\x,2) {\s};
+  \node at (\x,1.4) {\$\rev};
+}
+\node[circle,draw=IlliniBlue,fill=IlliniBlue,text=white,minimum size=8mm] at (7.2,2) {D};
+\node at (7.2,1.4) {\$40};
+\node[anchor=west,align=left] at (8.1,2.1) {100 People per Zone\\Store at D\\Weekly Zone Revenue\\Affinity = $1/$Minutes};
+\node[anchor=west] at (-.5,.55) {Trips to D: 9, 5, 4, 0 minutes. Five-minute access: 300/400 = 75\%.};
+\draw[IlliniOrange,->,thick] (3.4,.05)--(3.4,-.65);
+\node[anchor=west,font=\bfseries] at (-.5,-1.1) {Two Groups};
+\node[box,fill=white,minimum width=3.2cm] (abc) at (1.5,-2) {A, B, C\\Mean: \$10; Size: 3};
+\node[box,fill=white] (d) at (7.2,-2) {D\\Mean: \$40; Size: 1};
+\draw[IlliniBlue,very thick] (abc)--node[above]{Affinity: $1/4$}(d);
+\node[anchor=west,align=left] at (-.5,-3.1) {Revenue Reconstruction Error: 0\qquad Energy: 225 Before and After\\Reciprocal-Edge Trips: 4, 4, 4, 0 minutes. Apparent Access: 100\%.};
+\end{tikzpicture}

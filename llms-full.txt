@@ -88,6 +88,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Auxiliary_Data/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "graph-coarsening",
+      "path": "07_Labs/Graph_Coarsening/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -245,7 +251,10 @@ Generated from course.json and the source files identified below. This file cont
     "07_Labs/Auxiliary_Data/README.md",
     "01_Resources/32_Graph_Coarsening/README.md",
     "01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md",
-    "01_Resources/32_Graph_Coarsening/CASE_DESIGN.md"
+    "01_Resources/32_Graph_Coarsening/CASE_DESIGN.md",
+    "03_Data_and_Code/Graph_Coarsening/README.md",
+    "03_Data_and_Code/Graph_Coarsening/DATA_DICTIONARY.md",
+    "07_Labs/Graph_Coarsening/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -294,12 +303,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-23-auxiliary-data",
+    "revision": "2026-11-23-graph-coarsening",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 97,
-    "pages": 369,
+    "figures_count": 99,
+    "pages": 380,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -318,7 +327,8 @@ Generated from course.json and the source files identified below. This file cont
     "training_data_mixtures_examples": "03_Data_and_Code/Training_Data_Mixtures/README.md",
     "synthetic_consumer_examples": "03_Data_and_Code/Synthetic_Consumers/README.md",
     "reproducible_recommendations": "03_Data_and_Code/Reproducible_Recommendations/README.md",
-    "auxiliary_data_examples": "03_Data_and_Code/Auxiliary_Data/README.md"
+    "auxiliary_data_examples": "03_Data_and_Code/Auxiliary_Data/README.md",
+    "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md"
   },
   "datasets": [
     {
@@ -389,7 +399,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 374,
+    "slides": 379,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -842,7 +852,7 @@ Generated from course.json and the source files identified below. This file cont
     "reviewed_on": "2026-11-23",
     "source_commit": "19da8a6031dcf1803faa5723148b5975a5462af6",
     "paper_version": "2611.01200v1",
-    "status": "Source review and original checked calculations; M5/M7 integration remains proposed.",
+    "status": "Available in M5, M7, Sessions 7 and 11, and optional ungraded practice.",
     "primary_modules": [
       "M5",
       "M7"
@@ -858,7 +868,30 @@ Generated from course.json and the source files identified below. This file cont
     "model_calls": 0,
     "original_calculation_checks_passed": 7,
     "archived_reference_files": 21,
-    "scope": "Four-zone aggregation and travel counterexample, label diagnostics, existing synthetic retail denominator, and selected published metric comparisons; no upstream execution or empirical marketing effects."
+    "scope": "Four-zone aggregation and travel counterexample, label diagnostics, existing synthetic retail denominator, and selected published metric comparisons; no upstream execution or empirical marketing effects.",
+    "implemented_on": "2026-11-23",
+    "examples": "03_Data_and_Code/Graph_Coarsening/README.md",
+    "lab": "07_Labs/Graph_Coarsening/README.md",
+    "course_manifest": "03_Data_and_Code/Graph_Coarsening/manifest.json",
+    "course_verification": "03_Data_and_Code/Graph_Coarsening/VERIFICATION.md",
+    "sections": [
+      "M2 \u00a72.23",
+      "M4 \u00a74.22",
+      "M5 \u00a75.24",
+      "M7 \u00a77.38",
+      "M9 \u00a79.18.2"
+    ],
+    "sessions": [
+      7,
+      11
+    ],
+    "discussion_minutes": {
+      "7": 15,
+      "11": 5
+    },
+    "original_programs_executed": 2,
+    "independent_course_checks_passed": 9,
+    "original_figures": 2
   }
 }
 ```
@@ -965,6 +998,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Synthetic Consumers and Concept Screening
 
 [Two complete examples](03_Data_and_Code/Synthetic_Consumers/README.md) connect product screening in M4 §4.23 to text measurement in M5 §5.23 and validation in M7 §7.36. Invented panels and imposed similarities isolate anchor sensitivity, persona weights, distribution fit, and shortlist errors. Sessions 5, 7, and 14 incorporate the comparisons and consumer-representation discussion. [Optional ungraded practice](07_Labs/Synthetic_Consumers/README.md) extends the calculations.
+
+## Network Compression and Customer Access
+
+[M5 §5.24 and M7 §7.38](03_Data_and_Code/Graph_Coarsening/README.md) compare aggregation weights, preserved revenue, distorted travel, oracle label purity, and outcome use during preprocessing. Complete Python, two editable figures, five slides in Sessions 7 and 11, and [optional practice](07_Labs/Graph_Coarsening/README.md) accompany the synthetic cases.
 
 ---
 
@@ -1205,6 +1242,10 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 
 [The auxiliary-data example](03_Data_and_Code/Auxiliary_Data/README.md) connects coefficient identification in M3 §3.16, product contrasts and research cost in M4 §4.24, fixed experimental design in M6 §6.28, and omitted-bias evaluation in M7 §7.37. Two complete standard-library programs and three TikZ figures retain the four-profile construction, common MSE target, source variances, and bias restrictions. Sessions 4, 5, 9, and 11 use existing meeting time. The [lab](07_Labs/Auxiliary_Data/README.md) is optional ungraded practice.
 
+## Graph Coarsening and Customer Outcomes
+
+[The graph-coarsening case](03_Data_and_Code/Graph_Coarsening/README.md) connects original-population measurement in M2 §2.23, group weights in M4 §4.22, revenue and travel in M5 §5.24, label information in M7 §7.38, and service responsibilities in M9 §9.18.2. Sessions 7 and 11 include five slides and two editable diagrams. [Optional practice](07_Labs/Graph_Coarsening/README.md) applies the M1 AI-assisted coding workflow to inspected source defaults.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1284,6 +1325,10 @@ The course outline includes training-source mixtures and conditional service out
 ## Synthetic Consumer Research
 
 The course outline includes concept screening in the February 17 product-design meeting. Text measurement follows on March 3, with consumer representation discussed on April 28. The [worked examples](../03_Data_and_Code/Synthetic_Consumers/README.md) and [optional practice](../07_Labs/Synthetic_Consumers/README.md) preserve the distinction between synthetic calculations and human validation.
+
+## Network Compression Coverage
+
+The syllabus includes network compression and retail access in Meeting 7 and label leakage within prediction in Meeting 11. The [session plan](../05_Slides/SESSION_PLAN.md) allocates the examples within existing 170-minute meetings. The [optional lab](../07_Labs/Graph_Coarsening/README.md) has no graded requirement.
 
 ---
 
@@ -1413,6 +1458,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Human and Synthetic Evidence](Auxiliary_Data/README.md) contains two executed standard-library programs, four invented product profiles, analytic precision and bias calculations, and six independent checks. Three editable figures distinguish preserved feature contrasts, conditional cost savings, and persistent coefficient bias. Full Python appears in M4 §4.24 and M7 §7.37, with definitions and a separate source review.
 
+## Graph Coarsening
+
+[Two standard-library programs](Graph_Coarsening/README.md) reproduce a four-zone revenue/access comparison and separate label-evaluation examples. Synthetic inputs, definitions, saved JSON/CSV outputs, provenance, and nine independent checks accompany complete Python in M5 §5.24 and M7 §7.38.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -1421,7 +1470,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 23, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [369-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 97 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [380-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 99 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1497,7 +1546,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 63 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 85 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -1572,6 +1621,10 @@ M1 §1.15 provides a complete Python program that recomputes four synthetic-cons
 ## Human and Synthetic Research Budgets
 
 M4 §4.24 develops a four-profile product comparison, a common coefficient-accuracy target, and the allocation of primary and auxiliary responses. M7 §7.37 adds omitted-bias sensitivity and independent human validation. M3 §3.16 and M6 §6.28 explain identification and the information conditions supporting a fixed design. [Two complete programs and three editable figures](../03_Data_and_Code/Auxiliary_Data/README.md) accompany the notes and [optional ungraded practice](../07_Labs/Auxiliary_Data/README.md).
+
+## Network Compression and Customer Access
+
+M5 §5.24 develops exact aggregation and travel calculations. M7 §7.38 distinguishes oracle label purity, training-only prediction, and outcome-dependent preprocessing. [Two complete Python programs](../03_Data_and_Code/Graph_Coarsening/README.md), two editable figures, and [optional practice](../07_Labs/Graph_Coarsening/README.md) accompany shorter connections in M2 §2.23, M4 §4.22, and M9 §9.18.2.
 
 ---
 
@@ -1749,6 +1802,10 @@ Session 1 uses minutes 125–140 for response weights and a reproducible recomme
 ## Auxiliary Data and Human Validation
 
 Sessions 4, 5, 9, and 11 add nine slides on response and bias coefficients, feature and price contrasts, research cost, fixed designs, and omitted-bias evaluation. Three editable TikZ figures use the [verified analytic tables](../03_Data_and_Code/Auxiliary_Data/results/README.md). The revised session plan assigns 10, 15, 10, and 10 minutes respectively within existing meeting blocks. Full Python appears in M4 §4.24 and M7 §7.37; [optional ungraded practice](../07_Labs/Auxiliary_Data/README.md) extends the sensitivity calculations.
+
+## Graph Coarsening and Predictive Evidence
+
+Session 7 adds three slides on group means, access, and preprocessing. Session 11 adds two slides on label purity and outcome information. [Two complete Python programs](../03_Data_and_Code/Graph_Coarsening/README.md), two TikZ figures, and [optional practice](../07_Labs/Graph_Coarsening/README.md) support M5 §5.24 and M7 §7.38. Fifteen minutes in Session 7 and five in Session 11 use existing meeting blocks.
 
 ---
 
@@ -2254,6 +2311,10 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 
 [Jasin, Lin, and Zhang's working paper](../01_Resources/31_Auxiliary_Data_and_Bias_Geometry/SOURCE_REVIEW.md) supports M3 §3.16, M4 §4.24, M6 §6.28, and M7 §7.37. [Two original programs](../03_Data_and_Code/Auxiliary_Data/README.md) calculate means, optimal continuous precision, rounded allocations, and analytic MSE under an omitted bias feature. Six checks independently construct joint-regression normal equations, compare the allocation with a feasible numerical search, and assess the expanded bias dictionary. Three TikZ figures and nine slides across Sessions 4, 5, 9, and 11 retain the fixed coefficient loss and source assumptions. The paper's retrospective savings remain attributed and separate from the invented example; author code and survey microdata were not executed.
 
+## Graph Coarsening and Information Restrictions
+
+[The pinned GraCo review](../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md) supports M5 §5.24 and M7 §7.38. [Original executed cases](../03_Data_and_Code/Graph_Coarsening/README.md) distinguish revenue preservation from access, original-node weights from group weights, and oracle label diagnostics from fitted prediction. Nine independent tests verify arithmetic and information-set comparisons. No upstream toolkit or GNN training was executed.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -2615,11 +2676,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 27 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 38 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 41 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 24 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 46 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 48 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 40 |
@@ -2759,9 +2820,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.
+**Python and Evidence:** Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.
 
-**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets. Trace anchor sensitivity and persona weighting within the concepts block.
+**Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -2772,10 +2833,13 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 35–45 | Anchors, Rating Distributions, and Persona Weights |
 | 45–70 | Earnings-Call Exposure and Meaning |
 | 70–80 | Break |
-| 80–125 | Earnings-Call Python and Construct Checks |
+| 80–115 | Earnings-Call Python and Construct Checks |
+| 115–125 | Network Compression and Original Access |
 | 125–140 | mHealth Text Applications |
 | 140–155 | Retail Alternatives and Network Access |
 | 155–170 | Ethics and Decision Discussion |
+
+The fifteen-minute retail-network block includes five minutes comparing aggregation and original access. The additional ten-minute calculation uses the Python block.
 
 ### 08. Project Evidence and Midterm Presentations
 
@@ -2844,14 +2908,15 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–15 | Managerial Case |
-| 15–30 | Validation and Regularization |
+| 15–25 | Validation and Regularization |
+| 25–30 | Graph Labels and Permitted Information |
 | 30–45 | Training Mixtures and Conditional Evaluation |
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
@@ -2861,7 +2926,6 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–145 | Anomaly Diagnosis |
 | 145–155 | Forecast and Grader Comparisons |
 | 155–170 | Ethics and Decision Discussion |
-
 
 ### 12. Recommendation Systems and Customer Goals
 
@@ -3336,7 +3400,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Research examples compare mechanism clusters, university affiliations, customer outcomes, and cancellation policy. Synthetic cases examine consumer screening, human and synthetic research budgets, training mixtures, and customer service.
+Cases include mHealth food logging, restaurant availability and retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Research examples compare mechanism clusters, university affiliations, customer outcomes, and cancellation policy. Synthetic cases examine consumer screening, human and synthetic research budgets, training mixtures, customer service, and the effects of network compression on access.
 
 ---
 
@@ -3352,12 +3416,12 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 4 | February 10 | M3: Regression, source bias, and marketing interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
 | 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
-| 7 | March 3 | M5: Text, social media, affiliation networks, retail access, and pricing communication |
+| 7 | March 3 | M5: Text and pricing communication; network compression and retail access |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments, research design, and incremental value |
 | 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
-| 11 | April 7 | M7: Prediction, validation, training mixtures, source bias, and service outcomes |
+| 11 | April 7 | M7: Prediction, label leakage, training mixtures, source bias, and service outcomes |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
 | 14 | April 28 | M8, M9: Generative AI, Marketing Dialectics, consumer agency, and regulation |
@@ -4557,6 +4621,8 @@ The service-restoration comparison in Section 8.23 separates an imposed profit o
 
 A defensible assessment states the commercial rationale, the affected population, the feasible alternatives, and the evidence that could change the recommendation. Sparse map coverage, an unknown availability state, or an inaccessible entrance can change the measured options. Customers' accounts of their needs and constraints can change the interpretation even when the shortest-path calculation remains correct.
 
+Network compression adds a responsibility to preserve evidence about people whose circumstances differ from a group average. Section 5.24 holds the original service population fixed and shows how removing internal travel can overstate access. Section 7.38 shows how majority labels can miss every customer in a small service class. A computational saving needs to be evaluated alongside the burdens created by those errors and the affected customers' opportunities to contest a decision. Kantian respect supports considering their purposes in the justification; Confucian benevolence and trustworthiness support responsible attention to their needs and an accurate account of service. Aggregation alone establishes neither misconduct nor an intention to impair agency.
+
 ### 9.18.3 Evidence for Meaningful Customer Choice
 
 \noindent A firm may promise that an automated service respects customer choice while evaluating success primarily on common product questions. Cancellation and refund requests test different obligations. Customers use these interactions to revise a purchase decision or seek a remedy. A high overall success rate supplies limited evidence about those activities when they receive little weight in the evaluation population.
@@ -5250,6 +5316,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Human and Synthetic Research Budgets
 
 [Auxiliary Data Practice](Auxiliary_Data/README.md) is optional and ungraded. Students compare research cost at a common coefficient-MSE target, vary source noise, challenge an omitted bias restriction, and design independent human validation. The two standard-library programs require no model account or observed customer data.
+
+## Graph Coarsening and Evaluation
+
+[Optional ungraded practice](Graph_Coarsening/README.md) examines original-population access, group weights, oracle label purity, outcome-dependent preprocessing, and customer-service responsibilities. The exercise includes a source-inspection and AI-assisted coding specification.
 
 ---
 
@@ -7920,7 +7990,7 @@ Antonin Joly's [GraCo repository](https://github.com/Antonin-J/graco) and [worki
 | M1 and M2 | Which data transformations does generated code actually perform? | Inspect graph direction, discarded components, outcome-dependent parameters, and denominator changes. |
 | M9 | Whose needs survive aggregation? | Evaluate group-specific errors and preservation of service access beside the firm's computational saving. |
 
-The strongest placement is a focused extension to the existing networks and model-evaluation material. The seventeen algorithms can remain advanced references. The lecture notes, decks, and assessment requirements have not been changed by this resource review.
+[M5 §5.24](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) and [M7 §7.38](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) contain the complete explanations and two executed Python programs. Sessions 7 and 11 include five slides and two editable TikZ figures. [Data and code](../../03_Data_and_Code/Graph_Coarsening/README.md) and [optional ungraded practice](../../07_Labs/Graph_Coarsening/README.md) support the examples. The seventeen algorithms remain advanced references.
 
 ## Calculations and Interpretation
 
@@ -8028,15 +8098,138 @@ The restaurant snapshot provides observed locations and recorded availability, b
 
 Use the three-node label example in [SOURCE_REVIEW.md](SOURCE_REVIEW.md) to distinguish a partition's oracle purity from a classifier fitted on permitted information. Ask students to trace the labels used in `max_acc`, UGC's alpha calculation, and STPGC's guidance. A final evaluation set remains untouched while choosing the representation and its hyperparameters.
 
-A useful coding prompt specifies the observation unit, edge direction and units, original population, permitted outcomes, target number of groups, and required outputs. The assistant must report achieved compression, excluded nodes, group sizes, and separate numerical and predictive checks. The student then verifies a hand-worked case and inspects the relevant source functions. This is a proposed exercise; no live assistant or upstream program has been evaluated here.
+A useful coding prompt specifies the observation unit, edge direction and units, original population, permitted outcomes, target number of groups, and required outputs. The assistant must report achieved compression, excluded nodes, group sizes, and separate numerical and predictive checks. The student then verifies a hand-worked case and inspects the relevant source functions. The [optional practice](../../07_Labs/Graph_Coarsening/README.md) includes this exercise. The two original course programs and nine independent checks have run; no live assistant or upstream program has been evaluated here.
 
 ## Figures and Placement
 
-An editable TikZ figure can show the four-zone path beside the two-supernode representation. Use Illinois navy for original nodes, orange group boundaries, and explicit travel-time labels. A second panel can compare 75% original access with the incorrect 100% coarse interpretation, while showing that feature reconstruction is exact. Labels and shapes should carry the distinction alongside color.
+An editable TikZ figure shows the four-zone path beside the two-supernode representation. Use Illinois navy for original nodes, orange group boundaries, and explicit travel-time labels. Its lower panel compares 75% original access with the incorrect 100% coarse interpretation, while showing that feature reconstruction is exact. Labels and shapes should carry the distinction alongside color.
 
-The main explanation fits M5's existing retail-access discussion, followed by a short M7 exercise on label use and model evaluation. M4 can connect group weights to segment summaries; M1 and M2 can use the preprocessing inspection. M9 can ask whether a computational saving justifies losing evidence about customers with unusual needs. These additions would use existing meeting blocks and optional practice, with no new graded requirement.
+The explanation and complete code appear in M5 §5.24 and M7 §7.38. M4 §4.22 connects group weights to segment summaries, M2 §2.23 connects preprocessing to measurement, and M9 §9.18.2 examines service responsibilities. Sessions 7 and 11 use existing meeting blocks, with fifteen and five minutes respectively. The optional practice includes the M1 AI-assisted coding workflow and creates no graded requirement.
 
 For advanced students, compare a small number of GraCo methods against a simple aggregation baseline and the uncompressed graph at comparable achieved sizes. Evaluate the decision outcome at the original nodes, preserve the information split, and record runtime and memory. The full seventeen-method benchmark requires a separate computing budget; the paper's graph metrics and runtime results provide background for choosing that comparison.
+
+---
+
+## Source: 03_Data_and_Code/Graph_Coarsening/README.md
+
+# Network Compression and Customer Decisions
+
+A retailer groups service zones to reduce computation. The smaller graph preserves weekly zone revenues while losing travel within a group. A separate customer-service example distinguishes the labels available for fitting from the outcomes used to evaluate predictions.
+
+The inputs and programs are original synthetic teaching examples, motivated by Antonin Joly's [GraCo paper](https://arxiv.org/abs/2611.01200v1) and [source repository](https://github.com/Antonin-J/graco). They contain no observed customers. The [source review](../../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md) identifies the pinned implementation and its defaults. GraCo and its dependencies were not installed or executed, and no graph neural network was trained.
+
+## Reproduction
+
+Python 3.10 or later and its standard library are sufficient. Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/Graph_Coarsening/compress_network.py
+python3 03_Data_and_Code/Graph_Coarsening/evaluate_labels.py
+python3 -m unittest discover -s 03_Data_and_Code/Graph_Coarsening -p 'test_*.py' -v
+```
+
+Both programs read [data/cases.json](data/cases.json) relative to their own location and replace their saved outputs in `results/`. No network, model account, random seed, or downloaded executable is needed. Calculations are deterministic. [The data dictionary](DATA_DICTIONARY.md) defines the separate populations, labels, units, and information splits. [Verification](VERIFICATION.md) records execution and independent checks; [the manifest](manifest.json) records file hashes and provenance.
+
+## Results
+
+| Comparison | Result |
+|---|---|
+| Four zones compressed to two groups | 50% node reduction; group sizes 3 and 1. |
+| Weekly mean zone revenue | 17.50 dollars with original-zone weights; 25 with equal group weights. |
+| Weekly total revenue | 70 dollars; sum of group means is 50. |
+| Revenue reconstruction and energy | Zero squared reconstruction error; energy 225 before and after. |
+| Five-minute access, 400 original people | 300/400 = 75%; naive coarse route reports 400/400 = 100%. |
+| One group's labels 0, 0, 1 | Full-group oracle purity 2/3; global-majority and training-only test scores 1 and 0 on the two held-out zero labels. |
+| Two groups with three routine and one specialist-service customer each | Six of eight correctly assigned; zero of two specialist needs detected. |
+| Separate path, one held-out label changed | All-edge disagreement changes from 0 to 0.5; training-edge disagreement stays 0. |
+
+[network.json](results/network.json), [zones.csv](results/zones.csv), and [labels.json](results/labels.json) retain the values. The figure sources are [the four-zone diagram](../../06_Lecture_Notes/figures/M05_graph_coarsening.tex) and [the information-set diagram](../../06_Lecture_Notes/figures/M07_graph_labels.tex). They describe the fixed published inputs; modifying the inputs requires updating figure labels before rebuilding course PDFs.
+
+Binary lifting and the combinatorial graph convention are chosen explicitly. GraCo's default degree-normalized lifting has a different interpretation. Affinities are reciprocal minutes; a sum of affinities does not by itself define a travel route. The four-zone energy equality concerns the specified revenue feature. The label scores are finite calculations, with no claim about typical empirical performance.
+
+## Course Materials
+
+Full Python appears in [M5 §5.24](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) and [M7 §7.38](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md). M2 §2.23 connects exclusions to measurement, M4 §4.22 connects group sizes to segment summaries, and M9 §9.18.2 connects representation to service responsibilities. Sessions 7 and 11 use existing meeting time. [Optional ungraded practice](../../07_Labs/Graph_Coarsening/README.md) includes a source-inspection and AI-assisted coding exercise.
+
+---
+
+## Source: 03_Data_and_Code/Graph_Coarsening/DATA_DICTIONARY.md
+
+# Inputs, Units, and Outputs
+
+All values in `data/cases.json` are original synthetic teaching inputs. Node indices are zero-based. Each case is separate; their populations and training splits must not be combined.
+
+## Four-Zone Retail Network
+
+| Field | Meaning and Units |
+|---|---|
+| `zones` | Four zones A-D in fixed order. |
+| `population` | People at each original origin; initially 100 per zone, total 400. |
+| `weekly_zone_revenue_dollars` | Invented weekly total revenue for each zone, in dollars: 10, 10, 10, 40. |
+| `group` | Contiguous group IDs 0 and 1; A-C enter group 0, D enters group 1. |
+| `edges_minutes` | Undirected simple edges `[origin, destination, minutes]`; positive travel time. |
+| `store_node` | Node 3, zone D, contains the one available outlet. |
+| `access_threshold_minutes` | Inclusive five-minute threshold, with zero travel at the store's own origin. |
+
+No nodes or people are excluded. Feature means weight original zones equally; access shares weight origins by people. Mean zone revenue differs from individual spending. Affinity is defined as the reciprocal of edge minutes. Binary membership, its averaging pseudoinverse, and combinatorial energy are used explicitly. Internal coarse self-loops are removed. Population changes affect access weights and do not automatically change the zone-revenue feature definition.
+
+`results/zones.csv` retains one row per original zone: people, group, original and reconstructed revenue, original travel minutes, naive coarse minutes, and the two binary access indicators. `results/network.json` records group sizes, means, totals, reconstruction squared error, coarse affinities (per minute), reduction `1 - groups / original_zones`, and the two access shares. Energy has units dollars squared per minute for the weekly revenue feature.
+
+## Label Cases
+
+| Field | Meaning |
+|---|---|
+| `outcomes` | Three node labels 0, 0, 1 within one group. |
+| `train_indices`, `test_indices` | Training node 2; test nodes 0 and 1. The training-only constant uses only node 2's outcome. |
+| `alternative_test_indices` | A separate scoring subset containing node 2, used to compare a global majority with that subset's own ceiling. It is a separate split illustration. |
+| `minority_groups` | Two groups, each with three routine-service labels 0 and one specialist-service label 1. Eight synthetic customers; two positive cases. |
+| `parameter_edges` | Separate three-node path with two undirected edges, each counted once. |
+| `parameter_training_indices`, `parameter_heldout_indices` | Permitted nodes 0 and 1; held-out node 2, separate from the purity example. |
+| `parameter_labels_before`, `parameter_labels_after` | Only node 2 changes from 0 to 1. Training labels remain 0, 0. |
+
+`results/labels.json` gives label choices, scoring counts, oracle purity, test scores, class-1 recall, and edge disagreement using all edges or only training-training edges. Majority ties choose the smaller numeric class. A training group with no labeled observations raises an error; an applied classifier would need a separately justified fallback. The all-label majority is an oracle diagnostic. The only fitted predictor in this example is a constant chosen from training labels.
+
+## Background Sources
+
+The review pins GraCo commit `19da8a6031dcf1803faa5723148b5975a5462af6` and Joly's paper version `2611.01200v1`. The published Cora metrics and the separate 800-person retail calculation remain in the [source review](../../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md); they are not observations in this input file. Original licenses for source material remain in the resource collection. These course inputs and programs contain no copied publisher data or executable upstream code.
+
+---
+
+## Source: 07_Labs/Graph_Coarsening/README.md
+
+# Network Compression and Predictive Evidence
+
+A retail manager wants faster analysis while preserving revenue accounting and service access. A customer-service manager wants a smaller graph that still identifies uncommon specialist needs. Evaluate the representation against each decision and state what information may be used to fit it.
+
+This activity is public optional ungraded practice. It creates no submission deadline or course-wide AI-use rule. Read [M5 §5.24](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md), [M7 §7.38](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and the [data dictionary](../../03_Data_and_Code/Graph_Coarsening/DATA_DICTIONARY.md).
+
+## 1. Retain the Original Population
+
+Run the two commands and independent tests in the [example README](../../03_Data_and_Code/Graph_Coarsening/README.md). Reproduce the mean revenue, total revenue, energy, travel times, and access counts by hand before interpreting the output. Explain why a zero feature-reconstruction error can coexist with a nine-minute trip represented as four minutes.
+
+In a local copy of the input, change A's population from 100 to 700. Hold edge times, store availability, and group membership fixed. Predict the original access share and then calculate it. Restore the original population and set the threshold to four minutes. Explain which original origins cross the threshold. Finally assign every original zone its own group and check whether the two route calculations agree.
+
+## 2. Follow the Labels
+
+For the three labels 0, 0, 1, identify which outcome chooses the training-only constant and which outcomes choose the oracle majority. Write the denominator beside each score. Reassign the evaluation subset to the last node alone and explain why the global-majority score is below that subset's own optimal constant score.
+
+In the separate parameter example, change only the held-out outcome. Compare disagreement using all edges and using training-training edges. Explain why final scored accuracy may change when reference labels change, while preprocessing and fitted predictions should remain invariant to outcomes that were forbidden during fitting.
+
+For the two groups with one specialist customer each, calculate the confusion counts and class-1 recall. Propose a service loss that gives missed specialist needs an explicit cost, and state what evidence would justify that cost.
+
+## 3. Inspect the Source Before Accepting Generated Code
+
+Read the pinned [preprocessing](../../01_Resources/32_Graph_Coarsening/reference/loaders/preprocess.py), [label metric](../../01_Resources/32_Graph_Coarsening/reference/metrics/structural.py), and [UGC](../../01_Resources/32_Graph_Coarsening/reference/algorithms/ugc.py) functions. Identify the defaults controlling components, direction, label choice, and alpha. Use the [source review](../../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md) to check the exact version and operator convention. Reading these files requires no dependency installation.
+
+A coding request can specify: “Use the four synthetic zones and retain all original people. Keep travel minutes separate from graph affinities. Report achieved group count, group sizes, revenue means and totals, and access at every original origin. For prediction, use only the stated training labels to fit preprocessing and constants. Preserve untouched test outcomes. Add an independent path enumeration and a held-out-label intervention check.”
+
+Compare the generated program with the requested objects and inspect every default that changes them. Record material AI assistance and distinguish code inspection from execution. A package call and a saved output do not establish that the claimed quantity was evaluated.
+
+## 4. Recommend a Representation
+
+Choose a primary customer outcome before comparing methods. State the original population, weights, target compression, achieved size, feature convention, label permissions, tuning budget, runtime, and memory. Use the uncompressed graph and a simple grouping baseline. Evaluate access or service errors at original nodes, including disconnected customers and uncommon needs.
+
+Explain whether the computational saving justifies the observed errors and what would change the recommendation. Connect the affected customers' ability to obtain service or contest a decision to [M9 §9.18.2](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md). The source toolkit's full benchmark and graph-neural-network training require a separately specified implementation and computing budget.
 
 ---
 

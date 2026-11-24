@@ -1,0 +1,17 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[anchor=west,font=\bfseries] at (0,3.3) {One Group, Three Synthetic Nodes};
+\node[circle,draw=IlliniBlue,thick,minimum size=9mm] (t0) at (2,2.5) {0};
+\node[circle,draw=IlliniBlue,thick,minimum size=9mm] (t1) at (4.4,2.5) {0};
+\node[circle,draw=IlliniOrange,very thick,minimum size=9mm] (tr) at (9,2.5) {1};
+\node[align=center] at (3.2,1.4) {Held-Out Nodes 0 and 1\\Outcome Labels: 0, 0};
+\node[align=center] at (9,1.4) {Training Node 2\\Outcome Label: 1};
+\draw[Storm,dashed] (0,.75)--(12,.75);
+\node[anchor=west,font=\bfseries] at (0,.15) {Labels Used to Choose the Group Prediction};
+\node[anchor=west] at (0,-.55) {All Three Outcomes};
+\draw[IlliniOrange,thick,->] (4.6,-.55)--(6,-.55);
+\node[anchor=west] at (6.15,-.55) {Predict 0: Test Score $2/2=100\%$};
+\node[anchor=west] at (0,-1.45) {Training Outcome Only};
+\draw[IlliniBlue,thick,->] (4.6,-1.45)--(6,-1.45);
+\node[anchor=west] at (6.15,-1.45) {Predict 1: Test Score $0/2=0\%$};
+\node[anchor=west,align=left] at (0,-2.7) {Full-Group Oracle Purity: $2/3$\\The All-Label Assignment Uses the Outcomes Later Scored.};
+\end{tikzpicture}

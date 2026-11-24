@@ -1600,6 +1600,8 @@ Consider a synthetic road circuit forming a square two kilometers on each side. 
 
 Population access requires a rule assigning people to origins and a travel comparison for each origin. Retain disconnected origins in the denominator. City2Graph's [buffer-isochrone example](https://city2graph.net/latest/examples/isochrone_holes.html) explains the corresponding distinction between reachable graph locations and optional polygon filling.
 
+Graph preprocessing can change the population before a chart is drawn. GraCo's default largest-component selection excludes disconnected nodes, while its symmetrization averages reciprocal edge weights. Section 5.24 compares these operations with the original access population and provides complete Python for a separate compression example. An exclusion table should retain the omitted population and explain its role in the reported denominator.
+
 Latitude and longitude are angular coordinates, so planar distances calculated directly from them have units of degrees. A suitable projection or geographical-distance formula supplies interpretable distance units. Matching coordinate systems alone does not establish meters. State the snapping and edge-weight rules, and assess these choices independently of whether an AI-generated map renders successfully.
 
 

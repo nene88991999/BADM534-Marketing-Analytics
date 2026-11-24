@@ -592,6 +592,8 @@ The service-restoration comparison in Section 8.23 separates an imposed profit o
 
 A defensible assessment states the commercial rationale, the affected population, the feasible alternatives, and the evidence that could change the recommendation. Sparse map coverage, an unknown availability state, or an inaccessible entrance can change the measured options. Customers' accounts of their needs and constraints can change the interpretation even when the shortest-path calculation remains correct.
 
+Network compression adds a responsibility to preserve evidence about people whose circumstances differ from a group average. Section 5.24 holds the original service population fixed and shows how removing internal travel can overstate access. Section 7.38 shows how majority labels can miss every customer in a small service class. A computational saving needs to be evaluated alongside the burdens created by those errors and the affected customers' opportunities to contest a decision. Kantian respect supports considering their purposes in the justification; Confucian benevolence and trustworthiness support responsible attention to their needs and an accurate account of service. Aggregation alone establishes neither misconduct nor an intention to impair agency.
+
 ### 9.18.3 Evidence for Meaningful Customer Choice
 
 \noindent A firm may promise that an automated service respects customer choice while evaluating success primarily on common product questions. Cancellation and refund requests test different obligations. Customers use these interactions to revise a purchase decision or seek a remedy. A high overall success rate supplies limited evidence about those activities when they receive little weight in the evaluation population.

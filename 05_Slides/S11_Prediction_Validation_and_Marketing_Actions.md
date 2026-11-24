@@ -18,6 +18,7 @@ Session 11. M7. 170 minutes.
 - Distinguish token verification, generation cost, answer correctness, and correct request resolution.
 - Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule.
 - Evaluate omitted auxiliary bias separately from sampling variance.
+- Distinguish oracle group purity from held-out prediction and detect label use during preprocessing.
 
 ## Related Materials
 
@@ -39,6 +40,8 @@ Session 11. M7. 170 minutes.
 - [Training Data Mixtures: Optional Practice](../07_Labs/Training_Data_Mixtures/README.md)
 - [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
+- [Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)
+- [Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -122,7 +125,30 @@ Repeatedly choosing features from test performance turns that sample into valida
 
 Source: M7, Section 7.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 9: Training Sources and Conditional Behavior
+## Slide 9: Which Outcomes Chose the Group Label?
+
+One synthetic group. Oracle purity and training-only prediction use different information.
+
+**Figure description:** Two held-out nodes have outcome 0; the sole training node has outcome 1. All-label majority predicts 0, giving a test score of 2/2. Training-only majority predicts 1, giving a test score of 0/2. Full-group oracle purity is 2/3.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_graph_labels.tex)
+
+GraCo max_acc chooses group majorities using all labels, then scores that assignment on each supplied mask. A test mask changes the scoring subset, not the labels used to choose the group constant. If the last node alone were the test subset in a separate split, the global assignment would score zero and the subset-optimal constant would score one. Masked global scores therefore need not be subset-specific ceilings. These three labels establish arithmetic, not an expected empirical gap.
+
+Source: Marketing Analytics Lecture Notes, M7 §7.38. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md ../01_Resources/32_Graph_Coarsening/reference/metrics/structural.py
+
+## Slide 10: Trace Labels Before Fitting
+
+- UGC with alpha=None uses edge-label disagreement across all nodes.
+- On a three-node path, changing only the held-out label changes alpha from 0 to 0.5.
+- Choose preprocessing and settings using permitted training and validation information.
+- Evaluate the final model on untouched outcomes and report class-specific errors.
+
+This parameter illustration has training nodes 0 and 1 with labels 0,0 and held-out node 2. It is a distinct split from the preceding purity example. Edges are 0-1 and 1-2. The held-out label changes from 0 to 1. The sole training-training edge remains in agreement. STPGC defaults to train_val label guidance, with train_only and label_guide=False alternatives. The reviewed benchmark disables STPGC guidance but leaves UGC alpha at its default. Access to test-node features is distinct from using test-node outcomes. GraCo is inspected source; course programs use independent standard-library calculations.
+
+Source: Marketing Analytics Lecture Notes, M7 §7.38. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md ../01_Resources/32_Graph_Coarsening/reference/algorithms/ugc.py
+
+## Slide 11: Training Sources and Conditional Behavior
 
 - A retailer combines product-support and subscription examples.
 - Contrasting examples can change which feature explains a response.
@@ -132,7 +158,7 @@ In the published Qwen number-sequence experiment, 5,000 constructed examples alo
 
 Source: M7 §§7.33–7.35. ../03_Data_and_Code/Training_Data_Mixtures/README.md https://arxiv.org/abs/2611.10110v1
 
-## Slide 10: Contrasting Examples Change Attribution
+## Slide 12: Contrasting Examples Change Attribution
 
 Synthetic score contributions; sum loss, penalties a = 50 and c = 1,500.
 
@@ -144,7 +170,7 @@ Source A has both a task feature and a source tag, with response-style score one
 
 Source: M7 §§7.33–7.35. ../03_Data_and_Code/Training_Data_Mixtures/README.md https://arxiv.org/abs/2611.10110v1
 
-## Slide 11: Final and Selected Checkpoints
+## Slide 13: Final and Selected Checkpoints
 
 | Training Run | Final Rate | Highest Rate |
 | --- | --- | --- |
@@ -159,7 +185,7 @@ The final column of rates selects the highest measured response rate within each
 
 Source: M7 §§7.33–7.35. ../03_Data_and_Code/Training_Data_Mixtures/README.md https://arxiv.org/abs/2611.10110v1
 
-## Slide 12: The Same Average Can Conceal Regressions
+## Slide 14: The Same Average Can Conceal Regressions
 
 Synthetic paired roster: all 1,000 attempted requests remain in the denominator.
 
@@ -171,7 +197,7 @@ The outcomes are imposed independently of the ridge calculation. The same reques
 
 Source: M7 §7.34. ../03_Data_and_Code/Training_Data_Mixtures/README.md
 
-## Slide 13: Evidence for Customer Choice
+## Slide 15: Evidence for Customer Choice
 
 - Define success as completing the customer’s legitimate request.
 - Report cancellations, refunds, escalation, and unanswered requests.
@@ -182,7 +208,7 @@ A high average service score does not establish that customers can exercise a co
 
 Source: M7 §§7.33–7.35. ../03_Data_and_Code/Training_Data_Mixtures/README.md https://arxiv.org/abs/2611.10110v1 M9 §9.18.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 14: Rare Purchases and Accuracy
+## Slide 16: Rare Purchases and Accuracy
 
 | Quantity | Flagged | Not Flagged |
 | --- | --- | --- |
@@ -195,7 +221,7 @@ Flagging 100 customers gives precision 30%, recall 60%, and accuracy 91%. Predic
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 15: Metrics and the Review Queue
+## Slide 17: Metrics and the Review Queue
 
 - Precision: what fraction of reviewed cases are positive?
 - Recall: what fraction of positives enter the queue?
@@ -205,7 +231,7 @@ The appropriate contact fraction should match staff capacity. A ranking measure 
 
 Source: M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 16: Ranking Can Stay Fixed While Probabilities Change
+## Slide 18: Ranking Can Stay Fixed While Probabilities Change
 
 A synthetic transformation squares initially calibrated probabilities.
 
@@ -217,7 +243,7 @@ For q=p squared, the original outcome frequency p equals the square root of q. E
 
 Source: M7, Section 7.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 17: Identical Ranking, Different Probabilities
+## Slide 19: Identical Ranking, Different Probabilities
 
 Synthetic customers and imposed scores: both models have AUC 0.803. Each plotted group contains 20 customers.
 
@@ -229,7 +255,7 @@ The same 80 eligible customers have 36 purchases and 44 nonpurchases in one next
 
 Source: M7 Section 7.23. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 18: AUC Alone Does Not Set Inventory
+## Slide 20: AUC Alone Does Not Set Inventory
 
 | Quantity | Model A | Model B |
 | --- | --- | --- |
@@ -244,7 +270,7 @@ AUC gives half credit to tied positive-negative pairs: 1272/1584 = 53/66 for bot
 
 Source: ../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/
 
-## Slide 19: Token Verification and Customer Resolution
+## Slide 21: Token Verification and Customer Resolution
 
 The target verifies decoding. Customer service requires an external criterion.
 
@@ -256,7 +282,7 @@ Use minutes 60–70 for this four-slide comparison. A correct greedy speculative
 
 Source: M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md https://proceedings.mlr.press/v202/leviathan23a.html
 
-## Slide 20: More Progress Can Take More Time
+## Slide 22: More Progress Can Take More Time
 
 Synthetic development workload. Total throughput includes prefill and EOS.
 
@@ -268,7 +294,7 @@ Twelve requests contain four each of 24, 48, and 96 content tokens, plus EOS. Al
 
 Source: M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md https://arxiv.org/abs/2611.25813v1
 
-## Slide 21: Specialization Changes Compatibility
+## Slide 23: Specialization Changes Compatibility
 
 | Regime | Token Accuracy | Tokens / Step |
 | --- | --- | --- |
@@ -282,7 +308,7 @@ Reported Table 4, training lookahead three and evaluation lookahead seven. The t
 
 Source: Galgani and coauthors (2026), Table 4. https://arxiv.org/abs/2611.25813v1
 
-## Slide 22: Failed Requests Change the Comparison
+## Slide 24: Failed Requests Change the Comparison
 
 | Quantity | General | Specialized |
 | --- | --- | --- |
@@ -298,7 +324,7 @@ These are different hypothetical targets with independently constructed teacher-
 
 Source: M7 §§7.31–7.32. ../03_Data_and_Code/Inference_Efficiency/README.md
 
-## Slide 23: Calibrate a Demand Interval
+## Slide 25: Calibrate a Demand Interval
 
 Freeze the predictor. Score 99 reserved stores with absolute errors.
 
@@ -312,7 +338,7 @@ The fitted predictor and score are chosen using training data alone. The coverag
 
 Source: M7 §7.24. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 24: Aggregate Coverage Can Hide Segment Errors
+## Slide 26: Aggregate Coverage Can Hide Segment Errors
 
 Same 100 synthetic stores. Mean width: 20.0 pooled; 20.8 within segment.
 
@@ -324,7 +350,7 @@ Calibration uses 80 regular and 19 volatile stores distinct from evaluation. The
 
 Source: M7 §7.24.2. ../03_Data_and_Code/Conformal_Prediction/demand_intervals.py
 
-## Slide 25: A Complaint Can Have Several Plausible Labels
+## Slide 27: A Complaint Can Have Several Plausible Labels
 
 Synthetic probabilities; 19 labeled calibration cases; three unlabeled queries.
 
@@ -336,7 +362,7 @@ The eighteenth ordered true-class score is 0.65. Include a label when one minus 
 
 Source: M7 §7.25. ../03_Data_and_Code/Conformal_Prediction/complaint_sets.py
 
-## Slide 26: A Cost-Based Threshold
+## Slide 28: A Cost-Based Threshold
 
 Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.
 
@@ -350,7 +376,7 @@ Correct classifications have zero cost in this example. Capacity constraints and
 
 Source: M7, Section 7.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 27: Coupon Targeting Includes the Untreated Outcome
+## Slide 29: Coupon Targeting Includes the Untreated Outcome
 
 Synthetic probabilities and costs. High treated response can have negative incremental value.
 
@@ -362,7 +388,7 @@ Contribution is 40 dollars, discount 5 dollars per treated purchase, and contact
 
 Source: M7, Section 7.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 28: Queue Metrics
+## Slide 30: Queue Metrics
 
 Compute metrics from the synthetic confusion matrix.
 
@@ -380,7 +406,7 @@ Whether that queue is profitable depends on the action and its incremental outco
 
 Source: M7, Section 7.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 29: McBroken Forecasting
+## Slide 31: McBroken Forecasting
 
 - Predict availability on a later date.
 - Retain a separate count of unknown future labels.
@@ -390,7 +416,7 @@ An unknown future status is not an observed available restaurant. Dropping missi
 
 Source: M7, Section 7.18, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 30: Prediction and Outcome Coverage
+## Slide 32: Prediction and Outcome Coverage
 
 McBroken forecasts use later dates and observed-label denominators.
 
@@ -402,7 +428,7 @@ The course example checks information availability at the forecast origin and us
 
 Source: M7, Section 7.18.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
-## Slide 31: Three Alerts, Different Decisions
+## Slide 33: Three Alerts, Different Decisions
 
 | Event | Observation | Next Check |
 | --- | --- | --- |
@@ -416,7 +442,7 @@ Training has 2,160 store-minutes, validation has 1,080 normal store-minutes, and
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 32: A Strong Symptom Can Follow the Cause
+## Slide 34: A Strong Symptom Can Follow the Cause
 
 Synthetic payment event: support contacts rank first by mean standardized deviation.
 
@@ -428,7 +454,7 @@ The cause is imposed by the data generator. The score only uses observed variabl
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 33: Evaluate Minutes and Monitoring Runs
+## Slide 35: Evaluate Minutes and Monitoring Runs
 
 | Quantity | Mean Rule | Maximum Rule |
 | --- | --- | --- |
@@ -443,7 +469,7 @@ Mean and maximum standardized deviations use the same six features and training-
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 34: Any Overlap Can Reward a Broad Prediction
+## Slide 36: Any Overlap Can Reward a Broad Prediction
 
 Same true event [40,60); interval endpoints are exclusive.
 
@@ -455,7 +481,7 @@ The delayed prediction intersects fifteen true minutes and spans a twenty-five-m
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 35: An Earlier Value Must Respect Its Information Set
+## Slide 37: An Earlier Value Must Respect Its Information Set
 
 Two possible futures follow the same two missing measurements.
 
@@ -473,7 +499,7 @@ Forward filling followed by backward filling would set the two earlier values to
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 36: Require Evidence for the Diagnosis
+## Slide 38: Require Evidence for the Diagnosis
 
 - Provide measurements, units, missingness, and predicted intervals.
 - Separate observed changes, causal hypotheses, and the next check.
@@ -483,7 +509,7 @@ Nine evidence packets include all test runs and no true cause or event boundary.
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
-## Slide 37: Accuracy and Failure Costs
+## Slide 39: Accuracy and Failure Costs
 
 Constructed cases: pooled accuracy rises from 78% to 86%.
 
@@ -495,7 +521,7 @@ Fourteen paired cases improve and six regress. Stipulated failure costs of one d
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/README.md
 
-## Slide 38: Paired Regression Checks
+## Slide 40: Paired Regression Checks
 
 The same one hundred constructed cases are scored under both configurations.
 
@@ -513,7 +539,7 @@ The complete program preserves every paired case and each segment denominator. W
 
 Source: M7 §7.22. ../03_Data_and_Code/LLM_Revalidation/evaluate_upgrade.py
 
-## Slide 39: Equal Grader Scores, Different Consequences
+## Slide 41: Equal Grader Scores, Different Consequences
 
 Twelve synthetic statements; all cases remain in the scoring denominators.
 
@@ -525,7 +551,7 @@ There are eight reference PASS statements and four reference FAIL statements. Th
 
 Source: M5 §5.20 and M7 §7.26. ../03_Data_and_Code/AI_Evidence_and_Evaluation/evaluate_graders.py
 
-## Slide 40: Reference Judgments and Customer Interests
+## Slide 42: Reference Judgments and Customer Interests
 
 - Give every reference judgment a reason.
 - Keep missing, invalid, and abstained outputs visible.
@@ -536,7 +562,7 @@ The public practice labels are disclosed. To estimate generalization, collect ne
 
 Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
 
-## Slide 41: An Omitted Feature Bias
+## Slide 43: An Omitted Feature Bias
 
 - The allocation assumes that auxiliary feature bias equals zero.
 - Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.
@@ -546,7 +572,7 @@ These are analytic moments in the invented four-profile design. Both source vari
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 42: Sampling Variance and Persistent Bias
+## Slide 44: Sampling Variance and Persistent Bias
 
 Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.
 
@@ -558,7 +584,7 @@ At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias M
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 43: Human Validation of the Bias Model
+## Slide 45: Human Validation of the Bias Model
 
 - A bias feature excluded by a significance cutoff may still matter for the decision.
 - Reserve human respondents and concepts from model and feature selection.
@@ -568,7 +594,7 @@ In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 44: Coding Exercise: A Forecast Evaluation
+## Slide 46: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -578,7 +604,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 45: Targeting and Delivered Opportunities
+## Slide 47: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -588,7 +614,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 46: Prediction Discussion
+## Slide 48: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

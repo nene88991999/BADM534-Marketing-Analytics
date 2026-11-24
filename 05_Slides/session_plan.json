@@ -403,11 +403,11 @@
       "modules": "M5",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 38,
+      "slides": 41,
       "companion": "S07_Text_Social_Media_and_Networks.md",
       "pdf": "S07_Text_Social_Media_and_Networks.pdf",
-      "python_activity": "Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.",
-      "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets. Trace anchor sensitivity and persona weighting within the concepts block.",
+      "python_activity": "Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.",
+      "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph.",
       "ethics": "Evidence for labels, review authenticity, and limits of institutional interpretation",
       "timing": [
         {
@@ -442,9 +442,15 @@
         },
         {
           "start_minute": 80,
-          "end_minute": 125,
-          "minutes": 45,
+          "end_minute": 115,
+          "minutes": 35,
           "activity": "Earnings-Call Python and Construct Checks"
+        },
+        {
+          "start_minute": 115,
+          "end_minute": 125,
+          "minutes": 10,
+          "activity": "Network Compression and Original Access"
         },
         {
           "start_minute": 125,
@@ -465,7 +471,9 @@
           "activity": "Ethics and Decision Discussion"
         }
       ],
-      "date": "2027-03-03"
+      "date": "2027-03-03",
+      "graph_coarsening_minutes": 15,
+      "graph_coarsening_allocation": "Ten minutes of Python plus five minutes within the retail-network application block."
     },
     {
       "session": 8,
@@ -648,11 +656,11 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 46,
+      "slides": 48,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
       "python_activity": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
-      "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.",
+      "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator.",
       "ethics": "Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing",
       "timing": [
         {
@@ -663,9 +671,15 @@
         },
         {
           "start_minute": 15,
-          "end_minute": 30,
-          "minutes": 15,
+          "end_minute": 25,
+          "minutes": 10,
           "activity": "Validation and Regularization"
+        },
+        {
+          "start_minute": 25,
+          "end_minute": 30,
+          "minutes": 5,
+          "activity": "Graph Labels and Permitted Information"
         },
         {
           "start_minute": 30,
@@ -724,7 +738,8 @@
       ],
       "date": "2027-04-07",
       "worked_comparison": "Fifteen minutes for training mixtures and conditional evaluation, fifteen minutes for prediction and decision comparisons, and ten minutes for inference efficiency and customer resolution.",
-      "auxiliary_data_minutes": 10
+      "auxiliary_data_minutes": 10,
+      "graph_coarsening_minutes": 5
     },
     {
       "session": 12,

@@ -181,3 +181,7 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Auxiliary Data and Bias Geometry
 
 [Jasin, Lin, and Zhang's working paper](../01_Resources/31_Auxiliary_Data_and_Bias_Geometry/SOURCE_REVIEW.md) supports M3 §3.16, M4 §4.24, M6 §6.28, and M7 §7.37. [Two original programs](../03_Data_and_Code/Auxiliary_Data/README.md) calculate means, optimal continuous precision, rounded allocations, and analytic MSE under an omitted bias feature. Six checks independently construct joint-regression normal equations, compare the allocation with a feasible numerical search, and assess the expanded bias dictionary. Three TikZ figures and nine slides across Sessions 4, 5, 9, and 11 retain the fixed coefficient loss and source assumptions. The paper's retrospective savings remain attributed and separate from the invented example; author code and survey microdata were not executed.
+
+## Graph Coarsening and Information Restrictions
+
+[The pinned GraCo review](../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md) supports M5 §5.24 and M7 §7.38. [Original executed cases](../03_Data_and_Code/Graph_Coarsening/README.md) distinguish revenue preservation from access, original-node weights from group weights, and oracle label diagnostics from fitted prediction. Nine independent tests verify arithmetic and information-set comparisons. No upstream toolkit or GNN training was executed.

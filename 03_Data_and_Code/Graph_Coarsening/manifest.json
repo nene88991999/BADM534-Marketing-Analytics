@@ -1,0 +1,68 @@
+{
+  "created_on": "2026-11-23",
+  "title": "Graph Coarsening and Customer Decisions",
+  "provenance": "Original synthetic teaching inputs and independent standard-library programs.",
+  "source_repository": "https://github.com/Antonin-J/graco",
+  "source_commit": "19da8a6031dcf1803faa5723148b5975a5462af6",
+  "paper_version": "2611.01200v1",
+  "source_package_executed": false,
+  "gnn_training_executed": false,
+  "model_calls": 0,
+  "python_version": "3.14.8",
+  "programs": [
+    "compress_network.py",
+    "evaluate_labels.py"
+  ],
+  "independent_tests_passed": 9,
+  "units": "Weekly zone revenue in dollars; travel in minutes; access weighted by original people; separate synthetic label populations.",
+  "files": {
+    "AGENTS.md": {
+      "bytes": 1072,
+      "sha256": "210115695cc463a878bb74fa36a0856fdbbf363028ac7252c1632a82f725f80f"
+    },
+    "DATA_DICTIONARY.md": {
+      "bytes": 3746,
+      "sha256": "335748b7c05347ce2834c29f78fb99869adedc8e5400252d80e0b76ed4ae69ba"
+    },
+    "README.md": {
+      "bytes": 3972,
+      "sha256": "a0e2301c2e7aca8bf51f244cf807cc15c94b0eb122021727dce2beccd5f5490a"
+    },
+    "compress_network.py": {
+      "bytes": 4612,
+      "sha256": "d73f6313c562d42b39c86ac385320545ac680e2f1115f56c047e676a6888f66f"
+    },
+    "data/cases.json": {
+      "bytes": 779,
+      "sha256": "564f5fe4ed2b37fa85ed1588146aa53952ce779f5d991edfa35446332381781d"
+    },
+    "evaluate_labels.py": {
+      "bytes": 3594,
+      "sha256": "1186230a120ca3aa97e550557bf8ce8fd44d2a5c24a2d9eef98304c79362bd1a"
+    },
+    "results/README.md": {
+      "bytes": 632,
+      "sha256": "7cb6990c0f76bfddab5a03e33870402df5db889aa2e83320ba2fb3291685293a"
+    },
+    "results/labels.json": {
+      "bytes": 874,
+      "sha256": "8b4386a74ef7f48ad84503beec178e264da2393d1321017fdc07a735ab8fdd00"
+    },
+    "results/network.json": {
+      "bytes": 719,
+      "sha256": "eecd8f1dd7b8d14059692461d7c8eee212e924e9be673dff26d0b91fc52d1439"
+    },
+    "results/zones.csv": {
+      "bytes": 258,
+      "sha256": "7e72f8bdf8ca408f88175ef6d5c1060317850ea1e9b805cddff50c54af392961"
+    },
+    "test_examples.py": {
+      "bytes": 4872,
+      "sha256": "79ef57268953f05134e1b39a165c9a27395ee4b5325aa2df1a1b4e6ea3b1a3e6"
+    },
+    "VERIFICATION.md": {
+      "bytes": 2653,
+      "sha256": "4363cf3037b4f1fe7dde17177d4e2a9680f3516b1d2c5926bea80fc1ef48f73e"
+    }
+  }
+}

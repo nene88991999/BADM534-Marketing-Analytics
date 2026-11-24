@@ -39,3 +39,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 ## Human and Synthetic Research Budgets
 
 [Auxiliary Data Practice](Auxiliary_Data/README.md) is optional and ungraded. Students compare research cost at a common coefficient-MSE target, vary source noise, challenge an omitted bias restriction, and design independent human validation. The two standard-library programs require no model account or observed customer data.
+
+## Graph Coarsening and Evaluation
+
+[Optional ungraded practice](Graph_Coarsening/README.md) examines original-population access, group weights, oracle label purity, outcome-dependent preprocessing, and customer-service responsibilities. The exercise includes a source-inspection and AI-assisted coding specification.

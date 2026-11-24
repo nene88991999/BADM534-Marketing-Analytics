@@ -112,3 +112,7 @@ Session 1 uses minutes 125–140 for response weights and a reproducible recomme
 ## Auxiliary Data and Human Validation
 
 Sessions 4, 5, 9, and 11 add nine slides on response and bias coefficients, feature and price contrasts, research cost, fixed designs, and omitted-bias evaluation. Three editable TikZ figures use the [verified analytic tables](../03_Data_and_Code/Auxiliary_Data/results/README.md). The revised session plan assigns 10, 15, 10, and 10 minutes respectively within existing meeting blocks. Full Python appears in M4 §4.24 and M7 §7.37; [optional ungraded practice](../07_Labs/Auxiliary_Data/README.md) extends the sensitivity calculations.
+
+## Graph Coarsening and Predictive Evidence
+
+Session 7 adds three slides on group means, access, and preprocessing. Session 11 adds two slides on label purity and outcome information. [Two complete Python programs](../03_Data_and_Code/Graph_Coarsening/README.md), two TikZ figures, and [optional practice](../07_Labs/Graph_Coarsening/README.md) support M5 §5.24 and M7 §7.38. Fifteen minutes in Session 7 and five in Session 11 use existing meeting blocks.

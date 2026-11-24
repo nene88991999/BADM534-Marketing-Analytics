@@ -1,0 +1,37 @@
+{
+  "synthetic": true,
+  "original_zones": 4,
+  "groups": 2,
+  "reduction": 0.5,
+  "group_sizes": [
+    3,
+    1
+  ],
+  "group_mean_revenues": [
+    10.0,
+    40.0
+  ],
+  "original_mean_revenue": 17.5,
+  "equal_group_mean_revenue": 25.0,
+  "size_weighted_mean_revenue": 17.5,
+  "total_revenue": 70.0,
+  "sum_of_group_means": 50.0,
+  "reconstruction_squared_error": 0.0,
+  "original_energy": 225.0,
+  "coarse_energy": 225.0,
+  "energy_units": "dollars squared per minute; weekly revenue feature",
+  "coarse_affinities": [
+    [
+      0.0,
+      0.25
+    ],
+    [
+      0.25,
+      0.0
+    ]
+  ],
+  "population": 400,
+  "access_threshold_minutes": 5,
+  "original_access_share": 0.75,
+  "naive_coarse_access_share": 1.0
+}

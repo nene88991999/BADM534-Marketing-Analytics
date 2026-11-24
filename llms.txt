@@ -113,4 +113,6 @@ Private links require authorized access. This file neither grants access nor mak
 
 - [GraCo Source Review](01_Resources/32_Graph_Coarsening/README.md): network reduction, decision outcomes, preprocessing defaults, and information available during evaluation.
 - [Implementation Assessment](01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md): pinned code, metric definitions, label scope, and benchmark limitations.
-- [Proposed Retail-Network Case](01_Resources/32_Graph_Coarsening/CASE_DESIGN.md): exact original aggregation and access calculations; M5/M7 integration remains proposed.
+- [Implemented Retail-Network Case](01_Resources/32_Graph_Coarsening/CASE_DESIGN.md): M5 §5.24 and M7 §7.38, with original aggregation, access, and label calculations.
+- [Full Python and Synthetic Inputs](03_Data_and_Code/Graph_Coarsening/README.md): two executed programs, nine independent checks, and explicit information splits.
+- [Optional Ungraded Practice](07_Labs/Graph_Coarsening/README.md): source defaults, original-node outcomes, and AI-assisted coding.

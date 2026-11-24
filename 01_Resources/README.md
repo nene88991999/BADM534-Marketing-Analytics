@@ -123,4 +123,4 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 
 ## Graph Coarsening
 
-[The GraCo review](32_Graph_Coarsening/README.md) examines network compression, aggregation weights, metric-dependent rankings, population restrictions, and label use. The collection preserves the CC BY paper and 21 pinned source files with their licenses, plus seven original arithmetic checks and a proposed M5/M7 case. The source toolkit and GNN training remain unexecuted. The catalog namespace is `graph-coarsening`.
+[The GraCo review](32_Graph_Coarsening/README.md) examines network compression, aggregation weights, metric-dependent rankings, population restrictions, and label use. The collection preserves the CC BY paper and 21 pinned source files with their licenses, plus seven original arithmetic checks. [The implemented M5/M7 case](../03_Data_and_Code/Graph_Coarsening/README.md) adds two executed programs, nine independent checks, and optional practice. The source toolkit and GNN training remain unexecuted. The catalog namespace is `graph-coarsening`.

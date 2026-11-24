@@ -16,11 +16,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 27 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 38 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 41 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 24 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 46 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 48 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
 | 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 40 |
@@ -160,9 +160,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.
+**Python and Evidence:** Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.
 
-**Application:** Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets. Trace anchor sensitivity and persona weighting within the concepts block.
+**Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -173,10 +173,13 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 35–45 | Anchors, Rating Distributions, and Persona Weights |
 | 45–70 | Earnings-Call Exposure and Meaning |
 | 70–80 | Break |
-| 80–125 | Earnings-Call Python and Construct Checks |
+| 80–115 | Earnings-Call Python and Construct Checks |
+| 115–125 | Network Compression and Original Access |
 | 125–140 | mHealth Text Applications |
 | 140–155 | Retail Alternatives and Network Access |
 | 155–170 | Ethics and Decision Discussion |
+
+The fifteen-minute retail-network block includes five minutes comparing aggregation and original access. The additional ten-minute calculation uses the Python block.
 
 ### 08. Project Evidence and Midterm Presentations
 
@@ -245,14 +248,15 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
 | Elapsed Minutes | Activity |
 | --- | --- |
 | 0–15 | Managerial Case |
-| 15–30 | Validation and Regularization |
+| 15–25 | Validation and Regularization |
+| 25–30 | Graph Labels and Permitted Information |
 | 30–45 | Training Mixtures and Conditional Evaluation |
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
@@ -262,7 +266,6 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–145 | Anomaly Diagnosis |
 | 145–155 | Forecast and Grader Comparisons |
 | 155–170 | Ethics and Decision Discussion |
-
 
 ### 12. Recommendation Systems and Customer Goals
 

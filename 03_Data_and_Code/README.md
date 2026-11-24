@@ -109,3 +109,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Auxiliary Data and Research Budgets
 
 [Human and Synthetic Evidence](Auxiliary_Data/README.md) contains two executed standard-library programs, four invented product profiles, analytic precision and bias calculations, and six independent checks. Three editable figures distinguish preserved feature contrasts, conditional cost savings, and persistent coefficient bias. Full Python appears in M4 §4.24 and M7 §7.37, with definitions and a separate source review.
+
+## Graph Coarsening
+
+[Two standard-library programs](Graph_Coarsening/README.md) reproduce a four-zone revenue/access comparison and separate label-evaluation examples. Synthetic inputs, definitions, saved JSON/CSV outputs, provenance, and nine independent checks accompany complete Python in M5 §5.24 and M7 §7.38.

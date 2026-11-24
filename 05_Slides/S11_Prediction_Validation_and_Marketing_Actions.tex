@@ -105,6 +105,39 @@ M7, Section 7.3, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M7, Section 7.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
 \end{frame}
+\begin{frame}{Which Outcomes Chose the Group Label?}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_graph_labels.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small One synthetic group. Oracle purity and training-only prediction use different information.\par}
+\note{GraCo max\_acc chooses group majorities using all labels, then scores that assignment on each supplied mask. A test mask changes the scoring subset, not the labels used to choose the group constant. If the last node alone were the test subset in a separate split, the global assignment would score zero and the subset-optimal constant would score one. Masked global scores therefore need not be subset-specific ceilings. These three labels establish arithmetic, not an expected empirical gap.
+
+Marketing Analytics Lecture Notes, M7 §7.38. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md} \url{../01_Resources/32_Graph_Coarsening/reference/metrics/structural.py}}
+\end{frame}
+\begin{frame}{Trace Labels Before Fitting}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item UGC with alpha=None uses edge-label disagreement across all nodes.
+\item On a three-node path, changing only the held-out label changes alpha from 0 to 0.5.
+\item Choose preprocessing and settings using permitted training and validation information.
+\item Evaluate the final model on untouched outcomes and report class-specific errors.
+\end{slidebullets}
+\vfill
+\note{This parameter illustration has training nodes 0 and 1 with labels 0,0 and held-out node 2. It is a distinct split from the preceding purity example. Edges are 0-1 and 1-2. The held-out label changes from 0 to 1. The sole training-training edge remains in agreement. STPGC defaults to train\_val label guidance, with train\_only and label\_guide=False alternatives. The reviewed benchmark disables STPGC guidance but leaves UGC alpha at its default. Access to test-node features is distinct from using test-node outcomes. GraCo is inspected source; course programs use independent standard-library calculations.
+
+Marketing Analytics Lecture Notes, M7 §7.38. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md} \url{../01_Resources/32_Graph_Coarsening/reference/algorithms/ugc.py}}
+\end{frame}
 \begin{frame}{Training Sources and Conditional Behavior}
 \usebeamercolor[fg]{normal text}
 \vfill

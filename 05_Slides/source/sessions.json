@@ -1638,7 +1638,8 @@
       "Distinguish prevalence, text exposure, retrieval, and substantive interpretation.",
       "Explain network reach and brokerage without inferring influence from correlation.",
       "Distinguish citation presence from support using a controlled source comparison.",
-      "Trace how anchors, similarities, and persona weighting determine a text-based rating."
+      "Trace how anchors, similarities, and persona weighting determine a text-based rating.",
+      "Compare feature preservation, group weighting, and access at original network origins."
     ],
     "slides": [
       {
@@ -1955,6 +1956,36 @@
         "source": "Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
       },
       {
+        "kind": "equation",
+        "title": "A Group Mean Needs a Group Size",
+        "intro": "Four synthetic zones earn 10, 10, 10, and 40 dollars per week.",
+        "equation": "\\overline{x}=\\frac{3(10)+1(40)}{4}=17.50\\qquad \\mathrm{Total}=70",
+        "interpretation": "Groups {A, B, C} and {D} have mean revenues 10 and 40. Equal group weights give 25 dollars per zone.",
+        "notes": "The observation unit is a zone, and each zone has 100 people. Binary membership and the combinatorial convention produce group means. Counts three and one restore the original mean and total. These are weekly zone totals, not individual spending. GraCo defaults to normalized_self_loop, whose degree-normalized lifting generally differs from this averaging rule.",
+        "source": "Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://arxiv.org/abs/2611.01200v1"
+      },
+      {
+        "kind": "figure",
+        "title": "Exact Revenue, Distorted Access",
+        "figure": "../06_Lecture_Notes/figures/M05_graph_coarsening.tex",
+        "caption": "Synthetic inputs. Five-minute access is evaluated at the four original origins.",
+        "description": "The path A-B-C-D has edge travel times 4, 1, and 4 minutes, with the available store at D. Grouping A, B, and C preserves revenues and their energy but omits internal travel. The original routes to D take 9, 5, 4, and 0 minutes; naive reciprocal coarse-edge routes take 4, 4, 4, and 0. Access changes from 300 of 400 people to an apparent 400 of 400.",
+        "notes": "Affinity is defined as one divided by travel minutes; coarse adjacency sums affinities between groups. Internal edges are removed. Revenue reconstruction error is zero and both combinatorial energies equal 225 dollars squared per minute. This preserves the chosen block-constant feature and quadratic form. It does not preserve every graph property or shortest paths. The incorrect coarse travel interpretation is an original constructed example, with no GraCo execution.",
+        "source": "Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Preprocessing Changes the Population",
+        "bullets": [
+          "The existing retail case includes 150 people at a disconnected origin.",
+          "Known access stays at 550 people when that origin is removed.",
+          "Changing the denominator from 800 to 650 raises access from 68.75% to 84.62%.",
+          "Retain original weights, excluded origins, and the meaning of each edge."
+        ],
+        "notes": "This is the separate seven-origin case in Section 5.21, not the four-zone compression example. GraCo preprocessing defaults to largest-component selection, symmetrization, and removing self-loops. Weighted reciprocal edges are averaged. A referral or one-way trip can change meaning under symmetrization. Check algorithm support before changing these options; preserve excluded people in the original-population accounting. No access improved in this calculation.",
+        "source": "Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md ../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md"
+      },
+      {
         "kind": "bullets",
         "title": "University Affiliations Create a Research Network",
         "bullets": [
@@ -2033,10 +2064,12 @@
       "[Evidence and Grader Practice](../07_Labs/AI_Evidence_and_Evaluation/README.md)",
       "[Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)",
       "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)",
-      "[Synthetic Consumer Measurement](../03_Data_and_Code/Synthetic_Consumers/README.md)"
+      "[Synthetic Consumer Measurement](../03_Data_and_Code/Synthetic_Consumers/README.md)",
+      "[Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)",
+      "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)"
     ],
-    "practice": "Assess source support on the same pricing questions; reproduce counts and explain an inferential error independently.",
-    "application": "Compare pricing evidence, source selection, judge changes, and text-network interpretations. Compare straight-line and network alternatives with fixed origins and targets."
+    "practice": "Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.",
+    "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph."
   },
   {
     "number": 8,
@@ -2754,7 +2787,8 @@
       "Separate anomaly detection, variable localization, event timing, and evidence for a diagnosis.",
       "Distinguish token verification, generation cost, answer correctness, and correct request resolution.",
       "Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule.",
-      "Evaluate omitted auxiliary bias separately from sampling variance."
+      "Evaluate omitted auxiliary bias separately from sampling variance.",
+      "Distinguish oracle group purity from held-out prediction and detect label use during preprocessing."
     ],
     "slides": [
       {
@@ -2827,6 +2861,27 @@
         ],
         "notes": "Repeatedly choosing features from test performance turns that sample into validation data. A pipeline helps preserve the training-only boundary within cross-validation.",
         "source": "M7, Section 7.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Which Outcomes Chose the Group Label?",
+        "figure": "../06_Lecture_Notes/figures/M07_graph_labels.tex",
+        "caption": "One synthetic group. Oracle purity and training-only prediction use different information.",
+        "description": "Two held-out nodes have outcome 0; the sole training node has outcome 1. All-label majority predicts 0, giving a test score of 2/2. Training-only majority predicts 1, giving a test score of 0/2. Full-group oracle purity is 2/3.",
+        "notes": "GraCo max_acc chooses group majorities using all labels, then scores that assignment on each supplied mask. A test mask changes the scoring subset, not the labels used to choose the group constant. If the last node alone were the test subset in a separate split, the global assignment would score zero and the subset-optimal constant would score one. Masked global scores therefore need not be subset-specific ceilings. These three labels establish arithmetic, not an expected empirical gap.",
+        "source": "Marketing Analytics Lecture Notes, M7 §7.38. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md ../01_Resources/32_Graph_Coarsening/reference/metrics/structural.py"
+      },
+      {
+        "kind": "bullets",
+        "title": "Trace Labels Before Fitting",
+        "bullets": [
+          "UGC with alpha=None uses edge-label disagreement across all nodes.",
+          "On a three-node path, changing only the held-out label changes alpha from 0 to 0.5.",
+          "Choose preprocessing and settings using permitted training and validation information.",
+          "Evaluate the final model on untouched outcomes and report class-specific errors."
+        ],
+        "notes": "This parameter illustration has training nodes 0 and 1 with labels 0,0 and held-out node 2. It is a distinct split from the preceding purity example. Edges are 0-1 and 1-2. The held-out label changes from 0 to 1. The sole training-training edge remains in agreement. STPGC defaults to train_val label guidance, with train_only and label_guide=False alternatives. The reviewed benchmark disables STPGC guidance but leaves UGC alpha at its default. Access to test-node features is distinct from using test-node outcomes. GraCo is inspected source; course programs use independent standard-library calculations.",
+        "source": "Marketing Analytics Lecture Notes, M7 §7.38. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md ../01_Resources/32_Graph_Coarsening/reference/algorithms/ugc.py"
       },
       {
         "kind": "bullets",
@@ -3373,10 +3428,12 @@
       "[Training Data Mixtures: Data and Code](../03_Data_and_Code/Training_Data_Mixtures/README.md)",
       "[Training Data Mixtures: Optional Practice](../07_Labs/Training_Data_Mixtures/README.md)",
       "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
-      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)",
+      "[Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)",
+      "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)"
     ],
     "practice": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
-    "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons; preserve every evaluation denominator."
+    "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator."
   },
   {
     "number": 12,

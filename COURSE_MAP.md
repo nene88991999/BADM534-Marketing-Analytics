@@ -145,3 +145,7 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 ## Auxiliary Data and Human Research Budgets
 
 [The auxiliary-data example](03_Data_and_Code/Auxiliary_Data/README.md) connects coefficient identification in M3 §3.16, product contrasts and research cost in M4 §4.24, fixed experimental design in M6 §6.28, and omitted-bias evaluation in M7 §7.37. Two complete standard-library programs and three TikZ figures retain the four-profile construction, common MSE target, source variances, and bias restrictions. Sessions 4, 5, 9, and 11 use existing meeting time. The [lab](07_Labs/Auxiliary_Data/README.md) is optional ungraded practice.
+
+## Graph Coarsening and Customer Outcomes
+
+[The graph-coarsening case](03_Data_and_Code/Graph_Coarsening/README.md) connects original-population measurement in M2 §2.23, group weights in M4 §4.22, revenue and travel in M5 §5.24, label information in M7 §7.38, and service responsibilities in M9 §9.18.2. Sessions 7 and 11 include five slides and two editable diagrams. [Optional practice](07_Labs/Graph_Coarsening/README.md) applies the M1 AI-assisted coding workflow to inspected source defaults.
