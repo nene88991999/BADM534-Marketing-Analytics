@@ -9483,7 +9483,7 @@ python3 03_Data_and_Code/Representation_Alignment/evaluate_mhealth.py
 python3 -m unittest discover -s 03_Data_and_Code/Representation_Alignment -p 'test_*.py' -v
 ```
 
-To reconstruct the compact input, first run `python3 03_Data_and_Code/mHealth/download_data.py`, then `python3 03_Data_and_Code/Representation_Alignment/prepare_descriptions.py`. Preparation verifies the public release hash and reads the full compressed food file. Evaluation uses the compact input and needs no network, model downloads, or API key. It fits ordinary lexical representations and linear classifiers locally.
+To reconstruct the compact input, first run `python3 03_Data_and_Code/mHealth/download_data.py`, then `python3 03_Data_and_Code/Representation_Alignment/prepare_descriptions.py`. Preparation verifies the public release hash and reads the full compressed food file. Evaluation uses the compact input and needs no network, model downloads, or API key. It fits ordinary lexical representations and linear classifiers locally. Git attributes preserve the CSV bytes so the input checksum remains valid after cloning.
 
 ## Results
 

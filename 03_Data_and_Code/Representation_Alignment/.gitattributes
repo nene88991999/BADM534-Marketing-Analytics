@@ -1,0 +1,3 @@
+# Preserve exact CSV bytes used by the input manifest and saved predictions.
+data/*.csv -text whitespace=cr-at-eol
+results/*.csv -text whitespace=cr-at-eol
