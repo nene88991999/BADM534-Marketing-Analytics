@@ -99,7 +99,7 @@ assert round(fixed, 4) == 0.25
 assert round(conditional, 4) == 0.50
 \end{lstlisting}
 {\small The fixed-roster rate is 25\%. The active-user rate is 50\%.\par}
-\note{Both numbers use the same observed days. The denominator changes from 120 potential customer-days to 60. These are synthetic counts.
+\note{Suppose the same observed days are divided first by 120 potential customer-days and then by 60. The smaller denominator doubles the measured rate without changing recorded activity.
 
 M2, Section 2.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
 \end{frame}
@@ -190,7 +190,7 @@ M2, Section 2.16.2, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/
 \endgroup
 \par\medskip
 {\small The available records support classification, checks, and a bounded service decision.\par}
-\note{All records are synthetic. The January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The diagram represents explicit operational conditions rather than a complete ontology reasoner.
+\note{The synthetic January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The operational conditions are implemented directly in Python; an OWL reasoner is outside this implementation.
 
 M1 §1.16 and M2 §2.25. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
 \end{frame}

@@ -1,4 +1,4 @@
-# Claim tables
+# Claim Tables
 
 - **`claims.csv` / `claims.json`**: one row per claim in the post (50 rows). Columns:
   - `blog_id`: the ID readers see (C1–C50).

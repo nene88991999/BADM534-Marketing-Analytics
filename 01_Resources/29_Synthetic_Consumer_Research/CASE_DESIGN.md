@@ -1,4 +1,4 @@
-# Product Screening With Synthetic Consumer Responses
+# Product Screening with Synthetic Consumer Responses
 
 A fictional personal-care firm has more product ideas than it can afford to test with a large human panel. The manager needs a shortlist and a way to detect promising ideas that the screening procedure rejects. [Two original Python programs](../../03_Data_and_Code/Synthetic_Consumers/README.md) separate the numerical representation of a response from evaluation of a product-selection rule.
 

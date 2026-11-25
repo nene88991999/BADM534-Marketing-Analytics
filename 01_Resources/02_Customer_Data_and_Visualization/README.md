@@ -37,7 +37,7 @@ Visual encodings, comparisons, distributions, uncertainty, and common design pro
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### V02. seaborn Tutorial
+### V02. Seaborn Tutorial
 
 **Source:** seaborn contributors. [Open Resource](https://seaborn.pydata.org/tutorial.html). **Priority:** Core. **Syllabus:** M2.
 
@@ -97,7 +97,7 @@ Declarative charts, selections, and linked visual displays.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### V06. pandas: Merge, Join, Concatenate, and Compare
+### V06. Pandas: Merge, Join, Concatenate, and Compare
 
 **Source:** pandas contributors. [Open Resource](https://pandas.pydata.org/docs/user_guide/merging.html). **Priority:** Core. **Syllabus:** M2.
 
@@ -111,7 +111,7 @@ Relational joins and their effect on table shape.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### V07. pandas: Working with Missing Data
+### V07. Pandas: Working with Missing Data
 
 **Source:** pandas contributors. [Open Resource](https://pandas.pydata.org/docs/user_guide/missing_data.html). **Priority:** Core. **Syllabus:** M2.
 

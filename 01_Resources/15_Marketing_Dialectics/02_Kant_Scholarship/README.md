@@ -109,7 +109,7 @@ Discussion of Willaschek’s reconstruction of the rational sources of metaphysi
 **Rights:** local_only_copyright.
 **Dropbox file:** `local_sources/Kraus_StudiKantiani2020_Abstract.html`. Original retained locally; use the source link from GitHub.
 
-## S10: Kant’s Transcendental Idealism: An Interpretation and Defense
+## S10: Kant’S Transcendental Idealism: An Interpretation and Defense
 
 Henry E. Allison. 2004. Second edition; publisher metadata only
 

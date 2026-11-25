@@ -156,7 +156,7 @@ A framework for AI applications in marketing and related managerial questions.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### A09. How Generative AI Is Shaping the Future of Marketing
+### A09. How Generative AI is Shaping the Future of Marketing
 
 **Source:** Dhruv Grewal, Cinthia B. Satornino, Thomas Davenport, and Abhijit Guha. [Open Resource](https://link.springer.com/article/10.1007/s11747-024-01064-3). **Priority:** Core. **Syllabus:** M8.
 

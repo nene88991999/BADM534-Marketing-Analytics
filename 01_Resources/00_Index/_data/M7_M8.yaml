@@ -87,7 +87,7 @@
   priority: core
   modules: [M7, AI]
   summary: "Short worked examples of inconsistent preprocessing, data leakage (for example feature selection on the full data inflates accuracy from 0.5 to about 0.76 on pure noise) and random_state control, with Pipeline as the fix."
-  wiki_use: "Required reading before students let an AI assistant write an ML pipeline. Use it as an audit checklist: 'find the leakage in this AI-generated notebook'."
+  wiki_use: "Suggested reading before students let an AI assistant write an ML pipeline. Use it as an assessment checklist: 'find the leakage in this AI-generated notebook'."
   tools: [scikit-learn]
   ai_angle: true
   verified_via: fetch
@@ -749,7 +749,7 @@
   priority: core
   modules: [M7, M1, AI]
   summary: "Announces a Gemini-powered agent in Colab that turns a plain-language request into a complete notebook (imports, data loading, modeling, plots). It ranked 4th on the DABStep benchmark at launch."
-  wiki_use: "In-class demo: students ask the agent to 'build a churn model', then audit the generated notebook for leakage, the wrong metric and a missing holdout."
+  wiki_use: "In-class demo: students ask the agent to 'build a churn model', then assess the generated notebook for leakage, the wrong metric and a missing holdout."
   tools: [Colab, Gemini]
   ai_angle: true
   verified_via: fetch
@@ -959,7 +959,7 @@
   level: intro
   priority: recommended
   modules: [M8, AI]
-  summary: "Google's open protocol for AI agents to initiate payments, using signed 'Intent' and 'Cart' mandates as an audit trail. More than 60 partners (Mastercard, AmEx, PayPal, Adyen, Coinbase and others) back it, and it works as an extension of A2A alongside MCP."
+  summary: "Google's open protocol for AI agents to initiate payments, using signed 'Intent' and 'Cart' mandates as a verification record. More than 60 partners (Mastercard, AmEx, PayPal, Adyen, Coinbase and others) back it, and it works as an extension of A2A alongside MCP."
   wiki_use: "Compare with OpenAI's ACP: who controls the customer relationship and the data when agents buy?"
   tools: []
   ai_angle: true

@@ -77,7 +77,7 @@ Source: M6, Section 6.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 
 A policy-analysis design requires a credible untreated comparison.
 
-**Figure description:** The figure distinguishes the proposed policy timing from restaurant coverage and observed availability. A national time change alone mixes the policy with other changes.
+**Figure description:** The proposed policy timing, restaurant coverage, and observed availability represent separate objects. A national time comparison combines the policy with other contemporaneous changes.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M06_mcbroken_policy.tex)
 

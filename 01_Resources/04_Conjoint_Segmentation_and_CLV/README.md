@@ -96,7 +96,7 @@ Selecting segmentation variables, assessing solutions, and managerial implementa
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### C05. scikit-learn: Clustering
+### C05. Scikit-Learn: Clustering
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/modules/clustering.html). **Priority:** Core. **Syllabus:** M4.
 
@@ -182,7 +182,7 @@ Technical notes on customer-base analysis, retention, and lifetime value.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### C10. lifetimes Repository
+### C10. Lifetimes Repository
 
 **Source:** Cam Davidson-Pilon and contributors. [Open Resource](https://github.com/CamDavidsonPilon/lifetimes). **Priority:** Optional. **Syllabus:** M4.
 

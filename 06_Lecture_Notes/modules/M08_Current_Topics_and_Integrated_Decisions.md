@@ -2,7 +2,7 @@
 
 A marketing team can now generate campaign copy, build a prediction model, and summarize customer feedback within a short working session. The remaining difficulty is deciding whether the resulting system improves a business decision. A recommendation engine can reproduce past exposure, a media model can attribute seasonal demand to advertising, and an AI-generated analysis can calculate an invalid comparison precisely. Evaluating these systems requires a clear account of their information, incentives, assumptions, and consequences.
 
-## 8.1 Recommendation Systems Learn From Selected Exposure
+## 8.1 Recommendation Systems Learn from Selected Exposure
 
 A retailer wants to recommend products that customers will find useful. A common starting point is past interaction: purchases, clicks, ratings, or time spent. These observations combine preferences with the opportunities customers received. A product displayed prominently has more chances to be clicked than an otherwise similar product that was rarely shown. An absent interaction can therefore mean dislike, lack of exposure, lack of need, or an unavailable product.
 
@@ -10,7 +10,7 @@ Content-based methods use product attributes and customer histories to identify 
 
 Recommendation systems also change the data used to train the next model. A product that receives more exposure can accumulate more interactions, become easier to estimate, and receive still more exposure. This process can amplify initial differences without establishing that the repeatedly displayed product would be preferred under equal exposure.
 
-[Chaney, Stewart, and Engelhardt (2018)](https://arxiv.org/abs/1710.11214) study this feedback through simulations in which recommendations shape the next training sample. Their results show that consumption can become more homogeneous without corresponding utility improvements. The result depends on the simulated preferences, recommendation rules, and updating process. It identifies a mechanism to examine in deployed systems rather than a universal effect of personalization.
+[Chaney, Stewart, and Engelhardt (2018)](https://arxiv.org/abs/1710.11214) study this feedback through simulations in which recommendations shape the next training sample. Their results show that consumption can become more homogeneous without corresponding utility improvements. The result depends on the simulated preferences, recommendation rules, and updating process. For a deployed system, the corresponding question is whether repeated exposure changes consumption variety and customer value under that system's preferences and updating process.
 
 ![A recommender changes the exposure that generates its next training sample.](../figures/M08_feedback.png)
 
@@ -42,7 +42,7 @@ For a subscription business, engagement can affect retention and hence customer 
 
 A customer may prefer a useful collection of products even when some items in that collection have lower individual relevance scores. Category repetition, past purchases, and the customer's stated goal affect the value of the complete list. The food-recommendation studies in M7, Section 7.12, motivate these distinctions. A simple list objective makes the relevance-variety tradeoff explicit.
 
-Suppose a retail customer requests three products and values variety across categories. Assign four candidate items the relevance scores below. The scores are comparable across these items and measure relevance rather than purchase probability.
+Suppose a retail customer requests three products and values variety across categories. Assign four candidate items the relevance scores below. The scores measure relevance on a common scale; they have no purchase-probability interpretation.
 
 | Item | Category | Relevance Score |
 | --- | --- | ---: |
@@ -61,7 +61,7 @@ where $L$ is a three-item list, $s_j$ is relevance, $K(L)$ counts distinct categ
 
 The variety weight must come from an explicit objective, user preference, or evaluation process. Category counts are also a coarse measure: they treat all category differences equally and ignore which products the customer already owns. A deployed system would need better measurements and an evaluation of whether the resulting lists improve the intended customer experience.
 
-For an experiment, randomize eligible customers to the existing and revised recommendation policies. Choose a primary outcome such as contribution per assigned customer over a fixed horizon, alongside measures of customer satisfaction and unwanted repetition. Analyze assignment rather than only customers who clicked a recommendation. Clicking occurs after the policy is assigned and can differ between policies. Preserve the list shown and the alternatives eligible at each impression so the mechanism can be examined.
+For an experiment, randomize eligible customers to the existing and revised recommendation policies. Choose a primary outcome such as contribution per assigned customer over a fixed horizon, alongside measures of customer satisfaction and unwanted repetition. Include every assigned customer in the outcome comparison. Clicking occurs after the policy is assigned and can differ between policies. Preserve the list shown and the alternatives eligible at each impression so the mechanism can be examined.
 
 ### 8.2.1 Engagement, Considered Preferences, and the Objective
 
@@ -138,7 +138,7 @@ Generative AI can assist with code, text classification, documentation, and comm
 
 Separate several uses. A coding assistant produces or edits a program that can be inspected and executed. An annotation model produces labels that require a measurement evaluation. A retrieval system selects source passages and may generate a summary that needs factual support. A content system produces customer-facing material whose effect should be evaluated in its deployment context. Each use has a different unit of quality and a different failure mechanism.
 
-For coding, begin with an analytical specification and a small example with a known result. Ask the assistant to implement a limited step, explain the data transformations, and identify assumptions. Inspect the code before running it. Then compare intermediate outputs with independent checks. A program that executes successfully can still use an incorrect denominator, join on the wrong key, or include future information. Those errors require substantive checks rather than syntax repair.
+For coding, begin with an analytical specification and a small example with a known result. Ask the assistant to implement a limited step, explain the data transformations, and identify assumptions. Inspect the code before running it. Then compare intermediate outputs with independent checks. A program that executes successfully can still use an incorrect denominator, join on the wrong key, or include future information. Checking denominators, join keys, and information timing reveals errors that a successful execution can leave undetected.
 
 For retrieval and summarization, maintain the connection between a claim and its source. A citation should support the particular statement next to it. Ask the model to distinguish an observed result from a proposed explanation, and check that distinction against the original text. If a passage or file is unavailable, state that limitation. Fluent reconstruction is not a substitute for access to the evidence.
 
@@ -164,7 +164,7 @@ A retailer is considering a subscription service with recommendations and delive
 
 Construct the customer and order tables with explicit keys and dates. Describe customer activity and purchasing cohorts, keeping unavailable future retention separate from observed inactivity. Use regression to summarize conditional patterns while examining confounding. Design a conjoint exercise to learn stated tradeoffs between delivery, assortment, and price, then assess whether its predictions generalize to an actual offer.
 
-Use segmentation to organize meaningful differences in needs and behavior, and calculate customer value from contribution rather than revenue. Analyze reviews to identify the service attributes customers mention, checking annotation quality against human labels. Develop a prediction model using only information available at the targeting date. Its forecasts can help plan capacity, while a randomized offer evaluates incremental take-up, contribution, and retention.
+Use segmentation to organize meaningful differences in needs and behavior, and calculate customer value from contribution after the relevant variable costs. Analyze reviews to identify the service attributes customers mention, checking annotation quality against human labels. Develop a prediction model using only information available at the targeting date. Its forecasts can help plan capacity, while a randomized offer evaluates incremental take-up, contribution, and retention.
 
 Finally, evaluate the recommendation component and the acquisition budget. Log exposure to recommended items, distinguish average from marginal media returns, and use AI assistance within a documented verification process. The management recommendation should identify the supported action, the uncertainty that could change it, and the next observation or experiment with the greatest decision value. A complicated collection of models is useful only if these pieces support a coherent choice.
 
@@ -417,7 +417,7 @@ The mHealth example provides an independent numerical reference. The requested m
 | Start rate bars at 60% | Bar lengths distort magnitudes | Inspect baseline |
 | Declare the time difference causal | Claim exceeds the design | Inspect interpretation |
 
-The checker below accepts the correct specification and rejects all four constructed mistakes. Its numerator and denominator checks use the saved monthly evidence, rather than the plotted value as its own reference. This is a narrow validator for declared fields. It does not interpret unrestricted natural-language titles, inspect pixels, or guarantee that a rendered chart is readable. Review the displayed title, labels, clipping, color contrast, and all interactive selections separately. A chart can pass these field checks while still misleading through an omitted subgroup or an unsupported narrative.
+The checker below accepts the correct specification and rejects all four constructed mistakes. Its numerator and denominator checks compare the chart specification with independently saved monthly evidence. This is a narrow validator for declared fields. It does not interpret unrestricted natural-language titles, inspect pixels, or guarantee that a rendered chart is readable. Review the displayed title, labels, clipping, color contrast, and all interactive selections separately. A chart can pass these field checks while still misleading through an omitted subgroup or an unsupported narrative.
 
 Ask a coding assistant to return the aggregate plotting table, units, eligibility rule, axis domains, and one hand-calculated plotted value with its code. A second review should compare those objects with the original analysis specification. Passing the assistant's own test is informative only when the expected answer was derived independently. The [Financial Times vocabulary](https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/README.md) supports the choice of display, while [Rougier's visualization code](https://github.com/rougier/scientific-visualization-book) provides examples of figure construction and layout. The managerial claim must remain tied to the evidence and design.
 
@@ -494,7 +494,7 @@ A provider deciding whether to cut its subscription price needs to anticipate wh
 
 [Egan, Russel, Shi, and Yao (2026)](https://www.nber.org/papers/w35953) study paid consumer subscriptions using card transactions. Their abstract reports 2.9% paid adoption by April 2026, substantial turnover, and growing substitutability among providers. [Fradkin (2025)](https://arxiv.org/abs/2504.15440) studies applications using models through OpenRouter and documents variation in whether releases expand usage or displace other models. The population and choice object differ: consumer subscriptions, application-level model use, and token demand answer different managerial questions. A descriptive retention gap alone does not identify a structural substitution parameter.
 
-### 8.13.1 A Price Coefficient With a Known Interpretation
+### 8.13.1 A Price Coefficient with a Known Interpretation
 
 To connect a subscription probability to price, consider an imposed binary-choice benchmark. A homogeneous consumer chooses whether to hold one provider in a month. Let $p_{jt}$ be its price in dollars per month, $\delta_j$ its provider intercept, and $\tau_t$ a common month effect. A logistic utility difference with price coefficient $-\alpha$ implies
 
@@ -530,7 +530,7 @@ An acquisition flow divided by all consumers also differs from an acquisition pr
 
 ### 8.13.3 Evaluating an AI-Generated Demand Analysis
 
-A useful coding specification states the consumer roster, available alternatives, monthly price units, subscription-history definition, and target coefficient before requesting a model. Require the code to retain zero-count provider-months, check whether prices vary after the fixed effects, and reject undefined log odds. A pseudocount changes the transformed outcome and should follow an explicit statistical model rather than conceal zero shares.
+A useful coding specification states the consumer roster, available alternatives, monthly price units, subscription-history definition, and target coefficient before requesting a model. Require the code to retain zero-count provider-months, check whether prices vary after the fixed effects, and reject undefined log odds. A pseudocount changes the transformed outcome. State the statistical model that justifies it and retain the original zero shares for inspection.
 
 For a simulation, compare the estimator with the generator line by line. The price appearing in a utility equation, the recorded price of a chosen premium plan, and the average amount paid are different objects. Verify whether the program holds category attractiveness fixed or recalibrates it when prices change. Then test the estimator on exact probabilities from a model for which its equation is correct. The benchmark below passes that test; the dynamic-panel regressions retain their descriptive interpretation.
 
@@ -654,7 +654,7 @@ Here $\Delta\Pi_k$ is expected profit and $\Delta V_k$ is expected customer valu
 
 ### 8.14.2 A Numerical Comparison
 
-\noindent Suppose direct choice produces a renewal probability of 0.20. An alternative procedure produces 0.10, and another produces 0.60. Set firm margin to 11 dollars and customer loss from renewal to 10 dollars. These are synthetic inputs. Relative to direct choice, the high-renewal procedure raises expected firm profit by 4.40 dollars, reduces customer value by 4 dollars, and raises combined surplus by 0.40 dollars per eligible customer. Relative to the low-renewal procedure, it reduces customer value by 5 dollars.
+\noindent Suppose direct choice produces a renewal probability of 0.20. An alternative procedure produces 0.10, and another produces 0.60. Set firm margin to 11 dollars and customer loss from renewal to 10 dollars. Relative to direct choice, the high-renewal procedure raises expected firm profit by 4.40 dollars, reduces customer value by 4 dollars, and raises combined surplus by 0.40 dollars per eligible customer. Relative to the low-renewal procedure, it reduces customer value by 5 dollars.
 
 ![Synthetic changes in expected profit and customer value relative to direct renewal at probability 0.20. Firm margin is 11 dollars per renewal and customer loss is 10 dollars per renewal. The low-renewal procedure gives changes of -1.10 and +1 dollar; direct choice gives zero changes; the high-renewal procedure gives +4.40 and -4 dollars.](../figures/M08_retention_welfare.png)
 
@@ -763,7 +763,7 @@ if __name__ == "__main__":
 
 \noindent A manager considering a new price display, review summary, or subscription process needs to identify which conduct a rule covers. The relevant jurisdiction, product, effective date, and exceptions determine how the legal source bears on the proposed action. A statute, binding rule, agency interpretation, settlement, and proposed rule have different authority. Their differences affect the inference an analyst can draw from them.
 
-As checked on November 2, 2026, the FTC's March 2026 negative-option announcement seeks comments on possible amendments and refers to the vacated 2024 rule. An advance notice does not itself adopt replacement obligations. A subscription analysis must examine operative federal and applicable state requirements rather than infer a current universal cancellation rule from the title of an earlier announcement. The [FTC notice](https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option) identifies the procedural status.
+As checked on November 2, 2026, the FTC's March 2026 negative-option announcement seeks comments on possible amendments and refers to the vacated 2024 rule. An advance notice does not itself adopt replacement obligations. A subscription analysis must identify the operative federal and applicable state requirements, their coverage, and their effective dates. The [FTC notice](https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option) identifies the procedural status.
 
 A practical decision record states the action, customer population, commercial objective, and expected customer consequences. It then matches the relevant legal source to the conduct. For example, an advertising claim requires support for the claim customers understand; a review summary requires truthful provenance; and a consequential delivery system requires attention to actual access. The [primary-source guide](../ETHICS_AND_REGULATION.md) records the scope and status of the public sources used in these cases.
 
@@ -825,7 +825,7 @@ The provider's competitive advantage can therefore depend on reliable integratio
 
 ### 8.17.3 Reproduce the Cost and Price Comparisons
 
-\noindent Run `python3 03_Data_and_Code/AI_Workflows/investment.py` with Python 3.10 or later. The program uses only imposed inputs. It writes a CSV of total hours for zero through 24 uses and another with one row per pricing scenario. Hours and dollars remain separate units. Direct profit and utility balances verify the pricing endpoints, and the reuse calculation checks the zero-saving and first-positive-saving workloads.
+\noindent Run `python3 03_Data_and_Code/AI_Workflows/investment.py` with Python 3.10 or later. The specified time and pricing scenarios produce a CSV of total hours for zero through 24 uses and another with one row per pricing scenario. Hours and dollars remain separate units. Direct profit and utility balances verify the pricing endpoints, and the reuse calculation checks the zero-saving and first-positive-saving workloads.
 
 Python source: [investment.py](../../03_Data_and_Code/AI_Workflows/investment.py)
 

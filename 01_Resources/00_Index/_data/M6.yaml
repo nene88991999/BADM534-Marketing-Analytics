@@ -154,7 +154,7 @@
   priority: recommended
   modules: [M6]
   summary: "A framework for classifying DiD designs and estimators: covariates, weighting, multiple periods and staggered adoption. It explains why naive two-way fixed effects can mislead."
-  wiki_use: "Instructor reference for the staggered-DiD lab. Students can use its checklist to audit DiD code an AI assistant writes."
+  wiki_use: "Instructor reference for the staggered-DiD lab. Students can use its checklist to assess DiD code an AI assistant writes."
   tools: [csdid, differences, pyfixest]
   ai_angle: false
   verified_via: fetch

@@ -9,8 +9,8 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Students:** read the [Student and LLM Guide](LLM_GUIDE.md), then the [Course Map](COURSE_MAP.md).
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
-- **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates.
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 87 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 102 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -27,7 +27,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
 | [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
 
-## Working With an LLM
+## Working with an LLM
 
 Give the assistant `AGENTS.md`, `course.json`, the relevant module guide, and the specific syllabus or assignment file. Ask it to cite repository paths and source URLs, identify missing information, and explain analytical choices. Private GitHub links require authorized access; when a tool cannot access them, download the selected Markdown files and provide those files directly.
 

@@ -1,4 +1,4 @@
-# Wiki Design Patterns From PyStatlas
+# Wiki Design Patterns from PyStatlas
 
 [PyStatlas](https://warint.github.io/pystatlas/) provides a useful architecture for a GitHub-hosted course reference: static HTML, searchable example cards, family filters, and detail pages containing the interpretation, image, source code, libraries, and data attribution. Its metadata live in Python docstrings and YAML, and a builder produces the public pages. The code copy and download controls are visible on the calibration detail page; only search and navigation were exercised in this review.
 

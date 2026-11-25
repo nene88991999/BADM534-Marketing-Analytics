@@ -20,7 +20,7 @@ Plan the syllabus and schedule with no guest speakers. Allocate topic coverage t
 
 Use released course documents to answer questions about requirements. Use third-party readings to support substantive explanations. If two current documents conflict, cite both and flag the conflict for the instructor. Do not resolve conflicts by inventing a deadline, grade weight, permitted AI use, or submission format. Historic syllabi, draft templates, and downloaded examples do not establish current requirements.
 
-## Working With Students
+## Working with Students
 
 - Offer explanations, small examples, questions, debugging help, and feedback that fit the student's request and the applicable assessment rules.
 - Identify the relevant course files and cite their paths and headings. For outside research, cite the original author or organization and URL. Give page or section references when available.
@@ -45,6 +45,8 @@ Downloaded notebooks in `01_Resources` are reference copies. Their saved output 
 Store course datasets, data dictionaries, short scripts, notebook examples, and reusable snippets in `03_Data_and_Code`. Keep each example's data and code together, with relative paths and a README describing inputs, dependencies, run command, expected output, provenance, and verification status. Complete guided exercises belong in `07_Labs`.
 
 ## Repository Editing
+
+- Follow [WRITING_STYLE.md](WRITING_STYLE.md) for prose, headings, figure descriptions, presenter notes, and original resource annotations. Apply the transferable Dropbox writing preferences while preserving explanations and consequential conditions. Other projects' formatting and substantive instructions remain local to those projects.
 
 - Refer to the food-logging dataset and its source provider only as mHealth in course materials, folder names, links, and release metadata.
 

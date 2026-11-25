@@ -2,53 +2,102 @@
   "verified_on": "2026-11-24",
   "artifacts": {
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 389,
-      "sha256": "55e50f93f5863ad7d64ae05fe2addafd389bf5c8145976fc1fe69531ce92f170"
+      "pages": 390,
+      "sha256": "e2d125a16b15c167739e2f151cb451be597bc5aada870bb3b84d010baadee91d"
     },
     "06_Lecture_Notes/Marketing_Dialectics.pdf": {
       "pages": 31,
-      "sha256": "1ed559f9c6204e0318c1cb6aa7cf1ce00beca086fe524c389db412e922df44ff"
+      "sha256": "5cf7c77d2d2daf81efd671c998947243a67052e4a7d8a8b806438109e7e8eb39"
     },
     "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
       "pages": 2,
-      "sha256": "8e0bf2c83e24c3c029eb9ee4a90a8beeb903a1763084e0de4088d67e8254ad96"
+      "sha256": "4a087db00c9c48f15ce4750f9baf8e1232affe8a4cca10ea5ed5516ac67ded12"
     },
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
       "pages": 389,
-      "sha256": "fc811f564a6a78a1759e113ee4ddfc64464419cd5d3da1090db7f643ce520691"
+      "sha256": "417bb7a733eb51dec2a6786b6169ac03a2c9f17df348aa7d209bf41d9e0fd57f"
     },
     "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
       "pages": 25,
-      "sha256": "4957cf2727b84ba722e31ace6ef64711710573371240c24e4dd6c034f751ec05"
+      "sha256": "7bcea304c2760f0f0493fbbdc71e73af483990c3045a8fe93b5f7e044231436b"
     },
     "05_Slides/S02_Customer_Data_and_Measurement.pdf": {
       "pages": 23,
-      "sha256": "c5a95c24a3bd935f90ecb4968d2aae1148b712f1729c7ae72e14e2e625183b11"
+      "sha256": "ff4dae8634c47eeaaefabb959b5647d5f6ec2fe6c8d2ac3b11a2f7f246552723"
+    },
+    "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
+      "pages": 25,
+      "sha256": "9232ca994939a48d016224004bcdc90c6eeb68c6e0a39811b81cdfce02a74d4f"
+    },
+    "05_Slides/S04_Regression_and_Marketing_Interpretation.pdf": {
+      "pages": 19,
+      "sha256": "537ca80e8d49a537356447fa3ce002f4a7c0908a2fecba814d23a7044ac189a6"
+    },
+    "05_Slides/S05_Conjoint_and_Product_Design.pdf": {
+      "pages": 27,
+      "sha256": "9ea4173960227f209b3cc467954f50c1f4bcf7f7ad1006ab87eaf28159800bc5"
+    },
+    "05_Slides/S06_Segmentation_and_Customer_Lifetime_Value.pdf": {
+      "pages": 26,
+      "sha256": "3b8884f98132b4d107346aac2684fbfd6a7e2298240a372bbaee6bc46af49af6"
+    },
+    "05_Slides/S07_Text_Social_Media_and_Networks.pdf": {
+      "pages": 41,
+      "sha256": "7724e63f18fe5eedf8e64f215a58e5cee3c968c949e82917ec443d706d264d86"
+    },
+    "05_Slides/S08_Project_Evidence_and_Midterm_Presentations.pdf": {
+      "pages": 11,
+      "sha256": "dcedb41572cd5930d8c24e01678c08a0bfe00334c0616a8c13f2a2249a449079"
+    },
+    "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
+      "pages": 24,
+      "sha256": "73ef7533c5d2cbcbf6ca385c429a304097338aaf3bc1a035d17b04ae1046c626"
+    },
+    "05_Slides/S10_Causal_Comparisons_and_Policy_Evaluation.pdf": {
+      "pages": 25,
+      "sha256": "d60de28e5b6023d29c8ccf3276613cbd2a87e88324638290125f417f59e1135f"
     },
     "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
       "pages": 52,
-      "sha256": "79c03a274bcfe945a615826e888c2f78972aa93c541530cba41919e3539cb247"
+      "sha256": "123605ff065d36ae28e5fa9e4002f7dc05ed9d2c8c915e52ba60a985f3405ecc"
+    },
+    "05_Slides/S12_Recommendation_Systems_and_Customer_Goals.pdf": {
+      "pages": 18,
+      "sha256": "cf4a066bf2c926f28c3638832302172d67a2a428bfdda41d996a08531d645287"
+    },
+    "05_Slides/S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf": {
+      "pages": 22,
+      "sha256": "67d9de1c93342b009ec3f5892f48634e2fd651d28a6d994155636287e1ecf254"
     },
     "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
       "pages": 41,
-      "sha256": "8cc67f60eba5515d7dfe430293c37b7c2e77f65094b372e0927e1793c8290823"
+      "sha256": "a79176a4b4053fbbb6aada997fc905b231ac5c1b837113cb9fe84abe883e4e9a"
+    },
+    "05_Slides/S15_Integrated_Decisions_and_Final_Presentations.pdf": {
+      "pages": 10,
+      "sha256": "1e8f7e0c0b21256cde7cfe13e5b62323fe015e07935c8e0e24c76e2a0f7d08c2"
     }
   },
   "session_decks": 15,
   "scheduled_minutes_per_meeting": 170,
   "checks": {
-    "all_affected_pdfs_built_and_reviewed": true,
-    "all_15_deck_counts_match_sources_and_plan": true,
-    "calendar_unchanged": true,
+    "unchanged_fenced_code": 95,
+    "unchanged_display_equations": 103,
+    "unchanged_formal_assumptions": 11,
+    "unchanged_tables": 65,
+    "unchanged_figure_targets": 103,
+    "calendar_and_logistics_unchanged": true,
+    "numerical_programs_data_and_tikz_unchanged": true,
+    "local_links_checked": 934,
+    "unresolved_links": [],
     "matching_full_python_blocks": 88,
-    "new_programs_executed": 3,
-    "new_independent_tests_passed": 14,
-    "new_figures_reviewed": 3,
-    "new_slides_reviewed": 10,
-    "local_links_checked": 848,
-    "portable_context_uses_published_additional_catalog": true
+    "all_19_pdf_builds_passed": true,
+    "all_15_deck_counts_match_sources_and_plan": true,
+    "all_other_catalog_fields_unchanged": true,
+    "published_additional_catalog_records": 644,
+    "new_analysis_programs_executed": 0
   },
-  "execution_scope": "Original synthetic examples and documentation. No upstream reasoner, SHACL engine, sparse autoencoder, model inference, or customer-data upload. Wiki remains unimplemented; labs are optional ungraded practice.",
+  "execution_scope": "Writing, headings, original resource annotations, and repository guidance. Numerical programs, data, equations, formal assumptions, tables, analytical figures, meeting logistics, and calendar bytes are unchanged. The 88 complete Python blocks were compared with their source files and syntax-parsed; numerical analyses were not rerun for these prose changes. Original third-party texts, quoted titles, and licenses retain their wording.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
     "student_slide_pages_visually_rechecked": 12,
@@ -235,7 +284,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "ontology_representation_checks_2026_11_24",
+  "latest_revision": "writing_alignment_checks_2026_11_24",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -678,5 +727,294 @@
     "preexisting_dirty_file_hashes_preserved": 38,
     "context": "Regenerated llms-full.txt from the publication snapshot; preexisting additional-catalog edits excluded using its published HEAD version.",
     "scope": "Original synthetic examples and documentation. No upstream reasoner, SHACL engine, sparse autoencoder, model inference, or customer-data upload. Wiki remains unimplemented; labs are optional ungraded practice."
+  },
+  "writing_alignment_checks_2026_11_24": {
+    "verified_on": "2026-11-24",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 390,
+        "sha256": "e2d125a16b15c167739e2f151cb451be597bc5aada870bb3b84d010baadee91d"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 31,
+        "sha256": "5cf7c77d2d2daf81efd671c998947243a67052e4a7d8a8b806438109e7e8eb39"
+      },
+      "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
+        "pages": 2,
+        "sha256": "4a087db00c9c48f15ce4750f9baf8e1232affe8a4cca10ea5ed5516ac67ded12"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 389,
+        "sha256": "417bb7a733eb51dec2a6786b6169ac03a2c9f17df348aa7d209bf41d9e0fd57f"
+      },
+      "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
+        "pages": 25,
+        "sha256": "7bcea304c2760f0f0493fbbdc71e73af483990c3045a8fe93b5f7e044231436b"
+      },
+      "05_Slides/S02_Customer_Data_and_Measurement.pdf": {
+        "pages": 23,
+        "sha256": "ff4dae8634c47eeaaefabb959b5647d5f6ec2fe6c8d2ac3b11a2f7f246552723"
+      },
+      "05_Slides/S03_Visualization_and_Data_Quality.pdf": {
+        "pages": 25,
+        "sha256": "9232ca994939a48d016224004bcdc90c6eeb68c6e0a39811b81cdfce02a74d4f"
+      },
+      "05_Slides/S04_Regression_and_Marketing_Interpretation.pdf": {
+        "pages": 19,
+        "sha256": "537ca80e8d49a537356447fa3ce002f4a7c0908a2fecba814d23a7044ac189a6"
+      },
+      "05_Slides/S05_Conjoint_and_Product_Design.pdf": {
+        "pages": 27,
+        "sha256": "9ea4173960227f209b3cc467954f50c1f4bcf7f7ad1006ab87eaf28159800bc5"
+      },
+      "05_Slides/S06_Segmentation_and_Customer_Lifetime_Value.pdf": {
+        "pages": 26,
+        "sha256": "3b8884f98132b4d107346aac2684fbfd6a7e2298240a372bbaee6bc46af49af6"
+      },
+      "05_Slides/S07_Text_Social_Media_and_Networks.pdf": {
+        "pages": 41,
+        "sha256": "7724e63f18fe5eedf8e64f215a58e5cee3c968c949e82917ec443d706d264d86"
+      },
+      "05_Slides/S08_Project_Evidence_and_Midterm_Presentations.pdf": {
+        "pages": 11,
+        "sha256": "dcedb41572cd5930d8c24e01678c08a0bfe00334c0616a8c13f2a2249a449079"
+      },
+      "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
+        "pages": 24,
+        "sha256": "73ef7533c5d2cbcbf6ca385c429a304097338aaf3bc1a035d17b04ae1046c626"
+      },
+      "05_Slides/S10_Causal_Comparisons_and_Policy_Evaluation.pdf": {
+        "pages": 25,
+        "sha256": "d60de28e5b6023d29c8ccf3276613cbd2a87e88324638290125f417f59e1135f"
+      },
+      "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
+        "pages": 52,
+        "sha256": "123605ff065d36ae28e5fa9e4002f7dc05ed9d2c8c915e52ba60a985f3405ecc"
+      },
+      "05_Slides/S12_Recommendation_Systems_and_Customer_Goals.pdf": {
+        "pages": 18,
+        "sha256": "cf4a066bf2c926f28c3638832302172d67a2a428bfdda41d996a08531d645287"
+      },
+      "05_Slides/S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf": {
+        "pages": 22,
+        "sha256": "67d9de1c93342b009ec3f5892f48634e2fd651d28a6d994155636287e1ecf254"
+      },
+      "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+        "pages": 41,
+        "sha256": "a79176a4b4053fbbb6aada997fc905b231ac5c1b837113cb9fe84abe883e4e9a"
+      },
+      "05_Slides/S15_Integrated_Decisions_and_Final_Presentations.pdf": {
+        "pages": 10,
+        "sha256": "1e8f7e0c0b21256cde7cfe13e5b62323fe015e07935c8e0e24c76e2a0f7d08c2"
+      }
+    },
+    "checks": {
+      "unchanged_fenced_code": 95,
+      "unchanged_display_equations": 103,
+      "unchanged_formal_assumptions": 11,
+      "unchanged_tables": 65,
+      "unchanged_figure_targets": 103,
+      "calendar_and_logistics_unchanged": true,
+      "numerical_programs_data_and_tikz_unchanged": true,
+      "local_links_checked": 934,
+      "unresolved_links": [],
+      "matching_full_python_blocks": 88,
+      "all_19_pdf_builds_passed": true,
+      "all_15_deck_counts_match_sources_and_plan": true,
+      "all_other_catalog_fields_unchanged": true,
+      "published_additional_catalog_records": 644,
+      "new_analysis_programs_executed": 0
+    },
+    "visual_review": {
+      "lecture_note_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        28,
+        34,
+        37,
+        39,
+        50,
+        53,
+        74,
+        83,
+        91,
+        92,
+        93,
+        102,
+        133,
+        134,
+        135,
+        136,
+        144,
+        145,
+        159,
+        160,
+        162,
+        163,
+        175,
+        176,
+        177,
+        178,
+        179,
+        193,
+        195,
+        197,
+        201,
+        202,
+        203,
+        213,
+        218,
+        227,
+        228,
+        229,
+        230,
+        231,
+        234,
+        240,
+        252,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        302,
+        305,
+        309,
+        310,
+        311,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "projected_slide_pages": [
+        15,
+        82,
+        197,
+        208,
+        221,
+        314,
+        320,
+        344,
+        348,
+        379
+      ],
+      "standalone_dialectics_pages": [
+        2,
+        6,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "syllabus_pages": [
+        1
+      ],
+      "rendered_for_review": "All pages of the combined notes, combined slides, standalone dialectics chapter, and syllabus were rendered. Changed pages and subsequent page-flow changes were inspected in contact sheets, with representative figures and dense pages inspected at page size.",
+      "presenter_checks": "Sessions 11 and 14 compiled. Updated presenter pages 30 in Session 11 and 10 and 32 in Session 14 were inspected; the final wording of the Session 14 page-32 navigation instruction was checked in source.",
+      "corrections": "Moved the pricing-comparison heading to remain with its subsection. Re-rendered the affected chapter tail and final heading-capitalization corrections."
+    },
+    "compile_checks": "No overfull boxes, missing characters, undefined commands, or TeX errors. Existing underfull spacing and package warnings remain.",
+    "context": "llms-full.txt regenerated from current course sources and the style revisions to the previously published additional catalog. Pending resource additions are preserved locally.",
+    "scope": "Writing, headings, original resource annotations, and repository guidance. Numerical programs, data, equations, formal assumptions, tables, analytical figures, meeting logistics, and calendar bytes are unchanged. The 88 complete Python blocks were compared with their source files and syntax-parsed; numerical analyses were not rerun for these prose changes. Original third-party texts, quoted titles, and licenses retain their wording."
   }
 }

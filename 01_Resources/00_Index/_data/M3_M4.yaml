@@ -1084,7 +1084,7 @@
   tools: [pandas, scikit-learn, pymc-marketing]
   ai_angle: false
   verified_via: fetch
-  notes: "Donated to UCI in 2019. Clean returns (negative quantities) and missing customer IDs before modeling; this is a good cleaning task to give an AI assistant and then audit."
+  notes: "Donated to UCI in 2019. Clean returns (negative quantities) and missing customer IDs before modeling; this is a good cleaning task to give an AI assistant and then assess."
 
 - id: dolnicar-grun-leisch-market-segmentation-analysis
   category: M4

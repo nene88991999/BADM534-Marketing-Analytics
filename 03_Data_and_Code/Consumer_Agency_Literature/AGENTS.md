@@ -1,4 +1,4 @@
-# Working With the Literature Example
+# Working with the Literature Example
 
 Read README.md and CODEBOOK.md before classifying a paper or interpreting a result. The review is incomplete and primarily abstract-based. Preserve missing evidence, source versions, and the distinction between author findings and inferred misuse. Never characterize an author as intending to erode agency on the basis of this coding.
 

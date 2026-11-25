@@ -149,7 +149,7 @@
       },
       {
         "kind": "bullets",
-        "title": "Verification With Counterexamples",
+        "title": "Verification with Counterexamples",
         "bullets": [
           "A duplicate lookup must trigger a failed key check.",
           "An unmatched customer must remain visible in the assessment.",
@@ -361,7 +361,7 @@
         "intro": "Synthetic counts follow all four eligible customers.",
         "code": "days = {'A': 20, 'B': 10, 'C': 0, 'D': 0}\nfixed = sum(days.values()) / (4 * 30)\nactive = [x for x in days.values() if x > 0]\nconditional = sum(active) / (len(active) * 30)\nassert round(fixed, 4) == 0.25\nassert round(conditional, 4) == 0.50",
         "check": "The fixed-roster rate is 25%. The active-user rate is 50%.",
-        "notes": "Both numbers use the same observed days. The denominator changes from 120 potential customer-days to 60. These are synthetic counts.",
+        "notes": "Suppose the same observed days are divided first by 120 potential customer-days and then by 60. The smaller denominator doubles the measured rate without changing recorded activity.",
         "source": "M2, Section 2.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -380,7 +380,7 @@
         "title": "Retention Has a Triangular Support",
         "figure": "../06_Lecture_Notes/figures/M02_cohort_triangle.tex",
         "caption": "Synthetic cohort structure. Blank cells have no elapsed follow-up.",
-        "description": "Older cohorts have more observable follow-up periods. The missing upper-age cells for recent cohorts are unobserved rather than zero retention.",
+        "description": "Older cohorts have more observable follow-up periods. The upper-age cells for recent cohorts remain unobserved because those cohorts have not reached those ages.",
         "notes": "Calendar time, tenure, and acquisition cohort are different dimensions. A comparison at fixed tenure avoids giving newer customers shorter opportunities to remain active.",
         "source": "M2, Section 2.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
@@ -421,7 +421,7 @@
         "figure": "../06_Lecture_Notes/figures/M01_cancellation_evidence.tex",
         "caption": "The available records support classification, checks, and a bounded service decision.",
         "description": "A recorded request is classified as a service record and checked for identifiers, time, and cutoff. Accepted requests are compared with dated state evidence. A request without an accepted confirmation enters review; missing confirmation alone does not prove active status.",
-        "notes": "All records are synthetic. The January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The diagram represents explicit operational conditions rather than a complete ontology reasoner.",
+        "notes": "The synthetic January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The operational conditions are implemented directly in Python; an OWL reasoner is outside this implementation.",
         "source": "M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -806,7 +806,7 @@
           "Show the comparison, units, and denominator.",
           "Keep the qualification that could change the action beside the claim."
         ],
-        "notes": "An executive summary can be concise while retaining consequential uncertainty. A useful chart title states the population and comparison rather than a causal claim unsupported by the design.",
+        "notes": "An executive summary can be concise while retaining consequential uncertainty. State the population and comparison in the chart title, with causal wording limited to claims supported by the design.",
         "source": "M2, Section 2.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -931,7 +931,7 @@
       },
       {
         "kind": "figure",
-        "title": "A Comparison Changes With Tenure",
+        "title": "A Comparison Changes with Tenure",
         "figure": "../06_Lecture_Notes/figures/M03_interaction.tex",
         "caption": "Synthetic message-response model. Tenure determines the conditional comparison.",
         "description": "The interaction changes the slope of the message comparison across customer tenure. A single main coefficient describes only the chosen reference tenure.",
@@ -1730,7 +1730,7 @@
           "The document may be a review, sentence, or service conversation.",
           "The action is a review queue with limited staff capacity."
         ],
-        "notes": "The unit and label definition determine the evaluation. A negative review can concern price or quality rather than delivery. A classifier needs a construct that matches the service action.",
+        "notes": "The unit and label definition determine the evaluation. A negative review can concern price, quality, or delivery. A classifier needs a construct that identifies the service action the manager can take.",
         "source": "M5, Section 5.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
       },
       {
@@ -1817,7 +1817,7 @@
         "intro": "Let $\\pi$ be complaint prevalence, $s$ sensitivity, and $c$ specificity.",
         "equation": "\\Pr(Y=1\\mid\\widehat Y=1)=\\frac{s\\pi}{s\\pi+(1-c)(1-\\pi)}",
         "interpretation": "False positives can dominate a queue when the target condition is rare.",
-        "notes": "The formula applies to the specified population and classifier. Prevalence should come from an appropriate deployment sample rather than an artificially balanced training set.",
+        "notes": "The formula applies to the specified population and classifier. Use prevalence from the intended deployment population; an artificially balanced training set changes that share.",
         "source": "M5, Section 5.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
       },
       {
@@ -1860,7 +1860,7 @@
           "A repeated-description split evaluates familiar language.",
           "A held-out-description split tests generalization to new language."
         ],
-        "notes": "The source category is an imperfect label. The same normalized description can have multiple source labels. Evaluation should retain that ambiguity rather than assume a single validated nutrition category.",
+        "notes": "The source category is an imperfect label. The same normalized description can have multiple source labels. Retaining that ambiguity lets the evaluation distinguish inconsistent labeling from classifier mistakes.",
         "source": "M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
       },
       {
@@ -2267,10 +2267,10 @@
         "title": "Sensitivity and Next Steps",
         "bullets": [
           "Report how the action changes across plausible inputs.",
-          "Identify a decision threshold rather than only a point estimate.",
+          "Identify the response or cost threshold that changes the preferred action.",
           "Select a feasible test that reduces consequential uncertainty."
         ],
-        "notes": "A recommendation can be conditional. Explicitly stating the value or response threshold makes the condition useful for a manager rather than an abstract caveat.",
+        "notes": "A conditional recommendation becomes useful when it specifies the response or cost threshold at which the preferred action changes. A manager can then compare that threshold with plausible inputs.",
         "source": ""
       }
     ],
@@ -2399,7 +2399,7 @@
       },
       {
         "kind": "bullets",
-        "title": "Power Begins With the Useful Effect",
+        "title": "Power Begins with the Useful Effect",
         "bullets": [
           "Choose the smallest effect that could change the action.",
           "Use the expected outcome variance and assignment unit.",
@@ -2539,7 +2539,7 @@
         "bullets": [
           "Would a conversion gain cover the campaign cost?",
           "What changes if only email openers enter the analysis?",
-          "Which guardrail outcome could reverse the rollout decision?"
+          "Which customer outcome could reverse the rollout decision?"
         ],
         "notes": "Contribution uncertainty remains consequential even with a positive purchase effect. Returns, satisfaction, and service burden can alter the decision. The outcome set should reflect the intervention.",
         "source": "M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
@@ -2616,7 +2616,7 @@
         "title": "McBroken and the Comparison Group",
         "figure": "../06_Lecture_Notes/figures/M06_mcbroken_policy.tex",
         "caption": "A policy-analysis design requires a credible untreated comparison.",
-        "description": "The figure distinguishes the proposed policy timing from restaurant coverage and observed availability. A national time change alone mixes the policy with other changes.",
+        "description": "The proposed policy timing, restaurant coverage, and observed availability represent separate objects. A national time comparison combines the policy with other contemporaneous changes.",
         "notes": "The course case retains missing dates and unknown statuses. Those measurement issues should be addressed before interpreting an apparent policy break.",
         "source": "M6, Section 6.16, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
@@ -3263,7 +3263,7 @@
         "figure": "../06_Lecture_Notes/figures/M07_nonunique_features.tex",
         "caption": "The selected dictionary determines the contribution removed.",
         "description": "Contributions (1,1) and (1,-1), or (1,2) and (1,-2), both sum to (2,0). Dashed arrows translate the second contribution. Removing the first leaves squared error 2 or 5. Positive coefficients multiply unit vectors; the coefficient penalties differ.",
-        "notes": "This is an imposed algebraic construction. The positive coefficient sums are two times square root of 2 and two times square root of 5. Equal reconstruction therefore does not imply equal full sparse-autoencoder loss. A removal error depends on the dictionary and does not establish a psychological mechanism.",
+        "notes": "Set the two slopes to one and two. The positive coefficient sums are two times square root of 2 and two times square root of 5, so equal reconstruction can coexist with different full sparse-autoencoder losses. Removing a contribution measures its role within the chosen dictionary; a psychological interpretation requires evidence connecting it to customer behavior.",
         "source": "M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
@@ -3607,7 +3607,7 @@
         "figure": "../06_Lecture_Notes/figures/M07_mhealth_timing.tex",
         "caption": "mHealth evaluation freezes histories and candidate sets at the forecast origin.",
         "description": "Training histories precede validation and test baskets. Later outcomes do not define candidate eligibility or tune the final model.",
-        "notes": "Returning-user prediction can use the user's earlier history while holding out later baskets. The distinction is temporal rather than necessarily a complete user holdout.",
+        "notes": "Returning-user prediction uses each user's earlier history while holding out later baskets. Holding out complete users instead evaluates performance for new users.",
         "source": "M7, Section 7.15.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
@@ -3694,7 +3694,7 @@
           "A recommendation changes exposure and may change behavior.",
           "A randomized policy comparison measures the intervention outcome."
         ],
-        "notes": "A historically unrecorded category can be unknown rather than disliked. Offline metrics are informative under their measurement conditions but do not identify the effect of displaying a new list.",
+        "notes": "An unrecorded category can reflect absent exposure, unavailable products, or dislike. Offline metrics evaluate the resulting recorded outcomes under their measurement conditions. The effect of displaying a new list requires a causal comparison.",
         "source": "M7, Section 7.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
@@ -3710,7 +3710,7 @@
       },
       {
         "kind": "bullets",
-        "title": "Coding Exercise: Ranking With a Goal",
+        "title": "Coding Exercise: Ranking with a Goal",
         "bullets": [
           "Compare popularity and personal-frequency baselines.",
           "Tune the goal weight on validation baskets.",
@@ -3789,7 +3789,7 @@
         "kind": "figure",
         "title": "Selected Exposure Creates a Feedback Loop",
         "figure": "../06_Lecture_Notes/figures/M08_feedback.tex",
-        "caption": "The diagram describes a policy mechanism rather than an estimated effect.",
+        "caption": "Recommendation choices change exposure and the observations available for subsequent model training.",
         "description": "Recommendations affect exposure, exposure affects observed responses, and those responses inform subsequent training and recommendations.",
         "notes": "A popularity loop can concentrate observation among already visible items. Randomized exploration or additional evaluation data can change what the system learns.",
         "source": "M8, Section 8.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
@@ -3871,7 +3871,7 @@
           ]
         ],
         "caption": "Synthetic scores. The lists tie at a variety weight of 0.20.",
-        "notes": "A and B are coffee, C is tea, and D is fruit. The variety gain trades off against 0.20 of relevance. The values are imposed teaching scores.",
+        "notes": "Suppose A and B are coffee, C is tea, and D is fruit, with the relevance scores shown. Increasing category variety reduces total relevance by 0.20 under these scores.",
         "source": "M8, Section 8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
@@ -4114,7 +4114,7 @@
       },
       {
         "kind": "figure",
-        "title": "A Known Model Is a Useful Verification Case",
+        "title": "A Known Model is a Useful Verification Case",
         "figure": "../06_Lecture_Notes/figures/M08_genai_price.tex",
         "caption": "Synthetic demand exercise with a known binary-model benchmark.",
         "description": "The exact binary benchmark recovers a price coefficient of -0.06. Stock and new-flow specifications give different coefficients under their different data definitions.",
@@ -4155,11 +4155,11 @@
       },
       {
         "kind": "figure",
-        "title": "Review Time Is Part of Production",
+        "title": "Review Time is Part of Production",
         "figure": "../06_Lecture_Notes/figures/M08_workflow_time.tex",
         "caption": "Synthetic workflows meet the same stated quality requirement.",
         "description": "Manual production and review total 110 minutes. Assisted production and review total 85 minutes, a 22.7% total reduction despite a 50% drafting-time reduction.",
-        "notes": "The manual workflow uses 90 minutes to produce and 20 to review. The assisted workflow uses 45 and 40. These are imposed time inputs, not an estimate of a universal AI effect.",
+        "notes": "Suppose the manual workflow requires 90 minutes to produce an analysis and 20 to review it, while the assisted workflow requires 45 and 40. Total time falls by 25 minutes. The gain depends on comparable quality in the completed outputs.",
         "source": "M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
@@ -4384,7 +4384,7 @@
           "Keep unknown intent separate and compare the relevant denominators.",
           "State the evidence and ethical premise needed to justify the practice."
         ],
-        "notes": "Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full program and five tests accompany M9 §9.5. Existing M8 examples add conditional profit and welfare calculations. These are synthetic examples and do not estimate an interface effect.",
+        "notes": "Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full program and five tests accompany M9 §9.5. The synthetic comparison holds the eligible roster fixed and calculates the stated retention outcomes. Compare the conditional profit and customer-value consequences in M8.",
         "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -4475,7 +4475,7 @@
       },
       {
         "kind": "bullets",
-        "title": "A Decision With Consumer Outcomes",
+        "title": "A Decision with Consumer Outcomes",
         "bullets": [
           "State the commercial target and customer outcome.",
           "Identify the procedure the customer can accept, refuse, or revise.",

@@ -18,7 +18,7 @@ Use the same six connected nodes and k=1 for both neighbor definitions. Reconcil
 
 Run `snapshot_access.py`. Check the four restaurant IDs, the October snapshot, the later street timestamp, access tags, boundary, and snapping distances. Confirm the North Neil ranking reversal in `observed_pairs.csv`. Hold eligible targets fixed. Explain which extra information would be needed to assess customer access, substitute products, entrances, and historical pedestrian travel. Do not infer that all residents lack alternatives from four restaurant-origin distances.
 
-## 5. Separate a Map From Its Measurement
+## 5. Separate a Map from Its Measurement
 
 Run `cartography.py`. Calculate the outer square's area, the hole's area, and their difference by hand. Compare reachable nodes before and after filling. Formulate a chart caption that states both results. Explain why filling a visual gap does not create a bridge or grant access across a private parcel.
 

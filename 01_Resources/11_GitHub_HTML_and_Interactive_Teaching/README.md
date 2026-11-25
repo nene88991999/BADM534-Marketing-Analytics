@@ -23,7 +23,7 @@ Core identifies candidates for the eventual required readings. Reference materia
 
 ## Annotated Resources
 
-### W01. What Is GitHub Pages?
+### W01. What is GitHub Pages?
 
 **Source:** GitHub. [Open Resource](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages). **Priority:** Instructor. **Syllabus:** Cross-course.
 
@@ -99,7 +99,7 @@ Browser-hosted notebooks deployable as static files.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### W06. marimo: WebAssembly HTML Export
+### W06. Marimo: WebAssembly HTML Export
 
 **Source:** marimo contributors. [Open Resource](https://docs.marimo.io/guides/exporting/webassembly_html/). **Priority:** Instructor. **Syllabus:** Cross-course.
 

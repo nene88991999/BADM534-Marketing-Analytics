@@ -1,6 +1,6 @@
 # Anomaly Detection and Retail Diagnosis
 
-An unusual pattern can call for repairing a service, preserving a successful campaign, or assessing the observation process. The exercise uses [original synthetic retail data](../../03_Data_and_Code/Anomaly_Diagnosis/README.md) and the full programs in [M7 §§7.29–7.30](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md). It is optional ungraded practice and establishes no submission or AI-use requirement.
+An unusual pattern can call for repairing a service, preserving a successful campaign, or assessing the observation process. [Synthetic retail records](../../03_Data_and_Code/Anomaly_Diagnosis/README.md) contain service interruptions, successful campaigns, and missing observations. The full programs in [M7 §§7.29–7.30](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md) calculate detection scores and compare their implications for a service response. It is optional ungraded practice and establishes no submission or AI-use requirement.
 
 ## Reproduce the Evidence
 

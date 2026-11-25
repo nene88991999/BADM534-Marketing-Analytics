@@ -6,7 +6,7 @@ The [McBroken teaching examples](../../../03_Data_and_Code/McBroken/README.md) i
 - M6 §6.16: descriptive policy contrasts and comparison-country sensitivity.
 - M7 §7.18: fixed-date forecast evaluation, grouped probability scores, and missing future labels.
 
-The source audit reconciles all 3,053,307 US panel records with the supplied daily country counts and the dimension table's observed-date counts. It finds nine dates without US observations, three sparse observed US dates under the imposed 2,000-record threshold, and substantial address-key turnover. The first and last daily snapshots were independently checked against their exact upstream commit IDs.
+The source assessment reconciles all 3,053,307 US panel records with the supplied daily country counts and the dimension table's observed-date counts. It finds nine dates without US observations, three sparse observed US dates under the imposed 2,000-record threshold, and substantial address-key turnover. The first and last daily snapshots were independently checked against their exact upstream commit IDs.
 
 ## Corrections and Interpretation
 

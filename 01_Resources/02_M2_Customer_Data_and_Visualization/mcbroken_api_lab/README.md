@@ -1,10 +1,10 @@
-# McBroken API lab: collecting public data with Python
+# McBroken API Lab: Collecting Public Data with Python
 
 The [verified course adaptation](../../../03_Data_and_Code/McBroken/README.md) supplies the executed examples used in the lecture notes. Read the [adaptation review](COURSE_ADAPTATION.md) for the policy-date correction, parser checks, measurement distinctions, and verification scope. The files below are the supplied source collection.
 
 A worked example of pulling public data from a JSON endpoint, tidying it, and turning a live feed into a time series. The subject is McDonald's ice-cream machines, as tracked by [McBroken](https://mcbroken.com), which makes the mechanics memorable without being trivial: the data are real, messy, geographic, and change by the hour.
 
-Module fit: **M2 (Customer Data and Visualization)** for the API and tidying work; **M6 (Causal Models and Experiments)** for the right-to-repair event study in the exercises; the AI-coding thread throughout (exercise 1 has students audit assistant-written request code).
+Module fit: **M2 (Customer Data and Visualization)** for the API and tidying work; **M6 (Causal Models and Experiments)** for the right-to-repair event study in the exercises; the AI-coding thread throughout (exercise 1 has students assess assistant-written request code).
 
 ## Files
 
@@ -22,7 +22,7 @@ Module fit: **M2 (Customer Data and Visualization)** for the API and tidying wor
 | `data/mcbroken_weekly_2020_2026_country.csv`, `..._us_state.csv` | Weekly (Monday nearest 18:00 UTC) from the archive's first commit, October 2020. |
 | `data/*_snapshots_used.csv` | Which archive commit (and exact UTC time) each daily or weekly row came from. |
 
-## Quick start
+## Quick Start
 
 ```bash
 pip install requests pandas matplotlib
@@ -34,7 +34,7 @@ jupyter lab mcbroken_api_lab.ipynb
 
 `build_panel.py` makes a blob-less clone of the archive (about 17 MB) in `~/.cache/mcbroken-archive` the first time, then fetches one ~1 MB snapshot per selected commit. A year of daily snapshots takes roughly ten minutes.
 
-## Where the numbers come from
+## Where the Numbers Come from
 
 ```
 McDonald's ordering API  --(every few minutes: try to add a sundae to the cart)-->  McBroken
@@ -49,7 +49,7 @@ McBroken was built in October 2020 by software engineer Rashiq Zahid. It marks a
 
 The archive keeps, in each commit, only the stores McBroken re-checked in the previous 60 minutes (its own `jq` filter). A typical commit holds 15,000 to 25,000 of the roughly 30,000 tracked stores, so **the denominator of every share is "stores checked in that hour"**, and store-day panels have gaps. The archive's cadence has also changed: about 40 commits a day in late 2020, about 20 a day through 2025, and 4 to 7 a day in 2026, so the "nearest 18:00 UTC" snapshot can be some hours off in recent months. The exact commit time is in `*_snapshots_used.csv`.
 
-## Data dictionary
+## Data Dictionary
 
 **Snapshot and store panel** (`mcbroken_snapshot_*.csv`, `*_stores_*.csv`)
 
@@ -79,7 +79,7 @@ The archive keeps, in each commit, only the stores McBroken re-checked in the pr
 | `n_broken` | Of those, how many were broken. |
 | `share_broken` | `n_broken / n_checked`, rounded to 4 dp. |
 
-## Known issues to raise in class
+## Known Issues to Raise in Class
 
 - **Measurement, not mechanics.** `is_broken` is an app response. Store closures, stock-outs and app outages all look like a broken machine. Night-time shares are therefore higher.
 - **Changing denominator.** Shares are over stores checked in that hour, and the checking cadence has changed several times. Level shifts in the six-year series are partly measurement changes. Compare within periods, or model the denominator explicitly.
@@ -90,23 +90,23 @@ The archive keeps, in each commit, only the stores McBroken re-checked in the pr
 - **Time zones.** Everything is UTC. 18:00 UTC is 1 pm Central in summer and noon in winter.
 - **Coverage changes.** Countries were added over the years, and in September 2024 Wendy's ran a promotion with McBroken that put Wendy's locations on the map; whether those ever entered `markers.json` is unverified. Watch `n_checked` for jumps before interpreting a change in `share_broken`.
 
-## Terms, etiquette and attribution
+## Terms, Etiquette and Attribution
 
 - McBroken publishes no terms of use and no data licence. `markers.json` is the file the website itself loads, so one request is the same load as one visit. Treat the raw data as **publicly viewable, not openly licensed**: analyse it, cite it, show it in class, but do not re-publish the raw file as your own dataset. This folder therefore contains derived aggregates and one snapshot, not a mirror.
 - The archive repository is released under the Unlicense (public domain) by its author; that covers the repository's code and packaging, not McDonald's underlying facts, whose status does not change by being archived.
 - Identify yourself (the `User-Agent` string in `fetch_mcbroken.py`), set a timeout, and do not loop. One call per person per session is plenty; a scheduled job once a day is plenty.
 - Cite as: Rashiq Zahid, *McBroken*, https://mcbroken.com (accessed DATE); snapshots via MrFlynn/mcbroken-archive, https://github.com/MrFlynn/mcbroken-archive.
 
-## Suggested 75-minute session
+## Suggested 75-Minute Session
 
 1. (10 min) What an API is; open `stats.json` in a browser; read the response headers in the notebook.
 2. (15 min) `markers.json`: nested JSON to a DataFrame; `json_normalize` vs a hand-written `flatten`.
 3. (15 min) Share broken by state; the map; what `is_broken` measures and what it does not.
 4. (15 min) Git scraping: the archive, `build_panel.py`, the daily and weekly series; the denominator problem.
-5. (10 min) Exercise 1 live: students prompt their AI assistant for the fetch function, then audit it against the checklist (timeout, User-Agent, status code, gzip, raw copy).
+5. (10 min) Exercise 1 live: students prompt their AI assistant for the fetch function, then assess it against the checklist (timeout, User-Agent, status code, gzip, raw copy).
 6. (10 min) Set up exercise 5 (right-to-repair event study) as the bridge to Module 6.
 
-## Background reading
+## Background Reading
 
 - Simon Willison, *Git scraping: track changes over time by scraping to a Git repository* (2020): https://simonwillison.net/2020/Oct/9/git-scraping/
 - NPR, *McDonald's ice cream machines seem to always be broken. Here's why* (2021): https://www.npr.org/transcripts/1059600306

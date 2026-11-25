@@ -103,7 +103,7 @@ Source: ETHICS_AND_REGULATION.md.
 ## Slide 11: Sensitivity and Next Steps
 
 - Report how the action changes across plausible inputs.
-- Identify a decision threshold rather than only a point estimate.
+- Identify the response or cost threshold that changes the preferred action.
 - Select a feasible test that reduces consequential uncertainty.
 
-A recommendation can be conditional. Explicitly stating the value or response threshold makes the condition useful for a manager rather than an abstract caveat.
+A conditional recommendation becomes useful when it specifies the response or cost threshold at which the preferred action changes. A manager can then compare that threshold with plausible inputs.

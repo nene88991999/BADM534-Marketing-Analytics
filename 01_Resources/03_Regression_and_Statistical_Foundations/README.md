@@ -61,7 +61,7 @@ Executable companion labs for statistical learning.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### R03. statsmodels: Ordinary Least Squares
+### R03. Statsmodels: Ordinary Least Squares
 
 **Source:** statsmodels contributors. [Open Resource](https://www.statsmodels.org/stable/examples/notebooks/generated/ols.html). **Priority:** Core. **Syllabus:** M3.
 
@@ -77,7 +77,7 @@ Fitting OLS and interpreting regression output in Python.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### R04. statsmodels: Formulas
+### R04. Statsmodels: Formulas
 
 **Source:** statsmodels contributors. [Open Resource](https://www.statsmodels.org/stable/example_formulas.html). **Priority:** Core. **Syllabus:** M3.
 
@@ -91,7 +91,7 @@ Formula syntax for categorical predictors, interactions, and transformations.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### R05. statsmodels: Regression Diagnostics
+### R05. Statsmodels: Regression Diagnostics
 
 **Source:** statsmodels contributors. [Open Resource](https://www.statsmodels.org/stable/examples/notebooks/generated/regression_diagnostics.html). **Priority:** Core. **Syllabus:** M3.
 

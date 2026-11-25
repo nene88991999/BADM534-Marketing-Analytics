@@ -40,7 +40,7 @@ The opening challenges an exclusive focus on advantage; the account of moral beg
 **Rights:** local_only_teaching_permission.
 **Dropbox file:** `local_sources/Mencius_Eno2016.pdf`. Original retained locally; use the source link from GitHub.
 
-## C04: Selection from the Xunzi: Human Nature Is Evil
+## C04: Selection from the Xunzi: Human Nature is Evil
 
 Xunzi. 1999. Excerpt from Sources of Chinese Tradition, compiled by Wm. Theodore de Bary and Irene Bloom, 2nd edition, volume 1 (1999), pp. 179–183
 

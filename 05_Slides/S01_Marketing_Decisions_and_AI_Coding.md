@@ -180,7 +180,7 @@ The response to a failed analysis depends on the unresolved distinction. Ask for
 
 Source: Marketing Analytics Lecture Notes, M1 §1.12.
 
-## Slide 15: Verification With Counterexamples
+## Slide 15: Verification with Counterexamples
 
 - A duplicate lookup must trigger a failed key check.
 - An unmatched customer must remain visible in the assessment.

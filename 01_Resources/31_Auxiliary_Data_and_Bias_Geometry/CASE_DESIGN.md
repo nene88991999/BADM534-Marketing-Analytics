@@ -17,7 +17,7 @@ At either price, adding the premium feature increases both sources' ratings by 0
 
 ## Compare Cost at the Same Accuracy
 
-Use unit error variances for both sources, a primary-response cost of 1, and an auxiliary-response cost of 0.01. These are imposed quantities. The benchmark optimizes primary-only sampling to estimate all three coefficients with total MSE at most $\epsilon^2$. Apply the paper's §5.3 design to the same four profiles, allowing auxiliary bias in the intercept and price coefficient.
+Use unit error variances for both sources, a primary-response cost of 1, and an auxiliary-response cost of 0.01. The benchmark optimizes primary-only sampling to estimate all three coefficients with total MSE at most $\epsilon^2$. Apply the paper's §5.3 design to the same four profiles, allowing auxiliary bias in the intercept and price coefficient.
 
 With total primary and auxiliary precision $t$ and $s$, the normalized MSE is $2/t+1/(t+s)$. The intercept and price coefficient each contribute $1/t$; both sources inform the feature coefficient. The closed-form optimum at $\lambda=0.01$ reduces asymptotic cost by approximately 24.29%. Even with arbitrarily inexpensive auxiliary responses, the saving approaches only one third in this symmetric example. That fraction follows from this design and loss; it is not a general rule based on counting coefficients.
 

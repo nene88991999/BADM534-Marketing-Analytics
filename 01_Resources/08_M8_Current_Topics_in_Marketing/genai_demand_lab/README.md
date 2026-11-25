@@ -1,4 +1,4 @@
-# Demand for generative AI: public data around Egan, Russel, Shi and Yao (NBER w35953)
+# Demand for Generative AI: Public Data Around Egan, Russel, Shi and Yao (NBER W35953)
 
 For the executed Marketing Analytics cases and interpretation corrections, see the [course adaptation review](COURSE_ADAPTATION.md) and [course programs](../../../03_Data_and_Code/GenAI_Demand/README.md).
 
@@ -10,7 +10,7 @@ For the executed Marketing Analytics cases and interpretation corrections, see t
 
 Module fit: **M8** (current topics: competition in AI) as home; **M2** for the API work; **M4** for retention and cohorts; **M6** for the release event study; **M7/M8** for the demand model.
 
-## Crosswalk: paper measure → what you can get
+## Crosswalk: Paper Measure → What You Can Get
 
 | Paper object | Their source | Public proxy | Where | Access | Captures / misses |
 |---|---|---|---|---|---|
@@ -39,7 +39,7 @@ Module fit: **M8** (current topics: competition in AI) as home; **M2** for the A
 | `data/consumer_plans_2026-10-26.csv` | Consumer plan prices verified on 26 Oct 2026, blanks left where the page renders the amount client-side (Exercise 1 fills them). |
 | `data/synthetic_*.csv(.gz)`, `synthetic_dgp.json` | The simulated panel, its consumers, products, release events, basic-plan price path and true parameters. |
 
-## Quick start
+## Quick Start
 
 ```bash
 pip install requests pandas matplotlib
@@ -51,11 +51,11 @@ jupyter lab genai_demand_lab.ipynb
 
 Networks that block hobby and API hosts (this notebook was executed on one) make the live cells fall back to the captures in `data/`.
 
-## What the synthetic panel is, and is not
+## What the Synthetic Panel is, and is Not
 
 `simulate_subscription_panel.py` draws 60,000 consumers (age group, income tercile, an AI-affinity term), 40 months (Jan 2023 to Apr 2026), six providers with basic and premium plans, release events as quality jumps, inertia, a satiation cost of holding a second subscription that rises over time, and promotional discounts in about a sixth of product-months. A common trend is solved each month so that aggregate adoption follows a logistic path ending at 2.9%. The resulting moments: 97-98% of subscriptions on basic plans; multihoming falling from 8-10% to 4% of payers; twelve-month provider retention 18-38% against 55% for "any provider"; a new-subscriber spike in release months. Launch months and release sizes are inputs, not facts; Exercise 1 checks them against the Wayback record. **Nothing in the panel is an estimate of the real market.**
 
-## Terms, etiquette and attribution
+## Terms, Etiquette and Attribution
 
 - Apple's chart feeds, Wikimedia's REST API, OpenRouter's model list and the Wayback CDX API are public, keyless and documented. Send an honest `User-Agent` (Wikimedia asks for one and throttles anonymous clients), set timeouts, and keep to one call per source per run. Cloudflare Radar needs a free account token.
 - Epoch AI data are CC BY 4.0; cite "Epoch AI, Notable AI Models, https://epoch.ai/data/notable-ai-models".

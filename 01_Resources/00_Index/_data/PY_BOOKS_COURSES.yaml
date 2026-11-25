@@ -953,7 +953,7 @@
   - AI
   summary: A Python engine computes KPI trees, multi-horizon dashboards, repeat-purchase and new-vs-returning metrics plus health checks from order data; Claude then writes the narrative REVIEW.md. Includes
     an Online Retail II example review and a test fixture of sample orders.
-  wiki_use: 'M2 ''vibe coding'' case: students run the skill on Online Retail, then audit its numbers against their own pandas code and judge the narrative with the Pyramid Principle.'
+  wiki_use: 'M2 ''vibe coding'' case: students run the skill on Online Retail, then assess its numbers against their own pandas code and judge the narrative with the Pyramid Principle.'
   tools:
   - claude-code
   - pandas

@@ -49,7 +49,7 @@ Passed legislature; official record did not show gubernatorial enactment. Do not
 
 Official text read through web tool; direct download returned HTTP 403.
 
-## P04: General Business Law §396-r: Price Gouging
+## P04: General Business Law §396-R: Price Gouging
 
 New York State. Current text checked November 6, 2026.
 
@@ -73,7 +73,7 @@ Explains current New York enforcement criteria; not a finding concerning the res
 
 Local reference: `local_sources/NY_PriceGouging_Rules2026.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
 
-## P06: Inquiry Into Instacart Algorithmic Pricing
+## P06: Inquiry into Instacart Algorithmic Pricing
 
 New York Attorney General. January 8, 2026.
 

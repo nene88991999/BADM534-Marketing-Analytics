@@ -232,7 +232,7 @@
   - M7
   - M8
   - M6
-  summary: A preregistered Twitter audit with 806 users compares engagement-ranked posts with a reverse-chronological baseline
+  summary: A preregistered Twitter assessment with 806 users compares engagement-ranked posts with a reverse-chronological baseline
     and collects item-level stated preferences. Engagement ranking amplifies emotionally charged and out-group-hostile content;
     users do not prefer the selected political posts on the stated-preference measure.
   wiki_use: Concrete evidence that the optimization target matters. A good M8 discussion piece on stated versus revealed preferences.
@@ -241,8 +241,8 @@
   ai_angle: false
   verified_via: local full-text sections and/or primary publication, 2026-10-23
   doi: 10.1093/pnasnexus/pgaf062
-  notes: Corrected author order and restored Sebastian Zhao using the published article. This is an algorithmic audit, not
-    assignment to long-term use of alternative feeds. Local PDF is a December 2024 preprint; linked publication is March 2025.
+  notes: Corrected author order and restored Sebastian Zhao using the published article. The short-run comparison measures ranked content
+    and stated preferences. Local PDF is a December 2024 preprint; linked publication is March 2025.
 - id: liu-tucker-2025-filter-bubble-youtube
   category: M7
   section: 'Recommender system design: research evidence'
@@ -264,7 +264,7 @@
   - M8
   - M6
   summary: Four experiments with nearly 9,000 participants manipulate recommendations on a YouTube-like interface and find
-    limited short-term polarization effects in the studied settings. Exposure duration and attitude outcomes differ from audits
+    limited short-term polarization effects in the studied settings. Exposure duration and attitude outcomes differ from assessments
     of ranked content.
   wiki_use: Counterweight to the filter-bubble narrative. Pair it with Milli et al. to show that evidence on recommender harms
     is mixed and depends on design.

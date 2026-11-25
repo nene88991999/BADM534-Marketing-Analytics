@@ -18,7 +18,7 @@ Begin with a customer roster that defines eligibility. Aggregate eligible transa
 
 A join should have a documented relationship: one-to-one, many-to-one, or one-to-many. Validate key uniqueness in the lookup table and inspect unmatched records. A match rate of 99% can still conceal a material problem if the unmatched 1% contains the highest-value customers or one entire channel. Report both counts and relevant value totals for unmatched observations.
 
-Dates need similar attention. Convert timestamps to a consistent timezone before assigning day or week. Determine whether the date represents ordering, shipment, payment, or return. A promotion announced late in a period may affect orders immediately but recognized revenue later. Aligning metrics on an inappropriate date can create an apparent lag that comes from accounting rather than customer behavior.
+Dates need similar attention. Convert timestamps to a consistent timezone before assigning day or week. Determine whether the date represents ordering, shipment, payment, or return. A promotion announced late in a period may affect orders immediately but recognized revenue later. Aligning metrics on an inappropriate date can create an apparent lag caused by the timing of revenue recognition.
 
 Outliers should be investigated before removal. A $10,000 order could be a business customer, a data-entry error, or a legitimate event. A rule that trims all orders above a percentile changes the estimand to a restricted population. State that restriction and compare conclusions with and without the rule when it can affect the decision. Robust summaries such as medians and quantiles often reveal more than one mean with an undocumented exclusion.
 
@@ -97,7 +97,7 @@ Two customers can purchase the same number of categories while allocating spendi
 
 ## 2.7 From Evidence to a Management Presentation
 
-The Pyramid Principle organizes a recommendation around a decision-relevant answer, followed by a small number of supporting reasons and the evidence for each reason. This structure works when the answer's strength matches the analysis. A descriptive study might recommend a test or a closer diagnostic comparison, rather than immediate deployment.
+The Pyramid Principle organizes a recommendation around a decision-relevant answer, followed by a small number of supporting reasons and the evidence for each reason. This structure works when the answer's strength matches the analysis. A descriptive study can identify a pattern that warrants a test or a closer comparison before deployment.
 
 For the campaign example, a clear opening is: “Compare the campaigns at a common customer mix before reallocating the budget.” The supporting reasons are that returning customers convert more often, the campaigns reached different mixes, and the within-segment ranking differs from the aggregate ranking. The supporting evidence should quantify each reason and connect it to the allocation decision.
 
@@ -137,7 +137,7 @@ Among the 76,780 eligible user-days, mean variety is 0.7834 when each day has eq
 
 Breadth and calorie-share variety rise together in these groups, partly because adding categories expands the possible distribution of shares. This is a descriptive relation among recorded days. It does not show that the app caused broader consumption or that greater category variety improved health. Source categories are not a validated diet-quality index.
 
-The complete 2016 calendar contains 135,420 potential user-days for the selected users. Only 76,804 have food entries; 58,616 are unobserved. A zero-filled calorie panel would interpret every absent record as no consumption. For a logging outcome, zero can instead mean that no entry was observed on a specified calendar day. The variable's definition determines whether filling a missing cell with zero is appropriate. These users are identified from a full-year file, so the calendar is a descriptive grid rather than a verified account-enrollment roster.
+The complete 2016 calendar contains 135,420 potential user-days for the selected users. Only 76,804 have food entries; 58,616 are unobserved. A zero-filled calorie panel would interpret every absent record as no consumption. For a logging outcome, zero can instead mean that no entry was observed on a specified calendar day. The variable's definition determines whether filling a missing cell with zero is appropriate. The calendar follows users identified from the full-year file. It describes potential observation days; account enrollment dates have not been verified.
 
 The item sum is within one calorie unit of the reported daily total on 53,075 observed days. Using the reported total as the denominator of category shares would fail to make shares sum to one on many other days. The calculation below preserves both measures, constructs the observed-day summary, and builds the calendar separately.
 
@@ -496,7 +496,7 @@ A bar encodes its magnitude through length from a baseline, so the logging-rate 
 
 Use Illinois Blue and Illini Orange to distinguish the principal series, with labels and line styles carrying the same information. A heatmap of a nonnegative count needs an ordered light-to-dark scale. A signed deviation needs a meaningful center, usually zero, with comparable positive and negative distances. Unobserved cells need a separate label or pattern so that a reader can distinguish them from observed zeros. Small multiples should retain a common scale when the decision depends on cross-panel magnitudes.
 
-### 2.14.2 An Average Decline Can Coexist With No Median Change
+### 2.14.2 An Average Decline Can Coexist with No Median Change
 
 The user-level outcome is the fraction of a month's calendar days with a log. For a value $x$ between zero and one, its empirical cumulative distribution is
 
@@ -638,7 +638,7 @@ An interactive display can help a manager inspect alternative denominators and d
 
 The [mHealth chart](../../03_Data_and_Code/mHealth/recurring_examples/results/visualization_interactive.html) compares the all-user and observed-logger denominators for a selected month. Its second panel displays the selected month's distribution across the full eligible cohort. The data table remains visible below the chart, with the observation counts and denominators for both months. Hover labels supplement the table. A reader can verify each rate without inferring a value from a bar's height.
 
-[Altair's tutorial](https://github.com/altair-viz/altair-tutorial) provides a declarative approach in which the chart specifies data fields, visual encodings, and interactions. The older tutorial's selection syntax differs from the version used here. The program uses Altair 5.5.0, a bound parameter, and explicitly fixed scales. [The widget documentation](https://altair-viz.github.io/user_guide/interactions/bindings_widgets.html) and [HTML-export documentation](https://altair-viz.github.io/user_guide/saving_charts.html) describe these operations. The exported HTML contains aggregate data and runs without a Python server. Its JavaScript libraries load from a public CDN, so chart rendering requires internet access.
+[Altair's tutorial](https://github.com/altair-viz/altair-tutorial) provides a declarative approach in which the chart specifies data fields, visual encodings, and interactions. The runnable example specifies Altair 5.5.0, a bound parameter, and fixed scales; the older tutorial uses a different selection syntax. [The widget documentation](https://altair-viz.github.io/user_guide/interactions/bindings_widgets.html) and [HTML-export documentation](https://altair-viz.github.io/user_guide/saving_charts.html) describe these operations. The exported HTML contains aggregate data and runs without a Python server. Its JavaScript libraries load from a public CDN, so chart rendering requires internet access.
 
 Static figures and interactive views should agree on every plotted value. Run `visualization.py` before `visualization_charts.py`. The chart program checks the monthly table against the saved numerical results and uses the same aggregate data for both forms of display.
 
@@ -1397,7 +1397,7 @@ An unexpired claim leaves the risk set at its last follow-up date without contri
 
 ![Estimated expiration shares are 4.0% at six months, 16.0% at twelve months, and 38.9% at twenty-four months. The step calculation retains all fifty selected claims, with 28 right-censored observations. Published estimated dates are treated as fixed.](../figures/M02_claim_followup.png)
 
-The displayed curve reuses the released point estimates. Several expiration dates are estimated within intervals, and two follow a count of recent models. The calculation does not propagate date uncertainty or fit an interval-censoring model. A smooth model-release trend also compares different configurations, with differing default reasoning budgets, rather than identifying a causal effect of calendar time. The [source record](../../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) retains these distinctions.
+The displayed curve reuses the released point estimates. Several expiration dates are estimated within intervals, and two follow a count of recent models. The calculation does not propagate date uncertainty or fit an interval-censoring model. A smooth trend across model releases compares configurations with different default reasoning budgets. It therefore describes changes across those configurations, with calendar time and model design varying together. The [source record](../../01_Resources/14_LLM_Evidence_and_Revalidation/README.md) retains these distinctions.
 
 ### 2.21.2 Reproduce the Published Summary
 
@@ -1660,7 +1660,7 @@ The records include an exact duplicate, a request without a timestamp, a confirm
 
 One of four subscriptions has a latest accepted cancellation confirmation, giving a recorded share of 25%. Counting any accepted request as completion raises this share to 50%. The extra 25 percentage points arise entirely from the definition. Request r1 remains in the review queue because its valid later confirmation was unavailable at the cutoff. This absence does not establish that cancellation failed outside the supplied records. Similarly, the active observation for s3 describes a dated record, while s4 has no accepted state evidence.
 
-The program assigns each accepted event to a named class and the common parent ServiceRecord. It implements the classification and validation conditions directly in Python. It does not implement an OWL reasoner. Conflicting duplicates are rejected together; simultaneous conflicting state observations remain explicit. These choices make the output depend on the evidence and stated rules rather than input row order.
+The program assigns each accepted event to a named class and the common parent ServiceRecord. It implements the classification and validation conditions directly in Python. It does not implement an OWL reasoner. Conflicting duplicates are rejected together; simultaneous conflicting state observations remain explicit. The same evidence therefore yields the same classification when the input rows are reordered.
 
 Run `python3 03_Data_and_Code/Ontology_and_Evidence/assess_cancellations.py` from the repository root. The [input dictionary](../../03_Data_and_Code/Ontology_and_Evidence/DATA_DICTIONARY.md) defines every field, and `results/cancellations.json` retains flags, classification traces, the queue, and denominators. Moving the cutoff changes the information available to the report; it does not change the meaning of a request or confirmation.
 

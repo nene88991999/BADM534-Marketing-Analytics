@@ -62,7 +62,7 @@ mHealth evaluation freezes histories and candidate sets at the forecast origin.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M07_mhealth_timing.tex)
 
-Returning-user prediction can use the user's earlier history while holding out later baskets. The distinction is temporal rather than necessarily a complete user holdout.
+Returning-user prediction uses each user's earlier history while holding out later baskets. Holding out complete users instead evaluates performance for new users.
 
 Source: M7, Section 7.15.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
@@ -179,7 +179,7 @@ Source: M7, Section 7.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 - A recommendation changes exposure and may change behavior.
 - A randomized policy comparison measures the intervention outcome.
 
-A historically unrecorded category can be unknown rather than disliked. Offline metrics are informative under their measurement conditions but do not identify the effect of displaying a new list.
+An unrecorded category can reflect absent exposure, unavailable products, or dislike. Offline metrics evaluate the resulting recorded outcomes under their measurement conditions. The effect of displaying a new list requires a causal comparison.
 
 Source: M7, Section 7.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
@@ -193,7 +193,7 @@ Welfare Effects of Personalized Rankings compares personalized rankings with uni
 
 Source: https://doi.org/10.1287/mksc.2023.1441 and https://doi.org/10.1287/mksc.2023.0117
 
-## Slide 16: Coding Exercise: Ranking With a Goal
+## Slide 16: Coding Exercise: Ranking with a Goal
 
 - Compare popularity and personal-frequency baselines.
 - Tune the goal weight on validation baskets.

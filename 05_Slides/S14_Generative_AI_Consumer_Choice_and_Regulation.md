@@ -79,7 +79,7 @@ Regressing subscriber stocks on current prices can combine persistent state with
 
 Source: M8, Section 8.13.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 6: A Known Model Is a Useful Verification Case
+## Slide 6: A Known Model is a Useful Verification Case
 
 Synthetic demand exercise with a known binary-model benchmark.
 
@@ -124,7 +124,7 @@ The synthetic-consumer report connects M1 Section 1.15 to M8 Section 8.25. Const
 
 Source: M8, Section 8.25. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md; ../01_Resources/30_Research_Writing_and_Coding/SOURCE_REVIEW.md
 
-## Slide 10: Review Time Is Part of Production
+## Slide 10: Review Time is Part of Production
 
 Synthetic workflows meet the same stated quality requirement.
 
@@ -132,7 +132,7 @@ Synthetic workflows meet the same stated quality requirement.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M08_workflow_time.tex)
 
-The manual workflow uses 90 minutes to produce and 20 to review. The assisted workflow uses 45 and 40. These are imposed time inputs, not an estimate of a universal AI effect.
+Suppose the manual workflow requires 90 minutes to produce an analysis and 20 to review it, while the assisted workflow requires 45 and 40. Total time falls by 25 minutes. The gain depends on comparable quality in the completed outputs.
 
 Source: M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
@@ -380,7 +380,7 @@ Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 - Keep unknown intent separate and compare the relevant denominators.
 - State the evidence and ethical premise needed to justify the practice.
 
-Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full program and five tests accompany M9 §9.5. Existing M8 examples add conditional profit and welfare calculations. These are synthetic examples and do not estimate an interface effect.
+Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full program and five tests accompany M9 §9.5. The synthetic comparison holds the eligible roster fixed and calculates the stated retention outcomes. Compare the conditional profit and customer-value consequences in M8.
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -466,7 +466,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 41: A Decision With Consumer Outcomes
+## Slide 41: A Decision with Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

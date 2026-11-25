@@ -385,7 +385,7 @@
   priority: core
   modules: [M1, M2, AI]
   summary: "Launch post (March 2025) for the Gemini Data Science Agent, which writes complete, runnable Colab notebooks (loading, cleaning, charts, models) from a plain-language goal and an uploaded file. Google warns that it 'may make mistakes'."
-  wiki_use: "Live demo in week 1 or 2: upload a customer CSV, ask for an RFM table and charts, then have students audit the generated notebook."
+  wiki_use: "Live demo in week 1 or 2: upload a customer CSV, ask for an RFM table and charts, then have students assess the generated notebook."
   tools: [Colab, Gemini]
   ai_angle: true
   verified_via: fetch
@@ -1260,7 +1260,7 @@
   priority: recommended
   modules: [M2, AI]
   summary: "Natural-language-to-visualization benchmark (2,524 queries over 146 databases) with automated checks of validity, legality and readability; it documents recurring LLM chart-generation failures."
-  wiki_use: "Evidence for the course rule that AI-made charts must be checked; turn its three criteria into a rubric for student chart audits."
+  wiki_use: "Evidence for the course rule that AI-made charts must be checked; turn its three criteria into a rubric for student chart assessments."
   ai_angle: true
   verified_via: fetch
   notes: "The arXiv page lists no peer-reviewed venue; publication in IEEE TVCG (VIS 2024) is believed but was not verified."

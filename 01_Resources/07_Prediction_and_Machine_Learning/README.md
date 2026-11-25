@@ -23,7 +23,7 @@ Core identifies candidates for the eventual required readings. Reference materia
 
 ## Annotated Resources
 
-### M01. scikit-learn: Getting Started
+### M01. Scikit-Learn: Getting Started
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/getting_started.html). **Priority:** Core. **Syllabus:** M7.
 
@@ -37,7 +37,7 @@ Estimators, preprocessing, pipelines, evaluation, and model selection.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### M02. scikit-learn: Common Pitfalls and Recommended Practices
+### M02. Scikit-Learn: Common Pitfalls and Recommended Practices
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/common_pitfalls.html). **Priority:** Core. **Syllabus:** M7.
 
@@ -51,7 +51,7 @@ Inconsistent preprocessing, data leakage, and randomness.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### M03. scikit-learn: Cross-Validation
+### M03. Scikit-Learn: Cross-Validation
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/modules/cross_validation.html). **Priority:** Core. **Syllabus:** M7.
 
@@ -65,7 +65,7 @@ Validation strategies, grouped observations, and time-based splitting.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### M04. scikit-learn: Model Evaluation
+### M04. Scikit-Learn: Model Evaluation
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/modules/model_evaluation.html). **Priority:** Core. **Syllabus:** M7.
 
@@ -93,7 +93,7 @@ Separating estimated probabilities from the decision rule.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### M06. scikit-learn: Probability Calibration
+### M06. Scikit-Learn: Probability Calibration
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/modules/calibration.html). **Priority:** Core. **Syllabus:** M7.
 
@@ -109,7 +109,7 @@ Reliability of predicted probabilities.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### M07. scikit-learn: Ensemble Methods
+### M07. Scikit-Learn: Ensemble Methods
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/modules/ensemble.html). **Priority:** Reference. **Syllabus:** M7.
 
@@ -137,7 +137,7 @@ Feature importance, partial dependence, SHAP, and interpretation limits.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### M09. scikit-learn: Permutation Feature Importance
+### M09. Scikit-Learn: Permutation Feature Importance
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/modules/permutation_importance.html). **Priority:** Reference. **Syllabus:** M7.
 
@@ -159,7 +159,7 @@ Measuring a fitted model's reliance on features.
 
 Assessing model performance and fairness across groups.
 
-**Teaching Use:** Audit campaign error rates across relevant groups and explain the choice of comparison.
+**Teaching Use:** Evaluate campaign error rates across relevant groups and explain the choice of comparison.
 
 **Conditions and Adaptation:** Fairness metrics require contextual decisions; no single metric establishes fairness.
 

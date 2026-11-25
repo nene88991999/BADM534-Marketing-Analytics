@@ -10,6 +10,8 @@ A private repository URL works only with tools authorized to read that repositor
 
 ## Useful Prompts
 
+When writing an explanation or revising course prose, follow [WRITING_STYLE.md](WRITING_STYLE.md): begin with the decision, develop the reasoning, define the comparison, and state the implication with its consequential conditions.
+
 ### Understand a Module
 
 > Read AGENTS.md, course.json, and COURSE_MAP.md. Help me learn M3. Identify the relevant files, explain the managerial question and key concepts, and give one small numerical example. Cite file paths and source sections. Tell me which materials you could not access.

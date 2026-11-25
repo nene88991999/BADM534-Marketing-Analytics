@@ -110,7 +110,7 @@ The main message coefficient applies at tenure zero under this parameterization.
 
 Source: M3, Section 3.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 9: A Comparison Changes With Tenure
+## Slide 9: A Comparison Changes with Tenure
 
 Synthetic message-response model. Tenure determines the conditional comparison.
 

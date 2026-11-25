@@ -47,7 +47,7 @@ Task context, explicit goals, iteration, and verification in agent-assisted work
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### AI02. Codex: Project Instructions with AGENTS.md
+### AI02. Codex: Project Instructions with AGENTS.Md
 
 **Source:** OpenAI. [Open Resource](https://developers.openai.com/codex/guides/agents-md/). **Priority:** Reference. **Syllabus:** Cross-course.
 
@@ -313,7 +313,7 @@ A 2026 randomized study of AI assistance while learning a new programming librar
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### AI18. How Claude Code Is Used in Practice
+### AI18. How Claude Code is Used in Practice
 
 **Source:** Anthropic. [Open Resource](https://www.anthropic.com/research/claude-code-expertise). **Priority:** Instructor. **Syllabus:** Cross-course.
 

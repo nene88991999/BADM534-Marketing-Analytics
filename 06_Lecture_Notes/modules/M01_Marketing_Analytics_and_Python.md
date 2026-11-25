@@ -73,7 +73,7 @@ A retailer has a monthly contact budget for 5,000 customers. The proposed campai
 
 A usable specification would identify the decision date, eligible customer population, offer, evaluation horizon, and objective. One possibility is to maximize incremental contribution during the next 30 days, subject to the contact limit. Eligibility might require marketing consent and an active account. The analysis should define contribution after discounts, returns, fulfillment, and contact costs. It should identify which customer information existed before assignment and how untreated outcomes will be measured.
 
-The initial dataset might include customer-level histories and a randomized pilot. Without such a pilot or another credible design, a response model can help describe or predict behavior, but the incremental contribution calculation remains unresolved. The next operational step may therefore be a randomized test, rather than immediate large-scale optimization.
+The initial dataset might include customer-level histories and a randomized pilot. Without such a pilot or another credible design, a response model can help describe or predict behavior, but the incremental contribution calculation remains unresolved. A randomized test can supply the incremental-response evidence needed to decide whether a larger rollout is profitable.
 
 A specification also needs acceptance criteria. The eligible-customer table must have one row per customer, no post-assignment features, and the intended date coverage. A campaign summary must reconcile assigned counts, contact costs, purchases, and contribution. These checks are small enough to state before asking an AI assistant to implement the analysis. They protect the meaning of the result while allowing flexibility in the code.
 
@@ -623,7 +623,7 @@ With five identical p01 responses and one p02 response, the row-weighted mean re
 
 A separate six-concept construction compares pooled and reversed rating patterns against invented reference counts. The pooled pattern gives every concept the same mean, so correlation and a unique shortlist remain undefined. The reversed pattern selects F and E and retains zero of the reference top two, A and B. An assistant that turns the pooled result into a launch recommendation has added unsupported meaning even if it quotes the distribution score correctly. Both candidate patterns use reference outcomes in their construction. A human study with separate development and evaluation concepts would be needed to assess performance on new concepts.
 
-### 1.15.1 A Report With Traceable Numerical Evidence
+### 1.15.1 A Report with Traceable Numerical Evidence
 
 \noindent Recomputing a table can reveal that the saved result no longer matches its inputs or program. The program below imports the complete mapping and screening functions in Sections 5.23 and 4.23, recomputes four saved tables, and stops if any table disagrees. It writes a short recommendation and a JSON evidence file containing the sample counts, quantities, missing values, and hashes of the inputs and calculation files. Independent arithmetic establishes the reference values above. Agreement between a saved table and the program that created it supplies a separate consistency check.
 

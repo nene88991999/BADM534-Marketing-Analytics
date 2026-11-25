@@ -1,5 +1,7 @@
 # Adding and Updating Course Materials
 
+Follow [WRITING_STYLE.md](WRITING_STYLE.md) when adding or revising course prose, figures, slides, and resource annotations. Edit maintained sources and rebuild their generated companions so the same terminology and interpretation appear throughout.
+
 ## Choose a Destination
 
 Put a released syllabus in `02_Syllabus`, selected teaching data and sample code in `03_Data_and_Code`, assignment briefs in `04_Assignments`, slides in `05_Slides`, written notes in `06_Lecture_Notes`, and complete guided exercises in `07_Labs`. Keep external background sources in `01_Resources`. Use `08_Wiki` for the later HTML site.

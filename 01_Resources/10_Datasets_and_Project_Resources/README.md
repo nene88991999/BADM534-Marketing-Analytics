@@ -157,7 +157,7 @@ Large review and product-metadata collection.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### D08. dunnhumby Source Files
+### D08. Dunnhumby Source Files
 
 **Source:** dunnhumby. [Open Resource](https://www.dunnhumby.com/source-files/). **Priority:** Optional. **Syllabus:** M2; M4; M8.
 

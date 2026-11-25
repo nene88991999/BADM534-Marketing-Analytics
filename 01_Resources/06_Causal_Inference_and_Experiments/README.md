@@ -86,7 +86,7 @@ Applied causal inference and econometric research designs.
 
 Explicit causal graphs, identification, estimation, and refutation checks.
 
-**Teaching Use:** Audit a generated causal analysis by checking its graph and identifying assumptions.
+**Teaching Use:** Assess a generated causal analysis by checking its graph and identifying assumptions.
 
 **Conditions and Adaptation:** Pinned documentation reference; package versions and APIs must be checked for the eventual lab.
 
@@ -130,7 +130,7 @@ Practical design and interpretation of online randomized experiments.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### E07. statsmodels: Power and Sample Size Calculations
+### E07. Statsmodels: Power and Sample Size Calculations
 
 **Source:** statsmodels contributors. [Open Resource](https://www.statsmodels.org/stable/stats.html#power-and-sample-size-calculations). **Priority:** Core. **Syllabus:** M6.
 

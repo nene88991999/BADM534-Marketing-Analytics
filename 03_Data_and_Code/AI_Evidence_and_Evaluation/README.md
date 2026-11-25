@@ -23,7 +23,7 @@ Paths resolve from the scripts, so these commands also work from another directo
 
 The source-selection calculation uses supplied reference annotations. It does not automatically assess semantic entailment. The three conditions are curated evidence, the same evidence plus a misleading memo, and the original collection after source review. Their saved answers are imposed illustrations, so differences do not estimate a model's response to changing context.
 
-The grader set contains eight reference PASS cases and four reference FAIL cases. Every grader is scored on all twelve cases. ABSTAIN, absent rows, and invalid strings remain in the reference-class denominators and are reported separately. A false pass means approving a reference FAIL case. The loss illustration assigns ten units to a false pass, one to a false rejection, and one-half to referral. Referral assumes perfect human resolution and sufficient capacity. These are illustrative decision costs, not estimated financial or consumer losses.
+The grader set contains eight reference PASS cases and four reference FAIL cases. Every grader is scored on all twelve cases. ABSTAIN, absent rows, and invalid strings remain in the reference-class denominators and are reported separately. A false pass means approving a reference FAIL case. The loss illustration assigns ten units to a false pass, one to a false rejection, and one-half to referral. Referral assumes perfect human resolution and sufficient capacity. These illustrative costs define the relative penalty for each decision; they have no estimated dollar interpretation.
 
 ## Definitions and Use
 

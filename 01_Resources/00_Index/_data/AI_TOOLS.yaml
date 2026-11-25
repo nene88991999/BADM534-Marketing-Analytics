@@ -79,7 +79,7 @@
   level: intermediate
   priority: recommended
   modules: [AI]
-  summary: "Introduces Agent Skills: folders of instructions, scripts and resources that agents load through progressive disclosure. The agent sees only the metadata at startup, reads the full SKILL.md when a skill is relevant, and opens other files only as needed. The post advises auditing skills from less-trusted sources."
+  summary: "Introduces Agent Skills: folders of instructions, scripts and resources that agents load through progressive disclosure. The agent sees only the metadata at startup, reads the full SKILL.md when a skill is relevant, and opens other files only as needed. The post advises assessing skills from less-trusted sources."
   wiki_use: "Background reading for the wiki page on 'how agents get context', paired with the context-engineering post."
   tools: [claude-code, claude-ai]
   ai_angle: true
@@ -912,7 +912,7 @@
   priority: recommended
   modules: [M2, M3, M7, AI]
   summary: "Announces Colab's Data Science Agent. You upload a data file and describe a goal in the Gemini side panel, and the agent generates a complete, executable notebook (imports, loading, cleaning, plots). The post warns that the agent may make mistakes and cites a 4th-place finish on the DABStep data-agent benchmark."
-  wiki_use: "Demo in M2 or M3: students let the agent build a first-pass EDA or regression notebook, then audit every cell for correctness."
+  wiki_use: "Demo in M2 or M3: students let the agent build a first-pass EDA or regression notebook, then assess every cell for correctness."
   tools: [colab, gemini, pandas]
   ai_angle: true
   verified_via: fetch
@@ -1504,7 +1504,7 @@
   priority: recommended
   modules: [AI, M6]
   summary: "In a user study, participants with an AI assistant wrote significantly less secure code yet were more confident it was secure. Participants who trusted the AI less and refined their prompts more produced fewer vulnerabilities."
-  wiki_use: "Evidence for the course norm 'confidence is not correctness'. Pair it with an in-class exercise auditing AI-generated code."
+  wiki_use: "Evidence for the course norm 'confidence is not correctness'. Pair it with an in-class exercise assessing AI-generated code."
   tools: []
   ai_angle: true
   verified_via: fetch

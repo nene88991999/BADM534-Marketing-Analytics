@@ -55,7 +55,7 @@ NumPy, pandas, cleaning, aggregation, joins, and time series.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### P03. Getting Started Tutorials: pandas
+### P03. Getting Started Tutorials: Pandas
 
 **Source:** pandas contributors. [Open Resource](https://pandas.pydata.org/docs/getting_started/intro_tutorials/). **Priority:** Core. **Syllabus:** M1.
 
@@ -113,7 +113,7 @@ Notebook editing, kernels, files, and the execution environment.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### P07. uv: Working on Projects
+### P07. Uv: Working on Projects
 
 **Source:** Astral. [Open Resource](https://docs.astral.sh/uv/guides/projects/). **Priority:** Reference. **Syllabus:** M1.
 
@@ -143,7 +143,7 @@ Commits, history, collaboration, and resolving conflicts.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### P09. pytest: Get Started
+### P09. Pytest: Get Started
 
 **Source:** pytest contributors. [Open Resource](https://docs.pytest.org/en/stable/getting-started.html). **Priority:** Core. **Syllabus:** M1.
 

@@ -399,7 +399,7 @@ The selected dictionary determines the contribution removed.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M07_nonunique_features.tex)
 
-This is an imposed algebraic construction. The positive coefficient sums are two times square root of 2 and two times square root of 5. Equal reconstruction therefore does not imply equal full sparse-autoencoder loss. A removal error depends on the dictionary and does not establish a psychological mechanism.
+Set the two slopes to one and two. The positive coefficient sums are two times square root of 2 and two times square root of 5, so equal reconstruction can coexist with different full sparse-autoencoder losses. Removing a contribution measures its role within the chosen dictionary; a psychological interpretation requires evidence connecting it to customer behavior.
 
 Source: M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 

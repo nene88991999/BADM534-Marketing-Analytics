@@ -2,7 +2,7 @@
 
 Marketing Analytics
 
-## R01: Causal Alignment: Augmenting Language Models with A/B Tests
+## R01: Causal Alignment: Augmenting Language Models with a/B Tests
 
 Panagiotis Angelopoulos; Kevin Lee; Sanjog Misra. Author PDF linked as August 2026 revision; author page lists acceptance at JMR.
 
@@ -26,7 +26,7 @@ Distinguish the predicted optimal-price comparison from the later implemented fi
 
 Local reference: `local_sources/Dube_Misra_WorkingPaper2021.pdf`. Original retained in Dropbox; public repository supplies attribution and original analysis.
 
-## R03: Robust A/B Decisions
+## R03: Robust a/B Decisions
 
 Max H. Farrell; Malika Korganbekova; Sanjog Misra. arXiv 2609.07633v1; submitted September 7, 2026; PDF cover September 9, 2026.
 

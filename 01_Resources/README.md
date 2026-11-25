@@ -63,7 +63,7 @@ A [separate index](00_Index/README.md) and additional module folders appeared du
 
 ## Nutrition and Dietary Data Quality
 
-The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.md) adds 14 cataloged sources on food records, usual intake, outliers, energy adjustment, reporting plausibility, and documented dietary reliability. Eleven government resources and two methods PDFs were downloaded. The copyrighted Black PDF remains in the instructor Dropbox folder; the public collection contains its summary and source links. The original Goldberg paper is linked from its abstract. These resources support the mHealth audit and screening examples in M1–M3.
+The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.md) adds 14 cataloged sources on food records, usual intake, outliers, energy adjustment, reporting plausibility, and documented dietary reliability. Eleven government resources and two methods PDFs were downloaded. The copyrighted Black PDF remains in the instructor Dropbox folder; the public collection contains its summary and source links. The original Goldberg paper is linked from its abstract. These resources support the mHealth assessment and screening examples in M1–M3.
 
 ## Marketing Dialectics
 

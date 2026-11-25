@@ -38,7 +38,7 @@ FOLDERS = OrderedDict([
     ("AI_TOOLS", ("11_AI_Coding_Tools_and_Workflows", "AI-Assisted Coding · Tools and Workflows")),
     ("AI_PEDAGOGY", ("12_AI_Coding_Pedagogy_and_Policy", "AI-Assisted Coding · Teaching, Learning and Policy")),
     ("DATASETS", ("20_Datasets", "Datasets for Exercises and Projects")),
-    ("TEXTBOOKS", ("21_Open_Textbooks_and_Courses", "Open Textbooks and Courses (cross-module)")),
+    ("TEXTBOOKS", ("21_Open_Textbooks_and_Courses", "Open Textbooks and Courses (Cross-Module)")),
     ("WIKI", ("22_Wiki_Design_and_Hosting", "Interactive Wiki · Design and Hosting")),
 ])
 MODULE_TAG_TO_CAT = {f"M{i}": f"M{i}" for i in range(1, 9)}
@@ -47,6 +47,57 @@ PRIORITY_ORDER = {"core": 0, "recommended": 1, "optional": 2}
 FIELDS = ["id", "folder", "category", "section", "subtopic", "priority", "title", "authors", "year", "type",
           "venue", "url", "doi", "oa_url", "access", "license", "level", "modules", "ai_angle",
           "summary", "wiki_use", "tools", "local_copy", "verified_via", "notes"]
+
+SMALL_HEADING_WORDS = {'than', 'nor', 'the', 'as', 'into', 'but', 'of', 'is', 'in', 'a', 'or', 'via', 'an', 'so', 'up', 'from', 'for', 'per', 'on', 'yet', 'by', 'and', 'with', 'at', 'to'}
+
+def heading_case(s):
+    # Protect code identifiers, URLs, acronyms, and established mixed-case names.
+    tokens = list(re.finditer(r"[A-Za-z][A-Za-z0-9']*", s))
+    protected = [m.span() for m in re.finditer(r'`[^`]+`|\]\([^)]*\)', s)]
+    replacements = []
+    for i, m in enumerate(tokens):
+        w = m.group()
+        if any(a <= m.start() < b for a,b in protected): continue
+        if w.isupper() and len(w)>1 or any(c.isupper() for c in w[1:]): continue
+        first = i == 0 or bool(re.search(r'[:.!?]\s*$', s[:m.start()]))
+        v = w.lower() if w.lower() in SMALL_HEADING_WORDS and not first else w[0].upper()+w[1:]
+        if v != w: replacements.append((m.start(),m.end(),v))
+    for a,b,v in reversed(replacements): s = s[:a]+v+s[b:]
+    return s
+
+
+ANNOTATION_WORDING = [('Audit a manually labeled sample', 'Assess a manually labeled sample'),
+ ('to audit it', 'to assess it'),
+ ('students audit', 'students assess'),
+ ('student chart audits', 'student chart assessments'),
+ ("'audit the AI's chart'", "'assess the AI's chart'"),
+ ('The source audit', 'The source assessment'),
+ ('then audit it', 'then assess it'),
+ ('Audit a generated causal analysis', 'Assess a generated causal analysis'),
+ ('to audit DiD code', 'to assess DiD code'),
+ ('an audit checklist', 'an assessment checklist'),
+ ('Audit campaign error rates', 'Evaluate campaign error rates'),
+ ('an audit trail', 'a verification record'),
+ ("governments audit 'sludge'", "governments assess 'sludge'"),
+ ('M8 audit exercise', 'M8 assessment exercise'),
+ ('Agency Erosion audit design', 'consumer-agency assessment design'),
+ ('then audit every cell', 'then assess every cell'),
+ ('advises auditing skills', 'advises assessing skills'),
+ ('exercise auditing AI-generated code', 'exercise assessing AI-generated code'),
+ ('then audit its numbers', 'then verify its numbers'),
+ ('mHealth audit and screening', 'mHealth assessment and screening'),
+ ('humans audit a sample', 'humans assess a sample'),
+ ('and then audit.', 'and then assess.'),
+ ('then audit the generated notebook', 'then assess the generated notebook'),
+ ('Required reading before students', 'Suggested reading before students')]
+
+def apply_annotation_style(entries):
+    for entry in entries:
+        for field in ("summary", "wiki_use", "notes"):
+            if isinstance(entry.get(field), str):
+                for old, new in ANNOTATION_WORDING:
+                    entry[field] = entry[field].replace(old, new)
+
 
 
 def norm_url(u):
@@ -192,7 +243,7 @@ def fmt_entry(e, local_root=None):
     if e.get("venue"):
         by.append(f"*{e['venue']}*")
     if by:
-        line += " — " + ". ".join(by)
+        line += ". " + ". ".join(by)
     tags = [e.get("type"), e.get("level"), f"access: {e.get('access')}" if e.get("access") else None,
             e.get("license"), "AI angle" if e.get("ai_angle") else None]
     tags = [f"`{t}`" for t in tags if t]
@@ -246,7 +297,7 @@ def write_folder_readmes(entries):
         if len(order) > 1:
             lines += ["## Contents", ""] + [f"- [{s}](#{re.sub(r'[^a-z0-9 -]', '', s.lower()).replace(' ', '-')}) ({len(subs[s])})" for s in order] + [""]
         for s in order:
-            lines += [f"## {s}", ""]
+            lines += [f"## {heading_case(s)}", ""]
             for e in sorted(subs[s], key=sort_key):
                 pr = str(e.get("priority") or "optional").lower()
                 lines.append(fmt_entry(e).replace("- **[", f"- [{pr}] **[", 1))
@@ -255,11 +306,11 @@ def write_folder_readmes(entries):
             ai = [e for e in items if e.get("ai_angle")]
             cross = [e for e in entries if e["category"] != cat and cat in e["modules"]]
             if ai:
-                lines += ["## AI-assisted coding angle for this module", "",
+                lines += ["## AI-Assisted Coding Applications", "",
                           "Resources in this folder that show the method done with AI help, LLM versions of the method, or documented failure modes of AI-written analysis:", ""]
                 lines += [f"- [{e['title']}]({e['url']})" for e in sorted(ai, key=sort_key)] + [""]
             if cross:
-                lines += ["## Also relevant (catalogued in other folders)", ""]
+                lines += ["## Related Resources in Other Folders", ""]
                 grouped = OrderedDict()
                 for e in sorted(cross, key=lambda e: (list(FOLDERS).index(e["category"]), sort_key(e))):
                     grouped.setdefault(e["folder"], []).append(e)
@@ -332,11 +383,11 @@ def write_tables(entries):
 def write_index(entries, dupes):
     idx = ROOT / "00_Index"
     tot = len(entries)
-    lines = ["# Marketing Analytics Resource Library — Master Index", "",
+    lines = ["# Marketing Analytics Resource Library: Master Index", "",
              f"{tot} catalogued resources across {len(FOLDERS)} folders · built {date.today().isoformat()}.", "",
-             "The course spine is the previous syllabus's eight modules (M1–M8). On top of that sit a dedicated AI-assisted coding track (folders 10–12), "
-             "a datasets folder, cross-module open textbooks, and resources for designing and hosting the interactive wiki.", "",
-             "**How this is organised**", "",
+             "The catalog groups resources by the eight core modules (M1–M8), AI-assisted coding (folders 10–12), "
+             "datasets, open textbooks, and interactive publishing. Marketing Dialectics and subsequent source reviews are linked from the course resource guide.", "",
+             "## Catalog Organization", "",
              "- Each folder's `README.md` is an annotated catalog grouped by subtopic and ranked core → recommended → optional.",
              "- `resource_catalog.xlsx` / `.csv` hold the same entries in one filterable table. `resource_catalog.json` is the structured version the wiki can be generated from later.",
              "- `_data/*.yaml` is the source of truth. Edit an entry there, then run `python3 _build/build_catalog.py` (from `00_Index`) to regenerate everything.",
@@ -360,8 +411,8 @@ def write_index(entries, dupes):
         it = [e for e in entries if e["category"] == cat]
         lines.append(f"| [{heading}](../{folder}/README.md) | {len(it)} | {sum(e.get('priority') == 'core' for e in it)} | "
                      f"{sum(e.get('access') == 'open' for e in it)} | {sum(bool(e.get('ai_angle')) for e in it)} |")
-    lines += ["", "## Module × AI-assisted coding crosswalk", "",
-              "For each module, the core resources together with the resources that carry an AI-assisted coding angle. Use this as a starting point when designing each wiki page.", ""]
+    lines += ["", "## Modules and AI-Assisted Coding", "",
+              "Each module links recommended background and resources for AI-assisted applications. Selection labels are recommendations, not assigned readings.", ""]
     for i in range(1, 9):
         m = f"M{i}"
         tagged = [e for e in entries if e["category"] == m or m in e["modules"]]
@@ -372,7 +423,7 @@ def write_index(entries, dupes):
         if ai:
             lines += ["*AI angle:* " + "; ".join(f"[{e['title']}]({e['url']})" for e in sorted(ai, key=sort_key)[:10]), ""]
     if dupes:
-        lines += ["## Merged duplicates", "", "These entries turned up in more than one search. Each was kept once, and its module tags were merged:", ""]
+        lines += ["## Merged Duplicate Records", "", "Each pair identifies an alias and its retained catalog record. The retained record combines the module tags:", ""]
         lines += [f"- `{a}` → `{b}`" for a, b in dupes] + [""]
     (idx / "README.md").write_text("\n".join(lines).rstrip() + "\n")
 
@@ -380,6 +431,7 @@ def write_index(entries, dupes):
 if __name__ == "__main__":
     SECTIONS.update(load_sections())
     entries, dupes = load()
+    apply_annotation_style(entries)
     # local copies recorded by the download step
     lc = ROOT / "00_Index" / "_data" / "local_copies.json"
     if lc.exists():

@@ -52,7 +52,7 @@ Estimate a transparent baseline before adopting a more elaborate model. Check co
 
 A useful simulation changes one decision at a time and records what is fixed: attributes, price, competitor options, market size, and margins. Share of preference from a survey is not automatically market share. Distribution, awareness, availability, purchase frequency, and sampling can create differences. State the link between the conjoint output and the demand quantity used in the business calculation.
 
-## 4.5 Segmentation Begins With a Definition of Similarity
+## 4.5 Segmentation Begins with a Definition of Similarity
 
 A retailer may want segments for differentiated service, product positioning, or campaign design. Those objectives should guide the variables used to define similarity. Grouping customers by recent spending answers a different question from grouping them by category preferences or service needs. A segment should be interpretable, sufficiently stable, and connected to an action the firm can take.
 
@@ -1051,7 +1051,7 @@ Concept screening and conjoint analysis inform different decisions. Screening ra
 
 ### 4.23.1 Distribution Fit and Concept Selection
 
-\noindent Consider six fictional body-wash concepts, A through F, each with 100 invented survey ratings. Categories 1–5 represent increasing purchase intent. The reference counts are imposed to make the calculation transparent. They describe no actual customers, and the three candidate patterns below are constructed analytical comparisons rather than fitted predictions.
+\noindent Consider six fictional body-wash concepts, A through F, each with 100 invented survey ratings. Categories 1–5 represent increasing purchase intent. Use the stated counts as a common reference and construct three candidate response patterns to compare distributional fit with product ranking.
 
 | Concept | Counts in Categories 1–5 | Reference Mean |
 | --- | --- | ---: |

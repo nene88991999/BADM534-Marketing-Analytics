@@ -88,7 +88,7 @@ Selections on enlightenment, public criticism, and independent thought from seve
 **Rights:** local_only_rights_unconfirmed.
 **Dropbox file:** `local_sources/Kant_Enlightenment_UniversityTranslation.pdf`. Original retained locally; use the source link from GitHub.
 
-## K08: An Answer to the Question: What Is Enlightenment?
+## K08: An Answer to the Question: What is Enlightenment?
 
 Immanuel Kant. 1784. Three-page university-hosted teaching translation; translator not identified
 

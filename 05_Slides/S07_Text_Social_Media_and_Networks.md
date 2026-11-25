@@ -43,7 +43,7 @@ Marketing Analytics. By Nathan Yang.
 - The document may be a review, sentence, or service conversation.
 - The action is a review queue with limited staff capacity.
 
-The unit and label definition determine the evaluation. A negative review can concern price or quality rather than delivery. A classifier needs a construct that matches the service action.
+The unit and label definition determine the evaluation. A negative review can concern price, quality, or delivery. A classifier needs a construct that identifies the service action the manager can take.
 
 Source: M5, Section 5.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
@@ -158,7 +158,7 @@ $$
 
 False positives can dominate a queue when the target condition is rare.
 
-The formula applies to the specified population and classifier. Prevalence should come from an appropriate deployment sample rather than an artificially balanced training set.
+The formula applies to the specified population and classifier. Use prevalence from the intended deployment population; an artificially balanced training set changes that share.
 
 Source: M5, Section 5.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
@@ -208,7 +208,7 @@ Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 - A repeated-description split evaluates familiar language.
 - A held-out-description split tests generalization to new language.
 
-The source category is an imperfect label. The same normalized description can have multiple source labels. Evaluation should retain that ambiguity rather than assume a single validated nutrition category.
+The source category is an imperfect label. The same normalized description can have multiple source labels. Retaining that ambiguity lets the evaluation distinguish inconsistent labeling from classifier mistakes.
 
 Source: M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 

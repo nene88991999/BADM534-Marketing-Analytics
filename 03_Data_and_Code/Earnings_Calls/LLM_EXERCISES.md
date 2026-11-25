@@ -8,7 +8,7 @@ Give an assistant the data dictionary and five rows from each metadata table. Re
 
 Request raw role counts and core occurrences per 10,000 role words, first for all observed calls and then for calls with detected Q&A. Ask it to predict how unequal speaking time might change the comparison. Run `disclosure.py`. Introduce a missing-Q&A call with many management words and verify that excluding the call removes both its words and its matches. The fixture in `test_examples.py` provides a hand-checkable counterexample.
 
-## Distinguish Language From a Business Practice
+## Distinguish Language from a Business Practice
 
 Use `data/interpretation_cases.csv` and the synthetic sentences in `construct_checks.py` locally. Request fields `case_id`, `priced_object`, `timing`, `speaker_claim`, `evidence_scope`, and `needs_more_context`. Require unknown values when evidence is insufficient. Compare responses with the recorded interpretations, especially the planned-test, price-display, and shelf-infrastructure cases. These exercises specify a workflow; no model responses or measured LLM performance are supplied.
 

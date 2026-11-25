@@ -51,7 +51,7 @@ Source: M8, Section 8.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 
 ## Slide 4: Selected Exposure Creates a Feedback Loop
 
-The diagram describes a policy mechanism rather than an estimated effect.
+Recommendation choices change exposure and the observations available for subsequent model training.
 
 **Figure description:** Recommendations affect exposure, exposure affects observed responses, and those responses inform subsequent training and recommendations.
 
@@ -119,7 +119,7 @@ Source: M8, Section 8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 
 Synthetic scores. The lists tie at a variety weight of 0.20.
 
-A and B are coffee, C is tea, and D is fruit. The variety gain trades off against 0.20 of relevance. The values are imposed teaching scores.
+Suppose A and B are coffee, C is tea, and D is fruit, with the relevance scores shown. Increasing category variety reduces total relevance by 0.20 under these scores.
 
 Source: M8, Section 8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 

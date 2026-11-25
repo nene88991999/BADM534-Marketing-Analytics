@@ -4,7 +4,7 @@
 
 These are reading recommendations, not assigned requirements. IDs belong to the `marketing-dialectics` catalog. Downloaded does not mean read in full.
 
-## M01: The Market in the Kingdom of Ends: Kant’s Moral Philosophy for Business Ethics
+## M01: The Market in the Kingdom of Ends: Kant’S Moral Philosophy for Business Ethics
 
 Paolo Santori. 2024. Philosophy of Management 23:239–256; DOI 10.1007/s40926-024-00252-z
 

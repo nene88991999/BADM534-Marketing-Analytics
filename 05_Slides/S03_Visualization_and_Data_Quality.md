@@ -283,7 +283,7 @@ Source: M2, Section 2.17.1, Marketing Analytics Lecture Notes. ../06_Lecture_Not
 - Show the comparison, units, and denominator.
 - Keep the qualification that could change the action beside the claim.
 
-An executive summary can be concise while retaining consequential uncertainty. A useful chart title states the population and comparison rather than a causal claim unsupported by the design.
+An executive summary can be concise while retaining consequential uncertainty. State the population and comparison in the chart title, with causal wording limited to claims supported by the design.
 
 Source: M2, Section 2.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 

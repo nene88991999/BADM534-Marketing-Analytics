@@ -109,7 +109,7 @@ assert round(conditional, 4) == 0.50
 
 The fixed-roster rate is 25%. The active-user rate is 50%.
 
-Both numbers use the same observed days. The denominator changes from 120 potential customer-days to 60. These are synthetic counts.
+Suppose the same observed days are divided first by 120 potential customer-days and then by 60. The smaller denominator doubles the measured rate without changing recorded activity.
 
 Source: M2, Section 2.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
@@ -127,7 +127,7 @@ Source: M2, Section 2.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 
 Synthetic cohort structure. Blank cells have no elapsed follow-up.
 
-**Figure description:** Older cohorts have more observable follow-up periods. The missing upper-age cells for recent cohorts are unobserved rather than zero retention.
+**Figure description:** Older cohorts have more observable follow-up periods. The upper-age cells for recent cohorts remain unobserved because those cohorts have not reached those ages.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M02_cohort_triangle.tex)
 
@@ -175,7 +175,7 @@ The available records support classification, checks, and a bounded service deci
 
 [Editable TikZ](../06_Lecture_Notes/figures/M01_cancellation_evidence.tex)
 
-All records are synthetic. The January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The diagram represents explicit operational conditions rather than a complete ontology reasoner.
+The synthetic January 31 cutoff excludes a later confirmation. Keep raw rows, accepted unique events, requests, and the complete subscription roster separate. The operational conditions are implemented directly in Python; an OWL reasoner is outside this implementation.
 
 Source: M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 

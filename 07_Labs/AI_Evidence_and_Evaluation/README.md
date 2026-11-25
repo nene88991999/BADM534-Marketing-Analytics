@@ -12,7 +12,7 @@ A marketing team uses earnings calls to identify pricing statements for further 
 
 Read S1–S3 and the four questions in [source_cases.json](../../03_Data_and_Code/AI_Evidence_and_Evaluation/data/source_cases.json). Write a short answer to each before looking at the saved responses. Define what a supported answer would contain, including the speaker, population, and scope of a causal claim. Calculate 72 divided by 100 and state whose outcome that fraction describes.
 
-## Activity A: Source Selection
+## Activity a: Source Selection
 
 1. Run `source_selection.py` using the command in the data-and-code README. Check all twelve claim-level rows against the source text and reference reasons.
 2. Explain why citation counts remain unchanged when the supported-answer count changes. Identify the exact inferential step in each unsupported answer.

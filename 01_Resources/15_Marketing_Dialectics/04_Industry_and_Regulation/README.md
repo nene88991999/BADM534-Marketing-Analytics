@@ -52,7 +52,7 @@ Company account of tailoring artwork to help members discover content. Useful fo
 **Rights:** local_only_copyright.
 **Dropbox file:** `local_sources/ChandrashekarAmatBasilicoJebara_Netflix2017.html`. Original retained locally; use the source link from GitHub.
 
-## I05: ASA Ruling on Shell UK Ltd t/a Shell
+## I05: ASA Ruling on Shell UK Ltd T/a Shell
 
 Advertising Standards Authority. 2023. June 7, 2023; upheld in part; UK advertising decision
 

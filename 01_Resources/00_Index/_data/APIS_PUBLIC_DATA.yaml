@@ -14,7 +14,7 @@
   priority: core
   modules: [M2, M6]
   summary: "Executed notebook plus two scripts. fetch_mcbroken.py calls https://mcbroken.com/markers.json (one GeoJSON feature per store, gzip, undocumented), checks status, decompresses, flattens to a DataFrame and saves a timestamped copy, with a fallback to a public-domain GitHub archive. build_panel.py walks that archive's 60,000-commit git history and writes daily (one year) and weekly (six years) panels by country, US state and store. Includes a GitHub Actions template for students to build their own daily snapshots."
-  wiki_use: "M2 session on data collection: HTTP requests, headers, status codes, JSON to table, polite scraping, and git scraping as a cheap way to build a time series. Exercise 1 has students audit AI-written request code (timeout, User-Agent, status check, gzip, raw copy). Exercise 5 previews M6 with a right-to-repair event study (US Copyright Office exemption, late Oct 2024)."
+  wiki_use: "M2 session on data collection: HTTP requests, headers, status codes, JSON to table, polite scraping, and git scraping as a cheap way to build a time series. Exercise 1 has students assess AI-written request code (timeout, User-Agent, status check, gzip, raw copy). Exercise 5 previews M6 with a right-to-repair event study (US Copyright Office exemption, late Oct 2024)."
   tools: [requests, pandas, matplotlib, git, GitHub Actions]
   ai_angle: true
   verified_via: fetch

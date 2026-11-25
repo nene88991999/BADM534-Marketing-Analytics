@@ -225,9 +225,9 @@ untreated outcomes will be measured.
 The initial dataset might include customer-level histories and a
 randomized pilot. Without such a pilot or another credible design, a
 response model can help describe or predict behavior, but the
-incremental contribution calculation remains unresolved. The next
-operational step may therefore be a randomized test, rather than
-immediate large-scale optimization.
+incremental contribution calculation remains unresolved. A randomized
+test can supply the incremental-response evidence needed to decide
+whether a larger rollout is profitable.
 
 A specification also needs acceptance criteria. The eligible-customer
 table must have one row per customer, no post-assignment features, and
@@ -1173,7 +1173,7 @@ separate development and evaluation concepts would be needed to assess
 performance on new concepts.
 
 \hypertarget{M01-a-report-with-traceable-numerical-evidence}{%
-\subsection{A Report With Traceable Numerical
+\subsection{A Report with Traceable Numerical
 Evidence}\label{M01-a-report-with-traceable-numerical-evidence}}
 
 \noindent \noindent Recomputing a table can reveal that the saved result no longer
@@ -1480,7 +1480,7 @@ timezone before assigning day or week. Determine whether the date
 represents ordering, shipment, payment, or return. A promotion announced
 late in a period may affect orders immediately but recognized revenue
 later. Aligning metrics on an inappropriate date can create an apparent
-lag that comes from accounting rather than customer behavior.
+lag caused by the timing of revenue recognition.
 
 Outliers should be investigated before removal. A \$10,000 order could
 be a business customer, a data-entry error, or a legitimate event. A
@@ -1718,9 +1718,8 @@ Presentation}\label{M02-from-evidence-to-a-management-presentation}}
 \noindent The Pyramid Principle organizes a recommendation around a
 decision-relevant answer, followed by a small number of supporting
 reasons and the evidence for each reason. This structure works when the
-answer's strength matches the analysis. A descriptive study might
-recommend a test or a closer diagnostic comparison, rather than
-immediate deployment.
+answer's strength matches the analysis. A descriptive study can identify
+a pattern that warrants a test or a closer comparison before deployment.
 
 For the campaign example, a clear opening is: ``Compare the campaigns at
 a common customer mix before reallocating the budget.'' The supporting
@@ -1830,9 +1829,10 @@ selected users. Only 76,804 have food entries; 58,616 are unobserved. A
 zero-filled calorie panel would interpret every absent record as no
 consumption. For a logging outcome, zero can instead mean that no entry
 was observed on a specified calendar day. The variable's definition
-determines whether filling a missing cell with zero is appropriate.
-These users are identified from a full-year file, so the calendar is a
-descriptive grid rather than a verified account-enrollment roster.
+determines whether filling a missing cell with zero is appropriate. The
+calendar follows users identified from the full-year file. It describes
+potential observation days; account enrollment dates have not been
+verified.
 
 The item sum is within one calorie unit of the reported daily total on
 53,075 observed days. Using the reported total as the denominator of
@@ -2449,7 +2449,7 @@ Small multiples should retain a common scale when the decision depends
 on cross-panel magnitudes.
 
 \hypertarget{M02-an-average-decline-can-coexist-with-no-median-change}{%
-\subsection{An Average Decline Can Coexist With No Median
+\subsection{An Average Decline Can Coexist with No Median
 Change}\label{M02-an-average-decline-can-coexist-with-no-median-change}}
 
 \noindent The user-level outcome is the fraction of a month's calendar days with a
@@ -2650,9 +2650,9 @@ each rate without inferring a value from a bar's height.
 
 \href{https://github.com/altair-viz/altair-tutorial}{Altair's tutorial}
 provides a declarative approach in which the chart specifies data
-fields, visual encodings, and interactions. The older tutorial's
-selection syntax differs from the version used here. The program uses
-Altair 5.5.0, a bound parameter, and explicitly fixed scales.
+fields, visual encodings, and interactions. The runnable example
+specifies Altair 5.5.0, a bound parameter, and fixed scales; the older
+tutorial uses a different selection syntax.
 \href{https://altair-viz.github.io/user_guide/interactions/bindings_widgets.html}{The
 widget documentation} and
 \href{https://altair-viz.github.io/user_guide/saving_charts.html}{HTML-export
@@ -3777,9 +3777,10 @@ that condition.
 The displayed curve reuses the released point estimates. Several
 expiration dates are estimated within intervals, and two follow a count
 of recent models. The calculation does not propagate date uncertainty or
-fit an interval-censoring model. A smooth model-release trend also
-compares different configurations, with differing default reasoning
-budgets, rather than identifying a causal effect of calendar time. The
+fit an interval-censoring model. A smooth trend across model releases
+compares configurations with different default reasoning budgets. It
+therefore describes changes across those configurations, with calendar
+time and model design varying together. The
 \href{../01_Resources/14_LLM_Evidence_and_Revalidation/README.md}{source
 record} retains these distinctions.
 
@@ -4193,8 +4194,8 @@ The program assigns each accepted event to a named class and the common
 parent ServiceRecord. It implements the classification and validation
 conditions directly in Python. It does not implement an OWL reasoner.
 Conflicting duplicates are rejected together; simultaneous conflicting
-state observations remain explicit. These choices make the output depend
-on the evidence and stated rules rather than input row order.
+state observations remain explicit. The same evidence therefore yields
+the same classification when the input rows are reordered.
 
 Run
 \texttt{python3\ 03\_Data\_and\_Code/Ontology\_and\_Evidence/assess\_cancellations.py}
@@ -4635,13 +4636,16 @@ generates the interval figure from those results.
 \section{Diagnostics and Panel
 Data}\label{M03-diagnostics-and-panel-data}}
 
-\noindent Inspect residuals against fitted values and important predictors for
-nonlinear patterns and changing variance. Investigate influential
-observations, errors in units, and unusual leverage. Multicollinearity
-can make individual coefficients unstable even when predictions are
-reasonably stable, because several predictors explain nearly the same
-variation. Removing a variable solely to obtain a smaller p-value
-changes the question and can introduce omitted-variable bias.
+\noindent Residual patterns help determine whether the fitted relationship
+adequately describes the comparison. Plot residuals against fitted
+values and important predictors to examine nonlinearity and changing
+variance. Investigate influential observations, errors in units, and
+unusual leverage before interpreting a coefficient as a stable guide to
+the marketing decision. Multicollinearity can make individual
+coefficients unstable even when predictions are reasonably stable,
+because several predictors explain nearly the same variation. Removing a
+variable solely to obtain a smaller p-value changes the question and can
+introduce omitted-variable bias.
 
 Store fixed effects absorb time-invariant differences between stores.
 Calendar fixed effects absorb common period-specific shocks. In a
@@ -4686,9 +4690,10 @@ For a larger dataset, specify the formula and desired covariance
 estimator before requesting code. Ask the assistant to list dropped rows
 and explain how categorical variables were encoded. Have it calculate a
 predicted contrast at two values of a moderator and compare the result
-with the interaction formula. Treat diagnostic recommendations as
-hypotheses to inspect, rather than automatic permission to remove
-observations or alter the model.
+with the interaction formula. Inspect the evidence behind each
+diagnostic recommendation. Removing observations or changing the model
+requires a reason tied to the measurement process or the question being
+estimated.
 
 For practice, consider an advertising coefficient measured per \$1,000
 of spending. Re-express the predictor in dollars and explain how the
@@ -5310,7 +5315,7 @@ can create differences. State the link between the conjoint output and
 the demand quantity used in the business calculation.
 
 \hypertarget{M04-segmentation-begins-with-a-definition-of-similarity}{%
-\section{Segmentation Begins With a Definition of
+\section{Segmentation Begins with a Definition of
 Similarity}\label{M04-segmentation-begins-with-a-definition-of-similarity}}
 
 \noindent A retailer may want segments for differentiated service, product
@@ -7028,10 +7033,9 @@ Selection}\label{M04-distribution-fit-and-concept-selection}}
 
 \noindent \noindent Consider six fictional body-wash concepts, A through F, each
 with 100 invented survey ratings. Categories 1--5 represent increasing
-purchase intent. The reference counts are imposed to make the
-calculation transparent. They describe no actual customers, and the
-three candidate patterns below are constructed analytical comparisons
-rather than fitted predictions.
+purchase intent. Use the stated counts as a common reference and
+construct three candidate response patterns to compare distributional
+fit with product ranking.
 
 \begin{table}[H]
 \centering\small
@@ -7666,7 +7670,7 @@ scraped review is not automatically free of personal or contractual
 restrictions.
 
 \hypertarget{M05-representing-language-with-counts-and-weights}{%
-\section{Representing Language With Counts and
+\section{Representing Language with Counts and
 Weights}\label{M05-representing-language-with-counts-and-weights}}
 
 \noindent A bag-of-words representation counts tokens while largely ignoring their
@@ -7689,8 +7693,8 @@ where \(\operatorname{tf}_{wd}\) is the frequency of word \(w\) in
 document \(d\), \(N\) is the number of documents, and
 \(\operatorname{df}_w\) is the number of documents containing the word.
 Implementations vary in smoothing, normalization, and term-frequency
-definitions. Record the convention rather than assuming a library's
-output matches this exact expression.
+definitions. Record the convention and check how it changes the weights
+relative to this expression.
 
 If ``delivery'' appears in two of three documents, its
 inverse-document-frequency term under this convention is
@@ -8510,7 +8514,7 @@ if __name__ == '__main__':
 \end{Verbatim}
 
 \hypertarget{M05-a-match-is-a-retrieval-decision}{%
-\subsection{A Match Is a Retrieval
+\subsection{A Match is a Retrieval
 Decision}\label{M05-a-match-is-a-retrieval-decision}}
 
 \noindent \noindent Consider seven purposeful cases from the supplied excerpts.
@@ -8608,9 +8612,9 @@ Effort}\label{M05-ai-assisted-interpretation-and-review-effort}}
 Require the match ID, priced object, timing, type of speaker claim,
 evidence scope, and an explicit unknown value when context is
 insufficient. Compare its output with the recorded cases and require
-source-grounded explanations for disagreements. An apparent question in
-a management record should trigger inspection of the original turn
-rather than an automatic change based on punctuation.
+source-grounded explanations for disagreements. Inspect the original
+turn when a management record appears to contain a question. Punctuation
+alone can misclassify a quoted question or a rhetorical statement.
 
 For empirical evaluation, draw passages with known selection
 probabilities from both retrieved and nonretrieved text, obtain
@@ -8740,9 +8744,10 @@ published article, identifies 424 higher-education institutions across
 affiliation. The metadata category includes universities, colleges, and
 independent business schools. Names are resolved through institution IDs
 and ROR links; distinct campuses and schools remain separate when their
-identifiers differ. The source attaches affiliations to works rather
-than substituting each author's current employer. Automated matching and
-differences across publication versions can still create errors.
+identifiers differ. Affiliations refer to the authors' institutions
+recorded for each work, which can differ from their current employers.
+Automated matching and differences across publication versions can still
+create errors.
 
 For paper \(p\), let \(U_p\) be its set of distinct universities and let
 \(k_p\) be the number of institutions in that set. A paper with at least
@@ -9417,9 +9422,8 @@ crossing. Vertical edges take four minutes and the crossing takes two.
 The fixed population totals 800, including 150 at disconnected origin X.
 Stores B and C are available, A and D are unavailable, and U's status is
 unknown. Origin populations are W0: 100, W1: 300, W2: 100, E0: 50, E1:
-50, E2: 50, and X: 150. These are imposed teaching inputs. Store
-locations coincide with W0, E0, W2, E2, and X, respectively. The
-threshold is five minutes.
+50, E2: 50, and X: 150. Store locations coincide with W0, E0, W2, E2,
+and X, respectively. The threshold is five minutes.
 
 \begin{figure}[htbp]
 \centering
@@ -9620,8 +9624,9 @@ a straight segment; these connectors range from 11.34 to 20.64 meters
 and contribute to path length. All four snapped origins lie in the same
 connected component. Directional restrictions, crossing delays, entrance
 access, and the feasibility of the straight connectors are unverified.
-These conventions define a network-distance illustration, rather than a
-pedestrian routing service.
+The resulting distances describe the selected network and connector
+assumptions. Practical pedestrian routing also requires the unverified
+access and crossing information.
 
 The street extract is dated November 18, 2026, after the observed
 availability snapshot. Results hold that later network fixed and do not
@@ -10436,8 +10441,8 @@ implementation. ``Digital marketing'' is too broad to identify a single
 comparison. The outcome should include economically relevant costs and
 have enough follow-up to capture returns or delayed purchases. If
 customers can affect one another, an individual's outcome may depend on
-other customers' assignments. The unit and design then need to account
-for interference rather than silently assuming it away.
+other customers' assignments. The assignment unit and outcome definition
+must then account for these spillovers.
 
 \hypertarget{M06-why-the-treated-untreated-difference-can-be-biased}{%
 \section{Why the Treated-Untreated Difference Can Be
@@ -10551,7 +10556,7 @@ assigned customer. Applying the same transformation to the effect
 interval gives approximately \$-0.42 to \$1.82. A positive point
 estimate therefore coexists with economically consequential uncertainty.
 A decision can combine that uncertainty with rollout costs, the value of
-another test, and guardrail outcomes.
+another test, and customer outcomes such as returns and complaints.
 
 The margin assumption matters. If treatment also changes basket size,
 returns, or discount expense, purchase incidence alone is insufficient.
@@ -10649,7 +10654,7 @@ control overfitting of nuisance functions; the design remains the
 foundation of the causal interpretation.
 
 \hypertarget{M06-evaluating-a-recommendation-policy-from-logged-exposure}{%
-\subsection{Evaluating a Recommendation Policy From Logged
+\subsection{Evaluating a Recommendation Policy from Logged
 Exposure}\label{M06-evaluating-a-recommendation-policy-from-logged-exposure}}
 
 \noindent A retailer has records from an existing recommendation policy and wants
@@ -10924,7 +10929,7 @@ observed and counterfactual series separately and identify the
 assumptions that connect them. A convincing plot should not substitute
 for those conditions.
 
-If comparison-market sales rise by 25 rather than 10, the DiD estimate
+If comparison-market sales rise by 25 instead of 10, the DiD estimate
 becomes five. If email cost doubles to \$1, the point estimate of
 incremental contribution falls to \$0.20. If treatment raises returns,
 explain why a conversion effect can overstate the contribution effect.
@@ -10938,8 +10943,8 @@ concentration. Verify the weighted results independently by averaging
 the two group-specific response rates. Then set A's display probability
 among occasional buyers to zero in a proposed logging design and explain
 why the always-A policy becomes unidentified from those logs. The
-implementation should flag the unsupported action rather than silently
-drop that group.
+implementation should flag the unsupported action and retain the group
+in the population accounting.
 
 \hypertarget{M06-readings}{%
 \section{Readings}\label{M06-readings}}
@@ -11021,9 +11026,9 @@ used. Domain-based restrictions should be specified in advance, with
 their effect on the target population and missing-outcome analysis made
 explicit.
 
-The program uses a local random generator with seed 534. It reports the
-assumed effect separately from the simulated differences and never
-labels an artificial assignment as an observed intervention.
+Random assignment is generated locally with seed 534. Report the assumed
+effect alongside the simulated differences so that sampling variation
+can be distinguished from the effect specified in the simulation.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -11578,14 +11583,15 @@ calls and the number of observed calls.
 \caption{For the same 27 comparison firms and 27 calls per 90-day window, core occurrences fall from five to two while two calls contain a match in each period. Call incidence remains 7.41 percent. The event day is excluded.}\label{fig:M06_calls_windows}
 \end{figure}
 
-The event is shared public information, and the group named comparison
-in the supplied data is an industry classification rather than a
-verified untreated group. Earnings-call timing, business conditions, and
-disclosure choices also vary. Even a measured change in disclosure would
-leave adoption and customer effects as separate outcomes. A causal
-design would need a specified exposure, a defensible counterfactual
-disclosure path, stable measurement, and uncertainty that accounts for
-repeated firms. Matching firm coverage addresses composition alone.
+The event is shared public information, and the supplied comparison
+group identifies an industry classification. Its firms have not been
+verified as unexposed to the event. Earnings-call timing, business
+conditions, and disclosure choices also vary. Even a measured change in
+disclosure would leave adoption and customer effects as separate
+outcomes. A causal design would need a specified exposure, a defensible
+counterfactual disclosure path, stable measurement, and uncertainty that
+accounts for repeated firms. Matching firm coverage addresses
+composition alone.
 
 The program repeats the descriptive calculation with 60-, 90-, and
 120-day windows and reports counts, call-weighted rates, and firm-equal
@@ -11826,10 +11832,11 @@ A policy evaluation adds another source of variation. A rule that takes
 effect in one jurisdiction can motivate a difference-in-differences
 design, but coverage, preexisting trends, and firm-wide interface
 changes must be assessed. If a platform changes its interface
-everywhere, untreated jurisdictions may also receive the new design.
-Inference then depends on the actual exposure rather than the legal
-boundary alone. The existing policy-comparison code in Section 6.16
-supplies the corresponding timing and comparison-group checks; the
+everywhere, untreated jurisdictions may also receive the new design. The
+comparison must therefore follow actual exposure, including firms
+outside the adopting jurisdiction that receive the same interface
+change. The existing policy-comparison code in Section 6.16 supplies the
+corresponding timing and comparison-group checks; the
 \href{../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md}{cancellation
 source record} supplies the legal distinctions.
 
@@ -12353,8 +12360,9 @@ region contains stores with 12, 25, 60, 150, and 300 customers, giving
 2,188 observations. Discounts are independently randomized between 5 and
 35 within every store. Profit equals a quadratic response with imposed
 region and store coefficient deviations plus independent noise with a
-\$3 standard deviation. Because assignment is randomized, this
-comparison isolates pooling rather than confounder adjustment.
+\$3 standard deviation. Randomization removes the need for confounder
+adjustment in this comparison, allowing differences in pooling to
+determine the estimation tradeoff.
 
 Write \(B(a)=(1,t,t^2-0.75)'\), where \(t=(a-20)/10\). The fitted curve
 for store \(s\) in region \(r\) is
@@ -12709,9 +12717,8 @@ Neural networks learn layered representations and can be especially
 useful for text, images, or large complex datasets. Their flexibility
 does not eliminate the need for baselines or careful evaluation. In a
 modest customer table, a well-tuned simpler model may be competitive and
-easier to maintain. Choose the method based on task performance and
-practical constraints rather than the apparent modernity of the
-algorithm.
+easier to maintain. Compare methods using task performance, maintenance
+costs, and the operational constraints of deployment.
 
 \hypertarget{M07-validation-cross-validation-and-leakage}{%
 \section{Validation, Cross-Validation, and
@@ -13068,8 +13075,8 @@ determinants of the outcome. A customer who follows a similar food
 pattern may differ on those other dimensions. For deployment, the goal
 and all required inputs must be available when recommendations are made.
 A later realized weight outcome can define a retrospective evaluation
-stratum; it cannot serve as a known input for a new customer unless
-supplied as an explicit scenario rather than an observed future fact.
+stratum; it cannot serve as a known input for a new customer unless it
+is specified as a hypothetical scenario.
 
 \href{https://doi.org/10.1086/720453}{Nielsen, Yang, Dubé, Knäuper,
 Ling, and Nie (2022)} examine variety in food logs and develop FOODVAR.
@@ -13748,7 +13755,7 @@ if __name__ == "__main__":
 \end{Verbatim}
 
 \hypertarget{M07-mcdonalds-forecasting-availability-with-missing-future-labels}{%
-\section{McDonald's: Forecasting Availability With Missing Future
+\section{McDonald's: Forecasting Availability with Missing Future
 Labels}\label{M07-mcdonalds-forecasting-availability-with-missing-future-labels}}
 
 \noindent \noindent A service team with limited time can prioritize verification
@@ -13975,9 +13982,9 @@ Error costs should also follow the application. A mistaken
 recommendation of a grocery item and a missed housing opportunity have
 different consequences. A proposed fairness comparison must specify the
 affected population, outcome, and decision. Several metrics can conflict
-because they condition on different objects. Report the tradeoff and the
-policy objective that resolves it rather than treating a single accuracy
-statistic as a complete evaluation.
+because they condition on different objects. Report the conflicting
+outcomes and explain which policy objective determines the preferred
+comparison.
 
 \hypertarget{M07-repeated-selection-can-improve-a-score-without-improving-prediction}{%
 \section{Repeated Selection Can Improve a Score Without Improving
@@ -14053,14 +14060,16 @@ program.
 \end{figure}
 
 Real prompt revisions often produce correlated predictions, and feedback
-can alter later candidates. The independence model gives a transparent
-mechanism, rather than an estimated magnitude for those workflows. The
-relevant practice is to preserve development records, fix the final
-comparison before exposing new outcomes, and match the split to the
-deployment population. For earnings calls, separate firms or future
-periods as appropriate and keep passages from a call together. A new
-model release also needs fresh evaluation when its predecessor's test
-errors guided the upgrade decision.
+can alter later candidates. Under independence, repeatedly selecting the
+strongest apparent result raises the chance of selecting a favorable
+error. The magnitude for an actual workflow depends on the correlation
+among its candidates and the feedback used to revise them. The relevant
+practice is to preserve development records, fix the final comparison
+before exposing new outcomes, and match the split to the deployment
+population. For earnings calls, separate firms or future periods as
+appropriate and keep passages from a call together. A new model release
+also needs fresh evaluation when its predecessor's test errors guided
+the upgrade decision.
 
 \hypertarget{M07-reproduce-selection-and-fresh-evaluation}{%
 \subsection{Reproduce Selection and Fresh
@@ -14213,8 +14222,9 @@ Consider 100 constructed paired cases: eighty routine tasks and twenty
 consequential tasks. The current configuration passes sixty routine and
 eighteen consequential cases. The challenger passes seventy-two and
 fourteen. Overall accuracy rises from 78\% to 86\%, while accuracy on
-consequential tasks falls from 90\% to 70\%. These are imposed teaching
-outcomes, with no missing cases or measured provider performance.
+consequential tasks falls from 90\% to 70\%. All 100 cases have an
+outcome under both constructed configurations, so the change reflects
+different performance across task groups.
 
 \begin{figure}[htbp]
 \centering
@@ -16601,9 +16611,10 @@ the ordinary assistant prompt. Each interior setting uses 560 responses
 per run and condition. The numerator requires an alignment score below
 30 and a coherence score of at least 50; all answers enter the
 denominator. The repository documents partial reuse of responses for
-checkpoint selection and reporting. These figures describe a selected
-diagnostic comparison, rather than a fresh performance estimate for a
-fixed deployment checkpoint.
+checkpoint selection and reporting. Because the checkpoint is chosen
+partly from the responses used for reporting, these figures describe
+performance after selection. A fixed deployment checkpoint requires a
+separate evaluation sample.
 
 Run
 \texttt{python3\ 03\_Data\_and\_Code/Training\_Data\_Mixtures/source\_checkpoint\_comparison.py}
@@ -16782,8 +16793,9 @@ prompts, model versions, sampling settings, embedding versions, anchors,
 and aggregation before opening the final human outcomes. Repeated
 observations from a person should remain grouped, and respondent
 populations should match the intended use. An additional category or
-later period provides evidence about a further transfer rather than
-simply increasing the nominal sample size.
+later period tests whether the selected rule transfers to that setting.
+Its value depends on the new comparison as well as the number of
+observations.
 
 Distribution fit, rank agreement, and missed promising concepts provide
 complementary evidence. Section 4.23 gives a complete calculation in
@@ -17026,8 +17038,9 @@ the only training observation, and nodes 0 and 1 form the
 two-observation test set. The all-label majority is 0 and scores 100\%
 on those two test nodes. A constant fitted only to the permitted
 training outcome predicts 1 and scores 0\%. The full-group oracle purity
-is \(2/3\). These values follow from three imposed labels; they are not
-estimates of an expected performance gap.
+is \(2/3\). The difference arises because the all-label rule uses the
+two outcomes on which it is evaluated. Its size here follows from the
+three specified labels.
 
 \begin{figure}[htbp]
 \centering
@@ -17277,8 +17290,9 @@ score, with positive values defining the two cases that require review.
 Both means are zero; the coordinate sums of squares are 40,000 and 4.
 Representation A preserves the first coordinate and sets the second to
 zero. Representation B multiplies the first by 0.98 and preserves the
-second. These are fixed transformations of invented vectors, with no
-estimated embeddings or trained model.
+second. Both representations apply fixed transformations to the four
+invented vectors. Their comparison isolates the effect of preserving
+different coordinates.
 
 \begin{table}[H]
 \centering\small
@@ -17441,12 +17455,13 @@ while describing different directions.
 \end{figure}
 
 Removing the first contribution leaves \((1,-a)\) and gives squared
-error \(1+a^2\). The errors are therefore 2 and 5. This removal
-calculation is conditional on the chosen dictionary and operation. It
-does not establish a causal customer mechanism. The sums of the
-nonnegative coefficients are \(2\sqrt{2}\) and \(2\sqrt{5}\), so a loss
-that also penalizes those coefficients need not assign the two
-decompositions equal value. The equality concerns reconstruction alone.
+error \(1+a^2\). The errors are therefore 2 and 5. The error measures
+how much that contribution matters within the chosen decomposition. A
+claim about a causal customer mechanism would also require evidence
+linking the direction to customer behavior. The sums of the nonnegative
+coefficients are \(2\sqrt{2}\) and \(2\sqrt{5}\), so a loss that also
+penalizes those coefficients need not assign the two decompositions
+equal value. The equality concerns reconstruction alone.
 
 Feature evaluation should distinguish reproducibility, predictive
 usefulness, and interpretation. Repeated fits can be compared after a
@@ -17524,7 +17539,7 @@ precisely. Evaluating these systems requires a clear account of their
 information, incentives, assumptions, and consequences.
 
 \hypertarget{M08-recommendation-systems-learn-from-selected-exposure}{%
-\section{Recommendation Systems Learn From Selected
+\section{Recommendation Systems Learn from Selected
 Exposure}\label{M08-recommendation-systems-learn-from-selected-exposure}}
 
 \noindent A retailer wants to recommend products that customers will find useful.
@@ -17556,8 +17571,9 @@ under equal exposure.
 shape the next training sample. Their results show that consumption can
 become more homogeneous without corresponding utility improvements. The
 result depends on the simulated preferences, recommendation rules, and
-updating process. It identifies a mechanism to examine in deployed
-systems rather than a universal effect of personalization.
+updating process. For a deployed system, the corresponding question is
+whether repeated exposure changes consumption variety and customer value
+under that system's preferences and updating process.
 
 \begin{figure}[htbp]
 \centering
@@ -17678,8 +17694,8 @@ objective makes the relevance-variety tradeoff explicit.
 
 Suppose a retail customer requests three products and values variety
 across categories. Assign four candidate items the relevance scores
-below. The scores are comparable across these items and measure
-relevance rather than purchase probability.
+below. The scores measure relevance on a common scale; they have no
+purchase-probability interpretation.
 
 \begin{table}[H]
 \centering\small
@@ -17723,11 +17739,11 @@ the intended customer experience.
 For an experiment, randomize eligible customers to the existing and
 revised recommendation policies. Choose a primary outcome such as
 contribution per assigned customer over a fixed horizon, alongside
-measures of customer satisfaction and unwanted repetition. Analyze
-assignment rather than only customers who clicked a recommendation.
-Clicking occurs after the policy is assigned and can differ between
-policies. Preserve the list shown and the alternatives eligible at each
-impression so the mechanism can be examined.
+measures of customer satisfaction and unwanted repetition. Include every
+assigned customer in the outcome comparison. Clicking occurs after the
+policy is assigned and can differ between policies. Preserve the list
+shown and the alternatives eligible at each impression so the mechanism
+can be examined.
 
 \hypertarget{M08-engagement-considered-preferences-and-the-objective}{%
 \subsection{Engagement, Considered Preferences, and the
@@ -17964,8 +17980,8 @@ explain the data transformations, and identify assumptions. Inspect the
 code before running it. Then compare intermediate outputs with
 independent checks. A program that executes successfully can still use
 an incorrect denominator, join on the wrong key, or include future
-information. Those errors require substantive checks rather than syntax
-repair.
+information. Checking denominators, join keys, and information timing
+reveals errors that a successful execution can leave undetected.
 
 For retrieval and summarization, maintain the connection between a claim
 and its source. A citation should support the particular statement next
@@ -18049,12 +18065,13 @@ assortment, and price, then assess whether its predictions generalize to
 an actual offer.
 
 Use segmentation to organize meaningful differences in needs and
-behavior, and calculate customer value from contribution rather than
-revenue. Analyze reviews to identify the service attributes customers
-mention, checking annotation quality against human labels. Develop a
-prediction model using only information available at the targeting date.
-Its forecasts can help plan capacity, while a randomized offer evaluates
-incremental take-up, contribution, and retention.
+behavior, and calculate customer value from contribution after the
+relevant variable costs. Analyze reviews to identify the service
+attributes customers mention, checking annotation quality against human
+labels. Develop a prediction model using only information available at
+the targeting date. Its forecasts can help plan capacity, while a
+randomized offer evaluates incremental take-up, contribution, and
+retention.
 
 Finally, evaluate the recommendation component and the acquisition
 budget. Log exposure to recommended items, distinguish average from
@@ -18517,14 +18534,14 @@ interpretation \\
 \end{table}
 
 The checker below accepts the correct specification and rejects all four
-constructed mistakes. Its numerator and denominator checks use the saved
-monthly evidence, rather than the plotted value as its own reference.
-This is a narrow validator for declared fields. It does not interpret
-unrestricted natural-language titles, inspect pixels, or guarantee that
-a rendered chart is readable. Review the displayed title, labels,
-clipping, color contrast, and all interactive selections separately. A
-chart can pass these field checks while still misleading through an
-omitted subgroup or an unsupported narrative.
+constructed mistakes. Its numerator and denominator checks compare the
+chart specification with independently saved monthly evidence. This is a
+narrow validator for declared fields. It does not interpret unrestricted
+natural-language titles, inspect pixels, or guarantee that a rendered
+chart is readable. Review the displayed title, labels, clipping, color
+contrast, and all interactive selections separately. A chart can pass
+these field checks while still misleading through an omitted subgroup or
+an unsupported narrative.
 
 Ask a coding assistant to return the aggregate plotting table, units,
 eligibility rule, axis domains, and one hand-calculated plotted value
@@ -18636,7 +18653,7 @@ descriptive retention gap alone does not identify a structural
 substitution parameter.
 
 \hypertarget{M08-a-price-coefficient-with-a-known-interpretation}{%
-\subsection{A Price Coefficient With a Known
+\subsection{A Price Coefficient with a Known
 Interpretation}\label{M08-a-price-coefficient-with-a-known-interpretation}}
 
 \noindent To connect a subscription probability to price, consider an imposed
@@ -18748,8 +18765,8 @@ alternatives, monthly price units, subscription-history definition, and
 target coefficient before requesting a model. Require the code to retain
 zero-count provider-months, check whether prices vary after the fixed
 effects, and reject undefined log odds. A pseudocount changes the
-transformed outcome and should follow an explicit statistical model
-rather than conceal zero shares.
+transformed outcome. State the statistical model that justifies it and
+retain the original zero shares for inspection.
 
 For a simulation, compare the estimator with the generator line by line.
 The price appearing in a utility equation, the recorded price of a
@@ -18922,11 +18939,10 @@ customer.
 \noindent \noindent Suppose direct choice produces a renewal probability of 0.20.
 An alternative procedure produces 0.10, and another produces 0.60. Set
 firm margin to 11 dollars and customer loss from renewal to 10 dollars.
-These are synthetic inputs. Relative to direct choice, the high-renewal
-procedure raises expected firm profit by 4.40 dollars, reduces customer
-value by 4 dollars, and raises combined surplus by 0.40 dollars per
-eligible customer. Relative to the low-renewal procedure, it reduces
-customer value by 5 dollars.
+Relative to direct choice, the high-renewal procedure raises expected
+firm profit by 4.40 dollars, reduces customer value by 4 dollars, and
+raises combined surplus by 0.40 dollars per eligible customer. Relative
+to the low-renewal procedure, it reduces customer value by 5 dollars.
 
 \begin{figure}[htbp]
 \centering
@@ -19100,9 +19116,9 @@ can draw from them.
 As checked on November 2, 2026, the FTC's March 2026 negative-option
 announcement seeks comments on possible amendments and refers to the
 vacated 2024 rule. An advance notice does not itself adopt replacement
-obligations. A subscription analysis must examine operative federal and
-applicable state requirements rather than infer a current universal
-cancellation rule from the title of an earlier announcement. The
+obligations. A subscription analysis must identify the operative federal
+and applicable state requirements, their coverage, and their effective
+dates. The
 \href{https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option}{FTC
 notice} identifies the procedural status.
 
@@ -19295,7 +19311,7 @@ Comparisons}\label{M08-reproduce-the-cost-and-price-comparisons}}
 
 \noindent \noindent Run
 \texttt{python3\ 03\_Data\_and\_Code/AI\_Workflows/investment.py} with
-Python 3.10 or later. The program uses only imposed inputs. It writes a
+Python 3.10 or later. The specified time and pricing scenarios produce a
 CSV of total hours for zero through 24 uses and another with one row per
 pricing scenario. Hours and dollars remain separate units. Direct profit
 and utility balances verify the pricing endpoints, and the reuse
@@ -20061,10 +20077,11 @@ of thinking to claims about the soul as an object. The antinomies
 concern opposed arguments about the world considered as a completed
 totality. The ideal of pure reason concerns the supposed highest being
 and attempts to establish its existence. These are specific arguments
-within Kant's critical philosophy. Their marketing relevance comes from
-the practice of examining the transition from a valid use of reason to
-an unsupported claim, rather than from equating a customer segment,
-dataset, or company with one of these metaphysical objects.
+within Kant's critical philosophy. A marketing application can adopt the
+practice of examining how a justified inference becomes an unsupported
+claim. The soul, the world as a whole, and God retain their specific
+roles in Kant's argument; customer categories do not become those
+objects.
 
 \hypertarget{M09-antinomies-and-the-shared-premise}{%
 \subsection{Antinomies and the Shared
@@ -20255,9 +20272,9 @@ cancellation route so that the customer continues paying. Stating the
 maxim exposes the role of concealment in the business objective. Kant's
 universal-law formulation asks whether a maxim can be willed as a
 universal law, with distinctions between contradictions in conception
-and in willing. This is a test of a principle of action, rather than a
-vote on whether the practice is popular. {[}Kant, \emph{Groundwork},
-second section, Akademie 4:421{]}
+and in willing. The test concerns whether the principle governing the
+action can be universalized. Popular approval answers a different
+question. {[}Kant, \emph{Groundwork}, second section, Akademie 4:421{]}
 
 The moral difficulty becomes especially clear when a promise of easy
 cancellation is used to obtain enrollment while the firm intends to
@@ -20599,9 +20616,10 @@ influence on attention necessarily removes agency. Both can ignore the
 process by which the person understands and evaluates the
 recommendation. Useful information can change a preference through
 learning. A misleading representation can induce a choice the customer
-would reject after learning the relevant facts. The substantive
-difference concerns the information and the person's capacity to
-reflect, rather than whether behavior changed at all.
+would reject after learning the relevant facts. The ethical comparison
+therefore turns on the information supplied and the person's capacity to
+reflect on it. A change in behavior is compatible with both learning and
+deception.
 
 \begin{figure}[htbp]
 \centering
@@ -20619,12 +20637,12 @@ The recurring mHealth case makes the distinction concrete. A
 recommendation based on past food logging might help someone organize
 meals, maintain variety, or pursue a stated nutritional objective.
 Frequent logging can also reflect the design of reminders and the burden
-of recording. The logs record entries, rather than all consumption or
-independently verified health outcomes. A recommendation should
-therefore specify the customer's goal, the source and validity of
-nutritional information, and the ability to change or decline the goal.
-Health-related claims require appropriate domain evidence; engagement
-cannot supply it.
+of recording. The logs record entries. Unlogged consumption and
+independently verified health outcomes remain outside their measurement.
+A recommendation should therefore specify the customer's goal, the
+source and validity of nutritional information, and the ability to
+change or decline the goal. Health-related claims require appropriate
+domain evidence; engagement cannot supply it.
 
 An intervention can preserve customer control by making the
 recommendation's purpose intelligible, avoiding materially misleading
@@ -20664,9 +20682,9 @@ advertisement. That ad included higher- and lower-carbon activities and
 qualifying information about the investment mix. The ASA found that the
 overall environmental impression was not misleading and did not uphold
 the complaint. Its assessment applied the code wording relevant to the
-earlier complaint, as the ruling explains. Comparing the cases requires
-attention to the actual advertisements and applicable assessment, rather
-than treating the company name as a verdict.
+earlier complaint, as the ruling explains. The different outcomes follow
+from the content and overall impression of each advertisement under the
+applicable assessment.
 \href{https://www.asa.org.uk/rulings/shell-uk-ltd-g24-1248246-shell-uk-ltd.html}{ASA,
 Shell UK Ltd, April 9, 2025}
 
@@ -20776,9 +20794,9 @@ Book I, chapter XI of \emph{The Wealth of Nations}, he urges
 particularly careful scrutiny of proposals for commercial regulation
 made by merchants and manufacturers because their interests can diverge
 from the public's. This argument supports examining the incentives and
-evidence behind an interested party's proposal. Its original scope is
-proposals for laws and regulation, rather than an automatic verdict
-against every transaction or product.
+evidence behind an interested party's proposal. Smith's argument
+concerns proposals for laws and regulation; applying it to a transaction
+requires a separate assessment of the relevant incentives and evidence.
 \href{https://www.gutenberg.org/files/3300/3300-h/3300-h.htm}{Smith,
 Book I, chapter XI, concluding discussion}
 
@@ -20788,8 +20806,8 @@ should substantiate claims of customer benefit with evidence that can be
 examined independently. Customers should not have to infer safety or
 benefit from the firm's incentives, and an absence of complaints need
 not satisfy the burden when complaining is costly or discouraged. This
-is an ethical and institutional recommendation, rather than a statement
-of a universal legal burden of proof.
+ethical and institutional recommendation leaves legal burdens of proof
+to the applicable jurisdiction and proceeding.
 
 \hypertarget{M09-what-would-discharge-the-burden}{%
 \subsection{What Would Discharge the
@@ -20940,8 +20958,9 @@ examining them leaves the learner dependent on assertions. Reflection
 without engaging evidence can become speculation. A useful learning
 exercise requires the student to compare a generated argument with the
 source, inspect its premises, and revise a conclusion when the evidence
-warrants it. These are contemporary applications of the passages, rather
-than claims that Confucius anticipated automated marketing systems.
+warrants it. In this contemporary application, learning supplies the
+evidence and reflection examines whether the proposed conclusion follows
+from it.
 
 \hypertarget{M09-mencius-and-xunzi-on-cultivating-conduct}{%
 \subsection{Mencius and Xunzi on Cultivating
@@ -21025,8 +21044,9 @@ of reason. Grier's
 \href{https://plato.stanford.edu/entries/kant-metaphysics/}{account of
 Kant's critique of metaphysics} provides an interpretive guide. Read the
 \emph{Groundwork}, second section, separately for the universal-law and
-humanity formulations; these supply the ethical analysis rather than a
-conclusion derived from the Dialectic alone.
+humanity formulations; these introduce the ethical principles used to
+evaluate the action, alongside the Dialectic's examination of the
+inference.
 
 The \href{../01_Resources/15_Marketing_Dialectics/README.md}{categorized
 research collection} links the primary texts, scholarly interpretations,
@@ -21237,8 +21257,8 @@ inquiry}.
 The marketing decision is whether a proposed practice meets the
 applicable requirements and merits deployment on ethical grounds. A
 lawful price may still require a moral defense. A philosophical
-objection should also identify the conduct at issue rather than treating
-an algorithm's presence as a verdict. The
+objection must identify the conduct at issue, the affected person, and
+the principle that the conduct violates. The
 \href{../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md}{policy
 source record} records jurisdiction, status, coverage, and the November
 6, 2026 verification date.
@@ -21384,6 +21404,8 @@ identify the responsible action and evidence, preserving the distinction
 between a scholar's contribution, a firm's implementation, and an
 analyst's own normative inference.
 
+\Needspace{12\baselineskip}
+
 \Needspace{8\baselineskip}
 
 \hypertarget{M09-reproduce-profit-and-customer-incidence}{%
@@ -21466,12 +21488,12 @@ consequences depend on the stipulated distributions.
 \caption{Expected firm profit and customer surplus share the same dollar scale across three synthetic policies. Group-specific optimization increases profit and lowers aggregate customer surplus despite benefiting a majority. Capped discounts increase both measures relative to the uniform benchmark.}\label{fig:M09_pricing_distribution}
 \end{figure}
 
-The monetary comparison does not compute a moral verdict. Accurate
-disclosure and permissible data use would still require evaluation in an
-application. The example demonstrates why neither personalization nor a
-majority-gain statistic determines the ethical conclusion. It also makes
-the benchmark explicit: replacing the common-price optimum with an
-arbitrary high price would change the apparent gains from discounts.
+Personalization and a majority-gain statistic leave truthful disclosure
+and permissible data use unresolved. Those requirements enter the
+ethical evaluation alongside the distribution of monetary gains and
+losses. The common-price optimum supplies the economic benchmark:
+replacing it with an arbitrary high price would change the apparent
+gains from discounts.
 
 \hypertarget{M09-python-calculation-and-published-aggregates}{%
 \subsection{Python Calculation and Published
@@ -21649,9 +21671,9 @@ for persons requires examining how the practice treats the customer's
 judgment, including safeguards that remain binding when they lower the
 firm's measured payoff. Confucian concerns with trustworthiness and
 responsible conduct likewise direct attention to how the offer is
-presented and how employees respond to a reasoned objection. Neither
-philosophical perspective supplies the numerical complaint threshold
-used in the exercise.
+presented and how employees respond to a reasoned objection. The
+numerical complaint threshold remains a hypothetical operating
+constraint whose justification depends on the customer consequences.
 
 A defensible recommendation distinguishes the estimated response from
 the reasons for choosing an objective. State who bears the costs of a
@@ -21683,9 +21705,9 @@ treats affected people as ends. Confucian benevolence and
 trustworthiness direct attention to responsible service, reliable
 representations, and the effects of managerial conduct on relationships.
 These perspectives motivate scrutiny of whom a service decision burdens.
-Neither supplies a universal five-minute threshold or requires choosing
-the action with the highest coverage percentage regardless of other
-obligations and consequences.
+The five-minute threshold and the priority given to coverage require a
+separate justification based on customers' needs, competing obligations,
+and the consequences of the available actions.
 
 A defensible assessment states the commercial rationale, the affected
 population, the feasible alternatives, and the evidence that could
@@ -21721,23 +21743,24 @@ activities when they receive little weight in the evaluation population.
 The synthetic service comparison in
 \href{M07_Prediction_and_Machine_Learning.md}{Section 7.34} holds the
 request roster fixed and produces equal aggregate success alongside
-worse cancellation outcomes. The example identifies a weakness in
-aggregate evidence. It does not establish a firm's intention or turn
-every conditional failure into proof of manipulation. A Kantian
-assessment examines the maxim governing the service: whether the firm
-preserves customers' ability to act on a considered decision, including
-when doing so reduces retention. A profitable result does not by itself
-justify restricting that choice.
+worse cancellation outcomes. Equal aggregate success can therefore
+conceal a failure in the activity through which customers exercise
+withdrawal. Assessing manipulation additionally requires evidence about
+the service design and the firm's conduct. A Kantian assessment examines
+the maxim governing the service: whether the firm preserves customers'
+ability to act on a considered decision, including when doing so reduces
+retention. A profitable result does not by itself justify restricting
+that choice.
 
 Confucian trustworthiness connects a firm's assurances with its conduct
 when customers seek to leave or contest an answer. Responsible conduct
 requires attending to the consequences of the service and responding to
 justified complaints. These considerations motivate evidence about
 access, completed actions, explanations, and opportunities for
-correction. They do not supply a universal numerical success threshold.
-A defensible recommendation states the conduct expected of the firm, the
-evidence supporting its assurance, and the observed failures that would
-require a change.
+correction. The acceptable performance standard depends on the
+obligations at issue. A defensible recommendation states the conduct
+expected of the firm, the evidence supporting its assurance, and the
+observed failures that would require a change.
 
 \hypertarget{M09-synthetic-personas-and-consumer-representation}{%
 \subsection{Synthetic Personas and Consumer
@@ -21754,13 +21777,13 @@ aggregate ratings alone cannot supply.
 The concept-screening comparison in Section 4.23 preserves the overall
 response distribution while reversing which products appear most
 attractive. The anchor comparison in Section 5.23 changes the preferred
-concept while retaining the same authored responses. These constructions
-show how the firm's measurement choices enter its account of consumer
-preferences. They do not establish a deceptive intention or imply that
-every use of synthetic research disregards customers. A Kantian
-assessment examines whether the practice respects affected people's
-purposes and opportunities to exercise judgment, including when their
-responses challenge the commercially favored interpretation.
+concept while retaining the same authored responses. The firm's
+measurement choices can therefore change which product it describes as
+preferred. Whether the practice misrepresents customers depends on the
+claims the firm makes and the evidence supporting those claims. A
+Kantian assessment examines whether the practice respects affected
+people's purposes and opportunities to exercise judgment, including when
+their responses challenge the commercially favored interpretation.
 
 Confucian trustworthiness requires a truthful account of whose judgments
 the evidence represents. Responsible conduct includes listening to
@@ -21769,10 +21792,10 @@ accounts expose a material error. A firm could use generated reactions
 to improve the questions it asks, while retaining opportunities for
 actual customers to express preferences, explain conditions, and contest
 consequences. The justified claim should distinguish a model's simulated
-response, a person's stated preference, and observed behavior. Neither
-philosophical perspective assigns a numerical validation threshold or
-turns accurate prediction into permission to substitute generated
-consent for a person's decision.
+response, a person's stated preference, and observed behavior. Numerical
+validation assesses the specified prediction task. Consent requires the
+person's authorization, including when a generated response predicts the
+person's behavior accurately.
 
 \Needspace{8\baselineskip}
 

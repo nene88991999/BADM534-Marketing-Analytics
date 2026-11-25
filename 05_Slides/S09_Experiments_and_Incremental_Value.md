@@ -146,7 +146,7 @@ If treatment changes basket size, returns, or margins, purchase incidence alone 
 
 Source: M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 11: Power Begins With the Useful Effect
+## Slide 11: Power Begins with the Useful Effect
 
 - Choose the smallest effect that could change the action.
 - Use the expected outcome variance and assignment unit.
@@ -298,7 +298,7 @@ Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?
-- Which guardrail outcome could reverse the rollout decision?
+- Which customer outcome could reverse the rollout decision?
 
 Contribution uncertainty remains consequential even with a positive purchase effect. Returns, satisfaction, and service burden can alter the decision. The outcome set should reflect the intervention.
 

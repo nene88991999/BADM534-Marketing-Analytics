@@ -12,7 +12,7 @@ Write an annotation codebook before producing labels at scale. It should define 
 
 Metadata can be informative and potentially misleading. Ratings may help validate a sentiment measure but can also leak the intended label into a prediction exercise. Product category, language, channel, and date can reveal domain differences. Remove or protect personal information before sending text to an external service, and use approved data access. A scraped review is not automatically free of personal or contractual restrictions.
 
-## 5.2 Representing Language With Counts and Weights
+## 5.2 Representing Language with Counts and Weights
 
 A bag-of-words representation counts tokens while largely ignoring their order. An $n$-gram representation retains local sequences, so “not good” can differ from “good.” Tokenization, case normalization, punctuation, and stop-word rules change the resulting features. Removing negation words can destroy information needed for sentiment. Removing product names may help focus on attributes or may erase the very object whose complaints the manager needs to identify.
 
@@ -22,7 +22,7 @@ $$
 \operatorname{tfidf}_{wd}=\operatorname{tf}_{wd}\log\left(\frac{N}{\operatorname{df}_w}\right),
 $$
 
-where $\operatorname{tf}_{wd}$ is the frequency of word $w$ in document $d$, $N$ is the number of documents, and $\operatorname{df}_w$ is the number of documents containing the word. Implementations vary in smoothing, normalization, and term-frequency definitions. Record the convention rather than assuming a library's output matches this exact expression.
+where $\operatorname{tf}_{wd}$ is the frequency of word $w$ in document $d$, $N$ is the number of documents, and $\operatorname{df}_w$ is the number of documents containing the word. Implementations vary in smoothing, normalization, and term-frequency definitions. Record the convention and check how it changes the weights relative to this expression.
 
 If “delivery” appears in two of three documents, its inverse-document-frequency term under this convention is $\log(3/2)\approx0.405$. A word appearing in every document receives zero weight. That weighting can help discriminate documents, but a common term may still be substantively important. Statistical distinctiveness and managerial importance are different criteria.
 
@@ -444,7 +444,7 @@ if __name__ == '__main__':
     main()
 ```
 
-### 5.14.3 A Match Is a Retrieval Decision
+### 5.14.3 A Match is a Retrieval Decision
 
 \noindent Consider seven purposeful cases from the supplied excerpts. Amazon's October 2024 statement concerns displaying current prices and deals. Eventbrite's August 2023 statement concerns advertising cost per click. Wendy's February 2024 statement concerns future tests. Kroger's September 2025 statement concerns shelf-label infrastructure, while its September 2022 statement describes personalized promotional investment. Delta's July 2025 statement describes AI-enhanced pricing; a January 2025 question about cabin pricing is recorded as management prepared remarks and warrants speaker review. Each case has an original match ID and source URL in [the interpretation table](../../03_Data_and_Code/Earnings_Calls/data/interpretation_cases.csv).
 
@@ -505,7 +505,7 @@ if __name__ == '__main__':
 
 ### 5.14.4 AI-Assisted Interpretation and Review Effort
 
-\noindent Ask an assistant to propose a schema before requesting labels. Require the match ID, priced object, timing, type of speaker claim, evidence scope, and an explicit unknown value when context is insufficient. Compare its output with the recorded cases and require source-grounded explanations for disagreements. An apparent question in a management record should trigger inspection of the original turn rather than an automatic change based on punctuation.
+\noindent Ask an assistant to propose a schema before requesting labels. Require the match ID, priced object, timing, type of speaker claim, evidence scope, and an explicit unknown value when context is insufficient. Compare its output with the recorded cases and require source-grounded explanations for disagreements. Inspect the original turn when a management record appears to contain a question. Punctuation alone can misclassify a quoted question or a rhetorical statement.
 
 For empirical evaluation, draw passages with known selection probabilities from both retrieved and nonretrieved text, obtain independent human labels, adjudicate disagreements, and reserve firms or later calls for evaluation. Freeze prompts and dictionary choices before using the held-out sample. If sampling oversamples hits, use the sampling probabilities when estimating population performance. Repeated corporate wording makes random sentence splits especially vulnerable to leakage.
 
@@ -537,7 +537,7 @@ For an AI-assisted review, provide the source text and require a passage support
 
 \noindent A literature review can ask which universities appear together on papers and whether their shared research covers different mechanisms. The observation units and similarity measure differ from the mechanism clustering in Section 4.17. Universities are the network nodes, while shared publication affiliations create links. A link can arise through separate coauthors or one author's multiple affiliations. It does not establish institutional endorsement of a research implication or identify a university's causal influence on an author.
 
-The eligible journal census contains 824 records. Work-specific OpenAlex metadata, with one affiliation correction verified against a retrieved published article, identifies 424 higher-education institutions across 745 papers. Seventy-nine papers lack an identified education affiliation. The metadata category includes universities, colleges, and independent business schools. Names are resolved through institution IDs and ROR links; distinct campuses and schools remain separate when their identifiers differ. The source attaches affiliations to works rather than substituting each author's current employer. Automated matching and differences across publication versions can still create errors.
+The eligible journal census contains 824 records. Work-specific OpenAlex metadata, with one affiliation correction verified against a retrieved published article, identifies 424 higher-education institutions across 745 papers. Seventy-nine papers lack an identified education affiliation. The metadata category includes universities, colleges, and independent business schools. Names are resolved through institution IDs and ROR links; distinct campuses and schools remain separate when their identifiers differ. Affiliations refer to the authors' institutions recorded for each work, which can differ from their current employers. Automated matching and differences across publication versions can still create errors.
 
 For paper $p$, let $U_p$ be its set of distinct universities and let $k_p$ be the number of institutions in that set. A paper with at least two universities contributes total edge weight one, divided across all of its university pairs:
 
@@ -957,7 +957,7 @@ $$
 
 The minimum over an empty set is infinity. Each person contributes once even if several stores are reachable. The denominator includes origins with no reachable store. Travel times, the store menu, and population weights define the measured comparison; the calculation does not specify which store a customer prefers or chooses.
 
-In the synthetic network below, two banks connect only at the northern crossing. Vertical edges take four minutes and the crossing takes two. The fixed population totals 800, including 150 at disconnected origin X. Stores B and C are available, A and D are unavailable, and U's status is unknown. Origin populations are W0: 100, W1: 300, W2: 100, E0: 50, E1: 50, E2: 50, and X: 150. These are imposed teaching inputs. Store locations coincide with W0, E0, W2, E2, and X, respectively. The threshold is five minutes.
+In the synthetic network below, two banks connect only at the northern crossing. Vertical edges take four minutes and the crossing takes two. The fixed population totals 800, including 150 at disconnected origin X. Stores B and C are available, A and D are unavailable, and U's status is unknown. Origin populations are W0: 100, W1: 300, W2: 100, E0: 50, E1: 50, E2: 50, and X: 150. Store locations coincide with W0, E0, W2, E2, and X, respectively. The threshold is five minutes.
 
 ![A synthetic river crossing separates geographic proximity from network access; X remains in the population despite its disconnected location.](../figures/M05_access_network.png)
 
@@ -1099,7 +1099,7 @@ if __name__ == "__main__":
 
 Each observed restaurant location is an equally weighted origin. Candidate destinations are the other recorded available restaurants in the selected box. The origin restaurant is excluded even when its status is available, so the quantity measures access to an alternative. No population or customer-demand weights are inferred from these four origins. The frozen [input record](../../03_Data_and_Code/Retail_Accessibility/data/manifest.json) retains the archive commit, source hashes, selected records, and street-extract date.
 
-The network uses OpenStreetMap highway ways from a separate working box that contains the four selected origins. Edge lengths are spherical geographical distances in kilometers, and selected links are treated as undirected. The code excludes specified road classes, explicitly prohibited foot access, and private access without an explicit allowed foot tag. Every origin connects to its nearest selected network node by a straight segment; these connectors range from 11.34 to 20.64 meters and contribute to path length. All four snapped origins lie in the same connected component. Directional restrictions, crossing delays, entrance access, and the feasibility of the straight connectors are unverified. These conventions define a network-distance illustration, rather than a pedestrian routing service.
+The network uses OpenStreetMap highway ways from a separate working box that contains the four selected origins. Edge lengths are spherical geographical distances in kilometers, and selected links are treated as undirected. The code excludes specified road classes, explicitly prohibited foot access, and private access without an explicit allowed foot tag. Every origin connects to its nearest selected network node by a straight segment; these connectors range from 11.34 to 20.64 meters and contribute to path length. All four snapped origins lie in the same connected component. Directional restrictions, crossing delays, entrance access, and the feasibility of the straight connectors are unverified. The resulting distances describe the selected network and connector assumptions. Practical pedestrian routing also requires the unverified access and crossing information.
 
 The street extract is dated November 18, 2026, after the observed availability snapshot. Results hold that later network fixed and do not reconstruct historical street conditions. Restaurants outside the selection box are excluded. Enlarging the candidate menu or changing the network can alter the nearest alternative.
 

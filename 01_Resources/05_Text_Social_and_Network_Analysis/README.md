@@ -38,7 +38,7 @@ Text representation, tokenization, classification, and linguistic structure.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
 
-### X02. scikit-learn: Text Feature Extraction
+### X02. Scikit-Learn: Text Feature Extraction
 
 **Source:** scikit-learn contributors. [Open Resource](https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction). **Priority:** Core. **Syllabus:** M5.
 
