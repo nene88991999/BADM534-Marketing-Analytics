@@ -1081,3 +1081,65 @@ A useful prompt asks an assistant to trace each number to a specific evidence fi
 A local writing application can place sources, code, and a PDF preview in adjacent panes. That arrangement can facilitate comparison, but the quality of the completed analysis remains an empirical question. Measure total time through review and correction, include unresolved tasks in the denominator, and evaluate recommendations against criteria fixed before inspecting their presentation. The time comparison in Section 8.6 applies to the completed workflow. A convenient interface alone establishes no learning or productivity gain.
 
 Publication introduces another distinction. The reviewed [Suzuri synchronization code](https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/suzuri_sync/src/suzuri_sync.rs) can stage, commit, and push changes after the user enables synchronization. Its [citation insertion code](https://github.com/harrywang/suzuri/blob/88f58aae544bdc60d5068e7b5d40a05ca7f1a564/crates/citations/src/insert_citation.rs) can copy a PDF attachment into the project. Reviewing the proposed file list therefore addresses a different question from accepting a result. A versioned repository should retain the permitted evidence supporting the recommendation, with the exact code and inputs needed to reproduce it. The full executable comparison and [optional practice](../../07_Labs/Reproducible_Recommendations/README.md) preserve these separate decisions.
+
+## 8.26 The Cost of a Valid Completed Analysis
+
+\noindent A manager choosing an AI workflow pays for unsuccessful attempts as well as accepted outputs. A lower model charge can be outweighed by analyst review and correction. The relevant comparison therefore follows the assigned workload through its final checks. Preserve unresolved tasks in the report so that a low average cost does not conceal a growing backlog.
+
+For a fixed set of assigned tasks, let $M$ denote model and execution charges in dollars, $t_r$ and $t_c$ denote total analyst review and correction minutes, $w$ denote dollars per analyst minute, and $V>0$ denote the number of valid final outputs. The cost per valid output is
+
+$$
+K=\frac{M+w(t_r+t_c)}{V}.
+$$
+
+All attempts contribute their incurred costs to the numerator, including those that end without a valid output. The denominator counts outputs that meet the stated analytical requirements after any allowed correction. With no valid outputs, the ratio is undefined and the total incurred cost remains reportable. Elapsed completion time is a separate quantity because some work can occur concurrently. Consequential customer losses also require their own evaluation; the accounting ratio does not measure them.
+
+Consider two hypothetical workflows, each assigned 100 tasks, with analyst time priced at $60 per hour. Set execution charges outside the model API to zero for this illustration. The basic workflow incurs $10 in API charges, 240 review minutes, and 100 correction minutes, ending with 80 valid outputs. The checked workflow incurs $20 in API charges, 150 review minutes, and 30 correction minutes, ending with 95 valid outputs. Total costs are $350 and $200, respectively. Their costs per valid output are $4.375 and approximately $2.105. Under these inputs, greater model spending accompanies lower total cost because analyst effort falls. The figures are invented accounting inputs, separate from the observed mHealth logging counts and any measured AI experiment.
+
+The model comparison in §7.41 would collect these quantities for each assigned run. Actual charges, measured review effort, and correction effort replace the illustrative values. Where costs are missing, retain that status rather than assigning zero. Compare whole configurations after a change: adding a checker can increase computation, change correction behavior, and reduce or increase human review. Which effect dominates depends on the task, checker quality, and available model.
+
+### 8.26.1 Reproduce the Hypothetical Cost Comparison
+
+\noindent The complete calculation retains assigned-task counts, valid outputs, analyst minutes, and dollar costs. Vary the wage or correction time to identify which inputs support the ranking.
+
+The output labels the inputs as hypothetical and records the $60-per-hour analyst rate. Both workflows include their failed attempts in the stated workload and total effort.
+
+Python source: [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py). From the repository root:
+
+```sh
+cd 03_Data_and_Code/Agent_Workflows
+python3 workflow_costs.py
+```
+
+```python
+"""An explicitly hypothetical comparison over 100 assigned analysis tasks."""
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def calculate():
+    wage_per_minute = 60 / 60  # An assumed analyst cost of $60 per hour.
+    cases = [
+        {"workflow": "Basic", "assigned": 100, "valid": 80, "api_dollars": 10,
+         "review_minutes": 240, "correction_minutes": 100},
+        {"workflow": "Checked", "assigned": 100, "valid": 95, "api_dollars": 20,
+         "review_minutes": 150, "correction_minutes": 30},
+    ]
+    for row in cases:
+        row["total_dollars"] = row["api_dollars"] + wage_per_minute * (
+            row["review_minutes"] + row["correction_minutes"])
+        row["valid_rate"] = row["valid"] / row["assigned"]
+        row["dollars_per_valid_task"] = row["total_dollars"] / row["valid"]
+    return {"scope": "Hypothetical inputs; no observed model performance or labor savings",
+            "analyst_dollars_per_hour": 60, "cases": cases}
+
+
+if __name__ == "__main__":
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    result = calculate()
+    (output / "hypothetical_costs.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+```

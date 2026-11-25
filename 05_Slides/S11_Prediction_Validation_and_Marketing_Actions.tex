@@ -714,6 +714,52 @@ M5 §5.20 and M7 §7.26. \url{../03_Data_and_Code/AI_Evidence_and_Evaluation/eva
 
 M5 §5.20 and M7 §7.26. \url{../07_Labs/AI_Evidence_and_Evaluation/README.md;} \url{https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/}}
 \end{frame}
+\begin{frame}{A Correct Total Can Misassign Activity}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_workflow_checker.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic users. The same aggregate selects a different person for review.\par}
+\note{The customer decision depends on which user receives each value. Matching the overall mean therefore leaves a consequential error undetected. The course grader compares every roster user and denominator. Independent tests include this counterexample, missing users, duplicate keys, invalid dates, and nonfinite outputs. An independently written SQL query checks the actual mHealth task results.
+
+Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
+\end{frame}
+\begin{frame}{Outputs, Actions, and the Checker}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Output: complete and accurate customer counts.
+\item Actions: permitted files, commands, revisions, and resource use.
+\item Checker: detection of decision-relevant errors.
+\end{slidebullets}
+\vfill
+\note{These judgments can disagree. An accurate table may follow an unauthorized input change. A weak checker may accept an invalid table. Record observable tool actions and state changes; a generated explanation does not reveal the model’s internal reasoning. The provided CSV checker executes no candidate code and supplies no execution sandbox.
+
+Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
+\end{frame}
+\begin{frame}{Development and Final Evaluation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Use July to revise prompts and programs.
+\item Keep August answers outside the model workspace.
+\item Evaluate the frozen program on August.
+\item Report validity, failures, analyst effort, and total cost.
+\end{slidebullets}
+\vfill
+\note{The expected answers are public teaching files. A measured exercise needs an explicitly restricted task workspace, not a folder label. Fresh conversations reduce carryover, and five repeated runs per configuration describe variability on this task. Full AI comparisons are optional ungraded practice; the released numerical results are local reference calculations and separately labeled hypothetical costs.
+
+Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
+\end{frame}
 \begin{frame}{An Omitted Feature Bias}
 \usebeamercolor[fg]{normal text}
 \vfill

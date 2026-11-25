@@ -24,6 +24,7 @@ Session 09. M6. 170 minutes.
 - [AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)
 - [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
+- [Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -234,7 +235,18 @@ Run factorial.py to reproduce both paths to the joint change using exact rationa
 
 Source: M6 §6.19. ../03_Data_and_Code/AI_Workflows/factorial.py
 
-## Slide 18: Coding Exercise: An Experiment Plan
+## Slide 18: A Fixed Model and Four Workflows
+
+- Cross explicit information with independent development feedback.
+- Reset each run and randomize cell order within repetitions.
+- Freeze the program before evaluating August.
+- Count failed and missing outputs among assigned attempts.
+
+M6 §6.29 defines q_cf as the probability of a valid output for a fixed task and model configuration. The interaction is (q11-q01)-(q10-q00). Its sign describes complementarity for that outcome. Repeated runs on one task measure conditional variation; generalization requires additional task families. A trace suggests a diagnosis, while a controlled intervention identifies the effect of a component.
+
+Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+
+## Slide 19: Coding Exercise: An Experiment Plan
 
 - Compute the factorial contrasts alongside the email effect.
 - Change contribution, delivery cost, and the target effect.
@@ -244,7 +256,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth ex
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 19: Interference and Assignment Units
+## Slide 20: Interference and Assignment Units
 
 - Customers can share offers or affect one another.
 - Stores can divert purchases from nearby locations.
@@ -254,7 +266,7 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 20: A Treatment Arm Needs a Defensible Design
+## Slide 21: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -264,7 +276,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 21: Follow Purchases Through Returns
+## Slide 22: Follow Purchases Through Returns
 
 - Pressure and self-assurance can produce different purchase and return patterns.
 - Prespecify the eligible population and both outcome horizons.
@@ -274,7 +286,7 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 22: From Experiments to Generative Decisions
+## Slide 23: From Experiments to Generative Decisions
 
 - Within-campaign comparisons can supervise a model that proposes new messages.
 - The learned ranking inherits the outcome used to define success.
@@ -284,7 +296,7 @@ Angelopoulos, Lee, and Misra train a language-model improver using historical ex
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 23: Human Review and Customer Evidence
+## Slide 24: Human Review and Customer Evidence
 
 - Check factual claims and consequential terms before deployment.
 - Record customer understanding and the ability to refuse.
@@ -294,7 +306,7 @@ Causal Alignment includes human selection and acceptability checks. Their existe
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 24: Experiment Discussion
+## Slide 25: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

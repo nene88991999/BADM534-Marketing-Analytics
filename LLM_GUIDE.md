@@ -45,3 +45,7 @@ A program can run successfully and still answer the wrong question. Inspect a fe
 For questions about cancellation records, begin with [the dictionary and executed example](03_Data_and_Code/Ontology_and_Evidence/README.md), then M1 §1.16 and M2 §2.25. Keep raw rows, events, requests, subscriptions, and unknown states distinct. A missing confirmation creates a review condition within the available records.
 
 For feature-quality questions, begin with [the representation example](03_Data_and_Code/Representation_Evaluation/README.md), then M7 §§7.39–7.40. Preserve coordinate scales and denominators, and distinguish reconstruction, task usefulness, matching stability, and causal meaning. No learned model or empirical customer outcome was produced by these synthetic calculations. Optional labs do not establish assignment requirements.
+
+## Context and Evidence for Coding Tasks
+
+Supply the task definition, relevant data dictionary, input versions, and required output before expanding the context. Record durable progress with links to actual files and checks. Ask the assistant to separate a proposed operation, an executed operation, and its verified result. [The workflow exercise](03_Data_and_Code/Agent_Workflows/README.md) distinguishes output correctness, permitted actions, and checker validity. During a measured comparison, keep final evaluation answers outside the model workspace and preserve every assigned attempt, including failures.

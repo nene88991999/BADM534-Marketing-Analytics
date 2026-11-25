@@ -45,6 +45,7 @@ Session 11. M7. 170 minutes.
 - [Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)
 - [Representation Evaluation: Data and Code](../03_Data_and_Code/Representation_Evaluation/README.md)
 - [Representation Evaluation: Optional Practice](../07_Labs/Representation_Evaluation/README.md)
+- [Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -614,7 +615,40 @@ The public practice labels are disclosed. To estimate generalization, collect ne
 
 Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
 
-## Slide 47: An Omitted Feature Bias
+## Slide 47: A Correct Total Can Misassign Activity
+
+Synthetic users. The same aggregate selects a different person for review.
+
+**Figure description:** Correct counts for A, B, C are 1, 1, 0. Reassigned counts are 0, 1, 1. Both total two days, while zero-log review changes from C to A.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M07_workflow_checker.tex)
+
+The customer decision depends on which user receives each value. Matching the overall mean therefore leaves a consequential error undetected. The course grader compares every roster user and denominator. Independent tests include this counterexample, missing users, duplicate keys, invalid dates, and nonfinite outputs. An independently written SQL query checks the actual mHealth task results.
+
+Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+
+## Slide 48: Outputs, Actions, and the Checker
+
+- Output: complete and accurate customer counts.
+- Actions: permitted files, commands, revisions, and resource use.
+- Checker: detection of decision-relevant errors.
+
+These judgments can disagree. An accurate table may follow an unauthorized input change. A weak checker may accept an invalid table. Record observable tool actions and state changes; a generated explanation does not reveal the model’s internal reasoning. The provided CSV checker executes no candidate code and supplies no execution sandbox.
+
+Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+
+## Slide 49: Development and Final Evaluation
+
+- Use July to revise prompts and programs.
+- Keep August answers outside the model workspace.
+- Evaluate the frozen program on August.
+- Report validity, failures, analyst effort, and total cost.
+
+The expected answers are public teaching files. A measured exercise needs an explicitly restricted task workspace, not a folder label. Fresh conversations reduce carryover, and five repeated runs per configuration describe variability on this task. Full AI comparisons are optional ungraded practice; the released numerical results are local reference calculations and separately labeled hypothetical costs.
+
+Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+
+## Slide 50: An Omitted Feature Bias
 
 - The allocation assumes that auxiliary feature bias equals zero.
 - Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.
@@ -624,7 +658,7 @@ These are analytic moments in the invented four-profile design. Both source vari
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 48: Sampling Variance and Persistent Bias
+## Slide 51: Sampling Variance and Persistent Bias
 
 Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.
 
@@ -636,7 +670,7 @@ At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias M
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 49: Human Validation of the Bias Model
+## Slide 52: Human Validation of the Bias Model
 
 - A bias feature excluded by a significance cutoff may still matter for the decision.
 - Reserve human respondents and concepts from model and feature selection.
@@ -646,7 +680,7 @@ In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 50: Coding Exercise: A Forecast Evaluation
+## Slide 53: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -656,7 +690,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 51: Targeting and Delivered Opportunities
+## Slide 54: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -666,7 +700,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 52: Prediction Discussion
+## Slide 55: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

@@ -2825,3 +2825,91 @@ if __name__ == "__main__":
     (output / "decompositions.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 ```
+
+## 7.41 Evaluate Outputs, Actions, and the Checker
+
+\noindent An outreach decision can be wrong even when its report reproduces the overall activity total. Consider three invented users A, B, and C observed over July's 31 days. Their correct logged-day counts are $(1,1,0)$. A second output reports $(0,1,1)$. Both report two recorded days out of 93 possible user-days, but they identify different customers as having no recorded activity. An aggregate check accepts both. A customer-level check detects the reassignment that changes the outreach list.
+
+![Two invented three-user outputs each total two logged days. The correct counts select C for zero-log review; the reassigned counts select A. Matching the aggregate does not preserve the customer decision.](../figures/M07_workflow_checker.png)
+
+The grader must therefore check the intended observation unit. It requires each roster user exactly once, checks the calendar-day denominator, and compares each customer's logged days and rate with a separately verified reference. Missing users, duplicate rows, nonfinite values, or a numerically wrong rate prevent the output from passing. A test that merely reruns the candidate's own aggregation can reproduce its error. Small cases with known answers and an independent SQL calculation provide additional evidence about the reference.
+
+Li and coauthors' [survey](../../01_Resources/35_Agent_Workflow_Evaluation/README.md), §8, distinguishes the final outcome, the sequence of actions, and the evaluator. For this task, the outcome is a complete, accurate logging table. The action record establishes which files changed, whether the allowed scope was respected, how often the program retried, and what resources were used. Evaluator assessment asks whether the checker detects errors that would change the decision. Each judgment can differ from the others. A correct final table can follow an unauthorized input change, and an overly narrow checker can accept an incorrect table.
+
+### 7.41.1 Independent Evaluation After Development
+
+\noindent The four configurations in §1.17 use July for development and August for evaluation. Freeze prompts, generated code, information selection, correction limits, and checker versions before scoring August. A correction based on August's expected answer turns that task into development material. Further claims would then need fresh evaluation cases. The published reference is useful for learning; a measured comparison must explicitly keep it outside the assistant's accessible task workspace.
+
+Report valid outputs over all assigned attempts, user-level discrepancies, missing files, timeouts, elapsed time, and human effort. Repeated runs of a fixed task reveal variation conditional on that task. They supply no independent evidence about other task families. Changing the model, dictionary, tool interface, or checker changes the evaluated configuration and calls for renewed comparison. The local calculations below provide reference values and checker tests; they contain no measured performance of the four AI configurations.
+
+### 7.41.2 Reproduce the CSV Assessment
+
+\noindent The CSV grader reads a proposed output and an existing reference table. It executes no submitted program. The command below scores the known development reference. Substitute a candidate CSV to inspect its discrepancies. An unsuccessful assessment returns exit code 1 so that a surrounding workflow can distinguish a rejected output from a completed valid calculation.
+
+The required columns are `user_id`, `logged_days`, `window_days`, and `logging_rate`. Numerical comparisons use an absolute tolerance of $10^{-10}$. The [independent tests](../../03_Data_and_Code/Agent_Workflows/test_workflows.py) include equal-total misassignment, omitted users, duplicate keys, invalid dates, nonfinite values, and a SQL calculation on both actual task inputs.
+
+Python source: [evaluate_submission.py](../../03_Data_and_Code/Agent_Workflows/evaluate_submission.py). From the repository root:
+
+```sh
+cd 03_Data_and_Code/Agent_Workflows
+python3 evaluate_submission.py results/development_reference.csv
+```
+
+```python
+"""Grade a CSV without executing submitted code or making model calls."""
+import argparse
+import csv
+import json
+import math
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def grade(candidate, reference):
+    expected = {r["user_id"]: r for r in reference}
+    found, errors = {}, []
+    for row in candidate:
+        user = row.get("user_id", "")
+        if user in found:
+            errors.append(f"duplicate user: {user}")
+        found[user] = row
+    missing, extra = sorted(set(expected) - set(found)), sorted(set(found) - set(expected))
+    correct = 0
+    for user in sorted(set(expected) & set(found)):
+        try:
+            actual = [float(found[user][k]) for k in ["logged_days", "window_days", "logging_rate"]]
+            target = [float(expected[user][k]) for k in ["logged_days", "window_days", "logging_rate"]]
+            ok = all(math.isfinite(a) and math.isclose(a, b, rel_tol=0, abs_tol=1e-10)
+                     for a, b in zip(actual, target))
+            correct += ok
+        except (KeyError, ValueError, TypeError):
+            errors.append(f"invalid values: {user}")
+    valid = not missing and not extra and not errors and correct == len(expected)
+    return {"valid_output": valid, "correct_users": correct, "roster_users": len(expected),
+            "missing_users": missing, "extra_users": extra, "format_errors": errors}
+
+
+def read_rows(path):
+    with path.open(newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("candidate", type=Path)
+    parser.add_argument("--task", choices=["development", "evaluation"], default="development")
+    args = parser.parse_args()
+    reference = read_rows(HERE / "results" / f"{args.task}_reference.csv")
+    try:
+        candidate = read_rows(args.candidate)
+        result = grade(candidate, reference)
+    except (OSError, UnicodeError, csv.Error) as exc:
+        result = {"valid_output": False, "failure": type(exc).__name__, "roster_users": len(reference)}
+    print(json.dumps(result, indent=2))
+    raise SystemExit(0 if result["valid_output"] else 1)
+
+
+if __name__ == "__main__":
+    main()
+```

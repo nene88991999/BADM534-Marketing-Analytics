@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 91 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 104 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -153,3 +153,7 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 ## Definitions and Representation Quality
 
 [Cancellation evidence](03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
+
+## Agent Workflow Evaluation
+
+[The workflow case](03_Data_and_Code/Agent_Workflows/README.md) connects M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. A prior-period mHealth roster supplies observed logging counts; separate synthetic checks expose grading errors. Four complete programs, two TikZ figures, and an optional experiment protocol distinguish measured records from hypothetical costs and unexecuted model comparisons. Sessions 1, 9, 11, and 14 use existing discussion time.

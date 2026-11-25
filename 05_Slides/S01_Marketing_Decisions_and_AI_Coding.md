@@ -23,6 +23,7 @@ Session 01. M1. 170 minutes.
 - [LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)
 - [Reproducible recommendation and optional practice](../07_Labs/Reproducible_Recommendations/README.md)
 - [Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)
+- [Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -191,7 +192,30 @@ These checks test properties that can fail even when code runs. Repeating the pr
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 16: mHealth Records
+## Slide 16: Information and Development Feedback
+
+Hold the model and task fixed; compare the four complete workflows.
+
+**Figure description:** A two-by-two matrix crosses a structured data dictionary with independent development checks. No performance values are assigned to the cells.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M01_workflow_design.tex)
+
+All cells receive the same core measurement request and output schema. Explicit information organizes the definitions, while independent feedback exposes development discrepancies and permits bounded correction. Common tools, permissions, and resource caps keep the comparison interpretable. The possible interaction is measured on a frozen evaluation task. This diagram specifies an experiment and contains no observed model performance.
+
+Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+
+## Slide 17: The Logging Denominator
+
+- Eligibility uses January–June records within the recurring mHealth cohort.
+- 358 users contribute 11,098 possible July user-days.
+- 6,455 recorded days give a mean logging rate of 58.16%.
+- Keep the 39 users with no July records.
+
+The roster records earlier presence in the released file, not account enrollment. Count distinct dates from July 1 inclusive through August 1 exclusive. The input includes neighboring boundary dates. A zero is no recorded logging in the window; it is not zero consumption. Full source reconstruction and reference calculation appear in M1 §1.17.
+
+Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+
+## Slide 18: mHealth Records
 
 - Food entries describe recorded items on observed user-days.
 - The separate daily table covers only part of the food-log history.
@@ -201,7 +225,7 @@ The released records replace user identifiers and birthdays and perturb weight v
 
 Source: M1, Section 1.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 17: Join Choice Changes the Sample
+## Slide 19: Join Choice Changes the Sample
 
 Released mHealth cohort: 76,804 observed user-days.
 
@@ -213,7 +237,7 @@ An inner join would remove more than half the cohort days. Missing calendar days
 
 Source: M1, Section 1.8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 18: Coding Exercise: An Order Assessment
+## Slide 20: Coding Exercise: An Order Assessment
 
 - Implement aggregation with a coding assistant.
 - Add a return, a missing identifier, and a duplicated lookup key.
@@ -223,7 +247,7 @@ Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.p
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 19: Versioned Evidence
+## Slide 21: Versioned Evidence
 
 - Record the model, date, prompts, tools, settings, parser, and scoring rule.
 - Keep known failure cases and evaluate transfer on fresh cases.
@@ -233,7 +257,7 @@ A historical finding concerns the tested configuration. A current workflow can d
 
 Source: M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 20: A Reproducible Analysis
+## Slide 22: A Reproducible Analysis
 
 - Relative paths identify inputs and outputs.
 - A fresh run reconstructs results without hidden notebook state.
@@ -243,7 +267,7 @@ A random seed reproduces a particular random computation under a given implement
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 21: Repeated Responses Change the Weight
+## Slide 23: Repeated Responses Change the Weight
 
 Synthetic ratings stay fixed. Additional identical rows change representation.
 
@@ -255,7 +279,7 @@ A product manager must specify which unit receives equal weight. With two p01 re
 
 Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 22: Numerical Evidence and the Recommendation
+## Slide 24: Numerical Evidence and the Recommendation
 
 - Recompute the table and check one calculation independently.
 - Preserve persona weights, missing values, and the synthetic-data scope.
@@ -265,7 +289,7 @@ The program recomputes four saved tables and stops if a table is missing or diff
 
 Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 23: A Campaign Specification
+## Slide 25: A Campaign Specification
 
 - Define the eligible customers and contact date.
 - State the contribution horizon and relevant costs.
@@ -276,7 +300,7 @@ The specification should state one feasible action and the comparison that suppo
 
 Source: M1, Section 1.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 24: Customer Data in an AI Workflow
+## Slide 26: Customer Data in an AI Workflow
 
 - Use only data authorized for the tool and task.
 - Minimize fields and use synthetic examples when they suffice.
@@ -286,7 +310,7 @@ Public availability does not establish permission for every reuse. Pseudonymized
 
 Source: Course agent guide and ETHICS_AND_REGULATION.md, M1.
 
-## Slide 25: Decision Discussion
+## Slide 27: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

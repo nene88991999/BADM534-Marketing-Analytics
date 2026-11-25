@@ -120,3 +120,7 @@ Session 7 adds three slides on group means, access, and preprocessing. Session 1
 ## Definitions, Evidence, and Representation Quality
 
 Sessions 1 and 2 distinguish event definitions, logical inference, validation, and recorded completion. Session 11 compares reconstruction with review recall and examines nonunique features. Session 14 connects classifications to evidence and customer permission. Ten new slides and three editable diagrams accompany [complete Python](../03_Data_and_Code/Representation_Evaluation/README.md) and the [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md). The affected decks contain 25, 23, 52, and 41 slides, respectively; the combined deck contains 389. All fifteen meetings remain 170 minutes.
+
+## Agent Workflow Evaluation
+
+Sessions 1, 9, 11, and 14 include eight slides on the fixed mHealth logging roster, information and feedback, customer-level grading, hypothetical total costs, and customer authorization. [Full programs and optional practice](../07_Labs/Agent_Workflows/README.md) support the comparison. Existing meeting dates and 170-minute allocations are retained.

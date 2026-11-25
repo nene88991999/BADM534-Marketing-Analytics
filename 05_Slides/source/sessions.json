@@ -160,6 +160,27 @@
         "source": "M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
       },
       {
+        "kind": "figure",
+        "title": "Information and Development Feedback",
+        "figure": "../06_Lecture_Notes/figures/M01_workflow_design.tex",
+        "caption": "Hold the model and task fixed; compare the four complete workflows.",
+        "description": "A two-by-two matrix crosses a structured data dictionary with independent development checks. No performance values are assigned to the cells.",
+        "notes": "All cells receive the same core measurement request and output schema. Explicit information organizes the definitions, while independent feedback exposes development discrepancies and permits bounded correction. Common tools, permissions, and resource caps keep the comparison interpretable. The possible interaction is measured on a frozen evaluation task. This diagram specifies an experiment and contains no observed model performance.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "The Logging Denominator",
+        "bullets": [
+          "Eligibility uses January–June records within the recurring mHealth cohort.",
+          "358 users contribute 11,098 possible July user-days.",
+          "6,455 recorded days give a mean logging rate of 58.16%.",
+          "Keep the 39 users with no July records."
+        ],
+        "notes": "The roster records earlier presence in the released file, not account enrollment. Count distinct dates from July 1 inclusive through August 1 exclusive. The input includes neighboring boundary dates. A zero is no recorded logging in the window; it is not zero consumption. Full source reconstruction and reference calculation appear in M1 §1.17.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "mHealth Records",
         "bullets": [
@@ -275,7 +296,8 @@
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[LLM Evidence and Revalidation](../03_Data_and_Code/LLM_Revalidation/README.md)",
       "[Reproducible recommendation and optional practice](../07_Labs/Reproducible_Recommendations/README.md)",
-      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)"
+      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
+      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)"
     ],
     "practice": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
     "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision."
@@ -2469,6 +2491,18 @@
       },
       {
         "kind": "bullets",
+        "title": "A Fixed Model and Four Workflows",
+        "bullets": [
+          "Cross explicit information with independent development feedback.",
+          "Reset each run and randomize cell order within repetitions.",
+          "Freeze the program before evaluating August.",
+          "Count failed and missing outputs among assigned attempts."
+        ],
+        "notes": "M6 §6.29 defines q_cf as the probability of a valid output for a fixed task and model configuration. The interaction is (q11-q01)-(q10-q00). Its sign describes complementarity for that outcome. Repeated runs on one task measure conditional variation; generalization requires additional task families. A trace suggests a diagnosis, while a controlled intervention identifies the effect of a component.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Coding Exercise: An Experiment Plan",
         "bullets": [
           "Compute the factorial contrasts alongside the email effect.",
@@ -2554,7 +2588,8 @@
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
       "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)",
       "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
-      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)",
+      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)"
     ],
     "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.",
     "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes."
@@ -3466,6 +3501,38 @@
         "source": "M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/"
       },
       {
+        "kind": "figure",
+        "title": "A Correct Total Can Misassign Activity",
+        "figure": "../06_Lecture_Notes/figures/M07_workflow_checker.tex",
+        "caption": "Synthetic users. The same aggregate selects a different person for review.",
+        "description": "Correct counts for A, B, C are 1, 1, 0. Reassigned counts are 0, 1, 1. Both total two days, while zero-log review changes from C to A.",
+        "notes": "The customer decision depends on which user receives each value. Matching the overall mean therefore leaves a consequential error undetected. The course grader compares every roster user and denominator. Independent tests include this counterexample, missing users, duplicate keys, invalid dates, and nonfinite outputs. An independently written SQL query checks the actual mHealth task results.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Outputs, Actions, and the Checker",
+        "bullets": [
+          "Output: complete and accurate customer counts.",
+          "Actions: permitted files, commands, revisions, and resource use.",
+          "Checker: detection of decision-relevant errors."
+        ],
+        "notes": "These judgments can disagree. An accurate table may follow an unauthorized input change. A weak checker may accept an invalid table. Record observable tool actions and state changes; a generated explanation does not reveal the model’s internal reasoning. The provided CSV checker executes no candidate code and supplies no execution sandbox.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Development and Final Evaluation",
+        "bullets": [
+          "Use July to revise prompts and programs.",
+          "Keep August answers outside the model workspace.",
+          "Evaluate the frozen program on August.",
+          "Report validity, failures, analyst effort, and total cost."
+        ],
+        "notes": "The expected answers are public teaching files. A measured exercise needs an explicitly restricted task workspace, not a folder label. Fresh conversations reduce carryover, and five repeated runs per configuration describe variability on this task. Full AI comparisons are optional ungraded practice; the released numerical results are local reference calculations and separately labeled hypothetical costs.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "An Omitted Feature Bias",
         "bullets": [
@@ -3552,7 +3619,8 @@
       "[Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)",
       "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)",
       "[Representation Evaluation: Data and Code](../03_Data_and_Code/Representation_Evaluation/README.md)",
-      "[Representation Evaluation: Optional Practice](../07_Labs/Representation_Evaluation/README.md)"
+      "[Representation Evaluation: Optional Practice](../07_Labs/Representation_Evaluation/README.md)",
+      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)"
     ],
     "practice": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
     "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator."
@@ -4163,6 +4231,45 @@
         "source": "M8, Section 8.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
+        "kind": "table",
+        "title": "Hypothetical Cost of a Valid Analysis",
+        "headers": [
+          "100 Assigned Tasks",
+          "Basic",
+          "Checked"
+        ],
+        "rows": [
+          [
+            "API charges (dollars)",
+            "10",
+            "20"
+          ],
+          [
+            "Review + correction (minutes)",
+            "340",
+            "180"
+          ],
+          [
+            "Valid outputs",
+            "80",
+            "95"
+          ],
+          [
+            "Total cost (dollars)",
+            "350",
+            "200"
+          ],
+          [
+            "Dollars per valid output",
+            "4.375",
+            "2.105"
+          ]
+        ],
+        "caption": "Invented inputs; analyst time costs 60 dollars per hour.",
+        "notes": "The numerator includes effort and charges from all assigned attempts, including failures. The valid-output denominator counts accepted final results after any allowed correction. Execution charges beyond the API are set to zero here. Greater API spending coincides with lower total cost under these inputs because analyst effort falls. This is an accounting illustration, not measured labor savings. Complete Python appears in M8 §8.26.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+      },
+      {
         "kind": "figure",
         "title": "Reuse Has a Break-Even Workload",
         "figure": "../06_Lecture_Notes/figures/M08_reuse_costs.tex",
@@ -4246,6 +4353,18 @@
         ],
         "notes": "M9 §9.19 connects Kantian examination of an inference to the conditions supporting it, and Confucian rectification of names to the responsibilities conveyed by a service description. These are applications of the philosophical accounts in §§9.3 and 9.11. Consistency can coexist with false premises. A model score does not establish the legitimacy of the action it predicts.",
         "source": "M9 §9.19. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Authority and the Customer’s Requested Outcome",
+        "bullets": [
+          "A customer asks to cancel.",
+          "The firm requires a retention survey before accepting the request.",
+          "The agent follows the firm’s rule.",
+          "Assess the customer’s authorization and the justification for the condition."
+        ],
+        "notes": "Technical permission, company authority, customer authorization, and ethical justification concern different relationships. A valid execution record establishes what happened under the rule. Kantian respect for persons asks whether the means respect the customer’s purposes and reasons. Confucian rectification of names connects the stated service role with its conduct. A higher renewal rate leaves the legitimacy of an imposed exit obstacle unresolved. M9 §9.20 develops the argument.",
+        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "figure",
@@ -4500,7 +4619,8 @@
       "[AI Experimentation and Pricing](../01_Resources/16_AI_Experimentation_and_Pricing/README.md)",
       "[Synthetic Consumers and Human Validation](../03_Data_and_Code/Synthetic_Consumers/README.md)",
       "[Reproducible product recommendation](../03_Data_and_Code/Reproducible_Recommendations/README.md)",
-      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)"
+      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
+      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)"
     ],
     "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."

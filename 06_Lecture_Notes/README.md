@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [390-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 102 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [401-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 104 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -161,3 +161,7 @@ M5 §5.24 develops exact aggregation and travel calculations. M7 §7.38 distingu
 ## Definitions and Representation Quality
 
 [Cancellation evidence](../03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](../03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
+
+## Agent Workflow Evaluation
+
+M1 §1.17 defines the fixed-roster mHealth task and provides complete reconstruction and reference code. M6 §6.29 defines the factorial interaction; M7 §7.41 evaluates outputs, actions, and the checker. M8 §8.26 calculates hypothetical total costs, and M9 §9.20 distinguishes company authority, customer authorization, and justification. [The example and verification](../03_Data_and_Code/Agent_Workflows/README.md) include eight independent tests and two original editable figures. No model experiment was executed.

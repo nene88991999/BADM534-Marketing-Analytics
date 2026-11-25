@@ -10,7 +10,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 25 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 27 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 23 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
@@ -18,12 +18,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 41 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 24 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 25 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 52 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 55 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 41 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 43 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -34,7 +34,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.
 
-**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -43,7 +43,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 0–15 | Managerial Case |
 | 15–40 | Concepts and Mechanisms |
 | 40–45 | Definitions, Inference, and Evidence |
-| 45–70 | Worked Comparison |
+| 45–70 | Worked Comparison and Workflow Configuration |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–140 | Response Weights and Reproducible Recommendations |
@@ -207,7 +207,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice
 
@@ -215,7 +215,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | --- | --- |
 | 0–15 | Managerial Case |
 | 15–45 | Concepts and Mechanisms |
-| 45–70 | Worked Comparison |
+| 45–70 | Worked Comparison and Factorial Workflow Contrast |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–135 | Fixed and Adaptive Research Designs |
@@ -250,7 +250,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction and review recall; full representation programs are optional practice.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
@@ -267,7 +267,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 105–115 | Reconstruction and Representation Evaluation |
 | 115–125 | Omitted Auxiliary Bias |
 | 125–145 | Anomaly Diagnosis |
-| 145–155 | Forecast and Grader Comparisons |
+| 145–155 | Workflow Outputs, Actions, and Grader Comparisons |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 12. Recommendation Systems and Customer Goals
@@ -318,19 +318,19 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
-| 0–20 | Demand and AI Workflow |
+| 0–20 | Demand and Total AI Workflow Cost |
 | 20–25 | Recommendation Review and Export |
 | 25–50 | AI-Assisted Experiments |
 | 50–70 | Pricing Evidence and Benchmarks |
 | 70–80 | Break |
 | 80–95 | Kantian and Confucian Justification |
-| 95–100 | Definitions, Evidence, and Permission |
+| 95–100 | Definitions, Evidence, and Customer Authorization |
 | 100–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–170 | Decision Discussion |

@@ -50,3 +50,7 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 - [Representation Evaluation](Representation_Evaluation/README.md): reconstruction error, coordinate units, task recall, nonunique decompositions, and independent interpretation.
 
 Both activities are public optional ungraded practice with original synthetic inputs and executed standard-library Python.
+
+## Agent Workflow Evaluation
+
+[Optional ungraded practice](Agent_Workflows/README.md) checks distinct logging days, roster denominators, date boundaries, customer-level errors, and total workflow cost. An optional four-configuration model comparison keeps development feedback separate from final evaluation.

@@ -285,7 +285,17 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Representation_Evaluation/AGENTS.md",
     "03_Data_and_Code/Representation_Evaluation/VERIFICATION.md",
     "03_Data_and_Code/Representation_Evaluation/results/README.md",
-    "07_Labs/Representation_Evaluation/README.md"
+    "07_Labs/Representation_Evaluation/README.md",
+    "01_Resources/35_Agent_Workflow_Evaluation/README.md",
+    "01_Resources/35_Agent_Workflow_Evaluation/SOURCE_REVIEW.md",
+    "01_Resources/35_Agent_Workflow_Evaluation/CASE_DESIGN.md",
+    "03_Data_and_Code/Agent_Workflows/README.md",
+    "03_Data_and_Code/Agent_Workflows/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Agent_Workflows/AGENTS.md",
+    "03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md",
+    "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
+    "03_Data_and_Code/Agent_Workflows/results/README.md",
+    "07_Labs/Agent_Workflows/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -334,12 +344,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-24-writing-alignment",
+    "revision": "2026-11-24-agent-workflows",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 102,
-    "pages": 390,
+    "figures_count": 104,
+    "pages": 401,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -361,7 +371,8 @@ Generated from course.json and the source files identified below. This file cont
     "auxiliary_data_examples": "03_Data_and_Code/Auxiliary_Data/README.md",
     "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md",
     "ontology_examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
-    "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md"
+    "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md",
+    "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md"
   },
   "datasets": [
     {
@@ -432,7 +443,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 389,
+    "slides": 397,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1005,8 +1016,41 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-24-writing-alignment",
-  "writing_guide": "WRITING_STYLE.md"
+  "revision": "2026-11-24-agent-workflows",
+  "writing_guide": "WRITING_STYLE.md",
+  "agent_workflow_evaluation": {
+    "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
+    "review": "01_Resources/35_Agent_Workflow_Evaluation/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/35_Agent_Workflow_Evaluation/CASE_DESIGN.md",
+    "catalog": "01_Resources/35_Agent_Workflow_Evaluation/catalog.json",
+    "manifest": "01_Resources/35_Agent_Workflow_Evaluation/manifest.json",
+    "examples": "03_Data_and_Code/Agent_Workflows/README.md",
+    "protocol": "03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md",
+    "lab": "07_Labs/Agent_Workflows/README.md",
+    "course_manifest": "03_Data_and_Code/Agent_Workflows/manifest.json",
+    "course_verification": "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
+    "implemented_on": "2026-11-24",
+    "sections": [
+      "M1 \u00a71.17",
+      "M6 \u00a76.29",
+      "M7 \u00a77.41",
+      "M8 \u00a78.26",
+      "M9 \u00a79.20"
+    ],
+    "sessions": [
+      1,
+      9,
+      11,
+      14
+    ],
+    "original_programs_executed": 4,
+    "independent_tests_passed": 8,
+    "original_figures": 2,
+    "model_calls": 0,
+    "upstream_execution": false,
+    "four_cell_experiment_executed": false,
+    "scope": "Observed mHealth logging reference for 358 prior-period users, invented checker cases, hypothetical costs, and an optional controlled model-comparison protocol."
+  }
 }
 ```
 
@@ -1026,7 +1070,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 102 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 104 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -1120,6 +1164,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Definitions and Representation Quality
 
 [Cancellation evidence](03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
+
+## AI Workflow Evaluation
+
+[The workflow example](03_Data_and_Code/Agent_Workflows/README.md) connects a fixed mHealth logging roster, a four-configuration experiment protocol, customer-level checker tests, total workflow cost, and customer authority. Four complete programs and two editable TikZ figures appear in M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. [Optional ungraded practice](07_Labs/Agent_Workflows/README.md) separates observed logging calculations, hypothetical costs, and an unexecuted model-comparison protocol.
 
 ---
 
@@ -1305,7 +1353,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 91 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 104 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -1438,6 +1486,10 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 
 [Cancellation evidence](03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
 
+## Agent Workflow Evaluation
+
+[The workflow case](03_Data_and_Code/Agent_Workflows/README.md) connects M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. A prior-period mHealth roster supplies observed logging counts; separate synthetic checks expose grading errors. Four complete programs, two TikZ figures, and an optional experiment protocol distinguish measured records from hypothetical costs and unexecuted model comparisons. Sessions 1, 9, 11, and 14 use existing discussion time.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1489,6 +1541,10 @@ A program can run successfully and still answer the wrong question. Inspect a fe
 For questions about cancellation records, begin with [the dictionary and executed example](03_Data_and_Code/Ontology_and_Evidence/README.md), then M1 §1.16 and M2 §2.25. Keep raw rows, events, requests, subscriptions, and unknown states distinct. A missing confirmation creates a review condition within the available records.
 
 For feature-quality questions, begin with [the representation example](03_Data_and_Code/Representation_Evaluation/README.md), then M7 §§7.39–7.40. Preserve coordinate scales and denominators, and distinguish reconstruction, task usefulness, matching stability, and causal meaning. No learned model or empirical customer outcome was produced by these synthetic calculations. Optional labs do not establish assignment requirements.
+
+## Context and Evidence for Coding Tasks
+
+Supply the task definition, relevant data dictionary, input versions, and required output before expanding the context. Record durable progress with links to actual files and checks. Ask the assistant to separate a proposed operation, an executed operation, and its verified result. [The workflow exercise](03_Data_and_Code/Agent_Workflows/README.md) distinguishes output correctness, permitted actions, and checker validity. During a measured comparison, keep final evaluation answers outside the model workspace and preserve every assigned attempt, including failures.
 
 ---
 
@@ -1670,6 +1726,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Cancellation evidence](../03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](../03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
 
+## Agent Workflow Evaluation
+
+[The workflow package](Agent_Workflows/README.md) provides compact mHealth task inputs, source reconstruction, reference calculation, a CSV grader, eight independent tests, and a hypothetical cost comparison. The information-by-feedback protocol supplies no measured model-performance results.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -1678,7 +1738,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [390-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 102 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [401-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 104 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1837,6 +1897,10 @@ M5 §5.24 develops exact aggregation and travel calculations. M7 §7.38 distingu
 ## Definitions and Representation Quality
 
 [Cancellation evidence](../03_Data_and_Code/Ontology_and_Evidence/README.md) connects M1 §1.16 and M2 §2.25 to event definitions, validation, unknown states, and a fixed reporting cutoff. [Representation evaluation](../03_Data_and_Code/Representation_Evaluation/README.md) connects M7 §§7.39–7.40 to variance-weighted reconstruction, review recall, and nonunique features. Three complete Python programs, fourteen independent tests, and three editable figures support the synthetic cases. M4 §4.25, M5 §5.25, and M9 §9.19 connect segment interpretation, attributed claims, and permission evidence. Sessions 1, 2, 11, and 14 include ten additional slides within the existing meeting times.
+
+## Agent Workflow Evaluation
+
+M1 §1.17 defines the fixed-roster mHealth task and provides complete reconstruction and reference code. M6 §6.29 defines the factorial interaction; M7 §7.41 evaluates outputs, actions, and the checker. M8 §8.26 calculates hypothetical total costs, and M9 §9.20 distinguishes company authority, customer authorization, and justification. [The example and verification](../03_Data_and_Code/Agent_Workflows/README.md) include eight independent tests and two original editable figures. No model experiment was executed.
 
 ---
 
@@ -2022,6 +2086,10 @@ Session 7 adds three slides on group means, access, and preprocessing. Session 1
 ## Definitions, Evidence, and Representation Quality
 
 Sessions 1 and 2 distinguish event definitions, logical inference, validation, and recorded completion. Session 11 compares reconstruction with review recall and examines nonunique features. Session 14 connects classifications to evidence and customer permission. Ten new slides and three editable diagrams accompany [complete Python](../03_Data_and_Code/Representation_Evaluation/README.md) and the [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md). The affected decks contain 25, 23, 52, and 41 slides, respectively; the combined deck contains 389. All fifteen meetings remain 170 minutes.
+
+## Agent Workflow Evaluation
+
+Sessions 1, 9, 11, and 14 include eight slides on the fixed mHealth logging roster, information and feedback, customer-level grading, hypothetical total costs, and customer authorization. [Full programs and optional practice](../07_Labs/Agent_Workflows/README.md) support the comparison. Existing meeting dates and 170-minute allocations are retained.
 
 ---
 
@@ -2539,6 +2607,10 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 
 [Delisle and Tan's paper and pinned repository](../01_Resources/34_Representation_Evaluation/SOURCE_REVIEW.md) inform M7 §§7.39–7.40. Two original programs and six tests examine reconstruction, coordinate scales, review recall, and nonunique exact decompositions. Two editable figures preserve the different denominators and dictionary-dependent removal errors. M4 §4.25 connects reproducibility with segment interpretation. These synthetic examples do not reproduce sparse-autoencoder training or estimate marketing effects. Third-party source notices remain intact.
 
+## Agent Workflow Evaluation
+
+[Agent Harness Engineering: A Survey](../01_Resources/35_Agent_Workflow_Evaluation/README.md), §§5, 8, 9, and 11, motivates original comparisons in M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. [Four executed programs](../03_Data_and_Code/Agent_Workflows/README.md) reconstruct compact mHealth tasks, calculate reference results, grade CSV outputs, and reproduce hypothetical costs. Eight independent tests include a SQLite comparison. The four-cell model experiment remains a protocol; no model performance is reported.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -2894,7 +2966,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 25 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 27 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 23 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
@@ -2902,12 +2974,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 41 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 24 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 25 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 52 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 55 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 41 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 43 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -2918,7 +2990,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.
 
-**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -2927,7 +2999,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 0–15 | Managerial Case |
 | 15–40 | Concepts and Mechanisms |
 | 40–45 | Definitions, Inference, and Evidence |
-| 45–70 | Worked Comparison |
+| 45–70 | Worked Comparison and Workflow Configuration |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–140 | Response Weights and Reproducible Recommendations |
@@ -3091,7 +3163,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice
 
@@ -3099,7 +3171,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | --- | --- |
 | 0–15 | Managerial Case |
 | 15–45 | Concepts and Mechanisms |
-| 45–70 | Worked Comparison |
+| 45–70 | Worked Comparison and Factorial Workflow Contrast |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–135 | Fixed and Adaptive Research Designs |
@@ -3134,7 +3206,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction and review recall; full representation programs are optional practice.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
@@ -3151,7 +3223,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 105–115 | Reconstruction and Representation Evaluation |
 | 115–125 | Omitted Auxiliary Bias |
 | 125–145 | Anomaly Diagnosis |
-| 145–155 | Forecast and Grader Comparisons |
+| 145–155 | Workflow Outputs, Actions, and Grader Comparisons |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 12. Recommendation Systems and Customer Goals
@@ -3202,19 +3274,19 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
-| 0–20 | Demand and AI Workflow |
+| 0–20 | Demand and Total AI Workflow Cost |
 | 20–25 | Recommendation Review and Export |
 | 25–50 | AI-Assisted Experiments |
 | 50–70 | Pricing Evidence and Benchmarks |
 | 70–80 | Break |
 | 80–95 | Kantian and Confucian Justification |
-| 95–100 | Definitions, Evidence, and Permission |
+| 95–100 | Definitions, Evidence, and Customer Authorization |
 | 100–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–170 | Decision Discussion |
@@ -3368,6 +3440,10 @@ Session 1 allocates five minutes within the concepts block to definitions, infer
 
 The [cancellation lab](../07_Labs/Ontology_and_Evidence/README.md) and [representation lab](../07_Labs/Representation_Evaluation/README.md) provide optional ungraded extensions. Their full programs and synthetic data are public. No additional graded requirement or model-training exercise is introduced.
 
+## Agent Workflow Evaluation
+
+Use ten minutes within Session 1’s worked-comparison block for the information-by-feedback design and the fixed logging roster. Session 9 uses five minutes within its existing experiment comparison for the factorial contrast. Session 11 uses minutes 145–155 for outputs, actions, and grader comparisons; its other topics remain available in their assigned blocks. Session 14 uses five minutes within its first twenty minutes for hypothetical total workflow cost and minutes 95–100 for customer authorization. [The longer model-comparison protocol](../07_Labs/Agent_Workflows/README.md) is optional ungraded practice. These allocations remain inside the existing fifteen 170-minute meetings.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -3452,6 +3528,10 @@ M7 §§7.33–7.35 and M9 §9.18.3 use [training mixtures and conditional servic
 M9 §9.18.4 examines the authority a firm assigns to generated accounts of customer preferences. Kantian respect directs attention to actual people's purposes and opportunities for judgment. Confucian trustworthiness requires an accurate account of whose responses support the claim and responsible engagement with contrary evidence. M4 §4.23 and M5 §5.23 supply synthetic examples in which ranking, anchors, and aggregation alter the decision. These calculations establish measurement distinctions and do not identify a firm's motives.
 
 The [source assessment](../01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md) distinguishes generated purchase-intent ratings from human preferences, observed purchases, and consent. Session 14 uses five minutes within its existing philosophical discussion for consumer representation. This addition makes no new legal-status claim.
+
+## Agent Authority and Customer Requests
+
+M9 §9.20 distinguishes technical permissions, company authority, customer authorization, and ethical justification. The cancellation example connects a firm-directed retention condition to Kantian respect for the customer’s reasons and Confucian attention to a service’s role. Session 14 incorporates the discussion within its existing definitions and permission block. This is a philosophical application; it introduces no new claim about a jurisdiction’s legal requirements.
 
 ---
 
@@ -3625,7 +3705,7 @@ AI-assisted coding is integrated throughout the course. Students practice specif
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
-- Evaluate AI-assisted code through independent calculations, appropriate validation, and substantive interpretation.
+- Evaluate AI-assisted workflows through independent calculations, task-level checks, costs, and substantive interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 
 ## Class Format and Materials
@@ -3634,7 +3714,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, and network compression. Definitions, evidence, and customer outcomes guide interpretation.
+Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, and network compression. Workflow comparisons assess task information, feedback, costs, and customer authority.
 
 ---
 
@@ -4885,6 +4965,18 @@ Confucian attention to the rectification of names gives a related question about
 
 A logically consistent classification system can encode unsupported assumptions. A contradiction can arise from an erroneous record, incompatible periods, or an unsuitable rule. Trace the claim to its source, time, definition, and inference, and assess each part. The cancellation example in §2.25 preserves unknown states and directs unresolved records to review. The feature examples in §§7.39–7.40 show why reconstruction and interpretive labels require separate evaluation. Neither logical coherence nor a high model score establishes the ethical legitimacy of a marketing practice.
 
+## 9.20 An Authorized Agent and a Justified Objective
+
+\noindent A customer asks a subscription service to cancel. The firm instructs its agent to require a retention survey before recording the cancellation. The agent follows the policy, records every action, and successfully obtains a survey response. Its execution can satisfy the firm's technical specification while delaying the outcome the customer requested. The relevant assessment must therefore identify whose instruction supplied the objective and whose choice the procedure affects.
+
+Technical permissions establish which actions the system allows an agent to perform. Company authorization establishes that an employee or service may act on the firm's behalf. Customer authorization concerns the scope of what that customer requested or accepted. Ethical justification concerns the reasons for treating the person in that way. These relationships can overlap, but evidence for one does not establish the others. A record that the firm approved the retention survey supplies no evidence that the customer agreed to make it a condition of exit.
+
+The Kantian analysis in §§9.3 and 9.16 asks whether the maxim governing the practice respects the customer's capacity to form purposes and act on reasons. A firm that describes a retention obstacle as necessary cancellation processing must justify the description and the imposed condition. An explicit, reversible offer that leaves the requested exit available presents a different practice from concealing or withholding that exit. Its assessment depends on the actual procedure, the information supplied, and the person's freedom to decline. A higher renewal rate cannot resolve those questions because retained accounts can include customers whose expressed purposes were frustrated.
+
+Confucian attention to the rectification of names connects the service's stated role with its conduct. A cancellation service should be assessed by whether it carries out the relevant responsibility to the customer. Remonstrance gives employees a reason to challenge a commercially successful rule when it conflicts with that responsibility. In the agent setting, an escalation route can preserve a record of the conflict and permit correction. Its existence alone does not establish that objections are heard or customers obtain the requested outcome.
+
+The governance mechanisms surveyed by [Li and coauthors](../../01_Resources/35_Agent_Workflow_Evaluation/README.md), §9, can preserve permission scope, action records, and accountability. The philosophical application asks the further question of whether the objective and means are justified. Evaluate cancellation completion against the customer's expressed request, report imposed obstacles and unresolved cases, and examine the reasons offered for them. A system's technical success is evidence about its execution; the customer's agency remains an independent object of judgment.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -5573,6 +5665,10 @@ Downloaded reference notebooks remain in `01_Resources`; their saved outputs do 
 - [Representation Evaluation](Representation_Evaluation/README.md): reconstruction error, coordinate units, task recall, nonunique decompositions, and independent interpretation.
 
 Both activities are public optional ungraded practice with original synthetic inputs and executed standard-library Python.
+
+## Agent Workflow Evaluation
+
+[Optional ungraded practice](Agent_Workflows/README.md) checks distinct logging days, roster denominators, date boundaries, customer-level errors, and total workflow cost. An optional four-configuration model comparison keeps development feedback separate from final evaluation.
 
 ---
 
@@ -7711,6 +7807,10 @@ The [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md) sup
 
 The [representation examples](../03_Data_and_Code/Representation_Evaluation/README.md) supply exact reference values for a style-scale control, component-error display, routing table, and two vector decompositions. Keep the same four cases and two positive-case denominator visible. Use separate labeled scales for reconstruction error and recall. The algebra, input JSON, and text descriptions should remain accessible without interaction. These specifications extend the pending design; no site has been deployed.
 
+## Task Context and Workflow Evaluation
+
+The [workflow example](../03_Data_and_Code/Agent_Workflows/README.md) supplies a future static page that exposes the roster, date interval, customer-level output, and checker result. Keep task definitions, input hashes, full code, and expected outputs available as separate downloads. A student can predict the consequence of omitting zero-log users or swapping two customer counts before revealing the result. Distinguish the measured logging table from the hypothetical cost example and the unexecuted model protocol. Targeted context links and stable module anchors can support agents without a server-side agent framework. No site has been deployed.
+
 ---
 
 ## Source: 03_Data_and_Code/Reproducible_Recommendations/README.md
@@ -8924,6 +9024,268 @@ Ask an assistant to report aggregate error, component errors, variance weights, 
 ## Interpretation
 
 Recommend a representation under the stated review objective. Explain what would need independent validation before deploying it. A feature name supplied by an analyst or LLM does not establish a causal mechanism, a customer's preference, or permission to act on that customer.
+
+---
+
+## Source: 01_Resources/35_Agent_Workflow_Evaluation/README.md
+
+# Agent Workflow Evaluation
+
+An AI-generated analysis can fail because of its calculation, supplied information, available tools, execution environment, or checker. This collection connects those possibilities to a controlled comparison of coding workflows and to the cost of obtaining a valid analysis.
+
+## Reading and Original Applications
+
+Li and coauthors' [Agent Harness Engineering: A Survey](LiXiaoZhangLiuEtAl_WorkingPaper2026.pdf) organizes execution, tools, context, orchestration, observability, evaluation, and governance. Read §8 for task definition, environment readiness, execution records, separate judgments of outputs and actions, and evaluation of the checker itself. Sections 5 and 11 connect persistent context and interacting components to workflow design. Section 9 discusses authority and enforcement.
+
+- [Source review](SOURCE_REVIEW.md): evidence, scope, companion repository, and rights.
+- [Original case design](CASE_DESIGN.md): managerial question, information-by-feedback experiment, and interpretation.
+- [Course example](../../03_Data_and_Code/Agent_Workflows/README.md): actual mHealth logging calculations, independent tests, and hypothetical cost comparison.
+- [Optional ungraded lab](../../07_Labs/Agent_Workflows/README.md): guided checks and an optional measured model comparison.
+- [Catalog](catalog.json) and [manifest](manifest.json): versioned source information.
+
+The paper's figures include a seven-layer taxonomy and a five-stage evaluation cycle. The course adaptation uses original editable TikZ diagrams for the factorial design and the difference between matching an aggregate and assigning values to the correct customers. This Markdown guide summarizes selected arguments; it is not a complete transcription of the 71-page survey.
+
+---
+
+## Source: 01_Resources/35_Agent_Workflow_Evaluation/SOURCE_REVIEW.md
+
+# Execution Systems and Evidence
+
+## Research Scope
+
+Li and coauthors define an agent harness as the infrastructure that turns model calls into bounded, stateful execution through tools, information management, orchestration, monitoring, verification, and governance. Their survey describes 171 catalog entries and a filtered technical map of 138 artifacts. Section 2 reports a May 8, 2026 metadata snapshot and a single primary coder with author review. The public, English-language, GitHub-visible coding ecosystem is overrepresented. Category counts describe selected artifacts and their documented functions; they do not measure deployment shares or causal benefits.
+
+Section 8 treats performance as a property of a model operating within a specified system. It distinguishes task grounding, readiness checks, controlled execution, outcome and action evaluation, evaluation of the grader, and subsequent regression checks. A recorded failure can motivate a diagnosis. Identifying the contribution of a component requires controlled variation or other credible identification. The course's four-cell protocol varies explicit context and development feedback at a fixed model version.
+
+Sections 5 and 11 support selective information retrieval, durable task state, and evaluation after component changes. These are design questions to assess on relevant tasks. Claims about a particular context length, tool, product, or model need their own dated evidence. The course does not reproduce the survey's secondary benchmark magnitudes as measured marketing productivity gains.
+
+## Companion Repository
+
+The reviewed [awesome-agent-harness repository](https://github.com/Picrew/awesome-agent-harness/tree/e7e8f8d268f7ac5311b778832327e4be2f555507) is a curated directory. Its README reports 375 entries and nine categories. Its curation and verification documents describe a YAML source, generated language mirrors, required fields, duplicate checks, activity checks, and URL reachability. Inspection of `scripts/verify_catalog.py` confirms that it checks catalog structure and links. It does not run the listed agents or establish their performance. No repository script was executed.
+
+The current repository's 375 entries and the paper's 138 retained artifacts refer to different collections and snapshots. Neither count establishes quality. No repository-wide license was identified at the reviewed commit, so the course retains original annotations and links rather than a copied source tree.
+
+## Philosophical Application
+
+The survey's governance discussion concerns permissions, identities, controls, and accountability. The course extends it to the justification of marketing objectives. A cancellation agent may obey a firm's instructions while frustrating a customer's expressed wish to leave. Kantian respect for persons raises the question of whether the procedure respects the customer's capacity to form and act on reasons. The Confucian discussion connects the role of a cancellation service to its conduct. These applications are original course interpretations, distinct from an empirical finding of the survey.
+
+## Source Access and Rights
+
+OpenReview's forum and PDF routes returned a browser-verification page during review. The paper was read from the author-hosted Hugging Face dataset at revision `cbdb25e65f27874077a906b95b5746f0642e9551`. That dataset contains a PDF, not a benchmark dataset. Its card specifies CC BY 4.0. The saved PDF is unchanged, and its SHA-256 matches the published LFS hash. The PDF metadata dates this copy November 4, 2026. OpenReview review and acceptance status were not verified.
+
+Authors, in the saved PDF's order: Junjie Li, Xi Xiao, Yunbei Zhang, Chen Liu, Lin Zhao, Xiaoying Liao, Yingrui Ji, Janet Wang, Yingqiang Ge, Weijie Xu, Xi Fang, Xiang Xu, Tianchen Zhao, Youngeun Kim, and Tianyang Wang. Attribution and license: [author source](https://huggingface.co/datasets/ChenLiu1996/Agent-Harness-Engineering/tree/cbdb25e65f27874077a906b95b5746f0642e9551), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The original document is reproduced without changes; course explanations and examples are separate adaptations.
+
+---
+
+## Source: 01_Resources/35_Agent_Workflow_Evaluation/CASE_DESIGN.md
+
+# A Valid Customer-Activity Report
+
+## Managerial Decision
+
+A manager wants to identify customers whose recorded logging has declined before deciding whether an outreach study is warranted. The measurement must retain the earlier roster, count distinct dates in a specified window, and preserve customers without later records. Actual mHealth observations establish the logging table. They do not identify a response to outreach or a health benefit.
+
+## Comparison
+
+Cross an explicit data dictionary with executable development feedback while holding the model, task, tools, permissions, and resource caps fixed. The four conditions separate each contribution and their interaction. Five clean-session repetitions per cell provide a feasible classroom protocol for variation on the fixed task. July supports development; August evaluates the frozen program. Student teams must keep evaluation answers out of the model workspace during a measured comparison.
+
+The original programs supply a verified reference, a CSV grader, independent boundary and denominator tests, and a separately calculated SQL result. A synthetic A/B/C case shows that equal total logged days can assign activity to the wrong customer. This motivates checking the checker against decision-relevant errors. No measured four-cell results are supplied.
+
+## Costs and Customer Authority
+
+A separate hypothetical example compares total model charges and analyst effort across 100 assigned tasks. The higher-API-cost workflow has lower total cost under the stated review and correction inputs. Failed attempts remain in the cost numerator and assigned-task denominator. These inputs illustrate the accounting comparison; they do not estimate an AI productivity effect.
+
+The cancellation discussion separates valid execution, company authorization, customer authorization, and ethical justification. A technically successful retention procedure can frustrate an explicit cancellation request. Students should assess the customer's reasons and the firm's means before ranking commercial performance.
+
+## Placement
+
+M1 §1.17 supplies the workflow definitions and complete reference code. M6 §6.29 defines the factorial contrast. M7 §7.41 connects customer-level grading, checker errors, and repeated evaluation. M8 §8.26 supplies the cost calculation. M9 §9.20 develops authority and justification. Sessions 1, 9, 11, and 14 use existing discussion blocks; the longer experiment remains optional ungraded practice. The course remains 15 meetings of 170 minutes.
+
+---
+
+## Source: 03_Data_and_Code/Agent_Workflows/README.md
+
+# AI Workflow Evaluation
+
+A manager needs a reproducible measure of recorded customer activity before selecting an outreach population. The mHealth tasks calculate logging days for a roster fixed using earlier records. An original factorial protocol varies the information and feedback supplied to a coding assistant while holding its model fixed.
+
+## Run the Local Calculations
+
+Use Python 3.11 or newer with the standard library. Run from the repository root:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/logging_reference.py
+python3 03_Data_and_Code/Agent_Workflows/workflow_costs.py
+python3 03_Data_and_Code/Agent_Workflows/test_workflows.py
+python3 03_Data_and_Code/Agent_Workflows/evaluate_submission.py 03_Data_and_Code/Agent_Workflows/results/development_reference.csv
+```
+
+The compact task inputs are included. To recreate them from the existing public mHealth release, first follow its [download instructions](../mHealth/README.md), then run `python3 03_Data_and_Code/Agent_Workflows/build_tasks.py`. The builder verifies the compressed source checksum and reads it once. It makes no network requests and exports no food descriptions, weight fields, ages, or original identifiers.
+
+## Inputs and Outputs
+
+- [Data dictionary](DATA_DICTIONARY.md): units, dates, eligibility, and field definitions.
+- [Task manifest](manifest.json): source checksum, selection, row counts, and input hashes.
+- [Reference results](results/README.md): observed counts and their interpretation.
+- [Experiment protocol](EXPERIMENT_PROTOCOL.md): four configurations, run records, costs, and evaluation separation.
+- [Optional ungraded lab](../../07_Labs/Agent_Workflows/README.md): guided calculations and controlled errors.
+- [Verification record](VERIFICATION.md): local execution and independent checks.
+
+The saved logging results are calculations from transformed real mHealth records. The cost comparison uses explicitly hypothetical inputs. No model was called, no empirical comparison of the four AI configurations was run, and no upstream repository code was executed. A correctly generated CSV checks a measurement; it does not establish a nutrition or health outcome.
+
+## Source and Course Connections
+
+[Agent Harness Engineering: A Survey](../../01_Resources/35_Agent_Workflow_Evaluation/README.md), especially §§5, 8, 9, and 11, motivates evaluation of the model together with its surrounding execution system. The original course adaptation connects M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. The [companion catalog](https://github.com/Picrew/awesome-agent-harness) supplies references; the programs here are original course implementations.
+
+---
+
+## Source: 03_Data_and_Code/Agent_Workflows/DATA_DICTIONARY.md
+
+# Logging Tasks and Measurement
+
+## Population and Timing
+
+The source is the transformed mHealth teaching release dated October 23, 2026. Select public pseudonyms whose first four hexadecimal digits represent an integer below 4096, matching the recurring course cohort. Eligibility then requires at least one food record from January 1 through June 30, 2016. Both later tasks retain this same roster. Its membership reflects prior recorded activity, not an account-enrollment registry or a representative consumer sample.
+
+July is the development task and August is the evaluation task. A task's start date is included and its end date is excluded. The input also contains the preceding date and the end date when observed, so filtering has an observable consequence. Local calendar dates are preserved from the source; no timestamp or time-zone interpretation is added.
+
+## Files and Variables
+
+| File or Field | Definition |
+| --- | --- |
+| `roster.csv`, `user_id` | One row for each eligible user. Aliases U0001 onward follow sorted public pseudonyms; the same alias identifies the same user in both tasks. |
+| `observed_days.csv` | One row per observed user-date in the task window and its two boundary dates, restricted to the fixed roster. |
+| `date` | ISO calendar date, YYYY-MM-DD. |
+| `entries` | Number of source food rows on that date. Several entries still represent one logged day. This is not calorie intake. |
+| `task.json` | Task ID, included start, excluded end, and earlier eligibility cutoff. |
+| `logged_days` | Distinct dates with at least one record in the specified window for this user. |
+| `window_days` | Number of calendar days from included start to excluded end. |
+| `logging_rate` | `logged_days / window_days`, on a 0–1 scale. |
+
+Users without records during the task window remain in the output with zero logged days. That zero describes the released file's logging indicator. It does not establish zero food intake, account closure, or observation of every actual logging event. No nutrition screen is applied because the target is record presence rather than dietary intake.
+
+## Controlled Errors
+
+The independent tests use invented users A, B, C, and Z. They introduce a repeated date, a duplicate roster key, boundary dates, an out-of-roster record, an ambiguous non-ISO date, missing output users, and nonfinite values. These records remain separate from the actual mHealth task inputs. The reference calculation rejects duplicate roster keys and invalid dates; repeated event dates are collapsed to a distinct-day indicator.
+
+---
+
+## Source: 03_Data_and_Code/Agent_Workflows/AGENTS.md
+
+# Agent Guide for Workflow Evaluation
+
+Read README.md, DATA_DICTIONARY.md, and EXPERIMENT_PROTOCOL.md before using these tasks. The root course guide and current assignment rules govern student assistance.
+
+- Preserve the prior-period roster, half-open date interval, distinct-day unit, and zero-log users. Recorded logging is not food intake or an account-enrollment measure.
+- Keep actual task calculations separate from invented test cases and hypothetical cost inputs.
+- The saved outputs contain no measured LLM performance. Never present the four configurations as an executed experiment.
+- Do not expose final evaluation answers during a measured model comparison. Restrict the task workspace explicitly; public filenames are not an access boundary.
+- The CSV checker reads data only. It does not authorize or isolate generated-code execution. Review permissions and commands before a separately requested run.
+- The task builder reads the existing local mHealth release and verifies its hash. It does not upload records to an external service.
+- Maintain full Python blocks in the notes when changing their matching programs. Run the independent checks and preserve source and input hashes.
+
+---
+
+## Source: 03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md
+
+# Information, Feedback, and Coding Performance
+
+## Decision and Four Configurations
+
+Estimate whether explicit measurement information and executable development feedback improve a fixed model's ability to produce the required logging table. Cross two factors: a concise data dictionary (absent/present) and development-check feedback (absent/present). The four cells are basic instructions, information, feedback, and information plus feedback. Keep the task, output schema, model version, available execution tools, permissions, and maximum time and token budgets fixed. Record any provider behavior that prevents these controls from being held constant.
+
+All cells receive the same core request: “Write a Python program that reads roster.csv, observed_days.csv, and task.json and produces one row per roster user with user_id, logged_days, window_days, and logging_rate. Count distinct recorded days inside the task interval, retain users with no records, and preserve the inputs. Return the complete program and its run command.” The information cells additionally receive the field definitions and timing rules in DATA_DICTIONARY.md. Redundancy is intentional: the experiment tests whether explicit structured context improves implementation of the same target.
+
+Provide the schema and the synthetic A/B/C development case from the lab to the assistant. Execute generated code locally after inspecting it. The actual mHealth records remain local. In feedback cells, return the development check's observed discrepancies and permit at most two revisions within the common resource cap. In cells without feedback, permit the same code-execution access and budget, but withhold the independent check. Record actual utilization and any voluntarily performed checks.
+
+## Development and Evaluation
+
+Use July for development. Freeze instructions, tool descriptions, checker version, correction policy, and candidate code before scoring August. Evaluate the frozen program locally against the separately maintained reference. The evaluation files and expected answers are public course materials; conceal them from the model during a measured exercise through an explicitly restricted task workspace. A folder name alone supplies no isolation. The supplied CSV grader never executes submitted programs and implements no sandbox.
+
+Repeat each configuration five times with fresh conversations and clean output directories. Randomize cell order within each repetition, record the order and model seed where supported, and keep model configuration fixed. Preserve each assigned attempt, including timeouts and missing outputs. Multiple runs of the August task measure variation on that task; they do not supply a sample of independent business problems. Broader generalization requires additional task families and a separate final evaluation set. A version change restarts the comparison or becomes an explicitly varied factor.
+
+## Run Record and Outcomes
+
+Record task and repetition IDs, configuration, model/version, prompt and input hashes, tool versions, exposed files, budgets, start/end times, generated program, executed commands, tool errors, feedback, revisions, final output hash, checker result, actual API charges, review minutes, correction minutes, and permission violations. Record an unavailable cost as missing. Retain visible actions and evidence; an assistant's explanation is not a direct observation of its internal reasoning.
+
+The primary outcome is a valid complete table per assigned attempt. Also report user-level discrepancies, zero-log omissions, date-boundary errors, failed attempts, elapsed time, and human effort. A permission violation remains a separate outcome even when the table is correct. Check results with a separately written SQL calculation and the small cases. Equal overall totals can conceal errors assigned to different users.
+
+For each cell, divide valid outputs by all assigned attempts. Sum model, execution, review, and correction costs across all attempts, including failures, before dividing by the number of valid outputs. If no output is valid, report that ratio as undefined. Report unresolved attempts alongside cost. Paired contrasts across repetitions preserve the common task; uncertainty describes repeat-run variation conditional on this task and model configuration.
+
+The interaction is the information effect with feedback minus the information effect without feedback. It describes complementarity for the chosen outcome. Correct diagnosis requires controlled interventions: an execution record can locate a likely error without proving which component caused it. Re-evaluate the whole workflow after changing a model, prompt, data dictionary, tool, or checker.
+
+---
+
+## Source: 03_Data_and_Code/Agent_Workflows/VERIFICATION.md
+
+# Verification Record
+
+Verified November 24, 2026 with Python's standard library. The source builder read the existing local mHealth release after verifying SHA-256 `2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea`. It produced a 358-user prior-period roster and two compact task inputs. Input hashes are recorded in [manifest.json](manifest.json).
+
+Executed `build_tasks.py`, `logging_reference.py`, `workflow_costs.py`, and the CSV grader against the valid reference. Eight tests in `test_workflows.py` passed. They cover distinct days, interval boundaries, zero-log users, duplicate roster keys, invalid dates and windows, correct-output acceptance, equal-total customer misassignment, missing and duplicate output rows, nonfinite values, cost denominators, and an independent SQL comparison of every actual customer count in both tasks.
+
+The reference calculation uses sets of dates; the independent comparison uses a SQLite left join and `COUNT(DISTINCT ...)`. The synthetic known-answer case is A=1, B=1, C=0 over 31 days, giving 2/93. The cost example recomputes 350/80 and 200/95 under its explicitly hypothetical inputs.
+
+The CSV grader does not execute generated code. No model calls, external data uploads, upstream package execution, empirical labor-time measurements, or measured comparison of the four AI configurations occurred. Rendering and code-to-notes checks are recorded in the course build documentation; they establish separate properties from the substantive interpretation.
+
+---
+
+## Source: 03_Data_and_Code/Agent_Workflows/results/README.md
+
+# Logging and Workflow Results
+
+The logging calculations use transformed real mHealth records and a roster fixed from January–June observations. The two task windows use 358 users and 31 days per user, giving 11,098 possible user-days each.
+
+| Task | Recorded User-Days | Zero-Log Users | Mean Logging Rate |
+| --- | ---: | ---: | ---: |
+| July development | 6,455 | 39 | 58.16% |
+| August evaluation | 6,501 | 41 | 58.58% |
+
+[logging_summary.json](logging_summary.json) retains the exact fractions and excluded boundary-row counts. The reference CSVs provide one row per roster user. An independent SQLite calculation reproduces every customer count in both files. The same roster is used in both periods; the rate concerns record presence, not intake or health.
+
+[hypothetical_costs.json](hypothetical_costs.json) uses invented model charges, valid-output counts, review time, and correction time. At 60 dollars per analyst hour, its two total costs are 350 and 200 dollars, with 80 and 95 valid outputs out of 100 assigned tasks. These values illustrate cost accounting and are not measured model performance or labor savings.
+
+No four-configuration model experiment was executed. The [protocol](../EXPERIMENT_PROTOCOL.md) identifies how to collect those outcomes separately.
+
+---
+
+## Source: 07_Labs/Agent_Workflows/README.md
+
+# AI Workflow Evaluation
+
+This is optional, ungraded practice. Current assignment briefs determine assessment-specific AI permissions.
+
+## A Fixed Logging Population
+
+An outreach team needs the distribution of recorded logging activity among customers observed earlier in the year. Read the [task dictionary](../../03_Data_and_Code/Agent_Workflows/DATA_DICTIONARY.md). Explain the roster, observed-day unit, included start, excluded end, and meaning of a zero. Run the [reference calculation](../../03_Data_and_Code/Agent_Workflows/logging_reference.py) and reconcile July's 6,455 observed user-days with its 11,098 possible user-days. Explain why the 39 users without July records remain in the denominator.
+
+## Check by Hand
+
+Use an invented roster A, B, C and a July 1–August 1 half-open interval. A has records on June 30, July 1, and a repeated July 1. B has records on July 31 and August 1. C has none. A separate user Z has a July 3 record. The required logged-day counts are A=1, B=1, C=0. The mean rate is 2/93. Explain each excluded record and why summing the food-entry count would answer a different question.
+
+Run the independent tests from the repository root:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/test_workflows.py
+```
+
+Duplicate a roster key and predict the failure before running the calculation. Replace an ISO date with an ambiguous date and explain why the program rejects it. Keep these invented errors separate from the actual task inputs.
+
+## Evaluate the Checker
+
+Compare the correct vector (1,1,0) with (0,1,1). Both total two days. If outreach prioritizes zero-log users, the second output selects A in place of C. Explain why a grand-total check misses the decision error. Inspect [evaluate_submission.py](../../03_Data_and_Code/Agent_Workflows/evaluate_submission.py), then score the reference CSV as a basic checker sanity check. Its stronger evidence comes from wrong-case tests and the independent SQL comparison.
+
+## Optional Model Comparison
+
+Follow the [experiment protocol](../../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md). Hold the model fixed and cross explicit information with independent development feedback. Generate code using the schema and invented small cases; run it locally against the actual records after inspecting its operations. Preserve inputs and restrict the workspace. Freeze the program and prompts before evaluating August.
+
+Record every assigned attempt, its model version, visible files, commands, revisions, elapsed time, charges, analyst effort, and final checker result. Randomize cell order within repeated runs. Report failures and unavailable costs explicitly. Calculate each information and feedback contrast and their interaction. Explain why repeated runs of one task provide narrower evidence than a sample of different business tasks. No model-comparison results are included in the released calculation outputs.
+
+## Cost and Authority
+
+Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py). Recalculate the comparison at an analyst cost of $30 per hour and explain which cost categories change. These are hypothetical inputs. A sensitivity calculation does not estimate labor savings.
+
+Consider a cancellation agent instructed to require a retention survey before accepting a customer's unambiguous request to cancel. State the customer's requested outcome, the firm's objective, the action performed, and the relevant sources of authority. Apply the Kantian and Confucian arguments from M9. Explain what additional evidence is needed to assess the firm's claim that the procedure benefits customers.
 
 ---
 

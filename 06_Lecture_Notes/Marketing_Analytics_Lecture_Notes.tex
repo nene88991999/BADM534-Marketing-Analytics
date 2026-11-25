@@ -1410,6 +1410,277 @@ time, scope, and withdrawal conditions of permission records
 independently of inferred preferences. Section 9.19 connects these
 distinctions to the justification of a firm's conduct.
 
+\hypertarget{M01-information-tools-and-a-verified-analysis}{%
+\section{Information, Tools, and a Verified
+Analysis}\label{M01-information-tools-and-a-verified-analysis}}
+
+\noindent \noindent A manager considering customer outreach first needs a measure
+of recorded activity. A coding assistant can produce a plausible table
+while counting food entries as days, omitting customers with no later
+records, or including observations beyond the reporting window. Each
+error changes the population or quantity relevant to the decision.
+Supplying a model with a clear question begins the analysis; the files
+it can inspect, operations it can perform, and checks it receives also
+affect the result.
+
+An agent harness is the execution system surrounding a model. Its
+components include tools, task context, state retained between steps,
+resource limits, execution records, verification, and permissions. Li
+and coauthors'
+\href{../01_Resources/35_Agent_Workflow_Evaluation/README.md}{survey},
+especially §§5 and 8, connects these components to reproducible
+evaluation. A useful implementation stores the current task definition
+and input versions, executes small changes, and retains evidence of
+their results. A progress note that says a calculation passed should
+link to the calculation and its output. After a reset or interruption,
+the assistant can then recover the relevant state without treating its
+earlier assertion as proof.
+
+The recurring mHealth task fixes eligibility using food records from
+January through June 2016 within the established pseudonym-selected
+cohort. The resulting roster contains 358 users. July activity counts
+distinct dates from July 1 inclusive to August 1 exclusive. Every roster
+user receives 31 possible days. The source contains no
+account-enrollment registry; eligibility means observed earlier in this
+released file. A zero for July means no recorded food-log day in that
+window. It supplies no measurement of food intake on the missing days.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & July Development Task & August Evaluation Task \\
+\midrule
+
+Earlier-period roster users & 358 & 358 \\
+Calendar days per user & 31 & 31 \\
+Possible user-days & 11,098 & 11,098 \\
+Recorded user-days & 6,455 & 6,501 \\
+Users with no recorded days & 39 & 41 \\
+Mean recorded logging rate & 58.16\% & 58.58\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The mean gives each roster user equal weight. The inputs include
+observed boundary dates immediately before and after the target
+interval. Excluding those dates and collapsing repeated dates are
+separate operations. An inner join to July records would omit the
+zero-log users and change the target to activity conditional on having a
+July record. Retaining the roster before counting preserves the intended
+comparison.
+
+\hypertarget{M01-information-and-feedback-as-separate-choices}{%
+\subsection{Information and Feedback as Separate
+Choices}\label{M01-information-and-feedback-as-separate-choices}}
+
+\noindent \noindent A controlled comparison can vary a structured data dictionary
+and independent development feedback while holding the model and
+analytical target fixed. All four configurations receive the core
+measurement request, output schema, input files, execution tools,
+permissions, and resource caps. The information condition adds organized
+definitions of units, eligibility, boundaries, and missingness. The
+feedback condition returns discrepancies from a separate development
+checker and permits at most two corrections within the common budget. An
+improvement in either condition is an empirical question.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M01_workflow_design.tex}
+\caption{A two-by-two design holds the model, task, tools, permissions, and resource caps fixed while crossing explicit measurement information with development-check feedback.}\label{fig:M01_workflow_design}
+\end{figure}
+
+Use fresh conversations and clean output directories for repeated runs.
+Preserve the prompt, model version, visible file list, commands,
+feedback, revisions, and final output. Develop with July and score a
+frozen program on August. The
+\href{../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md}{experiment
+protocol} separates the public reference files from the files exposed to
+the assistant during a measured run. An exported report can describe the
+result; the saved inputs and executable calculation establish what was
+computed.
+
+\hypertarget{M01-reproduce-the-logging-tasks}{%
+\subsection{Reproduce the Logging
+Tasks}\label{M01-reproduce-the-logging-tasks}}
+
+\noindent \noindent The task builder verifies the compressed public source
+checksum, selects the earlier roster, assigns stable aliases, and
+exports only user-day counts and timing metadata. Compact inputs are
+included in the repository. Rebuilding them requires the mHealth release
+in its documented local data folder. The following program uses Python's
+standard library and makes no model calls.
+
+The source count is food rows per user-date. The task interval later
+determines which observed dates contribute to logging activity.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Agent_Workflows/build_tasks.py}{build\_tasks.py}.
+From the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+cd 03_Data_and_Code/Agent_Workflows
+python3 build_tasks.py
+\end{Verbatim}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Construct small, reproducible tasks from the released mHealth food file."""
+import csv
+import gzip
+import hashlib
+import json
+from collections import Counter
+from datetime import date, timedelta
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parent / "mHealth"
+
+
+def digest(path):
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def write_csv(path, fields, rows):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    source = SOURCE / "data/food_entries.csv.gz"
+    release = json.loads((SOURCE / "manifest.json").read_text())
+    expected = release["files"][source.name]["sha256"]
+    if digest(source) != expected:
+        raise ValueError("The mHealth release checksum differs.")
+    prior_users, counts = set(), Counter()
+    with gzip.open(source, "rt", newline="") as stream:
+        for row in csv.DictReader(stream):
+            user = row["Userid"]
+            if int(user[1:5], 16) >= 4096:
+                continue
+            day = date.fromisoformat(row["Fancydate"][:10])
+            if date(2016, 1, 1) <= day < date(2016, 7, 1):
+                prior_users.add(user)
+            if date(2016, 6, 30) <= day <= date(2016, 9, 1):
+                counts[user, day] += 1
+    # Eligibility is fixed using January-June records for both later tasks.
+    aliases = {u: f"U{i:04d}" for i, u in enumerate(sorted(prior_users), 1)}
+    tasks = []
+    for month, role in [(7, "development"), (8, "evaluation")]:
+        start, end = date(2016, month, 1), date(2016, month + 1, 1)
+        task = HERE / "tasks" / role
+        spec = {"task_id": role, "start": str(start), "end_exclusive": str(end),
+                "eligibility_cutoff_exclusive": "2016-07-01"}
+        write_csv(task / "roster.csv", ["user_id"],
+                  ({"user_id": u} for u in aliases.values()))
+        records = [{"user_id": aliases[u], "date": str(d), "entries": n}
+                   for (u, d), n in sorted(counts.items())
+                   if u in aliases and start - timedelta(days=1) <= d <= end]
+        write_csv(task / "observed_days.csv", ["user_id", "date", "entries"], records)
+        (task / "task.json").write_text(json.dumps(spec, indent=2) + "\n")
+        tasks.append({**spec, "roster_users": len(aliases), "input_rows": len(records)})
+    inputs = sorted((HERE / "tasks").glob("*/*"))
+    manifest = {"source": "mHealth teaching release 2026-10-23",
+                "source_sha256": expected, "selection": "Pseudonym prefix below 4096; observed January-June 2016",
+                "unit": "Observed user-day; entries counts source food rows",
+                "tasks": tasks, "model_calls": 0,
+                "files": {str(p.relative_to(HERE)): digest(p) for p in inputs}}
+    (HERE / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print(json.dumps(tasks, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+The reference calculation starts with every roster user and collects a
+set of eligible dates. A separate SQL calculation verifies the same
+customer-level counts. The generated JSON preserves the denominators and
+excluded input-row counts.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Agent_Workflows/logging_reference.py}{logging\_reference.py}.
+From the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+cd 03_Data_and_Code/Agent_Workflows
+python3 logging_reference.py
+\end{Verbatim}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Calculate observed logging days for a fixed earlier-period roster."""
+import csv
+import json
+from datetime import date
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def read_csv(path):
+    with path.open(newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def calculate(roster, records, start, end):
+    users = [row["user_id"] for row in roster]
+    if not users or len(users) != len(set(users)):
+        raise ValueError("The roster must be nonempty with one row per user.")
+    days = (end - start).days
+    if days <= 0:
+        raise ValueError("The end must follow the start.")
+    observed = {u: set() for u in users}
+    excluded_rows = 0
+    for row in records:
+        d = date.fromisoformat(row["date"])
+        if row["user_id"] not in observed or not start <= d < end:
+            excluded_rows += 1
+            continue
+        # Multiple entries and repeated rows still represent one logged day.
+        observed[row["user_id"]].add(d)
+    rows = [{"user_id": u, "logged_days": len(observed[u]), "window_days": days,
+             "logging_rate": len(observed[u]) / days} for u in users]
+    total = sum(r["logged_days"] for r in rows)
+    summary = {"roster_users": len(users), "window_days": days,
+               "observed_user_days": total, "possible_user_days": len(users) * days,
+               "zero_log_users": sum(r["logged_days"] == 0 for r in rows),
+               "mean_logging_rate": total / (len(users) * days),
+               "excluded_input_rows": excluded_rows}
+    return rows, summary
+
+
+def main():
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    summaries = {}
+    for role in ["development", "evaluation"]:
+        task = HERE / "tasks" / role
+        spec = json.loads((task / "task.json").read_text())
+        rows, summary = calculate(read_csv(task / "roster.csv"),
+                                  read_csv(task / "observed_days.csv"),
+                                  date.fromisoformat(spec["start"]),
+                                  date.fromisoformat(spec["end_exclusive"]))
+        with (output / f"{role}_reference.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(rows)
+        summaries[role] = summary
+    (output / "logging_summary.json").write_text(json.dumps(summaries, indent=2) + "\n")
+    print(json.dumps(summaries, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
 Visualization}\label{M02-m2.-customer-data-measurement-and-visualization}}
@@ -12590,6 +12861,57 @@ fixed-design calculation, and
 happens when its bias restriction fails. Synthetic ratings alone do not
 establish an intervention's causal effect on human purchasing.
 
+\hypertarget{M06-factorial-comparisons-of-coding-workflows}{%
+\section{Factorial Comparisons of Coding
+Workflows}\label{M06-factorial-comparisons-of-coding-workflows}}
+
+\noindent \noindent A firm deciding whether to improve task documentation or
+introduce automated feedback needs evidence about their separate
+contributions. Changing both at once can establish the effect of the
+combined procedure under a credible comparison, while leaving each
+component's contribution unresolved. The mHealth design in §1.17 crosses
+information and feedback at a fixed model version. Each repeated run
+receives a clean state, and the order of the four configurations is
+randomized within a repetition to reduce systematic timing differences.
+
+Let \(q_{cf}\) denote the probability of a valid complete output on the
+fixed evaluation task when explicit context has value \(c\in\{0,1\}\)
+and development feedback has value \(f\in\{0,1\}\). Validity is defined
+by the independently maintained output checks. The contribution of
+context depends on whether feedback is supplied. The interaction records
+the difference between those contributions:
+
+\[
+\Delta_{CF}=(q_{11}-q_{01})-(q_{10}-q_{00}).
+\]
+
+A positive interaction means that context has a larger effect on
+valid-output probability when feedback is available, under this model,
+task, and resource policy. A negative interaction means that its
+measured contribution is smaller. Neither sign by itself identifies why
+the components interact. The execution records can suggest a mechanism,
+such as a checker exposing a misunderstood date boundary; a targeted
+intervention is needed to separate that mechanism from competing
+explanations.
+
+Count timeouts and missing files as unsuccessful assigned attempts.
+Preserve paired repetitions and record costs even when no valid output
+is produced. Fresh conversations limit carryover from prior feedback,
+while random order alone does not remove provider updates or
+human-review learning. Hold the model version fixed, blind reviewers to
+the configuration where feasible, and record disruptions. Five
+repetitions per cell on one August workload assess repeat-run variation
+conditional on that workload. A claim about marketing analysis generally
+requires independent tasks drawn from the intended deployment setting.
+
+An execution record is diagnostic evidence. It can show that a file was
+unavailable, a tool failed, or an incorrect output passed a narrow
+checker. Those observations do not identify the causal effect of
+replacing the model or changing the tool. The component intervention and
+its comparison define that question. The public
+\href{../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md}{protocol}
+supplies the recording requirements without presuming a measured gain.
+
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
 Actions}\label{M07-m7.-prediction-machine-learning-and-marketing-actions}}
@@ -17525,6 +17847,156 @@ if __name__ == "__main__":
     print(json.dumps(result, indent=2))
 \end{Verbatim}
 
+\hypertarget{M07-evaluate-outputs-actions-and-the-checker}{%
+\section{Evaluate Outputs, Actions, and the
+Checker}\label{M07-evaluate-outputs-actions-and-the-checker}}
+
+\noindent \noindent An outreach decision can be wrong even when its report
+reproduces the overall activity total. Consider three invented users A,
+B, and C observed over July's 31 days. Their correct logged-day counts
+are \((1,1,0)\). A second output reports \((0,1,1)\). Both report two
+recorded days out of 93 possible user-days, but they identify different
+customers as having no recorded activity. An aggregate check accepts
+both. A customer-level check detects the reassignment that changes the
+outreach list.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M07_workflow_checker.tex}
+\caption{Two invented three-user outputs each total two logged days. The correct counts select C for zero-log review; the reassigned counts select A. Matching the aggregate does not preserve the customer decision.}\label{fig:M07_workflow_checker}
+\end{figure}
+
+The grader must therefore check the intended observation unit. It
+requires each roster user exactly once, checks the calendar-day
+denominator, and compares each customer's logged days and rate with a
+separately verified reference. Missing users, duplicate rows, nonfinite
+values, or a numerically wrong rate prevent the output from passing. A
+test that merely reruns the candidate's own aggregation can reproduce
+its error. Small cases with known answers and an independent SQL
+calculation provide additional evidence about the reference.
+
+Li and coauthors'
+\href{../01_Resources/35_Agent_Workflow_Evaluation/README.md}{survey},
+§8, distinguishes the final outcome, the sequence of actions, and the
+evaluator. For this task, the outcome is a complete, accurate logging
+table. The action record establishes which files changed, whether the
+allowed scope was respected, how often the program retried, and what
+resources were used. Evaluator assessment asks whether the checker
+detects errors that would change the decision. Each judgment can differ
+from the others. A correct final table can follow an unauthorized input
+change, and an overly narrow checker can accept an incorrect table.
+
+\hypertarget{M07-independent-evaluation-after-development}{%
+\subsection{Independent Evaluation After
+Development}\label{M07-independent-evaluation-after-development}}
+
+\noindent \noindent The four configurations in §1.17 use July for development and
+August for evaluation. Freeze prompts, generated code, information
+selection, correction limits, and checker versions before scoring
+August. A correction based on August's expected answer turns that task
+into development material. Further claims would then need fresh
+evaluation cases. The published reference is useful for learning; a
+measured comparison must explicitly keep it outside the assistant's
+accessible task workspace.
+
+Report valid outputs over all assigned attempts, user-level
+discrepancies, missing files, timeouts, elapsed time, and human effort.
+Repeated runs of a fixed task reveal variation conditional on that task.
+They supply no independent evidence about other task families. Changing
+the model, dictionary, tool interface, or checker changes the evaluated
+configuration and calls for renewed comparison. The local calculations
+below provide reference values and checker tests; they contain no
+measured performance of the four AI configurations.
+
+\hypertarget{M07-reproduce-the-csv-assessment}{%
+\subsection{Reproduce the CSV
+Assessment}\label{M07-reproduce-the-csv-assessment}}
+
+\noindent \noindent The CSV grader reads a proposed output and an existing
+reference table. It executes no submitted program. The command below
+scores the known development reference. Substitute a candidate CSV to
+inspect its discrepancies. An unsuccessful assessment returns exit code
+1 so that a surrounding workflow can distinguish a rejected output from
+a completed valid calculation.
+
+The required columns are \texttt{user\_id}, \texttt{logged\_days},
+\texttt{window\_days}, and \texttt{logging\_rate}. Numerical comparisons
+use an absolute tolerance of \(10^{-10}\). The
+\href{../03_Data_and_Code/Agent_Workflows/test_workflows.py}{independent
+tests} include equal-total misassignment, omitted users, duplicate keys,
+invalid dates, nonfinite values, and a SQL calculation on both actual
+task inputs.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Agent_Workflows/evaluate_submission.py}{evaluate\_submission.py}.
+From the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+cd 03_Data_and_Code/Agent_Workflows
+python3 evaluate_submission.py results/development_reference.csv
+\end{Verbatim}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Grade a CSV without executing submitted code or making model calls."""
+import argparse
+import csv
+import json
+import math
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def grade(candidate, reference):
+    expected = {r["user_id"]: r for r in reference}
+    found, errors = {}, []
+    for row in candidate:
+        user = row.get("user_id", "")
+        if user in found:
+            errors.append(f"duplicate user: {user}")
+        found[user] = row
+    missing, extra = sorted(set(expected) - set(found)), sorted(set(found) - set(expected))
+    correct = 0
+    for user in sorted(set(expected) & set(found)):
+        try:
+            actual = [float(found[user][k]) for k in ["logged_days", "window_days", "logging_rate"]]
+            target = [float(expected[user][k]) for k in ["logged_days", "window_days", "logging_rate"]]
+            ok = all(math.isfinite(a) and math.isclose(a, b, rel_tol=0, abs_tol=1e-10)
+                     for a, b in zip(actual, target))
+            correct += ok
+        except (KeyError, ValueError, TypeError):
+            errors.append(f"invalid values: {user}")
+    valid = not missing and not extra and not errors and correct == len(expected)
+    return {"valid_output": valid, "correct_users": correct, "roster_users": len(expected),
+            "missing_users": missing, "extra_users": extra, "format_errors": errors}
+
+
+def read_rows(path):
+    with path.open(newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("candidate", type=Path)
+    parser.add_argument("--task", choices=["development", "evaluation"], default="development")
+    args = parser.parse_args()
+    reference = read_rows(HERE / "results" / f"{args.task}_reference.csv")
+    try:
+        candidate = read_rows(args.candidate)
+        result = grade(candidate, reference)
+    except (OSError, UnicodeError, csv.Error) as exc:
+        result = {"valid_output": False, "failure": type(exc).__name__, "roster_users": len(reference)}
+    print(json.dumps(result, indent=2))
+    raise SystemExit(0 if result["valid_output"] else 1)
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -19984,6 +20456,111 @@ needed to reproduce it. The full executable comparison and
 \href{../07_Labs/Reproducible_Recommendations/README.md}{optional
 practice} preserve these separate decisions.
 
+\hypertarget{M08-the-cost-of-a-valid-completed-analysis}{%
+\section{The Cost of a Valid Completed
+Analysis}\label{M08-the-cost-of-a-valid-completed-analysis}}
+
+\noindent \noindent A manager choosing an AI workflow pays for unsuccessful
+attempts as well as accepted outputs. A lower model charge can be
+outweighed by analyst review and correction. The relevant comparison
+therefore follows the assigned workload through its final checks.
+Preserve unresolved tasks in the report so that a low average cost does
+not conceal a growing backlog.
+
+For a fixed set of assigned tasks, let \(M\) denote model and execution
+charges in dollars, \(t_r\) and \(t_c\) denote total analyst review and
+correction minutes, \(w\) denote dollars per analyst minute, and \(V>0\)
+denote the number of valid final outputs. The cost per valid output is
+
+\[
+K=\frac{M+w(t_r+t_c)}{V}.
+\]
+
+All attempts contribute their incurred costs to the numerator, including
+those that end without a valid output. The denominator counts outputs
+that meet the stated analytical requirements after any allowed
+correction. With no valid outputs, the ratio is undefined and the total
+incurred cost remains reportable. Elapsed completion time is a separate
+quantity because some work can occur concurrently. Consequential
+customer losses also require their own evaluation; the accounting ratio
+does not measure them.
+
+Consider two hypothetical workflows, each assigned 100 tasks, with
+analyst time priced at \$60 per hour. Set execution charges outside the
+model API to zero for this illustration. The basic workflow incurs \$10
+in API charges, 240 review minutes, and 100 correction minutes, ending
+with 80 valid outputs. The checked workflow incurs \$20 in API charges,
+150 review minutes, and 30 correction minutes, ending with 95 valid
+outputs. Total costs are \$350 and \$200, respectively. Their costs per
+valid output are \$4.375 and approximately \$2.105. Under these inputs,
+greater model spending accompanies lower total cost because analyst
+effort falls. The figures are invented accounting inputs, separate from
+the observed mHealth logging counts and any measured AI experiment.
+
+The model comparison in §7.41 would collect these quantities for each
+assigned run. Actual charges, measured review effort, and correction
+effort replace the illustrative values. Where costs are missing, retain
+that status rather than assigning zero. Compare whole configurations
+after a change: adding a checker can increase computation, change
+correction behavior, and reduce or increase human review. Which effect
+dominates depends on the task, checker quality, and available model.
+
+\hypertarget{M08-reproduce-the-hypothetical-cost-comparison}{%
+\subsection{Reproduce the Hypothetical Cost
+Comparison}\label{M08-reproduce-the-hypothetical-cost-comparison}}
+
+\noindent \noindent The complete calculation retains assigned-task counts, valid
+outputs, analyst minutes, and dollar costs. Vary the wage or correction
+time to identify which inputs support the ranking.
+
+The output labels the inputs as hypothetical and records the
+\$60-per-hour analyst rate. Both workflows include their failed attempts
+in the stated workload and total effort.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Agent_Workflows/workflow_costs.py}{workflow\_costs.py}.
+From the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+cd 03_Data_and_Code/Agent_Workflows
+python3 workflow_costs.py
+\end{Verbatim}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""An explicitly hypothetical comparison over 100 assigned analysis tasks."""
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def calculate():
+    wage_per_minute = 60 / 60  # An assumed analyst cost of $60 per hour.
+    cases = [
+        {"workflow": "Basic", "assigned": 100, "valid": 80, "api_dollars": 10,
+         "review_minutes": 240, "correction_minutes": 100},
+        {"workflow": "Checked", "assigned": 100, "valid": 95, "api_dollars": 20,
+         "review_minutes": 150, "correction_minutes": 30},
+    ]
+    for row in cases:
+        row["total_dollars"] = row["api_dollars"] + wage_per_minute * (
+            row["review_minutes"] + row["correction_minutes"])
+        row["valid_rate"] = row["valid"] / row["assigned"]
+        row["dollars_per_valid_task"] = row["total_dollars"] / row["valid"]
+    return {"scope": "Hypothetical inputs; no observed model performance or labor savings",
+            "analyst_dollars_per_hour": 60, "cases": cases}
+
+
+if __name__ == "__main__":
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    result = calculate()
+    (output / "hypothetical_costs.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+\end{Verbatim}
+
 \hypertarget{M09-marketing-dialectics}{%
 \chapter{Marketing Dialectics}\label{M09-marketing-dialectics}}
 
@@ -21841,5 +22418,60 @@ unresolved records to review. The feature examples in §§7.39--7.40 show
 why reconstruction and interpretive labels require separate evaluation.
 Neither logical coherence nor a high model score establishes the ethical
 legitimacy of a marketing practice.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-an-authorized-agent-and-a-justified-objective}{%
+\section{An Authorized Agent and a Justified
+Objective}\label{M09-an-authorized-agent-and-a-justified-objective}}
+
+\noindent \noindent A customer asks a subscription service to cancel. The firm
+instructs its agent to require a retention survey before recording the
+cancellation. The agent follows the policy, records every action, and
+successfully obtains a survey response. Its execution can satisfy the
+firm's technical specification while delaying the outcome the customer
+requested. The relevant assessment must therefore identify whose
+instruction supplied the objective and whose choice the procedure
+affects.
+
+Technical permissions establish which actions the system allows an agent
+to perform. Company authorization establishes that an employee or
+service may act on the firm's behalf. Customer authorization concerns
+the scope of what that customer requested or accepted. Ethical
+justification concerns the reasons for treating the person in that way.
+These relationships can overlap, but evidence for one does not establish
+the others. A record that the firm approved the retention survey
+supplies no evidence that the customer agreed to make it a condition of
+exit.
+
+The Kantian analysis in §§9.3 and 9.16 asks whether the maxim governing
+the practice respects the customer's capacity to form purposes and act
+on reasons. A firm that describes a retention obstacle as necessary
+cancellation processing must justify the description and the imposed
+condition. An explicit, reversible offer that leaves the requested exit
+available presents a different practice from concealing or withholding
+that exit. Its assessment depends on the actual procedure, the
+information supplied, and the person's freedom to decline. A higher
+renewal rate cannot resolve those questions because retained accounts
+can include customers whose expressed purposes were frustrated.
+
+Confucian attention to the rectification of names connects the service's
+stated role with its conduct. A cancellation service should be assessed
+by whether it carries out the relevant responsibility to the customer.
+Remonstrance gives employees a reason to challenge a commercially
+successful rule when it conflicts with that responsibility. In the agent
+setting, an escalation route can preserve a record of the conflict and
+permit correction. Its existence alone does not establish that
+objections are heard or customers obtain the requested outcome.
+
+The governance mechanisms surveyed by
+\href{../01_Resources/35_Agent_Workflow_Evaluation/README.md}{Li and
+coauthors}, §9, can preserve permission scope, action records, and
+accountability. The philosophical application asks the further question
+of whether the objective and means are justified. Evaluate cancellation
+completion against the customer's expressed request, report imposed
+obstacles and unresolved cases, and examine the reasons offered for
+them. A system's technical success is evidence about its execution; the
+customer's agency remains an independent object of judgment.
 
 \end{document}

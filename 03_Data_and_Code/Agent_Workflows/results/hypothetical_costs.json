@@ -1,0 +1,28 @@
+{
+  "scope": "Hypothetical inputs; no observed model performance or labor savings",
+  "analyst_dollars_per_hour": 60,
+  "cases": [
+    {
+      "workflow": "Basic",
+      "assigned": 100,
+      "valid": 80,
+      "api_dollars": 10,
+      "review_minutes": 240,
+      "correction_minutes": 100,
+      "total_dollars": 350.0,
+      "valid_rate": 0.8,
+      "dollars_per_valid_task": 4.375
+    },
+    {
+      "workflow": "Checked",
+      "assigned": 100,
+      "valid": 95,
+      "api_dollars": 20,
+      "review_minutes": 150,
+      "correction_minutes": 30,
+      "total_dollars": 200.0,
+      "valid_rate": 0.95,
+      "dollars_per_valid_task": 2.1052631578947367
+    }
+  ]
+}

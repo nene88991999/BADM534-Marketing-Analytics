@@ -1178,3 +1178,19 @@ For a marketing panel, specify the offer date, anticipation period, customer or 
 [Jasin, Lin, and Zhang](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298), Theorem 1, show that such a fixed allocation attains the minimum leading sampling cost as the coefficient-MSE target approaches zero in their linear Gaussian model. The objective requires accuracy uniformly over the unknown response and bias coefficients. The result permits lower-order differences at finite accuracy. Their pilot extension estimates unknown noise variances; it retains known response and bias features.
 
 The distinction from an adaptive marketing experiment follows from the information structure and objective. A nonlinear choice model can make information depend on unknown parameters. An online promotion experiment can value revenue earned during learning as well as a final estimate. An unknown bias dictionary requires evidence about which source comparisons remain valid. These changes require their own allocation analysis. [Section 4.24](M04_Conjoint_Segmentation_and_CLV.md) provides the fixed-design calculation, and [Section 7.37](M07_Prediction_and_Machine_Learning.md) shows what happens when its bias restriction fails. Synthetic ratings alone do not establish an intervention's causal effect on human purchasing.
+
+## 6.29 Factorial Comparisons of Coding Workflows
+
+\noindent A firm deciding whether to improve task documentation or introduce automated feedback needs evidence about their separate contributions. Changing both at once can establish the effect of the combined procedure under a credible comparison, while leaving each component's contribution unresolved. The mHealth design in §1.17 crosses information and feedback at a fixed model version. Each repeated run receives a clean state, and the order of the four configurations is randomized within a repetition to reduce systematic timing differences.
+
+Let $q_{cf}$ denote the probability of a valid complete output on the fixed evaluation task when explicit context has value $c\in\{0,1\}$ and development feedback has value $f\in\{0,1\}$. Validity is defined by the independently maintained output checks. The contribution of context depends on whether feedback is supplied. The interaction records the difference between those contributions:
+
+$$
+\Delta_{CF}=(q_{11}-q_{01})-(q_{10}-q_{00}).
+$$
+
+A positive interaction means that context has a larger effect on valid-output probability when feedback is available, under this model, task, and resource policy. A negative interaction means that its measured contribution is smaller. Neither sign by itself identifies why the components interact. The execution records can suggest a mechanism, such as a checker exposing a misunderstood date boundary; a targeted intervention is needed to separate that mechanism from competing explanations.
+
+Count timeouts and missing files as unsuccessful assigned attempts. Preserve paired repetitions and record costs even when no valid output is produced. Fresh conversations limit carryover from prior feedback, while random order alone does not remove provider updates or human-review learning. Hold the model version fixed, blind reviewers to the configuration where feasible, and record disruptions. Five repetitions per cell on one August workload assess repeat-run variation conditional on that workload. A claim about marketing analysis generally requires independent tasks drawn from the intended deployment setting.
+
+An execution record is diagnostic evidence. It can show that a file was unavailable, a tool failed, or an incorrect output passed a narrow checker. Those observations do not identify the causal effect of replacing the model or changing the tool. The component intervention and its comparison define that question. The public [protocol](../../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md) supplies the recording requirements without presuming a measured gain.

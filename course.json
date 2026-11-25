@@ -276,7 +276,17 @@
     "03_Data_and_Code/Representation_Evaluation/AGENTS.md",
     "03_Data_and_Code/Representation_Evaluation/VERIFICATION.md",
     "03_Data_and_Code/Representation_Evaluation/results/README.md",
-    "07_Labs/Representation_Evaluation/README.md"
+    "07_Labs/Representation_Evaluation/README.md",
+    "01_Resources/35_Agent_Workflow_Evaluation/README.md",
+    "01_Resources/35_Agent_Workflow_Evaluation/SOURCE_REVIEW.md",
+    "01_Resources/35_Agent_Workflow_Evaluation/CASE_DESIGN.md",
+    "03_Data_and_Code/Agent_Workflows/README.md",
+    "03_Data_and_Code/Agent_Workflows/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Agent_Workflows/AGENTS.md",
+    "03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md",
+    "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
+    "03_Data_and_Code/Agent_Workflows/results/README.md",
+    "07_Labs/Agent_Workflows/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -325,12 +335,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-24-writing-alignment",
+    "revision": "2026-11-24-agent-workflows",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 102,
-    "pages": 390,
+    "figures_count": 104,
+    "pages": 401,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -352,7 +362,8 @@
     "auxiliary_data_examples": "03_Data_and_Code/Auxiliary_Data/README.md",
     "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md",
     "ontology_examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
-    "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md"
+    "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md",
+    "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md"
   },
   "datasets": [
     {
@@ -423,7 +434,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 389,
+    "slides": 397,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -996,6 +1007,39 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-24-writing-alignment",
-  "writing_guide": "WRITING_STYLE.md"
+  "revision": "2026-11-24-agent-workflows",
+  "writing_guide": "WRITING_STYLE.md",
+  "agent_workflow_evaluation": {
+    "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
+    "review": "01_Resources/35_Agent_Workflow_Evaluation/SOURCE_REVIEW.md",
+    "case_design": "01_Resources/35_Agent_Workflow_Evaluation/CASE_DESIGN.md",
+    "catalog": "01_Resources/35_Agent_Workflow_Evaluation/catalog.json",
+    "manifest": "01_Resources/35_Agent_Workflow_Evaluation/manifest.json",
+    "examples": "03_Data_and_Code/Agent_Workflows/README.md",
+    "protocol": "03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md",
+    "lab": "07_Labs/Agent_Workflows/README.md",
+    "course_manifest": "03_Data_and_Code/Agent_Workflows/manifest.json",
+    "course_verification": "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
+    "implemented_on": "2026-11-24",
+    "sections": [
+      "M1 §1.17",
+      "M6 §6.29",
+      "M7 §7.41",
+      "M8 §8.26",
+      "M9 §9.20"
+    ],
+    "sessions": [
+      1,
+      9,
+      11,
+      14
+    ],
+    "original_programs_executed": 4,
+    "independent_tests_passed": 8,
+    "original_figures": 2,
+    "model_calls": 0,
+    "upstream_execution": false,
+    "four_cell_experiment_executed": false,
+    "scope": "Observed mHealth logging reference for 358 prior-period users, invented checker cases, hypothetical costs, and an optional controlled model-comparison protocol."
+  }
 }

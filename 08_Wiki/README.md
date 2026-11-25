@@ -31,3 +31,7 @@ The [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md) sup
 ## Representation and Decision Metrics
 
 The [representation examples](../03_Data_and_Code/Representation_Evaluation/README.md) supply exact reference values for a style-scale control, component-error display, routing table, and two vector decompositions. Keep the same four cases and two positive-case denominator visible. Use separate labeled scales for reconstruction error and recall. The algebra, input JSON, and text descriptions should remain accessible without interaction. These specifications extend the pending design; no site has been deployed.
+
+## Task Context and Workflow Evaluation
+
+The [workflow example](../03_Data_and_Code/Agent_Workflows/README.md) supplies a future static page that exposes the roster, date interval, customer-level output, and checker result. Keep task definitions, input hashes, full code, and expected outputs available as separate downloads. A student can predict the consequence of omitting zero-log users or swapping two customer counts before revealing the result. Distinguish the measured logging table from the hypothetical cost example and the unexecuted model protocol. Targeted context links and stable module anchors can support agents without a server-side agent framework. No site has been deployed.

@@ -132,3 +132,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Representation Evaluation
 
 [The sparse-autoencoder review](34_Representation_Evaluation/README.md) connects aggregate reconstruction, feature stability, and decision-specific evaluation to M7, with M2/M4/M5/M9 applications. Thirteen licensed source files and saved-result tables accompany eight original source-review checks. The implemented M7 §§7.39–7.40 examples add two complete programs, six independent tests, and optional practice. Source models remain unexecuted. The catalog namespace is `representation-evaluation`.
+
+## Agent Workflow Evaluation
+
+[The survey and source review](35_Agent_Workflow_Evaluation/README.md) connect execution environments, context, tools, checks, and authority to an original mHealth coding exercise. The licensed paper is archived with attribution and a pinned source hash. The companion catalog is linked; no upstream code was executed.

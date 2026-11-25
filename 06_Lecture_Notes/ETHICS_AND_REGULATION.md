@@ -78,3 +78,7 @@ M7 §§7.33–7.35 and M9 §9.18.3 use [training mixtures and conditional servic
 M9 §9.18.4 examines the authority a firm assigns to generated accounts of customer preferences. Kantian respect directs attention to actual people's purposes and opportunities for judgment. Confucian trustworthiness requires an accurate account of whose responses support the claim and responsible engagement with contrary evidence. M4 §4.23 and M5 §5.23 supply synthetic examples in which ranking, anchors, and aggregation alter the decision. These calculations establish measurement distinctions and do not identify a firm's motives.
 
 The [source assessment](../01_Resources/29_Synthetic_Consumer_Research/SOURCE_REVIEW.md) distinguishes generated purchase-intent ratings from human preferences, observed purchases, and consent. Session 14 uses five minutes within its existing philosophical discussion for consumer representation. This addition makes no new legal-status claim.
+
+## Agent Authority and Customer Requests
+
+M9 §9.20 distinguishes technical permissions, company authority, customer authorization, and ethical justification. The cancellation example connects a firm-directed retention condition to Kantian respect for the customer’s reasons and Confucian attention to a service’s role. Session 14 incorporates the discussion within its existing definitions and permission block. This is a philosophical application; it introduces no new claim about a jurisdiction’s legal requirements.

@@ -1,0 +1,17 @@
+{
+  "verified_on": "2026-11-24",
+  "tests_passed": 8,
+  "original_programs_executed": [
+    "build_tasks.py",
+    "logging_reference.py",
+    "workflow_costs.py",
+    "evaluate_submission.py"
+  ],
+  "independent_actual_comparison": "SQLite left join and count distinct for both 358-user tasks",
+  "model_calls": 0,
+  "upstream_execution": false,
+  "four_cell_experiment_executed": false,
+  "python_version": "3.14.8",
+  "sqlite_version": "3.50.4",
+  "input_hashes_verified": 6
+}

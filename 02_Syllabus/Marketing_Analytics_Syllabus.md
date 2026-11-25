@@ -22,7 +22,7 @@ AI-assisted coding is integrated throughout the course. Students practice specif
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
-- Evaluate AI-assisted code through independent calculations, appropriate validation, and substantive interpretation.
+- Evaluate AI-assisted workflows through independent calculations, task-level checks, costs, and substantive interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 
 ## Class Format and Materials
@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, and network compression. Definitions, evidence, and customer outcomes guide interpretation.
+Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, and network compression. Workflow comparisons assess task information, feedback, costs, and customer authority.
 
 ---
 

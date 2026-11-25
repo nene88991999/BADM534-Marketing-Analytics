@@ -1,0 +1,33 @@
+{
+  "source": "mHealth teaching release 2026-10-23",
+  "source_sha256": "2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea",
+  "selection": "Pseudonym prefix below 4096; observed January-June 2016",
+  "unit": "Observed user-day; entries counts source food rows",
+  "tasks": [
+    {
+      "task_id": "development",
+      "start": "2016-07-01",
+      "end_exclusive": "2016-08-01",
+      "eligibility_cutoff_exclusive": "2016-07-01",
+      "roster_users": 358,
+      "input_rows": 6897
+    },
+    {
+      "task_id": "evaluation",
+      "start": "2016-08-01",
+      "end_exclusive": "2016-09-01",
+      "eligibility_cutoff_exclusive": "2016-07-01",
+      "roster_users": 358,
+      "input_rows": 6898
+    }
+  ],
+  "model_calls": 0,
+  "files": {
+    "tasks/development/observed_days.csv": "35f5b1165f3b2ccb002880f264408194281adb01287507952a05d90482dac91a",
+    "tasks/development/roster.csv": "3b641fb07fe2f2c224f45afd7ef0065c194d3393d10258ad873366a0c0bfc10d",
+    "tasks/development/task.json": "eccc86857209e0079cd6b1198f89150f5eaab3ee735f895b7e1f670110844094",
+    "tasks/evaluation/observed_days.csv": "8c61d6df056cb3b6cc7e957b84f093abc1420f0d92d4c74141900aa7cf05fb3d",
+    "tasks/evaluation/roster.csv": "3b641fb07fe2f2c224f45afd7ef0065c194d3393d10258ad873366a0c0bfc10d",
+    "tasks/evaluation/task.json": "8ad9e7d1d0e4dbae6c0eef4283638fe684ca069a09e8eeb127c59629040c7205"
+  }
+}

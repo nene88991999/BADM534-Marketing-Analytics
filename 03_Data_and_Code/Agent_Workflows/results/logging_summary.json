@@ -1,0 +1,20 @@
+{
+  "development": {
+    "roster_users": 358,
+    "window_days": 31,
+    "observed_user_days": 6455,
+    "possible_user_days": 11098,
+    "zero_log_users": 39,
+    "mean_logging_rate": 0.5816363308704271,
+    "excluded_input_rows": 442
+  },
+  "evaluation": {
+    "roster_users": 358,
+    "window_days": 31,
+    "observed_user_days": 6501,
+    "possible_user_days": 11098,
+    "zero_log_users": 41,
+    "mean_logging_rate": 0.5857812218417733,
+    "excluded_input_rows": 397
+  }
+}

@@ -200,6 +200,39 @@ Marketing Analytics Lecture Notes, M1 §1.12.}
 
 M1, Section 1.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md}}
 \end{frame}
+\begin{frame}{Information and Development Feedback}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M01_workflow_design.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Hold the model and task fixed; compare the four complete workflows.\par}
+\note{All cells receive the same core measurement request and output schema. Explicit information organizes the definitions, while independent feedback exposes development discrepancies and permits bounded correction. Common tools, permissions, and resource caps keep the comparison interpretable. The possible interaction is measured on a frozen evaluation task. This diagram specifies an experiment and contains no observed model performance.
+
+Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
+\end{frame}
+\begin{frame}{The Logging Denominator}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Eligibility uses January–June records within the recurring mHealth cohort.
+\item 358 users contribute 11,098 possible July user-days.
+\item 6,455 recorded days give a mean logging rate of 58.16\%.
+\item Keep the 39 users with no July records.
+\end{slidebullets}
+\vfill
+\note{The roster records earlier presence in the released file, not account enrollment. Count distinct dates from July 1 inclusive through August 1 exclusive. The input includes neighboring boundary dates. A zero is no recorded logging in the window; it is not zero consumption. Full source reconstruction and reference calculation appear in M1 §1.17.
+
+Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
+\end{frame}
 \begin{frame}{mHealth Records}
 \usebeamercolor[fg]{normal text}
 \vfill

@@ -1,0 +1,57 @@
+{
+  "namespace": "agent-workflow-evaluation",
+  "reviewed_on": "2026-11-24",
+  "resources": [
+    {
+      "id": "AW01",
+      "title": "Agent Harness Engineering: A Survey",
+      "authors": [
+        "Junjie Li",
+        "Xi Xiao",
+        "Yunbei Zhang",
+        "Chen Liu",
+        "Lin Zhao",
+        "Xiaoying Liao",
+        "Yingrui Ji",
+        "Janet Wang",
+        "Yingqiang Ge",
+        "Weijie Xu",
+        "Xi Fang",
+        "Xiang Xu",
+        "Tianchen Zhao",
+        "Youngeun Kim",
+        "Tianyang Wang"
+      ],
+      "url": "https://openreview.net/forum?id=eONq7FdiHa",
+      "accessible_copy": "https://huggingface.co/datasets/ChenLiu1996/Agent-Harness-Engineering/resolve/cbdb25e65f27874077a906b95b5746f0642e9551/Agent_Harness_Engineering_Survey.pdf",
+      "local_file": "LiXiaoZhangLiuEtAl_WorkingPaper2026.pdf",
+      "modules": [
+        "M1",
+        "M6",
+        "M7",
+        "M8",
+        "M9"
+      ],
+      "rights": "CC BY 4.0 per author-hosted dataset; author attribution and source preserved.",
+      "publication_status": "OpenReview status unverified; reviewed author-hosted PDF dated November 4, 2026.",
+      "teaching_use": "Controlled workflow comparisons, task definitions, evaluator checks, cost, and authority.",
+      "scope": "Survey and documented systems; no measured course or marketing productivity effect."
+    },
+    {
+      "id": "AW02",
+      "title": "Awesome Agent Harness",
+      "url": "https://github.com/Picrew/awesome-agent-harness/tree/e7e8f8d268f7ac5311b778832327e4be2f555507",
+      "source_commit": "e7e8f8d268f7ac5311b778832327e4be2f555507",
+      "modules": [
+        "M1",
+        "M7"
+      ],
+      "rights": "No repository license identified; linked, not republished.",
+      "teaching_use": "Discover systems and distinguish catalog validation from performance evaluation.",
+      "upstream_execution": false
+    }
+  ],
+  "review": "SOURCE_REVIEW.md",
+  "case_design": "CASE_DESIGN.md",
+  "manifest": "manifest.json"
+}
