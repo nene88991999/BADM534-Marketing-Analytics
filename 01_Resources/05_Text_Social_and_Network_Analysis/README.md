@@ -161,3 +161,7 @@ Text preprocessing, representation, model evaluation, and interpretation.
 **Local Files:** Annotated link and Finder bookmark only; no full-text or dataset copy saved.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
+
+## Replacement Text Representations
+
+[Representation alignment](../36_Representation_Alignment/README.md) links source definitions, unseen-description evaluation, word and character features, and fixed-classifier compatibility. M5 §5.26 includes complete preparation code for the mHealth sample.

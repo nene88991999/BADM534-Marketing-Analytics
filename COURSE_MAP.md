@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 104 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 106 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -157,3 +157,7 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 ## Agent Workflow Evaluation
 
 [The workflow case](03_Data_and_Code/Agent_Workflows/README.md) connects M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. A prior-period mHealth roster supplies observed logging counts; separate synthetic checks expose grading errors. Four complete programs, two TikZ figures, and an optional experiment protocol distinguish measured records from hypothetical costs and unexecuted model comparisons. Sessions 1, 9, 11, and 14 use existing discussion time.
+
+## Representation Alignment and Independent Evidence
+
+M5 §5.26 defines a disjoint description sample. M7 §§7.42–7.44 connect coordinate geometry, classifier compatibility, local mHealth classification, and observed answers. M8 §8.27 compares implementation costs; M9 §9.21 examines model agreement and independent reasons. [Complete code and recorded results](03_Data_and_Code/Representation_Alignment/README.md) accompany two editable figures and [optional ungraded practice](07_Labs/Representation_Alignment/README.md). Sessions 7, 11, and 14 include five slides within the existing meetings.

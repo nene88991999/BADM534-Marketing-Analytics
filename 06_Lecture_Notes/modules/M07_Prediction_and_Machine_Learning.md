@@ -2913,3 +2913,336 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 7.42 Coordinate Alignment and a Fixed Classifier
+
+\noindent A firm can change its text encoder while retaining a classifier that assigns customer cases to service categories. The classifier's coefficients refer to the coordinates supplied during fitting. A new representation can preserve all distances among cases and still change the classifier's decisions because its axes have moved. Assessing the new representation therefore requires a specified downstream decision rule.
+
+Consider eight equally weighted synthetic cases with style coordinates $-3,-1,1,3$ and review coordinates $-1,1$, using every combination. A case requires review when its second coordinate is positive. The original classifier recovers all eight imposed labels. Rotate each row vector by the matrix
+
+$$
+Q_0=\begin{pmatrix}0&1\\-1&0\end{pmatrix},
+\qquad (s,c)Q_0=(-c,s).
+$$
+
+The rotated second coordinate is the original style coordinate. Retaining the original classifier now sends every positive-style case to review, giving four correct labels among eight. Pairwise Euclidean distances remain identical because $Q_0Q_0^\top=I$. Distance preservation concerns geometry; applying unchanged coefficients concerns compatibility with a particular rule.
+
+![Eight synthetic cases retain their pairwise distances under a ninety-degree rotation. Labels stay attached to cases, while a fixed positive-second-coordinate classifier changes from eight to four correct decisions.](../figures/M07_alignment_coordinates.png)
+
+Paired training examples can estimate a map between representations. Let $X$ and $Y$ contain the donor and recipient row vectors for the same $n$ training descriptions, each with $d$ coordinates. Subtract their respective training means to obtain $X_c$ and $Y_c$. An orthogonal Procrustes map uses the singular value decomposition of their cross-product:
+
+$$
+X_c^\top Y_c=U\Sigma V^\top,\qquad Q=UV^\top,
+\qquad s=\frac{\lVert Y_c\rVert_F}{\lVert X_c\rVert_F},
+\qquad \widehat y=\mu_Y+s(x-\mu_X)Q.
+$$
+
+The means align the origins, $Q$ aligns the axes, and the positive scalar $s$ matches total centered variation. Both centered matrices must have positive norm. For equal dimensions, $Q$ is orthogonal and may include a reflection. A least-squares scale solves a different objective from the norm-matching rule used here. All fitted quantities come from the paired training descriptions. Validation chooses among candidate dimensions before evaluation outcomes are opened.
+
+To compare geometry, let $N_X(i)$ and $N_Z(i)$ denote the $k$ nearest neighbors of case $i$ under the reference and alternative representations. Their average neighbor overlap is
+
+$$
+G_k=\frac{1}{m}\sum_{i=1}^{m}\frac{|N_X(i)\cap N_Z(i)|}{k}.
+$$
+
+Here $m$ is the number of evaluation cases, self-neighbors are excluded, and a common row-order rule resolves distance ties. The fraction ranges from zero to one. A translation, orthogonal transformation, and positive global scale preserve Euclidean neighbor order. They can therefore change classifier decisions without changing $G_k$.
+
+Use a second synthetic transformation that multiplies style by 0.2 and leaves the review coordinate unchanged. This transformation preserves all labels under the fixed rule while changing the geometry. Fit the rotation on separate training cases whose style coordinates are $-4,-2,2,4$, again paired with both review values. The same map recovers the original coordinates of the eight test cases.
+
+| Representation | Neighbor Overlap, $k=2$ | Correct Decisions |
+| --- | ---: | ---: |
+| Original | 100% | 8 of 8 |
+| Rotated, unchanged classifier | 100% | 4 of 8 |
+| Compressed style, unchanged classifier | 50% | 8 of 8 |
+| Rotated, training-fitted alignment | 100% | 8 of 8 |
+
+![On eight synthetic cases, the unaligned rotation has full neighbor agreement and fifty-percent accuracy; compressed style has fifty-percent neighbor agreement and full accuracy. Alignment restores both scores to one hundred percent.](../figures/M07_alignment_scores.png)
+
+The unaligned rotation ranks above compressed style by geometry and below it by classification. An aligned representation can be compatible with the classifier even when its raw coordinates differ. Conversely, alignment cannot create a category distinction absent from the donor representation. These observations motivate separate evaluation of the representation and the complete decision procedure.
+
+The [research review of Plato's Key](../../01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md) concerns transfer between internal language-model states. The coordinate example uses invented vectors and an imposed rule. Run `python3 03_Data_and_Code/Representation_Alignment/alignment.py` to reproduce its matrices, neighbor sets, and decisions.
+
+
+Python source: [alignment.py](../../03_Data_and_Code/Representation_Alignment/alignment.py)
+
+```python
+"""Fit a rotation and scale; compare geometry and decisions on invented vectors."""
+import json
+from pathlib import Path
+import numpy as np
+
+HERE = Path(__file__).resolve().parent
+
+
+def fit_map(donor, recipient):
+    donor, recipient = np.asarray(donor, float), np.asarray(recipient, float)
+    if donor.shape != recipient.shape or donor.ndim != 2 or len(donor) < 2:
+        raise ValueError("Paired two-dimensional arrays of the same shape are required.")
+    if not np.isfinite(donor).all() or not np.isfinite(recipient).all():
+        raise ValueError("Inputs must be finite.")
+    mu_d, mu_r = donor.mean(axis=0), recipient.mean(axis=0)
+    x, y = donor - mu_d, recipient - mu_r
+    if np.linalg.norm(x) == 0 or np.linalg.norm(y) == 0:
+        raise ValueError("Both representations must vary.")
+    u, _, vt = np.linalg.svd(x.T @ y, full_matrices=False)
+    return mu_d, mu_r, u @ vt, float(np.linalg.norm(y) / np.linalg.norm(x))
+
+
+def apply_map(values, fitted):
+    mu_d, mu_r, rotation, scale = fitted
+    return mu_r + scale * (np.asarray(values) - mu_d) @ rotation
+
+
+def neighbors(values, k):
+    values = np.asarray(values, float)
+    if not 0 < k < len(values):
+        raise ValueError("k must be between 1 and n-1.")
+    norm = (values * values).sum(axis=1)
+    distances = np.maximum(norm[:, None] + norm[None, :] - 2 * values @ values.T, 0)
+    # Twelve decimals treat roundoff from rotations as a distance tie.
+    distances = np.round(distances, 12)
+    np.fill_diagonal(distances, np.inf)
+    # Stable sorting breaks exact distance ties by the common row index.
+    return np.argsort(distances, axis=1, kind="stable")[:, :k]
+
+
+def neighbor_overlap(a, b, k):
+    na, nb = neighbors(a, k), neighbors(b, k)
+    return float(np.mean([len(set(x) & set(y)) / k for x, y in zip(na, nb)]))
+
+
+def synthetic_case():
+    train = np.array([(s, c) for s in [-4, -2, 2, 4] for c in [-1, 1]], float)
+    test = np.array([(s, c) for s in [-3, -1, 1, 3] for c in [-1, 1]], float)
+    rotation = np.array([[0., 1.], [-1., 0.]])
+    donor = test @ rotation
+    fitted = fit_map(train @ rotation, train)
+    candidates = {"recipient": test, "rotated_unmapped": donor,
+                  "compressed_style": test * [0.2, 1.],
+                  "rotated_aligned": apply_map(donor, fitted)}
+    target = test[:, 1] > 0
+    results = []
+    for name, values in candidates.items():
+        prediction = values[:, 1] > 0
+        results.append(dict(name=name, values=values.tolist(),
+                            neighbor_overlap_k2=neighbor_overlap(test, values, 2),
+                            correct=int((prediction == target).sum()), cases=len(test),
+                            accuracy=float((prediction == target).mean())))
+    return dict(setup="Invented style and review coordinates; review when coordinate 2 > 0",
+                train=train.tolist(), test=test.tolist(), rotation=rotation.tolist(),
+                fitted_rotation=fitted[2].tolist(), fitted_scale=fitted[3], results=results)
+
+
+if __name__ == "__main__":
+    result = synthetic_case()
+    (HERE / "results/synthetic.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+```
+
+## 7.43 Alignment and Retraining on mHealth Descriptions
+
+\noindent A service choosing between word and character features can keep the original classifier, fit an alignment, or retrain its classifier. Evaluate all three alternatives on the same descriptions and reference categories. The sample in §5.26 has 6,000 training descriptions, 1,500 validation descriptions, and 1,500 held-out test descriptions, each weighted equally.
+
+Construct word unigrams and character trigrams separately. For each representation, select the 512 tokens appearing in the most training descriptions. Weight token counts by training inverse-document frequency, normalize each nonzero row, and obtain uncentered SVD directions from the training feature matrix. Use the first 8, 16, or 32 directions. Vocabulary, weights, directions, and coordinate alignment all use training observations.
+
+Fit a ridge least-squares classifier to one-hot recorded categories, with an unpenalized intercept and penalty one on the remaining coefficients. Select the largest class score. The word classifier is held fixed for direct substitution and alignment. Retraining fits the same classifier specification to the character representation and the same training labels. Direct substitution deliberately applies word coefficients to independently defined character coordinates. A comparison between deployable systems requires compatible downstream components. SVD coordinate signs can differ across numerical implementations, making the unmapped score sensitive to that convention.
+
+Choose the dimension by aligned validation accuracy. The values are 17.33%, 23.07%, and 27.27% for 8, 16, and 32 dimensions, respectively. Freeze the selected 32-dimensional specification before computing test outcomes. The resulting test comparison is
+
+| Configuration | Correct of 1,500 | Accuracy | Neighbor Overlap, $k=10$ |
+| --- | ---: | ---: | ---: |
+| Word reference | 522 | 34.80% | 100.00% |
+| Character, original classifier | 119 | 7.93% | 22.00% |
+| Aligned character, original classifier | 430 | 28.67% | 22.00% |
+| Character, retrained classifier | 531 | 35.40% | 22.00% |
+
+Alignment raises recorded-category accuracy by 20.73 percentage points relative to the deliberately unmapped substitution. Character-neighbor overlap stays at 22% because the map preserves its pairwise distance ordering. Retraining produces 531 correct classifications, compared with 522 for the compatible word reference. The nine-description difference is a descriptive comparison on this sample. It does not estimate a population improvement or the return from changing a deployed service.
+
+The reference has 264 training categories. Ten test descriptions have modal categories absent from training, and all ten remain in the error denominator. Seventy-four test descriptions have multiple source categories. Among the 1,426 descriptions with one recorded category, accuracy is 35.27% for the word reference, 7.92% for direct substitution, 29.24% for alignment, and 35.97% for retraining. The category-level output preserves support and error counts, including generic labels such as `default` and `recipe`. Equal-description weighting answers a different question from accuracy over all logged entries.
+
+The full program uses NumPy and the compact CSV prepared in §5.26. It makes no external model calls. Run `python3 03_Data_and_Code/Representation_Alignment/evaluate_mhealth.py` from the repository root. The [dictionary](../../03_Data_and_Code/Representation_Alignment/DATA_DICTIONARY.md) defines the token rules, tie handling, reference labels, and macro-F1 denominator. Saved predictions allow each aggregate and category-specific count to be checked independently.
+
+
+Python source: [evaluate_mhealth.py](../../03_Data_and_Code/Representation_Alignment/evaluate_mhealth.py)
+
+```python
+"""Compare local word/character representations on unseen mHealth descriptions."""
+import csv
+import hashlib
+import json
+import platform
+import re
+from collections import Counter
+from pathlib import Path
+import numpy as np
+from alignment import apply_map, fit_map, neighbor_overlap
+
+HERE = Path(__file__).resolve().parent
+DIMENSIONS = (8, 16, 32)
+VOCABULARY = 512
+PENALTY = 1.0
+
+
+def tokens(text, kind):
+    if kind == "word":
+        return re.findall(r"\b\w+\b", text)
+    marked = " " + text + " "
+    return [marked[i:i+3] for i in range(len(marked)-2)]
+
+
+def encode(texts, kind, state=None):
+    bags = [Counter(tokens(t, kind)) for t in texts]
+    if state is None:
+        frequency = Counter()
+        for bag in bags:
+            frequency.update(bag.keys())
+        vocabulary = sorted(frequency, key=lambda t: (-frequency[t], t))[:VOCABULARY]
+        lookup = {t: i for i, t in enumerate(vocabulary)}
+        idf = np.array([np.log((1+len(texts))/(1+frequency[t])) + 1 for t in vocabulary])
+        state = lookup, idf
+    lookup, idf = state
+    matrix = np.zeros((len(texts), len(lookup)))
+    for i, bag in enumerate(bags):
+        for token, count in bag.items():
+            if token in lookup:
+                matrix[i, lookup[token]] = (1+np.log(count))*idf[lookup[token]]
+    norm = np.linalg.norm(matrix, axis=1, keepdims=True)
+    return matrix / np.where(norm > 0, norm, 1), state
+
+
+def reduce_fit(matrix, dimensions):
+    # Uncentered truncated SVD from the feature Gram matrix; fit on training only.
+    eigenvalues, vectors = np.linalg.eigh(matrix.T @ matrix)
+    return vectors[:, np.argsort(eigenvalues)[::-1][:dimensions]]
+
+
+def train_classifier(values, labels, classes):
+    x = np.column_stack([np.ones(len(values)), values])
+    y = np.array([[float(label == c) for c in classes] for label in labels])
+    penalty = np.eye(x.shape[1])*PENALTY; penalty[0, 0] = 0
+    return np.linalg.solve(x.T @ x + penalty, x.T @ y)
+
+
+def predict(values, coefficients, classes):
+    scores = np.column_stack([np.ones(len(values)), values]) @ coefficients
+    return np.asarray(classes)[scores.argmax(axis=1)]
+
+
+def metrics(truth, prediction, classes):
+    truth, prediction = np.asarray(truth), np.asarray(prediction)
+    by_class = []
+    for label in sorted(set(classes) | set(truth)):
+        support = int((truth == label).sum())
+        tp = int(((truth == label) & (prediction == label)).sum())
+        fp = int(((truth != label) & (prediction == label)).sum())
+        fn = support - tp
+        by_class.append(dict(category=label, support=support, correct=tp,
+                             predicted=int((prediction == label).sum()),
+                             recall=tp/support if support else None,
+                             f1=2*tp/(2*tp+fp+fn) if 2*tp+fp+fn else 0.0))
+    return dict(cases=len(truth), correct=int((truth == prediction).sum()),
+                accuracy=float((truth == prediction).mean()),
+                macro_f1=float(np.mean([r["f1"] for r in by_class])), by_category=by_class)
+
+
+def main():
+    path = HERE / "data/descriptions.csv"
+    manifest = json.loads((HERE / "manifest.json").read_text())
+    if hashlib.sha256(path.read_bytes()).hexdigest() != manifest["data_sha256"]:
+        raise ValueError("Description sample differs from its manifest.")
+    with path.open(newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    splits = {s: [r for r in rows if r["split"] == s] for s in ["train", "validation", "test"]}
+    ids = [{r["description"] for r in splits[s]} for s in splits]
+    if any(ids[i] & ids[j] for i in range(3) for j in range(i)):
+        raise ValueError("Descriptions overlap across splits.")
+    classes = sorted({r["category"] for r in splits["train"]})
+    labels = {s: [r["category"] for r in group] for s, group in splits.items()}
+    text = {s: [r["description"] for r in group] for s, group in splits.items()}
+    representations = {}
+    for kind in ["word", "character"]:
+        training, state = encode(text["train"], kind)
+        basis = reduce_fit(training, max(DIMENSIONS))
+        representations[kind] = {"train": training @ basis}
+        for split in ["validation", "test"]:
+            encoded, _ = encode(text[split], kind, state)
+            representations[kind][split] = encoded @ basis
+    test_predictions = {}
+
+    def evaluate(dimension, split):
+        word = {s: x[:, :dimension] for s, x in representations["word"].items()}
+        char = {s: x[:, :dimension] for s, x in representations["character"].items()}
+        fitted = fit_map(char["train"], word["train"])
+        word_model = train_classifier(word["train"], labels["train"], classes)
+        char_model = train_classifier(char["train"], labels["train"], classes)
+        candidates = {"word_reference": word[split], "character_unmapped": char[split],
+                      "character_aligned": apply_map(char[split], fitted),
+                      "character_retrained": char[split]}
+        scores = {}
+        for name, values in candidates.items():
+            model = char_model if name == "character_retrained" else word_model
+            prediction = predict(values, model, classes)
+            if split == "test":
+                test_predictions[name] = prediction.tolist()
+            score = metrics(labels[split], prediction, classes)
+            score["neighbor_overlap_k10"] = neighbor_overlap(word[split], values, 10)
+            score["out_of_training_categories"] = sum(y not in classes for y in labels[split])
+            unambiguous = np.array([int(r["category_count"]) == 1 for r in splits[split]])
+            score["unambiguous_cases"] = int(unambiguous.sum())
+            score["unambiguous_accuracy"] = float((prediction[unambiguous] ==
+                np.asarray(labels[split])[unambiguous]).mean()) if unambiguous.any() else None
+            scores[name] = score
+        return scores
+
+    outcomes, validation = {}, []
+    for dimension in DIMENSIONS:
+        scores = evaluate(dimension, "validation")
+        outcomes[str(dimension)] = {"validation": scores}
+        validation.append(dict(dimension=dimension, accuracy=scores["character_aligned"]["accuracy"]))
+    # Freeze the dimension using validation before scoring any test outcomes.
+    selected = min(validation, key=lambda r: (-r["accuracy"], r["dimension"]))["dimension"]
+    outcomes[str(selected)]["test"] = evaluate(selected, "test")
+    result = dict(unit="Equally weighted normalized descriptions", classes=classes,
+                  dimensions=list(DIMENSIONS), selected_dimension=selected, validation=validation,
+                  primary_test=outcomes[str(selected)]["test"],
+                  all_configurations=outcomes, source_data_sha256=manifest["data_sha256"],
+                  environment={"python": platform.python_version(), "numpy": np.__version__},
+                  penalty=PENALTY, vocabulary_limit=VOCABULARY, model_api_calls=0,
+                  selection="Maximize aligned validation accuracy; use lower dimension on a tie")
+    (HERE / "results/mhealth.json").write_text(json.dumps(result, indent=2, allow_nan=False)+"\n")
+    with (HERE / "results/test_predictions.csv").open("w", newline="") as stream:
+        fields = ["description_sha256", "reference_category"] + list(test_predictions)
+        writer = csv.DictWriter(stream, fieldnames=fields); writer.writeheader()
+        for i, row in enumerate(splits["test"]):
+            writer.writerow(dict(description_sha256=row["description_sha256"],
+                                 reference_category=row["category"],
+                                 **{name: values[i] for name, values in test_predictions.items()}))
+    with (HERE / "results/summary.csv").open("w", newline="") as stream:
+        fields = ["dimension", "split", "configuration", "cases", "correct", "accuracy",
+                  "macro_f1", "neighbor_overlap_k10", "unambiguous_cases", "unambiguous_accuracy"]
+        writer = csv.DictWriter(stream, fieldnames=fields); writer.writeheader()
+        for dimension, splits_out in outcomes.items():
+            for split, choices in splits_out.items():
+                for name, score in choices.items():
+                    writer.writerow(dict(dimension=dimension, split=split, configuration=name,
+                                         **{k: score[k] for k in fields[3:]}))
+    print(json.dumps(dict(selected_dimension=selected, validation=validation,
+                         primary_test={k: {a: b for a, b in v.items() if a != "by_category"}
+                                       for k, v in result["primary_test"].items()}), indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+An AI-assisted implementation should identify each fitted object's permitted input split and verify the map's orientation on a known rotation. Hold descriptions together, retain unknown-category errors, and compare the same cases under every configuration. If test results guide a new feature or dimension choice, use a fresh sample for the subsequent final comparison.
+
+## 7.44 Available Information and Observed Answers
+
+\noindent A customer-service manager observing an incorrect answer needs to identify which change could improve the response. The wording of the question, the evidence supplied to the system, and the procedure used to produce an answer affect different parts of the process. Repeating a failed question does not establish which part caused the failure.
+
+[Inside-Out](https://arxiv.org/abs/2503.15299v4) defines factual knowledge through the ranking of correct and incorrect candidate answers. It compares internal scoring with observable output probabilities. An internal ranking can favor a correct answer that ordinary generation rarely produces. This operational distinction supports evaluation of the answer procedure separately from the information recoverable under a specified internal probe. It does not identify a human-like state of understanding.
+
+For a service evaluation, fix a roster of questions and independently verified reference answers. Compare a direct question, a meaning-preserving paraphrase, and a question accompanied by the relevant verified policy passage. Keep the model version and generation settings fixed. Score all attempts, including refusals and incomplete answers, against the same reference. A paired comparison preserves which questions improve or regress.
+
+The paraphrase changes expression while preserving the intended question. Supplying a policy passage changes the available information. Improvement under the latter condition therefore supports the combined information-and-answer procedure. Internal knowledge requires an additional operational definition and measurement. The customer receives an answer, so the service decision should use verified correctness, appropriate handling of uncertainty, and the cost of obtaining that result.

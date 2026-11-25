@@ -1741,7 +1741,8 @@
       "Explain network reach and brokerage without inferring influence from correlation.",
       "Distinguish citation presence from support using a controlled source comparison.",
       "Trace how anchors, similarities, and persona weighting determine a text-based rating.",
-      "Compare feature preservation, group weighting, and access at original network origins."
+      "Compare feature preservation, group weighting, and access at original network origins.",
+      "Distinguish recorded-category agreement from the compatibility of a replacement text representation."
     ],
     "slides": [
       {
@@ -1893,6 +1894,18 @@
         "description": "The comparison separates repeated descriptions from new descriptions and identifies source-label ambiguity. Performance depends on the deployment question.",
         "notes": "A random event split can place an identical description in both training and test. That may be useful for repeated lookup but overstate performance on new descriptions.",
         "source": "M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A New Encoder Changes the Coordinates",
+        "bullets": [
+          "Compare word and character features on unseen descriptions.",
+          "Fit vocabulary, weights, directions, and alignment using training data.",
+          "Choose dimensions on validation; retain every test category.",
+          "Recorded categories define the target, including ambiguous labels."
+        ],
+        "notes": "The mHealth sample uses 6,000 training descriptions, 1,500 validation descriptions, and 1,500 test descriptions with equal weights. Normalized descriptions are disjoint across splits; users and periods are shared. Seventy-four test descriptions have multiple recorded categories. The modal category uses an alphabetical tie break. Categories such as default and recipe are retained. Nutritional correctness requires an independently justified reference.",
+        "source": "M5 §5.26. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
       },
       {
         "kind": "figure",
@@ -2168,7 +2181,9 @@
       "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)",
       "[Synthetic Consumer Measurement](../03_Data_and_Code/Synthetic_Consumers/README.md)",
       "[Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)",
-      "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)"
+      "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)",
+      "[Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)",
+      "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)"
     ],
     "practice": "Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.",
     "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph."
@@ -2904,7 +2919,8 @@
       "Explain how training mixtures change feature attribution and evaluate outcomes by service context and checkpoint rule.",
       "Evaluate omitted auxiliary bias separately from sampling variance.",
       "Distinguish oracle group purity from held-out prediction and detect label use during preprocessing.",
-      "Compare reconstruction, component errors, feature interpretation, and decision outcomes."
+      "Compare reconstruction, component errors, feature interpretation, and decision outcomes.",
+      "Compare geometric similarity, classifier compatibility, coordinate alignment, and retraining on the same descriptions."
     ],
     "slides": [
       {
@@ -3314,6 +3330,58 @@
         "source": "M7 §§7.39–7.40. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
+        "kind": "figure",
+        "title": "Distances Survive a Change of Coordinates",
+        "figure": "../06_Lecture_Notes/figures/M07_alignment_coordinates.tex",
+        "caption": "A fixed classifier refers to a particular coordinate system.",
+        "description": "Eight invented cases have style coordinates minus three, minus one, one, and three, each paired with review values minus one and one. A ninety-degree rotation preserves distances. The positive-second-coordinate classifier changes from eight to four correct decisions. Circle markers denote review-required cases; squares denote the other cases.",
+        "notes": "Before rotation the second coordinate is the imposed review label. After rotation it is the original style coordinate. Half of the positive-style cases require review. Shading indicates the positive second coordinate in each panel. The comparison fixes cases, labels, and classifier while changing coordinates. Distances are identical; the classification change is a compatibility failure.",
+        "source": "M7 §§7.42–7.43. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Geometry and Classification Rank Differently",
+        "figure": "../06_Lecture_Notes/figures/M07_alignment_scores.tex",
+        "caption": "The evaluation target determines which representation ranks higher.",
+        "description": "Three pairs of bars show neighbor overlap and accuracy on eight synthetic cases. An unmapped rotation gives 100% and 50%; compressed style gives 50% and 100%; fitted alignment gives 100% and 100%. Neighbor overlap uses two neighbors per case.",
+        "notes": "The style compression multiplies the first coordinate by 0.2 and leaves the second unchanged. A training-fitted map uses style values minus four, minus two, two, and four, paired with both review values. These training points differ from the test points. Orthogonal transformations and positive scaling preserve Euclidean neighbor order. Pairing matters when estimating the map, and a fixed classifier can be sensitive to coordinate orientation.",
+        "source": "M7 §§7.42–7.43. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
+        "kind": "table",
+        "title": "Alignment and Retraining on mHealth",
+        "headers": [
+          "Configuration",
+          "Correct / 1,500",
+          "Neighbors"
+        ],
+        "rows": [
+          [
+            "Word reference",
+            "522",
+            "100%"
+          ],
+          [
+            "Character, original classifier",
+            "119",
+            "22%"
+          ],
+          [
+            "Aligned character",
+            "430",
+            "22%"
+          ],
+          [
+            "Character, retrained classifier",
+            "531",
+            "22%"
+          ]
+        ],
+        "caption": "32 dimensions chosen on validation; ten-neighbor overlap with word features.",
+        "notes": "The four accuracies are 34.80%, 7.93%, 28.67%, and 35.40%. All comparisons use the same 1,500 equally weighted unseen descriptions. Vocabulary, IDF, SVD, maps, and ridge classifiers use training data. The dimension is chosen from 8, 16, and 32 using aligned validation accuracy. Ten test descriptions have categories absent from training and remain errors. All three character geometries have identical neighbors. The nine-case difference between compatible classifiers is descriptive for this sample. Full code and per-category results are optional practice.",
+        "source": "M7 §§7.42–7.43. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
+      },
+      {
         "kind": "equation",
         "title": "A Cost-Based Threshold",
         "intro": "Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.",
@@ -3620,7 +3688,9 @@
       "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)",
       "[Representation Evaluation: Data and Code](../03_Data_and_Code/Representation_Evaluation/README.md)",
       "[Representation Evaluation: Optional Practice](../07_Labs/Representation_Evaluation/README.md)",
-      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)"
+      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)",
+      "[Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)",
+      "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)"
     ],
     "practice": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
     "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator."
@@ -4428,6 +4498,18 @@
       },
       {
         "kind": "bullets",
+        "title": "Agreement and Independent Reasons",
+        "bullets": [
+          "Identify shared data, labels, and objectives behind agreement.",
+          "Check the claim against evidence with a justified reference.",
+          "Distinguish predicted behavior from customer purposes.",
+          "Justify the proposed action and the means used."
+        ],
+        "notes": "Several models can agree because they share conventions and information. In mHealth, agreement with a modal category measures reproduction of a recorded category system. It does not establish nutritional correctness. In retention, a prediction of payment does not establish customer consent or justify an obstacle to cancellation. Kantian evaluation examines the maxim and respect for choice; Confucian rectification of names asks whether a claimed service fits its conduct. These are course applications of the earlier philosophical discussions.",
+        "source": "M9 §9.21. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Choice Procedure Can Change Renewal",
         "bullets": [
           "A direct offer and an offer preceded by questions can produce different choices.",
@@ -4620,7 +4702,9 @@
       "[Synthetic Consumers and Human Validation](../03_Data_and_Code/Synthetic_Consumers/README.md)",
       "[Reproducible product recommendation](../03_Data_and_Code/Reproducible_Recommendations/README.md)",
       "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
-      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)"
+      "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)",
+      "[Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)",
+      "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)"
     ],
     "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."

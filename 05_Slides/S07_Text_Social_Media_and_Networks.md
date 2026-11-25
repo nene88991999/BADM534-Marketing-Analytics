@@ -14,6 +14,7 @@ Session 07. M5. 170 minutes.
 - Distinguish citation presence from support using a controlled source comparison.
 - Trace how anchors, similarities, and persona weighting determine a text-based rating.
 - Compare feature preservation, group weighting, and access at original network origins.
+- Distinguish recorded-category agreement from the compatibility of a replacement text representation.
 
 ## Related Materials
 
@@ -32,6 +33,8 @@ Session 07. M5. 170 minutes.
 - [Synthetic Consumer Measurement](../03_Data_and_Code/Synthetic_Consumers/README.md)
 - [Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)
 - [Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)
+- [Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)
+- [Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -224,7 +227,18 @@ A random event split can place an identical description in both training and tes
 
 Source: M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 17: Topic Shares Need a Denominator
+## Slide 17: A New Encoder Changes the Coordinates
+
+- Compare word and character features on unseen descriptions.
+- Fit vocabulary, weights, directions, and alignment using training data.
+- Choose dimensions on validation; retain every test category.
+- Recorded categories define the target, including ambiguous labels.
+
+The mHealth sample uses 6,000 training descriptions, 1,500 validation descriptions, and 1,500 test descriptions with equal weights. Normalized descriptions are disjoint across splits; users and periods are shared. Seventy-four test descriptions have multiple recorded categories. The modal category uses an alphabetical tie break. Categories such as default and recipe are retained. Nutritional correctness requires an independently justified reference.
+
+Source: M5 §5.26. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 18: Topic Shares Need a Denominator
 
 mHealth topic summaries compare documents, entries, and users under defined weights.
 
@@ -236,7 +250,7 @@ Long documents and repeated records can dominate term-weighted summaries. A busi
 
 Source: M5, Section 5.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 18: Which Pricing Statements Deserve Review?
+## Slide 19: Which Pricing Statements Deserve Review?
 
 - A retailer reviews competitors' public pricing communication.
 - A keyword occurrence supplies a reading lead.
@@ -246,7 +260,7 @@ The supplied corpus includes core terms for pricing methods and shelf-label infr
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 19: Speaking Time Changes the Comparison
+## Slide 20: Speaking Time Changes the Comparison
 
 Observed calls; heuristic roles. Management includes prepared remarks and Q&A.
 
@@ -258,7 +272,7 @@ Raw counts rank management higher, whereas exposure-adjusted intensity is slight
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 20: Same Vocabulary, Different Evidence
+## Slide 21: Same Vocabulary, Different Evidence
 
 - Amazon: current price information; Eventbrite: advertising cost per click.
 - Wendy's: planned tests; Kroger: shelf-label infrastructure.
@@ -268,7 +282,7 @@ Seven purposeful, source-linked paraphrases are provided in interpretation_cases
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 21: Match Counts and Words to the Same Calls
+## Slide 22: Match Counts and Words to the Same Calls
 
 From the Earnings_Calls folder, compare the verified metadata.
 
@@ -287,7 +301,7 @@ Run disclosure.py for group, quarterly, and role tables. The counterexample test
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 22: Evaluate Retrieval and Interpretation Separately
+## Slide 23: Evaluate Retrieval and Interpretation Separately
 
 - A denial and a future intention can match the same phrase.
 - Relevant paraphrases can escape the dictionary.
@@ -297,7 +311,7 @@ Run construct_checks.py for eight synthetic sentences. A purposeful case set can
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 23: Prompt Revision Uses Evaluation Evidence
+## Slide 24: Prompt Revision Uses Evaluation Evidence
 
 - A passage used to revise a prompt becomes development material.
 - Keep passages from one call together when constructing a split.
@@ -307,7 +321,7 @@ A test on new firms addresses a different deployment population from a test on l
 
 Source: Marketing Analytics Lecture Notes, M5 §5.15.
 
-## Slide 24: Citations and Supporting Evidence
+## Slide 25: Citations and Supporting Evidence
 
 Four fictional pricing questions; authored answers and reference annotations.
 
@@ -319,7 +333,7 @@ S1 reports a price increase and a before-after unit change without a causal desi
 
 Source: M5 §5.19. ../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md
 
-## Slide 25: A Controlled Source Comparison
+## Slide 26: A Controlled Source Comparison
 
 - Hold the questions, model version, and scoring rule fixed.
 - Use fresh conversations and preserve raw responses.
@@ -330,7 +344,7 @@ Run source_selection.py to reproduce the constructed example. In an optional liv
 
 Source: M5 §5.19; ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/
 
-## Slide 26: Generator and Judge Changes
+## Slide 27: Generator and Judge Changes
 
 Identical saved outputs are scored by both judges. All scores are stipulated.
 
@@ -342,7 +356,7 @@ A stable judge supplies a common comparison but still requires validation. Posit
 
 Source: M5 §5.18. Zheng et al. (2023), https://arxiv.org/abs/2306.05685; Panickssery et al. (2024), https://arxiv.org/abs/2404.13076
 
-## Slide 27: Network Objects
+## Slide 28: Network Objects
 
 - Nodes identify customers or accounts.
 - Edges represent a defined relationship in a time window.
@@ -352,7 +366,7 @@ An edge could mean following, messaging, purchasing together, or co-occurrence. 
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 28: Few Links Can Connect Separate Groups
+## Slide 29: Few Links Can Connect Separate Groups
 
 Synthetic undirected network. R has only two links.
 
@@ -364,7 +378,7 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 29: The Nearest Store Depends on the Route
+## Slide 30: The Nearest Store Depends on the Route
 
 Synthetic population: 800. Access threshold: five minutes. Schematic spacing is not a distance scale.
 
@@ -376,7 +390,7 @@ W0, W1, W2, E0, E1, E2, and X receive weights 100, 300, 100, 50, 50, 50, and 150
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 30: Hold the Comparison Fixed
+## Slide 31: Hold the Comparison Fixed
 
 - Same six connected origins; one directed neighbor each.
 - Each metric creates six links; only two links coincide.
@@ -387,7 +401,7 @@ The neighbor comparison fixes k=1 and resolves ties alphabetically. The ten-minu
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 31: The Route Changes the Nearest Alternative
+## Slide 32: The Route Changes the Nearest Alternative
 
 Four observed restaurant origins; other available same-chain targets. October status, November network.
 
@@ -399,7 +413,7 @@ The four records are observed on October 24, 2026; OpenStreetMap is dated Novemb
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://www.openstreetmap.org/copyright
 
-## Slide 32: Interpret the Observed Comparison
+## Slide 33: Interpret the Observed Comparison
 
 - Hold the same observed origin and target set fixed across metrics.
 - At four kilometers: three of four origins by straight line; zero by network.
@@ -410,7 +424,7 @@ The four-kilometer threshold is imposed. Available means recorded ordering avail
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 33: A Group Mean Needs a Group Size
+## Slide 34: A Group Mean Needs a Group Size
 
 Four synthetic zones earn 10, 10, 10, and 40 dollars per week.
 
@@ -424,7 +438,7 @@ The observation unit is a zone, and each zone has 100 people. Binary membership 
 
 Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://arxiv.org/abs/2611.01200v1
 
-## Slide 34: Exact Revenue, Distorted Access
+## Slide 35: Exact Revenue, Distorted Access
 
 Synthetic inputs. Five-minute access is evaluated at the four original origins.
 
@@ -436,7 +450,7 @@ Affinity is defined as one divided by travel minutes; coarse adjacency sums affi
 
 Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 35: Preprocessing Changes the Population
+## Slide 36: Preprocessing Changes the Population
 
 - The existing retail case includes 150 people at a disconnected origin.
 - Known access stays at 550 people when that origin is removed.
@@ -447,7 +461,7 @@ This is the separate seven-origin case in Section 5.21, not the four-zone compre
 
 Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md ../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md
 
-## Slide 36: University Affiliations Create a Research Network
+## Slide 37: University Affiliations Create a Research Network
 
 - 745 papers identify 424 higher-education institutions.
 - Split one unit of link weight across each paper's university pairs.
@@ -457,7 +471,7 @@ The eligible census has 824 papers; 79 lack identified education affiliations. W
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 37: Affiliation Groups Depend on the Representation
+## Slide 38: Affiliation Groups Depend on the Representation
 
 Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.
 
@@ -469,7 +483,7 @@ The median adjusted Rand agreement across twenty seeds is 0.522; switching from 
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 38: Coding Exercise: A Label Assessment
+## Slide 39: Coding Exercise: A Label Assessment
 
 - Reproduce the four-question source comparison.
 - Trace each unsupported claim to its inferential error.
@@ -480,7 +494,7 @@ Use ten minutes to introduce the question and demonstrate the output, twenty-fiv
 
 Source: M5 §§5.19–5.20. ../07_Labs/AI_Evidence_and_Evaluation/README.md
 
-## Slide 39: Engagement and Commercial Value
+## Slide 40: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -490,7 +504,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 40: Authenticity of Reviews and Endorsements
+## Slide 41: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -500,7 +514,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 41: Text-Analysis Discussion
+## Slide 42: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

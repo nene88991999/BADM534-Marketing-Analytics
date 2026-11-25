@@ -82,3 +82,7 @@ The [source assessment](../01_Resources/29_Synthetic_Consumer_Research/SOURCE_RE
 ## Agent Authority and Customer Requests
 
 M9 §9.20 distinguishes technical permissions, company authority, customer authorization, and ethical justification. The cancellation example connects a firm-directed retention condition to Kantian respect for the customer’s reasons and Confucian attention to a service’s role. Session 14 incorporates the discussion within its existing definitions and permission block. This is a philosophical application; it introduces no new claim about a jurisdiction’s legal requirements.
+
+## Model Agreement and Independent Reasons
+
+M9 §9.21 distinguishes shared model representations, independent factual support, customer purposes, and justification for a marketing action. The mHealth reference categories in M5 §5.26 and M7 §7.43 measure agreement with recorded source labels. Their reproducibility does not establish nutritional correctness or permission. The philosophical application extends the existing Kantian and Confucian discussion without adding a legal claim.

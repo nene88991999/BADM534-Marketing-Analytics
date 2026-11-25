@@ -54,3 +54,7 @@ Both activities are public optional ungraded practice with original synthetic in
 ## Agent Workflow Evaluation
 
 [Optional ungraded practice](Agent_Workflows/README.md) checks distinct logging days, roster denominators, date boundaries, customer-level errors, and total workflow cost. An optional four-configuration model comparison keeps development feedback separate from final evaluation.
+
+## Representation Alignment
+
+[Changing text representations in mHealth](Representation_Alignment/README.md) is public optional ungraded practice. Students hand-check a rotation, compare neighbor overlap and classification, reproduce a local mHealth evaluation, and justify the reference-label and cost comparisons. It supports M5 §5.26 and M7 §§7.42–7.44, with connections to M8 and M9.

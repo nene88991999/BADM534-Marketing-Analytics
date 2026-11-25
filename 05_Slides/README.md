@@ -124,3 +124,7 @@ Sessions 1 and 2 distinguish event definitions, logical inference, validation, a
 ## Agent Workflow Evaluation
 
 Sessions 1, 9, 11, and 14 include eight slides on the fixed mHealth logging roster, information and feedback, customer-level grading, hypothetical total costs, and customer authorization. [Full programs and optional practice](../07_Labs/Agent_Workflows/README.md) support the comparison. Existing meeting dates and 170-minute allocations are retained.
+
+## Representation Alignment
+
+Sessions 7, 11, and 14 add five slides connecting text coordinates, classifier compatibility, mHealth evaluation, and independent reasons. Two original editable figures accompany [complete Python and results](../03_Data_and_Code/Representation_Alignment/README.md). Session 11 assigns minutes 100–115 to reconstruction, alignment, and representation evaluation; the adjacent interval exercise uses minutes 80–100. All meetings remain 170 minutes. The longer coding work is [optional ungraded practice](../07_Labs/Representation_Alignment/README.md).

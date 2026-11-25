@@ -173,3 +173,7 @@ A framework for generative AI use cases and implementation in marketing.
 - [Papers/Grewal_Satornino_Davenport_Guha_JAMS2025.pdf](Papers/Grewal_Satornino_Davenport_Guha_JAMS2025.pdf)
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
+
+## Encoder Migration and Independent Evidence
+
+[Representation alignment](../36_Representation_Alignment/README.md) connects encoder migration to fitting, review, and revalidation costs in M8 §8.27. M9 §9.21 examines the independent evidence and reasons needed when several models agree.

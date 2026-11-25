@@ -10,7 +10,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 104 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 106 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -108,3 +108,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## AI Workflow Evaluation
 
 [The workflow example](03_Data_and_Code/Agent_Workflows/README.md) connects a fixed mHealth logging roster, a four-configuration experiment protocol, customer-level checker tests, total workflow cost, and customer authority. Four complete programs and two editable TikZ figures appear in M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. [Optional ungraded practice](07_Labs/Agent_Workflows/README.md) separates observed logging calculations, hypothetical costs, and an unexecuted model-comparison protocol.
+
+## Representation Alignment and Text Decisions
+
+[Three original programs](03_Data_and_Code/Representation_Alignment/README.md) connect coordinate alignment, fixed-classifier compatibility, and retraining on mHealth descriptions. Complete Python, two editable figures, five slides, and [optional practice](07_Labs/Representation_Alignment/README.md) accompany M5, M7, M8, and Marketing Dialectics. The [source review](01_Resources/36_Representation_Alignment/README.md) distinguishes the neural-model research from the local course calculations.

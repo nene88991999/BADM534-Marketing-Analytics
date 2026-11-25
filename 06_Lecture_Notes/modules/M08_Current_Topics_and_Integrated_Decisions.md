@@ -1143,3 +1143,17 @@ if __name__ == "__main__":
     (output / "hypothetical_costs.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 ```
+
+## 8.27 The Cost of Changing a Text Encoder
+
+\noindent A firm replacing an encoder can retain its current classifier, fit an alignment, or retrain the classifier. Each option changes implementation work and the errors that require review. A decision over a workload of $N$ descriptions should account for those costs over the same operating period:
+
+$$
+C_j(N)=F_j+N c_j+R_j(N)+V_j.
+$$
+
+Here $F_j$ is the one-time fitting and migration cost for option $j$, $c_j$ is its processing cost per description, $R_j(N)$ is the total expected review and correction cost over that workload, and $V_j$ is the cost of evaluation and revalidation during the period. All costs use the same currency and price basis. The expected review cost depends on the types of error and the service's actual response to them.
+
+The mHealth comparison in §7.43 measures agreement with source categories. It supplies no observed labor costs, inference-service prices, or value of a corrected label. A firm can measure those objects on a fixed workload and combine them with category-specific error rates. It must also decide which errors require review and which outcomes establish adequate service. A cheaper representation may be unattractive if it moves errors into categories with costly consequences.
+
+Coordinate alignment and retraining address different implementation constraints. Alignment preserves an existing downstream interface after fitting a map on paired descriptions. Retraining permits coefficients to adapt to the replacement representation. Both require evaluation when vocabulary, customer language, category definitions, or model versions change. Record the encoder, preprocessing, map, classifier, label definition, and evaluation population together so that a later performance comparison refers to a specified system.

@@ -164,7 +164,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.
 
-**Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph.
+**Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph. Compare replacement text coordinates and recorded-category targets within the existing mHealth discussion.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -248,9 +248,9 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction and review recall; full representation programs are optional practice.
+**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction, coordinate alignment, and review decisions; full representation programs are optional practice.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
@@ -263,8 +263,8 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
 | 70–80 | Break |
-| 80–105 | Demand Intervals and Complaint Routing |
-| 105–115 | Reconstruction and Representation Evaluation |
+| 80–100 | Demand Intervals and Complaint Routing |
+| 100–115 | Reconstruction, Alignment, and Representation Evaluation |
 | 115–125 | Omitted Auxiliary Bias |
 | 125–145 | Anomaly Diagnosis |
 | 145–155 | Workflow Outputs, Actions, and Grader Comparisons |
@@ -318,7 +318,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
 

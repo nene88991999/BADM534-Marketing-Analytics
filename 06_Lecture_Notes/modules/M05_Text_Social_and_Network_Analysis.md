@@ -1587,3 +1587,119 @@ A knowledge graph can connect statements to speakers, documents, products, and p
 Preserve disagreements instead of merging statements solely because they share a topic label. Gross revenue and net revenue, a forecast and a realized outcome, or different fiscal periods can support different values without a contradiction. Assess definitions and timing before assigning a conflict. If an LLM extracts a relation, retain its evidence span and check a sample against the original document. A contradiction inferred from a graph can identify a useful review target even when the source of the problem is a modeling assumption.
 
 Representations used for retrieval or classification require a separate evaluation. Section 7.40 explains why exact reconstruction can coexist with different feature decompositions. Compare retrieval relevance, claim attribution, and downstream errors directly before interpreting a feature as a customer motive or a corporate strategy.
+
+## 5.26 Changing the Representation of Food Descriptions
+
+\noindent A food-logging service replacing a text encoder needs to preserve the category decisions that its downstream classifier makes. Word features distinguish terms such as chicken and cheese; character features can retain parts of related spellings. Each encoder defines its own coordinates. Coefficients fitted to one coordinate system need evidence of compatibility before they are applied to another.
+
+Use the public mHealth food records for the fixed pseudonym cohort. Normalize each description by case-folding and collapsing whitespace. Exclude blank descriptions and blank or `Unclassified` categories. Assign each unique description its modal recorded category, with alphabetical tie breaking. Source labels such as `default` and `recipe` remain in the reference. The measurement target is agreement with this recorded classification system.
+
+| Sample Property | Count |
+| --- | ---: |
+| Eligible source rows | 916,947 |
+| Distinct normalized descriptions | 75,357 |
+| Selected training descriptions | 6,000 |
+| Selected validation descriptions | 1,500 |
+| Selected test descriptions | 1,500 |
+| Test descriptions with multiple recorded categories | 74 |
+
+A hash of the normalized description determines its split and selection order independently of the category. Every selected description receives equal weight, so repeated logging does not increase its evaluation weight. Descriptions remain disjoint across splits, while users and calendar periods are shared. The resulting comparison concerns unseen descriptions within the 2016 cohort. A later-period or new-customer comparison would require a different split.
+
+The source category can be ambiguous even when the normalized description is identical. Retain the number of distinct categories and the source rows supporting the modal category. A separate accuracy calculation for the 1,426 test descriptions with one recorded category measures sensitivity to that ambiguity. Independent nutrition judgments would be needed to change the target from recorded-category agreement to nutritional correctness.
+
+The preparation program verifies the release checksum before reading its rows. Its output includes only description text, category counts, split, and a reproducible text hash. Download the public release with `python3 03_Data_and_Code/mHealth/download_data.py`, then run `python3 03_Data_and_Code/Representation_Alignment/prepare_descriptions.py` from the repository root. The compact input is also included with the [example](../../03_Data_and_Code/Representation_Alignment/README.md).
+
+
+Python source: [prepare_descriptions.py](../../03_Data_and_Code/Representation_Alignment/prepare_descriptions.py)
+
+```python
+"""Build a bounded, description-level sample from the public mHealth release."""
+import csv
+import hashlib
+import json
+from collections import Counter, defaultdict
+from pathlib import Path
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parent / "mHealth/data/food_entries.csv.gz"
+EXPECTED = "2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea"
+CAPS = {"train": 6000, "validation": 1500, "test": 1500}
+
+
+def normalize(text):
+    return " ".join(str(text).casefold().split())
+
+
+def partition(description):
+    digest = hashlib.sha256(description.encode()).hexdigest()
+    bucket = int(digest[:8], 16) % 10
+    return ("train" if bucket < 6 else "validation" if bucket < 8 else "test"), digest
+
+
+def summarize(counts):
+    rows = []
+    for description, categories in sorted(counts.items()):
+        label = min(categories, key=lambda k: (-categories[k], k))
+        split, digest = partition(description)
+        rows.append(dict(description=description, category=label, split=split,
+                         description_sha256=digest, source_entries=sum(categories.values()),
+                         category_count=len(categories), modal_entries=categories[label]))
+    return rows
+
+
+def main():
+    if not SOURCE.exists():
+        raise FileNotFoundError("Run python3 03_Data_and_Code/mHealth/download_data.py first.")
+    with SOURCE.open("rb") as stream:
+        digest = hashlib.file_digest(stream, "sha256").hexdigest()
+    if digest != EXPECTED:
+        raise ValueError("The mHealth release checksum differs.")
+    counts = defaultdict(Counter)
+    all_rows = cohort_rows = usable_rows = 0
+    columns = ["Userid", "Fancydate", "Name", "Category"]
+    for chunk in pd.read_csv(SOURCE, usecols=columns, chunksize=250000,
+                             dtype=str, keep_default_na=False):
+        all_rows += len(chunk)
+        eligible = chunk.Userid.str.slice(1, 5).map(lambda x: int(x, 16)) < 4096
+        chunk = chunk.loc[eligible]
+        cohort_rows += len(chunk)
+        if not chunk.Fancydate.str.startswith("2016-").all():
+            raise ValueError("Expected 2016 source dates.")
+        description = chunk.Name.map(normalize)
+        category = chunk.Category.str.strip()
+        usable = description.ne("") & category.ne("") & category.ne("Unclassified")
+        usable_rows += int(usable.sum())
+        pairs = pd.DataFrame({"description": description[usable], "category": category[usable]})
+        for (text, label), n in pairs.groupby(["description", "category"]).size().items():
+            counts[text][label] += int(n)
+    all_descriptions = summarize(counts)
+    selected = []
+    for split, cap in CAPS.items():
+        candidates = [r for r in all_descriptions if r["split"] == split]
+        selected.extend(sorted(candidates, key=lambda r: r["description_sha256"])[0:cap])
+    target = HERE / "data/descriptions.csv"
+    with target.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(selected[0]))
+        writer.writeheader(); writer.writerows(selected)
+    manifest = dict(source="mHealth teaching release 2026-10-23", source_sha256=digest,
+                    source_rows=all_rows, cohort_rows=cohort_rows, usable_rows=usable_rows,
+                    distinct_usable_descriptions=len(all_descriptions),
+                    cohort_rule="First four pseudonym hex digits below 4096",
+                    reference_label="Modal category among eligible 2016 rows; alphabetical tie break",
+                    unit="One normalized description, equal weight", caps=CAPS,
+                    split_rule="SHA256 first 8 digits modulo 10: 0-5 train, 6-7 validation, 8-9 test",
+                    selection="Lowest full SHA256 within each split; independent of categories",
+                    data_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
+                    split_counts={s: sum(r["split"] == s for r in selected) for s in CAPS},
+                    split_ambiguous={s: sum(r["split"] == s and r["category_count"] > 1
+                                            for r in selected) for s in CAPS})
+    (HERE / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print(json.dumps(manifest, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Hold the reference labels and description weights fixed when comparing representations through geometry, alignment, and classifier decisions (§§7.42–7.43).

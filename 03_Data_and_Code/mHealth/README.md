@@ -71,3 +71,7 @@ Weight-based conclusions must account for the perturbation. Apparent movements s
 ## Recurring Course Examples
 
 Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, assessment and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.
+
+## Text-Representation Comparison
+
+The [alignment example](../Representation_Alignment/README.md) derives a compact 9,000-description sample from the public food release. It compares word features, unmapped character features, aligned features, and a retrained classifier. Complete source reconstruction, split definitions, source-label ambiguity, predictions, and tests are included.

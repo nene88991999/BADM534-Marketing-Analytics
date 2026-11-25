@@ -195,3 +195,7 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Agent Workflow Evaluation
 
 [Agent Harness Engineering: A Survey](../01_Resources/35_Agent_Workflow_Evaluation/README.md), §§5, 8, 9, and 11, motivates original comparisons in M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. [Four executed programs](../03_Data_and_Code/Agent_Workflows/README.md) reconstruct compact mHealth tasks, calculate reference results, grade CSV outputs, and reproduce hypothetical costs. Eight independent tests include a SQLite comparison. The four-cell model experiment remains a protocol; no model performance is reported.
+
+## Representation Alignment and Functional Evaluation
+
+[The reviewed sources](../01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md) motivate separate geometry and task comparisons. M5 §5.26 contains complete sample preparation; M7 §§7.42–7.43 contain complete alignment and classification programs; §7.44 defines a separate answer-evaluation protocol. The executed [mHealth comparison](../03_Data_and_Code/Representation_Alignment/README.md) uses 6,000 training, 1,500 validation, and 1,500 test descriptions. M8 §8.27 and M9 §9.21 connect cost and justification. The two figures use original synthetic cases. No upstream neural-model experiment or prompt experiment was executed.

@@ -121,3 +121,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Agent Workflow Evaluation
 
 [The workflow package](Agent_Workflows/README.md) provides compact mHealth task inputs, source reconstruction, reference calculation, a CSV grader, eight independent tests, and a hypothetical cost comparison. The information-by-feedback protocol supplies no measured model-performance results.
+
+## Representation Alignment
+
+[Changing text representations in mHealth](Representation_Alignment/README.md) includes a 9,000-description input, a source reconstruction program, a synthetic rotation, and a local word-versus-character comparison. Complete Python appears in M5 and M7. Nine independent tests, saved predictions, and category-specific denominators support the calculations; no model API is used.

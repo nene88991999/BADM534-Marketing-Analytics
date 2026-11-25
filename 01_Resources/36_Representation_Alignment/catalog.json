@@ -1,0 +1,56 @@
+{
+  "namespace": "representation-alignment",
+  "reviewed_on": "2026-11-25",
+  "resources": [
+    {
+      "id": "RA01",
+      "title": "Plato's Key",
+      "authors": [
+        "Vivien Cheng",
+        "Jerry Liu",
+        "Morris Yau",
+        "Chris Ré"
+      ],
+      "url": "https://hazyresearch.stanford.edu/blog/2026-11-25-platos-key",
+      "date": "2026-11-25",
+      "modules": [
+        "M7",
+        "M8"
+      ],
+      "rights": "Linked; no redistribution license identified.",
+      "teaching_use": "Compare representation similarity with functional evaluation."
+    },
+    {
+      "id": "RA02",
+      "title": "The Platonic Representation Hypothesis",
+      "authors": [
+        "Minyoung Huh",
+        "Brian Cheung",
+        "Tongzhou Wang",
+        "Phillip Isola"
+      ],
+      "url": "https://arxiv.org/abs/2405.07987v5",
+      "date": "2024-07-25",
+      "modules": [
+        "M7",
+        "M9"
+      ],
+      "rights": "CC BY 4.0; linked.",
+      "teaching_use": "Distinguish convergence, evidence, and interpretation."
+    },
+    {
+      "id": "RA03",
+      "title": "Inside-Out: Hidden Factual Knowledge in LLMs",
+      "url": "https://arxiv.org/abs/2503.15299v4",
+      "date": "2025-08-06",
+      "modules": [
+        "M5",
+        "M7"
+      ],
+      "rights": "CC BY 4.0; linked.",
+      "teaching_use": "Define the distinction between internal scoring and observed answers."
+    }
+  ],
+  "review": "SOURCE_REVIEW.md",
+  "case_design": "CASE_DESIGN.md"
+}

@@ -1,8 +1,8 @@
 # Lecture Notes
 
-**By Nathan Yang. Updated November 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [401-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 104 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [414-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 106 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -165,3 +165,7 @@ M5 §5.24 develops exact aggregation and travel calculations. M7 §7.38 distingu
 ## Agent Workflow Evaluation
 
 M1 §1.17 defines the fixed-roster mHealth task and provides complete reconstruction and reference code. M6 §6.29 defines the factorial interaction; M7 §7.41 evaluates outputs, actions, and the checker. M8 §8.26 calculates hypothetical total costs, and M9 §9.20 distinguishes company authority, customer authorization, and justification. [The example and verification](../03_Data_and_Code/Agent_Workflows/README.md) include eight independent tests and two original editable figures. No model experiment was executed.
+
+## Representation Alignment and Observed Answers
+
+M5 §5.26 and M7 §§7.42–7.44 connect text preparation, coordinate alignment, fixed-classifier compatibility, retraining, and answer evaluation. [Three original programs](../03_Data_and_Code/Representation_Alignment/README.md), nine tests, and two editable figures preserve synthetic and observed inputs separately. M8 §8.27 examines migration costs, and M9 §9.21 examines agreement and independent reasons. [Optional practice](../07_Labs/Representation_Alignment/README.md) accompanies Sessions 7, 11, and 14.

@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-24",
+  "updated_on": "2026-11-25",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -104,6 +104,12 @@ Generated from course.json and the source files identified below. This file cont
     {
       "id": "representation-evaluation",
       "path": "07_Labs/Representation_Evaluation/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
+    },
+    {
+      "id": "representation-alignment",
+      "path": "07_Labs/Representation_Alignment/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
     }
@@ -295,12 +301,21 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md",
     "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
     "03_Data_and_Code/Agent_Workflows/results/README.md",
-    "07_Labs/Agent_Workflows/README.md"
+    "07_Labs/Agent_Workflows/README.md",
+    "01_Resources/36_Representation_Alignment/README.md",
+    "01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md",
+    "01_Resources/36_Representation_Alignment/CASE_DESIGN.md",
+    "03_Data_and_Code/Representation_Alignment/README.md",
+    "03_Data_and_Code/Representation_Alignment/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Representation_Alignment/AGENTS.md",
+    "03_Data_and_Code/Representation_Alignment/VERIFICATION.md",
+    "03_Data_and_Code/Representation_Alignment/results/README.md",
+    "07_Labs/Representation_Alignment/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-24",
+    "updated_on": "2026-11-25",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -344,12 +359,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-24-agent-workflows",
+    "revision": "2026-11-25-representation-alignment",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 104,
-    "pages": 401,
+    "figures_count": 106,
+    "pages": 414,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -372,7 +387,8 @@ Generated from course.json and the source files identified below. This file cont
     "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md",
     "ontology_examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
     "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md",
-    "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md"
+    "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md",
+    "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md"
   },
   "datasets": [
     {
@@ -434,7 +450,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-24",
+    "updated_on": "2026-11-25",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -443,7 +459,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 397,
+    "slides": 402,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -490,7 +506,7 @@ Generated from course.json and the source files identified below. This file cont
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-24",
+    "updated_on": "2026-11-25",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -1016,7 +1032,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-24-agent-workflows",
+  "revision": "2026-11-25-representation-alignment",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1050,6 +1066,35 @@ Generated from course.json and the source files identified below. This file cont
     "upstream_execution": false,
     "four_cell_experiment_executed": false,
     "scope": "Observed mHealth logging reference for 358 prior-period users, invented checker cases, hypothetical costs, and an optional controlled model-comparison protocol."
+  },
+  "representation_alignment": {
+    "resources": "01_Resources/36_Representation_Alignment/README.md",
+    "review": "01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md",
+    "catalog": "01_Resources/36_Representation_Alignment/catalog.json",
+    "source_manifest": "01_Resources/36_Representation_Alignment/manifest.json",
+    "examples": "03_Data_and_Code/Representation_Alignment/README.md",
+    "lab": "07_Labs/Representation_Alignment/README.md",
+    "course_manifest": "03_Data_and_Code/Representation_Alignment/manifest.json",
+    "verification": "03_Data_and_Code/Representation_Alignment/VERIFICATION.md",
+    "implemented_on": "2026-11-25",
+    "sections": [
+      "M5 \u00a75.26",
+      "M7 \u00a7\u00a77.42\u20137.44",
+      "M8 \u00a78.27",
+      "M9 \u00a79.21"
+    ],
+    "sessions": [
+      7,
+      11,
+      14
+    ],
+    "original_programs_executed": 3,
+    "independent_tests_passed": 9,
+    "original_figures": 2,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "prompt_experiment_executed": false,
+    "scope": "Original synthetic coordinates and local lexical mHealth classification; source-category agreement, not nutritional correctness or neural-state replication."
   }
 }
 ```
@@ -1070,7 +1115,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 104 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 106 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -1168,6 +1213,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## AI Workflow Evaluation
 
 [The workflow example](03_Data_and_Code/Agent_Workflows/README.md) connects a fixed mHealth logging roster, a four-configuration experiment protocol, customer-level checker tests, total workflow cost, and customer authority. Four complete programs and two editable TikZ figures appear in M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. [Optional ungraded practice](07_Labs/Agent_Workflows/README.md) separates observed logging calculations, hypothetical costs, and an unexecuted model-comparison protocol.
+
+## Representation Alignment and Text Decisions
+
+[Three original programs](03_Data_and_Code/Representation_Alignment/README.md) connect coordinate alignment, fixed-classifier compatibility, and retraining on mHealth descriptions. Complete Python, two editable figures, five slides, and [optional practice](07_Labs/Representation_Alignment/README.md) accompany M5, M7, M8, and Marketing Dialectics. The [source review](01_Resources/36_Representation_Alignment/README.md) distinguishes the neural-model research from the local course calculations.
 
 ---
 
@@ -1353,7 +1402,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 104 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 106 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -1490,6 +1539,10 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 
 [The workflow case](03_Data_and_Code/Agent_Workflows/README.md) connects M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. A prior-period mHealth roster supplies observed logging counts; separate synthetic checks expose grading errors. Four complete programs, two TikZ figures, and an optional experiment protocol distinguish measured records from hypothetical costs and unexecuted model comparisons. Sessions 1, 9, 11, and 14 use existing discussion time.
 
+## Representation Alignment and Independent Evidence
+
+M5 §5.26 defines a disjoint description sample. M7 §§7.42–7.44 connect coordinate geometry, classifier compatibility, local mHealth classification, and observed answers. M8 §8.27 compares implementation costs; M9 §9.21 examines model agreement and independent reasons. [Complete code and recorded results](03_Data_and_Code/Representation_Alignment/README.md) accompany two editable figures and [optional ungraded practice](07_Labs/Representation_Alignment/README.md). Sessions 7, 11, and 14 include five slides within the existing meetings.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1589,6 +1642,10 @@ The syllabus includes network compression and retail access in Meeting 7 and lab
 ## Definitions and Evidence in the Course Outline
 
 The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Dates, times, room, and stable calendar event identifiers are unchanged. Detailed calculations are available in the lecture notes and two optional ungraded labs.
+
+## Representation Alignment Coverage
+
+The worked examples include replacement text features and classifier compatibility in Sessions 7 and 11, followed by model agreement and independent reasons in Session 14. The [optional lab](../07_Labs/Representation_Alignment/README.md) adds no graded requirement. Session 11 reallocates five minutes within the existing meeting.
 
 ---
 
@@ -1730,15 +1787,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [The workflow package](Agent_Workflows/README.md) provides compact mHealth task inputs, source reconstruction, reference calculation, a CSV grader, eight independent tests, and a hypothetical cost comparison. The information-by-feedback protocol supplies no measured model-performance results.
 
+## Representation Alignment
+
+[Changing text representations in mHealth](Representation_Alignment/README.md) includes a 9,000-description input, a source reconstruction program, a synthetic rotation, and a local word-versus-character comparison. Complete Python appears in M5 and M7. Nine independent tests, saved predictions, and category-specific denominators support the calculations; no model API is used.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 24, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [401-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 104 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [414-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 106 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -1901,6 +1962,10 @@ M5 §5.24 develops exact aggregation and travel calculations. M7 §7.38 distingu
 ## Agent Workflow Evaluation
 
 M1 §1.17 defines the fixed-roster mHealth task and provides complete reconstruction and reference code. M6 §6.29 defines the factorial interaction; M7 §7.41 evaluates outputs, actions, and the checker. M8 §8.26 calculates hypothetical total costs, and M9 §9.20 distinguishes company authority, customer authorization, and justification. [The example and verification](../03_Data_and_Code/Agent_Workflows/README.md) include eight independent tests and two original editable figures. No model experiment was executed.
+
+## Representation Alignment and Observed Answers
+
+M5 §5.26 and M7 §§7.42–7.44 connect text preparation, coordinate alignment, fixed-classifier compatibility, retraining, and answer evaluation. [Three original programs](../03_Data_and_Code/Representation_Alignment/README.md), nine tests, and two editable figures preserve synthetic and observed inputs separately. M8 §8.27 examines migration costs, and M9 §9.21 examines agreement and independent reasons. [Optional practice](../07_Labs/Representation_Alignment/README.md) accompanies Sessions 7, 11, and 14.
 
 ---
 
@@ -2091,6 +2156,10 @@ Sessions 1 and 2 distinguish event definitions, logical inference, validation, a
 
 Sessions 1, 9, 11, and 14 include eight slides on the fixed mHealth logging roster, information and feedback, customer-level grading, hypothetical total costs, and customer authorization. [Full programs and optional practice](../07_Labs/Agent_Workflows/README.md) support the comparison. Existing meeting dates and 170-minute allocations are retained.
 
+## Representation Alignment
+
+Sessions 7, 11, and 14 add five slides connecting text coordinates, classifier compatibility, mHealth evaluation, and independent reasons. Two original editable figures accompany [complete Python and results](../03_Data_and_Code/Representation_Alignment/README.md). Session 11 assigns minutes 100–115 to reconstruction, alignment, and representation evaluation; the adjacent interval exercise uses minutes 80–100. All meetings remain 170 minutes. The longer coding work is [optional ungraded practice](../07_Labs/Representation_Alignment/README.md).
+
 ---
 
 ## Source: 05_Slides/AGENTS.md
@@ -2206,6 +2275,10 @@ Weight-based conclusions must account for the perturbation. Apparent movements s
 ## Recurring Course Examples
 
 Use the [M1–M8 analysis programs](recurring_examples/README.md) for a deterministic 370-user cohort, assessment and sanity checks, nutrition-informed filtering sensitivity, regression, segmentation, text classification, experiment planning, and recommendation evaluation. The lecture notes print the same Python source. The programs preserve the released files and keep cache tables out of Git.
+
+## Text-Representation Comparison
+
+The [alignment example](../Representation_Alignment/README.md) derives a compact 9,000-description sample from the public food release. It compares word features, unmapped character features, aligned features, and a retrained classifier. Complete source reconstruction, split definitions, source-label ambiguity, predictions, and tests are included.
 
 ---
 
@@ -2610,6 +2683,10 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Agent Workflow Evaluation
 
 [Agent Harness Engineering: A Survey](../01_Resources/35_Agent_Workflow_Evaluation/README.md), §§5, 8, 9, and 11, motivates original comparisons in M1 §1.17, M6 §6.29, M7 §7.41, M8 §8.26, and M9 §9.20. [Four executed programs](../03_Data_and_Code/Agent_Workflows/README.md) reconstruct compact mHealth tasks, calculate reference results, grade CSV outputs, and reproduce hypothetical costs. Eight independent tests include a SQLite comparison. The four-cell model experiment remains a protocol; no model performance is reported.
+
+## Representation Alignment and Functional Evaluation
+
+[The reviewed sources](../01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md) motivate separate geometry and task comparisons. M5 §5.26 contains complete sample preparation; M7 §§7.42–7.43 contain complete alignment and classification programs; §7.44 defines a separate answer-evaluation protocol. The executed [mHealth comparison](../03_Data_and_Code/Representation_Alignment/README.md) uses 6,000 training, 1,500 validation, and 1,500 test descriptions. M8 §8.27 and M9 §9.21 connect cost and justification. The two figures use original synthetic cases. No upstream neural-model experiment or prompt experiment was executed.
 
 ---
 
@@ -3120,7 +3197,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.
 
-**Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph.
+**Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph. Compare replacement text coordinates and recorded-category targets within the existing mHealth discussion.
 
 **Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
 
@@ -3204,9 +3281,9 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction and review recall; full representation programs are optional practice.
+**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction, coordinate alignment, and review decisions; full representation programs are optional practice.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
 
@@ -3219,8 +3296,8 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 45–60 | Prediction and Decision Comparisons |
 | 60–70 | Inference Efficiency and Customer Resolution |
 | 70–80 | Break |
-| 80–105 | Demand Intervals and Complaint Routing |
-| 105–115 | Reconstruction and Representation Evaluation |
+| 80–100 | Demand Intervals and Complaint Routing |
+| 100–115 | Reconstruction, Alignment, and Representation Evaluation |
 | 115–125 | Omitted Auxiliary Bias |
 | 125–145 | Anomaly Diagnosis |
 | 145–155 | Workflow Outputs, Actions, and Grader Comparisons |
@@ -3274,7 +3351,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
 
@@ -3444,6 +3521,10 @@ The [cancellation lab](../07_Labs/Ontology_and_Evidence/README.md) and [represen
 
 Use ten minutes within Session 1’s worked-comparison block for the information-by-feedback design and the fixed logging roster. Session 9 uses five minutes within its existing experiment comparison for the factorial contrast. Session 11 uses minutes 145–155 for outputs, actions, and grader comparisons; its other topics remain available in their assigned blocks. Session 14 uses five minutes within its first twenty minutes for hypothetical total workflow cost and minutes 95–100 for customer authorization. [The longer model-comparison protocol](../07_Labs/Agent_Workflows/README.md) is optional ungraded practice. These allocations remain inside the existing fifteen 170-minute meetings.
 
+## Representation Alignment and Independent Reasons
+
+M5 §5.26 prepares a source-category sample; M7 §§7.42–7.44 compare geometry, coordinate alignment, classifier performance, and observed answers. M8 §8.27 frames fitting and operating costs, while M9 §9.21 examines agreement as evidence. Sessions 7 and 14 use existing case-discussion time. In Session 11, minutes 80–100 retain the interval and routing exercise, and minutes 100–115 cover reconstruction and alignment. The full [coding lab](../07_Labs/Representation_Alignment/README.md) is public optional ungraded practice. The fifteen meeting dates and 170-minute durations remain unchanged.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -3532,6 +3613,10 @@ The [source assessment](../01_Resources/29_Synthetic_Consumer_Research/SOURCE_RE
 ## Agent Authority and Customer Requests
 
 M9 §9.20 distinguishes technical permissions, company authority, customer authorization, and ethical justification. The cancellation example connects a firm-directed retention condition to Kantian respect for the customer’s reasons and Confucian attention to a service’s role. Session 14 incorporates the discussion within its existing definitions and permission block. This is a philosophical application; it introduces no new claim about a jurisdiction’s legal requirements.
+
+## Model Agreement and Independent Reasons
+
+M9 §9.21 distinguishes shared model representations, independent factual support, customer purposes, and justification for a marketing action. The mHealth reference categories in M5 §5.26 and M7 §7.43 measure agreement with recorded source labels. Their reproducibility does not establish nutritional correctness or permission. The philosophical application extends the existing Kantian and Confucian discussion without adding a legal claim.
 
 ---
 
@@ -3714,7 +3799,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, and network compression. Workflow comparisons assess task information, feedback, costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, coordinate alignment, and network compression. Workflow comparisons assess task information, feedback, costs, and customer authority.
 
 ---
 
@@ -4977,6 +5062,18 @@ Confucian attention to the rectification of names connects the service's stated 
 
 The governance mechanisms surveyed by [Li and coauthors](../../01_Resources/35_Agent_Workflow_Evaluation/README.md), §9, can preserve permission scope, action records, and accountability. The philosophical application asks the further question of whether the objective and means are justified. Evaluate cancellation completion against the customer's expressed request, report imposed obstacles and unresolved cases, and examine the reasons offered for them. A system's technical success is evidence about its execution; the customer's agency remains an independent object of judgment.
 
+## 9.21 Model Agreement and Independent Reasons
+
+\noindent A marketing team asks several models which customers should receive a retention offer. All recommend targeting customers who appear unlikely to leave. Agreement can make the proposal seem well supported, yet the systems may share training examples, category definitions, and objectives. Assessing the recommendation requires identifying which evidence each system contributes and which parts of the agreement arise from their common construction.
+
+The [Platonic Representation Hypothesis](https://arxiv.org/html/2405.07987v5) concerns convergence among learned representations. Its discussion includes common research practices and constraints as possible contributors to convergence. The philosophical question for a marketing decision concerns the inference from agreement to a warranted belief or action. Shared statistical structure does not by itself establish independent confirmation, causal validity, customer welfare, or permission.
+
+The coordinate comparison in §7.42 holds the imposed meaning of each synthetic label fixed. The mHealth comparison in §7.43 instead measures agreement with a recorded category system. A model could reproduce that system consistently while retaining its ambiguous categories. Evidence that a category is reproducible must be distinguished from evidence that it captures a nutritionally relevant distinction. The same issue arises when several marketing models agree on a label such as valuable, vulnerable, or likely to cancel. The analyst must specify the observations and reasons supporting that interpretation.
+
+Kantian evaluation asks for the maxim governing the action and its treatment of the person's capacity to choose. A prediction of continued payment does not establish that obstructing cancellation respects that capacity. An empirical claim about what customers do and a normative reason for what the firm may do require separate support. This application follows the account in §9.3; a representation-alignment result supplies no additional moral premise.
+
+Confucian attention to the rectification of names asks whether the firm's description of a practice fits its conduct. Calling an intervention helpful requires evidence about the responsibility being discharged and the customer's resulting experience. A team should preserve reasoned objections and examine cases in which model agreement conflicts with a customer's expressed purpose. Independently checked records, customer testimony, and a clear account of the permissible action give the recommendation a basis that agreement alone cannot provide.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -5669,6 +5766,10 @@ Both activities are public optional ungraded practice with original synthetic in
 ## Agent Workflow Evaluation
 
 [Optional ungraded practice](Agent_Workflows/README.md) checks distinct logging days, roster denominators, date boundaries, customer-level errors, and total workflow cost. An optional four-configuration model comparison keeps development feedback separate from final evaluation.
+
+## Representation Alignment
+
+[Changing text representations in mHealth](Representation_Alignment/README.md) is public optional ungraded practice. Students hand-check a rotation, compare neighbor overlap and classification, reproduce a local mHealth evaluation, and justify the reference-label and cost comparisons. It supports M5 §5.26 and M7 §§7.42–7.44, with connections to M8 and M9.
 
 ---
 
@@ -9286,6 +9387,232 @@ Record every assigned attempt, its model version, visible files, commands, revis
 Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py). Recalculate the comparison at an analyst cost of $30 per hour and explain which cost categories change. These are hypothetical inputs. A sensitivity calculation does not estimate labor savings.
 
 Consider a cancellation agent instructed to require a retention survey before accepting a customer's unambiguous request to cancel. State the customer's requested outcome, the firm's objective, the action performed, and the relevant sources of authority. Apply the Kantian and Confucian arguments from M9. Explain what additional evidence is needed to assess the firm's claim that the procedure benefits customers.
+
+---
+
+## Source: 01_Resources/36_Representation_Alignment/README.md
+
+# Representation Alignment and Marketing Decisions
+
+A firm replacing a text encoder needs to know whether the existing classifier can use the new coordinates. Compare geometry, compatibility with the classifier, and performance after retraining. These questions have distinct evaluation targets.
+
+[Plato's Key](https://hazyresearch.stanford.edu/blog/2026-11-25-platos-key), by Vivien Cheng, Jerry Liu, Morris Yau, and Chris Ré, motivates the comparison through factual recall in language models. The [source review](SOURCE_REVIEW.md) records the experiment's scope and related research. The course uses original calculations and local lexical representations of mHealth descriptions.
+
+| Material | Location |
+| --- | --- |
+| Source records and rights | [Catalog](catalog.json) and [manifest](manifest.json) |
+| Course placement and interpretation | [Case design](CASE_DESIGN.md) |
+| Programs, sample, and results | [Representation alignment](../../03_Data_and_Code/Representation_Alignment/README.md) |
+| Public optional ungraded practice | [Lab](../../07_Labs/Representation_Alignment/README.md) |
+| Detailed explanations | M5 §5.26; M7 §§7.42–7.44; M8 §8.27; M9 §9.21 |
+
+The catalog has namespace `representation-alignment`. Related readings remain optional background. Source access, execution, and rights are recorded separately from course requirements.
+
+---
+
+## Source: 01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md
+
+# Research Evidence and Course Applications
+
+## Factual Transfer
+
+Cheng, Liu, Yau, and Ré's November 25, 2026 [post](https://hazyresearch.stanford.edu/blog/2026-11-25-platos-key) reports 20 pairwise comparisons among 12 base language models. A rotation and scale map hidden states across frozen models. On held-out facts both models recall, median transfer accuracy is 41%, versus 55% for within-model swaps. Layers are chosen on separate validation subjects. Selecting by nearest-neighbor similarity gives 4.5% median validation transfer accuracy, about one tenth of selection by transfer accuracy. These are different evaluation criteria.
+
+The recovery comparison uses 2,600 recipient misses. Auxiliary prompting or answer-ranking checks classify 1,463 as available knowledge; mapped states recover 267, approximately 18% of that selected subset. This operational definition conditions the denominator. Factual recall in the tested models leaves broader reasoning and customer applications open.
+
+## Related Research
+
+Huh, Cheung, Wang, and Isola's [The Platonic Representation Hypothesis](https://arxiv.org/html/2405.07987v5), especially §§2 and 6, examines representational convergence and discusses measurement choices, counterexamples, and common research practices. The philosophical application in M9 asks what additional evidence supports truth or justification when model outputs agree. It is a course interpretation.
+
+Gekhman and coauthors' [Inside-Out: Hidden Factual Knowledge in LLMs](https://arxiv.org/html/2503.15299v4) defines knowledge through answer ranking and distinguishes internal from observable scoring methods. Its §7 discusses computational cost and sensitivity to answer-label errors. Comparing prompt conditions in a service exercise evaluates those conditions; measuring internal knowledge would require the paper's additional operations and definitions.
+
+## Original Course Examples
+
+The synthetic case holds eight invented outcomes fixed while changing coordinates. An orthogonal rotation preserves distances and nearest neighbors, while a classifier tied to the second coordinate changes predictions. A separate distortion of the style coordinate changes neighbors while preserving the classification target. Fitting the inverse rotation on distinct training points restores compatibility.
+
+The mHealth example compares locally constructed word and character representations. Vocabulary, inverse-document frequency, SVD directions, alignment, and classifiers use training descriptions. Validation selects the common dimension before any test score is calculated. All character representations have the same neighbors under a positive global scale and an orthogonal map. Classification changes because the existing coefficients refer to a particular basis. Retraining evaluates a different feasible response to an encoder change.
+
+The reference labels are recorded modal source categories, including labels such as `default` and `recipe`. They measure agreement with the recorded classification system. Nutrition judgments, customer preferences, model-provider performance, and commercial returns require separate evidence.
+
+## Access and Rights
+
+Reviewed November 25, 2026. The post was read directly, including its displayed comparisons and links. A dated HTML snapshot and hash are retained in the ignored local publication folder. No dedicated repository for this experiment is linked on the inspected page. Its VecMap link concerns earlier embedding-alignment work. No upstream program, checkpoint, or model API was executed.
+
+The blog has no redistribution license identified in the inspected page, so the public course preserves links and original annotations. The two related arXiv versions identify CC BY 4.0; this addition links them without reproducing their full texts. The course calculations are original and are separate from a replication of the neural-model experiments.
+
+---
+
+## Source: 01_Resources/36_Representation_Alignment/CASE_DESIGN.md
+
+# Changing Text Representations in mHealth
+
+## Decision and Comparison
+
+A firm can retain a word encoder, substitute character features directly, align character features to the word coordinates, or retrain the classifier on character features. The comparison fixes the reference labels and test descriptions. Geometry and correct classifications answer separate questions.
+
+M5 §5.26 defines the description sample and its source labels, with complete preparation code. M7 §7.42 derives the alignment and gives the synthetic comparison. M7 §7.43 contains the complete local evaluation program. M7 §7.44 distinguishes supplied information from observed answers. M8 §8.27 connects implementation alternatives to total costs and repeated evaluation. M9 §9.21 examines agreement, independent evidence, and the reasons needed to justify a marketing practice.
+
+## Teaching Allocation
+
+Session 7 adds one slide within the existing mHealth text discussion. Session 11 adds three slides to the representation discussion, with five minutes reassigned from the adjacent demand-interval exercise. The representation block is 15 minutes and the meeting remains 170 minutes. Session 14 adds one slide within the existing Marketing Dialectics discussion. The longer coding work is [optional ungraded practice](../../07_Labs/Representation_Alignment/README.md).
+
+Two editable TikZ figures show coordinate rotation with a fixed classifier, then a reversal between neighbor agreement and classification accuracy. Full numerical results and predictions remain alongside the code. The fixed hypothetical coordinate meanings in the first case and the recorded source categories in the second have distinct interpretations.
+
+## Optional Extensions
+
+Vary the synthetic rotation before fitting the map. Compare word and character representations using a new validation plan and a fresh final sample if choices change after viewing the current test results. Extend the sample to descriptions first observed in a later period for a separate temporal-generalization question. A customer-service prompt comparison can use a verified policy document and fixed reference answers; it remains an unexecuted extension.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Alignment/README.md
+
+# Changing Text Representations in mHealth
+
+A text-processing service can replace an encoder while retaining a classifier, fit a coordinate alignment, or retrain the classifier. The original synthetic comparison separates geometric similarity from compatibility with a fixed decision rule. The mHealth comparison uses local word and character features on the same unseen descriptions.
+
+## Inputs and Execution
+
+The compact [description sample](data/descriptions.csv) is included. It has 6,000 training, 1,500 validation, and 1,500 test descriptions. No user identifier, date of birth, or weight history appears in this derivative. Read the [dictionary](DATA_DICTIONARY.md), [source manifest](manifest.json), and [verification record](VERIFICATION.md).
+
+Use Python 3.11 or later with the versions in [requirements.txt](requirements.txt). From the repository root:
+
+```sh
+python3 -m pip install -r 03_Data_and_Code/Representation_Alignment/requirements.txt
+python3 03_Data_and_Code/Representation_Alignment/alignment.py
+python3 03_Data_and_Code/Representation_Alignment/evaluate_mhealth.py
+python3 -m unittest discover -s 03_Data_and_Code/Representation_Alignment -p 'test_*.py' -v
+```
+
+To reconstruct the compact input, first run `python3 03_Data_and_Code/mHealth/download_data.py`, then `python3 03_Data_and_Code/Representation_Alignment/prepare_descriptions.py`. Preparation verifies the public release hash and reads the full compressed food file. Evaluation uses the compact input and needs no network, model downloads, or API key. It fits ordinary lexical representations and linear classifiers locally.
+
+## Results
+
+The invented rotation preserves all pairwise distances and both-neighbor sets while changing the fixed classifier from 8 to 4 correct cases. Compressing the imposed style coordinate preserves 8 correct cases while reducing neighbor overlap to 50%. Training-point alignment restores both scores to 100%.
+
+Validation selects 32 dimensions from 8, 16, and 32 using aligned classification accuracy. On the 1,500 held-out descriptions:
+
+| Configuration | Correct | Accuracy | Neighbor Overlap with Word Features |
+| --- | ---: | ---: | ---: |
+| Word reference | 522 | 34.80% | 100.00% |
+| Character features, original classifier | 119 | 7.93% | 22.00% |
+| Aligned character features, original classifier | 430 | 28.67% | 22.00% |
+| Character features, retrained classifier | 531 | 35.40% | 22.00% |
+
+The last three share the same character geometry. The classifier's coordinate compatibility changes. The 0.60 percentage-point difference between the compatible word and character classifiers is descriptive for this test sample; no population comparison is estimated. Reference categories include generic labels such as `default`. Seventy-four test descriptions have multiple source categories, and ten have modal categories absent from training. All remain in the primary denominator. Source-label agreement is the target; nutritional correctness requires an independently justified reference.
+
+Full source and interpretation appear in [M5 §5.26](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) and [M7 §§7.42–7.43](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md). See [optional practice](../../07_Labs/Representation_Alignment/README.md), [results](results/README.md), and the [research review](../../01_Resources/36_Representation_Alignment/README.md).
+
+---
+
+## Source: 03_Data_and_Code/Representation_Alignment/DATA_DICTIONARY.md
+
+# Description Sample and Evaluation Outputs
+
+## Source and Population
+
+The source is the public mHealth food-entry release of October 23, 2026, with SHA-256 recorded in [manifest.json](manifest.json). Preparation retains pseudonyms whose first four hexadecimal digits are below 4096. The selected cohort contains 917,153 food rows in 2016. Excluding blank descriptions and blank or `Unclassified` categories leaves 916,947 rows and 75,357 normalized descriptions. The sample is a deterministic subset of this cohort.
+
+Normalization case-folds text, collapses whitespace, and trims its ends. Each distinct normalized description receives its modal source category across eligible rows. Equal category counts are resolved alphabetically. Labels such as `default` and `recipe` are retained as recorded. No nutrition classification is inferred.
+
+SHA-256 determines the split independently of the category: the first eight hexadecimal digits modulo ten allocate buckets 0–5 to training, 6–7 to validation, and 8–9 to test. Within each split the lowest full hashes select at most 6,000, 1,500, and 1,500 descriptions. Rows are unique by normalized description. This design evaluates unseen descriptions within the 2016 cohort; users and calendar periods are shared across splits.
+
+## Input Fields
+
+| Field | Meaning |
+| --- | --- |
+| `description` | Normalized food-description text |
+| `category` | Modal recorded category among eligible source rows |
+| `split` | `train`, `validation`, or `test` |
+| `description_sha256` | Hash of normalized text; reproducible key and selection order |
+| `source_entries` | Number of eligible rows with the description |
+| `category_count` | Number of distinct recorded categories for that description |
+| `modal_entries` | Rows supporting the selected modal category |
+
+`source_entries` and `modal_entries` describe reference construction. They are not analysis weights. Each description receives weight one. Multiple-category counts are 343 in training, 89 in validation, and 74 in test.
+
+## Fitted Quantities and Metrics
+
+Word unigrams and character trigrams each use the 512 most frequent training-document tokens, with alphabetical tie breaks. Term weights are `1 + log(count)`; inverse-document frequency is `log((1+n_train)/(1+document_frequency))+1`. Each row has unit Euclidean norm when nonzero. Unseen tokens contribute zero. Uncentered SVD directions come from the training feature Gram matrix. Their signs can differ across numerical implementations; the deliberately unmapped comparison is sensitive to that convention. The saved environment identifies the executed calculation.
+
+A ridge least-squares classifier predicts one-hot source labels, with an unpenalized intercept and penalty 1 on coefficients. The largest score selects a category; sorted class order breaks ties. There are 264 training classes. A rotation, a positive scale, and translation map paired character training vectors to word coordinates. Validation chooses 8, 16, or 32 components by aligned accuracy; lower dimension breaks a tie. No test label enters fitting or selection.
+
+Accuracy counts correct modal categories over all descriptions. Macro F1 averages over the union of training and current evaluation classes, including classes with no predicted positives; undefined F1 is set to zero. The test union has 273 categories. Category-specific support, correct counts, predicted counts, recall, and F1 are in `results/mhealth.json`. Ten test descriptions belong to nine categories absent from training and count as errors.
+
+Neighbor overlap uses Euclidean distance between descriptions within the same evaluation split and the same dimension. Each description contributes the fraction of its ten neighbors shared with the word reference. Self-neighbors are excluded. Squared distances are rounded to twelve decimal places to treat rotation roundoff as ties; common row order breaks ties. This score uses evaluation features, independently of labels. It does not measure agreement with a human judgment of semantic similarity.
+
+`results/test_predictions.csv` records all four predictions and the reference category for each test hash. `results/summary.csv` contains validation scores at all three dimensions and test scores only at the selected dimension. `results/synthetic.json` records the invented vectors and decisions separately. `results/mhealth.json` records software versions, configuration values, denominators, category-level errors, and the accuracy among the 1,426 test descriptions with one recorded category.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Alignment/AGENTS.md
+
+# Agent Guide for Representation Alignment
+
+Read the root guide, README, and dictionary. Keep the invented vectors separate from the real mHealth descriptions and from the cited neural-model experiment. The local features are lexical TF-IDF and SVD representations; no pretrained language model is used.
+
+Fit vocabulary, IDF, SVD, the map, and classifiers using training descriptions. Select the dimension using validation accuracy before computing test outcomes. Preserve duplicate-description grouping, the deterministic sample, modal-label ambiguity, unseen-category errors, and equal description weights. This split evaluates new descriptions within a shared cohort and period.
+
+For row vectors the fitted map is `mu_recipient + scale * (x - mu_donor) @ rotation`. Positive scaling and an orthogonal transformation preserve neighbor order. A fixed classifier can still change its decisions. An unmapped coordinate substitution deliberately violates classifier compatibility and is not a provider benchmark. Preserve all comparison configurations and the same test denominator.
+
+Keep complete Python blocks in M5 §5.26 and M7 §§7.42–7.43 synchronized with their files. If an analytical choice changes after viewing the test sample, treat that sample as development data and reserve a fresh final sample. Category agreement is distinct from nutrition quality, consumer welfare, consent, and factual knowledge inside a language model.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Alignment/VERIFICATION.md
+
+# Verification Record
+
+Executed November 25, 2026 with Python 3.12 and NumPy 2.3.5; preparation used pandas 2.2.3. The full mHealth release passed its SHA-256 check before sample construction. The compact input hash is retained in the manifest, and the evaluator verifies it before fitting.
+
+Three original programs ran: preparation, the synthetic alignment calculation, and the local mHealth comparison. Nine independent tests cover an affine map on fresh points, degenerate inputs, exact distance preservation and a known classification reversal, neighbor ties and self-exclusion, modal-label ties, frozen training vocabulary, known classifier decisions and unseen categories, split disjointness, and reconciliation of every saved test prediction with aggregate and category-specific counts. The selected dimension is independently recovered from saved validation scores.
+
+No external data upload, language-model API call, upstream program execution, or checkpoint download occurred. The original post's neural-model experiments were not reproduced. PDF and figure readability are reviewed separately from these numerical checks.
+
+---
+
+## Source: 03_Data_and_Code/Representation_Alignment/results/README.md
+
+# Alignment Results
+
+The [synthetic calculation](synthetic.json) records eight invented test cases and distinct fitting points. The [mHealth result](mhealth.json), [comparison table](summary.csv), and [test predictions](test_predictions.csv) come from the executed local programs. The selected dimension is 32, using validation accuracy alone.
+
+All test configurations use 1,500 descriptions with equal weights. Neighbor overlap uses ten neighbors per description. Reference categories are source modes. The primary result includes 74 descriptions with multiple recorded categories and ten with categories absent from training. The separate one-category comparison uses 1,426 descriptions.
+
+Category-level outcomes and the explicitly defined macro-F1 denominator remain in the JSON. Interpretation, provenance, and reproduction commands are in the [example README](../README.md) and [dictionary](../DATA_DICTIONARY.md). The programs made no model API calls. No neural-state swapping, prompt-condition experiment, timing benchmark, or observed commercial return is measured.
+
+---
+
+## Source: 07_Labs/Representation_Alignment/README.md
+
+# Changing Text Representations in mHealth
+
+Public optional ungraded practice. Read [M5 §5.26](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md), [M7 §§7.42–7.43](../../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md), and the [program README](../../03_Data_and_Code/Representation_Alignment/README.md).
+
+## Managerial Decision
+
+A service changes the representation of food descriptions. Compare retaining the original classifier, aligning the new coordinates, and retraining the classifier. The evaluation target is agreement with recorded source categories on previously unseen descriptions.
+
+## Coordinate Comparison
+
+1. Hand-calculate the rotation of `(3, -1)` and `(-3, 1)` under the supplied matrix. Apply the fixed rule that the second coordinate must be positive. Explain how both decisions change while the distance between the points stays fixed.
+2. Run `alignment.py`. Reconcile all eight predictions and both-neighbor overlaps. Fit the map using only the separate training points. Compare the fitted matrix with the inverse rotation.
+3. Change the rotation angle in a copy of the synthetic calculation. Record distance agreement and classification accuracy separately. Explain why geometric agreement alone cannot certify compatibility with fixed coefficients.
+
+## mHealth Comparison
+
+4. Run `evaluate_mhealth.py` and the tests. Reconstruct each test accuracy from `test_predictions.csv`. Verify the same 1,500-description denominator and inspect category-level errors.
+5. Explain every fitted quantity and the data permitted to determine it. Trace vocabulary, IDF, SVD, the coordinate map, ridge coefficients, and dimension selection. Verify that descriptions do not cross splits.
+6. Explain why character-neighbor overlap is unchanged by alignment. Compare its value with the change in classification accuracy. Distinguish the deliberately incompatible substitution from the two compatible classifiers.
+7. Examine the 74 ambiguous reference descriptions, the ten descriptions whose reference category is absent from training, and labels such as `default` and `recipe`. State the evidence needed for a nutritional classification target.
+8. Specify a new evaluation for descriptions first observed after a fixed date. Preserve the existing test sample as development evidence if it influences your choices. Identify how the population and estimand would change.
+
+## AI-Assisted Coding
+
+Ask an assistant to return the full confusion matrix, per-category denominators, zero-feature counts, and a list of every fitted object's input split. Require an independent check that changing test labels leaves all fitted objects and the selected dimension unchanged. Check the row-vector orientation on the two-point example before running the complete program.
+
+## Adoption and Justification
+
+Compare the one-time costs of fitting and migration with inference, review, correction, and revalidation costs over a stated workload. Keep observed accuracy separate from hypothetical monetary values. Explain whether agreement among several classifiers supplies independent evidence about nutrition, customer preferences, or permission to act. An optional prompt exercise may compare fixed policy questions with and without a verified policy document; no such model experiment is included in the saved results.
 
 ---
 

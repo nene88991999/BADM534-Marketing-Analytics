@@ -3,7 +3,7 @@
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-24",
+  "updated_on": "2026-11-25",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -95,6 +95,12 @@
     {
       "id": "representation-evaluation",
       "path": "07_Labs/Representation_Evaluation/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
+    },
+    {
+      "id": "representation-alignment",
+      "path": "07_Labs/Representation_Alignment/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
     }
@@ -286,12 +292,21 @@
     "03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md",
     "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
     "03_Data_and_Code/Agent_Workflows/results/README.md",
-    "07_Labs/Agent_Workflows/README.md"
+    "07_Labs/Agent_Workflows/README.md",
+    "01_Resources/36_Representation_Alignment/README.md",
+    "01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md",
+    "01_Resources/36_Representation_Alignment/CASE_DESIGN.md",
+    "03_Data_and_Code/Representation_Alignment/README.md",
+    "03_Data_and_Code/Representation_Alignment/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Representation_Alignment/AGENTS.md",
+    "03_Data_and_Code/Representation_Alignment/VERIFICATION.md",
+    "03_Data_and_Code/Representation_Alignment/results/README.md",
+    "07_Labs/Representation_Alignment/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-24",
+    "updated_on": "2026-11-25",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -335,12 +350,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-24-agent-workflows",
+    "revision": "2026-11-25-representation-alignment",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 104,
-    "pages": 401,
+    "figures_count": 106,
+    "pages": 414,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -363,7 +378,8 @@
     "graph_coarsening_examples": "03_Data_and_Code/Graph_Coarsening/README.md",
     "ontology_examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
     "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md",
-    "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md"
+    "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md",
+    "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md"
   },
   "datasets": [
     {
@@ -425,7 +441,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-24",
+    "updated_on": "2026-11-25",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -434,7 +450,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 397,
+    "slides": 402,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -481,7 +497,7 @@
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-24",
+    "updated_on": "2026-11-25",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -1007,7 +1023,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-24-agent-workflows",
+  "revision": "2026-11-25-representation-alignment",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1041,5 +1057,34 @@
     "upstream_execution": false,
     "four_cell_experiment_executed": false,
     "scope": "Observed mHealth logging reference for 358 prior-period users, invented checker cases, hypothetical costs, and an optional controlled model-comparison protocol."
+  },
+  "representation_alignment": {
+    "resources": "01_Resources/36_Representation_Alignment/README.md",
+    "review": "01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md",
+    "catalog": "01_Resources/36_Representation_Alignment/catalog.json",
+    "source_manifest": "01_Resources/36_Representation_Alignment/manifest.json",
+    "examples": "03_Data_and_Code/Representation_Alignment/README.md",
+    "lab": "07_Labs/Representation_Alignment/README.md",
+    "course_manifest": "03_Data_and_Code/Representation_Alignment/manifest.json",
+    "verification": "03_Data_and_Code/Representation_Alignment/VERIFICATION.md",
+    "implemented_on": "2026-11-25",
+    "sections": [
+      "M5 §5.26",
+      "M7 §§7.42–7.44",
+      "M8 §8.27",
+      "M9 §9.21"
+    ],
+    "sessions": [
+      7,
+      11,
+      14
+    ],
+    "original_programs_executed": 3,
+    "independent_tests_passed": 9,
+    "original_figures": 2,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "prompt_experiment_executed": false,
+    "scope": "Original synthetic coordinates and local lexical mHealth classification; source-category agreement, not nutritional correctness or neural-state replication."
   }
 }

@@ -168,3 +168,7 @@ Assessing model performance and fairness across groups.
 **Local Files:** Annotated link and Finder bookmark only; no full-text or dataset copy saved.
 
 **Verification:** Source URL retrieved successfully on October 23, 2026.
+
+## Coordinate Alignment and Classification
+
+[The alignment case](../36_Representation_Alignment/README.md) connects M7 §§7.42–7.44 to geometry, downstream performance, and observed answers. Original synthetic and mHealth programs retain training, validation, and test boundaries, with [optional practice](../../07_Labs/Representation_Alignment/README.md).

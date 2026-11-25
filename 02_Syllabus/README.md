@@ -37,3 +37,7 @@ The syllabus includes network compression and retail access in Meeting 7 and lab
 ## Definitions and Evidence in the Course Outline
 
 The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Dates, times, room, and stable calendar event identifiers are unchanged. Detailed calculations are available in the lecture notes and two optional ungraded labs.
+
+## Representation Alignment Coverage
+
+The worked examples include replacement text features and classifier compatibility in Sessions 7 and 11, followed by model agreement and independent reasons in Session 14. The [optional lab](../07_Labs/Representation_Alignment/README.md) adds no graded requirement. Session 11 reallocates five minutes within the existing meeting.

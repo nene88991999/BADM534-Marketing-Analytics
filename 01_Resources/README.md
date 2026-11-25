@@ -136,3 +136,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Agent Workflow Evaluation
 
 [The survey and source review](35_Agent_Workflow_Evaluation/README.md) connect execution environments, context, tools, checks, and authority to an original mHealth coding exercise. The licensed paper is archived with attribution and a pinned source hash. The companion catalog is linked; no upstream code was executed.
+
+## Representation Alignment
+
+[Representation alignment](36_Representation_Alignment/README.md) connects Plato's Key and related research to original coordinate calculations and an executed mHealth text-classification comparison. The guide records source scope, rights, and the separation between internal neural states and locally fitted lexical features.

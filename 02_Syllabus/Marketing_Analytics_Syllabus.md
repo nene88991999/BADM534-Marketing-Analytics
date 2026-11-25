@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, and network compression. Workflow comparisons assess task information, feedback, costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, coordinate alignment, and network compression. Workflow comparisons assess task information, feedback, costs, and customer authority.
 
 ---
 

@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[width=13.5cm,height=6.4cm,ybar,bar width=18pt,
+ ymin=0,ymax=115,ytick={0,25,50,75,100},ylabel={Percent},
+ symbolic x coords={Unmapped rotation,Compressed style,Aligned rotation},
+ xtick=data,x tick label style={font=\small,align=center},enlarge x limits=.20,
+ ymajorgrids=true,legend style={at={(.5,1.17)},anchor=south,legend columns=2,font=\footnotesize},
+ nodes near coords, every node near coord/.append style={font=\footnotesize,text=IlliniBlue}]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(Unmapped rotation,100) (Compressed style,50) (Aligned rotation,100)};
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates {(Unmapped rotation,50) (Compressed style,100) (Aligned rotation,100)};
+\legend{Neighbor overlap ($k=2$),Classification accuracy}
+\end{axis}
+\node[anchor=north,align=center,font=\footnotesize] at ([yshift=-.35cm]current bounding box.south) {Eight equally weighted synthetic test cases; fixed classifier.\\Alignment uses eight distinct training cases.};
+\end{tikzpicture}

@@ -476,6 +476,55 @@ M7 §§7.39–7.40. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_
 
 M7 §§7.39–7.40. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
 \end{frame}
+\begin{frame}{Distances Survive a Change of Coordinates}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_alignment_coordinates.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small A fixed classifier refers to a particular coordinate system.\par}
+\note{Before rotation the second coordinate is the imposed review label. After rotation it is the original style coordinate. Half of the positive-style cases require review. Shading indicates the positive second coordinate in each panel. The comparison fixes cases, labels, and classifier while changing coordinates. Distances are identical; the classification change is a compatibility failure.
+
+M7 §§7.42–7.43. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Geometry and Classification Rank Differently}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M07_alignment_scores.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The evaluation target determines which representation ranks higher.\par}
+\note{The style compression multiplies the first coordinate by 0.2 and leaves the second unchanged. A training-fitted map uses style values minus four, minus two, two, and four, paired with both review values. These training points differ from the test points. Orthogonal transformations and positive scaling preserve Euclidean neighbor order. Pairing matters when estimating the map, and a fixed classifier can be sensitive to coordinate orientation.
+
+M7 §§7.42–7.43. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
+\begin{frame}{Alignment and Retraining on mHealth}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Configuration & Correct / 1,500 & Neighbors \\
+\midrule
+Word reference & 522 & 100\% \\
+Character, original classifier & 119 & 22\% \\
+Aligned character & 430 & 22\% \\
+Character, retrained classifier & 531 & 22\% \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+32 dimensions chosen on validation; ten-neighbor overlap with word features.
+\vfill
+\note{The four accuracies are 34.80\%, 7.93\%, 28.67\%, and 35.40\%. All comparisons use the same 1,500 equally weighted unseen descriptions. Vocabulary, IDF, SVD, maps, and ridge classifiers use training data. The dimension is chosen from 8, 16, and 32 using aligned validation accuracy. Ten test descriptions have categories absent from training and remain errors. All three character geometries have identical neighbors. The nine-case difference between compatible classifiers is descriptive for this sample. Full code and per-category results are optional practice.
+
+M7 §§7.42–7.43. \url{../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md}}
+\end{frame}
 \begin{frame}{A Cost-Based Threshold}
 \usebeamercolor[fg]{normal text}
 \noindent Suppose false positives cost $C_{FP}$ and false negatives cost $C_{FN}$.

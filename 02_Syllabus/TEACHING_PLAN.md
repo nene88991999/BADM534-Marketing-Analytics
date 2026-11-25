@@ -122,3 +122,7 @@ The [cancellation lab](../07_Labs/Ontology_and_Evidence/README.md) and [represen
 ## Agent Workflow Evaluation
 
 Use ten minutes within Session 1’s worked-comparison block for the information-by-feedback design and the fixed logging roster. Session 9 uses five minutes within its existing experiment comparison for the factorial contrast. Session 11 uses minutes 145–155 for outputs, actions, and grader comparisons; its other topics remain available in their assigned blocks. Session 14 uses five minutes within its first twenty minutes for hypothetical total workflow cost and minutes 95–100 for customer authorization. [The longer model-comparison protocol](../07_Labs/Agent_Workflows/README.md) is optional ungraded practice. These allocations remain inside the existing fifteen 170-minute meetings.
+
+## Representation Alignment and Independent Reasons
+
+M5 §5.26 prepares a source-category sample; M7 §§7.42–7.44 compare geometry, coordinate alignment, classifier performance, and observed answers. M8 §8.27 frames fitting and operating costs, while M9 §9.21 examines agreement as evidence. Sessions 7 and 14 use existing case-discussion time. In Session 11, minutes 80–100 retain the interval and routing exercise, and minutes 100–115 cover reconstruction and alignment. The full [coding lab](../07_Labs/Representation_Alignment/README.md) is public optional ungraded practice. The fifteen meeting dates and 170-minute durations remain unchanged.
