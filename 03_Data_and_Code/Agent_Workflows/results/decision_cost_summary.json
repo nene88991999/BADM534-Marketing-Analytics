@@ -1,0 +1,22 @@
+{
+  "scope": "Hypothetical inputs; no estimated labor savings or customer harm",
+  "assigned_tasks": 1000,
+  "analyst_dollars_per_hour": 60,
+  "review_scope": "All review and correction time per assigned task",
+  "workflows": [
+    {
+      "workflow": "Basic",
+      "api_per_task": 0.02,
+      "review_minutes": 0.25,
+      "undetected_error_probability": 0.05
+    },
+    {
+      "workflow": "Checked",
+      "api_per_task": 0.05,
+      "review_minutes": 0.5,
+      "undetected_error_probability": 0.01
+    }
+  ],
+  "break_even_loss_dollars": 7.000000000000001,
+  "loss_scope": "Manager-specified monetary consequence of an undetected wrong analysis"
+}

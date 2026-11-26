@@ -137,3 +137,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Statistical Inference
 
 [Two original programs](Statistical_Inference/README.md) reproduce paired mHealth logging and measure false-positive rates in a synthetic store-randomized experiment. Complete code appears in M3 §3.18 and M6 §6.30. Ten independent checks and two editable figures accompany the results; no model endpoint is used.
+
+## Coding Workflows and Hidden Errors
+
+[Agent workflow examples](Agent_Workflows/README.md) now include published aggregate reconstruction, eight constructed coding cases on each mHealth task, and a hypothetical decision-loss comparison. Three complete Python programs and two TikZ figures connect M1, M3, M6, M7, and M8; no new model calls are included.

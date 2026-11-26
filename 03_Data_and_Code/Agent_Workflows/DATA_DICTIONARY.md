@@ -24,3 +24,17 @@ Users without records during the task window remain in the output with zero logg
 ## Controlled Errors
 
 The independent tests use invented users A, B, C, and Z. They introduce a repeated date, a duplicate roster key, boundary dates, an out-of-roster record, an ambiguous non-ISO date, missing output users, and nonfinite values. These records remain separate from the actual mHealth task inputs. The reference calculation rejects duplicate roster keys and invalid dates; repeated event dates are collapsed to a distinct-day indicator.
+
+## Published Benchmark Aggregates
+
+The three CSVs under `01_Resources/40_Econometric_Coding_Workflows/data` retain the authors' schema. `appendix_silent_vs_loud.csv` contains three workflow rows. `n` counts assigned runs; `failures = loud + silent`. Fields ending in `per100` divide by assigned runs, whereas `silent_share_of_failures_pct` divides by failures. The `_lo` and `_hi` fields are supplied 95% percentile intervals from 4,000 bootstrap draws over 40 tasks.
+
+`prompt_agency.csv` contains six prompt rows and nine platform rows, distinguished by `panel`. The stored `few_shot` label means one related code example in this manuscript. Each prompt cell has 7,200 assigned runs; each language cell has 4,800. `successes` is an integer count, and `success_pct` uses a 0–100 scale. The course contrast program selects the prompt panel explicitly.
+
+`summary_by_model.csv` contains six model rows. Success fields ending in `_pct` use a 0–100 scale; cost fields ending in `_usd` are dollars. The incremental-cost calculation divides the difference in mean token cost per run by the difference in success probabilities on a 0–1 scale. It excludes analyst effort and downstream losses. Model names and effort levels remain the authors' labels.
+
+## Constructed Error Assessments and Hypothetical Costs
+
+`semantic_checks.csv` has one row per constructed program and period. `executed` records whether the program returned; `complete` requires every roster user and a finite value for each requested numeric field. `total_days_matches` checks only the sum of logged days. `valid` also checks every user's values against the reference. `mean_returned_rate` averages the rows returned by that program and can change its denominator or units in an incorrect case. Empty values are unavailable outcomes.
+
+`decision_costs.csv` reports expected dollars for the stated number of assigned analyses. The probability of an undetected error is per assigned analysis; the loss is conditional on such an error reaching a decision. Review minutes include correction effort. All operating inputs are hypothetical and are recorded in `decision_cost_summary.json`.

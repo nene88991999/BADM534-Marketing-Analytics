@@ -980,3 +980,136 @@ An analysis request should define the population, intervention or comparison, ou
 Matching a reference number can coexist with an unsuitable explanation or an unsupported causal claim. A reference analysis also needs justification. Several procedures can answer related questions with different p-values, and an influential observation does not by itself determine which question the firm should ask. A mean-dollar effect and a rank-order association concern different economic quantities. Choose the target and defensible handling rules before using a favorable result to select the method.
 
 For the [statistical inference exercise](../../07_Labs/Statistical_Inference/README.md), preserve the assistant's initial analysis and written rationale before giving feedback. Check the mHealth sample and uncertainty independently, then evaluate a frozen procedure on newly generated store experiments. Record model and software versions when an assistant is used. The supplied reference programs establish the course calculations; measured AI performance requires actual recorded runs under the stated protocol.
+
+## 1.19 Execution Feedback and Hidden Coding Errors
+
+\noindent A marketing analyst commissions a script to estimate a campaign's incremental contribution. The requested sample, estimator, and uncertainty calculation can be specified before any code is written. The analyst still needs to decide how much execution, revision, and independent checking to include in the workflow. An error message makes a failed calculation visible. A plausible table can leave an incorrect calculation undiscovered.
+
+[Galiani, López, and Sosa](../../01_Resources/40_Econometric_Coding_Workflows/README.md) compare these workflow choices using 40 tasks and 32 simulated datasets. Their November 2026 study evaluates six models in Stata, R, and Python, with two prompt conditions and ten repetitions of every combination. Each of the three workflows has 14,400 assigned runs. The task specifies the method and requested quantities. Numerical success means agreement with the reference calculation under the study's scoring rules.
+
+| Workflow | Successful Runs | Success | Loud Failures | Silent Failures |
+| --- | ---: | ---: | ---: | ---: |
+| One-Script Chatbot | 12,052 | 83.69% | 1,694 | 654 |
+| Self-Repair | 13,434 | 93.29% | 167 | 799 |
+| Constrained Agent | 14,021 | 97.37% | 41 | 338 |
+
+The chatbot supplies one script. Self-repair receives execution errors or missing-output feedback and can revise up to three times. The agent runs and revises its own code, chooses when to stop, and receives an explicit instruction to perform an independent numerical check. The agent comparison therefore includes a change in verification instructions as well as execution and revision. These rates describe implementation of a specified method; selecting the appropriate causal design remains a separate judgment.
+
+A loud failure means failed execution or incomplete requested output. A silent failure means complete output with at least one incorrect scored value. Agent silent failures account for 338 of 14,400 runs, or 2.35%. They also account for 338 of 379 failures, or 89.18%. The first fraction measures their frequency among commissioned analyses. The second describes the errors that remain after the workflow has removed most visible failures.
+
+![Published coding results use 14,400 assigned runs per workflow. Loud failures fall from 11.76 to 0.28 per 100 runs and silent failures from 4.54 to 2.35; silent failures rise from 27.85% to 89.18% of all failures. The two panels use different denominators. Intervals are the authors' task-cluster bootstrap intervals.](../figures/M01_coding_failure_denominators.png)
+
+Self-repair returns more complete results while its silent-failure count rises. A repaired program can proceed far enough to reveal an incorrect calculation that an earlier execution failure concealed. This change does not imply that already-correct programs became wrong. Reviewing the initial and final scripts is necessary to distinguish those paths.
+
+For a logging report, the specification should identify the earlier-period roster, distinct user-day unit, calendar boundaries, and treatment of users without records. For a campaign regression, it should identify the outcome units, assignment unit, included observations, estimator, and uncertainty convention. A successful run supports the claim that instructions executed. Independent calculations and deliberately incorrect alternatives provide evidence about whether those instructions implement the intended quantity. Section 7.46 applies these checks to the mHealth roster.
+
+### 1.19.1 Reconstruct the Published Comparison
+
+\noindent The three input tables are published aggregate records from the authors' v1.2 release. The program below reconstructs failure denominators, prompt contrasts, and model-specific incremental token costs. It reconciles prompt-cell success counts with the workflow totals. The reported intervals retain the authors' resampling of 40 tasks; the program does not treat individual runs as independent or recompute those intervals. No new model performance is measured.
+
+Run `python3 03_Data_and_Code/Agent_Workflows/benchmark_evidence.py` from the repository root. The program reads the three small CSV files in `01_Resources/40_Econometric_Coding_Workflows/data` and writes its results beside the existing workflow examples. The plotted intervals and reconstructed point values are traceable to those files.
+
+Python source: [benchmark_evidence.py](../../03_Data_and_Code/Agent_Workflows/benchmark_evidence.py)
+
+```python
+"""Recompute published aggregates; no model calls or upstream code execution."""
+import csv
+import json
+import math
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/40_Econometric_Coding_Workflows/data"
+ORDER = ["chatbot", "self_repair", "agent"]
+
+
+def read_csv(path):
+    with path.open(newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def failure_rates(rows):
+    result = []
+    for row in rows:
+        n, failed, loud, silent = (int(row[k]) for k in ["n", "failures", "loud", "silent"])
+        if n <= 0 or min(loud, silent) < 0 or failed != loud + silent or failed > n:
+            raise ValueError("Failure counts must partition a positive assigned-run denominator.")
+        result.append({"agency": row["agency"], "assigned": n, "successes": n - failed,
+                       "failures": failed, "loud": loud, "silent": silent,
+                       "success_pct": 100 * (n - failed) / n,
+                       "loud_per100": 100 * loud / n, "silent_per100": 100 * silent / n,
+                       "silent_share_of_failures_pct": 100 * silent / failed if failed else None})
+    return sorted(result, key=lambda row: ORDER.index(row["agency"]))
+
+
+def prompt_contrasts(rows):
+    cells = {}
+    for row in rows:
+        if row["panel"] != "prompt":
+            continue
+        key = row["agency"], row["prompt"]
+        if key in cells:
+            raise ValueError("Duplicate prompt cell.")
+        n, passed = int(row["n"]), int(row["successes"])
+        if n <= 0 or not 0 <= passed <= n:
+            raise ValueError("Invalid success count.")
+        cells[key] = (n, passed)
+    result = []
+    for agency in ORDER:
+        n0, s0 = cells[agency, "zero_shot"]
+        n1, s1 = cells[agency, "few_shot"]
+        p0, p1 = s0 / n0, s1 / n1
+        result.append({"agency": agency, "zero_assigned": n0, "example_assigned": n1,
+                       "zero_successes": s0, "example_successes": s1,
+                       "zero_success_pct": 100 * p0, "example_success_pct": 100 * p1,
+                       "gain_pp": 100 * (p1 - p0),
+                       "fraction_of_zero_failures_removed": (p1 - p0) / (1 - p0) if p0 < 1 else None})
+    return result
+
+
+def save_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    raw = read_csv(SOURCE / "appendix_silent_vs_loud.csv")
+    failures = failure_rates(raw)
+    for row in failures:
+        published = next(x for x in raw if x["agency"] == row["agency"])
+        for field in ["loud_per100", "silent_per100", "silent_share_of_failures_pct"]:
+            assert math.isclose(row[field], float(published[field]), abs_tol=1e-10)
+    prompts = prompt_contrasts(read_csv(SOURCE / "prompt_agency.csv"))
+    for row in failures:
+        paired = next(x for x in prompts if x["agency"] == row["agency"])
+        assert row["assigned"] == paired["zero_assigned"] + paired["example_assigned"]
+        assert row["successes"] == paired["zero_successes"] + paired["example_successes"]
+    cost_rows = []
+    for row in read_csv(SOURCE / "summary_by_model.csv"):
+        gain = (float(row["agent_pct"]) - float(row["chatbot_pct"])) / 100
+        increase = float(row["cost_per_run_agent_usd"]) - float(row["cost_per_run_chatbot_usd"])
+        cost_rows.append({"model": row["model"], "gain_pp": 100 * gain,
+                          "additional_dollars_per_run": increase,
+                          "dollars_per_additional_success": increase / gain if gain > 0 else None})
+    save_csv(output / "benchmark_failure_rates.csv", failures)
+    save_csv(output / "benchmark_prompt_contrasts.csv", prompts)
+    save_csv(output / "benchmark_incremental_cost.csv", cost_rows)
+    summary = {"source": "Galiani, Lopez, and Sosa; release v1.2, November manuscript",
+               "assigned_runs": sum(r["assigned"] for r in failures), "tasks": 40,
+               "models": 6, "source_datasets": 32,
+               "self_repair_share_of_success_gain":
+               (failures[1]["successes"] - failures[0]["successes"]) /
+               (failures[2]["successes"] - failures[0]["successes"]),
+               "prompt_interaction_pp": prompts[2]["gain_pp"] - prompts[0]["gain_pp"],
+               "scope": "Published aggregate reconstruction; original runs and bootstrap not rerun"}
+    (output / "benchmark_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps({"summary": summary, "failures": failures, "prompts": prompts}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

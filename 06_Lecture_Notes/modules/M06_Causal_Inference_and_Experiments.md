@@ -1371,3 +1371,27 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 6.31 Prompt Effects, Workflow Changes, and the Outcome Scale
+
+\noindent A manager choosing an analysis workflow wants to know whether a worked example becomes less useful when the assistant can execute code. The comparison depends on the definition of improvement. An increase from 80% to 90% success removes half the failures; an increase from 98% to 99% removes the same fraction. Their percentage-point effects differ even though their proportional reductions in failure agree.
+
+In the published coding benchmark, each prompt-by-workflow cell pools 7,200 runs over six models, 40 tasks, and three languages. The example supplies related code on separate data. The common task statement already specifies the target, method, and output in both prompt conditions.
+
+| Workflow | No Example | One Example | Gain (pp) | Baseline Failures Removed |
+| --- | ---: | ---: | ---: | ---: |
+| Chatbot | 81.49% | 85.90% | 4.42 | 23.86% |
+| Self-Repair | 92.40% | 94.18% | 1.78 | 23.40% |
+| Agent | 96.97% | 97.76% | 0.79 | 26.15% |
+
+Let $q_{ea}$ denote the observed success fraction with example status $e\in\{0,1\}$ and workflow $a$. The example's percentage-point gain is $100(q_{1a}-q_{0a})$. To express the same improvement relative to the available failures, calculate
+
+$$
+r_a=\frac{q_{1a}-q_{0a}}{1-q_{0a}}.
+$$
+
+The denominator is the no-example failure fraction. The ratio is undefined if that fraction is zero. The agent's smaller percentage-point gain coexists with a slightly larger proportional reduction in failures. The difference between its example gain and the chatbot's gain is $-3.625$ percentage points. That additive interaction describes a particular outcome scale and does not establish a general technological substitution between prompting and execution.
+
+The [complete program in Section 1.19.1](../../03_Data_and_Code/Agent_Workflows/benchmark_evidence.py) calculates each contrast from the published integer counts. Repeated runs share tasks and datasets. Confidence intervals for generalization across tasks should preserve that dependence, as the authors' task-cluster intervals do. Recomputing a binomial interval over 43,200 independent observations would answer a different sampling question.
+
+For an original course comparison, hold the core specification and independent-check instruction fixed while changing the opportunities to execute and revise. Record actual calls, feedback, stopping decisions, and resource use. These complete workflow conditions still differ in several operational features. A separate factorial comparison, such as Section 6.29, is needed to isolate the effect of a particular information or feedback component. Use synthetic practice inputs for live model calls, then evaluate the frozen program locally on the mHealth task without exposing the final answers.

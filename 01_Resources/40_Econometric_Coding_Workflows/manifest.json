@@ -1,0 +1,39 @@
+{
+  "reviewed_on": "2026-11-26",
+  "paper": "https://www.nber.org/papers/w35588",
+  "paper_version": "November 2026 manuscript",
+  "paper_public_copy": false,
+  "paper_reading_copy_sha256": "932b8da85917db2abec9f293d037f547e47196f443c6c6a51c991666e7b7d795",
+  "repository": "https://github.com/fedear402/agents-metrics-data",
+  "repository_commit": "51911f03da4d97b249084124eca655b42869c8f8",
+  "repository_tag": "v1.2",
+  "release_doi": "10.5281/zenodo.23770886",
+  "concept_doi": "10.5281/zenodo.23681818",
+  "published_on": "2026-10-29",
+  "license": "CC0-1.0",
+  "license_evidence": "https://zenodo.org/api/records/23770886",
+  "files": {
+    "data/appendix_silent_vs_loud.csv": {
+      "sha256": "6f78c11688557f08200daa55db72e5f3523155a404b2c3b71b362ad5125dfa40",
+      "bytes": 1349,
+      "source_path": "analysis/appendix_silent_vs_loud.csv",
+      "source_url": "https://github.com/fedear402/agents-metrics-data/blob/51911f03da4d97b249084124eca655b42869c8f8/analysis/appendix_silent_vs_loud.csv",
+      "transformations": "None; original UTF-8 CSV bytes retained"
+    },
+    "data/prompt_agency.csv": {
+      "sha256": "acc56d8e6973d981041bb76ac0f7ab7ce39afc928cc1971e68ba1284c1e07a05",
+      "bytes": 2379,
+      "source_path": "analysis/prompt_agency.csv",
+      "source_url": "https://github.com/fedear402/agents-metrics-data/blob/51911f03da4d97b249084124eca655b42869c8f8/analysis/prompt_agency.csv",
+      "transformations": "None; original UTF-8 CSV bytes retained"
+    },
+    "data/summary_by_model.csv": {
+      "sha256": "89ad6a1e301247924a19e35eec9b5572f4f1f624d25e37aef083cb1c1ea9376f",
+      "bytes": 1761,
+      "source_path": "analysis/summary_by_model.csv",
+      "source_url": "https://github.com/fedear402/agents-metrics-data/blob/51911f03da4d97b249084124eca655b42869c8f8/analysis/summary_by_model.csv",
+      "transformations": "None; original UTF-8 CSV bytes retained"
+    }
+  },
+  "scope": "Three published aggregate tables; individual runs, upstream programs, and paper are not mirrored"
+}

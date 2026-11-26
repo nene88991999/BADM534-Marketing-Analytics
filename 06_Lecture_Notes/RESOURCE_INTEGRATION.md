@@ -211,3 +211,7 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Statistical Inference and AI-Assisted Analysis
 
 The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md) informs M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24. The course implements two original Python programs, ten independent checks, and two editable TikZ figures. Observed logging uses the existing mHealth release; the store experiment imposes a known zero effect. The consumer-credit question supports philosophical discussion while its reference specification remains unverified. No upstream code or model evaluation is executed.
+
+## Econometric Coding Workflows
+
+[The source collection](../01_Resources/40_Econometric_Coding_Workflows/README.md) supports M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24. The [original programs](../03_Data_and_Code/Agent_Workflows/README.md) reconstruct published denominators, expose deliberately constructed mHealth errors, and compare hypothetical review costs. The three data types remain distinct. Sessions 1, 4, 9, 11, and 14 use existing discussion blocks.

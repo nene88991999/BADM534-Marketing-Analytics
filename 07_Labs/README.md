@@ -70,3 +70,7 @@ The [optional ungraded lab](Digital_Usage/README.md) follows an app-service deci
 ## Statistical Evidence and Marketing Decisions
 
 The [optional ungraded lab](Statistical_Inference/README.md) checks customer pairing, store assignment, uncertainty, Monte Carlo calibration, and the scope of an advertising claim. An optional recorded AI exercise evaluates execution, method, numerical reporting, and interpretation separately.
+
+## Coding-Workflow Evidence and Constructed Errors
+
+The expanded [AI Workflow Evaluation lab](Agent_Workflows/README.md) reconstructs published benchmark aggregates, assesses deliberate mHealth errors, and evaluates hypothetical review spending. Two separate optional model-comparison protocols distinguish controlled information/feedback contrasts from three execution-and-revision conditions. Neither has been run as a course model experiment.

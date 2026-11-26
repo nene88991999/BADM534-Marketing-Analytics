@@ -200,6 +200,40 @@ Marketing Analytics Lecture Notes, M1 §1.12.}
 
 M1 §1.18. \url{../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md}}
 \end{frame}
+\begin{frame}{Execution, Revision, and Correct Calculations}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrrr}
+\toprule
+Workflow & Success & Loud / 100 & Silent / 100 \\
+\midrule
+Chatbot & 83.69\% & 11.76 & 4.54 \\
+Self-Repair & 93.29\% & 1.16 & 5.55 \\
+Agent & 97.37\% & 0.28 & 2.35 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Published benchmark: 14,400 assigned runs per workflow; 40 tasks, six models.
+\vfill
+\note{The method, sample, target quantities, and inference convention are supplied before coding. A loud failure means failed execution or incomplete requested output. A silent failure returns complete output with an incorrect scored value. Self-repair permits three revisions after execution or completeness feedback. The agent also receives an independent-check instruction, so the comparison changes several workflow components together. The authors collected these model results; the course program reconstructs aggregates from their release.
+
+Galiani, López, and Sosa, November 2026. \url{../01_Resources/40_Econometric_Coding_Workflows/README.md}}
+\end{frame}
+\begin{frame}{Fewer Errors, a Different Remaining Problem}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.72\textheight}
+\input{../06_Lecture_Notes/figures/M01_coding_failure_denominators.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Silent failures are 2.35\% of agent runs and 89.18\% of its failures.\par}
+\note{The agent has 338 silent failures among 14,400 assigned runs and 379 total failures. Lower total error and a larger silent share are compatible. Self-repair can turn an incomplete program into a complete but wrong one, exposing a different failure category. Inspect numerical validity after execution succeeds. See M1 §1.19 and the published aggregate reconstruction.
+
+Galiani, López, and Sosa, November 2026. \url{../01_Resources/40_Econometric_Coding_Workflows/README.md}}
+\end{frame}
 \begin{frame}{Verification with Counterexamples}
 \usebeamercolor[fg]{normal text}
 \vfill

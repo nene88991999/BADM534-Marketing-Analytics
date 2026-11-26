@@ -3256,3 +3256,143 @@ The digital-usage release supplies two geographic composites. Recomputing PCA on
 Sections 2.26–2.27 provide complete code for the release assessment and the supplement's numerical example. Section 4.27 provides the full geographic clustering calculation. An outcome-validation extension would collect customer requests, offered channels, completion, time, and costs. Split fitting and evaluation by geography or service period, depending on the intended deployment. Fit preprocessing and any outcome-guided group definitions using training data, and compare results with a policy that simply honors each customer's request for assistance.
 
 The released scores are area context measured in an earlier period. Their ability to predict later service outcomes remains an empirical question. A model trained on laptop activity should be evaluated on the actual mobile, browser, and assisted tasks customers will face before its output determines service access.
+
+## 7.46 Evaluate a Checker with Deliberately Incorrect Programs
+
+\noindent An outreach team uses individual logging counts to decide which customers need follow-up. A correct grand total leaves the allocation of those counts unresolved. A program that shifts every count to the next customer can preserve total activity, the mean rate, and the distribution while changing the people selected for outreach. The checker must examine the information used by the decision.
+
+The mHealth tasks retain 358 users observed from January through June 2016 within the established pseudonym-selected cohort. July is the development period; August is the evaluation period. Both months contain 31 days, and users with no records remain in the roster. The inputs include the day immediately before the month and the excluded end date, permitting a direct check of the time filter. The `entries` field counts food records within a user-day; the target counts distinct recorded days.
+
+The following programs deliberately change one calculation or output at a time. They are constructed errors applied to observed inputs. Their frequencies do not estimate how often any model makes these mistakes. For July, the correct report contains 6,455 recorded user-days and an average logging rate of 58.16%.
+
+| Constructed Program | Returned Users | Returned Days | Mean Rate | Assessment |
+| --- | ---: | ---: | ---: | --- |
+| Correct | 358 | 6,455 | 58.16% | Valid |
+| Count Food Entries | 358 | 77,751 | 700.59% | Silent Failure |
+| Include August 1 | 358 | 6,686 | 60.25% | Silent Failure |
+| Use 30 Days | 358 | 6,455 | 60.10% | Silent Failure |
+| Shift Counts Across Users | 358 | 6,455 | 58.16% | Silent Failure |
+| Omit Zero-Log Users | 319 | 6,455 | 65.27% | Incomplete Output |
+
+Completeness here requires one finite-valued row for every roster user with all requested fields. The omitted-user program is therefore incomplete even though its remaining rows are well formed. If the requested output were only an aggregate mean, a missing-population error could instead appear as a complete but wrong value. Error classification depends on the output contract. Numerical range checks can detect the entry-count error immediately; the shifted-count error also satisfies ordinary aggregate and range checks.
+
+The shifted program assigns incorrect values to 331 of 358 July users while preserving the overall rate. The 30-day program preserves the numerator but changes the exposure denominator. The zero-log exclusion changes the population to users with records. Each program can return a number that is internally reproducible. Comparing it with the specified measurement distinguishes these errors.
+
+Run the complete program from the repository root:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/semantic_checks.py
+```
+
+The program imports the existing reference calculation printed in Section 1.17.2 and the CSV assessment printed in Section 7.41.2. It writes one result per constructed case and period. The independent test file uses small invented cases with known answers, while the existing SQL check separately verifies the actual task counts. For a measured AI comparison, keep the evaluation data and reference outputs outside the model's permitted workspace.
+
+Python source: [semantic_checks.py](../../03_Data_and_Code/Agent_Workflows/semantic_checks.py)
+
+```python
+"""Evaluate original deliberate coding errors on the existing mHealth tasks."""
+import csv
+import json
+import math
+from collections import Counter
+from datetime import date
+from pathlib import Path
+
+from evaluate_submission import grade
+from logging_reference import calculate, read_csv
+
+HERE = Path(__file__).resolve().parent
+CASES = ["correct", "entry_counts", "inclusive_end", "denominator_30",
+         "shifted_users", "omit_zero", "missing_value", "execution_failure"]
+
+
+def candidate(case, roster, records, start, end):
+    if case == "execution_failure":
+        raise RuntimeError("Deliberately constructed execution failure")
+    if case not in CASES:
+        raise ValueError("Unknown constructed case.")
+    users = [row["user_id"] for row in roster]
+    days = (end - start).days
+    seen, counts = {u: set() for u in users}, Counter()
+    for row in records:
+        d, u = date.fromisoformat(row["date"]), row["user_id"]
+        keep = start <= d <= end if case == "inclusive_end" else start <= d < end
+        if u in seen and keep:
+            seen[u].add(d)
+            counts[u] += int(row["entries"])
+    values = [counts[u] if case == "entry_counts" else len(seen[u]) for u in users]
+    if case == "shifted_users":
+        values = values[1:] + values[:1]
+    denominator = 30 if case == "denominator_30" else days
+    rows = [{"user_id": u, "logged_days": n, "window_days": denominator,
+             "logging_rate": n / denominator} for u, n in zip(users, values)]
+    if case == "omit_zero":
+        rows = [row for row in rows if row["logged_days"] > 0]
+    if case == "missing_value":
+        del rows[0]["logging_rate"]
+    return rows
+
+
+def complete(rows, expected_ids):
+    ids = [r.get("user_id") for r in rows]
+    if len(ids) != len(expected_ids) or set(ids) != set(expected_ids):
+        return False
+    try:
+        return all(math.isfinite(float(r[k])) for r in rows
+                   for k in ["logged_days", "window_days", "logging_rate"])
+    except (KeyError, ValueError, TypeError):
+        return False
+
+
+def assess(case, roster, records, start, end):
+    reference, summary = calculate(roster, records, start, end)
+    try:
+        rows = candidate(case, roster, records, start, end)
+    except RuntimeError:
+        return {"case": case, "executed": False, "complete": False,
+                "total_days_matches": False, "valid": False,
+                "classification": "loud_failure", "returned_users": 0,
+                "correct_users": 0, "returned_days": None, "mean_returned_rate": None}
+    structural = complete(rows, [r["user_id"] for r in reference])
+    evaluated = grade(rows, reference)
+    total = sum(row["logged_days"] for row in rows)
+    rates = [row.get("logging_rate") for row in rows]
+    mean = sum(rates) / len(rates) if rates and all(x is not None for x in rates) else None
+    return {"case": case, "executed": True, "complete": structural,
+            "total_days_matches": total == summary["observed_user_days"],
+            "valid": evaluated["valid_output"],
+            "classification": "success" if evaluated["valid_output"] else
+            ("silent_failure" if structural else "loud_failure"),
+            "returned_users": len(rows), "correct_users": evaluated["correct_users"],
+            "returned_days": total, "mean_returned_rate": mean}
+
+
+def main():
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    results = []
+    for role in ["development", "evaluation"]:
+        folder = HERE / "tasks" / role
+        spec = json.loads((folder / "task.json").read_text())
+        roster, records = read_csv(folder / "roster.csv"), read_csv(folder / "observed_days.csv")
+        for case in CASES:
+            result = assess(case, roster, records, date.fromisoformat(spec["start"]),
+                            date.fromisoformat(spec["end_exclusive"]))
+            results.append({"task": role, **result})
+    with (output / "semantic_checks.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(results[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(results)
+    summary = {"scope": "Original deliberate errors on observed mHealth inputs; no LLM performance",
+               "cases_per_task": len(CASES), "tasks": 2,
+               "incorrect_cases_accepted_by_total_only": sum(
+                   r["total_days_matches"] and not r["valid"] for r in results),
+               "incomplete_outputs": sum(not r["complete"] for r in results)}
+    (output / "semantic_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps({"summary": summary, "results": results}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+The same checks on August retain 6,501 recorded user-days and a 58.58% mean rate. Reassigning counts preserves both aggregates while changing 324 users' values. Agreement across two fixed periods checks these particular implementations. A broader assessment of model reliability requires additional tasks, recorded model attempts, and an evaluation sample that did not guide revision.

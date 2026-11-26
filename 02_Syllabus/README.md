@@ -53,3 +53,7 @@ The geographic usage case connects measurement, maps, conditional regression, se
 ## Statistical Evidence
 
 The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded; no assessment requirements or meeting dates change.
+
+## Coding-Workflow Coverage
+
+The learning objectives and class-format description include output completeness, silent numerical errors, independent checks, and review costs. The [session plan](../05_Slides/SESSION_PLAN.md) integrates these comparisons into the existing meetings. The longer [workflow lab](../07_Labs/Agent_Workflows/README.md) remains optional and ungraded.

@@ -26,6 +26,8 @@ Session 01. M1. 170 minutes.
 - [Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)
 - [Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)
 - [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
+- [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
+- [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -194,7 +196,33 @@ Successful execution, an appropriate statistical method, accurate reporting, and
 
 Source: M1 §1.18. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 16: Verification with Counterexamples
+## Slide 16: Execution, Revision, and Correct Calculations
+
+| Workflow | Success | Loud / 100 | Silent / 100 |
+| --- | --- | --- | --- |
+| Chatbot | 83.69% | 11.76 | 4.54 |
+| Self-Repair | 93.29% | 1.16 | 5.55 |
+| Agent | 97.37% | 0.28 | 2.35 |
+
+Published benchmark: 14,400 assigned runs per workflow; 40 tasks, six models.
+
+The method, sample, target quantities, and inference convention are supplied before coding. A loud failure means failed execution or incomplete requested output. A silent failure returns complete output with an incorrect scored value. Self-repair permits three revisions after execution or completeness feedback. The agent also receives an independent-check instruction, so the comparison changes several workflow components together. The authors collected these model results; the course program reconstructs aggregates from their release.
+
+Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+
+## Slide 17: Fewer Errors, a Different Remaining Problem
+
+Silent failures are 2.35% of agent runs and 89.18% of its failures.
+
+**Figure description:** The left panel reports loud and silent failures per 100 assigned runs. The right panel reports silent failures as a share of failures. Both use the authors' intervals from resampling 40 tasks.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M01_coding_failure_denominators.tex)
+
+The agent has 338 silent failures among 14,400 assigned runs and 379 total failures. Lower total error and a larger silent share are compatible. Self-repair can turn an incomplete program into a complete but wrong one, exposing a different failure category. Inspect numerical validity after execution succeeds. See M1 §1.19 and the published aggregate reconstruction.
+
+Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+
+## Slide 18: Verification with Counterexamples
 
 - A duplicate lookup must trigger a failed key check.
 - An unmatched customer must remain visible in the assessment.
@@ -205,7 +233,7 @@ These checks test properties that can fail even when code runs. Repeating the pr
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 17: Information and Development Feedback
+## Slide 19: Information and Development Feedback
 
 Hold the model and task fixed; compare the four complete workflows.
 
@@ -217,7 +245,7 @@ All cells receive the same core measurement request and output schema. Explicit 
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 18: The Logging Denominator
+## Slide 20: The Logging Denominator
 
 - Eligibility uses January–June records within the recurring mHealth cohort.
 - 358 users contribute 11,098 possible July user-days.
@@ -228,7 +256,7 @@ The roster records earlier presence in the released file, not account enrollment
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 19: mHealth Records
+## Slide 21: mHealth Records
 
 - Food entries describe recorded items on observed user-days.
 - The separate daily table covers only part of the food-log history.
@@ -238,7 +266,7 @@ The released records replace user identifiers and birthdays and perturb weight v
 
 Source: M1, Section 1.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 20: Join Choice Changes the Sample
+## Slide 22: Join Choice Changes the Sample
 
 Released mHealth cohort: 76,804 observed user-days.
 
@@ -250,7 +278,7 @@ An inner join would remove more than half the cohort days. Missing calendar days
 
 Source: M1, Section 1.8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 21: Coding Exercise: An Order Assessment
+## Slide 23: Coding Exercise: An Order Assessment
 
 - Implement aggregation with a coding assistant.
 - Add a return, a missing identifier, and a duplicated lookup key.
@@ -260,7 +288,7 @@ Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.p
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 22: Versioned Evidence
+## Slide 24: Versioned Evidence
 
 - Record the model, date, prompts, tools, settings, parser, and scoring rule.
 - Keep known failure cases and evaluate transfer on fresh cases.
@@ -270,7 +298,7 @@ A historical finding concerns the tested configuration. A current workflow can d
 
 Source: M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 23: A Reproducible Analysis
+## Slide 25: A Reproducible Analysis
 
 - Relative paths identify inputs and outputs.
 - A fresh run reconstructs results without hidden notebook state.
@@ -280,7 +308,7 @@ A random seed reproduces a particular random computation under a given implement
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 24: Repeated Responses Change the Weight
+## Slide 26: Repeated Responses Change the Weight
 
 Synthetic ratings stay fixed. Additional identical rows change representation.
 
@@ -292,7 +320,7 @@ A product manager must specify which unit receives equal weight. With two p01 re
 
 Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 25: Numerical Evidence and the Recommendation
+## Slide 27: Numerical Evidence and the Recommendation
 
 - Recompute the table and check one calculation independently.
 - Preserve persona weights, missing values, and the synthetic-data scope.
@@ -302,7 +330,7 @@ The program recomputes four saved tables and stops if a table is missing or diff
 
 Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 26: A Campaign Specification
+## Slide 28: A Campaign Specification
 
 - Define the eligible customers and contact date.
 - State the contribution horizon and relevant costs.
@@ -313,7 +341,7 @@ The specification should state one feasible action and the comparison that suppo
 
 Source: M1, Section 1.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 27: Customer Data in an AI Workflow
+## Slide 29: Customer Data in an AI Workflow
 
 - Use only data authorized for the tool and task.
 - Minimize fields and use synthetic examples when they suffice.
@@ -323,7 +351,7 @@ Public availability does not establish permission for every reuse. Pseudonymized
 
 Source: Course agent guide and ETHICS_AND_REGULATION.md, M1.
 
-## Slide 28: Decision Discussion
+## Slide 30: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

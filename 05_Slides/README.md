@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 425 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 431 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -140,3 +140,7 @@ Sessions 2, 3, 4, 6, and 14 include ten slides on geographic measurement, index 
 ## Statistical Evidence and Customer Reasons
 
 Seven slides in Sessions 1, 4, 9, and 14 connect generated statistical code, paired mHealth uncertainty, store assignment, false discoveries, and the interpretation of an advertising test. [Complete Python and results](../03_Data_and_Code/Statistical_Inference/README.md) accompany the notes and [optional practice](../07_Labs/Statistical_Inference/README.md). The existing 15 meetings and their 170-minute allocations are retained.
+
+## Coding Workflows and Hidden Errors
+
+Sessions 1, 4, 9, 11, and 14 include six additional slides on published workflow results, uncertainty checks, prompt-effect scales, constructed mHealth errors, and hypothetical decision losses. Two new editable TikZ figures preserve the comparison denominators and cost assumptions. [Source guide](../01_Resources/40_Econometric_Coding_Workflows/README.md); [Python and checks](../03_Data_and_Code/Agent_Workflows/README.md).

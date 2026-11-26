@@ -12,7 +12,7 @@ Generated from course.json and the source files identified below. This file cont
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-25",
+  "updated_on": "2026-11-26",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -355,12 +355,15 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Statistical_Inference/AGENTS.md",
     "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
     "03_Data_and_Code/Statistical_Inference/results/README.md",
-    "07_Labs/Statistical_Inference/README.md"
+    "07_Labs/Statistical_Inference/README.md",
+    "01_Resources/40_Econometric_Coding_Workflows/README.md",
+    "01_Resources/40_Econometric_Coding_Workflows/SOURCE_REVIEW.md",
+    "01_Resources/40_Econometric_Coding_Workflows/RIGHTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-25",
+    "updated_on": "2026-11-26",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -404,12 +407,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-25-statistical-inference",
+    "revision": "2026-11-26-econometric-coding",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 114,
-    "pages": 451,
+    "figures_count": 116,
+    "pages": 463,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -436,7 +439,8 @@ Generated from course.json and the source files identified below. This file cont
     "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md",
     "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md",
     "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md",
-    "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md"
+    "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md",
+    "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md"
   },
   "datasets": [
     {
@@ -512,7 +516,7 @@ Generated from course.json and the source files identified below. This file cont
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-25",
+    "updated_on": "2026-11-26",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -521,7 +525,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 425,
+    "slides": 431,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -568,7 +572,7 @@ Generated from course.json and the source files identified below. This file cont
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-25",
+    "updated_on": "2026-11-26",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -1094,7 +1098,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-25-statistical-inference",
+  "revision": "2026-11-26-econometric-coding",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1244,6 +1248,39 @@ Generated from course.json and the source files identified below. This file cont
     "model_api_calls": 0,
     "upstream_execution": false,
     "scope": "Observed descriptive mHealth pairs; original known-null store simulations; advertising question for philosophical discussion. No measured AI performance or empirical credit-task replication."
+  },
+  "econometric_coding_workflows": {
+    "resources": "01_Resources/40_Econometric_Coding_Workflows/README.md",
+    "review": "01_Resources/40_Econometric_Coding_Workflows/SOURCE_REVIEW.md",
+    "catalog": "01_Resources/40_Econometric_Coding_Workflows/catalog.json",
+    "source_manifest": "01_Resources/40_Econometric_Coding_Workflows/manifest.json",
+    "examples": "03_Data_and_Code/Agent_Workflows/README.md",
+    "lab": "07_Labs/Agent_Workflows/README.md",
+    "verification": "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
+    "manifest": "03_Data_and_Code/Agent_Workflows/coding_evidence_manifest.json",
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M1 \u00a71.19",
+      "M3 \u00a73.18",
+      "M6 \u00a76.31",
+      "M7 \u00a77.46",
+      "M8 \u00a78.30",
+      "M9 \u00a79.24"
+    ],
+    "sessions": [
+      1,
+      4,
+      9,
+      11,
+      14
+    ],
+    "new_programs_executed": 3,
+    "new_independent_tests_passed": 11,
+    "original_figures": 2,
+    "additional_slides": 6,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "scope": "Published aggregate reconstruction; original constructed errors on observed mHealth inputs; hypothetical expected costs. No new model-performance comparison."
   }
 }
 ```
@@ -1378,6 +1415,10 @@ The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects publ
 ## Statistical Evidence for Marketing Decisions
 
 [Original Python examples](03_Data_and_Code/Statistical_Inference/README.md) examine uncertainty in observed mHealth logging and false discoveries in synthetic store experiments. M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment to AI-assisted coding and customer agency. [Optional practice](07_Labs/Statistical_Inference/README.md) and the [Fisher-R1 source review](01_Resources/39_Statistical_Inference_and_AI/README.md) accompany two editable figures and seven slides across Sessions 1, 4, 9, and 14.
+
+## Coding Workflows and Hidden Errors
+
+[The coding-workflow collection](01_Resources/40_Econometric_Coding_Workflows/README.md) connects published benchmark evidence to [reproducible Python examples](03_Data_and_Code/Agent_Workflows/README.md). The notes and slides distinguish execution, numerical correctness, customer-level allocation, and the cost of undetected errors.
 
 ---
 
@@ -1563,7 +1604,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 114 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 116 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -1716,6 +1757,10 @@ The [recurring geographic case](03_Data_and_Code/Digital_Usage/README.md) appear
 
 M1 §1.18 separates execution, method, reporting, and interpretation. M3 §3.18 reconstructs mHealth pairs and uncertainty; M6 §6.30 measures false discoveries under store assignment. M9 §9.24 examines a joint advertising test and the further premises needed for customer-welfare claims. The [original programs](03_Data_and_Code/Statistical_Inference/README.md) and [optional lab](07_Labs/Statistical_Inference/README.md) support Sessions 1, 4, 9, and 14 within their existing meeting blocks.
 
+## Econometric Coding Workflows and Hidden Errors
+
+M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24 connect [published coding evidence](01_Resources/40_Econometric_Coding_Workflows/README.md) to independent assessment, interaction scales, customer allocation, review cost, and responsibility. [Three complete programs](03_Data_and_Code/Agent_Workflows/README.md), two editable figures, and six slides support Sessions 1, 4, 9, 11, and 14 within their existing meeting blocks. [Longer practice](07_Labs/Agent_Workflows/README.md) remains optional and ungraded.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1831,6 +1876,10 @@ The geographic usage case connects measurement, maps, conditional regression, se
 ## Statistical Evidence
 
 The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded; no assessment requirements or meeting dates change.
+
+## Coding-Workflow Coverage
+
+The learning objectives and class-format description include output completeness, silent numerical errors, independent checks, and review costs. The [session plan](../05_Slides/SESSION_PLAN.md) integrates these comparisons into the existing meetings. The longer [workflow lab](../07_Labs/Agent_Workflows/README.md) remains optional and ungraded.
 
 ---
 
@@ -1988,15 +2037,19 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Two original programs](Statistical_Inference/README.md) reproduce paired mHealth logging and measure false-positive rates in a synthetic store-randomized experiment. Complete code appears in M3 §3.18 and M6 §6.30. Ten independent checks and two editable figures accompany the results; no model endpoint is used.
 
+## Coding Workflows and Hidden Errors
+
+[Agent workflow examples](Agent_Workflows/README.md) now include published aggregate reconstruction, eight constructed coding cases on each mHealth task, and a hypothetical decision-loss comparison. Three complete Python programs and two TikZ figures connect M1, M3, M6, M7, and M8; no new model calls are included.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [451-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 114 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [463-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 116 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2176,6 +2229,10 @@ The [geographic case](../03_Data_and_Code/Digital_Usage/README.md) adds measurem
 
 M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment, paired mHealth logging, store assignment, and advertising claims. [Two complete Python programs](../03_Data_and_Code/Statistical_Inference/README.md), ten independent tests, and two editable figures distinguish observed descriptive changes, synthetic null experiments, and ethical interpretation. The [source review](../01_Resources/39_Statistical_Inference_and_AI/README.md) and [optional practice](../07_Labs/Statistical_Inference/README.md) preserve the benchmark's scope.
 
+## Coding Workflows and Independent Checks
+
+M1 §1.19 reconstructs published success and failure counts; M6 §6.31 compares prompt effects on two scales; M7 §7.46 evaluates constructed mHealth errors; M8 §8.30 compares review costs and undetected decision losses. M3 and M9 connect statistical evidence and managerial responsibility. [Complete Python and outputs](../03_Data_and_Code/Agent_Workflows/README.md) accompany two editable figures.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -2244,7 +2301,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 425 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 431 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2380,6 +2437,10 @@ Sessions 2, 3, 4, 6, and 14 include ten slides on geographic measurement, index 
 ## Statistical Evidence and Customer Reasons
 
 Seven slides in Sessions 1, 4, 9, and 14 connect generated statistical code, paired mHealth uncertainty, store assignment, false discoveries, and the interpretation of an advertising test. [Complete Python and results](../03_Data_and_Code/Statistical_Inference/README.md) accompany the notes and [optional practice](../07_Labs/Statistical_Inference/README.md). The existing 15 meetings and their 170-minute allocations are retained.
+
+## Coding Workflows and Hidden Errors
+
+Sessions 1, 4, 9, 11, and 14 include six additional slides on published workflow results, uncertainty checks, prompt-effect scales, constructed mHealth errors, and hypothetical decision losses. Two new editable TikZ figures preserve the comparison denominators and cost assumptions. [Source guide](../01_Resources/40_Econometric_Coding_Workflows/README.md); [Python and checks](../03_Data_and_Code/Agent_Workflows/README.md).
 
 ---
 
@@ -2921,6 +2982,10 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 
 The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md) informs M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24. The course implements two original Python programs, ten independent checks, and two editable TikZ figures. Observed logging uses the existing mHealth release; the store experiment imposes a known zero effect. The consumer-credit question supports philosophical discussion while its reference specification remains unverified. No upstream code or model evaluation is executed.
 
+## Econometric Coding Workflows
+
+[The source collection](../01_Resources/40_Econometric_Coding_Workflows/README.md) supports M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24. The [original programs](../03_Data_and_Code/Agent_Workflows/README.md) reconstruct published denominators, expose deliberately constructed mHealth errors, and compare hypothetical review costs. The three data types remain distinct. Sessions 1, 4, 9, 11, and 14 use existing discussion blocks.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3276,20 +3341,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 28 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 30 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 23 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 24 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 28 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 29 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 58 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 51 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 52 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -3298,9 +3363,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately.
+**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately. Reconstruct published failure denominators and assess silent errors.
 
-**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code. Execution feedback, independent verification, and the meaning of complete output.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -3309,7 +3374,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 0–15 | Managerial Case |
 | 15–40 | Concepts and Mechanisms |
 | 40–45 | Definitions, Inference, and Evidence |
-| 45–70 | Worked Comparison and Workflow Configuration |
+| 45–70 | Worked Comparison, Workflow Configuration, and Hidden Errors |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–140 | Response Weights and Statistical Evidence |
@@ -3364,9 +3429,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 10, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty.
+**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty. Check variance and sample construction separately from the coefficient.
 
-**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation.
 
 **Ethics and Regulation:** Substantiation and the distinction between association and benefit.
 
@@ -3471,9 +3536,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect.
+**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice.
 
@@ -3481,7 +3546,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- |
 | 0–15 | Managerial Case |
 | 15–45 | Concepts and Mechanisms |
-| 45–70 | Worked Comparison and Factorial Workflow Contrast |
+| 45–70 | Worked Comparison, Workflow Contrasts, and Outcome Scales |
 | 70–80 | Break |
 | 80–125 | Python Exercise and Store Assignment |
 | 125–135 | Fixed and Adaptive Research Designs |
@@ -3513,9 +3578,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 7, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction, coordinate alignment, and review decisions; full representation programs are optional practice.
+**Python and Evidence:** Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction, coordinate alignment, and review decisions; full representation programs are optional practice. Evaluate constructed mHealth errors with total-only and per-user checks.
 
-**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate.
+**Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate. Checker validity depends on the required population, fields, and numerical target.
 
 **Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing.
 
@@ -3532,7 +3597,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 100–115 | Reconstruction, Alignment, and Representation Evaluation |
 | 115–125 | Omitted Auxiliary Bias |
 | 125–145 | Anomaly Diagnosis |
-| 145–155 | Workflow Outputs, Actions, and Grader Comparisons |
+| 145–155 | Workflow Outputs and Constructed Checker Tests |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 12. Recommendation Systems and Customer Goals
@@ -3581,15 +3646,15 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare.
+**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior..
 
 | Elapsed Minutes | Activity |
 | --- | --- |
-| 0–20 | Demand and Total AI Workflow Cost |
+| 0–20 | Demand, Workflow Cost, and Undetected Decision Errors |
 | 20–25 | Recommendation Review and Export |
 | 25–50 | AI-Assisted Experiments |
 | 50–60 | Personalized-Pricing Evidence and Benchmarks |
@@ -3776,6 +3841,10 @@ The [Digital Usage lab](../07_Labs/Digital_Usage/README.md) carries the longer p
 
 Sessions 1 and 4 incorporate method assessment and paired mHealth uncertainty into their existing coding and interpretation activities. Session 9 uses store assignment and repeated known-null experiments to explain false discoveries. Session 14 connects a joint advertising test to borrower reasons and lender responsibilities. The [optional ungraded lab](../07_Labs/Statistical_Inference/README.md) supplies the longer exercise. Meeting dates, duration, and the existing ethics block remain unchanged.
 
+## Econometric Coding Workflows
+
+Use the [published comparison and original cases](../03_Data_and_Code/Agent_Workflows/README.md) in existing blocks: Session 1 workflow configuration, Session 4 paired inference, Session 9 workflow contrasts, Session 11 checker comparisons, and Session 14 workflow costs. Keep the fifteen 170-minute meetings and dated calendar. The complete additional exercise belongs to optional practice; it establishes no grading or AI-use requirement.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -3882,6 +3951,10 @@ M8 §8.29 and M9 §9.23 examine the difference between offering assistance and i
 ## Statistical Evidence and Advertising Claims
 
 M9 §9.24 examines a joint test of consumer-credit advertising coefficients and the premises needed to infer customer benefit. Kantian respect for judgment and refusal and Confucian responsibilities in a relationship of reliance connect the statistical claim to comprehension, repayment burdens, and customer reasons. The benchmark's reference p-value is not presented as a course-replicated empirical finding. M1, M3, and M6 supply separate checks of statistical design and reporting. This addition makes no new legal or policy-status claim.
+
+## Coding Competence and Responsibility
+
+M1 §1.19 and M9 §9.24 connect correct numerical implementation to responsibility for the chosen question and customer-facing action. M7 §7.46 examines errors in customer allocation that preserve aggregate activity. M8 §8.30 separates hypothetical monetary losses from the justification of customer treatment. The [coding-workflow evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md) supplies no new legal proposition or autonomous welfare judgment.
 
 ---
 
@@ -4055,7 +4128,7 @@ AI-assisted coding is integrated throughout the course. Students practice specif
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
-- Evaluate AI-assisted workflows through independent calculations, statistical design, task-level checks, costs, and interpretation.
+- Evaluate AI-assisted workflows through independent calculations, statistical design, silent-error detection, review costs, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 
 ## Class Format and Materials
@@ -4064,7 +4137,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, feedback, statistical validity, costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, execution feedback, complete and correct output, review costs, and customer authority.
 
 ---
 
@@ -5396,6 +5469,8 @@ Confucian attention to humane conduct and the responsibilities of a role asks ho
 
 The same reasoning applies when an AI assistant supplies the statistical analysis. The benchmark evaluator compares a decision and p-value with a reference answer. A commercial objective may reward greater take-up. Each criterion measures a narrower achievement than a defensible lending practice. Require a justified statistical comparison, evidence on the consequences customers experience, and an account of why the firm's means respect their agency. An error at one stage cannot be repaired by success at another.
 
+A manager delegating econometric code retains responsibility for choosing the question, checking the measurement, and evaluating the action taken on the result. The coding-workflow benchmark in Section 1.19 fixes the method in advance; success establishes agreement with its numerical reference under stated rules. A campaign can satisfy that computational requirement while relying on a misleading promise or disregarding a customer's expressed refusal. Kantian scrutiny examines the reasons and authority for the practice. Confucian scrutiny examines truthful reporting and the manager's response when an analyst identifies a material error. Preserving an opportunity to challenge an automated recommendation connects analytical competence to responsible conduct.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -6112,6 +6187,10 @@ The [optional ungraded lab](Digital_Usage/README.md) follows an app-service deci
 ## Statistical Evidence and Marketing Decisions
 
 The [optional ungraded lab](Statistical_Inference/README.md) checks customer pairing, store assignment, uncertainty, Monte Carlo calibration, and the scope of an advertising claim. An optional recorded AI exercise evaluates execution, method, numerical reporting, and interpretation separately.
+
+## Coding-Workflow Evidence and Constructed Errors
+
+The expanded [AI Workflow Evaluation lab](Agent_Workflows/README.md) reconstructs published benchmark aggregates, assesses deliberate mHealth errors, and evaluates hypothetical review spending. Two separate optional model-comparison protocols distinguish controlled information/feedback contrasts from three execution-and-revision conditions. Neither has been run as a course model experiment.
 
 ---
 
@@ -9574,7 +9653,27 @@ The compact task inputs are included. To recreate them from the existing public 
 - [Optional ungraded lab](../../07_Labs/Agent_Workflows/README.md): guided calculations and controlled errors.
 - [Verification record](VERIFICATION.md): local execution and independent checks.
 
-The saved logging results are calculations from transformed real mHealth records. The cost comparison uses explicitly hypothetical inputs. No model was called, no empirical comparison of the four AI configurations was run, and no upstream repository code was executed. A correctly generated CSV checks a measurement; it does not establish a nutrition or health outcome.
+The saved logging results are calculations from transformed real mHealth records. Cost scenarios use explicitly hypothetical inputs. Published model results are separately attributed to the authors of the coding benchmark. No model was called for the course, no empirical comparison of the four AI configurations was run, and no upstream repository code was executed. A correctly generated CSV checks a measurement; it does not establish a nutrition or health outcome.
+
+## Coding Workflows and Undetected Errors
+
+Three original programs extend the examples using Python's standard library:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/benchmark_evidence.py
+python3 03_Data_and_Code/Agent_Workflows/semantic_checks.py
+python3 03_Data_and_Code/Agent_Workflows/decision_costs.py
+python3 03_Data_and_Code/Agent_Workflows/test_coding_evidence.py
+python3 03_Data_and_Code/Agent_Workflows/build_coding_figures.py
+```
+
+`benchmark_evidence.py` reads three unchanged CC0 aggregate tables from [the source collection](../../01_Resources/40_Econometric_Coding_Workflows/README.md). It reconstructs 43,200 assigned runs, failure denominators, prompt contrasts, and token cost per additional success. The authors' original model runs, scoring, and bootstrap are not repeated.
+
+`semantic_checks.py` applies eight original correct or deliberately incorrect programs to each mHealth task. It compares execution, complete roster output, total-day agreement, and per-user numerical agreement. The shifted-user case preserves July's 6,455 days and 58.16% mean while changing 331 users' values. These cases are designed counterexamples, not a measured distribution of model errors.
+
+`decision_costs.py` compares 1,000 hypothetical analysis tasks with explicitly supplied API charges, review effort, undetected-error probabilities, and conditional losses. The checked workflow breaks even at a loss of seven dollars per undetected error. `build_coding_figures.py` writes two editable TikZ files from the corresponding numerical tables; the note builder renders them.
+
+Full programs appear in M1 §1.19, M7 §7.46, and M8 §8.30. M3 §3.18 and M6 §6.31 connect uncertainty checks and interaction scales. [Output definitions](results/README.md), [input definitions](DATA_DICTIONARY.md), [the extension manifest](coding_evidence_manifest.json), and [verification](VERIFICATION.md) record the evidence and its scope. The longer exercise remains optional and ungraded.
 
 ## Source and Course Connections
 
@@ -9611,6 +9710,20 @@ Users without records during the task window remain in the output with zero logg
 
 The independent tests use invented users A, B, C, and Z. They introduce a repeated date, a duplicate roster key, boundary dates, an out-of-roster record, an ambiguous non-ISO date, missing output users, and nonfinite values. These records remain separate from the actual mHealth task inputs. The reference calculation rejects duplicate roster keys and invalid dates; repeated event dates are collapsed to a distinct-day indicator.
 
+## Published Benchmark Aggregates
+
+The three CSVs under `01_Resources/40_Econometric_Coding_Workflows/data` retain the authors' schema. `appendix_silent_vs_loud.csv` contains three workflow rows. `n` counts assigned runs; `failures = loud + silent`. Fields ending in `per100` divide by assigned runs, whereas `silent_share_of_failures_pct` divides by failures. The `_lo` and `_hi` fields are supplied 95% percentile intervals from 4,000 bootstrap draws over 40 tasks.
+
+`prompt_agency.csv` contains six prompt rows and nine platform rows, distinguished by `panel`. The stored `few_shot` label means one related code example in this manuscript. Each prompt cell has 7,200 assigned runs; each language cell has 4,800. `successes` is an integer count, and `success_pct` uses a 0–100 scale. The course contrast program selects the prompt panel explicitly.
+
+`summary_by_model.csv` contains six model rows. Success fields ending in `_pct` use a 0–100 scale; cost fields ending in `_usd` are dollars. The incremental-cost calculation divides the difference in mean token cost per run by the difference in success probabilities on a 0–1 scale. It excludes analyst effort and downstream losses. Model names and effort levels remain the authors' labels.
+
+## Constructed Error Assessments and Hypothetical Costs
+
+`semantic_checks.csv` has one row per constructed program and period. `executed` records whether the program returned; `complete` requires every roster user and a finite value for each requested numeric field. `total_days_matches` checks only the sum of logged days. `valid` also checks every user's values against the reference. `mean_returned_rate` averages the rows returned by that program and can change its denominator or units in an incorrect case. Empty values are unavailable outcomes.
+
+`decision_costs.csv` reports expected dollars for the stated number of assigned analyses. The probability of an undetected error is per assigned analysis; the loss is conditional on such an error reaching a decision. Review minutes include correction effort. All operating inputs are hypothetical and are recorded in `decision_cost_summary.json`.
+
 ---
 
 ## Source: 03_Data_and_Code/Agent_Workflows/AGENTS.md
@@ -9621,11 +9734,12 @@ Read README.md, DATA_DICTIONARY.md, and EXPERIMENT_PROTOCOL.md before using thes
 
 - Preserve the prior-period roster, half-open date interval, distinct-day unit, and zero-log users. Recorded logging is not food intake or an account-enrollment measure.
 - Keep actual task calculations separate from invented test cases and hypothetical cost inputs.
-- The saved outputs contain no measured LLM performance. Never present the four configurations as an executed experiment.
+- Published benchmark aggregates are attributed to Galiani, López, and Sosa. The course's constructed errors and hypothetical costs contain no newly measured LLM performance. Never present either optional model-comparison protocol as an executed experiment.
 - Do not expose final evaluation answers during a measured model comparison. Restrict the task workspace explicitly; public filenames are not an access boundary.
 - The CSV checker reads data only. It does not authorize or isolate generated-code execution. Review permissions and commands before a separately requested run.
 - The task builder reads the existing local mHealth release and verifies its hash. It does not upload records to an external service.
 - Maintain full Python blocks in the notes when changing their matching programs. Run the independent checks and preserve source and input hashes.
+- Preserve assigned-run and conditional-failure denominators. The supplied benchmark intervals resample tasks; aggregate reconstruction does not rerun that bootstrap.
 
 ---
 
@@ -9657,6 +9771,24 @@ For each cell, divide valid outputs by all assigned attempts. Sum model, executi
 
 The interaction is the information effect with feedback minus the information effect without feedback. It describes complementarity for the chosen outcome. Correct diagnosis requires controlled interventions: an execution record can locate a likely error without proving which component caused it. Re-evaluate the whole workflow after changing a model, prompt, data dictionary, tool, or checker.
 
+## Separate Comparison of Three Coding Workflows
+
+The [econometric coding study](../../01_Resources/40_Econometric_Coding_Workflows/README.md) motivates a second optional comparison. Keep it separate from the four-cell information-by-feedback design. Use a common core task statement, output schema, model version, software, and instruction to perform an independent numerical check. Vary how execution and revision occur:
+
+| Condition | Procedure |
+| --- | --- |
+| Single Script | Obtain one complete program; execute it locally once and retain all output. Return no execution feedback. |
+| Repair | Execute the initial program; return the exit status and missing-output information after a failure, allowing up to three revisions. Do not reveal reference numbers. |
+| Agent | Permit local execution and revision on synthetic practice files within a common resource cap; let the agent declare completion. Retain its checks and commands. |
+
+Use invented practice records for live model interaction. The fixed mHealth inputs and final expected answers stay outside the model's permitted workspace. Inspect generated code, then evaluate its frozen version locally on those records without sending them to an external service. This course design therefore evaluates local transfer to the actual measurement task; it is not an exact replication of the authors' supplied-data benchmark.
+
+Predefine output completeness and numerical correctness separately. The supplied constructed-error exercise requires a row for every roster user and all finite requested fields. A complete but incorrect row contributes to a silent failure; missing users or requested values contribute to incomplete output. Also report which checks detect each error. An implausible range can expose a silent error even when execution supplies no warning.
+
+Use fresh conversations, clean directories, and randomized condition order. Repeat over several synthetic task families before making claims about tasks in general. Preserve all assigned attempts and report actual expenditure, elapsed time, revisions, human review, and model versions. A single successful run does not determine a workflow's success probability. With shared tasks, compare conditions within tasks and retain task groups in uncertainty calculations.
+
+The published agent condition also adds a verification instruction, whereas this course comparison holds that instruction constant. Record the distinction when interpreting results. If comparing prompts, report both the percentage-point gain and the fraction of baseline failures removed. Neither optional model comparison has been executed in the released course examples.
+
 ---
 
 ## Source: 03_Data_and_Code/Agent_Workflows/VERIFICATION.md
@@ -9670,6 +9802,16 @@ Executed `build_tasks.py`, `logging_reference.py`, `workflow_costs.py`, and the 
 The reference calculation uses sets of dates; the independent comparison uses a SQLite left join and `COUNT(DISTINCT ...)`. The synthetic known-answer case is A=1, B=1, C=0 over 31 days, giving 2/93. The cost example recomputes 350/80 and 200/95 under its explicitly hypothetical inputs.
 
 The CSV grader does not execute generated code. No model calls, external data uploads, upstream package execution, empirical labor-time measurements, or measured comparison of the four AI configurations occurred. Rendering and code-to-notes checks are recorded in the course build documentation; they establish separate properties from the substantive interpretation.
+
+## Econometric Coding Evidence
+
+Verified November 26, 2026 with Python 3.14.0 and the standard library. Three source CSVs match the retrieved v1.2 release byte for byte. The [source manifest](../../01_Resources/40_Econometric_Coding_Workflows/manifest.json) records the pinned commit, matching Zenodo release, CC0 declaration, and file hashes. The six existing mHealth task-input hashes continue to match [manifest.json](manifest.json).
+
+Executed `benchmark_evidence.py`, `semantic_checks.py`, `decision_costs.py`, and `build_coding_figures.py`. A clean copy reproduced all eight result files and both TikZ sources byte for byte. Eleven tests in `test_coding_evidence.py` and the eight existing workflow tests passed. The new checks cover count partitions, zero-failure denominators, prompt-effect scales, source counts, shifted customer values, date boundaries, entry counts, exposure denominators, missing rows and values, duplicate records, nonfinite values, and the hypothetical cost crossing.
+
+The July reference retains 6,455 observed user-days across 358 users and 31 days. Shifting those counts between users changes 331 users' values while preserving the total and mean rate. Four incorrect cases per period pass a total-only check. These deliberately constructed errors establish weaknesses of that check; their frequencies are not estimated LLM error rates. The hypothetical cost calculation equates the two workflows at seven dollars of conditional loss per undetected error, giving expected total cost of 620 dollars for 1,000 assigned tasks.
+
+The general lecture-example checker also passed in a separate copy. All 14 generated CSV and JSON files match the existing examples after newline normalization. The extension's [manifest](coding_evidence_manifest.json) records programs, numerical outputs, TikZ sources, dependencies, and hashes. The original model runs, bootstrap, and source repository programs were not executed. No model API calls or data uploads occurred.
 
 ---
 
@@ -9689,6 +9831,22 @@ The logging calculations use transformed real mHealth records and a roster fixed
 [hypothetical_costs.json](hypothetical_costs.json) uses invented model charges, valid-output counts, review time, and correction time. At 60 dollars per analyst hour, its two total costs are 350 and 200 dollars, with 80 and 95 valid outputs out of 100 assigned tasks. These values illustrate cost accounting and are not measured model performance or labor savings.
 
 No four-configuration model experiment was executed. The [protocol](../EXPERIMENT_PROTOCOL.md) identifies how to collect those outcomes separately.
+
+## Published Coding Benchmark
+
+`benchmark_failure_rates.csv` reconstructs success and failure fractions from the authors' integer counts. `benchmark_prompt_contrasts.csv` reports percentage-point gains and fractions of baseline failures removed. `benchmark_incremental_cost.csv` divides the additional mean token cost per assigned run by the additional success probability, separately by model. `benchmark_summary.json` records scope and aggregate contrasts. Inputs come from the identified CC0 release; these files contain no newly collected model runs.
+
+Each workflow has 14,400 assigned runs. The agent's 338 silent failures represent 2.35% of assigned runs and 89.18% of 379 failures. The example prompt adds 4.42 percentage points under the chatbot and 0.79 under the agent, removing 23.86% and 26.15% of their no-example failures. These are different denominators. The two-panel TikZ figure retains the authors' task-cluster intervals from the source CSV.
+
+## Constructed Coding Errors
+
+`semantic_checks.csv` evaluates eight constructed programs on each of the two mHealth tasks. The cases are deliberately chosen and supply no estimate of their frequency in model output. A total-only check accepts four incorrect cases per period: a wrong exposure denominator, reassigned users, omitted zero-log users, and a missing rate value. The complete per-user comparison rejects all seven incorrect cases in each period and accepts both correct cases.
+
+The July shifted-user case changes 331 users' values while retaining 6,455 recorded user-days and the 58.16% mean. In August it changes 324 users while retaining 6,501 days and a 58.58% mean. `semantic_summary.json` counts these constructed checks. Missing output values remain blank; they are not zeros.
+
+## Hypothetical Losses
+
+`decision_costs.csv` and `decision_cost_summary.json` use hypothetical task costs and undetected-error probabilities. For 1,000 analyses, operating costs are 270 and 550 dollars. At a ten-dollar conditional loss, expected total costs are 770 and 650 dollars. The seven-dollar crossing follows from 280 dollars of additional operating cost divided by 40 fewer expected undetected errors. Neither review savings nor customer harm is estimated.
 
 ---
 
@@ -9729,6 +9887,39 @@ Record every assigned attempt, its model version, visible files, commands, revis
 Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py). Recalculate the comparison at an analyst cost of $30 per hour and explain which cost categories change. These are hypothetical inputs. A sensitivity calculation does not estimate labor savings.
 
 Consider a cancellation agent instructed to require a retention survey before accepting a customer's unambiguous request to cancel. State the customer's requested outcome, the firm's objective, the action performed, and the relevant sources of authority. Apply the Kantian and Confucian arguments from M9. Explain what additional evidence is needed to assess the firm's claim that the procedure benefits customers.
+
+## Reconstruct Published Coding Evidence
+
+Read the [coding-workflow study guide](../../01_Resources/40_Econometric_Coding_Workflows/README.md), then run:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/benchmark_evidence.py
+```
+
+Reconstruct 14,021 successes from 14,400 assigned agent runs, 41 loud failures, and 338 silent failures. Calculate the fraction of all assigned runs with a silent failure and the fraction of failures that are silent. Explain how a workflow can improve overall accuracy while leaving a larger silent share among its remaining failures. Distinguish the published model results from the original course calculations below.
+
+Use `benchmark_prompt_contrasts.csv` to compare the example's percentage-point gains with its proportional reductions in no-example failures. Explain why the interaction's interpretation changes with the outcome scale. Identify the shared task and dataset structure before proposing a confidence interval. The supplied aggregate tables support arithmetic reconstruction; reproducing the authors' intervals requires the individual task records.
+
+## Find Errors in Executable Programs
+
+Run the constructed-error exercise and its independent tests:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/semantic_checks.py
+python3 03_Data_and_Code/Agent_Workflows/test_coding_evidence.py
+```
+
+Inspect the complete Python in M7 §7.46. Predict which programs preserve total logging days before opening `semantic_checks.csv`. For July, distinguish the effects of counting entries, including August 1, using 30 exposure days, shifting customer labels, and omitting zero-log users. Explain why a range check catches the entry-count error while a correct overall mean fails to detect reassigned customers.
+
+The `complete` column evaluates the required roster and fields; it does not evaluate numerical correctness. Explain why omitting a zero-log user produces incomplete output under this contract. Rewrite the contract to request only an aggregate mean and explain how the same sample-selection mistake could become a complete but wrong result.
+
+Extend the synthetic A/B/C tests with an additional boundary date and a repeated date. State the correct result by hand before testing it. Keep source records unchanged. Compare the independent SQL result with the reference calculation, then explain which errors could survive agreement between two programs that share the same mistaken specification.
+
+## Value Additional Review
+
+Run `decision_costs.py` and reconcile the seven-dollar break-even loss in M8 §8.30. At ten dollars per undetected error, calculate the expected cost difference over 1,000 tasks. Increase the checked workflow's review time to one minute and recompute the threshold. Explain how the comparison changes if the remaining errors differ in severity across workflows. All inputs are hypothetical.
+
+For optional live practice, use the [three-workflow protocol](../../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md#separate-comparison-of-three-coding-workflows). Keep the verification instruction common and use synthetic practice records with the model. Evaluate frozen programs locally on mHealth. Describe the evidence required before calling an observed difference a reliable improvement across business tasks.
 
 ---
 
@@ -10693,6 +10884,76 @@ After feedback, freeze the program and evaluate it on fresh simulated data. Keep
 ## Examine the Advertising Claim
 
 Read M9 §9.24 and the [benchmark question](../../01_Resources/39_Statistical_Inference_and_AI/benchmark_sample/question.txt). State what rejecting a joint null for 13 advertising coefficients would establish under a valid test. Identify the additional evidence needed to assess borrowing costs, comprehension, and customer agency. Evaluate the firm's justification using both Kantian respect for persons and Confucian responsibilities in a relationship of reliance. The benchmark's reference specification remains unverified here; the question supports discussion without supplying a replicated causal or welfare finding.
+
+---
+
+## Source: 01_Resources/40_Econometric_Coding_Workflows/README.md
+
+# Econometric Coding Workflows
+
+A manager commissioning an analysis needs the intended calculation, an account of its uncertainty, and evidence that the program implements both. Galiani, López, and Sosa compare single-script chatbots, execution feedback with revision, and constrained agents on specified statistical tasks. Their November 2026 manuscript connects workflow design to success, error visibility, and computation cost.
+
+- [Source review](SOURCE_REVIEW.md): design, findings, interpretation, and course applications.
+- [Rights and versions](RIGHTS.md): publication links and the archived data release.
+- [Source manifest](manifest.json): release identifiers, original paths, and file hashes.
+- [Catalog](catalog.json): namespace `econometric-coding`, IDs EC01–EC03.
+- [Original course programs](../../03_Data_and_Code/Agent_Workflows/README.md) and [optional practice](../../07_Labs/Agent_Workflows/README.md).
+
+The three small CSV files in `data/` are unchanged copies from the authors' v1.2 release. They contain published aggregates. The course programs recompute percentages and contrasts from their counts, preserve the supplied cluster-bootstrap intervals, and distinguish those results from constructed mHealth errors and hypothetical operating costs. The original 43,200 model runs have not been rerun for the course.
+
+---
+
+## Source: 01_Resources/40_Econometric_Coding_Workflows/SOURCE_REVIEW.md
+
+# AI Agents and Prompt Engineering in Econometric Coding
+
+Sebastian Galiani, Federico A. López, and Raul A. Sosa. NBER Working Paper 35588, issued August 2026 and revised November 2026. Reviewed November 26, 2026.
+
+## Sources and Design
+
+The [NBER record](https://www.nber.org/papers/w35588) and [45-page author manuscript](https://lopezfe.de/chatbots-agents-econometrics/paper.pdf) describe six models, 40 tasks, 32 simulated datasets, three languages, two prompt conditions, three agency conditions, and ten repetitions per cell: 43,200 runs. Earlier versions used smaller samples and report different headline numbers.
+
+The researcher specifies the method, sample, target quantities, inference convention, and output. A chatbot supplies one script. Self-repair returns execution failures or missing values and allows up to three revisions. A constrained agent can execute and revise, choose when to stop, and is instructed to perform an independent numerical check. The agent contrast therefore changes several workflow components together. It does not isolate tool access or test independent choice of an identification strategy.
+
+The scoring rules compare requested numerical values with verified reference computations. Nine tasks additionally score standard errors. Known wrong methods can fail even within a numerical tolerance. Other incorrect methods can produce sufficiently close values, so numerical agreement remains an incomplete assessment of implementation. See §§II–III and Appendix A4.
+
+## Findings and Denominators
+
+Each agency condition contains 14,400 assigned runs. Success is 83.69% for the chatbot, 93.29% for self-repair, and 97.37% for the agent. The corresponding loud-failure counts are 1,694, 167, and 41; silent-failure counts are 654, 799, and 338. Loud means failed execution or incomplete requested output. Silent means complete output with at least one incorrect scored value. These classifications depend on the task's requested output.
+
+The agent's silent failures are 2.35% of assigned runs and 89.18% of its 379 failures. Self-repair can expose a silent error by fixing a script that previously failed to run. Its higher silent-failure count does not establish that repair made already-correct programs worse. The supplied intervals resample 40 tasks, preserving runs within each task. The paper also checks inference using the 32 shared input datasets.
+
+The one-example prompt raises success by 4.42 percentage points under the chatbot and 0.79 under the agent. These changes remove 23.86% and 26.15% of their respective zero-shot failures. The interaction's interpretation depends on the outcome scale and proximity to perfect success.
+
+## Figures and Tables
+
+Figure 1 defines the task-by-language-by-prompt-by-agency design. Figure 2 compares success by prompt and language, with task-cluster bootstrap intervals. Figure 3 places failures per assigned run beside silent failures as a share of all failures; the denominators differ. Figure 4 compares task success and token expenditure, using separate cost axes for model groups. Table 1 reports cell contrasts, and Table B1 separates failure types by model, language, and workflow.
+
+The three archived CSVs cover Figure 3, Figure 2's prompt/platform summaries, and model-level success and cost summaries. They do not contain individual run records. Recomputing their counts checks aggregation; it does not reproduce the bootstrap, code scoring, or model collection.
+
+## Repository and Course Applications
+
+The [public release](https://github.com/fedear402/agents-metrics-data/tree/51911f03da4d97b249084124eca655b42869c8f8) contains task inputs, reference programs, prompts, scoring rules, and archived runs. The inspected v1.2 tag matches that commit. Its Zenodo record declares CC0. The full run archives expand to approximately 21 GB; the course uses only the three small tables.
+
+M1 §1.19 reconstructs the published comparison. M3 §3.18 connects executable calculations to dependence assumptions. M6 §6.31 examines interaction scales and controlled workflow contrasts. M7 §7.46 evaluates original incorrect programs against the fixed mHealth tasks. M8 §8.30 compares hypothetical review costs and undetected decision errors. M9 §9.24 connects numerical competence to responsibility for customer consequences. No API call or downloaded upstream program was executed for this integration.
+
+---
+
+## Source: 01_Resources/40_Econometric_Coding_Workflows/RIGHTS.md
+
+# Rights and Versions
+
+## Data Release
+
+The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.23681818) resolves to the [v1.2 record](https://doi.org/10.5281/zenodo.23770886), published October 29, 2026. Its metadata declares `cc-zero` and open access. The GitHub tag `v1.2` points to `51911f03da4d97b249084124eca655b42869c8f8`. The archived tables retain their original column names and values. Attribution is supplied in the guide and catalog.
+
+The repository has no standalone LICENSE file. The rights statement here applies to the identified Zenodo release and its matching tag. It does not infer a license for unrelated author documents or future repository revisions. No upstream executable code is copied into the course.
+
+## Paper
+
+The paper is linked through NBER and the author's website. A public download address does not by itself grant republication rights. The November manuscript is not mirrored in the public course repository. A local reading copy was inspected, with SHA-256 `932b8da85917db2abec9f293d037f547e47196f443c6c6a51c991666e7b7d795`.
+
+Original course prose, programs, and TikZ figures are separate from the archived tables. The mHealth inputs retain the provenance and restrictions of their existing teaching release.
 
 ---
 

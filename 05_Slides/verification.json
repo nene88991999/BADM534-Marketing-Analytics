@@ -1,25 +1,25 @@
 {
-  "verified_on": "2026-11-25",
+  "verified_on": "2026-11-26",
   "artifacts": {
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 451,
-      "sha256": "777500fab6656dd3721b3c84ae1119bdb657934fe8e7ac6ef476f327410673d9"
+      "pages": 463,
+      "sha256": "9ebfb169bf5efa3c24eeaf8ea854403b120acd11e6091612b994d28ea72dea70"
     },
     "06_Lecture_Notes/Marketing_Dialectics.pdf": {
       "pages": 36,
-      "sha256": "864bde2f8c4467391022a8308c497114fbd4362830592ab5314b29b702cefb6c"
+      "sha256": "f7e9c40f2a3bb35ef115e3ddba01e36f71bc3a0b4bf16e18a3c547fc738ccaf9"
     },
     "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
       "pages": 2,
-      "sha256": "2ef09b9b2f6034341dbee78fc72112e41e7b7cf9761f405437318314d16a3b06"
+      "sha256": "a6f806c9536377c02d4b147b7171ce47f3804ae1fd0a67dff113e29b4d636692"
     },
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 425,
-      "sha256": "b2cca680eae8f814e2b8e059a5c4b8a69c1f8a2367cdb0830a87158e609c884b"
+      "pages": 431,
+      "sha256": "c96ca36a0bb32858a2985b1448a1bb797fe01fb6fb1e2e1b94e0f6bc6c608b5a"
     },
     "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
-      "pages": 28,
-      "sha256": "9af7beb790a37749c36dced9666c4abd86bc08e0ce849b30980a8ea93ebcee91"
+      "pages": 30,
+      "sha256": "7b9f32cd25a8a879eef4fb78a6babb5a0f6ee98e3a39f5eacb78083b7ce6ced2"
     },
     "05_Slides/S02_Customer_Data_and_Measurement.pdf": {
       "pages": 25,
@@ -30,8 +30,8 @@
       "sha256": "122c520b38ea31174dea97d6ca0ebd45d20dd462ab69f79ab8a600e150a891d7"
     },
     "05_Slides/S04_Regression_and_Marketing_Interpretation.pdf": {
-      "pages": 23,
-      "sha256": "13c1c605a5eefd7bffe9a53c8d804545749ff7525a3a9e64d3c5a7f3be7165ee"
+      "pages": 24,
+      "sha256": "8ee7d6edbdae50a592909a56fcd28d9abdce26c2b05d41eea996dcbe2de233a1"
     },
     "05_Slides/S05_Conjoint_and_Product_Design.pdf": {
       "pages": 29,
@@ -50,16 +50,16 @@
       "sha256": "dcedb41572cd5930d8c24e01678c08a0bfe00334c0616a8c13f2a2249a449079"
     },
     "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
-      "pages": 28,
-      "sha256": "bd58685d21a00a90e29d076a10389055d0b4e5cb840c2122c79293ee29630836"
+      "pages": 29,
+      "sha256": "4cf206e2a411f4df96d5c1c63d7a991f92976785952dbf145fef04138555dcec"
     },
     "05_Slides/S10_Causal_Comparisons_and_Policy_Evaluation.pdf": {
       "pages": 25,
       "sha256": "d60de28e5b6023d29c8ccf3276613cbd2a87e88324638290125f417f59e1135f"
     },
     "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf": {
-      "pages": 58,
-      "sha256": "939f6cb8736d4e1aaec336c119991f90018ff7b9781b8ac2e3277831bf8bdf5d"
+      "pages": 59,
+      "sha256": "80fa89dea45c3ae183b4331fa0d720c2d0f4c677c45389f148099e97b8aee63e"
     },
     "05_Slides/S12_Recommendation_Systems_and_Customer_Goals.pdf": {
       "pages": 18,
@@ -70,8 +70,8 @@
       "sha256": "67d9de1c93342b009ec3f5892f48634e2fd651d28a6d994155636287e1ecf254"
     },
     "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
-      "pages": 51,
-      "sha256": "12a5c10024afd086124322cc8a71b8eb4e79ff639431a9c795c4265fdcedeee3"
+      "pages": 52,
+      "sha256": "3ed2661f01972600e526c52c40de1ca0c82326b281b116f40eadb147fc94655d"
     },
     "05_Slides/S15_Integrated_Decisions_and_Final_Presentations.pdf": {
       "pages": 10,
@@ -81,17 +81,20 @@
   "session_decks": 15,
   "scheduled_minutes_per_meeting": 170,
   "checks": {
-    "matching_full_python_blocks": 103,
-    "statistical_inference_tests_passed": 10,
-    "affected_pdf_builds_passed": 8,
+    "matching_full_python_blocks": 106,
+    "coding_evidence_tests_passed": 11,
+    "existing_workflow_tests_passed": 8,
+    "affected_pdf_builds_passed": 9,
     "all_15_deck_counts_match_sources_and_plan": true,
     "calendar_and_logistics_unchanged": true,
     "all_meeting_allocations_continuous_170_minutes": true,
-    "fresh_statistical_results_byte_identical": 7,
+    "published_tables_byte_identical": 3,
+    "fresh_coding_results_byte_identical": 8,
     "fresh_tikz_sources_byte_identical": 2,
-    "changed_and_neighbor_pages_visually_reviewed": 46
+    "legacy_example_outputs_match_after_newline_normalization": 14,
+    "changed_and_neighbor_pages_visually_reviewed": 53
   },
-  "execution_scope": "Two original analytical programs, a figure generator, ten independent checks, and the legacy numerical verifier executed. Seven results and two TikZ sources reproduce from a fresh export. Notes, four decks, the combined deck, and syllabus rebuilt. No upstream code, source-model run, or AI endpoint was executed.",
+  "execution_scope": "Published aggregate reconstruction, original constructed errors on observed mHealth inputs, and hypothetical cost calculations. No model calls or upstream code execution; original model collection, scoring, and bootstrap not rerun.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
     "student_slide_pages_visually_rechecked": 12,
@@ -278,7 +281,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "statistical_inference_checks_2026_11_25",
+  "latest_revision": "2026-11-26-econometric-coding",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -1054,5 +1057,134 @@
     "fresh_export": "All seven numerical result files and both TikZ sources reproduce byte-for-byte",
     "record": "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
     "scope": "Original mHealth and synthetic null analyses; no source-model execution or measured AI performance; unchanged meeting dates and durations."
+  },
+  "econometric_coding_checks_2026_11_26": {
+    "modules": [
+      "M1 §1.19",
+      "M3 §3.18",
+      "M6 §6.31",
+      "M7 §7.46",
+      "M8 §8.30",
+      "M9 §9.24"
+    ],
+    "sessions": [
+      1,
+      4,
+      9,
+      11,
+      14
+    ],
+    "new_slides": 6,
+    "total_slides": 431,
+    "notes_pages": 463,
+    "dialectics_pages": 36,
+    "syllabus_pages": 2,
+    "original_figures": 2,
+    "new_programs_executed": 3,
+    "new_tests_passed": 11,
+    "existing_tests_passed": 8,
+    "source_listings_verified": 106,
+    "rendered_page_numbers": {
+      "Notes": {
+        "path": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
+        "pages": [
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          121,
+          122,
+          123,
+          275,
+          276,
+          277,
+          375,
+          376,
+          377,
+          378,
+          379,
+          424,
+          425,
+          426,
+          427,
+          428,
+          462,
+          463
+        ]
+      },
+      "Dialectics": {
+        "path": "06_Lecture_Notes/Marketing_Dialectics.pdf",
+        "pages": [
+          1,
+          35,
+          36
+        ]
+      },
+      "Syllabus": {
+        "path": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      "S01": {
+        "path": "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf",
+        "pages": [
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      "S04": {
+        "path": "05_Slides/S04_Regression_and_Marketing_Interpretation.pdf",
+        "pages": [
+          12,
+          13,
+          14
+        ]
+      },
+      "S09": {
+        "path": "05_Slides/S09_Experiments_and_Incremental_Value.pdf",
+        "pages": [
+          18,
+          19,
+          20
+        ]
+      },
+      "S11": {
+        "path": "05_Slides/S11_Prediction_Validation_and_Marketing_Actions.pdf",
+        "pages": [
+          51,
+          52,
+          53
+        ]
+      },
+      "S14": {
+        "path": "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
+        "pages": [
+          11,
+          12,
+          13
+        ]
+      }
+    },
+    "visual_review": "All 53 selected pages reviewed in contact sheets; both new figures, figure pages, code listings, and the mHealth table checked at page size. Increased panel spacing in the coding-failure figure and rechecked the slide, note pages, and PNG.",
+    "compile_checks": "No overfull boxes, missing characters, undefined commands or references, or TeX errors in affected builds. Existing underfull-spacing and package warnings remain.",
+    "fresh_export": "Eight result files and two TikZ sources reproduce byte for byte. Legacy examples match after newline normalization.",
+    "record": "03_Data_and_Code/Agent_Workflows/VERIFICATION.md",
+    "source_manifest": "01_Resources/40_Econometric_Coding_Workflows/manifest.json",
+    "model_calls": 0,
+    "upstream_execution": false
   }
 }

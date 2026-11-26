@@ -246,6 +246,26 @@ M6 §6.19. \url{../03_Data_and_Code/AI_Workflows/factorial.py}}
 
 Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
 \end{frame}
+\begin{frame}{Prompt Gains Depend on the Outcome Scale}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Workflow & Gain (pp) & Baseline Failures Removed \\
+\midrule
+Chatbot & 4.42 & 23.86\% \\
+Self-Repair & 1.78 & 23.40\% \\
+Agent & 0.79 & 26.15\% \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+One example versus none; 7,200 runs per prompt-by-workflow cell.
+\vfill
+\note{The no-example success rates are 81.49\%, 92.40\%, and 96.97\%. The failure reduction divides the success gain by one minus the no-example success rate. The agent-minus-chatbot interaction on the additive scale is -3.625 percentage points. Near perfect success, a smaller percentage-point effect can remove the same fraction of remaining failures. Treat the scale as part of the estimand. Shared tasks and datasets determine the uncertainty unit. Full aggregate reconstruction appears in M1 §1.19; M6 §6.31 develops the comparison.
+
+Galiani, López, and Sosa, November 2026. \url{../01_Resources/40_Econometric_Coding_Workflows/README.md}}
+\end{frame}
 \begin{frame}{Coding Exercise: An Experiment Plan}
 \usebeamercolor[fg]{normal text}
 \vfill

@@ -1,0 +1,45 @@
+{
+  "verified_on": "2026-11-26",
+  "python": "3.14.8",
+  "dependencies": "Python standard library",
+  "source_manifest": "01_Resources/40_Econometric_Coding_Workflows/manifest.json",
+  "mhealth_input_manifest": "03_Data_and_Code/Agent_Workflows/manifest.json",
+  "paths_relative_to": "repository root",
+  "sha256": {
+    "01_Resources/40_Econometric_Coding_Workflows/data/appendix_silent_vs_loud.csv": "6f78c11688557f08200daa55db72e5f3523155a404b2c3b71b362ad5125dfa40",
+    "01_Resources/40_Econometric_Coding_Workflows/data/prompt_agency.csv": "acc56d8e6973d981041bb76ac0f7ab7ce39afc928cc1971e68ba1284c1e07a05",
+    "01_Resources/40_Econometric_Coding_Workflows/data/summary_by_model.csv": "89ad6a1e301247924a19e35eec9b5572f4f1f624d25e37aef083cb1c1ea9376f",
+    "03_Data_and_Code/Agent_Workflows/benchmark_evidence.py": "1dc48e4dacdb0fd6600680dc304e704c7c2246220f4897caf3fe30192f014c9a",
+    "03_Data_and_Code/Agent_Workflows/semantic_checks.py": "4a981f2884c66ea79731fe6fca612a8c43922684f87930b1978aad6e66e0c710",
+    "03_Data_and_Code/Agent_Workflows/decision_costs.py": "6f9ed416fb85fa8f5ee017e8c2f3f3926a7f9d80578a237328b6d6248e4de121",
+    "03_Data_and_Code/Agent_Workflows/test_coding_evidence.py": "c1c5d74abdfbd5b51cae13cb53e4489e3a19161ed235faf56b965d0bb3d32951",
+    "03_Data_and_Code/Agent_Workflows/test_workflows.py": "c3404ce23867bdc104a6c7ba7124056d676352b9f0113ae3e7d9aed41bea04a8",
+    "03_Data_and_Code/Agent_Workflows/build_coding_figures.py": "7ce6edc3531b44ccfdfc37099f0db5e72ec26b7177ab626ea831b8f3e5861f44",
+    "03_Data_and_Code/Agent_Workflows/logging_reference.py": "4c1c71aed6d024977764b82840342ed3c791023ef58110cda9ae8fb5dca61ee2",
+    "03_Data_and_Code/Agent_Workflows/evaluate_submission.py": "971fbaf44e3b3707c18244a41cfec4e2b601c05b3d90bb0ad59b6db2fe60fd5d",
+    "03_Data_and_Code/Agent_Workflows/results/benchmark_failure_rates.csv": "97b0988cc92f60db575c3fb583b9488c65174c530504e82970eca96712bad66c",
+    "03_Data_and_Code/Agent_Workflows/results/benchmark_prompt_contrasts.csv": "2d28244822505c709c16ccd5b8ec08eccd90f7c1533b1dadd499ba1b08ca5ad8",
+    "03_Data_and_Code/Agent_Workflows/results/benchmark_incremental_cost.csv": "356628e4a54c1307a9ec0adcb03e4c7b3a56002fa126d33aa5fb3b9bc08a04d7",
+    "03_Data_and_Code/Agent_Workflows/results/benchmark_summary.json": "18ae2d80ad22afeca41116d14371082dd4e7985fa0e817a10779b2b8cd5a1ee9",
+    "03_Data_and_Code/Agent_Workflows/results/semantic_checks.csv": "6898054add382ad5fc80639bd4e1ebcd68fdf9ec8a45ee8f75f54094c233f514",
+    "03_Data_and_Code/Agent_Workflows/results/semantic_summary.json": "a6bb40a1e5cd3a02cc6e5bec491ff2bbf23edbf8a081520492357df06630aed6",
+    "03_Data_and_Code/Agent_Workflows/results/decision_costs.csv": "43c8e723cacd3d2abf15afb3bc7e9b82fe7533db5d00c4aec9ba3d358a623d0e",
+    "03_Data_and_Code/Agent_Workflows/results/decision_cost_summary.json": "837555bb7263513b884609630e20d4d1380d0f355f225899bc181b266cf18840",
+    "06_Lecture_Notes/figures/M01_coding_failure_denominators.tex": "5fcbfa776aee3260e17da80296f30d82309889863df10d48657a848b396513b9",
+    "06_Lecture_Notes/figures/M08_review_and_decision_cost.tex": "7eb167061e40640e14849dc4ac1827aa939d15c97ad54f036101f33953657eea"
+  },
+  "programs_executed": [
+    "benchmark_evidence.py",
+    "semantic_checks.py",
+    "decision_costs.py"
+  ],
+  "tests": {
+    "test_coding_evidence.py": 11,
+    "test_workflows.py": 8
+  },
+  "fresh_export_identical_result_files": 8,
+  "fresh_export_identical_tikz_files": 2,
+  "model_calls": 0,
+  "upstream_code_executed": false,
+  "interpretation": "Published aggregate reconstruction, constructed errors on observed mHealth inputs, and hypothetical costs; no new empirical model-performance comparison"
+}

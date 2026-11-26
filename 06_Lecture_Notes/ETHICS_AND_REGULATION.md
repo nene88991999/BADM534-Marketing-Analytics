@@ -100,3 +100,7 @@ M8 §8.29 and M9 §9.23 examine the difference between offering assistance and i
 ## Statistical Evidence and Advertising Claims
 
 M9 §9.24 examines a joint test of consumer-credit advertising coefficients and the premises needed to infer customer benefit. Kantian respect for judgment and refusal and Confucian responsibilities in a relationship of reliance connect the statistical claim to comprehension, repayment burdens, and customer reasons. The benchmark's reference p-value is not presented as a course-replicated empirical finding. M1, M3, and M6 supply separate checks of statistical design and reporting. This addition makes no new legal or policy-status claim.
+
+## Coding Competence and Responsibility
+
+M1 §1.19 and M9 §9.24 connect correct numerical implementation to responsibility for the chosen question and customer-facing action. M7 §7.46 examines errors in customer allocation that preserve aggregate activity. M8 §8.30 separates hypothetical monetary losses from the justification of customer treatment. The [coding-workflow evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md) supplies no new legal proposition or autonomous welfare judgment.

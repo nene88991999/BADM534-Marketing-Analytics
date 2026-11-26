@@ -1,0 +1,17 @@
+task,case,executed,complete,total_days_matches,valid,classification,returned_users,correct_users,returned_days,mean_returned_rate
+development,correct,True,True,True,True,success,358,358,6455,0.5816363308704271
+development,entry_counts,True,True,False,False,silent_failure,358,41,77751,7.0058569111551625
+development,inclusive_end,True,True,False,False,silent_failure,358,127,6686,0.6024508920526221
+development,denominator_30,True,True,True,False,silent_failure,358,0,6455,0.601024208566108
+development,shifted_users,True,True,True,False,silent_failure,358,27,6455,0.5816363308704271
+development,omit_zero,True,False,True,False,loud_failure,319,319,6455,0.6527454747699464
+development,missing_value,True,False,True,False,loud_failure,358,357,6455,
+development,execution_failure,False,False,False,False,loud_failure,0,0,,
+evaluation,correct,True,True,True,True,success,358,358,6501,0.5857812218417733
+evaluation,entry_counts,True,True,False,False,silent_failure,358,44,78604,7.082717606775995
+evaluation,inclusive_end,True,True,False,False,silent_failure,358,148,6711,0.6047035501892233
+evaluation,denominator_30,True,True,True,False,silent_failure,358,0,6501,0.6053072625698325
+evaluation,shifted_users,True,True,True,False,silent_failure,358,34,6501,0.5857812218417733
+evaluation,omit_zero,True,False,True,False,loud_failure,317,317,6501,0.6615447237203623
+evaluation,missing_value,True,False,True,False,loud_failure,358,357,6501,
+evaluation,execution_failure,False,False,False,False,loud_failure,0,0,,

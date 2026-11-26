@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 114 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 116 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -173,3 +173,7 @@ The [recurring geographic case](03_Data_and_Code/Digital_Usage/README.md) appear
 ## Statistical Evidence and Customer Reasons
 
 M1 §1.18 separates execution, method, reporting, and interpretation. M3 §3.18 reconstructs mHealth pairs and uncertainty; M6 §6.30 measures false discoveries under store assignment. M9 §9.24 examines a joint advertising test and the further premises needed for customer-welfare claims. The [original programs](03_Data_and_Code/Statistical_Inference/README.md) and [optional lab](07_Labs/Statistical_Inference/README.md) support Sessions 1, 4, 9, and 14 within their existing meeting blocks.
+
+## Econometric Coding Workflows and Hidden Errors
+
+M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24 connect [published coding evidence](01_Resources/40_Econometric_Coding_Workflows/README.md) to independent assessment, interaction scales, customer allocation, review cost, and responsibility. [Three complete programs](03_Data_and_Code/Agent_Workflows/README.md), two editable figures, and six slides support Sessions 1, 4, 9, 11, and 14 within their existing meeting blocks. [Longer practice](07_Labs/Agent_Workflows/README.md) remains optional and ungraded.

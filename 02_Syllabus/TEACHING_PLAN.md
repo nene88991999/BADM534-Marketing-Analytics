@@ -142,3 +142,7 @@ The [Digital Usage lab](../07_Labs/Digital_Usage/README.md) carries the longer p
 ## Statistical Evidence Within Existing Meetings
 
 Sessions 1 and 4 incorporate method assessment and paired mHealth uncertainty into their existing coding and interpretation activities. Session 9 uses store assignment and repeated known-null experiments to explain false discoveries. Session 14 connects a joint advertising test to borrower reasons and lender responsibilities. The [optional ungraded lab](../07_Labs/Statistical_Inference/README.md) supplies the longer exercise. Meeting dates, duration, and the existing ethics block remain unchanged.
+
+## Econometric Coding Workflows
+
+Use the [published comparison and original cases](../03_Data_and_Code/Agent_Workflows/README.md) in existing blocks: Session 1 workflow configuration, Session 4 paired inference, Session 9 workflow contrasts, Session 11 checker comparisons, and Session 14 workflow costs. Keep the fifteen 170-minute meetings and dated calendar. The complete additional exercise belongs to optional practice; it establishes no grading or AI-use requirement.

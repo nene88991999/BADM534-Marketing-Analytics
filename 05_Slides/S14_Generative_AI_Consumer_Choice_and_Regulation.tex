@@ -156,6 +156,20 @@ Invented inputs; analyst time costs 60 dollars per hour.
 
 Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
 \end{frame}
+\begin{frame}{Review Expense and Undetected Decision Errors}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.72\textheight}
+\input{../06_Lecture_Notes/figures/M08_review_and_decision_cost.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Hypothetical comparison: additional review breaks even at seven dollars per error.\par}
+\note{The API charges are 0.02 and 0.05 dollars per task, with review and correction times 0.25 and 0.50 minutes at 60 dollars per hour. The assumed undetected-error probabilities are 5\% and 1\%. At a loss of ten dollars, costs are 770 and 650 dollars. These operating assumptions are separate from the published benchmark. The common conditional loss must have the same scope; if error severity differs, use a workflow-specific loss. Customer rights require separate justification. Full Python appears in M8 §8.30.
+
+Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. \url{../01_Resources/40_Econometric_Coding_Workflows/README.md}}
+\end{frame}
 \begin{frame}{Reuse Has a Break-Even Workload}
 \usebeamercolor[fg]{normal text}
 \centering

@@ -49,6 +49,8 @@ Session 11. M7. 170 minutes.
 - [Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)
 - [Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)
 - [Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)
+- [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
+- [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -679,7 +681,22 @@ These judgments can disagree. An accurate table may follow an unauthorized input
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 52: Development and Final Evaluation
+## Slide 52: A Total-Only Check Accepts Different Errors
+
+| July Program | Total Days | Mean Rate | Valid |
+| --- | --- | --- | --- |
+| Correct | 6,455 | 58.16% | Yes |
+| Use 30 Days | 6,455 | 60.10% | No |
+| Shift Users | 6,455 | 58.16% | No |
+| Omit Zero Users | 6,455 | 65.27% | No |
+
+Constructed programs on mHealth; intended roster: 358 users, 31 days.
+
+The shifted-user program changes 331 user values while preserving the overall mean and total. The 30-day calculation changes exposure. Omitting zero-log users returns 319 rows and changes the target population. Under the required per-user contract, missing users constitute incomplete output. The two complete but wrong programs are silent failures. The independent SQL comparison and small known-answer cases assess the checker. These are deliberately constructed errors, not measured LLM error frequencies. Full Python appears in M7 §7.46.
+
+Source: Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+
+## Slide 53: Development and Final Evaluation
 
 - Use July to revise prompts and programs.
 - Keep August answers outside the model workspace.
@@ -690,7 +707,7 @@ The expected answers are public teaching files. A measured exercise needs an exp
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 53: An Omitted Feature Bias
+## Slide 54: An Omitted Feature Bias
 
 - The allocation assumes that auxiliary feature bias equals zero.
 - Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.
@@ -700,7 +717,7 @@ These are analytic moments in the invented four-profile design. Both source vari
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 54: Sampling Variance and Persistent Bias
+## Slide 55: Sampling Variance and Persistent Bias
 
 Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.
 
@@ -712,7 +729,7 @@ At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias M
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 55: Human Validation of the Bias Model
+## Slide 56: Human Validation of the Bias Model
 
 - A bias feature excluded by a significance cutoff may still matter for the decision.
 - Reserve human respondents and concepts from model and feature selection.
@@ -722,7 +739,7 @@ In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 56: Coding Exercise: A Forecast Evaluation
+## Slide 57: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -732,7 +749,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 57: Targeting and Delivered Opportunities
+## Slide 58: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -742,7 +759,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 58: Prediction Discussion
+## Slide 59: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

@@ -24,7 +24,27 @@ The compact task inputs are included. To recreate them from the existing public 
 - [Optional ungraded lab](../../07_Labs/Agent_Workflows/README.md): guided calculations and controlled errors.
 - [Verification record](VERIFICATION.md): local execution and independent checks.
 
-The saved logging results are calculations from transformed real mHealth records. The cost comparison uses explicitly hypothetical inputs. No model was called, no empirical comparison of the four AI configurations was run, and no upstream repository code was executed. A correctly generated CSV checks a measurement; it does not establish a nutrition or health outcome.
+The saved logging results are calculations from transformed real mHealth records. Cost scenarios use explicitly hypothetical inputs. Published model results are separately attributed to the authors of the coding benchmark. No model was called for the course, no empirical comparison of the four AI configurations was run, and no upstream repository code was executed. A correctly generated CSV checks a measurement; it does not establish a nutrition or health outcome.
+
+## Coding Workflows and Undetected Errors
+
+Three original programs extend the examples using Python's standard library:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/benchmark_evidence.py
+python3 03_Data_and_Code/Agent_Workflows/semantic_checks.py
+python3 03_Data_and_Code/Agent_Workflows/decision_costs.py
+python3 03_Data_and_Code/Agent_Workflows/test_coding_evidence.py
+python3 03_Data_and_Code/Agent_Workflows/build_coding_figures.py
+```
+
+`benchmark_evidence.py` reads three unchanged CC0 aggregate tables from [the source collection](../../01_Resources/40_Econometric_Coding_Workflows/README.md). It reconstructs 43,200 assigned runs, failure denominators, prompt contrasts, and token cost per additional success. The authors' original model runs, scoring, and bootstrap are not repeated.
+
+`semantic_checks.py` applies eight original correct or deliberately incorrect programs to each mHealth task. It compares execution, complete roster output, total-day agreement, and per-user numerical agreement. The shifted-user case preserves July's 6,455 days and 58.16% mean while changing 331 users' values. These cases are designed counterexamples, not a measured distribution of model errors.
+
+`decision_costs.py` compares 1,000 hypothetical analysis tasks with explicitly supplied API charges, review effort, undetected-error probabilities, and conditional losses. The checked workflow breaks even at a loss of seven dollars per undetected error. `build_coding_figures.py` writes two editable TikZ files from the corresponding numerical tables; the note builder renders them.
+
+Full programs appear in M1 §1.19, M7 §7.46, and M8 §8.30. M3 §3.18 and M6 §6.31 connect uncertainty checks and interaction scales. [Output definitions](results/README.md), [input definitions](DATA_DICTIONARY.md), [the extension manifest](coding_evidence_manifest.json), and [verification](VERIFICATION.md) record the evidence and its scope. The longer exercise remains optional and ungraded.
 
 ## Source and Course Connections
 

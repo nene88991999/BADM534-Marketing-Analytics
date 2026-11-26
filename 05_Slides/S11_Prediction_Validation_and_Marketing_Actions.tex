@@ -795,6 +795,27 @@ Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original cours
 
 Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
 \end{frame}
+\begin{frame}{A Total-Only Check Accepts Different Errors}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrrr}
+\toprule
+July Program & Total Days & Mean Rate & Valid \\
+\midrule
+Correct & 6,455 & 58.16\% & Yes \\
+Use 30 Days & 6,455 & 60.10\% & No \\
+Shift Users & 6,455 & 58.16\% & No \\
+Omit Zero Users & 6,455 & 65.27\% & No \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Constructed programs on mHealth; intended roster: 358 users, 31 days.
+\vfill
+\note{The shifted-user program changes 331 user values while preserving the overall mean and total. The 30-day calculation changes exposure. Omitting zero-log users returns 319 rows and changes the target population. Under the required per-user contract, missing users constitute incomplete output. The two complete but wrong programs are silent failures. The independent SQL comparison and small known-answer cases assess the checker. These are deliberately constructed errors, not measured LLM error frequencies. Full Python appears in M7 §7.46.
+
+Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. \url{../01_Resources/40_Econometric_Coding_Workflows/README.md}}
+\end{frame}
 \begin{frame}{Development and Final Evaluation}
 \usebeamercolor[fg]{normal text}
 \vfill

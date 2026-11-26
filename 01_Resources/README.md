@@ -152,3 +152,7 @@ The [digital-usage library](38_Digital_Usage_and_Inclusion/README.md) archives t
 ## Statistical Inference and AI-Assisted Analysis
 
 The [Fisher-R1 source collection](39_Statistical_Inference_and_AI/README.md) archives the licensed paper and a benchmark question, documents the inspected repository, and distinguishes answer agreement from statistical calibration. Original mHealth and store-randomization examples connect M1, M3, M6, and M9.
+
+## Econometric Coding Workflows
+
+[The coding-workflow collection](40_Econometric_Coding_Workflows/README.md) connects the November 2026 Galiani, López, and Sosa study to execution feedback, silent errors, prompt-effect scales, and costs. Three small CC0 aggregate tables support original Python exercises. The paper and complete replication release remain linked with their versions and rights.

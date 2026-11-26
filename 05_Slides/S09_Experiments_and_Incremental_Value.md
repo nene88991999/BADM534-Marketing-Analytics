@@ -27,6 +27,8 @@ Session 09. M6. 170 minutes.
 - [Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)
 - [Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)
 - [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
+- [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
+- [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -248,7 +250,21 @@ M6 §6.29 defines q_cf as the probability of a valid output for a fixed task and
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 19: Coding Exercise: An Experiment Plan
+## Slide 19: Prompt Gains Depend on the Outcome Scale
+
+| Workflow | Gain (pp) | Baseline Failures Removed |
+| --- | --- | --- |
+| Chatbot | 4.42 | 23.86% |
+| Self-Repair | 1.78 | 23.40% |
+| Agent | 0.79 | 26.15% |
+
+One example versus none; 7,200 runs per prompt-by-workflow cell.
+
+The no-example success rates are 81.49%, 92.40%, and 96.97%. The failure reduction divides the success gain by one minus the no-example success rate. The agent-minus-chatbot interaction on the additive scale is -3.625 percentage points. Near perfect success, a smaller percentage-point effect can remove the same fraction of remaining failures. Treat the scale as part of the estimand. Shared tasks and datasets determine the uncertainty unit. Full aggregate reconstruction appears in M1 §1.19; M6 §6.31 develops the comparison.
+
+Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+
+## Slide 20: Coding Exercise: An Experiment Plan
 
 - Compute the factorial contrasts alongside the email effect.
 - Change contribution, delivery cost, and the target effect.
@@ -258,7 +274,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth ex
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 20: Interference and Assignment Units
+## Slide 21: Interference and Assignment Units
 
 - Customers can share offers or affect one another.
 - Stores can divert purchases from nearby locations.
@@ -268,7 +284,7 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 21: Assign Stores, Observe Customers
+## Slide 22: Assign Stores, Observe Customers
 
 Synthetic promotion: balanced store assignment and equal store sizes.
 
@@ -280,7 +296,7 @@ The effect is zero for every customer. Store shocks are independent across store
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 22: A Zero-Effect Promotion
+## Slide 23: A Zero-Effect Promotion
 
 | Calculation | Estimate (Dollars) | p-Value |
 | --- | --- | --- |
@@ -293,7 +309,7 @@ This is repetition zero from seed 20261125, retained without selecting a favorab
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 23: Dependence Changes False Discoveries
+## Slide 24: Dependence Changes False Discoveries
 
 Store means retain rejection rates near the nominal 5% level in this simulation.
 
@@ -305,7 +321,7 @@ Each correlation uses 4,000 newly generated experiments, 40 stores, 20 customers
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 24: A Treatment Arm Needs a Defensible Design
+## Slide 25: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -315,7 +331,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 25: Follow Purchases Through Returns
+## Slide 26: Follow Purchases Through Returns
 
 - Pressure and self-assurance can produce different purchase and return patterns.
 - Prespecify the eligible population and both outcome horizons.
@@ -325,7 +341,7 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 26: From Experiments to Generative Decisions
+## Slide 27: From Experiments to Generative Decisions
 
 - Within-campaign comparisons can supervise a model that proposes new messages.
 - The learned ranking inherits the outcome used to define success.
@@ -335,7 +351,7 @@ Angelopoulos, Lee, and Misra train a language-model improver using historical ex
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 27: Human Review and Customer Evidence
+## Slide 28: Human Review and Customer Evidence
 
 - Check factual claims and consequential terms before deployment.
 - Record customer understanding and the ability to refuse.
@@ -345,7 +361,7 @@ Causal Alignment includes human selection and acceptability checks. Their existe
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 28: Experiment Discussion
+## Slide 29: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

@@ -42,6 +42,8 @@ Session 14. M8, M9. 170 minutes.
 - [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 - [Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)
 - [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
+- [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
+- [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -162,7 +164,19 @@ The numerator includes effort and charges from all assigned attempts, including 
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 12: Reuse Has a Break-Even Workload
+## Slide 12: Review Expense and Undetected Decision Errors
+
+Hypothetical comparison: additional review breaks even at seven dollars per error.
+
+**Figure description:** Two expected-cost lines for 1,000 tasks cross at loss seven dollars and total cost 620 dollars. The basic workflow has lower operating expense and more undetected errors.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M08_review_and_decision_cost.tex)
+
+The API charges are 0.02 and 0.05 dollars per task, with review and correction times 0.25 and 0.50 minutes at 60 dollars per hour. The assumed undetected-error probabilities are 5% and 1%. At a loss of ten dollars, costs are 770 and 650 dollars. These operating assumptions are separate from the published benchmark. The common conditional loss must have the same scope; if error severity differs, use a workflow-specific loss. Customer rights require separate justification. Full Python appears in M8 §8.30.
+
+Source: Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+
+## Slide 13: Reuse Has a Break-Even Workload
 
 Hypothetical equal-quality work: six setup hours, with adaptation included.
 
@@ -174,7 +188,7 @@ Execution alone falls from two hours to 1.25, but 0.25 upkeep hours are required
 
 Source: Marketing Analytics Lecture Notes, M8 §8.17.1.
 
-## Slide 13: Model Updates and Unresolved Tasks
+## Slide 14: Model Updates and Unresolved Tasks
 
 - Identify the changed model, prompt, tool, data, or evaluation rule.
 - Compare paired cases and fresh tasks using the same criteria.
@@ -184,7 +198,7 @@ A new release motivates a hypothesis about the current workflow. It does not est
 
 Source: M8 §8.18.1; M7 §7.22. https://zou-group.github.io/llm-claims-shelf-life/
 
-## Slide 14: Residual Risk and Scale
+## Slide 15: Residual Risk and Scale
 
 - An expired research category can still allow residual failures.
 - Expected failure loss depends on uses, failure probability, and consequences.
@@ -194,7 +208,7 @@ A fitted category describes the source protocol and selected model panel. The re
 
 Source: M8 §8.18.1; M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 15: AI Experimentation: Evidence and Safeguards
+## Slide 16: AI Experimentation: Evidence and Safeguards
 
 - Causal Alignment learns from comparisons within past A/B tests.
 - Its field result concerns clicks, with human selection and content checks.
@@ -204,7 +218,7 @@ Panagiotis Angelopoulos, Kevin Lee, and Sanjog Misra; author version linked Augu
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 16: Personalized Pricing: Benchmark and Incidence
+## Slide 17: Personalized Pricing: Benchmark and Incidence
 
 - Dubé and Misra study employers purchasing recruiting services.
 - Their model predicts higher profit and lower total customer surplus.
@@ -214,7 +228,7 @@ The downloaded NBER June 2021 revision is linked to the published JPE 2023 paper
 
 Source: https://www.nber.org/papers/w23775
 
-## Slide 17: Majority Gains and Aggregate Customer Losses
+## Slide 18: Majority Gains and Aggregate Customer Losses
 
 Synthetic population and solved prices; dollars per eligible customer.
 
@@ -226,7 +240,7 @@ The two imposed valuation groups have shares 0.6 and 0.4. Segmentation benefits 
 
 Source: Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 18: Wendy's: Shared Data and Pricing Authority
+## Slide 19: Wendy's: Shared Data and Pricing Authority
 
 - A proposed class action was filed on November 23, 2026.
 - The complaint alleges coordination of franchise prices using shared transaction data.
@@ -236,7 +250,7 @@ The initial complaint in Garcia v. The Wendy's Company and NCR Voyix Corporation
 
 Source: Initial complaint, filed November 23, 2026; company statements and source review. ../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md
 
-## Slide 19: Data Access and Authority over Prices
+## Slide 20: Data Access and Authority over Prices
 
 Data capability is described in company statements. Pricing authority is disputed.
 
@@ -248,7 +262,7 @@ The diagram is conceptual. The solid data paths summarize announced capability, 
 
 Source: Initial complaint, filed November 23, 2026; company statements and source review. ../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md
 
-## Slide 20: Evidence for a Pricing Claim
+## Slide 21: Evidence for a Pricing Claim
 
 - Identify separate owners, contracts, data permissions, and pricing authority.
 - Compare recommendations, actual prices, overrides, costs, and promotions.
@@ -258,7 +272,7 @@ Similar prices or a common vendor leave the mechanism unresolved. Adoption may r
 
 Source: Initial complaint, filed November 23, 2026; company statements and source review. ../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md
 
-## Slide 21: Marketing Dialectics: Examine the Premise
+## Slide 22: Marketing Dialectics: Examine the Premise
 
 - State the claim, its evidence, and the premise connecting them.
 - Kant examines reason’s demand for an unconditioned explanation.
@@ -268,7 +282,7 @@ Kant’s transcendental dialectic concerns metaphysical cognition. These marketi
 
 Source: Marketing Dialectics, §§9.1–9.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 22: Definitions Can Predetermine a Claim
+## Slide 23: Definitions Can Predetermine a Claim
 
 - Does cancellation mean a request or a completed action?
 - Does predicted acceptance establish permission?
@@ -279,7 +293,7 @@ M9 §9.19 connects Kantian examination of an inference to the conditions support
 
 Source: M9 §9.19. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 23: Authority and the Customer’s Requested Outcome
+## Slide 24: Authority and the Customer’s Requested Outcome
 
 - A customer asks to cancel.
 - The firm requires a retention survey before accepting the request.
@@ -290,7 +304,7 @@ Technical permission, company authority, customer authorization, and ethical jus
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 24: Commercial Results and Customer Claims
+## Slide 25: Commercial Results and Customer Claims
 
 Causal, measurement, and ethical questions have different premises.
 
@@ -302,7 +316,7 @@ A randomized intervention can establish incremental purchases without establishi
 
 Source: Marketing Dialectics, §§9.1, 9.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 25: Advertising Response and Customer Reasons
+## Slide 26: Advertising Response and Customer Reasons
 
 - A joint test concerns whether any advertising coefficient differs from zero.
 - Loan take-up leaves comprehension and borrower outcomes unresolved.
@@ -312,7 +326,7 @@ The public P-Bench task describes a randomized consumer-credit advertising exper
 
 Source: M9 §9.24. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 26: Self-Interest Creates a Burden of Justification
+## Slide 27: Self-Interest Creates a Burden of Justification
 
 A reason for scrutiny is distinct from evidence of misconduct.
 
@@ -324,7 +338,7 @@ Hume proposes institutional checks that work under private-interest pursuit and 
 
 Source: Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 27: Justify the Practice Before Ranking Its Performance
+## Slide 28: Justify the Practice Before Ranking Its Performance
 
 A commercial ranking also needs a justified set of permissible actions.
 
@@ -336,7 +350,7 @@ Kantian duties cannot automatically be replaced by a finite penalty in an object
 
 Source: Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 28: Confucian Perspectives: Profit and Responsibility
+## Slide 29: Confucian Perspectives: Profit and Responsibility
 
 - Evaluate how profit is obtained and which relationships sustain it.
 - A trusted adviser or customer-care role carries standards of conduct.
@@ -346,7 +360,7 @@ Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.
 
 Source: Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 29: Truthful Challenge and Cultivated Judgment
+## Slide 30: Truthful Challenge and Cultivated Judgment
 
 - Harmony can include reasoned disagreement.
 - Learning and reflection should discipline an AI-generated answer.
@@ -356,7 +370,7 @@ Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and ref
 
 Source: Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 30: Synthetic Personas and Actual Consumers
+## Slide 31: Synthetic Personas and Actual Consumers
 
 - Generated reactions can inform hypotheses about product needs.
 - Claims about customer preferences require evidence from the relevant people.
@@ -366,7 +380,7 @@ M9 §9.18.4 examines whose judgments a firm claims to represent. Kantian respect
 
 Source: Marketing Dialectics §9.18.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 31: Agreement and Independent Reasons
+## Slide 32: Agreement and Independent Reasons
 
 - Identify shared data, labels, and objectives behind agreement.
 - Check the claim against evidence with a justified reference.
@@ -377,7 +391,7 @@ Several models can agree because they share conventions and information. In mHea
 
 Source: M9 §9.21. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 32: Demand Information and Consumer Surplus
+## Slide 33: Demand Information and Consumer Surplus
 
 | Objective | Signal $r$ | Profit | Consumer Surplus |
 | --- | --- | --- | --- |
@@ -392,7 +406,7 @@ First hold the objective fixed and improve the demand signal. Then hold informat
 
 Source: Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md
 
-## Slide 33: A Choice Procedure Can Change Renewal
+## Slide 34: A Choice Procedure Can Change Renewal
 
 - A direct offer and an offer preceded by questions can produce different choices.
 - The customer still makes the final selection.
@@ -402,7 +416,7 @@ Questions, defaults, or retention prompts can precede a fixed target decision. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 34: Opposed Interests
+## Slide 35: Opposed Interests
 
 Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
 
@@ -416,7 +430,7 @@ This conditional comparison holds the offer, monetary values, and relevant respo
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 35: Profit and Customer Value Can Move Oppositely
+## Slide 36: Profit and Customer Value Can Move Oppositely
 
 Synthetic probabilities and fixed stakes. Direct renewal is 20%.
 
@@ -428,7 +442,7 @@ The direct-choice benchmark is distinct from the consumer-preferred procedure. R
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 36: Experimentation Selects the Commercial Winner
+## Slide 37: Experimentation Selects the Commercial Winner
 
 - A fixed set of procedures has stable renewal probabilities.
 - Independent randomized samples estimate each probability.
@@ -438,7 +452,7 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 37: A Cancellation Evaluation
+## Slide 38: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -448,7 +462,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 38: Same Renewal, Different Customer Intent
+## Slide 39: Same Renewal, Different Customer Intent
 
 Synthetic populations: 1,000 customers each, one renewal month.
 
@@ -460,7 +474,7 @@ Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%
 
 Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 39: A Welfare Comparison
+## Slide 40: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -479,7 +493,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 40: Coding Exercise: A Marketing Evaluation
+## Slide 41: Coding Exercise: A Marketing Evaluation
 
 - Reproduce the two populations with identical billed renewal.
 - Keep unknown intent separate and compare the relevant denominators.
@@ -489,7 +503,7 @@ Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full pro
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 41: Federal Cancellation Policy: Current Status
+## Slide 42: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -499,7 +513,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 42: Cancellation Rules Differ by Jurisdiction
+## Slide 43: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -509,7 +523,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 43: Research Frequency and Policy Importance
+## Slide 44: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -519,7 +533,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 44: Pricing, Reviews, and Delivery
+## Slide 45: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -529,7 +543,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 45: Pricing Language and Regulatory Evidence
+## Slide 46: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -539,7 +553,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 46: Personalized Pricing: Policy Status
+## Slide 47: Personalized Pricing: Policy Status
 
 - FTC: August 2026 proposal; October 2026 information-gathering inquiry.
 - New York: disclosure law in effect; broader restrictions await enactment.
@@ -549,7 +563,7 @@ Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
 
-## Slide 47: Environmental Claims: Two Different Decisions
+## Slide 48: Environmental Claims: Two Different Decisions
 
 - 2023 Shell ads: the ASA upheld the overall-impression complaint.
 - 2025 Shell ad: the ASA accepted the contextualized communication.
@@ -559,7 +573,7 @@ UK ASA, June 7, 2023: omitted context about the balance of business activities m
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 48: A Product Fact and a Portfolio Impression
+## Slide 49: A Product Fact and a Portfolio Impression
 
 The scope of the conclusion determines the evidence required.
 
@@ -571,7 +585,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 49: Digital Service and Feasible Customer Choice
+## Slide 50: Digital Service and Feasible Customer Choice
 
 - Offer assistance while preserving a usable alternative.
 - Measure completion, customer time, and firm cost on a fixed roster.
@@ -581,7 +595,7 @@ An optional assistance intervention can expand feasible choices. A mandatory app
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 50: Evidence and Authority to Classify a Customer
+## Slide 51: Evidence and Authority to Classify a Customer
 
 - Kantian critique examines the move from area activity to individual ability.
 - Respect for persons requires reasons for restrictions and usable correction.
@@ -591,7 +605,7 @@ A stable cluster does not authorize a firm to remove an individual’s options. 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 51: A Decision with Consumer Outcomes
+## Slide 52: A Decision with Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

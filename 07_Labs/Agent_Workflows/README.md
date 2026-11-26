@@ -33,3 +33,36 @@ Record every assigned attempt, its model version, visible files, commands, revis
 Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py). Recalculate the comparison at an analyst cost of $30 per hour and explain which cost categories change. These are hypothetical inputs. A sensitivity calculation does not estimate labor savings.
 
 Consider a cancellation agent instructed to require a retention survey before accepting a customer's unambiguous request to cancel. State the customer's requested outcome, the firm's objective, the action performed, and the relevant sources of authority. Apply the Kantian and Confucian arguments from M9. Explain what additional evidence is needed to assess the firm's claim that the procedure benefits customers.
+
+## Reconstruct Published Coding Evidence
+
+Read the [coding-workflow study guide](../../01_Resources/40_Econometric_Coding_Workflows/README.md), then run:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/benchmark_evidence.py
+```
+
+Reconstruct 14,021 successes from 14,400 assigned agent runs, 41 loud failures, and 338 silent failures. Calculate the fraction of all assigned runs with a silent failure and the fraction of failures that are silent. Explain how a workflow can improve overall accuracy while leaving a larger silent share among its remaining failures. Distinguish the published model results from the original course calculations below.
+
+Use `benchmark_prompt_contrasts.csv` to compare the example's percentage-point gains with its proportional reductions in no-example failures. Explain why the interaction's interpretation changes with the outcome scale. Identify the shared task and dataset structure before proposing a confidence interval. The supplied aggregate tables support arithmetic reconstruction; reproducing the authors' intervals requires the individual task records.
+
+## Find Errors in Executable Programs
+
+Run the constructed-error exercise and its independent tests:
+
+```sh
+python3 03_Data_and_Code/Agent_Workflows/semantic_checks.py
+python3 03_Data_and_Code/Agent_Workflows/test_coding_evidence.py
+```
+
+Inspect the complete Python in M7 §7.46. Predict which programs preserve total logging days before opening `semantic_checks.csv`. For July, distinguish the effects of counting entries, including August 1, using 30 exposure days, shifting customer labels, and omitting zero-log users. Explain why a range check catches the entry-count error while a correct overall mean fails to detect reassigned customers.
+
+The `complete` column evaluates the required roster and fields; it does not evaluate numerical correctness. Explain why omitting a zero-log user produces incomplete output under this contract. Rewrite the contract to request only an aggregate mean and explain how the same sample-selection mistake could become a complete but wrong result.
+
+Extend the synthetic A/B/C tests with an additional boundary date and a repeated date. State the correct result by hand before testing it. Keep source records unchanged. Compare the independent SQL result with the reference calculation, then explain which errors could survive agreement between two programs that share the same mistaken specification.
+
+## Value Additional Review
+
+Run `decision_costs.py` and reconcile the seven-dollar break-even loss in M8 §8.30. At ten dollars per undetected error, calculate the expected cost difference over 1,000 tasks. Increase the checked workflow's review time to one minute and recompute the threshold. Explain how the comparison changes if the remaining errors differ in severity across workflows. All inputs are hypothetical.
+
+For optional live practice, use the [three-workflow protocol](../../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md#separate-comparison-of-three-coding-workflows). Keep the verification instruction common and use synthetic practice records with the model. Evaluate frozen programs locally on mHealth. Describe the evidence required before calling an observed difference a reliable improvement across business tasks.

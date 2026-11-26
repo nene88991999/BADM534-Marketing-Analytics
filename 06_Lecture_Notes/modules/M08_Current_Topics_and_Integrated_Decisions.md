@@ -1193,3 +1193,91 @@ Cancellation and pricing raise related questions about practical choice. A custo
 The geographic usage indices in Sections 2.26 and 4.27 can identify areas for further investigation. They measure application activity within a selected Windows population. A practical evaluation would offer assistance while preserving the existing channel, record each customer's requested action and channel, and compare completion and time using a stated eligible-customer denominator. Random assignment of an additional assistance offer could identify its incremental effect if assignment and outcome collection were implemented as specified. No such intervention or customer outcome is observed in the released indices.
 
 Customers who need assistance may also face the greatest costs when a digital channel is made mandatory. Low recorded activity can therefore motivate an offer of support while providing no evidence that a customer values the underlying service less. The decision turns on whether the firm expands feasible choices, whether customers can refuse additional profiling, and whether service remains usable when the app fails.
+
+## 8.30 Review Costs and Undetected Decision Errors
+
+\noindent A retailer uses analysis scripts to decide which promotions to retain. Additional review consumes analyst time, but an undetected error can lead to spending on an ineffective campaign or withdrawing a useful one. Comparing API expenditure alone omits both consequences. The relevant comparison includes production effort and the expected cost of acting on an incorrect result.
+
+For workflow $j$, let $a_j$ be API dollars per assigned analysis, $t_j$ be total review and correction minutes per assigned analysis, and $w$ be the analyst cost in dollars per hour. Let $p_j$ be the probability that an analysis contains an error that remains undetected when its result is used, and let $L$ be the expected monetary loss conditional on such an error. For $N$ assigned analyses, the expected accounted cost is
+
+$$
+C_j=N\left(a_j+\frac{wt_j}{60}+p_jL\right).
+$$
+
+The first two terms pay for producing and checking every assigned analysis, including unsuccessful attempts. The final term weights the conditional decision loss by the probability that the error reaches a decision. This accounting treats $p_j$ and the conditional loss as fixed at the stated operating environment. The loss must use the same scope for both workflows; a workflow that changes the severity of remaining errors requires its own conditional-loss estimate.
+
+Suppose a basic workflow costs 0.02 dollars in API charges and 0.25 review minutes per task. A checked workflow costs 0.05 dollars and 0.50 review minutes. Set the analyst cost to 60 dollars per hour and the undetected-error probabilities to 5% and 1%. These are hypothetical operating inputs. They are separate from the published benchmark's model results.
+
+| Loss per Undetected Error | Basic: 1,000 Tasks | Checked: 1,000 Tasks |
+| --- | ---: | ---: |
+| 0 Dollars | 270 Dollars | 550 Dollars |
+| 5 Dollars | 520 Dollars | 600 Dollars |
+| 7 Dollars | 620 Dollars | 620 Dollars |
+| 10 Dollars | 770 Dollars | 650 Dollars |
+| 20 Dollars | 1,270 Dollars | 750 Dollars |
+
+The checked workflow adds 280 dollars in operating expense over 1,000 tasks and reduces the expected number of undetected errors from 50 to 10. Its additional expense is recovered when the conditional loss reaches 7 dollars. At a loss of 10 dollars, expected accounted cost is 120 dollars lower under the checked workflow. A firm would need measured review effort, error rates after review, and consequences of erroneous decisions to estimate this comparison in practice.
+
+![A hypothetical comparison of 1,000 analyses holds review effort, API charges, and undetected-error probabilities fixed while varying the loss from an undetected error. The basic and checked workflows have equal expected accounted costs at a loss of seven dollars per error.](../figures/M08_review_and_decision_cost.png)
+
+The published coding study prices model tokens at recorded list prices. Those costs answer a narrower production question than the accounting above. A low cost per benchmark success can coexist with expensive human review or a consequential error in a rare decision. Evaluate a workflow on the task mix and error consequences relevant to the firm. Customer rights and truthful communication remain requirements whose justification is developed separately in Marketing Dialectics; a monetary objective alone does not establish permission to impose a harm.
+
+### 8.30.1 Reproduce the Hypothetical Cost Comparison
+
+\noindent Run `python3 03_Data_and_Code/Agent_Workflows/decision_costs.py` from the repository root. Change the explicitly hypothetical probabilities, review times, or conditional loss and recalculate the threshold. The result is an expected-cost comparison under those inputs.
+
+Python source: [decision_costs.py](../../03_Data_and_Code/Agent_Workflows/decision_costs.py)
+
+```python
+"""Hypothetical review spending and loss from undetected analysis errors."""
+import csv
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+WORKFLOWS = [
+    {"workflow": "Basic", "api_per_task": 0.02, "review_minutes": 0.25, "undetected_error_probability": 0.05},
+    {"workflow": "Checked", "api_per_task": 0.05, "review_minutes": 0.50, "undetected_error_probability": 0.01},
+]
+
+
+def expected_cost(row, loss, assigned=1000, wage_per_hour=60):
+    p = row["undetected_error_probability"]
+    if not 0 <= p <= 1 or min(loss, assigned, wage_per_hour, row["api_per_task"], row["review_minutes"]) < 0:
+        raise ValueError("Probabilities must be in [0,1] and costs and counts nonnegative.")
+    operating = row["api_per_task"] + row["review_minutes"] * wage_per_hour / 60
+    return {"workflow": row["workflow"], "loss_per_undetected_error": loss,
+            "assigned": assigned, "operating_dollars": assigned * operating,
+            "expected_undetected_errors": assigned * p,
+            "expected_error_loss_dollars": assigned * p * loss,
+            "expected_total_dollars": assigned * (operating + p * loss)}
+
+
+def break_even(basic, checked, wage_per_hour=60):
+    cost0 = expected_cost(basic, 0, 1, wage_per_hour)["operating_dollars"]
+    cost1 = expected_cost(checked, 0, 1, wage_per_hour)["operating_dollars"]
+    improvement = basic["undetected_error_probability"] - checked["undetected_error_probability"]
+    return (cost1 - cost0) / improvement if improvement else None
+
+
+def main():
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    threshold = break_even(*WORKFLOWS)
+    rows = [expected_cost(row, loss) for loss in [0, 5, 7, 10, 20] for row in WORKFLOWS]
+    with (output / "decision_costs.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    summary = {"scope": "Hypothetical inputs; no estimated labor savings or customer harm",
+               "assigned_tasks": 1000, "analyst_dollars_per_hour": 60,
+               "review_scope": "All review and correction time per assigned task",
+               "workflows": WORKFLOWS, "break_even_loss_dollars": threshold,
+               "loss_scope": "Manager-specified monetary consequence of an undetected wrong analysis"}
+    (output / "decision_cost_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps({"summary": summary, "costs": rows}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```

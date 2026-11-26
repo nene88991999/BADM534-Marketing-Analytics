@@ -1,0 +1,37 @@
+{
+  "namespace": "econometric-coding",
+  "reviewed_on": "2026-11-26",
+  "resources": [
+    {
+      "id": "EC01",
+      "title": "AI Agents and Prompt Engineering in Econometric Coding",
+      "authors": [
+        "Sebastian Galiani",
+        "Federico A. López",
+        "Raul A. Sosa"
+      ],
+      "year": 2026,
+      "url": "https://www.nber.org/papers/w35588",
+      "version": "November 2026 manuscript",
+      "local_copy": null
+    },
+    {
+      "id": "EC02",
+      "title": "Data and Code for AI Agents and Prompt Engineering in Econometric Coding",
+      "url": "https://doi.org/10.5281/zenodo.23770886",
+      "version": "v1.2",
+      "license": "CC0-1.0",
+      "local_files": [
+        "data/appendix_silent_vs_loud.csv",
+        "data/prompt_agency.csv",
+        "data/summary_by_model.csv"
+      ]
+    },
+    {
+      "id": "EC03",
+      "title": "Interactive Results Explorer",
+      "url": "https://lopezfe.de/chatbots-agents-econometrics/explore.html",
+      "local_copy": null
+    }
+  ]
+}

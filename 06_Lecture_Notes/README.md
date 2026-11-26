@@ -1,8 +1,8 @@
 # Lecture Notes
 
-**By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [451-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 114 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [463-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 116 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -181,3 +181,7 @@ The [geographic case](../03_Data_and_Code/Digital_Usage/README.md) adds measurem
 ## Statistical Inference and AI-Assisted Analysis
 
 M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment, paired mHealth logging, store assignment, and advertising claims. [Two complete Python programs](../03_Data_and_Code/Statistical_Inference/README.md), ten independent tests, and two editable figures distinguish observed descriptive changes, synthetic null experiments, and ethical interpretation. The [source review](../01_Resources/39_Statistical_Inference_and_AI/README.md) and [optional practice](../07_Labs/Statistical_Inference/README.md) preserve the benchmark's scope.
+
+## Coding Workflows and Independent Checks
+
+M1 §1.19 reconstructs published success and failure counts; M6 §6.31 compares prompt effects on two scales; M7 §7.46 evaluates constructed mHealth errors; M8 §8.30 compares review costs and undetected decision losses. M3 and M9 connect statistical evidence and managerial responsibility. [Complete Python and outputs](../03_Data_and_Code/Agent_Workflows/README.md) accompany two editable figures.

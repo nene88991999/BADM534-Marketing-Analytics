@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 25, 2026\par}
+{\large November 26, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -1750,6 +1750,208 @@ generated store experiments. Record model and software versions when an
 assistant is used. The supplied reference programs establish the course
 calculations; measured AI performance requires actual recorded runs
 under the stated protocol.
+
+\hypertarget{M01-execution-feedback-and-hidden-coding-errors}{%
+\section{Execution Feedback and Hidden Coding
+Errors}\label{M01-execution-feedback-and-hidden-coding-errors}}
+
+\noindent \noindent A marketing analyst commissions a script to estimate a
+campaign's incremental contribution. The requested sample, estimator,
+and uncertainty calculation can be specified before any code is written.
+The analyst still needs to decide how much execution, revision, and
+independent checking to include in the workflow. An error message makes
+a failed calculation visible. A plausible table can leave an incorrect
+calculation undiscovered.
+
+\href{../01_Resources/40_Econometric_Coding_Workflows/README.md}{Galiani,
+López, and Sosa} compare these workflow choices using 40 tasks and 32
+simulated datasets. Their November 2026 study evaluates six models in
+Stata, R, and Python, with two prompt conditions and ten repetitions of
+every combination. Each of the three workflows has 14,400 assigned runs.
+The task specifies the method and requested quantities. Numerical
+success means agreement with the reference calculation under the study's
+scoring rules.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Workflow & Successful Runs & Success & Loud Failures & Silent
+Failures \\
+\midrule
+
+One-Script Chatbot & 12,052 & 83.69\% & 1,694 & 654 \\
+Self-Repair & 13,434 & 93.29\% & 167 & 799 \\
+Constrained Agent & 14,021 & 97.37\% & 41 & 338 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The chatbot supplies one script. Self-repair receives execution errors
+or missing-output feedback and can revise up to three times. The agent
+runs and revises its own code, chooses when to stop, and receives an
+explicit instruction to perform an independent numerical check. The
+agent comparison therefore includes a change in verification
+instructions as well as execution and revision. These rates describe
+implementation of a specified method; selecting the appropriate causal
+design remains a separate judgment.
+
+A loud failure means failed execution or incomplete requested output. A
+silent failure means complete output with at least one incorrect scored
+value. Agent silent failures account for 338 of 14,400 runs, or 2.35\%.
+They also account for 338 of 379 failures, or 89.18\%. The first
+fraction measures their frequency among commissioned analyses. The
+second describes the errors that remain after the workflow has removed
+most visible failures.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M01_coding_failure_denominators.tex}
+\caption{Published coding results use 14,400 assigned runs per workflow. Loud failures fall from 11.76 to 0.28 per 100 runs and silent failures from 4.54 to 2.35; silent failures rise from 27.85\% to 89.18\% of all failures. The two panels use different denominators. Intervals are the authors’ task-cluster bootstrap intervals.}\label{fig:M01_coding_failure_denominators}
+\end{figure}
+
+Self-repair returns more complete results while its silent-failure count
+rises. A repaired program can proceed far enough to reveal an incorrect
+calculation that an earlier execution failure concealed. This change
+does not imply that already-correct programs became wrong. Reviewing the
+initial and final scripts is necessary to distinguish those paths.
+
+For a logging report, the specification should identify the
+earlier-period roster, distinct user-day unit, calendar boundaries, and
+treatment of users without records. For a campaign regression, it should
+identify the outcome units, assignment unit, included observations,
+estimator, and uncertainty convention. A successful run supports the
+claim that instructions executed. Independent calculations and
+deliberately incorrect alternatives provide evidence about whether those
+instructions implement the intended quantity. Section 7.46 applies these
+checks to the mHealth roster.
+
+\hypertarget{M01-reconstruct-the-published-comparison}{%
+\subsection{Reconstruct the Published
+Comparison}\label{M01-reconstruct-the-published-comparison}}
+
+\noindent \noindent The three input tables are published aggregate records from
+the authors' v1.2 release. The program below reconstructs failure
+denominators, prompt contrasts, and model-specific incremental token
+costs. It reconciles prompt-cell success counts with the workflow
+totals. The reported intervals retain the authors' resampling of 40
+tasks; the program does not treat individual runs as independent or
+recompute those intervals. No new model performance is measured.
+
+Run
+\texttt{python3\ 03\_Data\_and\_Code/Agent\_Workflows/benchmark\_evidence.py}
+from the repository root. The program reads the three small CSV files in
+\texttt{01\_Resources/40\_Econometric\_Coding\_Workflows/data} and
+writes its results beside the existing workflow examples. The plotted
+intervals and reconstructed point values are traceable to those files.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Agent_Workflows/benchmark_evidence.py}{benchmark\_evidence.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Recompute published aggregates; no model calls or upstream code execution."""
+import csv
+import json
+import math
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parents[1] / "01_Resources/40_Econometric_Coding_Workflows/data"
+ORDER = ["chatbot", "self_repair", "agent"]
+
+
+def read_csv(path):
+    with path.open(newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def failure_rates(rows):
+    result = []
+    for row in rows:
+        n, failed, loud, silent = (int(row[k]) for k in ["n", "failures", "loud", "silent"])
+        if n <= 0 or min(loud, silent) < 0 or failed != loud + silent or failed > n:
+            raise ValueError("Failure counts must partition a positive assigned-run denominator.")
+        result.append({"agency": row["agency"], "assigned": n, "successes": n - failed,
+                       "failures": failed, "loud": loud, "silent": silent,
+                       "success_pct": 100 * (n - failed) / n,
+                       "loud_per100": 100 * loud / n, "silent_per100": 100 * silent / n,
+                       "silent_share_of_failures_pct": 100 * silent / failed if failed else None})
+    return sorted(result, key=lambda row: ORDER.index(row["agency"]))
+
+
+def prompt_contrasts(rows):
+    cells = {}
+    for row in rows:
+        if row["panel"] != "prompt":
+            continue
+        key = row["agency"], row["prompt"]
+        if key in cells:
+            raise ValueError("Duplicate prompt cell.")
+        n, passed = int(row["n"]), int(row["successes"])
+        if n <= 0 or not 0 <= passed <= n:
+            raise ValueError("Invalid success count.")
+        cells[key] = (n, passed)
+    result = []
+    for agency in ORDER:
+        n0, s0 = cells[agency, "zero_shot"]
+        n1, s1 = cells[agency, "few_shot"]
+        p0, p1 = s0 / n0, s1 / n1
+        result.append({"agency": agency, "zero_assigned": n0, "example_assigned": n1,
+                       "zero_successes": s0, "example_successes": s1,
+                       "zero_success_pct": 100 * p0, "example_success_pct": 100 * p1,
+                       "gain_pp": 100 * (p1 - p0),
+                       "fraction_of_zero_failures_removed": (p1 - p0) / (1 - p0) if p0 < 1 else None})
+    return result
+
+
+def save_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    raw = read_csv(SOURCE / "appendix_silent_vs_loud.csv")
+    failures = failure_rates(raw)
+    for row in failures:
+        published = next(x for x in raw if x["agency"] == row["agency"])
+        for field in ["loud_per100", "silent_per100", "silent_share_of_failures_pct"]:
+            assert math.isclose(row[field], float(published[field]), abs_tol=1e-10)
+    prompts = prompt_contrasts(read_csv(SOURCE / "prompt_agency.csv"))
+    for row in failures:
+        paired = next(x for x in prompts if x["agency"] == row["agency"])
+        assert row["assigned"] == paired["zero_assigned"] + paired["example_assigned"]
+        assert row["successes"] == paired["zero_successes"] + paired["example_successes"]
+    cost_rows = []
+    for row in read_csv(SOURCE / "summary_by_model.csv"):
+        gain = (float(row["agent_pct"]) - float(row["chatbot_pct"])) / 100
+        increase = float(row["cost_per_run_agent_usd"]) - float(row["cost_per_run_chatbot_usd"])
+        cost_rows.append({"model": row["model"], "gain_pp": 100 * gain,
+                          "additional_dollars_per_run": increase,
+                          "dollars_per_additional_success": increase / gain if gain > 0 else None})
+    save_csv(output / "benchmark_failure_rates.csv", failures)
+    save_csv(output / "benchmark_prompt_contrasts.csv", prompts)
+    save_csv(output / "benchmark_incremental_cost.csv", cost_rows)
+    summary = {"source": "Galiani, Lopez, and Sosa; release v1.2, November manuscript",
+               "assigned_runs": sum(r["assigned"] for r in failures), "tasks": 40,
+               "models": 6, "source_datasets": 32,
+               "self_repair_share_of_success_gain":
+               (failures[1]["successes"] - failures[0]["successes"]) /
+               (failures[2]["successes"] - failures[0]["successes"]),
+               "prompt_interaction_pp": prompts[2]["gain_pp"] - prompts[0]["gain_pp"],
+               "scope": "Published aggregate reconstruction; original runs and bootstrap not rerun"}
+    (output / "benchmark_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps({"summary": summary, "failures": failures, "prompts": prompts}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
 
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
@@ -6157,6 +6359,16 @@ monthly entries before fitting a test. Then inspect the standard-error
 calculation and the interpretation of the result. Changing a heading to
 ``customer-level analysis'' supplies no evidence that the underlying
 code preserved customer dependence.
+
+A coding checker that examines only the estimated change would accept
+both uncertainty calculations in the table above. The difference appears
+in the standard error, interval, and p-value. A stronger check preserves
+the user pairs and separately verifies the variance calculation, then
+compares an intentionally independent-day implementation with the
+required paired calculation. The fixed task defines which method answers
+the requested question. The workflow evidence in Section 1.19 supports
+treating complete numerical output as an object to assess; agreement
+with a reference coefficient supplies only part of that evidence.
 
 \hypertarget{M03-reproduce-the-sample-and-tests}{%
 \subsection{Reproduce the Sample and
@@ -14670,6 +14882,75 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M06-prompt-effects-workflow-changes-and-the-outcome-scale}{%
+\section{Prompt Effects, Workflow Changes, and the Outcome
+Scale}\label{M06-prompt-effects-workflow-changes-and-the-outcome-scale}}
+
+\noindent \noindent A manager choosing an analysis workflow wants to know whether
+a worked example becomes less useful when the assistant can execute
+code. The comparison depends on the definition of improvement. An
+increase from 80\% to 90\% success removes half the failures; an
+increase from 98\% to 99\% removes the same fraction. Their
+percentage-point effects differ even though their proportional
+reductions in failure agree.
+
+In the published coding benchmark, each prompt-by-workflow cell pools
+7,200 runs over six models, 40 tasks, and three languages. The example
+supplies related code on separate data. The common task statement
+already specifies the target, method, and output in both prompt
+conditions.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Workflow & No Example & One Example & Gain (pp) & Baseline Failures
+Removed \\
+\midrule
+
+Chatbot & 81.49\% & 85.90\% & 4.42 & 23.86\% \\
+Self-Repair & 92.40\% & 94.18\% & 1.78 & 23.40\% \\
+Agent & 96.97\% & 97.76\% & 0.79 & 26.15\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Let \(q_{ea}\) denote the observed success fraction with example status
+\(e\in\{0,1\}\) and workflow \(a\). The example's percentage-point gain
+is \(100(q_{1a}-q_{0a})\). To express the same improvement relative to
+the available failures, calculate
+
+\[
+r_a=\frac{q_{1a}-q_{0a}}{1-q_{0a}}.
+\]
+
+The denominator is the no-example failure fraction. The ratio is
+undefined if that fraction is zero. The agent's smaller percentage-point
+gain coexists with a slightly larger proportional reduction in failures.
+The difference between its example gain and the chatbot's gain is
+\(-3.625\) percentage points. That additive interaction describes a
+particular outcome scale and does not establish a general technological
+substitution between prompting and execution.
+
+The
+\href{../03_Data_and_Code/Agent_Workflows/benchmark_evidence.py}{complete
+program in Section 1.19.1} calculates each contrast from the published
+integer counts. Repeated runs share tasks and datasets. Confidence
+intervals for generalization across tasks should preserve that
+dependence, as the authors' task-cluster intervals do. Recomputing a
+binomial interval over 43,200 independent observations would answer a
+different sampling question.
+
+For an original course comparison, hold the core specification and
+independent-check instruction fixed while changing the opportunities to
+execute and revise. Record actual calls, feedback, stopping decisions,
+and resource use. These complete workflow conditions still differ in
+several operational features. A separate factorial comparison, such as
+Section 6.29, is needed to isolate the effect of a particular
+information or feedback component. Use synthetic practice inputs for
+live model calls, then evaluate the frozen program locally on the
+mHealth task without exposing the final answers.
+
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
 Actions}\label{M07-m7.-prediction-machine-learning-and-marketing-actions}}
@@ -20281,6 +20562,199 @@ question. A model trained on laptop activity should be evaluated on the
 actual mobile, browser, and assisted tasks customers will face before
 its output determines service access.
 
+\hypertarget{M07-evaluate-a-checker-with-deliberately-incorrect-programs}{%
+\section{Evaluate a Checker with Deliberately Incorrect
+Programs}\label{M07-evaluate-a-checker-with-deliberately-incorrect-programs}}
+
+\noindent \noindent An outreach team uses individual logging counts to decide
+which customers need follow-up. A correct grand total leaves the
+allocation of those counts unresolved. A program that shifts every count
+to the next customer can preserve total activity, the mean rate, and the
+distribution while changing the people selected for outreach. The
+checker must examine the information used by the decision.
+
+The mHealth tasks retain 358 users observed from January through June
+2016 within the established pseudonym-selected cohort. July is the
+development period; August is the evaluation period. Both months contain
+31 days, and users with no records remain in the roster. The inputs
+include the day immediately before the month and the excluded end date,
+permitting a direct check of the time filter. The \texttt{entries} field
+counts food records within a user-day; the target counts distinct
+recorded days.
+
+The following programs deliberately change one calculation or output at
+a time. They are constructed errors applied to observed inputs. Their
+frequencies do not estimate how often any model makes these mistakes.
+For July, the correct report contains 6,455 recorded user-days and an
+average logging rate of 58.16\%.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+Constructed Program & Returned Users & Returned Days & Mean Rate &
+Assessment \\
+\midrule
+
+Correct & 358 & 6,455 & 58.16\% & Valid \\
+Count Food Entries & 358 & 77,751 & 700.59\% & Silent Failure \\
+Include August 1 & 358 & 6,686 & 60.25\% & Silent Failure \\
+Use 30 Days & 358 & 6,455 & 60.10\% & Silent Failure \\
+Shift Counts Across Users & 358 & 6,455 & 58.16\% & Silent Failure \\
+Omit Zero-Log Users & 319 & 6,455 & 65.27\% & Incomplete Output \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Completeness here requires one finite-valued row for every roster user
+with all requested fields. The omitted-user program is therefore
+incomplete even though its remaining rows are well formed. If the
+requested output were only an aggregate mean, a missing-population error
+could instead appear as a complete but wrong value. Error classification
+depends on the output contract. Numerical range checks can detect the
+entry-count error immediately; the shifted-count error also satisfies
+ordinary aggregate and range checks.
+
+The shifted program assigns incorrect values to 331 of 358 July users
+while preserving the overall rate. The 30-day program preserves the
+numerator but changes the exposure denominator. The zero-log exclusion
+changes the population to users with records. Each program can return a
+number that is internally reproducible. Comparing it with the specified
+measurement distinguishes these errors.
+
+Run the complete program from the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python3 03_Data_and_Code/Agent_Workflows/semantic_checks.py
+\end{Verbatim}
+
+The program imports the existing reference calculation printed in
+Section 1.17.2 and the CSV assessment printed in Section 7.41.2. It
+writes one result per constructed case and period. The independent test
+file uses small invented cases with known answers, while the existing
+SQL check separately verifies the actual task counts. For a measured AI
+comparison, keep the evaluation data and reference outputs outside the
+model's permitted workspace.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Agent_Workflows/semantic_checks.py}{semantic\_checks.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Evaluate original deliberate coding errors on the existing mHealth tasks."""
+import csv
+import json
+import math
+from collections import Counter
+from datetime import date
+from pathlib import Path
+
+from evaluate_submission import grade
+from logging_reference import calculate, read_csv
+
+HERE = Path(__file__).resolve().parent
+CASES = ["correct", "entry_counts", "inclusive_end", "denominator_30",
+         "shifted_users", "omit_zero", "missing_value", "execution_failure"]
+
+
+def candidate(case, roster, records, start, end):
+    if case == "execution_failure":
+        raise RuntimeError("Deliberately constructed execution failure")
+    if case not in CASES:
+        raise ValueError("Unknown constructed case.")
+    users = [row["user_id"] for row in roster]
+    days = (end - start).days
+    seen, counts = {u: set() for u in users}, Counter()
+    for row in records:
+        d, u = date.fromisoformat(row["date"]), row["user_id"]
+        keep = start <= d <= end if case == "inclusive_end" else start <= d < end
+        if u in seen and keep:
+            seen[u].add(d)
+            counts[u] += int(row["entries"])
+    values = [counts[u] if case == "entry_counts" else len(seen[u]) for u in users]
+    if case == "shifted_users":
+        values = values[1:] + values[:1]
+    denominator = 30 if case == "denominator_30" else days
+    rows = [{"user_id": u, "logged_days": n, "window_days": denominator,
+             "logging_rate": n / denominator} for u, n in zip(users, values)]
+    if case == "omit_zero":
+        rows = [row for row in rows if row["logged_days"] > 0]
+    if case == "missing_value":
+        del rows[0]["logging_rate"]
+    return rows
+
+
+def complete(rows, expected_ids):
+    ids = [r.get("user_id") for r in rows]
+    if len(ids) != len(expected_ids) or set(ids) != set(expected_ids):
+        return False
+    try:
+        return all(math.isfinite(float(r[k])) for r in rows
+                   for k in ["logged_days", "window_days", "logging_rate"])
+    except (KeyError, ValueError, TypeError):
+        return False
+
+
+def assess(case, roster, records, start, end):
+    reference, summary = calculate(roster, records, start, end)
+    try:
+        rows = candidate(case, roster, records, start, end)
+    except RuntimeError:
+        return {"case": case, "executed": False, "complete": False,
+                "total_days_matches": False, "valid": False,
+                "classification": "loud_failure", "returned_users": 0,
+                "correct_users": 0, "returned_days": None, "mean_returned_rate": None}
+    structural = complete(rows, [r["user_id"] for r in reference])
+    evaluated = grade(rows, reference)
+    total = sum(row["logged_days"] for row in rows)
+    rates = [row.get("logging_rate") for row in rows]
+    mean = sum(rates) / len(rates) if rates and all(x is not None for x in rates) else None
+    return {"case": case, "executed": True, "complete": structural,
+            "total_days_matches": total == summary["observed_user_days"],
+            "valid": evaluated["valid_output"],
+            "classification": "success" if evaluated["valid_output"] else
+            ("silent_failure" if structural else "loud_failure"),
+            "returned_users": len(rows), "correct_users": evaluated["correct_users"],
+            "returned_days": total, "mean_returned_rate": mean}
+
+
+def main():
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    results = []
+    for role in ["development", "evaluation"]:
+        folder = HERE / "tasks" / role
+        spec = json.loads((folder / "task.json").read_text())
+        roster, records = read_csv(folder / "roster.csv"), read_csv(folder / "observed_days.csv")
+        for case in CASES:
+            result = assess(case, roster, records, date.fromisoformat(spec["start"]),
+                            date.fromisoformat(spec["end_exclusive"]))
+            results.append({"task": role, **result})
+    with (output / "semantic_checks.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(results[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(results)
+    summary = {"scope": "Original deliberate errors on observed mHealth inputs; no LLM performance",
+               "cases_per_task": len(CASES), "tasks": 2,
+               "incorrect_cases_accepted_by_total_only": sum(
+                   r["total_days_matches"] and not r["valid"] for r in results),
+               "incomplete_outputs": sum(not r["complete"] for r in results)}
+    (output / "semantic_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps({"summary": summary, "results": results}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+The same checks on August retain 6,501 recorded user-days and a 58.58\%
+mean rate. Reassigning counts preserves both aggregates while changing
+324 users' values. Agreement across two fixed periods checks these
+particular implementations. A broader assessment of model reliability
+requires additional tasks, recorded model attempts, and an evaluation
+sample that did not guide revision.
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -23024,6 +23498,152 @@ values the underlying service less. The decision turns on whether the
 firm expands feasible choices, whether customers can refuse additional
 profiling, and whether service remains usable when the app fails.
 
+\hypertarget{M08-review-costs-and-undetected-decision-errors}{%
+\section{Review Costs and Undetected Decision
+Errors}\label{M08-review-costs-and-undetected-decision-errors}}
+
+\noindent \noindent A retailer uses analysis scripts to decide which promotions to
+retain. Additional review consumes analyst time, but an undetected error
+can lead to spending on an ineffective campaign or withdrawing a useful
+one. Comparing API expenditure alone omits both consequences. The
+relevant comparison includes production effort and the expected cost of
+acting on an incorrect result.
+
+For workflow \(j\), let \(a_j\) be API dollars per assigned analysis,
+\(t_j\) be total review and correction minutes per assigned analysis,
+and \(w\) be the analyst cost in dollars per hour. Let \(p_j\) be the
+probability that an analysis contains an error that remains undetected
+when its result is used, and let \(L\) be the expected monetary loss
+conditional on such an error. For \(N\) assigned analyses, the expected
+accounted cost is
+
+\[
+C_j=N\left(a_j+\frac{wt_j}{60}+p_jL\right).
+\]
+
+The first two terms pay for producing and checking every assigned
+analysis, including unsuccessful attempts. The final term weights the
+conditional decision loss by the probability that the error reaches a
+decision. This accounting treats \(p_j\) and the conditional loss as
+fixed at the stated operating environment. The loss must use the same
+scope for both workflows; a workflow that changes the severity of
+remaining errors requires its own conditional-loss estimate.
+
+Suppose a basic workflow costs 0.02 dollars in API charges and 0.25
+review minutes per task. A checked workflow costs 0.05 dollars and 0.50
+review minutes. Set the analyst cost to 60 dollars per hour and the
+undetected-error probabilities to 5\% and 1\%. These are hypothetical
+operating inputs. They are separate from the published benchmark's model
+results.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Loss per Undetected Error & Basic: 1,000 Tasks & Checked: 1,000 Tasks \\
+\midrule
+
+0 Dollars & 270 Dollars & 550 Dollars \\
+5 Dollars & 520 Dollars & 600 Dollars \\
+7 Dollars & 620 Dollars & 620 Dollars \\
+10 Dollars & 770 Dollars & 650 Dollars \\
+20 Dollars & 1,270 Dollars & 750 Dollars \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The checked workflow adds 280 dollars in operating expense over 1,000
+tasks and reduces the expected number of undetected errors from 50 to
+10. Its additional expense is recovered when the conditional loss
+reaches 7 dollars. At a loss of 10 dollars, expected accounted cost is
+120 dollars lower under the checked workflow. A firm would need measured
+review effort, error rates after review, and consequences of erroneous
+decisions to estimate this comparison in practice.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_review_and_decision_cost.tex}
+\caption{A hypothetical comparison of 1,000 analyses holds review effort, API charges, and undetected-error probabilities fixed while varying the loss from an undetected error. The basic and checked workflows have equal expected accounted costs at a loss of seven dollars per error.}\label{fig:M08_review_and_decision_cost}
+\end{figure}
+
+The published coding study prices model tokens at recorded list prices.
+Those costs answer a narrower production question than the accounting
+above. A low cost per benchmark success can coexist with expensive human
+review or a consequential error in a rare decision. Evaluate a workflow
+on the task mix and error consequences relevant to the firm. Customer
+rights and truthful communication remain requirements whose
+justification is developed separately in Marketing Dialectics; a
+monetary objective alone does not establish permission to impose a harm.
+
+\hypertarget{M08-reproduce-the-hypothetical-cost-comparison-1}{%
+\subsection{Reproduce the Hypothetical Cost
+Comparison}\label{M08-reproduce-the-hypothetical-cost-comparison-1}}
+
+\noindent \noindent Run
+\texttt{python3\ 03\_Data\_and\_Code/Agent\_Workflows/decision\_costs.py}
+from the repository root. Change the explicitly hypothetical
+probabilities, review times, or conditional loss and recalculate the
+threshold. The result is an expected-cost comparison under those inputs.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Agent_Workflows/decision_costs.py}{decision\_costs.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Hypothetical review spending and loss from undetected analysis errors."""
+import csv
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+WORKFLOWS = [
+    {"workflow": "Basic", "api_per_task": 0.02, "review_minutes": 0.25, "undetected_error_probability": 0.05},
+    {"workflow": "Checked", "api_per_task": 0.05, "review_minutes": 0.50, "undetected_error_probability": 0.01},
+]
+
+
+def expected_cost(row, loss, assigned=1000, wage_per_hour=60):
+    p = row["undetected_error_probability"]
+    if not 0 <= p <= 1 or min(loss, assigned, wage_per_hour, row["api_per_task"], row["review_minutes"]) < 0:
+        raise ValueError("Probabilities must be in [0,1] and costs and counts nonnegative.")
+    operating = row["api_per_task"] + row["review_minutes"] * wage_per_hour / 60
+    return {"workflow": row["workflow"], "loss_per_undetected_error": loss,
+            "assigned": assigned, "operating_dollars": assigned * operating,
+            "expected_undetected_errors": assigned * p,
+            "expected_error_loss_dollars": assigned * p * loss,
+            "expected_total_dollars": assigned * (operating + p * loss)}
+
+
+def break_even(basic, checked, wage_per_hour=60):
+    cost0 = expected_cost(basic, 0, 1, wage_per_hour)["operating_dollars"]
+    cost1 = expected_cost(checked, 0, 1, wage_per_hour)["operating_dollars"]
+    improvement = basic["undetected_error_probability"] - checked["undetected_error_probability"]
+    return (cost1 - cost0) / improvement if improvement else None
+
+
+def main():
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    threshold = break_even(*WORKFLOWS)
+    rows = [expected_cost(row, loss) for loss in [0, 5, 7, 10, 20] for row in WORKFLOWS]
+    with (output / "decision_costs.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    summary = {"scope": "Hypothetical inputs; no estimated labor savings or customer harm",
+               "assigned_tasks": 1000, "analyst_dollars_per_hour": 60,
+               "review_scope": "All review and correction time per assigned task",
+               "workflows": WORKFLOWS, "break_even_loss_dollars": threshold,
+               "loss_scope": "Manager-specified monetary consequence of an undetected wrong analysis"}
+    (output / "decision_cost_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps({"summary": summary, "costs": rows}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M09-marketing-dialectics}{%
 \chapter{Marketing Dialectics}\label{M09-marketing-dialectics}}
 
@@ -25208,5 +25828,17 @@ practice. Require a justified statistical comparison, evidence on the
 consequences customers experience, and an account of why the firm's
 means respect their agency. An error at one stage cannot be repaired by
 success at another.
+
+A manager delegating econometric code retains responsibility for
+choosing the question, checking the measurement, and evaluating the
+action taken on the result. The coding-workflow benchmark in Section
+1.19 fixes the method in advance; success establishes agreement with its
+numerical reference under stated rules. A campaign can satisfy that
+computational requirement while relying on a misleading promise or
+disregarding a customer's expressed refusal. Kantian scrutiny examines
+the reasons and authority for the practice. Confucian scrutiny examines
+truthful reporting and the manager's response when an analyst identifies
+a material error. Preserving an opportunity to challenge an automated
+recommendation connects analytical competence to responsible conduct.
 
 \end{document}
