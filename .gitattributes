@@ -18,3 +18,7 @@
 
 # Preserve the published digital-usage release checksum.
 /03_Data_and_Code/Digital_Usage/data/published_indices.csv -text
+
+# Preserve CSV-writer output bytes and recorded result checksums.
+/03_Data_and_Code/Statistical_Inference/results/logic_cost_ratios.csv -text whitespace=cr-at-eol
+/03_Data_and_Code/Statistical_Inference/results/logic_extrapolation.csv -text whitespace=cr-at-eol
