@@ -15,7 +15,7 @@
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. Customer measurement and visualization define the patterns to explain. Regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems inform decisions about product design, acquisition, retention, pricing, and marketing budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, and commercial incentives.
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian, Confucian, and Scanlonian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, antitrust evidence, and commercial incentives. Students distinguish effective pursuit of a commercial aim from a reasonable principle that can be justified to affected people.
 
 ## Learning Objectives
 
@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, data-center electricity costs, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, execution feedback, complete and correct output, review costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, data-center electricity costs, and consumer agency. Published pricing cases examine customer burdens, competitive responses, and authority over data use. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, execution feedback, complete and correct output, review costs, and customer authority.
 
 ---
 

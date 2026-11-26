@@ -22,7 +22,7 @@ Jean-Pierre Dubé; Sanjog Misra. Downloaded NBER revision June 2021; published J
 
 Distinguish the predicted optimal-price comparison from the later implemented field policies. Separate aggregate customer surplus, distributional incidence, and ethical interpretation.
 
-[Source](https://knowledge.uchicago.edu/record/5577/files/Personalized-Pricing-and-Consumer-Welfare.pdf?ln=en).
+[Source](https://www.nber.org/papers/w23775).
 
 Local reference: `local_sources/Dube_Misra_WorkingPaper2021.pdf`. Original retained in Dropbox; public repository supplies attribution and original analysis.
 
@@ -46,6 +46,10 @@ Walter W. Zhang; Sanjog Misra. arXiv 2204.05793v4, June 30, 2025.
 
 The size of a treatment menu and its commercial performance do not establish the ethical quality of the assignment rule. The authors discuss fairness and stability concerns.
 
-[Source](https://arxiv.org/pdf/2204.05793v1).
+[Source](https://arxiv.org/abs/2204.05793v4).
 
 Local reference: `local_sources/Zhang_Misra_WorkingPaper2025.pdf`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## Dubé, Fang, Fong, and Luo: Competitive Mobile Targeting
+
+*Competitive Price Targeting with Smartphone Coupons*, Marketing Science 36(6), 944–975 (2017). [Published article](https://doi.org/10.1287/mksc.2017.1042), [university-hosted PDF](https://www.fox.temple.edu/sites/fox/files/competitive-price-targeting-pub.pdf), and [journal replication link](https://pubsonline.informs.org/doi/suppl/10.1287/mksc.2017.1042). Read §§3–4 and Table 9 with its discussion. The course reconstructs best responses from the published rounded matrix and examines the authority to use location history. Access details and the distinction between aggregate reconstruction and microdata replication are in the [Scanlon assessment](../SCANLON_ASSESSMENT.md).

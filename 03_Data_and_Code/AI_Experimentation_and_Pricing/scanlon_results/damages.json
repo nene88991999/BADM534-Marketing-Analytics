@@ -1,0 +1,131 @@
+{
+  "data_type": "Invented invoices and counterfactuals, not estimated damages",
+  "central": {
+    "assumed_lawful_but_for_price": {
+      "exact": "100",
+      "decimal": 100.0
+    },
+    "paid_price": {
+      "exact": "120",
+      "decimal": 120.0
+    },
+    "actual_units": 92,
+    "assumed_but_for_units": 100,
+    "signed_invoice_difference": {
+      "exact": "1840",
+      "decimal": 1840.0
+    },
+    "revenue_change": {
+      "exact": "1040",
+      "decimal": 1040.0
+    },
+    "quantity_component_at_but_for_price": {
+      "exact": "-800",
+      "decimal": -800.0
+    },
+    "unserved_units": 8
+  },
+  "benchmark_sensitivity": {
+    "95": {
+      "assumed_lawful_but_for_price": {
+        "exact": "95",
+        "decimal": 95.0
+      },
+      "paid_price": {
+        "exact": "120",
+        "decimal": 120.0
+      },
+      "actual_units": 92,
+      "assumed_but_for_units": 100,
+      "signed_invoice_difference": {
+        "exact": "2300",
+        "decimal": 2300.0
+      },
+      "revenue_change": {
+        "exact": "1540",
+        "decimal": 1540.0
+      },
+      "quantity_component_at_but_for_price": {
+        "exact": "-760",
+        "decimal": -760.0
+      },
+      "unserved_units": 8
+    },
+    "100": {
+      "assumed_lawful_but_for_price": {
+        "exact": "100",
+        "decimal": 100.0
+      },
+      "paid_price": {
+        "exact": "120",
+        "decimal": 120.0
+      },
+      "actual_units": 92,
+      "assumed_but_for_units": 100,
+      "signed_invoice_difference": {
+        "exact": "1840",
+        "decimal": 1840.0
+      },
+      "revenue_change": {
+        "exact": "1040",
+        "decimal": 1040.0
+      },
+      "quantity_component_at_but_for_price": {
+        "exact": "-800",
+        "decimal": -800.0
+      },
+      "unserved_units": 8
+    },
+    "110": {
+      "assumed_lawful_but_for_price": {
+        "exact": "110",
+        "decimal": 110.0
+      },
+      "paid_price": {
+        "exact": "120",
+        "decimal": 120.0
+      },
+      "actual_units": 92,
+      "assumed_but_for_units": 100,
+      "signed_invoice_difference": {
+        "exact": "920",
+        "decimal": 920.0
+      },
+      "revenue_change": {
+        "exact": "40",
+        "decimal": 40.0
+      },
+      "quantity_component_at_but_for_price": {
+        "exact": "-880",
+        "decimal": -880.0
+      },
+      "unserved_units": 8
+    },
+    "120": {
+      "assumed_lawful_but_for_price": {
+        "exact": "120",
+        "decimal": 120.0
+      },
+      "paid_price": {
+        "exact": "120",
+        "decimal": 120.0
+      },
+      "actual_units": 92,
+      "assumed_but_for_units": 100,
+      "signed_invoice_difference": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "revenue_change": {
+        "exact": "-960",
+        "decimal": -960.0
+      },
+      "quantity_component_at_but_for_price": {
+        "exact": "-960",
+        "decimal": -960.0
+      },
+      "unserved_units": 8
+    }
+  },
+  "scope": "Attribution to unlawful conduct must be established separately; no trebling"
+}

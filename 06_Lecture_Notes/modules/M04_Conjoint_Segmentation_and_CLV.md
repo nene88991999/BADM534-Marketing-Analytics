@@ -1732,3 +1732,11 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 4.28 Segmentation, Welfare, and Reasons for Treatment
+
+\noindent A pricing segment summarizes differences relevant to a decision. When a firm predicts a high willingness to pay, the interpretation remains consequential: convenience, urgent need, and weak alternatives can produce similar choices while supporting different objections to a price. M9 §§9.34–9.36 compare demand representation, welfare identification, and a profitable alternative that avoids raising any customer's price in a synthetic model. Two demand completions fit every tested purchase probability while yielding opposite aggregate surplus changes. Both identify a loss for the group whose price rises.
+
+M9 §9.37 reconstructs Dubé and coauthors' mobile-targeting payoff table. Its equilibrium depends on firms' incentives and anticipated competitive responses. A privacy permission, a reason to respect a customer's refusal, and an unlawful agreement are separate objects requiring their own evidence. M9 §§9.38–9.39 connect those distinctions to antitrust proof and Scanlonian justification.
+
+A segmentation rule can predict purchases precisely while serving an objectionable goal. M9 §§9.34.3–9.34.4 distinguish reasons to trust the measurement from reasons to pursue the objective. A customer's acceptance under weak alternatives may be instrumentally rational while leaving the pricing principle open to reasonable rejection.

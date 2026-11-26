@@ -572,12 +572,12 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 36,
+      "slides": 38,
       "companion": "S09_Experiments_and_Incremental_Value.md",
       "pdf": "S09_Experiments_and_Incremental_Value.pdf",
-      "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.",
+      "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales. Compare naive and population-weighted pricing contrasts under unequal exposure.",
       "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Donald Andrews inverse power and nuisance-parameter sensitivity.",
-      "ethics": "Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test",
+      "ethics": "Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test. Compare the individual reasons for accepting experimental risk.",
       "timing": [
         {
           "start_minute": 0,
@@ -632,7 +632,8 @@
       "auxiliary_data_minutes": 10,
       "agent_workflow_minutes": 5,
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
-      "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice. Donald Andrews inverse power and nuisance-parameter sensitivity."
+      "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice. Donald Andrews inverse power and nuisance-parameter sensitivity.",
+      "pricing_reasons_coverage": "Use the exposure example within minutes 135–155; longer exercise optional."
     },
     {
       "session": 10,
@@ -932,12 +933,12 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 70,
+      "slides": 82,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Utility cost recovery, qualitative negative cases, and household reasons.",
-      "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims.",
+      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed.",
+      "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims",
       "timing": [
         {
           "start_minute": 0,
@@ -961,7 +962,7 @@
           "start_minute": 50,
           "end_minute": 60,
           "minutes": 10,
-          "activity": "Personalized-Pricing Evidence and Benchmarks"
+          "activity": "Personalized Pricing, Welfare Identification, and Benchmarks"
         },
         {
           "start_minute": 60,
@@ -997,7 +998,7 @@
           "start_minute": 100,
           "end_minute": 110,
           "minutes": 10,
-          "activity": "Demand Information and Pricing Objectives"
+          "activity": "Pricing Burdens and Feasible Alternatives"
         },
         {
           "start_minute": 110,
@@ -1062,7 +1063,8 @@
       "digital_usage_minutes": 10,
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
       "statistical_claims_coverage": "Selected arguments and figures within the existing ethics discussion; full numerical derivations, readings, and stakeholder exercises remain optional ungraded practice.",
-      "qualitative_evidence": "M5 §5.27 and M9 §9.33; integrated into existing discussion; complete collection and independent coding are optional lab work"
+      "qualitative_evidence": "M5 §5.27 and M9 §9.33; integrated into existing discussion; complete collection and independent coding are optional lab work",
+      "pricing_reasons_coverage": "Select the demand-completion and burden comparison at 50–60, a Kantian or Scanlonian pricing case within 80–110, and antitrust evidence within the existing policy discussion. Other cases are alternative discussions; extended reconstruction remains optional."
     },
     {
       "session": 15,

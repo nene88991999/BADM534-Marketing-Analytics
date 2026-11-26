@@ -1,0 +1,151 @@
+{
+  "data_type": "Exact synthetic expected cells, no empirical standard errors",
+  "targeted": {
+    "rows": [
+      {
+        "group": "L",
+        "population_share": {
+          "exact": "3/5",
+          "decimal": 0.6
+        },
+        "assignment_probability": {
+          "exact": "1/4",
+          "decimal": 0.25
+        },
+        "expected_revenue_control": {
+          "exact": "209/36",
+          "decimal": 5.805555555555555
+        },
+        "expected_revenue_treatment": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "expected_surplus_loss_per_group_member": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "population_expected_lost_purchase_share": {
+          "exact": "0",
+          "decimal": 0.0
+        }
+      },
+      {
+        "group": "H",
+        "population_share": {
+          "exact": "2/5",
+          "decimal": 0.4
+        },
+        "assignment_probability": {
+          "exact": "3/4",
+          "decimal": 0.75
+        },
+        "expected_revenue_control": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        },
+        "expected_revenue_treatment": {
+          "exact": "45/4",
+          "decimal": 11.25
+        },
+        "expected_surplus_loss_per_group_member": {
+          "exact": "193/32",
+          "decimal": 6.03125
+        },
+        "population_expected_lost_purchase_share": {
+          "exact": "3/40",
+          "decimal": 0.075
+        }
+      }
+    ],
+    "naive_difference": {
+      "exact": "475/132",
+      "decimal": 3.5984848484848486
+    },
+    "ipw_policy_effect": {
+      "exact": "25/12",
+      "decimal": 2.0833333333333335
+    },
+    "experiment_revenue_per_eligible": {
+      "exact": "361/48",
+      "decimal": 7.520833333333333
+    },
+    "expected_lost_purchase_share": {
+      "exact": "3/40",
+      "decimal": 0.075
+    }
+  },
+  "balanced": {
+    "rows": [
+      {
+        "group": "L",
+        "population_share": {
+          "exact": "3/5",
+          "decimal": 0.6
+        },
+        "assignment_probability": {
+          "exact": "1/2",
+          "decimal": 0.5
+        },
+        "expected_revenue_control": {
+          "exact": "209/36",
+          "decimal": 5.805555555555555
+        },
+        "expected_revenue_treatment": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "expected_surplus_loss_per_group_member": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "population_expected_lost_purchase_share": {
+          "exact": "0",
+          "decimal": 0.0
+        }
+      },
+      {
+        "group": "H",
+        "population_share": {
+          "exact": "2/5",
+          "decimal": 0.4
+        },
+        "assignment_probability": {
+          "exact": "1/2",
+          "decimal": 0.5
+        },
+        "expected_revenue_control": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        },
+        "expected_revenue_treatment": {
+          "exact": "45/4",
+          "decimal": 11.25
+        },
+        "expected_surplus_loss_per_group_member": {
+          "exact": "193/48",
+          "decimal": 4.020833333333333
+        },
+        "population_expected_lost_purchase_share": {
+          "exact": "1/20",
+          "decimal": 0.05
+        }
+      }
+    ],
+    "naive_difference": {
+      "exact": "25/12",
+      "decimal": 2.0833333333333335
+    },
+    "ipw_policy_effect": {
+      "exact": "25/12",
+      "decimal": 2.0833333333333335
+    },
+    "experiment_revenue_per_eligible": {
+      "exact": "847/120",
+      "decimal": 7.058333333333334
+    },
+    "expected_lost_purchase_share": {
+      "exact": "1/20",
+      "decimal": 0.05
+    }
+  }
+}

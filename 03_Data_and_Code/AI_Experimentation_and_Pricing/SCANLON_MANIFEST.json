@@ -1,0 +1,117 @@
+{
+  "verified_on": "2026-11-26",
+  "python": "3.14.8",
+  "commands": [
+    "python3 03_Data_and_Code/AI_Experimentation_and_Pricing/assess_personalized_pricing.py",
+    "python3 03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_targeted_experiment.py",
+    "python3 03_Data_and_Code/AI_Experimentation_and_Pricing/compare_demand_completions.py",
+    "python3 03_Data_and_Code/AI_Experimentation_and_Pricing/reconstruct_competitive_targeting.py",
+    "python3 03_Data_and_Code/AI_Experimentation_and_Pricing/compare_pricing_damages.py",
+    "python3 -m unittest discover -s 03_Data_and_Code/AI_Experimentation_and_Pricing -p 'test*.py'"
+  ],
+  "new_checks_passed": 14,
+  "existing_checks_passed": 5,
+  "upstream_code_executed": false,
+  "replication_microdata_downloaded": false,
+  "files": [
+    {
+      "path": "assess_personalized_pricing.py",
+      "sha256": "47e413cf0e2bbceaca62bba24cf9e62c1b5cac639f2228f9c5f4be449b6ac9bc",
+      "bytes": 2236
+    },
+    {
+      "path": "evaluate_targeted_experiment.py",
+      "sha256": "01e92e771fc5132e721221765af1f5c04079591e207bde3a3e501d0d675d08dc",
+      "bytes": 2422
+    },
+    {
+      "path": "compare_demand_completions.py",
+      "sha256": "a41e3d4798e53edf8eb2d49a46f12727d8d080164582bc2cb3dfddf92463e13c",
+      "bytes": 2486
+    },
+    {
+      "path": "reconstruct_competitive_targeting.py",
+      "sha256": "7f7ef65bfb624fe2fc990c69b3193d70dd7c68d4fd34477a4299529987b8d81e",
+      "bytes": 1904
+    },
+    {
+      "path": "compare_pricing_damages.py",
+      "sha256": "43d94cb35e5389da315f8cafd6a4c1c6bb497e4201f004173a9ad362a7e0f1eb",
+      "bytes": 1737
+    },
+    {
+      "path": "evaluate_pricing.py",
+      "sha256": "00cd7d09e576be595025afd3e6289a676d90a32dd863c345eb1774a9cd6c1b50",
+      "bytes": 4577
+    },
+    {
+      "path": "competitive_payoffs.json",
+      "sha256": "08d047247d544e265235cee5795e4446c99774b9a7b2f61b15d3767aeadc5e2b",
+      "bytes": 863
+    },
+    {
+      "path": "test_scanlon_pricing.py",
+      "sha256": "81f5d24d6f0ecb799e0fd4c469dc4c397aabfa52b1ac5e2f8d84ce6aae3ad132",
+      "bytes": 4647
+    },
+    {
+      "path": "scanlon_results/demand_completions.json",
+      "sha256": "3e328a944bacba2bf9bce5b0b59892140d814fdd121d2693fe8414126ce99601",
+      "bytes": 6452
+    },
+    {
+      "path": "scanlon_results/incidence.json",
+      "sha256": "96ec2e7e2f383973c53c50325521ff5416d37bfe0714001b0462d34258e6ef42",
+      "bytes": 6593
+    },
+    {
+      "path": "scanlon_results/competitive_targeting.json",
+      "sha256": "2469e8cf6e4fc76d039eb10cfb1e077545e5dec13d12eb671874ac3f0993f90d",
+      "bytes": 1258
+    },
+    {
+      "path": "scanlon_results/experiment.json",
+      "sha256": "5feff7e488d976bcf56bb61c03fb5471a3543255aaa98ab3591eb2f4b8eb241f",
+      "bytes": 3661
+    },
+    {
+      "path": "scanlon_results/damages.json",
+      "sha256": "73cefc5c407b559fd4453516e2f93db28bc8827cfd3e5339234ef14781bb30e9",
+      "bytes": 3024
+    }
+  ],
+  "material_verification": {
+    "pdfs": [
+      {
+        "path": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
+        "pages": 537,
+        "sha256": "5c795e15720749ff22c4aec1ce936c1711174220b38ba19eccf6251fb97dac15"
+      },
+      {
+        "path": "06_Lecture_Notes/Marketing_Dialectics.pdf",
+        "pages": 76,
+        "sha256": "95570b4584489f94f35c68c96b415d341db5ab96182d5e1bee51bf285ad7847f"
+      },
+      {
+        "path": "05_Slides/S09_Experiments_and_Incremental_Value.pdf",
+        "pages": 38,
+        "sha256": "6583b5015c6a25e04b2a3648773fe145700b9658fba108a61af511ff4c55422f"
+      },
+      {
+        "path": "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
+        "pages": 82,
+        "sha256": "a10200b8392cd24ad202d00125a542b4a1150182c2f412ada700e6d0922adbc1"
+      },
+      {
+        "path": "05_Slides/Marketing_Analytics_Lectures.pdf",
+        "pages": 476,
+        "sha256": "59e8b14608cc1a1b0bcbacc86917422677644def44ca4345fd789081a2677b19"
+      }
+    ],
+    "rendered_pages_visually_inspected": 82,
+    "matched_python_blocks": 120,
+    "new_figures": 4,
+    "overfull_layout_warnings": 0,
+    "scope": "Changed content, front matter, and neighboring page breaks; full PDF rebuilds and merged lecture deck."
+  }
+}

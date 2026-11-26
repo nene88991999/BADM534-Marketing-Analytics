@@ -1979,3 +1979,87 @@ if __name__ == "__main__":
 An executive can anticipate both higher rates and benefits from additional sales. Higher rates compare future charges with current charges, while a benefit may compare the future charge with a still-higher counterfactual. These claims can hold together. Testing their joint implication requires the same customer class, period, charge component, and no-project benchmark. A raw increase in a household bill does not determine the data center's causal contribution, and a nonsignificant coefficient does not remove the need to assess recovery already planned for future periods.
 
 Use a source-linked chronology to connect the proposed load, construction commitment, recovery request, approval, and billing period. The order may begin before energization and may continue after a project is delayed. The selected calls identify questions for that chronology; they do not establish the treatment histories or donor contamination of the original study. The executed collection and bill arithmetic in §5.27 can be reproduced without the study's unavailable utility panel. An empirical extension would connect project records to regulatory dockets and outcomes, preserving source conflicts and unknown dates.
+
+## 6.37 Targeted Experiments and the People Who Bear the Risk
+
+\noindent A firm can learn which pricing policy raises revenue while exposing some customers to a greater probability of an unfavorable offer. Consider the synthetic population in M9 §9.17: 60% belong to L, with valuations uniform on $6–$10, and 40% belong to H, with valuations uniform on $10–$30. Each person has one purchase opportunity, the outside option yields zero, and marginal cost is zero. The control charges everyone $19/3. The treatment charges L $6 and H $15. Group labels indicate valuation distributions; they contain no information about wealth, urgency, or moral standing.
+
+Suppose the probability of treatment is 1/4 for L and 3/4 for H, with random assignment within each group. These probabilities are constructed for the example. Dubé and Misra's validation experiment instead assigned prospects across a status quo price, an optimized uniform price, and personalization. Oversampling a randomized treatment arm does not by itself bias a treatment comparison. The composition problem here comes from assignment probabilities that differ across groups with different outcomes.
+
+The population policy effect on expected revenue is the weighted contrast
+
+$$
+\tau=\sum_{g\in\{L,H\}}w_g\{\mu_1(g)-\mu_0(g)\},
+$$
+
+where $w_g$ is the eligible population share and $\mu_z(g)$ is revenue per eligible member of group $g$ under policy $z$. Conditional randomization and positive treatment probabilities support this comparison. Revenue includes zeros for nonbuyers. Comparing the two pooled arms without adjustment produces $3.5985, while weighting the within-group contrasts by the population shares produces $2.0833. Inverse-probability weighting reproduces the latter value because each observed treatment contribution is divided by its known assignment probability.
+
+Correct inference leaves a separate decision about exposure. Under the targeted allocation, an H member faces an expected surplus loss of $6.0313 relative to always receiving the control offer. Equal assignment reduces that expected loss to $4.0208. The expected share of the entire population losing a purchase opportunity rises from 5% under balanced assignment to 7.5% under targeted assignment. Experiment revenue rises from $7.0583 to $7.5208 per eligible person. A firm that selects the latter allocation because it earns more must also explain why the additional burden on H is warranted.
+
+A Scanlonian assessment compares principles governing experimentation, including a person's prospect before assignment and the burden if the unfavorable outcome occurs. A small probability does not erase a severe outcome. Conversely, every imposition of risk does not amount to an unreasonable principle. The disagreement between ex ante and ex post contractualism requires an argument about risk, alternatives, and the purpose of the experiment; Suikkanen (2019, §§1–5) develops one proposed synthesis. A model's expected revenue criterion supplies none of these normative premises. Relevant alternatives include lower exposure, compensation, a price ceiling, and an informative design using less burdensome offers.
+
+An unbiased estimate and a precise contrast supply reasons to rely on the experimental result. The objective and allocation of exposure also require justification to the people affected. Holding all expected outcomes fixed leaves that question intact. M9 §§9.34.3–9.34.5 distinguishes instrumental rationality from reasonableness and connects the argument to pricing communication and data-center reassurance.
+
+The calculation uses exact expected cells. It contains no sampling variation or empirical standard errors. Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_targeted_experiment.py
+```
+ Its output records both the correctly weighted revenue contrast and the distribution of experimental burdens.
+
+
+Python source: [evaluate_targeted_experiment.py](../../03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_targeted_experiment.py)
+
+```python
+"""Synthetic expected cells for a stratified pricing experiment; no sampling.
+
+Assignment probabilities are invented, not the published experiment's design.
+Run: python3 03_Data_and_Code/AI_Experimentation_and_Pricing/evaluate_targeted_experiment.py
+"""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+from evaluate_pricing import GROUPS, best_uniform, demand, surplus
+
+ROOT = Path(__file__).resolve().parent
+
+
+def calculate(propensities):
+    if set(propensities) != set(GROUPS) or any(
+            not 0 < e < 1 for e in propensities.values()):
+        raise ValueError("Each group requires a known assignment probability in (0,1).")
+    base = best_uniform(list(GROUPS.values()))
+    rows = []
+    treated = control = treated_mass = control_mass = ipw = F(0)
+    for g, (w, lo, hi) in GROUPS.items():
+        e = propensities[g]
+        p1 = best_uniform([GROUPS[g]])
+        y0, y1 = base * demand(base, lo, hi), p1 * demand(p1, lo, hi)
+        cs0, cs1 = surplus(base, lo, hi), surplus(p1, lo, hi)
+        treated += w * e * y1
+        control += w * (1-e) * y0
+        treated_mass += w * e
+        control_mass += w * (1-e)
+        ipw += w * e * y1 / e - w * (1-e) * y0 / (1-e)
+        rows.append({"group": g, "population_share": w, "assignment_probability": e,
+                     "expected_revenue_control": y0, "expected_revenue_treatment": y1,
+                     "expected_surplus_loss_per_group_member": e * max(F(0), cs0-cs1),
+                     "population_expected_lost_purchase_share":
+                         w * e * max(F(0), demand(base, lo, hi)-demand(p1, lo, hi))})
+    return {"rows": rows, "naive_difference": treated/treated_mass-control/control_mass,
+            "ipw_policy_effect": ipw, "experiment_revenue_per_eligible": treated+control,
+            "expected_lost_purchase_share": sum(r["population_expected_lost_purchase_share"]
+                                                for r in rows)}
+
+
+if __name__ == "__main__":
+    results = {"data_type": "Exact synthetic expected cells, no empirical standard errors",
+               "targeted": calculate({"L": F(1, 4), "H": F(3, 4)}),
+               "balanced": calculate({"L": F(1, 2), "H": F(1, 2)})}
+    out = ROOT / "scanlon_results"
+    out.mkdir(exist_ok=True)
+    (out / "experiment.json").write_text(json.dumps(results, indent=2,
+        default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
+```
+
+Source: [Suikkanen, “Ex Ante and Ex Post Contractualism: A Synthesis”](https://doi.org/10.1007/s10892-019-09282-6). The pricing inputs are the original synthetic example in M9 §9.17. The [source assessment](../../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) distinguishes this design from the published field experiments.

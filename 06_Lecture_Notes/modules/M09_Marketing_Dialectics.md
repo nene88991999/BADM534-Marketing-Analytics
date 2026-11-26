@@ -1147,3 +1147,424 @@ A defensible argument begins with a limited factual premise: recovery plans can 
 The strongest objection is that delayed approval or public alarm may obstruct valuable investment and cost spreading. Answer it by examining credible offsets and feasible protections with the same evidential standards used for adverse claims. The negative cases retained in §5.27 matter for this reason. A principle requiring substantiation can permit beneficial investment while requiring the institution to address the household's strongest material objection. This application follows the comparison of reasons in §§9.30–9.32.
 
 Investor calls also reveal an asymmetry of participation. Management and financial analysts set the questions and categories in the public record. A resident's absence from that conversation does not establish consent, indifference, or a lack of relevant knowledge. Claims about household experience require sources suited to that experience, including consumer-counsel filings, public comments, and appropriately collected billing or interview evidence. Their interpretation still requires context and scrutiny. The qualitative reporting and reflexivity practices discussed in §5.27 make the analyst's own selection of voices open to examination. [O'Brien et al. (2014)](https://doi.org/10.1097/ACM.0000000000000388)
+
+## 9.34 A Customer Type and a Person's Reasons
+
+\noindent A seller considering individualized prices must decide which differences among customers justify different treatment. A demand model estimates how purchases vary with an offer and the information available to the seller. A person's reason for accepting that offer may depend on circumstances the model does not represent: an urgent deadline, costly search, responsibility for another person, or the absence of a usable alternative. Accurate prediction can make those circumstances commercially useful without establishing a right to exploit them.
+
+### 9.34.1 What Flexible Heterogeneity Represents
+
+\noindent Dubé and Misra approximate heterogeneous demand parameters using a rich set of observed customer features. Their empirical model retains an independent logistic disturbance that the firm does not learn for each customer. The method therefore differs from unrestricted recovery of every person's unobserved preferences. Randomized prices help identify demand responses within the experimental design, while the demand specification supports interpolation and counterfactual calculations. Flexibility in observed interactions can improve prediction and reveal differential burdens. Its presence alone supplies no theorem that estimated harm must fall.
+
+The decisive criticism concerns the interpretation placed on the fitted heterogeneity. A high willingness to pay can reflect valuable service, an urgent need, or weak alternatives. Purchase records alone need not separate these explanations. Calling all three a high-value customer type removes the distinction from the pricing objective while preserving it in the person's reasons for objecting. If the analyst then treats the omitted distinction as morally irrelevant, the conclusion follows from that normative exclusion. Better predictive fit has not established it.
+
+The paper's own results prevent a stronger universal accusation: the June 2021 revision reports a 23% decline in total customer surplus relative to optimized uniform pricing, alongside lower prices for more than 60% of customers. The authors examine inequality-sensitive aggregation and discuss fairness. Their empirical customers are employers purchasing recruitment services. A welfare calculation for an enterprise does not establish how the consequences reach owners, workers, applicants, or households. Those people and the incidence on them must be identified before making claims about vulnerability or distributive justice. [Dubé and Misra, §§2–3 and 6](https://www.nber.org/papers/w23775).
+
+### 9.34.2 Irreducible Reasons and Empirical Representation
+
+\noindent Scanlon's account of reasons allows a fact about a person's circumstances to count in favor of an action without reducing that relation to a predicted choice. His second John Locke lecture distinguishes the normative relation from a demand for unusual physical entities. The question of which people and relationships appear in a dataset is a further application to analytical representation. A feature vector is a representation of someone for a purpose; it is not a complete account of what that person is owed. [Scanlon, Lecture 2, pp. 12–14](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf).
+
+Consider two hypothetical customers who accept the same $15 offer. One values convenience and has many alternatives. The other must obtain an essential service immediately and cannot reach another provider. Their identical purchases leave the reasons for acceptance unresolved. Suppose a seller can provide a lower price profitably and uses the second person's predicament solely to extract more. A principle permitting that practice faces an objection grounded in avoidable vulnerability. The convenience buyer's reasons may differ even when the fitted demand response is identical. A morally adequate argument must examine the circumstances that distinguish the two positions.
+
+An inequality-sensitive welfare function can discipline an aggregate comparison, but its weights do not answer every objection. A high modeled surplus need not mean a person has ample income or bargaining power. Reducing that surplus does not by itself redistribute from the socially advantaged to the disadvantaged. The mapping from monetary surplus to a defensible interpersonal comparison requires support. Moreover, even an increase in an accepted social welfare function can coexist with a complaint about deception, unauthorized data use, or an avoidable severe burden.
+
+### 9.34.3 Measurement Quality and Reasons for Action
+
+\noindent A firm deciding whether to deploy a pricing rule has reasons to seek reliable evidence about its consequences. Statistical unbiasedness concerns the estimator's average across repetitions of a specified design; precision concerns its dispersion. Neither property defines fair treatment. Their practical value depends on the question being measured and the decisions that the evidence can support. An accurate estimate can protect a customer from an understated burden and protect an accused firm from a falsely attributed loss.
+
+Those evidential reasons form part of a broader justification. Suppose a firm knows demand and every monetary consequence without error. Maximizing revenue then identifies the best action for that objective. The recommendation still requires a premise explaining why the firm ought to pursue that objective under these circumstances. Reasons concerning access, authority over personal information, dependence, service viability, and available alternatives remain relevant even when sampling uncertainty disappears. Precision can establish how effectively a practice extracts payment while leaving a strong objection to the extraction itself.
+
+An analyst who moves directly from a precisely estimated revenue gain to a recommendation silently grants priority to the firm's selected objective. That priority is a normative commitment requiring defense. A Scanlonian assessment asks how the governing principle can be justified to affected people. The worth of the goal, the means of pursuing it, and the reliability of its measurement each require reasons. This application draws on Scanlon's account of irreducible normative reasons and his contractualist account of justification; it does not attribute a theory of statistical estimation to him. [Scanlon, Lecture 2](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf); [*What We Owe to Each Other*, chapter 5, §§1–2](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+### 9.34.4 Reasonable and Instrumentally Rational Choices
+
+\noindent In the instrumental sense, a rational choice effectively advances a selected aim given the available information. A seller maximizing revenue may therefore choose a high price. A customer facing an urgent need and weak alternatives may rationally accept it. These choices leave open whether a principle permitting that treatment is reasonable. Scanlon's distinction concerns the justification of principles to people with different positions and reasons. Instrumental rationality is one specified meaning of rationality; rational thought more broadly can include moral considerations. [Scanlon, chapter 5, §2, pp. 191–194](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+Consider a hypothetical seller that can profitably provide an essential service at a lower price and imposes a large surcharge solely because an urgently dependent customer has no usable alternative. Assume the prediction of acceptance is exact. The customer's acceptance can be instrumentally rational while the rule remains open to a powerful objection about avoidable exploitation. Low bargaining power can explain compliance without weakening the person's claim to justification. An objection also requires examination: the seller may identify service costs or risks that make the lower offer infeasible. Evidence resolving those facts changes the argument.
+
+Reasonableness therefore requires a comparison of principles and the objections of people who would live under them. Popularity, actual agreement, and the ability to compel acceptance are insufficient. A dissatisfied person's demand is also subject to scrutiny. Identify the burden, its importance in that person's circumstances, the feasible alternative, and the strongest objection to that alternative. State which additional fact or reason would change the conclusion. A firm ought to defend its chosen goal through this comparison even when its model predicts perfectly.
+
+![Reliable measurement supports factual premises; affected people's reasons bear on the choice of objective and permissible treatment. Compare a proposed rule with a feasible alternative and assess the objections to each.](../figures/M09_pricing_reasons.png)
+
+### 9.34.5 Pricing and Public Reassurance
+
+\noindent Personalized pricing, dynamic pricing, and public reassurance about data centers share a question about whose reasons enter a decision. The practices differ: personalization conditions prices on customer information, while dynamic pricing changes prices with time or market conditions and may offer the same current price to everyone. Public research communication changes the evidence people use to judge an infrastructure decision. Each can advance a legitimate purpose. Each also requires scrutiny when commercial success or a favorable empirical result is used to settle the treatment of affected people.
+
+In personalized pricing, the contested step connects predicted acceptance to authority to charge the predicted amount. A dependent customer can rationally purchase while reasonably objecting to avoidable exploitation. In dynamic pricing, a statement emphasizing discounts leaves the full price path, eligibility, notice, and customer alternatives to be assessed. Wendy's documented statement in §9.31 provides a communication case; whether an implemented policy harms customers requires evidence of that policy. Revenue gains and successful persuasion are insufficient to justify concealed conditions or the use of dependence.
+
+For the data-center case, first preserve the statistical criticism: the reported nonrejections do not establish negligible effects, and the public interpretation must match the paper's tables. Then grant, hypothetically, exact knowledge of the narrow historical average-price effect. Household bills, future infrastructure allocations, failed projects, and opportunities to contest those allocations remain distinct questions. The institutional mechanisms in §9.26 and utility disclosures in §5.27 identify evidence relevant to them. Nearby residents, utility customers, and eventual cost bearers also need separate identification. Perfect estimation of the narrow effect would leave those moral and institutional questions open.
+
+A firm may have an instrumental reason to secure acceptance; affected people have reasons to receive a defensible account of what they are accepting. Compare a principle allowing selected favorable evidence to close debate with one requiring proportionate substantiation, clear scope, and answers to material objections. The latter also faces objections about delay and resource costs. Defend a feasible standard that considers those burdens while preserving affected people's standing. The shared moral issue concerns whether commercial or institutional power is accompanied by reasons that others can reasonably accept. Similarities among the cases do not establish identical harms, motives, or legal violations.
+
+## 9.35 Identical Tested Demand and Opposite Welfare Conclusions
+
+\noindent A manager may ask whether a personalized price schedule benefits customers overall. Suppose a synthetic market contains 60% L and 40% H customers. An experiment reveals the following population purchase probabilities exactly. The three tested prices are $5, $10, and $20; there is no sampling error in this construction.
+
+| Group | $5 | $10 | $20 |
+|---|---:|---:|---:|
+| L | 0.90 | 0.50 | 0.10 |
+| H | 0.95 | 0.80 | 0.50 |
+
+Compare a uniform $10 price with a candidate schedule charging L $5 and H $20. These are specified policies, not estimated optimal prices. Expected revenue rises from $6.20 to $6.70 per eligible person under either demand completion below. Both completions fit every probability in the table and therefore imply the same likelihood for any binary purchase sample collected exclusively at those prices.
+
+\begin{assumption}[Demand and Money-Metric Surplus]
+\label{assumption:pricing-completions}
+Each customer buys at most one unit, has quasilinear utility in money, and faces a stable reservation value. Demand is weakly decreasing in price. The synthetic demand curves are continuous and piecewise linear between their stated knots, and reach zero at \$30.
+\end{assumption}
+
+Under Assumption \ref{assumption:pricing-completions}, the change in expected customer surplus is an area under demand. For a price increase from $a$ to $b$, the loss per eligible member of group $g$ is
+
+$$
+\ell_g(a,b)=\int_a^b q_g(p)\,dp.
+$$
+
+Here $q_g(p)$ is the purchase probability at price $p$; the area has units of dollars per eligible group member. The loss depends on demand between the endpoints. The observed endpoint probabilities restrict this area without uniquely determining it.
+
+In completion A, L demand falls from 0.90 to 0.50 between $5 and $5.10, while H demand remains at 0.80 until $19.90 before falling to 0.50 at $20. In completion B, L demand remains at 0.90 until $9.90, while H demand falls to 0.50 by $10.10. All other plotted endpoint values agree. The narrow transition intervals make the contrast visible while preserving continuous demand.
+
+| Completion | L Gain per Member | H Loss per Member | Population Surplus Change |
+|---|---:|---:|---:|
+| A | $2.520 | $7.985 | −$1.682 |
+| B | $4.480 | $5.015 | +$0.682 |
+
+Monotonicity alone bounds the population change between −$1.70 and +$0.70. A price model selects a shape within, or more restrictively than, this set. Comparing fitted model classes and expanding experimental price support can narrow the uncertainty. A favorable interpolation is consequential evidence about an assumption, even if its prediction score ties an unfavorable interpolation at every tested price.
+
+The H group loses surplus in both completions. An aggregate sign reversal therefore leaves an identifiable distributional concern intact. These calculations establish a specific identification problem under finite price support; they do not establish a direction of bias in Dubé and Misra's estimates. Their logit specification supplies structure that the endpoint probabilities alone lack. The appropriate scrutiny is whether the welfare conclusion survives defensible alternative structure, price support, and treatment of affected people.
+
+![Two demand completions agree at the tested prices but place different areas beneath demand between them. Dashed orange and solid blue curves distinguish the completions in each group.](../figures/M09_demand_completions.png)
+
+Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/AI_Experimentation_and_Pricing/compare_demand_completions.py
+```
+ The program integrates the piecewise-linear curves exactly and saves the endpoints, knots, group changes, and monotonicity bounds.
+
+
+Python source: [compare_demand_completions.py](../../03_Data_and_Code/AI_Experimentation_and_Pricing/compare_demand_completions.py)
+
+```python
+"""Two synthetic demand completions match every tested purchase probability.
+
+Unit demand, quasilinear money utility, stable demand, prices in dollars.
+Run: python3 03_Data_and_Code/AI_Experimentation_and_Pricing/compare_demand_completions.py
+"""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+WEIGHTS = {"L": F(3, 5), "H": F(2, 5)}
+OBSERVED = {"L": {5: F(9, 10), 10: F(1, 2), 20: F(1, 10)},
+            "H": {5: F(19, 20), 10: F(4, 5), 20: F(1, 2)}}
+
+
+def curves(world):
+    if world not in ("negative_change", "positive_change"):
+        raise ValueError("Unknown synthetic completion.")
+    low_knot = (F(51, 10), F(1, 2)) if world == "negative_change" else (F(99, 10), F(9, 10))
+    high_knot = (F(199, 10), F(4, 5)) if world == "negative_change" else (F(101, 10), F(1, 2))
+    return {"L": [(F(0), F(1)), (F(5), F(9, 10)), low_knot,
+                  (F(10), F(1, 2)), (F(20), F(1, 10)), (F(30), F(0))],
+            "H": [(F(0), F(1)), (F(5), F(19, 20)), (F(10), F(4, 5)),
+                  high_knot, (F(20), F(1, 2)), (F(30), F(0))]}
+
+
+def integral(points, left, right):
+    """Exact trapezoid integral on a piecewise-linear demand curve."""
+    total = F(0)
+    for (x0, y0), (x1, y1) in zip(points, points[1:]):
+        a, b = max(left, x0), min(right, x1)
+        if a < b:
+            ya = y0 + (y1-y0) * (a-x0)/(x1-x0)
+            yb = y0 + (y1-y0) * (b-x0)/(x1-x0)
+            total += (b-a) * (ya+yb)/2
+    return total
+
+
+def calculate():
+    results = {}
+    for world in ("negative_change", "positive_change"):
+        points = curves(world)
+        gain = integral(points["L"], F(5), F(10))
+        loss = integral(points["H"], F(10), F(20))
+        results[world] = {"demand_points": points, "L_surplus_gain": gain,
+                          "H_surplus_loss": loss,
+                          "population_surplus_change": WEIGHTS["L"]*gain-WEIGHTS["H"]*loss}
+    return {"data_type": "Synthetic population probabilities; no sample estimates",
+            "observed_probabilities": OBSERVED, "worlds": results,
+            "uniform_revenue": F(31, 5), "targeted_revenue": F(67, 10),
+            "monotonic_surplus_change_bounds": [F(-17, 10), F(7, 10)]}
+
+
+if __name__ == "__main__":
+    out = ROOT / "scanlon_results"
+    out.mkdir(exist_ok=True)
+    (out / "demand_completions.json").write_text(json.dumps(calculate(), indent=2,
+        default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
+```
+
+## 9.36 Majority Benefits and a Feasible Alternative
+
+\noindent Return to the uniform-valuation model in §9.17, which is distinct from the endpoint construction in §9.35. A firm can choose the optimal uniform price, segmented prices, or a discount-only schedule capped at the optimal uniform price. The comparison holds population shares, valuation distributions, marginal cost, and the outside option fixed.
+
+| Policy | Profit per Eligible Person | Customer Surplus per Eligible Person | Population Losing a Purchase |
+|---|---:|---:|---:|
+| Uniform | $6.0167 | $6.4750 | 0% |
+| Segmented | $8.1000 | $3.4500 | 10% |
+| Discount Only | $6.1333 | $6.6667 | 0% |
+
+Segmentation benefits 60% of people through the lower L price. Each H member nevertheless loses $193/24, or $8.0417, in expected surplus; one quarter of H, equal to 10% of the population, ceases buying. The lower price gives each L member an expected gain of $23/72, or $0.3194. Counting winners treats these unequal amounts as equal votes and suppresses the distinction between a small gain and losing access.
+
+The discount-only alternative makes the objection concrete. It preserves the L price reduction, increases profit by $0.1167 per eligible person relative to uniform pricing, and leaves H's offer unchanged. Choosing the segmented schedule instead earns an additional $1.9667 per eligible person. That opportunity cost is relevant to the firm's reasons, but it does not establish that imposing H's burden is necessary for service viability. The synthetic zero-cost model establishes a feasible comparison within its own setting; an empirical assessment must include fixed costs, capacity, and investment incentives.
+
+A contractualist argument now requires a defended principle. Consider a principle allowing firms to exploit a customer's urgent need whenever doing so raises expected profit, even when a viable less burdensome offer exists. A person facing a serious avoidable deprivation has a strong reason to reject that principle. The competing objection must identify the people whose legitimate interests would be impaired by the alternative and the seriousness of that impairment. Additional shareholder income does not acquire unlimited moral weight because many shareholders receive it. Equally, a dollar loss to a comfortable customer cannot simply be relabeled an essential deprivation. The facts about need must be established.
+
+A defensible conclusion is conditional and forceful: when the higher price exploits serious need, the lower offer remains viable, and no comparably serious countervailing burden is shown, the seller ought to adopt the less burdensome offer. Refusing to examine need while declaring the pricing rule justified would exclude the very facts on which the objection depends. Scanlon's water-owner example makes a related distinction between a person's weak bargaining position and the strength of their claim to reasonable terms. [Scanlon, *What We Owe to Each Other*, chapter 5, especially p. 192](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+![Synthetic pricing incidence separates the majority's modest gain from H's larger loss and compares both with a profitable discount-only alternative.](../figures/M09_pricing_incidence.png)
+
+Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/AI_Experimentation_and_Pricing/assess_personalized_pricing.py
+```
+ The output retains nonbuyers and reports group and population denominators separately. M6 §6.37 applies the same population to experimental exposure.
+
+
+Python source: [assess_personalized_pricing.py](../../03_Data_and_Code/AI_Experimentation_and_Pricing/assess_personalized_pricing.py)
+
+```python
+"""Exact synthetic incidence: one purchase opportunity, dollars, zero cost.
+
+Python 3.10+, standard library; imports the adjacent pricing example.
+Run: python3 03_Data_and_Code/AI_Experimentation_and_Pricing/assess_personalized_pricing.py
+"""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+from evaluate_pricing import GROUPS, best_uniform, demand, evaluate, surplus
+
+ROOT = Path(__file__).resolve().parent
+
+
+def calculate():
+    base = best_uniform(list(GROUPS.values()))
+    segmented = {g: best_uniform([cell]) for g, cell in GROUPS.items()}
+    policies = {"uniform": {g: base for g in GROUPS},
+                "segmented": segmented,
+                "discount_only": {g: min(p, base) for g, p in segmented.items()}}
+    totals, incidence = {}, []
+    for policy, prices in policies.items():
+        totals[policy] = {"prices": prices, **evaluate(prices, base)}
+        for g, (weight, lo, hi) in GROUPS.items():
+            q0, q1 = demand(base, lo, hi), demand(prices[g], lo, hi)
+            delta = surplus(prices[g], lo, hi) - surplus(base, lo, hi)
+            incidence.append({"policy": policy, "group": g,
+                              "population_share": weight, "price": prices[g],
+                              "surplus_change_per_group_member": delta,
+                              "population_surplus_contribution": weight * delta,
+                              "lost_purchase_share_within_group": max(F(0), q0-q1),
+                              "population_lost_purchase_share": weight * max(F(0), q0-q1)})
+    return {"data_type": "Synthetic uniform valuations; all eligible people included",
+            "benchmark_price": base, "policies": totals, "incidence": incidence,
+            "foregone_profit_from_cap_per_eligible":
+                totals["segmented"]["profit_per_eligible_customer"] -
+                totals["discount_only"]["profit_per_eligible_customer"],
+            "moral_scope": "Amounts inform reasons; no numerical moral verdict"}
+
+
+if __name__ == "__main__":
+    out = ROOT / "scanlon_results"
+    out.mkdir(exist_ok=True)
+    (out / "incidence.json").write_text(json.dumps(calculate(), indent=2,
+        default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
+```
+
+## 9.37 Dubé's Mobile Targeting Case and Kantian Authority
+
+\noindent A theater can use a person's current location and past visits to choose a coupon. Dubé, Fang, Fong, and Luo (2017) study two competing theaters using a randomized mobile promotion experiment. Their historical-visit classification uses at least 90 minutes of dwell time and a preceding two-month window; the sample contains 18,000 subscribers across 36 cells. Promotional voucher purchases and control-group inferred visits are different measurement procedures. The authors acknowledge that vouchers were not observed at redemption and that the untreated control also lacks an SMS promotion. These details matter when interpreting a purchase response as a price effect or a completed movie visit. [Published article, §§3–4](https://www.fox.temple.edu/sites/fox/files/competitive-price-targeting-pub.pdf).
+
+### 9.37.1 What the Published Game Establishes
+
+\noindent Table 9 reports expected revenue per messaged consumer for each combination of targeting choices. Reconstructing the best responses from its rounded entries yields one pure-strategy equilibrium: both theaters select behavioral targeting. Compared with uniform pricing, theater A gains RMB 0.019 and theater B gains RMB 0.035 per messaged consumer, approximately 0.97% and 1.20%. Theater A's advantage over a geobehavioral deviation when B uses behavioral targeting is only RMB 0.001 in the rounded table. The paper reports a 40% posterior probability that this deviation would improve A's profit. The rounded optimum is consequently distinct from certainty about the strategic ranking. [Dubé et al., Table 9 and discussion, p. 965](https://doi.org/10.1287/mksc.2017.1042).
+
+A Nash equilibrium describes incentives given the modeled strategies and payoffs. The customer's authority over the use of location history is absent from this payoff matrix. Reconstructing the equilibrium therefore cannot settle that authority. Nor does a modeled softening of price competition establish an unlawful agreement. The same arithmetic can appear in an analysis of independent strategic conduct, and a legal case needs evidence about how the firms actually coordinate or compete.
+
+Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/AI_Experimentation_and_Pricing/reconstruct_competitive_targeting.py
+```
+ The program reads `competitive_payoffs.json`, which transcribes the 16 rounded payoff pairs from Table 9. It reconstructs the published-table calculation; it does not re-estimate demand or reproduce posterior uncertainty from individual records.[^replication-terms]
+
+
+Python source: [reconstruct_competitive_targeting.py](../../03_Data_and_Code/AI_Experimentation_and_Pricing/reconstruct_competitive_targeting.py)
+
+```python
+"""Best responses from published rounded Table 9, not microdata replication.
+
+Python 3.10+, standard library. Units are RMB revenue per messaged consumer.
+Run: python3 03_Data_and_Code/AI_Experimentation_and_Pricing/reconstruct_competitive_targeting.py
+"""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def calculate():
+    source = json.loads((ROOT / "competitive_payoffs.json").read_text())
+    names = source["strategies"]
+    a = [[F(cell[0]) for cell in row] for row in source["payoffs"]]
+    b = [[F(cell[1]) for cell in row] for row in source["payoffs"]]
+    n = len(names)
+    best_a = {names[j]: [names[i] for i in range(n)
+                         if a[i][j] == max(a[k][j] for k in range(n))] for j in range(n)}
+    best_b = {names[i]: [names[j] for j in range(n)
+                         if b[i][j] == max(b[i])] for i in range(n)}
+    equilibria = [(names[i], names[j]) for i in range(n) for j in range(n)
+                 if names[i] in best_a[names[j]] and names[j] in best_b[names[i]]]
+    return {"source": source["source"], "units": source["units"],
+            "best_responses_A": best_a, "best_responses_B": best_b,
+            "pure_equilibria_from_rounded_payoffs": equilibria,
+            "behavioral_vs_uniform_revenue_gains":
+                {"A": a[2][2]-a[0][0], "B": b[2][2]-b[0][0]},
+            "relative_gains": {"A": a[2][2]/a[0][0]-1, "B": b[2][2]/b[0][0]-1},
+            "A_behavioral_vs_geobehavioral_gap_when_B_behavioral": a[2][2]-a[3][2],
+            "scope": "Static estimated game; no posterior draws, privacy values, or permission measure"}
+
+
+if __name__ == "__main__":
+    out = ROOT / "scanlon_results"
+    out.mkdir(exist_ok=True)
+    (out / "competitive_targeting.json").write_text(json.dumps(calculate(), indent=2,
+        default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
+```
+
+### 9.37.2 Specify the Maxim Before Judging the Practice
+
+\noindent Consider the hypothetical maxim: use a customer's location history to increase revenue while concealing a material use that the customer would otherwise have a meaningful opportunity to refuse. The moral objection concerns the deliberate defeat of informed choice. Under Kant's Formula of Humanity, treating someone merely as a means concerns how their rational agency enters the action, not merely whether the firm obtains a benefit. A transaction can benefit both parties while deception prevents one party from authorizing a material feature of it. Kant's discussion of false promising also makes the agent's reliance on another person's mistaken understanding relevant to universalization. [Kant, *Groundwork*, second section, Academy 4:421–430](https://www.earlymoderntexts.com/assets/pdfs/kant1785.pdf).
+
+The published payoff table does not establish that the hypothetical concealment occurred. A factual assessment would examine notices, permissions, data provenance, secondary uses, retention, and the possibility of refusing tracking while obtaining service. An opt-in program offering understandable discounts and usable alternatives poses a different maxim. Profit seeking and differentiated prices alone are insufficient to establish treatment merely as a means. The criticism becomes strongest when it identifies an actual mechanism that bypasses deliberation or exploits dependence, and then demonstrates that a feasible practice respects those capacities.
+
+A company could answer that location targeting provides valuable discounts and more relevant offers. That defense supports a benefit claim. To support a claim of permissible conduct, it must also explain the authority to use the information and the treatment of people who decline. Making benefits conditional on avoidable surrender of control can itself be objectionable when the person lacks a reasonable alternative. An offered discount does not purchase an unrestricted moral license over the recipient's history.
+
+### 9.37.3 Reasons for Restricting Independent Scrutiny
+
+\noindent People affected by a pricing recommendation have reasons to want independent examination of the evidence used to justify it. A restriction requiring permission for additional analysis or narrowing the outlet for a corrective result places control over scrutiny with parties connected to the original research. Authors and data providers may invoke privacy, contractual obligations, or protection against misleading reuse. Each reason should be connected to the particular restriction it is claimed to justify.
+
+Privacy can support removing identifiers, secure access, or review for disclosure risk. Those measures do not by themselves require control over a critic's conclusion or choice of publication venue. If a narrower safeguard protects the relevant interests while permitting competent independent assessment, a broader restriction faces a reasonable objection from affected people and researchers. The ethical criticism concerns whether the restriction is necessary and proportionate to a defensible purpose. Its existence alone does not establish that the underlying analysis is wrong.
+
+## 9.38 Pricing Evidence in a U.S. Antitrust Case
+
+\noindent An investigator considering a firm that uses individualized pricing needs to identify the conduct said to restrict competition. A paper on profitable targeting can supply hypotheses, estimands, and methods for evaluating effects. Publication, citation, or adoption of the method supplies no inference that its authors or users joined an unlawful scheme. The legal comparison must concern the defendant's conduct, the relevant market, and the claimed injury.
+
+### 9.38.1 Agreement, Exclusion, and Differential Prices
+
+\noindent Section 1 of the Sherman Act requires concerted conduct. In *Bell Atlantic v. Twombly*, 550 U.S. 544, 553–557 (2007), the Court distinguishes parallel behavior from facts plausibly suggesting agreement. For a shared pricing service, relevant evidence could include agreements to exchange competitors' sensitive nonpublic data, commitments governing recommendations, communications about pricing, and mechanisms discouraging independent reductions. A vendor's presence or correlated prices alone does not decide the issue. [*Twombly*, majority opinion](https://www.law.cornell.edu/supct/html/05-1126.ZO.html).
+
+Section 2 requires monopoly power and exclusionary conduct for a monopolization claim. *Verizon v. Trinko*, 540 U.S. 398, 407 (2004), explains why monopoly pricing by itself is insufficient. A theory involving targeted exclusion must establish its own mechanism and legal requirements; a high personalized price does not supply them. Robinson–Patman has a different scope: its price-discrimination provisions concern qualifying sales of commodities and competitive injury, with defenses including cost justification and meeting competition. Recruitment services and movie admissions do not become covered commodities simply because their prices differ across customers. [*Trinko*](https://www.law.cornell.edu/supremecourt/text/02-682); [FTC guidance](https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/price-discrimination-robinson-patman-violations).
+
+Ezrachi and Stucke (2017) distinguish algorithms that carry out an existing agreement, a common intermediary, predictable strategic responses, and autonomous learning. Their taxonomy helps organize competing mechanisms and the evidence each requires. The possibility of tacit coordination creates a policy question where existing agreement requirements may leave a gap. It does not convert every independent pricing algorithm into an established Section 1 violation. [“Artificial Intelligence & Collusion,” §§III–IV](https://illinoislawreview.org/print/vol-2017-no-5/artificial-intelligence-collusion/).
+
+### 9.38.2 A Hypothetical Investigation
+
+\noindent Suppose competing service firms use a common vendor. The allegation is that they agree to pool recent confidential transaction data and accept recommendations that suppress independent price cuts. Request the contracts, feature definitions, data timestamps, pricing logs, overrides, and communications. Preserve version histories so that a recommendation can be linked to the information available when it was made. Compare the alleged arrangement with a feasible world in which each firm chooses independently using its own permitted information and lawful public information.
+
+Estimate net prices, quantities, entry, switching, and customer-specific burdens under that comparison. Randomized price variation can identify demand responses in its support; identifying the effect of the challenged coordination requires variation or structural restrictions tied to that conduct. If adoption responds to declining demand, a before-and-after price comparison mixes the conduct with the adoption decision. If rival responses spill into control markets, treating those controls as unaffected can conceal part of the effect. Firm or market clustering and pre-specified subgroup definitions should follow the actual assignment and dependence structure.
+
+Flexible customer effects require particular care. A stable pre-conduct customer effect can control legitimate heterogeneity. A model that explains every post-adoption price increase through newly fitted customer types may absorb the mechanism under investigation. Similarly, post-conduct willingness to pay can reflect reduced alternatives caused by the alleged arrangement. Holding that state fixed in the lawful counterfactual would preserve part of the alleged harm. Assess feature timing, overlap, invariance, rival substitution, and fit across competing counterfactual models. This is a specified risk of an analytical design, not a universal defect of flexible demand models.
+
+The RealPage litigation supplies a documented example of allegations about nonpublic information and pricing alignment. DOJ's November 24, 2025 Competitive Impact Statement describes those allegations and proposed restrictions on runtime inputs, model training, and price-alignment features. The DOJ case page checked November 26, 2026 continues to label the RealPage document a proposed final judgment and separately lists an entered Greystar judgment dated March 2, 2026. A proposal and an entered judgment have different status; neither is a finding that any firm using Dubé or Misra's methods violated the law. [DOJ case record](https://www.justice.gov/atr/case/us-and-plaintiff-states-v-realpage-inc); [RealPage Competitive Impact Statement, §§II–III](https://www.justice.gov/atr/media/1419471/dl?inline=).
+
+### 9.38.3 Revenue, Overcharge, and Excluded Customers
+
+\noindent Suppose an invented service market would sell 100 units at a lawful counterfactual price of $100, while the challenged conduct yields 92 sales at $120. Assume for the arithmetic that the entire $20 price difference is attributable to the challenged conduct. Revenue rises from $10,000 to $11,040. The signed invoice difference on the 92 actual purchases is $1,840. Revenue growth of $1,040 subtracts the $800 associated with eight fewer units at the benchmark price; it understates that invoice difference.
+
+For actual purchased quantities $q_i$ and prices $p_i$, the relevant arithmetic is
+
+$$
+D=\sum_i q_i(p_i-p_i^{\mathrm{lawful}}).
+$$
+
+The counterfactual $p_i^{\mathrm{lawful}}$ is the price for the same relevant transaction absent the challenged unlawful conduct. A revenue-maximizing uniform monopoly price from §9.17 is not automatically that benchmark. At $110, the illustrative invoice difference falls to $920; at $120 it is zero. Eight excluded purchases also matter for welfare and a Scanlonian assessment, but their lost surplus cannot be recovered from invoice arithmetic without further information about valuations and alternatives. Legal standing and available relief require separate analysis.
+
+*Brunswick v. Pueblo Bowl-O-Mat*, 429 U.S. 477, 489 (1977), requires injury of the kind antitrust law protects against that flows from the anticompetitive aspect of the conduct. *Comcast v. Behrend*, 569 U.S. 27, 35–38 (2013), requires the damages model in that class-certification setting to match the accepted liability theory. Together they discipline the move from an observed loss to a legally attributable damages claim. [*Brunswick*](https://www.law.cornell.edu/supremecourt/text/429/477); [*Comcast*](https://www.law.cornell.edu/supremecourt/text/11-864).
+
+Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/AI_Experimentation_and_Pricing/compare_pricing_damages.py
+```
+ The program checks the revenue decomposition and varies the assumed lawful price. All values are synthetic; the output is untrebled arithmetic under explicit counterfactuals.
+
+
+Python source: [compare_pricing_damages.py](../../03_Data_and_Code/AI_Experimentation_and_Pricing/compare_pricing_damages.py)
+
+```python
+"""Synthetic invoice arithmetic under an assumed lawful price counterfactual.
+
+One period, identical service units, USD. No actual firm, violation, or damages estimate.
+Run: python3 03_Data_and_Code/AI_Experimentation_and_Pricing/compare_pricing_damages.py
+"""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def calculate(but_for_price=F(100), paid_price=F(120),
+              actual_units=92, but_for_units=100):
+    if min(but_for_price, paid_price, actual_units, but_for_units) < 0:
+        raise ValueError("Prices and quantities must be nonnegative.")
+    gap = paid_price - but_for_price
+    revenue_change = paid_price*actual_units - but_for_price*but_for_units
+    return {"assumed_lawful_but_for_price": but_for_price, "paid_price": paid_price,
+            "actual_units": actual_units, "assumed_but_for_units": but_for_units,
+            "signed_invoice_difference": gap * actual_units,
+            "revenue_change": revenue_change,
+            "quantity_component_at_but_for_price": but_for_price*(actual_units-but_for_units),
+            "unserved_units": max(0, but_for_units-actual_units)}
+
+
+if __name__ == "__main__":
+    results = {"data_type": "Invented invoices and counterfactuals, not estimated damages",
+               "central": calculate(),
+               "benchmark_sensitivity": {str(p): calculate(F(p)) for p in [95, 100, 110, 120]},
+               "scope": "Attribution to unlawful conduct must be established separately; no trebling"}
+    out = ROOT / "scanlon_results"
+    out.mkdir(exist_ok=True)
+    (out / "damages.json").write_text(json.dumps(results, indent=2,
+        default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
+```
+
+## 9.39 Antitrust Institutions and Reasonable Rejection
+
+\noindent A person facing coordinated prices can object that nominal choice among sellers no longer provides meaningful independent alternatives. The burden includes the extra payment, time spent searching, and the possibility of losing access. A Scanlonian argument asks whether a principle permitting that coordination can be justified to people in that position compared with feasible rules protecting independent choice. The strength of the objection depends on the good, the person's circumstances, and the available alternatives. Market participation gives a firm information about demand; it does not erase the participant's standing to demand reasons.
+
+### 9.39.1 Connect Each Legal Requirement to a Reason
+
+\noindent The agreement requirement separates a firm's independent decisions from a restriction jointly imposed by competitors. A contractualist argument for rules against coordinated extraction appeals to each person's interest in meaningful alternatives and fair terms of cooperation. The firms' objections may invoke service costs, useful forecasting, security, and investment. Those interests support examining less restrictive arrangements, such as analytics using a firm's own data, while preserving the ability to offer independent discounts. Whether a particular arrangement is lawful still depends on the governing doctrine and evidence.
+
+Causal attribution and damages requirements also protect persons. A customer has a reason to seek a remedy for an attributable loss. Workers, owners, and other customers of an accused firm have reasons to reject sanctions based on unsupported accusations or losses caused by unrelated events. A rigorous counterfactual protects both positions. This does not require customers to prove every moral concern through a completed lawsuit; it explains why suspicion, a moral objection, a pleading, a liability finding, and a damages award carry different evidentiary burdens.
+
+An aggregate welfare improvement supplies a further objection to consider, rather than an automatic answer. A large number of modest benefits may coexist with serious avoidable harm to an identifiable person. Conversely, preventing every differentiated price could remove discounts or make valuable service unviable. Compare principles that specify permissible information, customer authority, price safeguards, and opportunities for redress. The relevant question is whether anyone has a reasonable objection to the general rule in light of the alternatives, including people excluded from the transaction data.
+
+![Legal proof and moral justification have related but distinct premises. The diagram connects an attributable competitive injury and a feasible remedy to the burdens of affected people, while retaining evidentiary safeguards for an accused firm.](../figures/M09_antitrust_reasons.png)
+
+### 9.39.2 A Worked Argument for a Remedy
+
+\noindent Suppose an investigation establishes an agreement suppressing independent discounts, a resulting $20 overcharge, and a feasible remedy allowing useful forecasting while ending the restrictive exchange. The factual premise identifies the coordinated restriction and attributable burden. The normative premise is that firms ought to preserve meaningful independent alternatives when restricting them imposes avoidable substantial burdens and no comparably serious interest requires the restriction. The conclusion is that the firms ought to end the restrictive arrangement and support an appropriate remedy for attributable harm. A legal remedy additionally requires the court's findings and the applicable remedial standards.
+
+The strongest defense would identify a concrete benefit that depends on the challenged feature, explain why a less restrictive arrangement cannot provide it, and state who would bear the burden of removal. The response should evaluate that claim with cost, service, and market evidence. If the feature merely increases extraction while the useful forecasting remains available without it, the proposed defense fails on its own necessity premise. If removal would cause serious service losses, the principle or remedy requires further comparison. Reasonable rejection is a discipline of giving and answering reasons; it is not a numerical loss threshold or an unconditional personal veto.
+
+### 9.39.3 Legal Permission and What a Firm Ought to Do
+
+\noindent U.S. antitrust law does not prohibit every form of unilateral exploitation. That legal boundary can leave a pricing practice open to a powerful moral objection. A seller may comply with the agreement requirement while using inferred urgency to impose an avoidable burden on someone with weak alternatives. The person can reasonably demand a justification even when a Section 1 case fails. Equally, a Kantian objection to concealed tracking does not supply the missing agreement element.
+
+Institutional reform must also answer objections. A proposed rule could require documented independent pricing, a usable option to refuse secondary data use, preservation of decision logs, and accessible complaint handling. Students should specify who pays the compliance cost, whether the rule preserves useful discounts, how the affected person can challenge errors, and whether the remedy reaches those excluded from buying. The moral case for reform draws on these reasons. It cannot be established solely by the profitability of the practice or by the fact that existing law permits it.
+
+[^replication-terms]: The [INFORMS download terms](https://services.informs.org/dataset/mksc/download.php?doi=mksc.2017.1042), checked November 26, 2026, permit verification of the main results using the same data and models. They restrict other uses without author or data-originator permission and direct follow-up articles correcting central results to *Marketing Science*. These conditions narrow independent reuse and publication routes for critical assessment; they do not prohibit every critical replication.

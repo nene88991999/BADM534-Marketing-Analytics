@@ -1294,3 +1294,11 @@ A favorable description can also change the comparison readers make about pricin
 
 
 Infrastructure assurances also require qualitative evidence about planned recovery and customer allocation. The public-disclosure comparison in §5.27 preserves forecasts, requests, regulatory evidence, and offsetting claims. Its connection to the household's claim to reasons appears in §9.33.
+
+## 8.32 Pricing Evidence, Customer Reasons, and Competition
+
+\noindent A pricing model can reveal a profitable policy while leaving its justification unresolved. M9 §§9.34–9.36 separate rich customer features, assumptions about demand between tested prices, and the reasons of people who bear a price increase. The synthetic examples show how identical tested demand can support opposite aggregate welfare conclusions and how a majority of beneficiaries can coexist with a substantial minority burden. A profitable discount-only alternative makes the comparison between principles concrete.
+
+The choice of objective requires the same scrutiny as the evidence used to pursue it. Suppose its predicted outcomes become known exactly. The reasons concerning customer authority, access, and avoidable burdens remain. Instrumental success and a person's strategic acceptance therefore leave the reasonableness of the governing principle unresolved. M9 §§9.34.3–9.34.4 develops that distinction through a dependent customer's objection and the seller's strongest defense.
+
+Dubé and coauthors' mobile-targeting case in M9 §9.37 adds current location, historical visits, and competitive responses. Its published payoff table supports a reconstruction of firms' incentives. Kantian assessment also examines authority over data use and meaningful refusal. M9 §§9.38–9.39 connect pricing evidence to a hypothetical U.S. antitrust case: an agreement or exclusionary mechanism, a lawful counterfactual, attributable injury, and the reasons supporting an appropriate remedy. Existing legal permission can leave a serious moral objection unanswered.

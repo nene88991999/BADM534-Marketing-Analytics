@@ -1,0 +1,292 @@
+{
+  "data_type": "Synthetic uniform valuations; all eligible people included",
+  "benchmark_price": {
+    "exact": "19/3",
+    "decimal": 6.333333333333333
+  },
+  "policies": {
+    "uniform": {
+      "prices": {
+        "L": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        },
+        "H": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        }
+      },
+      "profit_per_eligible_customer": {
+        "exact": "361/60",
+        "decimal": 6.016666666666667
+      },
+      "surplus_per_eligible_customer": {
+        "exact": "259/40",
+        "decimal": 6.475
+      },
+      "total_surplus_per_eligible_customer": {
+        "exact": "1499/120",
+        "decimal": 12.491666666666667
+      },
+      "purchase_share": {
+        "exact": "19/20",
+        "decimal": 0.95
+      },
+      "strictly_better_share": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "strictly_worse_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    },
+    "segmented": {
+      "prices": {
+        "L": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "H": {
+          "exact": "15",
+          "decimal": 15.0
+        }
+      },
+      "profit_per_eligible_customer": {
+        "exact": "81/10",
+        "decimal": 8.1
+      },
+      "surplus_per_eligible_customer": {
+        "exact": "69/20",
+        "decimal": 3.45
+      },
+      "total_surplus_per_eligible_customer": {
+        "exact": "231/20",
+        "decimal": 11.55
+      },
+      "purchase_share": {
+        "exact": "9/10",
+        "decimal": 0.9
+      },
+      "strictly_better_share": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "strictly_worse_share": {
+        "exact": "2/5",
+        "decimal": 0.4
+      }
+    },
+    "discount_only": {
+      "prices": {
+        "L": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "H": {
+          "exact": "19/3",
+          "decimal": 6.333333333333333
+        }
+      },
+      "profit_per_eligible_customer": {
+        "exact": "92/15",
+        "decimal": 6.133333333333334
+      },
+      "surplus_per_eligible_customer": {
+        "exact": "20/3",
+        "decimal": 6.666666666666667
+      },
+      "total_surplus_per_eligible_customer": {
+        "exact": "64/5",
+        "decimal": 12.8
+      },
+      "purchase_share": {
+        "exact": "1",
+        "decimal": 1.0
+      },
+      "strictly_better_share": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "strictly_worse_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    }
+  },
+  "incidence": [
+    {
+      "policy": "uniform",
+      "group": "L",
+      "population_share": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "price": {
+        "exact": "19/3",
+        "decimal": 6.333333333333333
+      },
+      "surplus_change_per_group_member": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_surplus_contribution": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "lost_purchase_share_within_group": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_lost_purchase_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    },
+    {
+      "policy": "uniform",
+      "group": "H",
+      "population_share": {
+        "exact": "2/5",
+        "decimal": 0.4
+      },
+      "price": {
+        "exact": "19/3",
+        "decimal": 6.333333333333333
+      },
+      "surplus_change_per_group_member": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_surplus_contribution": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "lost_purchase_share_within_group": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_lost_purchase_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    },
+    {
+      "policy": "segmented",
+      "group": "L",
+      "population_share": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "price": {
+        "exact": "6",
+        "decimal": 6.0
+      },
+      "surplus_change_per_group_member": {
+        "exact": "23/72",
+        "decimal": 0.3194444444444444
+      },
+      "population_surplus_contribution": {
+        "exact": "23/120",
+        "decimal": 0.19166666666666668
+      },
+      "lost_purchase_share_within_group": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_lost_purchase_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    },
+    {
+      "policy": "segmented",
+      "group": "H",
+      "population_share": {
+        "exact": "2/5",
+        "decimal": 0.4
+      },
+      "price": {
+        "exact": "15",
+        "decimal": 15.0
+      },
+      "surplus_change_per_group_member": {
+        "exact": "-193/24",
+        "decimal": -8.041666666666666
+      },
+      "population_surplus_contribution": {
+        "exact": "-193/60",
+        "decimal": -3.216666666666667
+      },
+      "lost_purchase_share_within_group": {
+        "exact": "1/4",
+        "decimal": 0.25
+      },
+      "population_lost_purchase_share": {
+        "exact": "1/10",
+        "decimal": 0.1
+      }
+    },
+    {
+      "policy": "discount_only",
+      "group": "L",
+      "population_share": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "price": {
+        "exact": "6",
+        "decimal": 6.0
+      },
+      "surplus_change_per_group_member": {
+        "exact": "23/72",
+        "decimal": 0.3194444444444444
+      },
+      "population_surplus_contribution": {
+        "exact": "23/120",
+        "decimal": 0.19166666666666668
+      },
+      "lost_purchase_share_within_group": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_lost_purchase_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    },
+    {
+      "policy": "discount_only",
+      "group": "H",
+      "population_share": {
+        "exact": "2/5",
+        "decimal": 0.4
+      },
+      "price": {
+        "exact": "19/3",
+        "decimal": 6.333333333333333
+      },
+      "surplus_change_per_group_member": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_surplus_contribution": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "lost_purchase_share_within_group": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "population_lost_purchase_share": {
+        "exact": "0",
+        "decimal": 0.0
+      }
+    }
+  ],
+  "foregone_profit_from_cap_per_eligible": {
+    "exact": "59/30",
+    "decimal": 1.9666666666666666
+  },
+  "moral_scope": "Amounts inform reasons; no numerical moral verdict"
+}

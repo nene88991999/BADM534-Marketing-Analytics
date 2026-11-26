@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=5.6cm,minimum height=1.1cm] (l) at (3.1,0)
+ {\textbf{Legal Proof}\\Conduct, competition,\\causation, and injury.};
+\node[orangebox,text width=5.6cm,minimum height=1.1cm] (m) at (9.7,0)
+ {\textbf{Reasonable Rejection}\\People, burdens, alternatives,\\and a defended principle.};
+\node[box,text width=5.6cm,minimum height=1.3cm] (e) at (3.1,-2.3)
+ {\textbf{Evidence About the Mechanism}\\Contracts, inputs, overrides,\\and rival responses.};
+\node[orangebox,text width=5.6cm,minimum height=1.3cm] (p) at (9.7,-2.3)
+ {\textbf{Reasons on Both Sides}\\Access, choice, viability,\\and protection from error.};
+\node[box,text width=12cm,minimum height=1.15cm] (r) at (6.4,-4.6)
+ {\textbf{A Remedy Matched to the Conduct and the Burdens}\\Preserve useful independent forecasting.\\End a proved restrictive arrangement.};
+\draw[edge] (l) -- (e);\draw[accent] (m) -- (p);
+\draw[edge] (e) -- (p);
+\draw[edge] (e.south) -- (r.north -| e.south);
+\draw[accent] (p.south) -- (r.north -| p.south);
+\node[align=center,text width=12.7cm,font=\footnotesize] at (6.4,-6.1)
+ {Hypothetical U.S. pricing case. Ethical objection, allegation, legal finding,\\and damages are distinct conclusions with their own premises.};
+\end{tikzpicture}

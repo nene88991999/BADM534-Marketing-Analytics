@@ -29,7 +29,7 @@
     {
       "id": "R02",
       "category": "01_Research",
-      "source_url": "https://knowledge.uchicago.edu/record/5577/files/Personalized-Pricing-and-Consumer-Welfare.pdf?ln=en",
+      "source_url": "https://www.nber.org/papers/w23775",
       "status": "downloaded",
       "download_url": "https://www.nber.org/system/files/working_papers/w23775/w23775.pdf",
       "final_url": "https://www.nber.org/system/files/working_papers/w23775/w23775.pdf",
@@ -43,14 +43,15 @@
       "pdf_pages": 62,
       "title": "Personalized Pricing and Consumer Welfare",
       "authors": "Jean-Pierre Dubé; Sanjog Misra",
-      "reading_scope": "Introduction; Sections 4–5; Table 7; published discussion and conclusion",
+      "reading_scope": "Sections 2–4, empirical specification, field validation, welfare aggregation, and conclusion",
       "teaching_use": "Distinguish the predicted optimal-price comparison from the later implemented field policies. Separate aggregate customer surplus, distributional incidence, and ethical interpretation.",
       "modules": [
         "M6",
         "M8",
         "M9"
       ],
-      "checked_on": "2026-11-06"
+      "checked_on": "2026-11-26",
+      "previous_display_url": "https://knowledge.uchicago.edu/record/5577/files/Personalized-Pricing-and-Consumer-Welfare.pdf?ln=en"
     },
     {
       "id": "R03",
@@ -336,9 +337,32 @@
       ],
       "download_url": "https://search.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry",
       "checked_on": "2026-11-06"
+    },
+    {
+      "id": "R05",
+      "category": "01_Research",
+      "title": "Competitive Price Targeting with Smartphone Coupons",
+      "authors": "Jean-Pierre Dubé; Zheng Fang; Nathan Fong; Xueming Luo",
+      "version": "Marketing Science 36(6), 2017, 944–975",
+      "source_url": "https://doi.org/10.1287/mksc.2017.1042",
+      "download_url": "https://www.fox.temple.edu/sites/fox/files/competitive-price-targeting-pub.pdf",
+      "local_path": "01_Research/local_sources/Dube_Fang_Fong_Luo_MarketingScience2017.pdf",
+      "retrieved_on": "2026-11-26",
+      "status": "downloaded",
+      "bytes": 664590,
+      "sha256": "f9c5167ca896b4abe5ac6c4db4e099a0c314e64700f0b4a0154899612a8bcd23",
+      "pdf_pages": 32,
+      "public_copy": false,
+      "rights": "Local reference copy; public course materials contain original commentary and aggregate reconstruction",
+      "reading_scope": "Sections 3–4, 6–7, especially Table 9 on p. 965",
+      "modules": [
+        "M4",
+        "M8",
+        "M9"
+      ]
     }
   ],
   "title": "AI Experimentation, Personalized Pricing, and Kantian Evaluation",
-  "scope": "Four distinct research contributions and selected primary policy records; selective full-text reading as recorded; no inference of personal misconduct.",
-  "verified_on": "2026-11-06"
+  "scope": "Five distinct research contributions, selected primary policy records, and original philosophical and legal applications; no inference of personal misconduct.",
+  "verified_on": "2026-11-26"
 }

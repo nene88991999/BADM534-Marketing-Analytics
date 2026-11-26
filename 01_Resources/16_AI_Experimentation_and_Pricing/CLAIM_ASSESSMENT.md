@@ -13,3 +13,9 @@
 | Deceptive urgency becomes permissible when a test shows increased sales. | A Kantian objection concerns the deceptive means. A performance estimate supplies no permission to disregard that duty. This is a hypothetical application. |
 
 The phrase “marketing effectiveness at the cost of ethics” is a proposition to evaluate through a stated principle and evidence about conduct. The case retains findings that both support and constrain criticism. The commercial partnerships described by the papers motivate independent scrutiny, without establishing bias or personal misconduct.
+
+## Heterogeneity, Individual Reasons, and Antitrust
+
+The [expanded assessment](SCANLON_ASSESSMENT.md) distinguishes rich observed heterogeneity from an unlearned residual, preserves Dubé and Misra's reported customer-surplus decline, and identifies the assumptions connecting demand to welfare. The course counterexample proves that finite price support can leave the sign of aggregate surplus unidentified under monotonicity alone. It does not prove that flexible methods systematically conceal harm.
+
+The [legal application](ANTITRUST_AND_REASONS.md) distinguishes a harmful outcome, a morally unjustifiable practice, an agreement or exclusionary act, legally attributable injury, and a damages calculation. Published profit gains and modeled softening of competition alone do not establish unlawful coordination.

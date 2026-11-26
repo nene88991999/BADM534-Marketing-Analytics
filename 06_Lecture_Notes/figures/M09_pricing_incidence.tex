@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[width=13cm,height=5.8cm,xbar,bar width=13pt,xmin=-9,xmax=1,
+ symbolic y coords={Discount Only H,Discount Only L,Segmented H,Segmented L},
+ ytick={Discount Only H,Discount Only L,Segmented H,Segmented L},xlabel={Expected Surplus Change per Group Member (\$)},
+ xtick={-8,-6,-4,-2,0},grid=major,enlarge y limits=.18]
+\addplot[bar shift=0pt,fill=IlliniBlue,draw=IlliniBlue] coordinates
+ {(0,Discount Only H)(.3194444444,Discount Only L)};
+\addplot[bar shift=0pt,fill=IlliniOrange,draw=IlliniOrange] coordinates
+ {(-8.041666667,Segmented H)(.3194444444,Segmented L)};
+\node[anchor=west,font=\footnotesize] at (axis cs:.38,Segmented L) {+0.319};
+\node[anchor=south west,yshift=8pt,font=\footnotesize] at (axis cs:-7.8,Segmented H) {$-8.042$; 25\% of H lose a purchase};
+\node[anchor=west,font=\footnotesize] at (axis cs:.38,Discount Only L) {+0.319};
+\node[anchor=east,font=\footnotesize] at (axis cs:-.15,Discount Only H) {0; same offer};
+\end{axis}
+\node[anchor=north,align=center,text width=13cm,font=\footnotesize,yshift=-12pt] at (current bounding box.south)
+ {Synthetic uniform valuations; one purchase; zero cost. L: 60\%, H: 40\%.\\Reference: optimal uniform price \$19/3. Discount-only profit: \$6.133 per eligible person,\\above the uniform benchmark of \$6.017. Group L and H do not measure social advantage.};
+\end{tikzpicture}

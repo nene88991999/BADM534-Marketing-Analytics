@@ -144,3 +144,7 @@ The recurring electricity case now connects average prices to household expendit
 ## Reasons and Affected People
 
 [Marketing Dialectics](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) now includes Scanlonian arguments, stakeholder obligations, public voice, and publication responsibility. [Optional practice](07_Labs/Philosophical_Arguments/README.md) asks students to defend what an actor ought to do and answer the strongest objection from an affected person's position.
+
+## Pricing, Individual Reasons, and Antitrust
+
+The [pricing cases](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) connect demand assumptions, individual burdens, Kantian authority, and Scanlonian arguments to a hypothetical U.S. antitrust case. Five runnable programs and four TikZ figures accompany M4, M6, M8, and Marketing Dialectics. Dubé and coauthors' competitive payoff table is reconstructed from published information. [Optional practice](07_Labs/Scanlon_Pricing/README.md) develops supported factual premises, an ought conclusion, and the strongest defense. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.

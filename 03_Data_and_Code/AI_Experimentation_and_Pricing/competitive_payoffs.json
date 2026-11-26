@@ -1,0 +1,16 @@
+{
+  "source": "Dube, Fang, Fong, and Luo (2017), Marketing Science 36(6), Table 9, p. 965",
+  "doi": "10.1287/mksc.2017.1042",
+  "source_url": "https://www.fox.temple.edu/sites/fox/files/competitive-price-targeting-pub.pdf",
+  "data_type": "Transcribed rounded published model outputs; no individual data",
+  "units": "RMB expected revenue per messaged consumer",
+  "row_player": "Theater A",
+  "column_player": "Theater B",
+  "strategies": ["uniform", "geographic", "behavioral", "geobehavioral"],
+  "payoffs": [
+    [["1.960", "2.913"], ["1.937", "3.007"], ["1.969", "2.940"], ["1.942", "3.041"]],
+    [["1.933", "2.900"], ["1.963", "2.984"], ["1.956", "2.651"], ["1.958", "2.768"]],
+    [["1.969", "2.919"], ["1.956", "2.383"], ["1.979", "2.948"], ["1.977", "2.722"]],
+    [["1.982", "2.905"], ["1.966", "1.501"], ["1.978", "1.882"], ["1.973", "2.968"]]
+  ]
+}

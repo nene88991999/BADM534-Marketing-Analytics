@@ -12,6 +12,7 @@ Session 09. M6. 170 minutes.
 - Calculate an intention-to-treat effect, uncertainty, and contribution.
 - Plan power and use prior outcomes to improve precision.
 - Explain the information conditions supporting a fixed research allocation.
+- Separate correct weighting of a pricing experiment from a justified allocation of customer exposure.
 
 ## Related Materials
 
@@ -30,6 +31,7 @@ Session 09. M6. 170 minutes.
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 - ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
+- [Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -440,7 +442,30 @@ Causal Alignment includes human selection and acceptability checks. Their existe
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 36: Experiment Discussion
+## Slide 36: Correct Estimation and Unequal Exposure
+
+| Synthetic Allocation | Revenue Effect | H Expected Loss |
+| --- | --- | --- |
+| L: 1/4; H: 3/4 | USD 2.0833 | USD 6.0313 |
+| L: 1/2; H: 1/2 | USD 2.0833 | USD 4.0208 |
+
+Dollars per eligible person for the effect; per H member for loss. One purchase opportunity.
+
+M6 §6.37 uses the synthetic uniform-valuation population from M9 §9.17. Randomization is within group. The unequal allocation produces a naive pooled effect of USD 3.5985; stratification or inverse-probability weighting recovers USD 2.0833. H loss is relative to always receiving control. Expected population lost purchase shares are 7.5% and 5%. These assignment probabilities are invented and do not describe Dubé and Misra’s field validation.
+
+Source: ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 37: Who Ought to Bear Experimental Risk?
+
+- Unbiased estimation supplies part of the justification for a decision.
+- Exposure, severity, and feasible alternatives shape each person’s objection.
+- Compare a price ceiling, compensation, and less burdensome offers.
+
+Expected loss helps describe exposure. Scanlonian justification requires a principle and reasons, including the purpose and value of learning and the interests of those who bear costs. Ex ante and ex post contractualism differ; a small probability alone does not establish acceptability. Suikkanen (2019) proposes one synthesis. Even exact measurement of the revenue contrast leaves reasons concerning the objective and exposure unresolved. M9 §§9.34.3–9.34.5 compares instrumentally rational conduct with reasonable principles across pricing and public reassurance.
+
+Source: https://doi.org/10.1007/s10892-019-09282-6 ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 38: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

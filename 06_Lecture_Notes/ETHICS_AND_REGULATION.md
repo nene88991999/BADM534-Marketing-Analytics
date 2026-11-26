@@ -124,3 +124,7 @@ M9 §§9.28–9.32 evaluates proposed duties through Scanlonian reasonable rejec
 ## Utility Disclosures and Qualitative Substantiation
 
 M5 §5.27 and M9 §9.33 connect public assurances to disclosed recovery mechanisms, household allocation, and the strongest contrary evidence. [The source register](../03_Data_and_Code/Utility_Cost_Recovery/sources.json) records date and provenance. Evergy's November 2026 release describes a request conditional on approval. The February 2025 NJBPU announcement reports a certified auction and a fixed-use price illustration, not household microdata or a data-center causal decomposition. Coding procedures and methodological references are in the [qualitative guide](../01_Resources/42_Qualitative_Evidence/README.md).
+
+## U.S. Antitrust, Pricing, and Individual Reasons
+
+The [antitrust source guide](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md), checked November 26, 2026, covers Sherman Act agreement and monopolization requirements, Robinson–Patman scope, antitrust injury, and damages tied to a liability theory. M9 §§9.38–9.39 connect those institutions to Scanlonian reasons and evidentiary safeguards. The RealPage documents are identified as allegations and proposed terms; the separately entered Greystar judgment is dated March 2, 2026. None establishes unlawful conduct by a researcher or by all users of pricing analytics. M9 §9.37 includes the INFORMS terms footnote and an argument about access to independent scrutiny.

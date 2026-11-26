@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[name=low,width=6.25cm,height=5.6cm,xmin=5,xmax=10,ymin=0,ymax=1,
+ xlabel={L Price (\$)},ylabel={Purchase Probability},title={L: Price Falls from \$10 to \$5},
+ xtick={5,10},ytick={0,.5,.9,1},grid=major,legend style={at={(.5,-.25)},anchor=north},legend columns=1]
+\addplot[IlliniBlue,mark=none] coordinates {(5,.9)(5.1,.5)(10,.5)};
+\addlegendentry{A: lower gain}
+\addplot[IlliniOrange,dashed,mark=none] coordinates {(5,.9)(9.9,.9)(10,.5)};
+\addlegendentry{B: higher gain}
+\addplot[only marks,mark=*,IlliniBlue] coordinates {(5,.9)(10,.5)};
+\end{axis}
+\begin{axis}[at={(low.east)},anchor=west,xshift=1.1cm,width=6.25cm,height=5.6cm,
+ xmin=10,xmax=20,ymin=0,ymax=1,xlabel={H Price (\$)},
+ title={H: Price Rises from \$10 to \$20},xtick={10,20},ytick={0,.5,.8,1},grid=major,
+ legend style={at={(.5,-.25)},anchor=north},legend columns=1]
+\addplot[IlliniBlue,mark=none] coordinates {(10,.8)(19.9,.8)(20,.5)};
+\addlegendentry{A: larger loss}
+\addplot[IlliniOrange,dashed,mark=none] coordinates {(10,.8)(10.1,.5)(20,.5)};
+\addlegendentry{B: smaller loss}
+\addplot[only marks,mark=*,IlliniBlue] coordinates {(10,.8)(20,.5)};
+\end{axis}
+\node[align=center,text width=13cm,font=\footnotesize] at (5.7,-3.0)
+ {Synthetic probabilities. Dots are tested endpoints; areas measure dollar surplus.\\Population shares: L 60\%, H 40\%. Change: A $-\$1.682$; B $+\$0.682$.};
+\end{tikzpicture}

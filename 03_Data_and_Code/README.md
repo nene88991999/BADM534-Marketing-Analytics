@@ -155,3 +155,7 @@ The [statistical-inference examples](Statistical_Inference/README.md) also imple
 ## Utility Disclosures and Qualitative Evidence
 
 [Utility Cost Recovery](Utility_Cost_Recovery/README.md) provides source collection, contextual coding, an evidence matrix, and reproducible bill illustrations. M5 §5.27 includes both complete programs and boxed call excerpts. The example preserves forecasts, requests, offsets, and unavailable text.
+
+## Pricing, Individual Burdens, and Antitrust
+
+The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/README.md) add exact customer incidence, experimental exposure, observationally equivalent tested demand, a reconstruction of Dubé and coauthors' published payoff game, and hypothetical damages arithmetic. Full code appears in M6 and M9. The programs distinguish synthetic populations, rounded published model outputs, normative premises, and legal proof.

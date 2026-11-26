@@ -90,3 +90,7 @@ The optional [Statistical Inference lab](Statistical_Inference/README.md) examin
 [Optional practice](Philosophical_Arguments/README.md) constructs an ought conclusion, defends its premises, compares affected positions, and answers an objection. The electricity case examines public reassurance, publication choices, and residents' opportunities to challenge evidence.
 
 - [Qualitative Evidence](Qualitative_Evidence/README.md): interpret utility disclosures with explicit coding rules, negative cases, independent review, and stakeholder arguments. Optional ungraded practice.
+
+## Pricing, Individual Reasons, and Antitrust Evidence
+
+[Scanlon Pricing](Scanlon_Pricing/README.md) offers optional ungraded practice in demand identification, individual burdens, experimental risk, Kantian authority, and a hypothetical antitrust case. Five complete programs accompany the argument exercise.

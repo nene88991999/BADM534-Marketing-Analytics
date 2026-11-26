@@ -16,3 +16,7 @@ Kant's primary texts and philosophical scholarship are in the [Marketing Dialect
 ## Pricing Systems and Customer Choice
 
 [The pricing-systems case](../37_Pricing_Systems_and_Competition/README.md) distinguishes competition from responsiveness to demand and consumer welfare. The [original Python example](../../03_Data_and_Code/Pricing_Competition/README.md) changes signal accuracy and pricing objectives separately. M8 §8.28 and M9 §9.22 connect the Wendy's complaint to evidence and ethical reasoning.
+
+## Individual Reasons and Competitive Conduct
+
+The [Scanlon assessment](SCANLON_ASSESSMENT.md) adds demand identification, individual burdens, experimental risk, and Dubé's mobile-targeting case. The [antitrust guide](ANTITRUST_AND_REASONS.md) connects federal legal elements to the reasons of affected customers and the safeguards owed to an accused firm. Five executed programs and four TikZ figures accompany M4 §4.28, M6 §6.37, and M9 §§9.34–9.39. Replication access is recorded separately from the published-table reconstruction.

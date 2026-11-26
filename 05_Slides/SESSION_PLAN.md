@@ -18,12 +18,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 36 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 38 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 70 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 82 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -326,13 +326,13 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 0–20 | Demand, Workflow Cost, and Undetected Decision Errors |
 | 20–25 | Recommendation Review and Export |
 | 25–50 | AI-Assisted Experiments |
-| 50–60 | Personalized-Pricing Evidence and Benchmarks |
+| 50–60 | Personalized Pricing, Welfare Identification, and Benchmarks |
 | 60–70 | Wendy's Pricing Case and Evidence |
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
 | 90–95 | Premises and an Ought Conclusion |
 | 95–100 | Stakeholder Reasons and Public Voice |
-| 100–110 | Demand Information and Pricing Objectives |
+| 100–110 | Pricing Burdens and Feasible Alternatives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–165 | Digital Channels and Meaningful Customer Choice |
@@ -376,3 +376,9 @@ Minutes 80–90 compare Kantian, Confucian, and Scanlonian reasons; minutes 90�
 ## Qualitative Evidence and the Utility Case
 
 Session 7 integrates source retrieval, contextual coding, negative cases, and the investment-to-bill diagram into the existing earnings-call block. Session 14 connects institutional evidence to household reasons and the scope of public reassurance. The complete collection and independent review are [optional practice](../07_Labs/Qualitative_Evidence/README.md).
+
+## Pricing Reasons and Antitrust Proof
+
+Session 9 uses the targeted-exposure example within minutes 135–155. Session 14 selects the demand-completion and burden comparison within minutes 50–60, a Kantian or Scanlonian pricing argument within minutes 80–110, and antitrust evidence in the existing policy discussion. The deck supplies alternative cases for these blocks; the full reconstruction and extended legal argument are optional ungraded practice. The fifteen 170-minute meetings and released assessment status remain unchanged.
+
+The [pricing practice](../07_Labs/Scanlon_Pricing/README.md) connects M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39. Students distinguish customer harm, reasonable rejection, legal elements, and a damages model matched to the alleged conduct. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.

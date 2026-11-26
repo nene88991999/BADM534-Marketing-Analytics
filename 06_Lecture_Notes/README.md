@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [518-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 127 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [537-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 131 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -78,7 +78,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 113 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 120 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -203,3 +203,7 @@ M2 §2.28.1 develops the price/bill accounting distinction. M6 §6.35 provides c
 M9 §§9.28–9.32 develops publication responsibility, Scanlonian justification, stakeholder duties, pricing communication, and residents' voice. Two editable TikZ figures distinguish factual and normative premises and compare reasons for rejecting alternative principles. M1 and M8 connect these arguments to managerial recommendations and public claims.
 
 M5 §5.27 adds qualitative analysis of utility disclosures, three boxed verbatim call excerpts, a cost-recovery diagram, and two complete Python programs. M6 §6.36 and M9 §9.33 connect that evidence to causal interpretation and stakeholder reasons. [Methods references](../01_Resources/42_Qualitative_Evidence/README.md) and [optional practice](../07_Labs/Qualitative_Evidence/README.md) accompany the case.
+
+## Pricing, Individual Reasons, and Antitrust Evidence
+
+M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39 connect flexible demand models to welfare identification, experimental exposure, Kantian authority, Scanlonian justification, and U.S. antitrust proof. Five [executed programs](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) reproduce exact synthetic comparisons and Dubé and coauthors' rounded competitive payoff table. Four editable TikZ figures explain the mechanisms. The [source assessment](../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) and [legal guide](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) preserve contrary findings, primary citations, and document status. Fourteen new checks pass; all 120 Python blocks match their standalone files. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=5.4cm,minimum height=1.2cm] (d) at (3,0)
+  {\textbf{Reliable Evidence}\\Unbiased, precise estimates.};
+\node[orangebox,text width=5.4cm,minimum height=1.2cm] (r) at (9.4,0)
+  {\textbf{Personal Reasons}\\Need, authority, alternatives.};
+\node[box,text width=5.4cm,minimum height=1.3cm] (p) at (3,-2.2)
+  {\textbf{Proposed Objective}\\Maximize expected revenue\\through individualized prices.};
+\node[orangebox,text width=5.4cm,minimum height=1.3cm] (q) at (9.4,-2.2)
+  {\textbf{Alternative Principle}\\Viable prices with safeguards\\for customer access and choice.};
+\node[box,text width=11.6cm,minimum height=1.25cm] (c) at (6.2,-4.4)
+  {\textbf{Assess Reasonableness}\\Who bears the burden under each rule?\\Which objections to each principle can be justified?};
+\draw[edge] (d) -- node[right,font=\footnotesize]{informs} (p);
+\draw[accent] (r) -- node[right,font=\footnotesize]{informs} (q);
+\draw[edge] (p.south) -- (c.north -| p.south);
+\draw[accent] (q.south) -- (c.north -| q.south);
+\node[text width=12cm,align=center,font=\footnotesize] at (6.2,-5.9)
+  {Hypothetical pricing decision. Establish burdens and feasible alternatives.\\Reliable measurement supplies some of the reasons needed to justify a goal.};
+\end{tikzpicture}

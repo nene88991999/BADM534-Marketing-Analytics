@@ -133,6 +133,12 @@
       "path": "07_Labs/Qualitative_Evidence/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "scanlon-pricing",
+      "path": "07_Labs/Scanlon_Pricing/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -377,7 +383,12 @@
     "03_Data_and_Code/Utility_Cost_Recovery/DATA_DICTIONARY.md",
     "03_Data_and_Code/Utility_Cost_Recovery/AGENTS.md",
     "03_Data_and_Code/Utility_Cost_Recovery/results/README.md",
-    "07_Labs/Qualitative_Evidence/README.md"
+    "07_Labs/Qualitative_Evidence/README.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md",
+    "01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md",
+    "03_Data_and_Code/AI_Experimentation_and_Pricing/SCANLON_DATA_DICTIONARY.md",
+    "03_Data_and_Code/AI_Experimentation_and_Pricing/SCANLON_VERIFICATION.md",
+    "07_Labs/Scanlon_Pricing/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -426,12 +437,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-qualitative-utility-evidence",
+    "revision": "2026-11-26-pricing-reasons-and-antitrust",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 127,
-    "pages": 518,
+    "figures_count": 131,
+    "pages": 537,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -556,7 +567,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 462,
+    "slides": 476,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1129,7 +1140,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-qualitative-utility-evidence",
+  "revision": "2026-11-26-pricing-reasons-and-antitrust",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1438,5 +1449,34 @@
     "additional_slides": 6,
     "tests_passed": 8,
     "matching_python_blocks": 115
+  },
+  "pricing_reasons_and_antitrust": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M4 §4.28",
+      "M6 §6.37",
+      "M8 §8.32",
+      "M9 §§9.34–9.39"
+    ],
+    "sessions": [
+      9,
+      14
+    ],
+    "resources": "01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md",
+    "legal_sources": "01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md",
+    "example": "03_Data_and_Code/AI_Experimentation_and_Pricing/README.md",
+    "practice": "07_Labs/Scanlon_Pricing/README.md",
+    "verification": "03_Data_and_Code/AI_Experimentation_and_Pricing/SCANLON_VERIFICATION.md",
+    "original_programs_executed": 5,
+    "new_independent_checks_passed": 14,
+    "total_pricing_checks_passed": 19,
+    "matching_python_blocks": 120,
+    "additional_slides": 14,
+    "original_figures": 4,
+    "replication_microdata_downloaded": false,
+    "published_payoff_table_reconstructed": true,
+    "legal_jurisdiction": "United States federal antitrust; sources checked November 26, 2026",
+    "scope": "Original synthetic incidence, exposure, demand-completion and invoice examples; reconstruction from rounded published payoffs; philosophical and hypothetical legal arguments. No empirical finding of misconduct or violation.",
+    "reasonableness": "M9 §§9.34.3–9.34.5: measurement quality, worthy objectives, instrumental rationality, and reasonable justification across personalized pricing, dynamic-pricing communication, and data-center reassurance"
   }
 }

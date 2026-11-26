@@ -1,0 +1,63 @@
+{
+  "source": "Dube, Fang, Fong, and Luo (2017), Marketing Science 36(6), Table 9, p. 965",
+  "units": "RMB expected revenue per messaged consumer",
+  "best_responses_A": {
+    "uniform": [
+      "geobehavioral"
+    ],
+    "geographic": [
+      "geobehavioral"
+    ],
+    "behavioral": [
+      "behavioral"
+    ],
+    "geobehavioral": [
+      "behavioral"
+    ]
+  },
+  "best_responses_B": {
+    "uniform": [
+      "geobehavioral"
+    ],
+    "geographic": [
+      "geographic"
+    ],
+    "behavioral": [
+      "behavioral"
+    ],
+    "geobehavioral": [
+      "geobehavioral"
+    ]
+  },
+  "pure_equilibria_from_rounded_payoffs": [
+    [
+      "behavioral",
+      "behavioral"
+    ]
+  ],
+  "behavioral_vs_uniform_revenue_gains": {
+    "A": {
+      "exact": "19/1000",
+      "decimal": 0.019
+    },
+    "B": {
+      "exact": "7/200",
+      "decimal": 0.035
+    }
+  },
+  "relative_gains": {
+    "A": {
+      "exact": "19/1960",
+      "decimal": 0.009693877551020408
+    },
+    "B": {
+      "exact": "35/2913",
+      "decimal": 0.012015104703055269
+    }
+  },
+  "A_behavioral_vs_geobehavioral_gap_when_B_behavioral": {
+    "exact": "1/1000",
+    "decimal": 0.001
+  },
+  "scope": "Static estimated game; no posterior draws, privacy values, or permission measure"
+}

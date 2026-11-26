@@ -1,0 +1,64 @@
+{
+  "checked_on": "2026-11-26",
+  "records": [
+    {
+      "file": "01_Resources/16_AI_Experimentation_and_Pricing/01_Research/local_sources/Ezrachi_Stucke_UniversityofIllinoisLawReview2017.pdf",
+      "url": "https://illinoislawreview.org/wp-content/uploads/2017/10/Ezrachi-Stucke.pdf",
+      "retrieved_on": "2026-11-26",
+      "public_copy": false,
+      "status": "downloaded",
+      "sha256": "5d8702e8261e67028d65ce7169fe3f42d969d3656df4730841ee0b7dd3407878",
+      "bytes": 248675
+    },
+    {
+      "file": "01_Resources/16_AI_Experimentation_and_Pricing/01_Research/local_sources/DOJ_RealPage_CompetitiveImpactStatement2025.pdf",
+      "url": "https://www.justice.gov/atr/media/1419471/dl?inline=",
+      "retrieved_on": "2026-11-26",
+      "public_copy": false,
+      "status": "downloaded",
+      "sha256": "9a432a61c81a61e658bec63183db5e79f27dc6efd19ba3c382212ae7c0e21431",
+      "bytes": 252189
+    },
+    {
+      "file": "01_Resources/16_AI_Experimentation_and_Pricing/01_Research/local_sources/DOJ_RealPage_ProposedFinalJudgment2025.pdf",
+      "url": "https://www.justice.gov/atr/media/1419451/dl?inline=",
+      "retrieved_on": "2026-11-26",
+      "public_copy": false,
+      "status": "downloaded",
+      "sha256": "446846c4c2fc3c0a62c01c4704c67d991941b64a50f66f4a078d3b6521321c7f",
+      "bytes": 236412
+    },
+    {
+      "file": "01_Resources/16_AI_Experimentation_and_Pricing/01_Research/local_sources/DOJ_Greystar_FinalJudgment2026.pdf",
+      "url": "https://www.justice.gov/atr/media/1430091/dl?inline=",
+      "retrieved_on": "2026-11-26",
+      "public_copy": false,
+      "status": "downloaded",
+      "sha256": "300501dc331d6cdba45996612566f426e1a6dc25dba3220072c392836846c173",
+      "bytes": 274319
+    },
+    {
+      "file": "01_Resources/16_AI_Experimentation_and_Pricing/01_Research/local_sources/Suikkanen_JournalofEthics2019.pdf",
+      "url": "https://pure-oai.bham.ac.uk/ws/files/58703768/Suikkanen_Ex_Ante_and_Ex_Post_Contractualism_Final.pdf",
+      "retrieved_on": "2026-11-26",
+      "public_copy": false,
+      "status": "downloaded",
+      "sha256": "f87a255decb8e8f6325f5d0050291887418c79e4c21b0b9a3902f38ca2957d7a",
+      "bytes": 303167
+    },
+    {
+      "title": "JPE replication ZIP",
+      "source_url": "https://www.journals.uchicago.edu/doi/suppl/10.1086/720793/suppl_file/20190715data.zip",
+      "checked_on": "2026-11-26",
+      "status": "HTTP 403; contents unverified"
+    },
+    {
+      "title": "INFORMS replication terms",
+      "source_url": "https://services.informs.org/dataset/mksc/download.php?doi=mksc.2017.1042",
+      "checked_on": "2026-11-26",
+      "status": "Terms read; no form submission, email disclosure, or microdata download; instructor selected published reconstruction"
+    }
+  ],
+  "source_guide": "SCANLON_ASSESSMENT.md",
+  "legal_guide": "ANTITRUST_AND_REASONS.md"
+}

@@ -166,3 +166,9 @@ The existing Session 14 philosophy discussion includes defended normative premis
 ## Qualitative Evidence in the Utility Case
 
 Session 7 uses the existing earnings-call block to compare cost-recovery statements, offsetting claims, and their evidence stages. Session 14 connects the comparison to household reasons and public reassurance. The [optional lab](../07_Labs/Qualitative_Evidence/README.md) contains the complete scraping and independent-coding activity. Meeting dates, duration, and assessment status remain as stated in the released syllabus.
+
+## Pricing Reasons and Antitrust Proof
+
+Session 9 uses the targeted-exposure example within minutes 135–155. Session 14 selects the demand-completion and burden comparison within minutes 50–60, a Kantian or Scanlonian pricing argument within minutes 80–110, and antitrust evidence in the existing policy discussion. The deck supplies alternative cases for these blocks; the full reconstruction and extended legal argument are optional ungraded practice. The fifteen 170-minute meetings and released assessment status remain unchanged.
+
+The [pricing practice](../07_Labs/Scanlon_Pricing/README.md) connects M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39. Students distinguish customer harm, reasonable rejection, legal elements, and a damages model matched to the alleged conduct. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.

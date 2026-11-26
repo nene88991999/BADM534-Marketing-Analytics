@@ -1,0 +1,333 @@
+{
+  "data_type": "Synthetic population probabilities; no sample estimates",
+  "observed_probabilities": {
+    "L": {
+      "5": {
+        "exact": "9/10",
+        "decimal": 0.9
+      },
+      "10": {
+        "exact": "1/2",
+        "decimal": 0.5
+      },
+      "20": {
+        "exact": "1/10",
+        "decimal": 0.1
+      }
+    },
+    "H": {
+      "5": {
+        "exact": "19/20",
+        "decimal": 0.95
+      },
+      "10": {
+        "exact": "4/5",
+        "decimal": 0.8
+      },
+      "20": {
+        "exact": "1/2",
+        "decimal": 0.5
+      }
+    }
+  },
+  "worlds": {
+    "negative_change": {
+      "demand_points": {
+        "L": [
+          [
+            {
+              "exact": "0",
+              "decimal": 0.0
+            },
+            {
+              "exact": "1",
+              "decimal": 1.0
+            }
+          ],
+          [
+            {
+              "exact": "5",
+              "decimal": 5.0
+            },
+            {
+              "exact": "9/10",
+              "decimal": 0.9
+            }
+          ],
+          [
+            {
+              "exact": "51/10",
+              "decimal": 5.1
+            },
+            {
+              "exact": "1/2",
+              "decimal": 0.5
+            }
+          ],
+          [
+            {
+              "exact": "10",
+              "decimal": 10.0
+            },
+            {
+              "exact": "1/2",
+              "decimal": 0.5
+            }
+          ],
+          [
+            {
+              "exact": "20",
+              "decimal": 20.0
+            },
+            {
+              "exact": "1/10",
+              "decimal": 0.1
+            }
+          ],
+          [
+            {
+              "exact": "30",
+              "decimal": 30.0
+            },
+            {
+              "exact": "0",
+              "decimal": 0.0
+            }
+          ]
+        ],
+        "H": [
+          [
+            {
+              "exact": "0",
+              "decimal": 0.0
+            },
+            {
+              "exact": "1",
+              "decimal": 1.0
+            }
+          ],
+          [
+            {
+              "exact": "5",
+              "decimal": 5.0
+            },
+            {
+              "exact": "19/20",
+              "decimal": 0.95
+            }
+          ],
+          [
+            {
+              "exact": "10",
+              "decimal": 10.0
+            },
+            {
+              "exact": "4/5",
+              "decimal": 0.8
+            }
+          ],
+          [
+            {
+              "exact": "199/10",
+              "decimal": 19.9
+            },
+            {
+              "exact": "4/5",
+              "decimal": 0.8
+            }
+          ],
+          [
+            {
+              "exact": "20",
+              "decimal": 20.0
+            },
+            {
+              "exact": "1/2",
+              "decimal": 0.5
+            }
+          ],
+          [
+            {
+              "exact": "30",
+              "decimal": 30.0
+            },
+            {
+              "exact": "0",
+              "decimal": 0.0
+            }
+          ]
+        ]
+      },
+      "L_surplus_gain": {
+        "exact": "63/25",
+        "decimal": 2.52
+      },
+      "H_surplus_loss": {
+        "exact": "1597/200",
+        "decimal": 7.985
+      },
+      "population_surplus_change": {
+        "exact": "-841/500",
+        "decimal": -1.682
+      }
+    },
+    "positive_change": {
+      "demand_points": {
+        "L": [
+          [
+            {
+              "exact": "0",
+              "decimal": 0.0
+            },
+            {
+              "exact": "1",
+              "decimal": 1.0
+            }
+          ],
+          [
+            {
+              "exact": "5",
+              "decimal": 5.0
+            },
+            {
+              "exact": "9/10",
+              "decimal": 0.9
+            }
+          ],
+          [
+            {
+              "exact": "99/10",
+              "decimal": 9.9
+            },
+            {
+              "exact": "9/10",
+              "decimal": 0.9
+            }
+          ],
+          [
+            {
+              "exact": "10",
+              "decimal": 10.0
+            },
+            {
+              "exact": "1/2",
+              "decimal": 0.5
+            }
+          ],
+          [
+            {
+              "exact": "20",
+              "decimal": 20.0
+            },
+            {
+              "exact": "1/10",
+              "decimal": 0.1
+            }
+          ],
+          [
+            {
+              "exact": "30",
+              "decimal": 30.0
+            },
+            {
+              "exact": "0",
+              "decimal": 0.0
+            }
+          ]
+        ],
+        "H": [
+          [
+            {
+              "exact": "0",
+              "decimal": 0.0
+            },
+            {
+              "exact": "1",
+              "decimal": 1.0
+            }
+          ],
+          [
+            {
+              "exact": "5",
+              "decimal": 5.0
+            },
+            {
+              "exact": "19/20",
+              "decimal": 0.95
+            }
+          ],
+          [
+            {
+              "exact": "10",
+              "decimal": 10.0
+            },
+            {
+              "exact": "4/5",
+              "decimal": 0.8
+            }
+          ],
+          [
+            {
+              "exact": "101/10",
+              "decimal": 10.1
+            },
+            {
+              "exact": "1/2",
+              "decimal": 0.5
+            }
+          ],
+          [
+            {
+              "exact": "20",
+              "decimal": 20.0
+            },
+            {
+              "exact": "1/2",
+              "decimal": 0.5
+            }
+          ],
+          [
+            {
+              "exact": "30",
+              "decimal": 30.0
+            },
+            {
+              "exact": "0",
+              "decimal": 0.0
+            }
+          ]
+        ]
+      },
+      "L_surplus_gain": {
+        "exact": "112/25",
+        "decimal": 4.48
+      },
+      "H_surplus_loss": {
+        "exact": "1003/200",
+        "decimal": 5.015
+      },
+      "population_surplus_change": {
+        "exact": "341/500",
+        "decimal": 0.682
+      }
+    }
+  },
+  "uniform_revenue": {
+    "exact": "31/5",
+    "decimal": 6.2
+  },
+  "targeted_revenue": {
+    "exact": "67/10",
+    "decimal": 6.7
+  },
+  "monotonic_surplus_change_bounds": [
+    {
+      "exact": "-17/10",
+      "decimal": -1.7
+    },
+    {
+      "exact": "7/10",
+      "decimal": 0.7
+    }
+  ]
+}

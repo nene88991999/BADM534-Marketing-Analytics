@@ -2612,7 +2612,8 @@
       "Define a treatment, assignment unit, outcome, and estimand.",
       "Calculate an intention-to-treat effect, uncertainty, and contribution.",
       "Plan power and use prior outcomes to improve precision.",
-      "Explain the information conditions supporting a fixed research allocation."
+      "Explain the information conditions supporting a fixed research allocation.",
+      "Separate correct weighting of a pricing experiment from a justified allocation of customer exposure."
     ],
     "slides": [
       {
@@ -3008,6 +3009,41 @@
         "source": "https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633"
       },
       {
+        "kind": "table",
+        "title": "Correct Estimation and Unequal Exposure",
+        "headers": [
+          "Synthetic Allocation",
+          "Revenue Effect",
+          "H Expected Loss"
+        ],
+        "rows": [
+          [
+            "L: 1/4; H: 3/4",
+            "USD 2.0833",
+            "USD 6.0313"
+          ],
+          [
+            "L: 1/2; H: 1/2",
+            "USD 2.0833",
+            "USD 4.0208"
+          ]
+        ],
+        "caption": "Dollars per eligible person for the effect; per H member for loss. One purchase opportunity.",
+        "notes": "M6 §6.37 uses the synthetic uniform-valuation population from M9 §9.17. Randomization is within group. The unequal allocation produces a naive pooled effect of USD 3.5985; stratification or inverse-probability weighting recovers USD 2.0833. H loss is relative to always receiving control. Expected population lost purchase shares are 7.5% and 5%. These assignment probabilities are invented and do not describe Dubé and Misra’s field validation.",
+        "source": "../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Who Ought to Bear Experimental Risk?",
+        "bullets": [
+          "Unbiased estimation supplies part of the justification for a decision.",
+          "Exposure, severity, and feasible alternatives shape each person’s objection.",
+          "Compare a price ceiling, compensation, and less burdensome offers."
+        ],
+        "notes": "Expected loss helps describe exposure. Scanlonian justification requires a principle and reasons, including the purpose and value of learning and the interests of those who bear costs. Ex ante and ex post contractualism differ; a small probability alone does not establish acceptability. Suikkanen (2019) proposes one synthesis. Even exact measurement of the revenue contrast leaves reasons concerning the objective and exposure unresolved. M9 §§9.34.3–9.34.5 compares instrumentally rational conduct with reasonable principles across pricing and public reassurance.",
+        "source": "https://doi.org/10.1007/s10892-019-09282-6 ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
         "kind": "bullets",
         "title": "Experiment Discussion",
         "bullets": [
@@ -3034,10 +3070,11 @@
       "[Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)",
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
-      "../01_Resources/41_Statistical_Claims_and_Decisions/README.md"
+      "../01_Resources/41_Statistical_Claims_and_Decisions/README.md",
+      "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)"
     ],
     "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Use the optional statistical-claims and data-center case exercises.",
-    "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Evaluate inverse power, specified alternatives, and directional sensitivity."
+    "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Evaluate inverse power, specified alternatives, and directional sensitivity. Targeted exposure, correct population weighting, and reasons for bearing experimental risk."
   },
   {
     "number": 10,
@@ -4679,7 +4716,11 @@
       "Evaluate AI experimentation and personalized pricing through evidence, Kantian duties, and current policy scope.",
       "Distinguish a pricing allegation, an observed outcome, a model implication, and an ethical justification.",
       "Construct an ought conclusion from supported factual premises and a defended normative principle.",
-      "Compare stakeholder reasons, including those of people with limited influence over public discussion."
+      "Compare stakeholder reasons, including those of people with limited influence over public discussion.",
+      "Assess demand assumptions, feasible pricing alternatives, and individual burdens.",
+      "Connect a specified antitrust claim to evidence and Scanlonian institutional reasons.",
+      "Distinguish instrumental rationality, reliable measurement, and reasonable justification of an objective.",
+      "Compare the moral premises in personalized pricing, dynamic-pricing communication, and data-center reassurance."
     ],
     "slides": [
       {
@@ -5452,6 +5493,166 @@
         "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
+        "kind": "figure",
+        "title": "Reliable Measurement and a Worthy Objective",
+        "figure": "../06_Lecture_Notes/figures/M09_pricing_reasons.tex",
+        "caption": "Unbiasedness and precision support factual premises. The goal and treatment of people require reasons.",
+        "description": "Reliable evidence informs a revenue objective. Personal reasons inform an alternative principle. Compare objections to both, including burdens, access, authority, and feasible alternatives.",
+        "notes": "Statistical unbiasedness concerns an estimator across repetitions of a specified design; precision concerns its dispersion. Both can protect people against mistaken claims. Even perfect measurement of all monetary consequences leaves a normative premise to defend before recommending revenue maximization. Scanlon’s account of reasons and reasonable rejection grounds the course application; he is not being presented as proposing a theory of statistical estimation. The same requirement applies to every institution and research method. Dubé and Misra’s own finding of lower aggregate customer surplus remains part of the evidence.",
+        "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
+        "figure_height": 0.72
+      },
+      {
+        "kind": "bullets",
+        "title": "Rational Acceptance and Reasonable Objection",
+        "bullets": [
+          "Instrumental rationality: an effective choice for a selected aim.",
+          "Reasonableness: a principle justified through affected people’s reasons.",
+          "Weak alternatives can explain acceptance while sustaining a strong objection."
+        ],
+        "notes": "Suppose an urgently dependent customer accepts a surcharge that a seller predicts exactly. The seller and customer can each act effectively for their immediate aims while the rule faces an objection to avoidable exploitation. Examine the feasible lower offer, the seller’s costs and risks, and the reasons of other affected people. Instrumental rationality is one sense of rationality; broader rational thought can include morality. Reasonableness is neither majority preference nor an unconditional veto. State what fact or reason would change the conclusion.",
+        "source": "Scanlon, What We Owe to Each Other, chapter 5, §2, pp. 191–194. https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf"
+      },
+      {
+        "kind": "bullets",
+        "title": "Pricing and Public Reassurance",
+        "bullets": [
+          "Personalized prices: predicted acceptance and authority to impose a burden.",
+          "Dynamic pricing: discount claims, full price paths, and usable alternatives.",
+          "Data centers: average-price evidence, household exposure, and a voice in allocation."
+        ],
+        "notes": "The practices share a need to justify consequential treatment to affected people. Personalization uses customer information; dynamic pricing can change a common price over time. Wendy’s documented statement concerns its announced policy, with implementation requiring evidence. The data-center case retains the criticisms of inference and public interpretation. Even exact knowledge of a narrow historical effect would leave future cost recovery, household bills, failed projects, and participation unresolved. Nearby residents, utility customers, and eventual cost bearers are distinct populations. Compare a rule allowing favorable evidence to close debate with proportionate substantiation and answers to material objections. Similarities do not establish identical harms or motives.",
+        "source": "M9 §§9.26, 9.31–9.34 and M5 §5.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Same Tested Demand, Opposite Welfare Signs",
+        "figure": "../06_Lecture_Notes/figures/M09_demand_completions.tex",
+        "caption": "Synthetic population: L 60%, H 40%. Surplus changes are −USD 1.682 and +USD 0.682.",
+        "description": "Two panels share a zero-to-one probability scale. Solid blue and dashed orange curves match tested endpoints but enclose different areas as prices change.",
+        "notes": "The baseline price is USD 10 for both groups. The candidate schedule charges L USD 5 and H USD 20. Revenue rises from USD 6.20 to USD 6.70 in both completions. Quasilinear unit demand makes surplus changes areas under demand. Monotonicity bounds the population change between −USD 1.70 and +USD 0.70. Both completions harm H; finite support leaves the aggregate sign unresolved. This construction does not establish bias in the empirical paper.",
+        "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
+        "figure_height": 0.72
+      },
+      {
+        "kind": "figure",
+        "title": "A Majority Benefits While a Minority Loses",
+        "figure": "../06_Lecture_Notes/figures/M09_pricing_incidence.tex",
+        "caption": "Synthetic uniform valuations: discount-only pricing remains profitable and avoids H’s price increase.",
+        "description": "Horizontal bars show +USD 0.319 expected surplus per L member under both schedules, −USD 8.042 per H member under segmentation, and zero H change under discount-only pricing.",
+        "notes": "The benchmark is the optimal uniform price USD 19/3. L represents 60% and H 40%; group labels do not identify wealth or vulnerability. A quarter of H loses a purchase, equal to 10% overall. The capped alternative earns USD 6.133 per eligible person versus USD 6.017 under uniform pricing. A conclusion about serious deprivation requires facts beyond these invented valuations.",
+        "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
+        "figure_height": 0.72
+      },
+      {
+        "kind": "bullets",
+        "title": "A Defensible Scanlonian Pricing Argument",
+        "bullets": [
+          "Identify the person’s burden and the facts producing it.",
+          "Compare a viable less burdensome principle.",
+          "Defend the ought conclusion against the strongest objection."
+        ],
+        "notes": "If a seller exploits serious need despite a viable lower offer and no comparably serious countervailing burden, the lower offer is supported by a strong contractualist argument. Monetary amounts inform reasons; they are not a moral score. The firm’s legitimate interests include service viability and the people dependent on it. Majority benefits do not automatically resolve the losing person’s objection.",
+        "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "table",
+        "title": "Dubé’s Mobile Targeting: Reconstruct the Incentives",
+        "headers": [
+          "Rounded Table 9",
+          "Theater A",
+          "Theater B"
+        ],
+        "rows": [
+          [
+            "Uniform / Uniform",
+            "1.960",
+            "2.913"
+          ],
+          [
+            "Behavioral / Behavioral",
+            "1.979",
+            "2.948"
+          ],
+          [
+            "Revenue Difference",
+            "0.019",
+            "0.035"
+          ]
+        ],
+        "caption": "RMB expected revenue per messaged consumer. Published model outputs, not new estimates.",
+        "notes": "The complete 4-by-4 table yields behavioral targeting as the sole pure equilibrium. A’s best-response margin against a geobehavioral deviation is 0.001 RMB when B uses behavioral targeting. The paper reports a 40% posterior probability that this deviation improves A’s profit. The rounded calculation recovers incentives under the model; it supplies no consent measure or evidence of an unlawful agreement. Original Python uses the transcribed published table. Replication microdata were not downloaded.",
+        "source": "Dubé, Fang, Fong, and Luo (2017), Table 9, p. 965. https://doi.org/10.1287/mksc.2017.1042"
+      },
+      {
+        "kind": "bullets",
+        "title": "Kantian Authority Over Location History",
+        "bullets": [
+          "Specify the maxim, including any concealment or dependence.",
+          "Check permission, understandable terms, and usable refusal.",
+          "A useful discount does not settle authority over secondary data use."
+        ],
+        "notes": "The paper documents targeting from current location and historical visits. The course does not establish that consent was absent. A hypothetical maxim relying on concealed material use faces a Formula of Humanity objection because it defeats informed authorization. An understandable opt-in offer with meaningful alternatives requires a different assessment. The INFORMS download terms allow replication but restrict other reuse and the venue for a corrective follow-up; M9 §9.37 evaluates the reasons for those restrictions.",
+        "source": "Kant, Groundwork, Academy 4:421–430. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "An Antitrust Case Needs a Specified Mechanism",
+        "bullets": [
+          "Section 1: evidence of agreement beyond parallel pricing.",
+          "Section 2: monopoly power and exclusionary conduct.",
+          "Match the injury and counterfactual to the challenged conduct."
+        ],
+        "notes": "A paper’s method or a model’s softening of competition does not establish a violation. In a hypothetical shared-pricing case, contracts, confidential inputs, overrides, and discount restrictions help distinguish coordination from independent decisions. Twombly concerns plausible agreement; Trinko explains why monopoly pricing alone is insufficient. Robinson–Patman’s commodity-sales scope does not generally cover recruitment services or movie admissions.",
+        "source": "https://www.law.cornell.edu/supct/html/05-1126.ZO.html https://www.law.cornell.edu/supremecourt/text/02-682 ../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md"
+      },
+      {
+        "kind": "table",
+        "title": "Revenue Growth Differs from an Overcharge",
+        "headers": [
+          "Synthetic One-Period Comparison",
+          "USD"
+        ],
+        "rows": [
+          [
+            "92 purchases × (USD 120 − USD 100)",
+            "USD 1,840"
+          ],
+          [
+            "Revenue: USD 11,040 − USD 10,000",
+            "USD 1,040"
+          ],
+          [
+            "At a USD 110 lawful benchmark",
+            "USD 920"
+          ]
+        ],
+        "caption": "The lawful counterfactual is assumed. Eight excluded purchases require separate welfare evidence.",
+        "notes": "The example assumes 100 counterfactual purchases at USD 100 and 92 actual purchases at USD 120. Invoice differences are based on actual quantities; revenue changes also contain a quantity component. No empirical damages or violation is established. A profit-maximizing uniform monopoly price is not automatically a lawful competitive benchmark. Comcast requires the damages model in that class-certification setting to match the accepted liability theory; Brunswick requires antitrust injury.",
+        "source": "https://www.law.cornell.edu/supremecourt/text/11-864 https://www.law.cornell.edu/supremecourt/text/429/477 ../03_Data_and_Code/AI_Experimentation_and_Pricing/compare_pricing_damages.py"
+      },
+      {
+        "kind": "figure",
+        "title": "Antitrust Proof and Reasons Owed to People",
+        "figure": "../06_Lecture_Notes/figures/M09_antitrust_reasons.tex",
+        "caption": "A remedy needs attributable injury, a feasible alternative, and justified treatment of affected people.",
+        "description": "One branch identifies legal elements and evidence. A second compares burdens and reasons. Both inform a remedy that preserves independent forecasting while ending a proved restrictive arrangement.",
+        "notes": "Scanlonian reasoning can explain why independent alternatives matter and why sanctions require reliable attribution. The firms’ workers, owners, and customers also have reasons to reject unsupported accusations. Courts do not apply contractualism as the antitrust test. Moral standing includes people excluded from purchases and can extend beyond a legally actionable claim.",
+        "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
+        "figure_height": 0.72
+      },
+      {
+        "kind": "bullets",
+        "title": "Legal Permission Leaves an Ought Question",
+        "bullets": [
+          "A lawful unilateral practice can still exploit serious need.",
+          "An ethical objection does not supply a missing legal element.",
+          "Compare safeguards, alternatives, and who bears a mistaken decision."
+        ],
+        "notes": "The hypothetical remedy separates useful independent forecasting from a proved restrictive arrangement. A necessity defense must identify benefits that genuinely require the challenged feature and the people who would lose them. If a less restrictive alternative supplies the same benefits, that defense fails on its own premise. The RealPage record supplies allegations and proposed terms; the separately entered Greystar judgment has different status.",
+        "source": "../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md https://www.justice.gov/atr/case/us-and-plaintiff-states-v-realpage-inc"
+      },
+      {
         "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
@@ -5491,10 +5692,11 @@
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
       "../01_Resources/41_Statistical_Claims_and_Decisions/README.md",
-      "[Philosophical Arguments: Optional Practice](../07_Labs/Philosophical_Arguments/README.md)"
+      "[Philosophical Arguments: Optional Practice](../07_Labs/Philosophical_Arguments/README.md)",
+      "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
-    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence."
+    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."
   },
   {
     "number": 15,
