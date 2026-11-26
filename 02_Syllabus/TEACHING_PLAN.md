@@ -126,3 +126,9 @@ Use ten minutes within Session 1’s worked-comparison block for the information
 ## Representation Alignment and Independent Reasons
 
 M5 §5.26 prepares a source-category sample; M7 §§7.42–7.44 compare geometry, coordinate alignment, classifier performance, and observed answers. M8 §8.27 frames fitting and operating costs, while M9 §9.21 examines agreement as evidence. Sessions 7 and 14 use existing case-discussion time. In Session 11, minutes 80–100 retain the interval and routing exercise, and minutes 100–115 cover reconstruction and alignment. The full [coding lab](../07_Labs/Representation_Alignment/README.md) is public optional ungraded practice. The fifteen meeting dates and 170-minute durations remain unchanged.
+
+## Pricing Systems, Competition, and Customer Choice
+
+Session 5 uses minutes 145–155 for the original demand-information and pricing-objective comparison. Session 14 allocates minutes 60–70 to the Wendy's complaint and evidence, minutes 80–90 to Kantian and Confucian evaluation of pricing, and minutes 100–110 to the synthetic calculation. The remaining pricing, renewal, authority, cancellation, and policy discussions retain the balance of their existing blocks. The fifteen dates and 170-minute durations are preserved.
+
+[M4 §4.26](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md), M8 §8.28, and M9 §9.22 contain the model, case, and philosophy. [The optional ungraded lab](../07_Labs/Pricing_Competition/README.md) carries the full Python exercise. The source guide distinguishes the complaint's allegations from company statements and an agency argument; the synthetic model establishes no actual restaurant outcome or legal conclusion.

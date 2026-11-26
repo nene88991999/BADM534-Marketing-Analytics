@@ -1,0 +1,32 @@
+{
+  "reviewed_on": "2026-11-25",
+  "downloaded_references": [
+    {
+      "path": "local_sources/Garcia_Complaint2026.pdf",
+      "url": "https://storage.courtlistener.com/recap/gov.uscourts.mdd.618524/gov.uscourts.mdd.618524.1.0.pdf",
+      "sha256": "0d29deb4073c7d6a7cacc3f1bce276f53d5f678c487fe58e37e7ea2868cf94ba",
+      "bytes": 422154,
+      "public_copy": false
+    },
+    {
+      "path": "local_sources/Harrington_ManagementScience2022.pdf",
+      "url": "https://joeharrington5201922.github.io/pdf/ms22.pdf",
+      "sha256": "e5de01efd1facfe3997a83030dfcb88f750d331e9cd1e4d164f5b927fb7efb06",
+      "bytes": 830067,
+      "public_copy": false
+    },
+    {
+      "path": "local_sources/DOJ_FTC_StatementOfInterest2024.pdf",
+      "url": "https://www.justice.gov/usdoj-media/opa/media/1345721/dl?inline=",
+      "sha256": "73a4b70bd2ec05132ed71084b203bd6090251bc9332ef15a04292c7ff4f9576f",
+      "bytes": 645128,
+      "public_copy": false
+    }
+  ],
+  "public_source_copies": 0,
+  "full_complaint_read": true,
+  "live_docket_verified": false,
+  "live_docket_access": "CourtListener returned an access error; later filings and responses not independently verified.",
+  "upstream_code_executed": false,
+  "model_api_calls": 0
+}

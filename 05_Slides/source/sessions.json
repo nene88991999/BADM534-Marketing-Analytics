@@ -1089,7 +1089,8 @@
       "Compute logit probabilities and willingness to pay.",
       "Separate new-product share from incremental category demand.",
       "Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.",
-      "Allocate human and synthetic responses at a common accuracy target."
+      "Allocate human and synthetic responses at a common accuracy target.",
+      "Separate better demand information from joint pricing when evaluating customer surplus."
     ],
     "slides": [
       {
@@ -1401,6 +1402,24 @@
         "source": "Marketing Analytics Lecture Notes, M4 §4.16."
       },
       {
+        "kind": "equation",
+        "title": "Information and the Pricing Objective",
+        "intro": "Two synthetic restaurants: expected demand intercept $\\widehat a$, cost $c=2$, substitution $\\delta=0.5$.",
+        "equation": "p^N=\\frac{(1-\\delta)\\widehat a+c}{2-\\delta}\\qquad p^J=\\frac{\\widehat a+c}{2}",
+        "interpretation": "Independent owners maximize their own profits. Joint pricing maximizes their combined profit.",
+        "notes": "Prices are dollars per meal equivalent. Equal-probability demand states have intercepts 10 and 14. A common signal is correct with probability r. Each independent firm chooses its own price, treating the other price as fixed. The joint objective includes the rival's profit. Preferences, costs, and information are held fixed when comparing objectives. M4 derives these interior solutions and supplies full code and quantity-corner checks.",
+        "source": "Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Profits and Consumer Surplus",
+        "figure": "../06_Lecture_Notes/figures/M04_pricing_welfare.tex",
+        "caption": "Synthetic market; dollars per market-day. Costs and preferences stay fixed.",
+        "description": "Four bars stack total firm profit and consumer surplus for independent and joint pricing at signal accuracies 0.5 and 1. Bar height equals total welfare in the specified two-restaurant economy.",
+        "notes": "Within independent pricing, perfect information raises profit from 29.63 to 30.81 and reduces consumer surplus from 32.30 to 30.81. Mean posted price stays 5.33, while quantity-weighted paid price rises to 5.47. At accuracy 0.5, joint pricing raises profit to 33.33 and reduces consumer surplus to 19.33. These are different changes in an original model. No observed Wendy's outcome or legal conclusion is estimated.",
+        "source": "Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Price Presentation and Customer Understanding",
         "bullets": [
@@ -1430,10 +1449,11 @@
       "[AI workflow calculations](../03_Data_and_Code/AI_Workflows/README.md)",
       "[Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)",
       "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
-      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)",
+      "[Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)"
     ],
     "practice": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
-    "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing."
+    "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus."
   },
   {
     "number": 6,
@@ -4205,7 +4225,8 @@
       "Map a marketing decision to the relevant evidence, jurisdiction, and rule status.",
       "Examine the premises connecting commercial results to customer-benefit claims.",
       "Compare Kantian, institutional, and Confucian reasons for a marketing recommendation.",
-      "Evaluate AI experimentation and personalized pricing through evidence, Kantian duties, and current policy scope."
+      "Evaluate AI experimentation and personalized pricing through evidence, Kantian duties, and current policy scope.",
+      "Distinguish a pricing allegation, an observed outcome, a model implication, and an ethical justification."
     ],
     "slides": [
       {
@@ -4403,6 +4424,37 @@
       },
       {
         "kind": "bullets",
+        "title": "Wendy's: Shared Data and Pricing Authority",
+        "bullets": [
+          "A proposed class action was filed on November 23, 2026.",
+          "The complaint alleges coordination of franchise prices using shared transaction data.",
+          "Evaluate the evidence linking data capability, pricing authority, and customer outcomes."
+        ],
+        "notes": "The initial complaint in Garcia v. The Wendy's Company and NCR Voyix Corporation, No. 8:26-cv-04886-LKG (D. Md.), alleges price fixing and unlawful information exchange. These are party allegations. Reuters reported on November 24 that neither defendant immediately responded to requests for comment. The 2022 data announcement and 2024 pricing clarification are separate sources, and the latter predates the lawsuit. Source status checked November 25; the live docket was inaccessible.",
+        "source": "Initial complaint, filed November 23, 2026; company statements and source review. ../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Data Access and Authority over Prices",
+        "figure": "../06_Lecture_Notes/figures/M08_pricing_authority.tex",
+        "caption": "Data capability is described in company statements. Pricing authority is disputed.",
+        "description": "Sales records flow from two restaurants toward shared infrastructure. Dashed return paths show alleged pricing authority. Customers compare the resulting offers and other alternatives.",
+        "notes": "The diagram is conceptual. The solid data paths summarize announced capability, not a verified account of every franchise deployment. The dashed paths identify the coordination question raised by the complaint. Establish who supplies data, who receives recommendations, who can change prices, and what happens when an operator rejects a recommendation.",
+        "source": "Initial complaint, filed November 23, 2026; company statements and source review. ../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Evidence for a Pricing Claim",
+        "bullets": [
+          "Identify separate owners, contracts, data permissions, and pricing authority.",
+          "Compare recommendations, actual prices, overrides, costs, and promotions.",
+          "Explain the counterfactual supporting any claimed customer overcharge."
+        ],
+        "notes": "Similar prices or a common vendor leave the mechanism unresolved. Adoption may respond to demand or costs, and nearby firms may react to each other. The DOJ and FTC's March 2024 statement in a separate hotel-pricing case argues that nonbinding recommendations do not by themselves defeat an agreement claim. It is an agency argument, not a ruling on Wendy's. Equipment-availability records do not supply transaction prices or agreement evidence.",
+        "source": "Initial complaint, filed November 23, 2026; company statements and source review. ../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Marketing Dialectics: Examine the Premise",
         "bullets": [
           "State the claim, its evidence, and the premise connecting them.",
@@ -4460,7 +4512,7 @@
         "figure": "../06_Lecture_Notes/figures/M09_optimization_boundary.tex",
         "caption": "A commercial ranking also needs a justified set of permissible actions.",
         "description": "Proposals pass through restrictions concerning truthful claims, data use, and refusal before performance ranking. Customer evidence can require revision.",
-        "notes": "Kantian duties cannot automatically be replaced by a finite penalty in an objective function. The proposed restrictions are contemporary applications requiring explicit justification. Human review and measured outcomes provide evidence; they do not mechanically define autonomy.",
+        "notes": "Kantian duties cannot automatically be replaced by a finite penalty in an objective function. The proposed restrictions are contemporary applications requiring explicit justification. Human review and measured outcomes provide evidence; they do not mechanically define autonomy. For pricing, state a maxim that identifies the purpose and means. Compare truthful use of a demand forecast with a hypothetical concealed pricing arrangement. Evaluate the customer's capacity to understand and refuse the offer. A profitable result supplies no premise about permission; these hypothetical maxims establish no finding about the defendants' intentions.",
         "source": "Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -4471,7 +4523,7 @@
           "A trusted adviser or customer-care role carries standards of conduct.",
           "Examine whether the claimed role matches incentives and practice."
         ],
-        "notes": "Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.1 challenges an exclusive focus on advantage. Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties.",
+        "notes": "Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.1 challenges an exclusive focus on advantage. Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties. In the restaurant case, compare claims of franchise pricing independence and customer benefit with actual authority and measured outcomes. Trustworthiness concerns the accuracy of that account. Examine how the pricing team handles evidence of customer losses and truthful employee objections.",
         "source": "Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -4507,6 +4559,45 @@
         ],
         "notes": "Several models can agree because they share conventions and information. In mHealth, agreement with a modal category measures reproduction of a recorded category system. It does not establish nutritional correctness. In retention, a prediction of payment does not establish customer consent or justify an obstacle to cancellation. Kantian evaluation examines the maxim and respect for choice; Confucian rectification of names asks whether a claimed service fits its conduct. These are course applications of the earlier philosophical discussions.",
         "source": "M9 §9.21. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "table",
+        "title": "Demand Information and Consumer Surplus",
+        "headers": [
+          "Objective",
+          "Signal $r$",
+          "Profit",
+          "Consumer Surplus"
+        ],
+        "rows": [
+          [
+            "Independent",
+            "0.5",
+            "29.63",
+            "32.30"
+          ],
+          [
+            "Independent",
+            "1.0",
+            "30.81",
+            "30.81"
+          ],
+          [
+            "Joint",
+            "0.5",
+            "33.33",
+            "19.33"
+          ],
+          [
+            "Joint",
+            "1.0",
+            "34.67",
+            "17.33"
+          ]
+        ],
+        "caption": "Synthetic market; expected dollars per market-day. Preferences and costs are fixed.",
+        "notes": "First hold the objective fixed and improve the demand signal. Then hold information fixed and change the objective. The first comparison can reduce consumer surplus while firms retain independent objectives. The second replaces independent price setting with joint profit maximization. Total welfare adds both monetary columns. The values are solved under quasi-linear preferences with no income effects, vendor fees, or externalities. Run evaluate_market.py and check the exact fractions.",
+        "source": "Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md"
       },
       {
         "kind": "bullets",
@@ -4704,7 +4795,10 @@
       "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
       "[Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)",
       "[Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)",
-      "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)"
+      "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)",
+      "[Pricing Case: Sources and Evidence](../01_Resources/37_Pricing_Systems_and_Competition/README.md)",
+      "[Pricing Comparison: Code and Results](../03_Data_and_Code/Pricing_Competition/README.md)",
+      "[Pricing Comparison: Optional Practice](../07_Labs/Pricing_Competition/README.md)"
     ],
     "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."

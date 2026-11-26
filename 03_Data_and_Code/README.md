@@ -125,3 +125,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Representation Alignment
 
 [Changing text representations in mHealth](Representation_Alignment/README.md) includes a 9,000-description input, a source reconstruction program, a synthetic rotation, and a local word-versus-character comparison. Complete Python appears in M5 and M7. Nine independent tests, saved predictions, and category-specific denominators support the calculations; no model API is used.
+
+## Pricing Systems and Customer Choice
+
+[Pricing Competition](Pricing_Competition/README.md) contains a synthetic two-restaurant market, exact rational calculations, cell and policy tables, an editable welfare figure, and nine independent checks. The program varies demand information and pricing objectives separately. Full code appears in M4 §4.26; M8 and M9 connect the calculation to the Wendy's case and ethical reasoning.

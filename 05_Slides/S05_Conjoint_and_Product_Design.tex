@@ -348,6 +348,33 @@ Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \ur
 
 Marketing Analytics Lecture Notes, M4 §4.16.}
 \end{frame}
+\begin{frame}{Information and the Pricing Objective}
+\usebeamercolor[fg]{normal text}
+\noindent Two synthetic restaurants: expected demand intercept $\widehat a$, cost $c=2$, substitution $\delta=0.5$.
+\medskip
+\[
+p^N=\frac{(1-\delta)\widehat a+c}{2-\delta}\qquad p^J=\frac{\widehat a+c}{2}
+\]
+\medskip
+\noindent Independent owners maximize their own profits. Joint pricing maximizes their combined profit.
+\note{Prices are dollars per meal equivalent. Equal-probability demand states have intercepts 10 and 14. A common signal is correct with probability r. Each independent firm chooses its own price, treating the other price as fixed. The joint objective includes the rival's profit. Preferences, costs, and information are held fixed when comparing objectives. M4 derives these interior solutions and supplies full code and quantity-corner checks.
+
+Original synthetic model. M4 Section 4.26. \url{../03_Data_and_Code/Pricing_Competition/README.md}}
+\end{frame}
+\begin{frame}{Profits and Consumer Surplus}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_pricing_welfare.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic market; dollars per market-day. Costs and preferences stay fixed.\par}
+\note{Within independent pricing, perfect information raises profit from 29.63 to 30.81 and reduces consumer surplus from 32.30 to 30.81. Mean posted price stays 5.33, while quantity-weighted paid price rises to 5.47. At accuracy 0.5, joint pricing raises profit to 33.33 and reduces consumer surplus to 19.33. These are different changes in an original model. No observed Wendy's outcome or legal conclusion is estimated.
+
+Original synthetic model. M4 Section 4.26. \url{../03_Data_and_Code/Pricing_Competition/README.md}}
+\end{frame}
 \begin{frame}{Price Presentation and Customer Understanding}
 \usebeamercolor[fg]{normal text}
 \vfill

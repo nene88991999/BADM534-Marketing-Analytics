@@ -1,0 +1,118 @@
+{
+  "namespace": "pricing-competition",
+  "reviewed_on": "2026-11-25",
+  "resources": [
+    {
+      "id": "PC01",
+      "title": "Wendy's hit with US class action over menu pricing",
+      "authors": [
+        "Mike Scarcella"
+      ],
+      "date": "2026-11-24",
+      "url": "https://www.reuters.com/business/wendys-hit-with-us-class-action-over-menu-pricing-2026-11-24/",
+      "access_url": "https://www.investing.com/news/stock-market-news/wendys-hit-with-us-class-action-overmenu-pricing-5048785",
+      "source_type": "news report",
+      "teaching_use": "Introduce the proposed class action and reporting cutoff.",
+      "rights": "Reuters copyright; linked only.",
+      "modules": [
+        "M4",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "PC02",
+      "title": "Garcia v. The Wendy's Company and NCR Voyix Corporation: Class Action Complaint",
+      "date": "2026-11-23",
+      "url": "https://storage.courtlistener.com/recap/gov.uscourts.mdd.618524/gov.uscourts.mdd.618524.1.0.pdf",
+      "source_type": "party pleading",
+      "case_number": "8:26-cv-04886-LKG",
+      "jurisdiction": "U.S. District Court for the District of Maryland",
+      "document_number": 1,
+      "pages": 26,
+      "teaching_use": "Separate allegations and legal theories from established facts.",
+      "rights": "Public court filing; redistribution license unconfirmed; Dropbox reference only.",
+      "modules": [
+        "M4",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "PC03",
+      "title": "NCR Aloha Delivers Smarter Data Management to Wendy's",
+      "authors": [
+        "NCR Corporation"
+      ],
+      "date": "2022-08-16",
+      "url": "https://www.businesswire.com/news/home/20220816005018/en/NCR-Aloha-Delivers-Smarter-Data-Management-to-Wendys",
+      "source_type": "company announcement",
+      "teaching_use": "Evaluate the step from data capability to conduct and outcomes.",
+      "rights": "Company announcement; linked only.",
+      "modules": [
+        "M4",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "PC04",
+      "title": "Wendy's Digital News Update",
+      "authors": [
+        "Wendy's"
+      ],
+      "date": "2024-02-27",
+      "url": "https://www.wendys.com/blog/wendys-digital-news-update",
+      "source_type": "company statement",
+      "teaching_use": "Distinguish a dated statement of intended features from a response to litigation.",
+      "rights": "Company statement; linked only.",
+      "modules": [
+        "M4",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "PC05",
+      "title": "The Effect of Outsourcing Pricing Algorithms on Market Competition",
+      "authors": [
+        "Joseph E. Harrington, Jr."
+      ],
+      "date": "2022-01-31",
+      "url": "https://doi.org/10.1287/mnsc.2021.4241",
+      "access_url": "https://joeharrington5201922.github.io/pdf/ms22.pdf",
+      "source_type": "theoretical research",
+      "publication": "Management Science 68(9):6889–6906",
+      "teaching_use": "Separate responsiveness to demand, competitive intensity, and consumer welfare.",
+      "rights": "Copyright INFORMS; teaching reference retained in Dropbox only.",
+      "modules": [
+        "M4",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "PC06",
+      "title": "Statement of Interest of the United States in Cornish-Adebiyi v. Caesars Entertainment",
+      "authors": [
+        "U.S. Department of Justice",
+        "Federal Trade Commission"
+      ],
+      "date": "2024-03-28",
+      "url": "https://www.justice.gov/usdoj-media/opa/media/1345721/dl?inline=",
+      "source_type": "agency litigation submission",
+      "jurisdiction": "U.S. District Court for the District of New Jersey; federal antitrust",
+      "status": "Agency argument in a separate case; not a judicial ruling or new rule.",
+      "effective_date": null,
+      "teaching_use": "Examine a common intermediary, agreement, and discretion over final prices.",
+      "rights": "Federal agency text with attached filings; official source linked; local PDF reference only.",
+      "modules": [
+        "M4",
+        "M8",
+        "M9"
+      ]
+    }
+  ],
+  "review": "SOURCE_REVIEW.md",
+  "case_design": "CASE_DESIGN.md"
+}

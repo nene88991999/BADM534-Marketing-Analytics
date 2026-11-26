@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[width=13.5cm,height=7.0cm,ybar stacked,bar width=30pt,
+ ymin=0,ymax=72,ytick={0,20,40,60},ylabel={Dollars per market-day},
+ xtick={1,2,3,4},xticklabels={Independent\\$r=0.5$,Independent\\$r=1$,Joint\\$r=0.5$,Joint\\$r=1$},
+ x tick label style={align=center,font=\small},xmin=.4,xmax=4.6,
+ ymajorgrids=true,legend cell align=left,
+ legend style={at={(.5,1.04)},anchor=south,legend columns=2,font=\small,/tikz/column sep=12pt},
+ point meta=explicit,
+ nodes near coords={\pgfmathprintnumber[fixed,precision=2,fixed zerofill]{\pgfplotspointmeta}},
+ every node near coord/.append style={font=\footnotesize,text=white}]
+\addplot[fill=IlliniBlue,draw=IlliniBlue] coordinates {(1,29.6296296296) [29.6296296296] (2,30.8148148148) [30.8148148148] (3,33.3333333333) [33.3333333333] (4,34.6666666667) [34.6666666667]};
+\addplot[fill=IlliniOrange,draw=IlliniOrange] coordinates {(1,32.2962962963) [32.2962962963] (2,30.8148148148) [30.8148148148] (3,19.3333333333) [19.3333333333] (4,17.3333333333) [17.3333333333]};
+\legend{Total Firm Profit,Consumer Surplus}
+\end{axis}
+\end{tikzpicture}

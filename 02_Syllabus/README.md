@@ -41,3 +41,7 @@ The syllabus includes cancellation evidence and representation quality, with cor
 ## Representation Alignment Coverage
 
 The worked examples include replacement text features and classifier compatibility in Sessions 7 and 11, followed by model agreement and independent reasons in Session 14. The [optional lab](../07_Labs/Representation_Alignment/README.md) adds no graded requirement. Session 11 reallocates five minutes within the existing meeting.
+
+## Pricing Systems and Customer Choice
+
+The syllabus includes shared pricing systems and the Wendy's dispute among its cases. Sessions 5 and 14 connect an original synthetic pricing model to source evidence and Kantian and Confucian evaluation. The [optional lab](../07_Labs/Pricing_Competition/README.md) provides the full Python exercise. Existing dates, meeting durations, and pending assessment rules are preserved.

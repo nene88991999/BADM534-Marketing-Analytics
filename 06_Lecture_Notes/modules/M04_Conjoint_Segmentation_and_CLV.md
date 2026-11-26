@@ -1427,3 +1427,207 @@ if __name__ == "__main__":
 Cluster labels and feature coordinates can change across seeds even when an objective value changes little. Align cluster memberships or feature directions under a stated matching rule before comparing repeated fits. Report the population, preprocessing, number of groups, and matching criterion. Stable assignments support reproducibility under those choices; external behaviors or independently coded text provide evidence for a substantive segment interpretation. A segment name proposed by an LLM is a hypothesis requiring that evidence.
 
 A high-value segment describes a firm's valuation under a specified horizon and cost model. It does not establish the customer's preferences or permission to receive a particular intervention. Keep segment definitions, predicted responses, customer outcomes, and authorization records separate when selecting an action.
+
+## 4.26 Demand Information, Pricing, and Consumer Surplus
+
+\noindent Two restaurant owners are considering a service that improves their forecasts of local demand. Each owner expects to earn more by adjusting prices to the information. A separate proposal would choose both restaurants' prices to maximize their combined profit. The first comparison changes information; the second changes the pricing objective. Customer outcomes depend on both choices, so an evaluation must preserve that distinction.
+
+Suppose the market contains two symmetric restaurants and a representative consumer who chooses continuous quantities of their meals. Quantities are measured in meal equivalents per market-day. Prices and marginal cost are dollars per meal equivalent. A low demand intercept of 10 and a high intercept of 14 each occur with probability one half. Marginal cost is 2 at each restaurant. These are synthetic inputs, with no estimated relationship to a particular restaurant company.
+
+### 4.26.1 Demand and Information
+
+\noindent Consumer surplus requires a preference model as well as observed expenditure. Let $q_i$ denote quantity from restaurant $i$, $p_i$ its price, and $m$ spending on a numeraire good whose price is one. Gross utility in dollars is
+
+$$
+U(q_1,q_2,m;a)=a(q_1+q_2)
+-\frac{q_1^2+2\delta q_1q_2+q_2^2}{2}+m.
+$$
+
+The intercept $a$ measures marginal willingness to pay at zero quantity. The own-quantity coefficient is normalized to one dollar per squared meal equivalent, and $\delta=0.5$ is the relative cross-quantity coefficient. Positive $\delta$ makes the restaurant meals substitutes: consuming more of one lowers marginal willingness to pay for the other. The consumer maximizes utility subject to expenditure and nonnegative quantities.
+
+\begin{assumption}[Preferences, Costs, and Timing]\label{ass:pricing-market}
+Preferences are quasi-linear with sufficient numeraire wealth and $0\leq\delta<1$. Both restaurants have constant marginal cost $c$, with no fixed costs, capacity limits, or vendor fees. Demand has two equally likely states. Firms observe a common binary signal before setting prices simultaneously; customers choose quantities using the actual state and posted prices. The reported solutions have positive quantities in every positive-probability state-signal cell.
+\end{assumption}
+
+Under Assumption \ref{ass:pricing-market}, interior consumer choice gives inverse demand $p_i=a-q_i-\delta q_j$. Solving the two equations gives
+
+$$
+q_i=\frac{(a-p_i)-\delta(a-p_j)}{1-\delta^2}.
+$$
+
+The own-price derivative is $-1/(1-\delta^2)$, holding the rival's price fixed. At equal prices, quantity at each restaurant simplifies to $q=(a-p)/(1+\delta)$. The cross-quantity restriction makes utility strictly concave, which permits an independent calculation of consumer choice, including quantity corners when checking alternative prices.
+
+Let $r$ be the probability that the common signal correctly identifies the state. Equal prior probabilities and symmetric signal errors imply that, after a low signal,
+
+$$
+\widehat a_L=r a_L+(1-r)a_H.
+$$
+
+After a high signal, $\widehat a_H=r a_H+(1-r)a_L$. A signal with $r=0.5$ supplies no demand information, so both forecasts equal 12. At $r=1$, the forecast equals actual demand. The expected squared intercept error falls from 4 to 0, in squared dollars per squared meal equivalent. No learning algorithm or estimation sample is needed for these stipulated forecasts.
+
+### 4.26.2 Independent and Joint Pricing
+
+\noindent Each independent owner chooses a price to maximize $E[(p_i-c)q_i\mid Z]$, where $Z$ is the observed signal. Differentiating with respect to the owner's price and using linear demand gives
+
+$$
+2p_i-\delta p_j=(1-\delta)\widehat a+c.
+$$
+
+At a symmetric equilibrium, the independent price is therefore
+
+$$
+p^N(\widehat a)=\frac{(1-\delta)\widehat a+c}{2-\delta}.
+$$
+
+Each owner accounts for its own lost sales when raising price. Joint maximization also accounts for sales transferred to the other restaurant. Maximizing their combined conditional profit gives the symmetric price
+
+$$
+p^J(\widehat a)=\frac{\widehat a+c}{2}.
+$$
+
+These expressions characterize the interior solutions under Assumption \ref{ass:pricing-market}. The released parameters also pass independent checks of unilateral and joint deviations that include zero-quantity corners. The independent benchmark uses the common signal while retaining separate profit objectives. A common input and a common pricing objective are distinct economic restrictions.
+
+For an equal-price outcome, consumer surplus is $(1+\delta)q^2$, summed firm profit is $2(p-c)q$, and their sum is total welfare in the specified market. The latter includes the representative consumer and the two firms. An analysis of income distribution, health, employment, or vendor costs would require additional primitives and outcomes.
+
+### 4.26.3 Expected Customer and Firm Outcomes
+
+\noindent Average over all state-signal pairs, weighting a correct pair by $r/2$ and an incorrect pair by $(1-r)/2$. The four endpoint comparisons below hold preferences and production costs fixed. Monetary totals are dollars per market-day. The posted-price column averages across states and signals without quantity weights.
+
+| Objective and Signal | Posted Price | Total Meals | Profit | Consumer Surplus | Total Welfare |
+| --- | --- | --- | --- | --- | --- |
+| Independent, $r=0.5$ | 5.33 | 8.89 | 29.63 | 32.30 | 61.93 |
+| Independent, $r=1$ | 5.33 | 8.89 | 30.81 | 30.81 | 61.63 |
+| Joint, $r=0.5$ | 7.00 | 6.67 | 33.33 | 19.33 | 52.67 |
+| Joint, $r=1$ | 7.00 | 6.67 | 34.67 | 17.33 | 52.00 |
+
+Within independent pricing, better information raises expected profit by $1.19 and lowers consumer surplus by $1.48. Mean posted price and total quantity remain unchanged. The price falls in the low state and rises in the high state. Consumption consequently shifts toward the state with lower marginal willingness to pay. Expected expenditure divided by expected total quantity rises from $5.33 to $5.47, showing why the denominator matters when reporting a price average.
+
+At $r=0.5$, changing to joint pricing raises profit by $3.70 and reduces consumer surplus by $12.96. Expected quantity falls by 2.22 meal equivalents. The welfare bars preserve the common dollar scale and distinguish the transfer to firms from the reduction in total surplus. The information comparison and the objective comparison each produce customer losses through their specified mechanism.
+
+![Synthetic two-restaurant market with equal low and high demand probabilities, marginal cost 2, and substitution 0.5. Each bar stacks expected total firm profit and consumer surplus in dollars per market-day. Better demand information changes the distribution of surplus within either pricing objective; joint pricing lowers the total relative to independent pricing at the same signal accuracy.](../figures/M04_pricing_welfare.png)
+
+[Harrington (2022)](https://doi.org/10.1287/mnsc.2021.4241) studies a separate model in which a developer designs a pricing algorithm and firms choose adoption. Under his assumptions, greater responsiveness to demand raises industry profit and lowers consumer welfare while competitive intensity remains unchanged. The calculation above isolates information and objectives in a different, explicitly specified demand system. Its outcomes establish model implications; evidence about an actual agreement or customer overcharge requires observations of the relevant market.
+
+### 4.26.4 Reproducible Calculation
+
+\noindent The [parameter file](../../03_Data_and_Code/Pricing_Competition/parameters.json) stores the two demand intercepts, marginal cost, substitution coefficient, and accuracies 0.5, 0.75, and 1. The program enumerates every positive-probability cell using exact fractions. It checks probability mass, positive quantities, and the identity connecting profit, consumer surplus, and total welfare before writing aggregate and cell tables. Decimal CSVs accompany a JSON file of exact fractions.
+
+Run from the repository root:
+
+```bash
+python3 03_Data_and_Code/Pricing_Competition/evaluate_market.py
+python3 -m unittest discover -s 03_Data_and_Code/Pricing_Competition -p 'test_*.py' -v
+```
+
+Python source: [evaluate_market.py](../../03_Data_and_Code/Pricing_Competition/evaluate_market.py)
+
+```python
+"""Solve a synthetic two-restaurant market using exact rational arithmetic."""
+import argparse
+import csv
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def load_parameters(path):
+    raw = json.loads(path.read_text())
+    if raw["data_type"] != "synthetic":
+        raise ValueError("This example requires explicitly synthetic inputs")
+    values = {key: F(str(raw[key])) for key in
+              ("a_low", "a_high", "cost", "substitution")}
+    values["accuracies"] = [F(str(x)) for x in raw["accuracies"]]
+    if not 0 <= values["substitution"] < 1:
+        raise ValueError("Substitution must be in [0, 1)")
+    if not 0 <= values["cost"] < values["a_low"] < values["a_high"]:
+        raise ValueError("Require 0 <= cost < a_low < a_high")
+    if not values["accuracies"] or len(set(values["accuracies"])) != len(values["accuracies"]):
+        raise ValueError("Provide distinct signal accuracies")
+    if any(not F(1, 2) <= r <= 1 for r in values["accuracies"]):
+        raise ValueError("Signal accuracy must be in [0.5, 1]")
+    return values
+
+
+def choose_price(expected_a, cost, substitution, objective):
+    if objective == "independent":
+        return ((1 - substitution) * expected_a + cost) / (2 - substitution)
+    if objective == "joint":
+        return (expected_a + cost) / 2
+    raise ValueError("Unknown pricing objective")
+
+
+def calculate(parameters):
+    low, high = parameters["a_low"], parameters["a_high"]
+    cost, d = parameters["cost"], parameters["substitution"]
+    states = {"low": low, "high": high}
+    outcomes, policies = [], []
+    for r in parameters["accuracies"]:
+        for objective in ("independent", "joint"):
+            cells = []
+            for state, actual_a in states.items():
+                for signal, signal_a in states.items():
+                    probability = (r if state == signal else 1 - r) / 2
+                    if probability == 0:
+                        continue
+                    expected_a = r * signal_a + (1 - r) * (low + high - signal_a)
+                    price = choose_price(expected_a, cost, d, objective)
+                    q = (actual_a - price) / (1 + d)
+                    if q <= 0 or price < cost:
+                        raise ValueError("Reported prices require positive interior quantities and margins")
+                    profit = 2 * (price - cost) * q
+                    consumer_surplus = (1 + d) * q * q
+                    gross_benefit = 2 * actual_a * q - (1 + d) * q * q
+                    welfare = gross_benefit - 2 * cost * q
+                    if welfare != profit + consumer_surplus:
+                        raise ArithmeticError("Surplus accounting failed")
+                    cells.append(dict(objective=objective, accuracy=r,
+                        state=state, signal=signal, probability=probability,
+                        actual_a=actual_a, expected_a=expected_a, price=price,
+                        quantity=2 * q, profit=profit,
+                        consumer_surplus=consumer_surplus, total_welfare=welfare,
+                        expenditure=2 * price * q,
+                        forecast_mse=(actual_a - expected_a) ** 2))
+            if sum(x["probability"] for x in cells) != 1:
+                raise ArithmeticError("Each policy must retain probability one")
+            summary = dict(objective=objective, accuracy=r)
+            for key in ("price", "quantity", "profit", "consumer_surplus",
+                        "total_welfare", "expenditure", "forecast_mse"):
+                summary[key] = sum(x["probability"] * x[key] for x in cells)
+            summary["paid_price"] = summary["expenditure"] / summary["quantity"]
+            outcomes.extend(cells)
+            policies.append(summary)
+    return outcomes, policies
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({key: format(float(value), ".10f") if isinstance(value, F)
+                             else value for key, value in row.items()})
+
+
+def run(parameters_path, output):
+    outcomes, policies = calculate(load_parameters(parameters_path))
+    output.mkdir(parents=True, exist_ok=True)
+    write_csv(output / "state_outcomes.csv", outcomes)
+    write_csv(output / "policies.csv", policies)
+    exact = [{k: str(v) if isinstance(v, F) else v for k, v in row.items()}
+             for row in policies]
+    (output / "exact_results.json").write_text(json.dumps(exact, indent=2) + "\n")
+    for row in policies:
+        print(row["objective"], float(row["accuracy"]),
+              "profit", round(float(row["profit"]), 4),
+              "consumer surplus", round(float(row["consumer_surplus"]), 4))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--parameters", type=Path, default=ROOT / "parameters.json")
+    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    args = parser.parse_args()
+    run(args.parameters, args.output)
+```

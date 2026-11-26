@@ -86,3 +86,9 @@ M9 §9.20 distinguishes technical permissions, company authority, customer autho
 ## Model Agreement and Independent Reasons
 
 M9 §9.21 distinguishes shared model representations, independent factual support, customer purposes, and justification for a marketing action. The mHealth reference categories in M5 §5.26 and M7 §7.43 measure agreement with recorded source labels. Their reproducibility does not establish nutritional correctness or permission. The philosophical application extends the existing Kantian and Confucian discussion without adding a legal claim.
+
+## Shared Pricing Systems and Competition
+
+M8 §8.28 and M9 §9.22 examine the November 23, 2026 complaint in Garcia v. The Wendy's Company and NCR Voyix Corporation, No. 8:26-cv-04886-LKG (D. Md.). The pleading alleges Sherman Act Section 1 price fixing and unlawful information exchange. The [source record](../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md), checked November 25, distinguishes those allegations, the 2022 NCR announcement, the 2024 Wendy's clarification, and a March 2024 DOJ/FTC submission in a separate hotel-pricing case. The submission is a litigation argument, with no effective date as a new rule or holding about Wendy's. The live docket was inaccessible, so later filings were not independently verified.
+
+[M4 §4.26](modules/M04_Conjoint_Segmentation_and_CLV.md) separates changes in demand information from changes in pricing objectives using an original synthetic market. Exact profits and consumer surplus are conditional model results. Ethical evaluation concerns truthful explanation, customers' purposes and alternatives, and the responsibilities attached to pricing authority.

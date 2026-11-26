@@ -281,11 +281,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 27,
+      "slides": 29,
       "companion": "S05_Conjoint_and_Product_Design.md",
       "pdf": "S05_Conjoint_and_Product_Design.pdf",
       "python_activity": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
-      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing.",
+      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus.",
       "ethics": "Price completeness and the attributes customers actually evaluate",
       "timing": [
         {
@@ -334,7 +334,7 @@
           "start_minute": 145,
           "end_minute": 155,
           "minutes": 10,
-          "activity": "Customer Alternatives and AI Pricing"
+          "activity": "Demand Information, Pricing, and Consumer Surplus"
         },
         {
           "start_minute": 155,
@@ -897,11 +897,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 44,
+      "slides": 48,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
-      "python_activity": "Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.",
-      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action.",
+      "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal.",
+      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification.",
       "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.",
       "timing": [
         {
@@ -924,9 +924,15 @@
         },
         {
           "start_minute": 50,
+          "end_minute": 60,
+          "minutes": 10,
+          "activity": "Personalized-Pricing Evidence and Benchmarks"
+        },
+        {
+          "start_minute": 60,
           "end_minute": 70,
-          "minutes": 20,
-          "activity": "Pricing Evidence and Benchmarks"
+          "minutes": 10,
+          "activity": "Wendy's Pricing Case and Evidence"
         },
         {
           "start_minute": 70,
@@ -936,9 +942,15 @@
         },
         {
           "start_minute": 80,
+          "end_minute": 90,
+          "minutes": 10,
+          "activity": "Kantian and Confucian Evaluation of Pricing"
+        },
+        {
+          "start_minute": 90,
           "end_minute": 95,
-          "minutes": 15,
-          "activity": "Kantian and Confucian Justification"
+          "minutes": 5,
+          "activity": "Justification and Independent Reasons"
         },
         {
           "start_minute": 95,
@@ -948,8 +960,14 @@
         },
         {
           "start_minute": 100,
+          "end_minute": 110,
+          "minutes": 10,
+          "activity": "Demand Information and Pricing Objectives"
+        },
+        {
+          "start_minute": 110,
           "end_minute": 130,
-          "minutes": 30,
+          "minutes": 20,
           "activity": "Pricing, Renewal, and Reproducible Calculation"
         },
         {
@@ -969,16 +987,26 @@
       "discussion_blocks": [
         {
           "start_minute": 80,
+          "end_minute": 90,
+          "activity": "Kantian and Confucian Evaluation of Pricing"
+        },
+        {
+          "start_minute": 90,
           "end_minute": 95,
-          "activity": "Kantian and Confucian Justification"
+          "activity": "Justification and Independent Reasons"
         },
         {
           "start_minute": 95,
           "end_minute": 100,
-          "activity": "Synthetic Personas and Consumer Representation"
+          "activity": "Definitions, Evidence, and Customer Authorization"
         },
         {
           "start_minute": 100,
+          "end_minute": 110,
+          "activity": "Demand Information and Pricing Objectives"
+        },
+        {
+          "start_minute": 110,
           "end_minute": 130,
           "activity": "Pricing, Renewal, and Reproducible Calculation"
         },
@@ -988,7 +1016,8 @@
           "activity": "Pricing Policy, Cancellation, and Environmental Claims"
         }
       ],
-      "agent_workflow_minutes": 10
+      "agent_workflow_minutes": 10,
+      "pricing_competition_minutes": 30
     },
     {
       "session": 15,

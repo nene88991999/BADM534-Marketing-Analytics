@@ -13,6 +13,7 @@ Session 05. M4. 170 minutes.
 - Separate new-product share from incremental category demand.
 - Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.
 - Allocate human and synthetic responses at a common accuracy target.
+- Separate better demand information from joint pricing when evaluating customer surplus.
 
 ## Related Materials
 
@@ -23,6 +24,7 @@ Session 05. M4. 170 minutes.
 - [Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)
 - [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
+- [Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)
 
 ## Slide 1: Conjoint and Product Design
 
@@ -314,7 +316,33 @@ Under a quasilinear comparison, the buyer price ceiling is delivered value minus
 
 Source: Marketing Analytics Lecture Notes, M4 §4.16.
 
-## Slide 26: Price Presentation and Customer Understanding
+## Slide 26: Information and the Pricing Objective
+
+Two synthetic restaurants: expected demand intercept $\widehat a$, cost $c=2$, substitution $\delta=0.5$.
+
+$$
+p^N=\frac{(1-\delta)\widehat a+c}{2-\delta}\qquad p^J=\frac{\widehat a+c}{2}
+$$
+
+Independent owners maximize their own profits. Joint pricing maximizes their combined profit.
+
+Prices are dollars per meal equivalent. Equal-probability demand states have intercepts 10 and 14. A common signal is correct with probability r. Each independent firm chooses its own price, treating the other price as fixed. The joint objective includes the rival's profit. Preferences, costs, and information are held fixed when comparing objectives. M4 derives these interior solutions and supplies full code and quantity-corner checks.
+
+Source: Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md
+
+## Slide 27: Profits and Consumer Surplus
+
+Synthetic market; dollars per market-day. Costs and preferences stay fixed.
+
+**Figure description:** Four bars stack total firm profit and consumer surplus for independent and joint pricing at signal accuracies 0.5 and 1. Bar height equals total welfare in the specified two-restaurant economy.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_pricing_welfare.tex)
+
+Within independent pricing, perfect information raises profit from 29.63 to 30.81 and reduces consumer surplus from 32.30 to 30.81. Mean posted price stays 5.33, while quantity-weighted paid price rises to 5.47. At accuracy 0.5, joint pricing raises profit to 33.33 and reduces consumer surplus to 19.33. These are different changes in an original model. No observed Wendy's outcome or legal conclusion is estimated.
+
+Source: Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md
+
+## Slide 28: Price Presentation and Customer Understanding
 
 - A base price and a mandatory fee determine the total paid.
 - A stated-choice task can reveal different responses to equivalent totals.
@@ -324,7 +352,7 @@ The FTC's fee rule addresses live-event tickets and short-term lodging. Its scop
 
 Source: FTC Rule on Unfair or Deceptive Fees FAQ. https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions
 
-## Slide 27: Product-Design Discussion
+## Slide 29: Product-Design Discussion
 
 - How much of C's demand comes from existing products?
 - Which design change would identify the price tradeoff?

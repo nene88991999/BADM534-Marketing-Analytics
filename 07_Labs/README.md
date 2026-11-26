@@ -58,3 +58,7 @@ Both activities are public optional ungraded practice with original synthetic in
 ## Representation Alignment
 
 [Changing text representations in mHealth](Representation_Alignment/README.md) is public optional ungraded practice. Students hand-check a rotation, compare neighbor overlap and classification, reproduce a local mHealth evaluation, and justify the reference-label and cost comparisons. It supports M5 §5.26 and M7 §§7.42–7.44, with connections to M8 and M9.
+
+## Pricing Systems and Customer Choice
+
+[Pricing Information and Customer Outcomes](Pricing_Competition/README.md) is optional ungraded practice with full Python, synthetic parameters, exact results, and evidence questions. Compare independent and joint objectives at a fixed signal accuracy, then change information while retaining the objective. M4, M8, and M9 provide the derivation, Wendy's case, and ethical evaluation.

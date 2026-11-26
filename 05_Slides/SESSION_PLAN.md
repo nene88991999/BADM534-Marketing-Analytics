@@ -120,7 +120,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.
 
-**Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for customer alternatives and AI pricing.
+**Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus.
 
 **Ethics and Regulation:** Price completeness and the attributes customers actually evaluate
 
@@ -133,9 +133,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–110 | Choice Probabilities and Product Economics |
 | 110–125 | Human and Synthetic Research Budgets |
 | 125–145 | Synthetic Concept Screening and Human Validation |
-| 145–155 | Customer Alternatives and AI Pricing |
+| 145–155 | Demand Information, Pricing, and Consumer Surplus |
 | 155–170 | Ethics and Decision Discussion |
-
 
 ### 06. Segmentation and Customer Lifetime Value
 
@@ -316,9 +315,9 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare synthetic pricing policies and customer incidence; distinguish published aggregate arithmetic from reproduced experiments.
+**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
 
@@ -327,11 +326,14 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 0–20 | Demand and Total AI Workflow Cost |
 | 20–25 | Recommendation Review and Export |
 | 25–50 | AI-Assisted Experiments |
-| 50–70 | Pricing Evidence and Benchmarks |
+| 50–60 | Personalized-Pricing Evidence and Benchmarks |
+| 60–70 | Wendy's Pricing Case and Evidence |
 | 70–80 | Break |
-| 80–95 | Kantian and Confucian Justification |
+| 80–90 | Kantian and Confucian Evaluation of Pricing |
+| 90–95 | Justification and Independent Reasons |
 | 95–100 | Definitions, Evidence, and Customer Authorization |
-| 100–130 | Pricing, Renewal, and Reproducible Calculation |
+| 100–110 | Demand Information and Pricing Objectives |
+| 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–170 | Decision Discussion |
 

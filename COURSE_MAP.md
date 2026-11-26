@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 106 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 108 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -161,3 +161,7 @@ M1 §1.15 and M8 §8.25 connect persona weights, synthetic concept screening, fi
 ## Representation Alignment and Independent Evidence
 
 M5 §5.26 defines a disjoint description sample. M7 §§7.42–7.44 connect coordinate geometry, classifier compatibility, local mHealth classification, and observed answers. M8 §8.27 compares implementation costs; M9 §9.21 examines model agreement and independent reasons. [Complete code and recorded results](03_Data_and_Code/Representation_Alignment/README.md) accompany two editable figures and [optional ungraded practice](07_Labs/Representation_Alignment/README.md). Sessions 7, 11, and 14 include five slides within the existing meetings.
+
+## Pricing Systems and Customer Choice
+
+[M4 §4.26](06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) solves an original two-restaurant model with information and pricing objectives varied separately. [M8 §8.28](06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) examines the Wendy's complaint and evidence, while [M9 §9.22](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) evaluates pricing authority and customer alternatives. [Code and results](03_Data_and_Code/Pricing_Competition/README.md), two TikZ figures, six additional slides in Sessions 5 and 14, and [optional practice](07_Labs/Pricing_Competition/README.md) accompany the case.

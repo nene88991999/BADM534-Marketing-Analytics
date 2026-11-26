@@ -132,3 +132,7 @@ Orders seek evidence directly from nine companies. An inquiry does not establish
 [Source](https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry).
 
 Local reference: `local_sources/FTC_PricingInquiry_October2026.html`. Original retained in Dropbox; public repository supplies attribution and original analysis.
+
+## Pricing Systems and Customer Choice
+
+The [November 2026 Wendy's case record](../../37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md) concerns alleged price fixing and unlawful information exchange under federal antitrust law. It distinguishes the initial pleading from a judicial finding and a separate March 2024 DOJ/FTC litigation submission from a new rule. The record was checked November 25, 2026; the current docket was inaccessible. Dynamic pricing, personalized pricing, cancellation duties, and price-gouging provisions retain their separate scope.

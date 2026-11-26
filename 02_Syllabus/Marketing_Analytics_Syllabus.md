@@ -15,7 +15,7 @@
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. Customer measurement and visualization define the patterns to explain. Regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems inform decisions about product design, acquisition, retention, pricing, and marketing budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy, including AI-assisted experimentation, personalized pricing, and commercial incentives.
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy, including AI-assisted experimentation, personalized pricing, shared pricing systems, and commercial incentives.
 
 ## Learning Objectives
 
@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, coordinate alignment, and network compression. Workflow comparisons assess task information, feedback, costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, the Wendy's pricing dispute, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, coordinate alignment, network compression, and pricing objectives. Workflow comparisons assess task information, feedback, costs, and customer authority.
 
 ---
 

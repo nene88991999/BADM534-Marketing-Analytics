@@ -112,3 +112,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Representation Alignment and Text Decisions
 
 [Three original programs](03_Data_and_Code/Representation_Alignment/README.md) connect coordinate alignment, fixed-classifier compatibility, and retraining on mHealth descriptions. Complete Python, two editable figures, five slides, and [optional practice](07_Labs/Representation_Alignment/README.md) accompany M5, M7, M8, and Marketing Dialectics. The [source review](01_Resources/36_Representation_Alignment/README.md) distinguishes the neural-model research from the local course calculations.
+
+## Pricing Systems and Customer Choice
+
+[The Wendy's case and source review](01_Resources/37_Pricing_Systems_and_Competition/README.md) connect disputed pricing authority to customer choice. [An original two-restaurant model](03_Data_and_Code/Pricing_Competition/README.md) separates demand information from joint pricing with complete Python, nine checks, and two editable figures. M4 §4.26, M8 §8.28, M9 §9.22, Sessions 5 and 14, and [optional practice](07_Labs/Pricing_Competition/README.md) carry the analysis.

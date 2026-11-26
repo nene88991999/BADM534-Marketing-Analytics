@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 408 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -119,7 +119,7 @@ Session 7 adds three slides on group means, access, and preprocessing. Session 1
 
 ## Definitions, Evidence, and Representation Quality
 
-Sessions 1 and 2 distinguish event definitions, logical inference, validation, and recorded completion. Session 11 compares reconstruction with review recall and examines nonunique features. Session 14 connects classifications to evidence and customer permission. Ten new slides and three editable diagrams accompany [complete Python](../03_Data_and_Code/Representation_Evaluation/README.md) and the [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md). The affected decks contain 25, 23, 52, and 41 slides, respectively; the combined deck contains 389. All fifteen meetings remain 170 minutes.
+Sessions 1 and 2 distinguish event definitions, logical inference, validation, and recorded completion. Session 11 compares reconstruction with review recall and examines nonunique features. Session 14 connects classifications to evidence and customer permission. Ten new slides and three editable diagrams accompany [complete Python](../03_Data_and_Code/Representation_Evaluation/README.md) and the [cancellation case](../03_Data_and_Code/Ontology_and_Evidence/README.md). All fifteen meetings remain 170 minutes.
 
 ## Agent Workflow Evaluation
 
@@ -128,3 +128,7 @@ Sessions 1, 9, 11, and 14 include eight slides on the fixed mHealth logging rost
 ## Representation Alignment
 
 Sessions 7, 11, and 14 add five slides connecting text coordinates, classifier compatibility, mHealth evaluation, and independent reasons. Two original editable figures accompany [complete Python and results](../03_Data_and_Code/Representation_Alignment/README.md). Session 11 assigns minutes 100–115 to reconstruction, alignment, and representation evaluation; the adjacent interval exercise uses minutes 80–100. All meetings remain 170 minutes. The longer coding work is [optional ungraded practice](../07_Labs/Representation_Alignment/README.md).
+
+## Pricing Systems and Customer Choice
+
+Session 5 adds the independent and joint pricing equations and a surplus figure. Session 14 adds the Wendy's case, the data-and-authority diagram, evidence questions, and the numerical comparison; existing philosophical discussion applies the case. Six additional slides have complete Markdown companions and source links. [Code and optional practice](../03_Data_and_Code/Pricing_Competition/README.md) support the unchanged fifteen 170-minute meetings.

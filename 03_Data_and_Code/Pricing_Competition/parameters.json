@@ -1,0 +1,10 @@
+{
+  "data_type": "synthetic",
+  "quantity_unit": "meal equivalents per market-day",
+  "money_unit": "dollars per market-day",
+  "a_low": 10,
+  "a_high": 14,
+  "cost": 2,
+  "substitution": 0.5,
+  "accuracies": [0.5, 0.75, 1.0]
+}

@@ -7894,6 +7894,321 @@ or permission to receive a particular intervention. Keep segment
 definitions, predicted responses, customer outcomes, and authorization
 records separate when selecting an action.
 
+\hypertarget{M04-demand-information-pricing-and-consumer-surplus}{%
+\section{Demand Information, Pricing, and Consumer
+Surplus}\label{M04-demand-information-pricing-and-consumer-surplus}}
+
+\noindent \noindent Two restaurant owners are considering a service that improves
+their forecasts of local demand. Each owner expects to earn more by
+adjusting prices to the information. A separate proposal would choose
+both restaurants' prices to maximize their combined profit. The first
+comparison changes information; the second changes the pricing
+objective. Customer outcomes depend on both choices, so an evaluation
+must preserve that distinction.
+
+Suppose the market contains two symmetric restaurants and a
+representative consumer who chooses continuous quantities of their
+meals. Quantities are measured in meal equivalents per market-day.
+Prices and marginal cost are dollars per meal equivalent. A low demand
+intercept of 10 and a high intercept of 14 each occur with probability
+one half. Marginal cost is 2 at each restaurant. These are synthetic
+inputs, with no estimated relationship to a particular restaurant
+company.
+
+\hypertarget{M04-demand-and-information}{%
+\subsection{Demand and Information}\label{M04-demand-and-information}}
+
+\noindent \noindent Consumer surplus requires a preference model as well as
+observed expenditure. Let \(q_i\) denote quantity from restaurant \(i\),
+\(p_i\) its price, and \(m\) spending on a numeraire good whose price is
+one. Gross utility in dollars is
+
+\[
+U(q_1,q_2,m;a)=a(q_1+q_2)
+-\frac{q_1^2+2\delta q_1q_2+q_2^2}{2}+m.
+\]
+
+The intercept \(a\) measures marginal willingness to pay at zero
+quantity. The own-quantity coefficient is normalized to one dollar per
+squared meal equivalent, and \(\delta=0.5\) is the relative
+cross-quantity coefficient. Positive \(\delta\) makes the restaurant
+meals substitutes: consuming more of one lowers marginal willingness to
+pay for the other. The consumer maximizes utility subject to expenditure
+and nonnegative quantities.
+
+\begin{assumption}[Preferences, Costs, and Timing]\label{ass:pricing-market}
+Preferences are quasi-linear with sufficient numeraire wealth and $0\leq\delta<1$. Both restaurants have constant marginal cost $c$, with no fixed costs, capacity limits, or vendor fees. Demand has two equally likely states. Firms observe a common binary signal before setting prices simultaneously; customers choose quantities using the actual state and posted prices. The reported solutions have positive quantities in every positive-probability state-signal cell.
+\end{assumption}
+
+Under Assumption \ref{ass:pricing-market}, interior consumer choice
+gives inverse demand \(p_i=a-q_i-\delta q_j\). Solving the two equations
+gives
+
+\[
+q_i=\frac{(a-p_i)-\delta(a-p_j)}{1-\delta^2}.
+\]
+
+The own-price derivative is \(-1/(1-\delta^2)\), holding the rival's
+price fixed. At equal prices, quantity at each restaurant simplifies to
+\(q=(a-p)/(1+\delta)\). The cross-quantity restriction makes utility
+strictly concave, which permits an independent calculation of consumer
+choice, including quantity corners when checking alternative prices.
+
+Let \(r\) be the probability that the common signal correctly identifies
+the state. Equal prior probabilities and symmetric signal errors imply
+that, after a low signal,
+
+\[
+\widehat a_L=r a_L+(1-r)a_H.
+\]
+
+After a high signal, \(\widehat a_H=r a_H+(1-r)a_L\). A signal with
+\(r=0.5\) supplies no demand information, so both forecasts equal 12. At
+\(r=1\), the forecast equals actual demand. The expected squared
+intercept error falls from 4 to 0, in squared dollars per squared meal
+equivalent. No learning algorithm or estimation sample is needed for
+these stipulated forecasts.
+
+\hypertarget{M04-independent-and-joint-pricing}{%
+\subsection{Independent and Joint
+Pricing}\label{M04-independent-and-joint-pricing}}
+
+\noindent \noindent Each independent owner chooses a price to maximize
+\(E[(p_i-c)q_i\mid Z]\), where \(Z\) is the observed signal.
+Differentiating with respect to the owner's price and using linear
+demand gives
+
+\[
+2p_i-\delta p_j=(1-\delta)\widehat a+c.
+\]
+
+At a symmetric equilibrium, the independent price is therefore
+
+\[
+p^N(\widehat a)=\frac{(1-\delta)\widehat a+c}{2-\delta}.
+\]
+
+Each owner accounts for its own lost sales when raising price. Joint
+maximization also accounts for sales transferred to the other
+restaurant. Maximizing their combined conditional profit gives the
+symmetric price
+
+\[
+p^J(\widehat a)=\frac{\widehat a+c}{2}.
+\]
+
+These expressions characterize the interior solutions under Assumption
+\ref{ass:pricing-market}. The released parameters also pass independent
+checks of unilateral and joint deviations that include zero-quantity
+corners. The independent benchmark uses the common signal while
+retaining separate profit objectives. A common input and a common
+pricing objective are distinct economic restrictions.
+
+For an equal-price outcome, consumer surplus is \((1+\delta)q^2\),
+summed firm profit is \(2(p-c)q\), and their sum is total welfare in the
+specified market. The latter includes the representative consumer and
+the two firms. An analysis of income distribution, health, employment,
+or vendor costs would require additional primitives and outcomes.
+
+\hypertarget{M04-expected-customer-and-firm-outcomes}{%
+\subsection{Expected Customer and Firm
+Outcomes}\label{M04-expected-customer-and-firm-outcomes}}
+
+\noindent \noindent Average over all state-signal pairs, weighting a correct pair
+by \(r/2\) and an incorrect pair by \((1-r)/2\). The four endpoint
+comparisons below hold preferences and production costs fixed. Monetary
+totals are dollars per market-day. The posted-price column averages
+across states and signals without quantity weights.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.20}}@{}}
+\toprule
+Objective and Signal & Posted Price & Total Meals & Profit & Consumer
+Surplus & Total Welfare \\
+\midrule
+
+Independent, \(r=0.5\) & 5.33 & 8.89 & 29.63 & 32.30 & 61.93 \\
+Independent, \(r=1\) & 5.33 & 8.89 & 30.81 & 30.81 & 61.63 \\
+Joint, \(r=0.5\) & 7.00 & 6.67 & 33.33 & 19.33 & 52.67 \\
+Joint, \(r=1\) & 7.00 & 6.67 & 34.67 & 17.33 & 52.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Within independent pricing, better information raises expected profit by
+\$1.19 and lowers consumer surplus by \$1.48. Mean posted price and
+total quantity remain unchanged. The price falls in the low state and
+rises in the high state. Consumption consequently shifts toward the
+state with lower marginal willingness to pay. Expected expenditure
+divided by expected total quantity rises from \$5.33 to \$5.47, showing
+why the denominator matters when reporting a price average.
+
+At \(r=0.5\), changing to joint pricing raises profit by \$3.70 and
+reduces consumer surplus by \$12.96. Expected quantity falls by 2.22
+meal equivalents. The welfare bars preserve the common dollar scale and
+distinguish the transfer to firms from the reduction in total surplus.
+The information comparison and the objective comparison each produce
+customer losses through their specified mechanism.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_pricing_welfare.tex}
+\caption{Synthetic two-restaurant market with equal low and high demand probabilities, marginal cost 2, and substitution 0.5. Each bar stacks expected total firm profit and consumer surplus in dollars per market-day. Better demand information changes the distribution of surplus within either pricing objective; joint pricing lowers the total relative to independent pricing at the same signal accuracy.}\label{fig:M04_pricing_welfare}
+\end{figure}
+
+\href{https://doi.org/10.1287/mnsc.2021.4241}{Harrington (2022)} studies
+a separate model in which a developer designs a pricing algorithm and
+firms choose adoption. Under his assumptions, greater responsiveness to
+demand raises industry profit and lowers consumer welfare while
+competitive intensity remains unchanged. The calculation above isolates
+information and objectives in a different, explicitly specified demand
+system. Its outcomes establish model implications; evidence about an
+actual agreement or customer overcharge requires observations of the
+relevant market.
+
+\hypertarget{M04-reproducible-calculation}{%
+\subsection{Reproducible
+Calculation}\label{M04-reproducible-calculation}}
+
+\noindent \noindent The
+\href{../03_Data_and_Code/Pricing_Competition/parameters.json}{parameter
+file} stores the two demand intercepts, marginal cost, substitution
+coefficient, and accuracies 0.5, 0.75, and 1. The program enumerates
+every positive-probability cell using exact fractions. It checks
+probability mass, positive quantities, and the identity connecting
+profit, consumer surplus, and total welfare before writing aggregate and
+cell tables. Decimal CSVs accompany a JSON file of exact fractions.
+
+Run from the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python3 03_Data_and_Code/Pricing_Competition/evaluate_market.py
+python3 -m unittest discover -s 03_Data_and_Code/Pricing_Competition -p 'test_*.py' -v
+\end{Verbatim}
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Pricing_Competition/evaluate_market.py}{evaluate\_market.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Solve a synthetic two-restaurant market using exact rational arithmetic."""
+import argparse
+import csv
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def load_parameters(path):
+    raw = json.loads(path.read_text())
+    if raw["data_type"] != "synthetic":
+        raise ValueError("This example requires explicitly synthetic inputs")
+    values = {key: F(str(raw[key])) for key in
+              ("a_low", "a_high", "cost", "substitution")}
+    values["accuracies"] = [F(str(x)) for x in raw["accuracies"]]
+    if not 0 <= values["substitution"] < 1:
+        raise ValueError("Substitution must be in [0, 1)")
+    if not 0 <= values["cost"] < values["a_low"] < values["a_high"]:
+        raise ValueError("Require 0 <= cost < a_low < a_high")
+    if not values["accuracies"] or len(set(values["accuracies"])) != len(values["accuracies"]):
+        raise ValueError("Provide distinct signal accuracies")
+    if any(not F(1, 2) <= r <= 1 for r in values["accuracies"]):
+        raise ValueError("Signal accuracy must be in [0.5, 1]")
+    return values
+
+
+def choose_price(expected_a, cost, substitution, objective):
+    if objective == "independent":
+        return ((1 - substitution) * expected_a + cost) / (2 - substitution)
+    if objective == "joint":
+        return (expected_a + cost) / 2
+    raise ValueError("Unknown pricing objective")
+
+
+def calculate(parameters):
+    low, high = parameters["a_low"], parameters["a_high"]
+    cost, d = parameters["cost"], parameters["substitution"]
+    states = {"low": low, "high": high}
+    outcomes, policies = [], []
+    for r in parameters["accuracies"]:
+        for objective in ("independent", "joint"):
+            cells = []
+            for state, actual_a in states.items():
+                for signal, signal_a in states.items():
+                    probability = (r if state == signal else 1 - r) / 2
+                    if probability == 0:
+                        continue
+                    expected_a = r * signal_a + (1 - r) * (low + high - signal_a)
+                    price = choose_price(expected_a, cost, d, objective)
+                    q = (actual_a - price) / (1 + d)
+                    if q <= 0 or price < cost:
+                        raise ValueError("Reported prices require positive interior quantities and margins")
+                    profit = 2 * (price - cost) * q
+                    consumer_surplus = (1 + d) * q * q
+                    gross_benefit = 2 * actual_a * q - (1 + d) * q * q
+                    welfare = gross_benefit - 2 * cost * q
+                    if welfare != profit + consumer_surplus:
+                        raise ArithmeticError("Surplus accounting failed")
+                    cells.append(dict(objective=objective, accuracy=r,
+                        state=state, signal=signal, probability=probability,
+                        actual_a=actual_a, expected_a=expected_a, price=price,
+                        quantity=2 * q, profit=profit,
+                        consumer_surplus=consumer_surplus, total_welfare=welfare,
+                        expenditure=2 * price * q,
+                        forecast_mse=(actual_a - expected_a) ** 2))
+            if sum(x["probability"] for x in cells) != 1:
+                raise ArithmeticError("Each policy must retain probability one")
+            summary = dict(objective=objective, accuracy=r)
+            for key in ("price", "quantity", "profit", "consumer_surplus",
+                        "total_welfare", "expenditure", "forecast_mse"):
+                summary[key] = sum(x["probability"] * x[key] for x in cells)
+            summary["paid_price"] = summary["expenditure"] / summary["quantity"]
+            outcomes.extend(cells)
+            policies.append(summary)
+    return outcomes, policies
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({key: format(float(value), ".10f") if isinstance(value, F)
+                             else value for key, value in row.items()})
+
+
+def run(parameters_path, output):
+    outcomes, policies = calculate(load_parameters(parameters_path))
+    output.mkdir(parents=True, exist_ok=True)
+    write_csv(output / "state_outcomes.csv", outcomes)
+    write_csv(output / "policies.csv", policies)
+    exact = [{k: str(v) if isinstance(v, F) else v for k, v in row.items()}
+             for row in policies]
+    (output / "exact_results.json").write_text(json.dumps(exact, indent=2) + "\n")
+    for row in policies:
+        print(row["objective"], float(row["accuracy"]),
+              "profit", round(float(row["profit"]), 4),
+              "consumer surplus", round(float(row["consumer_surplus"]), 4))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--parameters", type=Path, default=ROOT / "parameters.json")
+    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    args = parser.parse_args()
+    run(args.parameters, args.output)
+\end{Verbatim}
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -21251,6 +21566,118 @@ change. Record the encoder, preprocessing, map, classifier, label
 definition, and evaluation population together so that a later
 performance comparison refers to a specified system.
 
+\hypertarget{M08-shared-pricing-systems-and-customer-choice}{%
+\section{Shared Pricing Systems and Customer
+Choice}\label{M08-shared-pricing-systems-and-customer-choice}}
+
+\noindent \noindent A restaurant operator must decide what data to provide to a
+pricing service and which decisions to delegate. Product-level sales can
+help forecast demand, schedule staff, and assess promotions. The same
+infrastructure can also connect businesses that otherwise make separate
+pricing decisions. A customer-outcome evaluation therefore needs to
+identify the information supplied, the objective being optimized, the
+authority over prices, and the alternatives available to customers.
+
+\hypertarget{M08-the-wendys-pricing-complaint}{%
+\subsection{The Wendy's Pricing
+Complaint}\label{M08-the-wendys-pricing-complaint}}
+
+\noindent \noindent On November 23, 2026, a customer filed a proposed class action
+against Wendy's and NCR Voyix in federal court in Maryland. The
+complaint alleges that shared transaction data and centralized pricing
+decisions reduced competition among separately owned restaurants. It
+pleads claims concerning price fixing and information exchange under
+Section 1 of the Sherman Act. These allegations appear in the initial
+filing and require adjudication. Reuters reported on November 24 that
+neither company immediately responded to its requests for comment.
+\href{https://storage.courtlistener.com/recap/gov.uscourts.mdd.618524/gov.uscourts.mdd.618524.1.0.pdf}{Complaint,
+paragraphs 5--13 and 71--83};
+\href{https://www.investing.com/news/stock-market-news/wendys-hit-with-us-class-action-overmenu-pricing-5048785}{Reuters}.
+
+The company record supplies different evidence. NCR's August 2022
+announcement describes access to detailed transaction data and expected
+operational improvements. Wendy's February 2024 clarification describes
+possible menu changes and discounts and states that the company did not
+plan to raise prices during its busiest periods. The announcement
+supports a claim about data capability, while the clarification records
+a stated pricing intention. Their implications for actual pricing
+conduct and customer outcomes depend on further evidence. The 2024
+statement predates the lawsuit.
+\href{https://www.businesswire.com/news/home/20220816005018/en/NCR-Aloha-Delivers-Smarter-Data-Management-to-Wendys}{NCR
+announcement};
+\href{https://www.wendys.com/blog/wendys-digital-news-update}{Wendy's
+statement}.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M08_pricing_authority.tex}
+\caption{Conceptual restaurant pricing arrangement. Sales records flow toward shared infrastructure. Dashed return paths identify disputed pricing authority alleged in the complaint. Customers compare the resulting offers and other available alternatives. Data access, authority over prices, and customer outcomes require separate evidence.}\label{fig:M08_pricing_authority}
+\end{figure}
+
+\hypertarget{M08-evidence-for-the-competing-explanations}{%
+\subsection{Evidence for the Competing
+Explanations}\label{M08-evidence-for-the-competing-explanations}}
+
+\noindent \noindent A claim about coordination requires evidence about the
+relevant businesses and their decision process. Franchise contracts,
+data permissions, recommendations, actual prices, overrides, and
+communications can identify who supplied information and who exercised
+authority. Cost records, product changes, promotions, and local demand
+help evaluate explanations for a price movement. A shared vendor or a
+set of similar prices alone leaves those questions unresolved. Ownership
+also matters: separately owned restaurants and outlets owned by one firm
+present different decision structures.
+
+An empirical price comparison should define the product, location,
+period, transaction channel, taxes, fees, and promotion treatment before
+calculating an average. A causal evaluation of a pricing-system change
+would additionally require a credible comparison for the prices that
+would otherwise have prevailed. Adoption can respond to expected demand
+or cost pressure, and nearby restaurants can change their prices in
+response. These mechanisms affect both selection into adoption and the
+validity of a comparison group. The restaurant-availability records used
+elsewhere measure equipment status; they supply no observed prices or
+agreement evidence for this dispute.
+
+In a March 2024 submission in a separate hotel-pricing case, the
+Department of Justice and Federal Trade Commission argued that a common
+intermediary can facilitate an agreement and that discretion to depart
+from a recommended starting price does not by itself resolve a
+price-fixing claim. The submission is an agency litigation argument. Its
+application depends on the facts and legal analysis of the relevant
+case.
+\href{https://www.justice.gov/usdoj-media/opa/media/1345721/dl?inline=}{Statement
+of Interest, pages 3--7 and 12--13}.
+
+\hypertarget{M08-profits-welfare-and-available-alternatives}{%
+\subsection{Profits, Welfare, and Available
+Alternatives}\label{M08-profits-welfare-and-available-alternatives}}
+
+\noindent \noindent The synthetic market in §4.26 changes demand information and
+pricing objectives separately. With independent pricing, a perfect
+signal raises expected profit from \$29.63 to \$30.81 while consumer
+surplus falls from \$32.30 to \$30.81 per market-day. Holding the
+uninformative signal fixed, joint pricing raises profit to \$33.33 and
+lowers consumer surplus to \$19.33. These are solved outcomes for the
+stated two-restaurant model. They provide distinct explanations that a
+real-market investigation must assess with appropriate evidence.
+
+A profitable recommendation consequently needs a separate account of
+customer value. Faster service, lower costs, improved availability, and
+lower customer payments are different outcomes with potentially
+different beneficiaries. Report the objective, population, and
+comparison supporting each claim. A higher purchase rate establishes
+behavior under the available offers; the ethical significance of that
+behavior also depends on the person's information, purposes, and
+feasible alternatives.
+
+Cancellation and pricing raise related questions about practical choice.
+A customer may face obstacles when attempting to leave a subscription. A
+restaurant customer may be able to reject any single offer while facing
+a restricted set of alternatives. The relevant actions and legal rules
+differ, while both settings require attention to the choices customers
+can actually exercise (§9.22).
+
 \hypertarget{M09-marketing-dialectics}{%
 \chapter{Marketing Dialectics}\label{M09-marketing-dialectics}}
 
@@ -23214,5 +23641,113 @@ conflicts with a customer's expressed purpose. Independently checked
 records, customer testimony, and a clear account of the permissible
 action give the recommendation a basis that agreement alone cannot
 provide.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-pricing-authority-and-customer-alternatives}{%
+\section{Pricing Authority and Customer
+Alternatives}\label{M09-pricing-authority-and-customer-alternatives}}
+
+\noindent \noindent A restaurant director is asked to approve a pricing service
+that raises expected profit. The proposal describes the service as
+improving the customer experience, but the financial forecast supplies
+no measure of that experience. The director must examine the connection
+between the system's information, its pricing objective, and the
+customer's alternatives. The Wendy's complaint in §8.28 motivates this
+decision through disputed allegations about shared data and pricing
+authority. A reasoned evaluation must keep those allegations, the
+available evidence, and the moral assessment distinct.
+
+\hypertarget{M09-the-maxim-and-the-customers-judgment}{%
+\subsection{The Maxim and the Customer's
+Judgment}\label{M09-the-maxim-and-the-customers-judgment}}
+
+\noindent \noindent A Kantian evaluation starts with the principle governing the
+proposed action. Consider an operator who proposes to use a demand
+forecast to adjust prices while accurately explaining material terms and
+respecting the customer's ability to decline. Compare that maxim with a
+proposal to conceal a common pricing arrangement because customers would
+otherwise question whether competing offers are independent. Their
+purposes and means require separate examination. The second hypothetical
+maxim relies on customers lacking information relevant to their
+judgment; its commercial success supplies no justification for that
+reliance.
+
+Kant's humanity formulation directs attention to persons' capacity to
+set and pursue ends. Using customer information in a commercial exchange
+does not by itself establish that a person is treated merely as a means.
+The assessment concerns whether the practice respects the person's
+rational agency, including the conditions under which an offer can be
+understood and refused. Truthful disclosure matters, while the content
+of the arrangement and the person's feasible alternatives remain
+consequential. Public disclosure alone supplies no proof that a practice
+is permissible. The principles developed in §9.3 support these
+contemporary applications. Claims about the defendants' intentions
+require evidence about their conduct and knowledge.
+
+An affirmative purchase can reflect a preference among available options
+even when those options have become less favorable. The synthetic
+calculation in §4.26 makes that distinction concrete. Consumers continue
+purchasing under joint pricing while receiving less surplus than under
+independent pricing at the same information level. The comparison
+concerns the specified alternatives and preferences. It gives no
+numerical measure of free will and does not establish a universal
+ethical threshold for acceptable prices.
+
+\hypertarget{M09-trustworthiness-and-the-responsibilities-of-a-pricing-service}{%
+\subsection{Trustworthiness and the Responsibilities of a Pricing
+Service}\label{M09-trustworthiness-and-the-responsibilities-of-a-pricing-service}}
+
+\noindent \noindent Confucian trustworthiness directs attention to whether the
+firm's explanation matches its conduct. A claim that franchisees control
+prices should be assessed against their actual authority, incentives,
+and ability to challenge recommendations. A claim that a system benefits
+customers requires evidence about the benefit being asserted. The
+rectification of names connects the description of a service to the
+responsibilities it performs. Accurate labels help customers, operators,
+and employees understand who is accountable for a decision.
+
+The contrast between righteousness and profit in §9.11 asks how
+commercial advantage relates to the obligations of a role. For a pricing
+team, a contemporary application is to retain the capacity to report
+customer losses and question a commercially successful policy. Employees
+need a credible route for presenting contrary evidence, and managers
+need to respond to its substance. A performance system that rewards only
+revenue can make those responsibilities costly to exercise. The
+institutional question concerns the conduct the organization repeatedly
+encourages, including how it treats a truthful challenge.
+
+\hypertarget{M09-evidence-and-the-burden-of-justification}{%
+\subsection{Evidence and the Burden of
+Justification}\label{M09-evidence-and-the-burden-of-justification}}
+
+\noindent \noindent Economic self-interest supplies a reason to examine the firm's
+account closely. It also identifies what the firm should substantiate
+when requesting authority to deploy a pricing system. Relevant
+explanations include how data are used, who sets prices, which customer
+outcomes were measured, and how conflicts between commercial and
+customer outcomes are handled. The burden of justifying deployment can
+be demanding while a legal allegation still requires the evidence and
+procedures appropriate to adjudication. An incentive to benefit from a
+practice does not establish that the alleged conduct occurred.
+
+The distinction also applies to critical readings of research. The
+complaint cites Harrington's 2022 model, in which outsourcing can lower
+consumer welfare while leaving competitive intensity unchanged under its
+assumptions. That result gives a reason to evaluate customer
+consequences independently of a competition conclusion. It establishes
+no fact about a particular franchise arrangement. A defensible
+recommendation identifies the source of its empirical claim, the
+alternative being compared, and the additional moral premise supporting
+the proposed action.
+\href{https://doi.org/10.1287/mnsc.2021.4241}{Harrington (2022)}.
+
+For the restaurant director, the resulting decision is conditional on
+both evidence and conduct. An operating improvement should be supported
+by the outcome it claims to improve. A change in pricing authority
+requires an account of the affected businesses and customers. A proposed
+restriction on choice requires reasons that respect the people whose
+options it changes. Commercial success, legal status, and moral
+justification remain separate objects of evaluation.
 
 \end{document}

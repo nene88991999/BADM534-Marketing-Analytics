@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.4cm] (a) at (0,0) {Restaurant A\\Posted price $p_A$};
+\node[box,text width=3.4cm] (b) at (8.4,0) {Restaurant B\\Posted price $p_B$};
+\node[box,text width=4.2cm] (hub) at (4.2,3.0) {Shared infrastructure\\Data access and analysis};
+\node[box,text width=5.1cm] (buyer) at (4.2,-2.2) {Customers compare offers\\and available alternatives};
+\draw[edge] (a.north) to[bend left=10] node[above left,align=center,font=\footnotesize] {Sales\\records} (hub.west);
+\draw[edge] (b.north) to[bend right=10] node[above right,align=center,font=\footnotesize] {Sales\\records} (hub.east);
+\draw[accent,dashed] (hub.south west) to[bend left=8] node[right,pos=.6,align=center,font=\footnotesize] {Pricing\\authority?} (a.east);
+\draw[accent,dashed] (hub.south east) to[bend right=8] node[left,pos=.6,align=center,font=\footnotesize] {Pricing\\authority?} (b.west);
+\draw[edge] (a.south) -- (buyer.west);
+\draw[edge] (b.south) -- (buyer.east);
+\node[align=center,text width=12cm,font=\footnotesize] at (4.2,-3.45) {Conceptual arrangement. Data capability is described in company statements.\\Dashed paths identify disputed pricing authority alleged in the complaint.};
+\end{tikzpicture}

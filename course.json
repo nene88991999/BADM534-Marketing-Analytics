@@ -103,6 +103,12 @@
       "path": "07_Labs/Representation_Alignment/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "pricing-competition",
+      "path": "07_Labs/Pricing_Competition/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -301,7 +307,16 @@
     "03_Data_and_Code/Representation_Alignment/AGENTS.md",
     "03_Data_and_Code/Representation_Alignment/VERIFICATION.md",
     "03_Data_and_Code/Representation_Alignment/results/README.md",
-    "07_Labs/Representation_Alignment/README.md"
+    "07_Labs/Representation_Alignment/README.md",
+    "01_Resources/37_Pricing_Systems_and_Competition/README.md",
+    "01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md",
+    "01_Resources/37_Pricing_Systems_and_Competition/CASE_DESIGN.md",
+    "03_Data_and_Code/Pricing_Competition/README.md",
+    "03_Data_and_Code/Pricing_Competition/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Pricing_Competition/AGENTS.md",
+    "03_Data_and_Code/Pricing_Competition/VERIFICATION.md",
+    "03_Data_and_Code/Pricing_Competition/results/README.md",
+    "07_Labs/Pricing_Competition/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -350,12 +365,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-25-representation-alignment",
+    "revision": "2026-11-25-pricing-competition",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 106,
-    "pages": 414,
+    "figures_count": 108,
+    "pages": 424,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -379,7 +394,8 @@
     "ontology_examples": "03_Data_and_Code/Ontology_and_Evidence/README.md",
     "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md",
     "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md",
-    "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md"
+    "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md",
+    "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md"
   },
   "datasets": [
     {
@@ -450,7 +466,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 402,
+    "slides": 408,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1023,7 +1039,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-25-representation-alignment",
+  "revision": "2026-11-25-pricing-competition",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1086,5 +1102,31 @@
     "upstream_execution": false,
     "prompt_experiment_executed": false,
     "scope": "Original synthetic coordinates and local lexical mHealth classification; source-category agreement, not nutritional correctness or neural-state replication."
+  },
+  "pricing_competition": {
+    "resources": "01_Resources/37_Pricing_Systems_and_Competition/README.md",
+    "review": "01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md",
+    "catalog": "01_Resources/37_Pricing_Systems_and_Competition/catalog.json",
+    "source_manifest": "01_Resources/37_Pricing_Systems_and_Competition/manifest.json",
+    "examples": "03_Data_and_Code/Pricing_Competition/README.md",
+    "lab": "07_Labs/Pricing_Competition/README.md",
+    "verification": "03_Data_and_Code/Pricing_Competition/VERIFICATION.md",
+    "implemented_on": "2026-11-25",
+    "sections": [
+      "M4 §4.26",
+      "M8 §8.28",
+      "M9 §9.22"
+    ],
+    "sessions": [
+      5,
+      14
+    ],
+    "original_programs_executed": 1,
+    "independent_tests_passed": 9,
+    "original_figures": 2,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "scope": "Original synthetic two-restaurant model; case allegations, company statements, research results, and agency argument distinguished. No observed restaurant-price analysis or liability finding.",
+    "manifest": "03_Data_and_Code/Pricing_Competition/manifest.json"
   }
 }

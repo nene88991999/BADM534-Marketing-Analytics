@@ -1,0 +1,47 @@
+{
+  "created_on": "2026-11-25",
+  "data_type": "synthetic",
+  "analysis": "Exact enumeration of a two-state, two-restaurant market",
+  "runtime": "Python 3.10+ standard library",
+  "random_sampling": false,
+  "policy_rows": 6,
+  "state_signal_cells": 20,
+  "tests_passed": 9,
+  "files": [
+    {
+      "path": "parameters.json",
+      "bytes": 228,
+      "sha256": "c4efa3d0efb82c2222bbe213e888d399b9016a4d276096328953112757e0f25c"
+    },
+    {
+      "path": "evaluate_market.py",
+      "bytes": 5175,
+      "sha256": "6b5858a9175d32a0658d5cbb5c2b9b26fc22e6943dd2c0487815c9270fbbec4a"
+    },
+    {
+      "path": "test_market.py",
+      "bytes": 5644,
+      "sha256": "87440cbb2052e8a12e59447bb1af79f2b3988915cbeee47c070841c7829f7bdd"
+    },
+    {
+      "path": "build_figures.py",
+      "bytes": 1939,
+      "sha256": "310cb0f60a211885d5809a82891173107c97d02cfef24fb99a85960ff936fc58"
+    },
+    {
+      "path": "results/policies.csv",
+      "bytes": 888,
+      "sha256": "9c799d87f1e279d78060b9e5e86e6fb4ac52e0ba6c68ba56577a6384aa9f77f0"
+    },
+    {
+      "path": "results/state_outcomes.csv",
+      "bytes": 3484,
+      "sha256": "21f90ce5a9081cbf0976b494942702fefb648831bc46464f80aee44abab69f53"
+    },
+    {
+      "path": "results/exact_results.json",
+      "bytes": 1619,
+      "sha256": "fdf60b86d538e191879b85fde1ff3f87ec2de073b7031bf141f2444ac284c75f"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "objective": "independent",
+    "accuracy": "1/2",
+    "price": "16/3",
+    "quantity": "80/9",
+    "profit": "800/27",
+    "consumer_surplus": "872/27",
+    "total_welfare": "1672/27",
+    "expenditure": "1280/27",
+    "forecast_mse": "4",
+    "paid_price": "16/3"
+  },
+  {
+    "objective": "joint",
+    "accuracy": "1/2",
+    "price": "7",
+    "quantity": "20/3",
+    "profit": "100/3",
+    "consumer_surplus": "58/3",
+    "total_welfare": "158/3",
+    "expenditure": "140/3",
+    "forecast_mse": "4",
+    "paid_price": "7"
+  },
+  {
+    "objective": "independent",
+    "accuracy": "3/4",
+    "price": "16/3",
+    "quantity": "80/9",
+    "profit": "808/27",
+    "consumer_surplus": "862/27",
+    "total_welfare": "1670/27",
+    "expenditure": "1288/27",
+    "forecast_mse": "3",
+    "paid_price": "161/30"
+  },
+  {
+    "objective": "joint",
+    "accuracy": "3/4",
+    "price": "7",
+    "quantity": "20/3",
+    "profit": "101/3",
+    "consumer_surplus": "113/6",
+    "total_welfare": "105/2",
+    "expenditure": "47",
+    "forecast_mse": "3",
+    "paid_price": "141/20"
+  },
+  {
+    "objective": "independent",
+    "accuracy": "1",
+    "price": "16/3",
+    "quantity": "80/9",
+    "profit": "832/27",
+    "consumer_surplus": "832/27",
+    "total_welfare": "1664/27",
+    "expenditure": "1312/27",
+    "forecast_mse": "0",
+    "paid_price": "82/15"
+  },
+  {
+    "objective": "joint",
+    "accuracy": "1",
+    "price": "7",
+    "quantity": "20/3",
+    "profit": "104/3",
+    "consumer_surplus": "52/3",
+    "total_welfare": "52",
+    "expenditure": "48",
+    "forecast_mse": "0",
+    "paid_price": "36/5"
+  }
+]

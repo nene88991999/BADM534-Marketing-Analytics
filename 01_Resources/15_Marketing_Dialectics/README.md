@@ -44,3 +44,7 @@ Confucian texts contain different accounts of human nature and cultivation. Righ
 Project Gutenberg files retain their original license notices. Gava's unchanged publisher PDF retains the author attribution and [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/). Other local copies retain their original notices; the Marquette accepted manuscript explicitly restricts redistribution.
 
 The guide and catalog supply Markdown descriptions of the readings and their course use. They are selective companions, not full conversions of the source texts. Original figures, typography, complete arguments, footnotes, and bibliographies are not reproduced in the annotations. Source text extraction is an ignored local reading aid. [SEARCH_SCOPE.md](SEARCH_SCOPE.md) records the retrieval scope; [verification.json](verification.json) records the checks actually completed.
+
+## Pricing Systems and Customer Choice
+
+[The Wendy's case](../37_Pricing_Systems_and_Competition/README.md) motivates M9 §9.22 on pricing authority, truthful explanation, customer alternatives, and the burden of justification. The original synthetic comparison in M4 supplies model-based customer outcomes. The philosophical application does not determine the truth of the complaint's allegations.

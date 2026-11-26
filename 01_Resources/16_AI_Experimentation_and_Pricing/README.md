@@ -12,3 +12,7 @@ Four research papers by Sanjog Misra and his coauthors connect AI-assisted exper
 The research PDFs and downloaded policy snapshots are reference copies kept in Dropbox. Source links and original course commentary are public. Three New York legislative pages were read online but could not be saved through direct download. The pricing paper is saved in its June 2021 NBER revision; selected published JPE tables and discussion were cross-checked online. The 2025 revision of Coarse Personalization is the teaching version; the earlier retrieved 2022 file remains an internal version record.
 
 Kant's primary texts and philosophical scholarship are in the [Marketing Dialectics collection](../15_Marketing_Dialectics/README.md). This collection concerns Sanjog Misra; pricing-bandit papers by Kanishka Misra are separate works and are not attributed to him.
+
+## Pricing Systems and Customer Choice
+
+[The pricing-systems case](../37_Pricing_Systems_and_Competition/README.md) distinguishes competition from responsiveness to demand and consumer welfare. The [original Python example](../../03_Data_and_Code/Pricing_Competition/README.md) changes signal accuracy and pricing objectives separately. M8 §8.28 and M9 §9.22 connect the Wendy's complaint to evidence and ethical reasoning.

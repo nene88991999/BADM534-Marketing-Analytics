@@ -177,3 +177,7 @@ A framework for generative AI use cases and implementation in marketing.
 ## Encoder Migration and Independent Evidence
 
 [Representation alignment](../36_Representation_Alignment/README.md) connects encoder migration to fitting, review, and revalidation costs in M8 §8.27. M9 §9.21 examines the independent evidence and reasons needed when several models agree.
+
+## Pricing Systems and Customer Choice
+
+[The Wendy's pricing case](../37_Pricing_Systems_and_Competition/README.md) connects M8 §8.28 to shared data, pricing authority, competition, and customer alternatives. The source review distinguishes party allegations, dated company statements, and an agency's argument. [Complete synthetic calculations](../../03_Data_and_Code/Pricing_Competition/README.md) vary information and objectives separately.

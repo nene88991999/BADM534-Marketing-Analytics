@@ -140,3 +140,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Representation Alignment
 
 [Representation alignment](36_Representation_Alignment/README.md) connects Plato's Key and related research to original coordinate calculations and an executed mHealth text-classification comparison. The guide records source scope, rights, and the separation between internal neural states and locally fitted lexical features.
+
+## Pricing Systems and Customer Choice
+
+[The pricing-systems library](37_Pricing_Systems_and_Competition/README.md) contains six source records linking the Wendy's complaint, reporting, company statements, pricing research, and an agency argument. The source review preserves dates, jurisdiction, claim scope, and access limits. Three PDF reference copies remain in Dropbox only. Original course annotations, the synthetic model, and public links accompany M4, M8, and M9.

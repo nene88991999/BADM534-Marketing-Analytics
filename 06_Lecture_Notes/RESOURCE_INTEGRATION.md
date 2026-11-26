@@ -199,3 +199,7 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Representation Alignment and Functional Evaluation
 
 [The reviewed sources](../01_Resources/36_Representation_Alignment/SOURCE_REVIEW.md) motivate separate geometry and task comparisons. M5 §5.26 contains complete sample preparation; M7 §§7.42–7.43 contain complete alignment and classification programs; §7.44 defines a separate answer-evaluation protocol. The executed [mHealth comparison](../03_Data_and_Code/Representation_Alignment/README.md) uses 6,000 training, 1,500 validation, and 1,500 test descriptions. M8 §8.27 and M9 §9.21 connect cost and justification. The two figures use original synthetic cases. No upstream neural-model experiment or prompt experiment was executed.
+
+## Pricing Systems and Customer Choice
+
+[Six source records](../01_Resources/37_Pricing_Systems_and_Competition/README.md) motivate an original [pricing comparison](../03_Data_and_Code/Pricing_Competition/README.md). M4 §4.26 varies demand information and the pricing objective separately; M8 §8.28 distinguishes the complaint, company statements, and agency argument; M9 §9.22 develops the philosophical evaluation. Exact fractions, complete Python, nine checks, two editable figures, and Sessions 5 and 14 support the comparison. The calculation is separate from Harrington's vendor-design model and contains no actual Wendy's prices.
