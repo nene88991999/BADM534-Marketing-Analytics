@@ -58,6 +58,7 @@ Session 14. M8, M9. 170 minutes.
 - [Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
+- ../07_Labs/AI_Augmented_Learning/README.md
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1055,7 +1056,17 @@ Scientific criticism remains open to correction. For electricity claims, informa
 
 Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 91: A Decision with Consumer Outcomes
+## Slide 91: Personalization and the Learner’s Authority
+
+- Keep the source argument and consequential assumptions accessible.
+- Allow a learner to change representations and challenge the conclusion.
+- Evaluate independent reasoning and supported disagreement.
+
+A student can reasonably object to an explanation that hides the premise on which its recommendation depends. A defensible learning system makes that premise inspectable and permits a reasoned objection. Response history does not exhaust the person or determine what the person ought to learn. Missing empirical measurements also remain distinct from Kant’s noumenal limiting concept.
+
+Source: M9, Section 9.44, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 92: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

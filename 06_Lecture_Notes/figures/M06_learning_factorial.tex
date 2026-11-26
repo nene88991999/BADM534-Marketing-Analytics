@@ -1,0 +1,14 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[font=\bfseries] at (5.4,0.5) {Common Population, Content, and Assessment};
+\node at (3.2,-0.3) {No Added Formats};
+\node at (7.6,-0.3) {Added Formats};
+\node[align=right,text width=2.4cm] at (-0.1,-1.5) {No Questions};
+\node[align=right,text width=2.4cm] at (-0.1,-3.4) {Questions};
+\node[draw=IlliniBlue,rounded corners,minimum width=3.6cm,minimum height=1.3cm,align=center] (a) at (3.2,-1.5) {60\%\\Baseline};
+\node[draw=IlliniBlue,rounded corners,minimum width=3.6cm,minimum height=1.3cm,align=center] (b) at (7.6,-1.5) {68\%\\Formats Only};
+\node[draw=IlliniBlue,rounded corners,minimum width=3.6cm,minimum height=1.3cm,align=center] (c) at (3.2,-3.4) {66\%\\Questions Only};
+\node[draw=IlliniOrange,thick,rounded corners,minimum width=3.6cm,minimum height=1.3cm,align=center] (d) at (7.6,-3.4) {77\%\\Both Features};
+\draw[->,thick,IlliniBlue] (a.east)--node[above,font=\footnotesize]{+8}(b.west);
+\draw[->,thick,IlliniOrange] (c.east)--node[above,font=\footnotesize]{+11}(d.west);
+\node[align=center,text width=11cm,font=\footnotesize] at (4.7,-5.0) {Synthetic percentage scores. Effects are percentage points.\\The format effect depends on questions: $11-8=3$ points of interaction.\\The 17-point whole-package gain alone leaves the component effects unresolved.};
+\end{tikzpicture}

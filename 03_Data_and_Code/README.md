@@ -163,3 +163,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 ## Analytical Arguments
 
 [Analytical Arguments](Analytical_Arguments/README.md) contains two exact synthetic programs. One constructs observationally equivalent price models with different intervention effects; the other fixes purchases and rankings while obtaining opposite welfare signs under independently imposed values. Complete listings appear in M6 §6.38 and M4 §4.29. Ten independent checks and two data-driven TikZ sources accompany the calculations.
+
+## Learning Design and Outcome Comparisons
+
+[Learning Design](Learning_Design/README.md) contains exact calculations for reported rounded percentages, a synthetic factorial design, and the existing electricity bill example. Standard-library Python generates the reference values used by the [HTML pilot](../08_Wiki/pilot/README.md). Participant data and empirical learning effects are absent; synthetic means are identified beside their calculations.

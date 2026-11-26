@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 493 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 499 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -174,3 +174,7 @@ Sessions 1, 5, 9, and 14 connect question formulation, definitions, model compat
 M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
 
 [M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
+## Explanation and Learning Evaluation
+
+Six slides in Sessions 1, 2, 9, and 14 connect alternative representations, electricity bills, percentage denominators, factorial designs, and learner authority. Two editable diagrams and [complete Python](../03_Data_and_Code/Learning_Design/README.md) support the calculations. The [HTML pilot](../08_Wiki/pilot/README.md) and [optional practice](../07_Labs/AI_Augmented_Learning/README.md) preserve the original argument and invite a supported objection. These examples use existing meeting blocks.

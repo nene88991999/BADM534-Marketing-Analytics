@@ -1,0 +1,4 @@
+scenario,price_usd_mwh,use_mwh_account_month,bill_usd_account_month
+baseline,100.0,1.0,100.0
+more_use_same_average_price,100.0,1.1,110.0
+higher_price_less_use,125.0,0.8,100.0

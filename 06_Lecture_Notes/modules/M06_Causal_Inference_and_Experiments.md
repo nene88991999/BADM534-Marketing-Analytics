@@ -2184,3 +2184,114 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 6.39 A Learning Package and Its Component Effects
+
+\noindent An instructor choosing between a digital reader and an interactive learning tool needs to define the decision. Offering an entire package and adding one feature to an existing course are different interventions. Random assignment to the package can inform the first comparison while leaving the contribution of each component unresolved.
+
+Heldreth and colleagues report an experiment with 60 adolescents studying one chapter, with 58 completing a 3–7-day follow-up. The treatment combines several learning features. The reported directional tests and blinded scoring support an assessment of that specified comparison. Generalization to advanced marketing analysis and attribution to individual features require further evidence. [Heldreth and colleagues, 2026, §§4–5](https://doi.org/10.3389/frai.2026.1783117).
+
+### 6.39.1 Separate Questions and Representations
+
+\noindent Suppose an instructor considers two features: questions with feedback, denoted $Q$, and alternative representations, denoted $F$. Each feature is either absent or present. Define $\mu_{qf}$ as the population mean percentage score on a common assessment under assignment $(q,f)$. A prospective factorial experiment randomly assigns students to four conditions with common content and study-time allowances. Equal allocation defines an equal-weight average of each feature's effect across the other feature's settings.
+
+For an original synthetic illustration, set $\mu_{00}=60$, $\mu_{10}=66$, $\mu_{01}=68$, and $\mu_{11}=77$. The whole-package gain is 17 percentage points. Adding formats produces 8 points without questions and 11 points with questions. The interaction is the difference between those effects:
+
+$$
+\mu_{11}-\mu_{10}-\mu_{01}+\mu_{00}=77-66-68+60=3.
+$$
+
+The equal-weight question effect is $(6+9)/2=7.5$ points; the format effect is $(8+11)/2=9.5$ points. These are imposed population comparisons, with no sampling uncertainty or estimated learning benefit. The two diagonal means alone would also be compatible with $\mu_{10}=77$ and $\mu_{01}=60$, which assign the gain entirely to questions. Observing the whole-package difference therefore leaves component effects unidentified.
+
+![Four synthetic assignment cells separate questions, formats, and their interaction.](../figures/M06_learning_factorial.png)
+
+The horizontal comparisons hold question availability fixed. Their difference identifies the interaction in the synthetic construction. The diagonal comparison changes both features and gives no unique allocation of the total gain.
+
+### 6.39.2 Define Learning and the Study-Time Intervention
+
+\noindent Specify the primary outcome before comparing tools. Immediate comprehension, delayed retention, transfer to an unfamiliar case, independent debugging, and a defended objection describe distinct achievements. A favorable experience rating supplies evidence about the reported experience. Its relation to learning requires a separate comparison.
+
+Study time can respond to the assigned tool. A total-effect comparison retains that pathway under the specified time allowance. Conditioning afterward on observed study time can change the estimand and introduce selection. An effect under a fixed duration requires a design or additional identifying assumptions that address that question directly. Within a treatment group, students' choices among available formats are also post-assignment behavior; their association with scores does not identify a format's causal effect.
+
+A course evaluation should select a common outcome, specify the assignment unit, account for missing follow-up, and report uncertainty alongside a meaningful improvement threshold. Delayed assessments should use comparable tasks or a justified equating procedure when interpreting score changes as forgetting. Predefine directional hypotheses when using one-sided tests. An experiment that supports a package-level learning benefit still leaves the normative value of its objective open to assessment.
+
+### 6.39.3 Reproduce the Numerical Comparisons
+
+\noindent The following standard-library program uses the published rounded percentages solely for arithmetic, then generates the four synthetic cells and their effects. Exact fractions preserve the calculations before decimal export. The second construction contains no participant observations and supplies no empirical test statistic.
+
+Python source: [learning_comparisons.py](../../03_Data_and_Code/Learning_Design/learning_comparisons.py)
+
+```python
+"""Published rounded percentages and an original synthetic factorial example.
+
+Run from any directory. Standard library only; no student records or model calls.
+"""
+import csv
+import json
+from fractions import Fraction
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def percentage_comparison(treatment, comparison):
+    """Inputs are percentages on a 0-100 scale; return points and relative %.
+
+    Zero comparison values leave the relative percentage undefined.
+    """
+    a, b = Fraction(str(treatment)), Fraction(str(comparison))
+    if not (0 <= a <= 100 and 0 <= b <= 100):
+        raise ValueError("Scores must be percentages in [0, 100]")
+    return a - b, (100 * (a - b) / b if b else None)
+
+
+def factorial_effects(means):
+    """Q: questions with feedback; F: alternative representations.
+
+    Each key is (Q, F). Means are hypothetical percentage scores for the same
+    population and common assessment. Equal allocation defines main effects.
+    """
+    if set(means) != {(0, 0), (1, 0), (0, 1), (1, 1)}:
+        raise ValueError("All four factorial cells are required")
+    m = {k: Fraction(str(v)) for k, v in means.items()}
+    if any(not 0 <= x <= 100 for x in m.values()):
+        raise ValueError("Scores must be percentages in [0, 100]")
+    return {
+        "questions_without_formats_pp": m[1, 0] - m[0, 0],
+        "questions_with_formats_pp": m[1, 1] - m[0, 1],
+        "formats_without_questions_pp": m[0, 1] - m[0, 0],
+        "formats_with_questions_pp": m[1, 1] - m[1, 0],
+        "questions_equal_weight_effect_pp":
+            (m[1, 0] - m[0, 0] + m[1, 1] - m[0, 1]) / 2,
+        "formats_equal_weight_effect_pp":
+            (m[0, 1] - m[0, 0] + m[1, 1] - m[1, 0]) / 2,
+        "interaction_pp": m[1, 1] - m[1, 0] - m[0, 1] + m[0, 0],
+        "whole_package_pp": m[1, 1] - m[0, 0],
+    }
+
+
+def main():
+    out = HERE / "results"
+    out.mkdir(exist_ok=True)
+    points, relative = percentage_comparison(78, 67)
+    # Rounded figures reported in Google's September 16, 2025 announcement.
+    with (out / "reported_percentage_comparison.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["treatment_percent", "comparison_percent",
+                         "difference_percentage_points", "relative_change_percent"])
+        writer.writerow([78, 67, float(points), float(relative)])
+    means = {(0, 0): 60, (1, 0): 66, (0, 1): 68, (1, 1): 77}
+    with (out / "synthetic_factorial_cells.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["questions", "formats", "mean_score_percent"])
+        writer.writerows((q, v, means[q, v]) for q, v in sorted(means))
+    effects = {k: float(v) for k, v in factorial_effects(means).items()}
+    (out / "synthetic_factorial_effects.json").write_text(
+        json.dumps(effects, indent=2) + "\n")
+    print(f"Reported rounded scores: {float(points):g} points; {float(relative):.4f}% relative")
+    print("Synthetic factorial:", effects)
+
+
+if __name__ == "__main__":
+    main()
+```

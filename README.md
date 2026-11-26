@@ -2,7 +2,7 @@
 
 Course materials for Nathan Yang's planned offering, with AI-assisted coding integrated into marketing analytics. The topic sequence builds on Unnati Narang's Spring 2026 course.
 
-**Status:** course preparation, with lecture notes and 15 session decks covering the eight core modules and Marketing Dialectics. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, assessment policies, and the interactive HTML wiki remain pending. Resource recommendations and teaching suggestions are not assigned work.
+**Status:** course preparation, with lecture notes and 15 session decks covering the eight core modules and Marketing Dialectics. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, and assessment policies remain pending. A [local interactive HTML pilot](08_Wiki/pilot/README.md) is available; the broader wiki and deployment remain pending. Resource recommendations and teaching suggestions are not assigned work.
 
 ## Start Here
 
@@ -10,7 +10,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 106 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 138 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -25,7 +25,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | [05_Slides](05_Slides/README.md) | Fifteen session decks, editable LaTeX, Markdown companions, and meeting plans |
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
-| [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
+| [08_Wiki](08_Wiki/README.md) | Static electricity lesson pilot and future wiki design |
 
 ## Working with an LLM
 
@@ -156,3 +156,7 @@ The [pricing cases](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) c
 M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
 
 [M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
+## Explanation and Independent Judgment
+
+The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bill, inspect the calculation, compare four representations, and revise a household-cost claim. [Complete Python](03_Data_and_Code/Learning_Design/README.md) also distinguishes percentage points from relative changes and a learning package from its component effects. M1, M2, M6, and M9 connect these ideas to independent reasoning and learner authority. [Optional practice](07_Labs/AI_Augmented_Learning/README.md) includes a transfer task.

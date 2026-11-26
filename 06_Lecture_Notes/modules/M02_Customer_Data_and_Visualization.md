@@ -2097,3 +2097,74 @@ Consider three synthetic months, each with the same 1,000 customer accounts:
 Flat average prices coexist with higher bills in the second row. Higher average prices coexist with unchanged bills in the third. These imposed comparisons establish the measurement distinction; they attribute neither use changes nor bill changes to data centers. A higher bill caused by hotter weather is a different causal claim from a higher tariff caused by infrastructure costs. A household that reduces heating or cooling may also sacrifice comfort while keeping expenditure stable.
 
 The paper explicitly recognizes revenue per MWh, realized payments, riders, and regulatory allocation. Criticism should retain that institutional discussion. The unsupported extension occurs when a result for this ratio is treated as sufficient evidence about actual household expenditure, affordability, or absence of harm. Evidence about bills needs matched use and payments; affordability adds income and essential energy needs. Full runnable code for the table appears in §6.35 as `institutional_exposure.py`.
+
+## 2.29 Percentages, Bills, and the Meaning of a Comparison
+
+\noindent A manager comparing two learning tools needs a magnitude with a clear denominator. Google's public announcement reports rounded retention scores of 78% and 67%. Its opening paragraph correctly describes an 11-percentage-point difference, while a later result bullet calls it an 11% improvement. Subtraction gives 11 percentage points; dividing that difference by 67 gives a relative increase of approximately 16.42%. The rounded summaries support that arithmetic. Participant observations and a sampling design would be needed to reconstruct uncertainty. [Google Research announcement](https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/).
+
+The same discipline applies when an average electricity price is interpreted as a household bill. Let $R$ be matched monthly revenue in dollars, $S$ monthly sales in MWh, and $N$ the corresponding account-month count for the same customer class. Average revenue per MWh is $R/S$, and average usage is $S/N$. Their product gives average revenue per account-month:
+
+$$
+(R/S)(S/N)=R/N.
+$$
+
+The cancellation of sales is an accounting identity under matched definitions. A synthetic baseline has 1,000 accounts, revenue of USD 100,000, and sales of 1,000 MWh. With revenue of USD 110,000 and sales of 1,100 MWh, realized unit price remains USD 100/MWh while the average bill rises from USD 100 to USD 110. Both comparisons concern the same account count. A household's affordability also depends on its resources and essential needs, while a claim that the data center caused a change requires a credible counterfactual.
+
+![Matched revenue, sales, and account-months connect realized price, average usage, and the average bill.](../figures/M02_price_and_bill.png)
+
+The three boxes retain the units that cancel and the account-month denominator that remains. The synthetic comparison changes revenue and sales proportionately. Average price stays fixed while expenditure rises. The aggregate identity leaves the distribution of burdens across households unresolved.
+
+The program below independently recomputes the existing synthetic table. The complete percentage and factorial calculations appear in §6.39. Changes to browser inputs in the accompanying [electricity case](../../08_Wiki/pilot/index.html) are hypothetical scenarios, with the baseline held fixed.
+
+Python source: [bill_identity.py](../../03_Data_and_Code/Learning_Design/bill_identity.py)
+
+```python
+"""Recompute the existing synthetic bill table without external dependencies."""
+import csv
+from fractions import Fraction
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+INPUT = HERE.parent / "Statistical_Inference/results/institutional_bills.csv"
+
+def bill_from_units(price, use):
+    """USD/MWh times MWh per account-month gives USD per account-month."""
+    p, q = Fraction(str(price)), Fraction(str(use))
+    if p < 0 or q <= 0:
+        raise ValueError("Nonnegative price and positive usage required")
+    return p * q
+
+def comparisons():
+    with INPUT.open() as f:
+        rows = list(csv.DictReader(f))
+    results = []
+    for row in rows:
+        revenue = Fraction(row["revenue_usd"])
+        sales = Fraction(row["sales_mwh"])
+        count = Fraction(row["customer_months"])
+        if sales <= 0 or count <= 0:
+            raise ValueError("Positive sales and account-month counts required")
+        price, use = revenue / sales, sales / count
+        bill = bill_from_units(price, use)
+        assert bill == revenue / count
+        results.append({"scenario": row["scenario"],
+                        "price_usd_mwh": float(price),
+                        "use_mwh_account_month": float(use),
+                        "bill_usd_account_month": float(bill)})
+    return results
+
+def main():
+    rows = comparisons()
+    assert [r["bill_usd_account_month"] for r in rows] == [100, 110, 100]
+    out = HERE / "results"
+    out.mkdir(exist_ok=True)
+    with (out / "bill_reference.csv").open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    for row in rows:
+        print(row)
+
+if __name__ == "__main__":
+    main()
+```

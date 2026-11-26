@@ -148,6 +148,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Scanlon_Pricing/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "ai-augmented-learning",
+      "path": "07_Labs/AI_Augmented_Learning/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -402,7 +408,16 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Analytical_Arguments/README.md",
     "03_Data_and_Code/Analytical_Arguments/VERIFICATION.md",
     "07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md",
-    "03_Data_and_Code/Analytical_Arguments/AGENTS.md"
+    "03_Data_and_Code/Analytical_Arguments/AGENTS.md",
+    "01_Resources/43_AI_Augmented_Learning/README.md",
+    "03_Data_and_Code/Learning_Design/README.md",
+    "03_Data_and_Code/Learning_Design/AGENTS.md",
+    "03_Data_and_Code/Learning_Design/VERIFICATION.md",
+    "07_Labs/AI_Augmented_Learning/README.md",
+    "08_Wiki/AGENTS.md",
+    "08_Wiki/pilot/README.md",
+    "08_Wiki/pilot/LESSON.md",
+    "08_Wiki/pilot/VERIFICATION.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -451,12 +466,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-analytical-arguments",
+    "revision": "2026-11-26-ai-augmented-learning",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 136,
-    "pages": 561,
+    "figures_count": 138,
+    "pages": 569,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -485,7 +500,8 @@ Generated from course.json and the source files identified below. This file cont
     "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md",
     "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md",
     "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md",
-    "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md"
+    "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md",
+    "learning_design": "03_Data_and_Code/Learning_Design/README.md"
   },
   "datasets": [
     {
@@ -582,7 +598,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 493,
+    "slides": 499,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1526,6 +1542,39 @@ Generated from course.json and the source files identified below. This file cont
     "spectrum": "Five qualitative positions applied to particular interpretations, with no numerical distances or author rankings.",
     "source_coverage": "Selected primary philosophy passages, with reading scope and access recorded in the resource guide.",
     "measurement_case": "M9 \u00a79.42.4 separates recorded electricity outcomes from household costs, financial exposure, business models, and incidence."
+  },
+  "ai_augmented_learning": {
+    "implemented_on": "2026-11-26",
+    "resources": "01_Resources/43_AI_Augmented_Learning/README.md",
+    "examples": "03_Data_and_Code/Learning_Design/README.md",
+    "practice": "07_Labs/AI_Augmented_Learning/README.md",
+    "sections": [
+      "M1 \u00a71.21",
+      "M2 \u00a72.29",
+      "M6 \u00a76.39",
+      "M9 \u00a79.44"
+    ],
+    "sessions": [
+      1,
+      2,
+      9,
+      14
+    ],
+    "original_figures": 2,
+    "additional_slides": 6,
+    "scope": "Rounded published percentages, original synthetic factorial means, and an existing synthetic bill table; no participant microdata or measured course learning effect.",
+    "original_programs_executed": 2,
+    "python_tests_passed": 6,
+    "matching_python_blocks": 124,
+    "browser_checks": "08_Wiki/pilot/VERIFICATION.md"
+  },
+  "wiki": {
+    "status": "local static HTML pilot available; broader wiki and deployment pending",
+    "index": "08_Wiki/README.md",
+    "pilot": "08_Wiki/pilot/index.html",
+    "companion": "08_Wiki/pilot/LESSON.md",
+    "verification": "08_Wiki/pilot/VERIFICATION.md",
+    "deployed": false
   }
 }
 ```
@@ -1538,7 +1587,7 @@ Generated from course.json and the source files identified below. This file cont
 
 Course materials for Nathan Yang's planned offering, with AI-assisted coding integrated into marketing analytics. The topic sequence builds on Unnati Narang's Spring 2026 course.
 
-**Status:** course preparation, with lecture notes and 15 session decks covering the eight core modules and Marketing Dialectics. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, assessment policies, and the interactive HTML wiki remain pending. Resource recommendations and teaching suggestions are not assigned work.
+**Status:** course preparation, with lecture notes and 15 session decks covering the eight core modules and Marketing Dialectics. The [Spring 2027 syllabus](02_Syllabus/Marketing_Analytics_Syllabus.md) and dated meeting plan are available. Assignments, grading rules, and assessment policies remain pending. A [local interactive HTML pilot](08_Wiki/pilot/README.md) is available; the broader wiki and deployment remain pending. Resource recommendations and teaching suggestions are not assigned work.
 
 ## Start Here
 
@@ -1546,7 +1595,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 106 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 138 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -1561,7 +1610,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 | [05_Slides](05_Slides/README.md) | Fifteen session decks, editable LaTeX, Markdown companions, and meeting plans |
 | [06_Lecture_Notes](06_Lecture_Notes/README.md) | Searchable written explanations and worked examples |
 | [07_Labs](07_Labs/README.md) | Course-tested notebooks, code, and environments |
-| [08_Wiki](08_Wiki/README.md) | Future interactive HTML teaching site |
+| [08_Wiki](08_Wiki/README.md) | Static electricity lesson pilot and future wiki design |
 
 ## Working with an LLM
 
@@ -1692,6 +1741,10 @@ The [pricing cases](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) c
 M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
 
 [M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
+## Explanation and Independent Judgment
+
+The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bill, inspect the calculation, compare four representations, and revise a household-cost claim. [Complete Python](03_Data_and_Code/Learning_Design/README.md) also distinguishes percentage points from relative changes and a learning package from its component effects. M1, M2, M6, and M9 connect these ideas to independent reasoning and learner authority. [Optional practice](07_Labs/AI_Augmented_Learning/README.md) includes a transfer task.
 
 ---
 
@@ -2066,6 +2119,10 @@ M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place t
 
 [M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
+## Explanation and Independent Judgment
+
+[M1 §1.21](06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md) preserves an argument across representations. [M2 §2.29](06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) connects percentages, electricity prices, and household bills. [M6 §6.39](06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) separates a learning package from feature effects. [M9 §9.44](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines learner authority. Sessions 1, 2, 9, and 14 select examples within their existing blocks. [HTML pilot](08_Wiki/pilot/README.md); [text companion](08_Wiki/pilot/LESSON.md); [Python](03_Data_and_Code/Learning_Design/README.md); [optional practice](07_Labs/AI_Augmented_Learning/README.md).
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2127,6 +2184,10 @@ Supply the task definition, relevant data dictionary, input versions, and requir
 Use M1 §1.20 and M9 §9.40 to define the claim, expose its premises, construct a counterexample that preserves them, assess the missing premise, and revise the conclusion. Distinguish a hypothetical possibility from evidence that it occurs. Ask for the strongest supported reply to the criticism and a meaningful condition for revision. [The argument record](07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md) and [exact examples](03_Data_and_Code/Analytical_Arguments/README.md) supply concrete checks. Apply the relevant assessment's AI-use rules.
 
 When discussing M9 §§9.41–9.43, distinguish unmeasured empirical objects, conditional identification limits, Kant's negative noumenon, and normative reasons. Unknown unknowns are unrecognized issues; an acknowledged limit needs a scope and argument. Apply the ontological spectrum to a source's particular inference, preserving its welfare findings and safeguards. The spectrum supplies no numerical author ranking. Philosophical criticism of reduction does not excuse unsupported factual accusations. Read the linked primary-source guide for passage-level scope.
+
+## Alternative Explanations and Independent Reasoning
+
+Use the [electricity lesson companion](08_Wiki/pilot/LESSON.md) when explaining prices, bills, and household-cost claims. Preserve the same definitions, units, assumptions, and conclusion when changing representations. Ask for a prediction and justification before supplying the calculation, and invite a supported objection. The [learning-design examples](03_Data_and_Code/Learning_Design/README.md) distinguish rounded published summaries from original synthetic values. Do not describe a correct calculation or a usable page as evidence of a learning benefit. The [HTML agent guide](08_Wiki/AGENTS.md) records implementation and verification requirements.
 
 ---
 
@@ -2378,6 +2439,10 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 [Analytical Arguments](Analytical_Arguments/README.md) contains two exact synthetic programs. One constructs observationally equivalent price models with different intervention effects; the other fixes purchases and rankings while obtaining opposite welfare signs under independently imposed values. Complete listings appear in M6 §6.38 and M4 §4.29. Ten independent checks and two data-driven TikZ sources accompany the calculations.
 
+## Learning Design and Outcome Comparisons
+
+[Learning Design](Learning_Design/README.md) contains exact calculations for reported rounded percentages, a synthetic factorial design, and the existing electricity bill example. Standard-library Python generates the reference values used by the [HTML pilot](../08_Wiki/pilot/README.md). Participant data and empirical learning effects are absent; synthetic means are identified beside their calculations.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2386,7 +2451,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [561-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 136 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [569-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 138 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2600,6 +2665,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 
 [M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
+## Explanation and Learning Evaluation
+
+M1 §1.21, M2 §2.29, M6 §6.39, and M9 §9.44 connect source fidelity, bill measurement, percentage denominators, feature effects, and learner authority. [Two complete programs](../03_Data_and_Code/Learning_Design/README.md) and two editable TikZ figures accompany an [HTML pilot](../08_Wiki/pilot/README.md) and [optional practice](../07_Labs/AI_Augmented_Learning/README.md). The [source review](../01_Resources/43_AI_Augmented_Learning/README.md) separates the reported learning experiment from original synthetic calculations.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -2668,7 +2737,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 493 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 499 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2838,6 +2907,10 @@ Sessions 1, 5, 9, and 14 connect question formulation, definitions, model compat
 M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
 
 [M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
+## Explanation and Learning Evaluation
+
+Six slides in Sessions 1, 2, 9, and 14 connect alternative representations, electricity bills, percentage denominators, factorial designs, and learner authority. Two editable diagrams and [complete Python](../03_Data_and_Code/Learning_Design/README.md) support the calculations. The [HTML pilot](../08_Wiki/pilot/README.md) and [optional practice](../07_Labs/AI_Augmented_Learning/README.md) preserve the original argument and invite a supported objection. These examples use existing meeting blocks.
 
 ---
 
@@ -3415,6 +3488,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 
 [M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
+## AI-Augmented Learning and Independent Judgment
+
+[The reviewed paper and later report](../01_Resources/43_AI_Augmented_Learning/README.md) motivate preserving an argument across prose, equations, diagrams, and code. M1 §1.21 develops that requirement; M2 §2.29 connects percentages and bills; M6 §6.39 uses a synthetic factorial comparison; M9 §9.44 examines learner authority. [Complete Python](../03_Data_and_Code/Learning_Design/README.md), two editable figures, and the [electricity pilot](../08_Wiki/pilot/README.md) support the examples. Usability and calculation checks do not establish an effect on student learning.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3770,20 +3847,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 33 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 34 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 27 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 26 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 31 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 46 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 41 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 43 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 91 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 92 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4153,6 +4230,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 
 [M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
+## Explanation, Prediction, and Learning Evaluation
+
+The [electricity pilot and optional practice](../07_Labs/AI_Augmented_Learning/README.md) connect four representations to an independent prediction and a defended objection. Session 1 uses five minutes within 155–170; Session 2 uses 148–155; Session 9 uses five minutes within 45–70 for the factorial comparison; Session 14 uses three minutes within its ethics discussion. Select these examples within the existing blocks. Longer calculations and transfer tasks remain optional. The fifteen dates and 170-minute meetings retain their existing allocations.
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -4341,6 +4422,10 @@ M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40 supply the connected explanations
 M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
 
 [M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
+## Explanation and Independent Learning
+
+Use the [electricity pilot](../08_Wiki/pilot/README.md) for prediction, alternative representations, inspection of assumptions, and transfer to a subscription example. Sessions 1, 2, 9, and 14 allocate five, seven, five, and three minutes within their existing discussion or worked-comparison blocks. The [learning-design calculation](../03_Data_and_Code/Learning_Design/README.md) separates a whole-package effect from feature effects. Source fidelity, calculation accuracy, usability, and independent reasoning need separate evaluation. The [extended practice](../07_Labs/AI_Augmented_Learning/README.md) is optional and ungraded.
 
 ---
 
@@ -4646,11 +4731,9 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 
 ## Course Description
 
-Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. Customer measurement and visualization define the patterns to explain. Regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems inform decisions about product design, acquisition, retention, pricing, and marketing budgets.
+Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. The course applies measurement, visualization, regression, conjoint analysis, segmentation, lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation to product design, acquisition, retention, pricing, and budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian, Confucian, and Scanlonian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, antitrust evidence, and commercial incentives. Students distinguish effective pursuit of a commercial aim from a reasonable principle that can be justified to affected people. They examine the questions and definitions behind an analysis, make its premises explicit, and apply the same standards of evidence to a claim and its criticism. Philosophical criticism also examines when measurable behavior becomes an inadequate account of persons, institutions, or moral reasons. An ontological spectrum guides comparison of pricing, cancellation, and household-cost claims.
-
-Empirical representations leave fundamental questions about ends, authority, and obligations to be justified. Kant's distinction between phenomena and noumena motivates scrutiny of claims that observed behavior exhausts the person represented. Students examine the worth of an objective before optimizing it and use evidence alongside philosophical arguments about affected people's standing.
+Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to customer burdens, agency, and regulation. Students examine the worth of objectives, make premises explicit, test counterexamples, and apply the same evidential standards to claims and criticisms. Kant's phenomena–noumena distinction and an ontological spectrum connect empirical representation to questions about persons, institutional authority, and obligations. Commercial effectiveness and statistical precision require further reasons before supporting a justified recommendation.
 
 ## Learning Objectives
 
@@ -4664,11 +4747,9 @@ Empirical representations leave fundamental questions about ends, authority, and
 
 ## Class Format and Materials
 
-Meetings combine instructor-led explanations, worked examples, Python exercises, and discussion. The course has 15 meetings of 170 minutes. The topic sequence includes two project discussion and presentation sessions; presentation requirements will be specified separately.
+Meetings combine instructor-led explanations, worked examples, Python exercises, and discussion. Students predict results, compare explanations with equations and code, and defend or revise their conclusions. The course has 15 meetings of 170 minutes. The topic sequence includes two project discussion and presentation sessions; presentation requirements will be specified separately.
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
-
-Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, data-center electricity costs, and consumer agency. Published pricing cases examine customer burdens, competitive responses, and authority over data use. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, execution feedback, complete and correct output, review costs, and customer authority.
 
 ---
 
@@ -7094,6 +7175,18 @@ Evidence for one form of publication selection comes from Franco, Malhotra, and 
 
 The decision consequence is to justify the research question before rewarding its computational execution. A study should identify which person's problem it addresses, why the selected outcome represents that problem, and which consequences remain outside its scope. An intellectually demanding calculation can still pursue a poorly defended end. A careful account of agency or institutional authority can be valuable even when its conclusion resists a single numerical estimate.
 
+## 9.44 Personalization and the Learner's Authority
+
+\noindent An educational platform can predict which explanation a student prefers while leaving open whether the explanation helps the student reason independently. The institution choosing the platform must defend the learning objective and the authority given to recommendations. Convenience, engagement, and measured performance are relevant reasons. The student's ability to inspect, question, and reject an explanation also matters to the proposed principle.
+
+A Kantian assessment asks whether the system supports the learner as a person capable of deliberating about reasons. A Scanlonian assessment asks whether a principle governing its use can be justified to affected learners. A student could reasonably object to a system that hides consequential assumptions, prevents access to the original argument, or treats disagreement as a defect to be corrected. The strength of that objection depends on the circumstances, feasible alternatives, and burdens of the rule. These are course applications of the philosophical arguments in §§9.30–9.32 and §§9.40–9.43.
+
+Personalization can preserve a common analytical objective while offering different cases, levels of detail, and ways to inspect a result. Students should be able to change their selection and investigate an explanation beyond the system's recommendation. A record of earlier answers gives evidence of particular responses under particular conditions. It supplies no complete account of the student's capacity, aspirations, or future reasons. Calling an unmeasured educational outcome noumenal would obscure opportunities to investigate it; Kant's limiting concept concerns a distinct boundary of theoretical cognition.
+
+The electricity case provides a concrete test. A student first predicts a bill change, then inspects the accounting identity, and then challenges a causal or normative inference. Feedback can explain the denominator while leaving a reasoned disagreement about a policy open. A strong response identifies what the study measures, preserves its actual findings, and explains which additional premise would support broader reassurance. Agreement with the instructor's conclusion alone supplies an inadequate measure of this achievement.
+
+The same standard applies to the course's own critique. Ask students to formulate the strongest supported reply, identify evidence that would change the criticism, and transfer the argument to an unfamiliar setting. A learning tool earns support when it helps students produce and examine reasons under a defensible educational objective. Its capacity to adapt content makes that objective consequential before optimization begins.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -7867,6 +7960,10 @@ The optional [Statistical Inference lab](Statistical_Inference/README.md) examin
 ## Analytical Arguments and Counterexamples
 
 The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includes a five-step argument record, two exact Python constructions, and pricing, electricity, and mHealth applications. Students test premise preservation, identify missing evidence or reasons, and state a condition for revising their conclusion. The exercise is public optional ungraded practice and supplies no course-wide permission to use AI.
+
+## Explanation and Learning Evaluation
+
+[AI-Augmented Learning](AI_Augmented_Learning/README.md) is optional ungraded practice in predicting a bill, preserving an argument across representations, calculating percentage changes, separating feature effects, and defending a revised conclusion. It runs without an AI account and adds no assessment rule.
 
 ---
 
@@ -9973,11 +10070,11 @@ Before selecting a wiki implementation, test one representative module in a fres
 
 # Interactive HTML Wiki
 
-**Status: design and implementation pending.** The resource collection and Markdown course structure provide the source material for a future GitHub-hosted site.
+**Status: a local static HTML pilot is available.** The [electricity measurement lesson](pilot/README.md) combines prediction, calculation, alternative representations, and a reasoned objection. Its [complete text companion](pilot/LESSON.md) preserves the content for students and LLMs. The broader wiki design and GitHub Pages deployment remain pending.
 
 Keep the future site's content in the repository so the same material remains readable as Markdown. Preserve stable module IDs, text descriptions of interactive figures, accessible navigation, and links to executable notebooks where needed.
 
-[Design and hosting notes](../01_Resources/11_GitHub_HTML_and_Interactive_Teaching/Design_Notes/README.md) compare possible approaches. No framework or deployment workflow has been selected, and no site is published.
+[Design and hosting notes](../01_Resources/11_GitHub_HTML_and_Interactive_Teaching/Design_Notes/README.md) compare possible approaches. The pilot uses plain HTML, CSS, and JavaScript. No broader site framework or deployment workflow has been selected, and no site is published.
 
 ## Clustering Interaction
 
@@ -13821,6 +13918,293 @@ Read the root guide, this folder's README, and M1 §1.20, M4 §4.29, M6 §6.38, 
 - Monetary consumption values are independently imposed. The same ranking does not determine cardinal gaps; choice probabilities do not supply authorization or an ethical conclusion.
 - A counterexample must preserve the premises it challenges. Failure to establish harmlessness does not establish harm. Preserve uncertainty and the actual source's qualifications when discussing the electricity case.
 - The five-step exercise and LLM prompt are optional practice, subject to applicable assessment-specific AI rules. Do not supply invented evidence, testimony, or citations.
+
+---
+
+## Source: 01_Resources/43_AI_Augmented_Learning/README.md
+
+# AI-Augmented Learning and Independent Judgment
+
+An instructor deciding how to present an analytical argument needs to preserve its meaning while helping students investigate it independently. The course applications connect explanation, editable diagrams, executable calculations, and questions that expose unsupported premises.
+
+## Source Record
+
+| Source | Version and Reviewed Scope |
+| --- | --- |
+| [LearnLM Team, *Towards an AI-Augmented Textbook*](https://arxiv.org/abs/2509.13348v4) | September 30, 2025, v4. Sections 1–6 and appendices A–B reviewed in the [HTML text](https://arxiv.org/html/2509.13348v4). Source-based transformations, embedded questions, and expert evaluation motivate the design. |
+| [Heldreth and colleagues, *An Experimental Evaluation of an AI-Powered Interactive Learning Platform*](https://doi.org/10.3389/frai.2026.1783117) | March 10, 2026. Methods, results, limitations, and availability statement reviewed. This supplies the fuller account of the learning experiment, rather than an independent replication. |
+| [Google Research announcement](https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/) | September 16, 2025. Its reported rounded retention scores, 78% and 67%, supply the magnitude exercise. |
+| [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) | Checked November 26, 2026. Supports repository-hosted static HTML, CSS, and JavaScript. |
+
+The trial randomly assigned 60 adolescents to a learning package or a digital reader for one chapter; 58 completed follow-up. The later report specifies a 3–7-day window and directional tests. It evaluates the package. Component effects and transfer to this course require additional evidence. Its blinded scoring procedure and acknowledged limitations remain relevant strengths.
+
+The arXiv record uses a non-exclusive distribution license, and the report reserves copyright. This folder supplies links and original annotations. No third-party PDF or code is republished. No official implementation repository was identified in the paper, announcement, or targeted searches. The [public project site](https://learnyourway.withgoogle.com/) displayed an under-construction notice on the review date. The journal's availability statement points to supplementary material; participant files were not retrieved or used. Reading the report does not establish access to its microdata.
+
+## Course Adaptations
+
+[M1 §1.21](../../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md) asks students to preserve an argument across prose, mathematics, diagrams, and code. [M2 §2.29](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) distinguishes points from relative percentages. [M6 §6.39](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) constructs a factorial comparison. [M9 §9.44](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines the learner's authority to challenge a source or a recommended path.
+
+The [complete Python](../../03_Data_and_Code/Learning_Design/README.md) uses rounded published summaries and separately labeled synthetic means. The [optional practice](../../07_Labs/AI_Augmented_Learning/README.md) asks for a prediction, justification, revised inference, and transfer to an unfamiliar case.
+
+The [HTML pilot](../../08_Wiki/pilot/index.html) uses the existing electricity example. It keeps a complete [Markdown companion](../../08_Wiki/pilot/LESSON.md), downloadable calculation, explicit units, and the source assessment. Feedback concerns arithmetic and premises; it supplies no grade or judgment about a student's ability.
+
+## Scope of Evaluation
+
+Source fidelity, code correctness, usable navigation, and learning are separate outcomes. A course evaluation should specify each outcome and its comparison. Students can inspect the original argument even when an adaptation is easier to read. A generated explanation must preserve consequential restrictions and remain open to a supported objection. No experiment with course students has been conducted, and no learning benefit is claimed for the pilot.
+
+---
+
+## Source: 03_Data_and_Code/Learning_Design/README.md
+
+# Learning Design and Outcome Comparisons
+
+An instructor choosing a learning tool needs evidence about the outcome that matters and the contribution of each proposed feature. `learning_comparisons.py` contains two separate calculations: arithmetic using published rounded percentages and an original synthetic factorial example.
+
+## Inputs and Interpretation
+
+The 78% and 67% inputs come from [Google Research's announcement](https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/). Their difference is 11 percentage points; the relative increase is 1100/67%, approximately 16.42%. These rounded summaries do not supply participant observations, sampling uncertainty, or a replication of the trial.
+
+The four synthetic means are 60%, 66%, 68%, and 77%. Factor Q offers questions with feedback; factor F offers alternative representations. Population, source content, assessment, and study-time allowance remain common. Equal allocation defines the average main effects. The 17-point whole-package difference is consistent with multiple allocations of component effects. No student data, estimated treatment effect, or power calculation is contained in this construction.
+
+## Run and Outputs
+
+```sh
+python3 03_Data_and_Code/Learning_Design/learning_comparisons.py
+python3 03_Data_and_Code/Learning_Design/bill_identity.py
+python3 -m unittest discover -s 03_Data_and_Code/Learning_Design -p 'test_*.py'
+```
+
+Python 3.10 or newer and its standard library are sufficient. The program has no random seed because it performs exact, deterministic arithmetic. CSV and JSON files under `results/` report the input cells and comparisons. Calculations use exact fractions; exports use decimal display values.
+
+The [electricity page](../../08_Wiki/pilot/index.html) uses the existing [institutional bill table](../Statistical_Inference/results/institutional_bills.csv) and its [complete Python source](../Statistical_Inference/institutional_exposure.py). Its defaults reproduce the saved 1,000-account example. Changed browser inputs are explicitly hypothetical scenarios.
+
+## Course Use
+
+[M2 §2.29](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md), [M6 §6.39](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md), and the [optional practice](../../07_Labs/AI_Augmented_Learning/README.md) connect magnitude reporting, component identification, and learning evaluation. [Source review](../../01_Resources/43_AI_Augmented_Learning/README.md) and [verification](VERIFICATION.md) distinguish published observations from teaching constructions.
+
+## Bill Reference Values
+
+`bill_identity.py` reads the synthetic institutional bill table, verifies matched revenue and sales denominators, and exports `results/bill_reference.csv`. Its three bills are USD 100, USD 110, and USD 100 per account-month. `08_Wiki/pilot/build_pilot.py` uses the same calculation to refresh the browser reference data and complete visible Python listing. The browser logic also has independent hand-value checks.
+
+---
+
+## Source: 03_Data_and_Code/Learning_Design/AGENTS.md
+
+# Learning Design Examples
+
+Follow the root agent guide. Keep the rounded published percentages separate from the synthetic factorial means. Never describe either file as participant-level replication data. Preserve percentage points, relative percentages, assignment factors, assessment scales, and the specified population.
+
+The electricity pilot uses an existing synthetic table. Validate changed browser scenarios against the accounting identity and independently calculated reference cases. Source fidelity and successful execution do not establish learning, causal identification, or ethical justification. Keep the notes' complete Python block synchronized with its standalone source.
+
+---
+
+## Source: 03_Data_and_Code/Learning_Design/VERIFICATION.md
+
+# Verification of Learning Comparisons
+
+Checked November 26, 2026.
+
+## Executed Calculations
+
+`learning_comparisons.py` and `bill_identity.py` ran with Python 3.14.8 and its standard library. The percentage comparison returns 11 percentage points and 16.4179104478% relative to 67. The synthetic factorial returns question effects of 6 and 9 points, format effects of 8 and 11 points, equal-weight effects of 7.5 and 9.5 points, and an interaction of 3 points. The bill program independently returns USD 100, USD 110, and USD 100 per account-month from the existing matched synthetic table.
+
+Six independent Python tests pass. They check reference values, a changed denominator, a zero reference, invalid inputs, the four-cell requirement, and alternative feature effects compatible with the same package difference. The bill program separately asserts the accounting identity and the three hand-computed bills. The browser's JavaScript checks compare its arithmetic against those independent saved-table values and test direction, zero price, and invalid inputs.
+
+## Reproduction
+
+```sh
+python3 03_Data_and_Code/Learning_Design/learning_comparisons.py
+python3 03_Data_and_Code/Learning_Design/bill_identity.py
+python3 -m unittest discover -s 03_Data_and_Code/Learning_Design -p 'test_*.py'
+python3 08_Wiki/pilot/build_pilot.py
+node 08_Wiki/pilot/test_pilot.cjs
+python3 scripts/check_lecture_code.py
+```
+
+The final check confirms 124 matching, syntactically valid Python listings across the lecture notes. Both added listings match their maintained programs. The HTML's complete Python listing also matches `bill_identity.py`.
+
+## Scope
+
+These checks establish arithmetic and source consistency. The percentage inputs are rounded published summaries. The factorial means and bill scenarios are synthetic. No participant microdata, estimated learning effect, model API, or replication of the original trial is involved. [Browser verification](../../08_Wiki/pilot/VERIFICATION.md) records the separate interaction checks.
+
+---
+
+## Source: 07_Labs/AI_Augmented_Learning/README.md
+
+# Learning Tools, Evidence, and Independent Judgment
+
+This optional, ungraded exercise asks whether an instructional change helps a student understand and challenge an analytical argument. It establishes no assignment requirement or course-wide AI permission.
+
+## Predict and Explain
+
+Open the [electricity case](../../08_Wiki/pilot/index.html), or use its [complete text](../../08_Wiki/pilot/LESSON.md). Predict the average monthly bill when realized revenue remains USD 100/MWh and average monthly usage rises from 1 to 1.1 MWh. Explain why the unit-price statistic alone leaves the bill unresolved. Reveal the calculation, then state what further evidence would support a causal claim about a data center.
+
+Change the price to USD 125/MWh and usage to 0.8 MWh per account-month. State how this comparison changes the measurement claim. Separate an accounting identity, an attribution of a change, and a judgment about affordability. Write a condition under which the original study would support a narrower reassuring conclusion.
+
+## Compare Reported Magnitudes
+
+Run [learning_comparisons.py](../../03_Data_and_Code/Learning_Design/learning_comparisons.py). Explain why 78% versus 67% yields an 11-point difference and a relative increase of approximately 16.42%. Identify the denominator for each calculation. The inputs are rounded published percentages; no sampling uncertainty is reconstructed.
+
+## Identify a Component Effect
+
+Use the four synthetic means in the program. Compare the whole package with the separate contributions of questions and alternative representations. Explain why observing only the two diagonal cells leaves those contributions unresolved. Propose random assignment to four conditions, a common assessment, an appropriate time allowance, and a delayed transfer task. Define whether the target is the total effect of access or an effect under a fixed study duration.
+
+## Challenge the Explanation
+
+Write a claim, its measurement premise, its causal premise, and the normative premise behind a recommendation. Give the strongest supported objection and a reason for revising the conclusion. Compare an unfamiliar setting, such as a subscription with an unchanged monthly rate and higher total charges. Explain which parts of the electricity argument transfer and which need new institutional evidence.
+
+When an applicable assessment permits AI, ask an assistant to produce an alternative explanation from an identified course passage. Check whether it preserves units, assumptions, contrary findings, and the distinction between possible and established harm. Keep the original passage accessible. Judge the explanation by the reasoning it supports and the errors it introduces.
+
+---
+
+## Source: 08_Wiki/AGENTS.md
+
+# Agent Guide for the Wiki
+
+Follow the root guide and writing preferences. The `pilot/` page is an original static learning example. It establishes no assessment requirement and has no proven learning effect. Preserve a complete Markdown companion and stable relative links to source notes, data, and code.
+
+Keep synthetic scenarios distinct from empirical findings. An arithmetic result must not become a causal or moral conclusion without additional premises. Do not send learner responses to a model service or add telemetry without explicit authorization. Keep answer feedback educational and public; private graded solutions do not belong here.
+
+For changes, run the Python reference calculation, regenerate the visible code and browser reference data, check JavaScript calculations independently, and inspect the actual browser interaction. Verify keyboard navigation, input constraints, scenario changes, reset, narrow layout, links, and meaningful no-JavaScript text. File generation does not establish deployment. Use the requested GitHub hosting destination when deployment is authorized.
+
+---
+
+## Source: 08_Wiki/pilot/README.md
+
+# Electricity Measurement Pilot
+
+The [HTML page](index.html) presents one course case through prediction, arithmetic, four explanation views, argument assessment, and transfer. Its [Markdown companion](LESSON.md) preserves all substantive material for reading and LLM use. The broader wiki remains undeveloped; this directory is a local static pilot, not a deployment record.
+
+## Reproduce and Preview
+
+From the repository root:
+
+```sh
+python3 03_Data_and_Code/Learning_Design/bill_identity.py
+python3 08_Wiki/pilot/build_pilot.py
+node 08_Wiki/pilot/test_pilot.cjs
+python3 -m http.server 8765 --bind 127.0.0.1
+```
+
+Open `http://127.0.0.1:8765/08_Wiki/pilot/`. The HTML also uses relative local assets and needs no model service, account, package installation, tracking script, or application server. Tabs, calculations, and feedback run in the browser. The input response remains in memory and clears on reload. Ordinary hosting infrastructure can have its own access logs.
+
+The page retains links to the surrounding repository. A future deployment must include those destinations or map them to their published equivalents. Copying only this directory would omit the shared figure, inputs, code, and Markdown sources. GitHub synchronization publishes source files; GitHub Pages deployment has not been enabled by this work.
+
+## Editing
+
+Edit `index.html`, `styles.css`, `logic.js`, and `lesson.js`; preserve `LESSON.md` alongside them. `build_pilot.py` refreshes the full Python listing and `reference_data.js` from the standalone program and existing synthetic table. Keep the figure editable in TikZ. Check modified browser inputs independently and inspect keyboard operation and a narrow viewport. [Verification](../../03_Data_and_Code/Learning_Design/VERIFICATION.md) records the checks that ran.
+
+The page uses Illinois colors and the course's parchment direction. No raster illustration, external font, or third-party implementation was copied. The analytical diagram has an equivalent text description.
+
+---
+
+## Source: 08_Wiki/pilot/LESSON.md
+
+# Price, Bills, and the Claim
+
+By Nathan Yang
+
+## The Decision
+
+A utility reports an unchanged average electricity price. What would justify reassuring households about their bills? An average price describes revenue per unit sold. Average expenditure also depends on usage, while claims about harm require further premises about causation, affordability, and incidence.
+
+This synthetic monthly comparison holds the same 1,000 accounts fixed. Baseline revenue is USD 100,000 and sales are 1,000 MWh. The average bill is USD 100 per account-month. These inputs illustrate an accounting relation and are not estimates from the data-center study.
+
+## Predict and Calculate
+
+Before calculating, predict whether the average bill rises, falls, or stays fixed when average realized price is USD 100/MWh and usage becomes 1.1 MWh per account-month. Explain the relation supporting the prediction.
+
+The result is USD 110 per account-month, an increase of USD 10. Revenue and sales rise proportionately, keeping their ratio fixed. The [browser page](index.html) permits comparison prices from USD 0 to USD 400 per MWh and positive usage from 0.1 to 3 MWh per account-month. Its feedback compares the prediction with arithmetic and asks for separate evidence on attribution and affordability. Responses stay in the page, clear on reload, and are not graded or submitted.
+
+| Synthetic Scenario | USD per MWh | MWh per Account-Month | USD per Account-Month |
+| --- | --- | --- | --- |
+| Baseline | 100 | 1.0 | 100 |
+| More Usage, Same Realized Price | 100 | 1.1 | 110 |
+| Higher Realized Price, Less Usage | 125 | 0.8 | 100 |
+
+## Inspect the Reasoning
+
+**Intuition.** At the same realized price, greater usage raises expenditure. Different households can bear different burdens even when the account average is unchanged. Household resources and essential needs enter an affordability judgment.
+
+**Equation.** Let R be monthly revenue in USD, S monthly sales in MWh, and N the matched account-month count for the same customer class. Then `(R/S) × (S/N) = R/N`: realized price times average usage equals average revenue per account-month. Use the same period, class, and accounting coverage throughout. A tariff's marginal rate may differ from realized revenue per MWh.
+
+**Diagram.** Three boxes connect realized price, average usage, and the average bill. The default comparison holds price at 100 while usage rises from 1 to 1.1 and expenditure rises from 100 to 110. Attribution requires a counterfactual; affordability additionally requires household resources and needs. The account average leaves distributional incidence unresolved.
+
+![Realized price times average usage equals the average bill; equal prices coexist with different bills.](../../06_Lecture_Notes/figures/M02_price_and_bill.png)
+
+[Editable TikZ](../../06_Lecture_Notes/figures/M02_price_and_bill.tex).
+
+**Python.** [bill_identity.py](../../03_Data_and_Code/Learning_Design/bill_identity.py) is a complete standard-library program that reads the [saved inputs](../../03_Data_and_Code/Statistical_Inference/results/institutional_bills.csv), verifies matched accounting, and writes [checked results](../../03_Data_and_Code/Learning_Design/results/bill_reference.csv). Its complete listing also appears in M2 §2.29 and the browser's Python view.
+
+```sh
+python3 03_Data_and_Code/Learning_Design/bill_identity.py
+```
+
+## Challenge the Claim
+
+Suppose someone says, “The average price did not rise, so households experienced no harm.” Identify three separate premises.
+
+- **Measurement:** the unit-price measure must connect to the expenditure or affordability claim. The synthetic identity demonstrates why that connection requires further quantities.
+- **Causation:** the counterfactual concerns expenditure without the project. Higher observed bills alone leave attribution unresolved. Investment commitments, cost allocation, and timing require institutional evidence.
+- **Justification:** the argument must defend which burdens count, whose reasons matter, and which protection is warranted. An average leaves both incidence and the practical principle open.
+
+A defensible revision preserves the reported outcome, design, and uncertainty, then states what further evidence broader reassurance requires. The paper explicitly defines its realized-revenue measure. The criticism concerns extensions beyond the supported inference. Actual harm, contaminated controls, and deliberate deception each require separate evidence.
+
+## Transfer the Argument
+
+Consider an unchanged advertised subscription rate with payment for more months or services. Identify price, quantity, expenditure, and decision rights. State which accounting relations transfer and which contractual facts require new investigation.
+
+A supported response preserves units and timing, separates possibilities from established effects, gives a credible comparison, and defends a normative premise when recommending action. It considers the strongest reply and identifies evidence or reasons for revision. A different policy conclusion can satisfy these criteria; agreement with the instructor alone supplies no substitute for reasons.
+
+## Sources and Further Practice
+
+- [M2: Measurement](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md), §2.29.
+- [M6: Causal Inference](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md), §§6.35 and 6.39.
+- [M9: Marketing Dialectics](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md), §§9.42.4 and 9.44.
+- [Paper and institutional assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md).
+- [Learning-design sources](../../01_Resources/43_AI_Augmented_Learning/README.md) and [optional practice](../../07_Labs/AI_Augmented_Learning/README.md).
+
+This text preserves the substantive comparison, figure description, questions, feedback criteria, and source links. It does not reproduce the page's keyboard behavior or visual layout.
+
+---
+
+## Source: 08_Wiki/pilot/VERIFICATION.md
+
+# Electricity Lesson Verification
+
+Checked November 26, 2026.
+
+## Calculation and Source Fidelity
+
+The complete embedded Python matches [bill_identity.py](../../03_Data_and_Code/Learning_Design/bill_identity.py). Browser reference values come from the three saved synthetic bill scenarios. Independent JavaScript checks return USD 100, USD 110, and USD 100; they also cover the direction comparison, zero price, and invalid inputs. The [Python verification](../../03_Data_and_Code/Learning_Design/VERIFICATION.md) records the separate calculations.
+
+All 24 distinct HTML asset and link targets resolve against the local course checkout, including in-page anchors. Local HTTP checks return 200 for file destinations. IDs are unique. Notes, source assessments, complete Python, inputs, outputs, the full-size diagram, and editable TikZ remain reachable through relative links.
+
+## Browser Interaction
+
+The final page was checked in the Codex in-app browser at its default desktop size and at a 390 × 844 viewport. The temporary viewport override was reset afterward.
+
+| Check | Observed Result |
+| --- | --- |
+| Default price 100, usage 1.1, prediction “Rise” | Revealed bill 110 and change +10; agreement feedback |
+| Price 125, usage 0.8, prediction “Stay the Same” | Revealed bill 100 and zero change |
+| Changed numerical inputs | Prior result hidden and prediction cleared |
+| Usage zero | Native validation prevented calculation |
+| Incorrect prediction | Feedback asked the learner to revisit price times usage |
+| Reset after input and explanation changes | Restored 100 and 1.1; cleared response, prediction, and result |
+| Four explanation tabs | Selected panel visible; other panels hidden |
+| Keyboard Right, Home, and End | Focus and selected explanation changed together |
+| Expandable Python, revised claim, and reasoning criteria | Full content appeared |
+| Narrow layout | Stacked controls, readable body text, wrapped tabs, no horizontal page overflow |
+| Diagram | Image loaded with alternative text and a full-size link |
+
+The introductory page, controls, result, explanation views, and narrow layout were visually inspected. These checks cover this browser and these viewports; they do not constitute a cross-browser or assistive-technology certification. The static code contains no response submission, model call, analytics, or persistent storage.
+
+## Course Outputs and Deployment
+
+The affected notes, standalone Marketing Dialectics chapter, Sessions 1, 2, 9, and 14, combined slides, and syllabus were rebuilt. New sections, changed slides, neighboring page breaks, and the two diagrams were rendered and visually inspected. The final notes contain 569 pages and 138 editable figures; the combined slides contain 499 pages. The syllabus remains two pages.
+
+This is a local static pilot whose source can be synchronized with the course repository. GitHub Pages has not been enabled and no public lesson URL is claimed. Copying only the pilot folder would omit shared source and figure destinations; preserve the course-relative paths when deploying. No student learning study has been conducted.
 
 ---
 

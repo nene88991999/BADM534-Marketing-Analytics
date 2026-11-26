@@ -2095,6 +2095,53 @@ hand-checkable cases; the
 \href{../07_Labs/Philosophical_Arguments/README.md}{argument exercise}
 applies the five steps to a chosen marketing decision.
 
+\hypertarget{M01-explain-an-argument-without-changing-its-meaning}{%
+\section{Explain an Argument Without Changing Its
+Meaning}\label{M01-explain-an-argument-without-changing-its-meaning}}
+
+\noindent \noindent An analyst preparing an explanation for a manager must decide
+which detail helps the decision and which simplification changes the
+claim. A short explanation can preserve the outcome, comparison, and
+consequential assumptions while leaving the derivation available
+separately. Changing an example's industry requires checking whether its
+institutions still support the argument. An electricity-price comparison
+and a subscription-price comparison may share an accounting structure
+while differing in contractual rights and feasible alternatives.
+
+A course explanation can offer managerial intuition, an editable
+diagram, mathematics, and complete Python as connected representations
+of the same argument. Students choose which representation to inspect
+and can return to the underlying source. Each representation should
+retain observation units, timing, denominators, assumptions, and the
+distinction between an illustration and an estimate. The design draws on
+the source-based transformations examined by the
+\href{https://arxiv.org/html/2509.13348v4}{LearnLM Team, 2025}, with
+course-specific questions about independent analytical judgment.
+
+Before revealing a result, write a prediction and its reason. After
+inspecting the calculation, identify whether an error arose from
+arithmetic, measurement, causal interpretation, or a normative premise.
+A correct prediction can coexist with a poor explanation. A mistaken
+prediction can expose a useful counterexample to an unstated assumption.
+Feedback should identify the inference that requires revision.
+
+For an AI-assisted explanation, provide an identified passage and ask
+for an alternative representation. Require the assistant to retain
+units, uncertainty, contrary findings, and the conditions supporting the
+conclusion. Check each changed statement against the passage and an
+independent calculation where applicable. An appealing analogy deserves
+revision when it changes the relevant institution. A concise answer that
+turns an unresolved effect into reassurance has altered the substantive
+claim.
+
+The electricity example in §2.29 provides a practical comparison.
+Students can first explain the accounting identity, then inspect the
+calculation, then ask what would establish causation or affordability. A
+subsequent question about a different industry tests whether they can
+transfer the reasoning. The decision to use an instructional tool should
+depend on the learning outcome sought, its accuracy, and the student's
+ability to challenge it.
+
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
 Visualization}\label{M02-m2.-customer-data-measurement-and-visualization}}
@@ -5569,6 +5616,116 @@ expenditure, affordability, or absence of harm. Evidence about bills
 needs matched use and payments; affordability adds income and essential
 energy needs. Full runnable code for the table appears in §6.35 as
 \texttt{institutional\_exposure.py}.
+
+\hypertarget{M02-percentages-bills-and-the-meaning-of-a-comparison}{%
+\section{Percentages, Bills, and the Meaning of a
+Comparison}\label{M02-percentages-bills-and-the-meaning-of-a-comparison}}
+
+\noindent \noindent A manager comparing two learning tools needs a magnitude with
+a clear denominator. Google's public announcement reports rounded
+retention scores of 78\% and 67\%. Its opening paragraph correctly
+describes an 11-percentage-point difference, while a later result bullet
+calls it an 11\% improvement. Subtraction gives 11 percentage points;
+dividing that difference by 67 gives a relative increase of
+approximately 16.42\%. The rounded summaries support that arithmetic.
+Participant observations and a sampling design would be needed to
+reconstruct uncertainty.
+\href{https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/}{Google
+Research announcement}.
+
+The same discipline applies when an average electricity price is
+interpreted as a household bill. Let \(R\) be matched monthly revenue in
+dollars, \(S\) monthly sales in MWh, and \(N\) the corresponding
+account-month count for the same customer class. Average revenue per MWh
+is \(R/S\), and average usage is \(S/N\). Their product gives average
+revenue per account-month:
+
+\[
+(R/S)(S/N)=R/N.
+\]
+
+The cancellation of sales is an accounting identity under matched
+definitions. A synthetic baseline has 1,000 accounts, revenue of USD
+100,000, and sales of 1,000 MWh. With revenue of USD 110,000 and sales
+of 1,100 MWh, realized unit price remains USD 100/MWh while the average
+bill rises from USD 100 to USD 110. Both comparisons concern the same
+account count. A household's affordability also depends on its resources
+and essential needs, while a claim that the data center caused a change
+requires a credible counterfactual.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_price_and_bill.tex}
+\caption{Matched revenue, sales, and account-months connect realized price, average usage, and the average bill.}\label{fig:M02_price_and_bill}
+\end{figure}
+
+The three boxes retain the units that cancel and the account-month
+denominator that remains. The synthetic comparison changes revenue and
+sales proportionately. Average price stays fixed while expenditure
+rises. The aggregate identity leaves the distribution of burdens across
+households unresolved.
+
+The program below independently recomputes the existing synthetic table.
+The complete percentage and factorial calculations appear in §6.39.
+Changes to browser inputs in the accompanying
+\href{../08_Wiki/pilot/index.html}{electricity case} are hypothetical
+scenarios, with the baseline held fixed.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Learning_Design/bill_identity.py}{bill\_identity.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Recompute the existing synthetic bill table without external dependencies."""
+import csv
+from fractions import Fraction
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+INPUT = HERE.parent / "Statistical_Inference/results/institutional_bills.csv"
+
+def bill_from_units(price, use):
+    """USD/MWh times MWh per account-month gives USD per account-month."""
+    p, q = Fraction(str(price)), Fraction(str(use))
+    if p < 0 or q <= 0:
+        raise ValueError("Nonnegative price and positive usage required")
+    return p * q
+
+def comparisons():
+    with INPUT.open() as f:
+        rows = list(csv.DictReader(f))
+    results = []
+    for row in rows:
+        revenue = Fraction(row["revenue_usd"])
+        sales = Fraction(row["sales_mwh"])
+        count = Fraction(row["customer_months"])
+        if sales <= 0 or count <= 0:
+            raise ValueError("Positive sales and account-month counts required")
+        price, use = revenue / sales, sales / count
+        bill = bill_from_units(price, use)
+        assert bill == revenue / count
+        results.append({"scenario": row["scenario"],
+                        "price_usd_mwh": float(price),
+                        "use_mwh_account_month": float(use),
+                        "bill_usd_account_month": float(bill)})
+    return results
+
+def main():
+    rows = comparisons()
+    assert [r["bill_usd_account_month"] for r in rows] == [100, 110, 100]
+    out = HERE / "results"
+    out.mkdir(exist_ok=True)
+    with (out / "bill_reference.csv").open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    for row in rows:
+        print(row)
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
 
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
@@ -17527,6 +17684,187 @@ def main():
     write_csv("conditional_purchase_rules.csv", counterfactuals)
     write_csv("policy_effects.csv", effects)
     print("Identical historical joint laws; policy effects are -40 and 0 pp.")
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M06-a-learning-package-and-its-component-effects}{%
+\section{A Learning Package and Its Component
+Effects}\label{M06-a-learning-package-and-its-component-effects}}
+
+\noindent \noindent An instructor choosing between a digital reader and an
+interactive learning tool needs to define the decision. Offering an
+entire package and adding one feature to an existing course are
+different interventions. Random assignment to the package can inform the
+first comparison while leaving the contribution of each component
+unresolved.
+
+Heldreth and colleagues report an experiment with 60 adolescents
+studying one chapter, with 58 completing a 3--7-day follow-up. The
+treatment combines several learning features. The reported directional
+tests and blinded scoring support an assessment of that specified
+comparison. Generalization to advanced marketing analysis and
+attribution to individual features require further evidence.
+\href{https://doi.org/10.3389/frai.2026.1783117}{Heldreth and
+colleagues, 2026, §§4--5}.
+
+\hypertarget{M06-separate-questions-and-representations}{%
+\subsection{Separate Questions and
+Representations}\label{M06-separate-questions-and-representations}}
+
+\noindent \noindent Suppose an instructor considers two features: questions with
+feedback, denoted \(Q\), and alternative representations, denoted \(F\).
+Each feature is either absent or present. Define \(\mu_{qf}\) as the
+population mean percentage score on a common assessment under assignment
+\((q,f)\). A prospective factorial experiment randomly assigns students
+to four conditions with common content and study-time allowances. Equal
+allocation defines an equal-weight average of each feature's effect
+across the other feature's settings.
+
+For an original synthetic illustration, set \(\mu_{00}=60\),
+\(\mu_{10}=66\), \(\mu_{01}=68\), and \(\mu_{11}=77\). The whole-package
+gain is 17 percentage points. Adding formats produces 8 points without
+questions and 11 points with questions. The interaction is the
+difference between those effects:
+
+\[
+\mu_{11}-\mu_{10}-\mu_{01}+\mu_{00}=77-66-68+60=3.
+\]
+
+The equal-weight question effect is \((6+9)/2=7.5\) points; the format
+effect is \((8+11)/2=9.5\) points. These are imposed population
+comparisons, with no sampling uncertainty or estimated learning benefit.
+The two diagonal means alone would also be compatible with
+\(\mu_{10}=77\) and \(\mu_{01}=60\), which assign the gain entirely to
+questions. Observing the whole-package difference therefore leaves
+component effects unidentified.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_learning_factorial.tex}
+\caption{Four synthetic assignment cells separate questions, formats, and their interaction.}\label{fig:M06_learning_factorial}
+\end{figure}
+
+The horizontal comparisons hold question availability fixed. Their
+difference identifies the interaction in the synthetic construction. The
+diagonal comparison changes both features and gives no unique allocation
+of the total gain.
+
+\hypertarget{M06-define-learning-and-the-study-time-intervention}{%
+\subsection{Define Learning and the Study-Time
+Intervention}\label{M06-define-learning-and-the-study-time-intervention}}
+
+\noindent \noindent Specify the primary outcome before comparing tools. Immediate
+comprehension, delayed retention, transfer to an unfamiliar case,
+independent debugging, and a defended objection describe distinct
+achievements. A favorable experience rating supplies evidence about the
+reported experience. Its relation to learning requires a separate
+comparison.
+
+Study time can respond to the assigned tool. A total-effect comparison
+retains that pathway under the specified time allowance. Conditioning
+afterward on observed study time can change the estimand and introduce
+selection. An effect under a fixed duration requires a design or
+additional identifying assumptions that address that question directly.
+Within a treatment group, students' choices among available formats are
+also post-assignment behavior; their association with scores does not
+identify a format's causal effect.
+
+A course evaluation should select a common outcome, specify the
+assignment unit, account for missing follow-up, and report uncertainty
+alongside a meaningful improvement threshold. Delayed assessments should
+use comparable tasks or a justified equating procedure when interpreting
+score changes as forgetting. Predefine directional hypotheses when using
+one-sided tests. An experiment that supports a package-level learning
+benefit still leaves the normative value of its objective open to
+assessment.
+
+\hypertarget{M06-reproduce-the-numerical-comparisons}{%
+\subsection{Reproduce the Numerical
+Comparisons}\label{M06-reproduce-the-numerical-comparisons}}
+
+\noindent \noindent The following standard-library program uses the published
+rounded percentages solely for arithmetic, then generates the four
+synthetic cells and their effects. Exact fractions preserve the
+calculations before decimal export. The second construction contains no
+participant observations and supplies no empirical test statistic.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Learning_Design/learning_comparisons.py}{learning\_comparisons.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Published rounded percentages and an original synthetic factorial example.
+
+Run from any directory. Standard library only; no student records or model calls.
+"""
+import csv
+import json
+from fractions import Fraction
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def percentage_comparison(treatment, comparison):
+    """Inputs are percentages on a 0-100 scale; return points and relative %.
+
+    Zero comparison values leave the relative percentage undefined.
+    """
+    a, b = Fraction(str(treatment)), Fraction(str(comparison))
+    if not (0 <= a <= 100 and 0 <= b <= 100):
+        raise ValueError("Scores must be percentages in [0, 100]")
+    return a - b, (100 * (a - b) / b if b else None)
+
+
+def factorial_effects(means):
+    """Q: questions with feedback; F: alternative representations.
+
+    Each key is (Q, F). Means are hypothetical percentage scores for the same
+    population and common assessment. Equal allocation defines main effects.
+    """
+    if set(means) != {(0, 0), (1, 0), (0, 1), (1, 1)}:
+        raise ValueError("All four factorial cells are required")
+    m = {k: Fraction(str(v)) for k, v in means.items()}
+    if any(not 0 <= x <= 100 for x in m.values()):
+        raise ValueError("Scores must be percentages in [0, 100]")
+    return {
+        "questions_without_formats_pp": m[1, 0] - m[0, 0],
+        "questions_with_formats_pp": m[1, 1] - m[0, 1],
+        "formats_without_questions_pp": m[0, 1] - m[0, 0],
+        "formats_with_questions_pp": m[1, 1] - m[1, 0],
+        "questions_equal_weight_effect_pp":
+            (m[1, 0] - m[0, 0] + m[1, 1] - m[0, 1]) / 2,
+        "formats_equal_weight_effect_pp":
+            (m[0, 1] - m[0, 0] + m[1, 1] - m[1, 0]) / 2,
+        "interaction_pp": m[1, 1] - m[1, 0] - m[0, 1] + m[0, 0],
+        "whole_package_pp": m[1, 1] - m[0, 0],
+    }
+
+
+def main():
+    out = HERE / "results"
+    out.mkdir(exist_ok=True)
+    points, relative = percentage_comparison(78, 67)
+    # Rounded figures reported in Google's September 16, 2025 announcement.
+    with (out / "reported_percentage_comparison.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["treatment_percent", "comparison_percent",
+                         "difference_percentage_points", "relative_change_percent"])
+        writer.writerow([78, 67, float(points), float(relative)])
+    means = {(0, 0): 60, (1, 0): 66, (0, 1): 68, (1, 1): 77}
+    with (out / "synthetic_factorial_cells.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["questions", "formats", "mean_score_percent"])
+        writer.writerows((q, v, means[q, v]) for q, v in sorted(means))
+    effects = {k: float(v) for k, v in factorial_effects(means).items()}
+    (out / "synthetic_factorial_effects.json").write_text(
+        json.dumps(effects, indent=2) + "\n")
+    print(f"Reported rounded scores: {float(points):g} points; {float(relative):.4f}% relative")
+    print("Synthetic factorial:", effects)
 
 
 if __name__ == "__main__":
@@ -31769,5 +32107,57 @@ problem, and which consequences remain outside its scope. An
 intellectually demanding calculation can still pursue a poorly defended
 end. A careful account of agency or institutional authority can be
 valuable even when its conclusion resists a single numerical estimate.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-personalization-and-the-learners-authority}{%
+\section{Personalization and the Learner's
+Authority}\label{M09-personalization-and-the-learners-authority}}
+
+\noindent \noindent An educational platform can predict which explanation a
+student prefers while leaving open whether the explanation helps the
+student reason independently. The institution choosing the platform must
+defend the learning objective and the authority given to
+recommendations. Convenience, engagement, and measured performance are
+relevant reasons. The student's ability to inspect, question, and reject
+an explanation also matters to the proposed principle.
+
+A Kantian assessment asks whether the system supports the learner as a
+person capable of deliberating about reasons. A Scanlonian assessment
+asks whether a principle governing its use can be justified to affected
+learners. A student could reasonably object to a system that hides
+consequential assumptions, prevents access to the original argument, or
+treats disagreement as a defect to be corrected. The strength of that
+objection depends on the circumstances, feasible alternatives, and
+burdens of the rule. These are course applications of the philosophical
+arguments in §§9.30--9.32 and §§9.40--9.43.
+
+Personalization can preserve a common analytical objective while
+offering different cases, levels of detail, and ways to inspect a
+result. Students should be able to change their selection and
+investigate an explanation beyond the system's recommendation. A record
+of earlier answers gives evidence of particular responses under
+particular conditions. It supplies no complete account of the student's
+capacity, aspirations, or future reasons. Calling an unmeasured
+educational outcome noumenal would obscure opportunities to investigate
+it; Kant's limiting concept concerns a distinct boundary of theoretical
+cognition.
+
+The electricity case provides a concrete test. A student first predicts
+a bill change, then inspects the accounting identity, and then
+challenges a causal or normative inference. Feedback can explain the
+denominator while leaving a reasoned disagreement about a policy open. A
+strong response identifies what the study measures, preserves its actual
+findings, and explains which additional premise would support broader
+reassurance. Agreement with the instructor's conclusion alone supplies
+an inadequate measure of this achievement.
+
+The same standard applies to the course's own critique. Ask students to
+formulate the strongest supported reply, identify evidence that would
+change the criticism, and transfer the argument to an unfamiliar
+setting. A learning tool earns support when it helps students produce
+and examine reasons under a defensible educational objective. Its
+capacity to adapt content makes that objective consequential before
+optimization begins.
 
 \end{document}

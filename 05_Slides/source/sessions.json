@@ -368,6 +368,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Preserve the Argument Across Representations",
+        "bullets": [
+          "Keep the same question, definitions, assumptions, and conclusion.",
+          "Compare prose, equations, an editable diagram, and executable code.",
+          "Predict a result, explain it independently, and test a counterexample."
+        ],
+        "notes": "An easier explanation remains responsible for the conditions that make its conclusion valid. Students choose a representation, return to the original argument, and explain where a changed assumption would change the result. Transfer to a new setting supplies a separate learning outcome.",
+        "source": "M1, Section 1.21, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Decision Discussion",
         "bullets": [
           "Which customer receives the renewal offer?",
@@ -393,7 +404,8 @@
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
-      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
+      "../07_Labs/AI_Augmented_Learning/README.md"
     ],
     "practice": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
     "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision."
@@ -670,6 +682,26 @@
         "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
+        "kind": "figure",
+        "title": "An Unchanged Price Can Accompany a Higher Bill",
+        "figure": "../06_Lecture_Notes/figures/M02_price_and_bill.tex",
+        "caption": "Synthetic monthly comparison: 1,000 accounts, matched revenue, sales, and account-months.",
+        "description": "Realized price times average usage equals the average bill. The unit price stays at USD 100 per MWh while usage rises from 1.0 to 1.1 MWh per account-month; the bill rises from USD 100 to USD 110.",
+        "notes": "Ask for a prediction before revealing the product. Changing price to 125 and usage to 0.8 gives a bill of 100. The accounting identity concerns matched customer classes and periods. Causal attribution needs a counterfactual; household affordability also requires resources and needs.",
+        "source": "M2 §2.29. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md; ../08_Wiki/pilot/LESSON.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Percentage Needs Its Reference Value",
+        "bullets": [
+          "Reported rounded scores: 78% and 67%.",
+          "Difference: 11 percentage points.",
+          "Relative increase: 11 divided by 67, or about 16.42%."
+        ],
+        "notes": "The Google announcement uses percentage points in its opening and percent in a later result bullet. Preserve the denominator when restating the magnitude. Rounded scores support arithmetic; participant records and a sampling design would be needed to reconstruct uncertainty.",
+        "source": "M2, Section 2.29, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
         "kind": "bullets",
         "title": "Measurement Discussion",
         "bullets": [
@@ -689,7 +721,8 @@
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
       "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
-      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)"
+      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)",
+      "../07_Labs/AI_Augmented_Learning/README.md"
     ],
     "practice": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.",
     "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations."
@@ -3141,6 +3174,26 @@
         "source": "M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md M9 §9.40.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
+        "kind": "figure",
+        "title": "Identify the Effects of Each Learning Feature",
+        "figure": "../06_Lecture_Notes/figures/M06_learning_factorial.tex",
+        "caption": "Original synthetic population means; equal allocation and a common assessment.",
+        "description": "Four cells cross questions with alternative formats. Baseline is 60%, questions only 66%, formats only 68%, and both 77%. Formats add 8 points without questions and 11 with questions; the interaction is 3 points.",
+        "notes": "The package changes two features simultaneously and gains 17 points. Alternative off-diagonal means of 77 for questions only and 60 for formats only preserve the same package gain while assigning it entirely to questions. The four-cell design distinguishes these accounts. None of these means is a measured course outcome.",
+        "source": "M6 §6.39. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Define Learning Before Evaluating the Tool",
+        "bullets": [
+          "Separate immediate comprehension, delayed retention, and transfer.",
+          "Treat study time and selected formats as possible responses to assignment.",
+          "Specify a common assessment, meaningful improvement, and uncertainty."
+        ],
+        "notes": "The published trial randomizes a learning package. A total-effect comparison allows the package to change how students use the permitted study time. Conditioning afterward on time or selected formats can change the estimand and create selection. A fixed-duration effect needs a design or identifying assumptions for that question. A pleasant experience and a supported objection remain distinct outcomes.",
+        "source": "M6, Section 6.39, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
         "kind": "bullets",
         "title": "Experiment Discussion",
         "bullets": [
@@ -3170,7 +3223,8 @@
       "../01_Resources/41_Statistical_Claims_and_Decisions/README.md",
       "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
-      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
+      "../07_Labs/AI_Augmented_Learning/README.md"
     ],
     "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Use the optional statistical-claims and data-center case exercises.",
     "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Evaluate inverse power, specified alternatives, and directional sensitivity. Targeted exposure, correct population weighting, and reasons for bearing experimental risk."
@@ -5891,6 +5945,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Personalization and the Learner’s Authority",
+        "bullets": [
+          "Keep the source argument and consequential assumptions accessible.",
+          "Allow a learner to change representations and challenge the conclusion.",
+          "Evaluate independent reasoning and supported disagreement."
+        ],
+        "notes": "A student can reasonably object to an explanation that hides the premise on which its recommendation depends. A defensible learning system makes that premise inspectable and permits a reasoned objection. Response history does not exhaust the person or determine what the person ought to learn. Missing empirical measurements also remain distinct from Kant’s noumenal limiting concept.",
+        "source": "M9, Section 9.44, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
           "State the decision, affected people, and evidence.",
@@ -5932,7 +5997,8 @@
       "[Philosophical Arguments: Optional Practice](../07_Labs/Philosophical_Arguments/README.md)",
       "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
-      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
+      "../07_Labs/AI_Augmented_Learning/README.md"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."

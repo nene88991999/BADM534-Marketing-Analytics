@@ -23,6 +23,7 @@ Session 02. M2. 170 minutes.
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 - [Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)
 - [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
+- ../07_Labs/AI_Augmented_Learning/README.md
 
 ## Slide 1: Customer Data and Measurement
 
@@ -295,7 +296,29 @@ The complete Python in M2 §2.27 preserves the source’s rounded category weigh
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 25: Measurement Discussion
+## Slide 25: An Unchanged Price Can Accompany a Higher Bill
+
+Synthetic monthly comparison: 1,000 accounts, matched revenue, sales, and account-months.
+
+**Figure description:** Realized price times average usage equals the average bill. The unit price stays at USD 100 per MWh while usage rises from 1.0 to 1.1 MWh per account-month; the bill rises from USD 100 to USD 110.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_price_and_bill.tex)
+
+Ask for a prediction before revealing the product. Changing price to 125 and usage to 0.8 gives a bill of 100. The accounting identity concerns matched customer classes and periods. Causal attribution needs a counterfactual; household affordability also requires resources and needs.
+
+Source: M2 §2.29. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md; ../08_Wiki/pilot/LESSON.md
+
+## Slide 26: A Percentage Needs Its Reference Value
+
+- Reported rounded scores: 78% and 67%.
+- Difference: 11 percentage points.
+- Relative increase: 11 divided by 67, or about 16.42%.
+
+The Google announcement uses percentage points in its opening and percent in a later result bullet. Preserve the denominator when restating the magnitude. Rounded scores support arithmetic; participant records and a sampling design would be needed to reconstruct uncertainty.
+
+Source: M2, Section 2.29, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 27: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?

@@ -17,7 +17,7 @@
       "modules": "M1",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 33,
+      "slides": 34,
       "companion": "S01_Marketing_Decisions_and_AI_Coding.md",
       "pdf": "S01_Marketing_Decisions_and_AI_Coding.pdf",
       "python_activity": "Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately. Reconstruct published failure denominators and assess silent errors.",
@@ -81,7 +81,8 @@
       ],
       "date": "2027-01-20",
       "agent_workflow_minutes": 10,
-      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional"
+      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
+      "ai_augmented_learning_coverage": "Use five minutes within the existing 155–170 discussion to compare representations and preserve premises."
     },
     {
       "session": 2,
@@ -89,7 +90,7 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 25,
+      "slides": 27,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
       "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis.",
@@ -152,7 +153,8 @@
         }
       ],
       "date": "2027-01-27",
-      "digital_usage_minutes": 8
+      "digital_usage_minutes": 8,
+      "ai_augmented_learning_coverage": "Use minutes 148–155 for a prediction and bill calculation; extend percentages in optional practice."
     },
     {
       "session": 3,
@@ -572,7 +574,7 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 41,
+      "slides": 43,
       "companion": "S09_Experiments_and_Incremental_Value.md",
       "pdf": "S09_Experiments_and_Incremental_Value.pdf",
       "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales. Compare naive and population-weighted pricing contrasts under unequal exposure.",
@@ -633,7 +635,8 @@
       "agent_workflow_minutes": 5,
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
       "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice. Donald Andrews inverse power and nuisance-parameter sensitivity.",
-      "pricing_reasons_coverage": "Use the exposure example within minutes 135–155; longer exercise optional."
+      "pricing_reasons_coverage": "Use the exposure example within minutes 135–155; longer exercise optional.",
+      "ai_augmented_learning_coverage": "Use five minutes within the existing 45–70 comparison for the four-cell learning example."
     },
     {
       "session": 10,
@@ -933,7 +936,7 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 91,
+      "slides": 92,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
@@ -1064,7 +1067,8 @@
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
       "statistical_claims_coverage": "Selected arguments and figures within the existing ethics discussion; full numerical derivations, readings, and stakeholder exercises remain optional ungraded practice.",
       "qualitative_evidence": "M5 §5.27 and M9 §9.33; integrated into existing discussion; complete collection and independent coding are optional lab work",
-      "pricing_reasons_coverage": "Select the demand-completion and burden comparison at 50–60, a Kantian or Scanlonian pricing case within 80–110, and antitrust evidence within the existing policy discussion. Other cases are alternative discussions; extended reconstruction remains optional."
+      "pricing_reasons_coverage": "Select the demand-completion and burden comparison at 50–60, a Kantian or Scanlonian pricing case within 80–110, and antitrust evidence within the existing policy discussion. Other cases are alternative discussions; extended reconstruction remains optional.",
+      "ai_augmented_learning_coverage": "Use three minutes within the existing ethics discussion for learner authority and supported disagreement."
     },
     {
       "session": 15,

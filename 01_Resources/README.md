@@ -160,3 +160,7 @@ The [Fisher-R1 source collection](39_Statistical_Inference_and_AI/README.md) arc
 ## Statistical Claims, Household Burdens, and Agency
 
 The [statistical-claims examples](41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
+## AI-Augmented Learning
+
+The [source review](43_AI_Augmented_Learning/README.md) connects alternative representations, embedded questions, and learning evaluation to original course applications. It identifies the paper version, later report, access scope, and rights. [Complete Python](../03_Data_and_Code/Learning_Design/README.md) and an [electricity lesson](../08_Wiki/pilot/README.md) support M1, M2, M6, and M9.

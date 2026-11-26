@@ -1,10 +1,10 @@
 # Interactive HTML Wiki
 
-**Status: design and implementation pending.** The resource collection and Markdown course structure provide the source material for a future GitHub-hosted site.
+**Status: a local static HTML pilot is available.** The [electricity measurement lesson](pilot/README.md) combines prediction, calculation, alternative representations, and a reasoned objection. Its [complete text companion](pilot/LESSON.md) preserves the content for students and LLMs. The broader wiki design and GitHub Pages deployment remain pending.
 
 Keep the future site's content in the repository so the same material remains readable as Markdown. Preserve stable module IDs, text descriptions of interactive figures, accessible navigation, and links to executable notebooks where needed.
 
-[Design and hosting notes](../01_Resources/11_GitHub_HTML_and_Interactive_Teaching/Design_Notes/README.md) compare possible approaches. No framework or deployment workflow has been selected, and no site is published.
+[Design and hosting notes](../01_Resources/11_GitHub_HTML_and_Interactive_Teaching/Design_Notes/README.md) compare possible approaches. The pilot uses plain HTML, CSS, and JavaScript. No broader site framework or deployment workflow has been selected, and no site is published.
 
 ## Clustering Interaction
 

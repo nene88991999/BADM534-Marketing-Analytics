@@ -35,6 +35,7 @@ Session 09. M6. 170 minutes.
 - [Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
+- ../07_Labs/AI_Augmented_Learning/README.md
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -502,7 +503,29 @@ Apply the same reasoning to the electricity case. Low sensitivity does not prove
 
 Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md M9 §9.40.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 41: Experiment Discussion
+## Slide 41: Identify the Effects of Each Learning Feature
+
+Original synthetic population means; equal allocation and a common assessment.
+
+**Figure description:** Four cells cross questions with alternative formats. Baseline is 60%, questions only 66%, formats only 68%, and both 77%. Formats add 8 points without questions and 11 with questions; the interaction is 3 points.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_learning_factorial.tex)
+
+The package changes two features simultaneously and gains 17 points. Alternative off-diagonal means of 77 for questions only and 60 for formats only preserve the same package gain while assigning it entirely to questions. The four-cell design distinguishes these accounts. None of these means is a measured course outcome.
+
+Source: M6 §6.39. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 42: Define Learning Before Evaluating the Tool
+
+- Separate immediate comprehension, delayed retention, and transfer.
+- Treat study time and selected formats as possible responses to assignment.
+- Specify a common assessment, meaningful improvement, and uncertainty.
+
+The published trial randomizes a learning package. A total-effect comparison allows the package to change how students use the permitted study time. Conditioning afterward on time or selected formats can change the estimand and create selection. A fixed-duration effect needs a design or identifying assumptions for that question. A pleasant experience and a supported objection remain distinct outcomes.
+
+Source: M6, Section 6.39, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 43: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

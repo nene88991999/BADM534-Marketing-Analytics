@@ -32,6 +32,7 @@ Session 01. M1. 170 minutes.
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
+- ../07_Labs/AI_Augmented_Learning/README.md
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -389,7 +390,17 @@ Use the same sequence on an AI-generated recommendation and on its criticism. Ch
 
 Source: M1 §1.20. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 33: Decision Discussion
+## Slide 33: Preserve the Argument Across Representations
+
+- Keep the same question, definitions, assumptions, and conclusion.
+- Compare prose, equations, an editable diagram, and executable code.
+- Predict a result, explain it independently, and test a counterexample.
+
+An easier explanation remains responsible for the conditions that make its conclusion valid. Students choose a representation, return to the original argument, and explain where a changed assumption would change the result. Transfer to a new setting supplies a separate learning outcome.
+
+Source: M1, Section 1.21, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
+
+## Slide 34: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

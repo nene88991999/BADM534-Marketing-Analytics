@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An interactive Marketing Analytics lesson on electricity prices, average bills, measurement, and justified claims.">
+  <title>Price, Bills, and the Claim | Marketing Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="reference_data.js" defer></script>
+  <script src="logic.js" defer></script>
+  <script src="lesson.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to Lesson</a>
+<header class="masthead"><a href="../../README.md">Marketing Analytics</a><span>By Nathan Yang</span></header>
+<div class="layout">
+<aside><nav aria-label="Lesson Sections">
+  <p class="eyebrow">Measurement and Judgment</p>
+  <a href="#question">The Decision</a><a href="#explore">Predict and Calculate</a>
+  <a href="#reasoning">Inspect the Reasoning</a><a href="#argument">Challenge the Claim</a>
+  <a href="#transfer">Transfer the Argument</a><a href="#sources">Sources and Downloads</a>
+</nav><p class="aside-note">One comparison, several ways to examine it. Keep the units and the claim in view.</p></aside>
+<main id="main">
+<section id="question" class="opening">
+  <p class="eyebrow">Electricity Case · M2, M6, M9</p>
+  <h1>Price, Bills,<br>and the Claim</h1>
+  <p class="lead">A utility reports an unchanged average electricity price. What would justify reassuring households about their bills?</p>
+  <p>An average price answers a question about revenue per unit sold. The average bill also depends on how much electricity each account uses. A claim about harm introduces further questions about causation, affordability, and who bears the burden.</p>
+  <div class="setup"><strong>Synthetic monthly comparison</strong><p>The same 1,000 accounts appear in both scenarios. Baseline revenue is USD 100,000, sales are 1,000 MWh, and the average bill is USD 100 per account-month. These inputs illustrate an accounting relation; they are not estimates from the data-center paper.</p></div>
+</section>
+<section id="explore">
+  <div class="section-heading"><p class="eyebrow">Predict and Calculate</p><h2>Can the Bill Change?</h2></div>
+  <p>Hold the baseline fixed. Choose a comparison price and usage, then predict the direction of the average bill before revealing it.</p>
+  <form id="comparison-form">
+    <div class="inputs">
+      <label for="price">Comparison Realized Price <span>USD per MWh</span><input id="price" type="number" min="0" max="400" step="1" value="100" required></label>
+      <label for="use">Comparison Average Usage <span>MWh per account-month</span><input id="use" type="number" min="0.1" max="3" step="0.1" value="1.1" required></label>
+    </div>
+    <label for="prediction">Relative to the USD 100 Baseline, the Average Bill Will</label>
+    <select id="prediction" required><option value="">Choose a Prediction</option><option value="rise">Rise</option><option value="same">Stay the Same</option><option value="fall">Fall</option></select>
+    <label for="reason">What Supports Your Prediction? <span>Optional; write the relation between the quantities.</span></label>
+    <textarea id="reason" rows="2"></textarea>
+    <div class="actions"><button type="submit">Reveal the Calculation</button><button type="button" class="secondary" id="reset-comparison">Reset the Comparison</button></div>
+  </form>
+  <p class="privacy">Your response stays in this page and clears when you reload. No response is submitted or graded.</p>
+  <div id="result" class="result" hidden aria-live="polite" aria-atomic="true"></div>
+  <p id="scenario-status" class="status" role="status"></p>
+  <noscript><p>The baseline bill is USD 100; the default comparison gives USD 110. Read the equation and <a href="LESSON.md">complete text</a> for the calculation. Interactive controls require JavaScript.</p></noscript>
+</section>
+<section id="reasoning">
+  <div class="section-heading"><p class="eyebrow">Inspect the Reasoning</p><h2>Keep the Object Fixed</h2></div>
+  <div class="tabs" role="tablist" aria-label="Explanation Format">
+    <button type="button" role="tab" aria-selected="true" aria-controls="intuition" id="tab-intuition">Intuition</button>
+    <button type="button" role="tab" aria-selected="false" aria-controls="equation" id="tab-equation" tabindex="-1">Equation</button>
+    <button type="button" role="tab" aria-selected="false" aria-controls="diagram" id="tab-diagram" tabindex="-1">Diagram</button>
+    <button type="button" role="tab" aria-selected="false" aria-controls="python" id="tab-python" tabindex="-1">Python</button>
+  </div>
+  <div id="intuition" role="tabpanel" aria-labelledby="tab-intuition" tabindex="0">
+    <p>At USD 100 per MWh, average usage of 1 MWh gives a USD 100 bill. Increasing average usage to 1.1 MWh gives a USD 110 bill at the same realized unit price. Revenue and sales rise together while their ratio stays fixed.</p>
+    <p>The calculation concerns matched account averages. Different households can bear different burdens. Household resources, essential needs, and available alternatives enter an affordability judgment.</p>
+  </div>
+  <div id="equation" role="tabpanel" aria-labelledby="tab-equation" tabindex="0" hidden>
+    <p>Let R be monthly revenue in USD, S monthly sales in MWh, and N the matched account-month count for the same customer class.</p>
+    <p class="equation">(R / S) × (S / N) = R / N</p>
+    <p>Realized price × average usage = average revenue per account-month. The units MWh cancel. Revenue and sales must use the same period, class, and accounting coverage. A tariff's marginal rate may differ from realized revenue per MWh.</p>
+    <p>The default comparison is USD 100/MWh × 1.1 MWh/account-month = USD 110/account-month.</p>
+  </div>
+  <div id="diagram" role="tabpanel" aria-labelledby="tab-diagram" tabindex="0" hidden>
+    <img src="../../06_Lecture_Notes/figures/M02_price_and_bill.png" width="1200" height="420" alt="Realized price times average usage equals the average bill. The synthetic comparison holds price at 100 dollars per MWh while usage rises from 1 to 1.1 MWh per account-month and the average bill rises from 100 to 110 dollars.">
+    <p>Attribution needs a counterfactual. Affordability additionally requires household resources and needs. The diagram preserves these separate questions.</p>
+    <a href="../../06_Lecture_Notes/figures/M02_price_and_bill.png">Open Diagram at Full Size</a> · <a href="../../06_Lecture_Notes/figures/M02_price_and_bill.tex">Editable TikZ Source</a>
+  </div>
+  <div id="python" role="tabpanel" aria-labelledby="tab-python" tabindex="0" hidden>
+    <p>This complete standard-library program reads the saved synthetic bill table and verifies the accounting identity. Run it from a course checkout.</p>
+    <pre><code>python3 03_Data_and_Code/Learning_Design/bill_identity.py</code></pre>
+    <details><summary>Read the Complete Python</summary><pre><code id="python-source">&quot;&quot;&quot;Recompute the existing synthetic bill table without external dependencies.&quot;&quot;&quot;
+import csv
+from fractions import Fraction
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+INPUT = HERE.parent / &quot;Statistical_Inference/results/institutional_bills.csv&quot;
+
+def bill_from_units(price, use):
+    &quot;&quot;&quot;USD/MWh times MWh per account-month gives USD per account-month.&quot;&quot;&quot;
+    p, q = Fraction(str(price)), Fraction(str(use))
+    if p &lt; 0 or q &lt;= 0:
+        raise ValueError(&quot;Nonnegative price and positive usage required&quot;)
+    return p * q
+
+def comparisons():
+    with INPUT.open() as f:
+        rows = list(csv.DictReader(f))
+    results = []
+    for row in rows:
+        revenue = Fraction(row[&quot;revenue_usd&quot;])
+        sales = Fraction(row[&quot;sales_mwh&quot;])
+        count = Fraction(row[&quot;customer_months&quot;])
+        if sales &lt;= 0 or count &lt;= 0:
+            raise ValueError(&quot;Positive sales and account-month counts required&quot;)
+        price, use = revenue / sales, sales / count
+        bill = bill_from_units(price, use)
+        assert bill == revenue / count
+        results.append({&quot;scenario&quot;: row[&quot;scenario&quot;],
+                        &quot;price_usd_mwh&quot;: float(price),
+                        &quot;use_mwh_account_month&quot;: float(use),
+                        &quot;bill_usd_account_month&quot;: float(bill)})
+    return results
+
+def main():
+    rows = comparisons()
+    assert [r[&quot;bill_usd_account_month&quot;] for r in rows] == [100, 110, 100]
+    out = HERE / &quot;results&quot;
+    out.mkdir(exist_ok=True)
+    with (out / &quot;bill_reference.csv&quot;).open(&quot;w&quot;, newline=&quot;&quot;) as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    for row in rows:
+        print(row)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre></details>
+    <p><a href="../../03_Data_and_Code/Learning_Design/bill_identity.py" download>Download Python</a> · <a href="../../03_Data_and_Code/Statistical_Inference/results/institutional_bills.csv" download>Download Inputs</a> · <a href="../../03_Data_and_Code/Learning_Design/results/bill_reference.csv" download>Download Checked Results</a></p>
+  </div>
+</section>
+<section id="argument">
+  <div class="section-heading"><p class="eyebrow">Challenge the Claim</p><h2>Which Premise is Missing?</h2></div>
+  <p>Suppose someone says: “The average price did not rise, so households experienced no harm.” Separate the proposed inference into three questions.</p>
+  <div class="argument-step"><h3>Measurement</h3><p>Does the recorded outcome represent expenditure, affordability, or another object? The bill identity supplies a counterexample to treating the unit price as the complete expenditure measure.</p></div>
+  <div class="argument-step"><h3>Causation</h3><p>What would household expenditure have been without the data-center project? A higher observed bill alone leaves this counterfactual unresolved. Project commitments, cost allocation, and timing require institutional evidence.</p></div>
+  <div class="argument-step"><h3>Justification</h3><p>Which burdens count, whose reasons deserve consideration, and what protection would be justified? An average does not establish how the costs are distributed or settle an “ought” conclusion.</p></div>
+  <details><summary>A Defensible Revision</summary><p>The reported average-price result addresses the specified measured outcome under its design and uncertainty. Broader reassurance requires evidence connecting that outcome to household expenditure and incidence, a credible causal comparison, and a justified standard for relevant burdens.</p><p>The original study explicitly defines its realized-revenue measure. The criticism targets an extension beyond the supported inference. Actual harm, control contamination, or deliberate deception each requires its own evidence.</p></details>
+</section>
+<section id="transfer">
+  <div class="section-heading"><p class="eyebrow">Transfer the Argument</p><h2>What Would Change Your Conclusion?</h2></div>
+  <p>Consider a subscription whose advertised monthly rate stays fixed while a customer pays for more months or services. Identify the price, quantity, expenditure, and decision rights. Which parts of the electricity argument transfer? Which contractual facts need a new investigation?</p>
+  <details><summary>Reasoning Criteria</summary><p>A supported response preserves units and timing, distinguishes a possible mechanism from an established effect, and identifies a credible comparison. It states a normative premise when recommending conduct, considers the strongest reply, and names evidence or reasons that would change the conclusion.</p><p>A student may defend a different policy recommendation. Agreement with a preferred conclusion supplies no substitute for those reasons.</p></details>
+</section>
+<section id="sources">
+  <div class="section-heading"><p class="eyebrow">Sources and Downloads</p><h2>Trace the Comparison</h2></div>
+  <ul><li><a href="LESSON.md">Complete Markdown Lesson</a></li><li><a href="../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md">M2: Measurement and Visualization</a></li><li><a href="../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md">M6: Causal Inference</a></li><li><a href="../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md">M9: Marketing Dialectics</a></li><li><a href="../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md">Paper and Institutional Assessment</a></li><li><a href="../../01_Resources/43_AI_Augmented_Learning/README.md">Learning-Design Sources and Scope</a></li><li><a href="../../07_Labs/AI_Augmented_Learning/README.md">Optional Practice</a></li></ul>
+</section>
+<footer>Marketing Analytics · By Nathan Yang</footer>
+</main>
+</div>
+</body>
+</html>
