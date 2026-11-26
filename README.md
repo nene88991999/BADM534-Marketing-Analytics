@@ -120,3 +120,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Digital Usage and Customer Access
 
 The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects public geographic application indices to measurement, Census comparisons, regression, clustering, and customer choice. Complete Python, source rights, and optional ungraded practice accompany the notes and five session decks.
+
+## Statistical Evidence for Marketing Decisions
+
+[Original Python examples](03_Data_and_Code/Statistical_Inference/README.md) examine uncertainty in observed mHealth logging and false discoveries in synthetic store experiments. M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment to AI-assisted coding and customer agency. [Optional practice](07_Labs/Statistical_Inference/README.md) and the [Fisher-R1 source review](01_Resources/39_Statistical_Inference_and_AI/README.md) accompany two editable figures and seven slides across Sessions 1, 4, 9, and 14.

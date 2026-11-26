@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 108 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 114 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -169,3 +169,7 @@ M5 §5.26 defines a disjoint description sample. M7 §§7.42–7.44 connect coor
 ## Digital Usage and Customer Access
 
 The [recurring geographic case](03_Data_and_Code/Digital_Usage/README.md) appears in M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Sessions 2, 3, 4, 6, and 14 distinguish recorded activity, conditional comparisons, similarity, service outcomes, and authority over customer options. The full Python lab is public optional ungraded practice.
+
+## Statistical Evidence and Customer Reasons
+
+M1 §1.18 separates execution, method, reporting, and interpretation. M3 §3.18 reconstructs mHealth pairs and uncertainty; M6 §6.30 measures false discoveries under store assignment. M9 §9.24 examines a joint advertising test and the further premises needed for customer-welfare claims. The [original programs](03_Data_and_Code/Statistical_Inference/README.md) and [optional lab](07_Labs/Statistical_Inference/README.md) support Sessions 1, 4, 9, and 14 within their existing meeting blocks.

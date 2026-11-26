@@ -207,3 +207,7 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Digital Usage and Customer Access
 
 [Pereira and coauthors’ article and public release](../01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md) support M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Five complete source listings, eleven independent tests, four original TikZ figures, and ten slides across Sessions 2, 3, 4, 6, and 14 accompany the [executed geographic examples](../03_Data_and_Code/Digital_Usage/README.md). The course adds public Census estimates, preserves source counts and formula discrepancies, and separates descriptive evidence from service outcomes and ethical justification. No private telemetry pipeline was reproduced.
+
+## Statistical Inference and AI-Assisted Analysis
+
+The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md) informs M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24. The course implements two original Python programs, ten independent checks, and two editable TikZ figures. Observed logging uses the existing mHealth release; the store experiment imposes a known zero effect. The consumer-credit question supports philosophical discussion while its reference specification remains unverified. No upstream code or model evaluation is executed.

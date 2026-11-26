@@ -66,3 +66,7 @@ Both activities are public optional ungraded practice with original synthetic in
 ## Digital Usage and Customer Choice
 
 The [optional ungraded lab](Digital_Usage/README.md) follows an app-service decision through data assessment, geographic maps, regression, clustering, index verification, and Kantian and Confucian evaluation.
+
+## Statistical Evidence and Marketing Decisions
+
+The [optional ungraded lab](Statistical_Inference/README.md) checks customer pairing, store assignment, uncertainty, Monte Carlo calibration, and the scope of an advertising claim. An optional recorded AI exercise evaluates execution, method, numerical reporting, and interpretation separately.

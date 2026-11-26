@@ -1,0 +1,64 @@
+{
+  "implemented_on": "2026-11-25",
+  "mhealth_source": "../mHealth/manifest.json",
+  "mhealth_input_sha256": "2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea",
+  "cohort": "First four hexadecimal pseudonym digits <4096; observed before 2016-05-01",
+  "simulation": {
+    "seed": 20261125,
+    "repetitions_per_rho": 4000,
+    "stores": 40,
+    "customers_per_store": 20,
+    "treated_stores": 20,
+    "outcome_variance": 800.0,
+    "mean_contribution_dollars": 100,
+    "true_effect_dollars": 0,
+    "within_store_correlations": [
+      0.0,
+      0.1,
+      0.3,
+      0.5
+    ],
+    "alpha": 0.05,
+    "hypotheses_per_experiment": 1,
+    "outcome": "synthetic net contribution per customer in dollars",
+    "model_api_calls": 0
+  },
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.16.3"
+  },
+  "outputs": [
+    {
+      "path": "results/first_experiment.csv",
+      "sha256": "e353d67f3473f81ce589babb4b06663b3ab6cd37b5a61342534a60ab17239658"
+    },
+    {
+      "path": "results/mhealth.json",
+      "sha256": "48cf00a72b1c608d0aa2390750eecf8578a3c6dae64a42e2bddecc12d1ea4c2a"
+    },
+    {
+      "path": "results/mhealth_monthly.csv",
+      "sha256": "1403ec85b2c3818a639814d57018f9358a8b871122269ff13ebaf1256e9150de"
+    },
+    {
+      "path": "results/mhealth_uncertainty.csv",
+      "sha256": "6717958a68d8ee722b8a183dff631bf87101d8be0e665723c720718250fa8604"
+    },
+    {
+      "path": "results/null_calibration.csv",
+      "sha256": "22cc390d841b911d557d7b1bf541d4e36dff43cae93eca296fa1e9633acc3555"
+    },
+    {
+      "path": "results/simulation.json",
+      "sha256": "eb1f7bce8e2a73b4f86e5180409ce26a4426eba573ec97297f922b49b63368e5"
+    },
+    {
+      "path": "results/synthetic_store_customers.csv",
+      "sha256": "c55a736835c9b517ee94fec3fb3ae9bb850be4f1b24074c5b3154121da366786"
+    }
+  ],
+  "upstream_code_executed": false,
+  "model_api_calls": 0
+}

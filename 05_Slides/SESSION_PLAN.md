@@ -10,20 +10,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 27 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 28 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 21 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 23 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 25 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 28 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 58 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 50 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 51 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -32,9 +32,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.
+**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately.
 
-**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -46,7 +46,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison and Workflow Configuration |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–140 | Response Weights and Reproducible Recommendations |
+| 125–140 | Response Weights and Statistical Evidence |
 | 140–155 | Campaign Specification and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
@@ -98,9 +98,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 10, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis.
+**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty.
 
-**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision.
 
 **Ethics and Regulation:** Substantiation and the distinction between association and benefit.
 
@@ -110,7 +110,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 15–45 | Concepts and Mechanisms |
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
+| 80–125 | Python Exercise and Paired Inference |
 | 125–135 | Response Coefficients and Source Bias |
 | 135–145 | Price Coefficients and Interpretation |
 | 145–155 | Digital Usage and Conditional Income Associations |
@@ -205,9 +205,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
+**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice.
 
@@ -217,7 +217,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 15–45 | Concepts and Mechanisms |
 | 45–70 | Worked Comparison and Factorial Workflow Contrast |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
+| 80–125 | Python Exercise and Store Assignment |
 | 125–135 | Fixed and Adaptive Research Designs |
 | 135–155 | Treatment Effects and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
@@ -315,9 +315,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis.
+**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior..
 

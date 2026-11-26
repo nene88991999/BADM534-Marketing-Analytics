@@ -1194,3 +1194,180 @@ A positive interaction means that context has a larger effect on valid-output pr
 Count timeouts and missing files as unsuccessful assigned attempts. Preserve paired repetitions and record costs even when no valid output is produced. Fresh conversations limit carryover from prior feedback, while random order alone does not remove provider updates or human-review learning. Hold the model version fixed, blind reviewers to the configuration where feasible, and record disruptions. Five repetitions per cell on one August workload assess repeat-run variation conditional on that workload. A claim about marketing analysis generally requires independent tasks drawn from the intended deployment setting.
 
 An execution record is diagnostic evidence. It can show that a file was unavailable, a tool failed, or an incorrect output passed a narrow checker. Those observations do not identify the causal effect of replacing the model or changing the tool. The component intervention and its comparison define that question. The public [protocol](../../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md) supplies the recording requirements without presuming a measured gain.
+
+
+## 6.30 Store Assignment and False Discoveries
+
+\noindent A retailer considering a promotion needs evidence that incremental customer contribution covers its cost. Suppose the promotion is assigned to stores, while the data contain one outcome for each customer. Local demand can move many customers' outcomes together. Treating every customer as an independent experimental unit can then produce a precise-looking estimate even when the number of independently assigned stores is modest.
+
+To isolate this problem, consider a synthetic experiment with 40 stores and 20 customers per store. Exactly half the stores receive the promotion. The outcome is net contribution per customer in dollars, which can include losses. The promotion has zero effect for every customer. Keeping that truth fixed allows repeated experiments to measure how often each test incorrectly reports an effect.
+
+The variance calculation uses the following restrictions.
+
+\begin{assumption}\label{ass:balanced-store-assignment}
+There are $G$ independent stores, with an even $G\geq4$, and $m\geq2$ customers in every store. Exactly $G/2$ stores are assigned to treatment uniformly at random, independently of potential outcomes. Every customer's outcome is observed, and assignment has no spillovers across stores.
+\end{assumption}
+
+\begin{assumption}\label{ass:store-null-outcomes}
+For store $g$ and customer $j$, potential outcomes satisfy $Y_{gj}(1)=Y_{gj}(0)=\mu+u_g+e_{gj}$. Store shocks are independent normal draws with variance $\sigma^2\rho$; customer shocks are independent normal draws with variance $\sigma^2(1-\rho)$. The two shock families are independent, with $0\leq\rho<1$ and $\sigma^2>0$.
+\end{assumption}
+
+Here $\mu$ is mean customer contribution, $u_g$ is a shared store shock, and $e_{gj}$ is an individual customer shock. The within-store correlation is $\rho$, and each customer's marginal outcome variance is $\sigma^2$. Set $\mu=100$, $\sigma^2=800$, $G=40$, and $m=20$. These are illustrative parameters, with Gaussian support on the real line.
+
+![The promotion is assigned to 20 of 40 stores. Each store supplies 20 customer outcomes sharing a store shock. Comparing average store means retains the same customer-average point estimate because store sizes are equal.](../figures/M06_store_assignment.png)
+
+The difference between treated and control store means estimates the same contrast as the difference between all treated and control customer outcomes under the equal-size restriction. Its sampling variance under Assumptions \ref{ass:balanced-store-assignment} and \ref{ass:store-null-outcomes} is
+
+$$
+\operatorname{Var}(\widehat\tau)=\frac{4\sigma^2}{G}
+\left(\rho+\frac{1-\rho}{m}\right).
+$$
+
+The store shock survives averaging over customers, while the individual component falls with $m$. An independence calculation using $Gm$ customers would instead use $4\sigma^2/(Gm)$. The ratio of the true variance to that benchmark is $1+(m-1)\rho$. At $\rho=0.3$, the ratio is 6.7. Additional customer observations reveal the store mean more precisely while leaving the number of independently assigned stores unchanged.
+
+The program compares two-sided Welch tests using customer rows or store means. Each procedure computes the same point estimate, then estimates variance and reference degrees of freedom using its respective observation unit. Aggregation to store means is appropriate for the equal-size setup here. Unequal store sizes require an explicit choice between a customer-weighted and a store-weighted target and an estimator suited to that design.
+
+### 6.30.1 A Fixed Experiment and Repeated Null Comparisons
+
+\noindent In the first generated experiment at $\rho=0.3$, both methods estimate an increase of \$4.334 per customer. The customer-row test reports $p=0.0287$; the store-mean test reports $p=0.3446$. The first dataset is retained by its position in the seeded run, without searching for a significant result. The true intervention effect remains zero.
+
+The broader comparison generates 4,000 independent experiments at each correlation. Each experiment redraws stores and customers, randomly assigns half the stores, and tests one prespecified outcome at $\alpha=0.05$. The same underlying Gaussian draws and assignments are reused across correlations to make those comparisons paired. The rejection fractions describe repeated sampling and assignment under this simulation; they are not exact conditional randomization-test probabilities for one fixed dataset.
+
+| Within-Store Correlation | Customer-Row Rejection Rate | Store-Mean Rejection Rate |
+| ---: | ---: | ---: |
+| 0.0 | 5.20% | 4.975% |
+| 0.1 | 24.20% | 4.950% |
+| 0.3 | 44.90% | 4.700% |
+| 0.5 | 55.00% | 4.775% |
+
+![Rejection fractions across 4,000 zero-effect experiments at each correlation. Customer-row inference increasingly rejects the true null as within-store correlation rises; store-mean inference stays near the nominal 5% level. Bars are Wilson intervals for Monte Carlo rejection fractions.](../figures/M06_null_calibration.png)
+
+The customer-row test allows unequal variances across treatment arms, yet it omits the covariance among customers sharing a store. Allowing heteroskedasticity therefore does not solve this dependence problem. The store-mean test remains close to its nominal level across these Gaussian settings. Its Monte Carlo intervals describe uncertainty in an estimated rejection fraction; the intervals do not describe the dispersion of customer outcomes or uncertainty about one promotion effect.
+
+A firm's assistant should identify assignment and dependence before inspecting which procedure produces significance. Evaluate a proposed test on newly generated data with a known null, then examine power under a specified nonzero effect. Reporting only the most favorable outcome or stopping after a favorable interim result changes the testing procedure. The single-outcome calculation here leaves those choices fixed; the experimental plan in Section 6.3 must address them when they occur.
+
+### 6.30.2 Reproduce the Experiments
+
+\noindent Run `python3 03_Data_and_Code/Statistical_Inference/store_randomization.py` from the repository root. The program saves the simulation parameters, rejection counts, Monte Carlo intervals, the first result at each correlation, and the first customer-level dataset at $\rho=0.3$. The analytical variance provides a separate comparison with the empirical dispersion of estimated effects.
+
+Python source: [store_randomization.py](../../03_Data_and_Code/Statistical_Inference/store_randomization.py)
+
+```python
+"""Evaluate false-positive rates with a store-randomized zero-effect promotion."""
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+ROOT = Path(__file__).resolve().parent
+OUTPUT = ROOT / "results"
+SEED = 20261125
+REPETITIONS = 4000
+STORES = 40
+CUSTOMERS = 20
+VARIANCE = 800.0
+CORRELATIONS = (0.0, 0.1, 0.3, 0.5)
+ALPHA = .05
+
+
+def welch(a, b):
+    """Treat rows as experiments and columns as independent observations."""
+    a, b = np.atleast_2d(a), np.atleast_2d(b)
+    if min(a.shape[1], b.shape[1]) < 2:
+        raise ValueError("Each arm needs at least two independent observations")
+    v0, v1 = a.var(axis=1, ddof=1) / a.shape[1], b.var(axis=1, ddof=1) / b.shape[1]
+    se = np.sqrt(v0 + v1)
+    if np.any(se == 0):
+        raise ValueError("A positive contrast variance is required")
+    df = (v0 + v1) ** 2 / (v0 ** 2 / (a.shape[1]-1) + v1 ** 2 / (b.shape[1]-1))
+    effect = b.mean(axis=1) - a.mean(axis=1)
+    p = 2 * stats.t.sf(np.abs(effect / se), df)
+    return effect, se, df, p
+
+
+def compare_methods(outcomes, treated):
+    """Equal store sizes make both point estimates identical."""
+    r, g, m = outcomes.shape
+    if treated.shape != (r, g) or g % 2 or not np.all(treated.sum(axis=1) == g//2):
+        raise ValueError("Exactly half the stores must receive the promotion")
+    customer0 = outcomes[~treated].reshape(r, g//2*m)
+    customer1 = outcomes[treated].reshape(r, g//2*m)
+    store_means = outcomes.mean(axis=2)
+    store0 = store_means[~treated].reshape(r, g//2)
+    store1 = store_means[treated].reshape(r, g//2)
+    return {"customer_rows": welch(customer0, customer1),
+            "store_means": welch(store0, store1)}
+
+
+def wilson(successes, total):
+    """Monte Carlo uncertainty for a rejection fraction, not an effect interval."""
+    z = stats.norm.ppf(.975)
+    p = successes / total
+    center = (p + z*z/(2*total)) / (1 + z*z/total)
+    half = z * np.sqrt(p*(1-p)/total + z*z/(4*total*total)) / (1 + z*z/total)
+    return float(center-half), float(center+half)
+
+
+def simulate(repetitions=REPETITIONS, stores=STORES, customers=CUSTOMERS, seed=SEED):
+    if repetitions < 2 or stores < 4 or stores % 2 or customers < 2:
+        raise ValueError("Use two repetitions, an even store count >=4, and >=2 customers")
+    rng = np.random.default_rng(seed)
+    # Shared Gaussian draws and assignments make the rho comparisons paired.
+    store_shock = rng.normal(size=(repetitions, stores, 1))
+    customer_shock = rng.normal(size=(repetitions, stores, customers))
+    order = np.argsort(rng.random((repetitions, stores)), axis=1)
+    treated = np.zeros((repetitions, stores), dtype=bool)
+    treated[np.arange(repetitions)[:, None], order[:, :stores//2]] = True
+    summaries, examples, first_data = [], [], None
+    for rho in CORRELATIONS:
+        # Potential outcomes are identical under promotion and control.
+        y = (100 + np.sqrt(VARIANCE*rho)*store_shock
+             + np.sqrt(VARIANCE*(1-rho))*customer_shock)
+        results = compare_methods(y, treated)
+        if not np.allclose(results["customer_rows"][0], results["store_means"][0]):
+            raise AssertionError("Equal-size point estimates differ")
+        for method, (effect, se, df, p) in results.items():
+            rejected = int((p < ALPHA).sum())
+            low, high = wilson(rejected, repetitions)
+            summaries.append({"rho": rho, "method": method, "repetitions": repetitions,
+                "rejections": rejected, "rejection_rate": rejected/repetitions,
+                "mc_ci_low": low, "mc_ci_high": high, "mean_effect_dollars": effect.mean(),
+                "empirical_effect_sd": effect.std(ddof=1), "mean_reported_se": se.mean(),
+                "theoretical_effect_sd": np.sqrt(4*VARIANCE/stores*(rho+(1-rho)/customers)),
+                "design_effect": 1+(customers-1)*rho})
+            critical = stats.t.ppf(.975, df[0])
+            examples.append({"rho": rho, "method": method, "repetition": 0,
+                "effect_dollars": effect[0], "se_dollars": se[0], "df": df[0],
+                "p_value": p[0], "ci_low": effect[0]-critical*se[0],
+                "ci_high": effect[0]+critical*se[0]})
+        if rho == .3:
+            first_data = pd.DataFrame({"store": np.repeat(np.arange(stores), customers),
+                "customer": np.tile(np.arange(customers), stores),
+                "assigned_promotion": np.repeat(treated[0].astype(int), customers),
+                "contribution_dollars": y[0].ravel()})
+    return pd.DataFrame(summaries), pd.DataFrame(examples), first_data
+
+
+def main():
+    summary, examples, data = simulate()
+    OUTPUT.mkdir(exist_ok=True)
+    summary.to_csv(OUTPUT / "null_calibration.csv", index=False)
+    examples.to_csv(OUTPUT / "first_experiment.csv", index=False)
+    data.to_csv(OUTPUT / "synthetic_store_customers.csv", index=False)
+    setup = {"seed": SEED, "repetitions_per_rho": REPETITIONS, "stores": STORES,
+             "customers_per_store": CUSTOMERS, "treated_stores": STORES//2,
+             "outcome_variance": VARIANCE, "mean_contribution_dollars": 100,
+             "true_effect_dollars": 0, "within_store_correlations": CORRELATIONS,
+             "alpha": ALPHA, "hypotheses_per_experiment": 1,
+             "outcome": "synthetic net contribution per customer in dollars",
+             "model_api_calls": 0}
+    (OUTPUT / "simulation.json").write_text(json.dumps(setup, indent=2) + "\n")
+    print(summary[["rho", "method", "rejections", "rejection_rate", "mean_reported_se"]]
+          .to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+```

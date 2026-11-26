@@ -1,0 +1,37 @@
+{
+  "retrieved_on": "2026-11-25",
+  "paper": "https://arxiv.org/abs/2608.07437",
+  "paper_download": "https://arxiv.org/pdf/2608.07437",
+  "paper_pages": 22,
+  "paper_rights": "CC BY 4.0",
+  "repository": "https://github.com/jmu27/FisherR1",
+  "repository_commit": "968dd38bea50102a313d7d36843aba564eabc33f",
+  "code_license": "No license file found in the inspected complete tree; linked only",
+  "benchmark": "https://huggingface.co/datasets/May2222/P-Bench",
+  "task": "chi_square_test/dfeep__paper_90__task_4",
+  "benchmark_rights": "Dataset card declares CC BY 4.0",
+  "files": [
+    {
+      "path": "benchmark_sample/UPSTREAM_README.md",
+      "sha256": "ead65c9724611015a09cfa647dbc6c379b7e83ffad6505bbbdb838c711d1e973",
+      "bytes": 4293
+    },
+    {
+      "path": "benchmark_sample/answer_key.json",
+      "sha256": "5bfb89e5949fe26af753f82fa1952d0cdfd2553767677af81c13f984297e402e",
+      "bytes": 48
+    },
+    {
+      "path": "benchmark_sample/question.txt",
+      "sha256": "0ecaf54545aaa86e2b079c7b95ab5d0bf0a989b4152b6bf4a1742884ca98bc4e",
+      "bytes": 1912
+    },
+    {
+      "path": "readings/Miao_Mu_Chen_Zou_WorkingPaper2026.pdf",
+      "sha256": "26e39241ef51acbe15e3a4d521902a4cc5297523953f9af013dfa34e27575076",
+      "bytes": 3122937
+    }
+  ],
+  "upstream_code_executed": false,
+  "model_api_calls": 0
+}

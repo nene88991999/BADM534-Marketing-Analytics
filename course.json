@@ -115,6 +115,12 @@
       "path": "07_Labs/Digital_Usage/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "statistical-inference",
+      "path": "07_Labs/Statistical_Inference/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -331,7 +337,16 @@
     "03_Data_and_Code/Digital_Usage/AGENTS.md",
     "03_Data_and_Code/Digital_Usage/results/README.md",
     "03_Data_and_Code/Digital_Usage/VERIFICATION.md",
-    "07_Labs/Digital_Usage/README.md"
+    "07_Labs/Digital_Usage/README.md",
+    "01_Resources/39_Statistical_Inference_and_AI/README.md",
+    "01_Resources/39_Statistical_Inference_and_AI/SOURCE_REVIEW.md",
+    "01_Resources/39_Statistical_Inference_and_AI/RIGHTS.md",
+    "03_Data_and_Code/Statistical_Inference/README.md",
+    "03_Data_and_Code/Statistical_Inference/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Statistical_Inference/AGENTS.md",
+    "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
+    "03_Data_and_Code/Statistical_Inference/results/README.md",
+    "07_Labs/Statistical_Inference/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -380,12 +395,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-25-digital-usage",
+    "revision": "2026-11-25-statistical-inference",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 112,
-    "pages": 440,
+    "figures_count": 114,
+    "pages": 451,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -411,7 +426,8 @@
     "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md",
     "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md",
     "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md",
-    "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md"
+    "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md",
+    "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md"
   },
   "datasets": [
     {
@@ -496,7 +512,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 418,
+    "slides": 425,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1069,7 +1085,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-25-digital-usage",
+  "revision": "2026-11-25-statistical-inference",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1190,5 +1206,34 @@
     "model_api_calls": 0,
     "upstream_execution": false,
     "scope": "Published geographic indices, original Census joins and descriptive analyses; illustrative source calculation; no private pipeline replication or individual service outcome."
+  },
+  "statistical_inference": {
+    "resources": "01_Resources/39_Statistical_Inference_and_AI/README.md",
+    "review": "01_Resources/39_Statistical_Inference_and_AI/SOURCE_REVIEW.md",
+    "catalog": "01_Resources/39_Statistical_Inference_and_AI/catalog.json",
+    "source_manifest": "01_Resources/39_Statistical_Inference_and_AI/manifest.json",
+    "examples": "03_Data_and_Code/Statistical_Inference/README.md",
+    "lab": "07_Labs/Statistical_Inference/README.md",
+    "verification": "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
+    "manifest": "03_Data_and_Code/Statistical_Inference/manifest.json",
+    "implemented_on": "2026-11-25",
+    "sections": [
+      "M1 §1.18",
+      "M3 §3.18",
+      "M6 §6.30",
+      "M9 §9.24"
+    ],
+    "sessions": [
+      1,
+      4,
+      9,
+      14
+    ],
+    "original_programs_executed": 2,
+    "independent_tests_passed": 10,
+    "original_figures": 2,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "scope": "Observed descriptive mHealth pairs; original known-null store simulations; advertising question for philosophical discussion. No measured AI performance or empirical credit-task replication."
   }
 }

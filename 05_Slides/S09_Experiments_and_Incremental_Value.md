@@ -25,6 +25,8 @@ Session 09. M6. 170 minutes.
 - [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 - [Agent Workflow Evaluation and Practice](../07_Labs/Agent_Workflows/README.md)
+- [Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)
+- [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -266,7 +268,44 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 21: A Treatment Arm Needs a Defensible Design
+## Slide 21: Assign Stores, Observe Customers
+
+Synthetic promotion: balanced store assignment and equal store sizes.
+
+**Figure description:** Twenty stores receive a promotion and twenty receive control. Each store has twenty customer outcomes with a shared store shock. Comparing store means preserves the equal-weight customer contrast.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_store_assignment.tex)
+
+The effect is zero for every customer. Store shocks are independent across stores, and individual shocks are independent within and across stores conditional on the store shock. Mean net contribution is 100 dollars and marginal variance is 800 dollars squared. Equal customer counts make store and customer point estimates identical. The number of independent stores determines the contribution of shared shocks to uncertainty.
+
+Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 22: A Zero-Effect Promotion
+
+| Calculation | Estimate (Dollars) | p-Value |
+| --- | --- | --- |
+| Customer Rows | 4.334 | 0.0287 |
+| Store Means | 4.334 | 0.3446 |
+
+First simulated experiment; within-store correlation 0.3; true effect zero.
+
+This is repetition zero from seed 20261125, retained without selecting a favorable result. Both are two-sided Welch calculations, with observation units differing. Customer-row inference permits unequal arm variances but omits within-store covariance. The store-mean standard error is 4.524 dollars, compared with 1.977 dollars for customer rows. A single experiment motivates evaluating the full procedure under repeated known-null experiments.
+
+Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 23: Dependence Changes False Discoveries
+
+Store means retain rejection rates near the nominal 5% level in this simulation.
+
+**Figure description:** Across four correlations, customer-row rejection rates rise from 5.2% to 55.0%. Store-mean rates remain between 4.7% and 4.975%. Bars show Monte Carlo Wilson intervals.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_null_calibration.tex)
+
+Each correlation uses 4,000 newly generated experiments, 40 stores, 20 customers per store, balanced assignment, and one prespecified test. The true effect is zero. At correlation 0.3, 1,796 customer-row tests reject compared with 188 store-mean tests. The theoretical variance ratio to independent customer sampling is 1+(m-1)rho, equal to 6.7 here. Gaussian shocks, equal sizes, complete outcomes, and independent stores define the simulation. The Wilson bars measure Monte Carlo uncertainty, not effect uncertainty or customer spread.
+
+Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 24: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -276,7 +315,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 22: Follow Purchases Through Returns
+## Slide 25: Follow Purchases Through Returns
 
 - Pressure and self-assurance can produce different purchase and return patterns.
 - Prespecify the eligible population and both outcome horizons.
@@ -286,7 +325,7 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 23: From Experiments to Generative Decisions
+## Slide 26: From Experiments to Generative Decisions
 
 - Within-campaign comparisons can supervise a model that proposes new messages.
 - The learned ranking inherits the outcome used to define success.
@@ -296,7 +335,7 @@ Angelopoulos, Lee, and Misra train a language-model improver using historical ex
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 24: Human Review and Customer Evidence
+## Slide 27: Human Review and Customer Evidence
 
 - Check factual claims and consequential terms before deployment.
 - Record customer understanding and the ability to refuse.
@@ -306,7 +345,7 @@ Causal Alignment includes human selection and acceptability checks. Their existe
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 25: Experiment Discussion
+## Slide 28: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

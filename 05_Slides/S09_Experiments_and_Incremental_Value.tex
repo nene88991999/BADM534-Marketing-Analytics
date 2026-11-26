@@ -272,6 +272,58 @@ M6, Section 6.13, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 M6, Section 6.10, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
+\begin{frame}{Assign Stores, Observe Customers}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.72\textheight}
+\input{../06_Lecture_Notes/figures/M06_store_assignment.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic promotion: balanced store assignment and equal store sizes.\par}
+\note{The effect is zero for every customer. Store shocks are independent across stores, and individual shocks are independent within and across stores conditional on the store shock. Mean net contribution is 100 dollars and marginal variance is 800 dollars squared. Equal customer counts make store and customer point estimates identical. The number of independent stores determines the contribution of shared shocks to uncertainty.
+
+M6 §6.30. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{A Zero-Effect Promotion}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Calculation & Estimate (Dollars) & p-Value \\
+\midrule
+Customer Rows & 4.334 & 0.0287 \\
+Store Means & 4.334 & 0.3446 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+First simulated experiment; within-store correlation 0.3; true effect zero.
+\vfill
+\note{This is repetition zero from seed 20261125, retained without selecting a favorable result. Both are two-sided Welch calculations, with observation units differing. Customer-row inference permits unequal arm variances but omits within-store covariance. The store-mean standard error is 4.524 dollars, compared with 1.977 dollars for customer rows. A single experiment motivates evaluating the full procedure under repeated known-null experiments.
+
+M6 §6.30. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Dependence Changes False Discoveries}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.72\textheight}
+\input{../06_Lecture_Notes/figures/M06_null_calibration.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Store means retain rejection rates near the nominal 5\% level in this simulation.\par}
+\note{Each correlation uses 4,000 newly generated experiments, 40 stores, 20 customers per store, balanced assignment, and one prespecified test. The true effect is zero. At correlation 0.3, 1,796 customer-row tests reject compared with 188 store-mean tests. The theoretical variance ratio to independent customer sampling is 1+(m-1)rho, equal to 6.7 here. Gaussian shocks, equal sizes, complete outcomes, and independent stores define the simulation. The Wilson bars measure Monte Carlo uncertainty, not effect uncertainty or customer spread.
+
+M6 §6.30. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
 \begin{frame}{A Treatment Arm Needs a Defensible Design}
 \usebeamercolor[fg]{normal text}
 \vfill

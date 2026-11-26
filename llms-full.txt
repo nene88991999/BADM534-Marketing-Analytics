@@ -124,6 +124,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Digital_Usage/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "statistical-inference",
+      "path": "07_Labs/Statistical_Inference/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -340,7 +346,16 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Digital_Usage/AGENTS.md",
     "03_Data_and_Code/Digital_Usage/results/README.md",
     "03_Data_and_Code/Digital_Usage/VERIFICATION.md",
-    "07_Labs/Digital_Usage/README.md"
+    "07_Labs/Digital_Usage/README.md",
+    "01_Resources/39_Statistical_Inference_and_AI/README.md",
+    "01_Resources/39_Statistical_Inference_and_AI/SOURCE_REVIEW.md",
+    "01_Resources/39_Statistical_Inference_and_AI/RIGHTS.md",
+    "03_Data_and_Code/Statistical_Inference/README.md",
+    "03_Data_and_Code/Statistical_Inference/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Statistical_Inference/AGENTS.md",
+    "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
+    "03_Data_and_Code/Statistical_Inference/results/README.md",
+    "07_Labs/Statistical_Inference/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -389,12 +404,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-25-digital-usage",
+    "revision": "2026-11-25-statistical-inference",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 112,
-    "pages": 440,
+    "figures_count": 114,
+    "pages": 451,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -420,7 +435,8 @@ Generated from course.json and the source files identified below. This file cont
     "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md",
     "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md",
     "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md",
-    "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md"
+    "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md",
+    "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md"
   },
   "datasets": [
     {
@@ -505,7 +521,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 418,
+    "slides": 425,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1078,7 +1094,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-25-digital-usage",
+  "revision": "2026-11-25-statistical-inference",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1199,6 +1215,35 @@ Generated from course.json and the source files identified below. This file cont
     "model_api_calls": 0,
     "upstream_execution": false,
     "scope": "Published geographic indices, original Census joins and descriptive analyses; illustrative source calculation; no private pipeline replication or individual service outcome."
+  },
+  "statistical_inference": {
+    "resources": "01_Resources/39_Statistical_Inference_and_AI/README.md",
+    "review": "01_Resources/39_Statistical_Inference_and_AI/SOURCE_REVIEW.md",
+    "catalog": "01_Resources/39_Statistical_Inference_and_AI/catalog.json",
+    "source_manifest": "01_Resources/39_Statistical_Inference_and_AI/manifest.json",
+    "examples": "03_Data_and_Code/Statistical_Inference/README.md",
+    "lab": "07_Labs/Statistical_Inference/README.md",
+    "verification": "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
+    "manifest": "03_Data_and_Code/Statistical_Inference/manifest.json",
+    "implemented_on": "2026-11-25",
+    "sections": [
+      "M1 \u00a71.18",
+      "M3 \u00a73.18",
+      "M6 \u00a76.30",
+      "M9 \u00a79.24"
+    ],
+    "sessions": [
+      1,
+      4,
+      9,
+      14
+    ],
+    "original_programs_executed": 2,
+    "independent_tests_passed": 10,
+    "original_figures": 2,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "scope": "Observed descriptive mHealth pairs; original known-null store simulations; advertising question for philosophical discussion. No measured AI performance or empirical credit-task replication."
   }
 }
 ```
@@ -1329,6 +1374,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Digital Usage and Customer Access
 
 The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects public geographic application indices to measurement, Census comparisons, regression, clustering, and customer choice. Complete Python, source rights, and optional ungraded practice accompany the notes and five session decks.
+
+## Statistical Evidence for Marketing Decisions
+
+[Original Python examples](03_Data_and_Code/Statistical_Inference/README.md) examine uncertainty in observed mHealth logging and false discoveries in synthetic store experiments. M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment to AI-assisted coding and customer agency. [Optional practice](07_Labs/Statistical_Inference/README.md) and the [Fisher-R1 source review](01_Resources/39_Statistical_Inference_and_AI/README.md) accompany two editable figures and seven slides across Sessions 1, 4, 9, and 14.
 
 ---
 
@@ -1514,7 +1563,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 108 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 114 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -1663,6 +1712,10 @@ M5 §5.26 defines a disjoint description sample. M7 §§7.42–7.44 connect coor
 
 The [recurring geographic case](03_Data_and_Code/Digital_Usage/README.md) appears in M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Sessions 2, 3, 4, 6, and 14 distinguish recorded activity, conditional comparisons, similarity, service outcomes, and authority over customer options. The full Python lab is public optional ungraded practice.
 
+## Statistical Evidence and Customer Reasons
+
+M1 §1.18 separates execution, method, reporting, and interpretation. M3 §3.18 reconstructs mHealth pairs and uncertainty; M6 §6.30 measures false discoveries under store assignment. M9 §9.24 examines a joint advertising test and the further premises needed for customer-welfare claims. The [original programs](03_Data_and_Code/Statistical_Inference/README.md) and [optional lab](07_Labs/Statistical_Inference/README.md) support Sessions 1, 4, 9, and 14 within their existing meeting blocks.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1774,6 +1827,10 @@ The syllabus includes shared pricing systems and the Wendy's dispute among its c
 ## Digital Usage and Customer Access
 
 The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs. The fifteen meeting dates, start and end times, and calendar event topics remain unchanged.
+
+## Statistical Evidence
+
+The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded; no assessment requirements or meeting dates change.
 
 ---
 
@@ -1927,6 +1984,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Digital Usage](Digital_Usage/README.md) contains 28,561 published geographic records, compact public Census extracts, five complete teaching programs, eleven independent checks, and four editable figures. The examples assess identifiers and income boundaries, compare adjusted projections, and evaluate clustering sensitivity. Original device microdata and analysis code are unavailable.
 
+## Statistical Inference
+
+[Two original programs](Statistical_Inference/README.md) reproduce paired mHealth logging and measure false-positive rates in a synthetic store-randomized experiment. Complete code appears in M3 §3.18 and M6 §6.30. Ten independent checks and two editable figures accompany the results; no model endpoint is used.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -1935,7 +1996,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [440-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 112 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [451-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 114 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2111,6 +2172,10 @@ M4 §4.26 derives independent and joint prices under a common noisy demand signa
 
 The [geographic case](../03_Data_and_Code/Digital_Usage/README.md) adds measurement and index verification in M2, conditional income projections in M3, scaling-sensitive clustering in M4, outcome validation in M7, and service choice in M8/M9. Five complete Python listings and four original TikZ figures accompany the public data and Census extracts.
 
+## Statistical Inference and AI-Assisted Analysis
+
+M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment, paired mHealth logging, store assignment, and advertising claims. [Two complete Python programs](../03_Data_and_Code/Statistical_Inference/README.md), ten independent tests, and two editable figures distinguish observed descriptive changes, synthetic null experiments, and ethical interpretation. The [source review](../01_Resources/39_Statistical_Inference_and_AI/README.md) and [optional practice](../07_Labs/Statistical_Inference/README.md) preserve the benchmark's scope.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -2179,7 +2244,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 418 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 425 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2311,6 +2376,10 @@ Session 5 adds the independent and joint pricing equations and a surplus figure.
 ## Digital Usage and Customer Access
 
 Sessions 2, 3, 4, 6, and 14 include ten slides on geographic measurement, index verification, Census maps, income projections, clustering, and meaningful customer choice. The [complete Python example](../03_Data_and_Code/Digital_Usage/README.md) and [optional lab](../07_Labs/Digital_Usage/README.md) support longer practice within the existing course plan.
+
+## Statistical Evidence and Customer Reasons
+
+Seven slides in Sessions 1, 4, 9, and 14 connect generated statistical code, paired mHealth uncertainty, store assignment, false discoveries, and the interpretation of an advertising test. [Complete Python and results](../03_Data_and_Code/Statistical_Inference/README.md) accompany the notes and [optional practice](../07_Labs/Statistical_Inference/README.md). The existing 15 meetings and their 170-minute allocations are retained.
 
 ---
 
@@ -2848,6 +2917,10 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 
 [Pereira and coauthors’ article and public release](../01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md) support M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Five complete source listings, eleven independent tests, four original TikZ figures, and ten slides across Sessions 2, 3, 4, 6, and 14 accompany the [executed geographic examples](../03_Data_and_Code/Digital_Usage/README.md). The course adds public Census estimates, preserves source counts and formula discrepancies, and separates descriptive evidence from service outcomes and ethical justification. No private telemetry pipeline was reproduced.
 
+## Statistical Inference and AI-Assisted Analysis
+
+The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md) informs M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24. The course implements two original Python programs, ten independent checks, and two editable TikZ figures. Observed logging uses the existing mHealth release; the store experiment imposes a known zero effect. The consumer-credit question supports philosophical discussion while its reference specification remains unverified. No upstream code or model evaluation is executed.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3203,20 +3276,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 27 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 28 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 21 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 23 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 25 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 28 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 58 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 50 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 51 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -3225,9 +3298,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 20, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice.
+**Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately.
 
-**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -3239,7 +3312,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 45–70 | Worked Comparison and Workflow Configuration |
 | 70–80 | Break |
 | 80–125 | Python Exercise |
-| 125–140 | Response Weights and Reproducible Recommendations |
+| 125–140 | Response Weights and Statistical Evidence |
 | 140–155 | Campaign Specification and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
@@ -3291,9 +3364,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 10, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis.
+**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty.
 
-**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision.
 
 **Ethics and Regulation:** Substantiation and the distinction between association and benefit.
 
@@ -3303,7 +3376,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 15–45 | Concepts and Mechanisms |
 | 45–70 | Worked Comparison |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
+| 80–125 | Python Exercise and Paired Inference |
 | 125–135 | Response Coefficients and Source Bias |
 | 135–145 | Price Coefficients and Interpretation |
 | 145–155 | Digital Usage and Conditional Income Associations |
@@ -3398,9 +3471,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** March 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.
+**Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice.
 
@@ -3410,7 +3483,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 15–45 | Concepts and Mechanisms |
 | 45–70 | Worked Comparison and Factorial Workflow Contrast |
 | 70–80 | Break |
-| 80–125 | Python Exercise |
+| 80–125 | Python Exercise and Store Assignment |
 | 125–135 | Fixed and Adaptive Research Designs |
 | 135–155 | Treatment Effects and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
@@ -3508,9 +3581,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis.
+**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities.
 
 **Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior..
 
@@ -3699,6 +3772,10 @@ Session 2 uses minutes 140–148 for the geographic observation process and publ
 
 The [Digital Usage lab](../07_Labs/Digital_Usage/README.md) carries the longer public optional ungraded exercise. M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23 distinguish geographic records, source verification, descriptive models, proposed service interventions, and ethical justification. Five complete Python listings, eleven independent tests, and four editable Illinois-color figures support the case.
 
+## Statistical Evidence Within Existing Meetings
+
+Sessions 1 and 4 incorporate method assessment and paired mHealth uncertainty into their existing coding and interpretation activities. Session 9 uses store assignment and repeated known-null experiments to explain false discoveries. Session 14 connects a joint advertising test to borrower reasons and lender responsibilities. The [optional ungraded lab](../07_Labs/Statistical_Inference/README.md) supplies the longer exercise. Meeting dates, duration, and the existing ethics block remain unchanged.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -3801,6 +3878,10 @@ M8 §8.28 and M9 §9.22 examine the November 23, 2026 complaint in Garcia v. The
 ## Digital Usage, Assistance, and Customer Choice
 
 M8 §8.29 and M9 §9.23 examine the difference between offering assistance and imposing a digital channel. The [geographic usage case](../03_Data_and_Code/Digital_Usage/README.md) supplies area-level context. It supplies no individual ability, consent, or customer-service outcome. Kantian critique examines the inference from geographic activity and the authority claimed over a person; Confucian role responsibilities motivate responsive service while preserving correction and customer choice. The proposed assistance evaluation introduces no new legal claim or graded requirement.
+
+## Statistical Evidence and Advertising Claims
+
+M9 §9.24 examines a joint test of consumer-credit advertising coefficients and the premises needed to infer customer benefit. Kantian respect for judgment and refusal and Confucian responsibilities in a relationship of reliance connect the statistical claim to comprehension, repayment burdens, and customer reasons. The benchmark's reference p-value is not presented as a course-replicated empirical finding. M1, M3, and M6 supply separate checks of statistical design and reporting. This addition makes no new legal or policy-status claim.
 
 ---
 
@@ -3974,7 +4055,7 @@ AI-assisted coding is integrated throughout the course. Students practice specif
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
-- Evaluate AI-assisted workflows through independent calculations, task-level checks, costs, and substantive interpretation.
+- Evaluate AI-assisted workflows through independent calculations, statistical design, task-level checks, costs, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 
 ## Class Format and Materials
@@ -3983,7 +4064,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, feedback, costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, feedback, statistical validity, costs, and customer authority.
 
 ---
 
@@ -5300,6 +5381,21 @@ Confucian concerns with humane conduct and the responsibilities of a role direct
 
 The geographic clustering in Section 4.27 groups measured activity. Its stability under repeated initialization and its sensitivity to scaling concern the description of the data. Neither property determines whether excluding a person is justified. An evaluation of the marketing practice must connect its stated purpose, the customer information it actually observes, the person's available choices, and the consequences of accepting or refusing the procedure.
 
+
+## 9.24 Advertising Response, Statistical Evidence, and Customer Reasons
+
+\noindent A consumer lender choosing an advertisement can ask whether its content changes loan take-up. It also faces a different question about the grounds on which customers decide to borrow. A photograph, a suggested use for the loan, a description of the interest rate, and language about losses can affect attention and choice through different mechanisms. Commercial response alone leaves the customer's understanding, reasons, and subsequent experience unresolved.
+
+The [public P-Bench advertising task](https://huggingface.co/datasets/May2222/P-Bench/blob/main/tasks/chi_square_test/dfeep__paper_90__task_4/question.txt) describes a randomized field experiment among former borrowers of a South African consumer lender. Its statistical question concerns 13 advertising-content coefficients jointly. Writing those coefficients as $\beta_1,\ldots,\beta_{13}$, the null is $H_0:\beta_1=\cdots=\beta_{13}=0$. Under a justified specification and test, rejecting that joint null supplies evidence that at least one coefficient differs from zero. The result does not identify every effective feature or establish a particular psychological mechanism. Direction and economic magnitude require the relevant estimates and contrasts.
+
+Suppose a firm concludes that an advertisement benefits customers because more of them borrow. That inference adds a premise equating additional borrowing with customer benefit. Customers may obtain useful liquidity, misunderstand repayment costs, respond to a misleading comparison, or borrow for a purpose they later regret. Evidence about comprehension, repayment burdens, intended use, and experienced outcomes helps distinguish these possibilities. A well-executed take-up test does not supply that evidence automatically.
+
+Kant's humanity formulation directs attention to whether the firm's procedure respects customers as persons capable of setting ends and assessing reasons. An advertisement can communicate a relevant product benefit while also serving the seller's interest. The ethical difficulty arises when the firm secures agreement by concealing material terms, exploiting a misunderstanding, or obstructing a person's considered refusal. A visual cue's effect on take-up alone does not establish any of these mechanisms. The justification must examine what information the customer receives and how the procedure treats the customer's ability to judge and decline.
+
+Confucian attention to humane conduct and the responsibilities of a role asks how a lender uses its informational advantage in a relationship of reliance. Clear explanations, correction of misleading impressions, and responsiveness to difficulty give that responsibility observable content. A claim of benevolent intent remains open to examination against the actual service and the borrower's experience. Customer disagreement supplies evidence for examining the firm's judgment and response.
+
+The same reasoning applies when an AI assistant supplies the statistical analysis. The benchmark evaluator compares a decision and p-value with a reference answer. A commercial objective may reward greater take-up. Each criterion measures a narrower achievement than a defensible lending practice. Require a justified statistical comparison, evidence on the consequences customers experience, and an account of why the firm's means respect their agency. An error at one stage cannot be repaired by success at another.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -6012,6 +6108,10 @@ Both activities are public optional ungraded practice with original synthetic in
 ## Digital Usage and Customer Choice
 
 The [optional ungraded lab](Digital_Usage/README.md) follows an app-service decision through data assessment, geographic maps, regression, clustering, index verification, and Kantian and Confucian evaluation.
+
+## Statistical Evidence and Marketing Decisions
+
+The [optional ungraded lab](Statistical_Inference/README.md) checks customer pairing, store assignment, uncertainty, Monte Carlo calibration, and the scope of an advertising claim. An optional recorded AI exercise evaluates execution, method, numerical reporting, and interpretation separately.
 
 ---
 
@@ -10354,6 +10454,245 @@ Run `verify_index.py`. Calculate one device score independently from the printed
 ## 7. Justify the Marketing Practice
 
 Compare an optional assistance offer with mandatory app completion for access to a benefit. Specify consent, customer-requested outcomes, correction of geographic classifications, usable alternatives, and failure costs. Apply the Kantian distinction between evidence and the additional premise authorizing a decision. Apply the Confucian concern with humane conduct and role responsibilities. Propose an assistance evaluation with an explicit eligible-customer denominator, assignment rule, outcomes, and observation period. Keep this proposed study separate from the executed geographic analyses.
+
+---
+
+## Source: 01_Resources/39_Statistical_Inference_and_AI/README.md
+
+# Statistical Inference and AI-Assisted Analysis
+
+A marketing decision can rest on executable code and still use an unsuitable statistical comparison. Fisher-R1 and P-Bench motivate separate assessment of execution, statistical method, numerical reporting, and interpretation.
+
+The [source review](SOURCE_REVIEW.md) is the Markdown companion to the archived [paper](readings/Miao_Mu_Chen_Zou_WorkingPaper2026.pdf). It explains the benchmark, findings, figures, repository, and scope of the course adaptation. The [catalog](catalog.json) uses the namespace `statistical-inference`; the [manifest](manifest.json) pins inspected files and the GitHub commit. See [rights](RIGHTS.md) for the distinction between the paper, benchmark, model weights, and code.
+
+## Course Applications
+
+| Material | Application |
+| --- | --- |
+| M1 §1.18; Session 1 | Assess execution, method, reported numbers, and managerial interpretation separately. |
+| M3 §3.18; Session 4 | Reconstruct mHealth pairs and compare uncertainty while holding the point estimate fixed. |
+| M6 §6.30; Session 9 | Evaluate rejection rates under a known zero effect with store assignment and correlated customer outcomes. |
+| M9 §9.24; Session 14 | Distinguish a joint advertising test from claims about mechanisms, welfare, and customer agency. |
+
+The [original Python examples](../../03_Data_and_Code/Statistical_Inference/README.md) have complete source in the lecture notes and an [optional ungraded lab](../../07_Labs/Statistical_Inference/README.md). Their simulation measures false-positive rates. It does not reproduce Fisher-R1's model-performance evaluation.
+
+## Public Sources
+
+- Jiacheng Miao, Jin Mu, Guanhua Chen, and James Zou (2026), [Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing](https://arxiv.org/abs/2608.07437).
+- [FisherR1 repository](https://github.com/jmu27/FisherR1/tree/968dd38bea50102a313d7d36843aba564eabc33f), inspected at the pinned commit; code linked only.
+- [P-Bench](https://huggingface.co/datasets/May2222/P-Bench), including the archived [consumer-credit advertising question](benchmark_sample/question.txt), its [reference answer](benchmark_sample/answer_key.json), and [dataset documentation](benchmark_sample/UPSTREAM_README.md).
+
+The consumer-credit question is available for discussion. Its reference p-value has not been independently reproduced, and its dataset is not included in this collection. It does not establish a customer-welfare result.
+
+---
+
+## Source: 01_Resources/39_Statistical_Inference_and_AI/SOURCE_REVIEW.md
+
+# Source Review: Fisher-R1
+
+Reviewed November 25, 2026. Authors: Jiacheng Miao, Jin Mu, Guanhua Chen, and James Zou. The archived 22-page PDF was retrieved from the [arXiv paper](https://arxiv.org/abs/2608.07437). This selected Markdown companion preserves the methodological distinctions, central numbers, and figure meanings; it omits the complete mathematical training specification, bibliography, prompts, and biomedical examples.
+
+## Question, Design, and Results
+
+An agent receives a question and dataset, selects and executes an analysis, and reports a p-value and decision. P-Bench contains 425 tasks, split into 203 Easy and 222 Hard tasks. The public data card identifies economic and biomedical source families, derived variants, and 20 explicitly synthetic tasks. The benchmark should not be described as 425 independent, unmodified empirical studies.
+
+The paper's Raw metric checks the reject/nonreject decision against a reference answer at alpha=0.05. Strict additionally requires the difference between two-sided normal-score transforms of the reported and reference p-values to be less than 0.5. This transformation is a scoring convention; it does not validate the underlying test. pass@1 averages individual-run accuracy across three runs, while pass@3 credits a task if any run succeeds. A user without a reference answer would still need a method for selecting among those runs.
+
+Table 1 reports 65.8% Raw and 33.0% Strict pass@1 for Fisher-R1-14B on Hard tasks. The corresponding GPT-5.4 values are 58.3% and 30.5%. These scores describe the paper's task distribution, software, model versions, and scoring rules. They measure reference agreement, not rejection probabilities under a known null or calibration in a new marketing application.
+
+Training uses synthetic executable tasks, supervised trajectories, and reinforcement learning. Table 3 examines one fixed rollout per task for the 7B backbone and trained agent. Operational failures fall from 43.5% to 8.5%; the paper attributes the largest gain to this reduction. Improvements in benchmark success therefore combine execution and analytical changes. The remaining errors include specification, method choice, and data handling.
+
+## Figure Interpretations
+
+Figure 1 compares a linear analysis influenced by extreme observations with a rank-based analysis. The course retains the need to inspect influential values and additionally asks whether each procedure answers the intended question. A rank association and a mean-based effect are different targets. Figures 2 and 6 trace question, data, executable reference analysis, and answer-key construction. Figure 3 describes task composition. Figure 4 separates supervised trajectories from reward-based training. Figure 5 compares prompt-embedding similarities across training and evaluation inputs; it assesses one form of overlap and does not establish the absence of all pretraining exposure. Figure 7 gives a synthetic simulation template.
+
+## Repository Inspection
+
+The inspected GitHub commit is `968dd38bea50102a313d7d36843aba564eabc33f`. The evaluation README requires Python 3.12, R 4.4, statistical R packages, model/tokenizer files, and an OpenAI-compatible endpoint. `run_benchmark.py` executes generated R in a persistent local subprocess and saves trajectories and parsed final answers. `evaluate.py` compares final reported p-values and decisions with the task keys. `verify_pbench.py` checks file availability, hashes, questions, and key/manifest consistency. These checks support integrity and reproducibility; statistical justification remains a separate question.
+
+The training folder contains veRL-based training code and an R tool. Its commands expect model and training-data paths. No training or inference code was executed for the course review, and no model weights were downloaded. The released code does not include a license file in the inspected tree. It is linked, while the course Python implementations are original.
+
+## Benchmark Limits and Course Adaptation
+
+Matching a reference p-value does not independently establish inferential validity, and multiple defensible procedures can produce different values. The paper's evaluation concerns single frequentist hypotheses at a fixed threshold. It does not evaluate multiple-testing correction, sequential monitoring, Bayesian decisions, economic importance, or welfare. A reference test itself requires a specified sample, estimand, weights, and variance estimator.
+
+The consumer-credit task asks about a joint null for 13 advertising-content coefficients. Its archived answer key contains only p=0.0431 and a reject decision. The reference specification has not been reconstructed here. Course materials use the question to examine the scope of an advertising claim without presenting a replicated result.
+
+The implemented mHealth example checks a descriptive paired comparison. The original store simulation has a known sharp null, independent Gaussian stores, fixed equal store sizes, complete observations, and balanced assignment. It measures false-positive rates with two Welch calculations and preserves all prespecified repetitions. These examples implement the assessment principles without claiming to replicate Fisher-R1 or measure any assistant's performance.
+
+---
+
+## Source: 01_Resources/39_Statistical_Inference_and_AI/RIGHTS.md
+
+# Rights and Attribution
+
+The arXiv record licenses the paper by Miao, Mu, Chen, and Zou under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). The PDF is preserved unchanged, with its authors and source linked in the README and manifest. Original course annotations and figures are separate adaptations of ideas, not edited reproductions of source figures.
+
+The [P-Bench data card](https://huggingface.co/datasets/May2222/P-Bench) declares CC BY 4.0. The archived dataset README, advertising question, and answer key are unchanged reference copies with hashes in the manifest. No underlying borrower dataset is redistributed here; its original provenance and applicable terms would need review before inclusion.
+
+No code license was present in the complete inspected FisherR1 GitHub tree at commit `968dd38bea50102a313d7d36843aba564eabc33f`. The course links to that repository and does not vendor its code. The Fisher-R1-14B model card separately declares Apache 2.0 for the model release; that declaration is not treated as a license for the GitHub source or underlying benchmark datasets.
+
+The mHealth example uses the existing authorized teaching release and records its hash. The store simulation, tests, and editable figures are original course materials. No source model or downloaded program was executed.
+
+---
+
+## Source: 03_Data_and_Code/Statistical_Inference/README.md
+
+# Statistical Inference and AI-Assisted Analysis
+
+A manager needs uncertainty calculated for the comparison that informs the decision. These original programs reconstruct observed mHealth logging and simulate a store-randomized promotion. They distinguish a program that runs, a justified method, a faithfully reported number, and a supported managerial conclusion.
+
+## Inputs and Commands
+
+Use Python 3.12 with the pinned [requirements](requirements.txt). From the repository root:
+
+```bash
+python3 -m pip install -r 03_Data_and_Code/Statistical_Inference/requirements.txt
+python3 03_Data_and_Code/mHealth/download_data.py
+python3 03_Data_and_Code/Statistical_Inference/mhealth_pairing.py
+python3 03_Data_and_Code/Statistical_Inference/store_randomization.py
+python3 03_Data_and_Code/Statistical_Inference/build_figures.py
+python3 -m unittest discover -s 03_Data_and_Code/Statistical_Inference -p 'test_*.py' -v
+```
+
+The downloader verifies the existing public mHealth release. Skip it when the release files are already present. The food-entry file is about 304 MB compressed; the program checks its hash and reads identifiers and dates in chunks. The simulation needs no external data. The figure builder writes two editable sources under `06_Lecture_Notes/figures`.
+
+## Comparisons and Expected Results
+
+- `mhealth_pairing.py` fixes the established cohort before May 2016, retains zero-log users, and counts distinct calendar days. The 340-user mean change is -5.123 percentage points. The paired standard error is 1.379 pp; the deliberately incorrect independent-day comparison gives 0.663 pp. Both reject zero at 5%, demonstrating that decision agreement can conceal a precision error. This is a descriptive change in logging.
+- `store_randomization.py` generates 4,000 independent experiments at each within-store correlation, with 40 stores and 20 customers per store. The effect is zero for every customer. At correlation 0.3, the customer-row test rejects in 44.9% of experiments, compared with 4.7% using store means. The first experiment is retained without selecting on its result.
+- `build_figures.py` draws assignment and outcome units and plots rejection fractions with Monte Carlo intervals. Counts and numerical values are in the [results](results/README.md).
+
+The programs use Student/Welch approximations. The simulation comparison covers independent Gaussian stores, balanced assignment, equal customer counts, complete observation, and one prespecified hypothesis. Unequal sizes, few clusters, non-Gaussian shocks, spillovers, missing outcomes, sequential monitoring, and selection among outcomes require additional design choices. No AI model performance is measured by these reference calculations.
+
+## Course Connections and Provenance
+
+Complete code appears in M3 §3.18 and M6 §6.30. M1 §1.18 supplies the assessment protocol; M9 §9.24 examines advertising response and customer reasons. The [optional ungraded lab](../../07_Labs/Statistical_Inference/README.md) includes hand checks, method comparison, and an optional recorded AI exercise.
+
+The [Fisher-R1 source review](../../01_Resources/39_Statistical_Inference_and_AI/README.md) motivates statistical assessment. Its code was inspected and linked, without copying or execution. These Python programs are original course implementations. The benchmark's consumer-credit question is discussion material; its reference p-value has not been independently reproduced. See the [data dictionary](DATA_DICTIONARY.md), [manifest](manifest.json), and [verification record](VERIFICATION.md).
+
+---
+
+## Source: 03_Data_and_Code/Statistical_Inference/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+## mHealth Input and Sample
+
+Input: `../mHealth/data/food_entries.csv.gz`, verified against `../mHealth/manifest.json`. Only `Userid` and `Fancydate` are read. The cohort includes pseudonyms whose first four hexadecimal characters after the initial prefix represent an integer below 4096. Membership additionally requires an observed day before May 1, 2016. The retained dates are normalized to calendar days and duplicates are collapsed. No nutrient or weight values are used.
+
+`mhealth_monthly.csv` has one row per month. `users` is the fixed roster; `logged_days` counts distinct user-days; `calendar_days` is users times days in that month; `users_without_logs` retains roster members without that month's entries. `logging_percent` is 100 times logged days divided by calendar days.
+
+`mhealth_uncertainty.csv` has one row per uncertainty method. `estimate_pp`, `se_pp`, `ci_low_pp`, and `ci_high_pp` use percentage points. `p_value` is two-sided for zero mean change. `reference_df` is 339 for the approximate paired Student test and absent for the normal independent-day comparison. The latter intentionally omits dependence. `mhealth.json` records the source hash, roster rule, target, and interpretation.
+
+## Synthetic Store Outcomes
+
+`synthetic_store_customers.csv` retains repetition 0 at correlation 0.3. There are 40 stores, each with 20 customer rows. `store` identifies the assignment and shared-shock unit; `customer` is a within-store index. `assigned_promotion` is 0 or 1 and constant within store. `contribution_dollars` is synthetic net contribution for a customer, with Gaussian support allowing losses. Every potential treatment effect is zero.
+
+`simulation.json` records seed 20261125, 4,000 experiments per correlation, 20 treated stores, mean contribution 100 dollars, marginal variance 800 dollars squared, correlations 0, 0.1, 0.3, and 0.5, and alpha 0.05. New stores and customers are drawn in each experiment; common underlying draws and assignments are retained across correlations. Equal store sizes make store- and customer-average point estimates identical.
+
+## Simulation Results
+
+`null_calibration.csv` has one row per correlation and method. `rejections` counts p-values below 0.05; `rejection_rate` divides by `repetitions`. `mc_ci_low` and `mc_ci_high` are 95% Wilson intervals for that fraction. Effect estimates, empirical effect standard deviations, mean reported standard errors, and theoretical effect standard deviations use dollars. `design_effect` is the theoretical variance ratio to the independent-customer benchmark, `1 + (customers_per_store - 1) * rho`.
+
+`first_experiment.csv` retains repetition 0 at every correlation and method. It includes the effect, standard error, Welch reference degrees of freedom, p-value, and effect confidence interval. Those intervals concern one experiment; the Wilson intervals in `null_calibration.csv` concern the Monte Carlo rejection fraction. Neither is a prediction interval for an individual customer.
+
+---
+
+## Source: 03_Data_and_Code/Statistical_Inference/AGENTS.md
+
+# Agent Guide for Statistical Inference
+
+Read the root agent guide, this folder's README, data dictionary, and verification record. Preserve complete runnable code in M3 §3.18 and M6 §6.30 when editing either program; run `scripts/check_lecture_code.py` afterward.
+
+- mHealth results describe observed logging within the fixed cohort. Days without an entry are zero recorded logging, not zero consumption. Preserve the initial roster, unique days, and paired users.
+- The store experiment is synthetic, with zero effects, equal store sizes, independent Gaussian stores, and balanced store assignment. Each method receives the same outcomes. Do not select a dataset or method because its p-value is favorable.
+- Monte Carlo rejection rates, benchmark agreement rates, and AI model performance are distinct quantities. The course programs measure the first; no model endpoint has been evaluated.
+- The independent-day and customer-row methods are deliberate comparison procedures. Do not present their uncertainty as appropriate under the dependence they omit.
+- The public credit-advertising task has a reference answer but no reconstructed reference specification here. Do not call it a verified empirical replication or infer borrower welfare from loan take-up.
+- Preserve the source license distinctions. Upstream code is linked only; model and benchmark licenses do not establish a license for the GitHub code.
+- Optional practice is ungraded. No assignment rules or permitted AI use can be inferred from this folder.
+
+---
+
+## Source: 03_Data_and_Code/Statistical_Inference/VERIFICATION.md
+
+# Verification Record
+
+Executed November 25, 2026 with Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and SciPy 1.16.3. Both analytical programs and the figure generator ran successfully. No upstream code, source-model inference, or model API was executed.
+
+## Numerical and Design Checks
+
+Ten unittest checks passed. They examine a fixed roster with duplicate days and a later entrant; a paired test against SciPy; preservation of user pairs; rejection of missing pairs; Welch arithmetic against SciPy; a hand-calculated store-mean contrast and standard error; duplicated customer rows with unchanged store information; rejection of unbalanced assignment; a Wilson interval boundary; and deterministic simulation with the analytical variance.
+
+The full food-release SHA-256 hash matches the existing manifest. The reconstructed mHealth mean change and paired standard error match the prior visualization calculation. For the saved first store experiment, independently calling SciPy's two-sample test reproduces both p-values. Across the four correlations, empirical-to-analytical standard-deviation ratios range from 0.9890 to 1.0044. Rejection counts reconcile with fractions and denominators.
+
+A fresh source export, with an empty result folder and the full verified release input, reproduces all seven numerical result files and both TikZ sources byte-for-byte. The existing lecture-example verifier also passed in a separate export; its values agree with the published reference files. `scripts/check_lecture_code.py` verifies 103 exact, syntactically valid source listings in the notes, including the two new programs.
+
+## Figures and Documents
+
+Two editable Illinois-color figures describe assignment units and plot rejection fractions from checked tables. Monte Carlo intervals, uncertainty about an effect, and outcome dispersion are identified separately. Visual review covered 46 rendered pages: new note sections, code listings, affected contents pages, neighboring page breaks, the Marketing Dialectics chapter tail, all seven new slides and their neighbors, and both syllabus pages. Final builds have no overfull boxes, missing characters, undefined references, or TeX errors. Existing package and underfull-spacing warnings remain.
+
+The complete notes contain 451 pages and 114 figures. Marketing Dialectics contains 36 pages. Sessions 1, 4, 9, and 14 contain 28, 23, 28, and 51 slides respectively; the combined deck has 425 slides. The syllabus remains two pages. All 15 meeting plans retain continuous 170-minute allocations and their existing dates.
+
+## Scope
+
+mHealth results concern descriptive recorded logging in the selected cohort. The synthetic experiment evaluates one prespecified test with independent Gaussian stores, equal store sizes, balanced assignment, and complete outcomes. It does not measure AI performance, reproduce the source model, or assess all possible clustered designs. The public advertising task supplies a discussion question; its empirical reference p-value and specification remain unreplicated here.
+
+---
+
+## Source: 03_Data_and_Code/Statistical_Inference/results/README.md
+
+# Executed Statistical Comparisons
+
+The mHealth tables describe observed May-to-June logging in the fixed 340-user cohort. The mean change is -5.123 pp; paired-user uncertainty gives a standard error of 1.379 pp, a Student interval of [-7.835, -2.411] pp, and p=0.000237. The independent-day comparison reports 0.663 pp and p=1.13e-14. These calculations share the same point estimate and differ in their treatment of dependence.
+
+The store tables are synthetic. For 4,000 experiments at each correlation:
+
+| Within-Store Correlation | Customer-Row Rejections | Store-Mean Rejections |
+| ---: | ---: | ---: |
+| 0.0 | 208 / 4,000 | 199 / 4,000 |
+| 0.1 | 968 / 4,000 | 198 / 4,000 |
+| 0.3 | 1,796 / 4,000 | 188 / 4,000 |
+| 0.5 | 2,200 / 4,000 | 191 / 4,000 |
+
+The first experiment at correlation 0.3 estimates $4.334 per customer. The customer-row p-value is 0.0287 and the store-mean p-value is 0.3446. Its full customer table is retained, and the dataset was not selected on its significance. Every customer has zero true effect in the simulation.
+
+See the [dictionary](../DATA_DICTIONARY.md) for units, denominators, and interval definitions. No AI model output is included in these results.
+
+---
+
+## Source: 07_Labs/Statistical_Inference/README.md
+
+# Statistical Evidence for a Marketing Decision
+
+This is public optional ungraded practice. Follow any released assignment's specific AI-use rules when applying these ideas to assessed work.
+
+A retailer is deciding whether a promotion produces enough incremental contribution to justify rollout. An mHealth manager is separately examining a change in recorded logging. Use the [programs and commands](../../03_Data_and_Code/Statistical_Inference/README.md) and the [data dictionary](../../03_Data_and_Code/Statistical_Inference/DATA_DICTIONARY.md).
+
+## Preserve the Customer Comparison
+
+1. Reconstruct the mHealth sample. Explain why membership is fixed before May, why food-entry duplicates do not create new logged days, and why a user without June entries remains in the denominator.
+2. Hand-check the monthly fractions for a user with two May logging days and one June logging day. Use the different calendar denominators. Explain what an absent entry measures.
+3. Reproduce the paired and independent-day uncertainty calculations. Both reject zero at 5%. Explain why that agreement leaves the independence error consequential, and why the observed change does not identify a promotion effect.
+
+## Evaluate a Test When the Effect is Known
+
+1. Read `simulation.json` before inspecting the p-values. Identify the outcome, assignment unit, number of stores, customer count, and true effect.
+2. Use `synthetic_store_customers.csv` to compare customer-row and store-mean calculations. Verify their equal point estimates. Explain the equal-size condition that makes them agree.
+3. Derive the variance ratio `1 + (m - 1) * rho`. For m=20 and rho=0.3, compare it with empirical effect dispersion and reported standard errors across simulations.
+4. Reproduce all 4,000 experiments per correlation. Explain why the Monte Carlo intervals describe rejection fractions, while the first-experiment intervals describe an effect estimate.
+5. Repeat with a new seed without changing the method. For an extension, introduce a fixed nonzero effect and measure power, identifying the changed outcome equation. A multiple-outcome or sequential experiment requires a separately specified testing procedure.
+
+## Assess an AI-Generated Analysis
+
+Ask an assistant to analyze the first store dataset with its assignment design and variable definitions, before giving it the reference results. Require the sample, target, estimator, variance calculation, p-value, interval, and managerial interpretation. Preserve the first response and executed program. Score execution, method, numerical reporting, and interpretation separately using M1 §1.18.
+
+After feedback, freeze the program and evaluate it on fresh simulated data. Keep the original task and new data distinct, retain every run, and record model version and prompts. Do not choose the run with the smallest p-value. The provided program results do not constitute a measured comparison of AI models.
+
+## Examine the Advertising Claim
+
+Read M9 §9.24 and the [benchmark question](../../01_Resources/39_Statistical_Inference_and_AI/benchmark_sample/question.txt). State what rejecting a joint null for 13 advertising coefficients would establish under a valid test. Identify the additional evidence needed to assess borrowing costs, comprehension, and customer agency. Evaluate the firm's justification using both Kantian respect for persons and Confucian responsibilities in a relationship of reliance. The benchmark's reference specification remains unverified here; the question supports discussion without supplying a replicated causal or welfare finding.
 
 ---
 

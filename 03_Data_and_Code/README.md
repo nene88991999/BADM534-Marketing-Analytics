@@ -133,3 +133,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Digital Usage and Customer Access
 
 [Digital Usage](Digital_Usage/README.md) contains 28,561 published geographic records, compact public Census extracts, five complete teaching programs, eleven independent checks, and four editable figures. The examples assess identifiers and income boundaries, compare adjusted projections, and evaluate clustering sensitivity. Original device microdata and analysis code are unavailable.
+
+## Statistical Inference
+
+[Two original programs](Statistical_Inference/README.md) reproduce paired mHealth logging and measure false-positive rates in a synthetic store-randomized experiment. Complete code appears in M3 §3.18 and M6 §6.30. Ten independent checks and two editable figures accompany the results; no model endpoint is used.

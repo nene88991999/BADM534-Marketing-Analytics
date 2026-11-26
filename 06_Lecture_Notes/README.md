@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [440-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 112 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [451-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 114 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -177,3 +177,7 @@ M4 §4.26 derives independent and joint prices under a common noisy demand signa
 ## Digital Usage and Customer Access
 
 The [geographic case](../03_Data_and_Code/Digital_Usage/README.md) adds measurement and index verification in M2, conditional income projections in M3, scaling-sensitive clustering in M4, outcome validation in M7, and service choice in M8/M9. Five complete Python listings and four original TikZ figures accompany the public data and Census extracts.
+
+## Statistical Inference and AI-Assisted Analysis
+
+M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment, paired mHealth logging, store assignment, and advertising claims. [Two complete Python programs](../03_Data_and_Code/Statistical_Inference/README.md), ten independent tests, and two editable figures distinguish observed descriptive changes, synthetic null experiments, and ethical interpretation. The [source review](../01_Resources/39_Statistical_Inference_and_AI/README.md) and [optional practice](../07_Labs/Statistical_Inference/README.md) preserve the benchmark's scope.

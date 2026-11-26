@@ -1681,6 +1681,76 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M01-statistical-evidence-in-an-ai-generated-analysis}{%
+\section{Statistical Evidence in an AI-Generated
+Analysis}\label{M01-statistical-evidence-in-an-ai-generated-analysis}}
+
+\noindent \noindent A manager considering a promotion needs an estimate of
+incremental contribution and an account of its uncertainty. An assistant
+can produce executable code, a small p-value, and a confident
+recommendation while treating transactions from the same store as
+independent observations. The program's successful completion
+establishes that its instructions ran. The statistical argument also
+depends on the assignment process, the observation unit, and the
+relationship between the computed quantity and the manager's question.
+
+\href{https://arxiv.org/abs/2608.07437}{Miao, Mu, Chen, and Zou's
+Fisher-R1 study} evaluates agents on open-ended hypothesis-testing
+tasks. On its difficult tasks, Fisher-R1-14B matches the reference
+reject/nonreject decision in 65.8\% of single attempts. Requiring a
+sufficiently close reference p-value reduces this score to 33.0\%. These
+percentages measure agreement with benchmark answers. A false-positive
+rate instead requires repeated tests when the null hypothesis is true,
+as in the store experiment in Section 6.30.
+
+An analysis request should define the population, intervention or
+comparison, outcome, units, and available information. For an
+experiment, specify how treatment was assigned. For repeated customer
+records, identify which observations belong to the same person. Ask the
+assistant to report the retained sample, estimate, uncertainty
+calculation, test direction, significance level, and interpretation.
+Compare its reported quantities with saved numerical output and inspect
+the code that created the sample and standard error.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+Assessment & Evidence to Examine \\
+\midrule
+
+Execution & The program finishes on the stated inputs and records its
+outputs. \\
+Statistical method & The estimand, assignment or sampling unit,
+dependence, and test match the question. \\
+Numerical reporting & Estimates, intervals, p-values, and decisions
+agree with the executed calculation. \\
+Managerial interpretation & Effect size, costs, customer outcomes, and
+the scope of the evidence support the action. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Matching a reference number can coexist with an unsuitable explanation
+or an unsupported causal claim. A reference analysis also needs
+justification. Several procedures can answer related questions with
+different p-values, and an influential observation does not by itself
+determine which question the firm should ask. A mean-dollar effect and a
+rank-order association concern different economic quantities. Choose the
+target and defensible handling rules before using a favorable result to
+select the method.
+
+For the \href{../07_Labs/Statistical_Inference/README.md}{statistical
+inference exercise}, preserve the assistant's initial analysis and
+written rationale before giving feedback. Check the mHealth sample and
+uncertainty independently, then evaluate a frozen procedure on newly
+generated store experiments. Record model and software versions when an
+assistant is used. The supplied reference programs establish the course
+calculations; measured AI performance requires actual recorded runs
+under the stated protocol.
+
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
 Visualization}\label{M02-m2.-customer-data-measurement-and-visualization}}
@@ -6005,6 +6075,217 @@ def main():
         "acs_period": "2017-2021", "usage_period": "October 2022-March 2023",
         "uncertainty": "No causal effect, population inference, or confidence interval estimated; ACS sampling error, privacy noise, and spatial dependence are not propagated."}, indent=2) + "\n")
     print(pd.DataFrame(result).to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M03-mhealth-an-estimated-change-and-its-statistical-evidence}{%
+\section{mHealth: An Estimated Change and Its Statistical
+Evidence}\label{M03-mhealth-an-estimated-change-and-its-statistical-evidence}}
+
+\noindent \noindent An mHealth manager comparing May with June needs to
+distinguish a change in recorded logging from uncertainty caused by
+differences across users. The sample retains the established
+pseudonym-based cohort and requires at least one observed day before May
+1, 2016. Each eligible user remains in both monthly denominators,
+including users with no entries in a month. A day without an entry
+contributes zero to recorded logging; it supplies no measurement of food
+consumption on that day.
+
+The comparison uses each user's fraction of calendar days with a
+recorded entry. May has 31 days and June has 30. Counting distinct
+user-day pairs prevents repeated food entries from increasing the number
+of logged days. The target is the mean within-user June-minus-May change
+in logging, with equal weight on each eligible user.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Period & Eligible Users & Logged User-Days & Calendar User-Days \\
+\midrule
+
+May 2016 & 340 & 7,082 & 10,540 \\
+June 2016 & 340 & 6,331 & 10,200 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Logging declines from 67.19\% to 62.07\%, a change of \(-5.12\)
+percentage points. With \(d_i\) denoting a user's change in percentage
+points, the test of zero mean change uses \(t=\bar d/(s_d/\sqrt{N})\)
+and an approximate Student reference distribution with \(N-1\) degrees
+of freedom. This approximation treats users as independent draws from a
+common distribution of paired outcomes. The selected cohort and possible
+platform-wide shocks limit that sampling interpretation; no recorded
+assignment identifies an intervention effect.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.28}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.21}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.30}}@{}}
+\toprule
+Uncertainty Calculation & Standard Error (pp) & 95\% Interval (pp) &
+Two-Sided p-Value \\
+\midrule
+
+Paired users & 1.379 & \([-7.835,-2.411]\) & 0.000237 \\
+Independent days, incorrect comparison & 0.663 & \([-6.423,-3.823]\) &
+\(1.13\times10^{-14}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Both calculations reject a zero descriptive change at 5\%. Their
+agreement on that binary decision conceals a substantial difference in
+reported precision. The independent-day calculation removes dependence
+between days within a user and between a user's monthly outcomes. The
+paired standard error agrees with the covariance identity in Section
+3.6.1. Its Student interval differs slightly from that section's paired
+percentile-bootstrap interval because the two procedures construct
+uncertainty differently.
+
+An assistant evaluating these records should preserve the initial
+roster, collapse food entries to distinct days, and carry each user's
+two months together. Verify one repeated-entry day and one user with no
+monthly entries before fitting a test. Then inspect the standard-error
+calculation and the interpretation of the result. Changing a heading to
+``customer-level analysis'' supplies no evidence that the underlying
+code preserved customer dependence.
+
+\hypertarget{M03-reproduce-the-sample-and-tests}{%
+\subsection{Reproduce the Sample and
+Tests}\label{M03-reproduce-the-sample-and-tests}}
+
+\noindent \noindent Download the public files with
+\texttt{python3\ 03\_Data\_and\_Code/mHealth/download\_data.py} if
+needed. From the repository root, install
+\texttt{03\_Data\_and\_Code/Statistical\_Inference/requirements.txt} in
+a Python environment and run
+\texttt{python3\ 03\_Data\_and\_Code/Statistical\_Inference/mhealth\_pairing.py}.
+The program verifies the released food-file hash, reads only identifiers
+and dates in chunks, reconstructs the fixed roster, and saves monthly
+counts and both uncertainty calculations. It uses the same input and
+cohort rule as Section 3.6.1 without depending on a precomputed cache.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Statistical_Inference/mhealth_pairing.py}{mhealth\_pairing.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Compare paired-user and independent-day uncertainty in observed logging."""
+import hashlib
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+ROOT = Path(__file__).resolve().parent
+MHEALTH = ROOT.parent / "mHealth"
+OUTPUT = ROOT / "results"
+MONTHS = ("2016-05", "2016-06")
+
+
+def load_days():
+    """Verify the release and retain distinct days in the established cohort."""
+    path = MHEALTH / "data/food_entries.csv.gz"
+    manifest = json.loads((MHEALTH / "manifest.json").read_text())
+    expected = manifest["files"][path.name]["sha256"]
+    with path.open("rb") as handle:
+        digest = hashlib.file_digest(handle, "sha256").hexdigest()
+    if digest != expected:
+        raise ValueError("Food-entry file differs from the released input")
+    parts = []
+    for chunk in pd.read_csv(path, usecols=["Userid", "Fancydate"],
+                             chunksize=250000):
+        code = chunk.Userid.str.slice(1, 5).map(lambda x: int(x, 16))
+        part = chunk.loc[code < 4096].copy()
+        part["date"] = pd.to_datetime(part.pop("Fancydate")).dt.normalize()
+        parts.append(part.drop_duplicates())
+    days = pd.concat(parts, ignore_index=True).drop_duplicates()
+    return days, digest
+
+
+def monthly_rates(days):
+    """Fix membership before May; retain zero-log users in both months."""
+    days = days[["Userid", "date"]].drop_duplicates()
+    members = sorted(days.loc[days.date < "2016-05-01", "Userid"].unique())
+    if len(members) < 2:
+        raise ValueError("At least two users observed before May are required")
+    rates = pd.DataFrame(index=members)
+    rows = []
+    for month in MONTHS:
+        period = pd.Period(month, freq="M")
+        mask = days.Userid.isin(members) & days.date.dt.to_period("M").eq(period)
+        count = days.loc[mask].groupby("Userid").size().reindex(members, fill_value=0)
+        if not count.between(0, period.days_in_month).all():
+            raise ValueError("Logged days exceed the calendar denominator")
+        rates[month] = count / period.days_in_month
+        rows.append({"month": month, "users": len(members),
+                     "logged_days": int(count.sum()),
+                     "calendar_days": len(members) * period.days_in_month,
+                     "users_without_logs": int(count.eq(0).sum()),
+                     "logging_percent": float(100 * rates[month].mean())})
+    return rates, rows
+
+
+def compare_uncertainty(rates):
+    """Two-sided tests of zero mean change; all effect units are percentage points."""
+    x = rates[list(MONTHS)].to_numpy(dtype=float)
+    if len(x) < 2 or not np.isfinite(x).all() or ((x < 0) | (x > 1)).any():
+        raise ValueError("Complete user pairs with rates in [0, 1] are required")
+    change = 100 * (x[:, 1] - x[:, 0])
+    estimate = float(change.mean())
+    se = float(change.std(ddof=1) / np.sqrt(len(x)))
+    if se == 0:
+        raise ValueError("A positive sample variance of changes is required")
+    critical = stats.t.ppf(.975, len(x) - 1)
+    paired_p = float(2 * stats.t.sf(abs(estimate / se), len(x) - 1))
+    p = x.mean(axis=0)
+    n_days = len(x) * np.array([31, 30])
+    naive_se = float(100 * np.sqrt(np.sum(p * (1 - p) / n_days)))
+    naive_p = float(2 * stats.norm.sf(abs(estimate / naive_se)))
+    covariance = np.cov(100 * x.T, ddof=1)
+    paired_variance = (covariance[0, 0] + covariance[1, 1]
+                       - 2 * covariance[0, 1]) / len(x)
+    if not np.isclose(paired_variance, se ** 2):
+        raise AssertionError("Paired variance identity failed")
+    return [
+        {"method": "paired_users", "estimate_pp": estimate, "se_pp": se,
+         "p_value": paired_p, "ci_low_pp": float(estimate - critical * se),
+         "ci_high_pp": float(estimate + critical * se), "reference_df": len(x)-1,
+         "independence_unit": "user", "interpretation": "descriptive change"},
+        {"method": "independent_days_contrast", "estimate_pp": estimate,
+         "se_pp": naive_se, "p_value": naive_p,
+         "ci_low_pp": float(estimate - stats.norm.ppf(.975) * naive_se),
+         "ci_high_pp": float(estimate + stats.norm.ppf(.975) * naive_se),
+         "reference_df": None, "independence_unit": "user-day",
+         "interpretation": "deliberately incorrect independence comparison"},
+    ]
+
+
+def main():
+    days, digest = load_days()
+    rates, monthly = monthly_rates(days)
+    comparisons = compare_uncertainty(rates)
+    OUTPUT.mkdir(exist_ok=True)
+    pd.DataFrame(monthly).to_csv(OUTPUT / "mhealth_monthly.csv", index=False)
+    pd.DataFrame(comparisons).to_csv(OUTPUT / "mhealth_uncertainty.csv", index=False)
+    result = {"source_sha256": digest, "cohort_prefix_threshold": 4096,
+              "membership": "observed before 2016-05-01", "users": len(rates),
+              "outcome": "fraction of calendar days with a recorded food entry",
+              "estimand": "mean within-user June minus May change",
+              "causal_effect": False, "comparisons": comparisons}
+    (OUTPUT / "mhealth.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
@@ -14121,6 +14402,273 @@ replacing the model or changing the tool. The component intervention and
 its comparison define that question. The public
 \href{../03_Data_and_Code/Agent_Workflows/EXPERIMENT_PROTOCOL.md}{protocol}
 supplies the recording requirements without presuming a measured gain.
+
+\hypertarget{M06-store-assignment-and-false-discoveries}{%
+\section{Store Assignment and False
+Discoveries}\label{M06-store-assignment-and-false-discoveries}}
+
+\noindent \noindent A retailer considering a promotion needs evidence that
+incremental customer contribution covers its cost. Suppose the promotion
+is assigned to stores, while the data contain one outcome for each
+customer. Local demand can move many customers' outcomes together.
+Treating every customer as an independent experimental unit can then
+produce a precise-looking estimate even when the number of independently
+assigned stores is modest.
+
+To isolate this problem, consider a synthetic experiment with 40 stores
+and 20 customers per store. Exactly half the stores receive the
+promotion. The outcome is net contribution per customer in dollars,
+which can include losses. The promotion has zero effect for every
+customer. Keeping that truth fixed allows repeated experiments to
+measure how often each test incorrectly reports an effect.
+
+The variance calculation uses the following restrictions.
+
+\begin{assumption}\label{ass:balanced-store-assignment}
+There are $G$ independent stores, with an even $G\geq4$, and $m\geq2$ customers in every store. Exactly $G/2$ stores are assigned to treatment uniformly at random, independently of potential outcomes. Every customer's outcome is observed, and assignment has no spillovers across stores.
+\end{assumption}
+
+\begin{assumption}\label{ass:store-null-outcomes}
+For store $g$ and customer $j$, potential outcomes satisfy $Y_{gj}(1)=Y_{gj}(0)=\mu+u_g+e_{gj}$. Store shocks are independent normal draws with variance $\sigma^2\rho$; customer shocks are independent normal draws with variance $\sigma^2(1-\rho)$. The two shock families are independent, with $0\leq\rho<1$ and $\sigma^2>0$.
+\end{assumption}
+
+Here \(\mu\) is mean customer contribution, \(u_g\) is a shared store
+shock, and \(e_{gj}\) is an individual customer shock. The within-store
+correlation is \(\rho\), and each customer's marginal outcome variance
+is \(\sigma^2\). Set \(\mu=100\), \(\sigma^2=800\), \(G=40\), and
+\(m=20\). These are illustrative parameters, with Gaussian support on
+the real line.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_store_assignment.tex}
+\caption{The promotion is assigned to 20 of 40 stores. Each store supplies 20 customer outcomes sharing a store shock. Comparing average store means retains the same customer-average point estimate because store sizes are equal.}\label{fig:M06_store_assignment}
+\end{figure}
+
+The difference between treated and control store means estimates the
+same contrast as the difference between all treated and control customer
+outcomes under the equal-size restriction. Its sampling variance under
+Assumptions \ref{ass:balanced-store-assignment} and
+\ref{ass:store-null-outcomes} is
+
+\[
+\operatorname{Var}(\widehat\tau)=\frac{4\sigma^2}{G}
+\left(\rho+\frac{1-\rho}{m}\right).
+\]
+
+The store shock survives averaging over customers, while the individual
+component falls with \(m\). An independence calculation using \(Gm\)
+customers would instead use \(4\sigma^2/(Gm)\). The ratio of the true
+variance to that benchmark is \(1+(m-1)\rho\). At \(\rho=0.3\), the
+ratio is 6.7. Additional customer observations reveal the store mean
+more precisely while leaving the number of independently assigned stores
+unchanged.
+
+The program compares two-sided Welch tests using customer rows or store
+means. Each procedure computes the same point estimate, then estimates
+variance and reference degrees of freedom using its respective
+observation unit. Aggregation to store means is appropriate for the
+equal-size setup here. Unequal store sizes require an explicit choice
+between a customer-weighted and a store-weighted target and an estimator
+suited to that design.
+
+\hypertarget{M06-a-fixed-experiment-and-repeated-null-comparisons}{%
+\subsection{A Fixed Experiment and Repeated Null
+Comparisons}\label{M06-a-fixed-experiment-and-repeated-null-comparisons}}
+
+\noindent \noindent In the first generated experiment at \(\rho=0.3\), both
+methods estimate an increase of \$4.334 per customer. The customer-row
+test reports \(p=0.0287\); the store-mean test reports \(p=0.3446\). The
+first dataset is retained by its position in the seeded run, without
+searching for a significant result. The true intervention effect remains
+zero.
+
+The broader comparison generates 4,000 independent experiments at each
+correlation. Each experiment redraws stores and customers, randomly
+assigns half the stores, and tests one prespecified outcome at
+\(\alpha=0.05\). The same underlying Gaussian draws and assignments are
+reused across correlations to make those comparisons paired. The
+rejection fractions describe repeated sampling and assignment under this
+simulation; they are not exact conditional randomization-test
+probabilities for one fixed dataset.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Within-Store Correlation & Customer-Row Rejection Rate & Store-Mean
+Rejection Rate \\
+\midrule
+
+0.0 & 5.20\% & 4.975\% \\
+0.1 & 24.20\% & 4.950\% \\
+0.3 & 44.90\% & 4.700\% \\
+0.5 & 55.00\% & 4.775\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_null_calibration.tex}
+\caption{Rejection fractions across 4,000 zero-effect experiments at each correlation. Customer-row inference increasingly rejects the true null as within-store correlation rises; store-mean inference stays near the nominal 5\% level. Bars are Wilson intervals for Monte Carlo rejection fractions.}\label{fig:M06_null_calibration}
+\end{figure}
+
+The customer-row test allows unequal variances across treatment arms,
+yet it omits the covariance among customers sharing a store. Allowing
+heteroskedasticity therefore does not solve this dependence problem. The
+store-mean test remains close to its nominal level across these Gaussian
+settings. Its Monte Carlo intervals describe uncertainty in an estimated
+rejection fraction; the intervals do not describe the dispersion of
+customer outcomes or uncertainty about one promotion effect.
+
+A firm's assistant should identify assignment and dependence before
+inspecting which procedure produces significance. Evaluate a proposed
+test on newly generated data with a known null, then examine power under
+a specified nonzero effect. Reporting only the most favorable outcome or
+stopping after a favorable interim result changes the testing procedure.
+The single-outcome calculation here leaves those choices fixed; the
+experimental plan in Section 6.3 must address them when they occur.
+
+\hypertarget{M06-reproduce-the-experiments}{%
+\subsection{Reproduce the
+Experiments}\label{M06-reproduce-the-experiments}}
+
+\noindent \noindent Run
+\texttt{python3\ 03\_Data\_and\_Code/Statistical\_Inference/store\_randomization.py}
+from the repository root. The program saves the simulation parameters,
+rejection counts, Monte Carlo intervals, the first result at each
+correlation, and the first customer-level dataset at \(\rho=0.3\). The
+analytical variance provides a separate comparison with the empirical
+dispersion of estimated effects.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Statistical_Inference/store_randomization.py}{store\_randomization.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Evaluate false-positive rates with a store-randomized zero-effect promotion."""
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+ROOT = Path(__file__).resolve().parent
+OUTPUT = ROOT / "results"
+SEED = 20261125
+REPETITIONS = 4000
+STORES = 40
+CUSTOMERS = 20
+VARIANCE = 800.0
+CORRELATIONS = (0.0, 0.1, 0.3, 0.5)
+ALPHA = .05
+
+
+def welch(a, b):
+    """Treat rows as experiments and columns as independent observations."""
+    a, b = np.atleast_2d(a), np.atleast_2d(b)
+    if min(a.shape[1], b.shape[1]) < 2:
+        raise ValueError("Each arm needs at least two independent observations")
+    v0, v1 = a.var(axis=1, ddof=1) / a.shape[1], b.var(axis=1, ddof=1) / b.shape[1]
+    se = np.sqrt(v0 + v1)
+    if np.any(se == 0):
+        raise ValueError("A positive contrast variance is required")
+    df = (v0 + v1) ** 2 / (v0 ** 2 / (a.shape[1]-1) + v1 ** 2 / (b.shape[1]-1))
+    effect = b.mean(axis=1) - a.mean(axis=1)
+    p = 2 * stats.t.sf(np.abs(effect / se), df)
+    return effect, se, df, p
+
+
+def compare_methods(outcomes, treated):
+    """Equal store sizes make both point estimates identical."""
+    r, g, m = outcomes.shape
+    if treated.shape != (r, g) or g % 2 or not np.all(treated.sum(axis=1) == g//2):
+        raise ValueError("Exactly half the stores must receive the promotion")
+    customer0 = outcomes[~treated].reshape(r, g//2*m)
+    customer1 = outcomes[treated].reshape(r, g//2*m)
+    store_means = outcomes.mean(axis=2)
+    store0 = store_means[~treated].reshape(r, g//2)
+    store1 = store_means[treated].reshape(r, g//2)
+    return {"customer_rows": welch(customer0, customer1),
+            "store_means": welch(store0, store1)}
+
+
+def wilson(successes, total):
+    """Monte Carlo uncertainty for a rejection fraction, not an effect interval."""
+    z = stats.norm.ppf(.975)
+    p = successes / total
+    center = (p + z*z/(2*total)) / (1 + z*z/total)
+    half = z * np.sqrt(p*(1-p)/total + z*z/(4*total*total)) / (1 + z*z/total)
+    return float(center-half), float(center+half)
+
+
+def simulate(repetitions=REPETITIONS, stores=STORES, customers=CUSTOMERS, seed=SEED):
+    if repetitions < 2 or stores < 4 or stores % 2 or customers < 2:
+        raise ValueError("Use two repetitions, an even store count >=4, and >=2 customers")
+    rng = np.random.default_rng(seed)
+    # Shared Gaussian draws and assignments make the rho comparisons paired.
+    store_shock = rng.normal(size=(repetitions, stores, 1))
+    customer_shock = rng.normal(size=(repetitions, stores, customers))
+    order = np.argsort(rng.random((repetitions, stores)), axis=1)
+    treated = np.zeros((repetitions, stores), dtype=bool)
+    treated[np.arange(repetitions)[:, None], order[:, :stores//2]] = True
+    summaries, examples, first_data = [], [], None
+    for rho in CORRELATIONS:
+        # Potential outcomes are identical under promotion and control.
+        y = (100 + np.sqrt(VARIANCE*rho)*store_shock
+             + np.sqrt(VARIANCE*(1-rho))*customer_shock)
+        results = compare_methods(y, treated)
+        if not np.allclose(results["customer_rows"][0], results["store_means"][0]):
+            raise AssertionError("Equal-size point estimates differ")
+        for method, (effect, se, df, p) in results.items():
+            rejected = int((p < ALPHA).sum())
+            low, high = wilson(rejected, repetitions)
+            summaries.append({"rho": rho, "method": method, "repetitions": repetitions,
+                "rejections": rejected, "rejection_rate": rejected/repetitions,
+                "mc_ci_low": low, "mc_ci_high": high, "mean_effect_dollars": effect.mean(),
+                "empirical_effect_sd": effect.std(ddof=1), "mean_reported_se": se.mean(),
+                "theoretical_effect_sd": np.sqrt(4*VARIANCE/stores*(rho+(1-rho)/customers)),
+                "design_effect": 1+(customers-1)*rho})
+            critical = stats.t.ppf(.975, df[0])
+            examples.append({"rho": rho, "method": method, "repetition": 0,
+                "effect_dollars": effect[0], "se_dollars": se[0], "df": df[0],
+                "p_value": p[0], "ci_low": effect[0]-critical*se[0],
+                "ci_high": effect[0]+critical*se[0]})
+        if rho == .3:
+            first_data = pd.DataFrame({"store": np.repeat(np.arange(stores), customers),
+                "customer": np.tile(np.arange(customers), stores),
+                "assigned_promotion": np.repeat(treated[0].astype(int), customers),
+                "contribution_dollars": y[0].ravel()})
+    return pd.DataFrame(summaries), pd.DataFrame(examples), first_data
+
+
+def main():
+    summary, examples, data = simulate()
+    OUTPUT.mkdir(exist_ok=True)
+    summary.to_csv(OUTPUT / "null_calibration.csv", index=False)
+    examples.to_csv(OUTPUT / "first_experiment.csv", index=False)
+    data.to_csv(OUTPUT / "synthetic_store_customers.csv", index=False)
+    setup = {"seed": SEED, "repetitions_per_rho": REPETITIONS, "stores": STORES,
+             "customers_per_store": CUSTOMERS, "treated_stores": STORES//2,
+             "outcome_variance": VARIANCE, "mean_contribution_dollars": 100,
+             "true_effect_dollars": 0, "within_store_correlations": CORRELATIONS,
+             "alpha": ALPHA, "hypotheses_per_experiment": 1,
+             "outcome": "synthetic net contribution per customer in dollars",
+             "model_api_calls": 0}
+    (OUTPUT / "simulation.json").write_text(json.dumps(setup, indent=2) + "\n")
+    print(summary[["rho", "method", "rejections", "rejection_rate", "mean_reported_se"]]
+          .to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -24595,5 +25143,70 @@ excluding a person is justified. An evaluation of the marketing practice
 must connect its stated purpose, the customer information it actually
 observes, the person's available choices, and the consequences of
 accepting or refusing the procedure.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-advertising-response-statistical-evidence-and-customer-reasons}{%
+\section{Advertising Response, Statistical Evidence, and Customer
+Reasons}\label{M09-advertising-response-statistical-evidence-and-customer-reasons}}
+
+\noindent \noindent A consumer lender choosing an advertisement can ask whether
+its content changes loan take-up. It also faces a different question
+about the grounds on which customers decide to borrow. A photograph, a
+suggested use for the loan, a description of the interest rate, and
+language about losses can affect attention and choice through different
+mechanisms. Commercial response alone leaves the customer's
+understanding, reasons, and subsequent experience unresolved.
+
+The
+\href{https://huggingface.co/datasets/May2222/P-Bench/blob/main/tasks/chi_square_test/dfeep__paper_90__task_4/question.txt}{public
+P-Bench advertising task} describes a randomized field experiment among
+former borrowers of a South African consumer lender. Its statistical
+question concerns 13 advertising-content coefficients jointly. Writing
+those coefficients as \(\beta_1,\ldots,\beta_{13}\), the null is
+\(H_0:\beta_1=\cdots=\beta_{13}=0\). Under a justified specification and
+test, rejecting that joint null supplies evidence that at least one
+coefficient differs from zero. The result does not identify every
+effective feature or establish a particular psychological mechanism.
+Direction and economic magnitude require the relevant estimates and
+contrasts.
+
+Suppose a firm concludes that an advertisement benefits customers
+because more of them borrow. That inference adds a premise equating
+additional borrowing with customer benefit. Customers may obtain useful
+liquidity, misunderstand repayment costs, respond to a misleading
+comparison, or borrow for a purpose they later regret. Evidence about
+comprehension, repayment burdens, intended use, and experienced outcomes
+helps distinguish these possibilities. A well-executed take-up test does
+not supply that evidence automatically.
+
+Kant's humanity formulation directs attention to whether the firm's
+procedure respects customers as persons capable of setting ends and
+assessing reasons. An advertisement can communicate a relevant product
+benefit while also serving the seller's interest. The ethical difficulty
+arises when the firm secures agreement by concealing material terms,
+exploiting a misunderstanding, or obstructing a person's considered
+refusal. A visual cue's effect on take-up alone does not establish any
+of these mechanisms. The justification must examine what information the
+customer receives and how the procedure treats the customer's ability to
+judge and decline.
+
+Confucian attention to humane conduct and the responsibilities of a role
+asks how a lender uses its informational advantage in a relationship of
+reliance. Clear explanations, correction of misleading impressions, and
+responsiveness to difficulty give that responsibility observable
+content. A claim of benevolent intent remains open to examination
+against the actual service and the borrower's experience. Customer
+disagreement supplies evidence for examining the firm's judgment and
+response.
+
+The same reasoning applies when an AI assistant supplies the statistical
+analysis. The benchmark evaluator compares a decision and p-value with a
+reference answer. A commercial objective may reward greater take-up.
+Each criterion measures a narrower achievement than a defensible lending
+practice. Require a justified statistical comparison, evidence on the
+consequences customers experience, and an account of why the firm's
+means respect their agency. An error at one stage cannot be repaired by
+success at another.
 
 \end{document}

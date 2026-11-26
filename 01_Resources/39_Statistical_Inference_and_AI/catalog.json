@@ -1,0 +1,45 @@
+{
+  "namespace": "statistical-inference",
+  "reviewed_on": "2026-11-25",
+  "resources": [
+    {
+      "id": "SI01",
+      "title": "Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing",
+      "url": "https://arxiv.org/abs/2608.07437",
+      "rights": "CC BY 4.0",
+      "use": "Archived paper and original source review",
+      "modules": [
+        "M1",
+        "M3",
+        "M6",
+        "M9"
+      ]
+    },
+    {
+      "id": "SI02",
+      "title": "FisherR1 repository",
+      "url": "https://github.com/jmu27/FisherR1/tree/968dd38bea50102a313d7d36843aba564eabc33f",
+      "rights": "No code license found; linked only",
+      "use": "Static inspection of evaluation and training code; unexecuted",
+      "modules": [
+        "M1",
+        "M3",
+        "M6",
+        "M9"
+      ]
+    },
+    {
+      "id": "SI03",
+      "title": "P-Bench",
+      "url": "https://huggingface.co/datasets/May2222/P-Bench",
+      "rights": "Dataset card: CC BY 4.0",
+      "use": "Archived documentation and advertising question/key; reference specification unverified",
+      "modules": [
+        "M1",
+        "M3",
+        "M6",
+        "M9"
+      ]
+    }
+  ]
+}

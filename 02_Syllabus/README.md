@@ -49,3 +49,7 @@ The syllabus includes shared pricing systems and the Wendy's dispute among its c
 ## Digital Usage and Customer Access
 
 The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs. The fifteen meeting dates, start and end times, and calendar event topics remain unchanged.
+
+## Statistical Evidence
+
+The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded; no assessment requirements or meeting dates change.

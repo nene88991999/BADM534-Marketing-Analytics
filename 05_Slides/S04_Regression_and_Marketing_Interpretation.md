@@ -22,6 +22,8 @@ Session 04. M3. 170 minutes.
 - [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 - [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
+- [Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)
+- [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
 
 ## Slide 1: Regression and Marketing Interpretation
 
@@ -133,7 +135,31 @@ A small p-value does not measure the size of an effect. A wide interval containi
 
 Source: M3, Section 3.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 11: Panel Comparisons
+## Slide 11: mHealth: Same Change, Different Precision
+
+| Uncertainty Unit | SE (pp) | Two-Sided p |
+| --- | --- | --- |
+| Paired Users | 1.379 | 0.000237 |
+| Independent Days | 0.663 | 1.13e-14 |
+
+340 users; June minus May 2016 logging: −5.123 pp.
+
+Membership requires a recorded day before May within the established pseudonym-based cohort. May and June have 31 and 30 calendar days. Zero-log users stay in the denominator. The paired test uses a Student approximation with 339 degrees of freedom and interval [-7.835, -2.411] pp. The independent-day comparison deliberately omits within-user dependence and gives [-6.423, -3.823] pp. Both reject zero, so decision agreement conceals a precision error. This is a descriptive temporal change; no intervention assignment is observed.
+
+Source: M3 §3.18. ../06_Lecture_Notes/modules/M03_Regression.md
+
+## Slide 12: What the Logging Test Establishes
+
+- Preserve the roster and distinct user-day counts.
+- Carry both months together for each user.
+- Justify the independence and reference distribution.
+- Connect the result to observed logging and its units.
+
+An absent entry is zero recorded logging, with food consumption unobserved. The paired test treats users as independent draws from a common paired-outcome distribution and does not incorporate platform-wide shocks. Inspect the code that constructs the standard error; a customer-level label is insufficient. The previously shown paired bootstrap uses a different interval construction from the Student interval here. Full reconstruction code appears in M3 §3.18.
+
+Source: M3 §3.18. ../06_Lecture_Notes/modules/M03_Regression.md
+
+## Slide 13: Panel Comparisons
 
 - Customer effects absorb stable customer characteristics.
 - Time effects absorb shocks shared within a period.
@@ -143,7 +169,7 @@ Fixed effects change the variation used for estimation. Stable preferences can b
 
 Source: M3, Section 3.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 12: mHealth: The Next Calendar Day
+## Slide 14: mHealth: The Next Calendar Day
 
 - Relate recorded category breadth to next-day recorded calories.
 - Match exact adjacent calendar dates.
@@ -153,7 +179,7 @@ The next observed row can be several days later. Calling it next-day intake woul
 
 Source: M3, Section 3.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 13: Screening and the Estimated Association
+## Slide 15: Screening and the Estimated Association
 
 mHealth estimates retain the stated outcome timing and sample restrictions.
 
@@ -165,7 +191,7 @@ A robustness comparison should report which rows change and whether the estimand
 
 Source: M3, Section 3.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 14: A Hand-Checkable Regression
+## Slide 16: A Hand-Checkable Regression
 
 Synthetic sales follow a linear relationship.
 
@@ -185,7 +211,7 @@ This example checks the covariance-over-variance calculation. Perfect fit is imp
 
 Source: M3, Section 3.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 15: Coding Exercise: Regression Checks
+## Slide 17: Coding Exercise: Regression Checks
 
 - Generate a model after defining the outcome and information set.
 - Verify the coefficient units and one fitted value manually.
@@ -196,7 +222,7 @@ Run the small OLS case in ../03_Data_and_Code/Lecture_Examples/session_examples.
 
 Source: M3, Section 3.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 16: Prices Respond to Demand
+## Slide 18: Prices Respond to Demand
 
 - Managers can raise prices when demand is unusually strong.
 - An observed price-sales regression can mix demand and pricing choices.
@@ -206,7 +232,7 @@ The course price simulation sets the true elasticity and the source of price end
 
 Source: M3, Section 3.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 17: Evidence for an Advertised Claim
+## Slide 19: Evidence for an Advertised Claim
 
 - A claim that a product cuts costs needs a suitable comparison.
 - An association can reflect selection and omitted demand.
@@ -216,7 +242,7 @@ The FTC advertising-substantiation policy requires a reasonable basis for object
 
 Source: FTC Policy Statement Regarding Advertising Substantiation. https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation
 
-## Slide 18: Response Coefficients and Source Bias
+## Slide 20: Response Coefficients and Source Bias
 
 - A synthetic price comparison combines customer response with price bias.
 - A feature comparison survives when bias stays fixed across feature levels.
@@ -226,7 +252,7 @@ The four-profile model uses response features (1, feature, price) and auxiliary 
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 19: Controls Change the Income Comparison
+## Slide 21: Controls Change the Income Comparison
 
 The CCI income association changes sign after adjustment.
 
@@ -238,7 +264,7 @@ The slope is in index units per $10,000 of area median household income in 2021 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 20: State the Population Behind a Coefficient
+## Slide 22: State the Population Behind a Coefficient
 
 - Equal ZIP weights describe the released geographic sample.
 - Household weights change the geographic projection.
@@ -248,7 +274,7 @@ Household estimates do not supply Windows device counts. State intercepts allow 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 21: Regression Discussion
+## Slide 23: Regression Discussion
 
 - Which comparison supports the coefficient?
 - What variable could reverse its interpretation?

@@ -960,3 +960,23 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+
+## 1.18 Statistical Evidence in an AI-Generated Analysis
+
+\noindent A manager considering a promotion needs an estimate of incremental contribution and an account of its uncertainty. An assistant can produce executable code, a small p-value, and a confident recommendation while treating transactions from the same store as independent observations. The program's successful completion establishes that its instructions ran. The statistical argument also depends on the assignment process, the observation unit, and the relationship between the computed quantity and the manager's question.
+
+[Miao, Mu, Chen, and Zou's Fisher-R1 study](https://arxiv.org/abs/2608.07437) evaluates agents on open-ended hypothesis-testing tasks. On its difficult tasks, Fisher-R1-14B matches the reference reject/nonreject decision in 65.8% of single attempts. Requiring a sufficiently close reference p-value reduces this score to 33.0%. These percentages measure agreement with benchmark answers. A false-positive rate instead requires repeated tests when the null hypothesis is true, as in the store experiment in Section 6.30.
+
+An analysis request should define the population, intervention or comparison, outcome, units, and available information. For an experiment, specify how treatment was assigned. For repeated customer records, identify which observations belong to the same person. Ask the assistant to report the retained sample, estimate, uncertainty calculation, test direction, significance level, and interpretation. Compare its reported quantities with saved numerical output and inspect the code that created the sample and standard error.
+
+| Assessment | Evidence to Examine |
+| --- | --- |
+| Execution | The program finishes on the stated inputs and records its outputs. |
+| Statistical method | The estimand, assignment or sampling unit, dependence, and test match the question. |
+| Numerical reporting | Estimates, intervals, p-values, and decisions agree with the executed calculation. |
+| Managerial interpretation | Effect size, costs, customer outcomes, and the scope of the evidence support the action. |
+
+Matching a reference number can coexist with an unsuitable explanation or an unsupported causal claim. A reference analysis also needs justification. Several procedures can answer related questions with different p-values, and an influential observation does not by itself determine which question the firm should ask. A mean-dollar effect and a rank-order association concern different economic quantities. Choose the target and defensible handling rules before using a favorable result to select the method.
+
+For the [statistical inference exercise](../../07_Labs/Statistical_Inference/README.md), preserve the assistant's initial analysis and written rationale before giving feedback. Check the mHealth sample and uncertainty independently, then evaluate a frozen procedure on newly generated store experiments. Record model and software versions when an assistant is used. The supplied reference programs establish the course calculations; measured AI performance requires actual recorded runs under the stated protocol.

@@ -1,0 +1,3 @@
+method,estimate_pp,se_pp,p_value,ci_low_pp,ci_high_pp,reference_df,independence_unit,interpretation
+paired_users,-5.123023402909551,1.3786531183210098,0.00023670433063589775,-7.834815420842206,-2.411231384976895,339.0,user,descriptive change
+independent_days_contrast,-5.123023402909551,0.6633016181899881,1.131602657705496e-14,-6.423070685449066,-3.8229761203700363,,user-day,deliberately incorrect independence comparison

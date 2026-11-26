@@ -126,6 +126,39 @@ M3, Section 3.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M3, Section 3.6, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M03_Regression.md}}
 \end{frame}
+\begin{frame}{mHealth: Same Change, Different Precision}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Uncertainty Unit & SE (pp) & Two-Sided p \\
+\midrule
+Paired Users & 1.379 & 0.000237 \\
+Independent Days & 0.663 & 1.13e-14 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+340 users; June minus May 2016 logging: −5.123 pp.
+\vfill
+\note{Membership requires a recorded day before May within the established pseudonym-based cohort. May and June have 31 and 30 calendar days. Zero-log users stay in the denominator. The paired test uses a Student approximation with 339 degrees of freedom and interval [-7.835, -2.411] pp. The independent-day comparison deliberately omits within-user dependence and gives [-6.423, -3.823] pp. Both reject zero, so decision agreement conceals a precision error. This is a descriptive temporal change; no intervention assignment is observed.
+
+M3 §3.18. \url{../06_Lecture_Notes/modules/M03_Regression.md}}
+\end{frame}
+\begin{frame}{What the Logging Test Establishes}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Preserve the roster and distinct user-day counts.
+\item Carry both months together for each user.
+\item Justify the independence and reference distribution.
+\item Connect the result to observed logging and its units.
+\end{slidebullets}
+\vfill
+\note{An absent entry is zero recorded logging, with food consumption unobserved. The paired test treats users as independent draws from a common paired-outcome distribution and does not incorporate platform-wide shocks. Inspect the code that constructs the standard error; a customer-level label is insufficient. The previously shown paired bootstrap uses a different interval construction from the Student interval here. Full reconstruction code appears in M3 §3.18.
+
+M3 §3.18. \url{../06_Lecture_Notes/modules/M03_Regression.md}}
+\end{frame}
 \begin{frame}{Panel Comparisons}
 \usebeamercolor[fg]{normal text}
 \vfill

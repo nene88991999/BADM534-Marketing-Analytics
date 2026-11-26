@@ -1,0 +1,33 @@
+{
+  "source_sha256": "2ee04b155a93d51a02ee5acb61ff88a0dde2990b4713668c1b824ae6999ffbea",
+  "cohort_prefix_threshold": 4096,
+  "membership": "observed before 2016-05-01",
+  "users": 340,
+  "outcome": "fraction of calendar days with a recorded food entry",
+  "estimand": "mean within-user June minus May change",
+  "causal_effect": false,
+  "comparisons": [
+    {
+      "method": "paired_users",
+      "estimate_pp": -5.123023402909551,
+      "se_pp": 1.3786531183210098,
+      "p_value": 0.00023670433063589775,
+      "ci_low_pp": -7.834815420842206,
+      "ci_high_pp": -2.411231384976895,
+      "reference_df": 339,
+      "independence_unit": "user",
+      "interpretation": "descriptive change"
+    },
+    {
+      "method": "independent_days_contrast",
+      "estimate_pp": -5.123023402909551,
+      "se_pp": 0.6633016181899881,
+      "p_value": 1.131602657705496e-14,
+      "ci_low_pp": -6.423070685449066,
+      "ci_high_pp": -3.8229761203700363,
+      "reference_df": null,
+      "independence_unit": "user-day",
+      "interpretation": "deliberately incorrect independence comparison"
+    }
+  ]
+}

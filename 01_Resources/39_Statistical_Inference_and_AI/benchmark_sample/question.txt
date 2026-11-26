@@ -1,0 +1,31 @@
+Research Question:
+Are any of the 13 advertising-content feature coefficients associated with loan take-up among former borrowers in a field experiment with a South African consumer lender?
+
+Hypothesis:
+H0: All 13 advertising-content feature coefficients are zero
+H1: At least one advertising-content feature coefficient is nonzero
+
+STUDY DESIGN:
+- Type: Randomized field experiment
+- Unit of observation: Individual borrower
+- Source cohort: Former borrowers of a South African consumer lender
+- Stratification: Risk category and wave
+- Arms: Multiple factorial advertising content treatments
+
+VARIABLE GLOSSARY:
+- tookup: Borrower actually took up a loan (binary: yes/no in CSV) [OUTCOME]
+- speak_trt: Advertisement mentions speaking to a representative (binary: yes/no in CSV) [TREATMENT]
+- stripany: Mailer includes a teaser strip on the envelope (binary: yes/no in CSV) [TREATMENT]
+- dphoto_none: Mailer includes no photograph (binary: yes/no in CSV) [TREATMENT]
+- dphoto_black: Mailer includes a Black model photograph (binary: yes/no in CSV) [TREATMENT]
+- dphoto_female: Mailer includes a female model photograph (binary: yes/no in CSV) [TREATMENT]
+- gender_match: Model gender matches borrower gender (binary: yes/no in CSV) [TREATMENT]
+- race_match: Model race matches borrower race (binary: yes/no in CSV) [TREATMENT]
+- prize: Promotional prize mentioned in the offer (binary: yes/no in CSV) [TREATMENT]
+- oneln_trt: Mailer includes a one-line message treatment (binary: yes/no in CSV) [TREATMENT]
+- use_any: Mailer includes any suggested use for the loan (binary: yes/no in CSV) [TREATMENT]
+- intshown: Interest rate is shown in the mailer (binary: yes/no in CSV) [TREATMENT]
+- comploss_n: Comparison language about losses is included (binary: yes/no in CSV) [TREATMENT]
+- comp_n: Comparison language is included (binary: yes/no in CSV) [TREATMENT]
+- risk: Borrower risk category
+- wave: Mailing wave

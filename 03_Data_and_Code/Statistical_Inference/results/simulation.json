@@ -1,0 +1,20 @@
+{
+  "seed": 20261125,
+  "repetitions_per_rho": 4000,
+  "stores": 40,
+  "customers_per_store": 20,
+  "treated_stores": 20,
+  "outcome_variance": 800.0,
+  "mean_contribution_dollars": 100,
+  "true_effect_dollars": 0,
+  "within_store_correlations": [
+    0.0,
+    0.1,
+    0.3,
+    0.5
+  ],
+  "alpha": 0.05,
+  "hypotheses_per_experiment": 1,
+  "outcome": "synthetic net contribution per customer in dollars",
+  "model_api_calls": 0
+}

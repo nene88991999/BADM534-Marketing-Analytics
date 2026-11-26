@@ -96,3 +96,7 @@ M8 §8.28 and M9 §9.22 examine the November 23, 2026 complaint in Garcia v. The
 ## Digital Usage, Assistance, and Customer Choice
 
 M8 §8.29 and M9 §9.23 examine the difference between offering assistance and imposing a digital channel. The [geographic usage case](../03_Data_and_Code/Digital_Usage/README.md) supplies area-level context. It supplies no individual ability, consent, or customer-service outcome. Kantian critique examines the inference from geographic activity and the authority claimed over a person; Confucian role responsibilities motivate responsive service while preserving correction and customer choice. The proposed assistance evaluation introduces no new legal claim or graded requirement.
+
+## Statistical Evidence and Advertising Claims
+
+M9 §9.24 examines a joint test of consumer-credit advertising coefficients and the premises needed to infer customer benefit. Kantian respect for judgment and refusal and Confucian responsibilities in a relationship of reliance connect the statistical claim to comprehension, repayment burdens, and customer reasons. The benchmark's reference p-value is not presented as a course-replicated empirical finding. M1, M3, and M6 supply separate checks of statistical design and reporting. This addition makes no new legal or policy-status claim.

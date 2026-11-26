@@ -148,3 +148,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Digital Usage and Inclusion
 
 The [digital-usage library](38_Digital_Usage_and_Inclusion/README.md) archives the licensed article and supplement, pins the public release, and documents Census sources. Original calculations distinguish geographic activity from individual ability, reproduce the source example under two log conventions, and examine assistance and access.
+
+## Statistical Inference and AI-Assisted Analysis
+
+The [Fisher-R1 source collection](39_Statistical_Inference_and_AI/README.md) archives the licensed paper and a benchmark question, documents the inspected repository, and distinguishes answer agreement from statistical calibration. Original mHealth and store-randomization examples connect M1, M3, M6, and M9.

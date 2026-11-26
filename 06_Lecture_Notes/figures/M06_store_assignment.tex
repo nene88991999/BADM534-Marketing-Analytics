@@ -1,0 +1,12 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[orangebox,text width=4.5cm] (a) at (2.4,0) {20 Stores Receive\\the Promotion};
+\node[box,text width=4.5cm] (b) at (8.7,0) {20 Stores Receive\\Control};
+\node[box,text width=4.5cm] (c) at (2.4,-2.2) {20 Customers per Store\\Shared Store Shock +\\Individual Customer Shock};
+\node[box,text width=4.5cm] (d) at (8.7,-2.2) {20 Customers per Store\\Shared Store Shock +\\Individual Customer Shock};
+\draw[accent] (a) -- (c); \draw[edge] (b) -- (d);
+\node[box,text width=4.5cm] (e) at (2.4,-4.5) {Average 20 Store Means};
+\node[box,text width=4.5cm] (f) at (8.7,-4.5) {Average 20 Store Means};
+\draw[edge] (c) -- (e); \draw[edge] (d) -- (f);
+\draw[<->,very thick,IlliniOrange] (e) -- node[above,font=\footnotesize] {Contrast} (f);
+\node[align=center,text width=12cm,font=\footnotesize] at (5.55,-5.9) {Synthetic experiment: 40 independent stores and 800 customer outcomes.\\Equal store sizes preserve the customer-average point estimate.\\Shared shocks change its sampling uncertainty.};
+\end{tikzpicture}
