@@ -145,3 +145,9 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Statistical Claims, Household Burdens, and Agency
 
 The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
+The [statistical-inference examples](Statistical_Inference/README.md) also implement Donald W. K. Andrews's inverse-power framework and synthetic logical counterexamples. M6 §6.34 and M9 §9.27 retain their complete runnable Python.
+
+## Institutional Exposure Examples
+
+[Statistical Inference](Statistical_Inference/README.md) includes synthetic household-bill identities, a comparison with a cancelled-project donor, and annual cost-recovery scenarios. Full runnable code appears in M6 §6.35.

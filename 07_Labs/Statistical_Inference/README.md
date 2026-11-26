@@ -52,3 +52,29 @@ Use the [electricity paper and companion](../../01_Resources/41_Statistical_Clai
 Compare the verified HBS article with the reported bounds. Identify the speaker, exact claim, date, population, and uncertainty. A corporate dissemination claim requires a specific verified corporate statement. Distinguish the harm a misleading inference could cause from observed consequences established by a causal study.
 
 Use the synthetic household allocations to explain why equal mean prices leave distribution unresolved. Then specify evidence about access to reasons, challenge, review, and remedy. Distinguish payment, compliance, endorsement, and authorization. Evaluate a rule that permits interested firms to call an insensitive non-rejection harmless using Kantian universalization, respect for persons, and Confucian trustworthiness. State a defensible approval recommendation, a justified harm threshold, the unresolved risks, and which party should substantiate or bear them.
+
+## Reconstruct and Test an Argument
+
+Use M6 §6.34, M9 §9.27, and the [argument record](../../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md).
+
+1. Choose one exact claim and record its speaker, page or table, population, time horizon, and degree of certainty. Separate a quotation from your reconstruction.
+2. List the reported premises and the additional premise needed for the conclusion. Classify its role: measurement, identification, extrapolation, sampling, or ethical justification.
+3. Construct an account in which the reported premises hold and the conclusion fails. Explain which observation could exclude it. Do not present logical possibility as an estimated likelihood or an observed harm.
+4. Run `andrews_inverse_power.py`. Reproduce the 50%, 80%, 90%, and 95% thresholds. Explain why the MDE remains fixed when the realized estimate changes while the confidence bound moves. Identify Donald W. K. Andrews's contribution and the fixed-Wald approximation used here.
+5. Use the joint synthetic test to explain why a nonsignificant multivariate result needs direction-specific sensitivity. Identify why the paper's marginal developer SEs are insufficient to perform that calculation for its contrast.
+6. Run `logical_counterexamples.py`. Verify exact historical agreement and the future divergence. State the extrapolation restriction that would rule out the threshold account, then identify evidence that could justify it.
+7. Write the strongest conclusion currently supported. Preserve contrary findings and qualifications. State what would change your assessment.
+
+A complete response distinguishes a validity failure from a false premise, a scope change, and a genuine contradiction. It uses the reported joint test, preserves units and reference exposure, and keeps harm, intention, and corporate dissemination tied to verified evidence. These are discussion criteria for public ungraded practice.
+
+## Assess the Institutional Comparison
+
+Use the original `institutional_exposure.py` program and M6 §6.35. This practice is optional and ungraded.
+
+1. Reconstruct mean expenditure from revenue, energy sales, and customer-months. Explain why unchanged average revenue per MWh can coexist with higher bills.
+2. Verify the three-utility table and its USD 4/MWh change difference. Identify the cost subtracted by the weighted donor comparison.
+3. Change the cancelled-project cost to zero, ten, and a negative value. Explain which assumptions determine the direction of the resulting difference.
+4. Move a preparatory cost into the fitting period or a recovery charge beyond the observation horizon. State the resulting timing problem without claiming to replicate the paper's estimator.
+5. Compare full and partial developer payment, disallowed recovery, and asset reuse. Keep all cost inputs in annual dollars before dividing by annual MWh.
+6. Propose a dated project panel and a donor screen using information available at the comparison date. Explain why selecting only eventual successes or failures could introduce further selection.
+7. State the additional evidence needed to distinguish an institutional risk from a demonstrated error in the published estimate. Separate price, expenditure, affordability, and authority to allocate costs.

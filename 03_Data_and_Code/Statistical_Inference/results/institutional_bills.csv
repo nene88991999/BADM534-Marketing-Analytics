@@ -1,0 +1,4 @@
+scenario,revenue_usd,sales_mwh,customer_months,average_price_usd_mwh,use_mwh_per_customer_month,bill_usd_per_customer_month
+baseline,100000.0,1000.0,1000,100.0,1.0,100.0
+more_use_same_average_price,110000.0,1100.0,1000,100.0,1.1,110.0
+higher_price_less_use,100000.0,800.0,1000,125.0,0.8,100.0

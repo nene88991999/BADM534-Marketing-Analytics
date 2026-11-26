@@ -48,3 +48,7 @@ The guide and catalog supply Markdown descriptions of the readings and their cou
 ## Pricing Systems and Customer Choice
 
 [The Wendy's case](../37_Pricing_Systems_and_Competition/README.md) motivates M9 §9.22 on pricing authority, truthful explanation, customer alternatives, and the burden of justification. The original synthetic comparison in M4 supplies model-based customer outcomes. The philosophical application does not determine the truth of the complaint's allegations.
+
+## Stakeholders, Reasons, and Public Voice
+
+The [supplemental reading guide](07_Stakeholders_and_Reasons/README.md) adds Scanlon on justification, stakeholder obligations, and epistemic justice. Its separate catalog contains 12 records, with four local PDFs and eight records assessed through primary abstracts. M9 §§9.28–9.32 connects these arguments to publication, customer choice, and residents' opportunities to contest public reassurance. [Optional practice](../../07_Labs/Philosophical_Arguments/README.md) asks for factual premises, a defended normative principle, a feasible alternative, and a conditional conclusion using “ought.”

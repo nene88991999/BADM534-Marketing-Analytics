@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[width=12.7cm,height=7.3cm,xmin=0,xmax=2.2,ymin=0,ymax=7.4,
+ xlabel={True Effect on Outcome A (\$/MWh)},ylabel={True Effect on Outcome B (\$/MWh)},
+ xtick={0,0.5,1,1.5,2},ytick={0,2,4,6},grid=major,
+ title={Same Joint Test, Different Detectable Directions},title style={font=\small}]
+\addplot[IlliniBlue,very thick,domain=0:90,samples=91] ({1.5519897606*cos(x)},{6.2079590424*sin(x)});
+\addplot[only marks,mark=*,IlliniOrange,mark size=3pt] coordinates {(1.5519897606,0) (0,6.2079590424) (1.5056512265,1.5056512265)};
+\draw[->,thick,IlliniOrange] (axis cs:0,0) -- (axis cs:1.5056512265,1.5056512265);
+\node[anchor=south west,font=\footnotesize] at (axis cs:0.04,6.2079590424) {B only: \$6.21};
+\node[anchor=south west,font=\footnotesize] at (axis cs:1.5519897606,0.12) {A only: \$1.55};
+\node[anchor=west,align=left,font=\footnotesize] at (axis cs:0.15,3.15) {Below 80\% power\\inside the curve};
+\node[anchor=west,align=left,font=\footnotesize] at (axis cs:1.15,5.8) {Above 80\% power\\outside the curve};
+\end{axis}
+\node[align=center,text width=12cm,font=\footnotesize] at (5.6,-2.0) {Synthetic independent estimates: SE(A) = \$0.50, SE(B) = \$2.00.\\Joint zero-null Wald test, two restrictions, size 5\%. Every point on the curve has 80\% power.};
+\end{tikzpicture}

@@ -1,0 +1,5 @@
+scenario,annual_requirement_usd,developer_annual_payment_usd,reusable_annual_offset_usd,allowed_fraction,residential_share,annual_residential_mwh,residential_increase_usd_mwh
+no_developer_payment,1000000.0,0.0,0.0,1.0,0.8,100000.0,8.0
+partial_developer_payment,1000000.0,500000.0,0.0,1.0,0.8,100000.0,4.0
+full_developer_payment,1000000.0,1000000.0,0.0,1.0,0.8,100000.0,0.0
+recovery_disallowed,1000000.0,0.0,0.0,0.0,0.8,100000.0,0.0

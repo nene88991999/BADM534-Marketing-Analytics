@@ -130,6 +130,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Statistical_Inference/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "philosophical-arguments",
+      "path": "07_Labs/Philosophical_Arguments/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -362,7 +368,12 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/41_Statistical_Claims_and_Decisions/README.md",
     "01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md",
     "01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md",
-    "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md"
+    "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md",
+    "01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md",
+    "07_Labs/Philosophical_Arguments/README.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -411,12 +422,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-statistical-claims",
+    "revision": "2026-11-26-reasons-stakeholders-and-evidence",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 121,
-    "pages": 480,
+    "figures_count": 126,
+    "pages": 507,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -529,7 +540,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 442,
+    "slides": 456,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -617,7 +628,7 @@ Generated from course.json and the source files identified below. This file cont
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; Hume and Smith on scrutiny; Confucian conduct; marketing research and industry cases",
+    "coverage": "Kantian critique and ethics; Hume and Smith on scrutiny; Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
@@ -1102,7 +1113,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-statistical-claims",
+  "revision": "2026-11-26-reasons-stakeholders-and-evidence",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1300,22 +1311,89 @@ Generated from course.json and the source files identified below. This file cont
     "sections": [
       "M2 \u00a72.28",
       "M3 \u00a73.19",
-      "M6 \u00a7\u00a76.32\u20136.33",
+      "M6 \u00a7\u00a76.32\u20136.35",
       "M8 \u00a78.31",
-      "M9 \u00a7\u00a79.25\u20139.26"
+      "M9 \u00a7\u00a79.25\u20139.27"
     ],
     "sessions": [
       4,
       9,
       14
     ],
-    "new_programs_executed": 4,
-    "new_independent_tests_passed": 15,
-    "original_figures": 5,
-    "additional_slides": 11,
+    "new_programs_executed": 7,
+    "new_independent_tests_passed": 29,
+    "original_figures": 8,
+    "additional_slides": 19,
     "model_calls": 0,
     "upstream_execution": false,
-    "scope": "Original synthetic experiments and decision examples; reported-table normal-approximation calculations; philosophical critique. No utility-panel replication, verified corporate X post, or established downstream harm."
+    "scope": "Original synthetic experiments and decision examples; reported-table normal-approximation calculations; philosophical critique. No utility-panel replication, verified corporate X post, or established downstream harm.",
+    "public_communication": "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md",
+    "related_philosophical_arguments": "philosophical_arguments"
+  },
+  "logic_and_inverse_power": {
+    "implemented_on": "2026-11-26",
+    "argument_assessment": "01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md",
+    "power_source": "https://doi.org/10.2307/1913623",
+    "sections": [
+      "M6 \u00a76.34",
+      "M9 \u00a79.27"
+    ],
+    "sessions": [
+      9,
+      14
+    ],
+    "additional_slides": 5,
+    "original_figures": 2,
+    "programs": [
+      "03_Data_and_Code/Statistical_Inference/andrews_inverse_power.py",
+      "03_Data_and_Code/Statistical_Inference/logical_counterexamples.py"
+    ],
+    "scope": "Fixed Gaussian/Wald inverse power from rounded reported SEs; original synthetic counterexamples. No utility-panel replication, corporate X verification, or empirical harm attribution.",
+    "tests_passed": 39,
+    "new_tests_passed": 8,
+    "matching_python_blocks": 113,
+    "fresh_result_exports": 5,
+    "fresh_figure_exports": 2
+  },
+  "institutional_exposure": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M2 \u00a72.28.1",
+      "M6 \u00a76.35",
+      "M9 \u00a79.27.6"
+    ],
+    "sessions": [
+      9,
+      14
+    ],
+    "resource_guide": "01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md",
+    "program": "03_Data_and_Code/Statistical_Inference/institutional_exposure.py",
+    "data_status": "Synthetic accounting and two-period counterexamples; actual project histories and household bills are unavailable.",
+    "claim_scope": "A risk to treatment measurement and donor eligibility; no verified contamination or bias magnitude in the original study.",
+    "figure": "06_Lecture_Notes/figures/M06_institutional_exposure.tex",
+    "policy_sources_checked": "2026-11-26",
+    "new_independent_tests_passed": 6,
+    "fresh_result_exports": 4,
+    "additional_slides": 3,
+    "original_figures": 1
+  },
+  "philosophical_arguments": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M1 \u00a71.1",
+      "M8 \u00a78.31",
+      "M9 \u00a7\u00a79.28\u20139.32"
+    ],
+    "session": 14,
+    "resources": "01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md",
+    "catalog": "01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/catalog.json",
+    "practice": "07_Labs/Philosophical_Arguments/README.md",
+    "additional_slides": 6,
+    "original_figures": 2,
+    "supplemental_source_records": 12,
+    "local_reading_pdfs": 4,
+    "public_original_pdfs": 0,
+    "scope": "Normative arguments and hypothetical applications; actual suppression of residents' objections and corporate X promotion remain unverified."
   }
 }
 ```
@@ -1458,6 +1536,18 @@ The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects publ
 ## Statistical Claims, Household Burdens, and Agency
 
 The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutional Context and Household Costs
+
+The recurring electricity case now connects average prices to household expenditure and operating entry to the wider project pipeline. [Worked Python examples](03_Data_and_Code/Statistical_Inference/README.md) show how cancelled projects and cost-recovery rules can change a comparison. See the [institutional assessment](01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md), M2 §2.28.1, M6 §6.35, and M9 §9.27.6.
+
+## Reasons and Affected People
+
+[Marketing Dialectics](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) now includes Scanlonian arguments, stakeholder obligations, public voice, and publication responsibility. [Optional practice](07_Labs/Philosophical_Arguments/README.md) asks students to defend what an actor ought to do and answer the strongest objection from an affected person's position.
 
 ---
 
@@ -1804,6 +1894,18 @@ M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24 connect [pu
 
 The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
 
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutions, Measurement, and Treatment
+
+The electricity case connects M2 §2.28.1 (prices and bills), M6 §6.35 (project timelines and exposed controls), and M9 §9.27.6 (missing institutional premises). [Complete synthetic code](03_Data_and_Code/Statistical_Inference/institutional_exposure.py) and the [source assessment](01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) accompany Sessions 9 and 14. Actual donor contamination and household incidence remain empirical questions requiring project and payment records.
+
+## Reasons, Stakeholders, and Public Voice
+
+M1 §1.1 connects a managerial recommendation to a normative premise. M8 §8.31 examines public reassurance. M9 §§9.28–9.32 develops Scanlonian argument, stakeholder duties, publication choices, and residents' opportunities to contest claims. [Optional practice](07_Labs/Philosophical_Arguments/README.md) carries these questions across M1–M9; Session 14 includes the two new editable diagrams.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2092,6 +2194,12 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
 
+The [statistical-inference examples](Statistical_Inference/README.md) also implement Donald W. K. Andrews's inverse-power framework and synthetic logical counterexamples. M6 §6.34 and M9 §9.27 retain their complete runnable Python.
+
+## Institutional Exposure Examples
+
+[Statistical Inference](Statistical_Inference/README.md) includes synthetic household-bill identities, a comparison with a cancelled-project donor, and annual cost-recovery scenarios. Full runnable code appears in M6 §6.35.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2100,7 +2208,7 @@ The [statistical-claims examples](Statistical_Inference/README.md) connect repea
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [480-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 121 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [507-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 126 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2176,7 +2284,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 110 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 113 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -2288,6 +2396,18 @@ M1 §1.19 reconstructs published success and failure counts; M6 §6.31 compares 
 
 The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
 
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutions and the Empirical Comparison
+
+M2 §2.28.1 develops the price/bill accounting distinction. M6 §6.35 provides complete Python, four synthetic tables, and a TikZ diagram for project exposure, donor costs, and conditional recovery. M9 §9.27.6 identifies the institutional premises required by broader claims. The case preserves the paper's regulatory discussion while assessing the scope of its operational treatment and outcome definitions.
+
+## Reasons, Stakeholders, and Public Voice
+
+M9 §§9.28–9.32 develops publication responsibility, Scanlonian justification, stakeholder duties, pricing communication, and residents' voice. Two editable TikZ figures distinguish factual and normative premises and compare reasons for rejecting alternative principles. M1 and M8 connect these arguments to managerial recommendations and public claims.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -2356,7 +2476,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 442 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 456 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2500,6 +2620,18 @@ Sessions 1, 4, 9, 11, and 14 include six additional slides on published workflow
 ## Statistical Claims and the Ethics of Public Reassurance
 
 The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutional Exposure
+
+Sessions 9 and 14 connect project status, earlier investment, cancellation risk, and household expenditure. The additional TikZ diagram and two discussion slides accompany complete worked examples in M2 §2.28.1, M6 §6.35, and M9 §9.27.6. The [institutional assessment](../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) distinguishes verified source definitions from proposed mechanisms and synthetic calculations.
+
+## Reasons, Stakeholders, and Public Voice
+
+Session 14 adds two premise-and-rejection diagrams and discussions of stakeholder duties, residents' voice, publication, and favorable framing. Its 170-minute allocation is unchanged; extended derivations and case exercises remain available for optional practice.
 
 ---
 
@@ -3049,6 +3181,18 @@ The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md
 
 The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
 
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Project Pipelines and Household Expenditure
+
+M2 §2.28.1 separates average revenue per MWh from household bills through a matched-denominator identity. M6 §6.35 adds requests, preparatory investment, cancellation, operating entry, and cost recovery to the treatment definition. Full synthetic Python and an editable TikZ diagram show how costs in a nominally untreated donor alter a comparison. M9 §9.27.6 identifies the missing institutional premises. The [source assessment](../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) records the Bloomberg report and primary operator, FERC, and EIA evidence.
+
+## Reasons and Stakeholder Obligations
+
+The supplemental Scanlon and stakeholder collection supports M9 §§9.28–9.32, with recurring applications in M1 and M8. Source access and reading extent are recorded in [the guide](../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md). The figures and optional practice use hypothetical cancellation procedures. The electricity application distinguishes nearby residents, customers, cost incidence, and access to a hearing.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3412,12 +3556,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 33 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 36 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 57 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 68 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -3601,7 +3745,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Donald Andrews inverse power and nuisance-parameter sensitivity.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test.
 
@@ -3711,9 +3855,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility. Equivalence, data-center reassurance, ontology, and household authority.
+**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence.
 
-**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.; evidence, conceptual scope, and the ability to contest cost allocation.
+**Ethics and Regulation:** Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3723,9 +3867,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 50–60 | Personalized-Pricing Evidence and Benchmarks |
 | 60–70 | Wendy's Pricing Case and Evidence |
 | 70–80 | Break |
-| 80–90 | Kantian and Confucian Evaluation of Pricing |
-| 90–95 | Justification and Independent Reasons |
-| 95–100 | Definitions, Evidence, and Customer Authorization |
+| 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
+| 90–95 | Premises and an Ought Conclusion |
+| 95–100 | Stakeholder Reasons and Public Voice |
 | 100–110 | Demand Information and Pricing Objectives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
@@ -3758,6 +3902,14 @@ The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the ed
 ## Repeated Evidence and the Electricity Case
 
 Session 4 uses the worked comparison for repeated p-values and the ethics discussion for utility averages and household burdens. Session 9 compares significance with profit and evaluates the electricity paper using its own tables. Session 14 examines equivalence, public reassurance, ontology, and household authority within the existing Marketing Dialectics discussion. Longer simulations and source critique remain [optional ungraded practice](../07_Labs/Statistical_Inference/README.md).
+
+## Project Exposure and Household Costs
+
+Sessions 9 and 14 connect operational treatment to project requests, investment, cancellation, and cost recovery. The worked comparison shows how a nominally untreated donor can bear project costs. Household expenditure is distinguished from average revenue per MWh. These examples extend the existing methods and ethics discussions within the established 170-minute allocations.
+
+## Philosophical Arguments in Session 14
+
+Minutes 80–90 compare Kantian, Confucian, and Scanlonian reasons; minutes 90–95 connect premises to an ought conclusion; minutes 95–100 examine stakeholder reasons and public voice. These labels refine existing discussion blocks. Selected figures and arguments support the meeting; the full extended cases remain optional reading and practice.
 
 ---
 
@@ -3916,6 +4068,18 @@ Use the [published comparison and original cases](../03_Data_and_Code/Agent_Work
 
 Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.
 
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutional Context in Empirical Evaluation
+
+The recurring electricity case distinguishes average unit prices from household bills and completed facilities from the project pipeline. Sessions 9 and 14 use a synthetic comparison to examine cancelled projects, donor exposure, and cost recovery. The discussion fits the existing methods and ethics allocations. The syllabus calendar, assessment requirements, and course-wide AI policy retain their existing release status.
+
+## Stakeholder Reasons and Public Claims
+
+The existing Session 14 philosophy discussion includes defended normative premises, Scanlonian reasonable rejection, stakeholder obligations, and residents' opportunities to challenge public evidence. M9 §§9.28–9.32 and the optional Philosophical Arguments practice support this coverage. Meeting dates, the 170-minute allocation, and released assessment requirements are unchanged.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -4030,6 +4194,18 @@ M1 §1.19 and M9 §9.24 connect correct numerical implementation to responsibili
 ## Statistical Claims and the Ethics of Public Reassurance
 
 The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Project Costs and the Scope of Customer Protection
+
+The institutional example distinguishes operating entry from requests, investment, cancellation, and allowed recovery. The [source record](../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) identifies Ohio Power's July 23, 2025 tariff effective date and the February 17, 2026 FERC concurrence's federal transmission scope. A commissioner's reasoning, an operator's service terms, and reported customer protection are distinct evidence. These sources motivate investigation; they do not establish contracts, contamination, or household harms in the paper's historical sample. M6 §6.35 and M9 §9.27.6 connect enforceable obligations to cost incidence and opportunities for review.
+
+## Stakeholder Reasons and Public Communication
+
+M9 §§9.28–9.32 evaluates proposed duties through Scanlonian reasonable rejection and distinct stakeholder theories. These are philosophical arguments, not newly established legal requirements. The hypothetical university-branded headline remains separate from the verified HBS coverage. The [communication record](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) distinguishes public evidence, institutional hypotheses, and publication remedies.
 
 ---
 
@@ -4800,6 +4976,10 @@ The guide and catalog supply Markdown descriptions of the readings and their cou
 ## Pricing Systems and Customer Choice
 
 [The Wendy's case](../37_Pricing_Systems_and_Competition/README.md) motivates M9 §9.22 on pricing authority, truthful explanation, customer alternatives, and the burden of justification. The original synthetic comparison in M4 supplies model-based customer outcomes. The philosophical application does not determine the truth of the complaint's allegations.
+
+## Stakeholders, Reasons, and Public Voice
+
+The [supplemental reading guide](07_Stakeholders_and_Reasons/README.md) adds Scanlon on justification, stakeholder obligations, and epistemic justice. Its separate catalog contains 12 records, with four local PDFs and eight records assessed through primary abstracts. M9 §§9.28–9.32 connects these arguments to publication, customer choice, and residents' opportunities to contest public reassurance. [Optional practice](../../07_Labs/Philosophical_Arguments/README.md) asks for factual premises, a defended normative principle, a feasible alternative, and a conditional conclusion using “ought.”
 
 ---
 
@@ -5654,6 +5834,334 @@ The data-center case also exposes an asymmetry in the burden of proof. Household
 
 A rigorous criticism remains answerable to evidence. The paper reports positive price effects in several specifications, acknowledges important design limits, and leaves particular mechanisms unresolved. Its tables support a strong rejection of categorical harmlessness. They do not establish the magnitude of every household's loss or settle the overall merits of data-center development. The ethical failure arises when a narrow and uncertain result acquires authority to dismiss people and consequences it has not adequately assessed.
 
+## 9.27 Logical Assessment of an Empirical Argument
+
+\noindent A regulator deciding whether to waive a financial safeguard must evaluate the argument that research offers for doing so. A precise coefficient can support an invalid inference, while a logically valid argument can rest on an unverified premise. The first task is to write the conclusion in terms of the affected people, outcome, time horizon, and degree of certainty. The next is to identify the reported facts and the further assumptions that connect them to that conclusion.
+
+### 9.27.1 Premises, Consequences, and Counterexamples
+
+\noindent An argument is deductively valid when its conclusion holds whenever all its premises hold. Soundness additionally requires the premises to be true. Empirical inference usually depends on sampling and identification assumptions, so an assessment must state the uncertainty attached to its conclusion. A p-value is evidence generated by a statistical procedure; it is not a truth value assigned to an economic proposition.
+
+Let $E$ contain the stated evidence and $A$ the maintained assumptions. Let $\mathcal M(E,A)$ be the nonempty class of accounts consistent with those premises. A categorical conclusion $C$ follows only if
+
+$$
+m\models C\quad\text{for every }m\in\mathcal M(E,A).
+$$
+
+Here $m\models C$ means that the conclusion is true in account $m$. A counterexample is one admissible account in which the premises hold and $C$ fails. It defeats the asserted entailment. Establishing which account actually generated the observations remains an empirical task. Requiring the class to be nonempty also matters: contradictory premises can support a formally valid implication without describing any possible economy.
+
+The existence of a favorable model establishes compatibility. A conclusion that holds throughout a justified class establishes a stronger result. A fitted model supplies conditional predictions; using those predictions outside the fitted domain adds stability assumptions. Each distinction determines what a paper can reasonably claim and which observation could overturn that claim.
+
+### 9.27.2 Reconstruct the Electricity Arguments
+
+\noindent The electricity paper and its public interpretation supply several distinct arguments to examine. The strongest criticism grants the reported calculations where they are correct and identifies the inference that exceeds them.
+
+**Nonrejection and harmlessness.** The evidentiary premise is that a particular zero-null test does not reject at a chosen level. The advertised conclusion is that the relevant facilities have imposed no consumer electricity cost. The inference needs a premise connecting nonrejection to the exclusion of meaningful positive effects. That premise fails for the reported precision. The four-owner claim is assessed against Table 4 in §9.26. For the separate pooled residential comparison in §6.33, a true increase of $2/MWh would produce nonrejection about 53% of the time under the stated normal approximation. The event used to support reassurance can therefore occur frequently when the concerning effect is present. Andrews's inverse-power calculation in §6.34 makes the missing sensitivity explicit. It does not prove that the concerning effect occurred.
+
+**An exhaustive category becomes a substantive mechanism.** Section 4.1 partitions owners into four named firms and everyone else. That partition makes the two owner categories exhaustive by construction. It does not establish that the complement consists entirely of facilities leasing space to other businesses. The conclusion changes the predicate from owner identity to operating model. Facility contracts and operations must support that translation. The inclusion of Apple among other owners, alongside Apple's distinction between owned centers and colocation, makes the missing classification evidence concrete; it does not establish the operating model of every sampled Apple facility.
+
+**An accounting remainder becomes a causal explanation.** Page 3 attributes the remaining 96% of residential price growth to named cost drivers. The subtraction behind that percentage is reproducible. Its causal interpretation requires the named drivers to exhaust the remaining change, an appropriate additive decomposition, comparable denominators and samples, and evidence for the components. A remainder can include several unmeasured causes, interactions, measurement changes, and estimation error. Labeling the remainder supplies none of those identifying restrictions.
+
+**An unresolved sales response selects an infrastructure mechanism.** Table 7 leaves substantial sales increases compatible with its reported uncertainty. Even if the net sales response were precisely zero, offsetting changes in other customers' use or a lag between connection and utilization could produce that net result. A net quantity is distinct from each component of demand. Establishing infrastructure dominance requires evidence separating infrastructure, procurement, utilization, displacement, and recovery timing. An insignificant competing channel cannot perform that separation.
+
+**A ratio inherits the meaning of its numerator.** The cost outcome is dollars per MWh, while the model's revenue requirement is a total dollar amount. A synthetic utility with costs of $1,000 and sales of 10 MWh has costs of $100/MWh. Costs of $1,100 and sales of 11 MWh preserve the ratio while increasing the numerator. Holding costs at $1,000 and lowering sales to 8 MWh raises the ratio to $125/MWh without any cost increase. These counterexamples invalidate an unrestricted numerator interpretation. They do not estimate which change occurred in the paper's utilities.
+
+**A mean becomes a statement about every household.** A conclusion about an average and a conclusion about each person use different quantifiers. The equal-average allocations in §2.28 show that a two-dollar mean can arise from a uniform small burden or a concentrated larger burden. A perfectly estimated mean would leave that distinction unresolved. Calling the mean harmless further requires a justified threshold and a welfare interpretation that accounts for exposure, resources, and time.
+
+These arguments have different defects. The ownership and cost examples change the meaning of an analytical object. The average-to-each-person claim changes the quantifier. The residual and mechanism claims omit identifying premises. The nonrejection claim assigns a conclusion the test was not designed to establish. Giving every defect the same fallacy label would hide the evidence needed to repair it.
+
+### 9.27.3 Historical Fit and Future Necessity
+
+\noindent A developer may argue that a small historical coefficient establishes small future costs. Grant a stronger premise than the study provides: suppose the complete price-response function is known exactly over the historical load range. That still leaves responses outside the range unresolved without an extrapolation restriction.
+
+Let $x$ be a normalized load index whose assumed historical support is $[0,1]$. Two hypothetical price-response functions, in dollars per MWh, are
+
+$$
+g_1(x)=2x,\qquad g_2(x)=2x+10\max\{x-1,0\}^2.
+$$
+
+The two functions coincide at every historically supported load. At $x=2$, they imply increases of $4 and $14/MWh. The second function adds a capacity cost above the historical boundary. Both remain possible when the premise consists only of the historical response. Selecting the first requires a stability or functional-form restriction. The electricity paper's headroom mechanism makes a threshold economically relevant, but this construction is synthetic and estimates no actual threshold or future price.
+
+![Two synthetic price-response functions coincide throughout the assumed historical load range and diverge beyond it. Exact agreement over observed support leaves the future response unresolved.](../figures/M09_counterexample_extrapolation.png)
+
+This is a counterexample to the general inference from historical fit to unrestricted extrapolation. It is also a guide to useful evidence: examine capacity constraints, contracts, rate-recovery timing, and effects across supported load levels. The paper acknowledges uncertainty about future conditions. Preserve that qualification when assessing a stronger claim made from its findings.
+
+### 9.27.4 Outcomes, Ability, and Permission
+
+\noindent Consider two hypothetical jurisdictions with the same household bills and recorded use. In one, households can inspect cost-allocation reasons, challenge an error, and obtain an effective remedy. In the other, the decision is inaccessible and no effective challenge is available. Equal observed outcomes do not identify equal authority. The distinction between possible outcomes, available actions, information, and permissible conduct is central to logical accounts of protocols. [Pacuit and Simon, Reasoning with Protocols Under Imperfect Information, pp. 412–415](https://doi.org/10.1017/S1755020311000190).
+
+An observed payment establishes conduct under the available conditions. Inferring endorsement requires evidence about understanding, alternatives, and the person's reasons. Inferring permission to impose a burden requires a normative premise about whose interests and authority justify the action. A price regression supplies neither premise automatically. This does not give every household a veto; it makes the allocation and justification of authority an explicit part of the policy argument.
+
+The philosophical criticism becomes strongest when it identifies the exact missing relation. A small expected price effect can coexist with an objectionable decision procedure. A procedurally legitimate decision can still impose an unfair distribution of costs. Evidence about prices, distribution, and authority addresses these concerns separately. Treating one coefficient as a certificate for all three gives analytical authority to conclusions it has not established.
+
+### 9.27.5 Build a Criticism That Can Survive a Reply
+
+\noindent Record the exact claim, speaker, page or table, population, and date. State the premises charitably, including the paper's positive findings and qualifications. Then identify the added inference and construct a counterexample that preserves those premises. Finally, state the evidence or restriction that would exclude the counterexample, and rewrite the conclusion at the strength currently supported.
+
+A contradiction requires incompatible propositions about the same object under the same conditions. An unsupported extension, a change of definition, an imprecise estimate, and a genuine contradiction are different findings. Table 4's reported equality-test p-value of 0.101 exceeds the displayed 10% convention despite the accompanying significance language. That is a specific reporting inconsistency. The broader inference from an uncertain price coefficient to harmlessness is a failure of justification. Neither finding establishes an author's intention.
+
+The decision consequence is concrete. Unresolved harm should remain visible when an authority allocates risk and chooses safeguards. A paper weakens that decision when a correct calculation is used to conceal the premises its recommendation still needs. A defensible criticism exposes those premises, identifies what evidence could resolve them, and applies the same standard to conclusions favorable and unfavorable to the developer.
+
+The synthetic response and cost-ratio examples can be reproduced from the repository root:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/logical_counterexamples.py
+```
+
+
+Python source: [logical_counterexamples.py](../../03_Data_and_Code/Statistical_Inference/logical_counterexamples.py)
+
+```python
+"""Construct synthetic counterexamples to extrapolation and ratio interpretations.
+
+No observation from the data-center study is used in these constructions.
+"""
+import csv
+from fractions import Fraction
+from pathlib import Path
+
+OUTPUT = Path(__file__).resolve().parent / "results"
+
+
+def price_responses(load):
+    """Load is a normalized index; responses have hypothetical USD/MWh units."""
+    linear = 2*load
+    capacity_threshold = linear + 10*max(load-1, 0)**2
+    return linear, capacity_threshold
+
+
+def write_rows(name, rows):
+    with (OUTPUT/name).open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=rows[0])
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    OUTPUT.mkdir(exist_ok=True)
+    rows = []
+    for load in [Fraction(i, 4) for i in range(5)]+[Fraction(2)]:
+        a, b = price_responses(load)
+        rows.append(dict(load=float(load), linear=float(a), threshold=float(b),
+                         within_assumed_historical_support=load <= 1))
+    write_rows("logic_extrapolation.csv", rows)
+    # Hypothetical one-period totals in dollars and MWh.
+    rows = []
+    for label, cost, sales in [("baseline", 1000, 10),
+                               ("cost_and_sales_rise", 1100, 11),
+                               ("sales_fall", 1000, 8)]:
+        rows.append(dict(case=label, total_cost_usd=cost, sales_mwh=sales,
+                         cost_per_mwh=float(Fraction(cost, sales))))
+    write_rows("logic_cost_ratios.csv", rows)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 9.27.6 Institutional Facts Supply Missing Premises
+
+\noindent Zero operating additions establish an unexposed utility only if relevant costs neither precede operation nor survive cancellation. Investment followed by cancellation and allowed recovery is a counterexample: customers bear costs despite zero operating additions. Section 6.35 shows how those donor costs reduce a synthetic comparison gap. The actual study's exposure and bias require its donor weights and project histories.
+
+Revenue per MWh and expenditure per household are also different economic objects. Section 2.28.1 constructs flat average prices with rising bills, refuting a general implication from flat prices to flat expenditure. It attributes no bill increase to data centers. Measurement validity and causal attribution require separate evidence.
+
+Institutional knowledge changes the ethical question. A developer's project may never operate, yet households may bear preparatory costs. The relevant decisions concern who authorized spending, who bore cancellation risk, which guarantees were enforceable, and whether customers could challenge the allocation. Treating operating capacity as a complete account of that relationship removes consequential obligations. Statistical precision cannot supply the missing premise.
+
+## 9.28 The Data-Center Case as Marketing Dialectics
+
+\noindent A developer seeking approval may offer an efficiency argument: additional demand can spread shared costs, and some facilities may be located where capacity is inexpensive. A household may object that it faces uncertain bills, obligations from failed projects, and little influence over the allocation. These are different claims about the same investment process. A defensible decision must identify the conditions under which the efficiency mechanism operates and explain why the resulting obligations are justified to affected people.
+
+### 9.28.1 The Conditions of a Claim
+
+\noindent The critical approach in §§9.1–9.3 examines how a conditional result acquires broader authority. In the electricity case, the observed object is a utility-level revenue ratio under a particular treatment definition and comparison. The broader reassurance concerns household costs and the acceptability of development. Moving between those claims requires premises about measurement, exposure, statistical sensitivity, distribution, and institutions. A fitted coefficient does not supply those premises simply because its calculation is sophisticated.
+
+Kant's distinction between regulative and constitutive uses of ideas gives a useful discipline for this application. The aim of understanding the full consequences of development can guide inquiry into requests, investment, operation, cancellation, and recovery. Treating an incomplete model as an exhaustive account closes that inquiry prematurely. This is a contemporary application of the critical method described in §9.2.3. A disputed utility estimate is an empirical problem with potentially resolvable evidence; it is not one of Kant's cosmological antinomies. [Kant, *Critique of Pure Reason*, appendix to the Transcendental Dialectic](https://www.gutenberg.org/files/4280/4280-h/4280-h.htm).
+
+The criticism must examine its own premises as carefully. A phantom-project mechanism defeats the inference that zero operating additions necessarily imply zero exposure. It does not establish that the selected donors actually incurred those costs. An imprecise estimate leaves meaningful harm possible without proving it occurred. Rejecting categorical reassurance therefore leaves a substantive research question open. This is the same discipline that prevents a favorable coefficient from becoming an unconditional endorsement.
+
+### 9.28.2 Efficient Provision and Respect for Persons
+
+\noindent A cost-saving mechanism can justify further investigation of a project. A public decision also assigns risks and obligations. Kant's humanity formulation directs attention to households as persons capable of assessing reasons and pursuing ends, including ends that differ from the developer's commercial objective. Technical communication that presents unresolved harm as established safety can impair that assessment. The ethical objection concerns the authority claimed for the evidence and its role in a decision binding other people. [Kant, *Groundwork*, second section, 4:429–430](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm).
+
+For infrastructure, respect can require intelligible cost allocations, access to supporting evidence, meaningful opportunities to challenge assumptions, and a process for correcting mistakes. These are proposed institutional applications of the principle. They do not imply that every individual has a veto or that any project imposing a cost is impermissible. The governing authority must offer a justification that addresses the people who bear the costs. Aggregate efficiency alone leaves that obligation unresolved.
+
+### 9.28.3 Responsibilities and Revision
+
+\noindent Confucian trustworthiness and the rectification of names connect claims to the responsibilities they imply. Describing a control as unexposed requires an exposure definition suited to the decision. Describing households as protected requires evidence about guarantees and recovery. Describing a result as harmless requires support for that assurance. The analyst, manager, and public communicator each have a role in correcting a description that overstates the evidence. The application follows *Analects* 12.7 and 13.3 and the account of truthful challenge in §9.11.3.
+
+Marketing Dialectics permits a definite conclusion when an argument fails. Categorical harmlessness should be rejected when the estimates leave consequential increases unresolved. A broader allegation of actual household harm should await the evidence needed to establish it. The resulting action can require guarantees, a narrower claim, additional measurement, or suspension of a recommendation. There is no requirement to split the difference between an unsupported assurance and an unsupported accusation. The judgment follows the reasons that survive examination.
+
+## 9.29 Does the Paper Need to Be Published?
+
+\noindent An author deciding whether to release a paper must ask what reliable knowledge the proposed version adds and what readers are being invited to infer from it. Completing an analysis creates no obligation to publish its existing framing. A policy-relevant title, institutional affiliation, and confident summary can give a result authority beyond the technical audience. When that authority exceeds the evidence, publication can make public deliberation worse even if parts of the analysis are computationally correct.
+
+### 9.29.1 The Moral Value of Withholding a Claim
+
+\noindent Delaying or foregoing a release has moral value when it prevents an unsupported assurance from being used to allocate risks to other people. For the author, the decision can involve relinquishing attention, professional advantage, or an attractive narrative. Kant's distinction between acting from duty and acting for an advantageous consequence helps identify the relevant principle: truthful representation remains an obligation when a more dramatic claim would be rewarded. A decision's outward restraint alone does not reveal the author's motive. [Kant, *Groundwork*, first section](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm).
+
+Consider a hypothetical maxim: when an uncertain result is likely to support a preferred policy, present nonrejection as safety to make the intervention easier to approve. The objection concerns an assurance that the evidence cannot support and the reliance it seeks to obtain. The same rule must be assessed when uncertainty favors households and when it favors the firm. A justified alternative is to communicate the estimand, uncertainty, and consequential assumptions accurately, including when they weaken the preferred recommendation.
+
+Confucian role responsibility supplies a further reason for restraint. The public relies on a scholar to assess evidence and on a communicator to represent that assessment faithfully. If a central claim cannot survive scrutiny, declining to circulate it can fulfill those responsibilities. Truthful challenge also gives collaborators and editors a reason to resist a misleading release. The prospect of disagreement does not excuse acquiescence in a claim they know is unsupported. This is a contemporary application of the responsibilities developed in §9.11.
+
+### 9.29.2 The Costs of Silence
+
+\noindent Withholding research can also deprive others of evidence and opportunities to correct an error. Mill's argument in *On Liberty*, chapter II, emphasizes the fallibility of those who would suppress discussion and the epistemic value of contestation. It gives a strong reason to preserve access to arguments, criticism, and correction. It supplies a challenge to a critic who assumes that anticipated political misuse settles whether an entire inquiry should be heard. [Mill, *On Liberty*, chapter II](https://dhspriory.org/kenny/PhilTexts/Mill/Liberty2.html).
+
+Publication decisions based on the direction or statistical significance of results can distort the available evidence. An inconclusive estimate may still document uncertainty, identify a measurement problem, or contribute to later synthesis. Registered Reports provide one institutional response: evaluate the question and design before outcomes are known, with publication conditional on the agreed quality requirements. That principle permits demanding methodological standards while reducing incentives to select conclusions for dissemination. [Center for Open Science, Registered Reports](https://www.cos.io/initiatives/registered-reports).
+
+A decision to delay should therefore identify a specific defect, the relevant public risk, and what would make release acceptable. A demand for secrecy because a result inconveniences a preferred position fails that test. So does an indefinite requirement that only studies proving zero risk may appear. The threshold concerns the validity and faithful communication of the contribution. It must apply symmetrically to reassuring and alarming results.
+
+### 9.29.3 Choose the Publication Action That Fits the Defect
+
+\noindent Four actions deserve separate consideration. A temporary delay is justified when a consequential measurement or identification problem is unresolved and a feasible review could determine whether the claim survives. A revised release is justified when the estimates retain value under a narrower interpretation and the title, abstract, tables, conclusion, and public summary all reflect that interpretation. Nonpublication of the proposed paper can be justified when its central contribution disappears after unsupported inferences are removed and no sufficiently reliable contribution remains. A separate technical record may still preserve methods, evidence, and the reason the analysis was abandoned, subject to data rights and confidentiality.
+
+For an already public paper, correction and traceability become part of the obligation. Quiet removal can leave misleading quotations circulating while making their source harder to assess. A visible correction, linked replacement, or withdrawal notice can explain which claims no longer stand and why. These actions should be proportionate to verified defects. A change in interpretation, an invalid central estimate, and fabricated evidence require different responses; no fabrication finding is made in this case.
+
+The data-center assessment supports a direct criticism of categorical reassurance in the verified HBS coverage and of the specific inferential steps documented in §§6.33–6.35 and 9.26–9.27. The paper also reports positive findings and acknowledges limitations. Its complete empirical value cannot be settled from those defects alone, particularly without its underlying utility panel and donor histories. A release decision should require a response to the identified problems and assess the contribution remaining after correction. An important policy question does not entitle a particular version to publication.
+
+### 9.29.4 A Decision That Remains Open to Challenge
+
+\noindent A defensible editorial judgment states the strongest remaining contribution, the claim that fails, and the remedy needed. For a hypothetical unreleased version that advertises no household harm, require reconciliation of prices and bills, project exposure and controls, meaningful effect sizes and detection limits, and public wording and reported results. If those corrections support a bounded estimate, release can advance understanding. If the central assurance remains unsupported and drives the paper's claimed contribution, decline that version.
+
+The same judgment must state what could change it. Verified project histories might show that the donors were unexposed to the relevant costs; a justified household measure might substantiate a more specific burden claim; a sensitivity analysis might exclude an economically consequential increase. Conversely, demonstrated contamination or irreparable measurement error could weaken the remaining contribution. The responsibility is to make the publication decision answerable to evidence and affected people's reasons. Foregoing a misleading paper can be an achievement of scholarly judgment; withholding inconvenient but sound evidence can undermine that same responsibility.
+
+## 9.30 What a Company Ought to Do
+
+\noindent A company may be able to predict a customer's response, change a price, or prolong a cancellation process. Its managers still face a practical question: what ought the company do? An answer needs reasons for treating people in the proposed way. Profitability can explain why the firm wants an action and can matter for sustaining a useful service. The interests of people who bear its costs also enter the justification, including people who never become customers.
+
+### 9.30.1 Facts, Reasons, and the Conclusion
+
+\noindent Three claims perform different work. “The system can delay cancellation” describes capability. “Delay raises expected revenue” describes an anticipated consequence, conditional on supporting evidence. “The firm ought to delay cancellation” recommends conduct. The last claim requires a normative premise about when the revenue interest justifies the burden imposed on customers. Leaving that premise unstated allows a commercial objective to determine the recommendation without defending it.
+
+Scanlon treats a reason as a consideration counting in favor of an action or attitude in specified circumstances. The same fact can bear differently on different decisions. A customer's request to stop a service matters for completing cancellation; a prediction that the customer will tolerate delay addresses a different question. The analyst must explain why the consideration supports the proposed action. [Scanlon, *Being Realistic about Reasons*, 2009 Lecture 2, pp. 12–14](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf).
+
+“Ought” identifies a conclusion to defend. State the actor, action, circumstances, and relevant alternatives: “Given a verified request and a feasible secure exit, the provider ought to complete cancellation promptly.” Distinguish this obligation from permission to offer an optional discount. Several actions may remain permissible even when one maximizes a chosen performance measure.
+
+### 9.30.2 Scanlon's Test of Reasonable Rejection
+
+\noindent Scanlon's contractualism evaluates principles governing conduct by asking whether affected people could reasonably reject them. The comparison considers people's reasons for objecting to permission and to prohibition, including how burdens arise. It therefore requires alternatives and a judgment about the reasons on each side. Actual agreement, bargaining power, and success in persuading an audience do not settle that judgment. [Scanlon, *What We Owe to Each Other*, chapter 5, §§1–3, especially pp. 191–196](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+For a marketing decision, identify the positions people occupy and the interests at stake. A subscriber may seek control over recurring payments; a worker may need a sustainable workload; another subscriber may need protection from fraudulent changes. Owners can have legitimate interests in compensation and maintaining a viable service. Specify the burden for a person in each position and examine its basis. A large total commercial gain leaves the justification of a serious burden on an individual to be addressed. A strongly expressed objection also needs reasons; it supplies no automatic veto.
+
+### 9.30.3 Construct and Challenge the Premises
+
+\noindent Consider a hypothetical subscription service with a verified cancellation request. Assume that a prompt cancellation path can protect the account at a reasonable operating cost. The proposed practice requires the customer to complete a retention conversation while billing continues.
+
+The factual premises concern the request, continued charges, security, and the feasible alternative. The proposed normative premise is that a provider ought to respect a valid withdrawal and justify any remaining burden through reasons that affected people could reasonably accept. This premise requires a defense: customers have reasons to control unwanted recurring obligations, and a secure exit can preserve other subscribers' protection and the provider's legitimate operating needs. Given those premises, the company ought to complete cancellation promptly and keep a retention offer optional.
+
+![Factual and normative premises support a conditional recommendation. A challenge can require revision of either premise. The cancellation case is hypothetical.](../figures/M09_argument_premises.png)
+
+The factual branch asks whether the request is valid and the alternative is feasible. The normative branch asks why the customer's control and the interests of others justify the proposed rule. The conclusion depends on both branches. The return paths preserve the possibility that a factual premise is wrong or that the principle treats a relevant interest inadequately.
+
+The strongest objection may concern account fraud, a service that cannot be restored after cancellation, or substantial costs imposed on other subscribers. Investigate that objection and compare proportionate identity checks, clear warnings, and accessible confirmation. A claim that every retention step is necessary requires evidence connecting that step to the protected interest. Revenue from customers who wanted to leave does not establish such a connection.
+
+### 9.30.4 Compare Principles from Each Position
+
+\noindent Compare a rule requiring persuasion after a verified request with a rule allowing prompt secure exit and an optional offer. Assess both under the same circumstances. Removing all security checks would introduce a different alternative and could exaggerate the case for mandatory persuasion. A useful comparison preserves legitimate protection while examining whether the disputed burden is necessary.
+
+![Reasonable rejection compares the burdens of alternative principles from affected people's positions. The hypothetical cancellation example retains customer control, account security, and service viability as distinct concerns.](../figures/M09_reasonable_rejection.png)
+
+The two columns hold the decision fixed while changing the governing principle. Each column considers customer control alongside the security and service interests of workers and other subscribers. The final judgment depends on the seriousness and justification of these burdens. If the alternative leaves a substantial objection unanswered, revise it and compare again.
+
+### 9.30.5 Stakeholders Beyond the Firm
+
+\noindent A customer database represents people who generated records under the firm's existing practices. It can omit excluded applicants, household members, workers, nearby residents, and people who will face future obligations. Being absent from the table supplies no reason to exclude a person's interests. Establish the connection between the proposed action and the possible burden before claiming that a particular group is affected.
+
+| Decision | People Whose Reasons Need Examination | Missing Information That Matters |
+| --- | --- | --- |
+| mHealth targeting | Users, household members whose information may be inferred, and people excluded from the service | Purpose of use, authority to process information, errors, and meaningful exit |
+| Automated pricing | Buyers with limited alternatives, workers administering prices, and people relying on continued service | Price paths, comprehension, access, operating costs, and feasible protections |
+| Electricity development | Existing households, prospective users, workers, and residents exposed to infrastructure decisions | Project commitments, guarantees, cost recovery, distribution, and opportunities to contest allocation |
+| Public research claims | Readers, affected households, decision makers, and people relying on useful research | Claim accuracy, uncertainty, access to corrections, and the value of the remaining evidence |
+
+These are positions to investigate, rather than findings that every listed person experiences harm. Ask who receives a benefit, who bears a burden, who chooses, and who can contest the decision. Within each category, different people may face very different circumstances. Participation can reveal reasons and evidence that an analyst missed; a favorable survey response still requires an assessment of the underlying principle.
+
+In mHealth, recorded logging can inform a behavioral description. A recommendation about sensitive targeting additionally requires a justified purpose and authority to use the information. In pricing, an off-peak discount can support access while a less visible price rule imposes costs elsewhere. In electricity, an estimated average price response leaves questions about particular households' obligations and opportunities to challenge them. The analysis should connect each proposed policy to the people and interests it changes.
+
+### 9.30.6 Defend an Ought Conclusion
+
+\noindent A good premise has a clear subject and scope, support appropriate to its type, and a stated role in the inference. Support an empirical premise with observations, design, and uncertainty. Defend a normative premise through the reasons it recognizes, its treatment of comparable cases, and the objections to feasible alternatives. A definition clarifies an object; it does not establish that the object is good. Valid deduction preserves the consequences of premises; the premises themselves still need justification.
+
+Scanlon's discussion of reflective equilibrium describes mutual revision of general principles and considered judgments about cases. A coherent set of beliefs can still need correction when a neglected circumstance or objection emerges. The practical task is to test the proposed principle against difficult cases and explain why a revision improves its justification. [Scanlon, 2009 Lecture 4, pp. 12–14 and 19–26](https://media.philosophy.ox.ac.uk/assets/pdf_file/0010/25858/Lecture_4.pdf).
+
+Write the recommendation as an argument: the firm ought to take a specified action because a defended principle applies to supported facts; the strongest objection has a stated answer; a specified change in facts or reasons would require reconsideration. When uncertainty is consequential, an appropriate action can be to collect evidence, restrict deployment, correct a claim, or preserve several permissible choices. The conclusion should be as definite as the reasons support.
+
+For the data-center communication, a defensible conclusion is that authors and public communicators ought to remove categorical reassurance that exceeds the reported evidence and explain the remaining uncertainty. Households have reasons to resist being asked to accept risks on that basis. Readers also have reasons to retain access to credible estimates and criticism. A corrected, traceable release can answer both concerns when a reliable contribution survives. This judgment concerns the supported claims and the responsibilities of publication; a separate argument is needed to justify a particular infrastructure policy.
+
+## 9.31 Public Reassurance and the Framing of Pricing
+
+\noindent A company deciding how to describe a pricing change chooses which benefits, costs, and comparisons to make salient. An institution describing a research result makes related choices about the question readers will think has been answered. A truthful statement can still leave a consequential premise unexamined. The ethical question concerns whether the communication gives affected people adequate reasons and information to assess the proposed conduct.
+
+### 9.31.1 Two Documented Communications
+
+\noindent Wendy's February 27, 2024 statement described digital menu boards, slower-period discounts, and value offers, while stating that the company had no plans to raise prices at its busiest times. This is evidence of its stated policy and public framing. Implementation and customer outcomes require separate evidence. The statement could accurately correct a misunderstanding; the commercial interest in a favorable interpretation alone does not establish deception. [Wendy's, *Digital News Update*](https://www.wendys.com/blog/wendys-digital-news-update).
+
+The November 12, 2026 HBS coverage presents the electricity research through a reassuring comparison involving four large technology firms. Its wording goes beyond what the reported subgroup nonrejection establishes, as assessed in §6.33. The article also discusses possible future increases and contractual protection. The verified speaker is an academic institution's publication. A coordinated corporate campaign or a company post making the same claim has not been established. [HBS Working Knowledge, *Blaming Data Centers for Higher Electric Bills? It's Not That Simple*](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple).
+
+The useful connection is the selection of the reference point and the beneficiary. Off-peak discounts direct attention to favorable purchase occasions; a reassuring subgroup comparison directs attention to selected developers. Examine whether the listener is also given the relevant peak-period benchmark, household outcome, uncertainty, and institutional conditions. Distinguish a change in language, a change in the actual policy, and evidence of a change in people's welfare.
+
+### 9.31.2 Reasons for Acceptance and Successful Persuasion
+
+\noindent A public-relations message can increase acceptance without supplying a sound reason for the decision. Conversely, a careful explanation can be justified even when an audience remains unconvinced. Under the Scanlon-inspired argument in §9.30, the communicator ought to make the material comparison and its uncertainty clear enough for affected people to examine. Approval rates alone do not discharge that responsibility.
+
+For pricing, compare complete offers, the conditions under which prices change, accessible alternatives, and who bears the costs. Dynamic pricing, personalized pricing, price coordination, and a legal finding of price gouging are different objects. For electricity, compare the measured revenue ratio with the household claim and inspect obligations created before operation. A favorable label changes none of those objects by itself.
+
+A defensible communication rule is to state the proposed action, its verified consequences, its unresolved consequences, and the reasons for the burdens it imposes. Apply that rule symmetrically to reassuring and alarming messages. The company or institution ought to correct a material mismatch between its public assurance and its supporting evidence, while preserving accurate findings and opportunities for criticism.
+
+## 9.32 Who Counts as a Stakeholder, and Why?
+
+\noindent A manager choosing an analytical objective must decide whose outcomes enter the comparison. Beginning with the firm's customers and shareholders can miss workers, suppliers, excluded users, and people exposed to its infrastructure or information practices. A useful stakeholder assessment identifies the relationship, the relevant interest, and the reason that interest creates a claim on the decision. The label “stakeholder” alone leaves the content and strength of the obligation unresolved.
+
+### 9.32.1 Influence, Business Performance, and Moral Standing
+
+\noindent Donaldson and Preston distinguish descriptive, instrumental, and normative uses of stakeholder theory. Describing a firm's relationships, predicting whether stakeholder management improves performance, and justifying duties to affected parties require different arguments. For analytics, the implication is immediate: a profitable stakeholder strategy does not by itself establish why an unprofitable protection ought to be retained. [Donaldson and Preston, 1995](https://journals.aom.org/doi/full/10.5465/amr.1995.9503271992).
+
+Mitchell, Agle, and Wood analyze stakeholder identification and managerial salience through power, legitimacy, and urgency. This helps explain which claims attract attention. A moral assessment must also examine claims that receive little attention. A household facing an infrastructure obligation may have limited influence over either the developer or the utility. That weakness is a reason to investigate representation, rather than to infer that its burden is unimportant. [Mitchell, Agle, and Wood, 1997](https://doi.org/10.5465/amr.1997.9711022105).
+
+Keep a record of influence separate from the justification of obligations. For each affected position, state the possible consequence, the evidence supporting exposure, the person's reason for objecting, and a feasible remedy. Revenue shares and political power may explain what management will do. They supply no automatic ethical weights for deciding what it ought to do.
+
+### 9.32.2 Cooperation, Fairness, and General Duties
+
+\noindent Phillips grounds particular stakeholder obligations in fair cooperation: voluntarily accepting benefits from a mutually beneficial scheme involving contributions can create obligations to other participants. His later distinction between normative and derivative legitimacy separates obligations owed to stakeholders from attention to actors whose influence matters for honoring those obligations. The approach gives students a concrete premise to examine: what cooperation and acceptance establish the claimed obligation? [Phillips, 1997](https://doi.org/10.2307/3857232); [Phillips, 2003](https://doi.org/10.5840/beq20031312).
+
+Voluntary cooperation does not describe every affected person. A nearby resident may face a burden without joining the firm's arrangements. General duties concerning harm, honesty, and respect therefore require their own examination. Phillips and Reichart explicitly recognize that environmental reasons can matter even under an account that denies the nonhuman environment stakeholder status. Exclusion from a particular stakeholder definition does not settle moral irrelevance. [Phillips and Reichart, 2000](https://doi.org/10.1023/A:1006041929249).
+
+### 9.32.3 Managerial Responsibility and Public Authority
+
+\noindent Goodpaster distinguishes identifying stakeholders from deciding how their interests should govern action. He argues that managers can have morally significant obligations beyond shareholders while retaining a special relationship to shareholders. A duty to manage a business requires an account of the means through which its objectives may be pursued. It does not confer unrestricted permission to manipulate others. [Goodpaster, 1991, especially pp. 67–70](https://doi.org/10.2307/3857592).
+
+Public decisions introduce a further question: who is accountable to whom? Hussain and Moriarty argue that corporate participation in governance must be assessed against democratic accountability to affected parties. Their position challenges arrangements in which firms acquire policymaking authority through a process intended to hold them accountable. The electricity application is to distinguish supplying technical evidence from deciding the legitimate allocation of public burdens. A company-organized consultation needs a justified account of representation and decision rights. [Hussain and Moriarty, 2018](https://doi.org/10.1007/s10551-016-3027-8).
+
+### 9.32.4 From a Stakeholder Map to a Defensible Recommendation
+
+\noindent Begin with the actual action and trace its consequences beyond the firm's accounts. Identify who benefits, who may be harmed, who contributes, who has authority, and who lacks an effective voice. Distinguish verified effects from plausible exposures needing evidence. Then state a principle that governs the action and compare the reasons people could have for rejecting that principle and its feasible alternatives.
+
+For a proposed data-center development, that process may favor investment with enforceable cost commitments, transparent evidence, and a credible opportunity to contest allocation. Different project facts could support delay or rejection. The philosophical conclusion follows from the defended principle and the institutional evidence. A stakeholder diagram, an average coefficient, or a company's ability to secure approval leaves that argument to be made.
+
+### 9.32.5 Residents and Unequal Influence
+
+\noindent A resident may become exposed to a development without choosing a commercial relationship with its owner. The project sponsor may control technical records, negotiate infrastructure commitments, and retain specialists, while a resident must assemble an objection after work with limited access to those records. These circumstances could create unequal influence over the public account of a project. Establish the circumstances through notice dates, access to documents, participation costs, representation, and responses to objections. Residential proximity alone establishes neither powerlessness nor a specific financial burden.
+
+Three populations require separate identification: people living near the facility, customers served by the relevant utility, and people who ultimately bear a particular cost. These populations can overlap without coinciding. Nearby households may have concerns about noise, land use, water, or local infrastructure; more distant customers may face a tariff change. Each proposed effect needs evidence appropriate to its mechanism. An average utility-price result leaves those distinct exposures and the allocation of decision rights unresolved.
+
+The ability to submit a comment is one component of an effective voice. Assess whether people receive understandable information in time to act, can obtain independent technical assistance, and receive a reasoned response that can affect the decision. A process may accept every comment while leaving the decisive assumptions inaccessible. That possibility makes participation and influence separate objects of investigation.
+
+The proposed normative principle is that institutions imposing consequential, involuntary burdens ought to provide affected people with a credible opportunity to examine and challenge the justification. Apply the principle to feasible alternatives: early disclosure, accessible evidence, independent assistance, explicit responses, and enforceable cost commitments. The principle needs a defense in terms of people's reasons and the cost of providing those protections. Equal standing in justification does not require equal technical expertise or identical authority over every decision.
+
+### 9.32.6 University Prestige and the Burden of Being Heard
+
+\noindent Consider the hypothetical headline, “Harvard/Wharton study shows data centers do no harm.” The wording is an illustrative construction, not a verified headline or a collective endorsement by either university. The documented public statement is the HBS Working Knowledge coverage discussed in §9.25. Institutional affiliation identifies where researchers work; it does not establish that a particular inference follows from their estimates.
+
+A headline can give a narrow finding an expansive public role. A reader may treat the university's reputation as sufficient evidence that the question has been settled. A resident then faces the practical demand to overturn a prestigious study before concerns about bills, exposure, or procedure receive attention. This is a possible mechanism of unequal credibility and burden shifting. Demonstrating it in a particular dispute requires evidence that the statement circulated, was relied upon, and changed how objections were treated.
+
+Fricker's account of testimonial injustice identifies an unfair credibility deficit caused by prejudice toward the speaker. A difference in credentials or media reach alone does not establish that diagnosis. Examine whether officials discount a resident because of a prejudicial social judgment, whether they assess the substance of the claim, and whether relevant evidence receives an answer. [Fricker, 2007, chapter 1](https://academic.oup.com/book/32817/chapter-abstract/274999720).
+
+Anderson extends the question to the institutions that gather and assess testimony. Her argument motivates examining the conditions under which different people contribute to inquiry. Assess access to records, technical assistance, opportunities to question assumptions, and the correction of widely circulated claims. These proposed safeguards require institutional evidence and justification in the particular setting. [Anderson, 2012, author abstract](https://websites.umich.edu/eandersn/abstracts.htm).
+
+A household's bill or account of noise supplies evidence about an experienced outcome. Establishing its cause requires further comparison. An average causal estimate supplies evidence about its defined population and outcome. Establishing the treatment of a particular household requires further information. A fair assessment gives each contribution the scope supported by its evidence and examines the gap between them. Scholarly prestige supplies no missing identification assumption; local experience supplies no automatic counterfactual.
+
+The Scanlonian question is concrete: could people facing a possible involuntary burden reasonably reject a principle that treats an imprecise average as sufficient grounds to dismiss their concerns? Compare that principle with one requiring proportionate investigation and an answer to material objections. Researchers, readers, workers, developers, and households all have reasons concerning accuracy, delay, resources, and risk. Under the defended principle, institutions ought to substantiate reassurance before using it to close discussion. Residents need no published econometric paper merely to request reasons for a decision that may burden them.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -6378,6 +6886,16 @@ The expanded [AI Workflow Evaluation lab](Agent_Workflows/README.md) reconstruct
 ## Statistical Claims, Household Burdens, and Agency
 
 The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
+The [Statistical Inference lab](Statistical_Inference/README.md) includes argument reconstruction, inverse power, and counterexamples to unsupported extrapolation and harmlessness claims. The practice remains optional and ungraded.
+
+## Institutional Evidence
+
+The optional [Statistical Inference lab](Statistical_Inference/README.md) examines price and bill denominators, project timelines, donor exposure, and cost-allocation rules through complete synthetic examples.
+
+## Philosophical Arguments and Stakeholder Reasons
+
+[Optional practice](Philosophical_Arguments/README.md) constructs an ought conclusion, defends its premises, compares affected positions, and answers an objection. The electricity case examines public reassurance, publication choices, and residents' opportunities to challenge evidence.
 
 ---
 
@@ -10965,6 +11483,20 @@ python3 03_Data_and_Code/Statistical_Inference/build_claim_figures.py
 
 Full source listings appear in M3 §3.19, M6 §§6.32–6.33, and M9 §9.25. The five additional editable TikZ figures cover repeated p-values, campaign profit, equivalence, electricity-price power, and household incidence. The recurring electricity case also appears in M2 §2.28, M8 §8.31, and M9 §9.26. Read the [resource guide and claim assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/README.md) before extending its conclusions.
 
+## Inverse Power and Logical Counterexamples
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/andrews_inverse_power.py
+python3 03_Data_and_Code/Statistical_Inference/logical_counterexamples.py
+python3 03_Data_and_Code/Statistical_Inference/build_logic_figures.py
+```
+
+Run from the repository root with the existing NumPy, pandas, and SciPy environment. `andrews_inverse_power.py` uses Donald W. K. Andrews's approach to invert noncentral chi-squared power at fixed covariance. It exports scalar thresholds, assumed precision scenarios, and an explicitly synthetic two-outcome comparison. Full code is in M6 §6.34. `logical_counterexamples.py` uses exact rational arithmetic to construct historical agreement with future divergence and cost-ratio counterexamples; full code is in M9 §9.27. Its outputs are synthetic, with no utility observations. The figure builder maps those tables into two editable Illinois-color TikZ sources. See the [argument assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md).
+
+## Institutional Exposure and Household Costs
+
+Run `python3 03_Data_and_Code/Statistical_Inference/institutional_exposure.py`, then `python3 03_Data_and_Code/Statistical_Inference/build_logic_figures.py`. The first program creates four synthetic CSV tables covering matched price/bill denominators, operating additions and cancelled-project costs, a weighted two-period comparison, and annual cost recovery. Full source appears in M6 §6.35. The four-dollar comparison gap and eight-dollar unprotected recovery example follow imposed inputs; neither estimates an actual utility effect. Read the [institutional assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) for project states, source dates, and the additional records needed to evaluate the paper.
+
 ---
 
 ## Source: 03_Data_and_Code/Statistical_Inference/DATA_DICTIONARY.md
@@ -11003,6 +11535,24 @@ Input: `../mHealth/data/food_entries.csv.gz`, verified against `../mHealth/manif
 - `data_center_reporting_checks.csv`: descriptive observed-price difference, estimated/residual shares, reference exposure, and directly reported developer-equality p-value. No covariance is inferred.
 - `data_center_incidence_illustration.csv`: two synthetic monthly allocations with 1,000 equal-use households, the number affected, their additional dollar bill, total revenue, and mean dollars/MWh. Neither scenario is measured household incidence.
 
+## Inverse-Power Outputs
+
+- `andrews_inverse_power.csv`: source case, fixed reported SE, units, test size, target power, required positive departure, and departure in SE units. Residential reference scaling follows Table 2; four-owner and sales cases retain their own slope units.
+- `andrews_precision_scenarios.csv`: assumed SE multiplier, resulting SE in USD/MWh, and 80% detection threshold. Multipliers are illustrative sensitivity inputs, with no claim that they correct the original clustered SE.
+- `andrews_directional_power.csv`: synthetic two-restriction Wald test with estimator covariance diag(0.25, 4), both outcomes in USD/MWh. A unit-length direction and target power determine the radius and two effect components.
+- `logic_extrapolation.csv`: normalized synthetic load, linear and threshold price responses in USD/MWh, and an indicator for the assumed historical support. The functions agree throughout [0, 1] by construction; no sample is fitted.
+- `logic_cost_ratios.csv`: hypothetical one-period total cost in USD, sales in MWh, and their ratio. The inputs establish counterexamples to a general inference and measure no actual utility.
+
+No random seed is needed for these deterministic exports. The independent joint-power simulation in the test suite uses seed 20261126 and 100,000 draws; it validates the Gaussian calculation, not the paper's empirical design.
+
+## Institutional Counterexamples
+
+All `institutional_*.csv` inputs are synthetic. `institutional_bills.csv` records monthly revenue in USD, sales in MWh, and 1,000 matched customer-months. Its derived price, mean use, and mean bill satisfy the same-denominator accounting identity. No tariff or causal effect is estimated.
+
+`institutional_donors.csv` has one row per imposed utility: completed, cancelled after investment, or unexposed. Operating additions are MW; initial/later prices and project-related increases are USD/MWh. Donor weights 0.75 and 0.25 sum to one. `institutional_comparisons.csv` reports treated and donor changes and their difference in USD/MWh. The no-project changes are stipulated equal. These are two-period comparisons, separate from the published within-utility regression.
+
+`institutional_recovery.csv` uses annual USD for the revenue requirement, collectible developer contribution, and reuse offset; annual residential MWh for sales; and unitless recovery/allocation fractions in [0,1]. The derived USD/MWh increase follows a stated allocation rule. Upfront capital expenditures are not substituted for annual costs.
+
 ---
 
 ## Source: 03_Data_and_Code/Statistical_Inference/AGENTS.md
@@ -11025,35 +11575,43 @@ Keep full code synchronized with M3 §3.19, M6 §§6.32–6.33, and M9 §9.25. P
 
 Separate measured prices, household incidence, welfare, and agency. Retain positive findings and acknowledged limitations. Use the reported joint developer test; marginal SEs do not supply its covariance. The verified public communication is HBS coverage. Do not invent company posts, intent, or actual downstream harms. Keep instructor philosophy manuscripts and private notes outside the public repository.
 
+## Logic and Donald Andrews
+
+Preserve the full M6 §6.34 and M9 §9.27 listings. Attribute the inverse-power framework to Donald W. K. Andrews (1989), with the read 1986 Cowles version identified in the resource review. Do not substitute Isaiah Andrews's separate work. Distinguish a fixed-Wald sensitivity calculation from full-design power and uniform guarantees. Preserve covariance and units in directional comparisons. Synthetic counterexamples defeat general entailments; they do not establish empirical frequency, actual household harm, or author intention.
+
+## Institutional Measurement
+
+Preserve the M6 §6.35 full listing and M2 §2.28.1 matched-denominator identity. Treat the project pipeline and recovery examples as synthetic. No operating addition does not establish no project exposure, but actual donor contamination and its effect remain unverified. Preserve the paper's discussion of realized payments and regulation. Developer guarantees, approved recovery, and asset reuse can change incidence. Current contracts do not establish historical sample terms. Six independent checks cover accounting, weighting, common shocks, and cost-recovery rules.
+
 ---
 
 ## Source: 03_Data_and_Code/Statistical_Inference/VERIFICATION.md
 
 # Verification Record
 
-Checked November 26, 2026 with Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and SciPy 1.16.3. The four additional analysis programs and figure builder ran successfully. No model calls or downloaded third-party code were executed.
+Checked November 26, 2026 with Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and SciPy 1.16.3. The three additional analysis programs and figure builder ran successfully. No model calls or downloaded third-party code were executed.
 
 ## Numerical Checks
 
-All 25 inference tests passed, including the ten existing checks for paired mHealth summaries and clustered store experiments. Fifteen additional checks compare pooled tests with SciPy, power with an independent noncentral chi-square calculation, campaign inference with the chi-square identity, economic units and break-even arithmetic, expected-count denominators, shifted equivalence tests and interval duality, scaling of confidence bounds, inversion of a one-sided test, and equal aggregate revenue under unequal household incidence. Invalid precision and other unsupported inputs are rejected.
+All 39 inference tests passed. Eight additional logic and inverse-power checks cover inverse power against independent normal-tail calculations, unit scaling, directions, covariance rotation, a 100,000-draw Gaussian simulation of joint-test power, the different dependence of detection thresholds and confidence bounds on the realized estimate, invalid inputs, historical equivalence with future divergence, and ratio counterexamples. The simulation uses seed 20261126 and validates the assumed Gaussian calculation. Six further checks cover matched bill denominators, reconstruction from individual accounts, zero operational additions with positive donor costs, common-shock cancellation, recovery rules and guarantees, and invalid units or fractions.
 
-A fresh source export starts with empty result and figure folders. The four new programs reproduce 14 result files byte for byte, and the figure builder reproduces five TikZ sources byte for byte. All 110 full Python source listings match their executable counterparts and parse successfully. Earlier mHealth inputs and the seven pre-existing numerical outputs remain unchanged; their preceding verification record is retained in Git history.
+A fresh source export reproduces nine new result files and three TikZ sources byte for byte. All 113 full Python source listings match their executable counterparts and parse successfully. Every previously recorded numerical output retains its prior SHA-256 hash. The earlier four statistical-claims programs, 14 fresh result exports, five figures, and 75-page review remain documented in Git history.
 
-Published coefficients were checked visually against the paper's Tables 2, 4, and 7. The developer-difference p-value is transcribed from its reported Wald test. No covariance matrix is reconstructed. Power, intervals, and minimum detectable effects use a normal approximation at fixed reported clustered standard errors and rounded published inputs. These calculations assess reported precision and interpretation; they do not re-estimate the original utility panel.
+Donald W. K. Andrews's inverse-power framework is implemented under fixed Gaussian/Wald conditions. Published coefficients and their clustered SEs retain their earlier visual verification against Tables 2, 4, and 7. The developer-difference p-value remains transcribed from its joint test. Marginal SEs do not reconstruct its covariance. The new two-outcome covariance and precision multipliers are hypothetical; no uniform or full-design power guarantee is claimed.
 
 ## Figures and Documents
 
-Five additional Illinois-color TikZ figures cover repeated p-values, campaign contribution, cancellation equivalence, electricity-price power, and household incidence. Plotted values come from checked result tables. The household diagram uses explicit synthetic inputs with equal use and total revenue. Figures retain units, populations, labels, and text companions.
+Three additional Illinois-color TikZ figures show directional power, historical agreement with different future responses, and costs from a cancelled project entering the donor comparison. Their numerical values agree with the aggregate output tables. Two further conceptual TikZ figures distinguish factual and normative premises and compare reasons for rejecting alternative principles. Labels distinguish synthetic constructions, units, and the assumed support. The normal-power boundary is distinct from a confidence ellipse.
 
-Visual review covered 75 rendered pages: new notes and code, affected contents and neighboring pages, the Marketing Dialectics chapter, eleven new slides and neighbors, and both syllabus pages. The p-value, power, and household diagrams were also inspected at full page size. Final builds have no overfull boxes, missing characters, undefined controls/references, or TeX errors. Existing package and underfull-spacing warnings remain.
+Visual review covered 98 rendered pages, including new notes and code, affected contents, all five additional figures, the Marketing Dialectics chapter, 14 new slides, and neighboring pages. Diagram spacing and the two conceptual layouts were corrected before the final review. Final builds have no overfull boxes, missing characters, undefined controls/references, or TeX errors. Existing underfull-spacing and package warnings remain.
 
-The combined notes contain 480 pages and 121 original figures. Marketing Dialectics has 41 pages. Sessions 4, 9, and 14 have 26, 33, and 57 slides; the combined deck has 442. The syllabus has two pages. All 15 dates, logistics, and continuous 170-minute allocations remain unchanged.
+The complete notes contain 507 pages and 126 original figures. Marketing Dialectics has 58 pages. Sessions 9 and 14 have 36 and 68 slides; the combined deck has 456. All 15 dates, logistics, and continuous 170-minute allocations are unchanged. The released syllabus and calendar were not revised. Planning coverage includes Scanlonian arguments and stakeholder reasons in the existing Session 14 discussion blocks.
 
 ## Interpretive Scope
 
-The repeated experiments, campaign, cancellation summaries, and household allocations are synthetic. The electricity case computes implications of published summary estimates. It distinguishes nonrejection, equivalence, power, effect bounds, causal identification, economic importance, and ethical justification. Low power against specified alternatives does not prove a positive true effect or uniquely explain an observed nonsignificant result.
+The new synthetic examples construct counterexamples to general inferences. The institutional comparison imposes common baseline prices, fixed donor weights, and positive costs from a cancelled project; actual donor contamination and its direction or magnitude remain unverified. Contract and recovery rules govern incidence. The price/bill identity preserves matched customer-months, sales, and payments. The paper's existing discussion of regulation and realized payments is retained. They do not estimate actual capacity thresholds, household harms, or the frequency of alternative explanations. The power calculation evaluates reported precision under its stated approximation; it neither establishes the true effect nor identifies low power as the sole cause of nonrejection.
 
-Verified public reassurance is attributed to HBS coverage. Company dissemination on X remains unverified because direct search required authentication. The critique identifies potential consequences of misleading reassurance without claiming that the paper caused an observed policy decision or household loss. Instructor philosophy manuscripts and private notes are not published.
+The argument record distinguishes claims made in the paper or verified HBS coverage from broader inferences an audience might draw. Positive findings and acknowledged limitations remain in the course. Corporate X dissemination remains unverified. Instructor notes and manuscripts are neither published nor linked in public course files. The supplemental philosophical catalog records 12 primary-source records, including four local PDFs and eight sources reviewed through primary author or publisher abstracts. Full-text access and selected reading scope are stated for each record.
 
 ---
 
@@ -11081,6 +11639,18 @@ See the [dictionary](../DATA_DICTIONARY.md) for units, denominators, and interva
 The additional p-value simulation produces 32.515% rejection with 40 stores and 86.550% with 160 when the true effect is eight dollars. The hypothetical campaign has p=0.01868 and estimated contribution of minus $0.06 per treated customer. Equivalence examples distinguish an imprecise nonsignificant result from precise small effects and one-sided improvement.
 
 The reported-table electricity calculation yields estimate $1.749/MWh, SE $1.059/MWh, two-sided 95% interval [-0.326, 3.825], and one-sided 95% upper bound $3.491/MWh at the stated reference exposure. Power is 15.675% for $1 and 47.167% for $2. The cloud-owner slope is reported separately in dollars/MWh per exposure percentage point. All inputs, denominators, and approximations are in the [data dictionary](../DATA_DICTIONARY.md). These are original calculations from reported summaries and hypothetical examples; no original utility-panel replication is claimed.
+
+## Inverse Power and Counterexamples
+
+For the residential reference precision, the positive departures giving 50%, 80%, 90%, and 95% power are 2.075, 2.967, 3.432, and 3.817 USD/MWh. The fixed test size is 5%. The four-owner 80% threshold is 0.448 USD/MWh per exposure pp; the sales threshold is 1,381 quarterly MWh per added MW. These thresholds use Donald W. K. Andrews's inverse-power approach within a fixed Gaussian/Wald approximation.
+
+In the synthetic joint test, two independent estimator SEs of 0.50 and 2.00 USD/MWh yield A-only and B-only 80% thresholds of 1.552 and 6.208. Equal increases of 1.506 on both outcomes also attain 80% joint-test power. The covariance is hypothetical.
+
+The synthetic linear and threshold response functions agree throughout the assumed historical interval [0, 1], but give 4 and 14 USD/MWh at normalized load 2. Hypothetical totals of 1,000/10 and 1,100/11 both give 100 USD/MWh, while 1,000/8 gives 125. These constructions establish failures of general inference; they describe no actual utility.
+
+## Institutional Counterexamples
+
+The four `institutional_*.csv` files are synthetic. They preserve monthly bill denominators, MW versus MWh, three project states, fixed donor weights, and annual cost-recovery units. A USD 10/MWh completed-project increase and USD 6 weighted donor increase produce a USD 4 change difference. The unprotected annual-recovery scenario gives USD 8/MWh; enforceable contributions or disallowed recovery change that result. These files contain no observed utility or household records.
 
 ---
 
@@ -11140,6 +11710,32 @@ Use the [electricity paper and companion](../../01_Resources/41_Statistical_Clai
 Compare the verified HBS article with the reported bounds. Identify the speaker, exact claim, date, population, and uncertainty. A corporate dissemination claim requires a specific verified corporate statement. Distinguish the harm a misleading inference could cause from observed consequences established by a causal study.
 
 Use the synthetic household allocations to explain why equal mean prices leave distribution unresolved. Then specify evidence about access to reasons, challenge, review, and remedy. Distinguish payment, compliance, endorsement, and authorization. Evaluate a rule that permits interested firms to call an insensitive non-rejection harmless using Kantian universalization, respect for persons, and Confucian trustworthiness. State a defensible approval recommendation, a justified harm threshold, the unresolved risks, and which party should substantiate or bear them.
+
+## Reconstruct and Test an Argument
+
+Use M6 §6.34, M9 §9.27, and the [argument record](../../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md).
+
+1. Choose one exact claim and record its speaker, page or table, population, time horizon, and degree of certainty. Separate a quotation from your reconstruction.
+2. List the reported premises and the additional premise needed for the conclusion. Classify its role: measurement, identification, extrapolation, sampling, or ethical justification.
+3. Construct an account in which the reported premises hold and the conclusion fails. Explain which observation could exclude it. Do not present logical possibility as an estimated likelihood or an observed harm.
+4. Run `andrews_inverse_power.py`. Reproduce the 50%, 80%, 90%, and 95% thresholds. Explain why the MDE remains fixed when the realized estimate changes while the confidence bound moves. Identify Donald W. K. Andrews's contribution and the fixed-Wald approximation used here.
+5. Use the joint synthetic test to explain why a nonsignificant multivariate result needs direction-specific sensitivity. Identify why the paper's marginal developer SEs are insufficient to perform that calculation for its contrast.
+6. Run `logical_counterexamples.py`. Verify exact historical agreement and the future divergence. State the extrapolation restriction that would rule out the threshold account, then identify evidence that could justify it.
+7. Write the strongest conclusion currently supported. Preserve contrary findings and qualifications. State what would change your assessment.
+
+A complete response distinguishes a validity failure from a false premise, a scope change, and a genuine contradiction. It uses the reported joint test, preserves units and reference exposure, and keeps harm, intention, and corporate dissemination tied to verified evidence. These are discussion criteria for public ungraded practice.
+
+## Assess the Institutional Comparison
+
+Use the original `institutional_exposure.py` program and M6 §6.35. This practice is optional and ungraded.
+
+1. Reconstruct mean expenditure from revenue, energy sales, and customer-months. Explain why unchanged average revenue per MWh can coexist with higher bills.
+2. Verify the three-utility table and its USD 4/MWh change difference. Identify the cost subtracted by the weighted donor comparison.
+3. Change the cancelled-project cost to zero, ten, and a negative value. Explain which assumptions determine the direction of the resulting difference.
+4. Move a preparatory cost into the fitting period or a recovery charge beyond the observation horizon. State the resulting timing problem without claiming to replicate the paper's estimator.
+5. Compare full and partial developer payment, disallowed recovery, and asset reuse. Keep all cost inputs in annual dollars before dividing by annual MWh.
+6. Propose a dated project panel and a donor screen using information available at the comparison date. Explain why selecting only eventual successes or failures could introduce further selection.
+7. State the additional evidence needed to distinguish an institutional risk from a demonstrated error in the published estimate. Separate price, expenditure, affordability, and authority to allocate costs.
 
 ---
 
@@ -11230,6 +11826,18 @@ A decision requires an effect, uncertainty, an economically meaningful compariso
 
 The [source review](SOURCE_REVIEW.md) records rights, version, reading scope, and access. The [programs](../../03_Data_and_Code/Statistical_Inference/README.md) reproduce all numerical examples. The [lab](../../07_Labs/Statistical_Inference/README.md) is optional ungraded practice. Sessions 4, 9, and 14 use selected comparisons within existing meeting allocations.
 
+## Logical Arguments and Inverse Power
+
+The [argument record](ARGUMENT_ASSESSMENT.md) connects the paper's claims to missing premises, counterexamples, and narrower supported conclusions. M9 §9.27 develops validity, soundness, quantifiers, extrapolation, and authority. M6 §6.34 implements [Donald W. K. Andrews's inverse-power approach](https://doi.org/10.2307/1913623), with scalar thresholds and a synthetic joint-test example. Complete Python, aggregate outputs, and two editable TikZ figures accompany the notes.
+
+## Institutional Exposure and Household Bills
+
+The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project pipeline to treatment timing, donor eligibility, cost recovery, and the distinction between average prices and household expenditure. M6 §6.35 supplies complete synthetic Python examples and an editable diagram; M2 §2.28.1 and M9 §9.27.6 develop measurement and the missing-premise argument.
+
+## Public Claims and Affected People
+
+[Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the verified HBS coverage, the hypothetical university-branded headline, pricing communication, and the decision to revise or publish a claim. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.
+
 ---
 
 ## Source: 01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md
@@ -11259,6 +11867,22 @@ The agency application distinguishes observed conduct, endorsement, and authorit
 ## Scope of Verification
 
 Published coefficients were visually checked against Tables 2, 4, and 7. The program calculates normal-approximation intervals and sensitivity at fixed reported standard errors. It does not re-estimate synthetic controls, recover coefficient covariance, identify household incidence, or establish actual policy harm. The critique distinguishes demonstrated interpretation problems from design concerns that require replication. See the [verification record](../../03_Data_and_Code/Statistical_Inference/VERIFICATION.md).
+
+## Logic and Donald W. K. Andrews
+
+The locally held 1986 Cowles version of Donald W. K. Andrews's *Power in Econometric Applications* was visually read at printed pp. 1–8 (PDF pp. 3–10), including motivation, nuisance parameters, directions, and inner/outer inverse-power functions. Its published 1989 Econometrica record, 57(5), 1059–1090, DOI 10.2307/1913623, was verified. The [Cowles copy](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf) is linked; redistribution permission was not established. The original course implementation uses noncentral chi-squared inversion under explicitly stated fixed Gaussian/Wald conditions. The published record and read working-paper passages are distinguished from an unperformed full reading of the final journal version.
+
+Pacuit and Simon's *Reasoning with Protocols Under Imperfect Information* (2011) was read at printed pp. 412–415 from a locally held copy. These passages distinguish possibilities, abilities, information, and permissible action. The course links the [original publication](https://doi.org/10.1017/S1755020311000190) and supplies its own household application. The source does not assess the electricity paper. Instructor philosophical-logic notes informed the constructions and scope distinctions; private notes and manuscripts are neither copied nor linked in the public repository.
+
+## Institutional Sources
+
+Read the full syndicated Bloomberg report of January 6, 2026, the Ohio Power service-process and effective-date information, the complete February 17, 2026 Chang concurrence, and EIA measurement/table descriptions. Rechecked paper pp. 14–18 and 32. The [institutional record](INSTITUTIONAL_ASSESSMENT.md) preserves dates, jurisdictions, source status, and the distinction between possible exposure and demonstrated sample contamination. No actual project histories or household bills were recovered.
+
+## Publication and Public Communication
+
+Mill's *On Liberty*, chapter II, paragraphs 1–10, and the Center for Open Science's Registered Reports description were read for the distinction between preserving inquiry and reviewing a claim before publication. Wendy's February 27, 2024 digital-news statement was read as company communication about intended pricing. It establishes neither realized customer benefits nor a connection to the data-center paper. The [communication guide](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) records the distinct speakers and evidence. The Scanlon and stakeholder reading scopes are recorded in their [supplemental catalog](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/catalog.json).
+
+The hypothetical Harvard/Wharton headline is a course construction. The verified HBS article is separate evidence. Actual use of the paper to dismiss residents in a specific proceeding remains unverified.
 
 ---
 
@@ -11305,6 +11929,14 @@ Overstated reassurance could weaken scrutiny of cost allocation, guarantees, and
 
 See [M6 §6.33](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) for complete calculations and [M9 §9.26](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) for the philosophical argument.
 
+## Logical Reconstruction and Power
+
+The [argument record](ARGUMENT_ASSESSMENT.md) makes each missing premise explicit. M9 §9.27 distinguishes deductive validity, empirical support, and normative justification, with reproducible counterexamples. M6 §6.34 bases the power analysis on Donald W. K. Andrews's inverse-power framework. The course retains a fixed reported-covariance approximation and does not claim a full-design or uniform power calculation.
+
+## Project Status and the Outcome Denominator
+
+The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) identifies two additional unsupported extensions: zero operating additions imply zero project exposure, and an average unit-price result determines household expenditure. Both require additional evidence. The paper discusses realized payments and regulation; the criticism concerns the scope of the reported outcome and donor screen.
+
 ---
 
 ## Source: 01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md
@@ -11336,6 +11968,242 @@ These results motivate scrutiny of the effects that remain plausible, the claims
 - Tables B.5–B.7, PDF pp. 40–42: pre-treatment fit and donor concentration. Pre-treatment fit supports a diagnostic; post-treatment validity requires additional conditions.
 
 This companion is a selective guide and original assessment, not a full text conversion. Mathematical model derivations, all reference entries, facility maps, and detailed utility rows remain in the PDF. Course figures and programs reproduce selected implications of reported entries, not the original figures or underlying utility estimates.
+
+---
+
+## Source: 01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md
+
+# Premises, Counterexamples, and Supported Conclusions
+
+A criticism should identify the exact inference that fails and the evidence that could repair it. The worked derivations, counterexamples, and complete Python appear in [M6 §6.34](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) and [M9 §9.27](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md). The [optional lab](../../07_Labs/Statistical_Inference/README.md) asks students to reconstruct the arguments before evaluating them.
+
+## Argument Record
+
+| Evidence and Location | Stronger Interpretation to Assess | Missing Premise or Counterexample | Supported Conclusion |
+|---|---|---|---|
+| Table 2, col. 4: 0.261, SE 0.158 | Nonrejection at 5% establishes a negligible residential burden | At the reference exposure, a true USD 2/MWh increase still gives approximately 53% nonrejection under the fixed normal approximation | The estimate leaves meaningful positive effects unresolved; low power does not identify the true effect |
+| Table 4, col. 4 and HBS public coverage | Four named owners have imposed no consumer price cost | Positive effects remain within the interval; 80% detection needs a slope of 0.448 USD/MWh per exposure pp | The imprecise four-owner slope does not support categorical harmlessness |
+| Table 4 and p. 26: direct equality p = 0.101 | Different subgroup significance stars establish different effects | The direct contrast needs covariance and does not cross the stated 10% convention | Preserve the reported joint test and its uncertainty |
+| Section 4.1 and Table A.2: four owners versus all others | The complement is a homogeneous leasing or colocation business model | An exhaustive ownership partition does not establish an operating-model classification | Test facility operations and contracts before interpreting the ownership effect as a mechanism |
+| Page 3 and Table A.4: roughly 96% residual | Named causes account causally for that residual | Correct subtraction leaves components, interactions, and estimation error unassigned | Report the remainder as a remainder until a defensible decomposition is estimated |
+| Table 7: sales slope 291, SE 493 | An infrastructure channel dominates because sales are insignificant | Substantial sales remain unresolved; even exact net zero could conceal offsetting loads or timing | The channel comparison requires joint evidence on costs, demand, displacement, and recovery |
+| Section 4.2, p. 16: cost per MWh | The estimated ratio measures the model's total-cost numerator | Costs and sales can rise proportionally; falling sales can raise the ratio without higher total cost | Reconcile totals, denominators, samples, and timing |
+| Historical coefficients and future interpretation | Historical fit establishes future small effects | Two synthetic functions agree throughout historical support but diverge beyond a capacity boundary | Extrapolation is conditional on stability and functional-form restrictions |
+| Utility-average price and household claims | The mean establishes harmlessness for every household or legitimate authority | Equal averages permit different incidence; identical bills permit different rights of challenge | Assess distribution and decision procedures with the relevant additional evidence |
+
+The first seven rows concern specific interpretations of the paper or verified public coverage. The final two rows assess broader extrapolations an audience might draw; they are not quotations asserting that the authors made every such claim. The paper's future qualifications and positive findings remain part of the evidence.
+
+## Donald Andrews's Power Framework
+
+[Donald W. K. Andrews (1989), Power in Econometric Applications](https://doi.org/10.2307/1913623), develops inverse-power functions to express sensitivity in departures from the tested restrictions. The [1986 Cowles version](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf) makes nuisance parameters and directions explicit. The course implements a fixed normal/Wald approximation with original code.
+
+At a fixed target power and test size, the program solves for the noncentrality parameter and maps it into an effect or directional radius. It separately reports the confidence bounds from the realized estimates. A two-outcome synthetic example shows how detection depends on direction. A covariance matrix estimated from a different design, an arbitrary clustering multiplier, or an assumed correction inferred from marginal SEs would not establish the power of this paper's full estimator.
+
+## Philosophical Connections
+
+Validity concerns the relation between premises and conclusion. Soundness additionally concerns the premises. A counterexample establishes that a conclusion does not follow from the stated premises; deciding which account is empirically plausible requires further evidence. Distinguish existence of a compatible model from a result holding throughout a justified class.
+
+Possibility, available action, information, and permission are separate objects in [Pacuit and Simon (2011), Reasoning with Protocols Under Imperfect Information](https://doi.org/10.1017/S1755020311000190). The course applies that distinction to household participation and authority. The application does not attribute a judgment about the electricity paper to those philosophers.
+
+The paired synthetic price functions and cost ratios are analytical counterexamples, not empirical estimates. Full original code is in [logical_counterexamples.py](../../03_Data_and_Code/Statistical_Inference/logical_counterexamples.py). Private instructor notes and manuscripts remain outside the public repository.
+
+## Institutional Premises
+
+A cancelled project with allowed recovery is a counterexample to the implication from zero operating additions to zero project costs. Unchanged revenue per MWh with greater use is a counterexample to the implication from flat average prices to flat household bills. These constructions establish failures of general entailment. Actual donor contamination, bill incidence, and causal effects require the records specified in the [institutional assessment](INSTITUTIONAL_ASSESSMENT.md).
+
+---
+
+## Source: 01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md
+
+# Electricity Prices, Project Pipelines, and Household Costs
+
+## Decision and Evidence
+
+A household needs to know how much it will pay and which risks it is required to bear. A regulator needs to know whether developer commitments cover the costs allocated to other customers. Those decisions require project histories, tariffs, consumption, and payment records alongside an estimate of average revenue per MWh.
+
+Rana, Kaps, and Netessine's working paper describes the institutional distinction between regulated and restructured markets and explains its use of realized revenue per MWh (pp. 14–16). Its treatment is capacity beginning operation, with the first positive addition since 2020 defining the anchor. Its donor rule excludes positive additions of the selected operational treatment during the post-anchor horizon (pp. 16–18, Equations 15–20). The stated rule does not separately establish absence of project requests, preparatory investment, cancellations, or associated cost recovery.
+
+The resulting identification concern is conditional. An eligible donor could have project-related costs despite no operating addition. The paper's panel and project records are needed to determine whether that occurred, which donors carried weight, and how the slope changed. The course makes no finding that a particular donor was contaminated or that this mechanism explains the published estimate.
+
+## Verified Institutional Sources
+
+Checked November 26, 2026. The links distinguish reporting, an operator's service process, official data definitions, and a commissioner's legal reasoning. These sources are linked; no complete copyrighted article is republished.
+
+| Source | Date and Scope | Verified Contribution | Evidentiary Status |
+| --- | --- | --- | --- |
+| [Miranda Davis and Josh Saul, Bloomberg, ComEd Inks Deals to Keep Data Centers From Boosting Energy Bills](https://news.bloomberglaw.com/environment-and-energy/comed-inks-deals-to-keep-data-centers-from-boosting-energy-bills) | January 6, 2026; ComEd, northern Illinois | Reports agreements intended to address customer exposure to proposed projects that fail to materialize. | Full syndicated text read at [Energy Connects](https://www.energyconnects.com/news/utilities/2026/january/chicago-s-biggest-electricity-company-inks-deals-to-keep-data-centers-from-boosting-energy-bills/). Does not identify failures in the paper's sample. |
+| [Ohio Power, Data Center Tariff and Service Process](https://www.aepohio.com/company/about/rates/data-center-tariff/) | Ohio Power territory; approved July 9, 2025, effective July 23, 2025 | Describes application, studies, contracts, and reimbursement for specified cancellation or delay before energization. | Current operator description of an approved tariff; coverage and historical contract dates matter. |
+| [FERC Commissioner Judy Chang, ComEd Agreement Concurrence](https://ferc.gov/news-events/news/commissioner-changs-concurrence-transmission-security-agreement-between) | February 17, 2026; federal transmission regulation | Explains why accepting an agreement does not itself establish full protection of other customers from cost shifts. | Individual concurrence concerning an accepted agreement; distinct from a commission-wide empirical finding of harm or a retail tariff. |
+| [EIA, Electricity Monthly Update, Retail Rates/Prices and Consumption](https://www.eia.gov/electricity/monthly/update/print-version.php) | Official US measurement explanation, current page checked November 26, 2026 | Defines revenue per kWh as a proxy for retail rates and prices. | Source definition; no new empirical electricity series is imported. |
+| [EIA, Electric Sales, Revenue, and Average Price](https://www.eia.gov/electricity/sales_revenue_price/) | Archived 2024 data, released October 7, 2025 | Distinguishes average retail price tables from average monthly bill tables. | Product is discontinued; EIA directs users to EIA-861 files. |
+
+The 2026 reporting and concurrence postdate the paper's 2020–2025 operating-entry sample. They establish the relevance of investigating institutional mechanisms. They do not establish the historical contracts or exposures of its utilities. The FERC page's title and displayed docket line differ; the course identifies the concurrence by commissioner, date, and subject without resolving that metadata discrepancy.
+
+## Measurement and Identification
+
+| Question | Required Object | Error in an Unsupported Extension | Evidence Needed |
+| --- | --- | --- | --- |
+| Did a representative household spend more? | Matched household payments and use over a stated interval | Replacing dollars per household with dollars per MWh | Customer-month denominators, tariffs, consumption, and bills |
+| Did expenditure become less affordable? | Payments relative to income and essential needs | Treating an average unit price as a complete burden measure | Household resources, energy requirements, and distribution |
+| Is a donor unexposed to the investment cycle? | Requests, commitments, investment, cancellations, and recovery | Equating zero operational additions with zero economic exposure | Dated project/utility links and cost-allocation records |
+| What is the effect of completed operation? | An operational-entry estimand under a specified institutional environment | Substituting that estimand for all consequences of development | An explicit counterfactual and defensible comparison group |
+| Who bears a failed project's costs? | Enforceable payments and allowed recovery by customer class | Assuming either automatic pass-through or automatic protection | Contracts, guarantees, collections, reuse, recovery decisions, and timing |
+
+Neither a descriptive bill increase nor a cost-recovery possibility establishes a data-center causal effect. Likewise, a completion-based coefficient cannot settle the consequences of the entire project pipeline without additional assumptions. More precise estimates leave these distinctions intact.
+
+## Reproducible Counterexamples
+
+The original [institutional exposure program](../../03_Data_and_Code/Statistical_Inference/institutional_exposure.py) uses synthetic values only. It produces four tables:
+
+1. The same 1,000 customers have a mean monthly bill of $100 at $100/MWh, then $110 at the same average price when mean use rises from 1 to 1.1 MWh. A separate scenario has the same $100 bill at $125/MWh and 0.8 MWh.
+2. A completed project raises its utility's price by $10/MWh. A cancelled project raises an eligible operationally untreated donor's price by $8. A second donor has no project and no change.
+3. Fixed weights of 0.75 and 0.25 produce a $6 donor increase and a $4 change difference. Equal baseline prices and no other changes are imposed. This is a two-period illustration, separate from the paper's within-utility capacity regression.
+4. An annual revenue requirement of $1 million, residential share 0.8, and residential sales of 100,000 MWh produce $8/MWh under full recovery and no offset. Developer payments, asset reuse, or disallowed recovery can reduce that amount.
+
+The donor example demonstrates attenuation under its chosen positive exposure. General bias need not be downward. Earlier exposure can enter the fitting window, later recovery can fall outside the outcome window, and shared markets can transmit costs beyond the local utility. Investigating these mechanisms requires the relevant dates and boundaries.
+
+Full code and derivations appear in M6 §6.35; measurement is developed in M2 §2.28.1; the missing-premise argument appears in M9 §9.27.6. The optional lab asks students to change donor costs, payment guarantees, and the outcome denominator while preserving the stated comparison.
+
+---
+
+## Source: 01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+
+# Stakeholders, Reasons, and Public Voice
+
+A company must decide which actions it ought to take when commercial objectives affect other people. The readings distinguish a reasoned justification from a prediction of profit, compliance, or approval. [M9 §§9.28–9.32](../../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) develops the arguments; [optional practice](../../../07_Labs/Philosophical_Arguments/README.md) applies them across the course.
+
+## Reasons and Reasonable Rejection
+
+Scanlon's *What We Owe to Each Other*, chapter 5, compares principles through the reasons people could have for rejecting them. The course cancellation example compares mandatory persuasion with a feasible secure exit. A serious objection can require changing either the proposed principle or the facts assumed in applying it.
+
+The 2009 John Locke Lectures add two useful distinctions. Lecture 2 treats reasons in relation to a person, circumstances, and action. Lecture 4 examines justification through reflective equilibrium. A factual premise, a normative premise, and a conditional conclusion each need appropriate support. These are selected applications, not a complete reconstruction of Scanlon's philosophy.
+
+- [1998 chapter excerpt](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf): chapter 5, §§1–3, especially the comparative discussion on pp. 195–196.
+- [2009 Lecture 2](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf): pp. 12–14 on reasons and circumstances.
+- [2009 Lecture 4](https://media.philosophy.ox.ac.uk/assets/pdf_file/0010/25858/Lecture_4.pdf): pp. 12–14 and 19–26 on reflective equilibrium and justification.
+
+## Stakeholder Obligations
+
+| Reading | Distinction Used in the Course |
+| --- | --- |
+| [Donaldson and Preston, 1995](https://doi.org/10.5465/amr.1995.9503271992) | Description, business consequences, and normative justification require different arguments. |
+| [Goodpaster, 1991](https://doi.org/10.2307/3857592) | Identifying stakeholders leaves the question of how their interests ought to govern action. Special managerial responsibilities coexist with duties beyond shareholders. |
+| [Phillips, 1997](https://doi.org/10.2307/3857232) | Fair cooperation can establish particular stakeholder obligations. Examine contributions and voluntary acceptance of benefits. |
+| [Phillips, 2003](https://doi.org/10.5840/beq20031312) | Normative and derivative legitimacy distinguish obligations from attention to influential actors. |
+| [Mitchell, Agle, and Wood, 1997](https://doi.org/10.5465/amr.1997.9711022105) | Power, legitimacy, and urgency help explain managerial attention. Influence does not supply an automatic ethical weight. |
+| [Hussain and Moriarty, 2018](https://doi.org/10.1007/s10551-016-3027-8) | Corporate participation in governance raises questions of democratic accountability to affected parties. |
+| [Phillips and Reichart, 2000](https://doi.org/10.1023/A:1006041929249) | A particular stakeholder definition need not exhaust environmental obligations. |
+
+The papers offer distinct positions. The course uses their disagreements to identify the premise supporting a proposed duty, including duties to people who never voluntarily joined the firm's arrangements.
+
+## Credibility and the Opportunity to Challenge
+
+[Fricker's chapter on testimonial injustice](https://academic.oup.com/book/32817/chapter-abstract/274999720) concerns prejudice that unfairly reduces a speaker's credibility. [Anderson's account of institutional epistemic justice](https://websites.umich.edu/eandersn/abstracts.htm) directs attention to the organization of inquiry. The course applies these questions to residents' access to evidence and to public reassurance associated with university research.
+
+The hypothetical Harvard/Wharton headline in M9 is a discussion example. The verified HBS article has its own [source assessment](../../41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). Unequal prestige alone establishes neither prejudice nor actual suppression. Compare the reach of claims, access to records, responses to objections, and the evidence supporting each inference.
+
+## Access and Reading Scope
+
+The [supplemental catalog](catalog.json) contains 12 records. Four PDFs are saved locally in Dropbox: the Scanlon excerpt, two Locke lectures, and Goodpaster's article. Their original notices remain intact. Public redistribution rights have not been established, so the PDFs are excluded from Git; the public catalog retains links and hashes.
+
+The remaining eight records were assessed through primary publisher or author abstracts. Anderson's full-text download was unavailable. The catalog states the extent read for each source. Summaries omit full arguments, objections, bibliographies, and source formatting. No annotation represents an unread full text as reviewed.
+
+---
+
+## Source: 07_Labs/Philosophical_Arguments/README.md
+
+# Philosophical Arguments and Stakeholder Reasons
+
+This is optional, ungraded practice. It establishes no assignment, deadline, grade weight, or course-wide AI rule.
+
+Use [M9 §§9.27–9.32](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md), the [Scanlon and stakeholder reading guide](../../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md), and the two editable figures in that chapter.
+
+## Construct an Argument
+
+Choose one specific decision: a cancellation step, mHealth targeting, a pricing rule, an electricity cost allocation, or publication of a research claim. Write an initial conclusion using “ought,” naming the actor, action, and circumstances.
+
+1. State the factual premises and the evidence needed for each. Identify observations, causal estimates, assumptions, and unresolved exposure separately.
+2. State the normative principle that connects those facts to the recommendation. Explain why the principle is justified.
+3. Identify affected positions beyond the firm, including people absent from the dataset. Describe a concrete interest and burden for each; do not invent testimony.
+4. Compare at least one feasible alternative under the same circumstances. Preserve legitimate security, service, and operating needs.
+5. Give the strongest reason for rejecting each principle. Assess the reasons from the affected person's position, including how the burden arises and the costs of alternatives.
+6. Answer the strongest objection and revise the conclusion where needed. Specify what new fact or better reason would change it.
+
+“The firm can,” “the firm profits,” “customers comply,” and “the public agrees” each leave a further premise to defend. A reasoned conclusion can permit an action, require it, prohibit it, or recommend gathering evidence before acting.
+
+## A Worked Argument
+
+**Hypothetical circumstances:** a subscriber has made a verified cancellation request. A prompt, secure exit is feasible at a reasonable cost. The proposed retention conversation delays exit and permits further charges.
+
+**Proposed principle:** a provider ought to respect a valid withdrawal and justify any remaining burden through the legitimate interests it protects.
+
+**Grounds:** the subscriber has a reason to control unwanted recurring obligations. Other subscribers need account security, and workers need a service that can operate sustainably. The feasible alternative protects those interests through proportionate verification while making retention offers optional.
+
+**Conclusion:** under these circumstances, the provider ought to complete cancellation promptly.
+
+**Objection and reply:** fraud or an irreversible service interruption may justify verification and clear warnings. Establish the risk and the effectiveness of the safeguard. The existence of that risk does not by itself justify compulsory persuasion. If a prompt exit cannot meet necessary protections at a reasonable cost, revise the proposed alternative and assess the remaining burdens.
+
+The normative premise is a proposed course application of Scanlon's approach. Its justification remains open to challenge. It is not a legal determination.
+
+## Recurring Cases
+
+| Course Connection | Philosophical Question | Evidence and Alternative |
+| --- | --- | --- |
+| M1, AI-assisted coding | What ought an analyst verify before a manager relies on generated output? | Identify affected decisions, independent checks, review costs, and a feasible restriction on use. |
+| M2, measurement | Who disappears when the analysis includes only observed customers? | Assess excluded users, zero records, missingness, and the population required by the claim. |
+| M3, interpretation | What justifies converting an association into a recommendation? | State the causal and normative premises separately. |
+| M4, targeting and pricing | When ought a profitable customer rule be rejected or constrained? | Compare customer burdens, access, legitimate operating needs, and less burdensome rules. |
+| M5, text and classification | What authority permits an inferred label to change treatment? | Compare label validity, consequences of errors, review, and opportunities to contest a decision. |
+| M6, experiments | What ought be communicated after an inconclusive result? | Retain uncertainty, meaningful effect sizes, and outcomes for affected positions. |
+| M7, prediction | When ought a system ask before acting on a predicted preference? | Distinguish prediction, the user's purpose, and the scope of delegation. |
+| M8, public communication | Does a favorable description supply a justified reason for acceptance? | Compare complete offers or claims, actual implementation, and material omissions. |
+| M9, stakeholder duties | Why does each affected person's claim deserve consideration? | Distinguish influence, cooperative obligations, general duties, and public authority. |
+
+## Publication and the Electricity Case
+
+Use the [statistical examples](../../03_Data_and_Code/Statistical_Inference/README.md) and [institutional assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md). Cite the exact table or public statement being criticized. Keep actual results separate from the synthetic counterexamples.
+
+Compare a delayed release, a corrected release, and rejection of the proposed version. Assess households' reasons to reject unsupported reassurance alongside readers' reasons to retain credible evidence and opportunities for criticism. Explain why the chosen remedy fits the demonstrated defect. For an already public claim, consider visible correction and traceability.
+
+## Assess the Quality of the Reasoning
+
+An effective argument defines its terms, supports its factual premises, defends its normative premise, and states a conclusion that follows under those conditions. It considers people beyond customers and shareholders when the proposed action affects them. It gives a serious objection a fair answer and identifies a meaningful condition for revision.
+
+Reasonable rejection requires an assessment of reasons. It is neither a stakeholder vote nor a test of which group can impose the greatest cost on the firm. Disagreement with the instructor's recommendation is compatible with a strong argument when the premises and reasoning withstand scrutiny.
+
+If an applicable course rule permits an AI assistant, ask it to identify an unstated premise or strengthen an opposing argument. Check the reconstruction against the actual case and verify any citations. A generated stakeholder persona supplies a hypothetical perspective, not evidence of an actual person's views.
+
+---
+
+## Source: 01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
+
+# Public Communication and Publication
+
+A research finding can influence policy through the public interpretation attached to it. The relevant decision is whether the evidence justifies publishing that interpretation and using it to allocate burdens or close a dispute. [M9 §§9.28–9.32](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) develops the philosophical argument; [M8 §8.31](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) examines research as public reassurance.
+
+## Verified Statements and Illustrative Claims
+
+The [HBS Working Knowledge article](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple), published November 12, 2026, presents the electricity paper to a broad audience. Its reassurance concerning the four named developers requires comparison with the reported estimates, precision, subgroup comparison, and measured outcomes. The article also includes qualifications about future demand and contractual protections. The course retains those qualifications and the paper's positive findings.
+
+“Harvard/Wharton study shows data centers do no harm” is a hypothetical headline constructed for discussion. It is neither a verified quotation nor an institutional endorsement. A corporate post on X promoting this paper as proof of no harm remains unverified. The public academic article establishes a communication case without establishing a coordinated corporate campaign.
+
+The [February 27, 2024 Wendy's statement](https://www.wendys.com/blog/wendys-digital-news-update) emphasizes flexibility and discounts in explaining digital menu boards. It states company intentions. The HBS article interprets a study. Compare how each communication selects a reference point and beneficiary, then ask what evidence supports the resulting impression. The connection concerns interpretation and justification; it establishes no common authorship, motive, or campaign.
+
+## Whose Reasons Receive a Hearing?
+
+Identify the actor, exact statement, audience, date, and supported scope. Trace whether a statement was used in a public decision before claiming that it displaced residents' objections. Distinguish nearby residents, utility customers, and people bearing a specified cost. Measure access to records, expert assistance, participation opportunities, and reasoned responses.
+
+A resident's testimony can identify an outcome requiring investigation. A causal explanation needs an appropriate comparison. An average estimate can inform that comparison while leaving individual incidence or institutional authority unresolved. Reputation does not fill an evidentiary gap. A fair procedure ought to allow material objections to receive a substantive answer.
+
+The [stakeholder guide](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) distinguishes Scanlonian reasonable rejection, moral standing, managerial salience, and epistemic justice. These accounts identify reasons to examine a process. Their application requires evidence about the particular people and institutions.
+
+## Publish, Revise, Delay, or Decline?
+
+Compare the contribution of the evidence with the claims proposed for release. A useful estimate may warrant publication with a narrower interpretation. A consequential unsupported claim may warrant correction or delay until its premises are examined. An already public error calls for a visible correction that preserves traceability. A paper's unfavorable implications for a company do not determine its quality, and neither do favorable implications.
+
+[Mill's discussion of free inquiry in *On Liberty*, chapter II](https://dhspriory.org/kenny/PhilTexts/Mill/Liberty2.html) gives reasons to preserve criticism and contestable evidence. [Registered Reports](https://www.cos.io/initiatives/registered-reports) illustrate an institutional separation of design assessment from the direction of results. Neither requires publication of an unsupported interpretation. The practical question is which version, evidence, and review conditions justify release.
+
+For the electricity case, students should state the defect precisely, demonstrate it using the paper's own numbers where possible, and explain why the proposed remedy addresses it. The argument evaluates evidence and public claims. It does not infer misconduct or intent from a methodological criticism.
 
 ---
 

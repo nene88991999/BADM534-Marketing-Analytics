@@ -18,12 +18,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 33 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 36 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 57 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 68 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -207,7 +207,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Donald Andrews inverse power and nuisance-parameter sensitivity.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test.
 
@@ -317,9 +317,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility. Equivalence, data-center reassurance, ontology, and household authority.
+**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence.
 
-**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.; evidence, conceptual scope, and the ability to contest cost allocation.
+**Ethics and Regulation:** Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -329,9 +329,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 50–60 | Personalized-Pricing Evidence and Benchmarks |
 | 60–70 | Wendy's Pricing Case and Evidence |
 | 70–80 | Break |
-| 80–90 | Kantian and Confucian Evaluation of Pricing |
-| 90–95 | Justification and Independent Reasons |
-| 95–100 | Definitions, Evidence, and Customer Authorization |
+| 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
+| 90–95 | Premises and an Ought Conclusion |
+| 95–100 | Stakeholder Reasons and Public Voice |
 | 100–110 | Demand Information and Pricing Objectives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
@@ -364,3 +364,11 @@ The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the ed
 ## Repeated Evidence and the Electricity Case
 
 Session 4 uses the worked comparison for repeated p-values and the ethics discussion for utility averages and household burdens. Session 9 compares significance with profit and evaluates the electricity paper using its own tables. Session 14 examines equivalence, public reassurance, ontology, and household authority within the existing Marketing Dialectics discussion. Longer simulations and source critique remain [optional ungraded practice](../07_Labs/Statistical_Inference/README.md).
+
+## Project Exposure and Household Costs
+
+Sessions 9 and 14 connect operational treatment to project requests, investment, cancellation, and cost recovery. The worked comparison shows how a nominally untreated donor can bear project costs. Household expenditure is distinguished from average revenue per MWh. These examples extend the existing methods and ethics discussions within the established 170-minute allocations.
+
+## Philosophical Arguments in Session 14
+
+Minutes 80–90 compare Kantian, Confucian, and Scanlonian reasons; minutes 90–95 connect premises to an ought conclusion; minutes 95–100 examine stakeholder reasons and public voice. These labels refine existing discussion blocks. Selected figures and arguments support the meeting; the full extended cases remain optional reading and practice.

@@ -219,3 +219,15 @@ The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md
 ## Statistical Claims and the Ethics of Public Reassurance
 
 The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Project Pipelines and Household Expenditure
+
+M2 §2.28.1 separates average revenue per MWh from household bills through a matched-denominator identity. M6 §6.35 adds requests, preparatory investment, cancellation, operating entry, and cost recovery to the treatment definition. Full synthetic Python and an editable TikZ diagram show how costs in a nominally untreated donor alter a comparison. M9 §9.27.6 identifies the missing institutional premises. The [source assessment](../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) records the Bloomberg report and primary operator, FERC, and EIA evidence.
+
+## Reasons and Stakeholder Obligations
+
+The supplemental Scanlon and stakeholder collection supports M9 §§9.28–9.32, with recurring applications in M1 and M8. Source access and reading extent are recorded in [the guide](../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md). The figures and optional practice use hypothetical cancellation procedures. The electricity application distinguishes nearby residents, customers, cost incidence, and access to a hearing.

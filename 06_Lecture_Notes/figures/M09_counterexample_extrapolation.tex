@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[width=12.5cm,height=7cm,xmin=0,xmax=2.15,ymin=0,ymax=16,
+ xlabel={Normalized Load},ylabel={Price Response (\$/MWh)},grid=major,
+ legend pos=north west,legend cell align=left,
+ title={Identical Historical Responses Permit Different Future Costs},
+ title style={font=\small}]
+\path[fill=LightStorm,opacity=.25] (axis cs:0,0) rectangle (axis cs:1,16);
+\addplot[IlliniBlue,very thick,domain=0:2,samples=101] {2*x};
+\addlegendentry{Linear: $2x$}
+\addplot[IlliniOrange,very thick,dashed,domain=0:2,samples=101] {2*x+10*max(x-1,0)^2};
+\addlegendentry{Threshold: $2x+10\max\{x-1,0\}^2$}
+\addplot[only marks,mark=*,IlliniBlue] coordinates {(0.0,0.0) (0.25,0.5) (0.5,1.0) (0.75,1.5) (1.0,2.0) (2.0,4.0)};
+\addplot[only marks,mark=square*,IlliniOrange] coordinates {(0.0,0.0) (0.25,0.5) (0.5,1.0) (0.75,1.5) (1.0,2.0) (2.0,14.0)};
+\node[font=\footnotesize,align=center] at (axis cs:.5,6.8) {Assumed Historical\\Support: $0\leq x\leq1$};
+\node[anchor=west,font=\footnotesize] at (axis cs:2,14) {\$14};
+\node[anchor=west,font=\footnotesize] at (axis cs:2,4) {\$4};
+\end{axis}
+\node[align=center,text width=12cm,font=\footnotesize] at (5.4,-2.2) {Synthetic response functions, with prices measured in the same units.\\Equality on the entire historical support leaves the response at $x=2$ unresolved.};
+\end{tikzpicture}

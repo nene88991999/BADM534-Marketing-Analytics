@@ -108,3 +108,15 @@ M1 §1.19 and M9 §9.24 connect correct numerical implementation to responsibili
 ## Statistical Claims and the Ethics of Public Reassurance
 
 The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Project Costs and the Scope of Customer Protection
+
+The institutional example distinguishes operating entry from requests, investment, cancellation, and allowed recovery. The [source record](../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) identifies Ohio Power's July 23, 2025 tariff effective date and the February 17, 2026 FERC concurrence's federal transmission scope. A commissioner's reasoning, an operator's service terms, and reported customer protection are distinct evidence. These sources motivate investigation; they do not establish contracts, contamination, or household harms in the paper's historical sample. M6 §6.35 and M9 §9.27.6 connect enforceable obligations to cost incidence and opportunities for review.
+
+## Stakeholder Reasons and Public Communication
+
+M9 §§9.28–9.32 evaluates proposed duties through Scanlonian reasonable rejection and distinct stakeholder theories. These are philosophical arguments, not newly established legal requirements. The hypothetical university-branded headline remains separate from the verified HBS coverage. The [communication record](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) distinguishes public evidence, institutional hypotheses, and publication remedies.

@@ -78,3 +78,13 @@ The expanded [AI Workflow Evaluation lab](Agent_Workflows/README.md) reconstruct
 ## Statistical Claims, Household Burdens, and Agency
 
 The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
+The [Statistical Inference lab](Statistical_Inference/README.md) includes argument reconstruction, inverse power, and counterexamples to unsupported extrapolation and harmlessness claims. The practice remains optional and ungraded.
+
+## Institutional Evidence
+
+The optional [Statistical Inference lab](Statistical_Inference/README.md) examines price and bill denominators, project timelines, donor exposure, and cost-allocation rules through complete synthetic examples.
+
+## Philosophical Arguments and Stakeholder Reasons
+
+[Optional practice](Philosophical_Arguments/README.md) constructs an ought conclusion, defends its premises, compares affected positions, and answers an objection. The electricity case examines public reassurance, publication choices, and residents' opportunities to challenge evidence.

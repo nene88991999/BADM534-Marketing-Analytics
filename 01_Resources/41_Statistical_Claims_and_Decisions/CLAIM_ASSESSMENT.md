@@ -38,3 +38,11 @@ The verified HBS article makes a categorical claim about the four large technolo
 Overstated reassurance could weaken scrutiny of cost allocation, guarantees, and review, leaving households exposed to risks that the study has not ruled out. Demonstrating that this paper caused an approval, a weakened safeguard, or a household loss requires additional evidence. A rigorous classroom criticism identifies the unsupported inference and its possible decision consequences without inventing intention, corporate dissemination, or observed harm.
 
 See [M6 §6.33](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) for complete calculations and [M9 §9.26](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) for the philosophical argument.
+
+## Logical Reconstruction and Power
+
+The [argument record](ARGUMENT_ASSESSMENT.md) makes each missing premise explicit. M9 §9.27 distinguishes deductive validity, empirical support, and normative justification, with reproducible counterexamples. M6 §6.34 bases the power analysis on Donald W. K. Andrews's inverse-power framework. The course retains a fixed reported-covariance approximation and does not claim a full-design or uniform power calculation.
+
+## Project Status and the Outcome Denominator
+
+The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) identifies two additional unsupported extensions: zero operating additions imply zero project exposure, and an average unit-price result determines household expenditure. Both require additional evidence. The paper discusses realized payments and regulation; the criticism concerns the scope of the reported outcome and donor screen.

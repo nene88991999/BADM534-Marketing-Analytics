@@ -23,3 +23,19 @@ The agency application distinguishes observed conduct, endorsement, and authorit
 ## Scope of Verification
 
 Published coefficients were visually checked against Tables 2, 4, and 7. The program calculates normal-approximation intervals and sensitivity at fixed reported standard errors. It does not re-estimate synthetic controls, recover coefficient covariance, identify household incidence, or establish actual policy harm. The critique distinguishes demonstrated interpretation problems from design concerns that require replication. See the [verification record](../../03_Data_and_Code/Statistical_Inference/VERIFICATION.md).
+
+## Logic and Donald W. K. Andrews
+
+The locally held 1986 Cowles version of Donald W. K. Andrews's *Power in Econometric Applications* was visually read at printed pp. 1–8 (PDF pp. 3–10), including motivation, nuisance parameters, directions, and inner/outer inverse-power functions. Its published 1989 Econometrica record, 57(5), 1059–1090, DOI 10.2307/1913623, was verified. The [Cowles copy](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf) is linked; redistribution permission was not established. The original course implementation uses noncentral chi-squared inversion under explicitly stated fixed Gaussian/Wald conditions. The published record and read working-paper passages are distinguished from an unperformed full reading of the final journal version.
+
+Pacuit and Simon's *Reasoning with Protocols Under Imperfect Information* (2011) was read at printed pp. 412–415 from a locally held copy. These passages distinguish possibilities, abilities, information, and permissible action. The course links the [original publication](https://doi.org/10.1017/S1755020311000190) and supplies its own household application. The source does not assess the electricity paper. Instructor philosophical-logic notes informed the constructions and scope distinctions; private notes and manuscripts are neither copied nor linked in the public repository.
+
+## Institutional Sources
+
+Read the full syndicated Bloomberg report of January 6, 2026, the Ohio Power service-process and effective-date information, the complete February 17, 2026 Chang concurrence, and EIA measurement/table descriptions. Rechecked paper pp. 14–18 and 32. The [institutional record](INSTITUTIONAL_ASSESSMENT.md) preserves dates, jurisdictions, source status, and the distinction between possible exposure and demonstrated sample contamination. No actual project histories or household bills were recovered.
+
+## Publication and Public Communication
+
+Mill's *On Liberty*, chapter II, paragraphs 1–10, and the Center for Open Science's Registered Reports description were read for the distinction between preserving inquiry and reviewing a claim before publication. Wendy's February 27, 2024 digital-news statement was read as company communication about intended pricing. It establishes neither realized customer benefits nor a connection to the data-center paper. The [communication guide](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) records the distinct speakers and evidence. The Scanlon and stakeholder reading scopes are recorded in their [supplemental catalog](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/catalog.json).
+
+The hypothetical Harvard/Wharton headline is a course construction. The verified HBS article is separate evidence. Actual use of the paper to dismiss residents in a specific proceeding remains unverified.

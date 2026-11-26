@@ -31,6 +31,18 @@
   },
   "outputs": [
     {
+      "path": "results/andrews_directional_power.csv",
+      "sha256": "570cbae0187868ea7130d5e53d90c2f564552056de59d883c479f733e36aa7b6"
+    },
+    {
+      "path": "results/andrews_inverse_power.csv",
+      "sha256": "e1f9518f5bb2240f1bfcd19fab90aac2020cdf4b3534bb6d34b0563faf1336a7"
+    },
+    {
+      "path": "results/andrews_precision_scenarios.csv",
+      "sha256": "1a286855fe7178aefa887e6823616366454bf754d776b7d170abe8aff627ca5f"
+    },
+    {
       "path": "results/campaign_decision.csv",
       "sha256": "a7d4a1d3a01a4969bb84352a0394f2d301eab857854eb582fcf394775a0b36f0"
     },
@@ -65,6 +77,30 @@
     {
       "path": "results/first_experiment.csv",
       "sha256": "e353d67f3473f81ce589babb4b06663b3ab6cd37b5a61342534a60ab17239658"
+    },
+    {
+      "path": "results/institutional_bills.csv",
+      "sha256": "1581a3d5076b641b1d79fe8f76b73eb7fce8864e30d2fa982bc307e491cfa140"
+    },
+    {
+      "path": "results/institutional_comparisons.csv",
+      "sha256": "6e650b88fa342bab41d8798e7e64e3b40d26cc3ef497dfe5233b7d38d3c9127d"
+    },
+    {
+      "path": "results/institutional_donors.csv",
+      "sha256": "8a7250f629647e3670c6d407f669e7f6c9428a6c844e899ca410e36eb3910bce"
+    },
+    {
+      "path": "results/institutional_recovery.csv",
+      "sha256": "1b182cf64c271e69db76c5c7c91f467d404af77d58921738f5a853678cf38381"
+    },
+    {
+      "path": "results/logic_cost_ratios.csv",
+      "sha256": "5233360d1cab19571dd9670c67e37fc77937f6035b8f11a31330e85a4d28adb6"
+    },
+    {
+      "path": "results/logic_extrapolation.csv",
+      "sha256": "c8c5d9d909f7bbc20fec6f19b09db5e16bd7e2aeae79f1aa356efcc798ecf8bf"
     },
     {
       "path": "results/mhealth.json",
@@ -125,8 +161,29 @@
     "synthetic_inputs": "Campaign counts, cancellation summaries, repeated store experiments, and equal-average household allocations.",
     "new_programs_executed": 4,
     "new_tests_passed": 15,
-    "total_inference_tests_passed": 25,
+    "total_inference_tests_passed": 39,
     "fresh_results_byte_identical": 14,
     "fresh_tikz_byte_identical": 5
+  },
+  "logic_and_inverse_power": {
+    "implemented_on": "2026-11-26",
+    "power_reference": "https://doi.org/10.2307/1913623",
+    "source_scope": "Read 1986 Cowles version printed pp. 1–8; published 1989 record verified.",
+    "new_programs_executed": 2,
+    "new_tests_passed": 8,
+    "total_tests_passed": 39,
+    "fresh_results_byte_identical": 5,
+    "fresh_tikz_byte_identical": 2,
+    "synthetic_inputs": "Precision multipliers, two-outcome covariance, load-response functions, and cost/sales totals.",
+    "empirical_inputs": "Previously verified rounded coefficients and clustered SEs only."
+  },
+  "institutional_exposure": {
+    "implemented_on": "2026-11-26",
+    "new_programs_executed": 1,
+    "new_tests_passed": 6,
+    "total_tests_passed": 39,
+    "fresh_results_byte_identical": 4,
+    "fresh_tikz_byte_identical": 1,
+    "data_status": "All values synthetic; no actual project-level or household data."
   }
 }

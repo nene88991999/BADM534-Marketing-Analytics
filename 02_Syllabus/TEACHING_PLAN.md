@@ -150,3 +150,15 @@ Use the [published comparison and original cases](../03_Data_and_Code/Agent_Work
 ## Evidence and the Recurring Electricity Case
 
 Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutional Context in Empirical Evaluation
+
+The recurring electricity case distinguishes average unit prices from household bills and completed facilities from the project pipeline. Sessions 9 and 14 use a synthetic comparison to examine cancelled projects, donor exposure, and cost recovery. The discussion fits the existing methods and ethics allocations. The syllabus calendar, assessment requirements, and course-wide AI policy retain their existing release status.
+
+## Stakeholder Reasons and Public Claims
+
+The existing Session 14 philosophy discussion includes defended normative premises, Scanlonian reasonable rejection, stakeholder obligations, and residents' opportunities to challenge public evidence. M9 §§9.28–9.32 and the optional Philosophical Arguments practice support this coverage. Meeting dates, the 170-minute allocation, and released assessment requirements are unchanged.

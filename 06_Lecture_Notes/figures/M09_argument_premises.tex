@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=4.0cm,minimum height=1.35cm] (facts) at (2.2,1.1)
+  {\textbf{Factual Premises}\\Valid cancellation request.\\Secure exit is feasible.};
+\node[orangebox,text width=4.0cm,minimum height=1.35cm] (norm) at (2.2,-1)
+  {\textbf{Normative Premise}\\Respect withdrawal.\\Justify burdens.};
+\node[box,text width=3.75cm,minimum height=1.6cm] (application) at (6.95,-.1)
+  {\textbf{Apply the Principle}\\Is persuasion needed\\for protection?};
+\node[orangebox,text width=3.75cm,minimum height=1.6cm] (conclusion) at (11.6,-.1)
+  {\textbf{Ought Conclusion}\\Cancel promptly.\\Keep offers optional.};
+\node[box,text width=8.4cm,minimum height=1.05cm] (challenge) at (9.3,-2.65)
+  {\textbf{Strongest Objection and Revision}\\Check fraud, continuity, and cost.\\Revise a premise if the evidence or reasons change.};
+\draw[edge] (facts.east) -- (application.west);
+\draw[accent] (norm.east) -- (application.west);
+\draw[edge] (application.east) -- (conclusion.west);
+\draw[edge] (conclusion.south) -- (challenge.north -| conclusion.south);
+\draw[accent,dashed] (challenge.west) -- (2.2,-2.65) -- (norm.south);
+\draw[edge,dashed] (challenge.west) -- (-.2,-2.65) -- (-.2,1.1) -- (facts.west);
+\node[align=center,text width=13.5cm,font=\footnotesize] at (6.8,-4.1)
+  {Hypothetical cancellation. Evidence supports factual premises;\\reasons justify the normative premise. Both remain open to challenge.};
+\end{tikzpicture}

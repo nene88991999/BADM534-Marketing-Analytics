@@ -1492,7 +1492,7 @@ if __name__ == "__main__":
 
 \noindent The paper interprets its preferred slope using 456 MW of average added capacity and 6,804 MW of average peak demand. Their ratio, multiplied by 100, is 6.70194 percentage points. Applying that reference exposure to the reported slope 0.261 and standard error 0.158 gives an estimated increase of $1.749/MWh and a standard error of $1.059/MWh. The ratio of two reported means is a reference exposure; it generally differs from the mean of utility-specific ratios and from a household-weighted exposure.
 
-For a fixed normal approximation with standard error $s$, the rejection probability against a specified positive effect $d$ is
+Following Donald W. K. Andrews's inverse-power approach, assess sensitivity at economically specified departures from the null. Section 6.34 derives the corresponding detection thresholds and their dependence on direction and nuisance parameters. For a fixed normal approximation with standard error $s$, the rejection probability against a specified positive effect $d$ is
 
 $$
 \pi(d;s)=\Phi(-z_{0.975}-d/s)+1-\Phi(z_{0.975}-d/s).
@@ -1627,6 +1627,344 @@ def main():
                          aggregate_extra_revenue=total,
                          average_increase_usd_per_mwh=total/(n*mwh)))
     pd.DataFrame(rows).to_csv(RESULTS / "data_center_incidence_illustration.csv", index=False)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 6.34 Inverse Power and the Scope of Nonrejection
+
+\noindent A regulator considering a residential cost guarantee needs to know which price increases a study could reliably detect. Donald W. K. Andrews's inverse-power approach starts with a desired probability of rejection and calculates the departures from the null that attain it. This retains the economic units lost when a result is summarized by a t-statistic alone. Two studies can have the same t-statistic and very different abilities to detect a consequential price increase. [Andrews, Power in Econometric Applications, Econometrica 1989](https://doi.org/10.2307/1913623); [Cowles version, §§1–3](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf).
+
+### 6.34.1 Invert the Test's Detection Probability
+
+\noindent Let $\delta$ be a vector of $q$ departures from the hypothesized restrictions, with zero representing the null. Let $\widehat\delta$ estimate that vector and let $V$ denote the covariance matrix of the estimator. For a single electricity-price restriction, $q=1$, $\delta$ is measured in dollars per MWh, and $V=s^2$.
+
+\begin{assumption}[Fixed Gaussian Approximation for Power]\label{ass:andrews-power}
+For the hypothetical repeated samples, $\widehat\delta$ is normally distributed with mean $\delta$ and a fixed positive-definite covariance matrix $V$. The test rejects when $W=\widehat\delta'V^{-1}\widehat\delta$ exceeds the $1-\alpha$ quantile of a chi-squared distribution with $q$ degrees of freedom. The restriction, significance level, and direction of departure are specified independently of the realized estimate.
+\end{assumption}
+
+Under Assumption \ref{ass:andrews-power}, the distribution under an alternative is noncentral chi-squared, with noncentrality $\lambda=\delta'V^{-1}\delta$. To calculate the departure needed for a target rejection probability $p$, solve
+
+$$
+\Pr\!\left\{\chi_q^2(\lambda_p)>\chi^2_{q,1-\alpha}\right\}=p.
+$$
+
+The resulting $\lambda_p$ measures distance from the null relative to sampling precision. Along a direction $\eta$ of Euclidean length one, write $\delta=r\eta$. The inverse-power radius is
+
+$$
+r_p(\eta,V)=\sqrt{\frac{\lambda_p}{\eta'V^{-1}\eta}}.
+$$
+
+This radius expresses the departure in the chosen coordinates. A direction and its distance require an explicit unit convention when outcomes have different scales. The scalar case reduces to $r_p=s\sqrt{\lambda_p}$. Power rises with the positive radius under this approximation, so the inner and outer inverse-power boundaries in Andrews's treatment coincide. A general test can have a more complicated power function.
+
+For the residential reference comparison in §6.33, the fixed standard error is $1.05891/MWh. A two-sided 5% zero-null test gives the following detection thresholds.
+
+| Target Power | Departure from Zero ($/MWh) | Nonrejection Probability at That Departure |
+|---|---:|---:|
+| 50% | 2.075 | 50% |
+| 80% | 2.967 | 20% |
+| 90% | 3.432 | 10% |
+| 95% | 3.817 | 5% |
+
+An increase of roughly $2.08/MWh would still escape detection in half of repeated samples under this assumed precision. The usual 80% minimum detectable effect is one point on this inverse-power function. The four-owner slope separately requires a departure of 0.448 dollars/MWh per exposure percentage point for 80% power; the sales slope requires 1,381 quarterly MWh per added MW. Their different units and estimands must remain explicit.
+
+The realized residential estimate instead supplies a one-sided 95% upper confidence bound of $3.49/MWh. That bound depends on the estimate as well as its precision. The inverse-power radius depends on the test, covariance, and target power. Substituting the realized coefficient for an externally specified alternative collapses the exercise into a transformation of the same test statistic. It supplies no independent demonstration that the true effect is small. Neither a detection threshold nor a nonrejection event assigns a posterior probability to the null.
+
+### 6.34.2 Direction and Nuisance Parameters Matter
+
+\noindent A joint test can be sensitive to one departure and insensitive to another. Suppose two independent estimates measure price effects on outcomes A and B in dollars per MWh, with standard errors 0.50 and 2.00. A joint 5% Wald test of both zero restrictions needs an A-only departure of $1.55 for 80% power, compared with a B-only departure of $6.21. The covariance matrix and the test remain fixed. The direction of the true effect changes.
+
+![Synthetic inverse-power boundary for a joint two-outcome Wald test. Every point on the curve has 80% power; effects nearer the origin have lower power. The less precise outcome needs a four-times-larger departure when only that outcome changes.](../figures/M06_andrews_directional_power.png)
+
+Andrews treats nuisance parameters explicitly and discusses sensitivity to the values at which they are held fixed. Here, multiplying the residential standard error by 0.75, 1, and 1.5 gives 80% detection thresholds of $2.225, $2.967, and $4.450/MWh. These are assumed precision scenarios. They are not estimated corrections to the already clustered standard error. A study-specific analysis would simulate alternatives through the utility panel, synthetic-control fitting, slope estimation, and inference procedure, preserving relevant dependence and checking null rejection rates before interpreting alternative rejection rates.
+
+The table-based calculation therefore implements Andrews's inverse-power logic within a fixed Wald approximation. It does not establish a uniform power guarantee over unknown donor dependence, treatment timing, covariance, or model misspecification. Those features require evidence from the actual design. The reported developer contrast also needs its joint covariance; the two marginal standard errors cannot supply its directional power. Choosing a different test after inspecting which one gives a favorable result changes the procedure being evaluated.
+
+Run the complete calculation from the repository root:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/andrews_inverse_power.py
+```
+
+
+Python source: [andrews_inverse_power.py](../../03_Data_and_Code/Statistical_Inference/andrews_inverse_power.py)
+
+```python
+"""Donald W. K. Andrews's inverse-power approach in a fixed Wald approximation.
+
+Published inputs are rounded coefficients/clustered SEs, not a panel replication.
+The two-outcome covariance and precision multipliers are synthetic illustrations.
+"""
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy.optimize import brentq
+from scipy.stats import chi2, ncx2
+
+from data_center_claims import REFERENCE_PP
+
+OUTPUT = Path(__file__).resolve().parent / "results"
+ALPHA = .05
+
+
+def required_noncentrality(target_power, restrictions=1, alpha=ALPHA):
+    """Invert the noncentral chi-square power function at a fixed test size."""
+    if restrictions < 1 or int(restrictions) != restrictions:
+        raise ValueError("A positive integer number of restrictions is required")
+    if not 0 < alpha < target_power < 1:
+        raise ValueError("Require 0 < alpha < target power < 1")
+    cutoff = chi2.ppf(1-alpha, restrictions)
+    objective = lambda lam: ncx2.sf(cutoff, restrictions, lam)-target_power
+    upper = 1.0
+    while objective(upper) < 0:
+        upper *= 2
+    return brentq(objective, 0, upper)
+
+
+def inverse_radius(covariance, direction, target_power, alpha=ALPHA):
+    """Deviation d=r*direction needed for power; direction has Euclidean norm 1."""
+    v, eta = np.asarray(covariance, float), np.asarray(direction, float)
+    q = eta.size
+    if v.shape != (q, q) or not np.all(np.isfinite(v)):
+        raise ValueError("Finite square covariance matching the direction required")
+    if not np.allclose(v, v.T) or not np.isclose(eta @ eta, 1):
+        raise ValueError("Symmetric covariance and unit direction required")
+    np.linalg.cholesky(v)  # Positive definiteness; no pseudoinverse substitution.
+    information = eta @ np.linalg.solve(v, eta)
+    return np.sqrt(required_noncentrality(target_power, q, alpha)/information)
+
+
+def main():
+    OUTPUT.mkdir(exist_ok=True)
+    sources = [("residential_reference", .158*REFERENCE_PP, "USD/MWh"),
+               ("four_owner_slope", .160, "USD/MWh per exposure pp"),
+               ("sales_slope", 493.0, "quarterly MWh per added MW")]
+    rows = []
+    for name, se, unit in sources:
+        for probability in [.5, .8, .9, .95]:
+            radius = inverse_radius([[se**2]], [1], probability)
+            rows.append(dict(case=name, se=se, units=unit, alpha=ALPHA,
+                             target_power=probability, deviation=radius,
+                             standardized_deviation=radius/se))
+    pd.DataFrame(rows).to_csv(OUTPUT/"andrews_inverse_power.csv", index=False)
+
+    # Assumed precision changes, not estimated corrections to the published SE.
+    rows = []
+    for multiplier in [.75, 1, 1.5]:
+        se = .158*REFERENCE_PP*multiplier
+        rows.append(dict(se_multiplier=multiplier, se=se,
+                         mde80=inverse_radius([[se**2]], [1], .8)))
+    pd.DataFrame(rows).to_csv(OUTPUT/"andrews_precision_scenarios.csv", index=False)
+
+    # Synthetic independent outcomes A and B, each measured in USD/MWh.
+    # V is the covariance of their estimators, not individual observations.
+    v = np.diag([.5**2, 2.0**2])
+    directions = {"A_only": [1., 0.], "B_only": [0., 1.],
+                  "equal_increases": [1/np.sqrt(2), 1/np.sqrt(2)]}
+    rows = []
+    for name, direction in directions.items():
+        radius = inverse_radius(v, direction, .8)
+        delta = radius*np.asarray(direction)
+        rows.append(dict(direction=name, restrictions=2, alpha=ALPHA,
+                         target_power=.8, radius=radius,
+                         effect_A=delta[0], effect_B=delta[1]))
+    pd.DataFrame(rows).to_csv(OUTPUT/"andrews_directional_power.csv", index=False)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 6.35 Institutional Exposure and the Meaning of an Untreated Utility
+
+\noindent A regulator deciding whether households need protection from data-center costs must identify when financial obligations arise and who remains responsible if a project fails. A utility may receive a service request, commit resources, build equipment, and recover approved costs before a center begins operating. Cancellation removes the expected electricity demand without necessarily removing those obligations. A comparison defined by operating capacity can therefore omit an economically consequential part of the investment process.
+
+### 6.35.1 Follow the Project Before Defining Treatment
+
+\noindent Rana, Kaps, and Netessine define new capacity by the quarter in which it begins operating. Their treatment anchor is the first positive addition since 2020; cumulative operating additions supply the subsequent exposure measure. The donor rule requires complete outcomes and no positive addition of the selected treatment during the treated utility's post-anchor horizon. This rule excludes the specified operating additions. It does not separately screen service requests, committed upgrades, cancelled projects, or obligations already entering rates. [Paper, pp. 16–18, Equations 15–20](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+
+The relevant distinction is between absence of an operating center and absence of project-related exposure. A cancelled project can satisfy the first condition while failing the second. If preparatory spending changes prices before the recorded anchor, some exposure also enters the 16-quarter fitting period. Close pre-entry fit can then match histories that already contain project costs. A delayed rate adjustment creates the opposite timing problem: costs may enter bills after the study's outcome window.
+
+Bloomberg's January 6, 2026 report on ComEd discusses financial commitments intended to protect customers when proposed projects fail to materialize. That reporting supplies an institutional reason to examine the project pipeline. It does not identify contaminated donors in this paper's 2020–2025 sample. [Bloomberg report](https://www.energyconnects.com/news/utilities/2026/january/chicago-s-biggest-electricity-company-inks-deals-to-keep-data-centers-from-boosting-energy-bills/).
+
+### 6.35.2 An Untreated Control Can Bear Project Costs
+
+\noindent Consider a synthetic two-period comparison of three utilities. All begin at $100/MWh. After investment, one completed project raises its utility's price to $110; a cancelled project leaves approved costs that raise another utility's price to $108; an unexposed utility remains at $100. The last two utilities have zero operating additions. Give the cancelled-project utility weight 0.75 and the unexposed utility weight 0.25 in the comparison.
+
+| Utility | Operating Addition (MW) | Initial Price (USD/MWh) | Later Price (USD/MWh) | Donor Weight |
+| --- | ---: | ---: | ---: | ---: |
+| Completed Project | 100 | 100 | 110 | 0 |
+| Cancelled After Investment | 0 | 100 | 108 | 0.75 |
+| No Project | 0 | 100 | 100 | 0.25 |
+
+The weighted donor price rises by $6/MWh. The resulting change difference is $4/MWh, although the completed-project utility's increase relative to its stipulated no-project path is $10/MWh. The comparison subtracts a cost borne by nominally untreated customers.
+
+To identify the omitted component, write the two-period change difference as
+
+$$
+G_i=\Delta Y_i-\sum_j w_{ij}\Delta Y_j
+    =\tau_i-\sum_j w_{ij}\gamma_j.
+$$
+
+Here $Y$ is dollars per MWh, the nonnegative fixed donor weights sum to one, $\tau_i$ is the completed-project increase, and $\gamma_j$ is each donor's project-related increase. The second equality holds in the constructed example because the no-project price changes are equal. With $\tau_i=10$ and weighted $\gamma_j=6$, the gap is four. If both changes were ten, the gap would be zero despite positive costs in both groups.
+
+![A possible project sequence runs from service request through utility investment and cancellation to allowed cost recovery. In a synthetic comparison, a completed-project increase of ten dollars per MWh minus a weighted donor increase of six gives a gap of four. Zero operating additions do not establish zero cost exposure.](../figures/M06_institutional_exposure.png)
+
+This attenuation follows from the imposed positive donor costs and common no-project changes. Actual bias can have either sign when timing, cost recovery, donor selection, load, or other shocks differ. The calculation is a two-period illustration. The paper subsequently regresses outcome gaps on cumulative exposure with utility fixed effects; a single constant post-entry exposure would be absorbed by those effects. Reproducing its slope requires the actual panel and within-utility exposure variation.
+
+### 6.35.3 Contracts Determine Who Bears a Failed Project's Costs
+
+\noindent Preparatory spending creates a potential obligation. Its incidence depends on the applicable recovery decision, enforceable developer payments, reuse of the assets, and allocation across customer classes. For a transparent annual calculation, let $K$ be the annual revenue requirement attributable to the assets, $D$ the collectible annual developer contribution, and $U$ the annual offset from alternative uses. Define $a$ as the fraction of the remaining requirement allowed into rates, $s$ as the residential allocation share, and $Q_R$ as annual residential sales in MWh. An illustrative average-price increment is
+
+$$
+\Delta p_R=\frac{a s\max\{K-D-U,0\}}{Q_R}.
+$$
+
+Every monetary term in the numerator is dollars per year. $K$ already annualizes the relevant costs; inserting an upfront construction bill would mix units. The expression is a stated allocation rule for the example. Actual tariffs can use demand charges, fixed charges, riders, and different allocations.
+
+With an annual requirement of $1 million, residential share 0.8, sales of 100,000 MWh, and full allowed recovery, zero developer contributions imply $8/MWh. A $500,000 annual contribution reduces that amount to $4. Full contributions or disallowed recovery reduce it to zero. The outcomes show why a credible account needs the contract and regulatory decision alongside the project status.
+
+Ohio Power's Schedule DCT took effect July 23, 2025. Its service process includes reimbursement obligations for specified pre-energization cancellation or delay. This is a protection for covered projects in that service territory; it does not establish the terms faced by every utility or earlier project. [Ohio Power, Data Center Tariff](https://www.aepohio.com/company/about/rates/data-center-tariff/).
+
+In a February 17, 2026 concurrence concerning a ComEd agreement, FERC Commissioner Judy Chang distinguished acceptance of the contract from proof that other customers were fully protected. Her reasoning concerns transmission cost allocation and the duration of commitments. It is a commissioner's concurrence, separate from a general finding of household harm. [FERC concurrence](https://ferc.gov/news-events/news/commissioner-changs-concurrence-transmission-security-agreement-between).
+
+### 6.35.4 Reconstruct the Exposure Before Reestimating the Effect
+
+\noindent A useful project panel records a stable project identifier, requested capacity, location, utility, application date, financial commitment, investment authorization, expenditure, energization, cancellation, and applicable cost-recovery dates. Duplicate requests for alternative sites must be linked before treating requested capacity as distinct demand. Record developer guarantees and amounts actually collected. A signed promise and a collectible payment can differ.
+
+For the paper's comparison, first identify which donors carried pending or cancelled projects during the fitting and outcome windows. Quantify their weights and the timing of any associated price changes. Then distinguish effects following a request, investment commitment, energization, and recovery decision. Screening potential controls using information available at the comparison date avoids quietly selecting the sample by later success. Removing all eventual failures can itself condition on a future outcome. A design with multiple project states must also address selection into those states.
+
+An operational-capacity estimand may remain useful for the incremental effect of completed entry under the observed institutional environment. A claim about the total household consequences of the data-center investment cycle requires a broader exposure definition, including failed proposals. Shared transmission or wholesale-market costs can also reach utilities with no local request, so the relevant geographic boundary may exceed the service territory. Each proposed screen should be justified by the mechanism and tested against the available records.
+
+The inverse-power calculation in §6.34 addresses sampling sensitivity under its stated covariance. It cannot repair an outcome that fails to measure the claimed burden or a comparison group that shares the exposure. Greater precision around that comparison would make the narrow contrast more certain while leaving the broader interpretation unresolved.
+
+Run `python3 03_Data_and_Code/Statistical_Inference/institutional_exposure.py` from the repository root. The program constructs the bill examples in §2.28.1, the three-utility comparison, and the annual recovery scenarios. All inputs are synthetic. The four CSV outputs retain units, weights, project states, and the assumptions needed to reproduce each calculation.
+
+
+Python source: [institutional_exposure.py](../../03_Data_and_Code/Statistical_Inference/institutional_exposure.py)
+
+```python
+"""Synthetic electricity examples: bills, cancelled projects, and cost allocation.
+
+All values are imposed. This is a two-period comparison, not a replication of
+the paper's synthetic-control/within-utility capacity regression. No downloads.
+"""
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+OUTPUT = Path(__file__).resolve().parent / "results"
+
+
+def billing_examples():
+    """One month per row; the same 1,000 customer accounts in every scenario."""
+    rows = []
+    for name, revenue, sales in [
+        ("baseline", 100000., 1000.),
+        ("more_use_same_average_price", 110000., 1100.),
+        ("higher_price_less_use", 100000., 800.),
+    ]:
+        customers = 1000
+        price = revenue/sales
+        mean_use = sales/customers
+        rows.append(dict(scenario=name, revenue_usd=revenue,
+                         sales_mwh=sales, customer_months=customers,
+                         average_price_usd_mwh=price,
+                         use_mwh_per_customer_month=mean_use,
+                         bill_usd_per_customer_month=revenue/customers))
+    result = pd.DataFrame(rows)
+    assert np.allclose(result.average_price_usd_mwh *
+                       result.use_mwh_per_customer_month,
+                       result.bill_usd_per_customer_month)
+    return result
+
+
+def donor_examples():
+    """Assume equal baseline prices and no other changes in three utilities."""
+    return pd.DataFrame([
+        dict(utility="completed", project_status="operating",
+             operating_addition_mw=100., prior_price=100., post_price=110.,
+             project_related_increase=10., donor_weight=0.),
+        dict(utility="cancelled", project_status="cancelled_after_investment",
+             operating_addition_mw=0., prior_price=100., post_price=108.,
+             project_related_increase=8., donor_weight=.75),
+        dict(utility="unexposed", project_status="no_project",
+             operating_addition_mw=0., prior_price=100., post_price=100.,
+             project_related_increase=0., donor_weight=.25),
+    ])
+
+
+def donor_comparisons(utilities):
+    """Compare changes, holding donor weights fixed at their imposed values."""
+    treated = utilities.loc[utilities.utility == "completed"].iloc[0]
+    donors = utilities.loc[utilities.donor_weight > 0]
+    weights = donors.donor_weight.to_numpy()
+    assert np.isclose(weights.sum(), 1)
+    assert donors.operating_addition_mw.eq(0).all()
+    treated_change = treated.post_price-treated.prior_price
+    rows = []
+    for scenario, donor_change in [
+        ("unexposed_comparison", 0.),
+        ("weighted_operationally_untreated", float(weights @
+         (donors.post_price-donors.prior_price).to_numpy())),
+    ]:
+        rows.append(dict(comparison=scenario,
+                         treated_change_usd_mwh=treated_change,
+                         donor_change_usd_mwh=donor_change,
+                         change_difference_usd_mwh=treated_change-donor_change))
+    return pd.DataFrame(rows)
+
+
+def residual_recovery(annual_requirement, developer_payment, reusable_offset,
+                      allowed_fraction, residential_share, sales_mwh):
+    """Illustrative annual recovery of unmatched costs, in USD/MWh.
+
+    Requirement, payments, and the reuse offset all use annual USD. Fractions
+    represent imposed cost-recovery and class-allocation rules. They are not
+    estimated legal entitlements. Upfront capital expenditure is not used.
+    """
+    values = [annual_requirement, developer_payment, reusable_offset,
+              allowed_fraction, residential_share, sales_mwh]
+    if not np.isfinite(values).all() or min(values[:3]) < 0:
+        raise ValueError("Finite inputs and nonnegative annual amounts required")
+    if not 0 <= allowed_fraction <= 1 or not 0 <= residential_share <= 1:
+        raise ValueError("Recovery and allocation fractions must be in [0, 1]")
+    if sales_mwh <= 0:
+        raise ValueError("Positive annual residential sales required")
+    residual = max(annual_requirement-developer_payment-reusable_offset, 0.)
+    return allowed_fraction*residential_share*residual/sales_mwh
+
+
+def recovery_examples():
+    rows = []
+    for name, payment, allowed in [
+        ("no_developer_payment", 0., 1.),
+        ("partial_developer_payment", 500000., 1.),
+        ("full_developer_payment", 1000000., 1.),
+        ("recovery_disallowed", 0., 0.),
+    ]:
+        value = residual_recovery(1000000., payment, 0., allowed, .8, 100000.)
+        rows.append(dict(scenario=name, annual_requirement_usd=1000000.,
+                         developer_annual_payment_usd=payment,
+                         reusable_annual_offset_usd=0., allowed_fraction=allowed,
+                         residential_share=.8, annual_residential_mwh=100000.,
+                         residential_increase_usd_mwh=value))
+    return pd.DataFrame(rows)
+
+
+def main():
+    OUTPUT.mkdir(exist_ok=True)
+    utilities = donor_examples()
+    tables = {"institutional_bills": billing_examples(),
+              "institutional_donors": utilities,
+              "institutional_comparisons": donor_comparisons(utilities),
+              "institutional_recovery": recovery_examples()}
+    for name, table in tables.items():
+        table.to_csv(OUTPUT/f"{name}.csv", index=False)
 
 
 if __name__ == "__main__":

@@ -31,3 +31,21 @@ Input: `../mHealth/data/food_entries.csv.gz`, verified against `../mHealth/manif
 - `data_center_sales_targets.csv`: hypothetical utilization of 25% or 50% over a full 2,190-hour quarter without displacement; resulting MWh per MW and fixed-SE power.
 - `data_center_reporting_checks.csv`: descriptive observed-price difference, estimated/residual shares, reference exposure, and directly reported developer-equality p-value. No covariance is inferred.
 - `data_center_incidence_illustration.csv`: two synthetic monthly allocations with 1,000 equal-use households, the number affected, their additional dollar bill, total revenue, and mean dollars/MWh. Neither scenario is measured household incidence.
+
+## Inverse-Power Outputs
+
+- `andrews_inverse_power.csv`: source case, fixed reported SE, units, test size, target power, required positive departure, and departure in SE units. Residential reference scaling follows Table 2; four-owner and sales cases retain their own slope units.
+- `andrews_precision_scenarios.csv`: assumed SE multiplier, resulting SE in USD/MWh, and 80% detection threshold. Multipliers are illustrative sensitivity inputs, with no claim that they correct the original clustered SE.
+- `andrews_directional_power.csv`: synthetic two-restriction Wald test with estimator covariance diag(0.25, 4), both outcomes in USD/MWh. A unit-length direction and target power determine the radius and two effect components.
+- `logic_extrapolation.csv`: normalized synthetic load, linear and threshold price responses in USD/MWh, and an indicator for the assumed historical support. The functions agree throughout [0, 1] by construction; no sample is fitted.
+- `logic_cost_ratios.csv`: hypothetical one-period total cost in USD, sales in MWh, and their ratio. The inputs establish counterexamples to a general inference and measure no actual utility.
+
+No random seed is needed for these deterministic exports. The independent joint-power simulation in the test suite uses seed 20261126 and 100,000 draws; it validates the Gaussian calculation, not the paper's empirical design.
+
+## Institutional Counterexamples
+
+All `institutional_*.csv` inputs are synthetic. `institutional_bills.csv` records monthly revenue in USD, sales in MWh, and 1,000 matched customer-months. Its derived price, mean use, and mean bill satisfy the same-denominator accounting identity. No tariff or causal effect is estimated.
+
+`institutional_donors.csv` has one row per imposed utility: completed, cancelled after investment, or unexposed. Operating additions are MW; initial/later prices and project-related increases are USD/MWh. Donor weights 0.75 and 0.25 sum to one. `institutional_comparisons.csv` reports treated and donor changes and their difference in USD/MWh. The no-project changes are stipulated equal. These are two-period comparisons, separate from the published within-utility regression.
+
+`institutional_recovery.csv` uses annual USD for the revenue requirement, collectible developer contribution, and reuse offset; annual residential MWh for sales; and unitless recovery/allocation fractions in [0,1]. The derived USD/MWh increase follows a stated allocation rule. Upfront capital expenditures are not substituted for annual costs.

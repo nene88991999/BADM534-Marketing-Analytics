@@ -2075,3 +2075,25 @@ Suppose 1,000 households each use one MWh in a month. An additional $2 charged t
 The treatment categories require the same care. The paper defines its cloud-service category by ownership by Amazon, Google, Meta, or Microsoft, then assigns every other owner to a third-party category. Appendix Table A.2 includes Apple among those other owners. Apple describes its own data centers as supporting its services, alongside separate use of colocation facilities. The paper's operational distinction therefore identifies four named owners versus other owners. A claim about leasing business models requires facility-level evidence about operation, tenancy, contracts, and procurement. A category name cannot supply those missing attributes. [Apple, Environmental Progress Report 2026](https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf).
 
 A clear data dictionary separates installed capacity in MW, actual electricity use in MWh, customer payments in dollars, and authority over the allocation of costs. Installed capacity permits electricity consumption; its amount and timing depend on utilization. A payment records a financial transaction; consent and an opportunity to challenge it require evidence about the procedure through which the obligation arose. Each distinction prevents an apparently precise dataset from answering a broader question by definition.
+
+### 2.28.1 An Average Price Does Not Determine a Household Bill
+
+\noindent A household plans for expenditure in dollars per month. An average electricity price measures dollars per unit of energy. For matched revenue $R$, sales $Q$, and customer-months $N$, define mean expenditure $\bar B=R/N$ and mean use $\bar q=Q/N$. The accounting identity is
+
+$$
+\bar B=\bar p\bar q,\qquad \bar p=R/Q.
+$$
+
+All quantities must cover the same customer class, service scope, and time interval. For a quarter, summing monthly customer counts produces customer-months; a single quarterly account count supplies a different denominator. This aggregate identity does not identify any particular household's tariff or bill. EIA describes revenue per kWh as a proxy for retail prices and publishes average monthly bills separately. [EIA measurement explanation](https://www.eia.gov/electricity/monthly/update/print-version.php), [sales, revenue, price, and bill tables](https://www.eia.gov/electricity/sales_revenue_price/).
+
+Consider three synthetic months, each with the same 1,000 customer accounts:
+
+| Scenario | Revenue (USD) | Sales (MWh) | Average Price (USD/MWh) | Mean Monthly Bill (USD) |
+| --- | ---: | ---: | ---: | ---: |
+| Baseline | 100,000 | 1,000 | 100 | 100 |
+| Higher Use | 110,000 | 1,100 | 100 | 110 |
+| Lower Use | 100,000 | 800 | 125 | 100 |
+
+Flat average prices coexist with higher bills in the second row. Higher average prices coexist with unchanged bills in the third. These imposed comparisons establish the measurement distinction; they attribute neither use changes nor bill changes to data centers. A higher bill caused by hotter weather is a different causal claim from a higher tariff caused by infrastructure costs. A household that reduces heating or cooling may also sacrifice comfort while keeping expenditure stable.
+
+The paper explicitly recognizes revenue per MWh, realized payments, riders, and regulatory allocation. Criticism should retain that institutional discussion. The unsupported extension occurs when a result for this ratio is treated as sufficient evidence about actual household expenditure, affordability, or absence of harm. Evidence about bills needs matched use and payments; affordability adds income and essential energy needs. Full runnable code for the table appears in §6.35 as `institutional_exposure.py`.

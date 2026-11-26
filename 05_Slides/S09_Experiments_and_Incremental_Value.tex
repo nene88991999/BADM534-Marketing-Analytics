@@ -202,6 +202,52 @@ M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Ex
 
 M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
+\begin{frame}{Andrews: Which Departures Would the Test Detect?}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Invert power at specified alternatives and a fixed test size.
+\item Reference precision: USD 2.08/MWh for 50\% power; USD 2.97 for 80\%.
+\item Detection thresholds and confidence bounds answer different questions.
+\end{slidebullets}
+\vfill
+\note{Donald W. K. Andrews develops inverse-power functions in Power in Econometric Applications (1989). The course uses a fixed normal/Wald approximation, preserving the published clustered SE. The residential reference exposure is a ratio of reported means. The 95\% detection threshold is USD 3.82/MWh; the realized estimate instead supplies a one-sided 95\% upper confidence bound of USD 3.49/MWh. Low power leaves alternatives unresolved and does not establish the true effect. Model covariance, nuisance parameters, direction, and the testing procedure must be specified. The complete program is andrews\_inverse\_power.py.
+
+M6 §6.34. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{A Joint Test Can Miss One Direction}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_andrews_directional_power.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Detection depends on the direction and covariance of the departures.\par}
+\note{The joint test has two restrictions and size 5\%. Every point on the boundary gives 80\% power under the fixed Gaussian covariance. Departures inside it have less power. Both outcomes use dollars/MWh; changing units requires transforming the covariance and the interpretation of a direction. The covariance is illustrative and does not reconstruct the unavailable developer-contrast covariance.
+
+M6 §6.34. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{A Cancelled Project Can Affect the Control Group}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_institutional_exposure.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Operating capacity and project-related cost exposure have different timelines.\par}
+\note{The paper anchors treatment to operating capacity and excludes donors with the specified operating additions. This rule does not separately screen earlier commitments, cancellations, or cost recovery. In the synthetic example, a cancelled-project donor has zero operating additions and an eight-dollar increase; it receives weight 0.75. An unexposed donor receives 0.25. Common baseline prices and no other changes are imposed. The example demonstrates a possible identification failure, not actual bias in the published estimate. Costs can also precede the fitting window or arrive after the outcome window. The complete institutional\_exposure.py program appears in M6 §6.35.
+
+M6 §6.35. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
 \begin{frame}{Fixed and Adaptive Research Designs}
 \usebeamercolor[fg]{normal text}
 \vfill

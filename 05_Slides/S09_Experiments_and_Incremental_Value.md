@@ -206,7 +206,41 @@ Table 4 cloud slope is 0.158 (SE 0.160), with a one-sided 95% upper bound of 0.4
 
 Source: M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 16: Fixed and Adaptive Research Designs
+## Slide 16: Andrews: Which Departures Would the Test Detect?
+
+- Invert power at specified alternatives and a fixed test size.
+- Reference precision: USD 2.08/MWh for 50% power; USD 2.97 for 80%.
+- Detection thresholds and confidence bounds answer different questions.
+
+Donald W. K. Andrews develops inverse-power functions in Power in Econometric Applications (1989). The course uses a fixed normal/Wald approximation, preserving the published clustered SE. The residential reference exposure is a ratio of reported means. The 95% detection threshold is USD 3.82/MWh; the realized estimate instead supplies a one-sided 95% upper confidence bound of USD 3.49/MWh. Low power leaves alternatives unresolved and does not establish the true effect. Model covariance, nuisance parameters, direction, and the testing procedure must be specified. The complete program is andrews_inverse_power.py.
+
+Source: M6 §6.34. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 17: A Joint Test Can Miss One Direction
+
+Detection depends on the direction and covariance of the departures.
+
+**Figure description:** In a synthetic joint Wald test, an 80% power boundary crosses the A axis at 1.55 and the B axis at 6.21 dollars/MWh. Independent estimator SEs are 0.50 and 2.00. The curve is a power boundary, not a confidence ellipse centered on an estimate.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_andrews_directional_power.tex)
+
+The joint test has two restrictions and size 5%. Every point on the boundary gives 80% power under the fixed Gaussian covariance. Departures inside it have less power. Both outcomes use dollars/MWh; changing units requires transforming the covariance and the interpretation of a direction. The covariance is illustrative and does not reconstruct the unavailable developer-contrast covariance.
+
+Source: M6 §6.34. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 18: A Cancelled Project Can Affect the Control Group
+
+Operating capacity and project-related cost exposure have different timelines.
+
+**Figure description:** A possible sequence links a request, investment, cancellation, and allowed recovery. A synthetic completed-project increase of ten dollars per MWh minus a six-dollar weighted donor increase leaves a four-dollar gap.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_institutional_exposure.tex)
+
+The paper anchors treatment to operating capacity and excludes donors with the specified operating additions. This rule does not separately screen earlier commitments, cancellations, or cost recovery. In the synthetic example, a cancelled-project donor has zero operating additions and an eight-dollar increase; it receives weight 0.75. An unexposed donor receives 0.25. Common baseline prices and no other changes are imposed. The example demonstrates a possible identification failure, not actual bias in the published estimate. Costs can also precede the fitting window or arrive after the outcome window. The complete institutional_exposure.py program appears in M6 §6.35.
+
+Source: M6 §6.35. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 19: Fixed and Adaptive Research Designs
 
 - Known features and variances determine information at each profile.
 - A fixed allocation attains the leading minimum cost at high accuracy in the linear model.
@@ -216,7 +250,7 @@ Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian m
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 17: Implementation Checks
+## Slide 20: Implementation Checks
 
 - Reconcile assigned counts and intended allocation.
 - Check missing outcomes and tracking by assignment.
@@ -227,7 +261,7 @@ A randomization protocol does not prevent differential tracking failures. Sample
 
 Source: M6, Section 6.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 18: Prior Outcomes and Precision
+## Slide 21: Prior Outcomes and Precision
 
 Adjust the outcome using a pre-treatment measure $X$.
 
@@ -241,7 +275,7 @@ CUPED uses a pre-treatment covariate and an appropriately specified adjustment. 
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 19: mHealth Baseline Activity Improves Precision
+## Slide 22: mHealth Baseline Activity Improves Precision
 
 Planning calculation uses historical user-level variance and a five-point target.
 
@@ -253,7 +287,7 @@ These are power-planning implications of observed historical variances, not a re
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 20: Model and Library Contributions
+## Slide 23: Model and Library Contributions
 
 Synthetic counts: 100 assigned tasks per condition; common rubric and resource limits.
 
@@ -265,7 +299,7 @@ The interaction is ten percentage points. Moving from the initial condition to t
 
 Source: Marketing Analytics Lecture Notes, M6 §6.19.
 
-## Slide 21: An Interaction Calculation
+## Slide 24: An Interaction Calculation
 
 The four rates are imposed teaching inputs.
 
@@ -284,7 +318,7 @@ Run factorial.py to reproduce both paths to the joint change using exact rationa
 
 Source: M6 §6.19. ../03_Data_and_Code/AI_Workflows/factorial.py
 
-## Slide 22: A Fixed Model and Four Workflows
+## Slide 25: A Fixed Model and Four Workflows
 
 - Cross explicit information with independent development feedback.
 - Reset each run and randomize cell order within repetitions.
@@ -295,7 +329,7 @@ M6 §6.29 defines q_cf as the probability of a valid output for a fixed task and
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 23: Prompt Gains Depend on the Outcome Scale
+## Slide 26: Prompt Gains Depend on the Outcome Scale
 
 | Workflow | Gain (pp) | Baseline Failures Removed |
 | --- | --- | --- |
@@ -309,7 +343,7 @@ The no-example success rates are 81.49%, 92.40%, and 96.97%. The failure reducti
 
 Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
-## Slide 24: Coding Exercise: An Experiment Plan
+## Slide 27: Coding Exercise: An Experiment Plan
 
 - Compute the factorial contrasts alongside the email effect.
 - Change contribution, delivery cost, and the target effect.
@@ -319,7 +353,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth ex
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 25: Interference and Assignment Units
+## Slide 28: Interference and Assignment Units
 
 - Customers can share offers or affect one another.
 - Stores can divert purchases from nearby locations.
@@ -329,7 +363,7 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 26: Assign Stores, Observe Customers
+## Slide 29: Assign Stores, Observe Customers
 
 Synthetic promotion: balanced store assignment and equal store sizes.
 
@@ -341,7 +375,7 @@ The effect is zero for every customer. Store shocks are independent across store
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 27: A Zero-Effect Promotion
+## Slide 30: A Zero-Effect Promotion
 
 | Calculation | Estimate (Dollars) | p-Value |
 | --- | --- | --- |
@@ -354,7 +388,7 @@ This is repetition zero from seed 20261125, retained without selecting a favorab
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 28: Dependence Changes False Discoveries
+## Slide 31: Dependence Changes False Discoveries
 
 Store means retain rejection rates near the nominal 5% level in this simulation.
 
@@ -366,7 +400,7 @@ Each correlation uses 4,000 newly generated experiments, 40 stores, 20 customers
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 29: A Treatment Arm Needs a Defensible Design
+## Slide 32: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -376,7 +410,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 30: Follow Purchases Through Returns
+## Slide 33: Follow Purchases Through Returns
 
 - Pressure and self-assurance can produce different purchase and return patterns.
 - Prespecify the eligible population and both outcome horizons.
@@ -386,7 +420,7 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 31: From Experiments to Generative Decisions
+## Slide 34: From Experiments to Generative Decisions
 
 - Within-campaign comparisons can supervise a model that proposes new messages.
 - The learned ranking inherits the outcome used to define success.
@@ -396,7 +430,7 @@ Angelopoulos, Lee, and Misra train a language-model improver using historical ex
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 32: Human Review and Customer Evidence
+## Slide 35: Human Review and Customer Evidence
 
 - Check factual claims and consequential terms before deployment.
 - Record customer understanding and the ability to refuse.
@@ -406,7 +440,7 @@ Causal Alignment includes human selection and acceptability checks. Their existe
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 33: Experiment Discussion
+## Slide 36: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=5.8cm,minimum height=1.2cm] (p) at (3.25,0)
+  {\textbf{Principle P}\\Require a retention talk\\after a valid exit request.};
+\node[orangebox,text width=5.8cm,minimum height=1.2cm] (q) at (10,0)
+  {\textbf{Alternative Q}\\Prompt, secure exit;\\optional retention offers.};
+\node[box,text width=5.8cm,minimum height=1.7cm] (pr) at (3.25,-2)
+  {\textbf{Reasons under P}\\Customer: delay and charges.\\Others: security and viability.\\Is persuasion necessary?};
+\node[box,text width=5.8cm,minimum height=1.7cm] (qr) at (10,-2)
+  {\textbf{Reasons under Q}\\Customer: control and security.\\Others: service costs and risks.\\Does an objection remain?};
+\node[orangebox,text width=11.5cm,minimum height=1.05cm] (judge) at (6.625,-4.1)
+  {\textbf{Compare Reasons for Rejecting Each Principle}\\If Q protects legitimate interests at reasonable cost,\\mandatory persuasion under P lacks the proposed justification.};
+\draw[edge] (p) -- (pr);
+\draw[accent] (q) -- (qr);
+\draw[edge] (pr.south) -- (judge.north -| pr.south);
+\draw[accent] (qr.south) -- (judge.north -| qr.south);
+\draw[edge,dashed] (judge.east) -- (13.35,-4.1) -- (13.35,0) -- (q.east);
+\node[align=center,text width=12.8cm,font=\footnotesize] at (6.625,-5.6)
+  {Hypothetical comparison of burdens and feasible alternatives.\\The dashed path revises Q when an objection survives. Judgment requires reasons.};
+\end{tikzpicture}

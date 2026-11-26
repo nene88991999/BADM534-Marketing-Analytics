@@ -22,6 +22,8 @@ The difference between the two renewal probabilities matters because many accoun
 
 With contribution and contact cost held fixed, the first account's high baseline renewal probability reverses its ranking under incremental value. A response model and a targeting policy therefore need separate evaluation.
 
+A recommendation also needs a reason why the action ought to be taken. A profitable renewal rule may impose an unwanted obligation on a customer or a burden on someone outside the customer table. Identify affected people, state the principle governing their treatment, and compare a feasible alternative. An estimate of what a company can achieve supplies evidence for that argument; the normative premise explains which means and consequences are justified.
+
 ## 1.2 The Unit of Observation Determines the Calculation
 
 A transaction system often stores one row per product line, while the marketing question concerns orders or customers. Suppose order O1 contains two product lines, O2 contains one, and O3 contains three. There are six rows, three orders, and perhaps only two customers. Counting rows as purchases would report six orders. Averaging customer attributes over product lines would give more weight to customers with larger baskets.

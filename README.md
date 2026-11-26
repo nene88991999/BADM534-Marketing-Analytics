@@ -132,3 +132,15 @@ The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects publ
 ## Statistical Claims, Household Burdens, and Agency
 
 The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutional Context and Household Costs
+
+The recurring electricity case now connects average prices to household expenditure and operating entry to the wider project pipeline. [Worked Python examples](03_Data_and_Code/Statistical_Inference/README.md) show how cancelled projects and cost-recovery rules can change a comparison. See the [institutional assessment](01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md), M2 §2.28.1, M6 §6.35, and M9 §9.27.6.
+
+## Reasons and Affected People
+
+[Marketing Dialectics](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) now includes Scanlonian arguments, stakeholder obligations, public voice, and publication responsibility. [Optional practice](07_Labs/Philosophical_Arguments/README.md) asks students to defend what an actor ought to do and answer the strongest objection from an affected person's position.

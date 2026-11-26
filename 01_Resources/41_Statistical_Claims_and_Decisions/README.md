@@ -12,3 +12,15 @@ A decision requires an effect, uncertainty, an economically meaningful compariso
 - [Kant, Groundwork, second section](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm): universal law and humanity formulations; the course's public-reassurance application is an analytical argument.
 
 The [source review](SOURCE_REVIEW.md) records rights, version, reading scope, and access. The [programs](../../03_Data_and_Code/Statistical_Inference/README.md) reproduce all numerical examples. The [lab](../../07_Labs/Statistical_Inference/README.md) is optional ungraded practice. Sessions 4, 9, and 14 use selected comparisons within existing meeting allocations.
+
+## Logical Arguments and Inverse Power
+
+The [argument record](ARGUMENT_ASSESSMENT.md) connects the paper's claims to missing premises, counterexamples, and narrower supported conclusions. M9 §9.27 develops validity, soundness, quantifiers, extrapolation, and authority. M6 §6.34 implements [Donald W. K. Andrews's inverse-power approach](https://doi.org/10.2307/1913623), with scalar thresholds and a synthetic joint-test example. Complete Python, aggregate outputs, and two editable TikZ figures accompany the notes.
+
+## Institutional Exposure and Household Bills
+
+The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project pipeline to treatment timing, donor eligibility, cost recovery, and the distinction between average prices and household expenditure. M6 §6.35 supplies complete synthetic Python examples and an editable diagram; M2 §2.28.1 and M9 §9.27.6 develop measurement and the missing-premise argument.
+
+## Public Claims and Affected People
+
+[Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the verified HBS coverage, the hypothetical university-branded headline, pricing communication, and the decision to revise or publish a claim. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.

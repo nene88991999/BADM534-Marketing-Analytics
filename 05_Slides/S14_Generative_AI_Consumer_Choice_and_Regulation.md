@@ -15,6 +15,8 @@ Session 14. M8, M9. 170 minutes.
 - Compare Kantian, institutional, and Confucian reasons for a marketing recommendation.
 - Evaluate AI experimentation and personalized pricing through evidence, Kantian duties, and current policy scope.
 - Distinguish a pricing allegation, an observed outcome, a model implication, and an ethical justification.
+- Construct an ought conclusion from supported factual premises and a defended normative principle.
+- Compare stakeholder reasons, including those of people with limited influence over public discussion.
 
 ## Related Materials
 
@@ -45,6 +47,7 @@ Session 14. M8, M9. 170 minutes.
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 - ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
+- [Philosophical Arguments: Optional Practice](../07_Labs/Philosophical_Arguments/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -507,7 +510,123 @@ Kantian universalization examines a rule that advertises safety whenever a test 
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 43: A Cancellation Evaluation
+## Slide 43: Write the Missing Premise
+
+- Nonrejection becomes harmlessness only by adding an unsupported sensitivity claim.
+- An owner-list complement becomes a business model only with classification evidence.
+- An arithmetic residual becomes a causal account only with identification.
+
+Reconstruct each claim from its exact source. Table 4 and HBS coverage supply the reassurance example; Section 4.1 defines the owner groups; page 3 attributes the residual growth to named causes. Grant correct calculations before challenging their interpretation. A counterexample must preserve the stated premises. A reporting inconsistency, an unsupported extension, and a contradiction are different findings.
+
+Source: M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 44: Historical Agreement Leaves Future Costs Open
+
+A synthetic capacity threshold changes extrapolation while preserving historical responses.
+
+**Figure description:** Two functions coincide for normalized load from zero to one. At load two, the linear function reaches four dollars/MWh and the threshold function reaches fourteen. The shaded area denotes the assumed historical support.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_counterexample_extrapolation.tex)
+
+The construction grants exact knowledge throughout the historical support. The linear and threshold accounts still imply different future costs. Choosing one requires an extrapolation premise or additional evidence. The example estimates no actual capacity threshold. The paper acknowledges future uncertainty; preserve that qualification when assessing stronger public claims. Full original code is logical_counterexamples.py.
+
+Source: M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 45: What Ought the Firm Do?
+
+- Identical bills can coexist with different opportunities to challenge a decision.
+- State the factual premises and the principle governing affected people.
+- Defend a conclusion about what the actor ought to do.
+
+Payment records conduct under available conditions. Endorsement, permission, and ethical justification need further evidence or reasons. Scanlon's approach compares principles through the reasons people could have for rejecting them. A hypothetical jurisdiction with inaccessible decisions can differ from one with an effective challenge procedure even when bills coincide. State the circumstances, identify a feasible alternative, and answer the strongest objection.
+
+Source: M9 §§9.27–9.32. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 46: Flat Average Prices Can Accompany Higher Bills
+
+- Average bill equals average revenue per MWh times mean use.
+- Synthetic fixed population: USD 100/MWh with bills rising from USD 100 to USD 110.
+- Causal claims also require an explanation of why prices and use changed.
+
+The example holds 1,000 customer accounts fixed and raises monthly sales from 1,000 to 1,100 MWh with unchanged average revenue per MWh. It attributes no change to data centers. The paper recognizes realized payments and regulatory allocation. Its outcome is economically meaningful, but it does not by itself identify household expenditure, affordability, or welfare. Fixed charges can already enter its revenue numerator. Full code appears in M6 §6.35; the matched customer-month identity is in M2 §2.28.1.
+
+Source: M2 §2.28.1 and M6 §6.35. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 47: Project Status Does Not Settle Responsibility
+
+- Investment can create obligations before a center operates.
+- Cancellation may leave costs, developer guarantees, and a recovery decision.
+- Assess who authorized the risk and who can challenge its allocation.
+
+A utility with zero operating additions can still be exposed to project-related costs. The missing premise is absence of preparatory obligations and later recovery. The Bloomberg ComEd report motivates examining the pipeline; contracts and regulatory decisions determine incidence. Those sources do not identify affected donors in the paper. A defensible critique requests dated project histories, donor weights, collected guarantees, and cost-allocation records. The comparison and its direction remain conditional on those facts.
+
+Source: M9 §9.27.6 and institutional assessment. ../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md
+
+## Slide 48: From Premises to an Ought Conclusion
+
+Facts and a defended principle jointly support a conditional recommendation.
+
+**Figure description:** Factual and normative premises enter an application question, followed by an ought conclusion. The strongest objection can send the argument back to either premise.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_argument_premises.tex)
+
+The hypothetical customer has made a verified cancellation request, and a secure prompt exit is feasible. The proposed principle respects valid withdrawal while requiring justification of remaining burdens. Assess fraud, service continuity, and implementation cost. A factual premise needs evidence; a normative premise needs reasons. An objection can change either.
+
+Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+
+## Slide 49: Compare Reasons for Rejecting Each Principle
+
+Compare affected positions and feasible alternatives; answer the strongest objection.
+
+**Figure description:** Two columns compare mandatory retention with prompt secure exit. Each considers customer reasons alongside security and service interests. A surviving objection leads to revision of the alternative.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_reasonable_rejection.tex)
+
+Scanlon's reasonable rejection is a judgment about reasons under principles of general regulation. It is not a vote or an automatic veto. In this hypothetical case, optional offers preserve persuasion without imposing it as a condition of exit. The comparison assumes necessary protections can be supplied at reasonable cost. A surviving objection requires revising the alternative or the conclusion.
+
+Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+
+## Slide 50: Stakeholders Beyond the Firm
+
+- Identify people affected even when they are absent from the dataset.
+- Separate managerial attention from the justification of a duty.
+- State each person's interest, supported exposure, and reason for objection.
+
+Donaldson and Preston distinguish descriptive, instrumental, and normative uses of stakeholder theory. Mitchell, Agle, and Wood analyze salience through power, legitimacy, and urgency. Phillips examines obligations of fair cooperation; general duties still matter for involuntarily affected people. A low-power resident's moral standing does not depend on the cost they can impose on the firm. Identify the actual relationship and defend the proposed obligation.
+
+Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+
+## Slide 51: Whose Voice Can Challenge a Prestigious Claim?
+
+- Hypothetical headline: “Harvard/Wharton study shows no harm.”
+- Compare its reach with residents' access to records and technical help.
+- Require evidence for reassurance and a substantive answer to material objections.
+
+The headline is a discussion construction, not a verified quotation or institutional endorsement. The HBS Working Knowledge article is the documented public communication. Fricker's prejudice-based credibility deficit requires evidence beyond unequal credentials. Anderson motivates examining institutions that gather and assess testimony. Distinguish nearby residents, utility customers, and people bearing costs. Local experience can identify an outcome; causal attribution requires a comparison. Institutional prestige supplies no missing premise. Verify actual use of a claim in a proceeding before alleging that it silenced objections.
+
+Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+
+## Slide 52: When Ought a Research Claim Be Published?
+
+- Identify the evidence worth preserving and the interpretation needing support.
+- Compare a corrected release, further review, and rejection of the proposed version.
+- For a public error, assess a visible correction that preserves traceability.
+
+A paper need not be released in a form that attaches unsupported reassurance to useful estimates. Mill supplies reasons to preserve criticism and inquiry. Registered Reports illustrate reviewing design before learning the direction of results. Scanlon's approach asks which release principle can be justified to affected people, readers, researchers, and decision makers. Neither favorable nor unfavorable implications for a firm establish research quality. The remedy should address a demonstrated defect.
+
+Source: M9 §§9.28–9.30. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
+
+## Slide 53: Favorable Framing and Justified Acceptance
+
+- Pricing language may emphasize discounts, flexibility, or convenience.
+- Research coverage may emphasize reassurance about consumer costs.
+- Trace the selected comparison and beneficiary to supporting evidence.
+
+The verified Wendy's February 27, 2024 statement describes intended digital-board uses and rejects plans to raise prices at the busiest times. The HBS article interprets an empirical study. The comparison concerns framing and the reasons for acceptance; it establishes no common campaign or motive. Assess actual offers, outcomes, uncertainty, and omitted conditions. A persuasive message needs a further justification when it affects public choices.
+
+Source: M9 §9.31. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
+
+## Slide 54: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -517,7 +636,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 44: Same Renewal, Different Customer Intent
+## Slide 55: Same Renewal, Different Customer Intent
 
 Synthetic populations: 1,000 customers each, one renewal month.
 
@@ -529,7 +648,7 @@ Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%
 
 Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 45: A Welfare Comparison
+## Slide 56: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -548,7 +667,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 46: Coding Exercise: A Marketing Evaluation
+## Slide 57: Coding Exercise: A Marketing Evaluation
 
 - Reproduce the two populations with identical billed renewal.
 - Keep unknown intent separate and compare the relevant denominators.
@@ -558,7 +677,7 @@ Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full pro
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 47: Federal Cancellation Policy: Current Status
+## Slide 58: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -568,7 +687,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 48: Cancellation Rules Differ by Jurisdiction
+## Slide 59: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -578,7 +697,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 49: Research Frequency and Policy Importance
+## Slide 60: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -588,7 +707,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 50: Pricing, Reviews, and Delivery
+## Slide 61: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -598,7 +717,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 51: Pricing Language and Regulatory Evidence
+## Slide 62: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -608,7 +727,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 52: Personalized Pricing: Policy Status
+## Slide 63: Personalized Pricing: Policy Status
 
 - FTC: August 2026 proposal; October 2026 information-gathering inquiry.
 - New York: disclosure law in effect; broader restrictions await enactment.
@@ -618,7 +737,7 @@ Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
 
-## Slide 53: Environmental Claims: Two Different Decisions
+## Slide 64: Environmental Claims: Two Different Decisions
 
 - 2023 Shell ads: the ASA upheld the overall-impression complaint.
 - 2025 Shell ad: the ASA accepted the contextualized communication.
@@ -628,7 +747,7 @@ UK ASA, June 7, 2023: omitted context about the balance of business activities m
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 54: A Product Fact and a Portfolio Impression
+## Slide 65: A Product Fact and a Portfolio Impression
 
 The scope of the conclusion determines the evidence required.
 
@@ -640,7 +759,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 55: Digital Service and Feasible Customer Choice
+## Slide 66: Digital Service and Feasible Customer Choice
 
 - Offer assistance while preserving a usable alternative.
 - Measure completion, customer time, and firm cost on a fixed roster.
@@ -650,7 +769,7 @@ An optional assistance intervention can expand feasible choices. A mandatory app
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 56: Evidence and Authority to Classify a Customer
+## Slide 67: Evidence and Authority to Classify a Customer
 
 - Kantian critique examines the move from area activity to individual ability.
 - Respect for persons requires reasons for restrictions and usable correction.
@@ -660,12 +779,12 @@ A stable cluster does not authorize a firm to remove an individual’s options. 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 57: A Decision with Consumer Outcomes
+## Slide 68: A Decision with Consumer Outcomes
 
-- State the commercial target and customer outcome.
-- Identify the procedure the customer can accept, refuse, or revise.
-- Connect the proposed action to current rules and supporting evidence.
+- State the decision, affected people, and evidence.
+- Defend what the actor ought to do, with a normative premise.
+- Answer the strongest objection and name a condition for revision.
 
-A marketing policy can improve matching, convenience, and customer value. Its evaluation should also reveal when additional sales come from misleading claims, unwanted friction, or conflicting incentives.
+A recommendation needs a justified principle connecting evidence to action. Compare the reasons of customers, workers, households, and others affected by the decision. Distinguish a feasible alternative from an imagined costless option. An effective argument can disagree with the instructor while supporting its premises and answering objections.
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.

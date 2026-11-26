@@ -121,6 +121,12 @@
       "path": "07_Labs/Statistical_Inference/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "philosophical-arguments",
+      "path": "07_Labs/Philosophical_Arguments/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -353,7 +359,12 @@
     "01_Resources/41_Statistical_Claims_and_Decisions/README.md",
     "01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md",
     "01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md",
-    "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md"
+    "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md",
+    "01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md",
+    "07_Labs/Philosophical_Arguments/README.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -402,12 +413,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-statistical-claims",
+    "revision": "2026-11-26-reasons-stakeholders-and-evidence",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 121,
-    "pages": 480,
+    "figures_count": 126,
+    "pages": 507,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -520,7 +531,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 442,
+    "slides": 456,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -608,7 +619,7 @@
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; Hume and Smith on scrutiny; Confucian conduct; marketing research and industry cases",
+    "coverage": "Kantian critique and ethics; Hume and Smith on scrutiny; Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
@@ -1093,7 +1104,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-statistical-claims",
+  "revision": "2026-11-26-reasons-stakeholders-and-evidence",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1291,21 +1302,88 @@
     "sections": [
       "M2 §2.28",
       "M3 §3.19",
-      "M6 §§6.32–6.33",
+      "M6 §§6.32–6.35",
       "M8 §8.31",
-      "M9 §§9.25–9.26"
+      "M9 §§9.25–9.27"
     ],
     "sessions": [
       4,
       9,
       14
     ],
-    "new_programs_executed": 4,
-    "new_independent_tests_passed": 15,
-    "original_figures": 5,
-    "additional_slides": 11,
+    "new_programs_executed": 7,
+    "new_independent_tests_passed": 29,
+    "original_figures": 8,
+    "additional_slides": 19,
     "model_calls": 0,
     "upstream_execution": false,
-    "scope": "Original synthetic experiments and decision examples; reported-table normal-approximation calculations; philosophical critique. No utility-panel replication, verified corporate X post, or established downstream harm."
+    "scope": "Original synthetic experiments and decision examples; reported-table normal-approximation calculations; philosophical critique. No utility-panel replication, verified corporate X post, or established downstream harm.",
+    "public_communication": "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md",
+    "related_philosophical_arguments": "philosophical_arguments"
+  },
+  "logic_and_inverse_power": {
+    "implemented_on": "2026-11-26",
+    "argument_assessment": "01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md",
+    "power_source": "https://doi.org/10.2307/1913623",
+    "sections": [
+      "M6 §6.34",
+      "M9 §9.27"
+    ],
+    "sessions": [
+      9,
+      14
+    ],
+    "additional_slides": 5,
+    "original_figures": 2,
+    "programs": [
+      "03_Data_and_Code/Statistical_Inference/andrews_inverse_power.py",
+      "03_Data_and_Code/Statistical_Inference/logical_counterexamples.py"
+    ],
+    "scope": "Fixed Gaussian/Wald inverse power from rounded reported SEs; original synthetic counterexamples. No utility-panel replication, corporate X verification, or empirical harm attribution.",
+    "tests_passed": 39,
+    "new_tests_passed": 8,
+    "matching_python_blocks": 113,
+    "fresh_result_exports": 5,
+    "fresh_figure_exports": 2
+  },
+  "institutional_exposure": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M2 §2.28.1",
+      "M6 §6.35",
+      "M9 §9.27.6"
+    ],
+    "sessions": [
+      9,
+      14
+    ],
+    "resource_guide": "01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md",
+    "program": "03_Data_and_Code/Statistical_Inference/institutional_exposure.py",
+    "data_status": "Synthetic accounting and two-period counterexamples; actual project histories and household bills are unavailable.",
+    "claim_scope": "A risk to treatment measurement and donor eligibility; no verified contamination or bias magnitude in the original study.",
+    "figure": "06_Lecture_Notes/figures/M06_institutional_exposure.tex",
+    "policy_sources_checked": "2026-11-26",
+    "new_independent_tests_passed": 6,
+    "fresh_result_exports": 4,
+    "additional_slides": 3,
+    "original_figures": 1
+  },
+  "philosophical_arguments": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M1 §1.1",
+      "M8 §8.31",
+      "M9 §§9.28–9.32"
+    ],
+    "session": 14,
+    "resources": "01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md",
+    "catalog": "01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/catalog.json",
+    "practice": "07_Labs/Philosophical_Arguments/README.md",
+    "additional_slides": 6,
+    "original_figures": 2,
+    "supplemental_source_records": 12,
+    "local_reading_pdfs": 4,
+    "public_original_pdfs": 0,
+    "scope": "Normative arguments and hypothetical applications; actual suppression of residents' objections and corporate X promotion remain unverified."
   }
 }

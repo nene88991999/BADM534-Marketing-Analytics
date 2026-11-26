@@ -181,3 +181,15 @@ M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24 connect [pu
 ## Statistical Claims, Household Burdens, and Agency
 
 The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
+## Logical Assessment and Inverse Power
+
+M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+
+## Institutions, Measurement, and Treatment
+
+The electricity case connects M2 §2.28.1 (prices and bills), M6 §6.35 (project timelines and exposed controls), and M9 §9.27.6 (missing institutional premises). [Complete synthetic code](03_Data_and_Code/Statistical_Inference/institutional_exposure.py) and the [source assessment](01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) accompany Sessions 9 and 14. Actual donor contamination and household incidence remain empirical questions requiring project and payment records.
+
+## Reasons, Stakeholders, and Public Voice
+
+M1 §1.1 connects a managerial recommendation to a normative premise. M8 §8.31 examines public reassurance. M9 §§9.28–9.32 develops Scanlonian argument, stakeholder duties, publication choices, and residents' opportunities to contest claims. [Optional practice](07_Labs/Philosophical_Arguments/README.md) carries these questions across M1–M9; Session 14 includes the two new editable diagrams.
