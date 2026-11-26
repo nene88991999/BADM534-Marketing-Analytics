@@ -9,3 +9,9 @@ Read the root agent guide, this folder's README, data dictionary, and verificati
 - The public credit-advertising task has a reference answer but no reconstructed reference specification here. Do not call it a verified empirical replication or infer borrower welfare from loan take-up.
 - Preserve the source license distinctions. Upstream code is linked only; model and benchmark licenses do not establish a license for the GitHub code.
 - Optional practice is ungraded. No assignment rules or permitted AI use can be inferred from this folder.
+
+## Statistical Claims and the Recurring Electricity Case
+
+Keep full code synchronized with M3 §3.19, M6 §§6.32–6.33, and M9 §9.25. Preserve source-table locations, units, clustered SEs, and the distinction between reference exposure and a mean of utility ratios. Power evaluates specified alternatives; it does not prove the true effect or explain nonsignificance uniquely. Minimum detectable effects and upper confidence bounds are different quantities.
+
+Separate measured prices, household incidence, welfare, and agency. Retain positive findings and acknowledged limitations. Use the reported joint developer test; marginal SEs do not supply its covariance. The verified public communication is HBS coverage. Do not invent company posts, intent, or actual downstream harms. Keep instructor philosophy manuscripts and private notes outside the public repository.

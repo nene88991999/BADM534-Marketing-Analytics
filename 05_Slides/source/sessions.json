@@ -1074,6 +1074,26 @@
         "source": "M3, Section 3.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
       },
       {
+        "kind": "figure",
+        "title": "P-Values Vary Across Experiments",
+        "figure": "../06_Lecture_Notes/figures/M03_pvalue_distributions.tex",
+        "caption": "Fixed true effects; independent synthetic store experiments.",
+        "description": "The zero-effect distribution is approximately uniform. An eight-dollar effect produces more small p-values with 160 stores than with 40 stores.",
+        "notes": "Twenty thousand experiments per scenario use independent Gaussian store means and balanced assignment. For an eight-dollar effect, rejection rates are 32.5% with 40 stores and 86.6% with 160. An independent repeat has the same fixed-effect power, including after a first rejection. One minus the observed p-value is not a replication probability. Discrete tests and approximate null distributions need their own calibration.",
+        "source": "M3 §3.19. ../06_Lecture_Notes/modules/M03_Regression.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Price Average Leaves Household Burdens Unresolved",
+        "bullets": [
+          "The outcome is quarterly residential revenue divided by MWh sold.",
+          "A USD 2/MWh average increase permits different allocations across households.",
+          "Bill payments do not establish endorsement of the allocation rule."
+        ],
+        "notes": "The recurring electricity case concerns the October 2026 Rana, Kaps, and Netessine paper. Its residential sample has 41 treated utilities and 627 utility-quarter observations. A synthetic example holds 1,000 households and one MWh each fixed: USD 2 more for everyone and USD 20 more for 100 households yield the same average. Fixed charges and riders can enter revenue. Distribution, comprehension, and authority need separate evidence. Complete calculations are in M6 §6.33.",
+        "source": "M2 §2.28 and M3 §3.19. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
         "kind": "table",
         "title": "mHealth: Same Change, Different Precision",
         "headers": [
@@ -1250,9 +1270,10 @@
       "[Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)",
       "[Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)",
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
-      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)"
+      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
+      "../01_Resources/41_Statistical_Claims_and_Decisions/README.md"
     ],
-    "practice": "Reproduce OLS and assess exact-day matching, specification, and uncertainty.",
+    "practice": "Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional statistical-claims and data-center case exercises.",
     "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price."
   },
   {
@@ -2644,6 +2665,26 @@
         "source": "M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
+        "kind": "figure",
+        "title": "A Significant Campaign Can Lose Money",
+        "figure": "../06_Lecture_Notes/figures/M06_significance_and_profit.tex",
+        "caption": "Hypothetical customer-level randomization; fixed margin and contact cost.",
+        "description": "The 95% lift interval lies above zero and below the campaign break-even threshold.",
+        "notes": "One million independent customers per arm yield 100,000 control purchases and 101,000 treatment purchases. The pooled proportion test gives p=0.0187. A USD 40 incremental purchase margin and USD 0.10 contact cost imply a 0.25 pp break-even lift; the estimated 0.10 pp lift loses USD 0.06 per treated customer. The comparison omits future purchases, returns, and spillovers.",
+        "source": "M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "False Positives Need the Right Denominator",
+        "bullets": [
+          "Suppose 800 true nulls and 200 nonzero effects are tested.",
+          "Size 5% and power 80% imply 40 false and 160 true rejections in expectation.",
+          "False rejections are 20% of expected rejections."
+        ],
+        "notes": "These are hypothetical prespecified tests. The ratio of expected counts differs from size conditional on a true null. It is not automatically the expected realized false-discovery proportion or the probability that a particular claim is false. Selection and multiplicity require explicit procedures. The program varies the null fraction and power.",
+        "source": "M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
         "kind": "code",
         "title": "The Experiment Calculation",
         "intro": "Reproduce the effect and its contribution implication.",
@@ -2662,6 +2703,26 @@
         ],
         "notes": "At baseline probability 0.10, a two-point effect, two-sided 5% level, and 80% power, a common-variance normal approximation gives 3,528 customers per arm.",
         "source": "M6, Section 6.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Price Increases the Test Could Miss",
+        "figure": "../06_Lecture_Notes/figures/M06_data_center_power.tex",
+        "caption": "Sensitivity from the reported residential standard error.",
+        "description": "The power curve reaches 15.7% at USD 1/MWh, 47.2% at USD 2/MWh, and 80% around USD 2.97/MWh.",
+        "notes": "Table 2 column 4 gives slope 0.261 and clustered SE 0.158. The reference exposure is 100(456/6804)=6.70194 pp, a ratio of reported means. Its scaled estimate is USD 1.749 and SE USD 1.059 per MWh. The one-sided 95% upper bound is USD 3.49. Normal-approximation sensitivity holds reported precision fixed; it does not replicate the synthetic-control estimator or prove the true effect is positive.",
+        "source": "M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Check the Interpretation Against the Table",
+        "bullets": [
+          "Table 4: the direct developer-difference test has p = 0.101.",
+          "Table 7: sales of 291 MWh per added MW have SE = 493.",
+          "The unexplained 96% requires its own causal decomposition."
+        ],
+        "notes": "Table 4 cloud slope is 0.158 (SE 0.160), with a one-sided 95% upper bound of 0.421 dollars/MWh per exposure pp. Significance in one subgroup and nonsignificance in another do not establish a difference. The sales interval includes a hypothetical full quarter at 50% utilization, or 1,095 MWh per MW. Page 3 assigns the residual price increase to named causes without estimating their contributions. Preserve the positive findings and acknowledged limitations while challenging these specific interpretations.",
+        "source": "M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
         "kind": "bullets",
@@ -2899,9 +2960,10 @@
       "[Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)",
       "[Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)",
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
-      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)"
+      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
+      "../01_Resources/41_Statistical_Claims_and_Decisions/README.md"
     ],
-    "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes.",
+    "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Use the optional statistical-claims and data-center case exercises.",
     "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes."
   },
   {
@@ -4977,6 +5039,57 @@
         "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
+        "kind": "figure",
+        "title": "Evidence for a Small Cancellation Burden",
+        "figure": "../06_Lecture_Notes/figures/M09_equivalence_and_burden.tex",
+        "caption": "Hypothetical summary statistics and prespecified five-second bounds.",
+        "description": "An imprecise nonsignificant estimate fails equivalence. A precisely estimated small positive effect can satisfy equivalence despite differing from zero.",
+        "notes": "Two one-sided tests at 5% require the 90% t interval within both bounds. A six-second reduction fails two-sided equivalence but excludes excessive added time through its one-sided upper bound. Choose the hypothesis and justify the threshold before observing the result. Completed-task time leaves failures and abandonment as separate outcomes.",
+        "source": "M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Public Reassurance Exceeds the Reported Evidence",
+        "bullets": [
+          "HBS coverage states that the four large firms have not raised consumer electricity costs.",
+          "The reported cloud-owner coefficient is positive and imprecise.",
+          "Categorical harmlessness requires evidence that excludes consequential harm."
+        ],
+        "notes": "The verified communication is HBS Working Knowledge, November 12, 2026, and company dissemination remains unverified. It also acknowledges future uncertainty. Table 4 permits positive price effects and reports p=0.101 for the direct developer contrast. Misleading reassurance could weaken safeguards or scrutiny; attributing actual policy changes or losses to the paper requires separate evidence. The paper has positive findings in other specifications, so calling the entire paper a null result is inaccurate.",
+        "source": "M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "The Same Average Can Conceal Unequal Burdens",
+        "figure": "../06_Lecture_Notes/figures/M09_household_incidence_and_agency.tex",
+        "caption": "Synthetic monthly cost allocations; fixed use and population.",
+        "description": "Uniform and concentrated cost allocations yield the same aggregate price increase. Neither allocation reveals authority to assess or contest the rule.",
+        "notes": "Both scenarios add USD 2,000 to bills for 1,000 households using one MWh each. Distributional evidence distinguishes the allocations. Agency evidence concerns access to reasons, review, correction, and remedy. The average price coefficient does not measure those relations. The complete calculation is in M6 §6.33.",
+        "source": "M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Ontology, Evidence, and Justification",
+        "bullets": [
+          "Ontology: distinguish utilities, households, ownership, contracts, and authority.",
+          "Evidence: identify which claims the estimates and bounds support.",
+          "Justification: explain why affected people may bear the remaining risk."
+        ],
+        "notes": "A narrow price study can be valid within its scope. The category error occurs when its aggregate becomes a complete account of household harm or agency. Four named owners versus other owners is not automatically cloud provision versus colocation. Thomasson’s functional assessment asks whether categories serve the decision. Compliance with a rule, endorsement of its reasons, and authorization remain distinct.",
+        "source": "M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Respect for Persons Requires Honest Uncertainty",
+        "bullets": [
+          "An interested party owes reasons for imposing costs on others.",
+          "An insensitive test cannot certify safety through nonrejection.",
+          "Preserve opportunities to challenge evidence and obtain review."
+        ],
+        "notes": "Kantian universalization examines a rule that advertises safety whenever a test fails to reject, regardless of sensitivity. Such a practice rewards weak measurement and undermines evidentiary trust. The humanity formulation treats households as persons capable of judgment. Confucian trustworthiness requires descriptions that match conduct and a responsible response to inconvenient findings. Self-interest motivates substantiation; it does not establish guilt or deliberate deception.",
+        "source": "M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
         "kind": "bullets",
         "title": "A Cancellation Evaluation",
         "bullets": [
@@ -5162,9 +5275,10 @@
       "[Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)",
       "[Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)",
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
-      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)"
+      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
+      "../01_Resources/41_Statistical_Claims_and_Decisions/README.md"
     ],
-    "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
+    "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation. Use the optional statistical-claims and data-center case exercises.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."
   },
   {

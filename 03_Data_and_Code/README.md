@@ -141,3 +141,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Coding Workflows and Hidden Errors
 
 [Agent workflow examples](Agent_Workflows/README.md) now include published aggregate reconstruction, eight constructed coding cases on each mHealth task, and a hypothetical decision-loss comparison. Three complete Python programs and two TikZ figures connect M1, M3, M6, M7, and M8; no new model calls are included.
+
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.

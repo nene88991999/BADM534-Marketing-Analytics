@@ -1,21 +1,25 @@
 # Verification Record
 
-Executed November 25, 2026 with Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and SciPy 1.16.3. Both analytical programs and the figure generator ran successfully. No upstream code, source-model inference, or model API was executed.
+Checked November 26, 2026 with Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and SciPy 1.16.3. The four additional analysis programs and figure builder ran successfully. No model calls or downloaded third-party code were executed.
 
-## Numerical and Design Checks
+## Numerical Checks
 
-Ten unittest checks passed. They examine a fixed roster with duplicate days and a later entrant; a paired test against SciPy; preservation of user pairs; rejection of missing pairs; Welch arithmetic against SciPy; a hand-calculated store-mean contrast and standard error; duplicated customer rows with unchanged store information; rejection of unbalanced assignment; a Wilson interval boundary; and deterministic simulation with the analytical variance.
+All 25 inference tests passed, including the ten existing checks for paired mHealth summaries and clustered store experiments. Fifteen additional checks compare pooled tests with SciPy, power with an independent noncentral chi-square calculation, campaign inference with the chi-square identity, economic units and break-even arithmetic, expected-count denominators, shifted equivalence tests and interval duality, scaling of confidence bounds, inversion of a one-sided test, and equal aggregate revenue under unequal household incidence. Invalid precision and other unsupported inputs are rejected.
 
-The full food-release SHA-256 hash matches the existing manifest. The reconstructed mHealth mean change and paired standard error match the prior visualization calculation. For the saved first store experiment, independently calling SciPy's two-sample test reproduces both p-values. Across the four correlations, empirical-to-analytical standard-deviation ratios range from 0.9890 to 1.0044. Rejection counts reconcile with fractions and denominators.
+A fresh source export starts with empty result and figure folders. The four new programs reproduce 14 result files byte for byte, and the figure builder reproduces five TikZ sources byte for byte. All 110 full Python source listings match their executable counterparts and parse successfully. Earlier mHealth inputs and the seven pre-existing numerical outputs remain unchanged; their preceding verification record is retained in Git history.
 
-A fresh source export, with an empty result folder and the full verified release input, reproduces all seven numerical result files and both TikZ sources byte-for-byte. The existing lecture-example verifier also passed in a separate export; its values agree with the published reference files. `scripts/check_lecture_code.py` verifies 103 exact, syntactically valid source listings in the notes, including the two new programs.
+Published coefficients were checked visually against the paper's Tables 2, 4, and 7. The developer-difference p-value is transcribed from its reported Wald test. No covariance matrix is reconstructed. Power, intervals, and minimum detectable effects use a normal approximation at fixed reported clustered standard errors and rounded published inputs. These calculations assess reported precision and interpretation; they do not re-estimate the original utility panel.
 
 ## Figures and Documents
 
-Two editable Illinois-color figures describe assignment units and plot rejection fractions from checked tables. Monte Carlo intervals, uncertainty about an effect, and outcome dispersion are identified separately. Visual review covered 46 rendered pages: new note sections, code listings, affected contents pages, neighboring page breaks, the Marketing Dialectics chapter tail, all seven new slides and their neighbors, and both syllabus pages. Final builds have no overfull boxes, missing characters, undefined references, or TeX errors. Existing package and underfull-spacing warnings remain.
+Five additional Illinois-color TikZ figures cover repeated p-values, campaign contribution, cancellation equivalence, electricity-price power, and household incidence. Plotted values come from checked result tables. The household diagram uses explicit synthetic inputs with equal use and total revenue. Figures retain units, populations, labels, and text companions.
 
-The complete notes contain 451 pages and 114 figures. Marketing Dialectics contains 36 pages. Sessions 1, 4, 9, and 14 contain 28, 23, 28, and 51 slides respectively; the combined deck has 425 slides. The syllabus remains two pages. All 15 meeting plans retain continuous 170-minute allocations and their existing dates.
+Visual review covered 75 rendered pages: new notes and code, affected contents and neighboring pages, the Marketing Dialectics chapter, eleven new slides and neighbors, and both syllabus pages. The p-value, power, and household diagrams were also inspected at full page size. Final builds have no overfull boxes, missing characters, undefined controls/references, or TeX errors. Existing package and underfull-spacing warnings remain.
 
-## Scope
+The combined notes contain 480 pages and 121 original figures. Marketing Dialectics has 41 pages. Sessions 4, 9, and 14 have 26, 33, and 57 slides; the combined deck has 442. The syllabus has two pages. All 15 dates, logistics, and continuous 170-minute allocations remain unchanged.
 
-mHealth results concern descriptive recorded logging in the selected cohort. The synthetic experiment evaluates one prespecified test with independent Gaussian stores, equal store sizes, balanced assignment, and complete outcomes. It does not measure AI performance, reproduce the source model, or assess all possible clustered designs. The public advertising task supplies a discussion question; its empirical reference p-value and specification remain unreplicated here.
+## Interpretive Scope
+
+The repeated experiments, campaign, cancellation summaries, and household allocations are synthetic. The electricity case computes implications of published summary estimates. It distinguishes nonrejection, equivalence, power, effect bounds, causal identification, economic importance, and ethical justification. Low power against specified alternatives does not prove a positive true effect or uniquely explain an observed nonsignificant result.
+
+Verified public reassurance is attributed to HBS coverage. Company dissemination on X remains unverified because direct search required authentication. The critique identifies potential consequences of misleading reassurance without claiming that the paper caused an observed policy decision or household loss. Instructor philosophy manuscripts and private notes are not published.

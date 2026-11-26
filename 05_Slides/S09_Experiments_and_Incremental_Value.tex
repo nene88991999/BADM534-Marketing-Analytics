@@ -118,6 +118,33 @@ M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
+\begin{frame}{A Significant Campaign Can Lose Money}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_significance_and_profit.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Hypothetical customer-level randomization; fixed margin and contact cost.\par}
+\note{One million independent customers per arm yield 100,000 control purchases and 101,000 treatment purchases. The pooled proportion test gives p=0.0187. A USD 40 incremental purchase margin and USD 0.10 contact cost imply a 0.25 pp break-even lift; the estimated 0.10 pp lift loses USD 0.06 per treated customer. The comparison omits future purchases, returns, and spillovers.
+
+M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{False Positives Need the Right Denominator}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Suppose 800 true nulls and 200 nonzero effects are tested.
+\item Size 5\% and power 80\% imply 40 false and 160 true rejections in expectation.
+\item False rejections are 20\% of expected rejections.
+\end{slidebullets}
+\vfill
+\note{These are hypothetical prespecified tests. The ratio of expected counts differs from size conditional on a true null. It is not automatically the expected realized false-discovery proportion or the probability that a particular claim is false. Selection and multiplicity require explicit procedures. The program varies the null fraction and power.
+
+M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
 \begin{frame}[fragile]{The Experiment Calculation}
 \usebeamercolor[fg]{normal text}
 \noindent Reproduce the effect and its contribution implication.
@@ -147,6 +174,33 @@ M6, Section 6.4, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 \note{At baseline probability 0.10, a two-point effect, two-sided 5\% level, and 80\% power, a common-variance normal approximation gives 3,528 customers per arm.
 
 M6, Section 6.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Price Increases the Test Could Miss}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_data_center_power.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Sensitivity from the reported residential standard error.\par}
+\note{Table 2 column 4 gives slope 0.261 and clustered SE 0.158. The reference exposure is 100(456/6804)=6.70194 pp, a ratio of reported means. Its scaled estimate is USD 1.749 and SE USD 1.059 per MWh. The one-sided 95\% upper bound is USD 3.49. Normal-approximation sensitivity holds reported precision fixed; it does not replicate the synthetic-control estimator or prove the true effect is positive.
+
+M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Check the Interpretation Against the Table}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Table 4: the direct developer-difference test has p = 0.101.
+\item Table 7: sales of 291 MWh per added MW have SE = 493.
+\item The unexplained 96\% requires its own causal decomposition.
+\end{slidebullets}
+\vfill
+\note{Table 4 cloud slope is 0.158 (SE 0.160), with a one-sided 95\% upper bound of 0.421 dollars/MWh per exposure pp. Significance in one subgroup and nonsignificance in another do not establish a difference. The sales interval includes a hypothetical full quarter at 50\% utilization, or 1,095 MWh per MW. Page 3 assigns the residual price increase to named causes without estimating their contributions. Preserve the positive findings and acknowledged limitations while challenging these specific interpretations.
+
+M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
 \begin{frame}{Fixed and Adaptive Research Designs}
 \usebeamercolor[fg]{normal text}

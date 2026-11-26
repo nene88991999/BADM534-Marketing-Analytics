@@ -1281,3 +1281,11 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 8.31 Marketing Research Findings as Public Reassurance
+
+\noindent A company or institution choosing how to communicate research can preserve the estimand and uncertainty or strengthen the message beyond them. The data-center electricity case makes that choice consequential. A conditional estimate of average revenue per MWh concerns a particular sample and historical comparison. A statement that a class of facilities has caused no consumer cost increase adds a claim about absence that requires adequate bounds and a defensible scope.
+
+Assess the communication by tracing its factual claims back to the exact table, coefficient, sample, and units. Then identify the inference added by the wording. In the verified HBS coverage, the categorical developer comparison is stronger than Table 4's uncertain estimates and $p=0.101$ difference test. The relevant distinction is between the paper's findings, its interpretive claims, and the public article's language. Company dissemination must be established with a specific dated company statement; affiliation, interest, or repetition by an academic institution is insufficient. [HBS Working Knowledge](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple).
+
+A responsible recommendation states which positive effects remain compatible with the evidence, which people and outcomes it covers, and which safeguards follow from the remaining uncertainty. The same reasoning applies to claims that an advertisement, recommendation system, cancellation procedure, or pricing algorithm causes no harm. Selecting a convenient outcome or an insensitive test can make a harmful practice appear reassuring without establishing the proposition that the audience is being asked to accept.

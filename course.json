@@ -349,7 +349,11 @@
     "07_Labs/Statistical_Inference/README.md",
     "01_Resources/40_Econometric_Coding_Workflows/README.md",
     "01_Resources/40_Econometric_Coding_Workflows/SOURCE_REVIEW.md",
-    "01_Resources/40_Econometric_Coding_Workflows/RIGHTS.md"
+    "01_Resources/40_Econometric_Coding_Workflows/RIGHTS.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/README.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -398,12 +402,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-econometric-coding",
+    "revision": "2026-11-26-statistical-claims",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 116,
-    "pages": 463,
+    "figures_count": 121,
+    "pages": 480,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -516,7 +520,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 431,
+    "slides": 442,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1089,7 +1093,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-econometric-coding",
+  "revision": "2026-11-26-statistical-claims",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1272,5 +1276,36 @@
     "model_api_calls": 0,
     "upstream_execution": false,
     "scope": "Published aggregate reconstruction; original constructed errors on observed mHealth inputs; hypothetical expected costs. No new model-performance comparison."
+  },
+  "statistical_claims_and_decisions": {
+    "resources": "01_Resources/41_Statistical_Claims_and_Decisions/README.md",
+    "review": "01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md",
+    "claim_assessment": "01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md",
+    "paper_companion": "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md",
+    "catalog": "01_Resources/41_Statistical_Claims_and_Decisions/catalog.json",
+    "source_manifest": "01_Resources/41_Statistical_Claims_and_Decisions/manifest.json",
+    "examples": "03_Data_and_Code/Statistical_Inference/README.md",
+    "lab": "07_Labs/Statistical_Inference/README.md",
+    "verification": "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M2 §2.28",
+      "M3 §3.19",
+      "M6 §§6.32–6.33",
+      "M8 §8.31",
+      "M9 §§9.25–9.26"
+    ],
+    "sessions": [
+      4,
+      9,
+      14
+    ],
+    "new_programs_executed": 4,
+    "new_independent_tests_passed": 15,
+    "original_figures": 5,
+    "additional_slides": 11,
+    "model_calls": 0,
+    "upstream_execution": false,
+    "scope": "Original synthetic experiments and decision examples; reported-table normal-approximation calculations; philosophical critique. No utility-panel replication, verified corporate X post, or established downstream harm."
   }
 }

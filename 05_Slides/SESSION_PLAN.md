@@ -13,17 +13,17 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 30 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 24 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 26 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 29 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 33 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 52 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 57 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -100,9 +100,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty. Check variance and sample construction separately from the coefficient.
 
-**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation. P-value distributions and utility-average versus household outcomes.
 
-**Ethics and Regulation:** Substantiation and the distinction between association and benefit.
+**Ethics and Regulation:** Substantiation and the distinction between association and benefit; measurement and household burdens.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -114,7 +114,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–135 | Response Coefficients and Source Bias |
 | 135–145 | Price Coefficients and Interpretation |
 | 145–155 | Digital Usage and Conditional Income Associations |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Ethics, Evidence, and Decision Discussion |
 
 ### 05. Conjoint and Product Design
 
@@ -207,9 +207,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations.
 
-**Ethics and Regulation:** Defensible treatment designs and informed customer choice.
+**Ethics and Regulation:** Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -220,7 +220,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise and Store Assignment |
 | 125–135 | Fixed and Adaptive Research Designs |
 | 135–155 | Treatment Effects and Customer Outcomes |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Ethics, Evidence, and Decision Discussion |
 
 ### 10. Causal Comparisons and Policy Evaluation
 
@@ -317,9 +317,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility. Equivalence, data-center reassurance, ontology, and household authority.
 
-**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior..
+**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.; evidence, conceptual scope, and the ability to contest cost allocation.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -360,3 +360,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 The sequence follows M1–M8, with M9 Marketing Dialectics integrated into Session 14, in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
 
 The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the educational structure. It does not release deadlines or graded work. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) provides confirmed logistics and course coverage. Use [course.json](../course.json) for release pointers and outstanding assessment policies.
+
+## Repeated Evidence and the Electricity Case
+
+Session 4 uses the worked comparison for repeated p-values and the ethics discussion for utility averages and household burdens. Session 9 compares significance with profit and evaluates the electricity paper using its own tables. Session 14 examines equivalence, public reassurance, ontology, and household authority within the existing Marketing Dialectics discussion. Longer simulations and source critique remain [optional ungraded practice](../07_Labs/Statistical_Inference/README.md).

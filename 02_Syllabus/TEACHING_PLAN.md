@@ -146,3 +146,7 @@ Sessions 1 and 4 incorporate method assessment and paired mHealth uncertainty in
 ## Econometric Coding Workflows
 
 Use the [published comparison and original cases](../03_Data_and_Code/Agent_Workflows/README.md) in existing blocks: Session 1 workflow configuration, Session 4 paired inference, Session 9 workflow contrasts, Session 11 checker comparisons, and Session 14 workflow costs. Keep the fifteen 170-minute meetings and dated calendar. The complete additional exercise belongs to optional practice; it establishes no grading or AI-use requirement.
+
+## Evidence and the Recurring Electricity Case
+
+Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.

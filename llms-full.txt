@@ -358,7 +358,11 @@ Generated from course.json and the source files identified below. This file cont
     "07_Labs/Statistical_Inference/README.md",
     "01_Resources/40_Econometric_Coding_Workflows/README.md",
     "01_Resources/40_Econometric_Coding_Workflows/SOURCE_REVIEW.md",
-    "01_Resources/40_Econometric_Coding_Workflows/RIGHTS.md"
+    "01_Resources/40_Econometric_Coding_Workflows/RIGHTS.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/README.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md",
+    "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -407,12 +411,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-econometric-coding",
+    "revision": "2026-11-26-statistical-claims",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 116,
-    "pages": 463,
+    "figures_count": 121,
+    "pages": 480,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -525,7 +529,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 431,
+    "slides": 442,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1098,7 +1102,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-econometric-coding",
+  "revision": "2026-11-26-statistical-claims",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1281,6 +1285,37 @@ Generated from course.json and the source files identified below. This file cont
     "model_api_calls": 0,
     "upstream_execution": false,
     "scope": "Published aggregate reconstruction; original constructed errors on observed mHealth inputs; hypothetical expected costs. No new model-performance comparison."
+  },
+  "statistical_claims_and_decisions": {
+    "resources": "01_Resources/41_Statistical_Claims_and_Decisions/README.md",
+    "review": "01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md",
+    "claim_assessment": "01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md",
+    "paper_companion": "01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md",
+    "catalog": "01_Resources/41_Statistical_Claims_and_Decisions/catalog.json",
+    "source_manifest": "01_Resources/41_Statistical_Claims_and_Decisions/manifest.json",
+    "examples": "03_Data_and_Code/Statistical_Inference/README.md",
+    "lab": "07_Labs/Statistical_Inference/README.md",
+    "verification": "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M2 \u00a72.28",
+      "M3 \u00a73.19",
+      "M6 \u00a7\u00a76.32\u20136.33",
+      "M8 \u00a78.31",
+      "M9 \u00a7\u00a79.25\u20139.26"
+    ],
+    "sessions": [
+      4,
+      9,
+      14
+    ],
+    "new_programs_executed": 4,
+    "new_independent_tests_passed": 15,
+    "original_figures": 5,
+    "additional_slides": 11,
+    "model_calls": 0,
+    "upstream_execution": false,
+    "scope": "Original synthetic experiments and decision examples; reported-table normal-approximation calculations; philosophical critique. No utility-panel replication, verified corporate X post, or established downstream harm."
   }
 }
 ```
@@ -1419,6 +1454,10 @@ The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects publ
 ## Coding Workflows and Hidden Errors
 
 [The coding-workflow collection](01_Resources/40_Econometric_Coding_Workflows/README.md) connects published benchmark evidence to [reproducible Python examples](03_Data_and_Code/Agent_Workflows/README.md). The notes and slides distinguish execution, numerical correctness, customer-level allocation, and the cost of undetected errors.
+
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
 
 ---
 
@@ -1761,6 +1800,10 @@ M1 §1.18 separates execution, method, reporting, and interpretation. M3 §3.18 
 
 M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24 connect [published coding evidence](01_Resources/40_Econometric_Coding_Workflows/README.md) to independent assessment, interaction scales, customer allocation, review cost, and responsibility. [Three complete programs](03_Data_and_Code/Agent_Workflows/README.md), two editable figures, and six slides support Sessions 1, 4, 9, 11, and 14 within their existing meeting blocks. [Longer practice](07_Labs/Agent_Workflows/README.md) remains optional and ungraded.
 
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1880,6 +1923,10 @@ The course description's AI-workflow objective includes statistical design and u
 ## Coding-Workflow Coverage
 
 The learning objectives and class-format description include output completeness, silent numerical errors, independent checks, and review costs. The [session plan](../05_Slides/SESSION_PLAN.md) integrates these comparisons into the existing meetings. The longer [workflow lab](../07_Labs/Agent_Workflows/README.md) remains optional and ungraded.
+
+## Evidence and the Recurring Electricity Case
+
+Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.
 
 ---
 
@@ -2041,6 +2088,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Agent workflow examples](Agent_Workflows/README.md) now include published aggregate reconstruction, eight constructed coding cases on each mHealth task, and a hypothetical decision-loss comparison. Three complete Python programs and two TikZ figures connect M1, M3, M6, M7, and M8; no new model calls are included.
 
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2049,7 +2100,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [463-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 116 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [480-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 121 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2125,7 +2176,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 88 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 110 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -2233,6 +2284,10 @@ M1 §1.18, M3 §3.18, M6 §6.30, and M9 §9.24 connect statistical assessment, p
 
 M1 §1.19 reconstructs published success and failure counts; M6 §6.31 compares prompt effects on two scales; M7 §7.46 evaluates constructed mHealth errors; M8 §8.30 compares review costs and undetected decision losses. M3 and M9 connect statistical evidence and managerial responsibility. [Complete Python and outputs](../03_Data_and_Code/Agent_Workflows/README.md) accompany two editable figures.
 
+## Statistical Claims and the Ethics of Public Reassurance
+
+The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -2301,7 +2356,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 431 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 442 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2441,6 +2496,10 @@ Seven slides in Sessions 1, 4, 9, and 14 connect generated statistical code, pai
 ## Coding Workflows and Hidden Errors
 
 Sessions 1, 4, 9, 11, and 14 include six additional slides on published workflow results, uncertainty checks, prompt-effect scales, constructed mHealth errors, and hypothetical decision losses. Two new editable TikZ figures preserve the comparison denominators and cost assumptions. [Source guide](../01_Resources/40_Econometric_Coding_Workflows/README.md); [Python and checks](../03_Data_and_Code/Agent_Workflows/README.md).
+
+## Statistical Claims and the Ethics of Public Reassurance
+
+The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
 
 ---
 
@@ -2986,6 +3045,10 @@ The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md
 
 [The source collection](../01_Resources/40_Econometric_Coding_Workflows/README.md) supports M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24. The [original programs](../03_Data_and_Code/Agent_Workflows/README.md) reconstruct published denominators, expose deliberately constructed mHealth errors, and compare hypothetical review costs. The three data types remain distinct. Sessions 1, 4, 9, 11, and 14 use existing discussion blocks.
 
+## Statistical Claims and the Ethics of Public Reassurance
+
+The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3344,17 +3407,17 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 30 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 24 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 26 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 29 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 33 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 52 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 57 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -3431,9 +3494,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty. Check variance and sample construction separately from the coefficient.
 
-**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation. P-value distributions and utility-average versus household outcomes.
 
-**Ethics and Regulation:** Substantiation and the distinction between association and benefit.
+**Ethics and Regulation:** Substantiation and the distinction between association and benefit; measurement and household burdens.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3445,7 +3508,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–135 | Response Coefficients and Source Bias |
 | 135–145 | Price Coefficients and Interpretation |
 | 145–155 | Digital Usage and Conditional Income Associations |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Ethics, Evidence, and Decision Discussion |
 
 ### 05. Conjoint and Product Design
 
@@ -3538,9 +3601,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations.
 
-**Ethics and Regulation:** Defensible treatment designs and informed customer choice.
+**Ethics and Regulation:** Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3551,7 +3614,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise and Store Assignment |
 | 125–135 | Fixed and Adaptive Research Designs |
 | 135–155 | Treatment Effects and Customer Outcomes |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Ethics, Evidence, and Decision Discussion |
 
 ### 10. Causal Comparisons and Policy Evaluation
 
@@ -3648,9 +3711,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility. Equivalence, data-center reassurance, ontology, and household authority.
 
-**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior..
+**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.; evidence, conceptual scope, and the ability to contest cost allocation.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3691,6 +3754,10 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 The sequence follows M1–M8, with M9 Marketing Dialectics integrated into Session 14, in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
 
 The [syllabus planning document](../02_Syllabus/TEACHING_PLAN.md) records the educational structure. It does not release deadlines or graded work. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) provides confirmed logistics and course coverage. Use [course.json](../course.json) for release pointers and outstanding assessment policies.
+
+## Repeated Evidence and the Electricity Case
+
+Session 4 uses the worked comparison for repeated p-values and the ethics discussion for utility averages and household burdens. Session 9 compares significance with profit and evaluates the electricity paper using its own tables. Session 14 examines equivalence, public reassurance, ontology, and household authority within the existing Marketing Dialectics discussion. Longer simulations and source critique remain [optional ungraded practice](../07_Labs/Statistical_Inference/README.md).
 
 ---
 
@@ -3845,6 +3912,10 @@ Sessions 1 and 4 incorporate method assessment and paired mHealth uncertainty in
 
 Use the [published comparison and original cases](../03_Data_and_Code/Agent_Workflows/README.md) in existing blocks: Session 1 workflow configuration, Session 4 paired inference, Session 9 workflow contrasts, Session 11 checker comparisons, and Session 14 workflow costs. Keep the fifteen 170-minute meetings and dated calendar. The complete additional exercise belongs to optional practice; it establishes no grading or AI-use requirement.
 
+## Evidence and the Recurring Electricity Case
+
+Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -3955,6 +4026,10 @@ M9 §9.24 examines a joint test of consumer-credit advertising coefficients and 
 ## Coding Competence and Responsibility
 
 M1 §1.19 and M9 §9.24 connect correct numerical implementation to responsibility for the chosen question and customer-facing action. M7 §7.46 examines errors in customer allocation that preserve aggregate activity. M8 §8.30 separates hypothetical monetary losses from the justification of customer treatment. The [coding-workflow evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md) supplies no new legal proposition or autonomous welfare judgment.
+
+## Statistical Claims and the Ethics of Public Reassurance
+
+The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
 
 ---
 
@@ -4121,14 +4196,14 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. Customer measurement and visualization define the patterns to explain. Regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems inform decisions about product design, acquisition, retention, pricing, and marketing budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy, including AI-assisted experimentation, personalized pricing, shared pricing systems, and commercial incentives.
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian and Confucian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, and commercial incentives.
 
 ## Learning Objectives
 
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
-- Evaluate AI-assisted workflows through independent calculations, statistical design, silent-error detection, review costs, and interpretation.
+- Evaluate AI-assisted workflows through independent calculations, statistical design, meaningful-effect bounds, silent-error detection, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 
 ## Class Format and Materials
@@ -4137,7 +4212,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, execution feedback, complete and correct output, review costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, data-center electricity costs, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, execution feedback, complete and correct output, review costs, and customer authority.
 
 ---
 
@@ -5471,6 +5546,114 @@ The same reasoning applies when an AI assistant supplies the statistical analysi
 
 A manager delegating econometric code retains responsibility for choosing the question, checking the measurement, and evaluating the action taken on the result. The coding-workflow benchmark in Section 1.19 fixes the method in advance; success establishes agreement with its numerical reference under stated rules. A campaign can satisfy that computational requirement while relying on a misleading promise or disregarding a customer's expressed refusal. Kantian scrutiny examines the reasons and authority for the practice. Confucian scrutiny examines truthful reporting and the manager's response when an analyst identifies a material error. Preserving an opportunity to challenge an automated recommendation connects analytical competence to responsible conduct.
 
+## 9.25 Evidence for a Small Burden
+
+\noindent A subscription firm claims that a revised cancellation process imposes little additional burden. The relevant question concerns a tolerable increase in time, abandonment, charges, or difficulty for the affected population. Testing whether the mean time difference equals exactly zero answers only one part of that question. A nonsignificant result can arise from an interval that includes both small and substantial burdens. [Lakens, Chapter 9](https://lakens.github.io/statistical_inferences/09-equivalencetest.html).
+
+Suppose independent customers complete a cancellation task, and $\theta$ is the revised process's mean time minus the original process's mean time, in seconds. Set an illustrative equivalence range of minus five to plus five seconds before examining outcomes. The two one-sided tests evaluate $H_{0L}:\theta\leq-5$ and $H_{0U}:\theta\geq5$, each at 5%. Rejecting both establishes equivalence within the chosen range under the sampling model. With the same standard error and degrees of freedom, this requires the entire 90% two-sided confidence interval to lie inside the range. [Lakens, Chapter 9](https://lakens.github.io/statistical_inferences/09-equivalencetest.html).
+
+Four hypothetical cases use a pooled standard deviation of 20 seconds in each arm. With 50 customers per arm, an estimated four-second increase has a p-value of 0.320 against zero and a 90% interval of $[-2.64,10.64]$. Neither equality nor a small burden follows. With 800 per arm, a half-second increase has a 90% interval of $[-1.15,2.15]$ and satisfies equivalence. A three-second increase at the same precision is both statistically distinguishable from zero and equivalent within the prespecified range. Detection of a difference and evidence that it is small can therefore coexist.
+
+![Four hypothetical mean task-time differences with 90% intervals. Two-sided equivalence requires both interval ends within the chosen five-second bounds.](../figures/M09_equivalence_and_burden.png)
+
+A six-second reduction fails two-sided equivalence because it is too far below zero, yet its upper confidence bound excludes an increase of five seconds. For a decision concerned only with excessive additional time, a one-sided noninferiority question is appropriate: test $H_0:\theta\geq5$ against $\theta<5$, or require a one-sided 95% upper bound below five. The choice between these questions follows the decision and must precede the result.
+
+The numerical tolerance also requires justification. A five-second mean can conceal concentrated burdens, and an analysis of completed tasks leaves abandonment and failed cancellation as separate outcomes. Kantian respect for persons asks whether customers can understand and exercise their decision to leave. Confucian attention to responsible service asks how the firm responds to difficulty and requests for correction. Neither principle supplies a five-second threshold automatically. Evidence of a small mean time difference supports a specific empirical claim; the procedure's permissibility additionally depends on its effects and treatment of customer choice.
+
+From the repository root:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/equivalence_claims.py
+```
+ Its inputs are hypothetical sufficient statistics, with no generated individual records. The complete implementation reports zero-null tests, both equivalence tests, 90% intervals, and the one-sided upper-bound decision.
+
+
+Python source: [equivalence_claims.py](../../03_Data_and_Code/Statistical_Inference/equivalence_claims.py)
+
+```python
+"""Hypothetical cancellation-time summaries with prespecified +/-5 second bounds."""
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+OUTPUT = Path(__file__).resolve().parent / "results"
+BOUND, ALPHA = 5.0, .05
+# Each scenario is a separate hypothetical parallel-group experiment.
+CASES = [("imprecise", 50, 60.0, 64.0, 20.0),
+         ("precise_small", 800, 60.0, 60.5, 20.0),
+         ("detectable_small", 800, 60.0, 63.0, 20.0),
+         ("faster", 800, 60.0, 54.0, 20.0)]
+
+
+def assess(name, n, control_mean, treatment_mean, sample_sd, bound=BOUND):
+    if n < 2 or sample_sd <= 0 or bound <= 0:
+        raise ValueError("Require at least two customers per arm, positive SD and bound")
+    delta = treatment_mean - control_mean
+    df = 2 * n - 2
+    se = sample_sd * np.sqrt(2 / n)
+    p_zero = 2 * stats.t.sf(abs(delta / se), df)
+    lower_p = stats.t.sf((delta + bound) / se, df)
+    upper_p = stats.t.cdf((delta - bound) / se, df)
+    half90 = stats.t.ppf(1 - ALPHA, df) * se
+    half95 = stats.t.ppf(1 - ALPHA / 2, df) * se
+    return {"case": name, "n_per_arm": n, "control_mean_seconds": control_mean,
+        "treatment_mean_seconds": treatment_mean, "sd_each_arm_seconds": sample_sd,
+        "estimate_seconds": delta, "se_seconds": se, "df": df,
+        "p_zero": p_zero, "lower_bound_seconds": -bound, "upper_bound_seconds": bound,
+        "tost_lower_p": lower_p, "tost_upper_p": upper_p,
+        "tost_p": max(lower_p, upper_p), "equivalent": max(lower_p, upper_p) < ALPHA,
+        "ci90_low": delta - half90, "ci90_high": delta + half90,
+        "ci95_low": delta - half95, "ci95_high": delta + half95,
+        "noninferior_below_upper_bound": upper_p < ALPHA}
+
+
+def main():
+    OUTPUT.mkdir(exist_ok=True)
+    result = pd.DataFrame([assess(*case) for case in CASES])
+    result.to_csv(OUTPUT / "equivalence_claims.csv", index=False, float_format="%.12g")
+    print(result.to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 9.26 Electricity Infrastructure, Public Reassurance, and Agency
+
+\noindent A public authority deciding whether to approve a data-center connection must determine who bears its costs, which risks remain unresolved, and which safeguards protect affected households. A research result can influence that decision through its public interpretation. Calling an uncertain effect harmless can weaken the case for financial guarantees, transparent cost allocation, or subsequent review. These are potential consequences of misleading reassurance; attributing an actual approval or household loss to this paper would require evidence connecting the communication to the decision and its outcomes.
+
+HBS Working Knowledge's November 12, 2026 coverage of Rana, Kaps, and Netessine states that, unlike colocated centers, “centers built by the ‘Big Four’ tech companies have not” raised consumer electricity costs. This is academic public communication. Table 4 reports an uncertain positive coefficient for the four named firms and a direct developer-difference test with $p=0.101$. The categorical wording is stronger than those results support. The article also acknowledges uncertainty about future prices, which belongs beside any account of its claims. [HBS Working Knowledge](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple).
+
+### 9.26.1 What Exists in the Analysis and What the Claim Requires
+
+\noindent An ontology specifies the entities, properties, and relations represented in an account. The electricity study represents utilities, installed capacity, customer classes, sales, costs, and average prices. A claim about household welfare additionally concerns persons with unequal incomes, needs, exposures, and opportunities. A claim about agency concerns their authority to understand, question, and influence decisions that bind them. Increasing the precision of a utility-average price estimate leaves these other objects unmeasured.
+
+The strongest ontological objection concerns a change in what the analysis is taken to represent. A utility average becomes a statement about each household; a four-owner indicator becomes a business model; an unresolved price effect becomes absence of harm. Each substitution requires a further argument or additional evidence. Studying one price outcome is a legitimate research choice. Treating that restricted outcome as a complete account of affected persons and permissible conduct commits a category error. The statistical objection concerns what the evidence supports; the ontological objection concerns which objects the claim purports to describe; the ethical objection concerns the authority to impose the resulting burdens.
+
+Conceptual engineering asks whether our categories serve the purposes for which we need them. For a regulator assessing cost allocation, a concept of harm restricted to a mean price coefficient omits burdens that could change the decision. For an agency assessment, observing that a household pays its bill supplies no evidence that it endorsed the allocation rule. The household may depend on an essential service and lack a practical alternative. A defensible conceptual choice retains those distinctions even when they complicate measurement. This application follows the functional assessment of concepts developed by Thomasson. [Thomasson, “Pragmatic Conceptual Engineering”](https://doi.org/10.1093/9780197787830.003.0011).
+
+![Two synthetic household cost allocations produce the same two-dollar-per-MWh average while distributing burdens differently. Authority to assess and challenge the allocation requires separate evidence.](../figures/M09_household_incidence_and_agency.png)
+
+### 9.26.2 Reasons, Authority, and the Ability to Contest a Decision
+
+\noindent An assessment of household agency asks whether its considered reasons can bear on decisions that affect it and what authority it holds over those decisions. Relevant evidence includes access to the cost calculation, understandable explanations of alternatives, an opportunity to raise objections, and a credible process for review and remedy. Participation records also require interpretation. Attendance at a hearing, silence, continued electricity use, and payment are different observations from endorsement of a cost-allocation rule. Restrictions on time, expertise, resources, or access can affect whose reasons enter the decision.
+
+A public body can possess legal authority to decide while owing affected people a substantive justification. Recognition that a rule exists, compliance with it, endorsement of its reasons, and authorization of its application are distinct relations. Thomasson's account of requirements, permissions, and reports about rules helps articulate those distinctions; their application here concerns the evidence needed to evaluate an infrastructure decision. A household's disagreement alone does not establish that a project is impermissible, and an aggregate benefit alone does not establish that the decision procedure respects it. [Thomasson, Norms and Necessity](https://academic.oup.com/book/33564).
+
+Kant's humanity formulation requires treating persons as ends with purposes and judgment of their own. Applied to public-facing analytics, it supports a duty to state uncertainty and consequential assumptions accurately. A person whose exposure is dismissed through a false claim of demonstrated safety loses access to reasons needed to evaluate the decision. The objection concerns the use of technical authority to secure acquiescence. Establishing deliberate deception by a particular author would require evidence of intention; the unsupported inference itself can be criticized directly. [Kant, Groundwork, second section, 4:429–430](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm).
+
+The universal-law formulation sharpens the reporting obligation. Consider a rule allowing an interested party to advertise safety whenever a test fails to reject zero, regardless of its ability to detect meaningful harm. General adoption would reward weak measurement with reassuring claims and undermine the evidentiary trust on which those claims depend. A consistent rule requires the same scrutiny when unresolved effects threaten the firm and when they threaten households. Economic self-interest justifies demanding substantiation; it supplies no proof of guilt or misconduct.
+
+### 9.26.3 Responsibilities Created by Public Claims
+
+\noindent Confucian trustworthiness and the rectification of names direct attention to whether descriptions match the responsibilities performed. Calling an uncertain effect harmless misdescribes the evidence. Calling an ownership group a leasing model can misdirect responsibility for the mechanism. An analyst's role requires correcting these descriptions when their consequences become apparent, while a manager's role requires receiving inconvenient findings without penalizing their disclosure.
+
+The data-center case also exposes an asymmetry in the burden of proof. Households can be required to demonstrate harm with evidence they lack the resources to collect, while a firm obtains reassurance from a study too imprecise to exclude the same harm. This allocation of scrutiny can disadvantage those who bear the risk. A defensible approval process identifies a meaningful harm threshold, tests whether the evidence excludes it, considers distribution and delayed cost recovery, and states which party bears unresolved risk. Safeguards can include financial commitments, independent review, and opportunities to revisit the allocation. Their appropriate form depends on the institution and applicable law.
+
+A rigorous criticism remains answerable to evidence. The paper reports positive price effects in several specifications, acknowledges important design limits, and leaves particular mechanisms unresolved. Its tables support a strong rejection of categorical harmlessness. They do not establish the magnitude of every household's loss or settle the overall merits of data-center development. The ethical failure arises when a narrow and uncertain result acquires authority to dismiss people and consequences it has not adequately assessed.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -6191,6 +6374,10 @@ The [optional ungraded lab](Statistical_Inference/README.md) checks customer pai
 ## Coding-Workflow Evidence and Constructed Errors
 
 The expanded [AI Workflow Evaluation lab](Agent_Workflows/README.md) reconstructs published benchmark aggregates, assesses deliberate mHealth errors, and evaluates hypothetical review spending. Two separate optional model-comparison protocols distinguish controlled information/feedback contrasts from three execution-and-revision conditions. Neither has been run as a course model experiment.
+
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.
 
 ---
 
@@ -10762,6 +10949,22 @@ Complete code appears in M3 §3.18 and M6 §6.30. M1 §1.18 supplies the assessm
 
 The [Fisher-R1 source review](../../01_Resources/39_Statistical_Inference_and_AI/README.md) motivates statistical assessment. Its code was inspected and linked, without copying or execution. These Python programs are original course implementations. The benchmark's consumer-credit question is discussion material; its reference p-value has not been independently reproduced. See the [data dictionary](DATA_DICTIONARY.md), [manifest](manifest.json), and [verification record](VERIFICATION.md).
 
+## P-Values, Decision Thresholds, and Electricity-Price Claims
+
+From the repository root, run:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/pvalue_distributions.py
+python3 03_Data_and_Code/Statistical_Inference/campaign_decisions.py
+python3 03_Data_and_Code/Statistical_Inference/equivalence_claims.py
+python3 03_Data_and_Code/Statistical_Inference/data_center_claims.py
+python3 03_Data_and_Code/Statistical_Inference/build_claim_figures.py
+```
+
+`pvalue_distributions.py` generates 20,000 independent experiment pairs per scenario, with 40 or 160 stores and true effects of zero or eight dollars. `campaign_decisions.py` uses hypothetical purchase counts and fixed contribution inputs. `equivalence_claims.py` uses hypothetical sufficient statistics, rather than pretending to observe individual task times. `data_center_claims.py` transcribes published coefficients and their clustered standard errors, computes sensitivity and bounds, and supplies a synthetic household-incidence counterexample. No utility-level panel or original estimator is reproduced.
+
+Full source listings appear in M3 §3.19, M6 §§6.32–6.33, and M9 §9.25. The five additional editable TikZ figures cover repeated p-values, campaign profit, equivalence, electricity-price power, and household incidence. The recurring electricity case also appears in M2 §2.28, M8 §8.31, and M9 §9.26. Read the [resource guide and claim assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/README.md) before extending its conclusions.
+
 ---
 
 ## Source: 03_Data_and_Code/Statistical_Inference/DATA_DICTIONARY.md
@@ -10788,6 +10991,18 @@ Input: `../mHealth/data/food_entries.csv.gz`, verified against `../mHealth/manif
 
 `first_experiment.csv` retains repetition 0 at every correlation and method. It includes the effect, standard error, Welch reference degrees of freedom, p-value, and effect confidence interval. Those intervals concern one experiment; the Wilson intervals in `null_calibration.csv` concern the Monte Carlo rejection fraction. Neither is a prediction interval for an individual customer.
 
+## Statistical-Claim Examples
+
+- `pvalue_summary.csv`: stores, true effect in dollars/customer, experiment count, rejection counts/fractions, analytical power, estimate dispersion, interval coverage, and conditional second-experiment rejection counts. `pvalue_bins.csv` uses equal-width 0.05 bins. `pvalue_first.csv` retains first draws; `pvalue_setup.json` fixes seed, sample, distribution, and effect.
+- `campaign_decision.csv`: hypothetical independent customer counts, purchase proportions, lift as a probability, approximate 95% interval, fixed dollar margin/contact cost, break-even lift, and contribution per treated customer. Multiply probability differences by 100 for percentage points.
+- `test_portfolio.csv` and `portfolio_sensitivity.csv`: specified test counts or proportions, size, power, expected false/true rejections, and their ratio. These are expected-count calculations.
+- `equivalence_claims.csv`: hypothetical independent-arm sufficient statistics, mean differences in seconds, pooled standard errors/degrees of freedom, zero-null p-values, 90% intervals, two one-sided equivalence p-values, and a one-sided upper-bound decision. Bounds are illustrative and prespecified at ±5 seconds.
+- `data_center_estimates.csv`: rounded coefficients transcribed from Rana et al. Tables 2, 4, and 7, source pages, original standard errors, scaling, units, samples, and normal-approximation inference. The residential reference scales both coefficient and SE by `100 * 456 / 6804`; developer estimates remain in dollars/MWh per percentage point. The sales slope is quarterly MWh per added MW.
+- `data_center_power.csv` and `data_center_power_curve.csv`: externally specified positive price effects and two-sided 5% rejection probabilities, holding the published scaled SE fixed. `mde80` is a sensitivity threshold, not an upper effect bound.
+- `data_center_sales_targets.csv`: hypothetical utilization of 25% or 50% over a full 2,190-hour quarter without displacement; resulting MWh per MW and fixed-SE power.
+- `data_center_reporting_checks.csv`: descriptive observed-price difference, estimated/residual shares, reference exposure, and directly reported developer-equality p-value. No covariance is inferred.
+- `data_center_incidence_illustration.csv`: two synthetic monthly allocations with 1,000 equal-use households, the number affected, their additional dollar bill, total revenue, and mean dollars/MWh. Neither scenario is measured household incidence.
+
 ---
 
 ## Source: 03_Data_and_Code/Statistical_Inference/AGENTS.md
@@ -10804,31 +11019,41 @@ Read the root agent guide, this folder's README, data dictionary, and verificati
 - Preserve the source license distinctions. Upstream code is linked only; model and benchmark licenses do not establish a license for the GitHub code.
 - Optional practice is ungraded. No assignment rules or permitted AI use can be inferred from this folder.
 
+## Statistical Claims and the Recurring Electricity Case
+
+Keep full code synchronized with M3 §3.19, M6 §§6.32–6.33, and M9 §9.25. Preserve source-table locations, units, clustered SEs, and the distinction between reference exposure and a mean of utility ratios. Power evaluates specified alternatives; it does not prove the true effect or explain nonsignificance uniquely. Minimum detectable effects and upper confidence bounds are different quantities.
+
+Separate measured prices, household incidence, welfare, and agency. Retain positive findings and acknowledged limitations. Use the reported joint developer test; marginal SEs do not supply its covariance. The verified public communication is HBS coverage. Do not invent company posts, intent, or actual downstream harms. Keep instructor philosophy manuscripts and private notes outside the public repository.
+
 ---
 
 ## Source: 03_Data_and_Code/Statistical_Inference/VERIFICATION.md
 
 # Verification Record
 
-Executed November 25, 2026 with Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and SciPy 1.16.3. Both analytical programs and the figure generator ran successfully. No upstream code, source-model inference, or model API was executed.
+Checked November 26, 2026 with Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and SciPy 1.16.3. The four additional analysis programs and figure builder ran successfully. No model calls or downloaded third-party code were executed.
 
-## Numerical and Design Checks
+## Numerical Checks
 
-Ten unittest checks passed. They examine a fixed roster with duplicate days and a later entrant; a paired test against SciPy; preservation of user pairs; rejection of missing pairs; Welch arithmetic against SciPy; a hand-calculated store-mean contrast and standard error; duplicated customer rows with unchanged store information; rejection of unbalanced assignment; a Wilson interval boundary; and deterministic simulation with the analytical variance.
+All 25 inference tests passed, including the ten existing checks for paired mHealth summaries and clustered store experiments. Fifteen additional checks compare pooled tests with SciPy, power with an independent noncentral chi-square calculation, campaign inference with the chi-square identity, economic units and break-even arithmetic, expected-count denominators, shifted equivalence tests and interval duality, scaling of confidence bounds, inversion of a one-sided test, and equal aggregate revenue under unequal household incidence. Invalid precision and other unsupported inputs are rejected.
 
-The full food-release SHA-256 hash matches the existing manifest. The reconstructed mHealth mean change and paired standard error match the prior visualization calculation. For the saved first store experiment, independently calling SciPy's two-sample test reproduces both p-values. Across the four correlations, empirical-to-analytical standard-deviation ratios range from 0.9890 to 1.0044. Rejection counts reconcile with fractions and denominators.
+A fresh source export starts with empty result and figure folders. The four new programs reproduce 14 result files byte for byte, and the figure builder reproduces five TikZ sources byte for byte. All 110 full Python source listings match their executable counterparts and parse successfully. Earlier mHealth inputs and the seven pre-existing numerical outputs remain unchanged; their preceding verification record is retained in Git history.
 
-A fresh source export, with an empty result folder and the full verified release input, reproduces all seven numerical result files and both TikZ sources byte-for-byte. The existing lecture-example verifier also passed in a separate export; its values agree with the published reference files. `scripts/check_lecture_code.py` verifies 103 exact, syntactically valid source listings in the notes, including the two new programs.
+Published coefficients were checked visually against the paper's Tables 2, 4, and 7. The developer-difference p-value is transcribed from its reported Wald test. No covariance matrix is reconstructed. Power, intervals, and minimum detectable effects use a normal approximation at fixed reported clustered standard errors and rounded published inputs. These calculations assess reported precision and interpretation; they do not re-estimate the original utility panel.
 
 ## Figures and Documents
 
-Two editable Illinois-color figures describe assignment units and plot rejection fractions from checked tables. Monte Carlo intervals, uncertainty about an effect, and outcome dispersion are identified separately. Visual review covered 46 rendered pages: new note sections, code listings, affected contents pages, neighboring page breaks, the Marketing Dialectics chapter tail, all seven new slides and their neighbors, and both syllabus pages. Final builds have no overfull boxes, missing characters, undefined references, or TeX errors. Existing package and underfull-spacing warnings remain.
+Five additional Illinois-color TikZ figures cover repeated p-values, campaign contribution, cancellation equivalence, electricity-price power, and household incidence. Plotted values come from checked result tables. The household diagram uses explicit synthetic inputs with equal use and total revenue. Figures retain units, populations, labels, and text companions.
 
-The complete notes contain 451 pages and 114 figures. Marketing Dialectics contains 36 pages. Sessions 1, 4, 9, and 14 contain 28, 23, 28, and 51 slides respectively; the combined deck has 425 slides. The syllabus remains two pages. All 15 meeting plans retain continuous 170-minute allocations and their existing dates.
+Visual review covered 75 rendered pages: new notes and code, affected contents and neighboring pages, the Marketing Dialectics chapter, eleven new slides and neighbors, and both syllabus pages. The p-value, power, and household diagrams were also inspected at full page size. Final builds have no overfull boxes, missing characters, undefined controls/references, or TeX errors. Existing package and underfull-spacing warnings remain.
 
-## Scope
+The combined notes contain 480 pages and 121 original figures. Marketing Dialectics has 41 pages. Sessions 4, 9, and 14 have 26, 33, and 57 slides; the combined deck has 442. The syllabus has two pages. All 15 dates, logistics, and continuous 170-minute allocations remain unchanged.
 
-mHealth results concern descriptive recorded logging in the selected cohort. The synthetic experiment evaluates one prespecified test with independent Gaussian stores, equal store sizes, balanced assignment, and complete outcomes. It does not measure AI performance, reproduce the source model, or assess all possible clustered designs. The public advertising task supplies a discussion question; its empirical reference p-value and specification remain unreplicated here.
+## Interpretive Scope
+
+The repeated experiments, campaign, cancellation summaries, and household allocations are synthetic. The electricity case computes implications of published summary estimates. It distinguishes nonrejection, equivalence, power, effect bounds, causal identification, economic importance, and ethical justification. Low power against specified alternatives does not prove a positive true effect or uniquely explain an observed nonsignificant result.
+
+Verified public reassurance is attributed to HBS coverage. Company dissemination on X remains unverified because direct search required authentication. The critique identifies potential consequences of misleading reassurance without claiming that the paper caused an observed policy decision or household loss. Instructor philosophy manuscripts and private notes are not published.
 
 ---
 
@@ -10850,6 +11075,12 @@ The store tables are synthetic. For 4,000 experiments at each correlation:
 The first experiment at correlation 0.3 estimates $4.334 per customer. The customer-row p-value is 0.0287 and the store-mean p-value is 0.3446. Its full customer table is retained, and the dataset was not selected on its significance. Every customer has zero true effect in the simulation.
 
 See the [dictionary](../DATA_DICTIONARY.md) for units, denominators, and interval definitions. No AI model output is included in these results.
+
+## Statistical Claims and Decision Comparisons
+
+The additional p-value simulation produces 32.515% rejection with 40 stores and 86.550% with 160 when the true effect is eight dollars. The hypothetical campaign has p=0.01868 and estimated contribution of minus $0.06 per treated customer. Equivalence examples distinguish an imprecise nonsignificant result from precise small effects and one-sided improvement.
+
+The reported-table electricity calculation yields estimate $1.749/MWh, SE $1.059/MWh, two-sided 95% interval [-0.326, 3.825], and one-sided 95% upper bound $3.491/MWh at the stated reference exposure. Power is 15.675% for $1 and 47.167% for $2. The cloud-owner slope is reported separately in dollars/MWh per exposure percentage point. All inputs, denominators, and approximations are in the [data dictionary](../DATA_DICTIONARY.md). These are original calculations from reported summaries and hypothetical examples; no original utility-panel replication is claimed.
 
 ---
 
@@ -10884,6 +11115,31 @@ After feedback, freeze the program and evaluate it on fresh simulated data. Keep
 ## Examine the Advertising Claim
 
 Read M9 §9.24 and the [benchmark question](../../01_Resources/39_Statistical_Inference_and_AI/benchmark_sample/question.txt). State what rejecting a joint null for 13 advertising coefficients would establish under a valid test. Identify the additional evidence needed to assess borrowing costs, comprehension, and customer agency. Evaluate the firm's justification using both Kantian respect for persons and Confucian responsibilities in a relationship of reliance. The benchmark's reference specification remains unverified here; the question supports discussion without supplying a replicated causal or welfare finding.
+
+## Compare Repeated P-Values and Economic Decisions
+
+1. Run `pvalue_distributions.py`. Compare 40 with 160 stores at a fixed eight-dollar true effect. Reconcile bin counts, rejection fractions, analytical power, and the independent-repeat denominator. Explain why a realized p-value does not supply a probability that the null is true or that a repeat will reject.
+2. Run `campaign_decisions.py`. Hand-check the lift, break-even threshold, and expected contribution. Explain why a significant increase can leave the campaign unprofitable under the stated costs.
+3. Distinguish the size of a test from the false share of expected rejections in the hypothetical portfolio. Explain what additional sampling assumptions would support a probability about a randomly selected rejected claim.
+4. Run `equivalence_claims.py`. For each scenario, state separately the zero-null conclusion, two-sided equivalence conclusion, and one-sided excessive-time conclusion. Explain why the five-second margin requires a substantive justification and which outcomes are absent from completed-task time.
+
+## Assess a Paper Using Its Own Tables
+
+Use the [electricity paper and companion](../../01_Resources/41_Statistical_Claims_and_Decisions/README.md), M6 §6.33, and `data_center_claims.py`.
+
+1. Transcribe Table 2 column 4 independently. Verify the coefficient, clustered SE, units, sample, and reference exposure. Distinguish a ratio of reported means from an average of ratios.
+2. Calculate power for externally specified $1 and $2 increases. Calculate a two-sided 95% interval, a one-sided 95% upper bound, and an 80% minimum detectable effect. Explain the different questions they answer. State why low power does not prove the true effect is positive.
+3. Read Table 4's direct equality test. Explain why the subgroup significance stars cannot replace it. Identify the covariance needed to construct the contrast independently.
+4. Use Table 7 to assess a hypothetical MW operating at 25% and 50% utilization during a full quarter. Explain what additional evidence would identify an infrastructure-cost mechanism.
+5. Reconstruct the 4% contribution and 96% residual using Table A.4. Identify the further causal decomposition required to attribute the residual to particular causes.
+6. Compare the definitions of the model's total revenue requirement, the cost-per-MWh outcome, the ownership categories, and the business-model claims. Record each claim, exact page/table, evidentiary problem, consequential interpretation, and evidence needed for resolution.
+7. Separate established interpretation problems from design questions requiring raw data. Propose one sensitivity analysis for donor spillovers, cumulative-treatment variation, delayed recovery, and specification multiplicity. Do not report an unexecuted check as a result.
+
+## Evaluate Public Reassurance and Household Agency
+
+Compare the verified HBS article with the reported bounds. Identify the speaker, exact claim, date, population, and uncertainty. A corporate dissemination claim requires a specific verified corporate statement. Distinguish the harm a misleading inference could cause from observed consequences established by a causal study.
+
+Use the synthetic household allocations to explain why equal mean prices leave distribution unresolved. Then specify evidence about access to reasons, challenge, review, and remedy. Distinguish payment, compliance, endorsement, and authorization. Evaluate a rule that permits interested firms to call an insensitive non-rejection harmless using Kantian universalization, respect for persons, and Confucian trustworthiness. State a defensible approval recommendation, a justified harm threshold, the unresolved risks, and which party should substantiate or bear them.
 
 ---
 
@@ -10954,6 +11210,132 @@ The repository has no standalone LICENSE file. The rights statement here applies
 The paper is linked through NBER and the author's website. A public download address does not by itself grant republication rights. The November manuscript is not mirrored in the public course repository. A local reading copy was inspected, with SHA-256 `932b8da85917db2abec9f293d037f547e47196f443c6c6a51c991666e7b7d795`.
 
 Original course prose, programs, and TikZ figures are separate from the archived tables. The mHealth inputs retain the provenance and restrictions of their existing teaching release.
+
+---
+
+## Source: 01_Resources/41_Statistical_Claims_and_Decisions/README.md
+
+# Statistical Claims and Marketing Decisions
+
+A decision requires an effect, uncertainty, an economically meaningful comparison, and an account of affected people. These resources connect p-values, power, equivalence, and public claims to that decision.
+
+## Sources and Course Uses
+
+- [Daniel Lakens, Chapter 1](https://lakens.github.io/statistical_inferences/01-pvalue.html): definitions and interpretation of p-values. M3 §3.19 uses original store simulations; M6 §6.32 separates detection from campaign profit.
+- [Daniel Lakens, Chapter 9](https://lakens.github.io/statistical_inferences/09-equivalencetest.html): interval hypotheses and equivalence. M9 §9.25 uses hypothetical cancellation-time summaries with full Python.
+- [Rana, Kaps, and Netessine (2026)](RanaKapsNetessine_WorkingPaper2026.pdf), *The Cost of Intelligence: Impacts of AI Data Centers on US Electricity Prices*: recurring case in M2 §2.28, M3 §3.19, M6 §6.33, M8 §8.31, and M9 §9.26. Read the [paper companion](PAPER_COMPANION.md) and [claim assessment](CLAIM_ASSESSMENT.md).
+- [HBS Working Knowledge, November 12, 2026](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple): verified public interpretation, distinguished from the paper's estimates and from unverified company dissemination.
+- [Thomasson, Pragmatic Conceptual Engineering](https://doi.org/10.1093/9780197787830.003.0011) and [Norms and Necessity](https://academic.oup.com/book/33564): concepts, rules, and their functions. Contemporary applications distinguish measurements, household burdens, and authority.
+- [Kant, Groundwork, second section](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm): universal law and humanity formulations; the course's public-reassurance application is an analytical argument.
+
+The [source review](SOURCE_REVIEW.md) records rights, version, reading scope, and access. The [programs](../../03_Data_and_Code/Statistical_Inference/README.md) reproduce all numerical examples. The [lab](../../07_Labs/Statistical_Inference/README.md) is optional ungraded practice. Sessions 4, 9, and 14 use selected comparisons within existing meeting allocations.
+
+---
+
+## Source: 01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md
+
+# Sources, Rights, and Review Scope
+
+Checked November 26, 2026. Original annotations, simulations, calculations, and analytical figures were written for the course. No third-party code was executed.
+
+## Statistical Sources
+
+Lakens's *Improving Your Statistical Inferences*, Chapters 1 and 9, were read for p-value interpretation, repeated-experiment distributions, equivalence, interval hypotheses, and threshold justification. The book identifies CC BY-NC-SA licensing in its [preface](https://lakens.github.io/statistical_inferences/). The course links the chapters and uses independently written Python and original examples. It does not mirror the book or its figures.
+
+## Electricity Paper and Communication
+
+Rana, Kaps, and Netessine's 42-page October 2026 working-paper version was read, including the methods, results, discussion, and Appendix A/B tables. The reading copy was already available locally and is preserved unchanged. Its [SSRN record](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459) identifies Creative Commons Attribution 4.0 licensing. The file hash and author order are recorded in `manifest.json`. Public full-page retrieval of SSRN was restricted, while indexed metadata confirmed its license and date. The paper's original utility panel and analysis code were not available in this review.
+
+The HBS article was read directly. Its statement about four large firms is academic public communication. Its future-price qualification is retained. A targeted indexed-web search for company posts and a direct X search did not establish company dissemination; the X browser required authentication. Course notes identify the verified speaker and do not attribute a post to a company without evidence.
+
+[Apple's Environmental Progress Report 2026](https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf) was checked at pp. 95 and 99, which distinguish owned data centers from colocation. This supports the conceptual warning about inferring a facility business model from an owner-list complement. It does not establish which specific Apple facilities enter the paper's estimation sample. The report is linked, not redistributed.
+
+## Philosophical Sources
+
+Kant's *Groundwork*, second section, supplies the universal-law and humanity formulations. The public-domain translation is already held in the course's Marketing Dialectics collection. Thomasson's *Norms and Necessity* (2020) distinguishes requirements, permissions, and reports about rules; the checked publisher record and existing passage notes support the focused course application. *Rethinking Metaphysics*, Chapter 9 (2025), supplies functional assessment of concepts; its publisher abstract and existing notes were consulted. No claim of a new full-book reading is made.
+
+The agency application distinguishes observed conduct, endorsement, and authority; it also distinguishes aggregate fit from identification of a process. Instructor-supplied conceptual notes informed that application. Those notes, unpublished manuscripts, and private research data are not included or linked in the public course repository. Third-party philosophers retain attribution. Confucian concepts refer to the existing primary-text discussions in M9 §§9.10–9.11.
+
+## Scope of Verification
+
+Published coefficients were visually checked against Tables 2, 4, and 7. The program calculates normal-approximation intervals and sensitivity at fixed reported standard errors. It does not re-estimate synthetic controls, recover coefficient covariance, identify household incidence, or establish actual policy harm. The critique distinguishes demonstrated interpretation problems from design concerns that require replication. See the [verification record](../../03_Data_and_Code/Statistical_Inference/VERIFICATION.md).
+
+---
+
+## Source: 01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md
+
+# Electricity-Price Claims and Their Evidentiary Support
+
+## Demonstrated Problems in Interpretation
+
+**Nonrejection used as reassurance.** Table 2, column 4 reports 0.261 (SE 0.158). At the paper's reference exposure, the estimate is $1.749/MWh, with approximate 95% interval [-0.326, 3.825] and one-sided 95% upper bound 3.491. Normal-test power at fixed reported precision is 15.7% for a $1 increase and 47.2% for a $2 increase. Those effects remain unresolved. Table 4's four-owner coefficient is a different estimand: 0.158 (SE 0.160) dollars/MWh per exposure percentage point. Its positive upper bound gives no support for categorical harmlessness. The paper is not uniformly insignificant and has positive findings in other specifications.
+
+**A significance contrast exceeds its direct test.** Table 4 and p. 26 report a Wald p-value of 0.101 for equality across developer categories. The text calls the difference marginally significant, although 0.101 exceeds the displayed 10% convention. Separate stars against zero do not test equality. Preserve covariance when estimating a difference. The reported p-value is used directly; the course does not reconstruct an unavailable covariance matrix.
+
+**A residual becomes a causal explanation.** Page 3 assigns 96% of observed residential price growth to inflation, fuel expenses, and modernization/resilience costs. Table A.4's 166.85 minus 123.59 equals $43.26/MWh. Dividing the reference estimate by this rise yields about 4.04%; subtracting it yields about 95.96%. This arithmetic does not estimate the contributions of the named causes. The denominator is observed historical growth, not a prespecified household-harm threshold.
+
+**A weak sales test carries a mechanism conclusion.** Table 7, column 2 reports 291 (SE 493) quarterly MWh per added MW. Its approximate 95% interval is [-675, 1257]. A hypothetical full quarter at 50% utilization and no displacement adds 1095 MWh per MW and has only 60.3% power; at 25% utilization, power is 19.9%. The result leaves substantial consumption unresolved. Separate cost and sales regressions alone do not identify the share of price changes caused by infrastructure versus procurement.
+
+**The cost ratio is described as a numerator.** Section 4.2, p. 16 defines utility cost per MWh and says it corresponds to the model's cost numerator. The model uses a total revenue requirement. A ratio changes with both total cost and sales, so a numerator interpretation requires an additional reconciliation. Table 6 uses 22 utilities and 377 observations; Table 7 uses 42 and 648. Cross-equation claims should also reconcile samples.
+
+**Ownership is substituted for a business model.** Section 4.1 assigns four named firms to a cloud group and all remaining owners to a third-party group. Table A.2 includes Apple and xAI among the latter. Apple's own environmental report distinguishes its own data centers from its use of colocation. Owner identity alone cannot classify each facility's operating model, customers, utilization, procurement, or contracts. The valid operational label is four named owners versus other owners until those attributes are observed.
+
+## Design Questions Requiring Replication
+
+These concerns follow from the specified design. Their empirical size and sign have not been established here.
+
+- Equation 21 uses post-anchor gaps with utility fixed effects. A utility with no subsequent addition has constant cumulative treatment after its anchor. Its stock is absorbed by its fixed effect. Report the identifying within-utility variation, leverage, weights, and support before generalizing the slope to all additions.
+- Quarter-of-year fixed effects absorb recurring seasonality. Differential calendar shocks, endogenous activation timing, anticipatory investment, and delayed rate recovery require separate assessment.
+- Donors without new centers may share wholesale-market or transmission exposure. Overlapping donor weights can induce dependence across treated gaps. Examine market-based donor exclusions and inference that re-estimates the full procedure.
+- Appendix B reports pre-treatment fit and donor concentration. Report post/pre fit diagnostics, influence and leave-one-utility-out results, alternative donor sets, and placebo or resampling procedures suited to the design. A good fit before entry does not guarantee a valid counterfactual afterward.
+- The model includes thresholds and endogenous cost allocation. A common linear stock effect needs support before extrapolation to larger future facilities or different regulatory arrangements.
+- Table 5 investigates several outcomes, interactions, and specifications. Distinguish prespecified from exploratory hypotheses and account for the tested family. The number of comparisons alone does not establish selective reporting or p-hacking.
+
+## Ontology and Agency
+
+Average utility revenue, household expenditure, affordability, welfare, and agency are different objects. A narrow price study can answer a narrow price question. Treating its average as a complete representation of household harm omits incidence, income, reliability, timing, and feasible alternatives. Treating payment as endorsement omits reasons and authority. These are failures of scope and category when broad reassurance relies on them; the existence of a restricted estimand alone is not a philosophical refutation of the empirical work.
+
+The synthetic incidence example preserves total revenue and use while changing which households pay. It establishes non-identification of distribution from the average. Access to explanations, review, correction, and remedy requires further institutional evidence. Kantian respect for persons and Confucian responsibilities of truthful service motivate scrutiny of how analytical authority is used. They do not provide a numerical harm tolerance or establish individual misconduct.
+
+## Communication and Potential Harm
+
+The verified HBS article makes a categorical claim about the four large technology firms, while Table 4 leaves positive effects unresolved. It also acknowledges uncertainty about future prices. It is academic coverage. Company circulation on X has not been verified: public web searches did not produce a confirmed company post, and direct X search required a login on November 26, 2026. Absence of a verified post is an access and evidence limit, not proof that no such post exists.
+
+Overstated reassurance could weaken scrutiny of cost allocation, guarantees, and review, leaving households exposed to risks that the study has not ruled out. Demonstrating that this paper caused an approval, a weakened safeguard, or a household loss requires additional evidence. A rigorous classroom criticism identifies the unsupported inference and its possible decision consequences without inventing intention, corporate dissemination, or observed harm.
+
+See [M6 §6.33](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) for complete calculations and [M9 §9.26](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) for the philosophical argument.
+
+---
+
+## Source: 01_Resources/41_Statistical_Claims_and_Decisions/PAPER_COMPANION.md
+
+# The Cost of Intelligence: Paper Companion
+
+Vishrut Rana, Christian Kaps, and Serguei Netessine. *The Cost of Intelligence: Impacts of AI Data Centers on US Electricity Prices*. Working paper dated September 30, 2026; SSRN record last revised October 12, 2026. [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459), [42-page reading copy](RanaKapsNetessine_WorkingPaper2026.pdf). The source is licensed CC BY 4.0 according to its SSRN record; this file is unchanged.
+
+## Question, Sample, and Design
+
+The paper studies how additional data-center capacity affects utility electricity prices and costs. Facilities of at least 10 MW activated in 2020–2025 are mapped to utilities with bundled service. The industrial sample contains 42 treated utilities and 648 utility-quarter observations; the main residential sample contains 41 and 627. The design constructs a synthetic control from 16 pre-treatment quarters, holds donor weights fixed, and regresses post-anchor gaps on cumulative capacity additions, with utility and quarter-of-year fixed effects in preferred specifications.
+
+Revenue divided by MWh measures average payments per unit of electricity. Added capacity is measured in MW or as a percentage of the receiving utility's pre-treatment peak demand. The comparison concerns expansion relative to the pre-anchor baseline, which can already include data centers. It is not a comparison of an economy with data centers against one without them.
+
+## Findings and Interpretation
+
+Preferred estimates are positive for industrial and residential prices. At a reference exposure formed from reported average added capacity and average peak demand, the paper reports roughly $5.4/MWh for industry and $1.7/MWh for residences. The preferred residential ratio slope meets its 10% significance convention; other residential specifications meet 5%. The four-owner subgroup estimate is positive and imprecise. A direct developer-difference test reports p=0.101. The paper discusses cost recovery and infrastructure mechanisms, while acknowledging limited power, unobserved shocks, market spillovers, linearity, and unresolved developer channels.
+
+These results motivate scrutiny of the effects that remain plausible, the claims added in prose, and the distinction between utility averages and household welfare. See the [claim assessment](CLAIM_ASSESSMENT.md) for exact anchors and calculations.
+
+## Figure and Table Map
+
+- Figures 1–3, pp. 13–14: growth, facility-size distributions, and locations. These describe the input inventory rather than causal effects.
+- Figure 4, p. 15, and A.4, PDF p. 39: average price paths and inflation-adjusted paths. Comparisons depend on composition and the denominator.
+- Figures 5–6 and Tables 1–3, pp. 21–25: industrial and residential synthetic comparisons and price regressions. A visual mean trajectory does not replace the specified counterfactual assumptions.
+- Tables 4–5, pp. 26–28: owner and utility heterogeneity. Read joint contrasts and interactions, including uncertainty.
+- Tables 6–7, pp. 30–31: cost and sales outcomes. Their samples and units differ from the price regressions.
+- Tables A.1–A.4, PDF pp. 36–39: owner/utility classifications and descriptive magnitudes.
+- Tables B.5–B.7, PDF pp. 40–42: pre-treatment fit and donor concentration. Pre-treatment fit supports a diagnostic; post-treatment validity requires additional conditions.
+
+This companion is a selective guide and original assessment, not a full text conversion. Mathematical model derivations, all reference entries, facility maps, and detailed utility rows remain in the PDF. Course figures and programs reproduce selected implications of reported entries, not the original figures or underlying utility estimates.
 
 ---
 

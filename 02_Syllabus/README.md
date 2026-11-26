@@ -57,3 +57,7 @@ The course description's AI-workflow objective includes statistical design and u
 ## Coding-Workflow Coverage
 
 The learning objectives and class-format description include output completeness, silent numerical errors, independent checks, and review costs. The [session plan](../05_Slides/SESSION_PLAN.md) integrates these comparisons into the existing meetings. The longer [workflow lab](../07_Labs/Agent_Workflows/README.md) remains optional and ungraded.
+
+## Evidence and the Recurring Electricity Case
+
+Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.

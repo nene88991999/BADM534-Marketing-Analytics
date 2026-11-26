@@ -2057,3 +2057,21 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 2.28 Electricity Prices, Household Bills, and the Unit of Harm
+
+\noindent A utility deciding how to recover the cost of serving a data center must specify which customers pay, when they pay, and which charges enter their bills. Rana, Kaps, and Netessine's 2026 working paper measures quarterly revenue divided by electricity sold, separately for residential and industrial customers. Its main sample covers additions of at least 10 MW activated in 2020–2025 in bundled service territories. The industrial analysis includes 42 treated utilities; the residential analysis includes 41. An estimated change in this average has a defined economic meaning, but it leaves the distribution of household burdens unresolved. [Paper, §§4–5 and Tables 1–2](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+
+For a fixed set of households in one period, let $B_h$ be household $h$'s bill in dollars and $q_h$ its electricity use in MWh. The aggregate average is
+
+$$
+\bar p=\frac{\sum_h B_h}{\sum_h q_h}.
+$$
+
+The numerator includes the payments recorded as revenue, including applicable fixed charges and riders. Dividing by total use produces dollars per MWh. Changes in consumption, customer composition, tariff schedules, and cost allocation can change this ratio. A household's bill change additionally depends on its use and tariff. A percentage of income spent on electricity adds household income to the measurement problem.
+
+Suppose 1,000 households each use one MWh in a month. An additional $2 charged to everyone and an additional $20 charged to 100 households both raise aggregate revenue by $2,000 and average revenue by $2/MWh. The concentrated allocation imposes a much larger burden on affected households. These synthetic allocations are computed by the complete program in §6.33 and saved in `data_center_incidence_illustration.csv`. The example establishes that the same aggregate can arise from different distributions; it supplies no estimate of actual household incidence.
+
+The treatment categories require the same care. The paper defines its cloud-service category by ownership by Amazon, Google, Meta, or Microsoft, then assigns every other owner to a third-party category. Appendix Table A.2 includes Apple among those other owners. Apple describes its own data centers as supporting its services, alongside separate use of colocation facilities. The paper's operational distinction therefore identifies four named owners versus other owners. A claim about leasing business models requires facility-level evidence about operation, tenancy, contracts, and procurement. A category name cannot supply those missing attributes. [Apple, Environmental Progress Report 2026](https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf).
+
+A clear data dictionary separates installed capacity in MW, actual electricity use in MWh, customer payments in dollars, and authority over the allocation of costs. Installed capacity permits electricity consumption; its amount and timing depend on utilization. A payment records a financial transaction; consent and an opportunity to challenge it require evidence about the procedure through which the obligation arose. Each distinction prevents an apparently precise dataset from answering a broader question by definition.

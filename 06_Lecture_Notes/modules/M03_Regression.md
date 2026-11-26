@@ -623,3 +623,125 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 3.19 P-Values Across Repeated Marketing Experiments
+
+\noindent A retailer deciding whether to expand a promotion needs an effect estimate, its uncertainty, and the contribution required to cover the promotion's cost. A p-value addresses a narrower comparison. For a specified statistic $T$, a two-sided p-value is the probability, under the null model, of obtaining a statistic at least as extreme as the observed value. It conditions on the null and the sampling procedure. It does not assign a probability to the null itself. [Lakens, Chapter 1](https://lakens.github.io/statistical_inferences/01-pvalue.html).
+
+Consider a synthetic experiment with 40 stores, 20 customers per store, and half the stores assigned to a promotion. Customer outcomes have variance 800 dollars squared and within-store correlation 0.3. The resulting store-mean variance is $800[0.3+0.7/20]=268$. Comparing independent store means preserves the assignment unit and gives a standard deviation of $\sqrt{4(268)/40}=5.177$ dollars for the difference in arm means. Increasing the number of stores to 160 reduces this standard deviation to $2.588$ dollars. Each scenario retains the same outcome variance and equal allocation.
+
+\begin{assumption}[Repeated Store Experiments]\label{ass:pvalue-stores}
+Store means are independent Gaussian observations with a common variance. Each experiment assigns equal numbers of stores to the two arms and evaluates one prespecified two-sided pooled $t$ test at level 0.05. Repeated experiments use independent outcomes from the same distribution.
+\end{assumption}
+
+Under Assumption \ref{ass:pvalue-stores}, the p-value is uniformly distributed when the true effect is zero. About 5% of experiments then reject at the 5% threshold. A positive effect shifts probability toward smaller p-values, with the size of the shift determined by the effect and precision. The shape of this distribution concerns repeated experiments under a specified model; the p-value from one experiment remains a single realized statistic.
+
+The program generates 20,000 pairs of independent experiments in each scenario. With a true effect of $8 per customer, 40 stores yield a 32.5% rejection rate, compared with 86.6% using 160 stores. Among first experiments that reject, the independent second experiment rejects in 33.1% and 86.4% of cases, respectively. These conditional frequencies approach the power of the specified experiment because the second experiment is independent and the true effect is fixed. Subtracting the first p-value from one gives no such replication probability.
+
+![P-value distributions in 20,000 synthetic experiments per scenario. Store counts vary across panels; true effects of zero and eight dollars vary within panels. Bin widths and vertical scales are fixed.](../figures/M03_pvalue_distributions.png)
+
+The electricity-price case supplies a consequential application. Table 2, column 4 reports a residential slope of 0.261 with a utility-clustered standard error of 0.158, in dollars per MWh per percentage point of added capacity relative to peak demand. Its approximate two-sided p-value is 0.099. This estimate meets the paper's 10% convention and falls short of 5%; other residential specifications meet 5%. Describing the entire paper as a null result would misstate its evidence. The relevant scrutiny concerns the strength of each interpretation and the effects its uncertainty still permits.
+
+From the repository root:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/pvalue_distributions.py
+```
+ The output separates analytical power, simulated rejection counts, confidence-interval coverage, and repeat-experiment frequencies. The first generated experiment is retained without selecting its p-value.
+
+
+Python source: [pvalue_distributions.py](../../03_Data_and_Code/Statistical_Inference/pvalue_distributions.py)
+
+```python
+"""Repeated store experiments with known zero and nonzero dollar effects."""
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+OUTPUT = Path(__file__).resolve().parent / "results"
+SEED, REPETITIONS, ALPHA = 20261126, 20000, 0.05
+STORES, EFFECTS = (40, 160), (0.0, 8.0)
+CUSTOMERS, CUSTOMER_VARIANCE, RHO = 20, 800.0, 0.3
+STORE_VARIANCE = CUSTOMER_VARIANCE * (RHO + (1 - RHO) / CUSTOMERS)
+
+
+def pooled_test(control, treatment):
+    """Rows are experiments; columns are independent equal-variance stores."""
+    a, b = np.asarray(control), np.asarray(treatment)
+    if a.ndim != 2 or b.shape != a.shape or a.shape[1] < 2:
+        raise ValueError("Require equally sized two-dimensional groups")
+    n = a.shape[1]
+    effect = b.mean(axis=1) - a.mean(axis=1)
+    se = np.sqrt((a.var(axis=1, ddof=1) + b.var(axis=1, ddof=1)) / n)
+    df = 2 * n - 2
+    p = 2 * stats.t.sf(np.abs(effect / se), df)
+    return effect, se, p
+
+
+def run(repetitions=REPETITIONS, seed=SEED):
+    rng = np.random.default_rng(seed)
+    summaries, bins, examples = [], [], []
+    edges = np.linspace(0, 1, 21)
+    for stores in STORES:
+        n, df = stores // 2, stores - 2
+        # Integrating the Gaussian customer shocks gives independent store means.
+        groups = rng.normal(100, np.sqrt(STORE_VARIANCE),
+                            size=(2, 2, repetitions, n))
+        for truth in EFFECTS:
+            estimates = []
+            for repeat in range(2):
+                estimates.append(pooled_test(groups[repeat, 0],
+                                             groups[repeat, 1] + truth))
+            effect, se, p = estimates[0]
+            p_repeat = estimates[1][2]
+            rejects = p < ALPHA
+            critical = stats.t.ppf(1 - ALPHA / 2, df)
+            true_se = np.sqrt(4 * STORE_VARIANCE / stores)
+            ncp = truth / true_se
+            power = stats.nct.cdf(-critical, df, ncp)
+            power += stats.nct.sf(critical, df, ncp)
+            summaries.append({"stores": stores, "true_effect_dollars": truth,
+                "experiments": repetitions, "rejections": int(rejects.sum()),
+                "rejection_rate": rejects.mean(), "analytical_power": power,
+                "mc_standard_error": np.sqrt(power * (1 - power) / repetitions),
+                "mean_estimate_dollars": effect.mean(),
+                "estimate_sd_dollars": effect.std(ddof=1),
+                "analytical_se_dollars": true_se,
+                "estimate_q025": np.quantile(effect, .025),
+                "estimate_q975": np.quantile(effect, .975),
+                "ci95_coverage": (np.abs(effect - truth) <= critical * se).mean(),
+                "repeat_rejections_after_rejection": int((rejects & (p_repeat < ALPHA)).sum()),
+                "repeat_rate_after_rejection": (p_repeat[rejects] < ALPHA).mean()})
+            counts, _ = np.histogram(p, bins=edges)
+            for lo, hi, count in zip(edges[:-1], edges[1:], counts):
+                bins.append({"stores": stores, "true_effect_dollars": truth,
+                    "bin_left": lo, "bin_right": hi, "count": int(count),
+                    "fraction": count / repetitions})
+            # Retain the first draw, with no selection on significance.
+            examples.append({"stores": stores, "true_effect_dollars": truth,
+                "estimate_dollars": effect[0], "se_dollars": se[0],
+                "p_value": p[0], "replication_p_value": p_repeat[0]})
+    return pd.DataFrame(summaries), pd.DataFrame(bins), pd.DataFrame(examples)
+
+
+def main():
+    OUTPUT.mkdir(exist_ok=True)
+    frames = run()
+    for name, frame in zip(("pvalue_summary", "pvalue_bins", "pvalue_first"), frames):
+        frame.to_csv(OUTPUT / (name + ".csv"), index=False, float_format="%.12g")
+    setup = {"seed": SEED, "experiments_per_scenario": REPETITIONS,
+        "independent_draws_per_pair": 2, "stores": STORES, "effects_dollars": EFFECTS,
+        "customers_per_store": CUSTOMERS, "within_store_correlation": RHO,
+        "customer_variance": CUSTOMER_VARIANCE, "store_mean_variance": STORE_VARIANCE,
+        "alpha": ALPHA, "test": "two-sided equal-variance pooled Student t on store means",
+        "scope": "Gaussian independent stores, balanced groups, one fixed-horizon test"}
+    (OUTPUT / "pvalue_setup.json").write_text(json.dumps(setup, indent=2) + "\n")
+    print(frames[0].to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+```

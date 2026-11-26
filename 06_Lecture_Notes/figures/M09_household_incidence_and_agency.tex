@@ -1,0 +1,13 @@
+\begin{tikzpicture}[
+ box/.style={draw=IlliniBlue,rounded corners,align=center,text width=4.2cm,minimum height=1.5cm},
+ arr/.style={-{Latex[length=2mm]},thick,IlliniBlue}]
+\node[box] (aggregate) at (0,0) {Average Revenue Increase\\\$2 per MWh};
+\node[box] (uniform) at (7,1.65) {1,000 Households\\Each Pays \$2 More};
+\node[box] (concentrated) at (7,-1.65) {100 Households Pay \$20 More\\900 Pay No More};
+\draw[arr] (aggregate.east) -- (uniform.west);
+\draw[arr] (aggregate.east) -- (concentrated.west);
+\node[align=center,text width=11cm,font=\small] at (3.5,-3.5) {Both allocations collect \$2,000 from 1,000 households using 1 MWh each.\\The same average leaves incidence unresolved.};
+\node[draw=IlliniOrange,very thick,rounded corners,align=center,text width=11cm,minimum height=1.4cm]
+ at (3.5,-5.2) {Who Can Examine the Reasons, Challenge the Allocation,\\and Obtain Review or Remedy?};
+\node[align=center,text width=11cm,font=\footnotesize] at (3.5,-6.4) {Synthetic one-month example. Agency requires evidence about authority and process.};
+\end{tikzpicture}

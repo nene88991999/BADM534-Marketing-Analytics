@@ -1,0 +1,20 @@
+{
+  "seed": 20261126,
+  "experiments_per_scenario": 20000,
+  "independent_draws_per_pair": 2,
+  "stores": [
+    40,
+    160
+  ],
+  "effects_dollars": [
+    0.0,
+    8.0
+  ],
+  "customers_per_store": 20,
+  "within_store_correlation": 0.3,
+  "customer_variance": 800.0,
+  "store_mean_variance": 268.0,
+  "alpha": 0.05,
+  "test": "two-sided equal-variance pooled Student t on store means",
+  "scope": "Gaussian independent stores, balanced groups, one fixed-horizon test"
+}

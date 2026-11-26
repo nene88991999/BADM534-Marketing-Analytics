@@ -2200,4 +2200,288 @@ truthful reporting and the manager's response when an analyst identifies
 a material error. Preserving an opportunity to challenge an automated
 recommendation connects analytical competence to responsible conduct.
 
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-evidence-for-a-small-burden}{%
+\section{Evidence for a Small
+Burden}\label{M09-evidence-for-a-small-burden}}
+
+\noindent \noindent A subscription firm claims that a revised cancellation process
+imposes little additional burden. The relevant question concerns a
+tolerable increase in time, abandonment, charges, or difficulty for the
+affected population. Testing whether the mean time difference equals
+exactly zero answers only one part of that question. A nonsignificant
+result can arise from an interval that includes both small and
+substantial burdens.
+\href{https://lakens.github.io/statistical_inferences/09-equivalencetest.html}{Lakens,
+Chapter 9}.
+
+Suppose independent customers complete a cancellation task, and
+\(\theta\) is the revised process's mean time minus the original
+process's mean time, in seconds. Set an illustrative equivalence range
+of minus five to plus five seconds before examining outcomes. The two
+one-sided tests evaluate \(H_{0L}:\theta\leq-5\) and
+\(H_{0U}:\theta\geq5\), each at 5\%. Rejecting both establishes
+equivalence within the chosen range under the sampling model. With the
+same standard error and degrees of freedom, this requires the entire
+90\% two-sided confidence interval to lie inside the range.
+\href{https://lakens.github.io/statistical_inferences/09-equivalencetest.html}{Lakens,
+Chapter 9}.
+
+Four hypothetical cases use a pooled standard deviation of 20 seconds in
+each arm. With 50 customers per arm, an estimated four-second increase
+has a p-value of 0.320 against zero and a 90\% interval of
+\([-2.64,10.64]\). Neither equality nor a small burden follows. With 800
+per arm, a half-second increase has a 90\% interval of \([-1.15,2.15]\)
+and satisfies equivalence. A three-second increase at the same precision
+is both statistically distinguishable from zero and equivalent within
+the prespecified range. Detection of a difference and evidence that it
+is small can therefore coexist.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_equivalence_and_burden.tex}
+\caption{Four hypothetical mean task-time differences with 90\% intervals. Two-sided equivalence requires both interval ends within the chosen five-second bounds.}\label{fig:M09_equivalence_and_burden}
+\end{figure}
+
+A six-second reduction fails two-sided equivalence because it is too far
+below zero, yet its upper confidence bound excludes an increase of five
+seconds. For a decision concerned only with excessive additional time, a
+one-sided noninferiority question is appropriate: test
+\(H_0:\theta\geq5\) against \(\theta<5\), or require a one-sided 95\%
+upper bound below five. The choice between these questions follows the
+decision and must precede the result.
+
+The numerical tolerance also requires justification. A five-second mean
+can conceal concentrated burdens, and an analysis of completed tasks
+leaves abandonment and failed cancellation as separate outcomes. Kantian
+respect for persons asks whether customers can understand and exercise
+their decision to leave. Confucian attention to responsible service asks
+how the firm responds to difficulty and requests for correction. Neither
+principle supplies a five-second threshold automatically. Evidence of a
+small mean time difference supports a specific empirical claim; the
+procedure's permissibility additionally depends on its effects and
+treatment of customer choice.
+
+From the repository root:
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+python3 03_Data_and_Code/Statistical_Inference/equivalence_claims.py
+\end{Verbatim}
+
+Its inputs are hypothetical sufficient statistics, with no generated
+individual records. The complete implementation reports zero-null tests,
+both equivalence tests, 90\% intervals, and the one-sided upper-bound
+decision.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Statistical_Inference/equivalence_claims.py}{equivalence\_claims.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Hypothetical cancellation-time summaries with prespecified +/-5 second bounds."""
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+OUTPUT = Path(__file__).resolve().parent / "results"
+BOUND, ALPHA = 5.0, .05
+# Each scenario is a separate hypothetical parallel-group experiment.
+CASES = [("imprecise", 50, 60.0, 64.0, 20.0),
+         ("precise_small", 800, 60.0, 60.5, 20.0),
+         ("detectable_small", 800, 60.0, 63.0, 20.0),
+         ("faster", 800, 60.0, 54.0, 20.0)]
+
+
+def assess(name, n, control_mean, treatment_mean, sample_sd, bound=BOUND):
+    if n < 2 or sample_sd <= 0 or bound <= 0:
+        raise ValueError("Require at least two customers per arm, positive SD and bound")
+    delta = treatment_mean - control_mean
+    df = 2 * n - 2
+    se = sample_sd * np.sqrt(2 / n)
+    p_zero = 2 * stats.t.sf(abs(delta / se), df)
+    lower_p = stats.t.sf((delta + bound) / se, df)
+    upper_p = stats.t.cdf((delta - bound) / se, df)
+    half90 = stats.t.ppf(1 - ALPHA, df) * se
+    half95 = stats.t.ppf(1 - ALPHA / 2, df) * se
+    return {"case": name, "n_per_arm": n, "control_mean_seconds": control_mean,
+        "treatment_mean_seconds": treatment_mean, "sd_each_arm_seconds": sample_sd,
+        "estimate_seconds": delta, "se_seconds": se, "df": df,
+        "p_zero": p_zero, "lower_bound_seconds": -bound, "upper_bound_seconds": bound,
+        "tost_lower_p": lower_p, "tost_upper_p": upper_p,
+        "tost_p": max(lower_p, upper_p), "equivalent": max(lower_p, upper_p) < ALPHA,
+        "ci90_low": delta - half90, "ci90_high": delta + half90,
+        "ci95_low": delta - half95, "ci95_high": delta + half95,
+        "noninferior_below_upper_bound": upper_p < ALPHA}
+
+
+def main():
+    OUTPUT.mkdir(exist_ok=True)
+    result = pd.DataFrame([assess(*case) for case in CASES])
+    result.to_csv(OUTPUT / "equivalence_claims.csv", index=False, float_format="%.12g")
+    print(result.to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-electricity-infrastructure-public-reassurance-and-agency}{%
+\section{Electricity Infrastructure, Public Reassurance, and
+Agency}\label{M09-electricity-infrastructure-public-reassurance-and-agency}}
+
+\noindent \noindent A public authority deciding whether to approve a data-center
+connection must determine who bears its costs, which risks remain
+unresolved, and which safeguards protect affected households. A research
+result can influence that decision through its public interpretation.
+Calling an uncertain effect harmless can weaken the case for financial
+guarantees, transparent cost allocation, or subsequent review. These are
+potential consequences of misleading reassurance; attributing an actual
+approval or household loss to this paper would require evidence
+connecting the communication to the decision and its outcomes.
+
+HBS Working Knowledge's November 12, 2026 coverage of Rana, Kaps, and
+Netessine states that, unlike colocated centers, ``centers built by the
+`Big Four' tech companies have not'' raised consumer electricity costs.
+This is academic public communication. Table 4 reports an uncertain
+positive coefficient for the four named firms and a direct
+developer-difference test with \(p=0.101\). The categorical wording is
+stronger than those results support. The article also acknowledges
+uncertainty about future prices, which belongs beside any account of its
+claims.
+\href{https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{HBS
+Working Knowledge}.
+
+\hypertarget{M09-what-exists-in-the-analysis-and-what-the-claim-requires}{%
+\subsection{What Exists in the Analysis and What the Claim
+Requires}\label{M09-what-exists-in-the-analysis-and-what-the-claim-requires}}
+
+\noindent \noindent An ontology specifies the entities, properties, and relations
+represented in an account. The electricity study represents utilities,
+installed capacity, customer classes, sales, costs, and average prices.
+A claim about household welfare additionally concerns persons with
+unequal incomes, needs, exposures, and opportunities. A claim about
+agency concerns their authority to understand, question, and influence
+decisions that bind them. Increasing the precision of a utility-average
+price estimate leaves these other objects unmeasured.
+
+The strongest ontological objection concerns a change in what the
+analysis is taken to represent. A utility average becomes a statement
+about each household; a four-owner indicator becomes a business model;
+an unresolved price effect becomes absence of harm. Each substitution
+requires a further argument or additional evidence. Studying one price
+outcome is a legitimate research choice. Treating that restricted
+outcome as a complete account of affected persons and permissible
+conduct commits a category error. The statistical objection concerns
+what the evidence supports; the ontological objection concerns which
+objects the claim purports to describe; the ethical objection concerns
+the authority to impose the resulting burdens.
+
+Conceptual engineering asks whether our categories serve the purposes
+for which we need them. For a regulator assessing cost allocation, a
+concept of harm restricted to a mean price coefficient omits burdens
+that could change the decision. For an agency assessment, observing that
+a household pays its bill supplies no evidence that it endorsed the
+allocation rule. The household may depend on an essential service and
+lack a practical alternative. A defensible conceptual choice retains
+those distinctions even when they complicate measurement. This
+application follows the functional assessment of concepts developed by
+Thomasson.
+\href{https://doi.org/10.1093/9780197787830.003.0011}{Thomasson,
+``Pragmatic Conceptual Engineering''}.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_household_incidence_and_agency.tex}
+\caption{Two synthetic household cost allocations produce the same two-dollar-per-MWh average while distributing burdens differently. Authority to assess and challenge the allocation requires separate evidence.}\label{fig:M09_household_incidence_and_agency}
+\end{figure}
+
+\hypertarget{M09-reasons-authority-and-the-ability-to-contest-a-decision}{%
+\subsection{Reasons, Authority, and the Ability to Contest a
+Decision}\label{M09-reasons-authority-and-the-ability-to-contest-a-decision}}
+
+\noindent \noindent An assessment of household agency asks whether its considered
+reasons can bear on decisions that affect it and what authority it holds
+over those decisions. Relevant evidence includes access to the cost
+calculation, understandable explanations of alternatives, an opportunity
+to raise objections, and a credible process for review and remedy.
+Participation records also require interpretation. Attendance at a
+hearing, silence, continued electricity use, and payment are different
+observations from endorsement of a cost-allocation rule. Restrictions on
+time, expertise, resources, or access can affect whose reasons enter the
+decision.
+
+A public body can possess legal authority to decide while owing affected
+people a substantive justification. Recognition that a rule exists,
+compliance with it, endorsement of its reasons, and authorization of its
+application are distinct relations. Thomasson's account of requirements,
+permissions, and reports about rules helps articulate those
+distinctions; their application here concerns the evidence needed to
+evaluate an infrastructure decision. A household's disagreement alone
+does not establish that a project is impermissible, and an aggregate
+benefit alone does not establish that the decision procedure respects
+it. \href{https://academic.oup.com/book/33564}{Thomasson, Norms and
+Necessity}.
+
+Kant's humanity formulation requires treating persons as ends with
+purposes and judgment of their own. Applied to public-facing analytics,
+it supports a duty to state uncertainty and consequential assumptions
+accurately. A person whose exposure is dismissed through a false claim
+of demonstrated safety loses access to reasons needed to evaluate the
+decision. The objection concerns the use of technical authority to
+secure acquiescence. Establishing deliberate deception by a particular
+author would require evidence of intention; the unsupported inference
+itself can be criticized directly.
+\href{https://www.gutenberg.org/files/5682/5682-h/5682-h.htm}{Kant,
+Groundwork, second section, 4:429--430}.
+
+The universal-law formulation sharpens the reporting obligation.
+Consider a rule allowing an interested party to advertise safety
+whenever a test fails to reject zero, regardless of its ability to
+detect meaningful harm. General adoption would reward weak measurement
+with reassuring claims and undermine the evidentiary trust on which
+those claims depend. A consistent rule requires the same scrutiny when
+unresolved effects threaten the firm and when they threaten households.
+Economic self-interest justifies demanding substantiation; it supplies
+no proof of guilt or misconduct.
+
+\hypertarget{M09-responsibilities-created-by-public-claims}{%
+\subsection{Responsibilities Created by Public
+Claims}\label{M09-responsibilities-created-by-public-claims}}
+
+\noindent \noindent Confucian trustworthiness and the rectification of names
+direct attention to whether descriptions match the responsibilities
+performed. Calling an uncertain effect harmless misdescribes the
+evidence. Calling an ownership group a leasing model can misdirect
+responsibility for the mechanism. An analyst's role requires correcting
+these descriptions when their consequences become apparent, while a
+manager's role requires receiving inconvenient findings without
+penalizing their disclosure.
+
+The data-center case also exposes an asymmetry in the burden of proof.
+Households can be required to demonstrate harm with evidence they lack
+the resources to collect, while a firm obtains reassurance from a study
+too imprecise to exclude the same harm. This allocation of scrutiny can
+disadvantage those who bear the risk. A defensible approval process
+identifies a meaningful harm threshold, tests whether the evidence
+excludes it, considers distribution and delayed cost recovery, and
+states which party bears unresolved risk. Safeguards can include
+financial commitments, independent review, and opportunities to revisit
+the allocation. Their appropriate form depends on the institution and
+applicable law.
+
+A rigorous criticism remains answerable to evidence. The paper reports
+positive price effects in several specifications, acknowledges important
+design limits, and leaves particular mechanisms unresolved. Its tables
+support a strong rejection of categorical harmlessness. They do not
+establish the magnitude of every household's loss or settle the overall
+merits of data-center development. The ethical failure arises when a
+narrow and uncertain result acquires authority to dismiss people and
+consequences it has not adequately assessed.
+
 \end{document}

@@ -44,6 +44,7 @@ Session 14. M8, M9. 170 minutes.
 - [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
+- ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -452,7 +453,61 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 38: A Cancellation Evaluation
+## Slide 38: Evidence for a Small Cancellation Burden
+
+Hypothetical summary statistics and prespecified five-second bounds.
+
+**Figure description:** An imprecise nonsignificant estimate fails equivalence. A precisely estimated small positive effect can satisfy equivalence despite differing from zero.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_equivalence_and_burden.tex)
+
+Two one-sided tests at 5% require the 90% t interval within both bounds. A six-second reduction fails two-sided equivalence but excludes excessive added time through its one-sided upper bound. Choose the hypothesis and justify the threshold before observing the result. Completed-task time leaves failures and abandonment as separate outcomes.
+
+Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 39: Public Reassurance Exceeds the Reported Evidence
+
+- HBS coverage states that the four large firms have not raised consumer electricity costs.
+- The reported cloud-owner coefficient is positive and imprecise.
+- Categorical harmlessness requires evidence that excludes consequential harm.
+
+The verified communication is HBS Working Knowledge, November 12, 2026, and company dissemination remains unverified. It also acknowledges future uncertainty. Table 4 permits positive price effects and reports p=0.101 for the direct developer contrast. Misleading reassurance could weaken safeguards or scrutiny; attributing actual policy changes or losses to the paper requires separate evidence. The paper has positive findings in other specifications, so calling the entire paper a null result is inaccurate.
+
+Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 40: The Same Average Can Conceal Unequal Burdens
+
+Synthetic monthly cost allocations; fixed use and population.
+
+**Figure description:** Uniform and concentrated cost allocations yield the same aggregate price increase. Neither allocation reveals authority to assess or contest the rule.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_household_incidence_and_agency.tex)
+
+Both scenarios add USD 2,000 to bills for 1,000 households using one MWh each. Distributional evidence distinguishes the allocations. Agency evidence concerns access to reasons, review, correction, and remedy. The average price coefficient does not measure those relations. The complete calculation is in M6 §6.33.
+
+Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 41: Ontology, Evidence, and Justification
+
+- Ontology: distinguish utilities, households, ownership, contracts, and authority.
+- Evidence: identify which claims the estimates and bounds support.
+- Justification: explain why affected people may bear the remaining risk.
+
+A narrow price study can be valid within its scope. The category error occurs when its aggregate becomes a complete account of household harm or agency. Four named owners versus other owners is not automatically cloud provision versus colocation. Thomasson’s functional assessment asks whether categories serve the decision. Compliance with a rule, endorsement of its reasons, and authorization remain distinct.
+
+Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 42: Respect for Persons Requires Honest Uncertainty
+
+- An interested party owes reasons for imposing costs on others.
+- An insensitive test cannot certify safety through nonrejection.
+- Preserve opportunities to challenge evidence and obtain review.
+
+Kantian universalization examines a rule that advertises safety whenever a test fails to reject, regardless of sensitivity. Such a practice rewards weak measurement and undermines evidentiary trust. The humanity formulation treats households as persons capable of judgment. Confucian trustworthiness requires descriptions that match conduct and a responsible response to inconvenient findings. Self-interest motivates substantiation; it does not establish guilt or deliberate deception.
+
+Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 43: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -462,7 +517,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 39: Same Renewal, Different Customer Intent
+## Slide 44: Same Renewal, Different Customer Intent
 
 Synthetic populations: 1,000 customers each, one renewal month.
 
@@ -474,7 +529,7 @@ Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%
 
 Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 40: A Welfare Comparison
+## Slide 45: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -493,7 +548,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 41: Coding Exercise: A Marketing Evaluation
+## Slide 46: Coding Exercise: A Marketing Evaluation
 
 - Reproduce the two populations with identical billed renewal.
 - Keep unknown intent separate and compare the relevant denominators.
@@ -503,7 +558,7 @@ Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full pro
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 42: Federal Cancellation Policy: Current Status
+## Slide 47: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -513,7 +568,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 43: Cancellation Rules Differ by Jurisdiction
+## Slide 48: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -523,7 +578,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 44: Research Frequency and Policy Importance
+## Slide 49: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -533,7 +588,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 45: Pricing, Reviews, and Delivery
+## Slide 50: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -543,7 +598,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 46: Pricing Language and Regulatory Evidence
+## Slide 51: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -553,7 +608,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 47: Personalized Pricing: Policy Status
+## Slide 52: Personalized Pricing: Policy Status
 
 - FTC: August 2026 proposal; October 2026 information-gathering inquiry.
 - New York: disclosure law in effect; broader restrictions await enactment.
@@ -563,7 +618,7 @@ Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
 
-## Slide 48: Environmental Claims: Two Different Decisions
+## Slide 53: Environmental Claims: Two Different Decisions
 
 - 2023 Shell ads: the ASA upheld the overall-impression complaint.
 - 2025 Shell ad: the ASA accepted the contextualized communication.
@@ -573,7 +628,7 @@ UK ASA, June 7, 2023: omitted context about the balance of business activities m
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 49: A Product Fact and a Portfolio Impression
+## Slide 54: A Product Fact and a Portfolio Impression
 
 The scope of the conclusion determines the evidence required.
 
@@ -585,7 +640,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 50: Digital Service and Feasible Customer Choice
+## Slide 55: Digital Service and Feasible Customer Choice
 
 - Offer assistance while preserving a usable alternative.
 - Measure completion, customer time, and firm cost on a fixed roster.
@@ -595,7 +650,7 @@ An optional assistance intervention can expand feasible choices. A mandatory app
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 51: Evidence and Authority to Classify a Customer
+## Slide 56: Evidence and Authority to Classify a Customer
 
 - Kantian critique examines the move from area activity to individual ability.
 - Respect for persons requires reasons for restrictions and usable correction.
@@ -605,7 +660,7 @@ A stable cluster does not authorize a firm to remove an individual’s options. 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 52: A Decision with Consumer Outcomes
+## Slide 57: A Decision with Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

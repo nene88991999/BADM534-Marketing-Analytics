@@ -74,3 +74,7 @@ The [optional ungraded lab](Statistical_Inference/README.md) checks customer pai
 ## Coding-Workflow Evidence and Constructed Errors
 
 The expanded [AI Workflow Evaluation lab](Agent_Workflows/README.md) reconstructs published benchmark aggregates, assesses deliberate mHealth errors, and evaluates hypothetical review spending. Two separate optional model-comparison protocols distinguish controlled information/feedback contrasts from three execution-and-revision conditions. Neither has been run as a course model experiment.
+
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](Statistical_Inference/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.

@@ -31,6 +31,38 @@
   },
   "outputs": [
     {
+      "path": "results/campaign_decision.csv",
+      "sha256": "a7d4a1d3a01a4969bb84352a0394f2d301eab857854eb582fcf394775a0b36f0"
+    },
+    {
+      "path": "results/data_center_estimates.csv",
+      "sha256": "2f08928b73a2d7abf9d721c39c32e57410d21e562773240abce20596dba740e2"
+    },
+    {
+      "path": "results/data_center_incidence_illustration.csv",
+      "sha256": "17741ffb88e8829e1103c2f71f9fc8f3ee37d5d2335e1f4b8a5508eb0a4171dd"
+    },
+    {
+      "path": "results/data_center_power.csv",
+      "sha256": "790d775c7adb643869b56ea31f5f2ec8605525a33a51948b1411acb8fe4d3a62"
+    },
+    {
+      "path": "results/data_center_power_curve.csv",
+      "sha256": "66fc2ec250f211c184da77c500d3b8a42502c6c81c7917f4bdf51c76945b99e8"
+    },
+    {
+      "path": "results/data_center_reporting_checks.csv",
+      "sha256": "805391ef4e51dbfff6ea2651399b27bd5154c82ab7274fb880d78d72e80774cb"
+    },
+    {
+      "path": "results/data_center_sales_targets.csv",
+      "sha256": "dd7d997f0176c0c4efbb6da95a0ffa5e51c8c883a25f3a9247895249fe47fffa"
+    },
+    {
+      "path": "results/equivalence_claims.csv",
+      "sha256": "2155a7c4b9e688cfa17a5c2c4457fcdaab2339b350554106de8a29a98860c03f"
+    },
+    {
       "path": "results/first_experiment.csv",
       "sha256": "e353d67f3473f81ce589babb4b06663b3ab6cd37b5a61342534a60ab17239658"
     },
@@ -51,14 +83,50 @@
       "sha256": "22cc390d841b911d557d7b1bf541d4e36dff43cae93eca296fa1e9633acc3555"
     },
     {
+      "path": "results/portfolio_sensitivity.csv",
+      "sha256": "e028e25a3b535975fae71adb67ed25d04b3631835db58459b01ce95c2a036ffe"
+    },
+    {
+      "path": "results/pvalue_bins.csv",
+      "sha256": "c5feafc4a826d373ff9341960827f29d1154c872889c6839e9925aafd83b1ec4"
+    },
+    {
+      "path": "results/pvalue_first.csv",
+      "sha256": "7b065dc6ffb031f75995e365a3ab29ff4ec1c6178706c3dc5b04839d9a5193e2"
+    },
+    {
+      "path": "results/pvalue_setup.json",
+      "sha256": "88f63a226d5723fbf4791f8b6422ba782cdd3ab708ef5fa3eb5fb00c2b419a40"
+    },
+    {
+      "path": "results/pvalue_summary.csv",
+      "sha256": "c1aa32970c204155ee6b5e0432265d908be57f9e39fd4c72574561919067adc7"
+    },
+    {
       "path": "results/simulation.json",
       "sha256": "eb1f7bce8e2a73b4f86e5180409ce26a4426eba573ec97297f922b49b63368e5"
     },
     {
       "path": "results/synthetic_store_customers.csv",
       "sha256": "c55a736835c9b517ee94fec3fb3ae9bb850be4f1b24074c5b3154121da366786"
+    },
+    {
+      "path": "results/test_portfolio.csv",
+      "sha256": "0e450f33a889aa5d3209a8e140a9281a41f018856d34a2eff9c7196f046fb324"
     }
   ],
   "upstream_code_executed": false,
-  "model_api_calls": 0
+  "model_api_calls": 0,
+  "updated_on": "2026-11-26",
+  "claims_examples": {
+    "source_manifest": "../../01_Resources/41_Statistical_Claims_and_Decisions/manifest.json",
+    "pvalue_setup": "results/pvalue_setup.json",
+    "reported_table_replication_scope": "Rounded coefficients and reported clustered SEs only; no raw utility panel or synthetic-control re-estimation.",
+    "synthetic_inputs": "Campaign counts, cancellation summaries, repeated store experiments, and equal-average household allocations.",
+    "new_programs_executed": 4,
+    "new_tests_passed": 15,
+    "total_inference_tests_passed": 25,
+    "fresh_results_byte_identical": 14,
+    "fresh_tikz_byte_identical": 5
+  }
 }

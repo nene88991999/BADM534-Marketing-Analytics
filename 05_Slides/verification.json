@@ -2,20 +2,20 @@
   "verified_on": "2026-11-26",
   "artifacts": {
     "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
-      "pages": 463,
-      "sha256": "9ebfb169bf5efa3c24eeaf8ea854403b120acd11e6091612b994d28ea72dea70"
+      "pages": 480,
+      "sha256": "b58c81f94631a8c7c239cdcb89f7932a66c54431de39491c2159ea296c7d9f89"
     },
     "06_Lecture_Notes/Marketing_Dialectics.pdf": {
-      "pages": 36,
-      "sha256": "f7e9c40f2a3bb35ef115e3ddba01e36f71bc3a0b4bf16e18a3c547fc738ccaf9"
+      "pages": 41,
+      "sha256": "472a9a491324a75aff38a0ce8eadea362783ae2c4a00b5aeadd1e238f6f6d5c4"
     },
     "02_Syllabus/Marketing_Analytics_Syllabus.pdf": {
       "pages": 2,
-      "sha256": "a6f806c9536377c02d4b147b7171ce47f3804ae1fd0a67dff113e29b4d636692"
+      "sha256": "0af7a5ec66fefcf28cd0e4032f11c59f7c3a75d10acf728e8b3f9e8c9d6e73e8"
     },
     "05_Slides/Marketing_Analytics_Lectures.pdf": {
-      "pages": 431,
-      "sha256": "c96ca36a0bb32858a2985b1448a1bb797fe01fb6fb1e2e1b94e0f6bc6c608b5a"
+      "pages": 442,
+      "sha256": "3f5b1ef223aae999e47f6d1db9d4bfd3a08362ebf3212b5f1c1f5b9d70448dda"
     },
     "05_Slides/S01_Marketing_Decisions_and_AI_Coding.pdf": {
       "pages": 30,
@@ -30,8 +30,8 @@
       "sha256": "122c520b38ea31174dea97d6ca0ebd45d20dd462ab69f79ab8a600e150a891d7"
     },
     "05_Slides/S04_Regression_and_Marketing_Interpretation.pdf": {
-      "pages": 24,
-      "sha256": "8ee7d6edbdae50a592909a56fcd28d9abdce26c2b05d41eea996dcbe2de233a1"
+      "pages": 26,
+      "sha256": "732f1c0ab19a501d3757af7e309e445ef10b54fecec4fb027c543201d54f3188"
     },
     "05_Slides/S05_Conjoint_and_Product_Design.pdf": {
       "pages": 29,
@@ -50,8 +50,8 @@
       "sha256": "dcedb41572cd5930d8c24e01678c08a0bfe00334c0616a8c13f2a2249a449079"
     },
     "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
-      "pages": 29,
-      "sha256": "4cf206e2a411f4df96d5c1c63d7a991f92976785952dbf145fef04138555dcec"
+      "pages": 33,
+      "sha256": "dd176c3675c7bf9db45cb75651b817a893ac31cefc49a273a5a65bf54e5cef4e"
     },
     "05_Slides/S10_Causal_Comparisons_and_Policy_Evaluation.pdf": {
       "pages": 25,
@@ -70,8 +70,8 @@
       "sha256": "67d9de1c93342b009ec3f5892f48634e2fd651d28a6d994155636287e1ecf254"
     },
     "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
-      "pages": 52,
-      "sha256": "3ed2661f01972600e526c52c40de1ca0c82326b281b116f40eadb147fc94655d"
+      "pages": 57,
+      "sha256": "d22745528752fc4df6b1811115ccd1ba66b47f75fb46d1eb02429ba56b1bad47"
     },
     "05_Slides/S15_Integrated_Decisions_and_Final_Presentations.pdf": {
       "pages": 10,
@@ -81,20 +81,18 @@
   "session_decks": 15,
   "scheduled_minutes_per_meeting": 170,
   "checks": {
-    "matching_full_python_blocks": 106,
-    "coding_evidence_tests_passed": 11,
-    "existing_workflow_tests_passed": 8,
-    "affected_pdf_builds_passed": 9,
+    "matching_full_python_blocks": 110,
+    "statistical_inference_tests_passed": 25,
+    "new_independent_tests_passed": 15,
+    "affected_pdf_builds_passed": 7,
     "all_15_deck_counts_match_sources_and_plan": true,
     "calendar_and_logistics_unchanged": true,
     "all_meeting_allocations_continuous_170_minutes": true,
-    "published_tables_byte_identical": 3,
-    "fresh_coding_results_byte_identical": 8,
-    "fresh_tikz_sources_byte_identical": 2,
-    "legacy_example_outputs_match_after_newline_normalization": 14,
-    "changed_and_neighbor_pages_visually_reviewed": 53
+    "fresh_new_results_byte_identical": 14,
+    "fresh_new_tikz_sources_byte_identical": 5,
+    "changed_and_neighbor_pages_visually_reviewed": 75
   },
-  "execution_scope": "Published aggregate reconstruction, original constructed errors on observed mHealth inputs, and hypothetical cost calculations. No model calls or upstream code execution; original model collection, scoring, and bootstrap not rerun.",
+  "execution_scope": "Original synthetic experiments and hypothetical decisions; normal-approximation calculations from published coefficients. No utility-panel replication, model calls, or third-party code execution.",
   "reorganization_and_terminology_checks": {
     "slide_folder": "05_Slides",
     "student_slide_pages_visually_rechecked": 12,
@@ -281,7 +279,7 @@
     },
     "execution_scope": "Three original synthetic examples cover observational discount responses, randomized store-level partial pooling, and imposed revenue/profit/complaint objectives. Seven independent tests and saved-output reconciliation passed. Conditional interval coverage was evaluated across 200 samples; the intervals omit nuisance uncertainty and smoothing bias. All new figures and slides were visually reviewed. After shortening two cross-references, the final module endings and four contents pages were rechecked. Historical checks in other fields concern earlier revisions."
   },
-  "latest_revision": "2026-11-26-econometric-coding",
+  "latest_revision": "2026-11-26-statistical-claims",
   "retail_accessibility_checks_2026_11_18": {
     "verified_on": "2026-11-18",
     "artifacts": {
@@ -1186,5 +1184,141 @@
     "source_manifest": "01_Resources/40_Econometric_Coding_Workflows/manifest.json",
     "model_calls": 0,
     "upstream_execution": false
+  },
+  "statistical_claims_checks_2026_11_26": {
+    "modules": [
+      "M2 §2.28",
+      "M3 §3.19",
+      "M6 §§6.32–6.33",
+      "M8 §8.31",
+      "M9 §§9.25–9.26"
+    ],
+    "sessions": [
+      4,
+      9,
+      14
+    ],
+    "new_slides": 11,
+    "total_slides": 442,
+    "notes_pages": 480,
+    "dialectics_pages": 41,
+    "syllabus_pages": 2,
+    "new_figures": 5,
+    "new_programs_executed": 4,
+    "new_tests_passed": 15,
+    "total_inference_tests_passed": 25,
+    "source_listings_verified": 110,
+    "rendered_page_numbers": {
+      "Notes": {
+        "path": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          103,
+          104,
+          105,
+          106,
+          107,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          437,
+          438,
+          439,
+          440,
+          441,
+          474,
+          475,
+          476,
+          477,
+          478,
+          479,
+          480
+        ]
+      },
+      "Dialectics": {
+        "path": "06_Lecture_Notes/Marketing_Dialectics.pdf",
+        "pages": [
+          1,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ]
+      },
+      "Syllabus": {
+        "path": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      "S04": {
+        "path": "05_Slides/S04_Regression_and_Marketing_Interpretation.pdf",
+        "pages": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "S09": {
+        "path": "05_Slides/S09_Experiments_and_Incremental_Value.pdf",
+        "pages": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      "S14": {
+        "path": "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
+        "pages": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ]
+      }
+    },
+    "visual_review": "Reviewed all 75 rendered pages, including new sections, code listings, figure pages, contents, neighbors, new slides and both syllabus pages; examined p-value, power and household diagrams at full page size. No clipping or overlap observed.",
+    "compile_checks": "No overfull boxes, missing characters, undefined controls or references, or TeX errors. Existing underfull-spacing and package warnings remain.",
+    "fresh_export": "Four programs and figure builder reproduced 14 result files and five TikZ sources byte for byte.",
+    "record": "03_Data_and_Code/Statistical_Inference/VERIFICATION.md",
+    "source_manifest": "01_Resources/41_Statistical_Claims_and_Decisions/manifest.json"
   }
 }

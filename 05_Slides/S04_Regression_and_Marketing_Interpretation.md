@@ -26,6 +26,7 @@ Session 04. M3. 170 minutes.
 - [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
+- ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
 
 ## Slide 1: Regression and Marketing Interpretation
 
@@ -137,7 +138,29 @@ A small p-value does not measure the size of an effect. A wide interval containi
 
 Source: M3, Section 3.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 11: mHealth: Same Change, Different Precision
+## Slide 11: P-Values Vary Across Experiments
+
+Fixed true effects; independent synthetic store experiments.
+
+**Figure description:** The zero-effect distribution is approximately uniform. An eight-dollar effect produces more small p-values with 160 stores than with 40 stores.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M03_pvalue_distributions.tex)
+
+Twenty thousand experiments per scenario use independent Gaussian store means and balanced assignment. For an eight-dollar effect, rejection rates are 32.5% with 40 stores and 86.6% with 160. An independent repeat has the same fixed-effect power, including after a first rejection. One minus the observed p-value is not a replication probability. Discrete tests and approximate null distributions need their own calibration.
+
+Source: M3 §3.19. ../06_Lecture_Notes/modules/M03_Regression.md
+
+## Slide 12: A Price Average Leaves Household Burdens Unresolved
+
+- The outcome is quarterly residential revenue divided by MWh sold.
+- A USD 2/MWh average increase permits different allocations across households.
+- Bill payments do not establish endorsement of the allocation rule.
+
+The recurring electricity case concerns the October 2026 Rana, Kaps, and Netessine paper. Its residential sample has 41 treated utilities and 627 utility-quarter observations. A synthetic example holds 1,000 households and one MWh each fixed: USD 2 more for everyone and USD 20 more for 100 households yield the same average. Fixed charges and riders can enter revenue. Distribution, comprehension, and authority need separate evidence. Complete calculations are in M6 §6.33.
+
+Source: M2 §2.28 and M3 §3.19. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 13: mHealth: Same Change, Different Precision
 
 | Uncertainty Unit | SE (pp) | Two-Sided p |
 | --- | --- | --- |
@@ -150,7 +173,7 @@ Membership requires a recorded day before May within the established pseudonym-b
 
 Source: M3 §3.18. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 12: What the Logging Test Establishes
+## Slide 14: What the Logging Test Establishes
 
 - Preserve the roster and distinct user-day counts.
 - Carry both months together for each user.
@@ -161,7 +184,7 @@ An absent entry is zero recorded logging, with food consumption unobserved. The 
 
 Source: M3 §3.18. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 13: A Matching Coefficient Leaves the Variance Unchecked
+## Slide 15: A Matching Coefficient Leaves the Variance Unchecked
 
 - Preserve each user's two months together.
 - Verify the uncertainty calculation separately from the estimated change.
@@ -172,7 +195,7 @@ M3 §3.18 reports the same June-minus-May estimate under both calculations. A co
 
 Source: Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
-## Slide 14: Panel Comparisons
+## Slide 16: Panel Comparisons
 
 - Customer effects absorb stable customer characteristics.
 - Time effects absorb shocks shared within a period.
@@ -182,7 +205,7 @@ Fixed effects change the variation used for estimation. Stable preferences can b
 
 Source: M3, Section 3.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 15: mHealth: The Next Calendar Day
+## Slide 17: mHealth: The Next Calendar Day
 
 - Relate recorded category breadth to next-day recorded calories.
 - Match exact adjacent calendar dates.
@@ -192,7 +215,7 @@ The next observed row can be several days later. Calling it next-day intake woul
 
 Source: M3, Section 3.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 16: Screening and the Estimated Association
+## Slide 18: Screening and the Estimated Association
 
 mHealth estimates retain the stated outcome timing and sample restrictions.
 
@@ -204,7 +227,7 @@ A robustness comparison should report which rows change and whether the estimand
 
 Source: M3, Section 3.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 17: A Hand-Checkable Regression
+## Slide 19: A Hand-Checkable Regression
 
 Synthetic sales follow a linear relationship.
 
@@ -224,7 +247,7 @@ This example checks the covariance-over-variance calculation. Perfect fit is imp
 
 Source: M3, Section 3.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 18: Coding Exercise: Regression Checks
+## Slide 20: Coding Exercise: Regression Checks
 
 - Generate a model after defining the outcome and information set.
 - Verify the coefficient units and one fitted value manually.
@@ -235,7 +258,7 @@ Run the small OLS case in ../03_Data_and_Code/Lecture_Examples/session_examples.
 
 Source: M3, Section 3.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 19: Prices Respond to Demand
+## Slide 21: Prices Respond to Demand
 
 - Managers can raise prices when demand is unusually strong.
 - An observed price-sales regression can mix demand and pricing choices.
@@ -245,7 +268,7 @@ The course price simulation sets the true elasticity and the source of price end
 
 Source: M3, Section 3.12, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
-## Slide 20: Evidence for an Advertised Claim
+## Slide 22: Evidence for an Advertised Claim
 
 - A claim that a product cuts costs needs a suitable comparison.
 - An association can reflect selection and omitted demand.
@@ -255,7 +278,7 @@ The FTC advertising-substantiation policy requires a reasonable basis for object
 
 Source: FTC Policy Statement Regarding Advertising Substantiation. https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation
 
-## Slide 21: Response Coefficients and Source Bias
+## Slide 23: Response Coefficients and Source Bias
 
 - A synthetic price comparison combines customer response with price bias.
 - A feature comparison survives when bias stays fixed across feature levels.
@@ -265,7 +288,7 @@ The four-profile model uses response features (1, feature, price) and auxiliary 
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 22: Controls Change the Income Comparison
+## Slide 24: Controls Change the Income Comparison
 
 The CCI income association changes sign after adjustment.
 
@@ -277,7 +300,7 @@ The slope is in index units per $10,000 of area median household income in 2021 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 23: State the Population Behind a Coefficient
+## Slide 25: State the Population Behind a Coefficient
 
 - Equal ZIP weights describe the released geographic sample.
 - Household weights change the geographic projection.
@@ -287,7 +310,7 @@ Household estimates do not supply Windows device counts. State intercepts allow 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 24: Regression Discussion
+## Slide 26: Regression Discussion
 
 - Which comparison supports the coefficient?
 - What variable could reverse its interpretation?

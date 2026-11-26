@@ -1395,3 +1395,240 @@ The denominator is the no-example failure fraction. The ratio is undefined if th
 The [complete program in Section 1.19.1](../../03_Data_and_Code/Agent_Workflows/benchmark_evidence.py) calculates each contrast from the published integer counts. Repeated runs share tasks and datasets. Confidence intervals for generalization across tasks should preserve that dependence, as the authors' task-cluster intervals do. Recomputing a binomial interval over 43,200 independent observations would answer a different sampling question.
 
 For an original course comparison, hold the core specification and independent-check instruction fixed while changing the opportunities to execute and revise. Record actual calls, feedback, stopping decisions, and resource use. These complete workflow conditions still differ in several operational features. A separate factorial comparison, such as Section 6.29, is needed to isolate the effect of a particular information or feedback component. Use synthetic practice inputs for live model calls, then evaluate the frozen program locally on the mHealth task without exposing the final answers.
+
+## 6.32 Statistical Detection and a Profitable Campaign
+
+\noindent A promotion can change purchases detectably while losing money. Suppose a randomized campaign assigns one million independent customers to each arm. Purchases occur for 100,000 control customers and 101,000 treated customers. The estimated lift is 0.1 percentage points, with a two-sided pooled proportion-test p-value of 0.0187. Its approximate 95% interval is 0.0167 to 0.1833 percentage points. These hypothetical counts supply evidence of a positive purchase effect under independent assignment, complete observation, and one prespecified comparison.
+
+Suppose each incremental purchase contributes $40 and each treated customer costs $0.10 to contact. For an incremental purchase probability $\delta$, net contribution per treated customer is $40\delta-0.10$ dollars. The break-even lift is therefore $0.10/40=0.0025$, or 0.25 percentage points. At the estimated lift, net contribution is minus $0.06 per treated customer. Transforming the lift interval gives a net-contribution interval of approximately minus $0.0933 to minus $0.0267. These calculations hold the contribution margin and contact cost fixed and omit further purchases, returns, and spillovers. Statistical detection does not establish that the campaign clears its economic threshold.
+
+![The hypothetical campaign's estimated lift and 95% interval remain below its 0.25-percentage-point break-even lift.](../figures/M06_significance_and_profit.png)
+
+A second denominator matters when a firm runs many experiments. Suppose 1,000 prespecified tests include 800 true nulls and 200 nonzero effects, each with size 0.05 and power 0.80. The expected counts are 40 false rejections and 160 true rejections. False rejections therefore comprise 20% of expected rejections. This ratio of expected counts differs from the 5% rejection probability conditional on a true null. It is not automatically the expected realized false-discovery proportion or the probability that one particular reported claim is false. Those interpretations require additional assumptions about how effects, tests, and reported claims are sampled. Selecting analyses after observing results further changes the error calculation.
+
+The complete program reproduces the campaign arithmetic and varies the proportion of true nulls and power in the portfolio. From the repository root:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/campaign_decisions.py
+```
+
+
+
+Python source: [campaign_decisions.py](../../03_Data_and_Code/Statistical_Inference/campaign_decisions.py)
+
+```python
+"""Hypothetical campaign summaries and expected counts in a test portfolio."""
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+OUTPUT = Path(__file__).resolve().parent / "results"
+
+
+def campaign(n=1000000, control=100000, treatment=101000,
+             margin=40.0, contact_cost=0.10):
+    if n <= 0 or not (0 <= control <= n and 0 <= treatment <= n) or margin <= 0:
+        raise ValueError("Require valid counts and a positive contribution margin")
+    a, b = control / n, treatment / n
+    lift = b - a
+    pooled = (control + treatment) / (2 * n)
+    null_se = np.sqrt(2 * pooled * (1 - pooled) / n)
+    se = np.sqrt((a * (1 - a) + b * (1 - b)) / n)
+    low, high = lift + np.array([-1, 1]) * stats.norm.ppf(.975) * se
+    return {"customers_per_arm": n, "control_conversions": control,
+        "treatment_conversions": treatment, "lift": lift,
+        "null_se": null_se, "se": se, "z": lift / null_se,
+        "p_value": 2 * stats.norm.sf(abs(lift / null_se)),
+        "ci95_low": low, "ci95_high": high, "margin_dollars": margin,
+        "contact_cost_dollars": contact_cost, "break_even_lift": contact_cost / margin,
+        "net_dollars_per_treated_customer": margin * lift - contact_cost,
+        "net_ci95_low": margin * low - contact_cost,
+        "net_ci95_high": margin * high - contact_cost}
+
+
+def portfolio(tests=1000, null_fraction=.8, alpha=.05, power=.8):
+    if tests <= 0 or not all(0 <= x <= 1 for x in (null_fraction, alpha, power)):
+        raise ValueError("Require positive count and probabilities in [0, 1]")
+    nulls, effects = tests * null_fraction, tests * (1 - null_fraction)
+    false, true = nulls * alpha, effects * power
+    rows = [{"truth": "zero_effect", "tests": nulls,
+             "expected_reject": false, "expected_nonreject": nulls - false},
+            {"truth": "nonzero_effect", "tests": effects,
+             "expected_reject": true, "expected_nonreject": effects - true}]
+    ratio = false / (false + true) if false + true > 0 else float("nan")
+    return pd.DataFrame(rows), ratio
+
+
+def main():
+    OUTPUT.mkdir(exist_ok=True)
+    result = pd.DataFrame([campaign()])
+    result.to_csv(OUTPUT / "campaign_decision.csv", index=False, float_format="%.12g")
+    rows, ratio = portfolio()
+    rows.to_csv(OUTPUT / "test_portfolio.csv", index=False, float_format="%.12g")
+    sensitivity = []
+    for null_fraction in [.2, .5, .8, .95]:
+        for power in [.2, .8]:
+            _, fraction = portfolio(null_fraction=null_fraction, power=power)
+            sensitivity.append({"null_fraction": null_fraction, "alpha": .05,
+                "power": power, "ratio_expected_false_to_all_rejections": fraction})
+    pd.DataFrame(sensitivity).to_csv(OUTPUT / "portfolio_sensitivity.csv",
+                                   index=False, float_format="%.12g")
+    print(result.to_string(index=False))
+    print(rows.to_string(index=False))
+    print("Ratio of expected false to all rejections:", ratio)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 6.33 Testing Electricity-Price Interpretations Against the Reported Tables
+
+\noindent A regulator deciding how much financial protection to require from a data-center developer needs evidence about plausible residential costs. A study's inability to reject zero does not discharge that burden. The October 2026 version of Rana, Kaps, and Netessine reports estimates for additions of at least 10 MW during 2020–2025 in bundled utility service territories. The preferred residential regression uses 627 utility-quarter observations from 41 treated utilities. Its outcome is average residential revenue per MWh, and its treatment is cumulative added capacity as a percentage of the utility's pre-treatment peak demand. [Paper, Table 2 and §§4–5](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+
+### 6.33.1 Effects That the Design Could Miss
+
+\noindent The paper interprets its preferred slope using 456 MW of average added capacity and 6,804 MW of average peak demand. Their ratio, multiplied by 100, is 6.70194 percentage points. Applying that reference exposure to the reported slope 0.261 and standard error 0.158 gives an estimated increase of $1.749/MWh and a standard error of $1.059/MWh. The ratio of two reported means is a reference exposure; it generally differs from the mean of utility-specific ratios and from a household-weighted exposure.
+
+For a fixed normal approximation with standard error $s$, the rejection probability against a specified positive effect $d$ is
+
+$$
+\pi(d;s)=\Phi(-z_{0.975}-d/s)+1-\Phi(z_{0.975}-d/s).
+$$
+
+Here $d$ and $s$ share units of dollars per MWh, $\Phi$ is the standard normal cumulative distribution, and $z_{0.975}$ is its 97.5th percentile. The calculation holds the published precision fixed and varies a decision-relevant effect. It is a sensitivity calculation from rounded table entries. Replicating the utility panel and evaluating finite-sample power for the full synthetic-control estimator require the underlying observations and procedure. The reported standard errors already account for utility clustering.
+
+At $d=1$, power is 15.7%; at $d=2$, it is 47.2%. An experiment with this assumed precision would fail to reject in about 84% and 53% of repetitions even if those positive effects were true. About $2.97/MWh is required for 80% power. This minimum detectable effect describes the sensitivity of the test. It is not a bound on the effect that actually occurred. The illustrative $1 and $2 thresholds should be justified against household burdens before guiding a real policy decision.
+
+![Normal-approximation power at the paper's reference exposure. Power is 15.7% for a one-dollar increase and 47.2% for a two-dollar increase per MWh; 80% power requires approximately 2.97 dollars.](../figures/M06_data_center_power.png)
+
+The approximate two-sided 95% interval is $[-0.33,3.82]$/MWh. The one-sided 95% upper bound is $1.749+1.645(1.059)=3.49$/MWh. Thus the reported estimate does not rule out a $1 or $2 increase at that confidence level. Low sensitivity explains why nonsignificance can coexist with economically consequential effects. It does not establish the true effect, prove that positive harm occurred, or identify low power as the sole cause of the observed result.
+
+### 6.33.2 Developer Comparisons and Mechanism Claims
+
+\noindent Table 4's preferred developer regression estimates a slope of 0.158 for the four named technology firms, with standard error 0.160. Its approximate 95% interval is $[-0.156,0.472]$, and its one-sided 95% upper bound is 0.421, all in dollars per MWh per percentage point of added capacity. The coefficient is imprecise and permits positive effects. Applying the pooled reference exposure to it would create a hypothetical common-exposure comparison; the paper does not report that exposure as the cloud group's average.
+
+The other-owner slope is 1.042 with standard error 0.477. Comparing their significance stars cannot establish a difference between the slopes. The paper reports the relevant joint Wald test with $p=0.101$. This value exceeds both 0.05 and 0.10, despite the text describing the difference as marginally significant. A difference can remain substantively plausible without satisfying those thresholds. Computing the contrast's uncertainty from the two marginal standard errors alone would omit their covariance. Table 4's direct test is the appropriate reported evidence.
+
+Table 7 supplies a second weak null. Its preferred estimate of additional quarterly electricity sales is 291 MWh per added MW, with standard error 493. The approximate two-sided 95% interval extends from minus 675 to 1,257 MWh. Suppose a new MW operates for a full 2,190-hour quarter at 50% utilization and displaces no other sales. It then adds 1,095 MWh. Under the reported precision, power against that scenario is 60.3%; at 25% utilization, power is 19.9%. The insignificant sales estimate therefore does not exclude substantial additional consumption. Inferring that infrastructure costs dominate contemporaneous demand requires a comparison that identifies those channels, including timing, actual utilization, procurement costs, and changes in other loads.
+
+### 6.33.3 Internal Consistency and Causal Interpretation
+
+\noindent Several further claims can be assessed directly against the paper's definitions and tables.
+
+- **A residual is assigned to named causes.** Page 3 attributes the remaining 96% of residential price growth to inflation, fuel expenses, and grid modernization and resilience. Table A.4 implies an observed rise of $43.26/MWh, and the reference estimate accounts for about 4.04% of it. Subtracting that share leaves a residual. The regression does not separately estimate the named causes or establish that they exhaust the residual. A correct subtraction cannot turn an unestimated decomposition into a causal finding.
+- **The outcome changes meaning in the mechanism discussion.** Section 4.2 defines the cost outcome as utility cost per MWh and describes it as corresponding to the model's cost numerator. The model's numerator is a total revenue requirement. A ratio can rise because costs rise or sales fall, and joint changes can offset each other. Recovering the numerator requires total costs and the relevant denominator, with a consistent accounting period and sample.
+- **An ownership rule is interpreted as a business model.** The four-firm indicator and its complement do not establish whether each facility supplies cloud services, leases space, or operates for its owner. Section 2.28 identifies the mismatch. Any causal recommendation about contracting practices needs the contracts and evidence that distinguishes them from location selection.
+- **Historical coefficients are used to guide a changing system.** The model permits headroom thresholds and changes in cost allocation, while the preferred regression imposes an approximately linear cumulative-stock effect. The theory therefore supplies a reason to examine nonlinear responses before extending the historical estimate to much larger future loads. Regulatory lags also separate an activation date from eventual cost recovery.
+
+The design has additional requirements that a replication should test. Equation 21 uses post-anchor gaps, utility fixed effects, and quarter-of-year fixed effects. A utility with one addition and no later change has a constant post-anchor stock, which its fixed effect absorbs. Consequently, the coefficient's identifying variation and weighting deserve direct examination before it is described as the average effect of all additions. Quarter-of-year controls capture seasonality; they do not themselves absorb every calendar-quarter shock. The synthetic comparison must account for differential shocks. Donors without new facilities can still share wholesale-price or transmission spillovers, and overlapping donor weights can create dependence across treated gaps. Re-estimating the counterfactual and slope together, examining donor-market exposure, and reporting leave-one-utility-out results would assess these concerns. Their magnitude and direction remain empirical questions.
+
+The paper acknowledges unobserved shocks, potential donor spillovers, linearity, limited heterogeneity power, and uncertainty about developer mechanisms. Those acknowledgments materially constrain interpretation. A critique should preserve them and identify where a broader claim fails to respect them. An imprecise positive estimate, a non-rejecting subgroup test, and a causal mechanism left unresolved supply no statistical warrant for categorical reassurance.
+
+From the repository root:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/data_center_claims.py
+```
+ The input coefficients, table locations, units, samples, reference scaling, and all calculations appear below. The program also computes the equal-average household example in §2.28. Raw utility observations and synthetic-control weights are not reconstructed.
+
+
+Python source: [data_center_claims.py](../../03_Data_and_Code/Statistical_Inference/data_center_claims.py)
+
+```python
+"""Reconstruct reported-table implications; no utility-panel replication."""
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from scipy.optimize import brentq
+from scipy.stats import norm
+
+ROOT = Path(__file__).resolve().parent
+RESULTS = ROOT / "results"
+REFERENCE_PP = 100 * 456 / 6804  # Ratio of reported means, pp of peak MW.
+ALPHA = 0.05
+
+
+def power(effect, se, alpha=ALPHA):
+    """Two-sided normal-test power at an externally specified true effect."""
+    if se <= 0 or not 0 < alpha < 1:
+        raise ValueError("Positive SE and alpha strictly between zero and one required")
+    z = norm.ppf(1 - alpha / 2)
+    shift = np.asarray(effect) / se
+    return norm.cdf(-z - shift) + norm.sf(z - shift)
+
+
+def summarize(estimate, se):
+    z = norm.ppf(0.975)
+    return dict(estimate=estimate, se=se,
+                p_zero=2 * norm.sf(abs(estimate / se)),
+                ci95_low=estimate - z * se, ci95_high=estimate + z * se,
+                upper95=estimate + norm.ppf(0.95) * se,
+                mde80=brentq(lambda d: power(d, se) - 0.8, 0, 10 * se))
+
+
+def main():
+    RESULTS.mkdir(exist_ok=True)
+    # Rana, Kaps, Netessine, October 2026 version: Tables 2, 4, and 7.
+    # Published SEs already cluster by utility; retain them without inflation.
+    inputs = [
+        ("residential_reference", "Table 2 col 4; pp. 23-24", .261, .158,
+         REFERENCE_PP, "USD/MWh at reference exposure", 41, 627),
+        ("cloud_slope", "Table 4 col 4; p. 26", .158, .160,
+         1, "USD/MWh per exposure pp", 41, 627),
+        ("other_owner_slope", "Table 4 col 4; p. 26", 1.042, .477,
+         1, "USD/MWh per exposure pp", 41, 627),
+        ("sales_slope", "Table 7 col 2; p. 31", 291, 493,
+         1, "quarterly MWh per added MW", 42, 648),
+    ]
+    estimates = []
+    for key, source, b, se, scale, units, clusters, n in inputs:
+        estimates.append(dict(case=key, source=source, reported_coefficient=b,
+                              reported_se=se, scale=scale, units=units,
+                              treated_utilities=clusters, observations=n,
+                              **summarize(b * scale, se * scale)))
+    pd.DataFrame(estimates).to_csv(RESULTS / "data_center_estimates.csv", index=False)
+
+    se = .158 * REFERENCE_PP
+    targets = [1.0, 2.0, 3.0]
+    pd.DataFrame([dict(target_usd_per_mwh=d, power=power(d, se),
+                       nonrejection_probability=1-power(d, se),
+                       upper95_below_target=(.261*REFERENCE_PP + norm.ppf(.95)*se < d))
+                  for d in targets]).to_csv(RESULTS / "data_center_power.csv", index=False)
+    grid = np.linspace(0, 5, 101)
+    pd.DataFrame(dict(target_usd_per_mwh=grid, power=power(grid, se))).to_csv(
+        RESULTS / "data_center_power_curve.csv", index=False)
+
+    # A hypothetical full 2,190-hour quarter with no displacement of other sales.
+    pd.DataFrame([dict(utilization=u, hours=2190, target_mwh_per_mw=2190*u,
+                       power=power(2190*u, 493)) for u in [.25, .50]]).to_csv(
+        RESULTS / "data_center_sales_targets.csv", index=False)
+
+    # Tables 2 and A.4: descriptive denominator, not a causal decomposition.
+    increase = 166.85 - 123.59
+    share = .261 * REFERENCE_PP / increase
+    pd.DataFrame([dict(reference_exposure_pp=REFERENCE_PP,
+                       observed_price_increase=increase,
+                       estimated_share=share, residual_share=1-share,
+                       developer_equality_p_reported=.101)]).to_csv(
+        RESULTS / "data_center_reporting_checks.csv", index=False)
+
+    # Synthetic counterexample: equal use, fixed population, one monthly period.
+    # Two cost allocations produce the same average; consent is unobserved.
+    n, mwh = 1000, 1.0
+    rows = []
+    for label, affected, extra_bill in [("uniform", n, 2), ("concentrated", 100, 20)]:
+        total = affected * extra_bill
+        rows.append(dict(scenario=label, households=n, affected_households=affected,
+                         mwh_per_household=mwh, extra_bill_if_affected=extra_bill,
+                         aggregate_extra_revenue=total,
+                         average_increase_usd_per_mwh=total/(n*mwh)))
+    pd.DataFrame(rows).to_csv(RESULTS / "data_center_incidence_illustration.csv", index=False)
+
+
+if __name__ == "__main__":
+    main()
+```

@@ -231,12 +231,12 @@
       "modules": "M3",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 24,
+      "slides": 26,
       "companion": "S04_Regression_and_Marketing_Interpretation.md",
       "pdf": "S04_Regression_and_Marketing_Interpretation.pdf",
       "python_activity": "Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty. Check variance and sample construction separately from the coefficient.",
-      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation.",
-      "ethics": "Substantiation and the distinction between association and benefit",
+      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation. P-value distributions and utility-average versus household outcomes.",
+      "ethics": "Substantiation and the distinction between association and benefit; measurement and household burdens",
       "timing": [
         {
           "start_minute": 0,
@@ -290,13 +290,14 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Ethics and Decision Discussion"
+          "activity": "Ethics, Evidence, and Decision Discussion"
         }
       ],
       "date": "2027-02-10",
       "auxiliary_data_minutes": 10,
       "digital_usage_minutes": 10,
-      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional"
+      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
+      "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice."
     },
     {
       "session": 5,
@@ -570,12 +571,12 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 29,
+      "slides": 33,
       "companion": "S09_Experiments_and_Incremental_Value.md",
       "pdf": "S09_Experiments_and_Incremental_Value.pdf",
       "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.",
-      "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify.",
-      "ethics": "Defensible treatment designs and informed customer choice",
+      "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations.",
+      "ethics": "Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test",
       "timing": [
         {
           "start_minute": 0,
@@ -623,13 +624,14 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Ethics and Decision Discussion"
+          "activity": "Ethics, Evidence, and Decision Discussion"
         }
       ],
       "date": "2027-03-24",
       "auxiliary_data_minutes": 10,
       "agent_workflow_minutes": 5,
-      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional"
+      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
+      "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice."
     },
     {
       "session": 10,
@@ -929,12 +931,12 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 52,
+      "slides": 57,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility.",
-      "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.",
+      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs. Borrower reasons, comprehension, and lender responsibilities. Undetected errors, analyst effort, and managerial responsibility. Equivalence, data-center reassurance, ontology, and household authority.",
+      "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.; evidence, conceptual scope, and the ability to contest cost allocation",
       "timing": [
         {
           "start_minute": 0,
@@ -1057,7 +1059,8 @@
       "agent_workflow_minutes": 10,
       "pricing_competition_minutes": 30,
       "digital_usage_minutes": 10,
-      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional"
+      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
+      "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice."
     },
     {
       "session": 15,

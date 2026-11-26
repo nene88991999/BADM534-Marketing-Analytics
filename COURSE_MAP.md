@@ -177,3 +177,7 @@ M1 §1.18 separates execution, method, reporting, and interpretation. M3 §3.18 
 ## Econometric Coding Workflows and Hidden Errors
 
 M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24 connect [published coding evidence](01_Resources/40_Econometric_Coding_Workflows/README.md) to independent assessment, interaction scales, customer allocation, review cost, and responsibility. [Three complete programs](03_Data_and_Code/Agent_Workflows/README.md), two editable figures, and six slides support Sessions 1, 4, 9, 11, and 14 within their existing meeting blocks. [Longer practice](07_Labs/Agent_Workflows/README.md) remains optional and ungraded.
+
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.

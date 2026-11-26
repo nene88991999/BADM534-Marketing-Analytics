@@ -156,3 +156,7 @@ The [Fisher-R1 source collection](39_Statistical_Inference_and_AI/README.md) arc
 ## Econometric Coding Workflows
 
 [The coding-workflow collection](40_Econometric_Coding_Workflows/README.md) connects the November 2026 Galiani, López, and Sosa study to execution feedback, silent errors, prompt-effect scales, and costs. Three small CC0 aggregate tables support original Python exercises. The paper and complete replication release remain linked with their versions and rights.
+
+## Statistical Claims, Household Burdens, and Agency
+
+The [statistical-claims examples](41_Statistical_Claims_and_Decisions/README.md) connect repeated p-values, economic thresholds, equivalence, and a recurring data-center electricity case. M2 §2.28, M3 §3.19, M6 §§6.32–6.33, M8 §8.31, and M9 §§9.25–9.26 examine reported tables, measurement, causal interpretation, public reassurance, ontology, and household authority. Four complete Python programs and five original TikZ figures support the comparisons. Guided practice is optional and ungraded.

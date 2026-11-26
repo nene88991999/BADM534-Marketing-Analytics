@@ -1,0 +1,19 @@
+\begin{tikzpicture}\begin{axis}[width=13.8cm,height=7cm,
+        xmin=-9,xmax=12,ymin=.5,ymax=4.5,xtick={-5,0,5,10},ytick={1,2,3,4},
+        yticklabels={Faster,Detectable Small,Precise Small,Imprecise},
+        xlabel={Mean Additional Task Time (Seconds)},grid=major]
+\fill[IlliniBlue,opacity=.06] (axis cs:-5,.5) rectangle (axis cs:5,4.5);
+\draw[dashed,IlliniOrange,very thick] (axis cs:-5,.5) -- (axis cs:-5,4.5);
+\draw[dashed,IlliniOrange,very thick] (axis cs:5,.5) -- (axis cs:5,4.5);
+\draw[dotted,Storm,thick] (axis cs:0,.5) -- (axis cs:0,4.5);
+\addplot[IlliniBlue,very thick,mark=|,mark size=4pt] coordinates {(-2.64220487,4) (10.64220487,4)};
+\addplot[IlliniBlue,only marks,mark=*,mark size=3pt] coordinates {(4.0,4)};
+\addplot[IlliniBlue,very thick,mark=|,mark size=4pt] coordinates {(-1.14580773,3) (2.14580773,3)};
+\addplot[IlliniBlue,only marks,mark=*,mark size=3pt] coordinates {(0.5,3)};
+\addplot[IlliniBlue,very thick,mark=|,mark size=4pt] coordinates {(1.35419227,2) (4.64580773,2)};
+\addplot[IlliniBlue,only marks,mark=*,mark size=3pt] coordinates {(3.0,2)};
+\addplot[IlliniBlue,very thick,mark=|,mark size=4pt] coordinates {(-7.64580773,1) (-4.35419227,1)};
+\addplot[IlliniBlue,only marks,mark=*,mark size=3pt] coordinates {(-6.0,1)};
+\end{axis}
+\node[anchor=north,yshift=-.3cm,text width=14cm,align=center,font=\footnotesize] at (current bounding box.south) {Hypothetical independent groups: 50 per arm in the first case, 800 otherwise.\\Points: estimated differences. Bars: 90\% $t$ intervals. Dashed bounds: $\pm5$ seconds.\\Two-sided equivalence requires the full interval inside both bounds.};
+\end{tikzpicture}

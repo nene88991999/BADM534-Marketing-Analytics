@@ -215,3 +215,7 @@ The [Fisher-R1 review](../01_Resources/39_Statistical_Inference_and_AI/README.md
 ## Econometric Coding Workflows
 
 [The source collection](../01_Resources/40_Econometric_Coding_Workflows/README.md) supports M1 §1.19, M3 §3.18, M6 §6.31, M7 §7.46, M8 §8.30, and M9 §9.24. The [original programs](../03_Data_and_Code/Agent_Workflows/README.md) reconstruct published denominators, expose deliberately constructed mHealth errors, and compare hypothetical review costs. The three data types remain distinct. Sessions 1, 4, 9, 11, and 14 use existing discussion blocks.
+
+## Statistical Claims and the Ethics of Public Reassurance
+
+The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.

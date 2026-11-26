@@ -29,6 +29,7 @@ Session 09. M6. 170 minutes.
 - [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
+- ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -131,7 +132,29 @@ The same transformation of the effect interval gives approximately -0.42 to 1.82
 
 Source: M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 10: The Experiment Calculation
+## Slide 10: A Significant Campaign Can Lose Money
+
+Hypothetical customer-level randomization; fixed margin and contact cost.
+
+**Figure description:** The 95% lift interval lies above zero and below the campaign break-even threshold.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_significance_and_profit.tex)
+
+One million independent customers per arm yield 100,000 control purchases and 101,000 treatment purchases. The pooled proportion test gives p=0.0187. A USD 40 incremental purchase margin and USD 0.10 contact cost imply a 0.25 pp break-even lift; the estimated 0.10 pp lift loses USD 0.06 per treated customer. The comparison omits future purchases, returns, and spillovers.
+
+Source: M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 11: False Positives Need the Right Denominator
+
+- Suppose 800 true nulls and 200 nonzero effects are tested.
+- Size 5% and power 80% imply 40 false and 160 true rejections in expectation.
+- False rejections are 20% of expected rejections.
+
+These are hypothetical prespecified tests. The ratio of expected counts differs from size conditional on a true null. It is not automatically the expected realized false-discovery proportion or the probability that a particular claim is false. Selection and multiplicity require explicit procedures. The program varies the null fraction and power.
+
+Source: M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 12: The Experiment Calculation
 
 Reproduce the effect and its contribution implication.
 
@@ -151,7 +174,7 @@ If treatment changes basket size, returns, or margins, purchase incidence alone 
 
 Source: M6, Section 6.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 11: Power Begins with the Useful Effect
+## Slide 13: Power Begins with the Useful Effect
 
 - Choose the smallest effect that could change the action.
 - Use the expected outcome variance and assignment unit.
@@ -161,7 +184,29 @@ At baseline probability 0.10, a two-point effect, two-sided 5% level, and 80% po
 
 Source: M6, Section 6.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 12: Fixed and Adaptive Research Designs
+## Slide 14: Price Increases the Test Could Miss
+
+Sensitivity from the reported residential standard error.
+
+**Figure description:** The power curve reaches 15.7% at USD 1/MWh, 47.2% at USD 2/MWh, and 80% around USD 2.97/MWh.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_data_center_power.tex)
+
+Table 2 column 4 gives slope 0.261 and clustered SE 0.158. The reference exposure is 100(456/6804)=6.70194 pp, a ratio of reported means. Its scaled estimate is USD 1.749 and SE USD 1.059 per MWh. The one-sided 95% upper bound is USD 3.49. Normal-approximation sensitivity holds reported precision fixed; it does not replicate the synthetic-control estimator or prove the true effect is positive.
+
+Source: M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 15: Check the Interpretation Against the Table
+
+- Table 4: the direct developer-difference test has p = 0.101.
+- Table 7: sales of 291 MWh per added MW have SE = 493.
+- The unexplained 96% requires its own causal decomposition.
+
+Table 4 cloud slope is 0.158 (SE 0.160), with a one-sided 95% upper bound of 0.421 dollars/MWh per exposure pp. Significance in one subgroup and nonsignificance in another do not establish a difference. The sales interval includes a hypothetical full quarter at 50% utilization, or 1,095 MWh per MW. Page 3 assigns the residual price increase to named causes without estimating their contributions. Preserve the positive findings and acknowledged limitations while challenging these specific interpretations.
+
+Source: M6 §§6.32–6.33. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 16: Fixed and Adaptive Research Designs
 
 - Known features and variances determine information at each profile.
 - A fixed allocation attains the leading minimum cost at high accuracy in the linear model.
@@ -171,7 +216,7 @@ Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian m
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 13: Implementation Checks
+## Slide 17: Implementation Checks
 
 - Reconcile assigned counts and intended allocation.
 - Check missing outcomes and tracking by assignment.
@@ -182,7 +227,7 @@ A randomization protocol does not prevent differential tracking failures. Sample
 
 Source: M6, Section 6.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 14: Prior Outcomes and Precision
+## Slide 18: Prior Outcomes and Precision
 
 Adjust the outcome using a pre-treatment measure $X$.
 
@@ -196,7 +241,7 @@ CUPED uses a pre-treatment covariate and an appropriately specified adjustment. 
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 15: mHealth Baseline Activity Improves Precision
+## Slide 19: mHealth Baseline Activity Improves Precision
 
 Planning calculation uses historical user-level variance and a five-point target.
 
@@ -208,7 +253,7 @@ These are power-planning implications of observed historical variances, not a re
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 16: Model and Library Contributions
+## Slide 20: Model and Library Contributions
 
 Synthetic counts: 100 assigned tasks per condition; common rubric and resource limits.
 
@@ -220,7 +265,7 @@ The interaction is ten percentage points. Moving from the initial condition to t
 
 Source: Marketing Analytics Lecture Notes, M6 §6.19.
 
-## Slide 17: An Interaction Calculation
+## Slide 21: An Interaction Calculation
 
 The four rates are imposed teaching inputs.
 
@@ -239,7 +284,7 @@ Run factorial.py to reproduce both paths to the joint change using exact rationa
 
 Source: M6 §6.19. ../03_Data_and_Code/AI_Workflows/factorial.py
 
-## Slide 18: A Fixed Model and Four Workflows
+## Slide 22: A Fixed Model and Four Workflows
 
 - Cross explicit information with independent development feedback.
 - Reset each run and randomize cell order within repetitions.
@@ -250,7 +295,7 @@ M6 §6.29 defines q_cf as the probability of a valid output for a fixed task and
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 19: Prompt Gains Depend on the Outcome Scale
+## Slide 23: Prompt Gains Depend on the Outcome Scale
 
 | Workflow | Gain (pp) | Baseline Failures Removed |
 | --- | --- | --- |
@@ -264,7 +309,7 @@ The no-example success rates are 81.49%, 92.40%, and 96.97%. The failure reducti
 
 Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
-## Slide 20: Coding Exercise: An Experiment Plan
+## Slide 24: Coding Exercise: An Experiment Plan
 
 - Compute the factorial contrasts alongside the email effect.
 - Change contribution, delivery cost, and the target effect.
@@ -274,7 +319,7 @@ Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth ex
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 21: Interference and Assignment Units
+## Slide 25: Interference and Assignment Units
 
 - Customers can share offers or affect one another.
 - Stores can divert purchases from nearby locations.
@@ -284,7 +329,7 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 22: Assign Stores, Observe Customers
+## Slide 26: Assign Stores, Observe Customers
 
 Synthetic promotion: balanced store assignment and equal store sizes.
 
@@ -296,7 +341,7 @@ The effect is zero for every customer. Store shocks are independent across store
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 23: A Zero-Effect Promotion
+## Slide 27: A Zero-Effect Promotion
 
 | Calculation | Estimate (Dollars) | p-Value |
 | --- | --- | --- |
@@ -309,7 +354,7 @@ This is repetition zero from seed 20261125, retained without selecting a favorab
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 24: Dependence Changes False Discoveries
+## Slide 28: Dependence Changes False Discoveries
 
 Store means retain rejection rates near the nominal 5% level in this simulation.
 
@@ -321,7 +366,7 @@ Each correlation uses 4,000 newly generated experiments, 40 stores, 20 customers
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 25: A Treatment Arm Needs a Defensible Design
+## Slide 29: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -331,7 +376,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 26: Follow Purchases Through Returns
+## Slide 30: Follow Purchases Through Returns
 
 - Pressure and self-assurance can produce different purchase and return patterns.
 - Prespecify the eligible population and both outcome horizons.
@@ -341,7 +386,7 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 27: From Experiments to Generative Decisions
+## Slide 31: From Experiments to Generative Decisions
 
 - Within-campaign comparisons can supervise a model that proposes new messages.
 - The learned ranking inherits the outcome used to define success.
@@ -351,7 +396,7 @@ Angelopoulos, Lee, and Misra train a language-model improver using historical ex
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 28: Human Review and Customer Evidence
+## Slide 32: Human Review and Customer Evidence
 
 - Check factual claims and consequential terms before deployment.
 - Record customer understanding and the ability to refuse.
@@ -361,7 +406,7 @@ Causal Alignment includes human selection and acceptability checks. Their existe
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 29: Experiment Discussion
+## Slide 33: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

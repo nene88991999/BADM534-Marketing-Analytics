@@ -30,3 +30,19 @@ The programs use Student/Welch approximations. The simulation comparison covers 
 Complete code appears in M3 §3.18 and M6 §6.30. M1 §1.18 supplies the assessment protocol; M9 §9.24 examines advertising response and customer reasons. The [optional ungraded lab](../../07_Labs/Statistical_Inference/README.md) includes hand checks, method comparison, and an optional recorded AI exercise.
 
 The [Fisher-R1 source review](../../01_Resources/39_Statistical_Inference_and_AI/README.md) motivates statistical assessment. Its code was inspected and linked, without copying or execution. These Python programs are original course implementations. The benchmark's consumer-credit question is discussion material; its reference p-value has not been independently reproduced. See the [data dictionary](DATA_DICTIONARY.md), [manifest](manifest.json), and [verification record](VERIFICATION.md).
+
+## P-Values, Decision Thresholds, and Electricity-Price Claims
+
+From the repository root, run:
+
+```bash
+python3 03_Data_and_Code/Statistical_Inference/pvalue_distributions.py
+python3 03_Data_and_Code/Statistical_Inference/campaign_decisions.py
+python3 03_Data_and_Code/Statistical_Inference/equivalence_claims.py
+python3 03_Data_and_Code/Statistical_Inference/data_center_claims.py
+python3 03_Data_and_Code/Statistical_Inference/build_claim_figures.py
+```
+
+`pvalue_distributions.py` generates 20,000 independent experiment pairs per scenario, with 40 or 160 stores and true effects of zero or eight dollars. `campaign_decisions.py` uses hypothetical purchase counts and fixed contribution inputs. `equivalence_claims.py` uses hypothetical sufficient statistics, rather than pretending to observe individual task times. `data_center_claims.py` transcribes published coefficients and their clustered standard errors, computes sensitivity and bounds, and supplies a synthetic household-incidence counterexample. No utility-level panel or original estimator is reproduced.
+
+Full source listings appear in M3 §3.19, M6 §§6.32–6.33, and M9 §9.25. The five additional editable TikZ figures cover repeated p-values, campaign profit, equivalence, electricity-price power, and household incidence. The recurring electricity case also appears in M2 §2.28, M8 §8.31, and M9 §9.26. Read the [resource guide and claim assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/README.md) before extending its conclusions.
