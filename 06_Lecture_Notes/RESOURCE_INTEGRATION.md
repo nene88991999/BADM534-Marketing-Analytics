@@ -203,3 +203,7 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 ## Pricing Systems and Customer Choice
 
 [Six source records](../01_Resources/37_Pricing_Systems_and_Competition/README.md) motivate an original [pricing comparison](../03_Data_and_Code/Pricing_Competition/README.md). M4 §4.26 varies demand information and the pricing objective separately; M8 §8.28 distinguishes the complaint, company statements, and agency argument; M9 §9.22 develops the philosophical evaluation. Exact fractions, complete Python, nine checks, two editable figures, and Sessions 5 and 14 support the comparison. The calculation is separate from Harrington's vendor-design model and contains no actual Wendy's prices.
+
+## Digital Usage and Customer Access
+
+[Pereira and coauthors’ article and public release](../01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md) support M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Five complete source listings, eleven independent tests, four original TikZ figures, and ten slides across Sessions 2, 3, 4, 6, and 14 accompany the [executed geographic examples](../03_Data_and_Code/Digital_Usage/README.md). The course adds public Census estimates, preserves source counts and formula discrepancies, and separates descriptive evidence from service outcomes and ethical justification. No private telemetry pipeline was reproduced.

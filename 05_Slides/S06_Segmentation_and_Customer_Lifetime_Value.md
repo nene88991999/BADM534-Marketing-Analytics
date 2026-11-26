@@ -23,6 +23,7 @@ Session 06. M4. 170 minutes.
 - [Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)
 - [Clustering Optimization and Sources](../01_Resources/23_Clustering_Optimization/README.md)
 - [Optional Clustering Practice](../07_Labs/Clustering_Optimization/README.md)
+- [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 
 ## Slide 1: Segmentation and Customer Lifetime Value
 
@@ -323,7 +324,29 @@ A customer who prefers cancellation can remain subscribed because of friction. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 26: Retention Discussion
+## Slide 26: Geographic Usage Groups
+
+Raw and standardized distances produce different geographic groups.
+
+**Figure description:** Illinois groups contain 94, 347, and 812 areas. The adjusted Rand index comparing raw and standardized clustering is 0.805.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_digital_clusters.tex)
+
+The three groups are a fixed descriptive example. Thirty random starts and four tested seeds yield the same standardized partition. Raw distances give more influence to the index with larger spread. Group names order mean MCI and carry no ranking of customer ability or value.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 27: Stable Groups Still Need Outcome Validation
+
+- Raw versus standardized partitions: adjusted Rand index 0.805.
+- Tested seed changes leave the standardized partition unchanged.
+- Observe requested assistance and task completion before allocating service.
+
+Adjusted Rand agreement compares co-membership and is not a percentage of identical labels. Seed stability checks a computation under chosen features. Scaling changes the meaning of similarity. The public data contain no individual assistance need or service outcome, so no cluster is validated as a customer capability category.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 28: Retention Discussion
 
 - What action differs across the proposed segments?
 - Does a customer's absence represent churn or censoring?

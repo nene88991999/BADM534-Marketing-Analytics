@@ -39,6 +39,7 @@ Session 14. M8, M9. 170 minutes.
 - [Pricing Case: Sources and Evidence](../01_Resources/37_Pricing_Systems_and_Competition/README.md)
 - [Pricing Comparison: Code and Results](../03_Data_and_Code/Pricing_Competition/README.md)
 - [Pricing Comparison: Optional Practice](../07_Labs/Pricing_Competition/README.md)
+- [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -558,7 +559,27 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 48: A Decision with Consumer Outcomes
+## Slide 48: Digital Service and Feasible Customer Choice
+
+- Offer assistance while preserving a usable alternative.
+- Measure completion, customer time, and firm cost on a fixed roster.
+- Treat geographic usage as context for investigation.
+
+An optional assistance intervention can expand feasible choices. A mandatory app workflow may impose equipment, registration, and verification costs. A proposed evaluation should record the customer’s requested action and channel and preserve the ability to refuse optional profiling. Geographic Windows usage does not observe those outcomes.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 49: Evidence and Authority to Classify a Customer
+
+- Kantian critique examines the move from area activity to individual ability.
+- Respect for persons requires reasons for restrictions and usable correction.
+- Confucian role responsibilities support responsive, humane service.
+
+A stable cluster does not authorize a firm to remove an individual’s options. Examine the additional premise linking measured activity to a permissible action. Humane intent must be connected to the customer’s stated task and preferred channel, with an opportunity to correct classifications. The same area score can motivate assistance or exclusion; the consequences and authority differ.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 50: A Decision with Consumer Outcomes
 
 - State the commercial target and customer outcome.
 - Identify the procedure the customer can accept, refuse, or revise.

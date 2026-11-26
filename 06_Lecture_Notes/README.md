@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [424-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 108 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [440-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 112 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -173,3 +173,7 @@ M5 §5.26 and M7 §§7.42–7.44 connect text preparation, coordinate alignment,
 ## Pricing Systems and Customer Choice
 
 M4 §4.26 derives independent and joint prices under a common noisy demand signal, with complete executable Python. M8 §8.28 assesses the Wendy's complaint and source evidence; M9 §9.22 examines Kantian justification, Confucian trustworthiness, and customer alternatives. [The code, six policy rows, and nine checks](../03_Data_and_Code/Pricing_Competition/README.md), two TikZ figures, [source review](../01_Resources/37_Pricing_Systems_and_Competition/README.md), and [optional practice](../07_Labs/Pricing_Competition/README.md) preserve the distinction between actual sources and synthetic outcomes.
+
+## Digital Usage and Customer Access
+
+The [geographic case](../03_Data_and_Code/Digital_Usage/README.md) adds measurement and index verification in M2, conditional income projections in M3, scaling-sensitive clustering in M4, outcome validation in M7, and service choice in M8/M9. Five complete Python listings and four original TikZ figures accompany the public data and Census extracts.

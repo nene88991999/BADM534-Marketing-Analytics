@@ -337,6 +337,33 @@ M2, Section 2.7, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 
 ETHICS\_AND\_REGULATION.md, M2-M3.}
 \end{frame}
+\begin{frame}{Digital Usage Across Illinois}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.74\textheight}
+\input{../06_Lecture_Notes/figures/M02_digital_geography.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small 1,253 Illinois areas. Each index uses its own mean and standard deviation.\par}
+\note{Each point is an area, without a population or device-count weight. Equal standardized thresholds compare relative positions within each index, rather than identical levels in original units. Point density can reflect the density of postal identifiers. A point is neither a boundary polygon nor a device location.
+
+Pereira et al., Nature Communications (2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
+\end{frame}
+\begin{frame}{Identifiers and Income Codes Change the Sample}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Restore 2,214 leading zeros before the geographic join.
+\item All 28,561 release identifiers match the archived Census extracts.
+\item Flag 50 open-ended income values; use 28,511 regression areas.
+\end{slidebullets}
+\vfill
+\note{The ACS estimates cover 2017–2021; Windows activity covers October 2022–March 2023. ZCTAs approximate postal areas, so a matching string does not establish identical populations. Codes 2,499 and 250,001 represent income intervals. All 1,253 released Illinois areas remain in the map and clustering; one Illinois boundary-income record leaves the national regression sample.
+
+Pereira et al., Nature Communications (2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
+\end{frame}
 \begin{frame}{Visualization Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

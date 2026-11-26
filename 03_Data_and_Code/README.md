@@ -129,3 +129,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 ## Pricing Systems and Customer Choice
 
 [Pricing Competition](Pricing_Competition/README.md) contains a synthetic two-restaurant market, exact rational calculations, cell and policy tables, an editable welfare figure, and nine independent checks. The program varies demand information and pricing objectives separately. Full code appears in M4 §4.26; M8 and M9 connect the calculation to the Wendy's case and ethical reasoning.
+
+## Digital Usage and Customer Access
+
+[Digital Usage](Digital_Usage/README.md) contains 28,561 published geographic records, compact public Census extracts, five complete teaching programs, eleven independent checks, and four editable figures. The examples assess identifiers and income boundaries, compare adjusted projections, and evaluate clustering sensitivity. Original device microdata and analysis code are unavailable.

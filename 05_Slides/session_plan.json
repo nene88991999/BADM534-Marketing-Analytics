@@ -88,11 +88,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 23,
+      "slides": 25,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
-      "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator.",
-      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states.",
+      "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis.",
+      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs.",
       "ethics": "Missingness, sample exclusions, and customer representation",
       "timing": [
         {
@@ -133,8 +133,14 @@
         },
         {
           "start_minute": 140,
+          "end_minute": 148,
+          "minutes": 8,
+          "activity": "Digital Usage, Measurement, and Index Verification"
+        },
+        {
+          "start_minute": 148,
           "end_minute": 155,
-          "minutes": 15,
+          "minutes": 7,
           "activity": "Application and Interpretation"
         },
         {
@@ -144,7 +150,8 @@
           "activity": "Ethics and Decision Discussion"
         }
       ],
-      "date": "2027-01-27"
+      "date": "2027-01-27",
+      "digital_usage_minutes": 8
     },
     {
       "session": 3,
@@ -152,11 +159,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 25,
+      "slides": 27,
       "companion": "S03_Visualization_and_Data_Quality.md",
       "pdf": "S03_Visualization_and_Data_Quality.pdf",
-      "python_activity": "Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval.",
-      "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes.",
+      "python_activity": "Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval. Use the optional Digital Usage lab for the complete geographic analysis.",
+      "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes. Digital-usage comparisons distinguish geographic activity from individual service needs.",
       "ethics": "Chart claims, denominator choices, and coverage",
       "timing": [
         {
@@ -197,9 +204,15 @@
         },
         {
           "start_minute": 140,
-          "end_minute": 155,
-          "minutes": 15,
+          "end_minute": 145,
+          "minutes": 5,
           "activity": "Chart Interpretation and Sampling Scope"
+        },
+        {
+          "start_minute": 145,
+          "end_minute": 155,
+          "minutes": 10,
+          "activity": "Digital Usage Maps and Geographic Denominators"
         },
         {
           "start_minute": 155,
@@ -208,7 +221,8 @@
           "activity": "Ethics and Decision Discussion"
         }
       ],
-      "date": "2027-02-03"
+      "date": "2027-02-03",
+      "digital_usage_minutes": 10
     },
     {
       "session": 4,
@@ -216,11 +230,11 @@
       "modules": "M3",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 19,
+      "slides": 21,
       "companion": "S04_Regression_and_Marketing_Interpretation.md",
       "pdf": "S04_Regression_and_Marketing_Interpretation.pdf",
-      "python_activity": "Reproduce OLS and assess exact-day matching, specification, and uncertainty.",
-      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price.",
+      "python_activity": "Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis.",
+      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs.",
       "ethics": "Substantiation and the distinction between association and benefit",
       "timing": [
         {
@@ -261,9 +275,15 @@
         },
         {
           "start_minute": 135,
-          "end_minute": 155,
-          "minutes": 20,
+          "end_minute": 145,
+          "minutes": 10,
           "activity": "Price Coefficients and Interpretation"
+        },
+        {
+          "start_minute": 145,
+          "end_minute": 155,
+          "minutes": 10,
+          "activity": "Digital Usage and Conditional Income Associations"
         },
         {
           "start_minute": 155,
@@ -273,7 +293,8 @@
         }
       ],
       "date": "2027-02-10",
-      "auxiliary_data_minutes": 10
+      "auxiliary_data_minutes": 10,
+      "digital_usage_minutes": 10
     },
     {
       "session": 5,
@@ -352,11 +373,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 26,
+      "slides": 28,
       "companion": "S06_Segmentation_and_Customer_Lifetime_Value.md",
       "pdf": "S06_Segmentation_and_Customer_Lifetime_Value.pdf",
-      "python_activity": "Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice.",
-      "application": "Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions.",
+      "python_activity": "Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice. Use the optional Digital Usage lab for the complete geographic analysis.",
+      "application": "Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions. Digital-usage comparisons distinguish geographic activity from individual service needs.",
       "ethics": "Retention, consumer agency, and effective cancellation",
       "timing": [
         {
@@ -403,12 +424,19 @@
         },
         {
           "start_minute": 155,
+          "end_minute": 165,
+          "minutes": 10,
+          "activity": "Geographic Usage Groups and Service Evidence"
+        },
+        {
+          "start_minute": 165,
           "end_minute": 170,
-          "minutes": 15,
+          "minutes": 5,
           "activity": "Ethics and Decision Discussion"
         }
       ],
-      "date": "2027-02-24"
+      "date": "2027-02-24",
+      "digital_usage_minutes": 10
     },
     {
       "session": 7,
@@ -897,11 +925,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 48,
+      "slides": 50,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
-      "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal.",
-      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification.",
+      "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis.",
+      "application": "Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs.",
       "ethics": "Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.",
       "timing": [
         {
@@ -978,8 +1006,14 @@
         },
         {
           "start_minute": 155,
+          "end_minute": 165,
+          "minutes": 10,
+          "activity": "Digital Channels and Meaningful Customer Choice"
+        },
+        {
+          "start_minute": 165,
           "end_minute": 170,
-          "minutes": 15,
+          "minutes": 5,
           "activity": "Decision Discussion"
         }
       ],
@@ -1017,7 +1051,8 @@
         }
       ],
       "agent_workflow_minutes": 10,
-      "pricing_competition_minutes": 30
+      "pricing_competition_minutes": 30,
+      "digital_usage_minutes": 10
     },
     {
       "session": 15,

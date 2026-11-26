@@ -21,6 +21,7 @@ Session 04. M3. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
+- [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 
 ## Slide 1: Regression and Marketing Interpretation
 
@@ -225,7 +226,29 @@ The four-profile model uses response features (1, feature, price) and auxiliary 
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 19: Regression Discussion
+## Slide 19: Controls Change the Income Comparison
+
+The CCI income association changes sign after adjustment.
+
+**Figure description:** MCI income coefficients decline from 0.05521 to 0.00209 and 0.00132; CCI changes from 0.04856 to -0.01821 and -0.01750 after controls and state effects.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M03_digital_controls.tex)
+
+The slope is in index units per $10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older; broadband is a household share. All models retain the same records. Adding controls changes the association represented by income; it does not identify an income intervention.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 20: State the Population Behind a Coefficient
+
+- Equal ZIP weights describe the released geographic sample.
+- Household weights change the geographic projection.
+- An assistance effect needs an intervention and customer outcomes.
+
+Household estimates do not supply Windows device counts. State intercepts allow different average levels but do not remove every unobserved source of variation. The calculation does not propagate ACS sampling error, differential-privacy noise, or spatial dependence. An improved residual fit supplies no causal identification.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 21: Regression Discussion
 
 - Which comparison supports the coefficient?
 - What variable could reverse its interpretation?

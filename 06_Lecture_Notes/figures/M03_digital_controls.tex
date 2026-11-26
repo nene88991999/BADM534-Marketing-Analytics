@@ -1,0 +1,9 @@
+\begin{tikzpicture}\begin{axis}[width=11.5cm,height=7cm,scaled x ticks=false,xtick={-.02,0,.02,.04,.06},xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},xmin=-.03,xmax=.065,ymin=.5,ymax=3.5,xlabel={Index units per \$10,000 of median household income},ytick={1,2,3},yticklabels={State + controls,Education + broadband,Income alone},grid=major,legend style={at={(.98,.57)},anchor=north east},clip=true]
+\addplot[only marks,mark=*,mark size=3pt,color=IlliniBlue] coordinates {(0.0552128,3.09) (0.0020936,2.09) (0.0013224,1.09)};
+\addlegendentry{MCI}
+\addplot[only marks,mark=square*,mark size=3pt,color=IlliniOrange] coordinates {(0.0485627,2.91) (-0.0182088,1.91) (-0.0174968,0.91)};
+\addlegendentry{CCI}
+\draw[dashed,Storm] (axis cs:0,.5) -- (axis cs:0,3.5);
+\end{axis}
+\node[anchor=north,yshift=-.3cm,align=center,text width=13cm,font=\footnotesize] at (current bounding box.south) {28,511 common areas; equal ZIP weights; 2017--2021 ACS.\\50 open-ended income codes excluded; descriptive coefficients.};
+\end{tikzpicture}

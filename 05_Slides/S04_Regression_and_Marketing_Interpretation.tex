@@ -236,6 +236,33 @@ FTC Policy Statement Regarding Advertising Substantiation. \url{https://www.ftc.
 
 Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
 \end{frame}
+\begin{frame}{Controls Change the Income Comparison}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.72\textheight}
+\input{../06_Lecture_Notes/figures/M03_digital_controls.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The CCI income association changes sign after adjustment.\par}
+\note{The slope is in index units per $10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older; broadband is a household share. All models retain the same records. Adding controls changes the association represented by income; it does not identify an income intervention.
+
+Pereira et al., Nature Communications (2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
+\end{frame}
+\begin{frame}{State the Population Behind a Coefficient}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Equal ZIP weights describe the released geographic sample.
+\item Household weights change the geographic projection.
+\item An assistance effect needs an intervention and customer outcomes.
+\end{slidebullets}
+\vfill
+\note{Household estimates do not supply Windows device counts. State intercepts allow different average levels but do not remove every unobserved source of variation. The calculation does not propagate ACS sampling error, differential-privacy noise, or spatial dependence. An improved residual fit supplies no causal identification.
+
+Pereira et al., Nature Communications (2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
+\end{frame}
 \begin{frame}{Regression Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

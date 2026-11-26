@@ -62,3 +62,7 @@ Both activities are public optional ungraded practice with original synthetic in
 ## Pricing Systems and Customer Choice
 
 [Pricing Information and Customer Outcomes](Pricing_Competition/README.md) is optional ungraded practice with full Python, synthetic parameters, exact results, and evidence questions. Compare independent and joint objectives at a fixed signal accuracy, then change information while retaining the objective. M4, M8, and M9 provide the derivation, Wendy's case, and ethical evaluation.
+
+## Digital Usage and Customer Choice
+
+The [optional ungraded lab](Digital_Usage/README.md) follows an app-service decision through data assessment, geographic maps, regression, clustering, index verification, and Kantian and Confucian evaluation.

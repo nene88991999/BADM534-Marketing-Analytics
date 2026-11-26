@@ -1,0 +1,11 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.5cm] (a) at (0,0) {Consenting consumer\\Windows devices};
+\node[box,text width=3.5cm] (b) at (5.2,0) {Application minutes\\and category weights};
+\node[box,text width=3.5cm] (c) at (10.4,0) {Private aggregation\\and geographic indices};
+\draw[edge] (a) -- (b); \draw[edge] (b) -- (c);
+\node[orangebox,text width=5.5cm] (need) at (8.1,-2.6) {Customer service decision\\Offer digital and assisted channels};
+\draw[accent] (c.south) -- node[right,align=left,font=\footnotesize] {Area-level\\context} (need.north east);
+\node[box,text width=4.2cm] (test) at (0.2,-2.6) {Observe requested channel,\\task completion, time, and cost};
+\draw[edge] (test) -- node[above,font=\footnotesize] {Task evidence} (need);
+\node[align=center,text width=13cm,font=\footnotesize] at (5.2,-4.1) {Application categories aggregate different tasks. An area's usage score does not identify\\an individual customer's ability, preferences, or authorization.};
+\end{tikzpicture}

@@ -1,0 +1,31 @@
+{
+  "areas": 1253,
+  "k": 3,
+  "starts": 30,
+  "max_iterations": 500,
+  "raw_vs_standardized_ari": 0.8050376500877635,
+  "standardization_mean": [
+    2.890773284805736,
+    2.7638330412820067
+  ],
+  "standardization_sd_ddof0": [
+    0.42598054765206383,
+    0.614993052760507
+  ],
+  "standardized_sse": 967.9623904062521,
+  "seed_sensitivity": [
+    {
+      "seed": 1,
+      "ari_to_seed_534": 1.0
+    },
+    {
+      "seed": 17,
+      "ari_to_seed_534": 1.0
+    },
+    {
+      "seed": 2026,
+      "ari_to_seed_534": 1.0
+    }
+  ],
+  "interpretation": "Geographic descriptions; no individual skill or assistance need labels"
+}

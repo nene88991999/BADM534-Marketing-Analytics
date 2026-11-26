@@ -116,3 +116,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Pricing Systems and Customer Choice
 
 [The Wendy's case and source review](01_Resources/37_Pricing_Systems_and_Competition/README.md) connect disputed pricing authority to customer choice. [An original two-restaurant model](03_Data_and_Code/Pricing_Competition/README.md) separates demand information from joint pricing with complete Python, nine checks, and two editable figures. M4 §4.26, M8 §8.28, M9 §9.22, Sessions 5 and 14, and [optional practice](07_Labs/Pricing_Competition/README.md) carry the analysis.
+
+## Digital Usage and Customer Access
+
+The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects public geographic application indices to measurement, Census comparisons, regression, clustering, and customer choice. Complete Python, source rights, and optional ungraded practice accompany the notes and five session decks.

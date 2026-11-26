@@ -1,0 +1,80 @@
+{
+  "retrieved_on": "2026-11-25",
+  "release_commit": "4024bc0938c4242f2429af94c5fec1e5a42113dc",
+  "release_tag": "version",
+  "release_url": "https://raw.githubusercontent.com/microsoft/Consumption-of-Digital-Applications-Data-Set/4024bc0938c4242f2429af94c5fec1e5a42113dc/dataset/Consumption_of_digital_applications_indices.csv",
+  "zenodo_doi": "10.5281/zenodo.22084797",
+  "census_sources": [
+    {
+      "filename": "b19013.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2021/table-based-SF/data/5YRData/acsdt5y2021-b19013.dat",
+      "sha256": "b5ec13b99f90a3b5311693b5067914979f19b2963b33272865c864c026f0485a",
+      "bytes": 17960309,
+      "archive_in_git": false,
+      "saved_filename_for_extractor": "b19013.dat"
+    },
+    {
+      "filename": "b15003.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2021/table-based-SF/data/5YRData/acsdt5y2021-b15003.dat",
+      "sha256": "5a18ff54755f22f8a4c157a3a96ddf9c047ae1961daf8c45d80ef07047339abe",
+      "bytes": 92894394,
+      "archive_in_git": false,
+      "saved_filename_for_extractor": "b15003.dat"
+    },
+    {
+      "filename": "b28002.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2021/table-based-SF/data/5YRData/acsdt5y2021-b28002.dat",
+      "sha256": "b28941ed2f2cdd271b7cd4f617f69c755302131bb6c730216cf8cc9f347139a5",
+      "bytes": 58555049,
+      "archive_in_git": false,
+      "saved_filename_for_extractor": "b28002.dat"
+    },
+    {
+      "filename": "gazetteer2021.zip",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2021_Gazetteer/2021_Gaz_zcta_national.zip",
+      "sha256": "d6a68825d6028a2293971296076d9ed2fba63ab4182c5f9b353c8bb77e6e63db",
+      "archive_in_git": false
+    }
+  ],
+  "inputs": [
+    {
+      "path": "data/LICENSE-CDLA-Permissive-2.0.md",
+      "sha256": "a951f9708028f03044ed67405797915672bfbd3fb636887f837baea5204de170",
+      "bytes": 2371
+    },
+    {
+      "path": "data/acs2021_zcta.csv",
+      "sha256": "1026a89836c5349ebf2f2135ba09f8008e516f9ca1d07e81b73422df01d484f7",
+      "bytes": 2332861
+    },
+    {
+      "path": "data/acs_variable_definitions.json",
+      "sha256": "fe9f74f944b6d2a09e4b1f7a4480fcd2b203c0c350845f23b1c7e49cef6d4720",
+      "bytes": 103257
+    },
+    {
+      "path": "data/published_indices.csv",
+      "sha256": "23c3c6f719114ba08366fe4fca246c2bdb1e1b49cd7237c3027b1d2c6fd6b96f",
+      "bytes": 1303341
+    },
+    {
+      "path": "data/zcta_coordinates.csv",
+      "sha256": "d7d5e146209a5807224abb20b3794d317cb77eee8ba164b0aedff49eec9d656d",
+      "bytes": 911508
+    }
+  ],
+  "transformations": [
+    "Source release CSV preserved byte-for-byte",
+    "Census summary level 860Z200US; selected estimate/margin columns; retained raw sentinels",
+    "Gazetteer internal points; three selected columns",
+    "Four-digit postal values zero-padded in analysis only",
+    "Boundary income values flagged; excluded only from income regression"
+  ],
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "upstream_code_executed": false,
+  "model_api_calls": 0
+}

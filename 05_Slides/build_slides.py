@@ -30,7 +30,10 @@ def frame_tex(s):
             body+='\\centering\n\\begingroup\n'
             if diagram:
                 body+='\\fontsize{11}{13.2}\\selectfont\n\\def\\small{\\fontsize{10}{12}\\selectfont}\n\\def\\footnotesize{\\fontsize{9}{11}\\selectfont}\n\\def\\scriptsize{\\fontsize{8}{9.5}\\selectfont}\n\\hyphenpenalty=10000\n'
-            body+='\\begin{adjustbox}{max width=0.98\\textwidth,max totalheight=0.65\\textheight}\n\\input{'+s['figure']+'}\n\\end{adjustbox}\n\\endgroup\n\\par\\medskip\n{\\small '+esc(s['caption'])+'\\par}\n'
+            height = float(s.get('figure_height', 0.65))
+            if not 0 < height <= 0.8:
+                raise ValueError('Figure height must be between zero and 0.8')
+            body+='\\begin{adjustbox}{max width=0.98\\textwidth,max totalheight='+str(height)+'\\textheight}\n\\input{'+s['figure']+'}\n\\end{adjustbox}\n\\endgroup\n\\par\\medskip\n{\\small '+esc(s['caption'])+'\\par}\n'
         elif kind=='code':
             body+='\\noindent '+esc(s['intro'])+'\n\\begin{lstlisting}\n'+s['code'].rstrip()+'\n\\end{lstlisting}\n{\\small '+esc(s['check'])+'\\par}\n'
         elif kind=='table':

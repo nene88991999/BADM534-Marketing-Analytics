@@ -45,3 +45,7 @@ The worked examples include replacement text features and classifier compatibili
 ## Pricing Systems and Customer Choice
 
 The syllabus includes shared pricing systems and the Wendy's dispute among its cases. Sessions 5 and 14 connect an original synthetic pricing model to source evidence and Kantian and Confucian evaluation. The [optional lab](../07_Labs/Pricing_Competition/README.md) provides the full Python exercise. Existing dates, meeting durations, and pending assessment rules are preserved.
+
+## Digital Usage and Customer Access
+
+The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs. The fifteen meeting dates, start and end times, and calendar event topics remain unchanged.

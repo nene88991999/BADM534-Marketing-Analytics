@@ -554,6 +554,26 @@
         "source": "ETHICS_AND_REGULATION.md, M2."
       },
       {
+        "kind": "figure",
+        "title": "Application Activity and Customer Needs",
+        "figure": "../06_Lecture_Notes/figures/M02_digital_measurement.tex",
+        "caption": "Geographic application use and individual service outcomes have different observation units.",
+        "description": "Consenting Windows devices contribute category minutes to private geographic indices. Direct evidence on customer tasks separately informs service design.",
+        "notes": "A retailer deciding between digital and assisted service needs evidence about requested tasks, devices, and outcomes. The source observes consenting consumer Windows devices from October 2022 to March 2023. Browser categories mix many tasks. Public indices do not establish an individual customer’s skill, wishes, or authorization.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Reproduce the Published Calculation",
+        "bullets": [
+          "Equation S1 gives MCI 6.4765 for illustrative device 1.",
+          "The source table prints 4.46; a natural-log calculation reproduces it.",
+          "The private production convention remains unresolved."
+        ],
+        "notes": "The complete Python in M2 §2.27 preserves the source’s rounded category weights and three illustrative minute vectors. Natural logs of positive minutes, with zero at zero minutes, match all three displayed values to two decimals. The weights sum to 0.996. This is a check of the worked example, not a reconstruction of private telemetry. Minute weights also change the aggregate from 3.6733 to 3.6304.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Measurement Discussion",
         "bullets": [
@@ -572,7 +592,8 @@
       "[McBroken data and code](../03_Data_and_Code/McBroken/README.md)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
-      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)"
+      "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
+      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)"
     ],
     "practice": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.",
     "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations."
@@ -843,6 +864,27 @@
         "source": "ETHICS_AND_REGULATION.md, M2-M3."
       },
       {
+        "kind": "figure",
+        "title": "Digital Usage Across Illinois",
+        "figure": "../06_Lecture_Notes/figures/M02_digital_geography.tex",
+        "caption": "1,253 Illinois areas. Each index uses its own mean and standard deviation.",
+        "description": "Two point maps use Census internal points, fixed axes, and identical intervals below -1, between -1 and 1, and above 1. Each index has its own Illinois mean and standard deviation.",
+        "notes": "Each point is an area, without a population or device-count weight. Equal standardized thresholds compare relative positions within each index, rather than identical levels in original units. Point density can reflect the density of postal identifiers. A point is neither a boundary polygon nor a device location.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+        "figure_height": 0.74
+      },
+      {
+        "kind": "bullets",
+        "title": "Identifiers and Income Codes Change the Sample",
+        "bullets": [
+          "Restore 2,214 leading zeros before the geographic join.",
+          "All 28,561 release identifiers match the archived Census extracts.",
+          "Flag 50 open-ended income values; use 28,511 regression areas."
+        ],
+        "notes": "The ACS estimates cover 2017–2021; Windows activity covers October 2022–March 2023. ZCTAs approximate postal areas, so a matching string does not establish identical populations. Codes 2,499 and 250,001 represent income intervals. All 1,253 released Illinois areas remain in the map and clustering; one Illinois boundary-income record leaves the national regression sample.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Visualization Discussion",
         "bullets": [
@@ -865,7 +907,8 @@
       "[Statistical Graphics: Data and Code](../03_Data_and_Code/Statistical_Graphics/README.md)",
       "[PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)",
       "[Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)",
-      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)"
+      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)",
+      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)"
     ],
     "practice": "Assess chart values, paired changes, scales, and denominator controls.",
     "application": "Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes."
@@ -1057,6 +1100,27 @@
         "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
+        "kind": "figure",
+        "title": "Controls Change the Income Comparison",
+        "figure": "../06_Lecture_Notes/figures/M03_digital_controls.tex",
+        "caption": "The CCI income association changes sign after adjustment.",
+        "description": "MCI income coefficients decline from 0.05521 to 0.00209 and 0.00132; CCI changes from 0.04856 to -0.01821 and -0.01750 after controls and state effects.",
+        "notes": "The slope is in index units per $10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older; broadband is a household share. All models retain the same records. Adding controls changes the association represented by income; it does not identify an income intervention.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+        "figure_height": 0.72
+      },
+      {
+        "kind": "bullets",
+        "title": "State the Population Behind a Coefficient",
+        "bullets": [
+          "Equal ZIP weights describe the released geographic sample.",
+          "Household weights change the geographic projection.",
+          "An assistance effect needs an intervention and customer outcomes."
+        ],
+        "notes": "Household estimates do not supply Windows device counts. State intercepts allow different average levels but do not remove every unobserved source of variation. The calculation does not propagate ACS sampling error, differential-privacy noise, or spatial dependence. An improved residual fit supplies no causal identification.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Regression Discussion",
         "bullets": [
@@ -1074,7 +1138,8 @@
       "[mHealth regression code](../03_Data_and_Code/mHealth/recurring_examples/m03.py)",
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
-      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)"
+      "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)",
+      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)"
     ],
     "practice": "Reproduce OLS and assess exact-day matching, specification, and uncertainty.",
     "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price."
@@ -1726,6 +1791,27 @@
         "source": "M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
+        "kind": "figure",
+        "title": "Geographic Usage Groups",
+        "figure": "../06_Lecture_Notes/figures/M04_digital_clusters.tex",
+        "caption": "Raw and standardized distances produce different geographic groups.",
+        "description": "Illinois groups contain 94, 347, and 812 areas. The adjusted Rand index comparing raw and standardized clustering is 0.805.",
+        "notes": "The three groups are a fixed descriptive example. Thirty random starts and four tested seeds yield the same standardized partition. Raw distances give more influence to the index with larger spread. Group names order mean MCI and carry no ranking of customer ability or value.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+        "figure_height": 0.72
+      },
+      {
+        "kind": "bullets",
+        "title": "Stable Groups Still Need Outcome Validation",
+        "bullets": [
+          "Raw versus standardized partitions: adjusted Rand index 0.805.",
+          "Tested seed changes leave the standardized partition unchanged.",
+          "Observe requested assistance and task completion before allocating service."
+        ],
+        "notes": "Adjusted Rand agreement compares co-membership and is not a percentage of identical labels. Seed stability checks a computation under chosen features. Scaling changes the meaning of similarity. The public data contain no individual assistance need or service outcome, so no cluster is validated as a customer capability category.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Retention Discussion",
         "bullets": [
@@ -1745,7 +1831,8 @@
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
       "[Clustering Optimization and Sources](../01_Resources/23_Clustering_Optimization/README.md)",
-      "[Optional Clustering Practice](../07_Labs/Clustering_Optimization/README.md)"
+      "[Optional Clustering Practice](../07_Labs/Clustering_Optimization/README.md)",
+      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)"
     ],
     "practice": "Fit earlier-period segments and independently reproduce lifetime value; optional CPU clustering comparison and final-label checks.",
     "application": "Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions."
@@ -4767,6 +4854,28 @@
       },
       {
         "kind": "bullets",
+        "title": "Digital Service and Feasible Customer Choice",
+        "bullets": [
+          "Offer assistance while preserving a usable alternative.",
+          "Measure completion, customer time, and firm cost on a fixed roster.",
+          "Treat geographic usage as context for investigation."
+        ],
+        "notes": "An optional assistance intervention can expand feasible choices. A mandatory app workflow may impose equipment, registration, and verification costs. A proposed evaluation should record the customer’s requested action and channel and preserve the ability to refuse optional profiling. Geographic Windows usage does not observe those outcomes.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Evidence and Authority to Classify a Customer",
+        "bullets": [
+          "Kantian critique examines the move from area activity to individual ability.",
+          "Respect for persons requires reasons for restrictions and usable correction.",
+          "Confucian role responsibilities support responsive, humane service."
+        ],
+        "notes": "A stable cluster does not authorize a firm to remove an individual’s options. Examine the additional premise linking measured activity to a permissible action. Humane intent must be connected to the customer’s stated task and preferred channel, with an opportunity to correct classifications. The same area score can motivate assistance or exclusion; the consequences and authority differ.",
+        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
           "State the commercial target and customer outcome.",
@@ -4798,7 +4907,8 @@
       "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)",
       "[Pricing Case: Sources and Evidence](../01_Resources/37_Pricing_Systems_and_Competition/README.md)",
       "[Pricing Comparison: Code and Results](../03_Data_and_Code/Pricing_Competition/README.md)",
-      "[Pricing Comparison: Optional Practice](../07_Labs/Pricing_Competition/README.md)"
+      "[Pricing Comparison: Optional Practice](../07_Labs/Pricing_Competition/README.md)",
+      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)"
     ],
     "practice": "Reproduce identical billing with different customer intent, then identify the claim, premise, and evidence that would change a recommendation.",
     "application": "Evaluate marketing practices using Kantian, institutional, and Confucian arguments alongside customer outcomes and current rules."

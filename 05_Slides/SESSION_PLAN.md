@@ -11,19 +11,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 27 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 23 |
-| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 27 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 41 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 21 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 25 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 55 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 58 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 43 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 50 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -54,9 +54,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 27, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator.
+**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states.
+**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
 **Ethics and Regulation:** Missingness, sample exclusions, and customer representation.
 
@@ -68,18 +68,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–140 | Cancellation Records and the Review Queue |
-| 140–155 | Application and Interpretation |
+| 140–148 | Digital Usage, Measurement, and Index Verification |
+| 148–155 | Application and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 03. Visualization and Data Quality
 
 **Meeting:** February 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval.
+**Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes.
+**Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Chart claims, denominator choices, and coverage
+**Ethics and Regulation:** Chart claims, denominator choices, and coverage.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -89,18 +90,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–140 | Map Footprints and Reachable Locations |
-| 140–155 | Chart Interpretation and Sampling Scope |
+| 140–145 | Chart Interpretation and Sampling Scope |
+| 145–155 | Digital Usage Maps and Geographic Denominators |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 04. Regression and Marketing Interpretation
 
 **Meeting:** February 10, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty.
+**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Substantiation and the distinction between association and benefit
+**Ethics and Regulation:** Substantiation and the distinction between association and benefit.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -110,9 +112,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–135 | Response Coefficients and Source Bias |
-| 135–155 | Price Coefficients and Interpretation |
+| 135–145 | Price Coefficients and Interpretation |
+| 145–155 | Digital Usage and Conditional Income Associations |
 | 155–170 | Ethics and Decision Discussion |
-
 
 ### 05. Conjoint and Product Design
 
@@ -122,7 +124,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus.
 
-**Ethics and Regulation:** Price completeness and the attributes customers actually evaluate
+**Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -140,11 +142,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice.
+**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions.
+**Application:** Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Retention, consumer agency, and effective cancellation
+**Ethics and Regulation:** Retention, consumer agency, and effective cancellation.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -155,7 +157,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise |
 | 125–140 | Clustering Optimization and Final Labels |
 | 140–155 | Retention Definitions and Interpretation |
-| 155–170 | Ethics and Decision Discussion |
+| 155–165 | Geographic Usage Groups and Service Evidence |
+| 165–170 | Ethics and Decision Discussion |
 
 ### 07. Text, Social Media, and Networks
 
@@ -165,7 +168,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph. Compare replacement text coordinates and recorded-category targets within the existing mHealth discussion.
 
-**Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
+**Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -179,8 +182,6 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–140 | mHealth Text Applications |
 | 140–155 | Retail Alternatives and Network Access |
 | 155–170 | Ethics and Decision Discussion |
-
-The fifteen-minute retail-network block includes five minutes comparing aggregation and original access. The additional ten-minute calculation uses the Python block.
 
 ### 08. Project Evidence and Midterm Presentations
 
@@ -208,7 +209,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version.
 
-**Ethics and Regulation:** Defensible treatment designs and informed customer choice
+**Ethics and Regulation:** Defensible treatment designs and informed customer choice.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -220,7 +221,6 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 125–135 | Fixed and Adaptive Research Designs |
 | 135–155 | Treatment Effects and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
-
 
 ### 10. Causal Comparisons and Policy Evaluation
 
@@ -251,7 +251,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate.
 
-**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
+**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -277,7 +277,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Application:** Separate experimentally measured behavior from model-dependent consumer welfare.
 
-**Ethics and Regulation:** Customer control, privacy, and the objective of personalization
+**Ethics and Regulation:** Customer control, privacy, and the objective of personalization.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -315,11 +315,11 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal.
+**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
+**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior..
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -335,7 +335,8 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 100–110 | Demand Information and Pricing Objectives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
-| 155–170 | Decision Discussion |
+| 155–165 | Digital Channels and Meaningful Customer Choice |
+| 165–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
 
@@ -354,7 +355,6 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 75–85 | Break |
 | 85–145 | Presentation Discussion |
 | 145–170 | Synthesis and Customer Consequences |
-
 ## Coverage and Course Requirements
 
 The sequence follows M1–M8, with M9 Marketing Dialectics integrated into Session 14, in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.

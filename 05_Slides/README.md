@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 408 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 418 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -132,3 +132,7 @@ Sessions 7, 11, and 14 add five slides connecting text coordinates, classifier c
 ## Pricing Systems and Customer Choice
 
 Session 5 adds the independent and joint pricing equations and a surplus figure. Session 14 adds the Wendy's case, the data-and-authority diagram, evidence questions, and the numerical comparison; existing philosophical discussion applies the case. Six additional slides have complete Markdown companions and source links. [Code and optional practice](../03_Data_and_Code/Pricing_Competition/README.md) support the unchanged fifteen 170-minute meetings.
+
+## Digital Usage and Customer Access
+
+Sessions 2, 3, 4, 6, and 14 include ten slides on geographic measurement, index verification, Census maps, income projections, clustering, and meaningful customer choice. The [complete Python example](../03_Data_and_Code/Digital_Usage/README.md) and [optional lab](../07_Labs/Digital_Usage/README.md) support longer practice within the existing course plan.

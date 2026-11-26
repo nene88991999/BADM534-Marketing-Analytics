@@ -343,6 +343,33 @@ M4, Section 4.20. \url{../03_Data_and_Code/Clustering_Optimization/README.md}}
 
 M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md}}
 \end{frame}
+\begin{frame}{Geographic Usage Groups}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.72\textheight}
+\input{../06_Lecture_Notes/figures/M04_digital_clusters.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Raw and standardized distances produce different geographic groups.\par}
+\note{The three groups are a fixed descriptive example. Thirty random starts and four tested seeds yield the same standardized partition. Raw distances give more influence to the index with larger spread. Group names order mean MCI and carry no ranking of customer ability or value.
+
+Pereira et al., Nature Communications (2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
+\end{frame}
+\begin{frame}{Stable Groups Still Need Outcome Validation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Raw versus standardized partitions: adjusted Rand index 0.805.
+\item Tested seed changes leave the standardized partition unchanged.
+\item Observe requested assistance and task completion before allocating service.
+\end{slidebullets}
+\vfill
+\note{Adjusted Rand agreement compares co-membership and is not a percentage of identical labels. Seed stability checks a computation under chosen features. Scaling changes the meaning of similarity. The public data contain no individual assistance need or service outcome, so no cluster is validated as a customer capability category.
+
+Pereira et al., Nature Communications (2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
+\end{frame}
 \begin{frame}{Retention Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

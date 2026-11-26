@@ -15,3 +15,6 @@
 
 # iCalendar requires CRLF; folded content can end with significant spaces.
 *.ics -text whitespace=-blank-at-eol,cr-at-eol
+
+# Preserve the published digital-usage release checksum.
+/03_Data_and_Code/Digital_Usage/data/published_indices.csv -text

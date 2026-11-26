@@ -26,6 +26,7 @@ Session 03. M2. 170 minutes.
 - [PyStatlas Resource Guide](../01_Resources/17_PyStatlas_Statistical_Graphics/README.md)
 - [Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)
 - [Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)
+- [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 
 ## Slide 1: Visualization and Data Quality
 
@@ -297,7 +298,29 @@ A technically correct chart can still communicate a stronger claim than the evid
 
 Source: ETHICS_AND_REGULATION.md, M2-M3.
 
-## Slide 25: Visualization Discussion
+## Slide 25: Digital Usage Across Illinois
+
+1,253 Illinois areas. Each index uses its own mean and standard deviation.
+
+**Figure description:** Two point maps use Census internal points, fixed axes, and identical intervals below -1, between -1 and 1, and above 1. Each index has its own Illinois mean and standard deviation.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_digital_geography.tex)
+
+Each point is an area, without a population or device-count weight. Equal standardized thresholds compare relative positions within each index, rather than identical levels in original units. Point density can reflect the density of postal identifiers. A point is neither a boundary polygon nor a device location.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 26: Identifiers and Income Codes Change the Sample
+
+- Restore 2,214 leading zeros before the geographic join.
+- All 28,561 release identifiers match the archived Census extracts.
+- Flag 50 open-ended income values; use 28,511 regression areas.
+
+The ACS estimates cover 2017–2021; Windows activity covers October 2022–March 2023. ZCTAs approximate postal areas, so a matching string does not establish identical populations. Codes 2,499 and 250,001 represent income intervals. All 1,253 released Illinois areas remain in the map and clustering; one Illinois boundary-income record leaves the national regression sample.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 27: Visualization Discussion
 
 - Which customers receive weight in the chart?
 - Could sample restrictions reverse the recommendation?

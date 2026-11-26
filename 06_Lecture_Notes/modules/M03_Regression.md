@@ -375,3 +375,106 @@ Adding examples of the same task without the tag supplies a contrast. In the syn
 A useful comparison holds the source bias fixed. Suppose synthetic bias depends on price and an overall optimism shift, while the primary response depends on price and the premium feature. Comparing standard and premium profiles at the same price removes both bias terms. Comparing prices retains the price bias. Under this specification, the first contrast identifies the feature contribution, while primary observations are necessary to identify the price contribution separately.
 
 The distinction depends on the allowed bias features. Admitting a premium-feature bias also confounds the feature contrast. [Jasin, Lin, and Zhang](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298), Theorem 2, formalize this relationship between response and bias features. [Section 4.24](M04_Conjoint_Segmentation_and_CLV.md) gives the numerical example and complete Python; [Section 7.37](M07_Prediction_and_Machine_Learning.md) examines an omitted bias feature. Coefficient recovery under the stated response model supplies a statistical comparison. A causal interpretation still requires the relevant assignment and population conditions.
+
+## 3.17 Area Income, Digital Usage, and the Comparison Defined by Controls
+
+\noindent A retailer considering digital service expansion may observe greater computer usage in affluent areas. Income is also related to education, internet subscriptions, occupations, and the composition of devices that share diagnostics. The simple income slope combines these relationships. Comparing models on the same geographic sample reveals how the fitted income association changes when specified characteristics are held fixed.
+
+Use the 28,511 released areas with a matched 2021 ACS income estimate inside the published open-ended boundaries, education share, and broadband share. Each area receives equal weight. The outcome is one of the two released indices from October 2022 through March 2023. The descriptive linear model is
+
+$$
+I_g=\alpha+\beta\frac{Y_g}{10{,}000}+\gamma E_g+\delta B_g+\lambda_{s(g)}+u_g.
+$$
+
+Here $I_g$ is the area index, $Y_g$ is median household income in 2021 dollars, $E_g$ is the bachelor's-or-higher share among adults aged 25 or older, and $B_g$ is the household broadband share. The state intercept $\lambda_{s(g)}$ enters only the third specification. The coefficient $\beta$ measures index units per $10,000 of area median income under the chosen projection. Omitting $E_g$, $B_g$, and the state intercepts gives the simple comparison.
+
+| Common-Sample Specification | MCI Income Coefficient | CCI Income Coefficient |
+| --- | ---: | ---: |
+| Income Alone | 0.05521 | 0.04856 |
+| Education and Broadband Controls | 0.00209 | -0.01821 |
+| Controls and State Intercepts | 0.00132 | -0.01750 |
+
+![Income coefficients for both indices change after controlling for education and broadband. CCI becomes negative; MCI remains positive and much smaller. All models use 28,511 areas with equal weights.](../figures/M03_digital_controls.png)
+
+For CCI, the simple positive association becomes negative after adjustment. This comparison shows the sensitivity of the income projection to correlated characteristics. It does not identify an effect of raising household income. Education and broadband may themselves reflect economic processes related to income and usage; selecting them as controls requires an estimand before a causal interpretation is attempted.
+
+State intercepts remove differences in average levels across states while retaining within-state variation in the covariates. They do not make households within an area interchangeable or remove unmeasured area differences. The fitted coefficients describe this released geographic sample. ACS sampling error, spatial dependence, selection into Windows telemetry, and privacy noise remain consequential for any population inference, so the comparison reports coefficients without inferential intervals.
+
+The separate household-weighted calculation changes the importance of each area using its ACS household estimate. Those weights describe a different geographic projection and do not recover the unobserved number of Windows devices. Comparing weighted and unweighted coefficients is useful only after stating which population each projection represents.
+
+### 3.17.1 Complete Python Comparison
+
+\noindent Run the assessment in Section 2.26 first. From the repository root, run:
+
+```bash
+python3 03_Data_and_Code/Digital_Usage/compare_models.py
+```
+
+The script uses one common sample for every specification and both outcomes, solves least squares without a matrix inverse, checks matrix rank, and writes coefficients, residual prediction errors, and the household-weight sensitivity. Residual errors describe in-sample fit; an improved fit does not supply a causal interpretation or a deployment validation.
+
+Python source: [compare_models.py](../../03_Data_and_Code/Digital_Usage/compare_models.py).
+
+```python
+"""Compare descriptive income slopes on one complete-case geographic sample."""
+import json
+from pathlib import Path
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+
+
+def fit(x, y, weights):
+    # Weighted least squares by a square-root transformation; no inversion.
+    scale = np.sqrt(weights / weights.mean())
+    beta, _, rank, _ = np.linalg.lstsq(x * scale[:, None], y * scale, rcond=None)
+    if rank != x.shape[1]:
+        raise ValueError("The design matrix is rank deficient")
+    return beta
+
+
+def main():
+    data = pd.read_csv(ROOT / "results/joined_areas.csv", dtype={"zip": "string"})
+    fields = ["income_10k", "college_share", "broadband_share"]
+    # Same rows for all models and both outcomes; equal geographic weights.
+    sample = data.dropna(subset=fields).copy()
+    assert len(sample) == int(data.regression_eligible.sum())
+    ones = np.ones(len(sample))
+    designs = {
+        "Income": np.column_stack([ones, sample.income_10k]),
+        "Income, Education, Broadband": np.column_stack([ones, sample[fields]]),
+    }
+    state = pd.get_dummies(sample.state, drop_first=True).to_numpy(dtype=float)
+    designs["Controls and State Effects"] = np.column_stack([
+        designs["Income, Education, Broadband"], state])
+    result = []
+    for outcome in ["mci", "cci"]:
+        y = sample[outcome].to_numpy()
+        for name, x in designs.items():
+            beta = fit(x, y, ones)
+            result.append({"index": outcome, "model": name,
+                "areas": len(sample), "income_slope_per_10000_dollars": beta[1],
+                "rmse_index_units": float(np.sqrt(np.mean((y - x @ beta) ** 2)))})
+    pd.DataFrame(result).to_csv(ROOT / "results/regressions.csv", index=False)
+    # Census household weights change the geographic estimand. They are not
+    # Windows device counts or counts of individual people using applications.
+    weighted = []
+    for outcome in ["mci", "cci"]:
+        y = sample[outcome].to_numpy()
+        x = designs["Income, Education, Broadband"]
+        beta = fit(x, y, sample.B28002_E001.to_numpy())
+        weighted.append({"index": outcome, "areas": len(sample),
+            "income_slope_per_10000_dollars": beta[1],
+            "weight": "ACS household estimate"})
+    pd.DataFrame(weighted).to_csv(ROOT / "results/household_weight_sensitivity.csv", index=False)
+    (ROOT / "results/model_scope.json").write_text(json.dumps({
+        "sample": len(sample), "unit": "released ZIP matched to 2021 ACS ZCTA",
+        "income_units": "10000 inflation-adjusted 2021 dollars",
+        "acs_period": "2017-2021", "usage_period": "October 2022-March 2023",
+        "uncertainty": "No causal effect, population inference, or confidence interval estimated; ACS sampling error, privacy noise, and spatial dependence are not propagated."}, indent=2) + "\n")
+    print(pd.DataFrame(result).to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+```

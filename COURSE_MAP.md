@@ -165,3 +165,7 @@ M5 §5.26 defines a disjoint description sample. M7 §§7.42–7.44 connect coor
 ## Pricing Systems and Customer Choice
 
 [M4 §4.26](06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) solves an original two-restaurant model with information and pricing objectives varied separately. [M8 §8.28](06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) examines the Wendy's complaint and evidence, while [M9 §9.22](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) evaluates pricing authority and customer alternatives. [Code and results](03_Data_and_Code/Pricing_Competition/README.md), two TikZ figures, six additional slides in Sessions 5 and 14, and [optional practice](07_Labs/Pricing_Competition/README.md) accompany the case.
+
+## Digital Usage and Customer Access
+
+The [recurring geographic case](03_Data_and_Code/Digital_Usage/README.md) appears in M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Sessions 2, 3, 4, 6, and 14 distinguish recorded activity, conditional comparisons, similarity, service outcomes, and authority over customer options. The full Python lab is public optional ungraded practice.

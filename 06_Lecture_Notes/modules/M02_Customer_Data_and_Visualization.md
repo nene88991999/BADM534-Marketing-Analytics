@@ -1790,3 +1790,270 @@ if __name__ == "__main__":
     print(json.dumps({k: result[k] for k in ("accepted_unique_events",
           "request_ids_to_review", "confirmed_share", "request_as_completion_share")}, indent=2))
 ```
+
+## 2.26 Digital Usage and the Customer a Firm Observes
+
+\noindent A retailer wants to move appointment booking, coupons, and cancellation requests into its app. An area with extensive computer use may appear ready for digital service. That inference depends on whether the recorded activities describe the tasks customers must complete. A person who watches video on a laptop may need help with identity verification on a phone. Application minutes describe behavior under an observation system; a service decision also requires evidence about customers' goals, available devices, and completed requests.
+
+[Pereira and coauthors](https://www.nature.com/articles/s41467-026-78689-1) construct geographic indices from consenting consumer Windows devices observed from October 2022 through March 2023. The source includes desktops, laptops, and some tablets. Smartphones and other operating systems fall outside that device population. Browser activity combines many tasks, including web applications that might otherwise resemble document creation or email. The study's media and information index, MCI, and content creation and computational index, CCI, summarize different application groups. Their values are composite scores without a percentage or minutes interpretation.
+
+The public release contains one row for each of 28,561 postal identifiers, including 1,253 labeled Illinois. It contains two indices and a state identifier. It supplies no individual records, device counts, app-category minutes, or customer outcomes. The unweighted correlation between the two indices is 0.522 across released areas. Equal area weights give a small postal area the same influence as a large one; they do not estimate the correlation across people or devices.
+
+![The observation process connects consenting Windows devices, recorded application categories, and private geographic aggregation. Direct evidence on customer tasks is a separate input to the service decision.](../figures/M02_digital_measurement.png)
+
+The indices use application weights derived from principal-component loadings and aggregate activity using minute weights. Differential privacy limits the incremental disclosure associated with the defined neighboring device records; the supplement reports a total privacy parameter of $\epsilon=4.1$. This protection does not establish representative device coverage or validate an index as a measure of customer ability. Both the observation process and the aggregation rule matter for interpretation.
+
+### 2.26.1 Geographic Identifiers and Open-Ended Income Values
+
+\noindent Postal codes require string storage. The released CSV omits a leading zero from 2,214 four-digit values. Restoring five-character identifiers precedes matching and uniqueness checks. A numerical average of postal identifiers would have no useful geographic interpretation.
+
+The Census Bureau's ZIP Code Tabulation Areas, or ZCTAs, approximate postal-code areas using Census blocks. Matching their five-character identifiers supplies a reproducible contextual comparison; it does not establish identical geographic populations. All released identifiers match the archived 2021 ACS and Gazetteer extracts. The ACS estimates summarize 2017–2021, while application activity comes from the later six-month period. These dates allow an association between earlier area characteristics and later usage, with no claim that each resident or device is observed in both sources.
+
+The Census income field contains 50 open-ended boundary values among the released areas. Codes 2,499 and 250,001 represent the lower and upper income intervals. Treating them as exact dollar amounts would impose unsupported values. Preserve the codes and an exclusion flag, and use the remaining 28,511 areas for the common regression sample. The maps and clustering retain all released Illinois areas because they use neither income nor the regression restriction.
+
+Education is the share of people aged 25 or older with a bachelor's degree or higher. Broadband is the share of households with broadband of any type. Their denominators differ. Retaining the original estimates and margins of error permits later measurement work; the descriptive regressions below do not propagate ACS sampling error or the privacy mechanism's noise.
+
+### 2.26.2 Complete Python Assessment and Geographic Join
+
+\noindent From the repository root, run `python3 03_Data_and_Code/Digital_Usage/assess_release.py`. Python 3.12 with NumPy 2.3.5 and pandas 2.2.3 reproduces the saved outputs. The program verifies the exact released CSV hash, validates identifiers, retains all released rows, creates Census ratios, flags open-ended income codes, and writes `joined_areas.csv`, the Illinois map table, and sample counts. Archived Census extracts make this analysis independent of network access.
+
+Python source: [assess_release.py](../../03_Data_and_Code/Digital_Usage/assess_release.py).
+
+```python
+"""Assess the public digital-usage release and join Census areas by identifier."""
+import hashlib
+import json
+from pathlib import Path
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+RESULTS = ROOT / "results"
+RAW_HASH = "23c3c6f719114ba08366fe4fca246c2bdb1e1b49cd7237c3027b1d2c6fd6b96f"
+
+
+def zip_strings(values):
+    values = values.astype("string")
+    if not values.str.fullmatch(r"\d{4,5}").fillna(False).all():
+        raise ValueError("Expected four- or five-digit postal identifiers")
+    return values.str.zfill(5)
+
+
+def nonnegative(values):
+    values = pd.to_numeric(values, errors="coerce")
+    return values.where(values >= 0)
+
+
+def ratio(numerator, denominator):
+    result = numerator / denominator.where(denominator > 0)
+    return result.where(result.between(0, 1))
+
+
+def main():
+    path = ROOT / "data/published_indices.csv"
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == RAW_HASH
+    raw = pd.read_csv(path, dtype={"ZIP_CODE": "string"})
+    assert list(raw.columns) == ["ZIP_CODE", "STATE",
+        "MEDIA AND INFORMATION INDEX", "CONTENT CREATION AND COMPUTATIONAL INDEX"]
+    data = raw.rename(columns={"ZIP_CODE": "zip", "STATE": "state",
+        "MEDIA AND INFORMATION INDEX": "mci",
+        "CONTENT CREATION AND COMPUTATIONAL INDEX": "cci"})
+    data["zip"] = zip_strings(data["zip"])
+    assert data["zip"].is_unique and len(data) == 28561
+    assert data.notna().all().all()
+    assert np.isfinite(data[["mci", "cci"]].to_numpy()).all()
+    census = pd.read_csv(ROOT / "data/acs2021_zcta.csv", dtype="string")
+    assert census["zcta"].is_unique
+    for field in census.columns.drop("zcta"):
+        census[field] = nonnegative(census[field])
+    # Boundary codes denote open-ended median categories, not dollar values.
+    census["income_boundary"] = census["B19013_E001"].isin([2499, 250001])
+    census["income_10k"] = census["B19013_E001"].where(
+        ~census["income_boundary"]) / 10000
+    census["college_share"] = ratio(census[
+        [f"B15003_E{n:03d}" for n in [22, 23, 24, 25]]].sum(axis=1, min_count=4),
+        census["B15003_E001"])
+    census["broadband_share"] = ratio(census["B28002_E004"], census["B28002_E001"])
+    data = data.merge(census, left_on="zip", right_on="zcta", how="left",
+                      validate="one_to_one", indicator="census_match")
+    geography = pd.read_csv(ROOT / "data/zcta_coordinates.csv",
+                            dtype={"zcta": "string"})
+    data = data.merge(geography, left_on="zip", right_on="zcta", how="left",
+                      validate="one_to_one", suffixes=("", "_coordinate"))
+    assert len(data) == len(raw)
+    data["regression_eligible"] = data[
+        ["income_10k", "college_share", "broadband_share"]].notna().all(axis=1)
+    # Every released ZIP remains in this table, including unmatched records.
+    RESULTS.mkdir(exist_ok=True)
+    data.to_csv(RESULTS / "joined_areas.csv", index=False, lineterminator="\n")
+    il = data.loc[data.state.eq("IL")].copy()
+    # Each point is a Census internal point matched by identifier, not a person.
+    for index in ["mci", "cci"]:
+        il[index + "_z"] = (il[index] - il[index].mean()) / il[index].std(ddof=0)
+    il[["zip", "latitude", "longitude", "mci", "cci", "mci_z", "cci_z"]].to_csv(
+        RESULTS / "illinois_map.csv", index=False, lineterminator="\n")
+    summary = {"released_rows": len(data), "states_and_dc": data.state.nunique(),
+        "four_digit_codes_restored": int(raw.ZIP_CODE.str.len().eq(4).sum()),
+        "census_matches": int(data.census_match.eq("both").sum()),
+        "regression_eligible": int(data.regression_eligible.sum()),
+        "income_boundary_codes": int(data.income_boundary.sum()),
+        "illinois_rows": len(il), "illinois_mapped": int(il.latitude.notna().sum()),
+        "index_correlation_equal_zip_weights": float(data.mci.corr(data.cci)),
+        "illinois_regression_eligible": int(il.regression_eligible.sum())}
+    data.groupby("state", observed=True).agg(released=("zip", "size"),
+        eligible=("regression_eligible", "sum")).to_csv(RESULTS / "state_coverage.csv")
+    (RESULTS / "assessment.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 2.26.3 The Same Scale Across Two Geographic Comparisons
+
+\noindent An area can be above the Illinois average on one application index and below it on the other. Standardizing each index by its own Illinois mean and population standard deviation expresses both comparisons in standard-deviation units. Blue circles are below minus one, gray crosses lie between minus one and one, and orange triangles exceed one. The thresholds are identical across panels; their original index values differ. Each Census internal point represents an area rather than a resident, device, or boundary polygon.
+
+![Two Illinois point maps use the same three standardized-score intervals for MCI and CCI. Equal area weights and fixed axes preserve the geographic comparison; the points describe 1,253 released areas.](../figures/M02_digital_geography.png)
+
+Dense groups of points can reflect many small postal areas. Their visual concentration does not establish a concentration of customers. The companion CSV preserves the original scores, standardized scores, and coordinates so that a reader can compare a named area directly. A retailer should collect service-task evidence before using the map to allocate support or remove a channel.
+
+### 2.26.4 Reconstruct the Census Extracts
+
+\noindent The three archived Census tables are B19013, B15003, and B28002 from the 2021 five-year table-based Summary File. Download the exact files identified in the [data manifest](../../03_Data_and_Code/Digital_Usage/manifest.json), along with the 2021 national ZCTA Gazetteer ZIP, into a directory. Run `python3 03_Data_and_Code/Digital_Usage/prepare_census.py --source-dir PATH`. The extraction retains summary level `860Z200US`, selected estimates and their margins of error, and Gazetteer internal-point coordinates. It records source hashes and rejects duplicate identifiers within a table.
+
+Python source: [prepare_census.py](../../03_Data_and_Code/Digital_Usage/prepare_census.py).
+
+```python
+"""Extract archived Census ZCTA tables from downloaded official source files.
+
+Usage: python prepare_census.py --source-dir PATH
+Download URLs and SHA256 hashes are in manifest.json. No network calls occur.
+"""
+import argparse
+import csv
+import hashlib
+import io
+import json
+from pathlib import Path
+import zipfile
+
+ROOT = Path(__file__).resolve().parent
+FIELDS = {"b19013": [1], "b15003": [1, 22, 23, 24, 25],
+          "b28002": [1, 4]}
+
+
+def prepare(source):
+    rows, sources = {}, []
+    for table, numbers in FIELDS.items():
+        path = source / f"{table}.dat"
+        fields = [f"{table.upper()}_{kind}{n:03d}"
+                  for n in numbers for kind in ["E", "M"]]
+        seen = set()
+        with path.open() as stream:
+            for row in csv.DictReader(stream, delimiter="|"):
+                geo = row["GEO_ID"]
+                if not geo.startswith("860Z200US"):
+                    continue
+                code = geo[-5:]
+                if code in seen:
+                    raise ValueError(f"Duplicate ZCTA in {table}: {code}")
+                seen.add(code)
+                rows.setdefault(code, {"zcta": code}).update(
+                    {field: row[field] for field in fields})
+        sources.append({"file": path.name, "zctas": len(seen),
+                        "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+    columns = ["zcta"] + [f"{t.upper()}_{k}{n:03d}" for t, ns in
+                         FIELDS.items() for n in ns for k in ["E", "M"]]
+    with (ROOT / "data/acs2021_zcta.csv").open("w", newline="") as out:
+        writer = csv.DictWriter(out, columns, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows[c] for c in sorted(rows))
+    path = source / "gazetteer2021.zip"
+    with zipfile.ZipFile(path) as archive:
+        raw = archive.read("2021_Gaz_zcta_national.txt").decode()
+    reader = csv.DictReader(io.StringIO(raw), delimiter="\t")
+    reader.fieldnames = [x.strip() for x in reader.fieldnames]
+    with (ROOT / "data/zcta_coordinates.csv").open("w", newline="") as out:
+        writer = csv.writer(out, lineterminator="\n")
+        writer.writerow(["zcta", "latitude", "longitude"])
+        for row in reader:
+            writer.writerow([row["GEOID"], row["INTPTLAT"].strip(),
+                             row["INTPTLONG"].strip()])
+    sources.append({"file": path.name,
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+    (ROOT / "results/census_extraction.json").write_text(
+        json.dumps(sources, indent=2) + "\n")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--source-dir", type=Path, required=True)
+    prepare(parser.parse_args().source_dir)
+```
+
+## 2.27 Verify an Index Before Interpreting Its Differences
+
+\noindent A customer-service manager wants to know whether an index gives greater weight to frequent users. The answer depends on two transformations: how application minutes become a device score and how device scores become an area score. A worked numerical example can reveal this distinction before the much larger dataset is used.
+
+The paper's supplement reports the transformation $x=\log_2(1+\text{minutes})$ in Equation S1. Using its rounded MCI category weights, this rule produces the second numeric column below for the three devices in Table 2. The displayed source values are reproduced to two decimal places by taking the natural logarithm of positive minutes and assigning zero at zero minutes. That agreement identifies an alternative calculation consistent with the toy table. The transformation used in the private production pipeline remains unresolved.
+
+| Illustrative Device | Published MCI | Equation S1 | Natural Log of Positive Minutes |
+| --- | ---: | ---: | ---: |
+| 1 | 4.46 | 6.4765 | 4.4603 |
+| 2 | 3.09 | 4.4847 | 3.0887 |
+| 3 | 3.47 | 5.0689 | 3.4678 |
+
+The rounded weights sum to 0.996. Renormalizing them would introduce another change and does not explain the difference between the table and equation. Preserve the supplied weights when testing the published calculation, then investigate alternative conventions explicitly.
+
+The area aggregation gives greater weight to devices with more category-group minutes. For the three displayed scores, the equal-device mean is 3.6733 and the minute-weighted mean is 3.6304. Device 2 has the lowest score and the most minutes, so weighting lowers the average. A change in the area index could therefore follow a change in the relative activity of existing devices even if their individual scores were fixed.
+
+The public release and paper also report different geographic counts. The CSV has 28,561 rows; Figure 3 reports 30,776; supplementary sections and its flow diagram report further samples. Their relationship is not fully reconciled in the released files. State the release version, hash, and actual analysis denominator rather than treating every reported count as the same population. These checks concern the reproducibility of particular claims and do not determine the validity of every result in the study.
+
+Run `python3 03_Data_and_Code/Digital_Usage/verify_index.py` to reconstruct the two transformations and aggregation rules. The inputs are the supplement's illustrative devices, separate from the released geographic observations.
+
+Python source: [verify_index.py](../../03_Data_and_Code/Digital_Usage/verify_index.py).
+
+```python
+"""Recompute the supplement's three-device illustration under two transforms."""
+import json
+from pathlib import Path
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+# Supplement Table 1's rounded MCI weights and Table 2's illustrative minutes.
+WEIGHTS = np.array([.212, .263, .132, .098, .082, .142, .067])
+MINUTES = np.array([[30, 200, 100, 25, 5, 600, 300],
+                    [0, 15, 120, 0, 360, 1200, 45],
+                    [10, 20, 45, 30, 20, 500, 30]], dtype=float)
+PUBLISHED = np.array([4.46, 3.09, 3.47])
+
+
+def compare():
+    stated = np.log2(1 + MINUTES) @ WEIGHTS
+    positive_log = np.zeros_like(MINUTES)
+    np.log(MINUTES, out=positive_log, where=MINUTES > 0)
+    alternative = positive_log @ WEIGHTS
+    return stated, alternative
+
+
+def main():
+    stated, alternative = compare()
+    totals = MINUTES.sum(axis=1)
+    table = pd.DataFrame({"device": [1, 2, 3], "minutes": totals,
+        "published_mci": PUBLISHED, "equation_s1": stated,
+        "log_positive_minutes_zero_at_zero": alternative})
+    table.to_csv(ROOT / "results/index_check.csv", index=False)
+    summary = {"rounded_weights_sum": float(WEIGHTS.sum()),
+        "equal_device_mean_of_displayed_values": float(PUBLISHED.mean()),
+        "minute_weighted_mean_of_displayed_values": float(np.average(PUBLISHED, weights=totals)),
+        "alternative_matches_displayed_rounding": bool(np.array_equal(np.round(alternative, 2), PUBLISHED)),
+        "private_pipeline_transform": "unresolved"}
+    (ROOT / "results/index_check.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(table.to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
+```

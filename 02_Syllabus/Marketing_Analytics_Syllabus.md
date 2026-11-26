@@ -31,7 +31,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, the Wendy's pricing dispute, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, coordinate alignment, network compression, and pricing objectives. Workflow comparisons assess task information, feedback, costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, feedback, costs, and customer authority.
 
 ---
 
@@ -43,10 +43,10 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | --- | --- | --- |
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
 | 2 | January 27 | M2: Customer data, missingness, cancellation evidence, and earnings-call coverage |
-| 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
-| 4 | February 10 | M3: Regression, source bias, and marketing interpretation |
+| 3 | February 3 | M2: Visualization, geographic usage, and nutrition-informed assessment |
+| 4 | February 10 | M3: Regression, geographic associations, and marketing interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
-| 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
+| 6 | February 24 | M4: Geographic and customer segmentation; customer lifetime value |
 | 7 | March 3 | M5: Text and pricing communication; network compression and retail access |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |

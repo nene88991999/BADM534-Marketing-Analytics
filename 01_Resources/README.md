@@ -144,3 +144,7 @@ The [nutrition methods collection](12_Nutrition_and_Dietary_Data_Quality/README.
 ## Pricing Systems and Customer Choice
 
 [The pricing-systems library](37_Pricing_Systems_and_Competition/README.md) contains six source records linking the Wendy's complaint, reporting, company statements, pricing research, and an agency argument. The source review preserves dates, jurisdiction, claim scope, and access limits. Three PDF reference copies remain in Dropbox only. Original course annotations, the synthetic model, and public links accompany M4, M8, and M9.
+
+## Digital Usage and Inclusion
+
+The [digital-usage library](38_Digital_Usage_and_Inclusion/README.md) archives the licensed article and supplement, pins the public release, and documents Census sources. Original calculations distinguish geographic activity from individual ability, reproduce the source example under two log conventions, and examine assistance and access.

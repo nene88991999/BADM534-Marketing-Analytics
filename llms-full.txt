@@ -118,6 +118,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Pricing_Competition/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "digital-usage",
+      "path": "07_Labs/Digital_Usage/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -325,7 +331,16 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Pricing_Competition/AGENTS.md",
     "03_Data_and_Code/Pricing_Competition/VERIFICATION.md",
     "03_Data_and_Code/Pricing_Competition/results/README.md",
-    "07_Labs/Pricing_Competition/README.md"
+    "07_Labs/Pricing_Competition/README.md",
+    "01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+    "01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md",
+    "01_Resources/38_Digital_Usage_and_Inclusion/RIGHTS.md",
+    "03_Data_and_Code/Digital_Usage/README.md",
+    "03_Data_and_Code/Digital_Usage/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Digital_Usage/AGENTS.md",
+    "03_Data_and_Code/Digital_Usage/results/README.md",
+    "03_Data_and_Code/Digital_Usage/VERIFICATION.md",
+    "07_Labs/Digital_Usage/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -374,12 +389,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-25-pricing-competition",
+    "revision": "2026-11-25-digital-usage",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 108,
-    "pages": 424,
+    "figures_count": 112,
+    "pages": 440,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -404,7 +419,8 @@ Generated from course.json and the source files identified below. This file cont
     "representation_examples": "03_Data_and_Code/Representation_Evaluation/README.md",
     "agent_workflow_examples": "03_Data_and_Code/Agent_Workflows/README.md",
     "representation_alignment_examples": "03_Data_and_Code/Representation_Alignment/README.md",
-    "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md"
+    "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md",
+    "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md"
   },
   "datasets": [
     {
@@ -461,6 +477,20 @@ Generated from course.json and the source files identified below. This file cont
         "M8",
         "M9"
       ]
+    },
+    {
+      "id": "digital-usage",
+      "index": "03_Data_and_Code/Digital_Usage/README.md",
+      "manifest": "03_Data_and_Code/Digital_Usage/manifest.json",
+      "data_type": "Public geographic application indices and public Census ZCTA extracts",
+      "modules": [
+        "M2",
+        "M3",
+        "M4",
+        "M7",
+        "M8",
+        "M9"
+      ]
     }
   ],
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
@@ -475,7 +505,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 408,
+    "slides": 418,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1048,7 +1078,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-25-pricing-competition",
+  "revision": "2026-11-25-digital-usage",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1137,6 +1167,38 @@ Generated from course.json and the source files identified below. This file cont
     "upstream_execution": false,
     "scope": "Original synthetic two-restaurant model; case allegations, company statements, research results, and agency argument distinguished. No observed restaurant-price analysis or liability finding.",
     "manifest": "03_Data_and_Code/Pricing_Competition/manifest.json"
+  },
+  "digital_usage": {
+    "resources": "01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+    "review": "01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md",
+    "catalog": "01_Resources/38_Digital_Usage_and_Inclusion/catalog.json",
+    "source_manifest": "01_Resources/38_Digital_Usage_and_Inclusion/manifest.json",
+    "examples": "03_Data_and_Code/Digital_Usage/README.md",
+    "lab": "07_Labs/Digital_Usage/README.md",
+    "verification": "03_Data_and_Code/Digital_Usage/VERIFICATION.md",
+    "manifest": "03_Data_and_Code/Digital_Usage/manifest.json",
+    "implemented_on": "2026-11-25",
+    "sections": [
+      "M2 \u00a7\u00a72.26\u20132.27",
+      "M3 \u00a73.17",
+      "M4 \u00a74.27",
+      "M7 \u00a77.45",
+      "M8 \u00a78.29",
+      "M9 \u00a79.23"
+    ],
+    "sessions": [
+      2,
+      3,
+      4,
+      6,
+      14
+    ],
+    "original_programs_executed": 5,
+    "independent_tests_passed": 11,
+    "original_figures": 4,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "scope": "Published geographic indices, original Census joins and descriptive analyses; illustrative source calculation; no private pipeline replication or individual service outcome."
   }
 }
 ```
@@ -1263,6 +1325,10 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 ## Pricing Systems and Customer Choice
 
 [The Wendy's case and source review](01_Resources/37_Pricing_Systems_and_Competition/README.md) connect disputed pricing authority to customer choice. [An original two-restaurant model](03_Data_and_Code/Pricing_Competition/README.md) separates demand information from joint pricing with complete Python, nine checks, and two editable figures. M4 §4.26, M8 §8.28, M9 §9.22, Sessions 5 and 14, and [optional practice](07_Labs/Pricing_Competition/README.md) carry the analysis.
+
+## Digital Usage and Customer Access
+
+The [digital-usage case](03_Data_and_Code/Digital_Usage/README.md) connects public geographic application indices to measurement, Census comparisons, regression, clustering, and customer choice. Complete Python, source rights, and optional ungraded practice accompany the notes and five session decks.
 
 ---
 
@@ -1593,6 +1659,10 @@ M5 §5.26 defines a disjoint description sample. M7 §§7.42–7.44 connect coor
 
 [M4 §4.26](06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) solves an original two-restaurant model with information and pricing objectives varied separately. [M8 §8.28](06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) examines the Wendy's complaint and evidence, while [M9 §9.22](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) evaluates pricing authority and customer alternatives. [Code and results](03_Data_and_Code/Pricing_Competition/README.md), two TikZ figures, six additional slides in Sessions 5 and 14, and [optional practice](07_Labs/Pricing_Competition/README.md) accompany the case.
 
+## Digital Usage and Customer Access
+
+The [recurring geographic case](03_Data_and_Code/Digital_Usage/README.md) appears in M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Sessions 2, 3, 4, 6, and 14 distinguish recorded activity, conditional comparisons, similarity, service outcomes, and authority over customer options. The full Python lab is public optional ungraded practice.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -1700,6 +1770,10 @@ The worked examples include replacement text features and classifier compatibili
 ## Pricing Systems and Customer Choice
 
 The syllabus includes shared pricing systems and the Wendy's dispute among its cases. Sessions 5 and 14 connect an original synthetic pricing model to source evidence and Kantian and Confucian evaluation. The [optional lab](../07_Labs/Pricing_Competition/README.md) provides the full Python exercise. Existing dates, meeting durations, and pending assessment rules are preserved.
+
+## Digital Usage and Customer Access
+
+The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs. The fifteen meeting dates, start and end times, and calendar event topics remain unchanged.
 
 ---
 
@@ -1849,6 +1923,10 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 [Pricing Competition](Pricing_Competition/README.md) contains a synthetic two-restaurant market, exact rational calculations, cell and policy tables, an editable welfare figure, and nine independent checks. The program varies demand information and pricing objectives separately. Full code appears in M4 §4.26; M8 and M9 connect the calculation to the Wendy's case and ethical reasoning.
 
+## Digital Usage and Customer Access
+
+[Digital Usage](Digital_Usage/README.md) contains 28,561 published geographic records, compact public Census extracts, five complete teaching programs, eleven independent checks, and four editable figures. The examples assess identifiers and income boundaries, compare adjusted projections, and evaluate clustering sensitivity. Original device microdata and analysis code are unavailable.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -1857,7 +1935,7 @@ The [journal-review example](Consumer_Agency_Literature/README.md) includes 144 
 
 **By Nathan Yang. Updated November 25, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [424-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 108 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [440-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 112 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2029,6 +2107,10 @@ M5 §5.26 and M7 §§7.42–7.44 connect text preparation, coordinate alignment,
 
 M4 §4.26 derives independent and joint prices under a common noisy demand signal, with complete executable Python. M8 §8.28 assesses the Wendy's complaint and source evidence; M9 §9.22 examines Kantian justification, Confucian trustworthiness, and customer alternatives. [The code, six policy rows, and nine checks](../03_Data_and_Code/Pricing_Competition/README.md), two TikZ figures, [source review](../01_Resources/37_Pricing_Systems_and_Competition/README.md), and [optional practice](../07_Labs/Pricing_Competition/README.md) preserve the distinction between actual sources and synthetic outcomes.
 
+## Digital Usage and Customer Access
+
+The [geographic case](../03_Data_and_Code/Digital_Usage/README.md) adds measurement and index verification in M2, conditional income projections in M3, scaling-sensitive clustering in M4, outcome validation in M7, and service choice in M8/M9. Five complete Python listings and four original TikZ figures accompany the public data and Census extracts.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -2097,7 +2179,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 408 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 418 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2225,6 +2307,10 @@ Sessions 7, 11, and 14 add five slides connecting text coordinates, classifier c
 ## Pricing Systems and Customer Choice
 
 Session 5 adds the independent and joint pricing equations and a surplus figure. Session 14 adds the Wendy's case, the data-and-authority diagram, evidence questions, and the numerical comparison; existing philosophical discussion applies the case. Six additional slides have complete Markdown companions and source links. [Code and optional practice](../03_Data_and_Code/Pricing_Competition/README.md) support the unchanged fifteen 170-minute meetings.
+
+## Digital Usage and Customer Access
+
+Sessions 2, 3, 4, 6, and 14 include ten slides on geographic measurement, index verification, Census maps, income projections, clustering, and meaningful customer choice. The [complete Python example](../03_Data_and_Code/Digital_Usage/README.md) and [optional lab](../07_Labs/Digital_Usage/README.md) support longer practice within the existing course plan.
 
 ---
 
@@ -2758,6 +2844,10 @@ The [implemented examples](../03_Data_and_Code/Synthetic_Consumers/README.md) in
 
 [Six source records](../01_Resources/37_Pricing_Systems_and_Competition/README.md) motivate an original [pricing comparison](../03_Data_and_Code/Pricing_Competition/README.md). M4 §4.26 varies demand information and the pricing objective separately; M8 §8.28 distinguishes the complaint, company statements, and agency argument; M9 §9.22 develops the philosophical evaluation. Exact fractions, complete Python, nine checks, two editable figures, and Sessions 5 and 14 support the comparison. The calculation is separate from Harrington's vendor-design model and contains no actual Wendy's prices.
 
+## Digital Usage and Customer Access
+
+[Pereira and coauthors’ article and public release](../01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md) support M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23. Five complete source listings, eleven independent tests, four original TikZ figures, and ten slides across Sessions 2, 3, 4, 6, and 14 accompany the [executed geographic examples](../03_Data_and_Code/Digital_Usage/README.md). The course adds public Census estimates, preserves source counts and formula discrepancies, and separates descriptive evidence from service outcomes and ethical justification. No private telemetry pipeline was reproduced.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3114,19 +3204,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 27 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 23 |
-| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 25 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 19 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 27 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 26 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 41 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
+| 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 21 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 25 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 55 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 58 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 43 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 50 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -3157,9 +3247,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** January 27, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator.
+**Python and Evidence:** Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states.
+**Application:** Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
 **Ethics and Regulation:** Missingness, sample exclusions, and customer representation.
 
@@ -3171,18 +3261,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–140 | Cancellation Records and the Review Queue |
-| 140–155 | Application and Interpretation |
+| 140–148 | Digital Usage, Measurement, and Index Verification |
+| 148–155 | Application and Interpretation |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 03. Visualization and Data Quality
 
 **Meeting:** February 3, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval.
+**Python and Evidence:** Assess selected research evidence and claim follow-up alongside chart denominators and nutrition screens. Preserve customer pairs and reproduce a mean-change interval. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes.
+**Application:** Compare nutrition screens and public-page identity changes without changing the measurement claim. Compare map footprints with reachable graph nodes. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Chart claims, denominator choices, and coverage
+**Ethics and Regulation:** Chart claims, denominator choices, and coverage.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3192,18 +3283,19 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–140 | Map Footprints and Reachable Locations |
-| 140–155 | Chart Interpretation and Sampling Scope |
+| 140–145 | Chart Interpretation and Sampling Scope |
+| 145–155 | Digital Usage Maps and Geographic Denominators |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 04. Regression and Marketing Interpretation
 
 **Meeting:** February 10, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty.
+**Python and Evidence:** Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price.
+**Application:** Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Substantiation and the distinction between association and benefit
+**Ethics and Regulation:** Substantiation and the distinction between association and benefit.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3213,9 +3305,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–135 | Response Coefficients and Source Bias |
-| 135–155 | Price Coefficients and Interpretation |
+| 135–145 | Price Coefficients and Interpretation |
+| 145–155 | Digital Usage and Conditional Income Associations |
 | 155–170 | Ethics and Decision Discussion |
-
 
 ### 05. Conjoint and Product Design
 
@@ -3225,7 +3317,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus.
 
-**Ethics and Regulation:** Price completeness and the attributes customers actually evaluate
+**Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3243,11 +3335,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Meeting:** February 24, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice.
+**Python and Evidence:** Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions.
+**Application:** Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Retention, consumer agency, and effective cancellation
+**Ethics and Regulation:** Retention, consumer agency, and effective cancellation.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3258,7 +3350,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise |
 | 125–140 | Clustering Optimization and Final Labels |
 | 140–155 | Retention Definitions and Interpretation |
-| 155–170 | Ethics and Decision Discussion |
+| 155–165 | Geographic Usage Groups and Service Evidence |
+| 165–170 | Ethics and Decision Discussion |
 
 ### 07. Text, Social Media, and Networks
 
@@ -3268,7 +3361,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Application:** Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph. Compare replacement text coordinates and recorded-category targets within the existing mHealth discussion.
 
-**Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation
+**Ethics and Regulation:** Evidence for labels, review authenticity, and limits of institutional interpretation.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3282,8 +3375,6 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–140 | mHealth Text Applications |
 | 140–155 | Retail Alternatives and Network Access |
 | 155–170 | Ethics and Decision Discussion |
-
-The fifteen-minute retail-network block includes five minutes comparing aggregation and original access. The additional ten-minute calculation uses the Python block.
 
 ### 08. Project Evidence and Midterm Presentations
 
@@ -3311,7 +3402,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version.
 
-**Ethics and Regulation:** Defensible treatment designs and informed customer choice
+**Ethics and Regulation:** Defensible treatment designs and informed customer choice.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3323,7 +3414,6 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 125–135 | Fixed and Adaptive Research Designs |
 | 135–155 | Treatment Effects and Customer Outcomes |
 | 155–170 | Ethics and Decision Discussion |
-
 
 ### 10. Causal Comparisons and Policy Evaluation
 
@@ -3354,7 +3444,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Application:** Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate.
 
-**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing
+**Ethics and Regulation:** Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3380,7 +3470,7 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Application:** Separate experimentally measured behavior from model-dependent consumer welfare.
 
-**Ethics and Regulation:** Customer control, privacy, and the objective of personalization
+**Ethics and Regulation:** Customer control, privacy, and the objective of personalization.
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3418,11 +3508,11 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 
 **Meeting:** April 28, 2027, 15:30-18:20; Wohlers Hall, Room 243.
 
-**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal.
+**Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis.
 
-**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification.
+**Application:** Evaluate AI experimentation, personalized pricing, and renewal through Kantian and Confucian arguments and current policy scope. Examine whose preferences synthetic personas represent within the existing philosophical discussion. Use minutes 20–25 to distinguish numerical, interpretation, export, and publication checks. Compare total workflow cost and distinguish company authority from customer authorization. Examine whether model agreement supplies independent reasons for the proposed action. Use the Wendy's complaint to distinguish data capability, pricing authority, customer effects, and ethical justification. Digital-usage comparisons distinguish geographic activity from individual service needs.
 
-**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior.
+**Ethics and Regulation:** Marketing Dialectics: justified claims, respect for persons, conflicts of interest, Confucian conduct, and regulatory scope. Examine definitions, source evidence, and permission independently of predicted behavior..
 
 | Elapsed Minutes | Activity |
 | --- | --- |
@@ -3438,7 +3528,8 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 100–110 | Demand Information and Pricing Objectives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
-| 155–170 | Decision Discussion |
+| 155–165 | Digital Channels and Meaningful Customer Choice |
+| 165–170 | Decision Discussion |
 
 ### 15. Integrated Decisions and Final Presentations
 
@@ -3457,7 +3548,6 @@ The fifteen-minute retail-network block includes five minutes comparing aggregat
 | 75–85 | Break |
 | 85–145 | Presentation Discussion |
 | 145–170 | Synthesis and Customer Consequences |
-
 ## Coverage and Course Requirements
 
 The sequence follows M1–M8, with M9 Marketing Dialectics integrated into Session 14, in the [course map](../COURSE_MAP.md). The mHealth cases recur across the modules; restaurant availability, generative-AI demand, and earnings-call pricing communication supply additional comparisons. Ethics and regulation appear throughout, with a 75-minute block in Session 14. The [ethics guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) identifies the corresponding notes and checked public sources.
@@ -3603,6 +3693,12 @@ Session 5 uses minutes 145–155 for the original demand-information and pricing
 
 [M4 §4.26](../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md), M8 §8.28, and M9 §9.22 contain the model, case, and philosophy. [The optional ungraded lab](../07_Labs/Pricing_Competition/README.md) carries the full Python exercise. The source guide distinguishes the complaint's allegations from company statements and an agency argument; the synthetic model establishes no actual restaurant outcome or legal conclusion.
 
+## Digital Usage and Customer Access
+
+Session 2 uses minutes 140–148 for the geographic observation process and published index check. Session 3 uses minutes 145–155 for common map scales and geographic identifiers. Session 4 uses minutes 145–155 for simple and adjusted income projections. Session 6 uses minutes 155–165 for scaling sensitivity and service-outcome validation. Session 14 uses minutes 155–165 for digital channels, assistance, and meaningful customer choice. Each allocation lies within the existing fifteen 170-minute meetings; the dates and pending assessment policies are unchanged.
+
+The [Digital Usage lab](../07_Labs/Digital_Usage/README.md) carries the longer public optional ungraded exercise. M2 §§2.26–2.27, M3 §3.17, M4 §4.27, M7 §7.45, M8 §8.29, and M9 §9.23 distinguish geographic records, source verification, descriptive models, proposed service interventions, and ethical justification. Five complete Python listings, eleven independent tests, and four editable Illinois-color figures support the case.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -3701,6 +3797,10 @@ M9 §9.21 distinguishes shared model representations, independent factual suppor
 M8 §8.28 and M9 §9.22 examine the November 23, 2026 complaint in Garcia v. The Wendy's Company and NCR Voyix Corporation, No. 8:26-cv-04886-LKG (D. Md.). The pleading alleges Sherman Act Section 1 price fixing and unlawful information exchange. The [source record](../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md), checked November 25, distinguishes those allegations, the 2022 NCR announcement, the 2024 Wendy's clarification, and a March 2024 DOJ/FTC submission in a separate hotel-pricing case. The submission is a litigation argument, with no effective date as a new rule or holding about Wendy's. The live docket was inaccessible, so later filings were not independently verified.
 
 [M4 §4.26](modules/M04_Conjoint_Segmentation_and_CLV.md) separates changes in demand information from changes in pricing objectives using an original synthetic market. Exact profits and consumer surplus are conditional model results. Ethical evaluation concerns truthful explanation, customers' purposes and alternatives, and the responsibilities attached to pricing authority.
+
+## Digital Usage, Assistance, and Customer Choice
+
+M8 §8.29 and M9 §9.23 examine the difference between offering assistance and imposing a digital channel. The [geographic usage case](../03_Data_and_Code/Digital_Usage/README.md) supplies area-level context. It supplies no individual ability, consent, or customer-service outcome. Kantian critique examines the inference from geographic activity and the authority claimed over a person; Confucian role responsibilities motivate responsive service while preserving correction and customer choice. The proposed assistance evaluation introduces no new legal claim or graded requirement.
 
 ---
 
@@ -3883,7 +3983,7 @@ Meetings combine instructor-led explanations, worked examples, Python exercises,
 
 The [course repository](https://github.com/nene88991999/BADM534-Marketing-Analytics) provides [lecture notes](../06_Lecture_Notes/README.md), [session slides](../05_Slides/README.md), and [data with runnable Python](../03_Data_and_Code/README.md). Markdown companions make the materials searchable and usable with LLMs. Resource-library recommendations provide background; assigned readings will be identified separately.
 
-Cases include mHealth food logging, restaurant availability, retail access, generative-AI demand, earnings-call pricing communication, the Wendy's pricing dispute, and consumer agency. Synthetic comparisons examine research budgets, training mixtures, cancellation records, representation quality, coordinate alignment, network compression, and pricing objectives. Workflow comparisons assess task information, feedback, costs, and customer authority.
+Cases include mHealth food logging, restaurant availability, retail access, digital usage, generative-AI demand, earnings calls, Wendy's pricing, and consumer agency. Synthetic examples examine research budgets, training mixtures, cancellation, representations, network compression, and pricing. Workflow evaluations address information, feedback, costs, and customer authority.
 
 ---
 
@@ -3895,10 +3995,10 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | --- | --- | --- |
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
 | 2 | January 27 | M2: Customer data, missingness, cancellation evidence, and earnings-call coverage |
-| 3 | February 3 | M2: Visualization, data quality, and nutrition-informed assessment |
-| 4 | February 10 | M3: Regression, source bias, and marketing interpretation |
+| 3 | February 3 | M2: Visualization, geographic usage, and nutrition-informed assessment |
+| 4 | February 10 | M3: Regression, geographic associations, and marketing interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
-| 6 | February 24 | M4: Segmentation, research-mechanism clusters, and customer lifetime value |
+| 6 | February 24 | M4: Geographic and customer segmentation; customer lifetime value |
 | 7 | March 3 | M5: Text and pricing communication; network compression and retail access |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
@@ -5188,6 +5288,18 @@ The distinction also applies to critical readings of research. The complaint cit
 
 For the restaurant director, the resulting decision is conditional on both evidence and conduct. An operating improvement should be supported by the outcome it claims to improve. A change in pricing authority requires an account of the affected businesses and customers. A proposed restriction on choice requires reasons that respect the people whose options it changes. Commercial success, legal status, and moral justification remain separate objects of evaluation.
 
+## 9.23 Geographic Classification and Meaningful Customer Choice
+
+\noindent A retailer observes low computer usage in an area and considers two actions: offer help using a service, or restrict access to customers who complete an app workflow. Both actions can use the same statistical description while changing customers' opportunities in opposite directions. Their justification depends on the authority claimed over the customer and the options each action leaves available.
+
+A Kantian critique first examines the inference. An area's application index is a representation of selected device activity under particular categories and weights. Treating it as an individual's capacity or willingness extends the claim beyond its evidence. The statistical result does not supply the additional premise that a customer has authorized the firm to decide which channels or benefits that customer should receive.
+
+Respect for persons also concerns the practice's purpose and operation. Assistance can help a customer complete a self-chosen task. A mandatory digital procedure can impose costs on people who have less suitable equipment, while using their difficulty to discourage an otherwise valid request. A defensible rule must address the reasons customers could give for needing another channel, the possibility of correcting a classification, and the continued ability to refuse an optional service or end a relationship.
+
+Confucian concerns with humane conduct and the responsibilities of a role direct attention to how the firm responds when customers need help. A seller's informational advantage can create an obligation to explain terms and accommodate difficulty in ordinary service. Benevolent intent alone does not establish that an accommodation serves the person's goals. Asking which task the customer wants completed, preserving a usable alternative, and receiving correction give practical content to that responsibility without presuming that the firm knows the customer's interests better than the customer does.
+
+The geographic clustering in Section 4.27 groups measured activity. Its stability under repeated initialization and its sensitivity to scaling concern the description of the data. Neither property determines whether excluding a person is justified. An evaluation of the marketing practice must connect its stated purpose, the customer information it actually observes, the person's available choices, and the consequences of accepting or refusing the procedure.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -5896,6 +6008,10 @@ Both activities are public optional ungraded practice with original synthetic in
 ## Pricing Systems and Customer Choice
 
 [Pricing Information and Customer Outcomes](Pricing_Competition/README.md) is optional ungraded practice with full Python, synthetic parameters, exact results, and evidence questions. Compare independent and joint objectives at a fixed signal accuracy, then change information while retaining the objective. M4, M8, and M9 provide the derivation, Wendy's case, and ethical evaluation.
+
+## Digital Usage and Customer Choice
+
+The [optional ungraded lab](Digital_Usage/README.md) follows an app-service decision through data assessment, geographic maps, regression, clustering, index verification, and Kantian and Confucian evaluation.
 
 ---
 
@@ -9994,6 +10110,250 @@ State a proposed pricing maxim and examine its treatment of customers' capacity 
 ## AI-Assisted Coding
 
 An LLM can explain the code, propose a change, and help inspect an error. Ask it to state the observation unit, probabilities, units, information timing, and changed parameter before generating code. Check the resulting calculation against the exact benchmark, consumer-utility calculation, and surplus identity. Describe material AI assistance accurately, and keep any applicable assignment-specific rules separate from this optional exercise.
+
+---
+
+## Source: 01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+# Digital Usage and Customer Access
+
+A firm's decision to move service into an app depends on customers' available devices, tasks, and alternatives. Pereira and coauthors' geographic usage indices provide a concrete case for assessing the distance between a recorded behavior and a marketing decision.
+
+Read the [source review](SOURCE_REVIEW.md) for the article, supplement, release version, measurement scope, and unresolved numerical discrepancies. The [catalog](catalog.json) records the paper, dataset, Census data, and geographic documentation. [Rights and attribution](RIGHTS.md) accompany the archived article and supplement. The public data and original course programs are in [Digital Usage](../../03_Data_and_Code/Digital_Usage/README.md).
+
+M2 §§2.26–2.27 cover geographic identifiers, common map scales, sample restrictions, privacy, and index verification. M3 §3.17 compares simple and adjusted income associations. M4 §4.27 compares geographic clustering under two scalings. M7 §7.45 examines outcome validation; M8 §8.29 and M9 §9.23 examine assistance, access, and customer choice. Sessions 2, 3, 4, 6, and 14 include the case within their existing meeting lengths. Longer coding practice is [optional and ungraded](../../07_Labs/Digital_Usage/README.md).
+
+---
+
+## Source: 01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md
+
+# Source Review
+
+## Article and Public Data
+
+Mayana Pereira, Shane Greenstein, Raffaella Sadun, Prasanna Tambe, Lucia Ronchi Darre, Tammy Glazer, Allen Kim, Rahul Dodhia, and Juan Lavista Ferres, [Evidence and measures of the digital usage divide from 40 million Windows devices](https://www.nature.com/articles/s41467-026-78689-1), Nature Communications, November 9, 2026, DOI 10.1038/s41467-026-78689-1. The saved eight-page PDF is marked Article in Press. All eight pages and the thirteen-page supplement were reviewed on November 25, 2026.
+
+The [Microsoft repository](https://github.com/microsoft/Consumption-of-Digital-Applications-Data-Set) contains the released indices, README, license, and standard repository documents. Commit `4024bc0938c4242f2429af94c5fec1e5a42113dc` and release tag `version` point to the inspected CSV. The release is also archived at [Zenodo](https://zenodo.org/records/22084797), DOI 10.5281/zenodo.22084797. No original analysis code is included. Private telemetry, category-level observations, and the internal privacy computation are unavailable.
+
+## Observation and Index Construction
+
+The telemetry concerns consenting consumer Windows devices from October 2022 through March 2023. Virtual, test, and business devices are excluded. The device-month is the activity unit; each device receives a dominant postal code. Engagement uses recent interaction or an active-display keep-alive condition. Monthly category activity is capped at 9,000 minutes. No within-month task sequence is supplied. Browser use can include web-based email, documents, and other activities that a category label cannot distinguish.
+
+MCI combines media and information categories; CCI combines content creation and computational categories. The supplement uses squared first-principal-component loadings for category weights, transformed minutes for device scores, and total category-group minutes for geographic aggregation. The public values are neither percent adoption nor probabilities. Recomputing PCA from the two public indices cannot recover the original category weights.
+
+The OpenDP procedure uses private PCA and Laplace noise in aggregation; the supplement reports total epsilon 4.1 under device-level neighboring records. This privacy statement concerns incremental disclosure under a specified mechanism and does not establish representativeness or an absence of all inferential risk. Zero-device geographic entries are assigned zero activity/counts before noise in the described procedure; the released CSV has no device counts to identify those entries. Treating a very small score as evidence of observed inability would extend the measure beyond its support.
+
+## Reproducibility Checks
+
+| Object | Checked Result | Interpretation |
+| --- | --- | --- |
+| Public CSV | 28,561 unique identifiers; no missing entries; 50 states and DC | Denominator for the course's release analysis |
+| Main Figure 3 | 30,776 postal areas | A reported analytic sample whose relationship to the release is unresolved |
+| Supplement prose | 28,199 in the information-sources discussion | A further reported count |
+| Supplement Table 3 | 28,987 | Does not equal the release count |
+| Supplement flow diagram | 35,177 initially; 31,299 after no-Census-match exclusion; 30,776 after missing predictors; 29,987 after household threshold | These steps do not reconcile all other counts |
+| Equation S1 and Table 2 | Stated log2(1+minutes) fails to reproduce the three displayed MCI scores; natural log of positive minutes does reproduce two-decimal rounding | Alternative convention consistent with a toy table; original private transformation unresolved |
+
+The supplement's flow uses a fewer-than-50-households exclusion, while another footnote describes a greater-than-30-households threshold. Preserve source locations and the actual release roster rather than inventing one reconciled screen. These documentation differences do not establish that every empirical finding is wrong.
+
+The course's complete formula check uses the source's rounded weights, which sum to 0.996, and preserves the three displayed minute vectors. It compares conventions explicitly and leaves the upstream source unchanged. No source-provided notebook or private pipeline was executed.
+
+## Census Context and Original Analyses
+
+The course adds public 2017–2021 ACS income, education, and broadband estimates and 2021 Gazetteer internal points. [Census ZCTA guidance](https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html) distinguishes generalized area representations from USPS postal codes. Exact identifier matches support a transparent contextual comparison; they do not establish identical populations.
+
+The [table-based Summary File](https://www.census.gov/programs-surveys/acs/data/summary-file.2021.html) supplies B19013, B15003, and B28002. Official API metadata supplies variable definitions; direct summary-table downloads avoid an API-key requirement. [Census documentation of income boundary codes](https://www2.census.gov/adrm/PDB/2024/2024_PDB_Documentation.pdf) identifies 2,499 and 250,001 as open-ended intervals. The course excludes those 50 values from its income regression while preserving the records for usage-only comparisons.
+
+The original examples assess the release, map Illinois internal points with fixed scales, estimate descriptive income projections, compare raw and standardized clusters, and check the supplement's numerical illustration. They reproduce their own computations. They do not reproduce the paper's full private analysis or observe customers' skills, willingness, welfare, AI adoption, or service outcomes.
+
+---
+
+## Source: 01_Resources/38_Digital_Usage_and_Inclusion/RIGHTS.md
+
+# Rights and Attribution
+
+The article and its supplementary material are attributed to Mayana Pereira, Shane Greenstein, Raffaella Sadun, Prasanna Tambe, Lucia Ronchi Darre, Tammy Glazer, Allen Kim, Rahul Dodhia, and Juan Lavista Ferres (2026), DOI [10.1038/s41467-026-78689-1](https://doi.org/10.1038/s41467-026-78689-1). The publisher's open-access notice applies [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). The saved PDFs are unchanged. No separate third-party exception was identified in the reviewed material. Original annotations, calculations, and diagrams are separate course materials; the supplement's illustrative numbers are attributed in the notes and code.
+
+The dataset and upstream README are distributed under Microsoft's [Community Data License Agreement, Permissive, Version 2.0](../../03_Data_and_Code/Digital_Usage/data/LICENSE-CDLA-Permissive-2.0.md). The original dataset bytes are preserved; renamed fields and joined results are documented transformations. Preserve that license with redistributed data.
+
+Census Bureau estimates, definitions, and Gazetteer data are public U.S. government data. Selected ZCTA rows and fields are repackaged into compact CSV extracts with source URLs, dates, and hashes. Their inclusion implies no endorsement of the course's analysis. Copyright and attribution notices in source material remain intact.
+
+---
+
+## Source: 03_Data_and_Code/Digital_Usage/README.md
+
+# Digital Usage and Customer Access
+
+A retailer chooses how to offer digital and assisted service. Public geographic application indices support measurement, descriptive regression, and clustering exercises. Customer ability, willingness, welfare, and service completion remain separate outcomes.
+
+## Data and Scope
+
+The [published CSV](data/published_indices.csv) contains 28,561 postal identifiers and two indices constructed from October 2022–March 2023 activity on consenting consumer Windows devices. The immutable source is Microsoft repository commit `4024bc0938c4242f2429af94c5fec1e5a42113dc`, release tag `version`, also archived as [Zenodo 22084797](https://zenodo.org/records/22084797). The CSV is redistributed unchanged under [CDLA-Permissive-2.0](data/LICENSE-CDLA-Permissive-2.0.md). It contains no device microdata or device counts.
+
+The Census extract contains 33,774 ZCTAs from the 2017–2021 ACS. Gazetteer coordinates locate Census internal points. All 28,561 released identifiers match both extracts; matching identifiers does not establish identical ZIP and ZCTA populations. Fifty open-ended income values are flagged and excluded only from the common regression sample, leaving 28,511 areas. Illinois clustering and maps retain all 1,253 released Illinois areas. Read the [data dictionary](DATA_DICTIONARY.md), [source review](../../01_Resources/38_Digital_Usage_and_Inclusion/SOURCE_REVIEW.md), and [manifest](manifest.json).
+
+## Run
+
+Python 3.12, NumPy 2.3.5, and pandas 2.2.3 reproduce the saved results. If needed, install the pinned requirements in a virtual environment. The analysis uses archived public inputs and makes no network or AI-model calls. From the repository root, run in order:
+
+```bash
+python3 03_Data_and_Code/Digital_Usage/assess_release.py
+python3 03_Data_and_Code/Digital_Usage/verify_index.py
+python3 03_Data_and_Code/Digital_Usage/compare_models.py
+python3 03_Data_and_Code/Digital_Usage/cluster_usage.py
+python3 -m unittest discover -s 03_Data_and_Code/Digital_Usage -p 'test_*.py' -v
+python3 03_Data_and_Code/Digital_Usage/build_figures.py
+```
+
+The [result guide](results/README.md) defines the saved comparisons. Full matching Python appears in M2 §§2.26–2.27, M3 §3.17, and M4 §4.27. M7 §7.45, M8 §8.29, and M9 §9.23 develop outcome validation, service choice, and philosophical evaluation. The [optional ungraded lab](../../07_Labs/Digital_Usage/README.md) supplies guided practice.
+
+To reconstruct the Census extracts, download the three `.dat` files and Gazetteer ZIP at the URLs in the manifest, preserving the listed filenames. Run `prepare_census.py --source-dir PATH`. This deterministic extraction retains ZCTAs and selected estimate/margin columns and records full-source hashes. The large national all-geography tables remain outside Git; compact national ZCTA extracts are included.
+
+## Interpretation and Verification
+
+The regression compares geographic projections on one common sample. It includes no causal effect or inferential interval. The cluster comparison fixes three groups and evaluates scaling and initialization, without claiming an optimal number of groups or observed customer types. The formula check uses three illustrative devices printed in the supplement, separate from empirical geographic records. It reproduces the displayed MCI values under one alternative convention while leaving the private pipeline unresolved.
+
+Eleven independent tests check identifiers, boundary-income exclusions, source joins, denominators, least squares, equivalent weighted rows, partial regression, exhaustive small-sample clustering, adjusted Rand arithmetic, published example calculations, and group accounting. [VERIFICATION.md](VERIFICATION.md) records executed commands and limits. No upstream analysis code is released in the source repository, and no private pipeline was executed.
+
+---
+
+## Source: 03_Data_and_Code/Digital_Usage/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+## Public Release
+
+One row is a released postal area. `ZIP_CODE` is restored to five-character `zip`; `STATE` becomes `state`; `MEDIA AND INFORMATION INDEX` becomes `mci`; `CONTENT CREATION AND COMPUTATIONAL INDEX` becomes `cci`. Both outcomes are composite index units. Activity covers October 2022–March 2023. There are no individual identifiers, geographic device counts, original category inputs, or outcome labels. The original CSV remains byte-for-byte unchanged.
+
+## Census Extract
+
+`data/acs2021_zcta.csv` retains national ZCTAs from the 2021 five-year table-based ACS Summary File. `zcta` is a five-character identifier. Estimates cover 2017–2021. Column names use the Summary File convention `Bxxxxx_Eddd` for an estimate and `Bxxxxx_Mddd` for its supplied margin of error. The API metadata in [acs_variable_definitions.json](data/acs_variable_definitions.json) expresses the same estimate as `Bxxxxx_dddE`.
+
+| Fields | Unit and Population | Use |
+| --- | --- | --- |
+| B19013 E001/M001 | Median household income, 2021 inflation-adjusted dollars | E001 / 10,000 becomes `income_10k` after excluding boundary codes |
+| B15003 E001/M001 | Population aged 25 or older | Education denominator |
+| B15003 E022–E025 and corresponding M columns | Counts with bachelor's, master's, professional, and doctorate degrees | Sum of E022–E025 / E001 becomes `college_share` |
+| B28002 E001/M001 | Households | Broadband denominator and sensitivity weights |
+| B28002 E004/M004 | Households with broadband of any type | E004 / E001 becomes `broadband_share` |
+
+Negative numeric sentinel values and nonnumeric unavailable entries become missing in the joined table. Raw extracts retain source values. Income values 2,499 and 250,001 denote open-ended intervals; `income_boundary` preserves this flag. Ratios require a positive denominator and an outcome between zero and one. `regression_eligible` requires all three regression covariates. No missing outcome is replaced with zero.
+
+`data/zcta_coordinates.csv` contains Gazetteer `GEOID` as `zcta`, `INTPTLAT` as `latitude`, and `INTPTLONG` as `longitude`, in decimal degrees. They are internal points, not inferred device locations. The maps use fixed longitude/latitude axes; they are geographic point displays, without area or distance claims.
+
+## Results
+
+`joined_areas.csv` retains all release rows, raw Census estimates/margins, derived ratios, `census_match`, coordinates, and the regression flag. Identifier matches do not guarantee identical USPS and Census populations. `state_coverage.csv` counts released and regression-eligible areas by source state label.
+
+`illinois_map.csv` adds `mci_z` and `cci_z`, each centered by its own Illinois mean and divided by its population standard deviation (`ddof=0`). All areas receive equal weight. `illinois_clusters.csv` adds standardized and raw-distance cluster assignments; labels are arbitrary across fits. `cluster_summary.csv` reports counts and original-unit means. `clustering.json` records k, starts, seed comparisons, scaling constants, standardized SSE, and adjusted Rand agreement.
+
+`regressions.csv` reports outcome, specification, areas, income slope per $10,000, and in-sample residual RMSE in index units. `household_weight_sensitivity.csv` changes geographic weights to ACS household estimates. These weights are neither people nor observed Windows devices. No sampling interval, privacy-noise interval, causal effect, or out-of-sample accuracy is estimated.
+
+`index_check.csv` reports the supplement's three illustrative devices, total group minutes, printed MCI, Equation S1 calculation, and alternative natural-log calculation. `index_check.json` compares equal-device and minute-weighted means of the displayed scores. The source's original private transform remains unresolved.
+
+---
+
+## Source: 03_Data_and_Code/Digital_Usage/AGENTS.md
+
+# Agent Guide for Digital Usage
+
+Read README.md, DATA_DICTIONARY.md, and manifest.json before loading the full table. Cite the paper and Census sources from the resource guide. The geographic indices are public aggregates, not individual skill, preferences, welfare, or AI-use measures. Preserve identifier strings and original release bytes.
+
+Run the assessment before the downstream examples. Income boundary codes are open-ended intervals and remain flagged in the full joined table. Use a common regression sample and describe equal-area versus household weights explicitly. Maps and clustering retain the full Illinois release. Give the scope of every denominator and comparison.
+
+Five complete source listings appear in the lecture notes. If code changes, reconcile those listings and run scripts/check_lecture_code.py. Source counts and the supplement's formula/table discrepancy remain unresolved; do not silently alter the upstream CSV or claim replication of the private telemetry pipeline. Keep customer-service interventions and causal outcomes labeled as proposed until evaluated with relevant data.
+
+---
+
+## Source: 03_Data_and_Code/Digital_Usage/results/README.md
+
+# Executed Comparisons
+
+## Measurement and Geographic Coverage
+
+The release has 28,561 distinct identifiers across the 50 states and DC; 2,214 leading zeros are restored. Every identifier matches the archived Census extracts. Fifty boundary-income values are flagged, yielding 28,511 common regression rows. All 1,253 Illinois areas have map coordinates and enter clustering; 1,252 enter the national regression sample. The equal-ZIP correlation of the two indices is 0.521531.
+
+## Regression
+
+| Specification | MCI per $10,000 | CCI per $10,000 |
+| --- | ---: | ---: |
+| Income alone | 0.055213 | 0.048563 |
+| Education and broadband | 0.002094 | -0.018209 |
+| Controls and state intercepts | 0.001322 | -0.017497 |
+
+Each row uses the same 28,511 areas and equal geographic weights. With ACS household weights and the two controls, the slopes are 0.004109 and -0.011857. Changing weights changes the projection. These comparisons do not estimate an income intervention or propagate ACS uncertainty, privacy noise, or spatial dependence.
+
+## Illinois Clustering
+
+Standardized three-group k-means gives groups of 94, 347, and 812 areas. Their mean (MCI, CCI) values are (1.9235, 1.4516), (2.7631, 2.2936), and (3.0573, 3.1167). Raw versus standardized partitions have adjusted Rand index 0.805038. The standardized partition is unchanged across tested seeds 1, 17, 534, and 2026 with thirty starts each. Computational stability is separate from validation as a measure of individual service needs.
+
+## Index Construction
+
+Equation S1 gives 6.4765, 4.4847, and 5.0689 for the supplement's illustrative devices. Natural logs of positive minutes, with zero contribution at zero, give 4.4603, 3.0887, and 3.4678, matching the displayed values to two decimals. The equal-device mean of displayed values is 3.673333; the minute-weighted mean is 3.630383. This check does not establish the transform used in the private pipeline.
+
+---
+
+## Source: 03_Data_and_Code/Digital_Usage/VERIFICATION.md
+
+# Verification Record
+
+Executed November 25, 2026 with Python 3.12.14, NumPy 2.3.5, and pandas 2.2.3. No downloaded code, private telemetry, or AI-model endpoint was executed.
+
+## Programs and Numerical Checks
+
+- `prepare_census.py` extracted three official summary tables and Gazetteer internal points, recording full-source hashes. The compact inputs and raw digital-usage release have checksums in `manifest.json`.
+- `assess_release.py`, `verify_index.py`, `compare_models.py`, and `cluster_usage.py` executed successfully from archived inputs.
+- Eleven unittest checks passed. They verify identifier restoration and invalid keys, missing values and denominators, open-ended income codes, selected direct source matches, a hand-calculated OLS slope, weighted regression against repeated rows, partial regression, exhaustive two-cluster enumeration on five points, adjusted Rand arithmetic, scalar logarithmic calculations, and group totals/means.
+- The existing lecture-example verifier passed. Its incidental CSV line-ending conversions were reconciled to original bytes without changing values.
+- `scripts/check_lecture_code.py` verified 101 exact source listings across the complete notes, including the five added programs.
+
+## Figure and Document Checks
+
+`build_figures.py` generates four editable TikZ sources directly from checked tables and the stated observation process. The Illinois plots preserve every released area, use common coordinate scales, and distinguish groups with markers as well as color. Source construction, plot values, and rendered layout are checked separately. The notes and five affected session decks compile with the established Pandoc/Tectonic workflow. The syllabus rebuild uses its maintained Markdown source.
+
+The case reports descriptive coefficients without inferential intervals. ACS sampling error, spatial dependence, telemetry selection, and privacy noise are not propagated. The clustering fixes k=3 and tests scaling and initialization, without a validation target. The index example checks published illustrative values; the private production transformation and differences among reported sample counts remain unresolved.
+
+The complete notes contain 440 pages and 112 figures; the standalone Marketing Dialectics chapter contains 35 pages. Ten added slides bring the combined deck to 418 slides. The syllabus remains two pages. All affected decks retain complete Markdown companions. Compiled PDFs and figure previews were rendered and inspected, including added content and neighboring page breaks; no overfull boxes or unresolved references remain in the affected builds.
+
+A clean export of the staged Git tree reproduced every saved analysis-result file and all four TikZ sources byte-for-byte, verified all archived-input hashes, and passed the eleven tests. This export used only the published inputs for the analysis. The larger Census source-table extraction was checked separately from the original downloads. Publication links were checked against the reviewed tree, and the portable LLM context was rebuilt from that tree's intended source versions. The unchanged upstream README retains its original trailing whitespace.
+
+---
+
+## Source: 07_Labs/Digital_Usage/README.md
+
+# Digital Service, Geographic Evidence, and Customer Choice
+
+A retailer plans to offer booking, discounts, and cancellation through an app. It wants to identify where assistance may help customers. Use the [released data and full programs](../../03_Data_and_Code/Digital_Usage/README.md) to assess which conclusions the geographic evidence supports. This exercise is public optional ungraded practice.
+
+## 1. Define the Decision and Observation Unit
+
+State the service decision, the customer task, and the information available before the firm acts. Distinguish a Windows device-month, a postal identifier, a Census area, and a customer. Explain why app-category minutes do not directly measure the ability to complete a cancellation request.
+
+## 2. Assess the Release and Construct the Join
+
+Run `assess_release.py`. Reconcile the raw count, restored leading zeros, matched identifiers, and regression eligibility using `assessment.json`. Inspect 01001, 60601, and 61801 as strings. Explain why the 50 open-ended income values remain in the released roster while leaving the common income-regression sample. Check that the education and broadband shares use different denominators.
+
+Ask an AI assistant to suggest a join and then inspect its keys, cardinality assertion, unmatched-record handling, and income-code treatment. Verify one record against the archived source CSVs without relying on the assistant's explanation.
+
+## 3. Evaluate the Geographic Display
+
+Use `illinois_map.csv` and the two M2 maps. Compare MCI and CCI for one named area in original and standardized units. Explain what equal area weights and common z-score intervals hold fixed. Explain why a dense collection of points is not a count of residents, why the point is not a device location, and what a boundary or population-weighted display would change.
+
+## 4. Compare Regressions on One Sample
+
+Run `compare_models.py`. Reproduce the positive simple CCI slope and negative adjusted slope. Explain the comparison defined by education, broadband, and state intercepts. Compare the household-weight sensitivity with the equal-area projection. Give a concrete causal question about an assistance offer and identify the evidence this geographic regression lacks for answering it.
+
+## 5. Compare Geographic Groupings
+
+Run `cluster_usage.py`. Verify that group counts sum to the Illinois roster and inspect original-unit group means. Explain the adjusted Rand index and the difference between scaling sensitivity and seed sensitivity. For an extension, compare k=2, 3, and 4 in a copy of the script; label this a new analysis and record outputs. Specify a held-out customer outcome before describing one grouping as more useful for service allocation.
+
+## 6. Reproduce a Published Numerical Example
+
+Run `verify_index.py`. Calculate one device score independently from the printed minutes and weights. Identify the log convention that matches displayed rounding, the convention stated in Equation S1, and the conclusion that remains unresolved. Reproduce the equal-device and minute-weighted means. Explain how a change in activity weights can change an area's score while each device's score remains fixed.
+
+## 7. Justify the Marketing Practice
+
+Compare an optional assistance offer with mandatory app completion for access to a benefit. Specify consent, customer-requested outcomes, correction of geographic classifications, usable alternatives, and failure costs. Apply the Kantian distinction between evidence and the additional premise authorizing a decision. Apply the Confucian concern with humane conduct and role responsibilities. Propose an assistance evaluation with an explicit eligible-customer denominator, assignment rule, outcomes, and observation period. Keep this proposed study separate from the executed geographic analyses.
 
 ---
 

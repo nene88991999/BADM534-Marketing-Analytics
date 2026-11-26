@@ -1,0 +1,96 @@
+{
+  "namespace": "digital-usage",
+  "reviewed_on": "2026-11-25",
+  "resources": [
+    {
+      "id": "DU01",
+      "title": "Evidence and measures of the digital usage divide from 40 million Windows devices",
+      "url": "https://www.nature.com/articles/s41467-026-78689-1",
+      "rights": "CC BY 4.0",
+      "use": "Paper and supplement; reviewed in full",
+      "modules": [
+        "M2",
+        "M3",
+        "M4",
+        "M7",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DU02",
+      "title": "Consumption of Digital Applications Data Set",
+      "url": "https://github.com/microsoft/Consumption-of-Digital-Applications-Data-Set",
+      "rights": "CDLA-Permissive-2.0",
+      "use": "Pinned release and upstream README",
+      "modules": [
+        "M2",
+        "M3",
+        "M4",
+        "M7",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DU03",
+      "title": "2021 ACS Table-Based Summary File",
+      "url": "https://www.census.gov/programs-surveys/acs/data/summary-file.2021.html",
+      "rights": "U.S. government public data",
+      "use": "B19013, B15003, B28002 ZCTA extracts",
+      "modules": [
+        "M2",
+        "M3",
+        "M4",
+        "M7",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DU04",
+      "title": "2021 Gazetteer Files",
+      "url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2021.html",
+      "rights": "U.S. government public data",
+      "use": "ZCTA internal points",
+      "modules": [
+        "M2",
+        "M3",
+        "M4",
+        "M7",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DU05",
+      "title": "ZIP Code Tabulation Areas",
+      "url": "https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html",
+      "rights": "Linked guidance",
+      "use": "ZIP and ZCTA distinction",
+      "modules": [
+        "M2",
+        "M3",
+        "M4",
+        "M7",
+        "M8",
+        "M9"
+      ]
+    },
+    {
+      "id": "DU06",
+      "title": "Planning Database Documentation",
+      "url": "https://www2.census.gov/adrm/PDB/2024/2024_PDB_Documentation.pdf",
+      "rights": "Linked Census documentation",
+      "use": "Open-ended median-income boundary codes",
+      "modules": [
+        "M2",
+        "M3",
+        "M4",
+        "M7",
+        "M8",
+        "M9"
+      ]
+    }
+  ]
+}

@@ -22,6 +22,7 @@ Session 02. M2. 170 minutes.
 - [Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 - [Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)
+- [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -272,7 +273,29 @@ Combining datasets can change what can be inferred even when each file omits nam
 
 Source: ETHICS_AND_REGULATION.md, M2.
 
-## Slide 23: Measurement Discussion
+## Slide 23: Application Activity and Customer Needs
+
+Geographic application use and individual service outcomes have different observation units.
+
+**Figure description:** Consenting Windows devices contribute category minutes to private geographic indices. Direct evidence on customer tasks separately informs service design.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_digital_measurement.tex)
+
+A retailer deciding between digital and assisted service needs evidence about requested tasks, devices, and outcomes. The source observes consenting consumer Windows devices from October 2022 to March 2023. Browser categories mix many tasks. Public indices do not establish an individual customer’s skill, wishes, or authorization.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 24: Reproduce the Published Calculation
+
+- Equation S1 gives MCI 6.4765 for illustrative device 1.
+- The source table prints 4.46; a natural-log calculation reproduces it.
+- The private production convention remains unresolved.
+
+The complete Python in M2 §2.27 preserves the source’s rounded category weights and three illustrative minute vectors. Natural logs of positive minutes, with zero at zero minutes, match all three displayed values to two decimals. The weights sum to 0.996. This is a check of the worked example, not a reconstruction of private telemetry. Minute weights also change the aggregate from 3.6733 to 3.6304.
+
+Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+
+## Slide 25: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?
