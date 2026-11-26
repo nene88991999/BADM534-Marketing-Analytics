@@ -127,6 +127,12 @@
       "path": "07_Labs/Philosophical_Arguments/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "qualitative-evidence",
+      "path": "07_Labs/Qualitative_Evidence/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -364,7 +370,14 @@
     "01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md",
     "01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md",
     "07_Labs/Philosophical_Arguments/README.md",
-    "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md"
+    "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md",
+    "01_Resources/42_Qualitative_Evidence/README.md",
+    "03_Data_and_Code/Utility_Cost_Recovery/README.md",
+    "03_Data_and_Code/Utility_Cost_Recovery/CODEBOOK.md",
+    "03_Data_and_Code/Utility_Cost_Recovery/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Utility_Cost_Recovery/AGENTS.md",
+    "03_Data_and_Code/Utility_Cost_Recovery/results/README.md",
+    "07_Labs/Qualitative_Evidence/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -413,12 +426,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-reasons-stakeholders-and-evidence",
+    "revision": "2026-11-26-qualitative-utility-evidence",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 126,
-    "pages": 507,
+    "figures_count": 127,
+    "pages": 518,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -517,6 +530,18 @@
         "M8",
         "M9"
       ]
+    },
+    {
+      "id": "utility-cost-recovery",
+      "index": "03_Data_and_Code/Utility_Cost_Recovery/README.md",
+      "manifest": "03_Data_and_Code/Utility_Cost_Recovery/manifest.json",
+      "data_type": "Selected public disclosures, original qualitative paraphrases, short verbatim excerpts, and retrieval metadata",
+      "modules": [
+        "M5",
+        "M6",
+        "M8",
+        "M9"
+      ]
     }
   ],
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
@@ -531,7 +556,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 456,
+    "slides": 462,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1104,7 +1129,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-reasons-stakeholders-and-evidence",
+  "revision": "2026-11-26-qualitative-utility-evidence",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1385,5 +1410,33 @@
     "local_reading_pdfs": 4,
     "public_original_pdfs": 0,
     "scope": "Normative arguments and hypothetical applications; actual suppression of residents' objections and corporate X promotion remain unverified."
+  },
+  "utility_qualitative_evidence": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M5 §5.27",
+      "M6 §6.36",
+      "M8 §8.31",
+      "M9 §9.33"
+    ],
+    "sessions": [
+      7,
+      14
+    ],
+    "resources": "01_Resources/42_Qualitative_Evidence/README.md",
+    "example": "03_Data_and_Code/Utility_Cost_Recovery/README.md",
+    "codebook": "03_Data_and_Code/Utility_Cost_Recovery/CODEBOOK.md",
+    "lab": "07_Labs/Qualitative_Evidence/README.md",
+    "selected_documents": 6,
+    "selected_calls": 3,
+    "downloaded_documents": 5,
+    "coded_claims": 10,
+    "verbatim_excerpt_boxes": 3,
+    "independent_human_coders": 0,
+    "causal_effect_estimates": 0,
+    "original_figures": 1,
+    "additional_slides": 6,
+    "tests_passed": 8,
+    "matching_python_blocks": 115
   }
 }

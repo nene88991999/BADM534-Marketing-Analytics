@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [507-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 126 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [518-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 127 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -201,3 +201,5 @@ M2 §2.28.1 develops the price/bill accounting distinction. M6 §6.35 provides c
 ## Reasons, Stakeholders, and Public Voice
 
 M9 §§9.28–9.32 develops publication responsibility, Scanlonian justification, stakeholder duties, pricing communication, and residents' voice. Two editable TikZ figures distinguish factual and normative premises and compare reasons for rejecting alternative principles. M1 and M8 connect these arguments to managerial recommendations and public claims.
+
+M5 §5.27 adds qualitative analysis of utility disclosures, three boxed verbatim call excerpts, a cost-recovery diagram, and two complete Python programs. M6 §6.36 and M9 §9.33 connect that evidence to causal interpretation and stakeholder reasons. [Methods references](../01_Resources/42_Qualitative_Evidence/README.md) and [optional practice](../07_Labs/Qualitative_Evidence/README.md) accompany the case.

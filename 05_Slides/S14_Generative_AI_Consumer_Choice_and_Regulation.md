@@ -606,7 +606,27 @@ The headline is a discussion construction, not a verified quotation or instituti
 
 Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
-## Slide 52: When Ought a Research Claim Be Published?
+## Slide 52: Mechanism Evidence and Public Reassurance
+
+- Calls and filings document recovery plans and competing claims.
+- The electricity paper itself permits recovery and positive spillovers.
+- Assess the scope of reassurance separately from the historical coefficient.
+
+New 2026 disclosures raise questions about future costs and allocations beyond the 2020–2025 historical window. They do not overturn that coefficient by themselves. PSEG's February 2025 residential-bill statement concerns wholesale capacity and procurement, which is a separate channel from construction cost recovery. M6 §6.36 develops the causal comparison.
+
+Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md M9 §9.33. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 53: Whose Account of Affordability is Missing?
+
+- Investor calls give management and financial analysts a structured voice.
+- Household experience and authority require additional sources.
+- An institution ought to substantiate burdens and address material objections.
+
+Distinguish a factual recovery plan from the normative claim that affected people deserve examinable reasons. Consider the objection that excessive delay may obstruct beneficial investment. Retain credible offsets and feasible protections when evaluating that objection. Public comments and consumer-counsel filings can extend the documentary record; interviews require an appropriate separate design. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.
+
+Source: M9 §9.33. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 54: When Ought a Research Claim Be Published?
 
 - Identify the evidence worth preserving and the interpretation needing support.
 - Compare a corrected release, further review, and rejection of the proposed version.
@@ -616,7 +636,7 @@ A paper need not be released in a form that attaches unsupported reassurance to 
 
 Source: M9 §§9.28–9.30. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 
-## Slide 53: Favorable Framing and Justified Acceptance
+## Slide 55: Favorable Framing and Justified Acceptance
 
 - Pricing language may emphasize discounts, flexibility, or convenience.
 - Research coverage may emphasize reassurance about consumer costs.
@@ -626,7 +646,7 @@ The verified Wendy's February 27, 2024 statement describes intended digital-boar
 
 Source: M9 §9.31. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 
-## Slide 54: A Cancellation Evaluation
+## Slide 56: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -636,7 +656,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 55: Same Renewal, Different Customer Intent
+## Slide 57: Same Renewal, Different Customer Intent
 
 Synthetic populations: 1,000 customers each, one renewal month.
 
@@ -648,7 +668,7 @@ Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%
 
 Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 56: A Welfare Comparison
+## Slide 58: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -667,7 +687,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 57: Coding Exercise: A Marketing Evaluation
+## Slide 59: Coding Exercise: A Marketing Evaluation
 
 - Reproduce the two populations with identical billed renewal.
 - Keep unknown intent separate and compare the relevant denominators.
@@ -677,7 +697,7 @@ Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full pro
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 58: Federal Cancellation Policy: Current Status
+## Slide 60: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -687,7 +707,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 59: Cancellation Rules Differ by Jurisdiction
+## Slide 61: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -697,7 +717,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 60: Research Frequency and Policy Importance
+## Slide 62: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -707,7 +727,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 61: Pricing, Reviews, and Delivery
+## Slide 63: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -717,7 +737,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 62: Pricing Language and Regulatory Evidence
+## Slide 64: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -727,7 +747,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 63: Personalized Pricing: Policy Status
+## Slide 65: Personalized Pricing: Policy Status
 
 - FTC: August 2026 proposal; October 2026 information-gathering inquiry.
 - New York: disclosure law in effect; broader restrictions await enactment.
@@ -737,7 +757,7 @@ Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
 
-## Slide 64: Environmental Claims: Two Different Decisions
+## Slide 66: Environmental Claims: Two Different Decisions
 
 - 2023 Shell ads: the ASA upheld the overall-impression complaint.
 - 2025 Shell ad: the ASA accepted the contextualized communication.
@@ -747,7 +767,7 @@ UK ASA, June 7, 2023: omitted context about the balance of business activities m
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 65: A Product Fact and a Portfolio Impression
+## Slide 67: A Product Fact and a Portfolio Impression
 
 The scope of the conclusion determines the evidence required.
 
@@ -759,7 +779,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 66: Digital Service and Feasible Customer Choice
+## Slide 68: Digital Service and Feasible Customer Choice
 
 - Offer assistance while preserving a usable alternative.
 - Measure completion, customer time, and firm cost on a fixed roster.
@@ -769,7 +789,7 @@ An optional assistance intervention can expand feasible choices. A mandatory app
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 67: Evidence and Authority to Classify a Customer
+## Slide 69: Evidence and Authority to Classify a Customer
 
 - Kantian critique examines the move from area activity to individual ability.
 - Respect for persons requires reasons for restrictions and usable correction.
@@ -779,7 +799,7 @@ A stable cluster does not authorize a firm to remove an individual’s options. 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 68: A Decision with Consumer Outcomes
+## Slide 70: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

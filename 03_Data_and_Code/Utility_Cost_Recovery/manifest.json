@@ -1,0 +1,39 @@
+{
+  "release_date": "2026-11-26",
+  "python_version": "3.12.14",
+  "example": "Utility Disclosures and Household Costs",
+  "hash_algorithm": "SHA-256",
+  "files": {
+    ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+    "AGENTS.md": "d8ec9ee638da7746d640e9451491e9692e5e7ae1c806a5e9ba7a1daa04923828",
+    "CODEBOOK.md": "f2385b1c8617c9810d6f6760696d0a5291feb099d6815f5488c1119fc8d676b0",
+    "DATA_DICTIONARY.md": "57c1cbfa1e179613557ba7ffc2b7b75db282966f76fcdbdb070d70f430407759",
+    "README.md": "e83a30d109c7c003d889495944576071cccbd70b86e71dae1ca7b197f810f157",
+    "VERIFICATION.md": "13bd4445576a5eb9e36ac934755feb28b5e3cf347b3b08a30ba3e9a6c6226d6b",
+    "analyze.py": "4e81d33c88d55cfbd006161c09304187b4cbfe6400fc39a547460e153558f9c9",
+    "collect.py": "95408ffe091da81e28bc58afaec10d58d853eed72b4f720ab3764ea76f5bcec0",
+    "data/claims.json": "d030f83beb3f3a6a508d17835ee37859ba9d5043103bf26811863b8135de55ba",
+    "data/excerpts.json": "6e8bce24dc4bd3e52dfdbb6b90bc85d7f5eb833f3160f0aa1c40664b3b9fa267",
+    "data/retrieval_snapshot.json": "6133ab529fcdbfc9c95987c7fe1bf7435771bdd523e260e0f805f89db4083066",
+    "data/reviewer_template.csv": "969d0246d65c27f455474df8511d8b4d9c8c1213086fe70560dc36e155733bc5",
+    "results/README.md": "8f3e06a43b9213580e4b2d0ddd1679bbb85f59934ad032936ffb8f912888f910",
+    "results/bill_illustrations.csv": "a6f313395b4803e99e9c3938b5b8d13111ac9d87edeccef15f223369c44a7512",
+    "results/coverage.csv": "046650a596c1e28828e84d0707955248a0178f3013b3eb1726e4ffbacad71e56",
+    "results/evidence_matrix.csv": "807d3f7543e71bd42379f9a51838e9d9138ff99193b4dcf222d4274919a3e4d1",
+    "results/summary.json": "6569759bb218a143ec92fe4e3f946868c055753b56628de938de8e9b1f4595a6",
+    "sources.json": "9c391333817b8ad7f1cda70a4a0accbfb4d72b5ce3e2b014b52d8f65f7b6b8ed",
+    "test_examples.py": "bb7325d60880a8477d2f8b7f21609faac9b7018d63351be5e4439e0e8debf8bd"
+  },
+  "downloaded_source_hashes": {
+    "EVRG_CALL": "9445c907e5ab6edab0281d1bff65bd11b5a5232ff3ede14b8a696d786b2929df",
+    "CNP_CALL": "f11b370a543594d348b82618353158dc692f3dc533ba319af1fb308193ae0cac",
+    "EVRG_REQUEST": "c434ca650c23656e6c85d1e27f536a5f7f8aac6a1fad633444984a0cc6690fd2",
+    "NJBPU": "eb6daaeafbf5f2254a9b10270610d909e2bec920b5f4190bddc49cabc6c44600",
+    "PSEG_CALL": "25545af83c28fcc0f5e3a487db3b673892e113ca715425805883bb32d4da35e9"
+  },
+  "unavailable_to_downloader": [
+    "SO_10K"
+  ],
+  "full_source_documents_published": false,
+  "independent_human_coding_completed": false
+}

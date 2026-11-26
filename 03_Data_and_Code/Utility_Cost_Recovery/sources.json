@@ -1,0 +1,107 @@
+[
+  {
+    "id": "EVRG_CALL",
+    "issuer": "Evergy",
+    "date": "2026-02-19",
+    "kind": "earnings_call",
+    "format": "html",
+    "title": "Fourth Quarter 2025 Earnings Call",
+    "url": "https://www.roic.ai/quote/EVRG/transcripts/2025-year/4-quarter",
+    "identity_markers": [
+      "February 19, 2026",
+      "Missouri West"
+    ],
+    "rights": "LSEG transcript hosted by issuer; copyright reserved; full text kept locally",
+    "primary_url": "https://investors.evergy.com/static-files/053ab9a3-f01f-44f1-8c97-89a40a3a148a",
+    "primary_locator": "PDF p. 6, David Campbell",
+    "start_marker": "Q4 FY2025",
+    "end_marker": "ROIC AI \u00a9",
+    "retrieval_note": "Issuer PDF verified through browser search; direct automated download returned HTTP 403. Separately accessible public transcript rendition used for extraction."
+  },
+  {
+    "id": "CNP_CALL",
+    "issuer": "CenterPoint Energy",
+    "date": "2026-07-28",
+    "kind": "earnings_call",
+    "format": "html",
+    "title": "Second Quarter 2026 Earnings Transcript",
+    "url": "https://www.roic.ai/quote/CNP/transcripts/2026-year/2-quarter",
+    "identity_markers": [
+      "July 28, 2026",
+      "capital trackers"
+    ],
+    "rights": "Issuer transcript; no redistribution license identified; full text kept locally",
+    "primary_url": "https://investors.centerpointenergy.com/static-files/e83e69b9-83b3-4ee8-8a6b-9a430fdd714f",
+    "primary_locator": "PDF p. 10, Chris Foster",
+    "start_marker": "Q2 FY2026",
+    "end_marker": "ROIC AI \u00a9",
+    "retrieval_note": "Issuer PDF verified through browser search; direct automated download returned HTTP 403. Separately accessible public transcript rendition used for extraction."
+  },
+  {
+    "id": "EVRG_REQUEST",
+    "issuer": "Evergy",
+    "date": "2026-11-03",
+    "kind": "company_filing_announcement",
+    "format": "html",
+    "title": "Missouri West Rate Request for Reliability and New Generation",
+    "url": "https://newsroom.evergy.com/2026-11-03-Evergy-files-Missouri-West-rate-request-focused-on-reliability-and-new-generation-investments",
+    "start_marker": "Evergy files Missouri West rate request",
+    "end_marker": "About Evergy",
+    "identity_markers": [
+      "November 03, 2026",
+      "17.25",
+      "61 million"
+    ],
+    "rights": "Company release; full text kept locally"
+  },
+  {
+    "id": "SO_10K",
+    "issuer": "Southern Company",
+    "date": "2026-02-19",
+    "kind": "accounting_disclosure",
+    "format": "html",
+    "title": "2025 Form 10-K: Accounting Policies, AFUDC",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000006/R72.htm",
+    "start_marker": "SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES",
+    "end_marker": null,
+    "identity_markers": [
+      "Southern Company",
+      "AFUDC increases the revenue requirement"
+    ],
+    "rights": "Corporate SEC filing; full text kept locally"
+  },
+  {
+    "id": "NJBPU",
+    "issuer": "New Jersey Board of Public Utilities",
+    "date": "2025-02-12",
+    "kind": "regulatory_announcement",
+    "format": "html",
+    "title": "2025 Basic Generation Service Auction Results",
+    "url": "https://nj.gov/bpu/newsroom/2025/approved/20250212.html",
+    "start_marker": "NJBPU Announces Conclusion",
+    "end_marker": "About the New Jersey Board",
+    "identity_markers": [
+      "02/12/2025",
+      "17.24%",
+      "182.71"
+    ],
+    "rights": "State agency release; full text kept locally"
+  },
+  {
+    "id": "PSEG_CALL",
+    "issuer": "PSEG",
+    "date": "2025-02-25",
+    "kind": "earnings_call",
+    "format": "html",
+    "title": "Fourth Quarter 2024 Earnings Call",
+    "url": "https://www.roic.ai/quote/PEG/transcripts/2024-year/4-quarter",
+    "start_marker": "Q4 FY2024",
+    "end_marker": "ROIC AI \u00a9",
+    "identity_markers": [
+      "February 25, 2025",
+      "raise the residential bill"
+    ],
+    "rights": "Public transcript rendition; full text retained locally",
+    "retrieval_note": "CEO statement cross-checked against the NJBPU auction announcement; underlying recording not independently transcribed."
+  }
+]

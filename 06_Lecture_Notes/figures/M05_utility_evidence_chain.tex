@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,font=\small,text width=2.6cm,minimum height=1.95cm] (plan) at (1.4,0)
+  {\textbf{Investment Plan}\\Forecast and\\recovery mechanism};
+\node[orangebox,font=\small,text width=2.6cm,minimum height=1.95cm] (request) at (4.9,0)
+  {\textbf{Recovery Request}\\Costs, timing,\\and proposed charges};
+\node[box,font=\small,text width=2.6cm,minimum height=1.95cm] (rule) at (8.4,0)
+  {\textbf{Authorized Charge}\\Approval and\\class allocation};
+\node[orangebox,font=\small,text width=2.6cm,minimum height=1.95cm] (bill) at (11.9,0)
+  {\textbf{Household Bill}\\Usage, credits,\\and other charges};
+\draw[edge] (plan.east) -- (request.west);
+\draw[edge,dashed] (request.east) -- (rule.west);
+\draw[edge,dashed] (rule.east) -- (bill.west);
+\node[box,font=\small,text width=5.6cm,minimum height=1.5cm] (offset) at (4.0,-2.9)
+  {\textbf{Revenues and Protections}\\New-load revenue, direct cost assignment,\\guarantees, or disallowed recovery};
+\draw[accent] (offset.north -| request.south) -- (request.south);
+\node[align=left,text width=5.5cm,font=\small] at (10.2,-2.9)
+  {A smaller requested increase can coexist\\with a higher bill than today.};
+\node[align=center,text width=13.3cm,font=\footnotesize] at (6.7,-4.4)
+  {Dashed arrows require a regulatory order, allocation evidence, and billing records.};
+\end{tikzpicture}

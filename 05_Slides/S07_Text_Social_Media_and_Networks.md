@@ -15,6 +15,7 @@ Session 07. M5. 170 minutes.
 - Trace how anchors, similarities, and persona weighting determine a text-based rating.
 - Compare feature preservation, group weighting, and access at original network origins.
 - Distinguish recorded-category agreement from the compatibility of a replacement text representation.
+- Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims.
 
 ## Related Materials
 
@@ -311,7 +312,49 @@ Run construct_checks.py for eight synthetic sentences. A purposeful case set can
 
 Source: M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 24: Prompt Revision Uses Evaluation Evidence
+## Slide 24: What Does a Utility Disclosure Establish?
+
+- Identify the speaker, customer class, charge component, and horizon.
+- Separate a forecast, request, approval, and household outcome.
+- Compare recovery claims with offsetting revenues and protections.
+
+The source set has six purposeful documents, including three calls, and ten claim records. Public coding uses original paraphrases and locators; the notes retain three short verbatim excerpts. Five documents were downloaded. The accounting passage was checked separately through a web reader. Counts describe this selection and provide no prevalence estimate. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.
+
+Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 25: Follow the Cost into the Bill
+
+Each transition requires evidence appropriate to its institutional stage.
+
+**Figure description:** Investment plans lead to recovery requests, then authorized charges and household bills. New-load revenue and protections can reduce the requested amount. Dashed arrows identify transitions requiring additional records.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M05_utility_evidence_chain.tex)
+
+A smaller requested increase can coexist with a higher bill than today. Electricity supply procurement differs from construction recovery. Check the legal entity and customer class before connecting passages across documents. A statement at one stage does not establish all subsequent outcomes.
+
+Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
+
+## Slide 26: Keep the Case That Challenges Your Interpretation
+
+- Evergy discusses investment-related rate pressure and benefits from growing sales.
+- Its later request proposes a higher residential bill while claiming a revenue offset.
+- A lower bill than otherwise can still be a higher bill than today.
+
+The later announcement proposes a USD 17.25 monthly increase at 1005 kWh, conditional on approval, and a USD 61 million reduction in the annual revenue request from anticipated data-center revenue. The comparison does not identify a data-center-specific causal effect. Read both sides of the account before developing an explanatory theme.
+
+Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Evergy, November 3, 2026, https://newsroom.evergy.com/2026-11-03-Evergy-files-Missouri-West-rate-request-focused-on-reliability-and-new-generation-investments
+
+## Slide 27: Qualitative Quality Depends on the Analytical Approach
+
+- State selection rules, prior expectations, and changes to the codebook.
+- Compare within cases; retain source locators and negative cases.
+- Use independent review for the shared coding frame and explain disagreements.
+
+This is directed content analysis with a codebook. Independent human coding has not yet been completed. Agreement would concern coding consistency, not the truth of a corporate statement. Reflexive thematic analysis makes different methodological commitments. Retain investigator interpretation and the limits of investor-facing documents. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.
+
+Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.
+
+## Slide 28: Prompt Revision Uses Evaluation Evidence
 
 - A passage used to revise a prompt becomes development material.
 - Keep passages from one call together when constructing a split.
@@ -321,7 +364,7 @@ A test on new firms addresses a different deployment population from a test on l
 
 Source: Marketing Analytics Lecture Notes, M5 §5.15.
 
-## Slide 25: Citations and Supporting Evidence
+## Slide 29: Citations and Supporting Evidence
 
 Four fictional pricing questions; authored answers and reference annotations.
 
@@ -333,7 +376,7 @@ S1 reports a price increase and a before-after unit change without a causal desi
 
 Source: M5 §5.19. ../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md
 
-## Slide 26: A Controlled Source Comparison
+## Slide 30: A Controlled Source Comparison
 
 - Hold the questions, model version, and scoring rule fixed.
 - Use fresh conversations and preserve raw responses.
@@ -344,7 +387,7 @@ Run source_selection.py to reproduce the constructed example. In an optional liv
 
 Source: M5 §5.19; ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/3-managing-sources/
 
-## Slide 27: Generator and Judge Changes
+## Slide 31: Generator and Judge Changes
 
 Identical saved outputs are scored by both judges. All scores are stipulated.
 
@@ -356,7 +399,7 @@ A stable judge supplies a common comparison but still requires validation. Posit
 
 Source: M5 §5.18. Zheng et al. (2023), https://arxiv.org/abs/2306.05685; Panickssery et al. (2024), https://arxiv.org/abs/2404.13076
 
-## Slide 28: Network Objects
+## Slide 32: Network Objects
 
 - Nodes identify customers or accounts.
 - Edges represent a defined relationship in a time window.
@@ -366,7 +409,7 @@ An edge could mean following, messaging, purchasing together, or co-occurrence. 
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 29: Few Links Can Connect Separate Groups
+## Slide 33: Few Links Can Connect Separate Groups
 
 Synthetic undirected network. R has only two links.
 
@@ -378,7 +421,7 @@ Brokerage can matter for reach even when a node has few direct neighbors. Observ
 
 Source: M5, Section 5.7, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 30: The Nearest Store Depends on the Route
+## Slide 34: The Nearest Store Depends on the Route
 
 Synthetic population: 800. Access threshold: five minutes. Schematic spacing is not a distance scale.
 
@@ -390,7 +433,7 @@ W0, W1, W2, E0, E1, E2, and X receive weights 100, 300, 100, 50, 50, 50, and 150
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 31: Hold the Comparison Fixed
+## Slide 35: Hold the Comparison Fixed
 
 - Same six connected origins; one directed neighbor each.
 - Each metric creates six links; only two links coincide.
@@ -401,7 +444,7 @@ The neighbor comparison fixes k=1 and resolves ties alphabetically. The ten-minu
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 32: The Route Changes the Nearest Alternative
+## Slide 36: The Route Changes the Nearest Alternative
 
 Four observed restaurant origins; other available same-chain targets. October status, November network.
 
@@ -413,7 +456,7 @@ The four records are observed on October 24, 2026; OpenStreetMap is dated Novemb
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://www.openstreetmap.org/copyright
 
-## Slide 33: Interpret the Observed Comparison
+## Slide 37: Interpret the Observed Comparison
 
 - Hold the same observed origin and target set fixed across metrics.
 - At four kilometers: three of four origins by straight line; zero by network.
@@ -424,7 +467,7 @@ The four-kilometer threshold is imposed. Available means recorded ordering avail
 
 Source: Marketing Analytics Lecture Notes. M5 §§5.21–5.22. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 34: A Group Mean Needs a Group Size
+## Slide 38: A Group Mean Needs a Group Size
 
 Four synthetic zones earn 10, 10, 10, and 40 dollars per week.
 
@@ -438,7 +481,7 @@ The observation unit is a zone, and each zone has 100 people. Binary membership 
 
 Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md https://arxiv.org/abs/2611.01200v1
 
-## Slide 35: Exact Revenue, Distorted Access
+## Slide 39: Exact Revenue, Distorted Access
 
 Synthetic inputs. Five-minute access is evaluated at the four original origins.
 
@@ -450,7 +493,7 @@ Affinity is defined as one divided by travel minutes; coarse adjacency sums affi
 
 Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 36: Preprocessing Changes the Population
+## Slide 40: Preprocessing Changes the Population
 
 - The existing retail case includes 150 people at a disconnected origin.
 - Known access stays at 550 people when that origin is removed.
@@ -461,7 +504,7 @@ This is the separate seven-origin case in Section 5.21, not the four-zone compre
 
 Source: Marketing Analytics Lecture Notes, M5 §5.24. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md ../01_Resources/32_Graph_Coarsening/SOURCE_REVIEW.md
 
-## Slide 37: University Affiliations Create a Research Network
+## Slide 41: University Affiliations Create a Research Network
 
 - 745 papers identify 424 higher-education institutions.
 - Split one unit of link weight across each paper's university pairs.
@@ -471,7 +514,7 @@ The eligible census has 824 papers; 79 lack identified education affiliations. W
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 38: Affiliation Groups Depend on the Representation
+## Slide 42: Affiliation Groups Depend on the Representation
 
 Fractional papers in the six largest of 19 communities. All 745 papers contribute one in total.
 
@@ -483,7 +526,7 @@ The median adjusted Rand agreement across twenty seeds is 0.522; switching from 
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md
 
-## Slide 39: Coding Exercise: A Label Assessment
+## Slide 43: Coding Exercise: A Label Assessment
 
 - Reproduce the four-question source comparison.
 - Trace each unsupported claim to its inferential error.
@@ -494,7 +537,7 @@ Use ten minutes to introduce the question and demonstrate the output, twenty-fiv
 
 Source: M5 §§5.19–5.20. ../07_Labs/AI_Evidence_and_Evaluation/README.md
 
-## Slide 40: Engagement and Commercial Value
+## Slide 44: Engagement and Commercial Value
 
 - Likes and comments measure platform responses.
 - Sales and contribution require separate outcome records.
@@ -504,7 +547,7 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 41: Authenticity of Reviews and Endorsements
+## Slide 45: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -514,7 +557,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 42: Text-Analysis Discussion
+## Slide 46: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

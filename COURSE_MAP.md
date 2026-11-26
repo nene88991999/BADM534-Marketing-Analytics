@@ -193,3 +193,7 @@ The electricity case connects M2 §2.28.1 (prices and bills), M6 §6.35 (project
 ## Reasons, Stakeholders, and Public Voice
 
 M1 §1.1 connects a managerial recommendation to a normative premise. M8 §8.31 examines public reassurance. M9 §§9.28–9.32 develops Scanlonian argument, stakeholder duties, publication choices, and residents' opportunities to contest claims. [Optional practice](07_Labs/Philosophical_Arguments/README.md) carries these questions across M1–M9; Session 14 includes the two new editable diagrams.
+
+## Utility Evidence Across Methods and Ethics
+
+M5 §5.27 connects scraping to qualitative content analysis and boxed source excerpts. M6 §6.36 separates mechanism evidence from a causal comparison. M8 §8.31 and M9 §9.33 connect the evidence to public reassurance and household reasons. Use the [worked example](03_Data_and_Code/Utility_Cost_Recovery/README.md), [methods readings](01_Resources/42_Qualitative_Evidence/README.md), and [optional lab](07_Labs/Qualitative_Evidence/README.md). Sessions 7 and 14 integrate the comparison within existing time allocations.

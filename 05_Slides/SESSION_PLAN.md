@@ -23,7 +23,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 68 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 70 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -372,3 +372,7 @@ Sessions 9 and 14 connect operational treatment to project requests, investment,
 ## Philosophical Arguments in Session 14
 
 Minutes 80–90 compare Kantian, Confucian, and Scanlonian reasons; minutes 90–95 connect premises to an ought conclusion; minutes 95–100 examine stakeholder reasons and public voice. These labels refine existing discussion blocks. Selected figures and arguments support the meeting; the full extended cases remain optional reading and practice.
+
+## Qualitative Evidence and the Utility Case
+
+Session 7 integrates source retrieval, contextual coding, negative cases, and the investment-to-bill diagram into the existing earnings-call block. Session 14 connects institutional evidence to household reasons and the scope of public reassurance. The complete collection and independent review are [optional practice](../07_Labs/Qualitative_Evidence/README.md).

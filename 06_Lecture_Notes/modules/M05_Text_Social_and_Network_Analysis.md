@@ -1703,3 +1703,345 @@ if __name__ == "__main__":
 ```
 
 Hold the reference labels and description weights fixed when comparing representations through geometry, alignment, and classifier decisions (§§7.42–7.43).
+
+
+## 5.27 Utility Disclosures as Qualitative Evidence
+
+\noindent A household advocate must decide whether an assurance about electricity affordability addresses the costs that residents could face. An earnings call supplies a different observation from a household bill: management explains investment, recovery, and commercial expectations to investors. Reading these statements can reveal a mechanism that an aggregate comparison leaves unresolved. The relevant question is how a cost becomes recoverable, which customers receive the charge, when it takes effect, and which revenues or contractual protections offset it. A financial incentive to recover investment warrants close examination of these steps.
+
+### 5.27.1 Define the Question Before Selecting Passages
+
+\noindent The coding unit is an attributed claim within its surrounding speaker turn or document paragraph. The source unit is a dated document, and related documents remain grouped by issuer. The purposeful teaching set contains three earnings calls and three supporting documents, selected for explicit discussion of recovery and contrasting implications for customers. Its ten claim records are original paraphrases with locators. They provide a comparison of arguments, with no estimate of how prevalent those arguments are among utilities.
+
+Directed qualitative content analysis begins with categories informed by the question and permits additional categories when the text does not fit. Recovery, allocation, timing, and offsets provide an initial framework here. The danger is to collect only statements that confirm an expectation of household harm. Record that expectation before coding and specify evidence that would change it, such as disallowed recovery or enforceable cost assignment to a large customer. Hsieh and Shannon (2005, pp. 1281–1283) discuss this approach and its susceptibility to confirmation bias. [Hsieh and Shannon](https://doi.org/10.1177/1049732305276687)
+
+A broader study would define jurisdictions, dates, eligible issuers, and document types before collection, then explain any subsequent sampling decisions. Preserve unavailable records and seek cases that challenge the developing explanation. An investor call, its transcript mirror, and a newspaper account quoting it do not supply three independent observations. Saturation requires an explicit assessment appropriate to the analytical aim; it cannot be inferred from the size of this teaching selection.
+
+### 5.27.2 Read Recovery and Offsets Together
+
+\noindent In Evergy's February 19, 2026 call, David Campbell links new generation to possible above-inflation rate increases in Missouri West. The surrounding remarks describe expected cost spreading for most residential customers and longer-term benefits from load growth. The negative case changes the interpretation: recovery and offsets can operate together. A statement about rates growing more slowly than inflation also permits an increase in nominal bills. [Evergy call, PDF p. 6](https://investors.evergy.com/static-files/053ab9a3-f01f-44f1-8c97-89a40a3a148a)
+
+CenterPoint's July 28, 2026 call describes a distribution tracker request for USD 73 million of additional revenue requirement. The adjacent discussion describes a separate settlement expected to reduce delivery charges. Both statements concern components of a regulatory process. Neither supplies the residential share of the requested amount or the net change in an individual household's total bill. A keyword count that labels both passages as evidence of rising household costs loses their distinct meanings. [CenterPoint call, PDF p. 10](https://investors.centerpointenergy.com/static-files/e83e69b9-83b3-4ee8-8a6b-9a430fdd714f)
+
+Evergy's November 3, 2026 announcement makes the proposed household consequence more specific: an increase of USD 17.25 per month at 1,005 kWh, conditional on approval. It also attributes a USD 61 million reduction in its annual revenue request to anticipated data-center revenue. The offset is measured against a higher requested amount in the absence of that revenue. It does not imply that the proposed bill falls relative to today's bill. The announcement requests recovery for generation and grid investment; it does not identify how much of the bill change is caused by data centers. [Evergy rate request](https://newsroom.evergy.com/2026-11-03-Evergy-files-Missouri-West-rate-request-focused-on-reliability-and-new-generation-investments)
+
+The accounting channel is explicit in Southern Company's 2025 disclosure: capitalized financing during construction raises the revenue requirement through rate base and depreciation. The residential allocation remains a separate regulatory question. A distinct channel appears in New Jersey's February 2025 auction announcement, which describes supply costs passing to ratepayers. Its PSE&G illustration moves from USD 155.84 to USD 182.71 per month at 650 kWh. The agency names several drivers, including data-center demand, supply constraints, and market rules, without estimating a causal share for each. Wholesale capacity charges must remain distinct from recovery of utility construction costs. [Southern accounting policy](https://www.sec.gov/Archives/edgar/data/92122/000009212226000006/R72.htm); [New Jersey auction results](https://nj.gov/bpu/newsroom/2025/approved/20250212.html)
+
+![Investment recovery requires evidence about several distinct transitions. Management's forecast leads to a request; regulatory disposition and class allocation connect that request to authorized charges. Usage and later adjustments determine the household bill. Large-load revenues and guarantees can alter the amount recovered. Text locates claims about these transitions; it does not establish every transition.](../figures/M05_utility_evidence_chain.png)
+
+
+> **Call Excerpt: Evergy, February 19, 2026**
+>
+> “customers may see rate increases above inflation over the next five years.”
+>
+> David Campbell, CEO, prepared remarks on Missouri West's generation investment. [Issuer transcript, p. 6](https://investors.evergy.com/static-files/053ab9a3-f01f-44f1-8c97-89a40a3a148a).
+
+The excerpt is a forecast concerning Missouri West in a discussion of residential affordability. It also sits beside expected long-term benefits from new load. It does not attribute the entire potential increase to data centers.
+
+> **Call Excerpt: CenterPoint, July 28, 2026**
+>
+> “we recover approximately 85% of our investments through capital trackers.”
+>
+> Chris Foster, CFO, prepared regulatory update. [Issuer transcript, p. 10](https://investors.centerpointenergy.com/static-files/e83e69b9-83b3-4ee8-8a6b-9a430fdd714f).
+
+The percentage describes the company's investment-recovery mechanisms. It is not the residential share of investment. The surrounding distribution request links recovery to delivery charges, with customer-class allocation requiring additional evidence.
+
+> **Call Excerpt: PSEG, February 25, 2025**
+>
+> “the basic generation service auction results will raise the residential bill starting June 1.”
+>
+> Ralph LaRossa, CEO, prepared remarks on the supply auction. [Public transcript, BGS discussion](https://www.roic.ai/quote/PEG/transcripts/2024-year/4-quarter).
+
+This statement explicitly identifies a residential bill consequence. Its context concerns wholesale capacity and supply procurement. The New Jersey regulator's announcement corroborates the announced-price calculation, while construction-cost recovery remains a separate mechanism. The excerpt does not identify a data-center-specific causal contribution.
+
+### 5.27.3 Preserve Context in a Comparison Matrix
+
+\noindent Record the speaker, role, operating subsidiary, customer class, charge component, time horizon, and comparison for each claim. Distinguish prepared remarks from answers to analyst questions. Read the complete turn and inspect surrounding passages before coding direction. A statement about avoiding recovery, a question about recovery, and a recovery forecast can contain the same words. Retain contradictory passages and material that remains unclear.
+
+Compare claims within a source before comparing source families. A matrix with documents as rows and mechanisms as columns helps preserve the relationship among recovery, timing, and offsets. Each cell retains a source locator, a concise interpretation, and any unresolved question. Gale et al. (2013, stages 2–7) describe familiarization, framework development, charting, and comparison within and across cases. Their framework is adapted here to public disclosures. A matrix organizes reasoning; its cells do not become independent statistical observations. [Gale et al.](https://doi.org/10.1186/1471-2288-13-117)
+
+Triangulation asks what different evidence contributes. A call identifies an attributed forecast. A filing documents a request, while an order establishes the regulator's disposition. An authorized rate and an assumed usage level support a bill illustration; household records are needed to observe expenditure. Agreement between a company's call and release strengthens the account of its stated position, while retaining the company's common incentives and information. Disagreement across sources can reveal a difference in timing, customer class, or counterfactual that needs explanation.
+
+### 5.27.4 Review Interpretation and Record Revisions
+
+\noindent For a shared codebook analysis, two readers can code the same passages independently before discussing disagreements. Preserve their original judgments, examine the reasons for differences, and revise definitions where needed. Then reconsider passages affected by the revision. O'Connor and Joffe (2020) discuss the uses and limits of this procedure. Agreement about a label does not establish that an executive's forecast is correct, and no independent human agreement estimate is available for the teaching annotations. [O'Connor and Joffe](https://doi.org/10.1177/1609406919899220)
+
+Qualitative approaches make different commitments about interpretation. This structured content analysis uses explicit categories to compare documentary claims. Braun and Clarke (2021) explain why intercoder reliability is not a universal quality requirement for reflexive thematic analysis. Methodological quality requires coherence between the question, approach, and evaluation procedure. An LLM can suggest alternative readings or overlooked passages, but its repeated answers are not independent human judgments. [Braun and Clarke](https://doi.org/10.1080/14780887.2020.1769238)
+
+Keep a reflexive memo recording the prior expectation, source-selection decisions, difficult cases, and reasons for changing an interpretation. Report who coded, what was checked, which materials were inaccessible, and which claims remain unresolved. SRQR identifies context, sampling, reflexivity, processing, and links between findings and empirical material as reporting concerns. These disclosures let a reader assess the analysis; completing a reporting checklist does not prove the conclusion. [O'Brien et al., Table 1](https://doi.org/10.1097/ACM.0000000000000388)
+
+### 5.27.5 Collect Text Without Turning Missingness into Evidence
+
+\noindent The collector requests six fixed public addresses, records raw-byte hashes, excludes markup, and checks document identity. It retains failures and builds local passage windows from recovery and investment vocabulary. Adjacent windows can overlap. Word counts measure the selected extraction, while substantive labels require contextual reading. Inspect unmatched passages as well as retrieved candidates to identify omissions caused by the dictionary.
+
+Run `python3 collect.py --download` from `03_Data_and_Code/Utility_Cost_Recovery` to collect accessible documents, then `python3 collect.py` to reprocess local copies. Original issuer links remain in `sources.json` when the accessible rendition comes from a transcript provider. The executed collection retrieved all three call renditions and two announcements; the SEC accounting document remained unavailable to the downloader and was checked separately through a web reader. Its missing machine counts remain missing. Original documents and passage windows remain in the local cache; the public comparison uses metadata and paraphrases.
+
+Python source: [collect.py](../../03_Data_and_Code/Utility_Cost_Recovery/collect.py)
+
+```python
+"""Retrieve a fixed public-source list; retain documents locally and export counts."""
+import argparse
+import hashlib
+import io
+import json
+import re
+import time
+from collections import Counter
+from datetime import datetime, timezone
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
+
+HERE = Path(__file__).resolve().parent
+PATTERNS = {
+    "investment": r"\b(invest\w*|infrastructure|construction|capital|generation)\b",
+    "recovery": r"\b(recover\w*|rate base|revenue requirement|tracker\w*|rider\w*)\b",
+    "household": r"\b(residential|household\w*)\b",
+    "bill": r"\b(bill\w*|rate\w*|charge\w*)\b",
+    "large_load": r"\b(data cent(?:er|re)s?|large load\w*|hyperscaler\w*)\b",
+    "protection": r"\b(protect\w*|minimum bill\w*|take.or.pay|collateral|offset\w*)\b",
+}
+
+
+class VisibleText(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.hidden = 0
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in {"head", "script", "style", "noscript"}:
+            self.hidden += 1
+        if tag in {"p", "div", "br", "tr", "h1", "h2", "h3"}:
+            self.parts.append("\n")
+
+    def handle_endtag(self, tag):
+        if tag in {"head", "script", "style", "noscript"}:
+            self.hidden = max(0, self.hidden - 1)
+
+    def handle_data(self, text):
+        if not self.hidden:
+            self.parts.append(text)
+
+
+def extract(raw, spec):
+    if spec["format"] == "pdf":
+        if not raw.startswith(b"%PDF"):
+            raise ValueError("Response is not a PDF")
+        from pypdf import PdfReader
+        pages = [p.extract_text() or "" for p in PdfReader(io.BytesIO(raw)).pages]
+        # Remove exact repeated page furniture. Keep page numbers as locators.
+        repeated = Counter(line.strip() for p in pages for line in set(p.splitlines()))
+        pages = ["\n".join(x for x in p.splitlines()
+                  if repeated[x.strip()] < 3 and not x.strip().isdigit()) for p in pages]
+    else:
+        parser = VisibleText()
+        parser.feed(raw.decode("utf-8", errors="replace"))
+        text = " ".join("".join(parser.parts).split())
+        start = text.index(spec["start_marker"])
+        stop = text.index(spec["end_marker"], start) if spec.get("end_marker") else len(text)
+        pages = [text[start:stop]]
+    pages = [" ".join(p.split()) for p in pages]
+    combined = " ".join(pages)
+    if any(marker.lower() not in combined.lower() for marker in spec["identity_markers"]):
+        raise ValueError("Document identity or expected content did not match")
+    if len(combined) < 400:
+        raise ValueError("Empty or truncated document")
+    return pages
+
+
+def retrieve(spec, cache, download):
+    path = cache / (spec["id"] + "." + spec["format"])
+    receipt = cache / (spec["id"] + ".receipt.json")
+    if path.exists() and receipt.exists():
+        raw = path.read_bytes()
+        record = json.loads(receipt.read_text())
+        if hashlib.sha256(raw).hexdigest() != record["sha256"]:
+            raise ValueError("Cached source checksum differs")
+        return raw, record
+    if not download:
+        raise FileNotFoundError("No local source; use --download for the fixed URL list")
+    request = Request(spec["url"], headers={"User-Agent": "MarketingAnalyticsCourse/1.0 (educational source review)"})
+    time.sleep(2)  # Sequential requests, no authentication or access-control bypass.
+    with urlopen(request, timeout=40) as response:
+        raw = response.read(15_000_001)
+        if len(raw) > 15_000_000:
+            raise ValueError("Document exceeds 15 MB limit")
+        record = {"source_id": spec["id"], "url": spec["url"],
+                  "final_url": response.geturl(), "http_status": response.status,
+                  "retrieved_at": datetime.now(timezone.utc).isoformat(),
+                  "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)}
+    extract(raw, spec)  # Never cache an error page as a successful document.
+    path.write_bytes(raw)
+    receipt.write_text(json.dumps(record, indent=2) + "\n")
+    return raw, record
+
+
+def features(pages):
+    text = " ".join(pages)
+    values = {key: len(re.findall(pattern, text, re.I)) for key, pattern in PATTERNS.items()}
+    values["words"] = len(re.findall(r"\b[\w'-]+\b", text))
+    return values
+
+
+def candidates(pages):
+    found = []
+    for page, text in enumerate(pages, 1):
+        sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", text)
+        for i, sentence in enumerate(sentences):
+            context = " ".join(sentences[max(0, i - 1):i + 2])
+            tags = [k for k, p in PATTERNS.items() if re.search(p, context, re.I)]
+            if "bill" in tags and ("recovery" in tags or "investment" in tags):
+                found.append({"page": page, "sentence": i + 1, "tags": tags,
+                              "context": context})
+    return found
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--download", action="store_true")
+    parser.add_argument("--output", type=Path, default=HERE / ".cache/retrieval.json")
+    args = parser.parse_args()
+    cache = HERE / ".cache"
+    cache.mkdir(exist_ok=True)
+    records = []
+    for spec in json.loads((HERE / "sources.json").read_text()):
+        try:
+            raw, receipt = retrieve(spec, cache, args.download)
+            pages = extract(raw, spec)
+            matches = candidates(pages)
+            (cache / (spec["id"] + ".review.json")).write_text(json.dumps(matches, indent=2) + "\n")
+            (cache / (spec["id"] + ".pages.json")).write_text(json.dumps(pages, indent=2) + "\n")
+            records.append({**receipt, "status": "ok", "pages": len(pages),
+                            "candidate_windows": len(matches), **features(pages)})
+        except (HTTPError, OSError, ValueError) as error:
+            records.append({"source_id": spec["id"], "url": spec["url"],
+                            "status": "unavailable", "reason": str(error)})
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(records, indent=2) + "\n")
+    print(json.dumps({r["source_id"]: r["status"] for r in records}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 5.27.6 Reproduce the Evidence Matrix and Bill Comparisons
+
+\noindent The offline analysis retains every selected document, groups related claims by issuer, and calculates the two stated-use bill comparisons with exact decimal arithmetic. New Jersey's increase is USD 26.87, or 17.24 percent of the original bill. Annualizing the monthly difference gives USD 322.44 under twelve equal-use months with unchanged rates. Evergy's proposed difference gives USD 207 under the same assumption, conditional on approval. These are arithmetic illustrations of the cited documents, with later adjustments and actual consumption outside the comparison.
+
+Run `python3 analyze.py` and `python3 test_examples.py` in the same folder. The outputs preserve evidence stage, population, offsets, and limitations beside each interpretation. Direction counts describe ten selected claims and do not estimate the frequency of household cost shifts.
+
+Python source: [analyze.py](../../03_Data_and_Code/Utility_Cost_Recovery/analyze.py)
+
+```python
+"""Reproduce coverage, a qualitative comparison matrix, and bill arithmetic."""
+import csv
+import json
+from collections import Counter
+from decimal import Decimal
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+STAGES = {"forecast", "request", "proposal", "accounting_mechanism",
+          "approved_price_illustration", "regulator_explanation"}
+DIRECTIONS = {"increase", "offset", "mechanism", "mixed", "unclear"}
+
+
+def load_inputs():
+    sources = json.loads((HERE / "sources.json").read_text())
+    claims = json.loads((HERE / "data/claims.json").read_text())
+    retrieval = json.loads((HERE / "data/retrieval_snapshot.json").read_text())
+    for rows, key in [(sources, "id"), (claims, "claim_id"), (retrieval, "source_id")]:
+        if len({x[key] for x in rows}) != len(rows):
+            raise ValueError("Duplicate key: " + key)
+    index = {s["id"]: s for s in sources}
+    if set(index) != {r["source_id"] for r in retrieval}:
+        raise ValueError("Retrieval roster must retain all selected sources")
+    for row in claims:
+        if row["source_id"] not in index or row["stage"] not in STAGES:
+            raise ValueError("Unknown source or evidence stage")
+        if row["direction"] not in DIRECTIONS:
+            raise ValueError("Unknown direction")
+        if not all(row[k] for k in ["locator", "population", "counterevidence",
+                                    "interpretation_limit", "annotation_status"]):
+            raise ValueError("An interpretation requires context and qualifications")
+    return index, claims, retrieval
+
+
+def coverage(sources, retrieval):
+    rows = []
+    for record in retrieval:
+        spec = sources[record["source_id"]]
+        observed = record["status"] == "ok"
+        rows.append({"source_id": spec["id"], "kind": spec["kind"],
+                     "observed": observed,
+                     "words": record.get("words") if observed else None,
+                     "recovery_matches": record.get("recovery") if observed else None})
+    return rows
+
+
+def comparison_matrix(sources, claims):
+    # A claim is the coding unit. Related documents remain within an issuer family.
+    rows = []
+    for row in claims:
+        spec = sources[row["source_id"]]
+        rows.append({"issuer_family": spec["issuer"], "date": spec["date"],
+                     **row, "source_url": spec.get("primary_url", spec["url"])})
+    return rows
+
+
+def bill_calculations():
+    before, after = Decimal("155.84"), Decimal("182.71")
+    change = after - before
+    return [
+        {"case": "NJBPU_PSEG", "monthly_kwh": 650,
+         "monthly_change_usd": str(change),
+         "percent_change": str((100 * change / before).quantize(Decimal("0.01"))),
+         "annualized_change_usd": str(12 * change),
+         "status": "Fixed-use illustration of announced auction prices; excludes later adjustments"},
+        {"case": "Evergy_Missouri_West", "monthly_kwh": 1005,
+         "monthly_change_usd": "17.25", "percent_change": None,
+         "annualized_change_usd": str(12 * Decimal("17.25")),
+         "status": "Proposed bill change if approved and held for 12 equal-use months"},
+    ]
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main():
+    sources, claims, retrieval = load_inputs()
+    out = HERE / "results"
+    out.mkdir(exist_ok=True)
+    write_csv(out / "coverage.csv", coverage(sources, retrieval))
+    write_csv(out / "evidence_matrix.csv", comparison_matrix(sources, claims))
+    write_csv(out / "bill_illustrations.csv", bill_calculations())
+    observed = [r for r in retrieval if r["status"] == "ok"]
+    result = {"selected_documents": len(sources),
+              "downloaded_documents": len(observed),
+              "selected_calls": sum(s["kind"] == "earnings_call" for s in sources.values()),
+              "claims": len(claims),
+              "issuer_families": len({s["issuer"] for s in sources.values()}),
+              "coded_stages": dict(sorted(Counter(c["stage"] for c in claims).items())),
+              "coded_directions": dict(sorted(Counter(c["direction"] for c in claims).items())),
+              "interpretation": "Counts describe purposeful teaching selections, not population prevalence.",
+              "independent_human_coders": 0, "causal_effect_estimates": 0}
+    (out / "summary.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 5.27.7 State the Supported Challenge
+
+\noindent These disclosures substantiate cost-recovery mechanisms and intentions that a blanket assurance about household affordability would need to address. The electricity paper itself models recovery and reports positive residential spillovers, so the existence of these mechanisms is compatible with its framework. The qualitative evidence does not identify a replacement causal estimate. Most selected statements were made in 2026, after the paper's 2020–2025 window, which makes the timing relevant to extrapolation.
+
+A disciplined critique distinguishes a contradiction from an omitted qualification. A categorical claim that infrastructure costs never reach households conflicts with the documented recovery mechanisms. A finding about a small historical average can coexist with those mechanisms, heterogeneous burdens, and future investment. The defensible demand is that public reassurance specify the outcome, period, affected customers, and evidence for the proposed allocation. Investor disclosures also leave residents' experiences and authority to challenge charges largely unobserved. Those questions require additional sources, as developed in §9.33.

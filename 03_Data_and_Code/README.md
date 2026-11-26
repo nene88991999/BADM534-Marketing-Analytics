@@ -151,3 +151,7 @@ The [statistical-inference examples](Statistical_Inference/README.md) also imple
 ## Institutional Exposure Examples
 
 [Statistical Inference](Statistical_Inference/README.md) includes synthetic household-bill identities, a comparison with a cancelled-project donor, and annual cost-recovery scenarios. Full runnable code appears in M6 §6.35.
+
+## Utility Disclosures and Qualitative Evidence
+
+[Utility Cost Recovery](Utility_Cost_Recovery/README.md) provides source collection, contextual coding, an evidence matrix, and reproducible bill illustrations. M5 §5.27 includes both complete programs and boxed call excerpts. The example preserves forecasts, requests, offsets, and unavailable text.

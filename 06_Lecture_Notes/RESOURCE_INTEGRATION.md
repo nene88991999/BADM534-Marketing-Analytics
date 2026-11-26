@@ -231,3 +231,7 @@ M2 §2.28.1 separates average revenue per MWh from household bills through a mat
 ## Reasons and Stakeholder Obligations
 
 The supplemental Scanlon and stakeholder collection supports M9 §§9.28–9.32, with recurring applications in M1 and M8. Source access and reading extent are recorded in [the guide](../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md). The figures and optional practice use hypothetical cancellation procedures. The electricity application distinguishes nearby residents, customers, cost incidence, and access to a hearing.
+
+## Qualitative Evidence from Utility Disclosures
+
+M5 §5.27 includes three attributed verbatim excerpt boxes, a TikZ evidence diagram, and complete retrieval and comparison programs. M6 §6.36 distinguishes institutional mechanisms from identification; M8 §8.31 and M9 §9.33 address reassurance and stakeholder reasons. Six selected documents and ten claim annotations preserve negative cases and source families. Five sources were downloaded; the remaining accounting passage was reviewed through the web reader. [Methods references](../01_Resources/42_Qualitative_Evidence/README.md) support directed content analysis, reflexivity, contextual comparison, and appropriate coding review.

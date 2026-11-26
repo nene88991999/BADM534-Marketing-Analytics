@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 456 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 462 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -160,3 +160,5 @@ Sessions 9 and 14 connect project status, earlier investment, cancellation risk,
 ## Reasons, Stakeholders, and Public Voice
 
 Session 14 adds two premise-and-rejection diagrams and discussions of stakeholder duties, residents' voice, publication, and favorable framing. Its 170-minute allocation is unchanged; extended derivations and case exercises remain available for optional practice.
+
+Sessions 7 and 14 also use the [utility-disclosure case](../03_Data_and_Code/Utility_Cost_Recovery/README.md), with methodological citations, negative cases, and a distinction between source claims and causal effects.

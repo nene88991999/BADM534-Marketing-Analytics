@@ -162,3 +162,7 @@ The recurring electricity case distinguishes average unit prices from household 
 ## Stakeholder Reasons and Public Claims
 
 The existing Session 14 philosophy discussion includes defended normative premises, Scanlonian reasonable rejection, stakeholder obligations, and residents' opportunities to challenge public evidence. M9 §§9.28–9.32 and the optional Philosophical Arguments practice support this coverage. Meeting dates, the 170-minute allocation, and released assessment requirements are unchanged.
+
+## Qualitative Evidence in the Utility Case
+
+Session 7 uses the existing earnings-call block to compare cost-recovery statements, offsetting claims, and their evidence stages. Session 14 connects the comparison to household reasons and public reassurance. The [optional lab](../07_Labs/Qualitative_Evidence/README.md) contains the complete scraping and independent-coding activity. Meeting dates, duration, and assessment status remain as stated in the released syllabus.

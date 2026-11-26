@@ -1970,3 +1970,12 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+
+## 6.36 Qualitative Mechanisms and a Causal Comparison
+
+\noindent A utility's statement that it expects to recover investment through customer charges supplies evidence about an institutional mechanism. Identifying the incremental effect of a data center requires a comparison with the charges that would have prevailed without that project. The difference depends on cost allocation, displaced investment, new-load revenue, usage, regulatory decisions, and timing. The source matrix in §5.27 distinguishes these objects before interpreting a bill change.
+
+An executive can anticipate both higher rates and benefits from additional sales. Higher rates compare future charges with current charges, while a benefit may compare the future charge with a still-higher counterfactual. These claims can hold together. Testing their joint implication requires the same customer class, period, charge component, and no-project benchmark. A raw increase in a household bill does not determine the data center's causal contribution, and a nonsignificant coefficient does not remove the need to assess recovery already planned for future periods.
+
+Use a source-linked chronology to connect the proposed load, construction commitment, recovery request, approval, and billing period. The order may begin before energization and may continue after a project is delayed. The selected calls identify questions for that chronology; they do not establish the treatment histories or donor contamination of the original study. The executed collection and bill arithmetic in §5.27 can be reproduced without the study's unavailable utility panel. An empirical extension would connect project records to regulatory dockets and outcomes, preserving source conflicts and unknown dates.

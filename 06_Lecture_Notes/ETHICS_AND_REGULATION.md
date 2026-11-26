@@ -120,3 +120,7 @@ The institutional example distinguishes operating entry from requests, investmen
 ## Stakeholder Reasons and Public Communication
 
 M9 §§9.28–9.32 evaluates proposed duties through Scanlonian reasonable rejection and distinct stakeholder theories. These are philosophical arguments, not newly established legal requirements. The hypothetical university-branded headline remains separate from the verified HBS coverage. The [communication record](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) distinguishes public evidence, institutional hypotheses, and publication remedies.
+
+## Utility Disclosures and Qualitative Substantiation
+
+M5 §5.27 and M9 §9.33 connect public assurances to disclosed recovery mechanisms, household allocation, and the strongest contrary evidence. [The source register](../03_Data_and_Code/Utility_Cost_Recovery/sources.json) records date and provenance. Evergy's November 2026 release describes a request conditional on approval. The February 2025 NJBPU announcement reports a certified auction and a fixed-use price illustration, not household microdata or a data-center causal decomposition. Coding procedures and methodological references are in the [qualitative guide](../01_Resources/42_Qualitative_Evidence/README.md).

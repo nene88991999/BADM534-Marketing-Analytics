@@ -46,3 +46,7 @@ The original [institutional exposure program](../../03_Data_and_Code/Statistical
 The donor example demonstrates attenuation under its chosen positive exposure. General bias need not be downward. Earlier exposure can enter the fitting window, later recovery can fall outside the outcome window, and shared markets can transmit costs beyond the local utility. Investigating these mechanisms requires the relevant dates and boundaries.
 
 Full code and derivations appear in M6 §6.35; measurement is developed in M2 §2.28.1; the missing-premise argument appears in M9 §9.27.6. The optional lab asks students to change donor costs, payment guarantees, and the outcome denominator while preserving the stated comparison.
+
+## Qualitative Corroboration and Its Scope
+
+The [utility-disclosure example](../../03_Data_and_Code/Utility_Cost_Recovery/README.md) traces investment recovery, proposed customer charges, and revenue offsets using public sources. It preserves verbatim excerpts in M5 §5.27 and distinguishes the household bill from wholesale capacity costs and utility construction recovery. The paper itself discusses these mechanisms; selected disclosures therefore challenge overbroad assurance without independently refuting the historical coefficient. Most selected disclosures occur after the 2020–2025 study window.

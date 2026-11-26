@@ -34,6 +34,16 @@ function Link(el)
   return el
 end
 
+function BlockQuote(el)
+  -- Preserve ordinary Markdown quotations; box explicitly identified call excerpts.
+  if el.content[1] and pandoc.utils.stringify(el.content[1]):match('^Call Excerpt:') then
+    local out = {pandoc.RawBlock('latex', '\\par\\medskip\\Needspace{11\\baselineskip}\n\\noindent\\fcolorbox{IlliniOrange}{IlliniOrange!4}{\\begin{minipage}{\\dimexpr\\linewidth-2\\fboxsep-2\\fboxrule\\relax}\n\\setlength{\\parindent}{0pt}')}
+    for _, block in ipairs(el.content) do table.insert(out, block) end
+    table.insert(out, pandoc.RawBlock('latex', '\\end{minipage}}\\par\\medskip'))
+    return out
+  end
+end
+
 function Table(el)
   -- Pandoc 2.12 rounds LaTeX column proportions to two decimals. Ensure
   -- those rounded proportions sum to one, preventing table overflow.

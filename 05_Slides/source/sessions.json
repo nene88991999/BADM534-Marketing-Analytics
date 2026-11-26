@@ -1981,7 +1981,8 @@
       "Distinguish citation presence from support using a controlled source comparison.",
       "Trace how anchors, similarities, and persona weighting determine a text-based rating.",
       "Compare feature preservation, group weighting, and access at original network origins.",
-      "Distinguish recorded-category agreement from the compatibility of a replacement text representation."
+      "Distinguish recorded-category agreement from the compatibility of a replacement text representation.",
+      "Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims."
     ],
     "slides": [
       {
@@ -2205,6 +2206,49 @@
         ],
         "notes": "Run construct_checks.py for eight synthetic sentences. A purposeful case set cannot estimate corpus precision or recall. Probability sampling and appropriate weights are needed for population metrics. No external model or labeling API was run for the supplied course example.",
         "source": "M5, Section 5.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "What Does a Utility Disclosure Establish?",
+        "bullets": [
+          "Identify the speaker, customer class, charge component, and horizon.",
+          "Separate a forecast, request, approval, and household outcome.",
+          "Compare recovery claims with offsetting revenues and protections."
+        ],
+        "notes": "The source set has six purposeful documents, including three calls, and ten claim records. Public coding uses original paraphrases and locators; the notes retain three short verbatim excerpts. Five documents were downloaded. The accounting passage was checked separately through a web reader. Counts describe this selection and provide no prevalence estimate. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.",
+        "source": "M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Follow the Cost into the Bill",
+        "figure": "../06_Lecture_Notes/figures/M05_utility_evidence_chain.tex",
+        "figure_height": 0.7,
+        "caption": "Each transition requires evidence appropriate to its institutional stage.",
+        "description": "Investment plans lead to recovery requests, then authorized charges and household bills. New-load revenue and protections can reduce the requested amount. Dashed arrows identify transitions requiring additional records.",
+        "notes": "A smaller requested increase can coexist with a higher bill than today. Electricity supply procurement differs from construction recovery. Check the legal entity and customer class before connecting passages across documents. A statement at one stage does not establish all subsequent outcomes.",
+        "source": "M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Keep the Case That Challenges Your Interpretation",
+        "bullets": [
+          "Evergy discusses investment-related rate pressure and benefits from growing sales.",
+          "Its later request proposes a higher residential bill while claiming a revenue offset.",
+          "A lower bill than otherwise can still be a higher bill than today."
+        ],
+        "notes": "The later announcement proposes a USD 17.25 monthly increase at 1005 kWh, conditional on approval, and a USD 61 million reduction in the annual revenue request from anticipated data-center revenue. The comparison does not identify a data-center-specific causal effect. Read both sides of the account before developing an explanatory theme.",
+        "source": "M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Evergy, November 3, 2026, https://newsroom.evergy.com/2026-11-03-Evergy-files-Missouri-West-rate-request-focused-on-reliability-and-new-generation-investments"
+      },
+      {
+        "kind": "bullets",
+        "title": "Qualitative Quality Depends on the Analytical Approach",
+        "bullets": [
+          "State selection rules, prior expectations, and changes to the codebook.",
+          "Compare within cases; retain source locators and negative cases.",
+          "Use independent review for the shared coding frame and explain disagreements."
+        ],
+        "notes": "This is directed content analysis with a codebook. Independent human coding has not yet been completed. Agreement would concern coding consistency, not the truth of a corporate statement. Reflexive thematic analysis makes different methodological commitments. Retain investigator interpretation and the limits of investor-facing documents. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.",
+        "source": "M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238."
       },
       {
         "kind": "bullets",
@@ -5214,6 +5258,28 @@
         ],
         "notes": "The headline is a discussion construction, not a verified quotation or institutional endorsement. The HBS Working Knowledge article is the documented public communication. Fricker's prejudice-based credibility deficit requires evidence beyond unequal credentials. Anderson motivates examining institutions that gather and assess testimony. Distinguish nearby residents, utility customers, and people bearing costs. Local experience can identify an outcome; causal attribution requires a comparison. Institutional prestige supplies no missing premise. Verify actual use of a claim in a proceeding before alleging that it silenced objections.",
         "source": "M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Mechanism Evidence and Public Reassurance",
+        "bullets": [
+          "Calls and filings document recovery plans and competing claims.",
+          "The electricity paper itself permits recovery and positive spillovers.",
+          "Assess the scope of reassurance separately from the historical coefficient."
+        ],
+        "notes": "New 2026 disclosures raise questions about future costs and allocations beyond the 2020–2025 historical window. They do not overturn that coefficient by themselves. PSEG's February 2025 residential-bill statement concerns wholesale capacity and procurement, which is a separate channel from construction cost recovery. M6 §6.36 develops the causal comparison.",
+        "source": "M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md M9 §9.33. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Whose Account of Affordability is Missing?",
+        "bullets": [
+          "Investor calls give management and financial analysts a structured voice.",
+          "Household experience and authority require additional sources.",
+          "An institution ought to substantiate burdens and address material objections."
+        ],
+        "notes": "Distinguish a factual recovery plan from the normative claim that affected people deserve examinable reasons. Consider the objection that excessive delay may obstruct beneficial investment. Retain credible offsets and feasible protections when evaluating that objection. Public comments and consumer-counsel filings can extend the documentary record; interviews require an appropriate separate design. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.",
+        "source": "M9 §9.33. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
