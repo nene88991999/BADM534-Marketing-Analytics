@@ -28,7 +28,7 @@ def frame_tex(s):
             # Fixed-coordinate diagrams retain the note sources' font geometry.
             diagram = r'\begin{axis}' not in (ROOT/s['figure']).read_text()
             body+='\\centering\n\\begingroup\n'
-            if diagram:
+            if diagram or s.get('fixed_figure_font', False):
                 body+='\\fontsize{11}{13.2}\\selectfont\n\\def\\small{\\fontsize{10}{12}\\selectfont}\n\\def\\footnotesize{\\fontsize{9}{11}\\selectfont}\n\\def\\scriptsize{\\fontsize{8}{9.5}\\selectfont}\n\\hyphenpenalty=10000\n'
             height = float(s.get('figure_height', 0.65))
             if not 0 < height <= 0.8:

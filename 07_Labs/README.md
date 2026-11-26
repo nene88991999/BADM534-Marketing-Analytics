@@ -94,3 +94,7 @@ The optional [Statistical Inference lab](Statistical_Inference/README.md) examin
 ## Pricing, Individual Reasons, and Antitrust Evidence
 
 [Scanlon Pricing](Scanlon_Pricing/README.md) offers optional ungraded practice in demand identification, individual burdens, experimental risk, Kantian authority, and a hypothetical antitrust case. Five complete programs accompany the argument exercise.
+
+## Analytical Arguments and Counterexamples
+
+The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includes a five-step argument record, two exact Python constructions, and pricing, electricity, and mHealth applications. Students test premise preservation, identify missing evidence or reasons, and state a condition for revising their conclusion. The exercise is public optional ungraded practice and supplies no course-wide permission to use AI.

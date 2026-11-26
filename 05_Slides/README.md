@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 476 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 493 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -166,3 +166,11 @@ Sessions 7 and 14 also use the [utility-disclosure case](../03_Data_and_Code/Uti
 ## Pricing, Individual Reasons, and Antitrust
 
 Session 9 adds two slides on targeted exposure and a justified experiment. Session 14 adds twelve slides on measurement reasons, instrumental rationality, reasonable justification, connected pricing and infrastructure claims, customer types, welfare identification, individual burdens, Dubé's published competitive game, Kantian data authority, and antitrust evidence connected to Scanlonian reasons. Four editable TikZ figures and complete Markdown companions accompany the [five programs](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md). Longer exercises are [optional ungraded practice](../07_Labs/Scanlon_Pricing/README.md). The session plan selects examples within the existing meeting blocks.
+
+## Analytical Arguments and Counterexamples
+
+Sessions 1, 5, 9, and 14 connect question formulation, definitions, model compatibility, causal identification, valuation premises, and conditions for revising a criticism. Seventeen slides and five editable diagrams support the existing discussion blocks. The [optional five-step exercise](../07_Labs/Philosophical_Arguments/README.md) and [exact Python constructions](../03_Data_and_Code/Analytical_Arguments/README.md) supply the extended practice.
+
+M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.

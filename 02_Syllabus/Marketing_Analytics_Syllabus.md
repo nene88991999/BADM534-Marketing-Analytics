@@ -15,15 +15,19 @@
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. Customer measurement and visualization define the patterns to explain. Regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems inform decisions about product design, acquisition, retention, pricing, and marketing budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian, Confucian, and Scanlonian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, antitrust evidence, and commercial incentives. Students distinguish effective pursuit of a commercial aim from a reasonable principle that can be justified to affected people.
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian, Confucian, and Scanlonian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, antitrust evidence, and commercial incentives. Students distinguish effective pursuit of a commercial aim from a reasonable principle that can be justified to affected people. They examine the questions and definitions behind an analysis, make its premises explicit, and apply the same standards of evidence to a claim and its criticism. Philosophical criticism also examines when measurable behavior becomes an inadequate account of persons, institutions, or moral reasons. An ontological spectrum guides comparison of pricing, cancellation, and household-cost claims.
+
+Empirical representations leave fundamental questions about ends, authority, and obligations to be justified. Kant's distinction between phenomena and noumena motivates scrutiny of claims that observed behavior exhausts the person represented. Students examine the worth of an objective before optimizing it and use evidence alongside philosophical arguments about affected people's standing.
 
 ## Learning Objectives
 
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
+- Evaluate which ends deserve pursuit, who has authority to select them, and what obligations the decision creates, distinguishing empirical knowledge from practical justification.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
 - Evaluate AI-assisted workflows through independent calculations, statistical design, meaningful-effect bounds, silent-error detection, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
+- Reconstruct analytical arguments, distinguish model fit from identification and valuation, test counterexamples, and identify evidence or reasons that would change a conclusion.
 
 ## Class Format and Materials
 

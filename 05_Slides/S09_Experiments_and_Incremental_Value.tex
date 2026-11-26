@@ -528,6 +528,53 @@ Dollars per eligible person for the effect; per H member for loss. One purchase 
 
 \url{https://doi.org/10.1007/s10892-019-09282-6} \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
+\begin{frame}{Equal Historical Fit, Different Price Effects}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M06_compatible_price_models.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Identical observed cells; assigning a common price gives different effects.\par}
+\note{Both synthetic models reproduce the complete historical joint law of group, price, and purchase. Each group historically receives only one price. A price-response model depends only on price; a group-selection model depends only on group. The intervention assigns everyone $10 or $20 and holds population, product, disclosure, availability, and each response rule fixed. Historical sample size cannot resolve the unobserved group-price cells. Lines join the two allowed prices only.
+
+M6 §6.38. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{Which Observation Would Distinguish the Models?}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Randomize both prices within both groups.
+\item At USD 20, group A purchases with probability 0.4 or 0.8.
+\item Check implementation, uncertainty, and customer exposure.
+\item A welfare conclusion still needs valuation premises.
+\end{slidebullets}
+\vfill
+\note{The probabilities are imposed population predictions, not estimates. Within-group randomization creates comparisons absent from the historical data. An assumption restricting demand could also select a conclusion, whose scope would then depend on that restriction. Define the intervention before seeking identification. A disclosure or availability change would alter the comparison.
+
+M6 §6.38. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
+\end{frame}
+\begin{frame}{A Criticism Also Needs Evidence}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Nonrejection leaves a meaningful effect possible.
+\item It does not identify the realized effect.
+\item A possible contaminated control needs a documented exposure history.
+\item State what would strengthen or reverse the criticism.
+\end{slidebullets}
+\vfill
+\note{Apply the same reasoning to the electricity case. Low sensitivity does not prove harm or uniquely explain a nonsignificant estimate. A cancelled-project construction motivates checking actual donor exposure; it does not establish that exposure. Preserve the source outcome, positive findings, and qualifications. The claim should be narrowed to what the evidence supports, and material uncertainty should remain visible.
+
+M6 §6.38. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md} M9 §9.40.4. \url{../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md}}
+\end{frame}
 \begin{frame}{Experiment Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

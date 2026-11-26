@@ -1,0 +1,9 @@
+model,group,price_usd,purchase_probability,historically_observed
+price_response,A,10,0.8,True
+price_response,A,20,0.4,False
+price_response,B,10,0.8,False
+price_response,B,20,0.4,True
+group_selection,A,10,0.8,True
+group_selection,A,20,0.8,False
+group_selection,B,10,0.4,False
+group_selection,B,20,0.4,True

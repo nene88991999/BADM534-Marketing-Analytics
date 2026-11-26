@@ -397,7 +397,12 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md",
     "03_Data_and_Code/AI_Experimentation_and_Pricing/SCANLON_DATA_DICTIONARY.md",
     "03_Data_and_Code/AI_Experimentation_and_Pricing/SCANLON_VERIFICATION.md",
-    "07_Labs/Scanlon_Pricing/README.md"
+    "07_Labs/Scanlon_Pricing/README.md",
+    "01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md",
+    "03_Data_and_Code/Analytical_Arguments/README.md",
+    "03_Data_and_Code/Analytical_Arguments/VERIFICATION.md",
+    "07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md",
+    "03_Data_and_Code/Analytical_Arguments/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -446,12 +451,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-pricing-reasons-and-antitrust",
+    "revision": "2026-11-26-analytical-arguments",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 131,
-    "pages": 537,
+    "figures_count": 136,
+    "pages": 561,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -479,7 +484,8 @@ Generated from course.json and the source files identified below. This file cont
     "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md",
     "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md",
     "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md",
-    "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md"
+    "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md",
+    "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md"
   },
   "datasets": [
     {
@@ -576,7 +582,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 476,
+    "slides": 493,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1149,7 +1155,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-pricing-reasons-and-antitrust",
+  "revision": "2026-11-26-analytical-arguments",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1487,6 +1493,39 @@ Generated from course.json and the source files identified below. This file cont
     "legal_jurisdiction": "United States federal antitrust; sources checked November 26, 2026",
     "scope": "Original synthetic incidence, exposure, demand-completion and invoice examples; reconstruction from rounded published payoffs; philosophical and hypothetical legal arguments. No empirical finding of misconduct or violation.",
     "reasonableness": "M9 \u00a7\u00a79.34.3\u20139.34.5: measurement quality, worthy objectives, instrumental rationality, and reasonable justification across personalized pricing, dynamic-pricing communication, and data-center reassurance"
+  },
+  "analytical_arguments": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M1 \u00a71.20",
+      "M4 \u00a74.29",
+      "M6 \u00a76.38",
+      "M9 \u00a79.40",
+      "M9 \u00a79.41",
+      "M9 \u00a79.42",
+      "M9 \u00a79.43"
+    ],
+    "sessions": [
+      1,
+      5,
+      9,
+      14
+    ],
+    "resources": "01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md",
+    "examples": "03_Data_and_Code/Analytical_Arguments/README.md",
+    "verification": "03_Data_and_Code/Analytical_Arguments/VERIFICATION.md",
+    "practice": "07_Labs/Philosophical_Arguments/README.md",
+    "argument_record": "07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md",
+    "original_analytical_programs": 2,
+    "independent_checks_passed": 10,
+    "matching_python_blocks": 122,
+    "original_figures": 5,
+    "additional_slides": 17,
+    "scope": "Original synthetic population constructions and philosophical applications; no new empirical finding of consumer harm or author intention.",
+    "foundational_emphasis": "Kantian phenomena and noumena; acknowledged limits versus unknown unknowns; ontological scope; critiques of empiricism and reduction; ends, authority, and normative reasons before optimization.",
+    "spectrum": "Five qualitative positions applied to particular interpretations, with no numerical distances or author rankings.",
+    "source_coverage": "Selected primary philosophy passages, with reading scope and access recorded in the resource guide.",
+    "measurement_case": "M9 \u00a79.42.4 separates recorded electricity outcomes from household costs, financial exposure, business models, and incidence."
   }
 }
 ```
@@ -1645,6 +1684,14 @@ The recurring electricity case now connects average prices to household expendit
 ## Pricing, Individual Reasons, and Antitrust
 
 The [pricing cases](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) connect demand assumptions, individual burdens, Kantian authority, and Scanlonian arguments to a hypothetical U.S. antitrust case. Five runnable programs and four TikZ figures accompany M4, M6, M8, and Marketing Dialectics. Dubé and coauthors' competitive payoff table is reconstructed from published information. [Optional practice](07_Labs/Scanlon_Pricing/README.md) develops supported factual premises, an ought conclusion, and the strongest defense. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
+
+## Analytical Arguments and Counterexamples
+
+[Exact synthetic examples](03_Data_and_Code/Analytical_Arguments/README.md) distinguish model fit from identification and product rankings from welfare valuations. M1, M4, M6, and Marketing Dialectics connect these comparisons to a [five-step argument exercise](07_Labs/Philosophical_Arguments/README.md), with an AI prompt, a strong reply to each criticism, and evidence or reasons that would change the conclusion.
+
+M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ---
 
@@ -1830,7 +1877,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 116 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 136 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -2011,6 +2058,14 @@ M5 §5.27 connects scraping to qualitative content analysis and boxed source exc
 
 M4 §4.28 connects segments to treatment reasons. M6 §6.37 compares correct experimental weighting with the allocation of risk. M8 §8.32 connects pricing evidence to competition and customer authority. M9 §§9.34–9.39 develop demand-completion counterexamples, a profitable less burdensome alternative, Dubé's mobile-targeting game, Kantian reasoning, and antitrust institutions through Scanlonian objections. Sessions 9 and 14 use selected comparisons within existing time blocks. [Programs](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md), [optional practice](07_Labs/Scanlon_Pricing/README.md), and [legal sources](01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) supply complete detail. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
 
+## Analytical Arguments Across the Course
+
+M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40 connect five-step argument assessment to question formulation, measurement, causal identification, welfare valuation, and reasonable justification. [Two original programs](03_Data_and_Code/Analytical_Arguments/README.md) make the assumptions visible through counterexamples. [Optional practice](07_Labs/Philosophical_Arguments/README.md) applies the same scrutiny to an analytical claim and its criticism, with explicit evidence or reasons for revision. Sessions 1, 5, 9, and 14 incorporate selected examples within the existing calendar.
+
+M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2066,6 +2121,12 @@ For feature-quality questions, begin with [the representation example](03_Data_a
 ## Context and Evidence for Coding Tasks
 
 Supply the task definition, relevant data dictionary, input versions, and required output before expanding the context. Record durable progress with links to actual files and checks. Ask the assistant to separate a proposed operation, an executed operation, and its verified result. [The workflow exercise](03_Data_and_Code/Agent_Workflows/README.md) distinguishes output correctness, permitted actions, and checker validity. During a measured comparison, keep final evaluation answers outside the model workspace and preserve every assigned attempt, including failures.
+
+## Examine an Analytical Argument
+
+Use M1 §1.20 and M9 §9.40 to define the claim, expose its premises, construct a counterexample that preserves them, assess the missing premise, and revise the conclusion. Distinguish a hypothetical possibility from evidence that it occurs. Ask for the strongest supported reply to the criticism and a meaningful condition for revision. [The argument record](07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md) and [exact examples](03_Data_and_Code/Analytical_Arguments/README.md) supply concrete checks. Apply the relevant assessment's AI-use rules.
+
+When discussing M9 §§9.41–9.43, distinguish unmeasured empirical objects, conditional identification limits, Kant's negative noumenon, and normative reasons. Unknown unknowns are unrecognized issues; an acknowledged limit needs a scope and argument. Apply the ontological spectrum to a source's particular inference, preserving its welfare findings and safeguards. The spectrum supplies no numerical author ranking. Philosophical criticism of reduction does not excuse unsupported factual accusations. Read the linked primary-source guide for passage-level scope.
 
 ---
 
@@ -2313,6 +2374,10 @@ The [statistical-inference examples](Statistical_Inference/README.md) also imple
 
 The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/README.md) add exact customer incidence, experimental exposure, observationally equivalent tested demand, a reconstruction of Dubé and coauthors' published payoff game, and hypothetical damages arithmetic. Full code appears in M6 and M9. The programs distinguish synthetic populations, rounded published model outputs, normative premises, and legal proof.
 
+## Analytical Arguments
+
+[Analytical Arguments](Analytical_Arguments/README.md) contains two exact synthetic programs. One constructs observationally equivalent price models with different intervention effects; the other fixes purchases and rankings while obtaining opposite welfare signs under independently imposed values. Complete listings appear in M6 §6.38 and M4 §4.29. Ten independent checks and two data-driven TikZ sources accompany the calculations.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2321,7 +2386,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [537-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 131 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [561-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 136 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2397,7 +2462,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 120 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 122 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -2525,7 +2590,15 @@ M5 §5.27 adds qualitative analysis of utility disclosures, three boxed verbatim
 
 ## Pricing, Individual Reasons, and Antitrust Evidence
 
-M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39 connect flexible demand models to welfare identification, experimental exposure, Kantian authority, Scanlonian justification, and U.S. antitrust proof. Five [executed programs](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) reproduce exact synthetic comparisons and Dubé and coauthors' rounded competitive payoff table. Four editable TikZ figures explain the mechanisms. The [source assessment](../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) and [legal guide](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) preserve contrary findings, primary citations, and document status. Fourteen new checks pass; all 120 Python blocks match their standalone files. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
+M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39 connect flexible demand models to welfare identification, experimental exposure, Kantian authority, Scanlonian justification, and U.S. antitrust proof. Five [executed programs](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) reproduce exact synthetic comparisons and Dubé and coauthors' rounded competitive payoff table. Four editable TikZ figures explain the mechanisms. The [source assessment](../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) and [legal guide](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) preserve contrary findings, primary citations, and document status. Fourteen new checks pass; all 122 Python blocks match their standalone files. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
+
+## Analytical Arguments
+
+M1 §1.20 introduces a five-step method for examining an analytical recommendation. M4 §4.29 holds purchases and product rankings fixed while comparing cardinal values; M6 §6.38 constructs equal historical fit with different common-price effects; M9 §9.40 connects the examples to logical validity, premise support, interpretation, and Scanlonian justification. [Two complete programs and results](../03_Data_and_Code/Analytical_Arguments/README.md), three editable figures, and [optional practice](../07_Labs/Philosophical_Arguments/README.md) support the pricing and electricity applications. Both calculations executed, ten independent checks passed, and all 122 Python listings match their standalone files.
+
+M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ---
 
@@ -2595,7 +2668,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 476 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 493 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2757,6 +2830,14 @@ Sessions 7 and 14 also use the [utility-disclosure case](../03_Data_and_Code/Uti
 ## Pricing, Individual Reasons, and Antitrust
 
 Session 9 adds two slides on targeted exposure and a justified experiment. Session 14 adds twelve slides on measurement reasons, instrumental rationality, reasonable justification, connected pricing and infrastructure claims, customer types, welfare identification, individual burdens, Dubé's published competitive game, Kantian data authority, and antitrust evidence connected to Scanlonian reasons. Four editable TikZ figures and complete Markdown companions accompany the [five programs](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md). Longer exercises are [optional ungraded practice](../07_Labs/Scanlon_Pricing/README.md). The session plan selects examples within the existing meeting blocks.
+
+## Analytical Arguments and Counterexamples
+
+Sessions 1, 5, 9, and 14 connect question formulation, definitions, model compatibility, causal identification, valuation premises, and conditions for revising a criticism. Seventeen slides and five editable diagrams support the existing discussion blocks. The [optional five-step exercise](../07_Labs/Philosophical_Arguments/README.md) and [exact Python constructions](../03_Data_and_Code/Analytical_Arguments/README.md) supply the extended practice.
+
+M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ---
 
@@ -3324,7 +3405,15 @@ M5 §5.27 includes three attributed verbatim excerpt boxes, a TikZ evidence diag
 
 ## Pricing, Individual Reasons, and Antitrust Evidence
 
-M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39 connect flexible demand models to welfare identification, experimental exposure, Kantian authority, Scanlonian justification, and U.S. antitrust proof. Five [executed programs](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) reproduce exact synthetic comparisons and Dubé and coauthors' rounded competitive payoff table. Four editable TikZ figures explain the mechanisms. The [source assessment](../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) and [legal guide](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) preserve contrary findings, primary citations, and document status. Fourteen new checks pass; all 120 Python blocks match their standalone files.
+M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39 connect flexible demand models to welfare identification, experimental exposure, Kantian authority, Scanlonian justification, and U.S. antitrust proof. Five [executed programs](../03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) reproduce exact synthetic comparisons and Dubé and coauthors' rounded competitive payoff table. Four editable TikZ figures explain the mechanisms. The [source assessment](../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) and [legal guide](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) preserve contrary findings, primary citations, and document status. Fourteen new checks pass; all 122 Python blocks match their standalone files.
+
+## Questions, Logical Consequence, and Analytical Arguments
+
+The [primary-source guide](../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) connects Koralus and Mascarenhas, MacFarlane, Ciardelli and coauthors, and Pearl to the course's existing Scanlonian assessment. M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40 distinguish question formulation, meaning, compatible models, identified effects, independent valuations, and justified action. Two original exact-fraction programs, ten independent checks, and three editable figures accompany the examples. The source guide records selected reading scope; private research notes remain outside the public course materials.
+
+M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ---
 
@@ -3681,20 +3770,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 30 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 33 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 25 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 26 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 29 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 31 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 42 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 46 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 38 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 41 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 82 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 91 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -3705,7 +3794,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately. Reconstruct published failure denominators and assess silent errors.
 
-**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code. Execution feedback, independent verification, and the meaning of complete output.
+**Application:** Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code. Execution feedback, independent verification, and the meaning of complete output. Reconstruct an AI-assisted recommendation through five argument steps and identify a condition for revision. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification.
 
 **Ethics and Regulation:** Data minimization, authorized processing, and verifiable AI code.
 
@@ -3719,7 +3808,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise |
 | 125–140 | Response Weights and Statistical Evidence |
 | 140–155 | Campaign Specification and Interpretation |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Ethics, Analytical Arguments, and Decision Discussion |
 
 ### 02. Customer Data and Measurement
 
@@ -3793,7 +3882,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.
 
-**Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus.
+**Application:** Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus. Compare fixed purchase laws under two ordered monetary value systems; distinguish ranking from welfare.
 
 **Ethics and Regulation:** Price completeness and the attributes customers actually evaluate.
 
@@ -3807,7 +3896,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 110–125 | Human and Synthetic Research Budgets |
 | 125–145 | Synthetic Concept Screening and Human Validation |
 | 145–155 | Demand Information, Pricing, and Consumer Surplus |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Valuation Premises, Ethics, and Decision Discussion |
 
 ### 06. Segmentation and Customer Lifetime Value
 
@@ -3878,7 +3967,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales.
 
-**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Donald Andrews inverse power and nuisance-parameter sensitivity.
+**Application:** Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Donald Andrews inverse power and nuisance-parameter sensitivity. Compare observationally equivalent price models and specify the randomized cells that distinguish them.
 
 **Ethics and Regulation:** Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test.
 
@@ -3891,7 +3980,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise and Store Assignment |
 | 125–135 | Fixed and Adaptive Research Designs |
 | 135–155 | Treatment Effects and Customer Outcomes |
-| 155–170 | Ethics, Evidence, and Decision Discussion |
+| 155–170 | Identification, Symmetric Scrutiny, and Decision Discussion |
 
 ### 10. Causal Comparisons and Policy Evaluation
 
@@ -3988,7 +4077,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence.
+**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice.
 
 **Ethics and Regulation:** Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims.
 
@@ -4001,13 +4090,13 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 60–70 | Wendy's Pricing Case and Evidence |
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
-| 90–95 | Premises and an Ought Conclusion |
-| 95–100 | Stakeholder Reasons and Public Voice |
+| 90–95 | Ontological Scope, Counterexamples, and an Ought Conclusion |
+| 95–100 | Stakeholder Reasons, Utility Disclosures, and Public Voice |
 | 100–110 | Pricing Burdens and Feasible Alternatives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–165 | Digital Channels and Meaningful Customer Choice |
-| 165–170 | Decision Discussion |
+| 165–170 | Revised Conclusion and Conditions for Revision |
 
 ### 15. Integrated Decisions and Final Presentations
 
@@ -4053,6 +4142,16 @@ Session 7 integrates source retrieval, contextual coding, negative cases, and th
 Session 9 uses the targeted-exposure example within minutes 135–155. Session 14 selects the demand-completion and burden comparison within minutes 50–60, a Kantian or Scanlonian pricing argument within minutes 80–110, and antitrust evidence in the existing policy discussion. The deck supplies alternative cases for these blocks; the full reconstruction and extended legal argument are optional ungraded practice. The fifteen 170-minute meetings and released assessment status remain unchanged.
 
 The [pricing practice](../07_Labs/Scanlon_Pricing/README.md) connects M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39. Students distinguish customer harm, reasonable rejection, legal elements, and a damages model matched to the alleged conduct. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
+
+## Analytical Arguments and Conditions for Revision
+
+Sessions 1, 5, 9, and 14 use a common five-step exercise: define the claim, expose its premises, construct a counterexample, assess the missing premise, and revise the conclusion. Session 1 uses minutes 155–165 for an AI-generated recommendation; Session 5 uses minutes 155–165 for ordinal rankings and monetary values; Session 9 uses minutes 155–165 for historical fit and identification. Session 14 incorporates the argument sequence at minutes 90–95 and conditions for revision at minutes 165–170. Select the case suited to the discussion from the extended deck. The fifteen meeting dates, 170-minute durations, and ten-minute breaks are preserved.
+
+M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40 supply the connected explanations. The [optional argument practice](../07_Labs/Philosophical_Arguments/README.md) contains the longer exercise and a reusable record. The two [complete Python examples](../03_Data_and_Code/Analytical_Arguments/README.md) distinguish observational equivalence from identification and ordinal rankings from welfare valuations. Three editable TikZ figures support the comparisons. No additional graded requirement or AI-use policy is established.
+
+M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ---
 
@@ -4233,6 +4332,16 @@ Session 9 uses the targeted-exposure example within minutes 135–155. Session 1
 
 The [pricing practice](../07_Labs/Scanlon_Pricing/README.md) connects M4 §4.28, M6 §6.37, M8 §8.32, and M9 §§9.34–9.39. Students distinguish customer harm, reasonable rejection, legal elements, and a damages model matched to the alleged conduct. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
 
+## Analytical Arguments and Conditions for Revision
+
+Sessions 1, 5, 9, and 14 use a common five-step exercise: define the claim, expose its premises, construct a counterexample, assess the missing premise, and revise the conclusion. Session 1 uses minutes 155–165 for an AI-generated recommendation; Session 5 uses minutes 155–165 for ordinal rankings and monetary values; Session 9 uses minutes 155–165 for historical fit and identification. Session 14 incorporates the argument sequence at minutes 90–95 and conditions for revision at minutes 165–170. Select the case suited to the discussion from the extended deck. The fifteen meeting dates, 170-minute durations, and ten-minute breaks are preserved.
+
+M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40 supply the connected explanations. The [optional argument practice](../07_Labs/Philosophical_Arguments/README.md) contains the longer exercise and a reusable record. The two [complete Python examples](../03_Data_and_Code/Analytical_Arguments/README.md) distinguish observational equivalence from identification and ordinal rankings from welfare valuations. Three editable TikZ figures support the comparisons. No additional graded requirement or AI-use policy is established.
+
+M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -4367,6 +4476,12 @@ M5 §5.27 and M9 §9.33 connect public assurances to disclosed recovery mechanis
 ## U.S. Antitrust, Pricing, and Individual Reasons
 
 The [antitrust source guide](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md), checked November 26, 2026, covers Sherman Act agreement and monopolization requirements, Robinson–Patman scope, antitrust injury, and damages tied to a liability theory. M9 §§9.38–9.39 connect those institutions to Scanlonian reasons and evidentiary safeguards. The RealPage documents are identified as allegations and proposed terms; the separately entered Greystar judgment is dated March 2, 2026. None establishes unlawful conduct by a researcher or by all users of pricing analytics. M9 §9.37 includes the INFORMS terms footnote and an argument about access to independent scrutiny.
+
+## Logical Support and Ethical Justification
+
+M9 §9.40 connects validity and premise support to the existing Scanlonian evaluation of pricing and public reassurance. M1 §1.20 introduces the five-step exercise; M4 §4.29 and M6 §6.38 supply exact numerical constructions. Students distinguish a supported criticism from a stronger accusation and identify evidence or reasons that would change either conclusion. The [logic guide](../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) records the primary readings. These additions make no new legal claim or change to the recorded status of any policy.
+
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ---
 
@@ -4533,15 +4648,19 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. Customer measurement and visualization define the patterns to explain. Regression, conjoint analysis, segmentation, customer lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation systems inform decisions about product design, acquisition, retention, pricing, and marketing budgets.
 
-AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian, Confucian, and Scanlonian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, antitrust evidence, and commercial incentives. Students distinguish effective pursuit of a commercial aim from a reasonable principle that can be justified to affected people.
+AI-assisted coding is integrated throughout the course. Students practice specifying a problem, generating and revising Python code, checking calculations, and explaining what the results support. Customer value, data privacy, and regulatory scope enter the discussion alongside commercial outcomes. Marketing Dialectics examines claims and conduct through Kantian, Confucian, and Scanlonian philosophy, including AI-assisted experimentation, personalized pricing, electricity infrastructure, antitrust evidence, and commercial incentives. Students distinguish effective pursuit of a commercial aim from a reasonable principle that can be justified to affected people. They examine the questions and definitions behind an analysis, make its premises explicit, and apply the same standards of evidence to a claim and its criticism. Philosophical criticism also examines when measurable behavior becomes an inadequate account of persons, institutions, or moral reasons. An ontological spectrum guides comparison of pricing, cancellation, and household-cost claims.
+
+Empirical representations leave fundamental questions about ends, authority, and obligations to be justified. Kant's distinction between phenomena and noumena motivates scrutiny of claims that observed behavior exhausts the person represented. Students examine the worth of an objective before optimizing it and use evidence alongside philosophical arguments about affected people's standing.
 
 ## Learning Objectives
 
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
+- Evaluate which ends deserve pursuit, who has authority to select them, and what obligations the decision creates, distinguishing empirical knowledge from practical justification.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
 - Evaluate AI-assisted workflows through independent calculations, statistical design, meaningful-effect bounds, silent-error detection, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
+- Reconstruct analytical arguments, distinguish model fit from identification and valuation, test counterexamples, and identify evidence or reasons that would change a conclusion.
 
 ## Class Format and Materials
 
@@ -5141,6 +5260,12 @@ The guide and catalog supply Markdown descriptions of the readings and their cou
 ## Stakeholders, Reasons, and Public Voice
 
 The [supplemental reading guide](07_Stakeholders_and_Reasons/README.md) adds Scanlon on justification, stakeholder obligations, and epistemic justice. Its separate catalog contains 12 records, with four local PDFs and eight records assessed through primary abstracts. M9 §§9.28–9.32 connects these arguments to publication, customer choice, and residents' opportunities to contest public reassurance. [Optional practice](../../07_Labs/Philosophical_Arguments/README.md) asks for factual premises, a defended normative principle, a feasible alternative, and a conditional conclusion using “ought.”
+
+## Logic and Analytical Arguments
+
+The [logic reading guide](08_Logic_and_Analytical_Arguments/README.md) connects questions, logical consequence, causal identification, and argument revision. M1 §1.20, M4 §4.29, M6 §6.38, and M9 §§9.40–9.43 use two exact synthetic constructions and five editable diagrams. Students distinguish a model's compatibility with observations from identification, examine valuation assumptions, and test criticisms against the same standards applied to the original claim. The supplemental linked references retain their own reading scope and do not change the historical collection counts above.
+
+Kantian limits, the ontological spectrum, and critiques of empiricism connect behavioral representation to distinct questions about institutions, agency, and normative reasons. The guide records selected primary passages by Kant, Sellars, Bhaskar, Husserl, and Scanlon, with a separate empirical reference on publication selection.
 
 ---
 
@@ -6755,6 +6880,220 @@ Institutional reform must also answer objections. A proposed rule could require 
 
 [^replication-terms]: The [INFORMS download terms](https://services.informs.org/dataset/mksc/download.php?doi=mksc.2017.1042), checked November 26, 2026, permit verification of the main results using the same data and models. They restrict other uses without author or data-originator permission and direct follow-up articles correcting central results to *Marketing Science*. These conditions narrow independent reuse and publication routes for critical assessment; they do not prohibit every critical replication.
 
+## 9.40 Logical Consequence and a Defensible Recommendation
+
+\noindent A firm asks whether a successful analytical result justifies deploying a pricing system. The result may establish accurate purchase predictions, a causal revenue gain, or a conditional welfare comparison. A recommendation adds a claim about the action the firm ought to take. Its credibility depends on the premises connecting these objects and the reasons supporting those premises. Critical analysis should expose that connection precisely enough for an affected person to challenge it.
+
+### 9.40.1 Validity, Soundness, and Evidential Support
+
+\noindent A deductively valid argument preserves truth: true premises cannot yield a false conclusion. Soundness requires both validity and true premises. Consider the argument, “Every revenue-increasing practice ought to be adopted; this practice increases revenue; therefore it ought to be adopted.” The inference is valid under the stated meanings. Its first premise grants priority to revenue regardless of other people's burdens and requires an ethical defense. Precise evidence for the revenue premise leaves that defense open.
+
+MacFarlane examines the principles connecting facts about logical consequence to norms governing belief and reasoning. The course application separates a valid inference from entitlement to accept its premises. When a conclusion conflicts with strong evidence, revising a premise may be appropriate. Treating every implication of an accepted model as an established fact would skip that assessment. [MacFarlane, 2004, §§2–4](https://johnmacfarlane.net/normativity_of_logic.pdf).
+
+Empirical support also requires attention to the form of the claim. A confidence interval is a sampling procedure with stated coverage under its assumptions. It does not guarantee that its realized endpoints contain the parameter. An ordinary empirical conclusion may remain defeasible because further evidence can change its support. Requiring an impossible deductive guarantee would misdescribe that conclusion. The appropriate criticism identifies the unsupported strengthening, such as turning an imprecise average estimate into categorical reassurance for every household.
+
+### 9.40.2 The Question and the Meaning of Its Terms
+
+\noindent An analyst can assemble an accurate answer to a question that omits the decisive issue. “Which customers accept a higher price?” leaves the reason for accepting unresolved. Urgent need, valuable service, and weak alternatives can each matter for the customer's objection. “Does an average electricity-price estimate differ from zero?” leaves open a question about household exposure to future cost recovery. State the question answered by the result and the additional question required by the proposed decision.
+
+Ciardelli, Groenendijk, and Roelofsen distinguish information conveyed from issues raised by an expression. Koralus and Mascarenhas examine reasoning that interprets premises as questions and answers. Their work motivates asking which alternatives an inquiry keeps open and when a partial answer is treated as complete. Applying that discipline to a managerial brief does not establish a psychological mechanism in a particular analyst or AI system. [Ciardelli, Groenendijk, and Roelofsen, 2018, §§2.3–2.5](https://fdslive.oup.com/www.oup.com/academic/pdf/openaccess/9780198814788.pdf); [Koralus and Mascarenhas, 2013, §§1–2](https://doi.org/10.1111/phpe.12029).
+
+| Expression in an Argument | Distinction That Requires Support |
+| --- | --- |
+| High willingness to pay | Ability to pay, benefit, and acceptable treatment are separate claims. |
+| Continued subscription | The recorded state may coexist with attempted withdrawal or an obstructed exit. |
+| Average revenue per kWh | Household bills also depend on quantities, charges, customer class, and timing. |
+| No operating facility added | Earlier commitments or failed projects can still create exposure; actual exposure needs evidence. |
+| A feasible customer option | Availability, knowledge, practical ability, and authority to use the option differ. |
+
+The same words must retain the same meaning through an argument. A question's wording alone does not establish that different customers understand it alike. Conversely, different wording can express the same issue. Record the operational definition and examine how the classification changes under defensible alternatives. Calling a purchase “consent” incorporates a substantive interpretation that a transaction count does not independently verify.
+
+Possibility, actuality, knowledge, permission, and obligation also require separate premises. A procedure can be technically feasible while unauthorized. A person can have a formal option without knowing how to exercise it. An action can be permissible without being required. The statement that an action is permissible is a necessary condition of its being obligatory in ordinary duty reasoning; permission alone supplies no obligation. Specify the relevant sense of “can,” “may,” and “ought” before drawing a conclusion.
+
+### 9.40.3 Compatibility, Identification, and Valuation
+
+\noindent The price construction in §6.38 grants exact agreement with the historical joint law and obtains different intervention effects. It isolates the additional assumption needed to turn representation into identification. The valuation construction in §4.29 grants the purchase effects themselves and holds the ordinal ranking fixed, yet obtains opposite consumption gains. It isolates a second premise: how much the ranked outcomes are worth. Resolving the first problem would leave the second as a separate question.
+
+A useful sensitivity analysis changes one maintained restriction at a time and records what conclusion survives. Removing a restriction enlarges the class of compatible models; adding evidence or a defensible restriction can narrow it. Check that the restricted class remains nonempty. An inconsistent set of assumptions and observations supports no feasible economic explanation. Narrow bounds obtained by imposing a strong restriction should retain that restriction beside the conclusion.
+
+Statistical precision concerns variation in an estimator under a specified sampling design. Identification concerns what the observable law and maintained restrictions determine. Ethical justification concerns reasons for a principle governing action. A narrow standard error can coexist with an unidentified target or an indefensible objective. The analyst should identify which problem an additional observation, model restriction, or normative argument actually resolves.
+
+### 9.40.4 Construct and Repair an Argument
+
+\noindent Begin with a claim narrow enough to test, identify its premises, and search for a counterexample that preserves them. The five steps in §1.20 provide a repeatable sequence. A counterexample can reveal an invalid deduction; its relevance to the actual setting requires further investigation. A criticism should say which of those tasks it has completed.
+
+![An argument moves through claim definition, premises, counterexample, assessment of the missing premise, and a revised conclusion.](../figures/M09_argument_revision.png)
+
+The five boxes distinguish defining the claim, exposing premises, constructing a counterexample, assessing an additional premise, and revising the conclusion. The return arrow makes the revision explicit. Factual and causal premises need evidence; normative premises require reasons. The same sequence applies to the initial recommendation and its criticism.
+
+For the electricity case, take the proposed inference from a statistically insignificant average-price result to reassurance about household costs. A counterexample can preserve nonrejection while allowing an economically meaningful effect, or preserve a flat unit price while household charges rise. Sections 6.33–6.35 and 9.27 give the source assessment and complete calculations. The missing premises concern test sensitivity, the mapping from the measured outcome to household costs, the relevant population, and the time horizon. The defensible conclusion retains the uncertainty and the actual outcome measured.
+
+The critic must apply the same discipline to a stronger accusation. An insensitive test does not prove a positive effect or show that low power uniquely caused the observed nonsignificance. A hypothetical cancelled project does not establish contamination of the study's actual controls. A public statement exceeding its evidence does not establish deliberate deception. Establishing those conclusions requires evidence on effects, project histories, or intent. The supported criticism can still be consequential: an institution using unresolved evidence to dismiss a material concern owes affected people a better justification.
+
+### 9.40.5 From a Conditional Result to an Ought Conclusion
+
+\noindent Consider a hypothetical personalized price for an essential service. Suppose the analysis reliably predicts acceptance, and independent evidence shows that some buyers face urgent need, weak alternatives, and a substantial burden. Suppose a feasible pricing rule could meet legitimate operating needs while imposing a smaller burden. These factual premises make the person's objection relevant even when acceptance is instrumentally rational.
+
+A proposed normative principle is that a firm ought to justify avoidable substantial burdens to the people who bear them, comparing feasible ways of meeting legitimate needs. A Scanlonian assessment asks whether those people could reasonably reject the principle permitting the practice relative to the alternative principle. Buyers' reasons must be assessed alongside the interests of other customers, workers, and providers. The conclusion under the stated circumstances is that predicted acceptance alone supplies an inadequate justification for the more burdensome rule. A recommendation to adopt the alternative additionally depends on the evidence and reasons supporting its feasibility and comparative burdens. [Scanlon, *What We Owe to Each Other*, chapter 5, §§1–3](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+The same structure connects dynamic-pricing communication and data-center reassurance. Acceptance of a favorable description leaves the accuracy and completeness of that description to be examined. Agreement with a prestigious source leaves the support for its inference to be examined. In each setting, name the people affected, the decision being justified, the alternatives available, and the premise that converts the analytical result into permission to act.
+
+### 9.40.6 Evidence and Reasons That Would Change the Conclusion
+
+\noindent A strong criticism identifies a meaningful route to revision. For the common-price example, valid randomized observations at the missing group–price combinations would distinguish the two specified models. For the valuation example, independent evidence supporting the monetary value gaps and procedural burdens could narrow the welfare conclusion. For the electricity case, a credible design, sufficiently informative uncertainty bounds, matched household outcomes, and documented cost-allocation protections could support a more reassuring interpretation within their scope.
+
+Normative conclusions also remain answerable to reasons. A necessary security measure, an unavailable alternative, or a serious burden imposed on other people can change the justification of a proposed rule. The analyst should assess these objections in their strongest supported form. Critical analysis earns its force by stating what follows, why it follows, and what would require changing the conclusion.
+
+## 9.41 Phenomena, Noumena, and the Ends of Analysis
+
+\noindent A pricing system can predict a person's purchase with great accuracy while leaving the justification for imposing that price unresolved. A utility study can estimate an average outcome while leaving residents' claims to information, participation, and protection unanswered. These are fundamental questions about what an analysis is for and what authority its results possess. Ease of observation gives a quantity a practical advantage in research; it supplies no independent reason to let that quantity determine the ends of the inquiry.
+
+### 9.41.1 Empirical Knowledge and Its Limits
+
+\noindent Kant distinguishes objects as they appear under the conditions of human cognition from things considered independently of those conditions. Phenomena are objects of possible experience, whose investigation can produce genuine empirical knowledge. The distinction is more demanding than a separation between superficial appearances and a hidden variable waiting to be estimated.
+
+In the negative sense, a noumenon is a thing considered apart from our sensible mode of intuition. In the positive sense, it would be an object of a nonsensible intuition. Kant denies that human theoretical cognition possesses the intellectual intuition needed for that positive use. The concept has a limiting role: empirical cognition does not establish a complete account of things as they are independently of its conditions. These distinctions appear in the *Critique of Pure Reason*, B306–B311, within “The Ground of the Distinction of All Objects in General into Phenomena and Noumena.” [Kant, primary text](../../01_Resources/15_Marketing_Dialectics/01_Kant_Primary_Texts/public_domain_texts/Kant_CritiqueOfPureReason_Meiklejohn1855.html).
+
+Acknowledging noumena therefore changes the ambition of the analytical claim. A model can represent behavior under specified conditions without exhausting the person represented. Larger samples and more flexible functions can improve that empirical representation. They supply no warrant for claiming theoretical knowledge of a noumenal self or for equating the person with the fitted representation. The precise relationship between appearances and things in themselves is disputed in Kant scholarship; the course use relies on the stated limit of theoretical cognition.
+
+### 9.41.2 Unmeasured Experience and Practical Standing
+
+\noindent An unrecorded household charge, an undocumented constraint, or an unasked question about comprehension remains an empirical object of inquiry. Interviews, contracts, observation, and experiments may supply evidence about it. Qualitative evidence also belongs to experience. Adding such evidence can correct an impoverished analysis, while the distinction between phenomena and noumena addresses a different limit. Calling an omitted variable noumenal would conceal the opportunity to investigate it.
+
+Kant's practical philosophy supplies a separate argument for treating persons as ends and understanding ourselves as agents deliberating under reasons. The *Groundwork*'s humanity formulation, 4:428–429, places constraints on using people merely as means. Its third section, 4:451–453, discusses the sensible and intelligible standpoints. A statistical model of conduct and a practical account of what is owed to the person have different roles. The moral principle requires philosophical justification; it is not deduced solely from a gap in empirical knowledge. [Kant, *Groundwork*, sections II–III](../../01_Resources/15_Marketing_Dialectics/01_Kant_Primary_Texts/public_domain_texts/Kant_Groundwork_Abbott.html).
+
+![Empirical investigation, Kant's limiting concept of noumenon, and practical justification answer distinct questions about a marketing decision.](../figures/M09_phenomena_noumena.png)
+
+The four upper boxes distinguish established findings, recognized empirical gaps, unanticipated issues, and acknowledged epistemic limits. An arrow shows how recognizing an unexpected issue can make it a question for further investigation. The separate limit box gives the negative concept of noumenon its role. The lower box asks about ends, authority, and obligations through a distinct practical argument. No arrow converts a missing measurement into knowledge of noumena or a moral duty.
+
+### 9.41.3 When Analytical Success Conceals an Unjustified Objective
+
+\noindent Marketing analytics often begins with a measurable response and a firm-selected objective. The critical question is what happens when that practical starting point becomes the entire account of the decision. Predicting acceptance can then stand in for examining consent; estimating willingness to pay can stand in for considering burdens; maximizing revenue can stand in for defending the objective. The philosophical error occurs in those substitutions. Their validity requires premises beyond the success of the calculation.
+
+The pricing studies examined in §§9.14–9.18 and §§9.34–9.39 provide specific arguments and findings to assess. Retain their welfare results and safeguards while asking whether the proposed decision rule gives adequate weight to customers' standing and alternatives. A reported customer-surplus loss is morally relevant evidence even when the pricing algorithm works as intended. Describing the same person more flexibly through unobserved heterogeneity does not itself answer that person's objection to how the firm treats them.
+
+The electricity case presents a related problem in public interpretation. A measured average can inform one empirical question. It supplies no reason to treat residents' claims to explanation or participation as exhausted by that statistic. Nearby residents need not first demonstrate a precisely estimated injury to ask for reasons concerning a proposed involuntary exposure. Whether a particular safeguard is warranted depends on the relevant circumstances and a defended principle of justification.
+
+These criticisms concern the arguments, objectives, and uses of particular studies. Institutional affiliation supplies no substitute for examining those objects. The transferable lesson applies whenever a commercially useful representation acquires authority over questions its evidence and premises leave unresolved.
+
+### 9.41.4 Deliberate About Ends Before Optimizing Means
+
+\noindent A responsible analysis begins by identifying the proposed end and the people whose choices or obligations the decision would change. Ask who chose that end, what authority permits pursuing it, and which reasons could justify it to affected people. Then determine the empirical evidence needed to assess feasible actions and consequences. Better information can alter the practical judgment, while the choice of a worthy end requires reasons that computation alone does not supply.
+
+Kantian respect and Scanlonian justification approach this problem through distinct arguments. Kant examines maxims, autonomy, and treating persons as ends. Scanlon asks whether principles can be justified to people with reasons for rejecting them. Neither account makes an observed purchase or a high prediction score a sufficient justification for treatment. Scanlon's reasons are not thereby identified with Kantian noumena; the connection concerns the limits of reducing practical justification to recorded behavior. [Scanlon, *What We Owe to Each Other*, chapter 5](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+For a pricing proposal, the analyst might recommend a less burdensome rule, further evidence, a restriction on data use, or abandonment of an objectionable objective. The recommendation should identify the factual premises and philosophical reasons supporting it. An effective algorithm can advance an end the firm ought to reject. Recognizing that possibility changes the task before a line of optimization code is written.
+
+### 9.41.5 The “Known to Be the Never Known”
+
+\noindent An analyst can recognize a boundary of knowledge without possessing the positive knowledge that lies beyond it. The phrase “known to be the never known” directs attention to that situation. An unknown unknown concerns an issue the analyst has not yet recognized. Discovering it may make it an ordinary question for investigation. An acknowledged epistemic limit instead rests on an argument about why a specified kind of inquiry cannot supply the proposed knowledge.
+
+| Epistemic Situation | Marketing Application | Appropriate Response |
+| --- | --- | --- |
+| Known knowns | A supported empirical finding within its stated population and conditions. | Retain its evidence, scope, and possibility of correction. |
+| Known unknowns | A recognized question about comprehension, an unrecorded charge, or a policy response. | Seek evidence or state the remaining uncertainty. |
+| Unknown unknowns | An overlooked mechanism or affected group. | Broaden inquiry and revise the question when the issue emerges. |
+| Acknowledged limits of knowledge | In Kant's account, theoretical cognition of things independently of our sensible conditions. | Recognize the limit and restrain claims that exceed it. |
+
+The word “never” requires a specified scope and a justified boundary. Kant's restriction concerns human theoretical cognition under its sensible conditions. It is not a prediction that a currently missing dataset will remain unavailable forever. Nor does it identify a hidden preference, a person's complete inner nature, or a particular injury beyond the evidence. Acknowledging the boundary preserves the distinction between thinking a limit and knowing the positive content beyond it. [Kant, *Critique of Pure Reason*, B306–B311](../../01_Resources/15_Marketing_Dialectics/01_Kant_Primary_Texts/public_domain_texts/Kant_CritiqueOfPureReason_Meiklejohn1855.html).
+
+Statistical identification supplies a useful comparison with a narrower scope. In §6.38, no amount of data restricted to the specified historical joint law distinguishes the two intervention effects. The restriction can be established by construction. New experimental information can change that conclusion because it changes the available observable law. This is a conditional identification limit, whose mathematical basis differs from Kant's account of cognition. Stating the scope prevents a temporary evidence gap from being called an absolute impossibility.
+
+Questions about what a firm ought to do occupy another role. Their failure to be settled by a statistical calculation does not make them unknowable in principle. Reasons, principles, objections, and reflection can support practical judgments. The empirical boundary gives the analyst no automatic answer about which pricing rule is permissible. A defended account of respect and justification remains necessary.
+
+An exclusive focus on reducing uncertainty can obscure these differences. Some questions need another observation; some need a changed research design; some require recognition of a limit; and some require a better argument about ends. When a proposal depends on knowledge its method cannot supply, the analyst should revise the claim, change the decision rule, or defend proceeding under that acknowledged limit. Adding a speculative latent variable supplies no substitute for that justification.
+
+## 9.42 A Spectrum of Ontological Adequacy
+
+\noindent A manager deciding whether to deploy personalized prices needs an account of the people and relations the policy changes. A purchase record describes a transaction. A demand model describes responses under specified conditions. The decision also concerns who sets those conditions, who can refuse, and whose reasons count. Ontological adequacy concerns whether the account preserves the objects and relations needed for its stated claim. A precise answer to a narrow question becomes inadequate when it acquires authority over a broader decision without examining those additional objects.
+
+### 9.42.1 From Recorded Outcomes to Persons and Institutions
+
+\noindent The following spectrum orders the questions an interpretation admits. Each position describes a claim or decision argument. A paper can contain arguments at several positions, and a small model can support an adequate answer to a small question. The positions have no numerical distances and supply no overall score of a researcher, institution, or philosophical tradition.
+
+| Position | Account Admitted by the Interpretation | Question That Exposes Its Scope |
+| --- | --- | --- |
+| A. Measurement as reality | A recorded outcome is treated as exhausting the relevant object. | Has purchase become consent, or average price become household welfare? |
+| B. Behavioral representation | Response variation, latent preferences, and prediction enter the account. | Does fitting behavior explain its formation, authority, or value? |
+| C. Institutions and procedures | Contracts, dependence, timing, decision rights, and feasible alternatives enter. | Who controls the process, and which burdens occur outside the recorded outcome? |
+| D. Agency and reasons | People can endorse, refuse, delegate, contest, and offer reasons for different ends. | Can the proposed principle be justified to those affected? |
+| E. Acknowledged limits and justified scope | The argument distinguishes empirical knowledge, its limits, and practical justification. | Which conclusion is warranted, which remains open, and what ought to be done under that condition? |
+
+![Five positions extend an interpretation from measurement as reality through behavioral representation, institutions, agency, and acknowledged limits.](../figures/M09_ontological_spectrum.png)
+
+The upper row names the five positions. The lower row connects household-cost reassurance, purchase targeting, and cancellation to the questions their interpretation must answer. The direction represents broader explicit scrutiny. It does not assert that adding entities, variables, or philosophical vocabulary improves an argument. A concept earns inclusion by changing the question, the supported inference, or the justification of the decision.
+
+“Ontological laziness” identifies a specific failure here: convenience of measurement substitutes for an argument about what matters. Its strongest form dismisses a person's claim because the analyst has no column for it. The criticism should name the substitution and show why the omitted object changes the decision. A study confined openly to forecasting purchases can be excellent for that purpose. An assertion that the forecast exhausts welfare or legitimates targeting carries additional obligations that predictive success cannot discharge.
+
+### 9.42.2 Place the Case's Inference on the Spectrum
+
+\noindent Electricity costs and public reassurance. The study's measured utility outcomes supply empirical evidence within their design and uncertainty. The inference from an insignificant average-price result to the absence of household harm falls at A: it changes both the evidentiary claim and the object of concern. Household bills, fixed charges, cost allocation, income, recovery timing, and participation rights extend the account through C and D. The arguments in §§9.26–9.33 establish particular reporting and interpretation problems; hypothetical project cancellation remains a mechanism to investigate. A revised conclusion at E reports what the design resolves, what risks remain, and why proposed guarantees or further inquiry are proportionate. The strongest criticism targets the unsupported reassurance while preserving the paper's positive estimates and acknowledged restrictions.
+
+**Personalized pricing and AI experimentation.** Flexible demand estimation generally belongs at B when its claim concerns behavior. Dubé and Misra's reported consumer-surplus comparison already goes beyond a revenue-only assessment; the AI experimentation studies also contain safeguards that should retain their stated scope. The problematic extension is that an accurate estimate of willingness to pay authorizes extracting it, or that a flexible latent preference explains away every objection to the procedure. Neither conclusion follows from model fit. Moving through C and D requires examining how evaluations form, permission to use information, practical refusal, essential need, and whose ends the system serves. At E, the recommendation defends its normative premise and retains the restrictions supporting its welfare calculation. The findings and safeguards in §§9.14–9.18 and §§9.34–9.39 remain part of that assessment.
+
+**Cancellation and the marketing of dynamic pricing.** A retained subscription or accepted price can be accurately recorded while leaving the conditions of acceptance unresolved. Treating the transaction as sufficient evidence of endorsement places the interpretation at A or B. Information, cancellation effort, urgency, and available alternatives belong at C. Authority to reconsider and reasons for objecting belong at D. Favorable language about flexibility or convenience must preserve those distinctions. A defensible statement at E explains the actual rule, relevant alternatives, and customer consequences without converting commercial acceptance into moral permission. These are proposed inferences for assessment; source attribution requires the particular quotation and context.
+
+The same standard constrains criticism of these cases. An unmeasured burden remains a question until supported. A model's inability to establish metaphysical freedom establishes no metaphysical unfreedom. Labeling every omitted object noumenal would exempt ordinary empirical claims from investigation. The critical conclusion becomes stronger when it identifies exactly which omission invalidates the broader interpretation and which further claim still requires evidence.
+
+### 9.42.3 Agency Beyond a Behavioral Representation
+
+\noindent Suppose an automated purchasing service reliably chooses the same product a person would have selected. Agreement can establish useful predictive performance under the comparison used. The service's authority to commit the person, the person's understanding of its mandate, and the ability to withdraw delegation remain separate questions. A person may value delegation and have good reasons to avoid repeated choices. Preserving agency therefore requires attention to the terms of delegation and the person's reasons, rather than an assumption that more manual decisions always improve their position.
+
+A representation of response frequencies by deterministic plans also leaves the actual production of deliberation unspecified. Randomness alone establishes no authorship, and predictability alone establishes no absence of control. Experiments can examine defined aspects of comprehension, reconsideration, and response to reasons. They require operational conditions and provide correspondingly bounded conclusions. Their success cannot convert a mathematical representation into theoretical cognition of a noumenal self.
+
+Kant's limiting concept gives this boundary philosophical importance. Persons need not become completely identifiable empirical objects before questions about respect and authority can arise. The negative concept of noumenon supplies no description of a hidden decision mechanism. Practical arguments explain why an actor ought to respect another person's standing despite the incompleteness of behavioral representation. A useful analysis retains both the empirical inquiry and the independent demand for reasons.
+
+### 9.42.4 Easy Measurement and the Object Claimed
+
+\noindent The electricity case separates an accurately recorded variable from a valid measure of the claim being made. The paper explicitly uses realized revenue per MWh and explains that choice on pp. 14–16. The question is whether an interpretation preserves that object. Household expenditure, affordability, and project-related financial exposure require additional quantities and relations. Adcock and Collier distinguish the concept, its operational indicators, and the resulting observations when assessing measurement validity. Reliable collection alone leaves the adequacy of that connection to be justified. [Adcock and Collier, 2001, pp. 529–531](https://doi.org/10.1017/S0003055401003100).
+
+| Recorded Object | Broader Claim to Examine | Evidence Needed for the Connection |
+| --- | --- | --- |
+| Realized revenue per MWh | Household bills or affordability are unchanged. | Matched charges, quantities, billing periods, household resources, and the relevant counterfactual. |
+| Capacity entering operation | A utility has no project-related exposure before entry or without entry. | Service requests, investment commitments, cancellations, recovery decisions, and their dates. |
+| Four named developers | An ownership category identifies a leasing or operating business model. | Facility-level classifications and evidence about the proposed business-model mechanism. |
+| A utility or customer-class average | Each affected household is protected from a material burden. | Distributional incidence, justified burden criteria, and protection for differently situated households. |
+
+The first row requires an accounting bridge even before a causal argument. At a matched customer class and period, average revenue per unit multiplied by average units sold per customer gives revenue per customer. The average-price ratio alone leaves that quantity unresolved. Household affordability additionally involves resources and essential needs. Sections 2.28.1 and 6.35 reproduce the bill arithmetic with complete Python, including a case with unchanged average price and higher expenditure. A higher observed bill in turn requires a credible counterfactual before being attributed to the data center.
+
+The second and third rows concern classification. An operating-capacity record can be accurate while classifying a financially exposed utility as having no operating addition. A developer label can also be accurate while failing to identify a contractual form. The institution determines whether the available indicator answers the research question. These are concrete reasons to inspect project histories and contracts, rather than treating finer statistical estimation of the existing indicator as a complete remedy.
+
+The fourth row adds the scope of the population claim. Perfect precision for an average still leaves variation across households unresolved. Calling an outcome harmless then introduces a further judgment about relevant burdens. The defects should be named separately: the indicator may fail to represent the intended construct, the comparison may fail to identify its causal change, or the reported result may fail to justify the practical conclusion. A study can satisfy one requirement and fail another.
+
+The strongest supported criticism is therefore precise: the broader reassurance is unwarranted wherever its conclusion depends on these unvalidated connections. The paper's stated outcome and design should remain visible beside that criticism, as should its positive findings and institutional discussion. Ease of data access supplies a possible reason for selecting an indicator; it establishes neither the authors' motive nor the indicator's adequacy for every later use. [Paper and measurement assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md).
+
+## 9.43 Philosophical Critiques of Empiricism and Reduction
+
+\noindent A firm may ask a narrow empirical question, such as whether a proposed price increases revenue. The decision to impose that price raises additional questions about explanation, permission, and worthwhile ends. Philosophical critiques of empiricism help examine the authority claimed for the evidence. Empiricism includes diverse positions; reliance on observation alone does not commit a researcher to every doctrine criticized below. The relevant target is the particular inference that grants measurement an authority it has not earned.
+
+### 9.43.1 Kant: Conditions and Limits of Cognition
+
+\noindent Kant defends empirical knowledge while examining the conditions under which it is possible. His critical philosophy also challenges speculative claims exceeding those conditions. Sections 9.41–9.42 apply this discipline to behavioral representations that become complete accounts of persons. A rich response model can improve an empirical answer while leaving theoretical cognition of things independently of sensible conditions unavailable. The practical account of persons as ends requires its own argument. Neither a regression nor the announcement of its limits settles that argument. [Kant, *Critique of Pure Reason*, B306–B311; *Groundwork*, sections II–III](../../01_Resources/15_Marketing_Dialectics/01_Kant_Primary_Texts/README.md).
+
+### 9.43.2 Sellars: Observation and Justification
+
+\noindent Sellars criticizes the idea that observational knowledge possesses an independent, self-authenticating authority. Describing a claim as knowledge places it within practices of giving and assessing reasons. His argument preserves empirical inquiry and its capacity for correction. For marketing analysis, recording an event as consent already requires concepts and grounds connecting the record to that classification. Sensor accuracy or a perfectly reproduced transaction count cannot independently validate the interpretation. State those grounds and make them open to challenge. This application concerns the justification of classifications; it does not equate Sellars's epistemology with Scanlon's moral theory. [Sellars, *Empiricism and the Philosophy of Mind*, §§32–38](https://www.ditext.com/sellars/epm8.html).
+
+### 9.43.3 Bhaskar: Being and Knowledge of Being
+
+\noindent Bhaskar's critique of the epistemic fallacy rejects reducing questions about what exists to questions about our knowledge of it. He distinguishes causal structures from observed event patterns and allows fallible inquiry into mechanisms beyond immediate observation. A flat price series can coexist with contractual obligations or cost-recovery mechanisms requiring separate investigation. Establishing such a mechanism requires evidence about the institution and its operation. Bhaskar's realism therefore supports inquiry beyond measured regularities; it does not certify whichever hidden mechanism a critic proposes. Its account of knowable causal structures differs from Kant's negative noumenon. [Bhaskar, “Theorising Ontology,” 2007, pp. 192–194](https://internationalcentreforcriticalrealism.wordpress.com/wp-content/uploads/2013/04/07-1-bhaskar-theorising-ontology-2007.pdf).
+
+### 9.43.4 Husserl: Intentionality and the Meaning of Experience
+
+\noindent Husserl criticizes an account of mental life that treats it as an accumulation of psychic data while neglecting intentionality, the directedness of consciousness toward something. The marketing application asks what a person's acceptance, refusal, or evaluation is about. The same recorded click can concern a desired purchase, an attempt to dismiss a screen, or a misunderstood authorization. Investigating meaning requires attention to the person's situation and understanding. Such inquiry concerns experience and should not be relabeled knowledge of Kantian noumena. [Husserl, *The Crisis of European Sciences*, §22](https://www.marxists.org/reference/subject/philosophy/works/ge/husserl.htm).
+
+### 9.43.5 Scanlon: Normative Reasons and Ontological Restraint
+
+\noindent Scanlon challenges the assumption that accepting normative reasons requires rejecting a scientific understanding of the natural world. He proposes assessing claims through reasoning appropriate to their domains, reconciling them where their implications conflict. The resulting position permits serious moral argument without requiring a numerical observation for every reason. A customer's objection to unauthorized purchasing can therefore warrant assessment even when the system predicts their product choice correctly. Empirical claims within that objection remain answerable to evidence. Reasons receive no immunity from criticism simply because they are normative. [Scanlon, *Being Realistic about Reasons*, 2009 John Locke Lecture 2, pp. 1–7](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf).
+
+### 9.43.6 Publication Incentives and the Choice of Questions
+
+\noindent If researchers anticipate greater rewards for readily estimated effects or technically elaborate models, they may choose questions that fit those methods. Important problems concerning authority, dependence, or worthwhile ends may then receive less attention. This is a plausible selection mechanism. Its prevalence in marketing journals, its causal determinants, and its consequences require evidence about proposed, completed, submitted, and published research. A count of published computational papers alone would leave the missing comparison unresolved.
+
+Evidence for one form of publication selection comes from Franco, Malhotra, and Simonovits's study of 221 TESS survey experiments. The authors report that strong results were more likely than null results to be written up and published. That finding concerns selection by result strength in the studied population. It does not establish a journal preference for computational sophistication or the exclusion of ontological inquiry. [Franco, Malhotra, and Simonovits, *Science*, 2014](https://doi.org/10.1126/science.1255484).
+
+The decision consequence is to justify the research question before rewarding its computational execution. A study should identify which person's problem it addresses, why the selected outcome represents that problem, and which consequences remain outside its scope. An intellectually demanding calculation can still pursue a poorly defended end. A careful account of agency or institutional authority can be valuable even when its conclusion resists a single numerical estimate.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -7524,6 +7863,10 @@ The optional [Statistical Inference lab](Statistical_Inference/README.md) examin
 ## Pricing, Individual Reasons, and Antitrust Evidence
 
 [Scanlon Pricing](Scanlon_Pricing/README.md) offers optional ungraded practice in demand identification, individual burdens, experimental risk, Kantian authority, and a hypothetical antitrust case. Five complete programs accompany the argument exercise.
+
+## Analytical Arguments and Counterexamples
+
+The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includes a five-step argument record, two exact Python constructions, and pricing, electricity, and mHealth applications. Students test premise preservation, identify missing evidence or reasons, and state a condition for revising their conclusion. The exercise is public optional ungraded practice and supplies no course-wide permission to use AI.
 
 ---
 
@@ -12466,6 +12809,10 @@ The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project
 
 [Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the verified HBS coverage, the hypothetical university-branded headline, pricing communication, and the decision to revise or publish a claim. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.
 
+## Measurement Validity and Ontological Scope
+
+[M9 §9.42.4](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) maps the paper’s recorded objects to the broader claims that need validation. It separates realized revenue per MWh from bills and affordability, operating capacity from financial exposure, developer identity from business model, and an average from household incidence. The [philosophy and measurement guide](../15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) links Adcock and Collier’s conceptual framework and the ontological spectrum. Complete bill calculations remain in M2 §2.28.1 and M6 §6.35.
+
 ---
 
 ## Source: 01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md
@@ -12748,7 +13095,7 @@ The remaining eight records were assessed through primary publisher or author ab
 
 This is optional, ungraded practice. It establishes no assignment, deadline, grade weight, or course-wide AI rule.
 
-Use [M9 §§9.27–9.32](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md), the [Scanlon and stakeholder reading guide](../../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md), and the two editable figures in that chapter.
+Use [M9 §§9.27–9.32 and 9.40](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md), the [Scanlon and stakeholder reading guide](../../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md), and the [logic reading guide](../../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md). M1 §1.20 introduces a five-step argument exercise; M4 §4.29 and M6 §6.38 supply complete numerical examples.
 
 ## Construct an Argument
 
@@ -12804,6 +13151,78 @@ An effective argument defines its terms, supports its factual premises, defends 
 Reasonable rejection requires an assessment of reasons. It is neither a stakeholder vote nor a test of which group can impose the greatest cost on the firm. Disagreement with the instructor's recommendation is compatible with a strong argument when the premises and reasoning withstand scrutiny.
 
 If an applicable course rule permits an AI assistant, ask it to identify an unstated premise or strengthen an opposing argument. Check the reconstruction against the actual case and verify any citations. A generated stakeholder persona supplies a hypothetical perspective, not evidence of an actual person's views.
+
+## Test an Analytical Argument in Five Steps
+
+Choose a precise claim from a paper, an AI-generated report, or a proposed marketing action. Retain the source passage and any qualification beside it. Use the following sequence before deciding whether to endorse or reject the claim.
+
+1. **Define the claim.** Name the actor, action, population, comparison, period, and meaning of consequential terms.
+2. **Expose the premises.** Classify each as factual, measurement, causal, or normative. Identify whether it is observed, estimated, assumed, or argued.
+3. **Construct a counterexample.** Preserve every premise under examination while making the conclusion false. State whether the case is hypothetical or supported by actual evidence.
+4. **Assess the missing premise.** Explain what rules out the counterexample and why that additional restriction or principle deserves acceptance.
+5. **Revise the conclusion.** State what follows and identify evidence or reasons that would strengthen, weaken, or reverse it.
+
+Use [ARGUMENT_RECORD.md](ARGUMENT_RECORD.md) to record the argument. A counterexample to a universal inference need not be common. Establishing that it describes the actual setting requires empirical support. The five-step sequence also applies to your own criticism.
+
+## Equal Fit and Different Policy Effects
+
+Run the two original programs and their checks from the repository root:
+
+```sh
+python3 03_Data_and_Code/Analytical_Arguments/price_models.py
+python3 03_Data_and_Code/Analytical_Arguments/valuation_sensitivity.py
+python3 -m unittest discover -s 03_Data_and_Code/Analytical_Arguments -p 'test_*.py'
+```
+
+The [input and output dictionary](../../03_Data_and_Code/Analytical_Arguments/README.md) specifies the imposed populations, probabilities, values, and units. M6 §6.38 prints the complete first program; M4 §4.29 prints the second.
+
+For the price example, verify agreement on all four historical joint cells, including group labels. Explain why observing both prices somewhere in the population does not supply both prices within each group. Compare the predicted response to assigning a common price to everyone. Specify a randomized comparison that would distinguish the two models and discuss customer burdens in that experiment. Exact fit establishes compatibility; the intervention requires further evidence or a restriction on responses outside historical support.
+
+For the valuation example, retain the purchase probabilities and strict rank order. Identify where the largest value gap lies in each scenario and use the cumulative probability changes to explain the opposite welfare signs. Then add the same incremental procedure cost to both scenarios. State which conclusion changes and why. Explain what evidence could justify a cardinal valuation and which questions about consent and reasonable treatment remain separate.
+
+## Repair the Electricity Argument
+
+Assess the exact claim in the [public-communication record](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md), retaining the paper's actual outcome, sample, qualifications, and positive findings. Reconstruct the proposed movement from nonrejection to harmlessness.
+
+- Identify the effect sizes the study could detect under the specified power calculation. Preserve Donald W. K. Andrews's distinction between detectable departures and an interpretation of the realized effect.
+- Explain the additional institutional evidence needed to map the measured unit price to household bills and cost exposure.
+- Use the existing [synthetic counterexamples](../../03_Data_and_Code/Statistical_Inference/logical_counterexamples.py) and [institutional assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) to identify a missing premise.
+- Give the strongest supported response to the criticism. A design estimating average prices can still provide useful evidence within that scope.
+- State a revised public claim and the further evidence needed for reassurance. Assess separately the reasons for communicating it to affected households.
+
+Also assess the counterclaim that the study proves harm or that low power uniquely explains its nonsignificance. Identify why that inference needs further evidence. A hypothetical project pipeline establishes a possible exposure mechanism; documenting actual exposure in the study sample is a different task.
+
+## Questions, Meaning, and an Ought Conclusion
+
+Rewrite a pricing brief into four questions: who will accept, what the intervention changes, who bears a burden, and what the firm ought to do. List the evidence or reasons needed for each. Compare the roles of “can,” “may,” and “ought,” identifying feasibility, ability, permission, and obligation separately.
+
+Apply the same exercise to an mHealth recommendation. Continued logging supplies evidence about recorded engagement; interpreting it as improved nutrition or authorization for targeting adds premises. Identify the relevant health outcome, the person's stated purpose, and the scope of any delegation before making a recommendation. No new analysis of personal records is required for this conceptual exercise.
+
+If an applicable rule permits AI assistance, use the prompt in M1 §1.20.4 to obtain a counterexample and a strong reply. Verify the source passage, arithmetic, and preservation of premises yourself. Keep the assistant's hypothetical claims separate from evidence about real people. Evaluate both the commercial objective and the reasons supporting the proposed rule under the Scanlonian argument developed above.
+
+## Phenomena, Noumena, and the Worth of the Objective
+
+Use M9 §9.41 to assess a proposed objective before optimizing it. Begin with a pricing rule, an mHealth engagement target, or a public reassurance claim.
+
+1. Identify what the available data represent and the conditions under which the representation is informative.
+2. Identify important empirical facts that remain unmeasured and propose evidence for investigating them. Include qualitative evidence where appropriate.
+3. Explain the negative sense of Kant's noumenon and why an unmeasured empirical variable does not meet that definition. Explain the limit this places on treating the model as a complete account of the person.
+4. State the practical principle supporting respect, authority, or an obligation. Defend it through Kantian or Scanlonian reasoning, preserving the distinction between their arguments.
+5. Assess whether the proposed end deserves pursuit. Compare a feasible alternative and allow the conclusion that the objective ought to be abandoned even if the algorithm achieves it accurately.
+
+Give the strongest reply to your judgment and identify a reason or fact that could change it. Greater predictive accuracy, an additional latent variable, or a wider confidence interval does not by itself answer a question about which ends are worthy. An appeal to noumena supplies no evidence that a particular hidden preference or harm actually exists.
+
+Classify a supported finding, a recognized evidence gap, an unanticipated empirical issue, and an acknowledged limit of knowledge. For the last, state the kind of knowledge, the reason for the limit, and whether changing the design could remove it. Compare the price example's conditional non-identification with Kant's restriction on human theoretical cognition. Explain why the need for practical justification remains after that comparison. Use the phrase “known to be the never known” with its scope and argument, as in M9 §9.41.5.
+
+## Ontological Scope and Critiques of Empiricism
+
+Use M9 §§9.42–9.43 and the spectrum to assess one electricity, personalized-pricing, or cancellation interpretation. Record a source passage and its actual claim. Identify the measured object, the broader object invoked by the conclusion, and the additional premise connecting them. Place that inference on the spectrum and justify the placement; do not assign an author or institution an overall score.
+
+Develop one criticism using Kant, Sellars, Bhaskar, Husserl, or Scanlon. State the philosophical argument and explain its specific application. Preserve the difference between empirically investigable mechanisms, the meaning of an action, normative reasons, and Kant's limit of theoretical cognition. Answer the strongest reply, retain supported welfare findings and safeguards, and write a revised conclusion.
+
+For the publication-incentive question, distinguish selection by statistical result from selection by method or question. Propose a sampling frame that includes unpublished or unsubmitted work and identify the comparisons needed. Treat the preference for computational tractability as a hypothesis until that comparison supplies evidence.
+
+For the electricity case, complete the measurement table in M9 §9.42.4. State the claimed construct, recorded variable, unit, denominator, population, and timing. Give a validation argument or a counterexample that preserves the observation while changing the claimed object. Use the existing bill program in M6 §6.35 for the accounting comparison, then state separately what would identify a causal change.
 
 ---
 
@@ -13218,6 +13637,190 @@ Apply the same argument to dynamic-pricing communication and the data-center rea
 For discussion, one person defends the objective and another represents an affected person with little bargaining power. Give both the same exact factual results. Identify whether the disagreement concerns a fact, a reason, or the relative strength of competing objections. Explain why actual acceptance, majority approval, and any single objection do not alone settle reasonableness.
 
 AI assistance can help trace code, inspect denominators, and propose counterexamples. Check each legal quotation and claim against its primary source. Preserve actual terms, source versions, and execution status. Never invent empirical consent, a conspiracy, a damages estimate, or an author motive.
+
+---
+
+## Source: 01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md
+
+# Logic and Analytical Arguments
+
+A marketing recommendation combines evidence with premises about measurement, causal change, customer value, and acceptable conduct. These readings help students identify which premise supports each inference and what would justify revising it. [M1 §1.20](../../../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md) introduces the five-step exercise. [M4 §4.29](../../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md), [M6 §6.38](../../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md), and [M9 §9.40](../../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) develop valuation, identification, and ethical justification.
+
+## Questions, Consequences, and Evidence
+
+| Primary Source | Reviewed Material and Course Use |
+| --- | --- |
+| [Koralus and Mascarenhas, “The Erotetic Theory of Reasoning,” 2013](https://doi.org/10.1111/phpe.12029) | *Philosophical Perspectives* 27:312–365. The saved September 30 author manuscript, §§1–2, explains question-guided reasoning and illusory inferences. Students identify the question answered by a calculation and the broader question left open. [Oxford record and author manuscript](https://ora.ox.ac.uk/objects/uuid%3Adb396f44-8020-4b8b-884b-a377bd8d191a). |
+| [MacFarlane, “In What Sense (If Any) Is Logic Normative for Thought?”, 2004](https://johnmacfarlane.net/normativity_of_logic.pdf) | Author manuscript, April 21, §§1–4. Distinguishes logical consequence from principles governing reasoning and belief. The course separates validity, acceptance of premises, and revision. |
+| [Ciardelli, Groenendijk, and Roelofsen, *Inquisitive Semantics*, 2018](https://fdslive.oup.com/www.oup.com/academic/pdf/openaccess/9780198814788.pdf) | Oxford University Press, §§2.3–2.5, particularly pp. 24–25 and 31. Distinguishes information conveyed from issues raised. The course application examines which alternatives a managerial question includes. |
+| [Pearl, “Causal Inference in Statistics: An Overview,” 2009](https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf) | *Statistics Surveys* 3:96–146, §§3.2.1–3.2.3. Separates the definition of an intervention from identification using observed distributions. Students specify the price rule, population, information, and preserved mechanisms. |
+
+The [Scanlon and stakeholder guide](../07_Stakeholders_and_Reasons/README.md) supplies the distinct normative foundation for justified principles, reasonable rejection, and affected people's reasons. Logical validity alone does not select a worthy objective. These applications do not attribute a marketing experiment, AI mechanism, or particular welfare model to the philosophers.
+
+## Six Applications
+
+1. **Compatibility and identification:** construct two models that fit the same historical law and disagree about the policy effect. State the evidence or restriction needed to distinguish them.
+2. **Question formulation:** separate predicting acceptance, estimating an intervention effect, identifying a burden, and justifying a practice.
+3. **Meaning and measurement:** preserve the distinction between purchase and consent, willingness to pay and benefit, unit price and household bill, and a formal option and an effective ability to use it.
+4. **Counterfactual specification:** identify what changes and what remains fixed when pricing, disclosure, availability, or customer control changes.
+5. **Valuation sensitivity:** hold purchase evidence and rank order fixed while varying independently supplied cardinal values. Attribute the resulting welfare change to that premise.
+6. **Symmetric scrutiny:** require the criticism to preserve the source's actual claim and qualifications. An unsupported harmlessness inference leaves actual harm to be established separately.
+
+## Practice and Reproduction
+
+[Optional ungraded practice](../../../07_Labs/Philosophical_Arguments/README.md) includes a reusable argument record, worked pricing and electricity examples, an AI prompt, and a condition for revising each conclusion. [Two original Python programs](../../../03_Data_and_Code/Analytical_Arguments/README.md) use exact fractions and save complete numerical inputs and results. Five editable TikZ figures show historical equivalence, value-gap sensitivity, argument revision, epistemic limits, and ontological scope.
+
+## Phenomena, Noumena, and Acknowledged Epistemic Limits
+
+M9 §9.41 and the opening of M1 distinguish empirical representation, unmeasured empirical questions, and the practical standing of affected people. Kant's negative concept of noumenon limits theoretical claims about things considered independently of the conditions of sensible cognition. The course separately draws on his practical account of respect and the intelligible standpoint. Qualitative evidence and latent empirical variables remain within possible empirical inquiry.
+
+- [*Critique of Pure Reason*, chapter on phenomena and noumena](../01_Kant_Primary_Texts/public_domain_texts/Kant_CritiqueOfPureReason_Meiklejohn1855.html), especially B306–B311. Read the existing Meiklejohn text and checked the A/B locators against the [Kemp Smith translation](https://humanum.arts.cuhk.edu.hk/humftp/E-text/Kant/cpr.kemp-smith/11ph-nou.htm).
+- [*Groundwork*, sections II–III](../01_Kant_Primary_Texts/public_domain_texts/Kant_Groundwork_Abbott.html), humanity at 4:428–429 and the two standpoints at 4:451–453. Read the existing Abbott text. These practical arguments retain their distinct role from the first Critique's theoretical limit.
+
+The “known to be the never known” is treated as an acknowledged epistemic limit whose scope requires justification. It differs from an unanticipated empirical issue. A statistical non-identification construction gives a conditional limit under a specified observable law; a changed design can remove that limit. Normative questions remain open to reasoned justification. They are not classified as permanently unknowable merely because statistics do not settle them.
+
+## Ontology and Critiques of Empiricism
+
+[M9 §§9.42–9.43](../../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) assess specific interpretations along a five-position spectrum. It is an original teaching framework with no numerical distances or author rankings. A narrow, well-supported study can answer its stated question adequately. The criticism concerns an unsupported extension to persons, welfare, or permission.
+
+| Primary Source | Passages Reviewed and Use |
+| --- | --- |
+| [Sellars, *Empiricism and the Philosophy of Mind*, 1956](https://www.ditext.com/sellars/epm8.html) | §§32–38: observational authority and reasons. HTML chapter read; the university PDF endpoint timed out. |
+| [Bhaskar, “Theorising Ontology,” 2007](https://internationalcentreforcriticalrealism.wordpress.com/wp-content/uploads/2013/04/07-1-bhaskar-theorising-ontology-2007.pdf) | Printed pp. 192–194: the epistemic fallacy and causal structure. Selected chapter passages read; full book not reviewed. |
+| [Husserl, *The Crisis of European Sciences*, Carr translation, 1970](https://www.marxists.org/reference/subject/philosophy/works/ge/husserl.htm) | §22: criticism of psychic atomism and neglect of intentionality. HTML excerpt read; not the complete book or §9 on mathematization. |
+| [Scanlon, *Being Realistic about Reasons*, John Locke Lectures, 2009](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf) | Lecture 2, pp. 1–7: normative reasoning and ontological objections. This is the lecture precursor, not a claim to have reviewed the full 2014 book. |
+| [Franco, Malhotra, and Simonovits, *Science*, 2014](https://doi.org/10.1126/science.1255484) | [Original abstract](https://pubmed.ncbi.nlm.nih.gov/25170047/) read: selection by result strength among TESS experiments. It does not test publication preferences for computational methods. |
+| [Adcock and Collier, “Measurement Validity,” 2001](https://doi.org/10.1017/S0003055401003100) | Opening conceptual framework, pp. 529–531, assessed from the accessible article text: distinguish concepts, indicators, and observations. The UC repository landing page required a browser check. |
+
+The empirical examples and philosophical applications are original course arguments. The source positions differ, especially concerning the knowability of unobserved mechanisms and the status of normative reasons. No one theory is presented as a common doctrine of all five philosophers. Six additional reading records above supplement the four logic references without changing the original collection's historical download counts.
+
+## Access and Scope
+
+The linked primary sources and selected passages were reviewed on November 26, 2026. The Koralus–Mascarenhas author manuscript was read from an existing local text extraction; the Oxford repository record verifies its published attribution. No claim is made to have read Koralus's full *Reason and Inquiry* book. The other readings were checked through their linked author or publisher texts. The guide records selected reading scope rather than full-book coverage.
+
+This supplement links third-party originals and supplies original course annotations. It does not redistribute their PDFs or private research notes. The four logic references are not added to the older collection's historical source and download counts. The Markdown guide omits complete source arguments, objections, figures, and bibliographies.
+
+---
+
+## Source: 03_Data_and_Code/Analytical_Arguments/README.md
+
+# Analytical Arguments and Counterexamples
+
+A retailer must decide whether a price change or a choice procedure benefits customers. These original synthetic examples separate agreement with observed purchases, identification of a policy effect, and the valuations needed for a welfare conclusion. [M1 §1.20](../../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md), [M4 §4.29](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md), [M6 §6.38](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md), and [M9 §9.40](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connect the calculations to a five-step argument exercise.
+
+## Inputs, Units, and Comparisons
+
+`price_models.py` specifies a population with two equally common groups, one offer per customer, and prices of $10 or $20. Group A historically receives $10; group B receives $20. The price-response model assigns purchase probabilities of 0.8 and 0.4 at those prices to both groups. The selection model assigns 0.8 to group A and 0.4 to group B at either price. Both reproduce the complete historical joint distribution of group, price, and purchase. The counterfactual assigns one common price to the same population while preserving product, information, availability, and each model's response rule. Raising that common price from $10 to $20 changes population purchase probability by −40 or 0 percentage points. These are population constructions with no sampling error, fitted coefficients, or external data.
+
+`valuation_sensitivity.py` compares purchase probabilities `(0.4, 0.3, 0.2, 0.1)` with `(0.45, 0.2, 0.2, 0.15)`. Every customer purchases one of four products. Monetary consumption values are `(100, 2, 1, 0)` or `(100, 99, 98, 0)` dollars per customer. Both value systems have the same strict ranking and endpoints. Prices and other burdens are common across the two procedures; incremental procedural cost is zero. The consumption gains are +$4.80 and −$4.90 per customer. The program also accepts a separately specified incremental cost. These values are assumptions for a welfare comparison, not values estimated from purchases or inferred consent.
+
+## Reproduction
+
+Python 3.9 or later and its standard library are sufficient. No installation, network connection, credentials, or random seed is needed. From the repository root:
+
+```sh
+python3 03_Data_and_Code/Analytical_Arguments/price_models.py
+python3 03_Data_and_Code/Analytical_Arguments/valuation_sensitivity.py
+python3 -m unittest discover -s 03_Data_and_Code/Analytical_Arguments -p 'test_*.py'
+python3 03_Data_and_Code/Analytical_Arguments/build_figures.py
+python3 scripts/check_lecture_code.py
+```
+
+The complete analytical programs appear verbatim in M6 §6.38 and M4 §4.29. The figure builder reads the saved output tables and writes the two numerical TikZ sources. The separate argument diagram is editable directly. [Verification](VERIFICATION.md) records the checks run and their scope.
+
+## Output Dictionary
+
+| File in `results/` | Rows and Fields |
+| --- | --- |
+| `observed_purchase_law.csv` | Four group–purchase cells. `price_usd` is the historical offer; `population_mass` is the unconditional population probability. The common law applies to both models. |
+| `conditional_purchase_rules.csv` | Eight model–group–price cells. `purchase_probability` is conditional on the named group and assigned price; `historically_observed` marks prices in each group's historical support. |
+| `policy_effects.csv` | Two models. `purchase_at_10` and `purchase_at_20` average over equal group weights; `effect_pp` is 100 times the high-price probability minus the low-price probability. |
+| `purchase_and_value_inputs.csv` | Four ordered products. Probabilities sum to one in each procedure. `cumulative_change_pp` is the alternative-minus-baseline change in probability of purchasing among the first k products, in percentage points. Two value columns give USD per purchased product. |
+| `valuation_comparisons.csv` | Two value systems. Expected values, consumption gains, incremental costs, and net gains are USD per customer; gains subtract the baseline. |
+
+## Interpretation and Provenance
+
+The examples use exact rational arithmetic before CSV export. Observational equivalence is relative to the stated historical support. A new randomized comparison within groups would distinguish the two specified response models, subject to implementation and sampling uncertainty. A mathematical counterexample establishes failure of an entailment; it estimates neither the prevalence of the alternative mechanism nor actual consumer harm.
+
+The valuation example separates an ordinal ranking from cardinal distances. Mixed cumulative purchase changes allow different signs under different ordered value systems. Customer permission, informed consent, and the reasons supporting a practice require their own evidence and argument.
+
+The [reading guide](../../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) attributes the philosophical and causal concepts. The numerical examples are original course constructions. No private research manuscript or third-party microdata is included. [Optional ungraded practice](../../07_Labs/Philosophical_Arguments/README.md) applies the same reasoning to pricing, mHealth, and electricity claims.
+
+---
+
+## Source: 03_Data_and_Code/Analytical_Arguments/VERIFICATION.md
+
+# Verification
+
+## Executed Calculations
+
+On November 26, 2026, both standard-library programs executed successfully with Python 3.14.8. `test_arguments.py` passed ten independent checks: historical joint cells, intervention effects, new within-group prices, declared price support, hand-calculated expected values, common value endpoints and strict ranking, cumulative probabilities, dominance at each step valuation, procedural cost and translation invariance, and invalid probability inputs.
+
+All analytical calculations use exact fractions. Decimal CSV output is for display. No empirical estimate, random simulation, model endpoint, or downloaded program was executed for these examples.
+
+## Figures and Teaching Sources
+
+`build_figures.py` checks the saved numerical tables against independent expected values before generating editable TikZ. Both numerical diagrams and three conceptual diagrams compiled successfully. The complete notes contain 561 pages, the separate Marketing Dialectics chapter contains 90 pages, and the combined lecture deck contains 493 slides. Sessions 1, 5, 9, and 14 contain the new material.
+
+The publication review rendered 94 changed or neighboring pages across the notes, chapter, and four session decks. The diagrams, tables, headings, and transitions were visually inspected. Numerical diagrams use fixed font sizes within the slides; the final render resolves the overlapping labels found during review. The final builds contain no overfull boxes or unresolved cross-references. Existing font substitution warnings remain in the Beamer build logs.
+
+`python3 scripts/check_lecture_code.py` verified 122 matching, syntactically valid Python listings. Course navigation links resolve, and the regenerated LLM context includes the new notes, source guide, examples, and argument record. The fifteen meeting dates and 170-minute durations remain unchanged. A passing numerical check does not establish the validity of a valuation premise; the interpretation still depends on the stated assumptions and reasons.
+
+---
+
+## Source: 07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md
+
+# Analytical Argument Record
+
+## Claim and Question
+
+Record the exact claim, source passage and locator, actor, proposed action, population, comparison, period, and units. State the question answered by the analysis and the question the decision requires. Define consequential terms such as benefit, consent, household cost, and permission.
+
+## Ends, Representation, and Standing
+
+State who selected the objective and what authority permits pursuing it. Identify unmeasured empirical questions and the evidence that could address them. Explain any Kantian limit on treating the empirical representation as complete. Defend the practical principle concerning the affected person's standing; identify which end the firm ought to pursue, constrain, or abandon.
+
+## Ontological Scope and Epistemic Limit
+
+Place the particular inference on the spectrum in M9 §9.42 and explain the placement through a source passage. Identify the object omitted or substituted and why it changes the decision. Classify the unresolved issue as an empirical gap, an unanticipated issue now recognized, a conditional identification limit, a Kantian theoretical limit, or a question of practical justification. State the scope and reason for any impossibility claim. Preserve the source's safeguards and welfare findings.
+
+## Premises and Support
+
+| Premise | Role: Factual, Measurement, Causal, or Normative | Evidence or Reason | Scope and Unresolved Issue |
+| --- | --- | --- | --- |
+| State each premise separately. | Identify its role. | Give a source, calculation, assumption, or argument. | Name the condition affecting its use. |
+
+## Counterexample and Missing Premise
+
+Describe a case in which the stated premises hold and the conclusion fails. Check each premise against that case. Identify whether the construction is hypothetical or empirically supported, and identify the added premise that would exclude it. Explain why that premise deserves acceptance.
+
+## Strongest Reply
+
+State the strongest supported response to the criticism. Preserve the source's actual scope, positive findings, and qualifications. Check whether the objection establishes invalidity, unsupported interpretation, non-identification, a reporting inconsistency, or actual contrary evidence.
+
+## Revised Conclusion and Further Evidence
+
+State what the analysis supports and the evidence or reasons that would change the conclusion. For an ought claim, defend the normative principle, compare a feasible alternative, and assess affected people's reasons for rejecting each principle. Identify whose burdens or choices are missing from the analytical representation.
+
+## AI Contributions and Independent Checks
+
+When permitted by the applicable assessment rules, identify the assistant's contributions and the source checks, calculations, and counterexample checks completed independently. Record hypothetical outputs as hypothetical. This record establishes no course-wide permission to use AI.
+
+---
+
+## Source: 03_Data_and_Code/Analytical_Arguments/AGENTS.md
+
+# Agent Guide for Analytical Arguments
+
+Read the root guide, this folder's README, and M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40.
+
+- Preserve complete matching Python listings in M4 and M6. Run both programs, independent checks, the figure builder, and `scripts/check_lecture_code.py` after a change.
+- The examples contain imposed population probabilities and valuations. Never describe their results as estimates from the pricing papers, the data-center paper, or actual customers.
+- Historical prices lack within-group overlap. The two models agree on every observed cell, including the group variable. Identifying the common-price effect requires further evidence or a defensible restriction.
+- Hold the population, product, information, and availability fixed in the stated intervention. A change to any of those objects defines a different comparison.
+- Monetary consumption values are independently imposed. The same ranking does not determine cardinal gaps; choice probabilities do not supply authorization or an ethical conclusion.
+- A counterexample must preserve the premises it challenges. Failure to establish harmlessness does not establish harm. Preserve uncertainty and the actual source's qualifications when discussing the electricity case.
+- The five-step exercise and LLM prompt are optional practice, subject to applicable assessment-specific AI rules. Do not supply invented evidence, testimony, or citations.
 
 ---
 

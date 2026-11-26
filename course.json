@@ -388,7 +388,12 @@
     "01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md",
     "03_Data_and_Code/AI_Experimentation_and_Pricing/SCANLON_DATA_DICTIONARY.md",
     "03_Data_and_Code/AI_Experimentation_and_Pricing/SCANLON_VERIFICATION.md",
-    "07_Labs/Scanlon_Pricing/README.md"
+    "07_Labs/Scanlon_Pricing/README.md",
+    "01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md",
+    "03_Data_and_Code/Analytical_Arguments/README.md",
+    "03_Data_and_Code/Analytical_Arguments/VERIFICATION.md",
+    "07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md",
+    "03_Data_and_Code/Analytical_Arguments/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -437,12 +442,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-pricing-reasons-and-antitrust",
+    "revision": "2026-11-26-analytical-arguments",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 131,
-    "pages": 537,
+    "figures_count": 136,
+    "pages": 561,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -470,7 +475,8 @@
     "pricing_competition_examples": "03_Data_and_Code/Pricing_Competition/README.md",
     "digital_usage_examples": "03_Data_and_Code/Digital_Usage/README.md",
     "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md",
-    "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md"
+    "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md",
+    "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md"
   },
   "datasets": [
     {
@@ -567,7 +573,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 476,
+    "slides": 493,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1140,7 +1146,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-pricing-reasons-and-antitrust",
+  "revision": "2026-11-26-analytical-arguments",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1478,5 +1484,38 @@
     "legal_jurisdiction": "United States federal antitrust; sources checked November 26, 2026",
     "scope": "Original synthetic incidence, exposure, demand-completion and invoice examples; reconstruction from rounded published payoffs; philosophical and hypothetical legal arguments. No empirical finding of misconduct or violation.",
     "reasonableness": "M9 §§9.34.3–9.34.5: measurement quality, worthy objectives, instrumental rationality, and reasonable justification across personalized pricing, dynamic-pricing communication, and data-center reassurance"
+  },
+  "analytical_arguments": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M1 §1.20",
+      "M4 §4.29",
+      "M6 §6.38",
+      "M9 §9.40",
+      "M9 §9.41",
+      "M9 §9.42",
+      "M9 §9.43"
+    ],
+    "sessions": [
+      1,
+      5,
+      9,
+      14
+    ],
+    "resources": "01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md",
+    "examples": "03_Data_and_Code/Analytical_Arguments/README.md",
+    "verification": "03_Data_and_Code/Analytical_Arguments/VERIFICATION.md",
+    "practice": "07_Labs/Philosophical_Arguments/README.md",
+    "argument_record": "07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md",
+    "original_analytical_programs": 2,
+    "independent_checks_passed": 10,
+    "matching_python_blocks": 122,
+    "original_figures": 5,
+    "additional_slides": 17,
+    "scope": "Original synthetic population constructions and philosophical applications; no new empirical finding of consumer harm or author intention.",
+    "foundational_emphasis": "Kantian phenomena and noumena; acknowledged limits versus unknown unknowns; ontological scope; critiques of empiricism and reduction; ends, authority, and normative reasons before optimization.",
+    "spectrum": "Five qualitative positions applied to particular interpretations, with no numerical distances or author rankings.",
+    "source_coverage": "Selected primary philosophy passages, with reading scope and access recorded in the resource guide.",
+    "measurement_case": "M9 §9.42.4 separates recorded electricity outcomes from household costs, financial exposure, business models, and incidence."
   }
 }

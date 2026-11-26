@@ -388,6 +388,39 @@ Original synthetic model. M4 Section 4.26. \url{../03_Data_and_Code/Pricing_Comp
 
 FTC Rule on Unfair or Deceptive Fees FAQ. \url{https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions}}
 \end{frame}
+\begin{frame}{The Same Ranking Leaves Welfare Unresolved}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M04_ordinal_welfare.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Same purchases and ranking: USD 4.80 gain or USD 4.90 loss per customer.\par}
+\note{Synthetic one-product purchases have baseline probabilities (.40,.30,.20,.10) and alternative probabilities (.45,.20,.20,.15). Values are dollars per purchased product. The best and worst values and strict ranking agree across scenarios. Other burdens and prices are common; incremental procedure cost is zero. Expected values change from 40.80 to 45.60 in the first scenario and from 89.30 to 84.40 in the second. Independent checks and complete Python are in M4 §4.29.
+
+M4 §4.29. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
+\begin{frame}{Identify the Valuation Premise}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item More top-ranked purchases can coexist with more bottom-ranked purchases.
+\item Cardinal value gaps determine the balance.
+\item Check every cumulative rank cutoff.
+\item Justify procedure costs and customer permission separately.
+\end{slidebullets}
+\vfill
+\note{If every cumulative change is nonnegative, consumption value weakly rises for every ordered value system. The example has mixed signs. Precise purchase measurement does not determine the value gaps. The comparison changes a welfare premise, while the previous demand-completion example changes an unobserved demand curve. Both remain conditional model exercises. Choosing a practice adds reasons about authorization and burdens.
+
+M4 §4.29. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
+\end{frame}
 \begin{frame}{Product-Design Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

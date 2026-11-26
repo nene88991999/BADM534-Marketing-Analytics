@@ -17,11 +17,11 @@
       "modules": "M1",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 30,
+      "slides": 33,
       "companion": "S01_Marketing_Decisions_and_AI_Coding.md",
       "pdf": "S01_Marketing_Decisions_and_AI_Coding.pdf",
       "python_activity": "Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately. Reconstruct published failure denominators and assess silent errors.",
-      "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code. Execution feedback, independent verification, and the meaning of complete output.",
+      "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code. Execution feedback, independent verification, and the meaning of complete output. Reconstruct an AI-assisted recommendation through five argument steps and identify a condition for revision. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification.",
       "ethics": "Data minimization, authorized processing, and verifiable AI code",
       "timing": [
         {
@@ -76,7 +76,7 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Ethics and Decision Discussion"
+          "activity": "Ethics, Analytical Arguments, and Decision Discussion"
         }
       ],
       "date": "2027-01-20",
@@ -305,11 +305,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 29,
+      "slides": 31,
       "companion": "S05_Conjoint_and_Product_Design.md",
       "pdf": "S05_Conjoint_and_Product_Design.pdf",
       "python_activity": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
-      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus.",
+      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus. Compare fixed purchase laws under two ordered monetary value systems; distinguish ranking from welfare.",
       "ethics": "Price completeness and the attributes customers actually evaluate",
       "timing": [
         {
@@ -364,7 +364,7 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Ethics and Decision Discussion"
+          "activity": "Valuation Premises, Ethics, and Decision Discussion"
         }
       ],
       "date": "2027-02-17",
@@ -572,11 +572,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 38,
+      "slides": 41,
       "companion": "S09_Experiments_and_Incremental_Value.md",
       "pdf": "S09_Experiments_and_Incremental_Value.pdf",
       "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales. Compare naive and population-weighted pricing contrasts under unequal exposure.",
-      "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Donald Andrews inverse power and nuisance-parameter sensitivity.",
+      "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Donald Andrews inverse power and nuisance-parameter sensitivity. Compare observationally equivalent price models and specify the randomized cells that distinguish them.",
       "ethics": "Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test. Compare the individual reasons for accepting experimental risk.",
       "timing": [
         {
@@ -625,7 +625,7 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Ethics, Evidence, and Decision Discussion"
+          "activity": "Identification, Symmetric Scrutiny, and Decision Discussion"
         }
       ],
       "date": "2027-03-24",
@@ -933,11 +933,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 82,
+      "slides": 91,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed.",
+      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice.",
       "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims",
       "timing": [
         {
@@ -986,7 +986,7 @@
           "start_minute": 90,
           "end_minute": 95,
           "minutes": 5,
-          "activity": "Premises and an Ought Conclusion"
+          "activity": "Ontological Scope, Counterexamples, and an Ought Conclusion"
         },
         {
           "start_minute": 95,
@@ -1022,7 +1022,7 @@
           "start_minute": 165,
           "end_minute": 170,
           "minutes": 5,
-          "activity": "Decision Discussion"
+          "activity": "Revised Conclusion and Conditions for Revision"
         }
       ],
       "date": "2027-04-28",

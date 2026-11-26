@@ -49,3 +49,9 @@ For feature-quality questions, begin with [the representation example](03_Data_a
 ## Context and Evidence for Coding Tasks
 
 Supply the task definition, relevant data dictionary, input versions, and required output before expanding the context. Record durable progress with links to actual files and checks. Ask the assistant to separate a proposed operation, an executed operation, and its verified result. [The workflow exercise](03_Data_and_Code/Agent_Workflows/README.md) distinguishes output correctness, permitted actions, and checker validity. During a measured comparison, keep final evaluation answers outside the model workspace and preserve every assigned attempt, including failures.
+
+## Examine an Analytical Argument
+
+Use M1 §1.20 and M9 §9.40 to define the claim, expose its premises, construct a counterexample that preserves them, assess the missing premise, and revise the conclusion. Distinguish a hypothetical possibility from evidence that it occurs. Ask for the strongest supported reply to the criticism and a meaningful condition for revision. [The argument record](07_Labs/Philosophical_Arguments/ARGUMENT_RECORD.md) and [exact examples](03_Data_and_Code/Analytical_Arguments/README.md) supply concrete checks. Apply the relevant assessment's AI-use rules.
+
+When discussing M9 §§9.41–9.43, distinguish unmeasured empirical objects, conditional identification limits, Kant's negative noumenon, and normative reasons. Unknown unknowns are unrecognized issues; an acknowledged limit needs a scope and argument. Apply the ontological spectrum to a source's particular inference, preserving its welfare findings and safeguards. The spectrum supplies no numerical author ranking. Philosophical criticism of reduction does not excuse unsupported factual accusations. Read the linked primary-source guide for passage-level scope.

@@ -14,6 +14,7 @@ Session 05. M4. 170 minutes.
 - Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.
 - Allocate human and synthetic responses at a common accuracy target.
 - Separate better demand information from joint pricing when evaluating customer surplus.
+- Explain why identical product rankings can leave the sign of a welfare change unresolved.
 
 ## Related Materials
 
@@ -25,6 +26,8 @@ Session 05. M4. 170 minutes.
 - [Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)
 - [Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)
 - [Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)
+- [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
+- [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 
 ## Slide 1: Conjoint and Product Design
 
@@ -352,7 +355,30 @@ The FTC's fee rule addresses live-event tickets and short-term lodging. Its scop
 
 Source: FTC Rule on Unfair or Deceptive Fees FAQ. https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions
 
-## Slide 29: Product-Design Discussion
+## Slide 29: The Same Ranking Leaves Welfare Unresolved
+
+Same purchases and ranking: USD 4.80 gain or USD 4.90 loss per customer.
+
+**Figure description:** Left: cumulative alternative-minus-baseline purchase changes of +5, −5, −5, and 0 percentage points across four rank cutoffs. Right: gains under value systems (100,2,1,0) and (100,99,98,0).
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_ordinal_welfare.tex)
+
+Synthetic one-product purchases have baseline probabilities (.40,.30,.20,.10) and alternative probabilities (.45,.20,.20,.15). Values are dollars per purchased product. The best and worst values and strict ranking agree across scenarios. Other burdens and prices are common; incremental procedure cost is zero. Expected values change from 40.80 to 45.60 in the first scenario and from 89.30 to 84.40 in the second. Independent checks and complete Python are in M4 §4.29.
+
+Source: M4 §4.29. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
+
+## Slide 30: Identify the Valuation Premise
+
+- More top-ranked purchases can coexist with more bottom-ranked purchases.
+- Cardinal value gaps determine the balance.
+- Check every cumulative rank cutoff.
+- Justify procedure costs and customer permission separately.
+
+If every cumulative change is nonnegative, consumption value weakly rises for every ordered value system. The example has mixed signs. Precise purchase measurement does not determine the value gaps. The comparison changes a welfare premise, while the previous demand-completion example changes an unobserved demand curve. Both remain conditional model exercises. Choosing a practice adds reasons about authorization and burdens.
+
+Source: M4 §4.29. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
+
+## Slide 31: Product-Design Discussion
 
 - How much of C's demand comes from existing products?
 - Which design change would identify the price tradeoff?

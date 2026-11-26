@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\begin{axis}[name=ranking,width=6.15cm,height=5.7cm,xmin=.5,xmax=4.5,ymin=-7,ymax=7,
+ xlabel={Rank Cutoff},ylabel={Cumulative Change (pp)},
+ title={Cumulative Purchase Shift},xtick={1,2,3,4},ytick={-5,0,5},grid=major]
+\addplot[Storm,dashed] coordinates {(.5,0)(4.5,0)};
+\addplot[IlliniBlue,only marks,mark=*,mark size=3pt] coordinates {(1,5) (2,-5) (3,-5) (4,0)};
+\end{axis}
+\begin{axis}[at={(ranking.east)},anchor=west,xshift=1.5cm,width=5.9cm,height=5.7cm,
+ xmin=.4,xmax=2.6,ymin=-7,ymax=7,ylabel={Gain (\$/Customer)},
+ title={Value-Gap Comparison},xtick={1,2},xticklabels={Top Gap,Bottom Gap},
+ xlabel={Large Value Gap},ytick={-5,0,5},grid=major]
+\addplot[Storm,dashed] coordinates {(.4,0)(2.6,0)};
+\addplot[ybar,bar width=20pt,fill=IlliniBlue,draw=IlliniBlue] coordinates {(1,4.8)};
+\addplot[ybar,bar width=20pt,fill=IlliniOrange,draw=IlliniOrange] coordinates {(2,-4.9)};
+\node[anchor=south] at (axis cs:1,4.8) {$+\$4.80$};
+\node[anchor=north] at (axis cs:2,-4.9) {$-\$4.90$};
+\end{axis}
+\node[align=center,text width=13.4cm,font=\footnotesize] at (5.7,-1.7)
+ {Synthetic values: $(100,2,1,0)$ or $(100,99,98,0)$ dollars per purchased product.\\
+ Equal best and worst values; zero incremental procedure cost.};
+\end{tikzpicture}

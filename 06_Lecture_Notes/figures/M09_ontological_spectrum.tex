@@ -1,0 +1,21 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\foreach \pos/\xx/\heading/\body in {
+ A/0/{Measurement}/{Outcome treated as the full account.},
+ B/3.05/{Representation}/{Responses and latent preferences.},
+ C/6.10/{Institutions}/{Rules, dependence, and alternatives.},
+ D/9.15/{Agency}/{Authority, refusal, and reasons.},
+ E/12.20/{Limits}/{Scope and practical justification.}}
+{
+ \node[box,text width=2.45cm,minimum height=3.0cm,anchor=north,font=\footnotesize] (\pos) at (\xx,0)
+ {\textbf{\pos}\\[3pt]\textbf{\heading}\\[5pt]\body};
+}
+\foreach \from/\to in {A/B,B/C,C/D,D/E} {\draw[accent] (\from.east) -- (\to.west);}
+\node[align=center,text width=14.5cm,font=\footnotesize] at (6.10,-3.65)
+ {Broader explicit scrutiny of an interpretation; no numerical quality score.};
+\node[orangebox,text width=4.05cm,minimum height=1.7cm,font=\footnotesize] at (1.05,-5.1)
+ {\textbf{Household Costs}\\Average price, bills, recovery rules, and residents' standing.};
+\node[box,text width=4.05cm,minimum height=1.7cm,font=\footnotesize] at (6.10,-5.1)
+ {\textbf{Price Targeting}\\Purchase fit, value, authority, and reasons to reject.};
+\node[box,text width=4.05cm,minimum height=1.7cm,font=\footnotesize] at (11.15,-5.1)
+ {\textbf{Cancellation}\\Retention, practical exit, endorsement, and recourse.};
+\end{tikzpicture}

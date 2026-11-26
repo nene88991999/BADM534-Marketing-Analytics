@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\begin{axis}[name=history,width=6.15cm,height=5.7cm,xmin=8,xmax=22,ymin=0,ymax=100,
+ xlabel={Historical Price (\$)},ylabel={Purchase Probability (\%)},
+ title={Historical Observations},xtick={10,20},ytick={0,20,40,60,80,100},grid=major]
+\addplot[only marks,mark=*,mark size=3pt,IlliniBlue] coordinates {(10,80)(20,40)};
+\node[anchor=south west,font=\footnotesize] at (axis cs:10,80) {Group A};
+\node[anchor=south west,font=\footnotesize] at (axis cs:20,40) {B};
+\end{axis}
+\begin{axis}[at={(history.east)},anchor=west,xshift=1.25cm,width=6.15cm,height=5.7cm,
+ xmin=8,xmax=22,ymin=0,ymax=100,xlabel={Price Assigned to Everyone (\$)},
+ title={Common-Price Intervention},xtick={10,20},ytick={0,20,40,60,80,100},grid=major,
+ legend style={at={(.5,-.27)},anchor=north},legend columns=1]
+\addplot[IlliniBlue,mark=*] coordinates {(10,80) (20,40)};
+\addlegendentry{Price response}
+\addplot[IlliniOrange,dashed,mark=square*] coordinates {(10,60) (20,60)};
+\addlegendentry{Group selection}
+\end{axis}
+\node[align=center,text width=13.3cm,font=\footnotesize] at (5.7,-3.0)
+ {Synthetic population; groups A and B each have weight one half.\\
+ Both models fit every historical cell. The price effect is $-40$ or $0$ percentage points.\\
+ Lines join the two allowed prices; intermediate prices are outside the example.};
+\end{tikzpicture}

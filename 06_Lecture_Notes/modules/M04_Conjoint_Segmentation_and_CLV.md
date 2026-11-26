@@ -1740,3 +1740,121 @@ if __name__ == "__main__":
 M9 §9.37 reconstructs Dubé and coauthors' mobile-targeting payoff table. Its equilibrium depends on firms' incentives and anticipated competitive responses. A privacy permission, a reason to respect a customer's refusal, and an unlawful agreement are separate objects requiring their own evidence. M9 §§9.38–9.39 connect those distinctions to antitrust proof and Scanlonian justification.
 
 A segmentation rule can predict purchases precisely while serving an objectionable goal. M9 §§9.34.3–9.34.4 distinguish reasons to trust the measurement from reasons to pursue the objective. A customer's acceptance under weak alternatives may be instrumentally rational while leaving the pricing principle open to reasonable rejection.
+
+## 4.29 The Same Product Ranking Can Support Opposite Welfare Changes
+
+\noindent A retailer changes the comparison customers see before selecting a product. More customers choose the highest-ranked product, which appears favorable. Some also move to the lowest-ranked product. The welfare comparison depends on how much separates the products in value. An ordinal ranking alone leaves those distances unresolved.
+
+### 4.29.1 Purchase Probabilities and Monetary Values
+
+\noindent Consider a synthetic population in which each customer purchases one of four products. Baseline probabilities are $\pi=(0.40,0.30,0.20,0.10)$; the alternative procedure produces $q=(0.45,0.20,0.20,0.15)$. Both procedures concern the same population, products, and prices. Other burdens are common, and the incremental procedural cost is zero. Compare two independently imposed monetary consumption-value systems, measured in dollars per purchased product:
+
+| Product Rank | Baseline Probability | Alternative Probability | Top Gap Values (USD) | Bottom Gap Values (USD) |
+| --- | --- | --- | --- | --- |
+| 1 | 0.40 | 0.45 | 100 | 100 |
+| 2 | 0.30 | 0.20 | 2 | 99 |
+| 3 | 0.20 | 0.20 | 1 | 98 |
+| 4 | 0.10 | 0.15 | 0 | 0 |
+
+Both value systems rank every product in the same strict order and fix the best and worst values at $100 and $0. With the large gap at the top, expected consumption value rises from $40.80 to $45.60 per customer. With the large gap at the bottom, it falls from $89.30 to $84.40. The gains are therefore +$4.80 and −$4.90. Exact knowledge of the purchase probabilities would preserve this disagreement because it concerns the valuation premise.
+
+![Mixed cumulative purchase changes permit opposite consumption gains under the same product ranking and endpoint values.](../figures/M04_ordinal_welfare.png)
+
+The left panel reports the change in the probability of purchasing among the first $k$ products, in percentage points. The changes are +5, −5, −5, and 0. The right panel reports consumption gains in dollars per customer for the two value systems. The purchase laws, population, rank order, endpoint values, and procedural cost remain fixed across the comparison.
+
+### 4.29.2 What an Ordinal Ranking Does Establish
+
+\noindent To identify the role of each value gap, let $D_k=\sum_{j=1}^k(q_j-\pi_j)$ denote the cumulative probability change through rank $k$. The following conditions define the mathematical comparison.
+
+\begin{assumption}[Common Products and Ordered Values]
+\label{ass:ordered-consumption-values}
+The vectors $q$ and $\pi$ are probability distributions over the same $n$ products. Monetary consumption values satisfy $w_1\geq\cdots\geq w_n$ in a common ranking. The incremental procedural cost $c$ is specified separately, and all other components of the comparison are common across procedures.
+\end{assumption}
+
+Under Assumption \ref{ass:ordered-consumption-values}, the net gain per customer is
+
+$$
+G=\sum_{j=1}^n w_j(q_j-\pi_j)-c
+ =\sum_{k=1}^{n-1}(w_k-w_{k+1})D_k-c.
+$$
+
+The identity follows by summing successive value gaps and using $D_n=0$. Each gap is weighted by the change in the probability of receiving a product above that cutoff. If every $D_k$ is nonnegative, the consumption effect is nonnegative for every weakly ordered value system. Conversely, a negative $D_k$ gives a negative effect for values equal to one above that cutoff and zero below it. This is the finite first-order stochastic-dominance criterion. Mixed cumulative signs allow opposite consumption assessments across ordered value systems; a positive procedural cost requires an additional comparison in monetary units.
+
+The numerical example grants the purchase effects themselves. It isolates the additional information required for welfare interpretation. A demand model may impose cardinal structure through utility, price, and other assumptions. Students should identify those assumptions and examine their substantive justification. Neither ordinal dominance nor a positive monetary gain alone establishes informed consent, legitimate data use, or the permissibility of the procedure.
+
+### 4.29.3 Reproduce the Valuation Comparison
+
+\noindent The program uses exact fractions, checks probability totals, and compares direct expected-value differences with the value-gap identity. It writes the input table and welfare comparison in dollars per customer. Changing `incremental_cost` subtracts that amount from each consumption gain.
+
+Python source: [valuation_sensitivity.py](../../03_Data_and_Code/Analytical_Arguments/valuation_sensitivity.py)
+
+```python
+"""Synthetic welfare comparisons holding purchases and ordinal values fixed.
+
+Each customer purchases one of four products. Values are imposed monetary
+consumption values in USD per customer. Prices, other burdens, and procedural
+cost differences are zero or common across procedures and cancel.
+"""
+import csv
+from fractions import Fraction as F
+from itertools import accumulate
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+BASELINE = (F(4, 10), F(3, 10), F(2, 10), F(1, 10))
+ALTERNATIVE = (F(45, 100), F(2, 10), F(2, 10), F(15, 100))
+VALUES = {"large_gap_at_top": (100, 2, 1, 0),
+          "large_gap_at_bottom": (100, 99, 98, 0)}
+
+
+def compare(baseline, alternative, values, incremental_cost=F(0)):
+    """Return the consumption and net gain for the same customer population."""
+    if not (len(baseline) == len(alternative) == len(values)):
+        raise ValueError("Products must match across probabilities and values.")
+    if any(p < 0 for p in baseline + alternative):
+        raise ValueError("Probabilities must be nonnegative.")
+    if sum(baseline) != 1 or sum(alternative) != 1:
+        raise ValueError("Each purchase law must sum to one.")
+    base = sum(p * v for p, v in zip(baseline, values))
+    alt = sum(p * v for p, v in zip(alternative, values))
+    cumulative = tuple(accumulate(q - p for p, q in zip(baseline, alternative)))
+    gap_sum = sum((values[k] - values[k + 1]) * cumulative[k]
+                  for k in range(len(values) - 1))
+    assert alt - base == gap_sum
+    return base, alt, alt - base, alt - base - incremental_cost
+
+
+def write_csv(name, rows):
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    with (output / name).open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]),
+                                lineterminator="\n")
+        writer.writeheader()
+        writer.writerows({k: float(v) if isinstance(v, F) else v
+                          for k, v in row.items()} for row in rows)
+
+
+def main():
+    cumulative = tuple(accumulate(q - p for p, q in zip(BASELINE, ALTERNATIVE)))
+    rows = [{"product_rank": k + 1, "baseline_probability": BASELINE[k],
+             "alternative_probability": ALTERNATIVE[k],
+             "cumulative_change_pp": 100 * cumulative[k],
+             "value_top_gap_usd": VALUES["large_gap_at_top"][k],
+             "value_bottom_gap_usd": VALUES["large_gap_at_bottom"][k]}
+            for k in range(4)]
+    write_csv("purchase_and_value_inputs.csv", rows)
+    results = []
+    for name, values in VALUES.items():
+        assert all(a > b for a, b in zip(values, values[1:]))
+        base, alt, gain, net = compare(BASELINE, ALTERNATIVE, values)
+        results.append({"valuation": name, "baseline_value_usd": base,
+                        "alternative_value_usd": alt, "consumption_gain_usd": gain,
+                        "incremental_cost_usd": 0, "net_gain_usd": net})
+    write_csv("valuation_comparisons.csv", results)
+    print("Same ranking and purchases; gains are +$4.80 and -$4.90 per customer.")
+
+
+if __name__ == "__main__":
+    main()
+```

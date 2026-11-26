@@ -12,6 +12,8 @@ Session 01. M1. 170 minutes.
 - Translate a small marketing calculation into readable Python.
 - Verify generated code using identities and counterexamples.
 - Distinguish a definition, an inference, a validation condition, and source evidence.
+- Reconstruct a recommendation through its premises, a counterexample, and a condition for revision.
+- Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.
 
 ## Related Materials
 
@@ -28,6 +30,8 @@ Session 01. M1. 170 minutes.
 - [Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
+- [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
+- [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -53,7 +57,18 @@ The contact budget constrains the action. A high predicted renewal rate can refl
 
 Source: M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 4: Analytical Questions
+## Slide 4: Which Ends Deserve Pursuit?
+
+- Who selected the objective, and with what authority?
+- Which people bear its burdens or lose a choice?
+- Which reasons matter even when they are difficult to quantify?
+- An accurate algorithm can advance an objectionable end.
+
+Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Kant limits theoretical knowledge to objects of possible experience; an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork. The course develops these distinctions in M9 §9.41.
+
+Source: M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 5: Analytical Questions
 
 - Description: how often do customers renew?
 - Prediction: who is likely to renew?
@@ -64,7 +79,7 @@ The same customer records can support different analytical objects. Predictive p
 
 Source: M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 5: Incremental Contribution
+## Slide 6: Incremental Contribution
 
 For account $i$, compare renewal under an offer and no offer.
 
@@ -78,7 +93,7 @@ The formula assumes that the offer cost can be summarized by c and that contribu
 
 Source: M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 6: Response and Incremental Value
+## Slide 7: Response and Incremental Value
 
 Synthetic accounts. Contribution is 100 dollars and contact cost is 3 dollars.
 
@@ -90,7 +105,7 @@ A rises from 0.90 to 0.91. B rises from 0.40 to 0.50. The untreated probabilitie
 
 Source: M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 7: The Observation Unit
+## Slide 8: The Observation Unit
 
 - A product line, order, customer, and customer-month are different units.
 - The key identifies one row at the intended level.
@@ -100,7 +115,7 @@ A customer with five order lines receives five times the weight of a customer wi
 
 Source: M1, Section 1.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 8: Python Objects and Order Totals
+## Slide 9: Python Objects and Order Totals
 
 Three synthetic product lines belong to two orders.
 
@@ -120,7 +135,7 @@ The tuple stores an order ID, a quantity, and a unit price. The dictionary accum
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 9: Functions and Data Contracts
+## Slide 10: Functions and Data Contracts
 
 - Inputs have names, types, units, and allowed missing values.
 - A function returns a defined output and an exception report.
@@ -130,7 +145,7 @@ A numeric-looking string requires conversion before arithmetic. A negative quant
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 10: A Request and a Completed Action
+## Slide 11: A Request and a Completed Action
 
 - Define accounts, subscriptions, requests, and confirmations.
 - Attach each record to its source and observation time.
@@ -141,7 +156,7 @@ An ontology specifies classes, relationships, and inference rules. A Cancellatio
 
 Source: M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 11: Inference, Validation, and Evidence
+## Slide 12: Inference, Validation, and Evidence
 
 - Inference follows from stated facts and rules.
 - Validation checks supplied records against requirements.
@@ -152,7 +167,7 @@ An OWL domain axiom can infer a subject type; it need not reject a missing expli
 
 Source: M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md https://www.w3.org/TR/owl2-primer/ https://www.w3.org/TR/shacl/
 
-## Slide 12: A Duplicate Lookup Doubles Sales
+## Slide 13: A Duplicate Lookup Doubles Sales
 
 Synthetic join. One 40-dollar order matches two customer records.
 
@@ -164,7 +179,7 @@ A many-to-one relationship requires unique customer keys in the lookup. Check ke
 
 Source: M1, Section 1.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 13: An AI Coding Request
+## Slide 14: An AI Coding Request
 
 - Return one row per order and an exceptions table.
 - Treat negative quantities as returns under the stated rule.
@@ -175,7 +190,7 @@ A useful request specifies analytical behavior and acceptance criteria. The assi
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 14: Code Errors and Missing Evidence
+## Slide 15: Code Errors and Missing Evidence
 
 - A repeated daily total requires a correction to aggregation.
 - Unrecorded food requires additional measurement or a recorded-behavior target.
@@ -185,7 +200,7 @@ The response to a failed analysis depends on the unresolved distinction. Ask for
 
 Source: Marketing Analytics Lecture Notes, M1 §1.12.
 
-## Slide 15: Statistical Choices in Generated Code
+## Slide 16: Statistical Choices in Generated Code
 
 - Define the population, outcome, comparison, and assignment unit.
 - Inspect the method and uncertainty calculation.
@@ -196,7 +211,7 @@ Successful execution, an appropriate statistical method, accurate reporting, and
 
 Source: M1 §1.18. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 16: Execution, Revision, and Correct Calculations
+## Slide 17: Execution, Revision, and Correct Calculations
 
 | Workflow | Success | Loud / 100 | Silent / 100 |
 | --- | --- | --- | --- |
@@ -210,7 +225,7 @@ The method, sample, target quantities, and inference convention are supplied bef
 
 Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
-## Slide 17: Fewer Errors, a Different Remaining Problem
+## Slide 18: Fewer Errors, a Different Remaining Problem
 
 Silent failures are 2.35% of agent runs and 89.18% of its failures.
 
@@ -222,7 +237,7 @@ The agent has 338 silent failures among 14,400 assigned runs and 379 total failu
 
 Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
-## Slide 18: Verification with Counterexamples
+## Slide 19: Verification with Counterexamples
 
 - A duplicate lookup must trigger a failed key check.
 - An unmatched customer must remain visible in the assessment.
@@ -233,7 +248,7 @@ These checks test properties that can fail even when code runs. Repeating the pr
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 19: Information and Development Feedback
+## Slide 20: Information and Development Feedback
 
 Hold the model and task fixed; compare the four complete workflows.
 
@@ -245,7 +260,7 @@ All cells receive the same core measurement request and output schema. Explicit 
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 20: The Logging Denominator
+## Slide 21: The Logging Denominator
 
 - Eligibility uses January–June records within the recurring mHealth cohort.
 - 358 users contribute 11,098 possible July user-days.
@@ -256,7 +271,7 @@ The roster records earlier presence in the released file, not account enrollment
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 21: mHealth Records
+## Slide 22: mHealth Records
 
 - Food entries describe recorded items on observed user-days.
 - The separate daily table covers only part of the food-log history.
@@ -266,7 +281,7 @@ The released records replace user identifiers and birthdays and perturb weight v
 
 Source: M1, Section 1.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 22: Join Choice Changes the Sample
+## Slide 23: Join Choice Changes the Sample
 
 Released mHealth cohort: 76,804 observed user-days.
 
@@ -278,7 +293,7 @@ An inner join would remove more than half the cohort days. Missing calendar days
 
 Source: M1, Section 1.8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 23: Coding Exercise: An Order Assessment
+## Slide 24: Coding Exercise: An Order Assessment
 
 - Implement aggregation with a coding assistant.
 - Add a return, a missing identifier, and a duplicated lookup key.
@@ -288,7 +303,7 @@ Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.p
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 24: Versioned Evidence
+## Slide 25: Versioned Evidence
 
 - Record the model, date, prompts, tools, settings, parser, and scoring rule.
 - Keep known failure cases and evaluate transfer on fresh cases.
@@ -298,7 +313,7 @@ A historical finding concerns the tested configuration. A current workflow can d
 
 Source: M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
-## Slide 25: A Reproducible Analysis
+## Slide 26: A Reproducible Analysis
 
 - Relative paths identify inputs and outputs.
 - A fresh run reconstructs results without hidden notebook state.
@@ -308,7 +323,7 @@ A random seed reproduces a particular random computation under a given implement
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 26: Repeated Responses Change the Weight
+## Slide 27: Repeated Responses Change the Weight
 
 Synthetic ratings stay fixed. Additional identical rows change representation.
 
@@ -320,7 +335,7 @@ A product manager must specify which unit receives equal weight. With two p01 re
 
 Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 27: Numerical Evidence and the Recommendation
+## Slide 28: Numerical Evidence and the Recommendation
 
 - Recompute the table and check one calculation independently.
 - Preserve persona weights, missing values, and the synthetic-data scope.
@@ -330,7 +345,7 @@ The program recomputes four saved tables and stops if a table is missing or diff
 
 Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 28: A Campaign Specification
+## Slide 29: A Campaign Specification
 
 - Define the eligible customers and contact date.
 - State the contribution horizon and relevant costs.
@@ -341,7 +356,7 @@ The specification should state one feasible action and the comparison that suppo
 
 Source: M1, Section 1.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 29: Customer Data in an AI Workflow
+## Slide 30: Customer Data in an AI Workflow
 
 - Use only data authorized for the tool and task.
 - Minimize fields and use synthetic examples when they suffice.
@@ -351,7 +366,30 @@ Public availability does not establish permission for every reuse. Pseudonymized
 
 Source: Course agent guide and ETHICS_AND_REGULATION.md, M1.
 
-## Slide 30: Decision Discussion
+## Slide 31: The Question Determines the Evidence
+
+- Who will accept? Define the prediction target.
+- What changes? Specify the intervention and comparison.
+- Who bears a burden? Define the relevant outcome.
+- What ought the firm do? Defend the governing principle.
+
+An accurate purchase forecast can leave customer burdens and permission unresolved. Koralus and Mascarenhas model reasoning through questions and answers; this workflow applies that distinction to a managerial brief. Do not infer a cognitive mechanism for a particular analyst or AI system. Preserve the population, timing, units, and meaning of each result.
+
+Source: M1 §1.20. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
+
+## Slide 32: Test the Argument and Revise the Conclusion
+
+A counterexample preserves the premises while challenging the inference.
+
+**Figure description:** Five boxes connect claim definition, premises, a counterexample, assessment of the missing premise, and a revised conclusion. A dashed arrow returns to the claim.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_argument_revision.tex)
+
+Use the same sequence on an AI-generated recommendation and on its criticism. Check each proposed counterexample against the actual premise. Label an invented scenario hypothetical. The final step names evidence or reasons that would change the conclusion. The longer argument record is optional practice, subject to applicable AI rules.
+
+Source: M1 §1.20. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
+
+## Slide 33: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

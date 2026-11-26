@@ -2,6 +2,8 @@
 
 A retailer must decide which customers should receive a coupon, how much inventory to place in each store, and which product descriptions should appear online. Each decision needs a different analytical object. A forecast of next week's purchases can inform inventory. A comparison of purchases with and without a coupon can inform targeting. A summary of product complaints can identify a service problem. An analysis becomes useful when its output corresponds to the decision the manager can actually change.
 
+A managerial objective also requires justification. Before optimizing a response, identify who selected the end, whose choices the action changes, and what reasons could justify it to affected people. An accurate forecast or efficient algorithm can advance an end the firm ought to reject. Kant's distinction between phenomena and noumena, developed in §9.41, limits the claim that an empirical representation exhausts the person represented. Practical judgments about ends, authority, and obligations require their own arguments.
+
 ## 1.1 From a Marketing Question to an Analytical Object
 
 Consider a subscription service deciding whether to offer a renewal discount. The service observes account tenure, past payments, recent use, and prior contacts. A descriptive analysis reports renewal rates by tenure. A predictive analysis estimates the probability that an account renews under the conditions represented in the training data. A causal analysis estimates how an offer changes renewal. A decision analysis combines that change with margins, contact costs, and operational constraints. These objects can use overlapping data while answering different questions.
@@ -1115,3 +1117,39 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 1.20 A Recommendation as an Argument
+
+\noindent A manager asks an analyst whether to introduce a price rule. The program produces reliable forecasts of purchases and revenue. The recommendation still depends on the comparison the manager intends, the customers affected, and the reasons for choosing the objective. A calculation can answer its programmed question accurately while leaving the decision unresolved. The analyst should make the premises connecting the calculation to the proposed action explicit.
+
+### 1.20.1 Identify the Question Before Generating Code
+
+\noindent “Who is likely to accept a higher price?” asks for a prediction. “How would a higher price change purchases?” asks for a causal comparison. “Who would bear a burden?” requires a definition of burden and evidence about affected people. “Ought the firm charge that price?” requires a principle that can be justified to those people. Each question changes the evidence needed and the interpretation of the output.
+
+Koralus and Mascarenhas model reasoning as a process of interpreting premises through questions and answers. Their account explains how treating a partial answer as sufficient can produce invalid inferences. For an analyst, a useful application is to state the question answered by each result before treating that result as an answer to a broader managerial question. The theory concerns propositional reasoning; its application to coding workflows is a teaching exercise. [Koralus and Mascarenhas, 2013, §§1–2](https://doi.org/10.1111/phpe.12029).
+
+### 1.20.2 Examine the Premises in Five Steps
+
+\noindent A clear argument names the actor, action, population, comparison, and period. Its premises may include observed facts, a measurement interpretation, a causal restriction, or a normative principle. Distinguishing these roles helps locate the appropriate check. A correct join supports a calculation; evidence about customer understanding supports a claim about informed choice; a defended principle supports an ought conclusion.
+
+1. State the exact claim and define its terms. Preserve the scope and qualifications of any source being assessed.
+2. List the premises and identify the support required for each. Separate observations, measurement choices, causal assumptions, and normative judgments.
+3. Construct a situation where the stated premises hold but the conclusion fails. Check that the construction preserves the premises.
+4. Identify the additional premise needed to rule out the construction. Evaluate its evidence or justification.
+5. State the supported conclusion and name evidence or reasons that would change it.
+
+Logical validity means that the conclusion follows if the premises are true. Soundness additionally requires true premises. Empirical claims with sampling uncertainty usually warrant qualified inferences rather than deductive certainty. Reconstruct the actual inference before evaluating it: an association, a confidence statement, and a universal claim make different commitments. MacFarlane's discussion of the relation between logical consequence and norms for reasoning motivates keeping those questions separate. [MacFarlane, 2004, §§1–2](https://johnmacfarlane.net/normativity_of_logic.pdf).
+
+### 1.20.3 The Ends of the Inquiry
+
+\noindent Easy measurement can determine which outcomes receive attention. Ask whether an omitted reason matters even when its importance is difficult to quantify. Distinguish an unmeasured empirical fact, which may be investigated, from a normative question about which ends deserve pursuit. The practical standing of an affected person requires a defended philosophical account. It is not a score to infer from how predictable that person is.
+
+Also distinguish a recognized evidence gap, an unanticipated issue, and an acknowledged limit of knowledge. The last requires an argument about the scope of the method or kind of cognition. Section 9.41.5 examines the “known to be the never known” through Kant's boundary of theoretical cognition and compares it with a conditional statistical identification limit. A question about what ought to be done remains open to practical reasoning even when computation does not settle it.
+
+### 1.20.4 Ask an AI Assistant to Test the Argument
+
+\noindent When the applicable assessment permits AI assistance, give the assistant the claim, its supporting output, and the relevant source passage. Request the following analysis:
+
+> Restate the claim fairly and preserve its qualifications. List the factual, measurement, causal, and normative premises. Propose a counterexample that preserves those premises and explain whether it is logically possible, empirically supported, or merely hypothetical. Identify the missing premise and the evidence or reasons needed to defend it. Give the strongest reply to the criticism. Rewrite the conclusion within its supported scope and identify what could change it. Verify citations against the supplied sources.
+
+The student should inspect the proposed counterexample and the source independently. An assistant can invent an objection to a claim the author never made, or hide a changed population inside a plausible story. A useful objection must survive the same scrutiny as the original argument. The two exact constructions in §§4.29 and 6.38 provide hand-checkable cases; the [argument exercise](../../07_Labs/Philosophical_Arguments/README.md) applies the five steps to a chosen marketing decision.

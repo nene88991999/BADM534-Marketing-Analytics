@@ -24,3 +24,7 @@ The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project
 ## Public Claims and Affected People
 
 [Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the verified HBS coverage, the hypothetical university-branded headline, pricing communication, and the decision to revise or publish a claim. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.
+
+## Measurement Validity and Ontological Scope
+
+[M9 §9.42.4](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) maps the paper’s recorded objects to the broader claims that need validation. It separates realized revenue per MWh from bills and affordability, operating capacity from financial exposure, developer identity from business model, and an average from household incidence. The [philosophy and measurement guide](../15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) links Adcock and Collier’s conceptual framework and the ontological spectrum. Complete bill calculations remain in M2 §2.28.1 and M6 §6.35.

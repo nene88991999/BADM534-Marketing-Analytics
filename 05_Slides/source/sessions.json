@@ -8,7 +8,9 @@
       "Specify an action, observation unit, information set, and outcome horizon.",
       "Translate a small marketing calculation into readable Python.",
       "Verify generated code using identities and counterexamples.",
-      "Distinguish a definition, an inference, a validation condition, and source evidence."
+      "Distinguish a definition, an inference, a validation condition, and source evidence.",
+      "Reconstruct a recommendation through its premises, a counterexample, and a condition for revision.",
+      "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people."
     ],
     "slides": [
       {
@@ -29,6 +31,18 @@
         ],
         "notes": "The contact budget constrains the action. A high predicted renewal rate can reflect customers who would renew without an offer. The target must include the additional contribution caused by contact.",
         "source": "M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Which Ends Deserve Pursuit?",
+        "bullets": [
+          "Who selected the objective, and with what authority?",
+          "Which people bear its burdens or lose a choice?",
+          "Which reasons matter even when they are difficult to quantify?",
+          "An accurate algorithm can advance an objectionable end."
+        ],
+        "notes": "Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Kant limits theoretical knowledge to objects of possible experience; an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork. The course develops these distinctions in M9 §9.41.",
+        "source": "M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -333,6 +347,27 @@
       },
       {
         "kind": "bullets",
+        "title": "The Question Determines the Evidence",
+        "bullets": [
+          "Who will accept? Define the prediction target.",
+          "What changes? Specify the intervention and comparison.",
+          "Who bears a burden? Define the relevant outcome.",
+          "What ought the firm do? Defend the governing principle."
+        ],
+        "notes": "An accurate purchase forecast can leave customer burdens and permission unresolved. Koralus and Mascarenhas model reasoning through questions and answers; this workflow applies that distinction to a managerial brief. Do not infer a cognitive mechanism for a particular analyst or AI system. Preserve the population, timing, units, and meaning of each result.",
+        "source": "M1 §1.20. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Test the Argument and Revise the Conclusion",
+        "figure": "../06_Lecture_Notes/figures/M09_argument_revision.tex",
+        "caption": "A counterexample preserves the premises while challenging the inference.",
+        "description": "Five boxes connect claim definition, premises, a counterexample, assessment of the missing premise, and a revised conclusion. A dashed arrow returns to the claim.",
+        "notes": "Use the same sequence on an AI-generated recommendation and on its criticism. Check each proposed counterexample against the actual premise. Label an invented scenario hypothetical. The final step names evidence or reasons that would change the conclusion. The longer argument record is optional practice, subject to applicable AI rules.",
+        "source": "M1 §1.20. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Decision Discussion",
         "bullets": [
           "Which customer receives the renewal offer?",
@@ -356,7 +391,9 @@
       "[Statistical Inference: Code and Results](../03_Data_and_Code/Statistical_Inference/README.md)",
       "[Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)",
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
-      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)"
+      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
+      "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
     ],
     "practice": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
     "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision."
@@ -1287,7 +1324,8 @@
       "Separate new-product share from incremental category demand.",
       "Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.",
       "Allocate human and synthetic responses at a common accuracy target.",
-      "Separate better demand information from joint pricing when evaluating customer surplus."
+      "Separate better demand information from joint pricing when evaluating customer surplus.",
+      "Explain why identical product rankings can leave the sign of a welfare change unresolved."
     ],
     "slides": [
       {
@@ -1628,6 +1666,28 @@
         "source": "FTC Rule on Unfair or Deceptive Fees FAQ. https://www.ftc.gov/business-guidance/resources/rule-unfair-or-deceptive-fees-frequently-asked-questions"
       },
       {
+        "kind": "figure",
+        "title": "The Same Ranking Leaves Welfare Unresolved",
+        "figure": "../06_Lecture_Notes/figures/M04_ordinal_welfare.tex",
+        "caption": "Same purchases and ranking: USD 4.80 gain or USD 4.90 loss per customer.",
+        "description": "Left: cumulative alternative-minus-baseline purchase changes of +5, −5, −5, and 0 percentage points across four rank cutoffs. Right: gains under value systems (100,2,1,0) and (100,99,98,0).",
+        "notes": "Synthetic one-product purchases have baseline probabilities (.40,.30,.20,.10) and alternative probabilities (.45,.20,.20,.15). Values are dollars per purchased product. The best and worst values and strict ranking agree across scenarios. Other burdens and prices are common; incremental procedure cost is zero. Expected values change from 40.80 to 45.60 in the first scenario and from 89.30 to 84.40 in the second. Independent checks and complete Python are in M4 §4.29.",
+        "source": "M4 §4.29. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md",
+        "fixed_figure_font": true
+      },
+      {
+        "kind": "bullets",
+        "title": "Identify the Valuation Premise",
+        "bullets": [
+          "More top-ranked purchases can coexist with more bottom-ranked purchases.",
+          "Cardinal value gaps determine the balance.",
+          "Check every cumulative rank cutoff.",
+          "Justify procedure costs and customer permission separately."
+        ],
+        "notes": "If every cumulative change is nonnegative, consumption value weakly rises for every ordered value system. The example has mixed signs. Precise purchase measurement does not determine the value gaps. The comparison changes a welfare premise, while the previous demand-completion example changes an unobserved demand curve. Both remain conditional model exercises. Choosing a practice adds reasons about authorization and burdens.",
+        "source": "M4 §4.29. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
+      },
+      {
         "kind": "bullets",
         "title": "Product-Design Discussion",
         "bullets": [
@@ -1647,7 +1707,9 @@
       "[Synthetic Consumer Examples](../03_Data_and_Code/Synthetic_Consumers/README.md)",
       "[Human and Synthetic Evidence](../03_Data_and_Code/Auxiliary_Data/README.md)",
       "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)",
-      "[Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)"
+      "[Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)",
+      "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
     ],
     "practice": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
     "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus."
@@ -2613,7 +2675,8 @@
       "Calculate an intention-to-treat effect, uncertainty, and contribution.",
       "Plan power and use prior outcomes to improve precision.",
       "Explain the information conditions supporting a fixed research allocation.",
-      "Separate correct weighting of a pricing experiment from a justified allocation of customer exposure."
+      "Separate correct weighting of a pricing experiment from a justified allocation of customer exposure.",
+      "Distinguish historical model fit from identification and specify evidence that separates competing mechanisms."
     ],
     "slides": [
       {
@@ -3044,6 +3107,40 @@
         "source": "https://doi.org/10.1007/s10892-019-09282-6 ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
+        "kind": "figure",
+        "title": "Equal Historical Fit, Different Price Effects",
+        "figure": "../06_Lecture_Notes/figures/M06_compatible_price_models.tex",
+        "caption": "Identical observed cells; assigning a common price gives different effects.",
+        "description": "Left: group A buys with probability 80% at $10 and group B with probability 40% at $20. Both groups have weight one half. Right: the price-response model changes from 80% to 40%; the selection model remains at 60%.",
+        "notes": "Both synthetic models reproduce the complete historical joint law of group, price, and purchase. Each group historically receives only one price. A price-response model depends only on price; a group-selection model depends only on group. The intervention assigns everyone $10 or $20 and holds population, product, disclosure, availability, and each response rule fixed. Historical sample size cannot resolve the unobserved group-price cells. Lines join the two allowed prices only.",
+        "source": "M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md",
+        "fixed_figure_font": true
+      },
+      {
+        "kind": "bullets",
+        "title": "Which Observation Would Distinguish the Models?",
+        "bullets": [
+          "Randomize both prices within both groups.",
+          "At USD 20, group A purchases with probability 0.4 or 0.8.",
+          "Check implementation, uncertainty, and customer exposure.",
+          "A welfare conclusion still needs valuation premises."
+        ],
+        "notes": "The probabilities are imposed population predictions, not estimates. Within-group randomization creates comparisons absent from the historical data. An assumption restricting demand could also select a conclusion, whose scope would then depend on that restriction. Define the intervention before seeking identification. A disclosure or availability change would alter the comparison.",
+        "source": "M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Criticism Also Needs Evidence",
+        "bullets": [
+          "Nonrejection leaves a meaningful effect possible.",
+          "It does not identify the realized effect.",
+          "A possible contaminated control needs a documented exposure history.",
+          "State what would strengthen or reverse the criticism."
+        ],
+        "notes": "Apply the same reasoning to the electricity case. Low sensitivity does not prove harm or uniquely explain a nonsignificant estimate. A cancelled-project construction motivates checking actual donor exposure; it does not establish that exposure. Preserve the source outcome, positive findings, and qualifications. The claim should be narrowed to what the evidence supports, and material uncertainty should remain visible.",
+        "source": "M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md M9 §9.40.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
         "kind": "bullets",
         "title": "Experiment Discussion",
         "bullets": [
@@ -3071,7 +3168,9 @@
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
       "../01_Resources/41_Statistical_Claims_and_Decisions/README.md",
-      "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)"
+      "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)",
+      "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
     ],
     "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Use the optional statistical-claims and data-center case exercises.",
     "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Evaluate inverse power, specified alternatives, and directional sensitivity. Targeted exposure, correct population weighting, and reasons for bearing experimental risk."
@@ -4720,7 +4819,10 @@
       "Assess demand assumptions, feasible pricing alternatives, and individual burdens.",
       "Connect a specified antitrust claim to evidence and Scanlonian institutional reasons.",
       "Distinguish instrumental rationality, reliable measurement, and reasonable justification of an objective.",
-      "Compare the moral premises in personalized pricing, dynamic-pricing communication, and data-center reassurance."
+      "Compare the moral premises in personalized pricing, dynamic-pricing communication, and data-center reassurance.",
+      "Assess validity, premise support, and reasonable justification symmetrically for a claim and its criticism.",
+      "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.",
+      "Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons."
     ],
     "slides": [
       {
@@ -4956,6 +5058,96 @@
         ],
         "notes": "Similar prices or a common vendor leave the mechanism unresolved. Adoption may respond to demand or costs, and nearby firms may react to each other. The DOJ and FTC's March 2024 statement in a separate hotel-pricing case argues that nonbinding recommendations do not by themselves defeat an agreement claim. It is an agency argument, not a ruling on Wendy's. Equipment-availability records do not supply transaction prices or agreement evidence.",
         "source": "Initial complaint, filed November 23, 2026; company statements and source review. ../01_Resources/37_Pricing_Systems_and_Competition/SOURCE_REVIEW.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Noumena and Practical Standing",
+        "figure": "../06_Lecture_Notes/figures/M09_phenomena_noumena.tex",
+        "caption": "A complete statistical account would still leave practical justification to be defended.",
+        "description": "Four upper boxes distinguish established findings, recognized empirical gaps, unanticipated issues, and acknowledged epistemic limits. Recognition connects an unexpected issue to further inquiry. A lower box separates practical justification about ends, authority, and obligations.",
+        "notes": "Kant, Critique of Pure Reason B306–B311, distinguishes negative and positive noumena and limits human theoretical cognition. Hidden preferences, comprehension, and unrecorded costs remain empirical questions. Qualitative evidence also belongs to experience. The Groundwork, 4:428–429 and 4:451–453, provides distinct practical arguments about respect and the intelligible standpoint. Do not infer a specific hidden preference, harm, or duty solely from a limit of empirical knowledge. An unknown unknown has not yet been recognized. An acknowledged limit requires an argument about what a specified inquiry cannot establish. The phrase known to be the never known has that scoped role. Normative questions remain open to reasoned judgment; statistical non-identification can change with a new observable law.",
+        "source": "M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Measurable Objective Still Needs a Justification",
+        "bullets": [
+          "Predicting acceptance leaves consent and authority to be examined.",
+          "Fitting heterogeneity leaves the person’s reasons to be considered.",
+          "An average outcome leaves particular obligations to be justified.",
+          "Defend which end the firm ought to pursue or abandon."
+        ],
+        "notes": "Examine the specific pricing and data-center arguments. Preserve their actual welfare results and safeguards. The criticism concerns a transition from empirical success to a complete account of welfare or permission. Kantian respect and Scanlonian reasonable rejection offer distinct practical arguments. Neither institutional affiliation nor ease of computation settles their validity. The analytical task begins with ends and authority, then uses evidence to evaluate consequences and alternatives.",
+        "source": "M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Spectrum of Ontological Adequacy",
+        "figure": "../06_Lecture_Notes/figures/M09_ontological_spectrum.tex",
+        "caption": "Assess the scope of an interpretation and the objects its decision requires.",
+        "description": "Five positions run from measurement as reality, through behavioral representation, institutions and procedures, agency and reasons, to acknowledged limits and justified scope. Three lower boxes apply the questions to household costs, price targeting, and cancellation. Positions carry no numerical distance or author score.",
+        "notes": "A small model can answer a narrow question well. Ontological laziness occurs when ease of measurement substitutes for an argument about what matters. Place a particular inference on the spectrum and name the omitted object that changes the decision. More variables alone do not improve its adequacy. Keep empirical mechanisms, practical reasons, and Kantian limits distinct.",
+        "source": "M9 §9.42. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
+        "figure_height": 0.72
+      },
+      {
+        "kind": "table",
+        "title": "Measure and Claim in the Electricity Case",
+        "headers": [
+          "Recorded Object",
+          "Further Question"
+        ],
+        "rows": [
+          [
+            "Revenue per MWh",
+            "Bills and affordability"
+          ],
+          [
+            "Operating capacity",
+            "Earlier financial exposure"
+          ],
+          [
+            "Developer identity",
+            "Contractual business model"
+          ],
+          [
+            "Average outcome",
+            "Household incidence"
+          ]
+        ],
+        "caption": "Precision cannot repair a mismatch between the measure and the claim.",
+        "notes": "The paper explicitly measures realized revenue per MWh and explains its choice. Household bills require quantities, charges, periods, and a causal comparison; affordability adds household resources and needs. Operating entry can differ from the timing of committed costs. Developer identity requires validation before being treated as a business-model classification. Preserve the paper’s positive findings and qualifications. The criticism concerns an interpretation that exceeds these objects, without establishing a motive for the authors’ measurement choices. The complete bill arithmetic appears in M2 §2.28.1 and M6 §6.35.",
+        "source": "M9 §9.42.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md https://doi.org/10.1017/S0003055401003100"
+      },
+      {
+        "kind": "table",
+        "title": "Philosophical Objections to Reduction",
+        "font": "small",
+        "headers": [
+          "Argument",
+          "Question for the Analysis"
+        ],
+        "rows": [
+          [
+            "Sellars: justification",
+            "What warrants this interpretation?"
+          ],
+          [
+            "Bhaskar: ontology",
+            "Which mechanisms remain unobserved?"
+          ],
+          [
+            "Husserl: intentionality",
+            "What is the person accepting?"
+          ],
+          [
+            "Scanlon: normative reasons",
+            "Which reasons deserve an answer?"
+          ]
+        ],
+        "caption": "Kant separately examines the conditions and limits of theoretical cognition.",
+        "notes": "These authors offer different arguments. They supply no common rejection of empirical inquiry. Sellars concerns the grounds of observational knowledge; Bhaskar permits inquiry into structures beyond event patterns; Husserl examines intentionality; Scanlon defends reasoning appropriate to normative domains. The exact source passages and contemporary applications are separated in M9 §9.43. Publication selection toward tractable questions is a hypothesis requiring evidence about the research process.",
+        "source": "M9 §9.43 and its primary-source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -5204,6 +5396,39 @@
         ],
         "notes": "Kantian universalization examines a rule that advertises safety whenever a test fails to reject, regardless of sensitivity. Such a practice rewards weak measurement and undermines evidentiary trust. The humanity formulation treats households as persons capable of judgment. Confucian trustworthiness requires descriptions that match conduct and a responsible response to inconvenient findings. Self-interest motivates substantiation; it does not establish guilt or deliberate deception.",
         "source": "M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Validity Leaves the Premises Open to Challenge",
+        "bullets": [
+          "Suppose every revenue gain justified adoption.",
+          "A proven revenue gain would then support adoption.",
+          "The first premise grants revenue priority over other reasons.",
+          "Defend that premise to the people bearing the burden."
+        ],
+        "notes": "The conditional deduction is valid, while soundness also requires true premises. Evidence for the revenue effect does not establish the normative premise. MacFarlane distinguishes logical consequence from norms governing reasoning; Scanlon supplies a separate account of justification to affected people. Ordinary empirical evidence remains defeasible and should be evaluated according to the claim actually made.",
+        "source": "M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Preserve Meaning Through the Argument",
+        "bullets": [
+          "A purchase is evidence of a transaction.",
+          "Consent requires an account of information and authority.",
+          "A unit price and a household bill measure different objects.",
+          "Feasible, permitted, and obligatory actions require different premises."
+        ],
+        "notes": "Terms must keep their meanings across premises and conclusion. Willingness to pay, benefit, and acceptable treatment are distinct claims. A formal option can remain difficult to exercise or unknown. Permission does not establish an obligation. Record operational definitions, populations, and time horizons before evaluating a result.",
+        "source": "M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Counterexample Must Preserve the Premises",
+        "figure": "../06_Lecture_Notes/figures/M09_argument_revision.tex",
+        "caption": "Assess the original recommendation and its criticism through the same five steps.",
+        "description": "The diagram moves from a defined claim to its premises, a proposed counterexample, assessment of a missing premise, and a revised conclusion. The revision returns to the claim.",
+        "notes": "Use the exact source passage. A construction can demonstrate that an inference fails without showing that the constructed mechanism occurs in the actual setting. The critic should defend the added empirical or normative premise and state what evidence or reasons would change the conclusion. The optional argument record keeps these tasks separate.",
+        "source": "M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -5654,6 +5879,18 @@
       },
       {
         "kind": "bullets",
+        "title": "Name What Would Change the Conclusion",
+        "bullets": [
+          "New randomized cells can distinguish response models.",
+          "Independent valuations can narrow welfare disagreement.",
+          "Matched household evidence can support a narrower reassurance claim.",
+          "A serious objection can change the proposed principle."
+        ],
+        "notes": "Scientific criticism remains open to correction. For electricity claims, informative uncertainty bounds, a credible comparison, household outcomes, and documented recovery protections could support reassurance within their scope. For pricing, evidence about feasible alternatives and legitimate operating needs can change the moral assessment. Reasonable rejection concerns reasons from affected positions, not a vote or commercial acceptance alone.",
+        "source": "M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
           "State the decision, affected people, and evidence.",
@@ -5693,7 +5930,9 @@
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
       "../01_Resources/41_Statistical_Claims_and_Decisions/README.md",
       "[Philosophical Arguments: Optional Practice](../07_Labs/Philosophical_Arguments/README.md)",
-      "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)"
+      "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)",
+      "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."

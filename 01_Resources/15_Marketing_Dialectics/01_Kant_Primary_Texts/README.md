@@ -10,7 +10,7 @@ Immanuel Kant. 1781/1787. J. M. D. Meiklejohn translation (1855)
 
 Reason seeks an unconditioned explanation; critique examines the resulting illusion and the limits of theoretical cognition. Use the original argument to distinguish Kantian dialectic from ordinary disagreement.
 
-**Reading scope:** Dialectic introduction, third antinomy, and appendix on regulative reason.
+**Reading scope:** Dialectic introduction, third antinomy, appendix on regulative reason, and the chapter on phenomena and noumena, especially B306–B311.
 **Source:** [Critique of Pure Reason](https://www.gutenberg.org/ebooks/4280)
 **Access:** full; downloaded.
 **Rights:** public_domain_US.
@@ -34,7 +34,7 @@ Immanuel Kant. 1785. Thomas Kingsmill Abbott translation; Groundwork
 
 The Groundwork supplies the ethical principles used to assess the treatment of customers. Keep practical ethics distinct from the first Critique’s critique of metaphysics.
 
-**Reading scope:** Second section: universal law, humanity, autonomy.
+**Reading scope:** Second section: universal law, humanity, autonomy, especially 4:428–429; third section on the sensible and intelligible standpoints, 4:451–453.
 **Source:** [Fundamental Principles of the Metaphysic of Morals](https://www.gutenberg.org/ebooks/5682)
 **Access:** full; downloaded.
 **Rights:** public_domain_US.

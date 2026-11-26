@@ -2063,3 +2063,124 @@ if __name__ == "__main__":
 ```
 
 Source: [Suikkanen, “Ex Ante and Ex Post Contractualism: A Synthesis”](https://doi.org/10.1007/s10892-019-09282-6). The pricing inputs are the original synthetic example in M9 §9.17. The [source assessment](../../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) distinguishes this design from the published field experiments.
+
+## 6.38 Equal Historical Fit and Different Price Effects
+
+\noindent A retailer wants to predict purchases if it charges every customer $20 instead of $10. Historical records contain both prices, but each customer group has received only one of them. Two response models can reproduce every historical observation and disagree about the common-price intervention. The difference concerns identification even when the population probabilities are known exactly.
+
+### 6.38.1 Construct Two Compatible Models
+
+\noindent In a synthetic population, groups A and B each contain half the customers. Every customer receives one offer and can buy one unit. Historically, group A receives a $10 offer and purchases with probability 0.8; group B receives a $20 offer and purchases with probability 0.4. The complete historical joint law is:
+
+| Group | Price ($) | Purchase | Population Probability |
+| --- | --- | --- | --- |
+| A | 10 | 0 | 0.10 |
+| A | 10 | 1 | 0.40 |
+| B | 20 | 0 | 0.30 |
+| B | 20 | 1 | 0.20 |
+
+The first model assigns purchase probabilities of 0.8 at $10 and 0.4 at $20 to both groups. The second assigns probability 0.8 to group A and 0.4 to group B at either price. Both models reproduce the four joint probabilities, including the observed group labels. They differ only in the group–price combinations absent from historical support.
+
+For the specified intervention, preserve the population and its equal group weights, the product, disclosed information, availability, and each model's purchase rule. Assign one common price to everyone. The first model predicts purchase probabilities of 0.8 and 0.4 under the two common prices, an effect of −40 percentage points. The second predicts 0.6 at either price, an effect of zero. These are exact population implications of two imposed models. Increasing the historical sample would leave the missing group–price combinations unresolved.
+
+![Two models reproduce the same historical purchase law while implying different effects of assigning a common price.](../figures/M06_compatible_price_models.png)
+
+The left panel gives the historically observed purchase probability in each group. Both models pass through those points. The right panel averages each model's response over the same population after assigning the common price. Blue circles and orange squares distinguish the two models; the vertical scale is identical across panels. Lines join the two allowed prices without specifying intermediate-price responses.
+
+### 6.38.2 Evidence That Distinguishes the Models
+
+\noindent A representation establishes that at least one model can produce the observed law. Identification of a target requires agreement on that target across the admissible models that produce the law. The two constructions establish that the stated evidence and restrictions leave the common-price effect unidentified. They supply no estimate of which response rule holds in an actual market.
+
+Randomizing both prices within both groups would create the missing comparisons. For example, the models predict purchase probabilities of 0.4 and 0.8 for group A at $20. Appropriate random assignment, implementation, and inference could distinguish those predictions. Restricting demand through an economic assumption is another route to a conclusion, whose force would then depend on the evidence and reasons supporting that restriction. Pearl separates intervention definition from identification through observed distributions in his structural account. [Pearl, 2009, §§3.2.1–3.2.3](https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf).
+
+An intervention described only as “personalization” leaves material features open. Specify the price rule, data inputs, disclosure, comparison offer, timing, customer alternatives, and any opportunity to decline. If the procedure also changes information or product availability, the resulting effect answers a different causal question. A welfare or ought conclusion then adds the valuation and normative premises examined in §§4.29 and 9.40.
+
+### 6.38.3 Reproduce the Historical and Intervention Laws
+
+\noindent The program enumerates every historical cell, verifies that the two complete joint laws coincide, and calculates population purchase probabilities at each common price. It writes the conditional response rules and marks historically observed cells. All inputs are exact fractions, with no random sampling or estimated coefficients.
+
+Python source: [price_models.py](../../03_Data_and_Code/Analytical_Arguments/price_models.py)
+
+```python
+"""Exact synthetic purchase laws with equal fit and different policy effects.
+
+Each customer receives one offer and can buy one unit. Two equally common
+groups historically receive different prices. All probabilities are imposed
+population quantities; there is no sampled dataset or estimated coefficient.
+"""
+import csv
+from fractions import Fraction as F
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+GROUPS = {"A": F(1, 2), "B": F(1, 2)}
+HISTORICAL_PRICE = {"A": 10, "B": 20}
+MODELS = ("price_response", "group_selection")
+
+
+def purchase_probability(model, group, price):
+    """Probability per offer at a USD price in the specified two-price menu."""
+    if group not in GROUPS or price not in (10, 20):
+        raise ValueError("The example covers groups A/B and prices 10/20 only.")
+    if model == "price_response":
+        return F(6, 5) - F(price, 25)
+    if model == "group_selection":
+        return {"A": F(4, 5), "B": F(2, 5)}[group]
+    raise ValueError(model)
+
+
+def observed_joint(model):
+    """Joint probabilities of group, price, and purchase in historical offers."""
+    rows = []
+    for group, weight in GROUPS.items():
+        price = HISTORICAL_PRICE[group]
+        prob = purchase_probability(model, group, price)
+        for purchase in (0, 1):
+            mass = weight * (prob if purchase else 1 - prob)
+            rows.append({"group": group, "price_usd": price,
+                         "purchase": purchase, "population_mass": mass})
+    return rows
+
+
+def policy_purchase(model, price):
+    """Assign the same price to all customers; preserve group weights and rules."""
+    return sum(weight * purchase_probability(model, group, price)
+               for group, weight in GROUPS.items())
+
+
+def write_csv(name, rows):
+    output = HERE / "results"
+    output.mkdir(exist_ok=True)
+    with (output / name).open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]),
+                                lineterminator="\n")
+        writer.writeheader()
+        writer.writerows({k: float(v) if isinstance(v, F) else v
+                          for k, v in row.items()} for row in rows)
+
+
+def main():
+    observed = observed_joint(MODELS[0])
+    assert observed == observed_joint(MODELS[1])
+    assert sum(row["population_mass"] for row in observed) == 1
+    write_csv("observed_purchase_law.csv", observed)
+    counterfactuals = []
+    effects = []
+    for model in MODELS:
+        for group in GROUPS:
+            for price in (10, 20):
+                counterfactuals.append({"model": model, "group": group,
+                    "price_usd": price,
+                    "purchase_probability": purchase_probability(model, group, price),
+                    "historically_observed": price == HISTORICAL_PRICE[group]})
+        low, high = (policy_purchase(model, price) for price in (10, 20))
+        effects.append({"model": model, "purchase_at_10": low,
+                        "purchase_at_20": high, "effect_pp": 100 * (high - low)})
+    write_csv("conditional_purchase_rules.csv", counterfactuals)
+    write_csv("policy_effects.csv", effects)
+    print("Identical historical joint laws; policy effects are -40 and 0 pp.")
+
+
+if __name__ == "__main__":
+    main()
+```

@@ -13,6 +13,7 @@ Session 09. M6. 170 minutes.
 - Plan power and use prior outcomes to improve precision.
 - Explain the information conditions supporting a fixed research allocation.
 - Separate correct weighting of a pricing experiment from a justified allocation of customer exposure.
+- Distinguish historical model fit from identification and specify evidence that separates competing mechanisms.
 
 ## Related Materials
 
@@ -32,6 +33,8 @@ Session 09. M6. 170 minutes.
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 - ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
 - [Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)
+- [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
+- [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -465,7 +468,41 @@ Expected loss helps describe exposure. Scanlonian justification requires a princ
 
 Source: https://doi.org/10.1007/s10892-019-09282-6 ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 38: Experiment Discussion
+## Slide 38: Equal Historical Fit, Different Price Effects
+
+Identical observed cells; assigning a common price gives different effects.
+
+**Figure description:** Left: group A buys with probability 80% at $10 and group B with probability 40% at $20. Both groups have weight one half. Right: the price-response model changes from 80% to 40%; the selection model remains at 60%.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_compatible_price_models.tex)
+
+Both synthetic models reproduce the complete historical joint law of group, price, and purchase. Each group historically receives only one price. A price-response model depends only on price; a group-selection model depends only on group. The intervention assigns everyone $10 or $20 and holds population, product, disclosure, availability, and each response rule fixed. Historical sample size cannot resolve the unobserved group-price cells. Lines join the two allowed prices only.
+
+Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 39: Which Observation Would Distinguish the Models?
+
+- Randomize both prices within both groups.
+- At USD 20, group A purchases with probability 0.4 or 0.8.
+- Check implementation, uncertainty, and customer exposure.
+- A welfare conclusion still needs valuation premises.
+
+The probabilities are imposed population predictions, not estimates. Within-group randomization creates comparisons absent from the historical data. An assumption restricting demand could also select a conclusion, whose scope would then depend on that restriction. Define the intervention before seeking identification. A disclosure or availability change would alter the comparison.
+
+Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+
+## Slide 40: A Criticism Also Needs Evidence
+
+- Nonrejection leaves a meaningful effect possible.
+- It does not identify the realized effect.
+- A possible contaminated control needs a documented exposure history.
+- State what would strengthen or reverse the criticism.
+
+Apply the same reasoning to the electricity case. Low sensitivity does not prove harm or uniquely explain a nonsignificant estimate. A cancelled-project construction motivates checking actual donor exposure; it does not establish that exposure. Preserve the source outcome, positive findings, and qualifications. The claim should be narrowed to what the evidence supports, and material uncertainty should remain visible.
+
+Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md M9 §9.40.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 41: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

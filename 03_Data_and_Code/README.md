@@ -159,3 +159,7 @@ The [statistical-inference examples](Statistical_Inference/README.md) also imple
 ## Pricing, Individual Burdens, and Antitrust
 
 The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/README.md) add exact customer incidence, experimental exposure, observationally equivalent tested demand, a reconstruction of Dubé and coauthors' published payoff game, and hypothetical damages arithmetic. Full code appears in M6 and M9. The programs distinguish synthetic populations, rounded published model outputs, normative premises, and legal proof.
+
+## Analytical Arguments
+
+[Analytical Arguments](Analytical_Arguments/README.md) contains two exact synthetic programs. One constructs observationally equivalent price models with different intervention effects; the other fixes purchases and rankings while obtaining opposite welfare signs under independently imposed values. Complete listings appear in M6 §6.38 and M4 §4.29. Ten independent checks and two data-driven TikZ sources accompany the calculations.

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.4cm,minimum height=1.3cm] (claim) at (1.9,0)
+ {\textbf{1. Define the Claim}\\Actor, action, population,\\comparison, and time.};
+\node[box,text width=3.4cm,minimum height=1.3cm] (premises) at (6.25,0)
+ {\textbf{2. Expose the Premises}\\Facts, measurement,\\causation, and values.};
+\node[orangebox,text width=3.4cm,minimum height=1.3cm] (test) at (10.6,0)
+ {\textbf{3. Seek a Counterexample}\\True premises with\\a false conclusion?};
+\node[box,text width=4.75cm,minimum height=1.35cm] (support) at (9.8,-2.6)
+ {\textbf{4. Assess the Missing Premise}\\What evidence supports it?\\Whose reasons justify it?};
+\node[orangebox,text width=4.75cm,minimum height=1.35cm] (revise) at (3.05,-2.6)
+ {\textbf{5. Revise the Conclusion}\\Retain its supported scope.\\Name evidence or reasons for revision.};
+\draw[edge] (claim) -- (premises);
+\draw[edge] (premises) -- (test);
+\draw[accent] (test.south) -- (support.north);
+\draw[edge] (support) -- (revise);
+\draw[accent,dashed] (revise.north) -- (claim.south);
+\node[align=center,text width=12.7cm,font=\footnotesize] at (6.25,-4.15)
+ {A counterexample defeats an entailment. Its empirical relevance needs evidence.\\
+ Validity preserves truth from premises; soundness also requires true premises.};
+\end{tikzpicture}

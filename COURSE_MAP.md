@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 116 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 136 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -201,3 +201,11 @@ M5 §5.27 connects scraping to qualitative content analysis and boxed source exc
 ## Pricing, Individual Reasons, and Competition
 
 M4 §4.28 connects segments to treatment reasons. M6 §6.37 compares correct experimental weighting with the allocation of risk. M8 §8.32 connects pricing evidence to competition and customer authority. M9 §§9.34–9.39 develop demand-completion counterexamples, a profitable less burdensome alternative, Dubé's mobile-targeting game, Kantian reasoning, and antitrust institutions through Scanlonian objections. Sessions 9 and 14 use selected comparisons within existing time blocks. [Programs](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md), [optional practice](07_Labs/Scanlon_Pricing/README.md), and [legal sources](01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) supply complete detail. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
+
+## Analytical Arguments Across the Course
+
+M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40 connect five-step argument assessment to question formulation, measurement, causal identification, welfare valuation, and reasonable justification. [Two original programs](03_Data_and_Code/Analytical_Arguments/README.md) make the assumptions visible through counterexamples. [Optional practice](07_Labs/Philosophical_Arguments/README.md) applies the same scrutiny to an analytical claim and its criticism, with explicit evidence or reasons for revision. Sessions 1, 5, 9, and 14 incorporate selected examples within the existing calendar.
+
+M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+
+[M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
