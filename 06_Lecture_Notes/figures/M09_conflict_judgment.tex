@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\node[orangebox,text width=3.4cm,minimum height=1.1cm] (firm) at (0,1.8)
+ {\textbf{Commercial Rewards}\\Revenue, promotion, access};
+\node[box,text width=3.8cm,minimum height=1.5cm] (analyst) at (5.1,0)
+ {\textbf{Analytical Judgment}\\Choose outcomes, comparisons, and claims};
+\node[box,text width=3.4cm,minimum height=1.1cm] (duty) at (0,-1.8)
+ {\textbf{Responsibilities}\\Truthful evaluation;\\honor valid instructions};
+\node[orangebox,text width=3.4cm,minimum height=1.5cm] (users) at (10.2,0)
+ {\textbf{Affected Users}\\Purposes, burdens,\\and ability to stop};
+\draw[accent] (firm.east) -- (analyst.north west);
+\draw[edge] (duty.east) -- (analyst.south west);
+\draw[edge] (analyst.east) -- (users.west);
+\draw[accent,dashed] (users.south) -- (10.2,-2.8) -- (5.1,-2.8) -- (analyst.south);
+\node[align=center,text width=6.5cm,font=\footnotesize] at (7.7,-3.35)
+ {Effective challenge can change the objective and the decision.};
+\node[align=center,text width=12.8cm,font=\footnotesize] at (5.1,-4.3)
+ {A conflict arises when an interest threatens judgment owed under a responsibility.\\Its presence warrants safeguards before biased conduct is established.};
+\end{tikzpicture}

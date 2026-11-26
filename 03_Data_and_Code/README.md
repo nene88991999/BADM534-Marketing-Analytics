@@ -167,3 +167,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 ## Learning Design and Outcome Comparisons
 
 [Learning Design](Learning_Design/README.md) contains exact calculations for reported rounded percentages, a synthetic factorial design, and the existing electricity bill example. Standard-library Python generates the reference values used by the [HTML pilot](../08_Wiki/pilot/README.md). Participant data and empirical learning effects are absent; synthetic means are identified beside their calculations.
+
+## Conflicts of Interest and Engagement
+
+[Conflicts of Interest](Conflicts_of_Interest/README.md) contains eight synthetic policy-by-group rows, a standard-library Python program, saved aggregates, and independent checks. M9 §9.48 reproduces the complete code and separates contribution, goal completion, regret, disclosure, and a defended stopping requirement.

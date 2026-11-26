@@ -186,3 +186,7 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## Explanation and Independent Learning
 
 Use the [electricity pilot](../08_Wiki/pilot/README.md) for prediction, alternative representations, inspection of assumptions, and transfer to a subscription example. Sessions 1, 2, 9, and 14 allocate five, seven, five, and three minutes within their existing discussion or worked-comparison blocks. The [learning-design calculation](../03_Data_and_Code/Learning_Design/README.md) separates a whole-package effect from feature effects. Source fidelity, calculation accuracy, usability, and independent reasoning need separate evaluation. The [extended practice](../07_Labs/AI_Augmented_Learning/README.md) is optional and ungraded.
+
+## Conflicts of Interest and the Analyst’s Responsibility
+
+M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect commercial incentives to the choice of outcomes, professional judgment, and consumer authority. Sessions 1, 11, and 14 select the duty distinction, engagement comparison, and philosophical argument within existing discussion time. The [optional ungraded lab](../07_Labs/Conflicts_of_Interest/README.md) supplies extended practice without changing assessment requirements. A complete synthetic Python example separates score weights from a defended requirement to honor valid stopping instructions.

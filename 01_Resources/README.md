@@ -164,3 +164,7 @@ The [statistical-claims examples](41_Statistical_Claims_and_Decisions/README.md)
 ## AI-Augmented Learning
 
 The [source review](43_AI_Augmented_Learning/README.md) connects alternative representations, embedded questions, and learning evaluation to original course applications. It identifies the paper version, later report, access scope, and rights. [Complete Python](../03_Data_and_Code/Learning_Design/README.md) and an [electricity lesson](../08_Wiki/pilot/README.md) support M1, M2, M6, and M9.
+
+## Conflicts of Interest and Engagement
+
+The [supplemental philosophy and evidence guide](15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) contains nine selected source records, including an unchanged CC BY 4.0 reward-learning article. It supports M9 §§9.45–9.49 and the synthetic feed example. Its count describes this supplement and must not be added to overlapping catalog counts as unique resources.

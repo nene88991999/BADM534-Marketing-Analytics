@@ -396,3 +396,7 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## Explanation, Prediction, and Learning Evaluation
 
 The [electricity pilot and optional practice](../07_Labs/AI_Augmented_Learning/README.md) connect four representations to an independent prediction and a defended objection. Session 1 uses five minutes within 155–170; Session 2 uses 148–155; Session 9 uses five minutes within 45–70 for the factorial comparison; Session 14 uses three minutes within its ethics discussion. Select these examples within the existing blocks. Longer calculations and transfer tasks remain optional. The fifteen dates and 170-minute meetings retain their existing allocations.
+
+## Conflicts of Interest and Consumer Control
+
+Session 1 adds the analyst’s incentives and duties to the existing final discussion. Session 11 connects prediction to the choice of a defensible objective. Session 14 uses a selected feed comparison within the existing Marketing Dialectics block: identify the duty, distinguish reward learning from neural and clinical claims, compare reasonable objections, and defend a stopping requirement. The extended source review and code are optional practice in [Conflicts of Interest](../07_Labs/Conflicts_of_Interest/README.md). These selections retain all 15 meetings and their 170-minute allocations.

@@ -10,7 +10,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 138 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 140 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -160,3 +160,7 @@ M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place t
 ## Explanation and Independent Judgment
 
 The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bill, inspect the calculation, compare four representations, and revise a household-cost claim. [Complete Python](03_Data_and_Code/Learning_Design/README.md) also distinguishes percentage points from relative changes and a learning package from its component effects. M1, M2, M6, and M9 connect these ideas to independent reasoning and learner authority. [Optional practice](07_Labs/AI_Augmented_Learning/README.md) includes a transfer task.
+
+## Conflicts of Interest and Consumer Control
+
+[Marketing Dialectics §§9.45–9.49](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connects analyst incentives to duties, engagement design, and consumer authority. The [synthetic feed comparison](03_Data_and_Code/Conflicts_of_Interest/README.md), [source guide](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md), and [optional practice](07_Labs/Conflicts_of_Interest/README.md) distinguish empirical evidence from a defended ought conclusion.

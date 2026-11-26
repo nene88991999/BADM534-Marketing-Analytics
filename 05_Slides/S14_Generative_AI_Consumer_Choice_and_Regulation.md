@@ -24,6 +24,7 @@ Session 14. M8, M9. 170 minutes.
 - Assess validity, premise support, and reasonable justification symmetrically for a claim and its criticism.
 - Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.
 - Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons.
+- Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.
 
 ## Related Materials
 
@@ -59,6 +60,7 @@ Session 14. M8, M9. 170 minutes.
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
+- [Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -410,15 +412,61 @@ Source: M9 §9.24. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 A reason for scrutiny is distinct from evidence of misconduct.
 
-**Figure description:** A material conflict leads to independent substantiation and then a decision that can change with evidence.
+**Figure description:** A material stake leads to independent substantiation and then a decision that can change with evidence.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M09_burden_justification.tex)
 
-Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt.
+Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt. A duty-based conflict is distinguished from ordinary opposing interests in §9.45.
 
 Source: Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 33: Justify the Practice Before Ranking Its Performance
+## Slide 33: Commercial Rewards and Analytical Judgment
+
+Specify the responsibility that a competing interest threatens.
+
+**Figure description:** Employer rewards and responsibilities both influence analytical judgment. A decision affects users, whose effective challenge can change its objective and interpretation.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_conflict_judgment.tex)
+
+Commercial incentives can shape which outcomes are collected before they affect any coefficient. Valsan’s account locates a conflict in an interest that threatens judgment owed under a duty. The platform example also raises broader questions about power and consumer control. Scrutiny and safeguards can be appropriate before misconduct has been established.
+
+Source: M9 §9.45. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 34: Reward Learning and the Scope of Evidence
+
+- Posting studies and reward experiments inform behavior.
+- Behavioral records do not measure dopamine release.
+- Habit and self-control evidence concerns specified interventions.
+- Evaluate the feed, the user’s purpose, and unwanted continuation.
+
+Lindström and coauthors study posting and experimentally varied social rewards. Schultz, Dayan, and Montague examine dopamine-neuron activity in a separate neuroscience setting. Allcott, Gentzkow, and Song study temporary incentives and user-selected limits with an economic model. These sources provide different evidence. None alone identifies clinical addiction caused by an infinite-scroll feature. The ethical question concerns the actual design, its consequences, and the user’s authority to stop.
+
+Source: M9 §9.46 and its source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 35: Reasons for Honoring a Stopping Instruction
+
+Defend the factual and normative premises, then compare objections.
+
+**Figure description:** Evidence about an overridden instruction and a feasible alternative combines with a principle of revocable authority. Comparison of affected people’s objections leads to a conditional ought conclusion and revision.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_engagement_reasons.tex)
+
+State the principle permitting a firm to override a boundary for revenue and compare it with user-directed continuation. A time-limited user, an entertainment user, and a worker or creator occupy different positions. Scanlonian justification examines reasons for rejecting principles. It is not a vote or a weighted sum of engagement. A Kantian assessment examines the maxim and the person’s capacity to set ends.
+
+Source: M9 §9.47. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 36: A Synthetic Feed Decision
+
+- Fixed population: 1,000 adult user-days per design.
+- Endless feed: USD 0.314 contribution; 85.6% goal completion.
+- User controls: USD 0.236 contribution; 91.8% goal completion.
+- A stopping requirement changes the feasible set before ranking.
+
+The constructed population contains 800 leisure and 200 time-limited users. Under endless use, leisure goal completion improves relative to the finite feed while the time-limited group’s completion falls. Disclosure alone is assigned identical outcomes for a logical comparison, not an empirical estimate. All counts use the original group denominators. A requirement to honor a valid stopping instruction needs philosophical justification outside the score.
+
+Source: M9 §9.48. ../03_Data_and_Code/Conflicts_of_Interest/README.md
+
+## Slide 37: Justify the Practice Before Ranking Its Performance
 
 A commercial ranking also needs a justified set of permissible actions.
 
@@ -430,7 +478,7 @@ Kantian duties cannot automatically be replaced by a finite penalty in an object
 
 Source: Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 34: Confucian Perspectives: Profit and Responsibility
+## Slide 38: Confucian Perspectives: Profit and Responsibility
 
 - Evaluate how profit is obtained and which relationships sustain it.
 - A trusted adviser or customer-care role carries standards of conduct.
@@ -440,7 +488,7 @@ Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.
 
 Source: Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 35: Truthful Challenge and Cultivated Judgment
+## Slide 39: Truthful Challenge and Cultivated Judgment
 
 - Harmony can include reasoned disagreement.
 - Learning and reflection should discipline an AI-generated answer.
@@ -450,7 +498,7 @@ Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and ref
 
 Source: Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 36: Synthetic Personas and Actual Consumers
+## Slide 40: Synthetic Personas and Actual Consumers
 
 - Generated reactions can inform hypotheses about product needs.
 - Claims about customer preferences require evidence from the relevant people.
@@ -460,7 +508,7 @@ M9 §9.18.4 examines whose judgments a firm claims to represent. Kantian respect
 
 Source: Marketing Dialectics §9.18.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 37: Agreement and Independent Reasons
+## Slide 41: Agreement and Independent Reasons
 
 - Identify shared data, labels, and objectives behind agreement.
 - Check the claim against evidence with a justified reference.
@@ -471,7 +519,7 @@ Several models can agree because they share conventions and information. In mHea
 
 Source: M9 §9.21. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 38: Demand Information and Consumer Surplus
+## Slide 42: Demand Information and Consumer Surplus
 
 | Objective | Signal $r$ | Profit | Consumer Surplus |
 | --- | --- | --- | --- |
@@ -486,7 +534,7 @@ First hold the objective fixed and improve the demand signal. Then hold informat
 
 Source: Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md
 
-## Slide 39: A Choice Procedure Can Change Renewal
+## Slide 43: A Choice Procedure Can Change Renewal
 
 - A direct offer and an offer preceded by questions can produce different choices.
 - The customer still makes the final selection.
@@ -496,7 +544,7 @@ Questions, defaults, or retention prompts can precede a fixed target decision. T
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 40: Opposed Interests
+## Slide 44: Opposed Interests
 
 Suppose renewal yields firm margin $\nu>0$ and costs the customer $\sigma>0$ relative to declining.
 
@@ -510,7 +558,7 @@ This conditional comparison holds the offer, monetary values, and relevant respo
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 41: Profit and Customer Value Can Move Oppositely
+## Slide 45: Profit and Customer Value Can Move Oppositely
 
 Synthetic probabilities and fixed stakes. Direct renewal is 20%.
 
@@ -522,7 +570,7 @@ The direct-choice benchmark is distinct from the consumer-preferred procedure. R
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 42: Experimentation Selects the Commercial Winner
+## Slide 46: Experimentation Selects the Commercial Winner
 
 - A fixed set of procedures has stable renewal probabilities.
 - Independent randomized samples estimate each probability.
@@ -532,7 +580,7 @@ The result requires common fixed stakes, a fixed catalog chosen before the exper
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 43: Evidence for a Small Cancellation Burden
+## Slide 47: Evidence for a Small Cancellation Burden
 
 Hypothetical summary statistics and prespecified five-second bounds.
 
@@ -544,7 +592,7 @@ Two one-sided tests at 5% require the 90% t interval within both bounds. A six-s
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 44: Public Reassurance Exceeds the Reported Evidence
+## Slide 48: Public Reassurance Exceeds the Reported Evidence
 
 - HBS coverage states that the four large firms have not raised consumer electricity costs.
 - The reported cloud-owner coefficient is positive and imprecise.
@@ -554,7 +602,7 @@ The verified communication is HBS Working Knowledge, November 12, 2026, and comp
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 45: The Same Average Can Conceal Unequal Burdens
+## Slide 49: The Same Average Can Conceal Unequal Burdens
 
 Synthetic monthly cost allocations; fixed use and population.
 
@@ -566,7 +614,7 @@ Both scenarios add USD 2,000 to bills for 1,000 households using one MWh each. D
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 46: Ontology, Evidence, and Justification
+## Slide 50: Ontology, Evidence, and Justification
 
 - Ontology: distinguish utilities, households, ownership, contracts, and authority.
 - Evidence: identify which claims the estimates and bounds support.
@@ -576,7 +624,7 @@ A narrow price study can be valid within its scope. The category error occurs wh
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 47: Respect for Persons Requires Honest Uncertainty
+## Slide 51: Respect for Persons Requires Honest Uncertainty
 
 - An interested party owes reasons for imposing costs on others.
 - An insensitive test cannot certify safety through nonrejection.
@@ -586,7 +634,7 @@ Kantian universalization examines a rule that advertises safety whenever a test 
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 48: Validity Leaves the Premises Open to Challenge
+## Slide 52: Validity Leaves the Premises Open to Challenge
 
 - Suppose every revenue gain justified adoption.
 - A proven revenue gain would then support adoption.
@@ -597,7 +645,7 @@ The conditional deduction is valid, while soundness also requires true premises.
 
 Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 49: Preserve Meaning Through the Argument
+## Slide 53: Preserve Meaning Through the Argument
 
 - A purchase is evidence of a transaction.
 - Consent requires an account of information and authority.
@@ -608,7 +656,7 @@ Terms must keep their meanings across premises and conclusion. Willingness to pa
 
 Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 50: A Counterexample Must Preserve the Premises
+## Slide 54: A Counterexample Must Preserve the Premises
 
 Assess the original recommendation and its criticism through the same five steps.
 
@@ -620,7 +668,7 @@ Use the exact source passage. A construction can demonstrate that an inference f
 
 Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 51: Write the Missing Premise
+## Slide 55: Write the Missing Premise
 
 - Nonrejection becomes harmlessness only by adding an unsupported sensitivity claim.
 - An owner-list complement becomes a business model only with classification evidence.
@@ -630,7 +678,7 @@ Reconstruct each claim from its exact source. Table 4 and HBS coverage supply th
 
 Source: M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 52: Historical Agreement Leaves Future Costs Open
+## Slide 56: Historical Agreement Leaves Future Costs Open
 
 A synthetic capacity threshold changes extrapolation while preserving historical responses.
 
@@ -642,7 +690,7 @@ The construction grants exact knowledge throughout the historical support. The l
 
 Source: M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 53: What Ought the Firm Do?
+## Slide 57: What Ought the Firm Do?
 
 - Identical bills can coexist with different opportunities to challenge a decision.
 - State the factual premises and the principle governing affected people.
@@ -652,7 +700,7 @@ Payment records conduct under available conditions. Endorsement, permission, and
 
 Source: M9 §§9.27–9.32. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 54: Flat Average Prices Can Accompany Higher Bills
+## Slide 58: Flat Average Prices Can Accompany Higher Bills
 
 - Average bill equals average revenue per MWh times mean use.
 - Synthetic fixed population: USD 100/MWh with bills rising from USD 100 to USD 110.
@@ -662,7 +710,7 @@ The example holds 1,000 customer accounts fixed and raises monthly sales from 1,
 
 Source: M2 §2.28.1 and M6 §6.35. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 55: Project Status Does Not Settle Responsibility
+## Slide 59: Project Status Does Not Settle Responsibility
 
 - Investment can create obligations before a center operates.
 - Cancellation may leave costs, developer guarantees, and a recovery decision.
@@ -672,7 +720,7 @@ A utility with zero operating additions can still be exposed to project-related 
 
 Source: M9 §9.27.6 and institutional assessment. ../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md
 
-## Slide 56: From Premises to an Ought Conclusion
+## Slide 60: From Premises to an Ought Conclusion
 
 Facts and a defended principle jointly support a conditional recommendation.
 
@@ -684,7 +732,7 @@ The hypothetical customer has made a verified cancellation request, and a secure
 
 Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
-## Slide 57: Compare Reasons for Rejecting Each Principle
+## Slide 61: Compare Reasons for Rejecting Each Principle
 
 Compare affected positions and feasible alternatives; answer the strongest objection.
 
@@ -696,7 +744,7 @@ Scanlon's reasonable rejection is a judgment about reasons under principles of g
 
 Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
-## Slide 58: Stakeholders Beyond the Firm
+## Slide 62: Stakeholders Beyond the Firm
 
 - Identify people affected even when they are absent from the dataset.
 - Separate managerial attention from the justification of a duty.
@@ -706,7 +754,7 @@ Donaldson and Preston distinguish descriptive, instrumental, and normative uses 
 
 Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
-## Slide 59: Whose Voice Can Challenge a Prestigious Claim?
+## Slide 63: Whose Voice Can Challenge a Prestigious Claim?
 
 - Hypothetical headline: “Harvard/Wharton study shows no harm.”
 - Compare its reach with residents' access to records and technical help.
@@ -716,7 +764,7 @@ The headline is a discussion construction, not a verified quotation or instituti
 
 Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
-## Slide 60: Mechanism Evidence and Public Reassurance
+## Slide 64: Mechanism Evidence and Public Reassurance
 
 - Calls and filings document recovery plans and competing claims.
 - The electricity paper itself permits recovery and positive spillovers.
@@ -726,7 +774,7 @@ New 2026 disclosures raise questions about future costs and allocations beyond t
 
 Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md M9 §9.33. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 61: Whose Account of Affordability is Missing?
+## Slide 65: Whose Account of Affordability is Missing?
 
 - Investor calls give management and financial analysts a structured voice.
 - Household experience and authority require additional sources.
@@ -736,7 +784,7 @@ Distinguish a factual recovery plan from the normative claim that affected peopl
 
 Source: M9 §9.33. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 62: When Ought a Research Claim Be Published?
+## Slide 66: When Ought a Research Claim Be Published?
 
 - Identify the evidence worth preserving and the interpretation needing support.
 - Compare a corrected release, further review, and rejection of the proposed version.
@@ -746,7 +794,7 @@ A paper need not be released in a form that attaches unsupported reassurance to 
 
 Source: M9 §§9.28–9.30. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 
-## Slide 63: Favorable Framing and Justified Acceptance
+## Slide 67: Favorable Framing and Justified Acceptance
 
 - Pricing language may emphasize discounts, flexibility, or convenience.
 - Research coverage may emphasize reassurance about consumer costs.
@@ -756,7 +804,7 @@ The verified Wendy's February 27, 2024 statement describes intended digital-boar
 
 Source: M9 §9.31. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 
-## Slide 64: A Cancellation Evaluation
+## Slide 68: A Cancellation Evaluation
 
 - Include a direct-cancellation comparison.
 - Record whether optional retention content can be refused before exposure.
@@ -766,7 +814,7 @@ An effective refusal path and an independent value measure reveal dimensions hid
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 65: Same Renewal, Different Customer Intent
+## Slide 69: Same Renewal, Different Customer Intent
 
 Synthetic populations: 1,000 customers each, one renewal month.
 
@@ -778,7 +826,7 @@ Intent is stipulated before billing. All-customer unwanted shares are 2% and 30%
 
 Source: Marketing Dialectics, §9.5. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 66: A Welfare Comparison
+## Slide 70: A Welfare Comparison
 
 Synthetic stakes distinguish profit from customer value.
 
@@ -797,7 +845,7 @@ The combined change is 0.40 dollars per potential customer in this example. The 
 
 Source: M8, Section 8.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
-## Slide 67: Coding Exercise: A Marketing Evaluation
+## Slide 71: Coding Exercise: A Marketing Evaluation
 
 - Reproduce the two populations with identical billed renewal.
 - Keep unknown intent separate and compare the relevant denominators.
@@ -807,7 +855,7 @@ Run ../03_Data_and_Code/Marketing_Dialectics/evaluate_retention.py. The full pro
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 68: Federal Cancellation Policy: Current Status
+## Slide 72: Federal Cancellation Policy: Current Status
 
 - July 2025: the Eighth Circuit vacated the 2024 FTC rule.
 - February 2026: the FTC restored the earlier prenotification rule.
@@ -817,7 +865,7 @@ Checked November 5, 2026. The court identified a procedural deficiency. The Marc
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 69: Cancellation Rules Differ by Jurisdiction
+## Slide 73: Cancellation Rules Differ by Jurisdiction
 
 - California strengthened its Automatic Renewal Law on July 1, 2025.
 - New York City's separate rule took effect October 1, 2026.
@@ -827,7 +875,7 @@ California guidance describes online cancellation without obstruction for online
 
 Source: ../01_Resources/13_Consumer_Agency_and_Recent_Research/Policy/README.md
 
-## Slide 70: Research Frequency and Policy Importance
+## Slide 74: Research Frequency and Policy Importance
 
 - Social influence leads the selected literature clusters.
 - Exit friction can affect many customers even with few papers in the sample.
@@ -837,7 +885,7 @@ Journal counts give each paper equal weight and do not measure market exposure o
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
-## Slide 71: Pricing, Reviews, and Delivery
+## Slide 75: Pricing, Reviews, and Delivery
 
 - Price-display rules require attention to the covered industry.
 - Reviews presented as customer experiences require truthful provenance.
@@ -847,7 +895,7 @@ The FTC fee rule covers live-event tickets and short-term lodging. Its review ru
 
 Source: Primary-source scope and status record: ../06_Lecture_Notes/ETHICS_AND_REGULATION.md.
 
-## Slide 72: Pricing Language and Regulatory Evidence
+## Slide 76: Pricing Language and Regulatory Evidence
 
 - Shelf infrastructure, price rules, and consumer effects are separate objects.
 - The FTC's January 2025 report describes research on pricing intermediaries.
@@ -857,7 +905,7 @@ The US FTC Section 6(b) staff research summaries report preliminary findings. Th
 
 Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf
 
-## Slide 73: Personalized Pricing: Policy Status
+## Slide 77: Personalized Pricing: Policy Status
 
 - FTC: August 2026 proposal; October 2026 information-gathering inquiry.
 - New York: disclosure law in effect; broader restrictions await enactment.
@@ -867,7 +915,7 @@ Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
 
-## Slide 74: Environmental Claims: Two Different Decisions
+## Slide 78: Environmental Claims: Two Different Decisions
 
 - 2023 Shell ads: the ASA upheld the overall-impression complaint.
 - 2025 Shell ad: the ASA accepted the contextualized communication.
@@ -877,7 +925,7 @@ UK ASA, June 7, 2023: omitted context about the balance of business activities m
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 75: A Product Fact and a Portfolio Impression
+## Slide 79: A Product Fact and a Portfolio Impression
 
 The scope of the conclusion determines the evidence required.
 
@@ -889,7 +937,7 @@ A true statement about one product can be insufficient to support a broader impr
 
 Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 76: Digital Service and Feasible Customer Choice
+## Slide 80: Digital Service and Feasible Customer Choice
 
 - Offer assistance while preserving a usable alternative.
 - Measure completion, customer time, and firm cost on a fixed roster.
@@ -899,7 +947,7 @@ An optional assistance intervention can expand feasible choices. A mandatory app
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 77: Evidence and Authority to Classify a Customer
+## Slide 81: Evidence and Authority to Classify a Customer
 
 - Kantian critique examines the move from area activity to individual ability.
 - Respect for persons requires reasons for restrictions and usable correction.
@@ -909,7 +957,7 @@ A stable cluster does not authorize a firm to remove an individual’s options. 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 78: Reliable Measurement and a Worthy Objective
+## Slide 82: Reliable Measurement and a Worthy Objective
 
 Unbiasedness and precision support factual premises. The goal and treatment of people require reasons.
 
@@ -921,7 +969,7 @@ Statistical unbiasedness concerns an estimator across repetitions of a specified
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 79: Rational Acceptance and Reasonable Objection
+## Slide 83: Rational Acceptance and Reasonable Objection
 
 - Instrumental rationality: an effective choice for a selected aim.
 - Reasonableness: a principle justified through affected people’s reasons.
@@ -931,7 +979,7 @@ Suppose an urgently dependent customer accepts a surcharge that a seller predict
 
 Source: Scanlon, What We Owe to Each Other, chapter 5, §2, pp. 191–194. https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf
 
-## Slide 80: Pricing and Public Reassurance
+## Slide 84: Pricing and Public Reassurance
 
 - Personalized prices: predicted acceptance and authority to impose a burden.
 - Dynamic pricing: discount claims, full price paths, and usable alternatives.
@@ -941,7 +989,7 @@ The practices share a need to justify consequential treatment to affected people
 
 Source: M9 §§9.26, 9.31–9.34 and M5 §5.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 81: Same Tested Demand, Opposite Welfare Signs
+## Slide 85: Same Tested Demand, Opposite Welfare Signs
 
 Synthetic population: L 60%, H 40%. Surplus changes are −USD 1.682 and +USD 0.682.
 
@@ -953,7 +1001,7 @@ The baseline price is USD 10 for both groups. The candidate schedule charges L U
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 82: A Majority Benefits While a Minority Loses
+## Slide 86: A Majority Benefits While a Minority Loses
 
 Synthetic uniform valuations: discount-only pricing remains profitable and avoids H’s price increase.
 
@@ -965,7 +1013,7 @@ The benchmark is the optimal uniform price USD 19/3. L represents 60% and H 40%;
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 83: A Defensible Scanlonian Pricing Argument
+## Slide 87: A Defensible Scanlonian Pricing Argument
 
 - Identify the person’s burden and the facts producing it.
 - Compare a viable less burdensome principle.
@@ -975,7 +1023,7 @@ If a seller exploits serious need despite a viable lower offer and no comparably
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 84: Dubé’s Mobile Targeting: Reconstruct the Incentives
+## Slide 88: Dubé’s Mobile Targeting: Reconstruct the Incentives
 
 | Rounded Table 9 | Theater A | Theater B |
 | --- | --- | --- |
@@ -989,7 +1037,7 @@ The complete 4-by-4 table yields behavioral targeting as the sole pure equilibri
 
 Source: Dubé, Fang, Fong, and Luo (2017), Table 9, p. 965. https://doi.org/10.1287/mksc.2017.1042
 
-## Slide 85: Kantian Authority Over Location History
+## Slide 89: Kantian Authority Over Location History
 
 - Specify the maxim, including any concealment or dependence.
 - Check permission, understandable terms, and usable refusal.
@@ -999,7 +1047,7 @@ The paper documents targeting from current location and historical visits. The c
 
 Source: Kant, Groundwork, Academy 4:421–430. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 86: An Antitrust Case Needs a Specified Mechanism
+## Slide 90: An Antitrust Case Needs a Specified Mechanism
 
 - Section 1: evidence of agreement beyond parallel pricing.
 - Section 2: monopoly power and exclusionary conduct.
@@ -1009,7 +1057,7 @@ A paper’s method or a model’s softening of competition does not establish a 
 
 Source: https://www.law.cornell.edu/supct/html/05-1126.ZO.html https://www.law.cornell.edu/supremecourt/text/02-682 ../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md
 
-## Slide 87: Revenue Growth Differs from an Overcharge
+## Slide 91: Revenue Growth Differs from an Overcharge
 
 | Synthetic One-Period Comparison | USD |
 | --- | --- |
@@ -1023,7 +1071,7 @@ The example assumes 100 counterfactual purchases at USD 100 and 92 actual purcha
 
 Source: https://www.law.cornell.edu/supremecourt/text/11-864 https://www.law.cornell.edu/supremecourt/text/429/477 ../03_Data_and_Code/AI_Experimentation_and_Pricing/compare_pricing_damages.py
 
-## Slide 88: Antitrust Proof and Reasons Owed to People
+## Slide 92: Antitrust Proof and Reasons Owed to People
 
 A remedy needs attributable injury, a feasible alternative, and justified treatment of affected people.
 
@@ -1035,7 +1083,7 @@ Scanlonian reasoning can explain why independent alternatives matter and why san
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 89: Legal Permission Leaves an Ought Question
+## Slide 93: Legal Permission Leaves an Ought Question
 
 - A lawful unilateral practice can still exploit serious need.
 - An ethical objection does not supply a missing legal element.
@@ -1045,7 +1093,7 @@ The hypothetical remedy separates useful independent forecasting from a proved r
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md https://www.justice.gov/atr/case/us-and-plaintiff-states-v-realpage-inc
 
-## Slide 90: Name What Would Change the Conclusion
+## Slide 94: Name What Would Change the Conclusion
 
 - New randomized cells can distinguish response models.
 - Independent valuations can narrow welfare disagreement.
@@ -1056,7 +1104,7 @@ Scientific criticism remains open to correction. For electricity claims, informa
 
 Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 91: Personalization and the Learner’s Authority
+## Slide 95: Personalization and the Learner’s Authority
 
 - Keep the source argument and consequential assumptions accessible.
 - Allow a learner to change representations and challenge the conclusion.
@@ -1066,7 +1114,7 @@ A student can reasonably object to an explanation that hides the premise on whic
 
 Source: M9, Section 9.44, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 92: A Decision with Consumer Outcomes
+## Slide 96: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

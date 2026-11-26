@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [569-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 138 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [579-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 140 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -16,7 +16,7 @@ Read the [569-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; eight editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 22 editable TikZ figures |
 
 The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
 
@@ -219,3 +219,7 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## Explanation and Learning Evaluation
 
 M1 §1.21, M2 §2.29, M6 §6.39, and M9 §9.44 connect source fidelity, bill measurement, percentage denominators, feature effects, and learner authority. [Two complete programs](../03_Data_and_Code/Learning_Design/README.md) and two editable TikZ figures accompany an [HTML pilot](../08_Wiki/pilot/README.md) and [optional practice](../07_Labs/AI_Augmented_Learning/README.md). The [source review](../01_Resources/43_AI_Augmented_Learning/README.md) separates the reported learning experiment from original synthetic calculations.
+
+## Conflicts of Interest and Consumer Control
+
+M9 §§9.45–9.49 examines responsibilities, disclosure, dependence, engagement evidence, and reasons for honoring stopping instructions. M1 §1.22, M7 §7.47, and M8 §8.33 carry the issue into question formulation, prediction, and integrated decisions. The [original comparison](../03_Data_and_Code/Conflicts_of_Interest/README.md) includes full matching Python and independent calculations; the [source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records what was reviewed. Two editable figures show conflicting pressures on judgment and the premises of an ought conclusion.

@@ -1,0 +1,9 @@
+policy,group,n,contribution_cents,goals_completed,regret_reports,excess_minutes,respects_stop,discloses_incentive
+finite_feed,leisure,800,16000,720,24,1600,1,0
+finite_feed,time_limited,200,4000,160,16,800,1,0
+endless_feed,leisure,800,22400,736,32,2400,0,0
+endless_feed,time_limited,200,9000,120,90,4000,0,0
+disclosed_endless,leisure,800,22400,736,32,2400,0,1
+disclosed_endless,time_limited,200,9000,120,90,4000,0,1
+user_controls,leisure,800,19200,744,24,800,1,1
+user_controls,time_limited,200,4400,174,10,400,1,1

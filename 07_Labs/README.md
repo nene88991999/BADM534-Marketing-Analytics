@@ -102,3 +102,7 @@ The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includ
 ## Explanation and Learning Evaluation
 
 [AI-Augmented Learning](AI_Augmented_Learning/README.md) is optional ungraded practice in predicting a bill, preserving an argument across representations, calculating percentage changes, separating feature effects, and defending a revised conclusion. It runs without an AI account and adds no assessment rule.
+
+## Conflicts of Interest and Consumer Control
+
+[Optional ungraded practice](Conflicts_of_Interest/README.md) develops a duty-based conflict analysis, reproduces the synthetic feed comparison, and constructs a Kantian and Scanlonian argument with a feasible alternative. It also connects professional dissent to Confucian remonstrance.

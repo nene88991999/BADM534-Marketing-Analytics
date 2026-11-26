@@ -10,7 +10,8 @@
       "Verify generated code using identities and counterexamples.",
       "Distinguish a definition, an inference, a validation condition, and source evidence.",
       "Reconstruct a recommendation through its premises, a counterexample, and a condition for revision.",
-      "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people."
+      "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.",
+      "Identify incentives and duties that shape the analytical question."
     ],
     "slides": [
       {
@@ -43,6 +44,18 @@
         ],
         "notes": "Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Kant limits theoretical knowledge to objects of possible experience; an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork. The course develops these distinctions in M9 §9.41.",
         "source": "M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Who Chooses the Objective?",
+        "bullets": [
+          "The sponsor rewards one outcome; consumers may value another.",
+          "Identify the duty governing the analyst’s judgment.",
+          "Examine outcomes and alternatives before estimating effects.",
+          "Give affected people a way to challenge the recommendation."
+        ],
+        "notes": "A seller and buyer can have opposing interests. A conflict of interest arises when an incentive threatens judgment owed under a responsibility. An analyst who is rewarded for favorable findings while responsible for accurate evaluation faces such a pressure. A correct calculation can still answer a question chosen to omit consumer burdens. Ask who funds measurement, chooses the horizon, and can require a redesign.",
+        "source": "M1 §1.22 and M9 §9.45. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -4189,6 +4202,18 @@
         "source": "M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/"
       },
       {
+        "kind": "bullets",
+        "title": "An Engagement Forecast Leaves an Ought Question",
+        "bullets": [
+          "Predicting continued use does not choose its purpose.",
+          "Measure goal completion and requested stopping separately.",
+          "Changing a penalty changes the selected design.",
+          "Defend the objective and any binding requirement."
+        ],
+        "notes": "The synthetic comparison in M9 §9.48 fixes the population and outcomes. A regret penalty of USD 0.50 per report selects the endless designs; USD 2 selects user controls. Requiring respect for a valid stopping instruction excludes both endless designs before ranking. The penalty is illustrative, and the requirement is a defended moral premise. Neither is established by prediction accuracy. Reasons for choosing the action require a separate justification.",
+        "source": "M7 §7.47; M9 §§9.46–9.48. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
         "kind": "figure",
         "title": "A Correct Total Can Misassign Activity",
         "figure": "../06_Lecture_Notes/figures/M07_workflow_checker.tex",
@@ -4876,7 +4901,8 @@
       "Compare the moral premises in personalized pricing, dynamic-pricing communication, and data-center reassurance.",
       "Assess validity, premise support, and reasonable justification symmetrically for a claim and its criticism.",
       "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.",
-      "Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons."
+      "Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons.",
+      "Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative."
     ],
     "slides": [
       {
@@ -5263,9 +5289,51 @@
         "title": "Self-Interest Creates a Burden of Justification",
         "figure": "../06_Lecture_Notes/figures/M09_burden_justification.tex",
         "caption": "A reason for scrutiny is distinct from evidence of misconduct.",
-        "description": "A material conflict leads to independent substantiation and then a decision that can change with evidence.",
-        "notes": "Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt.",
+        "description": "A material stake leads to independent substantiation and then a decision that can change with evidence.",
+        "notes": "Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt. A duty-based conflict is distinguished from ordinary opposing interests in §9.45.",
         "source": "Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Commercial Rewards and Analytical Judgment",
+        "figure": "../06_Lecture_Notes/figures/M09_conflict_judgment.tex",
+        "caption": "Specify the responsibility that a competing interest threatens.",
+        "description": "Employer rewards and responsibilities both influence analytical judgment. A decision affects users, whose effective challenge can change its objective and interpretation.",
+        "notes": "Commercial incentives can shape which outcomes are collected before they affect any coefficient. Valsan’s account locates a conflict in an interest that threatens judgment owed under a duty. The platform example also raises broader questions about power and consumer control. Scrutiny and safeguards can be appropriate before misconduct has been established.",
+        "source": "M9 §9.45. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Reward Learning and the Scope of Evidence",
+        "bullets": [
+          "Posting studies and reward experiments inform behavior.",
+          "Behavioral records do not measure dopamine release.",
+          "Habit and self-control evidence concerns specified interventions.",
+          "Evaluate the feed, the user’s purpose, and unwanted continuation."
+        ],
+        "notes": "Lindström and coauthors study posting and experimentally varied social rewards. Schultz, Dayan, and Montague examine dopamine-neuron activity in a separate neuroscience setting. Allcott, Gentzkow, and Song study temporary incentives and user-selected limits with an economic model. These sources provide different evidence. None alone identifies clinical addiction caused by an infinite-scroll feature. The ethical question concerns the actual design, its consequences, and the user’s authority to stop.",
+        "source": "M9 §9.46 and its source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Reasons for Honoring a Stopping Instruction",
+        "figure": "../06_Lecture_Notes/figures/M09_engagement_reasons.tex",
+        "caption": "Defend the factual and normative premises, then compare objections.",
+        "description": "Evidence about an overridden instruction and a feasible alternative combines with a principle of revocable authority. Comparison of affected people’s objections leads to a conditional ought conclusion and revision.",
+        "notes": "State the principle permitting a firm to override a boundary for revenue and compare it with user-directed continuation. A time-limited user, an entertainment user, and a worker or creator occupy different positions. Scanlonian justification examines reasons for rejecting principles. It is not a vote or a weighted sum of engagement. A Kantian assessment examines the maxim and the person’s capacity to set ends.",
+        "source": "M9 §9.47. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Synthetic Feed Decision",
+        "bullets": [
+          "Fixed population: 1,000 adult user-days per design.",
+          "Endless feed: USD 0.314 contribution; 85.6% goal completion.",
+          "User controls: USD 0.236 contribution; 91.8% goal completion.",
+          "A stopping requirement changes the feasible set before ranking."
+        ],
+        "notes": "The constructed population contains 800 leisure and 200 time-limited users. Under endless use, leisure goal completion improves relative to the finite feed while the time-limited group’s completion falls. Disclosure alone is assigned identical outcomes for a logical comparison, not an empirical estimate. All counts use the original group denominators. A requirement to honor a valid stopping instruction needs philosophical justification outside the score.",
+        "source": "M9 §9.48. ../03_Data_and_Code/Conflicts_of_Interest/README.md"
       },
       {
         "kind": "figure",
@@ -5998,7 +6066,8 @@
       "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
       "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
-      "../07_Labs/AI_Augmented_Learning/README.md"
+      "../07_Labs/AI_Augmented_Learning/README.md",
+      "[Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."

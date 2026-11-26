@@ -59,3 +59,7 @@ When discussing M9 §§9.41–9.43, distinguish unmeasured empirical objects, co
 ## Alternative Explanations and Independent Reasoning
 
 Use the [electricity lesson companion](08_Wiki/pilot/LESSON.md) when explaining prices, bills, and household-cost claims. Preserve the same definitions, units, assumptions, and conclusion when changing representations. Ask for a prediction and justification before supplying the calculation, and invite a supported objection. The [learning-design examples](03_Data_and_Code/Learning_Design/README.md) distinguish rounded published summaries from original synthetic values. Do not describe a correct calculation or a usable page as evidence of a learning benefit. The [HTML agent guide](08_Wiki/AGENTS.md) records implementation and verification requirements.
+
+## Conflicts of Interest and Engagement
+
+Use M9 §§9.45–9.49 and the [worked example](03_Data_and_Code/Conflicts_of_Interest/README.md). Identify the duty that an interest threatens before calling a situation a professional conflict. Preserve the synthetic data labels and distinguish behavioral reward learning from dopamine measurements and clinical diagnoses. A score weight is not a Scanlonian criterion. Require factual premises, a defended normative principle, objections to feasible alternatives, and reasons for revision. Treat the optional lab as ungraded practice.

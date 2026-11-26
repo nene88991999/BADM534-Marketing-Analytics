@@ -154,6 +154,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/AI_Augmented_Learning/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "conflicts-of-interest",
+      "path": "07_Labs/Conflicts_of_Interest/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -417,7 +423,12 @@ Generated from course.json and the source files identified below. This file cont
     "08_Wiki/AGENTS.md",
     "08_Wiki/pilot/README.md",
     "08_Wiki/pilot/LESSON.md",
-    "08_Wiki/pilot/VERIFICATION.md"
+    "08_Wiki/pilot/VERIFICATION.md",
+    "01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md",
+    "03_Data_and_Code/Conflicts_of_Interest/README.md",
+    "03_Data_and_Code/Conflicts_of_Interest/VERIFICATION.md",
+    "07_Labs/Conflicts_of_Interest/README.md",
+    "03_Data_and_Code/Conflicts_of_Interest/AGENTS.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -466,12 +477,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-ai-augmented-learning",
+    "revision": "2026-11-26-conflicts-of-interest",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 138,
-    "pages": 569,
+    "figures_count": 140,
+    "pages": 579,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -598,7 +609,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 499,
+    "slides": 505,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1575,6 +1586,29 @@ Generated from course.json and the source files identified below. This file cont
     "companion": "08_Wiki/pilot/LESSON.md",
     "verification": "08_Wiki/pilot/VERIFICATION.md",
     "deployed": false
+  },
+  "conflicts_of_interest": {
+    "implemented_on": "2026-11-26",
+    "sections": [
+      "M1 \u00a71.22",
+      "M7 \u00a77.47",
+      "M8 \u00a78.33",
+      "M9 \u00a7\u00a79.45\u20139.49"
+    ],
+    "sessions": [
+      1,
+      11,
+      14
+    ],
+    "resources": "01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md",
+    "examples": "03_Data_and_Code/Conflicts_of_Interest/README.md",
+    "verification": "03_Data_and_Code/Conflicts_of_Interest/VERIFICATION.md",
+    "practice": "07_Labs/Conflicts_of_Interest/README.md",
+    "source_records": 9,
+    "original_figures": 2,
+    "additional_slides": 6,
+    "matching_python_blocks": 125,
+    "scope": "Original synthetic feed comparison and philosophical applications; no estimated platform harm, dopamine measurement, clinical diagnosis, or finding of misconduct."
   }
 }
 ```
@@ -1595,7 +1629,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 138 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 140 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -1745,6 +1779,10 @@ M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place t
 ## Explanation and Independent Judgment
 
 The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bill, inspect the calculation, compare four representations, and revise a household-cost claim. [Complete Python](03_Data_and_Code/Learning_Design/README.md) also distinguishes percentage points from relative changes and a learning package from its component effects. M1, M2, M6, and M9 connect these ideas to independent reasoning and learner authority. [Optional practice](07_Labs/AI_Augmented_Learning/README.md) includes a transfer task.
+
+## Conflicts of Interest and Consumer Control
+
+[Marketing Dialectics §§9.45–9.49](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connects analyst incentives to duties, engagement design, and consumer authority. The [synthetic feed comparison](03_Data_and_Code/Conflicts_of_Interest/README.md), [source guide](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md), and [optional practice](07_Labs/Conflicts_of_Interest/README.md) distinguish empirical evidence from a defended ought conclusion.
 
 ---
 
@@ -2123,6 +2161,10 @@ M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place t
 
 [M1 §1.21](06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md) preserves an argument across representations. [M2 §2.29](06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) connects percentages, electricity prices, and household bills. [M6 §6.39](06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) separates a learning package from feature effects. [M9 §9.44](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines learner authority. Sessions 1, 2, 9, and 14 select examples within their existing blocks. [HTML pilot](08_Wiki/pilot/README.md); [text companion](08_Wiki/pilot/LESSON.md); [Python](03_Data_and_Code/Learning_Design/README.md); [optional practice](07_Labs/AI_Augmented_Learning/README.md).
 
+## Conflicts of Interest and Consumer Control
+
+M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect the analyst’s incentives to question selection, interpretation, and responsibilities. Sessions 1, 11, and 14 use selected comparisons within existing time. [Sources](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md); [complete synthetic Python](03_Data_and_Code/Conflicts_of_Interest/README.md); [optional practice](07_Labs/Conflicts_of_Interest/README.md). The feed case also connects to pricing, cancellation, mHealth targeting, and electricity reassurance.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2188,6 +2230,10 @@ When discussing M9 §§9.41–9.43, distinguish unmeasured empirical objects, co
 ## Alternative Explanations and Independent Reasoning
 
 Use the [electricity lesson companion](08_Wiki/pilot/LESSON.md) when explaining prices, bills, and household-cost claims. Preserve the same definitions, units, assumptions, and conclusion when changing representations. Ask for a prediction and justification before supplying the calculation, and invite a supported objection. The [learning-design examples](03_Data_and_Code/Learning_Design/README.md) distinguish rounded published summaries from original synthetic values. Do not describe a correct calculation or a usable page as evidence of a learning benefit. The [HTML agent guide](08_Wiki/AGENTS.md) records implementation and verification requirements.
+
+## Conflicts of Interest and Engagement
+
+Use M9 §§9.45–9.49 and the [worked example](03_Data_and_Code/Conflicts_of_Interest/README.md). Identify the duty that an interest threatens before calling a situation a professional conflict. Preserve the synthetic data labels and distinguish behavioral reward learning from dopamine measurements and clinical diagnoses. A score weight is not a Scanlonian criterion. Require factual premises, a defended normative principle, objections to feasible alternatives, and reasons for revision. Treat the optional lab as ungraded practice.
 
 ---
 
@@ -2443,6 +2489,10 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 [Learning Design](Learning_Design/README.md) contains exact calculations for reported rounded percentages, a synthetic factorial design, and the existing electricity bill example. Standard-library Python generates the reference values used by the [HTML pilot](../08_Wiki/pilot/README.md). Participant data and empirical learning effects are absent; synthetic means are identified beside their calculations.
 
+## Conflicts of Interest and Engagement
+
+[Conflicts of Interest](Conflicts_of_Interest/README.md) contains eight synthetic policy-by-group rows, a standard-library Python program, saved aggregates, and independent checks. M9 §9.48 reproduces the complete code and separates contribution, goal completion, regret, disclosure, and a defended stopping requirement.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2451,7 +2501,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [569-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 138 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [579-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 140 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2465,7 +2515,7 @@ Read the [569-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; eight editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 22 editable TikZ figures |
 
 The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
 
@@ -2669,6 +2719,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 
 M1 §1.21, M2 §2.29, M6 §6.39, and M9 §9.44 connect source fidelity, bill measurement, percentage denominators, feature effects, and learner authority. [Two complete programs](../03_Data_and_Code/Learning_Design/README.md) and two editable TikZ figures accompany an [HTML pilot](../08_Wiki/pilot/README.md) and [optional practice](../07_Labs/AI_Augmented_Learning/README.md). The [source review](../01_Resources/43_AI_Augmented_Learning/README.md) separates the reported learning experiment from original synthetic calculations.
 
+## Conflicts of Interest and Consumer Control
+
+M9 §§9.45–9.49 examines responsibilities, disclosure, dependence, engagement evidence, and reasons for honoring stopping instructions. M1 §1.22, M7 §7.47, and M8 §8.33 carry the issue into question formulation, prediction, and integrated decisions. The [original comparison](../03_Data_and_Code/Conflicts_of_Interest/README.md) includes full matching Python and independent calculations; the [source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records what was reviewed. Two editable figures show conflicting pressures on judgment and the premises of an ought conclusion.
+
 ---
 
 ## Source: 03_Data_and_Code/Lecture_Examples/README.md
@@ -2737,7 +2791,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 499 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 505 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2911,6 +2965,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## Explanation and Learning Evaluation
 
 Six slides in Sessions 1, 2, 9, and 14 connect alternative representations, electricity bills, percentage denominators, factorial designs, and learner authority. Two editable diagrams and [complete Python](../03_Data_and_Code/Learning_Design/README.md) support the calculations. The [HTML pilot](../08_Wiki/pilot/README.md) and [optional practice](../07_Labs/AI_Augmented_Learning/README.md) preserve the original argument and invite a supported objection. These examples use existing meeting blocks.
+
+## Conflicts of Interest and Consumer Control
+
+Sessions 1, 11, and 14 connect incentives and duties to question selection, engagement prediction, and an ought conclusion. Two new editable TikZ diagrams and the synthetic feed comparison support M9 §§9.45–9.49. The [optional lab](../07_Labs/Conflicts_of_Interest/README.md) contains extended practice; existing meeting durations are retained.
 
 ---
 
@@ -3491,6 +3549,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## AI-Augmented Learning and Independent Judgment
 
 [The reviewed paper and later report](../01_Resources/43_AI_Augmented_Learning/README.md) motivate preserving an argument across prose, equations, diagrams, and code. M1 §1.21 develops that requirement; M2 §2.29 connects percentages and bills; M6 §6.39 uses a synthetic factorial comparison; M9 §9.44 examines learner authority. [Complete Python](../03_Data_and_Code/Learning_Design/README.md), two editable figures, and the [electricity pilot](../08_Wiki/pilot/README.md) support the examples. Usability and calculation checks do not establish an effect on student learning.
+
+## Conflicts of Interest and Consumer Control
+
+The [nine-source supplement](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) supports M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49. The [synthetic feed program](../03_Data_and_Code/Conflicts_of_Interest/README.md) uses original totals and no borrowed empirical coefficients. Sessions 1, 11, and 14 use selected discussion slides; [optional practice](../07_Labs/Conflicts_of_Interest/README.md) supplies the extended exercise.
 
 ---
 
@@ -4234,6 +4296,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 
 The [electricity pilot and optional practice](../07_Labs/AI_Augmented_Learning/README.md) connect four representations to an independent prediction and a defended objection. Session 1 uses five minutes within 155–170; Session 2 uses 148–155; Session 9 uses five minutes within 45–70 for the factorial comparison; Session 14 uses three minutes within its ethics discussion. Select these examples within the existing blocks. Longer calculations and transfer tasks remain optional. The fifteen dates and 170-minute meetings retain their existing allocations.
 
+## Conflicts of Interest and Consumer Control
+
+Session 1 adds the analyst’s incentives and duties to the existing final discussion. Session 11 connects prediction to the choice of a defensible objective. Session 14 uses a selected feed comparison within the existing Marketing Dialectics block: identify the duty, distinguish reward learning from neural and clinical claims, compare reasonable objections, and defend a stopping requirement. The extended source review and code are optional practice in [Conflicts of Interest](../07_Labs/Conflicts_of_Interest/README.md). These selections retain all 15 meetings and their 170-minute allocations.
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -4427,6 +4493,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 
 Use the [electricity pilot](../08_Wiki/pilot/README.md) for prediction, alternative representations, inspection of assumptions, and transfer to a subscription example. Sessions 1, 2, 9, and 14 allocate five, seven, five, and three minutes within their existing discussion or worked-comparison blocks. The [learning-design calculation](../03_Data_and_Code/Learning_Design/README.md) separates a whole-package effect from feature effects. Source fidelity, calculation accuracy, usability, and independent reasoning need separate evaluation. The [extended practice](../07_Labs/AI_Augmented_Learning/README.md) is optional and ungraded.
 
+## Conflicts of Interest and the Analyst’s Responsibility
+
+M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect commercial incentives to the choice of outcomes, professional judgment, and consumer authority. Sessions 1, 11, and 14 select the duty distinction, engagement comparison, and philosophical argument within existing discussion time. The [optional ungraded lab](../07_Labs/Conflicts_of_Interest/README.md) supplies extended practice without changing assessment requirements. A complete synthetic Python example separates score weights from a defended requirement to honor valid stopping instructions.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -4567,6 +4637,10 @@ The [antitrust source guide](../01_Resources/16_AI_Experimentation_and_Pricing/A
 M9 §9.40 connects validity and premise support to the existing Scanlonian evaluation of pricing and public reassurance. M1 §1.20 introduces the five-step exercise; M4 §4.29 and M6 §6.38 supply exact numerical constructions. Students distinguish a supported criticism from a stronger accusation and identify evidence or reasons that would change either conclusion. The [logic guide](../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) records the primary readings. These additions make no new legal claim or change to the recorded status of any policy.
 
 [M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+
+## Conflicts of Interest, Judgment, and Engagement
+
+M9 §§9.45–9.49 separates commercial adversity, a duty-based conflict, demonstrated bias, and wrongdoing. Valsan, the Institute of Medicine, Cain and coauthors, Lovett and Pettit, Balkin, and Khan and Pozen support distinct parts of the analysis; [the source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records scope. The fiduciary debate is normative and legal scholarship, not a statement of a universal current legal duty. The infinite-scroll case separates behavioral reward learning, neuroscience, economic self-control evidence, and clinical claims. The numerical comparison is entirely synthetic. Public-reassurance criticism does not assert an undocumented author motive or financial relationship.
 
 ---
 
@@ -4733,7 +4807,7 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. The course applies measurement, visualization, regression, conjoint analysis, segmentation, lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation to product design, acquisition, retention, pricing, and budgets.
 
-Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to customer burdens, agency, and regulation. Students examine the worth of objectives, make premises explicit, test counterexamples, and apply the same evidential standards to claims and criticisms. Kant's phenomena–noumena distinction and an ontological spectrum connect empirical representation to questions about persons, institutional authority, and obligations. Commercial effectiveness and statistical precision require further reasons before supporting a justified recommendation.
+Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to consumer agency, conflicts of interest, and regulation. Students examine the worth of objectives, make premises explicit, test counterexamples, and apply the same evidential standards to claims and criticisms. Kant's phenomena–noumena distinction and an ontological spectrum connect measurement to persons, authority, and obligations. Commercial effectiveness and statistical precision require further reasons to justify recommendations.
 
 ## Learning Objectives
 
@@ -5348,6 +5422,10 @@ The [logic reading guide](08_Logic_and_Analytical_Arguments/README.md) connects 
 
 Kantian limits, the ontological spectrum, and critiques of empiricism connect behavioral representation to distinct questions about institutions, agency, and normative reasons. The guide records selected primary passages by Kant, Sellars, Bhaskar, Husserl, and Scanlon, with a separate empirical reference on publication selection.
 
+## Conflicts of Interest, Attention, and Control
+
+The [supplemental guide](09_Conflicts_of_Interest/README.md) distinguishes opposing interests, duties governing judgment, disclosure, and dependence. Nine selected records connect philosophical analysis to behavioral evidence on engagement. M9 §§9.45–9.49 adds two editable TikZ diagrams and a complete original Python comparison, with [optional practice](../../07_Labs/Conflicts_of_Interest/README.md).
+
 ---
 
 ## Source: 03_Data_and_Code/Marketing_Dialectics/README.md
@@ -5660,7 +5738,7 @@ Kant's essay on enlightenment connects maturity with the use of one's own unders
 
 ### 9.10.1 Scrutiny Before Reliance
 
-\noindent A company can gain from a practice while customers bear costs that the company does not fully internalize. The company may also control the interface, the outcome definitions, and the evidence presented to outsiders. These features justify demanding substantiation before relying on a claim of customer benefit. They do not establish that every company has committed misconduct. A conflict of interest identifies a reason to examine a claim and the process that produced it; a finding of wrongdoing requires evidence about the particular practice.
+\noindent A company can gain from a practice while customers bear costs that the company does not fully internalize. The company may also control the interface, the outcome definitions, and the evidence presented to outsiders. These features justify demanding substantiation before relying on a claim of customer benefit. A material stake supplies a reason for scrutiny. When an interest threatens judgment owed to another person or a professional purpose, it also creates a conflict of interest in the sense developed in §9.45. A finding of wrongdoing requires evidence about the particular practice.
 
 Hume supplies a strong argument for institutional safeguards. In *Of the Independency of Parliament*, he treats the assumption of private-interest pursuit as a principle for designing checks on power. He explicitly distinguishes that political maxim from a factual claim that every person is dishonest. The institutional question is whether the arrangement remains acceptable when participants pursue their separate interests. Applied to marketing, this asks whether customers retain meaningful protection when managers respond strongly to sales targets. The application extends Hume's argument about political institutions to commercial governance. [Hume, paragraphs 1–3](https://davidhume.org/texts/emp/ip)
 
@@ -5672,9 +5750,9 @@ The resulting principle for a marketing decision is demanding: when a firm contr
 
 \noindent The burden must be connected to a claim that could be supported or refuted. For a cancellation process, the firm could supply evidence on completion, understanding, subsequent charges, and outcomes for customers who sought to leave. For a personalized recommendation, it could show how the objective corresponds to customers' stated purposes and how a person can revise it. For a claim about environmental performance, it could provide the relevant scope, denominator, and supporting records. Independent examination need not involve disclosing identifiable customer records; controlled access and reproducible aggregates can address different parts of the evidentiary problem.
 
-![A conflict of interest changes the scrutiny of evidence; a verdict follows the evaluation of the practice.](../figures/M09_burden_justification.png)
+![A material stake changes the scrutiny of evidence; a verdict follows the evaluation of the practice.](../figures/M09_burden_justification.png)
 
-The sequence separates the reason for scrutiny from the conclusion reached after scrutiny. A material conflict raises questions about measurement, selective disclosure, and omitted outcomes. Evidence then supports acceptance, a narrower claim, redesign, or rejection. A process that always reaches rejection regardless of the evidence has ceased to be a critical evaluation.
+The sequence separates the reason for scrutiny from the conclusion reached after scrutiny. Commercial incentives raise questions about measurement, selective disclosure, and omitted outcomes. Evidence then supports acceptance, a narrower claim, redesign, or rejection. A process that always reaches rejection regardless of the evidence has ceased to be a critical evaluation.
 
 The standard can also be asymmetric. When the firm receives the gains, controls the information, and imposes a substantial or difficult-to-reverse risk on customers, it is reasonable to require stronger evidence before deployment than before continuing a small, reversible pilot. That recommendation depends on a stated judgment about the consequences of acting and waiting. It does not turn uncertainty into proof of harm. The analyst should identify the information needed, the feasible alternative, and the condition under which the restriction can be relaxed.
 
@@ -7187,6 +7265,228 @@ The electricity case provides a concrete test. A student first predicts a bill c
 
 The same standard applies to the course's own critique. Ask students to formulate the strongest supported reply, identify evidence that would change the criticism, and transfer the argument to an unfamiliar setting. A learning tool earns support when it helps students produce and examine reasons under a defensible educational objective. Its capacity to adapt content makes that objective consequential before optimization begins.
 
+## 9.45 Conflicts of Interest and the Analyst's Judgment
+
+### 9.45.1 Identify the Duty Before Naming the Conflict
+
+\noindent A marketing analyst is asked to recommend a feed design. The employer rewards advertising contribution, while some users want to finish a task and leave. The analyst's recommendation affects both parties, and the employer controls the budget for measuring consequences. The first question is which responsibilities govern the analyst's judgment. Accurate reporting, faithful execution of a consumer's instruction, and impartial evaluation of a customer-benefit claim can each create a responsibility that an engagement target threatens.
+
+Valsan distinguishes opposing interests in a transaction from an interest that interferes with judgment owed to another. On this account, the latter requires a duty-bearing relationship. The Institute of Medicine likewise treats a conflict as a risk to judgment concerning a primary responsibility; the conflict can exist before biased conduct is demonstrated. These accounts explain why sincerity alone provides an inadequate safeguard. [Valsan, 2016, §§III–IV](https://lawjournal.mcgill.ca/article/fiduciary-duties-conflict-of-interest-and-proper-exercise-of-judgment/); [Institute of Medicine, 2009, Summary](https://www.ncbi.nlm.nih.gov/books/NBK22926/).
+
+Three situations need different arguments. A seller seeking a high price and a buyer seeking a low price have divergent interests. An analyst paid for favorable findings while responsible for a sound evaluation faces an interest that can compromise that responsibility. An adviser undertaking to serve a consumer while receiving commissions for steering purchases faces a conflict tied to the undertaking. The source of the duty must be stated in each case. An employment relationship does not automatically make every analyst a legal fiduciary to every customer. Ordinary commercial dealings remain subject to moral scrutiny concerning deception, manipulation, and imposed burdens.
+
+### 9.45.2 Incentives Enter Before the Estimate
+
+\noindent A bonus need not change a regression coefficient to influence a recommendation. It can affect the outcome selected, the alternatives funded, the follow-up period, or the people invited to explain a burden. A team may estimate watch time accurately while leaving unwanted continuation outside the evaluation. The numerical result can be correct even when the decision process systematically excludes reasons against deployment.
+
+The analyst should identify who sets the question, pays for the work, chooses the comparison, approves publication, and can require a redesign. Financial compensation, continued access to data, promotion, reputation, and commitment to an earlier recommendation can create different pressures. Their existence warrants an assessment of the procedure. A claim that a particular researcher concealed evidence still requires evidence of concealment.
+
+![Commercial rewards and duties can pull on the same analytical judgment. Consumers need a route to challenge the objective and the decision.](../figures/M09_conflict_judgment.png)
+
+The upper path connects the employer's reward to the analyst's choices about measurement and recommendation. The lower path connects those choices to responsibilities and affected users. A consumer's ability to challenge the objective changes who can demand an answer when the commercial measure omits a burden. Independent review needs access to the relevant records and authority to alter the decision; its value depends on how it operates.
+
+### 9.45.3 Disclosure and Control Address Different Problems
+
+\noindent Explaining that a service earns more when a user stays longer can improve understanding of its incentive. The explanation leaves separate questions about stopping, appeal, and the analyst's rewards. Cain, Loewenstein, and Moore's laboratory studies identify circumstances in which disclosure encourages adviser exaggeration or moral licensing while recipients insufficiently adjust. Their fourth study examines jointly presented unconflicted advice. These findings support evaluating the remedy's operation in its setting; they establish no universal effect of disclosure. [Cain, Loewenstein, and Moore, 2011](https://www.cmu.edu/dietrich/sds/docs/loewenstein/WhenSunLightFails.pdf).
+
+A useful response combines truthful disclosure with changes to decision rights and incentives. An evaluator can have a fixed budget and compensation independent of the deployment result. A review process can require reporting customer outcomes and preserve the ability to publish adverse findings. Users can retain a stopping control that the growth team cannot silently disable. A conflicted decision maker may need to recuse when independent judgment cannot be secured within the role. Each measure should address a specified pressure rather than serve as evidence of ethical quality by its mere existence.
+
+### 9.45.4 Benevolence and Dependence
+
+\noindent A platform may currently honor user preferences while retaining unilateral power to alter the terms of assistance. Lovett and Pettit's republican account directs attention to a capacity for interference that is not subject to the affected person's effective control. Its commercial application asks whether protection depends entirely on a provider's continuing goodwill. An enforceable stopping instruction, meaningful appeal, and viable alternatives can address different sources of dependence. A symbolic opt-out with substantial costs can leave the practical relation largely intact. [Lovett and Pettit, 2009, pp. 13–16](https://bpb-us-e2.wpmucdn.com/sites.wustl.edu/dist/6/3556/files/2017/02/2009.-Neorepublicanism-2bzyex8.pdf).
+
+Whether platforms should acquire fiduciary duties is a further institutional question. Balkin develops an information-fiduciary proposal; Khan and Pozen challenge its capacity to reconcile platform incentives and competing obligations. These are legal and normative arguments, not a statement that all platforms already owe an identical fiduciary duty. For a marketing recommendation, identify the undertaking actually made and defend any additional obligation proposed. [Balkin, 2016, §§III–V](https://lawreview.law.ucdavis.edu/sites/g/files/dgvnsk15026/files/media/documents/49-4_Balkin.pdf); [Khan and Pozen, 2019](https://harvardlawreview.org/wp-content/uploads/2019/12/497-541_Online.pdf).
+
+## 9.46 Infinite Scroll, Reward Learning, and Consumer Purposes
+
+\noindent A feed can remove natural pauses, select appealing content, and repeatedly invite continuation. An advertising-funded provider may gain from additional exposure even after a user has accomplished the purpose that brought them to the service. The ethical concern becomes sharper when the design frustrates a stated stopping intention or exploits a demonstrated difficulty in leaving. Greater use alone leaves the value of that use unresolved.
+
+Reward learning provides one relevant empirical mechanism. Lindström and coauthors analyze posting behavior and manipulate social rewards in an online experiment with 176 participants. Their findings support a reward-learning account of posting. The study measures behavior rather than dopamine release, and it does not isolate an infinite-scroll interface. Schultz, Dayan, and Montague connect dopamine-neuron activity to reward prediction in a distinct neuroscientific setting. Moving from those results to a claim that a specific feed causes clinical addiction requires additional evidence. [Lindström et al., 2021](https://doi.org/10.1038/s41467-020-19607-x); [Schultz, Dayan, and Montague, 1997](https://www.gatsby.ucl.ac.uk/~dayan/papers/sdm97.pdf).
+
+Allcott, Gentzkow, and Song provide separate experimental evidence: temporary incentives to reduce social-media use have persistent effects, and allowing people to set future limits reduces use. Their estimate that self-control problems account for 31% of use is conditional on their economic model and study population. It is neither a clinical prevalence measure nor an estimate of an infinite-scroll feature's effect. [Allcott, Gentzkow, and Song, 2022](https://www.aeaweb.org/articles?id=10.1257/aer.20210867).
+
+A responsible evaluation would compare feasible feed designs using outcomes chosen before observing results. These could include completion of a user-stated purpose, compliance with a requested stopping point, unwanted continuation reported later, and displacement of other activities. Survey missingness matters when dissatisfied users leave before responding. Report outcomes over the eligible population and assess selective follow-up. Qualitative accounts can clarify what users meant by a stopping request, while an appropriately designed experiment identifies effects of the assigned design.
+
+The analyst must also consider users who value sustained entertainment, social contact, or accessible browsing. Automatically restricting all use could burden them. A design that allows informed continuation while honoring revocable stopping instructions provides a concrete alternative to examine. Its consequences require evaluation, and its justification requires reasons that affected people can challenge. The absence of a neural measure supplies no permission to disregard an expressed refusal.
+
+## 9.47 From Commercial Incentives to an Ought Conclusion
+
+### 9.47.1 State the Principle and Its Alternative
+
+\noindent Consider a hypothetical platform that knows a group of users wishes to stop after a chosen duration. Its analyst can predict which prompts prolong their sessions. The proposed principle permits overriding that boundary whenever expected advertising contribution increases. A feasible alternative preserves useful recommendations and lets users deliberately revise the boundary. The comparison concerns who has authority over continuation as well as what each design produces.
+
+A Kantian assessment examines a maxim that treats a person's difficulty in carrying out a considered intention as a commercial opportunity. Deliberately defeating that intention to obtain additional exposure can subordinate the person's capacity to set ends to the firm's objective. Prediction accuracy strengthens the firm's ability to implement the practice; it supplies no justification for the end or the means. A user who knowingly revises a goal presents a different case from a system that quietly defeats it. The relevant facts concern understanding, authority, and how continuation occurs (§§9.4 and 9.16).
+
+Scanlonian reasoning compares the objections a person could reasonably raise to the governing principles. A time-limited user can object to a rule permitting a provider to override an expressed boundary for revenue. Other users can object to unnecessary restrictions on valued entertainment. Workers and creators can raise reasons concerning livelihoods and a viable service. Assess the burdens each principle imposes from these positions, including the costs of the feasible alternative. A larger total of small commercial benefits does not automatically answer an individual's serious objection. Neither a majority vote nor a weighted engagement score performs this reasoning (§9.30).
+
+![An ought conclusion requires supported facts, a defended principle, and comparison with objections to a feasible alternative.](../figures/M09_engagement_reasons.png)
+
+The empirical premise concerns whether a request is defeated and whether an alternative can work. The normative premise concerns the authority of a person's revocable instruction. Challenges can change either premise: an ambiguous signal may fail to establish refusal, and a necessary protective interruption may call for a narrower principle. A defensible conclusion states the circumstances in which the platform ought to honor the boundary and what exception, if any, can be justified to the affected person.
+
+### 9.47.2 The Analyst's Responsibility Within the Organization
+
+\noindent The analyst can document the outcome omitted by a growth target, preserve adverse findings, and compare an alternative that serves the user's purpose. If management requests a claim of consumer benefit from engagement alone, the analyst ought to decline that claim and explain the missing premise. Where the evidence shows that a feature defeats valid stopping instructions for commercial gain, the recommendation should oppose that feature under the defended principle. The proposed responsibility concerns the work the analyst controls and the reasons for it.
+
+Confucian remonstrance adds an institutional question: can an employee challenge a profitable proposal without being punished for disloyalty? A firm that rewards the appearance of agreement while suppressing relevant objections weakens the judgment on which its recommendations depend (§9.11). Protecting dissent, funding independent assessment, and assigning authority to respond to affected users give professional responsibility an organizational basis. Requiring individual courage while retaining incentives to conceal burdens leaves the structural pressure in place.
+
+## 9.48 A Synthetic Evaluation of Feed Policies
+
+\noindent Suppose four designs serve the same hypothetical population of 1,000 adult user-days, including 800 leisure users and 200 users with a stated time limit. The finite feed provides stopping points. The endless feed continues despite the requested boundary. A disclosed endless feed adds information about the firm's incentive while holding behavior fixed. A user-controls design honors the boundary and permits deliberate continuation. The inputs are exact scenario totals rather than sampled observations or estimated effects.
+
+Platform contribution is revenue less variable operating cost in USD per user-day. Goal completion uses a purpose specified before exposure. Regret is a next-day report of unwanted use, with complete follow-up assumed for the constructed population. Excess time sums positive deviations from intended duration; a person who finishes early contributes zero. Excess time may follow an authorized revision, so it alone does not establish an overridden refusal. The two groups retain their original denominators under every policy.
+
+| Synthetic Design | Contribution per User-Day | Goals Completed | Regret Reports | Excess Minutes per User-Day |
+| --- | ---: | ---: | ---: | ---: |
+| Finite feed | USD 0.200 | 88.0% | 4.0% | 2.4 |
+| Endless feed | USD 0.314 | 85.6% | 12.2% | 6.4 |
+| Disclosed endless feed | USD 0.314 | 85.6% | 12.2% | 6.4 |
+| User controls | USD 0.236 | 91.8% | 3.4% | 1.2 |
+
+The endless feed raises contribution while reducing overall goal completion relative to the finite feed. Leisure users' goal completion rises from 90% to 92%, while time-limited users' completion falls from 80% to 60%. Within the latter group, regret rises from 8% to 45%. The result depends on whose outcomes enter the comparison. These constructed differences do not estimate real-platform harms.
+
+A manager could assign a monetary penalty to reported regret. Define the score per user-day as
+
+$$
+S_p(\lambda)=\pi_p-\lambda r_p,
+$$
+
+where $p$ indexes the design, $\pi_p$ is contribution in USD per user-day, $r_p$ is the fraction reporting regret, and $\lambda$ is a hypothetical USD penalty per report. At $\lambda=0.50$, the endless designs remain the maximizers. At $\lambda=2$, user controls maximize the score. The analyst's weight changes the recommendation without changing the evidence. A measured regret rate does not establish which weight is justified.
+
+Now impose a separately defended requirement that a design honor a valid stopping instruction. Both endless designs become infeasible. User controls have the highest contribution among the remaining designs at each displayed weight. This restriction represents the normative premise in §9.47. Its justification must be assessed through reasons and feasible alternatives; the calculation supplies its commercial consequence.
+
+Python source: [evaluate_policies.py](../../03_Data_and_Code/Conflicts_of_Interest/evaluate_policies.py).
+
+```python
+"""Compare synthetic feed policies, incentive weights, and refusal rights."""
+import csv
+import json
+from collections import defaultdict
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+INTEGER_FIELDS = (
+    "n", "contribution_cents", "goals_completed", "regret_reports",
+    "excess_minutes", "respects_stop", "discloses_incentive",
+)
+
+
+def load_rows(path):
+    with path.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    seen = set()
+    for row in rows:
+        for name in INTEGER_FIELDS:
+            row[name] = int(row[name])
+        key = (row["policy"], row["group"])
+        assert key not in seen, key
+        seen.add(key)
+        assert row["n"] > 0
+        for name in ("goals_completed", "regret_reports"):
+            assert 0 <= row[name] <= row["n"]
+        assert row["contribution_cents"] >= 0
+        assert row["excess_minutes"] >= 0
+        for name in ("respects_stop", "discloses_incentive"):
+            assert row[name] in (0, 1)
+    return rows
+
+
+def summarize(rows):
+    by_policy = defaultdict(list)
+    for row in rows:
+        by_policy[row["policy"]].append(row)
+    composition = None
+    result = {}
+    for policy, group_rows in by_policy.items():
+        current = {r["group"]: r["n"] for r in group_rows}
+        if composition is None:
+            composition = current
+        assert current == composition, "Policy populations differ"
+        n = sum(r["n"] for r in group_rows)
+        totals = {
+            k: sum(r[k] for r in group_rows)
+            for k in ("contribution_cents", "goals_completed",
+                      "regret_reports", "excess_minutes")
+        }
+        result[policy] = {
+            "n": n, **totals,
+            "contribution_usd_per_user_day": totals["contribution_cents"] / (100 * n),
+            "goal_completion_rate": totals["goals_completed"] / n,
+            "regret_rate": totals["regret_reports"] / n,
+            "excess_minutes_per_user_day": totals["excess_minutes"] / n,
+            "respects_stop": all(r["respects_stop"] for r in group_rows),
+            "discloses_incentive": all(r["discloses_incentive"] for r in group_rows),
+            "groups": {
+                r["group"]: {
+                    "n": r["n"],
+                    "goal_completion_rate": r["goals_completed"] / r["n"],
+                    "regret_rate": r["regret_reports"] / r["n"],
+                } for r in group_rows
+            },
+        }
+    return result
+
+
+def best(policies, penalty, require_stop=False):
+    """Penalty units: hypothetical USD per additional regret report."""
+    scores = {
+        name: p["contribution_usd_per_user_day"] - penalty * p["regret_rate"]
+        for name, p in policies.items()
+        if not require_stop or p["respects_stop"]
+    }
+    assert scores, "No policy meets the stated condition"
+    maximum = max(scores.values())
+    return sorted(name for name, score in scores.items()
+                  if abs(score - maximum) < 1e-12)
+
+
+def main():
+    policies = summarize(load_rows(HERE / "policy_inputs.csv"))
+    weights = [0, 0.5, 2]
+    decisions = [
+        {"regret_penalty_usd": weight, "require_stop": stop,
+         "maximizers": best(policies, weight, stop)}
+        for stop in (False, True) for weight in weights
+    ]
+    output = {"status": "synthetic exact scenario; no estimated effects",
+              "policies": policies, "decisions": decisions}
+    destination = HERE / "results"
+    destination.mkdir(exist_ok=True)
+    (destination / "policy_comparison.json").write_text(
+        json.dumps(output, indent=2) + "\n", encoding="utf-8")
+    for policy, values in policies.items():
+        print(policy, f"USD {values['contribution_usd_per_user_day']:.3f}",
+              f"goals {values['goal_completion_rate']:.1%}",
+              f"regret {values['regret_rate']:.1%}")
+    for decision in decisions:
+        print(decision)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Run `python3 03_Data_and_Code/Conflicts_of_Interest/evaluate_policies.py` from the repository root. The program reads the companion CSV through a path relative to its own location and writes `results/policy_comparison.json`. It checks counts, distinct policy-group rows, and common population composition. The separate verification script reproduces totals and decision comparisons from hand-calculated expectations.
+
+The unchanged disclosure scenario isolates a logical point: information about a financial incentive can coexist with an unchanged opportunity to override a user's instruction. Its behavioral equality is stipulated, so it supplies no evidence that real disclosure is ineffective. The model also contains no complete welfare measure. User purposes, retrospective reports, and institutional authority remain distinct objects even when they support the same recommendation in this example.
+
+## 9.49 Conflicts of Interest Across Marketing Dialectics
+
+\noindent The same discipline applies to pricing, cancellation, mHealth targeting, and public claims about electricity development. Begin with the affected person's decision and the analyst's responsibility. Then examine how compensation, access, reputation, or organizational commitments could influence the question and the interpretation. A duty to communicate evidence accurately can be compromised even when the analyst has no authority over the underlying product.
+
+| Case | Incentive to Examine | Judgment or Authority at Stake | Substantive Response |
+| --- | --- | --- | --- |
+| Engagement design | Contribution from additional exposure | A user's revocable stopping instruction and the assessment of benefit | Measure completion and unwanted continuation; preserve control |
+| Personalized pricing | Margin from targeting willingness to pay | The move from demand fit to customer welfare and permissible treatment | Examine incidence, access, alternatives, and reasons for the pricing rule |
+| Cancellation | Revenue retained after a request to leave | The customer's withdrawal and accurate reporting of its completion | Record charges, requests, completion, and refusal costs |
+| mHealth targeting | Revenue from continued use or additional purchases | The person's purposes and authority over sensitive information | Separate logging from benefit; require appropriate authorization |
+| Electricity reassurance | Attention, reputation, or commercial support, where documented | Accurate claims about household burdens and opportunities to contest them | Preserve uncertainty, examine bills and cost recovery, and include affected residents |
+
+For the electricity case, scrutiny of the price-to-bill inference stands independently of any unverified claim about an author's motives or funding. A disclosed financial relationship would justify additional examination of procedures; it would not, by itself, refute an estimate. Conversely, an absence of a disclosed financial tie would not repair a missing premise. The logical and institutional assessment must survive either incentive story.
+
+Marketing Dialectics asks how an observed result acquires authority to settle a broader question. Treating engagement as benefit, demand as welfare, or a price average as household affordability can conceal the very interests that should be examined. The analyst must identify the bridge premise and explain why the affected person has reason to accept it. If the person cannot effectively challenge the question, favorable measured outcomes can coexist with a substantial loss of authority.
+
+A consumer's practical standing exceeds the variables used to predict their behavior. Unknown intentions and unmeasured burdens invite further empirical inquiry. Kant's noumenal limit concerns a different question about the reach of theoretical cognition (§9.41). Neither category permits an analyst to infer authority over the person from a successful forecast. A defensible recommendation states what the firm ought to do, whose objection it answers, and which evidence or reason would require revision.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -7964,6 +8264,10 @@ The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includ
 ## Explanation and Learning Evaluation
 
 [AI-Augmented Learning](AI_Augmented_Learning/README.md) is optional ungraded practice in predicting a bill, preserving an argument across representations, calculating percentage changes, separating feature effects, and defending a revised conclusion. It runs without an AI account and adds no assessment rule.
+
+## Conflicts of Interest and Consumer Control
+
+[Optional ungraded practice](Conflicts_of_Interest/README.md) develops a duty-based conflict analysis, reproduces the synthetic feed comparison, and constructs a Kantian and Scanlonian argument with a feasible alternative. It also connects professional dissent to Confucian remonstrance.
 
 ---
 
@@ -14205,6 +14509,173 @@ The introductory page, controls, result, explanation views, and narrow layout we
 The affected notes, standalone Marketing Dialectics chapter, Sessions 1, 2, 9, and 14, combined slides, and syllabus were rebuilt. New sections, changed slides, neighboring page breaks, and the two diagrams were rendered and visually inspected. The final notes contain 569 pages and 138 editable figures; the combined slides contain 499 pages. The syllabus remains two pages.
 
 This is a local static pilot whose source can be synchronized with the course repository. GitHub Pages has not been enabled and no public lesson URL is claimed. Copying only the pilot folder would omit shared source and figure destinations; preserve the course-relative paths when deploying. No student learning study has been conducted.
+
+---
+
+## Source: 01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md
+
+# Conflicts of Interest, Attention, and Consumer Authority
+
+A commercial objective can influence the question an analyst asks before it influences an estimate. These readings distinguish opposing interests, duties governing judgment, disclosure, dependence, reward learning, and the justification of a proposed action. The course application is in M9 §§9.45–9.49, with connections in M1 §1.22, M7 §7.47, and M8 §8.33.
+
+## Philosophy and Institutional Design
+
+| Reading | Selected Contribution and Review Scope |
+| --- | --- |
+| Remus Valsan (2016), [Fiduciary Duties, Conflict of Interest, and Proper Exercise of Judgment](https://lawjournal.mcgill.ca/article/fiduciary-duties-conflict-of-interest-and-proper-exercise-of-judgment/), *McGill Law Journal* 62(1), 1–40 | Publisher text, especially §§III–IV: an interest threatens judgment owed under a duty. The course distinguishes this from ordinary opposing commercial interests. |
+| Institute of Medicine (2009), [Conflict of Interest in Medical Research, Education, and Practice](https://www.nationalacademies.org/publications/12598), [Summary](https://www.ncbi.nlm.nih.gov/books/NBK22926/) | Verified summary definition: conflict is a risk to primary responsibilities, independently of demonstrated misconduct. Direct full-page retrieval was restricted; no claim of complete-book review. |
+| Daylian M. Cain, George Loewenstein, and Don A. Moore (2011), [When Sunlight Fails to Disinfect](https://www.cmu.edu/dietrich/sds/docs/loewenstein/WhenSunLightFails.pdf), *Journal of Consumer Research* 37(5), 836–857 | Author-hosted proof, abstract and study descriptions: disclosure can have adverse effects under identified conditions; study 4 considers an unconflicted comparison. |
+| Frank Lovett and Philip Pettit (2009), [Neorepublicanism: A Normative and Institutional Research Program](https://bpb-us-e2.wpmucdn.com/sites.wustl.edu/dist/6/3556/files/2017/02/2009.-Neorepublicanism-2bzyex8.pdf), *Annual Review of Political Science* 12, 11–29 | Selected pp. 13–16: control over interference and dependence. Applying the account to platform choice requires a separate argument about effective checks. |
+| Jack M. Balkin (2016), [Information Fiduciaries and the First Amendment](https://lawreview.law.ucdavis.edu/sites/g/files/dgvnsk15026/files/media/documents/49-4_Balkin.pdf), *UC Davis Law Review* 49, 1183–1234 | Publication record and selected information-fiduciary argument, §§III–V. A proposal for obligations in digital relationships. |
+| Lina M. Khan and David E. Pozen (2019), [A Skeptical View of Information Fiduciaries](https://harvardlawreview.org/wp-content/uploads/2019/12/497-541_Online.pdf), *Harvard Law Review* 133, 497–541 | Introduction and stated critique: competing obligations, business models, and structural power challenge the fiduciary proposal. |
+
+Kantian authority, Scanlon's reasonable-rejection test, and Confucian remonstrance build on the course's existing [primary philosophy collection](../README.md), [stakeholder readings](../07_Stakeholders_and_Reasons/README.md), and [logic guide](../08_Logic_and_Analytical_Arguments/README.md). No universal legal fiduciary duty for platforms is asserted. The legal scholarship describes arguments concerning institutional design, not a current-law survey or a finding of violation.
+
+## Engagement and the Scope of Evidence
+
+| Reading | Selected Contribution and Review Scope |
+| --- | --- |
+| Björn Lindström, Martin Bellander, David T. Schultner, Allen Chang, Philippe N. Tobler, and David M. Amodio (2021), [A Computational Reward Learning Account of Social Media Engagement](https://doi.org/10.1038/s41467-020-19607-x), *Nature Communications* 12, 1311 | Abstract, behavioral design, results, and license: posting data and an online reward experiment. The study does not measure dopamine release or isolate infinite scroll. |
+| Wolfram Schultz, Peter Dayan, and P. Read Montague (1997), [A Neural Substrate of Prediction and Reward](https://www.gatsby.ucl.ac.uk/~dayan/papers/sdm97.pdf), *Science* 275, 1593–1599 | Selected account of dopamine-neuron activity and reward prediction. Its setting differs from social-media use. |
+| Hunt Allcott, Matthew Gentzkow, and Lena Song (2022), [Digital Addiction](https://www.aeaweb.org/articles?id=10.1257/aer.20210867), *American Economic Review* 112(7), 2424–2463 | Publisher abstract: randomized interventions and a model-based estimate concerning self-control. The study does not identify the effect of an infinite-scroll design. |
+
+The [Lindström et al. PDF](LindstromBellanderSchultnerChangToblerAmodio_NatureCommunications2021.pdf) is an unchanged author-hosted copy, shared under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Copyright remains with the authors. Its final page states the license and the exception for separately credited third-party content. The other readings remain linked because accessibility alone does not establish redistribution rights. [sources.json](sources.json) records the retrieval and local-file hash.
+
+This Markdown guide is a selective companion. It omits full derivations, article figures, appendices, and bibliographies. It distinguishes neuroscience, behavioral reward learning, and economic self-control evidence. None of these sources alone establishes that a particular interface causes clinical addiction.
+
+## Course Use
+
+The [original synthetic comparison](../../../03_Data_and_Code/Conflicts_of_Interest/README.md) contrasts commercial ranking with customer outcomes and a separately defended stopping requirement. The [optional lab](../../../07_Labs/Conflicts_of_Interest/README.md) asks students to identify a duty, construct an objection from an affected person's position, and revise a recommendation when a premise changes. No source data or empirical coefficient is used in the synthetic calculation.
+
+---
+
+## Source: 03_Data_and_Code/Conflicts_of_Interest/README.md
+
+# Conflicts of Interest and Engagement Objectives
+
+A product team chooses a feed design while an analyst evaluates its consequences. The synthetic comparison separates commercial contribution, completion of user goals, regret, excess time, disclosure, and respect for a requested stopping point. M9 §§9.45–9.49 connects this choice to professional judgment, Kantian authority, Scanlonian reasons, and institutional safeguards.
+
+## Inputs and Units
+
+[policy_inputs.csv](policy_inputs.csv) contains eight constructed policy-by-group rows. Each policy applies to the same hypothetical population of 1,000 adult user-days: 800 leisure users and 200 users with a stated time limit. These are scenario aggregates, not observations from a platform or estimated treatment effects. No participant records, neural measurements, or clinical diagnoses are included.
+
+| Field | Definition |
+| --- | --- |
+| `policy`, `group` | Feed design and user group defined before exposure |
+| `n` | Number of user-days in the group under each scenario |
+| `contribution_cents` | Total daily platform revenue less variable operating cost, in cents |
+| `goals_completed` | Count meeting the purpose specified before the session |
+| `regret_reports` | Count reporting unwanted use at a fixed next-day follow-up |
+| `excess_minutes` | Sum of positive differences between actual and preselected intended minutes |
+| `respects_stop` | Whether the design honors the user's stopping instruction; 1 means yes |
+| `discloses_incentive` | Whether the design explains the commercial incentive; 1 means yes |
+
+The finite feed contains stopping points. The endless feed continues despite the requested boundary. The disclosed version adds information while holding outcomes and control fixed as an explicit illustration. The user-controls design honors the boundary and allows deliberate continuation or revision. Excess minutes can follow an authorized revision of the initial intended duration; they alone do not establish overridden refusal. The data do not distinguish the effect of individual features within a design. The same people are represented in each scenario; the rows do not supply joint individual potential outcomes.
+
+## Run and Outputs
+
+Python 3.10 or later and its standard library are sufficient. No package installation, network access, AI service, or seed is required.
+
+```bash
+python3 03_Data_and_Code/Conflicts_of_Interest/evaluate_policies.py
+python3 03_Data_and_Code/Conflicts_of_Interest/verify_policies.py
+```
+
+[evaluate_policies.py](evaluate_policies.py) validates unique rows, common population composition, counts, and units. It writes [policy_comparison.json](results/policy_comparison.json). The complete matching program appears in M9 §9.48. [verify_policies.py](verify_policies.py) checks independently calculated totals, group outcomes, equal-outcome disclosure scenarios, tied maximizers, weight sensitivity, and the separately imposed stopping condition.
+
+## Interpretation
+
+The endless design earns USD 0.314 per user-day, compared with USD 0.236 under user controls. Goal completion is 85.6% and 91.8%, respectively. Among time-limited users, regret is 45% under endless use and 5% under user controls. Those figures follow from constructed inputs; they provide no prevalence estimate of problematic social-media use.
+
+The program's regret penalty is a hypothetical managerial weight in USD per report. It has no standing as a measure of consumer welfare, a clinical threshold, a legal rule, or Scanlon's reasonable-rejection test. A separately defended obligation to honor stopping instructions restricts the feasible policies before commercial ranking. The proposed restriction is a moral premise in this example. The code checks its consequences without establishing its justification.
+
+## Sources and Verification
+
+Original course construction. The [philosophical and empirical reading guide](../../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) motivates the questions; no empirical coefficients are borrowed from those papers. [Optional practice](../../07_Labs/Conflicts_of_Interest/README.md) asks students to defend and challenge the premise. Execution and checks are recorded in [VERIFICATION.md](VERIFICATION.md).
+
+---
+
+## Source: 03_Data_and_Code/Conflicts_of_Interest/VERIFICATION.md
+
+# Verification of the Synthetic Feed Comparison
+
+Executed November 26, 2026, using Python 3.14.8 and the standard library:
+
+```bash
+python3 03_Data_and_Code/Conflicts_of_Interest/evaluate_policies.py
+python3 03_Data_and_Code/Conflicts_of_Interest/verify_policies.py
+python3 scripts/check_lecture_code.py
+```
+
+The calculation reproduced all four policy summaries from eight input rows. Independent expected totals verified counts, denominators, USD conversion, group-specific outcomes, tied maximizers, sensitivity to the regret penalty, and the stopping requirement. The lecture checker verified 125 matching, syntactically valid Python blocks across the complete notes.
+
+The source PDF has 10 pages and contains its CC BY 4.0 statement on the final page. Its SHA-256 and retrieval URL are recorded in the resource supplement. No source repository code, platform experiment, clinical assessment, or consumer microdata was executed or collected. The program verifies a constructed decision comparison; it does not validate the moral premise, estimate real treatment effects, or measure consumer welfare.
+
+## Course Materials
+
+The complete lecture notes and standalone Marketing Dialectics chapter compiled to 579 and 100 pages, respectively. The three affected session decks compiled to 35, 60, and 96 slides; the combined collection contains 505 slides. The syllabus remains two pages. The added diagrams use editable TikZ and the Illinois palette.
+
+Visual review covered the changed text, diagrams, tables, code, and adjacent pages, along with the affected slide frames and syllabus. The final builds had no reported overfull boxes, undefined references, or missing characters in the checked logs. Relative links resolved against the publication files, and the LLM context was regenerated from the same reviewed material. The schedule retains 15 meetings of 170 minutes, with no guest speakers; assessment requirements and course-wide AI policy remain unset.
+
+---
+
+## Source: 07_Labs/Conflicts_of_Interest/README.md
+
+# Engagement, Judgment, and Conflicts of Interest
+
+Optional ungraded practice. The [worked example](../../03_Data_and_Code/Conflicts_of_Interest/README.md) uses constructed adult user-day totals. Read M9 §§9.45–9.49 and the [source guide](../../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md).
+
+## Define the Decision and Responsibility
+
+A firm asks its analyst to recommend a feed that increases advertising contribution. Some users have asked to stop after a specified duration. The analyst also prepares a public claim that the chosen design benefits consumers. Identify the responsibility governing that claim, the people to whom reasons are owed, and the incentive that could interfere with the judgment. Distinguish this conflict from the ordinary difference between the firm's and the user's preferred outcomes.
+
+Write the commercial objective and the customer's purpose separately. Explain which outcomes the firm could omit while still producing an accurate estimate of engagement. Identify the evidence needed to detect that omission and the person with authority to require a response.
+
+## Reproduce and Challenge the Comparison
+
+Run both commands from the repository root:
+
+```bash
+python3 03_Data_and_Code/Conflicts_of_Interest/evaluate_policies.py
+python3 03_Data_and_Code/Conflicts_of_Interest/verify_policies.py
+```
+
+Recompute the endless feed's overall goal completion using the original group counts. Compare the two groups before recommending deployment. Explain why an improvement for leisure users does not settle the consequences for people with time limits.
+
+Compare the recommendations at each regret penalty. State the penalty's units and defend any interpretation you give it. Explain why a numerically convenient penalty does not establish a consumer's willingness to accept a burden. Compare a weighted objective with a separately defended stopping requirement.
+
+The disclosure scenario holds behavior fixed. Identify the logical conclusion that follows and the empirical conclusion that remains open. Propose a comparison of disclosure and effective stopping controls that could distinguish their effects. Specify allocation, pre-exposure goals, follow-up, missing responses, and safeguards against imposing a known harmful design. A classroom calculation alone authorizes no study involving people.
+
+## Construct a Reasonable Principle
+
+Write a proposed principle and a feasible alternative. Identify a factual premise, a normative premise, and an ought conclusion. Formulate objections from a time-limited user, a user who values extended browsing, and a worker or creator who depends on the service. Compare the burdens of both principles from those positions. Avoid treating votes or a sum of predicted clicks as Scanlon's criterion.
+
+Now vary one premise: the user deliberately revises the stopping instruction; the alternative imposes a substantial accessibility cost; or the apparent request results from a measurement error. Explain whether and why your recommendation changes. Preserve the distinction between challenging a premise and changing the principle solely to favor the firm.
+
+## Assess the Analyst's Incentives
+
+Suppose the analyst's bonus depends on launching the winning design. Propose a concrete change to compensation, review authority, data access, or publication rights. Explain which pressure it addresses and what would make it ineffective. Assess whether disclosure alone addresses the relevant duty. Connect truthful challenge within the firm to Confucian remonstrance and the customer's effective ability to contest the decision.
+
+Apply the same reasoning to personalized pricing or electricity reassurance. Identify the missing bridge from the measured outcome to the broader claim. Criticize that inference without inventing a motive, funding relationship, or finding of misconduct. State evidence or reasons that would change your criticism.
+
+## AI-Assisted Work
+
+Ask an assistant to reconstruct both the firm's argument and the strongest supported consumer objection. Check each factual citation and distinguish the assistant's application from the source's own claim. Require it to identify the duty that makes an incentive a conflict, preserve the synthetic labels, and give a counterexample that keeps the original premises fixed. Revise any output that equates reward learning with a dopamine measurement or clinical diagnosis.
+
+---
+
+## Source: 03_Data_and_Code/Conflicts_of_Interest/AGENTS.md
+
+# Agent Guide for Conflicts of Interest
+
+Read [README.md](README.md), M9 §§9.45–9.49, and the course writing guide before editing. The inputs are original synthetic scenario totals with a fixed population under each policy. Preserve all group denominators and the distinction between observed evidence, constructed outcomes, and normative premises.
+
+- Identify the responsibility that an interest threatens. Opposing interests alone do not establish a professional conflict or misconduct.
+- Preserve separate fields for commercial contribution, goal completion, regret, stopping authority, and disclosure. Do not call the weighted score consumer welfare or Scanlon's criterion.
+- The equal-outcome disclosure scenario is an imposed comparison. It supplies no causal estimate of disclosure.
+- Reward-learning evidence does not measure dopamine release or establish a clinical diagnosis. Link factual claims to the selected primary sources.
+- Keep the complete lecture Python block synchronized with `evaluate_policies.py`. Run the calculation, independent verification, and root code-block checker after changes.
+- Keep private instructor notes outside public materials. The lab is optional ungraded practice and creates no assessment requirements or authorization to experiment on people.
 
 ---
 

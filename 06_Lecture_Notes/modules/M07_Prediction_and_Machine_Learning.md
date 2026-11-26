@@ -3396,3 +3396,11 @@ if __name__ == "__main__":
 ```
 
 The same checks on August retain 6,501 recorded user-days and a 58.58% mean rate. Reassigning counts preserves both aggregates while changing 324 users' values. Agreement across two fixed periods checks these particular implementations. A broader assessment of model reliability requires additional tasks, recorded model attempts, and an evaluation sample that did not guide revision.
+
+## 7.47 A Predictable Response and a Defensible Objective
+
+\noindent A model can predict who will continue scrolling after an intended stopping point. The use of that prediction depends on the objective: honoring a person's boundary and extending exposure can require different actions for the same predicted response. Better calibration improves information about behavior while leaving the authority to choose the action unresolved.
+
+An analyst evaluating the model should report which person's purpose the target represents. Goal completion, reported unwanted use, and compliance with stopping instructions answer different questions from watch time. M9 §9.48 calculates a synthetic comparison in which changing a regret penalty changes the selected design. It then applies a separately defended stopping requirement. The score's numerical precision supplies no argument for the weight or for disregarding that requirement.
+
+Prediction of reward-responsive behavior also leaves a measurement question. Behavioral records do not directly measure dopamine release or establish a clinical diagnosis. The source distinctions in M9 §9.46 prevent a mechanistic story from carrying more evidential weight than its measurements support. A consumer's authority to revise an instruction deserves evaluation regardless of how accurately a model predicts compliance.

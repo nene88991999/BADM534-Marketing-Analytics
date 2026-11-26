@@ -251,3 +251,7 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## AI-Augmented Learning and Independent Judgment
 
 [The reviewed paper and later report](../01_Resources/43_AI_Augmented_Learning/README.md) motivate preserving an argument across prose, equations, diagrams, and code. M1 §1.21 develops that requirement; M2 §2.29 connects percentages and bills; M6 §6.39 uses a synthetic factorial comparison; M9 §9.44 examines learner authority. [Complete Python](../03_Data_and_Code/Learning_Design/README.md), two editable figures, and the [electricity pilot](../08_Wiki/pilot/README.md) support the examples. Usability and calculation checks do not establish an effect on student learning.
+
+## Conflicts of Interest and Consumer Control
+
+The [nine-source supplement](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) supports M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49. The [synthetic feed program](../03_Data_and_Code/Conflicts_of_Interest/README.md) uses original totals and no borrowed empirical coefficients. Sessions 1, 11, and 14 use selected discussion slides; [optional practice](../07_Labs/Conflicts_of_Interest/README.md) supplies the extended exercise.

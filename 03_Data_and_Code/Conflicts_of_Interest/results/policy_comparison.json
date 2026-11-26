@@ -1,0 +1,151 @@
+{
+  "status": "synthetic exact scenario; no estimated effects",
+  "policies": {
+    "finite_feed": {
+      "n": 1000,
+      "contribution_cents": 20000,
+      "goals_completed": 880,
+      "regret_reports": 40,
+      "excess_minutes": 2400,
+      "contribution_usd_per_user_day": 0.2,
+      "goal_completion_rate": 0.88,
+      "regret_rate": 0.04,
+      "excess_minutes_per_user_day": 2.4,
+      "respects_stop": true,
+      "discloses_incentive": false,
+      "groups": {
+        "leisure": {
+          "n": 800,
+          "goal_completion_rate": 0.9,
+          "regret_rate": 0.03
+        },
+        "time_limited": {
+          "n": 200,
+          "goal_completion_rate": 0.8,
+          "regret_rate": 0.08
+        }
+      }
+    },
+    "endless_feed": {
+      "n": 1000,
+      "contribution_cents": 31400,
+      "goals_completed": 856,
+      "regret_reports": 122,
+      "excess_minutes": 6400,
+      "contribution_usd_per_user_day": 0.314,
+      "goal_completion_rate": 0.856,
+      "regret_rate": 0.122,
+      "excess_minutes_per_user_day": 6.4,
+      "respects_stop": false,
+      "discloses_incentive": false,
+      "groups": {
+        "leisure": {
+          "n": 800,
+          "goal_completion_rate": 0.92,
+          "regret_rate": 0.04
+        },
+        "time_limited": {
+          "n": 200,
+          "goal_completion_rate": 0.6,
+          "regret_rate": 0.45
+        }
+      }
+    },
+    "disclosed_endless": {
+      "n": 1000,
+      "contribution_cents": 31400,
+      "goals_completed": 856,
+      "regret_reports": 122,
+      "excess_minutes": 6400,
+      "contribution_usd_per_user_day": 0.314,
+      "goal_completion_rate": 0.856,
+      "regret_rate": 0.122,
+      "excess_minutes_per_user_day": 6.4,
+      "respects_stop": false,
+      "discloses_incentive": true,
+      "groups": {
+        "leisure": {
+          "n": 800,
+          "goal_completion_rate": 0.92,
+          "regret_rate": 0.04
+        },
+        "time_limited": {
+          "n": 200,
+          "goal_completion_rate": 0.6,
+          "regret_rate": 0.45
+        }
+      }
+    },
+    "user_controls": {
+      "n": 1000,
+      "contribution_cents": 23600,
+      "goals_completed": 918,
+      "regret_reports": 34,
+      "excess_minutes": 1200,
+      "contribution_usd_per_user_day": 0.236,
+      "goal_completion_rate": 0.918,
+      "regret_rate": 0.034,
+      "excess_minutes_per_user_day": 1.2,
+      "respects_stop": true,
+      "discloses_incentive": true,
+      "groups": {
+        "leisure": {
+          "n": 800,
+          "goal_completion_rate": 0.93,
+          "regret_rate": 0.03
+        },
+        "time_limited": {
+          "n": 200,
+          "goal_completion_rate": 0.87,
+          "regret_rate": 0.05
+        }
+      }
+    }
+  },
+  "decisions": [
+    {
+      "regret_penalty_usd": 0,
+      "require_stop": false,
+      "maximizers": [
+        "disclosed_endless",
+        "endless_feed"
+      ]
+    },
+    {
+      "regret_penalty_usd": 0.5,
+      "require_stop": false,
+      "maximizers": [
+        "disclosed_endless",
+        "endless_feed"
+      ]
+    },
+    {
+      "regret_penalty_usd": 2,
+      "require_stop": false,
+      "maximizers": [
+        "user_controls"
+      ]
+    },
+    {
+      "regret_penalty_usd": 0,
+      "require_stop": true,
+      "maximizers": [
+        "user_controls"
+      ]
+    },
+    {
+      "regret_penalty_usd": 0.5,
+      "require_stop": true,
+      "maximizers": [
+        "user_controls"
+      ]
+    },
+    {
+      "regret_penalty_usd": 2,
+      "require_stop": true,
+      "maximizers": [
+        "user_controls"
+      ]
+    }
+  ]
+}

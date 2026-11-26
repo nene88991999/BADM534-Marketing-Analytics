@@ -659,7 +659,18 @@ The public practice labels are disclosed. To estimate generalization, collect ne
 
 Source: M5 §5.20 and M7 §7.26. ../07_Labs/AI_Evidence_and_Evaluation/README.md; https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/assignments/7-evals/
 
-## Slide 50: A Correct Total Can Misassign Activity
+## Slide 50: An Engagement Forecast Leaves an Ought Question
+
+- Predicting continued use does not choose its purpose.
+- Measure goal completion and requested stopping separately.
+- Changing a penalty changes the selected design.
+- Defend the objective and any binding requirement.
+
+The synthetic comparison in M9 §9.48 fixes the population and outcomes. A regret penalty of USD 0.50 per report selects the endless designs; USD 2 selects user controls. Requiring respect for a valid stopping instruction excludes both endless designs before ranking. The penalty is illustrative, and the requirement is a defended moral premise. Neither is established by prediction accuracy. Reasons for choosing the action require a separate justification.
+
+Source: M7 §7.47; M9 §§9.46–9.48. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 51: A Correct Total Can Misassign Activity
 
 Synthetic users. The same aggregate selects a different person for review.
 
@@ -671,7 +682,7 @@ The customer decision depends on which user receives each value. Matching the ov
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 51: Outputs, Actions, and the Checker
+## Slide 52: Outputs, Actions, and the Checker
 
 - Output: complete and accurate customer counts.
 - Actions: permitted files, commands, revisions, and resource use.
@@ -681,7 +692,7 @@ These judgments can disagree. An accurate table may follow an unauthorized input
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 52: A Total-Only Check Accepts Different Errors
+## Slide 53: A Total-Only Check Accepts Different Errors
 
 | July Program | Total Days | Mean Rate | Valid |
 | --- | --- | --- | --- |
@@ -696,7 +707,7 @@ The shifted-user program changes 331 user values while preserving the overall me
 
 Source: Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
-## Slide 53: Development and Final Evaluation
+## Slide 54: Development and Final Evaluation
 
 - Use July to revise prompts and programs.
 - Keep August answers outside the model workspace.
@@ -707,7 +718,7 @@ The expected answers are public teaching files. A measured exercise needs an exp
 
 Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 54: An Omitted Feature Bias
+## Slide 55: An Omitted Feature Bias
 
 - The allocation assumes that auxiliary feature bias equals zero.
 - Adding an omitted coefficient of 0.3 changes the expected feature estimate from 0.4 to 0.657143.
@@ -717,7 +728,7 @@ These are analytic moments in the invented four-profile design. Both source vari
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 55: Sampling Variance and Persistent Bias
+## Slide 56: Sampling Variance and Persistent Bias
 
 Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.
 
@@ -729,7 +740,7 @@ At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias M
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 56: Human Validation of the Bias Model
+## Slide 57: Human Validation of the Bias Model
 
 - A bias feature excluded by a significance cutoff may still matter for the decision.
 - Reserve human respondents and concepts from model and feature selection.
@@ -739,7 +750,7 @@ In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is
 
 Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 57: Coding Exercise: A Forecast Evaluation
+## Slide 58: Coding Exercise: A Forecast Evaluation
 
 - Verify a calibration rank on a hand-checkable sample.
 - Compare segment coverage and interval widths on the same stores.
@@ -749,7 +760,7 @@ Run demand_intervals.py, complaint_sets.py, and the six tests in Conformal_Predi
 
 Source: M7 §§7.24–7.25. ../03_Data_and_Code/Conformal_Prediction/README.md
 
-## Slide 58: Targeting and Delivered Opportunities
+## Slide 59: Targeting and Delivered Opportunities
 
 - An apparently neutral target can produce unequal delivery.
 - Evaluate exposure and error costs across relevant groups.
@@ -759,7 +770,7 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 59: Prediction Discussion
+## Slide 60: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

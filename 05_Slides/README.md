@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 499 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 505 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -178,3 +178,7 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## Explanation and Learning Evaluation
 
 Six slides in Sessions 1, 2, 9, and 14 connect alternative representations, electricity bills, percentage denominators, factorial designs, and learner authority. Two editable diagrams and [complete Python](../03_Data_and_Code/Learning_Design/README.md) support the calculations. The [HTML pilot](../08_Wiki/pilot/README.md) and [optional practice](../07_Labs/AI_Augmented_Learning/README.md) preserve the original argument and invite a supported objection. These examples use existing meeting blocks.
+
+## Conflicts of Interest and Consumer Control
+
+Sessions 1, 11, and 14 connect incentives and duties to question selection, engagement prediction, and an ought conclusion. Two new editable TikZ diagrams and the synthetic feed comparison support M9 §§9.45–9.49. The [optional lab](../07_Labs/Conflicts_of_Interest/README.md) contains extended practice; existing meeting durations are retained.

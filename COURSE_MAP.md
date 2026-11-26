@@ -213,3 +213,7 @@ M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place t
 ## Explanation and Independent Judgment
 
 [M1 §1.21](06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md) preserves an argument across representations. [M2 §2.29](06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) connects percentages, electricity prices, and household bills. [M6 §6.39](06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) separates a learning package from feature effects. [M9 §9.44](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines learner authority. Sessions 1, 2, 9, and 14 select examples within their existing blocks. [HTML pilot](08_Wiki/pilot/README.md); [text companion](08_Wiki/pilot/LESSON.md); [Python](03_Data_and_Code/Learning_Design/README.md); [optional practice](07_Labs/AI_Augmented_Learning/README.md).
+
+## Conflicts of Interest and Consumer Control
+
+M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect the analyst’s incentives to question selection, interpretation, and responsibilities. Sessions 1, 11, and 14 use selected comparisons within existing time. [Sources](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md); [complete synthetic Python](03_Data_and_Code/Conflicts_of_Interest/README.md); [optional practice](07_Labs/Conflicts_of_Interest/README.md). The feed case also connects to pricing, cancellation, mHealth targeting, and electricity reassurance.

@@ -58,3 +58,7 @@ The [supplemental reading guide](07_Stakeholders_and_Reasons/README.md) adds Sca
 The [logic reading guide](08_Logic_and_Analytical_Arguments/README.md) connects questions, logical consequence, causal identification, and argument revision. M1 §1.20, M4 §4.29, M6 §6.38, and M9 §§9.40–9.43 use two exact synthetic constructions and five editable diagrams. Students distinguish a model's compatibility with observations from identification, examine valuation assumptions, and test criticisms against the same standards applied to the original claim. The supplemental linked references retain their own reading scope and do not change the historical collection counts above.
 
 Kantian limits, the ontological spectrum, and critiques of empiricism connect behavioral representation to distinct questions about institutions, agency, and normative reasons. The guide records selected primary passages by Kant, Sellars, Bhaskar, Husserl, and Scanlon, with a separate empirical reference on publication selection.
+
+## Conflicts of Interest, Attention, and Control
+
+The [supplemental guide](09_Conflicts_of_Interest/README.md) distinguishes opposing interests, duties governing judgment, disclosure, and dependence. Nine selected records connect philosophical analysis to behavioral evidence on engagement. M9 §§9.45–9.49 adds two editable TikZ diagrams and a complete original Python comparison, with [optional practice](../../07_Labs/Conflicts_of_Interest/README.md).
