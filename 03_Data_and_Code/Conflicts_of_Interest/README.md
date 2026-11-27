@@ -39,3 +39,7 @@ The program's regret penalty is a hypothetical managerial weight in USD per repo
 ## Sources and Verification
 
 Original course construction. The [philosophical and empirical reading guide](../../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) motivates the questions; no empirical coefficients are borrowed from those papers. [Optional practice](../../07_Labs/Conflicts_of_Interest/README.md) asks students to defend and challenge the premise. Execution and checks are recorded in [VERIFICATION.md](VERIFICATION.md).
+
+## Marketing Publication Cases
+
+M9 §§9.70–9.75 and the [optional practice](../../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) use this synthetic policy comparison alongside the [engagement literature](../../01_Resources/49_Online_Engagement_and_Agency/README.md). The program is unchanged. Its constructed outcomes are not estimates of the products, populations, or interventions in those sources.

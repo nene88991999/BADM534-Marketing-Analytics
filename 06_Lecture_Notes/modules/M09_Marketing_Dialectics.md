@@ -2482,3 +2482,87 @@ For a proposed protection rule, explain the interest at stake, the evidence supp
 ### Further Reading
 
 The [annotated philosophical readings](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) distinguish arguments about abstraction, evidence, institutions, values, and scientific realism. The [argument exercise](../../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) applies the premises above to the recurring cases.
+
+## 9.70 Marketing Research and Compulsive Online Engagement
+
+\noindent A platform choosing how to retain users also chooses how much authority to give their reasons for stopping. Marketing research supplies mechanisms through which content sequences, rewards, and behavioral records can sustain activity. These insights can support learning, entertainment, or a habit the person wants. They can also support designs that prolong activity after it conflicts with the person's purposes. The ethical question concerns which use the firm chooses and whose interests its evaluation recognizes.
+
+An increase in sessions, purchases, or viewing time establishes a behavioral change under specified conditions. Evidence of unwanted continuation requires additional observations about intentions, experienced consequences, and control. A clinical addiction claim requires an appropriate clinical assessment. Economic research on digital addiction supplies evidence about habits and self-control under particular interventions and modeling assumptions (Allcott et al., 2022; §9.46). It does not turn every retention effect into a diagnosis. Ethical scrutiny can nevertheless begin before a clinical threshold has been established: a firm already owes reasons for disregarding an explicit, informed stopping instruction.
+
+Three claims about the connection between research and practice also require different support. A published mechanism can have a plausible commercial application. A company document can establish that a corresponding feature was deployed. An explicit citation can establish that the company used the research in explaining its practice. Establishing that the paper caused the feature's adoption, or that the deployed feature caused harm, requires further evidence. Similarity between a paper and a product cannot supply that history by itself.
+
+![A published mechanism, a deployed feature, evidence of unwanted continuation, and a justified action require different support. An industry citation documents a research connection; a user outcome comparison assesses consequences. Ethical principles and feasible alternatives determine what ought to follow.](../figures/M09_engagement_evidence.png)
+
+Continued use is compatible with enjoyment, a chosen commitment, a goal induced by the interface, and difficulty stopping. A retention log alone does not distinguish these explanations. The appropriate next step can be to obtain missing evidence, honor a requested boundary, or revise the design. A complete clinical diagnosis is unnecessary for every proportionate safeguard, just as concern about a mechanism alone is insufficient to attribute a particular injury.
+
+## 9.71 Mechanisms That Can Sustain Repetition
+
+### 9.71.1 Content Sequences and Changing Preferences
+
+\noindent Experiments with media consumption show that consecutive exposure to similar content can increase subsequent choice of similar content. Category accessibility and immersion help explain this pattern. Interruptions and delayed choice weaken it; identical content can produce satiation ([Woolley and Sharif, 2022](https://doi.org/10.1177/00222437211055403)). The managerial implication is that a recommendation system can influence the preference it later predicts. A click after a sequence is evidence about a person in that induced situation, with no automatic authority to represent the person's considered priorities.
+
+The same study examines persistence when a more remunerative task is available and differences between immediate choices for later consumption and later preferences. These comparisons make the conflict between current engagement and other purposes concrete. The philosophical criticism becomes stronger when the analyst identifies that conflict rather than treating all long sessions as harmful. A relevant evaluation asks whether the user endorses the sequence after an opportunity to pause and reconsider.
+
+### 9.71.2 Streaks and the Goal Created by a Record
+
+\noindent Experiments holding actual prior behavior fixed show that portraying its log as an intact rather than broken streak can change subsequent behavior. Maintaining the streak becomes a goal; repair can attenuate the effect of a break. Comparisons against an absent log vary across studies ([Silverman and Barasch, 2023](https://doi.org/10.1093/jcr/ucac029)). The record therefore participates in producing the behavior it appears merely to describe.
+
+A student may initially value language competence and later feel compelled to protect a displayed counter. This is a possible application of value capture: a simplified score can displace deliberation about the underlying purpose (Nguyen, 2024). Establishing that displacement requires evidence about the person's reasons. A streak that supports a deliberately chosen commitment has a different justification from a counter that makes an unwanted obligation difficult to abandon. The firm determines what counts as continuity and owes reasons for the resulting pressure.
+
+### 9.71.3 Uncertain Rewards and Progress
+
+\noindent Uncertain incentives can increase repetition after experience when uncertainty resolves immediately after the action. The effect concerns continued participation, and one study finds lower initial entry under uncertainty ([Shen et al., 2019](https://doi.org/10.1093/jcr/ucy062)). Related experiments find greater investment in uncertain reward pursuit when attention centers on the process ([Shen et al., 2015](https://doi.org/10.1086/679418)). These findings identify conditions under which reward pursuit may sustain effort despite a less attractive monetary payoff. They supply no direct measurement of dopamine or clinical addiction.
+
+Goal-gradient evidence also includes accelerated activity in an online music-rating task as a reward approaches ([Kivetz et al., 2006](https://doi.org/10.1509/jmkr.43.1.39)). Progress displays can help a person complete a chosen task. They can also make a platform-defined target salient at the expense of other priorities. The relevant criticism asks who sets the target, whether its consequences are understood, and whether the person can stop without an avoidable penalty. A claim about persistent participants must retain the denominator that excludes people who decline to enter.
+
+## 9.72 Documented Commercial Applications
+
+### 9.72.1 Retention and the Learner's Purpose
+
+\noindent A company teaching-method report explicitly cites the logged-streak research in its explanation of motivation ([Freeman et al., 2023](https://duolingo-papers.s3.amazonaws.com/reports/Duolingo_whitepaper_duolingo_method_2023.pdf), §2.4). The cited article appeared online in 2022 and in a 2023 journal issue. This establishes a documented connection between published research and a firm's rationale for a feature. It supplies no finding that the feature causes addiction.
+
+A separate company account describes an earlier experiment that separated streak continuation from completion of a learner's daily goal. It reports increased retention and aggregate learning time alongside fewer learners reaching their daily goals ([Duolingo, 2020](https://blog.duolingo.com/improving-the-streak/)). That experiment predates the cited research. The tradeoff is useful precisely because the outcomes move differently: returning to an app, completing a chosen quantity of study, and learning effectively require separate evidence. An ethical assessment should ask whose goal changed and whether the learner retains authority to revise or suspend it.
+
+### 9.72.2 Binge Viewing and Paid Immediacy
+
+\noindent A marketing model using Hulu viewing records separates session continuation, series choice, and time between sessions, and relates viewing patterns to advertising response ([Schweidel and Moe, 2016](https://doi.org/10.1509/jm.15.0258)). A later company announcement documents a deployed advertising product that rewarded extended viewing with an ad-free episode or a brand offer ([Hulu, 2019](https://press.hulu.com/pressrelease/hulu-launches-new-ad-experience-designed-to-connect-brands-with-binge-watchers/)). The announcement establishes commercial reinforcement around binge viewing; it does not identify adoption of that academic model.
+
+Reduced advertising can improve an intentionally long entertainment session. The objection becomes consequential when rewards work against a person's chosen stopping point. A reasonable alternative could preserve the benefit while allowing the person to pause and resume without losing it. That proposal requires an assessment of feasibility and relevant costs. Neither predictive accuracy nor the commercial success of the reward settles the comparison.
+
+Serialized digital content also uses a choice between waiting for a free episode and paying for immediate access. Research on this promotion examines paid viewing and platform returns ([Choi et al., 2025](https://doi.org/10.1177/00222437241270194)). Waiting provides a genuine access benefit, while paid immediacy raises questions about spending control and informed choice. A defensible assessment examines whether prices and cumulative spending are intelligible and whether a user's own spending boundary remains effective. The promotion alone supplies no finding of addiction.
+
+## 9.73 Whose Value Does Gamification Create?
+
+\noindent A gamified market-research app separates playing from completing client surveys. Its analysis includes users observed on at least two days. Value-added engagement concerns activity serving the provider's business, and its flow proxy uses experience points per minute. Its reported adverse aspect concerns weaker conversion of game engagement into that business activity ([Paschmann et al., 2025](https://doi.org/10.1177/00222437241275927)). This is a particularly useful case for examining what an outcome's name includes and excludes.
+
+The label *value* does not establish value to the participant. Time spent answering a client's questions, enjoyment, compensation, foregone activities, and the authority to stop are different objects. An accurate model of provider value can omit a consequential consumer burden. Calling that model a complete welfare evaluation would commit the substitution examined in §9.66. The paper's chosen business question is narrower; the ethical objection applies when its answer becomes sufficient justification for a design.
+
+The empirical comparison also requires care. A model fitted to observed activity and its simulated reward changes have different evidentiary status from a randomized redesign. Restricting the sample to returning users leaves immediate departures outside its population. Those departures may be highly relevant to an assessment of a design's acceptability. The appropriate response is to identify the missing population or outcome and seek evidence about it, rather than assume its value.
+
+A banking study examines a deployed rewards module whose licensing lapse temporarily stopped it. Its natural-experiment analysis reports declines in incentivized behavior after discontinuation ([Blanchard and Palazzolo, 2025](https://doi.org/10.1287/mksc.2023.0345)). That result concerns reliance on an incentive, with no diagnosis of withdrawal. Its disclosure also states that the data agreement permitted publication of results adverse to the provider. This concrete provision matters to the NDA assessment in §§9.63–9.65: contractual terms require inspection before alleging suppression.
+
+## 9.74 From a Mechanism to an Ought Conclusion
+
+\noindent Consider a proposed principle allowing a platform to disregard an informed stopping instruction whenever continued engagement increases revenue. A time-limited user has a reason to reject the loss of practical authority over attention. A user who deliberately seeks a long session has a reason to retain that option. Workers and creators have interests in the service's viability. A feasible alternative must address these positions while respecting the distinction between a person's interests and the institution's aggregate score (Scanlon, 1998, chapter 5).
+
+A Kantian objection concerns the maxim under which a person's susceptibility becomes a means to a commercial objective. Benefiting from voluntary attention is compatible with respect for persons. Organizing the service to frustrate a person's informed, revocable boundary demands a much stronger justification (Kant, 1785, 4:429). Precision in predicting that susceptibility makes the commercial mechanism more effective without supplying the missing moral premise. The noumenal discussion in §9.41 reinforces the limits of treating observable behavior as a complete account of practical agency; an unmeasured clinical outcome remains an empirical question.
+
+The argument for a safeguard can proceed through five explicit steps.
+
+1. Identify the feature, affected people, and evidence that the feature conflicts with an endorsed purpose. Distinguish a tested mechanism from a documented harmful consequence.
+2. State the principle permitting the firm to impose that conflict and the interest it serves.
+3. Specify a feasible alternative, such as a user-chosen stopping point with deliberate, reversible continuation.
+4. Compare the strongest individual objections to both principles, including burdens on users who want continued access and on people sustaining the service.
+5. Defend an ought conclusion proportionate to those reasons and the evidence. State what would change it.
+
+The strongest reply is that reminders, rewards, and repeated practice can support worthwhile commitments. Research on smartphone-use reduction supports that reply: three preregistered trials examine how announced future reduction targets can change present use, with effects depending on the incentive structure ([Somasundaram et al., 2025](https://doi.org/10.1177/00222429251405841)). The useful distinction concerns whose purpose the intervention serves and whether authority to revise it remains effective. A blanket rejection of engagement design would discard beneficial assistance without resolving that question.
+
+The policy discussion also requires an exact status. On February 6, 2026, the European Commission announced preliminary DSA findings concerning TikTok's design, including infinite scroll, autoplay, notifications, and recommendations. The notice discusses risks to minors and vulnerable adults and explicitly leaves the investigation's outcome open ([European Commission, 2026](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act)). It supplies a dated example of regulatory scrutiny, with no final liability determination or attribution to the marketing papers above. A company may owe a design justification even while legal proceedings and clinical evidence remain incomplete.
+
+## 9.75 Worked Assessment of an Engagement Recommendation
+
+\noindent Use the complete synthetic feed comparison and Python in §9.48 to assess a recommendation based solely on advertising contribution. Its constructed adult user-days separate leisure and time-limited users and report goal completion, regret, and excess time. Preserve those outcomes and denominators when evaluating a proposed stopping control. These are teaching inputs, with no empirical estimate for Duolingo, Hulu, TikTok, or the apps in the published studies.
+
+First write the strongest recommendation justified by the commercial outcome alone. Then identify the additional premise required to call it beneficial to users. Connect that premise to one publication above and classify its support: a behavioral mechanism, an observed commercial application, an explicit research citation, or evidence about the consequence of interest. Neither a publication nor an industry citation supplies every link in the argument.
+
+Next use the group results to formulate the objection of the person whose stopping purpose is frustrated. Compare the alternative's effects on that person, the person who wants extended use, and the service provider. Explain which empirical findings would alter the recommendation and which moral premise remains necessary even if all effects were estimated precisely. The [optional practice](../../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) includes an evidence-classification exercise and a claim-revision task. The [reading guide](../../01_Resources/49_Online_Engagement_and_Agency/README.md) records source scope, commercial connections, and the limits of each inference.

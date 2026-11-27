@@ -1,0 +1,9 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=4.6cm,minimum height=1.8cm] (mechanism) at (2.7,3.2) {\textbf{Published Mechanism}\\A feature changes\\specified behavior.};
+\node[box,text width=4.6cm,minimum height=1.8cm] (practice) at (10.1,3.2) {\textbf{Commercial Practice}\\A company documents\\a deployed feature.};
+\draw[edge] (mechanism) -- node[above,align=center,font=\footnotesize,text width=2.0cm] {Deployment\\record} (practice);
+\node[orangebox,text width=4.6cm,minimum height=1.8cm] (harm) at (10.1,0) {\textbf{Unwanted Continuation}\\Purpose, control, and\\consequences assessed.};
+\draw[edge] (practice) -- node[left,align=right,font=\footnotesize,text width=4.3cm] {User purposes, control,\\and a relevant\\outcome comparison} (harm);
+\node[orangebox,text width=4.6cm,minimum height=1.8cm] (decision) at (2.7,0) {\textbf{Justified Action}\\Compare reasons\\and alternatives.};
+\draw[accent] (harm) -- node[above,align=center,font=\footnotesize,text width=2.0cm] {Ethical\\premise} (decision);
+\end{tikzpicture}

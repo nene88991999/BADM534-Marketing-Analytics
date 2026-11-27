@@ -482,7 +482,8 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md",
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md",
-    "01_Resources/48_Statistical_Virtues_and_Ontology/README.md"
+    "01_Resources/48_Statistical_Virtues_and_Ontology/README.md",
+    "01_Resources/49_Online_Engagement_and_Agency/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -531,12 +532,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-statistical-virtues-and-ontological-adequacy",
+    "revision": "2026-11-27-marketing-research-online-engagement-and-agency",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 157,
-    "pages": 657,
+    "figures_count": 158,
+    "pages": 662,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -668,7 +669,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 551,
+    "slides": 559,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -756,13 +757,13 @@ Generated from course.json and the source files identified below. This file cont
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty",
+    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 128,
-    "figures_count": 30,
+    "pages": 133,
+    "figures_count": 31,
     "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
@@ -1244,7 +1245,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-data-artifacts-and-research-independence",
+  "revision": "2026-11-27-marketing-research-online-engagement-and-agency",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1830,6 +1831,27 @@ Generated from course.json and the source files identified below. This file cont
     "practice": "07_Labs/Philosophical_Arguments/README.md",
     "figure": "06_Lecture_Notes/figures/M09_statistical_virtues_and_ontology.tex",
     "scope": "Criticism of consequential substitutions between a representation and a broader claim; separate statistical, ontological, epistemic, and normative premises. Includes a serious empiricist reply."
+  },
+  "online_engagement_and_agency": {
+    "updated_on": "2026-11-27",
+    "guide": "01_Resources/49_Online_Engagement_and_Agency/README.md",
+    "catalog": "01_Resources/49_Online_Engagement_and_Agency/catalog.json",
+    "verification": "01_Resources/49_Online_Engagement_and_Agency/VERIFICATION.md",
+    "source_records": 15,
+    "marketing_papers": 10,
+    "local_source_copies": 8,
+    "sections": [
+      "M5 \u00a75.29",
+      "M9 \u00a7\u00a79.70\u20139.75"
+    ],
+    "sessions": [
+      7,
+      14
+    ],
+    "practice": "07_Labs/Conflicts_of_Interest/README.md",
+    "existing_code": "03_Data_and_Code/Conflicts_of_Interest/README.md",
+    "figure": "06_Lecture_Notes/figures/M09_engagement_evidence.tex",
+    "scope": "Distinguishes published mechanisms, deployed practices, explicit industry citations, user consequences, clinical claims, and normative justification. Includes beneficial habit-research applications and dated preliminary EU findings. Reuses existing synthetic feed-policy code."
   }
 }
 ```
@@ -2443,6 +2465,10 @@ Use M4 §4.31 for released retail data and exact mixture integration, M6 §6.46 
 
 M1 §1.24 introduces the object behind an AI-assisted analysis. M6 §6.46.6 distinguishes the population error criterion from the affected person's burden. M9 §§9.66–9.69 develops the philosophical argument, recurring case assessments, and strongest reply. Sessions 1 and 14, the [annotated readings](01_Resources/48_Statistical_Virtues_and_Ontology/README.md), and [optional practice](07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) use the same distinction. The new figure is conceptual and supplies no numerical score of a researcher or institution.
 
+## Marketing Research and Compulsive Online Engagement
+
+M5 §5.29 distinguishes engagement labels, endorsement, and selected qualitative accounts. M9 §§9.70–9.75 examines content sequences, streaks, uncertain rewards, gamification, binge viewing, and user authority through [15 sources](01_Resources/49_Online_Engagement_and_Agency/README.md). Sessions 7 and 14 select these cases within their existing discussions. The [optional exercise](07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) reuses the complete synthetic feed-policy program in §9.48; it makes no new platform-harm estimate.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2805,7 +2831,7 @@ The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) 
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 157 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 158 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2819,7 +2845,7 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with t
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 28 editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 31 editable TikZ figures |
 
 The sequence follows the historical syllabus’s topic families, with current dates and requirements supplied by the released syllabus. Published research motivates selected cases, while empirical mHealth results, simulations, and synthetic examples retain their own assumptions and interpretations.
 
@@ -3051,6 +3077,10 @@ M4 §4.31 reanalyzes licensed public retail data and maps the hierarchical coeff
 
 M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69 examine when technical success substitutes for a defended account of the object behind a claim. A two-dimensional TikZ diagram separates statistical performance from adequacy for the stated conclusion. The [philosophical guide](../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) and [argument exercise](../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) connect the reasoning to electricity costs, hierarchical pooling, engagement, and governed data.
 
+## Online Engagement, Research, and Agency
+
+M5 §5.29 and M9 §§9.70–9.75 connect marketing publications with documented company practices and the authority to stop. A TikZ diagram distinguishes mechanisms, deployment, unwanted continuation, and justified action. The [reading guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional practice](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) preserve source scope and beneficial applications. The existing complete Python in §9.48 provides the synthetic worked assessment.
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -3137,7 +3167,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 551 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 559 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -3339,6 +3369,10 @@ Sessions 6 and 14 connect released-data integration to the documented conditiona
 ## Statistical Virtues and Ontological Adequacy
 
 Sessions 1 and 14 distinguish accuracy for a recorded variable from adequacy for a broader claim. The editable two-dimensional diagram and electricity, pooling, and engagement comparisons connect to [M9 §§9.66–9.69](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness). Presenter notes retain the strongest reply, the synthetic scope of the pooling result, and the distinction between empirical and normative premises.
+
+## Online Engagement and the Authority to Stop
+
+Sessions 7 and 14 connect marketing publications with documented industry practices, consumer purposes, and reasonable alternatives. The [15-source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional practice](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) distinguish engagement effects from harmful consequences and clinical claims. The EU example retains the preliminary status of the February 6, 2026 notice.
 
 ---
 
@@ -3947,6 +3981,10 @@ M4 §4.31 reanalyzes the licensed public retail file and maps the normal conditi
 ## Statistical Virtues and Ontological Adequacy
 
 Sixteen annotated philosophical sources support M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69. The new editable figure distinguishes statistical performance from adequacy for a stated claim. Sessions 1 and 14 select the argument within their existing blocks. The optional philosophical-arguments lab and electricity wiki lesson connect the reasoning to the exact pooling update and the broader household-cost interpretation. Source scope and retrieval are recorded in `01_Resources/48_Statistical_Virtues_and_Ontology/`.
+
+## Marketing Research and Online Engagement
+
+The 15-source collection in `01_Resources/49_Online_Engagement_and_Agency/` supports M5 §5.29 and M9 §§9.70–9.75. Ten marketing and consumer-research papers cover mechanisms and a protective application; supporting economics, company, and regulatory records establish different forms of evidence. Sessions 7 and 14 add selected cases and an editable evidence diagram. Optional practice reuses the existing synthetic feed program without changing its calculations. Full-text access and inspection limits are recorded source by source.
 
 ---
 
@@ -4735,6 +4773,10 @@ Session 6 selects the released-account comparison and conditional update within 
 
 Session 1 selects the target-and-claim comparison within the existing definitions and argument discussion. Session 14 selects the conceptual diagram and one recurring case within minutes 90–110. The extended readings and written argument remain optional practice; the full Session 14 deck is a case library. These selections preserve the 170-minute allocations.
 
+## Marketing Publications and Online Engagement
+
+Session 7 selects the engagement and evidence-classification discussion within minutes 155–170. Session 14 selects the evidence diagram and one company case within minutes 80–110, using the existing feed example when a numerical comparison is helpful. These are alternatives within existing blocks; the full Session 14 deck remains a case library. The [extended reading and argument exercise](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) is optional practice. Meeting lengths and course requirements are unchanged.
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -4956,6 +4998,10 @@ Session 6 can select the released-account comparison within its worked-example b
 
 Use M1 §1.24 in Session 1's existing definitions and argument discussion. In Session 14, select the diagram and one case from M9 §§9.66–9.69 within the existing 90–110 minute evidence-and-reasons block. Compare the chosen statistical virtue, the object it represents, and the missing premise behind a broader conclusion. Extended readings and the written argument are optional, ungraded practice. The 15 meetings, 170-minute durations, and released syllabus requirements remain unchanged.
 
+## Online Engagement and Marketing Dialectics
+
+M5 §5.29 and M9 §§9.70–9.75 connect marketing insights with content sequences, streaks, rewards, and commercial engagement practices. Sessions 7 and 14 select an evidence assessment and a company case within existing discussion blocks. Students distinguish user goals from platform outcomes and defend a feasible alternative through Kantian and Scanlonian reasoning. The [source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional ungraded exercise](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) preserve beneficial applications and the scope of the evidence. This coverage introduces no new graded requirement.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -5114,6 +5160,12 @@ M9 §§9.51–9.54 distinguish semantic, epistemic, procedural/legal, and moral 
 M6 §§6.44–6.45 and M9 §§9.56–9.59 distinguish an inquiry, proportionate temporary protection, and a remedy. The [source collection](../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md) records the error-cost debate and inductive-risk argument. A conditional philosophical criticism of an institutional standard establishes no empirical finding of deliberate manipulation or unlawful conduct.
 
 United States merger guidance considers the totality of evidence, including documents, testimony, economic evidence, and structural presumptions ([DOJ and FTC, 2023, overview](https://www.justice.gov/atr/merger-guidelines/overview) and [§4.1](https://www.justice.gov/atr/merger-guidelines/tools/sources-of-evidence)). Checked November 27, 2026. These guidelines describe agency practice, are nonbinding, and create no independent effective-date duty for the classroom's hypothetical safeguards. Merger review concerns prospective threats to competition; other causes of action retain their separate elements. The existing [legal crosswalk](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md) distinguishes markups, price gouging, competition claims, and moral objections. The synthetic loss threshold is illustrative and does not replace applicable law.
+
+## Online Engagement and Preliminary Design Findings
+
+The [European Commission notice of February 6, 2026](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act), checked November 27, 2026, records preliminary DSA findings concerning TikTok's design and risk mitigation. Its scope includes infinite scroll, autoplay, notifications, and recommendations, with attention to minors and vulnerable adults in the EU. The notice expressly leaves the investigation's outcome open. It is not a final liability determination, a new generally applicable ban, or an instrument establishing a new effective date.
+
+M9 §§9.70–9.75 and Sessions 7 and 14 connect this dated record to [marketing mechanisms and industry cases](../01_Resources/49_Online_Engagement_and_Agency/README.md). Research findings, company disclosures, clinical claims, legal status, and philosophical justification retain distinct evidentiary roles. No claim links the regulatory finding causally to one of the selected academic papers.
 
 ---
 
@@ -5445,6 +5497,10 @@ Clustering describes the mechanism composition of the selected review sample. Ac
 ## University Affiliations
 
 The [affiliation analysis](../../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md) covers 745 of the 824 eligible papers, with 424 higher-education institutions after a verified source correction. It groups institutions through shared-paper links and overlays reviewed mechanisms using fractional paper weights. [Complete membership and sensitivity outputs](../../03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md) distinguish exploratory network structure from claims about institutional intent.
+
+## Focused Engagement Assessment
+
+The [online-engagement collection](../49_Online_Engagement_and_Agency/README.md) adds a close reading of selected mechanisms and documented commercial applications, including older foundational studies. Its 15 records overlap with this census and must not be added as a unique-paper total. Its source-by-source inspection record distinguishes accessible full text, selected passages, and abstracts.
 
 ---
 
@@ -5898,6 +5954,10 @@ Kantian limits, the ontological spectrum, and critiques of empiricism connect be
 ## Conflicts of Interest, Attention, and Control
 
 The [supplemental guide](09_Conflicts_of_Interest/README.md) distinguishes opposing interests, duties governing judgment, disclosure, and dependence. Nine selected records connect philosophical analysis to behavioral evidence on engagement. M9 §§9.45–9.49 adds two editable TikZ diagrams and a complete original Python comparison, with [optional practice](../../07_Labs/Conflicts_of_Interest/README.md).
+
+## Online Engagement and the Authority to Stop
+
+The [publication guide](../49_Online_Engagement_and_Agency/README.md) adds experimental mechanisms, documented company applications, and an explicit industry citation of streak research. M9 §§9.70–9.75 applies Kantian respect, value capture, and Scanlonian justification while preserving beneficial uses and evidentiary limits. The existing feed-policy program supplies the synthetic worked comparison.
 
 ---
 
@@ -8426,6 +8486,90 @@ For a proposed protection rule, explain the interest at stake, the evidence supp
 
 The [annotated philosophical readings](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) distinguish arguments about abstraction, evidence, institutions, values, and scientific realism. The [argument exercise](../../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) applies the premises above to the recurring cases.
 
+## 9.70 Marketing Research and Compulsive Online Engagement
+
+\noindent A platform choosing how to retain users also chooses how much authority to give their reasons for stopping. Marketing research supplies mechanisms through which content sequences, rewards, and behavioral records can sustain activity. These insights can support learning, entertainment, or a habit the person wants. They can also support designs that prolong activity after it conflicts with the person's purposes. The ethical question concerns which use the firm chooses and whose interests its evaluation recognizes.
+
+An increase in sessions, purchases, or viewing time establishes a behavioral change under specified conditions. Evidence of unwanted continuation requires additional observations about intentions, experienced consequences, and control. A clinical addiction claim requires an appropriate clinical assessment. Economic research on digital addiction supplies evidence about habits and self-control under particular interventions and modeling assumptions (Allcott et al., 2022; §9.46). It does not turn every retention effect into a diagnosis. Ethical scrutiny can nevertheless begin before a clinical threshold has been established: a firm already owes reasons for disregarding an explicit, informed stopping instruction.
+
+Three claims about the connection between research and practice also require different support. A published mechanism can have a plausible commercial application. A company document can establish that a corresponding feature was deployed. An explicit citation can establish that the company used the research in explaining its practice. Establishing that the paper caused the feature's adoption, or that the deployed feature caused harm, requires further evidence. Similarity between a paper and a product cannot supply that history by itself.
+
+![A published mechanism, a deployed feature, evidence of unwanted continuation, and a justified action require different support. An industry citation documents a research connection; a user outcome comparison assesses consequences. Ethical principles and feasible alternatives determine what ought to follow.](../figures/M09_engagement_evidence.png)
+
+Continued use is compatible with enjoyment, a chosen commitment, a goal induced by the interface, and difficulty stopping. A retention log alone does not distinguish these explanations. The appropriate next step can be to obtain missing evidence, honor a requested boundary, or revise the design. A complete clinical diagnosis is unnecessary for every proportionate safeguard, just as concern about a mechanism alone is insufficient to attribute a particular injury.
+
+## 9.71 Mechanisms That Can Sustain Repetition
+
+### 9.71.1 Content Sequences and Changing Preferences
+
+\noindent Experiments with media consumption show that consecutive exposure to similar content can increase subsequent choice of similar content. Category accessibility and immersion help explain this pattern. Interruptions and delayed choice weaken it; identical content can produce satiation ([Woolley and Sharif, 2022](https://doi.org/10.1177/00222437211055403)). The managerial implication is that a recommendation system can influence the preference it later predicts. A click after a sequence is evidence about a person in that induced situation, with no automatic authority to represent the person's considered priorities.
+
+The same study examines persistence when a more remunerative task is available and differences between immediate choices for later consumption and later preferences. These comparisons make the conflict between current engagement and other purposes concrete. The philosophical criticism becomes stronger when the analyst identifies that conflict rather than treating all long sessions as harmful. A relevant evaluation asks whether the user endorses the sequence after an opportunity to pause and reconsider.
+
+### 9.71.2 Streaks and the Goal Created by a Record
+
+\noindent Experiments holding actual prior behavior fixed show that portraying its log as an intact rather than broken streak can change subsequent behavior. Maintaining the streak becomes a goal; repair can attenuate the effect of a break. Comparisons against an absent log vary across studies ([Silverman and Barasch, 2023](https://doi.org/10.1093/jcr/ucac029)). The record therefore participates in producing the behavior it appears merely to describe.
+
+A student may initially value language competence and later feel compelled to protect a displayed counter. This is a possible application of value capture: a simplified score can displace deliberation about the underlying purpose (Nguyen, 2024). Establishing that displacement requires evidence about the person's reasons. A streak that supports a deliberately chosen commitment has a different justification from a counter that makes an unwanted obligation difficult to abandon. The firm determines what counts as continuity and owes reasons for the resulting pressure.
+
+### 9.71.3 Uncertain Rewards and Progress
+
+\noindent Uncertain incentives can increase repetition after experience when uncertainty resolves immediately after the action. The effect concerns continued participation, and one study finds lower initial entry under uncertainty ([Shen et al., 2019](https://doi.org/10.1093/jcr/ucy062)). Related experiments find greater investment in uncertain reward pursuit when attention centers on the process ([Shen et al., 2015](https://doi.org/10.1086/679418)). These findings identify conditions under which reward pursuit may sustain effort despite a less attractive monetary payoff. They supply no direct measurement of dopamine or clinical addiction.
+
+Goal-gradient evidence also includes accelerated activity in an online music-rating task as a reward approaches ([Kivetz et al., 2006](https://doi.org/10.1509/jmkr.43.1.39)). Progress displays can help a person complete a chosen task. They can also make a platform-defined target salient at the expense of other priorities. The relevant criticism asks who sets the target, whether its consequences are understood, and whether the person can stop without an avoidable penalty. A claim about persistent participants must retain the denominator that excludes people who decline to enter.
+
+## 9.72 Documented Commercial Applications
+
+### 9.72.1 Retention and the Learner's Purpose
+
+\noindent A company teaching-method report explicitly cites the logged-streak research in its explanation of motivation ([Freeman et al., 2023](https://duolingo-papers.s3.amazonaws.com/reports/Duolingo_whitepaper_duolingo_method_2023.pdf), §2.4). The cited article appeared online in 2022 and in a 2023 journal issue. This establishes a documented connection between published research and a firm's rationale for a feature. It supplies no finding that the feature causes addiction.
+
+A separate company account describes an earlier experiment that separated streak continuation from completion of a learner's daily goal. It reports increased retention and aggregate learning time alongside fewer learners reaching their daily goals ([Duolingo, 2020](https://blog.duolingo.com/improving-the-streak/)). That experiment predates the cited research. The tradeoff is useful precisely because the outcomes move differently: returning to an app, completing a chosen quantity of study, and learning effectively require separate evidence. An ethical assessment should ask whose goal changed and whether the learner retains authority to revise or suspend it.
+
+### 9.72.2 Binge Viewing and Paid Immediacy
+
+\noindent A marketing model using Hulu viewing records separates session continuation, series choice, and time between sessions, and relates viewing patterns to advertising response ([Schweidel and Moe, 2016](https://doi.org/10.1509/jm.15.0258)). A later company announcement documents a deployed advertising product that rewarded extended viewing with an ad-free episode or a brand offer ([Hulu, 2019](https://press.hulu.com/pressrelease/hulu-launches-new-ad-experience-designed-to-connect-brands-with-binge-watchers/)). The announcement establishes commercial reinforcement around binge viewing; it does not identify adoption of that academic model.
+
+Reduced advertising can improve an intentionally long entertainment session. The objection becomes consequential when rewards work against a person's chosen stopping point. A reasonable alternative could preserve the benefit while allowing the person to pause and resume without losing it. That proposal requires an assessment of feasibility and relevant costs. Neither predictive accuracy nor the commercial success of the reward settles the comparison.
+
+Serialized digital content also uses a choice between waiting for a free episode and paying for immediate access. Research on this promotion examines paid viewing and platform returns ([Choi et al., 2025](https://doi.org/10.1177/00222437241270194)). Waiting provides a genuine access benefit, while paid immediacy raises questions about spending control and informed choice. A defensible assessment examines whether prices and cumulative spending are intelligible and whether a user's own spending boundary remains effective. The promotion alone supplies no finding of addiction.
+
+## 9.73 Whose Value Does Gamification Create?
+
+\noindent A gamified market-research app separates playing from completing client surveys. Its analysis includes users observed on at least two days. Value-added engagement concerns activity serving the provider's business, and its flow proxy uses experience points per minute. Its reported adverse aspect concerns weaker conversion of game engagement into that business activity ([Paschmann et al., 2025](https://doi.org/10.1177/00222437241275927)). This is a particularly useful case for examining what an outcome's name includes and excludes.
+
+The label *value* does not establish value to the participant. Time spent answering a client's questions, enjoyment, compensation, foregone activities, and the authority to stop are different objects. An accurate model of provider value can omit a consequential consumer burden. Calling that model a complete welfare evaluation would commit the substitution examined in §9.66. The paper's chosen business question is narrower; the ethical objection applies when its answer becomes sufficient justification for a design.
+
+The empirical comparison also requires care. A model fitted to observed activity and its simulated reward changes have different evidentiary status from a randomized redesign. Restricting the sample to returning users leaves immediate departures outside its population. Those departures may be highly relevant to an assessment of a design's acceptability. The appropriate response is to identify the missing population or outcome and seek evidence about it, rather than assume its value.
+
+A banking study examines a deployed rewards module whose licensing lapse temporarily stopped it. Its natural-experiment analysis reports declines in incentivized behavior after discontinuation ([Blanchard and Palazzolo, 2025](https://doi.org/10.1287/mksc.2023.0345)). That result concerns reliance on an incentive, with no diagnosis of withdrawal. Its disclosure also states that the data agreement permitted publication of results adverse to the provider. This concrete provision matters to the NDA assessment in §§9.63–9.65: contractual terms require inspection before alleging suppression.
+
+## 9.74 From a Mechanism to an Ought Conclusion
+
+\noindent Consider a proposed principle allowing a platform to disregard an informed stopping instruction whenever continued engagement increases revenue. A time-limited user has a reason to reject the loss of practical authority over attention. A user who deliberately seeks a long session has a reason to retain that option. Workers and creators have interests in the service's viability. A feasible alternative must address these positions while respecting the distinction between a person's interests and the institution's aggregate score (Scanlon, 1998, chapter 5).
+
+A Kantian objection concerns the maxim under which a person's susceptibility becomes a means to a commercial objective. Benefiting from voluntary attention is compatible with respect for persons. Organizing the service to frustrate a person's informed, revocable boundary demands a much stronger justification (Kant, 1785, 4:429). Precision in predicting that susceptibility makes the commercial mechanism more effective without supplying the missing moral premise. The noumenal discussion in §9.41 reinforces the limits of treating observable behavior as a complete account of practical agency; an unmeasured clinical outcome remains an empirical question.
+
+The argument for a safeguard can proceed through five explicit steps.
+
+1. Identify the feature, affected people, and evidence that the feature conflicts with an endorsed purpose. Distinguish a tested mechanism from a documented harmful consequence.
+2. State the principle permitting the firm to impose that conflict and the interest it serves.
+3. Specify a feasible alternative, such as a user-chosen stopping point with deliberate, reversible continuation.
+4. Compare the strongest individual objections to both principles, including burdens on users who want continued access and on people sustaining the service.
+5. Defend an ought conclusion proportionate to those reasons and the evidence. State what would change it.
+
+The strongest reply is that reminders, rewards, and repeated practice can support worthwhile commitments. Research on smartphone-use reduction supports that reply: three preregistered trials examine how announced future reduction targets can change present use, with effects depending on the incentive structure ([Somasundaram et al., 2025](https://doi.org/10.1177/00222429251405841)). The useful distinction concerns whose purpose the intervention serves and whether authority to revise it remains effective. A blanket rejection of engagement design would discard beneficial assistance without resolving that question.
+
+The policy discussion also requires an exact status. On February 6, 2026, the European Commission announced preliminary DSA findings concerning TikTok's design, including infinite scroll, autoplay, notifications, and recommendations. The notice discusses risks to minors and vulnerable adults and explicitly leaves the investigation's outcome open ([European Commission, 2026](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act)). It supplies a dated example of regulatory scrutiny, with no final liability determination or attribution to the marketing papers above. A company may owe a design justification even while legal proceedings and clinical evidence remain incomplete.
+
+## 9.75 Worked Assessment of an Engagement Recommendation
+
+\noindent Use the complete synthetic feed comparison and Python in §9.48 to assess a recommendation based solely on advertising contribution. Its constructed adult user-days separate leisure and time-limited users and report goal completion, regret, and excess time. Preserve those outcomes and denominators when evaluating a proposed stopping control. These are teaching inputs, with no empirical estimate for Duolingo, Hulu, TikTok, or the apps in the published studies.
+
+First write the strongest recommendation justified by the commercial outcome alone. Then identify the additional premise required to call it beneficial to users. Connect that premise to one publication above and classify its support: a behavioral mechanism, an observed commercial application, an explicit research citation, or evidence about the consequence of interest. Neither a publication nor an industry citation supplies every link in the argument.
+
+Next use the group results to formulate the objection of the person whose stopping purpose is frustrated. Compare the alternative's effects on that person, the person who wants extended use, and the service provider. Explain which empirical findings would alter the recommendation and which moral premise remains necessary even if all effects were estimated precisely. The [optional practice](../../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) includes an evidence-classification exercise and a claim-revision task. The [reading guide](../../01_Resources/49_Online_Engagement_and_Agency/README.md) records source scope, commercial connections, and the limits of each inference.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -9219,6 +9363,10 @@ The [optional ungraded practice](Bad_Controls/README.md) asks students to defend
 ## Evidence Standards and Reasonable Protection
 
 [Optional ungraded practice](Evidence_Standards/README.md) compares exact synthetic error probabilities, opposing loss specifications, demand restrictions, and a philosophical argument for action under uncertainty. It connects measurement history to pricing and household electricity through an identified person, a supported concern, a normative premise, a feasible alternative, and conditions for revision.
+
+## Marketing Publications and Unwanted Continuation
+
+The [engagement exercise](Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) adds source classification, chronology, claim revision, and a reasonable-alternative argument to the existing synthetic feed comparison. It is optional and ungraded. Read M9 §§9.70–9.75 and the [15-source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md).
 
 ---
 
@@ -15651,6 +15799,10 @@ The program's regret penalty is a hypothetical managerial weight in USD per repo
 
 Original course construction. The [philosophical and empirical reading guide](../../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) motivates the questions; no empirical coefficients are borrowed from those papers. [Optional practice](../../07_Labs/Conflicts_of_Interest/README.md) asks students to defend and challenge the premise. Execution and checks are recorded in [VERIFICATION.md](VERIFICATION.md).
 
+## Marketing Publication Cases
+
+M9 §§9.70–9.75 and the [optional practice](../../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) use this synthetic policy comparison alongside the [engagement literature](../../01_Resources/49_Online_Engagement_and_Agency/README.md). The program is unchanged. Its constructed outcomes are not estimates of the products, populations, or interventions in those sources.
+
 ---
 
 ## Source: 03_Data_and_Code/Conflicts_of_Interest/VERIFICATION.md
@@ -15719,6 +15871,39 @@ Apply the same reasoning to personalized pricing or electricity reassurance. Ide
 ## AI-Assisted Work
 
 Ask an assistant to reconstruct both the firm's argument and the strongest supported consumer objection. Check each factual citation and distinguish the assistant's application from the source's own claim. Require it to identify the duty that makes an incentive a conflict, preserve the synthetic labels, and give a counterexample that keeps the original premises fixed. Revise any output that equates reward learning with a dopamine measurement or clinical diagnosis.
+
+## Marketing Publications and Unwanted Continuation
+
+Read M9 §§9.70–9.75 and the [publication guide](../../01_Resources/49_Online_Engagement_and_Agency/README.md). This exercise is optional and ungraded. Use catalog IDs E01–E15 to keep each claim attached to its source.
+
+### Classify the Evidence
+
+For each statement, identify the supporting observation and the strongest conclusion it warrants.
+
+1. A company report cites a study of logged streaks.
+2. A company reports greater retention alongside fewer users reaching a daily goal.
+3. A historical launch announcement describes rewards for extended viewing.
+4. Repetition increases among people who entered an uncertain-reward task, while initial entry falls.
+5. A study's value-added activity means client-survey participation in a market-research app.
+6. A regulator announces preliminary concerns about addictive design.
+
+Classify each as a mechanism finding, deployed practice, explicit research connection, reported outcome, or preliminary regulatory finding. More than one category may apply. Identify the additional evidence needed before claiming clinical addiction, a particular paper's causal influence on a product, or final legal liability.
+
+### Reconstruct a Commercial Case
+
+Choose the streak or binge-viewing case. Write the chronology, the company's stated purpose, the observed or reported outcome, and a consumer interest that the outcome leaves unresolved. Preserve the strongest supported benefit: repeated learning, reduced ad interruption, or free delayed access. Explain how that benefit affects the objection without assuming that it settles every user's circumstances.
+
+Revise this claim into a defensible statement: “Marketing research proves that this company deliberately addicted its customers.” Identify exactly which unsupported steps you removed. Then state a serious ethical criticism whose factual premises the record can support. Criticism becomes more useful when its strongest conclusion survives a careful reading of the evidence.
+
+### Evaluate a Feasible Alternative
+
+Run the two existing feed-policy commands above and read the complete program in M9 §9.48. Preserve its synthetic population and separate group denominators. Compare the contribution-based recommendation with an alternative that honors a valid stopping instruction. Explain why these calculations cannot estimate the effects of the real products in the reading guide.
+
+Construct a factual premise, a normative premise, and an ought conclusion. Compare the reasons of a time-limited user, a user who welcomes extended use, and a person whose income depends on the service. Specify a feasible alternative and the evidence needed to assess its burdens. Consider whether a reversible safeguard could be justified while a clinical question remains unresolved.
+
+### Assess the Strongest Reply
+
+Use the smartphone-reduction study as a beneficial application of habit research. Explain why its presence changes a blanket objection to behavioral design. Then identify a design condition under which your narrower criticism remains valid. Ask an AI assistant to challenge the argument, verify its source claims, and retain any reply that exposes an unsupported premise.
 
 ---
 
@@ -17844,6 +18029,71 @@ The 16 records in [catalog.json](catalog.json) use IDs V01–V16 local to this f
 **Application:** Ask whether a representation of isolated responses loses the directedness and meaning of an action. Keep phenomenological and realist arguments distinct.
 
 **Inspection:** Primary HTML §22 inspected. This excerpt does not include §9 on mathematization; no claim to have inspected that section.
+
+---
+
+## Source: 01_Resources/49_Online_Engagement_and_Agency/README.md
+
+# Marketing Research, Online Engagement, and Agency
+
+A platform can retain a person by serving a purpose the person endorses or by making departure harder. Marketing publications help explain how sequences, rewards, and records sustain activity. The critical question is whether the commercial use respects the person's purposes and authority to stop.
+
+This collection contains ten marketing and consumer-research papers, one economics paper, three company documents, and one regulatory notice. It is a focused selection of mechanisms and documented applications, with no claim to estimate their prevalence across the literature. The [catalog](catalog.json) records author metadata, inspected passages, access limits, and local retrieval hashes. IDs E01–E15 refer to this collection only.
+
+## Evidence and Interpretation
+
+| Claim | Evidence Required | Example |
+| --- | --- | --- |
+| A feature can change repeated behavior | Experiment or an adequately supported empirical design | E01–E05 |
+| A related feature was deployed | Product evidence identifying the feature and date | E08, E13, E14 |
+| A company uses the research in its rationale | Explicit citation or other documented connection | E12 cites E02 |
+| A feature caused unwanted continuation or harm | Relevant user outcomes, comparison, and population | Requires more than a retention effect |
+| A firm ought to change the design | Supported factual premises, a defended principle, and feasible alternatives | M9 §§9.74–9.75 |
+
+A corporate citation leaves the consequence question open. A deployed feature does not establish that an academic paper originated it. High use alone distinguishes neither enjoyment from compulsion nor an economic habit model from a clinical diagnosis. The notes preserve these distinctions while allowing proportionate protection before every uncertainty is resolved.
+
+## Marketing and Consumer-Research Readings
+
+| ID and Source | Reading Question |
+| --- | --- |
+| E01: [Down a Rabbit Hole](https://doi.org/10.1177/00222437211055403) (Woolley and Sharif, 2022), *Journal of Marketing Research* | Does a sequence shape the preference the platform later predicts? Inspect interruptions, identical-content satiation, and delayed choice alongside continuation. |
+| E02: [On or Off Track](https://doi.org/10.1093/jcr/ucac029) (Silverman and Barasch, 2023), *Journal of Consumer Research* | When does a record become a goal? Distinguish intact-versus-broken comparisons from inconsistent comparisons against no log. |
+| E03: [The Fun and Function of Uncertainty](https://doi.org/10.1093/jcr/ucy062) (Shen et al., 2019), *Journal of Consumer Research* | Does repetition among participants conceal reduced initial entry? Keep the immediate-resolution boundary and denominator. |
+| E04: [The Motivating-Uncertainty Effect](https://doi.org/10.1086/679418) (Shen et al., 2015), *Journal of Consumer Research* | How does attention to reward pursuit change the interpretation of effort? Annotation uses the abstract and opening. |
+| E05: [The Goal-Gradient Hypothesis Resurrected](https://doi.org/10.1509/jmkr.43.1.39) (Kivetz et al., 2006), *Journal of Marketing Research* | Who determines the goal toward which activity accelerates? The study includes online music ratings and coffee loyalty. |
+| E06: [Binge Watching and Advertising](https://doi.org/10.1509/jm.15.0258) (Schweidel and Moe, 2016), *Journal of Marketing* | What does a model of viewing and ad response leave outside its commercial objective? Publisher abstract reviewed. |
+| E07: [Driving Mobile App User Engagement Through Gamification](https://doi.org/10.1177/00222437241275927) (Paschmann et al., 2025), *Journal of Marketing Research* | Whose value is measured? Inspect provider-serving survey activity, the flow proxy, returning-user restriction, and counterfactual status. |
+| E08: [Game Over?](https://doi.org/10.1287/mksc.2023.0345) (Blanchard and Palazzolo, 2025), *Marketing Science* | Does behavior persist after an incentive stops? Publisher abstract and disclosures reviewed; the NDA preserves adverse publication. |
+| E09: [Wait for Free](https://doi.org/10.1177/00222437241270194) (Choi et al., 2025), *Journal of Marketing Research* | When does paid immediacy preserve meaningful choice? Publisher abstract reviewed; free waiting remains a consequential benefit. |
+| E10: [Leveraging Rational Addiction Theory to Reduce Mobile Usage](https://doi.org/10.1177/00222429251405841) (Somasundaram et al., 2025), *Journal of Marketing* | How can habit insights serve a reduction goal? Accepted abstract distinguishes fixed targets from proportional incentives. |
+
+The issue year is used for E01–E09. E02 appeared online in 2022; E07–E09 appeared online in 2024. E10 uses its 2025 online publication year. These dates matter when reconstructing a connection to company practice.
+
+## Company Practice, Economics, and Regulation
+
+| ID and Source | Evidentiary Role |
+| --- | --- |
+| E11: [Digital Addiction](https://www.aeaweb.org/articles?id=10.1257/aer.20210867) (Allcott et al., 2022), *American Economic Review* | Existing M9 §9.46 assesses habit and self-control evidence. A model-implied share of use has a different meaning from clinical prevalence. |
+| E12: [The Duolingo Method](https://duolingo-papers.s3.amazonaws.com/reports/Duolingo_whitepaper_duolingo_method_2023.pdf) (Freeman et al., 2023), §2.4 | A company report explicitly cites E02. This is the clearest verified connection between a selected paper and an industry rationale. |
+| E13: [Improving the Streak](https://blog.duolingo.com/improving-the-streak/) (Duolingo, 2020) | Company-reported retention and daily-goal outcomes differ. The experiment predates E02, preventing a causal story that reverses their chronology. |
+| E14: [Binge-Viewing Ad Launch](https://press.hulu.com/pressrelease/hulu-launches-new-ad-experience-designed-to-connect-brands-with-binge-watchers/) (Hulu, 2019) | Documents a commercial reward for continued viewing. It establishes neither adoption of E06 nor a measured harmful effect. |
+| E15: [Preliminary TikTok Design Findings](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act) (European Commission, 2026) | EU DSA notice of February 6, 2026. Its preliminary findings leave the investigation's outcome open; no final liability determination is asserted. |
+
+## Philosophical Assessment
+
+Repeated activity can become an ontologically inadequate substitute for the person whose interests supposedly justify the design. The criticism must identify the omitted relation: a stopping instruction, a learning purpose, a spending boundary, or a burden on someone outside the retained sample. An analyst can estimate the chosen outcome precisely while leaving that omission intact.
+
+Kantian respect concerns the person's authority to set ends. Contractualist reasoning compares objections to principles governing the design, including a feasible alternative and the interests of users who want extended access. Value capture concerns the possibility that a simplified goal displaces deliberation about what matters. These are applications of the philosophical arguments in M9 §§9.41, 9.47, and 9.67; the empirical papers do not themselves prove the normative conclusions.
+
+## Course Connections and Replication
+
+- [M5 §5.29](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md#529-engagement-endorsement-and-unwanted-continuation) distinguishes behavioral labels and qualitative evidence.
+- [M9 §§9.70–9.75](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#970-marketing-research-and-compulsive-online-engagement) develops the mechanisms, commercial cases, and ought argument.
+- [Optional practice](../../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) classifies claims and evaluates the strongest reply.
+- [Synthetic feed-policy code](../../03_Data_and_Code/Conflicts_of_Interest/README.md) and the complete Python in M9 §9.48 supply the numerical comparison. No new platform data or paper replication is claimed.
+- Sessions 7 and 14 select the cases within existing meeting allocations. The broader [journal census](../13_Consumer_Agency_and_Recent_Research/README.md) covers a different selection purpose; collection counts overlap.
+
+Eight reference copies are saved under the ignored `readings/` directory in Dropbox. GitHub contains the guide, catalog, and original teaching material. Full-text gaps and inspection limits appear in the catalog and [verification record](VERIFICATION.md).
 
 ---
 

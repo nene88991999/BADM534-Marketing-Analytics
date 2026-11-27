@@ -17,6 +17,7 @@ Session 07. M5. 170 minutes.
 - Distinguish recorded-category agreement from the compatibility of a replacement text representation.
 - Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims.
 - Use credible qualitative mechanisms to justify proportionate inquiry.
+- Distinguish engagement evidence, user endorsement, unwanted continuation, and documented research use.
 
 ## Related Materials
 
@@ -38,6 +39,7 @@ Session 07. M5. 170 minutes.
 - [Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)
 - [Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
+- [Marketing Research and Online Engagement](../01_Resources/49_Online_Engagement_and_Agency/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -549,7 +551,27 @@ Homophily and shared shocks can generate correlated behavior among connected use
 
 Source: M5, Section 5.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
-## Slide 45: Authenticity of Reviews and Endorsements
+## Slide 45: Continued Use Leaves the Purpose Open
+
+- A sequence can change the preference the system predicts.
+- A displayed streak can become a goal in itself.
+- Identify purpose, control, and consequences before claiming benefit.
+
+Content-sequence and logged-streak experiments concern specified behavioral outcomes (Woolley and Sharif, 2022; Silverman and Barasch, 2023). Continued activity can reflect enjoyment, a chosen commitment, an induced goal, or difficulty stopping. A retention measure does not distinguish these explanations. M5 §5.29 and M9 §§9.70–9.71.
+
+Source: ../01_Resources/49_Online_Engagement_and_Agency/README.md
+
+## Slide 46: Classify the Claim Before Coding the Text
+
+- Separate a mechanism, deployed feature, citation, and harmful outcome.
+- Retain source role, chronology, and the population represented.
+- Code endorsed long use alongside unwanted continuation.
+
+The company method report explicitly cites streak research (Freeman et al., 2023); its earlier experiment predates the paper (Duolingo, 2020). A citation documents a connection without establishing that the paper originated a feature. Qualitative coding should distinguish a stated purpose, exposure, reported consequence, and stopping attempt. Public complaints are selected accounts, and copied statements are not independent cases. M5 §5.29.
+
+Source: ../01_Resources/49_Online_Engagement_and_Agency/README.md
+
+## Slide 47: Authenticity of Reviews and Endorsements
 
 - A generated product description and a claimed customer review serve different roles.
 - A fabricated experience misrepresents the source of the evidence.
@@ -559,7 +581,7 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 46: Mechanism Evidence Can Justify an Inquiry
+## Slide 48: Mechanism Evidence Can Justify an Inquiry
 
 - Preserve source role, timing, exact wording, and contrary passages.
 - Use cost-recovery statements to identify the records an inquiry needs.
@@ -569,7 +591,7 @@ Most selected utility-call material concerns 2026, after the study’s 2020–20
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 47: Text-Analysis Discussion
+## Slide 49: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

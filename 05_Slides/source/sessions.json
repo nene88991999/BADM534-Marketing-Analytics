@@ -2326,7 +2326,8 @@
       "Compare feature preservation, group weighting, and access at original network origins.",
       "Distinguish recorded-category agreement from the compatibility of a replacement text representation.",
       "Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims.",
-      "Use credible qualitative mechanisms to justify proportionate inquiry."
+      "Use credible qualitative mechanisms to justify proportionate inquiry.",
+      "Distinguish engagement evidence, user endorsement, unwanted continuation, and documented research use."
     ],
     "slides": [
       {
@@ -2772,6 +2773,28 @@
       },
       {
         "kind": "bullets",
+        "title": "Continued Use Leaves the Purpose Open",
+        "bullets": [
+          "A sequence can change the preference the system predicts.",
+          "A displayed streak can become a goal in itself.",
+          "Identify purpose, control, and consequences before claiming benefit."
+        ],
+        "notes": "Content-sequence and logged-streak experiments concern specified behavioral outcomes (Woolley and Sharif, 2022; Silverman and Barasch, 2023). Continued activity can reflect enjoyment, a chosen commitment, an induced goal, or difficulty stopping. A retention measure does not distinguish these explanations. M5 §5.29 and M9 §§9.70–9.71.",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Classify the Claim Before Coding the Text",
+        "bullets": [
+          "Separate a mechanism, deployed feature, citation, and harmful outcome.",
+          "Retain source role, chronology, and the population represented.",
+          "Code endorsed long use alongside unwanted continuation."
+        ],
+        "notes": "The company method report explicitly cites streak research (Freeman et al., 2023); its earlier experiment predates the paper (Duolingo, 2020). A citation documents a connection without establishing that the paper originated a feature. Qualitative coding should distinguish a stated purpose, exposure, reported consequence, and stopping attempt. Public complaints are selected accounts, and copied statements are not independent cases. M5 §5.29.",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Authenticity of Reviews and Endorsements",
         "bullets": [
           "A generated product description and a claimed customer review serve different roles.",
@@ -2822,10 +2845,11 @@
       "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)",
       "[Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)",
       "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)",
-      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)",
+      "[Marketing Research and Online Engagement](../01_Resources/49_Online_Engagement_and_Agency/README.md)"
     ],
     "practice": "Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.",
-    "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph."
+    "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph. Assess the source and inference behind an online-engagement claim."
   },
   {
     "number": 8,
@@ -5285,7 +5309,8 @@
       "Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.",
       "Evaluate whether restricted research ought to be conducted, published, or used to justify public action.",
       "Explain when statistical insignificance supplies no substantive conclusion about harm, using a public claim and its underlying uncertainty.",
-      "Evaluate how hierarchical pooling and a protection rule can reduce detection of a minority burden."
+      "Evaluate how hierarchical pooling and a protection rule can reduce detection of a minority burden.",
+      "Evaluate marketing mechanisms and documented engagement practices through user purposes, evidence scope, and reasonable alternatives."
     ],
     "slides": [
       {
@@ -5696,6 +5721,73 @@
         ],
         "notes": "Posting behavior responds to experimentally varied social rewards (Lindström et al., 2021). Dopamine-neuron activity is examined in a separate neuroscience setting (Schultz et al., 1997). Temporary incentives and user-selected limits are evaluated with an economic model (Allcott et al., 2022). These sources provide different evidence. None alone identifies clinical addiction caused by an infinite-scroll feature. The ethical question concerns the actual design, its consequences, and the user’s authority to stop.",
         "source": "M9 §9.46 and its source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Published Mechanisms Behind Continued Use",
+        "bullets": [
+          "Similar content sequences can sustain further viewing.",
+          "Uncertainty can sustain repetition while reducing entry.",
+          "Reward proximity can accelerate a chosen or imposed goal."
+        ],
+        "notes": "The sequence result depends on similarity and timing; identical content can satiate (Woolley and Sharif, 2022). Uncertain-reward findings concern experienced participants and immediate resolution, with initial entry declining in one study (Shen et al., 2019). The goal-gradient work includes an online music-rating task (Kivetz et al., 2006). These are mechanisms and boundary conditions, with no clinical diagnosis. M9 §9.71.",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Streak Can Become a Separate Goal",
+        "bullets": [
+          "A company report explicitly cites logged-streak research.",
+          "An earlier company experiment raised retention.",
+          "Fewer users met daily goals; aggregate learning time rose.",
+          "Evaluate the learner’s purpose and authority to pause."
+        ],
+        "notes": "The 2023 company report cites the online 2022 version of the article published in a 2023 issue (Freeman et al., 2023; Silverman and Barasch, 2023). The historical experiment predates that article and does not establish adoption caused by it (Duolingo, 2020). The company-reported tradeoff separates retention, daily goal completion, and learning outcomes. M9 §9.72.1.",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Whose Value Does Gamification Measure?",
+        "bullets": [
+          "Provider value includes completing client surveys.",
+          "A game-performance proxy represents flow.",
+          "Returning users define the analyzed population.",
+          "Consumer purposes require their own evidence."
+        ],
+        "notes": "The market-research app study distinguishes game activity from business-serving survey activity and includes users accessing on at least two days (Paschmann et al., 2025). Its business question is narrower than consumer welfare. Simulated reward changes differ from a randomized redesign. The ontological objection concerns extending provider-value results into a sufficient justification of treatment. M9 §9.73.",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Commercial Rewards Around Continued Viewing",
+        "bullets": [
+          "A 2019 launch rewarded extended viewing with an ad benefit or offer.",
+          "The deployment record leaves academic adoption unresolved.",
+          "Preserve the benefit while assessing authority to stop."
+        ],
+        "notes": "The company launch establishes historical commercial reinforcement around binge viewing (Hulu, 2019). The viewing model uses Hulu records, but the launch does not establish use of that model (Schweidel and Moe, 2016). Fewer interruptions can benefit an intentionally long session. A proposed alternative lets a person retain a reward while pausing, subject to feasibility and cost assessment. M9 §9.72.2.",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "From Engagement Evidence to a Justified Action",
+        "figure": "../06_Lecture_Notes/figures/M09_engagement_evidence.tex",
+        "caption": "Each connection requires evidence or a defended normative premise.",
+        "description": "A published mechanism and documented practice do not establish unwanted continuation by themselves. User purposes and outcomes support the consequence claim; affected persons’ reasons and alternatives support the action.",
+        "notes": "A claim about clinical addiction requires appropriate clinical evidence. Ethical scrutiny of an overridden stopping instruction can begin before that threshold. A corporate citation supports a research connection without establishing harm or that the paper originated the feature. M9 §9.70.",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md",
+        "figure_height": 0.75
+      },
+      {
+        "kind": "bullets",
+        "title": "Design Risk and a Reasonable Alternative",
+        "bullets": [
+          "EU notice, February 6, 2026: preliminary TikTok design findings.",
+          "Compare a user-chosen boundary with unrestricted continuation.",
+          "Retain beneficial uses of habit research and the strongest reply."
+        ],
+        "notes": "The European Commission notice concerns the DSA, including minors and vulnerable adults; its preliminary findings do not prejudge the investigation. It supplies no final liability determination or paper-specific causation (European Commission, 2026). Three preregistered smartphone-reduction trials provide a beneficial application of habit insights (Somasundaram et al., 2025). Compare individual reasons, feasible alternatives, and evidence under the argument in M9 §9.74 (Scanlon, 1998).",
+        "source": "../01_Resources/49_Online_Engagement_and_Agency/README.md"
       },
       {
         "kind": "figure",
@@ -6688,10 +6780,12 @@
       "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)",
       "[Confidentiality and research independence](../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md)",
       "[Public Claims, Overstatement, and Uncertainty](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md)",
-      "[Precision, Detection, and the Method Crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)"
+      "[Precision, Detection, and the Method Crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)",
+      "[Marketing Research and Online Engagement](../01_Resources/49_Online_Engagement_and_Agency/README.md)",
+      "[Engagement and Reasonable Alternatives](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
-    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold."
+    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives."
   },
   {
     "number": 15,

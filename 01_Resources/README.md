@@ -184,3 +184,7 @@ The [historical guide](46_Measurement_and_Disciplinary_History/README.md) connec
 ## Statistical Virtues and Ontological Adequacy
 
 The [16-source philosophical guide](48_Statistical_Virtues_and_Ontology/README.md) examines abstraction, the distinction between records and explanatory objects, institutional authority, value capture, and reasonable justification. M9 §§9.66–9.69 connects those arguments to the electricity, hierarchical-pooling, engagement, and restricted-data cases. The guide includes a serious empiricist reply and distinguishes full-text inspection from publisher summaries. Five new source copies remain local to Dropbox.
+
+## Marketing Publications and Online Engagement
+
+The [15-source guide](49_Online_Engagement_and_Agency/README.md) covers ten marketing and consumer-research papers, supporting economics evidence, three company documents, and a preliminary regulatory notice. It connects streaks, content sequences, uncertain rewards, gamification, and binge viewing to M5 §5.29 and M9 §§9.70–9.75. Eight reference copies remain local to Dropbox; public annotations distinguish mechanisms, actual practice, explicit research citations, and evidence of harm.

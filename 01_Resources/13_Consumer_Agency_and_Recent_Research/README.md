@@ -46,3 +46,7 @@ Clustering describes the mechanism composition of the selected review sample. Ac
 ## University Affiliations
 
 The [affiliation analysis](../../03_Data_and_Code/Consumer_Agency_Literature/AFFILIATIONS.md) covers 745 of the 824 eligible papers, with 424 higher-education institutions after a verified source correction. It groups institutions through shared-paper links and overlays reviewed mechanisms using fractional paper weights. [Complete membership and sensitivity outputs](../../03_Data_and_Code/Consumer_Agency_Literature/results/affiliations/README.md) distinguish exploratory network structure from claims about institutional intent.
+
+## Focused Engagement Assessment
+
+The [online-engagement collection](../49_Online_Engagement_and_Agency/README.md) adds a close reading of selected mechanisms and documented commercial applications, including older foundational studies. Its 15 records overlap with this census and must not be added as a unique-paper total. Its source-by-source inspection record distinguishes accessible full text, selected passages, and abstracts.

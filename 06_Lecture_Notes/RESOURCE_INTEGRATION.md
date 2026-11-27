@@ -279,3 +279,7 @@ M4 §4.31 reanalyzes the licensed public retail file and maps the normal conditi
 ## Statistical Virtues and Ontological Adequacy
 
 Sixteen annotated philosophical sources support M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69. The new editable figure distinguishes statistical performance from adequacy for a stated claim. Sessions 1 and 14 select the argument within their existing blocks. The optional philosophical-arguments lab and electricity wiki lesson connect the reasoning to the exact pooling update and the broader household-cost interpretation. Source scope and retrieval are recorded in `01_Resources/48_Statistical_Virtues_and_Ontology/`.
+
+## Marketing Research and Online Engagement
+
+The 15-source collection in `01_Resources/49_Online_Engagement_and_Agency/` supports M5 §5.29 and M9 §§9.70–9.75. Ten marketing and consumer-research papers cover mechanisms and a protective application; supporting economics, company, and regulatory records establish different forms of evidence. Sessions 7 and 14 add selected cases and an editable evidence diagram. Optional practice reuses the existing synthetic feed program without changing its calculations. Full-text access and inspection limits are recorded source by source.

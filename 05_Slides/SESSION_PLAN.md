@@ -441,3 +441,7 @@ Session 6 selects the released-account comparison and conditional update within 
 ## Statistical Virtues and Ontological Adequacy
 
 Session 1 selects the target-and-claim comparison within the existing definitions and argument discussion. Session 14 selects the conceptual diagram and one recurring case within minutes 90–110. The extended readings and written argument remain optional practice; the full Session 14 deck is a case library. These selections preserve the 170-minute allocations.
+
+## Marketing Publications and Online Engagement
+
+Session 7 selects the engagement and evidence-classification discussion within minutes 155–170. Session 14 selects the evidence diagram and one company case within minutes 80–110, using the existing feed example when a numerical comparison is helpful. These are alternatives within existing blocks; the full Session 14 deck remains a case library. The [extended reading and argument exercise](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) is optional practice. Meeting lengths and course requirements are unchanged.

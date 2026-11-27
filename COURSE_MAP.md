@@ -241,3 +241,7 @@ Use M4 §4.31 for released retail data and exact mixture integration, M6 §6.46 
 ## Statistical Virtues and Ontological Adequacy
 
 M1 §1.24 introduces the object behind an AI-assisted analysis. M6 §6.46.6 distinguishes the population error criterion from the affected person's burden. M9 §§9.66–9.69 develops the philosophical argument, recurring case assessments, and strongest reply. Sessions 1 and 14, the [annotated readings](01_Resources/48_Statistical_Virtues_and_Ontology/README.md), and [optional practice](07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) use the same distinction. The new figure is conceptual and supplies no numerical score of a researcher or institution.
+
+## Marketing Research and Compulsive Online Engagement
+
+M5 §5.29 distinguishes engagement labels, endorsement, and selected qualitative accounts. M9 §§9.70–9.75 examines content sequences, streaks, uncertain rewards, gamification, binge viewing, and user authority through [15 sources](01_Resources/49_Online_Engagement_and_Agency/README.md). Sessions 7 and 14 select these cases within their existing discussions. The [optional exercise](07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) reuses the complete synthetic feed-policy program in §9.48; it makes no new platform-harm estimate.

@@ -62,3 +62,7 @@ Kantian limits, the ontological spectrum, and critiques of empiricism connect be
 ## Conflicts of Interest, Attention, and Control
 
 The [supplemental guide](09_Conflicts_of_Interest/README.md) distinguishes opposing interests, duties governing judgment, disclosure, and dependence. Nine selected records connect philosophical analysis to behavioral evidence on engagement. M9 §§9.45–9.49 adds two editable TikZ diagrams and a complete original Python comparison, with [optional practice](../../07_Labs/Conflicts_of_Interest/README.md).
+
+## Online Engagement and the Authority to Stop
+
+The [publication guide](../49_Online_Engagement_and_Agency/README.md) adds experimental mechanisms, documented company applications, and an explicit industry citation of streak research. M9 §§9.70–9.75 applies Kantian respect, value capture, and Scanlonian justification while preserving beneficial uses and evidentiary limits. The existing feed-policy program supplies the synthetic worked comparison.

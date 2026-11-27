@@ -118,3 +118,7 @@ The [optional ungraded practice](Bad_Controls/README.md) asks students to defend
 ## Evidence Standards and Reasonable Protection
 
 [Optional ungraded practice](Evidence_Standards/README.md) compares exact synthetic error probabilities, opposing loss specifications, demand restrictions, and a philosophical argument for action under uncertainty. It connects measurement history to pricing and household electricity through an identified person, a supported concern, a normative premise, a feasible alternative, and conditions for revision.
+
+## Marketing Publications and Unwanted Continuation
+
+The [engagement exercise](Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) adds source classification, chronology, claim revision, and a reasonable-alternative argument to the existing synthetic feed comparison. It is optional and ungraded. Read M9 §§9.70–9.75 and the [15-source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md).

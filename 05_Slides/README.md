@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 551 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 559 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -206,3 +206,7 @@ Sessions 6 and 14 connect released-data integration to the documented conditiona
 ## Statistical Virtues and Ontological Adequacy
 
 Sessions 1 and 14 distinguish accuracy for a recorded variable from adequacy for a broader claim. The editable two-dimensional diagram and electricity, pooling, and engagement comparisons connect to [M9 §§9.66–9.69](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness). Presenter notes retain the strongest reply, the synthetic scope of the pooling result, and the distinction between empirical and normative premises.
+
+## Online Engagement and the Authority to Stop
+
+Sessions 7 and 14 connect marketing publications with documented industry practices, consumer purposes, and reasonable alternatives. The [15-source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional practice](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) distinguish engagement effects from harmful consequences and clinical claims. The EU example retains the preliminary status of the February 6, 2026 notice.
