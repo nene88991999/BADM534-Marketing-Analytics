@@ -25,7 +25,7 @@ The disclosure scenario holds behavior fixed. Identify the logical conclusion th
 
 ## Construct a Reasonable Principle
 
-Write a proposed principle and a feasible alternative. Identify a factual premise, a normative premise, and an ought conclusion. Formulate objections from a time-limited user, a user who values extended browsing, and a worker or creator who depends on the service. Compare the burdens of both principles from those positions. Avoid treating votes or a sum of predicted clicks as Scanlon's criterion.
+Write a proposed principle and a feasible alternative. Identify a factual premise, a normative premise, and an ought conclusion. Formulate objections from a time-limited user, a user who values extended browsing, and a worker or creator who depends on the service. Compare the burdens of both principles from those positions. Avoid treating votes or a sum of predicted clicks as the reasonable-rejection criterion (Scanlon, 1998).
 
 Now vary one premise: the user deliberately revises the stopping instruction; the alternative imposes a substantial accessibility cost; or the apparent request results from a measurement error. Explain whether and why your recommendation changes. Preserve the distinction between challenging a premise and changing the principle solely to favor the firm.
 

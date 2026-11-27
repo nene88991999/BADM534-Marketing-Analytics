@@ -8,18 +8,18 @@ The collection contains 26 sources: 18 philosophical and methodological readings
 
 | Question | Readings | Course Application |
 | --- | --- | --- |
-| What kind of object is a dataset? | [Artifacts and representation](01_Artifacts/README.md): Thomasson, Leonelli, Bogen and Woodward, Epstein | M2 §2.30; M9 §9.51 |
-| What connects a record, a true claim, and a justified action? | [Truth and norms](02_Truth_and_Norms/README.md): Thomasson, Glanzberg, MacFarlane, Douglas, Longino, Steel | M9 §9.52 |
-| Why are some questions easier to answer than others? | [Institutions and ignorance](03_Institutions_and_Ignorance/README.md): Frickel and colleagues, Hess, McGoey, D'Ignazio and Klein | M9 §9.53 |
+| What kind of object is a dataset? | [Artifacts and representation](01_Artifacts/README.md): origins, identity, evidence, and institutional categories | M2 §2.30; M9 §9.51 |
+| What connects a record, a true claim, and a justified action? | [Truth and norms](02_Truth_and_Norms/README.md): truth conditions, norms, error, and criticism | M9 §9.52 |
+| Why are some questions easier to answer than others? | [Institutions and ignorance](03_Institutions_and_Ignorance/README.md): research priorities, strategic ignorance, and classification | M9 §9.53 |
 | Which household electricity evidence actually exists? | [Electricity evidence](04_Electricity_Evidence/README.md): EIA, DOE, Virginia, Senate documents, company correspondence | M6 §6.43; M9 §§9.53–9.54 |
 
-Begin with Thomasson T01, Leonelli T05, Douglas T08, Longino T09, Frickel and colleagues T15, and EIA E01–E03. The recommended sequence is background reading, with no new graded requirement. Gitelman and Jackson T07 is an unavailable full-text lead; McGoey T13 and Steel T14 are abstract-based entries. Their inspection limits are explicit in the catalog.
+Begin with T01 (Thomasson, 1999), T05 (Leonelli, 2015), T08 (Douglas, 2000), T09 (Longino, 2004), T15 (Frickel et al., 2010), and EIA E01–E03. The recommended sequence is background reading, with no new graded requirement. T07 (Gitelman and Jackson, 2013) is an unavailable full-text lead; T13 (McGoey, 2012) and T14 (Steel, 2010) are abstract-based entries. Their inspection limits are explicit in the catalog.
 
 ## The Argument
 
 Data have histories of creation, classification, retention, linkage, and access. Institutional purposes influence those histories. They can improve accuracy, exclude relevant cases, or constrain reuse. Establishing that a record was institutionally produced therefore begins an inquiry into its evidential role; it does not refute its contents.
 
-Thomasson's account of created, dependent artifacts provides an analogy for provenance and identity. A dataset version, a copy of that version, and the persons it represents are distinct. Some recorded facts, including legally owed charges, partly depend on institutional rules. Other claims concern physical events or causal relationships. A rule's existence, a proposition's truth, the warrant for asserting it, and the permissibility of acting on it require distinct arguments.
+An account of created, dependent artifacts (Thomasson, 1999) provides an analogy for provenance and identity. A dataset version, a copy of that version, and the persons it represents are distinct. Some recorded facts, including legally owed charges, partly depend on institutional rules. Other claims concern physical events or causal relationships. A rule's existence, a proposition's truth, the warrant for asserting it, and the permissibility of acting on it require distinct arguments.
 
 The electricity case supplies a consequential correction: household billing data have already been collected, and household expenditure microdata are public. The difficult object is an adequately linked and accessible body of evidence for project-level household cost incidence, including canceled proposals, cost recovery, offsets, and counterfactual outcomes. Political sensitivity can encourage restricted access and also disclosure or public investigation. Permanent unavailability and deliberate suppression require evidence beyond controversy itself.
 

@@ -66,7 +66,7 @@ Source: M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 - Which reasons matter even when they are difficult to quantify?
 - An accurate algorithm can advance an objectionable end.
 
-Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Kant limits theoretical knowledge to objects of possible experience; an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork. The course develops these distinctions in M9 §9.41.
+Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Theoretical knowledge is limited to objects of possible experience (Kant, 1781/1787); an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork (Kant, 1785). The course develops these distinctions in M9 §9.41.
 
 Source: M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -236,7 +236,7 @@ Published benchmark: 14,400 assigned runs per workflow; 40 tasks, six models.
 
 The method, sample, target quantities, and inference convention are supplied before coding. A loud failure means failed execution or incomplete requested output. A silent failure returns complete output with an incorrect scored value. Self-repair permits three revisions after execution or completeness feedback. The agent also receives an independent-check instruction, so the comparison changes several workflow components together. The authors collected these model results; the course program reconstructs aggregates from their release.
 
-Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+Source: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
 ## Slide 19: Fewer Errors, a Different Remaining Problem
 
@@ -248,7 +248,7 @@ Silent failures are 2.35% of agent runs and 89.18% of its failures.
 
 The agent has 338 silent failures among 14,400 assigned runs and 379 total failures. Lower total error and a larger silent share are compatible. Self-repair can turn an incomplete program into a complete but wrong one, exposing a different failure category. Inspect numerical validity after execution succeeds. See M1 §1.19 and the published aggregate reconstruction.
 
-Source: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+Source: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
 ## Slide 20: Verification with Counterexamples
 
@@ -271,7 +271,7 @@ Hold the model and task fixed; compare the four complete workflows.
 
 All cells receive the same core measurement request and output schema. Explicit information organizes the definitions, while independent feedback exposes development discrepancies and permits bounded correction. Common tools, permissions, and resource caps keep the comparison interpretable. The possible interaction is measured on a frozen evaluation task. This diagram specifies an experiment and contains no observed model performance.
 
-Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
 ## Slide 22: The Logging Denominator
 
@@ -282,7 +282,7 @@ Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Origin
 
 The roster records earlier presence in the released file, not account enrollment. Count distinct dates from July 1 inclusive through August 1 exclusive. The input includes neighboring boundary dates. A zero is no recorded logging in the window; it is not zero consumption. Full source reconstruction and reference calculation appear in M1 §1.17.
 
-Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
 ## Slide 23: mHealth Records
 
@@ -324,7 +324,7 @@ Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 
 A historical finding concerns the tested configuration. A current workflow can differ through the model, interface, data, or judgment rule. Chen, Zaharia, and Zou separate code formatting from correctness after postprocessing. A code generator can improve on one measure while an automated pipeline breaks on another.
 
-Source: M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+Source: M1 §1.13. (Chen et al., 2024, §3.5). https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
 ## Slide 27: A Reproducible Analysis
 
@@ -386,7 +386,7 @@ Source: Course agent guide and ETHICS_AND_REGULATION.md, M1.
 - Who bears a burden? Define the relevant outcome.
 - What ought the firm do? Defend the governing principle.
 
-An accurate purchase forecast can leave customer burdens and permission unresolved. Koralus and Mascarenhas model reasoning through questions and answers; this workflow applies that distinction to a managerial brief. Do not infer a cognitive mechanism for a particular analyst or AI system. Preserve the population, timing, units, and meaning of each result.
+An accurate purchase forecast can leave customer burdens and permission unresolved. Reasoning can be modeled through questions and answers (Koralus and Mascarenhas, 2013); this workflow applies that distinction to a managerial brief. Do not infer a cognitive mechanism for a particular analyst or AI system. Preserve the population, timing, units, and meaning of each result.
 
 Source: M1 §1.20. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 

@@ -13,7 +13,7 @@ A commercial objective can influence the question an analyst asks before it infl
 | Jack M. Balkin (2016), [Information Fiduciaries and the First Amendment](https://lawreview.law.ucdavis.edu/sites/g/files/dgvnsk15026/files/media/documents/49-4_Balkin.pdf), *UC Davis Law Review* 49, 1183–1234 | Publication record and selected information-fiduciary argument, §§III–V. A proposal for obligations in digital relationships. |
 | Lina M. Khan and David E. Pozen (2019), [A Skeptical View of Information Fiduciaries](https://harvardlawreview.org/wp-content/uploads/2019/12/497-541_Online.pdf), *Harvard Law Review* 133, 497–541 | Introduction and stated critique: competing obligations, business models, and structural power challenge the fiduciary proposal. |
 
-Kantian authority, Scanlon's reasonable-rejection test, and Confucian remonstrance build on the course's existing [primary philosophy collection](../README.md), [stakeholder readings](../07_Stakeholders_and_Reasons/README.md), and [logic guide](../08_Logic_and_Analytical_Arguments/README.md). No universal legal fiduciary duty for platforms is asserted. The legal scholarship describes arguments concerning institutional design, not a current-law survey or a finding of violation.
+Kantian authority, the reasonable-rejection test (Scanlon, 1998), and Confucian remonstrance build on the course's existing [primary philosophy collection](../README.md), [stakeholder readings](../07_Stakeholders_and_Reasons/README.md), and [logic guide](../08_Logic_and_Analytical_Arguments/README.md). No universal legal fiduciary duty for platforms is asserted. The legal scholarship describes arguments concerning institutional design, not a current-law survey or a finding of violation.
 
 ## Engagement and the Scope of Evidence
 

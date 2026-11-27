@@ -33,7 +33,7 @@ Students should also be able to distinguish firm outcomes from customer value, i
 
 Use mHealth throughout the eight modules. Add restaurant-availability records for coverage, policy comparison, and forecasting, and generative-AI demand materials for public signals, subscription cohorts, and model verification. Synthetic examples provide small calculations that can be checked by hand. Each data application links complete Python, input definitions, sample restrictions, and expected output.
 
-Ethics and regulation recur within the methods. The [module integration guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) connects privacy, customer representation, claim substantiation, pricing, retention, review authenticity, experimentation, and delivery. Session 14 reserves 75 minutes for Marketing Dialectics, customer outcomes, and regulatory scope. The chapter applies Kantian critique, Hume and Smith on conflicting interests, and Confucian accounts of conduct to marketing practices. The final 15 minutes compare reasoned recommendations; no extra meeting is added. Presentation discussions include customer consequences and the strength of the evidence supporting the recommendation.
+Ethics and regulation recur within the methods. The [module integration guide](../06_Lecture_Notes/ETHICS_AND_REGULATION.md) connects privacy, customer representation, claim substantiation, pricing, retention, review authenticity, experimentation, and delivery. Session 14 reserves 75 minutes for Marketing Dialectics, customer outcomes, and regulatory scope. The chapter applies Kantian critique, scrutiny of conflicting interests (Hume, 1741; Smith, 1776), and Confucian accounts of conduct to marketing practices. The final 15 minutes compare reasoned recommendations; no extra meeting is added. Presentation discussions include customer consequences and the strength of the evidence supporting the recommendation.
 
 ## Materials and Future Revisions
 
@@ -59,7 +59,7 @@ Use the [LLM evidence examples](../03_Data_and_Code/LLM_Revalidation/README.md) 
 
 ## AI Experimentation and Pricing
 
-Sessions 9 and 14 connect Misra and his coauthors' research to the choice of experimental objectives, pricing benchmarks, and customer incidence. The Kantian case examines truthful representation, treatment of persons, and the justification of constraints before optimization. The current policy record distinguishes New York disclosure law, proposed restrictions, FTC inquiries, and emergency price-gouging conditions. The 15 dated meetings, 170-minute duration, and unreleased assessment rules remain unchanged.
+Sessions 9 and 14 connect research on AI-assisted experiments and personalization (Angelopoulos et al., 2026; Dubé and Misra, 2021) to the choice of experimental objectives, pricing benchmarks, and customer incidence. The Kantian case examines truthful representation, treatment of persons, and the justification of constraints before optimization. The current policy record distinguishes New York disclosure law, proposed restrictions, FTC inquiries, and emergency price-gouging conditions. The 15 dated meetings, 170-minute duration, and unreleased assessment rules remain unchanged.
 
 ## Statistical Graphics and Interpretation
 
@@ -153,7 +153,7 @@ Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thres
 
 ## Logical Assessment and Inverse Power
 
-M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+M6 §6.34 develops the inverse-power approach (Andrews, 1989) with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
 
 ## Institutional Context in Empirical Evaluation
 
@@ -179,9 +179,9 @@ Sessions 1, 5, 9, and 14 use a common five-step exercise: define the claim, expo
 
 M1 §1.20, M4 §4.29, M6 §6.38, and M9 §9.40 supply the connected explanations. The [optional argument practice](../07_Labs/Philosophical_Arguments/README.md) contains the longer exercise and a reusable record. The two [complete Python examples](../03_Data_and_Code/Analytical_Arguments/README.md) distinguish observational equivalence from identification and ordinal rankings from welfare valuations. Three editable TikZ figures support the comparisons. No additional graded requirement or AI-use policy is established.
 
-M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, the phenomena–noumena distinction (Kant, 1781/1787), and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from the noumenal limiting concept (Kant, 1781/1787) and practical justification.
 
-[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to limits of cognition (Kant, 1781/1787), observational justification (Sellars, 1956), critical realism (Bhaskar, 2007), intentionality (Husserl, 1970), and normative reasons (Scanlon, 2009). Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ## Explanation and Independent Learning
 

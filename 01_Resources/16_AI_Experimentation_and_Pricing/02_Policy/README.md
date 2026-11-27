@@ -19,7 +19,7 @@ Federal Trade Commission. August 19, 2026 proposal.
 
 **Reading:** Complete eight-page statement, particularly pages 3–8 and footnote 8.
 
-Directly cites Dubé and Misra. Connects personalized-price disclosure to existing deception and unfairness principles; proposal is not a new blanket ban.
+Cites the personalized-pricing study (Dubé and Misra, 2021, 2023). Connects personalized-price disclosure to existing deception and unfairness principles; proposal is not a new blanket ban.
 
 [Source](https://www.ftc.gov/system/files/ftc_gov/pdf/p034101-ftc-enforcement-policy-statement-re-personalized-pricing-proposed-for-public-comment.pdf).
 

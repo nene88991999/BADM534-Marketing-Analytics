@@ -27,8 +27,8 @@ Fourteen sources connect dietary measurement to the recurring mHealth cases. Ele
 | ID | Resource | Analytical Use |
 | --- | --- | --- |
 | N03 | [NCI Misreporting](Energy_Plausibility/NCI_Misreporting.md) | Distinguish reported intake from actual intake and examine the selection introduced by exclusions. |
-| N12 | [Banna, McCrory, Fialkowski, and Boushey, Frontiers in Nutrition (2017)](Energy_Plausibility/Banna_McCrory_Fialkowski_Boushey_FrontiersinNutrition2017.pdf) | Compare fixed cutoffs, individualized methods, and their assumptions. [Companion](Energy_Plausibility/Banna_McCrory_Fialkowski_Boushey_FrontiersinNutrition2017.md). |
-| N13 | [Black, International Journal of Obesity (2000)](https://doi.org/10.1038/sj.ijo.0801376) | Updated Goldberg equation and Tables 7–8: duration, sample size, activity assumptions, and individual versus group screening. [Companion](Energy_Plausibility/Black_InternationalJournalofObesity2000.md). |
+| N12 | [(Banna et al., 2017)](Energy_Plausibility/Banna_McCrory_Fialkowski_Boushey_FrontiersinNutrition2017.pdf) | Compare fixed cutoffs, individualized methods, and their assumptions. [Companion](Energy_Plausibility/Banna_McCrory_Fialkowski_Boushey_FrontiersinNutrition2017.md). |
+| N13 | [(Black, International Journal of Obesity, 2000)](https://doi.org/10.1038/sj.ijo.0801376) | Updated Goldberg equation and Tables 7–8: duration, sample size, activity assumptions, and individual versus group screening. [Companion](Energy_Plausibility/Black_InternationalJournalofObesity2000.md). |
 | N14 | [Goldberg, Black, Jebb, Cole, Murgatroyd, Coward, and Prentice, European Journal of Clinical Nutrition (1991)](https://pubmed.ncbi.nlm.nih.gov/1810719/) | Foundational derivation. The coded illustration uses Black's later variance assumptions. |
 
 ## Coding Applications

@@ -12,7 +12,7 @@ U.S. federal framework, checked November 26, 2026. The course application is hyp
 | Attributable injury | [*Brunswick*, 429 U.S. 477, 489 (1977)](https://www.law.cornell.edu/supremecourt/text/429/477) | Harm flowing from the anticompetitive aspect of the conduct | A justified remedy responds to an attributable burden while protecting against sanctions for unrelated losses. |
 | Damages and class proof | [*Comcast*, 569 U.S. 27, 35–38 (2013)](https://www.law.cornell.edu/supremecourt/text/11-864) | A counterfactual and damages model matched to the accepted liability theory; heterogeneity and common proof | Accountability requires evidence of who is harmed; an aggregate change cannot answer every person's claim. |
 
-These connections are philosophical interpretations of institutional reasons. Courts do not apply Scanlon's contractualism as the governing antitrust test. Moral standing also extends to people who may lack a particular damages claim.
+These connections are philosophical interpretations of institutional reasons. Courts do not apply contractualism (Scanlon, 1998) as the governing antitrust test. Moral standing also extends to people who may lack a particular damages claim.
 
 ## Legal Literature
 

@@ -16,6 +16,6 @@ The phrase “marketing effectiveness at the cost of ethics” is a proposition 
 
 ## Heterogeneity, Individual Reasons, and Antitrust
 
-The [expanded assessment](SCANLON_ASSESSMENT.md) distinguishes rich observed heterogeneity from an unlearned residual, preserves Dubé and Misra's reported customer-surplus decline, and identifies the assumptions connecting demand to welfare. The course counterexample proves that finite price support can leave the sign of aggregate surplus unidentified under monotonicity alone. It does not prove that flexible methods systematically conceal harm.
+The [expanded assessment](SCANLON_ASSESSMENT.md) distinguishes rich observed heterogeneity from an unlearned residual, preserves the reported customer-surplus decline (Dubé and Misra, 2021), and identifies the assumptions connecting demand to welfare. The course counterexample proves that finite price support can leave the sign of aggregate surplus unidentified under monotonicity alone. It does not prove that flexible methods systematically conceal harm.
 
 The [legal application](ANTITRUST_AND_REASONS.md) distinguishes a harmful outcome, a morally unjustifiable practice, an agreement or exclusionary act, legally attributable injury, and a damages calculation. Published profit gains and modeled softening of competition alone do not establish unlawful coordination.

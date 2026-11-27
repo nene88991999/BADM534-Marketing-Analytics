@@ -315,7 +315,7 @@ SciQA: 500 test examples. Accuracy uses supplied reference prefixes.
 
 Reported Table 4, training lookahead three and evaluation lookahead seven. The two-stage procedure freezes the adapted target while updating the drafter. Next-token accuracy conditions on the supplied reference prefix. Whole-answer correctness requires a separate evaluation. Re-evaluate dependent components when the target changes. Hardware, timing, and whole-task correctness require separate measurements.
 
-Source: Galgani and coauthors (2026), Table 4. https://arxiv.org/abs/2611.25813v1
+Source: (Galgani et al., 2026, Table 4). https://arxiv.org/abs/2611.25813v1
 
 ## Slide 24: Failed Requests Change the Comparison
 
@@ -680,7 +680,7 @@ Synthetic users. The same aggregate selects a different person for review.
 
 The customer decision depends on which user receives each value. Matching the overall mean therefore leaves a consequential error undetected. The course grader compares every roster user and denominator. Independent tests include this counterexample, missing users, duplicate keys, invalid dates, and nonfinite outputs. An independently written SQL query checks the actual mHealth task results.
 
-Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
 ## Slide 52: Outputs, Actions, and the Checker
 
@@ -690,7 +690,7 @@ Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Origin
 
 These judgments can disagree. An accurate table may follow an unauthorized input change. A weak checker may accept an invalid table. Record observable tool actions and state changes; a generated explanation does not reveal the model’s internal reasoning. The provided CSV checker executes no candidate code and supplies no execution sandbox.
 
-Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
 ## Slide 53: A Total-Only Check Accepts Different Errors
 
@@ -705,7 +705,7 @@ Constructed programs on mHealth; intended roster: 358 users, 31 days.
 
 The shifted-user program changes 331 user values while preserving the overall mean and total. The 30-day calculation changes exposure. Omitting zero-log users returns 319 rows and changes the target population. Under the required per-user contract, missing users constitute incomplete output. The two complete but wrong programs are silent failures. The independent SQL comparison and small known-answer cases assess the checker. These are deliberately constructed errors, not measured LLM error frequencies. Full Python appears in M7 §7.46.
 
-Source: Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+Source: Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
 ## Slide 54: Development and Final Evaluation
 
@@ -716,7 +716,7 @@ Source: Original course example. Workflow motivation: Galiani, López, and Sosa,
 
 The expected answers are public teaching files. A measured exercise needs an explicitly restricted task workspace, not a folder label. Fresh conversations reduce carryover, and five repeated runs per configuration describe variability on this task. Full AI comparisons are optional ungraded practice; the released numerical results are local reference calculations and separately labeled hypothetical costs.
 
-Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
 ## Slide 55: An Omitted Feature Bias
 
@@ -726,7 +726,7 @@ Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Origin
 
 These are analytic moments in the invented four-profile design. Both source variances equal one, with 216 primary and 1,296 auxiliary responses. The fitted model retains intercept and price bias; the sensitivity adds a feature bias to the auxiliary mean. Expected feature-coefficient error equals 0.3 times 1296/1512. The 0.01 MSE target fails because of the omitted bias restriction.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 56: Sampling Variance and Persistent Bias
 
@@ -738,7 +738,7 @@ Invented example. Both source counts grow in fixed proportion; the omitted featu
 
 At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias MSE is 0.066432. A larger sample narrows sampling variation while preserving the expected coefficient error. Adding the feature to the fitted bias dictionary restores correct specification but makes all three primary features confounded with unrestricted auxiliary bias. At the original 216 primary observations, the corrected model has MSE 3/216 = 0.013889.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 57: Human Validation of the Bias Model
 
@@ -748,7 +748,7 @@ Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary D
 
 In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is excluded by the 0.01 threshold. Holding the five primary features fixed and adding that bias feature makes the bias dictionary cover the full primary feature space, yielding zero auxiliary value under the expanded worst-case model. This is a sensitivity implication, not an empirical re-estimation. The reported 74 and 32 percent savings come from retrospective calibrations assuming auxiliary cost is one percent of primary cost. M7 Section 7.37 provides full Python and interpretation.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 58: Coding Exercise: A Forecast Evaluation
 

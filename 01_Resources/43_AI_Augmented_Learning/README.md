@@ -7,7 +7,7 @@ An instructor deciding how to present an analytical argument needs to preserve i
 | Source | Version and Reviewed Scope |
 | --- | --- |
 | [LearnLM Team, *Towards an AI-Augmented Textbook*](https://arxiv.org/abs/2509.13348v4) | September 30, 2025, v4. Sections 1–6 and appendices A–B reviewed in the [HTML text](https://arxiv.org/html/2509.13348v4). Source-based transformations, embedded questions, and expert evaluation motivate the design. |
-| [Heldreth and colleagues, *An Experimental Evaluation of an AI-Powered Interactive Learning Platform*](https://doi.org/10.3389/frai.2026.1783117) | March 10, 2026. Methods, results, limitations, and availability statement reviewed. This supplies the fuller account of the learning experiment, rather than an independent replication. |
+| *An Experimental Evaluation of an AI-Powered Interactive Learning Platform* [(Heldreth et al., 2026)](https://doi.org/10.3389/frai.2026.1783117) | March 10, 2026. Methods, results, limitations, and availability statement reviewed. This supplies the fuller account of the learning experiment, rather than an independent replication. |
 | [Google Research announcement](https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/) | September 16, 2025. Its reported rounded retention scores, 78% and 67%, supply the magnitude exercise. |
 | [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) | Checked November 26, 2026. Supports repository-hosted static HTML, CSS, and JavaScript. |
 

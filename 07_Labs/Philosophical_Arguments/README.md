@@ -2,7 +2,7 @@
 
 This is optional, ungraded practice. It establishes no assignment, deadline, grade weight, or course-wide AI rule.
 
-Use [M9 §§9.27–9.32 and 9.40](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md), the [Scanlon and stakeholder reading guide](../../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md), and the [logic reading guide](../../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md). M1 §1.20 introduces a five-step argument exercise; M4 §4.29 and M6 §6.38 supply complete numerical examples.
+Use [M9 §§9.27–9.32 and 9.40](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md), the [contractualist and stakeholder reading guide](../../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md), and the [logic reading guide](../../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md). M1 §1.20 introduces a five-step argument exercise; M4 §4.29 and M6 §6.38 supply complete numerical examples.
 
 ## Construct an Argument
 
@@ -29,7 +29,7 @@ Choose one specific decision: a cancellation step, mHealth targeting, a pricing 
 
 **Objection and reply:** fraud or an irreversible service interruption may justify verification and clear warnings. Establish the risk and the effectiveness of the safeguard. The existence of that risk does not by itself justify compulsory persuasion. If a prompt exit cannot meet necessary protections at a reasonable cost, revise the proposed alternative and assess the remaining burdens.
 
-The normative premise is a proposed course application of Scanlon's approach. Its justification remains open to challenge. It is not a legal determination.
+The normative premise is a proposed course application of contractualism (Scanlon, 1998). Its justification remains open to challenge. It is not a legal determination.
 
 ## Recurring Cases
 
@@ -91,7 +91,7 @@ For the valuation example, retain the purchase probabilities and strict rank ord
 
 Assess the exact claim in the [public-communication record](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md), retaining the paper's actual outcome, sample, qualifications, and positive findings. Reconstruct the proposed movement from nonrejection to harmlessness.
 
-- Identify the effect sizes the study could detect under the specified power calculation. Preserve Donald W. K. Andrews's distinction between detectable departures and an interpretation of the realized effect.
+- Identify the effect sizes the study could detect under the specified power calculation. Preserve the distinction between detectable departures and interpretation of the realized effect (Andrews, 1989).
 - Explain the additional institutional evidence needed to map the measured unit price to household bills and cost exposure.
 - Use the existing [synthetic counterexamples](../../03_Data_and_Code/Statistical_Inference/logical_counterexamples.py) and [institutional assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) to identify a missing premise.
 - Give the strongest supported response to the criticism. A design estimating average prices can still provide useful evidence within that scope.
@@ -113,19 +113,19 @@ Use M9 §9.41 to assess a proposed objective before optimizing it. Begin with a 
 
 1. Identify what the available data represent and the conditions under which the representation is informative.
 2. Identify important empirical facts that remain unmeasured and propose evidence for investigating them. Include qualitative evidence where appropriate.
-3. Explain the negative sense of Kant's noumenon and why an unmeasured empirical variable does not meet that definition. Explain the limit this places on treating the model as a complete account of the person.
+3. Explain the negative sense of noumenon (Kant, 1781/1787) and why an unmeasured empirical variable does not meet that definition. Explain the limit this places on treating the model as a complete account of the person.
 4. State the practical principle supporting respect, authority, or an obligation. Defend it through Kantian or Scanlonian reasoning, preserving the distinction between their arguments.
 5. Assess whether the proposed end deserves pursuit. Compare a feasible alternative and allow the conclusion that the objective ought to be abandoned even if the algorithm achieves it accurately.
 
 Give the strongest reply to your judgment and identify a reason or fact that could change it. Greater predictive accuracy, an additional latent variable, or a wider confidence interval does not by itself answer a question about which ends are worthy. An appeal to noumena supplies no evidence that a particular hidden preference or harm actually exists.
 
-Classify a supported finding, a recognized evidence gap, an unanticipated empirical issue, and an acknowledged limit of knowledge. For the last, state the kind of knowledge, the reason for the limit, and whether changing the design could remove it. Compare the price example's conditional non-identification with Kant's restriction on human theoretical cognition. Explain why the need for practical justification remains after that comparison. Use the phrase “known to be the never known” with its scope and argument, as in M9 §9.41.5.
+Classify a supported finding, a recognized evidence gap, an unanticipated empirical issue, and an acknowledged limit of knowledge. For the last, state the kind of knowledge, the reason for the limit, and whether changing the design could remove it. Compare the price example's conditional non-identification with the restriction on human theoretical cognition (Kant, 1781/1787). Explain why the need for practical justification remains after that comparison. Use the phrase “known to be the never known” with its scope and argument, as in M9 §9.41.5.
 
 ## Ontological Scope and Critiques of Empiricism
 
 Use M9 §§9.42–9.43 and the spectrum to assess one electricity, personalized-pricing, or cancellation interpretation. Record a source passage and its actual claim. Identify the measured object, the broader object invoked by the conclusion, and the additional premise connecting them. Place that inference on the spectrum and justify the placement; do not assign an author or institution an overall score.
 
-Develop one criticism using Kant, Sellars, Bhaskar, Husserl, or Scanlon. State the philosophical argument and explain its specific application. Preserve the difference between empirically investigable mechanisms, the meaning of an action, normative reasons, and Kant's limit of theoretical cognition. Answer the strongest reply, retain supported welfare findings and safeguards, and write a revised conclusion.
+Develop one criticism using a philosophical account of cognition, observational justification, ontology, intentionality, or normative reasons (Kant, 1781/1787; Sellars, 1956; Bhaskar, 2007; Husserl, 1970; Scanlon, 2009). State the philosophical argument and explain its specific application. Preserve the difference between empirically investigable mechanisms, the meaning of an action, normative reasons, and the limit of theoretical cognition (Kant, 1781/1787). Answer the strongest reply, retain supported welfare findings and safeguards, and write a revised conclusion.
 
 For the publication-incentive question, distinguish selection by statistical result from selection by method or question. Propose a sampling frame that includes unpublished or unsubmitted work and identify the comparisons needed. Treat the preference for computational tractability as a hypothesis until that comparison supplies evidence.
 

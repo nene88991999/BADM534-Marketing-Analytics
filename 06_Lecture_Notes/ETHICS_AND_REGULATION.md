@@ -111,7 +111,7 @@ The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_De
 
 ## Logical Assessment and Inverse Power
 
-M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+M6 §6.34 develops the inverse-power approach (Andrews, 1989) with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
 
 ## Project Costs and the Scope of Customer Protection
 
@@ -133,7 +133,7 @@ The [antitrust source guide](../01_Resources/16_AI_Experimentation_and_Pricing/A
 
 M9 §9.40 connects validity and premise support to the existing Scanlonian evaluation of pricing and public reassurance. M1 §1.20 introduces the five-step exercise; M4 §4.29 and M6 §6.38 supply exact numerical constructions. Students distinguish a supported criticism from a stronger accusation and identify evidence or reasons that would change either conclusion. The [logic guide](../01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) records the primary readings. These additions make no new legal claim or change to the recorded status of any policy.
 
-[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+[M9 §§9.41–9.43](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to limits of cognition (Kant, 1781/1787), observational justification (Sellars, 1956), critical realism (Bhaskar, 2007), intentionality (Husserl, 1970), and normative reasons (Scanlon, 2009). Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ## Conflicts of Interest, Judgment, and Engagement
 

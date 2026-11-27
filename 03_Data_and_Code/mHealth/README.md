@@ -58,7 +58,7 @@ An AI coding assistant can implement an explicitly specified pipeline and propos
 
 Nathan Yang supplied `data_everyday.csv` and `data_final_25.csv` from the mHealth food-log research folder and authorized publication of the transformed teaching copy. The files describe 2016 records. Their sample restrictions and relationship to final published analysis samples are not fully documented in the supplied folder. No additional open-data license has been specified.
 
-[Ling and coauthors (2022)](https://doi.org/10.1145/3485447.3514193) develop goal-oriented recommendations from daily food histories. [Nielsen and coauthors (2022)](https://doi.org/10.1086/720453) study consumption variety and FOODVAR. The course files illustrate related questions; they are not labeled as exact replication data for either paper.
+Daily food histories support goal-oriented recommendation design [(Ling et al., 2022)](https://doi.org/10.1145/3485447.3514193) and analysis of consumption variety through FOODVAR [(Nielsen et al., 2022)](https://doi.org/10.1086/720453). The course files illustrate related questions; they are not labeled as exact replication data for either paper.
 
 [prepare_data.py](prepare_data.py) implements the transformation using pandas and NumPy. It requires separate source files and a private key path. The instructor retains the key outside Git so repeated builds produce the same transformation. The manifest identifies source and output hashes, the noise rule, and verification summaries. The original sources and private key are not part of this repository.
 

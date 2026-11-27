@@ -98,7 +98,7 @@ A doubly robust estimator combines an outcome model and a treatment model and ca
 
 ### 6.7.1 Evaluating a Recommendation Policy from Logged Exposure
 
-A retailer has records from an existing recommendation policy and wants to evaluate a different one. The existing policy shows products selectively: frequent buyers may usually see A, while occasional buyers usually see B. Comparing their observed click rates mixes product response with the customer populations receiving each recommendation. [Schnabel and coauthors (2016)](https://proceedings.mlr.press/v48/schnabel16.html) formulate recommendation learning and evaluation as problems of selected observation and use propensity weighting to address that selection under explicit conditions.
+A retailer has records from an existing recommendation policy and wants to evaluate a different one. The existing policy shows products selectively: frequent buyers may usually see A, while occasional buyers usually see B. Comparing their observed click rates mixes product response with the customer populations receiving each recommendation. Recommendation learning and evaluation can be formulated as problems of selected observation, with propensity weighting addressing that selection under explicit conditions [(Schnabel et al., 2016)](https://proceedings.mlr.press/v48/schnabel16.html).
 
 Consider a single recommendation opportunity per customer. Let $X_i$ be information available before display, $A_i$ the displayed item, and $Y_i$ a click within the specified response window. The logging policy assigns item $a$ with probability $p_0(a\mid X_i)$. A target policy assigns it with probability $\pi(a\mid X_i)$. The target is the expected clicks per opportunity if eligible customers receive recommendations from $\pi$. An inverse-propensity estimator is
 
@@ -174,11 +174,11 @@ An assigned store can gain sales while diverting purchases from another store. I
 
 ### 6.10.1 Case Study: Recommendations Supply Information and Exposure
 
-A recommendation can increase consumption by bringing a product to attention or by changing beliefs about its quality. [Aridor, Gonçalves, Kluver, Kong, and Konstan's MovieLens experiment](https://www.econstor.eu/handle/10419/271773), in its November 2022 working-paper version, separates recommendation and exposure-only conditions and elicits users' beliefs. The results support an informational role: recommendations influence beliefs and consumption beyond simply exposing a movie. MovieLens provides recommendations without selling or hosting the movies, which helps define the incentives in this setting.
+A recommendation can increase consumption by bringing a product to attention or by changing beliefs about its quality. The MovieLens experiment [(Aridor et al., 2022)](https://www.econstor.eu/handle/10419/271773), in its November 2022 working-paper version, separates recommendation and exposure-only conditions and elicits users' beliefs. The results support an informational role: recommendations influence beliefs and consumption beyond simply exposing a movie. MovieLens provides recommendations without selling or hosting the movies, which helps define the incentives in this setting.
 
 A retailer studying the same mechanism could distinguish ordinary display from an explicit personalized endorsement while keeping the eligible product set and available information controlled. The primary outcome would be purchases or contribution per assigned customer over a fixed horizon. Belief measures would address how the endorsement operates. The experiment must account for the possibility that asking about a product itself increases attention to it. Comparisons based only on customers who subsequently click would condition on a response that the endorsement can change.
 
-The displayed information can also affect the labels collected afterward. [Cosley and coauthors (2003)](https://experts.umn.edu/en/publications/is-seeing-believing-how-recommender-interfaces-affect-users-opini/) experimentally vary predicted ratings shown to MovieLens users and find that subsequent ratings tend to move toward the displayed prediction. A rating collected after a recommendation therefore reflects the evaluation context as well as the user's experience. A model trained to reproduce those ratings can partly reproduce its own previous influence. Collecting some evaluations before showing predicted ratings provides a comparison for that mechanism.
+The displayed information can also affect the labels collected afterward. An experiment varying predicted ratings shown to MovieLens users finds that subsequent ratings tend to move toward the displayed prediction [(Cosley et al., 2003)](https://experts.umn.edu/en/publications/is-seeing-believing-how-recommender-interfaces-affect-users-opini/). A rating collected after a recommendation therefore reflects the evaluation context as well as the user's experience. A model trained to reproduce those ratings can partly reproduce its own previous influence. Collecting some evaluations before showing predicted ratings provides a comparison for that mechanism.
 
 An experiment on an adaptive recommender also needs a rule for retraining. If both treatment and control data update a shared model, one customer's assignment may change another customer's recommendations. Freezing the model, maintaining separate models, or assigning sufficiently separated populations evaluates different policies. State which policy and learning process the experiment implements. A short experiment with a frozen model identifies a different intervention from deploying a model that learns from its own recommendations over several months.
 
@@ -194,7 +194,7 @@ For the exposure example, ask an assistant to compute both the raw click rates a
 
 ## 6.12 Readings
 
-[Facure's causal-inference handbook](https://matheusfacure.github.io/python-causality-handbook/landing-page.html) supplies accessible implementations of several designs. [Kohavi and colleagues' practical guide](https://exp-platform.com/Documents/GuideControlledExperiments.pdf) discusses controlled online experiments. [Callaway and Sant'Anna (2021)](https://doi.org/10.1016/j.jeconom.2020.12.001) develop difference-in-differences with multiple periods.
+The causal-inference handbook [(Facure, n.d.)](https://matheusfacure.github.io/python-causality-handbook/landing-page.html) supplies accessible implementations of several designs. The guide to controlled experiments [(Kohavi et al., 2007)](https://exp-platform.com/Documents/GuideControlledExperiments.pdf) discusses controlled online experiments. Difference-in-differences methods extend to multiple periods [(Callaway and Sant'Anna, 2021)](https://doi.org/10.1016/j.jeconom.2020.12.001).
 
 ## 6.13 mHealth: Planning a Randomized Suggestion Test
 
@@ -375,7 +375,7 @@ Y_i^{\mathrm{adj}}=Y_i-\theta(X_i-\overline X),
 \widehat\tau_{\mathrm{adj}}=overline Y_1^{\mathrm{adj}}-overline Y_0^{\mathrm{adj}}.
 $$
 
-The subscripts 1 and 0 denote randomized assignment arms. With a fixed coefficient and a pre-treatment covariate unaffected by assignment, the adjustment removes a mean-zero difference between arms in expectation. It preserves the pooled outcome mean. Randomization supplies the treatment-effect comparison; covariate adjustment changes its precision. The arithmetic is the control-variate approach underlying [CUPED](https://exp-platform.com/cuped/), introduced by Deng, Xu, Kohavi, and Walker (2013).
+The subscripts 1 and 0 denote randomized assignment arms. With a fixed coefficient and a pre-treatment covariate unaffected by assignment, the adjustment removes a mean-zero difference between arms in expectation. It preserves the pooled outcome mean. Randomization supplies the treatment-effect comparison; covariate adjustment changes its precision. The arithmetic is the control-variate approach underlying [CUPED](https://exp-platform.com/cuped/) (Deng et al., 2013).
 
 For a fixed coefficient, the adjusted variance equals
 
@@ -733,9 +733,9 @@ A policy evaluation adds another source of variation. A rule that takes effect i
 
 ## 6.21 Experimental Evidence and AI-Assisted Decisions
 
-A firm can reuse randomized comparisons to train a model that proposes new interventions. Angelopoulos, Lee, and Misra's *Causal Alignment* applies this idea to email subject lines, with human review and evaluation in new campaigns. The training signal inherits the outcome used to rank alternatives. A causal effect on clicks therefore remains an effect on clicks, even when a more effective generator makes that effect easier to reproduce. Customer understanding, refusal, and benefit require corresponding measures and reasons for the proposed action. [Research guide](../../01_Resources/16_AI_Experimentation_and_Pricing/README.md).
+A firm can reuse randomized comparisons to train a model that proposes new interventions. The *Causal Alignment* approach (Angelopoulos et al., 2026) applies this idea to email subject lines, with human review and evaluation in new campaigns. The training signal inherits the outcome used to rank alternatives. A causal effect on clicks therefore remains an effect on clicks, even when a more effective generator makes that effect easier to reproduce. Customer understanding, refusal, and benefit require corresponding measures and reasons for the proposed action. [Research guide](../../01_Resources/16_AI_Experimentation_and_Pricing/README.md).
 
-The selection of an action also depends on its anticipated deployment setting. Farrell, Korganbekova, and Misra's *Robust A/B Decisions* evaluates policies under uncertainty about future outcome distributions. Its conservative treatment of the selected payoff does not add customer outcomes that were absent from the objective. Marketing Dialectics, Sections 9.14–9.18, connects these decisions to personalized pricing, current policy discussions, and a reproducible comparison of profit and customer surplus.
+The selection of an action also depends on its anticipated deployment setting. The *Robust A/B Decisions* approach (Farrell et al., 2026) evaluates policies under uncertainty about future outcome distributions. Its conservative treatment of the selected payoff does not add customer outcomes that were absent from the objective. Marketing Dialectics, Sections 9.14–9.18, connects these decisions to personalized pricing, current policy discussions, and a reproducible comparison of profit and customer surplus.
 
 ## 6.22 Discount Depth and the Causal Response Curve
 
@@ -755,7 +755,7 @@ Profit reaches $14 at a 20 percent discount and equals $10 at both endpoints. If
 
 **Figure description.** The horizontal axis varies the discount from 0 to 40 percentage points while holding the target population and promotion horizon fixed. The blue curve reaches $14 at 20. The orange dashed line is the best linear projection under a uniform discount distribution. A zero linear slope coexists with a substantial nonlinear response.
 
-DoubleML's partially linear regression specification places a constant coefficient on treatment while allowing flexible covariate adjustment. That specification answers a different question from estimating an unrestricted curve. Under misspecification, the projection's weighting matters; its coefficient need not equal a simple average derivative. Nonparametric double-machine-learning methods also exist. [DoubleML models](https://docs.doubleml.org/stable/guide/models.html); [Colangelo and Lee](https://arxiv.org/abs/2004.03036).
+DoubleML's partially linear regression specification places a constant coefficient on treatment while allowing flexible covariate adjustment. That specification answers a different question from estimating an unrestricted curve. Under misspecification, the projection's weighting matters; its coefficient need not equal a simple average derivative. Nonparametric double-machine-learning methods also exist. [DoubleML models](https://docs.doubleml.org/stable/guide/models.html); [(Colangelo and Lee, 2023)](https://arxiv.org/abs/2004.03036).
 
 ## 6.23 Adjustment for Selected Discount Intensity
 
@@ -770,7 +770,7 @@ $$
 \left[Y_i-\widehat\mu(X_i,A_i)\right].
 $$
 
-The first term averages predicted profit over the target population. The second corrects its residual using the relative frequency of the customer's assigned dose. Under identification and regularity conditions, the population conditional mean $E[\xi\mid A=a]$ equals $\theta(a)$ when either nuisance function is correct. If the outcome model is correct, the residual has conditional mean zero. If the density model is correct, the density ratio changes the covariate distribution among customers receiving dose $a$ back to the target distribution, canceling the outcome-model error. [Kennedy, Ma, McHugh, and Small](https://arxiv.org/abs/1507.00747).
+The first term averages predicted profit over the target population. The second corrects its residual using the relative frequency of the customer's assigned dose. Under identification and regularity conditions, the population conditional mean $E[\xi\mid A=a]$ equals $\theta(a)$ when either nuisance function is correct. If the outcome model is correct, the residual has conditional mean zero. If the density model is correct, the density ratio changes the covariate distribution among customers receiving dose $a$ back to the target distribution, canceling the outcome-model error [(Kennedy et al., 2017)](https://arxiv.org/abs/1507.00747).
 
 Five-fold cross-fitting estimates each customer's nuisance predictions using the other four folds. A local linear regression then smooths the adjusted outcomes across discounts. Cross-fitting limits reuse of the same outcome for fitting and evaluation. Valid confidence intervals require additional conditions on estimation errors and smoothing bias. The name double machine learning alone does not establish double robustness; that property depends on the score and the nuisance functions it uses.
 
@@ -1167,7 +1167,7 @@ if __name__ == "__main__":
 
 \noindent A store panel can sometimes support a comparison of profit changes across discount intensities. If an unobserved store characteristic enters profit additively with the same coefficient in both periods, differencing removes that component. Time-varying demand shocks, changing loadings on the characteristic, and dose choices responding to expected profit changes require further justification.
 
-Ordinary parallel trends can identify treatment-on-the-treated level effects relative to no treatment for particular dose groups. Comparing those effects across dose groups also compares populations that may have different gains from treatment. Interpreting the slope across doses as a causal response generally requires stronger restrictions. Pretreatment patterns can reveal some failures, but a flat placebo curve does not prove the required post-treatment comparison. The appropriate design depends on the assignment process and the target effect. [Callaway, Goodman-Bacon, and Sant'Anna, December 2025 version](https://arxiv.org/abs/2107.02637v8).
+Ordinary parallel trends can identify treatment-on-the-treated level effects relative to no treatment for particular dose groups. Comparing those effects across dose groups also compares populations that may have different gains from treatment. Interpreting the slope across doses as a causal response generally requires stronger restrictions. Pretreatment patterns can reveal some failures, but a flat placebo curve does not prove the required post-treatment comparison. The appropriate design depends on the assignment process and the target effect [(Callaway et al., 2025)](https://arxiv.org/abs/2107.02637v8).
 
 For a marketing panel, specify the offer date, anticipation period, customer or store assignment unit, and any other interventions changing alongside the discount. Keep repeated units in the same nuisance-fitting fold and use inference suited to the assignment and dependence structure. If the existing mHealth logs do not record randomized notification intensity, a causal notification-response curve requires an additional design. Logging frequency by itself describes observed behavior and cannot substitute for an assigned intervention.
 
@@ -1175,7 +1175,7 @@ For a marketing panel, specify the offer date, anticipation period, customer or 
 
 \noindent A firm planning product research can choose both the profiles shown and the source supplying each response. When response features, bias features, variances, and sampling costs are known, the information supplied by another response is determined by its source and profile. The realized rating need not change that information calculation. This makes a design fixed before data collection a useful benchmark.
 
-[Jasin, Lin, and Zhang](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298), Theorem 1, show that such a fixed allocation attains the minimum leading sampling cost as the coefficient-MSE target approaches zero in their linear Gaussian model. The objective requires accuracy uniformly over the unknown response and bias coefficients. The result permits lower-order differences at finite accuracy. Their pilot extension estimates unknown noise variances; it retains known response and bias features.
+Under a linear Gaussian model, such a fixed allocation attains the minimum leading sampling cost as the coefficient-MSE target approaches zero [(Jasin et al., 2026, Theorem 1)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298). The objective requires accuracy uniformly over the unknown response and bias coefficients. The result permits lower-order differences at finite accuracy. Their pilot extension estimates unknown noise variances; it retains known response and bias features.
 
 The distinction from an adaptive marketing experiment follows from the information structure and objective. A nonlinear choice model can make information depend on unknown parameters. An online promotion experiment can value revenue earned during learning as well as a final estimate. An unknown bias dictionary requires evidence about which source comparisons remain valid. These changes require their own allocation analysis. [Section 4.24](M04_Conjoint_Segmentation_and_CLV.md) provides the fixed-design calculation, and [Section 7.37](M07_Prediction_and_Machine_Learning.md) shows what happens when its bias restriction fails. Synthetic ratings alone do not establish an intervention's causal effect on human purchasing.
 
@@ -1486,13 +1486,13 @@ if __name__ == "__main__":
 
 ## 6.33 Testing Electricity-Price Interpretations Against the Reported Tables
 
-\noindent A regulator deciding how much financial protection to require from a data-center developer needs evidence about plausible residential costs. A study's inability to reject zero does not discharge that burden. The October 2026 version of Rana, Kaps, and Netessine reports estimates for additions of at least 10 MW during 2020–2025 in bundled utility service territories. The preferred residential regression uses 627 utility-quarter observations from 41 treated utilities. Its outcome is average residential revenue per MWh, and its treatment is cumulative added capacity as a percentage of the utility's pre-treatment peak demand. [Paper, Table 2 and §§4–5](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+\noindent A regulator deciding how much financial protection to require from a data-center developer needs evidence about plausible residential costs. A study's inability to reject zero does not discharge that burden. The October 2026 electricity working paper (Rana et al., 2026) reports estimates for additions of at least 10 MW during 2020–2025 in bundled utility service territories. The preferred residential regression uses 627 utility-quarter observations from 41 treated utilities. Its outcome is average residential revenue per MWh, and its treatment is cumulative added capacity as a percentage of the utility's pre-treatment peak demand. [Paper, Table 2 and §§4–5](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
 
 ### 6.33.1 Effects That the Design Could Miss
 
 \noindent The paper interprets its preferred slope using 456 MW of average added capacity and 6,804 MW of average peak demand. Their ratio, multiplied by 100, is 6.70194 percentage points. Applying that reference exposure to the reported slope 0.261 and standard error 0.158 gives an estimated increase of $1.749/MWh and a standard error of $1.059/MWh. The ratio of two reported means is a reference exposure; it generally differs from the mean of utility-specific ratios and from a household-weighted exposure.
 
-Following Donald W. K. Andrews's inverse-power approach, assess sensitivity at economically specified departures from the null. Section 6.34 derives the corresponding detection thresholds and their dependence on direction and nuisance parameters. For a fixed normal approximation with standard error $s$, the rejection probability against a specified positive effect $d$ is
+Use inverse power (Andrews, 1989) to assess sensitivity at economically specified departures from the null. Section 6.34 derives the corresponding detection thresholds and their dependence on direction and nuisance parameters. For a fixed normal approximation with standard error $s$, the rejection probability against a specified positive effect $d$ is
 
 $$
 \pi(d;s)=\Phi(-z_{0.975}-d/s)+1-\Phi(z_{0.975}-d/s).
@@ -1635,7 +1635,7 @@ if __name__ == "__main__":
 
 ## 6.34 Inverse Power and the Scope of Nonrejection
 
-\noindent A regulator considering a residential cost guarantee needs to know which price increases a study could reliably detect. Donald W. K. Andrews's inverse-power approach starts with a desired probability of rejection and calculates the departures from the null that attain it. This retains the economic units lost when a result is summarized by a t-statistic alone. Two studies can have the same t-statistic and very different abilities to detect a consequential price increase. [Andrews, Power in Econometric Applications, Econometrica 1989](https://doi.org/10.2307/1913623); [Cowles version, §§1–3](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf).
+\noindent A regulator considering a residential cost guarantee needs to know which price increases a study could reliably detect. The inverse-power approach starts with a desired probability of rejection and calculates the departures from the null that attain it. This retains the economic units lost when a result is summarized by a t-statistic alone. Two studies can have the same t-statistic and very different abilities to detect a consequential price increase. [(Andrews, 1989)](https://doi.org/10.2307/1913623); [Cowles version, §§1–3](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf).
 
 ### 6.34.1 Invert the Test's Detection Probability
 
@@ -1657,7 +1657,7 @@ $$
 r_p(\eta,V)=\sqrt{\frac{\lambda_p}{\eta'V^{-1}\eta}}.
 $$
 
-This radius expresses the departure in the chosen coordinates. A direction and its distance require an explicit unit convention when outcomes have different scales. The scalar case reduces to $r_p=s\sqrt{\lambda_p}$. Power rises with the positive radius under this approximation, so the inner and outer inverse-power boundaries in Andrews's treatment coincide. A general test can have a more complicated power function.
+This radius expresses the departure in the chosen coordinates. A direction and its distance require an explicit unit convention when outcomes have different scales. The scalar case reduces to $r_p=s\sqrt{\lambda_p}$. Power rises with the positive radius under this approximation, so the inner and outer inverse-power boundaries coincide (Andrews, 1989). A general test can have a more complicated power function.
 
 For the residential reference comparison in §6.33, the fixed standard error is $1.05891/MWh. A two-sided 5% zero-null test gives the following detection thresholds.
 
@@ -1678,9 +1678,9 @@ The realized residential estimate instead supplies a one-sided 95% upper confide
 
 ![Synthetic inverse-power boundary for a joint two-outcome Wald test. Every point on the curve has 80% power; effects nearer the origin have lower power. The less precise outcome needs a four-times-larger departure when only that outcome changes.](../figures/M06_andrews_directional_power.png)
 
-Andrews treats nuisance parameters explicitly and discusses sensitivity to the values at which they are held fixed. Here, multiplying the residential standard error by 0.75, 1, and 1.5 gives 80% detection thresholds of $2.225, $2.967, and $4.450/MWh. These are assumed precision scenarios. They are not estimated corrections to the already clustered standard error. A study-specific analysis would simulate alternatives through the utility panel, synthetic-control fitting, slope estimation, and inference procedure, preserving relevant dependence and checking null rejection rates before interpreting alternative rejection rates.
+Inverse-power calculations require explicit nuisance parameters and sensitivity to the values at which they are held fixed (Andrews, 1989). Here, multiplying the residential standard error by 0.75, 1, and 1.5 gives 80% detection thresholds of $2.225, $2.967, and $4.450/MWh. These are assumed precision scenarios. They are not estimated corrections to the already clustered standard error. A study-specific analysis would simulate alternatives through the utility panel, synthetic-control fitting, slope estimation, and inference procedure, preserving relevant dependence and checking null rejection rates before interpreting alternative rejection rates.
 
-The table-based calculation therefore implements Andrews's inverse-power logic within a fixed Wald approximation. It does not establish a uniform power guarantee over unknown donor dependence, treatment timing, covariance, or model misspecification. Those features require evidence from the actual design. The reported developer contrast also needs its joint covariance; the two marginal standard errors cannot supply its directional power. Choosing a different test after inspecting which one gives a favorable result changes the procedure being evaluated.
+The table-based calculation therefore implements inverse-power logic (Andrews, 1989) within a fixed Wald approximation. It does not establish a uniform power guarantee over unknown donor dependence, treatment timing, covariance, or model misspecification. Those features require evidence from the actual design. The reported developer contrast also needs its joint covariance; the two marginal standard errors cannot supply its directional power. Choosing a different test after inspecting which one gives a favorable result changes the procedure being evaluated.
 
 Run the complete calculation from the repository root:
 
@@ -1692,7 +1692,7 @@ python3 03_Data_and_Code/Statistical_Inference/andrews_inverse_power.py
 Python source: [andrews_inverse_power.py](../../03_Data_and_Code/Statistical_Inference/andrews_inverse_power.py)
 
 ```python
-"""Donald W. K. Andrews's inverse-power approach in a fixed Wald approximation.
+"""Inverse power in a fixed Wald approximation (Andrews, 1989).
 
 Published inputs are rounded coefficients/clustered SEs, not a panel replication.
 The two-outcome covariance and precision multipliers are synthetic illustrations.
@@ -1784,7 +1784,7 @@ if __name__ == "__main__":
 
 ### 6.35.1 Follow the Project Before Defining Treatment
 
-\noindent Rana, Kaps, and Netessine define new capacity by the quarter in which it begins operating. Their treatment anchor is the first positive addition since 2020; cumulative operating additions supply the subsequent exposure measure. The donor rule requires complete outcomes and no positive addition of the selected treatment during the treated utility's post-anchor horizon. This rule excludes the specified operating additions. It does not separately screen service requests, committed upgrades, cancelled projects, or obligations already entering rates. [Paper, pp. 16–18, Equations 15–20](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+\noindent The electricity study defines new capacity by the quarter in which it begins operating (Rana et al., 2026). Its treatment anchor is the first positive addition since 2020; cumulative operating additions supply the subsequent exposure measure. The donor rule requires complete outcomes and no positive addition of the selected treatment during the treated utility's post-anchor horizon. This rule excludes the specified operating additions. It does not separately screen service requests, committed upgrades, cancelled projects, or obligations already entering rates. [Paper, pp. 16–18, Equations 15–20](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
 
 The relevant distinction is between absence of an operating center and absence of project-related exposure. A cancelled project can satisfy the first condition while failing the second. If preparatory spending changes prices before the recorded anchor, some exposure also enters the 16-quarter fitting period. Close pre-entry fit can then match histories that already contain project costs. A delayed rate adjustment creates the opposite timing problem: costs may enter bills after the study's outcome window.
 
@@ -1984,7 +1984,7 @@ Use a source-linked chronology to connect the proposed load, construction commit
 
 \noindent A firm can learn which pricing policy raises revenue while exposing some customers to a greater probability of an unfavorable offer. Consider the synthetic population in M9 §9.17: 60% belong to L, with valuations uniform on $6–$10, and 40% belong to H, with valuations uniform on $10–$30. Each person has one purchase opportunity, the outside option yields zero, and marginal cost is zero. The control charges everyone $19/3. The treatment charges L $6 and H $15. Group labels indicate valuation distributions; they contain no information about wealth, urgency, or moral standing.
 
-Suppose the probability of treatment is 1/4 for L and 3/4 for H, with random assignment within each group. These probabilities are constructed for the example. Dubé and Misra's validation experiment instead assigned prospects across a status quo price, an optimized uniform price, and personalization. Oversampling a randomized treatment arm does not by itself bias a treatment comparison. The composition problem here comes from assignment probabilities that differ across groups with different outcomes.
+Suppose the probability of treatment is 1/4 for L and 3/4 for H, with random assignment within each group. These probabilities are constructed for the example. The published validation experiment (Dubé and Misra, 2021) assigned prospects across a status quo price, an optimized uniform price, and personalization. Oversampling a randomized treatment arm does not by itself bias a treatment comparison. The composition problem here comes from assignment probabilities that differ across groups with different outcomes.
 
 The population policy effect on expected revenue is the weighted contrast
 
@@ -2062,7 +2062,7 @@ if __name__ == "__main__":
         default=lambda x: {"exact": str(x), "decimal": float(x)}) + "\n")
 ```
 
-Source: [Suikkanen, “Ex Ante and Ex Post Contractualism: A Synthesis”](https://doi.org/10.1007/s10892-019-09282-6). The pricing inputs are the original synthetic example in M9 §9.17. The [source assessment](../../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) distinguishes this design from the published field experiments.
+Source: [(Suikkanen, 2020)](https://doi.org/10.1007/s10892-019-09282-6). The pricing inputs are the original synthetic example in M9 §9.17. The [source assessment](../../01_Resources/16_AI_Experimentation_and_Pricing/SCANLON_ASSESSMENT.md) distinguishes this design from the published field experiments.
 
 ## 6.38 Equal Historical Fit and Different Price Effects
 
@@ -2091,7 +2091,7 @@ The left panel gives the historically observed purchase probability in each grou
 
 \noindent A representation establishes that at least one model can produce the observed law. Identification of a target requires agreement on that target across the admissible models that produce the law. The two constructions establish that the stated evidence and restrictions leave the common-price effect unidentified. They supply no estimate of which response rule holds in an actual market.
 
-Randomizing both prices within both groups would create the missing comparisons. For example, the models predict purchase probabilities of 0.4 and 0.8 for group A at $20. Appropriate random assignment, implementation, and inference could distinguish those predictions. Restricting demand through an economic assumption is another route to a conclusion, whose force would then depend on the evidence and reasons supporting that restriction. Pearl separates intervention definition from identification through observed distributions in his structural account. [Pearl, 2009, §§3.2.1–3.2.3](https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf).
+Randomizing both prices within both groups would create the missing comparisons. For example, the models predict purchase probabilities of 0.4 and 0.8 for group A at $20. Appropriate random assignment, implementation, and inference could distinguish those predictions. Restricting demand through an economic assumption is another route to a conclusion, whose force would then depend on the evidence and reasons supporting that restriction. A structural account separates intervention definition from identification through observed distributions [(Pearl, 2009, §§3.2.1–3.2.3)](https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf).
 
 An intervention described only as “personalization” leaves material features open. Specify the price rule, data inputs, disclosure, comparison offer, timing, customer alternatives, and any opportunity to decline. If the procedure also changes information or product availability, the resulting effect answers a different causal question. A welfare or ought conclusion then adds the valuation and normative premises examined in §§4.29 and 9.40.
 
@@ -2189,7 +2189,7 @@ if __name__ == "__main__":
 
 \noindent An instructor choosing between a digital reader and an interactive learning tool needs to define the decision. Offering an entire package and adding one feature to an existing course are different interventions. Random assignment to the package can inform the first comparison while leaving the contribution of each component unresolved.
 
-Heldreth and colleagues report an experiment with 60 adolescents studying one chapter, with 58 completing a 3–7-day follow-up. The treatment combines several learning features. The reported directional tests and blinded scoring support an assessment of that specified comparison. Generalization to advanced marketing analysis and attribution to individual features require further evidence. [Heldreth and colleagues, 2026, §§4–5](https://doi.org/10.3389/frai.2026.1783117).
+Heldreth and colleagues report an experiment with 60 adolescents studying one chapter, with 58 completing a 3–7-day follow-up. The treatment combines several learning features. The reported directional tests and blinded scoring support an assessment of that specified comparison. Generalization to advanced marketing analysis and attribution to individual features require further evidence [(Heldreth et al., 2026, §§4–5)](https://doi.org/10.3389/frai.2026.1783117).
 
 ### 6.39.1 Separate Questions and Representations
 
@@ -2298,7 +2298,7 @@ if __name__ == "__main__":
 
 ## 6.40 Treatment-Affected Covariates in a Panel
 
-\noindent A marketer evaluating an intervention may need to account for changing customer circumstances. Those circumstances can influence untreated outcome trends while also responding to the intervention. Including their realized post-treatment values can distort the target comparison, while excluding them can leave different untreated trends. The solution requires a defensible account of their untreated evolution. [Caetano, Callaway, Payne, and Sant’Anna, 2026, Sections 2–4](https://arxiv.org/abs/2608.03881v2).
+\noindent A marketer evaluating an intervention may need to account for changing customer circumstances. Those circumstances can influence untreated outcome trends while also responding to the intervention. Including their realized post-treatment values can distort the target comparison, while excluding them can leave different untreated trends. The solution requires a defensible account of their untreated evolution [(Caetano et al., 2026, Sections 2–4)](https://arxiv.org/abs/2608.03881v2).
 
 Let periods 0 and 1 denote a baseline and follow-up, with treatment $D=1$ beginning after the baseline. Let $X_1(0)$ be the follow-up covariate under no treatment and $X_1(1)$ its treated counterpart. For treated units only $X_1(1)$ is observed. Conditional parallel trends stated in terms of $X_1(0)$ cannot generally be implemented by substituting $X_1(1)$. Baseline covariates suffice only under further conditions. Otherwise, identifying the untreated covariate distribution requires additional observed information, overlap, and restrictions. These requirements precede the choice of regression or machine-learning estimator.
 
@@ -2317,9 +2317,9 @@ The observed baseline variable $W$ supports a valid comparison in this construct
 
 ![The observed treated covariate contains both untreated evolution and a treatment-induced increase. A control-group outcome model and a control-group covariate model reconstruct the untreated trend using the observed baseline variable W. The synthetic total effect is 4; dropping relevant information gives 5.5 and conditioning on the realized post-treatment covariate gives minus 2.](../figures/M06_counterfactual_covariate.png)
 
-This construction makes the information requirement visible. If $W$ were unobserved, the code's conditional imputation would lose its justification. A constant baseline value $X_0$ would not replace it. More flexible prediction of $X_1$ would not restore the missing identifying information. Orthogonal scores and cross-fitting address nuisance-estimation error under a valid design; their precision does not validate an inappropriate adjustment set. [Chernozhukov et al., 2018, author version](https://arxiv.org/abs/1608.00060v7).
+This construction makes the information requirement visible. If $W$ were unobserved, the code's conditional imputation would lose its justification. A constant baseline value $X_0$ would not replace it. More flexible prediction of $X_1$ would not restore the missing identifying information. Orthogonal scores and cross-fitting address nuisance-estimation error under a valid design; their precision does not validate an inappropriate adjustment set [(Chernozhukov et al., 2018)](https://arxiv.org/abs/1608.00060v7).
 
-Treatment-confounder feedback poses a further longitudinal problem when a covariate is affected by an earlier intervention and determines a later intervention. G-methods address treatment histories under sequential identification conditions. Those conditions differ from the conditional parallel-trends premise used above. [Hernán and Robins, Chapters 19–21](https://miguelhernan.org/whatifbook). Fixed effects and a long list of changing covariates do not automatically establish either premise.
+Treatment-confounder feedback poses a further longitudinal problem when a covariate is affected by an earlier intervention and determines a later intervention. G-methods address treatment histories under sequential identification conditions. Those conditions differ from the conditional parallel-trends premise used above. [(Hernán and Robins, 2020, Chapters 19–21)](https://miguelhernan.org/whatifbook). Fixed effects and a long list of changing covariates do not automatically establish either premise.
 
 ### 6.40.2 Reproducible Population Calculation
 
@@ -2413,9 +2413,9 @@ Data Center Watch documents substantial opposition-related disruption in 2025. I
 
 \noindent A bad covariate control can remove a causal pathway or open a collider path. An exposed donor unit creates a different problem: its observed outcome may fail to represent the no-exposure counterfactual. Matching on a baseline after commitments creates a timing problem. Conditioning on completed facilities creates a selection problem. These mechanisms require separate evidence and need not have the same bias direction.
 
-The electricity paper defines entry through operating capacity and screens donors for no positive additions of that measure during the post-anchor horizon. Its primary gap regression uses cumulative capacity, utility fixed effects, and quarter-of-year fixed effects. The paper acknowledges possible market spillovers. The specified screen does not independently establish the absence of preparatory or failed-project costs. It is therefore a concrete identification question whether heavily weighted donors had such exposure. There is no verified finding here that infrastructure spending was included as a post-treatment regression control. [Rana, Kaps, and Netessine, pp. 17–20, Equations 15–21](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+The electricity paper defines entry through operating capacity and screens donors for no positive additions of that measure during the post-anchor horizon. Its primary gap regression uses cumulative capacity, utility fixed effects, and quarter-of-year fixed effects. The paper acknowledges possible market spillovers. The specified screen does not independently establish the absence of preparatory or failed-project costs. It is therefore a concrete identification question whether heavily weighted donors had such exposure. There is no verified finding here that infrastructure spending was included as a post-treatment regression control [(Rana et al., 2026, pp. 17–20, Equations 15–21)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
 
-Synthetic controls require relevant comparison units and a baseline preceding the intervention's effects. A small fitting error cannot establish those institutional conditions. Anticipation can begin with a credible commitment, while shared transmission or procurement systems can expose geographically separate utilities. [Abadie, 2021, contextual requirements](https://economics.mit.edu/sites/default/files/publications/jel.20191450.pdf); [Malani and Reif, 2015](https://julianreif.com/research/reif.jpube.2015.anticipation.pdf); [Butts, 2023](https://arxiv.org/abs/2105.03737).
+Synthetic controls require relevant comparison units and a baseline preceding the intervention's effects. A small fitting error cannot establish those institutional conditions. Anticipation can begin with a credible commitment, while shared transmission or procurement systems can expose geographically separate utilities [(Abadie, 2021)](https://economics.mit.edu/sites/default/files/publications/jel.20191450.pdf); [(Malani and Reif, 2015)](https://julianreif.com/research/reif.jpube.2015.anticipation.pdf); [(Butts, 2023)](https://arxiv.org/abs/2105.03737).
 
 ### 6.41.3 One Project History, Three Comparisons
 

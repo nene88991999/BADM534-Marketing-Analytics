@@ -18,6 +18,12 @@ Use **assessment** for data quality and support for a claim, **evaluation** for 
 
 Use **Marketing Analytics** as the title and **By Nathan Yang** as the author. Keep the course code in the syllabus, assignment documents, and course metadata. Refer to the food-logging dataset and its provider as **mHealth**. Use direct instructions in exercises and “I” for the instructor's analytical choices where useful. Vary nearby sentence openings naturally while retaining parallel wording for comparable cases.
 
+## Citations
+
+Use parenthetical author–year citations for research and philosophical sources, such as (Author, 2026), (Author and Author, 2026), and (Author et al., 2026). State the argument, method, or finding directly in the prose. Avoid authors' names as sentence subjects, possessive descriptions of studies, first-name references, and author-centered teaching headings. Place the citation beside the supported claim and retain its source link and any useful page or section locator.
+
+Use the year of the cited publication or identified version. Use n.d. for an undated source; a download date is not its publication year. Preserve complete author metadata in bibliographic catalogs, exact quotations, original source titles, established method and philosophical-tradition names, and the instructor byline. Keep source readings unchanged. Apply the same citation convention to notes, slides, captions, examples, and original resource annotations.
+
 ## Claims and Qualifications
 
 State supported findings directly. Define the sample, observation unit, period, denominator, units, and reference group before interpreting a result. Distinguish percentage changes from percentage-point changes, cumulative outcomes from period flows, and observations from assumptions. Connect the main magnitude to its economic meaning.

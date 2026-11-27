@@ -41,7 +41,7 @@ See [M6 §6.33](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experime
 
 ## Logical Reconstruction and Power
 
-The [argument record](ARGUMENT_ASSESSMENT.md) makes each missing premise explicit. M9 §9.27 distinguishes deductive validity, empirical support, and normative justification, with reproducible counterexamples. M6 §6.34 bases the power analysis on Donald W. K. Andrews's inverse-power framework. The course retains a fixed reported-covariance approximation and does not claim a full-design or uniform power calculation.
+The [argument record](ARGUMENT_ASSESSMENT.md) makes each missing premise explicit. M9 §9.27 distinguishes deductive validity, empirical support, and normative justification, with reproducible counterexamples. M6 §6.34 bases the power analysis on the inverse-power framework (Andrews, 1989). The course retains a fixed reported-covariance approximation and does not claim a full-design or uniform power calculation.
 
 ## Project Status and the Outcome Denominator
 

@@ -18,9 +18,9 @@ A criticism should identify the exact inference that fails and the evidence that
 
 The first seven rows concern specific interpretations of the paper or verified public coverage. The final two rows assess broader extrapolations an audience might draw; they are not quotations asserting that the authors made every such claim. The paper's future qualifications and positive findings remain part of the evidence.
 
-## Donald Andrews's Power Framework
+## Inverse Power and Detectable Effects
 
-[Donald W. K. Andrews (1989), Power in Econometric Applications](https://doi.org/10.2307/1913623), develops inverse-power functions to express sensitivity in departures from the tested restrictions. The [1986 Cowles version](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf) makes nuisance parameters and directions explicit. The course implements a fixed normal/Wald approximation with original code.
+Inverse-power functions express sensitivity in departures from the tested restrictions [(Andrews, 1989)](https://doi.org/10.2307/1913623). The [1986 Cowles version](https://cowles.yale.edu/sites/default/files/2022-08/d0800.pdf) makes nuisance parameters and directions explicit. The course implements a fixed normal/Wald approximation with original code.
 
 At a fixed target power and test size, the program solves for the noncentrality parameter and maps it into an effect or directional radius. It separately reports the confidence bounds from the realized estimates. A two-outcome synthetic example shows how detection depends on direction. A covariance matrix estimated from a different design, an arbitrary clustering multiplier, or an assumed correction inferred from marginal SEs would not establish the power of this paper's full estimator.
 
@@ -28,7 +28,7 @@ At a fixed target power and test size, the program solves for the noncentrality 
 
 Validity concerns the relation between premises and conclusion. Soundness additionally concerns the premises. A counterexample establishes that a conclusion does not follow from the stated premises; deciding which account is empirically plausible requires further evidence. Distinguish existence of a compatible model from a result holding throughout a justified class.
 
-Possibility, available action, information, and permission are separate objects in [Pacuit and Simon (2011), Reasoning with Protocols Under Imperfect Information](https://doi.org/10.1017/S1755020311000190). The course applies that distinction to household participation and authority. The application does not attribute a judgment about the electricity paper to those philosophers.
+Possibility, available action, information, and permission are separate objects in [(Pacuit and Simon, 2011)](https://doi.org/10.1017/S1755020311000190). The course applies that distinction to household participation and authority. The application does not attribute a judgment about the electricity paper to those philosophers.
 
 The paired synthetic price functions and cost ratios are analytical counterexamples, not empirical estimates. Full original code is in [logical_counterexamples.py](../../03_Data_and_Code/Statistical_Inference/logical_counterexamples.py). Private instructor notes and manuscripts remain outside the public repository.
 

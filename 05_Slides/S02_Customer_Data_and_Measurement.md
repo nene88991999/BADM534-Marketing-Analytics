@@ -286,7 +286,7 @@ Geographic application use and individual service outcomes have different observ
 
 A retailer deciding between digital and assisted service needs evidence about requested tasks, devices, and outcomes. The source observes consenting consumer Windows devices from October 2022 to March 2023. Browser categories mix many tasks. Public indices do not establish an individual customer’s skill, wishes, or authorization.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 24: Reproduce the Published Calculation
 
@@ -296,7 +296,7 @@ Source: Pereira et al., Nature Communications (2026); original course calculatio
 
 The complete Python in M2 §2.27 preserves the source’s rounded category weights and three illustrative minute vectors. Natural logs of positive minutes, with zero at zero minutes, match all three displayed values to two decimals. The weights sum to 0.996. This is a check of the worked example, not a reconstruction of private telemetry. Minute weights also change the aggregate from 3.6733 to 3.6304.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 25: An Unchanged Price Can Accompany a Higher Bill
 
@@ -328,7 +328,7 @@ Collection, retention, linkage, and access serve institutional purposes.
 
 [Editable TikZ](figures/data_production.tex)
 
-An accurate billing row can coexist with inadequate evidence about household cost incidence. Identify each decision maker and the actual access rule before attributing a motive to missing evidence. Thomasson motivates questions about created artifacts; Leonelli explains the relational use and movement of data.
+An accurate billing row can coexist with inadequate evidence about household cost incidence. Identify each decision maker and the actual access rule before attributing a motive to missing evidence. Created artifacts have histories and dependencies (Thomasson, 1999, 2014). Data acquire evidential roles through their use and movement (Leonelli, 2015; Leonelli, 2020).
 
 Source: M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 

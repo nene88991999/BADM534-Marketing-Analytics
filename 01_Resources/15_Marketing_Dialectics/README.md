@@ -1,6 +1,6 @@
 # Marketing Dialectics
 
-Kant's critique of dialectic examines reason's tendency to exceed the conditions of warranted knowledge. The marketing application asks which premises connect commercial performance to claims about customers and which reasons justify a practice. Kantian ethics, Hume and Smith on interested power, and Confucian accounts of conduct supply distinct perspectives on those questions.
+The critique of dialectic (Kant, 1781/1787) examines reason's tendency to exceed the conditions of warranted knowledge. The marketing application asks which premises connect commercial performance to claims about customers and which reasons justify a practice. Kantian ethics, scrutiny of interested power (Hume, 1741; Smith, 1776), and Confucian accounts of conduct supply distinct perspectives on those questions.
 
 [Chapter 9](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) | [Chapter PDF](../../06_Lecture_Notes/Marketing_Dialectics.pdf) | [Reproducible Renewal Example](../../03_Data_and_Code/Marketing_Dialectics/README.md) | [Catalog](catalog.json) | [Access Gaps](ACCESS_GAPS.md)
 
@@ -16,12 +16,12 @@ Eight original files are suitable for public redistribution here: seven public-d
 | [Kant Scholarship](02_Kant_Scholarship/README.md) | Transcendental illusion, antinomies, regulative ideas, autonomy, major monographs, and interpretive disagreements |
 | [Marketing and Consumer Agency](03_Marketing_and_Consumer_Agency/README.md) | Kantian exchange, marketing ethics, advertising measurement, autonomy, and interface research |
 | [Industry and Regulation](04_Industry_and_Regulation/README.md) | AMA, FTC, Google Ads, Netflix, and contrasting ASA environmental-claim decisions |
-| [Self-Interest and Institutional Scrutiny](05_Self_Interest_and_Institutional_Scrutiny/README.md) | Hume on safeguards and Smith on scrutiny of interested commercial proposals |
+| [Self-Interest and Institutional Scrutiny](05_Self_Interest_and_Institutional_Scrutiny/README.md) | Safeguards and scrutiny of interested commercial proposals (Hume, 1741; Smith, 1776) |
 | [Confucian Ethics](06_Confucian_Ethics/README.md) | Analects, Mencius, Xunzi, trustworthiness, righteousness, roles, and cultivation |
 
 ## Reading Sequence
 
-1. **Kant's critical argument:** K01, introduction to the Dialectic; K02, §§50–54; S01 for interpretation. Examine the premise that makes opposed claims appear unavoidable.
+1. **Transcendental critique (Kant, 1781/1787):** K01, introduction to the Dialectic; K02, §§50–54; S01 for interpretation. Examine the premise that makes opposed claims appear unavoidable.
 2. **Ethical evaluation:** K03, second section; S03; M01. Distinguish commercial benefit from respectful treatment and mutually beneficial exchange.
 3. **Claims under conflicting incentives:** P01, paragraphs 1–3, and P02, the conclusion of Book I, chapter XI. Specify what independent evidence would substantiate a firm's claim.
 4. **Conduct and relationships:** C01/C02, selected Analects passages; C03, 1A.1 and 2A.6; C04, Xunzi chapter 23. Compare different grounds for evaluating a cancellation process or recommendation.
@@ -31,7 +31,7 @@ IDs belong to the `marketing-dialectics` namespace in this folder's catalog. The
 
 ## Distinctions That Matter
 
-Kant's transcendental dialectic addresses reason and metaphysical cognition. The contemporary marketing cases are adaptations, rather than Kant's original antinomies. Kantian ethics comes from a distinct practical-philosophy argument. A fixed thesis–antithesis–synthesis recipe misrepresents this approach.
+Transcendental dialectic addresses reason and metaphysical cognition. The contemporary marketing cases are adaptations, with distinct objects from the original antinomies. Kantian ethics comes from a distinct practical-philosophy argument. A fixed thesis–antithesis–synthesis recipe misrepresents this approach.
 
 A material conflict of interest warrants scrutiny and can justify placing a burden of substantiation on the firm controlling the practice and information. That position differs from a factual finding that every firm is guilty. The burden should identify evidence that could support, narrow, or defeat a claim.
 
@@ -39,7 +39,7 @@ Confucian texts contain different accounts of human nature and cultivation. Righ
 
 ## Versions, Rights, and Verification
 
-[catalog.json](catalog.json) records authors, edition or saved version, source and download URLs, retrieval date, access extent, reading scope, file size, SHA-256, and rights. The Gordon et al. file is an April 2018 working paper; the Luguri–Strahilevitz file is an August 2019 working paper. Their later journal publication dates do not change the version actually downloaded. Bennett's accessible Kant text is a modern adaptation.
+[catalog.json](catalog.json) records authors, edition or saved version, source and download URLs, retrieval date, access extent, reading scope, file size, SHA-256, and rights. The advertising-measurement file is an April 2018 working paper (Gordon et al., 2018); the interface-experiment file is an August 2019 working paper (Luguri and Strahilevitz, 2019). Their later journal publication dates do not change the version actually downloaded. The accessible modern adaptation is identified separately from the original texts in the catalog.
 
 Project Gutenberg files retain their original license notices. Gava's unchanged publisher PDF retains the author attribution and [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/). Other local copies retain their original notices; the Marquette accepted manuscript explicitly restricts redistribution.
 
@@ -51,13 +51,13 @@ The guide and catalog supply Markdown descriptions of the readings and their cou
 
 ## Stakeholders, Reasons, and Public Voice
 
-The [supplemental reading guide](07_Stakeholders_and_Reasons/README.md) adds Scanlon on justification, stakeholder obligations, and epistemic justice. Its separate catalog contains 12 records, with four local PDFs and eight records assessed through primary abstracts. M9 §§9.28–9.32 connects these arguments to publication, customer choice, and residents' opportunities to contest public reassurance. [Optional practice](../../07_Labs/Philosophical_Arguments/README.md) asks for factual premises, a defended normative principle, a feasible alternative, and a conditional conclusion using “ought.”
+The [supplemental reading guide](07_Stakeholders_and_Reasons/README.md) adds contractualist justification (Scanlon, 1998, 2009), stakeholder obligations, and epistemic justice. Its separate catalog contains 12 records, with four local PDFs and eight records assessed through primary abstracts. M9 §§9.28–9.32 connects these arguments to publication, customer choice, and residents' opportunities to contest public reassurance. [Optional practice](../../07_Labs/Philosophical_Arguments/README.md) asks for factual premises, a defended normative principle, a feasible alternative, and a conditional conclusion using “ought.”
 
 ## Logic and Analytical Arguments
 
 The [logic reading guide](08_Logic_and_Analytical_Arguments/README.md) connects questions, logical consequence, causal identification, and argument revision. M1 §1.20, M4 §4.29, M6 §6.38, and M9 §§9.40–9.43 use two exact synthetic constructions and five editable diagrams. Students distinguish a model's compatibility with observations from identification, examine valuation assumptions, and test criticisms against the same standards applied to the original claim. The supplemental linked references retain their own reading scope and do not change the historical collection counts above.
 
-Kantian limits, the ontological spectrum, and critiques of empiricism connect behavioral representation to distinct questions about institutions, agency, and normative reasons. The guide records selected primary passages by Kant, Sellars, Bhaskar, Husserl, and Scanlon, with a separate empirical reference on publication selection.
+Kantian limits, the ontological spectrum, and critiques of empiricism connect behavioral representation to distinct questions about institutions, agency, and normative reasons. The guide records selected primary passages (Kant, 1781/1787, 1785; Sellars, 1956; Bhaskar, 2007; Husserl, 1970; Scanlon, 2009), with a separate empirical reference on publication selection.
 
 ## Conflicts of Interest, Attention, and Control
 

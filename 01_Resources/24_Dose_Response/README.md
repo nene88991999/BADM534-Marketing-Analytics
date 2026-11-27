@@ -4,7 +4,7 @@ A marketing decision often concerns how much discount, spending, or contact to a
 
 ## Primary Reading Path
 
-[The catalog](catalog.json), namespace `dose-response`, records eight resources and their scope. Begin with [Kennedy and colleagues](https://arxiv.org/abs/1507.00747v3) for the adjusted outcome and its identifying assumptions. [DoubleML documentation](https://docs.doubleml.org/stable/guide/models.html) defines the partially linear specification. [Colangelo and Lee](https://arxiv.org/abs/2004.03036) provide a nonparametric DML alternative. [Callaway, Goodman-Bacon, and Sant'Anna](https://arxiv.org/abs/2107.02637v8) distinguish continuous-treatment level effects and causal responses under different parallel-trends assumptions.
+[The catalog](catalog.json), namespace `dose-response`, records eight resources and their scope. Begin with the continuous-treatment estimator [(Kennedy et al., 2017)](https://arxiv.org/abs/1507.00747v3) for the adjusted outcome and its identifying assumptions. [DoubleML documentation](https://docs.doubleml.org/stable/guide/models.html) defines the partially linear specification. A nonparametric DML alternative supplies different identifying and estimation conditions [(Colangelo and Lee, 2023)](https://arxiv.org/abs/2004.03036). Continuous-treatment level effects and causal responses require different parallel-trends assumptions [(Callaway et al., 2025)](https://arxiv.org/abs/2107.02637v8).
 
 ## Methodological Distinctions
 

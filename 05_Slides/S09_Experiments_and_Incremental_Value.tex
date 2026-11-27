@@ -202,7 +202,7 @@ M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Ex
 
 M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
-\begin{frame}{Andrews: Which Departures Would the Test Detect?}
+\begin{frame}{Which Departures Would the Test Detect?}
 \usebeamercolor[fg]{normal text}
 \vfill
 \begin{slidebullets}
@@ -211,7 +211,7 @@ M6 §§6.32–6.33. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Ex
 \item Detection thresholds and confidence bounds answer different questions.
 \end{slidebullets}
 \vfill
-\note{Donald W. K. Andrews develops inverse-power functions in Power in Econometric Applications (1989). The course uses a fixed normal/Wald approximation, preserving the published clustered SE. The residential reference exposure is a ratio of reported means. The 95\% detection threshold is USD 3.82/MWh; the realized estimate instead supplies a one-sided 95\% upper confidence bound of USD 3.49/MWh. Low power leaves alternatives unresolved and does not establish the true effect. Model covariance, nuisance parameters, direction, and the testing procedure must be specified. The complete program is andrews\_inverse\_power.py.
+\note{Inverse-power functions identify departures from the null that attain a specified rejection probability (Andrews, 1989). The course uses a fixed normal/Wald approximation, preserving the published clustered SE. The residential reference exposure is a ratio of reported means. The 95\% detection threshold is USD 3.82/MWh; the realized estimate instead supplies a one-sided 95\% upper confidence bound of USD 3.49/MWh. Low power leaves alternatives unresolved and does not establish the true effect. Model covariance, nuisance parameters, direction, and the testing procedure must be specified. The complete program is andrews\_inverse\_power.py.
 
 M6 §6.34. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
@@ -259,7 +259,7 @@ M6 §6.35. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments
 \vfill
 \note{Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian model, with known response and bias dictionaries and constant source costs. It does not rule out lower-order finite-accuracy differences. Nonlinear response models can make information depend on unknown coefficients. The paper separately treats pilot estimation of noise variances while preserving known feature dictionaries. Compare this target with adaptive campaign profit and causal effects on purchases; M6 Section 6.28 supplies the interpretation.
 
-Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
+(Jasin et al., 2026). \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298}}
 \end{frame}
 \begin{frame}{Implementation Checks}
 \usebeamercolor[fg]{normal text}
@@ -344,7 +344,7 @@ M6 §6.19. \url{../03_Data_and_Code/AI_Workflows/factorial.py}}
 \vfill
 \note{M6 §6.29 defines q\_cf as the probability of a valid output for a fixed task and model configuration. The interaction is (q11-q01)-(q10-q00). Its sign describes complementarity for that outcome. Repeated runs on one task measure conditional variation; generalization requires additional task families. A trace suggests a diagnosis, while a controlled intervention identifies the effect of a component.
 
-Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
+(Li et al., 2026, §§8–9). Original course applications: \url{../01_Resources/35_Agent_Workflow_Evaluation/README.md} \url{../03_Data_and_Code/Agent_Workflows/README.md}}
 \end{frame}
 \begin{frame}{Prompt Gains Depend on the Outcome Scale}
 \usebeamercolor[fg]{normal text}
@@ -364,7 +364,7 @@ One example versus none; 7,200 runs per prompt-by-workflow cell.
 \vfill
 \note{The no-example success rates are 81.49\%, 92.40\%, and 96.97\%. The failure reduction divides the success gain by one minus the no-example success rate. The agent-minus-chatbot interaction on the additive scale is -3.625 percentage points. Near perfect success, a smaller percentage-point effect can remove the same fraction of remaining failures. Treat the scale as part of the estimand. Shared tasks and datasets determine the uncertainty unit. Full aggregate reconstruction appears in M1 §1.19; M6 §6.31 develops the comparison.
 
-Galiani, López, and Sosa, November 2026. \url{../01_Resources/40_Econometric_Coding_Workflows/README.md}}
+(Galiani et al., 2026). \url{../01_Resources/40_Econometric_Coding_Workflows/README.md}}
 \end{frame}
 \begin{frame}{Coding Exercise: An Experiment Plan}
 \usebeamercolor[fg]{normal text}
@@ -479,7 +479,7 @@ ETHICS\_AND\_REGULATION.md, M6.}
 \item Evaluate new proposals in their deployment setting.
 \end{slidebullets}
 \vfill
-\note{Angelopoulos, Lee, and Misra train a language-model improver using historical experimental comparisons. The causal interpretation is tied to the randomized comparison and measured outcome. Transfer to new content requires new evidence.
+\note{Historical experimental comparisons train a language-model improver (Angelopoulos et al., 2026). The causal interpretation is tied to the randomized comparison and measured outcome. Transfer to new content requires new evidence.
 
 \url{https://leekevin.io/caLM.pdf}}
 \end{frame}
@@ -492,7 +492,7 @@ ETHICS\_AND\_REGULATION.md, M6.}
 \item A robust commercial payoff still requires a justified objective.
 \end{slidebullets}
 \vfill
-\note{Causal Alignment includes human selection and acceptability checks. Their existence is material to a fair critique; their coverage remains a substantive question. Farrell, Korganbekova, and Misra address robustness to a changed deployment distribution, with a selected payoff.
+\note{The Causal Alignment approach (Angelopoulos et al., 2026) includes human selection and acceptability checks. Their existence is material to a fair critique; their coverage remains a substantive question. Robust decision rules address a changed deployment distribution for a selected payoff (Farrell et al., 2026).
 
 \url{https://leekevin.io/caLM.pdf} \url{https://arxiv.org/abs/2609.07633}}
 \end{frame}
@@ -511,7 +511,7 @@ L: 1/2; H: 1/2 & USD 2.0833 & USD 4.0208 \\
 \par\medskip
 Dollars per eligible person for the effect; per H member for loss. One purchase opportunity.
 \vfill
-\note{M6 §6.37 uses the synthetic uniform-valuation population from M9 §9.17. Randomization is within group. The unequal allocation produces a naive pooled effect of USD 3.5985; stratification or inverse-probability weighting recovers USD 2.0833. H loss is relative to always receiving control. Expected population lost purchase shares are 7.5\% and 5\%. These assignment probabilities are invented and do not describe Dubé and Misra’s field validation.
+\note{M6 §6.37 uses the synthetic uniform-valuation population from M9 §9.17. Randomization is within group. The unequal allocation produces a naive pooled effect of USD 3.5985; stratification or inverse-probability weighting recovers USD 2.0833. H loss is relative to always receiving control. Expected population lost purchase shares are 7.5\% and 5\%. These assignment probabilities are invented and do not describe the published field validation (Dubé and Misra, 2021).
 
 \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}

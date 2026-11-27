@@ -23,7 +23,7 @@ The reported-table electricity calculation yields estimate $1.749/MWh, SE $1.059
 
 ## Inverse Power and Counterexamples
 
-For the residential reference precision, the positive departures giving 50%, 80%, 90%, and 95% power are 2.075, 2.967, 3.432, and 3.817 USD/MWh. The fixed test size is 5%. The four-owner 80% threshold is 0.448 USD/MWh per exposure pp; the sales threshold is 1,381 quarterly MWh per added MW. These thresholds use Donald W. K. Andrews's inverse-power approach within a fixed Gaussian/Wald approximation.
+For the residential reference precision, the positive departures giving 50%, 80%, 90%, and 95% power are 2.075, 2.967, 3.432, and 3.817 USD/MWh. The fixed test size is 5%. The four-owner 80% threshold is 0.448 USD/MWh per exposure pp; the sales threshold is 1,381 quarterly MWh per added MW. These thresholds use the inverse-power approach (Andrews, 1989) within a fixed Gaussian/Wald approximation.
 
 In the synthetic joint test, two independent estimator SEs of 0.50 and 2.00 USD/MWh yield A-only and B-only 80% thresholds of 1.552 and 6.208. Equal increases of 1.506 on both outcomes also attain 80% joint-test power. The covariance is hypothetical.
 

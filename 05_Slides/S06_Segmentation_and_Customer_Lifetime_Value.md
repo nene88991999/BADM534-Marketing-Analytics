@@ -334,7 +334,7 @@ Raw and standardized distances produce different geographic groups.
 
 The three groups are a fixed descriptive example. Thirty random starts and four tested seeds yield the same standardized partition. Raw distances give more influence to the index with larger spread. Group names order mean MCI and carry no ranking of customer ability or value.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 27: Stable Groups Still Need Outcome Validation
 
@@ -344,7 +344,7 @@ Source: Pereira et al., Nature Communications (2026); original course calculatio
 
 Adjusted Rand agreement compares co-membership and is not a percentage of identical labels. Seed stability checks a computation under chosen features. Scaling changes the meaning of similarity. The public data contain no individual assistance need or service outcome, so no cluster is validated as a customer capability category.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 28: Retention Discussion
 

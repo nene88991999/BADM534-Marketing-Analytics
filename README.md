@@ -55,7 +55,7 @@ The [source collection](01_Resources/14_LLM_Evidence_and_Revalidation/README.md)
 
 ## Marketing Dialectics
 
-[Chapter 9](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines marketing claims through Kantian critique and ethics, Hume and Smith on interested power, and Confucian insights on conduct. It includes a [standalone PDF](06_Lecture_Notes/Marketing_Dialectics.pdf), [reproducible Python case](03_Data_and_Code/Marketing_Dialectics/README.md), and [categorized reading library](01_Resources/15_Marketing_Dialectics/README.md).
+[Chapter 9](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines marketing claims through Kantian critique and ethics, scrutiny of interested power (Hume, 1741; Smith, 1776), and Confucian insights on conduct. It includes a [standalone PDF](06_Lecture_Notes/Marketing_Dialectics.pdf), [reproducible Python case](03_Data_and_Code/Marketing_Dialectics/README.md), and [categorized reading library](01_Resources/15_Marketing_Dialectics/README.md).
 
 ## AI Experimentation and Pricing
 
@@ -135,7 +135,7 @@ The [statistical-claims examples](01_Resources/41_Statistical_Claims_and_Decisio
 
 ## Logical Assessment and Inverse Power
 
-M6 §6.34 develops Donald W. K. Andrews's inverse-power approach with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
+M6 §6.34 develops the inverse-power approach (Andrews, 1989) with specified alternatives, nuisance parameters, and directional sensitivity. M9 §9.27 reconstructs the electricity arguments through premises, counterexamples, measurement, extrapolation, and household authority. The [argument record](01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md) links claims to evidence and repairs. Two complete Python examples and two editable TikZ figures support the discussion. Sessions 9 and 14 use selected examples within existing meeting allocations; extended calculations remain optional ungraded practice.
 
 ## Institutional Context and Household Costs
 
@@ -147,15 +147,15 @@ The recurring electricity case now connects average prices to household expendit
 
 ## Pricing, Individual Reasons, and Antitrust
 
-The [pricing cases](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) connect demand assumptions, individual burdens, Kantian authority, and Scanlonian arguments to a hypothetical U.S. antitrust case. Five runnable programs and four TikZ figures accompany M4, M6, M8, and Marketing Dialectics. Dubé and coauthors' competitive payoff table is reconstructed from published information. [Optional practice](07_Labs/Scanlon_Pricing/README.md) develops supported factual premises, an ought conclusion, and the strongest defense. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
+The [pricing cases](03_Data_and_Code/AI_Experimentation_and_Pricing/README.md) connect demand assumptions, individual burdens, Kantian authority, and Scanlonian arguments to a hypothetical U.S. antitrust case. Five runnable programs and four TikZ figures accompany M4, M6, M8, and Marketing Dialectics. The competitive payoff table (Dubé et al., 2017) is reconstructed from published information. [Optional practice](07_Labs/Scanlon_Pricing/README.md) develops supported factual premises, an ought conclusion, and the strongest defense. Students distinguish an instrumentally rational choice from a reasonable principle. They assess measurement quality alongside the worth of the goal, then compare personalized pricing, dynamic-pricing communication, and data-center reassurance.
 
 ## Analytical Arguments and Counterexamples
 
 [Exact synthetic examples](03_Data_and_Code/Analytical_Arguments/README.md) distinguish model fit from identification and product rankings from welfare valuations. M1, M4, M6, and Marketing Dialectics connect these comparisons to a [five-step argument exercise](07_Labs/Philosophical_Arguments/README.md), with an AI prompt, a strong reply to each criticism, and evidence or reasons that would change the conclusion.
 
-M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, Kant's phenomena–noumena distinction, and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from Kant's limiting concept and practical justification.
+M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place the worth of the objective, the phenomena–noumena distinction (Kant, 1781/1787), and the practical standing of affected people before optimization. Sessions 1 and 14 connect the limits of empirical representation to separate arguments about ends, authority, and obligations. A fourth editable diagram distinguishes further empirical inquiry from the noumenal limiting concept (Kant, 1781/1787) and practical justification.
 
-[M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to Kant, Sellars, Bhaskar, Husserl, and Scanlon. Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
+[M9 §§9.41–9.43](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguish acknowledged epistemic limits from unknown unknowns and assess interpretations through an ontological spectrum. Electricity reassurance, personalized pricing, and cancellation connect to limits of cognition (Kant, 1781/1787), observational justification (Sellars, 1956), critical realism (Bhaskar, 2007), intentionality (Husserl, 1970), and normative reasons (Scanlon, 2009). Publication selection toward tractable questions remains a hypothesis separate from verified evidence of selection by result strength. Session 14 uses selected cases within its existing discussion blocks; the extended comparisons are optional practice.
 
 ## Explanation and Independent Judgment
 
@@ -171,4 +171,4 @@ The [reading collection](01_Resources/44_Bad_Controls_and_Project_Exposure/READM
 
 ## Data, Truth, and Norms
 
-The [reading collection](01_Resources/45_Data_Truth_and_Norms/README.md) connects Thomasson’s artifacts, truth and warrant, institutional research priorities, and reasons owed to households. An [original Python example](03_Data_and_Code/Data_Production/README.md) constructs identical public records with opposite population effects. M2, M6, and M9 distinguish existing billing data from the project-linked evidence and causal design needed for household claims.
+The [reading collection](01_Resources/45_Data_Truth_and_Norms/README.md) connects created artifacts (Thomasson, 1999, 2014), truth and warrant, institutional research priorities, and reasons owed to households. An [original Python example](03_Data_and_Code/Data_Production/README.md) constructs identical public records with opposite population effects. M2, M6, and M9 distinguish existing billing data from the project-linked evidence and causal design needed for household claims.

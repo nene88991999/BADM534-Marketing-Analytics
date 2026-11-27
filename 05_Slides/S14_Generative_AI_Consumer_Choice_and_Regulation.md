@@ -184,7 +184,7 @@ Invented inputs; analyst time costs 60 dollars per hour.
 
 The numerator includes effort and charges from all assigned attempts, including failures. The valid-output denominator counts accepted final results after any allowed correction. Execution charges beyond the API are set to zero here. Greater API spending coincides with lower total cost under these inputs because analyst effort falls. This is an accounting illustration, not measured labor savings. Complete Python appears in M8 §8.26.
 
-Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
 ## Slide 12: Review Expense and Undetected Decision Errors
 
@@ -196,7 +196,7 @@ Hypothetical comparison: additional review breaks even at seven dollars per erro
 
 The API charges are 0.02 and 0.05 dollars per task, with review and correction times 0.25 and 0.50 minutes at 60 dollars per hour. The assumed undetected-error probabilities are 5% and 1%. At a loss of ten dollars, costs are 770 and 650 dollars. These operating assumptions are separate from the published benchmark. The common conditional loss must have the same scope; if error severity differs, use a workflow-specific loss. Customer rights require separate justification. Full Python appears in M8 §8.30.
 
-Source: Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+Source: Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
 ## Slide 13: Reuse Has a Break-Even Workload
 
@@ -236,17 +236,17 @@ Source: M8 §8.18.1; M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation
 - Its field result concerns clicks, with human selection and content checks.
 - Customer benefit and informed choice require additional evidence.
 
-Panagiotis Angelopoulos, Kevin Lee, and Sanjog Misra; author version linked August 2026. Sections 4–5 report the randomized comparison; Appendix B screens unsupported claims and missing information. Respect those safeguards when critiquing the scope of the result.
+The August 2026 author version reports the randomized comparison in Sections 4–5 and screening for unsupported claims and missing information in Appendix B (Angelopoulos et al., 2026). These safeguards are material to evaluating the scope of the result.
 
 Source: https://leekevin.io/caLM.pdf
 
 ## Slide 17: Personalized Pricing: Benchmark and Incidence
 
-- Dubé and Misra study employers purchasing recruiting services.
-- Their model predicts higher profit and lower total customer surplus.
+- Prospective employers purchase recruiting services.
+- The model predicts higher profit and lower total customer surplus.
 - A majority benefits; the later field comparison uses different price policies.
 
-The downloaded NBER June 2021 revision is linked to the published JPE 2023 paper. The 19% projected profit gain uses an optimized uniform benchmark. The rounded realized means in the later experiment imply about 10.1% higher revenue than its implemented uniform policy. Customer surplus is model-derived. This is a business purchasing setting, not an emergency retail case.
+The downloaded NBER June 2021 revision is linked to the published JPE 2023 paper. The 19% projected profit gain uses an optimized uniform benchmark. The rounded realized means in the later experiment imply about 10.1% higher revenue than its implemented uniform policy. Customer surplus is model-derived. This is a business purchasing setting, not an emergency retail case. The cited working-paper revision is dated June 2021; the journal article appeared in 2023 (Dubé and Misra, 2021, 2023).
 
 Source: https://www.nber.org/papers/w23775
 
@@ -302,7 +302,7 @@ A complete statistical account would still leave practical justification to be d
 
 [Editable TikZ](../06_Lecture_Notes/figures/M09_phenomena_noumena.tex)
 
-Kant, Critique of Pure Reason B306–B311, distinguishes negative and positive noumena and limits human theoretical cognition. Hidden preferences, comprehension, and unrecorded costs remain empirical questions. Qualitative evidence also belongs to experience. The Groundwork, 4:428–429 and 4:451–453, provides distinct practical arguments about respect and the intelligible standpoint. Do not infer a specific hidden preference, harm, or duty solely from a limit of empirical knowledge. An unknown unknown has not yet been recognized. An acknowledged limit requires an argument about what a specified inquiry cannot establish. The phrase known to be the never known has that scoped role. Normative questions remain open to reasoned judgment; statistical non-identification can change with a new observable law.
+Negative and positive noumena have distinct roles within the limits of human theoretical cognition (Kant, 1781/1787, B306–B311). Hidden preferences, comprehension, and unrecorded costs remain empirical questions. Qualitative evidence also belongs to experience. The Groundwork (Kant, 1785, 4:428–429, 4:451–453) provides distinct practical arguments about respect and the intelligible standpoint. Do not infer a specific hidden preference, harm, or duty solely from a limit of empirical knowledge. An unknown unknown has not yet been recognized. An acknowledged limit requires an argument about what a specified inquiry cannot establish. The phrase known to be the never known has that scoped role. Normative questions remain open to reasoned judgment; statistical non-identification can change with a new observable law.
 
 Source: M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -348,24 +348,24 @@ Source: M9 §9.42.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md htt
 
 | Argument | Question for the Analysis |
 | --- | --- |
-| Sellars: justification | What warrants this interpretation? |
-| Bhaskar: ontology | Which mechanisms remain unobserved? |
-| Husserl: intentionality | What is the person accepting? |
-| Scanlon: normative reasons | Which reasons deserve an answer? |
+| Justification | What warrants this interpretation? |
+| Ontology | Which mechanisms remain unobserved? |
+| Intentionality | What is the person accepting? |
+| Normative reasons | Which reasons deserve an answer? |
 
-Kant separately examines the conditions and limits of theoretical cognition.
+The conditions and limits of theoretical cognition require a separate argument.
 
-These authors offer different arguments. They supply no common rejection of empirical inquiry. Sellars concerns the grounds of observational knowledge; Bhaskar permits inquiry into structures beyond event patterns; Husserl examines intentionality; Scanlon defends reasoning appropriate to normative domains. The exact source passages and contemporary applications are separated in M9 §9.43. Publication selection toward tractable questions is a hypothesis requiring evidence about the research process.
+The arguments concern the grounds of observational knowledge (Sellars, 1956), structures beyond event patterns (Bhaskar, 2007), intentionality (Husserl, 1970), and reasoning appropriate to normative domains (Scanlon, 2009). The conditions and limits of theoretical cognition supply a distinct argument (Kant, 1781/1787). These positions preserve different roles for empirical inquiry. M9 §9.43 gives the source passages and applications. Publication selection toward tractable questions is a hypothesis requiring evidence about the research process.
 
 Source: M9 §9.43 and its primary-source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 ## Slide 27: Marketing Dialectics: Examine the Premise
 
 - State the claim, its evidence, and the premise connecting them.
-- Kant examines reason’s demand for an unconditioned explanation.
+- Examine the demand for a complete explanation.
 - A marketing analogy must preserve the scope of the original argument.
 
-Kant’s transcendental dialectic concerns metaphysical cognition. These marketing cases adapt the practice of examining premises; an ordinary empirical dispute is not a cosmological antinomy. The third antinomy does not imply that accurate purchase prediction proves lost agency. Critical examination may support, restrict, or reject a claim; no forced synthesis is required.
+Transcendental dialectic concerns metaphysical cognition (Kant, 1781/1787). These marketing cases adapt the practice of examining premises; an ordinary empirical dispute is not a cosmological antinomy. The third antinomy does not imply that accurate purchase prediction proves lost agency. Critical examination may support, restrict, or reject a claim; no forced synthesis is required.
 
 Source: Marketing Dialectics, §§9.1–9.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -389,7 +389,7 @@ Source: M9 §9.19. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 Technical permission, company authority, customer authorization, and ethical justification concern different relationships. A valid execution record establishes what happened under the rule. Kantian respect for persons asks whether the means respect the customer’s purposes and reasons. Confucian rectification of names connects the stated service role with its conduct. A higher renewal rate leaves the legitimacy of an imposed exit obstacle unresolved. M9 §9.20 develops the argument.
 
-Source: Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
+Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
 ## Slide 30: Commercial Results and Customer Claims
 
@@ -399,7 +399,7 @@ Causal, measurement, and ethical questions have different premises.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M09_claim_scope.tex)
 
-A randomized intervention can establish incremental purchases without establishing informed choice or customer benefit. Kant’s humanity formulation supplies a distinct ethical question about treatment of persons.
+A randomized intervention can establish incremental purchases without establishing informed choice or customer benefit. The humanity formulation (Kant, 1785) supplies a distinct ethical question about treatment of persons.
 
 Source: Marketing Dialectics, §§9.1, 9.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -421,7 +421,7 @@ A reason for scrutiny is distinct from evidence of misconduct.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M09_burden_justification.tex)
 
-Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt. A duty-based conflict is distinguished from ordinary opposing interests in §9.45.
+Institutional checks can be designed to work under private-interest pursuit without assuming universal dishonesty (Hume, 1741). Interested commercial-regulation proposals warrant scrutiny (Smith, 1776). Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation. A duty-based conflict is distinguished from ordinary opposing interests in §9.45.
 
 Source: Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -444,7 +444,7 @@ Source: M9 §9.45. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 - Habit and self-control evidence concerns specified interventions.
 - Evaluate the feed, the user’s purpose, and unwanted continuation.
 
-Lindström and coauthors study posting and experimentally varied social rewards. Schultz, Dayan, and Montague examine dopamine-neuron activity in a separate neuroscience setting. Allcott, Gentzkow, and Song study temporary incentives and user-selected limits with an economic model. These sources provide different evidence. None alone identifies clinical addiction caused by an infinite-scroll feature. The ethical question concerns the actual design, its consequences, and the user’s authority to stop.
+Posting behavior responds to experimentally varied social rewards (Lindström et al., 2021). Dopamine-neuron activity is examined in a separate neuroscience setting (Schultz et al., 1997). Temporary incentives and user-selected limits are evaluated with an economic model (Allcott et al., 2022). These sources provide different evidence. None alone identifies clinical addiction caused by an infinite-scroll feature. The ethical question concerns the actual design, its consequences, and the user’s authority to stop.
 
 Source: M9 §9.46 and its source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -489,7 +489,7 @@ Source: Marketing Dialectics, Sections 9.16–9.17. ../06_Lecture_Notes/modules/
 - A trusted adviser or customer-care role carries standards of conduct.
 - Examine whether the claimed role matches incentives and practice.
 
-Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.1 challenges an exclusive focus on advantage. Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties. In the restaurant case, compare claims of franchise pricing independence and customer benefit with actual authority and measured outcomes. Trustworthiness concerns the accuracy of that account. Examine how the pricing team handles evidence of customer losses and truthful employee objections.
+The Analects (Confucius, 2015, 4.5, 4.16) places righteousness in the evaluation of gain; the opening of Mencius (Mencius, 2016, 1A.1) challenges an exclusive focus on advantage. The discussions in Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties. In the restaurant case, compare claims of franchise pricing independence and customer benefit with actual authority and measured outcomes. Trustworthiness concerns the accuracy of that account. Examine how the pricing team handles evidence of customer losses and truthful employee objections.
 
 Source: Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -499,7 +499,7 @@ Source: Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M
 - Learning and reflection should discipline an AI-generated answer.
 - Good conduct depends on repeated practices as well as stated values.
 
-Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and reflective learning. Mencius emphasizes cultivable moral beginnings; Xunzi emphasizes deliberate effort, teaching, and ritual. They disagree about human nature. A modern firm can examine what its rewards teach employees to notice and whether an analyst can report an unwanted customer outcome.
+The Analects (Confucius, 2015, 13.23, 14.22, 2.15) supports discussion of truthful challenge and reflective learning. Cultivable moral beginnings (Mencius, 2016) and deliberate effort, teaching, and ritual (Xunzi, 1999) provide different accounts of human nature. A modern firm can examine what its rewards teach employees to notice and whether an analyst can report an unwanted customer outcome.
 
 Source: Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -625,7 +625,7 @@ Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics
 - Evidence: identify which claims the estimates and bounds support.
 - Justification: explain why affected people may bear the remaining risk.
 
-A narrow price study can be valid within its scope. The category error occurs when its aggregate becomes a complete account of household harm or agency. Four named owners versus other owners is not automatically cloud provision versus colocation. Thomasson’s functional assessment asks whether categories serve the decision. Compliance with a rule, endorsement of its reasons, and authorization remain distinct.
+A narrow price study can be valid within its scope. The category error occurs when its aggregate becomes a complete account of household harm or agency. Four named owners versus other owners is not automatically cloud provision versus colocation. Functional assessment of concepts asks whether categories serve the decision (Thomasson, 2025). Compliance with a rule, endorsement of its reasons, and authorization remain distinct.
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -646,7 +646,7 @@ Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics
 - The first premise grants revenue priority over other reasons.
 - Defend that premise to the people bearing the burden.
 
-The conditional deduction is valid, while soundness also requires true premises. Evidence for the revenue effect does not establish the normative premise. MacFarlane distinguishes logical consequence from norms governing reasoning; Scanlon supplies a separate account of justification to affected people. Ordinary empirical evidence remains defeasible and should be evaluated according to the claim actually made.
+The conditional deduction is valid, while soundness also requires true premises. Evidence for the revenue effect does not establish the normative premise. Logical consequence differs from norms governing reasoning (MacFarlane, 2004). Justification to affected people requires a separate account (Scanlon, 1998). Ordinary empirical evidence remains defeasible and should be evaluated according to the claim actually made.
 
 Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -701,7 +701,7 @@ Source: M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 - State the factual premises and the principle governing affected people.
 - Defend a conclusion about what the actor ought to do.
 
-Payment records conduct under available conditions. Endorsement, permission, and ethical justification need further evidence or reasons. Scanlon's approach compares principles through the reasons people could have for rejecting them. A hypothetical jurisdiction with inaccessible decisions can differ from one with an effective challenge procedure even when bills coincide. State the circumstances, identify a feasible alternative, and answer the strongest objection.
+Payment records conduct under available conditions. Endorsement, permission, and ethical justification need further evidence or reasons. Contractualism compares principles through the reasons people could have for rejecting them (Scanlon, 1998). A hypothetical jurisdiction with inaccessible decisions can differ from one with an effective challenge procedure even when bills coincide. State the circumstances, identify a feasible alternative, and answer the strongest objection.
 
 Source: M9 §§9.27–9.32. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -735,7 +735,7 @@ Facts and a defended principle jointly support a conditional recommendation.
 
 The hypothetical customer has made a verified cancellation request, and a secure prompt exit is feasible. The proposed principle respects valid withdrawal while requiring justification of remaining burdens. Assess fraud, service continuity, and implementation cost. A factual premise needs evidence; a normative premise needs reasons. An objection can change either.
 
-Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+Source: M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
 ## Slide 61: Compare Reasons for Rejecting Each Principle
 
@@ -745,9 +745,9 @@ Compare affected positions and feasible alternatives; answer the strongest objec
 
 [Editable TikZ](../06_Lecture_Notes/figures/M09_reasonable_rejection.tex)
 
-Scanlon's reasonable rejection is a judgment about reasons under principles of general regulation. It is not a vote or an automatic veto. In this hypothetical case, optional offers preserve persuasion without imposing it as a condition of exit. The comparison assumes necessary protections can be supplied at reasonable cost. A surviving objection requires revising the alternative or the conclusion.
+Reasonable rejection is a judgment about reasons under principles of general regulation (Scanlon, 1998). It is not a vote or an automatic veto. In this hypothetical case, optional offers preserve persuasion without imposing it as a condition of exit. The comparison assumes necessary protections can be supplied at reasonable cost. A surviving objection requires revising the alternative or the conclusion.
 
-Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+Source: M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
 ## Slide 62: Stakeholders Beyond the Firm
 
@@ -755,9 +755,9 @@ Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Res
 - Separate managerial attention from the justification of a duty.
 - State each person's interest, supported exposure, and reason for objection.
 
-Donaldson and Preston distinguish descriptive, instrumental, and normative uses of stakeholder theory. Mitchell, Agle, and Wood analyze salience through power, legitimacy, and urgency. Phillips examines obligations of fair cooperation; general duties still matter for involuntarily affected people. A low-power resident's moral standing does not depend on the cost they can impose on the firm. Identify the actual relationship and defend the proposed obligation.
+Descriptive, instrumental, and normative uses of stakeholder theory require different arguments (Donaldson and Preston, 1995). Managerial salience depends on power, legitimacy, and urgency (Mitchell et al., 1997). Fair cooperation can generate obligations (Phillips, 1997), while general duties still matter for involuntarily affected people. A resident’s moral standing does not depend on the cost they can impose on the firm. Identify the actual relationship and defend the proposed obligation.
 
-Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+Source: M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
 ## Slide 63: Whose Voice Can Challenge a Prestigious Claim?
 
@@ -765,9 +765,9 @@ Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Res
 - Compare its reach with residents' access to records and technical help.
 - Require evidence for reassurance and a substantive answer to material objections.
 
-The headline is a discussion construction, not a verified quotation or institutional endorsement. The HBS Working Knowledge article is the documented public communication. Fricker's prejudice-based credibility deficit requires evidence beyond unequal credentials. Anderson motivates examining institutions that gather and assess testimony. Distinguish nearby residents, utility customers, and people bearing costs. Local experience can identify an outcome; causal attribution requires a comparison. Institutional prestige supplies no missing premise. Verify actual use of a claim in a proceeding before alleging that it silenced objections.
+The headline is a discussion construction, not a verified quotation or institutional endorsement. The HBS Working Knowledge article is the documented public communication. A prejudice-based credibility deficit requires evidence beyond unequal credentials (Fricker, 2007). Institutions that gather and assess testimony also require scrutiny (Anderson, 2012). Distinguish nearby residents, utility customers, and people bearing costs. Local experience can identify an outcome; causal attribution requires a comparison. Institutional prestige supplies no missing premise. Verify actual use of a claim in a proceeding before alleging that it silenced objections.
 
-Source: M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+Source: M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
 ## Slide 64: Mechanism Evidence and Public Reassurance
 
@@ -795,7 +795,7 @@ Source: M9 §9.33. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 - Compare a corrected release, further review, and rejection of the proposed version.
 - For a public error, assess a visible correction that preserves traceability.
 
-A paper need not be released in a form that attaches unsupported reassurance to useful estimates. Mill supplies reasons to preserve criticism and inquiry. Registered Reports illustrate reviewing design before learning the direction of results. Scanlon's approach asks which release principle can be justified to affected people, readers, researchers, and decision makers. Neither favorable nor unfavorable implications for a firm establish research quality. The remedy should address a demonstrated defect.
+A paper need not be released in a form that attaches unsupported reassurance to useful estimates. Fallibility supplies reasons to preserve criticism and inquiry (Mill, 1859). Registered Reports illustrate reviewing design before learning the direction of results. Contractualism asks which release principle can be justified to affected people, readers, researchers, and decision makers (Scanlon, 1998). Neither favorable nor unfavorable implications for a firm establish research quality. The remedy should address a demonstrated defect.
 
 Source: M9 §§9.28–9.30. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 
@@ -916,7 +916,7 @@ Source: M8, Section 8.16. FTC, January 2025, pp. 1–3. https://www.ftc.gov/syst
 - New York: disclosure law in effect; broader restrictions await enactment.
 - Price gouging requires its own covered circumstances and legal elements.
 
-Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section 6(b) orders do not establish violations. New York GBL 349-a applies to covered personal, family, and household purchases, with exceptions. S8623B/A9349B has legislative passage without recorded gubernatorial enactment. GBL 396-r addresses essential goods and services during abnormal market disruptions.
+Checked November 6, 2026. The FTC proposal cites the personalized-pricing study (Dubé and Misra, 2021, 2023). October 28 Section 6(b) orders do not establish violations. New York GBL 349-a applies to covered personal, family, and household purchases, with exceptions. S8623B/A9349B has legislative passage without recorded gubernatorial enactment. GBL 396-r addresses essential goods and services during abnormal market disruptions.
 
 Source: ../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md
 
@@ -950,7 +950,7 @@ Source: Marketing Dialectics, §9.8. ../06_Lecture_Notes/modules/M09_Marketing_D
 
 An optional assistance intervention can expand feasible choices. A mandatory app workflow may impose equipment, registration, and verification costs. A proposed evaluation should record the customer’s requested action and channel and preserve the ability to refuse optional profiling. Geographic Windows usage does not observe those outcomes.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 81: Evidence and Authority to Classify a Customer
 
@@ -960,7 +960,7 @@ Source: Pereira et al., Nature Communications (2026); original course calculatio
 
 A stable cluster does not authorize a firm to remove an individual’s options. Examine the additional premise linking measured activity to a permissible action. Humane intent must be connected to the customer’s stated task and preferred channel, with an opportunity to correct classifications. The same area score can motivate assistance or exclusion; the consequences and authority differ.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 82: Reliable Measurement and a Worthy Objective
 
@@ -970,7 +970,7 @@ Unbiasedness and precision support factual premises. The goal and treatment of p
 
 [Editable TikZ](../06_Lecture_Notes/figures/M09_pricing_reasons.tex)
 
-Statistical unbiasedness concerns an estimator across repetitions of a specified design; precision concerns its dispersion. Both can protect people against mistaken claims. Even perfect measurement of all monetary consequences leaves a normative premise to defend before recommending revenue maximization. Scanlon’s account of reasons and reasonable rejection grounds the course application; he is not being presented as proposing a theory of statistical estimation. The same requirement applies to every institution and research method. Dubé and Misra’s own finding of lower aggregate customer surplus remains part of the evidence.
+Statistical unbiasedness concerns an estimator across repetitions of a specified design; precision concerns its dispersion. Both can protect people against mistaken claims. Even perfect measurement of all monetary consequences leaves a normative premise to defend before recommending revenue maximization. Normative reasons and reasonable rejection ground the ethical application (Scanlon, 1998, 2009). Statistical estimation retains its distinct evidential role. The same requirement applies to every institution and research method. The finding of lower aggregate customer surplus remains part of the evidence (Dubé and Misra, 2021).
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -982,7 +982,7 @@ Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 Suppose an urgently dependent customer accepts a surcharge that a seller predicts exactly. The seller and customer can each act effectively for their immediate aims while the rule faces an objection to avoidable exploitation. Examine the feasible lower offer, the seller’s costs and risks, and the reasons of other affected people. Instrumental rationality is one sense of rationality; broader rational thought can include morality. Reasonableness is neither majority preference nor an unconditional veto. State what fact or reason would change the conclusion.
 
-Source: Scanlon, What We Owe to Each Other, chapter 5, §2, pp. 191–194. https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf
+Source: (Scanlon, 1998, chapter 5, §2, pp. 191–194). https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf
 
 ## Slide 84: Pricing and Public Reassurance
 
@@ -1028,7 +1028,7 @@ If a seller exploits serious need despite a viable lower offer and no comparably
 
 Source: ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 88: Dubé’s Mobile Targeting: Reconstruct the Incentives
+## Slide 88: Mobile Targeting: Reconstruct the Incentives
 
 | Rounded Table 9 | Theater A | Theater B |
 | --- | --- | --- |
@@ -1040,7 +1040,7 @@ RMB expected revenue per messaged consumer. Published model outputs, not new est
 
 The complete 4-by-4 table yields behavioral targeting as the sole pure equilibrium. A’s best-response margin against a geobehavioral deviation is 0.001 RMB when B uses behavioral targeting. The paper reports a 40% posterior probability that this deviation improves A’s profit. The rounded calculation recovers incentives under the model; it supplies no consent measure or evidence of an unlawful agreement. Original Python uses the transcribed published table. Replication microdata were not downloaded.
 
-Source: Dubé, Fang, Fong, and Luo (2017), Table 9, p. 965. https://doi.org/10.1287/mksc.2017.1042
+Source: (Dubé et al., 2017, Table 9, p. 965). https://doi.org/10.1287/mksc.2017.1042
 
 ## Slide 89: Kantian Authority Over Location History
 
@@ -1050,7 +1050,7 @@ Source: Dubé, Fang, Fong, and Luo (2017), Table 9, p. 965. https://doi.org/10.1
 
 The paper documents targeting from current location and historical visits. The course does not establish that consent was absent. A hypothetical maxim relying on concealed material use faces a Formula of Humanity objection because it defeats informed authorization. An understandable opt-in offer with meaningful alternatives requires a different assessment. The INFORMS download terms allow replication but restrict other reuse and the venue for a corrective follow-up; M9 §9.37 evaluates the reasons for those restrictions.
 
-Source: Kant, Groundwork, Academy 4:421–430. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+Source: (Kant, 1785, 4:421–430). ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 ## Slide 90: An Antitrust Case Needs a Specified Mechanism
 
@@ -1115,7 +1115,7 @@ Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 - Allow a learner to change representations and challenge the conclusion.
 - Evaluate independent reasoning and supported disagreement.
 
-A student can reasonably object to an explanation that hides the premise on which its recommendation depends. A defensible learning system makes that premise inspectable and permits a reasoned objection. Response history does not exhaust the person or determine what the person ought to learn. Missing empirical measurements also remain distinct from Kant’s noumenal limiting concept.
+A student can reasonably object to an explanation that hides the premise on which its recommendation depends. A defensible learning system makes that premise inspectable and permits a reasoned objection. Response history does not exhaust the person or determine what the person ought to learn. Missing empirical measurements also remain distinct from the noumenal limiting concept (Kant, 1781/1787).
 
 Source: M9, Section 9.44, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -1143,11 +1143,11 @@ Source: ../03_Data_and_Code/Bad_Controls/README.md
 
 ## Slide 98: A Dataset Has an Origin and an Intended Use
 
-- Thomasson: created artifacts have histories and dependencies.
+- Created artifacts have histories and dependencies.
 - Distinguish a dataset version, a copy, and the people it represents.
 - Institutional production leaves accuracy open to evidence.
 
-The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism.
+The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism. The artifact analogy draws on created dependencies and public norms of use (Thomasson, 1999, 2014).
 
 Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -1159,7 +1159,7 @@ A correct record supports neither a causal attribution nor a policy on its own.
 
 [Editable TikZ](figures/truth_and_norms.tex)
 
-Ask students to supply the missing premise at each arrow. Logical validity does not make a premise true. Evidential warrant does not settle permissible action. Thomasson’s modal normativism does not claim that conventions make modal truths true. Douglas’s inductive risk concerns the stakes of error; it does not authorize inventing adverse evidence.
+Ask students to supply the missing premise at each arrow. Logical validity does not make a premise true. Evidential warrant does not settle permissible action. Modal normativism does not claim that conventions make modal truths true (Thomasson, n.d.). Inductive risk concerns the stakes of error (Douglas, 2000); it does not authorize inventing adverse evidence.
 
 Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -1169,7 +1169,7 @@ Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics
 - A reasonable principle provides proportionate scrutiny and privacy protection.
 - An unsupported broad reassurance should be narrowed.
 
-Develop the Scanlonian premises: material burden, informational control, standing to contest, and feasible alternatives. Test a privacy objection and propose controlled linkage with aggregate public results. Undone science concerns institutional research priorities; deliberate suppression requires additional evidence. Political sensitivity can motivate disclosure as well as secrecy. The introduced S. 5640 is a reporting proposal, not an effective duty. Longino adds effective criticism, uptake, public standards, and tempered equality of intellectual authority.
+Develop the contractualist premises (Scanlon, 1998): material burden, informational control, standing to contest, and feasible alternatives. Test a privacy objection and propose controlled linkage with aggregate public results. Undone science concerns institutional research priorities; deliberate suppression requires additional evidence. Political sensitivity can motivate disclosure as well as secrecy. The introduced S. 5640 is a reporting proposal, not an effective duty. Effective critical interaction requires venues, uptake, public standards, and tempered equality of intellectual authority (Longino, 2004).
 
 Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 

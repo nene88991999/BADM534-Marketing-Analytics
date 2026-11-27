@@ -170,7 +170,7 @@ Fifty selected claims, twenty models, and a September 2026 endpoint.
 
 The released data contain 1,000 model-claim pairs, with eight flagged unreliable comparisons. These categories describe the selected claims under the authors' rules. An expired category allows a residual effect and exceptions among individual models. The point-estimate threshold is not the whole classification rule.
 
-Source: Queen and Zou (2026). https://zou-group.github.io/llm-claims-shelf-life/ M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+Source: (Queen and Zou, 2026). https://zou-group.github.io/llm-claims-shelf-life/ M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
 ## Slide 14: Follow-up Changes the Denominator
 
@@ -182,7 +182,7 @@ All fifty claims contribute follow-up; 28 remain right-censored.
 
 The 15.75-month mean conditions on the 22 expired claims. It is not an expected lifetime for all findings. The displayed calculation retains the unexpired claims until the observation endpoint. Interval-based and model-count dates are treated as the authors' point estimates; their uncertainty is not propagated.
 
-Source: Queen and Zou (2026), released fitted dates; original course calculation. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
+Source: (Queen and Zou, 2026), released fitted dates; original course calculation. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md
 
 ## Slide 15: Energy-Plausibility Screens
 
@@ -308,7 +308,7 @@ Source: ETHICS_AND_REGULATION.md, M2-M3.
 
 Each point is an area, without a population or device-count weight. Equal standardized thresholds compare relative positions within each index, rather than identical levels in original units. Point density can reflect the density of postal identifiers. A point is neither a boundary polygon nor a device location.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 26: Identifiers and Income Codes Change the Sample
 
@@ -318,7 +318,7 @@ Source: Pereira et al., Nature Communications (2026); original course calculatio
 
 The ACS estimates cover 2017–2021; Windows activity covers October 2022–March 2023. ZCTAs approximate postal areas, so a matching string does not establish identical populations. Codes 2,499 and 250,001 represent income intervals. All 1,253 released Illinois areas remain in the map and clustering; one Illinois boundary-income record leaves the national regression sample.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 27: Visualization Discussion
 

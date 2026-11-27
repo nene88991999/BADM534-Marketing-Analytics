@@ -15,7 +15,7 @@ Read M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54 in the [notes](../../
 
 ## Philosophical Argument
 
-5. Distinguish a dataset version, a physical file, a recorded charge, an actual payment, and a claim about household harm. Apply Thomasson's artifact analogy to the first two without treating the household as a fictional character.
+5. Distinguish a dataset version, a physical file, a recorded charge, an actual payment, and a claim about household harm. Apply the artifact analogy (Thomasson, 1999, 2014) to the first two without treating the household as a fictional character.
 6. Identify a semantic, epistemic, legal, and moral norm relevant to the case. Construct an example in which an accurate and lawfully accessed record supports a narrow statement but leaves a proposed action unjustified.
 7. Reconstruct the proposed Scanlonian argument in §9.54. Identify the resident's reason, the institution's informational control, feasible safeguards, and the conclusion. Then give the strongest privacy or resource objection and revise the principle to address it.
 8. Assess the proposition that controversy makes household costs permanently unavailable. Use the existing RECS collection, contract correspondence, and introduced disclosure bill. Distinguish a verified access restriction from a prediction of secrecy and an allegation of intentional suppression.

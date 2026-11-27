@@ -75,7 +75,7 @@ Color can encode categories or highlight the comparison that matters. Use line s
 
 ## 2.6 Case Study: Online Grocery Baskets and Repeated Purchases
 
-Chintala, Liaukonytė, and Yang's [grocery-shopping study](https://doi.org/10.1287/mksc.2022.0292) compares online and offline baskets using household shopping records. It studies basket composition and repeated purchasing, with attention to differences in shopping-trip types. Larger baskets need not contain a wider range of categories, and a household's choice of channel can be related to the purpose of its trip.
+The grocery-shopping study [(Chintala et al., 2024)](https://doi.org/10.1287/mksc.2022.0292) compares online and offline baskets using household shopping records. It studies basket composition and repeated purchasing, with attention to differences in shopping-trip types. Larger baskets need not contain a wider range of categories, and a household's choice of channel can be related to the purpose of its trip.
 
 Suppose one household buys the sets {milk, bread, apples, yogurt} and {milk, bread, apples, coffee} on successive trips. Each basket contains four distinct items. Their Jaccard similarity is
 
@@ -93,7 +93,7 @@ A retail recommendation might distinguish discovery from replenishment. High rep
 
 Two customers can purchase the same number of categories while allocating spending very differently. One divides a basket equally between two categories; another assigns 90% to one and 10% to the other. A category count assigns both customers breadth two. To measure how evenly spending is distributed, define $V=1-\sum_c s_c^2$, where $s_c$ is category $c$'s share of the customer's spending within a stated basket or period. The shares must use a common denominator and sum to one. The two baskets have $V=0.50$ and $V=0.18$, respectively.
 
-[Nielsen and coauthors (2022)](https://doi.org/10.1086/720453) use item counts and a reverse-coded concentration measure based on calorie shares to study food-consumption variety. The underlying unit matters: spending shares, calorie shares, and purchase counts can rank the same baskets differently. A wider category definition also changes measured variety without changing consumption. Report the category mapping, observation window, and share denominator before interpreting a trend or segment difference. M7, Section 7.12, connects these measurements to recommendation design.
+Food-consumption variety can be measured through item counts and a reverse-coded concentration measure based on calorie shares [(Nielsen et al., 2022)](https://doi.org/10.1086/720453). The underlying unit matters: spending shares, calorie shares, and purchase counts can rank the same baskets differently. A wider category definition also changes measured variety without changing consumption. Report the category mapping, observation window, and share denominator before interpreting a trend or segment difference. M7, Section 7.12, connects these measurements to recommendation design.
 
 ## 2.7 From Evidence to a Management Presentation
 
@@ -113,7 +113,7 @@ For practice, change campaign B's audience to 100 new and 100 returning customer
 
 ## 2.9 Readings
 
-[Wilke's visualization text](https://clauswilke.com/dataviz/) offers a visual reference for distributions, comparisons, and uncertainty. The [pandas grouping documentation](https://pandas.pydata.org/docs/user_guide/groupby.html) supports implementation.
+The visualization text [(Wilke, 2019)](https://clauswilke.com/dataviz/) offers a visual reference for distributions, comparisons, and uncertainty. The [pandas grouping documentation](https://pandas.pydata.org/docs/user_guide/groupby.html) supports implementation.
 
 ## 2.10 mHealth: Recorded Variety and Missing Days
 
@@ -216,7 +216,7 @@ The horizontal movement measures retention of adult base days; the vertical move
 
 ### 2.11.1 Energy Plausibility Requires Physiological Inputs
 
-Energy-plausibility methods compare reported intake with expenditure or a model of requirements. [Banna, McCrory, Fialkowski, and Boushey (2017)](https://doi.org/10.3389/fnut.2017.00045) compare fixed cutoffs with individualized methods. [Black (2000)](https://doi.org/10.1038/sj.ijo.0801376), especially Table 8, updates the Goldberg approach. For an individual under the method's energy-balance and measurement conditions, bounds for mean reported energy intake divided by basal metabolic rate are
+Energy-plausibility methods compare reported intake with expenditure or a model of requirements. Comparisons of fixed cutoffs and individualized methods identify different screening choices [(Banna et al., 2017)](https://doi.org/10.3389/fnut.2017.00045). Updated bounds for the Goldberg approach are available in Table 8 of the methodological review [(Black, 2000)](https://doi.org/10.1038/sj.ijo.0801376). For an individual under the method's energy-balance and measurement conditions, bounds for mean reported energy intake divided by basal metabolic rate are
 
 $$
 L,U=\operatorname{PAL}\exp\left(\mp 2\sqrt{\frac{(0.23)^2}{d}+(0.085)^2+(0.15)^2}\right).
@@ -397,7 +397,7 @@ The 358 eligible users are grouped using prespecified recency boundaries of 7 an
 
 Recent frequent loggers have a higher July logging rate in this cohort. The six-user cell warrants particular care because a single outcome changes its rate substantially. These rates describe future activity among known users; they do not identify which users would respond most to a reminder. Selecting recipients requires an incremental-effect comparison and a cost per contact.
 
-[Joao Correia's RFM example](https://github.com/joaolcorreia/RFM-analysis) combines recency, frequency, and monetary value in transaction data. mHealth supports the first two dimensions. Calories, entry counts, and body weight have units different from spending and cannot supply monetary value. A commercial RFM table would need an actual monetary variable, a transaction definition, and a consistent observation window.
+The RFM example [(Correia, n.d.)](https://github.com/joaolcorreia/RFM-analysis) combines recency, frequency, and monetary value in transaction data. mHealth supports the first two dimensions. Calories, entry counts, and body weight have units different from spending and cannot supply monetary value. A commercial RFM table would need an actual monetary variable, a transaction definition, and a consistent observation window.
 
 A coding assistant should receive the snapshot date and the eligible population explicitly. Ask it to verify that adding July rows leaves both June features unchanged, that repeated food entries on one day count only once toward frequency, and that zero-log members remain in the outcome denominator. Quantile bins require extra care when many customers share the same integer count; the fixed boundaries here avoid assigning tied counts to different groups.
 
@@ -787,7 +787,7 @@ if __name__ == "__main__":
 
 \noindent A restaurant manager deciding where to investigate service interruptions needs to know which customers could not obtain the advertised product. A digital ordering system supplies one observation of availability. McBroken records an indicator named `is_broken` from the ordering channel. An unavailable item can reflect equipment failure, cleaning, a closed restaurant, depleted inventory, or a problem in the ordering system. A verification call can distinguish these mechanisms before a manager sends a technician or changes a promotion. The analytical outcome is therefore **recorded order unavailability**. A repair log would supply a different outcome.
 
-The supplied [McBroken collection](../../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/README.md) contains US records from October 25, 2025, through October 24, 2026, plus a longer weekly country series. Rashiq Zahid's [McBroken](https://mcbroken.com/) is the underlying source; [MrFlynn's archive](https://github.com/MrFlynn/mcbroken-archive) preserves successive snapshots. The archive's inspected workflow selects records with a reported check age below 61 minutes. Its older README describes a different freshness window, so the retrieval rule and version matter. An archive commit time records when a file was saved. The estimated check time also depends on the reported check age.
+The supplied [McBroken collection](../../01_Resources/02_M2_Customer_Data_and_Visualization/mcbroken_api_lab/README.md) contains US records from October 25, 2025, through October 24, 2026, plus a longer weekly country series. The underlying source is McBroken [(Zahid, n.d.)](https://mcbroken.com/); a snapshot archive [(MrFlynn, n.d.)](https://github.com/MrFlynn/mcbroken-archive) preserves successive snapshots. The archive's inspected workflow selects records with a reported check age below 61 minutes. Its older README describes a different freshness window, so the retrieval rule and version matter. An archive commit time records when a file was saved. The estimated check time also depends on the reported check age.
 
 ### 2.16.1 Coverage Determines the Population Behind a Percentage
 
@@ -1379,7 +1379,7 @@ if __name__ == "__main__":
 
 ## 2.21 Follow-up Time and the Shelf Life of AI Findings
 
-\noindent A manager deciding whether to rely on an earlier AI result needs to distinguish the age of the evidence from evidence that its effect has changed. [Queen and Zou (2026)](https://zou-group.github.io/llm-claims-shelf-life/) provide a selected panel of fifty claims and twenty models. The released classifications contain 22 expired, seventeen weakened, eight persistent, and three strengthened findings. Eight of the 1,000 model-claim comparisons are flagged as unreliable. The selection of claims, tested configurations, and classification rule define the population behind these counts.
+\noindent A manager deciding whether to rely on an earlier AI result needs to distinguish the age of the evidence from evidence that its effect has changed. A selected panel contains fifty claims and twenty models [(Queen and Zou, 2026)](https://zou-group.github.io/llm-claims-shelf-life/). The released classifications contain 22 expired, seventeen weakened, eight persistent, and three strengthened findings. Eight of the 1,000 model-claim comparisons are flagged as unreliable. The selection of claims, tested configurations, and classification rule define the population behind these counts.
 
 The study puts different outcomes on a relative-effect scale. For an outcome $v$ with reference value $a$ and claim-absent value $v_0$, the transformation is $e=(v-v_0)/(a-v_0)$. An effect of one matches the reference magnitude; zero matches the specified null. The reference and null must be distinct and measured in the same units. Relative effects preserve change within a defined metric. They do not put the commercial costs of different failures on a common scale.
 
@@ -1506,7 +1506,7 @@ if __name__ == "__main__":
 
 ## 2.22 Customer Differences and Changes Within Customers
 
-\noindent A retailer deciding whether to revise its retention program needs to know how spending changes for the same customers. A distribution of spending levels answers a different question about the customer base. High-spending customers can remain far above low-spending customers while both groups change by nearly the same amount. Linking repeated observations preserves this distinction. Warin's [PyStatlas paired-comparison and estimation graphics](https://warint.github.io/pystatlas/group-comparisons/) combine individual observations with the comparison of interest.
+\noindent A retailer deciding whether to revise its retention program needs to know how spending changes for the same customers. A distribution of spending levels answers a different question about the customer base. High-spending customers can remain far above low-spending customers while both groups change by nearly the same amount. Linking repeated observations preserves this distinction. The PyStatlas paired-comparison and estimation graphics [(Warin, n.d.)](https://warint.github.io/pystatlas/group-comparisons/) combine individual observations with the comparison of interest.
 
 Consider eight synthetic customers observed in two complete one-month windows. Their initial spending is $20, $35, $50, $65, $80, $95, $110, and $125. The corresponding changes are $4, $6, $5, $5, $4, $6, $5, and $5. Every customer remains in the comparison, with equal weight. Mean spending rises from $72.50 to $77.50 per customer per month. The $5 increase is descriptive; these observations contain no untreated comparison from which to identify the program's causal effect.
 
@@ -1795,7 +1795,7 @@ if __name__ == "__main__":
 
 \noindent A retailer wants to move appointment booking, coupons, and cancellation requests into its app. An area with extensive computer use may appear ready for digital service. That inference depends on whether the recorded activities describe the tasks customers must complete. A person who watches video on a laptop may need help with identity verification on a phone. Application minutes describe behavior under an observation system; a service decision also requires evidence about customers' goals, available devices, and completed requests.
 
-[Pereira and coauthors](https://www.nature.com/articles/s41467-026-78689-1) construct geographic indices from consenting consumer Windows devices observed from October 2022 through March 2023. The source includes desktops, laptops, and some tablets. Smartphones and other operating systems fall outside that device population. Browser activity combines many tasks, including web applications that might otherwise resemble document creation or email. The study's media and information index, MCI, and content creation and computational index, CCI, summarize different application groups. Their values are composite scores without a percentage or minutes interpretation.
+Geographic usage indices are constructed from consenting consumer Windows devices observed from October 2022 through March 2023 [(Pereira et al., 2026)](https://www.nature.com/articles/s41467-026-78689-1). The source includes desktops, laptops, and some tablets. Smartphones and other operating systems fall outside that device population. Browser activity combines many tasks, including web applications that might otherwise resemble document creation or email. The study's media and information index, MCI, and content creation and computational index, CCI, summarize different application groups. Their values are composite scores without a percentage or minutes interpretation.
 
 The public release contains one row for each of 28,561 postal identifiers, including 1,253 labeled Illinois. It contains two indices and a state identifier. It supplies no individual records, device counts, app-category minutes, or customer outcomes. The unweighted correlation between the two indices is 0.522 across released areas. Equal area weights give a small postal area the same influence as a large one; they do not estimate the correlation across people or devices.
 
@@ -2060,7 +2060,7 @@ if __name__ == "__main__":
 
 ## 2.28 Electricity Prices, Household Bills, and the Unit of Harm
 
-\noindent A utility deciding how to recover the cost of serving a data center must specify which customers pay, when they pay, and which charges enter their bills. Rana, Kaps, and Netessine's 2026 working paper measures quarterly revenue divided by electricity sold, separately for residential and industrial customers. Its main sample covers additions of at least 10 MW activated in 2020–2025 in bundled service territories. The industrial analysis includes 42 treated utilities; the residential analysis includes 41. An estimated change in this average has a defined economic meaning, but it leaves the distribution of household burdens unresolved. [Paper, §§4–5 and Tables 1–2](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+\noindent A utility deciding how to recover the cost of serving a data center must specify which customers pay, when they pay, and which charges enter their bills. The electricity working paper (Rana et al., 2026) measures quarterly revenue divided by electricity sold, separately for residential and industrial customers. Its main sample covers additions of at least 10 MW activated in 2020–2025 in bundled service territories. The industrial analysis includes 42 treated utilities; the residential analysis includes 41. An estimated change in this average has a defined economic meaning, but it leaves the distribution of household burdens unresolved. [Paper, §§4–5 and Tables 1–2](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
 
 For a fixed set of households in one period, let $B_h$ be household $h$'s bill in dollars and $q_h$ its electricity use in MWh. The aggregate average is
 
@@ -2175,7 +2175,7 @@ if __name__ == "__main__":
 
 Separate the event, its representation, and its evidential use. Electricity consumption occurs over time. A meter records a quantity under a technical convention. A billing system applies a tariff, credits, and adjustments. An analyst selects fields, reconciles account identities, and defines a comparison. Each stage creates an object with a provenance and a purpose. Accuracy at one stage does not establish that the final comparison represents the relevant population or answers the intended question.
 
-[Leonelli (2015)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/) treats data relationally through their role as prospective evidence. [Bogen and Woodward (1988)](https://joelvelasco.net/teaching/5330/bogen_woodward88-saving_the_phenomena.pdf) distinguish particular data from the phenomena inferred through them. Their distinction concerns scientific reasoning and differs from Kant's phenomena–noumena distinction. A pattern in utility revenue per MWh may be well measured while its interpretation as a household cost effect remains unsupported.
+A relational account identifies data through their role as prospective evidence [(Leonelli, 2015)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/). Particular data also differ from the phenomena inferred through them [(Bogen and Woodward, 1988)](https://joelvelasco.net/teaching/5330/bogen_woodward88-saving_the_phenomena.pdf). This distinction concerns scientific reasoning and differs from the phenomena–noumena distinction (Kant, 1781/1787). A pattern in utility revenue per MWh may be well measured while its interpretation as a household cost effect remains unsupported.
 
 ![Household events pass through collection, retention, linkage, and access before entering an analysis. Each gate has an institutional purpose and can exclude records. An accurate released row can coexist with incomplete evidence about the target population.](../figures/M02_data_production.png)
 

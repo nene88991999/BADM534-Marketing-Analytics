@@ -55,7 +55,7 @@ python3 03_Data_and_Code/Statistical_Inference/logical_counterexamples.py
 python3 03_Data_and_Code/Statistical_Inference/build_logic_figures.py
 ```
 
-Run from the repository root with the existing NumPy, pandas, and SciPy environment. `andrews_inverse_power.py` uses Donald W. K. Andrews's approach to invert noncentral chi-squared power at fixed covariance. It exports scalar thresholds, assumed precision scenarios, and an explicitly synthetic two-outcome comparison. Full code is in M6 §6.34. `logical_counterexamples.py` uses exact rational arithmetic to construct historical agreement with future divergence and cost-ratio counterexamples; full code is in M9 §9.27. Its outputs are synthetic, with no utility observations. The figure builder maps those tables into two editable Illinois-color TikZ sources. See the [argument assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md).
+Run from the repository root with the existing NumPy, pandas, and SciPy environment. `andrews_inverse_power.py` uses the inverse-power approach (Andrews, 1989) to invert noncentral chi-squared power at fixed covariance. It exports scalar thresholds, assumed precision scenarios, and an explicitly synthetic two-outcome comparison. Full code is in M6 §6.34. `logical_counterexamples.py` uses exact rational arithmetic to construct historical agreement with future divergence and cost-ratio counterexamples; full code is in M9 §9.27. Its outputs are synthetic, with no utility observations. The figure builder maps those tables into two editable Illinois-color TikZ sources. See the [argument assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/ARGUMENT_ASSESSMENT.md).
 
 ## Institutional Exposure and Household Costs
 

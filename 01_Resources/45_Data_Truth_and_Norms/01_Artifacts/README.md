@@ -4,7 +4,7 @@
 
 ## T01. Fiction and Metaphysics
 
-Amie L. Thomasson. 1999 author bibliography; publisher chapter metadata also lists 1998. [Source](https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017).
+(Thomasson, 1999). 1999 author bibliography; publisher chapter metadata also lists 1998. [Source](https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017).
 
 **Reading focus:** Chapter 3, pp. 35–42; creation, dependence, and identity.
 
@@ -14,7 +14,7 @@ Fictional characters depend on creative acts and literary practices. The course 
 
 ## T02. Public Artifacts, Intentions and Norms
 
-Amie L. Thomasson. 2014; Artefact Kinds, pp. 45–62. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
+(Thomasson, 1999). 2014; Artefact Kinds, pp. 45–62. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
 
 **Reading focus:** Intended features and public norms of treatment.
 
@@ -24,7 +24,7 @@ Public artifacts can involve structural, perceptual, receptive, and normative fe
 
 ## T04. If Models Were Fictions, Then What Would They Be?
 
-Amie L. Thomasson. 2020; The Scientific Imagination, pp. 50–73. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_793dccac983145af90b9e580203e5333.docx).
+(Thomasson, 1999). 2020; The Scientific Imagination, pp. 50–73. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_793dccac983145af90b9e580203e5333.docx).
 
 **Reading focus:** Model descriptions, model systems, and the conditional argument.
 
@@ -34,27 +34,27 @@ Keep the description, the constructed model, and its target distinct. A syntheti
 
 ## T05. What Counts as Scientific Data? A Relational Framework
 
-Sabina Leonelli. 2015; Philosophy of Science 82(5), 810–821; DOI 10.1086/684083. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/).
+(Leonelli, 2015). 2015; Philosophy of Science 82(5), 810–821; DOI 10.1086/684083. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/).
 
 **Reading focus:** Relational account of data and prospective evidence.
 
 Whether an object functions as data depends on its role in inquiry and movement across settings. A ledger becomes evidence for a new claim through an evidential argument, with context and provenance retained.
 
-**Access and scope:** Full public HTML inspected. PDF endpoint returned a verification page; no local PDF. Leonelli’s account should not be reduced to the claim that every data object is itself a true or false proposition.
+**Access and scope:** Full public HTML inspected. PDF endpoint returned a verification page; no local PDF. The relational account (Leonelli, 2015) should not be reduced to the claim that every data object is itself a true or false proposition.
 
 ## T06. Saving the Phenomena
 
-James Bogen and James Woodward. 1988; The Philosophical Review 97(3), 303–352. [Source](https://joelvelasco.net/teaching/5330/bogen_woodward88-saving_the_phenomena.pdf).
+(Bogen and Woodward, 1988). 1988; The Philosophical Review 97(3), 303–352. [Source](https://joelvelasco.net/teaching/5330/bogen_woodward88-saving_the_phenomena.pdf).
 
 **Reading focus:** Opening distinction between particular observations and phenomena.
 
 Reliable patterns are inferred from particular records using substantive reasoning. A stable pattern in aggregate prices and a household burden mechanism are different evidential targets.
 
-**Access and scope:** Full paper downloaded; opening distinction inspected. Their data–phenomena distinction is separate from Kant’s phenomena–noumena distinction.
+**Access and scope:** Full paper downloaded; opening distinction inspected. Their data–phenomena distinction is separate from the phenomena–noumena distinction (Kant, 1781/1787).
 
 ## T16. Learning from Data Journeys
 
-Sabina Leonelli. 2020; Data Journeys in the Sciences, pp. 1–24; DOI 10.1007/978-3-030-37177-7_1. [Source](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1).
+(Leonelli, 2015). 2020; Data Journeys in the Sciences, pp. 1–24; DOI 10.1007/978-3-030-37177-7_1. [Source](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1).
 
 **Reading focus:** Production, movement, and reuse across institutions.
 
@@ -64,7 +64,7 @@ Linkage and portability require infrastructure and contextual knowledge. The exi
 
 ## T18. Social Ontology
 
-Brian Epstein. Stanford Encyclopedia of Philosophy; revision March 4, 2024. [Source](https://plato.stanford.edu/entries/social-ontology/).
+(Epstein, 2024). Stanford Encyclopedia of Philosophy; revision March 4, 2024. [Source](https://plato.stanford.edu/entries/social-ontology/).
 
 **Reading focus:** Introduction and distinctions between construction and membership conditions.
 

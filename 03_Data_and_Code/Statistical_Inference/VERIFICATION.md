@@ -8,7 +8,7 @@ All 39 inference tests passed. Eight additional logic and inverse-power checks c
 
 A fresh source export reproduces nine new result files and three TikZ sources byte for byte. All 113 full Python source listings match their executable counterparts and parse successfully. Every previously recorded numerical output retains its prior SHA-256 hash. The earlier four statistical-claims programs, 14 fresh result exports, five figures, and 75-page review remain documented in Git history.
 
-Donald W. K. Andrews's inverse-power framework is implemented under fixed Gaussian/Wald conditions. Published coefficients and their clustered SEs retain their earlier visual verification against Tables 2, 4, and 7. The developer-difference p-value remains transcribed from its joint test. Marginal SEs do not reconstruct its covariance. The new two-outcome covariance and precision multipliers are hypothetical; no uniform or full-design power guarantee is claimed.
+The inverse-power framework (Andrews, 1989) is implemented under fixed Gaussian/Wald conditions. Published coefficients and their clustered SEs retain their earlier visual verification against Tables 2, 4, and 7. The developer-difference p-value remains transcribed from its joint test. Marginal SEs do not reconstruct its covariance. The new two-outcome covariance and precision multipliers are hypothetical; no uniform or full-design power guarantee is claimed.
 
 ## Figures and Documents
 

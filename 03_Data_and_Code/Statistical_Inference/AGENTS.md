@@ -16,9 +16,9 @@ Keep full code synchronized with M3 §3.19, M6 §§6.32–6.33, and M9 §9.25. P
 
 Separate measured prices, household incidence, welfare, and agency. Retain positive findings and acknowledged limitations. Use the reported joint developer test; marginal SEs do not supply its covariance. The verified public communication is HBS coverage. Do not invent company posts, intent, or actual downstream harms. Keep instructor philosophy manuscripts and private notes outside the public repository.
 
-## Logic and Donald Andrews
+## Logic and Inverse Power
 
-Preserve the full M6 §6.34 and M9 §9.27 listings. Attribute the inverse-power framework to Donald W. K. Andrews (1989), with the read 1986 Cowles version identified in the resource review. Do not substitute Isaiah Andrews's separate work. Distinguish a fixed-Wald sensitivity calculation from full-design power and uniform guarantees. Preserve covariance and units in directional comparisons. Synthetic counterexamples defeat general entailments; they do not establish empirical frequency, actual household harm, or author intention.
+Preserve the full M6 §6.34 and M9 §9.27 listings. Cite the inverse-power framework as (Andrews, 1989), DOI 10.2307/1913623, with the read 1986 Cowles version identified in the resource review. Preserve that source identity when retrieving related work. Distinguish a fixed-Wald sensitivity calculation from full-design power and uniform guarantees. Preserve covariance and units in directional comparisons. Synthetic counterexamples defeat general entailments; they do not establish empirical frequency, actual household harm, or author intention.
 
 ## Institutional Measurement
 

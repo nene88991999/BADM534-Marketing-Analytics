@@ -97,7 +97,7 @@ The similarities $s_r$ depend on the anchors and embedding. Equal similarities l
 
 This is the paper setting with epsilon zero and SSR temperature one. The normalized weights describe a mapping to rating categories. Calibration against human outcomes requires separate evidence. The course code explicitly abstains when the spread is at most 1e-12. That numerical threshold is not evidence of consumer indifference.
 
-Source: Maier and coauthors (2025), Table 1 and Appendix A.3. https://arxiv.org/abs/2510.08338v3 M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md
+Source: (Maier et al., 2025, Table 1, Appendix A.3). https://arxiv.org/abs/2510.08338v3 M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md
 
 ## Slide 7: The Same Response Under Different Anchors
 
@@ -194,7 +194,7 @@ Source: M5, Section 5.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 
 Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices. A sponsor-framing comparison can hold the same proposal fixed while varying whether the sponsor likes it. Evaluate factual criticism separately from approval. This is a proposed exercise motivated by Sharma et al.; no course model responses have been collected.
 
-Source: M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Sharma et al. (2024), https://arxiv.org/abs/2310.13548v4. M5 §5.18.
+Source: M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md (Sharma et al., 2024), https://arxiv.org/abs/2310.13548v4. M5 §5.18.
 
 ## Slide 14: Agency Labels Need Supporting Evidence
 
@@ -352,7 +352,7 @@ Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analy
 
 This is directed content analysis with a codebook. Independent human coding has not yet been completed. Agreement would concern coding consistency, not the truth of a corporate statement. Reflexive thematic analysis makes different methodological commitments. Retain investigator interpretation and the limits of investor-facing documents. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.
 
-Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.
+Source: M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md (Hsieh and Shannon, 2005), https://doi.org/10.1177/1049732305276687; (O'Brien et al., 2014), https://doi.org/10.1097/ACM.0000000000000388; (Gale et al., 2013), https://doi.org/10.1186/1471-2288-13-117; (O'Connor and Joffe, 2020), https://doi.org/10.1177/1609406919899220; (Braun and Clarke, 2021), https://doi.org/10.1080/14780887.2020.1769238.
 
 ## Slide 28: Prompt Revision Uses Evaluation Evidence
 
@@ -397,7 +397,7 @@ Identical saved outputs are scored by both judges. All scores are stipulated.
 
 A stable judge supplies a common comparison but still requires validation. Position, verbosity, and self-preference can affect evaluation. For earnings-call summaries, independently check factual support, speaker role, and whether a statement concerns a plan or an implemented action. Preserve inconsistent judgments.
 
-Source: M5 §5.18. Zheng et al. (2023), https://arxiv.org/abs/2306.05685; Panickssery et al. (2024), https://arxiv.org/abs/2404.13076
+Source: M5 §5.18. (Zheng et al., 2023), https://arxiv.org/abs/2306.05685; (Panickssery et al., 2024), https://arxiv.org/abs/2404.13076
 
 ## Slide 32: Network Objects
 

@@ -1,4 +1,4 @@
-"""Donald W. K. Andrews's inverse-power approach in a fixed Wald approximation.
+"""Inverse power in a fixed Wald approximation (Andrews, 1989).
 
 Published inputs are rounded coefficients/clustered SEs, not a panel replication.
 The two-outcome covariance and precision multipliers are synthetic illustrations.

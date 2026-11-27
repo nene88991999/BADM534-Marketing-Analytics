@@ -2,7 +2,7 @@
 
 A retailer adapting an AI assistant may combine examples from product support, subscription management, and outside data suppliers. Each source can appear acceptable when examined separately, while the combined training data changes how the model responds in a particular context. The managerial question is whether the mixture preserves appropriate service across the situations customers actually encounter.
 
-[Clarke and coauthors](https://arxiv.org/abs/2611.10110v1) show that adding clean examples can strengthen a behavior associated with a fixed set of deliberately constructed training examples. The effect appears in controlled fine-tuning experiments with Qwen3-8B, Gemma-3-4b-it, and a digit classifier. Their regression model supplies an explanation based on confounded features and regularization. The results motivate evaluating data combinations and conditional behavior; they do not establish how frequently this occurs in commercial marketing systems.
+Adding clean examples can strengthen a behavior associated with a fixed set of deliberately constructed training examples [(Clarke et al., 2026)](https://arxiv.org/abs/2611.10110v1). The effect appears in controlled fine-tuning experiments with Qwen3-8B, Gemma-3-4b-it, and a digit classifier. The regression model supplies an explanation based on confounded features and regularization. The results motivate evaluating data combinations and conditional behavior; they do not establish how frequently this occurs in commercial marketing systems.
 
 ## Clean Examples Can Change What a Model Learns
 
@@ -44,7 +44,7 @@ The bird-name experiment also illustrates evaluator validity. Of 220 responses t
 
 ## Sources and Verification
 
-The [catalog](catalog.json), namespace `training-data-mixtures`, records the [unchanged paper](local_sources/Clarke_Dubiński_Chua_Schrodi_Evans_Cloud_WorkingPaper2026.pdf), its CC BY 4.0 license, and 31 unchanged repository files at commit `a9fab54c4bc226321877aadf81a36799c7d325c5`. The reference subset preserves the MIT license and third-party notices. It includes selected code, documentation, aggregate results, and nine epoch histories; it is not a complete runnable checkout.
+The [catalog](catalog.json), namespace `training-data-mixtures`, records the [original paper](https://arxiv.org/abs/2611.10110v1), its CC BY 4.0 license, and 31 unchanged repository files at commit `a9fab54c4bc226321877aadf81a36799c7d325c5`. The reference subset preserves the MIT license and third-party notices. It includes selected code, documentation, aggregate results, and nine epoch histories; it is not a complete runnable checkout.
 
 The [verification script](verify_source_tables.py) recomputes 51 conditional-result means from 153 run-condition records and checks nine released epoch histories. Its [saved results](source_checks.json) distinguish final and peak rates. Eight upstream Python files were syntax-parsed; upstream programs, tests, training, and model judges were not run. The course implementation executes only original standard-library calculations and independent checks; it does not train a language model or run the upstream package.
 

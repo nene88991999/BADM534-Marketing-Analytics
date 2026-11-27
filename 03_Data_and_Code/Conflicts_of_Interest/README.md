@@ -34,7 +34,7 @@ python3 03_Data_and_Code/Conflicts_of_Interest/verify_policies.py
 
 The endless design earns USD 0.314 per user-day, compared with USD 0.236 under user controls. Goal completion is 85.6% and 91.8%, respectively. Among time-limited users, regret is 45% under endless use and 5% under user controls. Those figures follow from constructed inputs; they provide no prevalence estimate of problematic social-media use.
 
-The program's regret penalty is a hypothetical managerial weight in USD per report. It has no standing as a measure of consumer welfare, a clinical threshold, a legal rule, or Scanlon's reasonable-rejection test. A separately defended obligation to honor stopping instructions restricts the feasible policies before commercial ranking. The proposed restriction is a moral premise in this example. The code checks its consequences without establishing its justification.
+The program's regret penalty is a hypothetical managerial weight in USD per report. It has no standing as a measure of consumer welfare, a clinical threshold, a legal rule, or the reasonable-rejection test (Scanlon, 1998). A separately defended obligation to honor stopping instructions restricts the feasible policies before commercial ranking. The proposed restriction is a moral premise in this example. The code checks its consequences without establishing its justification.
 
 ## Sources and Verification
 

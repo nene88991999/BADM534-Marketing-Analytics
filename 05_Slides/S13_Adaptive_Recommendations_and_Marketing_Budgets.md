@@ -270,7 +270,7 @@ Source: M8, Section 8.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 
 Tim Wu's Blind Spot discusses attention markets and the difficulty of analyzing exchanges without a monetary user price. A course application should measure time, control, and value rather than equate engagement with welfare.
 
-Source: Tim Wu, Blind Spot: The Attention Economy and the Law (2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/
+Source: (Wu, 2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/
 
 ## Slide 22: Policy Discussion
 

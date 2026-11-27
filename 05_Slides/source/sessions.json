@@ -42,7 +42,7 @@
           "Which reasons matter even when they are difficult to quantify?",
           "An accurate algorithm can advance an objectionable end."
         ],
-        "notes": "Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Kant limits theoretical knowledge to objects of possible experience; an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork. The course develops these distinctions in M9 §9.41.",
+        "notes": "Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Theoretical knowledge is limited to objects of possible experience (Kant, 1781/1787); an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork (Kant, 1785). The course develops these distinctions in M9 §9.41.",
         "source": "M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -217,7 +217,7 @@
         ],
         "caption": "Published benchmark: 14,400 assigned runs per workflow; 40 tasks, six models.",
         "notes": "The method, sample, target quantities, and inference convention are supplied before coding. A loud failure means failed execution or incomplete requested output. A silent failure returns complete output with an incorrect scored value. Self-repair permits three revisions after execution or completeness feedback. The agent also receives an independent-check instruction, so the comparison changes several workflow components together. The authors collected these model results; the course program reconstructs aggregates from their release.",
-        "source": "Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md"
+        "source": "(Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
         "kind": "figure",
@@ -227,7 +227,7 @@
         "caption": "Silent failures are 2.35% of agent runs and 89.18% of its failures.",
         "description": "The left panel reports loud and silent failures per 100 assigned runs. The right panel reports silent failures as a share of failures. Both use the authors' intervals from resampling 40 tasks.",
         "notes": "The agent has 338 silent failures among 14,400 assigned runs and 379 total failures. Lower total error and a larger silent share are compatible. Self-repair can turn an incomplete program into a complete but wrong one, exposing a different failure category. Inspect numerical validity after execution succeeds. See M1 §1.19 and the published aggregate reconstruction.",
-        "source": "Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md"
+        "source": "(Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -248,7 +248,7 @@
         "caption": "Hold the model and task fixed; compare the four complete workflows.",
         "description": "A two-by-two matrix crosses a structured data dictionary with independent development checks. No performance values are assigned to the cells.",
         "notes": "All cells receive the same core measurement request and output schema. Explicit information organizes the definitions, while independent feedback exposes development discrepancies and permits bounded correction. Common tools, permissions, and resource caps keep the comparison interpretable. The possible interaction is measured on a frozen evaluation task. This diagram specifies an experiment and contains no observed model performance.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -260,7 +260,7 @@
           "Keep the 39 users with no July records."
         ],
         "notes": "The roster records earlier presence in the released file, not account enrollment. Count distinct dates from July 1 inclusive through August 1 exclusive. The input includes neighboring boundary dates. A zero is no recorded logging in the window; it is not zero consumption. Full source reconstruction and reference calculation appear in M1 §1.17.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -302,7 +302,7 @@
           "Check parsing, execution, and analytical correctness separately."
         ],
         "notes": "A historical finding concerns the tested configuration. A current workflow can differ through the model, interface, data, or judgment rule. Chen, Zaharia, and Zou separate code formatting from correctness after postprocessing. A code generator can improve on one measure while an automated pipeline breaks on another.",
-        "source": "M1 §1.13. Chen, Zaharia, and Zou (2024), §3.5. https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
+        "source": "M1 §1.13. (Chen et al., 2024, §3.5). https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2 ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
       },
       {
         "kind": "bullets",
@@ -367,7 +367,7 @@
           "Who bears a burden? Define the relevant outcome.",
           "What ought the firm do? Defend the governing principle."
         ],
-        "notes": "An accurate purchase forecast can leave customer burdens and permission unresolved. Koralus and Mascarenhas model reasoning through questions and answers; this workflow applies that distinction to a managerial brief. Do not infer a cognitive mechanism for a particular analyst or AI system. Preserve the population, timing, units, and meaning of each result.",
+        "notes": "An accurate purchase forecast can leave customer burdens and permission unresolved. Reasoning can be modeled through questions and answers (Koralus and Mascarenhas, 2013); this workflow applies that distinction to a managerial brief. Do not infer a cognitive mechanism for a particular analyst or AI system. Preserve the population, timing, units, and meaning of each result.",
         "source": "M1 §1.20. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
       },
       {
@@ -682,7 +682,7 @@
         "caption": "Geographic application use and individual service outcomes have different observation units.",
         "description": "Consenting Windows devices contribute category minutes to private geographic indices. Direct evidence on customer tasks separately informs service design.",
         "notes": "A retailer deciding between digital and assisted service needs evidence about requested tasks, devices, and outcomes. The source observes consenting consumer Windows devices from October 2022 to March 2023. Browser categories mix many tasks. Public indices do not establish an individual customer’s skill, wishes, or authorization.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
         "kind": "bullets",
@@ -693,7 +693,7 @@
           "The private production convention remains unresolved."
         ],
         "notes": "The complete Python in M2 §2.27 preserves the source’s rounded category weights and three illustrative minute vectors. Natural logs of positive minutes, with zero at zero minutes, match all three displayed values to two decimals. The weights sum to 0.996. This is a check of the worked example, not a reconstruction of private telemetry. Minute weights also change the aggregate from 3.6733 to 3.6304.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
         "kind": "figure",
@@ -721,7 +721,7 @@
         "figure": "figures/data_production.tex",
         "caption": "Collection, retention, linkage, and access serve institutional purposes.",
         "description": "Household events pass through four gates before becoming available evidence. Payment and compliance motivate collection; capacity and duties affect retention; identifiers enable linkage; privacy, accountability, and commercial interests shape access.",
-        "notes": "An accurate billing row can coexist with inadequate evidence about household cost incidence. Identify each decision maker and the actual access rule before attributing a motive to missing evidence. Thomasson motivates questions about created artifacts; Leonelli explains the relational use and movement of data.",
+        "notes": "An accurate billing row can coexist with inadequate evidence about household cost incidence. Identify each decision maker and the actual access rule before attributing a motive to missing evidence. Created artifacts have histories and dependencies (Thomasson, 1999, 2014). Data acquire evidential roles through their use and movement (Leonelli, 2015; Leonelli, 2020).",
         "source": "M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -909,7 +909,7 @@
         ],
         "caption": "Fifty selected claims, twenty models, and a September 2026 endpoint.",
         "notes": "The released data contain 1,000 model-claim pairs, with eight flagged unreliable comparisons. These categories describe the selected claims under the authors' rules. An expired category allows a residual effect and exceptions among individual models. The point-estimate threshold is not the whole classification rule.",
-        "source": "Queen and Zou (2026). https://zou-group.github.io/llm-claims-shelf-life/ M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
+        "source": "(Queen and Zou, 2026). https://zou-group.github.io/llm-claims-shelf-life/ M2 §2.21. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
       },
       {
         "kind": "figure",
@@ -918,7 +918,7 @@
         "caption": "All fifty claims contribute follow-up; 28 remain right-censored.",
         "description": "Kaplan-Meier point estimates give 4.0%, 16.0%, and 38.9% expired at six, twelve, and twenty-four months. Published estimated dates are treated as fixed.",
         "notes": "The 15.75-month mean conditions on the 22 expired claims. It is not an expected lifetime for all findings. The displayed calculation retains the unexpired claims until the observation endpoint. Interval-based and model-count dates are treated as the authors' point estimates; their uncertainty is not propagated.",
-        "source": "Queen and Zou (2026), released fitted dates; original course calculation. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
+        "source": "(Queen and Zou, 2026), released fitted dates; original course calculation. ../01_Resources/14_LLM_Evidence_and_Revalidation/README.md"
       },
       {
         "kind": "bullets",
@@ -1032,7 +1032,7 @@
         "caption": "1,253 Illinois areas. Each index uses its own mean and standard deviation.",
         "description": "Two point maps use Census internal points, fixed axes, and identical intervals below -1, between -1 and 1, and above 1. Each index has its own Illinois mean and standard deviation.",
         "notes": "Each point is an area, without a population or device-count weight. Equal standardized thresholds compare relative positions within each index, rather than identical levels in original units. Point density can reflect the density of postal identifiers. A point is neither a boundary polygon nor a device location.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
         "figure_height": 0.74
       },
       {
@@ -1044,7 +1044,7 @@
           "Flag 50 open-ended income values; use 28,511 regression areas."
         ],
         "notes": "The ACS estimates cover 2017–2021; Windows activity covers October 2022–March 2023. ZCTAs approximate postal areas, so a matching string does not establish identical populations. Codes 2,499 and 250,001 represent income intervals. All 1,253 released Illinois areas remain in the map and clustering; one Illinois boundary-income record leaves the national regression sample.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
         "kind": "bullets",
@@ -1194,7 +1194,7 @@
           "A USD 2/MWh average increase permits different allocations across households.",
           "Bill payments do not establish endorsement of the allocation rule."
         ],
-        "notes": "The recurring electricity case concerns the October 2026 Rana, Kaps, and Netessine paper. Its residential sample has 41 treated utilities and 627 utility-quarter observations. A synthetic example holds 1,000 households and one MWh each fixed: USD 2 more for everyone and USD 20 more for 100 households yield the same average. Fixed charges and riders can enter revenue. Distribution, comprehension, and authority need separate evidence. Complete calculations are in M6 §6.33.",
+        "notes": "The recurring electricity case concerns the October 2026 electricity paper (Rana et al., 2026). Its residential sample has 41 treated utilities and 627 utility-quarter observations. A synthetic example holds 1,000 households and one MWh each fixed: USD 2 more for everyone and USD 20 more for 100 households yield the same average. Fixed charges and riders can enter revenue. Distribution, comprehension, and authority need separate evidence. Complete calculations are in M6 §6.33.",
         "source": "M2 §2.28 and M3 §3.19. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -1243,7 +1243,7 @@
           "State what the descriptive change supports."
         ],
         "notes": "M3 §3.18 reports the same June-minus-May estimate under both calculations. A coefficient-only checker accepts both, while the standard errors, intervals, and p-values differ. The coding benchmark motivates explicit assessment of each requested quantity. The required paired calculation follows the fixed measurement question and its user-level dependence. Statistical agreement does not establish an intervention effect.",
-        "source": "Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md"
+        "source": "Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -1328,7 +1328,7 @@
           "Primary observations separate the response from the confounded bias."
         ],
         "notes": "The four-profile model uses response features (1, feature, price) and auxiliary bias features (1, price). Unknown unrestricted price bias can offset a change in the primary price coefficient. Repetition reduces variance without resolving that confounding. M4 Section 4.24 supplies the full invented example and Python. This coefficient-identification result does not itself establish a causal purchasing effect.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "figure",
@@ -1337,7 +1337,7 @@
         "caption": "The CCI income association changes sign after adjustment.",
         "description": "MCI income coefficients decline from 0.05521 to 0.00209 and 0.00132; CCI changes from 0.04856 to -0.01821 and -0.01750 after controls and state effects.",
         "notes": "The slope is in index units per $10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older; broadband is a household share. All models retain the same records. Adding controls changes the association represented by income; it does not identify an income intervention.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
         "figure_height": 0.72
       },
       {
@@ -1349,7 +1349,7 @@
           "An assistance effect needs an intervention and customer outcomes."
         ],
         "notes": "Household estimates do not supply Windows device counts. State intercepts allow different average levels but do not remove every unobserved source of variation. The calculation does not propagate ACS sampling error, differential-privacy noise, or spatial dependence. An improved residual fit supplies no causal identification.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
         "kind": "figure",
@@ -1637,7 +1637,7 @@
           "A screening claim needs evidence on new concepts and the intended customers."
         ],
         "notes": "Maier and coauthors compare 57 personal-care concepts with 9,300 U.S. human responses. Semantic similarity rating maps generated text to five-category distributions. The authors manually optimized the anchors on the same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment is a ratio to a split-half human benchmark. It describes neither individual-rating accuracy nor purchase prediction. Concept ratings do not identify attribute tradeoffs without suitable variation and a response model.",
-        "source": "Maier and coauthors (2025), Table 1 and Appendix A.3. https://arxiv.org/abs/2510.08338v3"
+        "source": "(Maier et al., 2025, Table 1, Appendix A.3). https://arxiv.org/abs/2510.08338v3"
       },
       {
         "kind": "figure",
@@ -1699,7 +1699,7 @@
         "caption": "Invented means. Auxiliary bias includes an overall shift and a price effect.",
         "description": "At low price, primary means rise from 3.1 to 3.9 and auxiliary means from 3.3 to 4.1 when the feature changes from standard to premium. With the feature standard, raising price reduces the primary mean from 3.1 to 2.1 and raises the auxiliary mean from 3.3 to 3.5. Both panels use the same rating scale; navy circles denote primary and orange squares auxiliary means.",
         "notes": "Feature and price are each coded -1 and +1. The imposed primary coefficients are (3, 0.4, -0.5), and auxiliary bias adds 0.8 + 0.6 times price. Both sources preserve the 0.8-point feature contrast, while their price contrasts have opposite signs. No human or model responses were collected. The Gaussian model treats the response as a continuous rating score.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "equation",
@@ -1708,7 +1708,7 @@
         "equation": "\\begin{gathered}t=\\frac{N_P}{\\sigma_P^2},\\qquad s=\\frac{N_A}{\\sigma_A^2}\\\\[0.35em]\\operatorname{MSE}(\\widehat\\beta)=\\frac{2}{t}+\\frac{1}{t+s}\\end{gathered}",
         "interpretation": "Primary precision $t$ identifies intercept and price. Both sources inform the feature through $t+s$.",
         "notes": "Here t = N_P / sigma_P squared and s = N_A / sigma_A squared. The loss sums squared errors across the three primary coefficients with the fixed -1/+1 coding. Auxiliary bias is restricted to intercept and price. Known bias features, linear means, and independent Gaussian errors support the calculation. Full derivation and Python are in M4 Section 4.24.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "figure",
@@ -1717,7 +1717,7 @@
         "caption": "The saving depends on source costs, noise, and which response features bias can imitate.",
         "description": "In the invented four-profile design, the orange curve approaches 33.33 percent asymptotic savings as the information-cost ratio approaches zero and reaches zero at one third. The navy dashed line stays at zero when bias includes every response feature. The open zero-cost endpoint is a limit.",
         "notes": "The information-cost ratio is auxiliary cost times auxiliary variance divided by primary cost times primary variance. The criterion is worst-case MSE for the full three-coefficient primary vector. The one-third limit is specific to this design and loss. It is not a general rule that cost savings equal the share of unconfounded coefficients.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "table",
@@ -1747,7 +1747,7 @@
         ],
         "caption": "Imposed costs: 1 and 0.01 per response. Rounded allocations save 23.68% at the same 0.01 MSE target.",
         "notes": "Both source variances equal one. The mixed allocation places 54 primary and 324 auxiliary observations at each profile. Its asymptotic saving is 24.29 percent; separate upward rounding within each source-profile cell gives the table. The rounded construction is feasible but need not be the exact integer optimum. Setup, human validation, and monitoring costs require separate budget entries. Run allocate_responses.py in the Auxiliary_Data example.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "bullets",
@@ -2115,7 +2115,7 @@
         "caption": "Raw and standardized distances produce different geographic groups.",
         "description": "Illinois groups contain 94, 347, and 812 areas. The adjusted Rand index comparing raw and standardized clustering is 0.805.",
         "notes": "The three groups are a fixed descriptive example. Thirty random starts and four tested seeds yield the same standardized partition. Raw distances give more influence to the index with larger spread. Group names order mean MCI and carry no ranking of customer ability or value.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
         "figure_height": 0.72
       },
       {
@@ -2127,7 +2127,7 @@
           "Observe requested assistance and task completion before allocating service."
         ],
         "notes": "Adjusted Rand agreement compares co-membership and is not a percentage of identical labels. Seed stability checks a computation under chosen features. Scaling changes the meaning of similarity. The public data contain no individual assistance need or service outcome, so no cluster is validated as a customer capability category.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
         "kind": "bullets",
@@ -2220,7 +2220,7 @@
         "equation": "p_r=\\frac{s_r-\\min_j s_j}{\\sum_{k=1}^{5}(s_k-\\min_j s_j)}",
         "interpretation": "The similarities $s_r$ depend on the anchors and embedding. Equal similarities leave the denominator at zero.",
         "notes": "This is the paper setting with epsilon zero and SSR temperature one. The normalized weights describe a mapping to rating categories. Calibration against human outcomes requires separate evidence. The course code explicitly abstains when the spread is at most 1e-12. That numerical threshold is not evidence of consumer indifference.",
-        "source": "Maier and coauthors (2025), Table 1 and Appendix A.3. https://arxiv.org/abs/2510.08338v3 M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
+        "source": "(Maier et al., 2025, Table 1, Appendix A.3). https://arxiv.org/abs/2510.08338v3 M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
       },
       {
         "kind": "figure",
@@ -2288,7 +2288,7 @@
           "Record the model, prompt, and response format."
         ],
         "notes": "Agreement measures consistency, not necessarily construct validity. When a model labels the data used to evaluate itself, the resulting score can reproduce its own labeling choices. A sponsor-framing comparison can hold the same proposal fixed while varying whether the sponsor likes it. Evaluate factual criticism separately from approval. This is a proposed exercise motivated by Sharma et al.; no course model responses have been collected.",
-        "source": "M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Sharma et al. (2024), https://arxiv.org/abs/2310.13548v4. M5 §5.18."
+        "source": "M5, Section 5.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md (Sharma et al., 2024), https://arxiv.org/abs/2310.13548v4. M5 §5.18."
       },
       {
         "kind": "bullets",
@@ -2434,7 +2434,7 @@
           "Use independent review for the shared coding frame and explain disagreements."
         ],
         "notes": "This is directed content analysis with a codebook. Independent human coding has not yet been completed. Agreement would concern coding consistency, not the truth of a corporate statement. Reflexive thematic analysis makes different methodological commitments. Retain investigator interpretation and the limits of investor-facing documents. Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238.",
-        "source": "M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md Hsieh and Shannon (2005), https://doi.org/10.1177/1049732305276687; O'Brien et al. (2014), https://doi.org/10.1097/ACM.0000000000000388; Gale et al. (2013), https://doi.org/10.1186/1471-2288-13-117; O'Connor and Joffe (2020), https://doi.org/10.1177/1609406919899220; Braun and Clarke (2021), https://doi.org/10.1080/14780887.2020.1769238."
+        "source": "M5 §5.27. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md (Hsieh and Shannon, 2005), https://doi.org/10.1177/1049732305276687; (O'Brien et al., 2014), https://doi.org/10.1097/ACM.0000000000000388; (Gale et al., 2013), https://doi.org/10.1186/1471-2288-13-117; (O'Connor and Joffe, 2020), https://doi.org/10.1177/1609406919899220; (Braun and Clarke, 2021), https://doi.org/10.1080/14780887.2020.1769238."
       },
       {
         "kind": "bullets",
@@ -2475,7 +2475,7 @@
         "caption": "Identical saved outputs are scored by both judges. All scores are stipulated.",
         "description": "Old-judge scores are 60 and 62; new-judge scores are 75 and 77. The generator gain is two points within either judge, while the diagonal comparison is seventeen.",
         "notes": "A stable judge supplies a common comparison but still requires validation. Position, verbosity, and self-preference can affect evaluation. For earnings-call summaries, independently check factual support, speaker role, and whether a statement concerns a plan or an implemented action. Preserve inconsistent judgments.",
-        "source": "M5 §5.18. Zheng et al. (2023), https://arxiv.org/abs/2306.05685; Panickssery et al. (2024), https://arxiv.org/abs/2404.13076"
+        "source": "M5 §5.18. (Zheng et al., 2023), https://arxiv.org/abs/2306.05685; (Panickssery et al., 2024), https://arxiv.org/abs/2404.13076"
       },
       {
         "kind": "bullets",
@@ -2958,13 +2958,13 @@
       },
       {
         "kind": "bullets",
-        "title": "Andrews: Which Departures Would the Test Detect?",
+        "title": "Which Departures Would the Test Detect?",
         "bullets": [
           "Invert power at specified alternatives and a fixed test size.",
           "Reference precision: USD 2.08/MWh for 50% power; USD 2.97 for 80%.",
           "Detection thresholds and confidence bounds answer different questions."
         ],
-        "notes": "Donald W. K. Andrews develops inverse-power functions in Power in Econometric Applications (1989). The course uses a fixed normal/Wald approximation, preserving the published clustered SE. The residential reference exposure is a ratio of reported means. The 95% detection threshold is USD 3.82/MWh; the realized estimate instead supplies a one-sided 95% upper confidence bound of USD 3.49/MWh. Low power leaves alternatives unresolved and does not establish the true effect. Model covariance, nuisance parameters, direction, and the testing procedure must be specified. The complete program is andrews_inverse_power.py.",
+        "notes": "Inverse-power functions identify departures from the null that attain a specified rejection probability (Andrews, 1989). The course uses a fixed normal/Wald approximation, preserving the published clustered SE. The residential reference exposure is a ratio of reported means. The 95% detection threshold is USD 3.82/MWh; the realized estimate instead supplies a one-sided 95% upper confidence bound of USD 3.49/MWh. Low power leaves alternatives unresolved and does not establish the true effect. Model covariance, nuisance parameters, direction, and the testing procedure must be specified. The complete program is andrews_inverse_power.py.",
         "source": "M6 §6.34. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
@@ -2994,7 +2994,7 @@
           "Unknown bias structure or revenue earned during learning changes the design problem."
         ],
         "notes": "Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian model, with known response and bias dictionaries and constant source costs. It does not rule out lower-order finite-accuracy differences. Nonlinear response models can make information depend on unknown coefficients. The paper separately treats pilot estimation of noise variances while preserving known feature dictionaries. Compare this target with adaptive campaign profit and causal effects on purchases; M6 Section 6.28 supplies the interpretation.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "bullets",
@@ -3054,7 +3054,7 @@
           "Count failed and missing outputs among assigned attempts."
         ],
         "notes": "M6 §6.29 defines q_cf as the probability of a valid output for a fixed task and model configuration. The interaction is (q11-q01)-(q10-q00). Its sign describes complementarity for that outcome. Repeated runs on one task measure conditional variation; generalization requires additional task families. A trace suggests a diagnosis, while a controlled intervention identifies the effect of a component.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "table",
@@ -3083,7 +3083,7 @@
         ],
         "caption": "One example versus none; 7,200 runs per prompt-by-workflow cell.",
         "notes": "The no-example success rates are 81.49%, 92.40%, and 96.97%. The failure reduction divides the success gain by one minus the no-example success rate. The agent-minus-chatbot interaction on the additive scale is -3.625 percentage points. Near perfect success, a smaller percentage-point effect can remove the same fraction of remaining failures. Treat the scale as part of the estimand. Shared tasks and datasets determine the uncertainty unit. Full aggregate reconstruction appears in M1 §1.19; M6 §6.31 develops the comparison.",
-        "source": "Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md"
+        "source": "(Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -3181,7 +3181,7 @@
           "The learned ranking inherits the outcome used to define success.",
           "Evaluate new proposals in their deployment setting."
         ],
-        "notes": "Angelopoulos, Lee, and Misra train a language-model improver using historical experimental comparisons. The causal interpretation is tied to the randomized comparison and measured outcome. Transfer to new content requires new evidence.",
+        "notes": "Historical experimental comparisons train a language-model improver (Angelopoulos et al., 2026). The causal interpretation is tied to the randomized comparison and measured outcome. Transfer to new content requires new evidence.",
         "source": "https://leekevin.io/caLM.pdf"
       },
       {
@@ -3192,7 +3192,7 @@
           "Record customer understanding and the ability to refuse.",
           "A robust commercial payoff still requires a justified objective."
         ],
-        "notes": "Causal Alignment includes human selection and acceptability checks. Their existence is material to a fair critique; their coverage remains a substantive question. Farrell, Korganbekova, and Misra address robustness to a changed deployment distribution, with a selected payoff.",
+        "notes": "The Causal Alignment approach (Angelopoulos et al., 2026) includes human selection and acceptability checks. Their existence is material to a fair critique; their coverage remains a substantive question. Robust decision rules address a changed deployment distribution for a selected payoff (Farrell et al., 2026).",
         "source": "https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633"
       },
       {
@@ -3216,7 +3216,7 @@
           ]
         ],
         "caption": "Dollars per eligible person for the effect; per H member for loss. One purchase opportunity.",
-        "notes": "M6 §6.37 uses the synthetic uniform-valuation population from M9 §9.17. Randomization is within group. The unequal allocation produces a naive pooled effect of USD 3.5985; stratification or inverse-probability weighting recovers USD 2.0833. H loss is relative to always receiving control. Expected population lost purchase shares are 7.5% and 5%. These assignment probabilities are invented and do not describe Dubé and Misra’s field validation.",
+        "notes": "M6 §6.37 uses the synthetic uniform-valuation population from M9 §9.17. Randomization is within group. The unequal allocation produces a naive pooled effect of USD 3.5985; stratification or inverse-probability weighting recovers USD 2.0833. H loss is relative to always receiving control. Expected population lost purchase shares are 7.5% and 5%. These assignment probabilities are invented and do not describe the published field validation (Dubé and Misra, 2021).",
         "source": "../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
@@ -3489,7 +3489,7 @@
         "equation": "\\xi_i=\\widehat m(A_i)+\\frac{\\widehat f_A(A_i)}{\\widehat\\pi(A_i\\mid X_i)}\\{Y_i-\\widehat\\mu(X_i,A_i)\\}",
         "interpretation": "Cross-fit the nuisance models, then smooth the adjusted outcomes over dose. Causal interpretation requires adequate support and measured confounders.",
         "notes": "The outcome model predicts profit conditional on dose and observed type. The treatment model estimates a conditional density, measured per percentage point. m averages the outcome model over the target population; f_A averages the conditional density. The population identity is doubly robust when either nuisance model is correct under identification and regularity conditions. Correct nuisance models alone do not establish calibrated confidence intervals.",
-        "source": "Kennedy et al., https://arxiv.org/abs/1507.00747v3; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+        "source": "(Kennedy et al., 2017), https://arxiv.org/abs/1507.00747v3; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
         "kind": "figure",
@@ -3990,7 +3990,7 @@
         ],
         "caption": "SciQA: 500 test examples. Accuracy uses supplied reference prefixes.",
         "notes": "Reported Table 4, training lookahead three and evaluation lookahead seven. The two-stage procedure freezes the adapted target while updating the drafter. Next-token accuracy conditions on the supplied reference prefix. Whole-answer correctness requires a separate evaluation. Re-evaluate dependent components when the target changes. Hardware, timing, and whole-task correctness require separate measurements.",
-        "source": "Galgani and coauthors (2026), Table 4. https://arxiv.org/abs/2611.25813v1"
+        "source": "(Galgani et al., 2026, Table 4). https://arxiv.org/abs/2611.25813v1"
       },
       {
         "kind": "table",
@@ -4355,7 +4355,7 @@
         "caption": "Synthetic users. The same aggregate selects a different person for review.",
         "description": "Correct counts for A, B, C are 1, 1, 0. Reassigned counts are 0, 1, 1. Both total two days, while zero-log review changes from C to A.",
         "notes": "The customer decision depends on which user receives each value. Matching the overall mean therefore leaves a consequential error undetected. The course grader compares every roster user and denominator. Independent tests include this counterexample, missing users, duplicate keys, invalid dates, and nonfinite outputs. An independently written SQL query checks the actual mHealth task results.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -4366,7 +4366,7 @@
           "Checker: detection of decision-relevant errors."
         ],
         "notes": "These judgments can disagree. An accurate table may follow an unauthorized input change. A weak checker may accept an invalid table. Record observable tool actions and state changes; a generated explanation does not reveal the model’s internal reasoning. The provided CSV checker executes no candidate code and supplies no execution sandbox.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "table",
@@ -4405,7 +4405,7 @@
         ],
         "caption": "Constructed programs on mHealth; intended roster: 358 users, 31 days.",
         "notes": "The shifted-user program changes 331 user values while preserving the overall mean and total. The 30-day calculation changes exposure. Omitting zero-log users returns 319 rows and changes the target population. Under the required per-user contract, missing users constitute incomplete output. The two complete but wrong programs are silent failures. The independent SQL comparison and small known-answer cases assess the checker. These are deliberately constructed errors, not measured LLM error frequencies. Full Python appears in M7 §7.46.",
-        "source": "Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md"
+        "source": "Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -4417,7 +4417,7 @@
           "Report validity, failures, analyst effort, and total cost."
         ],
         "notes": "The expected answers are public teaching files. A measured exercise needs an explicitly restricted task workspace, not a folder label. Fresh conversations reduce carryover, and five repeated runs per configuration describe variability on this task. Full AI comparisons are optional ungraded practice; the released numerical results are local reference calculations and separately labeled hypothetical costs.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "bullets",
@@ -4428,7 +4428,7 @@
           "Total coefficient MSE rises from 0.009921 to 0.076043."
         ],
         "notes": "These are analytic moments in the invented four-profile design. Both source variances equal one, with 216 primary and 1,296 auxiliary responses. The fitted model retains intercept and price bias; the sensitivity adds a feature bias to the auxiliary mean. Expected feature-coefficient error equals 0.3 times 1296/1512. The 0.01 MSE target fails because of the omitted bias restriction.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "figure",
@@ -4437,7 +4437,7 @@
         "caption": "Invented example. Both source counts grow in fixed proportion; the omitted feature bias stays at 0.3.",
         "description": "The navy curve gives correct-model MSE, declining from 0.009921 toward zero as sample size multiplies by up to 32. The orange curve includes omitted feature bias and approaches a gray squared-bias floor of 0.066122. A dotted line marks the original 0.01 target. Source ratios, variances, and true coefficients remain fixed.",
         "notes": "At 32 times the initial counts, correct-model MSE is 0.000310 and omitted-bias MSE is 0.066432. A larger sample narrows sampling variation while preserving the expected coefficient error. Adding the feature to the fitted bias dictionary restores correct specification but makes all three primary features confounded with unrestricted auxiliary bias. At the original 216 primary observations, the corrected model has MSE 3/216 = 0.013889.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "bullets",
@@ -4448,7 +4448,7 @@
           "Repeated ratings require a dependence model before they count as independent information."
         ],
         "notes": "In the paper Table 1 Panel B, the Republican-indicator bias has p = 0.034 and is excluded by the 0.01 threshold. Holding the five primary features fixed and adding that bias feature makes the bias dictionary cover the full primary feature space, yielding zero auxiliary value under the expanded worst-case model. This is a sensitivity implication, not an empirical re-estimation. The reported 74 and 32 percent savings come from retrospective calibrations assuming auxiliary cost is one percent of primary cost. M7 Section 7.37 provides full Python and interpretation.",
-        "source": "Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
+        "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
         "kind": "bullets",
@@ -4988,7 +4988,7 @@
           "Evaluate voluntary use and customer outcomes alongside engagement."
         ],
         "notes": "Tim Wu's Blind Spot discusses attention markets and the difficulty of analyzing exchanges without a monetary user price. A course application should measure time, control, and value rather than equate engagement with welfare.",
-        "source": "Tim Wu, Blind Spot: The Attention Economy and the Law (2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/"
+        "source": "(Wu, 2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/"
       },
       {
         "kind": "bullets",
@@ -5171,7 +5171,7 @@
         ],
         "caption": "Invented inputs; analyst time costs 60 dollars per hour.",
         "notes": "The numerator includes effort and charges from all assigned attempts, including failures. The valid-output denominator counts accepted final results after any allowed correction. Execution charges beyond the API are set to zero here. Greater API spending coincides with lower total cost under these inputs because analyst effort falls. This is an accounting illustration, not measured labor savings. Complete Python appears in M8 §8.26.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "figure",
@@ -5181,7 +5181,7 @@
         "caption": "Hypothetical comparison: additional review breaks even at seven dollars per error.",
         "description": "Two expected-cost lines for 1,000 tasks cross at loss seven dollars and total cost 620 dollars. The basic workflow has lower operating expense and more undetected errors.",
         "notes": "The API charges are 0.02 and 0.05 dollars per task, with review and correction times 0.25 and 0.50 minutes at 60 dollars per hour. The assumed undetected-error probabilities are 5% and 1%. At a loss of ten dollars, costs are 770 and 650 dollars. These operating assumptions are separate from the published benchmark. The common conditional loss must have the same scope; if error severity differs, use a workflow-specific loss. Customer rights require separate justification. Full Python appears in M8 §8.30.",
-        "source": "Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md"
+        "source": "Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
         "kind": "figure",
@@ -5222,18 +5222,18 @@
           "Its field result concerns clicks, with human selection and content checks.",
           "Customer benefit and informed choice require additional evidence."
         ],
-        "notes": "Panagiotis Angelopoulos, Kevin Lee, and Sanjog Misra; author version linked August 2026. Sections 4–5 report the randomized comparison; Appendix B screens unsupported claims and missing information. Respect those safeguards when critiquing the scope of the result.",
+        "notes": "The August 2026 author version reports the randomized comparison in Sections 4–5 and screening for unsupported claims and missing information in Appendix B (Angelopoulos et al., 2026). These safeguards are material to evaluating the scope of the result.",
         "source": "https://leekevin.io/caLM.pdf"
       },
       {
         "kind": "bullets",
         "title": "Personalized Pricing: Benchmark and Incidence",
         "bullets": [
-          "Dubé and Misra study employers purchasing recruiting services.",
-          "Their model predicts higher profit and lower total customer surplus.",
+          "Prospective employers purchase recruiting services.",
+          "The model predicts higher profit and lower total customer surplus.",
           "A majority benefits; the later field comparison uses different price policies."
         ],
-        "notes": "The downloaded NBER June 2021 revision is linked to the published JPE 2023 paper. The 19% projected profit gain uses an optimized uniform benchmark. The rounded realized means in the later experiment imply about 10.1% higher revenue than its implemented uniform policy. Customer surplus is model-derived. This is a business purchasing setting, not an emergency retail case.",
+        "notes": "The downloaded NBER June 2021 revision is linked to the published JPE 2023 paper. The 19% projected profit gain uses an optimized uniform benchmark. The rounded realized means in the later experiment imply about 10.1% higher revenue than its implemented uniform policy. Customer surplus is model-derived. This is a business purchasing setting, not an emergency retail case. The cited working-paper revision is dated June 2021; the journal article appeared in 2023 (Dubé and Misra, 2021, 2023).",
         "source": "https://www.nber.org/papers/w23775"
       },
       {
@@ -5282,7 +5282,7 @@
         "figure": "../06_Lecture_Notes/figures/M09_phenomena_noumena.tex",
         "caption": "A complete statistical account would still leave practical justification to be defended.",
         "description": "Four upper boxes distinguish established findings, recognized empirical gaps, unanticipated issues, and acknowledged epistemic limits. Recognition connects an unexpected issue to further inquiry. A lower box separates practical justification about ends, authority, and obligations.",
-        "notes": "Kant, Critique of Pure Reason B306–B311, distinguishes negative and positive noumena and limits human theoretical cognition. Hidden preferences, comprehension, and unrecorded costs remain empirical questions. Qualitative evidence also belongs to experience. The Groundwork, 4:428–429 and 4:451–453, provides distinct practical arguments about respect and the intelligible standpoint. Do not infer a specific hidden preference, harm, or duty solely from a limit of empirical knowledge. An unknown unknown has not yet been recognized. An acknowledged limit requires an argument about what a specified inquiry cannot establish. The phrase known to be the never known has that scoped role. Normative questions remain open to reasoned judgment; statistical non-identification can change with a new observable law.",
+        "notes": "Negative and positive noumena have distinct roles within the limits of human theoretical cognition (Kant, 1781/1787, B306–B311). Hidden preferences, comprehension, and unrecorded costs remain empirical questions. Qualitative evidence also belongs to experience. The Groundwork (Kant, 1785, 4:428–429, 4:451–453) provides distinct practical arguments about respect and the intelligible standpoint. Do not infer a specific hidden preference, harm, or duty solely from a limit of empirical knowledge. An unknown unknown has not yet been recognized. An acknowledged limit requires an argument about what a specified inquiry cannot establish. The phrase known to be the never known has that scoped role. Normative questions remain open to reasoned judgment; statistical non-identification can change with a new observable law.",
         "source": "M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5346,24 +5346,24 @@
         ],
         "rows": [
           [
-            "Sellars: justification",
+            "Justification",
             "What warrants this interpretation?"
           ],
           [
-            "Bhaskar: ontology",
+            "Ontology",
             "Which mechanisms remain unobserved?"
           ],
           [
-            "Husserl: intentionality",
+            "Intentionality",
             "What is the person accepting?"
           ],
           [
-            "Scanlon: normative reasons",
+            "Normative reasons",
             "Which reasons deserve an answer?"
           ]
         ],
-        "caption": "Kant separately examines the conditions and limits of theoretical cognition.",
-        "notes": "These authors offer different arguments. They supply no common rejection of empirical inquiry. Sellars concerns the grounds of observational knowledge; Bhaskar permits inquiry into structures beyond event patterns; Husserl examines intentionality; Scanlon defends reasoning appropriate to normative domains. The exact source passages and contemporary applications are separated in M9 §9.43. Publication selection toward tractable questions is a hypothesis requiring evidence about the research process.",
+        "caption": "The conditions and limits of theoretical cognition require a separate argument.",
+        "notes": "The arguments concern the grounds of observational knowledge (Sellars, 1956), structures beyond event patterns (Bhaskar, 2007), intentionality (Husserl, 1970), and reasoning appropriate to normative domains (Scanlon, 2009). The conditions and limits of theoretical cognition supply a distinct argument (Kant, 1781/1787). These positions preserve different roles for empirical inquiry. M9 §9.43 gives the source passages and applications. Publication selection toward tractable questions is a hypothesis requiring evidence about the research process.",
         "source": "M9 §9.43 and its primary-source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5371,10 +5371,10 @@
         "title": "Marketing Dialectics: Examine the Premise",
         "bullets": [
           "State the claim, its evidence, and the premise connecting them.",
-          "Kant examines reason’s demand for an unconditioned explanation.",
+          "Examine the demand for a complete explanation.",
           "A marketing analogy must preserve the scope of the original argument."
         ],
-        "notes": "Kant’s transcendental dialectic concerns metaphysical cognition. These marketing cases adapt the practice of examining premises; an ordinary empirical dispute is not a cosmological antinomy. The third antinomy does not imply that accurate purchase prediction proves lost agency. Critical examination may support, restrict, or reject a claim; no forced synthesis is required.",
+        "notes": "Transcendental dialectic concerns metaphysical cognition (Kant, 1781/1787). These marketing cases adapt the practice of examining premises; an ordinary empirical dispute is not a cosmological antinomy. The third antinomy does not imply that accurate purchase prediction proves lost agency. Critical examination may support, restrict, or reject a claim; no forced synthesis is required.",
         "source": "Marketing Dialectics, §§9.1–9.3. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5399,7 +5399,7 @@
           "Assess the customer’s authorization and the justification for the condition."
         ],
         "notes": "Technical permission, company authority, customer authorization, and ethical justification concern different relationships. A valid execution record establishes what happened under the rule. Kantian respect for persons asks whether the means respect the customer’s purposes and reasons. Confucian rectification of names connects the stated service role with its conduct. A higher renewal rate leaves the legitimacy of an imposed exit obstacle unresolved. M9 §9.20 develops the argument.",
-        "source": "Li and coauthors, Agent Harness Engineering: A Survey, §§8–9. Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
+        "source": "(Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md"
       },
       {
         "kind": "figure",
@@ -5407,7 +5407,7 @@
         "figure": "../06_Lecture_Notes/figures/M09_claim_scope.tex",
         "caption": "Causal, measurement, and ethical questions have different premises.",
         "description": "Separate paths connect a practice to commercial effects and customer outcomes. A judgment about the practice also requires an ethical principle.",
-        "notes": "A randomized intervention can establish incremental purchases without establishing informed choice or customer benefit. Kant’s humanity formulation supplies a distinct ethical question about treatment of persons.",
+        "notes": "A randomized intervention can establish incremental purchases without establishing informed choice or customer benefit. The humanity formulation (Kant, 1785) supplies a distinct ethical question about treatment of persons.",
         "source": "Marketing Dialectics, §§9.1, 9.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5427,7 +5427,7 @@
         "figure": "../06_Lecture_Notes/figures/M09_burden_justification.tex",
         "caption": "A reason for scrutiny is distinct from evidence of misconduct.",
         "description": "A material stake leads to independent substantiation and then a decision that can change with evidence.",
-        "notes": "Hume proposes institutional checks that work under private-interest pursuit and distinguishes that design maxim from universal dishonesty. Smith urges scrutiny of interested commercial-regulation proposals. Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation, not a universal legal presumption of guilt. A duty-based conflict is distinguished from ordinary opposing interests in §9.45.",
+        "notes": "Institutional checks can be designed to work under private-interest pursuit without assuming universal dishonesty (Hume, 1741). Interested commercial-regulation proposals warrant scrutiny (Smith, 1776). Requiring firms to substantiate customer-benefit claims is a contemporary institutional recommendation. A duty-based conflict is distinguished from ordinary opposing interests in §9.45.",
         "source": "Marketing Dialectics, §9.10. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5448,7 +5448,7 @@
           "Habit and self-control evidence concerns specified interventions.",
           "Evaluate the feed, the user’s purpose, and unwanted continuation."
         ],
-        "notes": "Lindström and coauthors study posting and experimentally varied social rewards. Schultz, Dayan, and Montague examine dopamine-neuron activity in a separate neuroscience setting. Allcott, Gentzkow, and Song study temporary incentives and user-selected limits with an economic model. These sources provide different evidence. None alone identifies clinical addiction caused by an infinite-scroll feature. The ethical question concerns the actual design, its consequences, and the user’s authority to stop.",
+        "notes": "Posting behavior responds to experimentally varied social rewards (Lindström et al., 2021). Dopamine-neuron activity is examined in a separate neuroscience setting (Schultz et al., 1997). Temporary incentives and user-selected limits are evaluated with an economic model (Allcott et al., 2022). These sources provide different evidence. None alone identifies clinical addiction caused by an infinite-scroll feature. The ethical question concerns the actual design, its consequences, and the user’s authority to stop.",
         "source": "M9 §9.46 and its source links. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5489,7 +5489,7 @@
           "A trusted adviser or customer-care role carries standards of conduct.",
           "Examine whether the claimed role matches incentives and practice."
         ],
-        "notes": "Analects 4.5 and 4.16 place righteousness in the evaluation of gain; Mencius 1A.1 challenges an exclusive focus on advantage. Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties. In the restaurant case, compare claims of franchise pricing independence and customer benefit with actual authority and measured outcomes. Trustworthiness concerns the accuracy of that account. Examine how the pricing team handles evidence of customer losses and truthful employee objections.",
+        "notes": "The Analects (Confucius, 2015, 4.5, 4.16) places righteousness in the evaluation of gain; the opening of Mencius (Mencius, 2016, 1A.1) challenges an exclusive focus on advantage. The discussions in Analects 12.7 and 13.3 motivate trustworthiness and fit between names, roles, and conduct. These are contemporary applications of texts with historical political settings. A profitable exchange can serve both parties. In the restaurant case, compare claims of franchise pricing independence and customer benefit with actual authority and measured outcomes. Trustworthiness concerns the accuracy of that account. Examine how the pricing team handles evidence of customer losses and truthful employee objections.",
         "source": "Marketing Dialectics, §§9.11.1–9.11.2. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5500,7 +5500,7 @@
           "Learning and reflection should discipline an AI-generated answer.",
           "Good conduct depends on repeated practices as well as stated values."
         ],
-        "notes": "Analects 13.23, 14.22, and 2.15 support discussion of truthful challenge and reflective learning. Mencius emphasizes cultivable moral beginnings; Xunzi emphasizes deliberate effort, teaching, and ritual. They disagree about human nature. A modern firm can examine what its rewards teach employees to notice and whether an analyst can report an unwanted customer outcome.",
+        "notes": "The Analects (Confucius, 2015, 13.23, 14.22, 2.15) supports discussion of truthful challenge and reflective learning. Cultivable moral beginnings (Mencius, 2016) and deliberate effort, teaching, and ritual (Xunzi, 1999) provide different accounts of human nature. A modern firm can examine what its rewards teach employees to notice and whether an analyst can report an unwanted customer outcome.",
         "source": "Marketing Dialectics, §§9.11.3–9.11.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5642,7 +5642,7 @@
           "Evidence: identify which claims the estimates and bounds support.",
           "Justification: explain why affected people may bear the remaining risk."
         ],
-        "notes": "A narrow price study can be valid within its scope. The category error occurs when its aggregate becomes a complete account of household harm or agency. Four named owners versus other owners is not automatically cloud provision versus colocation. Thomasson’s functional assessment asks whether categories serve the decision. Compliance with a rule, endorsement of its reasons, and authorization remain distinct.",
+        "notes": "A narrow price study can be valid within its scope. The category error occurs when its aggregate becomes a complete account of household harm or agency. Four named owners versus other owners is not automatically cloud provision versus colocation. Functional assessment of concepts asks whether categories serve the decision (Thomasson, 2025). Compliance with a rule, endorsement of its reasons, and authorization remain distinct.",
         "source": "M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5665,7 +5665,7 @@
           "The first premise grants revenue priority over other reasons.",
           "Defend that premise to the people bearing the burden."
         ],
-        "notes": "The conditional deduction is valid, while soundness also requires true premises. Evidence for the revenue effect does not establish the normative premise. MacFarlane distinguishes logical consequence from norms governing reasoning; Scanlon supplies a separate account of justification to affected people. Ordinary empirical evidence remains defeasible and should be evaluated according to the claim actually made.",
+        "notes": "The conditional deduction is valid, while soundness also requires true premises. Evidence for the revenue effect does not establish the normative premise. Logical consequence differs from norms governing reasoning (MacFarlane, 2004). Justification to affected people requires a separate account (Scanlon, 1998). Ordinary empirical evidence remains defeasible and should be evaluated according to the claim actually made.",
         "source": "M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5717,7 +5717,7 @@
           "State the factual premises and the principle governing affected people.",
           "Defend a conclusion about what the actor ought to do."
         ],
-        "notes": "Payment records conduct under available conditions. Endorsement, permission, and ethical justification need further evidence or reasons. Scanlon's approach compares principles through the reasons people could have for rejecting them. A hypothetical jurisdiction with inaccessible decisions can differ from one with an effective challenge procedure even when bills coincide. State the circumstances, identify a feasible alternative, and answer the strongest objection.",
+        "notes": "Payment records conduct under available conditions. Endorsement, permission, and ethical justification need further evidence or reasons. Contractualism compares principles through the reasons people could have for rejecting them (Scanlon, 1998). A hypothetical jurisdiction with inaccessible decisions can differ from one with an effective challenge procedure even when bills coincide. State the circumstances, identify a feasible alternative, and answer the strongest objection.",
         "source": "M9 §§9.27–9.32. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -5750,7 +5750,7 @@
         "caption": "Facts and a defended principle jointly support a conditional recommendation.",
         "description": "Factual and normative premises enter an application question, followed by an ought conclusion. The strongest objection can send the argument back to either premise.",
         "notes": "The hypothetical customer has made a verified cancellation request, and a secure prompt exit is feasible. The proposed principle respects valid withdrawal while requiring justification of remaining burdens. Assess fraud, service continuity, and implementation cost. A factual premise needs evidence; a normative premise needs reasons. An objection can change either.",
-        "source": "M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
+        "source": "M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
       },
       {
         "kind": "figure",
@@ -5759,8 +5759,8 @@
         "figure_height": 0.7,
         "caption": "Compare affected positions and feasible alternatives; answer the strongest objection.",
         "description": "Two columns compare mandatory retention with prompt secure exit. Each considers customer reasons alongside security and service interests. A surviving objection leads to revision of the alternative.",
-        "notes": "Scanlon's reasonable rejection is a judgment about reasons under principles of general regulation. It is not a vote or an automatic veto. In this hypothetical case, optional offers preserve persuasion without imposing it as a condition of exit. The comparison assumes necessary protections can be supplied at reasonable cost. A surviving objection requires revising the alternative or the conclusion.",
-        "source": "M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
+        "notes": "Reasonable rejection is a judgment about reasons under principles of general regulation (Scanlon, 1998). It is not a vote or an automatic veto. In this hypothetical case, optional offers preserve persuasion without imposing it as a condition of exit. The comparison assumes necessary protections can be supplied at reasonable cost. A surviving objection requires revising the alternative or the conclusion.",
+        "source": "M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
       },
       {
         "kind": "bullets",
@@ -5770,8 +5770,8 @@
           "Separate managerial attention from the justification of a duty.",
           "State each person's interest, supported exposure, and reason for objection."
         ],
-        "notes": "Donaldson and Preston distinguish descriptive, instrumental, and normative uses of stakeholder theory. Mitchell, Agle, and Wood analyze salience through power, legitimacy, and urgency. Phillips examines obligations of fair cooperation; general duties still matter for involuntarily affected people. A low-power resident's moral standing does not depend on the cost they can impose on the firm. Identify the actual relationship and defend the proposed obligation.",
-        "source": "M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
+        "notes": "Descriptive, instrumental, and normative uses of stakeholder theory require different arguments (Donaldson and Preston, 1995). Managerial salience depends on power, legitimacy, and urgency (Mitchell et al., 1997). Fair cooperation can generate obligations (Phillips, 1997), while general duties still matter for involuntarily affected people. A resident’s moral standing does not depend on the cost they can impose on the firm. Identify the actual relationship and defend the proposed obligation.",
+        "source": "M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
       },
       {
         "kind": "bullets",
@@ -5781,8 +5781,8 @@
           "Compare its reach with residents' access to records and technical help.",
           "Require evidence for reassurance and a substantive answer to material objections."
         ],
-        "notes": "The headline is a discussion construction, not a verified quotation or institutional endorsement. The HBS Working Knowledge article is the documented public communication. Fricker's prejudice-based credibility deficit requires evidence beyond unequal credentials. Anderson motivates examining institutions that gather and assess testimony. Distinguish nearby residents, utility customers, and people bearing costs. Local experience can identify an outcome; causal attribution requires a comparison. Institutional prestige supplies no missing premise. Verify actual use of a claim in a proceeding before alleging that it silenced objections.",
-        "source": "M9 §§9.30–9.32; selected Scanlon and stakeholder readings. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
+        "notes": "The headline is a discussion construction, not a verified quotation or institutional endorsement. The HBS Working Knowledge article is the documented public communication. A prejudice-based credibility deficit requires evidence beyond unequal credentials (Fricker, 2007). Institutions that gather and assess testimony also require scrutiny (Anderson, 2012). Distinguish nearby residents, utility customers, and people bearing costs. Local experience can identify an outcome; causal attribution requires a comparison. Institutional prestige supplies no missing premise. Verify actual use of a claim in a proceeding before alleging that it silenced objections.",
+        "source": "M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md"
       },
       {
         "kind": "bullets",
@@ -5814,7 +5814,7 @@
           "Compare a corrected release, further review, and rejection of the proposed version.",
           "For a public error, assess a visible correction that preserves traceability."
         ],
-        "notes": "A paper need not be released in a form that attaches unsupported reassurance to useful estimates. Mill supplies reasons to preserve criticism and inquiry. Registered Reports illustrate reviewing design before learning the direction of results. Scanlon's approach asks which release principle can be justified to affected people, readers, researchers, and decision makers. Neither favorable nor unfavorable implications for a firm establish research quality. The remedy should address a demonstrated defect.",
+        "notes": "A paper need not be released in a form that attaches unsupported reassurance to useful estimates. Fallibility supplies reasons to preserve criticism and inquiry (Mill, 1859). Registered Reports illustrate reviewing design before learning the direction of results. Contractualism asks which release principle can be justified to affected people, readers, researchers, and decision makers (Scanlon, 1998). Neither favorable nor unfavorable implications for a firm establish research quality. The remedy should address a demonstrated defect.",
         "source": "M9 §§9.28–9.30. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md"
       },
       {
@@ -5931,7 +5931,7 @@
           "New York: disclosure law in effect; broader restrictions await enactment.",
           "Price gouging requires its own covered circumstances and legal elements."
         ],
-        "notes": "Checked November 6, 2026. FTC proposal cites Dubé and Misra. October 28 Section 6(b) orders do not establish violations. New York GBL 349-a applies to covered personal, family, and household purchases, with exceptions. S8623B/A9349B has legislative passage without recorded gubernatorial enactment. GBL 396-r addresses essential goods and services during abnormal market disruptions.",
+        "notes": "Checked November 6, 2026. The FTC proposal cites the personalized-pricing study (Dubé and Misra, 2021, 2023). October 28 Section 6(b) orders do not establish violations. New York GBL 349-a applies to covered personal, family, and household purchases, with exceptions. S8623B/A9349B has legislative passage without recorded gubernatorial enactment. GBL 396-r addresses essential goods and services during abnormal market disruptions.",
         "source": "../01_Resources/16_AI_Experimentation_and_Pricing/02_Policy/README.md"
       },
       {
@@ -5963,7 +5963,7 @@
           "Treat geographic usage as context for investigation."
         ],
         "notes": "An optional assistance intervention can expand feasible choices. A mandatory app workflow may impose equipment, registration, and verification costs. A proposed evaluation should record the customer’s requested action and channel and preserve the ability to refuse optional profiling. Geographic Windows usage does not observe those outcomes.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
         "kind": "bullets",
@@ -5974,7 +5974,7 @@
           "Confucian role responsibilities support responsive, humane service."
         ],
         "notes": "A stable cluster does not authorize a firm to remove an individual’s options. Examine the additional premise linking measured activity to a permissible action. Humane intent must be connected to the customer’s stated task and preferred channel, with an opportunity to correct classifications. The same area score can motivate assistance or exclusion; the consequences and authority differ.",
-        "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
+        "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
         "kind": "figure",
@@ -5982,7 +5982,7 @@
         "figure": "../06_Lecture_Notes/figures/M09_pricing_reasons.tex",
         "caption": "Unbiasedness and precision support factual premises. The goal and treatment of people require reasons.",
         "description": "Reliable evidence informs a revenue objective. Personal reasons inform an alternative principle. Compare objections to both, including burdens, access, authority, and feasible alternatives.",
-        "notes": "Statistical unbiasedness concerns an estimator across repetitions of a specified design; precision concerns its dispersion. Both can protect people against mistaken claims. Even perfect measurement of all monetary consequences leaves a normative premise to defend before recommending revenue maximization. Scanlon’s account of reasons and reasonable rejection grounds the course application; he is not being presented as proposing a theory of statistical estimation. The same requirement applies to every institution and research method. Dubé and Misra’s own finding of lower aggregate customer surplus remains part of the evidence.",
+        "notes": "Statistical unbiasedness concerns an estimator across repetitions of a specified design; precision concerns its dispersion. Both can protect people against mistaken claims. Even perfect measurement of all monetary consequences leaves a normative premise to defend before recommending revenue maximization. Normative reasons and reasonable rejection ground the ethical application (Scanlon, 1998, 2009). Statistical estimation retains its distinct evidential role. The same requirement applies to every institution and research method. The finding of lower aggregate customer surplus remains part of the evidence (Dubé and Misra, 2021).",
         "source": "../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md",
         "figure_height": 0.72
       },
@@ -5995,7 +5995,7 @@
           "Weak alternatives can explain acceptance while sustaining a strong objection."
         ],
         "notes": "Suppose an urgently dependent customer accepts a surcharge that a seller predicts exactly. The seller and customer can each act effectively for their immediate aims while the rule faces an objection to avoidable exploitation. Examine the feasible lower offer, the seller’s costs and risks, and the reasons of other affected people. Instrumental rationality is one sense of rationality; broader rational thought can include morality. Reasonableness is neither majority preference nor an unconditional veto. State what fact or reason would change the conclusion.",
-        "source": "Scanlon, What We Owe to Each Other, chapter 5, §2, pp. 191–194. https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf"
+        "source": "(Scanlon, 1998, chapter 5, §2, pp. 191–194). https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf"
       },
       {
         "kind": "bullets",
@@ -6041,7 +6041,7 @@
       },
       {
         "kind": "table",
-        "title": "Dubé’s Mobile Targeting: Reconstruct the Incentives",
+        "title": "Mobile Targeting: Reconstruct the Incentives",
         "headers": [
           "Rounded Table 9",
           "Theater A",
@@ -6066,7 +6066,7 @@
         ],
         "caption": "RMB expected revenue per messaged consumer. Published model outputs, not new estimates.",
         "notes": "The complete 4-by-4 table yields behavioral targeting as the sole pure equilibrium. A’s best-response margin against a geobehavioral deviation is 0.001 RMB when B uses behavioral targeting. The paper reports a 40% posterior probability that this deviation improves A’s profit. The rounded calculation recovers incentives under the model; it supplies no consent measure or evidence of an unlawful agreement. Original Python uses the transcribed published table. Replication microdata were not downloaded.",
-        "source": "Dubé, Fang, Fong, and Luo (2017), Table 9, p. 965. https://doi.org/10.1287/mksc.2017.1042"
+        "source": "(Dubé et al., 2017, Table 9, p. 965). https://doi.org/10.1287/mksc.2017.1042"
       },
       {
         "kind": "bullets",
@@ -6077,7 +6077,7 @@
           "A useful discount does not settle authority over secondary data use."
         ],
         "notes": "The paper documents targeting from current location and historical visits. The course does not establish that consent was absent. A hypothetical maxim relying on concealed material use faces a Formula of Humanity objection because it defeats informed authorization. An understandable opt-in offer with meaningful alternatives requires a different assessment. The INFORMS download terms allow replication but restrict other reuse and the venue for a corrective follow-up; M9 §9.37 evaluates the reasons for those restrictions.",
-        "source": "Kant, Groundwork, Academy 4:421–430. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+        "source": "(Kant, 1785, 4:421–430). ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "bullets",
@@ -6156,7 +6156,7 @@
           "Allow a learner to change representations and challenge the conclusion.",
           "Evaluate independent reasoning and supported disagreement."
         ],
-        "notes": "A student can reasonably object to an explanation that hides the premise on which its recommendation depends. A defensible learning system makes that premise inspectable and permits a reasoned objection. Response history does not exhaust the person or determine what the person ought to learn. Missing empirical measurements also remain distinct from Kant’s noumenal limiting concept.",
+        "notes": "A student can reasonably object to an explanation that hides the premise on which its recommendation depends. A defensible learning system makes that premise inspectable and permits a reasoned objection. Response history does not exhaust the person or determine what the person ought to learn. Missing empirical measurements also remain distinct from the noumenal limiting concept (Kant, 1781/1787).",
         "source": "M9, Section 9.44, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -6184,11 +6184,11 @@
         "kind": "bullets",
         "title": "A Dataset Has an Origin and an Intended Use",
         "bullets": [
-          "Thomasson: created artifacts have histories and dependencies.",
+          "Created artifacts have histories and dependencies.",
           "Distinguish a dataset version, a copy, and the people it represents.",
           "Institutional production leaves accuracy open to evidence."
         ],
-        "notes": "The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism.",
+        "notes": "The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism. The artifact analogy draws on created dependencies and public norms of use (Thomasson, 1999, 2014).",
         "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -6197,7 +6197,7 @@
         "figure": "figures/truth_and_norms.tex",
         "caption": "A correct record supports neither a causal attribution nor a policy on its own.",
         "description": "Three columns separate a recorded charge, a causal claim, and a recommendation. Semantic and legal premises establish the record’s meaning and status; epistemic premises concern measurement and counterfactuals; moral premises concern people, authority, alternatives, and reasons.",
-        "notes": "Ask students to supply the missing premise at each arrow. Logical validity does not make a premise true. Evidential warrant does not settle permissible action. Thomasson’s modal normativism does not claim that conventions make modal truths true. Douglas’s inductive risk concerns the stakes of error; it does not authorize inventing adverse evidence.",
+        "notes": "Ask students to supply the missing premise at each arrow. Logical validity does not make a premise true. Evidential warrant does not settle permissible action. Modal normativism does not claim that conventions make modal truths true (Thomasson, n.d.). Inductive risk concerns the stakes of error (Douglas, 2000); it does not authorize inventing adverse evidence.",
         "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -6208,7 +6208,7 @@
           "A reasonable principle provides proportionate scrutiny and privacy protection.",
           "An unsupported broad reassurance should be narrowed."
         ],
-        "notes": "Develop the Scanlonian premises: material burden, informational control, standing to contest, and feasible alternatives. Test a privacy objection and propose controlled linkage with aggregate public results. Undone science concerns institutional research priorities; deliberate suppression requires additional evidence. Political sensitivity can motivate disclosure as well as secrecy. The introduced S. 5640 is a reporting proposal, not an effective duty. Longino adds effective criticism, uptake, public standards, and tempered equality of intellectual authority.",
+        "notes": "Develop the contractualist premises (Scanlon, 1998): material burden, informational control, standing to contest, and feasible alternatives. Test a privacy objection and propose controlled linkage with aggregate public results. Undone science concerns institutional research priorities; deliberate suppression requires additional evidence. Political sensitivity can motivate disclosure as well as secrecy. The introduced S. 5640 is a reporting proposal, not an effective duty. Effective critical interaction requires venues, uptake, public standards, and tempered equality of intellectual authority (Longino, 2004).",
         "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {

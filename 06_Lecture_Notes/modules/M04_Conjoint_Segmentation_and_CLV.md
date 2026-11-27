@@ -126,7 +126,7 @@ For practice, recompute the subscription value with $r=0.85$ and verify the resu
 
 Ask a coding assistant to calculate choice probabilities from a supplied profile table, check that they sum to one, and separate a new product's share from incremental category demand. For clustering, require documented transformations, segment profiles, and a sensitivity comparison. For CLV, request an explicit payment timeline and verify the closed-form calculation against a long finite sum. These checks catch common mistakes that can survive apparently reasonable charts.
 
-[Sawtooth's academic materials](https://sawtoothsoftware.com/academics/teaching-resources) provide conjoint examples. [Dolnicar, Grün, and Leisch's segmentation book](https://link.springer.com/book/10.1007/978-981-10-8818-6) develops the connection between segmentation design and use. [PyMC-Marketing's CLV documentation](https://www.pymc-marketing.io/en/latest/notebooks/clv/clv_quickstart.html) offers implementation examples whose model assumptions and software versions should be checked before adaptation.
+[Sawtooth's academic materials](https://sawtoothsoftware.com/academics/teaching-resources) provide conjoint examples. Segmentation design depends on its intended use [(Dolnicar et al., 2018)](https://link.springer.com/book/10.1007/978-981-10-8818-6). [PyMC-Marketing's CLV documentation](https://www.pymc-marketing.io/en/latest/notebooks/clv/clv_quickstart.html) offers implementation examples whose model assumptions and software versions should be checked before adaptation.
 
 ## 4.11 mHealth: Behavioral Segments and Product Economics
 
@@ -753,7 +753,7 @@ $$
 
 The denominator is the number of vectors. Each squared norm sums over the $d$ coordinates, so the units are squared transformed-feature units per vector. Lloyd k-means alternates assigning observations to centers and replacing each center with the mean of its assigned observations. MiniBatchKMeans updates centers from smaller batches. Both the stopping rule and the implementation affect the measured cost of reaching a particular value of $Q$.
 
-[Bessa, Mazaré, Szilvasy, Touvron, Picard, Douze, and Jégou (2026)](https://arxiv.org/abs/2611.09501v1) develop e-means using exponentially weighted cluster sums and counts. To describe the update for cluster $j$ at training step $t$, let $s_{jt}$ be the sum of vectors assigned to that cluster in the current batch and $n_{jt}$ their count. Let $S_{j,t-1}$ and $N_{j,t-1}$ be the corresponding weighted quantities carried from earlier steps. With step weight $\alpha_t$, the update is
+The e-means algorithm [(Bessa et al., 2026)](https://arxiv.org/abs/2611.09501v1) uses exponentially weighted cluster sums and counts. To describe the update for cluster $j$ at training step $t$, let $s_{jt}$ be the sum of vectors assigned to that cluster in the current batch and $n_{jt}$ their count. Let $S_{j,t-1}$ and $N_{j,t-1}$ be the corresponding weighted quantities carried from earlier steps. With step weight $\alpha_t$, the update is
 
 $$
 \begin{aligned}
@@ -1045,7 +1045,7 @@ Group means require the original membership counts when the decision concerns av
 
 \noindent A personal-care firm may have more product ideas than it can afford to test with a large human panel. A screening procedure must identify concepts worth further investigation while making mistaken exclusions visible. Generated consumer responses can organize possible benefits and objections. Their usefulness for selecting products depends on how well the resulting measurements distinguish concepts in the intended customer population.
 
-[Maier and coauthors](https://arxiv.org/abs/2510.08338v3) compare generated purchase-intent responses with 9,300 human responses across 57 U.S. personal-care concept surveys. Their semantic similarity rating method maps generated text to distributions over five response categories. Reference statements and text embeddings determine that mapping. The authors report promising agreement with concept-level human results and state that they manually optimized the reference sets on the same surveys. Prospective screening therefore requires new concepts whose human outcomes remain outside measurement development.
+A comparison uses generated purchase-intent responses and 9,300 human responses across 57 U.S. personal-care concept surveys [(Maier et al., 2025)](https://arxiv.org/abs/2510.08338v3). Its semantic similarity rating method maps generated text to distributions over five response categories. Reference statements and text embeddings determine that mapping. The authors report promising agreement with concept-level human results and state that they manually optimized the reference sets on the same surveys. Prospective screening therefore requires new concepts whose human outcomes remain outside measurement development.
 
 Concept screening and conjoint analysis inform different decisions. Screening ranks complete descriptions under a specified measurement procedure. Identifying attribute tradeoffs additionally requires variation that separates the attributes and an appropriate response model. A positive response to a high-priced concept does not isolate a price effect when its other features also differ. Purchase-intent ratings also require a separate link to observed sales before entering a revenue forecast.
 
@@ -1260,7 +1260,7 @@ At either price, the premium feature raises both sources' expected ratings by 0.
 
 ### 4.24.3 Research Cost at a Common Accuracy Target
 
-\noindent Compare designs that estimate the same vector $(\beta_0,\beta_F,\beta_P)$ with expected total squared coefficient error at most $\epsilon^2$. The loss is measured in squared rating points under the fixed attribute coding. It is distinct from prediction error on an individual response or expected profit from a launch. [Jasin, Lin, and Zhang](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298), §5.3, derive the optimal continuous allocation for this design.
+\noindent Compare designs that estimate the same vector $(\beta_0,\beta_F,\beta_P)$ with expected total squared coefficient error at most $\epsilon^2$. The loss is measured in squared rating points under the fixed attribute coding. It is distinct from prediction error on an individual response or expected profit from a launch. An analytical solution gives the optimal continuous allocation for this design [(Jasin et al., 2026, §5.3)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298).
 
 Balanced sampling places the same number of observations at each profile within each source. Define total primary precision $t=N_P/\sigma_P^2$ and auxiliary precision $s=N_A/\sigma_A^2$. Joint weighted least squares estimates both response and bias coefficients. Under Assumption \ref{ass:auxiliary-response-design}, its total coefficient MSE is
 
@@ -1506,7 +1506,7 @@ At $r=0.5$, changing to joint pricing raises profit by $3.70 and reduces consume
 
 ![Synthetic two-restaurant market with equal low and high demand probabilities, marginal cost 2, and substitution 0.5. Each bar stacks expected total firm profit and consumer surplus in dollars per market-day. Better demand information changes the distribution of surplus within either pricing objective; joint pricing lowers the total relative to independent pricing at the same signal accuracy.](../figures/M04_pricing_welfare.png)
 
-[Harrington (2022)](https://doi.org/10.1287/mnsc.2021.4241) studies a separate model in which a developer designs a pricing algorithm and firms choose adoption. Under his assumptions, greater responsiveness to demand raises industry profit and lowers consumer welfare while competitive intensity remains unchanged. The calculation above isolates information and objectives in a different, explicitly specified demand system. Its outcomes establish model implications; evidence about an actual agreement or customer overcharge requires observations of the relevant market.
+A separate model considers a developer designing a pricing algorithm and firms choosing adoption [(Harrington, 2022)](https://doi.org/10.1287/mnsc.2021.4241). Under its assumptions, greater responsiveness to demand raises industry profit and lowers consumer welfare while competitive intensity remains unchanged. The calculation above isolates information and objectives in a different, explicitly specified demand system. Its outcomes establish model implications; evidence about an actual agreement or customer overcharge requires observations of the relevant market.
 
 ### 4.26.4 Reproducible Calculation
 
@@ -1737,7 +1737,7 @@ if __name__ == "__main__":
 
 \noindent A pricing segment summarizes differences relevant to a decision. When a firm predicts a high willingness to pay, the interpretation remains consequential: convenience, urgent need, and weak alternatives can produce similar choices while supporting different objections to a price. M9 §§9.34–9.36 compare demand representation, welfare identification, and a profitable alternative that avoids raising any customer's price in a synthetic model. Two demand completions fit every tested purchase probability while yielding opposite aggregate surplus changes. Both identify a loss for the group whose price rises.
 
-M9 §9.37 reconstructs Dubé and coauthors' mobile-targeting payoff table. Its equilibrium depends on firms' incentives and anticipated competitive responses. A privacy permission, a reason to respect a customer's refusal, and an unlawful agreement are separate objects requiring their own evidence. M9 §§9.38–9.39 connect those distinctions to antitrust proof and Scanlonian justification.
+M9 §9.37 reconstructs the mobile-targeting payoff table (Dubé et al., 2017). Its equilibrium depends on firms' incentives and anticipated competitive responses. A privacy permission, a reason to respect a customer's refusal, and an unlawful agreement are separate objects requiring their own evidence. M9 §§9.38–9.39 connect those distinctions to antitrust proof and Scanlonian justification.
 
 A segmentation rule can predict purchases precisely while serving an objectionable goal. M9 §§9.34.3–9.34.4 distinguish reasons to trust the measurement from reasons to pursue the objective. A customer's acceptance under weak alternatives may be instrumentally rational while leaving the pricing principle open to reasonable rejection.
 

@@ -71,7 +71,7 @@ Paul R. Goldin. 2025. Stanford Encyclopedia of Philosophy; live edition, copyrig
 Clarifies Xunzi’s account and disagreements with Mencius, including differences in what human nature denotes. Moral cultivation remains possible and consequential.
 
 **Reading scope:** Human nature and cultivation discussion.
-**Source:** [Xunzi](https://plato.stanford.edu/entries/xunzi/)
+**Source:** [(Goldin, 2025)](https://plato.stanford.edu/entries/xunzi/)
 **Access:** full; downloaded.
 **Rights:** local_only_copyright.
 **Dropbox file:** `local_sources/Goldin_Xunzi_SEP.html`. Original retained locally; use the source link from GitHub.

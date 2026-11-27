@@ -15,7 +15,7 @@
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. The course applies measurement, visualization, regression, conjoint analysis, segmentation, lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation to product design, acquisition, retention, pricing, and budgets.
 
-Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to consumer agency, conflicts of interest, and regulation. Students examine the worth of objectives, make premises explicit, test counterexamples, and apply the same evidential standards to claims and criticisms. Kant's phenomena–noumena distinction and an ontological spectrum connect measurement to persons, authority, and obligations. Commercial effectiveness and statistical precision require further reasons to justify recommendations.
+Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to consumer agency, conflicts of interest, and regulation. Students examine the worth of objectives, make premises explicit, test counterexamples, and apply the same evidential standards to claims and criticisms. the phenomena–noumena distinction (Kant, 1781/1787) and an ontological spectrum connect measurement to persons, authority, and obligations. Commercial effectiveness and statistical precision require further reasons to justify recommendations.
 
 ## Learning Objectives
 

@@ -159,7 +159,7 @@ Source: M3 §3.19. ../06_Lecture_Notes/modules/M03_Regression.md
 - A USD 2/MWh average increase permits different allocations across households.
 - Bill payments do not establish endorsement of the allocation rule.
 
-The recurring electricity case concerns the October 2026 Rana, Kaps, and Netessine paper. Its residential sample has 41 treated utilities and 627 utility-quarter observations. A synthetic example holds 1,000 households and one MWh each fixed: USD 2 more for everyone and USD 20 more for 100 households yield the same average. Fixed charges and riders can enter revenue. Distribution, comprehension, and authority need separate evidence. Complete calculations are in M6 §6.33.
+The recurring electricity case concerns the October 2026 electricity paper (Rana et al., 2026). Its residential sample has 41 treated utilities and 627 utility-quarter observations. A synthetic example holds 1,000 households and one MWh each fixed: USD 2 more for everyone and USD 20 more for 100 households yield the same average. Fixed charges and riders can enter revenue. Distribution, comprehension, and authority need separate evidence. Complete calculations are in M6 §6.33.
 
 Source: M2 §2.28 and M3 §3.19. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
@@ -196,7 +196,7 @@ Source: M3 §3.18. ../06_Lecture_Notes/modules/M03_Regression.md
 
 M3 §3.18 reports the same June-minus-May estimate under both calculations. A coefficient-only checker accepts both, while the standard errors, intervals, and p-values differ. The coding benchmark motivates explicit assessment of each requested quantity. The required paired calculation follows the fixed measurement question and its user-level dependence. Statistical agreement does not establish an intervention effect.
 
-Source: Original course example. Workflow motivation: Galiani, López, and Sosa, November 2026. ../01_Resources/40_Econometric_Coding_Workflows/README.md
+Source: Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
 ## Slide 16: Panel Comparisons
 
@@ -289,7 +289,7 @@ Source: FTC Policy Statement Regarding Advertising Substantiation. https://www.f
 
 The four-profile model uses response features (1, feature, price) and auxiliary bias features (1, price). Unknown unrestricted price bias can offset a change in the primary price coefficient. Repetition reduces variance without resolving that confounding. M4 Section 4.24 supplies the full invented example and Python. This coefficient-identification result does not itself establish a causal purchasing effect.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 24: Controls Change the Income Comparison
 
@@ -301,7 +301,7 @@ The CCI income association changes sign after adjustment.
 
 The slope is in index units per $10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older; broadband is a household share. All models retain the same records. Adding controls changes the association represented by income; it does not identify an income intervention.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 25: State the Population Behind a Coefficient
 
@@ -311,7 +311,7 @@ Source: Pereira et al., Nature Communications (2026); original course calculatio
 
 Household estimates do not supply Windows device counts. State intercepts allow different average levels but do not remove every unobserved source of variation. The calculation does not propagate ACS sampling error, differential-privacy noise, or spatial dependence. An improved residual fit supplies no causal identification.
 
-Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
+Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
 ## Slide 26: Controls Need a Causal Role
 

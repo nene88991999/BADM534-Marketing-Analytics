@@ -220,7 +220,7 @@ Source: M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 
 Maier and coauthors compare 57 personal-care concepts with 9,300 U.S. human responses. Semantic similarity rating maps generated text to five-category distributions. The authors manually optimized the anchors on the same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment is a ratio to a split-half human benchmark. It describes neither individual-rating accuracy nor purchase prediction. Concept ratings do not identify attribute tradeoffs without suitable variation and a response model.
 
-Source: Maier and coauthors (2025), Table 1 and Appendix A.3. https://arxiv.org/abs/2510.08338v3
+Source: (Maier et al., 2025, Table 1, Appendix A.3). https://arxiv.org/abs/2510.08338v3
 
 ## Slide 18: Distribution Fit and Product Selection
 
@@ -268,7 +268,7 @@ Invented means. Auxiliary bias includes an overall shift and a price effect.
 
 Feature and price are each coded -1 and +1. The imposed primary coefficients are (3, 0.4, -0.5), and auxiliary bias adds 0.8 + 0.6 times price. Both sources preserve the 0.8-point feature contrast, while their price contrasts have opposite signs. No human or model responses were collected. The Gaussian model treats the response as a continuous rating score.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 22: Research Accuracy and Source Allocation
 
@@ -282,7 +282,7 @@ Primary precision $t$ identifies intercept and price. Both sources inform the fe
 
 Here t = N_P / sigma_P squared and s = N_A / sigma_A squared. The loss sums squared errors across the three primary coefficients with the fixed -1/+1 coding. Auxiliary bias is restricted to intercept and price. Known bias features, linear means, and independent Gaussian errors support the calculation. Full derivation and Python are in M4 Section 4.24.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 23: The Cost of Informative Responses
 
@@ -294,7 +294,7 @@ The saving depends on source costs, noise, and which response features bias can 
 
 The information-cost ratio is auxiliary cost times auxiliary variance divided by primary cost times primary variance. The criterion is worst-case MSE for the full three-coefficient primary vector. The one-third limit is specific to this design and loss. It is not a general rule that cost savings equal the share of unconfounded coefficients.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 24: Accuracy and Research Cost
 
@@ -307,7 +307,7 @@ Imposed costs: 1 and 0.01 per response. Rounded allocations save 23.68% at the s
 
 Both source variances equal one. The mixed allocation places 54 primary and 324 auxiliary observations at each profile. Its asymptotic saving is 24.29 percent; separate upward rounding within each source-profile cell gives the table. The rounded construction is feasible but need not be the exact integer optimum. Setup, human validation, and monitoring costs require separate budget entries. Run allocate_responses.py in the Auxiliary_Data example.
 
-Source: Jasin, Lin, and Zhang (2026), Bias Geometry and the Value of Auxiliary Data. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
+Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
 ## Slide 25: Customer Alternatives and AI Pricing
 

@@ -220,7 +220,7 @@ Cross-fit the nuisance models, then smooth the adjusted outcomes over dose. Caus
 
 The outcome model predicts profit conditional on dose and observed type. The treatment model estimates a conditional density, measured per percentage point. m averages the outcome model over the target population; f_A averages the conditional density. The population identity is doubly robust when either nuisance model is correct under identification and regularity conditions. Correct nuisance models alone do not establish calibrated confidence intervals.
 
-Source: Kennedy et al., https://arxiv.org/abs/1507.00747v3; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
+Source: (Kennedy et al., 2017), https://arxiv.org/abs/1507.00747v3; ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
 ## Slide 18: Conditional Support and Effective Sample Size
 

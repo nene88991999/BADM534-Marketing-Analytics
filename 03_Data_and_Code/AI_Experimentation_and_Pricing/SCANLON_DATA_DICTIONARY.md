@@ -14,7 +14,7 @@
 
 ## Published Competitive Payoffs
 
-`competitive_payoffs.json` transcribes Dubé, Fang, Fong, and Luo (2017), Table 9, p. 965. Rows select A's strategy, columns select B's, and each cell is [A revenue, B revenue]. Units are RMB expected revenue per messaged consumer. Decimal strings preserve the three-decimal rounding in the source. These are estimated model outputs, not observed individual transactions. The program derives pure-strategy best responses from the rounded entries and does not recover posterior uncertainty.
+`competitive_payoffs.json` transcribes the published payoff table (Dubé et al., 2017, Table 9, p. 965). Rows select A's strategy, columns select B's, and each cell is [A revenue, B revenue]. Units are RMB expected revenue per messaged consumer. Decimal strings preserve the three-decimal rounding in the source. These are estimated model outputs, not observed individual transactions. The program derives pure-strategy best responses from the rounded entries and does not recover posterior uncertainty.
 
 ## Synthetic Invoice Comparison
 
