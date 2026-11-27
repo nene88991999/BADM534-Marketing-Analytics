@@ -77,3 +77,11 @@ A supported response preserves units and timing, separates possibilities from es
 - [Learning-design sources](../../01_Resources/43_AI_Augmented_Learning/README.md) and [optional practice](../../07_Labs/AI_Augmented_Learning/README.md).
 
 This text preserves the substantive comparison, figure description, questions, feedback criteria, and source links. It does not reproduce the page's keyboard behavior or visual layout.
+
+## The Object Behind the Estimate
+
+A precise average unit price can leave household bills, future recovery, and authority to contest a decision unresolved. Ontological laziness occurs when a convenient variable is treated as an adequate account of the broader object without defending that substitution. The conceptual figure separates statistical performance for the chosen target from adequacy for the stated claim; it has no numerical scale.
+
+![A precise answer can retain unjustified scope. Better estimation can leave the target and omitted relations unchanged.](../../06_Lecture_Notes/figures/M09_statistical_virtues_and_ontology.png)
+
+The strongest reply is that every model abstracts and a carefully scoped estimate can provide useful evidence. The criticism must identify a consequential omission. Reassurance requires a supported bridge from the measured variable to the household burden. Use [M9 §§9.66–9.69](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness) and the [annotated sources](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) to defend the criticism and a revised conclusion.

@@ -29,6 +29,10 @@ The static source contains no response submission, model call, analytics, or per
 
 ## Course Outputs and Hosting
 
-The complete notes contain 620 pages and 150 editable figures; Marketing Dialectics contains 110 pages and 26 figures. The combined deck contains 536 slides, and the syllabus remains two pages. New sections, neighboring page breaks, sixteen new slides across ten decks, and all three added shared figures were rendered and visually inspected. All 130 embedded Python listings match their source files.
+The earlier learning-design build contained 620 pages and 150 editable figures; Marketing Dialectics contained 110 pages and 26 figures. That combined deck contained 536 slides, and the syllabus remained two pages. New sections, neighboring page breaks, sixteen new slides across ten decks, and all three added shared figures were rendered and visually inspected. All 130 embedded Python listings matched their source files.
 
 The pilot source is part of the course repository. GitHub Pages remains unconfigured; no deployed lesson URL or measured learning effect is claimed. Preserve the course-relative paths when hosting the pilot.
+
+## Statistical Virtues Extension
+
+The new section separates statistical performance from the adequacy of the object represented. Its figure, expanded strongest reply, and full-size diagram link were inspected in the browser at the default desktop viewport. All 36 distinct HTML links and assets resolve locally, and all 27 HTML IDs are unique. The calculation and tab code are unchanged. The [current course verification](../../01_Resources/48_Statistical_Virtues_and_Ontology/VERIFICATION.md) records the rebuilt notes, slides, and code-listing checks.

@@ -2950,3 +2950,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+### 6.46.6 The Person Behind the Error Criterion
+
+\noindent Population MSE and a harmed person's burden summarize different objects. The synthetic comparison above makes their divergence explicit while retaining the decline in false flags. Giving the overall metric sole authority over protection would require a further argument about why its weighting should govern the affected person's treatment. The documented conditional update supplies a statistical operation; it does not select that moral priority. M9 §§9.66–9.69 connects the missing argument to abstraction, value capture, and reasonable justification (Whitehead, 1925; Nguyen, 2024; Scanlon, 1998).

@@ -275,3 +275,7 @@ M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical
 ## Hierarchical Pooling, Detection, and Reasonable Protection
 
 M4 §4.31 reanalyzes the licensed public retail file and maps the normal conditional update to the documented method (Rossi, 2025). M6 §6.46 compares greater posterior precision with missed harm in a synthetic population. M8 §8.34.1 and M9 §§9.57.1–9.57.6 connect the interpretation to HBS overstatement, modal premises, and reasonable protection. The [method crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) states the exact correspondence and the additional assumptions. Sessions 6 and 14 select these comparisons within existing blocks; the full derivations are optional practice.
+
+## Statistical Virtues and Ontological Adequacy
+
+Sixteen annotated philosophical sources support M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69. The new editable figure distinguishes statistical performance from adequacy for a stated claim. Sessions 1 and 14 select the argument within their existing blocks. The optional philosophical-arguments lab and electricity wiki lesson connect the reasoning to the exact pooling update and the broader household-cost interpretation. Source scope and retrieval are recorded in `01_Resources/48_Statistical_Virtues_and_Ontology/`.

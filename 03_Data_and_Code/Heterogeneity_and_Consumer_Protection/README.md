@@ -48,3 +48,7 @@ The source algebra is (Gelman et al., 2012, pp. 196–198), [DOI](https://doi.or
 ## Method Correspondence
 
 The [method crosswalk](METHOD_CROSSWALK.md) traces the hierarchical loop to `runiregG`, derives the matrix posterior, and verifies the scalar conditional identity numerically. Source files and hashes are retained; no upstream sampler was executed. The known-harm example changes this conditional update and the associated decision threshold, with full hyperparameter uncertainty outside its scope.
+
+## Statistical Virtues and Ontological Scope
+
+[M9 §§9.66–9.69](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness) evaluates the choice of object and error criterion behind the comparison. The population MSE, a harmed group's burden, and the reasons for protection have distinct roles. The [philosophical reading guide](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) connects this distinction to abstraction, value capture, and justification. The calculation and its conditional scope are unchanged.

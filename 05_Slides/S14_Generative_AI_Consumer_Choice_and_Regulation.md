@@ -1303,7 +1303,39 @@ The influential argument that precedent makes false positives persistent while e
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 111: A Decision with Consumer Outcomes
+## Slide 111: Statistical Virtues and Ontological Adequacy
+
+Better estimation can leave the target and its omitted relations unchanged.
+
+**Figure description:** A conceptual two-by-two diagram separates performance for a chosen target from adequacy for a stated claim. The lower-right cell has a precise answer and unjustified scope. No numerical scale or ranking of researchers is implied.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_statistical_virtues_and_ontology.tex)
+
+Ontological laziness occurs when a convenient representation replaces the relevant object without defending the substitution. Narrower uncertainty does not by itself establish movement toward a more adequate account. A small model can support a justified narrow claim. An allegation of inadequacy must identify a consequential omitted relation and answer the strongest reply. The distinction draws on abstraction and ontology while preserving the separate roles of evidence and practical justification (Whitehead, 1925; Bhaskar, 2007; Scanlon, 1998).
+
+Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
+
+## Slide 112: Which Object Disappears from the Argument?
+
+- Electricity: an average unit price is used to reassure about household burdens.
+- Pooling: an overall error criterion is used to settle a minority group’s protection.
+- Engagement: recorded activity becomes the definition of customer benefit.
+
+These are specific extensions to assess. The electricity comparison retains the HBS caveat and the study’s positive estimates. The pooling case is synthetic and uses the exact conditional update documented in M4 §4.31.4; population MSE, harmed-group risk, and false flags all remain reported. Engagement supplies a possible value-capture mechanism, not an empirical finding about a particular platform. The philosophical objection names the missing relation and explains how it affects interpretation or action. M9 §9.68.
+
+Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
+
+## Slide 113: An Omission Must Matter to the Claim
+
+- Name the object, its representation, and the consequential omission.
+- Explain why the statistical virtue does not repair that omission.
+- Defend an ought conclusion and answer the strongest reasonable objection.
+
+Every model abstracts, and rigorous estimation can protect people from arbitrary claims. This strongest reply requires a critic to identify why the particular omission matters. Observability is also distinct from existence in a serious empiricist account (van Fraassen, 1980, pp. 18–19). The critique is strongest when a narrow result receives authority over a broader dispute. Reasons for a safeguard require evidence, feasible alternatives, and attention to the burdens of both action and inaction (Scanlon, 1998). M9 §9.69.
+
+Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
+
+## Slide 114: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

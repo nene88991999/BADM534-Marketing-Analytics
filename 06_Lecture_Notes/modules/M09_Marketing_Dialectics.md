@@ -2383,3 +2383,102 @@ Conducting a study, publishing its findings, and relying on it for a consequenti
 ### Further Reading
 
 (Mello et al., 2005), [Academic Medical Centers' Standards for Clinical-Trial Agreements with Industry](https://doi.org/10.1056/NEJMsa044115); (ICMJE, n.d.), [Disclosure of Financial and Non-Financial Relationships and Activities, and Conflicts of Interest](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html), §§1–2; (American Economic Association, 2026), [Data and Code Availability Policy](https://www.aeaweb.org/journals/data/data-code-policy). The agreement comparison is hypothetical and makes no assertion about the terms governing a named study.
+
+## 9.66 Statistical Virtues and Ontological Laziness
+
+\noindent A public authority deciding whether consumers need protection must identify the people, burdens, and institutional arrangements the decision concerns. An analyst can estimate a recorded outcome with considerable care while giving those objects little scrutiny. The estimate then acquires authority over a question that its target never adequately represented. When statistical success substitutes for examining that substitution, the analysis is ontologically lazy. The failure lies in the account of the object underlying the claim, even if the computation is impeccable.
+
+*Ontological laziness* means treating a convenient representation as an adequate account of the relevant reality without defending that adequacy. A retained account becomes a willing subscriber; willingness to pay becomes an unconstrained preference; average revenue per unit of electricity becomes the household's burden. Each substitution removes relations that may determine the decision: a request to leave, dependence on an essential product, or the allocation and timing of fixed costs. The criticism becomes substantive when it identifies the omitted relation and explains why retaining it could change the interpretation or action.
+
+Statistical virtues answer conditional questions. Unbiasedness concerns an estimator's expectation relative to a defined parameter and sampling process. Precision concerns a specified uncertainty calculation. Identification concerns uniqueness under an observation structure and assumptions. These properties can be valuable while leaving the target's relation to the broader claim unsettled. The same limitation applies to predictive accuracy and flexible representation of heterogeneity.
+
+| Statistical Virtue | Question It Can Answer | Further Question for the Claim |
+|---|---|---|
+| Unbiasedness | Is the estimator centered on the specified parameter under the model? | Does that parameter represent the burden invoked by the conclusion? |
+| Precision | How concentrated is the estimate or conditional posterior? | Which measurement, specification, and institutional uncertainties remain? |
+| Identification | Do the observations and restrictions uniquely determine the target? | Is the target sufficient for the proposed interpretation? |
+| Predictive accuracy | How well are the specified outcomes predicted in the evaluation population? | Whose outcomes, errors, and interests define success? |
+| Flexible heterogeneity | How much variation can the representation accommodate? | Does a fitted difference represent taste, constraint, dependence, or another mechanism? |
+
+An exclusive focus on these virtues can therefore conceal a fundamental error. The analyst repeatedly improves an answer while leaving the adequacy of the question unexamined. A more precise estimate of a proxy does not, by itself, validate the proxy as a complete description of a person or a public burden. Treating that precision as sufficient reassurance transfers authority from a defensible narrow result to an undefended broader claim.
+
+![Statistical performance for a chosen target and adequacy for a stated claim are separate dimensions. The lower-right position contains a precise estimate whose broader interpretation remains unjustified. The positions are conceptual distinctions, with no numerical scale or ranking of researchers.](../figures/M09_statistical_virtues_and_ontology.png)
+
+**Figure interpretation.** Improving the estimator can move an analysis to the right while leaving its target and omitted relations unchanged. Moving upward requires defending the connection between the representation and the claim, or narrowing the claim to match the representation. A simple model can occupy the upper-right position for a limited purpose. Adding variables or philosophical terminology supplies no automatic improvement in adequacy.
+
+## 9.67 Philosophical Grounds for the Critique
+
+### 9.67.1 Abstraction and the Object Represented
+
+\noindent Abstraction makes inquiry possible by selecting features and relations. The fallacy of misplaced concreteness arises when an abstraction acquires the standing of the concrete reality from which it was drawn (Whitehead, 1925, chapters III–IV). A demand coefficient can describe an aspect of conduct without exhausting the person's interests or circumstances. Treating the coefficient as a complete account gives a useful abstraction authority beyond the argument supporting it.
+
+A related realist criticism concerns the reduction of questions about what exists to questions about how it is known. The epistemic fallacy obscures the distinction between the object and the practices used to investigate it (Bhaskar, 2007, pp. 192–194). An unrecorded cost can exist, and a mechanism can operate without appearing as a stable association in the available observations. Establishing a particular cost or mechanism still requires evidence. The philosophical argument prevents the absence of an adequate estimate from becoming a definition of what is real.
+
+### 9.67.2 Records, Evidence, and Explanation
+
+\noindent A record's authority depends on the concepts and reasons through which it becomes evidence. The critique of the Given challenges the idea that observation supplies an independent foundation whose authority needs no further conceptual or justificatory support (Sellars, 1956, §§32–38). Calling a transaction a preference already introduces an interpretation. The reliability of the transaction log alone does not settle that interpretation.
+
+Data and the phenomena investigated through them also have different explanatory roles. Particular measurements can support an inference about a stable process without being identical to that process (Bogen and Woodward, 1988, pp. 305–306). For electricity research, recorded revenue, billed charges, consumption responses, and cost recovery require explicit connections. Their term *phenomena* concerns scientific explanatory targets, including indirectly detected processes. It should not be conflated with the appearance/noumenon distinction in §9.41. A missing bill remains an empirical question.
+
+### 9.67.3 Local Success and Unexamined Assumptions
+
+\noindent A model can work well under specific arrangements without supplying a universally adequate account. The argument for a dappled world gives local scientific success a scope shaped by the systems and conditions that support it (Cartwright, 1999, introduction). A pricing response estimated under one set of alternatives requires further support before it describes behavior under dependence, restricted exit, or a different institutional rule. Mathematical elegance leaves that transport question open.
+
+Background assumptions also determine how observations bear on a hypothesis. Effective criticism requires opportunities to challenge them, uptake of objections, public standards, and an appropriate distribution of intellectual authority (Longino, 2004, pp. 134–135). A resident's objection about fixed charges may expose an omitted part of the target even when that resident cannot improve the estimator. Treating technical fluency as the sole qualification for questioning the target can protect the very assumption that needs scrutiny.
+
+### 9.67.4 Statistical Authority Has Institutional Conditions
+
+\noindent Quantification can make judgments comparable, portable, and defensible to distant institutions. Its authority has a history shaped by demands for trust and impersonal procedures (Porter, 1995). Histories of scientific images likewise distinguish truth-to-nature, mechanical objectivity, and trained judgment as different epistemic ideals (Daston and Galison, 2007). These accounts support examining why a particular institution prizes a particular virtue. They do not establish that the virtue is worthless because it has a social history.
+
+The consequential question is whether an institutional reward for precision displaces scrutiny of the target, population, or decision. A publication process might favor a tractable outcome over a harder question important to consumers. Demonstrating that pattern requires evidence about research selection. In an individual argument, the critic can instead identify the specific point where a technically successful result is used to close a question it leaves unresolved.
+
+### 9.67.5 When a Metric Replaces Deliberation
+
+\noindent A metric can change the goal pursued when its simplified expression comes to dominate richer practical reasoning. Value capture concerns this displacement of deliberation and the resulting loss of control over how one's values are articulated (Nguyen, 2024). An engagement score can begin as information about a service and become the institution's definition of whether the service benefits its users. Optimizing that score more accurately can deepen the displacement.
+
+The consequences of error also bear on evidentiary judgment (Douglas, 2000). A narrow interval is one reason to trust a conditional calculation; it supplies no complete reason for imposing the consequences of that calculation on other people. A contractualist assessment compares principles through the reasons affected persons have to reject them (Scanlon, 1998, chapter 5). If the analyst treats accuracy as overriding those reasons, a statistical virtue has become an unargued moral priority. The institution owes an explanation of that priority to those who bear its costs.
+
+## 9.68 Worked Assessments of the Missing Object
+
+### 9.68.1 Electricity Costs and Public Reassurance
+
+\noindent The measured utility outcome, the household's bill, and the household's exposure to future recovery are different objects. The HBS public claim assessed in §8.31.1 extends evidence about utility prices into a reassurance about bills (Harvard Business School, 2026). Its caveat about future conditions and the paper's positive estimates remain part of the record. Even a perfectly estimated average price would require additional accounting and institutional premises to establish that households face little burden.
+
+The ontological criticism identifies the substitution: an aggregate unit price is granted authority over household cost incidence. Fixed charges, quantities, the timing of recovery, and the treatment of proposed or canceled projects determine whether that inference is adequate. The complete bill and project examples in §§6.35 and 6.41 hold specified observations fixed while changing those relations. They establish a possible mismatch; actual project exposure requires project and utility evidence. Precision within the narrower outcome cannot repair the mismatch by itself.
+
+A defensible revision specifies the measured outcome, its uncertainty, and the population and horizon it describes. Reassurance then requires a separately supported account of household burdens. Residents can also demand reasons concerning participation and involuntary exposure. Their standing to ask does not depend on first obtaining access to the institution's preferred causal estimate.
+
+### 9.68.2 Hierarchical Pooling and the Protected Person
+
+\noindent The conditional normal update documented in §4.31.4 changes the balance between a group's signal and a pooled mean (Rossi, 2025). The synthetic comparison in §6.46 shows how lower population MSE and narrower conditional intervals can accompany less detection of a minority burden under a fixed posterior rule. The complete Python program reports the harmed group's error, actual false flags, missed losses, and matched-calibration comparison. The mechanism depends on the specified prior, population, and decision rule.
+
+The further philosophical issue concerns who appears in the evaluation. An overall MSE treats errors through a selected weighting of groups. A consumer seeking protection has an interest in the consequences of errors in their own situation. If the overall metric becomes the entire account of methodological success, that person's burden can disappear from the institution's reasoning while remaining present in the constructed population. The failure combines an incomplete representation of whose outcomes matter with an undefended rule for action.
+
+The appropriate criticism names the update and the institutional use producing the loss. It retains the reduction in false flags and compares the burdens of feasible safeguards. Greater prior dispersion can weaken pooling, and the full hierarchical sampler also integrates uncertainty in hyperparameters. The example supports scrutiny of this particular use of the method. It supplies no empirical finding of wrongdoing by the firms in the released retail data and no general theorem that heterogeneity adjustment suppresses harm.
+
+### 9.68.3 Engagement, Agency, and Governed Data
+
+\noindent A system may accurately predict which person will continue scrolling, accept an offer, or remain recorded as a subscriber. The prediction concerns conduct under the available conditions. Endorsement, practical refusal, and authority to act on the person's behalf require further information and reasons. Treating continued activity as the full measure of benefit can allow an institution's convenient metric to determine the person's recognized interests. Value capture names a related threat to deliberation over the goal itself (Nguyen, 2024).
+
+Data are also artifacts whose purposes and norms of use shape what is recorded and how it can be interpreted (Thomasson, 2014; §§9.60–9.65). An NDA-bound extract can support an accurate estimate while excluding cancellation requests, contested charges, or a category of affected people. The actual agreement and extract determine whether such exclusions occur. Reproducing the available calculation establishes computational agreement; it does not establish that the permitted record exhausts the relevant reality. A public conclusion must preserve those distinctions.
+
+## 9.69 An Argument That Withstands the Strongest Reply
+
+\noindent A criticism of ontological laziness needs a claim, an omitted object or relation, and a consequence for interpretation. The following argument makes the burden explicit.
+
+1. The proposed conclusion concerns a specified person, institution, burden, or entitlement.
+2. The analysis represents that object through particular variables, assumptions, and relations.
+3. A consequential feature of the object is omitted or replaced, and the argument gives no adequate reason why that omission preserves the conclusion.
+4. Statistical success establishes performance within the chosen representation. It supplies no missing justification for the substitution in premise 3.
+5. Therefore, the statistical virtues alone do not warrant the broader conclusion. Defending the claim requires repairing the representation or restricting its scope.
+6. If the conclusion supports action, an additional normative premise must justify the proposed treatment to affected people. Their reasons and feasible alternatives determine what the actor ought to do.
+
+The strongest reply is that every model abstracts, finite inquiry requires limits, and disciplined estimation can protect people from arbitrary allegations. That reply is correct as far as it goes. An adequate criticism must identify an omission that matters to the claim. Demanding a complete metaphysics before estimating a narrow effect would make useful inquiry impossible. The burden becomes substantial when an institution uses a narrow result to settle a wider dispute or to justify continued exposure.
+
+Empiricism itself does not entail that only recorded things exist. Constructive empiricism explicitly separates observability from existence and limits the belief involved in accepting a scientific theory (van Fraassen, 1980, pp. 18–19). This position differs from the realist argument above, yet it also blocks the inference from unobserved harm to nonexistent harm. Philosophical disagreement over realism can sharpen the criticism without requiring a caricature of empirical inquiry.
+
+For a proposed protection rule, explain the interest at stake, the evidence supporting concern, the costs of acting and waiting, and the strongest objection to the feasible alternative. A contractualist conclusion might support further investigation, a reversible safeguard, a revised public statement, or continuation under justified conditions. Statistical rigor contributes to those reasons. Its authority becomes philosophically indefensible when it is used to avoid supplying the rest of the argument.
+
+### Further Reading
+
+The [annotated philosophical readings](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) distinguish arguments about abstraction, evidence, institutions, values, and scientific realism. The [argument exercise](../../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) applies the premises above to the recurring cases.

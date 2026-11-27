@@ -210,3 +210,7 @@ The history begins with the managerial choice and the institutions that gave mea
 ## Heterogeneity and the Interpretation of No Evidence
 
 Session 6 can select the released-account comparison within its worked-example block. Session 14 can select the precision and detection comparison within minutes 90–110, alongside the HBS reassurance case. Full calculations and the three additional diagrams are optional ungraded practice. Existing 170-minute allocations and assessment requirements remain unchanged.
+
+## Statistical Virtues and Ontological Adequacy
+
+Use M1 §1.24 in Session 1's existing definitions and argument discussion. In Session 14, select the diagram and one case from M9 §§9.66–9.69 within the existing 90–110 minute evidence-and-reasons block. Compare the chosen statistical virtue, the object it represents, and the missing premise behind a broader conclusion. Extended readings and the written argument are optional, ungraded practice. The 15 meetings, 170-minute durations, and released syllabus requirements remain unchanged.

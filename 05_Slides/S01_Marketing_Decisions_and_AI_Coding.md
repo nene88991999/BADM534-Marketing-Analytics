@@ -424,7 +424,17 @@ Historical records support a shift in institutional emphasis without establishin
 
 Source: ../01_Resources/46_Measurement_and_Disciplinary_History/README.md
 
-## Slide 36: Decision Discussion
+## Slide 36: A Precise Answer Still Needs a Defended Object
+
+- Define the person, burden, or institution invoked by the conclusion.
+- Explain how the recorded variable represents that object.
+- Justify the broader interpretation and proposed action separately.
+
+A recorded subscription can be measured perfectly while voluntary continuation remains unresolved. The fallacy of misplaced concreteness identifies the substitution of an abstraction for the concrete reality it represents (Whitehead, 1925). A narrow forecasting result can be useful. Ontological laziness occurs when its technical success is used to avoid examining the additional relations required by a wider claim. Ask the AI assistant for a consequential mismatch, evidence for it, the strongest reply, and a revised conclusion; verify every premise. M1 §1.24 and M9 §§9.66–9.69.
+
+Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
+
+## Slide 37: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

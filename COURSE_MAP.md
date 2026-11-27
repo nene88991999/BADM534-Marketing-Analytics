@@ -237,3 +237,7 @@ M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical
 ## Precision and Missed Consumer Harm
 
 Use M4 §4.31 for released retail data and exact mixture integration, M6 §6.46 for the synthetic precision–detection calculation, and M9 §§9.57.1–9.57.5 for modal claims and reasonable protection. [Data, code, and provenance](03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md); [optional practice](07_Labs/Evidence_Standards/README.md).
+
+## Statistical Virtues and Ontological Adequacy
+
+M1 §1.24 introduces the object behind an AI-assisted analysis. M6 §6.46.6 distinguishes the population error criterion from the affected person's burden. M9 §§9.66–9.69 develops the philosophical argument, recurring case assessments, and strongest reply. Sessions 1 and 14, the [annotated readings](01_Resources/48_Statistical_Virtues_and_Ontology/README.md), and [optional practice](07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) use the same distinction. The new figure is conceptual and supplies no numerical score of a researcher or institution.

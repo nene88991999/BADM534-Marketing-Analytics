@@ -134,3 +134,22 @@ For the electricity case, complete the measurement table in M9 §9.42.4. State t
 ## Evidence and the Proposed Action
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
+
+## Statistical Virtues and the Missing Object
+
+Use [M9 §§9.66–9.69](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness) and the [16-source reading guide](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md). Choose an exact public claim, a specified statistical result, and one proposed decision. This is optional, ungraded practice.
+
+1. State which virtue is asserted: unbiasedness, precision, identification, predictive accuracy, or flexible representation. Define its target and conditions.
+2. Identify the object invoked by the conclusion and the variable representing it. Name a consequential relation lost in that substitution.
+3. Defend one criticism through a specific philosophical argument. Explain why the source supports the premise and where the course application extends it.
+4. Place the argument on the two-dimensional figure in §9.66. Explain what improves when estimation improves and what remains unexamined.
+5. Reconstruct the strongest reply: a narrow study can be useful, every model abstracts, and mistaken accusations also impose burdens. Identify whether that reply changes the criticism.
+6. Write a revised empirical claim and an ought conclusion. Supply the normative premise, feasible alternative, and condition for revision. Disagreement with the proposed criticism is compatible with a strong response.
+
+For the electricity case, retain the exact HBS wording and qualifications in the [public-communication assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). Explain why better estimation of average price would still leave the household-incidence question open. Actual harm and actual phantom-project exposure need their own evidence.
+
+For pooling, use the complete program in M6 §6.46 and [the source crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md). Explain why the conditional update is methodologically connected to the documented hierarchical regression and why the protection rule is an additional choice. Compare population error, harmed-group error, missed harm, and actual false flags. Preserve the matched-calibration result. Assess the institution’s choice of criterion without presenting a synthetic loss as an observed injury.
+
+For engagement or restricted data, identify the person's purpose or the relevant term of the agreement. A hypothetical restriction illustrates a possibility; it supplies no allegation about an actual sponsor. Explain how the goal or available evidence would change under a feasible alternative.
+
+A successful argument identifies a consequential omission and supports it. A list of philosophical names, an accusation about motives, or the assertion that every abstraction is defective leaves the argument incomplete.

@@ -481,7 +481,8 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md",
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md",
-    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md"
+    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md",
+    "01_Resources/48_Statistical_Virtues_and_Ontology/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -530,12 +531,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-hierarchical-pooling-and-missed-harm",
+    "revision": "2026-11-27-statistical-virtues-and-ontological-adequacy",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 156,
-    "pages": 650,
+    "figures_count": 157,
+    "pages": 657,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -667,7 +668,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 547,
+    "slides": 551,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -760,8 +761,8 @@ Generated from course.json and the source files identified below. This file cont
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 123,
-    "figures_count": 29,
+    "pages": 128,
+    "figures_count": 30,
     "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
@@ -1810,6 +1811,25 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs": 2,
     "new_tikz_figures": 3,
     "scope": "Released-data reanalysis and exact conditional method correspondence; synthetic missed-harm comparison and precision elasticity. No empirical consumer injury or general enforcement direction from heterogeneity adjustment."
+  },
+  "statistical_virtues_and_ontology": {
+    "updated_on": "2026-11-27",
+    "guide": "01_Resources/48_Statistical_Virtues_and_Ontology/README.md",
+    "catalog": "01_Resources/48_Statistical_Virtues_and_Ontology/catalog.json",
+    "source_records": 16,
+    "new_local_source_copies": 5,
+    "sections": [
+      "M1 \u00a71.24",
+      "M6 \u00a76.46.6",
+      "M9 \u00a7\u00a79.66\u20139.69"
+    ],
+    "sessions": [
+      1,
+      14
+    ],
+    "practice": "07_Labs/Philosophical_Arguments/README.md",
+    "figure": "06_Lecture_Notes/figures/M09_statistical_virtues_and_ontology.tex",
+    "scope": "Criticism of consequential substitutions between a representation and a broader claim; separate statistical, ontological, epistemic, and normative premises. Includes a serious empiricist reply."
   }
 }
 ```
@@ -2419,6 +2439,10 @@ M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical
 
 Use M4 §4.31 for released retail data and exact mixture integration, M6 §6.46 for the synthetic precision–detection calculation, and M9 §§9.57.1–9.57.5 for modal claims and reasonable protection. [Data, code, and provenance](03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md); [optional practice](07_Labs/Evidence_Standards/README.md).
 
+## Statistical Virtues and Ontological Adequacy
+
+M1 §1.24 introduces the object behind an AI-assisted analysis. M6 §6.46.6 distinguishes the population error criterion from the affected person's burden. M9 §§9.66–9.69 develops the philosophical argument, recurring case assessments, and strongest reply. Sessions 1 and 14, the [annotated readings](01_Resources/48_Statistical_Virtues_and_Ontology/README.md), and [optional practice](07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) use the same distinction. The new figure is conceptual and supplies no numerical score of a researcher or institution.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2781,7 +2805,7 @@ The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) 
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 156 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 157 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -3023,6 +3047,10 @@ M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical
 
 M4 §4.31 reanalyzes licensed public retail data and maps the hierarchical coefficient update to the source implementation. M6 §6.46 derives the synthetic precision–detection comparison and consumer-harm elasticity. M9 §§9.57.1–9.57.6 connects the results to modal premises and reasonable protection. Three editable TikZ figures and two complete Python programs accompany the [data and code](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md) and [optional practice](../07_Labs/Evidence_Standards/README.md).
 
+## Statistical Virtues and Ontological Adequacy
+
+M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69 examine when technical success substitutes for a defended account of the object behind a claim. A two-dimensional TikZ diagram separates statistical performance from adequacy for the stated conclusion. The [philosophical guide](../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) and [argument exercise](../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) connect the reasoning to electricity costs, hierarchical pooling, engagement, and governed data.
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -3109,7 +3137,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 547 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 551 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -3307,6 +3335,10 @@ Session 2 uses minutes 155–170 to compare events, records, versions, and copie
 ## Hierarchical Pooling, Precision, and Missed Harm
 
 Sessions 6 and 14 connect released-data integration to the documented conditional regression update, then evaluate a synthetic case with greater precision and less detection of a minority burden. Three editable diagrams accompany [M4 §4.31, M6 §6.46, and M9 §9.57](../06_Lecture_Notes/README.md). Actual false-flag rates, group risks, and the precision elasticity remain explicit.
+
+## Statistical Virtues and Ontological Adequacy
+
+Sessions 1 and 14 distinguish accuracy for a recorded variable from adequacy for a broader claim. The editable two-dimensional diagram and electricity, pooling, and engagement comparisons connect to [M9 §§9.66–9.69](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness). Presenter notes retain the strongest reply, the synthetic scope of the pooling result, and the distinction between empirical and normative premises.
 
 ---
 
@@ -3912,6 +3944,10 @@ M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical
 
 M4 §4.31 reanalyzes the licensed public retail file and maps the normal conditional update to the documented method (Rossi, 2025). M6 §6.46 compares greater posterior precision with missed harm in a synthetic population. M8 §8.34.1 and M9 §§9.57.1–9.57.6 connect the interpretation to HBS overstatement, modal premises, and reasonable protection. The [method crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) states the exact correspondence and the additional assumptions. Sessions 6 and 14 select these comparisons within existing blocks; the full derivations are optional practice.
 
+## Statistical Virtues and Ontological Adequacy
+
+Sixteen annotated philosophical sources support M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69. The new editable figure distinguishes statistical performance from adequacy for a stated claim. Sessions 1 and 14 select the argument within their existing blocks. The optional philosophical-arguments lab and electricity wiki lesson connect the reasoning to the exact pooling update and the broader household-cost interpretation. Source scope and retrieval are recorded in `01_Resources/48_Statistical_Virtues_and_Ontology/`.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -4267,7 +4303,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 36 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 37 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 32 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
@@ -4280,7 +4316,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 111 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 114 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4695,6 +4731,10 @@ Session 2 uses minutes 155–170 to compare events, records, versions, and copie
 
 Session 6 selects the released-account comparison and conditional update within minutes 45–70. Session 14 selects the precision, detection, and reasonable-protection comparison within minutes 90–110. These are alternatives within existing blocks; the full deck is a case library. Complete programs and philosophical exercises remain [optional practice](../07_Labs/Evidence_Standards/README.md).
 
+## Statistical Virtues and Ontological Adequacy
+
+Session 1 selects the target-and-claim comparison within the existing definitions and argument discussion. Session 14 selects the conceptual diagram and one recurring case within minutes 90–110. The extended readings and written argument remain optional practice; the full Session 14 deck is a case library. These selections preserve the 170-minute allocations.
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -4911,6 +4951,10 @@ The history begins with the managerial choice and the institutions that gave mea
 ## Heterogeneity and the Interpretation of No Evidence
 
 Session 6 can select the released-account comparison within its worked-example block. Session 14 can select the precision and detection comparison within minutes 90–110, alongside the HBS reassurance case. Full calculations and the three additional diagrams are optional ungraded practice. Existing 170-minute allocations and assessment requirements remain unchanged.
+
+## Statistical Virtues and Ontological Adequacy
+
+Use M1 §1.24 in Session 1's existing definitions and argument discussion. In Session 14, select the diagram and one case from M9 §§9.66–9.69 within the existing 90–110 minute evidence-and-reasons block. Compare the chosen statistical virtue, the object it represents, and the missing premise behind a broader conclusion. Extended readings and the written argument are optional, ungraded practice. The 15 meetings, 170-minute durations, and released syllabus requirements remain unchanged.
 
 ---
 
@@ -8282,6 +8326,105 @@ Conducting a study, publishing its findings, and relying on it for a consequenti
 ### Further Reading
 
 (Mello et al., 2005), [Academic Medical Centers' Standards for Clinical-Trial Agreements with Industry](https://doi.org/10.1056/NEJMsa044115); (ICMJE, n.d.), [Disclosure of Financial and Non-Financial Relationships and Activities, and Conflicts of Interest](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html), §§1–2; (American Economic Association, 2026), [Data and Code Availability Policy](https://www.aeaweb.org/journals/data/data-code-policy). The agreement comparison is hypothetical and makes no assertion about the terms governing a named study.
+
+## 9.66 Statistical Virtues and Ontological Laziness
+
+\noindent A public authority deciding whether consumers need protection must identify the people, burdens, and institutional arrangements the decision concerns. An analyst can estimate a recorded outcome with considerable care while giving those objects little scrutiny. The estimate then acquires authority over a question that its target never adequately represented. When statistical success substitutes for examining that substitution, the analysis is ontologically lazy. The failure lies in the account of the object underlying the claim, even if the computation is impeccable.
+
+*Ontological laziness* means treating a convenient representation as an adequate account of the relevant reality without defending that adequacy. A retained account becomes a willing subscriber; willingness to pay becomes an unconstrained preference; average revenue per unit of electricity becomes the household's burden. Each substitution removes relations that may determine the decision: a request to leave, dependence on an essential product, or the allocation and timing of fixed costs. The criticism becomes substantive when it identifies the omitted relation and explains why retaining it could change the interpretation or action.
+
+Statistical virtues answer conditional questions. Unbiasedness concerns an estimator's expectation relative to a defined parameter and sampling process. Precision concerns a specified uncertainty calculation. Identification concerns uniqueness under an observation structure and assumptions. These properties can be valuable while leaving the target's relation to the broader claim unsettled. The same limitation applies to predictive accuracy and flexible representation of heterogeneity.
+
+| Statistical Virtue | Question It Can Answer | Further Question for the Claim |
+|---|---|---|
+| Unbiasedness | Is the estimator centered on the specified parameter under the model? | Does that parameter represent the burden invoked by the conclusion? |
+| Precision | How concentrated is the estimate or conditional posterior? | Which measurement, specification, and institutional uncertainties remain? |
+| Identification | Do the observations and restrictions uniquely determine the target? | Is the target sufficient for the proposed interpretation? |
+| Predictive accuracy | How well are the specified outcomes predicted in the evaluation population? | Whose outcomes, errors, and interests define success? |
+| Flexible heterogeneity | How much variation can the representation accommodate? | Does a fitted difference represent taste, constraint, dependence, or another mechanism? |
+
+An exclusive focus on these virtues can therefore conceal a fundamental error. The analyst repeatedly improves an answer while leaving the adequacy of the question unexamined. A more precise estimate of a proxy does not, by itself, validate the proxy as a complete description of a person or a public burden. Treating that precision as sufficient reassurance transfers authority from a defensible narrow result to an undefended broader claim.
+
+![Statistical performance for a chosen target and adequacy for a stated claim are separate dimensions. The lower-right position contains a precise estimate whose broader interpretation remains unjustified. The positions are conceptual distinctions, with no numerical scale or ranking of researchers.](../figures/M09_statistical_virtues_and_ontology.png)
+
+**Figure interpretation.** Improving the estimator can move an analysis to the right while leaving its target and omitted relations unchanged. Moving upward requires defending the connection between the representation and the claim, or narrowing the claim to match the representation. A simple model can occupy the upper-right position for a limited purpose. Adding variables or philosophical terminology supplies no automatic improvement in adequacy.
+
+## 9.67 Philosophical Grounds for the Critique
+
+### 9.67.1 Abstraction and the Object Represented
+
+\noindent Abstraction makes inquiry possible by selecting features and relations. The fallacy of misplaced concreteness arises when an abstraction acquires the standing of the concrete reality from which it was drawn (Whitehead, 1925, chapters III–IV). A demand coefficient can describe an aspect of conduct without exhausting the person's interests or circumstances. Treating the coefficient as a complete account gives a useful abstraction authority beyond the argument supporting it.
+
+A related realist criticism concerns the reduction of questions about what exists to questions about how it is known. The epistemic fallacy obscures the distinction between the object and the practices used to investigate it (Bhaskar, 2007, pp. 192–194). An unrecorded cost can exist, and a mechanism can operate without appearing as a stable association in the available observations. Establishing a particular cost or mechanism still requires evidence. The philosophical argument prevents the absence of an adequate estimate from becoming a definition of what is real.
+
+### 9.67.2 Records, Evidence, and Explanation
+
+\noindent A record's authority depends on the concepts and reasons through which it becomes evidence. The critique of the Given challenges the idea that observation supplies an independent foundation whose authority needs no further conceptual or justificatory support (Sellars, 1956, §§32–38). Calling a transaction a preference already introduces an interpretation. The reliability of the transaction log alone does not settle that interpretation.
+
+Data and the phenomena investigated through them also have different explanatory roles. Particular measurements can support an inference about a stable process without being identical to that process (Bogen and Woodward, 1988, pp. 305–306). For electricity research, recorded revenue, billed charges, consumption responses, and cost recovery require explicit connections. Their term *phenomena* concerns scientific explanatory targets, including indirectly detected processes. It should not be conflated with the appearance/noumenon distinction in §9.41. A missing bill remains an empirical question.
+
+### 9.67.3 Local Success and Unexamined Assumptions
+
+\noindent A model can work well under specific arrangements without supplying a universally adequate account. The argument for a dappled world gives local scientific success a scope shaped by the systems and conditions that support it (Cartwright, 1999, introduction). A pricing response estimated under one set of alternatives requires further support before it describes behavior under dependence, restricted exit, or a different institutional rule. Mathematical elegance leaves that transport question open.
+
+Background assumptions also determine how observations bear on a hypothesis. Effective criticism requires opportunities to challenge them, uptake of objections, public standards, and an appropriate distribution of intellectual authority (Longino, 2004, pp. 134–135). A resident's objection about fixed charges may expose an omitted part of the target even when that resident cannot improve the estimator. Treating technical fluency as the sole qualification for questioning the target can protect the very assumption that needs scrutiny.
+
+### 9.67.4 Statistical Authority Has Institutional Conditions
+
+\noindent Quantification can make judgments comparable, portable, and defensible to distant institutions. Its authority has a history shaped by demands for trust and impersonal procedures (Porter, 1995). Histories of scientific images likewise distinguish truth-to-nature, mechanical objectivity, and trained judgment as different epistemic ideals (Daston and Galison, 2007). These accounts support examining why a particular institution prizes a particular virtue. They do not establish that the virtue is worthless because it has a social history.
+
+The consequential question is whether an institutional reward for precision displaces scrutiny of the target, population, or decision. A publication process might favor a tractable outcome over a harder question important to consumers. Demonstrating that pattern requires evidence about research selection. In an individual argument, the critic can instead identify the specific point where a technically successful result is used to close a question it leaves unresolved.
+
+### 9.67.5 When a Metric Replaces Deliberation
+
+\noindent A metric can change the goal pursued when its simplified expression comes to dominate richer practical reasoning. Value capture concerns this displacement of deliberation and the resulting loss of control over how one's values are articulated (Nguyen, 2024). An engagement score can begin as information about a service and become the institution's definition of whether the service benefits its users. Optimizing that score more accurately can deepen the displacement.
+
+The consequences of error also bear on evidentiary judgment (Douglas, 2000). A narrow interval is one reason to trust a conditional calculation; it supplies no complete reason for imposing the consequences of that calculation on other people. A contractualist assessment compares principles through the reasons affected persons have to reject them (Scanlon, 1998, chapter 5). If the analyst treats accuracy as overriding those reasons, a statistical virtue has become an unargued moral priority. The institution owes an explanation of that priority to those who bear its costs.
+
+## 9.68 Worked Assessments of the Missing Object
+
+### 9.68.1 Electricity Costs and Public Reassurance
+
+\noindent The measured utility outcome, the household's bill, and the household's exposure to future recovery are different objects. The HBS public claim assessed in §8.31.1 extends evidence about utility prices into a reassurance about bills (Harvard Business School, 2026). Its caveat about future conditions and the paper's positive estimates remain part of the record. Even a perfectly estimated average price would require additional accounting and institutional premises to establish that households face little burden.
+
+The ontological criticism identifies the substitution: an aggregate unit price is granted authority over household cost incidence. Fixed charges, quantities, the timing of recovery, and the treatment of proposed or canceled projects determine whether that inference is adequate. The complete bill and project examples in §§6.35 and 6.41 hold specified observations fixed while changing those relations. They establish a possible mismatch; actual project exposure requires project and utility evidence. Precision within the narrower outcome cannot repair the mismatch by itself.
+
+A defensible revision specifies the measured outcome, its uncertainty, and the population and horizon it describes. Reassurance then requires a separately supported account of household burdens. Residents can also demand reasons concerning participation and involuntary exposure. Their standing to ask does not depend on first obtaining access to the institution's preferred causal estimate.
+
+### 9.68.2 Hierarchical Pooling and the Protected Person
+
+\noindent The conditional normal update documented in §4.31.4 changes the balance between a group's signal and a pooled mean (Rossi, 2025). The synthetic comparison in §6.46 shows how lower population MSE and narrower conditional intervals can accompany less detection of a minority burden under a fixed posterior rule. The complete Python program reports the harmed group's error, actual false flags, missed losses, and matched-calibration comparison. The mechanism depends on the specified prior, population, and decision rule.
+
+The further philosophical issue concerns who appears in the evaluation. An overall MSE treats errors through a selected weighting of groups. A consumer seeking protection has an interest in the consequences of errors in their own situation. If the overall metric becomes the entire account of methodological success, that person's burden can disappear from the institution's reasoning while remaining present in the constructed population. The failure combines an incomplete representation of whose outcomes matter with an undefended rule for action.
+
+The appropriate criticism names the update and the institutional use producing the loss. It retains the reduction in false flags and compares the burdens of feasible safeguards. Greater prior dispersion can weaken pooling, and the full hierarchical sampler also integrates uncertainty in hyperparameters. The example supports scrutiny of this particular use of the method. It supplies no empirical finding of wrongdoing by the firms in the released retail data and no general theorem that heterogeneity adjustment suppresses harm.
+
+### 9.68.3 Engagement, Agency, and Governed Data
+
+\noindent A system may accurately predict which person will continue scrolling, accept an offer, or remain recorded as a subscriber. The prediction concerns conduct under the available conditions. Endorsement, practical refusal, and authority to act on the person's behalf require further information and reasons. Treating continued activity as the full measure of benefit can allow an institution's convenient metric to determine the person's recognized interests. Value capture names a related threat to deliberation over the goal itself (Nguyen, 2024).
+
+Data are also artifacts whose purposes and norms of use shape what is recorded and how it can be interpreted (Thomasson, 2014; §§9.60–9.65). An NDA-bound extract can support an accurate estimate while excluding cancellation requests, contested charges, or a category of affected people. The actual agreement and extract determine whether such exclusions occur. Reproducing the available calculation establishes computational agreement; it does not establish that the permitted record exhausts the relevant reality. A public conclusion must preserve those distinctions.
+
+## 9.69 An Argument That Withstands the Strongest Reply
+
+\noindent A criticism of ontological laziness needs a claim, an omitted object or relation, and a consequence for interpretation. The following argument makes the burden explicit.
+
+1. The proposed conclusion concerns a specified person, institution, burden, or entitlement.
+2. The analysis represents that object through particular variables, assumptions, and relations.
+3. A consequential feature of the object is omitted or replaced, and the argument gives no adequate reason why that omission preserves the conclusion.
+4. Statistical success establishes performance within the chosen representation. It supplies no missing justification for the substitution in premise 3.
+5. Therefore, the statistical virtues alone do not warrant the broader conclusion. Defending the claim requires repairing the representation or restricting its scope.
+6. If the conclusion supports action, an additional normative premise must justify the proposed treatment to affected people. Their reasons and feasible alternatives determine what the actor ought to do.
+
+The strongest reply is that every model abstracts, finite inquiry requires limits, and disciplined estimation can protect people from arbitrary allegations. That reply is correct as far as it goes. An adequate criticism must identify an omission that matters to the claim. Demanding a complete metaphysics before estimating a narrow effect would make useful inquiry impossible. The burden becomes substantial when an institution uses a narrow result to settle a wider dispute or to justify continued exposure.
+
+Empiricism itself does not entail that only recorded things exist. Constructive empiricism explicitly separates observability from existence and limits the belief involved in accepting a scientific theory (van Fraassen, 1980, pp. 18–19). This position differs from the realist argument above, yet it also blocks the inference from unobserved harm to nonexistent harm. Philosophical disagreement over realism can sharpen the criticism without requiring a caricature of empirical inquiry.
+
+For a proposed protection rule, explain the interest at stake, the evidence supporting concern, the costs of acting and waiting, and the strongest objection to the feasible alternative. A contractualist conclusion might support further investigation, a reversible safeguard, a revised public statement, or continuation under justified conditions. Statistical rigor contributes to those reasons. Its authority becomes philosophically indefensible when it is used to avoid supplying the rest of the argument.
+
+### Further Reading
+
+The [annotated philosophical readings](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) distinguish arguments about abstraction, evidence, institutions, values, and scientific realism. The [argument exercise](../../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) applies the premises above to the recurring cases.
 
 ---
 
@@ -14468,6 +14611,25 @@ For the electricity case, complete the measurement table in M9 §9.42.4. State t
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
 
+## Statistical Virtues and the Missing Object
+
+Use [M9 §§9.66–9.69](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness) and the [16-source reading guide](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md). Choose an exact public claim, a specified statistical result, and one proposed decision. This is optional, ungraded practice.
+
+1. State which virtue is asserted: unbiasedness, precision, identification, predictive accuracy, or flexible representation. Define its target and conditions.
+2. Identify the object invoked by the conclusion and the variable representing it. Name a consequential relation lost in that substitution.
+3. Defend one criticism through a specific philosophical argument. Explain why the source supports the premise and where the course application extends it.
+4. Place the argument on the two-dimensional figure in §9.66. Explain what improves when estimation improves and what remains unexamined.
+5. Reconstruct the strongest reply: a narrow study can be useful, every model abstracts, and mistaken accusations also impose burdens. Identify whether that reply changes the criticism.
+6. Write a revised empirical claim and an ought conclusion. Supply the normative premise, feasible alternative, and condition for revision. Disagreement with the proposed criticism is compatible with a strong response.
+
+For the electricity case, retain the exact HBS wording and qualifications in the [public-communication assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). Explain why better estimation of average price would still leave the household-incidence question open. Actual harm and actual phantom-project exposure need their own evidence.
+
+For pooling, use the complete program in M6 §6.46 and [the source crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md). Explain why the conditional update is methodologically connected to the documented hierarchical regression and why the protection rule is an additional choice. Compare population error, harmed-group error, missed harm, and actual false flags. Preserve the matched-calibration result. Assess the institution’s choice of criterion without presenting a synthetic loss as an observed injury.
+
+For engagement or restricted data, identify the person's purpose or the relevant term of the agreement. A hypothetical restriction illustrates a possibility; it supplies no allegation about an actual sponsor. Explain how the goal or available evidence would change under a feasible alternative.
+
+A successful argument identifies a consequential omission and supports it. A list of philosophical names, an accusation about motives, or the assertion that every abstraction is defective leaves the argument incomplete.
+
 ---
 
 ## Source: 01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
@@ -15355,6 +15517,14 @@ A supported response preserves units and timing, separates possibilities from es
 
 This text preserves the substantive comparison, figure description, questions, feedback criteria, and source links. It does not reproduce the page's keyboard behavior or visual layout.
 
+## The Object Behind the Estimate
+
+A precise average unit price can leave household bills, future recovery, and authority to contest a decision unresolved. Ontological laziness occurs when a convenient variable is treated as an adequate account of the broader object without defending that substitution. The conceptual figure separates statistical performance for the chosen target from adequacy for the stated claim; it has no numerical scale.
+
+![A precise answer can retain unjustified scope. Better estimation can leave the target and omitted relations unchanged.](../../06_Lecture_Notes/figures/M09_statistical_virtues_and_ontology.png)
+
+The strongest reply is that every model abstracts and a carefully scoped estimate can provide useful evidence. The criticism must identify a consequential omission. Reassurance requires a supported bridge from the measured variable to the household burden. Use [M9 §§9.66–9.69](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness) and the [annotated sources](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) to defend the criticism and a revised conclusion.
+
 ---
 
 ## Source: 08_Wiki/pilot/VERIFICATION.md
@@ -15390,9 +15560,13 @@ The static source contains no response submission, model call, analytics, or per
 
 ## Course Outputs and Hosting
 
-The complete notes contain 620 pages and 150 editable figures; Marketing Dialectics contains 110 pages and 26 figures. The combined deck contains 536 slides, and the syllabus remains two pages. New sections, neighboring page breaks, sixteen new slides across ten decks, and all three added shared figures were rendered and visually inspected. All 130 embedded Python listings match their source files.
+The earlier learning-design build contained 620 pages and 150 editable figures; Marketing Dialectics contained 110 pages and 26 figures. That combined deck contained 536 slides, and the syllabus remained two pages. New sections, neighboring page breaks, sixteen new slides across ten decks, and all three added shared figures were rendered and visually inspected. All 130 embedded Python listings matched their source files.
 
 The pilot source is part of the course repository. GitHub Pages remains unconfigured; no deployed lesson URL or measured learning effect is claimed. Preserve the course-relative paths when hosting the pilot.
+
+## Statistical Virtues Extension
+
+The new section separates statistical performance from the adequacy of the object represented. Its figure, expanded strongest reply, and full-size diagram link were inspected in the browser at the default desktop viewport. All 36 distinct HTML links and assets resolve locally, and all 27 HTML IDs are unique. The calculation and tab code are unchanged. The [current course verification](../../01_Resources/48_Statistical_Virtues_and_Ontology/VERIFICATION.md) records the rebuilt notes, slides, and code-listing checks.
 
 ---
 
@@ -16927,6 +17101,10 @@ Catalog records E17–E20 identify the public dataset and the newly inspected re
 
 The [method crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) establishes the exact conditional correspondence with the hierarchical regression (Rossi, 2025), while separating full posterior sampling from the fixed-hyperparameter calculation.
 
+## Objects Behind Statistical Virtues
+
+The [philosophical guide](../48_Statistical_Virtues_and_Ontology/README.md) extends the error-cost discussion to the adequacy of the object being estimated. Precision, identification, and unbiasedness remain conditional properties. M9 §§9.66–9.69 asks when their institutional use displaces scrutiny of persons, burdens, and decision rights.
+
 ---
 
 ## Source: 03_Data_and_Code/Evidence_Standards/README.md
@@ -17424,6 +17602,10 @@ The source algebra is (Gelman et al., 2012, pp. 196–198), [DOI](https://doi.or
 
 The [method crosswalk](METHOD_CROSSWALK.md) traces the hierarchical loop to `runiregG`, derives the matrix posterior, and verifies the scalar conditional identity numerically. Source files and hashes are retained; no upstream sampler was executed. The known-harm example changes this conditional update and the associated decision threshold, with full hyperparameter uncertainty outside its scope.
 
+## Statistical Virtues and Ontological Scope
+
+[M9 §§9.66–9.69](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md#966-statistical-virtues-and-ontological-laziness) evaluates the choice of object and error criterion behind the comparison. The population MSE, a harmed group's burden, and the reasons for protection have distinct roles. The [philosophical reading guide](../../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) connects this distinction to abstraction, value capture, and justification. The calculation and its conditional scope are unchanged.
+
 ---
 
 ## Source: 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md
@@ -17480,6 +17662,188 @@ The mechanism matters when a low pooled mean, weak group-specific information, a
 - (Kim, 2014; bayesm 3.1-7), [hierarchical loop](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/src/rhierLinearModel_rcpp_loop.cpp) and [conditional update](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/src/utilityFunctions.cpp). Preserve the implementation contributor's attribution separately from the package author's model documentation.
 - (Boatwright et al., 1999), [study attributed by the public data documentation](https://doi.org/10.1080/01621459.1999.10473859). The public package and preprint sample differ.
 - (Gelman et al., 2012, pp. 196–198), [partial-pooling algebra](https://doi.org/10.1080/19345747.2011.618213).
+
+---
+
+## Source: 01_Resources/48_Statistical_Virtues_and_Ontology/README.md
+
+# Statistical Virtues and Ontological Adequacy
+
+A statistical procedure can answer its chosen question well while leaving the object of a broader claim inadequately represented. The criticism of ontological laziness identifies the substitution, the omitted relation, and its consequence for the decision. It applies to arguments and uses of results; it supplies no diagnosis of a researcher’s motives.
+
+The teaching material is in [M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69](../../06_Lecture_Notes/README.md), Sessions 1 and 14, and the [optional argument exercise](../../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object). The existing [hierarchical-method example](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) supplies the exact statistical connection and its synthetic scope.
+
+## Reading Sequence
+
+Begin with V01 on abstraction, V02 on ontology and knowledge, V04 on records and explanatory objects, V10 on metric-driven changes in values, and V11 on justification to affected people. Use V06 and V09 to examine criticism and error consequences. V14 supplies a serious empiricist reply. V07–V08 supply institutional history; their annotations are based on publisher accounts. These readings disagree about realism, knowledge, and justification. Each argument supports a specified premise; the collection preserves these disagreements.
+
+## Catalog and Access
+
+The 16 records in [catalog.json](catalog.json) use IDs V01–V16 local to this folder and overlap with earlier course collections. Their counts are not unique additions to the full library. Each record states the inspected passage and the application. Five newly retrieved source copies remain in the ignored `readings/` directory in Dropbox. Public teaching files contain original analysis, citations, and links. The published V10 article carries CC BY-NC-ND 4.0; the saved copy is an author preprint and is kept local. The Gutenberg endpoint for V01 and the journal PDF endpoint for V10 were unavailable during retrieval.
+
+[Source and course verification](VERIFICATION.md) records the checks on the catalog, generated documents, code listings, and lesson.
+
+## Annotated Sources
+
+### V01: Science and the Modern World
+
+(Alfred North Whitehead, 1925). [Source](https://www.gutenberg.org/ebooks/68611).
+
+**Focus:** Chapters III–IV; misplaced concreteness and abstraction.
+
+**Application:** Distinguish a useful representation from an exhaustive account of a person or burden. The criticism requires identifying the consequential abstraction.
+
+**Inspection:** Indexed primary-text passages around printed pp. 51 and 59 inspected. Gutenberg returned HTTP 503 and an alternate download did not yield a PDF; full text was not retrieved.
+
+### V02: Theorising Ontology
+
+(Roy Bhaskar, 2007). [Source](https://internationalcentreforcriticalrealism.wordpress.com/wp-content/uploads/2013/04/07-1-bhaskar-theorising-ontology-2007.pdf).
+
+**Focus:** Contributions to Social Ontology, printed pp. 192–194.
+
+**Application:** Distinguish what exists from a method of knowing it. Missing estimates leave claims unsettled; they do not define the limits of reality.
+
+**Inspection:** Downloaded chapter excerpt; pp. 192–194 inspected, including the defense of specific, separable scientific knowledge.
+
+### V03: Empiricism and the Philosophy of Mind
+
+(Wilfrid Sellars, 1956). [Source](https://www.ditext.com/sellars/epm8.html).
+
+**Focus:** Part VIII, §§32–38.
+
+**Application:** Identify the concepts and justificatory relations supporting the interpretation of an observation. A record does not authorize every label attached to it.
+
+**Inspection:** Primary HTML Part VIII inspected; no claim to have reviewed the entire work.
+
+### V04: Saving the Phenomena
+
+(James Bogen; James Woodward, 1988). [Source](https://doi.org/10.2307/2185445).
+
+**Focus:** The Philosophical Review 97(3):303–352; pp. 305–306.
+
+**Application:** Keep particular records, inferred processes, and their explanatory roles distinct. Their scientific use of phenomena differs from Kantian phenomena/noumena.
+
+**Inspection:** Full article downloaded; opening argument and data/phenomena distinction on pp. 305–306 inspected.
+
+### V05: The Dappled World: A Study of the Boundaries of Science
+
+(Nancy Cartwright, 1999). [Source](https://doi.org/10.1017/CBO9781139167093.001).
+
+**Focus:** Introduction, pp. 1–20; local laws and their scope.
+
+**Application:** Ask what institutional conditions sustain a model’s success before extending its interpretation. A good local result supplies no universal claim.
+
+**Inspection:** Publisher introduction summary and contents inspected. Full chapter not obtained; the scope argument is limited to those passages.
+
+### V06: How Values Can Be Good for Science
+
+(Helen E. Longino, 2004). [Source](https://www.ugr.es/~zink/mono/Longino2004.pdf).
+
+**Focus:** Science, Values, and Objectivity, pp. 127–142; especially pp. 134–135.
+
+**Application:** Allow effective criticism of the target and background assumptions, including criticism from people outside the technical community.
+
+**Inspection:** Existing local chapter read at pp. 134–135: venues, uptake, public standards, tempered equality, and provisional background assumptions.
+
+### V07: Trust in Numbers: The Pursuit of Objectivity in Science and Public Life
+
+(Theodore M. Porter, 1995). [Source](https://press.princeton.edu/books/ebook/9780691210544/trust-in-numbers).
+
+**Focus:** Institutional authority and the social uses of quantification.
+
+**Application:** Examine why comparability and impersonal procedures receive authority. Social origins do not by themselves invalidate a measure.
+
+**Inspection:** Official publisher account and original copyright year inspected; full book not obtained.
+
+### V08: Objectivity
+
+(Lorraine Daston; Peter Galison, 2007). [Source](https://www.zonebooks.org/books/5-objectivity).
+
+**Focus:** Truth-to-nature, mechanical objectivity, and trained judgment.
+
+**Application:** Distinguish epistemic ideals and the practices that sustain them. Their historical variation motivates scrutiny of a virtue’s role, not its blanket rejection.
+
+**Inspection:** Official publisher account and bibliographic details inspected; full book not obtained.
+
+### V09: Inductive Risk and Values in Science
+
+(Heather Douglas, 2000). [Source](https://doi.org/10.1086/392855).
+
+**Focus:** Philosophy of Science 67(4):559–579; consequences of error.
+
+**Application:** Assess how mistaken reassurance and mistaken accusation affect people. Values can bear on evidentiary judgment without replacing evidence.
+
+**Inspection:** Existing full-text copy and course source assessment consulted; opening inductive-risk argument previously inspected.
+
+### V10: Value Capture
+
+(C. Thi Nguyen, 2024). [Source](https://doi.org/10.26556/jesp.v27i3.3048).
+
+**Focus:** Journal of Ethics and Social Philosophy 27(3):469–504; simplified values and deliberation.
+
+**Application:** Examine when an engagement or accuracy score becomes the goal itself and displaces deliberation about customer purposes.
+
+**Inspection:** Published abstract, metadata, and license inspected; 52-page author preprint downloaded and opening pp. 1–3 inspected. Preprint pagination is not published pagination.
+
+### V11: What We Owe to Each Other
+
+(T. M. Scanlon, 1998). [Source](https://www.hup.harvard.edu/books/9780674004238).
+
+**Focus:** Chapter 5; principles and reasons for reasonable rejection.
+
+**Application:** Require a separate argument about the burdens imposed by a decision. Statistical quality is one consideration among reasons owed to affected people.
+
+**Inspection:** Existing course excerpt, pp. 192–196, and source assessment consulted; this course application does not assign a numerical proof threshold.
+
+### V12: Critique of Pure Reason
+
+(Immanuel Kant, 1781/1787). [Source](../15_Marketing_Dialectics/01_Kant_Primary_Texts/public_domain_texts/Kant_CritiqueOfPureReason_Meiklejohn1855.html).
+
+**Focus:** B306–B311; the negative concept of noumenon.
+
+**Application:** Distinguish a limit of theoretical cognition from an ordinary unmeasured variable. Missing billing data and latent preferences remain empirical questions.
+
+**Inspection:** Existing public-domain translation and course §9.41 source assessment consulted. The negative limiting concept does not establish a particular hidden harm.
+
+### V13: Public Artifacts, Intentions and Norms
+
+(Amie L. Thomasson, 2014). [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
+
+**Focus:** Artefact Kinds, pp. 45–62; §§5.2–5.4.
+
+**Application:** Examine a dataset’s purposes, recognized uses, and governance while preserving the distinction between records and the events they represent.
+
+**Inspection:** Existing author manuscript and artifact source assessment consulted; dataset and NDA applications are course extensions.
+
+### V14: The Scientific Image
+
+(Bas C. van Fraassen, 1980). [Source](https://doi.org/10.1093/0198244274.001.0001).
+
+**Focus:** Printed pp. 18–19; observability, existence, and empirical adequacy.
+
+**Application:** Test a serious empiricist reply. A limit on belief or observability is not a denial that unobserved things exist.
+
+**Inspection:** Downloaded primary excerpts; printed pp. 18–19 read. Publisher abstract independently confirms the constructive-empiricist position.
+
+### V15: The Fate of Knowledge
+
+(Helen E. Longino, 2002). [Source](https://press.princeton.edu/books/paperback/9780691088761/the-fate-of-knowledge).
+
+**Focus:** Chapter 1, Introduction: The Rational-Social Dichotomy.
+
+**Application:** Examine how social criticism and cognitive justification can support one another. Avoid assuming social provenance alone defeats knowledge.
+
+**Inspection:** Official ten-page chapter excerpt downloaded and opening pp. 1–5 inspected. Publisher lists copyright 2002 and release November 2001; citation follows copyright year.
+
+### V16: The Crisis of European Sciences and Transcendental Phenomenology
+
+(Edmund Husserl, 1970). [Source](https://www.marxists.org/reference/subject/philosophy/works/ge/husserl.htm).
+
+**Focus:** English translation, §22; intentionality and psychic atomism.
+
+**Application:** Ask whether a representation of isolated responses loses the directedness and meaning of an action. Keep phenomenological and realist arguments distinct.
+
+**Inspection:** Primary HTML §22 inspected. This excerpt does not include §9 on mathematization; no claim to have inspected that section.
 
 ---
 

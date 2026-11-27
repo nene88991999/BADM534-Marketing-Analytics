@@ -88,3 +88,7 @@ M9 §§9.57.1–9.57.6 connects the missing empirical and normative premises to 
 Catalog records E17–E20 identify the public dataset and the newly inspected readings. Restricted source PDFs remain in Dropbox; the public repository contains annotations, links, licensed package data, and original teaching materials.
 
 The [method crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) establishes the exact conditional correspondence with the hierarchical regression (Rossi, 2025), while separating full posterior sampling from the fixed-hyperparameter calculation.
+
+## Objects Behind Statistical Virtues
+
+The [philosophical guide](../48_Statistical_Virtues_and_Ontology/README.md) extends the error-cost discussion to the adequacy of the object being estimated. Precision, identification, and unbiasedness remain conditional properties. M9 §§9.66–9.69 asks when their institutional use displaces scrutiny of persons, burdens, and decision rights.

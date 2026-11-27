@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 156 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 157 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -243,3 +243,7 @@ M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical
 ## Heterogeneity, Precision, and Reasonable Protection
 
 M4 §4.31 reanalyzes licensed public retail data and maps the hierarchical coefficient update to the source implementation. M6 §6.46 derives the synthetic precision–detection comparison and consumer-harm elasticity. M9 §§9.57.1–9.57.6 connects the results to modal premises and reasonable protection. Three editable TikZ figures and two complete Python programs accompany the [data and code](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md) and [optional practice](../07_Labs/Evidence_Standards/README.md).
+
+## Statistical Virtues and Ontological Adequacy
+
+M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69 examine when technical success substitutes for a defended account of the object behind a claim. A two-dimensional TikZ diagram separates statistical performance from adequacy for the stated conclusion. The [philosophical guide](../01_Resources/48_Statistical_Virtues_and_Ontology/README.md) and [argument exercise](../07_Labs/Philosophical_Arguments/README.md#statistical-virtues-and-the-missing-object) connect the reasoning to electricity costs, hierarchical pooling, engagement, and governed data.
