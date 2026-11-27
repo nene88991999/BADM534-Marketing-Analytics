@@ -136,7 +136,7 @@ A real decision should also examine parameter uncertainty, operational minimums,
 
 Generative AI can assist with code, text classification, documentation, and communication. The business value depends on the complete workflow. Faster generation can be offset by additional review, integration failures, or errors that reach downstream decisions. Measure the output that matters: a correct, reproducible analysis completed with an appropriate understanding of its limitations.
 
-Separate several uses. A coding assistant produces or edits a program that can be inspected and executed. An annotation model produces labels that require a measurement evaluation. A retrieval system selects source passages and may generate a summary that needs factual support. A content system produces customer-facing material whose effect should be evaluated in its deployment context. Each use has a different unit of quality and a different failure mechanism.
+The appropriate evaluation depends on what an AI system produces and how that output enters the decision. A coding assistant produces or edits a program that can be inspected and executed, whereas an annotation model produces labels whose measurement quality requires a suitable reference. A retrieval system selects passages and may generate a summary whose claims need support from those sources. For customer-facing content, quality also depends on the effects of deployment. Each use therefore requires a unit of quality and checks directed at its specific failure mechanisms.
 
 For coding, begin with an analytical specification and a small example with a known result. Ask the assistant to implement a limited step, explain the data transformations, and identify assumptions. Inspect the code before running it. Then compare intermediate outputs with independent checks. A program that executes successfully can still use an incorrect denominator, join on the wrong key, or include future information. Checking denominators, join keys, and information timing reveals errors that a successful execution can leave undetected.
 
@@ -249,7 +249,7 @@ print(json.dumps(result, indent=2))
 
 ## 8.10 Python Calculations for the Synthetic Cases
 
-The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+Run the program below to write the synthetic examples to CSV and reproduce their calculations. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`; the separate mHealth programs reproduce the observed-data results.
 
 Python source: [m08_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m08_synthetic.py). From its directory, run `python m08_synthetic.py`.
 
@@ -321,7 +321,7 @@ Use the fixed-cohort mHealth review from Section 1.10 as the evidence source. Ju
 | Changed Denominator | Valid Fields | Denominator Mismatch |
 | Causal Health Claim | Valid Fields | Unsupported Interpretation |
 
-All four candidates pass the same basic structural requirement. Only the supported claim passes the evidence checks. They are deliberate teaching inputs, not observed outputs from a particular LLM. The code makes no external model request and sends no customer data to an AI service. Its checks concern the declared fields. Free-form prose, omitted qualifications, and advice require a separate substantive review; an “interpretation” field cannot validate an unrestricted paragraph.
+The four constructed candidates meet the same structural requirement, but only the supported claim passes the evidence checks. The program evaluates these fixed examples locally, without requesting model responses, so its results describe the checks rather than the performance of an LLM. Those checks cover the declared fields; free-form prose, omitted qualifications, and advice still require substantive review. Naming a field “interpretation” supplies no validation of an unrestricted paragraph.
 
 ![A generated statement passes through separate checks for structure, numerical evidence, and substantive interpretation before informing a decision.](../figures/M08_evidence_checks.png)
 
@@ -408,7 +408,7 @@ if __name__ == "__main__":
 
 A manager asks an AI assistant to plot monthly customer engagement. The generated program can run successfully and produce an attractive chart while changing the population, labeling a fraction as a percentage, or describing a temporal association as an intervention effect. A chart therefore needs checks of execution, fidelity to the analytical question, and readability. [VisEval](https://github.com/microsoft/VisEval) separates these dimensions when evaluating generated visualizations.
 
-The mHealth example provides an independent numerical reference. The requested measure is the percentage of all eligible calendar user-days with a log. Its two numerators and denominators are computed before plotting. The following constructed mistakes retain valid numerical inputs and executable drawing instructions. Each fails a different substantive requirement.
+For the mHealth comparison, compute the percentage of all eligible calendar user-days with a log before plotting either group. These two numerators and denominators provide an independent numerical reference against which to assess the figures. The constructed mistakes below use valid numbers and executable drawing instructions, yet each violates a different substantive requirement of the comparison.
 
 | Constructed Chart Error | Consequence | Check |
 | --- | --- | --- |
@@ -1206,7 +1206,7 @@ $$
 
 The first two terms pay for producing and checking every assigned analysis, including unsuccessful attempts. The final term weights the conditional decision loss by the probability that the error reaches a decision. This accounting treats $p_j$ and the conditional loss as fixed at the stated operating environment. The loss must use the same scope for both workflows; a workflow that changes the severity of remaining errors requires its own conditional-loss estimate.
 
-Suppose a basic workflow costs 0.02 dollars in API charges and 0.25 review minutes per task. A checked workflow costs 0.05 dollars and 0.50 review minutes. Set the analyst cost to 60 dollars per hour and the undetected-error probabilities to 5% and 1%. These are hypothetical operating inputs. They are separate from the published benchmark's model results.
+In a hypothetical operating comparison, suppose a basic workflow costs 0.02 dollars in API charges and 0.25 review minutes per task, while a checked workflow costs 0.05 dollars and 0.50 review minutes. Set the analyst cost to 60 dollars per hour and the undetected-error probabilities to 5% and 1%. These operating assumptions determine the cost comparison below independently of the published benchmark results.
 
 | Loss per Undetected Error | Basic: 1,000 Tasks | Checked: 1,000 Tasks |
 | --- | ---: | ---: |

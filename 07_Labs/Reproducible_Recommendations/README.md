@@ -13,7 +13,7 @@ python3 03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.p
 python3 -m unittest discover -s 03_Data_and_Code/Reproducible_Recommendations -p 'test_*.py' -v
 ```
 
-Read the [generated recommendation](../../03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md) beside its [evidence file](../../03_Data_and_Code/Reproducible_Recommendations/results/evidence.json). First calculate the p01 rating from weights `(0, .05, .15, .30, .50)`. Then compare `(4.25 + 3.70)/2` with `(2 × 4.25 + 3.70)/3`. Explain why an identical repeat changes the second quantity. Inspect the repeat-count figure while holding both persona ratings fixed.
+Read the [generated recommendation](../../03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md) beside its [evidence file](../../03_Data_and_Code/Reproducible_Recommendations/results/evidence.json), and calculate the p01 rating from weights `(0, .05, .15, .30, .50)`. Compare `(4.25 + 3.70)/2` with `(2 × 4.25 + 3.70)/3` to identify which weighting rule changes after an identical repeat. Use the repeat-count figure, holding both persona ratings fixed, to explain why the intended unit must determine the denominator.
 
 Next assess this deliberately unsupported statement: “The pooled system achieves a high distribution score, so concepts A and B should launch.” Identify the unresolved shortlist, the reference-based construction of the candidate pattern, and the absent customer-demand evidence. A numerical claim and an action recommendation require different support. The reversed pattern selects F and E and retains zero of the reference top two. Explain why its measured zero differs from the pooled pattern's undefined recall.
 

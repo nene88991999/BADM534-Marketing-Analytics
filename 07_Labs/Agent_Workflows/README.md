@@ -8,7 +8,7 @@ An outreach team needs the distribution of recorded logging activity among custo
 
 ## Check by Hand
 
-Use an invented roster A, B, C and a July 1–August 1 half-open interval. A has records on June 30, July 1, and a repeated July 1. B has records on July 31 and August 1. C has none. A separate user Z has a July 3 record. The required logged-day counts are A=1, B=1, C=0. The mean rate is 2/93. Explain each excluded record and why summing the food-entry count would answer a different question.
+Use the invented roster A, B, and C over the half-open interval from July 1 to August 1. A has records on June 30 and July 1, including a repeated July 1 record; B has records on July 31 and August 1; C has none. User Z, who is outside the roster, has a July 3 record. Counting distinct eligible days gives A=1, B=1, and C=0, with a mean rate of 2/93. Explain how the roster, date boundaries, and duplicate rule produce these counts, and why counting food entries would answer a different question.
 
 Run the independent tests from the repository root:
 
@@ -30,7 +30,7 @@ Record every assigned attempt, its model version, visible files, commands, revis
 
 ## Cost and Authority
 
-Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py). Recalculate the comparison at an analyst cost of $30 per hour and explain which cost categories change. These are hypothetical inputs. A sensitivity calculation does not estimate labor savings.
+Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py), then lower the hypothetical analyst cost to $30 per hour. Explain which cost categories change and how that changes the preferred workflow. The calculation assesses sensitivity to an assumed wage; estimating actual labor savings would require observed time and cost evidence.
 
 Consider a cancellation agent instructed to require a retention survey before accepting a customer's unambiguous request to cancel. State the customer's requested outcome, the firm's objective, the action performed, and the relevant sources of authority. Apply the Kantian and Confucian arguments from M9. Explain what additional evidence is needed to assess the firm's claim that the procedure benefits customers.
 

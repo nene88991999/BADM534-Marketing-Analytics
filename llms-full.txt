@@ -513,7 +513,7 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-parenthetical-author-year",
+    "revision": "2026-11-26-writing-alignment",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
@@ -1221,7 +1221,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-parenthetical-author-year",
+  "revision": "2026-11-26-writing-alignment",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1900,13 +1900,19 @@ Begin with the decision facing a manager, customer, or regulator. Identify the a
 
 Develop each paragraph through its question or mechanism, the reasoning or evidence, and the consequence for the decision. Keep related definitions and interpretations together. Start a new paragraph when the argument changes. Shorten repetition and peripheral discussion while preserving the steps that explain why a result follows. Sentence and paragraph lengths follow the argument, with no numerical quota.
 
+Connect a condition or comparison to its consequence within a developed sentence when they form one thought. Follow with a shorter sentence when the implication deserves emphasis. Combine adjacent brief paragraphs that complete the same explanation; keep equation introductions and result interpretations separate when they serve different purposes. Avoid sequences of compressed assertions that leave the reader to reconstruct their relationship.
+
 Carry recurring examples through the analysis with consistent actors, timing, information, actions, and outcomes. Give each additional example a distinct purpose. Introduce a supporting check through the competing explanation it examines. Use transitions when they express a reason, condition, comparison, or consequence; a transition alone cannot supply missing reasoning.
+
+State the main question and its stakes confidently in an opening. Develop the action or inferential problem before the method, and explain why the method bears on that question. A philosophical discussion may begin with a familiar premise and the question it leaves unresolved, then move to a concrete marketing decision. Detailed conditions belong beside the results they govern; retain an opening qualification when omitting it would change the central claim.
 
 ## Vocabulary and Voice
 
 Use familiar words and precise verbs: define, compare, estimate, calculate, construct, show, and explain. Name the person who chooses, the cost that changes, or the outcome being measured. Explain a technical term through its role before relying on its label. Retain established terminology when its precise meaning matters.
 
 Use one name for each outcome and analytical object across notes, slides, equations, figures, code documentation, and resource guides. Vary sentence structure without renaming the same object. Preserve source terminology, literal data fields, code identifiers, accurate titles, and quotations. Explain any distinction introduced by a new term.
+
+Use parentheses for a brief definition, example, or secondary clarification that lets the main sentence continue naturally. Keep consequential assumptions and reasoning in the main sentence or adjoining prose. Use selective italics for a distinction central to the argument. Avoid nested asides, long parenthetical arguments, and emphasis added merely for decoration.
 
 Use **assessment** for data quality and support for a claim, **evaluation** for comparisons of performance or outcomes, **verification** for checking calculations or records, and **investigation** for an unresolved mechanism. Preserve “audit” in an original title, quotation, or specific institutional procedure when necessary for accuracy.
 
@@ -1917,6 +1923,8 @@ Use **Marketing Analytics** as the title and **By Nathan Yang** as the author. K
 Use parenthetical author–year citations for research and philosophical sources, such as (Author, 2026), (Author and Author, 2026), and (Author et al., 2026). State the argument, method, or finding directly in the prose. Avoid authors' names as sentence subjects, possessive descriptions of studies, first-name references, and author-centered teaching headings. Place the citation beside the supported claim and retain its source link and any useful page or section locator.
 
 Use the year of the cited publication or identified version. Use n.d. for an undated source; a download date is not its publication year. Preserve complete author metadata in bibliographic catalogs, exact quotations, original source titles, established method and philosophical-tradition names, and the instructor byline. Keep source readings unchanged. Apply the same citation convention to notes, slides, captions, examples, and original resource annotations.
+
+Retain a citation because it supports a premise, method, finding, or substantive comparison used in the explanation. When comparing studies, identify the differing assumption, intervention, observation, or outcome and explain its consequence. Integrate that comparison into the argument. A shared topic alone does not justify an additional literature summary.
 
 ## Claims and Qualifications
 
@@ -1934,6 +1942,8 @@ Omit editorial metacomments from teaching prose, captions, and presenter notes: 
 
 Introduce an equation through the quantity it measures or the question it answers. Define symbols, timing, information, conditioning, and units locally. Explain its terms and economic meaning immediately afterward. Identify who pays a cost, who receives a payment, and whether it is one-time or recurring.
 
+Explain what a parameter changes or a calculation establishes before using shorthand. Describe a numerical adjustment through the quantity adjusted and its reason, preserving the distinction between a computational operation and an economic change. Retain exact technical terms in definitions, mathematical results, and proofs where their meaning is needed.
+
 Keep assumptions, definitions, identities, proven consequences, and illustrative inputs distinct. Put substantive theoretical and mathematical inference restrictions in numbered, labeled assumption environments when a formal result uses them. Explain empirical interpretation conditions in connected prose. Reporting instructions are documentation requirements, not assumptions about the economy.
 
 Introduce a numerical example with its benchmark and the object that changes. State values directly with “Suppose” or “Set.” Identify synthetic data in the setup and in standalone exhibits when needed. Omit redundant sentences such as “The inputs are imposed” after the values and their illustrative role are clear. Preserve distinctions between an illustration, an estimated model, and a solved equilibrium.
@@ -1945,6 +1955,8 @@ Every data example retains complete runnable Python and its matching source file
 Introduce a philosophical idea through the question it clarifies about a marketing practice. Identify the person's choice, information, reasons, and authority before relying on abstract terminology. Connect each premise to a specific inference or action. Keep a source's philosophical claim distinct from its contemporary marketing application.
 
 Develop the connection between commercial outcomes, customer outcomes, and justification. Explain the further premise needed where the argument moves from behavior to welfare, consent, or permissible conduct. A philosophical principle can motivate scrutiny without determining an arbitrary numerical threshold. End with the supported consequence for the affected customers, firms, or decision makers; omit a generic recap or repeated limitations paragraph.
+
+Let the philosophical idea lead the explanation. Translate it into the action, inference, or obligation at issue, then attach its source citation. Preserve the ambition of the question while identifying what the analytical construction establishes. An empirical gap, a limit on theoretical knowledge, and a normative objection have different roles in the argument.
 
 ## Headings, Figures, and Slides
 
@@ -1961,6 +1973,8 @@ Slides state the decision, comparison, and result concisely; presenter notes dev
 Edit lecture prose in `06_Lecture_Notes/modules/` and slide content in `05_Slides/source/sessions.json`. Keep examples and their documentation in `03_Data_and_Code`, guided practice in `07_Labs`, and the syllabus in `02_Syllabus`. Original resource annotations follow this guide. Readings, downloaded repositories, licenses, and quotations retain their source wording.
 
 Current explicit instructions take precedence. Preserve purposeful author wording and material evidence when resolving a conflict. Reconcile meanings across affected files, rebuild generated outputs, and regenerate `llms-full.txt`. Grading rules, deadlines, attendance policies, and assessment-specific AI permissions come from released course documents.
+
+Preserve the instructor's deliberate wording and conceptual emphasis. When surrounding passages repeat an author-written point, edit that surrounding prose first. Correct clear grammatical errors without automatically softening an intended claim. Apply other projects' transferable writing preferences without importing their manuscript titles, protected abstracts, page limits, model-specific terminology, or exhibit palettes.
 
 ---
 
@@ -2396,23 +2410,23 @@ The syllabus includes network compression and retail access in Meeting 7 and lab
 
 ## Definitions and Evidence in the Course Outline
 
-The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Dates, times, room, and stable calendar event identifiers are unchanged. Detailed calculations are available in the lecture notes and two optional ungraded labs.
+The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Detailed calculations are available in the lecture notes and two optional ungraded labs.
 
 ## Representation Alignment Coverage
 
-The worked examples include replacement text features and classifier compatibility in Sessions 7 and 11, followed by model agreement and independent reasons in Session 14. The [optional lab](../07_Labs/Representation_Alignment/README.md) adds no graded requirement. Session 11 reallocates five minutes within the existing meeting.
+The worked examples include replacement text features and classifier compatibility in Sessions 7 and 11, followed by model agreement and independent reasons in Session 14. The [optional lab](../07_Labs/Representation_Alignment/README.md) develops the numerical comparison.
 
 ## Pricing Systems and Customer Choice
 
-The syllabus includes shared pricing systems and the Wendy's dispute among its cases. Sessions 5 and 14 connect an original synthetic pricing model to source evidence and Kantian and Confucian evaluation. The [optional lab](../07_Labs/Pricing_Competition/README.md) provides the full Python exercise. Existing dates, meeting durations, and pending assessment rules are preserved.
+The syllabus includes shared pricing systems and the Wendy's dispute among its cases. Sessions 5 and 14 connect an original synthetic pricing model to source evidence and Kantian and Confucian evaluation. The [optional lab](../07_Labs/Pricing_Competition/README.md) provides the full Python exercise.
 
 ## Digital Usage and Customer Access
 
-The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs. The fifteen meeting dates, start and end times, and calendar event topics remain unchanged.
+The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs.
 
 ## Statistical Evidence
 
-The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded; no assessment requirements or meeting dates change.
+The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded.
 
 ## Coding-Workflow Coverage
 
@@ -2420,7 +2434,7 @@ The learning objectives and class-format description include output completeness
 
 ## Evidence and the Recurring Electricity Case
 
-Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.
+Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique.
 
 ---
 
@@ -2642,9 +2656,9 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with t
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 22 editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 24 editable TikZ figures |
 
-The sequence follows the historical syllabus's topics without adopting its dates, grading weights, or AI rules. M8 develops selected current topics; it is not a claim that the predecessor assigned these particular cases. Published research motivates selected cases. Actual mHealth calculations, imposed simulations, and synthetic teaching values are identified separately. No attached private style document or sample syllabus is reproduced here.
+The sequence follows the historical syllabus’s topic families, with current dates and requirements supplied by the released syllabus. Published research motivates selected cases, while empirical mHealth results, simulations, and synthetic examples retain their own assumptions and interpretations.
 
 ## Data, Code, and Numerical Checks
 
@@ -2704,7 +2718,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 122 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 129 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -2866,9 +2880,9 @@ M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54 distinguish data artifacts
 
 A firm may be able to identify who is susceptible to a promotion, predict who will accept a higher price, or estimate which design keeps someone using an application. These capabilities create consequential choices about what to pursue and how to treat people. I regard competence in measurement, statistical inference, experimentation, prediction, and AI-assisted coding as essential. The ability to identify, measure, or predict something does not, by itself, establish that a firm ought to do so or act on the result.
 
-Marketing dialectics examines the premises, purposes, and reasons behind such decisions. Some questions concern what happens under an intervention; others concern whose purposes ought to govern it or what one person owes another. Learning the analytical tools includes understanding which questions they can answer. Philosophical discourse can require a different form of reasoning, even when better data or more powerful methods are available. An estimate can inform an argument without settling its moral premises. Treating every disagreement as a problem of measurement can obscure the disagreement itself.
+Marketing dialectics examines the premises, purposes, and reasons behind such decisions. Some questions concern what happens under an intervention; others concern whose purposes ought to govern it or what one person owes another. Learning the analytical tools therefore includes understanding which questions they can answer and when philosophical discourse requires a different form of reasoning. An estimate can inform an argument without settling its moral premises, even when better data or more powerful methods are available. Treating every disagreement as a problem of measurement can obscure the disagreement itself.
 
-The emphasis on measurable outcomes can also influence which goals receive attention in research and practice. A framework such as SMART can help turn an accepted objective into an operational plan. When measurability becomes a condition for taking a concern seriously, however, objectives that fit a dataset can displace questions about dignity, autonomy, or the authority to refuse. An accurately measured increase in engagement leaves open whether that engagement serves the person's purposes. Precision, predictive accuracy, and unbiased estimation concern the quality of an answer to a specified question. The worth of that question requires further judgment.
+The emphasis on measurable outcomes can also influence which goals receive attention in research and practice. A framework such as SMART can help turn an accepted objective into an operational plan. When measurability becomes a condition for taking a concern seriously, however, objectives that fit a dataset can displace questions about dignity, autonomy, or the authority to refuse. An increase in engagement may be measured accurately while leaving open whether it serves the person's purposes. Precision, predictive accuracy, and unbiased estimation concern the quality of an answer to a specified question; the worth of that question requires further judgment.
 
 I place this judgment in the reasons people can offer one another (Scanlon, 1998, 2009). A marketing practice should be assessed through principles that those affected could not reasonably reject, considering the burdens and feasible alternatives from their respective positions. Commercial advantage and statistical precision supply some reasons for a decision. Consumers' interests, commitments, and authority over their own lives supply others. A defensible ethical position need not wait for every relevant consideration to acquire a numerical measure. It requires explicit premises, attention to objections, and scrutiny of the factual claims on which it rests.
 
@@ -3948,7 +3962,7 @@ The row counts do not establish physical restaurant counts, representative sampl
 
 Marketing Analytics. By Nathan Yang.
 
-Three offline cases connect public signals, retention, and price sensitivity. They use the supplied [resource bundle](../../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/README.md), with its original files preserved. Public captures are dated observations supplied with that bundle. The consumer panel is entirely synthetic. Neither the panel nor the regression slopes estimate the real AI market.
+Three offline cases connect public signals, retention, and price sensitivity using the supplied [resource bundle](../../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/README.md). The public captures are dated observations, while the consumer panel is synthetic and generates comparisons under its stated assumptions. Its regression slopes therefore describe the simulation rather than estimates of the real AI market. The original resource files remain intact.
 
 ## Cases and Commands
 
@@ -5002,7 +5016,7 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. The course applies measurement, visualization, regression, conjoint analysis, segmentation, lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation to product design, acquisition, retention, pricing, and budgets.
 
-Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to consumer agency, conflicts of interest, and regulation. Students examine the worth of objectives, make premises explicit, test counterexamples, and apply the same evidential standards to claims and criticisms. the phenomena–noumena distinction (Kant, 1781/1787) and an ontological spectrum connect measurement to persons, authority, and obligations. Commercial effectiveness and statistical precision require further reasons to justify recommendations.
+Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics connects these analytical choices to consumer agency, conflicts of interest, and regulation through Kantian, Confucian, and Scanlonian philosophy. Students examine which objectives deserve pursuit, make premises explicit, and test claims and criticisms against the same evidential standards. The phenomena–noumena distinction (Kant, 1781/1787) and an ontological spectrum connect measurement to persons, authority, and obligations. A recommendation therefore requires reasons that extend beyond commercial effectiveness and statistical precision.
 
 ## Learning Objectives
 
@@ -5589,7 +5603,7 @@ IDs belong to the `marketing-dialectics` namespace in this folder's catalog. The
 
 ## Distinctions That Matter
 
-Transcendental dialectic addresses reason and metaphysical cognition. The contemporary marketing cases are adaptations, with distinct objects from the original antinomies. Kantian ethics comes from a distinct practical-philosophy argument. A fixed thesis–antithesis–synthesis recipe misrepresents this approach.
+Transcendental dialectic examines the claims reason makes about objects beyond possible experience. Applying that inquiry to marketing requires identifying the object and inference under examination, since the contemporary cases differ from the original antinomies. Kantian ethics supplies a distinct practical argument about conduct. Neither inquiry reduces to a fixed thesis–antithesis–synthesis recipe.
 
 A material conflict of interest warrants scrutiny and can justify placing a burden of substantiation on the firm controlling the practice and information. That position differs from a factual finding that every firm is guilty. The burden should identify evidence that could support, narrow, or defeat a claim.
 
@@ -5653,7 +5667,7 @@ CSV booleans are strings on disk. A future CSV loader must explicitly map `True`
 
 ## Interpretation and Verification
 
-All-customer shares use each population's full 1,000 customers. The conditional unwanted share uses its 900 billed customers. Non-billed customers remain in the population. Missing intent remains unknown; the lower bound counts observed unwanted billing, and the upper bound adds every billed customer with unknown intent. These bounds presume the known intent labels are correct. They are descriptive bounds, not confidence intervals.
+All-customer shares retain each population’s full 1,000 customers, including those who are not billed, while the conditional unwanted share uses its 900 billed customers. For billed customers with unknown intent, the lower bound counts only observed unwanted billing and the upper bound adds every unknown case. Assuming the known intent labels are correct, these are descriptive bounds on the unknown share; sampling uncertainty would require a separate calculation.
 
 The output is 900 billed, 880 wanted and billed, and 20 unwanted and billed in A; the corresponding counts in B are 900, 600, and 300. Both include 20 who wanted renewal but were not billed. Independent tests check missing intent, denominator changes, zero billing, duplicate keys, and mistaken string booleans. Run status is recorded in [verification.json](verification.json).
 
@@ -5673,7 +5687,7 @@ The claim that higher renewal demonstrates customer benefit contains a premise: 
 
 The critique of dialectical reasoning (Kant, 1781/1787) asks how reason comes to treat its own demands for explanation as knowledge about objects. In a marketing application, the corresponding discipline is to identify what connects an observed result to a broader claim. This is an adaptation of this critical approach to an empirical decision. A disputed interpretation of a customer metric is not, by itself, a transcendental antinomy. The philosophical connection concerns the examination of premises and the limits of a conclusion.
 
-Three questions organize the decision. What does the evidence establish about the practice? Which assumptions connect that finding to customer interests? Which ethical principles justify the action? A favorable answer to one question leaves the others substantive. An experiment may identify an increase in purchases while leaving the quality of consent unresolved. A transparent offer may respect a customer's choice while producing too little revenue to remain commercially viable.
+A decision depends on what the evidence establishes about the practice, which assumptions connect that finding to customer interests, and which ethical principles justify the action. These questions have distinct roles in the argument. An experiment may identify an increase in purchases while leaving the quality of consent unresolved, so the causal finding alone leaves the ethical premise open. Conversely, a transparent offer may respect a customer's choice while producing too little revenue to remain commercially viable.
 
 ![A commercial outcome, a customer outcome, and an ethical judgment require different supporting premises.](../figures/M09_claim_scope.png)
 
@@ -5717,7 +5731,7 @@ A descriptive claim records an observed pattern. A predictive claim concerns per
 
 The most useful objection identifies a premise on which the recommendation depends. For an advertising claim, that premise might be that exposed and unexposed customers would have bought at the same rate without exposure. For a cancellation claim, it might be that continued billing expresses an informed wish to renew. For a recommendation claim, it might be that the platform's engagement objective adequately represents the customer's purpose. Once the premise is stated, the analyst can ask which observation, design, or argument would support it and which would undermine it.
 
-Disagreement then has several possible resolutions. A claim can be accepted within a specified population and horizon. Its scope can be narrowed, its mechanism revised, or its recommendation rejected. Judgment can also be suspended when a consequential premise remains unresolved. There is no requirement to compromise between a supported claim and an unsupported objection. Transcendental dialectic should not be presented as a mechanical sequence in which every thesis requires an antithesis and an inevitable synthesis. Later dialectical traditions require their own interpretation. [(Maybee, 2016)](https://plato.stanford.edu/entries/hegel-dialectics/)
+Disagreement can lead to acceptance within a specified population and horizon, a narrower claim, a revised mechanism, or rejection of the recommendation. When a consequential premise remains unresolved, judgment may be suspended until that premise receives support. The appropriate resolution follows from the reasons and evidence, without requiring a compromise between a supported claim and an unsupported objection. Transcendental dialectic therefore provides no mechanical sequence of thesis, antithesis, and inevitable synthesis; later dialectical traditions require their own interpretation [(Maybee, 2016)](https://plato.stanford.edu/entries/hegel-dialectics/).
 
 Critical examination also applies to the criticism. A claim that all advertising overrides agency must account for advertising that communicates useful price, availability, or quality information. A claim that personalization always benefits customers must account for inaccurate inferences, concealed incentives, and customers whose goals differ from the model's objective. The burden is to explain the scope of each argument and the evidence that bears on it.
 
@@ -5893,7 +5907,7 @@ A Kantian evaluation therefore preserves the experimental finding while examinin
 
 \noindent A recommendation system can reduce search costs by selecting items that fit a customer's interests. It can also shape the information from which later interests are inferred. Netflix's account of artwork personalization describes selecting different images to help members discover titles. The description supplies a concrete industry mechanism: presentation changes which features of an item attract attention. It does not establish that every resulting viewing decision serves the member's considered purpose. [Chandrashekar, Amat, Basilico, and Jebara (2017)](https://netflixtechblog.com/artwork-personalization-c589f074ad76)
 
-Two claims deserve scrutiny. One says that selecting an item reveals benefit because the customer clicked. The other says that an algorithm's influence on attention necessarily removes agency. Both can ignore the process by which the person understands and evaluates the recommendation. Useful information can change a preference through learning. A misleading representation can induce a choice the customer would reject after learning the relevant facts. The ethical comparison therefore turns on the information supplied and the person's capacity to reflect on it. A change in behavior is compatible with both learning and deception.
+A click can be interpreted as evidence of benefit, while an algorithm's influence on attention can be interpreted as a loss of agency. Both interpretations require an account of how the person understands and evaluates the recommendation. Useful information can change a preference through learning; a misleading representation can induce a choice the customer would reject after learning the relevant facts. Because either process can change behavior, ethical evaluation must examine the information supplied and the person's capacity to reflect on it.
 
 ![A recommendation affects exposure and recorded behavior; customer goals and the ability to revise the rule supply information outside that feedback loop.](../figures/M09_goal_revision.png)
 
@@ -6508,7 +6522,7 @@ The existence of a favorable model establishes compatibility. A conclusion that 
 
 **A mean becomes a statement about every household.** A conclusion about an average and a conclusion about each person use different quantifiers. The equal-average allocations in §2.28 show that a two-dollar mean can arise from a uniform small burden or a concentrated larger burden. A perfectly estimated mean would leave that distinction unresolved. Calling the mean harmless further requires a justified threshold and a welfare interpretation that accounts for exposure, resources, and time.
 
-These arguments have different defects. The ownership and cost examples change the meaning of an analytical object. The average-to-each-person claim changes the quantifier. The residual and mechanism claims omit identifying premises. The nonrejection claim assigns a conclusion the test was not designed to establish. Giving every defect the same fallacy label would hide the evidence needed to repair it.
+The evidence needed to repair an argument depends on its defect. The ownership and cost examples require stable meanings for their analytical objects, while the average-to-each-person claim requires evidence about the distribution across households. The residual and mechanism claims need identifying premises, and the nonrejection claim needs a test designed to assess the conclusion being asserted. Giving every defect the same fallacy label would obscure these different requirements.
 
 ### 9.27.3 Historical Fit and Future Necessity
 
@@ -6736,7 +6750,7 @@ For the data-center communication, a defensible conclusion is that authors and p
 
 \noindent Wendy's February 27, 2024 statement described digital menu boards, slower-period discounts, and value offers, while stating that the company had no plans to raise prices at its busiest times. This is evidence of its stated policy and public framing. Implementation and customer outcomes require separate evidence. The statement could accurately correct a misunderstanding; the commercial interest in a favorable interpretation alone does not establish deception. [Wendy's, *Digital News Update*](https://www.wendys.com/blog/wendys-digital-news-update).
 
-The November 12, 2026 HBS coverage presents the electricity research through a reassuring comparison involving four large technology firms. Its wording goes beyond what the reported subgroup nonrejection establishes, as assessed in §6.33. The article also discusses possible future increases and contractual protection. The verified speaker is an academic institution's publication. A coordinated corporate campaign or a company post making the same claim has not been established. [HBS Working Knowledge, *Blaming Data Centers for Higher Electric Bills? It's Not That Simple*](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple).
+The November 12, 2026 HBS coverage presents the electricity research through a reassuring comparison involving four large technology firms, extending beyond what the reported subgroup nonrejection establishes (§6.33). The article also discusses possible future increases and contractual protection, which matter when assessing the scope of its message. The documented communication comes from an academic institution's publication; establishing a coordinated corporate campaign or a company post making the same claim would require additional evidence. [HBS Working Knowledge, *Blaming Data Centers for Higher Electric Bills? It's Not That Simple*](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple).
 
 The useful connection is the selection of the reference point and the beneficiary. Off-peak discounts direct attention to favorable purchase occasions; a reassuring subgroup comparison directs attention to selected developers. Examine whether the listener is also given the relevant peak-period benchmark, household outcome, uncertainty, and institutional conditions. Distinguish a change in language, a change in the actual policy, and evidence of a change in people's welfare.
 
@@ -6829,7 +6843,7 @@ The paper's own results prevent a stronger universal accusation: the June 2021 r
 
 \noindent An account of irreducible normative reasons allows a fact about a person's circumstances to count in favor of an action without reducing that relation to a predicted choice. The second John Locke lecture distinguishes the normative relation from a demand for unusual physical entities. The question of which people and relationships appear in a dataset is a further application to analytical representation. A feature vector is a representation of someone for a purpose; it is not a complete account of what that person is owed [(Scanlon, 2009, pp. 12–14)](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf).
 
-Consider two hypothetical customers who accept the same $15 offer. One values convenience and has many alternatives. The other must obtain an essential service immediately and cannot reach another provider. Their identical purchases leave the reasons for acceptance unresolved. Suppose a seller can provide a lower price profitably and uses the second person's predicament solely to extract more. A principle permitting that practice faces an objection grounded in avoidable vulnerability. The convenience buyer's reasons may differ even when the fitted demand response is identical. A morally adequate argument must examine the circumstances that distinguish the two positions.
+Consider two hypothetical customers who accept the same $15 offer. One values convenience and has many alternatives; the other needs an essential service immediately and cannot reach another provider. Their purchases agree, yet the circumstances supply different reasons for acceptance. Suppose the seller can profitably charge less and uses the second person's predicament solely to extract more. A principle permitting that practice faces an objection grounded in avoidable vulnerability, even if a flexible demand model fits both customers' responses equally well. A morally adequate argument must examine what distinguishes their positions.
 
 An inequality-sensitive welfare function can discipline an aggregate comparison, but its weights do not answer every objection. A high modeled surplus need not mean a person has ample income or bargaining power. Reducing that surplus does not by itself redistribute from the socially advantaged to the disadvantaged. The mapping from monetary surplus to a defensible interpersonal comparison requires support. Moreover, even an increase in an accepted social welfare function can coexist with a complaint about deception, unauthorized data use, or an avoidable severe burden.
 
@@ -7708,7 +7722,7 @@ Fictional characters can be understood as created, dependent artifacts [(Thomass
 
 The status of a record also differs from the status of what it records. A meter file is created through measurement. An amount legally owed depends partly on applicable tariffs, contracts, and valid administrative acts. Whether the debt is justified to the person who must pay it remains a further question. [Social ontology](https://plato.stanford.edu/entries/social-ontology/) distinguishes what establishes an institutional category from what qualifies an instance for membership. Social dependence gives no reason to dismiss an enforceable obligation or material deprivation as unreal.
 
-Data provenance should therefore include purposes and authority alongside technical transformations. Who required the field? Who chose the unit and permitted categories? Who could correct a record, connect it to another system, or contest its use? Public artifacts can have normative and receptive features alongside their functions [(Thomasson, 2014)](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc). In a contemporary application, a billing record's role includes expectations about payment, correction, and authorized access. Those expectations require evaluation alongside measurement accuracy.
+Data provenance should include the purposes and authority behind the records: who required a field, chose its unit and permitted categories, and could correct a record, connect it to another system, or contest its use. Public artifacts can have normative and receptive features alongside their functions [(Thomasson, 2014)](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc). For a billing record, this means examining expectations about payment, correction, and authorized access alongside measurement accuracy. An accurate charge can still be used in a way that the account holder has reason to challenge.
 
 ### 9.51.1 Incentives Explain Production Without Settling Truth
 
@@ -8256,7 +8270,7 @@ No input download, package installation, credentials, or model account is requir
 
 ## Demand Example
 
-The prediction rule `100 + 5 * volume_index` is imposed, with no model fitting. Each row represents a distinct synthetic store at a common one-week horizon. Segment labels are fixed before calibration. Calibration and evaluation store identifiers are disjoint.
+Each synthetic store contributes one weekly demand outcome, with its forecast fixed at `100 + 5 * volume_index`. Segment labels are defined before calibration, and disjoint store identifiers separate calibration from evaluation. Fixing these objects isolates how the calibration rule changes the intervals without introducing model fitting.
 
 | Field | Definition and Units |
 | --- | --- |
@@ -8271,7 +8285,7 @@ The prediction rule `100 + 5 * volume_index` is imposed, with no model fitting. 
 | `lower`, `upper`, `width` | Prediction-interval endpoints and width, in demand units |
 | `covered` | One when the evaluated outcome lies within the inclusive endpoints |
 
-The calibration sample has 99 stores. The 90% pooled threshold is 10 units; segment thresholds are 8 and 20. No rows are dropped. Evaluation retains all 100 stores, including every interval miss.
+Using all 99 calibration stores gives a 90% pooled threshold of 10 units, compared with segment thresholds of 8 and 20. Evaluation retains all 100 stores, including every interval miss, so the reported coverage uses the full evaluation population.
 
 | Rule and Scenario | Overall Coverage | Regular Coverage | Volatile Coverage | Mean Width, Units |
 | --- | --- | --- | --- | --- |
@@ -9191,7 +9205,7 @@ The four TikZ figures describe, respectively, a bridge-induced distance differen
 
 # Retail Access and Service Priorities
 
-A manager can restore one unavailable location. Which action improves access, and how does that answer depend on the objective? This is optional ungraded practice. Use [the complete programs and frozen inputs](../../03_Data_and_Code/Retail_Accessibility/README.md) and [M5 §§5.21–5.22](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md).
+A manager can restore one unavailable location, creating a choice about whose access to improve. Use [the complete programs and frozen inputs](../../03_Data_and_Code/Retail_Accessibility/README.md) and [M5 §§5.21–5.22](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) to compare the available actions and explain how the preferred location depends on the objective. This exercise is optional and ungraded.
 
 ## 1. Specify the Decision
 
@@ -9211,7 +9225,7 @@ Run `snapshot_access.py`. Check the four restaurant IDs, the October snapshot, t
 
 ## 5. Separate a Map from Its Measurement
 
-Run `cartography.py`. Calculate the outer square's area, the hole's area, and their difference by hand. Compare reachable nodes before and after filling. Formulate a chart caption that states both results. Explain why filling a visual gap does not create a bridge or grant access across a private parcel.
+Run `cartography.py` and calculate the outer square’s area, the hole’s area, and their difference by hand. Compare the reachable nodes before and after filling the hole, then write a caption that explains the area change alongside the access result. Use the distinction to explain why filling a visual gap creates neither a bridge nor permission to cross a private parcel.
 
 ## 6. Evaluate the Service Objective
 
@@ -9259,7 +9273,7 @@ For mHealth, a discontinuity in recorded intake can reflect changed logging, mis
 | How serious is the event? | Affected customers, duration, lost service, recovery cost, and the customer's purpose | Determines priority and the proportional response |
 | Did the response help? | A credible intervention comparison and subsequent customer outcomes | Evaluates the remedy |
 
-These rows specify a proposed marketing evaluation. They are not a replication of the SHAD metrics. A rare observation can be benign, and a frequent practice can still harm customers. Statistical unusualness and the desirability of intervention answer different questions.
+The proposed marketing evaluation asks whether an alert supports a useful intervention, a question that extends beyond replication of the SHAD metrics. A rare observation may be benign, while a frequent practice may harm customers. The decision therefore needs evidence about the mechanism and consequences alongside statistical unusualness.
 
 ## AI-Assisted Coding and Evaluation
 
@@ -10158,7 +10172,7 @@ For the ridge model, solve the two normal equations with two Source A rows, thre
 
 ## Change One Assumption
 
-In a separate copy, replace the sum loss with mean squared error and keep the numerical penalty fixed. Derive the equivalent effective penalties before changing the code. Compare the added-data curve with the original. Explain why changing normalization changes the experiment. Preserve the unrelated-task comparison and the all-Source-B endpoint.
+In a separate copy, replace the sum loss with mean squared error while keeping the numerical penalty fixed. Derive the resulting effective penalties before changing the code, then use them to explain how normalization changes the added-data experiment. Compare the new curve with the original while retaining the unrelated-task comparison and the all-Source-B endpoint.
 
 Ask an AI coding assistant to add a sensitivity table with explicit feature scales, penalties, counts, and score units. Inspect its algebra against the original-feature calculation above. Check whether it adds an intercept, normalizes the loss, or labels a score as a probability. Record material AI assistance accurately.
 
@@ -10671,7 +10685,7 @@ The [clustering source guide](../01_Resources/23_Clustering_Optimization/README.
 
 ## Authoring and Export Portability
 
-[The Suzuri source review](../01_Resources/30_Research_Writing_and_Coding/README.md) motivates keeping notes, code, source descriptions, and expected results together. Its inspected HTML exporter creates a standalone document and converts internal wikilinks to display text. The future course site should preserve standard relative links and stable module identifiers, with separate checks for navigation, calculation, rendering, and accessibility. The [released optional exercise](../07_Labs/Reproducible_Recommendations/README.md) supplies a generated recommendation, numerical evidence, and a repeat-weight figure for evaluating a later prototype. No editor or site framework has been selected.
+[The Suzuri source review](../01_Resources/30_Research_Writing_and_Coding/README.md) motivates keeping notes, code, source descriptions, and expected results together. Because its inspected HTML exporter converts internal wikilinks to display text, a course site needs separate checks that exported navigation preserves standard relative links and stable module identifiers. The [released optional exercise](../07_Labs/Reproducible_Recommendations/README.md) provides a recommendation, numerical evidence, and a repeat-weight figure for assessing calculation, rendering, and accessibility alongside navigation.
 
 ## Representative Page Checks
 
@@ -10848,7 +10862,7 @@ python3 03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.p
 python3 -m unittest discover -s 03_Data_and_Code/Reproducible_Recommendations -p 'test_*.py' -v
 ```
 
-Read the [generated recommendation](../../03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md) beside its [evidence file](../../03_Data_and_Code/Reproducible_Recommendations/results/evidence.json). First calculate the p01 rating from weights `(0, .05, .15, .30, .50)`. Then compare `(4.25 + 3.70)/2` with `(2 × 4.25 + 3.70)/3`. Explain why an identical repeat changes the second quantity. Inspect the repeat-count figure while holding both persona ratings fixed.
+Read the [generated recommendation](../../03_Data_and_Code/Reproducible_Recommendations/results/recommendation.md) beside its [evidence file](../../03_Data_and_Code/Reproducible_Recommendations/results/evidence.json), and calculate the p01 rating from weights `(0, .05, .15, .30, .50)`. Compare `(4.25 + 3.70)/2` with `(2 × 4.25 + 3.70)/3` to identify which weighting rule changes after an identical repeat. Use the repeat-count figure, holding both persona ratings fixed, to explain why the intended unit must determine the denominator.
 
 Next assess this deliberately unsupported statement: “The pooled system achieves a high distribution score, so concepts A and B should launch.” Identify the unresolved shortlist, the reference-based construction of the candidate pattern, and the absent customer-demand evidence. A numerical claim and an action recommendation require different support. The reversed pattern selects F and E and retains zero of the reference top two. Explain why its measured zero differs from the pooled pattern's undefined recall.
 
@@ -12224,7 +12238,7 @@ An outreach team needs the distribution of recorded logging activity among custo
 
 ## Check by Hand
 
-Use an invented roster A, B, C and a July 1–August 1 half-open interval. A has records on June 30, July 1, and a repeated July 1. B has records on July 31 and August 1. C has none. A separate user Z has a July 3 record. The required logged-day counts are A=1, B=1, C=0. The mean rate is 2/93. Explain each excluded record and why summing the food-entry count would answer a different question.
+Use the invented roster A, B, and C over the half-open interval from July 1 to August 1. A has records on June 30 and July 1, including a repeated July 1 record; B has records on July 31 and August 1; C has none. User Z, who is outside the roster, has a July 3 record. Counting distinct eligible days gives A=1, B=1, and C=0, with a mean rate of 2/93. Explain how the roster, date boundaries, and duplicate rule produce these counts, and why counting food entries would answer a different question.
 
 Run the independent tests from the repository root:
 
@@ -12246,7 +12260,7 @@ Record every assigned attempt, its model version, visible files, commands, revis
 
 ## Cost and Authority
 
-Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py). Recalculate the comparison at an analyst cost of $30 per hour and explain which cost categories change. These are hypothetical inputs. A sensitivity calculation does not estimate labor savings.
+Run [workflow_costs.py](../../03_Data_and_Code/Agent_Workflows/workflow_costs.py), then lower the hypothetical analyst cost to $30 per hour. Explain which cost categories change and how that changes the preferred workflow. The calculation assesses sensitivity to an assumed wage; estimating actual labor savings would require observed time and cost evidence.
 
 Consider a cancellation agent instructed to require a retention survey before accepting a customer's unambiguous request to cancel. State the customer's requested outcome, the firm's objective, the action performed, and the relevant sources of authority. Apply the Kantian and Confucian arguments from M9. Explain what additional evidence is needed to assess the firm's claim that the procedure benefits customers.
 
@@ -12994,7 +13008,7 @@ Use `illinois_map.csv` and the two M2 maps. Compare MCI and CCI for one named ar
 
 ## 4. Compare Regressions on One Sample
 
-Run `compare_models.py`. Reproduce the positive simple CCI slope and negative adjusted slope. Explain the comparison defined by education, broadband, and state intercepts. Compare the household-weight sensitivity with the equal-area projection. Give a concrete causal question about an assistance offer and identify the evidence this geographic regression lacks for answering it.
+Run `compare_models.py` to reproduce the positive simple CCI slope and negative adjusted slope, then explain how conditioning on education, broadband, and state intercepts changes the comparison. Assess sensitivity to household weights against the equal-area projection. Finally, formulate a causal question about an assistance offer and identify the additional evidence required to answer it.
 
 ## 5. Compare Geographic Groupings
 
@@ -13481,7 +13495,7 @@ A decision requires an effect, uncertainty, an economically meaningful compariso
 - [(Thomasson, 2025)](https://doi.org/10.1093/9780197787830.003.0011) and [Norms and Necessity](https://academic.oup.com/book/33564): concepts, rules, and their functions. Contemporary applications distinguish measurements, household burdens, and authority.
 - [(Kant, 1785)](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm): universal law and humanity formulations; the course's public-reassurance application is an analytical argument.
 
-The [source review](SOURCE_REVIEW.md) records rights, version, reading scope, and access. The [programs](../../03_Data_and_Code/Statistical_Inference/README.md) reproduce all numerical examples. The [lab](../../07_Labs/Statistical_Inference/README.md) is optional ungraded practice. Sessions 4, 9, and 14 use selected comparisons within existing meeting allocations.
+The [programs](../../03_Data_and_Code/Statistical_Inference/README.md) reproduce the numerical examples used in Sessions 4, 9, and 14, and the [optional ungraded lab](../../07_Labs/Statistical_Inference/README.md) extends those comparisons. The [source review](SOURCE_REVIEW.md) records each reading’s version, access, rights, and reading scope.
 
 ## Logical Arguments and Inverse Power
 
@@ -13749,7 +13763,7 @@ A company must decide which actions it ought to take when commercial objectives 
 
 *What We Owe to Each Other* (Scanlon, 1998, chapter 5) compares principles through the reasons people could have for rejecting them. The course cancellation example compares mandatory persuasion with a feasible secure exit. A serious objection can require changing either the proposed principle or the facts assumed in applying it.
 
-The 2009 John Locke Lectures add two useful distinctions. Lecture 2 treats reasons in relation to a person, circumstances, and action. Lecture 4 examines justification through reflective equilibrium. A factual premise, a normative premise, and a conditional conclusion each need appropriate support. These are selected applications, not a complete reconstruction of contractualism.
+Reasons depend on a person’s circumstances and the action being considered, while justification requires examining principles alongside considered judgments (Scanlon, 2009, lectures 2 and 4). These distinctions guide the cancellation argument: its factual premise, normative principle, and conditional conclusion each need the appropriate kind of support. A factual correction may change the application without settling whether the proposed principle is justified.
 
 - [1998 chapter excerpt](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf): chapter 5, §§1–3, especially the comparative discussion on pp. 195–196.
 - [2009 Lecture 2](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf): pp. 12–14 on reasons and circumstances.
@@ -13856,7 +13870,7 @@ Choose a precise claim from a paper, an AI-generated report, or a proposed marke
 4. **Assess the missing premise.** Explain what rules out the counterexample and why that additional restriction or principle deserves acceptance.
 5. **Revise the conclusion.** State what follows and identify evidence or reasons that would strengthen, weaken, or reverse it.
 
-Use [ARGUMENT_RECORD.md](ARGUMENT_RECORD.md) to record the argument. A counterexample to a universal inference need not be common. Establishing that it describes the actual setting requires empirical support. The five-step sequence also applies to your own criticism.
+Record the argument in [ARGUMENT_RECORD.md](ARGUMENT_RECORD.md), applying the same five-step scrutiny to your own criticism. A counterexample need not be common to invalidate a universal inference, but showing that it describes the actual setting requires empirical support. State which of these tasks your evidence addresses.
 
 ## Equal Fit and Different Policy Effects
 
@@ -14640,7 +14654,7 @@ Change the price to USD 125/MWh and usage to 0.8 MWh per account-month. State ho
 
 ## Compare Reported Magnitudes
 
-Run [learning_comparisons.py](../../03_Data_and_Code/Learning_Design/learning_comparisons.py). Explain why 78% versus 67% yields an 11-point difference and a relative increase of approximately 16.42%. Identify the denominator for each calculation. The inputs are rounded published percentages; no sampling uncertainty is reconstructed.
+Use [learning_comparisons.py](../../03_Data_and_Code/Learning_Design/learning_comparisons.py) to compare the rounded published percentages of 78% and 67%. Explain why they imply an 11-point difference and a relative increase of approximately 16.42%, identifying the denominator for each calculation. These arithmetic comparisons reconstruct no sampling uncertainty.
 
 ## Identify a Component Effect
 

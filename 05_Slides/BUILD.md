@@ -36,4 +36,4 @@ The small examples use only Python's standard library. They cover the projected 
 
 Render PDFs with Poppler, inspect every page, and review compilation warnings before publication. Check code and equation readability, chart labels, table widths, and text near the orange rules. Check presenter mode separately. Page counts must agree with the content source, and every local link in a companion must resolve. Compilation verifies TeX execution; it does not establish the validity of an empirical interpretation.
 
-The [verification record](verification.json) identifies the November 24, 2026 writing revision, with artifact hashes, compilation, visual review, source comparisons, and execution scope. Earlier revisions remain in dated fields.
+The [verification record](verification.json) identifies the November 26, 2026 writing revision, with artifact hashes, compilation, visual review, source comparisons, and execution scope. Earlier revisions remain in dated fields.

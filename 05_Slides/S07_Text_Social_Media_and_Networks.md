@@ -235,7 +235,7 @@ Source: M5, Section 5.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 - Choose dimensions on validation; retain every test category.
 - Recorded categories define the target, including ambiguous labels.
 
-The mHealth sample uses 6,000 training descriptions, 1,500 validation descriptions, and 1,500 test descriptions with equal weights. Normalized descriptions are disjoint across splits; users and periods are shared. Seventy-four test descriptions have multiple recorded categories. The modal category uses an alphabetical tie break. Categories such as default and recipe are retained. Nutritional correctness requires an independently justified reference.
+The mHealth comparison gives equal weight to 6,000 training descriptions, 1,500 validation descriptions, and 1,500 test descriptions. Normalized descriptions are disjoint across splits, although users and periods are shared, so the test concerns new descriptions within that setting. Seventy-four test descriptions have multiple recorded categories; the modal category with alphabetical tie breaking defines the reference. Retaining categories such as default and recipe makes agreement with the recorded system the measured outcome. Nutritional correctness requires a separately justified reference.
 
 Source: M5 §5.26. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md
 
@@ -372,7 +372,7 @@ Four fictional pricing questions; authored answers and reference annotations.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M05_source_selection.tex)
 
-S1 reports a price increase and a before-after unit change without a causal design. S2 is an unanswered analyst question about discounts. S3 defines a selected panel-member denominator. S4 incorrectly asserts causality and a discount announcement. Citation presence does not establish that an inference is justified. No model responses were collected, so these counts measure no effect of context.
+The synthetic records support different kinds of statements: S1 reports a price increase and a before-after unit change without a causal design, S2 contains an unanswered question about discounts, and S3 defines a selected panel-member denominator. S4 incorrectly converts these records into claims of causality and a discount announcement. The comparison shows why citations must support the particular inference being made. Because no model responses were collected, the counts describe these constructed claims and establish no effect of context on model performance.
 
 Source: M5 §5.19. ../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md
 

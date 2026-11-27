@@ -28,7 +28,7 @@ For mHealth, a discontinuity in recorded intake can reflect changed logging, mis
 | How serious is the event? | Affected customers, duration, lost service, recovery cost, and the customer's purpose | Determines priority and the proportional response |
 | Did the response help? | A credible intervention comparison and subsequent customer outcomes | Evaluates the remedy |
 
-These rows specify a proposed marketing evaluation. They are not a replication of the SHAD metrics. A rare observation can be benign, and a frequent practice can still harm customers. Statistical unusualness and the desirability of intervention answer different questions.
+The proposed marketing evaluation asks whether an alert supports a useful intervention, a question that extends beyond replication of the SHAD metrics. A rare observation may be benign, while a frequent practice may harm customers. The decision therefore needs evidence about the mechanism and consequences alongside statistical unusualness.
 
 ## AI-Assisted Coding and Evaluation
 

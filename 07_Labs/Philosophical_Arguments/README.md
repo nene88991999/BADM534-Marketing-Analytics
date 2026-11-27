@@ -69,7 +69,7 @@ Choose a precise claim from a paper, an AI-generated report, or a proposed marke
 4. **Assess the missing premise.** Explain what rules out the counterexample and why that additional restriction or principle deserves acceptance.
 5. **Revise the conclusion.** State what follows and identify evidence or reasons that would strengthen, weaken, or reverse it.
 
-Use [ARGUMENT_RECORD.md](ARGUMENT_RECORD.md) to record the argument. A counterexample to a universal inference need not be common. Establishing that it describes the actual setting requires empirical support. The five-step sequence also applies to your own criticism.
+Record the argument in [ARGUMENT_RECORD.md](ARGUMENT_RECORD.md), applying the same five-step scrutiny to your own criticism. A counterexample need not be common to invalidate a universal inference, but showing that it describes the actual setting requires empirical support. State which of these tasks your evidence addresses.
 
 ## Equal Fit and Different Policy Effects
 

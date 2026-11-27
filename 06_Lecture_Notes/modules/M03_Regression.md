@@ -1,6 +1,6 @@
 # M3. Regression, Interpretation, and Marketing Decisions
 
-A retailer observes that stores with larger advertising budgets sell more. The manager wants to know whether another dollar of advertising would be profitable. The observed relationship combines the response to advertising with differences in store size, local demand, seasonality, and the firm's reasons for choosing the budget. Regression provides a way to summarize conditional relationships. Its value depends on which variation identifies the comparison and whether that comparison answers the manager's question.
+A retailer observes that stores with larger advertising budgets sell more and wants to know whether another dollar of advertising would be profitable. The observed relationship combines the response to advertising with differences in store size, local demand, seasonality, and the firm's reasons for choosing the budget. Regression summarizes conditional relationships, allowing the manager to compare stores with similar measured characteristics. Whether that comparison answers the investment question depends on the variation identifying it and the remaining reasons advertising budgets differ.
 
 ## 3.1 A Conditional Mean and a Regression Line
 
@@ -60,7 +60,7 @@ A level-level specification gives an additive interpretation: one more unit of $
 
 A log-log demand model, $\log Q=\alpha+\beta\log P+\varepsilon$, gives $\beta$ an elasticity interpretation over the range where the specification applies. If $\beta=-1.5$, a 1% higher price is associated with approximately 1.5% lower quantity. Sales revenue is $PQ$, so its local price elasticity is $1+\beta=-0.5$. Profit also depends on unit cost. A price that raises revenue can still lower profit, and observed prices can be endogenous because firms set them in response to demand.
 
-Zero and negative outcomes need deliberate treatment. Taking a logarithm of zero is undefined. Adding one changes the scale and interpretation, especially when values are small or the unit of measurement changes. A two-part model can separate purchase incidence from positive expenditure. A suitable generalized linear model may model the conditional mean directly. The choice should reflect the outcome and intended estimand, with diagnostics for the selected specification.
+Zero and negative outcomes constrain the choice of scale because their logarithms are undefined in a real-valued model. Adding one before taking logs changes the interpretation, especially for small values or after a change in measurement units. When the outcome is nonnegative expenditure, a two-part model can distinguish purchase incidence from the amount spent conditional on purchase, while a suitable generalized linear model can describe the conditional mean directly. Choose the specification for the outcome and intended estimand, then evaluate its fit through appropriate diagnostics.
 
 Back-transforming a predicted log outcome also needs care. Exponentiating the predicted conditional mean of $\log Y$ generally does not produce the conditional mean of $Y$, because exponentiation is nonlinear. Retransformation methods or a model for the mean on the original scale may be needed when total sales is the target. Evaluate predictions in the units used for the managerial decision.
 
@@ -109,7 +109,7 @@ The bootstrap treats observed user histories as draws from a common user distrib
 
 Residual patterns help determine whether the fitted relationship adequately describes the comparison. Plot residuals against fitted values and important predictors to examine nonlinearity and changing variance. Investigate influential observations, errors in units, and unusual leverage before interpreting a coefficient as a stable guide to the marketing decision. Multicollinearity can make individual coefficients unstable even when predictions are reasonably stable, because several predictors explain nearly the same variation. Removing a variable solely to obtain a smaller p-value changes the question and can introduce omitted-variable bias.
 
-Store fixed effects absorb time-invariant differences between stores. Calendar fixed effects absorb common period-specific shocks. In a store-week panel, a model with both uses changes within stores relative to common time movements. It still requires a valid account of time-varying confounders. If a store raises advertising precisely when an unobserved local event increases demand, the advertising coefficient can remain biased.
+Store fixed effects absorb time-invariant differences between stores, while calendar fixed effects absorb common period-specific shocks. A model with both therefore uses changes within stores relative to common time movements. Time-varying confounders can still bias this comparison: a store may raise advertising precisely when an unobserved local event increases demand. Interpreting the advertising coefficient requires an account of how such local changes enter the assignment of advertising.
 
 A fitted model should be evaluated on the task for which it is used. For prediction, compare held-out errors with a useful baseline. For a descriptive coefficient, inspect support and sensitivity to substantively justified specifications. For a causal effect, assess the design and identifying conditions. A large $R^2$ indicates in-sample fit relative to an intercept-only benchmark; it does not establish a credible intervention comparison.
 
@@ -220,7 +220,7 @@ print(json.dumps(result, indent=2))
 
 ## 3.11 Python Calculations for the Synthetic Cases
 
-The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+Run the program below to write the synthetic examples to CSV and reproduce their calculations. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`; the separate mHealth programs reproduce the observed-data results.
 
 Python source: [m03_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m03_synthetic.py). From its directory, run `python m03_synthetic.py`.
 
@@ -354,7 +354,7 @@ if __name__ == "__main__":
 
 The FTC's advertising-substantiation policy addresses reasonable support for objective express and implied claims before they are disseminated. The necessary support depends on the claim and its context. A technically accurate description of a regression can still invite a broader inference if the surrounding advertisement promises a product benefit. See the [FTC policy statement](https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation).
 
-Consider the mHealth association between recorded food-category breadth and next-day recorded calories. The variables describe logs in the observed sample. A customer-facing claim about weight loss changes both the outcome and the causal interpretation. The available regression does not identify that effect. A defensible empirical statement retains the observed outcome, sample restrictions, timing, coefficient magnitude, and uncertainty. A new claim requires a study designed for its outcome and population.
+The mHealth regression relates recorded food-category breadth to next-day recorded calories in the observed sample. Turning this association into a customer-facing claim about weight loss changes both the outcome and the causal interpretation, neither of which the regression identifies. The supported statement retains the recorded outcome, sample restrictions, timing, coefficient magnitude, and uncertainty. A claim about an effect on weight requires a study designed for that outcome and population.
 
 An evidence table can connect each proposed statement to its estimand, data, identification conditions, and supported wording. AI-generated copy should pass through the same comparison. Fluency does not expand the population or outcome represented by the underlying analysis.
 

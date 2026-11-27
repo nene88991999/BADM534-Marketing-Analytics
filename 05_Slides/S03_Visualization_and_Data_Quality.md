@@ -119,7 +119,7 @@ Source: M2 Section 2.22. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visua
 - Within-customer covariance can make a mean change precise.
 - A before/after change needs a counterfactual design for a causal claim.
 
-In the synthetic example, dropping covariance produces an inapplicable standard error of 18.402 dollars. Reordering complete rows leaves the paired result unchanged. Reassigning only the after values changes the standard error. Resample whole pairs when customers are independent sampling units. Full input data, Python and tests are in Statistical_Graphics.
+In the synthetic example, dropping the covariance between each customer’s before and after values produces an inapplicable standard error of 18.402 dollars. Reordering complete rows preserves the paired result, while reassigning only the after values changes the pairing and its uncertainty. When customers are independent sampling units, resample whole pairs to preserve that dependence. Statistical_Graphics contains the full inputs, Python program, and checks.
 
 Source: ../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/group-comparisons/
 
@@ -231,7 +231,7 @@ Synthetic square road loop. Filling changes the footprint; all four nodes remain
 
 [Editable TikZ](../06_Lecture_Notes/figures/M02_map_footprint.tex)
 
-A two-kilometer square has four two-minute edges. From one corner, all four nodes are reachable within five minutes. The imposed corridor extends 0.1 kilometer to either side; subtract 1.8 squared from 2.2 squared to obtain 1.60 square kilometers. Filling the hole retains 2.2 squared, or 4.84. No route, node, or access permission is added. The geometry is analytic and does not execute an upstream isochrone function.
+A two-kilometer square has four two-minute edges, allowing all four nodes to be reached from one corner within five minutes. Extending a hypothetical corridor 0.1 kilometer to either side gives an area of 2.2 squared minus 1.8 squared, or 1.60 square kilometers. Filling its hole raises the displayed area to 4.84 square kilometers without adding any route, node, or access permission. This analytic geometry calculation shows how a display can change the apparent footprint while preserving access; it does not execute an upstream isochrone function.
 
 Source: Marketing Analytics Lecture Notes. M2 §2.23. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
@@ -252,7 +252,7 @@ Source: Marketing Analytics Lecture Notes. M2 §2.23. ../06_Lecture_Notes/module
 - Alter the axis range, cohort filter, and denominator one at a time.
 - Explain which changes alter the substantive comparison.
 
-The small example runs with ../03_Data_and_Code/Lecture_Examples/session_examples.py S03. The complete mHealth visualization program and interactive chart provide the real-data extension. Verify values separately from rendered readability.
+The small example runs with session_examples.py in the Lecture Examples folder S03. The complete mHealth visualization program and interactive chart provide the real-data extension. Verify values separately from rendered readability.
 
 Source: M2, Section 2.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 

@@ -172,7 +172,7 @@ Source: M2 §2.28 and M3 §3.19. ../06_Lecture_Notes/modules/M02_Customer_Data_a
 
 340 users; June minus May 2016 logging: −5.123 pp.
 
-Membership requires a recorded day before May within the established pseudonym-based cohort. May and June have 31 and 30 calendar days. Zero-log users stay in the denominator. The paired test uses a Student approximation with 339 degrees of freedom and interval [-7.835, -2.411] pp. The independent-day comparison deliberately omits within-user dependence and gives [-6.423, -3.823] pp. Both reject zero, so decision agreement conceals a precision error. This is a descriptive temporal change; no intervention assignment is observed.
+Membership requires a recorded day before May within the established pseudonym-based cohort, with all zero-log users retained. May and June contribute 31 and 30 calendar days respectively. Accounting for the pairing produces a Student interval with 339 degrees of freedom of [-7.835, -2.411] percentage points, while deliberately treating the days as independent gives [-6.423, -3.823]. Both reject zero, illustrating why agreement on a decision can conceal an error in precision. The comparison describes a temporal change because no intervention assignment is observed.
 
 Source: M3 §3.18. ../06_Lecture_Notes/modules/M03_Regression.md
 
@@ -257,7 +257,7 @@ Source: M3, Section 3.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 - Compare pooled and customer-effect specifications.
 - Inspect residuals, outliers, and sample changes.
 
-Run the small OLS case in ../03_Data_and_Code/Lecture_Examples/session_examples.py S04. The mHealth m03.py program supplies the full real-data calculation, including exact-date pairing and clustered inference.
+Run the small OLS case in session_examples.py in the Lecture Examples folder S04. The mHealth m03.py program supplies the full real-data calculation, including exact-date pairing and clustered inference.
 
 Source: M3, Section 3.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md
 
@@ -299,7 +299,7 @@ The CCI income association changes sign after adjustment.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M03_digital_controls.tex)
 
-The slope is in index units per $10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older; broadband is a household share. All models retain the same records. Adding controls changes the association represented by income; it does not identify an income intervention.
+The slope measures index units per USD 10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older, and broadband is a household share. Keeping the records fixed while adding these controls changes the association represented by income. A causal interpretation would require a design that identifies an income intervention.
 
 Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 

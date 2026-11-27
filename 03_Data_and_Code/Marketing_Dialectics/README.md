@@ -26,7 +26,7 @@ CSV booleans are strings on disk. A future CSV loader must explicitly map `True`
 
 ## Interpretation and Verification
 
-All-customer shares use each population's full 1,000 customers. The conditional unwanted share uses its 900 billed customers. Non-billed customers remain in the population. Missing intent remains unknown; the lower bound counts observed unwanted billing, and the upper bound adds every billed customer with unknown intent. These bounds presume the known intent labels are correct. They are descriptive bounds, not confidence intervals.
+All-customer shares retain each population’s full 1,000 customers, including those who are not billed, while the conditional unwanted share uses its 900 billed customers. For billed customers with unknown intent, the lower bound counts only observed unwanted billing and the upper bound adds every unknown case. Assuming the known intent labels are correct, these are descriptive bounds on the unknown share; sampling uncertainty would require a separate calculation.
 
 The output is 900 billed, 880 wanted and billed, and 20 unwanted and billed in A; the corresponding counts in B are 900, 600, and 300. Both include 20 who wanted renewal but were not billed. Independent tests check missing intent, denominator changes, zero billing, duplicate keys, and mistaken string booleans. Run status is recorded in [verification.json](verification.json).
 

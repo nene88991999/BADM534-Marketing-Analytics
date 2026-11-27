@@ -177,7 +177,7 @@ Source: M4, Section 4.2, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 - Compare C's share with the change in category participation.
 - Check a case with no outside option.
 
-Use ../03_Data_and_Code/Lecture_Examples/session_examples.py S05. With no outside option, purchase incidence is one by construction. That change should be visible in the program and interpretation.
+Use session_examples.py in the Lecture Examples folder S05. With no outside option, purchase incidence is one by construction. That change should be visible in the program and interpretation.
 
 Source: M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
@@ -218,7 +218,7 @@ Source: M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 - Generated reactions can suggest benefits and objections.
 - A screening claim needs evidence on new concepts and the intended customers.
 
-Maier and coauthors compare 57 personal-care concepts with 9,300 U.S. human responses. Semantic similarity rating maps generated text to five-category distributions. The authors manually optimized the anchors on the same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment is a ratio to a split-half human benchmark. It describes neither individual-rating accuracy nor purchase prediction. Concept ratings do not identify attribute tradeoffs without suitable variation and a response model.
+The concept-screening study compares 57 personal-care concepts with 9,300 U.S. human responses (Maier et al., 2025). Semantic similarity rating maps generated text to five-category distributions using anchors manually optimized on those same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment divides the concept-level correlation by a split-half human benchmark. Individual-rating accuracy, purchase prediction, and attribute tradeoffs require their own comparisons and a suitable response model.
 
 Source: (Maier et al., 2025, Table 1, Appendix A.3). https://arxiv.org/abs/2510.08338v3
 
@@ -230,7 +230,7 @@ Six synthetic concepts, 100 invented ratings each. Overall category shares match
 
 [Editable TikZ](../06_Lecture_Notes/figures/M04_concept_screening.tex)
 
-Every candidate has the same aggregate distribution as the reference across equally weighted concepts. That pooled match removes the concept distinction needed to choose products. The reversed rule selects F and E instead of A and B. The compressed pattern preserves order while shrinking rating differences. All values are imposed teaching inputs and no human survey or fitted model is represented.
+Across the equally weighted synthetic concepts, every candidate matches the reference’s aggregate category distribution, yet the pooled pattern removes the differences needed for product selection. The reversed rule selects F and E instead of A and B, while the compressed pattern preserves order and shrinks rating differences. These constructions isolate distinct failures that an aggregate distribution check can miss.
 
 Source: M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md
 
@@ -305,7 +305,7 @@ Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_i
 
 Imposed costs: 1 and 0.01 per response. Rounded allocations save 23.68% at the same 0.01 MSE target.
 
-Both source variances equal one. The mixed allocation places 54 primary and 324 auxiliary observations at each profile. Its asymptotic saving is 24.29 percent; separate upward rounding within each source-profile cell gives the table. The rounded construction is feasible but need not be the exact integer optimum. Setup, human validation, and monitoring costs require separate budget entries. Run allocate_responses.py in the Auxiliary_Data example.
+With both source variances set to one, the mixed allocation places 54 primary and 324 auxiliary observations at each profile. The asymptotic calculation saves 24.29 percent; rounding each source-profile count upward yields the feasible allocation in the table, which need not be the exact integer optimum. A complete budget also includes setup, human validation, and monitoring costs. Reproduce the allocation with allocate_responses.py in the Auxiliary_Data example.
 
 Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
@@ -329,7 +329,7 @@ $$
 
 Independent owners maximize their own profits. Joint pricing maximizes their combined profit.
 
-Prices are dollars per meal equivalent. Equal-probability demand states have intercepts 10 and 14. A common signal is correct with probability r. Each independent firm chooses its own price, treating the other price as fixed. The joint objective includes the rival's profit. Preferences, costs, and information are held fixed when comparing objectives. M4 derives these interior solutions and supplies full code and quantity-corner checks.
+Demand has two equally likely states with intercepts 10 and 14, and a common signal identifies the state correctly with probability r. Each independent firm chooses its price in dollars per meal equivalent while treating its rival’s price as fixed. A joint profit objective instead includes the rival’s profit, changing the price-setting incentive even when preferences, costs, and information remain fixed. M4 derives the interior solutions and supplies the complete program and quantity-corner checks.
 
 Source: Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md
 

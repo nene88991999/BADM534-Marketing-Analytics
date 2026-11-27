@@ -242,7 +242,7 @@ Operating capacity and project-related cost exposure have different timelines.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M06_institutional_exposure.tex)
 
-The paper anchors treatment to operating capacity and excludes donors with the specified operating additions. This rule does not separately screen earlier commitments, cancellations, or cost recovery. In the synthetic example, a cancelled-project donor has zero operating additions and an eight-dollar increase; it receives weight 0.75. An unexposed donor receives 0.25. Common baseline prices and no other changes are imposed. The example demonstrates a possible identification failure, not actual bias in the published estimate. Costs can also precede the fitting window or arrive after the outcome window. The complete institutional_exposure.py program appears in M6 §6.35.
+The paper anchors treatment to operating capacity and excludes donors with specified operating additions, leaving earlier commitments, cancellations, and cost recovery outside that screen. In the synthetic example, a cancelled-project donor has zero operating additions and an eight-dollar increase, receiving weight 0.75; an unexposed donor receives 0.25. With common baseline prices and no other changes, the comparison demonstrates a possible identification failure. Assessing actual bias also requires the timing of costs, which may precede the fitting window or follow the outcome window. M6 §6.35 provides institutional_exposure.py in full.
 
 Source: M6 §6.35. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
@@ -345,7 +345,7 @@ Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resour
 
 One example versus none; 7,200 runs per prompt-by-workflow cell.
 
-The no-example success rates are 81.49%, 92.40%, and 96.97%. The failure reduction divides the success gain by one minus the no-example success rate. The agent-minus-chatbot interaction on the additive scale is -3.625 percentage points. Near perfect success, a smaller percentage-point effect can remove the same fraction of remaining failures. Treat the scale as part of the estimand. Shared tasks and datasets determine the uncertainty unit. Full aggregate reconstruction appears in M1 §1.19; M6 §6.31 develops the comparison.
+The no-example success rates are 81.49%, 92.40%, and 96.97%, leaving different amounts of failure available to reduce. Dividing the success gain by one minus the no-example success rate measures the fraction of remaining failures removed. On the additive scale, the agent-minus-chatbot interaction is -3.625 percentage points, yet a smaller gain near perfect success can remove the same fraction of failures. The scale therefore belongs in the estimand, and shared tasks and datasets determine the uncertainty unit. M1 §1.19 reconstructs the aggregates; M6 §6.31 develops the comparison.
 
 Source: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
@@ -355,7 +355,7 @@ Source: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/
 - Change contribution, delivery cost, and the target effect.
 - Specify an mHealth recommendation assignment with a fixed user denominator.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.
+Run session_examples.py in the Lecture Examples folder S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
@@ -477,7 +477,7 @@ Identical observed cells; assigning a common price gives different effects.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M06_compatible_price_models.tex)
 
-Both synthetic models reproduce the complete historical joint law of group, price, and purchase. Each group historically receives only one price. A price-response model depends only on price; a group-selection model depends only on group. The intervention assigns everyone $10 or $20 and holds population, product, disclosure, availability, and each response rule fixed. Historical sample size cannot resolve the unobserved group-price cells. Lines join the two allowed prices only.
+Both synthetic models reproduce the complete historical joint law of group, price, and purchase, with each group receiving only one price. One model makes response depend on price and the other on group, so they disagree when everyone is assigned USD 10 or USD 20. Population, product, disclosure, availability, and each response rule remain fixed in that intervention. More observations from the same historical support leave the unobserved group-price cells unresolved. The lines join only the two allowed prices.
 
 Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 

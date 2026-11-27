@@ -19,7 +19,7 @@ Choose a prediction target, decision time, and evaluation split before modeling.
 | M09 | [scikit-learn: Permutation Feature Importance](https://scikit-learn.org/stable/modules/permutation_importance.html) | Reference | Guide |
 | M10 | [Fairlearn User Guide](https://fairlearn.org/main/user_guide/) | Optional | Guide |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

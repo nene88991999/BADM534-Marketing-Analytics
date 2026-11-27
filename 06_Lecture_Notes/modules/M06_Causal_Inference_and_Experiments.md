@@ -26,7 +26,7 @@ E[Y\mid D=1]-E[Y\mid D=0]
 +\{E[Y(0)\mid D=1]-E[Y(0)\mid D=0]\}.
 $$
 
-Here $D$ indicates treatment. The first term is the average treatment effect among treated customers. The bracketed term compares their untreated outcomes with untreated customers' outcomes. If the firm targets people who would purchase anyway, that selection term can be positive. If it targets customers in serious decline, the term can be negative. The direction follows the assignment process, not a universal rule about observational data.
+Here $D$ indicates treatment, the first term is the average treatment effect among treated customers, and the bracketed term compares the two groups' untreated outcomes. That selection term can be positive when the firm targets customers who would purchase anyway, or negative when it targets customers in serious decline. The assignment process therefore determines how the observed comparison differs from the treatment effect.
 
 An unobserved engagement variable may affect both email opening and purchasing. Adjusting for pre-treatment engagement measures can be useful if they capture the relevant confounding, but controlling for a variable does not guarantee this condition. A post-treatment variable such as clicking the email can mediate part of its effect. Conditioning on customers who click changes the population and can introduce selection.
 
@@ -269,7 +269,7 @@ print(json.dumps(result, indent=2))
 
 ## 6.14 Python Calculations for the Synthetic Cases
 
-The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+Run the program below to write the synthetic examples to CSV and reproduce their calculations. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`; the separate mHealth programs reproduce the observed-data results.
 
 Python source: [m06_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m06_synthetic.py). From its directory, run `python m06_synthetic.py`.
 
@@ -753,7 +753,7 @@ Profit reaches $14 at a 20 percent discount and equals $10 at both endpoints. If
 
 ![A known synthetic profit curve peaks at a 20 percent discount. Its best linear projection under uniform randomized discounts is horizontal at approximately 12.67 dollars.](../figures/M06_discount_response.png)
 
-**Figure description.** The horizontal axis varies the discount from 0 to 40 percentage points while holding the target population and promotion horizon fixed. The blue curve reaches $14 at 20. The orange dashed line is the best linear projection under a uniform discount distribution. A zero linear slope coexists with a substantial nonlinear response.
+The horizontal axis varies the discount from 0 to 40 percentage points while holding the target population and promotion horizon fixed. The blue curve reaches $14 at 20. The orange dashed line is the best linear projection under a uniform discount distribution. A zero linear slope coexists with a substantial nonlinear response.
 
 DoubleML's partially linear regression specification places a constant coefficient on treatment while allowing flexible covariate adjustment. That specification answers a different question from estimating an unrestricted curve. Under misspecification, the projection's weighting matters; its coefficient need not equal a simple average derivative. Nonparametric double-machine-learning methods also exist. [DoubleML models](https://docs.doubleml.org/stable/guide/models.html); [(Colangelo and Lee, 2023)](https://arxiv.org/abs/2004.03036).
 
@@ -806,7 +806,7 @@ The reference sample's cross-fitted partially linear coefficient is $0.0028 per 
 
 ![Conditional discount densities for two observed customer types under broader and weaker overlap, plotted on identical axes.](../figures/M06_dose_overlap.png)
 
-**Figure description.** Each panel plots the discount density for type minus one as a solid blue curve and type plus one as a dashed orange curve. The horizontal axis is discount in percentage points. Both panels use the same vertical scale in density per percentage point. Lower assignment noise concentrates each type around a different discount. Mathematical positivity remains, but the observed sample offers little information about the opposite type at many doses.
+Each panel plots the discount density for type minus one as a solid blue curve and type plus one as a dashed orange curve. The horizontal axis is discount in percentage points. Both panels use the same vertical scale in density per percentage point. Lower assignment noise concentrates each type around a different discount. Mathematical positivity remains, but the observed sample offers little information about the opposite type at many doses.
 
 The weight-based effective sample size is $(\sum_i w_i)^2/\sum_i w_i^2$. It measures concentration among observed weights. In the reference sample with broader overlap, the largest estimated weight is 169.9 and the effective sample size is 125.5 out of 2,400. With weaker overlap, almost all observed weights are close to one-half and the effective sample size is approximately 2,400. The rare cross-type observations that would receive enormous weights are largely absent. A high effective sample size therefore does not establish adequate support. Conditional densities, dose-by-type counts, and the proposed decision range remain necessary checks.
 
@@ -1063,7 +1063,7 @@ Partial pooling has the lowest aggregate error in this one simulated dataset. In
 
 ![Known, separately fitted, and partially pooled discount curves for one small store and one large store on common axes.](../figures/M06_store_pooling.png)
 
-**Figure description.** Store 0 has 12 customers and Store 4 has 300. Solid blue curves show their known synthetic responses, gray dashed curves show separate quadratic fits, and orange dash-dotted curves show partial pooling. Both panels share discount and profit scales. Shrinkage improves the small store's curve while moving the large store's estimate farther from its known response.
+Store 0 has 12 customers and Store 4 has 300. Solid blue curves show their known synthetic responses, gray dashed curves show separate quadratic fits, and orange dash-dotted curves show partial pooling. Both panels share discount and profit scales. Shrinkage improves the small store's curve while moving the large store's estimate farther from its known response.
 
 An observational extension would require adjustment for assignment within the relevant target groups. A group-specific curve averages covariates within that group and uses the corresponding marginal treatment density. Smoothing a population-standardized adjusted outcome within stores generally changes the intended estimand. The reviewed `drcurves` implementation performs group-specific standardization before hierarchical smoothing. Group curves still require credible within-group support; pooling cannot supply an unobserved counterfactual without additional modeling assumptions. [Pinned implementation](https://github.com/raz1470/continuous-dr-learner/blob/72115789652127cc2a89eb960d829d2cc513d9cb/src/drcurves/nuisance.py).
 
@@ -1510,7 +1510,7 @@ The approximate two-sided 95% interval is $[-0.33,3.82]$/MWh. The one-sided 95% 
 
 \noindent Table 4's preferred developer regression estimates a slope of 0.158 for the four named technology firms, with standard error 0.160. Its approximate 95% interval is $[-0.156,0.472]$, and its one-sided 95% upper bound is 0.421, all in dollars per MWh per percentage point of added capacity. The coefficient is imprecise and permits positive effects. Applying the pooled reference exposure to it would create a hypothetical common-exposure comparison; the paper does not report that exposure as the cloud group's average.
 
-The other-owner slope is 1.042 with standard error 0.477. Comparing their significance stars cannot establish a difference between the slopes. The paper reports the relevant joint Wald test with $p=0.101$. This value exceeds both 0.05 and 0.10, despite the text describing the difference as marginally significant. A difference can remain substantively plausible without satisfying those thresholds. Computing the contrast's uncertainty from the two marginal standard errors alone would omit their covariance. Table 4's direct test is the appropriate reported evidence.
+The other-owner slope is 1.042 with standard error 0.477, but separate significance stars do not test whether the two slopes differ. Table 4 supplies the relevant joint Wald test, with $p=0.101$, exceeding both 0.05 and 0.10 despite the text describing the difference as marginally significant. A difference can remain substantively plausible without satisfying those thresholds. Its uncertainty depends on the covariance between the slopes, which would be omitted by a calculation using only their marginal standard errors. The direct test is therefore the appropriate reported evidence for the comparison.
 
 Table 7 supplies a second weak null. Its preferred estimate of additional quarterly electricity sales is 291 MWh per added MW, with standard error 493. The approximate two-sided 95% interval extends from minus 675 to 1,257 MWh. Suppose a new MW operates for a full 2,190-hour quarter at 50% utilization and displaces no other sales. It then adds 1,095 MWh. Under the reported precision, power against that scenario is 60.3%; at 25% utilization, power is 19.9%. The insignificant sales estimate therefore does not exclude substantial additional consumption. Inferring that infrastructure costs dominate contemporaneous demand requires a comparison that identifies those channels, including timing, actual utilization, procurement costs, and changes in other loads.
 
@@ -2444,7 +2444,7 @@ Thoughtful design specifies the intervention, population, outcome, and relevant 
 
 \noindent Retain the three synthetic proposed-project utilities: completed, canceled, and pending. Give them equal population weight. Under the first construction, their effects at the cutoff are 10, 6, and 6, so the proposal-population mean is $22/3$, approximately $7.33/MWh$. Observing only the completed facility gives 10. Now impose a second construction in which operation creates savings that make the completed project's net effect −2, while canceled and pending projects still impose 6 each. The proposal-population mean is then $10/3$, approximately $3.33/MWh$, while the operating-project mean is −2.
 
-Both conditional means can be computed correctly. They concern different populations. Using the operating-project mean to reassure the full proposal population produces an incorrect conclusion in the second construction. It would exaggerate the proposal mean in the first. Selection alone does not establish a universal direction of error. A causal selection argument additionally needs the determinants of completion and their links to exposure and outcomes.
+The two conditional means concern different populations even when both are calculated correctly. Applying the operating-project mean to the full proposal population yields false reassurance in the second construction and exaggerates the proposal mean in the first. Selection thus creates a problem of interpretation whose direction depends on which projects complete. A causal account needs the determinants of completion and their links to exposure and outcomes.
 
 The same discipline applies to the historical record. Increased public scrutiny can alter which proposals reach operation and when. Its consequences for selection depend on whether opposition, viability, utility investment, and household burdens are related. Treat pending projects as right-censored histories, record the follow-up horizon, and compare cohorts with adequate common follow-up. Household charges may outlast the cutoff even when a cancellation occurs within it.
 

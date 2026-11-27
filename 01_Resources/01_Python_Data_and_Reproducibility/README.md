@@ -19,7 +19,7 @@ Begin with tables, functions, notebook execution, and elementary checks. Student
 | P09 | [pytest: Get Started](https://docs.pytest.org/en/stable/getting-started.html) | Core | Guide |
 | P10 | [Python for Marketing Research and Analytics: Author Repository](https://github.com/python-marketing-research/python-marketing-research-1ed) | Core | Code and data repository |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

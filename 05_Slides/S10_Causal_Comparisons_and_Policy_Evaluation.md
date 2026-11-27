@@ -257,7 +257,7 @@ Randomized synthetic discounts. Pooling reduces aggregate error; Store 4 favors 
 
 [Editable TikZ](../06_Lecture_Notes/figures/M06_store_pooling.tex)
 
-Twenty stores in four regions supply 2,188 observations. Discounts are randomized independently within each store. Five-fold validation over observed outcomes selects regional and store ridge penalties. Equal-store RMSE is USD 0.512 with partial pooling, USD 0.936 with separate fits, and USD 0.968 with complete pooling. Store 4 has separate RMSE USD 0.249 and partial RMSE USD 0.550. This is one simulated dataset, with no general dominance or interval-calibration claim.
+In one simulated dataset, twenty stores in four regions supply 2,188 observations, with discounts randomized independently within each store. Five-fold validation selects regional and store ridge penalties from observed outcomes. Partial pooling lowers equal-store RMSE to USD 0.512, compared with USD 0.936 for separate fits and USD 0.968 for complete pooling, yet Store 4’s RMSE rises from USD 0.249 under separate fitting to USD 0.550. The aggregate improvement therefore coexists with a worse result for one store. This single simulation establishes neither general dominance nor interval calibration.
 
 Source: ../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
@@ -279,7 +279,7 @@ Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 - Check them using within-group averages.
 - Set one logging probability to zero and explain the missing comparison.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S10. A correct implementation flags unsupported target actions. Silently dropping the unsupported group changes the target population.
+Run session_examples.py in the Lecture Examples folder S10. A correct implementation flags unsupported target actions. Silently dropping the unsupported group changes the target population.
 
 Source: M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
@@ -333,7 +333,7 @@ The baseline and donor population change the comparison.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M06_project_windows.tex)
 
-Before commitments, the completed-project increment is 10. Equal canceled and unexposed donor weights subtract 3. Starting after commitments leaves the additional operating increment of 4. Canceled-project costs are constant over the shorter interval, so they add no change to that particular DiD. Actual donor weights and dated obligations are required for the paper-specific assessment.
+Measuring from before commitments gives a completed-project increment of 10, from which equal canceled and unexposed donor weights subtract 3. Starting after commitments instead measures the additional operating increment of 4. The canceled-project costs are constant over this shorter interval and consequently contribute no change to that DiD. The effect of the window therefore depends on dated obligations and donor weights, which are needed for an assessment of the paper.
 
 Source: ../03_Data_and_Code/Bad_Controls/README.md
 

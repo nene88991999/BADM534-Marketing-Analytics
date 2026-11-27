@@ -71,7 +71,7 @@ Synthetic customers have unchanged spending and frequency records.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M04_scaling.tex)
 
-Raw distances compare A=(100,1), B=(110,9), and C=(200,1). The example changes only the spending scale. The preferred business representation depends on the service decision.
+Compare A=(100,1), B=(110,9), and C=(200,1), then change only the unit used to express spending. The resulting change in distance shows why a numerical representation embeds a weighting of customer attributes. The appropriate weighting depends on the service decision.
 
 Source: M4, Section 4.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
@@ -95,7 +95,7 @@ $$
 
 Jaccard distance ignores shared absences. Average linkage compares these distances.
 
-The primary sample is 48 retrieved papers with potential dual use or a reported choice concern. Twelve binary codes include social cues, emotion, disclosure, defaults, and exit friction. A zero code means the mechanism was not coded from reviewed evidence. Missing reviews are excluded. See M4 Section 4.17 for the complete program.
+Compare 48 retrieved papers with potential dual use or a reported choice concern using twelve binary codes, including social cues, emotion, disclosure, defaults, and exit friction. A zero means that a mechanism was not coded from reviewed evidence, so papers with missing reviews are excluded from the comparison. This distinction keeps unreviewed papers from appearing similar merely because evidence has not yet been assessed. M4 §4.17 provides the complete program.
 
 Source: ../03_Data_and_Code/Consumer_Agency_Literature/README.md
 
@@ -262,7 +262,7 @@ Source: M4, Section 4.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 - Describe a later period without refitting the groups.
 - Vary assumed paid retention in a separate CLV calculation.
 
-The small CLV calculation is ../03_Data_and_Code/Lecture_Examples/session_examples.py S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.
+The small CLV calculation is session_examples.py in the Lecture Examples folder S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.
 
 Source: M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
@@ -276,7 +276,7 @@ $$
 
 Weighting the two means equally would give 4.5. e-means carries sums and counts.
 
-The scalar inputs are imposed. Weighted mass determines how much each batch contributes. The complete e-means algorithm also uses a cooling schedule and unused-cluster handling. Training order in shuffled static data is distinct from calendar recency. The fixed squared-distance objective does not establish the value of a customer intervention.
+In the synthetic scalar example, weighted mass determines how much each batch contributes to the updated cluster center. The complete e-means algorithm adds a cooling schedule and rules for unused clusters, so this calculation isolates one part of its operation. Batch order in shuffled static data also differs from calendar recency. Choosing a useful customer intervention requires a link from the resulting groups to customer outcomes beyond the fixed squared-distance objective.
 
 Source: M4, Section 4.18. ../03_Data_and_Code/Clustering_Optimization/README.md https://arxiv.org/abs/2611.09501v1
 

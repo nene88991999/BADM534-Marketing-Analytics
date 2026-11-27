@@ -213,7 +213,7 @@ Source: M8, Section 8.4, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 
 Known synthetic functions; 0.1-point search grid. The 3% complaint cap is an imposed exercise condition.
 
-The list price is USD 20 and unit cost is USD 4. Known mean profit is 10+0.4a-0.01a squared; expected quantity is profit divided by the unit margin. Revenue is price times quantity. The assumed complaint probability is 0.01+0.0001a squared. All quantities are per eligible customer over the promotion week. The cap is hypothetical and carries no legal or ethical authority. It reduces profit by approximately USD 0.348 relative to the unconstrained profit maximum.
+For a hypothetical promotion week, set the list price to USD 20, unit cost to USD 4, and mean profit to 10+0.4a-0.01a squared per eligible customer. Expected quantity equals profit divided by the unit margin, so revenue follows by multiplying that quantity by price. With complaint probability set to 0.01+0.0001a squared, imposing the illustrative cap reduces profit by approximately USD 0.348 relative to the unconstrained maximum. This calculation identifies the tradeoff under the stated assumptions; the cap still needs an independently justified legal or ethical basis.
 
 Source: ../03_Data_and_Code/Dose_Response/decision_objectives.py; ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 
@@ -258,7 +258,7 @@ Source: Marketing Analytics Lecture Notes. M8 §8.23 and M9 §9.18.2. ../06_Lect
 - Solve and independently grid-check the fixed-budget allocation.
 - Report the assumptions that change the preferred action.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S13. A grid check verifies the numerical optimum within its resolution. It does not establish the imposed response curves as causal estimates.
+Run session_examples.py in the Lecture Examples folder S13. A grid check verifies the numerical optimum within its resolution. It does not establish the imposed response curves as causal estimates.
 
 Source: M8, Section 8.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md
 

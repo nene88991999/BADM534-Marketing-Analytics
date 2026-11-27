@@ -12,7 +12,7 @@ The [clustering source guide](../01_Resources/23_Clustering_Optimization/README.
 
 ## Authoring and Export Portability
 
-[The Suzuri source review](../01_Resources/30_Research_Writing_and_Coding/README.md) motivates keeping notes, code, source descriptions, and expected results together. Its inspected HTML exporter creates a standalone document and converts internal wikilinks to display text. The future course site should preserve standard relative links and stable module identifiers, with separate checks for navigation, calculation, rendering, and accessibility. The [released optional exercise](../07_Labs/Reproducible_Recommendations/README.md) supplies a generated recommendation, numerical evidence, and a repeat-weight figure for evaluating a later prototype. No editor or site framework has been selected.
+[The Suzuri source review](../01_Resources/30_Research_Writing_and_Coding/README.md) motivates keeping notes, code, source descriptions, and expected results together. Because its inspected HTML exporter converts internal wikilinks to display text, a course site needs separate checks that exported navigation preserves standard relative links and stable module identifiers. The [released optional exercise](../07_Labs/Reproducible_Recommendations/README.md) provides a recommendation, numerical evidence, and a repeat-weight figure for assessing calculation, rendering, and accessibility alongside navigation.
 
 ## Representative Page Checks
 

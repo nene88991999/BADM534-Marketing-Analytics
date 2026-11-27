@@ -18,7 +18,7 @@ Use `illinois_map.csv` and the two M2 maps. Compare MCI and CCI for one named ar
 
 ## 4. Compare Regressions on One Sample
 
-Run `compare_models.py`. Reproduce the positive simple CCI slope and negative adjusted slope. Explain the comparison defined by education, broadband, and state intercepts. Compare the household-weight sensitivity with the equal-area projection. Give a concrete causal question about an assistance offer and identify the evidence this geographic regression lacks for answering it.
+Run `compare_models.py` to reproduce the positive simple CCI slope and negative adjusted slope, then explain how conditioning on education, broadband, and state intercepts changes the comparison. Assess sensitivity to household weights against the equal-area projection. Finally, formulate a causal question about an assistance offer and identify the additional evidence required to answer it.
 
 ## 5. Compare Geographic Groupings
 

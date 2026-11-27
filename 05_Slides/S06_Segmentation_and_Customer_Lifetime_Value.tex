@@ -56,7 +56,7 @@ M4, Section 4.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mod
 \endgroup
 \par\medskip
 {\small Synthetic customers have unchanged spending and frequency records.\par}
-\note{Raw distances compare A=(100,1), B=(110,9), and C=(200,1). The example changes only the spending scale. The preferred business representation depends on the service decision.
+\note{Compare A=(100,1), B=(110,9), and C=(200,1), then change only the unit used to express spending. The resulting change in distance shows why a numerical representation embeds a weighting of customer attributes. The appropriate weighting depends on the service decision.
 
 M4, Section 4.5, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
 \end{frame}
@@ -82,7 +82,7 @@ d_J(i,j)=1-\frac{|A_i\cap A_j|}{|A_i\cup A_j|}
 \]
 \medskip
 \noindent Jaccard distance ignores shared absences. Average linkage compares these distances.
-\note{The primary sample is 48 retrieved papers with potential dual use or a reported choice concern. Twelve binary codes include social cues, emotion, disclosure, defaults, and exit friction. A zero code means the mechanism was not coded from reviewed evidence. Missing reviews are excluded. See M4 Section 4.17 for the complete program.
+\note{Compare 48 retrieved papers with potential dual use or a reported choice concern using twelve binary codes, including social cues, emotion, disclosure, defaults, and exit friction. A zero means that a mechanism was not coded from reviewed evidence, so papers with missing reviews are excluded from the comparison. This distinction keeps unreviewed papers from appearing similar merely because evidence has not yet been assessed. M4 §4.17 provides the complete program.
 
 \url{../03_Data_and_Code/Consumer_Agency_Literature/README.md}}
 \end{frame}
@@ -267,7 +267,7 @@ M4, Section 4.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 \item Vary assumed paid retention in a separate CLV calculation.
 \end{slidebullets}
 \vfill
-\note{The small CLV calculation is ../03\_Data\_and\_Code/Lecture\_Examples/session\_examples.py S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.
+\note{The small CLV calculation is session\_examples.py in the Lecture Examples folder S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.
 
 M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md}}
 \end{frame}
@@ -280,7 +280,7 @@ M4, Section 4.11, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 \]
 \medskip
 \noindent Weighting the two means equally would give 4.5. e-means carries sums and counts.
-\note{The scalar inputs are imposed. Weighted mass determines how much each batch contributes. The complete e-means algorithm also uses a cooling schedule and unused-cluster handling. Training order in shuffled static data is distinct from calendar recency. The fixed squared-distance objective does not establish the value of a customer intervention.
+\note{In the synthetic scalar example, weighted mass determines how much each batch contributes to the updated cluster center. The complete e-means algorithm adds a cooling schedule and rules for unused clusters, so this calculation isolates one part of its operation. Batch order in shuffled static data also differs from calendar recency. Choosing a useful customer intervention requires a link from the resulting groups to customer outcomes beyond the fixed squared-distance objective.
 
 M4, Section 4.18. \url{../03_Data_and_Code/Clustering_Optimization/README.md} \url{https://arxiv.org/abs/2611.09501v1}}
 \end{frame}

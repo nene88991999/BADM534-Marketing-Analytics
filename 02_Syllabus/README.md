@@ -36,23 +36,23 @@ The syllabus includes network compression and retail access in Meeting 7 and lab
 
 ## Definitions and Evidence in the Course Outline
 
-The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Dates, times, room, and stable calendar event identifiers are unchanged. Detailed calculations are available in the lecture notes and two optional ungraded labs.
+The syllabus includes cancellation evidence and representation quality, with corresponding activities in Sessions 1, 2, 11, and 14. Detailed calculations are available in the lecture notes and two optional ungraded labs.
 
 ## Representation Alignment Coverage
 
-The worked examples include replacement text features and classifier compatibility in Sessions 7 and 11, followed by model agreement and independent reasons in Session 14. The [optional lab](../07_Labs/Representation_Alignment/README.md) adds no graded requirement. Session 11 reallocates five minutes within the existing meeting.
+The worked examples include replacement text features and classifier compatibility in Sessions 7 and 11, followed by model agreement and independent reasons in Session 14. The [optional lab](../07_Labs/Representation_Alignment/README.md) develops the numerical comparison.
 
 ## Pricing Systems and Customer Choice
 
-The syllabus includes shared pricing systems and the Wendy's dispute among its cases. Sessions 5 and 14 connect an original synthetic pricing model to source evidence and Kantian and Confucian evaluation. The [optional lab](../07_Labs/Pricing_Competition/README.md) provides the full Python exercise. Existing dates, meeting durations, and pending assessment rules are preserved.
+The syllabus includes shared pricing systems and the Wendy's dispute among its cases. Sessions 5 and 14 connect an original synthetic pricing model to source evidence and Kantian and Confucian evaluation. The [optional lab](../07_Labs/Pricing_Competition/README.md) provides the full Python exercise.
 
 ## Digital Usage and Customer Access
 
-The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs. The fifteen meeting dates, start and end times, and calendar event topics remain unchanged.
+The geographic usage case connects measurement, maps, conditional regression, segmentation, and meaningful customer choice in Sessions 2, 3, 4, 6, and 14. The [optional ungraded lab](../07_Labs/Digital_Usage/README.md) provides complete code and public inputs.
 
 ## Statistical Evidence
 
-The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded; no assessment requirements or meeting dates change.
+The course description's AI-workflow objective includes statistical design and uncertainty. Sessions 1, 4, 9, and 14 connect these topics to coding, mHealth, store experiments, and advertising claims. [Optional practice](../07_Labs/Statistical_Inference/README.md) is ungraded.
 
 ## Coding-Workflow Coverage
 
@@ -60,4 +60,4 @@ The learning objectives and class-format description include output completeness
 
 ## Evidence and the Recurring Electricity Case
 
-Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique. The meeting dates, 170-minute allocations, and unreleased assessment rules remain unchanged.
+Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique.

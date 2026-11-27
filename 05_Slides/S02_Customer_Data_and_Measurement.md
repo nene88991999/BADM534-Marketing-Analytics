@@ -220,7 +220,7 @@ Source: M1 §1.16 and M2 §2.25. ../06_Lecture_Notes/modules/M02_Customer_Data_a
 - One supplied call has 53 turns but zero recorded words.
 - Retain the call as unknown and preserve firms with no matches.
 
-The roster contains 123 firms, of which 122 have supplied calls. Winmark has no supplied calls. The empty Dollar Tree call cannot establish absence of pricing language. Observed calls with no matches have a different status.
+The roster contains 123 firms, of which 122 have supplied calls; Winmark has none. The empty Dollar Tree call supplies no evidence about whether pricing language was used, whereas an observed call with zero matches has been searched. Treating both as zero would combine missing evidence with an observed absence of dictionary matches.
 
 Source: M2, Section 2.19, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
@@ -340,7 +340,7 @@ Synthetic: 400 households per world; monthly effects in USD.
 
 [Editable TikZ](figures/selected_evidence.tex)
 
-Hold all other causes of bills fixed so the prior bill equals the current no-project bill. All current bills are recorded internally in both worlds. The example isolates release selection and grants identification within each constructed population. Weighting cannot recover zero-inclusion strata. Full code, positive-inclusion comparisons, and support bounds appear in M2 §2.31.
+In both constructed worlds, all current bills are recorded internally and all other causes of bills are held fixed, so the prior bill equals the current no-project bill. This setup grants identification within each population and isolates which records are released. Weighting can adjust positive inclusion probabilities, but a stratum with zero probability of release contributes no observed outcomes to recover. M2 §2.31 supplies the complete program, positive-inclusion comparisons, and support bounds.
 
 Source: M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 

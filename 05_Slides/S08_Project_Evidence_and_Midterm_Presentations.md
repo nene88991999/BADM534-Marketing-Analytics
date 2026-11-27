@@ -54,7 +54,7 @@ These categories can appear in the same project. Each claim should retain the qu
 - The underlying data contain food logging and no observed payments.
 - The decision requires additional evidence on price, retention, and margin.
 
-Observed logging can motivate a segmentation or interface decision. Paid uptake from an imposed logit model is a scenario. A stated-choice study or pilot could supply some of the missing evidence.
+Observed logging can motivate a segmentation or interface decision, but projecting paid uptake from a hypothetical logit model requires additional behavioral assumptions. A stated-choice study or pilot could supply evidence about uptake and help assess whether the scenario is useful for the decision.
 
 Source: M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 

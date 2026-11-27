@@ -214,7 +214,7 @@ print(json.dumps(result, indent=2))
 
 ## 5.11 Python Calculations for the Synthetic Cases
 
-The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+Run the program below to write the synthetic examples to CSV and reproduce their calculations. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`; the separate mHealth programs reproduce the observed-data results.
 
 Python source: [m05_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m05_synthetic.py). From its directory, run `python m05_synthetic.py`.
 
@@ -263,7 +263,7 @@ Use all 50,860 distinct nonempty normalized descriptions recorded before July 1.
 
 Let $V$ contain nonnegative TF-IDF features, with one row per training description. NMF approximates $V$ by $WH$, where the rows of $H$ contain term patterns and each row of $W$ gives the associated nonnegative loadings. The chosen specification minimizes squared reconstruction error subject to nonnegative factors. Multiplying a row of $H$ by a constant and dividing its column of $W$ by the same constant preserves the approximation. Before comparing loadings, the code therefore scales them to correspond to component term vectors with unit Euclidean norm.
 
-July contains 17,042 distinct nonempty descriptions and 79,957 entries, including 5,208 descriptions absent from training. Apply the frozen vectorizer and factorization to July descriptions. Assign each description to its largest scaled loading when positive. A zero-vector description remains unassigned. The resulting groups have the following leading terms and shares.
+July contains 17,042 distinct nonempty descriptions and 79,957 entries, including 5,208 descriptions absent from training. Apply the frozen vectorizer and factorization to these descriptions, assigning each to its largest scaled loading when positive and leaving zero-vector descriptions unassigned. The resulting groups have the following leading terms and shares.
 
 | Leading Terms | Share of Distinct July Descriptions | Share of July Entries |
 | --- | ---: | ---: |
@@ -761,7 +761,7 @@ if __name__ == "__main__":
 
 \noindent A marketing team reviewing earnings calls wants to identify pricing decisions and the evidence about their consequences. Source selection affects the material available to an assistant. The team must also assess whether the resulting claims preserve speaker role, timing, and the scope of the evidence. A source can be accurately cited while supplying no basis for the conclusion attributed to it.
 
-Consider four questions about a fictional retailer. The first asks what price change management reports. The second asks whether the effect on delivered units is identified. The third asks whether a discount has been announced. The fourth asks whose subsequent service use is measured. The supplied records are wholly synthetic. S1 reports a five-percent list-price increase and an October unit count two percent below September, with no experiment or untreated comparison. S2 contains an analyst's unanswered question about next-quarter discounts. S3 reports June use by 72 of 100 enrolled panel members who answered a May questionnaire. These records support attributed descriptions and a selected denominator. They establish no causal price effect or general consumer-welfare result.
+Consider four questions about a fictional retailer: what price change management reports, whether its effect on delivered units is identified, whether a discount has been announced, and whose subsequent service use is measured. Three synthetic records provide the evidence. S1 reports a five-percent list-price increase and an October unit count two percent below September, with no experiment or untreated comparison. S2 contains an analyst's unanswered question about next-quarter discounts, while S3 reports June use by 72 of 100 enrolled panel members who answered a May questionnaire. The answers therefore depend on what each record supplies: an attributed description, an unanswered question, or a selected denominator. The price comparison lacks the design needed to identify a causal effect, and panel use alone leaves consumer welfare unresolved.
 
 A fourth document, S4, is a deliberately misleading secondary memo. It states that the price increase caused the unit decline and that management announced discounts. It supplies no additional evidence. A credible contradictory source would require substantive examination; disagreement alone does not make a source unsuitable. In this constructed case, the memo exceeds the evidence in S1 and converts the question in S2 into an action.
 
@@ -1424,7 +1424,7 @@ These equations use the combinatorial convention. GraCo's default `normalized_se
 
 ### 5.24.2 Exact Revenue Reconstruction and Distorted Travel
 
-\noindent Consider four synthetic zones in the path A-B-C-D. Each zone contains 100 people. An available store is located at D. The three edges take four, one, and four minutes, respectively. Weekly zone revenues are 10, 10, 10, and 40 dollars. All quantities are imposed teaching inputs. Revenue is a weekly total for each zone; it is not an individual customer's spending.
+\noindent Consider four synthetic zones along the path A-B-C-D, each with 100 people and an available store at D. Travel along the three edges takes four, one, and four minutes, respectively. Set weekly zone revenues to 10, 10, 10, and 40 dollars, measured as totals for each zone. These travel times and revenues allow the same grouping to be evaluated for both access and revenue reconstruction.
 
 Group A, B, and C together and retain D separately. The group sizes are three and one, and their mean zone revenues are 10 and 40 dollars. Reconstructing the four original revenue values produces zero error. Giving each group equal weight produces a mean of 25 dollars, while weighting by its original zone count gives $(3\times10+1\times40)/4=17.50$ dollars per zone. Total weekly revenue is 70 dollars. Adding the two means would give 50 dollars and discard the meaning of the original total.
 
@@ -1592,7 +1592,7 @@ Representations used for retrieval or classification require a separate evaluati
 
 \noindent A food-logging service replacing a text encoder needs to preserve the category decisions that its downstream classifier makes. Word features distinguish terms such as chicken and cheese; character features can retain parts of related spellings. Each encoder defines its own coordinates. Coefficients fitted to one coordinate system need evidence of compatibility before they are applied to another.
 
-Use the public mHealth food records for the fixed pseudonym cohort. Normalize each description by case-folding and collapsing whitespace. Exclude blank descriptions and blank or `Unclassified` categories. Assign each unique description its modal recorded category, with alphabetical tie breaking. Source labels such as `default` and `recipe` remain in the reference. The measurement target is agreement with this recorded classification system.
+Use the public mHealth food records for the fixed pseudonym cohort, normalizing descriptions by case-folding and collapsing whitespace. Exclude blank descriptions and blank or `Unclassified` categories, then assign each unique description its modal recorded category, with alphabetical tie breaking. Source labels such as `default` and `recipe` remain in the reference because the measurement target is agreement with this recorded classification system.
 
 | Sample Property | Count |
 | --- | ---: |

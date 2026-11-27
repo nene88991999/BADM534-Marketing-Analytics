@@ -17,7 +17,7 @@ Start from the customer or managerial question. Define the unit of observation a
 | V07 | [pandas: Working with Missing Data](https://pandas.pydata.org/docs/user_guide/missing_data.html) | Core | Guide |
 | V08 | [Google Analytics Demo Account](https://support.google.com/analytics/answer/6367342) | Optional | Interactive service |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

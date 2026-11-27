@@ -636,7 +636,7 @@ Joint & 1.0 & 34.67 & 17.33 \\
 \par\medskip
 Synthetic market; expected dollars per market-day. Preferences and costs are fixed.
 \vfill
-\note{First hold the objective fixed and improve the demand signal. Then hold information fixed and change the objective. The first comparison can reduce consumer surplus while firms retain independent objectives. The second replaces independent price setting with joint profit maximization. Total welfare adds both monetary columns. The values are solved under quasi-linear preferences with no income effects, vendor fees, or externalities. Run evaluate\_market.py and check the exact fractions.
+\note{Holding the objective fixed while improving the demand signal can reduce consumer surplus even when firms retain independent pricing objectives. Holding information fixed and replacing those objectives with joint profit maximization makes a separate comparison about incentives. Total welfare sums the two monetary columns under the model’s quasi-linear preferences and excludes income effects, vendor fees, and externalities. Reproduce the solved values with evaluate\_market.py and check the exact fractions before interpreting either comparison.
 
 Original synthetic model. M4 Section 4.26. \url{../03_Data_and_Code/Pricing_Competition/README.md}}
 \end{frame}
@@ -835,7 +835,7 @@ M9 §9.27. \url{../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md}}
 \endgroup
 \par\medskip
 {\small A synthetic capacity threshold changes extrapolation while preserving historical responses.\par}
-\note{The construction grants exact knowledge throughout the historical support. The linear and threshold accounts still imply different future costs. Choosing one requires an extrapolation premise or additional evidence. The example estimates no actual capacity threshold. The paper acknowledges future uncertainty; preserve that qualification when assessing stronger public claims. Full original code is logical\_counterexamples.py.
+\note{The construction gives both accounts exact agreement throughout the historical support, yet the linear and threshold accounts imply different future costs. Choosing between them therefore requires an extrapolation premise or additional evidence; the construction itself estimates no actual capacity threshold. The paper acknowledges future uncertainty, a qualification that belongs beside any assessment of stronger public claims. Reproduce the comparison with logical\_counterexamples.py.
 
 M9 §9.27. \url{../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md}}
 \end{frame}

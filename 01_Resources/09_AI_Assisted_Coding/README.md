@@ -27,7 +27,7 @@ Use coding assistants throughout the course. Require a clear problem specificati
 | AI17 | [How AI Impacts Skill Formation](https://arxiv.org/abs/2601.20245) | Instructor | Research paper |
 | AI18 | [How Claude Code Is Used in Practice](https://www.anthropic.com/research/claude-code-expertise) | Instructor | Provider research report |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

@@ -19,7 +19,7 @@ These are design and hosting references for the later wiki phase. GitHub Pages s
 | W09 | [W3C Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials/) | Instructor | Guide |
 | W10 | [Google Colab FAQ](https://research.google.com/colaboratory/faq.html) | Instructor | Guide |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

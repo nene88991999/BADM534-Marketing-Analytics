@@ -18,7 +18,7 @@ The five UCI archives and extracted contents are saved locally. Larger, restrict
 | D08 | [dunnhumby Source Files](https://www.dunnhumby.com/source-files/) | Optional | Dataset portal |
 | D09 | [UCI Wholesale Customers](https://archive.ics.uci.edu/dataset/292/wholesale+customers) | Core | Dataset |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

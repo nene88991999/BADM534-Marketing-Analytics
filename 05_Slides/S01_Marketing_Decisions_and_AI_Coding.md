@@ -66,7 +66,7 @@ Source: M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/
 - Which reasons matter even when they are difficult to quantify?
 - An accurate algorithm can advance an objectionable end.
 
-Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Theoretical knowledge is limited to objects of possible experience (Kant, 1781/1787); an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork (Kant, 1785). The course develops these distinctions in M9 §9.41.
+Empirical analysis informs consequences and feasibility, while philosophical reasoning supplies the premises about ends, authority, and obligations. The limit of theoretical knowledge to objects of possible experience (Kant, 1781/1787) means that an empirical model does not exhaust the person represented. This limit differs from a missing variable that remains open to investigation. Practical respect has its own justification in the Groundwork (Kant, 1785), developed alongside these distinctions in M9 §9.41.
 
 Source: M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -114,7 +114,7 @@ Synthetic accounts. Contribution is 100 dollars and contact cost is 3 dollars.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M01_response_vs_value.tex)
 
-A rises from 0.90 to 0.91. B rises from 0.40 to 0.50. The untreated probabilities explain the reversal. These probabilities are imposed teaching inputs.
+In this hypothetical comparison, A rises from 0.90 to 0.91 and B from 0.40 to 0.50. A has the higher response probability, but B gains more from the intervention because the untreated probability is much lower. The ranking therefore depends on whether the decision concerns response or incremental value.
 
 Source: M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
@@ -144,7 +144,7 @@ assert (total, aov) == (37, 18.5)
 
 Check: total sales are 37 dollars and average order value is 18.50 dollars.
 
-The tuple stores an order ID, a quantity, and a unit price. The dictionary accumulates sales by order. The denominator is two orders. Dividing by the three lines gives average line sales.
+Each tuple stores an order ID, a quantity, and a unit price, and the dictionary accumulates the resulting sales by order. Dividing total sales by the two distinct orders gives average order sales; using the three lines as the denominator would instead give average line sales. The data structure must preserve the unit required by the decision.
 
 Source: M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
@@ -312,7 +312,7 @@ Source: M1, Section 1.8.2, Marketing Analytics Lecture Notes. ../06_Lecture_Note
 - Add a return, a missing identifier, and a duplicated lookup key.
 - Report how each change affects rows, totals, and exceptions.
 
-Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.py S01. Retain the original three-line example as a hand-check. The output should distinguish accepted records from records requiring a decision.
+Use the small example in session_examples.py in the Lecture Examples folder S01. Retain the original three-line example as a hand-check. The output should distinguish accepted records from records requiring a decision.
 
 Source: M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
@@ -344,7 +344,7 @@ Synthetic ratings stay fixed. Additional identical rows change representation.
 
 [Editable TikZ](../06_Lecture_Notes/figures/M01_repeat_weights.tex)
 
-A product manager must specify which unit receives equal weight. With two p01 responses and one p02 response, equal-row weighting gives 4.066667; equal-persona weighting gives 3.975. This imposed comparison measures no preference change. The complete source program is ../03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py. Each rating is derived from invented responses and imposed similarities.
+A product manager must specify which unit receives equal weight. With two p01 responses and one p02 response, weighting rows equally gives 4.066667, while weighting personas equally gives 3.975. The synthetic ratings come from invented responses and fixed similarities, so repeating a row changes representation without changing either preference. Reproduce the comparison with reproduce_recommendation.py in the Reproducible Recommendations folder.
 
 Source: M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 

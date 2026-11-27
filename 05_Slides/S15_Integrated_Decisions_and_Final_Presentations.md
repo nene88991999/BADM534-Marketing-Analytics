@@ -28,7 +28,7 @@ Marketing Analytics. By Nathan Yang.
 - Connect measurement, modeling, and evaluation to that action.
 - State the costs, customer outcomes, and uncertainty that affect the choice.
 
-The evidence chain can include a descriptive assessment, a predictive model, a causal comparison, and a scenario. Each component should retain its own scope and assumptions.
+A marketing decision may draw on a descriptive assessment, a predictive model, a causal comparison, and a scenario. Connecting these components requires explaining how each contributes to the recommendation while retaining its population, assumptions, and scope of inference.
 
 ## Slide 3: The Evidence Behind the Recommendation
 

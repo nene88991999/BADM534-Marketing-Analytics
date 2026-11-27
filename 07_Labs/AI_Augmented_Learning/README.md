@@ -10,7 +10,7 @@ Change the price to USD 125/MWh and usage to 0.8 MWh per account-month. State ho
 
 ## Compare Reported Magnitudes
 
-Run [learning_comparisons.py](../../03_Data_and_Code/Learning_Design/learning_comparisons.py). Explain why 78% versus 67% yields an 11-point difference and a relative increase of approximately 16.42%. Identify the denominator for each calculation. The inputs are rounded published percentages; no sampling uncertainty is reconstructed.
+Use [learning_comparisons.py](../../03_Data_and_Code/Learning_Design/learning_comparisons.py) to compare the rounded published percentages of 78% and 67%. Explain why they imply an 11-point difference and a relative increase of approximately 16.42%, identifying the denominator for each calculation. These arithmetic comparisons reconstruct no sampling uncertainty.
 
 ## Identify a Component Effect
 

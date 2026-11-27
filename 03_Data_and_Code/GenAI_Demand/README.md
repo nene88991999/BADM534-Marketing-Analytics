@@ -2,7 +2,7 @@
 
 Marketing Analytics. By Nathan Yang.
 
-Three offline cases connect public signals, retention, and price sensitivity. They use the supplied [resource bundle](../../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/README.md), with its original files preserved. Public captures are dated observations supplied with that bundle. The consumer panel is entirely synthetic. Neither the panel nor the regression slopes estimate the real AI market.
+Three offline cases connect public signals, retention, and price sensitivity using the supplied [resource bundle](../../01_Resources/08_M8_Current_Topics_in_Marketing/genai_demand_lab/README.md). The public captures are dated observations, while the consumer panel is synthetic and generates comparisons under its stated assumptions. Its regression slopes therefore describe the simulation rather than estimates of the real AI market. The original resource files remain intact.
 
 ## Cases and Commands
 

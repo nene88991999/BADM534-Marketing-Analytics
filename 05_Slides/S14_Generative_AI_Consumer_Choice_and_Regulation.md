@@ -535,7 +535,7 @@ Source: M9 §9.21. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 Synthetic market; expected dollars per market-day. Preferences and costs are fixed.
 
-First hold the objective fixed and improve the demand signal. Then hold information fixed and change the objective. The first comparison can reduce consumer surplus while firms retain independent objectives. The second replaces independent price setting with joint profit maximization. Total welfare adds both monetary columns. The values are solved under quasi-linear preferences with no income effects, vendor fees, or externalities. Run evaluate_market.py and check the exact fractions.
+Holding the objective fixed while improving the demand signal can reduce consumer surplus even when firms retain independent pricing objectives. Holding information fixed and replacing those objectives with joint profit maximization makes a separate comparison about incentives. Total welfare sums the two monetary columns under the model’s quasi-linear preferences and excludes income effects, vendor fees, and externalities. Reproduce the solved values with evaluate_market.py and check the exact fractions before interpreting either comparison.
 
 Source: Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md
 
@@ -691,7 +691,7 @@ A synthetic capacity threshold changes extrapolation while preserving historical
 
 [Editable TikZ](../06_Lecture_Notes/figures/M09_counterexample_extrapolation.tex)
 
-The construction grants exact knowledge throughout the historical support. The linear and threshold accounts still imply different future costs. Choosing one requires an extrapolation premise or additional evidence. The example estimates no actual capacity threshold. The paper acknowledges future uncertainty; preserve that qualification when assessing stronger public claims. Full original code is logical_counterexamples.py.
+The construction gives both accounts exact agreement throughout the historical support, yet the linear and threshold accounts imply different future costs. Choosing between them therefore requires an extrapolation premise or additional evidence; the construction itself estimates no actual capacity threshold. The paper acknowledges future uncertainty, a qualification that belongs beside any assessment of stronger public claims. Reproduce the comparison with logical_counterexamples.py.
 
 Source: M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 

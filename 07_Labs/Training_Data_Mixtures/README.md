@@ -10,7 +10,7 @@ For the ridge model, solve the two normal equations with two Source A rows, thre
 
 ## Change One Assumption
 
-In a separate copy, replace the sum loss with mean squared error and keep the numerical penalty fixed. Derive the equivalent effective penalties before changing the code. Compare the added-data curve with the original. Explain why changing normalization changes the experiment. Preserve the unrelated-task comparison and the all-Source-B endpoint.
+In a separate copy, replace the sum loss with mean squared error while keeping the numerical penalty fixed. Derive the resulting effective penalties before changing the code, then use them to explain how normalization changes the added-data experiment. Compare the new curve with the original while retaining the unrelated-task comparison and the all-Source-B endpoint.
 
 Ask an AI coding assistant to add a sensitivity table with explicit feature scales, penalties, counts, and score units. Inspect its algebra against the original-feature calculation above. Check whether it adds an intercept, normalizes the loss, or labels a score as a probability. Record material AI assistance accurately.
 

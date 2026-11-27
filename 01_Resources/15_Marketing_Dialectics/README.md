@@ -31,7 +31,7 @@ IDs belong to the `marketing-dialectics` namespace in this folder's catalog. The
 
 ## Distinctions That Matter
 
-Transcendental dialectic addresses reason and metaphysical cognition. The contemporary marketing cases are adaptations, with distinct objects from the original antinomies. Kantian ethics comes from a distinct practical-philosophy argument. A fixed thesis–antithesis–synthesis recipe misrepresents this approach.
+Transcendental dialectic examines the claims reason makes about objects beyond possible experience. Applying that inquiry to marketing requires identifying the object and inference under examination, since the contemporary cases differ from the original antinomies. Kantian ethics supplies a distinct practical argument about conduct. Neither inquiry reduces to a fixed thesis–antithesis–synthesis recipe.
 
 A material conflict of interest warrants scrutiny and can justify placing a burden of substantiation on the firm controlling the practice and information. That position differs from a factual finding that every firm is guilty. The burden should identify evidence that could support, narrow, or defeat a claim.
 

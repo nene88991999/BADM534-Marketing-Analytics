@@ -1,6 +1,6 @@
 # Retail Access and Service Priorities
 
-A manager can restore one unavailable location. Which action improves access, and how does that answer depend on the objective? This is optional ungraded practice. Use [the complete programs and frozen inputs](../../03_Data_and_Code/Retail_Accessibility/README.md) and [M5 §§5.21–5.22](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md).
+A manager can restore one unavailable location, creating a choice about whose access to improve. Use [the complete programs and frozen inputs](../../03_Data_and_Code/Retail_Accessibility/README.md) and [M5 §§5.21–5.22](../../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md) to compare the available actions and explain how the preferred location depends on the objective. This exercise is optional and ungraded.
 
 ## 1. Specify the Decision
 
@@ -20,7 +20,7 @@ Run `snapshot_access.py`. Check the four restaurant IDs, the October snapshot, t
 
 ## 5. Separate a Map from Its Measurement
 
-Run `cartography.py`. Calculate the outer square's area, the hole's area, and their difference by hand. Compare reachable nodes before and after filling. Formulate a chart caption that states both results. Explain why filling a visual gap does not create a bridge or grant access across a private parcel.
+Run `cartography.py` and calculate the outer square’s area, the hole’s area, and their difference by hand. Compare the reachable nodes before and after filling the hole, then write a caption that explains the area change alongside the access result. Use the distinction to explain why filling a visual gap creates neither a bridge nor permission to cross a private parcel.
 
 ## 6. Evaluate the Service Objective
 

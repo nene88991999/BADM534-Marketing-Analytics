@@ -42,7 +42,7 @@
           "Which reasons matter even when they are difficult to quantify?",
           "An accurate algorithm can advance an objectionable end."
         ],
-        "notes": "Empirical analysis informs consequences and feasibility. Deliberation about ends, authority, and obligations requires a philosophical argument from the start. Theoretical knowledge is limited to objects of possible experience (Kant, 1781/1787); an empirical model does not exhaust the person represented. A missing empirical variable remains investigable. Practical respect has a distinct justification in the Groundwork (Kant, 1785). The course develops these distinctions in M9 §9.41.",
+        "notes": "Empirical analysis informs consequences and feasibility, while philosophical reasoning supplies the premises about ends, authority, and obligations. The limit of theoretical knowledge to objects of possible experience (Kant, 1781/1787) means that an empirical model does not exhaust the person represented. This limit differs from a missing variable that remains open to investigation. Practical respect has its own justification in the Groundwork (Kant, 1785), developed alongside these distinctions in M9 §9.41.",
         "source": "M1 §1.20 and M9 §9.41. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -84,7 +84,7 @@
         "figure": "../06_Lecture_Notes/figures/M01_response_vs_value.tex",
         "caption": "Synthetic accounts. Contribution is 100 dollars and contact cost is 3 dollars.",
         "description": "Account A has treated renewal probability 0.91 and incremental contribution -2 dollars. Account B has probability 0.50 and contribution 7 dollars.",
-        "notes": "A rises from 0.90 to 0.91. B rises from 0.40 to 0.50. The untreated probabilities explain the reversal. These probabilities are imposed teaching inputs.",
+        "notes": "In this hypothetical comparison, A rises from 0.90 to 0.91 and B from 0.40 to 0.50. A has the higher response probability, but B gains more from the intervention because the untreated probability is much lower. The ranking therefore depends on whether the decision concerns response or incremental value.",
         "source": "M1, Section 1.1, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
       },
       {
@@ -104,7 +104,7 @@
         "intro": "Three synthetic product lines belong to two orders.",
         "code": "lines = [('A', 2, 10), ('A', 1, 5), ('B', 1, 12)]\norders = {}\nfor order, quantity, price in lines:\n    orders[order] = orders.get(order, 0) + quantity * price\ntotal = sum(orders.values())\naov = total / len(orders)\nassert (total, aov) == (37, 18.5)",
         "check": "Check: total sales are 37 dollars and average order value is 18.50 dollars.",
-        "notes": "The tuple stores an order ID, a quantity, and a unit price. The dictionary accumulates sales by order. The denominator is two orders. Dividing by the three lines gives average line sales.",
+        "notes": "Each tuple stores an order ID, a quantity, and a unit price, and the dictionary accumulates the resulting sales by order. Dividing total sales by the two distinct orders gives average order sales; using the three lines as the denominator would instead give average line sales. The data structure must preserve the unit required by the decision.",
         "source": "M1, Section 1.3, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
       },
       {
@@ -290,7 +290,7 @@
           "Add a return, a missing identifier, and a duplicated lookup key.",
           "Report how each change affects rows, totals, and exceptions."
         ],
-        "notes": "Use the small example in ../03_Data_and_Code/Lecture_Examples/session_examples.py S01. Retain the original three-line example as a hand-check. The output should distinguish accepted records from records requiring a decision.",
+        "notes": "Use the small example in session_examples.py in the Lecture Examples folder S01. Retain the original three-line example as a hand-check. The output should distinguish accepted records from records requiring a decision.",
         "source": "M1, Section 1.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
       },
       {
@@ -321,7 +321,7 @@
         "figure": "../06_Lecture_Notes/figures/M01_repeat_weights.tex",
         "caption": "Synthetic ratings stay fixed. Additional identical rows change representation.",
         "description": "The dashed blue equal-persona mean stays at 3.975. The orange equal-row mean rises from 3.975 to 4.158333 as p01 supplies one to five identical responses. Persona p01 has rating 4.25 and p02 has rating 3.70; p02 supplies one response throughout.",
-        "notes": "A product manager must specify which unit receives equal weight. With two p01 responses and one p02 response, equal-row weighting gives 4.066667; equal-persona weighting gives 3.975. This imposed comparison measures no preference change. The complete source program is ../03_Data_and_Code/Reproducible_Recommendations/reproduce_recommendation.py. Each rating is derived from invented responses and imposed similarities.",
+        "notes": "A product manager must specify which unit receives equal weight. With two p01 responses and one p02 response, weighting rows equally gives 4.066667, while weighting personas equally gives 3.975. The synthetic ratings come from invented responses and fixed similarities, so repeating a row changes representation without changing either preference. Reproduce the comparison with reproduce_recommendation.py in the Reproducible Recommendations folder.",
         "source": "M1, Section 1.15. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md"
       },
       {
@@ -619,7 +619,7 @@
           "One supplied call has 53 turns but zero recorded words.",
           "Retain the call as unknown and preserve firms with no matches."
         ],
-        "notes": "The roster contains 123 firms, of which 122 have supplied calls. Winmark has no supplied calls. The empty Dollar Tree call cannot establish absence of pricing language. Observed calls with no matches have a different status.",
+        "notes": "The roster contains 123 firms, of which 122 have supplied calls; Winmark has none. The empty Dollar Tree call supplies no evidence about whether pricing language was used, whereas an observed call with zero matches has been searched. Treating both as zero would combine missing evidence with an observed absence of dictionary matches.",
         "source": "M2, Section 2.19, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -730,7 +730,7 @@
         "figure": "figures/selected_evidence.tex",
         "caption": "Synthetic: 400 households per world; monthly effects in USD.",
         "description": "A and B are identical in both releases: 200 households with effects of minus 10. The unreleased 200 have effects of plus 30 in H and minus 10 in L. Full-population means are plus 10 and minus 10.",
-        "notes": "Hold all other causes of bills fixed so the prior bill equals the current no-project bill. All current bills are recorded internally in both worlds. The example isolates release selection and grants identification within each constructed population. Weighting cannot recover zero-inclusion strata. Full code, positive-inclusion comparisons, and support bounds appear in M2 §2.31.",
+        "notes": "In both constructed worlds, all current bills are recorded internally and all other causes of bills are held fixed, so the prior bill equals the current no-project bill. This setup grants identification within each population and isolates which records are released. Weighting can adjust positive inclusion probabilities, but a stratum with zero probability of release contributes no observed outcomes to recover. M2 §2.31 supplies the complete program, positive-inclusion comparisons, and support bounds.",
         "source": "M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -850,7 +850,7 @@
           "Within-customer covariance can make a mean change precise.",
           "A before/after change needs a counterfactual design for a causal claim."
         ],
-        "notes": "In the synthetic example, dropping covariance produces an inapplicable standard error of 18.402 dollars. Reordering complete rows leaves the paired result unchanged. Reassigning only the after values changes the standard error. Resample whole pairs when customers are independent sampling units. Full input data, Python and tests are in Statistical_Graphics.",
+        "notes": "In the synthetic example, dropping the covariance between each customer’s before and after values produces an inapplicable standard error of 18.402 dollars. Reordering complete rows preserves the paired result, while reassigning only the after values changes the pairing and its uncertainty. When customers are independent sampling units, resample whole pairs to preserve that dependence. Statistical_Graphics contains the full inputs, Python program, and checks.",
         "source": "../03_Data_and_Code/Statistical_Graphics/README.md https://warint.github.io/pystatlas/group-comparisons/"
       },
       {
@@ -957,7 +957,7 @@
         "figure": "../06_Lecture_Notes/figures/M02_map_footprint.tex",
         "caption": "Synthetic square road loop. Filling changes the footprint; all four nodes remain reachable.",
         "description": "The square-corner road corridor covers 1.60 square kilometers. Filling its interior shades 4.84 square kilometers. Both panels retain the same four reachable corner nodes and no modeled route to the center.",
-        "notes": "A two-kilometer square has four two-minute edges. From one corner, all four nodes are reachable within five minutes. The imposed corridor extends 0.1 kilometer to either side; subtract 1.8 squared from 2.2 squared to obtain 1.60 square kilometers. Filling the hole retains 2.2 squared, or 4.84. No route, node, or access permission is added. The geometry is analytic and does not execute an upstream isochrone function.",
+        "notes": "A two-kilometer square has four two-minute edges, allowing all four nodes to be reached from one corner within five minutes. Extending a hypothetical corridor 0.1 kilometer to either side gives an area of 2.2 squared minus 1.8 squared, or 1.60 square kilometers. Filling its hole raises the displayed area to 4.84 square kilometers without adding any route, node, or access permission. This analytic geometry calculation shows how a display can change the apparent footprint while preserving access; it does not execute an upstream isochrone function.",
         "source": "Marketing Analytics Lecture Notes. M2 §2.23. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -980,7 +980,7 @@
           "Alter the axis range, cohort filter, and denominator one at a time.",
           "Explain which changes alter the substantive comparison."
         ],
-        "notes": "The small example runs with ../03_Data_and_Code/Lecture_Examples/session_examples.py S03. The complete mHealth visualization program and interactive chart provide the real-data extension. Verify values separately from rendered readability.",
+        "notes": "The small example runs with session_examples.py in the Lecture Examples folder S03. The complete mHealth visualization program and interactive chart provide the real-data extension. Verify values separately from rendered readability.",
         "source": "M2, Section 2.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
@@ -1218,7 +1218,7 @@
           ]
         ],
         "caption": "340 users; June minus May 2016 logging: −5.123 pp.",
-        "notes": "Membership requires a recorded day before May within the established pseudonym-based cohort. May and June have 31 and 30 calendar days. Zero-log users stay in the denominator. The paired test uses a Student approximation with 339 degrees of freedom and interval [-7.835, -2.411] pp. The independent-day comparison deliberately omits within-user dependence and gives [-6.423, -3.823] pp. Both reject zero, so decision agreement conceals a precision error. This is a descriptive temporal change; no intervention assignment is observed.",
+        "notes": "Membership requires a recorded day before May within the established pseudonym-based cohort, with all zero-log users retained. May and June contribute 31 and 30 calendar days respectively. Accounting for the pairing produces a Student interval with 339 degrees of freedom of [-7.835, -2.411] percentage points, while deliberately treating the days as independent gives [-6.423, -3.823]. Both reject zero, illustrating why agreement on a decision can conceal an error in precision. The comparison describes a temporal change because no intervention assignment is observed.",
         "source": "M3 §3.18. ../06_Lecture_Notes/modules/M03_Regression.md"
       },
       {
@@ -1294,7 +1294,7 @@
           "Compare pooled and customer-effect specifications.",
           "Inspect residuals, outliers, and sample changes."
         ],
-        "notes": "Run the small OLS case in ../03_Data_and_Code/Lecture_Examples/session_examples.py S04. The mHealth m03.py program supplies the full real-data calculation, including exact-date pairing and clustered inference.",
+        "notes": "Run the small OLS case in session_examples.py in the Lecture Examples folder S04. The mHealth m03.py program supplies the full real-data calculation, including exact-date pairing and clustered inference.",
         "source": "M3, Section 3.8, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M03_Regression.md"
       },
       {
@@ -1336,7 +1336,7 @@
         "figure": "../06_Lecture_Notes/figures/M03_digital_controls.tex",
         "caption": "The CCI income association changes sign after adjustment.",
         "description": "MCI income coefficients decline from 0.05521 to 0.00209 and 0.00132; CCI changes from 0.04856 to -0.01821 and -0.01750 after controls and state effects.",
-        "notes": "The slope is in index units per $10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older; broadband is a household share. All models retain the same records. Adding controls changes the association represented by income; it does not identify an income intervention.",
+        "notes": "The slope measures index units per USD 10,000 of area median household income in 2021 dollars. Education is the college-degree share among adults 25 or older, and broadband is a household share. Keeping the records fixed while adding these controls changes the association represented by income. A causal interpretation would require a design that identifies an income intervention.",
         "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md",
         "figure_height": 0.72
       },
@@ -1591,7 +1591,7 @@
           "Compare C's share with the change in category participation.",
           "Check a case with no outside option."
         ],
-        "notes": "Use ../03_Data_and_Code/Lecture_Examples/session_examples.py S05. With no outside option, purchase incidence is one by construction. That change should be visible in the program and interpretation.",
+        "notes": "Use session_examples.py in the Lecture Examples folder S05. With no outside option, purchase incidence is one by construction. That change should be visible in the program and interpretation.",
         "source": "M4, Section 4.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
       },
       {
@@ -1636,7 +1636,7 @@
           "Generated reactions can suggest benefits and objections.",
           "A screening claim needs evidence on new concepts and the intended customers."
         ],
-        "notes": "Maier and coauthors compare 57 personal-care concepts with 9,300 U.S. human responses. Semantic similarity rating maps generated text to five-category distributions. The authors manually optimized the anchors on the same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment is a ratio to a split-half human benchmark. It describes neither individual-rating accuracy nor purchase prediction. Concept ratings do not identify attribute tradeoffs without suitable variation and a response model.",
+        "notes": "The concept-screening study compares 57 personal-care concepts with 9,300 U.S. human responses (Maier et al., 2025). Semantic similarity rating maps generated text to five-category distributions using anchors manually optimized on those same surveys. For GPT-4o with image stimuli and averaged anchors, the reported 90.2% correlation attainment divides the concept-level correlation by a split-half human benchmark. Individual-rating accuracy, purchase prediction, and attribute tradeoffs require their own comparisons and a suitable response model.",
         "source": "(Maier et al., 2025, Table 1, Appendix A.3). https://arxiv.org/abs/2510.08338v3"
       },
       {
@@ -1645,7 +1645,7 @@
         "figure": "../06_Lecture_Notes/figures/M04_concept_screening.tex",
         "caption": "Six synthetic concepts, 100 invented ratings each. Overall category shares match, while the preferred concepts differ.",
         "description": "The left panel shows common overall shares of 0, 0, 22.5, 30, and 47.5 percent in categories 1–5. The right panel preserves concept A–F identity: reference means fall from 4.5 to 4.0, pooled means equal 4.25, reversed means rise from 4.0 to 4.5, and compressed means fall from 4.30 to 4.20. The right vertical scale is 3.9–4.6.",
-        "notes": "Every candidate has the same aggregate distribution as the reference across equally weighted concepts. That pooled match removes the concept distinction needed to choose products. The reversed rule selects F and E instead of A and B. The compressed pattern preserves order while shrinking rating differences. All values are imposed teaching inputs and no human survey or fitted model is represented.",
+        "notes": "Across the equally weighted synthetic concepts, every candidate matches the reference’s aggregate category distribution, yet the pooled pattern removes the differences needed for product selection. The reversed rule selects F and E instead of A and B, while the compressed pattern preserves order and shrinks rating differences. These constructions isolate distinct failures that an aggregate distribution check can miss.",
         "source": "M4 §4.23, M5 §5.23, and M7 §7.36. ../03_Data_and_Code/Synthetic_Consumers/README.md"
       },
       {
@@ -1746,7 +1746,7 @@
           ]
         ],
         "caption": "Imposed costs: 1 and 0.01 per response. Rounded allocations save 23.68% at the same 0.01 MSE target.",
-        "notes": "Both source variances equal one. The mixed allocation places 54 primary and 324 auxiliary observations at each profile. Its asymptotic saving is 24.29 percent; separate upward rounding within each source-profile cell gives the table. The rounded construction is feasible but need not be the exact integer optimum. Setup, human validation, and monitoring costs require separate budget entries. Run allocate_responses.py in the Auxiliary_Data example.",
+        "notes": "With both source variances set to one, the mixed allocation places 54 primary and 324 auxiliary observations at each profile. The asymptotic calculation saves 24.29 percent; rounding each source-profile count upward yields the feasible allocation in the table, which need not be the exact integer optimum. A complete budget also includes setup, human validation, and monitoring costs. Reproduce the allocation with allocate_responses.py in the Auxiliary_Data example.",
         "source": "(Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298"
       },
       {
@@ -1766,7 +1766,7 @@
         "intro": "Two synthetic restaurants: expected demand intercept $\\widehat a$, cost $c=2$, substitution $\\delta=0.5$.",
         "equation": "p^N=\\frac{(1-\\delta)\\widehat a+c}{2-\\delta}\\qquad p^J=\\frac{\\widehat a+c}{2}",
         "interpretation": "Independent owners maximize their own profits. Joint pricing maximizes their combined profit.",
-        "notes": "Prices are dollars per meal equivalent. Equal-probability demand states have intercepts 10 and 14. A common signal is correct with probability r. Each independent firm chooses its own price, treating the other price as fixed. The joint objective includes the rival's profit. Preferences, costs, and information are held fixed when comparing objectives. M4 derives these interior solutions and supplies full code and quantity-corner checks.",
+        "notes": "Demand has two equally likely states with intercepts 10 and 14, and a common signal identifies the state correctly with probability r. Each independent firm chooses its price in dollars per meal equivalent while treating its rival’s price as fixed. A joint profit objective instead includes the rival’s profit, changing the price-setting incentive even when preferences, costs, and information remain fixed. M4 derives the interior solutions and supplies the complete program and quantity-corner checks.",
         "source": "Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md"
       },
       {
@@ -1887,7 +1887,7 @@
         "figure": "../06_Lecture_Notes/figures/M04_scaling.tex",
         "caption": "Synthetic customers have unchanged spending and frequency records.",
         "description": "Changing spending from dollars to hundreds of dollars reverses which customer is nearest to A. Frequency then receives more relative weight.",
-        "notes": "Raw distances compare A=(100,1), B=(110,9), and C=(200,1). The example changes only the spending scale. The preferred business representation depends on the service decision.",
+        "notes": "Compare A=(100,1), B=(110,9), and C=(200,1), then change only the unit used to express spending. The resulting change in distance shows why a numerical representation embeds a weighting of customer attributes. The appropriate weighting depends on the service decision.",
         "source": "M4, Section 4.5, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
       },
       {
@@ -1907,7 +1907,7 @@
         "intro": "For each paper, collect the mechanisms coded as present in a set $A_i$.",
         "equation": "d_J(i,j)=1-\\frac{|A_i\\cap A_j|}{|A_i\\cup A_j|}",
         "interpretation": "Jaccard distance ignores shared absences. Average linkage compares these distances.",
-        "notes": "The primary sample is 48 retrieved papers with potential dual use or a reported choice concern. Twelve binary codes include social cues, emotion, disclosure, defaults, and exit friction. A zero code means the mechanism was not coded from reviewed evidence. Missing reviews are excluded. See M4 Section 4.17 for the complete program.",
+        "notes": "Compare 48 retrieved papers with potential dual use or a reported choice concern using twelve binary codes, including social cues, emotion, disclosure, defaults, and exit friction. A zero means that a mechanism was not coded from reviewed evidence, so papers with missing reviews are excluded from the comparison. This distinction keeps unreviewed papers from appearing similar merely because evidence has not yet been assessed. M4 §4.17 provides the complete program.",
         "source": "../03_Data_and_Code/Consumer_Agency_Literature/README.md"
       },
       {
@@ -2056,7 +2056,7 @@
           "Describe a later period without refitting the groups.",
           "Vary assumed paid retention in a separate CLV calculation."
         ],
-        "notes": "The small CLV calculation is ../03_Data_and_Code/Lecture_Examples/session_examples.py S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.",
+        "notes": "The small CLV calculation is session_examples.py in the Lecture Examples folder S06. The real mHealth m04.py example and GenAI cohort program keep behavioral measurements separate from imposed financial inputs.",
         "source": "M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
       },
       {
@@ -2065,7 +2065,7 @@
         "intro": "Earlier count 10, mean 2; current count 2, mean 7. Weight each batch by one-half.",
         "equation": "\\mu_{\\mathrm{new}}=\\frac{0.5(10)(2)+0.5(2)(7)}{0.5(10)+0.5(2)}=\\frac{17}{6}",
         "interpretation": "Weighting the two means equally would give 4.5. e-means carries sums and counts.",
-        "notes": "The scalar inputs are imposed. Weighted mass determines how much each batch contributes. The complete e-means algorithm also uses a cooling schedule and unused-cluster handling. Training order in shuffled static data is distinct from calendar recency. The fixed squared-distance objective does not establish the value of a customer intervention.",
+        "notes": "In the synthetic scalar example, weighted mass determines how much each batch contributes to the updated cluster center. The complete e-means algorithm adds a cooling schedule and rules for unused clusters, so this calculation isolates one part of its operation. Batch order in shuffled static data also differs from calendar recency. Choosing a useful customer intervention requires a link from the resulting groups to customer outcomes beyond the fixed squared-distance objective.",
         "source": "M4, Section 4.18. ../03_Data_and_Code/Clustering_Optimization/README.md https://arxiv.org/abs/2611.09501v1"
       },
       {
@@ -2330,7 +2330,7 @@
           "Choose dimensions on validation; retain every test category.",
           "Recorded categories define the target, including ambiguous labels."
         ],
-        "notes": "The mHealth sample uses 6,000 training descriptions, 1,500 validation descriptions, and 1,500 test descriptions with equal weights. Normalized descriptions are disjoint across splits; users and periods are shared. Seventy-four test descriptions have multiple recorded categories. The modal category uses an alphabetical tie break. Categories such as default and recipe are retained. Nutritional correctness requires an independently justified reference.",
+        "notes": "The mHealth comparison gives equal weight to 6,000 training descriptions, 1,500 validation descriptions, and 1,500 test descriptions. Normalized descriptions are disjoint across splits, although users and periods are shared, so the test concerns new descriptions within that setting. Seventy-four test descriptions have multiple recorded categories; the modal category with alphabetical tie breaking defines the reference. Retaining categories such as default and recipe makes agreement with the recorded system the measured outcome. Nutritional correctness requires a separately justified reference.",
         "source": "M5 §5.26. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md"
       },
       {
@@ -2453,7 +2453,7 @@
         "figure": "../06_Lecture_Notes/figures/M05_source_selection.tex",
         "caption": "Four fictional pricing questions; authored answers and reference annotations.",
         "description": "All four answers cite a source in every condition. Supported counts are four with curated sources, two after a misleading memo is added, and four after review. The contrast is stipulated.",
-        "notes": "S1 reports a price increase and a before-after unit change without a causal design. S2 is an unanswered analyst question about discounts. S3 defines a selected panel-member denominator. S4 incorrectly asserts causality and a discount announcement. Citation presence does not establish that an inference is justified. No model responses were collected, so these counts measure no effect of context.",
+        "notes": "The synthetic records support different kinds of statements: S1 reports a price increase and a before-after unit change without a causal design, S2 contains an unanswered question about discounts, and S3 defines a selected panel-member denominator. S4 incorrectly converts these records into claims of causality and a discount announcement. The comparison shows why citations must support the particular inference being made. Because no model responses were collected, the counts describe these constructed claims and establish no effect of context on model performance.",
         "source": "M5 §5.19. ../03_Data_and_Code/AI_Evidence_and_Evaluation/README.md"
       },
       {
@@ -2710,7 +2710,7 @@
           "The underlying data contain food logging and no observed payments.",
           "The decision requires additional evidence on price, retention, and margin."
         ],
-        "notes": "Observed logging can motivate a segmentation or interface decision. Paid uptake from an imposed logit model is a scenario. A stated-choice study or pilot could supply some of the missing evidence.",
+        "notes": "Observed logging can motivate a segmentation or interface decision, but projecting paid uptake from a hypothetical logit model requires additional behavioral assumptions. A stated-choice study or pilot could supply evidence about uptake and help assess whether the scenario is useful for the decision.",
         "source": "M4, Section 4.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md"
       },
       {
@@ -2982,7 +2982,7 @@
         "figure": "../06_Lecture_Notes/figures/M06_institutional_exposure.tex",
         "caption": "Operating capacity and project-related cost exposure have different timelines.",
         "description": "A possible sequence links a request, investment, cancellation, and allowed recovery. A synthetic completed-project increase of ten dollars per MWh minus a six-dollar weighted donor increase leaves a four-dollar gap.",
-        "notes": "The paper anchors treatment to operating capacity and excludes donors with the specified operating additions. This rule does not separately screen earlier commitments, cancellations, or cost recovery. In the synthetic example, a cancelled-project donor has zero operating additions and an eight-dollar increase; it receives weight 0.75. An unexposed donor receives 0.25. Common baseline prices and no other changes are imposed. The example demonstrates a possible identification failure, not actual bias in the published estimate. Costs can also precede the fitting window or arrive after the outcome window. The complete institutional_exposure.py program appears in M6 §6.35.",
+        "notes": "The paper anchors treatment to operating capacity and excludes donors with specified operating additions, leaving earlier commitments, cancellations, and cost recovery outside that screen. In the synthetic example, a cancelled-project donor has zero operating additions and an eight-dollar increase, receiving weight 0.75; an unexposed donor receives 0.25. With common baseline prices and no other changes, the comparison demonstrates a possible identification failure. Assessing actual bias also requires the timing of costs, which may precede the fitting window or follow the outcome window. M6 §6.35 provides institutional_exposure.py in full.",
         "source": "M6 §6.35. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
@@ -3082,7 +3082,7 @@
           ]
         ],
         "caption": "One example versus none; 7,200 runs per prompt-by-workflow cell.",
-        "notes": "The no-example success rates are 81.49%, 92.40%, and 96.97%. The failure reduction divides the success gain by one minus the no-example success rate. The agent-minus-chatbot interaction on the additive scale is -3.625 percentage points. Near perfect success, a smaller percentage-point effect can remove the same fraction of remaining failures. Treat the scale as part of the estimand. Shared tasks and datasets determine the uncertainty unit. Full aggregate reconstruction appears in M1 §1.19; M6 §6.31 develops the comparison.",
+        "notes": "The no-example success rates are 81.49%, 92.40%, and 96.97%, leaving different amounts of failure available to reduce. Dividing the success gain by one minus the no-example success rate measures the fraction of remaining failures removed. On the additive scale, the agent-minus-chatbot interaction is -3.625 percentage points, yet a smaller gain near perfect success can remove the same fraction of failures. The scale therefore belongs in the estimand, and shared tasks and datasets determine the uncertainty unit. M1 §1.19 reconstructs the aggregates; M6 §6.31 develops the comparison.",
         "source": "(Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
@@ -3093,7 +3093,7 @@
           "Change contribution, delivery cost, and the target effect.",
           "Specify an mHealth recommendation assignment with a fixed user denominator."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.",
+        "notes": "Run session_examples.py in the Lecture Examples folder S09. The mHealth experiment-planning scripts use historical variation and an explicitly simulated zero-effect assignment. Their output must remain labeled as planning and simulation. The AI_Workflows folder supplies complete standard-library calculations with synthetic inputs.",
         "source": "M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
@@ -3236,7 +3236,7 @@
         "figure": "../06_Lecture_Notes/figures/M06_compatible_price_models.tex",
         "caption": "Identical observed cells; assigning a common price gives different effects.",
         "description": "Left: group A buys with probability 80% at $10 and group B with probability 40% at $20. Both groups have weight one half. Right: the price-response model changes from 80% to 40%; the selection model remains at 60%.",
-        "notes": "Both synthetic models reproduce the complete historical joint law of group, price, and purchase. Each group historically receives only one price. A price-response model depends only on price; a group-selection model depends only on group. The intervention assigns everyone $10 or $20 and holds population, product, disclosure, availability, and each response rule fixed. Historical sample size cannot resolve the unobserved group-price cells. Lines join the two allowed prices only.",
+        "notes": "Both synthetic models reproduce the complete historical joint law of group, price, and purchase, with each group receiving only one price. One model makes response depend on price and the other on group, so they disagree when everyone is assigned USD 10 or USD 20. Population, product, disclosure, availability, and each response rule remain fixed in that intervention. More observations from the same historical support leave the unobserved group-price cells unresolved. The lines join only the two allowed prices.",
         "source": "M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md",
         "fixed_figure_font": true
       },
@@ -3545,7 +3545,7 @@
         "figure": "../06_Lecture_Notes/figures/M06_store_pooling.tex",
         "caption": "Randomized synthetic discounts. Pooling reduces aggregate error; Store 4 favors its separate estimate.",
         "description": "Known, separate, and partially pooled curves for Store 0 with 12 customers and Store 4 with 300. Both panels share discount and profit scales. Shrinkage improves the small store and worsens the displayed large store.",
-        "notes": "Twenty stores in four regions supply 2,188 observations. Discounts are randomized independently within each store. Five-fold validation over observed outcomes selects regional and store ridge penalties. Equal-store RMSE is USD 0.512 with partial pooling, USD 0.936 with separate fits, and USD 0.968 with complete pooling. Store 4 has separate RMSE USD 0.249 and partial RMSE USD 0.550. This is one simulated dataset, with no general dominance or interval-calibration claim.",
+        "notes": "In one simulated dataset, twenty stores in four regions supply 2,188 observations, with discounts randomized independently within each store. Five-fold validation selects regional and store ridge penalties from observed outcomes. Partial pooling lowers equal-store RMSE to USD 0.512, compared with USD 0.936 for separate fits and USD 0.968 for complete pooling, yet Store 4’s RMSE rises from USD 0.249 under separate fitting to USD 0.550. The aggregate improvement therefore coexists with a worse result for one store. This single simulation establishes neither general dominance nor interval calibration.",
         "source": "../03_Data_and_Code/Dose_Response/README.md; ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
@@ -3565,7 +3565,7 @@
           "Check them using within-group averages.",
           "Set one logging probability to zero and explain the missing comparison."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S10. A correct implementation flags unsupported target actions. Silently dropping the unsupported group changes the target population.",
+        "notes": "Run session_examples.py in the Lecture Examples folder S10. A correct implementation flags unsupported target actions. Silently dropping the unsupported group changes the target population.",
         "source": "M6, Section 6.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
       },
       {
@@ -3617,7 +3617,7 @@
         "figure": "../06_Lecture_Notes/figures/M06_project_windows.tex",
         "caption": "The baseline and donor population change the comparison.",
         "description": "Four synthetic utility price histories yield comparisons of 10, 7, and 4 dollars per MWh under different baselines and donors.",
-        "notes": "Before commitments, the completed-project increment is 10. Equal canceled and unexposed donor weights subtract 3. Starting after commitments leaves the additional operating increment of 4. Canceled-project costs are constant over the shorter interval, so they add no change to that particular DiD. Actual donor weights and dated obligations are required for the paper-specific assessment.",
+        "notes": "Measuring from before commitments gives a completed-project increment of 10, from which equal canceled and unexposed donor weights subtract 3. Starting after commitments instead measures the additional operating increment of 4. The canceled-project costs are constant over this shorter interval and consequently contribute no change to that DiD. The effect of the window therefore depends on dated obligations and donor weights, which are needed for an assessment of the paper.",
         "source": "../03_Data_and_Code/Bad_Controls/README.md",
         "figure_height": 0.73
       },
@@ -4231,7 +4231,7 @@
         "figure": "../06_Lecture_Notes/figures/M07_anomaly_mechanism.tex",
         "caption": "Synthetic payment event: support contacts rank first by mean standardized deviation.",
         "description": "The imposed service interruption directly changes latency and completion and produces support contacts with a five-minute lag. Support persists after recovery; its average deviation in the true window is 30.45.",
-        "notes": "The cause is imposed by the data generator. The score only uses observed variables. Within the true interval the mean standardized support deviation is 30.4533. Within the matched alert interval it is 32.5105. Both are descriptive rankings. A real repair decision needs payment traces or other evidence that supports the proposed mechanism. All score scales and floors are defined in M7 §7.29.2.",
+        "notes": "The data generator specifies the cause, while the diagnostic score ranks deviations in observed variables. Mean standardized support deviation is 30.4533 within the true interval and 32.5105 within the matched alert interval, showing that a stronger symptom can appear after the initiating event. These descriptive rankings need payment traces or other mechanism evidence to justify a repair decision. M7 §7.29.2 defines the score scales and floors.",
         "source": "M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md"
       },
       {
@@ -4404,7 +4404,7 @@
           ]
         ],
         "caption": "Constructed programs on mHealth; intended roster: 358 users, 31 days.",
-        "notes": "The shifted-user program changes 331 user values while preserving the overall mean and total. The 30-day calculation changes exposure. Omitting zero-log users returns 319 rows and changes the target population. Under the required per-user contract, missing users constitute incomplete output. The two complete but wrong programs are silent failures. The independent SQL comparison and small known-answer cases assess the checker. These are deliberately constructed errors, not measured LLM error frequencies. Full Python appears in M7 §7.46.",
+        "notes": "The constructed errors defeat a total-only check in different ways: shifting users changes 331 values while preserving the overall mean and total, using 30 days changes exposure, and omitting zero-log users returns only 319 rows. Under the required per-user contract, the omitted users make the output incomplete; the other two programs return complete but wrong results. Comparing independently computed SQL results and small known-answer cases assesses whether the checker catches these failures. The examples illustrate failure mechanisms without measuring their frequency in LLM output. M7 §7.46 supplies the complete Python program.",
         "source": "Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md"
       },
       {
@@ -4595,7 +4595,7 @@
           "Confidence conditions on the antecedent item.",
           "Lift compares confidence with the consequent's marginal prevalence."
         ],
-        "notes": "Association rules are descriptive. A positive lift can reflect common meal occasions or other causes rather than a response to recommendation. Evaluate rules on later baskets.",
+        "notes": "Positive lift describes items appearing together more often than their marginal frequencies would imply. Common meal occasions or other shared causes can generate that pattern without a response to recommendation. Evaluation on later baskets assesses whether the association persists, while an intervention requires evidence about its effect on purchases.",
         "source": "M7, Section 7.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
@@ -4676,7 +4676,7 @@
           "Evaluate the fixed choice on later baskets.",
           "Assess one generated explanation against item attributes."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S12 for the NDCG check. The full mHealth m07.py program defines the candidate and basket windows. Preserve the final test period for evaluation.",
+        "notes": "Run session_examples.py in the Lecture Examples folder S12 for the NDCG check. The full mHealth m07.py program defines the candidate and basket windows. Preserve the final test period for evaluation.",
         "source": "M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md"
       },
       {
@@ -4921,7 +4921,7 @@
           ]
         ],
         "caption": "Known synthetic functions; 0.1-point search grid. The 3% complaint cap is an imposed exercise condition.",
-        "notes": "The list price is USD 20 and unit cost is USD 4. Known mean profit is 10+0.4a-0.01a squared; expected quantity is profit divided by the unit margin. Revenue is price times quantity. The assumed complaint probability is 0.01+0.0001a squared. All quantities are per eligible customer over the promotion week. The cap is hypothetical and carries no legal or ethical authority. It reduces profit by approximately USD 0.348 relative to the unconstrained profit maximum.",
+        "notes": "For a hypothetical promotion week, set the list price to USD 20, unit cost to USD 4, and mean profit to 10+0.4a-0.01a squared per eligible customer. Expected quantity equals profit divided by the unit margin, so revenue follows by multiplying that quantity by price. With complaint probability set to 0.01+0.0001a squared, imposing the illustrative cap reduces profit by approximately USD 0.348 relative to the unconstrained maximum. This calculation identifies the tradeoff under the stated assumptions; the cap still needs an independently justified legal or ethical basis.",
         "source": "../03_Data_and_Code/Dose_Response/decision_objectives.py; ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
@@ -4976,7 +4976,7 @@
           "Solve and independently grid-check the fixed-budget allocation.",
           "Report the assumptions that change the preferred action."
         ],
-        "notes": "Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S13. A grid check verifies the numerical optimum within its resolution. It does not establish the imposed response curves as causal estimates.",
+        "notes": "Run session_examples.py in the Lecture Examples folder S13. A grid check verifies the numerical optimum within its resolution. It does not establish the imposed response curves as causal estimates.",
         "source": "M8, Section 8.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md"
       },
       {
@@ -5562,7 +5562,7 @@
           ]
         ],
         "caption": "Synthetic market; expected dollars per market-day. Preferences and costs are fixed.",
-        "notes": "First hold the objective fixed and improve the demand signal. Then hold information fixed and change the objective. The first comparison can reduce consumer surplus while firms retain independent objectives. The second replaces independent price setting with joint profit maximization. Total welfare adds both monetary columns. The values are solved under quasi-linear preferences with no income effects, vendor fees, or externalities. Run evaluate_market.py and check the exact fractions.",
+        "notes": "Holding the objective fixed while improving the demand signal can reduce consumer surplus even when firms retain independent pricing objectives. Holding information fixed and replacing those objectives with joint profit maximization makes a separate comparison about incentives. Total welfare sums the two monetary columns under the model’s quasi-linear preferences and excludes income effects, vendor fees, and externalities. Reproduce the solved values with evaluate_market.py and check the exact fractions before interpreting either comparison.",
         "source": "Original synthetic model. M4 Section 4.26. ../03_Data_and_Code/Pricing_Competition/README.md"
       },
       {
@@ -5706,7 +5706,7 @@
         "figure": "../06_Lecture_Notes/figures/M09_counterexample_extrapolation.tex",
         "caption": "A synthetic capacity threshold changes extrapolation while preserving historical responses.",
         "description": "Two functions coincide for normalized load from zero to one. At load two, the linear function reaches four dollars/MWh and the threshold function reaches fourteen. The shaded area denotes the assumed historical support.",
-        "notes": "The construction grants exact knowledge throughout the historical support. The linear and threshold accounts still imply different future costs. Choosing one requires an extrapolation premise or additional evidence. The example estimates no actual capacity threshold. The paper acknowledges future uncertainty; preserve that qualification when assessing stronger public claims. Full original code is logical_counterexamples.py.",
+        "notes": "The construction gives both accounts exact agreement throughout the historical support, yet the linear and threshold accounts imply different future costs. Choosing between them therefore requires an extrapolation premise or additional evidence; the construction itself estimates no actual capacity threshold. The paper acknowledges future uncertainty, a qualification that belongs beside any assessment of stronger public claims. Reproduce the comparison with logical_counterexamples.py.",
         "source": "M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
@@ -6283,7 +6283,7 @@
           "Connect measurement, modeling, and evaluation to that action.",
           "State the costs, customer outcomes, and uncertainty that affect the choice."
         ],
-        "notes": "The evidence chain can include a descriptive assessment, a predictive model, a causal comparison, and a scenario. Each component should retain its own scope and assumptions.",
+        "notes": "A marketing decision may draw on a descriptive assessment, a predictive model, a causal comparison, and a scenario. Connecting these components requires explaining how each contributes to the recommendation while retaining its population, assumptions, and scope of inference.",
         "source": ""
       },
       {

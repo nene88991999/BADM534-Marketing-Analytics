@@ -21,7 +21,7 @@ Keep the three decisions distinct: product configuration and pricing; useful cus
 | C11 | [Counting Your Customers the Easy Way: An Alternative to the Pareto/NBD Model](https://www.brucehardie.com/papers/018/) | Reference | Research paper |
 | C12 | [Interpreting the Results of Conjoint Analysis](https://content.sawtoothsoftware.com/assets/3501e79f-3a9f-4d99-a0f5-1522525e7f3f) | Core | Research paper |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

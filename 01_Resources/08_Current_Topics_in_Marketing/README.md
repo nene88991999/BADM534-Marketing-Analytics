@@ -18,7 +18,7 @@ Select a small number of extensions after the core methods. Marketing mix models
 | A08 | [How Artificial Intelligence Will Change the Future of Marketing](https://link.springer.com/article/10.1007/s11747-019-00696-0) | Reference | Research paper |
 | A09 | [How Generative AI Is Shaping the Future of Marketing](https://link.springer.com/article/10.1007/s11747-024-01064-3) | Core | Research paper |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

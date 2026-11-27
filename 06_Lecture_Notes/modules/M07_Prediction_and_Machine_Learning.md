@@ -167,7 +167,7 @@ FOODVAR incorporates a variety-change indicator into sequential food recommendat
 
 ### 7.12.1 A Goal Weight Can Change the Preferred Item Abruptly
 
-Suppose three products have preference scores and goal-compatibility scores on a common illustrative scale. A scores $(0.90,0.10)$, B scores $(0.75,0.60)$, and C scores $(0.60,0.90)$. The scores are imposed inputs, not estimated purchase probabilities or health effects. A weighted ranking rule is
+Consider a hypothetical ranking of three products using preference and goal-compatibility scores on a common scale. Assign A the scores $(0.90,0.10)$, B $(0.75,0.60)$, and C $(0.60,0.90)$, where the coordinates summarize the two ranking criteria rather than purchase probabilities or health effects. A weighted ranking rule is
 
 $$
 s_j(\alpha)=(1-\alpha)p_j+\alpha g_j,\qquad 0\leq\alpha\leq1,
@@ -351,7 +351,7 @@ print(json.dumps(result, indent=2))
 
 ## 7.16 Python Calculations for the Synthetic Cases
 
-The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+Run the program below to write the synthetic examples to CSV and reproduce their calculations. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`; the separate mHealth programs reproduce the observed-data results.
 
 Python source: [m07_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m07_synthetic.py). From its directory, run `python m07_synthetic.py`.
 
@@ -929,7 +929,7 @@ if __name__ == "__main__":
 
 \noindent A retailer planning next month's inventory needs purchase probabilities for the eligible customer population. A ranking determines which customers receive priority, while the sum of probabilities predicts the number who will purchase. A strictly increasing transformation of scores preserves rank-based AUC, but it can change this forecast. Warin's [PyStatlas calibration example](https://warint.github.io/pystatlas/model-diagnostics/calibration-plot/) compares observed event shares with predicted probabilities and reports the Brier score alongside the display.
 
-Consider a fixed synthetic population of 80 eligible customers. Each can purchase at most once during the next month. Four ordered score groups contain 20 customers each, with 2, 6, 12, and 16 purchases. The other 44 customers remain in every denominator. Predictions are imposed for the comparison; no model is estimated. Model A assigns probabilities 0.10, 0.30, 0.60, and 0.80. Model B assigns 0.01, 0.10, 0.90, and 0.99 to those same groups. Both preserve the order of every positive-negative pair and the same ties.
+Consider a synthetic population of 80 eligible customers, each of whom can purchase at most once during the next month. Four ordered score groups contain 20 customers each, with 2, 6, 12, and 16 purchases; the other 44 customers remain in every denominator. Set Model A's probabilities to 0.10, 0.30, 0.60, and 0.80, and Model B's probabilities to 0.01, 0.10, 0.90, and 0.99 for those same groups. Both models preserve the order of every positive-negative pair and the same ties, while assigning different probabilities to the purchases.
 
 To connect ranking with observed outcomes, let $N_1$ and $N_0$ count purchasers and nonpurchasers, and let $p_i$ denote customer $i$'s score. Empirical AUC is
 
@@ -2677,7 +2677,7 @@ $$
 
 Here $x_{ij}$ is coordinate $j$ of case $i$, $\widehat{x}_{ij}$ is its reconstruction, $\bar{x}_j$ is the coordinate mean over the same cases, and $V_j=\sum_i(x_{ij}-\bar{x}_j)^2$. For a coordinate with positive variation, $\operatorname{FVU}_j$ divides its squared error by $V_j$. The weights sum to one. Coordinate units determine the relative penalties, and a zero-variation coordinate requires separate handling. The explained share is $1-\operatorname{FVU}$ and may be negative when reconstruction is sufficiently poor.
 
-Consider four equally weighted synthetic cases with vectors $(-100,-1)$, $(-100,1)$, $(100,-1)$, and $(100,1)$. The first coordinate is an imposed style score. The second is an imposed review score, with positive values defining the two cases that require review. Both means are zero; the coordinate sums of squares are 40,000 and 4. Representation A preserves the first coordinate and sets the second to zero. Representation B multiplies the first by 0.98 and preserves the second. Both representations apply fixed transformations to the four invented vectors. Their comparison isolates the effect of preserving different coordinates.
+Consider four equally weighted synthetic cases with vectors $(-100,-1)$, $(-100,1)$, $(100,-1)$, and $(100,1)$. Define the first coordinate as a style score and the second as a review score, with positive review scores marking the two cases that require review. Both means are zero, and the coordinate sums of squares are 40,000 and 4. Representation A preserves the style score and sets the review score to zero; representation B multiplies the style score by 0.98 and preserves the review score. Comparing these fixed transformations reveals how preserving the coordinate with the most variation can discard the distinction needed for the review decision.
 
 | Representation | Total Squared Error | Variance Explained | Recall of Review-Required Cases |
 | --- | --- | --- | --- |

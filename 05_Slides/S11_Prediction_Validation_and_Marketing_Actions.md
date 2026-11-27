@@ -547,7 +547,7 @@ Synthetic payment event: support contacts rank first by mean standardized deviat
 
 [Editable TikZ](../06_Lecture_Notes/figures/M07_anomaly_mechanism.tex)
 
-The cause is imposed by the data generator. The score only uses observed variables. Within the true interval the mean standardized support deviation is 30.4533. Within the matched alert interval it is 32.5105. Both are descriptive rankings. A real repair decision needs payment traces or other evidence that supports the proposed mechanism. All score scales and floors are defined in M7 §7.29.2.
+The data generator specifies the cause, while the diagnostic score ranks deviations in observed variables. Mean standardized support deviation is 30.4533 within the true interval and 32.5105 within the matched alert interval, showing that a stronger symptom can appear after the initiating event. These descriptive rankings need payment traces or other mechanism evidence to justify a repair decision. M7 §7.29.2 defines the score scales and floors.
 
 Source: M7 §§7.29–7.30. ../03_Data_and_Code/Anomaly_Diagnosis/README.md
 
@@ -703,7 +703,7 @@ Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resour
 
 Constructed programs on mHealth; intended roster: 358 users, 31 days.
 
-The shifted-user program changes 331 user values while preserving the overall mean and total. The 30-day calculation changes exposure. Omitting zero-log users returns 319 rows and changes the target population. Under the required per-user contract, missing users constitute incomplete output. The two complete but wrong programs are silent failures. The independent SQL comparison and small known-answer cases assess the checker. These are deliberately constructed errors, not measured LLM error frequencies. Full Python appears in M7 §7.46.
+The constructed errors defeat a total-only check in different ways: shifting users changes 331 values while preserving the overall mean and total, using 30 days changes exposure, and omitting zero-log users returns only 319 rows. Under the required per-user contract, the omitted users make the output incomplete; the other two programs return complete but wrong results. Comparing independently computed SQL results and small known-answer cases assesses whether the checker catches these failures. The examples illustrate failure mechanisms without measuring their frequency in LLM output. M7 §7.46 supplies the complete Python program.
 
 Source: Original course example. Workflow motivation: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 

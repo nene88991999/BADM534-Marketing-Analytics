@@ -34,22 +34,23 @@ that a firm ought to do so or act on the result.
 Marketing dialectics examines the premises, purposes, and reasons behind
 such decisions. Some questions concern what happens under an
 intervention; others concern whose purposes ought to govern it or what
-one person owes another. Learning the analytical tools includes
-understanding which questions they can answer. Philosophical discourse
-can require a different form of reasoning, even when better data or more
-powerful methods are available. An estimate can inform an argument
-without settling its moral premises. Treating every disagreement as a
-problem of measurement can obscure the disagreement itself.
+one person owes another. Learning the analytical tools therefore
+includes understanding which questions they can answer and when
+philosophical discourse requires a different form of reasoning. An
+estimate can inform an argument without settling its moral premises,
+even when better data or more powerful methods are available. Treating
+every disagreement as a problem of measurement can obscure the
+disagreement itself.
 
 The emphasis on measurable outcomes can also influence which goals
 receive attention in research and practice. A framework such as SMART
 can help turn an accepted objective into an operational plan. When
 measurability becomes a condition for taking a concern seriously,
 however, objectives that fit a dataset can displace questions about
-dignity, autonomy, or the authority to refuse. An accurately measured
-increase in engagement leaves open whether that engagement serves the
+dignity, autonomy, or the authority to refuse. An increase in engagement
+may be measured accurately while leaving open whether it serves the
 person's purposes. Precision, predictive accuracy, and unbiased
-estimation concern the quality of an answer to a specified question. The
+estimation concern the quality of an answer to a specified question; the
 worth of that question requires further judgment.
 
 I place this judgment in the reasons people can offer one another
@@ -87,12 +88,13 @@ Python}\label{M01-m1.-marketing-decisions-data-and-ai-assisted-python}}
 
 \noindent A retailer must decide which customers should receive a coupon, how much
 inventory to place in each store, and which product descriptions should
-appear online. Each decision needs a different analytical object. A
-forecast of next week's purchases can inform inventory. A comparison of
+appear online. The information needed depends on the action: a forecast
+of next week's purchases can inform inventory, while a comparison of
 purchases with and without a coupon can inform targeting. A summary of
-product complaints can identify a service problem. An analysis becomes
-useful when its output corresponds to the decision the manager can
-actually change.
+product complaints serves another purpose by identifying service
+problems that may require a change in fulfillment or product
+descriptions. An analysis becomes useful when its output corresponds to
+a decision the manager can actually change.
 
 A managerial objective also requires justification. Before optimizing a
 response, identify who selected the end, whose choices the action
@@ -108,14 +110,14 @@ about ends, authority, and obligations require their own arguments.
 Object}\label{M01-from-a-marketing-question-to-an-analytical-object}}
 
 \noindent Consider a subscription service deciding whether to offer a renewal
-discount. The service observes account tenure, past payments, recent
-use, and prior contacts. A descriptive analysis reports renewal rates by
-tenure. A predictive analysis estimates the probability that an account
-renews under the conditions represented in the training data. A causal
-analysis estimates how an offer changes renewal. A decision analysis
-combines that change with margins, contact costs, and operational
-constraints. These objects can use overlapping data while answering
-different questions.
+discount using account tenure, past payments, recent use, and prior
+contacts. A descriptive analysis reports renewal rates by tenure, while
+a predictive analysis estimates renewal probabilities under the
+conditions represented in the training data. The offer decision requires
+a further comparison: a causal analysis estimates how the offer changes
+renewal, and a decision analysis combines that change with margins,
+contact costs, and operational constraints. These analyses can use
+overlapping data while answering different questions.
 
 The timing of the decision determines what information is available. If
 an account must be selected on Monday morning, a support call made on
@@ -335,12 +337,13 @@ merge error may reveal an incorrect key. Repairing the error without
 understanding its cause can preserve the underlying analytical mistake.
 
 Verification should use both identities and meaningful counterexamples.
-Order totals must sum to the line total for the same eligible rows. A
-single known customer should produce a manually calculable summary. An
-empty input should have an explicit result. A missing customer lookup
-should not silently remove sales. These checks constrain what the
-implementation is allowed to do without forcing one particular coding
-style.
+For the same eligible rows, order totals must sum to the line total, and
+a single known customer's summary should agree with a calculation by
+hand. Empty inputs and missing customer lookups test how the program
+handles incomplete records: the first needs an explicit result, and the
+second must preserve sales that belong in the population. These checks
+establish the required behavior while allowing different
+implementations.
 
 Keep a short record of consequential AI contributions: the task
 requested, important changes to the plan or code, and the checks
@@ -362,12 +365,14 @@ objective. The recommendation still needs evidence about how the
 probabilities were estimated and whether the policy was evaluated on new
 customers or periods.
 
-Results should distinguish observation from assumption. A transaction
-total is calculated from recorded eligible rows. A renewal probability
-is an estimate. A contribution margin may be supplied by finance. An
-untreated outcome for an offered customer is counterfactual. Listing
-these roles prevents a spreadsheet or notebook from giving every input
-the appearance of equal certainty.
+Inputs to a recommendation have different evidential roles. A
+transaction total comes from recorded eligible rows, a renewal
+probability is estimated, and a contribution margin may be supplied by
+finance. The untreated outcome for an offered customer is
+counterfactual, so its use requires a design or model connecting it to
+observed outcomes. Identifying these roles makes clear which parts of
+the recommendation depend on records, estimation, supplied values, or
+assumptions.
 
 If one customer places four orders and another places one, an
 order-weighted mean gives the first customer four times the weight. If
@@ -822,11 +827,11 @@ if __name__ == "__main__":
 \section{Python Calculations for the Synthetic
 Cases}\label{M01-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -1217,14 +1222,15 @@ two identical responses, while persona p02 contributes one. These are
 authored responses with imposed similarities; no person or language
 model produced them in an observed study.
 
-Giving each persona equal weight yields \((4.25+3.70)/2=3.975\). Giving
-each response row equal weight yields \((2\times4.25+3.70)/3=4.066667\).
-Both calculations are reproducible, but they answer different questions.
-The first treats the two personas as equally represented. The second
-gives the persona with more responses a larger share of the result.
-Repeating an identical response changes that share without changing
-either persona's preference. The observation unit and intended weighting
-therefore belong beside the number in a managerial report.
+Giving each persona equal weight yields \((4.25+3.70)/2=3.975\), while
+giving each response row equal weight yields
+\((2\times4.25+3.70)/3=4.066667\). The first calculation represents the
+two personas equally; the second gives the persona with more responses a
+larger share of the result. Repeating an identical response therefore
+changes the row-weighted mean without changing either persona's
+preference. A managerial report needs the observation unit and intended
+weights beside the number so that readers can identify which comparison
+it represents.
 
 \begin{figure}[htbp]
 \centering
@@ -2239,13 +2245,14 @@ determine whether the analysis reveals that distinction or conceals it.
 \section{Define the Population Before the
 Metric}\label{M02-define-the-population-before-the-metric}}
 
-\noindent A customer dataset is a record of an observation process. Loyalty
-accounts exclude unidentified shoppers. Online logs record sessions that
-may contain repeated visits by the same person. Orders exclude browsing
-without purchase. App events reflect tracking rules, consent, device
-settings, and instrumentation changes. Before calculating a metric,
-identify the target population and the mechanism by which its members
-enter the table.
+\noindent A customer dataset reflects the process that brings people and actions
+into the records. Loyalty accounts exclude unidentified shoppers, online
+logs can contain repeated visits by the same person, and orders omit
+browsing that ends without a purchase. App events depend further on
+tracking rules, consent, device settings, and instrumentation changes.
+These differences determine which population and behavior a metric
+represents, so the observation process belongs in the measurement
+definition.
 
 Suppose monthly revenue per customer is intended to describe all
 eligible accounts. Dividing total revenue by purchasing accounts
@@ -2639,14 +2646,14 @@ improved health. Source categories are not a validated diet-quality
 index.
 
 The complete 2016 calendar contains 135,420 potential user-days for the
-selected users. Only 76,804 have food entries; 58,616 are unobserved. A
-zero-filled calorie panel would interpret every absent record as no
-consumption. For a logging outcome, zero can instead mean that no entry
-was observed on a specified calendar day. The variable's definition
-determines whether filling a missing cell with zero is appropriate. The
-calendar follows users identified from the full-year file. It describes
-potential observation days; account enrollment dates have not been
-verified.
+selected users, of which 76,804 have food entries and 58,616 are
+unobserved. Filling absent calorie records with zero would treat an
+unobserved day as a day without consumption. For a logging outcome,
+however, zero can mean that no entry was observed on a specified
+calendar day. The appropriate treatment therefore follows from the
+variable's definition. This calendar describes potential observation
+days for users identified from the full-year file; account enrollment
+dates have not been verified.
 
 The item sum is within one calorie unit of the reported daily total on
 53,075 observed days. Using the reported total as the denominator of
@@ -2959,11 +2966,11 @@ if __name__ == "__main__":
 \section{Python Calculations for the Synthetic
 Cases}\label{M02-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -5614,16 +5621,16 @@ program in §6.33 and saved in
 establishes that the same aggregate can arise from different
 distributions; it supplies no estimate of actual household incidence.
 
-The treatment categories require the same care. The paper defines its
-cloud-service category by ownership by Amazon, Google, Meta, or
-Microsoft, then assigns every other owner to a third-party category.
-Appendix Table A.2 includes Apple among those other owners. Apple
-describes its own data centers as supporting its services, alongside
-separate use of colocation facilities. The paper's operational
-distinction therefore identifies four named owners versus other owners.
-A claim about leasing business models requires facility-level evidence
-about operation, tenancy, contracts, and procurement. A category name
-cannot supply those missing attributes.
+The treatment categories also determine which comparison the evidence
+supports. The paper assigns centers owned by Amazon, Google, Meta, or
+Microsoft to its cloud-service category and every other owner to a
+third-party category. Appendix Table A.2 places Apple in the latter
+group, although Apple describes its own data centers as supporting its
+services alongside separate use of colocation facilities. The
+operational distinction is therefore between four named owners and other
+owners. Interpreting it as a difference in leasing business models
+requires facility-level evidence about operation, tenancy, contracts,
+and procurement.
 \href{https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf}{Apple,
 Environmental Progress Report 2026}.
 
@@ -5824,14 +5831,14 @@ developer guarantees, regulatory decisions, or the resources available
 to the household. The existence of many records therefore leaves a
 substantive question about which decisions they can inform.
 
-Separate the event, its representation, and its evidential use.
-Electricity consumption occurs over time. A meter records a quantity
-under a technical convention. A billing system applies a tariff,
-credits, and adjustments. An analyst selects fields, reconciles account
-identities, and defines a comparison. Each stage creates an object with
-a provenance and a purpose. Accuracy at one stage does not establish
-that the final comparison represents the relevant population or answers
-the intended question.
+Electricity consumption becomes evidence through a sequence of
+institutional decisions. A meter records consumption under a technical
+convention, and a billing system applies tariffs, credits, and
+adjustments to determine charges. An analyst then selects fields,
+reconciles account identities, and defines a comparison. Each stage
+creates a record for a particular purpose, so accurate metering can
+coexist with a final comparison that excludes relevant households or
+answers a different question.
 
 A relational account identifies data through their role as prospective
 evidence
@@ -6060,13 +6067,14 @@ if __name__ == "__main__":
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
 
 \noindent A retailer observes that stores with larger advertising budgets sell
-more. The manager wants to know whether another dollar of advertising
-would be profitable. The observed relationship combines the response to
+more and wants to know whether another dollar of advertising would be
+profitable. The observed relationship combines the response to
 advertising with differences in store size, local demand, seasonality,
-and the firm's reasons for choosing the budget. Regression provides a
-way to summarize conditional relationships. Its value depends on which
-variation identifies the comparison and whether that comparison answers
-the manager's question.
+and the firm's reasons for choosing the budget. Regression summarizes
+conditional relationships, allowing the manager to compare stores with
+similar measured characteristics. Whether that comparison answers the
+investment question depends on the variation identifying it and the
+remaining reasons advertising budgets differ.
 
 \hypertarget{M03-a-conditional-mean-and-a-regression-line}{%
 \section{A Conditional Mean and a Regression
@@ -6216,13 +6224,15 @@ depends on unit cost. A price that raises revenue can still lower
 profit, and observed prices can be endogenous because firms set them in
 response to demand.
 
-Zero and negative outcomes need deliberate treatment. Taking a logarithm
-of zero is undefined. Adding one changes the scale and interpretation,
-especially when values are small or the unit of measurement changes. A
-two-part model can separate purchase incidence from positive
-expenditure. A suitable generalized linear model may model the
-conditional mean directly. The choice should reflect the outcome and
-intended estimand, with diagnostics for the selected specification.
+Zero and negative outcomes constrain the choice of scale because their
+logarithms are undefined in a real-valued model. Adding one before
+taking logs changes the interpretation, especially for small values or
+after a change in measurement units. When the outcome is nonnegative
+expenditure, a two-part model can distinguish purchase incidence from
+the amount spent conditional on purchase, while a suitable generalized
+linear model can describe the conditional mean directly. Choose the
+specification for the outcome and intended estimand, then evaluate its
+fit through appropriate diagnostics.
 
 Back-transforming a predicted log outcome also needs care.
 Exponentiating the predicted conditional mean of \(\log Y\) generally
@@ -6367,13 +6377,13 @@ because several predictors explain nearly the same variation. Removing a
 variable solely to obtain a smaller p-value changes the question and can
 introduce omitted-variable bias.
 
-Store fixed effects absorb time-invariant differences between stores.
-Calendar fixed effects absorb common period-specific shocks. In a
-store-week panel, a model with both uses changes within stores relative
-to common time movements. It still requires a valid account of
-time-varying confounders. If a store raises advertising precisely when
-an unobserved local event increases demand, the advertising coefficient
-can remain biased.
+Store fixed effects absorb time-invariant differences between stores,
+while calendar fixed effects absorb common period-specific shocks. A
+model with both therefore uses changes within stores relative to common
+time movements. Time-varying confounders can still bias this comparison:
+a store may raise advertising precisely when an unobserved local event
+increases demand. Interpreting the advertising coefficient requires an
+account of how such local changes enter the assignment of advertising.
 
 A fitted model should be evaluated on the task for which it is used. For
 prediction, compare held-out errors with a useful baseline. For a
@@ -6586,11 +6596,11 @@ print(json.dumps(result, indent=2))
 \section{Python Calculations for the Synthetic
 Cases}\label{M03-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -6801,14 +6811,14 @@ benefit. See the
 \href{https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation}{FTC
 policy statement}.
 
-Consider the mHealth association between recorded food-category breadth
-and next-day recorded calories. The variables describe logs in the
-observed sample. A customer-facing claim about weight loss changes both
-the outcome and the causal interpretation. The available regression does
-not identify that effect. A defensible empirical statement retains the
-observed outcome, sample restrictions, timing, coefficient magnitude,
-and uncertainty. A new claim requires a study designed for its outcome
-and population.
+The mHealth regression relates recorded food-category breadth to
+next-day recorded calories in the observed sample. Turning this
+association into a customer-facing claim about weight loss changes both
+the outcome and the causal interpretation, neither of which the
+regression identifies. The supported statement retains the recorded
+outcome, sample restrictions, timing, coefficient magnitude, and
+uncertainty. A claim about an effect on weight requires a study designed
+for that outcome and population.
 
 An evidence table can connect each proposed statement to its estimand,
 data, identification conditions, and supported wording. AI-generated
@@ -7655,11 +7665,13 @@ Value}\label{M04-m4.-product-preferences-customer-segments-and-lifetime-value}}
 
 \noindent A subscription retailer must choose a product bundle, decide whom to
 serve, and determine how much to spend acquiring or retaining customers.
-These decisions are connected. A feature that attracts one segment may
-be costly to deliver, and a segment with high initial spending may have
-low retention. Conjoint analysis estimates tradeoffs among product
-attributes, clustering summarizes patterns of similarity, and customer
-lifetime value translates future behavior into expected contribution.
+These decisions depend on one another because a feature that attracts
+one segment may be costly to deliver, while a segment with high initial
+spending may have low retention. Conjoint analysis estimates tradeoffs
+among product attributes, clustering summarizes patterns of similarity,
+and customer lifetime value translates future behavior into expected
+contribution. Together, these comparisons connect the proposed offer to
+the customers it attracts and the contribution they may generate.
 
 \hypertarget{M04-product-design-requires-tradeoffs}{%
 \section{Product Design Requires
@@ -8178,11 +8190,11 @@ print(json.dumps(result, indent=2))
 \section{Python Calculations for the Synthetic
 Cases}\label{M04-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -8766,13 +8778,13 @@ their combined positive features that they do not share:
 d_J(i,j)=1-\frac{|A_i\cap A_j|}{|A_i\cup A_j|}.
 \]
 
-The numerator counts shared mechanisms and the denominator counts
-mechanisms present in either paper. Shared absences do not create
-similarity. This matters when most of the twelve codes are zero. Papers
-with no positive mechanism are excluded from this comparison, and
-unreviewed papers remain outside the analysis. Average linkage merges
-groups according to their average pairwise distance. K-means would
-impose a different Euclidean representation and objective.
+The numerator counts shared mechanisms, and the denominator counts
+mechanisms present in either paper. This definition prevents shared
+absences from creating similarity, which matters when most of the twelve
+codes are zero. Papers with no positive mechanism and papers not yet
+reviewed remain outside the comparison. Average linkage then merges
+groups according to their average pairwise distance; using k-means would
+change both the representation and the objective to a Euclidean one.
 
 The program evaluates two through eight clusters and selects the
 partition with the largest silhouette score. For a paper, the silhouette
@@ -11307,11 +11319,11 @@ print(json.dumps(result, indent=2))
 \section{Python Calculations for the Synthetic
 Cases}\label{M05-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -11389,10 +11401,10 @@ unit Euclidean norm.
 
 July contains 17,042 distinct nonempty descriptions and 79,957 entries,
 including 5,208 descriptions absent from training. Apply the frozen
-vectorizer and factorization to July descriptions. Assign each
-description to its largest scaled loading when positive. A zero-vector
-description remains unassigned. The resulting groups have the following
-leading terms and shares.
+vectorizer and factorization to these descriptions, assigning each to
+its largest scaled loading when positive and leaving zero-vector
+descriptions unassigned. The resulting groups have the following leading
+terms and shares.
 
 \begin{table}[H]
 \centering\small
@@ -12260,18 +12272,19 @@ also assess whether the resulting claims preserve speaker role, timing,
 and the scope of the evidence. A source can be accurately cited while
 supplying no basis for the conclusion attributed to it.
 
-Consider four questions about a fictional retailer. The first asks what
-price change management reports. The second asks whether the effect on
-delivered units is identified. The third asks whether a discount has
-been announced. The fourth asks whose subsequent service use is
-measured. The supplied records are wholly synthetic. S1 reports a
+Consider four questions about a fictional retailer: what price change
+management reports, whether its effect on delivered units is identified,
+whether a discount has been announced, and whose subsequent service use
+is measured. Three synthetic records provide the evidence. S1 reports a
 five-percent list-price increase and an October unit count two percent
 below September, with no experiment or untreated comparison. S2 contains
-an analyst's unanswered question about next-quarter discounts. S3
+an analyst's unanswered question about next-quarter discounts, while S3
 reports June use by 72 of 100 enrolled panel members who answered a May
-questionnaire. These records support attributed descriptions and a
-selected denominator. They establish no causal price effect or general
-consumer-welfare result.
+questionnaire. The answers therefore depend on what each record
+supplies: an attributed description, an unanswered question, or a
+selected denominator. The price comparison lacks the design needed to
+identify a causal effect, and panel use alone leaves consumer welfare
+unresolved.
 
 A fourth document, S4, is a deliberately misleading secondary memo. It
 states that the price increase caused the unit decline and that
@@ -13298,12 +13311,12 @@ estimand from the one described in the prompt.
 \subsection{Exact Revenue Reconstruction and Distorted
 Travel}\label{M05-exact-revenue-reconstruction-and-distorted-travel}}
 
-\noindent \noindent Consider four synthetic zones in the path A-B-C-D. Each zone
-contains 100 people. An available store is located at D. The three edges
-take four, one, and four minutes, respectively. Weekly zone revenues are
-10, 10, 10, and 40 dollars. All quantities are imposed teaching inputs.
-Revenue is a weekly total for each zone; it is not an individual
-customer's spending.
+\noindent \noindent Consider four synthetic zones along the path A-B-C-D, each
+with 100 people and an available store at D. Travel along the three
+edges takes four, one, and four minutes, respectively. Set weekly zone
+revenues to 10, 10, 10, and 40 dollars, measured as totals for each
+zone. These travel times and revenues allow the same grouping to be
+evaluated for both access and revenue reconstruction.
 
 Group A, B, and C together and retain D separately. The group sizes are
 three and one, and their mean zone revenues are 10 and 40 dollars.
@@ -13591,13 +13604,14 @@ features can retain parts of related spellings. Each encoder defines its
 own coordinates. Coefficients fitted to one coordinate system need
 evidence of compatibility before they are applied to another.
 
-Use the public mHealth food records for the fixed pseudonym cohort.
-Normalize each description by case-folding and collapsing whitespace.
+Use the public mHealth food records for the fixed pseudonym cohort,
+normalizing descriptions by case-folding and collapsing whitespace.
 Exclude blank descriptions and blank or \texttt{Unclassified}
-categories. Assign each unique description its modal recorded category,
-with alphabetical tie breaking. Source labels such as \texttt{default}
-and \texttt{recipe} remain in the reference. The measurement target is
-agreement with this recorded classification system.
+categories, then assign each unique description its modal recorded
+category, with alphabetical tie breaking. Source labels such as
+\texttt{default} and \texttt{recipe} remain in the reference because the
+measurement target is agreement with this recorded classification
+system.
 
 \begin{table}[H]
 \centering\small
@@ -14367,13 +14381,13 @@ E[Y\mid D=1]-E[Y\mid D=0]
 +\{E[Y(0)\mid D=1]-E[Y(0)\mid D=0]\}.
 \]
 
-Here \(D\) indicates treatment. The first term is the average treatment
-effect among treated customers. The bracketed term compares their
-untreated outcomes with untreated customers' outcomes. If the firm
-targets people who would purchase anyway, that selection term can be
-positive. If it targets customers in serious decline, the term can be
-negative. The direction follows the assignment process, not a universal
-rule about observational data.
+Here \(D\) indicates treatment, the first term is the average treatment
+effect among treated customers, and the bracketed term compares the two
+groups' untreated outcomes. That selection term can be positive when the
+firm targets customers who would purchase anyway, or negative when it
+targets customers in serious decline. The assignment process therefore
+determines how the observed comparison differs from the treatment
+effect.
 
 An unobserved engagement variable may affect both email opening and
 purchasing. Adjusting for pre-treatment engagement measures can be
@@ -14994,11 +15008,11 @@ print(json.dumps(result, indent=2))
 \section{Python Calculations for the Synthetic
 Cases}\label{M06-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -15814,12 +15828,11 @@ follows a different assignment distribution.
 \caption{A known synthetic profit curve peaks at a 20 percent discount. Its best linear projection under uniform randomized discounts is horizontal at approximately 12.67 dollars.}\label{fig:M06_discount_response}
 \end{figure}
 
-\textbf{Figure description.} The horizontal axis varies the discount
-from 0 to 40 percentage points while holding the target population and
-promotion horizon fixed. The blue curve reaches \$14 at 20. The orange
-dashed line is the best linear projection under a uniform discount
-distribution. A zero linear slope coexists with a substantial nonlinear
-response.
+The horizontal axis varies the discount from 0 to 40 percentage points
+while holding the target population and promotion horizon fixed. The
+blue curve reaches \$14 at 20. The orange dashed line is the best linear
+projection under a uniform discount distribution. A zero linear slope
+coexists with a substantial nonlinear response.
 
 DoubleML's partially linear regression specification places a constant
 coefficient on treatment while allowing flexible covariate adjustment.
@@ -15960,13 +15973,13 @@ discounts while keeping the same causal profit curve.
 \caption{Conditional discount densities for two observed customer types under broader and weaker overlap, plotted on identical axes.}\label{fig:M06_dose_overlap}
 \end{figure}
 
-\textbf{Figure description.} Each panel plots the discount density for
-type minus one as a solid blue curve and type plus one as a dashed
-orange curve. The horizontal axis is discount in percentage points. Both
-panels use the same vertical scale in density per percentage point.
-Lower assignment noise concentrates each type around a different
-discount. Mathematical positivity remains, but the observed sample
-offers little information about the opposite type at many doses.
+Each panel plots the discount density for type minus one as a solid blue
+curve and type plus one as a dashed orange curve. The horizontal axis is
+discount in percentage points. Both panels use the same vertical scale
+in density per percentage point. Lower assignment noise concentrates
+each type around a different discount. Mathematical positivity remains,
+but the observed sample offers little information about the opposite
+type at many doses.
 
 The weight-based effective sample size is
 \((\sum_i w_i)^2/\sum_i w_i^2\). It measures concentration among
@@ -16320,12 +16333,12 @@ improvement at every store.
 \caption{Known, separately fitted, and partially pooled discount curves for one small store and one large store on common axes.}\label{fig:M06_store_pooling}
 \end{figure}
 
-\textbf{Figure description.} Store 0 has 12 customers and Store 4 has
-300. Solid blue curves show their known synthetic responses, gray dashed
-curves show separate quadratic fits, and orange dash-dotted curves show
-partial pooling. Both panels share discount and profit scales. Shrinkage
-improves the small store's curve while moving the large store's estimate
-farther from its known response.
+Store 0 has 12 customers and Store 4 has 300. Solid blue curves show
+their known synthetic responses, gray dashed curves show separate
+quadratic fits, and orange dash-dotted curves show partial pooling. Both
+panels share discount and profit scales. Shrinkage improves the small
+store's curve while moving the large store's estimate farther from its
+known response.
 
 An observational extension would require adjustment for assignment
 within the relevant target groups. A group-specific curve averages
@@ -17098,15 +17111,15 @@ effects. Applying the pooled reference exposure to it would create a
 hypothetical common-exposure comparison; the paper does not report that
 exposure as the cloud group's average.
 
-The other-owner slope is 1.042 with standard error 0.477. Comparing
-their significance stars cannot establish a difference between the
-slopes. The paper reports the relevant joint Wald test with \(p=0.101\).
-This value exceeds both 0.05 and 0.10, despite the text describing the
-difference as marginally significant. A difference can remain
-substantively plausible without satisfying those thresholds. Computing
-the contrast's uncertainty from the two marginal standard errors alone
-would omit their covariance. Table 4's direct test is the appropriate
-reported evidence.
+The other-owner slope is 1.042 with standard error 0.477, but separate
+significance stars do not test whether the two slopes differ. Table 4
+supplies the relevant joint Wald test, with \(p=0.101\), exceeding both
+0.05 and 0.10 despite the text describing the difference as marginally
+significant. A difference can remain substantively plausible without
+satisfying those thresholds. Its uncertainty depends on the covariance
+between the slopes, which would be omitted by a calculation using only
+their marginal standard errors. The direct test is therefore the
+appropriate reported evidence for the comparison.
 
 Table 7 supplies a second weak null. Its preferred estimate of
 additional quarterly electricity sales is 291 MWh per added MW, with
@@ -18762,12 +18775,12 @@ completed project's net effect −2, while canceled and pending projects
 still impose 6 each. The proposal-population mean is then \(10/3\),
 approximately \(3.33/MWh\), while the operating-project mean is −2.
 
-Both conditional means can be computed correctly. They concern different
-populations. Using the operating-project mean to reassure the full
-proposal population produces an incorrect conclusion in the second
-construction. It would exaggerate the proposal mean in the first.
-Selection alone does not establish a universal direction of error. A
-causal selection argument additionally needs the determinants of
+The two conditional means concern different populations even when both
+are calculated correctly. Applying the operating-project mean to the
+full proposal population yields false reassurance in the second
+construction and exaggerates the proposal mean in the first. Selection
+thus creates a problem of interpretation whose direction depends on
+which projects complete. A causal account needs the determinants of
 completion and their links to exposure and outcomes.
 
 The same discipline applies to the historical record. Increased public
@@ -19494,11 +19507,11 @@ exercise with a different algorithm.
 \subsection{A Goal Weight Can Change the Preferred Item
 Abruptly}\label{M07-a-goal-weight-can-change-the-preferred-item-abruptly}}
 
-\noindent Suppose three products have preference scores and goal-compatibility
-scores on a common illustrative scale. A scores \((0.90,0.10)\), B
-scores \((0.75,0.60)\), and C scores \((0.60,0.90)\). The scores are
-imposed inputs, not estimated purchase probabilities or health effects.
-A weighted ranking rule is
+\noindent Consider a hypothetical ranking of three products using preference and
+goal-compatibility scores on a common scale. Assign A the scores
+\((0.90,0.10)\), B \((0.75,0.60)\), and C \((0.60,0.90)\), where the
+coordinates summarize the two ranking criteria rather than purchase
+probabilities or health effects. A weighted ranking rule is
 
 \[
 s_j(\alpha)=(1-\alpha)p_j+\alpha g_j,\qquad 0\leq\alpha\leq1,
@@ -19847,11 +19860,11 @@ print(json.dumps(result, indent=2))
 \section{Python Calculations for the Synthetic
 Cases}\label{M07-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -20776,14 +20789,14 @@ this forecast. Warin's
 calibration example} compares observed event shares with predicted
 probabilities and reports the Brier score alongside the display.
 
-Consider a fixed synthetic population of 80 eligible customers. Each can
-purchase at most once during the next month. Four ordered score groups
-contain 20 customers each, with 2, 6, 12, and 16 purchases. The other 44
-customers remain in every denominator. Predictions are imposed for the
-comparison; no model is estimated. Model A assigns probabilities 0.10,
-0.30, 0.60, and 0.80. Model B assigns 0.01, 0.10, 0.90, and 0.99 to
-those same groups. Both preserve the order of every positive-negative
-pair and the same ties.
+Consider a synthetic population of 80 eligible customers, each of whom
+can purchase at most once during the next month. Four ordered score
+groups contain 20 customers each, with 2, 6, 12, and 16 purchases; the
+other 44 customers remain in every denominator. Set Model A's
+probabilities to 0.10, 0.30, 0.60, and 0.80, and Model B's probabilities
+to 0.01, 0.10, 0.90, and 0.99 for those same groups. Both models
+preserve the order of every positive-negative pair and the same ties,
+while assigning different probabilities to the purchases.
 
 To connect ranking with observed outcomes, let \(N_1\) and \(N_0\) count
 purchasers and nonpurchasers, and let \(p_i\) denote customer \(i\)'s
@@ -23674,15 +23687,15 @@ handling. The explained share is \(1-\operatorname{FVU}\) and may be
 negative when reconstruction is sufficiently poor.
 
 Consider four equally weighted synthetic cases with vectors
-\((-100,-1)\), \((-100,1)\), \((100,-1)\), and \((100,1)\). The first
-coordinate is an imposed style score. The second is an imposed review
-score, with positive values defining the two cases that require review.
-Both means are zero; the coordinate sums of squares are 40,000 and 4.
-Representation A preserves the first coordinate and sets the second to
-zero. Representation B multiplies the first by 0.98 and preserves the
-second. Both representations apply fixed transformations to the four
-invented vectors. Their comparison isolates the effect of preserving
-different coordinates.
+\((-100,-1)\), \((-100,1)\), \((100,-1)\), and \((100,1)\). Define the
+first coordinate as a style score and the second as a review score, with
+positive review scores marking the two cases that require review. Both
+means are zero, and the coordinate sums of squares are 40,000 and 4.
+Representation A preserves the style score and sets the review score to
+zero; representation B multiplies the style score by 0.98 and preserves
+the review score. Comparing these fixed transformations reveals how
+preserving the coordinate with the most variation can discard the
+distinction needed for the review decision.
 
 \begin{table}[H]
 \centering\small
@@ -25254,13 +25267,15 @@ failures, or errors that reach downstream decisions. Measure the output
 that matters: a correct, reproducible analysis completed with an
 appropriate understanding of its limitations.
 
-Separate several uses. A coding assistant produces or edits a program
-that can be inspected and executed. An annotation model produces labels
-that require a measurement evaluation. A retrieval system selects source
-passages and may generate a summary that needs factual support. A
-content system produces customer-facing material whose effect should be
-evaluated in its deployment context. Each use has a different unit of
-quality and a different failure mechanism.
+The appropriate evaluation depends on what an AI system produces and how
+that output enters the decision. A coding assistant produces or edits a
+program that can be inspected and executed, whereas an annotation model
+produces labels whose measurement quality requires a suitable reference.
+A retrieval system selects passages and may generate a summary whose
+claims need support from those sources. For customer-facing content,
+quality also depends on the effects of deployment. Each use therefore
+requires a unit of quality and checks directed at its specific failure
+mechanisms.
 
 For coding, begin with an analytical specification and a small example
 with a known result. Ask the assistant to implement a limited step,
@@ -25543,11 +25558,11 @@ print(json.dumps(result, indent=2))
 \section{Python Calculations for the Synthetic
 Cases}\label{M08-python-calculations-for-the-synthetic-cases}}
 
-\noindent The inputs below are imposed teaching values. Running the program
-creates the labeled synthetic CSV files and prints the corresponding
-calculations. They are separate from the mHealth estimates. Keep the
-script beside \texttt{example\_helpers.py} in
-\texttt{03\_Data\_and\_Code/Lecture\_Examples}.
+\noindent Run the program below to write the synthetic examples to CSV and
+reproduce their calculations. Keep the script beside
+\texttt{example\_helpers.py} in
+\texttt{03\_Data\_and\_Code/Lecture\_Examples}; the separate mHealth
+programs reproduce the observed-data results.
 
 \FloatBarrier
 \Needspace{8\baselineskip}
@@ -25645,13 +25660,14 @@ Causal Health Claim & Valid Fields & Unsupported Interpretation \\
 \end{tabular}
 \end{table}
 
-All four candidates pass the same basic structural requirement. Only the
-supported claim passes the evidence checks. They are deliberate teaching
-inputs, not observed outputs from a particular LLM. The code makes no
-external model request and sends no customer data to an AI service. Its
-checks concern the declared fields. Free-form prose, omitted
-qualifications, and advice require a separate substantive review; an
-``interpretation'' field cannot validate an unrestricted paragraph.
+The four constructed candidates meet the same structural requirement,
+but only the supported claim passes the evidence checks. The program
+evaluates these fixed examples locally, without requesting model
+responses, so its results describe the checks rather than the
+performance of an LLM. Those checks cover the declared fields; free-form
+prose, omitted qualifications, and advice still require substantive
+review. Naming a field ``interpretation'' supplies no validation of an
+unrestricted paragraph.
 
 \begin{figure}[htbp]
 \centering
@@ -25792,12 +25808,12 @@ question, and readability.
 \href{https://github.com/microsoft/VisEval}{VisEval} separates these
 dimensions when evaluating generated visualizations.
 
-The mHealth example provides an independent numerical reference. The
-requested measure is the percentage of all eligible calendar user-days
-with a log. Its two numerators and denominators are computed before
-plotting. The following constructed mistakes retain valid numerical
-inputs and executable drawing instructions. Each fails a different
-substantive requirement.
+For the mHealth comparison, compute the percentage of all eligible
+calendar user-days with a log before plotting either group. These two
+numerators and denominators provide an independent numerical reference
+against which to assess the figures. The constructed mistakes below use
+valid numbers and executable drawing instructions, yet each violates a
+different substantive requirement of the comparison.
 
 \begin{table}[H]
 \centering\small
@@ -27589,12 +27605,12 @@ fixed at the stated operating environment. The loss must use the same
 scope for both workflows; a workflow that changes the severity of
 remaining errors requires its own conditional-loss estimate.
 
-Suppose a basic workflow costs 0.02 dollars in API charges and 0.25
-review minutes per task. A checked workflow costs 0.05 dollars and 0.50
-review minutes. Set the analyst cost to 60 dollars per hour and the
-undetected-error probabilities to 5\% and 1\%. These are hypothetical
-operating inputs. They are separate from the published benchmark's model
-results.
+In a hypothetical operating comparison, suppose a basic workflow costs
+0.02 dollars in API charges and 0.25 review minutes per task, while a
+checked workflow costs 0.05 dollars and 0.50 review minutes. Set the
+analyst cost to 60 dollars per hour and the undetected-error
+probabilities to 5\% and 1\%. These operating assumptions determine the
+cost comparison below independently of the published benchmark results.
 
 \begin{table}[H]
 \centering\small
@@ -27840,13 +27856,14 @@ disputed interpretation of a customer metric is not, by itself, a
 transcendental antinomy. The philosophical connection concerns the
 examination of premises and the limits of a conclusion.
 
-Three questions organize the decision. What does the evidence establish
-about the practice? Which assumptions connect that finding to customer
-interests? Which ethical principles justify the action? A favorable
-answer to one question leaves the others substantive. An experiment may
-identify an increase in purchases while leaving the quality of consent
-unresolved. A transparent offer may respect a customer's choice while
-producing too little revenue to remain commercially viable.
+A decision depends on what the evidence establishes about the practice,
+which assumptions connect that finding to customer interests, and which
+ethical principles justify the action. These questions have distinct
+roles in the argument. An experiment may identify an increase in
+purchases while leaving the quality of consent unresolved, so the causal
+finding alone leaves the ethical premise open. Conversely, a transparent
+offer may respect a customer's choice while producing too little revenue
+to remain commercially viable.
 
 \begin{figure}[htbp]
 \centering
@@ -28023,17 +28040,17 @@ represents the customer's purpose. Once the premise is stated, the
 analyst can ask which observation, design, or argument would support it
 and which would undermine it.
 
-Disagreement then has several possible resolutions. A claim can be
-accepted within a specified population and horizon. Its scope can be
-narrowed, its mechanism revised, or its recommendation rejected.
-Judgment can also be suspended when a consequential premise remains
-unresolved. There is no requirement to compromise between a supported
-claim and an unsupported objection. Transcendental dialectic should not
-be presented as a mechanical sequence in which every thesis requires an
-antithesis and an inevitable synthesis. Later dialectical traditions
-require their own interpretation.
+Disagreement can lead to acceptance within a specified population and
+horizon, a narrower claim, a revised mechanism, or rejection of the
+recommendation. When a consequential premise remains unresolved,
+judgment may be suspended until that premise receives support. The
+appropriate resolution follows from the reasons and evidence, without
+requiring a compromise between a supported claim and an unsupported
+objection. Transcendental dialectic therefore provides no mechanical
+sequence of thesis, antithesis, and inevitable synthesis; later
+dialectical traditions require their own interpretation
 \href{https://plato.stanford.edu/entries/hegel-dialectics/}{(Maybee,
-2016)}
+2016)}.
 
 Critical examination also applies to the criticism. A claim that all
 advertising overrides agency must account for advertising that
@@ -28430,16 +28447,14 @@ member's considered purpose.
 \href{https://netflixtechblog.com/artwork-personalization-c589f074ad76}{Chandrashekar,
 Amat, Basilico, and Jebara (2017)}
 
-Two claims deserve scrutiny. One says that selecting an item reveals
-benefit because the customer clicked. The other says that an algorithm's
-influence on attention necessarily removes agency. Both can ignore the
-process by which the person understands and evaluates the
-recommendation. Useful information can change a preference through
-learning. A misleading representation can induce a choice the customer
-would reject after learning the relevant facts. The ethical comparison
-therefore turns on the information supplied and the person's capacity to
-reflect on it. A change in behavior is compatible with both learning and
-deception.
+A click can be interpreted as evidence of benefit, while an algorithm's
+influence on attention can be interpreted as a loss of agency. Both
+interpretations require an account of how the person understands and
+evaluates the recommendation. Useful information can change a preference
+through learning; a misleading representation can induce a choice the
+customer would reject after learning the relevant facts. Because either
+process can change behavior, ethical evaluation must examine the
+information supplied and the person's capacity to reflect on it.
 
 \begin{figure}[htbp]
 \centering
@@ -30410,12 +30425,13 @@ unresolved. Calling the mean harmless further requires a justified
 threshold and a welfare interpretation that accounts for exposure,
 resources, and time.
 
-These arguments have different defects. The ownership and cost examples
-change the meaning of an analytical object. The average-to-each-person
-claim changes the quantifier. The residual and mechanism claims omit
-identifying premises. The nonrejection claim assigns a conclusion the
-test was not designed to establish. Giving every defect the same fallacy
-label would hide the evidence needed to repair it.
+The evidence needed to repair an argument depends on its defect. The
+ownership and cost examples require stable meanings for their analytical
+objects, while the average-to-each-person claim requires evidence about
+the distribution across households. The residual and mechanism claims
+need identifying premises, and the nonrejection claim needs a test
+designed to assess the conclusion being asserted. Giving every defect
+the same fallacy label would obscure these different requirements.
 
 \hypertarget{M09-historical-fit-and-future-necessity}{%
 \subsection{Historical Fit and Future
@@ -31101,12 +31117,14 @@ favorable interpretation alone does not establish deception.
 \emph{Digital News Update}}.
 
 The November 12, 2026 HBS coverage presents the electricity research
-through a reassuring comparison involving four large technology firms.
-Its wording goes beyond what the reported subgroup nonrejection
-establishes, as assessed in §6.33. The article also discusses possible
-future increases and contractual protection. The verified speaker is an
-academic institution's publication. A coordinated corporate campaign or
-a company post making the same claim has not been established.
+through a reassuring comparison involving four large technology firms,
+extending beyond what the reported subgroup nonrejection establishes
+(§6.33). The article also discusses possible future increases and
+contractual protection, which matter when assessing the scope of its
+message. The documented communication comes from an academic
+institution's publication; establishing a coordinated corporate campaign
+or a company post making the same claim would require additional
+evidence.
 \href{https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{HBS
 Working Knowledge, \emph{Blaming Data Centers for Higher Electric Bills?
 It's Not That Simple}}.
@@ -31478,15 +31496,15 @@ complete account of what that person is owed
 2009, pp.~12--14)}.
 
 Consider two hypothetical customers who accept the same \$15 offer. One
-values convenience and has many alternatives. The other must obtain an
+values convenience and has many alternatives; the other needs an
 essential service immediately and cannot reach another provider. Their
-identical purchases leave the reasons for acceptance unresolved. Suppose
-a seller can provide a lower price profitably and uses the second
-person's predicament solely to extract more. A principle permitting that
-practice faces an objection grounded in avoidable vulnerability. The
-convenience buyer's reasons may differ even when the fitted demand
-response is identical. A morally adequate argument must examine the
-circumstances that distinguish the two positions.
+purchases agree, yet the circumstances supply different reasons for
+acceptance. Suppose the seller can profitably charge less and uses the
+second person's predicament solely to extract more. A principle
+permitting that practice faces an objection grounded in avoidable
+vulnerability, even if a flexible demand model fits both customers'
+responses equally well. A morally adequate argument must examine what
+distinguishes their positions.
 
 An inequality-sensitive welfare function can discipline an aggregate
 comparison, but its weights do not answer every objection. A high
@@ -33961,15 +33979,16 @@ what qualifies an instance for membership. Social dependence gives no
 reason to dismiss an enforceable obligation or material deprivation as
 unreal.
 
-Data provenance should therefore include purposes and authority
-alongside technical transformations. Who required the field? Who chose
-the unit and permitted categories? Who could correct a record, connect
-it to another system, or contest its use? Public artifacts can have
-normative and receptive features alongside their functions
+Data provenance should include the purposes and authority behind the
+records: who required a field, chose its unit and permitted categories,
+and could correct a record, connect it to another system, or contest its
+use. Public artifacts can have normative and receptive features
+alongside their functions
 \href{https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc}{(Thomasson,
-2014)}. In a contemporary application, a billing record's role includes
-expectations about payment, correction, and authorized access. Those
-expectations require evaluation alongside measurement accuracy.
+2014)}. For a billing record, this means examining expectations about
+payment, correction, and authorized access alongside measurement
+accuracy. An accurate charge can still be used in a way that the account
+holder has reason to challenge.
 
 \hypertarget{M09-incentives-explain-production-without-settling-truth}{%
 \subsection{Incentives Explain Production Without Settling

@@ -16,7 +16,7 @@ Review regression as a way to summarize relationships and quantify uncertainty. 
 | R06 | [OpenIntro Statistics](https://www.openintro.org/book/os/) | Reference | Open textbook |
 | R07 | [SciPy: Bootstrap](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html) | Reference | Guide |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

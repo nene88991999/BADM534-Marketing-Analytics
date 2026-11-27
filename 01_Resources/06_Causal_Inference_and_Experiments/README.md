@@ -18,7 +18,7 @@ Specify treatment, outcome, target population, assignment mechanism, and compari
 | E08 | [CausalML Documentation](https://causalml.readthedocs.io/en/latest/) | Optional | Guide |
 | E09 | [A Comparison of Approaches to Advertising Measurement: Evidence from Big Field Experiments at Facebook](https://brgordon1.github.io/publication/2019-comparison-advertising-measurement) | Core | Research paper |
 
-Core identifies candidates for the eventual required readings. Reference material supports exercises and troubleshooting. Optional material supports extensions. Instructor material informs teaching and assessment; these labels are recommendations, not a finalized syllabus.
+The labels describe suggested uses: Core resources are candidates for required reading, Reference resources support exercises and troubleshooting, Optional resources support extensions, and Instructor resources inform teaching and assessment. Required readings are established by the released course documents.
 
 ## Annotated Resources
 

@@ -16,7 +16,7 @@ No input download, package installation, credentials, or model account is requir
 
 ## Demand Example
 
-The prediction rule `100 + 5 * volume_index` is imposed, with no model fitting. Each row represents a distinct synthetic store at a common one-week horizon. Segment labels are fixed before calibration. Calibration and evaluation store identifiers are disjoint.
+Each synthetic store contributes one weekly demand outcome, with its forecast fixed at `100 + 5 * volume_index`. Segment labels are defined before calibration, and disjoint store identifiers separate calibration from evaluation. Fixing these objects isolates how the calibration rule changes the intervals without introducing model fitting.
 
 | Field | Definition and Units |
 | --- | --- |
@@ -31,7 +31,7 @@ The prediction rule `100 + 5 * volume_index` is imposed, with no model fitting. 
 | `lower`, `upper`, `width` | Prediction-interval endpoints and width, in demand units |
 | `covered` | One when the evaluated outcome lies within the inclusive endpoints |
 
-The calibration sample has 99 stores. The 90% pooled threshold is 10 units; segment thresholds are 8 and 20. No rows are dropped. Evaluation retains all 100 stores, including every interval miss.
+Using all 99 calibration stores gives a 90% pooled threshold of 10 units, compared with segment thresholds of 8 and 20. Evaluation retains all 100 stores, including every interval miss, so the reported coverage uses the full evaluation population.
 
 | Rule and Scenario | Overall Coverage | Regular Coverage | Volatile Coverage | Mean Width, Units |
 | --- | --- | --- | --- | --- |

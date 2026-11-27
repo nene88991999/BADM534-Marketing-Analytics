@@ -6,13 +6,19 @@ Begin with the decision facing a manager, customer, or regulator. Identify the a
 
 Develop each paragraph through its question or mechanism, the reasoning or evidence, and the consequence for the decision. Keep related definitions and interpretations together. Start a new paragraph when the argument changes. Shorten repetition and peripheral discussion while preserving the steps that explain why a result follows. Sentence and paragraph lengths follow the argument, with no numerical quota.
 
+Connect a condition or comparison to its consequence within a developed sentence when they form one thought. Follow with a shorter sentence when the implication deserves emphasis. Combine adjacent brief paragraphs that complete the same explanation; keep equation introductions and result interpretations separate when they serve different purposes. Avoid sequences of compressed assertions that leave the reader to reconstruct their relationship.
+
 Carry recurring examples through the analysis with consistent actors, timing, information, actions, and outcomes. Give each additional example a distinct purpose. Introduce a supporting check through the competing explanation it examines. Use transitions when they express a reason, condition, comparison, or consequence; a transition alone cannot supply missing reasoning.
+
+State the main question and its stakes confidently in an opening. Develop the action or inferential problem before the method, and explain why the method bears on that question. A philosophical discussion may begin with a familiar premise and the question it leaves unresolved, then move to a concrete marketing decision. Detailed conditions belong beside the results they govern; retain an opening qualification when omitting it would change the central claim.
 
 ## Vocabulary and Voice
 
 Use familiar words and precise verbs: define, compare, estimate, calculate, construct, show, and explain. Name the person who chooses, the cost that changes, or the outcome being measured. Explain a technical term through its role before relying on its label. Retain established terminology when its precise meaning matters.
 
 Use one name for each outcome and analytical object across notes, slides, equations, figures, code documentation, and resource guides. Vary sentence structure without renaming the same object. Preserve source terminology, literal data fields, code identifiers, accurate titles, and quotations. Explain any distinction introduced by a new term.
+
+Use parentheses for a brief definition, example, or secondary clarification that lets the main sentence continue naturally. Keep consequential assumptions and reasoning in the main sentence or adjoining prose. Use selective italics for a distinction central to the argument. Avoid nested asides, long parenthetical arguments, and emphasis added merely for decoration.
 
 Use **assessment** for data quality and support for a claim, **evaluation** for comparisons of performance or outcomes, **verification** for checking calculations or records, and **investigation** for an unresolved mechanism. Preserve “audit” in an original title, quotation, or specific institutional procedure when necessary for accuracy.
 
@@ -23,6 +29,8 @@ Use **Marketing Analytics** as the title and **By Nathan Yang** as the author. K
 Use parenthetical author–year citations for research and philosophical sources, such as (Author, 2026), (Author and Author, 2026), and (Author et al., 2026). State the argument, method, or finding directly in the prose. Avoid authors' names as sentence subjects, possessive descriptions of studies, first-name references, and author-centered teaching headings. Place the citation beside the supported claim and retain its source link and any useful page or section locator.
 
 Use the year of the cited publication or identified version. Use n.d. for an undated source; a download date is not its publication year. Preserve complete author metadata in bibliographic catalogs, exact quotations, original source titles, established method and philosophical-tradition names, and the instructor byline. Keep source readings unchanged. Apply the same citation convention to notes, slides, captions, examples, and original resource annotations.
+
+Retain a citation because it supports a premise, method, finding, or substantive comparison used in the explanation. When comparing studies, identify the differing assumption, intervention, observation, or outcome and explain its consequence. Integrate that comparison into the argument. A shared topic alone does not justify an additional literature summary.
 
 ## Claims and Qualifications
 
@@ -40,6 +48,8 @@ Omit editorial metacomments from teaching prose, captions, and presenter notes: 
 
 Introduce an equation through the quantity it measures or the question it answers. Define symbols, timing, information, conditioning, and units locally. Explain its terms and economic meaning immediately afterward. Identify who pays a cost, who receives a payment, and whether it is one-time or recurring.
 
+Explain what a parameter changes or a calculation establishes before using shorthand. Describe a numerical adjustment through the quantity adjusted and its reason, preserving the distinction between a computational operation and an economic change. Retain exact technical terms in definitions, mathematical results, and proofs where their meaning is needed.
+
 Keep assumptions, definitions, identities, proven consequences, and illustrative inputs distinct. Put substantive theoretical and mathematical inference restrictions in numbered, labeled assumption environments when a formal result uses them. Explain empirical interpretation conditions in connected prose. Reporting instructions are documentation requirements, not assumptions about the economy.
 
 Introduce a numerical example with its benchmark and the object that changes. State values directly with “Suppose” or “Set.” Identify synthetic data in the setup and in standalone exhibits when needed. Omit redundant sentences such as “The inputs are imposed” after the values and their illustrative role are clear. Preserve distinctions between an illustration, an estimated model, and a solved equilibrium.
@@ -51,6 +61,8 @@ Every data example retains complete runnable Python and its matching source file
 Introduce a philosophical idea through the question it clarifies about a marketing practice. Identify the person's choice, information, reasons, and authority before relying on abstract terminology. Connect each premise to a specific inference or action. Keep a source's philosophical claim distinct from its contemporary marketing application.
 
 Develop the connection between commercial outcomes, customer outcomes, and justification. Explain the further premise needed where the argument moves from behavior to welfare, consent, or permissible conduct. A philosophical principle can motivate scrutiny without determining an arbitrary numerical threshold. End with the supported consequence for the affected customers, firms, or decision makers; omit a generic recap or repeated limitations paragraph.
+
+Let the philosophical idea lead the explanation. Translate it into the action, inference, or obligation at issue, then attach its source citation. Preserve the ambition of the question while identifying what the analytical construction establishes. An empirical gap, a limit on theoretical knowledge, and a normative objection have different roles in the argument.
 
 ## Headings, Figures, and Slides
 
@@ -67,3 +79,5 @@ Slides state the decision, comparison, and result concisely; presenter notes dev
 Edit lecture prose in `06_Lecture_Notes/modules/` and slide content in `05_Slides/source/sessions.json`. Keep examples and their documentation in `03_Data_and_Code`, guided practice in `07_Labs`, and the syllabus in `02_Syllabus`. Original resource annotations follow this guide. Readings, downloaded repositories, licenses, and quotations retain their source wording.
 
 Current explicit instructions take precedence. Preserve purposeful author wording and material evidence when resolving a conflict. Reconcile meanings across affected files, rebuild generated outputs, and regenerate `llms-full.txt`. Grading rules, deadlines, attendance policies, and assessment-specific AI permissions come from released course documents.
+
+Preserve the instructor's deliberate wording and conceptual emphasis. When surrounding passages repeat an author-written point, edit that surrounding prose first. Correct clear grammatical errors without automatically softening an intended claim. Apply other projects' transferable writing preferences without importing their manuscript titles, protected abstracts, page limits, model-specific terminology, or exhibit palettes.

@@ -100,7 +100,7 @@ Source: M7, Section 7.11, Marketing Analytics Lecture Notes. ../06_Lecture_Notes
 - Confidence conditions on the antecedent item.
 - Lift compares confidence with the consequent's marginal prevalence.
 
-Association rules are descriptive. A positive lift can reflect common meal occasions or other causes rather than a response to recommendation. Evaluate rules on later baskets.
+Positive lift describes items appearing together more often than their marginal frequencies would imply. Common meal occasions or other shared causes can generate that pattern without a response to recommendation. Evaluation on later baskets assesses whether the association persists, while an intervention requires evidence about its effect on purchases.
 
 Source: M7, Section 7.17, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 
@@ -200,7 +200,7 @@ Source: https://doi.org/10.1287/mksc.2023.1441 and https://doi.org/10.1287/mksc.
 - Evaluate the fixed choice on later baskets.
 - Assess one generated explanation against item attributes.
 
-Run ../03_Data_and_Code/Lecture_Examples/session_examples.py S12 for the NDCG check. The full mHealth m07.py program defines the candidate and basket windows. Preserve the final test period for evaluation.
+Run session_examples.py in the Lecture Examples folder S12 for the NDCG check. The full mHealth m07.py program defines the candidate and basket windows. Preserve the final test period for evaluation.
 
 Source: M7, Section 7.14, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md
 

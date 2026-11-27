@@ -6,7 +6,7 @@ A company must decide which actions it ought to take when commercial objectives 
 
 *What We Owe to Each Other* (Scanlon, 1998, chapter 5) compares principles through the reasons people could have for rejecting them. The course cancellation example compares mandatory persuasion with a feasible secure exit. A serious objection can require changing either the proposed principle or the facts assumed in applying it.
 
-The 2009 John Locke Lectures add two useful distinctions. Lecture 2 treats reasons in relation to a person, circumstances, and action. Lecture 4 examines justification through reflective equilibrium. A factual premise, a normative premise, and a conditional conclusion each need appropriate support. These are selected applications, not a complete reconstruction of contractualism.
+Reasons depend on a person’s circumstances and the action being considered, while justification requires examining principles alongside considered judgments (Scanlon, 2009, lectures 2 and 4). These distinctions guide the cancellation argument: its factual premise, normative principle, and conditional conclusion each need the appropriate kind of support. A factual correction may change the application without settling whether the proposed principle is justified.
 
 - [1998 chapter excerpt](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf): chapter 5, §§1–3, especially the comparative discussion on pp. 195–196.
 - [2009 Lecture 2](https://media.philosophy.ox.ac.uk/assets/pdf_file/0008/25856/Lecture_2.pdf): pp. 12–14 on reasons and circumstances.

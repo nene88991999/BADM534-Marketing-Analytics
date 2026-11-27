@@ -11,7 +11,7 @@ A decision requires an effect, uncertainty, an economically meaningful compariso
 - [(Thomasson, 2025)](https://doi.org/10.1093/9780197787830.003.0011) and [Norms and Necessity](https://academic.oup.com/book/33564): concepts, rules, and their functions. Contemporary applications distinguish measurements, household burdens, and authority.
 - [(Kant, 1785)](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm): universal law and humanity formulations; the course's public-reassurance application is an analytical argument.
 
-The [source review](SOURCE_REVIEW.md) records rights, version, reading scope, and access. The [programs](../../03_Data_and_Code/Statistical_Inference/README.md) reproduce all numerical examples. The [lab](../../07_Labs/Statistical_Inference/README.md) is optional ungraded practice. Sessions 4, 9, and 14 use selected comparisons within existing meeting allocations.
+The [programs](../../03_Data_and_Code/Statistical_Inference/README.md) reproduce the numerical examples used in Sessions 4, 9, and 14, and the [optional ungraded lab](../../07_Labs/Statistical_Inference/README.md) extends those comparisons. The [source review](SOURCE_REVIEW.md) records each reading’s version, access, rights, and reading scope.
 
 ## Logical Arguments and Inverse Power
 

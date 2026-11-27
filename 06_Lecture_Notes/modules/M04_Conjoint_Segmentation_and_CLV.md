@@ -1,6 +1,6 @@
 # M4. Product Preferences, Customer Segments, and Lifetime Value
 
-A subscription retailer must choose a product bundle, decide whom to serve, and determine how much to spend acquiring or retaining customers. These decisions are connected. A feature that attracts one segment may be costly to deliver, and a segment with high initial spending may have low retention. Conjoint analysis estimates tradeoffs among product attributes, clustering summarizes patterns of similarity, and customer lifetime value translates future behavior into expected contribution.
+A subscription retailer must choose a product bundle, decide whom to serve, and determine how much to spend acquiring or retaining customers. These decisions depend on one another because a feature that attracts one segment may be costly to deliver, while a segment with high initial spending may have low retention. Conjoint analysis estimates tradeoffs among product attributes, clustering summarizes patterns of similarity, and customer lifetime value translates future behavior into expected contribution. Together, these comparisons connect the proposed offer to the customers it attracts and the contribution they may generate.
 
 ## 4.1 Product Design Requires Tradeoffs
 
@@ -222,7 +222,7 @@ print(json.dumps(result, indent=2))
 
 ## 4.12 Python Calculations for the Synthetic Cases
 
-The inputs below are imposed teaching values. Running the program creates the labeled synthetic CSV files and prints the corresponding calculations. They are separate from the mHealth estimates. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`.
+Run the program below to write the synthetic examples to CSV and reproduce their calculations. Keep the script beside `example_helpers.py` in `03_Data_and_Code/Lecture_Examples`; the separate mHealth programs reproduce the observed-data results.
 
 Python source: [m04_synthetic.py](../../03_Data_and_Code/Lecture_Examples/m04_synthetic.py). From its directory, run `python m04_synthetic.py`.
 
@@ -574,7 +574,7 @@ $$
 d_J(i,j)=1-\frac{|A_i\cap A_j|}{|A_i\cup A_j|}.
 $$
 
-The numerator counts shared mechanisms and the denominator counts mechanisms present in either paper. Shared absences do not create similarity. This matters when most of the twelve codes are zero. Papers with no positive mechanism are excluded from this comparison, and unreviewed papers remain outside the analysis. Average linkage merges groups according to their average pairwise distance. K-means would impose a different Euclidean representation and objective.
+The numerator counts shared mechanisms, and the denominator counts mechanisms present in either paper. This definition prevents shared absences from creating similarity, which matters when most of the twelve codes are zero. Papers with no positive mechanism and papers not yet reviewed remain outside the comparison. Average linkage then merges groups according to their average pairwise distance; using k-means would change both the representation and the objective to a Euclidean one.
 
 The program evaluates two through eight clusters and selects the partition with the largest silhouette score. For a paper, the silhouette compares its mean distance to its own group with the smallest mean distance to another group, scaled by the larger distance. The selected four-cluster solution has a mean silhouette of 0.272. Cluster names describe the profiles after estimation; they are not inputs to the algorithm.
 
