@@ -263,3 +263,9 @@ M6 §§6.47–6.51 distinguish power against zero from evidence excluding a spec
 ## Research Responsibility for Categorical Reassurance
 
 M8 §§8.31–8.31.1 identify the unsupported HBS no-increase claim and the paper's own interpretive errors. M9 §9.83 defends an obligation to correct consequential reassurance whose evidentiary premise fails. The [source review](../01_Resources/41_Statistical_Claims_and_Decisions/HBS_REVIEW.md) records the checked passages and separates demonstrated errors from allegations about intention or realized injury.
+
+## Data Artifacts, Responsibility, and Independent Scrutiny
+
+M9 §§9.60.3, 9.63.4–9.63.5, and 9.65.2–9.65.8 connect dataset creation to corporate standing, NDA terms, responsibility, and maxims. The [Kilts policy case](../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md) separates documented restrictions from claims about suppression. M2 §2.35 supplies a complete Python assessment of the public insurance artifact; M9 §9.84 examines replication, correction, and the distinction between unreliable evidence and personal culpability. The [research-integrity sources](../01_Resources/52_Research_Integrity_and_Replication/README.md) record publication statuses as of November 27, 2026.
+
+Sessions 2 and 14 include these cases within their existing measurement and ethical-reasoning activities. The expanded decks provide alternative examples; the 170-minute meetings, dates, and pending assessment policies remain unchanged. The [optional replication exercise](../07_Labs/Research_Integrity/README.md) and [artifact exercise](../07_Labs/Data_Truth_and_Norms/README.md) require a defensible inference, maxim, and allocation of responsibility.

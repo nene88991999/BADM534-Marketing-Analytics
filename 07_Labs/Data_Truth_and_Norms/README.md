@@ -49,3 +49,11 @@ Compare the three agreements on the questions researchers can ask, the findings 
 Defend a principle for proceeding, renegotiating, or refusing. Give the strongest case for allowing confidential research and the strongest reasonable objection from a person affected by its use. Explain which term or circumstance would reverse your judgment. Assess the value of declining a prestigious publication when the agreement prevents adequate public justification.
 
 Finally, assess a paper's actual access and funding statements. Record what the available documents establish, what remains unknown, and which further evidence would distinguish confidentiality from selective reporting. Do not assign a publication veto, suppression decision, or hidden result to a named study without evidence. Draft a public claim whose scope remains supported under the documented restrictions.
+
+## Corporate Protections, Responsibility, and Maxims
+
+Read M9 §§9.65.2–9.65.8 and the [Kilts policy case](../../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md). Identify the strongest argument for corporate confidentiality and the strongest objection from affected people. Separate an organization's legal status, ability to bear duties, and grounds for moral protection. Explain why the actual restriction requires justification even if some corporate rights are granted.
+
+Compare open records, independent secure access, provider-selected access, and undisclosed access conditions. Specify the claim each arrangement can support and which decisive checks remain unavailable. Reproducing code, reanalyzing source selection, and collecting new data are distinct activities.
+
+Allocate responsibility for creating, preserving, restricting, interpreting, and correcting the artifact. State a maxim for the proposed action using a circumstance, act, and end. Apply universalization and respect for humanity, then separately examine reasonable rejection. Identify evidence required before attributing that maxim to a real actor. Use the [replication exercise](../Research_Integrity/README.md) to distinguish personal culpability from duties of repair.

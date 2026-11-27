@@ -92,12 +92,12 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 32,
+      "slides": 35,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
       "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis. Optional synthetic disclosure comparison and bounds in M2 §2.31.",
-      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs. Distinguish an interest, its measure, and the standard for action. Distinguish status, submitted requests, dataset versions, and physical copies.",
-      "ethics": "Missingness, sample exclusions, and customer representation",
+      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs. Distinguish an interest, its measure, and the standard for action. Distinguish status, submitted requests, dataset versions, and physical copies. Assess data artifacts, independent scrutiny, responsibility, and maxims using the replication and confidentiality cases.",
+      "ethics": "Missingness, sample exclusions, and customer representation; responsibility for source evidence and correction",
       "timing": [
         {
           "start_minute": 0,
@@ -976,12 +976,12 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 130,
+      "slides": 141,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives. Examine market permission through compensation, constrained consent, agency, transaction costs, and unequal error burdens.",
-      "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims Assess whether research under an NDA ought to exist, separating conduct, publication, and public reliance.",
+      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives. Examine market permission through compensation, constrained consent, agency, transaction costs, and unequal error burdens. Assess data artifacts, independent scrutiny, responsibility, and maxims using the replication and confidentiality cases.",
+      "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims Assess whether research under an NDA ought to exist, separating conduct, publication, and public reliance.; responsibility for source evidence and correction",
       "timing": [
         {
           "start_minute": 0,

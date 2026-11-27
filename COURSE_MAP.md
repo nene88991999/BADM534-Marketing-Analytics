@@ -224,7 +224,7 @@ M3 §§3.20–3.21 explain causal adjustment; M6 §§6.40–6.42 compare treatme
 
 ## Data Production and Public Justification
 
-M2 §§2.30–2.31 develop provenance and selective access; M6 §6.43 separates actual bills from causal cost incidence; M9 §§9.51–9.54 connect artifacts, truth, norms, undone science, and Scanlonian responsibility. The [26-source collection](01_Resources/45_Data_Truth_and_Norms/README.md), [synthetic example](03_Data_and_Code/Data_Production/README.md), and [optional practice](07_Labs/Data_Truth_and_Norms/README.md) accompany Sessions 2, 10, and 14.
+M2 §§2.30–2.31 develop provenance and selective access; M6 §6.43 separates actual bills from causal cost incidence; M9 §§9.51–9.54 connect artifacts, truth, norms, undone science, and Scanlonian responsibility. The [categorized collection](01_Resources/45_Data_Truth_and_Norms/README.md), [synthetic example](03_Data_and_Code/Data_Production/README.md), and [optional practice](07_Labs/Data_Truth_and_Norms/README.md) accompany Sessions 2, 10, and 14.
 
 ## Measurement and Standards of Evidence
 
@@ -253,3 +253,9 @@ M4 §4.32 and M9 §§9.76–9.82 connect monetary valuation, rational addiction,
 ## Modern Power and Harm Bounds
 
 [M6 §§6.47–6.51](06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) connect zero-null power, positive harm margins, equivalence, and bias sensitivity through published electricity-price estimates. [M9 §9.83](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines the justification for public reassurance. The [readings](01_Resources/51_Modern_Power_and_Harm_Bounds/README.md), [complete price calculations](03_Data_and_Code/Modern_Power/README.md), and [optional practice](07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) accompany selected slides in Sessions 9 and 14.
+
+## Data Artifacts, Responsibility, and Independent Scrutiny
+
+M9 §§9.60.3, 9.63.4–9.63.5, and 9.65.2–9.65.8 connect dataset creation to corporate standing, NDA terms, responsibility, and maxims. The [Kilts policy case](01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md) separates documented restrictions from claims about suppression. M2 §2.35 supplies a complete Python assessment of the public insurance artifact; M9 §9.84 examines replication, correction, and the distinction between unreliable evidence and personal culpability. The [research-integrity sources](01_Resources/52_Research_Integrity_and_Replication/README.md) record publication statuses as of November 27, 2026.
+
+Sessions 2 and 14 include these cases within their existing measurement and ethical-reasoning activities. The expanded decks provide alternative examples; the 170-minute meetings, dates, and pending assessment policies remain unchanged. The [optional replication exercise](07_Labs/Research_Integrity/README.md) and [artifact exercise](07_Labs/Data_Truth_and_Norms/README.md) require a defensible inference, maxim, and allocation of responsibility.

@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.4cm,minimum height=1.1cm] (preserve) at (1.7,0) {\textbf{Preserve the Artifact}\\Source, codebook, versions, formatting};
+\node[box,text width=3.4cm,minimum height=1.1cm] (inspect) at (6,0) {\textbf{Independent Inspection}\\Recompute, inspect patterns, test alternatives};
+\node[orangebox,text width=3.4cm,minimum height=1.1cm] (challenge) at (10.3,0) {\textbf{Public Challenge}\\Evidence, response, further investigation};
+\draw[edge] (preserve) -- (inspect);
+\draw[accent] (inspect) -- (challenge);
+\node[box,text width=5.4cm,minimum height=1.2cm] (new) at (2.8,-3.6) {\textbf{Replication with New Data}\\A fresh test of the behavioral claim\\Failure alone does not prove fraud};
+\node[orangebox,text width=5.4cm,minimum height=1.2cm] (correct) at (9.2,-3.6) {\textbf{Correct the Public Record}\\Journal status, teaching, policy advice, and later citations};
+\draw[edge] (inspect.south) -- ++(0,-.4) -| (new.north);
+\draw[accent] (challenge.south) -- ++(0,-.4) -| (correct.north);
+\draw[accent] (new.east) -- (correct.west);
+\node[align=center,text width=12cm,font=\footnotesize] at (6,-6) {Access creates an opportunity for correction.\\Independent scrutiny and institutional response make it effective.};
+\end{tikzpicture}

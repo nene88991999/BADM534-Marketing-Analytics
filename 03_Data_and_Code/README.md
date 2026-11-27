@@ -197,3 +197,7 @@ The [synthetic valuation examples](Price_Theory_and_Justification/README.md) cal
 ## Modern Power and Harm Bounds
 
 [Modern Power](Modern_Power/README.md) reproduces the six electricity-price margin comparisons and three imposed bias scenarios in M6 §§6.47–6.51. Independent checks cover normal-tail integration, folded-normal critical values, test size, unit invariance, and interval/test duality. The inputs are published coefficients and clustered SEs, with no reconstructed utility panel.
+
+## Research Integrity
+
+[Research_Integrity](Research_Integrity/README.md) contains the public licensed insurance-study artifact, its codebook, complete Python diagnostics, and aggregate outputs. It examines record reliability without treating the challenged values as genuine customer behavior.

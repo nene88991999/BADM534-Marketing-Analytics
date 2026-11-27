@@ -222,3 +222,9 @@ Session 9 adds the null-region diagram, six-price-comparison interpretation, and
 ## Unsupported Reassurance and Correction
 
 Session 14 identifies the HBS categorical no-increase claim as misleading, separates the paper's own interpretive errors, and defends an obligation to correct unsupported reassurance. The existing price tables and meeting allocation are retained. M8 §§8.31–8.31.1 and M9 §9.83 develop the statistical and philosophical arguments.
+
+## Data Artifacts, Responsibility, and Independent Scrutiny
+
+M9 §§9.60.3, 9.63.4–9.63.5, and 9.65.2–9.65.8 connect dataset creation to corporate standing, NDA terms, responsibility, and maxims. The [Kilts policy case](../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md) separates documented restrictions from claims about suppression. M2 §2.35 supplies a complete Python assessment of the public insurance artifact; M9 §9.84 examines replication, correction, and the distinction between unreliable evidence and personal culpability. The [research-integrity sources](../01_Resources/52_Research_Integrity_and_Replication/README.md) record publication statuses as of November 27, 2026.
+
+Sessions 2 and 14 include these cases within their existing measurement and ethical-reasoning activities. The expanded decks provide alternative examples; the 170-minute meetings, dates, and pending assessment policies remain unchanged. The [optional replication exercise](../07_Labs/Research_Integrity/README.md) and [artifact exercise](../07_Labs/Data_Truth_and_Norms/README.md) require a defensible inference, maxim, and allocation of responsibility.

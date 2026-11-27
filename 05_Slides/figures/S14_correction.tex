@@ -1,0 +1,12 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=2.6cm,minimum height=1.7cm] (source) at (1.3,0) {\textbf{Preserve}\\Records, code, versions};
+\node[box,text width=2.6cm,minimum height=1.7cm] (inspect) at (4.8,0) {\textbf{Inspect}\\Independent checks and alternatives};
+\node[orangebox,text width=2.6cm,minimum height=1.7cm] (challenge) at (8.3,0) {\textbf{Challenge}\\Evidence, response, investigation};
+\node[orangebox,text width=2.6cm,minimum height=1.7cm] (correct) at (11.8,0) {\textbf{Correct}\\Articles, teaching, advice};
+\draw[edge] (source) -- (inspect);
+\draw[accent] (inspect) -- (challenge);
+\draw[accent] (challenge) -- (correct);
+\node[box,text width=11.6cm,minimum height=1cm] (replicate) at (6.5,-2.6) {\textbf{Replication with New Data}\\A separate test of the claim; failure alone does not prove fraud.};
+\draw[edge] (inspect.south) -- ++(0,-.35) -| (replicate.north);
+\draw[accent] (replicate.north east) -- (correct.south);
+\end{tikzpicture}

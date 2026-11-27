@@ -175,7 +175,7 @@ The [supplemental philosophy and evidence guide](15_Marketing_Dialectics/09_Conf
 
 ## Data, Truth, and Norms
 
-The [26-source collection](45_Data_Truth_and_Norms/README.md) covers Thomasson, data epistemology, truth, inductive risk, critical interaction, undone science, classification, and household electricity evidence. The [electricity assessment](45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) separates verified collection, selective access, missing linkage, causal identification, and proposed disclosure rules.
+The [categorized collection](45_Data_Truth_and_Norms/README.md) covers Thomasson, data epistemology, truth, inductive risk, critical interaction, undone science, classification, and household electricity evidence. The [electricity assessment](45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) separates verified collection, selective access, missing linkage, causal identification, and proposed disclosure rules.
 
 ## Measurement, Evidence Standards, and Error Costs
 
@@ -196,3 +196,7 @@ The [13-source reading guide](50_Chicago_Price_Theory_and_Moral_Justification/RE
 ## Modern Power Analysis and Harm Bounds
 
 The [11-source collection](51_Modern_Power_and_Harm_Bounds/README.md) covers 2018–2026 work on panel power, staggered treatment, pre-trend equivalence, bias-aware inference, and synthetic-control uncertainty. Ten reference PDFs are stored locally; public files provide links, version metadata, and annotations. M6 §§6.47–6.51 and M9 §9.83 use reported electricity-price summaries to distinguish detection power from evidence excluding a specified burden.
+
+## Data Governance and Research Integrity
+
+[Corporate standing, responsibility, and maxims](45_Data_Truth_and_Norms/06_Corporate_Standing/README.md) and the [replication collection](52_Research_Integrity_and_Replication/README.md) connect M2 measurement checks to M9 ethical arguments. The [public Python example](../03_Data_and_Code/Research_Integrity/README.md) analyzes an openly licensed challenged artifact, with complete source code in the notes.

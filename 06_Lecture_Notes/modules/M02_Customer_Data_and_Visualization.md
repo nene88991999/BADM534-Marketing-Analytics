@@ -2499,3 +2499,158 @@ Changing the cutoff requires a new assessment of which requests and completions 
 ### Further Reading
 
 (Thomasson, 2003), [Realism and Human Kinds](https://doi.org/10.1111/j.1933-1592.2003.tb00309.x), §§2–3; (Thomasson, 2014), [Public Artifacts, Intentions, and Norms](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc), §§5.2–5.4; (Thomasson, 1999), [Fiction and Metaphysics](https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017), chapter 3; (Leonelli, 2015), [What Counts as Scientific Data? A Relational Framework](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/).
+
+## 2.35 Reproducing a Result and Assessing Its Records
+
+\noindent An insurer considering a form change needs evidence about truthful reporting. A public spreadsheet from a retracted signing study gives a different object to examine: whether the archived records have properties consistent with the reported process. The file contains 13,488 masked policy rows, up to four car slots per row, condition labels, and baseline and later odometer readings. It has documented evidence of fabrication and is used here as an artifact for investigation (Shu et al., 2012, retracted 2021; Simonsohn et al., 2021). Its values cannot establish actual customer behavior.
+
+### 2.35.1 Observation Units and Preserved Features
+
+\noindent Subtracting a car's baseline reading from its later reading gives a recorded mileage increment. The intervals between readings vary and are unknown, so the increment is not annual mileage. For the rounding comparison, use car 1, which is present for every policy; this avoids giving policies with several cars greater weight. Preserve missing slots for other cars. The archived font variable describes the formatting of the first baseline value, and the code checks it against the actual workbook font before using it.
+
+The program independently recomputes the policy averages, font counts, increment distribution, rounding frequencies, and four-car matches from the licensed ResearchBox archive. Its file hash identifies the exact input. A stable hash establishes that readers used the same bytes; it does not establish that the records are true. Preserving the workbook also preserves formatting that would disappear in an ordinary CSV export.
+
+| Car 1 Stratum | Multiples of 100 Miles | Policies | Percentage |
+| --- | ---: | ---: | ---: |
+| Calibri baseline | 1,884 | 6,744 | 27.94% |
+| Calibri later reading | 84 | 6,744 | 1.25% |
+| Cambria baseline | 79 | 6,744 | 1.17% |
+| Cambria later reading | 68 | 6,744 | 1.01% |
+
+The two font strata have equal size, and rounding differs sharply at baseline. A formatting difference by itself proves little. Different collection modes or processing histories can alter rounding. The relevant question is whether those alternatives fit the joint evidence and the documented workflow.
+
+![For the archived car 1 readings, 27.94 percent of Calibri baseline values are multiples of 100 miles, compared with 1.25 percent of their later readings. Corresponding Cambria fractions are 1.17 and 1.01 percent. Every bar has 6,744 policies; these are descriptive properties of the challenged artifact.](../figures/M02_record_rounding.png)
+
+### 2.35.2 Joint Patterns and Competing Explanations
+
+\noindent Restrict the matching comparison to policies with all four baseline readings observed. There are 22 such records in each font group. Define a candidate match by requiring each of the four Cambria readings to lie between the corresponding Calibri reading and that reading plus 1,000 miles. Every Calibri record has exactly one candidate. Similarity across four measurements is more informative than an isolated pair of similar numbers because a proposed benign explanation must account for the joint pattern.
+
+Car 1 increments range from 8 to 49,997 miles, with none at or above 50,000. The full ten-bin frequency table is saved with the results. A boundary could reflect a documented exclusion rule, censoring, or another transformation. Investigate those alternatives using the source and collection process before attributing a mechanism. The established fabrication assessment draws on a broader record than any single classroom diagnostic (Simonsohn et al., 2021).
+
+These checks supply no probability that a named person fabricated data. Neither a font difference nor a failed replication establishes personal intention. Conversely, uncertainty about the person's identity does not restore the artifact's evidential reliability. A defensible response preserves the source, identifies the defect, limits the inference, and requests the records necessary to investigate it. M9 §§9.65.7–9.65.8 and §9.84 connect those actions to responsibility, maxims, and correction.
+
+### 2.35.3 Complete Python Assessment
+
+\noindent Run `python assess_records.py` from `03_Data_and_Code/Research_Integrity` with `openpyxl` installed. The unchanged workbook, codebook, source checksum, and license are supplied there. The program executes no workbook macros and modifies no source cells. It writes aggregate outputs with explicit denominators and verifies each stored policy average against the paired car readings.
+
+
+Python source: [assess_records.py](../../03_Data_and_Code/Research_Integrity/assess_records.py)
+
+```python
+"""Read the public Study 3 artifact; report diagnostics, never a causal effect.
+
+Run: python assess_records.py
+Input: the unchanged CC BY 4.0 ResearchBox 336 workbook, described in README.md.
+The archived observations contain evidence of fabrication. They are not a
+validated record of insurance customers' behavior. No source workbook is edited.
+"""
+from collections import Counter
+import csv
+import hashlib
+import json
+from pathlib import Path
+from statistics import mean
+
+from openpyxl import load_workbook
+
+ROOT = Path(__file__).resolve().parent
+SOURCE = ROOT / "data" / "Study3_with_fonts.xlsx"
+OUTPUT = ROOT / "results"
+OUTPUT.mkdir(exist_ok=True)
+digest = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
+expected = json.loads((ROOT / "source.json").read_text())["sha256"]
+if digest != expected:
+    raise ValueError("Source bytes changed; inspect and document the new version.")
+
+book = load_workbook(SOURCE, read_only=True, data_only=True)
+sheet = book["Data"]
+cells = sheet.iter_rows()
+names = [cell.value for cell in next(cells)]
+records = []
+for row in cells:
+    record = dict(zip(names, (cell.value for cell in row)))
+    record["actual_font"] = row[names.index("baseline_car1")].font.name
+    records.append(record)
+book.close()
+if len({r["id"] for r in records}) != len(records):
+    raise ValueError("Masked row identifiers are not unique.")
+if any(r["font"] != r["actual_font"] for r in records):
+    raise ValueError("Recorded font and workbook formatting disagree.")
+
+def observed(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+def write_csv(name, rows):
+    with (OUTPUT / name).open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+# Each row is a policy. Missing car slots stay missing. Differences are miles
+# over varying, unknown intervals, so these values are not annual mileages.
+for r in records:
+    differences = [r[f"update_car{k}"] - r[f"baseline_car{k}"]
+                   for k in range(1, 5)
+                   if observed(r[f"baseline_car{k}"])
+                   and observed(r[f"update_car{k}"])]
+    if len(differences) != r["car_count"]:
+        raise ValueError("Car count and paired measurements disagree.")
+    if abs(mean(differences) - r["diff_average"]) > 1e-7:
+        raise ValueError("Stored policy average does not reconcile.")
+
+increments = [r["update_car1"] - r["baseline_car1"] for r in records]
+histogram = []
+for lower in range(0, 50000, 5000):
+    count = sum(lower <= x < lower + 5000 for x in increments)
+    histogram.append({"lower_miles": lower, "upper_exclusive_miles": lower + 5000,
+                      "count": count, "denominator": len(increments)})
+write_csv("car1_increments.csv", histogram)
+
+rounding = []
+for font in ("Calibri", "Cambria"):
+    for time in ("baseline", "update"):
+        # Car 1 avoids overweighting policies with more recorded cars.
+        values = [r[f"{time}_car1"] for r in records if r["font"] == font]
+        for multiple in (10, 100, 1000):
+            count = sum(x % multiple == 0 for x in values)
+            rounding.append({"font": font, "time": time, "multiple": multiple,
+                             "count": count, "denominator": len(values),
+                             "fraction": count / len(values)})
+write_csv("rounding.csv", rounding)
+
+# Restrict explicitly to policies with all four baseline car slots observed.
+# A candidate pair must be close in every dimension, with directional offsets.
+four = [r for r in records
+        if all(observed(r[f"baseline_car{k}"]) for k in range(1, 5))]
+left = [r for r in four if r["font"] == "Calibri"]
+right = [r for r in four if r["font"] == "Cambria"]
+matches = []
+for a in left:
+    candidates = [b for b in right
+                  if all(0 <= b[f"baseline_car{k}"] - a[f"baseline_car{k}"] <= 1000
+                         for k in range(1, 5))]
+    matches.append(len(candidates))
+
+groups = []
+for label in ("Sign Top", "Sign Bottom"):
+    rows = [r for r in records if r["condition"] == label]
+    groups.append({"condition": label, "policies": len(rows),
+                   "baseline_average_miles": mean(r["baseline_average"] for r in rows),
+                   "increment_average_miles": mean(r["diff_average"] for r in rows)})
+write_csv("condition_descriptions.csv", groups)
+summary = {
+    "source_sha256": digest, "policies": len(records),
+    "font_counts": dict(Counter(r["font"] for r in records)),
+    "car1_increment_min": min(increments), "car1_increment_max": max(increments),
+    "car1_increment_below_zero": sum(x < 0 for x in increments),
+    "car1_increment_at_least_50000": sum(x >= 50000 for x in increments),
+    "complete_four_car_policies": len(four),
+    "complete_four_car_calibri": len(left), "complete_four_car_cambria": len(right),
+    "calibri_with_candidate": sum(n > 0 for n in matches),
+    "calibri_with_exactly_one_candidate": sum(n == 1 for n in matches),
+    "candidate_rule": "All four Cambria minus Calibri offsets in [0,1000] miles",
+    "interpretation": "Descriptive properties of an archived, challenged artifact; no estimate of honesty or identification of a fabricator.",
+}
+(OUTPUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+print(json.dumps(summary, indent=2))
+```

@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=11.8cm,minimum height=1cm] (maxim) at (6,0) {\textbf{State the Maxim Faithfully}\\When circumstance C arises, I will do A in order to achieve E.};
+\node[box,text width=3.4cm,minimum height=2cm] (law) at (1.7,-3.2) {\textbf{Universal Law}\\Could the principle be conceived and willed universally?\\\small Kantian test};
+\node[box,text width=3.4cm,minimum height=2cm] (humanity) at (6,-3.2) {\textbf{Respect for Humanity}\\Does the action respect persons' judgment and ends?\\\small Kantian test};
+\node[orangebox,text width=3.4cm,minimum height=2cm] (rejection) at (10.3,-3.2) {\textbf{Reasonable Rejection}\\What individual objections bear on the principle?\\\small Contractualist test};
+\draw[edge] (maxim.south) -- ++(0,-.35) -| (law.north);
+\draw[edge] (maxim.south) -- (humanity.north);
+\draw[accent] (maxim.south) -- ++(0,-.35) -| (rejection.north);
+\node[box,text width=11.8cm,minimum height=1cm] (duty) at (6,-6.5) {\textbf{Defend the Ought Conclusion}\\Name the obligation, its grounds, a feasible alternative, and who must act.};
+\draw[edge] (law.south) -- ++(0,-.4) -| (duty.north);
+\draw[edge] (humanity.south) -- (duty.north);
+\draw[accent] (rejection.south) -- ++(0,-.4) -| (duty.north);
+\end{tikzpicture}

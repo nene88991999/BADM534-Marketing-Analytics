@@ -1,0 +1,16 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.5cm,minimum height=1.1cm] (design) at (1.7,0) {\textbf{Create and Classify}\\Define events, units, omissions};
+\node[box,text width=3.5cm,minimum height=1.1cm] (govern) at (6.1,0) {\textbf{Preserve and Govern}\\Keep versions; permit challenge};
+\node[orangebox,text width=3.5cm,minimum height=1.1cm] (claim) at (10.5,0) {\textbf{Interpret and Assert}\\Defend the move from record to claim};
+\draw[edge] (design) -- (govern);
+\draw[accent] (govern) -- (claim);
+\node[box,text width=11.8cm,minimum height=1.05cm] (person) at (6.1,-2.8) {\textbf{Affected People}\\Who bears the error, lacks a voice, or needs a route to contest the classification?};
+\draw[edge] (design.south) -- ++(0,-.4) -| (person.north);
+\draw[edge] (govern.south) -- (person.north);
+\draw[accent] (claim.south) -- ++(0,-.4) -| (person.north);
+\node[box,text width=5.3cm,minimum height=1.35cm] (past) at (2.9,-5.7) {\textbf{Responsibility for the Past}\\What was controlled, known, foreseeable, and reasonably preventable?};
+\node[orangebox,text width=5.3cm,minimum height=1.35cm] (future) at (9.3,-5.7) {\textbf{Responsibility for Repair}\\Who can correct the claim, preserve evidence, and change the arrangement?};
+\draw[edge] (person.south) -- ++(0,-.4) -| (past.north);
+\draw[accent] (person.south) -- ++(0,-.4) -| (future.north);
+\node[align=center,text width=12cm,font=\footnotesize] at (6.1,-7.8) {Distributed work requires assigned duties.\\Unresolved personal culpability can coexist with a clear obligation to correct a public claim.};
+\end{tikzpicture}

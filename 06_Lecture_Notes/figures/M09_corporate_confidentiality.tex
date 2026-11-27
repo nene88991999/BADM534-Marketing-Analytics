@@ -1,0 +1,15 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=11.6cm,minimum height=.8cm] (claim) at (6,0) {\textbf{A firm requests confidentiality}\\What interest does the restriction protect?};
+\node[box,text width=5.1cm,minimum height=1.1cm] (human) at (2.9,-2.2) {\textbf{Human privacy}\\Vulnerability, agency, and relationships};
+\node[orangebox,text width=5.1cm,minimum height=1.1cm] (firm) at (9.1,-2.2) {\textbf{Corporate interests}\\A further justification is required};
+\draw[edge] (claim.south) -- ++(0,-.35) -| (human.north);
+\draw[accent] (claim.south) -- ++(0,-.35) -| (firm.north);
+\node[box,text width=5.1cm,minimum height=1.1cm] (risk) at (2.9,-4.6) {Specify the person, information,\\recipient, and disclosure risk};
+\node[orangebox,text width=5.1cm,minimum height=1.1cm] (purpose) at (9.1,-4.6) {Identify the defended purpose\\and people whose interests it serves};
+\draw[edge] (human) -- (risk);
+\draw[accent] (firm) -- (purpose);
+\node[box,text width=11.6cm,minimum height=1.0cm] (compare) at (6,-7) {\textbf{Compare feasible protected scrutiny}\\Is this restriction necessary, and can adverse conclusions still be challenged and published?};
+\draw[edge] (risk.south) -- ++(0,-.35) -| (compare.north);
+\draw[accent] (purpose.south) -- ++(0,-.35) -| (compare.north);
+\node[align=center,text width=12.4cm,font=\footnotesize] at (6,-9.1) {Corporate agency supports accountability. It does not establish equal human protections.\\A commercial preference alone does not justify control over adverse conclusions.};
+\end{tikzpicture}

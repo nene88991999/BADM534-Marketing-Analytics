@@ -1,0 +1,10 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=2.4cm,minimum height=1.2cm] (claim) at (1.2,0) {\textbf{Confidentiality}\\Whose interest?};
+\node[box,text width=3.8cm,minimum height=1.1cm] (human) at (5.6,1.1) {\textbf{Human Privacy}\\Specify the person and risk};
+\node[orangebox,text width=3.8cm,minimum height=1.1cm] (firm) at (5.6,-1.1) {\textbf{Corporate Interest}\\Defend its grounds};
+\node[box,text width=3.6cm,minimum height=1.8cm] (test) at (11.3,0) {\textbf{Justify the Restriction}\\Necessary for that interest?\\Independent challenge preserved?};
+\draw[edge] (claim.east) -- ++(.35,0) |- (human.west);
+\draw[accent] (claim.east) -- ++(.35,0) |- (firm.west);
+\draw[edge] (human.east) -- ++(.45,0) |- (test.west);
+\draw[accent] (firm.east) -- ++(.45,0) |- (test.west);
+\end{tikzpicture}

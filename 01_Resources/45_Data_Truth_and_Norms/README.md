@@ -2,7 +2,7 @@
 
 A household needs evidence about the burdens of a proposed development. A utility, developer, regulator, and researcher may each produce records for different purposes. The relevant question is how those records become evidence for the household's decision, and which further reasons justify an institution's recommendation.
 
-The collection contains 30 sources: 20 philosophical and methodological readings and ten institutional sources. Fourteen source files are saved locally in categorized `readings/` subfolders: 12 PDFs and two author manuscripts in Word formats. Public guides and original teaching materials are synchronized with GitHub; the source originals remain in Dropbox. The [catalog](catalog.json) records URLs, versions, inspected passages, availability, and local-copy checksums. Access to an original does not establish a general right to redistribute it.
+The collection contains 45 sources: 31 philosophical and methodological readings and fourteen institutional sources. Twenty source files are saved locally in categorized `readings/` subfolders: 18 PDFs and two author manuscripts in Word formats. Public guides and original teaching materials are synchronized with GitHub; the source originals remain in Dropbox. The [catalog](catalog.json) records URLs, versions, inspected passages, availability, and local-copy checksums. Access to an original does not establish a general right to redistribute it.
 
 ## Reading Routes
 
@@ -36,3 +36,7 @@ The original figures and code do not replicate the data-center paper or estimate
 ## Restricted Research and Public Justification
 
 The [restricted-research readings](05_Restricted_Research/README.md) connect artifact governance to access, permitted analysis, publication authority, and the question of whether research under an NDA ought to proceed. M9 §§9.63–9.65 and the optional lab distinguish conducting a study, publishing it, and relying on it for public action. The three hypothetical agreements hold the synthetic subscription history fixed. No agreement is attributed to a named study without documentary evidence.
+
+## Corporate Standing, Responsibility, and Maxims
+
+The [expanded reading route](06_Corporate_Standing/README.md) connects artifact ontology to human and corporate protections, selective access, moral responsibility, and the maxim governing disclosure. The [Kilts case](06_Corporate_Standing/KILTS_CASE.md) examines publicly documented terms. [Research integrity and replication](../52_Research_Integrity_and_Replication/README.md) develops the role of independent scrutiny and correction. M9 §§9.65.2–9.65.8 and §9.84 distinguish justification of a practice, evidence about its operation, and personal culpability.

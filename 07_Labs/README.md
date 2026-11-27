@@ -122,3 +122,7 @@ The [optional ungraded practice](Bad_Controls/README.md) asks students to defend
 ## Marketing Publications and Unwanted Continuation
 
 The [engagement exercise](Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) adds source classification, chronology, claim revision, and a reasonable-alternative argument to the existing synthetic feed comparison. It is optional and ungraded. Read M9 §§9.70–9.75 and the [15-source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md).
+
+## Replication and Responsibility
+
+[Research Integrity](Research_Integrity/README.md) is optional ungraded practice on source records, competing explanations, publication status, responsibility, and maxims. It connects to [Data, Truth, and Norms](Data_Truth_and_Norms/README.md).

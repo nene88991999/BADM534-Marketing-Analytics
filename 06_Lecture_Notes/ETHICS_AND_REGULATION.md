@@ -172,3 +172,9 @@ The criticism concerns the specified price margins and the extension from a util
 ## Research Responsibility for Unsupported Reassurance
 
 M8 §§8.31–8.31.1 establish the inferential defects using the paper's reported estimates and the verified HBS statement. M9 §9.83 defends correction as an obligation to affected households under principles of truthful communication and reasonable justification. The claim assessment distinguishes a demonstrated reporting or interpretation error from intention, actual policy reliance, and realized injury. The [public-communication guide](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) records the comparison.
+
+## Confidentiality, Responsibility, and Research Integrity
+
+Checked November 27, 2026. The Kilts NielsenIQ materials are public access policies and advisory guidance, not legislation or an inspected executed contract. The [source assessment](../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md) records the distinction and dated provisions. The moral evaluation concerns corporate standing, justified restrictions, and affected people's opportunities to challenge a claim.
+
+The [replication collection](../01_Resources/52_Research_Integrity_and_Replication/README.md) distinguishes journal notices, investigator claims, author responses, and independent course calculations. The signing article is retracted (2021); the self-concept article has the inspected expression of concern (2024); the deadlines article is retracted (2026). No personal fabrication finding is inferred from coauthorship, an unsuccessful replication, or a retraction. M9 §§9.65.7–9.65.8 and §9.84 connect these statuses to duties of care, maxims, and correction.

@@ -6454,6 +6454,234 @@ and Metaphysics}, chapter 3; (Leonelli, 2015),
 \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/}{What Counts as
 Scientific Data? A Relational Framework}.
 
+\hypertarget{M02-reproducing-a-result-and-assessing-its-records}{%
+\section{Reproducing a Result and Assessing Its
+Records}\label{M02-reproducing-a-result-and-assessing-its-records}}
+
+\noindent \noindent An insurer considering a form change needs evidence about
+truthful reporting. A public spreadsheet from a retracted signing study
+gives a different object to examine: whether the archived records have
+properties consistent with the reported process. The file contains
+13,488 masked policy rows, up to four car slots per row, condition
+labels, and baseline and later odometer readings. It has documented
+evidence of fabrication and is used here as an artifact for
+investigation (Shu et al., 2012, retracted 2021; Simonsohn et al.,
+2021). Its values cannot establish actual customer behavior.
+
+\hypertarget{M02-observation-units-and-preserved-features}{%
+\subsection{Observation Units and Preserved
+Features}\label{M02-observation-units-and-preserved-features}}
+
+\noindent \noindent Subtracting a car's baseline reading from its later reading
+gives a recorded mileage increment. The intervals between readings vary
+and are unknown, so the increment is not annual mileage. For the
+rounding comparison, use car 1, which is present for every policy; this
+avoids giving policies with several cars greater weight. Preserve
+missing slots for other cars. The archived font variable describes the
+formatting of the first baseline value, and the code checks it against
+the actual workbook font before using it.
+
+The program independently recomputes the policy averages, font counts,
+increment distribution, rounding frequencies, and four-car matches from
+the licensed ResearchBox archive. Its file hash identifies the exact
+input. A stable hash establishes that readers used the same bytes; it
+does not establish that the records are true. Preserving the workbook
+also preserves formatting that would disappear in an ordinary CSV
+export.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Car 1 Stratum & Multiples of 100 Miles & Policies & Percentage \\
+\midrule
+
+Calibri baseline & 1,884 & 6,744 & 27.94\% \\
+Calibri later reading & 84 & 6,744 & 1.25\% \\
+Cambria baseline & 79 & 6,744 & 1.17\% \\
+Cambria later reading & 68 & 6,744 & 1.01\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two font strata have equal size, and rounding differs sharply at
+baseline. A formatting difference by itself proves little. Different
+collection modes or processing histories can alter rounding. The
+relevant question is whether those alternatives fit the joint evidence
+and the documented workflow.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_record_rounding.tex}
+\caption{For the archived car 1 readings, 27.94 percent of Calibri baseline values are multiples of 100 miles, compared with 1.25 percent of their later readings. Corresponding Cambria fractions are 1.17 and 1.01 percent. Every bar has 6,744 policies; these are descriptive properties of the challenged artifact.}\label{fig:M02_record_rounding}
+\end{figure}
+
+\hypertarget{M02-joint-patterns-and-competing-explanations}{%
+\subsection{Joint Patterns and Competing
+Explanations}\label{M02-joint-patterns-and-competing-explanations}}
+
+\noindent \noindent Restrict the matching comparison to policies with all four
+baseline readings observed. There are 22 such records in each font
+group. Define a candidate match by requiring each of the four Cambria
+readings to lie between the corresponding Calibri reading and that
+reading plus 1,000 miles. Every Calibri record has exactly one
+candidate. Similarity across four measurements is more informative than
+an isolated pair of similar numbers because a proposed benign
+explanation must account for the joint pattern.
+
+Car 1 increments range from 8 to 49,997 miles, with none at or above
+50,000. The full ten-bin frequency table is saved with the results. A
+boundary could reflect a documented exclusion rule, censoring, or
+another transformation. Investigate those alternatives using the source
+and collection process before attributing a mechanism. The established
+fabrication assessment draws on a broader record than any single
+classroom diagnostic (Simonsohn et al., 2021).
+
+These checks supply no probability that a named person fabricated data.
+Neither a font difference nor a failed replication establishes personal
+intention. Conversely, uncertainty about the person's identity does not
+restore the artifact's evidential reliability. A defensible response
+preserves the source, identifies the defect, limits the inference, and
+requests the records necessary to investigate it. M9 §§9.65.7--9.65.8
+and §9.84 connect those actions to responsibility, maxims, and
+correction.
+
+\hypertarget{M02-complete-python-assessment}{%
+\subsection{Complete Python
+Assessment}\label{M02-complete-python-assessment}}
+
+\noindent \noindent Run \texttt{python\ assess\_records.py} from
+\texttt{03\_Data\_and\_Code/Research\_Integrity} with \texttt{openpyxl}
+installed. The unchanged workbook, codebook, source checksum, and
+license are supplied there. The program executes no workbook macros and
+modifies no source cells. It writes aggregate outputs with explicit
+denominators and verifies each stored policy average against the paired
+car readings.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Research_Integrity/assess_records.py}{assess\_records.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Read the public Study 3 artifact; report diagnostics, never a causal effect.
+
+Run: python assess_records.py
+Input: the unchanged CC BY 4.0 ResearchBox 336 workbook, described in README.md.
+The archived observations contain evidence of fabrication. They are not a
+validated record of insurance customers' behavior. No source workbook is edited.
+"""
+from collections import Counter
+import csv
+import hashlib
+import json
+from pathlib import Path
+from statistics import mean
+
+from openpyxl import load_workbook
+
+ROOT = Path(__file__).resolve().parent
+SOURCE = ROOT / "data" / "Study3_with_fonts.xlsx"
+OUTPUT = ROOT / "results"
+OUTPUT.mkdir(exist_ok=True)
+digest = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
+expected = json.loads((ROOT / "source.json").read_text())["sha256"]
+if digest != expected:
+    raise ValueError("Source bytes changed; inspect and document the new version.")
+
+book = load_workbook(SOURCE, read_only=True, data_only=True)
+sheet = book["Data"]
+cells = sheet.iter_rows()
+names = [cell.value for cell in next(cells)]
+records = []
+for row in cells:
+    record = dict(zip(names, (cell.value for cell in row)))
+    record["actual_font"] = row[names.index("baseline_car1")].font.name
+    records.append(record)
+book.close()
+if len({r["id"] for r in records}) != len(records):
+    raise ValueError("Masked row identifiers are not unique.")
+if any(r["font"] != r["actual_font"] for r in records):
+    raise ValueError("Recorded font and workbook formatting disagree.")
+
+def observed(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+def write_csv(name, rows):
+    with (OUTPUT / name).open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+# Each row is a policy. Missing car slots stay missing. Differences are miles
+# over varying, unknown intervals, so these values are not annual mileages.
+for r in records:
+    differences = [r[f"update_car{k}"] - r[f"baseline_car{k}"]
+                   for k in range(1, 5)
+                   if observed(r[f"baseline_car{k}"])
+                   and observed(r[f"update_car{k}"])]
+    if len(differences) != r["car_count"]:
+        raise ValueError("Car count and paired measurements disagree.")
+    if abs(mean(differences) - r["diff_average"]) > 1e-7:
+        raise ValueError("Stored policy average does not reconcile.")
+
+increments = [r["update_car1"] - r["baseline_car1"] for r in records]
+histogram = []
+for lower in range(0, 50000, 5000):
+    count = sum(lower <= x < lower + 5000 for x in increments)
+    histogram.append({"lower_miles": lower, "upper_exclusive_miles": lower + 5000,
+                      "count": count, "denominator": len(increments)})
+write_csv("car1_increments.csv", histogram)
+
+rounding = []
+for font in ("Calibri", "Cambria"):
+    for time in ("baseline", "update"):
+        # Car 1 avoids overweighting policies with more recorded cars.
+        values = [r[f"{time}_car1"] for r in records if r["font"] == font]
+        for multiple in (10, 100, 1000):
+            count = sum(x % multiple == 0 for x in values)
+            rounding.append({"font": font, "time": time, "multiple": multiple,
+                             "count": count, "denominator": len(values),
+                             "fraction": count / len(values)})
+write_csv("rounding.csv", rounding)
+
+# Restrict explicitly to policies with all four baseline car slots observed.
+# A candidate pair must be close in every dimension, with directional offsets.
+four = [r for r in records
+        if all(observed(r[f"baseline_car{k}"]) for k in range(1, 5))]
+left = [r for r in four if r["font"] == "Calibri"]
+right = [r for r in four if r["font"] == "Cambria"]
+matches = []
+for a in left:
+    candidates = [b for b in right
+                  if all(0 <= b[f"baseline_car{k}"] - a[f"baseline_car{k}"] <= 1000
+                         for k in range(1, 5))]
+    matches.append(len(candidates))
+
+groups = []
+for label in ("Sign Top", "Sign Bottom"):
+    rows = [r for r in records if r["condition"] == label]
+    groups.append({"condition": label, "policies": len(rows),
+                   "baseline_average_miles": mean(r["baseline_average"] for r in rows),
+                   "increment_average_miles": mean(r["diff_average"] for r in rows)})
+write_csv("condition_descriptions.csv", groups)
+summary = {
+    "source_sha256": digest, "policies": len(records),
+    "font_counts": dict(Counter(r["font"] for r in records)),
+    "car1_increment_min": min(increments), "car1_increment_max": max(increments),
+    "car1_increment_below_zero": sum(x < 0 for x in increments),
+    "car1_increment_at_least_50000": sum(x >= 50000 for x in increments),
+    "complete_four_car_policies": len(four),
+    "complete_four_car_calibri": len(left), "complete_four_car_cambria": len(right),
+    "calibri_with_candidate": sum(n > 0 for n in matches),
+    "calibri_with_exactly_one_candidate": sum(n == 1 for n in matches),
+    "candidate_rule": "All four Cambria minus Calibri offsets in [0,1000] miles",
+    "interpretation": "Descriptive properties of an archived, challenged artifact; no estimate of honesty or identification of a fabricator.",
+}
+(OUTPUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+print(json.dumps(summary, indent=2))
+\end{Verbatim}
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -37047,6 +37275,50 @@ category can exclude a concern that deserves attention. The authority to
 maintain a database therefore differs from the authority to decide which
 of the represented person's interests matter.
 
+\hypertarget{M09-created-objects-and-independent-truth-conditions}{%
+\subsection{Created Objects and Independent Truth
+Conditions}\label{M09-created-objects-and-independent-truth-conditions}}
+
+\noindent \noindent A fictional character has a history of creation and depends on
+practices that preserve an intelligible work. The character survives the
+destruction of a particular copy when other sustaining copies or
+memories remain. These dependencies distinguish a created cultural
+object from both an actual person and a timeless abstract object
+(Thomasson, 1999, chapter 3). A dataset has analogous questions of
+origin, persistence, and identity: which recording practices produced
+it, which transformations preserve a version, and which documentation
+makes its fields intelligible? The analogy supplies questions about
+dependence rather than a claim that every informational object has the
+same ontology.
+
+Consider a company that records a subscription as active until
+cancellation completes. The rule helps constitute the administrative
+status. It does not determine whether the customer wants to continue
+paying. The customer, the cancellation attempt, the recorded status, and
+the company's description of loyalty have different conditions of
+existence and truth. The company can revise its schema without changing
+what the customer previously requested. Its authority over the artifact
+therefore supplies no authority to settle the customer's reasons by
+definition.
+
+An NDA adds another layer of institutional dependence. It can determine
+who receives a dataset version, which questions are permitted, and what
+interpretations may enter a public paper. The evidential object
+available to readers is then shaped by both recording practices and
+rules governing disclosure. Data acquire evidential roles in relation to
+inquiry, rather than carrying an unrestricted meaning independently of
+their use (Leonelli, 2015). Applying that insight requires examining the
+path from event to record to released claim. An accurate table can
+occupy a highly selective place in that path.
+
+The moral argument begins where control over representation affects
+another person's ability to understand or challenge a consequential
+decision. Creating and owning a research artifact does not confer
+ownership of the people represented, their reasons, or the truth about
+their treatment. Commercial control over a file can explain an access
+restriction. A separate justification must explain why affected people
+ought to accept that restriction.
+
 \Needspace{8\baselineskip}
 
 \hypertarget{M09-what-the-artifact-makes-visible}{%
@@ -37338,6 +37610,97 @@ to publish, or other research choices. Unknown restrictions justify
 uncertainty about this process. They do not establish the sign of an
 unpublished effect or prove that a sponsor suppressed a result.
 
+\hypertarget{M09-selective-access-and-the-authority-of-empirical-research}{%
+\subsection{Selective Access and the Authority of Empirical
+Research}\label{M09-selective-access-and-the-authority-of-empirical-research}}
+
+\noindent \noindent Empirical inquiry earns authority partly through opportunities
+to expose claims to competent criticism. Effective criticism requires
+venues, uptake, shared standards, and a distribution of intellectual
+authority that allows relevant objections to be heard (Longino, 2004,
+pp.~134--135). Restricting access to researchers selected by the data
+holder can weaken these conditions. The public may encounter a
+conclusion supported by records that potential critics cannot inspect,
+while the privileged researchers depend on continued access to those
+records.
+
+The concern extends beyond errors in arithmetic. A protected team may
+reproduce a coefficient exactly while outsiders remain unable to examine
+excluded customers, alternative outcome definitions, or a prohibited
+linkage. Computational reproducibility uses the same inputs and
+procedures; replication obtains new data addressing the same scientific
+question (National Academies of Sciences, Engineering, and Medicine,
+2019, chapter 3). Independent reanalysis of the original records asks
+another question: whether a defensible change in the analysis alters the
+interpretation. Permission for one of these activities establishes no
+permission for the others.
+
+When a firm controls both access to decisive evidence and the range of
+publishable criticism, empirical authority becomes dependent on its
+permission. A commercially reassuring claim may then circulate with
+scientific credentials while the ordinary means of challenging it are
+unavailable. This undermines the public warrant for the claim even if
+its calculation is correct. A philosophical assessment of secrecy
+distinguishes restrictions justified by general moral concerns from
+restrictions serving particular commercial interests (de Ridder, 2013).
+The relevant challenge is to show why the restriction supports reliable,
+accountable inquiry or protects people sufficiently to justify its
+epistemic cost.
+
+Controlled access can preserve meaningful criticism when eligibility is
+transparent, selection is independent of the expected conclusion,
+qualified critics can obtain access, and adverse findings can be
+published. Such conditions need evidence of implementation. A statement
+that replication is possible on request leaves open who can qualify,
+what they may examine, how long approval takes, and whether their
+objections may become public. An inaccessible result and a result that
+failed an independent check are different findings. Both differ from a
+result that has survived such a check.
+
+\hypertarget{M09-permitted-narratives-and-dependence-on-future-access}{%
+\subsection{Permitted Narratives and Dependence on Future
+Access}\label{M09-permitted-narratives-and-dependence-on-future-access}}
+
+\noindent \noindent A research agreement can govern the public narrative
+explicitly through approval rights, limits on topics, or restrictions on
+identifying firms. Influence can also arise through the expectation that
+an unwelcome question will jeopardize later access. The second mechanism
+can operate without a written instruction to change a coefficient. A
+researcher anticipating that response may choose a favorable question,
+omit an uncomfortable interpretation, or avoid a project entirely. These
+are mechanisms to investigate through agreements, project registrations,
+correspondence, manuscript changes, denied requests, and records of
+delayed or withdrawn work.
+
+A review of 397 published empirical studies covering 57 labour platforms
+operating in Europe documents differences in research topics across
+access routes and describes inaccessible primary data in bilateral
+collaborations (Silva et al., 2026, results and limitations). The
+descriptive evidence supports scrutiny of agenda selection. Because the
+review observes published studies, it does not identify the full set of
+refused projects or establish a hidden agreement in a particular
+collaboration. A claim that NDA research is rarely replicable requires a
+defined population and an assessment of actual access and replication
+outcomes.
+
+An undisclosed understanding about acceptable narratives would create a
+serious conflict between scholarly independence and the data holder's
+commercial preferences. Establishing that understanding requires
+evidence beyond restricted access. The documented allocation of
+discretion is already assessable: who can decline a request, prevent an
+extension, demand revisions, or withhold permission to publish?
+Researchers and editors ought to disclose material limits on these
+powers and avoid presenting an interested party's control as independent
+verification.
+
+The distinction matters for affected consumers. They may bear the
+consequences of a public claim without being parties to the agreement
+that regulates its scrutiny. Consent between a firm and a researcher
+does not settle whether the arrangement is justifiable to those
+consumers. The moral concern includes their loss of an effective
+opportunity to challenge the reasons offered to them, alongside possible
+financial, health, or service harms.
+
 \Needspace{8\baselineskip}
 
 \hypertarget{M09-worked-comparison-three-research-agreements}{%
@@ -37510,7 +37873,8 @@ the data would otherwise be unavailable is one premise to assess; none
 completes the moral argument on its own.
 
 \hypertarget{M09-further-reading-1}{%
-\subsection{Further Reading}\label{M09-further-reading-1}}
+\subsection*{Further Reading}\label{M09-further-reading-1}}
+\addcontentsline{toc}{subsection}{Further Reading}
 
 \noindent (Mello et al., 2005),
 \href{https://doi.org/10.1056/NEJMsa044115}{Academic Medical Centers'
@@ -37521,6 +37885,556 @@ Conflicts of Interest}, §§1--2; (American Economic Association, 2026),
 \href{https://www.aeaweb.org/journals/data/data-code-policy}{Data and
 Code Availability Policy}. The agreement comparison is hypothetical and
 makes no assertion about the terms governing a named study.
+
+\hypertarget{M09-corporate-duties-and-human-protections}{%
+\subsection{Corporate Duties and Human
+Protections}\label{M09-corporate-duties-and-human-protections}}
+
+\noindent \noindent A firm requesting confidentiality should identify the interest
+that the restriction protects. Preventing disclosure of a customer's
+health information protects a person against exposure. Preventing
+criticism of a retailer protects an organization's commercial position.
+Both restrictions can affect people, but their justification requires
+different arguments. The word privacy does not give the second interest
+the moral standing of the first.
+
+Three distinctions organize the argument. Legal personality concerns
+rights and duties recognized by a legal system. Moral agency concerns
+the capacity to act for reasons and bear responsibility. Moral standing
+concerns the reasons others have to protect an entity for its own sake.
+The ability to make a contract or bear responsibility does not establish
+an entitlement to every protection owed to a human being. Corporate
+agency and personhood can be separated (Hess, 2013). A recent account
+makes the distinction particularly explicit by separating responsibility
+from moral worth grounded in experience (Kelley, 2025, §§2--3).
+
+The fact that a corporation is not biologically human is insufficient on
+its own. Nonhuman animals can deserve protection, and people need not
+possess an adult's decision capacities to have claims on others. The
+stronger argument identifies the grounds of the particular protection.
+Human confidentiality can protect vulnerability, intimate life,
+practical agency, and relationships of trust. A corporation's interest
+in preserving margins or avoiding criticism does not acquire those
+grounds merely because the law recognizes it as a person.
+
+Corporate protections can nevertheless be justified through people. An
+organization may hold derivative moral rights whose justification rests
+on the interests of its members or others, even when the right attaches
+to the organization itself (Pasternak, 2017, §§II--III). Employees may
+depend on continued operations; customers may need a secure service;
+investors can have legitimate claims against appropriation. This
+position requires the firm to identify and defend those interests. It
+gives commercial confidentiality no automatic parity with human dignity
+or protection against serious harm.
+
+There is a substantive objection: capacities attributed to corporate
+agents might themselves ground moral consideration (Silver, 2019). Even
+granting that position does not establish a right to prevent truthful
+scrutiny of burdens imposed on others. Moral consideration is not an
+unrestricted permission to control public evidence. The conclusion about
+secrecy can therefore rest on the narrower claim that the particular
+restriction must be justified, rather than on settling whether
+corporations have any intrinsic moral standing.
+
+\hypertarget{M09-a-philosophical-argument-against-protective-secrecy}{%
+\subsection{A Philosophical Argument Against Protective
+Secrecy}\label{M09-a-philosophical-argument-against-protective-secrecy}}
+
+\noindent \noindent Consider a rule allowing a firm to invoke research as public
+reassurance while retaining discretionary control over access and the
+publication of adverse findings. The proposed alternative protects
+identifiable records and legitimate commercial details while permitting
+independent evaluation and publication of supported conclusions. A
+contractualist assessment compares the individual reasons for rejecting
+these principles (Scanlon, 1998, chapter 5). The argument has five
+premises:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  People affected by a consequential claim have reasons to understand
+  and contest its evidential basis, especially when they cannot readily
+  avoid the resulting exposure.
+\item
+  Corporate control of a dataset establishes the practical ability to
+  restrict scrutiny. It supplies no moral justification for the
+  restriction by itself.
+\item
+  Protecting a firm's commercial position requires an account of the
+  interests served, their importance, and their relation to the
+  restriction. An appeal to human dignity cannot simply be transferred
+  to the corporation.
+\item
+  Where feasible protected scrutiny addresses legitimate confidentiality
+  concerns, discretionary control over adverse conclusions imposes an
+  additional burden on affected people.
+\item
+  A desire to preserve favorable publicity or escape warranted
+  accountability provides no sufficient justification for that
+  additional burden.
+\end{enumerate}
+
+Under these premises, the firm and researcher ought to permit protected
+scrutiny and independent conclusions. If the agreement makes those
+conditions unattainable, they ought to withhold the broader public
+assurance and renegotiate or decline the project that would supply it.
+This is a moral judgment about the arrangement and its proposed use. The
+conclusion does not require discovering a fabricated estimate or proving
+that a particular consumer has already lost money.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_corporate_confidentiality.tex}
+\caption{A confidentiality claim requires a stated protected interest. Human privacy and corporate commercial interests have different grounds. Corporate protection needs an independently defended purpose, a necessary restriction, and comparison with protected scrutiny. Unsupported control of adverse conclusions fails this justification.}\label{fig:M09_corporate_confidentiality}
+\end{figure}
+
+Respect for persons also requires treating their judgment as something
+to be engaged through reasons. Using scholarly credibility to secure
+acceptance while preventing relevant objections can subordinate that
+judgment to the sponsor's objective (Kant, 1785, 4:429). The wrong
+concerns the relationship established with affected people. They are
+asked to accept a claim while the party benefiting from acceptance
+retains authority over its criticism. A precise coefficient does not
+repair that relationship.
+
+Confidentiality itself can sustain legitimate relationships and inquiry.
+The ethical evaluation must consider both concealment and exposure,
+including the harm caused by intrusive disclosure (Bok, 1982, chapter
+XVI; Nissenbaum, 2004). A privacy justification should specify whose
+information is sensitive, which recipients and uses create risk, and why
+a less restrictive arrangement fails. Protecting those people can
+support secure environments, restricted identifiers, and disclosure
+review. It does not automatically justify a veto over an unfavorable
+aggregate conclusion.
+
+\hypertarget{M09-giving-different-weight-to-restricted-research}{%
+\subsection{Giving Different Weight to Restricted
+Research}\label{M09-giving-different-weight-to-restricted-research}}
+
+\noindent \noindent Students evaluating a research insight should record its
+access conditions before deciding how much reliance it deserves.
+NDA-bound research carries additional questions about selection,
+independence, and verification. Research without an NDA must still
+demonstrate its accessibility and analytical support. An absent NDA
+statement is an unknown contractual status; an explicit statement that
+no NDA exists still leaves data availability and publication selection
+to be examined.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Evidence Arrangement & What an Independent Reader Can Check &
+Consequence for Reliance \\
+\midrule
+
+Open records, code, and preserved versions & Computation and alternative
+analyses, subject to documented coverage & Stronger scrutiny; design and
+interpretation still need justification \\
+Confidential records with independent access and publication rights &
+Protected reproduction and reanalysis under disclosed rules & Assess the
+safeguards and completed checks \\
+Access granted only at provider discretion & Published summaries and
+whatever selected outsiders may inspect & Withhold confidence in claims
+requiring inaccessible checks \\
+Public code with an unavailable extract & Program logic and documented
+transformations & Numerical reproduction and source selection remain
+unresolved \\
+No disclosed agreement or access route & Only the materials actually
+released & Treat contractual independence and reproducibility as
+unknown \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The appropriate adjustment concerns the claim and decision. A restricted
+estimate can motivate a further inquiry. A broad assurance used to deny
+consumer protection requires stronger support for coverage,
+independence, and opportunities for challenge. No arbitrary numerical
+discount follows from an NDA label. Instead, identify the unsupported
+link and limit reliance on the conclusion that requires it. This places
+the burden of substantiating a public assurance on its proponents while
+preserving useful, explicitly limited findings.
+
+Promoting access for checking published work has a moral justification
+grounded in research integrity, subject to specific protections for
+people (Wendelborn et al., 2024). Re-running a sponsor's approved
+program addresses one component of that obligation. An effective
+evaluation also asks whether a critic could question the outcome
+definition, inspect the extract's construction, report a materially
+different conclusion, and retain a route for later correction.
+
+\hypertarget{M09-worked-case-confidentiality-and-corporate-accountability}{%
+\subsection{Worked Case: Confidentiality and Corporate
+Accountability}\label{M09-worked-case-confidentiality-and-corporate-accountability}}
+
+\noindent \noindent The public Kilts Center policies for NielsenIQ research
+provide a concrete allocation of authority. The following summary
+concerns the published policies checked on November 27, 2026; a
+researcher's accepted agreement determines the terms governing that
+project (Kilts Center, n.d., 2026).
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+Published Requirement & Interest or Activity Protected \\
+\midrule
+
+Approved eligible academics need institutional subscriptions & Access to
+the licensed research resource \\
+Panelist identities and re-identifying details remain confidential &
+Human privacy \\
+Retailer identities and single-parent or chain results cannot be
+reported & Retailer confidentiality and attribution \\
+Antitrust, collusion, or potentially illegal-activity papers must mask
+manufacturers and brands & Corporate identification in contentious
+research \\
+Retailer-supplied UPC-level data cannot be disclosed & Commercial
+information \\
+Consulting, including litigation support, is prohibited & Separation of
+academic access from adversarial use \\
+Projects primarily evaluating provider methodology are not approved &
+The scope of permitted methodological scrutiny \\
+Dissemination requires advance review; the stated minimum lead time is
+37 days & Compliance review before circulation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The restrictions have different moral grounds. Panelist confidentiality
+responds to the vulnerability of identifiable people. Masking a
+corporation can protect its commercial relationships and reputation.
+Prohibiting a particular use also shapes which institutions can turn
+research into action. Those effects require a justification that
+identifies the people or public purposes served by corporate protection.
+Calling every restriction privacy obscures this distinction.
+
+Suppose an academic study identifies a credible pattern of exclusionary
+conduct. Under the stated masking rule, a public reader may learn about
+the pattern while remaining unable to connect it to the responsible
+brand. That is a potential cost to accountability even if the
+statistical result is correct. A firm's desire to avoid warranted
+criticism is a weak answer to consumers seeking redress. A stronger
+defense would explain why identification threatens legitimate interests,
+why protected examination by an independent authority is inadequate, and
+how affected people can otherwise challenge the conduct. The
+hypothetical does not establish that a particular firm committed an
+offense.
+
+The provider also has a serious argument: confidentiality may sustain
+participation and permit research that would otherwise be unavailable.
+That claim requires evidence about the alternative arrangements. Compare
+indefinite identity masking with secure access for independent
+investigators, a narrow disclosure review, and authority to publish
+adverse findings. The question is whether the particular restriction is
+necessary for the defended benefit and whether the resulting burden is
+justifiable to affected consumers. The mere availability of a valuable
+file does not settle that comparison.
+
+The required disclaimer assigns the analysis and conclusions to
+researchers (Kilts Center, n.d.). A disclaimer about analytical
+responsibility can coexist with upstream restrictions on permissible
+questions, identities, and dissemination. It therefore supplies no
+independent demonstration that the research process was free of those
+constraints. The documented policies establish control over access and
+reporting conditions. A claim that reviewers suppressed a particular
+result would require the relevant agreement, correspondence, or revision
+record.
+
+\hypertarget{M09-whether-the-research-ought-to-proceed}{%
+\subsection{Whether the Research Ought to
+Proceed}\label{M09-whether-the-research-ought-to-proceed}}
+
+\noindent \noindent Apply the same reasoning to Agreements A--C in §9.64. Under A,
+a critic can assess whether the protected environment preserves
+independent interpretation. Under B, the researcher can report the
+permitted status outcome while declining an assurance about voluntary
+continuation. Under C, discretionary approval of conclusions creates a
+reason to seek different terms before presenting the work as independent
+evidence. These judgments concern the fixed synthetic history whose
+complete Python construction appears in §2.34.
+
+For electricity research, a useful assessment identifies who can inspect
+household charges, project histories, and cost-allocation records, then
+distinguishes those restrictions from public-data analysis. No NDA is
+inferred for a named paper merely because its interpretation is
+disputed. If a developer's confidential terms become a premise of public
+reassurance, the proponent owes an account of how that premise can
+receive independent scrutiny. A review process that protects households
+while exposing relevant cost allocation can answer a different moral
+objection from one that protects the developer from identification.
+
+An agreement that protects people and sustains independent adverse
+findings can support valuable research. An agreement that makes
+scholarly authority available for favorable reassurance while insulating
+that reassurance from necessary challenge has a serious justificatory
+defect. Where renegotiation cannot repair that defect, refusing the
+project or the broader public claim protects people whose interests the
+agreement otherwise excludes. The obligation arises from the use of
+research to govern their choices and burdens, including their
+opportunity to contest the reasons offered.
+
+\hypertarget{M09-further-reading-on-corporate-standing-and-empirical-authority}{%
+\subsection*{Further Reading on Corporate Standing and Empirical
+Authority}\label{M09-further-reading-on-corporate-standing-and-empirical-authority}}
+\addcontentsline{toc}{subsection}{Further Reading on Corporate Standing
+and Empirical Authority}
+
+\noindent (Hess, 2013), \href{https://doi.org/10.1007/s10790-013-9391-z}{How
+Corporations Can Be Moral Agents Without Being Persons}; (Pasternak,
+2017), \href{https://doi.org/10.1515/lehr-2017-0003}{From Corporate
+Moral Agency to Corporate Moral Rights}, §§II--III; (Kelley, 2025),
+\href{https://doi.org/10.1007/s11245-025-10182-8}{Persons, Agents,
+Patients}, §§2--3; (Silver, 2019),
+\href{https://doi.org/10.1007/s10551-018-3787-4}{Can a Corporation Be
+Worthy of Moral Consideration?}; (de Ridder, 2013),
+\href{https://doi.org/10.1017/epi.2013.18}{Is There Epistemic
+Justification for Secrecy in Science?}; (Longino, 2004),
+\href{https://www.ugr.es/~zink/mono/Longino2004.pdf}{How Values Can Be
+Good for Science}, pp.~134--135; (Nissenbaum, 2004),
+\href{https://digitalcommons.law.uw.edu/wlr/vol79/iss1/10/}{Privacy as
+Contextual Integrity}; (Wendelborn et al., 2024),
+\href{https://doi.org/10.1007/s11948-024-00491-3}{Promoting Data
+Sharing}; (Silva et al., 2026),
+\href{https://doi.org/10.1177/29768624261425376}{The Epistemic
+Selectivity of Online Platforms}.
+
+(Kilts Center, n.d.),
+\href{https://www.chicagobooth.edu/research/kilts/research-data/nielseniq/policies}{Data
+Policies}; (Kilts Center, 2026),
+\href{https://kiltsdata.chicagobooth.edu/docs/datasets/subscriptions/data-policies/}{Subscription
+Policy Guidance}, including the use-restriction and publication-review
+pages updated October 14, 2026. The public guidance is advisory and
+defers to accepted terms. The
+\href{../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md}{source
+assessment} records the inspected provisions and their scope.
+
+\hypertarget{M09-responsibility-for-the-artifact-and-its-uses}{%
+\subsection{Responsibility for the Artifact and Its
+Uses}\label{M09-responsibility-for-the-artifact-and-its-uses}}
+
+\noindent \noindent A dataset is produced through choices about what to observe,
+how to classify it, which versions to preserve, and who may challenge
+the result. These choices give the artifactual account a connection to
+responsibility. The metaphysical claim that an object depends on human
+practices supplies no moral obligation by itself. A further premise is
+needed: people who exercise consequential control over evidence owe
+reasonable care and justification to those whose choices and burdens
+that evidence can influence. The content of that obligation depends on
+their role, knowledge, resources, and feasible alternatives.
+
+Several questions often collapse into a single accusation.
+\textbf{Causal responsibility} asks who contributed to an outcome.
+\textbf{Role responsibility} asks which duties accompanied a person's
+authority. \textbf{Accountability} asks who must answer for a choice and
+supply relevant reasons or records. \textbf{Culpability} concerns
+whether conduct merits blame, including the significance of knowledge,
+intention, negligence, and reasonable opportunities to act differently.
+\textbf{Remedial responsibility} asks who should help correct the
+situation. These questions can yield different answers. A researcher who
+unknowingly inherits a corrupted file may still have duties to preserve
+it, report the problem, and correct a published claim once the defect
+becomes apparent.
+
+Distributed production creates the problem of many hands: the person
+closest to a harmful output may lack authority over the decisions that
+produced it, while those with authority are distant from its execution
+(Nissenbaum, 1996, pp.~27--29). Applied to research data, the database
+designer, contractor, analyst, coauthor, sponsor, and press office can
+each point elsewhere. That organizational structure requires
+identifiable duties and records of decisions. It does not make every
+participant equally culpable, nor does it make the resulting harm
+nobody's responsibility.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Control over the Artifact & Responsibility Attached to That Control &
+Evidence Needed to Assess Performance \\
+\midrule
+
+Define the recorded event and eligible population & Explain exclusions
+and consequential classifications & Collection protocol, schema, and
+version history \\
+Transform or join source records & Preserve originals and document
+changes & Code, stable keys, reconciliation, and source lineage \\
+Grant access or restrict disclosure & Justify restrictions and preserve
+independent challenge & Agreement, access decisions, and publication
+rights \\
+Interpret and promote the estimate & Support the inference and convey
+material uncertainty & Estimand, alternatives, communication, and
+responses \\
+Learn that a public claim is unreliable & Correct the claim and notify
+foreseeable users & Correction, linked notices, revised materials, and
+preserved evidence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_data_responsibility.tex}
+\caption{Data production distributes control across creation, governance, and interpretation. Each stage affects people represented by or exposed to the claim. Assessing past culpability requires knowledge and control; assigning repair also asks who can correct the record and change the arrangement.}\label{fig:M09_data_responsibility}
+\end{figure}
+
+A social connection account adds a prospective obligation for actors
+participating in processes that produce injustice. Its emphasis is
+shared action to remedy the process, extending beyond the isolation of
+an individual perpetrator (Young, 2006). Applied to research
+institutions, editors can require preserved evidence, universities can
+support independent examination, and data providers can authorize
+protected scrutiny. These are differentiated responsibilities. A student
+who encounters a faulty citation and a sponsor who controls the only
+source file have different capacities to repair the record.
+
+An NDA makes the allocation of these duties especially important. A
+sponsor may control the extract while a researcher formally accepts
+responsibility for all conclusions. If the researcher lacks access to
+the information required to assess selection, the agreement separates
+public responsibility from practical authority. The reasonable response
+is to narrow the claim, obtain protected access, or refuse the
+assurance. Signing the agreement voluntarily does not answer the
+objections of consumers who were excluded from its negotiation. A
+contract between two parties cannot by itself settle the reasons owed to
+a third (Scanlon, 1998, chapter 5).
+
+The strongest objection is that no analyst can reconstruct every source
+event. Reasonable care is bounded by what could be known and done in the
+circumstances. That premise supports proportionate checking, clear
+delegation, and qualified assertions. It does not justify an assurance
+whose decisive premise no responsible actor is able or willing to
+examine. Responsibility for an artifact includes preserving a
+practicable route through which a consequential claim can be challenged
+after publication.
+
+\hypertarget{M09-further-reading-on-responsibility}{%
+\subsection*{Further Reading on
+Responsibility}\label{M09-further-reading-on-responsibility}}
+\addcontentsline{toc}{subsection}{Further Reading on Responsibility}
+
+\noindent (Nissenbaum, 1996),
+\href{https://nissenbaum.tech.cornell.edu/papers/AccountabilityinaComputerizedSociety.pdf}{Accountability
+in a Computerized Society}, pp.~27--29; (Young, 2006),
+\href{https://doi.org/10.1017/S0265052506060043}{Responsibility and
+Global Justice: A Social Connection Model}; (Scanlon, 1998), \emph{What
+We Owe to Each Other}, chapter 5. The allocation of duties across
+dataset production is an application of these arguments to marketing
+research.
+
+\hypertarget{M09-maxims-of-data-production-and-disclosure}{%
+\subsection{Maxims of Data Production and
+Disclosure}\label{M09-maxims-of-data-production-and-disclosure}}
+
+\noindent \noindent Responsibility concerns both an action and the principle under
+which it is chosen. A maxim is a subjective principle of action; it can
+be stated by identifying the circumstance, the act, and the end sought
+(Kant, 1785, 4:400n, 4:421). For research, this formulation makes
+choices about collection and access morally explicit. Consider: when an
+outcome is difficult to measure, omit it from the dataset so that the
+available analysis remains manageable. That maxim identifies a practical
+reason for omission. A further choice to describe the resulting dataset
+as covering every relevant harm requires its own justification.
+
+The same restriction can express different maxims. Protecting intimate
+customer records to prevent exposure has a different purpose from
+concealing a firm's identity to prevent supported criticism. The analyst
+should reconstruct the actual action and purpose from the protocol,
+agreement, decisions, and communications. A favorable description such
+as advancing knowledge is too broad when the operative choice is
+suppressing an adverse finding. An accusation of bad intention also
+requires evidence. The examples below state hypothetical principles for
+evaluation, without attributing an undisclosed intention to a named
+researcher or data provider.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+Circumstance, Action, and End & Question for Moral Evaluation \\
+\midrule
+
+When a preferred claim lacks evidence, present invented observations as
+collected facts to obtain scientific credibility & Can the practice of
+testimony on which this deception depends survive the maxim's general
+adoption? \\
+When records expose identifiable people, restrict identifiers while
+permitting independent examination to protect them & Is the restriction
+proportionate, and does the practice preserve the inquiry's defended
+purpose? \\
+When an adverse result threatens a sponsor, prevent its publication
+while presenting the study as independent evidence & Does the asserted
+independence depend on others being unaware of the operative rule? \\
+When a published claim becomes unreliable, correct it despite
+reputational cost so that others can reconsider their decisions & Can
+researchers consistently demand reliable testimony while refusing the
+corresponding duty of correction? \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Universalization asks whether the maxim could be conceived and willed as
+a universal law. A contradiction in conception concerns a principle that
+undermines the practice or means it presupposes. A contradiction in
+willing concerns a principle that a rational agent could not
+consistently will alongside the ends necessarily at issue in rational
+agency (Kant, 1785, 4:421--424). These are demanding philosophical
+arguments. Forecasting unpopular consequences, surveying approval, or
+imagining that everyone uses an NDA does not complete either test.
+
+Consider the hypothetical fabrication maxim. It seeks the credibility
+accorded to reported observations while deliberately removing their
+observational basis. If presenting invented records as observations
+became the governing rule of the same testimonial practice, the agent
+could no longer obtain credibility through the assurance on which the
+action depends. This gives a contradiction-in-conception argument
+analogous to deceptive promising. Its scope is knowing
+misrepresentation. An honest coding error requires an assessment of care
+and correction rather than an unsupported attribution of that maxim.
+
+The humanity formulation supplies another question: does the action
+respect the affected person's capacity to judge and pursue ends (Kant,
+1785, 4:429)? Concealing a decisive defect to obtain acceptance can
+manipulate that judgment. Accurate information can still be used toward
+an objectionable end, and a privacy-preserving restriction can respect
+persons. The maxim therefore connects the artifact's production to what
+the analyst intends to accomplish through other people's reliance on it.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_maxims_and_data.tex}
+\caption{A maxim states a circumstance, action, and purpose. Universalization examines the principle’s coherence, respect for humanity examines treatment of persons, and contractualism examines objections to a general principle. The conclusions depend on explicit reasons and a faithful description of the action.}\label{fig:M09_maxims_and_data}
+\end{figure}
+
+Contractualism asks whether a general principle permitting the practice
+could be reasonably rejected by affected individuals, considering their
+burdens and alternatives (Scanlon, 1998, chapter 5). This supplies a
+related route to criticism, with a different justificatory structure
+from the universal-law test. A customer can object to a reassurance
+insulated from scrutiny because of the exposure and loss of
+contestability it imposes. The analyst should develop that person's
+reasons rather than treating a higher average profit or a majority vote
+as sufficient justification.
+
+The resulting obligation can be stated as a defensible maxim: when
+public decisions depend on an empirical claim, preserve an adequate
+route for independent challenge and correct established defects so that
+affected people can assess the reasons offered to them. Human privacy
+and legitimate confidentiality determine how that route is provided.
+They require a defended restriction, a responsible decision maker, and
+an opportunity for criticism that can make a difference.
 
 \Needspace{8\baselineskip}
 
@@ -38808,5 +39722,240 @@ state the remaining empirical questions. Findings of deliberate
 deception or a particular downstream injury would require further
 evidence; the demonstrated interpretive errors already warrant
 correction.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-misleading-research-replication-and-correction}{%
+\section{Misleading Research, Replication, and
+Correction}\label{M09-misleading-research-replication-and-correction}}
+
+\noindent \noindent An insurer deciding how customers should attest to a report
+needs evidence that the proposed intervention changes truthful
+reporting. A large difference between two columns in a spreadsheet can
+appear decisive while leaving the spreadsheet's connection to actual
+conduct unresolved. The retracted signing study makes this distinction
+consequential (Shu et al., 2012, retracted 2021). Its insurance
+experiment entered public discussion as evidence for moving an honesty
+declaration to the beginning of a form. Subsequent scrutiny established
+that the supporting artifact could not sustain that authority.
+
+\hypertarget{M09-three-questions-about-a-research-claim}{%
+\subsection{Three Questions About a Research
+Claim}\label{M09-three-questions-about-a-research-claim}}
+
+\noindent \noindent Computational reproducibility asks whether the same data and
+procedures yield the same result. Replication uses newly collected data
+to examine the scientific question (National Academies of Sciences,
+Engineering, and Medicine, 2019, chapter 3). An integrity investigation
+asks how the records were produced and whether they support the asserted
+account of events. These activities are complementary. Reproducing a
+coefficient can coexist with fabrication in its inputs; failing to
+replicate can arise without fraud. The public status of an article, the
+reliability of a dataset, and the culpability of a particular person
+require their own evidence.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Research Record & Verified Development & Consequence for Use \\
+\midrule
+
+Signing and dishonest reports (Shu et al., 2012) & Retracted in
+September 2021; independent investigators documented fabrication
+evidence in the insurance dataset & Withdraw reliance on the original
+article as evidence for the intervention \\
+Signing replication (Kristal et al., 2020) & Six laboratory studies
+failed to reproduce the proposed benefit; original data were shared with
+the replication materials & Examine the new study designs and the
+original artifact separately \\
+Self-concept maintenance (Mazar et al., 2008) & A 2024 expression of
+concern identifies replicability and provenance concerns and undisclosed
+dropped conditions & Preserve the distinction between an expression of
+concern and a retraction \\
+Deadlines and performance (Ariely and Wertenbroch, 2002) & Retracted in
+September 2026 after replication and integrity concerns & Update
+teaching and advice that relied on the original findings \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The journal notices establish the publication statuses; the forensic
+analyses supply additional evidence about the artifacts (PNAS, 2021;
+Journal of Marketing Research, 2024; Psychological Science, 2026;
+Simonsohn et al., 2021, 2026a, 2026b). None of these categories,
+considered alone, identifies who intentionally changed a record.
+
+\hypertarget{M09-what-public-access-made-possible}{%
+\subsection{What Public Access Made
+Possible}\label{M09-what-public-access-made-possible}}
+
+\noindent \noindent The released insurance spreadsheet enabled outsiders to
+examine the relationship between baseline readings, later readings,
+formatting, and condition labels. Independent investigators connected
+unusually uniform mileage increments, loss of ordinary rounding, and
+near-duplicate records across font groups to a fabrication account
+(Simonsohn et al., 2021). The separate Python analysis in §2.35 reads
+the openly licensed archive and reproduces selected descriptive
+diagnostics. Those calculations inspect the challenged artifact; they do
+not validate its rows as observations of genuine customers.
+
+Preserving the workbook mattered. A file containing only the final
+regression variables would have lost the baseline font information. A
+table reporting the treatment coefficient would have concealed the
+individual records and their joint patterns. Even an exact computational
+reproduction would not answer why those patterns occurred. An
+independent investigator needs enough of the artifact's history to
+compare the published account with plausible processes of collection and
+transformation.
+
+The 2020 replication also identified a large difference in baseline
+odometer readings across treatment conditions and questioned the
+original randomization (Kristal et al., 2020). A baseline imbalance is a
+reason to inspect assignment and provenance. It becomes more informative
+when considered with the broader record. A single diagnostic should not
+be promoted into an automatic verdict about intention.
+
+The public response in 2021 described the company as collecting and
+preparing the data and acknowledged that irregularities had not been
+tested (Ariely, 2021). A subsequent author statement, labeled as
+approved for posting by Duke, reports that the investigation found no
+evidence of falsification or knowing use of falsified data and concluded
+that more should have been done to prevent faulty data from being
+published (Ariely, 2024). That statement is an author's account of an
+investigation, rather than the full investigative report. Evidence that
+the dataset was fabricated must therefore remain distinct from an
+established finding that this author fabricated it.
+
+\hypertarget{M09-a-broader-record-with-different-evidentiary-statuses}{%
+\subsection{A Broader Record with Different Evidentiary
+Statuses}\label{M09-a-broader-record-with-different-evidentiary-statuses}}
+
+\noindent \noindent The self-concept case gives a direct marketing example of why
+numerical reproduction is insufficient. The journal's 2024 notice
+reports that forensic analysts largely reproduced the published
+statistics from supplied data, while also finding undisclosed omitted
+conditions and inconsistent information about one experiment's
+provenance (Journal of Marketing Research, 2024). Agreement between a
+program and a reported number leaves questions about which conditions
+existed, why some disappeared, and whether the supplied records
+correspond to the study described. An expression of concern communicates
+unresolved reliability issues; it is not a finding that every result or
+every coauthor is fraudulent.
+
+The deadlines case adds the importance of preserving a long history. A
+2026 replication did not reproduce the large original effects, and it
+documented attrition that the original study had not reported (Hyndman
+and Bisin, 2026). Independent investigators examined files received
+years earlier and reported duplicated observations and other
+inconsistencies (Simonsohn et al., 2026a, 2026b). The September 2026
+journal notice states that the editor could no longer attest to the
+findings' reliability; it also records uncertainty about the dataset's
+authenticity and completeness and agreement to retraction by both
+authors (Psychological Science, 2026). The retraction addresses the
+reliability of the published article. Assigning individual culpability
+requires further evidence.
+
+These cases make different failures visible: an unreliable artifact, an
+unsuccessful independent replication, incomplete reporting, uncertain
+provenance, and delayed correction. Combining them into a single
+accusation would erase the distinctions that make the criticism
+defensible. Their shared implication is demanding: public empirical
+authority requires records and institutions through which outsiders can
+test both the arithmetic and the account of how the evidence came to
+exist.
+
+\hypertarget{M09-the-harm-and-the-duty-to-correct}{%
+\subsection{The Harm and the Duty to
+Correct}\label{M09-the-harm-and-the-duty-to-correct}}
+
+\noindent \noindent Misleading research can redirect managerial effort, displace
+effective safeguards, and induce confidence in an intervention whose
+evidential basis has failed. A decision maker may regard a signed
+declaration as sufficient protection and devote less attention to
+incentives, verification, or accessible complaint procedures. These are
+mechanisms of potential harm. The cases establish the failure of the
+research basis; they do not provide a measured total of downstream
+financial losses or identify every organization that relied on it.
+
+There is also a moral cost in how people are governed. Customers,
+employees, and students may be subjected to interventions justified by a
+scientific claim they cannot independently assess. Their objection
+concerns the quality of the reasons offered to them, even before an
+individual loss is quantified. Under contractualist reasoning, an
+institution's convenience in repeating an attractive result is a weak
+answer to a person whose treatment depends on its reliability (Scanlon,
+1998, chapter 5). Once serious defects become known, preserving the
+public claim because it remains persuasive compounds the failure of
+justification.
+
+Correction requires coordinated work. Researchers should preserve the
+challenged material and explain what they can establish about it.
+Journals should link notices visibly to the original article. Teachers
+and communicators should update the practical recommendation, and
+institutional users should reassess decisions that relied on it. The
+obligation to undertake these steps need not await a final allocation of
+personal blame. People with different roles can share responsibility for
+repair while retaining different degrees of responsibility for the
+original failure (Nissenbaum, 1996; Young, 2006).
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_replication_and_correction.tex}
+\caption{Preserved records enable independent inspection, public challenge, and correction. Replication with new data supplies a separate route for evaluating the behavioral claim. Correction requires people and institutions to act on what these routes reveal.}\label{fig:M09_replication_and_correction}
+\end{figure}
+
+Open data creates an opportunity for self-correction; it supplies no
+guarantee that scrutiny will occur promptly or that institutions will
+respond. The signing paper appeared in 2012, its original data became
+available with the 2020 replication, and the fabrication investigation
+appeared in 2021. Resources, critical expertise, preserved versions, and
+publication of adverse findings all mattered. Restricting access can
+obstruct that process, while human privacy can justify protected access
+that preserves it. The moral comparison concerns the scrutiny an
+arrangement actually permits.
+
+The connection to the electricity and pricing cases is responsibility
+for warranted interpretation. Fabrication, an invalid inference from
+statistical insignificance, and a confidentiality restriction are
+different failures and require different evidence. Each raises a
+question about who may rely on the claim, who bears its error, and who
+can challenge it. The integrity scandal supplies no evidence of
+fabrication in those other cases. It strengthens the institutional
+reason for insisting on a contestable evidential basis before
+consequential reassurance.
+
+\hypertarget{M09-further-reading-3}{%
+\subsection{Further Reading}\label{M09-further-reading-3}}
+
+\noindent (Shu et al., 2012),
+\href{https://doi.org/10.1073/pnas.1209746109}{Signing at the
+Beginning}, retracted; (PNAS, 2021),
+\href{https://pubmed.ncbi.nlm.nih.gov/34518237/}{retraction record};
+(Kristal et al., 2020),
+\href{https://doi.org/10.1073/pnas.1911695117}{Signing at the Beginning
+Versus at the End Does Not Decrease Dishonesty}; (Simonsohn et al.,
+2021), \href{https://datacolada.org/98}{independent investigation} and
+\href{https://researchbox.org/336}{public archive}; (Ariely, 2021),
+\href{https://datacolada.org/wp-content/uploads/DanBlogComment_Aug_16_2021_final.pdf}{response};
+(Ariely, 2024),
+\href{https://danariely.com/wp-content/uploads/2024/04/ArielyEndofIStatment.pdf}{investigation
+statement}.
+
+(Journal of Marketing Research, 2024),
+\href{https://doi.org/10.1177/00222437241285882}{Expression of Concern};
+(Hyndman and Bisin, 2026),
+\href{https://doi.org/10.1177/09567976261460772}{Replication of
+Procrastination, Deadlines, and Performance}; (Psychological Science,
+2026), \href{https://doi.org/10.1177/09567976261488042}{retraction};
+(Simonsohn et al., 2026a, 2026b),
+\href{https://datacolada.org/138}{Study 2 investigation} and
+\href{https://datacolada.org/139}{Study 1 investigation}. Source
+versions, inspection scope, and correction status are recorded in the
+\href{../01_Resources/52_Research_Integrity_and_Replication/README.md}{replication
+reading guide}.
 
 \end{document}

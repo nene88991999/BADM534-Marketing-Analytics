@@ -295,3 +295,9 @@ The [2018–2026 collection](../01_Resources/51_Modern_Power_and_Harm_Bounds/REA
 ## Categorical Reassurance and Research Responsibility
 
 M6 §6.49, M8 §§8.31–8.31.1, and M9 §9.83 identify the HBS no-increase assertion as statistically unsupported and misleading. The critique separately addresses the paper's affordability interpretation, residual attribution, and direct-test significance convention. The [claim guide](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the documented errors to a reasoned obligation to correct them.
+
+## Data Artifacts, Responsibility, and Independent Scrutiny
+
+M9 §§9.60.3, 9.63.4–9.63.5, and 9.65.2–9.65.8 connect dataset creation to corporate standing, NDA terms, responsibility, and maxims. The [Kilts policy case](../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md) separates documented restrictions from claims about suppression. M2 §2.35 supplies a complete Python assessment of the public insurance artifact; M9 §9.84 examines replication, correction, and the distinction between unreliable evidence and personal culpability. The [research-integrity sources](../01_Resources/52_Research_Integrity_and_Replication/README.md) record publication statuses as of November 27, 2026.
+
+Sessions 2 and 14 include these cases within their existing measurement and ethical-reasoning activities. The expanded decks provide alternative examples; the 170-minute meetings, dates, and pending assessment policies remain unchanged. The [optional replication exercise](../07_Labs/Research_Integrity/README.md) and [artifact exercise](../07_Labs/Data_Truth_and_Norms/README.md) require a defensible inference, maxim, and allocation of responsibility.

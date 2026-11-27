@@ -411,7 +411,7 @@ Session 4 uses the existing worked-comparison block (minutes 45–70) to contras
 
 M2 §§2.30–2.31 trace data production and compare identical public records with opposite synthetic population effects. Use the Session 2 discussion block at minutes 155–170 for the two diagrams and the interpretation; the complete code and weighting extension are optional practice. Session 10 uses its existing minutes 155–170 for billing records, project linkage, and causal counterfactuals. Session 14 uses minutes 95–100 for the artifact analogy, distinct norms, and a Scanlonian argument about evidential responsibility, with the fuller reading and exercise outside that short comparison. The six added slides are selected discussion aids within the existing schedule; the 15 meetings remain 170 minutes each.
 
-The [26-source guide](../01_Resources/45_Data_Truth_and_Norms/README.md), [program](../03_Data_and_Code/Data_Production/README.md), and [optional ungraded practice](../07_Labs/Data_Truth_and_Norms/README.md) distinguish accurate records, representative evidence, causal identification, and permissible recommendations. Existing household billing and public expenditure data correct the claim that such information is never collected or released. The research problem concerns adequate linkage, access, and counterfactual design.
+The [categorized guide](../01_Resources/45_Data_Truth_and_Norms/README.md), [program](../03_Data_and_Code/Data_Production/README.md), and [optional ungraded practice](../07_Labs/Data_Truth_and_Norms/README.md) distinguish accurate records, representative evidence, causal identification, and permissible recommendations. Existing household billing and public expenditure data correct the claim that such information is never collected or released. The research problem concerns adequate linkage, access, and counterfactual design.
 
 ## Evidence Standards and Unequal Error Costs
 
@@ -457,3 +457,9 @@ Session 9 selects the null-region diagram and residential price comparison withi
 ## Research Responsibility in the Existing Ethics Discussion
 
 Session 14's existing research-communication case connects the categorical reassurance, the paper's own interpretive errors, and the obligation to correct them. Select the claim-and-evidence comparison within the existing ethics block. The 130-slide case library and 170-minute meeting retain their existing scope.
+
+## Data Artifacts, Responsibility, and Independent Scrutiny
+
+M9 §§9.60.3, 9.63.4–9.63.5, and 9.65.2–9.65.8 connect dataset creation to corporate standing, NDA terms, responsibility, and maxims. The [Kilts policy case](../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md) separates documented restrictions from claims about suppression. M2 §2.35 supplies a complete Python assessment of the public insurance artifact; M9 §9.84 examines replication, correction, and the distinction between unreliable evidence and personal culpability. The [research-integrity sources](../01_Resources/52_Research_Integrity_and_Replication/README.md) record publication statuses as of November 27, 2026.
+
+Sessions 2 and 14 include these cases within their existing measurement and ethical-reasoning activities. The expanded decks provide alternative examples; the 170-minute meetings, dates, and pending assessment policies remain unchanged. The [optional replication exercise](../07_Labs/Research_Integrity/README.md) and [artifact exercise](../07_Labs/Data_Truth_and_Norms/README.md) require a defensible inference, maxim, and allocation of responsibility.

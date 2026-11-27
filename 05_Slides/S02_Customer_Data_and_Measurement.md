@@ -15,6 +15,7 @@ Session 02. M2. 170 minutes.
 - Trace data production and identify the effect of selective access on population claims.
 - Distinguish an interest, its measure, and the standard for action.
 - Distinguish events, records, dataset versions, and copies; assess the meaning of an administrative outcome.
+- Distinguish reproducible arithmetic from reliable records and preserve evidence needed for independent challenge.
 
 ## Related Materials
 
@@ -30,6 +31,7 @@ Session 02. M2. 170 minutes.
 - [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 - [Artifact and NDA practice](../07_Labs/Data_Truth_and_Norms/README.md)
+- [Research-integrity code and data](../03_Data_and_Code/Research_Integrity/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -384,7 +386,39 @@ If only average revenue per kWh qualifies as evidence of electricity harm, conce
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 32: Measurement Discussion
+## Slide 32: A Reproducible Result Can Have Unreliable Inputs
+
+- Preserve the source, codebook, versions, and formatting.
+- Reconcile recorded quantities before estimating an effect.
+- Inspect the relation between the artifact and its claimed events.
+
+The public insurance workbook is a challenged artifact from a retracted study. Its 13,488 policy rows do not establish actual customer behavior. The exercise independently examines selected descriptive patterns and supplies complete Python.
+
+Source: M2 §2.35; M9 §9.84. ../03_Data_and_Code/Research_Integrity/README.md
+
+## Slide 33: Rounding and the History of a Record
+
+Car 1 only; 6,744 archived policies per bar.
+
+**Figure description:** Calibri baseline has 27.94 percent multiples of 100 miles; its later reading has 1.25 percent. Cambria values are 1.17 and 1.01 percent.
+
+[Editable TikZ](figures/S02_rounding.tex)
+
+The common denominator and car restriction make the comparison explicit. Formatting is preserved and checked. Collection modes could affect rounding, so the pattern is examined with joint matches and provenance. It is not an automatic verdict about a person.
+
+Source: M2 §2.35; M9 §9.84. ../03_Data_and_Code/Research_Integrity/README.md
+
+## Slide 34: Investigate the Joint Pattern
+
+- Use the 44 policies with all four baseline slots observed.
+- All 22 Calibri records have one close Cambria candidate.
+- Ask which documented process could generate the joint evidence.
+
+The candidate rule requires all four Cambria minus Calibri offsets to be between zero and 1,000 miles. The program uses missing values as missing and does not annualize unknown intervals. These counts describe the archive and provide no calibrated probability of fraud or personal attribution.
+
+Source: M2 §2.35; M9 §9.84. ../03_Data_and_Code/Research_Integrity/README.md
+
+## Slide 35: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?

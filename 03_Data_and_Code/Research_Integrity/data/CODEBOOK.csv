@@ -1,0 +1,20 @@
+id,varname,description
+var1,condition,"Sign on top vs sign on bottom of forms with miles being submitted"
+var2,id,"Masked policy id"
+var3,font,"Is car #1 shown in Calibri or Cambria font in originally posted data (this variable was added for the Colada post)"
+var4,baseline_car1,"var4-var11: baseline 1-4 is the odometer reading before the experiment, update1_4 is the odometer submitted in the experiment"
+var5,update_car1,
+var6,baseline_car2,
+var7,update_car2,
+var8,baseline_car3,
+var9,update_car3,
+var10,baseline_car4,
+var11,update_car4,
+var12,baseline_average,"Average of baseline values for the up to four cars"
+var13,update_average,"Average of update values for the up to four cars"
+var14,diff_average,"DV in original paper: average  difference update-baseline for up to four cars"
+var15,car1,"Is there are a car 1 (1-yes,0-no)"
+var16,car2,"Is there are a car 2 (1-yes,0-no)"
+var17,car3,"Is there are a car 3 (1-yes,0-no)"
+var18,car4,"Is there are a car 4 (1-yes,0-no)"
+var19,car_count,"How many cars total in the policy"

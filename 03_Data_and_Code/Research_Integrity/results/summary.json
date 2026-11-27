@@ -1,0 +1,19 @@
+{
+  "source_sha256": "33c25ddbb353127ff5cd2b91b33a17a33e6c1e48e10111341ce52693ea73a919",
+  "policies": 13488,
+  "font_counts": {
+    "Cambria": 6744,
+    "Calibri": 6744
+  },
+  "car1_increment_min": 8,
+  "car1_increment_max": 49997,
+  "car1_increment_below_zero": 0,
+  "car1_increment_at_least_50000": 0,
+  "complete_four_car_policies": 44,
+  "complete_four_car_calibri": 22,
+  "complete_four_car_cambria": 22,
+  "calibri_with_candidate": 22,
+  "calibri_with_exactly_one_candidate": 22,
+  "candidate_rule": "All four Cambria minus Calibri offsets in [0,1000] miles",
+  "interpretation": "Descriptive properties of an archived, challenged artifact; no estimate of honesty or identification of a fabricator."
+}

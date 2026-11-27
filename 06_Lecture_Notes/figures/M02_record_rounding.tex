@@ -1,0 +1,16 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\begin{axis}[width=12.4cm,height=6.7cm,ybar,bar width=17pt,
+ ymin=0,ymax=35,ytick={0,10,20,30},
+ ylabel={Car 1 readings divisible by 100 (\%)},
+ symbolic x coords={Calibri baseline,Calibri later,Cambria baseline,Cambria later},
+ xtick=data,xticklabel style={text width=2.4cm,align=center,font=\small},
+ enlarge x limits=.17,nodes near coords,
+ every node near coord/.append style={font=\small,/pgf/number format/fixed,/pgf/number format/precision=2},
+ axis line style={IlliniBlue},tick label style={font=\small},
+ label style={font=\small},ymajorgrids,grid style={IlliniBlue!15}]
+\addplot[fill=IlliniOrange,draw=IlliniBlue] coordinates {
+ (Calibri baseline,27.9359430605) (Calibri later,1.2455516014)
+ (Cambria baseline,1.1714116251) (Cambria later,1.0083036773)};
+\end{axis}
+\node[align=center,text width=12.4cm,font=\footnotesize] at (5.3,-1.65) {Archived, challenged artifact; 6,744 policies per bar.\\Descriptive counts do not identify a fabricator.};
+\end{tikzpicture}

@@ -478,7 +478,12 @@
     "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
     "03_Data_and_Code/Price_Theory_and_Justification/README.md",
     "01_Resources/51_Modern_Power_and_Harm_Bounds/README.md",
-    "03_Data_and_Code/Modern_Power/README.md"
+    "03_Data_and_Code/Modern_Power/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md",
+    "01_Resources/52_Research_Integrity_and_Replication/README.md",
+    "03_Data_and_Code/Research_Integrity/README.md",
+    "07_Labs/Research_Integrity/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -527,12 +532,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-hbs-reassurance-and-research-responsibility",
+    "revision": "2026-11-27-data-artifacts-responsibility-and-replication",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 160,
-    "pages": 679,
+    "figures_count": 165,
+    "pages": 698,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -567,7 +572,7 @@
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 135
+    "python_source_blocks": 136
   },
   "datasets": [
     {
@@ -664,7 +669,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 575,
+    "slides": 589,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -752,13 +757,13 @@
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop; Chicago price theory, monetary valuation, rational addiction, compensation, and the moral justification of market institutions",
+    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop; Chicago price theory, monetary valuation, rational addiction, compensation, and the moral justification of market institutions; artifactual data, corporate standing, NDA governance, responsibility, maxims, replication, and correction",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 142,
-    "figures_count": 32,
+    "pages": 157,
+    "figures_count": 36,
     "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
@@ -1716,22 +1721,24 @@
       10,
       14
     ],
-    "philosophical_and_methodological_sources": 20,
-    "institutional_sources": 10,
-    "local_source_files": 14,
-    "local_pdf_copies": 12,
+    "philosophical_and_methodological_sources": 31,
+    "institutional_sources": 14,
+    "local_source_files": 20,
+    "local_pdf_copies": 18,
     "local_word_manuscripts": 2,
     "original_programs": 2,
     "original_figures": 6,
     "additional_slides": 11,
     "scope": "Original synthetic disclosure comparison and verified source assessment; no empirical utility effect or suppression finding.",
-    "matching_python_blocks": 131,
-    "rendered_pages_checked": 43,
+    "matching_python_blocks": 136,
+    "rendered_pages_checked": 55,
     "updated_on": "2026-11-27",
     "artifact_example": "03_Data_and_Code/Data_Production/data_artifacts.py",
     "artifact_results": "03_Data_and_Code/Data_Production/artifact_results/README.md",
     "restricted_research": "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md",
-    "verification_date": "2026-11-27"
+    "verification_date": "2026-11-27",
+    "corporate_standing": "01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/README.md",
+    "kilts_case": "01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md"
   },
   "measurement_and_evidence_standards": {
     "released_on": "2026-11-27",
@@ -1888,5 +1895,29 @@
     "practice": "07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds",
     "figure": "06_Lecture_Notes/figures/M06_null_and_harm_regions.tex",
     "scope": "Six specified price-margin comparisons and three imposed bias scenarios using rounded published coefficients and fixed Gaussian SE approximations; full-panel procedures are described with required inputs, not claimed as executed."
+  },
+  "research_integrity_and_responsibility": {
+    "updated_on": "2026-11-27",
+    "guide": "01_Resources/52_Research_Integrity_and_Replication/README.md",
+    "catalog": "01_Resources/52_Research_Integrity_and_Replication/catalog.json",
+    "example": "03_Data_and_Code/Research_Integrity/README.md",
+    "verification": "03_Data_and_Code/Research_Integrity/VERIFICATION.md",
+    "practice": "07_Labs/Research_Integrity/README.md",
+    "sections": [
+      "M2 §2.35",
+      "M9 §§9.60.3, 9.63.4–9.63.5, 9.65.2–9.65.8, 9.84"
+    ],
+    "sessions": [
+      2,
+      14
+    ],
+    "new_figures": 5,
+    "new_slides": 14,
+    "new_programs": 1,
+    "source_records": 12,
+    "scope": "Independent descriptive checks of an openly licensed challenged artifact; primary-source statuses and philosophical applications; no attribution of fabrication to an individual.",
+    "landscape_slide_figure_variants": 5,
+    "rendered_pages_checked": 55,
+    "verification_date": "2026-11-27"
   }
 }

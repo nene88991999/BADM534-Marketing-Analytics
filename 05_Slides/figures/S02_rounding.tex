@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[width=13.6cm,height=4.8cm,ybar,bar width=23pt,
+ ymin=0,ymax=34,ytick={0,10,20,30},ylabel={Multiples of 100 (\%)},
+ symbolic x coords={Calibri baseline,Calibri later,Cambria baseline,Cambria later},
+ xtick=data,xticklabel style={text width=2.6cm,align=center,font=\small},
+ enlarge x limits=.16,nodes near coords,
+ every node near coord/.append style={font=\small,/pgf/number format/fixed,/pgf/number format/precision=2},
+ ymajorgrids,grid style={IlliniBlue!15}]
+\addplot[fill=IlliniOrange,draw=IlliniBlue] coordinates {
+ (Calibri baseline,27.9359430605) (Calibri later,1.2455516014)
+ (Cambria baseline,1.1714116251) (Cambria later,1.0083036773)};
+\end{axis}
+\end{tikzpicture}

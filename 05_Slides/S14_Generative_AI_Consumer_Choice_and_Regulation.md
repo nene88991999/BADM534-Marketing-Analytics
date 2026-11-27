@@ -33,6 +33,7 @@ Session 14. M8, M9. 170 minutes.
 - Evaluate how hierarchical pooling and a protection rule can reduce detection of a minority burden.
 - Evaluate marketing mechanisms and documented engagement practices through user purposes, evidence scope, and reasonable alternatives.
 - Distinguish price-theory predictions, monetary welfare comparisons, and moral justification of the terms of choice.
+- Evaluate data governance through corporate standing, responsibility, maxims, and the conditions for independent correction.
 
 ## Related Materials
 
@@ -81,6 +82,8 @@ Session 14. M8, M9. 170 minutes.
 - [Chicago Price Theory and Moral Justification](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md)
 - [Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)
 - [Modern Power and Harm Bounds](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md)
+- [Corporate standing and Kilts policies](../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/README.md)
+- [Replication case and source statuses](../01_Resources/52_Research_Integrity_and_Replication/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1290,7 +1293,125 @@ Give the strongest argument for useful inquiry under confidentiality and the str
 
 Source: M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 110: Evidentiary Standards Allocate Uncertainty
+## Slide 110: Corporate Agency and Human Protections
+
+- Legal personhood, moral agency, and moral standing are distinct.
+- Corporate protection requires a defended interest.
+- A duty-bearing organization has no automatic claim to equal human protections.
+
+The corporate-rights argument can rest on interests of people and legitimate public purposes (Pasternak, 2017). A competing view grants corporations moral consideration (Silver, 2019); even that view requires justification of the particular restriction. Nonhuman status alone is not a reason to deny all moral standing.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 111: Justifying Confidentiality
+
+Specify the protected interest and compare feasible scrutiny.
+
+**Figure description:** A confidentiality claim branches into human privacy and corporate interests. Both require a specified purpose and evaluation of less restrictive independent scrutiny.
+
+[Editable TikZ](figures/S14_confidentiality.tex)
+
+Human privacy can justify protected access. A commercial interest requires its own reasons and does not automatically justify control over adverse conclusions (Nissenbaum, 2004; Pasternak, 2017).
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 112: Confidentiality and Corporate Accountability
+
+- The Kilts policies distinguish panelist and corporate confidentiality.
+- Specified contentious research requires corporate masking.
+- Access and use rules affect who can challenge a finding.
+
+The public policy and advisory guidance checked November 27, 2026 document the restrictions. Accepted project terms govern. M9 §9.65.5 and the policy guide distinguish review authority from an established adverse-result veto. The normative comparison concerns participation, privacy, and accountability. ../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 113: How Much Reliance Does the Claim Deserve?
+
+- Identify the actual access and publication rights.
+- Separate same-input reproduction, independent reanalysis, and new-data replication.
+- Limit reliance where a decisive check remains inaccessible.
+
+An NDA label alone proves neither suppression nor falsity. Absence of a disclosed NDA establishes no open-data status. Ask whether qualified critics may inspect selection, change the analysis, and publish an adverse conclusion. No arbitrary numerical discount follows from confidentiality.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 114: Responsibility for a Data Artifact
+
+Allocate duties to actors with knowledge and control.
+
+**Figure description:** Creation, preservation, and interpretation affect people. Assess past culpability separately from authority and duties to repair.
+
+[Editable TikZ](figures/S14_responsibility.tex)
+
+The problem of many hands makes responsibility difficult to assign without making it disappear (Nissenbaum, 1996, pp. 27–29). A prospective obligation to repair can be shared without equal blame (Young, 2006). The course applies these arguments to data production.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 115: From a Maxim to an Ought Conclusion
+
+State the circumstance, action, and end.
+
+**Figure description:** Universal law, respect for humanity, and reasonable rejection are distinct tests. Each feeds an explicitly justified obligation.
+
+[Editable TikZ](figures/S14_maxims.tex)
+
+A maxim should faithfully describe the actual rule of action (Kant, 1785, 4:400n, 4:421–429). Knowing misrepresentation, honest error, privacy protection, and sponsor suppression require different descriptions. Contractualist objections concern affected individuals and feasible alternatives (Scanlon, 1998, chapter 5).
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 116: A Maxim of Scholarly Reassurance
+
+- Suppose adverse evidence is withheld to obtain public trust.
+- The claim of independence relies on concealing the operative rule.
+- Compare protected scrutiny with sponsor control of conclusions.
+
+This hypothetical exposes the reasons governing the practice. It attributes no unobserved intention to a named actor. Test whether a deceptive maxim undermines the testimonial practice it presupposes; separately examine respect for judgment and the objections of affected consumers. An NDA does not automatically fail universalization.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 117: Replication and Research Integrity
+
+- A coefficient can be reproduced from unreliable records.
+- A failed replication alone does not establish fraud.
+- Retraction, expression of concern, and personal culpability differ.
+
+The signing paper was retracted in 2021. The self-concept paper received a 2024 expression of concern. The deadlines paper was retracted in September 2026 (PNAS, 2021; Journal of Marketing Research, 2024; Psychological Science, 2026). Their documented statuses establish different claims. See M9 §9.84 and the dated source guide.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 118: The Record and the Responsibility
+
+- The public insurance artifact enabled independent inspection.
+- Workbook patterns require investigation of provenance and process.
+- An unreliable finding should be corrected even while personal responsibility is unresolved.
+
+The complete independent Python assessment is in M2 §2.35. The author’s 2024 statement reports no evidence of falsification or knowing use and a finding that more should have been done to prevent faulty publication (Ariely, 2024). It is an author statement, not the full report. Preserve this distinction beside the documented fabrication evidence.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 119: How Correction Becomes Possible
+
+Access, investigation, response, and institutional action work together.
+
+**Figure description:** Preserved artifacts lead to independent inspection and public challenge; replication supplies a separate test. Correction must reach journals, teaching, advice, and later users.
+
+[Editable TikZ](figures/S14_correction.tex)
+
+Openness makes criticism possible without guaranteeing that it occurs promptly. Protect participants while preserving enough independent access to examine a consequential claim. Correcting an unreliable recommendation need not wait for a final allocation of blame.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 120: The Harm of an Unreliable Recommendation
+
+- An attractive intervention can displace effective safeguards.
+- Affected people deserve reasons they can contest.
+- Researchers, publishers, and users have distinct duties of correction.
+
+These are mechanisms of potential downstream harm; the integrity cases do not estimate a total loss. The comparison with electricity reassurance concerns warranted interpretation and responsibility, not an inference that the electricity study fabricated data. Evaluate the proposed rule under universalization and reasonable rejection.
+
+Source: M9 §§9.63–9.65 and §9.84. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 121: Evidentiary Standards Allocate Uncertainty
 
 A definition of harm and a decision rule determine which concerns receive a response.
 
@@ -1302,7 +1423,7 @@ Conceptual engineering asks how concepts organize attention and responses (Hasla
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 111: The Critical Claim Must Name the Asymmetry
+## Slide 122: The Critical Claim Must Name the Asymmetry
 
 - Can a firm act on forecasts while customers need precise causal proof for protection?
 - Who bears the consequences while that proof remains unavailable?
@@ -1312,7 +1433,7 @@ The criticism is strongest when it specifies the rule, the action, access to evi
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 112: A Possible Explanation Does Not Grant Permission
+## Slide 123: A Possible Explanation Does Not Grant Permission
 
 Model fit, empirical attribution, and permissible action require different premises.
 
@@ -1324,7 +1445,7 @@ The modal analysis distinguishes model-relative possibility from an empirical cl
 
 Source: M9 §§9.57.1–9.57.3. ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 113: Greater Precision Can Conceal a Minority Burden
+## Slide 124: Greater Precision Can Conceal a Minority Burden
 
 | Synthetic Comparison | Unpooled | Pooled |
 | --- | --- | --- |
@@ -1340,7 +1461,7 @@ The scalar conditional update is exactly the hierarchical normal-regression step
 
 Source: M6 §6.46. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md
 
-## Slide 114: Who Pays for the More Precise Rule?
+## Slide 125: Who Pays for the More Precise Rule?
 
 At the pooled endpoint, a 1% precision increase raises synthetic missed-harm loss by about 0.40% locally.
 
@@ -1352,7 +1473,7 @@ The precision elasticity is .3999 at weight 2/7. Among 10,000 consumers, ten per
 
 Source: M6 §6.46; M9 §§9.57.5–9.57.6. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md
 
-## Slide 115: Build an Argument for Action Under Uncertainty
+## Slide 126: Build an Argument for Action Under Uncertainty
 
 An ought conclusion requires supported factual premises and a defended principle.
 
@@ -1364,7 +1485,7 @@ A person’s interests extend beyond a dataset. Credible institutional evidence 
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 116: Evaluate the Strongest Reply
+## Slide 127: Evaluate the Strongest Reply
 
 - False condemnation can harm livelihood, useful services, and fair procedures.
 - Missed harm can persist when entry, exit, or public challenge is difficult.
@@ -1374,7 +1495,7 @@ The influential argument that precedent makes false positives persistent while e
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 117: Statistical Virtues and Ontological Adequacy
+## Slide 128: Statistical Virtues and Ontological Adequacy
 
 Better estimation can leave the target and its omitted relations unchanged.
 
@@ -1386,7 +1507,7 @@ Ontological laziness occurs when a convenient representation replaces the releva
 
 Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
 
-## Slide 118: Which Object Disappears from the Argument?
+## Slide 129: Which Object Disappears from the Argument?
 
 - Electricity: an average unit price is used to reassure about household burdens.
 - Pooling: an overall error criterion is used to settle a minority group’s protection.
@@ -1396,7 +1517,7 @@ These are specific extensions to assess. The electricity comparison retains the 
 
 Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
 
-## Slide 119: An Omission Must Matter to the Claim
+## Slide 130: An Omission Must Matter to the Claim
 
 - Name the object, its representation, and the consequential omission.
 - Explain why the statistical virtue does not repair that omission.
@@ -1406,7 +1527,7 @@ Every model abstracts, and rigorous estimation can protect people from arbitrary
 
 Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
 
-## Slide 120: Price Theory and the Moral Premise
+## Slide 131: Price Theory and the Moral Premise
 
 - Explain behavior under specified budgets and institutions.
 - Trace price, output, and cost incidence beyond the immediate transaction.
@@ -1416,7 +1537,7 @@ The introductory account emphasizes applied market analysis (Jaffe et al., 2018)
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 121: From Predicted Conduct to a Justified Principle
+## Slide 132: From Predicted Conduct to a Justified Principle
 
 The terms of choice also require justification.
 
@@ -1428,7 +1549,7 @@ Budgets, information, and rights influence observed behavior. The same instituti
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 122: Rational Addiction and the Authority to Stop
+## Slide 133: Rational Addiction and the Authority to Stop
 
 - Intertemporal consistency defines rationality within the model.
 - Predictable continuation can coexist with an objection to the design.
@@ -1438,7 +1559,7 @@ Dynamic complementarity can explain persistence and quitting (Becker and Murphy,
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 123: Potential Compensation Leaves Actual Losses
+## Slide 134: Potential Compensation Leaves Actual Losses
 
 - Synthetic project: firm gains USD 140; 100 residents each lose USD 1.
 - Paying each resident USD 1 leaves the firm with USD 40.
@@ -1448,7 +1569,7 @@ These are one-period dollar changes with zero transfer cost and no other consequ
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 124: Acceptance Under Dependency Leaves an Objection
+## Slide 135: Acceptance Under Dependency Leaves an Objection
 
 - An available deal can be the person’s best option.
 - The rule creating those options can still be reasonably rejected.
@@ -1458,7 +1579,7 @@ The water-rights argument separates strategic acceptance from reasonable justifi
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 125: Who Can Bargain Over Infrastructure Exposure?
+## Slide 136: Who Can Bargain Over Infrastructure Exposure?
 
 - Identify rights, records, negotiating costs, and enforcement.
 - Trace canceled-project commitments and actual recovery decisions.
@@ -1468,7 +1589,7 @@ The social-cost analysis explicitly examines positive transaction costs and call
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 126: Who Bears the Cost of Waiting?
+## Slide 137: Who Bears the Cost of Waiting?
 
 - Assess entry barriers and the expected duration of exposure.
 - Distinguish a records request, a safeguard, and a final penalty.
@@ -1478,7 +1599,7 @@ The historical error-cost argument contrasts persistent legal errors with market
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 127: Grant the Estimate and Examine the Ought Claim
+## Slide 138: Grant the Estimate and Examine the Ought Claim
 
 - Assume the prediction or aggregate gain is exactly right.
 - Identify the person whose agency or burden remains unaddressed.
@@ -1488,7 +1609,7 @@ Effectiveness at inducing activity leaves the worth of the activity open (Knight
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 128: The Reported Numbers Fail to Support the Assurance
+## Slide 139: The Reported Numbers Fail to Support the Assurance
 
 | Margin | Power vs. Zero | Margin p | Folded p |
 | --- | --- | --- | --- |
@@ -1502,7 +1623,7 @@ All three illustrative positive margins remain unresolved under the one-sided ma
 
 Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple
 
-## Slide 129: Unsupported Assurance is a Failure of Research Responsibility
+## Slide 140: Unsupported Assurance is a Failure of Research Responsibility
 
 - A consequential assurance requires reasons addressing those exposed.
 - A supported, bounded statement is a feasible alternative.
@@ -1512,7 +1633,7 @@ Under the defended principle, issuing categorical reassurance without the requir
 
 Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
 
-## Slide 130: A Decision with Consumer Outcomes
+## Slide 141: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.
