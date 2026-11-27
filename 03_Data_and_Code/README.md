@@ -179,3 +179,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 ## Data Production and Access
 
 The [complete synthetic program](Data_Production/README.md) constructs two populations with identical restricted releases and opposite household effects. Known inclusion probabilities recover the target under positive coverage; support bounds describe what follows from explicit missing-effect restrictions. Full code appears in M2 §2.31.
+
+## Evidence Standards and Asymmetric Error Costs
+
+The [synthetic decision example](Evidence_Standards/README.md) holds signal distributions fixed and changes the costs of mistaken intervention and missed harm. Complete standard-library Python calculates two cost scenarios, checks the analytical thresholds against a dense grid, and generates the tables underlying an editable TikZ figure. The comparison separates statistical error probabilities, population expected loss, posterior probability, and the justification of institutional action.

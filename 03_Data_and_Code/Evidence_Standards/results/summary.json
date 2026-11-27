@@ -1,0 +1,90 @@
+{
+  "data_status": "Synthetic known distributions; no estimated market effects.",
+  "unit": "One hypothetical case before observing its signal.",
+  "null": "No specified harm; Z ~ N(0,1).",
+  "alternative": "Specified harm; Z ~ N(2,1).",
+  "prevalence": 0.1,
+  "loss_units": "Illustrative comparable loss units per case.",
+  "correct_decision_loss": 0,
+  "verification": "Passed: symmetry, probability boundary, equal-cost benchmark, grid optima, posterior odds.",
+  "rules": [
+    {
+      "scenario": "Missed harm costs 20",
+      "rule": "One-percent test",
+      "cutoff": 2.3263478740408408,
+      "prevalence": 0.1,
+      "signal_shift": 2.0,
+      "false_positive_cost": 1.0,
+      "false_negative_cost": 20.0,
+      "false_positive_rate": 0.01000000000000001,
+      "false_negative_rate": 0.6279194145645055,
+      "power": 0.3720805854354945,
+      "expected_loss": 1.2648388291290111
+    },
+    {
+      "scenario": "Missed harm costs 20",
+      "rule": "Five-percent test",
+      "cutoff": 1.6448536269514715,
+      "prevalence": 0.1,
+      "signal_shift": 2.0,
+      "false_positive_cost": 1.0,
+      "false_negative_cost": 20.0,
+      "false_positive_rate": 0.05000000000000014,
+      "false_negative_rate": 0.3612399686876645,
+      "power": 0.6387600313123355,
+      "expected_loss": 0.7674799373753292
+    },
+    {
+      "scenario": "Missed harm costs 20",
+      "rule": "Minimum expected loss",
+      "cutoff": 0.6007461518911141,
+      "prevalence": 0.1,
+      "signal_shift": 2.0,
+      "false_positive_cost": 1.0,
+      "false_negative_cost": 20.0,
+      "false_positive_rate": 0.27400453725332274,
+      "false_negative_rate": 0.08086843702712156,
+      "power": 0.9191315629728785,
+      "expected_loss": 0.4083409575822336
+    },
+    {
+      "scenario": "Mistaken intervention costs 20",
+      "rule": "One-percent test",
+      "cutoff": 2.3263478740408408,
+      "prevalence": 0.1,
+      "signal_shift": 2.0,
+      "false_positive_cost": 20.0,
+      "false_negative_cost": 1.0,
+      "false_positive_rate": 0.01000000000000001,
+      "false_negative_rate": 0.6279194145645055,
+      "power": 0.3720805854354945,
+      "expected_loss": 0.24279194145645072
+    },
+    {
+      "scenario": "Mistaken intervention costs 20",
+      "rule": "Five-percent test",
+      "cutoff": 1.6448536269514715,
+      "prevalence": 0.1,
+      "signal_shift": 2.0,
+      "false_positive_cost": 20.0,
+      "false_negative_cost": 1.0,
+      "false_positive_rate": 0.05000000000000014,
+      "false_negative_rate": 0.3612399686876645,
+      "power": 0.6387600313123355,
+      "expected_loss": 0.936123996868769
+    },
+    {
+      "scenario": "Mistaken intervention costs 20",
+      "rule": "Minimum expected loss",
+      "cutoff": 3.596478425445105,
+      "prevalence": 0.1,
+      "signal_shift": 2.0,
+      "false_positive_cost": 20.0,
+      "false_negative_cost": 1.0,
+      "false_positive_rate": 0.0001612771611235859,
+      "false_negative_rate": 0.9448089905857713,
+      "power": 0.05519100941422872,
+      "expected_loss": 0.09738388795880168
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+[
+  {
+    "id": "E01",
+    "category": "01_Demand_and_Identification",
+    "authors": "Renna Jiang; Puneet Manchanda; Peter E. Rossi",
+    "year": "2007",
+    "title": "Bayesian Analysis of Random Coefficient Logit Models Using Aggregate Data",
+    "url": "https://ice.uchicago.edu/2008_presentations/Rossi/bayesian_agg_share_092607.pdf",
+    "version": "August 2007 working paper; published Journal of Econometrics 149(2):136–148, 2009.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Abstract, model, and likelihood discussion inspected through web PDF; complete 2007 working paper downloaded.",
+    "teaching_insight": "The aggregate-share likelihood imposes distributions of heterogeneity and common demand shocks. Posterior precision and simulated robustness must be interpreted relative to those restrictions.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://ice.uchicago.edu/2008_presentations/Rossi/bayesian_agg_share_092607.pdf",
+    "local_path": "readings/01_Demand_and_Identification/JiangManchandaRossi_WorkingPaper2007.pdf",
+    "bytes": 271017,
+    "pages": 43,
+    "sha256": "5982acfe1b34fa96158f4163199abbdc3c6305939b61c699703c88bbacf382be",
+    "text_characters": 60993
+  },
+  {
+    "id": "E02",
+    "category": "01_Demand_and_Identification",
+    "authors": "Peter E. Rossi",
+    "year": "2014",
+    "title": "Even the Rich Can Make Themselves Poor: A Critical Examination of IV Methods in Marketing Applications",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2343916",
+    "version": "Marketing Science 33(5):655–672.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Indexed abstract and bibliographic record only; no full text obtained.",
+    "teaching_insight": "Weak or invalid instruments can perform poorly. The abstract supports scrutiny of instrument quality; it supplies no evidence that the author intends to shield firms from enforcement.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "linked",
+    "rights": "Original source rights retained. No new public redistribution permission established."
+  },
+  {
+    "id": "E03",
+    "category": "01_Demand_and_Identification",
+    "authors": "Timothy G. Conley; Christian B. Hansen; Peter E. Rossi",
+    "year": "2012",
+    "title": "Plausibly Exogenous",
+    "url": "https://doi.org/10.1162/REST_a_00139",
+    "version": "Review of Economics and Statistics 94(1):260–272.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Abstract and author publication listing inspected; full text not obtained.",
+    "teaching_insight": "Sensitivity analysis relaxes the exclusion restriction and can remain informative. This is counterevidence to a blanket attribution of demands for perfect identification to this methodological tradition.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "linked",
+    "rights": "Original source rights retained. No new public redistribution permission established."
+  },
+  {
+    "id": "E04",
+    "category": "01_Demand_and_Identification",
+    "authors": "Steven T. Berry; Philip A. Haile",
+    "year": "2010",
+    "title": "Identification in Differentiated Products Markets Using Market Level Data",
+    "url": "https://cowles.yale.edu/sites/default/files/2022-09/d1744.pdf",
+    "version": "Cowles Discussion Paper 1744, February 2010; published Econometrica 82(5):1749–1797, 2014.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Abstract and opening identification argument inspected.",
+    "teaching_insight": "Rich heterogeneity is compatible with restrictions that identify demand, costs, and discriminate among conduct models. Identification can support enforcement rather than necessarily preventing it.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://cowles.yale.edu/sites/default/files/2022-09/d1744.pdf",
+    "local_path": "readings/01_Demand_and_Identification/BerryHaile_WorkingPaper2010.pdf",
+    "bytes": 937402,
+    "pages": 56,
+    "sha256": "f27e3c3cedc72f4a9499383cde697810fcf3703917e61a8145294a4cef73b2a6",
+    "text_characters": 104093
+  },
+  {
+    "id": "E05",
+    "category": "01_Demand_and_Identification",
+    "authors": "Hyungsik Roger Moon; Frank Schorfheide",
+    "year": "2012",
+    "title": "Bayesian and Frequentist Inference in Partially Identified Models",
+    "url": "https://doi.org/10.3982/ECTA8360",
+    "version": "Econometrica 80(2):755–782; local copy is NBER Working Paper 14882, April 2009.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Publisher abstract and opening two pages of the 2009 working paper inspected.",
+    "teaching_insight": "Bayesian credible sets can lie inside the identified set asymptotically. Reporting the identified set and conditional prior makes the source of precision more transparent.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://www.nber.org/system/files/working_papers/w14882/w14882.pdf",
+    "local_path": "readings/01_Demand_and_Identification/MoonSchorfheide_WorkingPaper2009.pdf",
+    "bytes": 559820,
+    "pages": 36,
+    "sha256": "e6d6b965d9ff8a1e0d7c52a7dda52a1dd66edc529b8c0dee4772e2a90878d4e7",
+    "text_characters": 63836
+  },
+  {
+    "id": "E06",
+    "category": "02_Decision_Theory_and_Law",
+    "authors": "Charles F. Manski",
+    "year": "2021",
+    "title": "Econometrics for Decision Making: Building Foundations Sketched by Haavelmo and Wald",
+    "url": "https://doi.org/10.3982/ECTA17985",
+    "version": "Econometrica 89(6):2827–2853.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Introduction and §§2.1–2.3 inspected, pp. 2827–2833.",
+    "teaching_insight": "Decision rules can be assessed by their consequences across plausible states. Fixed Type I error control is one criterion and need not minimize losses from actual decisions.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://economics.yale.edu/sites/default/files/econometrica_-_2021_-_manski_-_econometrics_for_decision_making_building_foundations_sketched_by_haavelmo_and_wald.pdf",
+    "local_path": "readings/02_Decision_Theory_and_Law/Manski_Econometrica2021.pdf",
+    "bytes": 202569,
+    "pages": 27,
+    "sha256": "65461a03329885d5107f0a8ce904d82da2de339334542a8fde6d7baf2d4decfa",
+    "text_characters": 101490
+  },
+  {
+    "id": "E07",
+    "category": "02_Decision_Theory_and_Law",
+    "authors": "Frank H. Easterbrook",
+    "year": "1984",
+    "title": "The Limits of Antitrust",
+    "url": "https://chicagounbound.uchicago.edu/journal_articles/1153/",
+    "version": "Texas Law Review 63:1–40.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Opening argument, pp. 1–4, inspected.",
+    "teaching_insight": "The defense of restrained intervention relies partly on persistence of erroneous precedent and market correction of monopoly. Treat these as substantive claims to assess in a particular institutional setting.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://appliedantitrust.com/00_basic_materials/week00_supp/easterbrook_limits_antitrust1984.pdf",
+    "local_path": "readings/02_Decision_Theory_and_Law/Easterbrook_TexasLawReview1984.pdf",
+    "bytes": 796595,
+    "pages": 40,
+    "sha256": "d678bab5bd1ec4a5e3c215fbe2a31b538a1f0acb94845895bcd04b3da001615b",
+    "text_characters": 124325
+  },
+  {
+    "id": "E08",
+    "category": "02_Decision_Theory_and_Law",
+    "authors": "Jonathan B. Baker",
+    "year": "2015",
+    "title": "Taking the Error Out of “Error Cost” Analysis: What’s Wrong with Antitrust’s Right",
+    "url": "https://digitalcommons.wcl.american.edu/facsch_lawrev/1356/",
+    "version": "Antitrust Law Journal 80(1):1–38; saved copy includes 2016 seminar cover.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Abstract and opening critique, pp. 1–5, inspected.",
+    "teaching_insight": "Assumptions about self-correction, courts, and other institutions can systematically tilt a decision framework toward nonintervention. The analysis directly contests one-sided treatment of error costs.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://law.stanford.edu/wp-content/uploads/2015/12/Jonathan-Baker_Taking-the-Error-Out-of-Error-Cost-Analysis.pdf",
+    "local_path": "readings/02_Decision_Theory_and_Law/Baker_AntitrustLawJournal2015.pdf",
+    "bytes": 350195,
+    "pages": 40,
+    "sha256": "932fdbdd0e7e71811b3efa8836620ca1f5934f0f6f4b59cac86418c253e34760",
+    "text_characters": 151651
+  },
+  {
+    "id": "E09",
+    "category": "02_Decision_Theory_and_Law",
+    "authors": "Louis Kaplow",
+    "year": "2012",
+    "title": "Burden of Proof",
+    "url": "https://yalelawjournal.org/article/burden-of-proof",
+    "version": "Yale Law Journal 121:738–859.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Abstract and opening introduction, p. 741, inspected; complete article downloaded.",
+    "teaching_insight": "Legal burdens also shape deterrence, beneficial activity, and enforcement incentives. A static posterior cutoff is an incomplete model of legal institutions.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://yalelawjournal.org/pdf/1044_3ik5zuy6.pdf",
+    "local_path": "readings/02_Decision_Theory_and_Law/Kaplow_YaleLawJournal2012.pdf",
+    "bytes": 971582,
+    "pages": 122,
+    "sha256": "551c4e8fae3663684324e296ce89a1ad4a2461d43e8c16b2e11ee9c41c355f4b",
+    "text_characters": 399199
+  },
+  {
+    "id": "E10",
+    "category": "03_Philosophy_and_Concepts",
+    "authors": "Heather Douglas",
+    "year": "2000",
+    "title": "Inductive Risk and Values in Science",
+    "url": "https://www.stephanieruphy.com/wp-content/uploads/2020/10/Douglas-2000.pdf",
+    "version": "Philosophy of Science 67(4):559–579.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Opening argument inspected; original already held in the Data, Truth, and Norms collection.",
+    "teaching_insight": "Non-epistemic consequences of error can matter within scientific reasoning. The claim motivates transparency about stakes without allowing values to substitute for evidence.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "existing_local_copy",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "local_path": "../45_Data_Truth_and_Norms/readings/02_Truth_and_Norms/Douglas_PhilosophyOfScience2000.pdf"
+  },
+  {
+    "id": "E11",
+    "category": "03_Philosophy_and_Concepts",
+    "authors": "Sally Haslanger",
+    "year": "2022",
+    "title": "Engineering Concepts? Tools for Social Change",
+    "url": "https://sallyhaslanger.weebly.com/uploads/1/8/2/7/18272031/haslanger_san_raffaele_4_hdo.pdf",
+    "version": "Lecture handout, June 9, 2022.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Four-page handout inspected.",
+    "teaching_insight": "Concepts organize attention and coordinated responses. The guide applies that account to standards defining harm and admissible evidence; the source does not itself make an antitrust finding.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "downloaded",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "download_url": "https://sallyhaslanger.weebly.com/uploads/1/8/2/7/18272031/haslanger_san_raffaele_4_hdo.pdf",
+    "local_path": "readings/03_Philosophy_and_Concepts/Haslanger_LectureHandout2022.pdf",
+    "bytes": 110638,
+    "pages": 4,
+    "sha256": "0cca9879a239a091caf2dd57829eb547e103442b7f1139edfbb0bb3a523f0fe0",
+    "text_characters": 19290
+  },
+  {
+    "id": "E12",
+    "category": "03_Philosophy_and_Concepts",
+    "authors": "T. M. Scanlon",
+    "year": "1998",
+    "title": "What We Owe to Each Other",
+    "url": "https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf",
+    "version": "Chapter 5, §§1–3, especially pp. 189–196.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Existing course excerpt and associated source assessment; no new download.",
+    "teaching_insight": "Compare the reasons individuals have to reject alternative principles. Expected aggregate losses do not exhaust the justification owed to a person who bears a serious burden.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "existing_local_copy",
+    "rights": "Original source rights retained. No new public redistribution permission established.",
+    "local_path": "../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/local_sources/Scanlon_HarvardUniversityPress1998_Excerpt.pdf"
+  },
+  {
+    "id": "E13",
+    "category": "02_Decision_Theory_and_Law",
+    "authors": "U.S. Department of Justice; Federal Trade Commission",
+    "year": "2023",
+    "title": "Merger Guidelines",
+    "url": "https://www.justice.gov/atr/merger-guidelines/overview",
+    "version": "Issued December 18, 2023; agency overview and §4.1 checked November 27, 2026.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Official overview, evidence guidance, and guideline document inspected.",
+    "teaching_insight": "The agencies consider the totality of evidence and risks to competition. Guidelines state agency practice, are not binding law, and concern merger review rather than every form of retrospective liability.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "linked",
+    "rights": "Original source rights retained. No new public redistribution permission established."
+  },
+  {
+    "id": "E14",
+    "category": "02_Decision_Theory_and_Law",
+    "authors": "European Commission",
+    "year": "2000",
+    "title": "Communication from the Commission on the precautionary principle",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM%3A2000%3A0001%3AFIN",
+    "version": "COM(2000)1 final, February 2, 2000; European Union policy communication.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Summary and proportionality/review criteria inspected.",
+    "teaching_insight": "Identified potential dangers and scientific uncertainty can motivate proportionate measures. The communication also requires consistency, examination of action and inaction, and review. It is not a general United States antitrust rule.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "linked",
+    "rights": "Original source rights retained. No new public redistribution permission established."
+  },
+  {
+    "id": "E15",
+    "category": "02_Decision_Theory_and_Law",
+    "authors": "Supreme Court of the United States",
+    "year": "2004",
+    "title": "Verizon Communications Inc. v. Law Offices of Curtis V. Trinko, LLP",
+    "url": "https://www.law.cornell.edu/supremecourt/text/02-682",
+    "version": "540 U.S. 398, 407 (2004); U.S. federal monopolization.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Existing course legal assessment and opinion passage on monopoly power and exclusionary conduct.",
+    "teaching_insight": "Monopoly pricing alone does not establish unlawful monopolization. Identify the conduct and statutory elements separately from an estimated markup or moral objection.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "linked",
+    "rights": "Original source rights retained. No new public redistribution permission established."
+  },
+  {
+    "id": "E16",
+    "category": "01_Demand_and_Identification",
+    "authors": "Peter Rossi; K. Kim",
+    "year": "n.d.",
+    "title": "rbayesBLP: Bayesian Analysis of Random Coefficient Logit Models Using Aggregate Data",
+    "url": "https://search.r-project.org/CRAN/refmans/bayesm/html/rbayesBLP.html",
+    "version": "bayesm reference documentation, checked November 27, 2026.",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Model, priors, instrumental-variable extension, and algorithm documentation inspected; no package executed.",
+    "teaching_insight": "The implementation distinguishes numerical integration over preferences, priors, and a model of endogenous prices. Integration is not an assumption of competitive pricing or a finding of legal permissibility.",
+    "modules": [
+      "M9"
+    ],
+    "download_status": "linked",
+    "rights": "Original source rights retained. No new public redistribution permission established."
+  }
+]

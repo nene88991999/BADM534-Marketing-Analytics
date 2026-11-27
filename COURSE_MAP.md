@@ -225,3 +225,7 @@ M3 §§3.20–3.21 explain causal adjustment; M6 §§6.40–6.42 compare treatme
 ## Data Production and Public Justification
 
 M2 §§2.30–2.31 develop provenance and selective access; M6 §6.43 separates actual bills from causal cost incidence; M9 §§9.51–9.54 connect artifacts, truth, norms, undone science, and Scanlonian responsibility. The [26-source collection](01_Resources/45_Data_Truth_and_Norms/README.md), [synthetic example](03_Data_and_Code/Data_Production/README.md), and [optional practice](07_Labs/Data_Truth_and_Norms/README.md) accompany Sessions 2, 10, and 14.
+
+## Measurement and Standards of Evidence
+
+The [historical supplement](01_Resources/46_Measurement_and_Disciplinary_History/README.md) supports M9's discussion of phenomena, disciplinary authority, and ethical ends. The [evidence-standards supplement](01_Resources/47_Evidence_Standards_and_Error_Costs/README.md) connects M6's inference questions with M4 and M8 pricing models and M9's reasons for action. A [complete synthetic example](03_Data_and_Code/Evidence_Standards/README.md) compares Type I and Type II errors under asymmetric costs. These linked supplements provide additional readings and worked material; they establish no new graded requirement or scheduled meeting.

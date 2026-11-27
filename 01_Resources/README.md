@@ -176,3 +176,7 @@ The [supplemental philosophy and evidence guide](15_Marketing_Dialectics/09_Conf
 ## Data, Truth, and Norms
 
 The [26-source collection](45_Data_Truth_and_Norms/README.md) covers Thomasson, data epistemology, truth, inductive risk, critical interaction, undone science, classification, and household electricity evidence. The [electricity assessment](45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) separates verified collection, selective access, missing linkage, causal identification, and proposed disclosure rules.
+
+## Measurement, Evidence Standards, and Error Costs
+
+The [historical guide](46_Measurement_and_Disciplinary_History/README.md) connects Cowles, disciplinary boundaries, the managerial turn in marketing, and the institutional authority of quantification. The [evidence-standards guide](47_Evidence_Standards_and_Error_Costs/README.md) develops conceptual engineering, inductive risk, heterogeneity, and asymmetric consequences of error. Eighteen historical records and sixteen methodological, philosophical, and legal records identify inspection scope and contrary evidence. Seventeen new source PDFs remain local to Dropbox. A [complete synthetic Python example](../03_Data_and_Code/Evidence_Standards/README.md) compares conventional significance thresholds with expected-loss decisions and includes an editable Illinois-color figure.

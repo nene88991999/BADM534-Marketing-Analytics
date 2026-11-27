@@ -3,7 +3,7 @@
   "title": "Marketing Analytics",
   "instructor": "Nathan Yang",
   "status": "preparation",
-  "updated_on": "2026-11-26",
+  "updated_on": "2026-11-27",
   "planning_assumptions": {
     "guest_speakers": false,
     "meeting_count": 15,
@@ -455,7 +455,12 @@
     "01_Resources/45_Data_Truth_and_Norms/02_Truth_and_Norms/README.md",
     "01_Resources/45_Data_Truth_and_Norms/01_Artifacts/README.md",
     "01_Resources/45_Data_Truth_and_Norms/03_Institutions_and_Ignorance/README.md",
-    "01_Resources/45_Data_Truth_and_Norms/04_Electricity_Evidence/README.md"
+    "01_Resources/45_Data_Truth_and_Norms/04_Electricity_Evidence/README.md",
+    "01_Resources/46_Measurement_and_Disciplinary_History/README.md",
+    "01_Resources/47_Evidence_Standards_and_Error_Costs/README.md",
+    "03_Data_and_Code/Evidence_Standards/README.md",
+    "03_Data_and_Code/Evidence_Standards/VERIFICATION.md",
+    "03_Data_and_Code/Evidence_Standards/results/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -1212,7 +1217,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-writing-alignment",
+  "revision": "2026-11-27-measurement-and-evidence-standards",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1696,5 +1701,27 @@
     "scope": "Original synthetic disclosure comparison and verified source assessment; no empirical utility effect or suppression finding.",
     "matching_python_blocks": 129,
     "rendered_pages_checked": 53
+  },
+  "measurement_and_evidence_standards": {
+    "released_on": "2026-11-27",
+    "format": "Linked research supplements and a complete synthetic worked example",
+    "historical_resources": "01_Resources/46_Measurement_and_Disciplinary_History/README.md",
+    "historical_catalog": "01_Resources/46_Measurement_and_Disciplinary_History/catalog.json",
+    "evidence_resources": "01_Resources/47_Evidence_Standards_and_Error_Costs/README.md",
+    "evidence_catalog": "01_Resources/47_Evidence_Standards_and_Error_Costs/catalog.json",
+    "example": "03_Data_and_Code/Evidence_Standards/README.md",
+    "verification": "03_Data_and_Code/Evidence_Standards/VERIFICATION.md",
+    "related_modules": [
+      "M4",
+      "M6",
+      "M8",
+      "M9"
+    ],
+    "historical_source_records": 18,
+    "evidence_source_records": 16,
+    "new_local_pdf_copies": 17,
+    "original_programs": 1,
+    "original_tikz_figures": 1,
+    "scope": "Historical interpretation, conditional philosophical argument, and exact synthetic decisions; no empirical finding of unlawful conduct or systematic enforcement bias from Bayesian integration."
   }
 }
