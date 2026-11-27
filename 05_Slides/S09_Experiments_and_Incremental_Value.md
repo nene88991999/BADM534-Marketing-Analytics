@@ -38,6 +38,7 @@ Session 09. M6. 170 minutes.
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
+- [Modern Power and Harm Bounds](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -563,7 +564,53 @@ The published trial randomizes a learning package. A total-effect comparison all
 
 Source: M6, Section 6.39, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 46: Experiment Discussion
+## Slide 46: Which Null Supports Reassurance?
+
+- A zero-effect test asks whether the estimate distinguishes an effect from zero.
+- A harm-margin test asks whether the data exclude a specified increase.
+- Choose the outcome, population, horizon, and meaningful margin before interpreting the result.
+
+A household assurance concerns a burden that matters to the affected person. Under the fixed-SE Gaussian approximation, the one-sided test has null theta at least delta and alternative theta below delta. Nonrejection of theta equal to zero supplies no rejection of this different null. The margin is a substantive premise, with its units and justification stated explicitly. The preferred residential coefficient is positive and meets the paper's 10% convention; the criticism concerns the unsupported move from nonrejection at 5% to harmlessness. M6 §6.47.
+
+Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
+
+## Slide 47: Different Questions Have Different Rejection Regions
+
+Fixed Gaussian SE: USD 1.059/MWh; 5% tests; illustrative margin USD 2/MWh.
+
+**Figure description:** The horizontal axis is a possible residential reference estimate in USD/MWh. The two-sided zero-null test rejects outside plus or minus 2.075. The positive-margin test rejects when the estimate is below 0.258. The observed 1.749 estimate falls outside both rejection regions.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_null_and_harm_regions.tex)
+
+Both regions use the same fixed reported uncertainty. The zero-null test detects values far enough from zero. Evidence excluding an increase of two dollars per MWh instead requires a sufficiently low estimate. The point estimate of 1.749 satisfies neither rejection condition. This distinguishes tests of different hypotheses without changing the data. The reference exposure is 100 times 456/6804, a ratio of reported means. M6 §§6.47–6.49.
+
+Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
+
+## Slide 48: The Displayed Residential Increases Remain Unexcluded
+
+| Margin | Power vs. Zero | Margin p | Folded p |
+| --- | --- | --- | --- |
+| USD 1/MWh | 15.7% | 0.760 | 0.756 |
+| USD 2/MWh | 47.2% | 0.406 | 0.406 |
+| USD 3/MWh | 80.9% | 0.119 | 0.119 |
+
+Estimate USD 1.749/MWh; one-sided 95% upper bound USD 3.491/MWh.
+
+The 41-treated-utility, 627-observation residential specification reports 0.261 with clustered SE 0.158 per exposure percentage point (Rana et al., 2026, Table 2, column 4, p. 23). Scale both by the 6.702-point reference exposure. Power is evaluated at each specified alternative; it is not observed power at the fitted effect. The positive-margin test, TOST, and scalar folded-normal equivalence test all fail at these illustrative margins. TOST p-values equal the displayed margin p-values. The last row shows why more than 80% power does not turn a realized nonrejection into evidence excluding the alternative. Fixed-Gaussian approximations and selected margins constrain the conclusion. M6 §6.49.
+
+Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
+
+## Slide 49: Newer Methods Require the Actual Design
+
+- Panel power needs timing, covariance, assignment, and a specified effect.
+- Pre-trend equivalence needs joint estimates and their covariance.
+- Synthetic-control uncertainty needs the donor panel and prediction target.
+
+Serial-correlation power (Burlig et al., 2020), staggered timing (Schochet, 2022), pre-trend testing and sensitivity (Roth, 2022; Rambachan and Roth, 2023; Dette and Schumann, 2024), and synthetic-control uncertainty (Cattaneo et al., 2021, 2025a, 2025b) require different inputs. These full-design procedures have not been run on the source study. The scalar folded-normal calculation adapts an established test discussed in the modern equivalence framework. An imposed bias bound of zero, 0.5, or one USD/MWh raises the residential upper limit to 3.491, 3.991, or 4.491; it does not estimate actual bias. Canceled-project exposure motivates institutional evidence about donors rather than a chosen standard-error multiplier. M6 §§6.48–6.50.
+
+Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
+
+## Slide 50: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

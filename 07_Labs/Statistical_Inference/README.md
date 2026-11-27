@@ -91,3 +91,15 @@ Use the original `institutional_exposure.py` program and M6 §6.35. This practic
 ## Evidence and the Proposed Action
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
+
+## Modern Power and Harm Bounds
+
+A household is deciding whether public reassurance about data centers and electricity costs is warranted. Read M6 §§6.47–6.51 and M9 §9.83, then use the [source guide](../../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) and [reproducible example](../../03_Data_and_Code/Modern_Power/README.md).
+
+1. Run `harm_bounds.py` and `verify_harm_bounds.py`. Reconcile the six price comparisons and three assumed bias bounds with the notes. State the reported source cell, units, reference exposure, and fixed Gaussian approximation.
+2. Draw the two rejection regions for the residential example. Explain why a zero-null nonrejection provides no test of a positive harm margin.
+3. Explain how 80.9% power at USD 3/MWh can coexist with failure to exclude that increase. Compare repeated-sample power with the realized one-sided upper bound.
+4. Derive the scalar folded-normal critical region. Compare its rejection condition with TOST and check its probability at both boundary values. Explain the scope of the result for the six displayed margins.
+5. Defend a meaningful price margin from a household's perspective. Identify the consumption, fixed-charge, income, distributional, and horizon information needed to translate a utility-average price effect into a burden.
+6. Select one full-design method from the reading guide. Specify its missing inputs and explain how canceled-project exposure could affect the target or donor comparison. Do not substitute an assumed SE multiplier for those inputs.
+7. Write a supported criticism of the HBS reassurance. State the unresolved price increase, the scope of the outcome, and a proportionate action. Identify evidence that would warrant revising that criticism.

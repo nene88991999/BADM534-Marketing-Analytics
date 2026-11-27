@@ -222,3 +222,7 @@ M5 §5.29 and M9 §§9.70–9.75 connect marketing insights with content sequenc
 ## Chicago Price Theory and Moral Justification
 
 Use the synthetic budget comparison in Session 5's final discussion. In Session 14's existing 75-minute ethics block, select the diagram and one case connecting predicted behavior to a justified principle. M9 §§9.76–9.82 covers rational addiction, actual compensation, costly participation, and unequal enforcement-error burdens. The [optional pricing practice](../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) develops the full argument. The additional slides provide a case library within the existing schedule.
+
+## Modern Power and Household Reassurance
+
+Use M6 §§6.47–6.51 within Session 9's existing inference discussion to distinguish detection from excluding a specified burden. Use M9 §9.83 within Session 14's existing ethics block to assess the four-owner reassurance and proportionate responses to unresolved costs. The [modern-method readings](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) and extended coding are optional practice. Select these cases among existing alternatives; retain all 15 meeting dates, 170-minute durations, and pending assessment policies.

@@ -3537,6 +3537,70 @@
       },
       {
         "kind": "bullets",
+        "title": "Which Null Supports Reassurance?",
+        "bullets": [
+          "A zero-effect test asks whether the estimate distinguishes an effect from zero.",
+          "A harm-margin test asks whether the data exclude a specified increase.",
+          "Choose the outcome, population, horizon, and meaningful margin before interpreting the result."
+        ],
+        "notes": "A household assurance concerns a burden that matters to the affected person. Under the fixed-SE Gaussian approximation, the one-sided test has null theta at least delta and alternative theta below delta. Nonrejection of theta equal to zero supplies no rejection of this different null. The margin is a substantive premise, with its units and justification stated explicitly. The preferred residential coefficient is positive and meets the paper's 10% convention; the criticism concerns the unsupported move from nonrejection at 5% to harmlessness. M6 §6.47.",
+        "source": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Different Questions Have Different Rejection Regions",
+        "figure": "../06_Lecture_Notes/figures/M06_null_and_harm_regions.tex",
+        "caption": "Fixed Gaussian SE: USD 1.059/MWh; 5% tests; illustrative margin USD 2/MWh.",
+        "description": "The horizontal axis is a possible residential reference estimate in USD/MWh. The two-sided zero-null test rejects outside plus or minus 2.075. The positive-margin test rejects when the estimate is below 0.258. The observed 1.749 estimate falls outside both rejection regions.",
+        "notes": "Both regions use the same fixed reported uncertainty. The zero-null test detects values far enough from zero. Evidence excluding an increase of two dollars per MWh instead requires a sufficiently low estimate. The point estimate of 1.749 satisfies neither rejection condition. This distinguishes tests of different hypotheses without changing the data. The reference exposure is 100 times 456/6804, a ratio of reported means. M6 §§6.47–6.49.",
+        "source": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md"
+      },
+      {
+        "kind": "table",
+        "title": "The Displayed Residential Increases Remain Unexcluded",
+        "headers": [
+          "Margin",
+          "Power vs. Zero",
+          "Margin p",
+          "Folded p"
+        ],
+        "rows": [
+          [
+            "USD 1/MWh",
+            "15.7%",
+            "0.760",
+            "0.756"
+          ],
+          [
+            "USD 2/MWh",
+            "47.2%",
+            "0.406",
+            "0.406"
+          ],
+          [
+            "USD 3/MWh",
+            "80.9%",
+            "0.119",
+            "0.119"
+          ]
+        ],
+        "caption": "Estimate USD 1.749/MWh; one-sided 95% upper bound USD 3.491/MWh.",
+        "notes": "The 41-treated-utility, 627-observation residential specification reports 0.261 with clustered SE 0.158 per exposure percentage point (Rana et al., 2026, Table 2, column 4, p. 23). Scale both by the 6.702-point reference exposure. Power is evaluated at each specified alternative; it is not observed power at the fitted effect. The positive-margin test, TOST, and scalar folded-normal equivalence test all fail at these illustrative margins. TOST p-values equal the displayed margin p-values. The last row shows why more than 80% power does not turn a realized nonrejection into evidence excluding the alternative. Fixed-Gaussian approximations and selected margins constrain the conclusion. M6 §6.49.",
+        "source": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Newer Methods Require the Actual Design",
+        "bullets": [
+          "Panel power needs timing, covariance, assignment, and a specified effect.",
+          "Pre-trend equivalence needs joint estimates and their covariance.",
+          "Synthetic-control uncertainty needs the donor panel and prediction target."
+        ],
+        "notes": "Serial-correlation power (Burlig et al., 2020), staggered timing (Schochet, 2022), pre-trend testing and sensitivity (Roth, 2022; Rambachan and Roth, 2023; Dette and Schumann, 2024), and synthetic-control uncertainty (Cattaneo et al., 2021, 2025a, 2025b) require different inputs. These full-design procedures have not been run on the source study. The scalar folded-normal calculation adapts an established test discussed in the modern equivalence framework. An imposed bias bound of zero, 0.5, or one USD/MWh raises the residential upper limit to 3.491, 3.991, or 4.491; it does not estimate actual bias. Canceled-project exposure motivates institutional evidence about donors rather than a chosen standard-error multiplier. M6 §§6.48–6.50.",
+        "source": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Experiment Discussion",
         "bullets": [
           "Would a conversion gain cover the campaign cost?",
@@ -3567,10 +3631,11 @@
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
       "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
       "../07_Labs/AI_Augmented_Learning/README.md",
-      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)",
+      "[Modern Power and Harm Bounds](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md)"
     ],
     "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Use the optional statistical-claims and data-center case exercises.",
-    "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Evaluate inverse power, specified alternatives, and directional sensitivity. Targeted exposure, correct population weighting, and reasons for bearing experimental risk."
+    "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Evaluate inverse power, specified alternatives, and directional sensitivity. Targeted exposure, correct population weighting, and reasons for bearing experimental risk. Compare zero-null power, harm margins, and unsupported household reassurance."
   },
   {
     "number": 10,
@@ -6842,6 +6907,50 @@
         "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
       },
       {
+        "kind": "table",
+        "title": "Developer Reassurance Exceeds the Reported Evidence",
+        "headers": [
+          "Margin",
+          "Power vs. Zero",
+          "Margin p",
+          "Folded p"
+        ],
+        "rows": [
+          [
+            "0.10",
+            "9.6%",
+            "0.642",
+            "0.588"
+          ],
+          [
+            "0.20",
+            "24.0%",
+            "0.396",
+            "0.384"
+          ],
+          [
+            "0.30",
+            "46.6%",
+            "0.187",
+            "0.185"
+          ]
+        ],
+        "caption": "Units: USD/MWh per exposure point. One-sided 95% upper bound: 0.421.",
+        "notes": "The HBS coverage makes a categorical statement about four named developers (Kost, 2026). The underlying four-owner estimate is 0.158 with utility-clustered SE 0.160 (Rana et al., 2026, Table 4, column 4, p. 26). Under a fixed Gaussian approximation, the one-sided margin test, TOST, and scalar folded-normal test leave the displayed illustrative price margins unexcluded at 5%. TOST p-values match the displayed margin p-values. This outcome is average residential revenue per MWh, with no direct household-bill measurement. The paper also has positive findings; the criticism concerns this extension of a nonrejection. No overall reference-exposure ratio is applied to the subgroup. M9 §9.83 and M6 §6.49.",
+        "source": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple"
+      },
+      {
+        "kind": "bullets",
+        "title": "What is Owed to People Facing Unresolved Costs?",
+        "bullets": [
+          "State the burden the evidence actually excludes.",
+          "Explain whose costs remain outside the outcome and time horizon.",
+          "Defend a proportionate response to the remaining uncertainty."
+        ],
+        "notes": "Residents have reasons to reject a public rule that converts an insensitive test into reassurance while leaving their exposure unresolved. A request for billing records, prospective monitoring, or a reversible protection can have a different evidentiary burden from a final finding of wrongdoing. Reasonable justification considers the burdens of both mistaken intervention and tolerated harm (Scanlon, 1998, 2009). Neither a p-value nor a philosophical principle chooses the numerical margin by itself. The conclusion concerns the specified price comparisons; a valid small-effect result would still require an argument connecting its estimand to household welfare. M9 §9.83.",
+        "source": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
@@ -6897,10 +7006,11 @@
       "[Marketing Research and Online Engagement](../01_Resources/49_Online_Engagement_and_Agency/README.md)",
       "[Engagement and Reasonable Alternatives](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation)",
       "[Chicago Price Theory and Moral Justification](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md)",
-      "[Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)"
+      "[Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)",
+      "[Modern Power and Harm Bounds](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
-    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives. Examine market permission through compensation, constrained consent, agency, transaction costs, and unequal error burdens."
+    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives. Examine market permission through compensation, constrained consent, agency, transaction costs, and unequal error burdens. Compare zero-null power, harm margins, and unsupported household reassurance."
   },
   {
     "number": 15,

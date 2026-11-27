@@ -80,6 +80,7 @@ Session 14. M8, M9. 170 minutes.
 - [Engagement and Reasonable Alternatives](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation)
 - [Chicago Price Theory and Moral Justification](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md)
 - [Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)
+- [Modern Power and Harm Bounds](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1487,7 +1488,31 @@ Effectiveness at inducing activity leaves the worth of the activity open (Knight
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 128: A Decision with Consumer Outcomes
+## Slide 128: Developer Reassurance Exceeds the Reported Evidence
+
+| Margin | Power vs. Zero | Margin p | Folded p |
+| --- | --- | --- | --- |
+| 0.10 | 9.6% | 0.642 | 0.588 |
+| 0.20 | 24.0% | 0.396 | 0.384 |
+| 0.30 | 46.6% | 0.187 | 0.185 |
+
+Units: USD/MWh per exposure point. One-sided 95% upper bound: 0.421.
+
+The HBS coverage makes a categorical statement about four named developers (Kost, 2026). The underlying four-owner estimate is 0.158 with utility-clustered SE 0.160 (Rana et al., 2026, Table 4, column 4, p. 26). Under a fixed Gaussian approximation, the one-sided margin test, TOST, and scalar folded-normal test leave the displayed illustrative price margins unexcluded at 5%. TOST p-values match the displayed margin p-values. This outcome is average residential revenue per MWh, with no direct household-bill measurement. The paper also has positive findings; the criticism concerns this extension of a nonrejection. No overall reference-exposure ratio is applied to the subgroup. M9 §9.83 and M6 §6.49.
+
+Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple
+
+## Slide 129: What is Owed to People Facing Unresolved Costs?
+
+- State the burden the evidence actually excludes.
+- Explain whose costs remain outside the outcome and time horizon.
+- Defend a proportionate response to the remaining uncertainty.
+
+Residents have reasons to reject a public rule that converts an insensitive test into reassurance while leaving their exposure unresolved. A request for billing records, prospective monitoring, or a reversible protection can have a different evidentiary burden from a final finding of wrongdoing. Reasonable justification considers the burdens of both mistaken intervention and tolerated harm (Scanlon, 1998, 2009). Neither a p-value nor a philosophical principle chooses the numerical margin by itself. The conclusion concerns the specified price comparisons; a valid small-effect result would still require an argument connecting its estimand to household welfare. M9 §9.83.
+
+Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
+
+## Slide 130: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

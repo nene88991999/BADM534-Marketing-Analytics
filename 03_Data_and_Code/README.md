@@ -193,3 +193,7 @@ The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) 
 ## Prices, Budgets, and Compensation
 
 The [synthetic valuation examples](Price_Theory_and_Justification/README.md) calculate reservation payments under exchanged budgets and reconcile project gains with actual compensation. Standard-library Python, saved results, and independent verification accompany the full listing in M9 §9.77. These examples supply no estimated consumer harm.
+
+## Modern Power and Harm Bounds
+
+[Modern Power](Modern_Power/README.md) reproduces the six electricity-price margin comparisons and three imposed bias scenarios in M6 §§6.47–6.51. Independent checks cover normal-tail integration, folded-normal critical values, test size, unit invariance, and interval/test duality. The inputs are published coefficients and clustered SEs, with no reconstructed utility panel.

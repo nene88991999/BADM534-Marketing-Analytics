@@ -60,3 +60,7 @@ Run from the repository root with the existing NumPy, pandas, and SciPy environm
 ## Institutional Exposure and Household Costs
 
 Run `python3 03_Data_and_Code/Statistical_Inference/institutional_exposure.py`, then `python3 03_Data_and_Code/Statistical_Inference/build_logic_figures.py`. The first program creates four synthetic CSV tables covering matched price/bill denominators, operating additions and cancelled-project costs, a weighted two-period comparison, and annual cost recovery. Full source appears in M6 §6.35. The four-dollar comparison gap and eight-dollar unprotected recovery example follow imposed inputs; neither estimates an actual utility effect. Read the [institutional assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) for project states, source dates, and the additional records needed to evaluate the paper.
+
+## Further Price-Margin Analysis
+
+The [Modern Power example](../Modern_Power/README.md) connects the reported-price assessment to explicit harm margins, scalar equivalence, and bounded bias. Its six comparisons and complete Python appear in M6 §§6.47–6.51; [optional practice](../../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) develops the interpretation.

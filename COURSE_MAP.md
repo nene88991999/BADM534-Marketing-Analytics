@@ -249,3 +249,7 @@ M5 §5.29 distinguishes engagement labels, endorsement, and selected qualitative
 ## Chicago Price Theory and Market Justification
 
 M4 §4.32 and M9 §§9.76–9.82 connect monetary valuation, rational addiction, compensation, institutional bargaining, and enforcement errors to the moral premises behind market recommendations. [Thirteen readings](01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md), [reproducible synthetic examples](03_Data_and_Code/Price_Theory_and_Justification/README.md), and [optional argument practice](07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) support selected discussion in Sessions 5 and 14.
+
+## Modern Power and Harm Bounds
+
+[M6 §§6.47–6.51](06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) connect zero-null power, positive harm margins, equivalence, and bias sensitivity through published electricity-price estimates. [M9 §9.83](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines the justification for public reassurance. The [readings](01_Resources/51_Modern_Power_and_Harm_Bounds/README.md), [complete price calculations](03_Data_and_Code/Modern_Power/README.md), and [optional practice](07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) accompany selected slides in Sessions 9 and 14.

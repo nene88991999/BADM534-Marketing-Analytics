@@ -162,3 +162,9 @@ M9 §§9.70–9.75 and Sessions 7 and 14 connect this dated record to [marketing
 ## Price Theory, Rights, and Error Costs
 
 M9 §§9.76–9.82 examines the moral premises connecting demand, monetary valuation, and institutional decisions. The [source guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) includes historical common-law and antitrust arguments (Posner, 1980; Easterbrook, 1984). These sources explain normative positions and supply no new statement of current law. Moral judgment, an investigation threshold, and a legal violation require distinct premises. The current U.S. legal scope remains in the [antitrust record](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md).
+
+## Power, Harm Margins, and Public Reassurance
+
+M9 §9.83 links the electricity-price comparison to reasons owed to exposed households. The categorical four-developer reassurance in [HBS coverage](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) exceeds what a zero-effect nonrejection establishes (Kost, 2026). M6 §§6.47–6.51 reconstruct six price-margin comparisons from the reported tables. The [source and verification guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) records methods, versions, and execution scope.
+
+The criticism concerns the specified price margins and the extension from a utility-average outcome to household harmlessness. It makes no finding of realized household injury, author intention, or legal liability. Requests for evidence and reversible safeguards require reasons appropriate to their burdens; they need not share the threshold for a final penalty.

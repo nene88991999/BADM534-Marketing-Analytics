@@ -1928,5 +1928,71 @@
     "visual_review": "Reviewed changed pages and neighboring page breaks in the notes, standalone chapter, and syllabus, plus all revised presenter-note pages. No clipping or overlap observed.",
     "compile_checks": "Final notes and presenter logs contain no overfull boxes, missing characters, undefined controls, or TeX errors. Existing underfull-spacing and package warnings remain.",
     "privacy": "Private collaboration records, conversation material, and internal-only folders remain outside the publication."
+  },
+  "modern_power_revision": {
+    "verified_on": "2026-11-27",
+    "record": "01_Resources/51_Modern_Power_and_Harm_Bounds/VERIFICATION.md",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 679,
+        "sha256": "e2a23d4fa25f00b23ed403a0a45592e5d8639c016cec8720b421d2ebd930ce5e"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 142,
+        "sha256": "84468759ce5b4a01743a34ba5ed7d98dcbe3170bb0494911060b4e6448def344"
+      },
+      "05_Slides/S09_Experiments_and_Incremental_Value.pdf": {
+        "pages": 50,
+        "sha256": "55b414b7ec6744fbd48d1ac99d4378a17414a7ea7472ae0a5a2ba2242682113e"
+      },
+      "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+        "pages": 130,
+        "sha256": "931d102e955dd21d31f509eb737e397282bace53195f585dc551c11a3788070f"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 575,
+        "sha256": "97a40d3e90c961f8da296510e22935c10b45676e16daddf3630fe06fa4c1ffd9"
+      }
+    },
+    "visual_review": {
+      "full_notes_pages": [
+        8,
+        13,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        677,
+        678,
+        679
+      ],
+      "dialectics_pages": [
+        140,
+        141,
+        142
+      ],
+      "session09_slides": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "session14_slides": [
+        127,
+        128,
+        129,
+        130
+      ],
+      "figure_preview": "06_Lecture_Notes/figures/M06_null_and_harm_regions.png"
+    },
+    "matching_python_listings": 135,
+    "referenced_tikz_figures": 160,
+    "execution_scope": "Six reported-price margin comparisons and three imposed scalar bias scenarios; no full-panel replication."
   }
 }

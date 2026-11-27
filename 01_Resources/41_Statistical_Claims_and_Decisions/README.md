@@ -28,3 +28,7 @@ The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project
 ## Measurement Validity and Ontological Scope
 
 [M9 §9.42.4](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) maps the paper’s recorded objects to the broader claims that need validation. It separates realized revenue per MWh from bills and affordability, operating capacity from financial exposure, developer identity from business model, and an average from household incidence. The [philosophy and measurement guide](../15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) links the measurement-validity framework (Adcock and Collier, 2001) and the ontological spectrum. Complete bill calculations remain in M2 §2.28.1 and M6 §6.35.
+
+## Modern Power and Harm Bounds
+
+The [newer-method collection](../51_Modern_Power_and_Harm_Bounds/README.md) and [price calculations](../../03_Data_and_Code/Modern_Power/README.md) extend the inverse-power discussion with explicit positive-margin tests, scalar equivalence, and imposed bias bounds. The six price comparisons in M6 §§6.47–6.51 leave the displayed increases unresolved. Full-panel and joint pre-trend procedures require additional inputs.

@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 569 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 575 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -214,3 +214,7 @@ Sessions 7 and 14 connect marketing publications with documented industry practi
 ## Price Theory and the Justification of Market Terms
 
 Sessions 5 and 14 select the budget comparison, argument diagram, compensation example, and institutional cases from M4 §4.32 and M9 §§9.76–9.82. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) preserves the differences between analytical explanation and moral judgment. Extended cases and the complete Python comparison are optional practice.
+
+## Modern Power and Household Reassurance
+
+Session 9 adds the null-region diagram, six-price-comparison interpretation, and the inputs required by newer full-design methods. Session 14 connects the four-owner price margins to public reassurance and reasons owed to households. The [source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md), [Python](../03_Data_and_Code/Modern_Power/README.md), and [optional practice](../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) accompany M6 §§6.47–6.51 and M9 §9.83. These six added slides are selected within existing discussion blocks.

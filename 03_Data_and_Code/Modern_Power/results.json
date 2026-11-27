@@ -1,0 +1,119 @@
+{
+  "alpha": 0.05,
+  "reference_exposure_pp": 6.701940035273369,
+  "setup": "Fixed-SE Gaussian approximations to rounded published tables",
+  "margins": "Teaching alternatives; no validated policy tolerance",
+  "cases": [
+    {
+      "case": "residential_reference",
+      "source": "Table 2 column 4, p. 23",
+      "estimate": 1.7492063492063492,
+      "se": 1.0589065255731922,
+      "units": "USD/MWh at reference exposure",
+      "p_zero": 0.09855519618015615,
+      "upper95": 3.490952588397996,
+      "comparisons": [
+        {
+          "margin": 1.0,
+          "zero_null_power_at_margin": 0.1567516594528796,
+          "upper95": 3.490952588397996,
+          "one_sided_margin_p": 0.7603808883229153,
+          "excludes_positive_margin": false,
+          "tost_p": 0.7603808883229153,
+          "tost_equivalent": false,
+          "folded_p": 0.7556687778696337,
+          "folded_equivalent": false,
+          "folded_critical": 0.10366275300911165
+        },
+        {
+          "margin": 2.0,
+          "zero_null_power_at_margin": 0.4716694525264366,
+          "upper95": 3.490952588397996,
+          "one_sided_margin_p": 0.4063896427040976,
+          "excludes_positive_margin": false,
+          "tost_p": 0.4063896427040976,
+          "tost_equivalent": false,
+          "folded_p": 0.4061900634793867,
+          "folded_equivalent": false,
+          "folded_critical": 0.37507825772299497
+        },
+        {
+          "margin": 3.0,
+          "zero_null_power_at_margin": 0.8087094166741976,
+          "upper95": 3.490952588397996,
+          "one_sided_margin_p": 0.11875915343088356,
+          "excludes_positive_margin": false,
+          "tost_p": 0.11875915343088356,
+          "tost_equivalent": false,
+          "folded_p": 0.11875550790501434,
+          "folded_equivalent": false,
+          "folded_critical": 1.2585503719965394
+        }
+      ]
+    },
+    {
+      "case": "four_owner_slope",
+      "source": "Table 4 column 4, p. 26",
+      "estimate": 0.158,
+      "se": 0.16,
+      "units": "USD/MWh per exposure percentage point",
+      "p_zero": 0.32339758291457144,
+      "upper95": 0.4211765803122355,
+      "comparisons": [
+        {
+          "margin": 0.1,
+          "zero_null_power_at_margin": 0.09581352563444143,
+          "upper95": 0.4211765803122355,
+          "one_sided_margin_p": 0.6415107882350919,
+          "excludes_positive_margin": false,
+          "tost_p": 0.6415107882350919,
+          "tost_equivalent": false,
+          "folded_p": 0.58808419826948,
+          "folded_equivalent": false,
+          "folded_critical": 0.012196334756157853
+        },
+        {
+          "margin": 0.2,
+          "zero_null_power_at_margin": 0.23952699321850016,
+          "upper95": 0.4211765803122355,
+          "one_sided_margin_p": 0.3964679926790054,
+          "excludes_positive_margin": false,
+          "tost_p": 0.3964679926790054,
+          "tost_equivalent": false,
+          "folded_p": 0.3838411530172358,
+          "folded_equivalent": false,
+          "folded_critical": 0.021861902766669813
+        },
+        {
+          "margin": 0.3,
+          "zero_null_power_at_margin": 0.4662078030033098,
+          "upper95": 0.4211765803122355,
+          "one_sided_margin_p": 0.18740488309822467,
+          "excludes_positive_margin": false,
+          "tost_p": 0.18740488309822467,
+          "tost_equivalent": false,
+          "folded_p": 0.1853033167954337,
+          "folded_equivalent": false,
+          "folded_critical": 0.05540385256058646
+        }
+      ]
+    }
+  ],
+  "bounded_bias": [
+    {
+      "assumed_bias_bound": 0.0,
+      "units": "USD/MWh",
+      "upper95": 3.490952588397996
+    },
+    {
+      "assumed_bias_bound": 0.5,
+      "units": "USD/MWh",
+      "upper95": 3.990952588397996
+    },
+    {
+      "assumed_bias_bound": 1.0,
+      "units": "USD/MWh",
+      "upper95": 4.490952588397996
+    }
+  ]
+}

@@ -41,7 +41,7 @@ def main():
          1, "USD/MWh per exposure pp", 41, 627),
         ("other_owner_slope", "Table 4 col 4; p. 26", 1.042, .477,
          1, "USD/MWh per exposure pp", 41, 627),
-        ("sales_slope", "Table 7 col 2; p. 31", 291, 493,
+        ("sales_slope", "Table 7 col 1; p. 31", 291, 493,
          1, "quarterly MWh per added MW", 42, 648),
     ]
     estimates = []

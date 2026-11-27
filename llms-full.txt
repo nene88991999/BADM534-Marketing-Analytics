@@ -485,7 +485,9 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/48_Statistical_Virtues_and_Ontology/README.md",
     "01_Resources/49_Online_Engagement_and_Agency/README.md",
     "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
-    "03_Data_and_Code/Price_Theory_and_Justification/README.md"
+    "03_Data_and_Code/Price_Theory_and_Justification/README.md",
+    "01_Resources/51_Modern_Power_and_Harm_Bounds/README.md",
+    "03_Data_and_Code/Modern_Power/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -534,12 +536,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-chicago-price-theory-and-moral-justification",
+    "revision": "2026-11-27-modern-power-and-harm-bounds",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 159,
-    "pages": 671,
+    "figures_count": 160,
+    "pages": 679,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -574,7 +576,7 @@ Generated from course.json and the source files identified below. This file cont
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 134
+    "python_source_blocks": 135
   },
   "datasets": [
     {
@@ -671,7 +673,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 569,
+    "slides": 575,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -764,7 +766,7 @@ Generated from course.json and the source files identified below. This file cont
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 141,
+    "pages": 142,
     "figures_count": 32,
     "updated_on": "2026-11-27"
   },
@@ -1247,7 +1249,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-chicago-price-theory-and-moral-justification",
+  "revision": "2026-11-27-modern-power-and-harm-bounds",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1874,6 +1876,26 @@ Generated from course.json and the source files identified below. This file cont
     "practice": "07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission",
     "figure": "06_Lecture_Notes/figures/M09_price_theory_and_justification.tex",
     "scope": "Conditional economic and philosophical arguments with synthetic budget and compensation calculations; no empirical finding of author intention, consumer injury, or legal violation."
+  },
+  "modern_power_and_harm_bounds": {
+    "updated_on": "2026-11-27",
+    "guide": "01_Resources/51_Modern_Power_and_Harm_Bounds/README.md",
+    "catalog": "01_Resources/51_Modern_Power_and_Harm_Bounds/catalog.json",
+    "verification": "01_Resources/51_Modern_Power_and_Harm_Bounds/VERIFICATION.md",
+    "source_records": 11,
+    "new_local_pdfs": 10,
+    "sections": [
+      "M6 \u00a7\u00a76.47\u20136.51",
+      "M9 \u00a79.83"
+    ],
+    "sessions": [
+      9,
+      14
+    ],
+    "example": "03_Data_and_Code/Modern_Power/README.md",
+    "practice": "07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds",
+    "figure": "06_Lecture_Notes/figures/M06_null_and_harm_regions.tex",
+    "scope": "Six specified price-margin comparisons and three imposed bias scenarios using rounded published coefficients and fixed Gaussian SE approximations; full-panel procedures are described with required inputs, not claimed as executed."
   }
 }
 ```
@@ -2495,6 +2517,10 @@ M5 §5.29 distinguishes engagement labels, endorsement, and selected qualitative
 
 M4 §4.32 and M9 §§9.76–9.82 connect monetary valuation, rational addiction, compensation, institutional bargaining, and enforcement errors to the moral premises behind market recommendations. [Thirteen readings](01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md), [reproducible synthetic examples](03_Data_and_Code/Price_Theory_and_Justification/README.md), and [optional argument practice](07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) support selected discussion in Sessions 5 and 14.
 
+## Modern Power and Harm Bounds
+
+[M6 §§6.47–6.51](06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) connect zero-null power, positive harm margins, equivalence, and bias sensitivity through published electricity-price estimates. [M9 §9.83](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) examines the justification for public reassurance. The [readings](01_Resources/51_Modern_Power_and_Harm_Bounds/README.md), [complete price calculations](03_Data_and_Code/Modern_Power/README.md), and [optional practice](07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) accompany selected slides in Sessions 9 and 14.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2857,6 +2883,10 @@ The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) 
 
 The [synthetic valuation examples](Price_Theory_and_Justification/README.md) calculate reservation payments under exchanged budgets and reconcile project gains with actual compensation. Standard-library Python, saved results, and independent verification accompany the full listing in M9 §9.77. These examples supply no estimated consumer harm.
 
+## Modern Power and Harm Bounds
+
+[Modern Power](Modern_Power/README.md) reproduces the six electricity-price margin comparisons and three imposed bias scenarios in M6 §§6.47–6.51. Independent checks cover normal-tail integration, folded-normal critical values, test size, unit invariance, and interval/test duality. The inputs are published coefficients and clustered SEs, with no reconstructed utility panel.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2865,7 +2895,7 @@ The [synthetic valuation examples](Price_Theory_and_Justification/README.md) cal
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 159 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 160 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -3119,6 +3149,10 @@ M5 §5.29 and M9 §§9.70–9.75 connect marketing publications with documented 
 
 M4 §4.32 and M9 §§9.76–9.82 assess the transition from market prediction to moral permission. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) records 13 sources. Complete Python in §9.77 reproduces synthetic budget rankings and actual compensation, with an editable TikZ argument diagram and connections to engagement, electricity exposure, and evidence standards.
 
+## Modern Power and Evidence About Harm
+
+M6 §§6.47–6.51 distinguish power against zero from evidence excluding a specified price increase. Six reported-table comparisons, three imposed bias scenarios, complete Python, and an editable TikZ diagram connect the calculations to modern design-based methods. M9 §9.83 examines public reassurance and the reasons owed to households facing unresolved costs. The [11-source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) records source versions and the distinction between executed scalar calculations and procedures requiring the original panel.
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -3205,7 +3239,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 569 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 575 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -3415,6 +3449,10 @@ Sessions 7 and 14 connect marketing publications with documented industry practi
 ## Price Theory and the Justification of Market Terms
 
 Sessions 5 and 14 select the budget comparison, argument diagram, compensation example, and institutional cases from M4 §4.32 and M9 §§9.76–9.82. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) preserves the differences between analytical explanation and moral judgment. Extended cases and the complete Python comparison are optional practice.
+
+## Modern Power and Household Reassurance
+
+Session 9 adds the null-region diagram, six-price-comparison interpretation, and the inputs required by newer full-design methods. Session 14 connects the four-owner price margins to public reassurance and reasons owed to households. The [source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md), [Python](../03_Data_and_Code/Modern_Power/README.md), and [optional practice](../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) accompany M6 §§6.47–6.51 and M9 §9.83. These six added slides are selected within existing discussion blocks.
 
 ---
 
@@ -4032,6 +4070,10 @@ The 15-source collection in `01_Resources/49_Online_Engagement_and_Agency/` supp
 
 M4 §4.32 and M9 §§9.76–9.82 use the [13-source guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) to distinguish economic prediction, monetary welfare, and a justified principle. The complete program in §9.77 matches [compare_valuations.py](../03_Data_and_Code/Price_Theory_and_Justification/compare_valuations.py). The figure `M09_price_theory_and_justification` separates empirical consequences from the reasons of affected people. The electricity and hierarchical-detection applications retain their existing evidentiary scope.
 
+## Modern Power and Harm Bounds
+
+The [2018–2026 collection](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) supports M6 §§6.47–6.51 and M9 §9.83. Panel power and staggered timing clarify design inputs; pre-trend equivalence and sensitivity clarify identification; cluster and synthetic-control inference clarify uncertainty. The [Python example](../03_Data_and_Code/Modern_Power/README.md) implements scalar price comparisons and imposed bias bounds with published estimates. One editable TikZ diagram distinguishes the two null hypotheses. Sessions 9 and 14 select these examples within existing discussion time.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -4395,12 +4437,12 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 31 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 49 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 46 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 50 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 31 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 128 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 130 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4827,6 +4869,10 @@ Session 7 selects the engagement and evidence-classification discussion within m
 
 Session 5 can use its final 15-minute discussion for the budget comparison in M9 §9.77. Session 14 selects the argument diagram and one pricing, engagement, or infrastructure case within the existing 75-minute ethics block. Its extended deck is a case library; the full set of examples is available as optional follow-up. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) and [argument practice](../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) support that selection. Dates, durations, and assessment rules retain their released status.
 
+## Modern Power and Harm Bounds
+
+Session 9 selects the null-region diagram and residential price comparison within the existing 155–170 discussion, with full code assigned only as optional practice. Session 14 selects the four-owner price comparison and the reasons owed to households within its existing 75-minute ethics block. The [modern-method guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) distinguishes executed scalar calculations from design-dependent procedures requiring the utility panel. These selections preserve the 15 dated meetings and their 170-minute allocations.
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -5056,6 +5102,10 @@ M5 §5.29 and M9 §§9.70–9.75 connect marketing insights with content sequenc
 
 Use the synthetic budget comparison in Session 5's final discussion. In Session 14's existing 75-minute ethics block, select the diagram and one case connecting predicted behavior to a justified principle. M9 §§9.76–9.82 covers rational addiction, actual compensation, costly participation, and unequal enforcement-error burdens. The [optional pricing practice](../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) develops the full argument. The additional slides provide a case library within the existing schedule.
 
+## Modern Power and Household Reassurance
+
+Use M6 §§6.47–6.51 within Session 9's existing inference discussion to distinguish detection from excluding a specified burden. Use M9 §9.83 within Session 14's existing ethics block to assess the four-owner reassurance and proportionate responses to unresolved costs. The [modern-method readings](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) and extended coding are optional practice. Select these cases among existing alternatives; retain all 15 meeting dates, 170-minute durations, and pending assessment policies.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -5224,6 +5274,12 @@ M9 §§9.70–9.75 and Sessions 7 and 14 connect this dated record to [marketing
 ## Price Theory, Rights, and Error Costs
 
 M9 §§9.76–9.82 examines the moral premises connecting demand, monetary valuation, and institutional decisions. The [source guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) includes historical common-law and antitrust arguments (Posner, 1980; Easterbrook, 1984). These sources explain normative positions and supply no new statement of current law. Moral judgment, an investigation threshold, and a legal violation require distinct premises. The current U.S. legal scope remains in the [antitrust record](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md).
+
+## Power, Harm Margins, and Public Reassurance
+
+M9 §9.83 links the electricity-price comparison to reasons owed to exposed households. The categorical four-developer reassurance in [HBS coverage](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) exceeds what a zero-effect nonrejection establishes (Kost, 2026). M6 §§6.47–6.51 reconstruct six price-margin comparisons from the reported tables. The [source and verification guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) records methods, versions, and execution scope.
+
+The criticism concerns the specified price margins and the extension from a utility-average outcome to household harmlessness. It makes no finding of realized household injury, author intention, or legal liability. Requests for evidence and reversible safeguards require reasons appropriate to their burdens; they need not share the threshold for a final penalty.
 
 ---
 
@@ -8817,6 +8873,16 @@ Different goods and relations may require different norms of production and exch
 A strong criticism grants the economic result for the sake of argument and identifies the remaining moral defect. Suppose targeting predicts demand perfectly. A practice that deliberately defeats an informed refusal still confronts the person's authority over that refusal. Suppose aggregate gains are measured exactly. A resident who bears an avoidable burden still has a claim to reasons. Suppose intervention is costly. The institution must compare that cost with the exposure created by waiting.
 
 The corresponding strongest reply is that economic analysis can reveal shortages, exclusion, unintended incidence, and the costs of a proposed safeguard. Those findings can defeat an ethical recommendation whose factual premises are wrong. Marketing Dialectics requires both forms of scrutiny: reliable accounts of consequences and a defensible principle governing their imposition. A moral violation follows when the relevant factual premises and defended duties establish it. School affiliation, mathematical sophistication, and commercial success each leave that argument to be made.
+
+## 9.83 Power, Reassurance, and Responsibility for Unresolved Harm
+
+\noindent A household asked to accept an infrastructure commitment has reason to ask which burdens the evidence has excluded. An institution that answers with a nonsignificant coefficient changes the question unless it also supplies the outcome, relevant population, harm margin, and uncertainty. The numerical comparisons in §§6.47–6.51 show that the electricity paper's price summaries leave the displayed positive margins unresolved under both conventional and newer scalar equivalence procedures. The issue is the authority granted to the conclusion, rather than the age or sophistication of the test.
+
+The [HBS coverage](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) gives categorical reassurance about the four named developers that exceeds the uncertain subgroup estimate (Kost, 2026). A public statement can affect whose objections receive attention even when the underlying paper acknowledges uncertainty. The moral concern is that residents may be asked to bear an exposure that the evidence has not excluded, while the institution presents that uncertainty as a reason to dismiss further scrutiny. Actual reliance on the statement and resulting harm require evidence of their own.
+
+A Scanlonian assessment compares the reasons for the proposed principle with reasons supporting a feasible alternative (Scanlon, 1998, chapter 5). Consider permitting categorical reassurance whenever a zero-effect test fails to reject. Exposed households have reasons to object when the rule shifts unresolved burdens onto them and the analyst could instead state a supported upper bound, disclose the missing outcome, or recommend proportionate inquiry. Firms and other users also have reasons to resist unsupported accusations and costly restrictions. A narrower public claim, records request, or reversible protection can address these competing positions without treating uncertainty as proof of either innocence or injury.
+
+The corresponding duty applies to criticism. Choosing methods or suppressing a material result because it complicates the desired argument makes the objection less defensible. A bounded conclusion about one aggregate quantity leaves a further argument about household harm. The stronger criticism identifies the exact outcome, margin, and unsupported extension. A Kantian commitment to truthful justification requires the same care when a conclusion is commercially reassuring and when it is critical (Kant, 1785).
 
 ---
 
@@ -14220,6 +14286,10 @@ Run from the repository root with the existing NumPy, pandas, and SciPy environm
 
 Run `python3 03_Data_and_Code/Statistical_Inference/institutional_exposure.py`, then `python3 03_Data_and_Code/Statistical_Inference/build_logic_figures.py`. The first program creates four synthetic CSV tables covering matched price/bill denominators, operating additions and cancelled-project costs, a weighted two-period comparison, and annual cost recovery. Full source appears in M6 §6.35. The four-dollar comparison gap and eight-dollar unprotected recovery example follow imposed inputs; neither estimates an actual utility effect. Read the [institutional assessment](../../01_Resources/41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md) for project states, source dates, and the additional records needed to evaluate the paper.
 
+## Further Price-Margin Analysis
+
+The [Modern Power example](../Modern_Power/README.md) connects the reported-price assessment to explicit harm margins, scalar equivalence, and bounded bias. Its six comparisons and complete Python appear in M6 §§6.47–6.51; [optional practice](../../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) develops the interpretation.
+
 ---
 
 ## Source: 03_Data_and_Code/Statistical_Inference/DATA_DICTIONARY.md
@@ -14473,6 +14543,18 @@ Use the original `institutional_exposure.py` program and M6 §6.35. This practic
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
 
+## Modern Power and Harm Bounds
+
+A household is deciding whether public reassurance about data centers and electricity costs is warranted. Read M6 §§6.47–6.51 and M9 §9.83, then use the [source guide](../../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) and [reproducible example](../../03_Data_and_Code/Modern_Power/README.md).
+
+1. Run `harm_bounds.py` and `verify_harm_bounds.py`. Reconcile the six price comparisons and three assumed bias bounds with the notes. State the reported source cell, units, reference exposure, and fixed Gaussian approximation.
+2. Draw the two rejection regions for the residential example. Explain why a zero-null nonrejection provides no test of a positive harm margin.
+3. Explain how 80.9% power at USD 3/MWh can coexist with failure to exclude that increase. Compare repeated-sample power with the realized one-sided upper bound.
+4. Derive the scalar folded-normal critical region. Compare its rejection condition with TOST and check its probability at both boundary values. Explain the scope of the result for the six displayed margins.
+5. Defend a meaningful price margin from a household's perspective. Identify the consumption, fixed-charge, income, distributional, and horizon information needed to translate a utility-average price effect into a burden.
+6. Select one full-design method from the reading guide. Specify its missing inputs and explain how canceled-project exposure could affect the target or donor comparison. Do not substitute an assumed SE multiplier for those inputs.
+7. Write a supported criticism of the HBS reassurance. State the unresolved price increase, the scope of the outcome, and a proportionate action. Identify evidence that would warrant revising that criticism.
+
 ---
 
 ## Source: 01_Resources/40_Econometric_Coding_Workflows/README.md
@@ -14578,6 +14660,10 @@ The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project
 
 [M9 §9.42.4](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) maps the paper’s recorded objects to the broader claims that need validation. It separates realized revenue per MWh from bills and affordability, operating capacity from financial exposure, developer identity from business model, and an average from household incidence. The [philosophy and measurement guide](../15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md) links the measurement-validity framework (Adcock and Collier, 2001) and the ontological spectrum. Complete bill calculations remain in M2 §2.28.1 and M6 §6.35.
 
+## Modern Power and Harm Bounds
+
+The [newer-method collection](../51_Modern_Power_and_Harm_Bounds/README.md) and [price calculations](../../03_Data_and_Code/Modern_Power/README.md) extend the inverse-power discussion with explicit positive-margin tests, scalar equivalence, and imposed bias bounds. The six price comparisons in M6 §§6.47–6.51 leave the displayed increases unresolved. Full-panel and joint pre-trend procedures require additional inputs.
+
 ---
 
 ## Source: 01_Resources/41_Statistical_Claims_and_Decisions/SOURCE_REVIEW.md
@@ -14644,7 +14730,7 @@ Table 4, printed/PDF page 26 of the existing reading copy, was extracted and vis
 
 **A residual becomes a causal explanation.** Page 3 assigns 96% of observed residential price growth to inflation, fuel expenses, and modernization/resilience costs. Table A.4's 166.85 minus 123.59 equals $43.26/MWh. Dividing the reference estimate by this rise yields about 4.04%; subtracting it yields about 95.96%. This arithmetic does not estimate the contributions of the named causes. The denominator is observed historical growth, not a prespecified household-harm threshold.
 
-**A weak sales test carries a mechanism conclusion.** Table 7, column 2 reports 291 (SE 493) quarterly MWh per added MW. Its approximate 95% interval is [-675, 1257]. A hypothetical full quarter at 50% utilization and no displacement adds 1095 MWh per MW and has only 60.3% power; at 25% utilization, power is 19.9%. The result leaves substantial consumption unresolved. Separate cost and sales regressions alone do not identify the share of price changes caused by infrastructure versus procurement.
+**A weak sales test carries a mechanism conclusion.** Table 7, column 1 reports 291 (SE 493) quarterly MWh per added MW. Its approximate 95% interval is [-675, 1257]. A hypothetical full quarter at 50% utilization and no displacement adds 1095 MWh per MW and has only 60.3% power; at 25% utilization, power is 19.9%. The result leaves substantial consumption unresolved. Separate cost and sales regressions alone do not identify the share of price changes caused by infrastructure versus procurement.
 
 **The cost ratio is described as a numerator.** Section 4.2, p. 16 defines utility cost per MWh and says it corresponds to the model's cost numerator. The model uses a total revenue requirement. A ratio changes with both total cost and sales, so a numerator interpretation requires an additional reconciliation. Table 6 uses 22 utilities and 377 observations; Table 7 uses 42 and 648. Cross-equation claims should also reconcile samples.
 
@@ -18433,6 +18519,95 @@ The program saves [results.json](results.json) beside its source. Expected reser
 ## Interpretation and Provenance
 
 The calculations are original teaching examples. They implement no particular author's estimated model and use no replication microdata. The [reading guide](../../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) links the valuation, compensation, and moral arguments. [M9 §§9.76–9.82](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) includes the complete program and explains why these calculations leave the choice of principle open. [Optional practice](../../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) asks students to defend that principle and answer its strongest objection.
+
+---
+
+## Source: 01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
+
+# Modern Power Analysis and Evidence About Harm
+
+A public assurance about household costs requires evidence excluding a relevant burden. Power against a zero-effect null, evidence of equivalence, and a valid causal design answer different questions. These readings extend the inverse-power framework (Andrews, 1989) already used in the course.
+
+The [catalog](catalog.json) contains 11 source records published or circulated in 2018–2026. Ten full reference files are saved locally in Dropbox, with their versions, hashes, and inspected passages recorded. The newest DID power article was inspected through its publisher abstract; its restricted full text was not obtained. A retrieved file does not imply that every proof or application was read. Original source copies remain outside public Git.
+
+## Design Power
+
+| Source | Contribution | Information Required for the Electricity Design |
+| --- | --- | --- |
+| [Panel Data and Experimental Design](https://doi.org/10.1016/j.jdeveco.2020.102458) (Burlig et al., 2020) | Power with nonconstant serial correlation; 2019 working-paper version saved | Outcome covariance, pre/post periods, assignment, and the relationship to the actual estimator |
+| [Power With Variation in Treatment Timing](https://doi.org/10.3102/10769986211070625) (Schochet, 2022) | Staggered timing, clustering, unequal intervals, and covariates; 2021 author version saved | Exposure timing, cluster structure, repeated measurements, and a chosen effect |
+| [Computing Statistical Power for DID](https://doi.org/10.1177/0193841X251380898) (Hedberg and Hedges, 2026) | Design-specific power and minimum detectable effects; first online in 2025 | Exact analysis and variance inputs; formulas were not inspected or implemented |
+
+These formulas do not automatically describe a synthetic-control gap regression with repeated cumulative treatment. A full-design calculation must preserve the actual exposure process and the estimated comparison. Neither the observation count nor an assumed SE multiplier supplies that reconstruction.
+
+## Equivalence and Identification
+
+| Source | Contribution | Course Application |
+| --- | --- | --- |
+| [Pretest With Caution](https://doi.org/10.1257/aeri.20210236) (Roth, 2022) | Tests can miss consequential pre-trends; selecting on a passed test can distort inference | Assess the power of a design diagnostic before treating it as support for the counterfactual |
+| [Equivalence of Pre-Trends](https://doi.org/10.1080/07350015.2024.2308121) (Dette and Schumann, 2024) | Tests small departures explicitly; contains a scalar folded-normal construction | Adapt the scalar test to reported price summaries; do not call it a joint pre-trend replication |
+| [A More Credible Approach to Parallel Trends](https://doi.org/10.1093/restud/rdad018) (Rambachan and Roth, 2023) | Inference under specified classes of trend violations | Identify the coefficient vector, covariance, target, and restrictions needed before using HonestDiD |
+| [Optimal Inference in Regression Models](https://doi.org/10.3982/ECTA14434) (Armstrong and Kolesár, 2018) | Confidence bounds account for worst-case bias within a stated model class | Derive an elementary scalar upper bound with an imposed bias allowance |
+
+The folded-normal calculation uses an established scalar testing construction discussed in the modern equivalence paper. Its availability illustrates how a different test can answer the intended small-effect question. Its date does not establish its applicability to a particular empirical design.
+
+## Cluster and Synthetic-Control Uncertainty
+
+| Source | Contribution | Additional Inputs |
+| --- | --- | --- |
+| [Cluster-Robust Inference](https://doi.org/10.1016/j.jeconom.2022.04.001) (MacKinnon et al., 2023) | Leverage, finite-sample reliability, and bootstrap procedures | Regressors, residuals, cluster structure, and influence |
+| [Prediction Intervals for Synthetic Controls](https://doi.org/10.1080/01621459.2021.1979561) (Cattaneo et al., 2021) | Uncertainty from estimated weights and post-treatment prediction errors | Donor and treated panels, constraints, and error models |
+| [Staggered Synthetic-Control Inference](https://titiunik.github.io/files/publications/CattaneoFengPalombaTitiunik2025-RESTAT.pdf) (Cattaneo et al., 2025a) | Multiple treated units and simultaneous prediction; March 2025 manuscript saved | Adoption timing, a defined prediction target, and joint dependence |
+| [scpi](https://www.jstatsoft.org/article/view/v113i01) (Cattaneo et al., 2025b) | Python, R, and Stata implementation | Correct input preparation and maintained prediction assumptions; software was not executed |
+
+## Worked Critique
+
+[M6 §§6.47–6.51](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) displays the price comparisons that undermine broad reassurance. The [Python example](../../03_Data_and_Code/Modern_Power/README.md) reproduces the six price comparisons and three imposed bias scenarios discussed in the notes. These scalar approximations use rounded reported estimates and already-clustered SEs. They are not full-panel or synthetic-control replications.
+
+At the paper's residential reference exposure, the one-sided 95% upper bound is $3.491/MWh. Illustrative margins of $1, $2, and $3/MWh are not excluded by the one-sided margin test, TOST, or the scalar folded-normal test. The four-owner estimate also leaves the displayed positive margins unresolved. These are teaching comparisons, with no claim that the chosen margins are validated household tolerances. The source and claim assessment is [here](../41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md).
+
+The conclusion concerns unsupported reassurance. A sufficiently informative design can establish a bounded small-effect claim. [M9 §9.83](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connects this distinction to truthful public communication and reasons owed to exposed people. [Optional practice](../../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) asks students to specify the missing premise and the feasible response. The [verification record](VERIFICATION.md) identifies completed checks.
+
+---
+
+## Source: 03_Data_and_Code/Modern_Power/README.md
+
+# Power, Equivalence, and Harm Bounds
+
+The electricity-price case asks whether an insignificant coefficient supports reassurance about household costs. These calculations compare zero-null power with tests of specified positive margins and two forms of scalar equivalence. A separate sensitivity calculation allows a bounded bias.
+
+## Inputs and Interpretation
+
+The inputs are rounded coefficients and utility-clustered SEs from the course's [unchanged 42-page source](../../01_Resources/41_Statistical_Claims_and_Decisions/RanaKapsNetessine_WorkingPaper2026.pdf) (Rana et al., 2026):
+
+| Case | Coefficient and SE | Source | Units and Targets |
+| --- | --- | --- | --- |
+| Residential reference | 0.261 and 0.158, both scaled by 100(456/6804) | Table 2, column 4, p. 23 | USD/MWh at a 6.702-point reference exposure; targets 1, 2, 3 |
+| Four-owner slope | 0.158 and 0.160 | Table 4, column 4, p. 26 | USD/MWh per exposure percentage point; targets 0.1, 0.2, 0.3 |
+
+The price samples contain 41 treated utilities and 627 post-anchor observations. No utility records are reconstructed. The reference exposure is a ratio of reported means. The subgroup slope is not multiplied by that overall ratio. Price margins are illustrative rather than validated tolerances or originally prespecified tests.
+
+All sampling calculations use a fixed Gaussian approximation with the reported clustered SE. The source study's positive findings remain part of the interpretation. No observed-power calculation substitutes the estimated coefficient for an assumed true effect. No additional clustering multiplier is imposed.
+
+## Reproduction
+
+Python 3 and SciPy are required. NumPy supports independent verification. Verified locally with Python 3.13.5, SciPy 1.15.3, and NumPy 2.1.3.
+
+```sh
+python3 03_Data_and_Code/Modern_Power/harm_bounds.py
+python3 03_Data_and_Code/Modern_Power/verify_harm_bounds.py
+python3 03_Data_and_Code/Modern_Power/build_figure.py
+```
+
+The program writes [results.json](results.json). The figure builder writes the editable TikZ source used in M6. No seed, network call, downloaded code, or participant microdata is used. Complete source appears in M6 §6.51.
+
+## Output Fields
+
+`cases` retains the estimate, SE, units, source cell, p-value against zero, and one-sided 95% upper bound. Each `comparisons` entry contains the chosen margin, zero-null power at that margin, the one-sided margin-test p-value, TOST and folded-normal p-values and decisions, and the folded-normal critical value. `bounded_bias` records imposed bias allowances and their resulting upper bounds, in USD/MWh. These allowances are sensitivity inputs, with no estimate of actual bias or full HonestDiD implementation.
+
+All six displayed price margins fail the three margin tests. The result concerns these price comparisons and their assumptions. It does not establish that every valid method must fail at every possible margin.
+
+Verification uses numerical quadrature, SciPy's independent folded-normal distribution implementation, boundary-size checks, unit rescaling, interval/test duality, and an informative synthetic case that must establish equivalence. These checks validate the probability calculations, not the original identifying design. Read the [modern-method guide](../../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) for methods requiring additional data and the [optional exercise](../../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) for the interpretation task.
 
 ---
 

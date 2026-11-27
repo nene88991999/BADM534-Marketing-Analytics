@@ -192,3 +192,7 @@ The [15-source guide](49_Online_Engagement_and_Agency/README.md) covers ten mark
 ## Chicago Price Theory and Moral Justification
 
 The [13-source reading guide](50_Chicago_Price_Theory_and_Moral_Justification/README.md) connects price theory to willingness to pay, rational addiction, compensation, transaction costs, and enforcement errors. It distinguishes economic explanation from the premises required for a moral judgment. Seven newly retrieved PDFs remain local to Dropbox. M4 §4.32 and M9 §§9.76–9.82 provide the course applications.
+
+## Modern Power Analysis and Harm Bounds
+
+The [11-source collection](51_Modern_Power_and_Harm_Bounds/README.md) covers 2018–2026 work on panel power, staggered treatment, pre-trend equivalence, bias-aware inference, and synthetic-control uncertainty. Ten reference PDFs are stored locally; public files provide links, version metadata, and annotations. M6 §§6.47–6.51 and M9 §9.83 use reported electricity-price summaries to distinguish detection power from evidence excluding a specified burden.

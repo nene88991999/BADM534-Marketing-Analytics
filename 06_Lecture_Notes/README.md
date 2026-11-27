@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 159 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 160 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -255,3 +255,7 @@ M5 §5.29 and M9 §§9.70–9.75 connect marketing publications with documented 
 ## Price Theory and Moral Justification
 
 M4 §4.32 and M9 §§9.76–9.82 assess the transition from market prediction to moral permission. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) records 13 sources. Complete Python in §9.77 reproduces synthetic budget rankings and actual compensation, with an editable TikZ argument diagram and connections to engagement, electricity exposure, and evidence standards.
+
+## Modern Power and Evidence About Harm
+
+M6 §§6.47–6.51 distinguish power against zero from evidence excluding a specified price increase. Six reported-table comparisons, three imposed bias scenarios, complete Python, and an editable TikZ diagram connect the calculations to modern design-based methods. M9 §9.83 examines public reassurance and the reasons owed to households facing unresolved costs. The [11-source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) records source versions and the distinction between executed scalar calculations and procedures requiring the original panel.

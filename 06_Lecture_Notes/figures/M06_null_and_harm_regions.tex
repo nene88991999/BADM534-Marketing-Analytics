@@ -1,0 +1,24 @@
+\begin{tikzpicture}[x=1.6cm,y=1cm]
+\node[anchor=west,font=\bfseries] at (-3,3.15) {Reject a Zero Price Effect};
+\draw[IlliniBlue,thick] (-3,2.5) -- (4,2.5);
+\fill[IlliniOrange!35] (-3,2.25) rectangle (-2.075419,2.75);
+\fill[IlliniOrange!35] (2.075419,2.25) rectangle (4,2.75);
+\draw[IlliniOrange,very thick] (-2.075419,2.2) -- (-2.075419,2.8);
+\draw[IlliniOrange,very thick] (2.075419,2.2) -- (2.075419,2.8);
+\node[below,font=\footnotesize] at (-2.075419,2.15) {$-2.075$};
+\node[below,font=\footnotesize] at (2.075419,2.15) {$2.075$};
+\node[font=\footnotesize] at (-.2,2.72) {Two-sided 5\% test};
+\node[anchor=west,font=\bfseries] at (-3,1.15) {Exclude an Increase of at Least \$2/MWh};
+\draw[IlliniBlue,thick] (-3,.15) -- (4,.15);
+\fill[IlliniOrange!35] (-3,-.1) rectangle (0.258254,.4);
+\draw[IlliniOrange,very thick] (0.258254,-.15) -- (0.258254,.45);
+\node[above,font=\footnotesize] at (0.258254,.45) {$0.258$};
+\node[font=\footnotesize] at (-1.5,.15) {One-sided 5\% test};
+\draw[dashed,IlliniBlue] (1.749206,-.15) -- (1.749206,2.8);
+\fill[IlliniBlue] (1.749206,2.5) circle (2.6pt);
+\fill[IlliniBlue] (1.749206,.15) circle (2.6pt);
+\node[anchor=west,font=\footnotesize,align=left] at (1.929206,1.4) {Observed estimate\\\$1.749/MWh};
+\foreach \x in {-3,-2,-1,0,1,2,3,4}{\draw[IlliniBlue] (\x,-.45)--(\x,-.55);\node[below,font=\footnotesize] at (\x,-.55){\x};}
+\node at (.5,-1.3) {Possible Estimate (\$/MWh)};
+\node[align=center,text width=12cm,font=\footnotesize] at (.5,-2.1) {Shading marks rejection regions; the observed estimate is outside both.\\Table 2, column 4, at the reference exposure. Fixed Gaussian SE: \$1.059/MWh.\\The \$2 margin is illustrative. The reported SE already clusters by utility.};
+\end{tikzpicture}

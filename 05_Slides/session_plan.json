@@ -601,7 +601,7 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 46,
+      "slides": 50,
       "companion": "S09_Experiments_and_Incremental_Value.md",
       "pdf": "S09_Experiments_and_Incremental_Value.pdf",
       "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales. Compare naive and population-weighted pricing contrasts under unequal exposure. Compare exact normal error probabilities and expected loss under two opposing cost specifications.",
@@ -664,7 +664,15 @@
       "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice. Inverse power (Andrews, 1989) and nuisance-parameter sensitivity.",
       "pricing_reasons_coverage": "Use the exposure example within minutes 135–155; longer exercise optional.",
       "ai_augmented_learning_coverage": "Use five minutes within the existing 45–70 comparison for the four-cell learning example.",
-      "evidence_standards_coverage": "Use ten minutes within the 45–70 worked-comparison block and fifteen minutes within the 80–125 Python block for exact error costs. Use the remaining time for selected experiment examples; extended cases are optional practice."
+      "evidence_standards_coverage": "Use ten minutes within the 45–70 worked-comparison block and fifteen minutes within the 80–125 Python block for exact error costs. Use the remaining time for selected experiment examples; extended cases are optional practice.",
+      "modern_power_coverage": {
+        "sections": [
+          "M6 §§6.47–6.51",
+          "M9 §9.83"
+        ],
+        "resources": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md",
+        "selection": "Select the null-region figure and price comparison within existing discussion; complete coding and source review are optional ungraded practice."
+      }
     },
     {
       "session": 10,
@@ -968,7 +976,7 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 128,
+      "slides": 130,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
@@ -1124,6 +1132,14 @@
         "resources": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
         "practice": "07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission",
         "selection": "Select the argument diagram and one case within the existing 75-minute ethics block. Remaining slides are a case library for optional practice."
+      },
+      "modern_power_coverage": {
+        "sections": [
+          "M6 §§6.47–6.51",
+          "M9 §9.83"
+        ],
+        "resources": "../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md",
+        "selection": "Select the null-region figure and price comparison within existing discussion; complete coding and source review are optional ungraded practice."
       }
     },
     {

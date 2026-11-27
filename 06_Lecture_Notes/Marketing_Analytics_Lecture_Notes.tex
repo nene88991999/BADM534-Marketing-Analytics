@@ -18216,7 +18216,7 @@ def main():
          1, "USD/MWh per exposure pp", 41, 627),
         ("other_owner_slope", "Table 4 col 4; p. 26", 1.042, .477,
          1, "USD/MWh per exposure pp", 41, 627),
-        ("sales_slope", "Table 7 col 2; p. 31", 291, 493,
+        ("sales_slope", "Table 7 col 1; p. 31", 291, 493,
          1, "quarterly MWh per added MW", 42, 648),
     ]
     estimates = []
@@ -20618,6 +20618,380 @@ The documented conditional update supplies a statistical operation; it
 does not select that moral priority. M9 §§9.66--9.69 connects the
 missing argument to abstraction, value capture, and reasonable
 justification (Whitehead, 1925; Nguyen, 2024; Scanlon, 1998).
+
+\hypertarget{M06-choosing-the-null-for-a-claim-about-harm}{%
+\section{Choosing the Null for a Claim About
+Harm}\label{M06-choosing-the-null-for-a-claim-about-harm}}
+
+\noindent \noindent A regulator deciding whether households need protection must
+determine which harmful effects the evidence excludes. A test of a zero
+price effect addresses a different hypothesis. Its failure to reject can
+occur when the effect is small, when precision is low, or when the
+design measures an outcome that does not represent the burden at issue.
+A method's publication date cannot resolve that mismatch. The relevant
+comparison requires an economically justified margin, uncertainty about
+the effect, and a defensible connection between the estimand and
+household outcomes.
+
+The electricity paper contains positive findings. Its preferred
+residential coefficient is 0.261 with utility-clustered SE 0.158 in
+Table 2, column 4, and carries a star under its 10\% convention. The
+four-owner coefficient in Table 4, column 4 is a separate estimate,
+0.158 with SE 0.160. These estimates refer to different exposure
+categories (Rana et al., 2026). Treating the entire study as an
+insignificant null would misstate the evidence and weaken the criticism
+of its interpretations.
+
+Let \(\theta\) denote a specified average price effect and let
+\(\delta>0\) denote the largest increase a decision maker proposes to
+treat as negligible. Detecting an effect tests \(H_0:\theta=0\).
+Supporting a claim that a positive burden is below the margin instead
+tests
+
+\[H_0:\theta\geq\delta\qquad\text{against}\qquad H_1:\theta<\delta.\]
+
+Here \(\delta\) must share the effect's units, population, exposure
+contrast, and time horizon. A one-sided 95\% upper confidence bound
+below \(\delta\) supplies evidence for the latter claim under the
+maintained design. Two-sided equivalence asks the stronger question
+\(|\theta|<\delta\), which also excludes large negative effects. The
+margin represents a substantive judgment. Neither a large p-value nor
+the proportion of historical price growth explained by the estimate
+determines it.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_null_and_harm_regions.tex}
+\caption{Two tests use different rejection regions on the same estimate axis. With the reported residential estimate and fixed scaled SE, the observed estimate rejects neither zero in a two-sided 5\% test nor an increase of at least two dollars per MWh in a one-sided 5\% test. The shaded regions identify what would be required for each conclusion.}\label{fig:M06_null_and_harm_regions}
+\end{figure}
+
+\hypertarget{M06-what-newer-econometric-methods-require}{%
+\section{What Newer Econometric Methods
+Require}\label{M06-what-newer-econometric-methods-require}}
+
+\noindent \noindent Panel power depends on how information is distributed across
+units and periods. Serial-correlation-robust calculations use the
+covariance of repeated observations, and staggered-timing formulas
+distinguish early and late exposure rather than count every row as
+equally informative (Burlig et al., 2020; Schochet, 2022). More recent
+difference-in-differences formulas make explicit the analysis strategy
+and minimum detectable effect (Hedberg and Hedges, 2026). These are
+design calculations under specified assignment and outcome models. A
+synthetic-control design with repeated cumulative capacity additions
+requires its own mapping from that design to the proposed formula.
+
+Pre-treatment fit raises a second power question. A test can fail to
+detect a differential trend that would produce consequential
+post-treatment bias. Conditioning an analysis on passing that test can
+also distort its subsequent estimates and coverage (Roth, 2022).
+Equivalence tests reverse the burden by testing whether pre-trend
+departures exceed a chosen tolerance (Dette and Schumann, 2024). Even
+evidence of small pre-trends leaves a premise about the post-treatment
+counterfactual to defend.
+
+Sensitivity methods construct inference over stated departures from
+parallel trends instead of treating the assumption as established by a
+nonsignificant pretest. Their inputs include the pre/post coefficient
+vector, its joint covariance, and restrictions on allowable violations
+(Rambachan and Roth, 2023). A mean pre-treatment RMSPE does not supply
+those objects. In the electricity case, the proposed treatment and
+comparison units must also be reconciled with cumulative additions and
+the estimated donor weights before an event-study procedure can be
+applied.
+
+Synthetic-control prediction intervals address uncertainty from
+estimated pre-treatment weights and post-treatment prediction errors.
+Extensions accommodate multiple treated units, staggered adoption, and
+simultaneous comparisons across time (Cattaneo et al., 2021, 2025a). The
+corresponding software documents the required panel inputs and
+prediction target (Cattaneo et al., 2025b). These methods are especially
+relevant to the electricity design. They are prediction procedures with
+specific assumptions, rather than automatic adjustments to a regression
+coefficient's reported SE.
+
+Cluster-robust inference also depends on leverage, cluster composition,
+and the appropriate resampling scheme (MacKinnon et al., 2023). The
+paper already clusters by utility. Multiplying its SE by an assumed
+design effect would not constitute a cluster correction. Shared donors
+may generate additional dependence, but its magnitude and sign require
+the donor panel and estimation procedure. Newer methods can change
+precision in either direction. A credible assessment must evaluate the
+full design rather than select the adjustment that produces the
+preferred conclusion.
+
+The
+\href{../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md}{method
+and access catalog} distinguishes these design-dependent analyses from
+the scalar calculations below. The latter use reported coefficients and
+SEs. Full-panel power, cluster-bootstrap inference, joint pre-trend
+equivalence, and synthetic-control prediction intervals have not been
+reconstructed for the paper.
+
+\hypertarget{M06-which-price-increases-remain-unresolved}{%
+\section{Which Price Increases Remain
+Unresolved?}\label{M06-which-price-increases-remain-unresolved}}
+
+\noindent \noindent The residential reference comparison scales the Table 2
+coefficient and SE by \(100(456/6804)=6.702\) percentage points, the
+ratio of reported mean added capacity to mean peak demand. The resulting
+estimate is USD 1.749/MWh with SE USD 1.059/MWh. This is a reference
+exposure calculation, rather than an observed household bill or a mean
+of utility-specific exposure ratios. Illustrative positive margins of
+USD 1, 2, and 3/MWh make the sensitivity concrete; their economic
+acceptability requires a separate argument about affected households.
+
+The following theoretical approximation defines the probability
+calculations.
+
+\begin{assumption}[Scalar Gaussian Approximation]\label{ass:modern-power-gaussian}
+For a scalar effect $\theta$ in specified units, an estimator $\widehat\theta$ has distribution $N(\theta,s^2)$ with fixed $s>0$. The test size is $\alpha=0.05$. Equivalence uses a fixed positive margin $\delta$ in the same units. The application substitutes rounded published clustered SEs for $s$; finite-sample normality and known variance are approximations.
+\end{assumption}
+
+Under Assumption \ref{ass:modern-power-gaussian}, a one-sided upper
+bound is \(U=\widehat\theta+z_{0.95}s\). For the residential comparison
+it is USD 3.491/MWh. The conventional two-one-sided-tests procedure
+(TOST) declares equivalence when its 90\% interval lies inside
+\((-\delta,\delta)\). A scalar folded-normal procedure instead rejects
+non-equivalence when \(|\widehat\theta|<c_\delta\), where
+
+\[\Phi\!\left(\frac{c_\delta-\delta}{s}\right)
+-\Phi\!\left(\frac{-c_\delta-\delta}{s}\right)=0.05.\]
+
+Here \(\Phi\) is the standard normal cumulative distribution function.
+The rejection region has probability 0.05 at either boundary
+\(\theta=\pm\delta\) and smaller probability farther outside the margin.
+This scalar construction appears in the newer pre-trend equivalence
+framework; its application here concerns a price coefficient, with no
+reconstruction of the paper's joint pre-trend test (Dette and Schumann,
+2024, §4.2.1).
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Margin (USD/MWh) & Power Against Zero & Margin-Test p & TOST p &
+Folded-Normal p \\
+\midrule
+
+1 & 15.7\% & 0.760 & 0.760 & 0.756 \\
+2 & 47.2\% & 0.406 & 0.406 & 0.406 \\
+3 & 80.9\% & 0.119 & 0.119 & 0.119 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Every displayed price margin remains unresolved at 5\% under all three
+margin tests. The last row exposes an important error in reasoning: a
+design can have more than 80\% power against a specified effect and
+still produce a realization that does not exclude it. Power describes
+repeated samples at an assumed true effect. The margin tests evaluate
+what the realized estimate supports. Calling USD 3/MWh detectable does
+not make its absence an observed finding.
+
+The four-owner result supplies a more direct assessment of the
+categorical developer reassurance in the
+\href{https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{HBS
+coverage} (Kost, 2026). Its one-sided upper bound is USD 0.421/MWh for
+each percentage-point increase in that category's capacity relative to
+peak demand. This coefficient retains its own units; applying the
+overall 6.702-point reference exposure to that subgroup would require an
+additional exposure scenario.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}@{}}
+\toprule
+Margin (USD/MWh per Exposure Point) & Power Against Zero & Margin-Test p
+& Folded-Normal p \\
+\midrule
+
+0.10 & 9.6\% & 0.642 & 0.588 \\
+0.20 & 24.0\% & 0.396 & 0.384 \\
+0.30 & 46.6\% & 0.187 & 0.185 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+TOST gives the same displayed p-values as the one-sided margin test for
+these positive estimates. The nonsignificant zero-effect test therefore
+provides no basis for claiming that these developers left residential
+prices unchanged. The estimates remain compatible with positive price
+effects at every displayed margin. They also leave the actual effect
+uncertain. Increasing precision while holding a positive point estimate
+fixed cannot turn that estimate into evidence of an exactly zero effect;
+it can change which positive margins are excluded.
+
+\hypertarget{M06-bias-missing-outcomes-and-the-scope-of-reassurance}{%
+\section{Bias, Missing Outcomes, and the Scope of
+Reassurance}\label{M06-bias-missing-outcomes-and-the-scope-of-reassurance}}
+
+\noindent \noindent A precise interval can miss a causal effect when the
+estimator's center differs from the intended target. Bias-aware
+inference requires the analyst to specify a class of plausible
+departures and account for its worst-case bias (Armstrong and Kolesár,
+2018). For a simple scalar extension, suppose
+\(\widehat\theta=\theta+b+\varepsilon\), where
+\(\varepsilon\sim N(0,s^2)\) and \(|b|\leq B\). A valid upper bound
+within that model is
+
+\[U_B=\widehat\theta+z_{0.95}s+B.\]
+
+The worst case for an understated effect is \(b=-B\). The additional
+term restores coverage against that allowed understatement. For the
+residential reference, assumed bounds of \(B=0\), USD 0.50, and USD
+1/MWh produce upper limits of USD 3.491, 3.991, and 4.491/MWh. These are
+imposed sensitivity scenarios. They estimate no actual bias and
+implement neither the full parallel-trends sensitivity method nor a
+synthetic-control refit.
+
+Phantom projects make the choice of target consequential. If canceled
+projects change donor costs, a comparison based on operating additions
+may not represent an unexposed household counterfactual. Establishing
+such exposure requires commitment dates, cancellation records,
+contracts, recovery decisions, and donor weights. An assumed positive
+bias allowance cannot replace those records. The research-design
+question is which departures the institutions make plausible and what
+evidence can constrain them.
+
+A second problem survives even perfect precision for the stated price
+coefficient. Average revenue per MWh does not determine each household's
+bill, its income burden, or delayed exposure. The same average is
+compatible with different distributions of losses, as the counterexample
+in §6.33 demonstrates. A bound on the narrow estimand therefore needs an
+additional measurement and aggregation argument before it can support a
+household-harm claim.
+
+The supported conclusion is that the reported nonrejections do not
+establish harmlessness, and the displayed price margins remain
+unexcluded under the tested scalar procedures. It would be incorrect to
+infer that every valid method must fail at every possible margin. A
+sufficiently informative design can support a specified small-effect
+conclusion. Its margin, target population, time horizon, and identifying
+assumptions remain part of that conclusion. Neither an assurance of
+safety nor an allegation of realized harm follows from insignificance
+alone.
+
+\hypertarget{M06-complete-python-analysis-of-the-reported-summaries}{%
+\section{Complete Python Analysis of the Reported
+Summaries}\label{M06-complete-python-analysis-of-the-reported-summaries}}
+
+\noindent \noindent Run \texttt{python3\ harm\_bounds.py} in the
+\texttt{Modern\_Power} example folder with SciPy installed. The program
+saves the six price comparisons and three imposed bias scenarios
+discussed above. It performs deterministic probability calculations and
+uses no random seed. The independent verification compares numerical
+integration with normal-tail probabilities, checks folded-normal
+critical values against SciPy, verifies boundary size and unit
+invariance, and checks an informative synthetic case in which
+equivalence holds.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Modern_Power/harm_bounds.py}{harm\_bounds.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Reported-table sensitivity, scalar equivalence, and bounded-bias inference.
+
+Rounded estimates and clustered SEs are treated as a fixed Gaussian approximation.
+Targets are illustrative, not validated tolerances or original prespecified margins.
+No utility panel, synthetic-control refit, or event-study covariance is available here.
+"""
+import json
+from pathlib import Path
+
+from scipy.optimize import brentq
+from scipy.stats import norm
+
+ALPHA = 0.05
+REFERENCE_PP = 100 * 456 / 6804  # Ratio of reported means, not mean utility ratio.
+CASES = (
+    ("residential_reference", "Table 2 column 4, p. 23",
+     .261 * REFERENCE_PP, .158 * REFERENCE_PP,
+     "USD/MWh at reference exposure", (1., 2., 3.)),
+    ("four_owner_slope", "Table 4 column 4, p. 26",
+     .158, .160, "USD/MWh per exposure percentage point", (.1, .2, .3)),
+)
+
+
+def zero_null_power(effect, se):
+    """Rejection probability at a specified alternative; no observed-power input."""
+    z = norm.ppf(1 - ALPHA / 2)
+    return float(norm.cdf(-z - effect / se) + norm.sf(z - effect / se))
+
+
+def folded_cdf(cutoff, boundary, se):
+    """Probability that |Normal(boundary,se**2)| is at most cutoff."""
+    return float(norm.cdf((cutoff - boundary) / se)
+                 - norm.cdf((-cutoff - boundary) / se))
+
+
+def assess(estimate, se, margin):
+    if se <= 0 or margin <= 0:
+        raise ValueError("Positive SE and margin required")
+    z = norm.ppf(1 - ALPHA)
+    upper = estimate + z * se
+    # H0: theta >= margin against theta < margin.
+    upper_p = float(norm.cdf((estimate - margin) / se))
+    # H0: |theta| >= margin; intersection of two one-sided tests.
+    tost_p = max(upper_p, float(norm.sf((estimate + margin) / se)))
+    # Scalar folded-normal equivalence test: size ALPHA at +/- margin.
+    critical = brentq(lambda c: folded_cdf(c, margin, se) - ALPHA,
+                     0, margin + 10 * se)
+    folded_p = folded_cdf(abs(estimate), margin, se)
+    return dict(
+        margin=margin, zero_null_power_at_margin=zero_null_power(margin, se),
+        upper95=float(upper), one_sided_margin_p=upper_p,
+        excludes_positive_margin=bool(upper < margin),
+        tost_p=float(tost_p), tost_equivalent=bool(tost_p < ALPHA),
+        folded_p=folded_p, folded_equivalent=bool(folded_p < ALPHA),
+        folded_critical=critical,
+    )
+
+
+def build():
+    cases = []
+    for name, source, estimate, se, units, margins in CASES:
+        cases.append(dict(case=name, source=source, estimate=estimate, se=se,
+                          units=units,
+                          p_zero=float(2 * norm.sf(abs(estimate / se))),
+                          upper95=float(estimate + norm.ppf(.95) * se),
+                          comparisons=[assess(estimate, se, d) for d in margins]))
+    # A scalar sensitivity calculation with an imposed bound |bias| <= B.
+    # This is not the full HonestDiD estimator or an estimated bias correction.
+    b, se = CASES[0][2:4]
+    bias = [dict(assumed_bias_bound=B, units="USD/MWh", upper95=float(
+                b + norm.ppf(.95) * se + B)) for B in (0., .5, 1.)]
+    return dict(alpha=ALPHA, reference_exposure_pp=REFERENCE_PP,
+                setup="Fixed-SE Gaussian approximations to rounded published tables",
+                margins="Teaching alternatives; no validated policy tolerance",
+                cases=cases, bounded_bias=bias)
+
+
+def main():
+    result = build()
+    Path(__file__).with_name("results.json").write_text(
+        json.dumps(result, indent=2) + "\n")
+    for case in result["cases"]:
+        print(case["case"], case["units"], f'upper95={case["upper95"]:.4f}')
+        for r in case["comparisons"]:
+            print(f'  margin={r["margin"]:g}, power={r["zero_null_power_at_margin"]:.3f}, '
+                  f'upper-test p={r["one_sided_margin_p"]:.3f}, '
+                  f'TOST p={r["tost_p"]:.3f}, folded p={r["folded_p"]:.3f}')
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+Run \texttt{python3\ verify\_harm\_bounds.py} from the same folder. The
+\href{../03_Data_and_Code/Modern_Power/README.md}{example documentation}
+records the source cells, dependencies, output fields, and distinction
+between reported-table calculations and full-design inference.
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -38358,5 +38732,53 @@ governing their imposition. A moral violation follows when the relevant
 factual premises and defended duties establish it. School affiliation,
 mathematical sophistication, and commercial success each leave that
 argument to be made.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-power-reassurance-and-responsibility-for-unresolved-harm}{%
+\section{Power, Reassurance, and Responsibility for Unresolved
+Harm}\label{M09-power-reassurance-and-responsibility-for-unresolved-harm}}
+
+\noindent \noindent A household asked to accept an infrastructure commitment has
+reason to ask which burdens the evidence has excluded. An institution
+that answers with a nonsignificant coefficient changes the question
+unless it also supplies the outcome, relevant population, harm margin,
+and uncertainty. The numerical comparisons in §§6.47--6.51 show that the
+electricity paper's price summaries leave the displayed positive margins
+unresolved under both conventional and newer scalar equivalence
+procedures. The issue is the authority granted to the conclusion, rather
+than the age or sophistication of the test.
+
+The
+\href{https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{HBS
+coverage} gives categorical reassurance about the four named developers
+that exceeds the uncertain subgroup estimate (Kost, 2026). A public
+statement can affect whose objections receive attention even when the
+underlying paper acknowledges uncertainty. The moral concern is that
+residents may be asked to bear an exposure that the evidence has not
+excluded, while the institution presents that uncertainty as a reason to
+dismiss further scrutiny. Actual reliance on the statement and resulting
+harm require evidence of their own.
+
+A Scanlonian assessment compares the reasons for the proposed principle
+with reasons supporting a feasible alternative (Scanlon, 1998, chapter
+5). Consider permitting categorical reassurance whenever a zero-effect
+test fails to reject. Exposed households have reasons to object when the
+rule shifts unresolved burdens onto them and the analyst could instead
+state a supported upper bound, disclose the missing outcome, or
+recommend proportionate inquiry. Firms and other users also have reasons
+to resist unsupported accusations and costly restrictions. A narrower
+public claim, records request, or reversible protection can address
+these competing positions without treating uncertainty as proof of
+either innocence or injury.
+
+The corresponding duty applies to criticism. Choosing methods or
+suppressing a material result because it complicates the desired
+argument makes the objection less defensible. A bounded conclusion about
+one aggregate quantity leaves a further argument about household harm.
+The stronger criticism identifies the exact outcome, margin, and
+unsupported extension. A Kantian commitment to truthful justification
+requires the same care when a conclusion is commercially reassuring and
+when it is critical (Kant, 1785).
 
 \end{document}

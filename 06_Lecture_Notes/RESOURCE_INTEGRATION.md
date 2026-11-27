@@ -287,3 +287,7 @@ The 15-source collection in `01_Resources/49_Online_Engagement_and_Agency/` supp
 ## Chicago Price Theory and Moral Justification
 
 M4 §4.32 and M9 §§9.76–9.82 use the [13-source guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) to distinguish economic prediction, monetary welfare, and a justified principle. The complete program in §9.77 matches [compare_valuations.py](../03_Data_and_Code/Price_Theory_and_Justification/compare_valuations.py). The figure `M09_price_theory_and_justification` separates empirical consequences from the reasons of affected people. The electricity and hierarchical-detection applications retain their existing evidentiary scope.
+
+## Modern Power and Harm Bounds
+
+The [2018–2026 collection](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) supports M6 §§6.47–6.51 and M9 §9.83. Panel power and staggered timing clarify design inputs; pre-trend equivalence and sensitivity clarify identification; cluster and synthetic-control inference clarify uncertainty. The [Python example](../03_Data_and_Code/Modern_Power/README.md) implements scalar price comparisons and imposed bias bounds with published estimates. One editable TikZ diagram distinguishes the two null hypotheses. Sessions 9 and 14 select these examples within existing discussion time.
